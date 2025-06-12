@@ -36,7 +36,7 @@ public class CreateIndicatorDetailEnvironment {
     }
 
     /**
-     * 环境供应商，如：HWC/AWS等
+     * 环境供应商
      * @return vendorType
      */
     public String getVendorType() {

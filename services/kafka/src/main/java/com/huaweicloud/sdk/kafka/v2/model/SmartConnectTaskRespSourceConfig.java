@@ -351,7 +351,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * topic映射。（仅源端类型为Kafka时会显示）
+     * Topic映射。（仅源端类型为Kafka时会显示）
      * @return topicsMapping
      */
     public String getTopicsMapping() {

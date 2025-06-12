@@ -151,7 +151,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： topic列表。
+     * **参数解释**： Topic列表。
      * @return topics
      */
     public List<TopicEntity> getTopics() {

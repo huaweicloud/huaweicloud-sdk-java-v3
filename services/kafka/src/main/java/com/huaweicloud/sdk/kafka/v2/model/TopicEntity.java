@@ -79,7 +79,7 @@ public class TopicEntity {
     }
 
     /**
-     * **参数解释**： 是否为默认策略。 **取值范围**： - true：默认策略。 - fasle：不是默认策略。
+     * **参数解释**： 是否为默认策略。 **取值范围**： - true：默认策略。 - false：不是默认策略。
      * @return policiesOnly
      */
     public Boolean getPoliciesOnly() {
@@ -96,7 +96,7 @@ public class TopicEntity {
     }
 
     /**
-     * **参数解释**： topic名称。 **取值范围**： 不涉及
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -130,7 +130,7 @@ public class TopicEntity {
     }
 
     /**
-     * **参数解释**： topic分区数，设置消费的并发数。 **取值范围**： 不涉及
+     * **参数解释**： Topic分区数，设置消费的并发数。 **取值范围**： 不涉及
      * @return partition
      */
     public Integer getPartition() {
@@ -215,7 +215,7 @@ public class TopicEntity {
     }
 
     /**
-     * **参数解释**： topic类型。 **取值范围**： - 0：普通Topic。 - 1：系统(内部)Topic。
+     * **参数解释**： Topic类型。 **取值范围**： - 0：普通Topic。 - 1：系统(内部)Topic。
      * @return topicType
      */
     public Integer getTopicType() {
@@ -248,7 +248,7 @@ public class TopicEntity {
     }
 
     /**
-     * **参数解释**： topic其他配置。
+     * **参数解释**： Topic其他配置。
      * @return topicOtherConfigs
      */
     public List<TopicEntityTopicOtherConfigs> getTopicOtherConfigs() {
@@ -265,7 +265,7 @@ public class TopicEntity {
     }
 
     /**
-     * **参数解释**： topic描述。 **取值范围**： 不涉及
+     * **参数解释**： Topic描述。 **取值范围**： 不涉及
      * @return topicDesc
      */
     public String getTopicDesc() {
@@ -282,7 +282,7 @@ public class TopicEntity {
     }
 
     /**
-     * **参数解释**： topic创建时间。 **取值范围**： 不涉及
+     * **参数解释**： Topic创建时间。 **取值范围**： 不涉及
      * @return createdAt
      */
     public Long getCreatedAt() {

@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderCreateVolumeTransferRequest;
@@ -141,6 +143,43 @@ public class EvsClient {
     public SyncInvoker<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> batchDeleteVolumeTagsInvoker(
         BatchDeleteVolumeTagsRequest request) {
         return new SyncInvoker<>(request, EvsMeta.batchDeleteVolumeTags, hcClient);
+    }
+
+    /**
+     * 批量扩容云硬盘
+     *
+     * 对按需或者包周期云硬盘进行批量扩容。
+     * [在批量扩容存在包周期云硬盘的场景下：](tag:hws)
+     * - [如果您需要查看订单可用的优惠券，请参考\&quot;[查询订单可用优惠券](https://support.huaweicloud.com/api-oce/zh-cn_topic_0092953630.html)\&quot;。](tag:hws)
+     * - [如果您需要支付订单，请参考\&quot;[支付包周期产品订单](https://support.huaweicloud.com/api-oce/api_order_00030.html)\&quot;。](tag:hws)
+     * - [如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。](tag:hws)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResizeVolumesRequest 请求对象
+     * @return BatchResizeVolumesResponse
+     */
+    public BatchResizeVolumesResponse batchResizeVolumes(BatchResizeVolumesRequest request) {
+        return hcClient.syncInvokeHttp(request, EvsMeta.batchResizeVolumes);
+    }
+
+    /**
+     * 批量扩容云硬盘
+     *
+     * 对按需或者包周期云硬盘进行批量扩容。
+     * [在批量扩容存在包周期云硬盘的场景下：](tag:hws)
+     * - [如果您需要查看订单可用的优惠券，请参考\&quot;[查询订单可用优惠券](https://support.huaweicloud.com/api-oce/zh-cn_topic_0092953630.html)\&quot;。](tag:hws)
+     * - [如果您需要支付订单，请参考\&quot;[支付包周期产品订单](https://support.huaweicloud.com/api-oce/api_order_00030.html)\&quot;。](tag:hws)
+     * - [如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。](tag:hws)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResizeVolumesRequest 请求对象
+     * @return SyncInvoker<BatchResizeVolumesRequest, BatchResizeVolumesResponse>
+     */
+    public SyncInvoker<BatchResizeVolumesRequest, BatchResizeVolumesResponse> batchResizeVolumesInvoker(
+        BatchResizeVolumesRequest request) {
+        return new SyncInvoker<>(request, EvsMeta.batchResizeVolumes, hcClient);
     }
 
     /**

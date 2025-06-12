@@ -35,7 +35,7 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： topic名称。 **取值范围**： 不涉及
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及
      * @return topic
      */
     public String getTopic() {
@@ -102,7 +102,7 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 订阅该topic的消费组名称列表。
+     * **参数解释**： 订阅该Topic的消费组名称列表。
      * @return groupSubscribed
      */
     public List<String> getGroupSubscribed() {

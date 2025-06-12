@@ -240,7 +240,7 @@ public class CreateWorkspaceResponseBodyWorkspaceAgencyList {
     }
 
     /**
-     * 用户创建托管空间时使用的IAM委托版本，V3或者V5
+     * 委托版本
      * @return agencyVersion
      */
     public String getAgencyVersion() {

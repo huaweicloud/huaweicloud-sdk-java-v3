@@ -454,6 +454,11 @@ public class CreateInstanceByEngineReq {
     private Boolean ipv6Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_enable")
+
+    private Boolean proxyEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_publicip")
 
     private Boolean enablePublicip;
@@ -467,6 +472,16 @@ public class CreateInstanceByEngineReq {
     @JsonProperty(value = "broker_num")
 
     private Integer brokerNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "arch_type")
+
+    private String archType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tls_mode")
+
+    private String tlsMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bss_param")
@@ -744,6 +759,23 @@ public class CreateInstanceByEngineReq {
         this.ipv6Enable = ipv6Enable;
     }
 
+    public CreateInstanceByEngineReq withProxyEnable(Boolean proxyEnable) {
+        this.proxyEnable = proxyEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启Proxy功能。   - true：支持   - false：不支持
+     * @return proxyEnable
+     */
+    public Boolean getProxyEnable() {
+        return proxyEnable;
+    }
+
+    public void setProxyEnable(Boolean proxyEnable) {
+        this.proxyEnable = proxyEnable;
+    }
+
     public CreateInstanceByEngineReq withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
         return this;
@@ -795,6 +827,40 @@ public class CreateInstanceByEngineReq {
         this.brokerNum = brokerNum;
     }
 
+    public CreateInstanceByEngineReq withArchType(String archType) {
+        this.archType = archType;
+        return this;
+    }
+
+    /**
+     * 架构类型。
+     * @return archType
+     */
+    public String getArchType() {
+        return archType;
+    }
+
+    public void setArchType(String archType) {
+        this.archType = archType;
+    }
+
+    public CreateInstanceByEngineReq withTlsMode(String tlsMode) {
+        this.tlsMode = tlsMode;
+        return this;
+    }
+
+    /**
+     * 实例使用的安全协议。
+     * @return tlsMode
+     */
+    public String getTlsMode() {
+        return tlsMode;
+    }
+
+    public void setTlsMode(String tlsMode) {
+        this.tlsMode = tlsMode;
+    }
+
     public CreateInstanceByEngineReq withBssParam(BssParam bssParam) {
         this.bssParam = bssParam;
         return this;
@@ -840,8 +906,10 @@ public class CreateInstanceByEngineReq {
             && Objects.equals(this.storageSpecCode, that.storageSpecCode)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.proxyEnable, that.proxyEnable)
             && Objects.equals(this.enablePublicip, that.enablePublicip)
             && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.brokerNum, that.brokerNum)
+            && Objects.equals(this.archType, that.archType) && Objects.equals(this.tlsMode, that.tlsMode)
             && Objects.equals(this.bssParam, that.bssParam);
     }
 
@@ -862,9 +930,12 @@ public class CreateInstanceByEngineReq {
             enterpriseProjectId,
             enableAcl,
             ipv6Enable,
+            proxyEnable,
             enablePublicip,
             publicipId,
             brokerNum,
+            archType,
+            tlsMode,
             bssParam);
     }
 
@@ -887,9 +958,12 @@ public class CreateInstanceByEngineReq {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    proxyEnable: ").append(toIndentedString(proxyEnable)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
+        sb.append("    archType: ").append(toIndentedString(archType)).append("\n");
+        sb.append("    tlsMode: ").append(toIndentedString(tlsMode)).append("\n");
         sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
         sb.append("}");
         return sb.toString();

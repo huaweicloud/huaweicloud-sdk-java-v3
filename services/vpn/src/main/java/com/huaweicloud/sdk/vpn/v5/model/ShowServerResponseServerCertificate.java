@@ -46,6 +46,11 @@ public class ShowServerResponseServerCertificate {
 
     private String signatureAlgorithm;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source")
+
+    private String source;
+
     public ShowServerResponseServerCertificate withId(String id) {
         this.id = id;
         return this;
@@ -165,6 +170,23 @@ public class ShowServerResponseServerCertificate {
         this.signatureAlgorithm = signatureAlgorithm;
     }
 
+    public ShowServerResponseServerCertificate withSource(String source) {
+        this.source = source;
+        return this;
+    }
+
+    /**
+     * 证书来源
+     * @return source
+     */
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,12 +200,13 @@ public class ShowServerResponseServerCertificate {
             && Objects.equals(this.issuer, that.issuer) && Objects.equals(this.subject, that.subject)
             && Objects.equals(this.serialNumber, that.serialNumber)
             && Objects.equals(this.expirationTime, that.expirationTime)
-            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm);
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.source, that.source);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, issuer, subject, serialNumber, expirationTime, signatureAlgorithm);
+        return Objects.hash(id, name, issuer, subject, serialNumber, expirationTime, signatureAlgorithm, source);
     }
 
     @Override
@@ -197,6 +220,7 @@ public class ShowServerResponseServerCertificate {
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
         sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
         sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -268,7 +268,7 @@ public class CreateTopicOrBatchDeleteTopicReq {
     }
 
     /**
-     * 队列数，范围1~50。
+     * 总队列数，范围1~50。
      * @return queueNum
      */
     public BigDecimal getQueueNum() {

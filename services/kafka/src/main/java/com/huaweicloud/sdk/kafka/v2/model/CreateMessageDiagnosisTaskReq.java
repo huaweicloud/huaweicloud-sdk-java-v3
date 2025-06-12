@@ -43,7 +43,7 @@ public class CreateMessageDiagnosisTaskReq {
     }
 
     /**
-     * topic名称
+     * Topic名称
      * @return topicName
      */
     public String getTopicName() {

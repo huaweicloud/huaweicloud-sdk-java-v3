@@ -47,7 +47,7 @@ public class ListWorkspacesResponse extends SdkResponse {
     }
 
     /**
-     * 空间信息
+     * list of informations of workspaces
      * @return workspaces
      */
     public List<CreateWorkspaceResponseBody> getWorkspaces() {

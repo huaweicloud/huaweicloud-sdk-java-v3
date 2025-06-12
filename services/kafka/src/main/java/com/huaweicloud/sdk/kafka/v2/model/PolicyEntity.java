@@ -112,7 +112,7 @@ public class PolicyEntity {
     }
 
     /**
-     * 是否为创建topic时所选择的用户。
+     * 是否为创建Topic时所选择的用户。
      * @return owner
      */
     public Boolean getOwner() {

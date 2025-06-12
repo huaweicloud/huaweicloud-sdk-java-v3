@@ -25,6 +25,11 @@ public class ListFunctionsRequest {
 
     private String packageName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "func_name")
+
+    private String funcName;
+
     public ListFunctionsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -76,6 +81,23 @@ public class ListFunctionsRequest {
         this.packageName = packageName;
     }
 
+    public ListFunctionsRequest withFuncName(String funcName) {
+        this.funcName = funcName;
+        return this;
+    }
+
+    /**
+     * 函数名称。支持模糊查询
+     * @return funcName
+     */
+    public String getFuncName() {
+        return funcName;
+    }
+
+    public void setFuncName(String funcName) {
+        this.funcName = funcName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class ListFunctionsRequest {
         }
         ListFunctionsRequest that = (ListFunctionsRequest) obj;
         return Objects.equals(this.marker, that.marker) && Objects.equals(this.maxitems, that.maxitems)
-            && Objects.equals(this.packageName, that.packageName);
+            && Objects.equals(this.packageName, that.packageName) && Objects.equals(this.funcName, that.funcName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(marker, maxitems, packageName);
+        return Objects.hash(marker, maxitems, packageName, funcName);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class ListFunctionsRequest {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    maxitems: ").append(toIndentedString(maxitems)).append("\n");
         sb.append("    packageName: ").append(toIndentedString(packageName)).append("\n");
+        sb.append("    funcName: ").append(toIndentedString(funcName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

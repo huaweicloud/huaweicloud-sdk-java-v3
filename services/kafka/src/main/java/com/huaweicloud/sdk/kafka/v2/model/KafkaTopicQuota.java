@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * topic流控配置
+ * Topic流控配置
  */
 public class KafkaTopicQuota {
 
@@ -31,7 +31,7 @@ public class KafkaTopicQuota {
     }
 
     /**
-     * topic名称
+     * Topic名称
      * @return topic
      */
     public String getTopic() {

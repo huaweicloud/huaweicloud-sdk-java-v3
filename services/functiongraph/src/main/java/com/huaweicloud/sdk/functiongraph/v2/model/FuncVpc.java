@@ -58,6 +58,11 @@ public class FuncVpc {
 
     private List<String> securityGroups = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_safety")
+
+    private Boolean isSafety;
+
     public FuncVpc withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -227,6 +232,23 @@ public class FuncVpc {
         this.securityGroups = securityGroups;
     }
 
+    public FuncVpc withIsSafety(Boolean isSafety) {
+        this.isSafety = isSafety;
+        return this;
+    }
+
+    /**
+     * 是否开启安全访问。开启时，需要您自行配置VPCEP网络但可以提供更安全的VPC连接访问并打通内网域名。注意：开启后无法关闭。
+     * @return isSafety
+     */
+    public Boolean getIsSafety() {
+        return isSafety;
+    }
+
+    public void setIsSafety(Boolean isSafety) {
+        this.isSafety = isSafety;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -240,12 +262,13 @@ public class FuncVpc {
             && Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.subnetName, that.subnetName) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.gateway, that.gateway)
-            && Objects.equals(this.securityGroups, that.securityGroups);
+            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.isSafety, that.isSafety);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, namespace, vpcName, vpcId, subnetName, subnetId, cidr, gateway, securityGroups);
+        return Objects
+            .hash(domainId, namespace, vpcName, vpcId, subnetName, subnetId, cidr, gateway, securityGroups, isSafety);
     }
 
     @Override
@@ -261,6 +284,7 @@ public class FuncVpc {
         sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
         sb.append("    gateway: ").append(toIndentedString(gateway)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    isSafety: ").append(toIndentedString(isSafety)).append("\n");
         sb.append("}");
         return sb.toString();
     }

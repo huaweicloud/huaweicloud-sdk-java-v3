@@ -172,7 +172,7 @@ public class DiskusageEntity {
     }
 
     /**
-     * topic磁盘容量使用列表。
+     * Topic磁盘容量使用列表。
      * @return topicList
      */
     public List<DiskusageTopicEntity> getTopicList() {

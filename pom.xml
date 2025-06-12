@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk</artifactId>
-    <version>3.1.151</version>
+    <version>3.1.152</version>
     <name>Huawei Cloud SDK for Java Parent</name>
     <description>Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
@@ -43,11 +43,12 @@
 
     <modules>
         <module>core</module>
-        <module>services</module>
-        <module>all</module>
-        <module>bundle</module>
         <module>core-bson</module>
         <module>core-xml</module>
+        <module>services</module>
+        <module>bom</module>
+        <module>all</module>
+        <module>bundle</module>
     </modules>
 
     <properties>

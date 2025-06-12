@@ -130,6 +130,11 @@ public class DbObjectSpaceInfo {
 
     private Long estimatedRows;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db_name")
+
+    private String dbName;
+
     public DbObjectSpaceInfo withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
@@ -283,6 +288,23 @@ public class DbObjectSpaceInfo {
         this.estimatedRows = estimatedRows;
     }
 
+    public DbObjectSpaceInfo withDbName(String dbName) {
+        this.dbName = dbName;
+        return this;
+    }
+
+    /**
+     * 数据库名称
+     * @return dbName
+     */
+    public String getDbName() {
+        return dbName;
+    }
+
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -296,13 +318,21 @@ public class DbObjectSpaceInfo {
             && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.usedSize, that.usedSize)
             && Objects.equals(this.dataSize, that.dataSize) && Objects.equals(this.indexSize, that.indexSize)
             && Objects.equals(this.freeSize, that.freeSize) && Objects.equals(this.freeRate, that.freeRate)
-            && Objects.equals(this.estimatedRows, that.estimatedRows);
+            && Objects.equals(this.estimatedRows, that.estimatedRows) && Objects.equals(this.dbName, that.dbName);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(objectType, objectName, objectId, usedSize, dataSize, indexSize, freeSize, freeRate, estimatedRows);
+        return Objects.hash(objectType,
+            objectName,
+            objectId,
+            usedSize,
+            dataSize,
+            indexSize,
+            freeSize,
+            freeRate,
+            estimatedRows,
+            dbName);
     }
 
     @Override
@@ -318,6 +348,7 @@ public class DbObjectSpaceInfo {
         sb.append("    freeSize: ").append(toIndentedString(freeSize)).append("\n");
         sb.append("    freeRate: ").append(toIndentedString(freeRate)).append("\n");
         sb.append("    estimatedRows: ").append(toIndentedString(estimatedRows)).append("\n");
+        sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

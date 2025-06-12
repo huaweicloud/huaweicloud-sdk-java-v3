@@ -36,7 +36,7 @@ public class IndicatorDataObjectDetailEnvironment {
     }
 
     /**
-     * 环境供应商（如HWC,AWS,Azure等）
+     * 环境供应商
      * @return vendorType
      */
     public String getVendorType() {

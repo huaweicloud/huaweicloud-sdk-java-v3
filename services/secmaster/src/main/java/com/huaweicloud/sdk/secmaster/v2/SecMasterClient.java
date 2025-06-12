@@ -63,6 +63,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteWorkspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteWorkspaceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DisableAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DisableAlertRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.EnableAlertRuleRequest;
@@ -127,6 +129,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookTopologyRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookTopologyResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowWorkspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowWorkspaceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateIndicatorRequest;
@@ -139,6 +143,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceResponse;
 
 public class SecMasterClient {
 
@@ -1020,6 +1026,35 @@ public class SecMasterClient {
     }
 
     /**
+     * 删除工作空间
+     *
+     * 删除工作空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkspaceRequest 请求对象
+     * @return DeleteWorkspaceResponse
+     */
+    public DeleteWorkspaceResponse deleteWorkspace(DeleteWorkspaceRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteWorkspace);
+    }
+
+    /**
+     * 删除工作空间
+     *
+     * 删除工作空间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkspaceRequest 请求对象
+     * @return SyncInvoker<DeleteWorkspaceRequest, DeleteWorkspaceResponse>
+     */
+    public SyncInvoker<DeleteWorkspaceRequest, DeleteWorkspaceResponse> deleteWorkspaceInvoker(
+        DeleteWorkspaceRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteWorkspace, hcClient);
+    }
+
+    /**
      * 停用告警规则
      *
      * Disable alert rule
@@ -1537,9 +1572,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 工作空间列表查询
+     * 查询工作空间列表
      *
-     * 工作空间列表查询:可通过工作空间名称、工作空间描述、创建时间等条件对租户的工作空间进行筛选。
+     * 可通过工作空间名称、工作空间描述、创建时间等条件对租户的工作空间进行筛选。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1551,9 +1586,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 工作空间列表查询
+     * 查询工作空间列表
      *
-     * 工作空间列表查询:可通过工作空间名称、工作空间描述、创建时间等条件对租户的工作空间进行筛选。
+     * 可通过工作空间名称、工作空间描述、创建时间等条件对租户的工作空间进行筛选。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1939,6 +1974,34 @@ public class SecMasterClient {
     }
 
     /**
+     * 查询工作空间详情
+     *
+     * 查询工作空间名称、描述等详情信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkspaceRequest 请求对象
+     * @return ShowWorkspaceResponse
+     */
+    public ShowWorkspaceResponse showWorkspace(ShowWorkspaceRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showWorkspace);
+    }
+
+    /**
+     * 查询工作空间详情
+     *
+     * 查询工作空间名称、描述等详情信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkspaceRequest 请求对象
+     * @return SyncInvoker<ShowWorkspaceRequest, ShowWorkspaceResponse>
+     */
+    public SyncInvoker<ShowWorkspaceRequest, ShowWorkspaceResponse> showWorkspaceInvoker(ShowWorkspaceRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showWorkspace, hcClient);
+    }
+
+    /**
      * 更新告警规则
      *
      * Update alert rule
@@ -2110,6 +2173,35 @@ public class SecMasterClient {
     public SyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse> updatePlaybookVersionInvoker(
         UpdatePlaybookVersionRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.updatePlaybookVersion, hcClient);
+    }
+
+    /**
+     * 更新工作空间
+     *
+     * 更新工作空间名称、描述等信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkspaceRequest 请求对象
+     * @return UpdateWorkspaceResponse
+     */
+    public UpdateWorkspaceResponse updateWorkspace(UpdateWorkspaceRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateWorkspace);
+    }
+
+    /**
+     * 更新工作空间
+     *
+     * 更新工作空间名称、描述等信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkspaceRequest 请求对象
+     * @return SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse>
+     */
+    public SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse> updateWorkspaceInvoker(
+        UpdateWorkspaceRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateWorkspace, hcClient);
     }
 
 }

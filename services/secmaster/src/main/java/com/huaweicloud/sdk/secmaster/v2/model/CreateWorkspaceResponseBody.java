@@ -461,7 +461,7 @@ public class CreateWorkspaceResponseBody {
     }
 
     /**
-     * 仅用于视图场景，列出了该视图纳管的空间列表
+     * 纳管空间列表
      * @return workspaceAgencyList
      */
     public List<CreateWorkspaceResponseBodyWorkspaceAgencyList> getWorkspaceAgencyList() {

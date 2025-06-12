@@ -508,6 +508,11 @@ public class TasksResponseBody {
 
     private Double agentDiskIo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_migration_test")
+
+    private Boolean needMigrationTest;
+
     public TasksResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -1112,6 +1117,23 @@ public class TasksResponseBody {
         this.agentDiskIo = agentDiskIo;
     }
 
+    public TasksResponseBody withNeedMigrationTest(Boolean needMigrationTest) {
+        this.needMigrationTest = needMigrationTest;
+        return this;
+    }
+
+    /**
+     * 是否开启迁移演练
+     * @return needMigrationTest
+     */
+    public Boolean getNeedMigrationTest() {
+        return needMigrationTest;
+    }
+
+    public void setNeedMigrationTest(Boolean needMigrationTest) {
+        this.needMigrationTest = needMigrationTest;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1142,7 +1164,8 @@ public class TasksResponseBody {
             && Objects.equals(this.agentCpuUsage, that.agentCpuUsage)
             && Objects.equals(this.totalMemUsage, that.totalMemUsage)
             && Objects.equals(this.agentMemUsage, that.agentMemUsage)
-            && Objects.equals(this.totalDiskIo, that.totalDiskIo) && Objects.equals(this.agentDiskIo, that.agentDiskIo);
+            && Objects.equals(this.totalDiskIo, that.totalDiskIo) && Objects.equals(this.agentDiskIo, that.agentDiskIo)
+            && Objects.equals(this.needMigrationTest, that.needMigrationTest);
     }
 
     @Override
@@ -1176,7 +1199,8 @@ public class TasksResponseBody {
             totalMemUsage,
             agentMemUsage,
             totalDiskIo,
-            agentDiskIo);
+            agentDiskIo,
+            needMigrationTest);
     }
 
     @Override
@@ -1213,6 +1237,7 @@ public class TasksResponseBody {
         sb.append("    agentMemUsage: ").append(toIndentedString(agentMemUsage)).append("\n");
         sb.append("    totalDiskIo: ").append(toIndentedString(totalDiskIo)).append("\n");
         sb.append("    agentDiskIo: ").append(toIndentedString(agentDiskIo)).append("\n");
+        sb.append("    needMigrationTest: ").append(toIndentedString(needMigrationTest)).append("\n");
         sb.append("}");
         return sb.toString();
     }

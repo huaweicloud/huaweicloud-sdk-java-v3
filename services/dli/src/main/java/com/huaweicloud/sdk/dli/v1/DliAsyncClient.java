@@ -7,10 +7,14 @@ import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolReque
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolResponse;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionResponse;
+import com.huaweicloud.sdk.dli.v1.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.BatchCreateResourceTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansResponse;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteResourceTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteResourceTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchRunFlinkJobsRequest;
@@ -23,6 +27,8 @@ import com.huaweicloud.sdk.dli.v1.model.CancelSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CancelSqlJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlRequest;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlResponse;
+import com.huaweicloud.sdk.dli.v1.model.CountResourcesByTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.CountResourcesByTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateConnectivityTaskRequest;
@@ -161,6 +167,10 @@ import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesByTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesByTagsResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsRequest;
@@ -219,6 +229,8 @@ import com.huaweicloud.sdk.dli.v1.model.ShowQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowQuotaRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowQuotaResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowResourceTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobLogRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobLogResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobRequest;
@@ -356,6 +368,36 @@ public class DliAsyncClient {
     }
 
     /**
+     * 批量添加资源标签
+     *
+     * 批量添加资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateResourceTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateResourceTagsResponse>
+     */
+    public CompletableFuture<BatchCreateResourceTagsResponse> batchCreateResourceTagsAsync(
+        BatchCreateResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.batchCreateResourceTags);
+    }
+
+    /**
+     * 批量添加资源标签
+     *
+     * 批量添加资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateResourceTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTagsAsyncInvoker(
+        BatchCreateResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, DliMeta.batchCreateResourceTags, hcClient);
+    }
+
+    /**
      * 批量删除队列定时扩缩容计划
      *
      * 该API用于批量删除队列定时扩缩容计划。
@@ -385,6 +427,66 @@ public class DliAsyncClient {
     public AsyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse> batchDeleteQueuePlansAsyncInvoker(
         BatchDeleteQueuePlansRequest request) {
         return new AsyncInvoker<>(request, DliMeta.batchDeleteQueuePlans, hcClient);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 批量删除资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteResourceTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteResourceTagsResponse>
+     */
+    public CompletableFuture<BatchDeleteResourceTagsResponse> batchDeleteResourceTagsAsync(
+        BatchDeleteResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.batchDeleteResourceTags);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 批量删除资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteResourceTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse>
+     */
+    public AsyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> batchDeleteResourceTagsAsyncInvoker(
+        BatchDeleteResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, DliMeta.batchDeleteResourceTags, hcClient);
+    }
+
+    /**
+     * 查询资源实例数量
+     *
+     * 查询资源实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagsRequest 请求对象
+     * @return CompletableFuture<CountResourcesByTagsResponse>
+     */
+    public CompletableFuture<CountResourcesByTagsResponse> countResourcesByTagsAsync(
+        CountResourcesByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.countResourcesByTags);
+    }
+
+    /**
+     * 查询资源实例数量
+     *
+     * 查询资源实例数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesByTagsRequest 请求对象
+     * @return AsyncInvoker<CountResourcesByTagsRequest, CountResourcesByTagsResponse>
+     */
+    public AsyncInvoker<CountResourcesByTagsRequest, CountResourcesByTagsResponse> countResourcesByTagsAsyncInvoker(
+        CountResourcesByTagsRequest request) {
+        return new AsyncInvoker<>(request, DliMeta.countResourcesByTags, hcClient);
     }
 
     /**
@@ -1669,6 +1771,64 @@ public class DliAsyncClient {
     }
 
     /**
+     * 查询资源实例列表
+     *
+     * 查询资源实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagsRequest 请求对象
+     * @return CompletableFuture<ListResourcesByTagsResponse>
+     */
+    public CompletableFuture<ListResourcesByTagsResponse> listResourcesByTagsAsync(ListResourcesByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.listResourcesByTags);
+    }
+
+    /**
+     * 查询资源实例列表
+     *
+     * 查询资源实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesByTagsRequest 请求对象
+     * @return AsyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse>
+     */
+    public AsyncInvoker<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTagsAsyncInvoker(
+        ListResourcesByTagsRequest request) {
+        return new AsyncInvoker<>(request, DliMeta.listResourcesByTags, hcClient);
+    }
+
+    /**
+     * 查询指定资源类型的标签信息
+     *
+     * 查询指定资源类型的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesTagsRequest 请求对象
+     * @return CompletableFuture<ListResourcesTagsResponse>
+     */
+    public CompletableFuture<ListResourcesTagsResponse> listResourcesTagsAsync(ListResourcesTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.listResourcesTags);
+    }
+
+    /**
+     * 查询指定资源类型的标签信息
+     *
+     * 查询指定资源类型的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesTagsRequest 请求对象
+     * @return AsyncInvoker<ListResourcesTagsRequest, ListResourcesTagsResponse>
+     */
+    public AsyncInvoker<ListResourcesTagsRequest, ListResourcesTagsResponse> listResourcesTagsAsyncInvoker(
+        ListResourcesTagsRequest request) {
+        return new AsyncInvoker<>(request, DliMeta.listResourcesTags, hcClient);
+    }
+
+    /**
      * 查看表的用户权限
      *
      * 该API用于查询指定用户在表上的权限。
@@ -2154,6 +2314,35 @@ public class DliAsyncClient {
      */
     public AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaAsyncInvoker(ShowQuotaRequest request) {
         return new AsyncInvoker<>(request, DliMeta.showQuota, hcClient);
+    }
+
+    /**
+     * 查询指定资源实例的标签信息
+     *
+     * 查询指定资源实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceTagsRequest 请求对象
+     * @return CompletableFuture<ShowResourceTagsResponse>
+     */
+    public CompletableFuture<ShowResourceTagsResponse> showResourceTagsAsync(ShowResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.showResourceTags);
+    }
+
+    /**
+     * 查询指定资源实例的标签信息
+     *
+     * 查询指定资源实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse>
+     */
+    public AsyncInvoker<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTagsAsyncInvoker(
+        ShowResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, DliMeta.showResourceTags, hcClient);
     }
 
     /**

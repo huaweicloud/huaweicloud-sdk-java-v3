@@ -95,6 +95,11 @@ public class ListMessagesRequest {
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queue")
+
+    private String queue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private String limit;
@@ -173,6 +178,23 @@ public class ListMessagesRequest {
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    public ListMessagesRequest withQueue(String queue) {
+        this.queue = queue;
+        return this;
+    }
+
+    /**
+     * 队列。
+     * @return queue
+     */
+    public String getQueue() {
+        return queue;
+    }
+
+    public void setQueue(String queue) {
+        this.queue = queue;
     }
 
     public ListMessagesRequest withLimit(String limit) {
@@ -287,15 +309,15 @@ public class ListMessagesRequest {
         }
         ListMessagesRequest that = (ListMessagesRequest) obj;
         return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.topic, that.topic) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.key, that.key)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.msgId, that.msgId);
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.queue, that.queue)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.msgId, that.msgId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, instanceId, topic, limit, offset, key, startTime, endTime, msgId);
+        return Objects.hash(engine, instanceId, topic, queue, limit, offset, key, startTime, endTime, msgId);
     }
 
     @Override
@@ -305,6 +327,7 @@ public class ListMessagesRequest {
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
+        sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");

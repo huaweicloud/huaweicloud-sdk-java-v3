@@ -95,6 +95,11 @@ public class NodeSpecUpdate {
 
     private NodePoolUpdateExtendParam extendParam;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicIP")
+
+    private NodeEIPSpec publicIP;
+
     public NodeSpecUpdate withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -510,6 +515,32 @@ public class NodeSpecUpdate {
         this.extendParam = extendParam;
     }
 
+    public NodeSpecUpdate withPublicIP(NodeEIPSpec publicIP) {
+        this.publicIP = publicIP;
+        return this;
+    }
+
+    public NodeSpecUpdate withPublicIP(Consumer<NodeEIPSpec> publicIPSetter) {
+        if (this.publicIP == null) {
+            this.publicIP = new NodeEIPSpec();
+            publicIPSetter.accept(this.publicIP);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get publicIP
+     * @return publicIP
+     */
+    public NodeEIPSpec getPublicIP() {
+        return publicIP;
+    }
+
+    public void setPublicIP(NodeEIPSpec publicIP) {
+        this.publicIP = publicIP;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -529,7 +560,7 @@ public class NodeSpecUpdate {
             && Objects.equals(this.initializedConditions, that.initializedConditions)
             && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID)
             && Objects.equals(this.nodeNicSpecUpdate, that.nodeNicSpecUpdate)
-            && Objects.equals(this.extendParam, that.extendParam);
+            && Objects.equals(this.extendParam, that.extendParam) && Objects.equals(this.publicIP, that.publicIP);
     }
 
     @Override
@@ -549,7 +580,8 @@ public class NodeSpecUpdate {
             initializedConditions,
             serverEnterpriseProjectID,
             nodeNicSpecUpdate,
-            extendParam);
+            extendParam,
+            publicIP);
     }
 
     @Override
@@ -572,6 +604,7 @@ public class NodeSpecUpdate {
         sb.append("    serverEnterpriseProjectID: ").append(toIndentedString(serverEnterpriseProjectID)).append("\n");
         sb.append("    nodeNicSpecUpdate: ").append(toIndentedString(nodeNicSpecUpdate)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
+        sb.append("    publicIP: ").append(toIndentedString(publicIP)).append("\n");
         sb.append("}");
         return sb.toString();
     }

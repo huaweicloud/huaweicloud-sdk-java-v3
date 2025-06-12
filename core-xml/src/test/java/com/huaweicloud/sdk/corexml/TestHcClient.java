@@ -69,7 +69,7 @@ public class TestHcClient {
                 .withStatus(200);
 
         MappingBuilder aReturn = WireMock.post("/test-xml")
-                .withHeader("Content-Type", WireMock.equalTo("application/xml"))
+                .withHeader("Content-Type", WireMock.containing("application/xml"))
                 .withRequestBody(equalToXml("<Body><obj><str>value</str></obj></Body>"))
                 .willReturn(resp);
 

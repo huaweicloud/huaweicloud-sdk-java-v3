@@ -11,6 +11,9 @@ import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumeRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchResizeVolumesResponse;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferRequest;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferResponse;
@@ -140,6 +143,29 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteVolumeTagsRequestBody.class),
             f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getBody, BatchDeleteVolumeTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchResizeVolumesRequest, BatchResizeVolumesResponse> batchResizeVolumes =
+        genForBatchResizeVolumes();
+
+    private static HttpRequestDef<BatchResizeVolumesRequest, BatchResizeVolumesResponse> genForBatchResizeVolumes() {
+        // basic
+        HttpRequestDef.Builder<BatchResizeVolumesRequest, BatchResizeVolumesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchResizeVolumesRequest.class, BatchResizeVolumesResponse.class)
+                .withName("BatchResizeVolumes")
+                .withUri("/v5/{project_id}/volumes/batch-extend")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchResizeVolumeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchResizeVolumeRequestBody.class),
+            f -> f.withMarshaller(BatchResizeVolumesRequest::getBody, BatchResizeVolumesRequest::setBody));
 
         // response
 

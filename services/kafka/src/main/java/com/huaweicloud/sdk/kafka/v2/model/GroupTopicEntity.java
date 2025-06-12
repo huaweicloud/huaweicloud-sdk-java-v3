@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 消费组TOPIC详情
+ * 消费组Topic详情
  */
 public class GroupTopicEntity {
 
@@ -31,7 +31,7 @@ public class GroupTopicEntity {
     }
 
     /**
-     * TOPIC名称
+     * Topic名称
      * @return topic
      */
     public String getTopic() {

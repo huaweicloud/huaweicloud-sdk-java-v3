@@ -25,6 +25,11 @@ public class VpnAccessPolicy {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_group_id")
 
     private String userGroupId;
@@ -86,6 +91,23 @@ public class VpnAccessPolicy {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public VpnAccessPolicy withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 访问策略类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public VpnAccessPolicy withUserGroupId(String userGroupId) {
@@ -216,7 +238,7 @@ public class VpnAccessPolicy {
         }
         VpnAccessPolicy that = (VpnAccessPolicy) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.userGroupId, that.userGroupId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.userGroupId, that.userGroupId)
             && Objects.equals(this.userGroupName, that.userGroupName)
             && Objects.equals(this.description, that.description) && Objects.equals(this.destIpCidrs, that.destIpCidrs)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
@@ -224,7 +246,7 @@ public class VpnAccessPolicy {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, userGroupId, userGroupName, description, destIpCidrs, createdAt, updatedAt);
+        return Objects.hash(id, name, type, userGroupId, userGroupName, description, destIpCidrs, createdAt, updatedAt);
     }
 
     @Override
@@ -233,6 +255,7 @@ public class VpnAccessPolicy {
         sb.append("class VpnAccessPolicy {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    userGroupId: ").append(toIndentedString(userGroupId)).append("\n");
         sb.append("    userGroupName: ").append(toIndentedString(userGroupName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

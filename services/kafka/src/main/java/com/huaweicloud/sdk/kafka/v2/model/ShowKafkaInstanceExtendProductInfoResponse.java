@@ -35,7 +35,7 @@ public class ShowKafkaInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 消息引擎类型:kafka。
+     * 消息引擎类型：kafka。
      * @return engine
      */
     public String getEngine() {

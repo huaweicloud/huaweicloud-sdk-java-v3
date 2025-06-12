@@ -40,6 +40,16 @@ public class ListStackEventsRequest {
 
     private String field;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListStackEventsRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
         return this;
@@ -142,6 +152,42 @@ public class ListStackEventsRequest {
         this.field = field;
     }
 
+    public ListStackEventsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页标记。当一页无法返回所有结果，上一次的请求将返回next_marker以指引还有更多页数，用户可以将next_marker中的值放到此处以查询下一页的信息。此marker只能用于与上一请求指定的相同参数的请求。不指定时默认从第一页开始查询。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListStackEventsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的最多结果数量
+     * minimum: 10
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +200,13 @@ public class ListStackEventsRequest {
         return Objects.equals(this.clientRequestId, that.clientRequestId)
             && Objects.equals(this.stackName, that.stackName) && Objects.equals(this.stackId, that.stackId)
             && Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.filter, that.filter)
-            && Objects.equals(this.field, that.field);
+            && Objects.equals(this.field, that.field) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientRequestId, stackName, stackId, deploymentId, filter, field);
+        return Objects.hash(clientRequestId, stackName, stackId, deploymentId, filter, field, marker, limit);
     }
 
     @Override
@@ -172,6 +219,8 @@ public class ListStackEventsRequest {
         sb.append("    deploymentId: ").append(toIndentedString(deploymentId)).append("\n");
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    field: ").append(toIndentedString(field)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -116,6 +116,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsReq;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
@@ -217,6 +219,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
+import com.huaweicloud.sdk.kafka.v2.model.SmartConnectTaskEntity;
+import com.huaweicloud.sdk.kafka.v2.model.SmartConnectValidateEntity;
 import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicReq;
@@ -248,6 +252,8 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateUserReq;
+import com.huaweicloud.sdk.kafka.v2.model.ValidateConnectorConnectivityRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ValidateConnectorConnectivityResponse;
 
 import java.util.List;
 
@@ -3441,6 +3447,40 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyConnectorTaskRequest, ModifyConnectorTaskResponse> modifyConnectorTask =
+        genForModifyConnectorTask();
+
+    private static HttpRequestDef<ModifyConnectorTaskRequest, ModifyConnectorTaskResponse> genForModifyConnectorTask() {
+        // basic
+        HttpRequestDef.Builder<ModifyConnectorTaskRequest, ModifyConnectorTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyConnectorTaskRequest.class, ModifyConnectorTaskResponse.class)
+                .withName("ModifyConnectorTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyConnectorTaskRequest::getInstanceId,
+                ModifyConnectorTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyConnectorTaskRequest::getTaskId, ModifyConnectorTaskRequest::setTaskId));
+        builder.<SmartConnectTaskEntity>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SmartConnectTaskEntity.class),
+            f -> f.withMarshaller(ModifyConnectorTaskRequest::getBody, ModifyConnectorTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PauseConnectorTaskRequest, PauseConnectorTaskResponse> pauseConnectorTask =
         genForPauseConnectorTask();
 
@@ -3582,6 +3622,39 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConnectorTaskRequest::getTaskId, ShowConnectorTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateConnectorConnectivityRequest, ValidateConnectorConnectivityResponse> validateConnectorConnectivity =
+        genForValidateConnectorConnectivity();
+
+    private static HttpRequestDef<ValidateConnectorConnectivityRequest, ValidateConnectorConnectivityResponse> genForValidateConnectorConnectivity() {
+        // basic
+        HttpRequestDef.Builder<ValidateConnectorConnectivityRequest, ValidateConnectorConnectivityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ValidateConnectorConnectivityRequest.class,
+                    ValidateConnectorConnectivityResponse.class)
+                .withName("ValidateConnectorConnectivity")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector/validate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateConnectorConnectivityRequest::getInstanceId,
+                ValidateConnectorConnectivityRequest::setInstanceId));
+        builder.<SmartConnectValidateEntity>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SmartConnectValidateEntity.class),
+            f -> f.withMarshaller(ValidateConnectorConnectivityRequest::getBody,
+                ValidateConnectorConnectivityRequest::setBody));
 
         // response
 

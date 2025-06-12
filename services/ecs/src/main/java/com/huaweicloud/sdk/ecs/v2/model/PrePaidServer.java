@@ -136,9 +136,19 @@ public class PrePaidServer {
     private CpuOptions cpuOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_options")
+
+    private SecurityOptions securityOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_console_options")
 
     private SerialConsoleOptions serialConsoleOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata_options")
+
+    private UpdateServerMetadataOptionsRequestBody metadataOptions;
 
     public PrePaidServer withAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
@@ -691,6 +701,32 @@ public class PrePaidServer {
         this.cpuOptions = cpuOptions;
     }
 
+    public PrePaidServer withSecurityOptions(SecurityOptions securityOptions) {
+        this.securityOptions = securityOptions;
+        return this;
+    }
+
+    public PrePaidServer withSecurityOptions(Consumer<SecurityOptions> securityOptionsSetter) {
+        if (this.securityOptions == null) {
+            this.securityOptions = new SecurityOptions();
+            securityOptionsSetter.accept(this.securityOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get securityOptions
+     * @return securityOptions
+     */
+    public SecurityOptions getSecurityOptions() {
+        return securityOptions;
+    }
+
+    public void setSecurityOptions(SecurityOptions securityOptions) {
+        this.securityOptions = securityOptions;
+    }
+
     public PrePaidServer withSerialConsoleOptions(SerialConsoleOptions serialConsoleOptions) {
         this.serialConsoleOptions = serialConsoleOptions;
         return this;
@@ -717,6 +753,32 @@ public class PrePaidServer {
         this.serialConsoleOptions = serialConsoleOptions;
     }
 
+    public PrePaidServer withMetadataOptions(UpdateServerMetadataOptionsRequestBody metadataOptions) {
+        this.metadataOptions = metadataOptions;
+        return this;
+    }
+
+    public PrePaidServer withMetadataOptions(Consumer<UpdateServerMetadataOptionsRequestBody> metadataOptionsSetter) {
+        if (this.metadataOptions == null) {
+            this.metadataOptions = new UpdateServerMetadataOptionsRequestBody();
+            metadataOptionsSetter.accept(this.metadataOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadataOptions
+     * @return metadataOptions
+     */
+    public UpdateServerMetadataOptionsRequestBody getMetadataOptions() {
+        return metadataOptions;
+    }
+
+    public void setMetadataOptions(UpdateServerMetadataOptionsRequestBody metadataOptions) {
+        this.metadataOptions = metadataOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -741,7 +803,9 @@ public class PrePaidServer {
             && Objects.equals(this.osSchedulerHints, that.osSchedulerHints) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.serverTags, that.serverTags) && Objects.equals(this.description, that.description)
             && Objects.equals(this.cpuOptions, that.cpuOptions)
-            && Objects.equals(this.serialConsoleOptions, that.serialConsoleOptions);
+            && Objects.equals(this.securityOptions, that.securityOptions)
+            && Objects.equals(this.serialConsoleOptions, that.serialConsoleOptions)
+            && Objects.equals(this.metadataOptions, that.metadataOptions);
     }
 
     @Override
@@ -770,7 +834,9 @@ public class PrePaidServer {
             serverTags,
             description,
             cpuOptions,
-            serialConsoleOptions);
+            securityOptions,
+            serialConsoleOptions,
+            metadataOptions);
     }
 
     @Override
@@ -801,7 +867,9 @@ public class PrePaidServer {
         sb.append("    serverTags: ").append(toIndentedString(serverTags)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
+        sb.append("    securityOptions: ").append(toIndentedString(securityOptions)).append("\n");
         sb.append("    serialConsoleOptions: ").append(toIndentedString(serialConsoleOptions)).append("\n");
+        sb.append("    metadataOptions: ").append(toIndentedString(metadataOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

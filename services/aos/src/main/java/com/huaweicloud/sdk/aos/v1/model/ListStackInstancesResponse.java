@@ -19,6 +19,11 @@ public class ListStackInstancesResponse extends SdkResponse {
 
     private List<StackInstance> stackInstances = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListStackInstancesResponse withStackInstances(List<StackInstance> stackInstances) {
         this.stackInstances = stackInstances;
         return this;
@@ -52,6 +57,32 @@ public class ListStackInstancesResponse extends SdkResponse {
         this.stackInstances = stackInstances;
     }
 
+    public ListStackInstancesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListStackInstancesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ListStackInstancesResponse extends SdkResponse {
             return false;
         }
         ListStackInstancesResponse that = (ListStackInstancesResponse) obj;
-        return Objects.equals(this.stackInstances, that.stackInstances);
+        return Objects.equals(this.stackInstances, that.stackInstances) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(stackInstances);
+        return Objects.hash(stackInstances, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ListStackInstancesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListStackInstancesResponse {\n");
         sb.append("    stackInstances: ").append(toIndentedString(stackInstances)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

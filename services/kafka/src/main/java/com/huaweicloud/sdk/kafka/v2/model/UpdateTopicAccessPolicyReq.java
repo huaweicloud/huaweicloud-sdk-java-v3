@@ -40,7 +40,7 @@ public class UpdateTopicAccessPolicyReq {
     }
 
     /**
-     * topic列表。
+     * Topic列表。
      * @return topics
      */
     public List<AccessPolicyTopicEntity> getTopics() {

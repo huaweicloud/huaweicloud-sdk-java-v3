@@ -16,7 +16,7 @@ import java.util.Objects;
 public class UpdateTaskStatusReq {
 
     /**
-     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 skip:跳过一致性校验子任务 clear:清理快照资源
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 skip:跳过一致性校验子任务 clear:清理快照资源 migration_test: 开始迁移演练
      */
     public static final class OperationEnum {
 
@@ -60,6 +60,11 @@ public class UpdateTaskStatusReq {
          */
         public static final OperationEnum CLEAR = new OperationEnum("clear");
 
+        /**
+         * Enum MIGRATION_TEST for value: "migration_test"
+         */
+        public static final OperationEnum MIGRATION_TEST = new OperationEnum("migration_test");
+
         private static final Map<String, OperationEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, OperationEnum> createStaticFields() {
@@ -72,6 +77,7 @@ public class UpdateTaskStatusReq {
             map.put("network_check", NETWORK_CHECK);
             map.put("skip", SKIP);
             map.put("clear", CLEAR);
+            map.put("migration_test", MIGRATION_TEST);
             return Collections.unmodifiableMap(map);
         }
 
@@ -147,7 +153,7 @@ public class UpdateTaskStatusReq {
     }
 
     /**
-     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 skip:跳过一致性校验子任务 clear:清理快照资源
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 skip:跳过一致性校验子任务 clear:清理快照资源 migration_test: 开始迁移演练
      * @return operation
      */
     public OperationEnum getOperation() {

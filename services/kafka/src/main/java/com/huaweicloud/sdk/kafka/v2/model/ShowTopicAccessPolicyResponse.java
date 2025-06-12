@@ -35,7 +35,7 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
     }
 
     /**
-     * topic名称。
+     * Topic名称。
      * @return name
      */
     public String getName() {
@@ -52,7 +52,7 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
     }
 
     /**
-     * topic类型。
+     * Topic类型。
      * @return topicType
      */
     public Integer getTopicType() {

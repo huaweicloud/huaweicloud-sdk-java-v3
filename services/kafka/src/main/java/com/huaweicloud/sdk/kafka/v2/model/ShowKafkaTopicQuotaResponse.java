@@ -15,41 +15,63 @@ import java.util.function.Consumer;
 public class ShowKafkaTopicQuotaResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "partitions")
+    @JsonProperty(value = "quotas")
 
-    private List<KafkaTopicQuota> partitions = null;
+    private List<KafkaTopicQuota> quotas = null;
 
-    public ShowKafkaTopicQuotaResponse withPartitions(List<KafkaTopicQuota> partitions) {
-        this.partitions = partitions;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    public ShowKafkaTopicQuotaResponse withQuotas(List<KafkaTopicQuota> quotas) {
+        this.quotas = quotas;
         return this;
     }
 
-    public ShowKafkaTopicQuotaResponse addPartitionsItem(KafkaTopicQuota partitionsItem) {
-        if (this.partitions == null) {
-            this.partitions = new ArrayList<>();
+    public ShowKafkaTopicQuotaResponse addQuotasItem(KafkaTopicQuota quotasItem) {
+        if (this.quotas == null) {
+            this.quotas = new ArrayList<>();
         }
-        this.partitions.add(partitionsItem);
+        this.quotas.add(quotasItem);
         return this;
     }
 
-    public ShowKafkaTopicQuotaResponse withPartitions(Consumer<List<KafkaTopicQuota>> partitionsSetter) {
-        if (this.partitions == null) {
-            this.partitions = new ArrayList<>();
+    public ShowKafkaTopicQuotaResponse withQuotas(Consumer<List<KafkaTopicQuota>> quotasSetter) {
+        if (this.quotas == null) {
+            this.quotas = new ArrayList<>();
         }
-        partitionsSetter.accept(this.partitions);
+        quotasSetter.accept(this.quotas);
         return this;
     }
 
     /**
-     * topic流控配置
-     * @return partitions
+     * Topic流控配置
+     * @return quotas
      */
-    public List<KafkaTopicQuota> getPartitions() {
-        return partitions;
+    public List<KafkaTopicQuota> getQuotas() {
+        return quotas;
     }
 
-    public void setPartitions(List<KafkaTopicQuota> partitions) {
-        this.partitions = partitions;
+    public void setQuotas(List<KafkaTopicQuota> quotas) {
+        this.quotas = quotas;
+    }
+
+    public ShowKafkaTopicQuotaResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * Topic流控数量
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     @Override
@@ -61,19 +83,20 @@ public class ShowKafkaTopicQuotaResponse extends SdkResponse {
             return false;
         }
         ShowKafkaTopicQuotaResponse that = (ShowKafkaTopicQuotaResponse) obj;
-        return Objects.equals(this.partitions, that.partitions);
+        return Objects.equals(this.quotas, that.quotas) && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(partitions);
+        return Objects.hash(quotas, count);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowKafkaTopicQuotaResponse {\n");
-        sb.append("    partitions: ").append(toIndentedString(partitions)).append("\n");
+        sb.append("    quotas: ").append(toIndentedString(quotas)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

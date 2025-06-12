@@ -19,6 +19,11 @@ public class ListPrivateModuleVersionsResponse extends SdkResponse {
 
     private List<PrivateModuleVersionSummary> versions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListPrivateModuleVersionsResponse withVersions(List<PrivateModuleVersionSummary> versions) {
         this.versions = versions;
         return this;
@@ -52,6 +57,32 @@ public class ListPrivateModuleVersionsResponse extends SdkResponse {
         this.versions = versions;
     }
 
+    public ListPrivateModuleVersionsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListPrivateModuleVersionsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ListPrivateModuleVersionsResponse extends SdkResponse {
             return false;
         }
         ListPrivateModuleVersionsResponse that = (ListPrivateModuleVersionsResponse) obj;
-        return Objects.equals(this.versions, that.versions);
+        return Objects.equals(this.versions, that.versions) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(versions);
+        return Objects.hash(versions, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ListPrivateModuleVersionsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPrivateModuleVersionsResponse {\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

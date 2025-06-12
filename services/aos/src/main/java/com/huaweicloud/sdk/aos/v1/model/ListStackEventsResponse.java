@@ -19,6 +19,11 @@ public class ListStackEventsResponse extends SdkResponse {
 
     private List<StackEvent> stackEvents = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListStackEventsResponse withStackEvents(List<StackEvent> stackEvents) {
         this.stackEvents = stackEvents;
         return this;
@@ -52,6 +57,32 @@ public class ListStackEventsResponse extends SdkResponse {
         this.stackEvents = stackEvents;
     }
 
+    public ListStackEventsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListStackEventsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ListStackEventsResponse extends SdkResponse {
             return false;
         }
         ListStackEventsResponse that = (ListStackEventsResponse) obj;
-        return Objects.equals(this.stackEvents, that.stackEvents);
+        return Objects.equals(this.stackEvents, that.stackEvents) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(stackEvents);
+        return Objects.hash(stackEvents, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ListStackEventsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListStackEventsResponse {\n");
         sb.append("    stackEvents: ").append(toIndentedString(stackEvents)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

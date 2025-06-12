@@ -399,14 +399,14 @@ public class ListAlertRsp {
     private String closeTime;
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      */
     public static final class IpdrrPhaseEnum {
 
         /**
-         * Enum PREPARTION for value: "Prepartion"
+         * Enum PREPARATION for value: "Preparation"
          */
-        public static final IpdrrPhaseEnum PREPARTION = new IpdrrPhaseEnum("Prepartion");
+        public static final IpdrrPhaseEnum PREPARATION = new IpdrrPhaseEnum("Preparation");
 
         /**
          * Enum DETECTION_AND_ANALYSIS for value: "Detection and Analysis"
@@ -414,10 +414,10 @@ public class ListAlertRsp {
         public static final IpdrrPhaseEnum DETECTION_AND_ANALYSIS = new IpdrrPhaseEnum("Detection and Analysis");
 
         /**
-         * Enum CONTAINM_ERADICATION_RECOVERY for value: "Containm，Eradication& Recovery"
+         * Enum CONTAIN_ERADICATION_RECOVERY for value: "Contain，Eradication& Recovery"
          */
-        public static final IpdrrPhaseEnum CONTAINM_ERADICATION_RECOVERY =
-            new IpdrrPhaseEnum("Containm，Eradication& Recovery");
+        public static final IpdrrPhaseEnum CONTAIN_ERADICATION_RECOVERY =
+            new IpdrrPhaseEnum("Contain，Eradication& Recovery");
 
         /**
          * Enum POST_INCIDENT_ACTIVITY for value: "Post-Incident-Activity"
@@ -428,9 +428,9 @@ public class ListAlertRsp {
 
         private static Map<String, IpdrrPhaseEnum> createStaticFields() {
             Map<String, IpdrrPhaseEnum> map = new HashMap<>();
-            map.put("Prepartion", PREPARTION);
+            map.put("Preparation", PREPARATION);
             map.put("Detection and Analysis", DETECTION_AND_ANALYSIS);
-            map.put("Containm，Eradication& Recovery", CONTAINM_ERADICATION_RECOVERY);
+            map.put("Contain，Eradication& Recovery", CONTAIN_ERADICATION_RECOVERY);
             map.put("Post-Incident-Activity", POST_INCIDENT_ACTIVITY);
             return Collections.unmodifiableMap(map);
         }
@@ -487,14 +487,14 @@ public class ListAlertRsp {
     private IpdrrPhaseEnum ipdrrPhase;
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      */
     public static final class ChopPhaseEnum {
 
         /**
-         * Enum PREPARTION for value: "Prepartion"
+         * Enum PREPARATION for value: "Preparation"
          */
-        public static final ChopPhaseEnum PREPARTION = new ChopPhaseEnum("Prepartion");
+        public static final ChopPhaseEnum PREPARATION = new ChopPhaseEnum("Preparation");
 
         /**
          * Enum DETECTION_AND_ANALYSIS for value: "Detection and Analysis"
@@ -502,10 +502,10 @@ public class ListAlertRsp {
         public static final ChopPhaseEnum DETECTION_AND_ANALYSIS = new ChopPhaseEnum("Detection and Analysis");
 
         /**
-         * Enum CONTAINM_ERADICATION_RECOVERY for value: "Containm，Eradication& Recovery"
+         * Enum CONTAIN_ERADICATION_RECOVERY for value: "Contain，Eradication& Recovery"
          */
-        public static final ChopPhaseEnum CONTAINM_ERADICATION_RECOVERY =
-            new ChopPhaseEnum("Containm，Eradication& Recovery");
+        public static final ChopPhaseEnum CONTAIN_ERADICATION_RECOVERY =
+            new ChopPhaseEnum("Contain，Eradication& Recovery");
 
         /**
          * Enum POST_INCIDENT_ACTIVITY for value: "Post-Incident-Activity"
@@ -516,9 +516,9 @@ public class ListAlertRsp {
 
         private static Map<String, ChopPhaseEnum> createStaticFields() {
             Map<String, ChopPhaseEnum> map = new HashMap<>();
-            map.put("Prepartion", PREPARTION);
+            map.put("Preparation", PREPARATION);
             map.put("Detection and Analysis", DETECTION_AND_ANALYSIS);
-            map.put("Containm，Eradication& Recovery", CONTAINM_ERADICATION_RECOVERY);
+            map.put("Contain，Eradication& Recovery", CONTAIN_ERADICATION_RECOVERY);
             map.put("Post-Incident-Activity", POST_INCIDENT_ACTIVITY);
             return Collections.unmodifiableMap(map);
         }
@@ -575,14 +575,14 @@ public class ListAlertRsp {
     private ChopPhaseEnum chopPhase;
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      */
     public static final class PpdrPhaseEnum {
 
         /**
-         * Enum PREPARTION for value: "Prepartion"
+         * Enum PREPARATION for value: "Preparation"
          */
-        public static final PpdrPhaseEnum PREPARTION = new PpdrPhaseEnum("Prepartion");
+        public static final PpdrPhaseEnum PREPARATION = new PpdrPhaseEnum("Preparation");
 
         /**
          * Enum DETECTION_AND_ANALYSIS for value: "Detection and Analysis"
@@ -590,10 +590,10 @@ public class ListAlertRsp {
         public static final PpdrPhaseEnum DETECTION_AND_ANALYSIS = new PpdrPhaseEnum("Detection and Analysis");
 
         /**
-         * Enum CONTAINM_ERADICATION_RECOVERY for value: "Containm，Eradication& Recovery"
+         * Enum CONTAIN_ERADICATION_RECOVERY for value: "Contain，Eradication& Recovery"
          */
-        public static final PpdrPhaseEnum CONTAINM_ERADICATION_RECOVERY =
-            new PpdrPhaseEnum("Containm，Eradication& Recovery");
+        public static final PpdrPhaseEnum CONTAIN_ERADICATION_RECOVERY =
+            new PpdrPhaseEnum("Contain，Eradication& Recovery");
 
         /**
          * Enum POST_INCIDENT_ACTIVITY for value: "Post-Incident-Activity"
@@ -604,9 +604,9 @@ public class ListAlertRsp {
 
         private static Map<String, PpdrPhaseEnum> createStaticFields() {
             Map<String, PpdrPhaseEnum> map = new HashMap<>();
-            map.put("Prepartion", PREPARTION);
+            map.put("Preparation", PREPARATION);
             map.put("Detection and Analysis", DETECTION_AND_ANALYSIS);
-            map.put("Containm，Eradication& Recovery", CONTAINM_ERADICATION_RECOVERY);
+            map.put("Contain，Eradication& Recovery", CONTAIN_ERADICATION_RECOVERY);
             map.put("Post-Incident-Activity", POST_INCIDENT_ACTIVITY);
             return Collections.unmodifiableMap(map);
         }
@@ -775,6 +775,21 @@ public class ListAlertRsp {
     private String closeComment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alert_list")
+
+    private List<String> alertList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incident_list")
+
+    private List<String> incidentList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "indicator_list")
+
+    private List<String> indicatorList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "malware")
 
     private ShowAlertRspMalware malware;
@@ -800,6 +815,26 @@ public class ListAlertRsp {
     private List<AlertFileInfo> fileInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_id")
+
+    private String originId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ttd")
+
+    private Integer ttd;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ttr")
+
+    private Integer ttr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_closed")
+
+    private String isAutoClosed;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_alert_table")
 
     private Object systemAlertTable;
@@ -810,7 +845,7 @@ public class ListAlertRsp {
     }
 
     /**
-     * 告警对象的版本，该字段的值必须为华为云SSA服务确定的官方发布版本之一
+     * 告警对象的版本，该字段的值必须为云SSA服务确定的官方发布版本之一
      * @return version
      */
     public String getVersion() {
@@ -1360,7 +1395,7 @@ public class ListAlertRsp {
     }
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      * @return ipdrrPhase
      */
     public IpdrrPhaseEnum getIpdrrPhase() {
@@ -1377,7 +1412,7 @@ public class ListAlertRsp {
     }
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      * @return chopPhase
      */
     public ChopPhaseEnum getChopPhase() {
@@ -1394,7 +1429,7 @@ public class ListAlertRsp {
     }
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      * @return ppdrPhase
      */
     public PpdrPhaseEnum getPpdrPhase() {
@@ -1505,6 +1540,105 @@ public class ListAlertRsp {
 
     public void setCloseComment(String closeComment) {
         this.closeComment = closeComment;
+    }
+
+    public ListAlertRsp withAlertList(List<String> alertList) {
+        this.alertList = alertList;
+        return this;
+    }
+
+    public ListAlertRsp addAlertListItem(String alertListItem) {
+        if (this.alertList == null) {
+            this.alertList = new ArrayList<>();
+        }
+        this.alertList.add(alertListItem);
+        return this;
+    }
+
+    public ListAlertRsp withAlertList(Consumer<List<String>> alertListSetter) {
+        if (this.alertList == null) {
+            this.alertList = new ArrayList<>();
+        }
+        alertListSetter.accept(this.alertList);
+        return this;
+    }
+
+    /**
+     * 告警id列表，告警/事件/指标关联的告警列表
+     * @return alertList
+     */
+    public List<String> getAlertList() {
+        return alertList;
+    }
+
+    public void setAlertList(List<String> alertList) {
+        this.alertList = alertList;
+    }
+
+    public ListAlertRsp withIncidentList(List<String> incidentList) {
+        this.incidentList = incidentList;
+        return this;
+    }
+
+    public ListAlertRsp addIncidentListItem(String incidentListItem) {
+        if (this.incidentList == null) {
+            this.incidentList = new ArrayList<>();
+        }
+        this.incidentList.add(incidentListItem);
+        return this;
+    }
+
+    public ListAlertRsp withIncidentList(Consumer<List<String>> incidentListSetter) {
+        if (this.incidentList == null) {
+            this.incidentList = new ArrayList<>();
+        }
+        incidentListSetter.accept(this.incidentList);
+        return this;
+    }
+
+    /**
+     * 事件id列表，告警/事件/指标关联的告警列表
+     * @return incidentList
+     */
+    public List<String> getIncidentList() {
+        return incidentList;
+    }
+
+    public void setIncidentList(List<String> incidentList) {
+        this.incidentList = incidentList;
+    }
+
+    public ListAlertRsp withIndicatorList(List<String> indicatorList) {
+        this.indicatorList = indicatorList;
+        return this;
+    }
+
+    public ListAlertRsp addIndicatorListItem(String indicatorListItem) {
+        if (this.indicatorList == null) {
+            this.indicatorList = new ArrayList<>();
+        }
+        this.indicatorList.add(indicatorListItem);
+        return this;
+    }
+
+    public ListAlertRsp withIndicatorList(Consumer<List<String>> indicatorListSetter) {
+        if (this.indicatorList == null) {
+            this.indicatorList = new ArrayList<>();
+        }
+        indicatorListSetter.accept(this.indicatorList);
+        return this;
+    }
+
+    /**
+     * 指标列表，告警/事件关联的指标列表
+     * @return indicatorList
+     */
+    public List<String> getIndicatorList() {
+        return indicatorList;
+    }
+
+    public void setIndicatorList(List<String> indicatorList) {
+        this.indicatorList = indicatorList;
     }
 
     public ListAlertRsp withMalware(ShowAlertRspMalware malware) {
@@ -1649,6 +1783,78 @@ public class ListAlertRsp {
         this.fileInfo = fileInfo;
     }
 
+    public ListAlertRsp withOriginId(String originId) {
+        this.originId = originId;
+        return this;
+    }
+
+    /**
+     * 告警事件原始来源id，最大128个字符
+     * @return originId
+     */
+    public String getOriginId() {
+        return originId;
+    }
+
+    public void setOriginId(String originId) {
+        this.originId = originId;
+    }
+
+    public ListAlertRsp withTtd(Integer ttd) {
+        this.ttd = ttd;
+        return this;
+    }
+
+    /**
+     * 检测时间。单位：分钟
+     * minimum: 0
+     * maximum: 99999
+     * @return ttd
+     */
+    public Integer getTtd() {
+        return ttd;
+    }
+
+    public void setTtd(Integer ttd) {
+        this.ttd = ttd;
+    }
+
+    public ListAlertRsp withTtr(Integer ttr) {
+        this.ttr = ttr;
+        return this;
+    }
+
+    /**
+     * 响应时间。单位：分钟
+     * minimum: 0
+     * maximum: 99999
+     * @return ttr
+     */
+    public Integer getTtr() {
+        return ttr;
+    }
+
+    public void setTtr(Integer ttr) {
+        this.ttr = ttr;
+    }
+
+    public ListAlertRsp withIsAutoClosed(String isAutoClosed) {
+        this.isAutoClosed = isAutoClosed;
+        return this;
+    }
+
+    /**
+     * 是否自动关闭，取值范围： AutoClosed - SOAR自动化关闭 Manual - 人工关闭
+     * @return isAutoClosed
+     */
+    public String getIsAutoClosed() {
+        return isAutoClosed;
+    }
+
+    public void setIsAutoClosed(String isAutoClosed) {
+        this.isAutoClosed = isAutoClosed;
+    }
+
     public ListAlertRsp withSystemAlertTable(Object systemAlertTable) {
         this.systemAlertTable = systemAlertTable;
         return this;
@@ -1696,9 +1902,13 @@ public class ListAlertRsp {
             && Objects.equals(this.ppdrPhase, that.ppdrPhase) && Objects.equals(this.simulation, that.simulation)
             && Objects.equals(this.actor, that.actor) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.creator, that.creator) && Objects.equals(this.closeReason, that.closeReason)
-            && Objects.equals(this.closeComment, that.closeComment) && Objects.equals(this.malware, that.malware)
+            && Objects.equals(this.closeComment, that.closeComment) && Objects.equals(this.alertList, that.alertList)
+            && Objects.equals(this.incidentList, that.incidentList)
+            && Objects.equals(this.indicatorList, that.indicatorList) && Objects.equals(this.malware, that.malware)
             && Objects.equals(this.systemInfo, that.systemInfo) && Objects.equals(this.process, that.process)
             && Objects.equals(this.userInfo, that.userInfo) && Objects.equals(this.fileInfo, that.fileInfo)
+            && Objects.equals(this.originId, that.originId) && Objects.equals(this.ttd, that.ttd)
+            && Objects.equals(this.ttr, that.ttr) && Objects.equals(this.isAutoClosed, that.isAutoClosed)
             && Objects.equals(this.systemAlertTable, that.systemAlertTable);
     }
 
@@ -1741,11 +1951,18 @@ public class ListAlertRsp {
             creator,
             closeReason,
             closeComment,
+            alertList,
+            incidentList,
+            indicatorList,
             malware,
             systemInfo,
             process,
             userInfo,
             fileInfo,
+            originId,
+            ttd,
+            ttr,
+            isAutoClosed,
             systemAlertTable);
     }
 
@@ -1790,11 +2007,18 @@ public class ListAlertRsp {
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    closeReason: ").append(toIndentedString(closeReason)).append("\n");
         sb.append("    closeComment: ").append(toIndentedString(closeComment)).append("\n");
+        sb.append("    alertList: ").append(toIndentedString(alertList)).append("\n");
+        sb.append("    incidentList: ").append(toIndentedString(incidentList)).append("\n");
+        sb.append("    indicatorList: ").append(toIndentedString(indicatorList)).append("\n");
         sb.append("    malware: ").append(toIndentedString(malware)).append("\n");
         sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
         sb.append("    userInfo: ").append(toIndentedString(userInfo)).append("\n");
         sb.append("    fileInfo: ").append(toIndentedString(fileInfo)).append("\n");
+        sb.append("    originId: ").append(toIndentedString(originId)).append("\n");
+        sb.append("    ttd: ").append(toIndentedString(ttd)).append("\n");
+        sb.append("    ttr: ").append(toIndentedString(ttr)).append("\n");
+        sb.append("    isAutoClosed: ").append(toIndentedString(isAutoClosed)).append("\n");
         sb.append("    systemAlertTable: ").append(toIndentedString(systemAlertTable)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -235,7 +235,7 @@ public class KafkaMessageDiagnosisReportInfoEntity {
     }
 
     /**
-     * 该次诊断任务诊断的topic名称
+     * 该次诊断任务诊断的Topic名称
      * @return topicName
      */
     public String getTopicName() {

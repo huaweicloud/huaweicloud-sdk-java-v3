@@ -216,7 +216,7 @@ public class ProductPostPaid {
     }
 
     /**
-     * 用户购买云服务产品的资源规格，例如安全云脑中的的基础版，资源规格为secmaster.basic
+     * 用户购买云服务产品的资源规格，例如安全云脑中的基础版，资源规格为secmaster.basic
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {

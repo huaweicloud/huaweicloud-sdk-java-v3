@@ -319,7 +319,7 @@ public class UpdatePolicy {
     }
 
     /**
-     * 产品层级规则增加namespace（服务命名空间）和dimension_name（服务维度名称）指明生效策略归属。各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+     * 服务的命名空间，查询各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -336,7 +336,7 @@ public class UpdatePolicy {
     }
 
     /**
-     * 产品层级规则增加namespace（服务命名空间）和dimension_name（服务维度名称）指明生效策略归属，目前最大支持4个维度，各服务资源的指标维度名称可查看：“[服务维度名称](ces_03_0059.xml)”
+     * 指标维度名称。各服务资源的指标维度名称可查看：“[指标维度名称](ces_03_0059.xml)”。 约束与限制：    资源层级为子维度的告警规则，修改告警策略时，指标维度名必须与告警规则监控资源的维度保持一致。    资源层级为云产品的告警规则，修改告警策略时，指标维度名中首层维度必须与告警规则监控资源的维度保持一致。 举例：    ECS服务的资源层级为子维度、维度为云服务器的告警规则，需要设置维度名为：instance_id；    ECS服务的资源层级为云产品的告警规则时，维度名可以为：instance_id,disk
      * @return dimensionName
      */
     public String getDimensionName() {

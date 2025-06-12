@@ -246,6 +246,11 @@ public class ServerDetail {
     private CpuOptions cpuOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_options")
+
+    private SecurityOptions securityOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hypervisor")
 
     private Hypervisor hypervisor;
@@ -1168,6 +1173,32 @@ public class ServerDetail {
         this.cpuOptions = cpuOptions;
     }
 
+    public ServerDetail withSecurityOptions(SecurityOptions securityOptions) {
+        this.securityOptions = securityOptions;
+        return this;
+    }
+
+    public ServerDetail withSecurityOptions(Consumer<SecurityOptions> securityOptionsSetter) {
+        if (this.securityOptions == null) {
+            this.securityOptions = new SecurityOptions();
+            securityOptionsSetter.accept(this.securityOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get securityOptions
+     * @return securityOptions
+     */
+    public SecurityOptions getSecurityOptions() {
+        return securityOptions;
+    }
+
+    public void setSecurityOptions(SecurityOptions securityOptions) {
+        this.securityOptions = securityOptions;
+    }
+
     public ServerDetail withHypervisor(Hypervisor hypervisor) {
         this.hypervisor = hypervisor;
         return this;
@@ -1236,6 +1267,7 @@ public class ServerDetail {
             && Objects.equals(this.osSchedulerHints, that.osSchedulerHints)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.sysTags, that.sysTags) && Objects.equals(this.cpuOptions, that.cpuOptions)
+            && Objects.equals(this.securityOptions, that.securityOptions)
             && Objects.equals(this.hypervisor, that.hypervisor);
     }
 
@@ -1287,6 +1319,7 @@ public class ServerDetail {
             enterpriseProjectId,
             sysTags,
             cpuOptions,
+            securityOptions,
             hypervisor);
     }
 
@@ -1344,6 +1377,7 @@ public class ServerDetail {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
+        sb.append("    securityOptions: ").append(toIndentedString(securityOptions)).append("\n");
         sb.append("    hypervisor: ").append(toIndentedString(hypervisor)).append("\n");
         sb.append("}");
         return sb.toString();

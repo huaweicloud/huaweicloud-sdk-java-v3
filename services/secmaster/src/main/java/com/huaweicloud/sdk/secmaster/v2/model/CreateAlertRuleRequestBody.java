@@ -705,6 +705,8 @@ public class CreateAlertRuleRequestBody {
 
     /**
      * 执行次数
+     * minimum: 0
+     * maximum: 65535
      * @return accumulatedTimes
      */
     public Integer getAccumulatedTimes() {

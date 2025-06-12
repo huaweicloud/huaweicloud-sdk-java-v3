@@ -521,7 +521,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 消息引擎的版本。取值填写为：   [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc)   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc)   - 2.7   [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu)
+     * 消息引擎的版本。取值填写为：   [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc,cmcc)   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc,cmcc)   - 2.7   [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu)
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -690,7 +690,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ocb,hws_ocb,dt,ctc,sbc,fcs,hcs,g42,hk_g42,tm,hk_tm,hws_eu)[产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:cmcc)
+     * 产品ID。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
      * @return productId
      */
     public String getProductId() {
@@ -987,7 +987,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。  默认是false关闭。
+     * 是否打开kafka自动创建Topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。  默认是false关闭。
      * @return enableAutoTopic
      */
     public Boolean getEnableAutoTopic() {
@@ -1071,7 +1071,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * CPU架构。当前只支持X86架构[以及arm架构](tag:hcs,fcs)。  取值范围：   - X86   [- arm](tag:hcs,fcs)
+     * CPU架构。当前只支持X86架构[以及arm架构](tag:hcs,fcs,ctc)。  取值范围：   - X86   [- arm](tag:hcs,fcs,ctc)
      * @return archType
      */
     public String getArchType() {

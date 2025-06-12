@@ -124,7 +124,7 @@ public class ListInstanceConsumerGroupTopicsRequest {
     }
 
     /**
-     * 当次查询返回的最大topic个数，默认值为10，取值范围为1~50。
+     * 当次查询返回的最大Topic个数，默认值为10，取值范围为1~50。
      * @return limit
      */
     public Integer getLimit() {
@@ -141,7 +141,7 @@ public class ListInstanceConsumerGroupTopicsRequest {
     }
 
     /**
-     * 排序规则： - topic：按topic名称排序。 - partition：按分区数排序。 - messages：按消息数量排序，默认方式。
+     * 排序规则： - topic：按Topic名称排序。 - partition：按分区数排序。 - messages：按消息数量排序，默认方式。
      * @return sortKey
      */
     public String getSortKey() {
@@ -175,7 +175,7 @@ public class ListInstanceConsumerGroupTopicsRequest {
     }
 
     /**
-     * topic名称。
+     * Topic名称。
      * @return topic
      */
     public String getTopic() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改的topic。
+ * 修改的Topic。
  */
 public class UpdateInstanceTopicReqTopics {
 
@@ -59,7 +59,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * topic名称，不支持修改。
+     * Topic名称，不支持修改。
      * @return id
      */
     public String getId() {
@@ -196,7 +196,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * topic配置
+     * Topic配置
      * @return topicOtherConfigs
      */
     public List<CreateInstanceTopicReqTopicOtherConfigs> getTopicOtherConfigs() {
@@ -213,7 +213,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * topic描述
+     * Topic描述
      * @return topicDesc
      */
     public String getTopicDesc() {

@@ -153,6 +153,11 @@ public class CreateInstanceBody {
 
     private String templateId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec_param")
+
+    private SpecParam specParam;
+
     public CreateInstanceBody withName(String name) {
         this.name = name;
         return this;
@@ -679,6 +684,32 @@ public class CreateInstanceBody {
         this.templateId = templateId;
     }
 
+    public CreateInstanceBody withSpecParam(SpecParam specParam) {
+        this.specParam = specParam;
+        return this;
+    }
+
+    public CreateInstanceBody withSpecParam(Consumer<SpecParam> specParamSetter) {
+        if (this.specParam == null) {
+            this.specParam = new SpecParam();
+            specParamSetter.accept(this.specParam);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get specParam
+     * @return specParam
+     */
+    public SpecParam getSpecParam() {
+        return specParam;
+    }
+
+    public void setSpecParam(SpecParam specParam) {
+        this.specParam = specParam;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -706,7 +737,7 @@ public class CreateInstanceBody {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.accessUser, that.accessUser)
             && Objects.equals(this.enablePublicip, that.enablePublicip) && Objects.equals(this.port, that.port)
             && Objects.equals(this.renameCommands, that.renameCommands)
-            && Objects.equals(this.templateId, that.templateId);
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.specParam, that.specParam);
     }
 
     @Override
@@ -738,7 +769,8 @@ public class CreateInstanceBody {
             enablePublicip,
             port,
             renameCommands,
-            templateId);
+            templateId,
+            specParam);
     }
 
     @Override
@@ -773,6 +805,7 @@ public class CreateInstanceBody {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    renameCommands: ").append(toIndentedString(renameCommands)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+        sb.append("    specParam: ").append(toIndentedString(specParam)).append("\n");
         sb.append("}");
         return sb.toString();
     }

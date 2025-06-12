@@ -29,7 +29,7 @@ public class AccessPolicyTopicEntity {
     }
 
     /**
-     * topic名称。
+     * Topic名称。
      * @return name
      */
     public String getName() {

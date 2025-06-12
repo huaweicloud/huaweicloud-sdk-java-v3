@@ -20,6 +20,16 @@ public class TransportationLicenseRequestBody {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_image_location")
+
+    private Boolean returnImageLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_adjusted_image")
+
+    private Boolean returnAdjustedImage;
+
     public TransportationLicenseRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -54,6 +64,40 @@ public class TransportationLicenseRequestBody {
         this.url = url;
     }
 
+    public TransportationLicenseRequestBody withReturnImageLocation(Boolean returnImageLocation) {
+        this.returnImageLocation = returnImageLocation;
+        return this;
+    }
+
+    /**
+     * 返回道路运输证在原图中的坐标位置的开关，默认false，取值范围包括：  - true: 开启返回坐标位置的功能。 - false: 关闭返回坐标位置的功能。 
+     * @return returnImageLocation
+     */
+    public Boolean getReturnImageLocation() {
+        return returnImageLocation;
+    }
+
+    public void setReturnImageLocation(Boolean returnImageLocation) {
+        this.returnImageLocation = returnImageLocation;
+    }
+
+    public TransportationLicenseRequestBody withReturnAdjustedImage(Boolean returnAdjustedImage) {
+        this.returnAdjustedImage = returnAdjustedImage;
+        return this;
+    }
+
+    /**
+     * 返回道路运输证（base64）的开关，默认false，取值范围包括：  - true: 开启道路运输证（base64）的功能。 - false: 关闭道路运输证（base64）的功能。 
+     * @return returnAdjustedImage
+     */
+    public Boolean getReturnAdjustedImage() {
+        return returnAdjustedImage;
+    }
+
+    public void setReturnAdjustedImage(Boolean returnAdjustedImage) {
+        this.returnAdjustedImage = returnAdjustedImage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +107,14 @@ public class TransportationLicenseRequestBody {
             return false;
         }
         TransportationLicenseRequestBody that = (TransportationLicenseRequestBody) obj;
-        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url);
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.returnImageLocation, that.returnImageLocation)
+            && Objects.equals(this.returnAdjustedImage, that.returnAdjustedImage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url);
+        return Objects.hash(image, url, returnImageLocation, returnAdjustedImage);
     }
 
     @Override
@@ -77,6 +123,8 @@ public class TransportationLicenseRequestBody {
         sb.append("class TransportationLicenseRequestBody {\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    returnImageLocation: ").append(toIndentedString(returnImageLocation)).append("\n");
+        sb.append("    returnAdjustedImage: ").append(toIndentedString(returnAdjustedImage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,10 +6,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UpdateTopicReq
@@ -27,7 +30,7 @@ public class UpdateTopicReq {
     private BigDecimal writeQueueNum;
 
     /**
-     * 权限。
+     * **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      */
     public static final class PermissionEnum {
 
@@ -107,13 +110,23 @@ public class UpdateTopicReq {
 
     private PermissionEnum permission;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "queues")
+
+    private List<UpdateTopicQueueEntity> queues = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_desc")
+
+    private String topicDesc;
+
     public UpdateTopicReq withReadQueueNum(BigDecimal readQueueNum) {
         this.readQueueNum = readQueueNum;
         return this;
     }
 
     /**
-     * 总读队列个数。
+     * **参数解释**： 总读队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return readQueueNum
      */
     public BigDecimal getReadQueueNum() {
@@ -130,7 +143,7 @@ public class UpdateTopicReq {
     }
 
     /**
-     * 总写队列个数。
+     * **参数解释**： 总写队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return writeQueueNum
      */
     public BigDecimal getWriteQueueNum() {
@@ -147,7 +160,7 @@ public class UpdateTopicReq {
     }
 
     /**
-     * 权限。
+     * **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return permission
      */
     public PermissionEnum getPermission() {
@@ -156,6 +169,56 @@ public class UpdateTopicReq {
 
     public void setPermission(PermissionEnum permission) {
         this.permission = permission;
+    }
+
+    public UpdateTopicReq withQueues(List<UpdateTopicQueueEntity> queues) {
+        this.queues = queues;
+        return this;
+    }
+
+    public UpdateTopicReq addQueuesItem(UpdateTopicQueueEntity queuesItem) {
+        if (this.queues == null) {
+            this.queues = new ArrayList<>();
+        }
+        this.queues.add(queuesItem);
+        return this;
+    }
+
+    public UpdateTopicReq withQueues(Consumer<List<UpdateTopicQueueEntity>> queuesSetter) {
+        if (this.queues == null) {
+            this.queues = new ArrayList<>();
+        }
+        queuesSetter.accept(this.queues);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 队列。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return queues
+     */
+    public List<UpdateTopicQueueEntity> getQueues() {
+        return queues;
+    }
+
+    public void setQueues(List<UpdateTopicQueueEntity> queues) {
+        this.queues = queues;
+    }
+
+    public UpdateTopicReq withTopicDesc(String topicDesc) {
+        this.topicDesc = topicDesc;
+        return this;
+    }
+
+    /**
+     * **参数解释**： Topic描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return topicDesc
+     */
+    public String getTopicDesc() {
+        return topicDesc;
+    }
+
+    public void setTopicDesc(String topicDesc) {
+        this.topicDesc = topicDesc;
     }
 
     @Override
@@ -169,12 +232,13 @@ public class UpdateTopicReq {
         UpdateTopicReq that = (UpdateTopicReq) obj;
         return Objects.equals(this.readQueueNum, that.readQueueNum)
             && Objects.equals(this.writeQueueNum, that.writeQueueNum)
-            && Objects.equals(this.permission, that.permission);
+            && Objects.equals(this.permission, that.permission) && Objects.equals(this.queues, that.queues)
+            && Objects.equals(this.topicDesc, that.topicDesc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(readQueueNum, writeQueueNum, permission);
+        return Objects.hash(readQueueNum, writeQueueNum, permission, queues, topicDesc);
     }
 
     @Override
@@ -184,6 +248,8 @@ public class UpdateTopicReq {
         sb.append("    readQueueNum: ").append(toIndentedString(readQueueNum)).append("\n");
         sb.append("    writeQueueNum: ").append(toIndentedString(writeQueueNum)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
+        sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
+        sb.append("    topicDesc: ").append(toIndentedString(topicDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

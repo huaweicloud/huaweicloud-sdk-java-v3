@@ -26,7 +26,7 @@ public class SetAutoPolicyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy")
 
-    private List<DiskAutoExpansionPolicy> policy = null;
+    private DiskAutoExpansionPolicy policy;
 
     public SetAutoPolicyRequestBody withInstanceIds(List<String> instanceIds) {
         this.instanceIds = instanceIds;
@@ -78,36 +78,29 @@ public class SetAutoPolicyRequestBody {
         this.switchOption = switchOption;
     }
 
-    public SetAutoPolicyRequestBody withPolicy(List<DiskAutoExpansionPolicy> policy) {
+    public SetAutoPolicyRequestBody withPolicy(DiskAutoExpansionPolicy policy) {
         this.policy = policy;
         return this;
     }
 
-    public SetAutoPolicyRequestBody addPolicyItem(DiskAutoExpansionPolicy policyItem) {
+    public SetAutoPolicyRequestBody withPolicy(Consumer<DiskAutoExpansionPolicy> policySetter) {
         if (this.policy == null) {
-            this.policy = new ArrayList<>();
+            this.policy = new DiskAutoExpansionPolicy();
+            policySetter.accept(this.policy);
         }
-        this.policy.add(policyItem);
-        return this;
-    }
 
-    public SetAutoPolicyRequestBody withPolicy(Consumer<List<DiskAutoExpansionPolicy>> policySetter) {
-        if (this.policy == null) {
-            this.policy = new ArrayList<>();
-        }
-        policySetter.accept(this.policy);
         return this;
     }
 
     /**
-     * 磁盘自动扩容策略
+     * Get policy
      * @return policy
      */
-    public List<DiskAutoExpansionPolicy> getPolicy() {
+    public DiskAutoExpansionPolicy getPolicy() {
         return policy;
     }
 
-    public void setPolicy(List<DiskAutoExpansionPolicy> policy) {
+    public void setPolicy(DiskAutoExpansionPolicy policy) {
         this.policy = policy;
     }
 

@@ -45,6 +45,8 @@ import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersResponse;
+import com.huaweicloud.sdk.ecs.v2.model.DeleteRecycleBinServerRequest;
+import com.huaweicloud.sdk.ecs.v2.model.DeleteRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupMemberRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupMemberResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupRequest;
@@ -65,6 +67,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListRecycleBinServersRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListRecycleBinServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListScheduledEventsRequest;
@@ -133,8 +137,14 @@ import com.huaweicloud.sdk.ecs.v2.model.ResizePostPaidServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ResizePostPaidServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ResizeServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ResizeServerResponse;
+import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerRequest;
+import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinServerRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
@@ -143,6 +153,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerMetadataOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerPasswordRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerPasswordResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerRemoteConsoleRequest;
@@ -151,12 +163,18 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequest;
@@ -889,6 +907,33 @@ public class EcsClient {
     }
 
     /**
+     * 删除回收站中虚拟机
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRecycleBinServerRequest 请求对象
+     * @return DeleteRecycleBinServerResponse
+     */
+    public DeleteRecycleBinServerResponse deleteRecycleBinServer(DeleteRecycleBinServerRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.deleteRecycleBinServer);
+    }
+
+    /**
+     * 删除回收站中虚拟机
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRecycleBinServerRequest 请求对象
+     * @return SyncInvoker<DeleteRecycleBinServerRequest, DeleteRecycleBinServerResponse>
+     */
+    public SyncInvoker<DeleteRecycleBinServerRequest, DeleteRecycleBinServerResponse> deleteRecycleBinServerInvoker(
+        DeleteRecycleBinServerRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.deleteRecycleBinServer, hcClient);
+    }
+
+    /**
      * 删除云服务器组
      *
      * 删除云服务器组。
@@ -1186,6 +1231,33 @@ public class EcsClient {
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.listFlavors, hcClient);
+    }
+
+    /**
+     * 查询回收站中虚拟机列表
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecycleBinServersRequest 请求对象
+     * @return ListRecycleBinServersResponse
+     */
+    public ListRecycleBinServersResponse listRecycleBinServers(ListRecycleBinServersRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listRecycleBinServers);
+    }
+
+    /**
+     * 查询回收站中虚拟机列表
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecycleBinServersRequest 请求对象
+     * @return SyncInvoker<ListRecycleBinServersRequest, ListRecycleBinServersResponse>
+     */
+    public SyncInvoker<ListRecycleBinServersRequest, ListRecycleBinServersResponse> listRecycleBinServersInvoker(
+        ListRecycleBinServersRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.listRecycleBinServers, hcClient);
     }
 
     /**
@@ -2193,6 +2265,91 @@ public class EcsClient {
     }
 
     /**
+     * 恢复回收站中虚拟机
+     *
+     * 回收站中的虚拟机从回收站中恢复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RevertRecycleBinServerRequest 请求对象
+     * @return RevertRecycleBinServerResponse
+     */
+    public RevertRecycleBinServerResponse revertRecycleBinServer(RevertRecycleBinServerRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.revertRecycleBinServer);
+    }
+
+    /**
+     * 恢复回收站中虚拟机
+     *
+     * 回收站中的虚拟机从回收站中恢复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RevertRecycleBinServerRequest 请求对象
+     * @return SyncInvoker<RevertRecycleBinServerRequest, RevertRecycleBinServerResponse>
+     */
+    public SyncInvoker<RevertRecycleBinServerRequest, RevertRecycleBinServerResponse> revertRecycleBinServerInvoker(
+        RevertRecycleBinServerRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.revertRecycleBinServer, hcClient);
+    }
+
+    /**
+     * 查询回收站配置
+     *
+     * 查询回收站配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleBinRequest 请求对象
+     * @return ShowRecycleBinResponse
+     */
+    public ShowRecycleBinResponse showRecycleBin(ShowRecycleBinRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showRecycleBin);
+    }
+
+    /**
+     * 查询回收站配置
+     *
+     * 查询回收站配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleBinRequest 请求对象
+     * @return SyncInvoker<ShowRecycleBinRequest, ShowRecycleBinResponse>
+     */
+    public SyncInvoker<ShowRecycleBinRequest, ShowRecycleBinResponse> showRecycleBinInvoker(
+        ShowRecycleBinRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.showRecycleBin, hcClient);
+    }
+
+    /**
+     * 查询回收站中指定云服务器
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleBinServerRequest 请求对象
+     * @return ShowRecycleBinServerResponse
+     */
+    public ShowRecycleBinServerResponse showRecycleBinServer(ShowRecycleBinServerRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showRecycleBinServer);
+    }
+
+    /**
+     * 查询回收站中指定云服务器
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleBinServerRequest 请求对象
+     * @return SyncInvoker<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse>
+     */
+    public SyncInvoker<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse> showRecycleBinServerInvoker(
+        ShowRecycleBinServerRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.showRecycleBinServer, hcClient);
+    }
+
+    /**
      * 查询是否支持一键重置密码
      *
      * 查询弹性云服务器是否支持一键重置密码。
@@ -2345,6 +2502,35 @@ public class EcsClient {
     }
 
     /**
+     * 查询云服务器元数据配置
+     *
+     * 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerMetadataOptionsRequest 请求对象
+     * @return ShowServerMetadataOptionsResponse
+     */
+    public ShowServerMetadataOptionsResponse showServerMetadataOptions(ShowServerMetadataOptionsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showServerMetadataOptions);
+    }
+
+    /**
+     * 查询云服务器元数据配置
+     *
+     * 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerMetadataOptionsRequest 请求对象
+     * @return SyncInvoker<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse>
+     */
+    public SyncInvoker<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse> showServerMetadataOptionsInvoker(
+        ShowServerMetadataOptionsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.showServerMetadataOptions, hcClient);
+    }
+
+    /**
      * 云服务器获取密码(企业项目)
      *
      * 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
@@ -2433,6 +2619,64 @@ public class EcsClient {
     public SyncInvoker<ShowServerTagsRequest, ShowServerTagsResponse> showServerTagsInvoker(
         ShowServerTagsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.showServerTags, hcClient);
+    }
+
+    /**
+     * 更新回收站配置
+     *
+     * 更新回收站属性信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecycleBinRequest 请求对象
+     * @return UpdateRecycleBinResponse
+     */
+    public UpdateRecycleBinResponse updateRecycleBin(UpdateRecycleBinRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.updateRecycleBin);
+    }
+
+    /**
+     * 更新回收站配置
+     *
+     * 更新回收站属性信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecycleBinRequest 请求对象
+     * @return SyncInvoker<UpdateRecycleBinRequest, UpdateRecycleBinResponse>
+     */
+    public SyncInvoker<UpdateRecycleBinRequest, UpdateRecycleBinResponse> updateRecycleBinInvoker(
+        UpdateRecycleBinRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.updateRecycleBin, hcClient);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecycleBinPolicyRequest 请求对象
+     * @return UpdateRecycleBinPolicyResponse
+     */
+    public UpdateRecycleBinPolicyResponse updateRecycleBinPolicy(UpdateRecycleBinPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.updateRecycleBinPolicy);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecycleBinPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse>
+     */
+    public SyncInvoker<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> updateRecycleBinPolicyInvoker(
+        UpdateRecycleBinPolicyRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.updateRecycleBinPolicy, hcClient);
     }
 
     /**
@@ -2594,6 +2838,35 @@ public class EcsClient {
     public SyncInvoker<UpdateServerMetadataRequest, UpdateServerMetadataResponse> updateServerMetadataInvoker(
         UpdateServerMetadataRequest request) {
         return new SyncInvoker<>(request, EcsMeta.updateServerMetadata, hcClient);
+    }
+
+    /**
+     * 更新云服务器元数据配置
+     *
+     * 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerMetadataOptionsRequest 请求对象
+     * @return UpdateServerMetadataOptionsResponse
+     */
+    public UpdateServerMetadataOptionsResponse updateServerMetadataOptions(UpdateServerMetadataOptionsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.updateServerMetadataOptions);
+    }
+
+    /**
+     * 更新云服务器元数据配置
+     *
+     * 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerMetadataOptionsRequest 请求对象
+     * @return SyncInvoker<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse>
+     */
+    public SyncInvoker<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse> updateServerMetadataOptionsInvoker(
+        UpdateServerMetadataOptionsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.updateServerMetadataOptions, hcClient);
     }
 
     /**

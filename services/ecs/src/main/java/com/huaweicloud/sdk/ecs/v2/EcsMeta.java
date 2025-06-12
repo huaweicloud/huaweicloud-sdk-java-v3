@@ -68,6 +68,8 @@ import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersResponse;
+import com.huaweicloud.sdk.ecs.v2.model.DeleteRecycleBinServerRequest;
+import com.huaweicloud.sdk.ecs.v2.model.DeleteRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupMemberRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupMemberRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupMemberResponse;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListRecycleBinServersRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListRecycleBinServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListScheduledEventsRequest;
@@ -172,8 +176,14 @@ import com.huaweicloud.sdk.ecs.v2.model.ResizePostPaidServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ResizeServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ResizeServerRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.ResizeServerResponse;
+import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerRequest;
+import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinServerRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
@@ -182,6 +192,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerMetadataOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerPasswordRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerPasswordResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerRemoteConsoleRequest;
@@ -192,6 +204,12 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateNicInfoRequestBody;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyReq;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinReq;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
@@ -200,6 +218,9 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsRequestBody;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
@@ -801,6 +822,30 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteRecycleBinServerRequest, DeleteRecycleBinServerResponse> deleteRecycleBinServer =
+        genForDeleteRecycleBinServer();
+
+    private static HttpRequestDef<DeleteRecycleBinServerRequest, DeleteRecycleBinServerResponse> genForDeleteRecycleBinServer() {
+        // basic
+        HttpRequestDef.Builder<DeleteRecycleBinServerRequest, DeleteRecycleBinServerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteRecycleBinServerRequest.class, DeleteRecycleBinServerResponse.class)
+            .withName("DeleteRecycleBinServer")
+            .withUri("/v1/{project_id}/recycle-bin/cloudservers/{server_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRecycleBinServerRequest::getServerId,
+                DeleteRecycleBinServerRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteServerGroupRequest, DeleteServerGroupResponse> deleteServerGroup =
         genForDeleteServerGroup();
 
@@ -1219,6 +1264,78 @@ public class EcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getFlavorId, ListFlavorsRequest::setFlavorId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRecycleBinServersRequest, ListRecycleBinServersResponse> listRecycleBinServers =
+        genForListRecycleBinServers();
+
+    private static HttpRequestDef<ListRecycleBinServersRequest, ListRecycleBinServersResponse> genForListRecycleBinServers() {
+        // basic
+        HttpRequestDef.Builder<ListRecycleBinServersRequest, ListRecycleBinServersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRecycleBinServersRequest.class, ListRecycleBinServersResponse.class)
+            .withName("ListRecycleBinServers")
+            .withUri("/v1/{project_id}/recycle-bin/cloudservers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("all_tenants",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getAllTenants,
+                ListRecycleBinServersRequest::setAllTenants));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getAvailabilityZone,
+                ListRecycleBinServersRequest::setAvailabilityZone));
+        builder.<ListRecycleBinServersRequest.ExpectFieldsEnum>withRequestField("expect-fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRecycleBinServersRequest.ExpectFieldsEnum.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getExpectFields,
+                ListRecycleBinServersRequest::setExpectFields));
+        builder.<String>withRequestField("ip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getIpAddress,
+                ListRecycleBinServersRequest::setIpAddress));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getLimit, ListRecycleBinServersRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getMarker, ListRecycleBinServersRequest::setMarker));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getName, ListRecycleBinServersRequest::setName));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getOffset, ListRecycleBinServersRequest::setOffset));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getTags, ListRecycleBinServersRequest::setTags));
+        builder.<List<String>>withRequestField("tags_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinServersRequest::getTagsKey, ListRecycleBinServersRequest::setTagsKey));
 
         // response
 
@@ -2275,6 +2392,71 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RevertRecycleBinServerRequest, RevertRecycleBinServerResponse> revertRecycleBinServer =
+        genForRevertRecycleBinServer();
+
+    private static HttpRequestDef<RevertRecycleBinServerRequest, RevertRecycleBinServerResponse> genForRevertRecycleBinServer() {
+        // basic
+        HttpRequestDef.Builder<RevertRecycleBinServerRequest, RevertRecycleBinServerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RevertRecycleBinServerRequest.class, RevertRecycleBinServerResponse.class)
+            .withName("RevertRecycleBinServer")
+            .withUri("/v1/{project_id}/recycle-bin/cloudservers/{server_id}/actions/revert")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevertRecycleBinServerRequest::getServerId,
+                RevertRecycleBinServerRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRecycleBinRequest, ShowRecycleBinResponse> showRecycleBin =
+        genForShowRecycleBin();
+
+    private static HttpRequestDef<ShowRecycleBinRequest, ShowRecycleBinResponse> genForShowRecycleBin() {
+        // basic
+        HttpRequestDef.Builder<ShowRecycleBinRequest, ShowRecycleBinResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecycleBinRequest.class, ShowRecycleBinResponse.class)
+                .withName("ShowRecycleBin")
+                .withUri("/v1/{project_id}/recycle-bin")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse> showRecycleBinServer =
+        genForShowRecycleBinServer();
+
+    private static HttpRequestDef<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse> genForShowRecycleBinServer() {
+        // basic
+        HttpRequestDef.Builder<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRecycleBinServerRequest.class, ShowRecycleBinServerResponse.class)
+            .withName("ShowRecycleBinServer")
+            .withUri("/v1/{project_id}/recycle-bin/cloudservers/{server_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRecycleBinServerRequest::getServerId, ShowRecycleBinServerRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> showResetPasswordFlag =
         genForShowResetPasswordFlag();
 
@@ -2392,6 +2574,33 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse> showServerMetadataOptions =
+        genForShowServerMetadataOptions();
+
+    private static HttpRequestDef<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse> genForShowServerMetadataOptions() {
+        // basic
+        HttpRequestDef.Builder<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowServerMetadataOptionsRequest.class,
+                    ShowServerMetadataOptionsResponse.class)
+                .withName("ShowServerMetadataOptions")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata-options")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerMetadataOptionsRequest::getServerId,
+                ShowServerMetadataOptionsRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowServerPasswordRequest, ShowServerPasswordResponse> showServerPassword =
         genForShowServerPassword();
 
@@ -2461,6 +2670,52 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerTagsRequest::getServerId, ShowServerTagsRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecycleBinRequest, UpdateRecycleBinResponse> updateRecycleBin =
+        genForUpdateRecycleBin();
+
+    private static HttpRequestDef<UpdateRecycleBinRequest, UpdateRecycleBinResponse> genForUpdateRecycleBin() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecycleBinRequest, UpdateRecycleBinResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRecycleBinRequest.class, UpdateRecycleBinResponse.class)
+                .withName("UpdateRecycleBin")
+                .withUri("/v1/{project_id}/recycle-bin")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UpdateRecycleBinReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRecycleBinReq.class),
+            f -> f.withMarshaller(UpdateRecycleBinRequest::getBody, UpdateRecycleBinRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> updateRecycleBinPolicy =
+        genForUpdateRecycleBinPolicy();
+
+    private static HttpRequestDef<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> genForUpdateRecycleBinPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateRecycleBinPolicyRequest.class, UpdateRecycleBinPolicyResponse.class)
+            .withName("UpdateRecycleBinPolicy")
+            .withUri("/v1/{project_id}/recycle-bin/policy")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UpdateRecycleBinPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRecycleBinPolicyReq.class),
+            f -> f.withMarshaller(UpdateRecycleBinPolicyRequest::getBody, UpdateRecycleBinPolicyRequest::setBody));
 
         // response
 
@@ -2618,6 +2873,39 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerMetadataRequestBody.class),
             f -> f.withMarshaller(UpdateServerMetadataRequest::getBody, UpdateServerMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse> updateServerMetadataOptions =
+        genForUpdateServerMetadataOptions();
+
+    private static HttpRequestDef<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse> genForUpdateServerMetadataOptions() {
+        // basic
+        HttpRequestDef.Builder<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateServerMetadataOptionsRequest.class,
+                    UpdateServerMetadataOptionsResponse.class)
+                .withName("UpdateServerMetadataOptions")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata-options")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServerMetadataOptionsRequest::getServerId,
+                UpdateServerMetadataOptionsRequest::setServerId));
+        builder.<UpdateServerMetadataOptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateServerMetadataOptionsRequestBody.class),
+            f -> f.withMarshaller(UpdateServerMetadataOptionsRequest::getBody,
+                UpdateServerMetadataOptionsRequest::setBody));
 
         // response
 

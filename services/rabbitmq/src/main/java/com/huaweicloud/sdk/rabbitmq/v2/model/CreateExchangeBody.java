@@ -35,6 +35,11 @@ public class CreateExchangeBody {
 
     private Boolean internal;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "arguments")
+
+    private Object arguments;
+
     public CreateExchangeBody withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +125,23 @@ public class CreateExchangeBody {
         this.internal = internal;
     }
 
+    public CreateExchangeBody withArguments(Object arguments) {
+        this.arguments = arguments;
+        return this;
+    }
+
+    /**
+     * 参数列表
+     * @return arguments
+     */
+    public Object getArguments() {
+        return arguments;
+    }
+
+    public void setArguments(Object arguments) {
+        this.arguments = arguments;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class CreateExchangeBody {
         CreateExchangeBody that = (CreateExchangeBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.durable, that.durable) && Objects.equals(this.autoDelete, that.autoDelete)
-            && Objects.equals(this.internal, that.internal);
+            && Objects.equals(this.internal, that.internal) && Objects.equals(this.arguments, that.arguments);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, durable, autoDelete, internal);
+        return Objects.hash(name, type, durable, autoDelete, internal, arguments);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class CreateExchangeBody {
         sb.append("    durable: ").append(toIndentedString(durable)).append("\n");
         sb.append("    autoDelete: ").append(toIndentedString(autoDelete)).append("\n");
         sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
+        sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
         sb.append("}");
         return sb.toString();
     }

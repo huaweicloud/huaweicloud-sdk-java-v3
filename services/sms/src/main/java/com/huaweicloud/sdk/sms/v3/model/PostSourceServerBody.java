@@ -498,6 +498,11 @@ public class PostSourceServerBody {
         public static final StateEnum STOPPED = new StateEnum("stopped");
 
         /**
+         * Enum SKIPPING for value: "skipping"
+         */
+        public static final StateEnum SKIPPING = new StateEnum("skipping");
+
+        /**
          * Enum DELETING for value: "deleting"
          */
         public static final StateEnum DELETING = new StateEnum("deleting");
@@ -548,6 +553,7 @@ public class PostSourceServerBody {
             map.put("syncing", SYNCING);
             map.put("stopping", STOPPING);
             map.put("stopped", STOPPED);
+            map.put("skipping", SKIPPING);
             map.put("deleting", DELETING);
             map.put("error", ERROR);
             map.put("cloning", CLONING);

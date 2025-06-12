@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.ocr.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * TransportationLicenseResult
@@ -84,6 +87,16 @@ public class TransportationLicenseResult {
     @JsonProperty(value = "assessed_technical_level")
 
     private String assessedTechnicalLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_location")
+
+    private List<List<Integer>> imageLocation = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "adjusted_image")
+
+    private String adjustedImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
@@ -345,6 +358,56 @@ public class TransportationLicenseResult {
         this.assessedTechnicalLevel = assessedTechnicalLevel;
     }
 
+    public TransportationLicenseResult withImageLocation(List<List<Integer>> imageLocation) {
+        this.imageLocation = imageLocation;
+        return this;
+    }
+
+    public TransportationLicenseResult addImageLocationItem(List<Integer> imageLocationItem) {
+        if (this.imageLocation == null) {
+            this.imageLocation = new ArrayList<>();
+        }
+        this.imageLocation.add(imageLocationItem);
+        return this;
+    }
+
+    public TransportationLicenseResult withImageLocation(Consumer<List<List<Integer>>> imageLocationSetter) {
+        if (this.imageLocation == null) {
+            this.imageLocation = new ArrayList<>();
+        }
+        imageLocationSetter.accept(this.imageLocation);
+        return this;
+    }
+
+    /**
+     * 道路运输证在原图中的坐标位置，输出左上、右上、右下、左下四个点坐标。仅在return_image_location设置为true时返回该字段。 
+     * @return imageLocation
+     */
+    public List<List<Integer>> getImageLocation() {
+        return imageLocation;
+    }
+
+    public void setImageLocation(List<List<Integer>> imageLocation) {
+        this.imageLocation = imageLocation;
+    }
+
+    public TransportationLicenseResult withAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
+        return this;
+    }
+
+    /**
+     * 道路运输证图片的base64编码结果。仅在return_adjusted_image设置为true时返回该字段。 
+     * @return adjustedImage
+     */
+    public String getAdjustedImage() {
+        return adjustedImage;
+    }
+
+    public void setAdjustedImage(String adjustedImage) {
+        this.adjustedImage = adjustedImage;
+    }
+
     public TransportationLicenseResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
@@ -384,6 +447,8 @@ public class TransportationLicenseResult {
             && Objects.equals(this.expiryDate, that.expiryDate)
             && Objects.equals(this.reviewExpiryDate, that.reviewExpiryDate)
             && Objects.equals(this.assessedTechnicalLevel, that.assessedTechnicalLevel)
+            && Objects.equals(this.imageLocation, that.imageLocation)
+            && Objects.equals(this.adjustedImage, that.adjustedImage)
             && Objects.equals(this.confidence, that.confidence);
     }
 
@@ -404,6 +469,8 @@ public class TransportationLicenseResult {
             expiryDate,
             reviewExpiryDate,
             assessedTechnicalLevel,
+            imageLocation,
+            adjustedImage,
             confidence);
     }
 
@@ -426,6 +493,8 @@ public class TransportationLicenseResult {
         sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
         sb.append("    reviewExpiryDate: ").append(toIndentedString(reviewExpiryDate)).append("\n");
         sb.append("    assessedTechnicalLevel: ").append(toIndentedString(assessedTechnicalLevel)).append("\n");
+        sb.append("    imageLocation: ").append(toIndentedString(imageLocation)).append("\n");
+        sb.append("    adjustedImage: ").append(toIndentedString(adjustedImage)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");
         return sb.toString();

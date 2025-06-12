@@ -1327,7 +1327,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 是否打开kafka自动创建topic功能。   - true：开启   - false：关闭
+     * 是否打开kafka自动创建Topic功能。   - true：开启   - false：关闭
      * @return enableAutoTopic
      */
     public Boolean getEnableAutoTopic() {

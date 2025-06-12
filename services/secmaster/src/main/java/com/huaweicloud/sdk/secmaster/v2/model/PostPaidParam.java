@@ -119,7 +119,7 @@ public class PostPaidParam {
     }
 
     /**
-     * 区域ID，如cn-north-4
+     * 区域ID
      * @return regionId
      */
     public String getRegionId() {

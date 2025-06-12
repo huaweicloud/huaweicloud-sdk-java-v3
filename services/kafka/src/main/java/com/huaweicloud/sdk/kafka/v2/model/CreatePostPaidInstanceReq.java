@@ -953,7 +953,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb,dt,hk_sbc,sbc) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:cmcc) [创建kafka实例,支持的产品规格有: (product_id/specification/partition_num/storage_space)  00300-30308-0--0/100MB/300/600;  00300-30310-0--0/300MB/900/1200;  00300-30312-0--0/600MB/1800/2400;  00300-30314-0--0/1200MB/1800/4800](tag:dt)
+     * 产品ID。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。 [创建kafka实例,支持的产品规格有: (product_id/specification/partition_num/storage_space)  00300-30308-0--0/100MB/300/600;  00300-30310-0--0/300MB/900/1200;  00300-30312-0--0/600MB/1800/2400;  00300-30314-0--0/1200MB/1800/4800](tag:dt)
      * @return productId
      */
     public String getProductId() {

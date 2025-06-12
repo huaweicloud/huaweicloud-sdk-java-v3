@@ -56,7 +56,7 @@ public class ListConnectorTasksResponse extends SdkResponse {
     }
 
     /**
-     * Smart Connector任务详情。
+     * Smart Connect任务详情。
      * @return tasks
      */
     public List<SmartConnectTaskEntity> getTasks() {
@@ -73,7 +73,7 @@ public class ListConnectorTasksResponse extends SdkResponse {
     }
 
     /**
-     * Smart Connector任务数。
+     * Smart Connect任务数。
      * @return totalNumber
      */
     public Integer getTotalNumber() {
@@ -90,7 +90,7 @@ public class ListConnectorTasksResponse extends SdkResponse {
     }
 
     /**
-     * Smart Connector最大任务数。
+     * Smart Connect最大任务数。
      * @return maxTasks
      */
     public Integer getMaxTasks() {
@@ -107,7 +107,7 @@ public class ListConnectorTasksResponse extends SdkResponse {
     }
 
     /**
-     * Smart Connector任务配额。
+     * Smart Connect任务配额。
      * @return quotaTasks
      */
     public Integer getQuotaTasks() {

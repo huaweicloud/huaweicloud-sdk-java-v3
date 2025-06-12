@@ -41,7 +41,7 @@ public class ShowKafkaTopicQuotaRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：登录Kafka控制台，在Kafka实例详情页面查找实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -58,7 +58,7 @@ public class ShowKafkaTopicQuotaRequest {
     }
 
     /**
-     * 查询类型，默认为topic。
+     * **参数解释**： 查询类型。 **约束限制**： 查询类型必须以字母开头且只支持大小写字母、中横线、下划线以及数字。 **取值范围**： 默认为topic **默认取值**： topic
      * @return type
      */
     public String getType() {
@@ -75,7 +75,7 @@ public class ShowKafkaTopicQuotaRequest {
     }
 
     /**
-     * 每一页显示的流控数量。
+     * **参数解释**： 每一页显示的流控数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return limit
      */
     public String getLimit() {
@@ -92,7 +92,7 @@ public class ShowKafkaTopicQuotaRequest {
     }
 
     /**
-     * 页数。
+     * **参数解释**： 页数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return offset
      */
     public String getOffset() {
@@ -109,7 +109,7 @@ public class ShowKafkaTopicQuotaRequest {
     }
 
     /**
-     * 查询关键字。
+     * **参数解释**： 查询关键字。 **约束限制**： 查询关键字必须以字母开头且只支持大小写字母、中横线、下划线以及数字。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return keyword
      */
     public String getKeyword() {

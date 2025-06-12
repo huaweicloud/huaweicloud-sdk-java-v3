@@ -59,7 +59,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * topic名称，长度为3-200，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。
+     * Topic名称，长度为3-200，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。
      * @return id
      */
     public String getId() {
@@ -112,7 +112,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * topic分区数，设置消费的并发数。 取值范围：1-200。
+     * Topic分区数，设置消费的并发数。 取值范围：1-200。
      * @return partition
      */
     public Integer getPartition() {
@@ -182,7 +182,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * topic配置
+     * Topic配置
      * @return topicOtherConfigs
      */
     public List<CreateInstanceTopicReqTopicOtherConfigs> getTopicOtherConfigs() {
@@ -199,7 +199,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * topic描述
+     * Topic描述
      * @return topicDesc
      */
     public String getTopicDesc() {

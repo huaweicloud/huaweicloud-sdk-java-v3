@@ -68,7 +68,7 @@ public class AutoIdDocClassificationAlarmResult {
     }
 
     /**
-     * 证件图像反光告警结果。 - true：表示证件图片较模糊。 - false：表示证件清晰。 
+     * 证件图像反光告警结果。 - true：表示证件图片存在反光。 - false：表示证件图片不存在反光。 
      * @return detectGlareResult
      */
     public Boolean getDetectGlareResult() {
@@ -86,7 +86,7 @@ public class AutoIdDocClassificationAlarmResult {
     }
 
     /**
-     * 证件图像框内遮挡告警结果。 - true：表示证件图片较模糊。 - false：表示证件清晰。 
+     * 证件图像框内遮挡告警结果。 - true：表示证件图片存在框内遮挡。 - false：表示证件图片不存在框内遮挡。 
      * @return detectBlockingWithinBorderResult
      */
     public Boolean getDetectBlockingWithinBorderResult() {
@@ -104,7 +104,7 @@ public class AutoIdDocClassificationAlarmResult {
     }
 
     /**
-     * 证件图像过暗告警结果。 - true：表示证件图片较模糊。 - false：表示证件清晰。 
+     * 证件图像过暗告警结果。 - true：表示证件图片过暗。 - false：表示证件图片光线正常。 
      * @return detectInsufficientLightingResult
      */
     public Boolean getDetectInsufficientLightingResult() {

@@ -117,6 +117,10 @@ public class DefaultHttpClient implements HttpClient {
             clientBuilder.dns(httpConfig.getDns());
         }
 
+        if (Objects.nonNull(httpConfig.getEventListener())) {
+            clientBuilder.eventListener(httpConfig.getEventListener());
+        }
+
         clientBuilder.connectTimeout(httpConfig.getConnectionTimeout(), TimeUnit.SECONDS)
                 .readTimeout(httpConfig.getReadTimeout(), TimeUnit.SECONDS);
 
@@ -170,7 +174,7 @@ public class DefaultHttpClient implements HttpClient {
         HttpUrl.Builder urlBuilder = httpUrl.newBuilder();
 
         httpRequest.getQueryParams().forEach((key, values) -> {
-            if (values.size() == 0) {
+            if (values.isEmpty()) {
                 urlBuilder.addQueryParameter(key, null);
             } else {
                 values.forEach(value -> urlBuilder.addQueryParameter(key, value));
@@ -236,27 +240,11 @@ public class DefaultHttpClient implements HttpClient {
     }
 
     private Request buildOkHttpRequestWithTextBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
-        requestBuilder.method(httpRequest.getMethod().toString(), new RequestBody() {
-
-            @Override
-            public MediaType contentType() {
-                return MediaType.parse(httpRequest.getContentType());
-            }
-
-            @Override
-            public void writeTo(@NotNull BufferedSink bufferedSink) throws IOException {
-                bufferedSink.writeUtf8(httpRequest.getBodyAsString());
-            }
-
-            @Override
-            public long contentLength() throws IOException {
-                if (httpRequest.haveHeader(Constants.CONTENT_LENGTH)) {
-                    return Long.parseLong(httpRequest.getHeader(Constants.CONTENT_LENGTH));
-                }
-                return super.contentLength();
-            }
-        });
-        return requestBuilder.build();
+        RequestBody requestBody = createRequestBody(
+                httpRequest.getBodyAsString(),
+                MediaType.parse(httpRequest.getContentType())
+        );
+        return requestBuilder.method(httpRequest.getMethod().toString(), requestBody).build();
     }
 
     private Request buildOkHttpRequestWithoutTextBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
@@ -275,8 +263,20 @@ public class DefaultHttpClient implements HttpClient {
 
     private RequestBody createRequestBody(byte[] content, MediaType contentType) {
         try {
+            // OkHttp 4.x+
             return RequestBody.create(content, contentType);
         } catch (NoSuchMethodError e) {
+            // compatible OkHttp 3.x
+            return RequestBody.create(contentType, content);
+        }
+    }
+
+    private RequestBody createRequestBody(String content, MediaType contentType) {
+        try {
+            // OkHttp 4.x+
+            return RequestBody.create(content, contentType);
+        } catch (NoSuchMethodError e) {
+            // compatible OkHttp 3.x
             return RequestBody.create(contentType, content);
         }
     }

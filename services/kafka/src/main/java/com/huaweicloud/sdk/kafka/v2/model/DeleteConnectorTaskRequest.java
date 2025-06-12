@@ -43,7 +43,7 @@ public class DeleteConnectorTaskRequest {
     }
 
     /**
-     * Smart Connector任务ID。
+     * Smart Connect任务ID。
      * @return taskId
      */
     public String getTaskId() {

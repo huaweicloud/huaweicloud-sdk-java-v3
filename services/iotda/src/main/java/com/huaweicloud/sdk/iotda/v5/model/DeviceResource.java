@@ -19,6 +19,11 @@ public class DeviceResource {
     private ParameterRef deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_id")
+
+    private ParameterRef deviceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_id")
 
     private ParameterRef nodeId;
@@ -57,6 +62,32 @@ public class DeviceResource {
 
     public void setDeviceName(ParameterRef deviceName) {
         this.deviceName = deviceName;
+    }
+
+    public DeviceResource withDeviceId(ParameterRef deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+
+    public DeviceResource withDeviceId(Consumer<ParameterRef> deviceIdSetter) {
+        if (this.deviceId == null) {
+            this.deviceId = new ParameterRef();
+            deviceIdSetter.accept(this.deviceId);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get deviceId
+     * @return deviceId
+     */
+    public ParameterRef getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(ParameterRef deviceId) {
+        this.deviceId = deviceId;
     }
 
     public DeviceResource withNodeId(ParameterRef nodeId) {
@@ -144,13 +175,14 @@ public class DeviceResource {
             return false;
         }
         DeviceResource that = (DeviceResource) obj;
-        return Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.nodeId, that.nodeId)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceName, nodeId, productId, tags);
+        return Objects.hash(deviceName, deviceId, nodeId, productId, tags);
     }
 
     @Override
@@ -158,6 +190,7 @@ public class DeviceResource {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeviceResource {\n");
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

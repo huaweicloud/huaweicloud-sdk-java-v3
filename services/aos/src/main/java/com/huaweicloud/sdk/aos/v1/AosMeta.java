@@ -39,6 +39,12 @@ import com.huaweicloud.sdk.aos.v1.model.CreateStackResponse;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackSetRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackSetRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackSetResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateVersionRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookRequest;
@@ -49,6 +55,10 @@ import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleVersionRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleVersionResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateProviderRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateProviderResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateProviderVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateProviderVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedResponse;
@@ -89,6 +99,10 @@ import com.huaweicloud.sdk.aos.v1.model.ListPrivateModuleVersionsRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateModuleVersionsResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateModulesRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateModulesResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateProviderVersionsRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateProviderVersionsResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateProvidersRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateProvidersResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackInstancesRequest;
@@ -122,6 +136,10 @@ import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionContentRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionContentResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateProviderMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateProviderMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateProviderVersionMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateProviderVersionMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataRequest;
@@ -142,6 +160,9 @@ import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateModuleMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateModuleMetadataRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateModuleMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateProviderMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateProviderMetadataRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateProviderMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesResponse;
@@ -227,6 +248,317 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(CreatePrivateProviderVersionRequestBody.class),
             f -> f.withMarshaller(CreatePrivateProviderVersionRequest::getBody,
                 CreatePrivateProviderVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePrivateProviderRequest, DeletePrivateProviderResponse> deletePrivateProvider =
+        genForDeletePrivateProvider();
+
+    private static HttpRequestDef<DeletePrivateProviderRequest, DeletePrivateProviderResponse> genForDeletePrivateProvider() {
+        // basic
+        HttpRequestDef.Builder<DeletePrivateProviderRequest, DeletePrivateProviderResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeletePrivateProviderRequest.class, DeletePrivateProviderResponse.class)
+            .withName("DeletePrivateProvider")
+            .withUri("/v1/private-providers/{provider_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateProviderRequest::getProviderName,
+                DeletePrivateProviderRequest::setProviderName));
+        builder.<String>withRequestField("provider_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateProviderRequest::getProviderId,
+                DeletePrivateProviderRequest::setProviderId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateProviderRequest::getClientRequestId,
+                DeletePrivateProviderRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePrivateProviderVersionRequest, DeletePrivateProviderVersionResponse> deletePrivateProviderVersion =
+        genForDeletePrivateProviderVersion();
+
+    private static HttpRequestDef<DeletePrivateProviderVersionRequest, DeletePrivateProviderVersionResponse> genForDeletePrivateProviderVersion() {
+        // basic
+        HttpRequestDef.Builder<DeletePrivateProviderVersionRequest, DeletePrivateProviderVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeletePrivateProviderVersionRequest.class,
+                    DeletePrivateProviderVersionResponse.class)
+                .withName("DeletePrivateProviderVersion")
+                .withUri("/v1/private-providers/{provider_name}/versions/{provider_version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateProviderVersionRequest::getProviderName,
+                DeletePrivateProviderVersionRequest::setProviderName));
+        builder.<String>withRequestField("provider_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateProviderVersionRequest::getProviderVersion,
+                DeletePrivateProviderVersionRequest::setProviderVersion));
+        builder.<String>withRequestField("provider_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateProviderVersionRequest::getProviderId,
+                DeletePrivateProviderVersionRequest::setProviderId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateProviderVersionRequest::getClientRequestId,
+                DeletePrivateProviderVersionRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPrivateProviderVersionsRequest, ListPrivateProviderVersionsResponse> listPrivateProviderVersions =
+        genForListPrivateProviderVersions();
+
+    private static HttpRequestDef<ListPrivateProviderVersionsRequest, ListPrivateProviderVersionsResponse> genForListPrivateProviderVersions() {
+        // basic
+        HttpRequestDef.Builder<ListPrivateProviderVersionsRequest, ListPrivateProviderVersionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPrivateProviderVersionsRequest.class,
+                    ListPrivateProviderVersionsResponse.class)
+                .withName("ListPrivateProviderVersions")
+                .withUri("/v1/private-providers/{provider_name}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateProviderVersionsRequest::getProviderName,
+                ListPrivateProviderVersionsRequest::setProviderName));
+        builder.<String>withRequestField("provider_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateProviderVersionsRequest::getProviderId,
+                ListPrivateProviderVersionsRequest::setProviderId));
+        builder.<List<ListPrivateProviderVersionsRequest.SortKeyEnum>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateProviderVersionsRequest::getSortKey,
+                ListPrivateProviderVersionsRequest::setSortKey));
+        builder.<List<ListPrivateProviderVersionsRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateProviderVersionsRequest::getSortDir,
+                ListPrivateProviderVersionsRequest::setSortDir));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateProviderVersionsRequest::getMarker,
+                ListPrivateProviderVersionsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivateProviderVersionsRequest::getLimit,
+                ListPrivateProviderVersionsRequest::setLimit));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateProviderVersionsRequest::getClientRequestId,
+                ListPrivateProviderVersionsRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPrivateProvidersRequest, ListPrivateProvidersResponse> listPrivateProviders =
+        genForListPrivateProviders();
+
+    private static HttpRequestDef<ListPrivateProvidersRequest, ListPrivateProvidersResponse> genForListPrivateProviders() {
+        // basic
+        HttpRequestDef.Builder<ListPrivateProvidersRequest, ListPrivateProvidersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPrivateProvidersRequest.class, ListPrivateProvidersResponse.class)
+            .withName("ListPrivateProviders")
+            .withUri("/v1/private-providers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<List<ListPrivateProvidersRequest.SortKeyEnum>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateProvidersRequest::getSortKey, ListPrivateProvidersRequest::setSortKey));
+        builder.<List<ListPrivateProvidersRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateProvidersRequest::getSortDir, ListPrivateProvidersRequest::setSortDir));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateProvidersRequest::getMarker, ListPrivateProvidersRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivateProvidersRequest::getLimit, ListPrivateProvidersRequest::setLimit));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateProvidersRequest::getClientRequestId,
+                ListPrivateProvidersRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateProviderMetadataRequest, ShowPrivateProviderMetadataResponse> showPrivateProviderMetadata =
+        genForShowPrivateProviderMetadata();
+
+    private static HttpRequestDef<ShowPrivateProviderMetadataRequest, ShowPrivateProviderMetadataResponse> genForShowPrivateProviderMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateProviderMetadataRequest, ShowPrivateProviderMetadataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPrivateProviderMetadataRequest.class,
+                    ShowPrivateProviderMetadataResponse.class)
+                .withName("ShowPrivateProviderMetadata")
+                .withUri("/v1/private-providers/{provider_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateProviderMetadataRequest::getProviderName,
+                ShowPrivateProviderMetadataRequest::setProviderName));
+        builder.<String>withRequestField("provider_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateProviderMetadataRequest::getProviderId,
+                ShowPrivateProviderMetadataRequest::setProviderId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateProviderMetadataRequest::getClientRequestId,
+                ShowPrivateProviderMetadataRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateProviderVersionMetadataRequest, ShowPrivateProviderVersionMetadataResponse> showPrivateProviderVersionMetadata =
+        genForShowPrivateProviderVersionMetadata();
+
+    private static HttpRequestDef<ShowPrivateProviderVersionMetadataRequest, ShowPrivateProviderVersionMetadataResponse> genForShowPrivateProviderVersionMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateProviderVersionMetadataRequest, ShowPrivateProviderVersionMetadataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPrivateProviderVersionMetadataRequest.class,
+                    ShowPrivateProviderVersionMetadataResponse.class)
+                .withName("ShowPrivateProviderVersionMetadata")
+                .withUri("/v1/private-providers/{provider_name}/versions/{provider_version}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateProviderVersionMetadataRequest::getProviderName,
+                ShowPrivateProviderVersionMetadataRequest::setProviderName));
+        builder.<String>withRequestField("provider_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateProviderVersionMetadataRequest::getProviderVersion,
+                ShowPrivateProviderVersionMetadataRequest::setProviderVersion));
+        builder.<String>withRequestField("provider_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateProviderVersionMetadataRequest::getProviderId,
+                ShowPrivateProviderVersionMetadataRequest::setProviderId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateProviderVersionMetadataRequest::getClientRequestId,
+                ShowPrivateProviderVersionMetadataRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrivateProviderMetadataRequest, UpdatePrivateProviderMetadataResponse> updatePrivateProviderMetadata =
+        genForUpdatePrivateProviderMetadata();
+
+    private static HttpRequestDef<UpdatePrivateProviderMetadataRequest, UpdatePrivateProviderMetadataResponse> genForUpdatePrivateProviderMetadata() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrivateProviderMetadataRequest, UpdatePrivateProviderMetadataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PATCH,
+                    UpdatePrivateProviderMetadataRequest.class,
+                    UpdatePrivateProviderMetadataResponse.class)
+                .withName("UpdatePrivateProviderMetadata")
+                .withUri("/v1/private-providers/{provider_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateProviderMetadataRequest::getProviderName,
+                UpdatePrivateProviderMetadataRequest::setProviderName));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateProviderMetadataRequest::getClientRequestId,
+                UpdatePrivateProviderMetadataRequest::setClientRequestId));
+        builder.<UpdatePrivateProviderMetadataRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePrivateProviderMetadataRequestBody.class),
+            f -> f.withMarshaller(UpdatePrivateProviderMetadataRequest::getBody,
+                UpdatePrivateProviderMetadataRequest::setBody));
 
         // response
 
@@ -521,6 +853,16 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListExecutionPlansRequest::getStackId, ListExecutionPlansRequest::setStackId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionPlansRequest::getMarker, ListExecutionPlansRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExecutionPlansRequest::getLimit, ListExecutionPlansRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -699,6 +1041,16 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPrivateHooksRequest::getSortDir, ListPrivateHooksRequest::setSortDir));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateHooksRequest::getMarker, ListPrivateHooksRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivateHooksRequest::getLimit, ListPrivateHooksRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1069,6 +1421,18 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPrivateModuleVersionsRequest::getSortDir,
                 ListPrivateModuleVersionsRequest::setSortDir));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateModuleVersionsRequest::getMarker,
+                ListPrivateModuleVersionsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivateModuleVersionsRequest::getLimit,
+                ListPrivateModuleVersionsRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1103,6 +1467,16 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPrivateModulesRequest::getSortDir, ListPrivateModulesRequest::setSortDir));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateModulesRequest::getMarker, ListPrivateModulesRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivateModulesRequest::getLimit, ListPrivateModulesRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1605,6 +1979,16 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStackEventsRequest::getField, ListStackEventsRequest::setField));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStackEventsRequest::getMarker, ListStackEventsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStackEventsRequest::getLimit, ListStackEventsRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1639,6 +2023,16 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStackOutputsRequest::getStackId, ListStackOutputsRequest::setStackId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStackOutputsRequest::getMarker, ListStackOutputsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStackOutputsRequest::getLimit, ListStackOutputsRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1673,6 +2067,16 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStackResourcesRequest::getStackId, ListStackResourcesRequest::setStackId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStackResourcesRequest::getMarker, ListStackResourcesRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStackResourcesRequest::getLimit, ListStackResourcesRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1696,6 +2100,16 @@ public class AosMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStacksRequest::getMarker, ListStacksRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStacksRequest::getLimit, ListStacksRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1994,6 +2408,16 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(ListStackInstancesRequest.CallIdentityEnum.class),
             f -> f.withMarshaller(ListStackInstancesRequest::getCallIdentity,
                 ListStackInstancesRequest::setCallIdentity));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStackInstancesRequest::getMarker, ListStackInstancesRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStackInstancesRequest::getLimit, ListStackInstancesRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2053,6 +2477,16 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(ListStackSetOperationsRequest.CallIdentityEnum.class),
             f -> f.withMarshaller(ListStackSetOperationsRequest::getCallIdentity,
                 ListStackSetOperationsRequest::setCallIdentity));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getMarker, ListStackSetOperationsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStackSetOperationsRequest::getLimit, ListStackSetOperationsRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2097,6 +2531,16 @@ public class AosMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListStackSetsRequest.CallIdentityEnum.class),
             f -> f.withMarshaller(ListStackSetsRequest::getCallIdentity, ListStackSetsRequest::setCallIdentity));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStackSetsRequest::getMarker, ListStackSetsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListStackSetsRequest::getLimit, ListStackSetsRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2400,6 +2844,76 @@ public class AosMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ParseTemplateVariablesRequestBody.class),
             f -> f.withMarshaller(ParseTemplateVariablesRequest::getBody, ParseTemplateVariablesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
+        genForCreateTemplate();
+
+    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForCreateTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
+                .withName("CreateTemplate")
+                .withUri("/v1/{project_id}/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTemplateRequest::getClientRequestId,
+                CreateTemplateRequest::setClientRequestId));
+        builder.<CreateTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTemplateRequestBody.class),
+            f -> f.withMarshaller(CreateTemplateRequest::getBody, CreateTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTemplateVersionRequest, CreateTemplateVersionResponse> createTemplateVersion =
+        genForCreateTemplateVersion();
+
+    private static HttpRequestDef<CreateTemplateVersionRequest, CreateTemplateVersionResponse> genForCreateTemplateVersion() {
+        // basic
+        HttpRequestDef.Builder<CreateTemplateVersionRequest, CreateTemplateVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateTemplateVersionRequest.class, CreateTemplateVersionResponse.class)
+            .withName("CreateTemplateVersion")
+            .withUri("/v1/{project_id}/templates/{template_name}/versions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTemplateVersionRequest::getTemplateName,
+                CreateTemplateVersionRequest::setTemplateName));
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTemplateVersionRequest::getTemplateId,
+                CreateTemplateVersionRequest::setTemplateId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTemplateVersionRequest::getClientRequestId,
+                CreateTemplateVersionRequest::setClientRequestId));
+        builder.<CreateTemplateVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTemplateVersionRequestBody.class),
+            f -> f.withMarshaller(CreateTemplateVersionRequest::getBody, CreateTemplateVersionRequest::setBody));
 
         // response
 

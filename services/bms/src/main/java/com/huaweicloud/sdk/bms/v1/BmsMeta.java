@@ -56,6 +56,8 @@ import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickRequest;
 import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerMetadataOptionsRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerVolumeInfoRequest;
@@ -76,6 +78,9 @@ import com.huaweicloud.sdk.bms.v1.model.ShowWindowsBaremetalServerPwdResponse;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerInterfaceAttachmentsReq;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerInterfaceAttachmentsRequest;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerInterfaceAttachmentsResponse;
+import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataOptionsRequest;
+import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataOptionsRequestBody;
+import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataReq;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataRequest;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataResponse;
@@ -756,6 +761,33 @@ public class BmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBaremetalServerMetadataOptionsRequest, ShowBaremetalServerMetadataOptionsResponse> showBaremetalServerMetadataOptions =
+        genForShowBaremetalServerMetadataOptions();
+
+    private static HttpRequestDef<ShowBaremetalServerMetadataOptionsRequest, ShowBaremetalServerMetadataOptionsResponse> genForShowBaremetalServerMetadataOptions() {
+        // basic
+        HttpRequestDef.Builder<ShowBaremetalServerMetadataOptionsRequest, ShowBaremetalServerMetadataOptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBaremetalServerMetadataOptionsRequest.class,
+                    ShowBaremetalServerMetadataOptionsResponse.class)
+                .withName("ShowBaremetalServerMetadataOptions")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/metadata-options")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBaremetalServerMetadataOptionsRequest::getServerId,
+                ShowBaremetalServerMetadataOptionsRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBaremetalServerTagsRequest, ShowBaremetalServerTagsResponse> showBaremetalServerTags =
         genForShowBaremetalServerTags();
 
@@ -969,6 +1001,39 @@ public class BmsMeta {
             TypeCasts.uncheckedConversion(UpdateBaremetalServerMetadataReq.class),
             f -> f.withMarshaller(UpdateBaremetalServerMetadataRequest::getBody,
                 UpdateBaremetalServerMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBaremetalServerMetadataOptionsRequest, UpdateBaremetalServerMetadataOptionsResponse> updateBaremetalServerMetadataOptions =
+        genForUpdateBaremetalServerMetadataOptions();
+
+    private static HttpRequestDef<UpdateBaremetalServerMetadataOptionsRequest, UpdateBaremetalServerMetadataOptionsResponse> genForUpdateBaremetalServerMetadataOptions() {
+        // basic
+        HttpRequestDef.Builder<UpdateBaremetalServerMetadataOptionsRequest, UpdateBaremetalServerMetadataOptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateBaremetalServerMetadataOptionsRequest.class,
+                    UpdateBaremetalServerMetadataOptionsResponse.class)
+                .withName("UpdateBaremetalServerMetadataOptions")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/metadata-options")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBaremetalServerMetadataOptionsRequest::getServerId,
+                UpdateBaremetalServerMetadataOptionsRequest::setServerId));
+        builder.<UpdateBaremetalServerMetadataOptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBaremetalServerMetadataOptionsRequestBody.class),
+            f -> f.withMarshaller(UpdateBaremetalServerMetadataOptionsRequest::getBody,
+                UpdateBaremetalServerMetadataOptionsRequest::setBody));
 
         // response
 

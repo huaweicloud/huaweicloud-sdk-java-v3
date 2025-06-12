@@ -399,14 +399,14 @@ public class Incident {
     private String closeTime;
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      */
     public static final class IpdrrPhaseEnum {
 
         /**
-         * Enum PREPARTION for value: "Prepartion"
+         * Enum PREPARATION for value: "Preparation"
          */
-        public static final IpdrrPhaseEnum PREPARTION = new IpdrrPhaseEnum("Prepartion");
+        public static final IpdrrPhaseEnum PREPARATION = new IpdrrPhaseEnum("Preparation");
 
         /**
          * Enum DETECTION_AND_ANALYSIS for value: "Detection and Analysis"
@@ -414,10 +414,10 @@ public class Incident {
         public static final IpdrrPhaseEnum DETECTION_AND_ANALYSIS = new IpdrrPhaseEnum("Detection and Analysis");
 
         /**
-         * Enum CONTAINM_ERADICATION_RECOVERY for value: "Containm，Eradication& Recovery"
+         * Enum CONTAIN_ERADICATION_RECOVERY for value: "Contain，Eradication& Recovery"
          */
-        public static final IpdrrPhaseEnum CONTAINM_ERADICATION_RECOVERY =
-            new IpdrrPhaseEnum("Containm，Eradication& Recovery");
+        public static final IpdrrPhaseEnum CONTAIN_ERADICATION_RECOVERY =
+            new IpdrrPhaseEnum("Contain，Eradication& Recovery");
 
         /**
          * Enum POST_INCIDENT_ACTIVITY for value: "Post-Incident-Activity"
@@ -428,9 +428,9 @@ public class Incident {
 
         private static Map<String, IpdrrPhaseEnum> createStaticFields() {
             Map<String, IpdrrPhaseEnum> map = new HashMap<>();
-            map.put("Prepartion", PREPARTION);
+            map.put("Preparation", PREPARATION);
             map.put("Detection and Analysis", DETECTION_AND_ANALYSIS);
-            map.put("Containm，Eradication& Recovery", CONTAINM_ERADICATION_RECOVERY);
+            map.put("Contain，Eradication& Recovery", CONTAIN_ERADICATION_RECOVERY);
             map.put("Post-Incident-Activity", POST_INCIDENT_ACTIVITY);
             return Collections.unmodifiableMap(map);
         }
@@ -634,7 +634,7 @@ public class Incident {
     }
 
     /**
-     * 事件对象的版本，该字段的值必须为华为云SSA服务确定的官方发布版本之一
+     * 事件对象的版本，该字段的值必须为云SSA服务确定的官方发布版本之一
      * @return version
      */
     public String getVersion() {
@@ -1186,7 +1186,7 @@ public class Incident {
     }
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      * @return ipdrrPhase
      */
     public IpdrrPhaseEnum getIpdrrPhase() {

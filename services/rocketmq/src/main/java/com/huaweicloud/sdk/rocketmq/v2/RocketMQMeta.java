@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchCreateOrDeleteRocketmqTagRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchCreateOrDeleteRocketmqTagResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchCreateOrDeleteTagReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstanceReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesResponse;
@@ -17,6 +20,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineResponse;
@@ -32,6 +37,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.CreateTopicOrBatchDeleteTopicRespon
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateUserResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeadletterResendReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteBackgroundTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteBackgroundTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceRequest;
@@ -42,6 +49,7 @@ import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.DiagnosisRep;
 import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageReq;
@@ -49,12 +57,16 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListAvailableZonesResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListBackgroundTasksRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListBackgroundTasksResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBrokersRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBrokersResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumerGroupOfTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumerGroupOfTopicResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListEngineProductsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListEngineProductsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListInstanceConsumerGroupsRequest;
@@ -76,6 +88,9 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ListUserResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.Message;
 import com.huaweicloud.sdk.rocketmq.v2.model.MetadataDeleteReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ModifyConfigReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.ModifyInstanceSslConfigRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ModifyInstanceSslConfigResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.PlainSSLSwitchRep;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResendReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetRequest;
@@ -83,14 +98,19 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeEngineInstanceReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.RestartInstanceRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageResp;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupRequest;
@@ -160,6 +180,45 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
             f -> f.withMarshaller(BatchCreateOrDeleteRocketmqTagRequest::getBody,
                 BatchCreateOrDeleteRocketmqTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteDiagnosisReportRequest, BatchDeleteDiagnosisReportResponse> batchDeleteDiagnosisReport =
+        genForBatchDeleteDiagnosisReport();
+
+    private static HttpRequestDef<BatchDeleteDiagnosisReportRequest, BatchDeleteDiagnosisReportResponse> genForBatchDeleteDiagnosisReport() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteDiagnosisReportRequest, BatchDeleteDiagnosisReportResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteDiagnosisReportRequest.class,
+                    BatchDeleteDiagnosisReportResponse.class)
+                .withName("BatchDeleteDiagnosisReport")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteDiagnosisReportRequest::getEngine,
+                BatchDeleteDiagnosisReportRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteDiagnosisReportRequest::getInstanceId,
+                BatchDeleteDiagnosisReportRequest::setInstanceId));
+        builder.<BatchDeleteDiagnosisReportReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteDiagnosisReportReq.class),
+            f -> f.withMarshaller(BatchDeleteDiagnosisReportRequest::getBody,
+                BatchDeleteDiagnosisReportRequest::setBody));
 
         // response
 
@@ -252,6 +311,40 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(CreateConsumerGroupOrBatchDeleteConsumerGroupReq.class),
             f -> f.withMarshaller(CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::getBody,
                 CreateConsumerGroupOrBatchDeleteConsumerGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> createDiagnosisTask =
+        genForCreateDiagnosisTask();
+
+    private static HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> genForCreateDiagnosisTask() {
+        // basic
+        HttpRequestDef.Builder<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDiagnosisTaskRequest.class, CreateDiagnosisTaskResponse.class)
+                .withName("CreateDiagnosisTask")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getEngine, CreateDiagnosisTaskRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getInstanceId,
+                CreateDiagnosisTaskRequest::setInstanceId));
+        builder.<DiagnosisRep>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DiagnosisRep.class),
+            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getBody, CreateDiagnosisTaskRequest::setBody));
 
         // response
 
@@ -381,6 +474,35 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(User.class),
             f -> f.withMarshaller(CreateUserRequest::getBody, CreateUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
+        genForDeleteBackgroundTask();
+
+    private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genForDeleteBackgroundTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
+            .withName("DeleteBackgroundTask")
+            .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId,
+                DeleteBackgroundTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, DeleteBackgroundTaskRequest::setTaskId));
 
         // response
 
@@ -573,6 +695,50 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasks =
+        genForListBackgroundTasks();
+
+    private static HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> genForListBackgroundTasks() {
+        // basic
+        HttpRequestDef.Builder<ListBackgroundTasksRequest, ListBackgroundTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackgroundTasksRequest.class, ListBackgroundTasksResponse.class)
+                .withName("ListBackgroundTasks")
+                .withUri("/v2/{project_id}/instances/{instance_id}/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
+                ListBackgroundTasksRequest::setInstanceId));
+        builder.<Integer>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getLimit, ListBackgroundTasksRequest::setLimit));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getBeginTime, ListBackgroundTasksRequest::setBeginTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, ListBackgroundTasksRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBrokersRequest, ListBrokersResponse> listBrokers = genForListBrokers();
 
     private static HttpRequestDef<ListBrokersRequest, ListBrokersResponse> genForListBrokers() {
@@ -650,6 +816,45 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getLimit,
                 ListConsumeGroupAccessPolicyRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDiagnosisReportsRequest, ListDiagnosisReportsResponse> listDiagnosisReports =
+        genForListDiagnosisReports();
+
+    private static HttpRequestDef<ListDiagnosisReportsRequest, ListDiagnosisReportsResponse> genForListDiagnosisReports() {
+        // basic
+        HttpRequestDef.Builder<ListDiagnosisReportsRequest, ListDiagnosisReportsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDiagnosisReportsRequest.class, ListDiagnosisReportsResponse.class)
+            .withName("ListDiagnosisReports")
+            .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDiagnosisReportsRequest::getEngine, ListDiagnosisReportsRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDiagnosisReportsRequest::getInstanceId,
+                ListDiagnosisReportsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDiagnosisReportsRequest::getOffset, ListDiagnosisReportsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDiagnosisReportsRequest::getLimit, ListDiagnosisReportsRequest::setLimit));
 
         // response
 
@@ -877,6 +1082,11 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessagesRequest::getTopic, ListMessagesRequest::setTopic));
+        builder.<String>withRequestField("queue",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesRequest::getQueue, ListMessagesRequest::setQueue));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1040,6 +1250,41 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyInstanceSslConfigRequest, ModifyInstanceSslConfigResponse> modifyInstanceSslConfig =
+        genForModifyInstanceSslConfig();
+
+    private static HttpRequestDef<ModifyInstanceSslConfigRequest, ModifyInstanceSslConfigResponse> genForModifyInstanceSslConfig() {
+        // basic
+        HttpRequestDef.Builder<ModifyInstanceSslConfigRequest, ModifyInstanceSslConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ModifyInstanceSslConfigRequest.class, ModifyInstanceSslConfigResponse.class)
+            .withName("ModifyInstanceSslConfig")
+            .withUri("/v2/{project_id}/{engine}/instances/{instance_id}/plain-ssl-switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyInstanceSslConfigRequest::getEngine,
+                ModifyInstanceSslConfigRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyInstanceSslConfigRequest::getInstanceId,
+                ModifyInstanceSslConfigRequest::setInstanceId));
+        builder.<PlainSSLSwitchRep>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PlainSSLSwitchRep.class),
+            f -> f.withMarshaller(ModifyInstanceSslConfigRequest::getBody, ModifyInstanceSslConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse> resetConsumeOffset =
         genForResetConsumeOffset();
 
@@ -1111,34 +1356,6 @@ public class RocketMQMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance =
-        genForRestartInstance();
-
-    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForRestartInstance() {
-        // basic
-        HttpRequestDef.Builder<RestartInstanceRequest, RestartInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RestartInstanceRequest.class, RestartInstanceResponse.class)
-                .withName("RestartInstance")
-                .withUri("/v2/{project_id}/{engine}/instances/{instance_id}/restart")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("engine",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartInstanceRequest::getEngine, RestartInstanceRequest::setEngine));
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, RestartInstanceRequest::setInstanceId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<SendDlqMessageRequest, SendDlqMessageResponse> sendDlqMessage =
         genForSendDlqMessage();
 
@@ -1166,6 +1383,38 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeadletterResendReq.class),
             f -> f.withMarshaller(SendDlqMessageRequest::getBody, SendDlqMessageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendMessageRequest, SendMessageResponse> sendMessage = genForSendMessage();
+
+    private static HttpRequestDef<SendMessageRequest, SendMessageResponse> genForSendMessage() {
+        // basic
+        HttpRequestDef.Builder<SendMessageRequest, SendMessageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SendMessageRequest.class, SendMessageResponse.class)
+                .withName("SendMessage")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/messages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendMessageRequest::getEngine, SendMessageRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendMessageRequest::getInstanceId, SendMessageRequest::setInstanceId));
+        builder.<SendMessageResp>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SendMessageResp.class),
+            f -> f.withMarshaller(SendMessageRequest::getBody, SendMessageRequest::setBody));
 
         // response
 
@@ -1263,6 +1512,62 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getOffset,
                 ShowConsumerListOrDetailsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDiagnosisReportRequest, ShowDiagnosisReportResponse> showDiagnosisReport =
+        genForShowDiagnosisReport();
+
+    private static HttpRequestDef<ShowDiagnosisReportRequest, ShowDiagnosisReportResponse> genForShowDiagnosisReport() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisReportRequest, ShowDiagnosisReportResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDiagnosisReportRequest.class, ShowDiagnosisReportResponse.class)
+                .withName("ShowDiagnosisReport")
+                .withUri("/v2/{engine}/{project_id}/diagnosis/{report_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisReportRequest::getEngine, ShowDiagnosisReportRequest::setEngine));
+        builder.<String>withRequestField("report_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisReportRequest::getReportId, ShowDiagnosisReportRequest::setReportId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDiagnosisStackRequest, ShowDiagnosisStackResponse> showDiagnosisStack =
+        genForShowDiagnosisStack();
+
+    private static HttpRequestDef<ShowDiagnosisStackRequest, ShowDiagnosisStackResponse> genForShowDiagnosisStack() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisStackRequest, ShowDiagnosisStackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDiagnosisStackRequest.class, ShowDiagnosisStackResponse.class)
+                .withName("ShowDiagnosisStack")
+                .withUri("/v2/{engine}/{project_id}/diagnosis/stack/{stack_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisStackRequest::getEngine, ShowDiagnosisStackRequest::setEngine));
+        builder.<String>withRequestField("stack_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisStackRequest::getStackId, ShowDiagnosisStackRequest::setStackId));
 
         // response
 

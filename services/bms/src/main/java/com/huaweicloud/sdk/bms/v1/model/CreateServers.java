@@ -104,6 +104,11 @@ public class CreateServers {
 
     private List<SystemTags> serverTags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata_options")
+
+    private UpdateBaremetalServerMetadataOptionsRequestBody metadataOptions;
+
     public CreateServers withImageRef(UUID imageRef) {
         this.imageRef = imageRef;
         return this;
@@ -519,6 +524,33 @@ public class CreateServers {
         this.serverTags = serverTags;
     }
 
+    public CreateServers withMetadataOptions(UpdateBaremetalServerMetadataOptionsRequestBody metadataOptions) {
+        this.metadataOptions = metadataOptions;
+        return this;
+    }
+
+    public CreateServers withMetadataOptions(
+        Consumer<UpdateBaremetalServerMetadataOptionsRequestBody> metadataOptionsSetter) {
+        if (this.metadataOptions == null) {
+            this.metadataOptions = new UpdateBaremetalServerMetadataOptionsRequestBody();
+            metadataOptionsSetter.accept(this.metadataOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadataOptions
+     * @return metadataOptions
+     */
+    public UpdateBaremetalServerMetadataOptionsRequestBody getMetadataOptions() {
+        return metadataOptions;
+    }
+
+    public void setMetadataOptions(UpdateBaremetalServerMetadataOptionsRequestBody metadataOptions) {
+        this.metadataOptions = metadataOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -537,7 +569,8 @@ public class CreateServers {
             && Objects.equals(this.count, that.count) && Objects.equals(this.rootVolume, that.rootVolume)
             && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.extendparam, that.extendparam)
             && Objects.equals(this.schedulerHints, that.schedulerHints)
-            && Objects.equals(this.serverTags, that.serverTags);
+            && Objects.equals(this.serverTags, that.serverTags)
+            && Objects.equals(this.metadataOptions, that.metadataOptions);
     }
 
     @Override
@@ -559,7 +592,8 @@ public class CreateServers {
             dataVolumes,
             extendparam,
             schedulerHints,
-            serverTags);
+            serverTags,
+            metadataOptions);
     }
 
     @Override
@@ -584,6 +618,7 @@ public class CreateServers {
         sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
         sb.append("    schedulerHints: ").append(toIndentedString(schedulerHints)).append("\n");
         sb.append("    serverTags: ").append(toIndentedString(serverTags)).append("\n");
+        sb.append("    metadataOptions: ").append(toIndentedString(metadataOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

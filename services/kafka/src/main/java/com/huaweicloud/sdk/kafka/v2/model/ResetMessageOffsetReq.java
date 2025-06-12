@@ -36,7 +36,7 @@ public class ResetMessageOffsetReq {
     }
 
     /**
-     * topic名称。
+     * Topic名称。
      * @return topic
      */
     public String getTopic() {

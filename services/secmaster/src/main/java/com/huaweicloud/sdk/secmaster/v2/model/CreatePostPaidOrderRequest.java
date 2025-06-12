@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class CreatePostPaidOrderRequest {
 
     /**
-     * 用户当前语言环境
+     * 用户当前语言环境 zh-cn or en-us.
      */
     public static final class XLanguageEnum {
 
@@ -102,7 +102,7 @@ public class CreatePostPaidOrderRequest {
     }
 
     /**
-     * 用户当前语言环境
+     * 用户当前语言环境 zh-cn or en-us.
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

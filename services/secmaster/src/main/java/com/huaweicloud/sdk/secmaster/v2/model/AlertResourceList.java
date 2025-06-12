@@ -100,7 +100,7 @@ public class AlertResourceList {
     }
 
     /**
-     * 资源类型；引用华为云RMS type字段
+     * 资源类型；引用云RMS type字段
      * @return type
      */
     public String getType() {
@@ -117,7 +117,7 @@ public class AlertResourceList {
     }
 
     /**
-     * 云服务名称；引用华为云RMS provider字段
+     * 云服务名称；引用云RMS provider字段
      * @return provider
      */
     public String getProvider() {
@@ -134,7 +134,7 @@ public class AlertResourceList {
     }
 
     /**
-     * 区域；按照华为云regionId填写，如cn-north-1等
+     * 区域；按照云regionId填写
      * @return regionId
      */
     public String getRegionId() {

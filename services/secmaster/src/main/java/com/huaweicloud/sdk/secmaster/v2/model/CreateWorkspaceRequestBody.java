@@ -216,7 +216,7 @@ public class CreateWorkspaceRequestBody {
     }
 
     /**
-     * 通过给账号下的资源添加标签，可以对资源进行自定义标记，实现资源的分类。可到标签管理服务使用可视化表格操作资源标签，并对标签进行批量编辑。
+     * 标签数组
      * @return tags
      */
     public List<TagsPojo> getTags() {

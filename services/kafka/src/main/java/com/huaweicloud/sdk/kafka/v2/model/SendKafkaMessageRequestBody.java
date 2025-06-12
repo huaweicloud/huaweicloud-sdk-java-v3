@@ -34,7 +34,7 @@ public class SendKafkaMessageRequestBody {
     }
 
     /**
-     * Kafka的topic
+     * Kafka的Topic
      * @return topic
      */
     public String getTopic() {
@@ -85,7 +85,7 @@ public class SendKafkaMessageRequestBody {
     }
 
     /**
-     * topic的分区信息等
+     * Topic的分区信息等
      * @return propertyList
      */
     public List<SendKafkaMessageRequestBodyPropertyList> getPropertyList() {

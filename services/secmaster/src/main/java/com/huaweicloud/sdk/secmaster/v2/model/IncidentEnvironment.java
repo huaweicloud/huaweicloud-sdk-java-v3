@@ -41,7 +41,7 @@ public class IncidentEnvironment {
     }
 
     /**
-     * 环境供应商：HWCP/HWC/AWS/Azure/GCP
+     * 环境供应商
      * @return vendorType
      */
     public String getVendorType() {

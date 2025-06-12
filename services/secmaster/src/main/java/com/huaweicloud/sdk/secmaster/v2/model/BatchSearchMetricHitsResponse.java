@@ -41,7 +41,7 @@ public class BatchSearchMetricHitsResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 批量查询指标结果
      * @return body
      */
     public List<ShowMetricResultResponseBody> getBody() {

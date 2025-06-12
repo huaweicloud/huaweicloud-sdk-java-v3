@@ -19,6 +19,11 @@ public class ListStackSetOperationsResponse extends SdkResponse {
 
     private List<StackSetOperation> stackSetOperations = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListStackSetOperationsResponse withStackSetOperations(List<StackSetOperation> stackSetOperations) {
         this.stackSetOperations = stackSetOperations;
         return this;
@@ -53,6 +58,32 @@ public class ListStackSetOperationsResponse extends SdkResponse {
         this.stackSetOperations = stackSetOperations;
     }
 
+    public ListStackSetOperationsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListStackSetOperationsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -62,12 +93,13 @@ public class ListStackSetOperationsResponse extends SdkResponse {
             return false;
         }
         ListStackSetOperationsResponse that = (ListStackSetOperationsResponse) obj;
-        return Objects.equals(this.stackSetOperations, that.stackSetOperations);
+        return Objects.equals(this.stackSetOperations, that.stackSetOperations)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(stackSetOperations);
+        return Objects.hash(stackSetOperations, pageInfo);
     }
 
     @Override
@@ -75,6 +107,7 @@ public class ListStackSetOperationsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListStackSetOperationsResponse {\n");
         sb.append("    stackSetOperations: ").append(toIndentedString(stackSetOperations)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1728,6 +1728,11 @@ public class FunctionGraphMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFunctionsRequest::getPackageName, ListFunctionsRequest::setPackageName));
+        builder.<String>withRequestField("func_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionsRequest::getFuncName, ListFunctionsRequest::setFuncName));
 
         // response
 

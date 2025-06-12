@@ -987,11 +987,6 @@ public class CloudtestMeta {
             f -> f.withMarshaller(CreateTaskDefaultResultRequest::getBody, CreateTaskDefaultResultRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateTaskDefaultResultResponse::getBody, CreateTaskDefaultResultResponse::setBody));
 
         return builder.build();
     }
@@ -5521,17 +5516,17 @@ public class CloudtestMeta {
             f -> f.withMarshaller(ListTaskResultsRequest::getTaskUri, ListTaskResultsRequest::setTaskUri));
         builder.<String>withRequestField("iterator_uri",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTaskResultsRequest::getIteratorUri, ListTaskResultsRequest::setIteratorUri));
         builder.<String>withRequestField("page_no",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTaskResultsRequest::getPageNo, ListTaskResultsRequest::setPageNo));
         builder.<String>withRequestField("page_size",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTaskResultsRequest::getPageSize, ListTaskResultsRequest::setPageSize));
         builder.<String>withRequestField("release_dev",

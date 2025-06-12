@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改的topic列表。
+ * 修改的Topic列表。
  */
 public class UpdateInstanceTopicReq {
 
@@ -40,7 +40,7 @@ public class UpdateInstanceTopicReq {
     }
 
     /**
-     * 修改的topic列表。
+     * 修改的Topic列表。
      * @return topics
      */
     public List<UpdateInstanceTopicReqTopics> getTopics() {

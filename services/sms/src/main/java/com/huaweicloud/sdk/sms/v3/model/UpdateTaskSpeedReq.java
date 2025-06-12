@@ -258,6 +258,11 @@ public class UpdateTaskSpeedReq {
     private Double agentDiskIo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_migration_test")
+
+    private Boolean needMigrationTest;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_time")
 
     private String agentTime;
@@ -524,6 +529,23 @@ public class UpdateTaskSpeedReq {
         this.agentDiskIo = agentDiskIo;
     }
 
+    public UpdateTaskSpeedReq withNeedMigrationTest(Boolean needMigrationTest) {
+        this.needMigrationTest = needMigrationTest;
+        return this;
+    }
+
+    /**
+     * 是否开启迁移演练
+     * @return needMigrationTest
+     */
+    public Boolean getNeedMigrationTest() {
+        return needMigrationTest;
+    }
+
+    public void setNeedMigrationTest(Boolean needMigrationTest) {
+        this.needMigrationTest = needMigrationTest;
+    }
+
     public UpdateTaskSpeedReq withAgentTime(String agentTime) {
         this.agentTime = agentTime;
         return this;
@@ -560,6 +582,7 @@ public class UpdateTaskSpeedReq {
             && Objects.equals(this.totalMemUsage, that.totalMemUsage)
             && Objects.equals(this.agentMemUsage, that.agentMemUsage)
             && Objects.equals(this.totalDiskIo, that.totalDiskIo) && Objects.equals(this.agentDiskIo, that.agentDiskIo)
+            && Objects.equals(this.needMigrationTest, that.needMigrationTest)
             && Objects.equals(this.agentTime, that.agentTime);
     }
 
@@ -579,6 +602,7 @@ public class UpdateTaskSpeedReq {
             agentMemUsage,
             totalDiskIo,
             agentDiskIo,
+            needMigrationTest,
             agentTime);
     }
 
@@ -600,6 +624,7 @@ public class UpdateTaskSpeedReq {
         sb.append("    agentMemUsage: ").append(toIndentedString(agentMemUsage)).append("\n");
         sb.append("    totalDiskIo: ").append(toIndentedString(totalDiskIo)).append("\n");
         sb.append("    agentDiskIo: ").append(toIndentedString(agentDiskIo)).append("\n");
+        sb.append("    needMigrationTest: ").append(toIndentedString(needMigrationTest)).append("\n");
         sb.append("    agentTime: ").append(toIndentedString(agentTime)).append("\n");
         sb.append("}");
         return sb.toString();

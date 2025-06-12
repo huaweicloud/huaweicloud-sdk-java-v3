@@ -247,6 +247,16 @@ public class ListStackSetsRequest {
 
     private CallIdentityEnum callIdentity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListStackSetsRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
         return this;
@@ -364,6 +374,42 @@ public class ListStackSetsRequest {
         this.callIdentity = callIdentity;
     }
 
+    public ListStackSetsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页标记。当一页无法返回所有结果，上一次的请求将返回next_marker以指引还有更多页数，用户可以将next_marker中的值放到此处以查询下一页的信息。此marker只能用于与上一请求指定的相同参数的请求。不指定时默认从第一页开始查询。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListStackSetsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的最多结果数量
+     * minimum: 10
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -375,12 +421,13 @@ public class ListStackSetsRequest {
         ListStackSetsRequest that = (ListStackSetsRequest) obj;
         return Objects.equals(this.clientRequestId, that.clientRequestId) && Objects.equals(this.filter, that.filter)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.callIdentity, that.callIdentity);
+            && Objects.equals(this.callIdentity, that.callIdentity) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientRequestId, filter, sortKey, sortDir, callIdentity);
+        return Objects.hash(clientRequestId, filter, sortKey, sortDir, callIdentity, marker, limit);
     }
 
     @Override
@@ -392,6 +439,8 @@ public class ListStackSetsRequest {
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    callIdentity: ").append(toIndentedString(callIdentity)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

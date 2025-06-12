@@ -46,7 +46,7 @@ public class ListInstanceConsumerGroupTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 消费组TOPIC
+     * 消费组Topic
      * @return topics
      */
     public List<GroupTopicEntity> getTopics() {

@@ -204,7 +204,7 @@ public class DataObject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_list")
 
-    private List<AlertNetworkList> networkList = null;
+    private List<DataObjectNetworkList> networkList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_list")
@@ -394,14 +394,14 @@ public class DataObject {
     private String closeTime;
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      */
     public static final class IpdrrPhaseEnum {
 
         /**
-         * Enum PREPARTION for value: "Prepartion"
+         * Enum PREPARATION for value: "Preparation"
          */
-        public static final IpdrrPhaseEnum PREPARTION = new IpdrrPhaseEnum("Prepartion");
+        public static final IpdrrPhaseEnum PREPARATION = new IpdrrPhaseEnum("Preparation");
 
         /**
          * Enum DETECTION_AND_ANALYSIS for value: "Detection and Analysis"
@@ -409,10 +409,10 @@ public class DataObject {
         public static final IpdrrPhaseEnum DETECTION_AND_ANALYSIS = new IpdrrPhaseEnum("Detection and Analysis");
 
         /**
-         * Enum CONTAINM_ERADICATION_RECOVERY for value: "Containm，Eradication& Recovery"
+         * Enum CONTAIN_ERADICATION_RECOVERY for value: "Contain，Eradication& Recovery"
          */
-        public static final IpdrrPhaseEnum CONTAINM_ERADICATION_RECOVERY =
-            new IpdrrPhaseEnum("Containm，Eradication& Recovery");
+        public static final IpdrrPhaseEnum CONTAIN_ERADICATION_RECOVERY =
+            new IpdrrPhaseEnum("Contain，Eradication& Recovery");
 
         /**
          * Enum POST_INCIDENT_ACTIVITY for value: "Post-Incident-Activity"
@@ -423,9 +423,9 @@ public class DataObject {
 
         private static Map<String, IpdrrPhaseEnum> createStaticFields() {
             Map<String, IpdrrPhaseEnum> map = new HashMap<>();
-            map.put("Prepartion", PREPARTION);
+            map.put("Preparation", PREPARATION);
             map.put("Detection and Analysis", DETECTION_AND_ANALYSIS);
-            map.put("Containm，Eradication& Recovery", CONTAINM_ERADICATION_RECOVERY);
+            map.put("Contain，Eradication& Recovery", CONTAIN_ERADICATION_RECOVERY);
             map.put("Post-Incident-Activity", POST_INCIDENT_ACTIVITY);
             return Collections.unmodifiableMap(map);
         }
@@ -624,7 +624,7 @@ public class DataObject {
     }
 
     /**
-     * 告警对象的版本，该字段的值必须为华为云SSA服务确定的官方发布版本之一
+     * 告警对象的版本，该字段的值必须为云SSA服务确定的官方发布版本之一
      * @return version
      */
     public String getVersion() {
@@ -974,12 +974,12 @@ public class DataObject {
         this.alertType = alertType;
     }
 
-    public DataObject withNetworkList(List<AlertNetworkList> networkList) {
+    public DataObject withNetworkList(List<DataObjectNetworkList> networkList) {
         this.networkList = networkList;
         return this;
     }
 
-    public DataObject addNetworkListItem(AlertNetworkList networkListItem) {
+    public DataObject addNetworkListItem(DataObjectNetworkList networkListItem) {
         if (this.networkList == null) {
             this.networkList = new ArrayList<>();
         }
@@ -987,7 +987,7 @@ public class DataObject {
         return this;
     }
 
-    public DataObject withNetworkList(Consumer<List<AlertNetworkList>> networkListSetter) {
+    public DataObject withNetworkList(Consumer<List<DataObjectNetworkList>> networkListSetter) {
         if (this.networkList == null) {
             this.networkList = new ArrayList<>();
         }
@@ -999,11 +999,11 @@ public class DataObject {
      * 网络信息
      * @return networkList
      */
-    public List<AlertNetworkList> getNetworkList() {
+    public List<DataObjectNetworkList> getNetworkList() {
         return networkList;
     }
 
-    public void setNetworkList(List<AlertNetworkList> networkList) {
+    public void setNetworkList(List<DataObjectNetworkList> networkList) {
         this.networkList = networkList;
     }
 
@@ -1159,7 +1159,7 @@ public class DataObject {
     }
 
     /**
-     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     * 周期/处置阶段编号 Preparation|Detection and Analysis|Contain，Eradication& Recovery|Post-Incident-Activity
      * @return ipdrrPhase
      */
     public IpdrrPhaseEnum getIpdrrPhase() {

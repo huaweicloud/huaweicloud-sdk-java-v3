@@ -26,6 +26,10 @@ import com.huaweicloud.sdk.aos.v1.model.CreateStackRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackResponse;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackSetRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackSetResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreateTemplateVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookRequest;
@@ -36,6 +40,10 @@ import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleVersionRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleVersionResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateProviderRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateProviderResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateProviderVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateProviderVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackInstanceDeprecatedRequest;
@@ -72,6 +80,10 @@ import com.huaweicloud.sdk.aos.v1.model.ListPrivateModuleVersionsRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateModuleVersionsResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateModulesRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateModulesResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateProviderVersionsRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateProviderVersionsResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateProvidersRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateProvidersResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackInstancesRequest;
@@ -104,6 +116,10 @@ import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionContentRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionContentResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateProviderMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateProviderMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateProviderVersionMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateProviderVersionMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataRequest;
@@ -122,6 +138,8 @@ import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateModuleMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateModuleMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateProviderMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateProviderMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackRequest;
@@ -449,6 +467,308 @@ public class AosAsyncClient {
     public AsyncInvoker<CreatePrivateProviderVersionRequest, CreatePrivateProviderVersionResponse> createPrivateProviderVersionAsyncInvoker(
         CreatePrivateProviderVersionRequest request) {
         return new AsyncInvoker<>(request, AosMeta.createPrivateProviderVersion, hcClient);
+    }
+
+    /**
+     * 删除私有provider
+     *
+     * 删除私有provider（DeletePrivateProvider）
+     * 
+     * 删除某个私有provider及私有provider下的所有provider版本。
+     * 
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * ** 请谨慎操作，删除私有provider将会删除该私有provider下的所有provider版本。 **
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePrivateProviderRequest 请求对象
+     * @return CompletableFuture<DeletePrivateProviderResponse>
+     */
+    public CompletableFuture<DeletePrivateProviderResponse> deletePrivateProviderAsync(
+        DeletePrivateProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.deletePrivateProvider);
+    }
+
+    /**
+     * 删除私有provider
+     *
+     * 删除私有provider（DeletePrivateProvider）
+     * 
+     * 删除某个私有provider及私有provider下的所有provider版本。
+     * 
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * ** 请谨慎操作，删除私有provider将会删除该私有provider下的所有provider版本。 **
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePrivateProviderRequest 请求对象
+     * @return AsyncInvoker<DeletePrivateProviderRequest, DeletePrivateProviderResponse>
+     */
+    public AsyncInvoker<DeletePrivateProviderRequest, DeletePrivateProviderResponse> deletePrivateProviderAsyncInvoker(
+        DeletePrivateProviderRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.deletePrivateProvider, hcClient);
+    }
+
+    /**
+     * 删除私有provider版本
+     *
+     * 删除私有provider版本（DeletePrivateProviderVersion）
+     * 
+     * 删除某个私有provider版本
+     * 
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * **请谨慎操作**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePrivateProviderVersionRequest 请求对象
+     * @return CompletableFuture<DeletePrivateProviderVersionResponse>
+     */
+    public CompletableFuture<DeletePrivateProviderVersionResponse> deletePrivateProviderVersionAsync(
+        DeletePrivateProviderVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.deletePrivateProviderVersion);
+    }
+
+    /**
+     * 删除私有provider版本
+     *
+     * 删除私有provider版本（DeletePrivateProviderVersion）
+     * 
+     * 删除某个私有provider版本
+     * 
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * **请谨慎操作**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePrivateProviderVersionRequest 请求对象
+     * @return AsyncInvoker<DeletePrivateProviderVersionRequest, DeletePrivateProviderVersionResponse>
+     */
+    public AsyncInvoker<DeletePrivateProviderVersionRequest, DeletePrivateProviderVersionResponse> deletePrivateProviderVersionAsyncInvoker(
+        DeletePrivateProviderVersionRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.deletePrivateProviderVersion, hcClient);
+    }
+
+    /**
+     * 列举私有provider版本
+     *
+     * 列举私有provider版本（ListPrivateProviderVersions）
+     * 
+     * 列举所选择的私有provider中所有的provider版本信息。
+     * 
+     *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     *   * 如果provider下不存在provider版本，则返回空list。
+     *   * 如果provider不存在则返回404。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPrivateProviderVersionsRequest 请求对象
+     * @return CompletableFuture<ListPrivateProviderVersionsResponse>
+     */
+    public CompletableFuture<ListPrivateProviderVersionsResponse> listPrivateProviderVersionsAsync(
+        ListPrivateProviderVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.listPrivateProviderVersions);
+    }
+
+    /**
+     * 列举私有provider版本
+     *
+     * 列举私有provider版本（ListPrivateProviderVersions）
+     * 
+     * 列举所选择的私有provider中所有的provider版本信息。
+     * 
+     *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     *   * 如果provider下不存在provider版本，则返回空list。
+     *   * 如果provider不存在则返回404。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPrivateProviderVersionsRequest 请求对象
+     * @return AsyncInvoker<ListPrivateProviderVersionsRequest, ListPrivateProviderVersionsResponse>
+     */
+    public AsyncInvoker<ListPrivateProviderVersionsRequest, ListPrivateProviderVersionsResponse> listPrivateProviderVersionsAsyncInvoker(
+        ListPrivateProviderVersionsRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.listPrivateProviderVersions, hcClient);
+    }
+
+    /**
+     * 列举私有provider
+     *
+     * 列举私有provider（ListPrivateProviders）
+     * 
+     * 列举当前局点下用户所有的私有provider。
+     * 
+     *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
+     *   * 如果当前用户下没有任何私有provider，则返回空list。
+     *   * 如果需要某个provider的所有版本信息，可以调用ListPrivateProviderVersions。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPrivateProvidersRequest 请求对象
+     * @return CompletableFuture<ListPrivateProvidersResponse>
+     */
+    public CompletableFuture<ListPrivateProvidersResponse> listPrivateProvidersAsync(
+        ListPrivateProvidersRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.listPrivateProviders);
+    }
+
+    /**
+     * 列举私有provider
+     *
+     * 列举私有provider（ListPrivateProviders）
+     * 
+     * 列举当前局点下用户所有的私有provider。
+     * 
+     *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
+     *   * 如果当前用户下没有任何私有provider，则返回空list。
+     *   * 如果需要某个provider的所有版本信息，可以调用ListPrivateProviderVersions。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPrivateProvidersRequest 请求对象
+     * @return AsyncInvoker<ListPrivateProvidersRequest, ListPrivateProvidersResponse>
+     */
+    public AsyncInvoker<ListPrivateProvidersRequest, ListPrivateProvidersResponse> listPrivateProvidersAsyncInvoker(
+        ListPrivateProvidersRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.listPrivateProviders, hcClient);
+    }
+
+    /**
+     * 获取私有provider元数据
+     *
+     * 获取私有provider元数据（ShowPrivateProviderMetadata）
+     * 
+     * 获取某个私有provider的元数据信息
+     * 
+     *   * 具体返回的信息见ShowPrivateProviderMetadataResponseBody，如果想查看私有provider下全部provider版本，请调用ListPrivateProviderVersions。
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPrivateProviderMetadataRequest 请求对象
+     * @return CompletableFuture<ShowPrivateProviderMetadataResponse>
+     */
+    public CompletableFuture<ShowPrivateProviderMetadataResponse> showPrivateProviderMetadataAsync(
+        ShowPrivateProviderMetadataRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.showPrivateProviderMetadata);
+    }
+
+    /**
+     * 获取私有provider元数据
+     *
+     * 获取私有provider元数据（ShowPrivateProviderMetadata）
+     * 
+     * 获取某个私有provider的元数据信息
+     * 
+     *   * 具体返回的信息见ShowPrivateProviderMetadataResponseBody，如果想查看私有provider下全部provider版本，请调用ListPrivateProviderVersions。
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPrivateProviderMetadataRequest 请求对象
+     * @return AsyncInvoker<ShowPrivateProviderMetadataRequest, ShowPrivateProviderMetadataResponse>
+     */
+    public AsyncInvoker<ShowPrivateProviderMetadataRequest, ShowPrivateProviderMetadataResponse> showPrivateProviderMetadataAsyncInvoker(
+        ShowPrivateProviderMetadataRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.showPrivateProviderMetadata, hcClient);
+    }
+
+    /**
+     * 获取私有provider版本元数据
+     *
+     * 获取私有provider版本元数据（ShowPrivateProviderVersionMetadata）
+     * 
+     * 获取某个私有provider版本的元数据信息
+     *   
+     *   * 具体返回信息见ShowPrivateProviderVersionMetadataResponseBody
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPrivateProviderVersionMetadataRequest 请求对象
+     * @return CompletableFuture<ShowPrivateProviderVersionMetadataResponse>
+     */
+    public CompletableFuture<ShowPrivateProviderVersionMetadataResponse> showPrivateProviderVersionMetadataAsync(
+        ShowPrivateProviderVersionMetadataRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.showPrivateProviderVersionMetadata);
+    }
+
+    /**
+     * 获取私有provider版本元数据
+     *
+     * 获取私有provider版本元数据（ShowPrivateProviderVersionMetadata）
+     * 
+     * 获取某个私有provider版本的元数据信息
+     *   
+     *   * 具体返回信息见ShowPrivateProviderVersionMetadataResponseBody
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPrivateProviderVersionMetadataRequest 请求对象
+     * @return AsyncInvoker<ShowPrivateProviderVersionMetadataRequest, ShowPrivateProviderVersionMetadataResponse>
+     */
+    public AsyncInvoker<ShowPrivateProviderVersionMetadataRequest, ShowPrivateProviderVersionMetadataResponse> showPrivateProviderVersionMetadataAsyncInvoker(
+        ShowPrivateProviderVersionMetadataRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.showPrivateProviderVersionMetadata, hcClient);
+    }
+
+    /**
+     * 更新私有provider元数据
+     *
+     * 更新私有provider元数据（UpdatePrivateProviderMetadata）
+     * 
+     * 更新当前私有provider的元数据信息
+     * 
+     *   * 目前只支持更新私有provider的描述
+     *   * 如果需要创建新的版本，请调用CreatePrivateProviderVersion
+     *   * 更新为增量更新，即如果某个参数不提供，则保持原始值
+     *   * 如果请求中没有需要被更新的参数，则返回400。注意：即使更新原始值和目标值一致也被认为是有效更新
+     *   * 更新后私有provider的更新时间（update_time）也会被更新
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrivateProviderMetadataRequest 请求对象
+     * @return CompletableFuture<UpdatePrivateProviderMetadataResponse>
+     */
+    public CompletableFuture<UpdatePrivateProviderMetadataResponse> updatePrivateProviderMetadataAsync(
+        UpdatePrivateProviderMetadataRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.updatePrivateProviderMetadata);
+    }
+
+    /**
+     * 更新私有provider元数据
+     *
+     * 更新私有provider元数据（UpdatePrivateProviderMetadata）
+     * 
+     * 更新当前私有provider的元数据信息
+     * 
+     *   * 目前只支持更新私有provider的描述
+     *   * 如果需要创建新的版本，请调用CreatePrivateProviderVersion
+     *   * 更新为增量更新，即如果某个参数不提供，则保持原始值
+     *   * 如果请求中没有需要被更新的参数，则返回400。注意：即使更新原始值和目标值一致也被认为是有效更新
+     *   * 更新后私有provider的更新时间（update_time）也会被更新
+     *   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrivateProviderMetadataRequest 请求对象
+     * @return AsyncInvoker<UpdatePrivateProviderMetadataRequest, UpdatePrivateProviderMetadataResponse>
+     */
+    public AsyncInvoker<UpdatePrivateProviderMetadataRequest, UpdatePrivateProviderMetadataResponse> updatePrivateProviderMetadataAsyncInvoker(
+        UpdatePrivateProviderMetadataRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.updatePrivateProviderMetadata, hcClient);
     }
 
     /**
@@ -939,10 +1259,9 @@ public class AosAsyncClient {
      * 列举当前局点下用户指定资源栈下所有的执行计划
      * 
      *   * 默认按照生成时间降序排序，最新生成的在最前
-     *   * 注意：目前暂时返回全量执行计划信息，即不支持分页
      *   * 如果指定的资源栈下没有任何执行计划，则返回空list
      *   * 如果指定的资源栈不存在，则返回404
-     * 
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * ListExecutionPlans返回的只有摘要信息（具体摘要信息见ListExecutionPlansResponseBody），如果用户需要详细的执行计划元数据请调用GetExecutionPlanMetadata
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -962,10 +1281,9 @@ public class AosAsyncClient {
      * 列举当前局点下用户指定资源栈下所有的执行计划
      * 
      *   * 默认按照生成时间降序排序，最新生成的在最前
-     *   * 注意：目前暂时返回全量执行计划信息，即不支持分页
      *   * 如果指定的资源栈下没有任何执行计划，则返回空list
      *   * 如果指定的资源栈不存在，则返回404
-     * 
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * ListExecutionPlans返回的只有摘要信息（具体摘要信息见ListExecutionPlansResponseBody），如果用户需要详细的执行计划元数据请调用GetExecutionPlanMetadata
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1228,9 +1546,9 @@ public class AosAsyncClient {
      * 列举当前局点下用户所有的私有hook。
      * 
      *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir的数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
-     *   * 注意：目前暂时返回全量hook的信息，即不支持分页。
      *   * 若当前用户没有任何私有hook，则返回空list。
      *   * 具体返回的信息见ListPrivateHooksResponseBody。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1249,9 +1567,9 @@ public class AosAsyncClient {
      * 列举当前局点下用户所有的私有hook。
      * 
      *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir的数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
-     *   * 注意：目前暂时返回全量hook的信息，即不支持分页。
      *   * 若当前用户没有任何私有hook，则返回空list。
      *   * 具体返回的信息见ListPrivateHooksResponseBody。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1645,6 +1963,7 @@ public class AosAsyncClient {
      *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      *   * 如果module_name和module_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
      *   * 如果模块不存在则返回404。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * ListPrivateModuleVersions返回的只有摘要信息（具体摘要信息见ListPrivateModuleVersionsResponseBody），如果用户需要详细的模块版本元数据请调用ShowPrivateModuleVersionMetadata
      * 
@@ -1668,6 +1987,7 @@ public class AosAsyncClient {
      *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      *   * 如果module_name和module_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
      *   * 如果模块不存在则返回404。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * ListPrivateModuleVersions返回的只有摘要信息（具体摘要信息见ListPrivateModuleVersionsResponseBody），如果用户需要详细的模块版本元数据请调用ShowPrivateModuleVersionMetadata
      * 
@@ -1691,6 +2011,7 @@ public class AosAsyncClient {
      *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      *   * 如果当前用户下没有任何私有模块，则返回空list。
      *   * 如果需要某个模块的所有版本信息，可以调用ListModuleVersions。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * ListPrivateModules返回的只有摘要信息（具体摘要信息见ListPrivateModulesResponseBody），如果用户需要详细的模块元数据请调用ShowPrivateModuleMetadata
      * 
@@ -1713,6 +2034,7 @@ public class AosAsyncClient {
      *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      *   * 如果当前用户下没有任何私有模块，则返回空list。
      *   * 如果需要某个模块的所有版本信息，可以调用ListModuleVersions。
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * ListPrivateModules返回的只有摘要信息（具体摘要信息见ListPrivateModulesResponseBody），如果用户需要详细的模块元数据请调用ShowPrivateModuleMetadata
      * 
@@ -2334,6 +2656,7 @@ public class AosAsyncClient {
      * * 可以使用filter作为过滤器，过滤出指定事件类型（event_type）、资源类型（resource_type）、资源名称（resource_name）的资源栈事件
      * * 可以使用field选择数据应返回的属性，属性事件类型（event_type）不可配置，一定会返回，可选择的属性有逝去时间（elapsed_seconds）、事件消息（event_message）、 资源ID键（resource_id_key）、资源ID值（resource_id_value）、资源键（resource_key）、资源类型（resource_type）、资源名称（resource_name）和时间戳（timestamp）
      * * 事件返回将以时间降序排列
+     * * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2356,6 +2679,7 @@ public class AosAsyncClient {
      * * 可以使用filter作为过滤器，过滤出指定事件类型（event_type）、资源类型（resource_type）、资源名称（resource_name）的资源栈事件
      * * 可以使用field选择数据应返回的属性，属性事件类型（event_type）不可配置，一定会返回，可选择的属性有逝去时间（elapsed_seconds）、事件消息（event_message）、 资源ID键（resource_id_key）、资源ID值（resource_id_value）、资源键（resource_key）、资源类型（resource_type）、资源名称（resource_name）和时间戳（timestamp）
      * * 事件返回将以时间降序排列
+     * * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2382,6 +2706,7 @@ public class AosAsyncClient {
      *   * 正在回滚（ROLLBACK_IN_PROGRESS）
      * 
      * output为HCL官方定义的语法，其返回信息类似于常见编程语言中的返回值，详细定义请参考HCL官方的说明
+     * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2407,6 +2732,7 @@ public class AosAsyncClient {
      *   * 正在回滚（ROLLBACK_IN_PROGRESS）
      * 
      * output为HCL官方定义的语法，其返回信息类似于常见编程语言中的返回值，详细定义请参考HCL官方的说明
+     * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2432,6 +2758,8 @@ public class AosAsyncClient {
      *   * 正在删除（DELETION_IN_PROGRESS）
      *   * 正在回滚（ROLLBACK_IN_PROGRESS）
      * 
+     * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request ListStackResourcesRequest 请求对象
@@ -2455,6 +2783,8 @@ public class AosAsyncClient {
      *   * 正在删除（DELETION_IN_PROGRESS）
      *   * 正在回滚（ROLLBACK_IN_PROGRESS）
      * 
+     * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request ListStackResourcesRequest 请求对象
@@ -2473,8 +2803,8 @@ public class AosAsyncClient {
      * 此API用于列举当前局点下用户所有的资源栈
      * 
      *   * 默认按照生成时间降序排序，最新生成的在最前
-     *   * 注意：目前暂时返回全量资源栈信息，即不支持分页
      *   * 如果没有任何资源栈，则返回空list
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * ListStacks返回的只有摘要信息（具体摘要信息见ListStacksResponseBody），如果用户需要详细的资源栈元数据请调用GetStackMetadata
      * 
@@ -2495,8 +2825,8 @@ public class AosAsyncClient {
      * 此API用于列举当前局点下用户所有的资源栈
      * 
      *   * 默认按照生成时间降序排序，最新生成的在最前
-     *   * 注意：目前暂时返回全量资源栈信息，即不支持分页
      *   * 如果没有任何资源栈，则返回空list
+     *   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * ListStacks返回的只有摘要信息（具体摘要信息见ListStacksResponseBody），如果用户需要详细的资源栈元数据请调用GetStackMetadata
      * 
@@ -2842,6 +3172,7 @@ public class AosAsyncClient {
      * * 可以使用filter作为过滤器，过滤出指定局点（region）或指定成员账号（stack_domain_id）下的资源栈实例
      * * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      * * 如果指定资源栈集下没有任何资源栈实例，则返回空list
+     * * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2862,6 +3193,7 @@ public class AosAsyncClient {
      * * 可以使用filter作为过滤器，过滤出指定局点（region）或指定成员账号（stack_domain_id）下的资源栈实例
      * * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      * * 如果指定资源栈集下没有任何资源栈实例，则返回空list
+     * * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2883,6 +3215,7 @@ public class AosAsyncClient {
      * 可以使用filter作为过滤器，过滤出指定操作状态（status）或操作类型（action）下的资源栈集操作。
      * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      * 如果指定资源栈集下没有任何资源栈集操作，则返回空list。
+     * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2904,6 +3237,7 @@ public class AosAsyncClient {
      * 可以使用filter作为过滤器，过滤出指定操作状态（status）或操作类型（action）下的资源栈集操作。
      * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      * 如果指定资源栈集下没有任何资源栈集操作，则返回空list。
+     * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2926,6 +3260,7 @@ public class AosAsyncClient {
      * * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      * * 注意：目前暂时返回全量资源栈集信息，即不支持分页
      * * 如果没有任何资源栈集，则返回空list
+     * * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2947,6 +3282,7 @@ public class AosAsyncClient {
      * * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
      * * 注意：目前暂时返回全量资源栈集信息，即不支持分页
      * * 如果没有任何资源栈集，则返回空list
+     * * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3246,6 +3582,93 @@ public class AosAsyncClient {
     public AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> parseTemplateVariablesAsyncInvoker(
         ParseTemplateVariablesRequest request) {
         return new AsyncInvoker<>(request, AosMeta.parseTemplateVariables, hcClient);
+    }
+
+    /**
+     * 创建模板
+     *
+     * 创建模板（CreateTemplate）
+     * 
+     * 此API用于创建一个带有版本的模板
+     * 
+     *   * 请求中必须包括template_uri或是template_body。前者为模板内容obs链接，后者为模板内容
+     *   * 模板管理名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的模板，删除，再重新创建一个同名模板
+     *   * 模板创建时，会自动生成模板版本号为V1的模板版本
+     *   * 模板必须存在一个或多个模板版本，即不存在没有模板版本的模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateRequest 请求对象
+     * @return CompletableFuture<CreateTemplateResponse>
+     */
+    public CompletableFuture<CreateTemplateResponse> createTemplateAsync(CreateTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.createTemplate);
+    }
+
+    /**
+     * 创建模板
+     *
+     * 创建模板（CreateTemplate）
+     * 
+     * 此API用于创建一个带有版本的模板
+     * 
+     *   * 请求中必须包括template_uri或是template_body。前者为模板内容obs链接，后者为模板内容
+     *   * 模板管理名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的模板，删除，再重新创建一个同名模板
+     *   * 模板创建时，会自动生成模板版本号为V1的模板版本
+     *   * 模板必须存在一个或多个模板版本，即不存在没有模板版本的模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
+     */
+    public AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateAsyncInvoker(
+        CreateTemplateRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.createTemplate, hcClient);
+    }
+
+    /**
+     * 创建模板版本
+     *
+     * 创建模板版本（CreateTemplateVersion）
+     * 
+     * 此API用于创建新的模板版本
+     * 
+     *   * 请求中必须包括template_uri或template_body。前者为模板内容obs链接，后者为模板内容
+     *   * 新创建的模板版本版本ID会自动在当前最大模板版本ID的基础上加1
+     *   * 创建模板版本需要的具体信息详见：CreateTemplateVersionRequestBody
+     *   * template_id是模板的唯一Id。此Id由资源编排服务在生成模板的时候生成，为UUID。由于模板名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的模板，删除，再重新创建一个同名模板。对于团队并行开发，用户可能希望确保，当前我操作的模板就是我认为的那个，而不是其他队友删除后创建的同名模板。因此，使用ID就可以做到强匹配。资源编排服务保证每次创建的模板所对应的ID都不相同，更新不会影响ID。如果给予的template_id和当前模板管理的ID不一致，则返回400
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateVersionRequest 请求对象
+     * @return CompletableFuture<CreateTemplateVersionResponse>
+     */
+    public CompletableFuture<CreateTemplateVersionResponse> createTemplateVersionAsync(
+        CreateTemplateVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.createTemplateVersion);
+    }
+
+    /**
+     * 创建模板版本
+     *
+     * 创建模板版本（CreateTemplateVersion）
+     * 
+     * 此API用于创建新的模板版本
+     * 
+     *   * 请求中必须包括template_uri或template_body。前者为模板内容obs链接，后者为模板内容
+     *   * 新创建的模板版本版本ID会自动在当前最大模板版本ID的基础上加1
+     *   * 创建模板版本需要的具体信息详见：CreateTemplateVersionRequestBody
+     *   * template_id是模板的唯一Id。此Id由资源编排服务在生成模板的时候生成，为UUID。由于模板名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的模板，删除，再重新创建一个同名模板。对于团队并行开发，用户可能希望确保，当前我操作的模板就是我认为的那个，而不是其他队友删除后创建的同名模板。因此，使用ID就可以做到强匹配。资源编排服务保证每次创建的模板所对应的ID都不相同，更新不会影响ID。如果给予的template_id和当前模板管理的ID不一致，则返回400
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateVersionRequest 请求对象
+     * @return AsyncInvoker<CreateTemplateVersionRequest, CreateTemplateVersionResponse>
+     */
+    public AsyncInvoker<CreateTemplateVersionRequest, CreateTemplateVersionResponse> createTemplateVersionAsyncInvoker(
+        CreateTemplateVersionRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.createTemplateVersion, hcClient);
     }
 
     /**

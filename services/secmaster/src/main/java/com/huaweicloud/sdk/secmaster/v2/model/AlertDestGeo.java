@@ -75,7 +75,7 @@ public class AlertDestGeo {
     }
 
     /**
-     * 城市编码，Beijing | Shanghai
+     * 城市编码
      * @return cityCode
      */
     public String getCityCode() {

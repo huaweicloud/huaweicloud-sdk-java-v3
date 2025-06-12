@@ -19,6 +19,11 @@ public class ListPrivateModulesResponse extends SdkResponse {
 
     private List<PrivateModuleSummary> modules = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListPrivateModulesResponse withModules(List<PrivateModuleSummary> modules) {
         this.modules = modules;
         return this;
@@ -52,6 +57,32 @@ public class ListPrivateModulesResponse extends SdkResponse {
         this.modules = modules;
     }
 
+    public ListPrivateModulesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListPrivateModulesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ListPrivateModulesResponse extends SdkResponse {
             return false;
         }
         ListPrivateModulesResponse that = (ListPrivateModulesResponse) obj;
-        return Objects.equals(this.modules, that.modules);
+        return Objects.equals(this.modules, that.modules) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(modules);
+        return Objects.hash(modules, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ListPrivateModulesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPrivateModulesResponse {\n");
         sb.append("    modules: ").append(toIndentedString(modules)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

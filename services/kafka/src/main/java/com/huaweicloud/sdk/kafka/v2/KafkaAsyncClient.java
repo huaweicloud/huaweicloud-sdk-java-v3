@@ -93,6 +93,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaTopicQuotaRequest;
@@ -207,6 +209,8 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ValidateConnectorConnectivityRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ValidateConnectorConnectivityResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -622,9 +626,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 创建topic流控配置
+     * 创建Topic流控配置
      *
-     * 该接口用于向Kafka实例提交创建topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 该接口用于向Kafka实例提交创建Topic级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -637,9 +641,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 创建topic流控配置
+     * 创建Topic流控配置
      *
-     * 该接口用于向Kafka实例提交创建topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 该接口用于向Kafka实例提交创建Topic级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -746,7 +750,7 @@ public class KafkaAsyncClient {
      *
      * 创建实例。
      * 
-     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc)
+     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc,cmcc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -763,7 +767,7 @@ public class KafkaAsyncClient {
      *
      * 创建实例。
      * 
-     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc)
+     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc,cmcc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -924,9 +928,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 删除topic流控配置
+     * 删除Topic流控配置
      *
-     * 该接口用于向Kafka实例提交删除topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 该接口用于向Kafka实例提交删除Topic级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -939,9 +943,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 删除topic流控配置
+     * 删除Topic流控配置
      *
-     * 该接口用于向Kafka实例提交删除topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 该接口用于向Kafka实例提交删除Topic级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1466,9 +1470,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 修改topic流控配置
+     * 修改Topic流控配置
      *
-     * 该接口用于向Kafka实例提交修改topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 该接口用于向Kafka实例提交修改Topic级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1481,9 +1485,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 修改topic流控配置
+     * 修改Topic流控配置
      *
-     * 该接口用于向Kafka实例提交修改topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 该接口用于向Kafka实例提交修改Topic级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2332,9 +2336,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询topic流控配置
+     * 查询Topic流控配置
      *
-     * 该接口用于查询topic级别的流控任务。
+     * 该接口用于查询Topic级别的流控任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2346,9 +2350,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询topic流控配置
+     * 查询Topic流控配置
      *
-     * 该接口用于查询topic级别的流控任务。
+     * 该接口用于查询Topic级别的流控任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2690,9 +2694,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 开启或关闭实例自动创建topic功能
+     * 开启或关闭实例自动创建Topic功能
      *
-     * 开启或关闭实例自动创建topic功能。
+     * 开启或关闭实例自动创建Topic功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2705,9 +2709,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 开启或关闭实例自动创建topic功能
+     * 开启或关闭实例自动创建Topic功能
      *
-     * 开启或关闭实例自动创建topic功能。
+     * 开启或关闭实例自动创建Topic功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3081,9 +3085,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 删除Smart Connector任务
+     * 删除Smart Connect任务
      *
-     * 删除Smart Connector任务。
+     * 删除Smart Connect任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3095,9 +3099,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 删除Smart Connector任务
+     * 删除Smart Connect任务
      *
-     * 删除Smart Connector任务。
+     * 删除Smart Connect任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3136,6 +3140,35 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ListConnectorTasksRequest, ListConnectorTasksResponse> listConnectorTasksAsyncInvoker(
         ListConnectorTasksRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.listConnectorTasks, hcClient);
+    }
+
+    /**
+     * 修改Smart Connect任务配置。
+     *
+     * 修改Smart Connect任务配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyConnectorTaskRequest 请求对象
+     * @return CompletableFuture<ModifyConnectorTaskResponse>
+     */
+    public CompletableFuture<ModifyConnectorTaskResponse> modifyConnectorTaskAsync(ModifyConnectorTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.modifyConnectorTask);
+    }
+
+    /**
+     * 修改Smart Connect任务配置。
+     *
+     * 修改Smart Connect任务配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyConnectorTaskRequest 请求对象
+     * @return AsyncInvoker<ModifyConnectorTaskRequest, ModifyConnectorTaskResponse>
+     */
+    public AsyncInvoker<ModifyConnectorTaskRequest, ModifyConnectorTaskResponse> modifyConnectorTaskAsyncInvoker(
+        ModifyConnectorTaskRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.modifyConnectorTask, hcClient);
     }
 
     /**
@@ -3257,9 +3290,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询Smart Connector任务详情
+     * 查询Smart Connect任务详情
      *
-     * 查询Smart Connector任务详情。
+     * 查询Smart Connect任务详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3271,9 +3304,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询Smart Connector任务详情
+     * 查询Smart Connect任务详情
      *
-     * 查询Smart Connector任务详情。
+     * 查询Smart Connect任务详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3283,6 +3316,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ShowConnectorTaskRequest, ShowConnectorTaskResponse> showConnectorTaskAsyncInvoker(
         ShowConnectorTaskRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.showConnectorTask, hcClient);
+    }
+
+    /**
+     * 校验Connector连通性
+     *
+     * 校验Connector连通性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateConnectorConnectivityRequest 请求对象
+     * @return CompletableFuture<ValidateConnectorConnectivityResponse>
+     */
+    public CompletableFuture<ValidateConnectorConnectivityResponse> validateConnectorConnectivityAsync(
+        ValidateConnectorConnectivityRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.validateConnectorConnectivity);
+    }
+
+    /**
+     * 校验Connector连通性
+     *
+     * 校验Connector连通性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateConnectorConnectivityRequest 请求对象
+     * @return AsyncInvoker<ValidateConnectorConnectivityRequest, ValidateConnectorConnectivityResponse>
+     */
+    public AsyncInvoker<ValidateConnectorConnectivityRequest, ValidateConnectorConnectivityResponse> validateConnectorConnectivityAsyncInvoker(
+        ValidateConnectorConnectivityRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.validateConnectorConnectivity, hcClient);
     }
 
 }

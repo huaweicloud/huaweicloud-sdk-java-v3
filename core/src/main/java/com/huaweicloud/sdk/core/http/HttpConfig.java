@@ -26,6 +26,7 @@ import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
 import okhttp3.Dns;
+import okhttp3.EventListener;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSocketFactory;
@@ -84,6 +85,8 @@ public class HttpConfig {
     private HostnameVerifier hostnameVerifier;
 
     private Dns dns;
+
+    private EventListener eventListener;
 
     /**
      * @deprecated use {@link #getConnectionTimeout()} instead
@@ -399,6 +402,19 @@ public class HttpConfig {
 
     public HttpConfig withSecureRandom(SecureRandom secureRandom) {
         setSecureRandom(secureRandom);
+        return this;
+    }
+
+    public EventListener getEventListener() {
+        return eventListener;
+    }
+
+    public void setEventListener(EventListener eventListener) {
+        this.eventListener = eventListener;
+    }
+
+    public HttpConfig withEventListener(EventListener eventListener) {
+        this.eventListener = eventListener;
         return this;
     }
 

@@ -47,8 +47,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
-
 public class TestHcClient {
     private static final Logger logger = LoggerFactory.getLogger(TestHcClient.class);
     HcClient hcClient;
@@ -73,7 +71,7 @@ public class TestHcClient {
         testBsonDocRequestInit();
         wireMockRule.stubFor(
                 WireMock.post("/test-bson")
-                        .withHeader("Content-Type", equalTo(Constants.MEDIATYPE.APPLICATION_BSON))
+                        .withHeader("Content-Type", WireMock.containing(Constants.MEDIATYPE.APPLICATION_BSON))
                         .willReturn(WireMock.aResponse()
                                 .withHeader("Content-Length", String.valueOf(bodyBytes.length))
                                 .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_BSON)

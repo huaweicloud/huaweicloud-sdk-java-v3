@@ -62,7 +62,7 @@ public class ShowCeshierarchyRespGroups {
     }
 
     /**
-     * topic信息。
+     * Topic信息。
      * @return queues
      */
     public List<ShowCeshierarchyRespQueues1> getQueues() {

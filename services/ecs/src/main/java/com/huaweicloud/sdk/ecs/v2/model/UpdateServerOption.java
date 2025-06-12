@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 更新云服务器Body体。
@@ -24,6 +25,11 @@ public class UpdateServerOption {
     @JsonProperty(value = "hostname")
 
     private String hostname;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_options")
+
+    private SecurityOptions securityOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
@@ -81,6 +87,32 @@ public class UpdateServerOption {
         this.hostname = hostname;
     }
 
+    public UpdateServerOption withSecurityOptions(SecurityOptions securityOptions) {
+        this.securityOptions = securityOptions;
+        return this;
+    }
+
+    public UpdateServerOption withSecurityOptions(Consumer<SecurityOptions> securityOptionsSetter) {
+        if (this.securityOptions == null) {
+            this.securityOptions = new SecurityOptions();
+            securityOptionsSetter.accept(this.securityOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get securityOptions
+     * @return securityOptions
+     */
+    public SecurityOptions getSecurityOptions() {
+        return securityOptions;
+    }
+
+    public void setSecurityOptions(SecurityOptions securityOptions) {
+        this.securityOptions = securityOptions;
+    }
+
     public UpdateServerOption withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -108,12 +140,14 @@ public class UpdateServerOption {
         }
         UpdateServerOption that = (UpdateServerOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.userData, that.userData);
+            && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.securityOptions, that.securityOptions)
+            && Objects.equals(this.userData, that.userData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, hostname, userData);
+        return Objects.hash(name, description, hostname, securityOptions, userData);
     }
 
     @Override
@@ -123,6 +157,7 @@ public class UpdateServerOption {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    securityOptions: ").append(toIndentedString(securityOptions)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("}");
         return sb.toString();

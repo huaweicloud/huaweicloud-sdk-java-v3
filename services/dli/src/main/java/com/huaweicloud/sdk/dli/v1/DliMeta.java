@@ -11,12 +11,18 @@ import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolRespo
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionResponse;
+import com.huaweicloud.sdk.dli.v1.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.BatchCreateResourceTagsRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.BatchCreateResourceTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansResponse;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteResourceTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteResourceTagsRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteResourceTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesResponse;
@@ -33,6 +39,9 @@ import com.huaweicloud.sdk.dli.v1.model.ChangeFlinkJobStatusReportRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlRequest;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlResponse;
+import com.huaweicloud.sdk.dli.v1.model.CountResourcesByTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.CountResourcesByTagsRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.CountResourcesByTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoResponse;
@@ -205,6 +214,11 @@ import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesByTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesByTagsRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesByTagsResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListResourcesTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsRequest;
@@ -272,6 +286,8 @@ import com.huaweicloud.sdk.dli.v1.model.ShowQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowQuotaRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowQuotaResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowResourceTagsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobLogRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobLogResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobRequest;
@@ -422,6 +438,46 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTags =
+        genForBatchCreateResourceTags();
+
+    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForBatchCreateResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateResourceTagsRequest.class, BatchCreateResourceTagsResponse.class)
+            .withName("BatchCreateResourceTags")
+            .withUri("/v3/{project_id}/{resource_type}/{resource_id}/tags/create")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreateResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType,
+                BatchCreateResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId,
+                BatchCreateResourceTagsRequest::setResourceId));
+        builder.<BatchCreateResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, BatchCreateResourceTagsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchCreateResourceTagsResponse::getBody, BatchCreateResourceTagsResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse> batchDeleteQueuePlans =
         genForBatchDeleteQueuePlans();
 
@@ -447,6 +503,80 @@ public class DliMeta {
             f -> f.withMarshaller(BatchDeleteQueuePlansRequest::getBody, BatchDeleteQueuePlansRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> batchDeleteResourceTags =
+        genForBatchDeleteResourceTags();
+
+    private static HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> genForBatchDeleteResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteResourceTagsRequest.class, BatchDeleteResourceTagsResponse.class)
+            .withName("BatchDeleteResourceTags")
+            .withUri("/v3/{project_id}/{resource_type}/{resource_id}/tags/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceType,
+                BatchDeleteResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceId,
+                BatchDeleteResourceTagsRequest::setResourceId));
+        builder.<BatchDeleteResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getBody, BatchDeleteResourceTagsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteResourceTagsResponse::getBody, BatchDeleteResourceTagsResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountResourcesByTagsRequest, CountResourcesByTagsResponse> countResourcesByTags =
+        genForCountResourcesByTags();
+
+    private static HttpRequestDef<CountResourcesByTagsRequest, CountResourcesByTagsResponse> genForCountResourcesByTags() {
+        // basic
+        HttpRequestDef.Builder<CountResourcesByTagsRequest, CountResourcesByTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CountResourcesByTagsRequest.class, CountResourcesByTagsResponse.class)
+            .withName("CountResourcesByTags")
+            .withUri("/v3/{project_id}/{resource_type}/resource-instances/count")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CountResourcesByTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CountResourcesByTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(CountResourcesByTagsRequest::getResourceType,
+                CountResourcesByTagsRequest::setResourceType));
+        builder.<CountResourcesByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CountResourcesByTagsRequestBody.class),
+            f -> f.withMarshaller(CountResourcesByTagsRequest::getBody, CountResourcesByTagsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CountResourcesByTagsResponse::getBody, CountResourcesByTagsResponse::setBody));
 
         return builder.build();
     }
@@ -1693,6 +1823,74 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTags =
+        genForListResourcesByTags();
+
+    private static HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> genForListResourcesByTags() {
+        // basic
+        HttpRequestDef.Builder<ListResourcesByTagsRequest, ListResourcesByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListResourcesByTagsRequest.class, ListResourcesByTagsResponse.class)
+                .withName("ListResourcesByTags")
+                .withUri("/v3/{project_id}/{resource_type}/resource-instances/filter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourcesByTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourcesByTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getResourceType,
+                ListResourcesByTagsRequest::setResourceType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getLimit, ListResourcesByTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getOffset, ListResourcesByTagsRequest::setOffset));
+        builder.<ListResourcesByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListResourcesByTagsRequestBody.class),
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getBody, ListResourcesByTagsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResourcesByTagsResponse::getBody, ListResourcesByTagsResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourcesTagsRequest, ListResourcesTagsResponse> listResourcesTags =
+        genForListResourcesTags();
+
+    private static HttpRequestDef<ListResourcesTagsRequest, ListResourcesTagsResponse> genForListResourcesTags() {
+        // basic
+        HttpRequestDef.Builder<ListResourcesTagsRequest, ListResourcesTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourcesTagsRequest.class, ListResourcesTagsResponse.class)
+                .withName("ListResourcesTags")
+                .withUri("/v3/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListResourcesTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListResourcesTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListResourcesTagsRequest::getResourceType,
+                ListResourcesTagsRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTablePrivilegesRequest, ListTablePrivilegesResponse> listTablePrivileges =
         genForListTablePrivileges();
 
@@ -2090,6 +2288,44 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTags =
+        genForShowResourceTags();
+
+    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForShowResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceTagsRequest, ShowResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagsRequest.class, ShowResourceTagsResponse.class)
+                .withName("ShowResourceTags")
+                .withUri("/v3/{project_id}/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, ShowResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, ShowResourceTagsRequest::setResourceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getLimit, ShowResourceTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowResourceTagsRequest::getOffset, ShowResourceTagsRequest::setOffset));
 
         // response
 

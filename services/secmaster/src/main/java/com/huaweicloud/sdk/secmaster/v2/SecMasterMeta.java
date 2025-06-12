@@ -88,6 +88,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteWorkspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteWorkspaceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DisableAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DisableAlertRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.EnableAlertRuleRequest;
@@ -162,6 +164,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookTopologyRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookTopologyResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowWorkspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowWorkspaceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleResponse;
@@ -176,6 +180,9 @@ import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceResponse;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -1290,6 +1297,35 @@ public class SecMasterMeta {
             String.class,
             f -> f.withMarshaller(DeletePlaybookVersionResponse::getXRequestId,
                 DeletePlaybookVersionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWorkspaceRequest, DeleteWorkspaceResponse> deleteWorkspace =
+        genForDeleteWorkspace();
+
+    private static HttpRequestDef<DeleteWorkspaceRequest, DeleteWorkspaceResponse> genForDeleteWorkspace() {
+        // basic
+        HttpRequestDef.Builder<DeleteWorkspaceRequest, DeleteWorkspaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteWorkspaceRequest.class, DeleteWorkspaceResponse.class)
+                .withName("DeleteWorkspace")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkspaceRequest::getWorkspaceId, DeleteWorkspaceRequest::setWorkspaceId));
+        builder.<Boolean>withRequestField("permanent_delete",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteWorkspaceRequest::getPermanentDelete,
+                DeleteWorkspaceRequest::setPermanentDelete));
+
+        // response
+
         return builder.build();
     }
 
@@ -2778,6 +2814,29 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowWorkspaceRequest, ShowWorkspaceResponse> showWorkspace =
+        genForShowWorkspace();
+
+    private static HttpRequestDef<ShowWorkspaceRequest, ShowWorkspaceResponse> genForShowWorkspace() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkspaceRequest, ShowWorkspaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWorkspaceRequest.class, ShowWorkspaceResponse.class)
+                .withName("ShowWorkspace")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkspaceRequest::getWorkspaceId, ShowWorkspaceRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAlertRuleRequest, UpdateAlertRuleResponse> updateAlertRule =
         genForUpdateAlertRule();
 
@@ -3023,6 +3082,34 @@ public class SecMasterMeta {
             String.class,
             f -> f.withMarshaller(UpdatePlaybookVersionResponse::getXRequestId,
                 UpdatePlaybookVersionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> updateWorkspace =
+        genForUpdateWorkspace();
+
+    private static HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> genForUpdateWorkspace() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkspaceRequest, UpdateWorkspaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkspaceRequest.class, UpdateWorkspaceResponse.class)
+                .withName("UpdateWorkspace")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkspaceRequest::getWorkspaceId, UpdateWorkspaceRequest::setWorkspaceId));
+        builder.<UpdateWorkspaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateWorkspaceRequestBody.class),
+            f -> f.withMarshaller(UpdateWorkspaceRequest::getBody, UpdateWorkspaceRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 

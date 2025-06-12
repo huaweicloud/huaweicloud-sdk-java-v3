@@ -21,7 +21,7 @@ public class UpdateInstanceAutoCreateTopicReq {
     }
 
     /**
-     * 是否开启自动创建topic功能。
+     * 是否开启自动创建Topic功能。
      * @return enableAutoTopic
      */
     public Boolean getEnableAutoTopic() {
