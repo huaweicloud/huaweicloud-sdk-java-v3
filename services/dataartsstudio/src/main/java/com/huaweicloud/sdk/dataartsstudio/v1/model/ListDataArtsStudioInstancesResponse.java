@@ -25,7 +25,7 @@ public class ListDataArtsStudioInstancesResponse extends SdkResponse {
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commodity_order_lists")
+    @JsonProperty(value = "commodity_orders")
 
     private List<ApigCommodityOrder> commodityOrderLists = null;
 
