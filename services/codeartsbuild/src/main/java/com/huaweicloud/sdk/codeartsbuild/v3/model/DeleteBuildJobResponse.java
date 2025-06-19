@@ -15,21 +15,21 @@ public class DeleteBuildJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private DeleteBuildJobResponseBodyResult result;
+    private DeleteTheJobResponseBodyResult result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
 
-    public DeleteBuildJobResponse withResult(DeleteBuildJobResponseBodyResult result) {
+    public DeleteBuildJobResponse withResult(DeleteTheJobResponseBodyResult result) {
         this.result = result;
         return this;
     }
 
-    public DeleteBuildJobResponse withResult(Consumer<DeleteBuildJobResponseBodyResult> resultSetter) {
+    public DeleteBuildJobResponse withResult(Consumer<DeleteTheJobResponseBodyResult> resultSetter) {
         if (this.result == null) {
-            this.result = new DeleteBuildJobResponseBodyResult();
+            this.result = new DeleteTheJobResponseBodyResult();
             resultSetter.accept(this.result);
         }
 
@@ -40,11 +40,11 @@ public class DeleteBuildJobResponse extends SdkResponse {
      * Get result
      * @return result
      */
-    public DeleteBuildJobResponseBodyResult getResult() {
+    public DeleteTheJobResponseBodyResult getResult() {
         return result;
     }
 
-    public void setResult(DeleteBuildJobResponseBodyResult result) {
+    public void setResult(DeleteTheJobResponseBodyResult result) {
         this.result = result;
     }
 

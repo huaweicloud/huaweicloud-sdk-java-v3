@@ -723,6 +723,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityReque
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateEntityAttributeRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateEntityAttributeResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRequest;
@@ -10888,6 +10890,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse> updateDirectoryAsyncInvoker(
         UpdateDirectoryRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.updateDirectory, hcClient);
+    }
+
+    /**
+     * 修改资产指定属性
+     *
+     * 修改资产指定属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEntityAttributeRequest 请求对象
+     * @return CompletableFuture<UpdateEntityAttributeResponse>
+     */
+    public CompletableFuture<UpdateEntityAttributeResponse> updateEntityAttributeAsync(
+        UpdateEntityAttributeRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateEntityAttribute);
+    }
+
+    /**
+     * 修改资产指定属性
+     *
+     * 修改资产指定属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEntityAttributeRequest 请求对象
+     * @return AsyncInvoker<UpdateEntityAttributeRequest, UpdateEntityAttributeResponse>
+     */
+    public AsyncInvoker<UpdateEntityAttributeRequest, UpdateEntityAttributeResponse> updateEntityAttributeAsyncInvoker(
+        UpdateEntityAttributeRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.updateEntityAttribute, hcClient);
     }
 
     /**

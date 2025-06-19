@@ -38,6 +38,11 @@ public class RuleAclListResponseDTODataRecords {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private Integer orderId;
+
     /**
      * 规则方向0：外到内1：内到外
      */
@@ -346,6 +351,23 @@ public class RuleAclListResponseDTODataRecords {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public RuleAclListResponseDTODataRecords withOrderId(Integer orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 排序id
+     * @return orderId
+     */
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
     public RuleAclListResponseDTODataRecords withDirection(DirectionEnum direction) {
@@ -667,8 +689,9 @@ public class RuleAclListResponseDTODataRecords {
         RuleAclListResponseDTODataRecords that = (RuleAclListResponseDTODataRecords) obj;
         return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.applications, that.applications)
             && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.direction, that.direction) && Objects.equals(this.actionType, that.actionType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description)
             && Objects.equals(this.longConnectTime, that.longConnectTime)
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
@@ -686,6 +709,7 @@ public class RuleAclListResponseDTODataRecords {
             applications,
             addressType,
             name,
+            orderId,
             direction,
             actionType,
             status,
@@ -712,6 +736,7 @@ public class RuleAclListResponseDTODataRecords {
         sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

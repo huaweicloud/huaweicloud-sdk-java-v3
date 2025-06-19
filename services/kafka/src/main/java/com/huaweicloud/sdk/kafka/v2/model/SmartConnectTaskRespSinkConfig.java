@@ -96,7 +96,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 转储启动偏移量，latest为获取最新的数据，earliest为获取最早的数据。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 转储启动偏移量。（仅目标端类型为OBS时会显示） **取值范围**： - latest：获取最新的数据。 - earliest：获取最早的数据。
      * @return consumerStrategy
      */
     public String getConsumerStrategy() {
@@ -113,7 +113,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 转储文件格式。当前只支持TEXT。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 转储文件格式。当前只支持TEXT。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return destinationFileType
      */
     public String getDestinationFileType() {
@@ -130,7 +130,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 记数据转储周期（秒）。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 数据转储周期（秒）。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return deliverTimeInterval
      */
     public Integer getDeliverTimeInterval() {
@@ -147,7 +147,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 转储地址。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 转储地址。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return obsBucketName
      */
     public String getObsBucketName() {
@@ -164,7 +164,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 转储目录。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 转储目录。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return obsPath
      */
     public String getObsPath() {
@@ -181,7 +181,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 时间目录格式。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 时间目录格式。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return partitionFormat
      */
     public String getPartitionFormat() {
@@ -198,7 +198,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 记录分行符。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 记录分行符。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return recordDelimiter
      */
     public String getRecordDelimiter() {
@@ -215,7 +215,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 存储Key。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 存储Key。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return storeKeys
      */
     public Boolean getStoreKeys() {
@@ -232,7 +232,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 每个传输文件多大后就开始上传，单位为byte；默认值5242880。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 每个传输文件多大后就开始上传，单位为byte；默认值5242880。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return obsPartSize
      */
     public Integer getObsPartSize() {
@@ -249,7 +249,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * flush_size。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 刷写数量。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return flushSize
      */
     public Integer getFlushSize() {
@@ -266,7 +266,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * 时区。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 时区。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return timezone
      */
     public String getTimezone() {
@@ -283,7 +283,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * schema_generator类，默认为\"io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\"。（仅目标端类型为OBS时会显示）
+     * **参数解释**： schema_generator类，默认为\"io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\"。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return schemaGeneratorClass
      */
     public String getSchemaGeneratorClass() {
@@ -300,7 +300,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * partitioner类，默认\"io.confluent.connect.storage.partitioner.TimeBasedPartitioner\"。（仅目标端类型为OBS时会显示）
+     * **参数解释**： partitioner类，默认\"io.confluent.connect.storage.partitioner.TimeBasedPartitioner\"。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return partitionerClass
      */
     public String getPartitionerClass() {
@@ -317,7 +317,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * value_converter，默认为\"org.apache.kafka.connect.converters.ByteArrayConverter\"。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 值转换器，默认为\"org.apache.kafka.connect.converters.ByteArrayConverter\"。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return valueConverter
      */
     public String getValueConverter() {
@@ -334,7 +334,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * key_converter，默认为\"org.apache.kafka.connect.converters.ByteArrayConverter\"。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 键转换器，默认为\"org.apache.kafka.connect.converters.ByteArrayConverter\"。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return keyConverter
      */
     public String getKeyConverter() {
@@ -351,7 +351,7 @@ public class SmartConnectTaskRespSinkConfig {
     }
 
     /**
-     * kv_delimiter，默认为\":\"。（仅目标端类型为OBS时会显示）
+     * **参数解释**： 键值分隔符，默认为\":\"。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
      * @return kvDelimiter
      */
     public String getKvDelimiter() {

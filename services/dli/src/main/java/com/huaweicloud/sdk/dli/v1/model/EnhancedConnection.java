@@ -63,6 +63,11 @@ public class EnhancedConnection {
 
     private Boolean isPrivis;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
     public EnhancedConnection withId(String id) {
         this.id = id;
         return this;
@@ -283,6 +288,23 @@ public class EnhancedConnection {
         this.isPrivis = isPrivis;
     }
 
+    public EnhancedConnection withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否启用IPv6。
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -298,7 +320,7 @@ public class EnhancedConnection {
             && Objects.equals(this.elasticResourcePools, that.elasticResourcePools)
             && Objects.equals(this.destVpcId, that.destVpcId) && Objects.equals(this.destNetworkId, that.destNetworkId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.hosts, that.hosts)
-            && Objects.equals(this.isPrivis, that.isPrivis);
+            && Objects.equals(this.isPrivis, that.isPrivis) && Objects.equals(this.ipv6Enable, that.ipv6Enable);
     }
 
     @Override
@@ -312,7 +334,8 @@ public class EnhancedConnection {
             destNetworkId,
             createTime,
             hosts,
-            isPrivis);
+            isPrivis,
+            ipv6Enable);
     }
 
     @Override
@@ -329,6 +352,7 @@ public class EnhancedConnection {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    isPrivis: ").append(toIndentedString(isPrivis)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

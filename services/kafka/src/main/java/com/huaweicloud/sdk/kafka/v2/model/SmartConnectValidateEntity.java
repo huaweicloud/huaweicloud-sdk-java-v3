@@ -53,7 +53,7 @@ public class SmartConnectValidateEntity {
     }
 
     /**
-     * SmartConnect任务类型。
+     * **参数解释**： Smart Connect任务类型。 **取值范围**： - OBS_SINK：转储。 - KAFKA_REPLICATOR_SOURCE：Kafka数据复制。
      * @return type
      */
     public String getType() {

@@ -115,6 +115,16 @@ public class ListResourcesTagsRequest {
 
     private ResourceTypeEnum resourceType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListResourcesTagsRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -132,6 +142,43 @@ public class ListResourcesTagsRequest {
         this.resourceType = resourceType;
     }
 
+    public ListResourcesTagsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 查询记录数。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListResourcesTagsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 索引位置偏移量。
+     * minimum: 0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -141,12 +188,13 @@ public class ListResourcesTagsRequest {
             return false;
         }
         ListResourcesTagsRequest that = (ListResourcesTagsRequest) obj;
-        return Objects.equals(this.resourceType, that.resourceType);
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType);
+        return Objects.hash(resourceType, limit, offset);
     }
 
     @Override
@@ -154,6 +202,8 @@ public class ListResourcesTagsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourcesTagsRequest {\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

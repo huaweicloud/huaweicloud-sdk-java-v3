@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,25 +15,63 @@ import java.util.Objects;
 public class ListResourcesByTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "total_count")
 
-    private String body;
+    private Integer totalCount;
 
-    public ListResourcesByTagsResponse withBody(String body) {
-        this.body = body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resources")
+
+    private List<Resource> resources = null;
+
+    public ListResourcesByTagsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 总记录数。
+     * @return totalCount
      */
-    public String getBody() {
-        return body;
+    public Integer getTotalCount() {
+        return totalCount;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public ListResourcesByTagsResponse withResources(List<Resource> resources) {
+        this.resources = resources;
+        return this;
+    }
+
+    public ListResourcesByTagsResponse addResourcesItem(Resource resourcesItem) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        this.resources.add(resourcesItem);
+        return this;
+    }
+
+    public ListResourcesByTagsResponse withResources(Consumer<List<Resource>> resourcesSetter) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        resourcesSetter.accept(this.resources);
+        return this;
+    }
+
+    /**
+     * 资源实例列表。
+     * @return resources
+     */
+    public List<Resource> getResources() {
+        return resources;
+    }
+
+    public void setResources(List<Resource> resources) {
+        this.resources = resources;
     }
 
     @Override
@@ -42,19 +83,20 @@ public class ListResourcesByTagsResponse extends SdkResponse {
             return false;
         }
         ListResourcesByTagsResponse that = (ListResourcesByTagsResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.resources, that.resources);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(totalCount, resources);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourcesByTagsResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("}");
         return sb.toString();
     }

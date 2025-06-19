@@ -24,6 +24,11 @@ public class RunAuthorizationActionRequestBody {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "projectId")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "grant_project_id")
 
     private String grantProjectId;
@@ -131,6 +136,23 @@ public class RunAuthorizationActionRequestBody {
         this.userName = userName;
     }
 
+    public RunAuthorizationActionRequestBody withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 被赋权的项目ID，数据赋权给其他项目后，该项目的管理员将有权访问指定的数据库或数据表。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
     public RunAuthorizationActionRequestBody withGrantProjectId(String grantProjectId) {
         this.grantProjectId = grantProjectId;
         return this;
@@ -207,13 +229,14 @@ public class RunAuthorizationActionRequestBody {
             return false;
         }
         RunAuthorizationActionRequestBody that = (RunAuthorizationActionRequestBody) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.grantProjectId, that.grantProjectId)
-            && Objects.equals(this.action, that.action) && Objects.equals(this.privileges, that.privileges);
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.grantProjectId, that.grantProjectId) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, grantProjectId, action, privileges);
+        return Objects.hash(userName, projectId, grantProjectId, action, privileges);
     }
 
     @Override
@@ -221,6 +244,7 @@ public class RunAuthorizationActionRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunAuthorizationActionRequestBody {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    grantProjectId: ").append(toIndentedString(grantProjectId)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    privileges: ").append(toIndentedString(privileges)).append("\n");

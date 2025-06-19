@@ -96,7 +96,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 当前Kafka实例别名。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 当前Kafka实例别名。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
      * @return currentClusterName
      */
     public String getCurrentClusterName() {
@@ -113,7 +113,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 对端Kafka实例别名。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 对端Kafka实例别名。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
      * @return clusterName
      */
     public String getClusterName() {
@@ -130,7 +130,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 对端Kafka用户名。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 对端Kafka用户名。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -147,7 +147,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 对端Kafka认证机制。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 对端Kafka认证机制。（仅源端类型为Kafka时会显示） **取值范围**： - PLAIN - SCRAM-SHA-512
      * @return saslMechanism
      */
     public String getSaslMechanism() {
@@ -164,7 +164,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 对端Kafka实例ID。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 对端Kafka实例ID。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -181,7 +181,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 对端Kafka实例地址。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 对端Kafka实例地址。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
      * @return bootstrapServers
      */
     public String getBootstrapServers() {
@@ -198,7 +198,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 对端Kafka认证方式。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 对端Kafka认证方式。（仅源端类型为Kafka时会显示） **取值范围**： - PLAINTEXT：不开启SSL，明文传输。 - SASL_SSL：采用SASL方式进行认证，数据通过SSL证书进行加密传输，安全性更高。 - SASL_PLAINTEXT：采用SASL方式进行认证，数据通过明文传输，性能更好。
      * @return securityProtocol
      */
     public String getSecurityProtocol() {
@@ -215,7 +215,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 同步方向。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 同步方向。（仅源端类型为Kafka时会显示） **取值范围**： - pull：拉取。 - push：推送。 - two-way：双向。
      * @return direction
      */
     public String getDirection() {
@@ -232,7 +232,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 是否同步消费进度。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 是否同步消费进度。（仅源端类型为Kafka时会显示） **取值范围**： - true：同步消费进度 - false：不同步消费进度
      * @return syncConsumerOffsetsEnabled
      */
     public Boolean getSyncConsumerOffsetsEnabled() {
@@ -249,7 +249,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 副本数。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 副本数。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
      * @return replicationFactor
      */
     public Integer getReplicationFactor() {
@@ -266,7 +266,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 任务数。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 任务数。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
      * @return taskNum
      */
     public Integer getTaskNum() {
@@ -283,7 +283,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 是否重命名Topic。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 是否重命名Topic。（仅源端类型为Kafka时会显示） **取值范围**： - true：重命名Topic。 - false：不进行重命名Topic。
      * @return renameTopicEnabled
      */
     public Boolean getRenameTopicEnabled() {
@@ -300,7 +300,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 是否添加来源header。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 是否添加来源header。（仅源端类型为Kafka时会显示） **取值范围**： - true：添加来源header。 - false：不添加来源header。
      * @return provenanceHeaderEnabled
      */
     public Boolean getProvenanceHeaderEnabled() {
@@ -317,7 +317,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 启动偏移量，latest为获取最新的数据，earliest为获取最早的数据。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 启动偏移量。（仅源端类型为Kafka时会显示） **取值范围**： - latest：获取最新的数据。 - earliest：获取最早的数据。
      * @return consumerStrategy
      */
     public String getConsumerStrategy() {
@@ -334,7 +334,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * 压缩算法。（仅源端类型为Kafka时会显示）
+     * **参数解释**： 压缩算法。（仅源端类型为Kafka时会显示） **取值范围**： - none - gzip - snappy - lz4 - zstd
      * @return compressionType
      */
     public String getCompressionType() {
@@ -351,7 +351,7 @@ public class SmartConnectTaskRespSourceConfig {
     }
 
     /**
-     * Topic映射。（仅源端类型为Kafka时会显示）
+     * **参数解释**： Topic映射。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
      * @return topicsMapping
      */
     public String getTopicsMapping() {

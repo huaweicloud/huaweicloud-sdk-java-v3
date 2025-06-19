@@ -26,7 +26,7 @@ public class JobResource {
     }
 
     /**
-     * 资源名称。
+     * 参数解释:   资源名称 示例: group.tesddws/gsjdbc3.jar 约束限制:  无 取值范围: 无 默认取值: 无
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class JobResource {
     }
 
     /**
-     * 资源类型。
+     * 参数解释:   资源类型 示例: jar 约束限制:  无 取值范围: 无 默认取值: 无
      * @return type
      */
     public String getType() {

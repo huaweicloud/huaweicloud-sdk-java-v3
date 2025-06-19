@@ -49,7 +49,7 @@ public class SqlJob {
     private Long duration;
 
     /**
-     * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
+     * 此作业的当前状态 示例: CANCELLED 约束限制:  无 取值范围: LAUNCHING（提交中） RUNNING（运行中） FINISHED（完成） FAILED（失败） CANCELLED（取消） 默认取值: 无
      */
     public static final class StatusEnum {
 
@@ -211,13 +211,28 @@ public class SqlJob {
 
     private String outputByte;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result_path")
+
+    private String resultPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result_format")
+
+    private String resultFormat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_details_path")
+
+    private String executionDetailsPath;
+
     public SqlJob withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
     /**
-     * 作业ID。
+     * 参数解释:  作业ID 示例: 6d2146a0-c2d5-41bd-8ca0-ca9694ada992 约束限制:  无 取值范围: 无 默认取值: 无
      * @return jobId
      */
     public String getJobId() {
@@ -234,7 +249,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业类型。
+     * 参数解释:  指定查询的作业类型，包含DDL、DCL、IMPORT、EXPORT、QUERY、INSERT、DATA_MIGRATION、UPDATE、DELETE、RESTART_QUEUE、SCALE_QUEUE，若要查询所有类型的作业，则传入ALL。 示例: QUERY 约束限制:  无 取值范围: DDL、DCL、IMPORT、EXPORT、QUERY、INSERT、DATA_MIGRATION、UPDATE、DELETE、RESTART_QUEUE、SCALE_QUEUE、ALL 默认取值: 无
      * @return jobType
      */
     public String getJobType() {
@@ -251,7 +266,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业提交的队列。
+     * 作业提交的对列 示例: ci_sql 约束限制:  无 取值范围: 无 默认取值: 无
      * @return queueName
      */
     public String getQueueName() {
@@ -268,7 +283,7 @@ public class SqlJob {
     }
 
     /**
-     * 提交作业的用户。
+     * 提交作业的用户 示例: tenant1 约束限制:  无 取值范围: 无 默认取值: 无
      * @return owner
      */
     public String getOwner() {
@@ -285,7 +300,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业开始的时间。是单位为“毫秒”的时间戳。
+     * 作业开始的时间。是单位为“毫秒”的时间戳 示例: 1502349803729 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return startTime
      */
     public Long getStartTime() {
@@ -302,7 +317,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业运行时长，单位毫秒。
+     * 作业运行时长，单位毫秒 示例: 30000 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return duration
      */
     public Long getDuration() {
@@ -319,7 +334,7 @@ public class SqlJob {
     }
 
     /**
-     * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
+     * 此作业的当前状态 示例: CANCELLED 约束限制:  无 取值范围: LAUNCHING（提交中） RUNNING（运行中） FINISHED（完成） FAILED（失败） CANCELLED（取消） 默认取值: 无
      * @return status
      */
     public StatusEnum getStatus() {
@@ -336,7 +351,7 @@ public class SqlJob {
     }
 
     /**
-     * Insert作业执行过程中扫描的记录条数。
+     * Insert作业执行过程中扫描的记录条数 示例: 66 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return inputRowCount
      */
     public Long getInputRowCount() {
@@ -353,7 +368,7 @@ public class SqlJob {
     }
 
     /**
-     * Insert作业执行过程中扫描到的错误记录数。
+     * Insert作业执行过程中扫描到的错误记录数 示例: 666 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return badRowCount
      */
     public Long getBadRowCount() {
@@ -370,7 +385,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业执行过程中扫描文件的大小。
+     * 作业执行过程中扫描文件的大小 示例: 5 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return inputSize
      */
     public Long getInputSize() {
@@ -387,7 +402,7 @@ public class SqlJob {
     }
 
     /**
-     * 当前作业返回的结果总条数或insert作业插入的总条数。
+     * 当前作业返回的结果总条数或insert作业插入的总条数 示例: 55 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return resultCount
      */
     public Long getResultCount() {
@@ -404,7 +419,7 @@ public class SqlJob {
     }
 
     /**
-     * 记录其操作的表所在的数据库名称。类型为Import和Export作业才有“database_name”属性。
+     * 记录其操作的表所在的数据库名称。类型为Import和Export作业才有“database_name”属性 示例: db2 约束限制:  无 取值范围: 无 默认取值: 无
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -421,7 +436,7 @@ public class SqlJob {
     }
 
     /**
-     * 记录其操作的表名称。类型为Import和Export作业才有“table_name”属性。
+     * 记录其操作的表名称。类型为Import和Export作业才有“table_name”属性 示例: t2 约束限制:  无 取值范围: 无 默认取值: 无
      * @return tableName
      */
     public String getTableName() {
@@ -438,7 +453,7 @@ public class SqlJob {
     }
 
     /**
-     * Import类型的作业，记录其导入的数据是否包括列名。
+     * Import类型的作业，记录其导入的数据是否包括列名 示例: true 约束限制:  无 取值范围: true, false 默认取值: 无
      * @return withColumnHeader
      */
     public Boolean getWithColumnHeader() {
@@ -455,7 +470,7 @@ public class SqlJob {
     }
 
     /**
-     * SQL查询的相关列信息的Json字符串。
+     * SQL查询的相关列信息的Json字符串 示例: {\\\"type\\\":\\\"struct\\\",\\\"fields\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\",\\\"nullable\\\":true,\\\"metadata\\\":{}},{\\\"name\\\":\\\"age\\\",\\\"type\\\":\\\"integer\\\",\\\"nullable\\\":true,\\\"metadata\\\":{}}]} 约束限制:  符合Json格式的字符串 取值范围: 无 默认取值: 无
      * @return detail
      */
     public String getDetail() {
@@ -472,7 +487,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业执行的SQL语句。
+     * 作业执行的SQL语句 示例: select * from t_json_002 约束限制:  无 取值范围: 无 默认取值: 无
      * @return statement
      */
     public String getStatement() {
@@ -522,7 +537,7 @@ public class SqlJob {
     }
 
     /**
-     * 系统提示信息。
+     * 系统提示信息 示例: Navicat Data Modeler enables you to build high-quality conceptual, logical and physical data models for a wide variety of audiences. Navicat 15 has added support for the system-wide dark mode. Creativity is intelligence having fun. The On Startup feature allows you to control what tabs appear when you launch Navicat. In the Objects tab, you can use the List List, Detail Detail and ER Diagram ER Diagram buttons to change the object view. If your Internet Service Provider (ISP) does not provide direct access to its server, Secure Tunneling Protocol (SSH) / HTTP is another solution. A man’s best friends are his ten fingers. Export Wizard allows you to export data from tables, collections, views, or query results to any available formats. Navicat 15 has added support for the system-wide dark mode. Secure Sockets Layer(SSL) is a protocol for transmitting private documents via the Internet. A man’s best friends are his ten fingers. Navicat Monitor is a safe, simple and agentless remote server monitoring tool that is packed with powerful features to make your monitoring effective as possible. The past has no power over the present moment. Such sessions are also susceptible to session hijacking, where a malicious user takes over your session once you have authenticated. A man is not old until regrets take the place of dreams. Secure SHell (SSH) is a program to log in into another computer over a network, execute commands on a remote server, and move files from one machine to another. Secure SHell (SSH) is a program to log in into another computer over a network, execute commands on a remote server, and move files from one machine to another. Champions keep playing until they get it right. All journeys have secret destinations of which the traveler is unaware. Flexible settings enable you to set up a custom key for comparison and synchronization. Navicat authorizes you to make connection to remote servers running on different platforms (i.e. Windows, macOS, Linux and UNIX), and supports PAM and GSSAPI authentication. To successfully establish a new connection to local/remote server - no matter via SSL, SSH or HTTP, set the database login information in the General tab. It can also manage cloud databases such as Amazon Redshift, Amazon RDS, Alibaba Cloud. Features in Navicat are sophisticated enough to provide professional developers for all their specific needs, yet easy to learn for users who are new to database server. After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. 约束限制:  无 取值范围: 无 默认取值: 无
      * @return message
      */
     public String getMessage() {
@@ -539,7 +554,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业结束的时间。是单位为“毫秒”的时间戳。
+     * 作业结束的时间。是单位为“毫秒”的时间戳 示例: 1502349803729 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return endTime
      */
     public Long getEndTime() {
@@ -556,7 +571,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业的CPU累计使用量
+     * 作业的CPU累计使用量 示例: 15376 约束限制:  无 取值范围: 无 默认取值: 无
      * @return cpuCost
      */
     public String getCpuCost() {
@@ -573,7 +588,7 @@ public class SqlJob {
     }
 
     /**
-     * 作业的输出字节数
+     * 作业的输出字节数 示例: 35 约束限制:  无 取值范围: 无 默认取值: 无
      * @return outputByte
      */
     public String getOutputByte() {
@@ -582,6 +597,57 @@ public class SqlJob {
 
     public void setOutputByte(String outputByte) {
         this.outputByte = outputByte;
+    }
+
+    public SqlJob withResultPath(String resultPath) {
+        this.resultPath = resultPath;
+        return this;
+    }
+
+    /**
+     * 作业结果的存储路径。
+     * @return resultPath
+     */
+    public String getResultPath() {
+        return resultPath;
+    }
+
+    public void setResultPath(String resultPath) {
+        this.resultPath = resultPath;
+    }
+
+    public SqlJob withResultFormat(String resultFormat) {
+        this.resultFormat = resultFormat;
+        return this;
+    }
+
+    /**
+     * 作业结果的存储格式，当前只支持csv
+     * @return resultFormat
+     */
+    public String getResultFormat() {
+        return resultFormat;
+    }
+
+    public void setResultFormat(String resultFormat) {
+        this.resultFormat = resultFormat;
+    }
+
+    public SqlJob withExecutionDetailsPath(String executionDetailsPath) {
+        this.executionDetailsPath = executionDetailsPath;
+        return this;
+    }
+
+    /**
+     * 作业执行计划的存储路径。
+     * @return executionDetailsPath
+     */
+    public String getExecutionDetailsPath() {
+        return executionDetailsPath;
+    }
+
+    public void setExecutionDetailsPath(String executionDetailsPath) {
+        this.executionDetailsPath = executionDetailsPath;
     }
 
     @Override
@@ -603,7 +669,9 @@ public class SqlJob {
             && Objects.equals(this.withColumnHeader, that.withColumnHeader) && Objects.equals(this.detail, that.detail)
             && Objects.equals(this.statement, that.statement) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.message, that.message) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.cpuCost, that.cpuCost) && Objects.equals(this.outputByte, that.outputByte);
+            && Objects.equals(this.cpuCost, that.cpuCost) && Objects.equals(this.outputByte, that.outputByte)
+            && Objects.equals(this.resultPath, that.resultPath) && Objects.equals(this.resultFormat, that.resultFormat)
+            && Objects.equals(this.executionDetailsPath, that.executionDetailsPath);
     }
 
     @Override
@@ -628,7 +696,10 @@ public class SqlJob {
             message,
             endTime,
             cpuCost,
-            outputByte);
+            outputByte,
+            resultPath,
+            resultFormat,
+            executionDetailsPath);
     }
 
     @Override
@@ -656,6 +727,9 @@ public class SqlJob {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    cpuCost: ").append(toIndentedString(cpuCost)).append("\n");
         sb.append("    outputByte: ").append(toIndentedString(outputByte)).append("\n");
+        sb.append("    resultPath: ").append(toIndentedString(resultPath)).append("\n");
+        sb.append("    resultFormat: ").append(toIndentedString(resultFormat)).append("\n");
+        sb.append("    executionDetailsPath: ").append(toIndentedString(executionDetailsPath)).append("\n");
         sb.append("}");
         return sb.toString();
     }

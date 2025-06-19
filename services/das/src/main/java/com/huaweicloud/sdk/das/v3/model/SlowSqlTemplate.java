@@ -19,6 +19,11 @@ public class SlowSqlTemplate {
     private String sqlTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_template_id")
+
+    private String sqlTemplateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_sample")
 
     private String sqlSample;
@@ -93,6 +98,23 @@ public class SlowSqlTemplate {
 
     public void setSqlTemplate(String sqlTemplate) {
         this.sqlTemplate = sqlTemplate;
+    }
+
+    public SlowSqlTemplate withSqlTemplateId(String sqlTemplateId) {
+        this.sqlTemplateId = sqlTemplateId;
+        return this;
+    }
+
+    /**
+     * SQL模板ID。
+     * @return sqlTemplateId
+     */
+    public String getSqlTemplateId() {
+        return sqlTemplateId;
+    }
+
+    public void setSqlTemplateId(String sqlTemplateId) {
+        this.sqlTemplateId = sqlTemplateId;
     }
 
     public SlowSqlTemplate withSqlSample(String sqlSample) {
@@ -324,7 +346,8 @@ public class SlowSqlTemplate {
             return false;
         }
         SlowSqlTemplate that = (SlowSqlTemplate) obj;
-        return Objects.equals(this.sqlTemplate, that.sqlTemplate) && Objects.equals(this.sqlSample, that.sqlSample)
+        return Objects.equals(this.sqlTemplate, that.sqlTemplate)
+            && Objects.equals(this.sqlTemplateId, that.sqlTemplateId) && Objects.equals(this.sqlSample, that.sqlSample)
             && Objects.equals(this.sqlSampleUser, that.sqlSampleUser) && Objects.equals(this.dbNames, that.dbNames)
             && Objects.equals(this.executeCount, that.executeCount)
             && Objects.equals(this.avgExecuteTime, that.avgExecuteTime)
@@ -339,6 +362,7 @@ public class SlowSqlTemplate {
     @Override
     public int hashCode() {
         return Objects.hash(sqlTemplate,
+            sqlTemplateId,
             sqlSample,
             sqlSampleUser,
             dbNames,
@@ -358,6 +382,7 @@ public class SlowSqlTemplate {
         StringBuilder sb = new StringBuilder();
         sb.append("class SlowSqlTemplate {\n");
         sb.append("    sqlTemplate: ").append(toIndentedString(sqlTemplate)).append("\n");
+        sb.append("    sqlTemplateId: ").append(toIndentedString(sqlTemplateId)).append("\n");
         sb.append("    sqlSample: ").append(toIndentedString(sqlSample)).append("\n");
         sb.append("    sqlSampleUser: ").append(toIndentedString(sqlSampleUser)).append("\n");
         sb.append("    dbNames: ").append(toIndentedString(dbNames)).append("\n");

@@ -27,7 +27,6 @@ import com.huaweicloud.sdk.core.utils.PathUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 
@@ -150,31 +149,13 @@ public class ProfileRegionCache {
     }
 
     private static Object loadYaml(String filepath) {
-        Yaml yaml = buildYaml();
+        Yaml yaml = SafeYamlFactory.createSafeYaml();
         try (FileInputStream inputStream = new FileInputStream(filepath)) {
             return yaml.load(inputStream);
         } catch (IOException e) {
             String message = String.format("Failed to resolve file '%s'", filepath);
             logger.error(message, e);
             throw new SdkException(message, e);
-        }
-    }
-
-    private static Yaml buildYaml() {
-        try {
-            return new Yaml(new SafeConstructor(new LoaderOptions()));
-        } catch (NoClassDefFoundError | NoSuchMethodError ignore) {
-            try {
-                logger.warn("Initialize Yaml failed due to version conflict," +
-                        " use default construct to reinitialize." +
-                        " It is recommended that you use org.yaml:snakeyaml v2.0+" +
-                        " for better security and compatibility.");
-                return Yaml.class.newInstance();
-            } catch (InstantiationException | IllegalAccessException e) {
-                String message = "Failed to initialize yaml loader.";
-                logger.error(message, e);
-                throw new SdkException(message, e);
-            }
         }
     }
 
@@ -194,5 +175,42 @@ public class ProfileRegionCache {
             return false;
         }
         return PathUtils.isValidFile(file);
+    }
+
+    static class SafeYamlFactory {
+        private static Class<?> loaderOptionsClass;
+
+        static {
+            try {
+                loaderOptionsClass = Class.forName("org.yaml.snakeyaml.LoaderOptions");
+            } catch (ClassNotFoundException e) {
+                loaderOptionsClass = null;
+            }
+        }
+
+        public static Yaml createSafeYaml() {
+            return new Yaml(createSafeConstructor());
+        }
+
+        private static SafeConstructor createSafeConstructor() {
+            try {
+                // snakeyaml 1.17
+                if (loaderOptionsClass == null) {
+                    logger.warn("Initialize Yaml failed due to version conflict," +
+                            " use default construct to reinitialize." +
+                            " It is recommended that you use org.yaml:snakeyaml v2.0+" +
+                            " for better security and compatibility.");
+                    return SafeConstructor.class.newInstance();
+                }
+
+                // snakeyaml 1.18+
+                Object options = loaderOptionsClass.getDeclaredConstructor().newInstance();
+                return SafeConstructor.class
+                        .getDeclaredConstructor(loaderOptionsClass)
+                        .newInstance(options);
+            } catch (Exception e) {
+                throw new SdkException("Failed to initialize yaml loader.", e);
+            }
+        }
     }
 }

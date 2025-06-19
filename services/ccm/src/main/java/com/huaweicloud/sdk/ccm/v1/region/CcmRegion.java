@@ -19,6 +19,8 @@ public class CcmRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://ccm.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://ccm.myhuaweicloud.com");
+
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://ccm.eu-west-101.myhuaweicloud.com");
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://ccm.ru-moscow-1.myhuaweicloud.com");
@@ -31,6 +33,7 @@ public class CcmRegion {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("eu-west-101", EU_WEST_101);
         map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);

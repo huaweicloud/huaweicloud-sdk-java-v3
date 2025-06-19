@@ -41,6 +41,11 @@ public class CreateBuildJobScm {
     private Boolean isAutoBuild;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_git_lfs")
+
+    private Boolean enableGitLfs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_type")
 
     private String buildType;
@@ -59,6 +64,16 @@ public class CreateBuildJobScm {
     @JsonProperty(value = "source")
 
     private String source;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repo_name")
+
+    private String repoName;
 
     public CreateBuildJobScm withBranch(String branch) {
         this.branch = branch;
@@ -162,6 +177,23 @@ public class CreateBuildJobScm {
         this.isAutoBuild = isAutoBuild;
     }
 
+    public CreateBuildJobScm withEnableGitLfs(Boolean enableGitLfs) {
+        this.enableGitLfs = enableGitLfs;
+        return this;
+    }
+
+    /**
+     * 是否启用gitlfs
+     * @return enableGitLfs
+     */
+    public Boolean getEnableGitLfs() {
+        return enableGitLfs;
+    }
+
+    public void setEnableGitLfs(Boolean enableGitLfs) {
+        this.enableGitLfs = enableGitLfs;
+    }
+
     public CreateBuildJobScm withBuildType(String buildType) {
         this.buildType = buildType;
         return this;
@@ -230,6 +262,40 @@ public class CreateBuildJobScm {
         this.source = source;
     }
 
+    public CreateBuildJobScm withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * 仓库分组
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public CreateBuildJobScm withRepoName(String repoName) {
+        this.repoName = repoName;
+        return this;
+    }
+
+    /**
+     * 仓库名称
+     * @return repoName
+     */
+    public String getRepoName() {
+        return repoName;
+    }
+
+    public void setRepoName(String repoName) {
+        this.repoName = repoName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -242,13 +308,27 @@ public class CreateBuildJobScm {
         return Objects.equals(this.branch, that.branch) && Objects.equals(this.url, that.url)
             && Objects.equals(this.repoId, that.repoId) && Objects.equals(this.webUrl, that.webUrl)
             && Objects.equals(this.scmType, that.scmType) && Objects.equals(this.isAutoBuild, that.isAutoBuild)
-            && Objects.equals(this.buildType, that.buildType) && Objects.equals(this.depth, that.depth)
-            && Objects.equals(this.endPointId, that.endPointId) && Objects.equals(this.source, that.source);
+            && Objects.equals(this.enableGitLfs, that.enableGitLfs) && Objects.equals(this.buildType, that.buildType)
+            && Objects.equals(this.depth, that.depth) && Objects.equals(this.endPointId, that.endPointId)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.repoName, that.repoName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(branch, url, repoId, webUrl, scmType, isAutoBuild, buildType, depth, endPointId, source);
+        return Objects.hash(branch,
+            url,
+            repoId,
+            webUrl,
+            scmType,
+            isAutoBuild,
+            enableGitLfs,
+            buildType,
+            depth,
+            endPointId,
+            source,
+            groupName,
+            repoName);
     }
 
     @Override
@@ -261,10 +341,13 @@ public class CreateBuildJobScm {
         sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
         sb.append("    scmType: ").append(toIndentedString(scmType)).append("\n");
         sb.append("    isAutoBuild: ").append(toIndentedString(isAutoBuild)).append("\n");
+        sb.append("    enableGitLfs: ").append(toIndentedString(enableGitLfs)).append("\n");
         sb.append("    buildType: ").append(toIndentedString(buildType)).append("\n");
         sb.append("    depth: ").append(toIndentedString(depth)).append("\n");
         sb.append("    endPointId: ").append(toIndentedString(endPointId)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    repoName: ").append(toIndentedString(repoName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

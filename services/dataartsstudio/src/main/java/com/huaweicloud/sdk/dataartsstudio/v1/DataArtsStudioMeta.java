@@ -854,6 +854,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityReque
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateEntityAttributeRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateEntityAttributeResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
@@ -15397,6 +15399,47 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DirectoryVO.class),
             f -> f.withMarshaller(UpdateDirectoryRequest::getBody, UpdateDirectoryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEntityAttributeRequest, UpdateEntityAttributeResponse> updateEntityAttribute =
+        genForUpdateEntityAttribute();
+
+    private static HttpRequestDef<UpdateEntityAttributeRequest, UpdateEntityAttributeResponse> genForUpdateEntityAttribute() {
+        // basic
+        HttpRequestDef.Builder<UpdateEntityAttributeRequest, UpdateEntityAttributeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateEntityAttributeRequest.class, UpdateEntityAttributeResponse.class)
+            .withName("UpdateEntityAttribute")
+            .withUri("/v3/{project_id}/asset/guid/{guid}/attribute")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEntityAttributeRequest::getGuid, UpdateEntityAttributeRequest::setGuid));
+        builder.<String>withRequestField("attr_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEntityAttributeRequest::getAttrName,
+                UpdateEntityAttributeRequest::setAttrName));
+        builder.<String>withRequestField("attr_value",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEntityAttributeRequest::getAttrValue,
+                UpdateEntityAttributeRequest::setAttrValue));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEntityAttributeRequest::getWorkspace,
+                UpdateEntityAttributeRequest::setWorkspace));
 
         // response
 

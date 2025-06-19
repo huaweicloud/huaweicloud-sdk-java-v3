@@ -93,6 +93,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfo
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceNodesRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceNodesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicRequest;
@@ -1351,6 +1353,35 @@ public class RocketMQClient {
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
         return new SyncInvoker<>(request, RocketMQMeta.showInstance, hcClient);
+    }
+
+    /**
+     * 查询实例节点
+     *
+     * 查询实例节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceNodesRequest 请求对象
+     * @return ShowInstanceNodesResponse
+     */
+    public ShowInstanceNodesResponse showInstanceNodes(ShowInstanceNodesRequest request) {
+        return hcClient.syncInvokeHttp(request, RocketMQMeta.showInstanceNodes);
+    }
+
+    /**
+     * 查询实例节点
+     *
+     * 查询实例节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceNodesRequest 请求对象
+     * @return SyncInvoker<ShowInstanceNodesRequest, ShowInstanceNodesResponse>
+     */
+    public SyncInvoker<ShowInstanceNodesRequest, ShowInstanceNodesResponse> showInstanceNodesInvoker(
+        ShowInstanceNodesRequest request) {
+        return new SyncInvoker<>(request, RocketMQMeta.showInstanceNodes, hcClient);
     }
 
     /**

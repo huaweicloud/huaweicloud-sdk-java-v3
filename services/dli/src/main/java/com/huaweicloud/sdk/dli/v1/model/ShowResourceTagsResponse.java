@@ -19,6 +19,11 @@ public class ShowResourceTagsResponse extends SdkResponse {
 
     private List<Tag> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Long count;
+
     public ShowResourceTagsResponse withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -41,7 +46,7 @@ public class ShowResourceTagsResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表
+     * 标签列表。
      * @return tags
      */
     public List<Tag> getTags() {
@@ -50,6 +55,23 @@ public class ShowResourceTagsResponse extends SdkResponse {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public ShowResourceTagsResponse withCount(Long count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 标签数量。
+     * @return count
+     */
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
     }
 
     @Override
@@ -61,12 +83,12 @@ public class ShowResourceTagsResponse extends SdkResponse {
             return false;
         }
         ShowResourceTagsResponse that = (ShowResourceTagsResponse) obj;
-        return Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags);
+        return Objects.hash(tags, count);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ShowResourceTagsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceTagsResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

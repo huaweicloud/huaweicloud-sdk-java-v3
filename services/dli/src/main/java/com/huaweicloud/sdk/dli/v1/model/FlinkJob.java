@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.dli.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -33,10 +38,92 @@ public class FlinkJob {
 
     private String userName;
 
+    /**
+     * 参数解释:  作业类型 示例: flink_jar_job 约束限制:  无 取值范围: flink_sql_job（flink sql作业） flink_opensource_sql_job（flink opensource sql作业） flink_sql_edge_job（flink sql边缘作业） flink_jar_job（flink自定义作业） 默认取值: 无
+     */
+    public static final class JobTypeEnum {
+
+        /**
+         * Enum FLINK_SQL_JOB for value: "flink_sql_job"
+         */
+        public static final JobTypeEnum FLINK_SQL_JOB = new JobTypeEnum("flink_sql_job");
+
+        /**
+         * Enum FLINK_OPENSOURCE_SQL_JOB for value: "flink_opensource_sql_job"
+         */
+        public static final JobTypeEnum FLINK_OPENSOURCE_SQL_JOB = new JobTypeEnum("flink_opensource_sql_job");
+
+        /**
+         * Enum FLINK_SQL_EDGE_JOB for value: "flink_sql_edge_job"
+         */
+        public static final JobTypeEnum FLINK_SQL_EDGE_JOB = new JobTypeEnum("flink_sql_edge_job");
+
+        /**
+         * Enum FLINK_JAR_JOB for value: "flink_jar_job"
+         */
+        public static final JobTypeEnum FLINK_JAR_JOB = new JobTypeEnum("flink_jar_job");
+
+        private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobTypeEnum> createStaticFields() {
+            Map<String, JobTypeEnum> map = new HashMap<>();
+            map.put("flink_sql_job", FLINK_SQL_JOB);
+            map.put("flink_opensource_sql_job", FLINK_OPENSOURCE_SQL_JOB);
+            map.put("flink_sql_edge_job", FLINK_SQL_EDGE_JOB);
+            map.put("flink_jar_job", FLINK_JAR_JOB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        JobTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static JobTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
+        }
+
+        public static JobTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof JobTypeEnum) {
+                return this.value.equals(((JobTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
-    private String jobType;
+    private JobTypeEnum jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -149,7 +236,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业ID。
+     * 参数解释:  作业ID 示例: 50320 约束限制:  无 取值范围: 无 默认取值: 无
      * @return jobId
      */
     public Long getJobId() {
@@ -166,7 +253,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业名称。长度限制：0-57个字符。
+     * 参数解释:  作业名称 示例: test 约束限制:  长度在[0,57]范围内的字符串 取值范围: 无 默认取值: 无
      * @return name
      */
     public String getName() {
@@ -183,7 +270,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业描述。长度限制：0-2048个字符。
+     * 参数解释:  作业描述 示例: 作业描述 约束限制:  长度在[0,2048]范围内的字符串 取值范围: 无 默认取值: 无
      * @return desc
      */
     public String getDesc() {
@@ -200,7 +287,7 @@ public class FlinkJob {
     }
 
     /**
-     * 用户名，当“show_detail”为“false”时独有。
+     * 参数解释:  用户名称 示例: testuser 约束限制:  长度在[1,128]范围内的字符串 取值范围: 无 默认取值: 无
      * @return userName
      */
     public String getUserName() {
@@ -211,20 +298,20 @@ public class FlinkJob {
         this.userName = userName;
     }
 
-    public FlinkJob withJobType(String jobType) {
+    public FlinkJob withJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
         return this;
     }
 
     /**
-     * 作业类型。
+     * 参数解释:  作业类型 示例: flink_jar_job 约束限制:  无 取值范围: flink_sql_job（flink sql作业） flink_opensource_sql_job（flink opensource sql作业） flink_sql_edge_job（flink sql边缘作业） flink_jar_job（flink自定义作业） 默认取值: 无
      * @return jobType
      */
-    public String getJobType() {
+    public JobTypeEnum getJobType() {
         return jobType;
     }
 
-    public void setJobType(String jobType) {
+    public void setJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
     }
 
@@ -234,7 +321,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业状态。
+     * 参数解释:  作业状态 示例: job_running 约束限制:  无 取值范围: job_init（草稿） job_submitting（提交中） job_submit_fail（提交失败） job_running（运行中） job_running_exception（运行异常） job_downloading（下载中） job_idle（空闲） job_canceling（停止中） job_cancel_success（已停止） job_cancel_fail（停止失败） job_savepointing（保存点创建中） job_arrearage_stopped（因欠费被停止） job_arrearage_recovering（欠费作业恢复中） job_finish（已完成） 默认取值: 无
      * @return status
      */
     public String getStatus() {
@@ -251,7 +338,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业状态描述。
+     * 参数解释:  用户名称 示例: 作业状态描述 约束限制:  无 取值范围: 无 默认取值: 无
      * @return statusDesc
      */
     public String getStatusDesc() {
@@ -268,7 +355,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业创建时间。
+     * 参数解释:  作业创建时间 示例: 1516952770835 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return createTime
      */
     public Long getCreateTime() {
@@ -285,7 +372,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业开始时间。
+     * 参数解释:  作业开始时间 示例: 1516952710740 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return startTime
      */
     public Long getStartTime() {
@@ -302,7 +389,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业运行时长, 单位ms，当“show_detail”为“false”时独有。
+     * 参数解释:  作业运行时长，单位ms，当“show_detail”为“false”时独有 示例: 30000 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return duration
      */
     public Long getDuration() {
@@ -319,7 +406,7 @@ public class FlinkJob {
     }
 
     /**
-     * 父作业ID，“show_detail”为“false”时独有。
+     * 参数解释:  父作业ID，“show_detail”为“false”时独有 示例: -1 约束限制:  无 取值范围: 无 默认取值: 无
      * @return rootId
      */
     public Long getRootId() {
@@ -336,7 +423,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业所属用户标识，“show_detail”为“true”时独有。
+     * 参数解释:  作业所属用户标识，“show_detail”为“true”时独有 示例: ac4eaa303639409c8ab099d55eb1538e 约束限制:  无 取值范围: 无 默认取值: 无
      * @return userId
      */
     public String getUserId() {
@@ -353,7 +440,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业所属项目标识，“show_detail”为“true”时独有。
+     * 参数解释:  作业所属用户标识，“show_detail”为“true”时独有 示例: 48cc2c48765f481480c7db940d6409d1 约束限制:  无 取值范围: 无 默认取值: 无
      * @return projectId
      */
     public String getProjectId() {
@@ -370,7 +457,7 @@ public class FlinkJob {
     }
 
     /**
-     * Stream SQL语句，“show_detail”为“false”时独有。
+     * 参数解释:  Stream SQL语句，“show_detail”为“false”时独有 示例: select * from source_table 约束限制:  无 取值范围: 无 默认取值: 无
      * @return sqlBody
      */
     public String getSqlBody() {
@@ -387,7 +474,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业运行模式： shared_cluster：共享。 exclusive_cluster：独享。 edge_node：边缘节点。 show_detail为true时独有.
+     * 参数解释:  作业运行模式，show_detail为true时独有 示例: shared_cluster 约束限制:  无 取值范围: shared_cluster（共享） exclusive_cluster（独享） edge_node（边缘节点） 默认取值: 无
      * @return runMode
      */
     public String getRunMode() {
@@ -404,7 +491,7 @@ public class FlinkJob {
     }
 
     /**
-     * jar包主类，“show_detail”为“false”时独有。
+     * 参数解释:  jar包主类，“show_detail”为“false”时独有 示例: org.apache.spark.examples.streaming.JavaQueueStream 约束限制:  无 取值范围: 无 默认取值: 无
      * @return mainClass
      */
     public String getMainClass() {
@@ -421,7 +508,7 @@ public class FlinkJob {
     }
 
     /**
-     * jar包作业运行参数，多个参数之间用空格分隔。show_detail为true时独有的。
+     * 参数解释:  jar包作业运行参数，多个参数之间用空格分隔。show_detail为true时独有的 示例: custom.dir=/usr custom.prefix=dli 约束限制:  无 取值范围: 无 默认取值: 无
      * @return entrypointArgs
      */
     public String getEntrypointArgs() {
@@ -438,7 +525,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业执行计划，“show_detail”为“false”时独有。
+     * 参数解释:  作业执行计划，“show_detail”为“false”时独有 约束限制:  无 取值范围: 无 默认取值: 无
      * @return executionGraph
      */
     public String getExecutionGraph() {
@@ -455,7 +542,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业更新时间，“show_detail”为“false”时独有。
+     * 参数解释:  作业更新时间，“show_detail”为“false”时独有 示例: 1516952770835 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -472,7 +559,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业的流图是否可编辑。“true”表示作业的流图可以编辑，“false”表示作业的流图不可以编辑。
+     * 参数解释:  作业的流图是否可编辑。“true”表示作业的流图可以编辑，“false”表示作业的流图不可以编辑 示例: false 约束限制:  无 取值范围: true,false 默认取值: 无
      * @return graphEditorEnabled
      */
     public Boolean getGraphEditorEnabled() {
@@ -489,7 +576,7 @@ public class FlinkJob {
     }
 
     /**
-     * 作业是否有保存点。“true”表示作业有保存点，“false”表示作业没有保存点。
+     * 参数解释:  作业是否有保存点。“true”表示作业有保存点，“false”表示作业没有保存点 示例: false 约束限制:  无 取值范围: true,false 默认取值: 无
      * @return hasSavepoint
      */
     public Boolean getHasSavepoint() {
@@ -506,7 +593,7 @@ public class FlinkJob {
     }
 
     /**
-     * 队列名字。
+     * 参数解释:  队列名称 示例: flink_17_queue 约束限制:  无 取值范围: 无 默认取值: 无
      * @return queueName
      */
     public String getQueueName() {
@@ -539,7 +626,7 @@ public class FlinkJob {
     }
 
     /**
-     * 边缘计算组ID列表。
+     * 参数解释:  边缘计算组ID列表 示例: 62de1e1c-066e-48a8-a79d-f461a31b2ee1,2eb00f85-99f2-4144-bcb7-d39ff47f9002 约束限制:  无 取值范围: 无 默认取值: 无
      * @return edgeGroupIds
      */
     public List<String> getEdgeGroupIds() {
@@ -556,7 +643,7 @@ public class FlinkJob {
     }
 
     /**
-     * 重启次数。
+     * 参数解释:  重启次数 示例: 0 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return restartTimes
      */
     public Long getRestartTimes() {
@@ -573,7 +660,7 @@ public class FlinkJob {
     }
 
     /**
-     * 保存点路径。
+     * 参数解释:  保存点路径 示例: obs://cwk/savepoint/ 约束限制:  无 取值范围: 无 默认取值: 无
      * @return savepointPath
      */
     public String getSavepointPath() {

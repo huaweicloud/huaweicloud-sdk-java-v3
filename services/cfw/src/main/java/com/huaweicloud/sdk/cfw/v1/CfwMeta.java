@@ -88,6 +88,8 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemDto;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
@@ -98,6 +100,15 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteTagRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteTagResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteTagsDto;
 import com.huaweicloud.sdk.cfw.v1.model.EipOperateProtectReq;
+import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.IpBlacklistDeleteDto;
+import com.huaweicloud.sdk.cfw.v1.model.IpBlacklistEnableDto;
+import com.huaweicloud.sdk.cfw.v1.model.IpBlacklistImportDto;
 import com.huaweicloud.sdk.cfw.v1.model.IpsProtectDTO;
 import com.huaweicloud.sdk.cfw.v1.model.IpsRuleChangeDto;
 import com.huaweicloud.sdk.cfw.v1.model.IpsSwitchDTO;
@@ -147,6 +158,10 @@ import com.huaweicloud.sdk.cfw.v1.model.ListFirewallListRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFirewallListResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistSwitchRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistSwitchResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsRules1Request;
@@ -180,6 +195,8 @@ import com.huaweicloud.sdk.cfw.v1.model.LogConfigDto;
 import com.huaweicloud.sdk.cfw.v1.model.ObjectInfoDto;
 import com.huaweicloud.sdk.cfw.v1.model.OrderRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.QueryFireWallInstanceDto;
+import com.huaweicloud.sdk.cfw.v1.model.RetryIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.RetryIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAlarmConfigRequest;
@@ -1063,6 +1080,35 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteIpBlacklistRequest, DeleteIpBlacklistResponse> deleteIpBlacklist =
+        genForDeleteIpBlacklist();
+
+    private static HttpRequestDef<DeleteIpBlacklistRequest, DeleteIpBlacklistResponse> genForDeleteIpBlacklist() {
+        // basic
+        HttpRequestDef.Builder<DeleteIpBlacklistRequest, DeleteIpBlacklistResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteIpBlacklistRequest.class, DeleteIpBlacklistResponse.class)
+                .withName("DeleteIpBlacklist")
+                .withUri("/v1/{project_id}/ptf/ip-blacklist")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpBlacklistRequest::getFwInstanceId,
+                DeleteIpBlacklistRequest::setFwInstanceId));
+        builder.<IpBlacklistDeleteDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IpBlacklistDeleteDto.class),
+            f -> f.withMarshaller(DeleteIpBlacklistRequest::getBody, DeleteIpBlacklistRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteServiceItemRequest, DeleteServiceItemResponse> deleteServiceItem =
         genForDeleteServiceItem();
 
@@ -1160,6 +1206,126 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteTagResponse::getBody, DeleteTagResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableIpBlacklistRequest, EnableIpBlacklistResponse> enableIpBlacklist =
+        genForEnableIpBlacklist();
+
+    private static HttpRequestDef<EnableIpBlacklistRequest, EnableIpBlacklistResponse> genForEnableIpBlacklist() {
+        // basic
+        HttpRequestDef.Builder<EnableIpBlacklistRequest, EnableIpBlacklistResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableIpBlacklistRequest.class, EnableIpBlacklistResponse.class)
+                .withName("EnableIpBlacklist")
+                .withUri("/v1/{project_id}/ptf/ip-blacklist/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableIpBlacklistRequest::getFwInstanceId,
+                EnableIpBlacklistRequest::setFwInstanceId));
+        builder.<IpBlacklistEnableDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IpBlacklistEnableDto.class),
+            f -> f.withMarshaller(EnableIpBlacklistRequest::getBody, EnableIpBlacklistRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(EnableIpBlacklistResponse::getBody, EnableIpBlacklistResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportIpBlacklistRequest, ExportIpBlacklistResponse> exportIpBlacklist =
+        genForExportIpBlacklist();
+
+    private static HttpRequestDef<ExportIpBlacklistRequest, ExportIpBlacklistResponse> genForExportIpBlacklist() {
+        // basic
+        HttpRequestDef.Builder<ExportIpBlacklistRequest, ExportIpBlacklistResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportIpBlacklistRequest.class, ExportIpBlacklistResponse.class)
+                .withName("ExportIpBlacklist")
+                .withUri("/v1/{project_id}/ptf/ip-blacklist/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportIpBlacklistRequest::getFwInstanceId,
+                ExportIpBlacklistRequest::setFwInstanceId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportIpBlacklistRequest::getName, ExportIpBlacklistRequest::setName));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExportIpBlacklistResponse::getBody, ExportIpBlacklistResponse::setBody));
+
+        builder.<String>withResponseField("Content-Disposition",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExportIpBlacklistResponse::getContentDisposition,
+                ExportIpBlacklistResponse::setContentDisposition));
+        builder.<Integer>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ExportIpBlacklistResponse::getContentLength,
+                ExportIpBlacklistResponse::setContentLength));
+        builder.<String>withResponseField("Content-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExportIpBlacklistResponse::getContentType,
+                ExportIpBlacklistResponse::setContentType));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportIpBlacklistRequest, ImportIpBlacklistResponse> importIpBlacklist =
+        genForImportIpBlacklist();
+
+    private static HttpRequestDef<ImportIpBlacklistRequest, ImportIpBlacklistResponse> genForImportIpBlacklist() {
+        // basic
+        HttpRequestDef.Builder<ImportIpBlacklistRequest, ImportIpBlacklistResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportIpBlacklistRequest.class, ImportIpBlacklistResponse.class)
+                .withName("ImportIpBlacklist")
+                .withUri("/v1/{project_id}/ptf/ip-blacklist/import")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportIpBlacklistRequest::getFwInstanceId,
+                ImportIpBlacklistRequest::setFwInstanceId));
+        builder.<IpBlacklistImportDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IpBlacklistImportDto.class),
+            f -> f.withMarshaller(ImportIpBlacklistRequest::getBody, ImportIpBlacklistRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ImportIpBlacklistResponse::getBody, ImportIpBlacklistResponse::setBody));
 
         return builder.build();
     }
@@ -2294,6 +2460,63 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListIpBlacklistRequest, ListIpBlacklistResponse> listIpBlacklist =
+        genForListIpBlacklist();
+
+    private static HttpRequestDef<ListIpBlacklistRequest, ListIpBlacklistResponse> genForListIpBlacklist() {
+        // basic
+        HttpRequestDef.Builder<ListIpBlacklistRequest, ListIpBlacklistResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIpBlacklistRequest.class, ListIpBlacklistResponse.class)
+                .withName("ListIpBlacklist")
+                .withUri("/v1/{project_id}/ptf/ip-blacklist")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpBlacklistRequest::getFwInstanceId, ListIpBlacklistRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpBlacklistRequest::getLimit, ListIpBlacklistRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpBlacklistRequest::getOffset, ListIpBlacklistRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIpBlacklistSwitchRequest, ListIpBlacklistSwitchResponse> listIpBlacklistSwitch =
+        genForListIpBlacklistSwitch();
+
+    private static HttpRequestDef<ListIpBlacklistSwitchRequest, ListIpBlacklistSwitchResponse> genForListIpBlacklistSwitch() {
+        // basic
+        HttpRequestDef.Builder<ListIpBlacklistSwitchRequest, ListIpBlacklistSwitchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListIpBlacklistSwitchRequest.class, ListIpBlacklistSwitchResponse.class)
+            .withName("ListIpBlacklistSwitch")
+            .withUri("/v1/{project_id}/ptf/ip-blacklist/switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpBlacklistSwitchRequest::getFwInstanceId,
+                ListIpBlacklistSwitchRequest::setFwInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListJobRequest, ListJobResponse> listJob = genForListJob();
 
     private static HttpRequestDef<ListJobRequest, ListJobResponse> genForListJob() {
@@ -2590,6 +2813,39 @@ public class CfwMeta {
                 ListServiceSetsRequest::setQueryServiceSetType));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryIpBlacklistRequest, RetryIpBlacklistResponse> retryIpBlacklist =
+        genForRetryIpBlacklist();
+
+    private static HttpRequestDef<RetryIpBlacklistRequest, RetryIpBlacklistResponse> genForRetryIpBlacklist() {
+        // basic
+        HttpRequestDef.Builder<RetryIpBlacklistRequest, RetryIpBlacklistResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RetryIpBlacklistRequest.class, RetryIpBlacklistResponse.class)
+                .withName("RetryIpBlacklist")
+                .withUri("/v1/{project_id}/ptf/ip-blacklist/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryIpBlacklistRequest::getFwInstanceId, RetryIpBlacklistRequest::setFwInstanceId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryIpBlacklistRequest::getName, RetryIpBlacklistRequest::setName));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RetryIpBlacklistResponse::getBody, RetryIpBlacklistResponse::setBody));
 
         return builder.build();
     }

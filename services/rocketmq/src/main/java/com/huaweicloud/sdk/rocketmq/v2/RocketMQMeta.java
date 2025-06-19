@@ -115,6 +115,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfo
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceNodesRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceNodesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicRequest;
@@ -1668,6 +1670,44 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceNodesRequest, ShowInstanceNodesResponse> showInstanceNodes =
+        genForShowInstanceNodes();
+
+    private static HttpRequestDef<ShowInstanceNodesRequest, ShowInstanceNodesResponse> genForShowInstanceNodes() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceNodesRequest, ShowInstanceNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceNodesRequest.class, ShowInstanceNodesResponse.class)
+                .withName("ShowInstanceNodes")
+                .withUri("/v2/{project_id}/{engine}/instances/{instance_id}/nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceNodesRequest::getEngine, ShowInstanceNodesRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceNodesRequest::getInstanceId, ShowInstanceNodesRequest::setInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowInstanceNodesRequest::getLimit, ShowInstanceNodesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowInstanceNodesRequest::getOffset, ShowInstanceNodesRequest::setOffset));
 
         // response
 

@@ -66,12 +66,20 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteTagRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteTagResponse;
+import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitCountRequest;
@@ -118,6 +126,10 @@ import com.huaweicloud.sdk.cfw.v1.model.ListFirewallListRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFirewallListResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistSwitchRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistSwitchResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsRules1Request;
@@ -146,6 +158,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.RetryIpBlacklistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.RetryIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAlarmConfigRequest;
@@ -910,6 +924,35 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 删除已经导入的IP黑名单
+     *
+     * 删除流量过滤功能下已经导入的IP黑名单，指定生效范围进行删除。 标准版的墙只会存在生效范围为EIP的IP黑名单，专业版的墙会存在生效范围为EIP和NAT的IP黑名单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpBlacklistRequest 请求对象
+     * @return CompletableFuture<DeleteIpBlacklistResponse>
+     */
+    public CompletableFuture<DeleteIpBlacklistResponse> deleteIpBlacklistAsync(DeleteIpBlacklistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteIpBlacklist);
+    }
+
+    /**
+     * 删除已经导入的IP黑名单
+     *
+     * 删除流量过滤功能下已经导入的IP黑名单，指定生效范围进行删除。 标准版的墙只会存在生效范围为EIP的IP黑名单，专业版的墙会存在生效范围为EIP和NAT的IP黑名单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpBlacklistRequest 请求对象
+     * @return AsyncInvoker<DeleteIpBlacklistRequest, DeleteIpBlacklistResponse>
+     */
+    public AsyncInvoker<DeleteIpBlacklistRequest, DeleteIpBlacklistResponse> deleteIpBlacklistAsyncInvoker(
+        DeleteIpBlacklistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteIpBlacklist, hcClient);
+    }
+
+    /**
      * 删除服务成员
      *
      * 删除服务组成员
@@ -993,6 +1036,99 @@ public class CfwAsyncClient {
      */
     public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.deleteTag, hcClient);
+    }
+
+    /**
+     * 开启或者关闭流量过滤的IP黑名单功能
+     *
+     * 开启或者关闭流量过滤功能，当前流量过滤是通过导入IP黑名单实现的。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableIpBlacklistRequest 请求对象
+     * @return CompletableFuture<EnableIpBlacklistResponse>
+     */
+    public CompletableFuture<EnableIpBlacklistResponse> enableIpBlacklistAsync(EnableIpBlacklistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.enableIpBlacklist);
+    }
+
+    /**
+     * 开启或者关闭流量过滤的IP黑名单功能
+     *
+     * 开启或者关闭流量过滤功能，当前流量过滤是通过导入IP黑名单实现的。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableIpBlacklistRequest 请求对象
+     * @return AsyncInvoker<EnableIpBlacklistRequest, EnableIpBlacklistResponse>
+     */
+    public AsyncInvoker<EnableIpBlacklistRequest, EnableIpBlacklistResponse> enableIpBlacklistAsyncInvoker(
+        EnableIpBlacklistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.enableIpBlacklist, hcClient);
+    }
+
+    /**
+     * 导出用于流量过滤的IP黑名单
+     *
+     * 指定IP黑名单的名字进行导出，当前只有两种文件名，在EIP生效的文件名为ip-blacklist-eip.txt，在 NAT生效的文件名为ip-blacklist-nat.txt。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportIpBlacklistRequest 请求对象
+     * @return CompletableFuture<ExportIpBlacklistResponse>
+     */
+    public CompletableFuture<ExportIpBlacklistResponse> exportIpBlacklistAsync(ExportIpBlacklistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.exportIpBlacklist);
+    }
+
+    /**
+     * 导出用于流量过滤的IP黑名单
+     *
+     * 指定IP黑名单的名字进行导出，当前只有两种文件名，在EIP生效的文件名为ip-blacklist-eip.txt，在 NAT生效的文件名为ip-blacklist-nat.txt。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportIpBlacklistRequest 请求对象
+     * @return AsyncInvoker<ExportIpBlacklistRequest, ExportIpBlacklistResponse>
+     */
+    public AsyncInvoker<ExportIpBlacklistRequest, ExportIpBlacklistResponse> exportIpBlacklistAsyncInvoker(
+        ExportIpBlacklistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.exportIpBlacklist, hcClient);
+    }
+
+    /**
+     * 导入IP黑名单用于流量过滤
+     *
+     * 此接口用来导入IP黑名单，IP列表保存在request的body中，IP列表支持的格式如下：
+     * 单个IP地址，例如：100.1.1.10
+     * 连续的IP地址段，例如：80.1.1.3-80.1.1.30
+     * 掩码格式的网段，例如：6.6.6.0/24
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportIpBlacklistRequest 请求对象
+     * @return CompletableFuture<ImportIpBlacklistResponse>
+     */
+    public CompletableFuture<ImportIpBlacklistResponse> importIpBlacklistAsync(ImportIpBlacklistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.importIpBlacklist);
+    }
+
+    /**
+     * 导入IP黑名单用于流量过滤
+     *
+     * 此接口用来导入IP黑名单，IP列表保存在request的body中，IP列表支持的格式如下：
+     * 单个IP地址，例如：100.1.1.10
+     * 连续的IP地址段，例如：80.1.1.3-80.1.1.30
+     * 掩码格式的网段，例如：6.6.6.0/24
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportIpBlacklistRequest 请求对象
+     * @return AsyncInvoker<ImportIpBlacklistRequest, ImportIpBlacklistResponse>
+     */
+    public AsyncInvoker<ImportIpBlacklistRequest, ImportIpBlacklistResponse> importIpBlacklistAsyncInvoker(
+        ImportIpBlacklistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.importIpBlacklist, hcClient);
     }
 
     /**
@@ -1492,6 +1628,65 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 获取导入的IP黑名单列表信息
+     *
+     * 获取防火墙实例中已经导入的IP黑名单信息，标准版防火墙只会显示一条EIP的记录，专业版防火墙可能显示EIP、NAT或EIP和NAT的记录，根据导入的情况确定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpBlacklistRequest 请求对象
+     * @return CompletableFuture<ListIpBlacklistResponse>
+     */
+    public CompletableFuture<ListIpBlacklistResponse> listIpBlacklistAsync(ListIpBlacklistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpBlacklist);
+    }
+
+    /**
+     * 获取导入的IP黑名单列表信息
+     *
+     * 获取防火墙实例中已经导入的IP黑名单信息，标准版防火墙只会显示一条EIP的记录，专业版防火墙可能显示EIP、NAT或EIP和NAT的记录，根据导入的情况确定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpBlacklistRequest 请求对象
+     * @return AsyncInvoker<ListIpBlacklistRequest, ListIpBlacklistResponse>
+     */
+    public AsyncInvoker<ListIpBlacklistRequest, ListIpBlacklistResponse> listIpBlacklistAsyncInvoker(
+        ListIpBlacklistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listIpBlacklist, hcClient);
+    }
+
+    /**
+     * 获取流量过滤功能的开关信息
+     *
+     * 流量过滤功能可以打开或者关闭，通过此接口可以获取当前的开关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpBlacklistSwitchRequest 请求对象
+     * @return CompletableFuture<ListIpBlacklistSwitchResponse>
+     */
+    public CompletableFuture<ListIpBlacklistSwitchResponse> listIpBlacklistSwitchAsync(
+        ListIpBlacklistSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpBlacklistSwitch);
+    }
+
+    /**
+     * 获取流量过滤功能的开关信息
+     *
+     * 流量过滤功能可以打开或者关闭，通过此接口可以获取当前的开关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpBlacklistSwitchRequest 请求对象
+     * @return AsyncInvoker<ListIpBlacklistSwitchRequest, ListIpBlacklistSwitchResponse>
+     */
+    public AsyncInvoker<ListIpBlacklistSwitchRequest, ListIpBlacklistSwitchResponse> listIpBlacklistSwitchAsyncInvoker(
+        ListIpBlacklistSwitchRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listIpBlacklistSwitch, hcClient);
+    }
+
+    /**
      * 获取CFW任务执行状态
      *
      * 获取CFW任务执行状态
@@ -1721,6 +1916,35 @@ public class CfwAsyncClient {
     public AsyncInvoker<ListServiceSetsRequest, ListServiceSetsResponse> listServiceSetsAsyncInvoker(
         ListServiceSetsRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.listServiceSets, hcClient);
+    }
+
+    /**
+     * 用于流量过滤的IP黑名单导入失败后进行重新导入
+     *
+     * 用于流量过滤的IP黑名单导入失败后，调用此接口进行重试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryIpBlacklistRequest 请求对象
+     * @return CompletableFuture<RetryIpBlacklistResponse>
+     */
+    public CompletableFuture<RetryIpBlacklistResponse> retryIpBlacklistAsync(RetryIpBlacklistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.retryIpBlacklist);
+    }
+
+    /**
+     * 用于流量过滤的IP黑名单导入失败后进行重新导入
+     *
+     * 用于流量过滤的IP黑名单导入失败后，调用此接口进行重试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryIpBlacklistRequest 请求对象
+     * @return AsyncInvoker<RetryIpBlacklistRequest, RetryIpBlacklistResponse>
+     */
+    public AsyncInvoker<RetryIpBlacklistRequest, RetryIpBlacklistResponse> retryIpBlacklistAsyncInvoker(
+        RetryIpBlacklistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.retryIpBlacklist, hcClient);
     }
 
     /**

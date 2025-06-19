@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.dli.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -38,10 +43,86 @@ public class Queue {
 
     private Long createTime;
 
+    /**
+     * 参数解释: 队列的类型 示例: sql 约束限制:  无 取值范围: sql, general, all 默认取值: all
+     */
+    public static final class QueueTypeEnum {
+
+        /**
+         * Enum SQL for value: "sql"
+         */
+        public static final QueueTypeEnum SQL = new QueueTypeEnum("sql");
+
+        /**
+         * Enum GENERAL for value: "general"
+         */
+        public static final QueueTypeEnum GENERAL = new QueueTypeEnum("general");
+
+        /**
+         * Enum ALL for value: "all"
+         */
+        public static final QueueTypeEnum ALL = new QueueTypeEnum("all");
+
+        private static final Map<String, QueueTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, QueueTypeEnum> createStaticFields() {
+            Map<String, QueueTypeEnum> map = new HashMap<>();
+            map.put("sql", SQL);
+            map.put("general", GENERAL);
+            map.put("all", ALL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        QueueTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static QueueTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueueTypeEnum(value));
+        }
+
+        public static QueueTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof QueueTypeEnum) {
+                return this.value.equals(((QueueTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_type")
 
-    private String queueType;
+    private QueueTypeEnum queueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_count")
@@ -174,7 +255,7 @@ public class Queue {
     }
 
     /**
-     * 队列ID。
+     * 参数解释: 队列ID 示例: 10 约束限制:  无 取值范围: 无 默认取值: 无
      * @return queueId
      */
     public Long getQueueId() {
@@ -191,7 +272,7 @@ public class Queue {
     }
 
     /**
-     * 队列名称。
+     * 参数解释: 队列名称 示例: datasource_connection 约束限制:  无 取值范围: 无 默认取值: 无
      * @return queueName
      */
     public String getQueueName() {
@@ -208,7 +289,7 @@ public class Queue {
     }
 
     /**
-     * 队列描述信息。
+     * 参数解释: 队列描述信息 示例: des 约束限制:  无 取值范围: 无 默认取值: 无
      * @return description
      */
     public String getDescription() {
@@ -225,7 +306,7 @@ public class Queue {
     }
 
     /**
-     * 创建队列的用户。
+     * 参数解释: 创建队列的用户 示例: ei_dlics_c00228924 约束限制:  无 取值范围: 无 默认取值: 无
      * @return owner
      */
     public String getOwner() {
@@ -242,7 +323,7 @@ public class Queue {
     }
 
     /**
-     * 创建队列的时间。是单位为“毫秒”的时间戳。
+     * 参数解释: 创建队列的时间。是单位为“毫秒”的时间戳 示例: 1553168198000 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return createTime
      */
     public Long getCreateTime() {
@@ -253,20 +334,20 @@ public class Queue {
         this.createTime = createTime;
     }
 
-    public Queue withQueueType(String queueType) {
+    public Queue withQueueType(QueueTypeEnum queueType) {
         this.queueType = queueType;
         return this;
     }
 
     /**
-     * 队列的类型。： sql general all 如果不指定，默认为“sql”。
+     * 参数解释: 队列的类型 示例: sql 约束限制:  无 取值范围: sql, general, all 默认取值: all
      * @return queueType
      */
-    public String getQueueType() {
+    public QueueTypeEnum getQueueType() {
         return queueType;
     }
 
-    public void setQueueType(String queueType) {
+    public void setQueueType(QueueTypeEnum queueType) {
         this.queueType = queueType;
     }
 
@@ -276,7 +357,7 @@ public class Queue {
     }
 
     /**
-     * 队列的实际CU。
+     * 参数解释: 与该队列绑定的计算单元数，即当前队列的CU数 示例: 16 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return cuCount
      */
     public Integer getCuCount() {
@@ -293,7 +374,7 @@ public class Queue {
     }
 
     /**
-     * 队列的收费模式。 “1”表示按照CU时收费。 “2”表示按照包年包月收费。
+     * 参数解释: 队列的收费模式。 “1”表示按照CU时收费。 “2”表示按照包年包月收费。 示例: 16 约束限制:  无 取值范围: 1, 2 默认取值: 无
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -310,7 +391,7 @@ public class Queue {
     }
 
     /**
-     * 队列的资源ID。
+     * 参数解释: 队列的资源ID 示例: 26afb850-d3c9-42c1-81c0-583d1163e80f 约束限制:  无 取值范围: 无 默认取值: 无
      * @return resourceId
      */
     public String getResourceId() {
@@ -327,7 +408,7 @@ public class Queue {
     }
 
     /**
-     * 企业项目ID。0”表示default，即默认的企业项目。 说明： 开通了企业管理服务的用户可设置该参数绑定指定的项目。
+     * 参数解释: 企业项目ID。0”表示default，即默认的企业项目。说明：开通了企业管理服务的用户可设置该参数绑定指定的项目。 示例: 0 约束限制:  无 取值范围: 无 默认取值: 无
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -344,7 +425,7 @@ public class Queue {
     }
 
     /**
-     * 队列的虚拟私有云（VPC）的网段。建议使用网段：10.0.0.0/8~28，172.16.0.0/12~28，192.168.0.0/16~28。
+     * 参数解释: 队列的虚拟私有云（VPC）的网段。建议使用网段：10.0.0.0/8~28，172.16.0.0/12~28，192.168.0.0/16~28 示例: 10.0.0.0/8 约束限制:  符合网段格式的字符串 取值范围: 无 默认取值: 无
      * @return cidrInVpc
      */
     public String getCidrInVpc() {
@@ -361,7 +442,7 @@ public class Queue {
     }
 
     /**
-     * 管理子网的网段。
+     * 参数解释: 管理子网的网段 示例: 10.23.128.0/24 约束限制:  符合网段格式的字符串 取值范围: 无 默认取值: 无
      * @return cidrInMgntsubnet
      */
     public String getCidrInMgntsubnet() {
@@ -378,7 +459,7 @@ public class Queue {
     }
 
     /**
-     * 子网网段。
+     * 参数解释: 子网网段 示例: 10.23.128.0/24 约束限制:  符合网段格式的字符串 取值范围: 无 默认取值: 无
      * @return cidrInSubnet
      */
     public String getCidrInSubnet() {
@@ -395,7 +476,7 @@ public class Queue {
     }
 
     /**
-     * 队列类型。 0：共享队列 1：专属队列
+     * 参数解释: 队列类型。0：共享队列,1：专属队列 示例: 0 约束限制:  无 取值范围: 0,1 默认取值: 无
      * @return resourceMode
      */
     public Integer getResourceMode() {
@@ -412,7 +493,7 @@ public class Queue {
     }
 
     /**
-     * 队列计算资源的cpu架构。
+     * 参数解释: 队列计算资源的cpu架构 示例: 0 约束限制:  符合cpu架构格式的字符串 取值范围: 无 默认取值: 无
      * @return platform
      */
     public String getPlatform() {
@@ -429,7 +510,7 @@ public class Queue {
     }
 
     /**
-     * 是否在重启状态。默认值为“false”。
+     * 参数解释: 是否在重启状态。默认值为“false” 示例: false 约束限制:  无 取值范围: true,false 默认取值: false
      * @return isRestarting
      */
     public Boolean getIsRestarting() {
@@ -446,7 +527,7 @@ public class Queue {
     }
 
     /**
-     * 队列的标签信息，目前只支持设置跨az配置，multi_az=2
+     * 参数解释: 队列的标签信息，目前只支持设置跨az配置，multi_az=2 示例: {\\\"multi_az\\\":\\\"2\\\"} 约束限制:  符合Json格式的字符串 取值范围: 无 默认取值: 无
      * @return labels
      */
     public String getLabels() {
@@ -463,7 +544,7 @@ public class Queue {
     }
 
     /**
-     * 队列特性。支持以下两种类型：basic：基础型ai：AI增强型（仅SQL的x86_64专属队列支持选择）默认值为“basic”。
+     * 参数解释: 队列特性 示例: basic 约束限制:  无 取值范围: basic（基础型） ai（AI增强型，仅SQL的x86_64专属队列支持选择） 默认取值: basic
      * @return feature
      */
     public String getFeature() {
@@ -480,7 +561,7 @@ public class Queue {
     }
 
     /**
-     * 队列所属资源类型, vm或container。
+     * 参数解释: 队列所属资源类型 示例: vm 约束限制:  无 取值范围: vm container 默认取值: 无
      * @return resourceType
      */
     public String getResourceType() {
@@ -497,7 +578,7 @@ public class Queue {
     }
 
     /**
-     * 队列的规格大小。对于包周期队列，表示包周期部分的CU值；对于按需队列，表示用户购买队列时的初始值。
+     * 参数解释: 队列的规格大小。对于包周期队列，表示包周期部分的CU值；对于按需队列，表示用户购买队列时的初始值 示例: 0 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return cuSpec
      */
     public Integer getCuSpec() {
@@ -514,7 +595,7 @@ public class Queue {
     }
 
     /**
-     * 当前队列弹性扩缩容的CU值上限。
+     * 参数解释: 当前队列弹性扩缩容的CU值上限 示例: 0 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return cuScaleOutLimit
      */
     public Integer getCuScaleOutLimit() {
@@ -531,7 +612,7 @@ public class Queue {
     }
 
     /**
-     * 当前队列弹性扩缩容的CU值下限。
+     * 参数解释: 当前队列弹性扩缩容的CU值下限 示例: 0 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return cuScaleInLimit
      */
     public Integer getCuScaleInLimit() {
@@ -548,7 +629,7 @@ public class Queue {
     }
 
     /**
-     * 弹性资源池名称。
+     * 参数解释: 弹性资源池名称 示例: dli_pool_0509 约束限制:  无 取值范围: 无 默认取值: 无
      * @return elasticResourcePoolName
      */
     public String getElasticResourcePoolName() {
@@ -581,7 +662,7 @@ public class Queue {
     }
 
     /**
-     * 队列支持的Spark版本。
+     * 参数解释: 队列支持的Spark版本 示例: [2.4.5] 约束限制:  无 取值范围: 无 默认取值: 无
      * @return supportSparkVersions
      */
     public List<String> getSupportSparkVersions() {
@@ -598,7 +679,7 @@ public class Queue {
     }
 
     /**
-     * 队列默认的Spark版本。
+     * 参数解释: 队列默认的Spark版本 示例: 2.4.5 约束限制:  无 取值范围: 无 默认取值: 无
      * @return defaultSparkVersion
      */
     public String getDefaultSparkVersion() {
@@ -631,7 +712,7 @@ public class Queue {
     }
 
     /**
-     * 队列支持的HetuEngine版本。
+     * 参数解释: 队列支持的HetuEngine版本 示例: [2.1.0] 约束限制:  无 取值范围: 无 默认取值: 无
      * @return supportHetuEngineVersions
      */
     public List<String> getSupportHetuEngineVersions() {
@@ -648,7 +729,7 @@ public class Queue {
     }
 
     /**
-     * 队列默认的HetuEngine版本。
+     * 参数解释: 队列默认的HetuEngine版本 示例: 2.1.0 约束限制:  无 取值范围: 无 默认取值: 无
      * @return defaultHetuEngineVersion
      */
     public String getDefaultHetuEngineVersion() {
@@ -681,7 +762,7 @@ public class Queue {
     }
 
     /**
-     * 队列支持的Flink SQL版本。
+     * 参数解释: 队列支持的Flink SQL版本 示例: [1.17] 约束限制:  无 取值范围: 无 默认取值: 无
      * @return supportFlinkSqlVersions
      */
     public List<String> getSupportFlinkSqlVersions() {
@@ -698,7 +779,7 @@ public class Queue {
     }
 
     /**
-     * 队列默认的Flink SQL版本。
+     * 参数解释: 队列默认的Flink SQL版本 示例: 1.17 约束限制:  无 取值范围: 无 默认取值: 无
      * @return defaultFlinkSqlVersion
      */
     public String getDefaultFlinkSqlVersion() {
@@ -731,7 +812,7 @@ public class Queue {
     }
 
     /**
-     * 队列支持的Flink JAR版本。
+     * 参数解释: 队列支持的Flink JAR版本 示例: [1.17] 约束限制:  无 取值范围: 无 默认取值: 无
      * @return supportFlinkJarVersions
      */
     public List<String> getSupportFlinkJarVersions() {
@@ -748,7 +829,7 @@ public class Queue {
     }
 
     /**
-     * 队列默认的Flink JAR版本。
+     * 参数解释: 队列默认的Flink JAR版本 示例: 1.17 约束限制:  无 取值范围: 无 默认取值: 无
      * @return defaultFlinkJarVersion
      */
     public String getDefaultFlinkJarVersion() {

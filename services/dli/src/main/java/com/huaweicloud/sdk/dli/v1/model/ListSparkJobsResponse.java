@@ -40,7 +40,7 @@ public class ListSparkJobsResponse extends SdkResponse {
     }
 
     /**
-     * 起始批处理作业的索引号。
+     * 参数解释:   起始批处理作业的索引号 示例: 0 约束限制:  无 取值范围: 无 默认取值: 无
      * @return from
      */
     public Integer getFrom() {
@@ -57,7 +57,7 @@ public class ListSparkJobsResponse extends SdkResponse {
     }
 
     /**
-     * 返回批处理作业的总数。
+     * 参数解释:   返回批处理作业的总数 示例: 1 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return total
      */
     public Integer getTotal() {
@@ -107,7 +107,7 @@ public class ListSparkJobsResponse extends SdkResponse {
     }
 
     /**
-     * 批处理作业的创建时间。
+     * 参数解释:   批处理作业的创建时间 示例: 1747169165821 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return createTime
      */
     public Long getCreateTime() {

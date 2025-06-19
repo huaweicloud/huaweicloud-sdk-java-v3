@@ -46,7 +46,7 @@ public class UpdateInstanceTopicReqTopics {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_other_configs")
 
-    private List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs = null;
+    private List<UpdateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_desc")
@@ -172,13 +172,13 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     public UpdateInstanceTopicReqTopics withTopicOtherConfigs(
-        List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
+        List<UpdateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
         this.topicOtherConfigs = topicOtherConfigs;
         return this;
     }
 
     public UpdateInstanceTopicReqTopics addTopicOtherConfigsItem(
-        CreateInstanceTopicReqTopicOtherConfigs topicOtherConfigsItem) {
+        UpdateInstanceTopicReqTopicOtherConfigs topicOtherConfigsItem) {
         if (this.topicOtherConfigs == null) {
             this.topicOtherConfigs = new ArrayList<>();
         }
@@ -187,7 +187,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     public UpdateInstanceTopicReqTopics withTopicOtherConfigs(
-        Consumer<List<CreateInstanceTopicReqTopicOtherConfigs>> topicOtherConfigsSetter) {
+        Consumer<List<UpdateInstanceTopicReqTopicOtherConfigs>> topicOtherConfigsSetter) {
         if (this.topicOtherConfigs == null) {
             this.topicOtherConfigs = new ArrayList<>();
         }
@@ -199,11 +199,11 @@ public class UpdateInstanceTopicReqTopics {
      * Topic配置
      * @return topicOtherConfigs
      */
-    public List<CreateInstanceTopicReqTopicOtherConfigs> getTopicOtherConfigs() {
+    public List<UpdateInstanceTopicReqTopicOtherConfigs> getTopicOtherConfigs() {
         return topicOtherConfigs;
     }
 
-    public void setTopicOtherConfigs(List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
+    public void setTopicOtherConfigs(List<UpdateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
         this.topicOtherConfigs = topicOtherConfigs;
     }
 

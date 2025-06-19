@@ -723,6 +723,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityReque
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateEntityAttributeRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateEntityAttributeResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRequest;
@@ -10758,6 +10760,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse> updateDirectoryInvoker(
         UpdateDirectoryRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.updateDirectory, hcClient);
+    }
+
+    /**
+     * 修改资产指定属性
+     *
+     * 修改资产指定属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEntityAttributeRequest 请求对象
+     * @return UpdateEntityAttributeResponse
+     */
+    public UpdateEntityAttributeResponse updateEntityAttribute(UpdateEntityAttributeRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateEntityAttribute);
+    }
+
+    /**
+     * 修改资产指定属性
+     *
+     * 修改资产指定属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEntityAttributeRequest 请求对象
+     * @return SyncInvoker<UpdateEntityAttributeRequest, UpdateEntityAttributeResponse>
+     */
+    public SyncInvoker<UpdateEntityAttributeRequest, UpdateEntityAttributeResponse> updateEntityAttributeInvoker(
+        UpdateEntityAttributeRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateEntityAttribute, hcClient);
     }
 
     /**

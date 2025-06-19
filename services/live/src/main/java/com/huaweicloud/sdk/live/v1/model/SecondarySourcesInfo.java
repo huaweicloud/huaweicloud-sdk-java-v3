@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 主入流信息
+ * 备入流信息
  */
 public class SecondarySourcesInfo {
 
@@ -42,6 +42,11 @@ public class SecondarySourcesInfo {
     @JsonProperty(value = "passphrase")
 
     private String passphrase;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pbkeylen")
+
+    private Integer pbkeylen;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_urls")
@@ -166,6 +171,25 @@ public class SecondarySourcesInfo {
         this.passphrase = passphrase;
     }
 
+    public SecondarySourcesInfo withPbkeylen(Integer pbkeylen) {
+        this.pbkeylen = pbkeylen;
+        return this;
+    }
+
+    /**
+     * srt加密算法
+     * minimum: 16
+     * maximum: 32
+     * @return pbkeylen
+     */
+    public Integer getPbkeylen() {
+        return pbkeylen;
+    }
+
+    public void setPbkeylen(Integer pbkeylen) {
+        this.pbkeylen = pbkeylen;
+    }
+
     public SecondarySourcesInfo withBackupUrls(List<String> backupUrls) {
         this.backupUrls = backupUrls;
         return this;
@@ -245,13 +269,15 @@ public class SecondarySourcesInfo {
         return Objects.equals(this.url, that.url) && Objects.equals(this.bitrate, that.bitrate)
             && Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
             && Objects.equals(this.bitrateFor3u8, that.bitrateFor3u8)
-            && Objects.equals(this.passphrase, that.passphrase) && Objects.equals(this.backupUrls, that.backupUrls)
-            && Objects.equals(this.streamId, that.streamId) && Objects.equals(this.latency, that.latency);
+            && Objects.equals(this.passphrase, that.passphrase) && Objects.equals(this.pbkeylen, that.pbkeylen)
+            && Objects.equals(this.backupUrls, that.backupUrls) && Objects.equals(this.streamId, that.streamId)
+            && Objects.equals(this.latency, that.latency);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, bitrate, width, height, bitrateFor3u8, passphrase, backupUrls, streamId, latency);
+        return Objects
+            .hash(url, bitrate, width, height, bitrateFor3u8, passphrase, pbkeylen, backupUrls, streamId, latency);
     }
 
     @Override
@@ -264,6 +290,7 @@ public class SecondarySourcesInfo {
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    bitrateFor3u8: ").append(toIndentedString(bitrateFor3u8)).append("\n");
         sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
+        sb.append("    pbkeylen: ").append(toIndentedString(pbkeylen)).append("\n");
         sb.append("    backupUrls: ").append(toIndentedString(backupUrls)).append("\n");
         sb.append("    streamId: ").append(toIndentedString(streamId)).append("\n");
         sb.append("    latency: ").append(toIndentedString(latency)).append("\n");

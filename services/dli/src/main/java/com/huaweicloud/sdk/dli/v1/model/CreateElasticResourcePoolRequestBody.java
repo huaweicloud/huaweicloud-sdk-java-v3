@@ -60,6 +60,11 @@ public class CreateElasticResourcePoolRequestBody {
 
     private Map<String, String> label = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
     public CreateElasticResourcePoolRequestBody withElasticResourcePoolName(String elasticResourcePoolName) {
         this.elasticResourcePoolName = elasticResourcePoolName;
         return this;
@@ -251,6 +256,23 @@ public class CreateElasticResourcePoolRequestBody {
         this.label = label;
     }
 
+    public CreateElasticResourcePoolRequestBody withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否启用IPv6。开启IPv6后，将自动为资源池分配IPv6网段，暂不支持自定义IPv6网段。该功能一旦开启，将不能关闭。
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -265,7 +287,8 @@ public class CreateElasticResourcePoolRequestBody {
             && Objects.equals(this.maxCu, that.maxCu) && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.minCu, that.minCu)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.label, that.label);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable);
     }
 
     @Override
@@ -278,7 +301,8 @@ public class CreateElasticResourcePoolRequestBody {
             minCu,
             enterpriseProjectId,
             tags,
-            label);
+            label,
+            ipv6Enable);
     }
 
     @Override
@@ -294,6 +318,7 @@ public class CreateElasticResourcePoolRequestBody {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    label: ").append(toIndentedString(label)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

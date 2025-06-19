@@ -29,7 +29,7 @@ public class JobResourcesGroup {
     }
 
     /**
-     * 用户组名称。
+     * 参数解释:   用户组名称 示例: group.tesddws 约束限制:  无 取值范围: 无 默认取值: 无
      * @return name
      */
     public String getName() {

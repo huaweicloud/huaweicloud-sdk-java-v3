@@ -70,7 +70,7 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
     }
 
     /**
-     * 占用磁盘大小，查询top N。
+     * **参数解释**： 占用磁盘大小，查询top N。 **约束限制**： 不涉及。 **取值范围**： 1~1000。 **默认取值**： 不涉及。
      * @return top
      */
     public String getTop() {

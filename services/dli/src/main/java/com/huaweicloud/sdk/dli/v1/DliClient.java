@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreatePeriodElasticResourcePoolSpecChangeOrderRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreatePeriodElasticResourcePoolSpecChangeOrderResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
@@ -73,6 +75,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateRequest;
@@ -109,6 +113,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteSqlJobDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteSqlJobDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequest;
@@ -175,6 +181,10 @@ import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobDefendRulesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobDefendRulesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobSystemDefendRulesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobSystemDefendRulesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobsRequest;
@@ -239,12 +249,16 @@ import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobStatusRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobStatusResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDetailRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDetailResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobProgressRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobProgressResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobSystemDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobSystemDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoRequest;
@@ -279,6 +293,8 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateTableOwnerRequest;
@@ -757,6 +773,36 @@ public class DliClient {
     public SyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse> createJobAuthInfoInvoker(
         CreateJobAuthInfoRequest request) {
         return new SyncInvoker<>(request, DliMeta.createJobAuthInfo, hcClient);
+    }
+
+    /**
+     * 包周期弹性资源池规格变更下单接口
+     *
+     * 包周期弹性资源池规格变更下单接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePeriodElasticResourcePoolSpecChangeOrderRequest 请求对象
+     * @return CreatePeriodElasticResourcePoolSpecChangeOrderResponse
+     */
+    public CreatePeriodElasticResourcePoolSpecChangeOrderResponse createPeriodElasticResourcePoolSpecChangeOrder(
+        CreatePeriodElasticResourcePoolSpecChangeOrderRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createPeriodElasticResourcePoolSpecChangeOrder);
+    }
+
+    /**
+     * 包周期弹性资源池规格变更下单接口
+     *
+     * 包周期弹性资源池规格变更下单接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePeriodElasticResourcePoolSpecChangeOrderRequest 请求对象
+     * @return SyncInvoker<CreatePeriodElasticResourcePoolSpecChangeOrderRequest, CreatePeriodElasticResourcePoolSpecChangeOrderResponse>
+     */
+    public SyncInvoker<CreatePeriodElasticResourcePoolSpecChangeOrderRequest, CreatePeriodElasticResourcePoolSpecChangeOrderResponse> createPeriodElasticResourcePoolSpecChangeOrderInvoker(
+        CreatePeriodElasticResourcePoolSpecChangeOrderRequest request) {
+        return new SyncInvoker<>(request, DliMeta.createPeriodElasticResourcePoolSpecChangeOrder, hcClient);
     }
 
     /**
@@ -3923,6 +3969,35 @@ public class DliClient {
     }
 
     /**
+     * 创建SQL拦截规则
+     *
+     * 该API用于创建SQL拦截规则，拦截匹配规则的SQL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSqlJobDefendRuleRequest 请求对象
+     * @return CreateSqlJobDefendRuleResponse
+     */
+    public CreateSqlJobDefendRuleResponse createSqlJobDefendRule(CreateSqlJobDefendRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createSqlJobDefendRule);
+    }
+
+    /**
+     * 创建SQL拦截规则
+     *
+     * 该API用于创建SQL拦截规则，拦截匹配规则的SQL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSqlJobDefendRuleRequest 请求对象
+     * @return SyncInvoker<CreateSqlJobDefendRuleRequest, CreateSqlJobDefendRuleResponse>
+     */
+    public SyncInvoker<CreateSqlJobDefendRuleRequest, CreateSqlJobDefendRuleResponse> createSqlJobDefendRuleInvoker(
+        CreateSqlJobDefendRuleRequest request) {
+        return new SyncInvoker<>(request, DliMeta.createSqlJobDefendRule, hcClient);
+    }
+
+    /**
      * 存储指定SQL语句
      *
      * 该API用于存储指定的SQL语句，后续可以重复使用。
@@ -3952,6 +4027,35 @@ public class DliClient {
     }
 
     /**
+     * 删除SQL拦截规则
+     *
+     * 该API用于删除SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSqlJobDefendRuleRequest 请求对象
+     * @return DeleteSqlJobDefendRuleResponse
+     */
+    public DeleteSqlJobDefendRuleResponse deleteSqlJobDefendRule(DeleteSqlJobDefendRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.deleteSqlJobDefendRule);
+    }
+
+    /**
+     * 删除SQL拦截规则
+     *
+     * 该API用于删除SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSqlJobDefendRuleRequest 请求对象
+     * @return SyncInvoker<DeleteSqlJobDefendRuleRequest, DeleteSqlJobDefendRuleResponse>
+     */
+    public SyncInvoker<DeleteSqlJobDefendRuleRequest, DeleteSqlJobDefendRuleResponse> deleteSqlJobDefendRuleInvoker(
+        DeleteSqlJobDefendRuleRequest request) {
+        return new SyncInvoker<>(request, DliMeta.deleteSqlJobDefendRule, hcClient);
+    }
+
+    /**
      * 导出查询结果
      *
      * 该API用于将SQL语句的查询结果导出到OBS对象存储中，只支持导出“QUERY”类型作业的查询结果。
@@ -3978,6 +4082,64 @@ public class DliClient {
     public SyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse> exportSqlJobResultInvoker(
         ExportSqlJobResultRequest request) {
         return new SyncInvoker<>(request, DliMeta.exportSqlJobResult, hcClient);
+    }
+
+    /**
+     * 批量获取SQL拦截规则
+     *
+     * 该API用于批量获取SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlJobDefendRulesRequest 请求对象
+     * @return ListSqlJobDefendRulesResponse
+     */
+    public ListSqlJobDefendRulesResponse listSqlJobDefendRules(ListSqlJobDefendRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listSqlJobDefendRules);
+    }
+
+    /**
+     * 批量获取SQL拦截规则
+     *
+     * 该API用于批量获取SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlJobDefendRulesRequest 请求对象
+     * @return SyncInvoker<ListSqlJobDefendRulesRequest, ListSqlJobDefendRulesResponse>
+     */
+    public SyncInvoker<ListSqlJobDefendRulesRequest, ListSqlJobDefendRulesResponse> listSqlJobDefendRulesInvoker(
+        ListSqlJobDefendRulesRequest request) {
+        return new SyncInvoker<>(request, DliMeta.listSqlJobDefendRules, hcClient);
+    }
+
+    /**
+     * 批量获取系统预制SQL拦截规则
+     *
+     * 该API用于获取系统预制SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlJobSystemDefendRulesRequest 请求对象
+     * @return ListSqlJobSystemDefendRulesResponse
+     */
+    public ListSqlJobSystemDefendRulesResponse listSqlJobSystemDefendRules(ListSqlJobSystemDefendRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listSqlJobSystemDefendRules);
+    }
+
+    /**
+     * 批量获取系统预制SQL拦截规则
+     *
+     * 该API用于获取系统预制SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlJobSystemDefendRulesRequest 请求对象
+     * @return SyncInvoker<ListSqlJobSystemDefendRulesRequest, ListSqlJobSystemDefendRulesResponse>
+     */
+    public SyncInvoker<ListSqlJobSystemDefendRulesRequest, ListSqlJobSystemDefendRulesResponse> listSqlJobSystemDefendRulesInvoker(
+        ListSqlJobSystemDefendRulesRequest request) {
+        return new SyncInvoker<>(request, DliMeta.listSqlJobSystemDefendRules, hcClient);
     }
 
     /**
@@ -4069,6 +4231,35 @@ public class DliClient {
     }
 
     /**
+     * 获取SQL拦截规则
+     *
+     * 该API用于获取单个SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlJobDefendRuleRequest 请求对象
+     * @return ShowSqlJobDefendRuleResponse
+     */
+    public ShowSqlJobDefendRuleResponse showSqlJobDefendRule(ShowSqlJobDefendRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.showSqlJobDefendRule);
+    }
+
+    /**
+     * 获取SQL拦截规则
+     *
+     * 该API用于获取单个SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlJobDefendRuleRequest 请求对象
+     * @return SyncInvoker<ShowSqlJobDefendRuleRequest, ShowSqlJobDefendRuleResponse>
+     */
+    public SyncInvoker<ShowSqlJobDefendRuleRequest, ShowSqlJobDefendRuleResponse> showSqlJobDefendRuleInvoker(
+        ShowSqlJobDefendRuleRequest request) {
+        return new SyncInvoker<>(request, DliMeta.showSqlJobDefendRule, hcClient);
+    }
+
+    /**
      * 查询作业详细信息
      *
      * 该API用于查询作业的详细信息，如作业的databasename、tablename、file size和export mode等信息。
@@ -4153,6 +4344,64 @@ public class DliClient {
     public SyncInvoker<ShowSqlJobStatusRequest, ShowSqlJobStatusResponse> showSqlJobStatusInvoker(
         ShowSqlJobStatusRequest request) {
         return new SyncInvoker<>(request, DliMeta.showSqlJobStatus, hcClient);
+    }
+
+    /**
+     * 获取单个系统预制SQL拦截规则
+     *
+     * 该API用于获取系统预制SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlJobSystemDefendRuleRequest 请求对象
+     * @return ShowSqlJobSystemDefendRuleResponse
+     */
+    public ShowSqlJobSystemDefendRuleResponse showSqlJobSystemDefendRule(ShowSqlJobSystemDefendRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.showSqlJobSystemDefendRule);
+    }
+
+    /**
+     * 获取单个系统预制SQL拦截规则
+     *
+     * 该API用于获取系统预制SQL拦截规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlJobSystemDefendRuleRequest 请求对象
+     * @return SyncInvoker<ShowSqlJobSystemDefendRuleRequest, ShowSqlJobSystemDefendRuleResponse>
+     */
+    public SyncInvoker<ShowSqlJobSystemDefendRuleRequest, ShowSqlJobSystemDefendRuleResponse> showSqlJobSystemDefendRuleInvoker(
+        ShowSqlJobSystemDefendRuleRequest request) {
+        return new SyncInvoker<>(request, DliMeta.showSqlJobSystemDefendRule, hcClient);
+    }
+
+    /**
+     * 更新SQL拦截规则
+     *
+     * 该API用于更新SQL拦截规则，拦截匹配规则的SQL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSqlJobDefendRuleRequest 请求对象
+     * @return UpdateSqlJobDefendRuleResponse
+     */
+    public UpdateSqlJobDefendRuleResponse updateSqlJobDefendRule(UpdateSqlJobDefendRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.updateSqlJobDefendRule);
+    }
+
+    /**
+     * 更新SQL拦截规则
+     *
+     * 该API用于更新SQL拦截规则，拦截匹配规则的SQL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSqlJobDefendRuleRequest 请求对象
+     * @return SyncInvoker<UpdateSqlJobDefendRuleRequest, UpdateSqlJobDefendRuleResponse>
+     */
+    public SyncInvoker<UpdateSqlJobDefendRuleRequest, UpdateSqlJobDefendRuleResponse> updateSqlJobDefendRuleInvoker(
+        UpdateSqlJobDefendRuleRequest request) {
+        return new SyncInvoker<>(request, DliMeta.updateSqlJobDefendRule, hcClient);
     }
 
     /**

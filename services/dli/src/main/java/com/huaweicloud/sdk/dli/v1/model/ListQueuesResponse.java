@@ -35,7 +35,7 @@ public class ListQueuesResponse extends SdkResponse {
     }
 
     /**
-     * 请求执行是否成功。“true”表示请求执行成功。
+     * 参数解释: 请求执行是否成功。“true”表示请求执行成功 示例: true 约束限制:  无 取值范围: 无 默认取值: 无
      * @return isSuccess
      */
     public Boolean getIsSuccess() {
@@ -52,7 +52,7 @@ public class ListQueuesResponse extends SdkResponse {
     }
 
     /**
-     * 系统提示信息，执行成功时，信息可能为空。
+     * 参数解释: 系统提示信息，执行成功时，信息可能为空 示例: test 约束限制:  无 取值范围: 无 默认取值: 无
      * @return message
      */
     public String getMessage() {

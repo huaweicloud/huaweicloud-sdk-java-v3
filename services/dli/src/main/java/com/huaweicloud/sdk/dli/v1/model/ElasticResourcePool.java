@@ -115,6 +115,16 @@ public class ElasticResourcePool {
 
     private Map<String, String> label = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_cidr_in_subnet")
+
+    private String ipv6CidrInSubnet;
+
     public ElasticResourcePool withElasticResourcePoolName(String elasticResourcePoolName) {
         this.elasticResourcePoolName = elasticResourcePoolName;
         return this;
@@ -487,6 +497,40 @@ public class ElasticResourcePool {
         this.label = label;
     }
 
+    public ElasticResourcePool withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否启用IPv6
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public ElasticResourcePool withIpv6CidrInSubnet(String ipv6CidrInSubnet) {
+        this.ipv6CidrInSubnet = ipv6CidrInSubnet;
+        return this;
+    }
+
+    /**
+     * IPv6子网网段
+     * @return ipv6CidrInSubnet
+     */
+    public String getIpv6CidrInSubnet() {
+        return ipv6CidrInSubnet;
+    }
+
+    public void setIpv6CidrInSubnet(String ipv6CidrInSubnet) {
+        this.ipv6CidrInSubnet = ipv6CidrInSubnet;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -506,7 +550,9 @@ public class ElasticResourcePool {
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.failReason, that.failReason)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.prepayCu, that.prepayCu) && Objects.equals(this.chargingMode, that.chargingMode)
-            && Objects.equals(this.manager, that.manager) && Objects.equals(this.label, that.label);
+            && Objects.equals(this.manager, that.manager) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6CidrInSubnet, that.ipv6CidrInSubnet);
     }
 
     @Override
@@ -530,7 +576,9 @@ public class ElasticResourcePool {
             prepayCu,
             chargingMode,
             manager,
-            label);
+            label,
+            ipv6Enable,
+            ipv6CidrInSubnet);
     }
 
     @Override
@@ -557,6 +605,8 @@ public class ElasticResourcePool {
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
         sb.append("    label: ").append(toIndentedString(label)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    ipv6CidrInSubnet: ").append(toIndentedString(ipv6CidrInSubnet)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -90,6 +90,9 @@ import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreatePeriodElasticResourcePoolSpecChangeOrderRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.CreatePeriodElasticResourcePoolSpecChangeOrderResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
@@ -107,6 +110,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobResponse;
@@ -147,6 +152,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteSqlJobDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteSqlJobDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequest;
@@ -223,6 +230,10 @@ import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobDefendRulesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobDefendRulesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobSystemDefendRulesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobSystemDefendRulesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobsRequest;
@@ -296,14 +307,19 @@ import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobStatusRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobStatusResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDetailRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDetailResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobProgressRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobProgressResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobSystemDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobSystemDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowTableResponse;
+import com.huaweicloud.sdk.dli.v1.model.SqlJobDefendRuleRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.StopFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoRequestBody;
@@ -351,6 +367,8 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobDefendRuleRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobDefendRuleResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateResponse;
@@ -572,11 +590,6 @@ public class DliMeta {
             f -> f.withMarshaller(CountResourcesByTagsRequest::getBody, CountResourcesByTagsRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CountResourcesByTagsResponse::getBody, CountResourcesByTagsResponse::setBody));
 
         return builder.build();
     }
@@ -807,6 +820,33 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateJobAuthInfoRequestBody.class),
             f -> f.withMarshaller(CreateJobAuthInfoRequest::getBody, CreateJobAuthInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePeriodElasticResourcePoolSpecChangeOrderRequest, CreatePeriodElasticResourcePoolSpecChangeOrderResponse> createPeriodElasticResourcePoolSpecChangeOrder =
+        genForCreatePeriodElasticResourcePoolSpecChangeOrder();
+
+    private static HttpRequestDef<CreatePeriodElasticResourcePoolSpecChangeOrderRequest, CreatePeriodElasticResourcePoolSpecChangeOrderResponse> genForCreatePeriodElasticResourcePoolSpecChangeOrder() {
+        // basic
+        HttpRequestDef.Builder<CreatePeriodElasticResourcePoolSpecChangeOrderRequest, CreatePeriodElasticResourcePoolSpecChangeOrderResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreatePeriodElasticResourcePoolSpecChangeOrderRequest.class,
+                    CreatePeriodElasticResourcePoolSpecChangeOrderResponse.class)
+                .withName("CreatePeriodElasticResourcePoolSpecChangeOrder")
+                .withUri("/v3/{project_id}/orders/elastic-resource-pools/specification-change")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody.class),
+            f -> f.withMarshaller(CreatePeriodElasticResourcePoolSpecChangeOrderRequest::getBody,
+                CreatePeriodElasticResourcePoolSpecChangeOrderRequest::setBody));
 
         // response
 
@@ -1858,11 +1898,6 @@ public class DliMeta {
             f -> f.withMarshaller(ListResourcesByTagsRequest::getBody, ListResourcesByTagsRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListResourcesByTagsResponse::getBody, ListResourcesByTagsResponse::setBody));
 
         return builder.build();
     }
@@ -1885,6 +1920,16 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(ListResourcesTagsRequest.ResourceTypeEnum.class),
             f -> f.withMarshaller(ListResourcesTagsRequest::getResourceType,
                 ListResourcesTagsRequest::setResourceType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesTagsRequest::getLimit, ListResourcesTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesTagsRequest::getOffset, ListResourcesTagsRequest::setOffset));
 
         // response
 
@@ -3137,10 +3182,10 @@ public class DliMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("job_type",
+        builder.<ListFlinkJobsRequest.JobTypeEnum>withRequestField("job_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListFlinkJobsRequest.JobTypeEnum.class),
             f -> f.withMarshaller(ListFlinkJobsRequest::getJobType, ListFlinkJobsRequest::setJobType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -3177,10 +3222,10 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListFlinkJobsRequest::getShowDetail, ListFlinkJobsRequest::setShowDetail));
-        builder.<String>withRequestField("status",
+        builder.<ListFlinkJobsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListFlinkJobsRequest.StatusEnum.class),
             f -> f.withMarshaller(ListFlinkJobsRequest::getStatus, ListFlinkJobsRequest::setStatus));
         builder.<String>withRequestField("sys_enterprise_project_name",
             LocationType.Query,
@@ -3656,10 +3701,10 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListSparkJobsRequest::getStart, ListSparkJobsRequest::setStart));
-        builder.<String>withRequestField("state",
+        builder.<ListSparkJobsRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListSparkJobsRequest.StateEnum.class),
             f -> f.withMarshaller(ListSparkJobsRequest::getState, ListSparkJobsRequest::setState));
 
         // response
@@ -3901,6 +3946,29 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSqlJobDefendRuleRequest, CreateSqlJobDefendRuleResponse> createSqlJobDefendRule =
+        genForCreateSqlJobDefendRule();
+
+    private static HttpRequestDef<CreateSqlJobDefendRuleRequest, CreateSqlJobDefendRuleResponse> genForCreateSqlJobDefendRule() {
+        // basic
+        HttpRequestDef.Builder<CreateSqlJobDefendRuleRequest, CreateSqlJobDefendRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSqlJobDefendRuleRequest.class, CreateSqlJobDefendRuleResponse.class)
+            .withName("CreateSqlJobDefendRule")
+            .withUri("/v1/{project_id}/sql-defend-rules")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SqlJobDefendRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SqlJobDefendRuleRequestBody.class),
+            f -> f.withMarshaller(CreateSqlJobDefendRuleRequest::getBody, CreateSqlJobDefendRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> createSqlJobTemplate =
         genForCreateSqlJobTemplate();
 
@@ -3918,6 +3986,29 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSqlJobTemplateRequestBody.class),
             f -> f.withMarshaller(CreateSqlJobTemplateRequest::getBody, CreateSqlJobTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSqlJobDefendRuleRequest, DeleteSqlJobDefendRuleResponse> deleteSqlJobDefendRule =
+        genForDeleteSqlJobDefendRule();
+
+    private static HttpRequestDef<DeleteSqlJobDefendRuleRequest, DeleteSqlJobDefendRuleResponse> genForDeleteSqlJobDefendRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteSqlJobDefendRuleRequest, DeleteSqlJobDefendRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSqlJobDefendRuleRequest.class, DeleteSqlJobDefendRuleResponse.class)
+            .withName("DeleteSqlJobDefendRule")
+            .withUri("/v1/{project_id}/sql-defend-rules/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlJobDefendRuleRequest::getRuleId, DeleteSqlJobDefendRuleRequest::setRuleId));
 
         // response
 
@@ -3946,6 +4037,67 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportSqlJobResultRequestBody.class),
             f -> f.withMarshaller(ExportSqlJobResultRequest::getBody, ExportSqlJobResultRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSqlJobDefendRulesRequest, ListSqlJobDefendRulesResponse> listSqlJobDefendRules =
+        genForListSqlJobDefendRules();
+
+    private static HttpRequestDef<ListSqlJobDefendRulesRequest, ListSqlJobDefendRulesResponse> genForListSqlJobDefendRules() {
+        // basic
+        HttpRequestDef.Builder<ListSqlJobDefendRulesRequest, ListSqlJobDefendRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSqlJobDefendRulesRequest.class, ListSqlJobDefendRulesResponse.class)
+            .withName("ListSqlJobDefendRules")
+            .withUri("/v1/{project_id}/sql-defend-rules")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("queue_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlJobDefendRulesRequest::getQueueName,
+                ListSqlJobDefendRulesRequest::setQueueName));
+        builder.<String>withRequestField("rule_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlJobDefendRulesRequest::getRuleName,
+                ListSqlJobDefendRulesRequest::setRuleName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSqlJobDefendRulesRequest::getOffset, ListSqlJobDefendRulesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSqlJobDefendRulesRequest::getLimit, ListSqlJobDefendRulesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSqlJobSystemDefendRulesRequest, ListSqlJobSystemDefendRulesResponse> listSqlJobSystemDefendRules =
+        genForListSqlJobSystemDefendRules();
+
+    private static HttpRequestDef<ListSqlJobSystemDefendRulesRequest, ListSqlJobSystemDefendRulesResponse> genForListSqlJobSystemDefendRules() {
+        // basic
+        HttpRequestDef.Builder<ListSqlJobSystemDefendRulesRequest, ListSqlJobSystemDefendRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSqlJobSystemDefendRulesRequest.class,
+                    ListSqlJobSystemDefendRulesResponse.class)
+                .withName("ListSqlJobSystemDefendRules")
+                .withUri("/v1/{project_id}/sql-defend-sys-rules")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -4001,15 +4153,15 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListSqlJobsRequest::getEnd, ListSqlJobsRequest::setEnd));
-        builder.<String>withRequestField("engine-type",
+        builder.<ListSqlJobsRequest.EngineTypeEnum>withRequestField("engine-type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListSqlJobsRequest.EngineTypeEnum.class),
             f -> f.withMarshaller(ListSqlJobsRequest::getEngineType, ListSqlJobsRequest::setEngineType));
-        builder.<String>withRequestField("job-status",
+        builder.<ListSqlJobsRequest.JobStatusEnum>withRequestField("job-status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListSqlJobsRequest.JobStatusEnum.class),
             f -> f.withMarshaller(ListSqlJobsRequest::getJobStatus, ListSqlJobsRequest::setJobStatus));
         builder.<String>withRequestField("job-id",
             LocationType.Query,
@@ -4061,6 +4213,11 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSqlJobsRequest::getTags, ListSqlJobsRequest::setTags));
+        builder.<List<ListSqlJobsRequest.JobTypesEnum>>withRequestField("job_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSqlJobsRequest::getJobTypes, ListSqlJobsRequest::setJobTypes));
 
         // response
 
@@ -4089,6 +4246,29 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PreviewSqlJobResultRequest::getQueueName, PreviewSqlJobResultRequest::setQueueName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlJobDefendRuleRequest, ShowSqlJobDefendRuleResponse> showSqlJobDefendRule =
+        genForShowSqlJobDefendRule();
+
+    private static HttpRequestDef<ShowSqlJobDefendRuleRequest, ShowSqlJobDefendRuleResponse> genForShowSqlJobDefendRule() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlJobDefendRuleRequest, ShowSqlJobDefendRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSqlJobDefendRuleRequest.class, ShowSqlJobDefendRuleResponse.class)
+            .withName("ShowSqlJobDefendRule")
+            .withUri("/v1/{project_id}/sql-defend-rules/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlJobDefendRuleRequest::getRuleId, ShowSqlJobDefendRuleRequest::setRuleId));
 
         // response
 
@@ -4158,6 +4338,61 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlJobStatusRequest::getJobId, ShowSqlJobStatusRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlJobSystemDefendRuleRequest, ShowSqlJobSystemDefendRuleResponse> showSqlJobSystemDefendRule =
+        genForShowSqlJobSystemDefendRule();
+
+    private static HttpRequestDef<ShowSqlJobSystemDefendRuleRequest, ShowSqlJobSystemDefendRuleResponse> genForShowSqlJobSystemDefendRule() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlJobSystemDefendRuleRequest, ShowSqlJobSystemDefendRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSqlJobSystemDefendRuleRequest.class,
+                    ShowSqlJobSystemDefendRuleResponse.class)
+                .withName("ShowSqlJobSystemDefendRule")
+                .withUri("/v1/{project_id}/sql-defend-sys-rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlJobSystemDefendRuleRequest::getRuleId,
+                ShowSqlJobSystemDefendRuleRequest::setRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSqlJobDefendRuleRequest, UpdateSqlJobDefendRuleResponse> updateSqlJobDefendRule =
+        genForUpdateSqlJobDefendRule();
+
+    private static HttpRequestDef<UpdateSqlJobDefendRuleRequest, UpdateSqlJobDefendRuleResponse> genForUpdateSqlJobDefendRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateSqlJobDefendRuleRequest, UpdateSqlJobDefendRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSqlJobDefendRuleRequest.class, UpdateSqlJobDefendRuleResponse.class)
+            .withName("UpdateSqlJobDefendRule")
+            .withUri("/v1/{project_id}/sql-defend-rules/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlJobDefendRuleRequest::getRuleId, UpdateSqlJobDefendRuleRequest::setRuleId));
+        builder.<SqlJobDefendRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SqlJobDefendRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateSqlJobDefendRuleRequest::getBody, UpdateSqlJobDefendRuleRequest::setBody));
 
         // response
 

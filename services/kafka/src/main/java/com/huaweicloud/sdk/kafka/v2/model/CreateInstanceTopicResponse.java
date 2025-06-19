@@ -22,7 +22,7 @@ public class CreateInstanceTopicResponse extends SdkResponse {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {

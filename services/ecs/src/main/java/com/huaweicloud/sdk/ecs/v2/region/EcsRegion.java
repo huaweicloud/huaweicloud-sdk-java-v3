@@ -81,6 +81,8 @@ public class EcsRegion {
     public static final Region AP_SOUTHEAST_5 =
         new Region("ap-southeast-5", "https://ecs.ap-southeast-5.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://ecs.cn-north-11.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("ECS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -117,6 +119,7 @@ public class EcsRegion {
         map.put("af-north-1", AF_NORTH_1);
         map.put("ru-moscow-1", RU_MOSCOW_1);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("cn-north-11", CN_NORTH_11);
         return Collections.unmodifiableMap(map);
     }
 

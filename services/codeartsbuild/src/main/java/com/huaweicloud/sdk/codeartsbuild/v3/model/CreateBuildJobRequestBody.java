@@ -44,6 +44,16 @@ public class CreateBuildJobRequestBody {
     private List<CreateBuildJobParameter> parameters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timeout")
+
+    private CreateBuildTimeout timeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scms")
 
     private List<CreateBuildJobScm> scms = null;
@@ -62,6 +72,16 @@ public class CreateBuildJobRequestBody {
     @JsonProperty(value = "build_config_type")
 
     private String buildConfigType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build_if_code_updated")
+
+    private Boolean buildIfCodeUpdated;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "triggers")
+
+    private List<Trigger> triggers = null;
 
     public CreateBuildJobRequestBody withArch(String arch) {
         this.arch = arch;
@@ -181,6 +201,49 @@ public class CreateBuildJobRequestBody {
         this.parameters = parameters;
     }
 
+    public CreateBuildJobRequestBody withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 任务分组id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public CreateBuildJobRequestBody withTimeout(CreateBuildTimeout timeout) {
+        this.timeout = timeout;
+        return this;
+    }
+
+    public CreateBuildJobRequestBody withTimeout(Consumer<CreateBuildTimeout> timeoutSetter) {
+        if (this.timeout == null) {
+            this.timeout = new CreateBuildTimeout();
+            timeoutSetter.accept(this.timeout);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get timeout
+     * @return timeout
+     */
+    public CreateBuildTimeout getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(CreateBuildTimeout timeout) {
+        this.timeout = timeout;
+    }
+
     public CreateBuildJobRequestBody withScms(List<CreateBuildJobScm> scms) {
         this.scms = scms;
         return this;
@@ -281,6 +344,56 @@ public class CreateBuildJobRequestBody {
         this.buildConfigType = buildConfigType;
     }
 
+    public CreateBuildJobRequestBody withBuildIfCodeUpdated(Boolean buildIfCodeUpdated) {
+        this.buildIfCodeUpdated = buildIfCodeUpdated;
+        return this;
+    }
+
+    /**
+     * 提交代码触发构建开关
+     * @return buildIfCodeUpdated
+     */
+    public Boolean getBuildIfCodeUpdated() {
+        return buildIfCodeUpdated;
+    }
+
+    public void setBuildIfCodeUpdated(Boolean buildIfCodeUpdated) {
+        this.buildIfCodeUpdated = buildIfCodeUpdated;
+    }
+
+    public CreateBuildJobRequestBody withTriggers(List<Trigger> triggers) {
+        this.triggers = triggers;
+        return this;
+    }
+
+    public CreateBuildJobRequestBody addTriggersItem(Trigger triggersItem) {
+        if (this.triggers == null) {
+            this.triggers = new ArrayList<>();
+        }
+        this.triggers.add(triggersItem);
+        return this;
+    }
+
+    public CreateBuildJobRequestBody withTriggers(Consumer<List<Trigger>> triggersSetter) {
+        if (this.triggers == null) {
+            this.triggers = new ArrayList<>();
+        }
+        triggersSetter.accept(this.triggers);
+        return this;
+    }
+
+    /**
+     * 定时任务触发器集合
+     * @return triggers
+     */
+    public List<Trigger> getTriggers() {
+        return triggers;
+    }
+
+    public void setTriggers(List<Trigger> triggers) {
+        this.triggers = triggers;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -294,9 +407,12 @@ public class CreateBuildJobRequestBody {
             && Objects.equals(this.jobName, that.jobName)
             && Objects.equals(this.autoUpdateSubModule, that.autoUpdateSubModule)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.timeout, that.timeout)
             && Objects.equals(this.scms, that.scms) && Objects.equals(this.steps, that.steps)
             && Objects.equals(this.hostType, that.hostType)
-            && Objects.equals(this.buildConfigType, that.buildConfigType);
+            && Objects.equals(this.buildConfigType, that.buildConfigType)
+            && Objects.equals(this.buildIfCodeUpdated, that.buildIfCodeUpdated)
+            && Objects.equals(this.triggers, that.triggers);
     }
 
     @Override
@@ -307,10 +423,14 @@ public class CreateBuildJobRequestBody {
             autoUpdateSubModule,
             flavor,
             parameters,
+            groupId,
+            timeout,
             scms,
             steps,
             hostType,
-            buildConfigType);
+            buildConfigType,
+            buildIfCodeUpdated,
+            triggers);
     }
 
     @Override
@@ -323,10 +443,14 @@ public class CreateBuildJobRequestBody {
         sb.append("    autoUpdateSubModule: ").append(toIndentedString(autoUpdateSubModule)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    scms: ").append(toIndentedString(scms)).append("\n");
         sb.append("    steps: ").append(toIndentedString(steps)).append("\n");
         sb.append("    hostType: ").append(toIndentedString(hostType)).append("\n");
         sb.append("    buildConfigType: ").append(toIndentedString(buildConfigType)).append("\n");
+        sb.append("    buildIfCodeUpdated: ").append(toIndentedString(buildIfCodeUpdated)).append("\n");
+        sb.append("    triggers: ").append(toIndentedString(triggers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

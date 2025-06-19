@@ -14,14 +14,14 @@ public class DeleteFlinkJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    private String isSuccess;
+    private Boolean isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
     private String message;
 
-    public DeleteFlinkJobResponse withIsSuccess(String isSuccess) {
+    public DeleteFlinkJobResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
         return this;
     }
@@ -30,11 +30,11 @@ public class DeleteFlinkJobResponse extends SdkResponse {
      * 执行请求是否成功。“true”表示请求执行成功。
      * @return isSuccess
      */
-    public String getIsSuccess() {
+    public Boolean getIsSuccess() {
         return isSuccess;
     }
 
-    public void setIsSuccess(String isSuccess) {
+    public void setIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
     }
 

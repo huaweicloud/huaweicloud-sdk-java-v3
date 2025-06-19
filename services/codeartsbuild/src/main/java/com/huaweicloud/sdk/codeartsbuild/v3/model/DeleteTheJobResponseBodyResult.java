@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 结果
  */
-public class DeleteBuildJobResponseBodyResult {
+public class DeleteTheJobResponseBodyResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
@@ -20,7 +20,7 @@ public class DeleteBuildJobResponseBodyResult {
 
     private String projectId;
 
-    public DeleteBuildJobResponseBodyResult withJobId(String jobId) {
+    public DeleteTheJobResponseBodyResult withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
@@ -37,7 +37,7 @@ public class DeleteBuildJobResponseBodyResult {
         this.jobId = jobId;
     }
 
-    public DeleteBuildJobResponseBodyResult withProjectId(String projectId) {
+    public DeleteTheJobResponseBodyResult withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
@@ -62,7 +62,7 @@ public class DeleteBuildJobResponseBodyResult {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBuildJobResponseBodyResult that = (DeleteBuildJobResponseBodyResult) obj;
+        DeleteTheJobResponseBodyResult that = (DeleteTheJobResponseBodyResult) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.projectId, that.projectId);
     }
 
@@ -74,7 +74,7 @@ public class DeleteBuildJobResponseBodyResult {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeleteBuildJobResponseBodyResult {\n");
+        sb.append("class DeleteTheJobResponseBodyResult {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("}");

@@ -148,6 +148,21 @@ public class UpdateFlinkSqlJobRequestBody {
 
     private String flinkVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_agency_urn")
+
+    private String executionAgencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_config_version")
+
+    private String resourceConfigVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_config")
+
+    private ResourceConfig resourceConfig;
+
     public UpdateFlinkSqlJobRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -623,6 +638,66 @@ public class UpdateFlinkSqlJobRequestBody {
         this.flinkVersion = flinkVersion;
     }
 
+    public UpdateFlinkSqlJobRequestBody withExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+        return this;
+    }
+
+    /**
+     * 授权给DLI的委托名。Flink1.15版本时支持配置该参数。
+     * @return executionAgencyUrn
+     */
+    public String getExecutionAgencyUrn() {
+        return executionAgencyUrn;
+    }
+
+    public void setExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+    }
+
+    public UpdateFlinkSqlJobRequestBody withResourceConfigVersion(String resourceConfigVersion) {
+        this.resourceConfigVersion = resourceConfigVersion;
+        return this;
+    }
+
+    /**
+     * 资源配置版本。可选值 \"v1\" ,\"v2\".默认为“v1”。v2版本对比于v1模版不支持设置CU数量，支持直接设置Job Manager Memory和Task Manager Memory。v1：适用于Flink 1.12、Flink 1.13、Flink 1.15。v2：适用于Flink 1.13、Flink 1.15、Flink 1.17。优先推荐使用V2版本的参数设置。
+     * @return resourceConfigVersion
+     */
+    public String getResourceConfigVersion() {
+        return resourceConfigVersion;
+    }
+
+    public void setResourceConfigVersion(String resourceConfigVersion) {
+        this.resourceConfigVersion = resourceConfigVersion;
+    }
+
+    public UpdateFlinkSqlJobRequestBody withResourceConfig(ResourceConfig resourceConfig) {
+        this.resourceConfig = resourceConfig;
+        return this;
+    }
+
+    public UpdateFlinkSqlJobRequestBody withResourceConfig(Consumer<ResourceConfig> resourceConfigSetter) {
+        if (this.resourceConfig == null) {
+            this.resourceConfig = new ResourceConfig();
+            resourceConfigSetter.accept(this.resourceConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceConfig
+     * @return resourceConfig
+     */
+    public ResourceConfig getResourceConfig() {
+        return resourceConfig;
+    }
+
+    public void setResourceConfig(ResourceConfig resourceConfig) {
+        this.resourceConfig = resourceConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -653,7 +728,10 @@ public class UpdateFlinkSqlJobRequestBody {
             && Objects.equals(this.runtimeConfig, that.runtimeConfig)
             && Objects.equals(this.operatorConfig, that.operatorConfig)
             && Objects.equals(this.staticEstimatorConfig, that.staticEstimatorConfig)
-            && Objects.equals(this.flinkVersion, that.flinkVersion);
+            && Objects.equals(this.flinkVersion, that.flinkVersion)
+            && Objects.equals(this.executionAgencyUrn, that.executionAgencyUrn)
+            && Objects.equals(this.resourceConfigVersion, that.resourceConfigVersion)
+            && Objects.equals(this.resourceConfig, that.resourceConfig);
     }
 
     @Override
@@ -684,7 +762,10 @@ public class UpdateFlinkSqlJobRequestBody {
             runtimeConfig,
             operatorConfig,
             staticEstimatorConfig,
-            flinkVersion);
+            flinkVersion,
+            executionAgencyUrn,
+            resourceConfigVersion,
+            resourceConfig);
     }
 
     @Override
@@ -718,6 +799,9 @@ public class UpdateFlinkSqlJobRequestBody {
         sb.append("    operatorConfig: ").append(toIndentedString(operatorConfig)).append("\n");
         sb.append("    staticEstimatorConfig: ").append(toIndentedString(staticEstimatorConfig)).append("\n");
         sb.append("    flinkVersion: ").append(toIndentedString(flinkVersion)).append("\n");
+        sb.append("    executionAgencyUrn: ").append(toIndentedString(executionAgencyUrn)).append("\n");
+        sb.append("    resourceConfigVersion: ").append(toIndentedString(resourceConfigVersion)).append("\n");
+        sb.append("    resourceConfig: ").append(toIndentedString(resourceConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

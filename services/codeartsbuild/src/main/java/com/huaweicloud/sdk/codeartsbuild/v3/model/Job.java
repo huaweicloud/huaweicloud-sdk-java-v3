@@ -96,6 +96,51 @@ public class Job {
 
     private Boolean isView;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_build_user")
+
+    private String lastBuildUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_type")
+
+    private String triggerType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build_time")
+
+    private Long buildTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_web_url")
+
+    private String scmWebUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_type")
+
+    private String scmType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repo_id")
+
+    private String repoId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build_project_id")
+
+    private String buildProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_job_running_status")
+
+    private String lastJobRunningStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_build_user_id")
+
+    private String lastBuildUserId;
+
     public Job withId(String id) {
         this.id = id;
         return this;
@@ -385,6 +430,159 @@ public class Job {
         this.isView = isView;
     }
 
+    public Job withLastBuildUser(String lastBuildUser) {
+        this.lastBuildUser = lastBuildUser;
+        return this;
+    }
+
+    /**
+     * 最后一次构建用户
+     * @return lastBuildUser
+     */
+    public String getLastBuildUser() {
+        return lastBuildUser;
+    }
+
+    public void setLastBuildUser(String lastBuildUser) {
+        this.lastBuildUser = lastBuildUser;
+    }
+
+    public Job withTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+        return this;
+    }
+
+    /**
+     * 触发类型
+     * @return triggerType
+     */
+    public String getTriggerType() {
+        return triggerType;
+    }
+
+    public void setTriggerType(String triggerType) {
+        this.triggerType = triggerType;
+    }
+
+    public Job withBuildTime(Long buildTime) {
+        this.buildTime = buildTime;
+        return this;
+    }
+
+    /**
+     * 构建时间
+     * @return buildTime
+     */
+    public Long getBuildTime() {
+        return buildTime;
+    }
+
+    public void setBuildTime(Long buildTime) {
+        this.buildTime = buildTime;
+    }
+
+    public Job withScmWebUrl(String scmWebUrl) {
+        this.scmWebUrl = scmWebUrl;
+        return this;
+    }
+
+    /**
+     * 代码仓web地址
+     * @return scmWebUrl
+     */
+    public String getScmWebUrl() {
+        return scmWebUrl;
+    }
+
+    public void setScmWebUrl(String scmWebUrl) {
+        this.scmWebUrl = scmWebUrl;
+    }
+
+    public Job withScmType(String scmType) {
+        this.scmType = scmType;
+        return this;
+    }
+
+    /**
+     * 代码仓类型
+     * @return scmType
+     */
+    public String getScmType() {
+        return scmType;
+    }
+
+    public void setScmType(String scmType) {
+        this.scmType = scmType;
+    }
+
+    public Job withRepoId(String repoId) {
+        this.repoId = repoId;
+        return this;
+    }
+
+    /**
+     * 代码仓ID
+     * @return repoId
+     */
+    public String getRepoId() {
+        return repoId;
+    }
+
+    public void setRepoId(String repoId) {
+        this.repoId = repoId;
+    }
+
+    public Job withBuildProjectId(String buildProjectId) {
+        this.buildProjectId = buildProjectId;
+        return this;
+    }
+
+    /**
+     * 构建项目ID
+     * @return buildProjectId
+     */
+    public String getBuildProjectId() {
+        return buildProjectId;
+    }
+
+    public void setBuildProjectId(String buildProjectId) {
+        this.buildProjectId = buildProjectId;
+    }
+
+    public Job withLastJobRunningStatus(String lastJobRunningStatus) {
+        this.lastJobRunningStatus = lastJobRunningStatus;
+        return this;
+    }
+
+    /**
+     * 最后一次构建时间
+     * @return lastJobRunningStatus
+     */
+    public String getLastJobRunningStatus() {
+        return lastJobRunningStatus;
+    }
+
+    public void setLastJobRunningStatus(String lastJobRunningStatus) {
+        this.lastJobRunningStatus = lastJobRunningStatus;
+    }
+
+    public Job withLastBuildUserId(String lastBuildUserId) {
+        this.lastBuildUserId = lastBuildUserId;
+        return this;
+    }
+
+    /**
+     * 最后一次构建用户ID
+     * @return lastBuildUserId
+     */
+    public String getLastBuildUserId() {
+        return lastBuildUserId;
+    }
+
+    public void setLastBuildUserId(String lastBuildUserId) {
+        this.lastBuildUserId = lastBuildUserId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -403,7 +601,12 @@ public class Job {
             && Objects.equals(this.favorite, that.favorite) && Objects.equals(this.isModify, that.isModify)
             && Objects.equals(this.isDelete, that.isDelete) && Objects.equals(this.isExecute, that.isExecute)
             && Objects.equals(this.isCopy, that.isCopy) && Objects.equals(this.isForbidden, that.isForbidden)
-            && Objects.equals(this.isView, that.isView);
+            && Objects.equals(this.isView, that.isView) && Objects.equals(this.lastBuildUser, that.lastBuildUser)
+            && Objects.equals(this.triggerType, that.triggerType) && Objects.equals(this.buildTime, that.buildTime)
+            && Objects.equals(this.scmWebUrl, that.scmWebUrl) && Objects.equals(this.scmType, that.scmType)
+            && Objects.equals(this.repoId, that.repoId) && Objects.equals(this.buildProjectId, that.buildProjectId)
+            && Objects.equals(this.lastJobRunningStatus, that.lastJobRunningStatus)
+            && Objects.equals(this.lastBuildUserId, that.lastBuildUserId);
     }
 
     @Override
@@ -424,7 +627,16 @@ public class Job {
             isExecute,
             isCopy,
             isForbidden,
-            isView);
+            isView,
+            lastBuildUser,
+            triggerType,
+            buildTime,
+            scmWebUrl,
+            scmType,
+            repoId,
+            buildProjectId,
+            lastJobRunningStatus,
+            lastBuildUserId);
     }
 
     @Override
@@ -448,6 +660,15 @@ public class Job {
         sb.append("    isCopy: ").append(toIndentedString(isCopy)).append("\n");
         sb.append("    isForbidden: ").append(toIndentedString(isForbidden)).append("\n");
         sb.append("    isView: ").append(toIndentedString(isView)).append("\n");
+        sb.append("    lastBuildUser: ").append(toIndentedString(lastBuildUser)).append("\n");
+        sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
+        sb.append("    buildTime: ").append(toIndentedString(buildTime)).append("\n");
+        sb.append("    scmWebUrl: ").append(toIndentedString(scmWebUrl)).append("\n");
+        sb.append("    scmType: ").append(toIndentedString(scmType)).append("\n");
+        sb.append("    repoId: ").append(toIndentedString(repoId)).append("\n");
+        sb.append("    buildProjectId: ").append(toIndentedString(buildProjectId)).append("\n");
+        sb.append("    lastJobRunningStatus: ").append(toIndentedString(lastJobRunningStatus)).append("\n");
+        sb.append("    lastBuildUserId: ").append(toIndentedString(lastBuildUserId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -64,6 +64,9 @@ public class RdsRegion {
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://rds.ap-southeast-4.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://rds.ap-southeast-5.myhuaweicloud.com");
+
     public static final Region AE_AD_1 = new Region("ae-ad-1", "https://rds.ae-ad-1.myhuaweicloud.com");
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://rds.eu-west-101.myhuaweicloud.eu");
@@ -107,6 +110,7 @@ public class RdsRegion {
         map.put("cn-north-2", CN_NORTH_2);
         map.put("tr-west-1", TR_WEST_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
         map.put("ae-ad-1", AE_AD_1);
         map.put("eu-west-101", EU_WEST_101);
         map.put("eu-west-0", EU_WEST_0);

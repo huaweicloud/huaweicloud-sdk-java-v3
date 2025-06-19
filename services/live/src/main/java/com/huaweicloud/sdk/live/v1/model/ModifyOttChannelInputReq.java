@@ -31,6 +31,11 @@ public class ModifyOttChannelInputReq {
 
     private InputStreamInfo input;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encoder_settings_expand")
+
+    private EncoderSettingsExpand encoderSettingsExpand;
+
     public ModifyOttChannelInputReq withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -108,6 +113,33 @@ public class ModifyOttChannelInputReq {
         this.input = input;
     }
 
+    public ModifyOttChannelInputReq withEncoderSettingsExpand(EncoderSettingsExpand encoderSettingsExpand) {
+        this.encoderSettingsExpand = encoderSettingsExpand;
+        return this;
+    }
+
+    public ModifyOttChannelInputReq withEncoderSettingsExpand(
+        Consumer<EncoderSettingsExpand> encoderSettingsExpandSetter) {
+        if (this.encoderSettingsExpand == null) {
+            this.encoderSettingsExpand = new EncoderSettingsExpand();
+            encoderSettingsExpandSetter.accept(this.encoderSettingsExpand);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get encoderSettingsExpand
+     * @return encoderSettingsExpand
+     */
+    public EncoderSettingsExpand getEncoderSettingsExpand() {
+        return encoderSettingsExpand;
+    }
+
+    public void setEncoderSettingsExpand(EncoderSettingsExpand encoderSettingsExpand) {
+        this.encoderSettingsExpand = encoderSettingsExpand;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,12 +150,13 @@ public class ModifyOttChannelInputReq {
         }
         ModifyOttChannelInputReq that = (ModifyOttChannelInputReq) obj;
         return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.input, that.input);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.encoderSettingsExpand, that.encoderSettingsExpand);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, appName, id, input);
+        return Objects.hash(domain, appName, id, input, encoderSettingsExpand);
     }
 
     @Override
@@ -134,6 +167,7 @@ public class ModifyOttChannelInputReq {
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
+        sb.append("    encoderSettingsExpand: ").append(toIndentedString(encoderSettingsExpand)).append("\n");
         sb.append("}");
         return sb.toString();
     }

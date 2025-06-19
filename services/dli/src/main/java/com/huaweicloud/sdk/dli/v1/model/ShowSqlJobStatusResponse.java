@@ -24,10 +24,134 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
 
     private String jobId;
 
+    /**
+     * 参数解释:  作业类型 示例: 指定查询的作业类型，包含DDL、DCL、IMPORT、EXPORT、QUERY、INSERT、DATA_MIGRATION、UPDATE、DELETE、RESTART_QUEUE、SCALE_QUEUE，若要查询所有类型的作业，则传入ALL。 约束限制:  无 取值范围: DDL、DCL、IMPORT、EXPORT、QUERY、INSERT、DATA_MIGRATION、UPDATE、DELETE、RESTART_QUEUE、SCALE_QUEUE、ALL 默认取值: 无
+     */
+    public static final class JobTypeEnum {
+
+        /**
+         * Enum DDL for value: "DDL"
+         */
+        public static final JobTypeEnum DDL = new JobTypeEnum("DDL");
+
+        /**
+         * Enum DCL for value: "DCL"
+         */
+        public static final JobTypeEnum DCL = new JobTypeEnum("DCL");
+
+        /**
+         * Enum IMPORT for value: "IMPORT"
+         */
+        public static final JobTypeEnum IMPORT = new JobTypeEnum("IMPORT");
+
+        /**
+         * Enum EXPORT for value: "EXPORT"
+         */
+        public static final JobTypeEnum EXPORT = new JobTypeEnum("EXPORT");
+
+        /**
+         * Enum QUERY for value: "QUERY"
+         */
+        public static final JobTypeEnum QUERY = new JobTypeEnum("QUERY");
+
+        /**
+         * Enum INSERT for value: "INSERT"
+         */
+        public static final JobTypeEnum INSERT = new JobTypeEnum("INSERT");
+
+        /**
+         * Enum DATA_MIGRATION for value: "DATA_MIGRATION"
+         */
+        public static final JobTypeEnum DATA_MIGRATION = new JobTypeEnum("DATA_MIGRATION");
+
+        /**
+         * Enum UPDATE for value: "UPDATE"
+         */
+        public static final JobTypeEnum UPDATE = new JobTypeEnum("UPDATE");
+
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
+        public static final JobTypeEnum DELETE = new JobTypeEnum("DELETE");
+
+        /**
+         * Enum RESTART_QUEUE for value: "RESTART_QUEUE"
+         */
+        public static final JobTypeEnum RESTART_QUEUE = new JobTypeEnum("RESTART_QUEUE");
+
+        /**
+         * Enum SCALE_QUEUE for value: "SCALE_QUEUE"
+         */
+        public static final JobTypeEnum SCALE_QUEUE = new JobTypeEnum("SCALE_QUEUE");
+
+        private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobTypeEnum> createStaticFields() {
+            Map<String, JobTypeEnum> map = new HashMap<>();
+            map.put("DDL", DDL);
+            map.put("DCL", DCL);
+            map.put("IMPORT", IMPORT);
+            map.put("EXPORT", EXPORT);
+            map.put("QUERY", QUERY);
+            map.put("INSERT", INSERT);
+            map.put("DATA_MIGRATION", DATA_MIGRATION);
+            map.put("UPDATE", UPDATE);
+            map.put("DELETE", DELETE);
+            map.put("RESTART_QUEUE", RESTART_QUEUE);
+            map.put("SCALE_QUEUE", SCALE_QUEUE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        JobTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static JobTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
+        }
+
+        public static JobTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof JobTypeEnum) {
+                return this.value.equals(((JobTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
-    private String jobType;
+    private JobTypeEnum jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_name")
@@ -50,7 +174,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     private Long duration;
 
     /**
-     * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
+     * 参数解释:  此作业的当前状态 示例: CANCELLED 约束限制:  无 取值范围: LAUNCHING（提交） RUNNING（运行中） FINISH（完成） FAILED（失败） CANCELLED（取消） 默认取值: 无
      */
     public static final class StatusEnum {
 
@@ -228,7 +352,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 作业ID。
+     * 参数解释:  作业ID 示例: 6d2146a0-c2d5-41bd-8ca0-ca9694ada992 约束限制:  无 取值范围: 任意字符串 默认取值: 无
      * @return jobId
      */
     public String getJobId() {
@@ -239,20 +363,20 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    public ShowSqlJobStatusResponse withJobType(String jobType) {
+    public ShowSqlJobStatusResponse withJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
         return this;
     }
 
     /**
-     * 作业类型。
+     * 参数解释:  作业类型 示例: 指定查询的作业类型，包含DDL、DCL、IMPORT、EXPORT、QUERY、INSERT、DATA_MIGRATION、UPDATE、DELETE、RESTART_QUEUE、SCALE_QUEUE，若要查询所有类型的作业，则传入ALL。 约束限制:  无 取值范围: DDL、DCL、IMPORT、EXPORT、QUERY、INSERT、DATA_MIGRATION、UPDATE、DELETE、RESTART_QUEUE、SCALE_QUEUE、ALL 默认取值: 无
      * @return jobType
      */
-    public String getJobType() {
+    public JobTypeEnum getJobType() {
         return jobType;
     }
 
-    public void setJobType(String jobType) {
+    public void setJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
     }
 
@@ -262,7 +386,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 作业提交的队列。
+     * 参数解释:  作业提交的队列 示例: dli_sql 约束限制:  无 取值范围: 无 默认取值: 无
      * @return queueName
      */
     public String getQueueName() {
@@ -279,7 +403,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 提交作业的用户。
+     * 参数解释:  提交作业的用户 示例: ei_dlics_d00352431 约束限制:  无 取值范围: 无 默认取值: 无
      * @return owner
      */
     public String getOwner() {
@@ -296,7 +420,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 作业开始的时间。是单位为“毫秒”的时间戳。
+     * 参数解释:  作业开始的时间。是单位为“毫秒”的时间戳 示例: 1502349803729 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return startTime
      */
     public Long getStartTime() {
@@ -313,7 +437,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 作业运行时长，单位毫秒。
+     * 参数解释:  作业运行时长，单位毫秒 示例: 1000 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return duration
      */
     public Long getDuration() {
@@ -330,7 +454,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 此作业的当前状态，包含提交（LAUNCHING）、运行中（RUNNING）、完成（FINISHED）、失败（FAILED）、取消（CANCELLED）。
+     * 参数解释:  此作业的当前状态 示例: CANCELLED 约束限制:  无 取值范围: LAUNCHING（提交） RUNNING（运行中） FINISH（完成） FAILED（失败） CANCELLED（取消） 默认取值: 无
      * @return status
      */
     public StatusEnum getStatus() {
@@ -347,7 +471,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * Insert作业执行过程中扫描的记录条数。
+     * 参数解释:  Insert作业执行过程中扫描的记录条数 示例: 66 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return inputRowCount
      */
     public Long getInputRowCount() {
@@ -364,7 +488,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * Insert作业执行过程中扫描到的错误记录数。
+     * 参数解释:  Insert作业执行过程中扫描到的错误记录数 示例: 666 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return badRowCount
      */
     public Long getBadRowCount() {
@@ -381,7 +505,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 作业执行过程中扫描文件的大小。
+     * 参数解释:  作业执行过程中扫描文件的大小 示例: 5 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return inputSize
      */
     public Long getInputSize() {
@@ -398,7 +522,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 当前作业返回的结果总条数或insert作业插入的总条数。
+     * 参数解释:  当前作业返回的结果总条数或insert作业插入的总条数 示例: 55 约束限制:  无 取值范围: 大于等于0的整数 默认取值: 无
      * @return resultCount
      */
     public Integer getResultCount() {
@@ -415,7 +539,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 记录其操作的表所在的数据库名称。类型为Import和Export作业才有“database_name”属性。
+     * 参数解释:  记录其操作的表所在的数据库名称。类型为Import和Export作业才有“database_name”属性 示例: db2 约束限制:  无 取值范围: 无 默认取值: 无
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -432,7 +556,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 记录其操作的表名称。类型为Import和Export作业才有“table_name”属性。
+     * 参数解释:  记录其操作的表名称。类型为Import和Export作业才有“table_name”属性 示例: t2 约束限制:  无 取值范围: 无 默认取值: 无
      * @return tableName
      */
     public String getTableName() {
@@ -449,7 +573,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * SQL查询的相关列信息的Json字符串。
+     * 参数解释:  SQL查询的相关列信息的Json字符串 示例: {\\\"type\\\":\\\"struct\\\",\\\"fields\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\",\\\"nullable\\\":true,\\\"metadata\\\":{}},{\\\"name\\\":\\\"age\\\",\\\"type\\\":\\\"integer\\\",\\\"nullable\\\":true,\\\"metadata\\\":{}}]} 约束限制:  符合JSON格式 取值范围: 无 默认取值: 无
      * @return detail
      */
     public String getDetail() {
@@ -466,7 +590,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * SQL配置参数信息Json字符串。
+     * 参数解释:  SQL配置参数信息Json字符串 示例: {\\\"type\\\":\\\"struct\\\",\\\"fields\\\":[{\\\"name\\\":\\\"name\\\",\\\"type\\\":\\\"string\\\",\\\"nullable\\\":true,\\\"metadata\\\":{}},{\\\"name\\\":\\\"age\\\",\\\"type\\\":\\\"integer\\\",\\\"nullable\\\":true,\\\"metadata\\\":{}}]} 约束限制:  符合JSON格式 取值范围: 无 默认取值: 无
      * @return userConf
      */
     public String getUserConf() {
@@ -483,7 +607,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 查询结果OBS路径
+     * 参数解释:  查询结果OBS路径 示例: obs://bucketName/jobs/result/011c99a26ae84a1bb963a75e7637d3fd/2023/11/10/229b23ad-5033-40ed-ad70-fda900f2f04e 约束限制:  符合OBS路径格式，obs://_* 取值范围: 无 默认取值: 无
      * @return resultPath
      */
     public String getResultPath() {
@@ -500,7 +624,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 查询作业执行计划OBS路径
+     * 参数解释:  查询作业执行计划OBS路径 示例: obs://bucketName/jobs/execution_details/011c99a26ae84a1bb963a75e7637d3fd/2023/11/10/229b23ad-5033-40ed-ad70-fda900f2f04e 约束限制:  符合OBS路径格式，obs://_* 取值范围: 无 默认取值: 无
      * @return executionDetailsPath
      */
     public String getExecutionDetailsPath() {
@@ -517,7 +641,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 查询结果格式
+     * 参数解释:  查询结果格式 示例: csv 约束限制:  无 取值范围: csv 默认取值: 无
      * @return resultFormat
      */
     public String getResultFormat() {
@@ -534,7 +658,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 作业执行的SQL语句。
+     * 参数解释:  作业执行的SQL语句 示例: select * from t_json_002 约束限制:  符合SQL格式 取值范围: 无 默认取值: 无
      * @return statement
      */
     public String getStatement() {
@@ -551,7 +675,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 执行请求是否成功。“true”表示请求执行成功。
+     * 参数解释:  执行请求是否成功。true表示请求执行成功 示例: true 约束限制:  无 取值范围: true、false 默认取值: 无
      * @return isSuccess
      */
     public Boolean getIsSuccess() {
@@ -568,7 +692,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 系统提示信息，执行成功时，信息可能为空。
+     * 参数解释:  系统提示信息，执行成功时，信息可能为空 示例: success 约束限制:  无 取值范围: 无 默认取值: 无
      * @return message
      */
     public String getMessage() {
@@ -585,7 +709,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 作业执行方式
+     * 参数解释:  作业执行方式 示例: async 约束限制:  无 取值范围: async（同步） sync（异步） 默认取值: 无
      * @return jobMode
      */
     public String getJobMode() {

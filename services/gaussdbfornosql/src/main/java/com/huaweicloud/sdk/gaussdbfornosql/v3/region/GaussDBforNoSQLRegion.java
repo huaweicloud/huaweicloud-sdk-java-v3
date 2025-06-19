@@ -42,6 +42,14 @@ public class GaussDBforNoSQLRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://gaussdb-nosql.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://gaussdb-nosql.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://gaussdb-nosql.ap-southeast-5.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://gaussdb-nosql.me-east-1.myhuaweicloud.com");
+
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://gaussdb-nosql.ru-northwest-2.myhuaweicloud.com");
 
@@ -83,6 +91,9 @@ public class GaussDBforNoSQLRegion {
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("me-east-1", ME_EAST_1);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("cn-north-2", CN_NORTH_2);

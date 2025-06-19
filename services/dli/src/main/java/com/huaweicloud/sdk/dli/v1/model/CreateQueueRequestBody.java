@@ -78,6 +78,11 @@ public class CreateQueueRequestBody {
 
     private CreateQueueRequestBodyProperties properties;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine")
+
+    private String engine;
+
     public CreateQueueRequestBody withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -340,6 +345,23 @@ public class CreateQueueRequestBody {
         this.properties = properties;
     }
 
+    public CreateQueueRequestBody withEngine(String engine) {
+        this.engine = engine;
+        return this;
+    }
+
+    /**
+     * 只有在queue_type是sql条件下才可配置，默认是spark。可以选择spark引擎或hetuEngin。
+     * @return engine
+     */
+    public String getEngine() {
+        return engine;
+    }
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -357,7 +379,7 @@ public class CreateQueueRequestBody {
             && Objects.equals(this.labels, that.labels) && Objects.equals(this.feature, that.feature)
             && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
-            && Objects.equals(this.properties, that.properties);
+            && Objects.equals(this.properties, that.properties) && Objects.equals(this.engine, that.engine);
     }
 
     @Override
@@ -374,7 +396,8 @@ public class CreateQueueRequestBody {
             feature,
             tags,
             elasticResourcePoolName,
-            properties);
+            properties,
+            engine);
     }
 
     @Override
@@ -394,6 +417,7 @@ public class CreateQueueRequestBody {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("}");
         return sb.toString();
     }

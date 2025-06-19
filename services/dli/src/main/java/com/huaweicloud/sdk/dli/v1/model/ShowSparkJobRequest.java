@@ -21,7 +21,7 @@ public class ShowSparkJobRequest {
     }
 
     /**
-     * 批处理作业的ID。
+     * 参数解释:  批处理作业的ID 示例: 0a324461-d9d9-45da-a52a-3b3c7a3d809e 约束限制:  无 取值范围: 无 默认取值: 无
      * @return batchId
      */
     public String getBatchId() {

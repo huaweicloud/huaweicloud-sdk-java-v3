@@ -138,6 +138,16 @@ public class UpdateFlinkJarJobRequestBody {
 
     private String jobType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_config")
+
+    private ResourceConfig resourceConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_config_version")
+
+    private String resourceConfigVersion;
+
     public UpdateFlinkJarJobRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -595,6 +605,49 @@ public class UpdateFlinkJarJobRequestBody {
         this.jobType = jobType;
     }
 
+    public UpdateFlinkJarJobRequestBody withResourceConfig(ResourceConfig resourceConfig) {
+        this.resourceConfig = resourceConfig;
+        return this;
+    }
+
+    public UpdateFlinkJarJobRequestBody withResourceConfig(Consumer<ResourceConfig> resourceConfigSetter) {
+        if (this.resourceConfig == null) {
+            this.resourceConfig = new ResourceConfig();
+            resourceConfigSetter.accept(this.resourceConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceConfig
+     * @return resourceConfig
+     */
+    public ResourceConfig getResourceConfig() {
+        return resourceConfig;
+    }
+
+    public void setResourceConfig(ResourceConfig resourceConfig) {
+        this.resourceConfig = resourceConfig;
+    }
+
+    public UpdateFlinkJarJobRequestBody withResourceConfigVersion(String resourceConfigVersion) {
+        this.resourceConfigVersion = resourceConfigVersion;
+        return this;
+    }
+
+    /**
+     * 资源配置版本。可选值 \"v1\" ,\"v2\".默认为“v1”。
+     * @return resourceConfigVersion
+     */
+    public String getResourceConfigVersion() {
+        return resourceConfigVersion;
+    }
+
+    public void setResourceConfigVersion(String resourceConfigVersion) {
+        this.resourceConfigVersion = resourceConfigVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -620,7 +673,9 @@ public class UpdateFlinkJarJobRequestBody {
             && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
             && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
             && Objects.equals(this.checkpointPath, that.checkpointPath)
-            && Objects.equals(this.runtimeConfig, that.runtimeConfig) && Objects.equals(this.jobType, that.jobType);
+            && Objects.equals(this.runtimeConfig, that.runtimeConfig) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.resourceConfig, that.resourceConfig)
+            && Objects.equals(this.resourceConfigVersion, that.resourceConfigVersion);
     }
 
     @Override
@@ -649,7 +704,9 @@ public class UpdateFlinkJarJobRequestBody {
             resumeMaxNum,
             checkpointPath,
             runtimeConfig,
-            jobType);
+            jobType,
+            resourceConfig,
+            resourceConfigVersion);
     }
 
     @Override
@@ -681,6 +738,8 @@ public class UpdateFlinkJarJobRequestBody {
         sb.append("    checkpointPath: ").append(toIndentedString(checkpointPath)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    resourceConfig: ").append(toIndentedString(resourceConfig)).append("\n");
+        sb.append("    resourceConfigVersion: ").append(toIndentedString(resourceConfigVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

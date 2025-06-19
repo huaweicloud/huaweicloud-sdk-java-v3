@@ -22,7 +22,7 @@ public class SyncTaskInfo {
     private String syncTaskId;
 
     /**
-     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、UCloud。默认值为Aliyun。
+     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、UCloud、Google。默认值为Aliyun。
      */
     public static final class SrcCloudTypeEnum {
 
@@ -76,6 +76,11 @@ public class SyncTaskInfo {
          */
         public static final SrcCloudTypeEnum UCLOUD = new SrcCloudTypeEnum("UCloud");
 
+        /**
+         * Enum GOOGLE for value: "Google"
+         */
+        public static final SrcCloudTypeEnum GOOGLE = new SrcCloudTypeEnum("Google");
+
         private static final Map<String, SrcCloudTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SrcCloudTypeEnum> createStaticFields() {
@@ -90,6 +95,7 @@ public class SyncTaskInfo {
             map.put("Baidu", BAIDU);
             map.put("Qiniu", QINIU);
             map.put("UCloud", UCLOUD);
+            map.put("Google", GOOGLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -565,7 +571,7 @@ public class SyncTaskInfo {
     }
 
     /**
-     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、UCloud。默认值为Aliyun。
+     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、UCloud、Google。默认值为Aliyun。
      * @return srcCloudType
      */
     public SrcCloudTypeEnum getSrcCloudType() {

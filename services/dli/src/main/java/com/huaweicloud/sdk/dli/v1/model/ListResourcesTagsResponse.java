@@ -17,14 +17,19 @@ public class ListResourcesTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Tag> tags = null;
+    private List<TagWithValues> tags = null;
 
-    public ListResourcesTagsResponse withTags(List<Tag> tags) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Long count;
+
+    public ListResourcesTagsResponse withTags(List<TagWithValues> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ListResourcesTagsResponse addTagsItem(Tag tagsItem) {
+    public ListResourcesTagsResponse addTagsItem(TagWithValues tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -32,7 +37,7 @@ public class ListResourcesTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ListResourcesTagsResponse withTags(Consumer<List<Tag>> tagsSetter) {
+    public ListResourcesTagsResponse withTags(Consumer<List<TagWithValues>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -44,12 +49,29 @@ public class ListResourcesTagsResponse extends SdkResponse {
      * 标签列表
      * @return tags
      */
-    public List<Tag> getTags() {
+    public List<TagWithValues> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<TagWithValues> tags) {
         this.tags = tags;
+    }
+
+    public ListResourcesTagsResponse withCount(Long count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 标签数量。
+     * @return count
+     */
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
     }
 
     @Override
@@ -61,12 +83,12 @@ public class ListResourcesTagsResponse extends SdkResponse {
             return false;
         }
         ListResourcesTagsResponse that = (ListResourcesTagsResponse) obj;
-        return Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags);
+        return Objects.hash(tags, count);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListResourcesTagsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourcesTagsResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }
