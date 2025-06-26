@@ -27,7 +27,7 @@ public class CreateDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 数据源id。
+     * **参数解释**： 数据源ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -44,7 +44,7 @@ public class CreateDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 创建数据源job_id。
+     * **参数解释**： 创建数据源任务ID。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {

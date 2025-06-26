@@ -30,7 +30,7 @@ public class ListAlarmSubsResponse extends SdkResponse {
     }
 
     /**
-     * 告警订阅总数
+     * **参数解释**： 告警订阅总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -64,7 +64,7 @@ public class ListAlarmSubsResponse extends SdkResponse {
     }
 
     /**
-     * 告警订阅列表
+     * **参数解释**： 告警订阅列表。 **取值范围**： 不涉及。
      * @return alarmSubscriptions
      */
     public List<AlarmSubscriptionResponse> getAlarmSubscriptions() {

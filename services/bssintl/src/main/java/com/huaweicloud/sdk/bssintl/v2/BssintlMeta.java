@@ -79,6 +79,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRecordsRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRecordsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetReq;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetResponse;
@@ -1320,6 +1322,63 @@ public class BssintlMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListSubCustomerBudgetReq.class),
             f -> f.withMarshaller(ListSubCustomerBudgetRequest::getBody, ListSubCustomerBudgetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubCustomerBudgetRecordsRequest, ListSubCustomerBudgetRecordsResponse> listSubCustomerBudgetRecords =
+        genForListSubCustomerBudgetRecords();
+
+    private static HttpRequestDef<ListSubCustomerBudgetRecordsRequest, ListSubCustomerBudgetRecordsResponse> genForListSubCustomerBudgetRecords() {
+        // basic
+        HttpRequestDef.Builder<ListSubCustomerBudgetRecordsRequest, ListSubCustomerBudgetRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSubCustomerBudgetRecordsRequest.class,
+                    ListSubCustomerBudgetRecordsResponse.class)
+                .withName("ListSubCustomerBudgetRecords")
+                .withUri("/v2/partners/sub-customers/budget/records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("customer_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBudgetRecordsRequest::getCustomerId,
+                ListSubCustomerBudgetRecordsRequest::setCustomerId));
+        builder.<String>withRequestField("indirect_partner_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBudgetRecordsRequest::getIndirectPartnerId,
+                ListSubCustomerBudgetRecordsRequest::setIndirectPartnerId));
+        builder.<String>withRequestField("operation_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBudgetRecordsRequest::getOperationType,
+                ListSubCustomerBudgetRecordsRequest::setOperationType));
+        builder.<String>withRequestField("budget_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubCustomerBudgetRecordsRequest::getBudgetType,
+                ListSubCustomerBudgetRecordsRequest::setBudgetType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubCustomerBudgetRecordsRequest::getOffset,
+                ListSubCustomerBudgetRecordsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubCustomerBudgetRecordsRequest::getLimit,
+                ListSubCustomerBudgetRecordsRequest::setLimit));
 
         // response
 

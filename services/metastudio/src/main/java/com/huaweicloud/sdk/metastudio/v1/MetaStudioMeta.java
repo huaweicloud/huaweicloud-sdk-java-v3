@@ -1704,6 +1704,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetsRequest::getAppUserId, ListAssetsRequest::setAppUserId));
+        builder.<String>withRequestField("project_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetsRequest::getProjectGroupId, ListAssetsRequest::setProjectGroupId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

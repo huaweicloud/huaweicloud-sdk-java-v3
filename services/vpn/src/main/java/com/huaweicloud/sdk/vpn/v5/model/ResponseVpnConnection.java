@@ -209,6 +209,11 @@ public class ResponseVpnConnection {
 
     private List<PolicyRule> policyRulesV6 = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bgp_peer")
+
+    private BgpPeer bgpPeer;
+
     public ResponseVpnConnection withId(String id) {
         this.id = id;
         return this;
@@ -698,6 +703,32 @@ public class ResponseVpnConnection {
         this.policyRulesV6 = policyRulesV6;
     }
 
+    public ResponseVpnConnection withBgpPeer(BgpPeer bgpPeer) {
+        this.bgpPeer = bgpPeer;
+        return this;
+    }
+
+    public ResponseVpnConnection withBgpPeer(Consumer<BgpPeer> bgpPeerSetter) {
+        if (this.bgpPeer == null) {
+            this.bgpPeer = new BgpPeer();
+            bgpPeerSetter.accept(this.bgpPeer);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get bgpPeer
+     * @return bgpPeer
+     */
+    public BgpPeer getBgpPeer() {
+        return bgpPeer;
+    }
+
+    public void setBgpPeer(BgpPeer bgpPeer) {
+        this.bgpPeer = bgpPeer;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -721,7 +752,7 @@ public class ResponseVpnConnection {
             && Objects.equals(this.connectionMonitorId, that.connectionMonitorId)
             && Objects.equals(this.haRole, that.haRole) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.peerSubnetsV6, that.peerSubnetsV6)
-            && Objects.equals(this.policyRulesV6, that.policyRulesV6);
+            && Objects.equals(this.policyRulesV6, that.policyRulesV6) && Objects.equals(this.bgpPeer, that.bgpPeer);
     }
 
     @Override
@@ -748,7 +779,8 @@ public class ResponseVpnConnection {
             haRole,
             tags,
             peerSubnetsV6,
-            policyRulesV6);
+            policyRulesV6,
+            bgpPeer);
     }
 
     @Override
@@ -778,6 +810,7 @@ public class ResponseVpnConnection {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    peerSubnetsV6: ").append(toIndentedString(peerSubnetsV6)).append("\n");
         sb.append("    policyRulesV6: ").append(toIndentedString(policyRulesV6)).append("\n");
+        sb.append("    bgpPeer: ").append(toIndentedString(bgpPeer)).append("\n");
         sb.append("}");
         return sb.toString();
     }

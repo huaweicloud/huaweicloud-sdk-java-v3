@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 恢复表信息
+ * **参数解释**： 恢复表信息。 **取值范围**： 不涉及。
  */
 public class TableDetail {
 
@@ -26,7 +26,7 @@ public class TableDetail {
     }
 
     /**
-     * schema名称
+     * **参数解释**： Schema名称。 **取值范围**： 不涉及。
      * @return schemaName
      */
     public String getSchemaName() {
@@ -43,7 +43,7 @@ public class TableDetail {
     }
 
     /**
-     * 表名称
+     * **参数解释**： 表名称。 **取值范围**： 不涉及。
      * @return tableName
      */
     public String getTableName() {

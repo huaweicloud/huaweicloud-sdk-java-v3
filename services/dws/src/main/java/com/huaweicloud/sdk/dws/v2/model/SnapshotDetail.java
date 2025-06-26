@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 快照详情对象
+ * **参数解释**： 快照详情对象。 **取值范围**： 不涉及。
  */
 public class SnapshotDetail {
 
@@ -157,7 +157,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照ID。
+     * **参数解释**： 快照ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -174,7 +174,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照名称。
+     * **参数解释**： 快照名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -191,7 +191,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照描述。
+     * **参数解释**： 快照描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -208,7 +208,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照创建的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。
+     * **参数解释**： 快照创建的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。 **取值范围**： 不涉及。
      * @return started
      */
     public String getStarted() {
@@ -225,7 +225,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照完成的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。
+     * **参数解释**： 快照完成的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。 **取值范围**： 不涉及。
      * @return finished
      */
     public String getFinished() {
@@ -242,7 +242,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照大小，单位GB。
+     * **参数解释**： 快照大小，单位GB。 **取值范围**： 不涉及。
      * @return size
      */
     public Double getSize() {
@@ -259,7 +259,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照状态： - CREATING：创建中。 - AVAILABLE：可用。 - UNAVAILABLE：不可用。 - FROZEN： 普通冻结。 - POLICE_FROZEN： 公安冻结。
+     * **参数解释**： 快照状态： **取值范围**： CREATING：创建中。 AVAILABLE：可用。 UNAVAILABLE：不可用。 FROZEN：普通冻结。 POLICE_FROZEN：公安冻结。
      * @return status
      */
     public String getStatus() {
@@ -276,7 +276,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照创建类型。
+     * **参数解释**： 快照创建类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -293,7 +293,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照对应的集群ID。
+     * **参数解释**： 快照对应的集群ID。 **取值范围**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -336,7 +336,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照对应的集群名称。
+     * **参数解释**： 快照对应的集群名称。 **取值范围**： 不涉及。
      * @return clusterName
      */
     public String getClusterName() {
@@ -353,7 +353,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照预计开始时间。
+     * **参数解释**： 快照预计开始时间。 **取值范围**： 不涉及。
      * @return bakExpectedStartTime
      */
     public String getBakExpectedStartTime() {
@@ -370,7 +370,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照保留天数。
+     * **参数解释**： 快照保留天数。 **取值范围**： 不涉及。
      * @return bakKeepDay
      */
     public Integer getBakKeepDay() {
@@ -387,7 +387,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照策略。
+     * **参数解释**： 快照策略。 **取值范围**： 不涉及。
      * @return bakPeriod
      */
     public String getBakPeriod() {
@@ -404,7 +404,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 数据库用户。
+     * **参数解释**： 数据库用户。 **取值范围**： 不涉及。
      * @return dbUser
      */
     public String getDbUser() {
@@ -421,7 +421,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照进度。
+     * **参数解释**： 快照进度。 **取值范围**： 不涉及。
      * @return progress
      */
     public String getProgress() {
@@ -438,7 +438,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照BakcupKey。
+     * **参数解释**： 快照BakcupKey。 **取值范围**： 不涉及。
      * @return backupKey
      */
     public String getBackupKey() {
@@ -455,7 +455,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 增量快照，使用的前一个快照BakcupKey。
+     * **参数解释**： 增量快照，使用的前一个快照BakcupKey。 **取值范围**： 不涉及。
      * @return priorBackupKey
      */
     public String getPriorBackupKey() {
@@ -472,7 +472,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 对应全量快照BakcupKey。
+     * **参数解释**： 对应全量快照BakcupKey。 **取值范围**： 不涉及。
      * @return baseBackupKey
      */
     public String getBaseBackupKey() {
@@ -489,7 +489,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 备份介质。
+     * **参数解释**： 备份介质。 **取值范围**： NBU、OBS。
      * @return backupDevice
      */
     public String getBackupDevice() {
@@ -506,7 +506,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 累计快照大小。
+     * **参数解释**： 累计快照大小。 **取值范围**： 不涉及。
      * @return totalBackupSize
      */
     public Integer getTotalBackupSize() {
@@ -523,7 +523,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 对应全量快照名称。
+     * **参数解释**： 对应全量快照名称。 **取值范围**： 不涉及。
      * @return baseBackupName
      */
     public String getBaseBackupName() {
@@ -540,7 +540,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 是否支持就地恢复。
+     * **参数解释**： 是否支持就地恢复。 **取值范围**： 不涉及。
      * @return supportInplaceRestore
      */
     public Boolean getSupportInplaceRestore() {
@@ -557,7 +557,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 是否是细粒度备份。
+     * **参数解释**： 是否是细粒度备份。 **取值范围**： 不涉及。
      * @return fineGrainedBackup
      */
     public Boolean getFineGrainedBackup() {
@@ -574,7 +574,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 备份级别。
+     * **参数解释**： 备份级别。 **取值范围**： 不涉及。
      * @return backupLevel
      */
     public String getBackupLevel() {
@@ -618,7 +618,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * guestAgent版本。
+     * **参数解释**： guestAgent版本。 **取值范围**： 不涉及。
      * @return guestAgentVersion
      */
     public String getGuestAgentVersion() {
@@ -635,7 +635,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 集群状态。
+     * **参数解释**： 集群状态。 **取值范围**： 不涉及。
      * @return clusterStatus
      */
     public String getClusterStatus() {

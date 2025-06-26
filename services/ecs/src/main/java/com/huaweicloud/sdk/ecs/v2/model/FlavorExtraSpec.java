@@ -210,6 +210,11 @@ public class FlavorExtraSpec {
 
     private String infoAsicAccelerators;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "info:features")
+
+    private String infoFeatures;
+
     public FlavorExtraSpec withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -891,6 +896,23 @@ public class FlavorExtraSpec {
         this.infoAsicAccelerators = infoAsicAccelerators;
     }
 
+    public FlavorExtraSpec withInfoFeatures(String infoFeatures) {
+        this.infoFeatures = infoFeatures;
+        return this;
+    }
+
+    /**
+     * 规格特性
+     * @return infoFeatures
+     */
+    public String getInfoFeatures() {
+        return infoFeatures;
+    }
+
+    public void setInfoFeatures(String infoFeatures) {
+        this.infoFeatures = infoFeatures;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -937,7 +959,8 @@ public class FlavorExtraSpec {
                 that.networkInterfaceTrafficMirroringSupported)
             && Objects.equals(this.securityEnclaveSupported, that.securityEnclaveSupported)
             && Objects.equals(this.infoGpus, that.infoGpus)
-            && Objects.equals(this.infoAsicAccelerators, that.infoAsicAccelerators);
+            && Objects.equals(this.infoAsicAccelerators, that.infoAsicAccelerators)
+            && Objects.equals(this.infoFeatures, that.infoFeatures);
     }
 
     @Override
@@ -981,7 +1004,8 @@ public class FlavorExtraSpec {
             networkInterfaceTrafficMirroringSupported,
             securityEnclaveSupported,
             infoGpus,
-            infoAsicAccelerators);
+            infoAsicAccelerators,
+            infoFeatures);
     }
 
     @Override
@@ -1034,6 +1058,7 @@ public class FlavorExtraSpec {
         sb.append("    securityEnclaveSupported: ").append(toIndentedString(securityEnclaveSupported)).append("\n");
         sb.append("    infoGpus: ").append(toIndentedString(infoGpus)).append("\n");
         sb.append("    infoAsicAccelerators: ").append(toIndentedString(infoAsicAccelerators)).append("\n");
+        sb.append("    infoFeatures: ").append(toIndentedString(infoFeatures)).append("\n");
         sb.append("}");
         return sb.toString();
     }

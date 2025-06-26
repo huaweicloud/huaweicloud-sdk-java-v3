@@ -41,7 +41,7 @@ public class ListSnapshotStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 快照统计信息。
+     * **参数解释**： 快照统计信息。 **取值范围**： 不涉及。
      * @return statistics
      */
     public List<SnapshotsStatistic> getStatistics() {

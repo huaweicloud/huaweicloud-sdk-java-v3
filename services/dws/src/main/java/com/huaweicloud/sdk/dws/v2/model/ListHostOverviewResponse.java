@@ -41,7 +41,7 @@ public class ListHostOverviewResponse extends SdkResponse {
     }
 
     /**
-     * openApi查询主机概览
+     * **参数解释**： 查询主机概览响应。 **取值范围**： 不涉及。
      * @return body
      */
     public List<HostOverviewResponse> getBody() {

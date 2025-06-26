@@ -30,7 +30,7 @@ public class ListEventSpecsResponse extends SdkResponse {
     }
 
     /**
-     * 事件配置总数
+     * **参数解释**： 事件配置总数。 **取值范围**： 大于等于0。
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class ListEventSpecsResponse extends SdkResponse {
     }
 
     /**
-     * 事件配置列表
+     * **参数解释**： 事件配置列表。 **取值范围**： 不涉及。
      * @return eventSpecs
      */
     public List<EventSpecResponse> getEventSpecs() {

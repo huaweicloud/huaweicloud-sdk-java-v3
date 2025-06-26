@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群扩容状态详情
+ * **参数解释**： 集群扩容状态详情。 **取值范围**： 不涉及。
  */
 public class ResizeInfo {
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群升级路径响应体
+ * **参数解释**： 集群升级路径响应体。 **取值范围**： 不涉及。
  */
 public class UpdateItemResp {
 
@@ -61,7 +61,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 升级项ID
+     * **参数解释**： 升级项ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -78,7 +78,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 起始版本
+     * **参数解释**： 起始版本。 **取值范围**： 不涉及。
      * @return from
      */
     public String getFrom() {
@@ -95,7 +95,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 目标版本
+     * **参数解释**： 目标版本。 **取值范围**： 不涉及。
      * @return to
      */
     public String getTo() {
@@ -112,7 +112,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 升级路径状态
+     * **参数解释**： 升级路径状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -129,7 +129,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 升级进度
+     * **参数解释**： 升级进度。 **取值范围**： 不涉及。
      * @return process
      */
     public String getProcess() {
@@ -146,7 +146,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 起始时间
+     * **参数解释**： 起始时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -163,7 +163,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -180,7 +180,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 升级任务ID
+     * **参数解释**： 升级任务ID。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {
@@ -197,7 +197,7 @@ public class UpdateItemResp {
     }
 
     /**
-     * 失败原因
+     * **参数解释**： 失败原因。 **取值范围**： 不涉及。
      * @return failedReason
      */
     public String getFailedReason() {

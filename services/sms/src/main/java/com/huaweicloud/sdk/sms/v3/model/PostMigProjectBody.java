@@ -141,9 +141,9 @@ public class PostMigProjectBody {
     private Boolean syncing;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_networck_check")
+    @JsonProperty(value = "start_network_check")
 
-    private Boolean startNetworckCheck;
+    private Boolean startNetworkCheck;
 
     public PostMigProjectBody withName(String name) {
         this.name = name;
@@ -334,21 +334,21 @@ public class PostMigProjectBody {
         this.syncing = syncing;
     }
 
-    public PostMigProjectBody withStartNetworckCheck(Boolean startNetworckCheck) {
-        this.startNetworckCheck = startNetworckCheck;
+    public PostMigProjectBody withStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
         return this;
     }
 
     /**
      * 是否启动网络质量检测
-     * @return startNetworckCheck
+     * @return startNetworkCheck
      */
-    public Boolean getStartNetworckCheck() {
-        return startNetworckCheck;
+    public Boolean getStartNetworkCheck() {
+        return startNetworkCheck;
     }
 
-    public void setStartNetworckCheck(Boolean startNetworckCheck) {
-        this.startNetworckCheck = startNetworckCheck;
+    public void setStartNetworkCheck(Boolean startNetworkCheck) {
+        this.startNetworkCheck = startNetworkCheck;
     }
 
     @Override
@@ -367,7 +367,7 @@ public class PostMigProjectBody {
             && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.type, that.type)
             && Objects.equals(this.enterpriseProject, that.enterpriseProject)
             && Objects.equals(this.syncing, that.syncing)
-            && Objects.equals(this.startNetworckCheck, that.startNetworckCheck);
+            && Objects.equals(this.startNetworkCheck, that.startNetworkCheck);
     }
 
     @Override
@@ -383,7 +383,7 @@ public class PostMigProjectBody {
             type,
             enterpriseProject,
             syncing,
-            startNetworckCheck);
+            startNetworkCheck);
     }
 
     @Override
@@ -401,7 +401,7 @@ public class PostMigProjectBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
-        sb.append("    startNetworckCheck: ").append(toIndentedString(startNetworckCheck)).append("\n");
+        sb.append("    startNetworkCheck: ").append(toIndentedString(startNetworkCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

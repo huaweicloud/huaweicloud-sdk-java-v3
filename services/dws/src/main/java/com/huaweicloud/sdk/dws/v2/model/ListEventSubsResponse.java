@@ -30,7 +30,7 @@ public class ListEventSubsResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅总数
+     * **参数解释**： 事件订阅总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -64,7 +64,7 @@ public class ListEventSubsResponse extends SdkResponse {
     }
 
     /**
-     * 事件订阅详情列表
+     * **参数解释**： 事件订阅详情列表。 **取值范围**： 不涉及。
      * @return eventSubscriptions
      */
     public List<EventSubscriptionResponse> getEventSubscriptions() {

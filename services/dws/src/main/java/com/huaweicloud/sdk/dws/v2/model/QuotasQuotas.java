@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 配额列表对象。
+ * **参数解释**： 配额列表对象。 **取值范围**： 不涉及。
  */
 public class QuotasQuotas {
 
@@ -40,7 +40,7 @@ public class QuotasQuotas {
     }
 
     /**
-     * 资源列表对象。
+     * **参数解释**： 资源列表对象。 **取值范围**： 不涉及。
      * @return resources
      */
     public List<QuotasResource> getResources() {

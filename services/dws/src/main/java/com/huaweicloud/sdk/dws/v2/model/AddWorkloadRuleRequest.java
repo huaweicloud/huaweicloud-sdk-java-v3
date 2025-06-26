@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -15,13 +16,18 @@ public class AddWorkloadRuleRequest {
 
     private String clusterId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private AddExceptRuleReq body;
+
     public AddWorkloadRuleRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
     /**
-     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
+     * **参数解释**： 集群ID。获取方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -30,6 +36,32 @@ public class AddWorkloadRuleRequest {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
+    }
+
+    public AddWorkloadRuleRequest withBody(AddExceptRuleReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public AddWorkloadRuleRequest withBody(Consumer<AddExceptRuleReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new AddExceptRuleReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public AddExceptRuleReq getBody() {
+        return body;
+    }
+
+    public void setBody(AddExceptRuleReq body) {
+        this.body = body;
     }
 
     @Override
@@ -41,12 +73,12 @@ public class AddWorkloadRuleRequest {
             return false;
         }
         AddWorkloadRuleRequest that = (AddWorkloadRuleRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId);
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId);
+        return Objects.hash(clusterId, body);
     }
 
     @Override
@@ -54,6 +86,7 @@ public class AddWorkloadRuleRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddWorkloadRuleRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

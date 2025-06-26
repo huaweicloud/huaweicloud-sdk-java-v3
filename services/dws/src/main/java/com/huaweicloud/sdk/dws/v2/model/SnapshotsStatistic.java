@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * 快照统计信息。
+ * **参数解释**： 快照统计信息。 **取值范围**： 不涉及。
  */
 public class SnapshotsStatistic {
 
@@ -32,7 +32,7 @@ public class SnapshotsStatistic {
     }
 
     /**
-     * 资源统计信息名称。 - storage.free：免费容量。 - storage.paid：付费容量。 - storage.used：已用容量。
+     * **参数解释**： 资源统计信息名称。 **取值范围**： storage.free：免费容量。 storage.paid：付费容量。 storage.used：已用容量。
      * @return name
      */
     public String getName() {
@@ -49,7 +49,7 @@ public class SnapshotsStatistic {
     }
 
     /**
-     * 资源统计信息值。
+     * **参数解释**： 资源统计信息值。 **取值范围**： 不涉及。
      * @return value
      */
     public BigDecimal getValue() {
@@ -66,7 +66,7 @@ public class SnapshotsStatistic {
     }
 
     /**
-     * 资源统计信息单位。
+     * **参数解释**： 资源统计信息单位。 **取值范围**： 不涉及。
      * @return unit
      */
     public String getUnit() {

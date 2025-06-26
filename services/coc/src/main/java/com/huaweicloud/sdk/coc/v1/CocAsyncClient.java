@@ -4,6 +4,8 @@ import com.huaweicloud.sdk.coc.v1.model.AcceptScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.AcceptScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequest;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewResponse;
+import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
@@ -12,6 +14,8 @@ import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
@@ -66,6 +70,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListDiagnosisTasksRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListDiagnosisTasksResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentsRequest;
@@ -104,10 +110,18 @@ import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
+import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisNodeRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisNodeResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisSummaryRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisSummaryResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
@@ -319,6 +333,210 @@ public class CocAsyncClient {
     public AsyncInvoker<CreateReportCustomEventRequest, CreateReportCustomEventResponse> createReportCustomEventAsyncInvoker(
         CreateReportCustomEventRequest request) {
         return new AsyncInvoker<>(request, CocMeta.createReportCustomEvent, hcClient);
+    }
+
+    /**
+     * 取消诊断任务
+     *
+     * 取消诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelDiagnosisTaskRequest 请求对象
+     * @return CompletableFuture<CancelDiagnosisTaskResponse>
+     */
+    public CompletableFuture<CancelDiagnosisTaskResponse> cancelDiagnosisTaskAsync(CancelDiagnosisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.cancelDiagnosisTask);
+    }
+
+    /**
+     * 取消诊断任务
+     *
+     * 取消诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelDiagnosisTaskRequest 请求对象
+     * @return AsyncInvoker<CancelDiagnosisTaskRequest, CancelDiagnosisTaskResponse>
+     */
+    public AsyncInvoker<CancelDiagnosisTaskRequest, CancelDiagnosisTaskResponse> cancelDiagnosisTaskAsyncInvoker(
+        CancelDiagnosisTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.cancelDiagnosisTask, hcClient);
+    }
+
+    /**
+     * 提交诊断任务
+     *
+     * 提交诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDiagnosisTaskRequest 请求对象
+     * @return CompletableFuture<CreateDiagnosisTaskResponse>
+     */
+    public CompletableFuture<CreateDiagnosisTaskResponse> createDiagnosisTaskAsync(CreateDiagnosisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createDiagnosisTask);
+    }
+
+    /**
+     * 提交诊断任务
+     *
+     * 提交诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDiagnosisTaskRequest 请求对象
+     * @return AsyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse>
+     */
+    public AsyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> createDiagnosisTaskAsyncInvoker(
+        CreateDiagnosisTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createDiagnosisTask, hcClient);
+    }
+
+    /**
+     * 查询诊断记录
+     *
+     * 查询诊断记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDiagnosisTasksRequest 请求对象
+     * @return CompletableFuture<ListDiagnosisTasksResponse>
+     */
+    public CompletableFuture<ListDiagnosisTasksResponse> listDiagnosisTasksAsync(ListDiagnosisTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listDiagnosisTasks);
+    }
+
+    /**
+     * 查询诊断记录
+     *
+     * 查询诊断记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDiagnosisTasksRequest 请求对象
+     * @return AsyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse>
+     */
+    public AsyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> listDiagnosisTasksAsyncInvoker(
+        ListDiagnosisTasksRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listDiagnosisTasks, hcClient);
+    }
+
+    /**
+     * 重试诊断任务
+     *
+     * 重试诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryDiagnosisTaskRequest 请求对象
+     * @return CompletableFuture<RetryDiagnosisTaskResponse>
+     */
+    public CompletableFuture<RetryDiagnosisTaskResponse> retryDiagnosisTaskAsync(RetryDiagnosisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.retryDiagnosisTask);
+    }
+
+    /**
+     * 重试诊断任务
+     *
+     * 重试诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryDiagnosisTaskRequest 请求对象
+     * @return AsyncInvoker<RetryDiagnosisTaskRequest, RetryDiagnosisTaskResponse>
+     */
+    public AsyncInvoker<RetryDiagnosisTaskRequest, RetryDiagnosisTaskResponse> retryDiagnosisTaskAsyncInvoker(
+        RetryDiagnosisTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.retryDiagnosisTask, hcClient);
+    }
+
+    /**
+     * 查询指定诊断记录下的指定诊断步骤的详情
+     *
+     * 查询指定诊断记录下的指定诊断步骤的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisNodeRequest 请求对象
+     * @return CompletableFuture<ShowDiagnosisNodeResponse>
+     */
+    public CompletableFuture<ShowDiagnosisNodeResponse> showDiagnosisNodeAsync(ShowDiagnosisNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showDiagnosisNode);
+    }
+
+    /**
+     * 查询指定诊断记录下的指定诊断步骤的详情
+     *
+     * 查询指定诊断记录下的指定诊断步骤的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisNodeRequest 请求对象
+     * @return AsyncInvoker<ShowDiagnosisNodeRequest, ShowDiagnosisNodeResponse>
+     */
+    public AsyncInvoker<ShowDiagnosisNodeRequest, ShowDiagnosisNodeResponse> showDiagnosisNodeAsyncInvoker(
+        ShowDiagnosisNodeRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showDiagnosisNode, hcClient);
+    }
+
+    /**
+     * 查询批量诊断任务的结果概要
+     *
+     * 查询诊断任务的结果概要
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisSummaryRequest 请求对象
+     * @return CompletableFuture<ShowDiagnosisSummaryResponse>
+     */
+    public CompletableFuture<ShowDiagnosisSummaryResponse> showDiagnosisSummaryAsync(
+        ShowDiagnosisSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showDiagnosisSummary);
+    }
+
+    /**
+     * 查询批量诊断任务的结果概要
+     *
+     * 查询诊断任务的结果概要
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisSummaryRequest 请求对象
+     * @return AsyncInvoker<ShowDiagnosisSummaryRequest, ShowDiagnosisSummaryResponse>
+     */
+    public AsyncInvoker<ShowDiagnosisSummaryRequest, ShowDiagnosisSummaryResponse> showDiagnosisSummaryAsyncInvoker(
+        ShowDiagnosisSummaryRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showDiagnosisSummary, hcClient);
+    }
+
+    /**
+     * 查询单个诊断任务详情
+     *
+     * 查询单个诊断任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisTaskRequest 请求对象
+     * @return CompletableFuture<ShowDiagnosisTaskResponse>
+     */
+    public CompletableFuture<ShowDiagnosisTaskResponse> showDiagnosisTaskAsync(ShowDiagnosisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showDiagnosisTask);
+    }
+
+    /**
+     * 查询单个诊断任务详情
+     *
+     * 查询单个诊断任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisTaskRequest 请求对象
+     * @return AsyncInvoker<ShowDiagnosisTaskRequest, ShowDiagnosisTaskResponse>
+     */
+    public AsyncInvoker<ShowDiagnosisTaskRequest, ShowDiagnosisTaskResponse> showDiagnosisTaskAsyncInvoker(
+        ShowDiagnosisTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showDiagnosisTask, hcClient);
     }
 
     /**

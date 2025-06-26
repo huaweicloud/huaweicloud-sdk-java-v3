@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 事件返回体
+ * **参数解释**： 事件返回体。 **取值范围**： 不涉及。
  */
 public class EventResponse {
 
@@ -91,7 +91,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件类别
+     * **参数解释**： 事件类别。 **取值范围**： 不涉及。
      * @return category
      */
     public String getCategory() {
@@ -108,7 +108,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件描述
+     * **参数解释**： 事件描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -125,7 +125,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件ID
+     * **参数解释**： 事件ID。 **取值范围**： 不涉及。
      * @return eventId
      */
     public String getEventId() {
@@ -142,7 +142,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件定义名称
+     * **参数解释**： 事件定义名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -159,7 +159,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件显示名称
+     * **参数解释**： 事件显示名称。 **取值范围**： 不涉及。
      * @return displayName
      */
     public String getDisplayName() {
@@ -176,7 +176,7 @@ public class EventResponse {
     }
 
     /**
-     * 所属服务
+     * **参数解释**： 所属服务。 **取值范围**： 不涉及。
      * @return nameSpace
      */
     public String getNameSpace() {
@@ -193,7 +193,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件级别
+     * **参数解释**： 事件级别。 **取值范围**： 不涉及。
      * @return severity
      */
     public String getSeverity() {
@@ -210,7 +210,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件源类别
+     * **参数解释**： 事件源类别。 **取值范围**： 不涉及。
      * @return sourceType
      */
     public String getSourceType() {
@@ -227,7 +227,7 @@ public class EventResponse {
     }
 
     /**
-     * 时间
+     * **参数解释**： 时间。 **取值范围**： 不涉及。
      * @return occurTime
      */
     public Long getOccurTime() {
@@ -244,7 +244,7 @@ public class EventResponse {
     }
 
     /**
-     * 租户凭证ID
+     * **参数解释**： 租户凭证ID。 **取值范围**： 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -261,7 +261,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件源ID
+     * **参数解释**： 事件源ID。 **取值范围**： 不涉及。
      * @return sourceId
      */
     public String getSourceId() {
@@ -278,7 +278,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件源名称
+     * **参数解释**： 事件源名称。 **取值范围**： 不涉及。
      * @return sourceName
      */
     public String getSourceName() {
@@ -295,7 +295,7 @@ public class EventResponse {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public Integer getStatus() {
@@ -312,7 +312,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件主题
+     * **参数解释**： 事件主题。 **取值范围**： 不涉及。
      * @return subject
      */
     public String getSubject() {
@@ -329,7 +329,7 @@ public class EventResponse {
     }
 
     /**
-     * 事件信息
+     * **参数解释**： 事件信息。 **取值范围**： 不涉及。
      * @return context
      */
     public String getContext() {

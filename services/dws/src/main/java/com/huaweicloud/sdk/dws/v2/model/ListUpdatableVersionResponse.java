@@ -30,7 +30,7 @@ public class ListUpdatableVersionResponse extends SdkResponse {
     }
 
     /**
-     * 集群升级路径总条数
+     * **参数解释**： 集群升级路径总条数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class ListUpdatableVersionResponse extends SdkResponse {
     }
 
     /**
-     * 集群升级路径列表
+     * **参数解释**： 集群升级路径列表。 **取值范围**： 不涉及。
      * @return items
      */
     public List<UpdateItemResp> getItems() {

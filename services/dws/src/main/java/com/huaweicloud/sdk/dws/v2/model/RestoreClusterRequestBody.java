@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * This is a auto create Body Object
+ * **参数解释**： 恢复对象。 **取值范围**： 不涉及。
  */
 public class RestoreClusterRequestBody {
 

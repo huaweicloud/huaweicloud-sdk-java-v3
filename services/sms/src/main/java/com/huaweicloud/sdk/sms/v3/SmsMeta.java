@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.sms.v3.model.BatchGetConsistencyResultReq;
 import com.huaweicloud.sdk.sms.v3.model.CheckNetAclRequest;
 import com.huaweicloud.sdk.sms.v3.model.CheckNetAclResponse;
 import com.huaweicloud.sdk.sms.v3.model.CollectLogRequest;
@@ -37,6 +38,8 @@ import com.huaweicloud.sdk.sms.v3.model.DeleteTemplateResponse;
 import com.huaweicloud.sdk.sms.v3.model.DeleteTemplatesRequest;
 import com.huaweicloud.sdk.sms.v3.model.DeleteTemplatesResponse;
 import com.huaweicloud.sdk.sms.v3.model.DeletetemplatesReq;
+import com.huaweicloud.sdk.sms.v3.model.ExportConsistencyResultsRequest;
+import com.huaweicloud.sdk.sms.v3.model.ExportConsistencyResultsResponse;
 import com.huaweicloud.sdk.sms.v3.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.sms.v3.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.sms.v3.model.ListErrorServersRequest;
@@ -131,48 +134,6 @@ import com.huaweicloud.sdk.sms.v3.model.UploadSpecialConfigurationSettingRespons
 
 @SuppressWarnings("unchecked")
 public class SmsMeta {
-
-    public static final HttpRequestDef<CheckNetAclRequest, CheckNetAclResponse> checkNetAcl = genForCheckNetAcl();
-
-    private static HttpRequestDef<CheckNetAclRequest, CheckNetAclResponse> genForCheckNetAcl() {
-        // basic
-        HttpRequestDef.Builder<CheckNetAclRequest, CheckNetAclResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, CheckNetAclRequest.class, CheckNetAclResponse.class)
-                .withName("CheckNetAcl")
-                .withUri("/v3/tasks/{t_project_id}/networkacl/{t_network_id}/check")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("t_project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNetAclRequest::getTProjectId, CheckNetAclRequest::setTProjectId));
-        builder.<String>withRequestField("t_network_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNetAclRequest::getTNetworkId, CheckNetAclRequest::setTNetworkId));
-        builder.<String>withRequestField("region_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNetAclRequest::getRegionId, CheckNetAclRequest::setRegionId));
-        builder.<String>withRequestField("os_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckNetAclRequest::getOsType, CheckNetAclRequest::setOsType));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CheckNetAclResponse::getBody, CheckNetAclResponse::setBody));
-
-        return builder.build();
-    }
 
     public static final HttpRequestDef<CollectLogRequest, CollectLogResponse> collectLog = genForCollectLog();
 
@@ -343,6 +304,11 @@ public class SmsMeta {
             f -> f.withMarshaller(DeleteServerRequest::getSourceId, DeleteServerRequest::setSourceId));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteServerResponse::getBody, DeleteServerResponse::setBody));
 
         return builder.build();
     }
@@ -366,6 +332,11 @@ public class SmsMeta {
             f -> f.withMarshaller(DeleteServersRequest::getBody, DeleteServersRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteServersResponse::getBody, DeleteServersResponse::setBody));
 
         return builder.build();
     }
@@ -476,6 +447,42 @@ public class SmsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteTemplatesResponse::getBody, DeleteTemplatesResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportConsistencyResultsRequest, ExportConsistencyResultsResponse> exportConsistencyResults =
+        genForExportConsistencyResults();
+
+    private static HttpRequestDef<ExportConsistencyResultsRequest, ExportConsistencyResultsResponse> genForExportConsistencyResults() {
+        // basic
+        HttpRequestDef.Builder<ExportConsistencyResultsRequest, ExportConsistencyResultsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ExportConsistencyResultsRequest.class, ExportConsistencyResultsResponse.class)
+                .withName("ExportConsistencyResults")
+                .withUri("/v3/tasks/consistency-results/export")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportConsistencyResultsRequest::getXLanguage,
+                ExportConsistencyResultsRequest::setXLanguage));
+        builder.<BatchGetConsistencyResultReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchGetConsistencyResultReq.class),
+            f -> f.withMarshaller(ExportConsistencyResultsRequest::getBody, ExportConsistencyResultsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExportConsistencyResultsResponse::getBody,
+                ExportConsistencyResultsResponse::setBody));
 
         return builder.build();
     }
@@ -943,28 +950,6 @@ public class SmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSha256Request, ShowSha256Response> showSha256 = genForShowSha256();
-
-    private static HttpRequestDef<ShowSha256Request, ShowSha256Response> genForShowSha256() {
-        // basic
-        HttpRequestDef.Builder<ShowSha256Request, ShowSha256Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSha256Request.class, ShowSha256Response.class)
-                .withName("ShowSha256")
-                .withUri("/v3/sha256/{key}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("key",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSha256Request::getKey, ShowSha256Request::setKey));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowTargetPasswordRequest, ShowTargetPasswordResponse> showTargetPassword =
         genForShowTargetPassword();
 
@@ -1051,34 +1036,6 @@ public class SmsMeta {
             f -> f.withMarshaller(ShowsSpeedLimitsRequest::getTaskId, ShowsSpeedLimitsRequest::setTaskId));
 
         // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UnlockTargetEcsRequest, UnlockTargetEcsResponse> unlockTargetEcs =
-        genForUnlockTargetEcs();
-
-    private static HttpRequestDef<UnlockTargetEcsRequest, UnlockTargetEcsResponse> genForUnlockTargetEcs() {
-        // basic
-        HttpRequestDef.Builder<UnlockTargetEcsRequest, UnlockTargetEcsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UnlockTargetEcsRequest.class, UnlockTargetEcsResponse.class)
-                .withName("UnlockTargetEcs")
-                .withUri("/v3/tasks/{task_id}/unlock")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UnlockTargetEcsRequest::getTaskId, UnlockTargetEcsRequest::setTaskId));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UnlockTargetEcsResponse::getBody, UnlockTargetEcsResponse::setBody));
 
         return builder.build();
     }
@@ -1236,6 +1193,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateDiskInfoRequest::getBody, UpdateDiskInfoRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDiskInfoResponse::getBody, UpdateDiskInfoResponse::setBody));
 
         return builder.build();
     }
@@ -1297,11 +1259,6 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateNetworkCheckInfoRequest::getBody, UpdateNetworkCheckInfoRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateNetworkCheckInfoResponse::getBody, UpdateNetworkCheckInfoResponse::setBody));
 
         return builder.build();
     }
@@ -1330,6 +1287,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateServerNameRequest::getBody, UpdateServerNameRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateServerNameResponse::getBody, UpdateServerNameResponse::setBody));
 
         return builder.build();
     }
@@ -1389,11 +1351,6 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateTaskRequest::getBody, UpdateTaskRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateTaskResponse::getBody, UpdateTaskResponse::setBody));
 
         return builder.build();
     }
@@ -1553,6 +1510,48 @@ public class SmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckNetAclRequest, CheckNetAclResponse> checkNetAcl = genForCheckNetAcl();
+
+    private static HttpRequestDef<CheckNetAclRequest, CheckNetAclResponse> genForCheckNetAcl() {
+        // basic
+        HttpRequestDef.Builder<CheckNetAclRequest, CheckNetAclResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckNetAclRequest.class, CheckNetAclResponse.class)
+                .withName("CheckNetAcl")
+                .withUri("/v3/tasks/{t_project_id}/networkacl/{t_network_id}/check")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("t_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckNetAclRequest::getTProjectId, CheckNetAclRequest::setTProjectId));
+        builder.<String>withRequestField("t_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckNetAclRequest::getTNetworkId, CheckNetAclRequest::setTNetworkId));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckNetAclRequest::getRegionId, CheckNetAclRequest::setRegionId));
+        builder.<String>withRequestField("os_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckNetAclRequest::getOsType, CheckNetAclRequest::setOsType));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckNetAclResponse::getBody, CheckNetAclResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
         genForListApiVersion();
 
@@ -1590,6 +1589,56 @@ public class SmsMeta {
             f -> f.withMarshaller(ShowApiVersionRequest::getVersion, ShowApiVersionRequest::setVersion));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSha256Request, ShowSha256Response> showSha256 = genForShowSha256();
+
+    private static HttpRequestDef<ShowSha256Request, ShowSha256Response> genForShowSha256() {
+        // basic
+        HttpRequestDef.Builder<ShowSha256Request, ShowSha256Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSha256Request.class, ShowSha256Response.class)
+                .withName("ShowSha256")
+                .withUri("/v3/sha256/{key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSha256Request::getKey, ShowSha256Request::setKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnlockTargetEcsRequest, UnlockTargetEcsResponse> unlockTargetEcs =
+        genForUnlockTargetEcs();
+
+    private static HttpRequestDef<UnlockTargetEcsRequest, UnlockTargetEcsResponse> genForUnlockTargetEcs() {
+        // basic
+        HttpRequestDef.Builder<UnlockTargetEcsRequest, UnlockTargetEcsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnlockTargetEcsRequest.class, UnlockTargetEcsResponse.class)
+                .withName("UnlockTargetEcs")
+                .withUri("/v3/tasks/{task_id}/unlock")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnlockTargetEcsRequest::getTaskId, UnlockTargetEcsRequest::setTaskId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UnlockTargetEcsResponse::getBody, UnlockTargetEcsResponse::setBody));
 
         return builder.build();
     }

@@ -51,7 +51,7 @@ public class CreateDisasterRecovery {
     }
 
     /**
-     * 名称
+     * **参数解释**： 名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -68,7 +68,7 @@ public class CreateDisasterRecovery {
     }
 
     /**
-     * 容灾类型
+     * **参数解释**： 容灾类型。 **取值范围**： 不涉及。
      * @return drType
      */
     public String getDrType() {
@@ -85,7 +85,7 @@ public class CreateDisasterRecovery {
     }
 
     /**
-     * 主集群ID
+     * **参数解释**： 主集群ID。 **取值范围**： 不涉及。
      * @return primaryClusterId
      */
     public String getPrimaryClusterId() {
@@ -102,7 +102,7 @@ public class CreateDisasterRecovery {
     }
 
     /**
-     * 备集群ID
+     * **参数解释**： 备集群ID。 **取值范围**： 不涉及。
      * @return standbyClusterId
      */
     public String getStandbyClusterId() {
@@ -119,7 +119,7 @@ public class CreateDisasterRecovery {
     }
 
     /**
-     * 同步周期
+     * **参数解释**： 同步周期。 **取值范围**： 不涉及。
      * @return drSyncPeriod
      */
     public String getDrSyncPeriod() {
@@ -136,7 +136,7 @@ public class CreateDisasterRecovery {
     }
 
     /**
-     * 主集群OBS桶
+     * **参数解释**： 主集群OBS桶。 **取值范围**： 不涉及。
      * @return primaryObsBucket
      */
     public String getPrimaryObsBucket() {
@@ -153,7 +153,7 @@ public class CreateDisasterRecovery {
     }
 
     /**
-     * 备集群obs桶
+     * **参数解释**： 备集群obs桶。 **取值范围**： 不涉及。
      * @return standbyObsBucket
      */
     public String getStandbyObsBucket() {

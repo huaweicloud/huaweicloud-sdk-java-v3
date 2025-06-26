@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 对象权限信息
+ * **参数解释**： 对象权限信息。 **取值范围**： 不涉及。
  */
 public class ObjectAuthority {
 
@@ -29,7 +29,7 @@ public class ObjectAuthority {
     }
 
     /**
-     * 对象名称
+     * **参数解释**： 对象名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class ObjectAuthority {
     }
 
     /**
-     * 角色权限集合
+     * **参数解释**： 角色权限集合。 **取值范围**： 不涉及。
      * @return roleAuthority
      */
     public List<RoleAuthority> getRoleAuthority() {

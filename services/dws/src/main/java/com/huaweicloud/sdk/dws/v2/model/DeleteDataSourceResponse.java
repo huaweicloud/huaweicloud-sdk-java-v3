@@ -22,7 +22,7 @@ public class DeleteDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 删除数据源job_id。
+     * **参数解释**： 删除数据源任务ID。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {

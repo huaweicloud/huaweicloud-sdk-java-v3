@@ -35,7 +35,7 @@ public class ListTablesStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 数据采集时间毫秒级时间戳。
+     * **参数解释**： 数据采集时间毫秒级时间戳。 **取值范围**： 不涉及。
      * @return collectTime
      */
     public Long getCollectTime() {
@@ -68,7 +68,7 @@ public class ListTablesStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 表倾斜率或脏页率列表。
+     * **参数解释**： 表倾斜率或脏页率列表。 **取值范围**： 不涉及。
      * @return data
      */
     public List<ListTablesStatisticDto> getData() {
@@ -85,7 +85,7 @@ public class ListTablesStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 总列表大小。
+     * **参数解释**： 总列表大小。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

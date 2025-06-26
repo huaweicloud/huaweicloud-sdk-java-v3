@@ -454,6 +454,16 @@ public class VoiceModelAssetMeta {
 
     private Boolean isFlexus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_enhance_rhythm")
+
+    private Boolean isEnhanceRhythm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "age")
+
+    private String age;
+
     public VoiceModelAssetMeta withOrder(Integer order) {
         this.order = order;
         return this;
@@ -732,6 +742,40 @@ public class VoiceModelAssetMeta {
         this.isFlexus = isFlexus;
     }
 
+    public VoiceModelAssetMeta withIsEnhanceRhythm(Boolean isEnhanceRhythm) {
+        this.isEnhanceRhythm = isEnhanceRhythm;
+        return this;
+    }
+
+    /**
+     * 是否增强韵律
+     * @return isEnhanceRhythm
+     */
+    public Boolean getIsEnhanceRhythm() {
+        return isEnhanceRhythm;
+    }
+
+    public void setIsEnhanceRhythm(Boolean isEnhanceRhythm) {
+        this.isEnhanceRhythm = isEnhanceRhythm;
+    }
+
+    public VoiceModelAssetMeta withAge(String age) {
+        this.age = age;
+        return this;
+    }
+
+    /**
+     * 音色年龄段：青年、中年、老年
+     * @return age
+     */
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -750,7 +794,8 @@ public class VoiceModelAssetMeta {
             && Objects.equals(this.externalVoiceMeta, that.externalVoiceMeta)
             && Objects.equals(this.isSupportVcProcess, that.isSupportVcProcess)
             && Objects.equals(this.isSupportThaiAutoSplit, that.isSupportThaiAutoSplit)
-            && Objects.equals(this.isFlexus, that.isFlexus);
+            && Objects.equals(this.isFlexus, that.isFlexus)
+            && Objects.equals(this.isEnhanceRhythm, that.isEnhanceRhythm) && Objects.equals(this.age, that.age);
     }
 
     @Override
@@ -768,7 +813,9 @@ public class VoiceModelAssetMeta {
             externalVoiceMeta,
             isSupportVcProcess,
             isSupportThaiAutoSplit,
-            isFlexus);
+            isFlexus,
+            isEnhanceRhythm,
+            age);
     }
 
     @Override
@@ -789,6 +836,8 @@ public class VoiceModelAssetMeta {
         sb.append("    isSupportVcProcess: ").append(toIndentedString(isSupportVcProcess)).append("\n");
         sb.append("    isSupportThaiAutoSplit: ").append(toIndentedString(isSupportThaiAutoSplit)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
+        sb.append("    isEnhanceRhythm: ").append(toIndentedString(isEnhanceRhythm)).append("\n");
+        sb.append("    age: ").append(toIndentedString(age)).append("\n");
         sb.append("}");
         return sb.toString();
     }

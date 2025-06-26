@@ -30,7 +30,7 @@ public class ListAlarmConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 告警配置总数
+     * **参数解释**： 告警配置总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class ListAlarmConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 告警配置列表
+     * **参数解释**： 告警配置列表。 **取值范围**： 不涉及。
      * @return alarmConfigs
      */
     public List<AlarmConfigResponse> getAlarmConfigs() {

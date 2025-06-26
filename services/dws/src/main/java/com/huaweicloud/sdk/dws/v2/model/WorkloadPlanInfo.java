@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 工作计划
+ * **参数解释**： 资源管理计划。 **取值范围**： 不涉及。
  */
 public class WorkloadPlanInfo {
 
@@ -59,7 +59,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * 计划状态。
+     * **参数解释**： 计划状态。 **取值范围**： 不涉及。
      * @return status
      */
     public Integer getStatus() {
@@ -76,7 +76,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * **参数解释**： 项目ID。获取方式方法请参见[获取项目ID](dws_02_0011.xml)。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 项目ID。 **取值范围**： 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -93,7 +93,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
+     * **参数解释**： 集群ID。 **取值范围**： 36位UUID。
      * @return clusterId
      */
     public String getClusterId() {
@@ -110,7 +110,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * 计划ID。
+     * **参数解释**： 计划ID。 **取值范围**： 不涉及。
      * @return planId
      */
     public String getPlanId() {
@@ -127,7 +127,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * 计划名称。
+     * **参数解释**： 计划名称。 **取值范围**： 不涉及。
      * @return planName
      */
     public String getPlanName() {
@@ -144,7 +144,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * 当前计划阶段。
+     * **参数解释**： 当前计划阶段。 **取值范围**： 不涉及。
      * @return currentStage
      */
     public String getCurrentStage() {
@@ -161,7 +161,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * 逻辑集群名称。
+     * **参数解释**： 逻辑集群名称。 **取值范围**： 不涉及。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -194,7 +194,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * 计划阶段列表。
+     * **参数解释**： 计划阶段列表。 **取值范围**： 不涉及。
      * @return stageList
      */
     public List<PlanStage> getStageList() {

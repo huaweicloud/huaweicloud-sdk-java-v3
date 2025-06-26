@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询容灾信息返回体
+ * **参数解释**： 查询容灾信息返回体。 **取值范围**： 不涉及。
  */
 public class DisasterRecoveryQueryResp {
 
@@ -62,7 +62,7 @@ public class DisasterRecoveryQueryResp {
     }
 
     /**
-     * 容灾ID
+     * **参数解释**： 容灾ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -79,7 +79,7 @@ public class DisasterRecoveryQueryResp {
     }
 
     /**
-     * 容灾名称
+     * **参数解释**： 容灾名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -96,7 +96,7 @@ public class DisasterRecoveryQueryResp {
     }
 
     /**
-     * 容灾类型
+     * **参数解释**： 容灾类型。 **取值范围**： 不涉及。
      * @return drType
      */
     public String getDrType() {
@@ -113,7 +113,7 @@ public class DisasterRecoveryQueryResp {
     }
 
     /**
-     * 容灾状态
+     * **参数解释**： 容灾状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -182,7 +182,7 @@ public class DisasterRecoveryQueryResp {
     }
 
     /**
-     * 容灾同步周期
+     * **参数解释**： 容灾同步周期。 **取值范围**： 不涉及。
      * @return drSyncPeriod
      */
     public String getDrSyncPeriod() {
@@ -199,7 +199,7 @@ public class DisasterRecoveryQueryResp {
     }
 
     /**
-     * 容灾启动时间
+     * **参数解释**： 容灾启动时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -216,7 +216,7 @@ public class DisasterRecoveryQueryResp {
     }
 
     /**
-     * 容灾创建时间
+     * **参数解释**： 容灾创建时间。 **取值范围**： 不涉及。
      * @return createTime
      */
     public String getCreateTime() {

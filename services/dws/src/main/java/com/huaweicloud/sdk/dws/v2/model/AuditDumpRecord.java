@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 审计日志
+ * **参数解释**： 审计日志。 **取值范围**： 不涉及。
  */
 public class AuditDumpRecord {
 
@@ -73,7 +73,7 @@ public class AuditDumpRecord {
     }
 
     /**
-     * 执行时间。
+     * **参数解释**： 执行时间。 **取值范围**： 不涉及。
      * @return executorTime
      */
     public String getExecutorTime() {
@@ -90,7 +90,7 @@ public class AuditDumpRecord {
     }
 
     /**
-     * 开始时间。
+     * **参数解释**： 开始时间。 **取值范围**： 不涉及。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -107,7 +107,7 @@ public class AuditDumpRecord {
     }
 
     /**
-     * 结束时间。
+     * **参数解释**： 结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -124,7 +124,7 @@ public class AuditDumpRecord {
     }
 
     /**
-     * 桶名。
+     * **参数解释**： 桶名。 **取值范围**： 不涉及。
      * @return bucketName
      */
     public String getBucketName() {
@@ -141,7 +141,7 @@ public class AuditDumpRecord {
     }
 
     /**
-     * 前缀。
+     * **参数解释**： 前缀。 **取值范围**： 不涉及。
      * @return locationPrefix
      */
     public String getLocationPrefix() {
@@ -158,7 +158,7 @@ public class AuditDumpRecord {
     }
 
     /**
-     * 结果。
+     * **参数解释**： 结果。 **取值范围**： 不涉及。
      * @return result
      */
     public String getResult() {
@@ -175,7 +175,7 @@ public class AuditDumpRecord {
     }
 
     /**
-     * 失败原因。
+     * **参数解释**： 失败原因。 **取值范围**： 不涉及。
      * @return failedReason
      */
     public String getFailedReason() {

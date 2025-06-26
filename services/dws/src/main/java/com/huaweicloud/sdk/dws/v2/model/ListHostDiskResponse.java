@@ -41,7 +41,7 @@ public class ListHostDiskResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * **参数解释**： 磁盘信息响应体。 **取值范围**： 不涉及。
      * @return body
      */
     public List<DiskResp> getBody() {

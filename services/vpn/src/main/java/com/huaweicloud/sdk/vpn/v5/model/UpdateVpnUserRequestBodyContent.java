@@ -20,6 +20,11 @@ public class UpdateVpnUserRequestBodyContent {
 
     private String userGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "static_ip")
+
+    private String staticIp;
+
     public UpdateVpnUserRequestBodyContent withDescription(String description) {
         this.description = description;
         return this;
@@ -54,6 +59,23 @@ public class UpdateVpnUserRequestBodyContent {
         this.userGroupId = userGroupId;
     }
 
+    public UpdateVpnUserRequestBodyContent withStaticIp(String staticIp) {
+        this.staticIp = staticIp;
+        return this;
+    }
+
+    /**
+     * 静态客户端IP地址，disable表示随机分配客户端IP
+     * @return staticIp
+     */
+    public String getStaticIp() {
+        return staticIp;
+    }
+
+    public void setStaticIp(String staticIp) {
+        this.staticIp = staticIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class UpdateVpnUserRequestBodyContent {
             return false;
         }
         UpdateVpnUserRequestBodyContent that = (UpdateVpnUserRequestBodyContent) obj;
-        return Objects.equals(this.description, that.description) && Objects.equals(this.userGroupId, that.userGroupId);
+        return Objects.equals(this.description, that.description) && Objects.equals(this.userGroupId, that.userGroupId)
+            && Objects.equals(this.staticIp, that.staticIp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, userGroupId);
+        return Objects.hash(description, userGroupId, staticIp);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class UpdateVpnUserRequestBodyContent {
         sb.append("class UpdateVpnUserRequestBodyContent {\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    userGroupId: ").append(toIndentedString(userGroupId)).append("\n");
+        sb.append("    staticIp: ").append(toIndentedString(staticIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

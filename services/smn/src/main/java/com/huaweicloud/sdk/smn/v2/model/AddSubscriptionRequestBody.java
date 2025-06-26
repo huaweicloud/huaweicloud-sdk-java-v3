@@ -61,7 +61,7 @@ public class AddSubscriptionRequestBody {
     }
 
     /**
-     * 说明：  http协议，接入点必须以“http://”开头。  https协议，接入点必须以“https://”开头。  email协议，接入点必须是邮件地址。  sms协议，接入点必须是一个电话号码。  functionstage协议，接入点必须是一个函数。  functiongraph协议，接入点必须是一个函数工作流。  callnotify协议，接入点必须是一个电话号码。  dingding协议，接入点必须是一个钉钉自定义群机器人的地址，或添加了钉钉企业内部机器人的群组openConversationId。添加钉钉企业内部机器人对应的群组openConversationId时，该字段不能以“http://”或“https://”为开头。  wechat协议，接入点必须是一个微信群机器人的地址。  feishu协议，接入点必须是一个飞书群机器人的地址。  welink协议，接入点必须是一个welink的群号。  dingTalkBot协议，接入点必须是一个钉钉企业用户的userId。
+     * 说明：  http协议，接入点必须以“http://”开头，且必须为公网的IPV4地址、IPV6地址或域名地址。不支持使用内网地址，包括但不限于IPv4私有地址、IPv6本地地址、回环地址等。需确保该地址可通过公网路由访问，避免因防火墙、NAT或DNS配置导致不可达。  https协议，接入点必须以“https://”开头，且必须为公网的IPV4地址、IPV6地址或域名地址。不支持使用内网地址，包括但不限于IPv4私有地址、IPv6本地地址、回环地址等。需确保该地址可通过公网路由访问，避免因防火墙、NAT或DNS配置导致不可达。  email协议，接入点必须是邮件地址。  sms协议，接入点必须是一个电话号码。  functionstage协议，接入点必须是一个函数。  functiongraph协议，接入点必须是一个函数工作流。  callnotify协议，接入点必须是一个电话号码。  dingding协议，接入点必须是一个钉钉自定义群机器人的地址，或添加了钉钉企业内部机器人的群组openConversationId。添加钉钉企业内部机器人对应的群组openConversationId时，该字段不能以“http://”或“https://”为开头。  wechat协议，接入点必须是一个微信群机器人的地址。  feishu协议，接入点必须是一个飞书群机器人的地址。  welink协议，接入点必须是一个welink的群号。  dingTalkBot协议，接入点必须是一个钉钉企业用户的userId。
      * @return endpoint
      */
     public String getEndpoint() {

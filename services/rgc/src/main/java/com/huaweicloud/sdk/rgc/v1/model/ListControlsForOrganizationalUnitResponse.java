@@ -20,11 +20,6 @@ public class ListControlsForOrganizationalUnitResponse extends SdkResponse {
     private List<TargetControl> controlSummaries = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "state")
-
-    private String state;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
 
     private PageInfoDto pageInfo;
@@ -63,23 +58,6 @@ public class ListControlsForOrganizationalUnitResponse extends SdkResponse {
         this.controlSummaries = controlSummaries;
     }
 
-    public ListControlsForOrganizationalUnitResponse withState(String state) {
-        this.state = state;
-        return this;
-    }
-
-    /**
-     * 控制策略启用状态。
-     * @return state
-     */
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public ListControlsForOrganizationalUnitResponse withPageInfo(PageInfoDto pageInfo) {
         this.pageInfo = pageInfo;
         return this;
@@ -115,13 +93,13 @@ public class ListControlsForOrganizationalUnitResponse extends SdkResponse {
             return false;
         }
         ListControlsForOrganizationalUnitResponse that = (ListControlsForOrganizationalUnitResponse) obj;
-        return Objects.equals(this.controlSummaries, that.controlSummaries) && Objects.equals(this.state, that.state)
+        return Objects.equals(this.controlSummaries, that.controlSummaries)
             && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(controlSummaries, state, pageInfo);
+        return Objects.hash(controlSummaries, pageInfo);
     }
 
     @Override
@@ -129,7 +107,6 @@ public class ListControlsForOrganizationalUnitResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListControlsForOrganizationalUnitResponse {\n");
         sb.append("    controlSummaries: ").append(toIndentedString(controlSummaries)).append("\n");
-        sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();

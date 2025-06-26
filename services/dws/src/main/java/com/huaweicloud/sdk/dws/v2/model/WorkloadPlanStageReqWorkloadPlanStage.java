@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源管理计划阶段详情
+ * **参数解释**： 资源管理计划阶段详情。 **取值范围**： 不涉及。
  */
 public class WorkloadPlanStageReqWorkloadPlanStage {
 
@@ -49,7 +49,7 @@ public class WorkloadPlanStageReqWorkloadPlanStage {
     }
 
     /**
-     * 日期
+     * **参数解释**： 日期。 **取值范围**： 不涉及。
      * @return day
      */
     public String getDay() {
@@ -66,7 +66,7 @@ public class WorkloadPlanStageReqWorkloadPlanStage {
     }
 
     /**
-     * 月份
+     * **参数解释**： 月份。 **取值范围**： 不涉及。
      * @return month
      */
     public String getMonth() {
@@ -83,7 +83,7 @@ public class WorkloadPlanStageReqWorkloadPlanStage {
     }
 
     /**
-     * 计划阶段
+     * **参数解释**： 计划阶段。 **取值范围**： 不涉及。
      * @return stageName
      */
     public String getStageName() {
@@ -100,7 +100,7 @@ public class WorkloadPlanStageReqWorkloadPlanStage {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 开始时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -117,7 +117,7 @@ public class WorkloadPlanStageReqWorkloadPlanStage {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -150,7 +150,7 @@ public class WorkloadPlanStageReqWorkloadPlanStage {
     }
 
     /**
-     * 资源队列
+     * **参数解释**： 资源队列。 **取值范围**： 不涉及。
      * @return queueList
      */
     public List<QueueResourceItem> getQueueList() {

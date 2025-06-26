@@ -215,6 +215,11 @@ public class CreateSparkJobRequestBody {
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_agency_urn")
+
+    private String executionAgencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket")
 
     private String obsBucket;
@@ -760,6 +765,23 @@ public class CreateSparkJobRequestBody {
         this.image = image;
     }
 
+    public CreateSparkJobRequestBody withExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+        return this;
+    }
+
+    /**
+     * 参数解释:   授权给DLI的委托名。Spark3.3.1版本时支持配置该参数。 示例: agency 约束限制:  无 取值范围: 无 默认取值: 无
+     * @return executionAgencyUrn
+     */
+    public String getExecutionAgencyUrn() {
+        return executionAgencyUrn;
+    }
+
+    public void setExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+    }
+
     public CreateSparkJobRequestBody withObsBucket(String obsBucket) {
         this.obsBucket = obsBucket;
         return this;
@@ -817,6 +839,7 @@ public class CreateSparkJobRequestBody {
             && Objects.equals(this.sparkVersion, that.sparkVersion) && Objects.equals(this.queue, that.queue)
             && Objects.equals(this.autoRecovery, that.autoRecovery)
             && Objects.equals(this.maxRetryTimes, that.maxRetryTimes) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.executionAgencyUrn, that.executionAgencyUrn)
             && Objects.equals(this.obsBucket, that.obsBucket) && Objects.equals(this.catalogName, that.catalogName);
     }
 
@@ -846,6 +869,7 @@ public class CreateSparkJobRequestBody {
             autoRecovery,
             maxRetryTimes,
             image,
+            executionAgencyUrn,
             obsBucket,
             catalogName);
     }
@@ -878,6 +902,7 @@ public class CreateSparkJobRequestBody {
         sb.append("    autoRecovery: ").append(toIndentedString(autoRecovery)).append("\n");
         sb.append("    maxRetryTimes: ").append(toIndentedString(maxRetryTimes)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    executionAgencyUrn: ").append(toIndentedString(executionAgencyUrn)).append("\n");
         sb.append("    obsBucket: ").append(toIndentedString(obsBucket)).append("\n");
         sb.append("    catalogName: ").append(toIndentedString(catalogName)).append("\n");
         sb.append("}");

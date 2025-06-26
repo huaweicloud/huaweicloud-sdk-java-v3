@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 快照跨区域配置信息
+ * **参数解释**： 快照跨区域配置信息。 **取值范围**： 不涉及。
  */
 public class CrossRegionSnapshotConfig {
 
@@ -78,7 +78,7 @@ public class CrossRegionSnapshotConfig {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称。 **取值范围**： 不涉及。
      * @return clusterName
      */
     public String getClusterName() {
@@ -95,7 +95,7 @@ public class CrossRegionSnapshotConfig {
     }
 
     /**
-     * 源区域
+     * **参数解释**： 源区域。 **取值范围**： 不涉及。
      * @return sourceRegion
      */
     public String getSourceRegion() {
@@ -112,7 +112,7 @@ public class CrossRegionSnapshotConfig {
     }
 
     /**
-     * 源项目ID
+     * **参数解释**： 源项目ID。 **取值范围**： 不涉及。
      * @return sourceProjectId
      */
     public String getSourceProjectId() {
@@ -129,7 +129,7 @@ public class CrossRegionSnapshotConfig {
     }
 
     /**
-     * 目的区域
+     * **参数解释**： 目的区域。 **取值范围**： 不涉及。
      * @return destinationRegion
      */
     public String getDestinationRegion() {
@@ -146,7 +146,7 @@ public class CrossRegionSnapshotConfig {
     }
 
     /**
-     * 目的项目ID
+     * **参数解释**： 目的项目ID。 **取值范围**： 不涉及。
      * @return destinationProjectId
      */
     public String getDestinationProjectId() {
@@ -163,7 +163,7 @@ public class CrossRegionSnapshotConfig {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public Boolean getStatus() {
@@ -180,7 +180,7 @@ public class CrossRegionSnapshotConfig {
     }
 
     /**
-     * 保存时间
+     * **参数解释**： 保存时间。 **取值范围**： 不涉及。
      * @return backKeepDay
      */
     public Integer getBackKeepDay() {
@@ -197,7 +197,7 @@ public class CrossRegionSnapshotConfig {
     }
 
     /**
-     * 总大小
+     * **参数解释**： 总大小。 **取值范围**： 大于等于0。
      * @return totalSize
      */
     public Long getTotalSize() {

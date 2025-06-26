@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 数据库权限请求
+ * **参数解释**： 数据库权限请求。 **取值范围**： 不涉及。
  */
 public class DatabasePermissionReq {
 
@@ -41,7 +41,7 @@ public class DatabasePermissionReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_list")
 
-    private Object objectList;
+    private List<String> objectList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "all_object")
@@ -74,7 +74,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 对象类型 [DATABASE | SCHEMA | TABLE | VIEW | COLUMN | FUNCTION| SEQUENCE | NODEGROUP | ROLE]
+     * **参数解释**： 对象类型。 **取值范围**： DATABASE、SCHEMA、TABLE、VIEW、COLUMN、FUNCTION、SEQUENCE、NODEGROUP、ROLE。
      * @return type
      */
     public String getType() {
@@ -91,7 +91,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 是否授权操作
+     * **参数解释**： 是否授权操作。 **取值范围**： 不涉及。
      * @return isGrant
      */
     public Boolean getIsGrant() {
@@ -124,7 +124,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 授权列表 is_grant为true时必填
+     * **参数解释**： 授权列表。is_grant为true时必填。 **取值范围**： 不涉及。
      * @return grantList
      */
     public List<Grant> getGrantList() {
@@ -157,7 +157,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 撤销权限列表 is_grant为false时必填
+     * **参数解释**： 撤销权限列表。is_grant为false时必填。 **取值范围**： 不涉及。
      * @return revokeList
      */
     public List<Revoke> getRevokeList() {
@@ -190,7 +190,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 被授权角色列表
+     * **参数解释**： 被授权角色列表。 **取值范围**： 不涉及。
      * @return roleList
      */
     public List<String> getRoleList() {
@@ -201,20 +201,36 @@ public class DatabasePermissionReq {
         this.roleList = roleList;
     }
 
-    public DatabasePermissionReq withObjectList(Object objectList) {
+    public DatabasePermissionReq withObjectList(List<String> objectList) {
         this.objectList = objectList;
         return this;
     }
 
+    public DatabasePermissionReq addObjectListItem(String objectListItem) {
+        if (this.objectList == null) {
+            this.objectList = new ArrayList<>();
+        }
+        this.objectList.add(objectListItem);
+        return this;
+    }
+
+    public DatabasePermissionReq withObjectList(Consumer<List<String>> objectListSetter) {
+        if (this.objectList == null) {
+            this.objectList = new ArrayList<>();
+        }
+        objectListSetter.accept(this.objectList);
+        return this;
+    }
+
     /**
-     * 权限所属对象列表
+     * **参数解释**： 权限所属对象列表。 **取值范围**： 不涉及。
      * @return objectList
      */
-    public Object getObjectList() {
+    public List<String> getObjectList() {
         return objectList;
     }
 
-    public void setObjectList(Object objectList) {
+    public void setObjectList(List<String> objectList) {
         this.objectList = objectList;
     }
 
@@ -224,7 +240,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * schema下所有数据库对象权限，默认false
+     * **参数解释**： schema下所有数据库对象权限，默认false。 **取值范围**： 不涉及。
      * @return allObject
      */
     public Boolean getAllObject() {
@@ -241,7 +257,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 撤销权限是否级联撤销 默认 true
+     * **参数解释**： 撤销权限是否级联撤销，默认true。 **取值范围**： 不涉及。
      * @return cascade
      */
     public Boolean getCascade() {
@@ -258,7 +274,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 数据库名称
+     * **参数解释**： 数据库名称。 **取值范围**： 不涉及。
      * @return database
      */
     public String getDatabase() {
@@ -275,7 +291,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 模式名称
+     * **参数解释**： 模式名称。 **取值范围**： 不涉及。
      * @return schema
      */
     public String getSchema() {
@@ -292,7 +308,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * 表名
+     * **参数解释**： 表名。 **取值范围**： 不涉及。
      * @return table
      */
     public String getTable() {

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class PutCopyStateReq {
 
     /**
-     * 源端服务器状态 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 SKIPPING：跳过中 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成 CLEARING: 清理快照资源中 CLEARED：清理快照资源完成 CLEARFAILED：清理快照资源失败
+     * 源端服务器状态 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 SKIPPING：跳过中 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成 CLEARING: 清理快照资源中 CLEARED：清理快照资源完成 CLEARFAILED：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
      */
     public static final class CopystateEnum {
 
@@ -100,6 +100,26 @@ public class PutCopyStateReq {
          */
         public static final CopystateEnum CLEARFAILED = new CopystateEnum("clearfailed");
 
+        /**
+         * Enum PREMIGREADY for value: "premigready"
+         */
+        public static final CopystateEnum PREMIGREADY = new CopystateEnum("premigready");
+
+        /**
+         * Enum PREMIGING for value: "premiging"
+         */
+        public static final CopystateEnum PREMIGING = new CopystateEnum("premiging");
+
+        /**
+         * Enum PREMIGED for value: "premiged"
+         */
+        public static final CopystateEnum PREMIGED = new CopystateEnum("premiged");
+
+        /**
+         * Enum PREMIGFAILED for value: "premigfailed"
+         */
+        public static final CopystateEnum PREMIGFAILED = new CopystateEnum("premigfailed");
+
         private static final Map<String, CopystateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CopystateEnum> createStaticFields() {
@@ -120,6 +140,10 @@ public class PutCopyStateReq {
             map.put("clearing", CLEARING);
             map.put("cleared", CLEARED);
             map.put("clearfailed", CLEARFAILED);
+            map.put("premigready", PREMIGREADY);
+            map.put("premiging", PREMIGING);
+            map.put("premiged", PREMIGED);
+            map.put("premigfailed", PREMIGFAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -279,7 +303,7 @@ public class PutCopyStateReq {
     }
 
     /**
-     * 源端服务器状态 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 SKIPPING：跳过中 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成 CLEARING: 清理快照资源中 CLEARED：清理快照资源完成 CLEARFAILED：清理快照资源失败
+     * 源端服务器状态 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 SKIPPING：跳过中 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成 CLEARING: 清理快照资源中 CLEARED：清理快照资源完成 CLEARFAILED：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
      * @return copystate
      */
     public CopystateEnum getCopystate() {

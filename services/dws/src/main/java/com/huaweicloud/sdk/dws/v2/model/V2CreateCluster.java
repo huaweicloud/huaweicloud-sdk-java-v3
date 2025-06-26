@@ -276,7 +276,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * **参数解释**： 可用区列表。 **约束限制**： 不涉及。 **取值范围**： 集群可用区选择详情请参见地区和终端节点地区和终端节点。 **默认取值**： 不涉及。
+     * **参数解释**： 可用区信息，创建3AZ集群时需传入3个不同可用区。 **约束限制**： 不涉及。 **取值范围**： 获取方法请参见[查询可用区列表接口](ListAvailabilityZones.xml)。 **默认取值**： 不涉及。
      * @return availabilityZones
      */
     public List<String> getAvailabilityZones() {

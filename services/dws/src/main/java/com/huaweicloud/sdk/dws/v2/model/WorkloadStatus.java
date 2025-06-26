@@ -18,7 +18,7 @@ public class WorkloadStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_concurrency_num")
 
-    private String maxConcurrencyNum;
+    private Integer maxConcurrencyNum;
 
     public WorkloadStatus withWorkloadSwitch(String workloadSwitch) {
         this.workloadSwitch = workloadSwitch;
@@ -37,7 +37,7 @@ public class WorkloadStatus {
         this.workloadSwitch = workloadSwitch;
     }
 
-    public WorkloadStatus withMaxConcurrencyNum(String maxConcurrencyNum) {
+    public WorkloadStatus withMaxConcurrencyNum(Integer maxConcurrencyNum) {
         this.maxConcurrencyNum = maxConcurrencyNum;
         return this;
     }
@@ -46,11 +46,11 @@ public class WorkloadStatus {
      * **参数解释**： 最大并发数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return maxConcurrencyNum
      */
-    public String getMaxConcurrencyNum() {
+    public Integer getMaxConcurrencyNum() {
         return maxConcurrencyNum;
     }
 
-    public void setMaxConcurrencyNum(String maxConcurrencyNum) {
+    public void setMaxConcurrencyNum(Integer maxConcurrencyNum) {
         this.maxConcurrencyNum = maxConcurrencyNum;
     }
 

@@ -110,6 +110,11 @@ public class ModSubCustomerBudgetReq {
 
     private BudgetTypeEnum budgetType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frozen_operate_type")
+
+    private Integer frozenOperateType;
+
     public ModSubCustomerBudgetReq withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -197,6 +202,25 @@ public class ModSubCustomerBudgetReq {
         this.budgetType = budgetType;
     }
 
+    public ModSubCustomerBudgetReq withFrozenOperateType(Integer frozenOperateType) {
+        this.frozenOperateType = frozenOperateType;
+        return this;
+    }
+
+    /**
+     * |参数名称：设置超预算时是否自动冻结| |参数的约束及描述：0：手工冻结 1：自动冻结，此参数不携带或携带值为null或携带值为空时，字段不生效。|
+     * minimum: 0
+     * maximum: 1
+     * @return frozenOperateType
+     */
+    public Integer getFrozenOperateType() {
+        return frozenOperateType;
+    }
+
+    public void setFrozenOperateType(Integer frozenOperateType) {
+        this.frozenOperateType = frozenOperateType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -209,12 +233,14 @@ public class ModSubCustomerBudgetReq {
         return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.budgetAmount, that.budgetAmount)
             && Objects.equals(this.cancelPartnerFrozen, that.cancelPartnerFrozen)
             && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
-            && Objects.equals(this.budgetType, that.budgetType);
+            && Objects.equals(this.budgetType, that.budgetType)
+            && Objects.equals(this.frozenOperateType, that.frozenOperateType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, budgetAmount, cancelPartnerFrozen, indirectPartnerId, budgetType);
+        return Objects
+            .hash(customerId, budgetAmount, cancelPartnerFrozen, indirectPartnerId, budgetType, frozenOperateType);
     }
 
     @Override
@@ -226,6 +252,7 @@ public class ModSubCustomerBudgetReq {
         sb.append("    cancelPartnerFrozen: ").append(toIndentedString(cancelPartnerFrozen)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("    budgetType: ").append(toIndentedString(budgetType)).append("\n");
+        sb.append("    frozenOperateType: ").append(toIndentedString(frozenOperateType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -26,7 +26,7 @@ public class TrendQueryData {
     }
 
     /**
-     * 查询结果。
+     * **参数解释**： 查询结果。 **取值范围**： 不涉及。
      * @return result
      */
     public String getResult() {
@@ -43,7 +43,7 @@ public class TrendQueryData {
     }
 
     /**
-     * 时间戳。
+     * **参数解释**： 时间戳。 **取值范围**： 不涉及。
      * @return timestamp
      */
     public Long getTimestamp() {

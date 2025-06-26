@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 数据库运维用户操作请求
+ * **参数解释**： 数据库运维用户操作请求。 **取值范围**： 不涉及。
  */
 public class DatabaseOmUserActionReq {
 
@@ -21,7 +21,7 @@ public class DatabaseOmUserActionReq {
     }
 
     /**
-     * 操作类型，取值如下：  - addOmUser：添加运维用户 - deleteOmUser：删除运维用户 - increaseOmUserPeriod ：延长用户有效期
+     * **参数解释**： 操作类型。 **取值范围**： addOmUser：添加运维用户。 deleteOmUser：删除运维用户。 increaseOmUserPeriod：延长用户有效期。
      * @return operation
      */
     public String getOperation() {

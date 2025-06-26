@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.dws.v2.model.AddExceptRuleReq;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddSnapshotCrossRegionPolicyRequest;
@@ -135,6 +136,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanStageRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanStageResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadRuleRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadRuleResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisableLogicalClusterPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisableLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsRequest;
@@ -218,6 +221,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListConfigurationsAuditRecordsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListConfigurationsAuditRecordsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDataSourceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDataSourceResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListDatabaseObjectsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListDatabaseObjectsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserAuthoritiesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUserAuthoritiesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUsersRequest;
@@ -281,6 +286,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListSnapshotFlavorInfoRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListSnapshotFlavorInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotPolicyRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotStatisticsRequest;
@@ -454,6 +461,8 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateSchemasRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateSchemasResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadPlanStageRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadPlanStageResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadRuleRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadRuleResponse;
 import com.huaweicloud.sdk.dws.v2.model.UserAuthorityReq;
 import com.huaweicloud.sdk.dws.v2.model.V2CreateClusterReq;
 import com.huaweicloud.sdk.dws.v2.model.WorkloadPlanReq;
@@ -601,7 +610,7 @@ public class DwsMeta {
             HttpRequestDef.builder(HttpMethod.POST, AddWorkloadRuleRequest.class, AddWorkloadRuleResponse.class)
                 .withName("AddWorkloadRule")
                 .withUri("/v1/{project_id}/clusters/{cluster_id}/workload/rules")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -609,6 +618,11 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddWorkloadRuleRequest::getClusterId, AddWorkloadRuleRequest::setClusterId));
+        builder.<AddExceptRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddExceptRuleReq.class),
+            f -> f.withMarshaller(AddWorkloadRuleRequest::getBody, AddWorkloadRuleRequest::setBody));
 
         // response
 
@@ -1601,11 +1615,6 @@ public class DwsMeta {
                 DeleteDisasterRecoveryRequest::setDisasterRecoveryId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteDisasterRecoveryResponse::getBody, DeleteDisasterRecoveryResponse::setBody));
 
         return builder.build();
     }
@@ -1936,6 +1945,34 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteWorkloadQueueRequest::getWorkloadQueueName,
                 DeleteWorkloadQueueRequest::setWorkloadQueueName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWorkloadRuleRequest, DeleteWorkloadRuleResponse> deleteWorkloadRule =
+        genForDeleteWorkloadRule();
+
+    private static HttpRequestDef<DeleteWorkloadRuleRequest, DeleteWorkloadRuleResponse> genForDeleteWorkloadRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteWorkloadRuleRequest, DeleteWorkloadRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteWorkloadRuleRequest.class, DeleteWorkloadRuleResponse.class)
+                .withName("DeleteWorkloadRule")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/workload/rules/{rule_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkloadRuleRequest::getClusterId, DeleteWorkloadRuleRequest::setClusterId));
+        builder.<String>withRequestField("rule_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkloadRuleRequest::getRuleName, DeleteWorkloadRuleRequest::setRuleName));
 
         // response
 
@@ -2439,7 +2476,7 @@ public class DwsMeta {
         // requests
         builder.<String>withRequestField("time_zone",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmDetailRequest::getTimeZone, ListAlarmDetailRequest::setTimeZone));
         builder.<String>withRequestField("offset",
@@ -2472,7 +2509,7 @@ public class DwsMeta {
         // requests
         builder.<String>withRequestField("time_zone",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmStatisticRequest::getTimeZone, ListAlarmStatisticRequest::setTimeZone));
 
@@ -2570,6 +2607,12 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getPrimaryClusterId,
                 ListAvailableDisasterClustersRequest::setPrimaryClusterId));
+        builder.<String>withRequestField("standby_az_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getStandbyAzCode,
+                ListAvailableDisasterClustersRequest::setStandbyAzCode));
         builder.<String>withRequestField("primary_spec_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2594,12 +2637,6 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getStandbyProjectId,
                 ListAvailableDisasterClustersRequest::setStandbyProjectId));
-        builder.<String>withRequestField("standby_az_code",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAvailableDisasterClustersRequest::getStandbyAzCode,
-                ListAvailableDisasterClustersRequest::setStandbyAzCode));
         builder.<String>withRequestField("dr_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3065,6 +3102,70 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDatabaseObjectsRequest, ListDatabaseObjectsResponse> listDatabaseObjects =
+        genForListDatabaseObjects();
+
+    private static HttpRequestDef<ListDatabaseObjectsRequest, ListDatabaseObjectsResponse> genForListDatabaseObjects() {
+        // basic
+        HttpRequestDef.Builder<ListDatabaseObjectsRequest, ListDatabaseObjectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatabaseObjectsRequest.class, ListDatabaseObjectsResponse.class)
+                .withName("ListDatabaseObjects")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/objects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getClusterId, ListDatabaseObjectsRequest::setClusterId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getType, ListDatabaseObjectsRequest::setType));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getName, ListDatabaseObjectsRequest::setName));
+        builder.<String>withRequestField("database",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getDatabase, ListDatabaseObjectsRequest::setDatabase));
+        builder.<String>withRequestField("schema",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getSchema, ListDatabaseObjectsRequest::setSchema));
+        builder.<String>withRequestField("table",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getTable, ListDatabaseObjectsRequest::setTable));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getOffset, ListDatabaseObjectsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getLimit, ListDatabaseObjectsRequest::setLimit));
+        builder.<String>withRequestField("is_fine_grained_disaster",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseObjectsRequest::getIsFineGrainedDisaster,
+                ListDatabaseObjectsRequest::setIsFineGrainedDisaster));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDatabaseUserAuthoritiesRequest, ListDatabaseUserAuthoritiesResponse> listDatabaseUserAuthorities =
         genForListDatabaseUserAuthorities();
 
@@ -3127,6 +3228,26 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatabaseUsersRequest::getClusterId, ListDatabaseUsersRequest::setClusterId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getOffset, ListDatabaseUsersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getLimit, ListDatabaseUsersRequest::setLimit));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getType, ListDatabaseUsersRequest::setType));
+        builder.<String>withRequestField("user_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getUserType, ListDatabaseUsersRequest::setUserType));
 
         // response
 
@@ -4150,6 +4271,46 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSnapshotDetailsRequest::getSnapshotId,
                 ListSnapshotDetailsRequest::setSnapshotId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSnapshotFlavorInfoRequest, ListSnapshotFlavorInfoResponse> listSnapshotFlavorInfo =
+        genForListSnapshotFlavorInfo();
+
+    private static HttpRequestDef<ListSnapshotFlavorInfoRequest, ListSnapshotFlavorInfoResponse> genForListSnapshotFlavorInfo() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotFlavorInfoRequest, ListSnapshotFlavorInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSnapshotFlavorInfoRequest.class, ListSnapshotFlavorInfoResponse.class)
+            .withName("ListSnapshotFlavorInfo")
+            .withUri("/v2/{project_id}/snapshots/{snapshot_id}/flavors")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("snapshot_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotFlavorInfoRequest::getSnapshotId,
+                ListSnapshotFlavorInfoRequest::setSnapshotId));
+        builder.<ListSnapshotFlavorInfoRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSnapshotFlavorInfoRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListSnapshotFlavorInfoRequest::getType, ListSnapshotFlavorInfoRequest::setType));
+        builder.<String>withRequestField("az_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotFlavorInfoRequest::getAzCode, ListSnapshotFlavorInfoRequest::setAzCode));
+        builder.<Boolean>withRequestField("fine_grained_restore",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSnapshotFlavorInfoRequest::getFineGrainedRestore,
+                ListSnapshotFlavorInfoRequest::setFineGrainedRestore));
 
         // response
 
@@ -6415,6 +6576,39 @@ public class DwsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(WorkloadPlanStageReq.class),
             f -> f.withMarshaller(UpdateWorkloadPlanStageRequest::getBody, UpdateWorkloadPlanStageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkloadRuleRequest, UpdateWorkloadRuleResponse> updateWorkloadRule =
+        genForUpdateWorkloadRule();
+
+    private static HttpRequestDef<UpdateWorkloadRuleRequest, UpdateWorkloadRuleResponse> genForUpdateWorkloadRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkloadRuleRequest, UpdateWorkloadRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkloadRuleRequest.class, UpdateWorkloadRuleResponse.class)
+                .withName("UpdateWorkloadRule")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/workload/rules/{rule_name}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkloadRuleRequest::getClusterId, UpdateWorkloadRuleRequest::setClusterId));
+        builder.<String>withRequestField("rule_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkloadRuleRequest::getRuleName, UpdateWorkloadRuleRequest::setRuleName));
+        builder.<AddExceptRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddExceptRuleReq.class),
+            f -> f.withMarshaller(UpdateWorkloadRuleRequest::getBody, UpdateWorkloadRuleRequest::setBody));
 
         // response
 

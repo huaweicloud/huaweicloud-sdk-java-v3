@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群ELB的相关信息
+ * **参数解释**： 集群ELB的相关信息。 **取值范围**： 不涉及。
  */
 public class ElbResp {
 

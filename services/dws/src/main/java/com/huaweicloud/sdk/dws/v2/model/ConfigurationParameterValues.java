@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群参数配置列表信息
+ * **参数解释**： 集群参数配置列表信息。 **取值范围**： 不涉及。
  */
 public class ConfigurationParameterValues {
 
@@ -41,7 +41,7 @@ public class ConfigurationParameterValues {
     }
 
     /**
-     * 集群参数配置列表
+     * **参数解释**： 集群参数配置列表。 **取值范围**： 不涉及。
      * @return configurations
      */
     public List<ConfigurationParameterValue> getConfigurations() {

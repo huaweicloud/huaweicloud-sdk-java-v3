@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 重分布信息
+ * **参数解释**： 重分布信息。 **取值范围**： 不涉及。
  */
 public class RdsRedisInfo {
 

@@ -68,6 +68,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceTypesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRecordsRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRecordsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerBudgetResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListSubCustomerCouponsRequest;
@@ -1164,6 +1166,36 @@ public class BssintlAsyncClient {
     public AsyncInvoker<ListSubCustomerBudgetRequest, ListSubCustomerBudgetResponse> listSubCustomerBudgetAsyncInvoker(
         ListSubCustomerBudgetRequest request) {
         return new AsyncInvoker<>(request, BssintlMeta.listSubCustomerBudget, hcClient);
+    }
+
+    /**
+     * 查询客户预算调整记录
+     *
+     * 功能描述：查询客户预算调整记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubCustomerBudgetRecordsRequest 请求对象
+     * @return CompletableFuture<ListSubCustomerBudgetRecordsResponse>
+     */
+    public CompletableFuture<ListSubCustomerBudgetRecordsResponse> listSubCustomerBudgetRecordsAsync(
+        ListSubCustomerBudgetRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listSubCustomerBudgetRecords);
+    }
+
+    /**
+     * 查询客户预算调整记录
+     *
+     * 功能描述：查询客户预算调整记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubCustomerBudgetRecordsRequest 请求对象
+     * @return AsyncInvoker<ListSubCustomerBudgetRecordsRequest, ListSubCustomerBudgetRecordsResponse>
+     */
+    public AsyncInvoker<ListSubCustomerBudgetRecordsRequest, ListSubCustomerBudgetRecordsResponse> listSubCustomerBudgetRecordsAsyncInvoker(
+        ListSubCustomerBudgetRecordsRequest request) {
+        return new AsyncInvoker<>(request, BssintlMeta.listSubCustomerBudgetRecords, hcClient);
     }
 
     /**

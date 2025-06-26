@@ -189,6 +189,11 @@ public class FlinkJobConfig {
     private Integer executorCuNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_agency_urn")
+
+    private String executionAgencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resume_checkpoint")
 
     private Boolean resumeCheckpoint;
@@ -655,6 +660,23 @@ public class FlinkJobConfig {
         this.executorCuNumber = executorCuNumber;
     }
 
+    public FlinkJobConfig withExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+        return this;
+    }
+
+    /**
+     * 参数解释:  授权给DLI的委托名。Flink1.15版本时支持配置该参数。 示例: agency 约束限制:  无 取值范围: 无 默认取值: 无
+     * @return executionAgencyUrn
+     */
+    public String getExecutionAgencyUrn() {
+        return executionAgencyUrn;
+    }
+
+    public void setExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+    }
+
     public FlinkJobConfig withResumeCheckpoint(Boolean resumeCheckpoint) {
         this.resumeCheckpoint = resumeCheckpoint;
         return this;
@@ -935,6 +957,7 @@ public class FlinkJobConfig {
             && Objects.equals(this.dependencyFiles, that.dependencyFiles)
             && Objects.equals(this.executorNumber, that.executorNumber)
             && Objects.equals(this.executorCuNumber, that.executorCuNumber)
+            && Objects.equals(this.executionAgencyUrn, that.executionAgencyUrn)
             && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
             && Objects.equals(this.runtimeConfig, that.runtimeConfig)
             && Objects.equals(this.graphEditorEnabled, that.graphEditorEnabled)
@@ -971,6 +994,7 @@ public class FlinkJobConfig {
             dependencyFiles,
             executorNumber,
             executorCuNumber,
+            executionAgencyUrn,
             resumeCheckpoint,
             runtimeConfig,
             graphEditorEnabled,
@@ -1012,6 +1036,7 @@ public class FlinkJobConfig {
         sb.append("    dependencyFiles: ").append(toIndentedString(dependencyFiles)).append("\n");
         sb.append("    executorNumber: ").append(toIndentedString(executorNumber)).append("\n");
         sb.append("    executorCuNumber: ").append(toIndentedString(executorCuNumber)).append("\n");
+        sb.append("    executionAgencyUrn: ").append(toIndentedString(executionAgencyUrn)).append("\n");
         sb.append("    resumeCheckpoint: ").append(toIndentedString(resumeCheckpoint)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
         sb.append("    graphEditorEnabled: ").append(toIndentedString(graphEditorEnabled)).append("\n");

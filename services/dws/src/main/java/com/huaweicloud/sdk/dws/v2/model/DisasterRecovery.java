@@ -111,7 +111,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * ID
+     * **参数解释**： 容灾ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -128,7 +128,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -145,7 +145,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 名称
+     * **参数解释**： 名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -162,7 +162,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 容灾类型
+     * **参数解释**： 容灾类型。 **取值范围**： 不涉及。
      * @return drType
      */
     public String getDrType() {
@@ -179,7 +179,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 主集群ID
+     * **参数解释**： 主集群ID。 **取值范围**： 不涉及。
      * @return primaryClusterId
      */
     public String getPrimaryClusterId() {
@@ -196,7 +196,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 主集群名称
+     * **参数解释**： 主集群名称。 **取值范围**： 不涉及。
      * @return primaryClusterName
      */
     public String getPrimaryClusterName() {
@@ -213,7 +213,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 备集群ID
+     * **参数解释**： 备集群ID。 **取值范围**： 不涉及。
      * @return standbyClusterId
      */
     public String getStandbyClusterId() {
@@ -230,7 +230,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 备集群名称
+     * **参数解释**： 备集群名称。 **取值范围**： 不涉及。
      * @return standbyClusterName
      */
     public String getStandbyClusterName() {
@@ -247,7 +247,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 主集群角色
+     * **参数解释**： 主集群角色。 **取值范围**： 不涉及。
      * @return primaryClusterRole
      */
     public String getPrimaryClusterRole() {
@@ -264,7 +264,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 备集群角色
+     * **参数解释**： 备集群角色。 **取值范围**： 不涉及。
      * @return standbyClusterRole
      */
     public String getStandbyClusterRole() {
@@ -281,7 +281,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 主集群状态
+     * **参数解释**： 主集群状态。 **取值范围**： 不涉及。
      * @return primaryClusterStatus
      */
     public String getPrimaryClusterStatus() {
@@ -298,7 +298,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 备集群状态
+     * **参数解释**： 备集群状态。 **取值范围**： 不涉及。
      * @return standbyClusterStatus
      */
     public String getStandbyClusterStatus() {
@@ -315,7 +315,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 主集群region
+     * **参数解释**： 主集群region。 **取值范围**： 不涉及。
      * @return primaryClusterRegion
      */
     public String getPrimaryClusterRegion() {
@@ -332,7 +332,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 备集群region
+     * **参数解释**： 备集群region。 **取值范围**： 不涉及。
      * @return standbyClusterRegion
      */
     public String getStandbyClusterRegion() {
@@ -349,7 +349,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 主集群project_id
+     * **参数解释**： 主集群项目ID。 **取值范围**： 不涉及。
      * @return primaryClusterProjectId
      */
     public String getPrimaryClusterProjectId() {
@@ -366,7 +366,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 备集群project_id
+     * **参数解释**： 备集群项目ID。 **取值范围**： 不涉及。
      * @return standbyClusterProjectId
      */
     public String getStandbyClusterProjectId() {
@@ -383,7 +383,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 最近同步时间
+     * **参数解释**： 最近同步时间。 **取值范围**： 不涉及。
      * @return lastDisasterTime
      */
     public String getLastDisasterTime() {
@@ -400,7 +400,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 启动时间
+     * **参数解释**： 启动时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -417,7 +417,7 @@ public class DisasterRecovery {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。
      * @return createTime
      */
     public String getCreateTime() {

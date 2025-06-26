@@ -12,25 +12,25 @@ import java.util.Objects;
 public class RunCatalogActionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "message")
 
-    private String body;
+    private String message;
 
-    public RunCatalogActionResponse withBody(String body) {
-        this.body = body;
+    public RunCatalogActionResponse withMessage(String message) {
+        this.message = message;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 系统提示信息，执行成功时，信息可能为空。
+     * @return message
      */
-    public String getBody() {
-        return body;
+    public String getMessage() {
+        return message;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class RunCatalogActionResponse extends SdkResponse {
             return false;
         }
         RunCatalogActionResponse that = (RunCatalogActionResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.message, that.message);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(message);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunCatalogActionResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");
         return sb.toString();
     }

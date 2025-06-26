@@ -41,7 +41,7 @@ public class ListMetricsDataResponse extends SdkResponse {
     }
 
     /**
-     * 响应码
+     * **参数解释**： 响应码。 **取值范围**： 不涉及。
      * @return code
      */
     public Integer getCode() {
@@ -58,7 +58,7 @@ public class ListMetricsDataResponse extends SdkResponse {
     }
 
     /**
-     * 响应信息
+     * **参数解释**： 响应信息。 **取值范围**： 不涉及。
      * @return msg
      */
     public String getMsg() {
@@ -91,7 +91,7 @@ public class ListMetricsDataResponse extends SdkResponse {
     }
 
     /**
-     * 指标采集数据列表。
+     * **参数解释**： 指标采集数据列表。 **取值范围**： 不涉及。
      * @return data
      */
     public List<Map<String, Object>> getData() {
@@ -108,7 +108,7 @@ public class ListMetricsDataResponse extends SdkResponse {
     }
 
     /**
-     * 总列表大小。
+     * **参数解释**： 总列表大小。 **取值范围**： 不涉及。
      * @return count
      */
     public Long getCount() {

@@ -16,19 +16,14 @@ public class BatchCreateResourceTagsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<TagWithValues> tags = null;
+    private List<Tag> tags = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "count")
-
-    private Long count;
-
-    public BatchCreateResourceTagsRequestBody withTags(List<TagWithValues> tags) {
+    public BatchCreateResourceTagsRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public BatchCreateResourceTagsRequestBody addTagsItem(TagWithValues tagsItem) {
+    public BatchCreateResourceTagsRequestBody addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -36,7 +31,7 @@ public class BatchCreateResourceTagsRequestBody {
         return this;
     }
 
-    public BatchCreateResourceTagsRequestBody withTags(Consumer<List<TagWithValues>> tagsSetter) {
+    public BatchCreateResourceTagsRequestBody withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -48,29 +43,12 @@ public class BatchCreateResourceTagsRequestBody {
      * 标签列表。
      * @return tags
      */
-    public List<TagWithValues> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<TagWithValues> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
-    }
-
-    public BatchCreateResourceTagsRequestBody withCount(Long count) {
-        this.count = count;
-        return this;
-    }
-
-    /**
-     * 标签数量。
-     * @return count
-     */
-    public Long getCount() {
-        return count;
-    }
-
-    public void setCount(Long count) {
-        this.count = count;
     }
 
     @Override
@@ -82,12 +60,12 @@ public class BatchCreateResourceTagsRequestBody {
             return false;
         }
         BatchCreateResourceTagsRequestBody that = (BatchCreateResourceTagsRequestBody) obj;
-        return Objects.equals(this.tags, that.tags) && Objects.equals(this.count, that.count);
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags, count);
+        return Objects.hash(tags);
     }
 
     @Override
@@ -95,7 +73,6 @@ public class BatchCreateResourceTagsRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchCreateResourceTagsRequestBody {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

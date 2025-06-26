@@ -41,7 +41,7 @@ public class ListDatabaseUsersResponse extends SdkResponse {
     }
 
     /**
-     * user list
+     * **参数解释**： 用户/角色列表。 **取值范围**： 不涉及。
      * @return users
      */
     public List<DatabaseUser> getUsers() {

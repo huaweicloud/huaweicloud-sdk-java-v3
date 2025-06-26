@@ -49,7 +49,7 @@ public class TrendQueryDataResp {
     }
 
     /**
-     * 查询时间。
+     * **参数解释**： 查询时间。 **取值范围**： 不涉及。
      * @return queryTime
      */
     public Long getQueryTime() {
@@ -66,7 +66,7 @@ public class TrendQueryDataResp {
     }
 
     /**
-     * 监控指标名称。
+     * **参数解释**： 监控指标名称。 **取值范围**： 不涉及。
      * @return indicatorName
      */
     public String getIndicatorName() {
@@ -83,7 +83,7 @@ public class TrendQueryDataResp {
     }
 
     /**
-     * 监控对象id。
+     * **参数解释**： 监控对象ID。 **取值范围**： 不涉及。
      * @return objectId
      */
     public String getObjectId() {
@@ -100,7 +100,7 @@ public class TrendQueryDataResp {
     }
 
     /**
-     * 单位。
+     * **参数解释**： 单位。 **取值范围**： 不涉及。
      * @return unit
      */
     public String getUnit() {
@@ -117,7 +117,7 @@ public class TrendQueryDataResp {
     }
 
     /**
-     * 次级监控id。
+     * **参数解释**： 次级监控ID。 **取值范围**： 不涉及。
      * @return subObjectId
      */
     public String getSubObjectId() {
@@ -150,7 +150,7 @@ public class TrendQueryDataResp {
     }
 
     /**
-     * 节点数据。
+     * **参数解释**： 节点数据。 **取值范围**： 不涉及。
      * @return dataPoints
      */
     public List<TrendQueryData> getDataPoints() {

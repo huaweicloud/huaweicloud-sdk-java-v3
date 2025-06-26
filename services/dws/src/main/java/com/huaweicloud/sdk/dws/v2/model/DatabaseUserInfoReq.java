@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户详细信息
+ * **参数解释**： 用户详细信息。 **取值范围**： 不涉及。
  */
 public class DatabaseUserInfoReq {
 
@@ -76,7 +76,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 是否可以登陆
+     * **参数解释**： 是否可以登录。 **取值范围**： 不涉及。
      * @return login
      */
     public Boolean getLogin() {
@@ -93,7 +93,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 创建角色权限
+     * **参数解释**： 创建角色权限。 **取值范围**： 不涉及。
      * @return createrole
      */
     public Boolean getCreaterole() {
@@ -110,7 +110,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 创建数据库权限
+     * **参数解释**： 创建数据库权限。 **取值范围**： 不涉及。
      * @return createdb
      */
     public Boolean getCreatedb() {
@@ -127,7 +127,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 系统管理员
+     * **参数解释**： 系统管理员。 **取值范围**： 不涉及。
      * @return systemadmin
      */
     public Boolean getSystemadmin() {
@@ -144,7 +144,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 审计管理员
+     * **参数解释**： 审计管理员。 **取值范围**： 不涉及。
      * @return auditadmin
      */
     public Boolean getAuditadmin() {
@@ -161,7 +161,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 继承所在组权限
+     * **参数解释**： 继承所在组权限。 **取值范围**： 不涉及。
      * @return inherit
      */
     public Boolean getInherit() {
@@ -178,7 +178,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 访问外表权限
+     * **参数解释**： 访问外表权限。 **取值范围**： 不涉及。
      * @return useft
      */
     public Boolean getUseft() {
@@ -195,7 +195,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 连接数限制
+     * **参数解释**： 连接数限制。 **取值范围**： 不涉及。
      * @return connLimit
      */
     public Integer getConnLimit() {
@@ -212,7 +212,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 是否允许流复制
+     * **参数解释**： 是否允许流复制。 **取值范围**： 不涉及。
      * @return replication
      */
     public Boolean getReplication() {
@@ -229,7 +229,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 角色生效时间 yyyy-MM-ddTHH:mm:ssZ
+     * **参数解释**： 角色生效时间。格式：yyyy-MM-ddTHH:mm:ssZ。 **取值范围**： 不涉及。
      * @return validBegin
      */
     public String getValidBegin() {
@@ -246,7 +246,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 角色过期时间 yyyy-MM-ddTHH:mm:ssZ
+     * **参数解释**： 角色过期时间。格式：yyyy-MM-ddTHH:mm:ssZ。 **取值范围**： 不涉及。
      * @return validUntil
      */
     public String getValidUntil() {
@@ -263,7 +263,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * 是否锁定
+     * **参数解释**： 是否锁定。 **取值范围**： 不涉及。
      * @return lock
      */
     public Boolean getLock() {

@@ -46,7 +46,7 @@ public class ConfigurationRecordResp {
     }
 
     /**
-     * ID
+     * **参数解释**： 记录ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -63,7 +63,7 @@ public class ConfigurationRecordResp {
     }
 
     /**
-     * 操作
+     * **参数解释**： 操作名称。 **取值范围**： 不涉及。
      * @return operator
      */
     public String getOperator() {
@@ -80,7 +80,7 @@ public class ConfigurationRecordResp {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 开始时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -97,7 +97,7 @@ public class ConfigurationRecordResp {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -114,7 +114,7 @@ public class ConfigurationRecordResp {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -131,7 +131,7 @@ public class ConfigurationRecordResp {
     }
 
     /**
-     * 失败原因
+     * **参数解释**： 失败原因。 **取值范围**： 不涉及。
      * @return failedReason
      */
     public String getFailedReason() {

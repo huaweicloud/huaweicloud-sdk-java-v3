@@ -56,7 +56,7 @@ public class ListMetricsDataRequest {
     }
 
     /**
-     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
+     * **参数解释**： 集群ID。获取方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -73,7 +73,7 @@ public class ListMetricsDataRequest {
     }
 
     /**
-     * 指标名称。
+     * **参数解释**： 指标名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return metricName
      */
     public String getMetricName() {
@@ -90,7 +90,7 @@ public class ListMetricsDataRequest {
     }
 
     /**
-     * **参数解释**： 分页查询，偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
+     * **参数解释**： 分页偏移量，从0开始，页数减1。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {
@@ -124,7 +124,7 @@ public class ListMetricsDataRequest {
     }
 
     /**
-     * 采集开始时间，13位时间戳。
+     * **参数解释**： 采集开始时间，13位时间戳。 **约束限制**： 不涉及。 **取值范围**： 13位时间戳。 **默认取值**： 不涉及。
      * @return from
      */
     public Long getFrom() {
@@ -141,7 +141,7 @@ public class ListMetricsDataRequest {
     }
 
     /**
-     * 采集结束时间，13位时间戳。开始时间到结束时间最多不超过一天。
+     * **参数解释**： 采集结束时间，13位时间戳。 **约束限制**： 开始时间到结束时间最多不超过一天。 **取值范围**： 13位时间戳。 **默认取值**： 不涉及。
      * @return to
      */
     public Long getTo() {
@@ -158,7 +158,7 @@ public class ListMetricsDataRequest {
     }
 
     /**
-     * 排序字段。固定取值。 ctime：采集时间。
+     * **参数解释**： 排序字段，固定取值。 **约束限制**： 不涉及。 **取值范围**： ctime：采集时间。 **默认取值**： 不涉及。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -175,7 +175,7 @@ public class ListMetricsDataRequest {
     }
 
     /**
-     * 正序还是倒叙。固定取值。 asc：正序。 desc：倒序。
+     * **参数解释**： 描述信息请求。 **约束限制**： 正序还是倒序，固定取值。 **取值范围**： asc：正序。 desc：倒序。 **默认取值**： 不涉及。
      * @return sortBy
      */
     public String getSortBy() {

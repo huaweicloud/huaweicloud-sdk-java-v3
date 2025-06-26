@@ -101,6 +101,11 @@ public class RunCatalogActionRequestBody {
 
     private Map<String, String> parameters = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public RunCatalogActionRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -168,6 +173,23 @@ public class RunCatalogActionRequestBody {
         this.parameters = parameters;
     }
 
+    public RunCatalogActionRequestBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * Catalog的描述信息。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,12 +200,12 @@ public class RunCatalogActionRequestBody {
         }
         RunCatalogActionRequestBody that = (RunCatalogActionRequestBody) obj;
         return Objects.equals(this.action, that.action) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.parameters, that.parameters);
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, name, parameters);
+        return Objects.hash(action, name, parameters, description);
     }
 
     @Override
@@ -193,6 +215,7 @@ public class RunCatalogActionRequestBody {
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -44,7 +44,7 @@ public class ListAvailableDisasterClustersResponse extends SdkResponse {
     }
 
     /**
-     * 容灾可用集群列表
+     * **参数解释**： 容灾可用集群列表。 **取值范围**： 不涉及。
      * @return disasterRecoveryClusters
      */
     public List<DisasterRecoveryClusterVo> getDisasterRecoveryClusters() {

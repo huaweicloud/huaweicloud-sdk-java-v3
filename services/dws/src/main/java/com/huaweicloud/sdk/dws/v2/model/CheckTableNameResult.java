@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 表名检查结果
+ * **参数解释**： 表名检查结果。 **取值范围**： 不涉及。
  */
 public class CheckTableNameResult {
 
@@ -34,7 +34,7 @@ public class CheckTableNameResult {
     }
 
     /**
-     * 数据库名称
+     * **参数解释**： 数据库名称。 **取值范围**： 不涉及。
      * @return database
      */
     public String getDatabase() {
@@ -67,7 +67,7 @@ public class CheckTableNameResult {
     }
 
     /**
-     * 恢复源表信息
+     * **参数解释**： 恢复源表信息。 **取值范围**： 不涉及。
      * @return restoreTableList
      */
     public List<String> getRestoreTableList() {
@@ -100,7 +100,7 @@ public class CheckTableNameResult {
     }
 
     /**
-     * 恢复目的表信息
+     * **参数解释**： 恢复目的表信息。 **取值范围**： 不涉及。
      * @return targetTableList
      */
     public List<String> getTargetTableList() {

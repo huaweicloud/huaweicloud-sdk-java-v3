@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群所关联的参数组详情。
+ * **参数解释**： 集群所关联的参数组详情。 **取值范围**： 不涉及。
  */
 public class ClusterConfiguration {
 
@@ -41,7 +41,7 @@ public class ClusterConfiguration {
     }
 
     /**
-     * 参数组ID。
+     * **参数解释**： 参数组ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -58,7 +58,7 @@ public class ClusterConfiguration {
     }
 
     /**
-     * 参数组名称。
+     * **参数解释**： 参数组名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -75,7 +75,7 @@ public class ClusterConfiguration {
     }
 
     /**
-     * 参数组类型。
+     * **参数解释**： 参数组类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -92,7 +92,7 @@ public class ClusterConfiguration {
     }
 
     /**
-     * 集群参数状态。 - In-Sync：已同步。 - Applying：应用中。 - Pending-Reboot：需重启生效。 - Sync-Failure：应用失败。
+     * **参数解释**： 集群参数状态。 **取值范围**： In-Sync：已同步。 Applying：应用中。 Pending-Reboot：需重启生效。 Sync-Failure：应用失败。
      * @return status
      */
     public String getStatus() {
@@ -109,7 +109,7 @@ public class ClusterConfiguration {
     }
 
     /**
-     * 参数应用失败原因。
+     * **参数解释**： 参数应用失败原因。 **取值范围**： 不涉及。
      * @return failReason
      */
     public String getFailReason() {

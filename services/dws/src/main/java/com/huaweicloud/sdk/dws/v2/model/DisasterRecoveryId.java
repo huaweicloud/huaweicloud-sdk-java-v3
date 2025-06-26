@@ -21,7 +21,7 @@ public class DisasterRecoveryId {
     }
 
     /**
-     * 容灾ID
+     * **参数解释**： 容灾ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {

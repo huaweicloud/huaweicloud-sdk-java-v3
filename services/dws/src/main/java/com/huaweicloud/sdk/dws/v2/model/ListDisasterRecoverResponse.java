@@ -41,7 +41,7 @@ public class ListDisasterRecoverResponse extends SdkResponse {
     }
 
     /**
-     * 容灾对象
+     * **参数解释**： 容灾对象。 **取值范围**： 不涉及。
      * @return disasterRecovery
      */
     public List<DisasterRecovery> getDisasterRecovery() {

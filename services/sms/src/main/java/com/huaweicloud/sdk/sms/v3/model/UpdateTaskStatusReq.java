@@ -51,14 +51,14 @@ public class UpdateTaskStatusReq {
         public static final OperationEnum NETWORK_CHECK = new OperationEnum("network_check");
 
         /**
-         * Enum SKIP for value: "skip"
-         */
-        public static final OperationEnum SKIP = new OperationEnum("skip");
-
-        /**
          * Enum CLEAR for value: "clear"
          */
         public static final OperationEnum CLEAR = new OperationEnum("clear");
+
+        /**
+         * Enum SKIP for value: "skip"
+         */
+        public static final OperationEnum SKIP = new OperationEnum("skip");
 
         /**
          * Enum MIGRATION_TEST for value: "migration_test"
@@ -75,8 +75,8 @@ public class UpdateTaskStatusReq {
             map.put("clone_test", CLONE_TEST);
             map.put("restart", RESTART);
             map.put("network_check", NETWORK_CHECK);
-            map.put("skip", SKIP);
             map.put("clear", CLEAR);
+            map.put("skip", SKIP);
             map.put("migration_test", MIGRATION_TEST);
             return Collections.unmodifiableMap(map);
         }

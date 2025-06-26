@@ -56,7 +56,7 @@ public class ListClusterSnapshotsResponse extends SdkResponse {
     }
 
     /**
-     * 快照对象列表。
+     * **参数解释**： 快照对象列表。 **取值范围**： 不涉及。
      * @return snapshots
      */
     public List<ClusterSnapshots> getSnapshots() {
@@ -73,7 +73,7 @@ public class ListClusterSnapshotsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 项目ID。获取方式方法请参见[获取项目ID](dws_02_0011.xml)。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 项目ID。获取方法请参见[获取项目ID](dws_02_0011.xml)。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -107,7 +107,7 @@ public class ListClusterSnapshotsResponse extends SdkResponse {
     }
 
     /**
-     * 快照对象列表总数
+     * **参数解释**： 快照对象列表总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

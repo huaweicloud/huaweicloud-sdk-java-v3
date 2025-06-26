@@ -56,7 +56,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
+     * **参数解释**： 集群ID。获取方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -73,7 +73,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * 查询类型。固定取值。 skew：表倾斜率。 dirtyPage：表脏页率。
+     * **参数解释**： 查询类型，固定取值。 **约束限制**： 不涉及。 **取值范围**： skew：表倾斜率。 dirtyPage：表脏页率。 **默认取值**： 不涉及。
      * @return rateType
      */
     public String getRateType() {
@@ -90,7 +90,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * **参数解释**： 分页查询，偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
+     * **参数解释**： 分页偏移量，从0开始，页数减1。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {
@@ -124,7 +124,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * 排序字段。固定取值。 table_size：表大小。rate：表倾斜率或脏页率。
+     * **参数解释**： 排序字段，固定取值。 **约束限制**： 不涉及。 **取值范围**： table_size：表大小。 rate：表倾斜率或脏页率。 **默认取值**： 不涉及。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -141,7 +141,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * 正序还是倒叙。固定取值。 ASC：正序。DESC：倒序
+     * **参数解释**： 正序还是倒序排序，固定取值。 **约束限制**： 不涉及。 **取值范围**： ASC：正序。 DESC：倒序。 **默认取值**： 不涉及。
      * @return sortBy
      */
     public String getSortBy() {
@@ -158,7 +158,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * 查询条件。固定取值。 db_name：数据库名称。 schema_name：schema名称。 table_name：表名。 table_owner：所属用户。
+     * **参数解释**： 查询条件，固定取值。 **约束限制**： 不涉及。 **取值范围**： db_name：数据库名称。 schema_name：schema名称。 table_name：表名。 table_owner：所属用户。 **默认取值**： 不涉及。
      * @return filter
      */
     public String getFilter() {
@@ -175,7 +175,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * 查询条件的取值。
+     * **参数解释**： 过滤条件的值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return value
      */
     public String getValue() {

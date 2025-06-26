@@ -375,6 +375,11 @@ public class ResponseVpnGateway {
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applied_at")
+
+    private OffsetDateTime appliedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
     private OffsetDateTime updatedAt;
@@ -960,6 +965,23 @@ public class ResponseVpnGateway {
         this.createdAt = createdAt;
     }
 
+    public ResponseVpnGateway withAppliedAt(OffsetDateTime appliedAt) {
+        this.appliedAt = appliedAt;
+        return this;
+    }
+
+    /**
+     * 生效时间
+     * @return appliedAt
+     */
+    public OffsetDateTime getAppliedAt() {
+        return appliedAt;
+    }
+
+    public void setAppliedAt(OffsetDateTime appliedAt) {
+        this.appliedAt = appliedAt;
+    }
+
     public ResponseVpnGateway withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -1131,7 +1153,7 @@ public class ResponseVpnGateway {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.eip1, that.eip1)
             && Objects.equals(this.eip2, that.eip2) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.appliedAt, that.appliedAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.policyTemplate, that.policyTemplate)
             && Objects.equals(this.supportedFlavors, that.supportedFlavors)
             && Objects.equals(this.supportedFeatures, that.supportedFeatures) && Objects.equals(this.tags, that.tags);
@@ -1168,6 +1190,7 @@ public class ResponseVpnGateway {
             eip1,
             eip2,
             createdAt,
+            appliedAt,
             updatedAt,
             policyTemplate,
             supportedFlavors,
@@ -1208,6 +1231,7 @@ public class ResponseVpnGateway {
         sb.append("    eip1: ").append(toIndentedString(eip1)).append("\n");
         sb.append("    eip2: ").append(toIndentedString(eip2)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    appliedAt: ").append(toIndentedString(appliedAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    policyTemplate: ").append(toIndentedString(policyTemplate)).append("\n");
         sb.append("    supportedFlavors: ").append(toIndentedString(supportedFlavors)).append("\n");

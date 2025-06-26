@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新订阅事件请求体
+ * **参数解释**： 更新订阅事件请求体。 **取值范围**： 不涉及。
  */
 public class EventSubUpdateRequest {
 
@@ -66,7 +66,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 事件订阅名称
+     * **参数解释**： 事件订阅名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -83,7 +83,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 事件源类型支持cluster，backup，disaster-recovery
+     * **参数解释**： 事件源类型。 **取值范围**： 支持cluster，backup，disaster-recovery。
      * @return sourceType
      */
     public String getSourceType() {
@@ -100,7 +100,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 事件源ID
+     * **参数解释**： 事件源ID。 **取值范围**： 不涉及。
      * @return sourceId
      */
     public String getSourceId() {
@@ -117,7 +117,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 事件类别支持management，monitor，security，system alarm
+     * **参数解释**： 事件类别。 **取值范围**： 支持management、monitor、security、system alarm。
      * @return category
      */
     public String getCategory() {
@@ -134,7 +134,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 事件级别支持normal，warning
+     * **参数解释**： 事件级别。 **取值范围**： 支持normal、warning。
      * @return severity
      */
     public String getSeverity() {
@@ -151,7 +151,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 事件标签
+     * **参数解释**： 事件标签。 **取值范围**： 不涉及。
      * @return tag
      */
     public String getTag() {
@@ -168,7 +168,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 是否开启订阅 1为开启，0为关闭
+     * **参数解释**： 是否开启订阅。 **取值范围**： 1为开启，0为关闭。
      * @return enable
      */
     public Integer getEnable() {
@@ -185,7 +185,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 消息通知地址
+     * **参数解释**： 消息通知地址。 **取值范围**： 不涉及。
      * @return notificationTarget
      */
     public String getNotificationTarget() {
@@ -202,7 +202,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 消息主题名称
+     * **参数解释**： 消息主题名称。 **取值范围**： 不涉及。
      * @return notificationTargetName
      */
     public String getNotificationTargetName() {
@@ -219,7 +219,7 @@ public class EventSubUpdateRequest {
     }
 
     /**
-     * 消息通知类型只支持SMN
+     * **参数解释**： 消息通知类型。只支持SMN。 **取值范围**： SMN。
      * @return notificationTargetType
      */
     public String getNotificationTargetType() {

@@ -41,7 +41,7 @@ public class SyncIamUsersResponse extends SdkResponse {
     }
 
     /**
-     * 创建成功用户列表
+     * **参数解释**： 创建成功用户列表。 **取值范围**： 不涉及。
      * @return syncUser
      */
     public List<String> getSyncUser() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 表倾斜率或脏页率列表。
+ * **参数解释**： 表倾斜率或脏页率列表。 **取值范围**： 不涉及。
  */
 public class ListTablesStatisticDto {
 
@@ -51,7 +51,7 @@ public class ListTablesStatisticDto {
     }
 
     /**
-     * 数据库名称。
+     * **参数解释**： 数据库名称。 **取值范围**： 不涉及。
      * @return dbName
      */
     public String getDbName() {
@@ -68,7 +68,7 @@ public class ListTablesStatisticDto {
     }
 
     /**
-     * schema名称。
+     * **参数解释**： 模式名称。 **取值范围**： 不涉及。
      * @return schemaName
      */
     public String getSchemaName() {
@@ -85,7 +85,7 @@ public class ListTablesStatisticDto {
     }
 
     /**
-     * 表名。
+     * **参数解释**： 表名。 **取值范围**： 不涉及。
      * @return tableName
      */
     public String getTableName() {
@@ -102,7 +102,7 @@ public class ListTablesStatisticDto {
     }
 
     /**
-     * 所属用户。
+     * **参数解释**： 所属用户。 **取值范围**： 不涉及。
      * @return tableOwner
      */
     public String getTableOwner() {
@@ -119,7 +119,7 @@ public class ListTablesStatisticDto {
     }
 
     /**
-     * 表大小。
+     * **参数解释**： 表大小。 **取值范围**： 不涉及。
      * @return tableSize
      */
     public String getTableSize() {
@@ -136,7 +136,7 @@ public class ListTablesStatisticDto {
     }
 
     /**
-     * 表倾斜率。
+     * **参数解释**： 表倾斜率。 **取值范围**： 不涉及。
      * @return skewRate
      */
     public Double getSkewRate() {
@@ -153,7 +153,7 @@ public class ListTablesStatisticDto {
     }
 
     /**
-     * 脏页率。
+     * **参数解释**： 脏页率。 **取值范围**： 不涉及。
      * @return dirtyPageRate
      */
     public Double getDirtyPageRate() {

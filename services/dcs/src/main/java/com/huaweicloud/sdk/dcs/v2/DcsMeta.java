@@ -2508,6 +2508,11 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSlowlogRequest::getEndTime, ListSlowlogRequest::setEndTime));
+        builder.<String>withRequestField("role",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowlogRequest::getRole, ListSlowlogRequest::setRole));
 
         // response
 

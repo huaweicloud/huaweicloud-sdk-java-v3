@@ -46,7 +46,7 @@ public class ListSnapshotCrossRegionResponse extends SdkResponse {
     }
 
     /**
-     * 区域列表
+     * **参数解释**： 区域列表。 **取值范围**： 不涉及。
      * @return regions
      */
     public List<SnapshotRegion> getRegions() {
@@ -63,7 +63,7 @@ public class ListSnapshotCrossRegionResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**： 总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

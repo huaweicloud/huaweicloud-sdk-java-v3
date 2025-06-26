@@ -117,6 +117,11 @@ public class TaskByServerSources {
     private String logBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_expire")
+
+    private Long logExpire;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_upload_time")
 
     private Long logUploadTime;
@@ -513,6 +518,25 @@ public class TaskByServerSources {
         this.logBucket = logBucket;
     }
 
+    public TaskByServerSources withLogExpire(Long logExpire) {
+        this.logExpire = logExpire;
+        return this;
+    }
+
+    /**
+     * 分享链接有效期
+     * minimum: 300
+     * maximum: 64800
+     * @return logExpire
+     */
+    public Long getLogExpire() {
+        return logExpire;
+    }
+
+    public void setLogExpire(Long logExpire) {
+        this.logExpire = logExpire;
+    }
+
     public TaskByServerSources withLogUploadTime(Long logUploadTime) {
         this.logUploadTime = logUploadTime;
         return this;
@@ -572,7 +596,7 @@ public class TaskByServerSources {
             && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.usePublicIp, that.usePublicIp)
             && Objects.equals(this.cloneServer, that.cloneServer)
             && Objects.equals(this.remainSeconds, that.remainSeconds) && Objects.equals(this.logBucket, that.logBucket)
-            && Objects.equals(this.logUploadTime, that.logUploadTime)
+            && Objects.equals(this.logExpire, that.logExpire) && Objects.equals(this.logUploadTime, that.logUploadTime)
             && Objects.equals(this.logShareUrl, that.logShareUrl);
     }
 
@@ -599,6 +623,7 @@ public class TaskByServerSources {
             cloneServer,
             remainSeconds,
             logBucket,
+            logExpire,
             logUploadTime,
             logShareUrl);
     }
@@ -628,6 +653,7 @@ public class TaskByServerSources {
         sb.append("    cloneServer: ").append(toIndentedString(cloneServer)).append("\n");
         sb.append("    remainSeconds: ").append(toIndentedString(remainSeconds)).append("\n");
         sb.append("    logBucket: ").append(toIndentedString(logBucket)).append("\n");
+        sb.append("    logExpire: ").append(toIndentedString(logExpire)).append("\n");
         sb.append("    logUploadTime: ").append(toIndentedString(logUploadTime)).append("\n");
         sb.append("    logShareUrl: ").append(toIndentedString(logShareUrl)).append("\n");
         sb.append("}");

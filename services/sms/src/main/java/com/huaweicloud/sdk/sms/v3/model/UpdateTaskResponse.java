@@ -12,25 +12,25 @@ import java.util.Objects;
 public class UpdateTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "id")
 
-    private String body;
+    private String id;
 
-    public UpdateTaskResponse withBody(String body) {
-        this.body = body;
+    public UpdateTaskResponse withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
-     * 更新指定ID的迁移任务
-     * @return body
+     * 任务ID
+     * @return id
      */
-    public String getBody() {
-        return body;
+    public String getId() {
+        return id;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class UpdateTaskResponse extends SdkResponse {
             return false;
         }
         UpdateTaskResponse that = (UpdateTaskResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateTaskResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

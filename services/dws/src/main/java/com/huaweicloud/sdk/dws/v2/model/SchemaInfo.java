@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群模式空间信息
+ * **参数解释**： 集群模式空间信息。 **取值范围**： 不涉及。
  */
 public class SchemaInfo {
 
@@ -66,7 +66,7 @@ public class SchemaInfo {
     }
 
     /**
-     * Schema名称。
+     * **参数解释**： 集群模式名称。 **取值范围**： 不涉及。
      * @return schemaName
      */
     public String getSchemaName() {
@@ -83,7 +83,7 @@ public class SchemaInfo {
     }
 
     /**
-     * 数据库名称。
+     * **参数解释**： 数据库名称。 **取值范围**： 不涉及。
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -100,7 +100,7 @@ public class SchemaInfo {
     }
 
     /**
-     * 集群schema使用空间总值。
+     * **参数解释**： 集群模式使用空间总值。 **取值范围**： 不涉及。
      * @return totalValue
      */
     public Integer getTotalValue() {
@@ -117,7 +117,7 @@ public class SchemaInfo {
     }
 
     /**
-     * Schema空间阈值。
+     * **参数解释**： 集群模式空间阈值。 **取值范围**： 不涉及。
      * @return permSpace
      */
     public Integer getPermSpace() {
@@ -134,7 +134,7 @@ public class SchemaInfo {
     }
 
     /**
-     * 倾斜率。
+     * **参数解释**： 倾斜率。 **取值范围**： 不涉及。
      * @return skewPercent
      */
     public Double getSkewPercent() {
@@ -151,7 +151,7 @@ public class SchemaInfo {
     }
 
     /**
-     * 最小值。
+     * **参数解释**： 最小值。 **取值范围**： 不涉及。
      * @return minValue
      */
     public Integer getMinValue() {
@@ -168,7 +168,7 @@ public class SchemaInfo {
     }
 
     /**
-     * 最大值。
+     * **参数解释**： 最大值。 **取值范围**： 不涉及。
      * @return maxValue
      */
     public Integer getMaxValue() {
@@ -185,7 +185,7 @@ public class SchemaInfo {
     }
 
     /**
-     * 最小dn节点。
+     * **参数解释**： 最小dn节点。 **取值范围**： 不涉及。
      * @return minDn
      */
     public String getMinDn() {
@@ -202,7 +202,7 @@ public class SchemaInfo {
     }
 
     /**
-     * 最大cn节点。
+     * **参数解释**： 最大cn节点。 **取值范围**： 不涉及。
      * @return maxDn
      */
     public String getMaxDn() {
@@ -219,7 +219,7 @@ public class SchemaInfo {
     }
 
     /**
-     * dn节点数量。
+     * **参数解释**： dn节点数量。 **取值范围**： 不涉及。
      * @return dnNum
      */
     public Integer getDnNum() {

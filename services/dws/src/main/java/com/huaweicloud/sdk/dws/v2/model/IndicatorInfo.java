@@ -36,7 +36,7 @@ public class IndicatorInfo {
     }
 
     /**
-     * 监控指标名称。
+     * **参数解释**： 监控指标名称。 **取值范围**： 不涉及。
      * @return indicatorName
      */
     public String getIndicatorName() {
@@ -53,7 +53,7 @@ public class IndicatorInfo {
     }
 
     /**
-     * 采集模块名称。
+     * **参数解释**： 采集模块名称。 **取值范围**： 不涉及。
      * @return pluginName
      */
     public String getPluginName() {
@@ -70,7 +70,7 @@ public class IndicatorInfo {
     }
 
     /**
-     * 默认采集频率。
+     * **参数解释**： 默认采集频率。 **取值范围**： 不涉及。
      * @return defaultCollectRate
      */
     public String getDefaultCollectRate() {
@@ -87,7 +87,7 @@ public class IndicatorInfo {
     }
 
     /**
-     * 支持的集群版本。
+     * **参数解释**： 支持的集群版本。 **取值范围**： 不涉及。
      * @return supportDatastoreVersion
      */
     public String getSupportDatastoreVersion() {

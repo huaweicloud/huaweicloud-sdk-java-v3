@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 快照复制请求
+ * **参数解释**： 快照复制请求。 **取值范围**： 不涉及。
  */
 public class LinkCopyReq {
 
@@ -26,7 +26,7 @@ public class LinkCopyReq {
     }
 
     /**
-     * 快照名称
+     * **参数解释**： 快照名称。 **取值范围**： 不涉及。
      * @return backupName
      */
     public String getBackupName() {
@@ -43,7 +43,7 @@ public class LinkCopyReq {
     }
 
     /**
-     * 描述
+     * **参数解释**： 描述信息。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {

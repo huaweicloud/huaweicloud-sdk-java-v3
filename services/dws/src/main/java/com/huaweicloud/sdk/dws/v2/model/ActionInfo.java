@@ -136,7 +136,7 @@ public class ActionInfo {
     }
 
     /**
-     * **参数解释**： 操作结果。。 **取值范围**： success：成功 failed：失败 默认空字符串。
+     * **参数解释**： 操作结果。默认为空字符串。 **取值范围**： success：成功。 failed：失败。
      * @return result
      */
     public String getResult() {

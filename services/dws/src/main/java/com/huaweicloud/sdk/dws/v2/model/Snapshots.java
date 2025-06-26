@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 快照对象列表
+ * **参数解释**： 快照对象列表。 **取值范围**： 不涉及。
  */
 public class Snapshots {
 
@@ -61,7 +61,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照ID。
+     * **参数解释**： 快照ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -78,7 +78,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照名称。
+     * **参数解释**： 快照名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -95,7 +95,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照描述。
+     * **参数解释**： 快照描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -112,7 +112,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照创建的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。
+     * **参数解释**： 快照创建的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。 **取值范围**： 不涉及。
      * @return started
      */
     public String getStarted() {
@@ -129,7 +129,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照完成的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。
+     * **参数解释**： 快照完成的日期时间，格式为 ISO8601: YYYY-MM-DDThh:mm:ssZ。 **取值范围**： 不涉及。
      * @return finished
      */
     public String getFinished() {
@@ -146,7 +146,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照大小，单位 GB。
+     * **参数解释**： 快照大小，单位 GB。 **取值范围**： 不涉及。
      * @return size
      */
     public Double getSize() {
@@ -163,7 +163,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照状态：  - CREATING：创建中。 - AVAILABLE：可用。 - UNAVAILABLE：不可用。 - FROZEN： 普通冻结。 - POLICE_FROZEN： 公安冻结。
+     * **参数解释**： 快照状态。 **取值范围**： - CREATING：创建中。 - AVAILABLE：可用。 - UNAVAILABLE：不可用。 - FROZEN： 普通冻结。 - POLICE_FROZEN： 公安冻结。
      * @return status
      */
     public String getStatus() {
@@ -180,7 +180,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照创建类型
+     * **参数解释**： 快照创建类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -197,7 +197,7 @@ public class Snapshots {
     }
 
     /**
-     * 快照对应的集群ID
+     * **参数解释**： 快照对应的集群ID。 **取值范围**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {

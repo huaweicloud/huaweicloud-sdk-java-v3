@@ -182,8 +182,6 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
-import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinServerRequest;
-import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
@@ -2428,29 +2426,6 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse> showRecycleBinServer =
-        genForShowRecycleBinServer();
-
-    private static HttpRequestDef<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse> genForShowRecycleBinServer() {
-        // basic
-        HttpRequestDef.Builder<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowRecycleBinServerRequest.class, ShowRecycleBinServerResponse.class)
-            .withName("ShowRecycleBinServer")
-            .withUri("/v1/{project_id}/recycle-bin/cloudservers/{server_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRecycleBinServerRequest::getServerId, ShowRecycleBinServerRequest::setServerId));
 
         // response
 

@@ -61,7 +61,7 @@ public class ListDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 数据源列表。
+     * **参数解释**： 数据源列表。 **取值范围**： 不涉及。
      * @return dataSources
      */
     public List<ExtDataSource> getDataSources() {
@@ -78,7 +78,7 @@ public class ListDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 项目ID。获取方式方法请参见[获取项目ID](dws_02_0011.xml)。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 项目ID。 **取值范围**： 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -112,7 +112,7 @@ public class ListDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 数据源类型。
+     * **参数解释**： 数据源类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -129,7 +129,7 @@ public class ListDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 总数。
+     * **参数解释**： 总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

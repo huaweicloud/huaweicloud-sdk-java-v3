@@ -41,7 +41,7 @@ public class ListMonitorIndicatorsResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * **参数解释**： 性能监控指标信息。 **取值范围**： 不涉及。
      * @return body
      */
     public List<IndicatorInfo> getBody() {

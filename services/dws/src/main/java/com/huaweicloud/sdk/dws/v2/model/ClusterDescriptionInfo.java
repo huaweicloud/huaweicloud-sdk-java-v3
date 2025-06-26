@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群描述对象
+ * **参数解释**： 集群描述信息对象。 **取值范围**： 不涉及。
  */
 public class ClusterDescriptionInfo {
 

@@ -1295,7 +1295,7 @@ public class ObsMeta {
             f -> f.withMarshaller(GetObjectMetadataRequest::getDate, GetObjectMetadataRequest::setDate));
         builder.<String>withRequestField("Origin",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetObjectMetadataRequest::getOrigin, GetObjectMetadataRequest::setOrigin));
         builder.<String>withRequestField("Access-Control-Request-Headers",

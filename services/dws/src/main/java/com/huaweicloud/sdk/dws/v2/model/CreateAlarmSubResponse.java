@@ -72,7 +72,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 告警订阅ID
+     * **参数解释**： 告警订阅ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -89,7 +89,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 告警订阅名称
+     * **参数解释**： 告警订阅名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -106,7 +106,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启订阅
+     * **参数解释**： 是否开启订阅。 **取值范围**： 不涉及。
      * @return enable
      */
     public Integer getEnable() {
@@ -123,7 +123,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 告警级别
+     * **参数解释**： 告警级别。 **取值范围**： 不涉及。
      * @return alarmLevel
      */
     public String getAlarmLevel() {
@@ -140,7 +140,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 租户凭证ID
+     * **参数解释**： 项目ID。 **取值范围**： 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -157,7 +157,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 所属服务，支持DWS,DLI,DGC,CloudTable,CDM,GES,CSS
+     * **参数解释**： 所属服务。 **取值范围**： 不涉及。
      * @return nameSpace
      */
     public String getNameSpace() {
@@ -174,7 +174,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 消息主题地址
+     * **参数解释**： 消息主题地址。 **取值范围**： 不涉及。
      * @return notificationTarget
      */
     public String getNotificationTarget() {
@@ -191,7 +191,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 消息主题名称
+     * **参数解释**： 消息主题名称。 **取值范围**： 不涉及。
      * @return notificationTargetName
      */
     public String getNotificationTargetName() {
@@ -208,7 +208,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 消息主题类型
+     * **参数解释**： 消息主题类型。 **取值范围**： 不涉及。
      * @return notificationTargetType
      */
     public String getNotificationTargetType() {
@@ -225,7 +225,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 语言
+     * **参数解释**： 语言。 **取值范围**： 不涉及。
      * @return language
      */
     public String getLanguage() {
@@ -242,7 +242,7 @@ public class CreateAlarmSubResponse extends SdkResponse {
     }
 
     /**
-     * 时区
+     * **参数解释**： 时区。 **取值范围**： 不涉及。
      * @return timeZone
      */
     public String getTimeZone() {

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 重分布配置信息
+ * **参数解释**： 重分布配置信息。 **取值范围**： 不涉及。
  */
 public class RedisConf {
 
@@ -124,7 +124,7 @@ public class RedisConf {
     }
 
     /**
-     * **参数解释**： 优先级策略,支持large优先对大表进行重分布，small优先对小表进行重分布，default默认顺序进行重分布。 **取值范围**： large|small|default。
+     * **参数解释**： 优先级策略。 **取值范围**： large：优先对大表进行重分布。 small：优先对小表进行重分布 default：默认顺序进行重分布。
      * @return priorityPolicy
      */
     public String getPriorityPolicy() {

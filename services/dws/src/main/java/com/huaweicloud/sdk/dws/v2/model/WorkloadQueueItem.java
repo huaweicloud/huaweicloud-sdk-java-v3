@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**： 工作负载资源池。 **取值范围**： 不涉及。
+ * **参数解释**： 资源池信息。 **取值范围**： 不涉及。
  */
 public class WorkloadQueueItem {
 
@@ -78,7 +78,7 @@ public class WorkloadQueueItem {
     }
 
     /**
-     * **参数解释**： 工作负载队列短查询加速开关。 **取值范围**： 不涉及。
+     * **参数解释**： 资源池短查询加速开关。 **取值范围**： 不涉及。
      * @return shortQueryOptimize
      */
     public String getShortQueryOptimize() {
@@ -95,7 +95,7 @@ public class WorkloadQueueItem {
     }
 
     /**
-     * **参数解释**： 工作负载队列短查询并发数。 **取值范围**： 不涉及。
+     * **参数解释**： 资源池短查询并发数。 **取值范围**： 不涉及。
      * @return shortQueryConcurrencyNum
      */
     public Integer getShortQueryConcurrencyNum() {

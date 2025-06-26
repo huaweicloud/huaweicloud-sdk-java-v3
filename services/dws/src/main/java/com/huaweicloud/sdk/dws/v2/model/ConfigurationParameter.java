@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群使用的参数配置项详情。
+ * **参数解释**： 集群使用的参数配置项详情。 **取值范围**： 不涉及。
  */
 public class ConfigurationParameter {
 
@@ -59,7 +59,7 @@ public class ConfigurationParameter {
     }
 
     /**
-     * 参数名称。
+     * **参数解释**： 参数名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -92,7 +92,7 @@ public class ConfigurationParameter {
     }
 
     /**
-     * 参数值。
+     * **参数解释**： 参数值。 **取值范围**： 不涉及。
      * @return values
      */
     public List<ConfigurationParameterUnit> getValues() {
@@ -109,7 +109,7 @@ public class ConfigurationParameter {
     }
 
     /**
-     * 参数单位。
+     * **参数解释**： 参数单位。 **取值范围**： 不涉及。
      * @return unit
      */
     public String getUnit() {
@@ -126,7 +126,7 @@ public class ConfigurationParameter {
     }
 
     /**
-     * 参数类型，包括boolean、string、integer、float、list。
+     * **参数解释**： 参数类型。 **取值范围**： 包括boolean、string、integer、float、list。
      * @return type
      */
     public String getType() {
@@ -143,7 +143,7 @@ public class ConfigurationParameter {
     }
 
     /**
-     * 是否只读。
+     * **参数解释**： 是否只读。 **取值范围**： 不涉及。
      * @return readonly
      */
     public Boolean getReadonly() {
@@ -160,7 +160,7 @@ public class ConfigurationParameter {
     }
 
     /**
-     * 参数值范围。
+     * **参数解释**： 参数值范围。 **取值范围**： 不涉及。
      * @return valueRange
      */
     public String getValueRange() {
@@ -177,7 +177,7 @@ public class ConfigurationParameter {
     }
 
     /**
-     * 是否需要重启。
+     * **参数解释**： 是否需要重启。 **取值范围**： 不涉及。
      * @return restartRequired
      */
     public Boolean getRestartRequired() {
@@ -194,7 +194,7 @@ public class ConfigurationParameter {
     }
 
     /**
-     * 参数描述。
+     * **参数解释**： 参数描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {

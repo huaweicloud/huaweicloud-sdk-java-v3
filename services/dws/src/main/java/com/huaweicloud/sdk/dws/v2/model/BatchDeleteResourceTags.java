@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 标签列表信息
+ * **参数解释**： 标签列表信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class BatchDeleteResourceTags {
 
@@ -40,7 +40,7 @@ public class BatchDeleteResourceTags {
     }
 
     /**
-     * 标签列表
+     * **参数解释**： 标签列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return tags
      */
     public List<BatchDeleteResourceTag> getTags() {

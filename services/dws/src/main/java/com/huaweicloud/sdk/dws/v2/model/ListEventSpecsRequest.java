@@ -51,7 +51,7 @@ public class ListEventSpecsRequest {
     }
 
     /**
-     * 事件配置名称
+     * **参数解释**： 事件配置名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return specName
      */
     public String getSpecName() {
@@ -68,7 +68,7 @@ public class ListEventSpecsRequest {
     }
 
     /**
-     * 事件类别
+     * **参数解释**： 事件类别。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return category
      */
     public String getCategory() {
@@ -85,7 +85,7 @@ public class ListEventSpecsRequest {
     }
 
     /**
-     * 事件级别
+     * **参数解释**： 事件级别。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return severity
      */
     public String getSeverity() {
@@ -102,7 +102,7 @@ public class ListEventSpecsRequest {
     }
 
     /**
-     * 事件源类别
+     * **参数解释**： 事件源类别。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return sourceType
      */
     public String getSourceType() {
@@ -119,7 +119,7 @@ public class ListEventSpecsRequest {
     }
 
     /**
-     * 事件标签
+     * **参数解释**： 事件标签。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return tag
      */
     public String getTag() {
@@ -136,7 +136,7 @@ public class ListEventSpecsRequest {
     }
 
     /**
-     * **参数解释**： 分页查询，偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
+     * **参数解释**： 分页偏移量，从0开始，页数减1。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 0
      * @return offset
      */
     public String getOffset() {

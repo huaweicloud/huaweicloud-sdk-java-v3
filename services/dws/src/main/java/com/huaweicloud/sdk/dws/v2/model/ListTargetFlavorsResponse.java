@@ -63,7 +63,7 @@ public class ListTargetFlavorsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 规格详情列表。 **取值范围**： 不涉及。
+     * **参数解释**： 规格详情列表。接口返回的规格列表最多为20条。 **取值范围**： 不涉及。
      * @return flavors
      */
     public List<FlavorInfoResponse> getFlavors() {

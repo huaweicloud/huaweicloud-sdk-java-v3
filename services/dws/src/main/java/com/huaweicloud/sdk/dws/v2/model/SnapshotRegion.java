@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 快照区域信息
+ * **参数解释**： 快照区域信息。 **取值范围**： 不涉及。
  */
 public class SnapshotRegion {
 
@@ -21,7 +21,7 @@ public class SnapshotRegion {
     }
 
     /**
-     * 区域ID
+     * **参数解释**： 区域ID。 **取值范围**： 不涉及。
      * @return regionId
      */
     public String getRegionId() {

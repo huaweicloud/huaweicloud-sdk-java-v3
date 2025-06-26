@@ -38,7 +38,7 @@ public class ListQueriesResponse extends SdkResponse {
     }
 
     /**
-     * 响应码。
+     * **参数解释**： 响应码。 **取值范围**： 不涉及。
      * @return code
      */
     public Integer getCode() {
@@ -55,7 +55,7 @@ public class ListQueriesResponse extends SdkResponse {
     }
 
     /**
-     * 响应信息。
+     * **参数解释**： 响应信息。 **取值范围**： 不涉及。
      * @return msg
      */
     public String getMsg() {
@@ -98,7 +98,7 @@ public class ListQueriesResponse extends SdkResponse {
     }
 
     /**
-     * 总条数。
+     * **参数解释**： 总条数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

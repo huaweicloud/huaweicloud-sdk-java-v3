@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户基本信息
+ * **参数解释**： 用户基本信息。 **取值范围**： 不涉及。
  */
 public class DatabaseUser {
 
@@ -20,13 +20,18 @@ public class DatabaseUser {
 
     private Boolean login;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_type")
+
+    private String userType;
+
     public DatabaseUser withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 用户名
+     * **参数解释**： 用户名。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -43,7 +48,7 @@ public class DatabaseUser {
     }
 
     /**
-     * 是否可以登陆
+     * **参数解释**： 是否可以登录。 **取值范围**： 不涉及。
      * @return login
      */
     public Boolean getLogin() {
@@ -52,6 +57,23 @@ public class DatabaseUser {
 
     public void setLogin(Boolean login) {
         this.login = login;
+    }
+
+    public DatabaseUser withUserType(String userType) {
+        this.userType = userType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 用户类型。 **取值范围**： COMMON：表示普通数据库用户。 IAM：表示IAM同步的数据库用户。 OneAccess: 表示OneAccess用户。
+     * @return userType
+     */
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     @Override
@@ -63,12 +85,13 @@ public class DatabaseUser {
             return false;
         }
         DatabaseUser that = (DatabaseUser) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.login, that.login);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.login, that.login)
+            && Objects.equals(this.userType, that.userType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, login);
+        return Objects.hash(name, login, userType);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class DatabaseUser {
         sb.append("class DatabaseUser {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    login: ").append(toIndentedString(login)).append("\n");
+        sb.append("    userType: ").append(toIndentedString(userType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

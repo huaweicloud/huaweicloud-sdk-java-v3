@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 恢复表前检查表名请求体
+ * **参数解释**： 恢复表前检查表名请求体。 **取值范围**： 不涉及。
  */
 public class CheckTableRestoreRequestBody {
 
@@ -39,7 +39,7 @@ public class CheckTableRestoreRequestBody {
     }
 
     /**
-     * 名称是否区分大小写
+     * **参数解释**： 名称是否区分大小写。 **取值范围**： 不涉及。
      * @return caseSensitive
      */
     public Boolean getCaseSensitive() {
@@ -56,7 +56,7 @@ public class CheckTableRestoreRequestBody {
     }
 
     /**
-     * 数据库名称
+     * **参数解释**： 数据库名称。 **取值范围**： 不涉及。
      * @return database
      */
     public String getDatabase() {
@@ -89,7 +89,7 @@ public class CheckTableRestoreRequestBody {
     }
 
     /**
-     * 源表信息
+     * **参数解释**： 源表信息。 **取值范围**： 不涉及。
      * @return restoreTableList
      */
     public List<TableDetail> getRestoreTableList() {
@@ -122,7 +122,7 @@ public class CheckTableRestoreRequestBody {
     }
 
     /**
-     * 目的表信息
+     * **参数解释**： 目的表信息。 **取值范围**： 不涉及。
      * @return targetTableList
      */
     public List<TableDetail> getTargetTableList() {

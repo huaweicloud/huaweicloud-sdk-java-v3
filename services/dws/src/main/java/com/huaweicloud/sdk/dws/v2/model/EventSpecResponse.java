@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 事件配置对象
+ * **参数解释**： 事件配置对象。 **取值范围**： 不涉及。
  */
 public class EventSpecResponse {
 
@@ -61,7 +61,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 事件配置ID
+     * **参数解释**： 事件配置ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -78,7 +78,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 事件配置定义名称
+     * **参数解释**： 事件配置定义名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -95,7 +95,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 事件配置显示名称
+     * **参数解释**： 事件配置显示名称。 **取值范围**： 不涉及。
      * @return displayName
      */
     public String getDisplayName() {
@@ -112,7 +112,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 事件配置描述
+     * **参数解释**： 事件配置描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -129,7 +129,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 事件主题
+     * **参数解释**： 事件主题。 **取值范围**： 不涉及。
      * @return subject
      */
     public String getSubject() {
@@ -146,7 +146,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 事件类别
+     * **参数解释**： 事件类别。 **取值范围**： 不涉及。
      * @return category
      */
     public String getCategory() {
@@ -163,7 +163,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 事件级别
+     * **参数解释**： 事件级别。 **取值范围**： 不涉及。
      * @return severity
      */
     public String getSeverity() {
@@ -180,7 +180,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 事件源类型
+     * **参数解释**： 事件源类型。 **取值范围**： 不涉及。
      * @return sourceType
      */
     public String getSourceType() {
@@ -197,7 +197,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * 所属服务
+     * **参数解释**： 所属服务。 **取值范围**： 不涉及。
      * @return nameSpace
      */
     public String getNameSpace() {

@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.sms.v3.model.DeleteTemplateRequest;
 import com.huaweicloud.sdk.sms.v3.model.DeleteTemplateResponse;
 import com.huaweicloud.sdk.sms.v3.model.DeleteTemplatesRequest;
 import com.huaweicloud.sdk.sms.v3.model.DeleteTemplatesResponse;
+import com.huaweicloud.sdk.sms.v3.model.ExportConsistencyResultsRequest;
+import com.huaweicloud.sdk.sms.v3.model.ExportConsistencyResultsResponse;
 import com.huaweicloud.sdk.sms.v3.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.sms.v3.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.sms.v3.model.ListErrorServersRequest;
@@ -119,36 +121,6 @@ public class SmsAsyncClient {
     public static ClientBuilder<SmsAsyncClient> newBuilder() {
         ClientBuilder<SmsAsyncClient> clientBuilder = new ClientBuilder<>(SmsAsyncClient::new, "GlobalCredentials");
         return clientBuilder;
-    }
-
-    /**
-     * 检查网卡安全组端口是否符合要求
-     *
-     * 检查网卡安全组。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CheckNetAclRequest 请求对象
-     * @return CompletableFuture<CheckNetAclResponse>
-     */
-    @Deprecated
-    public CompletableFuture<CheckNetAclResponse> checkNetAclAsync(CheckNetAclRequest request) {
-        return hcClient.asyncInvokeHttp(request, SmsMeta.checkNetAcl);
-    }
-
-    /**
-     * 检查网卡安全组端口是否符合要求
-     *
-     * 检查网卡安全组。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CheckNetAclRequest 请求对象
-     * @return AsyncInvoker<CheckNetAclRequest, CheckNetAclResponse>
-     */
-    @Deprecated
-    public AsyncInvoker<CheckNetAclRequest, CheckNetAclResponse> checkNetAclAsyncInvoker(CheckNetAclRequest request) {
-        return new AsyncInvoker<>(request, SmsMeta.checkNetAcl, hcClient);
     }
 
     /**
@@ -494,6 +466,36 @@ public class SmsAsyncClient {
     public AsyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse> deleteTemplatesAsyncInvoker(
         DeleteTemplatesRequest request) {
         return new AsyncInvoker<>(request, SmsMeta.deleteTemplates, hcClient);
+    }
+
+    /**
+     * 批量获取一致性校验结果
+     *
+     * 使用该接口批量导出一致性校验结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportConsistencyResultsRequest 请求对象
+     * @return CompletableFuture<ExportConsistencyResultsResponse>
+     */
+    public CompletableFuture<ExportConsistencyResultsResponse> exportConsistencyResultsAsync(
+        ExportConsistencyResultsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.exportConsistencyResults);
+    }
+
+    /**
+     * 批量获取一致性校验结果
+     *
+     * 使用该接口批量导出一致性校验结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportConsistencyResultsRequest 请求对象
+     * @return AsyncInvoker<ExportConsistencyResultsRequest, ExportConsistencyResultsResponse>
+     */
+    public AsyncInvoker<ExportConsistencyResultsRequest, ExportConsistencyResultsResponse> exportConsistencyResultsAsyncInvoker(
+        ExportConsistencyResultsRequest request) {
+        return new AsyncInvoker<>(request, SmsMeta.exportConsistencyResults, hcClient);
     }
 
     /**
@@ -929,36 +931,6 @@ public class SmsAsyncClient {
     }
 
     /**
-     * 计算sha256
-     *
-     * 计算sha256，加密字段值为uuid。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowSha256Request 请求对象
-     * @return CompletableFuture<ShowSha256Response>
-     */
-    @Deprecated
-    public CompletableFuture<ShowSha256Response> showSha256Async(ShowSha256Request request) {
-        return hcClient.asyncInvokeHttp(request, SmsMeta.showSha256);
-    }
-
-    /**
-     * 计算sha256
-     *
-     * 计算sha256，加密字段值为uuid。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowSha256Request 请求对象
-     * @return AsyncInvoker<ShowSha256Request, ShowSha256Response>
-     */
-    @Deprecated
-    public AsyncInvoker<ShowSha256Request, ShowSha256Response> showSha256AsyncInvoker(ShowSha256Request request) {
-        return new AsyncInvoker<>(request, SmsMeta.showSha256, hcClient);
-    }
-
-    /**
      * 查询指定ID的模板中的目的端服务器的密码
      *
      * 查询指定ID的模板中的目的端服务器的密码。
@@ -1071,37 +1043,6 @@ public class SmsAsyncClient {
     public AsyncInvoker<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> showsSpeedLimitsAsyncInvoker(
         ShowsSpeedLimitsRequest request) {
         return new AsyncInvoker<>(request, SmsMeta.showsSpeedLimits, hcClient);
-    }
-
-    /**
-     * 解锁指定任务的目的端服务器
-     *
-     * 解锁指定任务的目的端服务器。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UnlockTargetEcsRequest 请求对象
-     * @return CompletableFuture<UnlockTargetEcsResponse>
-     */
-    @Deprecated
-    public CompletableFuture<UnlockTargetEcsResponse> unlockTargetEcsAsync(UnlockTargetEcsRequest request) {
-        return hcClient.asyncInvokeHttp(request, SmsMeta.unlockTargetEcs);
-    }
-
-    /**
-     * 解锁指定任务的目的端服务器
-     *
-     * 解锁指定任务的目的端服务器。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UnlockTargetEcsRequest 请求对象
-     * @return AsyncInvoker<UnlockTargetEcsRequest, UnlockTargetEcsResponse>
-     */
-    @Deprecated
-    public AsyncInvoker<UnlockTargetEcsRequest, UnlockTargetEcsResponse> unlockTargetEcsAsyncInvoker(
-        UnlockTargetEcsRequest request) {
-        return new AsyncInvoker<>(request, SmsMeta.unlockTargetEcs, hcClient);
     }
 
     /**
@@ -1543,6 +1484,36 @@ public class SmsAsyncClient {
     }
 
     /**
+     * 检查网卡安全组端口是否符合要求
+     *
+     * 检查网卡安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckNetAclRequest 请求对象
+     * @return CompletableFuture<CheckNetAclResponse>
+     */
+    @Deprecated
+    public CompletableFuture<CheckNetAclResponse> checkNetAclAsync(CheckNetAclRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.checkNetAcl);
+    }
+
+    /**
+     * 检查网卡安全组端口是否符合要求
+     *
+     * 检查网卡安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckNetAclRequest 请求对象
+     * @return AsyncInvoker<CheckNetAclRequest, CheckNetAclResponse>
+     */
+    @Deprecated
+    public AsyncInvoker<CheckNetAclRequest, CheckNetAclResponse> checkNetAclAsyncInvoker(CheckNetAclRequest request) {
+        return new AsyncInvoker<>(request, SmsMeta.checkNetAcl, hcClient);
+    }
+
+    /**
      * 查询主机迁移服务的API版本信息
      *
      * 查询主机迁移服务的API版本信息。
@@ -1598,6 +1569,67 @@ public class SmsAsyncClient {
     public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(
         ShowApiVersionRequest request) {
         return new AsyncInvoker<>(request, SmsMeta.showApiVersion, hcClient);
+    }
+
+    /**
+     * 计算sha256
+     *
+     * 计算sha256，加密字段值为uuid。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSha256Request 请求对象
+     * @return CompletableFuture<ShowSha256Response>
+     */
+    @Deprecated
+    public CompletableFuture<ShowSha256Response> showSha256Async(ShowSha256Request request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.showSha256);
+    }
+
+    /**
+     * 计算sha256
+     *
+     * 计算sha256，加密字段值为uuid。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSha256Request 请求对象
+     * @return AsyncInvoker<ShowSha256Request, ShowSha256Response>
+     */
+    @Deprecated
+    public AsyncInvoker<ShowSha256Request, ShowSha256Response> showSha256AsyncInvoker(ShowSha256Request request) {
+        return new AsyncInvoker<>(request, SmsMeta.showSha256, hcClient);
+    }
+
+    /**
+     * 解锁指定任务的目的端服务器
+     *
+     * 解锁指定任务的目的端服务器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnlockTargetEcsRequest 请求对象
+     * @return CompletableFuture<UnlockTargetEcsResponse>
+     */
+    @Deprecated
+    public CompletableFuture<UnlockTargetEcsResponse> unlockTargetEcsAsync(UnlockTargetEcsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.unlockTargetEcs);
+    }
+
+    /**
+     * 解锁指定任务的目的端服务器
+     *
+     * 解锁指定任务的目的端服务器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnlockTargetEcsRequest 请求对象
+     * @return AsyncInvoker<UnlockTargetEcsRequest, UnlockTargetEcsResponse>
+     */
+    @Deprecated
+    public AsyncInvoker<UnlockTargetEcsRequest, UnlockTargetEcsResponse> unlockTargetEcsAsyncInvoker(
+        UnlockTargetEcsRequest request) {
+        return new AsyncInvoker<>(request, SmsMeta.unlockTargetEcs, hcClient);
     }
 
 }

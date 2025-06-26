@@ -110,6 +110,11 @@ public class CreateRequestEip {
 
     private String bandwidthName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_id")
+
+    private String bandwidthId;
+
     public CreateRequestEip withId(String id) {
         this.id = id;
         return this;
@@ -195,6 +200,23 @@ public class CreateRequestEip {
         this.bandwidthName = bandwidthName;
     }
 
+    public CreateRequestEip withBandwidthId(String bandwidthId) {
+        this.bandwidthId = bandwidthId;
+        return this;
+    }
+
+    /**
+     * 功能说明：带宽ID，创建弹性IP弹性公网IP时可以指定已有的共享带宽  取值范围：共享（WHOLE类型）带宽ID  约束：指定带宽ID时，带宽的其他字段会被忽略；不指定ID时，size/name/charge_mode/share_type必选，用于创建绑定公网IP的独享带宽
+     * @return bandwidthId
+     */
+    public String getBandwidthId() {
+        return bandwidthId;
+    }
+
+    public void setBandwidthId(String bandwidthId) {
+        this.bandwidthId = bandwidthId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -207,12 +229,13 @@ public class CreateRequestEip {
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
             && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.bandwidthSize, that.bandwidthSize)
-            && Objects.equals(this.bandwidthName, that.bandwidthName);
+            && Objects.equals(this.bandwidthName, that.bandwidthName)
+            && Objects.equals(this.bandwidthId, that.bandwidthId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, chargeMode, bandwidthSize, bandwidthName);
+        return Objects.hash(id, type, chargeMode, bandwidthSize, bandwidthName, bandwidthId);
     }
 
     @Override
@@ -224,6 +247,7 @@ public class CreateRequestEip {
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    bandwidthName: ").append(toIndentedString(bandwidthName)).append("\n");
+        sb.append("    bandwidthId: ").append(toIndentedString(bandwidthId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

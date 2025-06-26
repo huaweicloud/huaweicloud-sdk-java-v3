@@ -16,16 +16,6 @@ public class CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody {
     private String elasticResourcePoolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_service_console_url")
-
-    private String cloudServiceConsoleUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "promotion_info")
-
-    private String promotionInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_cu")
 
     private Integer targetCu;
@@ -46,41 +36,6 @@ public class CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody {
 
     public void setElasticResourcePoolName(String elasticResourcePoolName) {
         this.elasticResourcePoolName = elasticResourcePoolName;
-    }
-
-    public CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody withCloudServiceConsoleUrl(
-        String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-        return this;
-    }
-
-    /**
-     * CBC订单跳转DLI console链接
-     * @return cloudServiceConsoleUrl
-     */
-    public String getCloudServiceConsoleUrl() {
-        return cloudServiceConsoleUrl;
-    }
-
-    public void setCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-    }
-
-    public CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody withPromotionInfo(String promotionInfo) {
-        this.promotionInfo = promotionInfo;
-        return this;
-    }
-
-    /**
-     * 优惠信息
-     * @return promotionInfo
-     */
-    public String getPromotionInfo() {
-        return promotionInfo;
-    }
-
-    public void setPromotionInfo(String promotionInfo) {
-        this.promotionInfo = promotionInfo;
     }
 
     public CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody withTargetCu(Integer targetCu) {
@@ -111,13 +66,12 @@ public class CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody {
         CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody that =
             (CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody) obj;
         return Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
-            && Objects.equals(this.cloudServiceConsoleUrl, that.cloudServiceConsoleUrl)
-            && Objects.equals(this.promotionInfo, that.promotionInfo) && Objects.equals(this.targetCu, that.targetCu);
+            && Objects.equals(this.targetCu, that.targetCu);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(elasticResourcePoolName, cloudServiceConsoleUrl, promotionInfo, targetCu);
+        return Objects.hash(elasticResourcePoolName, targetCu);
     }
 
     @Override
@@ -125,8 +79,6 @@ public class CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePeriodElasticResourcePoolSpecChangeOrderRequestBody {\n");
         sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
-        sb.append("    cloudServiceConsoleUrl: ").append(toIndentedString(cloudServiceConsoleUrl)).append("\n");
-        sb.append("    promotionInfo: ").append(toIndentedString(promotionInfo)).append("\n");
         sb.append("    targetCu: ").append(toIndentedString(targetCu)).append("\n");
         sb.append("}");
         return sb.toString();

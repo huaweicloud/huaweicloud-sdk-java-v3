@@ -437,7 +437,7 @@ public class SqlJobDefendRuleRequestBody {
     private Object engineRules;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queueNames")
+    @JsonProperty(value = "queue_names")
 
     private List<String> queueNames = null;
 

@@ -46,7 +46,7 @@ public class AlarmSubUpdateRequest {
     }
 
     /**
-     * 告警订阅名称
+     * **参数解释**： 告警订阅名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -63,7 +63,7 @@ public class AlarmSubUpdateRequest {
     }
 
     /**
-     * 是否开启订阅
+     * **参数解释**： 是否开启订阅。 **取值范围**： 不涉及。
      * @return enable
      */
     public Integer getEnable() {
@@ -80,7 +80,7 @@ public class AlarmSubUpdateRequest {
     }
 
     /**
-     * 告警级别
+     * **参数解释**： 告警级别。 **取值范围**： 不涉及。
      * @return alarmLevel
      */
     public String getAlarmLevel() {
@@ -97,7 +97,7 @@ public class AlarmSubUpdateRequest {
     }
 
     /**
-     * 消息主题地址
+     * **参数解释**： 消息主题地址。 **取值范围**： 不涉及。
      * @return notificationTarget
      */
     public String getNotificationTarget() {
@@ -114,7 +114,7 @@ public class AlarmSubUpdateRequest {
     }
 
     /**
-     * 消息主题名称
+     * **参数解释**： 消息主题名称。 **取值范围**： 不涉及。
      * @return notificationTargetName
      */
     public String getNotificationTargetName() {
@@ -131,7 +131,7 @@ public class AlarmSubUpdateRequest {
     }
 
     /**
-     * 消息主题类型，支持SMN
+     * **参数解释**： 消息主题类型，支持SMN。 **取值范围**： 不涉及。
      * @return notificationTargetType
      */
     public String getNotificationTargetType() {

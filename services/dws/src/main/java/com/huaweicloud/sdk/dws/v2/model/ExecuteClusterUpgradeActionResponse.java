@@ -22,7 +22,7 @@ public class ExecuteClusterUpgradeActionResponse extends SdkResponse {
     }
 
     /**
-     * 集群升级任务ID
+     * **参数解释**： 集群升级任务ID。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {

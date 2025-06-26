@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 数据源信息
+ * **参数解释**： 数据源信息。 **取值范围**： 不涉及。
  */
 public class ExtDataSource {
 
@@ -91,7 +91,7 @@ public class ExtDataSource {
     }
 
     /**
-     * id。
+     * **参数解释**： 数据源ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -108,7 +108,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 数据源名称。
+     * **参数解释**： 数据源名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -125,7 +125,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 类型。
+     * **参数解释**： 类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -142,7 +142,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 数据库。
+     * **参数解释**： 数据库。 **取值范围**： 不涉及。
      * @return connectInfo
      */
     public String getConnectInfo() {
@@ -159,7 +159,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 用户名。
+     * **参数解释**： 用户名。 **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -176,7 +176,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 版本。
+     * **参数解释**： 版本。 **取值范围**： 不涉及。
      * @return version
      */
     public String getVersion() {
@@ -193,7 +193,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 配置状态。
+     * **参数解释**： 配置状态。 **取值范围**： 不涉及。
      * @return configureStatus
      */
     public String getConfigureStatus() {
@@ -210,7 +210,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 状态。
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -227,7 +227,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 数据源id。
+     * **参数解释**： 外部数据源ID。 **取值范围**： 不涉及。
      * @return dataSourceId
      */
     public String getDataSourceId() {
@@ -244,7 +244,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 创建时间。
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。
      * @return created
      */
     public String getCreated() {
@@ -261,7 +261,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 更新时间。
+     * **参数解释**： 更新时间。 **取值范围**： 不涉及。
      * @return updated
      */
     public String getUpdated() {
@@ -278,7 +278,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 数据源更新时间。
+     * **参数解释**： 数据源更新时间。 **取值范围**： 不涉及。
      * @return dataSourceUpdated
      */
     public String getDataSourceUpdated() {
@@ -295,7 +295,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 扩展信息。
+     * **参数解释**： 扩展信息。 **取值范围**： 不涉及。
      * @return extendProperties
      */
     public Object getExtendProperties() {
@@ -312,7 +312,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 描述。
+     * **参数解释**： 描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -329,7 +329,7 @@ public class ExtDataSource {
     }
 
     /**
-     * 失败原因。
+     * **参数解释**： 失败原因。 **取值范围**： 不涉及。
      * @return failReason
      */
     public String getFailReason() {

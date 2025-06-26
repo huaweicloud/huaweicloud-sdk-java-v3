@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 工作计划阶段。
+ * **参数解释**： 工作计划阶段。 **取值范围**： 不涉及。
  */
 public class PlanStage {
 
@@ -64,7 +64,7 @@ public class PlanStage {
     }
 
     /**
-     * 计划月份。
+     * **参数解释**： 计划月份。 **取值范围**： 不涉及。
      * @return month
      */
     public String getMonth() {
@@ -81,7 +81,7 @@ public class PlanStage {
     }
 
     /**
-     * 计划日期。
+     * **参数解释**： 计划日期。 **取值范围**： 不涉及。
      * @return day
      */
     public String getDay() {
@@ -98,7 +98,7 @@ public class PlanStage {
     }
 
     /**
-     * 计划ID。
+     * **参数解释**： 计划ID。 **取值范围**： 不涉及。
      * @return planId
      */
     public String getPlanId() {
@@ -115,7 +115,7 @@ public class PlanStage {
     }
 
     /**
-     * 计划阶段ID。
+     * **参数解释**： 计划阶段ID。 **取值范围**： 不涉及。
      * @return stageId
      */
     public String getStageId() {
@@ -132,7 +132,7 @@ public class PlanStage {
     }
 
     /**
-     * 计划阶段名称。
+     * **参数解释**： 计划阶段名称。 **取值范围**： 不涉及。
      * @return stageName
      */
     public String getStageName() {
@@ -149,7 +149,7 @@ public class PlanStage {
     }
 
     /**
-     * 计划开始时间。
+     * **参数解释**： 计划开始时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -166,7 +166,7 @@ public class PlanStage {
     }
 
     /**
-     * 计划结束时间
+     * **参数解释**： 计划结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -183,7 +183,7 @@ public class PlanStage {
     }
 
     /**
-     * 下次校验时间
+     * **参数解释**： 下次校验时间。 **取值范围**： 不涉及。
      * @return nextValidTime
      */
     public String getNextValidTime() {
@@ -216,7 +216,7 @@ public class PlanStage {
     }
 
     /**
-     * 资源队列列表
+     * **参数解释**： 资源队列列表。 **取值范围**： 不涉及。
      * @return queueList
      */
     public List<QueueResourceItem> getQueueList() {

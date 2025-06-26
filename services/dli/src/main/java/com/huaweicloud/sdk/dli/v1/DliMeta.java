@@ -2063,11 +2063,6 @@ public class DliMeta {
             f -> f.withMarshaller(RunCatalogActionRequest::getBody, RunCatalogActionRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(RunCatalogActionResponse::getBody, RunCatalogActionResponse::setBody));
 
         return builder.build();
     }

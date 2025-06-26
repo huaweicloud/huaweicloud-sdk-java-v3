@@ -86,7 +86,7 @@ public class NetResp {
     }
 
     /**
-     * 虚拟集群ID。
+     * **参数解释**： 虚拟集群ID。 **取值范围**： 不涉及。
      * @return virtualClusterId
      */
     public Integer getVirtualClusterId() {
@@ -103,7 +103,7 @@ public class NetResp {
     }
 
     /**
-     * 查询时间。
+     * **参数解释**： 查询时间。 **取值范围**： 不涉及。
      * @return ctime
      */
     public Long getCtime() {
@@ -120,7 +120,7 @@ public class NetResp {
     }
 
     /**
-     * 主机ID。
+     * **参数解释**： 主机ID。 **取值范围**： 不涉及。
      * @return hostId
      */
     public Integer getHostId() {
@@ -137,7 +137,7 @@ public class NetResp {
     }
 
     /**
-     * 主机名称。
+     * **参数解释**： 主机名称。 **取值范围**： 不涉及。
      * @return hostName
      */
     public String getHostName() {
@@ -154,7 +154,7 @@ public class NetResp {
     }
 
     /**
-     * 实例名称。
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -171,7 +171,7 @@ public class NetResp {
     }
 
     /**
-     * 网卡状态（true代表up/false代表down）。
+     * **参数解释**： 网卡状态。 **取值范围**： true：代表up。 false：代表down。
      * @return up
      */
     public Boolean getUp() {
@@ -188,7 +188,7 @@ public class NetResp {
     }
 
     /**
-     * 网卡速度(Mbps)。
+     * **参数解释**： 网卡速度(Mbps)。 **取值范围**： 不涉及。
      * @return speed
      */
     public Long getSpeed() {
@@ -205,7 +205,7 @@ public class NetResp {
     }
 
     /**
-     * 接收包数(个)。
+     * **参数解释**： 接收包数(个)。 **取值范围**： 不涉及。
      * @return recvPackets
      */
     public Long getRecvPackets() {
@@ -222,7 +222,7 @@ public class NetResp {
     }
 
     /**
-     * 发送包数(个)。
+     * **参数解释**： 发送包数(个)。 **取值范围**： 不涉及。
      * @return sendPackets
      */
     public Long getSendPackets() {
@@ -239,7 +239,7 @@ public class NetResp {
     }
 
     /**
-     * 接收丢包数(个)。
+     * **参数解释**： 接收丢包数(个)。 **取值范围**： 不涉及。
      * @return recvDrop
      */
     public Long getRecvDrop() {
@@ -256,7 +256,7 @@ public class NetResp {
     }
 
     /**
-     * 接收速率(KB/s)。
+     * **参数解释**： 接收速率(KB/s)。 **取值范围**： 不涉及。
      * @return recvRate
      */
     public Double getRecvRate() {
@@ -273,7 +273,7 @@ public class NetResp {
     }
 
     /**
-     * 发送速率(KB/s)。
+     * **参数解释**： 发送速率(KB/s)。 **取值范围**： 不涉及。
      * @return sendRate
      */
     public Double getSendRate() {
@@ -290,7 +290,7 @@ public class NetResp {
     }
 
     /**
-     * 网络速率(KB/s)。
+     * **参数解释**： 网络速率(KB/s)。 **取值范围**： 不涉及。
      * @return ioRate
      */
     public Double getIoRate() {
@@ -307,7 +307,7 @@ public class NetResp {
     }
 
     /**
-     * 网卡名称。
+     * **参数解释**： 网卡名称。 **取值范围**： 不涉及。
      * @return interfaceName
      */
     public String getInterfaceName() {

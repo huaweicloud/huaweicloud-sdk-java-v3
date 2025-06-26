@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 设置一致性校验的结果body体
+ * 设置一致性校验的结果请求体
  */
 public class SetConsistencyResultRequestBody {
 

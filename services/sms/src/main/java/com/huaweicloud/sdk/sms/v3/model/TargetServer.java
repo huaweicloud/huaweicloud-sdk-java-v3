@@ -39,7 +39,7 @@ public class TargetServer {
     private String hostname;
 
     /**
-     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     * 服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
      */
     public static final class OsTypeEnum {
 
@@ -119,7 +119,7 @@ public class TargetServer {
     private String osVersion;
 
     /**
-     * 源端服务器启动类型，如BIOS或者UEFI
+     * 服务器启动类型，如BIOS或者UEFI
      */
     public static final class FirmwareEnum {
 
@@ -369,7 +369,7 @@ public class TargetServer {
     }
 
     /**
-     * 源端在SMS数据库中的ID
+     * 服务器在SMS数据库中的ID
      * @return id
      */
     public String getId() {
@@ -386,7 +386,7 @@ public class TargetServer {
     }
 
     /**
-     * 源端服务器IP，注册源端时必选，更新非必选
+     * 服务器IP，注册源端时必选，更新非必选
      * @return ip
      */
     public String getIp() {
@@ -403,7 +403,7 @@ public class TargetServer {
     }
 
     /**
-     * 用来区分不同源端服务器的名称
+     * 用来区分不同服务器的名称
      * @return name
      */
     public String getName() {
@@ -420,7 +420,7 @@ public class TargetServer {
     }
 
     /**
-     * 源端主机名，注册源端必选，更新非必选
+     * 主机名，注册源端必选，更新非必选
      * @return hostname
      */
     public String getHostname() {
@@ -437,7 +437,7 @@ public class TargetServer {
     }
 
     /**
-     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     * 服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
      * @return osType
      */
     public OsTypeEnum getOsType() {
@@ -471,7 +471,7 @@ public class TargetServer {
     }
 
     /**
-     * 源端服务器启动类型，如BIOS或者UEFI
+     * 服务器启动类型，如BIOS或者UEFI
      * @return firmware
      */
     public FirmwareEnum getFirmware() {
@@ -542,7 +542,7 @@ public class TargetServer {
     }
 
     /**
-     * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
+     * Linux 必选，服务器的Btrfs信息。如果不存在Btrfs，则为[]
      * @return btrfsList
      */
     public List<BtrfsFileSystem> getBtrfsList() {
@@ -575,7 +575,7 @@ public class TargetServer {
     }
 
     /**
-     * 源端服务器的网卡信息
+     * 服务器的网卡信息
      * @return networks
      */
     public List<NetWork> getNetworks() {

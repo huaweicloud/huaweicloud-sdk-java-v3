@@ -41,7 +41,7 @@ public class AddSnapshotCrossRegionPolicyRequestBody {
     }
 
     /**
-     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
+     * **参数解释**： 集群ID。获取方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -58,7 +58,7 @@ public class AddSnapshotCrossRegionPolicyRequestBody {
     }
 
     /**
-     * 目的项目ID
+     * **参数解释**： 目的项目ID。 **取值范围**： 不涉及。
      * @return destinationProjectId
      */
     public String getDestinationProjectId() {
@@ -75,7 +75,7 @@ public class AddSnapshotCrossRegionPolicyRequestBody {
     }
 
     /**
-     * 目的区域
+     * **参数解释**： 目的区域。 **取值范围**： 不涉及。
      * @return destinationRegion
      */
     public String getDestinationRegion() {
@@ -92,7 +92,7 @@ public class AddSnapshotCrossRegionPolicyRequestBody {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public Boolean getStatus() {
@@ -109,7 +109,7 @@ public class AddSnapshotCrossRegionPolicyRequestBody {
     }
 
     /**
-     * 保留天数
+     * **参数解释**： 保留天数。 **取值范围**： 不涉及。
      * @return backKeepDay
      */
     public Integer getBackKeepDay() {

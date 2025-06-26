@@ -86,7 +86,7 @@ public class DiskResp {
     }
 
     /**
-     * 实例名称
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -103,7 +103,7 @@ public class DiskResp {
     }
 
     /**
-     * 实例ID
+     * **参数解释**： 实例ID。 **取值范围**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -120,7 +120,7 @@ public class DiskResp {
     }
 
     /**
-     * 主机名称
+     * **参数解释**： 主机名称。 **取值范围**： 不涉及。
      * @return hostName
      */
     public String getHostName() {
@@ -137,7 +137,7 @@ public class DiskResp {
     }
 
     /**
-     * 磁盘名称
+     * **参数解释**： 磁盘名称。 **取值范围**： 不涉及。
      * @return diskName
      */
     public String getDiskName() {
@@ -154,7 +154,7 @@ public class DiskResp {
     }
 
     /**
-     * 磁盘类型(系统盘、数据盘、日志盘)。
+     * **参数解释**： 磁盘类型(系统盘、数据盘、日志盘)。 **取值范围**： 不涉及。
      * @return diskType
      */
     public String getDiskType() {
@@ -171,7 +171,7 @@ public class DiskResp {
     }
 
     /**
-     * 磁盘总容量(GB)。
+     * **参数解释**： 磁盘总容量(GB)。 **取值范围**： 不涉及。
      * @return total
      */
     public Double getTotal() {
@@ -188,7 +188,7 @@ public class DiskResp {
     }
 
     /**
-     * 磁盘已使用容量(GB)。
+     * **参数解释**： 磁盘已使用容量(GB)。 **取值范围**： 不涉及。
      * @return used
      */
     public Double getUsed() {
@@ -205,7 +205,7 @@ public class DiskResp {
     }
 
     /**
-     * 磁盘可用容量(GB)。
+     * **参数解释**： 磁盘可用容量(GB)。 **取值范围**： 不涉及。
      * @return available
      */
     public Double getAvailable() {
@@ -222,7 +222,7 @@ public class DiskResp {
     }
 
     /**
-     * 磁盘使用率(%)。
+     * **参数解释**： 磁盘使用率(%)。 **取值范围**： 不涉及。
      * @return usedPercentage
      */
     public Double getUsedPercentage() {
@@ -239,7 +239,7 @@ public class DiskResp {
     }
 
     /**
-     * IO等待时间(ms)。
+     * **参数解释**： IO等待时间(ms)。 **取值范围**： 不涉及。
      * @return await
      */
     public Double getAwait() {
@@ -256,7 +256,7 @@ public class DiskResp {
     }
 
     /**
-     * IO服务时间(ms)。
+     * **参数解释**： IO服务时间(ms)。 **取值范围**： 不涉及。
      * @return svctm
      */
     public Double getSvctm() {
@@ -273,7 +273,7 @@ public class DiskResp {
     }
 
     /**
-     * IO使用率(%)。
+     * **参数解释**： IO使用率(%)。 **取值范围**： 不涉及。
      * @return util
      */
     public Double getUtil() {
@@ -290,7 +290,7 @@ public class DiskResp {
     }
 
     /**
-     * 磁盘读速率(KB/s)。
+     * **参数解释**： 磁盘读速率(KB/s)。 **取值范围**： 不涉及。
      * @return readRate
      */
     public Double getReadRate() {
@@ -307,7 +307,7 @@ public class DiskResp {
     }
 
     /**
-     * 磁盘写速率(KB/s)。
+     * **参数解释**： 磁盘写速率(KB/s)。 **取值范围**： 不涉及。
      * @return writeRate
      */
     public Double getWriteRate() {

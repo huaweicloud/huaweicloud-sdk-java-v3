@@ -51,7 +51,7 @@ public class ListWorkloadQueueResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 工作负载队列名称。 **取值范围**： 不涉及。
+     * **参数解释**： 资源池名称。 **取值范围**： 不涉及。
      * @return workloadQueueNameList
      */
     public List<String> getWorkloadQueueNameList() {

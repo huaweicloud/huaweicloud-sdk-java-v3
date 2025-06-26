@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 申请的域名信息。
+ * **参数解释**： 申请的域名信息。 **取值范围**： 不涉及。
  */
 public class CreateClusterDns {
 
@@ -31,7 +31,7 @@ public class CreateClusterDns {
     }
 
     /**
-     * 待创建的域名。
+     * **参数解释**： 待创建的域名。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -48,7 +48,7 @@ public class CreateClusterDns {
     }
 
     /**
-     * 域名类型。 - public：公网域名。 - private：内网域名。
+     * **参数解释**： 域名类型。 **取值范围**： public：公网域名。 private：内网域名。
      * @return type
      */
     public String getType() {
@@ -65,7 +65,7 @@ public class CreateClusterDns {
     }
 
     /**
-     * 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。 - 取值范围：300~2147483647。 - 默认值为300s。
+     * **参数解释**： 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。默认值为300s。 **取值范围**： 300~2147483647。
      * @return ttl
      */
     public Integer getTtl() {

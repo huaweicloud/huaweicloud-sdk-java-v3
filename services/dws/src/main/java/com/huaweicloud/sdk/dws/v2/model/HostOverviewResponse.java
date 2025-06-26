@@ -141,7 +141,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 实例名称
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -158,7 +158,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 主机名称
+     * **参数解释**： 主机名称。 **取值范围**： 不涉及。
      * @return hostName
      */
     public String getHostName() {
@@ -175,7 +175,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 主机状态
+     * **参数解释**： 主机状态。 **取值范围**： 不涉及。
      * @return hostStat
      */
     public String getHostStat() {
@@ -192,7 +192,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * IP地址
+     * **参数解释**： IP地址。 **取值范围**： 不涉及。
      * @return workIp
      */
     public String getWorkIp() {
@@ -209,7 +209,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 系统中未使用的内存(GB)。
+     * **参数解释**： 系统中未使用的内存(GB)。 **取值范围**： 不涉及。
      * @return memFree
      */
     public Double getMemFree() {
@@ -226,7 +226,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 总内存(GB)。
+     * **参数解释**： 总内存(GB)。 **取值范围**： 不涉及。
      * @return memTotal
      */
     public Double getMemTotal() {
@@ -243,7 +243,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 内存使用率(GB)。
+     * **参数解释**： 内存使用率(GB)。 **取值范围**： 不涉及。
      * @return memUsage
      */
     public Double getMemUsage() {
@@ -260,7 +260,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 缓存内存(GB)。
+     * **参数解释**： 缓存内存(GB)。 **取值范围**： 不涉及。
      * @return memCached
      */
     public Double getMemCached() {
@@ -277,7 +277,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 缓冲内存(MB)。
+     * **参数解释**： 缓冲内存(MB)。 **取值范围**： 不涉及。
      * @return memBuffer
      */
     public Double getMemBuffer() {
@@ -294,7 +294,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * ram暂存在swap中的大小(GB)。
+     * **参数解释**： ram暂存在swap中的大小(GB)。 **取值范围**： 不涉及。
      * @return swapFree
      */
     public Double getSwapFree() {
@@ -311,7 +311,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 交换空间总和(GB)。
+     * **参数解释**： 交换空间总和(GB)。 **取值范围**： 不涉及。
      * @return swapTotal
      */
     public Double getSwapTotal() {
@@ -328,7 +328,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * CPU使用率(%)。
+     * **参数解释**： CPU使用率(%)。 **取值范围**： 不涉及。
      * @return cpuUsage
      */
     public Double getCpuUsage() {
@@ -345,7 +345,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 系统CPU占用率(%)。
+     * **参数解释**： 系统CPU占用率(%)。 **取值范围**： 不涉及。
      * @return cpuUsageSys
      */
     public Double getCpuUsageSys() {
@@ -362,7 +362,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 用户CPU占用率(%)。
+     * **参数解释**： 用户CPU占用率(%)。 **取值范围**： 不涉及。
      * @return cpuUsageUsr
      */
     public Double getCpuUsageUsr() {
@@ -379,7 +379,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 空闲CPU占用率(%)。
+     * **参数解释**： 空闲CPU占用率(%)。 **取值范围**： 不涉及。
      * @return cpuIdle
      */
     public Double getCpuIdle() {
@@ -396,7 +396,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * IO等待(%)。
+     * **参数解释**： IO等待(%)。 **取值范围**： 不涉及。
      * @return cpuIowait
      */
     public Double getCpuIowait() {
@@ -413,7 +413,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 磁盘平均使用率(%)。
+     * **参数解释**： 磁盘平均使用率(%)。 **取值范围**： 不涉及。
      * @return diskUsageAvg
      */
     public Double getDiskUsageAvg() {
@@ -430,7 +430,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 磁盘总容量(GB)。
+     * **参数解释**： 磁盘总容量(GB)。 **取值范围**： 不涉及。
      * @return diskTotal
      */
     public Double getDiskTotal() {
@@ -447,7 +447,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 磁盘使用容量(GB)。
+     * **参数解释**： 磁盘使用容量(GB)。 **取值范围**： 不涉及。
      * @return diskUsed
      */
     public Double getDiskUsed() {
@@ -464,7 +464,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 磁盘可用容量(GB)。
+     * **参数解释**： 磁盘可用容量(GB)。 **取值范围**： 不涉及。
      * @return diskAvailable
      */
     public Double getDiskAvailable() {
@@ -481,7 +481,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 磁盘IO(KB/s)。
+     * **参数解释**： 磁盘IO(KB/s)。 **取值范围**： 不涉及。
      * @return diskIo
      */
     public Double getDiskIo() {
@@ -498,7 +498,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 磁盘读速率(KB/s)。
+     * **参数解释**： 磁盘读速率(KB/s)。 **取值范围**： 不涉及。
      * @return diskIoRead
      */
     public Double getDiskIoRead() {
@@ -515,7 +515,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 磁盘写速率(KB/s)。
+     * **参数解释**： 磁盘写速率(KB/s)。 **取值范围**： 不涉及。
      * @return diskIoWrite
      */
     public Double getDiskIoWrite() {
@@ -532,7 +532,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * TCP协议栈重传率(%)。
+     * **参数解释**： TCP协议栈重传率(%)。 **取值范围**： 不涉及。
      * @return tcpResendRate
      */
     public Double getTcpResendRate() {
@@ -549,7 +549,7 @@ public class HostOverviewResponse {
     }
 
     /**
-     * 网络IO(KB/s)。
+     * **参数解释**： 网络IO(KB/s)。 **取值范围**： 不涉及。
      * @return netIo
      */
     public Double getNetIo() {

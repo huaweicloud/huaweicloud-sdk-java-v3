@@ -36,7 +36,7 @@ public class CheckDisasterNameRequest {
     }
 
     /**
-     * 容灾名称
+     * **参数解释**： 容灾名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return drName
      */
     public String getDrName() {
@@ -53,7 +53,7 @@ public class CheckDisasterNameRequest {
     }
 
     /**
-     * 容灾类型
+     * **参数解释**： 容灾类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -70,7 +70,7 @@ public class CheckDisasterNameRequest {
     }
 
     /**
-     * 备集群所在region
+     * **参数解释**： 备集群所在局点。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return standbyRegion
      */
     public String getStandbyRegion() {
@@ -87,7 +87,7 @@ public class CheckDisasterNameRequest {
     }
 
     /**
-     * 备集群所在项目ID
+     * **参数解释**： 备集群所在项目ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return standbyProjectId
      */
     public String getStandbyProjectId() {

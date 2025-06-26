@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 工作计划日志
+ * **参数解释**： 工作计划日志。 **取值范围**： 不涉及。
  */
 public class PlanLog {
 
@@ -36,7 +36,7 @@ public class PlanLog {
     }
 
     /**
-     * 执行时间
+     * **参数解释**： 执行时间。 **取值范围**： 不涉及。
      * @return execTime
      */
     public String getExecTime() {
@@ -53,7 +53,7 @@ public class PlanLog {
     }
 
     /**
-     * 执行计划阶段
+     * **参数解释**： 执行计划阶段。 **取值范围**： 不涉及。
      * @return stageInfo
      */
     public String getStageInfo() {
@@ -70,7 +70,7 @@ public class PlanLog {
     }
 
     /**
-     * 执行结果。
+     * **参数解释**： 执行结果。 **取值范围**： 不涉及。
      * @return execResult
      */
     public Integer getExecResult() {
@@ -87,7 +87,7 @@ public class PlanLog {
     }
 
     /**
-     * 执行日志。
+     * **参数解释**： 执行日志。 **取值范围**： 不涉及。
      * @return execLog
      */
     public String getExecLog() {

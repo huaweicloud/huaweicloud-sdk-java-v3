@@ -41,7 +41,7 @@ public class ListQueriesStatus {
     }
 
     /**
-     * 平均查询等待时间。
+     * **参数解释**： 平均查询等待时间。 **取值范围**： 不涉及。
      * @return averageQueryWaitingTime
      */
     public Double getAverageQueryWaitingTime() {
@@ -58,7 +58,7 @@ public class ListQueriesStatus {
     }
 
     /**
-     * 平均查询耗时。
+     * **参数解释**： 平均查询耗时。 **取值范围**： 不涉及。
      * @return averageTimeConsumptionOfQueries
      */
     public Double getAverageTimeConsumptionOfQueries() {
@@ -75,7 +75,7 @@ public class ListQueriesStatus {
     }
 
     /**
-     * 平均会话耗时。
+     * **参数解释**： 平均会话耗时。 **取值范围**： 不涉及。
      * @return averageTimeConsumptionOfSessions
      */
     public Double getAverageTimeConsumptionOfSessions() {
@@ -92,7 +92,7 @@ public class ListQueriesStatus {
     }
 
     /**
-     * 查询数量。
+     * **参数解释**： 查询数量。 **取值范围**： 不涉及。
      * @return queriesCount
      */
     public Long getQueriesCount() {
@@ -109,7 +109,7 @@ public class ListQueriesStatus {
     }
 
     /**
-     * 会话数量。
+     * **参数解释**： 会话数量。 **取值范围**： 不涉及。
      * @return sessionCount
      */
     public Long getSessionCount() {

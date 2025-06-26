@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 重分布进度信息
+ * **参数解释**： 重分布进度信息。 **取值范围**： 不涉及。
  */
 public class RedisProgress {
 

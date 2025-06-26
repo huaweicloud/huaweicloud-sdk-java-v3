@@ -46,7 +46,7 @@ public class ListSnapshotsResponse extends SdkResponse {
     }
 
     /**
-     * 快照对象列表。
+     * **参数解释**： 快照对象列表。 **取值范围**： 不涉及。
      * @return snapshots
      */
     public List<Snapshots> getSnapshots() {
@@ -63,7 +63,7 @@ public class ListSnapshotsResponse extends SdkResponse {
     }
 
     /**
-     * 快照对象列表总数
+     * **参数解释**： 列表总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

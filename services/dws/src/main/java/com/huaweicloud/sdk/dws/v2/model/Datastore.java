@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群版本
+ * **参数解释**： 集群版本。 **取值范围**： 不涉及。
  */
 public class Datastore {
 
@@ -26,7 +26,7 @@ public class Datastore {
     }
 
     /**
-     * 集群类型。
+     * **参数解释**： 集群类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -43,7 +43,7 @@ public class Datastore {
     }
 
     /**
-     * 集群版本。
+     * **参数解释**： 集群版本。 **取值范围**： 不涉及。
      * @return version
      */
     public String getVersion() {

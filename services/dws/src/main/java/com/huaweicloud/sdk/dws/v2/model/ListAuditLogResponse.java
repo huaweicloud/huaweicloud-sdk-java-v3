@@ -51,7 +51,7 @@ public class ListAuditLogResponse extends SdkResponse {
     }
 
     /**
-     * 审计日志列表。
+     * **参数解释**： 审计日志列表。 **取值范围**： 不涉及。
      * @return records
      */
     public List<AuditDumpRecord> getRecords() {
@@ -85,7 +85,7 @@ public class ListAuditLogResponse extends SdkResponse {
     }
 
     /**
-     * 总数。
+     * **参数解释**： 总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

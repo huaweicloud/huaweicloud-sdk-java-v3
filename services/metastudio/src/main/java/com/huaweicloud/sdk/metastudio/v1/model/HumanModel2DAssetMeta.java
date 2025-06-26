@@ -34,7 +34,7 @@ public class HumanModel2DAssetMeta {
     private Boolean supportLive;
 
     /**
-     * **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
+     * **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型 * V3_3：V3.3版本模型
      */
     public static final class ModelVersionEnum {
 
@@ -53,6 +53,11 @@ public class HumanModel2DAssetMeta {
          */
         public static final ModelVersionEnum V3_2 = new ModelVersionEnum("V3_2");
 
+        /**
+         * Enum V3_3 for value: "V3_3"
+         */
+        public static final ModelVersionEnum V3_3 = new ModelVersionEnum("V3_3");
+
         private static final Map<String, ModelVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModelVersionEnum> createStaticFields() {
@@ -60,6 +65,7 @@ public class HumanModel2DAssetMeta {
             map.put("V2", V2);
             map.put("V3", V3);
             map.put("V3_2", V3_2);
+            map.put("V3_3", V3_3);
             return Collections.unmodifiableMap(map);
         }
 
@@ -196,7 +202,7 @@ public class HumanModel2DAssetMeta {
     }
 
     /**
-     * **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
+     * **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型 * V3_3：V3.3版本模型
      * @return modelVersion
      */
     public ModelVersionEnum getModelVersion() {

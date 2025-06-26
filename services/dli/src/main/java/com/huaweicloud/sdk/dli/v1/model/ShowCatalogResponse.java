@@ -34,6 +34,16 @@ public class ShowCatalogResponse extends SdkResponse {
 
     private Map<String, String> parameters = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
     public ShowCatalogResponse withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
         return this;
@@ -118,6 +128,40 @@ public class ShowCatalogResponse extends SdkResponse {
         this.parameters = parameters;
     }
 
+    public ShowCatalogResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ShowCatalogResponse withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * catalog状态。CREATING：catalog创建中；ACTIVE：catalog可使用；FAILED：catalog创建失败。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -128,12 +172,13 @@ public class ShowCatalogResponse extends SdkResponse {
         }
         ShowCatalogResponse that = (ShowCatalogResponse) obj;
         return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.parameters, that.parameters);
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isSuccess, name, createTime, parameters);
+        return Objects.hash(isSuccess, name, createTime, parameters, description, status);
     }
 
     @Override
@@ -144,6 +189,8 @@ public class ShowCatalogResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -10,6 +10,9 @@ import com.huaweicloud.sdk.vpn.v5.model.AddVpnUsersToGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.AddVpnUsersToGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnConnectionRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnConnectionRequestBody;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersRequest;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersResponse;
@@ -1148,6 +1151,30 @@ public class VpnMeta {
             String.class,
             f -> f.withMarshaller(UpdateVpnAccessPolicyResponse::getHeaderResponseToken,
                 UpdateVpnAccessPolicyResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateVpnConnectionRequest, BatchCreateVpnConnectionResponse> batchCreateVpnConnection =
+        genForBatchCreateVpnConnection();
+
+    private static HttpRequestDef<BatchCreateVpnConnectionRequest, BatchCreateVpnConnectionResponse> genForBatchCreateVpnConnection() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateVpnConnectionRequest, BatchCreateVpnConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchCreateVpnConnectionRequest.class, BatchCreateVpnConnectionResponse.class)
+                .withName("BatchCreateVpnConnection")
+                .withUri("/v5/{project_id}/vpn-connections/batch-create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreateVpnConnectionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateVpnConnectionRequestBody.class),
+            f -> f.withMarshaller(BatchCreateVpnConnectionRequest::getBody, BatchCreateVpnConnectionRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 

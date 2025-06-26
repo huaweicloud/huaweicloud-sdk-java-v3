@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 规格详细信息。
+ * **参数解释**： 规格详细信息。 **取值范围**： 不涉及。
  */
 public class Detail {
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 容灾集群信息
+ * **参数解释**： 容灾集群信息。 **取值范围**： 不涉及。
  */
 public class DisasterRecoveryCluster {
 
@@ -61,7 +61,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * 容灾集群信息ID
+     * **参数解释**： 容灾集群信息ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -78,7 +78,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * 容灾集群名称
+     * **参数解释**： 容灾集群名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -95,7 +95,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * 容灾集群所在AZ
+     * **参数解释**： 容灾集群所在可用区。 **取值范围**： 不涉及。
      * @return clusterAz
      */
     public String getClusterAz() {
@@ -112,7 +112,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * 容灾集群角色
+     * **参数解释**： 容灾集群角色。 **取值范围**： 不涉及。
      * @return role
      */
     public String getRole() {
@@ -129,7 +129,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * 容灾集群所在region
+     * **参数解释**： 容灾集群所在region。 **取值范围**： 不涉及。
      * @return region
      */
     public String getRegion() {
@@ -146,7 +146,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * 容灾集群状态
+     * **参数解释**： 容灾集群状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -163,7 +163,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * 容灾进度
+     * **参数解释**： 容灾进度。 **取值范围**： 不涉及。
      * @return progress
      */
     public String getProgress() {
@@ -180,7 +180,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * 上一次容灾时间
+     * **参数解释**： 上一次容灾时间。 **取值范围**： 不涉及。
      * @return lastSuccessTime
      */
     public String getLastSuccessTime() {
@@ -197,7 +197,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * OBS桶名称
+     * **参数解释**： OBS桶名称。 **取值范围**： 不涉及。
      * @return obsBucketName
      */
     public String getObsBucketName() {

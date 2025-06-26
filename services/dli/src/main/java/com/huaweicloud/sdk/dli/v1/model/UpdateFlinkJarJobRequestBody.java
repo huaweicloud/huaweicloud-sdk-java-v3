@@ -109,6 +109,11 @@ public class UpdateFlinkJarJobRequestBody {
     private String flinkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_agency_urn")
+
+    private String executionAgencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image")
 
     private String image;
@@ -503,6 +508,23 @@ public class UpdateFlinkJarJobRequestBody {
         this.flinkVersion = flinkVersion;
     }
 
+    public UpdateFlinkJarJobRequestBody withExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+        return this;
+    }
+
+    /**
+     * 授权给DLI的委托名。Flink1.15版本时支持配置该参数。
+     * @return executionAgencyUrn
+     */
+    public String getExecutionAgencyUrn() {
+        return executionAgencyUrn;
+    }
+
+    public void setExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+    }
+
     public UpdateFlinkJarJobRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -669,8 +691,9 @@ public class UpdateFlinkJarJobRequestBody {
             && Objects.equals(this.dependencyJars, that.dependencyJars)
             && Objects.equals(this.dependencyFiles, that.dependencyFiles) && Objects.equals(this.tmCus, that.tmCus)
             && Objects.equals(this.tmSlotNum, that.tmSlotNum) && Objects.equals(this.feature, that.feature)
-            && Objects.equals(this.flinkVersion, that.flinkVersion) && Objects.equals(this.image, that.image)
-            && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
+            && Objects.equals(this.flinkVersion, that.flinkVersion)
+            && Objects.equals(this.executionAgencyUrn, that.executionAgencyUrn)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
             && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
             && Objects.equals(this.checkpointPath, that.checkpointPath)
             && Objects.equals(this.runtimeConfig, that.runtimeConfig) && Objects.equals(this.jobType, that.jobType)
@@ -699,6 +722,7 @@ public class UpdateFlinkJarJobRequestBody {
             tmSlotNum,
             feature,
             flinkVersion,
+            executionAgencyUrn,
             image,
             resumeCheckpoint,
             resumeMaxNum,
@@ -732,6 +756,7 @@ public class UpdateFlinkJarJobRequestBody {
         sb.append("    tmSlotNum: ").append(toIndentedString(tmSlotNum)).append("\n");
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
         sb.append("    flinkVersion: ").append(toIndentedString(flinkVersion)).append("\n");
+        sb.append("    executionAgencyUrn: ").append(toIndentedString(executionAgencyUrn)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    resumeCheckpoint: ").append(toIndentedString(resumeCheckpoint)).append("\n");
         sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");

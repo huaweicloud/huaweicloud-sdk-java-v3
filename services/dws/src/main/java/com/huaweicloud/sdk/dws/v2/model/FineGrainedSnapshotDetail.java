@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 细粒度备份信息
+ * **参数解释**： 细粒度备份信息。 **取值范围**： 不涉及。
  */
 public class FineGrainedSnapshotDetail {
 
@@ -34,7 +34,7 @@ public class FineGrainedSnapshotDetail {
     }
 
     /**
-     * 数据库。
+     * **参数解释**： 数据库。 **取值范围**： 不涉及。
      * @return database
      */
     public String getDatabase() {
@@ -67,7 +67,7 @@ public class FineGrainedSnapshotDetail {
     }
 
     /**
-     * 模式列表。
+     * **参数解释**： 模式列表。 **取值范围**： 不涉及。
      * @return schemaList
      */
     public List<String> getSchemaList() {
@@ -100,7 +100,7 @@ public class FineGrainedSnapshotDetail {
     }
 
     /**
-     * 表集合。
+     * **参数解释**： 表集合。 **取值范围**： 不涉及。
      * @return tableList
      */
     public List<String> getTableList() {

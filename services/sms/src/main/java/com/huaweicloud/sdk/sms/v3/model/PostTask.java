@@ -196,6 +196,11 @@ public class PostTask {
 
     private Boolean isNeedConsistencyCheck;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_migration_test")
+
+    private Boolean needMigrationTest;
+
     public PostTask withName(String name) {
         this.name = name;
         return this;
@@ -594,6 +599,23 @@ public class PostTask {
         this.isNeedConsistencyCheck = isNeedConsistencyCheck;
     }
 
+    public PostTask withNeedMigrationTest(Boolean needMigrationTest) {
+        this.needMigrationTest = needMigrationTest;
+        return this;
+    }
+
+    /**
+     * 是否开启迁移演练
+     * @return needMigrationTest
+     */
+    public Boolean getNeedMigrationTest() {
+        return needMigrationTest;
+    }
+
+    public void setNeedMigrationTest(Boolean needMigrationTest) {
+        this.needMigrationTest = needMigrationTest;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -617,7 +639,8 @@ public class PostTask {
             && Objects.equals(this.startNetworkCheck, that.startNetworkCheck)
             && Objects.equals(this.speedLimit, that.speedLimit)
             && Objects.equals(this.overSpeedThreshold, that.overSpeedThreshold)
-            && Objects.equals(this.isNeedConsistencyCheck, that.isNeedConsistencyCheck);
+            && Objects.equals(this.isNeedConsistencyCheck, that.isNeedConsistencyCheck)
+            && Objects.equals(this.needMigrationTest, that.needMigrationTest);
     }
 
     @Override
@@ -643,7 +666,8 @@ public class PostTask {
             startNetworkCheck,
             speedLimit,
             overSpeedThreshold,
-            isNeedConsistencyCheck);
+            isNeedConsistencyCheck,
+            needMigrationTest);
     }
 
     @Override
@@ -672,6 +696,7 @@ public class PostTask {
         sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("    overSpeedThreshold: ").append(toIndentedString(overSpeedThreshold)).append("\n");
         sb.append("    isNeedConsistencyCheck: ").append(toIndentedString(isNeedConsistencyCheck)).append("\n");
+        sb.append("    needMigrationTest: ").append(toIndentedString(needMigrationTest)).append("\n");
         sb.append("}");
         return sb.toString();
     }

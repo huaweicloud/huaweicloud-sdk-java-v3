@@ -30,7 +30,7 @@ public class ListUpdateRecordResponse extends SdkResponse {
     }
 
     /**
-     * 集群升级记录总数
+     * **参数解释**： 集群升级记录总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class ListUpdateRecordResponse extends SdkResponse {
     }
 
     /**
-     * 集群升级记录列表
+     * **参数解释**： 集群升级记录列表。 **取值范围**： 不涉及。
      * @return records
      */
     public List<ClusterUpdateRecordResp> getRecords() {

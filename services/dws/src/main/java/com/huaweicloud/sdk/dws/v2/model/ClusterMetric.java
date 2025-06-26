@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ClusterMetric
+ * **参数解释**： 指标详情。 **取值范围**： 不涉及。
  */
 public class ClusterMetric {
 
@@ -49,7 +49,7 @@ public class ClusterMetric {
     }
 
     /**
-     * 指标名称。
+     * **参数解释**： 指标名称。 **取值范围**： 不涉及。
      * @return scope
      */
     public String getScope() {
@@ -82,7 +82,7 @@ public class ClusterMetric {
     }
 
     /**
-     * 指标表相关字段信息。
+     * **参数解释**： 指标表相关字段信息。 **取值范围**： 不涉及。
      * @return fields
      */
     public List<SimpleFieldDto> getFields() {
@@ -99,7 +99,7 @@ public class ClusterMetric {
     }
 
     /**
-     * 作用域。
+     * **参数解释**： 作用域。 **取值范围**： 不涉及。
      * @return metricName
      */
     public String getMetricName() {
@@ -116,7 +116,7 @@ public class ClusterMetric {
     }
 
     /**
-     * 采集速率。
+     * **参数解释**： 采集速率。 **取值范围**： 不涉及。
      * @return collectRate
      */
     public Integer getCollectRate() {
@@ -149,7 +149,7 @@ public class ClusterMetric {
     }
 
     /**
-     * 采集时间范围。
+     * **参数解释**： 采集时间范围。 **取值范围**： 不涉及。
      * @return collectRange
      */
     public List<String> getCollectRange() {
@@ -166,7 +166,7 @@ public class ClusterMetric {
     }
 
     /**
-     * 创建时间。
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。
      * @return createTime
      */
     public String getCreateTime() {

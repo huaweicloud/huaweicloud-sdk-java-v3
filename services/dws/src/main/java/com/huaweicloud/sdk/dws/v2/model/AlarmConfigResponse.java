@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 告警配置详情
+ * **参数解释**： 告警配置详情。 **取值范围**： 不涉及。
  */
 public class AlarmConfigResponse {
 
@@ -61,7 +61,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 告警配置ID
+     * **参数解释**： 告警配置ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -78,7 +78,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 告警ID
+     * **参数解释**： 告警ID。 **取值范围**： 不涉及。
      * @return alarmId
      */
     public String getAlarmId() {
@@ -95,7 +95,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 告警名称
+     * **参数解释**： 告警名称。 **取值范围**： 不涉及。
      * @return alarmName
      */
     public String getAlarmName() {
@@ -112,7 +112,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 所属服务，支持DWS,DLI,DGC,CloudTable,CDM,GES,CSS
+     * **参数解释**： 所属服务。 **取值范围**： 不涉及。
      * @return nameSpace
      */
     public String getNameSpace() {
@@ -129,7 +129,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 告警级别
+     * **参数解释**： 告警级别。 **取值范围**： 不涉及。
      * @return alarmLevel
      */
     public String getAlarmLevel() {
@@ -146,7 +146,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 用户是否可见
+     * **参数解释**： 用户是否可见。 **取值范围**： 不涉及。
      * @return isUserVisible
      */
     public String getIsUserVisible() {
@@ -163,7 +163,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 是否覆盖
+     * **参数解释**： 是否覆盖。 **取值范围**： 不涉及。
      * @return isConverge
      */
     public String getIsConverge() {
@@ -180,7 +180,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 覆盖时间
+     * **参数解释**： 覆盖时间。 **取值范围**： 不涉及。
      * @return convergeTime
      */
     public Integer getConvergeTime() {
@@ -197,7 +197,7 @@ public class AlarmConfigResponse {
     }
 
     /**
-     * 运维是否可见
+     * **参数解释**： 运维是否可见。 **取值范围**： 不涉及。
      * @return isMaintainVisible
      */
     public String getIsMaintainVisible() {

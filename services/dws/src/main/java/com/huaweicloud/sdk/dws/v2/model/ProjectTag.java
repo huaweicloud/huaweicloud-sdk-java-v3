@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 标签详情。
+ * **参数解释**： 标签详情。 **取值范围**： 不涉及。
  */
 public class ProjectTag {
 
@@ -29,7 +29,7 @@ public class ProjectTag {
     }
 
     /**
-     * 键。
+     * **参数解释**： 键。 **取值范围**： 不涉及。
      * @return key
      */
     public String getKey() {
@@ -62,7 +62,7 @@ public class ProjectTag {
     }
 
     /**
-     * 值。
+     * **参数解释**： 值。 **取值范围**： 不涉及。
      * @return values
      */
     public List<String> getValues() {

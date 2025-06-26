@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.coc.v1.model.ApprovalJobScriptModel;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequest;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewResponse;
+import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
@@ -15,6 +17,8 @@ import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentResponse;
@@ -37,6 +41,7 @@ import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.DiagnosisTaskSubmitBody;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.EditScriptModel;
@@ -81,6 +86,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsReq;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListDiagnosisTasksRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListDiagnosisTasksResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentsRequest;
@@ -123,12 +130,21 @@ import com.huaweicloud.sdk.coc.v1.model.OperateExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
 import com.huaweicloud.sdk.coc.v1.model.ReportCustomEventRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ScheduledTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ScriptExecuteModel;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisNodeRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisNodeResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisSummaryRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisSummaryResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
@@ -480,6 +496,227 @@ public class CocMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReportCustomEventRequestBody.class),
             f -> f.withMarshaller(CreateReportCustomEventRequest::getBody, CreateReportCustomEventRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelDiagnosisTaskRequest, CancelDiagnosisTaskResponse> cancelDiagnosisTask =
+        genForCancelDiagnosisTask();
+
+    private static HttpRequestDef<CancelDiagnosisTaskRequest, CancelDiagnosisTaskResponse> genForCancelDiagnosisTask() {
+        // basic
+        HttpRequestDef.Builder<CancelDiagnosisTaskRequest, CancelDiagnosisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelDiagnosisTaskRequest.class, CancelDiagnosisTaskResponse.class)
+                .withName("CancelDiagnosisTask")
+                .withUri("/v1/diagnosis/tasks/{task_id}/cancel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelDiagnosisTaskRequest::getTaskId, CancelDiagnosisTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> createDiagnosisTask =
+        genForCreateDiagnosisTask();
+
+    private static HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> genForCreateDiagnosisTask() {
+        // basic
+        HttpRequestDef.Builder<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDiagnosisTaskRequest.class, CreateDiagnosisTaskResponse.class)
+                .withName("CreateDiagnosisTask")
+                .withUri("/v1/diagnosis/tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DiagnosisTaskSubmitBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DiagnosisTaskSubmitBody.class),
+            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getBody, CreateDiagnosisTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> listDiagnosisTasks =
+        genForListDiagnosisTasks();
+
+    private static HttpRequestDef<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> genForListDiagnosisTasks() {
+        // basic
+        HttpRequestDef.Builder<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDiagnosisTasksRequest.class, ListDiagnosisTasksResponse.class)
+                .withName("ListDiagnosisTasks")
+                .withUri("/v1/diagnosis/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getTaskId, ListDiagnosisTasksRequest::setTaskId));
+        builder.<ListDiagnosisTasksRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDiagnosisTasksRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getType, ListDiagnosisTasksRequest::setType));
+        builder.<ListDiagnosisTasksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDiagnosisTasksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getStatus, ListDiagnosisTasksRequest::setStatus));
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getRegion, ListDiagnosisTasksRequest::setRegion));
+        builder.<String>withRequestField("creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getCreator, ListDiagnosisTasksRequest::setCreator));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getStartTime, ListDiagnosisTasksRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getEndTime, ListDiagnosisTasksRequest::setEndTime));
+        builder.<Integer>withRequestField("page_index",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getPageIndex, ListDiagnosisTasksRequest::setPageIndex));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getPageSize, ListDiagnosisTasksRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryDiagnosisTaskRequest, RetryDiagnosisTaskResponse> retryDiagnosisTask =
+        genForRetryDiagnosisTask();
+
+    private static HttpRequestDef<RetryDiagnosisTaskRequest, RetryDiagnosisTaskResponse> genForRetryDiagnosisTask() {
+        // basic
+        HttpRequestDef.Builder<RetryDiagnosisTaskRequest, RetryDiagnosisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RetryDiagnosisTaskRequest.class, RetryDiagnosisTaskResponse.class)
+                .withName("RetryDiagnosisTask")
+                .withUri("/v1/diagnosis/tasks/{task_id}/retry")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryDiagnosisTaskRequest::getTaskId, RetryDiagnosisTaskRequest::setTaskId));
+        builder.<RetryDiagnosisTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RetryDiagnosisTaskRequestBody.class),
+            f -> f.withMarshaller(RetryDiagnosisTaskRequest::getBody, RetryDiagnosisTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDiagnosisNodeRequest, ShowDiagnosisNodeResponse> showDiagnosisNode =
+        genForShowDiagnosisNode();
+
+    private static HttpRequestDef<ShowDiagnosisNodeRequest, ShowDiagnosisNodeResponse> genForShowDiagnosisNode() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisNodeRequest, ShowDiagnosisNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDiagnosisNodeRequest.class, ShowDiagnosisNodeResponse.class)
+                .withName("ShowDiagnosisNode")
+                .withUri("/v1/diagnosis/tasks/{task_id}/node/{code}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisNodeRequest::getTaskId, ShowDiagnosisNodeRequest::setTaskId));
+        builder.<ShowDiagnosisNodeRequest.CodeEnum>withRequestField("code",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowDiagnosisNodeRequest.CodeEnum.class),
+            f -> f.withMarshaller(ShowDiagnosisNodeRequest::getCode, ShowDiagnosisNodeRequest::setCode));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisNodeRequest::getInstanceId, ShowDiagnosisNodeRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDiagnosisSummaryRequest, ShowDiagnosisSummaryResponse> showDiagnosisSummary =
+        genForShowDiagnosisSummary();
+
+    private static HttpRequestDef<ShowDiagnosisSummaryRequest, ShowDiagnosisSummaryResponse> genForShowDiagnosisSummary() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisSummaryRequest, ShowDiagnosisSummaryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDiagnosisSummaryRequest.class, ShowDiagnosisSummaryResponse.class)
+            .withName("ShowDiagnosisSummary")
+            .withUri("/v1/diagnosis/tasks/{task_id}/summary")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisSummaryRequest::getTaskId, ShowDiagnosisSummaryRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDiagnosisTaskRequest, ShowDiagnosisTaskResponse> showDiagnosisTask =
+        genForShowDiagnosisTask();
+
+    private static HttpRequestDef<ShowDiagnosisTaskRequest, ShowDiagnosisTaskResponse> genForShowDiagnosisTask() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisTaskRequest, ShowDiagnosisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDiagnosisTaskRequest.class, ShowDiagnosisTaskResponse.class)
+                .withName("ShowDiagnosisTask")
+                .withUri("/v1/diagnosis/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisTaskRequest::getTaskId, ShowDiagnosisTaskRequest::setTaskId));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisTaskRequest::getInstanceId, ShowDiagnosisTaskRequest::setInstanceId));
 
         // response
 

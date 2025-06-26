@@ -4,6 +4,8 @@ import com.huaweicloud.sdk.coc.v1.model.AcceptScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.AcceptScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequest;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewResponse;
+import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
@@ -12,6 +14,8 @@ import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
@@ -66,6 +70,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListDiagnosisTasksRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListDiagnosisTasksResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentsRequest;
@@ -104,10 +110,18 @@ import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
+import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisNodeRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisNodeResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisSummaryRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisSummaryResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
@@ -312,6 +326,209 @@ public class CocClient {
     public SyncInvoker<CreateReportCustomEventRequest, CreateReportCustomEventResponse> createReportCustomEventInvoker(
         CreateReportCustomEventRequest request) {
         return new SyncInvoker<>(request, CocMeta.createReportCustomEvent, hcClient);
+    }
+
+    /**
+     * 取消诊断任务
+     *
+     * 取消诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelDiagnosisTaskRequest 请求对象
+     * @return CancelDiagnosisTaskResponse
+     */
+    public CancelDiagnosisTaskResponse cancelDiagnosisTask(CancelDiagnosisTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.cancelDiagnosisTask);
+    }
+
+    /**
+     * 取消诊断任务
+     *
+     * 取消诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelDiagnosisTaskRequest 请求对象
+     * @return SyncInvoker<CancelDiagnosisTaskRequest, CancelDiagnosisTaskResponse>
+     */
+    public SyncInvoker<CancelDiagnosisTaskRequest, CancelDiagnosisTaskResponse> cancelDiagnosisTaskInvoker(
+        CancelDiagnosisTaskRequest request) {
+        return new SyncInvoker<>(request, CocMeta.cancelDiagnosisTask, hcClient);
+    }
+
+    /**
+     * 提交诊断任务
+     *
+     * 提交诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDiagnosisTaskRequest 请求对象
+     * @return CreateDiagnosisTaskResponse
+     */
+    public CreateDiagnosisTaskResponse createDiagnosisTask(CreateDiagnosisTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.createDiagnosisTask);
+    }
+
+    /**
+     * 提交诊断任务
+     *
+     * 提交诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDiagnosisTaskRequest 请求对象
+     * @return SyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse>
+     */
+    public SyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> createDiagnosisTaskInvoker(
+        CreateDiagnosisTaskRequest request) {
+        return new SyncInvoker<>(request, CocMeta.createDiagnosisTask, hcClient);
+    }
+
+    /**
+     * 查询诊断记录
+     *
+     * 查询诊断记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDiagnosisTasksRequest 请求对象
+     * @return ListDiagnosisTasksResponse
+     */
+    public ListDiagnosisTasksResponse listDiagnosisTasks(ListDiagnosisTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.listDiagnosisTasks);
+    }
+
+    /**
+     * 查询诊断记录
+     *
+     * 查询诊断记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDiagnosisTasksRequest 请求对象
+     * @return SyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse>
+     */
+    public SyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> listDiagnosisTasksInvoker(
+        ListDiagnosisTasksRequest request) {
+        return new SyncInvoker<>(request, CocMeta.listDiagnosisTasks, hcClient);
+    }
+
+    /**
+     * 重试诊断任务
+     *
+     * 重试诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryDiagnosisTaskRequest 请求对象
+     * @return RetryDiagnosisTaskResponse
+     */
+    public RetryDiagnosisTaskResponse retryDiagnosisTask(RetryDiagnosisTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.retryDiagnosisTask);
+    }
+
+    /**
+     * 重试诊断任务
+     *
+     * 重试诊断任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryDiagnosisTaskRequest 请求对象
+     * @return SyncInvoker<RetryDiagnosisTaskRequest, RetryDiagnosisTaskResponse>
+     */
+    public SyncInvoker<RetryDiagnosisTaskRequest, RetryDiagnosisTaskResponse> retryDiagnosisTaskInvoker(
+        RetryDiagnosisTaskRequest request) {
+        return new SyncInvoker<>(request, CocMeta.retryDiagnosisTask, hcClient);
+    }
+
+    /**
+     * 查询指定诊断记录下的指定诊断步骤的详情
+     *
+     * 查询指定诊断记录下的指定诊断步骤的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisNodeRequest 请求对象
+     * @return ShowDiagnosisNodeResponse
+     */
+    public ShowDiagnosisNodeResponse showDiagnosisNode(ShowDiagnosisNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.showDiagnosisNode);
+    }
+
+    /**
+     * 查询指定诊断记录下的指定诊断步骤的详情
+     *
+     * 查询指定诊断记录下的指定诊断步骤的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisNodeRequest 请求对象
+     * @return SyncInvoker<ShowDiagnosisNodeRequest, ShowDiagnosisNodeResponse>
+     */
+    public SyncInvoker<ShowDiagnosisNodeRequest, ShowDiagnosisNodeResponse> showDiagnosisNodeInvoker(
+        ShowDiagnosisNodeRequest request) {
+        return new SyncInvoker<>(request, CocMeta.showDiagnosisNode, hcClient);
+    }
+
+    /**
+     * 查询批量诊断任务的结果概要
+     *
+     * 查询诊断任务的结果概要
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisSummaryRequest 请求对象
+     * @return ShowDiagnosisSummaryResponse
+     */
+    public ShowDiagnosisSummaryResponse showDiagnosisSummary(ShowDiagnosisSummaryRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.showDiagnosisSummary);
+    }
+
+    /**
+     * 查询批量诊断任务的结果概要
+     *
+     * 查询诊断任务的结果概要
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisSummaryRequest 请求对象
+     * @return SyncInvoker<ShowDiagnosisSummaryRequest, ShowDiagnosisSummaryResponse>
+     */
+    public SyncInvoker<ShowDiagnosisSummaryRequest, ShowDiagnosisSummaryResponse> showDiagnosisSummaryInvoker(
+        ShowDiagnosisSummaryRequest request) {
+        return new SyncInvoker<>(request, CocMeta.showDiagnosisSummary, hcClient);
+    }
+
+    /**
+     * 查询单个诊断任务详情
+     *
+     * 查询单个诊断任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisTaskRequest 请求对象
+     * @return ShowDiagnosisTaskResponse
+     */
+    public ShowDiagnosisTaskResponse showDiagnosisTask(ShowDiagnosisTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.showDiagnosisTask);
+    }
+
+    /**
+     * 查询单个诊断任务详情
+     *
+     * 查询单个诊断任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisTaskRequest 请求对象
+     * @return SyncInvoker<ShowDiagnosisTaskRequest, ShowDiagnosisTaskResponse>
+     */
+    public SyncInvoker<ShowDiagnosisTaskRequest, ShowDiagnosisTaskResponse> showDiagnosisTaskInvoker(
+        ShowDiagnosisTaskRequest request) {
+        return new SyncInvoker<>(request, CocMeta.showDiagnosisTask, hcClient);
     }
 
     /**

@@ -41,7 +41,7 @@ public class ListTagsResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表对象。
+     * **参数解释**： 标签列表对象。 **取值范围**： 不涉及。
      * @return tags
      */
     public List<ProjectTag> getTags() {

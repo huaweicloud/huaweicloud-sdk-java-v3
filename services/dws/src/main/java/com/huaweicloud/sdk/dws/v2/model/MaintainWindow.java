@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群维护时间窗信息
+ * **参数解释**： 集群维护时间窗信息。 **取值范围**： 不涉及。
  */
 public class MaintainWindow {
 
@@ -65,7 +65,7 @@ public class MaintainWindow {
     }
 
     /**
-     * **参数解释**： 维护结束时间，显示格式为 HH：mm, 时区为GMT+0。 **取值范围**： 不涉及。
+     * **参数解释**： 维护结束时间，显示格式为 HH：mm，时区为GMT+0。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {

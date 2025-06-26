@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新数据源配置
+ * **参数解释**： 更新数据源配置。 **取值范围**： 不涉及。
  */
 public class ReconfigureExtDataSourceActionReq {
 

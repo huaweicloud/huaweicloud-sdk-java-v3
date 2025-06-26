@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 告警详情
+ * **参数解释**： 告警详情。 **取值范围**： 不涉及。
  */
 public class AlarmDetailResponse {
 
@@ -66,7 +66,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警定义ID
+     * **参数解释**： 告警定义ID。 **取值范围**： 不涉及。
      * @return alarmId
      */
     public String getAlarmId() {
@@ -83,7 +83,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警名称
+     * **参数解释**： 告警名称。 **取值范围**： 不涉及。
      * @return alarmName
      */
     public String getAlarmName() {
@@ -100,7 +100,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警级别
+     * **参数解释**： 告警级别。 **取值范围**： 不涉及。
      * @return alarmLevel
      */
     public String getAlarmLevel() {
@@ -117,7 +117,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警服务
+     * **参数解释**： 告警服务。 **取值范围**： 不涉及。
      * @return alarmSource
      */
     public String getAlarmSource() {
@@ -134,7 +134,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警消息
+     * **参数解释**： 告警消息。 **取值范围**： 不涉及。
      * @return alarmMessage
      */
     public String getAlarmMessage() {
@@ -151,7 +151,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警定位信息
+     * **参数解释**： 告警定位信息。 **取值范围**： 不涉及。
      * @return alarmLocation
      */
     public String getAlarmLocation() {
@@ -168,7 +168,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警源ID
+     * **参数解释**： 告警源ID。 **取值范围**： 不涉及。
      * @return resourceId
      */
     public String getResourceId() {
@@ -185,7 +185,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警源名称
+     * **参数解释**： 告警源名称。 **取值范围**： 不涉及。
      * @return resourceIdName
      */
     public String getResourceIdName() {
@@ -202,7 +202,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警日期
+     * **参数解释**： 告警日期。 **取值范围**： 不涉及。
      * @return alarmGenerateDate
      */
     public String getAlarmGenerateDate() {
@@ -219,7 +219,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * 告警状态
+     * **参数解释**： 告警状态。 **取值范围**： 不涉及。
      * @return alarmStatus
      */
     public String getAlarmStatus() {

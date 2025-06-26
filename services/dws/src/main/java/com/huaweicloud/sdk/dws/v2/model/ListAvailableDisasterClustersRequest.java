@@ -16,6 +16,11 @@ public class ListAvailableDisasterClustersRequest {
     private String primaryClusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "standby_az_code")
+
+    private String standbyAzCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary_spec_id")
 
     private String primarySpecId;
@@ -34,11 +39,6 @@ public class ListAvailableDisasterClustersRequest {
     @JsonProperty(value = "standby_project_id")
 
     private String standbyProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "standby_az_code")
-
-    private String standbyAzCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dr_type")
@@ -61,7 +61,7 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     /**
-     * 主集群ID
+     * **参数解释**： 主集群ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return primaryClusterId
      */
     public String getPrimaryClusterId() {
@@ -72,13 +72,30 @@ public class ListAvailableDisasterClustersRequest {
         this.primaryClusterId = primaryClusterId;
     }
 
+    public ListAvailableDisasterClustersRequest withStandbyAzCode(String standbyAzCode) {
+        this.standbyAzCode = standbyAzCode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 备集群所在AZ。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return standbyAzCode
+     */
+    public String getStandbyAzCode() {
+        return standbyAzCode;
+    }
+
+    public void setStandbyAzCode(String standbyAzCode) {
+        this.standbyAzCode = standbyAzCode;
+    }
+
     public ListAvailableDisasterClustersRequest withPrimarySpecId(String primarySpecId) {
         this.primarySpecId = primarySpecId;
         return this;
     }
 
     /**
-     * 主集群规格ID
+     * **参数解释**： 主集群规格ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return primarySpecId
      */
     public String getPrimarySpecId() {
@@ -95,7 +112,7 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     /**
-     * 主集群DN数量
+     * **参数解释**： 主集群DN数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return primaryClusterDnNum
      */
     public String getPrimaryClusterDnNum() {
@@ -112,7 +129,7 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     /**
-     * 备集群所在region
+     * **参数解释**： 备集群所在局点。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return standbyRegion
      */
     public String getStandbyRegion() {
@@ -129,7 +146,7 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     /**
-     * 备集群项目ID
+     * **参数解释**： 备集群项目ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return standbyProjectId
      */
     public String getStandbyProjectId() {
@@ -140,30 +157,13 @@ public class ListAvailableDisasterClustersRequest {
         this.standbyProjectId = standbyProjectId;
     }
 
-    public ListAvailableDisasterClustersRequest withStandbyAzCode(String standbyAzCode) {
-        this.standbyAzCode = standbyAzCode;
-        return this;
-    }
-
-    /**
-     * 备集群所在AZ
-     * @return standbyAzCode
-     */
-    public String getStandbyAzCode() {
-        return standbyAzCode;
-    }
-
-    public void setStandbyAzCode(String standbyAzCode) {
-        this.standbyAzCode = standbyAzCode;
-    }
-
     public ListAvailableDisasterClustersRequest withDrType(String drType) {
         this.drType = drType;
         return this;
     }
 
     /**
-     * 容灾类型
+     * **参数解释**： 容灾类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return drType
      */
     public String getDrType() {
@@ -180,7 +180,7 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     /**
-     * 数仓类型
+     * **参数解释**： 数仓类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return datastoreType
      */
     public String getDatastoreType() {
@@ -197,7 +197,7 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     /**
-     * 数仓版本
+     * **参数解释**： 数仓版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return datastoreVersion
      */
     public String getDatastoreVersion() {
@@ -218,11 +218,11 @@ public class ListAvailableDisasterClustersRequest {
         }
         ListAvailableDisasterClustersRequest that = (ListAvailableDisasterClustersRequest) obj;
         return Objects.equals(this.primaryClusterId, that.primaryClusterId)
+            && Objects.equals(this.standbyAzCode, that.standbyAzCode)
             && Objects.equals(this.primarySpecId, that.primarySpecId)
             && Objects.equals(this.primaryClusterDnNum, that.primaryClusterDnNum)
             && Objects.equals(this.standbyRegion, that.standbyRegion)
-            && Objects.equals(this.standbyProjectId, that.standbyProjectId)
-            && Objects.equals(this.standbyAzCode, that.standbyAzCode) && Objects.equals(this.drType, that.drType)
+            && Objects.equals(this.standbyProjectId, that.standbyProjectId) && Objects.equals(this.drType, that.drType)
             && Objects.equals(this.datastoreType, that.datastoreType)
             && Objects.equals(this.datastoreVersion, that.datastoreVersion);
     }
@@ -230,11 +230,11 @@ public class ListAvailableDisasterClustersRequest {
     @Override
     public int hashCode() {
         return Objects.hash(primaryClusterId,
+            standbyAzCode,
             primarySpecId,
             primaryClusterDnNum,
             standbyRegion,
             standbyProjectId,
-            standbyAzCode,
             drType,
             datastoreType,
             datastoreVersion);
@@ -245,11 +245,11 @@ public class ListAvailableDisasterClustersRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAvailableDisasterClustersRequest {\n");
         sb.append("    primaryClusterId: ").append(toIndentedString(primaryClusterId)).append("\n");
+        sb.append("    standbyAzCode: ").append(toIndentedString(standbyAzCode)).append("\n");
         sb.append("    primarySpecId: ").append(toIndentedString(primarySpecId)).append("\n");
         sb.append("    primaryClusterDnNum: ").append(toIndentedString(primaryClusterDnNum)).append("\n");
         sb.append("    standbyRegion: ").append(toIndentedString(standbyRegion)).append("\n");
         sb.append("    standbyProjectId: ").append(toIndentedString(standbyProjectId)).append("\n");
-        sb.append("    standbyAzCode: ").append(toIndentedString(standbyAzCode)).append("\n");
         sb.append("    drType: ").append(toIndentedString(drType)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("    datastoreVersion: ").append(toIndentedString(datastoreVersion)).append("\n");

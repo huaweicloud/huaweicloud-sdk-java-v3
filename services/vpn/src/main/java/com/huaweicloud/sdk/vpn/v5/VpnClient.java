@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.vpn.v5.model.AddVpnUsersToGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.AddVpnUsersToGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnConnectionRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersRequest;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsRequest;
@@ -1057,6 +1059,35 @@ public class VpnClient {
     public SyncInvoker<UpdateVpnAccessPolicyRequest, UpdateVpnAccessPolicyResponse> updateVpnAccessPolicyInvoker(
         UpdateVpnAccessPolicyRequest request) {
         return new SyncInvoker<>(request, VpnMeta.updateVpnAccessPolicy, hcClient);
+    }
+
+    /**
+     * 批量创建VPN连接
+     *
+     * 同时创建1-2条VPN连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateVpnConnectionRequest 请求对象
+     * @return BatchCreateVpnConnectionResponse
+     */
+    public BatchCreateVpnConnectionResponse batchCreateVpnConnection(BatchCreateVpnConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.batchCreateVpnConnection);
+    }
+
+    /**
+     * 批量创建VPN连接
+     *
+     * 同时创建1-2条VPN连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateVpnConnectionRequest 请求对象
+     * @return SyncInvoker<BatchCreateVpnConnectionRequest, BatchCreateVpnConnectionResponse>
+     */
+    public SyncInvoker<BatchCreateVpnConnectionRequest, BatchCreateVpnConnectionResponse> batchCreateVpnConnectionInvoker(
+        BatchCreateVpnConnectionRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.batchCreateVpnConnection, hcClient);
     }
 
     /**

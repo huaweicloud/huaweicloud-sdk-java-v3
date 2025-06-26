@@ -15,6 +15,10 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.CopyJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateNewJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateNewJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplatesRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplatesRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplatesResponse;
@@ -106,6 +110,9 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.RestoreRecyclingJobsResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.SaveTemplateUsedInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.SaveTemplateUsedInfoRequestBody;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.SaveTemplateUsedInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.SetKeepTimeRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.SetKeepTimeRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.SetKeepTimeResponse;
@@ -175,6 +182,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowOutputInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowOutputInfoResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowProjectJobPermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowProjectJobPermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowProjectPermissionRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowProjectPermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordDetailRequest;
@@ -201,11 +210,17 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreRequestBody;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNewJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNewJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNoticeRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNoticeRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNoticeResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UploadKeystoreRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UploadKeystoreRequestBody;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UploadKeystoreResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -1294,6 +1309,28 @@ public class CodeArtsBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateNewJobRequest, CreateNewJobResponse> createNewJob = genForCreateNewJob();
+
+    private static HttpRequestDef<CreateNewJobRequest, CreateNewJobResponse> genForCreateNewJob() {
+        // basic
+        HttpRequestDef.Builder<CreateNewJobRequest, CreateNewJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNewJobRequest.class, CreateNewJobResponse.class)
+                .withName("CreateNewJob")
+                .withUri("/v1/job/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateBuildJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBuildJobRequestBody.class),
+            f -> f.withMarshaller(CreateNewJobRequest::getBody, CreateNewJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteRecyclingJobsRequest, DeleteRecyclingJobsResponse> deleteRecyclingJobs =
         genForDeleteRecyclingJobs();
 
@@ -1904,6 +1941,37 @@ public class CodeArtsBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowProjectJobPermissionRequest, ShowProjectJobPermissionResponse> showProjectJobPermission =
+        genForShowProjectJobPermission();
+
+    private static HttpRequestDef<ShowProjectJobPermissionRequest, ShowProjectJobPermissionResponse> genForShowProjectJobPermission() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectJobPermissionRequest, ShowProjectJobPermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowProjectJobPermissionRequest.class, ShowProjectJobPermissionResponse.class)
+                .withName("ShowProjectJobPermission")
+                .withUri("/v1/job/permission")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectJobPermissionRequest::getProjectId,
+                ShowProjectJobPermissionRequest::setProjectId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectJobPermissionRequest::getJobId,
+                ShowProjectJobPermissionRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRunningStatusRequest, ShowRunningStatusResponse> showRunningStatus =
         genForShowRunningStatus();
 
@@ -2112,6 +2180,57 @@ public class CodeArtsBuildMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowKeystorePermissionRequest::getPage, ShowKeystorePermissionRequest::setPage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKeystoreRequest, UpdateKeystoreResponse> updateKeystore =
+        genForUpdateKeystore();
+
+    private static HttpRequestDef<UpdateKeystoreRequest, UpdateKeystoreResponse> genForUpdateKeystore() {
+        // basic
+        HttpRequestDef.Builder<UpdateKeystoreRequest, UpdateKeystoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateKeystoreRequest.class, UpdateKeystoreResponse.class)
+                .withName("UpdateKeystore")
+                .withUri("/v2/keystore/update/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKeystoreRequest::getId, UpdateKeystoreRequest::setId));
+        builder.<UpdateKeystoreRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateKeystoreRequestBody.class),
+            f -> f.withMarshaller(UpdateKeystoreRequest::getBody, UpdateKeystoreRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadKeystoreRequest, UploadKeystoreResponse> uploadKeystore =
+        genForUploadKeystore();
+
+    private static HttpRequestDef<UploadKeystoreRequest, UploadKeystoreResponse> genForUploadKeystore() {
+        // basic
+        HttpRequestDef.Builder<UploadKeystoreRequest, UploadKeystoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadKeystoreRequest.class, UploadKeystoreResponse.class)
+                .withName("UploadKeystore")
+                .withUri("/v2/keystore/upload")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<UploadKeystoreRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadKeystoreRequestBody.class),
+            f -> f.withMarshaller(UploadKeystoreRequest::getBody, UploadKeystoreRequest::setBody));
 
         // response
 
@@ -2781,6 +2900,29 @@ public class CodeArtsBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
+        genForCreateTemplate();
+
+    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForCreateTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
+                .withName("CreateTemplate")
+                .withUri("/v1/template/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTemplatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTemplatesRequestBody.class),
+            f -> f.withMarshaller(CreateTemplateRequest::getBody, CreateTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
         genForDeleteTemplate();
 
@@ -2901,6 +3043,29 @@ public class CodeArtsBuildMeta {
             TypeCasts.uncheckedConversion(ListRecommendOfficialTemplateRequestBody.class),
             f -> f.withMarshaller(ListRecommendOfficialTemplateRequest::getBody,
                 ListRecommendOfficialTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SaveTemplateUsedInfoRequest, SaveTemplateUsedInfoResponse> saveTemplateUsedInfo =
+        genForSaveTemplateUsedInfo();
+
+    private static HttpRequestDef<SaveTemplateUsedInfoRequest, SaveTemplateUsedInfoResponse> genForSaveTemplateUsedInfo() {
+        // basic
+        HttpRequestDef.Builder<SaveTemplateUsedInfoRequest, SaveTemplateUsedInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SaveTemplateUsedInfoRequest.class, SaveTemplateUsedInfoResponse.class)
+            .withName("SaveTemplateUsedInfo")
+            .withUri("/v1/template/used-info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SaveTemplateUsedInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveTemplateUsedInfoRequestBody.class),
+            f -> f.withMarshaller(SaveTemplateUsedInfoRequest::getBody, SaveTemplateUsedInfoRequest::setBody));
 
         // response
 

@@ -22,7 +22,7 @@ public class CopySnapshotResponse extends SdkResponse {
     }
 
     /**
-     * 快照id。
+     * **参数解释**： 快照ID。 **取值范围**： 不涉及。
      * @return snapshotId
      */
     public String getSnapshotId() {

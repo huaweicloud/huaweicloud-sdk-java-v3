@@ -41,7 +41,7 @@ public class ShowDatabaseAuthorityResponse extends SdkResponse {
     }
 
     /**
-     * 对象权限集合
+     * **参数解释**： 对象权限集合。 **取值范围**： 不涉及。
      * @return authorities
      */
     public List<ObjectAuthority> getAuthorities() {

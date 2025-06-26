@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Elb返回体
+ * **参数解释**： 弹性负载均衡详情。 **取值范围**： 不涉及。
  */
 public class ClusterElbInfo {
 
@@ -71,7 +71,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 弹性负载均衡ID
+     * **参数解释**： 弹性负载均衡ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -105,7 +105,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 弹性负载均衡名称
+     * **参数解释**： 弹性负载均衡名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -122,7 +122,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 弹性负载均衡描述
+     * **参数解释**： 弹性负载均衡描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -139,7 +139,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 弹性负载均衡地址
+     * **参数解释**： 弹性负载均衡地址。 **取值范围**： 不涉及。
      * @return vipAddress
      */
     public String getVipAddress() {
@@ -156,7 +156,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 子网ID
+     * **参数解释**： 子网ID。 **取值范围**： 不涉及。
      * @return vipSubnetId
      */
     public String getVipSubnetId() {
@@ -173,7 +173,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 租户ID
+     * **参数解释**： 租户ID。 **取值范围**： 不涉及。
      * @return tenantId
      */
     public String getTenantId() {
@@ -190,7 +190,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 弹性负载均衡类型。枚举值：Internal,External
+     * **参数解释**： 弹性负载均衡类型。 **取值范围**： Internal：独享型。 External：共享型。
      * @return type
      */
     public String getType() {
@@ -207,7 +207,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 弹性负载均衡的管理状态。枚举值：ACTIVE,PENDING_CREATE,ERROR
+     * **参数解释**： 弹性负载均衡的管理状态。 **取值范围**： ACTIVE：使用中 PENDING_CREATE：创建中 ERROR：表示当前策略与同一监听器下的其他策略存在相同的规格配置。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -224,7 +224,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 绑定状态： 0为未绑定，1为已绑定
+     * **参数解释**： 带宽信息。 **取值范围**： 大于等于0的正整数。
      * @return bandwidth
      */
     public Integer getBandwidth() {
@@ -241,7 +241,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * 虚拟私有云ID
+     * **参数解释**： 虚拟私有云ID。 **取值范围**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {

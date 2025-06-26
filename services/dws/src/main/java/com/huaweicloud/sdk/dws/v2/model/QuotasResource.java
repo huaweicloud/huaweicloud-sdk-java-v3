@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 资源配额详情。
+ * **参数解释**： 资源配额详情。 **取值范围**： 不涉及。
  */
 public class QuotasResource {
 
@@ -36,7 +36,7 @@ public class QuotasResource {
     }
 
     /**
-     * 项目资源类型。
+     * **参数解释**： 项目资源类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -53,7 +53,7 @@ public class QuotasResource {
     }
 
     /**
-     * 已使用的资源数量。
+     * **参数解释**： 已使用的资源数量。 **取值范围**： 不涉及。
      * @return used
      */
     public Integer getUsed() {
@@ -70,7 +70,7 @@ public class QuotasResource {
     }
 
     /**
-     * 项目资源配额。
+     * **参数解释**： 项目资源配额。 **取值范围**： 不涉及。
      * @return quota
      */
     public Integer getQuota() {
@@ -87,7 +87,7 @@ public class QuotasResource {
     }
 
     /**
-     * 资源计量单位。
+     * **参数解释**： 资源计量单位。 **取值范围**： 不涉及。
      * @return unit
      */
     public String getUnit() {

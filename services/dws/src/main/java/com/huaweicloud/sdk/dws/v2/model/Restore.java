@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 恢复对象
+ * **参数解释**： 恢复对象。 **取值范围**： 不涉及。
  */
 public class Restore {
 
@@ -62,7 +62,7 @@ public class Restore {
     }
 
     /**
-     * 集群名称，要求唯一性，必须以字母开头并只包含字母、数字、中划线，下划线，长度为4~64个字符。
+     * **参数解释**： 集群名称。 **取值范围**： 要求唯一性，必须以字母开头并只包含字母、数字、中划线，下划线，长度为4~64个字符。
      * @return name
      */
     public String getName() {
@@ -79,7 +79,7 @@ public class Restore {
     }
 
     /**
-     * 指定子网ID，用于集群网络配置。默认值与原集群相同。
+     * **参数解释**： 指定子网ID，用于集群网络配置。 **取值范围**： 默认值与原集群相同。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -96,7 +96,7 @@ public class Restore {
     }
 
     /**
-     * 指定安全组ID，用于集群网络配置。默认值与原集群相同。
+     * **参数解释**： 指定安全组ID，用于集群网络配置。默认值与原集群相同。 **取值范围**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -113,7 +113,7 @@ public class Restore {
     }
 
     /**
-     * 指定虚拟私有云ID，用于集群网络配置。默认值与原集群相同。
+     * **参数解释**： 指定虚拟私有云ID，用于集群网络配置。默认值与原集群相同。 **取值范围**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -130,7 +130,7 @@ public class Restore {
     }
 
     /**
-     * 指定集群可用区。默认值与原集群相同。
+     * **参数解释**： 指定集群可用区。默认值与原集群相同。 **取值范围**： 不涉及。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -147,7 +147,7 @@ public class Restore {
     }
 
     /**
-     * 指定集群服务端口
+     * **参数解释**： 指定集群服务端口。 **取值范围**： 不涉及。
      * minimum: 8000
      * maximum: 30000
      * @return port
@@ -209,7 +209,7 @@ public class Restore {
     }
 
     /**
-     * 指定网络协议类型，表明是否支持IPv6,默认不使用IPv6。
+     * **参数解释**： 指定网络协议类型，表明是否支持IPv6，默认不使用IPv6。 **取值范围**： 不涉及。
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {

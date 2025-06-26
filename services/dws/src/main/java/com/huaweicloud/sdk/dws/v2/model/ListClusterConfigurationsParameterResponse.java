@@ -42,7 +42,7 @@ public class ListClusterConfigurationsParameterResponse extends SdkResponse {
     }
 
     /**
-     * 集群使用的参数配置信息。
+     * **参数解释**： 集群使用的参数配置信息。 **取值范围**： 不涉及。
      * @return configurations
      */
     public List<ConfigurationParameter> getConfigurations() {

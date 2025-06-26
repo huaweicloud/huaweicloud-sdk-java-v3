@@ -41,7 +41,7 @@ public class ListLogicalClusterPlansResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 逻辑集群增删计划对象列表。 **取值范围**： 不涉及。
+     * **参数解释**： 逻辑集群增删计划对象列表。列表最大返回一般不超过20条。 **取值范围**： 不涉及。
      * @return plans
      */
     public List<LogicalClusterPlanVo> getPlans() {

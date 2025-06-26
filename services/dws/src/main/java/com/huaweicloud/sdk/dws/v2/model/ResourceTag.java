@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 标签详情。
+ * **参数解释**： 标签详情。 **取值范围**： 不涉及。
  */
 public class ResourceTag {
 
@@ -26,7 +26,7 @@ public class ResourceTag {
     }
 
     /**
-     * 标签键。
+     * **参数解释**： 标签键。 **取值范围**： 不涉及。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ResourceTag {
     }
 
     /**
-     * 标签值。
+     * **参数解释**： 标签值。 **取值范围**： 不涉及。
      * @return value
      */
     public String getValue() {

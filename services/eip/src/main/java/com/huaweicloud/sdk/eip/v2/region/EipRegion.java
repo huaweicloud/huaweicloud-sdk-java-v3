@@ -83,6 +83,9 @@ public class EipRegion {
 
     public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://vpc.cn-south-2.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://vpc.ap-southeast-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EIP");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -120,6 +123,7 @@ public class EipRegion {
         map.put("af-north-1", AF_NORTH_1);
         map.put("cn-north-11", CN_NORTH_11);
         map.put("cn-south-2", CN_SOUTH_2);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
         return Collections.unmodifiableMap(map);
     }
 

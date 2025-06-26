@@ -1,35 +1,36 @@
-package com.huaweicloud.sdk.ecs.v2.model;
+package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * Request Object
+ * Response Object
  */
-public class ShowRecycleBinServerRequest {
+public class CreateInstanceNamespaceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "server_id")
+    @JsonProperty(value = "id")
 
-    private String serverId;
+    private Integer id;
 
-    public ShowRecycleBinServerRequest withServerId(String serverId) {
-        this.serverId = serverId;
+    public CreateInstanceNamespaceResponse withId(Integer id) {
+        this.id = id;
         return this;
     }
 
     /**
-     * 云服务器ID。
-     * @return serverId
+     * 命名空间ID
+     * @return id
      */
-    public String getServerId() {
-        return serverId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setServerId(String serverId) {
-        this.serverId = serverId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Override
@@ -40,20 +41,20 @@ public class ShowRecycleBinServerRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecycleBinServerRequest that = (ShowRecycleBinServerRequest) obj;
-        return Objects.equals(this.serverId, that.serverId);
+        CreateInstanceNamespaceResponse that = (CreateInstanceNamespaceResponse) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serverId);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowRecycleBinServerRequest {\n");
-        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("class CreateInstanceNamespaceResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

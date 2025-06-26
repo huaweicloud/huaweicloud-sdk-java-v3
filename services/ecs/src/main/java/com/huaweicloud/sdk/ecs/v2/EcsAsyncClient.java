@@ -143,8 +143,6 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
-import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinServerRequest;
-import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
@@ -2355,34 +2353,6 @@ public class EcsAsyncClient {
     public AsyncInvoker<ShowRecycleBinRequest, ShowRecycleBinResponse> showRecycleBinAsyncInvoker(
         ShowRecycleBinRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.showRecycleBin, hcClient);
-    }
-
-    /**
-     * 查询回收站中指定云服务器
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRecycleBinServerRequest 请求对象
-     * @return CompletableFuture<ShowRecycleBinServerResponse>
-     */
-    public CompletableFuture<ShowRecycleBinServerResponse> showRecycleBinServerAsync(
-        ShowRecycleBinServerRequest request) {
-        return hcClient.asyncInvokeHttp(request, EcsMeta.showRecycleBinServer);
-    }
-
-    /**
-     * 查询回收站中指定云服务器
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRecycleBinServerRequest 请求对象
-     * @return AsyncInvoker<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse>
-     */
-    public AsyncInvoker<ShowRecycleBinServerRequest, ShowRecycleBinServerResponse> showRecycleBinServerAsyncInvoker(
-        ShowRecycleBinServerRequest request) {
-        return new AsyncInvoker<>(request, EcsMeta.showRecycleBinServer, hcClient);
     }
 
     /**

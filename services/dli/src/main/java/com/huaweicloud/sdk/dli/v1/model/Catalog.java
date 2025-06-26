@@ -33,6 +33,11 @@ public class Catalog {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
     public Catalog withName(String name) {
         this.name = name;
         return this;
@@ -117,6 +122,23 @@ public class Catalog {
         this.description = description;
     }
 
+    public Catalog withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * catalog状态。CREATING：catalog创建中；ACTIVE：catalog可使用；FAILED：catalog创建失败。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +149,13 @@ public class Catalog {
         }
         Catalog that = (Catalog) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, createTime, parameters, description);
+        return Objects.hash(name, createTime, parameters, description, status);
     }
 
     @Override
@@ -143,6 +166,7 @@ public class Catalog {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

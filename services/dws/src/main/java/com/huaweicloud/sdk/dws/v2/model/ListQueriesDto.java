@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ListQueriesDto
+ * **参数解释**： 详情对象。 **取值范围**： 不涉及。
  */
 public class ListQueriesDto {
 
@@ -316,7 +316,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 虚拟集群ID
+     * **参数解释**： 虚拟集群ID。 **取值范围**： 不涉及。
      * @return virtualClusterId
      */
     public Integer getVirtualClusterId() {
@@ -333,7 +333,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 采集时间
+     * **参数解释**： 采集时间。 **取值范围**： 不涉及。
      * @return ctime
      */
     public Long getCtime() {
@@ -350,7 +350,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 会话id。
+     * **参数解释**： 会话ID。 **取值范围**： 不涉及。
      * @return pid
      */
     public String getPid() {
@@ -367,7 +367,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 实例名称。
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
      * @return instName
      */
     public String getInstName() {
@@ -384,7 +384,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 如果后台当前正等待锁则为true。
+     * **参数解释**： 如果后台当前正等待锁则为true。 **取值范围**： 不涉及。
      * @return waiting
      */
     public Boolean getWaiting() {
@@ -401,7 +401,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 工作负载管理资源状态。
+     * **参数解释**： 资源状态。 **取值范围**： 不涉及。
      * @return enqueue
      */
     public String getEnqueue() {
@@ -418,7 +418,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 主要显示如下几类告警信息以及sql自诊断调优相关告警。
+     * **参数解释**： 主要显示如下几类告警信息以及sql自诊断调优相关告警。 **取值范围**： 不涉及。
      * @return warning
      */
     public String getWarning() {
@@ -435,7 +435,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 查询语句。
+     * **参数解释**： 查询语句。 **取值范围**： 不涉及。
      * @return query
      */
     public String getQuery() {
@@ -452,7 +452,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 快慢车道 (fast or slow)。
+     * **参数解释**： 快慢车道。 **取值范围**： fast：快车道。 slow：慢车道。
      * @return lane
      */
     public String getLane() {
@@ -469,7 +469,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 数据库名称。
+     * **参数解释**： 数据库名称。 **取值范围**： 不涉及。
      * @return dbName
      */
     public String getDbName() {
@@ -486,7 +486,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * job在资源池中的优先级，取值：1,2,4,8（rush、high、medium、low）。
+     * **参数解释**： 任务在资源池中的优先级。 **取值范围**： 1：最高。 2：高。 4：中。 8：低。
      * @return priority
      */
     public String getPriority() {
@@ -503,7 +503,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句执行使用的内部query_id。
+     * **参数解释**： 语句执行使用的内部查询ID。 **取值范围**： 不涉及。
      * @return queryId
      */
     public String getQueryId() {
@@ -520,7 +520,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 用于标示作业类型，可通过guc参数query_band进行设置，默认为空字符串。
+     * **参数解释**： 用于标示作业类型，可通过guc参数query_band进行设置，默认为空字符串。 **取值范围**： 不涉及。
      * @return queryBand
      */
     public String getQueryBand() {
@@ -537,7 +537,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 这个值是从query_band的字段中取出来的，位置0。
+     * **参数解释**： 该值是从query_band的字段中取出来的，位置0。 **取值范围**： 不涉及。
      * @return jobName
      */
     public String getJobName() {
@@ -554,7 +554,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 这个值是从query_band的字段中取出来的，位置1。
+     * **参数解释**： 该值是从query_band的字段中取出来的，位置1。 **取值范围**： 不涉及。
      * @return jobInst
      */
     public String getJobInst() {
@@ -571,7 +571,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 连接到后端的用户名。
+     * **参数解释**： 连接到后端的用户名。 **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -588,7 +588,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 连接到后端的应用名。
+     * **参数解释**： 连接到后端的应用名。 **取值范围**： 不涉及。
      * @return applicationName
      */
     public String getApplicationName() {
@@ -605,7 +605,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 连接到后端的客户端的ip地址。
+     * **参数解释**： 连接到后端的客户端的IP地址。 **取值范围**： 不涉及。
      * @return clientAddress
      */
     public String getClientAddress() {
@@ -622,7 +622,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 客户端的主机名。
+     * **参数解释**： 客户端的主机名。 **取值范围**： 不涉及。
      * @return clientHostname
      */
     public String getClientHostname() {
@@ -639,7 +639,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 客户端用于与后端通讯的tcp端口号。
+     * **参数解释**： 客户端用于与后端通讯的tcp端口号。 **取值范围**： 不涉及。
      * @return clientPort
      */
     public String getClientPort() {
@@ -656,7 +656,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句执行的开始时间。
+     * **参数解释**： 语句执行的开始时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public Long getStartTime() {
@@ -673,7 +673,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句执行前的阻塞时间 （单位ms）。
+     * **参数解释**： 语句执行前的阻塞时间，单位ms。 **取值范围**： 不涉及。
      * @return blockTime
      */
     public Long getBlockTime() {
@@ -690,7 +690,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句已经执行的时间 （单位ms）。
+     * **参数解释**： 语句已经执行的时间，单位ms。 **取值范围**： 不涉及。
      * @return duration
      */
     public Long getDuration() {
@@ -707,7 +707,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句执行预估总时间 （单位ms）。
+     * **参数解释**： 语句执行预估总时间，单位ms。 **取值范围**： 不涉及。
      * @return estimateTotalTime
      */
     public Long getEstimateTotalTime() {
@@ -724,7 +724,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句执行预估剩余时间 （单位ms）。
+     * **参数解释**： 语句执行预估剩余时间，单位ms。 **取值范围**： 不涉及。
      * @return estimateLeftTime
      */
     public Long getEstimateLeftTime() {
@@ -741,7 +741,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 用户使用的资源池。
+     * **参数解释**： 用户使用的资源池。 **取值范围**： 不涉及。
      * @return resourcePool
      */
     public String getResourcePool() {
@@ -758,7 +758,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句所使用的cgroup。
+     * **参数解释**： 语句所使用的cgroup。 **取值范围**： 不涉及。
      * @return controlGroup
      */
     public String getControlGroup() {
@@ -775,7 +775,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的最小内存峰值 （单位mb）。
+     * **参数解释**： 语句在所有dn上的最小内存峰值，单位mb。 **取值范围**： 不涉及。
      * @return minPeakMemory
      */
     public Integer getMinPeakMemory() {
@@ -792,7 +792,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的最大内存峰值 （单位mb）。
+     * **参数解释**： 语句在所有dn上的最大内存峰值，单位mb。 **取值范围**： 不涉及。
      * @return maxPeakMemory
      */
     public Integer getMaxPeakMemory() {
@@ -809,7 +809,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句执行过程中的内存使用平均值 （单位mb）。
+     * **参数解释**： 语句执行过程中的内存使用平均值，单位mb。 **取值范围**： 不涉及。
      * @return averagePeakMemory
      */
     public Integer getAveragePeakMemory() {
@@ -826,7 +826,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在各dn间的内存使用倾斜率。
+     * **参数解释**： 语句在各dn间的内存使用倾斜率。 **取值范围**： 不涉及。
      * @return memorySkewPercent
      */
     public Integer getMemorySkewPercent() {
@@ -843,7 +843,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句预估使用内存 （单位mb）。
+     * **参数解释**： 语句预估使用内存，单位mb。 **取值范围**： 不涉及。
      * @return estimateMemory
      */
     public Integer getEstimateMemory() {
@@ -860,7 +860,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的下盘信息。
+     * **参数解释**： 语句在所有dn上的下盘信息。 **取值范围**： 不涉及。
      * @return spillInfo
      */
     public String getSpillInfo() {
@@ -877,7 +877,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 若发生下盘，所有dn上下盘的最小数据量 (单位mb) 默认为0。
+     * **参数解释**： 若发生下盘，所有dn上下盘的最小数据量 (单位mb) 默认为0。 **取值范围**： 不涉及。
      * @return minSpillSize
      */
     public Integer getMinSpillSize() {
@@ -894,7 +894,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 若发生下盘，所有dn上下盘的最大数据量 (单位mb) 默认为0。
+     * **参数解释**： 若发生下盘，所有dn上下盘的最大数据量 (单位mb) 默认为0。 **取值范围**： 不涉及。
      * @return maxSpillSize
      */
     public Integer getMaxSpillSize() {
@@ -911,7 +911,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 若发生下盘，所有dn上下盘的平均数据量 (单位mb) 默认为0。
+     * **参数解释**： 若发生下盘，所有dn上下盘的平均数据量 (单位mb) 默认为0。 **取值范围**： 不涉及。
      * @return averageSpillSize
      */
     public Integer getAverageSpillSize() {
@@ -928,7 +928,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 若发生下盘，dn间下盘倾斜率。
+     * **参数解释**： 若发生下盘，dn间下盘倾斜率。 **取值范围**： 不涉及。
      * @return spillSkewPercent
      */
     public Integer getSpillSkewPercent() {
@@ -945,7 +945,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的最小执行时间 (单位ms)。
+     * **参数解释**： 语句在所有dn上的最小执行时间，单位ms。 **取值范围**： 不涉及。
      * @return minDnTime
      */
     public Long getMinDnTime() {
@@ -962,7 +962,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的最大执行时间 (单位ms)。
+     * **参数解释**： 语句在所有dn上的最大执行时间，单位ms。 **取值范围**： 不涉及。
      * @return maxDnTime
      */
     public Long getMaxDnTime() {
@@ -979,7 +979,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的平均执行时间 (单位ms)。
+     * **参数解释**： 语句在所有dn上的平均执行时间，单位ms。 **取值范围**： 不涉及。
      * @return averageDnTime
      */
     public Long getAverageDnTime() {
@@ -996,7 +996,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在各dn间的执行时间倾斜率。
+     * **参数解释**： 语句在各dn间的执行时间倾斜率。 **取值范围**： 不涉及。
      * @return dntimeSkewPercent
      */
     public Integer getDntimeSkewPercent() {
@@ -1013,7 +1013,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的最小cpu时间 (单位ms)。
+     * **参数解释**： 语句在所有dn上的最小cpu时间，单位ms。 **取值范围**： 不涉及。
      * @return minCpuTime
      */
     public Long getMinCpuTime() {
@@ -1030,7 +1030,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的最大cpu时间 (单位ms)。
+     * **参数解释**： 语句在所有dn上的最大cpu时间，单位ms。 **取值范围**： 不涉及。
      * @return maxCpuTime
      */
     public Long getMaxCpuTime() {
@@ -1047,7 +1047,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的cpu总时间 (单位ms)。
+     * **参数解释**： 语句在所有dn上的cpu总时间，单位ms。 **取值范围**： 不涉及。
      * @return totalCpuTime
      */
     public Long getTotalCpuTime() {
@@ -1064,7 +1064,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在各dn间的cpu时间倾斜率。
+     * **参数解释**： 语句在各dn间的cpu时间倾斜率。 **取值范围**： 不涉及。
      * @return cpuSkewPercent
      */
     public Integer getCpuSkewPercent() {
@@ -1081,7 +1081,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的每秒平均io峰值（列存单位是次/s，行存单位是万次/s）。
+     * **参数解释**： 语句在所有dn上的每秒平均io峰值（列存单位是次/s，行存单位是万次/s）。 **取值范围**： 不涉及。
      * @return averagePeakIops
      */
     public Integer getAveragePeakIops() {
@@ -1098,7 +1098,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在dn间的io倾斜率。
+     * **参数解释**： 语句在dn间的io倾斜率。 **取值范围**： 不涉及。
      * @return iopsSkewPercent
      */
     public Integer getIopsSkewPercent() {
@@ -1115,7 +1115,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的每秒最大io峰值（列存单位是次/s，行存单位是万次/s）。
+     * **参数解释**： 语句在所有dn上的每秒最大io峰值（列存单位是次/s，行存单位是万次/s）。 **取值范围**： 不涉及。
      * @return maxPeakIops
      */
     public Integer getMaxPeakIops() {
@@ -1132,7 +1132,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句在所有dn上的每秒最小io峰值（列存单位是次/s，行存单位是万次/s）。
+     * **参数解释**： 语句在所有dn上的每秒最小io峰值（列存单位是次/s，行存单位是万次/s）。 **取值范围**： 不涉及。
      * @return minPeakIops
      */
     public Integer getMinPeakIops() {
@@ -1149,7 +1149,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 查询计划。
+     * **参数解释**： 查询计划。 **取值范围**： 不涉及。
      * @return queryPlan
      */
     public String getQueryPlan() {
@@ -1166,7 +1166,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 当前查询语句的实时运行状态 (active, idle, idle in transaction, idle in transaction(aborted), fastpath function call, disabled)。
+     * **参数解释**： 当前查询语句的实时运行状态。 **取值范围**： active、idle、idle in transaction、idle in transaction(aborted)、fastpath function call、disabled。
      * @return queryStatus
      */
     public String getQueryStatus() {
@@ -1183,7 +1183,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 当前查询语句在资源池上的运行状态 (pending, running, finished, aborted, active, unknown)。
+     * **参数解释**： 当前查询语句在资源池上的运行状态。 **取值范围**： pending：待生效。 running：运行中。 finished：结束。 aborted：终止。 active：正常。 unknown：未知。
      * @return wlmStatus
      */
     public String getWlmStatus() {
@@ -1200,7 +1200,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句的属性 (ordinary, simple, complicated, internal)
+     * **参数解释**： 语句的属性。 **取值范围**： ordinary：普通。 simple：简单。 complicated：复杂。 internal：内部。
      * @return wlmAttrib
      */
     public String getWlmAttrib() {
@@ -1217,7 +1217,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 是否系统查询。
+     * **参数解释**： 是否系统查询。 **取值范围**： 不涉及。
      * @return systemQuery
      */
     public Boolean getSystemQuery() {
@@ -1234,7 +1234,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 该过程开始的时间，即当客户端连接服务器时。
+     * **参数解释**： 该过程开始的时间，即当客户端连接服务器时。 **取值范围**： 不涉及。
      * @return backendStart
      */
     public Long getBackendStart() {
@@ -1251,7 +1251,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 到目前为止的执行时间。
+     * **参数解释**： 到目前为止的执行时间。 **取值范围**： 不涉及。
      * @return elapsedTime
      */
     public Long getElapsedTime() {
@@ -1268,7 +1268,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 启动当前事务的时间，如果没有事务是活跃的，则为null。如果当前查询是首个事务，则这列等同于query_start列。
+     * **参数解释**： 启动当前事务的时间，如果没有事务是活跃的，则为null。如果当前查询是首个事务，则这列等同于query_start列。 **取值范围**： 不涉及。
      * @return currXactStart
      */
     public Long getCurrXactStart() {
@@ -1285,7 +1285,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 上次状态改变的时间。
+     * **参数解释**： 上次状态改变的时间。 **取值范围**： 不涉及。
      * @return stateChange
      */
     public Long getStateChange() {
@@ -1302,7 +1302,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句执行的开始时间。
+     * **参数解释**： 语句执行的开始时间。 **取值范围**： 不涉及。
      * @return queryStart
      */
     public Long getQueryStart() {
@@ -1319,7 +1319,7 @@ public class ListQueriesDto {
     }
 
     /**
-     * 语句当前为止的实际执行时间，(单位：s)。
+     * **参数解释**： 语句当前为止的实际执行时间。单位：秒。 **取值范围**： 不涉及。
      * @return queryElapsedTime
      */
     public Long getQueryElapsedTime() {

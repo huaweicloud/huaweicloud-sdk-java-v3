@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 工作负载资源池
+ * **参数解释**： 资源池信息。 **取值范围**： 不涉及。
  */
 public class QueueResourceItem {
 
@@ -29,7 +29,7 @@ public class QueueResourceItem {
     }
 
     /**
-     * 资源池名称。
+     * **参数解释**： 资源池名称。 **取值范围**： 不涉及。
      * @return queueName
      */
     public String getQueueName() {
@@ -62,7 +62,7 @@ public class QueueResourceItem {
     }
 
     /**
-     * 资源配置队列。
+     * **参数解释**： 资源配置队列。 **取值范围**： 不涉及。
      * @return queueResources
      */
     public List<WorkloadResourceItem> getQueueResources() {

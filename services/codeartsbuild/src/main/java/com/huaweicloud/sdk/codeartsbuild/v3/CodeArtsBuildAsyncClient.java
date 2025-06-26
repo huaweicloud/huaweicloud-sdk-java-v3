@@ -12,6 +12,10 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.CopyJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CopyJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateNewJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateNewJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplatesRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplatesResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DeleteBuildJobRequest;
@@ -98,6 +102,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.RestoreRecyclingJobsRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RestoreRecyclingJobsResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.SaveTemplateUsedInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.SaveTemplateUsedInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.SetKeepTimeRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.SetKeepTimeResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildInfoRecordRequest;
@@ -166,6 +172,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowOutputInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowOutputInfoResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowProjectJobPermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowProjectJobPermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowProjectPermissionRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowProjectPermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordDetailRequest;
@@ -190,10 +198,14 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNewJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNewJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNoticeRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNoticeResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UploadKeystoreRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UploadKeystoreResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -1381,6 +1393,35 @@ public class CodeArtsBuildAsyncClient {
     }
 
     /**
+     * 创建构建任务
+     *
+     * 创建构建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNewJobRequest 请求对象
+     * @return CompletableFuture<CreateNewJobResponse>
+     */
+    public CompletableFuture<CreateNewJobResponse> createNewJobAsync(CreateNewJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.createNewJob);
+    }
+
+    /**
+     * 创建构建任务
+     *
+     * 创建构建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNewJobRequest 请求对象
+     * @return AsyncInvoker<CreateNewJobRequest, CreateNewJobResponse>
+     */
+    public AsyncInvoker<CreateNewJobRequest, CreateNewJobResponse> createNewJobAsyncInvoker(
+        CreateNewJobRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.createNewJob, hcClient);
+    }
+
+    /**
      * 删除回收站中的任务
      *
      * 删除回收站中的任务
@@ -2050,6 +2091,36 @@ public class CodeArtsBuildAsyncClient {
     }
 
     /**
+     * 获取任务权限矩阵
+     *
+     * 获取任务权限矩阵
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectJobPermissionRequest 请求对象
+     * @return CompletableFuture<ShowProjectJobPermissionResponse>
+     */
+    public CompletableFuture<ShowProjectJobPermissionResponse> showProjectJobPermissionAsync(
+        ShowProjectJobPermissionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.showProjectJobPermission);
+    }
+
+    /**
+     * 获取任务权限矩阵
+     *
+     * 获取任务权限矩阵
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectJobPermissionRequest 请求对象
+     * @return AsyncInvoker<ShowProjectJobPermissionRequest, ShowProjectJobPermissionResponse>
+     */
+    public AsyncInvoker<ShowProjectJobPermissionRequest, ShowProjectJobPermissionResponse> showProjectJobPermissionAsyncInvoker(
+        ShowProjectJobPermissionRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.showProjectJobPermission, hcClient);
+    }
+
+    /**
      * 查看任务是否在构建
      *
      * 查看任务是否在构建
@@ -2282,6 +2353,64 @@ public class CodeArtsBuildAsyncClient {
     public AsyncInvoker<ShowKeystorePermissionRequest, ShowKeystorePermissionResponse> showKeystorePermissionAsyncInvoker(
         ShowKeystorePermissionRequest request) {
         return new AsyncInvoker<>(request, CodeArtsBuildMeta.showKeystorePermission, hcClient);
+    }
+
+    /**
+     * 更新文件信息
+     *
+     * 更新文件信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKeystoreRequest 请求对象
+     * @return CompletableFuture<UpdateKeystoreResponse>
+     */
+    public CompletableFuture<UpdateKeystoreResponse> updateKeystoreAsync(UpdateKeystoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.updateKeystore);
+    }
+
+    /**
+     * 更新文件信息
+     *
+     * 更新文件信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKeystoreRequest 请求对象
+     * @return AsyncInvoker<UpdateKeystoreRequest, UpdateKeystoreResponse>
+     */
+    public AsyncInvoker<UpdateKeystoreRequest, UpdateKeystoreResponse> updateKeystoreAsyncInvoker(
+        UpdateKeystoreRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.updateKeystore, hcClient);
+    }
+
+    /**
+     * 上传文件
+     *
+     * 上传文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadKeystoreRequest 请求对象
+     * @return CompletableFuture<UploadKeystoreResponse>
+     */
+    public CompletableFuture<UploadKeystoreResponse> uploadKeystoreAsync(UploadKeystoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.uploadKeystore);
+    }
+
+    /**
+     * 上传文件
+     *
+     * 上传文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadKeystoreRequest 请求对象
+     * @return AsyncInvoker<UploadKeystoreRequest, UploadKeystoreResponse>
+     */
+    public AsyncInvoker<UploadKeystoreRequest, UploadKeystoreResponse> uploadKeystoreAsyncInvoker(
+        UploadKeystoreRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.uploadKeystore, hcClient);
     }
 
     /**
@@ -2901,6 +3030,35 @@ public class CodeArtsBuildAsyncClient {
     }
 
     /**
+     * 创建构建模板
+     *
+     * 创建构建模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateRequest 请求对象
+     * @return CompletableFuture<CreateTemplateResponse>
+     */
+    public CompletableFuture<CreateTemplateResponse> createTemplateAsync(CreateTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.createTemplate);
+    }
+
+    /**
+     * 创建构建模板
+     *
+     * 创建构建模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
+     */
+    public AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateAsyncInvoker(
+        CreateTemplateRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.createTemplate, hcClient);
+    }
+
+    /**
      * 删除构建模板
      *
      * 删除构建模板
@@ -3016,6 +3174,36 @@ public class CodeArtsBuildAsyncClient {
     public AsyncInvoker<ListRecommendOfficialTemplateRequest, ListRecommendOfficialTemplateResponse> listRecommendOfficialTemplateAsyncInvoker(
         ListRecommendOfficialTemplateRequest request) {
         return new AsyncInvoker<>(request, CodeArtsBuildMeta.listRecommendOfficialTemplate, hcClient);
+    }
+
+    /**
+     * 保存模板使用记录
+     *
+     * 保存模板使用记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveTemplateUsedInfoRequest 请求对象
+     * @return CompletableFuture<SaveTemplateUsedInfoResponse>
+     */
+    public CompletableFuture<SaveTemplateUsedInfoResponse> saveTemplateUsedInfoAsync(
+        SaveTemplateUsedInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.saveTemplateUsedInfo);
+    }
+
+    /**
+     * 保存模板使用记录
+     *
+     * 保存模板使用记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveTemplateUsedInfoRequest 请求对象
+     * @return AsyncInvoker<SaveTemplateUsedInfoRequest, SaveTemplateUsedInfoResponse>
+     */
+    public AsyncInvoker<SaveTemplateUsedInfoRequest, SaveTemplateUsedInfoResponse> saveTemplateUsedInfoAsyncInvoker(
+        SaveTemplateUsedInfoRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.saveTemplateUsedInfo, hcClient);
     }
 
     /**

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * SnapshotResp
+ * **参数解释**： 创建快照响应。 **取值范围**： 不涉及。
  */
 public class SnapshotResp {
 
@@ -21,7 +21,7 @@ public class SnapshotResp {
     }
 
     /**
-     * Snapshot ID
+     * **参数解释**： 快照ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {

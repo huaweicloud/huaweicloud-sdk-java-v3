@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * LTS日志信息
+ * **参数解释**： LTS日志信息。 **取值范围**： 不涉及。
  */
 public class LtslogInfo {
 
@@ -41,7 +41,7 @@ public class LtslogInfo {
     }
 
     /**
-     * 配置状态
+     * **参数解释**： 配置状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -58,7 +58,7 @@ public class LtslogInfo {
     }
 
     /**
-     * 日志ID
+     * **参数解释**： 日志ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -75,7 +75,7 @@ public class LtslogInfo {
     }
 
     /**
-     * 日志类型
+     * **参数解释**： 日志类型。 **取值范围**： 不涉及。
      * @return logType
      */
     public String getLogType() {
@@ -92,7 +92,7 @@ public class LtslogInfo {
     }
 
     /**
-     * 日志描述
+     * **参数解释**： 日志描述。 **取值范围**： 不涉及。
      * @return logDesc
      */
     public String getLogDesc() {
@@ -109,7 +109,7 @@ public class LtslogInfo {
     }
 
     /**
-     * LTS日志访问URL
+     * **参数解释**： LTS日志访问URL。 **取值范围**： 不涉及。
      * @return accessUrl
      */
     public String getAccessUrl() {

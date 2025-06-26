@@ -187,6 +187,11 @@ public class CreateServerRequest {
 
     private CreateServerRequestSslOptions sslOptions;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_servers")
+
+    private List<String> dnsServers = null;
+
     public CreateServerRequest withTunnelProtocol(TunnelProtocolEnum tunnelProtocol) {
         this.tunnelProtocol = tunnelProtocol;
         return this;
@@ -360,6 +365,39 @@ public class CreateServerRequest {
         this.sslOptions = sslOptions;
     }
 
+    public CreateServerRequest withDnsServers(List<String> dnsServers) {
+        this.dnsServers = dnsServers;
+        return this;
+    }
+
+    public CreateServerRequest addDnsServersItem(String dnsServersItem) {
+        if (this.dnsServers == null) {
+            this.dnsServers = new ArrayList<>();
+        }
+        this.dnsServers.add(dnsServersItem);
+        return this;
+    }
+
+    public CreateServerRequest withDnsServers(Consumer<List<String>> dnsServersSetter) {
+        if (this.dnsServers == null) {
+            this.dnsServers = new ArrayList<>();
+        }
+        dnsServersSetter.accept(this.dnsServers);
+        return this;
+    }
+
+    /**
+     * DNS服务器列表，最多两个DNS
+     * @return dnsServers
+     */
+    public List<String> getDnsServers() {
+        return dnsServers;
+    }
+
+    public void setDnsServers(List<String> dnsServers) {
+        this.dnsServers = dnsServers;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -374,7 +412,7 @@ public class CreateServerRequest {
             && Objects.equals(this.clientAuthType, that.clientAuthType)
             && Objects.equals(this.serverCertificate, that.serverCertificate)
             && Objects.equals(this.clientCaCertificates, that.clientCaCertificates)
-            && Objects.equals(this.sslOptions, that.sslOptions);
+            && Objects.equals(this.sslOptions, that.sslOptions) && Objects.equals(this.dnsServers, that.dnsServers);
     }
 
     @Override
@@ -385,7 +423,8 @@ public class CreateServerRequest {
             clientAuthType,
             serverCertificate,
             clientCaCertificates,
-            sslOptions);
+            sslOptions,
+            dnsServers);
     }
 
     @Override
@@ -399,6 +438,7 @@ public class CreateServerRequest {
         sb.append("    serverCertificate: ").append(toIndentedString(serverCertificate)).append("\n");
         sb.append("    clientCaCertificates: ").append(toIndentedString(clientCaCertificates)).append("\n");
         sb.append("    sslOptions: ").append(toIndentedString(sslOptions)).append("\n");
+        sb.append("    dnsServers: ").append(toIndentedString(dnsServers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

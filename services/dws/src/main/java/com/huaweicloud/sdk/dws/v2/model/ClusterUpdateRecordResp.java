@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群升级记录响应体
+ * **参数解释**： 集群升级记录响应体。 **取值范围**： 不涉及。
  */
 public class ClusterUpdateRecordResp {
 
@@ -61,7 +61,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 升级项目ID
+     * **参数解释**： 升级项目ID。 **取值范围**： 不涉及。
      * @return itemId
      */
     public String getItemId() {
@@ -78,7 +78,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 升级状态
+     * **参数解释**： 升级状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -95,7 +95,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 升级类型
+     * **参数解释**： 升级类型。 **取值范围**： 不涉及。
      * @return recordType
      */
     public String getRecordType() {
@@ -112,7 +112,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 升级前版本
+     * **参数解释**： 升级前版本。 **取值范围**： 不涉及。
      * @return fromVersion
      */
     public String getFromVersion() {
@@ -129,7 +129,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 目标版本
+     * **参数解释**： 目标版本。 **取值范围**： 不涉及。
      * @return toVersion
      */
     public String getToVersion() {
@@ -146,7 +146,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 开始时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -163,7 +163,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -180,7 +180,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 升级任务ID
+     * **参数解释**： 升级任务ID。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {
@@ -197,7 +197,7 @@ public class ClusterUpdateRecordResp {
     }
 
     /**
-     * 失败原因
+     * **参数解释**： 失败原因。 **取值范围**： 不涉及。
      * @return failedReason
      */
     public String getFailedReason() {

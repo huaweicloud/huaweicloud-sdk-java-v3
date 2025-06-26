@@ -104,6 +104,11 @@ public class ShowResponseP2cVgw {
 
     private OffsetDateTime updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applied_at")
+
+    private OffsetDateTime appliedAt;
+
     public ShowResponseP2cVgw withId(String id) {
         this.id = id;
         return this;
@@ -451,6 +456,23 @@ public class ShowResponseP2cVgw {
         this.updatedAt = updatedAt;
     }
 
+    public ShowResponseP2cVgw withAppliedAt(OffsetDateTime appliedAt) {
+        this.appliedAt = appliedAt;
+        return this;
+    }
+
+    /**
+     * 生效时间
+     * @return appliedAt
+     */
+    public OffsetDateTime getAppliedAt() {
+        return appliedAt;
+    }
+
+    public void setAppliedAt(OffsetDateTime appliedAt) {
+        this.appliedAt = appliedAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -470,7 +492,8 @@ public class ShowResponseP2cVgw {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.frozenEffect, that.frozenEffect) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.appliedAt, that.appliedAt);
     }
 
     @Override
@@ -492,7 +515,8 @@ public class ShowResponseP2cVgw {
             frozenEffect,
             version,
             createdAt,
-            updatedAt);
+            updatedAt,
+            appliedAt);
     }
 
     @Override
@@ -517,6 +541,7 @@ public class ShowResponseP2cVgw {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    appliedAt: ").append(toIndentedString(appliedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

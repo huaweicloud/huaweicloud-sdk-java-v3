@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群参数配置详情。
+ * **参数解释**： 集群参数配置详情。 **取值范围**： 不涉及。
  */
 public class ConfigurationParameterValue {
 
@@ -31,7 +31,7 @@ public class ConfigurationParameterValue {
     }
 
     /**
-     * 参数类型，包括：cn、dn。
+     * **参数解释**： 参数类型。 **取值范围**： cn、dn。
      * @return type
      */
     public String getType() {
@@ -48,7 +48,7 @@ public class ConfigurationParameterValue {
     }
 
     /**
-     * 参数名称。
+     * **参数解释**： 参数名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -65,7 +65,7 @@ public class ConfigurationParameterValue {
     }
 
     /**
-     * 参数值。
+     * **参数解释**： 参数值。 **取值范围**： 不涉及。
      * @return value
      */
     public String getValue() {

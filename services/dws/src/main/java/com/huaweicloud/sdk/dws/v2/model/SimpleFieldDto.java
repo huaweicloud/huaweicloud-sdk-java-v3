@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * SimpleFieldDto
+ * **参数解释**： 指标表相关字段信息。 **取值范围**： 不涉及。
  */
 public class SimpleFieldDto {
 
@@ -26,7 +26,7 @@ public class SimpleFieldDto {
     }
 
     /**
-     * 指标表对应字段名称。
+     * **参数解释**： 指标表对应字段名称。 **取值范围**： 不涉及。
      * @return columnName
      */
     public String getColumnName() {
@@ -43,7 +43,7 @@ public class SimpleFieldDto {
     }
 
     /**
-     * 指标表对应字段类型。
+     * **参数解释**： 指标表对应字段类型。 **取值范围**： 不涉及。
      * @return columnType
      */
     public String getColumnType() {

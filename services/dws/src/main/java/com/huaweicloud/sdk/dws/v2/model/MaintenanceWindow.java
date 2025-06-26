@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 可维护时间段。
+ * **参数解释**： 可维护时间段。 **取值范围**： 不涉及。
  */
 public class MaintenanceWindow {
 
@@ -31,7 +31,7 @@ public class MaintenanceWindow {
     }
 
     /**
-     * 日期，范围：Mon、Tue、Wed、Thu、Fri、Sat、Sun。
+     * **参数解释**： 日期，范围：Mon、Tue、Wed、Thu、Fri、Sat、Sun。 **取值范围**： 不涉及。
      * @return day
      */
     public String getDay() {
@@ -48,7 +48,7 @@ public class MaintenanceWindow {
     }
 
     /**
-     * 开始时间，UTC时间，格式为HH:mm，例如：22:00。 - 时间必须是整点。 - 开始时间和结束时间必须间隔4小时。
+     * **参数解释**： 开始时间，UTC时间，格式为HH:mm，例如：22:00。 时间必须是整点，且开始时间和结束时间必须间隔4小时。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -65,7 +65,7 @@ public class MaintenanceWindow {
     }
 
     /**
-     * 结束时间，UTC时间，格式为HH:mm，例如：02:00。 - 时间必须是整点。 - 开始时间和结束时间必须间隔4小时。
+     * **参数解释**： 结束时间，UTC时间，格式为HH:mm，例如：22:00。 时间必须是整点，且开始时间和结束时间必须间隔4小时。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {

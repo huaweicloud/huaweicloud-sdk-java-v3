@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 告警统计
+ * **参数解释**： 告警统计。 **取值范围**： 不涉及。
  */
 public class AlarmStatisticResponse {
 
@@ -41,7 +41,7 @@ public class AlarmStatisticResponse {
     }
 
     /**
-     * 日期
+     * **参数解释**： 日期。 **取值范围**： 不涉及。
      * @return date
      */
     public String getDate() {
@@ -58,7 +58,7 @@ public class AlarmStatisticResponse {
     }
 
     /**
-     * 紧急
+     * **参数解释**： 紧急。 **取值范围**： 不涉及。
      * @return urgent
      */
     public String getUrgent() {
@@ -75,7 +75,7 @@ public class AlarmStatisticResponse {
     }
 
     /**
-     * 重要
+     * **参数解释**： 重要。 **取值范围**： 不涉及。
      * @return important
      */
     public String getImportant() {
@@ -92,7 +92,7 @@ public class AlarmStatisticResponse {
     }
 
     /**
-     * 次要
+     * **参数解释**： 次要。 **取值范围**： 不涉及。
      * @return minor
      */
     public String getMinor() {
@@ -109,7 +109,7 @@ public class AlarmStatisticResponse {
     }
 
     /**
-     * 提示
+     * **参数解释**： 提示。 **取值范围**： 不涉及。
      * @return prompt
      */
     public String getPrompt() {

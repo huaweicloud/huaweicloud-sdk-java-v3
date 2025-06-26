@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群容灾进度详情
+ * **参数解释**： 集群容灾进度详情。 **取值范围**： 不涉及。
  */
 public class ClusterRecoveryProgress {
 
@@ -41,7 +41,7 @@ public class ClusterRecoveryProgress {
     }
 
     /**
-     * key
+     * **参数解释**： 本次备份恢复ID。 **取值范围**： 不涉及。
      * @return key
      */
     public String getKey() {
@@ -58,7 +58,7 @@ public class ClusterRecoveryProgress {
     }
 
     /**
-     * action_type
+     * **参数解释**： 动作类型。 **取值范围**： 不涉及。
      * @return actionType
      */
     public String getActionType() {
@@ -75,7 +75,7 @@ public class ClusterRecoveryProgress {
     }
 
     /**
-     * unrestore_keys
+     * **参数解释**： 待恢复的备份集ID。 **取值范围**： 不涉及。
      * @return unrestoreKeys
      */
     public String getUnrestoreKeys() {
@@ -92,7 +92,7 @@ public class ClusterRecoveryProgress {
     }
 
     /**
-     * action_start_time
+     * **参数解释**： 当前动作开始时间。 **取值范围**： 不涉及。
      * @return actionStartTime
      */
     public String getActionStartTime() {
@@ -109,7 +109,7 @@ public class ClusterRecoveryProgress {
     }
 
     /**
-     * action_end_time
+     * **参数解释**： 当前动作结束时间。 **取值范围**： 不涉及。
      * @return actionEndTime
      */
     public String getActionEndTime() {

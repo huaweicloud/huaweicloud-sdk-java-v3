@@ -46,7 +46,7 @@ public class ListSchemasResponse extends SdkResponse {
     }
 
     /**
-     * 集群模式空间信息列表。
+     * **参数解释**： 集群模式空间信息列表。 **取值范围**： 不涉及。
      * @return schemas
      */
     public List<SchemaInfo> getSchemas() {
@@ -63,7 +63,7 @@ public class ListSchemasResponse extends SdkResponse {
     }
 
     /**
-     * 总数量
+     * **参数解释**： 总数量。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

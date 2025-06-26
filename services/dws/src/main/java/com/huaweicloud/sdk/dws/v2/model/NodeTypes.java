@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 节点类型对象
+ * **参数解释**： 节点规格对象。 **取值范围**： 不涉及。
  */
 public class NodeTypes {
 
@@ -141,7 +141,7 @@ public class NodeTypes {
     }
 
     /**
-     * **参数解释**： 产品类型。 **取值范围**： - dws：云数仓。 - hybrid：实时数仓。 - stream：IoT数仓。
+     * **参数解释**： 产品类型。 **取值范围**： - dws：云数仓。 - hybrid：实时数仓。
      * @return datastoreType
      */
     public String getDatastoreType() {
@@ -158,7 +158,7 @@ public class NodeTypes {
     }
 
     /**
-     * **参数解释**： 架构类型。 **取值范围**： - x86； - arm；
+     * **参数解释**： 架构类型。 **取值范围**： - x86。 - arm。
      * @return architecture
      */
     public String getArchitecture() {
@@ -317,7 +317,7 @@ public class NodeTypes {
     }
 
     /**
-     * **参数解释**： 弹性弹性容量规格的规格容量信息 **取值范围**： 如果规格为弹性容量规格，则该属性为规格典配的弹性容量信息，包括存储类型、最小容量、最大容量以及步长信息，如果为固定存储规格，则该属性为null。
+     * **参数解释**： 弹性容量规格的规格容量信息。 **取值范围**： 如果规格为弹性容量规格，则该属性为规格典配的弹性容量信息，包括存储类型、最小容量、最大容量以及步长信息，如果为固定存储规格，则该属性为null。
      * @return elasticVolumeSpecs
      */
     public List<NodeTypeElasticVolumeSpecs> getElasticVolumeSpecs() {

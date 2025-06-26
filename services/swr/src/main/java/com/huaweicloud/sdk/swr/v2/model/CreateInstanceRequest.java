@@ -1,46 +1,45 @@
-package com.huaweicloud.sdk.ecs.v2.model;
+package com.huaweicloud.sdk.swr.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Response Object
+ * Request Object
  */
-public class ShowRecycleBinServerResponse extends SdkResponse {
+public class CreateInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "server")
+    @JsonProperty(value = "body")
 
-    private ServerDetail server;
+    private CreateInstanceRequestBody body;
 
-    public ShowRecycleBinServerResponse withServer(ServerDetail server) {
-        this.server = server;
+    public CreateInstanceRequest withBody(CreateInstanceRequestBody body) {
+        this.body = body;
         return this;
     }
 
-    public ShowRecycleBinServerResponse withServer(Consumer<ServerDetail> serverSetter) {
-        if (this.server == null) {
-            this.server = new ServerDetail();
-            serverSetter.accept(this.server);
+    public CreateInstanceRequest withBody(Consumer<CreateInstanceRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new CreateInstanceRequestBody();
+            bodySetter.accept(this.body);
         }
 
         return this;
     }
 
     /**
-     * Get server
-     * @return server
+     * Get body
+     * @return body
      */
-    public ServerDetail getServer() {
-        return server;
+    public CreateInstanceRequestBody getBody() {
+        return body;
     }
 
-    public void setServer(ServerDetail server) {
-        this.server = server;
+    public void setBody(CreateInstanceRequestBody body) {
+        this.body = body;
     }
 
     @Override
@@ -51,20 +50,20 @@ public class ShowRecycleBinServerResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecycleBinServerResponse that = (ShowRecycleBinServerResponse) obj;
-        return Objects.equals(this.server, that.server);
+        CreateInstanceRequest that = (CreateInstanceRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(server);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowRecycleBinServerResponse {\n");
-        sb.append("    server: ").append(toIndentedString(server)).append("\n");
+        sb.append("class CreateInstanceRequest {\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

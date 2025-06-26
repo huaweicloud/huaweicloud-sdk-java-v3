@@ -41,7 +41,7 @@ public class ListClusterTagsResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表。
+     * **参数解释**： 标签列表。 **取值范围**： 不涉及。
      * @return tags
      */
     public List<ResourceTag> getTags() {

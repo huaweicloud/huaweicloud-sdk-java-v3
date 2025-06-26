@@ -38,6 +38,91 @@ public class Queue {
 
     private String owner;
 
+    /**
+     * 参数解释: 引擎 示例: spark 约束限制:  无 取值范围: spark, hetuEngine 默认取值: 无
+     */
+    public static final class EngineEnum {
+
+        /**
+         * Enum SPARK for value: "spark"
+         */
+        public static final EngineEnum SPARK = new EngineEnum("spark");
+
+        /**
+         * Enum HETUENGINE for value: "hetuEngine"
+         */
+        public static final EngineEnum HETUENGINE = new EngineEnum("hetuEngine");
+
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("spark", SPARK);
+            map.put("hetuEngine", HETUENGINE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EngineEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EngineEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
+        }
+
+        public static EngineEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EngineEnum) {
+                return this.value.equals(((EngineEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine")
+
+    private EngineEnum engine;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_cu")
+
+    private Float usedCu;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_opensource_flink_versions")
+
+    private List<String> supportOpensourceFlinkVersions = null;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
@@ -185,9 +270,9 @@ public class Queue {
     private String feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_type")
+    @JsonProperty(value = "queue_resource_type")
 
-    private String resourceType;
+    private String queueResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cu_spec")
@@ -315,6 +400,73 @@ public class Queue {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public Queue withEngine(EngineEnum engine) {
+        this.engine = engine;
+        return this;
+    }
+
+    /**
+     * 参数解释: 引擎 示例: spark 约束限制:  无 取值范围: spark, hetuEngine 默认取值: 无
+     * @return engine
+     */
+    public EngineEnum getEngine() {
+        return engine;
+    }
+
+    public void setEngine(EngineEnum engine) {
+        this.engine = engine;
+    }
+
+    public Queue withUsedCu(Float usedCu) {
+        this.usedCu = usedCu;
+        return this;
+    }
+
+    /**
+     * 参数解释: 队列已使用的cu 示例: 6.0 约束限制:  无 取值范围: 大于等于0 默认取值: 无
+     * @return usedCu
+     */
+    public Float getUsedCu() {
+        return usedCu;
+    }
+
+    public void setUsedCu(Float usedCu) {
+        this.usedCu = usedCu;
+    }
+
+    public Queue withSupportOpensourceFlinkVersions(List<String> supportOpensourceFlinkVersions) {
+        this.supportOpensourceFlinkVersions = supportOpensourceFlinkVersions;
+        return this;
+    }
+
+    public Queue addSupportOpensourceFlinkVersionsItem(String supportOpensourceFlinkVersionsItem) {
+        if (this.supportOpensourceFlinkVersions == null) {
+            this.supportOpensourceFlinkVersions = new ArrayList<>();
+        }
+        this.supportOpensourceFlinkVersions.add(supportOpensourceFlinkVersionsItem);
+        return this;
+    }
+
+    public Queue withSupportOpensourceFlinkVersions(Consumer<List<String>> supportOpensourceFlinkVersionsSetter) {
+        if (this.supportOpensourceFlinkVersions == null) {
+            this.supportOpensourceFlinkVersions = new ArrayList<>();
+        }
+        supportOpensourceFlinkVersionsSetter.accept(this.supportOpensourceFlinkVersions);
+        return this;
+    }
+
+    /**
+     * 参数解释: 支持的flink版本列表 示例: [1.12, 1.15] 约束限制:  无 取值范围: 无 默认取值: 无
+     * @return supportOpensourceFlinkVersions
+     */
+    public List<String> getSupportOpensourceFlinkVersions() {
+        return supportOpensourceFlinkVersions;
+    }
+
+    public void setSupportOpensourceFlinkVersions(List<String> supportOpensourceFlinkVersions) {
+        this.supportOpensourceFlinkVersions = supportOpensourceFlinkVersions;
     }
 
     public Queue withCreateTime(Long createTime) {
@@ -555,21 +707,21 @@ public class Queue {
         this.feature = feature;
     }
 
-    public Queue withResourceType(String resourceType) {
-        this.resourceType = resourceType;
+    public Queue withQueueResourceType(String queueResourceType) {
+        this.queueResourceType = queueResourceType;
         return this;
     }
 
     /**
      * 参数解释: 队列所属资源类型 示例: vm 约束限制:  无 取值范围: vm container 默认取值: 无
-     * @return resourceType
+     * @return queueResourceType
      */
-    public String getResourceType() {
-        return resourceType;
+    public String getQueueResourceType() {
+        return queueResourceType;
     }
 
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
+    public void setQueueResourceType(String queueResourceType) {
+        this.queueResourceType = queueResourceType;
     }
 
     public Queue withCuSpec(Integer cuSpec) {
@@ -851,6 +1003,8 @@ public class Queue {
         Queue that = (Queue) obj;
         return Objects.equals(this.queueId, that.queueId) && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.engine, that.engine) && Objects.equals(this.usedCu, that.usedCu)
+            && Objects.equals(this.supportOpensourceFlinkVersions, that.supportOpensourceFlinkVersions)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.queueType, that.queueType)
             && Objects.equals(this.cuCount, that.cuCount) && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.resourceId, that.resourceId)
@@ -860,7 +1014,8 @@ public class Queue {
             && Objects.equals(this.cidrInSubnet, that.cidrInSubnet)
             && Objects.equals(this.resourceMode, that.resourceMode) && Objects.equals(this.platform, that.platform)
             && Objects.equals(this.isRestarting, that.isRestarting) && Objects.equals(this.labels, that.labels)
-            && Objects.equals(this.feature, that.feature) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.feature, that.feature)
+            && Objects.equals(this.queueResourceType, that.queueResourceType)
             && Objects.equals(this.cuSpec, that.cuSpec) && Objects.equals(this.cuScaleOutLimit, that.cuScaleOutLimit)
             && Objects.equals(this.cuScaleInLimit, that.cuScaleInLimit)
             && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
@@ -880,6 +1035,9 @@ public class Queue {
             queueName,
             description,
             owner,
+            engine,
+            usedCu,
+            supportOpensourceFlinkVersions,
             createTime,
             queueType,
             cuCount,
@@ -894,7 +1052,7 @@ public class Queue {
             isRestarting,
             labels,
             feature,
-            resourceType,
+            queueResourceType,
             cuSpec,
             cuScaleOutLimit,
             cuScaleInLimit,
@@ -917,6 +1075,11 @@ public class Queue {
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
+        sb.append("    usedCu: ").append(toIndentedString(usedCu)).append("\n");
+        sb.append("    supportOpensourceFlinkVersions: ")
+            .append(toIndentedString(supportOpensourceFlinkVersions))
+            .append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    queueType: ").append(toIndentedString(queueType)).append("\n");
         sb.append("    cuCount: ").append(toIndentedString(cuCount)).append("\n");
@@ -931,7 +1094,7 @@ public class Queue {
         sb.append("    isRestarting: ").append(toIndentedString(isRestarting)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
-        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    queueResourceType: ").append(toIndentedString(queueResourceType)).append("\n");
         sb.append("    cuSpec: ").append(toIndentedString(cuSpec)).append("\n");
         sb.append("    cuScaleOutLimit: ").append(toIndentedString(cuScaleOutLimit)).append("\n");
         sb.append("    cuScaleInLimit: ").append(toIndentedString(cuScaleInLimit)).append("\n");

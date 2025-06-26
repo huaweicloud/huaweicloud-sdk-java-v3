@@ -190,6 +190,11 @@ public class ListSlowlogRequest {
 
     private String endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "role")
+
+    private String role;
+
     public ListSlowlogRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -309,6 +314,23 @@ public class ListSlowlogRequest {
         this.endTime = endTime;
     }
 
+    public ListSlowlogRequest withRole(String role) {
+        this.role = role;
+        return this;
+    }
+
+    /**
+     * 查询节点，分为proxy和server。
+     * @return role
+     */
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -321,12 +343,12 @@ public class ListSlowlogRequest {
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.role, that.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, sortKey, sortDir, startTime, endTime);
+        return Objects.hash(instanceId, offset, limit, sortKey, sortDir, startTime, endTime, role);
     }
 
     @Override
@@ -340,6 +362,7 @@ public class ListSlowlogRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("}");
         return sb.toString();
     }

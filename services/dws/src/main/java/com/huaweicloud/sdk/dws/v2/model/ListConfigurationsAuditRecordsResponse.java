@@ -46,7 +46,7 @@ public class ListConfigurationsAuditRecordsResponse extends SdkResponse {
     }
 
     /**
-     * 记录
+     * **参数解释**： 记录。 **取值范围**： 不涉及。
      * @return records
      */
     public List<ConfigurationRecordResp> getRecords() {
@@ -63,7 +63,7 @@ public class ListConfigurationsAuditRecordsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**： 总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

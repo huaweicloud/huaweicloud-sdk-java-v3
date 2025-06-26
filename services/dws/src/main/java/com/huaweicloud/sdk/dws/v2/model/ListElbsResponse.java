@@ -41,7 +41,7 @@ public class ListElbsResponse extends SdkResponse {
     }
 
     /**
-     * 弹性负载均衡列表
+     * **参数解释**： 弹性负载均衡列表。 **取值范围**： 不涉及。
      * @return elbs
      */
     public List<ClusterElbInfo> getElbs() {

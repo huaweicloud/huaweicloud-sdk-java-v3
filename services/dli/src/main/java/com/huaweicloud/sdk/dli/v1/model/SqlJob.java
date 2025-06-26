@@ -181,6 +181,81 @@ public class SqlJob {
 
     private String detail;
 
+    /**
+     * 引擎类型 示例: spark 约束限制:  无 取值范围: spark, hetuEngine 默认取值: 无
+     */
+    public static final class EngineTypeEnum {
+
+        /**
+         * Enum SPARK for value: "spark"
+         */
+        public static final EngineTypeEnum SPARK = new EngineTypeEnum("spark");
+
+        /**
+         * Enum HETUENGINE for value: "hetuEngine"
+         */
+        public static final EngineTypeEnum HETUENGINE = new EngineTypeEnum("hetuEngine");
+
+        private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineTypeEnum> createStaticFields() {
+            Map<String, EngineTypeEnum> map = new HashMap<>();
+            map.put("spark", SPARK);
+            map.put("hetuEngine", HETUENGINE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EngineTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EngineTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineTypeEnum(value));
+        }
+
+        public static EngineTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EngineTypeEnum) {
+                return this.value.equals(((EngineTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine_type")
+
+    private EngineTypeEnum engineType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statement")
 
@@ -481,6 +556,23 @@ public class SqlJob {
         this.detail = detail;
     }
 
+    public SqlJob withEngineType(EngineTypeEnum engineType) {
+        this.engineType = engineType;
+        return this;
+    }
+
+    /**
+     * 引擎类型 示例: spark 约束限制:  无 取值范围: spark, hetuEngine 默认取值: 无
+     * @return engineType
+     */
+    public EngineTypeEnum getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(EngineTypeEnum engineType) {
+        this.engineType = engineType;
+    }
+
     public SqlJob withStatement(String statement) {
         this.statement = statement;
         return this;
@@ -667,10 +759,11 @@ public class SqlJob {
             && Objects.equals(this.resultCount, that.resultCount)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.withColumnHeader, that.withColumnHeader) && Objects.equals(this.detail, that.detail)
-            && Objects.equals(this.statement, that.statement) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.message, that.message) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.cpuCost, that.cpuCost) && Objects.equals(this.outputByte, that.outputByte)
-            && Objects.equals(this.resultPath, that.resultPath) && Objects.equals(this.resultFormat, that.resultFormat)
+            && Objects.equals(this.engineType, that.engineType) && Objects.equals(this.statement, that.statement)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.cpuCost, that.cpuCost)
+            && Objects.equals(this.outputByte, that.outputByte) && Objects.equals(this.resultPath, that.resultPath)
+            && Objects.equals(this.resultFormat, that.resultFormat)
             && Objects.equals(this.executionDetailsPath, that.executionDetailsPath);
     }
 
@@ -691,6 +784,7 @@ public class SqlJob {
             tableName,
             withColumnHeader,
             detail,
+            engineType,
             statement,
             tags,
             message,
@@ -721,6 +815,7 @@ public class SqlJob {
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    withColumnHeader: ").append(toIndentedString(withColumnHeader)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+        sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("    statement: ").append(toIndentedString(statement)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");

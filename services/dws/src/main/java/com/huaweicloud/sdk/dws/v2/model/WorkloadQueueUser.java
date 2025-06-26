@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 工作队列用户
+ * **参数解释**： 工作队列用户。 **取值范围**： 不涉及。
  */
 public class WorkloadQueueUser {
 
@@ -39,7 +39,7 @@ public class WorkloadQueueUser {
     }
 
     /**
-     * 用户名
+     * **参数解释**： 用户名。 **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -72,7 +72,7 @@ public class WorkloadQueueUser {
     }
 
     /**
-     * 执行计划阶段
+     * **参数解释**： 执行计划阶段。 **取值范围**： 不涉及。
      * @return occupyResourceList
      */
     public List<OccupyResource> getOccupyResourceList() {
@@ -89,7 +89,7 @@ public class WorkloadQueueUser {
     }
 
     /**
-     * 执行结果。
+     * **参数解释**： 执行结果。 **取值范围**： 不涉及。
      * @return execResult
      */
     public Integer getExecResult() {
@@ -106,7 +106,7 @@ public class WorkloadQueueUser {
     }
 
     /**
-     * 执行日志。
+     * **参数解释**： 执行日志。 **取值范围**： 不涉及。
      * @return execLog
      */
     public String getExecLog() {

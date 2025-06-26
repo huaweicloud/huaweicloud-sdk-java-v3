@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源管理计划阶段
+ * **参数解释**： 资源管理计划阶段请求。 **取值范围**： 不涉及。
  */
 public class WorkloadPlanStageReq {
 

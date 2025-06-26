@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 数据源请求
+ * **参数解释**： 数据源请求。 **取值范围**： 不涉及。
  */
 public class ExtDataSourceReq {
 
@@ -56,7 +56,7 @@ public class ExtDataSourceReq {
     }
 
     /**
-     * 数据源id
+     * **参数解释**： 外部数据源ID。当数据源为MRS时为必选字段。 **取值范围**： 不涉及。
      * @return dataSourceId
      */
     public String getDataSourceId() {
@@ -73,7 +73,7 @@ public class ExtDataSourceReq {
     }
 
     /**
-     * 类型
+     * **参数解释**： 数据源类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -90,7 +90,7 @@ public class ExtDataSourceReq {
     }
 
     /**
-     * 数据源名称
+     * **参数解释**： 外部数据源名称。 **取值范围**： 仅可包含大小写字母、数字、下划线，1到64个字符。
      * @return dataSourceName
      */
     public String getDataSourceName() {
@@ -107,7 +107,7 @@ public class ExtDataSourceReq {
     }
 
     /**
-     * 用户名
+     * **参数解释**： 用户名。数据源类型为OBS时，传对应OBS委托名称。 **取值范围**： 仅可包含大小写字母、数字、下划线，3到20个字符。
      * @return userName
      */
     public String getUserName() {
@@ -124,7 +124,7 @@ public class ExtDataSourceReq {
     }
 
     /**
-     * 密码
+     * **参数解释**： 密码。当数据源为MRS时为必选字段。 **取值范围**： 不涉及。
      * @return userPwd
      */
     public String getUserPwd() {
@@ -141,7 +141,7 @@ public class ExtDataSourceReq {
     }
 
     /**
-     * 描述
+     * **参数解释**： 描述。 **取值范围**： 除!<>'=&等特殊字符外的字符。长度256个字符以内。
      * @return description
      */
     public String getDescription() {
@@ -158,7 +158,7 @@ public class ExtDataSourceReq {
     }
 
     /**
-     * 重启
+     * **参数解释**： 是否重启集群。 **取值范围**： 不涉及。
      * @return reboot
      */
     public Boolean getReboot() {
@@ -175,7 +175,7 @@ public class ExtDataSourceReq {
     }
 
     /**
-     * 数据库
+     * **参数解释**： 连接的数据库。当数据源为OBS时为必选字段。 **取值范围**： 不涉及。
      * @return connectInfo
      */
     public String getConnectInfo() {

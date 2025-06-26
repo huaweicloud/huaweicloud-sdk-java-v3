@@ -14,22 +14,22 @@ public class DeleteDisasterRecoveryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private String body;
+    private Object body;
 
-    public DeleteDisasterRecoveryResponse withBody(String body) {
+    public DeleteDisasterRecoveryResponse withBody(Object body) {
         this.body = body;
         return this;
     }
 
     /**
-     * Get body
+     * **参数解释**： 请求成功时的空白响应。 **取值范围**： 不涉及。
      * @return body
      */
-    public String getBody() {
+    public Object getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(Object body) {
         this.body = body;
     }
 

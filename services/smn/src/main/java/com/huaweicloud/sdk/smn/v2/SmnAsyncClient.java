@@ -77,6 +77,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListTopicAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicDetailsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicDetailsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListTopicMessageStatisticsRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListTopicMessageStatisticsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionRequest;
@@ -984,6 +986,36 @@ public class SmnAsyncClient {
     public AsyncInvoker<ListTopicDetailsRequest, ListTopicDetailsResponse> listTopicDetailsAsyncInvoker(
         ListTopicDetailsRequest request) {
         return new AsyncInvoker<>(request, SmnMeta.listTopicDetails, hcClient);
+    }
+
+    /**
+     * 查询主题的发送详情
+     *
+     * 查询Topic的发送数据详情，最多支持查询31天内所有计量数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopicMessageStatisticsRequest 请求对象
+     * @return CompletableFuture<ListTopicMessageStatisticsResponse>
+     */
+    public CompletableFuture<ListTopicMessageStatisticsResponse> listTopicMessageStatisticsAsync(
+        ListTopicMessageStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.listTopicMessageStatistics);
+    }
+
+    /**
+     * 查询主题的发送详情
+     *
+     * 查询Topic的发送数据详情，最多支持查询31天内所有计量数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopicMessageStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListTopicMessageStatisticsRequest, ListTopicMessageStatisticsResponse>
+     */
+    public AsyncInvoker<ListTopicMessageStatisticsRequest, ListTopicMessageStatisticsResponse> listTopicMessageStatisticsAsyncInvoker(
+        ListTopicMessageStatisticsRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.listTopicMessageStatistics, hcClient);
     }
 
     /**

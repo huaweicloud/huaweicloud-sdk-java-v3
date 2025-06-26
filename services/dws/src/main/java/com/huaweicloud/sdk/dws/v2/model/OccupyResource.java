@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户占用资源列表
+ * **参数解释**： 用户占用资源列表。 **取值范围**： 不涉及。
  */
 public class OccupyResource {
 
@@ -36,7 +36,7 @@ public class OccupyResource {
     }
 
     /**
-     * 资源项名称
+     * **参数解释**： 资源项名称。 **取值范围**： 不涉及。
      * @return resourceName
      */
     public String getResourceName() {
@@ -53,7 +53,7 @@ public class OccupyResource {
     }
 
     /**
-     * 资源属性数值
+     * **参数解释**： 资源属性数值。 **取值范围**： 不涉及。
      * @return resourceValue
      */
     public Integer getResourceValue() {
@@ -70,7 +70,7 @@ public class OccupyResource {
     }
 
     /**
-     * 资源属性单位
+     * **参数解释**： 资源属性单位。 **取值范围**： 不涉及。
      * @return valueUnit
      */
     public String getValueUnit() {
@@ -87,7 +87,7 @@ public class OccupyResource {
     }
 
     /**
-     * 资源附加描述
+     * **参数解释**： 资源附加描述。 **取值范围**： 不涉及。
      * @return resourceDescription
      */
     public String getResourceDescription() {

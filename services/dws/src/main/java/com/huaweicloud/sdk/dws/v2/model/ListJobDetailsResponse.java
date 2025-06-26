@@ -57,7 +57,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID
+     * **参数解释**： 任务ID。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {
@@ -74,7 +74,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务名称
+     * **参数解释**： 任务名称。 **取值范围**： 不涉及。
      * @return jobName
      */
     public String getJobName() {
@@ -91,7 +91,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务开始时间
+     * **参数解释**： 任务开始时间。 **取值范围**： 不涉及。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -108,7 +108,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务结束时间
+     * **参数解释**： 任务结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -125,7 +125,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务当前状态
+     * **参数解释**： 任务当前状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -142,7 +142,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务失败错误码
+     * **参数解释**： 任务失败错误码。 **取值范围**： 不涉及。
      * @return failedCode
      */
     public String getFailedCode() {
@@ -159,7 +159,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务失败错误详情
+     * **参数解释**： 任务失败错误详情。 **取值范围**： 不涉及。
      * @return failedDetail
      */
     public String getFailedDetail() {
@@ -176,7 +176,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务进度
+     * **参数解释**： 任务进度。 **取值范围**： 不涉及。
      * @return progress
      */
     public String getProgress() {

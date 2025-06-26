@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群容灾恢复详情
+ * **参数解释**： 集群容灾恢复详情。 **取值范围**： 不涉及。
  */
 public class ClusterDisasterRecovery {
 
@@ -99,7 +99,7 @@ public class ClusterDisasterRecovery {
     }
 
     /**
-     * latest_barrier_time
+     * **参数解释**： 故障发生时间。 **取值范围**： 不涉及。
      * @return latestBarrierTime
      */
     public String getLatestBarrierTime() {
@@ -116,7 +116,7 @@ public class ClusterDisasterRecovery {
     }
 
     /**
-     * last_recovery_spend
+     * **参数解释**： 上一个备份集恢复消耗时间，单位：秒（s）。 **取值范围**： 不涉及。
      * @return lastRecoverySpend
      */
     public Long getLastRecoverySpend() {
@@ -133,7 +133,7 @@ public class ClusterDisasterRecovery {
     }
 
     /**
-     * recovery_point_object
+     * **参数解释**： 数据恢复目标时间，单位：秒（s）。 **取值范围**： 不涉及。
      * @return recoveryPointObject
      */
     public Long getRecoveryPointObject() {
@@ -150,7 +150,7 @@ public class ClusterDisasterRecovery {
     }
 
     /**
-     * recovery_time_object
+     * **参数解释**： 服务恢复目标时间，单位：秒（s）。 **取值范围**： 不涉及。
      * @return recoveryTimeObject
      */
     public Long getRecoveryTimeObject() {

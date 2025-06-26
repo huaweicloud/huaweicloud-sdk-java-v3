@@ -92,6 +92,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListTopicAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicDetailsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicDetailsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListTopicMessageStatisticsRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListTopicMessageStatisticsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionRequest;
@@ -976,6 +978,45 @@ public class SmnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopicDetailsRequest::getTopicUrn, ListTopicDetailsRequest::setTopicUrn));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopicMessageStatisticsRequest, ListTopicMessageStatisticsResponse> listTopicMessageStatistics =
+        genForListTopicMessageStatistics();
+
+    private static HttpRequestDef<ListTopicMessageStatisticsRequest, ListTopicMessageStatisticsResponse> genForListTopicMessageStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListTopicMessageStatisticsRequest, ListTopicMessageStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTopicMessageStatisticsRequest.class,
+                    ListTopicMessageStatisticsResponse.class)
+                .withName("ListTopicMessageStatistics")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicMessageStatisticsRequest::getTopicUrn,
+                ListTopicMessageStatisticsRequest::setTopicUrn));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicMessageStatisticsRequest::getStartTime,
+                ListTopicMessageStatisticsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicMessageStatisticsRequest::getEndTime,
+                ListTopicMessageStatisticsRequest::setEndTime));
 
         // response
 

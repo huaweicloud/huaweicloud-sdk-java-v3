@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 创建订阅告警请求体
+ * **参数解释**： 创建订阅告警请求体。 **取值范围**： 不涉及。
  */
 public class AlarmSubRequest {
 
@@ -51,7 +51,7 @@ public class AlarmSubRequest {
     }
 
     /**
-     * 告警订阅名称
+     * **参数解释**： 告警订阅名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -68,7 +68,7 @@ public class AlarmSubRequest {
     }
 
     /**
-     * 是否开启订阅
+     * **参数解释**： 是否开启订阅。 **取值范围**： 不涉及。
      * @return enable
      */
     public Integer getEnable() {
@@ -85,7 +85,7 @@ public class AlarmSubRequest {
     }
 
     /**
-     * 告警级别
+     * **参数解释**： 告警级别。 **取值范围**： 不涉及。
      * @return alarmLevel
      */
     public String getAlarmLevel() {
@@ -102,7 +102,7 @@ public class AlarmSubRequest {
     }
 
     /**
-     * 消息主题地址
+     * **参数解释**： 消息主题地址。 **取值范围**： 不涉及。
      * @return notificationTarget
      */
     public String getNotificationTarget() {
@@ -119,7 +119,7 @@ public class AlarmSubRequest {
     }
 
     /**
-     * 消息主题名称
+     * **参数解释**： 消息主题名称。 **取值范围**： 不涉及。
      * @return notificationTargetName
      */
     public String getNotificationTargetName() {
@@ -136,7 +136,7 @@ public class AlarmSubRequest {
     }
 
     /**
-     * 消息主题类型，支持SMN
+     * **参数解释**： 消息主题类型，支持SMN。 **取值范围**： 不涉及。
      * @return notificationTargetType
      */
     public String getNotificationTargetType() {
@@ -153,7 +153,7 @@ public class AlarmSubRequest {
     }
 
     /**
-     * 时区
+     * **参数解释**： 时区。 **取值范围**： 不涉及。
      * @return timeZone
      */
     public String getTimeZone() {

@@ -49,7 +49,7 @@ public class ListSnapshotCrossRegionPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 跨区域配置信息
+     * **参数解释**： 跨区域配置信息。 **取值范围**： 不涉及。
      * @return crossRegionConfigs
      */
     public List<CrossRegionSnapshotConfig> getCrossRegionConfigs() {
@@ -66,7 +66,7 @@ public class ListSnapshotCrossRegionPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**： 总数。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

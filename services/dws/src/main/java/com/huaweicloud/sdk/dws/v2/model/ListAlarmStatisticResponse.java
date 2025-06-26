@@ -42,7 +42,7 @@ public class ListAlarmStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 告警统计列表
+     * **参数解释**： 告警统计列表。 **取值范围**： 不涉及。
      * @return alarmStatistics
      */
     public List<AlarmStatisticResponse> getAlarmStatistics() {

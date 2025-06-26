@@ -41,7 +41,7 @@ public class UpdateDatabaseAuthorityResponse extends SdkResponse {
     }
 
     /**
-     * sql列表
+     * **参数解释**： sql列表。 **取值范围**： 不涉及。
      * @return viewSql
      */
     public List<String> getViewSql() {

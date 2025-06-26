@@ -35,7 +35,7 @@ public class ListLtsLogsResponse extends SdkResponse {
     }
 
     /**
-     * 日志开启状态。
+     * **参数解释**： 日志开启状态。 **取值范围**： 不涉及。
      * @return accessStatus
      */
     public String getAccessStatus() {
@@ -68,7 +68,7 @@ public class ListLtsLogsResponse extends SdkResponse {
     }
 
     /**
-     * LTS日志列表。
+     * **参数解释**： LTS日志列表。 **取值范围**： 不涉及。
      * @return ltsAccessList
      */
     public List<LtslogInfo> getLtsAccessList() {
@@ -85,7 +85,7 @@ public class ListLtsLogsResponse extends SdkResponse {
     }
 
     /**
-     * 总数量
+     * **参数解释**： 总数量。 **取值范围**： 大于等于0。
      * @return count
      */
     public Integer getCount() {

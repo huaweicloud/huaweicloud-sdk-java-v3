@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新数据源配置
+ * **参数解释**： 更新数据源配置。 **取值范围**： 不涉及。
  */
 public class ReconfigureExtDataSourceAction {
 
@@ -26,7 +26,7 @@ public class ReconfigureExtDataSourceAction {
     }
 
     /**
-     * 重启。
+     * **参数解释**： 重启。 **取值范围**： 不涉及。
      * @return reboot
      */
     public Boolean getReboot() {
@@ -43,7 +43,7 @@ public class ReconfigureExtDataSourceAction {
     }
 
     /**
-     * 委托。
+     * **参数解释**： 委托。 **取值范围**： 不涉及。
      * @return agency
      */
     public String getAgency() {

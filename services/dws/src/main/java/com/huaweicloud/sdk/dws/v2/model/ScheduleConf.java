@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 调度配置信息
+ * **参数解释**： 调度配置信息。 **取值范围**： 不涉及。
  */
 public class ScheduleConf {
 

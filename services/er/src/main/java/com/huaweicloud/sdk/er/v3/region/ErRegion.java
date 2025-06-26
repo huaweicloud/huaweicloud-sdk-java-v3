@@ -58,6 +58,8 @@ public class ErRegion {
     public static final Region AP_SOUTHEAST_5 =
         new Region("ap-southeast-5", "https://er.ap-southeast-5.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://er.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("ER");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -83,6 +85,7 @@ public class ErRegion {
         map.put("ae-ad-1", AE_AD_1);
         map.put("af-north-1", AF_NORTH_1);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

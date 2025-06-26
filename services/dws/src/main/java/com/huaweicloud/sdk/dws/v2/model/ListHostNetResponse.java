@@ -41,7 +41,7 @@ public class ListHostNetResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * **参数解释**： 网卡状态响应体。 **取值范围**： 不涉及。
      * @return body
      */
     public List<NetResp> getBody() {

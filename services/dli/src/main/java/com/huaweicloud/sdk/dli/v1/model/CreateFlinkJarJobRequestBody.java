@@ -134,6 +134,11 @@ public class CreateFlinkJarJobRequestBody {
     private String runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_agency_urn")
+
+    private String executionAgencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
@@ -588,6 +593,23 @@ public class CreateFlinkJarJobRequestBody {
         this.runtimeConfig = runtimeConfig;
     }
 
+    public CreateFlinkJarJobRequestBody withExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+        return this;
+    }
+
+    /**
+     * 授权给DLI的委托名。Flink1.15版本时支持配置该参数。
+     * @return executionAgencyUrn
+     */
+    public String getExecutionAgencyUrn() {
+        return executionAgencyUrn;
+    }
+
+    public void setExecutionAgencyUrn(String executionAgencyUrn) {
+        this.executionAgencyUrn = executionAgencyUrn;
+    }
+
     public CreateFlinkJarJobRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -690,7 +712,8 @@ public class CreateFlinkJarJobRequestBody {
             && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
             && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
             && Objects.equals(this.checkpointPath, that.checkpointPath)
-            && Objects.equals(this.runtimeConfig, that.runtimeConfig) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.executionAgencyUrn, that.executionAgencyUrn) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.resourceConfig, that.resourceConfig)
             && Objects.equals(this.resourceConfigVersion, that.resourceConfigVersion);
     }
@@ -721,6 +744,7 @@ public class CreateFlinkJarJobRequestBody {
             resumeMaxNum,
             checkpointPath,
             runtimeConfig,
+            executionAgencyUrn,
             tags,
             resourceConfig,
             resourceConfigVersion);
@@ -754,6 +778,7 @@ public class CreateFlinkJarJobRequestBody {
         sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");
         sb.append("    checkpointPath: ").append(toIndentedString(checkpointPath)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
+        sb.append("    executionAgencyUrn: ").append(toIndentedString(executionAgencyUrn)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    resourceConfig: ").append(toIndentedString(resourceConfig)).append("\n");
         sb.append("    resourceConfigVersion: ").append(toIndentedString(resourceConfigVersion)).append("\n");

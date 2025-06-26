@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新容灾配置请求体
+ * **参数解释**： 更新容灾配置请求体。 **取值范围**： 不涉及。
  */
 public class UpdateDisasterRecoveryReq {
 
@@ -46,7 +46,7 @@ public class UpdateDisasterRecoveryReq {
     }
 
     /**
-     * 容灾同步周期
+     * **参数解释**： 容灾同步周期。 **取值范围**： 不涉及。
      * @return drSyncPeriod
      */
     public String getDrSyncPeriod() {
@@ -63,7 +63,7 @@ public class UpdateDisasterRecoveryReq {
     }
 
     /**
-     * 是否发送请求
+     * **参数解释**： 是否发送请求。 **取值范围**： 不涉及。
      * minimum: 0
      * maximum: 1
      * @return sendRequest
@@ -82,7 +82,7 @@ public class UpdateDisasterRecoveryReq {
     }
 
     /**
-     * 主集群角色
+     * **参数解释**： 主集群角色。 **取值范围**： 不涉及。
      * @return primaryToRole
      */
     public String getPrimaryToRole() {
@@ -99,7 +99,7 @@ public class UpdateDisasterRecoveryReq {
     }
 
     /**
-     * 设置容灾动作
+     * **参数解释**： 设置容灾动作。 **取值范围**： 不涉及。
      * @return resetAction
      */
     public String getResetAction() {
@@ -116,7 +116,7 @@ public class UpdateDisasterRecoveryReq {
     }
 
     /**
-     * 备集群角色
+     * **参数解释**： 备集群角色。 **取值范围**： 不涉及。
      * @return standbyToRole
      */
     public String getStandbyToRole() {
@@ -133,7 +133,7 @@ public class UpdateDisasterRecoveryReq {
     }
 
     /**
-     * 容灾状态
+     * **参数解释**： 容灾状态。 **取值范围**： 不涉及。
      * @return drStatus
      */
     public String getDrStatus() {

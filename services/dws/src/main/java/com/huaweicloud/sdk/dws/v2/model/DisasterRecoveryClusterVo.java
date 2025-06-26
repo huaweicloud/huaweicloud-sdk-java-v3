@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 容灾可用集群信息
+ * **参数解释**： 容灾可用集群信息。 **取值范围**： 不涉及。
  */
 public class DisasterRecoveryClusterVo {
 
@@ -43,7 +43,7 @@ public class DisasterRecoveryClusterVo {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {

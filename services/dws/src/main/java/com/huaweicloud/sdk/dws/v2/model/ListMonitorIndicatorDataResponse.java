@@ -41,7 +41,7 @@ public class ListMonitorIndicatorDataResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * **参数解释**： 历史监控数据响应。 **取值范围**： 不涉及。
      * @return body
      */
     public List<TrendQueryDataResp> getBody() {
