@@ -26,7 +26,7 @@ jobs:
       - name: Publish packages
         run: |
           token=$(printf "${TOKEN_USERNAME}:${TOKEN_PASSWORD}" | base64)
-          curl -X POST -sSLf -o /dev/null -w "%{http_code}" "https://central.sonatype.com/api/v1/publisher/status?id=hello" -H "Authorization: Bearer ${token}" | grep -q '200\|404' && echo "token ok" || (echo "token error"; exit 1)
+          curl -X POST -sSL -o /dev/null -w "%{http_code}" "https://central.sonatype.com/api/v1/publisher/status?id=hello" -H "Authorization: Bearer ${token}" | grep -q '200\|404' && echo "token ok" || (echo "token error"; exit 1)
           mvn deploy -B -P release -DretryFailedDeploymentCount=10
         shell: bash
         env:
