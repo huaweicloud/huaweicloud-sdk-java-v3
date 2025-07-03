@@ -7,6 +7,10 @@ jobs:
   publish:
     runs-on: ubuntu-22.04
     steps:
+      - name: Validate token
+        run: |
+          token=$(printf "${{ secrets.TOKEN_USERNAME }}:example_password" | base64)
+        shell: bash
       - uses: actions/checkout@v3
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v4
@@ -20,7 +24,11 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: GPG_PASSPHRASE
       - name: Publish packages
-        run: mvn deploy -B -P release -DretryFailedDeploymentCount=10
+        run: |
+          token=$(printf "${TOKEN_USERNAME}:${TOKEN_PASSWORD}" | base64)
+          curl -X POST -sSLf -o /dev/null -w "%{http_code}" "https://central.sonatype.com/api/v1/publisher/status?id=hello" -H "Authorization: Bearer ${token}" | grep -q '200\|404' && echo "token ok" || (echo "token error"; exit 1)
+          mvn deploy -B -P release -DretryFailedDeploymentCount=10
+        shell: bash
         env:
           TOKEN_USERNAME: ${{ secrets.TOKEN_USERNAME }}
           TOKEN_PASSWORD: ${{ secrets.TOKEN_PASSWORD }}
