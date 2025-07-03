@@ -22,6 +22,6 @@ jobs:
       - name: Publish packages
         run: mvn deploy -B -P release -DretryFailedDeploymentCount=10
         env:
-          OSSRH_USERNAME: ${{ secrets.TOKEN_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.TOKEN_PASSWORD }}
+          TOKEN_USERNAME: ${{ secrets.TOKEN_USERNAME }}
+          TOKEN_PASSWORD: ${{ secrets.TOKEN_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
