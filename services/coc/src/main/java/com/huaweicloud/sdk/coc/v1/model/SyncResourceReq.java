@@ -26,7 +26,7 @@ public class SyncResourceReq {
     }
 
     /**
-     * 资源提供者
+     * 资源提供者。
      * @return provider
      */
     public String getProvider() {
@@ -43,7 +43,7 @@ public class SyncResourceReq {
     }
 
     /**
-     * 资源类型
+     * 资源类型。
      * @return type
      */
     public String getType() {

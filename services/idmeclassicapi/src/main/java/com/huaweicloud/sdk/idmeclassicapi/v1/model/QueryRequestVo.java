@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * QueryRequestVo
+ * 查询请求对象。
  */
 public class QueryRequestVo {
 
@@ -126,7 +126,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  查询条件。  此参数已废弃，不建议继续使用，建议使用替代参数filter。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  查询条件。  此参数已废弃，不建议继续使用，建议使用替代参数filter。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return conditions
      */
     public List<QueryCondition> getConditions() {
@@ -143,7 +143,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  是否加密。  **约束限制：**  不涉及。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  不涉及。 
+     * **参数解释：**  是否加密。  **约束限制：**  不涉及。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  不涉及。
      * @return decrypt
      */
     public Boolean getDecrypt() {
@@ -160,7 +160,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  实体类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  实体类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return entityType
      */
     public String getEntityType() {
@@ -203,7 +203,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  是否需要查询总记录数。  **约束限制：**  不涉及。  **取值范围：**  - true：需要。 - false：不需要。  **默认取值：**  false。 
+     * **参数解释：**  是否需要查询总记录数。  **约束限制：**  不涉及。  **取值范围：**  - true：需要。 - false：不需要。  **默认取值：**  false。
      * @return isNeedTotal
      */
     public Boolean getIsNeedTotal() {
@@ -220,7 +220,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  是否需要展示所有参考对象信息。  **约束限制：**  不涉及。  **取值范围：**  - true：需要。 - false：不需要。  **默认取值：**  false。 
+     * **参数解释：**  是否需要展示所有参考对象信息。  **约束限制：**  不涉及。  **取值范围：**  - true：需要。 - false：不需要。  **默认取值：**  false。
      * @return isPresentAll
      */
     public Boolean getIsPresentAll() {
@@ -253,7 +253,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  需要展示详细信息的参考对象。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  需要展示详细信息的参考对象。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return needPresentDetail
      */
     public List<String> getNeedPresentDetail() {
@@ -270,7 +270,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  按某个字段进行排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  按某个字段进行排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -287,7 +287,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  排序字段的表别名。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  排序字段的表别名。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return orderByTableAlias
      */
     public String getOrderByTableAlias() {
@@ -304,7 +304,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  多租查询参数。  **约束限制：**  不涉及。  **取值范围：**  - EXCLUDE_PUBLIC_DATA：不包括公共数据。 - INCLUDE_PUBLIC_DATA：包括公共数据。 - ONLY_NEED_PUBLIC_DATA：只有公共数据。  **默认取值：**  不涉及。 
+     * **参数解释：**  多租查询参数。  **约束限制：**  不涉及。  **取值范围：**  - EXCLUDE_PUBLIC_DATA：不包括公共数据。 - INCLUDE_PUBLIC_DATA：包括公共数据。 - ONLY_NEED_PUBLIC_DATA：只有公共数据。  **默认取值：**  不涉及。
      * @return publicData
      */
     public String getPublicData() {
@@ -321,7 +321,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  排序方向。  **约束限制：**  不涉及。  **取值范围：**  - ASC：表示升序。 - DESC：表示降序。  **默认取值：**  ASC。 
+     * **参数解释：**  排序方向。  **约束限制：**  不涉及。  **取值范围：**  - ASC：表示升序。 - DESC：表示降序。  **默认取值：**  ASC。
      * @return sort
      */
     public String getSort() {
@@ -354,7 +354,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return sorts
      */
     public List<SortInfoVo> getSorts() {

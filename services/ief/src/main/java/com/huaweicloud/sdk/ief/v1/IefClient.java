@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.ief.v1.model.DeleteEndPointRequest;
 import com.huaweicloud.sdk.ief.v1.model.DeleteEndPointResponse;
 import com.huaweicloud.sdk.ief.v1.model.DeleteNodeEncryptdatasRequest;
 import com.huaweicloud.sdk.ief.v1.model.DeleteNodeEncryptdatasResponse;
+import com.huaweicloud.sdk.ief.v1.model.DeletePodRequest;
+import com.huaweicloud.sdk.ief.v1.model.DeletePodResponse;
 import com.huaweicloud.sdk.ief.v1.model.DeleteProductRequest;
 import com.huaweicloud.sdk.ief.v1.model.DeleteProductResponse;
 import com.huaweicloud.sdk.ief.v1.model.DeleteResourceTagRequest;
@@ -1257,6 +1259,34 @@ public class IefClient {
     public SyncInvoker<DeleteNodeEncryptdatasRequest, DeleteNodeEncryptdatasResponse> deleteNodeEncryptdatasInvoker(
         DeleteNodeEncryptdatasRequest request) {
         return new SyncInvoker<>(request, IefMeta.deleteNodeEncryptdatas, hcClient);
+    }
+
+    /**
+     * 删除容器应用实例
+     *
+     * 删除部署下的应用实例。应用实例在删除后会自动重新拉起。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePodRequest 请求对象
+     * @return DeletePodResponse
+     */
+    public DeletePodResponse deletePod(DeletePodRequest request) {
+        return hcClient.syncInvokeHttp(request, IefMeta.deletePod);
+    }
+
+    /**
+     * 删除容器应用实例
+     *
+     * 删除部署下的应用实例。应用实例在删除后会自动重新拉起。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePodRequest 请求对象
+     * @return SyncInvoker<DeletePodRequest, DeletePodResponse>
+     */
+    public SyncInvoker<DeletePodRequest, DeletePodResponse> deletePodInvoker(DeletePodRequest request) {
+        return new SyncInvoker<>(request, IefMeta.deletePod, hcClient);
     }
 
     /**

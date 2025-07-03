@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.meeting.v1.model.AddToPersonalSpaceRequest;
 import com.huaweicloud.sdk.meeting.v1.model.AddToPersonalSpaceResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AddUserRequest;
 import com.huaweicloud.sdk.meeting.v1.model.AddUserResponse;
+import com.huaweicloud.sdk.meeting.v1.model.AllowAudienceJoinRequest;
+import com.huaweicloud.sdk.meeting.v1.model.AllowAudienceJoinResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AllowClientRecordRequest;
 import com.huaweicloud.sdk.meeting.v1.model.AllowClientRecordResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AllowGuestUnmuteRequest;
@@ -47,6 +49,8 @@ import com.huaweicloud.sdk.meeting.v1.model.BatchDeleteUsersRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchDeleteUsersResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchHandRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchHandResponse;
+import com.huaweicloud.sdk.meeting.v1.model.BatchMoveToWaitingRoomRequest;
+import com.huaweicloud.sdk.meeting.v1.model.BatchMoveToWaitingRoomResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchSearchAppIdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchSearchAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchShowUserDetailsRequest;
@@ -155,6 +159,8 @@ import com.huaweicloud.sdk.meeting.v1.model.MuteMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.MuteMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.MuteParticipantRequest;
 import com.huaweicloud.sdk.meeting.v1.model.MuteParticipantResponse;
+import com.huaweicloud.sdk.meeting.v1.model.PauseConferenceRequest;
+import com.huaweicloud.sdk.meeting.v1.model.PauseConferenceResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ProlongMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ProlongMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.RecordRequest;
@@ -255,6 +261,10 @@ import com.huaweicloud.sdk.meeting.v1.model.SetHostViewRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetHostViewResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetInterpreterGroupRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetInterpreterGroupResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetMmrLiveRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetMmrLiveResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetMmrRecordRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetMmrRecordResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetParticipantViewRequest;
@@ -301,6 +311,8 @@ import com.huaweicloud.sdk.meeting.v1.model.ShowMeetingFileListRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMeetingFileListResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMeetingFileRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMeetingFileResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ShowMgmtSiteStatusRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ShowMgmtSiteStatusResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMyInfoRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMyInfoResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowOnlineMeetingDetailRequest;
@@ -716,6 +728,35 @@ public class MeetingClient {
     }
 
     /**
+     * 主持人允许观众入会
+     *
+     * 主持人通过接口控制是否允许观众入会。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AllowAudienceJoinRequest 请求对象
+     * @return AllowAudienceJoinResponse
+     */
+    public AllowAudienceJoinResponse allowAudienceJoin(AllowAudienceJoinRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.allowAudienceJoin);
+    }
+
+    /**
+     * 主持人允许观众入会
+     *
+     * 主持人通过接口控制是否允许观众入会。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AllowAudienceJoinRequest 请求对象
+     * @return SyncInvoker<AllowAudienceJoinRequest, AllowAudienceJoinResponse>
+     */
+    public SyncInvoker<AllowAudienceJoinRequest, AllowAudienceJoinResponse> allowAudienceJoinInvoker(
+        AllowAudienceJoinRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.allowAudienceJoin, hcClient);
+    }
+
+    /**
      * 允许客户端录制
      *
      * 该接口用于设置允许/禁止与会者客户端本地录制（非云端录制）。
@@ -1032,6 +1073,35 @@ public class MeetingClient {
      */
     public SyncInvoker<BatchHandRequest, BatchHandResponse> batchHandInvoker(BatchHandRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.batchHand, hcClient);
+    }
+
+    /**
+     * 批量移入等候室
+     *
+     * 主持人通过该接口批量移动用户到等候室。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchMoveToWaitingRoomRequest 请求对象
+     * @return BatchMoveToWaitingRoomResponse
+     */
+    public BatchMoveToWaitingRoomResponse batchMoveToWaitingRoom(BatchMoveToWaitingRoomRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.batchMoveToWaitingRoom);
+    }
+
+    /**
+     * 批量移入等候室
+     *
+     * 主持人通过该接口批量移动用户到等候室。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchMoveToWaitingRoomRequest 请求对象
+     * @return SyncInvoker<BatchMoveToWaitingRoomRequest, BatchMoveToWaitingRoomResponse>
+     */
+    public SyncInvoker<BatchMoveToWaitingRoomRequest, BatchMoveToWaitingRoomResponse> batchMoveToWaitingRoomInvoker(
+        BatchMoveToWaitingRoomRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.batchMoveToWaitingRoom, hcClient);
     }
 
     /**
@@ -2593,6 +2663,35 @@ public class MeetingClient {
     }
 
     /**
+     * 主持人暂停/取消暂停会议
+     *
+     * 主持人通过接口控制暂停/取消暂停。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseConferenceRequest 请求对象
+     * @return PauseConferenceResponse
+     */
+    public PauseConferenceResponse pauseConference(PauseConferenceRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.pauseConference);
+    }
+
+    /**
+     * 主持人暂停/取消暂停会议
+     *
+     * 主持人通过接口控制暂停/取消暂停。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PauseConferenceRequest 请求对象
+     * @return SyncInvoker<PauseConferenceRequest, PauseConferenceResponse>
+     */
+    public SyncInvoker<PauseConferenceRequest, PauseConferenceResponse> pauseConferenceInvoker(
+        PauseConferenceRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.pauseConference, hcClient);
+    }
+
+    /**
      * 延长会议
      *
      * 该接口用于延长会议时间。默认会议自动延长。
@@ -3816,6 +3915,62 @@ public class MeetingClient {
     }
 
     /**
+     * 启动/停止Mmr会议直播
+     *
+     * 使用场景：会议主持人可以通过该接口启动/停止Mmr会议直播 功能描述：提供启动/停止会议Mmr直播的能力
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMmrLiveRequest 请求对象
+     * @return SetMmrLiveResponse
+     */
+    public SetMmrLiveResponse setMmrLive(SetMmrLiveRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.setMmrLive);
+    }
+
+    /**
+     * 启动/停止Mmr会议直播
+     *
+     * 使用场景：会议主持人可以通过该接口启动/停止Mmr会议直播 功能描述：提供启动/停止会议Mmr直播的能力
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMmrLiveRequest 请求对象
+     * @return SyncInvoker<SetMmrLiveRequest, SetMmrLiveResponse>
+     */
+    public SyncInvoker<SetMmrLiveRequest, SetMmrLiveResponse> setMmrLiveInvoker(SetMmrLiveRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.setMmrLive, hcClient);
+    }
+
+    /**
+     * 启动/暂停/停止mmr会议录制
+     *
+     * 使用场景：管理员或UC账号主席可以通过该接口启动/停止mmr会议录制 功能描述：提供启动/暂停/停止MMR会议录制的能力
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMmrRecordRequest 请求对象
+     * @return SetMmrRecordResponse
+     */
+    public SetMmrRecordResponse setMmrRecord(SetMmrRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.setMmrRecord);
+    }
+
+    /**
+     * 启动/暂停/停止mmr会议录制
+     *
+     * 使用场景：管理员或UC账号主席可以通过该接口启动/停止mmr会议录制 功能描述：提供启动/暂停/停止MMR会议录制的能力
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMmrRecordRequest 请求对象
+     * @return SyncInvoker<SetMmrRecordRequest, SetMmrRecordResponse>
+     */
+    public SyncInvoker<SetMmrRecordRequest, SetMmrRecordResponse> setMmrRecordInvoker(SetMmrRecordRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.setMmrRecord, hcClient);
+    }
+
+    /**
      * 设置多画面
      *
      * 设置会议多画面。该接口废弃不用，请使用“[[设置自定义多画面](https://support.huaweicloud.com/api-meeting/meeting_21_0418.html)](tag:hws)[[设置自定义多画面](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0418.html)](tag:hk)”接口。
@@ -4453,6 +4608,35 @@ public class MeetingClient {
     public SyncInvoker<ShowMeetingFileListRequest, ShowMeetingFileListResponse> showMeetingFileListInvoker(
         ShowMeetingFileListRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.showMeetingFileList, hcClient);
+    }
+
+    /**
+     * 查询会管状态
+     *
+     * 终端通过会控查询会管状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMgmtSiteStatusRequest 请求对象
+     * @return ShowMgmtSiteStatusResponse
+     */
+    public ShowMgmtSiteStatusResponse showMgmtSiteStatus(ShowMgmtSiteStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showMgmtSiteStatus);
+    }
+
+    /**
+     * 查询会管状态
+     *
+     * 终端通过会控查询会管状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMgmtSiteStatusRequest 请求对象
+     * @return SyncInvoker<ShowMgmtSiteStatusRequest, ShowMgmtSiteStatusResponse>
+     */
+    public SyncInvoker<ShowMgmtSiteStatusRequest, ShowMgmtSiteStatusResponse> showMgmtSiteStatusInvoker(
+        ShowMgmtSiteStatusRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.showMgmtSiteStatus, hcClient);
     }
 
     /**

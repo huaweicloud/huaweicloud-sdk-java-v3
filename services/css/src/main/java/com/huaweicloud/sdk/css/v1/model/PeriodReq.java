@@ -11,29 +11,29 @@ import java.util.Objects;
 public class PeriodReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "periodType")
+    @JsonProperty(value = "period_type")
 
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "periodNum")
+    @JsonProperty(value = "period_num")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isAutoRenew")
+    @JsonProperty(value = "is_auto_renew")
 
     private Integer isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isAutoPay")
+    @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "consoleURL")
+    @JsonProperty(value = "console_url")
 
-    private String consoleURL;
+    private String consoleUrl;
 
     public PeriodReq withPeriodType(Integer periodType) {
         this.periodType = periodType;
@@ -103,21 +103,21 @@ public class PeriodReq {
         this.isAutoPay = isAutoPay;
     }
 
-    public PeriodReq withConsoleURL(String consoleURL) {
-        this.consoleURL = consoleURL;
+    public PeriodReq withConsoleUrl(String consoleUrl) {
+        this.consoleUrl = consoleUrl;
         return this;
     }
 
     /**
      * 云服务ConsoleURL。 订购订单支付完成后，客户可以通过此URL跳转到云服务Console页面查看信息。（仅手动支付时涉及）。
-     * @return consoleURL
+     * @return consoleUrl
      */
-    public String getConsoleURL() {
-        return consoleURL;
+    public String getConsoleUrl() {
+        return consoleUrl;
     }
 
-    public void setConsoleURL(String consoleURL) {
-        this.consoleURL = consoleURL;
+    public void setConsoleUrl(String consoleUrl) {
+        this.consoleUrl = consoleUrl;
     }
 
     @Override
@@ -131,12 +131,12 @@ public class PeriodReq {
         PeriodReq that = (PeriodReq) obj;
         return Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
             && Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.isAutoPay, that.isAutoPay)
-            && Objects.equals(this.consoleURL, that.consoleURL);
+            && Objects.equals(this.consoleUrl, that.consoleUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(periodType, periodNum, isAutoRenew, isAutoPay, consoleURL);
+        return Objects.hash(periodType, periodNum, isAutoRenew, isAutoPay, consoleUrl);
     }
 
     @Override
@@ -147,7 +147,7 @@ public class PeriodReq {
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
-        sb.append("    consoleURL: ").append(toIndentedString(consoleURL)).append("\n");
+        sb.append("    consoleUrl: ").append(toIndentedString(consoleUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -378,7 +378,7 @@ public class ListAllMembersRequest {
     }
 
     /**
-     * 后端服务器的健康状态。  取值： - ONLINE，后端服务器正常运行。 - NO_MONITOR，后端服务器无健康检查。 - OFFLINE，已下线。  支持多值查询，查询条件格式：*operating_status=xxx&operating_status=*。
+     * 后端服务器的健康状态。  取值： - INITIAL：初始化中，表示负载均衡实例配置了健康检查，但查不到数据。 - ONLINE，后端服务器正常运行。 - NO_MONITOR，后端服务器无健康检查。 - OFFLINE，已下线。  支持多值查询，查询条件格式：*operating_status=xxx&operating_status=*。
      * @return operatingStatus
      */
     public List<String> getOperatingStatus() {

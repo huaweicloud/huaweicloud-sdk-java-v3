@@ -82,7 +82,6 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
@@ -209,10 +208,10 @@ public class CbhMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<BigDecimal>withRequestField("instance_id",
+        builder.<Long>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 
         // response
@@ -278,10 +277,10 @@ public class CbhMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<BigDecimal>withRequestField("instance_id",
+        builder.<Long>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListInstancesRequest::getInstanceId, ListInstancesRequest::setInstanceId));
 
         // response

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * RecycleBinPolicy
+ * 回收站的回收配置。
  */
 public class RecycleBinPolicy {
 

@@ -23,11 +23,6 @@ public class BatchAddOrDeleteTagOnClusterReq {
 
     private List<Tag> tags = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sysTags")
-
-    private List<SysTags> sysTags = null;
-
     public BatchAddOrDeleteTagOnClusterReq withAction(String action) {
         this.action = action;
         return this;
@@ -78,39 +73,6 @@ public class BatchAddOrDeleteTagOnClusterReq {
         this.tags = tags;
     }
 
-    public BatchAddOrDeleteTagOnClusterReq withSysTags(List<SysTags> sysTags) {
-        this.sysTags = sysTags;
-        return this;
-    }
-
-    public BatchAddOrDeleteTagOnClusterReq addSysTagsItem(SysTags sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        this.sysTags.add(sysTagsItem);
-        return this;
-    }
-
-    public BatchAddOrDeleteTagOnClusterReq withSysTags(Consumer<List<SysTags>> sysTagsSetter) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        sysTagsSetter.accept(this.sysTags);
-        return this;
-    }
-
-    /**
-     * 系统标签列表。 - key固定为：_sys_enterprise_project_id。 - value是UUID或0,value为0表示默认企业项目。
-     * @return sysTags
-     */
-    public List<SysTags> getSysTags() {
-        return sysTags;
-    }
-
-    public void setSysTags(List<SysTags> sysTags) {
-        this.sysTags = sysTags;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -120,13 +82,12 @@ public class BatchAddOrDeleteTagOnClusterReq {
             return false;
         }
         BatchAddOrDeleteTagOnClusterReq that = (BatchAddOrDeleteTagOnClusterReq) obj;
-        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.sysTags, that.sysTags);
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, tags, sysTags);
+        return Objects.hash(action, tags);
     }
 
     @Override
@@ -135,7 +96,6 @@ public class BatchAddOrDeleteTagOnClusterReq {
         sb.append("class BatchAddOrDeleteTagOnClusterReq {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

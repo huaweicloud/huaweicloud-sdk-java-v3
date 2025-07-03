@@ -12,12 +12,12 @@ import java.util.function.Consumer;
 public class CloseKibanaPublicReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eipSize")
+    @JsonProperty(value = "eip_size")
 
     private Integer eipSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "elbWhiteList")
+    @JsonProperty(value = "elb_white_list")
 
     private StartKibanaPublicReqElbWhitelist elbWhiteList;
 

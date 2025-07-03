@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class UpdateVpcepWhitelistReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vpcPermissions")
+    @JsonProperty(value = "vpc_permissions")
 
     private List<String> vpcPermissions = null;
 

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * RecycleBinResponseBody
+ * 回收站响应体。
  */
 public class RecycleBinResponseBody {
 

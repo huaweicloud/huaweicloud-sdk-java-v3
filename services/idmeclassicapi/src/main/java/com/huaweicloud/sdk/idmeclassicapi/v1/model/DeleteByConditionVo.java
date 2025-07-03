@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * DeleteByConditionVo
+ * 条件删除请求参数对象。
  */
 public class DeleteByConditionVo {
 
@@ -53,7 +53,7 @@ public class DeleteByConditionVo {
     }
 
     /**
-     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return modifier
      */
     public String getModifier() {

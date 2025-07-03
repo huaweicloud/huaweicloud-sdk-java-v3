@@ -23,8 +23,10 @@ package com.huaweicloud.sdk.core.invoker;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.retry.RetryRecord;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 /**
  * @param <R> Request type
@@ -42,6 +44,23 @@ public class AsyncInvoker<R, S> extends BaseInvoker<R, S, AsyncInvoker<R, S>> {
      */
     public AsyncInvoker(R req, HttpRequestDef<R, S> meta, HcClient hcClient) {
         super(req, meta, hcClient);
+    }
+
+    /**
+     * This method combine a list of suppliers which would be sequential execution.
+     *
+     * @param work the actual action needs to be retried.
+     * @return CompletableFuture
+     */
+    CompletableFuture<S> retry(Supplier<CompletableFuture<S>> work) {
+        CompletableFuture<S> future = new CompletableFuture<>();
+        initBackoffStrategy(backoffStrategy);
+        RetryRecord<S> record = new RetryRecord<>(retryTimes, func, backoffStrategy);
+        record.setFuture(future);
+        record.setWorkSupplier(work);
+        // start the first call of the interface
+        record.schedule();
+        return future;
     }
 
     /**

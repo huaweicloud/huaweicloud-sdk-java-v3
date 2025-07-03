@@ -82,7 +82,7 @@ public class CssMeta {
         HttpRequestDef.Builder<RollingRestartRequest, RollingRestartResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RollingRestartRequest.class, RollingRestartResponse.class)
                 .withName("RollingRestart")
-                .withUri("/v2.0/{project_id}/clusters/{cluster_id}/rolling_restart")
+                .withUri("/v2.0/{project_id}/clusters/{cluster_id}/rolling-restart")
                 .withContentType("application/json");
 
         // requests

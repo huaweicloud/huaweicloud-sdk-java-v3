@@ -19,7 +19,7 @@ public class RoleExtendReq {
     private List<RoleExtendGrowReq> grow = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isAutoPay")
+    @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
 

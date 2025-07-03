@@ -51,6 +51,11 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
 
     private Boolean enablePipeline;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_list_v3")
+
+    private Boolean enableListV3;
+
     public ShowShareFeatureGatesResponse withEnableExperience(Boolean enableExperience) {
         this.enableExperience = enableExperience;
         return this;
@@ -187,6 +192,23 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
         this.enablePipeline = enablePipeline;
     }
 
+    public ShowShareFeatureGatesResponse withEnableListV3(Boolean enableListV3) {
+        this.enableListV3 = enableListV3;
+        return this;
+    }
+
+    /**
+     * 是否支持list v3接口
+     * @return enableListV3
+     */
+    public Boolean getEnableListV3() {
+        return enableListV3;
+    }
+
+    public void setEnableListV3(Boolean enableListV3) {
+        this.enableListV3 = enableListV3;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,7 +225,8 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
             && Objects.equals(this.enableImageSync, that.enableImageSync)
             && Objects.equals(this.enableCciService, that.enableCciService)
             && Objects.equals(this.enableImageLabel, that.enableImageLabel)
-            && Objects.equals(this.enablePipeline, that.enablePipeline);
+            && Objects.equals(this.enablePipeline, that.enablePipeline)
+            && Objects.equals(this.enableListV3, that.enableListV3);
     }
 
     @Override
@@ -215,7 +238,8 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
             enableImageSync,
             enableCciService,
             enableImageLabel,
-            enablePipeline);
+            enablePipeline,
+            enableListV3);
     }
 
     @Override
@@ -230,6 +254,7 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
         sb.append("    enableCciService: ").append(toIndentedString(enableCciService)).append("\n");
         sb.append("    enableImageLabel: ").append(toIndentedString(enableImageLabel)).append("\n");
         sb.append("    enablePipeline: ").append(toIndentedString(enablePipeline)).append("\n");
+        sb.append("    enableListV3: ").append(toIndentedString(enableListV3)).append("\n");
         sb.append("}");
         return sb.toString();
     }

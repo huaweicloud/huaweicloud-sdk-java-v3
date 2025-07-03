@@ -88,6 +88,11 @@ public class ListCertificatesRequest {
 
     private List<String> protectionReason = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private List<String> enterpriseProjectId = null;
+
     public ListCertificatesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -521,6 +526,39 @@ public class ListCertificatesRequest {
         this.protectionReason = protectionReason;
     }
 
+    public ListCertificatesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    public ListCertificatesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
+
+    /**
+     * 参数解释：所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:certificates:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * @return enterpriseProjectId
+     */
+    public List<String> getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -537,7 +575,8 @@ public class ListCertificatesRequest {
             && Objects.equals(this.type, that.type) && Objects.equals(this.scmCertificateId, that.scmCertificateId)
             && Objects.equals(this.commonName, that.commonName) && Objects.equals(this.fingerprint, that.fingerprint)
             && Objects.equals(this.source, that.source) && Objects.equals(this.protectionStatus, that.protectionStatus)
-            && Objects.equals(this.protectionReason, that.protectionReason);
+            && Objects.equals(this.protectionReason, that.protectionReason)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -556,7 +595,8 @@ public class ListCertificatesRequest {
             fingerprint,
             source,
             protectionStatus,
-            protectionReason);
+            protectionReason,
+            enterpriseProjectId);
     }
 
     @Override
@@ -578,6 +618,7 @@ public class ListCertificatesRequest {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

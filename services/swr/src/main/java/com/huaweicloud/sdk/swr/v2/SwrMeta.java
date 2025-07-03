@@ -221,10 +221,14 @@ import com.huaweicloud.sdk.swr.v2.model.ListNamespacesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespacesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListQuotasResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListRepoDetailsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListRepoDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDomainsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDomainsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListReposDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListReposDetailsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListRepositoryTagRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListRepositoryTagResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRepositoryTagsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRepositoryTagsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListResourceInstancesRequestBody;
@@ -232,6 +236,8 @@ import com.huaweicloud.sdk.swr.v2.model.ListRetentionHistoriesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRetentionHistoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRetentionsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRetentionsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListSharedRepoDetailsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListSharedRepoDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListSharedReposDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListSharedReposDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListSubResourceInstancesRequest;
@@ -285,6 +291,8 @@ import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceAuthResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowRepoDomainsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowRepoTagRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowRepoTagResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowReposResp;
 import com.huaweicloud.sdk.swr.v2.model.ShowReposTagResp;
 import com.huaweicloud.sdk.swr.v2.model.ShowRepositoryRequest;
@@ -1122,6 +1130,54 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRepoDetailsRequest, ListRepoDetailsResponse> listRepoDetails =
+        genForListRepoDetails();
+
+    private static HttpRequestDef<ListRepoDetailsRequest, ListRepoDetailsResponse> genForListRepoDetails() {
+        // basic
+        HttpRequestDef.Builder<ListRepoDetailsRequest, ListRepoDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRepoDetailsRequest.class, ListRepoDetailsResponse.class)
+                .withName("ListRepoDetails")
+                .withUri("/v3/manage/repos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepoDetailsRequest::getNamespace, ListRepoDetailsRequest::setNamespace));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepoDetailsRequest::getName, ListRepoDetailsRequest::setName));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepoDetailsRequest::getCategory, ListRepoDetailsRequest::setCategory));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRepoDetailsRequest::getLimit, ListRepoDetailsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepoDetailsRequest::getMarker, ListRepoDetailsRequest::setMarker));
+        builder.<Boolean>withRequestField("is_public",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRepoDetailsRequest::getIsPublic, ListRepoDetailsRequest::setIsPublic));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRepoDomainsRequest, ListRepoDomainsResponse> listRepoDomains =
         genForListRepoDomains();
 
@@ -1223,6 +1279,55 @@ public class SwrMeta {
             String.class,
             f -> f.withMarshaller(ListReposDetailsResponse::getContentRange,
                 ListReposDetailsResponse::setContentRange));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRepositoryTagRequest, ListRepositoryTagResponse> listRepositoryTag =
+        genForListRepositoryTag();
+
+    private static HttpRequestDef<ListRepositoryTagRequest, ListRepositoryTagResponse> genForListRepositoryTag() {
+        // basic
+        HttpRequestDef.Builder<ListRepositoryTagRequest, ListRepositoryTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRepositoryTagRequest.class, ListRepositoryTagResponse.class)
+                .withName("ListRepositoryTag")
+                .withUri("/v3/manage/namespaces/{namespace}/repos/{repository}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryTagRequest::getNamespace, ListRepositoryTagRequest::setNamespace));
+        builder.<String>withRequestField("repository",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryTagRequest::getRepository, ListRepositoryTagRequest::setRepository));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRepositoryTagRequest::getLimit, ListRepositoryTagRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryTagRequest::getMarker, ListRepositoryTagRequest::setMarker));
+        builder.<String>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryTagRequest::getTag, ListRepositoryTagRequest::setTag));
+        builder.<Boolean>withRequestField("with_manifest",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRepositoryTagRequest::getWithManifest,
+                ListRepositoryTagRequest::setWithManifest));
+
+        // response
+
         return builder.build();
     }
 
@@ -1368,6 +1473,56 @@ public class SwrMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListRetentionsResponse::getBody, ListRetentionsResponse::setBody)
                 .withInnerContainerType(Retention.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSharedRepoDetailsRequest, ListSharedRepoDetailsResponse> listSharedRepoDetails =
+        genForListSharedRepoDetails();
+
+    private static HttpRequestDef<ListSharedRepoDetailsRequest, ListSharedRepoDetailsResponse> genForListSharedRepoDetails() {
+        // basic
+        HttpRequestDef.Builder<ListSharedRepoDetailsRequest, ListSharedRepoDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSharedRepoDetailsRequest.class, ListSharedRepoDetailsResponse.class)
+            .withName("ListSharedRepoDetails")
+            .withUri("/v3/manage/shared-repositories")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedRepoDetailsRequest::getNamespace,
+                ListSharedRepoDetailsRequest::setNamespace));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSharedRepoDetailsRequest::getName, ListSharedRepoDetailsRequest::setName));
+        builder.<ListSharedRepoDetailsRequest.SharedByEnum>withRequestField("shared_by",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSharedRepoDetailsRequest.SharedByEnum.class),
+            f -> f.withMarshaller(ListSharedRepoDetailsRequest::getSharedBy,
+                ListSharedRepoDetailsRequest::setSharedBy));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSharedRepoDetailsRequest::getLimit, ListSharedRepoDetailsRequest::setLimit));
+        builder.<Long>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSharedRepoDetailsRequest::getMarker, ListSharedRepoDetailsRequest::setMarker));
+        builder.<Boolean>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSharedRepoDetailsRequest::getStatus, ListSharedRepoDetailsRequest::setStatus));
+
+        // response
 
         return builder.build();
     }
@@ -1611,6 +1766,38 @@ public class SwrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNamespaceAuthRequest::getNamespace, ShowNamespaceAuthRequest::setNamespace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRepoTagRequest, ShowRepoTagResponse> showRepoTag = genForShowRepoTag();
+
+    private static HttpRequestDef<ShowRepoTagRequest, ShowRepoTagResponse> genForShowRepoTag() {
+        // basic
+        HttpRequestDef.Builder<ShowRepoTagRequest, ShowRepoTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRepoTagRequest.class, ShowRepoTagResponse.class)
+                .withName("ShowRepoTag")
+                .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepoTagRequest::getNamespace, ShowRepoTagRequest::setNamespace));
+        builder.<String>withRequestField("repository",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepoTagRequest::getRepository, ShowRepoTagRequest::setRepository));
+        builder.<String>withRequestField("tag",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepoTagRequest::getTag, ShowRepoTagRequest::setTag));
 
         // response
 

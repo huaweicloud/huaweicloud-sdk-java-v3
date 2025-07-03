@@ -36,7 +36,7 @@ public class SetRDSBackupCnfReq {
     private String enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deleteAuto")
+    @JsonProperty(value = "delete_auto")
 
     private String deleteAuto;
 

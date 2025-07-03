@@ -28,11 +28,6 @@ public class RunAuthorizationActionRequestBody {
 
     private String projectId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "grant_project_id")
-
-    private String grantProjectId;
-
     /**
      * 指定赋权或回收。值为：grant，revoke或update。  说明：当用户同时拥有grant和revoke权限的时候才有权限使用update操作。
      */
@@ -153,23 +148,6 @@ public class RunAuthorizationActionRequestBody {
         this.projectId = projectId;
     }
 
-    public RunAuthorizationActionRequestBody withGrantProjectId(String grantProjectId) {
-        this.grantProjectId = grantProjectId;
-        return this;
-    }
-
-    /**
-     * 被赋权的项目ID，数据赋权给其他项目后，该项目的管理员将 有权访问指定的DLI资源权限，被收回或者更新访问权限。
-     * @return grantProjectId
-     */
-    public String getGrantProjectId() {
-        return grantProjectId;
-    }
-
-    public void setGrantProjectId(String grantProjectId) {
-        this.grantProjectId = grantProjectId;
-    }
-
     public RunAuthorizationActionRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -230,13 +208,12 @@ public class RunAuthorizationActionRequestBody {
         }
         RunAuthorizationActionRequestBody that = (RunAuthorizationActionRequestBody) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.grantProjectId, that.grantProjectId) && Objects.equals(this.action, that.action)
-            && Objects.equals(this.privileges, that.privileges);
+            && Objects.equals(this.action, that.action) && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, projectId, grantProjectId, action, privileges);
+        return Objects.hash(userName, projectId, action, privileges);
     }
 
     @Override
@@ -245,7 +222,6 @@ public class RunAuthorizationActionRequestBody {
         sb.append("class RunAuthorizationActionRequestBody {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    grantProjectId: ").append(toIndentedString(grantProjectId)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    privileges: ").append(toIndentedString(privileges)).append("\n");
         sb.append("}");

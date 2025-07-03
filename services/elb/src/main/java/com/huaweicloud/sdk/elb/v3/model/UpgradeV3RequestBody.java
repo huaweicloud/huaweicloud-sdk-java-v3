@@ -129,11 +129,6 @@ public class UpgradeV3RequestBody {
 
     private List<String> elbVirsubnetIds = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "prepaid_options")
-
-    private UpgradePrepaidOption prepaidOptions;
-
     public UpgradeV3RequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -285,32 +280,6 @@ public class UpgradeV3RequestBody {
         this.elbVirsubnetIds = elbVirsubnetIds;
     }
 
-    public UpgradeV3RequestBody withPrepaidOptions(UpgradePrepaidOption prepaidOptions) {
-        this.prepaidOptions = prepaidOptions;
-        return this;
-    }
-
-    public UpgradeV3RequestBody withPrepaidOptions(Consumer<UpgradePrepaidOption> prepaidOptionsSetter) {
-        if (this.prepaidOptions == null) {
-            this.prepaidOptions = new UpgradePrepaidOption();
-            prepaidOptionsSetter.accept(this.prepaidOptions);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get prepaidOptions
-     * @return prepaidOptions
-     */
-    public UpgradePrepaidOption getPrepaidOptions() {
-        return prepaidOptions;
-    }
-
-    public void setPrepaidOptions(UpgradePrepaidOption prepaidOptions) {
-        this.prepaidOptions = prepaidOptions;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -325,8 +294,7 @@ public class UpgradeV3RequestBody {
             && Objects.equals(this.availabilityZoneList, that.availabilityZoneList)
             && Objects.equals(this.ipv6VipVirsubnetId, that.ipv6VipVirsubnetId)
             && Objects.equals(this.ipv6VipAddress, that.ipv6VipAddress)
-            && Objects.equals(this.elbVirsubnetIds, that.elbVirsubnetIds)
-            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
+            && Objects.equals(this.elbVirsubnetIds, that.elbVirsubnetIds);
     }
 
     @Override
@@ -337,8 +305,7 @@ public class UpgradeV3RequestBody {
             availabilityZoneList,
             ipv6VipVirsubnetId,
             ipv6VipAddress,
-            elbVirsubnetIds,
-            prepaidOptions);
+            elbVirsubnetIds);
     }
 
     @Override
@@ -352,7 +319,6 @@ public class UpgradeV3RequestBody {
         sb.append("    ipv6VipVirsubnetId: ").append(toIndentedString(ipv6VipVirsubnetId)).append("\n");
         sb.append("    ipv6VipAddress: ").append(toIndentedString(ipv6VipAddress)).append("\n");
         sb.append("    elbVirsubnetIds: ").append(toIndentedString(elbVirsubnetIds)).append("\n");
-        sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

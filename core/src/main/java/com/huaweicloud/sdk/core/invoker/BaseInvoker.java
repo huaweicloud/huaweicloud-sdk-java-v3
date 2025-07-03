@@ -27,7 +27,6 @@ import com.huaweicloud.sdk.core.exception.ConnectionException;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exchange.SdkExchange;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.retry.RetryRecord;
 import com.huaweicloud.sdk.core.retry.backoff.BackoffStrategy;
 import com.huaweicloud.sdk.core.retry.backoff.SdkBackoffStrategy;
 import com.huaweicloud.sdk.core.utils.ValidationUtils;
@@ -35,10 +34,8 @@ import com.huaweicloud.sdk.core.utils.ValidationUtils;
 import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
-import java.util.concurrent.CompletableFuture;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 /**
  * @param <R> Request type
@@ -213,23 +210,6 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
         } else {
             this.backoffStrategy = backoffStrategy;
         }
-    }
-
-    /**
-     * This method combine a list of suppliers which would be sequential execution.
-     *
-     * @param work the actual action needs to be retried.
-     * @return CompletableFuture
-     */
-    CompletableFuture<S> retry(Supplier<CompletableFuture<S>> work) {
-        CompletableFuture<S> future = new CompletableFuture<>();
-        initBackoffStrategy(backoffStrategy);
-        RetryRecord<S> record = new RetryRecord<>(retryTimes, func, backoffStrategy);
-        record.setFuture(future);
-        record.setWorkSupplier(work);
-        // start the first call of the interface
-        record.schedule();
-        return future;
     }
 
     @SuppressWarnings("unchecked")

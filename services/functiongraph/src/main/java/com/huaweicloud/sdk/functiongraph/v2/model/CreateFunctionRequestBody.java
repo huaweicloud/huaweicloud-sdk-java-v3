@@ -559,6 +559,16 @@ public class CreateFunctionRequestBody {
 
     private String codeEncryptKmsKeyId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_names")
+
+    private String domainNames;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
     public CreateFunctionRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -1240,6 +1250,40 @@ public class CreateFunctionRequestBody {
         this.codeEncryptKmsKeyId = codeEncryptKmsKeyId;
     }
 
+    public CreateFunctionRequestBody withDomainNames(String domainNames) {
+        this.domainNames = domainNames;
+        return this;
+    }
+
+    /**
+     * vpc中配置的内网域名。在函数配置调用DNS服务的接口解析内网域名时，则函数必须具备读取DNS资源权限的委托。
+     * @return domainNames
+     */
+    public String getDomainNames() {
+        return domainNames;
+    }
+
+    public void setDomainNames(String domainNames) {
+        this.domainNames = domainNames;
+    }
+
+    public CreateFunctionRequestBody withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * 函数标签。
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1273,7 +1317,8 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.enableLtsLog, that.enableLtsLog)
             && Objects.equals(this.ltsCustomTag, that.ltsCustomTag)
             && Objects.equals(this.userDataEncryptKmsKeyId, that.userDataEncryptKmsKeyId)
-            && Objects.equals(this.codeEncryptKmsKeyId, that.codeEncryptKmsKeyId);
+            && Objects.equals(this.codeEncryptKmsKeyId, that.codeEncryptKmsKeyId)
+            && Objects.equals(this.domainNames, that.domainNames) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -1312,7 +1357,9 @@ public class CreateFunctionRequestBody {
             enableLtsLog,
             ltsCustomTag,
             userDataEncryptKmsKeyId,
-            codeEncryptKmsKeyId);
+            codeEncryptKmsKeyId,
+            domainNames,
+            tags);
     }
 
     @Override
@@ -1354,6 +1401,8 @@ public class CreateFunctionRequestBody {
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("    userDataEncryptKmsKeyId: ").append(toIndentedString(userDataEncryptKmsKeyId)).append("\n");
         sb.append("    codeEncryptKmsKeyId: ").append(toIndentedString(codeEncryptKmsKeyId)).append("\n");
+        sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

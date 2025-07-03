@@ -11,12 +11,12 @@ import java.util.Objects;
 public class StartKibanaPublicReqElbWhitelist {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enableWhiteList")
+    @JsonProperty(value = "enable_white_list")
 
     private Boolean enableWhiteList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "whiteList")
+    @JsonProperty(value = "white_list")
 
     private String whiteList;
 

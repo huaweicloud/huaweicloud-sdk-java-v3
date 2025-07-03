@@ -11,7 +11,7 @@ import java.util.Objects;
 public class GetLogBackupReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instanceName")
+    @JsonProperty(value = "instance_name")
 
     private String instanceName;
 
@@ -21,7 +21,7 @@ public class GetLogBackupReq {
     private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "logType")
+    @JsonProperty(value = "log_type")
 
     private String logType;
 

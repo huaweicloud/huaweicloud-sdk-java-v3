@@ -939,6 +939,16 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getUpgradeType, ListImagesRequest::setUpgradeType));
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getStart, ListImagesRequest::setStart));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getLimit, ListImagesRequest::setLimit));
 
         // response
 
@@ -2621,6 +2631,16 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListActionsRequest::getClusterId, ListActionsRequest::setClusterId));
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActionsRequest::getStart, ListActionsRequest::setStart));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActionsRequest::getLimit, ListActionsRequest::setLimit));
 
         // response
 
@@ -2680,6 +2700,16 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConfsRequest::getClusterId, ListConfsRequest::setClusterId));
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfsRequest::getStart, ListConfsRequest::setStart));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfsRequest::getLimit, ListConfsRequest::setLimit));
 
         // response
 
@@ -2703,6 +2733,16 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPipelinesRequest::getClusterId, ListPipelinesRequest::setClusterId));
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelinesRequest::getStart, ListPipelinesRequest::setStart));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPipelinesRequest::getLimit, ListPipelinesRequest::setLimit));
 
         // response
 

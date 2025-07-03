@@ -153,6 +153,8 @@ import com.huaweicloud.sdk.elb.v3.model.ShowL7RuleRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowL7RuleResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowListenerRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowListenerResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerPortsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerPortsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerStatusRequest;
@@ -2270,6 +2272,35 @@ public class ElbClient {
     public SyncInvoker<ShowLoadBalancerRequest, ShowLoadBalancerResponse> showLoadBalancerInvoker(
         ShowLoadBalancerRequest request) {
         return new SyncInvoker<>(request, ElbMeta.showLoadBalancer, hcClient);
+    }
+
+    /**
+     * 查询负载均衡器占用的port列表
+     *
+     * 查询负载均衡器内部转发占用的port列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLoadBalancerPortsRequest 请求对象
+     * @return ShowLoadBalancerPortsResponse
+     */
+    public ShowLoadBalancerPortsResponse showLoadBalancerPorts(ShowLoadBalancerPortsRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.showLoadBalancerPorts);
+    }
+
+    /**
+     * 查询负载均衡器占用的port列表
+     *
+     * 查询负载均衡器内部转发占用的port列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLoadBalancerPortsRequest 请求对象
+     * @return SyncInvoker<ShowLoadBalancerPortsRequest, ShowLoadBalancerPortsResponse>
+     */
+    public SyncInvoker<ShowLoadBalancerPortsRequest, ShowLoadBalancerPortsResponse> showLoadBalancerPortsInvoker(
+        ShowLoadBalancerPortsRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.showLoadBalancerPorts, hcClient);
     }
 
     /**

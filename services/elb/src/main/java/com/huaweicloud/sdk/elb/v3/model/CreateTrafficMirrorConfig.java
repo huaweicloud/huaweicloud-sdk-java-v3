@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateTrafficMirrorConfig
+ * 参数解释：流量镜像的配置。
  */
 public class CreateTrafficMirrorConfig {
 

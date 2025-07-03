@@ -29,7 +29,7 @@ public class Confs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "setting")
 
-    private Setting setting;
+    private Confsetting setting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateAt")
@@ -87,14 +87,14 @@ public class Confs {
         this.confContent = confContent;
     }
 
-    public Confs withSetting(Setting setting) {
+    public Confs withSetting(Confsetting setting) {
         this.setting = setting;
         return this;
     }
 
-    public Confs withSetting(Consumer<Setting> settingSetter) {
+    public Confs withSetting(Consumer<Confsetting> settingSetter) {
         if (this.setting == null) {
-            this.setting = new Setting();
+            this.setting = new Confsetting();
             settingSetter.accept(this.setting);
         }
 
@@ -105,11 +105,11 @@ public class Confs {
      * Get setting
      * @return setting
      */
-    public Setting getSetting() {
+    public Confsetting getSetting() {
         return setting;
     }
 
-    public void setSetting(Setting setting) {
+    public void setSetting(Confsetting setting) {
         this.setting = setting;
     }
 

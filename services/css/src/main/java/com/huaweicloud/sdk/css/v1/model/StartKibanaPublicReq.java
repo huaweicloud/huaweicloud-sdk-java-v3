@@ -12,17 +12,17 @@ import java.util.function.Consumer;
 public class StartKibanaPublicReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eipSize")
+    @JsonProperty(value = "eip_size")
 
     private Integer eipSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "elbWhiteList")
+    @JsonProperty(value = "elb_white_list")
 
     private StartKibanaPublicReqElbWhitelist elbWhiteList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isAutoPay")
+    @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
 

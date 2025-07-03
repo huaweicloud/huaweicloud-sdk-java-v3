@@ -39,6 +39,8 @@ import com.huaweicloud.sdk.rds.v3.model.ChangeProxyScaleRequest;
 import com.huaweicloud.sdk.rds.v3.model.ChangeProxyScaleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdResponse;
+import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeRequest;
+import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeResponse;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CopyDatabaseRequest;
@@ -359,6 +361,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowPrecheckResultRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowPrecheckResultResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecoveryTimeWindowRequest;
@@ -461,6 +465,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionResponse;
 
 public class RdsClient {
 
@@ -821,6 +827,35 @@ public class RdsClient {
     public SyncInvoker<ChangeOpsWindowRequest, ChangeOpsWindowResponse> changeOpsWindowInvoker(
         ChangeOpsWindowRequest request) {
         return new SyncInvoker<>(request, RdsMeta.changeOpsWindow, hcClient);
+    }
+
+    /**
+     * 大版本升级预检查
+     *
+     * 提供mysql5.7升级mysql8.0预检查接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckInstanceForUpgradeRequest 请求对象
+     * @return CheckInstanceForUpgradeResponse
+     */
+    public CheckInstanceForUpgradeResponse checkInstanceForUpgrade(CheckInstanceForUpgradeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.checkInstanceForUpgrade);
+    }
+
+    /**
+     * 大版本升级预检查
+     *
+     * 提供mysql5.7升级mysql8.0预检查接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckInstanceForUpgradeRequest 请求对象
+     * @return SyncInvoker<CheckInstanceForUpgradeRequest, CheckInstanceForUpgradeResponse>
+     */
+    public SyncInvoker<CheckInstanceForUpgradeRequest, CheckInstanceForUpgradeResponse> checkInstanceForUpgradeInvoker(
+        CheckInstanceForUpgradeRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.checkInstanceForUpgrade, hcClient);
     }
 
     /**
@@ -3995,6 +4030,35 @@ public class RdsClient {
     }
 
     /**
+     * 获取mysql5.7升级mysql8.0预检查结果
+     *
+     * 获取mysql5.7升级mysql8.0预检查结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPrecheckResultRequest 请求对象
+     * @return ShowPrecheckResultResponse
+     */
+    public ShowPrecheckResultResponse showPrecheckResult(ShowPrecheckResultRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showPrecheckResult);
+    }
+
+    /**
+     * 获取mysql5.7升级mysql8.0预检查结果
+     *
+     * 获取mysql5.7升级mysql8.0预检查结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPrecheckResultRequest 请求对象
+     * @return SyncInvoker<ShowPrecheckResultRequest, ShowPrecheckResultResponse>
+     */
+    public SyncInvoker<ShowPrecheckResultRequest, ShowPrecheckResultResponse> showPrecheckResultInvoker(
+        ShowPrecheckResultRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showPrecheckResult, hcClient);
+    }
+
+    /**
      * 查询配额
      *
      * 查询当前项目下资源配额情况。
@@ -5034,6 +5098,35 @@ public class RdsClient {
     public SyncInvoker<UpgradeDbVersionNewRequest, UpgradeDbVersionNewResponse> upgradeDbVersionNewInvoker(
         UpgradeDbVersionNewRequest request) {
         return new SyncInvoker<>(request, RdsMeta.upgradeDbVersionNew, hcClient);
+    }
+
+    /**
+     * MySQL大版本升级
+     *
+     * 提供mysql5.7升级mysql8.0的下发接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeLargeVersionRequest 请求对象
+     * @return UpgradeLargeVersionResponse
+     */
+    public UpgradeLargeVersionResponse upgradeLargeVersion(UpgradeLargeVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.upgradeLargeVersion);
+    }
+
+    /**
+     * MySQL大版本升级
+     *
+     * 提供mysql5.7升级mysql8.0的下发接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeLargeVersionRequest 请求对象
+     * @return SyncInvoker<UpgradeLargeVersionRequest, UpgradeLargeVersionResponse>
+     */
+    public SyncInvoker<UpgradeLargeVersionRequest, UpgradeLargeVersionResponse> upgradeLargeVersionInvoker(
+        UpgradeLargeVersionRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.upgradeLargeVersion, hcClient);
     }
 
     /**

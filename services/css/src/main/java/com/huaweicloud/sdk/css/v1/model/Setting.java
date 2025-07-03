@@ -16,27 +16,27 @@ public class Setting {
     private Integer workers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "batchSize")
+    @JsonProperty(value = "batch_size")
 
     private Integer batchSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "batchDelayMs")
+    @JsonProperty(value = "batch_delay_ms")
 
     private Integer batchDelayMs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queueType")
+    @JsonProperty(value = "queue_type")
 
     private String queueType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queueCheckPointWrites")
+    @JsonProperty(value = "queue_check_point_writes")
 
     private Integer queueCheckPointWrites;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "queueMaxBytesMb")
+    @JsonProperty(value = "queue_max_bytes_mb")
 
     private Integer queueMaxBytesMb;
 

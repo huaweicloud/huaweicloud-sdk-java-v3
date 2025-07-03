@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ListCocTicketOperationHistoriesRequest {
 
     /**
-     * 工单类型:incident,issues_mgmt
+     * 需要查询的工单类型，事件单传值为incident，问题单传值为issues_mgmt。
      */
     public static final class TicketTypeEnum {
 
@@ -102,7 +102,7 @@ public class ListCocTicketOperationHistoriesRequest {
     }
 
     /**
-     * 工单类型:incident,issues_mgmt
+     * 需要查询的工单类型，事件单传值为incident，问题单传值为issues_mgmt。
      * @return ticketType
      */
     public TicketTypeEnum getTicketType() {

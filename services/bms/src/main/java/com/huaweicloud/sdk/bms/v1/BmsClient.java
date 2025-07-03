@@ -42,14 +42,14 @@ import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickRequest;
 import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsResponse;
-import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerMetadataOptionsRequest;
-import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerVolumeInfoRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerVolumeInfoResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowJobInfosRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowJobInfosResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowMetadataOptionsRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowMetadataOptionsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowResetPwdRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowResetPwdResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowServerRemoteConsoleRequest;
@@ -62,10 +62,10 @@ import com.huaweicloud.sdk.bms.v1.model.ShowWindowsBaremetalServerPwdRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowWindowsBaremetalServerPwdResponse;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerInterfaceAttachmentsRequest;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerInterfaceAttachmentsResponse;
-import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataOptionsRequest;
-import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataRequest;
 import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataResponse;
+import com.huaweicloud.sdk.bms.v1.model.UpdateMetadataOptionsRequest;
+import com.huaweicloud.sdk.bms.v1.model.UpdateMetadataOptionsResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -693,36 +693,6 @@ public class BmsClient {
     }
 
     /**
-     * 查询裸金属服务器元数据配置
-     *
-     * 查询云服务器元数据配置，通过本接口，您可以查询指裸金属服务器的元数据配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowBaremetalServerMetadataOptionsRequest 请求对象
-     * @return ShowBaremetalServerMetadataOptionsResponse
-     */
-    public ShowBaremetalServerMetadataOptionsResponse showBaremetalServerMetadataOptions(
-        ShowBaremetalServerMetadataOptionsRequest request) {
-        return hcClient.syncInvokeHttp(request, BmsMeta.showBaremetalServerMetadataOptions);
-    }
-
-    /**
-     * 查询裸金属服务器元数据配置
-     *
-     * 查询云服务器元数据配置，通过本接口，您可以查询指裸金属服务器的元数据配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowBaremetalServerMetadataOptionsRequest 请求对象
-     * @return SyncInvoker<ShowBaremetalServerMetadataOptionsRequest, ShowBaremetalServerMetadataOptionsResponse>
-     */
-    public SyncInvoker<ShowBaremetalServerMetadataOptionsRequest, ShowBaremetalServerMetadataOptionsResponse> showBaremetalServerMetadataOptionsInvoker(
-        ShowBaremetalServerMetadataOptionsRequest request) {
-        return new SyncInvoker<>(request, BmsMeta.showBaremetalServerMetadataOptions, hcClient);
-    }
-
-    /**
      * 查询裸金属服务器标签
      *
      * - 查询指定云服务器的标签信息。
@@ -779,6 +749,35 @@ public class BmsClient {
     public SyncInvoker<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse> showBaremetalServerVolumeInfoInvoker(
         ShowBaremetalServerVolumeInfoRequest request) {
         return new SyncInvoker<>(request, BmsMeta.showBaremetalServerVolumeInfo, hcClient);
+    }
+
+    /**
+     * 查询裸金属服务器元数据配置
+     *
+     * 查询云服务器元数据配置，通过本接口，您可以查询指裸金属服务器的元数据配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetadataOptionsRequest 请求对象
+     * @return ShowMetadataOptionsResponse
+     */
+    public ShowMetadataOptionsResponse showMetadataOptions(ShowMetadataOptionsRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.showMetadataOptions);
+    }
+
+    /**
+     * 查询裸金属服务器元数据配置
+     *
+     * 查询云服务器元数据配置，通过本接口，您可以查询指裸金属服务器的元数据配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetadataOptionsRequest 请求对象
+     * @return SyncInvoker<ShowMetadataOptionsRequest, ShowMetadataOptionsResponse>
+     */
+    public SyncInvoker<ShowMetadataOptionsRequest, ShowMetadataOptionsResponse> showMetadataOptionsInvoker(
+        ShowMetadataOptionsRequest request) {
+        return new SyncInvoker<>(request, BmsMeta.showMetadataOptions, hcClient);
     }
 
     /**
@@ -960,12 +959,11 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateBaremetalServerMetadataOptionsRequest 请求对象
-     * @return UpdateBaremetalServerMetadataOptionsResponse
+     * @param request UpdateMetadataOptionsRequest 请求对象
+     * @return UpdateMetadataOptionsResponse
      */
-    public UpdateBaremetalServerMetadataOptionsResponse updateBaremetalServerMetadataOptions(
-        UpdateBaremetalServerMetadataOptionsRequest request) {
-        return hcClient.syncInvokeHttp(request, BmsMeta.updateBaremetalServerMetadataOptions);
+    public UpdateMetadataOptionsResponse updateMetadataOptions(UpdateMetadataOptionsRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.updateMetadataOptions);
     }
 
     /**
@@ -975,12 +973,12 @@ public class BmsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateBaremetalServerMetadataOptionsRequest 请求对象
-     * @return SyncInvoker<UpdateBaremetalServerMetadataOptionsRequest, UpdateBaremetalServerMetadataOptionsResponse>
+     * @param request UpdateMetadataOptionsRequest 请求对象
+     * @return SyncInvoker<UpdateMetadataOptionsRequest, UpdateMetadataOptionsResponse>
      */
-    public SyncInvoker<UpdateBaremetalServerMetadataOptionsRequest, UpdateBaremetalServerMetadataOptionsResponse> updateBaremetalServerMetadataOptionsInvoker(
-        UpdateBaremetalServerMetadataOptionsRequest request) {
-        return new SyncInvoker<>(request, BmsMeta.updateBaremetalServerMetadataOptions, hcClient);
+    public SyncInvoker<UpdateMetadataOptionsRequest, UpdateMetadataOptionsResponse> updateMetadataOptionsInvoker(
+        UpdateMetadataOptionsRequest request) {
+        return new SyncInvoker<>(request, BmsMeta.updateMetadataOptions, hcClient);
     }
 
     /**

@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 参数解释：会话持久性对象。
+ * 参数解释：会话持久性对象。  约束限制：慢启动与会话保持不能同时开启。若都开启则会导致会话保持失效。  [荷兰region不支持该字段，请勿使用。](tag:dt)
  */
 public class CreatePoolSessionPersistenceOption {
 

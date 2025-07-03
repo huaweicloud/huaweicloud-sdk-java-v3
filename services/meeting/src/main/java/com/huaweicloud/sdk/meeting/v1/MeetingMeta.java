@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.meeting.v1.model.AddUserRequest;
 import com.huaweicloud.sdk.meeting.v1.model.AddUserRequestBody;
 import com.huaweicloud.sdk.meeting.v1.model.AddUserResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AdminResetPwdReqDTO;
+import com.huaweicloud.sdk.meeting.v1.model.AllowAudienceJoinRequest;
+import com.huaweicloud.sdk.meeting.v1.model.AllowAudienceJoinResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AllowClientRecordRequest;
 import com.huaweicloud.sdk.meeting.v1.model.AllowClientRecordResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AllowGuestUnmuteRequest;
@@ -58,6 +60,8 @@ import com.huaweicloud.sdk.meeting.v1.model.BatchDeleteUsersRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchDeleteUsersResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchHandRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchHandResponse;
+import com.huaweicloud.sdk.meeting.v1.model.BatchMoveToWaitingRoomRequest;
+import com.huaweicloud.sdk.meeting.v1.model.BatchMoveToWaitingRoomResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchSearchAppIdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchSearchAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchShowUserDetailsRequest;
@@ -184,6 +188,9 @@ import com.huaweicloud.sdk.meeting.v1.model.MuteParticipantResponse;
 import com.huaweicloud.sdk.meeting.v1.model.OpenEditConfReq;
 import com.huaweicloud.sdk.meeting.v1.model.OpenRoomSettingReq;
 import com.huaweicloud.sdk.meeting.v1.model.OpenScheduleConfReq;
+import com.huaweicloud.sdk.meeting.v1.model.PauseConferenceReq;
+import com.huaweicloud.sdk.meeting.v1.model.PauseConferenceRequest;
+import com.huaweicloud.sdk.meeting.v1.model.PauseConferenceResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ProlongMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ProlongMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.QueryDeptResultDTO;
@@ -205,10 +212,12 @@ import com.huaweicloud.sdk.meeting.v1.model.ResetPwdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResetVisionActiveCodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ResetVisionActiveCodeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResourceDTO;
+import com.huaweicloud.sdk.meeting.v1.model.RestAllowAudienceReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestAllowClientRecordReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestAllowUnMuteReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestAllowWaitingParticipantReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestBatchHandsUpReqBody;
+import com.huaweicloud.sdk.meeting.v1.model.RestBatchMoveToWaitingRoomReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestBulkDelAttendReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestBulkHangUpReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestCancelSingleRecordCycleConfListReqBody;
@@ -235,6 +244,8 @@ import com.huaweicloud.sdk.meeting.v1.model.RestSetAttendeeLanChannelBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSetCohostBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSetInterpreterGroupBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSetLiveReqBody;
+import com.huaweicloud.sdk.meeting.v1.model.RestSetMmrLiveReqBody;
+import com.huaweicloud.sdk.meeting.v1.model.RestSetMmrRecordReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSetRecordReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSimultaneousInterpretationBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSwitchModeReqBody;
@@ -323,6 +334,10 @@ import com.huaweicloud.sdk.meeting.v1.model.SetHostViewRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetHostViewResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetInterpreterGroupRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetInterpreterGroupResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetMmrLiveRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetMmrLiveResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetMmrRecordRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetMmrRecordResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetParticipantViewRequest;
@@ -372,6 +387,8 @@ import com.huaweicloud.sdk.meeting.v1.model.ShowMeetingFileListRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMeetingFileListResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMeetingFileRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMeetingFileResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ShowMgmtSiteStatusRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ShowMgmtSiteStatusResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMyInfoRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowMyInfoResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowOnlineMeetingDetailRequest;
@@ -848,6 +865,41 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AllowAudienceJoinRequest, AllowAudienceJoinResponse> allowAudienceJoin =
+        genForAllowAudienceJoin();
+
+    private static HttpRequestDef<AllowAudienceJoinRequest, AllowAudienceJoinResponse> genForAllowAudienceJoin() {
+        // basic
+        HttpRequestDef.Builder<AllowAudienceJoinRequest, AllowAudienceJoinResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AllowAudienceJoinRequest.class, AllowAudienceJoinResponse.class)
+                .withName("AllowAudienceJoin")
+                .withUri("/v1/mmc/control/conferences/allowAudience")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AllowAudienceJoinRequest::getConferenceID,
+                AllowAudienceJoinRequest::setConferenceID));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AllowAudienceJoinRequest::getXConferenceAuthorization,
+                AllowAudienceJoinRequest::setXConferenceAuthorization));
+        builder.<RestAllowAudienceReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestAllowAudienceReqBody.class),
+            f -> f.withMarshaller(AllowAudienceJoinRequest::getBody, AllowAudienceJoinRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AllowClientRecordRequest, AllowClientRecordResponse> allowClientRecord =
         genForAllowClientRecord();
 
@@ -1253,6 +1305,41 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestBatchHandsUpReqBody.class),
             f -> f.withMarshaller(BatchHandRequest::getBody, BatchHandRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchMoveToWaitingRoomRequest, BatchMoveToWaitingRoomResponse> batchMoveToWaitingRoom =
+        genForBatchMoveToWaitingRoom();
+
+    private static HttpRequestDef<BatchMoveToWaitingRoomRequest, BatchMoveToWaitingRoomResponse> genForBatchMoveToWaitingRoom() {
+        // basic
+        HttpRequestDef.Builder<BatchMoveToWaitingRoomRequest, BatchMoveToWaitingRoomResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, BatchMoveToWaitingRoomRequest.class, BatchMoveToWaitingRoomResponse.class)
+            .withName("BatchMoveToWaitingRoom")
+            .withUri("/v1/mmc/control/conferences/batchMoveToWaitingRoom")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchMoveToWaitingRoomRequest::getConferenceID,
+                BatchMoveToWaitingRoomRequest::setConferenceID));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchMoveToWaitingRoomRequest::getXConferenceAuthorization,
+                BatchMoveToWaitingRoomRequest::setXConferenceAuthorization));
+        builder.<RestBatchMoveToWaitingRoomReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestBatchMoveToWaitingRoomReqBody.class),
+            f -> f.withMarshaller(BatchMoveToWaitingRoomRequest::getBody, BatchMoveToWaitingRoomRequest::setBody));
 
         // response
 
@@ -3275,6 +3362,40 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestMuteParticipantReqBody.class),
             f -> f.withMarshaller(MuteParticipantRequest::getBody, MuteParticipantRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PauseConferenceRequest, PauseConferenceResponse> pauseConference =
+        genForPauseConference();
+
+    private static HttpRequestDef<PauseConferenceRequest, PauseConferenceResponse> genForPauseConference() {
+        // basic
+        HttpRequestDef.Builder<PauseConferenceRequest, PauseConferenceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, PauseConferenceRequest.class, PauseConferenceResponse.class)
+                .withName("PauseConference")
+                .withUri("/v1/mmc/control/conferences/pause")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseConferenceRequest::getConferenceID, PauseConferenceRequest::setConferenceID));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PauseConferenceRequest::getXConferenceAuthorization,
+                PauseConferenceRequest::setXConferenceAuthorization));
+        builder.<PauseConferenceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PauseConferenceReq.class),
+            f -> f.withMarshaller(PauseConferenceRequest::getBody, PauseConferenceRequest::setBody));
 
         // response
 
@@ -5304,6 +5425,72 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetMmrLiveRequest, SetMmrLiveResponse> setMmrLive = genForSetMmrLive();
+
+    private static HttpRequestDef<SetMmrLiveRequest, SetMmrLiveResponse> genForSetMmrLive() {
+        // basic
+        HttpRequestDef.Builder<SetMmrLiveRequest, SetMmrLiveResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetMmrLiveRequest.class, SetMmrLiveResponse.class)
+                .withName("SetMmrLive")
+                .withUri("/v1/mmc/control/conferences/mmrLive")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetMmrLiveRequest::getConferenceID, SetMmrLiveRequest::setConferenceID));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetMmrLiveRequest::getXConferenceAuthorization,
+                SetMmrLiveRequest::setXConferenceAuthorization));
+        builder.<RestSetMmrLiveReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestSetMmrLiveReqBody.class),
+            f -> f.withMarshaller(SetMmrLiveRequest::getBody, SetMmrLiveRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetMmrRecordRequest, SetMmrRecordResponse> setMmrRecord = genForSetMmrRecord();
+
+    private static HttpRequestDef<SetMmrRecordRequest, SetMmrRecordResponse> genForSetMmrRecord() {
+        // basic
+        HttpRequestDef.Builder<SetMmrRecordRequest, SetMmrRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetMmrRecordRequest.class, SetMmrRecordResponse.class)
+                .withName("SetMmrRecord")
+                .withUri("/v1/mmc/control/conferences/mmrRecord")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetMmrRecordRequest::getConferenceID, SetMmrRecordRequest::setConferenceID));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetMmrRecordRequest::getXConferenceAuthorization,
+                SetMmrRecordRequest::setXConferenceAuthorization));
+        builder.<RestSetMmrRecordReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestSetMmrRecordReqBody.class),
+            f -> f.withMarshaller(SetMmrRecordRequest::getBody, SetMmrRecordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetMultiPictureRequest, SetMultiPictureResponse> setMultiPicture =
         genForSetMultiPicture();
 
@@ -6085,6 +6272,30 @@ public class MeetingMeta {
             TypeCasts.uncheckedConversion(Map.class),
             f -> f.withMarshaller(ShowMeetingFileListRequest::getBody, ShowMeetingFileListRequest::setBody)
                 .withInnerContainerType(String.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMgmtSiteStatusRequest, ShowMgmtSiteStatusResponse> showMgmtSiteStatus =
+        genForShowMgmtSiteStatus();
+
+    private static HttpRequestDef<ShowMgmtSiteStatusRequest, ShowMgmtSiteStatusResponse> genForShowMgmtSiteStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowMgmtSiteStatusRequest, ShowMgmtSiteStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMgmtSiteStatusRequest.class, ShowMgmtSiteStatusResponse.class)
+                .withName("ShowMgmtSiteStatus")
+                .withUri("/v1/mmc/control/confmaintain/queryMgmtSiteStatus")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Schema-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMgmtSiteStatusRequest::getXSchemaType,
+                ShowMgmtSiteStatusRequest::setXSchemaType));
 
         // response
 

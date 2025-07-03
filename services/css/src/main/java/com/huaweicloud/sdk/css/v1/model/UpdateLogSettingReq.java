@@ -16,12 +16,12 @@ public class UpdateLogSettingReq {
     private String agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "logBasePath")
+    @JsonProperty(value = "log_base_path")
 
     private String logBasePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "logBucket")
+    @JsonProperty(value = "log_bucket")
 
     private String logBucket;
 

@@ -11,24 +11,44 @@ import java.util.Objects;
 public class LoadCustomThesaurusReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bucketName")
+    @JsonProperty(value = "bucket_name")
 
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mainObject")
+    @JsonProperty(value = "main_object")
 
     private String mainObject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "stopObject")
+    @JsonProperty(value = "stop_object")
 
     private String stopObject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "synonymObject")
+    @JsonProperty(value = "synonym_object")
 
     private String synonymObject;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "static_main_object")
+
+    private String staticMainObject;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "static_stop_object")
+
+    private String staticStopObject;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_main_object")
+
+    private String extraMainObject;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_stop_object")
+
+    private String extraStopObject;
 
     public LoadCustomThesaurusReq withBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -53,7 +73,7 @@ public class LoadCustomThesaurusReq {
     }
 
     /**
-     * 主词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持100M。 mainObject, stopObject, synonymObject三个参数至少要填写一个。  >一次只能加载一个主词库，不支持同时加载多个主词库。
+     * 主词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持100M。 main_object, stop_object, synonym_object三个参数至少要填写一个。  >一次只能加载一个主词库，不支持同时加载多个主词库。
      * @return mainObject
      */
     public String getMainObject() {
@@ -70,7 +90,7 @@ public class LoadCustomThesaurusReq {
     }
 
     /**
-     * 停词词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持20M。  mainObject, stopObject, synonymObject三个参数至少要填写一个。
+     * 停词词库文件对象，必须为UTF-8无BOM编码的文本文件，一行一个分词，文件大小最大支持100M。  main_object, stop_object, synonym_object三个参数至少要填写一个。
      * @return stopObject
      */
     public String getStopObject() {
@@ -87,7 +107,7 @@ public class LoadCustomThesaurusReq {
     }
 
     /**
-     * 同义词词库文件，必须为UTF-8无BOM编码的文本文件，一行一组分词，文件大小最大支持20M。  mainObject, stopObject, synonymObject三个参数至少要填写一个。
+     * 同义词词库文件，必须为UTF-8无BOM编码的文本文件，一行一组分词，文件大小最大支持100M。  main_object, stop_object, synonym_object三个参数至少要填写一个。
      * @return synonymObject
      */
     public String getSynonymObject() {
@@ -96,6 +116,74 @@ public class LoadCustomThesaurusReq {
 
     public void setSynonymObject(String synonymObject) {
         this.synonymObject = synonymObject;
+    }
+
+    public LoadCustomThesaurusReq withStaticMainObject(String staticMainObject) {
+        this.staticMainObject = staticMainObject;
+        return this;
+    }
+
+    /**
+     * 同义词词库文件，必须为UTF-8无BOM编码的文本文件，一行一组分词，文件大小最大支持100M。
+     * @return staticMainObject
+     */
+    public String getStaticMainObject() {
+        return staticMainObject;
+    }
+
+    public void setStaticMainObject(String staticMainObject) {
+        this.staticMainObject = staticMainObject;
+    }
+
+    public LoadCustomThesaurusReq withStaticStopObject(String staticStopObject) {
+        this.staticStopObject = staticStopObject;
+        return this;
+    }
+
+    /**
+     * 同义词词库文件，必须为UTF-8无BOM编码的文本文件，一行一组分词，文件大小最大支持100M。
+     * @return staticStopObject
+     */
+    public String getStaticStopObject() {
+        return staticStopObject;
+    }
+
+    public void setStaticStopObject(String staticStopObject) {
+        this.staticStopObject = staticStopObject;
+    }
+
+    public LoadCustomThesaurusReq withExtraMainObject(String extraMainObject) {
+        this.extraMainObject = extraMainObject;
+        return this;
+    }
+
+    /**
+     * 同义词词库文件，必须为UTF-8无BOM编码的文本文件，一行一组分词，文件大小最大支持100M。
+     * @return extraMainObject
+     */
+    public String getExtraMainObject() {
+        return extraMainObject;
+    }
+
+    public void setExtraMainObject(String extraMainObject) {
+        this.extraMainObject = extraMainObject;
+    }
+
+    public LoadCustomThesaurusReq withExtraStopObject(String extraStopObject) {
+        this.extraStopObject = extraStopObject;
+        return this;
+    }
+
+    /**
+     * 同义词词库文件，必须为UTF-8无BOM编码的文本文件，一行一组分词，文件大小最大支持100M。
+     * @return extraStopObject
+     */
+    public String getExtraStopObject() {
+        return extraStopObject;
+    }
+
+    public void setExtraStopObject(String extraStopObject) {
+        this.extraStopObject = extraStopObject;
     }
 
     @Override
@@ -109,12 +197,23 @@ public class LoadCustomThesaurusReq {
         LoadCustomThesaurusReq that = (LoadCustomThesaurusReq) obj;
         return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.mainObject, that.mainObject)
             && Objects.equals(this.stopObject, that.stopObject)
-            && Objects.equals(this.synonymObject, that.synonymObject);
+            && Objects.equals(this.synonymObject, that.synonymObject)
+            && Objects.equals(this.staticMainObject, that.staticMainObject)
+            && Objects.equals(this.staticStopObject, that.staticStopObject)
+            && Objects.equals(this.extraMainObject, that.extraMainObject)
+            && Objects.equals(this.extraStopObject, that.extraStopObject);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucketName, mainObject, stopObject, synonymObject);
+        return Objects.hash(bucketName,
+            mainObject,
+            stopObject,
+            synonymObject,
+            staticMainObject,
+            staticStopObject,
+            extraMainObject,
+            extraStopObject);
     }
 
     @Override
@@ -125,6 +224,10 @@ public class LoadCustomThesaurusReq {
         sb.append("    mainObject: ").append(toIndentedString(mainObject)).append("\n");
         sb.append("    stopObject: ").append(toIndentedString(stopObject)).append("\n");
         sb.append("    synonymObject: ").append(toIndentedString(synonymObject)).append("\n");
+        sb.append("    staticMainObject: ").append(toIndentedString(staticMainObject)).append("\n");
+        sb.append("    staticStopObject: ").append(toIndentedString(staticStopObject)).append("\n");
+        sb.append("    extraMainObject: ").append(toIndentedString(extraMainObject)).append("\n");
+        sb.append("    extraStopObject: ").append(toIndentedString(extraStopObject)).append("\n");
         sb.append("}");
         return sb.toString();
     }

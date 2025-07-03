@@ -11,7 +11,7 @@ import java.util.Objects;
 public class RestoreSnapshotReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "targetCluster")
+    @JsonProperty(value = "target_cluster")
 
     private String targetCluster;
 
@@ -21,12 +21,12 @@ public class RestoreSnapshotReq {
     private String indices;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "renamePattern")
+    @JsonProperty(value = "rename_pattern")
 
     private String renamePattern;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "renameReplacement")
+    @JsonProperty(value = "rename_replacement")
 
     private String renameReplacement;
 

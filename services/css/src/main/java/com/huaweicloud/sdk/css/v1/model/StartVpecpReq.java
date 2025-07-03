@@ -11,7 +11,7 @@ import java.util.Objects;
 public class StartVpecpReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "endpointWithDnsName")
+    @JsonProperty(value = "endpoint_with_dns_name")
 
     private Boolean endpointWithDnsName;
 

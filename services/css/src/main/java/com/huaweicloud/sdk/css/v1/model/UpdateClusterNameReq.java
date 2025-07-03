@@ -11,7 +11,7 @@ import java.util.Objects;
 public class UpdateClusterNameReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "displayName")
+    @JsonProperty(value = "display_name")
 
     private String displayName;
 

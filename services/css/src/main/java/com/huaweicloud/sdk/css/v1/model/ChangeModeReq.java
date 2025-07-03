@@ -11,17 +11,17 @@ import java.util.Objects;
 public class ChangeModeReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "authorityEnable")
+    @JsonProperty(value = "authority_enable")
 
     private Boolean authorityEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "adminPwd")
+    @JsonProperty(value = "admin_pwd")
 
     private String adminPwd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "httpsEnable")
+    @JsonProperty(value = "https_enable")
 
     private Boolean httpsEnable;
 

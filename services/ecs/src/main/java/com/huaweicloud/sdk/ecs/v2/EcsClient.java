@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ecs.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.ecs.v2.model.AcceptScheduledEventRequest;
+import com.huaweicloud.sdk.ecs.v2.model.AcceptScheduledEventResponse;
 import com.huaweicloud.sdk.ecs.v2.model.AddServerGroupMemberRequest;
 import com.huaweicloud.sdk.ecs.v2.model.AddServerGroupMemberResponse;
 import com.huaweicloud.sdk.ecs.v2.model.AssociateServerVirtualIpRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersResponse;
+import com.huaweicloud.sdk.ecs.v2.model.DeleteLaunchTemplatesRequest;
+import com.huaweicloud.sdk.ecs.v2.model.DeleteLaunchTemplatesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteRecycleBinServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupMemberRequest;
@@ -67,6 +71,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListLaunchTemplateVersionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListLaunchTemplateVersionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListRecycleBinServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListRecycleBinServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsRequest;
@@ -89,6 +95,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersDetailsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListTemplatesRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.MigrateServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.MigrateServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaAssociateSecurityGroupRequest;
@@ -113,6 +121,8 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServerSecurityGroupsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServerSecurityGroupsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaListServersRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaListServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowFlavorExtraSpecsRequest;
@@ -141,6 +151,8 @@ import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowMetadataOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
@@ -151,8 +163,6 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsResponse;
-import com.huaweicloud.sdk.ecs.v2.model.ShowServerMetadataOptionsRequest;
-import com.huaweicloud.sdk.ecs.v2.model.ShowServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerPasswordRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerPasswordResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerRemoteConsoleRequest;
@@ -161,18 +171,20 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateMetadataOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateScheduledEventRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateScheduledEventResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceResponse;
-import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsRequest;
-import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequest;
@@ -189,6 +201,33 @@ public class EcsClient {
     public static ClientBuilder<EcsClient> newBuilder() {
         ClientBuilder<EcsClient> clientBuilder = new ClientBuilder<>(EcsClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 接受并授权执行计划事件操作
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AcceptScheduledEventRequest 请求对象
+     * @return AcceptScheduledEventResponse
+     */
+    public AcceptScheduledEventResponse acceptScheduledEvent(AcceptScheduledEventRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.acceptScheduledEvent);
+    }
+
+    /**
+     * 接受并授权执行计划事件操作
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AcceptScheduledEventRequest 请求对象
+     * @return SyncInvoker<AcceptScheduledEventRequest, AcceptScheduledEventResponse>
+     */
+    public SyncInvoker<AcceptScheduledEventRequest, AcceptScheduledEventResponse> acceptScheduledEventInvoker(
+        AcceptScheduledEventRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.acceptScheduledEvent, hcClient);
     }
 
     /**
@@ -905,6 +944,35 @@ public class EcsClient {
     }
 
     /**
+     * 删除模板
+     *
+     * 删除启动模板。删除一个启动模板。并同时删除模板下所有的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLaunchTemplatesRequest 请求对象
+     * @return DeleteLaunchTemplatesResponse
+     */
+    public DeleteLaunchTemplatesResponse deleteLaunchTemplates(DeleteLaunchTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.deleteLaunchTemplates);
+    }
+
+    /**
+     * 删除模板
+     *
+     * 删除启动模板。删除一个启动模板。并同时删除模板下所有的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLaunchTemplatesRequest 请求对象
+     * @return SyncInvoker<DeleteLaunchTemplatesRequest, DeleteLaunchTemplatesResponse>
+     */
+    public SyncInvoker<DeleteLaunchTemplatesRequest, DeleteLaunchTemplatesResponse> deleteLaunchTemplatesInvoker(
+        DeleteLaunchTemplatesRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.deleteLaunchTemplates, hcClient);
+    }
+
+    /**
      * 删除回收站中虚拟机
      *
      * 
@@ -1229,6 +1297,35 @@ public class EcsClient {
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.listFlavors, hcClient);
+    }
+
+    /**
+     * 查询模板版本列表
+     *
+     * 根据用户请求条件从数据库筛选、查询启动模板的版本相关信息，支持按照image_id和flavor_id进行过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLaunchTemplateVersionsRequest 请求对象
+     * @return ListLaunchTemplateVersionsResponse
+     */
+    public ListLaunchTemplateVersionsResponse listLaunchTemplateVersions(ListLaunchTemplateVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listLaunchTemplateVersions);
+    }
+
+    /**
+     * 查询模板版本列表
+     *
+     * 根据用户请求条件从数据库筛选、查询启动模板的版本相关信息，支持按照image_id和flavor_id进行过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLaunchTemplateVersionsRequest 请求对象
+     * @return SyncInvoker<ListLaunchTemplateVersionsRequest, ListLaunchTemplateVersionsResponse>
+     */
+    public SyncInvoker<ListLaunchTemplateVersionsRequest, ListLaunchTemplateVersionsResponse> listLaunchTemplateVersionsInvoker(
+        ListLaunchTemplateVersionsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.listLaunchTemplateVersions, hcClient);
     }
 
     /**
@@ -1562,6 +1659,34 @@ public class EcsClient {
     public SyncInvoker<ListServersDetailsRequest, ListServersDetailsResponse> listServersDetailsInvoker(
         ListServersDetailsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.listServersDetails, hcClient);
+    }
+
+    /**
+     * 查询模板列表
+     *
+     * 根据用户请求条件从数据库筛选、查询启动模板相关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTemplatesRequest 请求对象
+     * @return ListTemplatesResponse
+     */
+    public ListTemplatesResponse listTemplates(ListTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listTemplates);
+    }
+
+    /**
+     * 查询模板列表
+     *
+     * 根据用户请求条件从数据库筛选、查询启动模板相关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTemplatesRequest 请求对象
+     * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
+     */
+    public SyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesInvoker(ListTemplatesRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.listTemplates, hcClient);
     }
 
     /**
@@ -1904,6 +2029,35 @@ public class EcsClient {
     public SyncInvoker<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> novaListServerSecurityGroupsInvoker(
         NovaListServerSecurityGroupsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaListServerSecurityGroups, hcClient);
+    }
+
+    /**
+     * 查询云服务器列表
+     *
+     * 查询云服务器信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaListServersRequest 请求对象
+     * @return NovaListServersResponse
+     */
+    public NovaListServersResponse novaListServers(NovaListServersRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.novaListServers);
+    }
+
+    /**
+     * 查询云服务器列表
+     *
+     * 查询云服务器信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaListServersRequest 请求对象
+     * @return SyncInvoker<NovaListServersRequest, NovaListServersResponse>
+     */
+    public SyncInvoker<NovaListServersRequest, NovaListServersResponse> novaListServersInvoker(
+        NovaListServersRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.novaListServers, hcClient);
     }
 
     /**
@@ -2292,6 +2446,35 @@ public class EcsClient {
     }
 
     /**
+     * 查询云服务器元数据配置
+     *
+     * 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetadataOptionsRequest 请求对象
+     * @return ShowMetadataOptionsResponse
+     */
+    public ShowMetadataOptionsResponse showMetadataOptions(ShowMetadataOptionsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showMetadataOptions);
+    }
+
+    /**
+     * 查询云服务器元数据配置
+     *
+     * 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetadataOptionsRequest 请求对象
+     * @return SyncInvoker<ShowMetadataOptionsRequest, ShowMetadataOptionsResponse>
+     */
+    public SyncInvoker<ShowMetadataOptionsRequest, ShowMetadataOptionsResponse> showMetadataOptionsInvoker(
+        ShowMetadataOptionsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.showMetadataOptions, hcClient);
+    }
+
+    /**
      * 查询回收站配置
      *
      * 查询回收站配置
@@ -2473,35 +2656,6 @@ public class EcsClient {
     }
 
     /**
-     * 查询云服务器元数据配置
-     *
-     * 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowServerMetadataOptionsRequest 请求对象
-     * @return ShowServerMetadataOptionsResponse
-     */
-    public ShowServerMetadataOptionsResponse showServerMetadataOptions(ShowServerMetadataOptionsRequest request) {
-        return hcClient.syncInvokeHttp(request, EcsMeta.showServerMetadataOptions);
-    }
-
-    /**
-     * 查询云服务器元数据配置
-     *
-     * 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowServerMetadataOptionsRequest 请求对象
-     * @return SyncInvoker<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse>
-     */
-    public SyncInvoker<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse> showServerMetadataOptionsInvoker(
-        ShowServerMetadataOptionsRequest request) {
-        return new SyncInvoker<>(request, EcsMeta.showServerMetadataOptions, hcClient);
-    }
-
-    /**
      * 云服务器获取密码(企业项目)
      *
      * 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
@@ -2593,6 +2747,35 @@ public class EcsClient {
     }
 
     /**
+     * 更新云服务器元数据配置
+     *
+     * 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMetadataOptionsRequest 请求对象
+     * @return UpdateMetadataOptionsResponse
+     */
+    public UpdateMetadataOptionsResponse updateMetadataOptions(UpdateMetadataOptionsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.updateMetadataOptions);
+    }
+
+    /**
+     * 更新云服务器元数据配置
+     *
+     * 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMetadataOptionsRequest 请求对象
+     * @return SyncInvoker<UpdateMetadataOptionsRequest, UpdateMetadataOptionsResponse>
+     */
+    public SyncInvoker<UpdateMetadataOptionsRequest, UpdateMetadataOptionsResponse> updateMetadataOptionsInvoker(
+        UpdateMetadataOptionsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.updateMetadataOptions, hcClient);
+    }
+
+    /**
      * 更新回收站配置
      *
      * 更新回收站属性信息
@@ -2648,6 +2831,33 @@ public class EcsClient {
     public SyncInvoker<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> updateRecycleBinPolicyInvoker(
         UpdateRecycleBinPolicyRequest request) {
         return new SyncInvoker<>(request, EcsMeta.updateRecycleBinPolicy, hcClient);
+    }
+
+    /**
+     * 更新计划事件
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledEventRequest 请求对象
+     * @return UpdateScheduledEventResponse
+     */
+    public UpdateScheduledEventResponse updateScheduledEvent(UpdateScheduledEventRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.updateScheduledEvent);
+    }
+
+    /**
+     * 更新计划事件
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledEventRequest 请求对象
+     * @return SyncInvoker<UpdateScheduledEventRequest, UpdateScheduledEventResponse>
+     */
+    public SyncInvoker<UpdateScheduledEventRequest, UpdateScheduledEventResponse> updateScheduledEventInvoker(
+        UpdateScheduledEventRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.updateScheduledEvent, hcClient);
     }
 
     /**
@@ -2809,35 +3019,6 @@ public class EcsClient {
     public SyncInvoker<UpdateServerMetadataRequest, UpdateServerMetadataResponse> updateServerMetadataInvoker(
         UpdateServerMetadataRequest request) {
         return new SyncInvoker<>(request, EcsMeta.updateServerMetadata, hcClient);
-    }
-
-    /**
-     * 更新云服务器元数据配置
-     *
-     * 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateServerMetadataOptionsRequest 请求对象
-     * @return UpdateServerMetadataOptionsResponse
-     */
-    public UpdateServerMetadataOptionsResponse updateServerMetadataOptions(UpdateServerMetadataOptionsRequest request) {
-        return hcClient.syncInvokeHttp(request, EcsMeta.updateServerMetadataOptions);
-    }
-
-    /**
-     * 更新云服务器元数据配置
-     *
-     * 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateServerMetadataOptionsRequest 请求对象
-     * @return SyncInvoker<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse>
-     */
-    public SyncInvoker<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse> updateServerMetadataOptionsInvoker(
-        UpdateServerMetadataOptionsRequest request) {
-        return new SyncInvoker<>(request, EcsMeta.updateServerMetadataOptions, hcClient);
     }
 
     /**

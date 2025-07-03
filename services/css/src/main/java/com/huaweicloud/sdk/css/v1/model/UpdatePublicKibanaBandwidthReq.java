@@ -12,12 +12,12 @@ import java.util.function.Consumer;
 public class UpdatePublicKibanaBandwidthReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bandWidth")
+    @JsonProperty(value = "band_width")
 
     private UpdatePublicKibanaBandwidthReqBandWidth bandWidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isAutoPay")
+    @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
 

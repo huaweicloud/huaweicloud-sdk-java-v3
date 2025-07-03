@@ -118,6 +118,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ExecuteTaskInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.GenerateReportInfo;
@@ -252,6 +253,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.SaveTaskSettingRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.SaveTaskSettingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.SearchRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ServiceRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.SetTaskResultRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.SetTaskResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowAllConfigValueByTypeAndKeyRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowAllConfigValueByTypeAndKeyResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowAllFeatureChildrenRequest;
@@ -2837,6 +2840,39 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SaveTaskSettingRequestBody.class),
             f -> f.withMarshaller(SaveTaskSettingRequest::getBody, SaveTaskSettingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetTaskResultRequest, SetTaskResultResponse> setTaskResult =
+        genForSetTaskResult();
+
+    private static HttpRequestDef<SetTaskResultRequest, SetTaskResultResponse> genForSetTaskResult() {
+        // basic
+        HttpRequestDef.Builder<SetTaskResultRequest, SetTaskResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetTaskResultRequest.class, SetTaskResultResponse.class)
+                .withName("SetTaskResult")
+                .withUri("/v4/{project_uuid}/tasks/{task_uri}/results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_uuid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTaskResultRequest::getProjectUuid, SetTaskResultRequest::setProjectUuid));
+        builder.<String>withRequestField("task_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTaskResultRequest::getTaskUri, SetTaskResultRequest::setTaskUri));
+        builder.<ExecuteTaskInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteTaskInfo.class),
+            f -> f.withMarshaller(SetTaskResultRequest::getBody, SetTaskResultRequest::setBody));
 
         // response
 

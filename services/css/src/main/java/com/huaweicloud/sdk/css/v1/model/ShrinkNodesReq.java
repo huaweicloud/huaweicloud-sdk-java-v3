@@ -19,7 +19,7 @@ public class ShrinkNodesReq {
     private String migrateData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "shrinkNodes")
+    @JsonProperty(value = "shrink_nodes")
 
     private List<String> shrinkNodes = null;
 

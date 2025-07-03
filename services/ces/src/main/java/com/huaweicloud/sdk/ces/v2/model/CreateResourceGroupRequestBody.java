@@ -193,7 +193,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,NAME（实例名称）,不传为手动添加
+     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,NAME（实例名称）,COMB（组合匹配）,Manual（手动添加）
      * @return type
      */
     public String getType() {

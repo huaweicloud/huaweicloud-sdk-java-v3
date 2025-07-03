@@ -20,6 +20,16 @@ public class ListImagesRequest {
 
     private String upgradeType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start")
+
+    private String start;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
     public ListImagesRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -54,6 +64,40 @@ public class ListImagesRequest {
         this.upgradeType = upgradeType;
     }
 
+    public ListImagesRequest withStart(String start) {
+        this.start = start;
+        return this;
+    }
+
+    /**
+     * 指定查询起始值，默认值为0。
+     * @return start
+     */
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public ListImagesRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 指定查询个数，默认值为10。
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +107,13 @@ public class ListImagesRequest {
             return false;
         }
         ListImagesRequest that = (ListImagesRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.upgradeType, that.upgradeType);
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.upgradeType, that.upgradeType)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, upgradeType);
+        return Objects.hash(clusterId, upgradeType, start, limit);
     }
 
     @Override
@@ -77,6 +122,8 @@ public class ListImagesRequest {
         sb.append("class ListImagesRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    upgradeType: ").append(toIndentedString(upgradeType)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

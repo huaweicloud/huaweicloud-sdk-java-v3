@@ -37,11 +37,6 @@ public class ShowIkThesaurusResponse extends SdkResponse {
     private String synonymObj;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updateTime")
-
-    private String updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateDetails")
 
     private String updateDetails;
@@ -146,23 +141,6 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         this.synonymObj = synonymObj;
     }
 
-    public ShowIkThesaurusResponse withUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    /**
-     * 词库最近更新时间。
-     * @return updateTime
-     */
-    public String getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
-    }
-
     public ShowIkThesaurusResponse withUpdateDetails(String updateDetails) {
         this.updateDetails = updateDetails;
         return this;
@@ -242,23 +220,14 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         ShowIkThesaurusResponse that = (ShowIkThesaurusResponse) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.bucket, that.bucket)
             && Objects.equals(this.mainObj, that.mainObj) && Objects.equals(this.stopObj, that.stopObj)
-            && Objects.equals(this.synonymObj, that.synonymObj) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.synonymObj, that.synonymObj)
             && Objects.equals(this.updateDetails, that.updateDetails) && Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.operateStatus, that.operateStatus) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status,
-            bucket,
-            mainObj,
-            stopObj,
-            synonymObj,
-            updateTime,
-            updateDetails,
-            clusterId,
-            operateStatus,
-            id);
+        return Objects.hash(status, bucket, mainObj, stopObj, synonymObj, updateDetails, clusterId, operateStatus, id);
     }
 
     @Override
@@ -270,7 +239,6 @@ public class ShowIkThesaurusResponse extends SdkResponse {
         sb.append("    mainObj: ").append(toIndentedString(mainObj)).append("\n");
         sb.append("    stopObj: ").append(toIndentedString(stopObj)).append("\n");
         sb.append("    synonymObj: ").append(toIndentedString(synonymObj)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    updateDetails: ").append(toIndentedString(updateDetails)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    operateStatus: ").append(toIndentedString(operateStatus)).append("\n");

@@ -15,14 +15,26 @@ public interface BackoffStrategy {
         public <S> long computeDelayBeforeNextRetry(RetryContext<S> context) {
             return 0;
         }
+
+        @Override
+        public long computeDelayBeforeNextRetry(int retries) {
+            return 0;
+        }
     };
 
     /**
-     * Compute wait duration between two retried requests.
+     * Async compute wait duration between two retried requests.
      *
-     * @param <S> type of response
+     * @param <S>     type of response
      * @param context the context which stored retry related information
      * @return milliseconds to wait
      */
     <S> long computeDelayBeforeNextRetry(RetryContext<S> context);
+
+    /**
+     * Sync compute wait duration between two retried requests.
+     * @param retries retry times
+     * @return milliseconds to wait
+     */
+    long computeDelayBeforeNextRetry(int retries);
 }

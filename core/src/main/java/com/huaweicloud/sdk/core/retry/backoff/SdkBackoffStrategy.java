@@ -56,7 +56,7 @@ public class SdkBackoffStrategy implements BackoffStrategy {
     /**
      * The public constructor which can assign the specified value to the private variables.
      *
-     * @param baseDelay the base delay to be calculated.
+     * @param baseDelay               the base delay to be calculated.
      * @param maxBackoffInMillisecond the maximum time to be backoff.
      */
     public SdkBackoffStrategy(int baseDelay, int maxBackoffInMillisecond) {
@@ -79,6 +79,11 @@ public class SdkBackoffStrategy implements BackoffStrategy {
         } else {
             return nonThrottlingBackoffStrategy.computeDelayBeforeNextRetry(context);
         }
+    }
+
+    @Override
+    public long computeDelayBeforeNextRetry(int retries) {
+        return throttlingBackoffStrategy.computeDelayBeforeNextRetry(retries);
     }
 
     private static int calculateExponentialDelay(int retriesAttempted, int baseDelay, int maxBackoffTime) {
@@ -107,7 +112,7 @@ public class SdkBackoffStrategy implements BackoffStrategy {
         /**
          * The public constructor which can assign the specified value to the private variables.
          *
-         * @param baseDelay the base delay to be calculated.
+         * @param baseDelay      the base delay to be calculated.
          * @param maxBackoffTime the maximum time to be backoff.
          */
         public ThrottlingBackoffStrategy(final int baseDelay, final int maxBackoffTime) {
@@ -118,6 +123,12 @@ public class SdkBackoffStrategy implements BackoffStrategy {
         @Override
         public <S> long computeDelayBeforeNextRetry(RetryContext<S> context) {
             int expo = calculateExponentialDelay(context.getRetriesAttempted(), baseDelay, maxBackoffTime);
+            return MIN_THROTTLE_DELAY + (expo / BASE_OF_EXPONENT) + random.nextInt((expo / BASE_OF_EXPONENT) + 1);
+        }
+
+        @Override
+        public long computeDelayBeforeNextRetry(int retries) {
+            int expo = calculateExponentialDelay(retries, baseDelay, maxBackoffTime);
             return MIN_THROTTLE_DELAY + (expo / BASE_OF_EXPONENT) + random.nextInt((expo / BASE_OF_EXPONENT) + 1);
         }
     }
@@ -143,7 +154,7 @@ public class SdkBackoffStrategy implements BackoffStrategy {
         /**
          * The public constructor which can assign the specified value to the private variables.
          *
-         * @param baseDelay the base delay to be calculated.
+         * @param baseDelay      the base delay to be calculated.
          * @param maxBackoffTime the maximum time to be backoff.
          */
         public NonThrottlingBackoffStrategy(int baseDelay, int maxBackoffTime) {
@@ -154,6 +165,12 @@ public class SdkBackoffStrategy implements BackoffStrategy {
         @Override
         public <S> long computeDelayBeforeNextRetry(RetryContext<S> context) {
             int expo = calculateExponentialDelay(context.getRetriesAttempted(), baseDelay, maxBackoffTime);
+            return MIN_RETRY_DELAY + random.nextInt(expo);
+        }
+
+        @Override
+        public long computeDelayBeforeNextRetry(int retries) {
+            int expo = calculateExponentialDelay(retries, baseDelay, maxBackoffTime);
             return MIN_RETRY_DELAY + random.nextInt(expo);
         }
     }

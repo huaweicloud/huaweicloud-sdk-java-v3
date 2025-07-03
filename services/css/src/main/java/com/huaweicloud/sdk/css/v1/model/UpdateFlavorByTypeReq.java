@@ -11,17 +11,17 @@ import java.util.Objects;
 public class UpdateFlavorByTypeReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "needCheckReplica")
+    @JsonProperty(value = "need_check_replica")
 
     private Boolean needCheckReplica;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "newFlavorId")
+    @JsonProperty(value = "new_flavor_id")
 
     private String newFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isAutoPay")
+    @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
 

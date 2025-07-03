@@ -13,15 +13,22 @@ import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateCocTicketRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CreateDiagnosisTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalIssuesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
@@ -32,6 +39,8 @@ import com.huaweicloud.sdk.coc.v1.model.CreateScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateTicketRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateTicketResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomResponse;
@@ -48,6 +57,7 @@ import com.huaweicloud.sdk.coc.v1.model.EditScriptModel;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteActionParamsV2;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentRequsetBody;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentResponse;
@@ -74,13 +84,11 @@ import com.huaweicloud.sdk.coc.v1.model.GetScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleExternalIncidentRequest;
+import com.huaweicloud.sdk.coc.v1.model.HandleIncidentRequest;
+import com.huaweicloud.sdk.coc.v1.model.HandleIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.InstancesBatchesMode;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptAnalyzeRequest;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptOrderOperationBody;
-import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListApplicationsRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsReq;
@@ -98,12 +106,16 @@ import com.huaweicloud.sdk.coc.v1.model.ListExecutionStepsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionStepsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListIncidentSimpleTicketsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListIncidentSimpleTicketsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListIncidentsHistoriesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListIncidentsHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListIncidentsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListIncidentsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
@@ -122,6 +134,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListTenantWarRoomRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ListTicketParams;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketParamsV2;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketParamsWithPageV2;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
@@ -145,6 +159,8 @@ import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisSummaryRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisSummaryResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowDiagnosisTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowIncidentTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowIncidentTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
@@ -174,99 +190,6 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class CocMeta {
 
-    public static final HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> listApplications =
-        genForListApplications();
-
-    private static HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> genForListApplications() {
-        // basic
-        HttpRequestDef.Builder<ListApplicationsRequest, ListApplicationsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListApplicationsRequest.class, ListApplicationsResponse.class)
-                .withName("ListApplications")
-                .withUri("/v1/applications")
-                .withContentType("application/json");
-
-        // requests
-        builder.<List<String>>withRequestField("id_list",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListApplicationsRequest::getIdList, ListApplicationsRequest::setIdList));
-        builder.<String>withRequestField("parent_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationsRequest::getParentId, ListApplicationsRequest::setParentId));
-        builder.<String>withRequestField("name_like",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationsRequest::getNameLike, ListApplicationsRequest::setNameLike));
-        builder.<String>withRequestField("code",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationsRequest::getCode, ListApplicationsRequest::setCode));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationsRequest::getMarker, ListApplicationsRequest::setMarker));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApplicationsRequest::getLimit, ListApplicationsRequest::setLimit));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListApplicationModelRequest, ListApplicationModelResponse> listApplicationModel =
-        genForListApplicationModel();
-
-    private static HttpRequestDef<ListApplicationModelRequest, ListApplicationModelResponse> genForListApplicationModel() {
-        // basic
-        HttpRequestDef.Builder<ListApplicationModelRequest, ListApplicationModelResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListApplicationModelRequest.class, ListApplicationModelResponse.class)
-            .withName("ListApplicationModel")
-            .withUri("/v1/application-model/next")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("application_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationModelRequest::getApplicationId,
-                ListApplicationModelRequest::setApplicationId));
-        builder.<String>withRequestField("component_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationModelRequest::getComponentId,
-                ListApplicationModelRequest::setComponentId));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApplicationModelRequest::getLimit, ListApplicationModelRequest::setLimit));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApplicationModelRequest::getMarker, ListApplicationModelRequest::setMarker));
-        builder.<Integer>withRequestField("page_no",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListApplicationModelRequest::getPageNo, ListApplicationModelRequest::setPageNo));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> batchCreateApplicationView =
         genForBatchCreateApplicationView();
 
@@ -288,6 +211,109 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(BatchCreateApplicationViewRequestBody.class),
             f -> f.withMarshaller(BatchCreateApplicationViewRequest::getBody,
                 BatchCreateApplicationViewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<HandleIncidentRequest, HandleIncidentResponse> handleIncident =
+        genForHandleIncident();
+
+    private static HttpRequestDef<HandleIncidentRequest, HandleIncidentResponse> genForHandleIncident() {
+        // basic
+        HttpRequestDef.Builder<HandleIncidentRequest, HandleIncidentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, HandleIncidentRequest.class, HandleIncidentResponse.class)
+                .withName("HandleIncident")
+                .withUri("/v2/incidents/{incident_id}/actions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("incident_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(HandleIncidentRequest::getIncidentId, HandleIncidentRequest::setIncidentId));
+        builder.<ExecuteActionParamsV2>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteActionParamsV2.class),
+            f -> f.withMarshaller(HandleIncidentRequest::getBody, HandleIncidentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIncidentsRequest, ListIncidentsResponse> listIncidents =
+        genForListIncidents();
+
+    private static HttpRequestDef<ListIncidentsRequest, ListIncidentsResponse> genForListIncidents() {
+        // basic
+        HttpRequestDef.Builder<ListIncidentsRequest, ListIncidentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListIncidentsRequest.class, ListIncidentsResponse.class)
+                .withName("ListIncidents")
+                .withUri("/v2/incidents/list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ListTicketParamsWithPageV2>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTicketParamsWithPageV2.class),
+            f -> f.withMarshaller(ListIncidentsRequest::getBody, ListIncidentsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIncidentsHistoriesRequest, ListIncidentsHistoriesResponse> listIncidentsHistories =
+        genForListIncidentsHistories();
+
+    private static HttpRequestDef<ListIncidentsHistoriesRequest, ListIncidentsHistoriesResponse> genForListIncidentsHistories() {
+        // basic
+        HttpRequestDef.Builder<ListIncidentsHistoriesRequest, ListIncidentsHistoriesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListIncidentsHistoriesRequest.class, ListIncidentsHistoriesResponse.class)
+            .withName("ListIncidentsHistories")
+            .withUri("/v2/incidents/{incident_id}/histories")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("incident_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIncidentsHistoriesRequest::getIncidentId,
+                ListIncidentsHistoriesRequest::setIncidentId));
+        builder.<ListTicketParamsV2>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTicketParamsV2.class),
+            f -> f.withMarshaller(ListIncidentsHistoriesRequest::getBody, ListIncidentsHistoriesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIncidentTaskRequest, ShowIncidentTaskResponse> showIncidentTask =
+        genForShowIncidentTask();
+
+    private static HttpRequestDef<ShowIncidentTaskRequest, ShowIncidentTaskResponse> genForShowIncidentTask() {
+        // basic
+        HttpRequestDef.Builder<ShowIncidentTaskRequest, ShowIncidentTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowIncidentTaskRequest.class, ShowIncidentTaskResponse.class)
+                .withName("ShowIncidentTask")
+                .withUri("/v2/incidents/{incident_id}/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("incident_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIncidentTaskRequest::getIncidentId, ShowIncidentTaskRequest::setIncidentId));
 
         // response
 
@@ -1266,6 +1292,33 @@ public class CocMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateExternalCocAttachmentRequest, CreateExternalCocAttachmentResponse> createExternalCocAttachment =
+        genForCreateExternalCocAttachment();
+
+    private static HttpRequestDef<CreateExternalCocAttachmentRequest, CreateExternalCocAttachmentResponse> genForCreateExternalCocAttachment() {
+        // basic
+        HttpRequestDef.Builder<CreateExternalCocAttachmentRequest, CreateExternalCocAttachmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateExternalCocAttachmentRequest.class,
+                    CreateExternalCocAttachmentResponse.class)
+                .withName("CreateExternalCocAttachment")
+                .withUri("/v1/external/incident/attachments")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<CreateExternalCocAttachmentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateExternalCocAttachmentRequestBody.class),
+            f -> f.withMarshaller(CreateExternalCocAttachmentRequest::getBody,
+                CreateExternalCocAttachmentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<HandleCocIncidentRequest, HandleCocIncidentResponse> handleCocIncident =
         genForHandleCocIncident();
 
@@ -1316,6 +1369,39 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(ListTicketParams.class),
             f -> f.withMarshaller(ListCocTicketOperationHistoriesRequest::getBody,
                 ListCocTicketOperationHistoriesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIncidentSimpleTicketsRequest, ListIncidentSimpleTicketsResponse> listIncidentSimpleTickets =
+        genForListIncidentSimpleTickets();
+
+    private static HttpRequestDef<ListIncidentSimpleTicketsRequest, ListIncidentSimpleTicketsResponse> genForListIncidentSimpleTickets() {
+        // basic
+        HttpRequestDef.Builder<ListIncidentSimpleTicketsRequest, ListIncidentSimpleTicketsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListIncidentSimpleTicketsRequest.class,
+                    ListIncidentSimpleTicketsResponse.class)
+                .withName("ListIncidentSimpleTickets")
+                .withUri("/v1/incident-tickets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIncidentSimpleTicketsRequest::getOffset,
+                ListIncidentSimpleTicketsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIncidentSimpleTicketsRequest::getLimit,
+                ListIncidentSimpleTicketsRequest::setLimit));
 
         // response
 
@@ -1392,6 +1478,61 @@ public class CocMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAttachmentRequest, CreateAttachmentResponse> createAttachment =
+        genForCreateAttachment();
+
+    private static HttpRequestDef<CreateAttachmentRequest, CreateAttachmentResponse> genForCreateAttachment() {
+        // basic
+        HttpRequestDef.Builder<CreateAttachmentRequest, CreateAttachmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAttachmentRequest.class, CreateAttachmentResponse.class)
+                .withName("CreateAttachment")
+                .withUri("/v1/{ticket_type}/attachments")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAttachmentRequest::getTicketType, CreateAttachmentRequest::setTicketType));
+        builder.<CreateAttachmentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAttachmentRequestBody.class),
+            f -> f.withMarshaller(CreateAttachmentRequest::getBody, CreateAttachmentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTicketRequest, CreateTicketResponse> createTicket = genForCreateTicket();
+
+    private static HttpRequestDef<CreateTicketRequest, CreateTicketResponse> genForCreateTicket() {
+        // basic
+        HttpRequestDef.Builder<CreateTicketRequest, CreateTicketResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTicketRequest.class, CreateTicketResponse.class)
+                .withName("CreateTicket")
+                .withUri("/v1/{ticket_type}/tickets")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateTicketRequest.TicketTypeEnum>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTicketRequest.TicketTypeEnum.class),
+            f -> f.withMarshaller(CreateTicketRequest::getTicketType, CreateTicketRequest::setTicketType));
+        builder.<CreateCocTicketRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCocTicketRequestBody.class),
+            f -> f.withMarshaller(CreateTicketRequest::getBody, CreateTicketRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAuthorizableTicketsExternalRequest, ListAuthorizableTicketsExternalResponse> listAuthorizableTicketsExternal =
         genForListAuthorizableTicketsExternal();
 
@@ -1413,64 +1554,6 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(ListAuthorizableTicketsReq.class),
             f -> f.withMarshaller(ListAuthorizableTicketsExternalRequest::getBody,
                 ListAuthorizableTicketsExternalRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListMultiCloudResourcesRequest, ListMultiCloudResourcesResponse> listMultiCloudResources =
-        genForListMultiCloudResources();
-
-    private static HttpRequestDef<ListMultiCloudResourcesRequest, ListMultiCloudResourcesResponse> genForListMultiCloudResources() {
-        // basic
-        HttpRequestDef.Builder<ListMultiCloudResourcesRequest, ListMultiCloudResourcesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListMultiCloudResourcesRequest.class, ListMultiCloudResourcesResponse.class)
-            .withName("ListMultiCloudResources")
-            .withUri("/v1/multicloud-resources")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("vendor",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getVendor,
-                ListMultiCloudResourcesRequest::setVendor));
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getType, ListMultiCloudResourcesRequest::setType));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getLimit, ListMultiCloudResourcesRequest::setLimit));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getMarker,
-                ListMultiCloudResourcesRequest::setMarker));
-        builder.<List<String>>withRequestField("resource_id_list",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getResourceIdList,
-                ListMultiCloudResourcesRequest::setResourceIdList));
-        builder.<List<String>>withRequestField("name_list",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getNameList,
-                ListMultiCloudResourcesRequest::setNameList));
-        builder.<List<String>>withRequestField("region_id_list",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getRegionIdList,
-                ListMultiCloudResourcesRequest::setRegionIdList));
 
         // response
 

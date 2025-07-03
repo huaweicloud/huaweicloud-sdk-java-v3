@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * RecycleBinRequestBody
+ * 更新回收站启用开关的请求体。
  */
 public class RecycleBinRequestBody {
 

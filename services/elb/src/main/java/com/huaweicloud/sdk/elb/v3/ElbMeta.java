@@ -180,6 +180,8 @@ import com.huaweicloud.sdk.elb.v3.model.ShowL7RuleRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowL7RuleResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowListenerRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowListenerResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerPortsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerPortsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerStatusRequest;
@@ -1434,6 +1436,12 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getProtectionReason,
                 ListCertificatesRequest::setProtectionReason));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getEnterpriseProjectId,
+                ListCertificatesRequest::setEnterpriseProjectId));
 
         // response
 
@@ -3320,6 +3328,58 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLoadBalancerRequest::getLoadbalancerId,
                 ShowLoadBalancerRequest::setLoadbalancerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLoadBalancerPortsRequest, ShowLoadBalancerPortsResponse> showLoadBalancerPorts =
+        genForShowLoadBalancerPorts();
+
+    private static HttpRequestDef<ShowLoadBalancerPortsRequest, ShowLoadBalancerPortsResponse> genForShowLoadBalancerPorts() {
+        // basic
+        HttpRequestDef.Builder<ShowLoadBalancerPortsRequest, ShowLoadBalancerPortsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowLoadBalancerPortsRequest.class, ShowLoadBalancerPortsResponse.class)
+            .withName("ShowLoadBalancerPorts")
+            .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/local-ports")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLoadBalancerPortsRequest::getLoadbalancerId,
+                ShowLoadBalancerPortsRequest::setLoadbalancerId));
+        builder.<List<String>>withRequestField("port_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowLoadBalancerPortsRequest::getPortId, ShowLoadBalancerPortsRequest::setPortId));
+        builder.<List<String>>withRequestField("ip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowLoadBalancerPortsRequest::getIpAddress,
+                ShowLoadBalancerPortsRequest::setIpAddress));
+        builder.<List<String>>withRequestField("ipv6_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowLoadBalancerPortsRequest::getIpv6Address,
+                ShowLoadBalancerPortsRequest::setIpv6Address));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowLoadBalancerPortsRequest::getType, ShowLoadBalancerPortsRequest::setType));
+        builder.<List<String>>withRequestField("virsubnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowLoadBalancerPortsRequest::getVirsubnetId,
+                ShowLoadBalancerPortsRequest::setVirsubnetId));
 
         // response
 

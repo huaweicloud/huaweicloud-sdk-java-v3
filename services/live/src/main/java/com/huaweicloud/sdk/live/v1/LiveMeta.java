@@ -12,6 +12,9 @@ import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateFlowsRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateFlowsRequestBody;
+import com.huaweicloud.sdk.live.v1.model.CreateFlowsResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskInfoReq;
 import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskResponse;
@@ -43,6 +46,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteFlowRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteFlowResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteHarvestTaskRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoRequest;
@@ -71,6 +76,8 @@ import com.huaweicloud.sdk.live.v1.model.IPAuthInfo;
 import com.huaweicloud.sdk.live.v1.model.KeyChainInfo;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListFlowsRequest;
+import com.huaweicloud.sdk.live.v1.model.ListFlowsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListHarvestTaskRequest;
@@ -103,6 +110,13 @@ import com.huaweicloud.sdk.live.v1.model.LiveDomainCreateReq;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyDelayConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesRequestBody;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowStartRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowStartResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowStopRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowStopResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskRequestBody;
 import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskResponse;
@@ -146,6 +160,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigRequest;
@@ -262,6 +278,28 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DomainMapping.class),
             f -> f.withMarshaller(CreateDomainMappingRequest::getBody, CreateDomainMappingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFlowsRequest, CreateFlowsResponse> createFlows = genForCreateFlows();
+
+    private static HttpRequestDef<CreateFlowsRequest, CreateFlowsResponse> genForCreateFlows() {
+        // basic
+        HttpRequestDef.Builder<CreateFlowsRequest, CreateFlowsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFlowsRequest.class, CreateFlowsResponse.class)
+                .withName("CreateFlows")
+                .withUri("/v1/{project_id}/flows")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<CreateFlowsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFlowsRequestBody.class),
+            f -> f.withMarshaller(CreateFlowsRequest::getBody, CreateFlowsRequest::setBody));
 
         // response
 
@@ -550,6 +588,28 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteFlowRequest, DeleteFlowResponse> deleteFlow = genForDeleteFlow();
+
+    private static HttpRequestDef<DeleteFlowRequest, DeleteFlowResponse> genForDeleteFlow() {
+        // basic
+        HttpRequestDef.Builder<DeleteFlowRequest, DeleteFlowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFlowRequest.class, DeleteFlowResponse.class)
+                .withName("DeleteFlow")
+                .withUri("/v1/{project_id}/flows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlowRequest::getFlowId, DeleteFlowRequest::setFlowId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeletePublishTemplateRequest, DeletePublishTemplateResponse> deletePublishTemplate =
         genForDeletePublishTemplate();
 
@@ -790,6 +850,33 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDelayConfigRequest::getPlayDomain, ListDelayConfigRequest::setPlayDomain));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlowsRequest, ListFlowsResponse> listFlows = genForListFlows();
+
+    private static HttpRequestDef<ListFlowsRequest, ListFlowsResponse> genForListFlows() {
+        // basic
+        HttpRequestDef.Builder<ListFlowsRequest, ListFlowsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlowsRequest.class, ListFlowsResponse.class)
+                .withName("ListFlows")
+                .withUri("/v1/{project_id}/flows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlowsRequest::getLimit, ListFlowsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlowsRequest::getOffset, ListFlowsRequest::setOffset));
 
         // response
 
@@ -1286,6 +1373,85 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyFlowSourcesRequest, ModifyFlowSourcesResponse> modifyFlowSources =
+        genForModifyFlowSources();
+
+    private static HttpRequestDef<ModifyFlowSourcesRequest, ModifyFlowSourcesResponse> genForModifyFlowSources() {
+        // basic
+        HttpRequestDef.Builder<ModifyFlowSourcesRequest, ModifyFlowSourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyFlowSourcesRequest.class, ModifyFlowSourcesResponse.class)
+                .withName("ModifyFlowSources")
+                .withUri("/v1/{project_id}/flows/sources")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyFlowSourcesRequest::getFlowId, ModifyFlowSourcesRequest::setFlowId));
+        builder.<String>withRequestField("source_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyFlowSourcesRequest::getSourceName, ModifyFlowSourcesRequest::setSourceName));
+        builder.<ModifyFlowSourcesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyFlowSourcesRequestBody.class),
+            f -> f.withMarshaller(ModifyFlowSourcesRequest::getBody, ModifyFlowSourcesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyFlowStartRequest, ModifyFlowStartResponse> modifyFlowStart =
+        genForModifyFlowStart();
+
+    private static HttpRequestDef<ModifyFlowStartRequest, ModifyFlowStartResponse> genForModifyFlowStart() {
+        // basic
+        HttpRequestDef.Builder<ModifyFlowStartRequest, ModifyFlowStartResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyFlowStartRequest.class, ModifyFlowStartResponse.class)
+                .withName("ModifyFlowStart")
+                .withUri("/v1/{project_id}/flows/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyFlowStartRequest::getFlowId, ModifyFlowStartRequest::setFlowId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyFlowStopRequest, ModifyFlowStopResponse> modifyFlowStop =
+        genForModifyFlowStop();
+
+    private static HttpRequestDef<ModifyFlowStopRequest, ModifyFlowStopResponse> genForModifyFlowStop() {
+        // basic
+        HttpRequestDef.Builder<ModifyFlowStopRequest, ModifyFlowStopResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyFlowStopRequest.class, ModifyFlowStopResponse.class)
+                .withName("ModifyFlowStop")
+                .withUri("/v1/{project_id}/flows/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyFlowStopRequest::getFlowId, ModifyFlowStopRequest::setFlowId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunRecordRequest, RunRecordResponse> runRecord = genForRunRecord();
 
     private static HttpRequestDef<RunRecordRequest, RunRecordResponse> genForRunRecord() {
@@ -1386,6 +1552,29 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainKeyChainRequest::getDomain, ShowDomainKeyChainRequest::setDomain));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlowDetailRequest, ShowFlowDetailResponse> showFlowDetail =
+        genForShowFlowDetail();
+
+    private static HttpRequestDef<ShowFlowDetailRequest, ShowFlowDetailResponse> genForShowFlowDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowFlowDetailRequest, ShowFlowDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlowDetailRequest.class, ShowFlowDetailResponse.class)
+                .withName("ShowFlowDetail")
+                .withUri("/v1/{project_id}/flows/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getFlowId, ShowFlowDetailRequest::setFlowId));
 
         // response
 

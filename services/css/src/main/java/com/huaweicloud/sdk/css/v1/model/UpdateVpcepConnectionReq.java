@@ -19,7 +19,7 @@ public class UpdateVpcepConnectionReq {
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "endpointIdList")
+    @JsonProperty(value = "endpoint_id_list")
 
     private List<String> endpointIdList = null;
 

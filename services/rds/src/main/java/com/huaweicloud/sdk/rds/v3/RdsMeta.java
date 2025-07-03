@@ -52,6 +52,8 @@ import com.huaweicloud.sdk.rds.v3.model.ChangeProxyScaleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdResponse;
 import com.huaweicloud.sdk.rds.v3.model.ChangingTheDelayThresholdRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeRequest;
+import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationCopyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForCreation;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForUpdate;
@@ -104,6 +106,7 @@ import com.huaweicloud.sdk.rds.v3.model.CustomerModifyAutoEnlargePolicyReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerModifyAutoUpgradePolicyReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReqNew;
+import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeMajorVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.DataIpRequest;
 import com.huaweicloud.sdk.rds.v3.model.DatabaseForCreation;
 import com.huaweicloud.sdk.rds.v3.model.DatabaseUserRoleRequest;
@@ -337,6 +340,7 @@ import com.huaweicloud.sdk.rds.v3.model.PostgresqlPreCheckUpgradeMajorVersionReq
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlUserForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PwdResetRequest;
 import com.huaweicloud.sdk.rds.v3.model.QueryDRInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.RdsUpgradePrecheckV3Req;
 import com.huaweicloud.sdk.rds.v3.model.RecyclePolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ReduceVolumeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
@@ -448,6 +452,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowPrecheckResultRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowPrecheckResultResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecoveryTimeWindowRequest;
@@ -574,6 +580,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradePgMajorVersion;
 import com.huaweicloud.sdk.rds.v3.model.UserForCreation;
 
@@ -951,6 +959,47 @@ public class RdsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckInstanceForUpgradeRequest, CheckInstanceForUpgradeResponse> checkInstanceForUpgrade =
+        genForCheckInstanceForUpgrade();
+
+    private static HttpRequestDef<CheckInstanceForUpgradeRequest, CheckInstanceForUpgradeResponse> genForCheckInstanceForUpgrade() {
+        // basic
+        HttpRequestDef.Builder<CheckInstanceForUpgradeRequest, CheckInstanceForUpgradeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, CheckInstanceForUpgradeRequest.class, CheckInstanceForUpgradeResponse.class)
+            .withName("CheckInstanceForUpgrade")
+            .withUri("/v3/{project_id}/instances/{instance_id}/upgrade-version/precheck")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckInstanceForUpgradeRequest::getInstanceId,
+                CheckInstanceForUpgradeRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckInstanceForUpgradeRequest::getXLanguage,
+                CheckInstanceForUpgradeRequest::setXLanguage));
+        builder.<RdsUpgradePrecheckV3Req>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RdsUpgradePrecheckV3Req.class),
+            f -> f.withMarshaller(CheckInstanceForUpgradeRequest::getBody, CheckInstanceForUpgradeRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckInstanceForUpgradeResponse::getXRequestId,
+                CheckInstanceForUpgradeResponse::setXRequestId));
         return builder.build();
     }
 
@@ -4839,6 +4888,40 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPrecheckResultRequest, ShowPrecheckResultResponse> showPrecheckResult =
+        genForShowPrecheckResult();
+
+    private static HttpRequestDef<ShowPrecheckResultRequest, ShowPrecheckResultResponse> genForShowPrecheckResult() {
+        // basic
+        HttpRequestDef.Builder<ShowPrecheckResultRequest, ShowPrecheckResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPrecheckResultRequest.class, ShowPrecheckResultResponse.class)
+                .withName("ShowPrecheckResult")
+                .withUri("/v3/{project_id}/instances/{instance_id}/upgrade-version/precheck-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrecheckResultRequest::getInstanceId, ShowPrecheckResultRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrecheckResultRequest::getXLanguage, ShowPrecheckResultRequest::setXLanguage));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPrecheckResultResponse::getXRequestId,
+                ShowPrecheckResultResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
 
     private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
@@ -5994,6 +6077,46 @@ public class RdsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeLargeVersionRequest, UpgradeLargeVersionResponse> upgradeLargeVersion =
+        genForUpgradeLargeVersion();
+
+    private static HttpRequestDef<UpgradeLargeVersionRequest, UpgradeLargeVersionResponse> genForUpgradeLargeVersion() {
+        // basic
+        HttpRequestDef.Builder<UpgradeLargeVersionRequest, UpgradeLargeVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeLargeVersionRequest.class, UpgradeLargeVersionResponse.class)
+                .withName("UpgradeLargeVersion")
+                .withUri("/v3/{project_id}/instances/{instance_id}/major-upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeLargeVersionRequest::getInstanceId,
+                UpgradeLargeVersionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeLargeVersionRequest::getXLanguage, UpgradeLargeVersionRequest::setXLanguage));
+        builder.<CustomerUpgradeMajorVersionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomerUpgradeMajorVersionReq.class),
+            f -> f.withMarshaller(UpgradeLargeVersionRequest::getBody, UpgradeLargeVersionRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpgradeLargeVersionResponse::getXRequestId,
+                UpgradeLargeVersionResponse::setXRequestId));
         return builder.build();
     }
 

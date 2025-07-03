@@ -193,16 +193,22 @@ import com.huaweicloud.sdk.swr.v2.model.ListNamespacesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespacesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListQuotasResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListRepoDetailsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListRepoDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDomainsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDomainsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListReposDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListReposDetailsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListRepositoryTagRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListRepositoryTagResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRepositoryTagsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRepositoryTagsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRetentionHistoriesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRetentionHistoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRetentionsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRetentionsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListSharedRepoDetailsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListSharedRepoDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListSharedReposDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListSharedReposDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListSubResourceInstancesRequest;
@@ -253,6 +259,8 @@ import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceAuthResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowRepoTagRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowRepoTagResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowRepositoryRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowRepositoryResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowRetentionRequest;
@@ -1009,6 +1017,35 @@ public class SwrClient {
     }
 
     /**
+     * 查询镜像仓库列表详情
+     *
+     * 查询镜像仓库列表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRepoDetailsRequest 请求对象
+     * @return ListRepoDetailsResponse
+     */
+    public ListRepoDetailsResponse listRepoDetails(ListRepoDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listRepoDetails);
+    }
+
+    /**
+     * 查询镜像仓库列表详情
+     *
+     * 查询镜像仓库列表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRepoDetailsRequest 请求对象
+     * @return SyncInvoker<ListRepoDetailsRequest, ListRepoDetailsResponse>
+     */
+    public SyncInvoker<ListRepoDetailsRequest, ListRepoDetailsResponse> listRepoDetailsInvoker(
+        ListRepoDetailsRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.listRepoDetails, hcClient);
+    }
+
+    /**
      * 获取共享帐号列表
      *
      * 获取共享帐号列表
@@ -1064,6 +1101,35 @@ public class SwrClient {
     public SyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse> listReposDetailsInvoker(
         ListReposDetailsRequest request) {
         return new SyncInvoker<>(request, SwrMeta.listReposDetails, hcClient);
+    }
+
+    /**
+     * 查询镜像tag列表详情
+     *
+     * 查询镜像tag列表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRepositoryTagRequest 请求对象
+     * @return ListRepositoryTagResponse
+     */
+    public ListRepositoryTagResponse listRepositoryTag(ListRepositoryTagRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listRepositoryTag);
+    }
+
+    /**
+     * 查询镜像tag列表详情
+     *
+     * 查询镜像tag列表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRepositoryTagRequest 请求对象
+     * @return SyncInvoker<ListRepositoryTagRequest, ListRepositoryTagResponse>
+     */
+    public SyncInvoker<ListRepositoryTagRequest, ListRepositoryTagResponse> listRepositoryTagInvoker(
+        ListRepositoryTagRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.listRepositoryTag, hcClient);
     }
 
     /**
@@ -1151,6 +1217,35 @@ public class SwrClient {
     public SyncInvoker<ListRetentionsRequest, ListRetentionsResponse> listRetentionsInvoker(
         ListRetentionsRequest request) {
         return new SyncInvoker<>(request, SwrMeta.listRetentions, hcClient);
+    }
+
+    /**
+     * 查询共享镜像列表详情
+     *
+     * 查询共享镜像列表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSharedRepoDetailsRequest 请求对象
+     * @return ListSharedRepoDetailsResponse
+     */
+    public ListSharedRepoDetailsResponse listSharedRepoDetails(ListSharedRepoDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listSharedRepoDetails);
+    }
+
+    /**
+     * 查询共享镜像列表详情
+     *
+     * 查询共享镜像列表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSharedRepoDetailsRequest 请求对象
+     * @return SyncInvoker<ListSharedRepoDetailsRequest, ListSharedRepoDetailsResponse>
+     */
+    public SyncInvoker<ListSharedRepoDetailsRequest, ListSharedRepoDetailsResponse> listSharedRepoDetailsInvoker(
+        ListSharedRepoDetailsRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.listSharedRepoDetails, hcClient);
     }
 
     /**
@@ -1353,6 +1448,34 @@ public class SwrClient {
     public SyncInvoker<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse> showNamespaceAuthInvoker(
         ShowNamespaceAuthRequest request) {
         return new SyncInvoker<>(request, SwrMeta.showNamespaceAuth, hcClient);
+    }
+
+    /**
+     * 查询指定tag的镜像详情
+     *
+     * 查询镜像仓库中指定tag的镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepoTagRequest 请求对象
+     * @return ShowRepoTagResponse
+     */
+    public ShowRepoTagResponse showRepoTag(ShowRepoTagRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.showRepoTag);
+    }
+
+    /**
+     * 查询指定tag的镜像详情
+     *
+     * 查询镜像仓库中指定tag的镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepoTagRequest 请求对象
+     * @return SyncInvoker<ShowRepoTagRequest, ShowRepoTagResponse>
+     */
+    public SyncInvoker<ShowRepoTagRequest, ShowRepoTagResponse> showRepoTagInvoker(ShowRepoTagRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.showRepoTag, hcClient);
     }
 
     /**

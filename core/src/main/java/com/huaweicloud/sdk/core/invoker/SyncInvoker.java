@@ -25,8 +25,6 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 
-import java.util.concurrent.ExecutionException;
-
 /**
  * @param <R> Request type
  * @param <S> Response type
@@ -36,9 +34,9 @@ public class SyncInvoker<R, S> extends BaseInvoker<R, S, SyncInvoker<R, S>> {
     /**
      * The default constructor for SyncInvoker.
      *
-     * @param req original request
-     * @param meta definitions for request and response used to build original HttpRequest
-     * and extract original HttpResponse
+     * @param req      original request
+     * @param meta     definitions for request and response used to build original HttpRequest
+     *                 and extract original HttpResponse
      * @param hcClient encapsulated client before default http client
      */
     public SyncInvoker(R req, HttpRequestDef<R, S> meta, HcClient hcClient) {
@@ -51,12 +49,43 @@ public class SyncInvoker<R, S> extends BaseInvoker<R, S, SyncInvoker<R, S>> {
      * @return CompletableFuture
      */
     public S invoke() {
-        try {
-            return retry(() -> this.hcClient.asyncInvokeHttp(req, meta, exchange, extraHeaders)).get();
-        } catch (ExecutionException e) {
-            throw (SdkException) e.getCause();
-        } catch (InterruptedException e) {
-            throw new SdkException(e);
+        if (retryTimes == 0 || func == null) {
+            return hcClient.syncInvokeHttp(req, meta, exchange, extraHeaders);
         }
+
+        int execTimes = 0;
+        S resp;
+        SdkException exception;
+        while (true) {
+            try {
+                resp = hcClient.syncInvokeHttp(req, meta, exchange, extraHeaders);
+                exception = null;
+            } catch (SdkException e) {
+                exception = e;
+                resp = null;
+            } finally {
+                execTimes++;
+            }
+
+            if (execTimes > retryTimes || !func.apply(resp, exception)) {
+                break;
+            }
+
+            long delay = backoffStrategy.computeDelayBeforeNextRetry(retryTimes);
+            if (delay > 0) {
+                try {
+                    Thread.sleep(delay);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    throw new SdkException(e);
+                }
+            }
+
+        }
+
+        if (exception != null) {
+            throw exception;
+        }
+        return resp;
     }
 }

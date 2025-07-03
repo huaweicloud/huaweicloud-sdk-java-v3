@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.ecs.v2.model.AcceptScheduledEventRequest;
+import com.huaweicloud.sdk.ecs.v2.model.AcceptScheduledEventResponse;
 import com.huaweicloud.sdk.ecs.v2.model.AddServerGroupMemberRequest;
 import com.huaweicloud.sdk.ecs.v2.model.AddServerGroupMemberRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.AddServerGroupMemberResponse;
@@ -68,6 +70,8 @@ import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServersResponse;
+import com.huaweicloud.sdk.ecs.v2.model.DeleteLaunchTemplatesRequest;
+import com.huaweicloud.sdk.ecs.v2.model.DeleteLaunchTemplatesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteRecycleBinServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupMemberRequest;
@@ -93,6 +97,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListLaunchTemplateVersionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListLaunchTemplateVersionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListRecycleBinServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListRecycleBinServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsRequest;
@@ -116,6 +122,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersDetailsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListTemplatesRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.MigrateServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.MigrateServerRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.MigrateServerResponse;
@@ -146,6 +154,8 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServerSecurityGroupsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServerSecurityGroupsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaListServersRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaListServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowFlavorExtraSpecsRequest;
@@ -178,8 +188,12 @@ import com.huaweicloud.sdk.ecs.v2.model.ResizeServerRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.ResizeServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ScheduledEventAcceptBody;
+import com.huaweicloud.sdk.ecs.v2.model.ScheduledEventUpdateBody;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowMetadataOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
@@ -190,8 +204,6 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerLimitsResponse;
-import com.huaweicloud.sdk.ecs.v2.model.ShowServerMetadataOptionsRequest;
-import com.huaweicloud.sdk.ecs.v2.model.ShowServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerPasswordRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerPasswordResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerRemoteConsoleRequest;
@@ -201,6 +213,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateMetadataOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateNicInfoRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyReq;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyRequest;
@@ -208,6 +222,8 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinPolicyResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinReq;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateScheduledEventRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateScheduledEventResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
@@ -216,9 +232,7 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceResponse;
-import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsRequestBody;
-import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
@@ -230,6 +244,40 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class EcsMeta {
+
+    public static final HttpRequestDef<AcceptScheduledEventRequest, AcceptScheduledEventResponse> acceptScheduledEvent =
+        genForAcceptScheduledEvent();
+
+    private static HttpRequestDef<AcceptScheduledEventRequest, AcceptScheduledEventResponse> genForAcceptScheduledEvent() {
+        // basic
+        HttpRequestDef.Builder<AcceptScheduledEventRequest, AcceptScheduledEventResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AcceptScheduledEventRequest.class, AcceptScheduledEventResponse.class)
+            .withName("AcceptScheduledEvent")
+            .withUri("/v3/{project_id}/instance-scheduled-events/{id}/actions/accept")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptScheduledEventRequest::getId, AcceptScheduledEventRequest::setId));
+        builder.<ScheduledEventAcceptBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ScheduledEventAcceptBody.class),
+            f -> f.withMarshaller(AcceptScheduledEventRequest::getBody, AcceptScheduledEventRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AcceptScheduledEventResponse::getXRequestId,
+                AcceptScheduledEventResponse::setXRequestId));
+        return builder.build();
+    }
 
     public static final HttpRequestDef<AddServerGroupMemberRequest, AddServerGroupMemberResponse> addServerGroupMember =
         genForAddServerGroupMember();
@@ -820,6 +868,36 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteLaunchTemplatesRequest, DeleteLaunchTemplatesResponse> deleteLaunchTemplates =
+        genForDeleteLaunchTemplates();
+
+    private static HttpRequestDef<DeleteLaunchTemplatesRequest, DeleteLaunchTemplatesResponse> genForDeleteLaunchTemplates() {
+        // basic
+        HttpRequestDef.Builder<DeleteLaunchTemplatesRequest, DeleteLaunchTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteLaunchTemplatesRequest.class, DeleteLaunchTemplatesResponse.class)
+            .withName("DeleteLaunchTemplates")
+            .withUri("/v3/{project_id}/launch-templates/{launch_template_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("launch_template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLaunchTemplatesRequest::getLaunchTemplateId,
+                DeleteLaunchTemplatesRequest::setLaunchTemplateId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteLaunchTemplatesResponse::getXRequestId,
+                DeleteLaunchTemplatesResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteRecycleBinServerRequest, DeleteRecycleBinServerResponse> deleteRecycleBinServer =
         genForDeleteRecycleBinServer();
 
@@ -1268,6 +1346,69 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLaunchTemplateVersionsRequest, ListLaunchTemplateVersionsResponse> listLaunchTemplateVersions =
+        genForListLaunchTemplateVersions();
+
+    private static HttpRequestDef<ListLaunchTemplateVersionsRequest, ListLaunchTemplateVersionsResponse> genForListLaunchTemplateVersions() {
+        // basic
+        HttpRequestDef.Builder<ListLaunchTemplateVersionsRequest, ListLaunchTemplateVersionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListLaunchTemplateVersionsRequest.class,
+                    ListLaunchTemplateVersionsResponse.class)
+                .withName("ListLaunchTemplateVersions")
+                .withUri("/v3/{project_id}/launch-template-versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLaunchTemplateVersionsRequest::getLimit,
+                ListLaunchTemplateVersionsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLaunchTemplateVersionsRequest::getMarker,
+                ListLaunchTemplateVersionsRequest::setMarker));
+        builder.<String>withRequestField("launch_template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLaunchTemplateVersionsRequest::getLaunchTemplateId,
+                ListLaunchTemplateVersionsRequest::setLaunchTemplateId));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLaunchTemplateVersionsRequest::getImageId,
+                ListLaunchTemplateVersionsRequest::setImageId));
+        builder.<String>withRequestField("flavor_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLaunchTemplateVersionsRequest::getFlavorId,
+                ListLaunchTemplateVersionsRequest::setFlavorId));
+        builder.<List<Integer>>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLaunchTemplateVersionsRequest::getVersion,
+                ListLaunchTemplateVersionsRequest::setVersion));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListLaunchTemplateVersionsResponse::getXRequestId,
+                ListLaunchTemplateVersionsResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRecycleBinServersRequest, ListRecycleBinServersResponse> listRecycleBinServers =
         genForListRecycleBinServers();
 
@@ -1703,6 +1844,50 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
+        genForListTemplates();
+
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForListTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
+                .withName("ListTemplates")
+                .withUri("/v3/{project_id}/launch-templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getLimit, ListTemplatesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getMarker, ListTemplatesRequest::setMarker));
+        builder.<List<String>>withRequestField("launch_template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getLaunchTemplateId,
+                ListTemplatesRequest::setLaunchTemplateId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getName, ListTemplatesRequest::setName));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTemplatesResponse::getXRequestId, ListTemplatesResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<MigrateServerRequest, MigrateServerResponse> migrateServer =
         genForMigrateServer();
 
@@ -2005,6 +2190,95 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServerSecurityGroupsRequest::getServerId,
                 NovaListServerSecurityGroupsRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NovaListServersRequest, NovaListServersResponse> novaListServers =
+        genForNovaListServers();
+
+    private static HttpRequestDef<NovaListServersRequest, NovaListServersResponse> genForNovaListServers() {
+        // basic
+        HttpRequestDef.Builder<NovaListServersRequest, NovaListServersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NovaListServersRequest.class, NovaListServersResponse.class)
+                .withName("NovaListServers")
+                .withUri("/v2.1/{project_id}/servers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("changes-since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getChangesSince, NovaListServersRequest::setChangesSince));
+        builder.<String>withRequestField("flavor",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getFlavor, NovaListServersRequest::setFlavor));
+        builder.<String>withRequestField("host",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getHost, NovaListServersRequest::setHost));
+        builder.<String>withRequestField("image",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getImage, NovaListServersRequest::setImage));
+        builder.<String>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getIp, NovaListServersRequest::setIp));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(NovaListServersRequest::getLimit, NovaListServersRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getMarker, NovaListServersRequest::setMarker));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getName, NovaListServersRequest::setName));
+        builder.<String>withRequestField("not-tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getNotTags, NovaListServersRequest::setNotTags));
+        builder.<String>withRequestField("reservation_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getReservationId, NovaListServersRequest::setReservationId));
+        builder.<NovaListServersRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(NovaListServersRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(NovaListServersRequest::getSortKey, NovaListServersRequest::setSortKey));
+        builder.<NovaListServersRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(NovaListServersRequest.StatusEnum.class),
+            f -> f.withMarshaller(NovaListServersRequest::getStatus, NovaListServersRequest::setStatus));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getTags, NovaListServersRequest::setTags));
+        builder.<String>withRequestField("OpenStack-API-Version",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaListServersRequest::getOpenStackAPIVersion,
+                NovaListServersRequest::setOpenStackAPIVersion));
 
         // response
 
@@ -2414,6 +2688,29 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowMetadataOptionsRequest, ShowMetadataOptionsResponse> showMetadataOptions =
+        genForShowMetadataOptions();
+
+    private static HttpRequestDef<ShowMetadataOptionsRequest, ShowMetadataOptionsResponse> genForShowMetadataOptions() {
+        // basic
+        HttpRequestDef.Builder<ShowMetadataOptionsRequest, ShowMetadataOptionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMetadataOptionsRequest.class, ShowMetadataOptionsResponse.class)
+                .withName("ShowMetadataOptions")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata-options")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMetadataOptionsRequest::getServerId, ShowMetadataOptionsRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRecycleBinRequest, ShowRecycleBinResponse> showRecycleBin =
         genForShowRecycleBin();
 
@@ -2549,33 +2846,6 @@ public class EcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse> showServerMetadataOptions =
-        genForShowServerMetadataOptions();
-
-    private static HttpRequestDef<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse> genForShowServerMetadataOptions() {
-        // basic
-        HttpRequestDef.Builder<ShowServerMetadataOptionsRequest, ShowServerMetadataOptionsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowServerMetadataOptionsRequest.class,
-                    ShowServerMetadataOptionsResponse.class)
-                .withName("ShowServerMetadataOptions")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata-options")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowServerMetadataOptionsRequest::getServerId,
-                ShowServerMetadataOptionsRequest::setServerId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowServerPasswordRequest, ShowServerPasswordResponse> showServerPassword =
         genForShowServerPassword();
 
@@ -2651,6 +2921,35 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateMetadataOptionsRequest, UpdateMetadataOptionsResponse> updateMetadataOptions =
+        genForUpdateMetadataOptions();
+
+    private static HttpRequestDef<UpdateMetadataOptionsRequest, UpdateMetadataOptionsResponse> genForUpdateMetadataOptions() {
+        // basic
+        HttpRequestDef.Builder<UpdateMetadataOptionsRequest, UpdateMetadataOptionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateMetadataOptionsRequest.class, UpdateMetadataOptionsResponse.class)
+            .withName("UpdateMetadataOptions")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata-options")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMetadataOptionsRequest::getServerId,
+                UpdateMetadataOptionsRequest::setServerId));
+        builder.<UpdateServerMetadataOptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateServerMetadataOptionsRequestBody.class),
+            f -> f.withMarshaller(UpdateMetadataOptionsRequest::getBody, UpdateMetadataOptionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateRecycleBinRequest, UpdateRecycleBinResponse> updateRecycleBin =
         genForUpdateRecycleBin();
 
@@ -2694,6 +2993,40 @@ public class EcsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScheduledEventRequest, UpdateScheduledEventResponse> updateScheduledEvent =
+        genForUpdateScheduledEvent();
+
+    private static HttpRequestDef<UpdateScheduledEventRequest, UpdateScheduledEventResponse> genForUpdateScheduledEvent() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduledEventRequest, UpdateScheduledEventResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateScheduledEventRequest.class, UpdateScheduledEventResponse.class)
+            .withName("UpdateScheduledEvent")
+            .withUri("/v3/{project_id}/instance-scheduled-events/{id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledEventRequest::getId, UpdateScheduledEventRequest::setId));
+        builder.<ScheduledEventUpdateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ScheduledEventUpdateBody.class),
+            f -> f.withMarshaller(UpdateScheduledEventRequest::getBody, UpdateScheduledEventRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateScheduledEventResponse::getXRequestId,
+                UpdateScheduledEventResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2848,39 +3181,6 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerMetadataRequestBody.class),
             f -> f.withMarshaller(UpdateServerMetadataRequest::getBody, UpdateServerMetadataRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse> updateServerMetadataOptions =
-        genForUpdateServerMetadataOptions();
-
-    private static HttpRequestDef<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse> genForUpdateServerMetadataOptions() {
-        // basic
-        HttpRequestDef.Builder<UpdateServerMetadataOptionsRequest, UpdateServerMetadataOptionsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    UpdateServerMetadataOptionsRequest.class,
-                    UpdateServerMetadataOptionsResponse.class)
-                .withName("UpdateServerMetadataOptions")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata-options")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateServerMetadataOptionsRequest::getServerId,
-                UpdateServerMetadataOptionsRequest::setServerId));
-        builder.<UpdateServerMetadataOptionsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateServerMetadataOptionsRequestBody.class),
-            f -> f.withMarshaller(UpdateServerMetadataOptionsRequest::getBody,
-                UpdateServerMetadataOptionsRequest::setBody));
 
         // response
 

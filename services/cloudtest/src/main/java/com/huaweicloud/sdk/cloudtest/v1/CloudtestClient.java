@@ -190,6 +190,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.SaveTaskSettingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.SaveTaskSettingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.SetTaskResultRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.SetTaskResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowAllConfigValueByTypeAndKeyRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowAllConfigValueByTypeAndKeyResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowAllFeatureChildrenRequest;
@@ -2529,6 +2531,34 @@ public class CloudtestClient {
     public SyncInvoker<SaveTaskSettingRequest, SaveTaskSettingResponse> saveTaskSettingInvoker(
         SaveTaskSettingRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.saveTaskSetting, hcClient);
+    }
+
+    /**
+     * 设置测试套结果
+     *
+     * 设置测试套结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTaskResultRequest 请求对象
+     * @return SetTaskResultResponse
+     */
+    public SetTaskResultResponse setTaskResult(SetTaskResultRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.setTaskResult);
+    }
+
+    /**
+     * 设置测试套结果
+     *
+     * 设置测试套结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTaskResultRequest 请求对象
+     * @return SyncInvoker<SetTaskResultRequest, SetTaskResultResponse>
+     */
+    public SyncInvoker<SetTaskResultRequest, SetTaskResultResponse> setTaskResultInvoker(SetTaskResultRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.setTaskResult, hcClient);
     }
 
     /**

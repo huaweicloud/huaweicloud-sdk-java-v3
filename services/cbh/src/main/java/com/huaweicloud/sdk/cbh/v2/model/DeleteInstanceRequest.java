@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.cbh.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -14,9 +13,9 @@ public class DeleteInstanceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    private BigDecimal instanceId;
+    private Long instanceId;
 
-    public DeleteInstanceRequest withInstanceId(BigDecimal instanceId) {
+    public DeleteInstanceRequest withInstanceId(Long instanceId) {
         this.instanceId = instanceId;
         return this;
     }
@@ -27,11 +26,11 @@ public class DeleteInstanceRequest {
      * maximum: 9223372036854775807
      * @return instanceId
      */
-    public BigDecimal getInstanceId() {
+    public Long getInstanceId() {
         return instanceId;
     }
 
-    public void setInstanceId(BigDecimal instanceId) {
+    public void setInstanceId(Long instanceId) {
         this.instanceId = instanceId;
     }
 

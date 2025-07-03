@@ -12,12 +12,12 @@ import java.util.function.Consumer;
 public class BindPublicReqEipReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bandWidth")
+    @JsonProperty(value = "band_width")
 
     private BindPublicReqEipBandWidth bandWidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isAutoPay")
+    @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
 

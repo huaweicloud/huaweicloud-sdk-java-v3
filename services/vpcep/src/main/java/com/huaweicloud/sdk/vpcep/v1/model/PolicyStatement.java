@@ -103,6 +103,11 @@ public class PolicyStatement {
 
     private List<String> resource = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Condition")
+
+    private Object condition;
+
     public PolicyStatement withEffect(EffectEnum effect) {
         this.effect = effect;
         return this;
@@ -186,6 +191,23 @@ public class PolicyStatement {
         this.resource = resource;
     }
 
+    public PolicyStatement withCondition(Object condition) {
+        this.condition = condition;
+        return this;
+    }
+
+    /**
+     * statement生效的条件
+     * @return condition
+     */
+    public Object getCondition() {
+        return condition;
+    }
+
+    public void setCondition(Object condition) {
+        this.condition = condition;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -196,12 +218,12 @@ public class PolicyStatement {
         }
         PolicyStatement that = (PolicyStatement) obj;
         return Objects.equals(this.effect, that.effect) && Objects.equals(this.action, that.action)
-            && Objects.equals(this.resource, that.resource);
+            && Objects.equals(this.resource, that.resource) && Objects.equals(this.condition, that.condition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(effect, action, resource);
+        return Objects.hash(effect, action, resource, condition);
     }
 
     @Override
@@ -211,6 +233,7 @@ public class PolicyStatement {
         sb.append("    effect: ").append(toIndentedString(effect)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
+        sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,7 +19,7 @@ public class CreateCnfReq {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "confContent")
+    @JsonProperty(value = "conf_content")
 
     private String confContent;
 

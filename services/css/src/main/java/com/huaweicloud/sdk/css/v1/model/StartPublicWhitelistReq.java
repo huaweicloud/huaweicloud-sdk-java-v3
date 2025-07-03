@@ -11,7 +11,7 @@ import java.util.Objects;
 public class StartPublicWhitelistReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "whiteList")
+    @JsonProperty(value = "white_list")
 
     private String whiteList;
 

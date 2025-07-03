@@ -21,7 +21,7 @@ public class UpdateSnapshotSettingReq {
     private String agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "basePath")
+    @JsonProperty(value = "base_path")
 
     private String basePath;
 

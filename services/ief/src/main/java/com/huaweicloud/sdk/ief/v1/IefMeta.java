@@ -81,6 +81,8 @@ import com.huaweicloud.sdk.ief.v1.model.DeleteEndPointRequest;
 import com.huaweicloud.sdk.ief.v1.model.DeleteEndPointResponse;
 import com.huaweicloud.sdk.ief.v1.model.DeleteNodeEncryptdatasRequest;
 import com.huaweicloud.sdk.ief.v1.model.DeleteNodeEncryptdatasResponse;
+import com.huaweicloud.sdk.ief.v1.model.DeletePodRequest;
+import com.huaweicloud.sdk.ief.v1.model.DeletePodResponse;
 import com.huaweicloud.sdk.ief.v1.model.DeleteProductRequest;
 import com.huaweicloud.sdk.ief.v1.model.DeleteProductResponse;
 import com.huaweicloud.sdk.ief.v1.model.DeleteResourceTagRequest;
@@ -1330,6 +1332,43 @@ public class IefMeta {
                 DeleteNodeEncryptdatasRequest::setIefInstanceId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePodRequest, DeletePodResponse> deletePod = genForDeletePod();
+
+    private static HttpRequestDef<DeletePodRequest, DeletePodResponse> genForDeletePod() {
+        // basic
+        HttpRequestDef.Builder<DeletePodRequest, DeletePodResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePodRequest.class, DeletePodResponse.class)
+                .withName("DeletePod")
+                .withUri("/v3/{project_id}/edgemgr/deployments/{deployment_id}/pods/{pod_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePodRequest::getDeploymentId, DeletePodRequest::setDeploymentId));
+        builder.<String>withRequestField("pod_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePodRequest::getPodName, DeletePodRequest::setPodName));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePodRequest::getIefInstanceId, DeletePodRequest::setIefInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeletePodResponse::getBody, DeletePodResponse::setBody));
 
         return builder.build();
     }

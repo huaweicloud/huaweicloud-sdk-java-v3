@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建负载均衡器的请求体
@@ -199,6 +200,11 @@ public class CreateLoadbalancerReq {
 
     private String protectionReason;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prepaid_options")
+
+    private PrepaidCreateOption prepaidOptions;
+
     public CreateLoadbalancerReq withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -369,6 +375,32 @@ public class CreateLoadbalancerReq {
         this.protectionReason = protectionReason;
     }
 
+    public CreateLoadbalancerReq withPrepaidOptions(PrepaidCreateOption prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+        return this;
+    }
+
+    public CreateLoadbalancerReq withPrepaidOptions(Consumer<PrepaidCreateOption> prepaidOptionsSetter) {
+        if (this.prepaidOptions == null) {
+            this.prepaidOptions = new PrepaidCreateOption();
+            prepaidOptionsSetter.accept(this.prepaidOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get prepaidOptions
+     * @return prepaidOptions
+     */
+    public PrepaidCreateOption getPrepaidOptions() {
+        return prepaidOptions;
+    }
+
+    public void setPrepaidOptions(PrepaidCreateOption prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -384,7 +416,8 @@ public class CreateLoadbalancerReq {
             && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.protectionStatus, that.protectionStatus)
-            && Objects.equals(this.protectionReason, that.protectionReason);
+            && Objects.equals(this.protectionReason, that.protectionReason)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
     }
 
     @Override
@@ -398,7 +431,8 @@ public class CreateLoadbalancerReq {
             adminStateUp,
             enterpriseProjectId,
             protectionStatus,
-            protectionReason);
+            protectionReason,
+            prepaidOptions);
     }
 
     @Override
@@ -415,6 +449,7 @@ public class CreateLoadbalancerReq {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
+        sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

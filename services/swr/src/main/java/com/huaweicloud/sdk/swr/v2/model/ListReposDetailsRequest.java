@@ -107,7 +107,7 @@ public class ListReposDetailsRequest {
     }
 
     /**
-     * 返回条数。注意：offset和limit参数需要配套使用。
+     * 返回条数，默认情况下返回100条记录，最多返回1000条记录。注意：offset和limit参数需要配套使用。
      * @return limit
      */
     public String getLimit() {
