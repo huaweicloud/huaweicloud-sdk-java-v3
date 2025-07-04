@@ -7,10 +7,6 @@ jobs:
   publish:
     runs-on: ubuntu-22.04
     steps:
-      - name: Validate token
-        run: |
-          token=$(printf "${{ secrets.TOKEN_USERNAME }}:example_password" | base64)
-        shell: bash
       - uses: actions/checkout@v3
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v4
