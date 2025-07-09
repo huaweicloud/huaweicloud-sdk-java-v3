@@ -27,3 +27,6 @@ jobs:
           token=$(printf "${TOKEN_USERNAME}:${TOKEN_PASSWORD}" | base64)
           curl -f -X POST "https://central.sonatype.com/api/v1/publisher/deployments/files" -H "Authorization: Bearer ${token}" -H "Content-Type: application/json" --data-raw "{\"sortField\": \"createdTimestamp\"}"
         shell: bash
+        env:
+          TOKEN_USERNAME: ${{ secrets.TOKEN_USERNAME }}
+          TOKEN_PASSWORD: ${{ secrets.TOKEN_PASSWORD }}
