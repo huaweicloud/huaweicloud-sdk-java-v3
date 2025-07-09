@@ -25,7 +25,7 @@ jobs:
       - name: Publish packages
         run: |
           token=$(printf "${TOKEN_USERNAME}:${TOKEN_PASSWORD}" | base64)
-          curl -f -X POST "https://central.sonatype.com/api/v1/publisher/deployments/files" -H "Authorization: Bearer ${token}" -H "Content-Type: application/json" --data-raw "{\"sortField\": \"createdTimestamp\"}"
+          curl -o /dev/null --fail -X POST "https://central.sonatype.com/api/v1/publisher/deployments/files" -H "Authorization: Bearer ${token}" -H "Content-Type: application/json" --data-raw "{\"sortField\": \"createdTimestamp\"}"
           mvn deploy -B -P release -DretryFailedDeploymentCount=10
         shell: bash
         env:
