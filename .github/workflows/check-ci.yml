@@ -1,0 +1,29 @@
+name: Check CI
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 0 * * *'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8.0.352'
+          distribution: 'temurin'
+          cache: 'maven'
+          server-id: 'central'
+          server-username: TOKEN_USERNAME
+          server-password: TOKEN_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE
+      - name: Check
+        run: |
+          token=$(printf "${TOKEN_USERNAME}:${TOKEN_PASSWORD}" | base64)
+          curl -f -X POST "https://central.sonatype.com/api/v1/publisher/deployments/files" -H "Authorization: Bearer ${token}" -H "Content-Type: application/json" --data-raw "{\"sortField\": \"createdTimestamp\"}"
+        shell: bash
