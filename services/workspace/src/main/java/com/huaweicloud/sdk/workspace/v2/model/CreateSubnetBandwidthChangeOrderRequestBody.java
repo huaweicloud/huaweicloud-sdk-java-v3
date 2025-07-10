@@ -22,11 +22,6 @@ public class CreateSubnetBandwidthChangeOrderRequestBody {
     private String bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_service_console_url")
-
-    private String cloudServiceConsoleUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -70,30 +65,13 @@ public class CreateSubnetBandwidthChangeOrderRequestBody {
         this.bandwidthSize = bandwidthSize;
     }
 
-    public CreateSubnetBandwidthChangeOrderRequestBody withCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-        return this;
-    }
-
-    /**
-     * 支付后跳转url
-     * @return cloudServiceConsoleUrl
-     */
-    public String getCloudServiceConsoleUrl() {
-        return cloudServiceConsoleUrl;
-    }
-
-    public void setCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-    }
-
     public CreateSubnetBandwidthChangeOrderRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -141,14 +119,13 @@ public class CreateSubnetBandwidthChangeOrderRequestBody {
         CreateSubnetBandwidthChangeOrderRequestBody that = (CreateSubnetBandwidthChangeOrderRequestBody) obj;
         return Objects.equals(this.bandwidthName, that.bandwidthName)
             && Objects.equals(this.bandwidthSize, that.bandwidthSize)
-            && Objects.equals(this.cloudServiceConsoleUrl, that.cloudServiceConsoleUrl)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthName, bandwidthSize, cloudServiceConsoleUrl, enterpriseProjectId, extendParam);
+        return Objects.hash(bandwidthName, bandwidthSize, enterpriseProjectId, extendParam);
     }
 
     @Override
@@ -157,7 +134,6 @@ public class CreateSubnetBandwidthChangeOrderRequestBody {
         sb.append("class CreateSubnetBandwidthChangeOrderRequestBody {\n");
         sb.append("    bandwidthName: ").append(toIndentedString(bandwidthName)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
-        sb.append("    cloudServiceConsoleUrl: ").append(toIndentedString(cloudServiceConsoleUrl)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");

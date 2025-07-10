@@ -41,7 +41,7 @@ public class ListInternetResponse extends SdkResponse {
     }
 
     /**
-     * 上网信息
+     * 上网信息。
      * @return internetInfos
      */
     public List<InternetInfo> getInternetInfos() {

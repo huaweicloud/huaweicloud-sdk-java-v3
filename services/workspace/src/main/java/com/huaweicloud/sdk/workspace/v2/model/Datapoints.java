@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 桌面监控Cpu与Mem时间点信息
+ * 桌面监控Cpu与Mem时间点信息。
  */
 public class Datapoints {
 
@@ -26,9 +26,9 @@ public class Datapoints {
     }
 
     /**
-     * 平均数值
+     * 平均数值。
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 9.223372036854774E+18
      * @return average
      */
     public Double getAverage() {
@@ -45,9 +45,9 @@ public class Datapoints {
     }
 
     /**
-     * 时间戳
+     * 时间戳。
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 9223372036854774000
      * @return timestamp
      */
     public Long getTimestamp() {

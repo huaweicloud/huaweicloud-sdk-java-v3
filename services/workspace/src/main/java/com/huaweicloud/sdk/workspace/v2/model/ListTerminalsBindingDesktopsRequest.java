@@ -113,7 +113,7 @@ public class ListTerminalsBindingDesktopsRequest {
     }
 
     /**
-     * 是否只查询结果总条数
+     * 是否只查询结果总条数。
      * @return countOnly
      */
     public Boolean getCountOnly() {

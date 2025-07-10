@@ -183,6 +183,16 @@ public class User {
 
     private List<String> groupNames = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_info_map")
+
+    private String userInfoMap;
+
     public User withId(String id) {
         this.id = id;
         return this;
@@ -361,7 +371,7 @@ public class User {
     }
 
     /**
-     * 帐号是否过期，true表示已过期，false表示未过期。
+     * 账号是否过期，true表示已过期，false表示未过期。
      * @return accountExpired
      */
     public Boolean getAccountExpired() {
@@ -463,7 +473,7 @@ public class User {
     }
 
     /**
-     * 用户是否订阅协同，true表示已订阅，false表示未订阅
+     * 用户是否订阅协同，true表示已订阅，false表示未订阅。
      * @return shareSpaceSubscription
      */
     public Boolean getShareSpaceSubscription() {
@@ -480,7 +490,7 @@ public class User {
     }
 
     /**
-     * 用户已绑定协同桌面数
+     * 用户已绑定协同桌面数。
      * minimum: 0
      * maximum: 100
      * @return shareSpaceDesktops
@@ -526,6 +536,40 @@ public class User {
         this.groupNames = groupNames;
     }
 
+    public User withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public User withUserInfoMap(String userInfoMap) {
+        this.userInfoMap = userInfoMap;
+        return this;
+    }
+
+    /**
+     * 用户信息映射，包含用户的服务等级、操作模式和类型。
+     * @return userInfoMap
+     */
+    public String getUserInfoMap() {
+        return userInfoMap;
+    }
+
+    public void setUserInfoMap(String userInfoMap) {
+        this.userInfoMap = userInfoMap;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -548,7 +592,9 @@ public class User {
             && Objects.equals(this.disabled, that.disabled)
             && Objects.equals(this.shareSpaceSubscription, that.shareSpaceSubscription)
             && Objects.equals(this.shareSpaceDesktops, that.shareSpaceDesktops)
-            && Objects.equals(this.groupNames, that.groupNames);
+            && Objects.equals(this.groupNames, that.groupNames)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.userInfoMap, that.userInfoMap);
     }
 
     @Override
@@ -571,7 +617,9 @@ public class User {
             disabled,
             shareSpaceSubscription,
             shareSpaceDesktops,
-            groupNames);
+            groupNames,
+            enterpriseProjectId,
+            userInfoMap);
     }
 
     @Override
@@ -597,6 +645,8 @@ public class User {
         sb.append("    shareSpaceSubscription: ").append(toIndentedString(shareSpaceSubscription)).append("\n");
         sb.append("    shareSpaceDesktops: ").append(toIndentedString(shareSpaceDesktops)).append("\n");
         sb.append("    groupNames: ").append(toIndentedString(groupNames)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    userInfoMap: ").append(toIndentedString(userInfoMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

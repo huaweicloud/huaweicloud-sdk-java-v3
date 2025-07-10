@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * ProductInfo
@@ -54,11 +51,6 @@ public class ProductInfo {
     private String architecture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cpu_desc")
-
-    private String cpuDesc;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_gpu")
 
     private Boolean isGpu;
@@ -77,11 +69,6 @@ public class ProductInfo {
     @JsonProperty(value = "system_disk_size")
 
     private String systemDiskSize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "gpu_desc")
-
-    private String gpuDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contain_data_disk")
@@ -107,11 +94,6 @@ public class ProductInfo {
     @JsonProperty(value = "status")
 
     private String status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sub_product_list")
-
-    private List<String> subProductList = null;
 
     public ProductInfo withProductId(String productId) {
         this.productId = productId;
@@ -170,7 +152,7 @@ public class ProductInfo {
     }
 
     /**
-     * CPU
+     * CPU。
      * @return cpu
      */
     public String getCpu() {
@@ -249,23 +231,6 @@ public class ProductInfo {
         this.architecture = architecture;
     }
 
-    public ProductInfo withCpuDesc(String cpuDesc) {
-        this.cpuDesc = cpuDesc;
-        return this;
-    }
-
-    /**
-     * CPU描述。
-     * @return cpuDesc
-     */
-    public String getCpuDesc() {
-        return cpuDesc;
-    }
-
-    public void setCpuDesc(String cpuDesc) {
-        this.cpuDesc = cpuDesc;
-    }
-
     public ProductInfo withIsGpu(Boolean isGpu) {
         this.isGpu = isGpu;
         return this;
@@ -334,30 +299,13 @@ public class ProductInfo {
         this.systemDiskSize = systemDiskSize;
     }
 
-    public ProductInfo withGpuDesc(String gpuDesc) {
-        this.gpuDesc = gpuDesc;
-        return this;
-    }
-
-    /**
-     * GPU描述。
-     * @return gpuDesc
-     */
-    public String getGpuDesc() {
-        return gpuDesc;
-    }
-
-    public void setGpuDesc(String gpuDesc) {
-        this.gpuDesc = gpuDesc;
-    }
-
     public ProductInfo withContainDataDisk(Boolean containDataDisk) {
         this.containDataDisk = containDataDisk;
         return this;
     }
 
     /**
-     * 套餐计费是否包含了数据盘,off-不包含
+     * 套餐计费是否包含了数据盘,off-不包含。
      * @return containDataDisk
      */
     public Boolean getContainDataDisk() {
@@ -436,39 +384,6 @@ public class ProductInfo {
         this.status = status;
     }
 
-    public ProductInfo withSubProductList(List<String> subProductList) {
-        this.subProductList = subProductList;
-        return this;
-    }
-
-    public ProductInfo addSubProductListItem(String subProductListItem) {
-        if (this.subProductList == null) {
-            this.subProductList = new ArrayList<>();
-        }
-        this.subProductList.add(subProductListItem);
-        return this;
-    }
-
-    public ProductInfo withSubProductList(Consumer<List<String>> subProductListSetter) {
-        if (this.subProductList == null) {
-            this.subProductList = new ArrayList<>();
-        }
-        subProductListSetter.accept(this.subProductList);
-        return this;
-    }
-
-    /**
-     * 专属主机的子产品。
-     * @return subProductList
-     */
-    public List<String> getSubProductList() {
-        return subProductList;
-    }
-
-    public void setSubProductList(List<String> subProductList) {
-        this.subProductList = subProductList;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -482,15 +397,14 @@ public class ProductInfo {
             && Objects.equals(this.type, that.type) && Objects.equals(this.cpu, that.cpu)
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.descriptions, that.descriptions)
             && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.architecture, that.architecture)
-            && Objects.equals(this.cpuDesc, that.cpuDesc) && Objects.equals(this.isGpu, that.isGpu)
-            && Objects.equals(this.packageType, that.packageType)
+            && Objects.equals(this.isGpu, that.isGpu) && Objects.equals(this.packageType, that.packageType)
             && Objects.equals(this.systemDiskType, that.systemDiskType)
-            && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.gpuDesc, that.gpuDesc)
+            && Objects.equals(this.systemDiskSize, that.systemDiskSize)
             && Objects.equals(this.containDataDisk, that.containDataDisk)
             && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.cloudServiceType, that.cloudServiceType)
             && Objects.equals(this.volumeProductType, that.volumeProductType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.subProductList, that.subProductList);
+            && Objects.equals(this.status, that.status);
     }
 
     @Override
@@ -503,18 +417,15 @@ public class ProductInfo {
             descriptions,
             chargeMode,
             architecture,
-            cpuDesc,
             isGpu,
             packageType,
             systemDiskType,
             systemDiskSize,
-            gpuDesc,
             containDataDisk,
             resourceType,
             cloudServiceType,
             volumeProductType,
-            status,
-            subProductList);
+            status);
     }
 
     @Override
@@ -529,18 +440,15 @@ public class ProductInfo {
         sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
-        sb.append("    cpuDesc: ").append(toIndentedString(cpuDesc)).append("\n");
         sb.append("    isGpu: ").append(toIndentedString(isGpu)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
         sb.append("    systemDiskType: ").append(toIndentedString(systemDiskType)).append("\n");
         sb.append("    systemDiskSize: ").append(toIndentedString(systemDiskSize)).append("\n");
-        sb.append("    gpuDesc: ").append(toIndentedString(gpuDesc)).append("\n");
         sb.append("    containDataDisk: ").append(toIndentedString(containDataDisk)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    volumeProductType: ").append(toIndentedString(volumeProductType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    subProductList: ").append(toIndentedString(subProductList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

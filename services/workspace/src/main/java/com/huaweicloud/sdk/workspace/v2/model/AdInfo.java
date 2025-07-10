@@ -186,7 +186,7 @@ public class AdInfo {
     }
 
     /**
-     * 域管理员帐号，域类型为LOCAL_AD时有值。
+     * 域管理员账号，域类型为LOCAL_AD时有值。
      * @return domainAdminAccount
      */
     public String getDomainAdminAccount() {

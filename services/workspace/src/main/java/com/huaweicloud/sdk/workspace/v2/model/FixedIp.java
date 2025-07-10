@@ -26,7 +26,7 @@ public class FixedIp {
     }
 
     /**
-     * 所属子网ID
+     * 所属子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -43,7 +43,7 @@ public class FixedIp {
     }
 
     /**
-     * 端口IP地址
+     * 端口IP地址。
      * @return ipAddress
      */
     public String getIpAddress() {

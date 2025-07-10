@@ -106,6 +106,11 @@ public class ListUsersOfGroupRequest {
     private ActiveTypeEnum activeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private String limit;
@@ -183,6 +188,23 @@ public class ListUsersOfGroupRequest {
         this.activeType = activeType;
     }
 
+    public ListUsersOfGroupRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ListUsersOfGroupRequest withLimit(String limit) {
         this.limit = limit;
         return this;
@@ -228,12 +250,13 @@ public class ListUsersOfGroupRequest {
         ListUsersOfGroupRequest that = (ListUsersOfGroupRequest) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.activeType, that.activeType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, groupId, description, activeType, limit, offset);
+        return Objects.hash(userName, groupId, description, activeType, enterpriseProjectId, limit, offset);
     }
 
     @Override
@@ -244,6 +267,7 @@ public class ListUsersOfGroupRequest {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    activeType: ").append(toIndentedString(activeType)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

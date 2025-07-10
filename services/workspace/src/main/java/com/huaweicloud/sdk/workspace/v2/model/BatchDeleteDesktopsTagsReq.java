@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量桌面删除标签
+ * 批量桌面删除标签。
  */
 public class BatchDeleteDesktopsTagsReq {
 

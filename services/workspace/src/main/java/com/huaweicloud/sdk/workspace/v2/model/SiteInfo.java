@@ -5,16 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
- * 站点信息
+ * 站点信息。
  */
 public class SiteInfo {
 
@@ -118,18 +115,13 @@ public class SiteInfo {
 
     private String createTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "agent_info")
-
-    private List<Vag> agentInfo = null;
-
     public SiteInfo withSiteId(String siteId) {
         this.siteId = siteId;
         return this;
     }
 
     /**
-     * 站点id
+     * 站点id。
      * @return siteId
      */
     public String getSiteId() {
@@ -146,7 +138,7 @@ public class SiteInfo {
     }
 
     /**
-     * 站点名字
+     * 站点名字。
      * @return siteName
      */
     public String getSiteName() {
@@ -180,7 +172,7 @@ public class SiteInfo {
     }
 
     /**
-     * 项目ID
+     * 项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -197,7 +189,7 @@ public class SiteInfo {
     }
 
     /**
-     * 站点状态
+     * 站点状态。
      * @return status
      */
     public String getStatus() {
@@ -214,7 +206,7 @@ public class SiteInfo {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return createTime
      */
     public String getCreateTime() {
@@ -223,39 +215,6 @@ public class SiteInfo {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
-    }
-
-    public SiteInfo withAgentInfo(List<Vag> agentInfo) {
-        this.agentInfo = agentInfo;
-        return this;
-    }
-
-    public SiteInfo addAgentInfoItem(Vag agentInfoItem) {
-        if (this.agentInfo == null) {
-            this.agentInfo = new ArrayList<>();
-        }
-        this.agentInfo.add(agentInfoItem);
-        return this;
-    }
-
-    public SiteInfo withAgentInfo(Consumer<List<Vag>> agentInfoSetter) {
-        if (this.agentInfo == null) {
-            this.agentInfo = new ArrayList<>();
-        }
-        agentInfoSetter.accept(this.agentInfo);
-        return this;
-    }
-
-    /**
-     * 网关节点信息
-     * @return agentInfo
-     */
-    public List<Vag> getAgentInfo() {
-        return agentInfo;
-    }
-
-    public void setAgentInfo(List<Vag> agentInfo) {
-        this.agentInfo = agentInfo;
     }
 
     @Override
@@ -269,13 +228,12 @@ public class SiteInfo {
         SiteInfo that = (SiteInfo) obj;
         return Objects.equals(this.siteId, that.siteId) && Objects.equals(this.siteName, that.siteName)
             && Objects.equals(this.siteType, that.siteType) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.agentInfo, that.agentInfo);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(siteId, siteName, siteType, projectId, status, createTime, agentInfo);
+        return Objects.hash(siteId, siteName, siteType, projectId, status, createTime);
     }
 
     @Override
@@ -288,7 +246,6 @@ public class SiteInfo {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    agentInfo: ").append(toIndentedString(agentInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

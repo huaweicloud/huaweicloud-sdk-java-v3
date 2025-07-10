@@ -36,6 +36,11 @@ public class UserInGroup {
     private Integer totalDesktops;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -125,6 +130,23 @@ public class UserInGroup {
         this.totalDesktops = totalDesktops;
     }
 
+    public UserInGroup withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public UserInGroup withDescription(String description) {
         this.description = description;
         return this;
@@ -154,12 +176,13 @@ public class UserInGroup {
         return Objects.equals(this.id, that.id) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.userEmail, that.userEmail) && Objects.equals(this.userPhone, that.userPhone)
             && Objects.equals(this.totalDesktops, that.totalDesktops)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userName, userEmail, userPhone, totalDesktops, description);
+        return Objects.hash(id, userName, userEmail, userPhone, totalDesktops, enterpriseProjectId, description);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class UserInGroup {
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
         sb.append("    userPhone: ").append(toIndentedString(userPhone)).append("\n");
         sb.append("    totalDesktops: ").append(toIndentedString(totalDesktops)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

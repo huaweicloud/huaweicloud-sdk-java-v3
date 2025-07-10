@@ -17,11 +17,6 @@ public class AddDesktopVolumesRequest {
     private String desktopId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Service-Transaction-Id")
-
-    private String serviceTransactionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private AddVolumesReq body;
@@ -41,23 +36,6 @@ public class AddDesktopVolumesRequest {
 
     public void setDesktopId(String desktopId) {
         this.desktopId = desktopId;
-    }
-
-    public AddDesktopVolumesRequest withServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-        return this;
-    }
-
-    /**
-     * CBC接口回调时，请求头里带上的业务ID
-     * @return serviceTransactionId
-     */
-    public String getServiceTransactionId() {
-        return serviceTransactionId;
-    }
-
-    public void setServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
     }
 
     public AddDesktopVolumesRequest withBody(AddVolumesReq body) {
@@ -95,14 +73,12 @@ public class AddDesktopVolumesRequest {
             return false;
         }
         AddDesktopVolumesRequest that = (AddDesktopVolumesRequest) obj;
-        return Objects.equals(this.desktopId, that.desktopId)
-            && Objects.equals(this.serviceTransactionId, that.serviceTransactionId)
-            && Objects.equals(this.body, that.body);
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId, serviceTransactionId, body);
+        return Objects.hash(desktopId, body);
     }
 
     @Override
@@ -110,7 +86,6 @@ public class AddDesktopVolumesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddDesktopVolumesRequest {\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
-        sb.append("    serviceTransactionId: ").append(toIndentedString(serviceTransactionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

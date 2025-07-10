@@ -69,8 +69,12 @@ import com.huaweicloud.sdk.projectman.v4.model.ListIssueCommentsV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueCommentsV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueCustomFieldsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueCustomFieldsResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ListIssueFieldsRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ListIssueFieldsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueRecordsV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueRecordsV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.ListIssueStatuesRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ListIssueStatuesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssuesSfV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssuesSfV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssuesV4Request;
@@ -125,6 +129,10 @@ import com.huaweicloud.sdk.projectman.v4.model.ShowCurUserRoleRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowCurUserRoleResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueCompletionRateRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueCompletionRateResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIssueConfigFieldsRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIssueConfigFieldsResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIssueDetailRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIssueDetailResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssuesWrokFlowConfigRequest;
@@ -139,6 +147,10 @@ import com.huaweicloud.sdk.projectman.v4.model.ShowProjectWorkHoursRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowProjectWorkHoursResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowWorkItemWrokflowConfigRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowWorkItemWrokflowConfigResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ShowWorkflowTemplateRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ShowWorkflowTemplateResponse;
+import com.huaweicloud.sdk.projectman.v4.model.TransferWorkItemFlowRequest;
+import com.huaweicloud.sdk.projectman.v4.model.TransferWorkItemFlowResponse;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIterationV4Request;
@@ -978,6 +990,180 @@ public class ProjectManClient {
     public SyncInvoker<UpdateProjectV4Request, UpdateProjectV4Response> updateProjectV4Invoker(
         UpdateProjectV4Request request) {
         return new SyncInvoker<>(request, ProjectManMeta.updateProjectV4, hcClient);
+    }
+
+    /**
+     * 查询字段模板列表
+     *
+     * 工作项类型中查询字段模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIssueFieldsRequest 请求对象
+     * @return ListIssueFieldsResponse
+     */
+    public ListIssueFieldsResponse listIssueFields(ListIssueFieldsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssueFields);
+    }
+
+    /**
+     * 查询字段模板列表
+     *
+     * 工作项类型中查询字段模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIssueFieldsRequest 请求对象
+     * @return SyncInvoker<ListIssueFieldsRequest, ListIssueFieldsResponse>
+     */
+    public SyncInvoker<ListIssueFieldsRequest, ListIssueFieldsResponse> listIssueFieldsInvoker(
+        ListIssueFieldsRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.listIssueFields, hcClient);
+    }
+
+    /**
+     * 查询工作项状态
+     *
+     * 根据工作项查询工作项下的状态信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIssueStatuesRequest 请求对象
+     * @return ListIssueStatuesResponse
+     */
+    public ListIssueStatuesResponse listIssueStatues(ListIssueStatuesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssueStatues);
+    }
+
+    /**
+     * 查询工作项状态
+     *
+     * 根据工作项查询工作项下的状态信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIssueStatuesRequest 请求对象
+     * @return SyncInvoker<ListIssueStatuesRequest, ListIssueStatuesResponse>
+     */
+    public SyncInvoker<ListIssueStatuesRequest, ListIssueStatuesResponse> listIssueStatuesInvoker(
+        ListIssueStatuesRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.listIssueStatues, hcClient);
+    }
+
+    /**
+     * 查询工作流字段配置信息
+     *
+     * 查询工作流字段配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIssueConfigFieldsRequest 请求对象
+     * @return ShowIssueConfigFieldsResponse
+     */
+    public ShowIssueConfigFieldsResponse showIssueConfigFields(ShowIssueConfigFieldsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showIssueConfigFields);
+    }
+
+    /**
+     * 查询工作流字段配置信息
+     *
+     * 查询工作流字段配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIssueConfigFieldsRequest 请求对象
+     * @return SyncInvoker<ShowIssueConfigFieldsRequest, ShowIssueConfigFieldsResponse>
+     */
+    public SyncInvoker<ShowIssueConfigFieldsRequest, ShowIssueConfigFieldsResponse> showIssueConfigFieldsInvoker(
+        ShowIssueConfigFieldsRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.showIssueConfigFields, hcClient);
+    }
+
+    /**
+     * 查询工作项详情
+     *
+     * 查询工作项详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIssueDetailRequest 请求对象
+     * @return ShowIssueDetailResponse
+     */
+    public ShowIssueDetailResponse showIssueDetail(ShowIssueDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showIssueDetail);
+    }
+
+    /**
+     * 查询工作项详情
+     *
+     * 查询工作项详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIssueDetailRequest 请求对象
+     * @return SyncInvoker<ShowIssueDetailRequest, ShowIssueDetailResponse>
+     */
+    public SyncInvoker<ShowIssueDetailRequest, ShowIssueDetailResponse> showIssueDetailInvoker(
+        ShowIssueDetailRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.showIssueDetail, hcClient);
+    }
+
+    /**
+     * 获取工作流的详情及每条流转线的详情
+     *
+     * 获取工作流的详情及每条流转线的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowTemplateRequest 请求对象
+     * @return ShowWorkflowTemplateResponse
+     */
+    public ShowWorkflowTemplateResponse showWorkflowTemplate(ShowWorkflowTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showWorkflowTemplate);
+    }
+
+    /**
+     * 获取工作流的详情及每条流转线的详情
+     *
+     * 获取工作流的详情及每条流转线的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowTemplateRequest 请求对象
+     * @return SyncInvoker<ShowWorkflowTemplateRequest, ShowWorkflowTemplateResponse>
+     */
+    public SyncInvoker<ShowWorkflowTemplateRequest, ShowWorkflowTemplateResponse> showWorkflowTemplateInvoker(
+        ShowWorkflowTemplateRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.showWorkflowTemplate, hcClient);
+    }
+
+    /**
+     * 修改工作项的状态
+     *
+     * 工作项流程流转
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferWorkItemFlowRequest 请求对象
+     * @return TransferWorkItemFlowResponse
+     */
+    public TransferWorkItemFlowResponse transferWorkItemFlow(TransferWorkItemFlowRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.transferWorkItemFlow);
+    }
+
+    /**
+     * 修改工作项的状态
+     *
+     * 工作项流程流转
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferWorkItemFlowRequest 请求对象
+     * @return SyncInvoker<TransferWorkItemFlowRequest, TransferWorkItemFlowResponse>
+     */
+    public SyncInvoker<TransferWorkItemFlowRequest, TransferWorkItemFlowResponse> transferWorkItemFlowInvoker(
+        TransferWorkItemFlowRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.transferWorkItemFlow, hcClient);
     }
 
     /**

@@ -62,7 +62,7 @@ public class ShowDesktopRemoteAssistanceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 协同空间ID
+     * 协同空间ID。
      * @return shareSpaceId
      */
     public String getShareSpaceId() {
@@ -79,7 +79,7 @@ public class ShowDesktopRemoteAssistanceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 协同空间邀请码(大写英文+数字,共8位)
+     * 协同空间邀请码(大写英文+数字,共8位)。
      * @return invitationCode
      */
     public String getInvitationCode() {
@@ -96,7 +96,7 @@ public class ShowDesktopRemoteAssistanceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 协同空间名称
+     * 协同空间名称。
      * @return shareSpaceName
      */
     public String getShareSpaceName() {
@@ -113,7 +113,7 @@ public class ShowDesktopRemoteAssistanceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 协同空间密码
+     * 协同空间密码。
      * @return shareSpacePasswd
      */
     public String getShareSpacePasswd() {
@@ -130,7 +130,7 @@ public class ShowDesktopRemoteAssistanceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 专线分享链接
+     * 专线分享链接。
      * @return privateShareLink
      */
     public String getPrivateShareLink() {
@@ -147,7 +147,7 @@ public class ShowDesktopRemoteAssistanceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 互联网分享链接
+     * 互联网分享链接。
      * @return internetShareLink
      */
     public String getInternetShareLink() {
@@ -164,7 +164,7 @@ public class ShowDesktopRemoteAssistanceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间 UTC时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z'。
+     * 创建时间 UTC时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z。'
      * @return createTime
      */
     public String getCreateTime() {
@@ -198,7 +198,7 @@ public class ShowDesktopRemoteAssistanceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 失败原因
+     * 失败原因。
      * @return failedReason
      */
     public String getFailedReason() {

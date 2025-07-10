@@ -134,7 +134,7 @@ public class ListImagesRequest {
     }
 
     /**
-     * 套餐系列
+     * 套餐系列。
      * @return packageType
      */
     public String getPackageType() {
@@ -151,7 +151,7 @@ public class ListImagesRequest {
     }
 
     /**
-     * 镜像Id
+     * 镜像Id。
      * @return imageId
      */
     public String getImageId() {

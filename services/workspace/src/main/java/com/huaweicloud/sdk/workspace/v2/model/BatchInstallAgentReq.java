@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量为桌面安装ces-agent。
+ * 批量为桌面安装agent。
  */
 public class BatchInstallAgentReq {
 

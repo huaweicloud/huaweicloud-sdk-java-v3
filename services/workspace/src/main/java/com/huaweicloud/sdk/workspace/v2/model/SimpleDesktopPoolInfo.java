@@ -54,11 +54,6 @@ public class SimpleDesktopPoolInfo {
     private Integer desktopUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "on_demand_desktop_num")
-
-    private Integer onDemandDesktopNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
@@ -116,7 +111,7 @@ public class SimpleDesktopPoolInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroup> securityGroups = null;
+    private List<SecurityGroupInfo> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disconnected_retention_period")
@@ -287,23 +282,6 @@ public class SimpleDesktopPoolInfo {
 
     public void setDesktopUsed(Integer desktopUsed) {
         this.desktopUsed = desktopUsed;
-    }
-
-    public SimpleDesktopPoolInfo withOnDemandDesktopNum(Integer onDemandDesktopNum) {
-        this.onDemandDesktopNum = onDemandDesktopNum;
-        return this;
-    }
-
-    /**
-     * 桌面池按需桌面个数（不包含删除中的桌面）。
-     * @return onDemandDesktopNum
-     */
-    public Integer getOnDemandDesktopNum() {
-        return onDemandDesktopNum;
-    }
-
-    public void setOnDemandDesktopNum(Integer onDemandDesktopNum) {
-        this.onDemandDesktopNum = onDemandDesktopNum;
     }
 
     public SimpleDesktopPoolInfo withAvailabilityZone(String availabilityZone) {
@@ -527,12 +505,12 @@ public class SimpleDesktopPoolInfo {
         this.dataVolumes = dataVolumes;
     }
 
-    public SimpleDesktopPoolInfo withSecurityGroups(List<SecurityGroup> securityGroups) {
+    public SimpleDesktopPoolInfo withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public SimpleDesktopPoolInfo addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+    public SimpleDesktopPoolInfo addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -540,7 +518,7 @@ public class SimpleDesktopPoolInfo {
         return this;
     }
 
-    public SimpleDesktopPoolInfo withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+    public SimpleDesktopPoolInfo withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -552,11 +530,11 @@ public class SimpleDesktopPoolInfo {
      * 桌面安全组。
      * @return securityGroups
      */
-    public List<SecurityGroup> getSecurityGroups() {
+    public List<SecurityGroupInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 
@@ -643,7 +621,7 @@ public class SimpleDesktopPoolInfo {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -660,7 +638,7 @@ public class SimpleDesktopPoolInfo {
     }
 
     /**
-     * 桌面池是否处于管理员维护模式
+     * 桌面池是否处于管理员维护模式。
      * @return inMaintenanceMode
      */
     public Boolean getInMaintenanceMode() {
@@ -703,7 +681,6 @@ public class SimpleDesktopPoolInfo {
             && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.desktopCount, that.desktopCount)
             && Objects.equals(this.desktopUsed, that.desktopUsed)
-            && Objects.equals(this.onDemandDesktopNum, that.onDemandDesktopNum)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.product, that.product)
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageName, that.imageName)
@@ -731,7 +708,6 @@ public class SimpleDesktopPoolInfo {
             chargingMode,
             desktopCount,
             desktopUsed,
-            onDemandDesktopNum,
             availabilityZone,
             subnetId,
             product,
@@ -765,7 +741,6 @@ public class SimpleDesktopPoolInfo {
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    desktopCount: ").append(toIndentedString(desktopCount)).append("\n");
         sb.append("    desktopUsed: ").append(toIndentedString(desktopUsed)).append("\n");
-        sb.append("    onDemandDesktopNum: ").append(toIndentedString(onDemandDesktopNum)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    product: ").append(toIndentedString(product)).append("\n");

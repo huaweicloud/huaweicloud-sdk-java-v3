@@ -127,9 +127,12 @@ import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceParamResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateInstancePortRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateInstancePortResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceSecurityGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceSecurityGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateParametersReq;
+import com.huaweicloud.sdk.ddm.v1.model.UpdatePortRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateReadAndWriteStrategyRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateReadAndWriteStrategyResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserReq;
@@ -1726,6 +1729,39 @@ public class DdmMeta {
             f -> f.withMarshaller(UpdateInstanceParamRequest::getBody, UpdateInstanceParamRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstancePortRequest, UpdateInstancePortResponse> updateInstancePort =
+        genForUpdateInstancePort();
+
+    private static HttpRequestDef<UpdateInstancePortRequest, UpdateInstancePortResponse> genForUpdateInstancePort() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstancePortRequest, UpdateInstancePortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstancePortRequest.class, UpdateInstancePortResponse.class)
+                .withName("UpdateInstancePort")
+                .withUri("/v3/{project_id}/instances/{instance_id}/port")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstancePortRequest::getInstanceId, UpdateInstancePortRequest::setInstanceId));
+        builder.<UpdatePortRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePortRequest.class),
+            f -> f.withMarshaller(UpdateInstancePortRequest::getBody, UpdateInstancePortRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(UpdateInstancePortResponse::getBody, UpdateInstancePortResponse::setBody));
 
         return builder.build();
     }

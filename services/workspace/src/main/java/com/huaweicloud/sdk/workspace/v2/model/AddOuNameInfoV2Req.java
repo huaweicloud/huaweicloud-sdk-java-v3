@@ -31,7 +31,7 @@ public class AddOuNameInfoV2Req {
     }
 
     /**
-     * 域名称
+     * 域名称。
      * @return domain
      */
     public String getDomain() {
@@ -48,7 +48,7 @@ public class AddOuNameInfoV2Req {
     }
 
     /**
-     * OU名称
+     * OU名称。
      * @return ouName
      */
     public String getOuName() {
@@ -65,7 +65,7 @@ public class AddOuNameInfoV2Req {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {

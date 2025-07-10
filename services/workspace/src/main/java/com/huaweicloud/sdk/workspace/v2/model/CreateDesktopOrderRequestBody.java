@@ -24,26 +24,6 @@ public class CreateDesktopOrderRequestBody {
     private List<HourPackageResource> hourPackageResources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "promotion_id")
-
-    private String promotionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "promotion_plan_id")
-
-    private String promotionPlanId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "promotion_info")
-
-    private String promotionInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_param")
 
     private OrderExtendParam extendParam;
@@ -54,7 +34,7 @@ public class CreateDesktopOrderRequestBody {
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -88,7 +68,7 @@ public class CreateDesktopOrderRequestBody {
     }
 
     /**
-     * 小时包资源
+     * 小时包资源。
      * @return hourPackageResources
      */
     public List<HourPackageResource> getHourPackageResources() {
@@ -97,74 +77,6 @@ public class CreateDesktopOrderRequestBody {
 
     public void setHourPackageResources(List<HourPackageResource> hourPackageResources) {
         this.hourPackageResources = hourPackageResources;
-    }
-
-    public CreateDesktopOrderRequestBody withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 组合购订单ID
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public CreateDesktopOrderRequestBody withPromotionId(String promotionId) {
-        this.promotionId = promotionId;
-        return this;
-    }
-
-    /**
-     * 促销ID
-     * @return promotionId
-     */
-    public String getPromotionId() {
-        return promotionId;
-    }
-
-    public void setPromotionId(String promotionId) {
-        this.promotionId = promotionId;
-    }
-
-    public CreateDesktopOrderRequestBody withPromotionPlanId(String promotionPlanId) {
-        this.promotionPlanId = promotionPlanId;
-        return this;
-    }
-
-    /**
-     * 促销计划ID
-     * @return promotionPlanId
-     */
-    public String getPromotionPlanId() {
-        return promotionPlanId;
-    }
-
-    public void setPromotionPlanId(String promotionPlanId) {
-        this.promotionPlanId = promotionPlanId;
-    }
-
-    public CreateDesktopOrderRequestBody withPromotionInfo(String promotionInfo) {
-        this.promotionInfo = promotionInfo;
-        return this;
-    }
-
-    /**
-     * 促销信息
-     * @return promotionInfo
-     */
-    public String getPromotionInfo() {
-        return promotionInfo;
-    }
-
-    public void setPromotionInfo(String promotionInfo) {
-        this.promotionInfo = promotionInfo;
     }
 
     public CreateDesktopOrderRequestBody withExtendParam(OrderExtendParam extendParam) {
@@ -204,21 +116,12 @@ public class CreateDesktopOrderRequestBody {
         CreateDesktopOrderRequestBody that = (CreateDesktopOrderRequestBody) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.hourPackageResources, that.hourPackageResources)
-            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.promotionId, that.promotionId)
-            && Objects.equals(this.promotionPlanId, that.promotionPlanId)
-            && Objects.equals(this.promotionInfo, that.promotionInfo)
             && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId,
-            hourPackageResources,
-            orderId,
-            promotionId,
-            promotionPlanId,
-            promotionInfo,
-            extendParam);
+        return Objects.hash(enterpriseProjectId, hourPackageResources, extendParam);
     }
 
     @Override
@@ -227,10 +130,6 @@ public class CreateDesktopOrderRequestBody {
         sb.append("class CreateDesktopOrderRequestBody {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hourPackageResources: ").append(toIndentedString(hourPackageResources)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-        sb.append("    promotionId: ").append(toIndentedString(promotionId)).append("\n");
-        sb.append("    promotionPlanId: ").append(toIndentedString(promotionPlanId)).append("\n");
-        sb.append("    promotionInfo: ").append(toIndentedString(promotionInfo)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");
         return sb.toString();

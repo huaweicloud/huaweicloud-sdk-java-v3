@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -25,437 +20,40 @@ public class PoliciesAudio {
 
     private String playVolume;
 
-    /**
-     * 播音设置音量线性系数。取值为： 不设置：Do Not Set Volume Ratio。 低：Low。 中：Middle。 高：High。
-     */
-    public static final class PlayVolumeRatioEnum {
-
-        /**
-         * Enum DO_NOT_SET_VOLUME_RATIO for value: "Do Not Set Volume Ratio"
-         */
-        public static final PlayVolumeRatioEnum DO_NOT_SET_VOLUME_RATIO =
-            new PlayVolumeRatioEnum("Do Not Set Volume Ratio");
-
-        /**
-         * Enum LOW for value: "Low"
-         */
-        public static final PlayVolumeRatioEnum LOW = new PlayVolumeRatioEnum("Low");
-
-        /**
-         * Enum MIDDLE for value: "Middle"
-         */
-        public static final PlayVolumeRatioEnum MIDDLE = new PlayVolumeRatioEnum("Middle");
-
-        /**
-         * Enum HIGH for value: "High"
-         */
-        public static final PlayVolumeRatioEnum HIGH = new PlayVolumeRatioEnum("High");
-
-        private static final Map<String, PlayVolumeRatioEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PlayVolumeRatioEnum> createStaticFields() {
-            Map<String, PlayVolumeRatioEnum> map = new HashMap<>();
-            map.put("Do Not Set Volume Ratio", DO_NOT_SET_VOLUME_RATIO);
-            map.put("Low", LOW);
-            map.put("Middle", MIDDLE);
-            map.put("High", HIGH);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PlayVolumeRatioEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PlayVolumeRatioEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlayVolumeRatioEnum(value));
-        }
-
-        public static PlayVolumeRatioEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PlayVolumeRatioEnum) {
-                return this.value.equals(((PlayVolumeRatioEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_volume_ratio")
 
-    private PlayVolumeRatioEnum playVolumeRatio;
+    private String playVolumeRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_volume")
 
     private String recordVolume;
 
-    /**
-     * 录音设置音量线性系数。取值为： 不设置：Do Not Set Volume Ratio。 低：Low。 中：Middle。 高：High。
-     */
-    public static final class RecordVolumeRatioEnum {
-
-        /**
-         * Enum DO_NOT_SET_VOLUME_RATIO for value: "Do Not Set Volume Ratio"
-         */
-        public static final RecordVolumeRatioEnum DO_NOT_SET_VOLUME_RATIO =
-            new RecordVolumeRatioEnum("Do Not Set Volume Ratio");
-
-        /**
-         * Enum LOW for value: "Low"
-         */
-        public static final RecordVolumeRatioEnum LOW = new RecordVolumeRatioEnum("Low");
-
-        /**
-         * Enum MIDDLE for value: "Middle"
-         */
-        public static final RecordVolumeRatioEnum MIDDLE = new RecordVolumeRatioEnum("Middle");
-
-        /**
-         * Enum HIGH for value: "High"
-         */
-        public static final RecordVolumeRatioEnum HIGH = new RecordVolumeRatioEnum("High");
-
-        private static final Map<String, RecordVolumeRatioEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RecordVolumeRatioEnum> createStaticFields() {
-            Map<String, RecordVolumeRatioEnum> map = new HashMap<>();
-            map.put("Do Not Set Volume Ratio", DO_NOT_SET_VOLUME_RATIO);
-            map.put("Low", LOW);
-            map.put("Middle", MIDDLE);
-            map.put("High", HIGH);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RecordVolumeRatioEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RecordVolumeRatioEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordVolumeRatioEnum(value));
-        }
-
-        public static RecordVolumeRatioEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RecordVolumeRatioEnum) {
-                return this.value.equals(((RecordVolumeRatioEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_volume_ratio")
 
-    private RecordVolumeRatioEnum recordVolumeRatio;
-
-    /**
-     * 音频传输方式。取值为： 可靠传输：Reliable Transmission。 实时传输：Real Time Transmission。
-     */
-    public static final class AudioTransmissionModeEnum {
-
-        /**
-         * Enum REAL_TIME_TRANSMISSION for value: "Real Time Transmission"
-         */
-        public static final AudioTransmissionModeEnum REAL_TIME_TRANSMISSION =
-            new AudioTransmissionModeEnum("Real Time Transmission");
-
-        /**
-         * Enum RELIABLE_TRANSMISSION for value: "Reliable Transmission"
-         */
-        public static final AudioTransmissionModeEnum RELIABLE_TRANSMISSION =
-            new AudioTransmissionModeEnum("Reliable Transmission");
-
-        private static final Map<String, AudioTransmissionModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AudioTransmissionModeEnum> createStaticFields() {
-            Map<String, AudioTransmissionModeEnum> map = new HashMap<>();
-            map.put("Real Time Transmission", REAL_TIME_TRANSMISSION);
-            map.put("Reliable Transmission", RELIABLE_TRANSMISSION);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AudioTransmissionModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AudioTransmissionModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AudioTransmissionModeEnum(value));
-        }
-
-        public static AudioTransmissionModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AudioTransmissionModeEnum) {
-                return this.value.equals(((AudioTransmissionModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String recordVolumeRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_transmission_mode")
 
-    private AudioTransmissionModeEnum audioTransmissionMode;
+    private String audioTransmissionMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_redirection_enable")
 
     private Boolean playRedirectionEnable;
 
-    /**
-     * 播音场景。取值为： 无损播音：LossLess。 语音通话：Speech Call。 音乐播音：Music Play。 自动识别：Automatic Identification。
-     */
-    public static final class PlayClassificationEnum {
-
-        /**
-         * Enum LOSSLESS for value: "LossLess"
-         */
-        public static final PlayClassificationEnum LOSSLESS = new PlayClassificationEnum("LossLess");
-
-        /**
-         * Enum SPEECH_CALL for value: "Speech Call"
-         */
-        public static final PlayClassificationEnum SPEECH_CALL = new PlayClassificationEnum("Speech Call");
-
-        /**
-         * Enum MUSIC_PLAY for value: "Music Play"
-         */
-        public static final PlayClassificationEnum MUSIC_PLAY = new PlayClassificationEnum("Music Play");
-
-        /**
-         * Enum AUTOMATIC_IDENTIFICATION for value: "Automatic Identification"
-         */
-        public static final PlayClassificationEnum AUTOMATIC_IDENTIFICATION =
-            new PlayClassificationEnum("Automatic Identification");
-
-        private static final Map<String, PlayClassificationEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PlayClassificationEnum> createStaticFields() {
-            Map<String, PlayClassificationEnum> map = new HashMap<>();
-            map.put("LossLess", LOSSLESS);
-            map.put("Speech Call", SPEECH_CALL);
-            map.put("Music Play", MUSIC_PLAY);
-            map.put("Automatic Identification", AUTOMATIC_IDENTIFICATION);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PlayClassificationEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PlayClassificationEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlayClassificationEnum(value));
-        }
-
-        public static PlayClassificationEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PlayClassificationEnum) {
-                return this.value.equals(((PlayClassificationEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_classification")
 
-    private PlayClassificationEnum playClassification;
-
-    /**
-     * 播音质量。取值为： 低：Low。 中：Middle。 高：High
-     */
-    public static final class PlayQualityEnum {
-
-        /**
-         * Enum LOW for value: "Low"
-         */
-        public static final PlayQualityEnum LOW = new PlayQualityEnum("Low");
-
-        /**
-         * Enum MIDDLE for value: "Middle"
-         */
-        public static final PlayQualityEnum MIDDLE = new PlayQualityEnum("Middle");
-
-        /**
-         * Enum HIGH for value: "High"
-         */
-        public static final PlayQualityEnum HIGH = new PlayQualityEnum("High");
-
-        private static final Map<String, PlayQualityEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PlayQualityEnum> createStaticFields() {
-            Map<String, PlayQualityEnum> map = new HashMap<>();
-            map.put("Low", LOW);
-            map.put("Middle", MIDDLE);
-            map.put("High", HIGH);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PlayQualityEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PlayQualityEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlayQualityEnum(value));
-        }
-
-        public static PlayQualityEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PlayQualityEnum) {
-                return this.value.equals(((PlayQualityEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String playClassification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_quality")
 
-    private PlayQualityEnum playQuality;
+    private String playQuality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_denoising")
@@ -467,157 +65,15 @@ public class PoliciesAudio {
 
     private String playAgc;
 
-    /**
-     * 播音设置冗余。取值为： 不开启冗余：Disable CRC。 开启冗余：Enable CRC。
-     */
-    public static final class PlayCrcEnum {
-
-        /**
-         * Enum DISABLE_CRC for value: "Disable CRC"
-         */
-        public static final PlayCrcEnum DISABLE_CRC = new PlayCrcEnum("Disable CRC");
-
-        /**
-         * Enum ENABLE_CRC for value: "Enable CRC"
-         */
-        public static final PlayCrcEnum ENABLE_CRC = new PlayCrcEnum("Enable CRC");
-
-        private static final Map<String, PlayCrcEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PlayCrcEnum> createStaticFields() {
-            Map<String, PlayCrcEnum> map = new HashMap<>();
-            map.put("Disable CRC", DISABLE_CRC);
-            map.put("Enable CRC", ENABLE_CRC);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PlayCrcEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PlayCrcEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlayCrcEnum(value));
-        }
-
-        public static PlayCrcEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PlayCrcEnum) {
-                return this.value.equals(((PlayCrcEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_crc")
 
-    private PlayCrcEnum playCrc;
-
-    /**
-     * 播音设置模式。取值为： 播音设备共享模式：Play Device In Shared Mode。 播音设备独占模式：Play Device In Exclusive Mode。
-     */
-    public static final class PlayDeviceModeEnum {
-
-        /**
-         * Enum PLAY_DEVICE_IN_SHARED_MODE for value: "Play Device In Shared Mode"
-         */
-        public static final PlayDeviceModeEnum PLAY_DEVICE_IN_SHARED_MODE =
-            new PlayDeviceModeEnum("Play Device In Shared Mode");
-
-        /**
-         * Enum PLAY_DEVICE_IN_EXCLUSIVE_MODE for value: "Play Device In Exclusive Mode"
-         */
-        public static final PlayDeviceModeEnum PLAY_DEVICE_IN_EXCLUSIVE_MODE =
-            new PlayDeviceModeEnum("Play Device In Exclusive Mode");
-
-        private static final Map<String, PlayDeviceModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PlayDeviceModeEnum> createStaticFields() {
-            Map<String, PlayDeviceModeEnum> map = new HashMap<>();
-            map.put("Play Device In Shared Mode", PLAY_DEVICE_IN_SHARED_MODE);
-            map.put("Play Device In Exclusive Mode", PLAY_DEVICE_IN_EXCLUSIVE_MODE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PlayDeviceModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PlayDeviceModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlayDeviceModeEnum(value));
-        }
-
-        public static PlayDeviceModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PlayDeviceModeEnum) {
-                return this.value.equals(((PlayDeviceModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String playCrc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_device_mode")
 
-    private PlayDeviceModeEnum playDeviceMode;
+    private String playDeviceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "play_delay_threshold")
@@ -639,174 +95,15 @@ public class PoliciesAudio {
 
     private Boolean recordRedirectionEnable;
 
-    /**
-     * 录音场景。取值为： 无损录音：LossLess。 语音通话：Speech Call。 音乐录音：Music Record。 自动识别：Automatic Identification。
-     */
-    public static final class RecordClassificationEnum {
-
-        /**
-         * Enum LOSSLESS for value: "LossLess"
-         */
-        public static final RecordClassificationEnum LOSSLESS = new RecordClassificationEnum("LossLess");
-
-        /**
-         * Enum SPEECH_CALL for value: "Speech Call"
-         */
-        public static final RecordClassificationEnum SPEECH_CALL = new RecordClassificationEnum("Speech Call");
-
-        /**
-         * Enum MUSIC_RECORD for value: "Music Record"
-         */
-        public static final RecordClassificationEnum MUSIC_RECORD = new RecordClassificationEnum("Music Record");
-
-        /**
-         * Enum AUTOMATIC_IDENTIFICATION for value: "Automatic Identification"
-         */
-        public static final RecordClassificationEnum AUTOMATIC_IDENTIFICATION =
-            new RecordClassificationEnum("Automatic Identification");
-
-        private static final Map<String, RecordClassificationEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RecordClassificationEnum> createStaticFields() {
-            Map<String, RecordClassificationEnum> map = new HashMap<>();
-            map.put("LossLess", LOSSLESS);
-            map.put("Speech Call", SPEECH_CALL);
-            map.put("Music Record", MUSIC_RECORD);
-            map.put("Automatic Identification", AUTOMATIC_IDENTIFICATION);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RecordClassificationEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RecordClassificationEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordClassificationEnum(value));
-        }
-
-        public static RecordClassificationEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RecordClassificationEnum) {
-                return this.value.equals(((RecordClassificationEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_classification")
 
-    private RecordClassificationEnum recordClassification;
-
-    /**
-     * 录音质量。取值为： 低：Low。 中：Middle。 高：High。
-     */
-    public static final class RecordQualityEnum {
-
-        /**
-         * Enum LOW for value: "Low"
-         */
-        public static final RecordQualityEnum LOW = new RecordQualityEnum("Low");
-
-        /**
-         * Enum MIDDLE for value: "Middle"
-         */
-        public static final RecordQualityEnum MIDDLE = new RecordQualityEnum("Middle");
-
-        /**
-         * Enum HIGH for value: "High"
-         */
-        public static final RecordQualityEnum HIGH = new RecordQualityEnum("High");
-
-        private static final Map<String, RecordQualityEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RecordQualityEnum> createStaticFields() {
-            Map<String, RecordQualityEnum> map = new HashMap<>();
-            map.put("Low", LOW);
-            map.put("Middle", MIDDLE);
-            map.put("High", HIGH);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RecordQualityEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RecordQualityEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordQualityEnum(value));
-        }
-
-        public static RecordQualityEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RecordQualityEnum) {
-                return this.value.equals(((RecordQualityEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String recordClassification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_quality")
 
-    private RecordQualityEnum recordQuality;
+    private String recordQuality;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_denoising")
@@ -818,157 +115,15 @@ public class PoliciesAudio {
 
     private String recordAgc;
 
-    /**
-     * 录音设置冗余。取值为： 不开启冗余：Disable CRC。 开启冗余：Enable CRC。
-     */
-    public static final class RecordCrcEnum {
-
-        /**
-         * Enum DISABLE_CRC for value: "Disable CRC"
-         */
-        public static final RecordCrcEnum DISABLE_CRC = new RecordCrcEnum("Disable CRC");
-
-        /**
-         * Enum ENABLE_CRC for value: "Enable CRC"
-         */
-        public static final RecordCrcEnum ENABLE_CRC = new RecordCrcEnum("Enable CRC");
-
-        private static final Map<String, RecordCrcEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RecordCrcEnum> createStaticFields() {
-            Map<String, RecordCrcEnum> map = new HashMap<>();
-            map.put("Disable CRC", DISABLE_CRC);
-            map.put("Enable CRC", ENABLE_CRC);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RecordCrcEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RecordCrcEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordCrcEnum(value));
-        }
-
-        public static RecordCrcEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RecordCrcEnum) {
-                return this.value.equals(((RecordCrcEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_crc")
 
-    private RecordCrcEnum recordCrc;
-
-    /**
-     * 录音设置模式。取值为： 播音设备共享模式：Record Device In Shared Mode。 播音设备独占模式：Record Device In Exclusive Mode。
-     */
-    public static final class RecordDeviceModeEnum {
-
-        /**
-         * Enum RECORD_DEVICE_IN_SHARED_MODE for value: "Record Device In Shared Mode"
-         */
-        public static final RecordDeviceModeEnum RECORD_DEVICE_IN_SHARED_MODE =
-            new RecordDeviceModeEnum("Record Device In Shared Mode");
-
-        /**
-         * Enum RECORD_DEVICE_IN_EXCLUSIVE_MODE for value: "Record Device In Exclusive Mode"
-         */
-        public static final RecordDeviceModeEnum RECORD_DEVICE_IN_EXCLUSIVE_MODE =
-            new RecordDeviceModeEnum("Record Device In Exclusive Mode");
-
-        private static final Map<String, RecordDeviceModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RecordDeviceModeEnum> createStaticFields() {
-            Map<String, RecordDeviceModeEnum> map = new HashMap<>();
-            map.put("Record Device In Shared Mode", RECORD_DEVICE_IN_SHARED_MODE);
-            map.put("Record Device In Exclusive Mode", RECORD_DEVICE_IN_EXCLUSIVE_MODE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RecordDeviceModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RecordDeviceModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordDeviceModeEnum(value));
-        }
-
-        public static RecordDeviceModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RecordDeviceModeEnum) {
-                return this.value.equals(((RecordDeviceModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String recordCrc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_device_mode")
 
-    private RecordDeviceModeEnum recordDeviceMode;
+    private String recordDeviceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_delay_threshold")
@@ -1014,7 +169,7 @@ public class PoliciesAudio {
         this.playVolume = playVolume;
     }
 
-    public PoliciesAudio withPlayVolumeRatio(PlayVolumeRatioEnum playVolumeRatio) {
+    public PoliciesAudio withPlayVolumeRatio(String playVolumeRatio) {
         this.playVolumeRatio = playVolumeRatio;
         return this;
     }
@@ -1023,11 +178,11 @@ public class PoliciesAudio {
      * 播音设置音量线性系数。取值为： 不设置：Do Not Set Volume Ratio。 低：Low。 中：Middle。 高：High。
      * @return playVolumeRatio
      */
-    public PlayVolumeRatioEnum getPlayVolumeRatio() {
+    public String getPlayVolumeRatio() {
         return playVolumeRatio;
     }
 
-    public void setPlayVolumeRatio(PlayVolumeRatioEnum playVolumeRatio) {
+    public void setPlayVolumeRatio(String playVolumeRatio) {
         this.playVolumeRatio = playVolumeRatio;
     }
 
@@ -1048,7 +203,7 @@ public class PoliciesAudio {
         this.recordVolume = recordVolume;
     }
 
-    public PoliciesAudio withRecordVolumeRatio(RecordVolumeRatioEnum recordVolumeRatio) {
+    public PoliciesAudio withRecordVolumeRatio(String recordVolumeRatio) {
         this.recordVolumeRatio = recordVolumeRatio;
         return this;
     }
@@ -1057,15 +212,15 @@ public class PoliciesAudio {
      * 录音设置音量线性系数。取值为： 不设置：Do Not Set Volume Ratio。 低：Low。 中：Middle。 高：High。
      * @return recordVolumeRatio
      */
-    public RecordVolumeRatioEnum getRecordVolumeRatio() {
+    public String getRecordVolumeRatio() {
         return recordVolumeRatio;
     }
 
-    public void setRecordVolumeRatio(RecordVolumeRatioEnum recordVolumeRatio) {
+    public void setRecordVolumeRatio(String recordVolumeRatio) {
         this.recordVolumeRatio = recordVolumeRatio;
     }
 
-    public PoliciesAudio withAudioTransmissionMode(AudioTransmissionModeEnum audioTransmissionMode) {
+    public PoliciesAudio withAudioTransmissionMode(String audioTransmissionMode) {
         this.audioTransmissionMode = audioTransmissionMode;
         return this;
     }
@@ -1074,11 +229,11 @@ public class PoliciesAudio {
      * 音频传输方式。取值为： 可靠传输：Reliable Transmission。 实时传输：Real Time Transmission。
      * @return audioTransmissionMode
      */
-    public AudioTransmissionModeEnum getAudioTransmissionMode() {
+    public String getAudioTransmissionMode() {
         return audioTransmissionMode;
     }
 
-    public void setAudioTransmissionMode(AudioTransmissionModeEnum audioTransmissionMode) {
+    public void setAudioTransmissionMode(String audioTransmissionMode) {
         this.audioTransmissionMode = audioTransmissionMode;
     }
 
@@ -1099,7 +254,7 @@ public class PoliciesAudio {
         this.playRedirectionEnable = playRedirectionEnable;
     }
 
-    public PoliciesAudio withPlayClassification(PlayClassificationEnum playClassification) {
+    public PoliciesAudio withPlayClassification(String playClassification) {
         this.playClassification = playClassification;
         return this;
     }
@@ -1108,15 +263,15 @@ public class PoliciesAudio {
      * 播音场景。取值为： 无损播音：LossLess。 语音通话：Speech Call。 音乐播音：Music Play。 自动识别：Automatic Identification。
      * @return playClassification
      */
-    public PlayClassificationEnum getPlayClassification() {
+    public String getPlayClassification() {
         return playClassification;
     }
 
-    public void setPlayClassification(PlayClassificationEnum playClassification) {
+    public void setPlayClassification(String playClassification) {
         this.playClassification = playClassification;
     }
 
-    public PoliciesAudio withPlayQuality(PlayQualityEnum playQuality) {
+    public PoliciesAudio withPlayQuality(String playQuality) {
         this.playQuality = playQuality;
         return this;
     }
@@ -1125,11 +280,11 @@ public class PoliciesAudio {
      * 播音质量。取值为： 低：Low。 中：Middle。 高：High
      * @return playQuality
      */
-    public PlayQualityEnum getPlayQuality() {
+    public String getPlayQuality() {
         return playQuality;
     }
 
-    public void setPlayQuality(PlayQualityEnum playQuality) {
+    public void setPlayQuality(String playQuality) {
         this.playQuality = playQuality;
     }
 
@@ -1167,7 +322,7 @@ public class PoliciesAudio {
         this.playAgc = playAgc;
     }
 
-    public PoliciesAudio withPlayCrc(PlayCrcEnum playCrc) {
+    public PoliciesAudio withPlayCrc(String playCrc) {
         this.playCrc = playCrc;
         return this;
     }
@@ -1176,15 +331,15 @@ public class PoliciesAudio {
      * 播音设置冗余。取值为： 不开启冗余：Disable CRC。 开启冗余：Enable CRC。
      * @return playCrc
      */
-    public PlayCrcEnum getPlayCrc() {
+    public String getPlayCrc() {
         return playCrc;
     }
 
-    public void setPlayCrc(PlayCrcEnum playCrc) {
+    public void setPlayCrc(String playCrc) {
         this.playCrc = playCrc;
     }
 
-    public PoliciesAudio withPlayDeviceMode(PlayDeviceModeEnum playDeviceMode) {
+    public PoliciesAudio withPlayDeviceMode(String playDeviceMode) {
         this.playDeviceMode = playDeviceMode;
         return this;
     }
@@ -1193,11 +348,11 @@ public class PoliciesAudio {
      * 播音设置模式。取值为： 播音设备共享模式：Play Device In Shared Mode。 播音设备独占模式：Play Device In Exclusive Mode。
      * @return playDeviceMode
      */
-    public PlayDeviceModeEnum getPlayDeviceMode() {
+    public String getPlayDeviceMode() {
         return playDeviceMode;
     }
 
-    public void setPlayDeviceMode(PlayDeviceModeEnum playDeviceMode) {
+    public void setPlayDeviceMode(String playDeviceMode) {
         this.playDeviceMode = playDeviceMode;
     }
 
@@ -1269,7 +424,7 @@ public class PoliciesAudio {
         this.recordRedirectionEnable = recordRedirectionEnable;
     }
 
-    public PoliciesAudio withRecordClassification(RecordClassificationEnum recordClassification) {
+    public PoliciesAudio withRecordClassification(String recordClassification) {
         this.recordClassification = recordClassification;
         return this;
     }
@@ -1278,15 +433,15 @@ public class PoliciesAudio {
      * 录音场景。取值为： 无损录音：LossLess。 语音通话：Speech Call。 音乐录音：Music Record。 自动识别：Automatic Identification。
      * @return recordClassification
      */
-    public RecordClassificationEnum getRecordClassification() {
+    public String getRecordClassification() {
         return recordClassification;
     }
 
-    public void setRecordClassification(RecordClassificationEnum recordClassification) {
+    public void setRecordClassification(String recordClassification) {
         this.recordClassification = recordClassification;
     }
 
-    public PoliciesAudio withRecordQuality(RecordQualityEnum recordQuality) {
+    public PoliciesAudio withRecordQuality(String recordQuality) {
         this.recordQuality = recordQuality;
         return this;
     }
@@ -1295,11 +450,11 @@ public class PoliciesAudio {
      * 录音质量。取值为： 低：Low。 中：Middle。 高：High。
      * @return recordQuality
      */
-    public RecordQualityEnum getRecordQuality() {
+    public String getRecordQuality() {
         return recordQuality;
     }
 
-    public void setRecordQuality(RecordQualityEnum recordQuality) {
+    public void setRecordQuality(String recordQuality) {
         this.recordQuality = recordQuality;
     }
 
@@ -1337,7 +492,7 @@ public class PoliciesAudio {
         this.recordAgc = recordAgc;
     }
 
-    public PoliciesAudio withRecordCrc(RecordCrcEnum recordCrc) {
+    public PoliciesAudio withRecordCrc(String recordCrc) {
         this.recordCrc = recordCrc;
         return this;
     }
@@ -1346,15 +501,15 @@ public class PoliciesAudio {
      * 录音设置冗余。取值为： 不开启冗余：Disable CRC。 开启冗余：Enable CRC。
      * @return recordCrc
      */
-    public RecordCrcEnum getRecordCrc() {
+    public String getRecordCrc() {
         return recordCrc;
     }
 
-    public void setRecordCrc(RecordCrcEnum recordCrc) {
+    public void setRecordCrc(String recordCrc) {
         this.recordCrc = recordCrc;
     }
 
-    public PoliciesAudio withRecordDeviceMode(RecordDeviceModeEnum recordDeviceMode) {
+    public PoliciesAudio withRecordDeviceMode(String recordDeviceMode) {
         this.recordDeviceMode = recordDeviceMode;
         return this;
     }
@@ -1363,11 +518,11 @@ public class PoliciesAudio {
      * 录音设置模式。取值为： 播音设备共享模式：Record Device In Shared Mode。 播音设备独占模式：Record Device In Exclusive Mode。
      * @return recordDeviceMode
      */
-    public RecordDeviceModeEnum getRecordDeviceMode() {
+    public String getRecordDeviceMode() {
         return recordDeviceMode;
     }
 
-    public void setRecordDeviceMode(RecordDeviceModeEnum recordDeviceMode) {
+    public void setRecordDeviceMode(String recordDeviceMode) {
         this.recordDeviceMode = recordDeviceMode;
     }
 

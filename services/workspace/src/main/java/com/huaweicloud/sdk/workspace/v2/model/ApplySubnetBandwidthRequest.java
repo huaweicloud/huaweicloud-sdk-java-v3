@@ -12,31 +12,9 @@ import java.util.function.Consumer;
 public class ApplySubnetBandwidthRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Service-Transaction-Id")
-
-    private String serviceTransactionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ApplySubnetBandwidthReq body;
-
-    public ApplySubnetBandwidthRequest withServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-        return this;
-    }
-
-    /**
-     * CBC接口回调时，请求头里带上的业务ID
-     * @return serviceTransactionId
-     */
-    public String getServiceTransactionId() {
-        return serviceTransactionId;
-    }
-
-    public void setServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-    }
 
     public ApplySubnetBandwidthRequest withBody(ApplySubnetBandwidthReq body) {
         this.body = body;
@@ -73,20 +51,18 @@ public class ApplySubnetBandwidthRequest {
             return false;
         }
         ApplySubnetBandwidthRequest that = (ApplySubnetBandwidthRequest) obj;
-        return Objects.equals(this.serviceTransactionId, that.serviceTransactionId)
-            && Objects.equals(this.body, that.body);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceTransactionId, body);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplySubnetBandwidthRequest {\n");
-        sb.append("    serviceTransactionId: ").append(toIndentedString(serviceTransactionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -48,7 +48,7 @@ public class ModifyOuNameInfoV2Req {
     }
 
     /**
-     * OU名称
+     * OU名称。
      * @return ouName
      */
     public String getOuName() {
@@ -65,7 +65,7 @@ public class ModifyOuNameInfoV2Req {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {

@@ -22,7 +22,7 @@ public class AddVolumesResponse extends SdkResponse {
     }
 
     /**
-     * 增加磁盘任务ID
+     * 增加磁盘任务ID。
      * @return jobId
      */
     public String getJobId() {

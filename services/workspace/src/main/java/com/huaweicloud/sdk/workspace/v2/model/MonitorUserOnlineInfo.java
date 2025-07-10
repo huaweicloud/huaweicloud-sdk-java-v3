@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 桌面监控用户在线状态信息
+ * 桌面监控用户在线状态信息。
  */
 public class MonitorUserOnlineInfo {
 
@@ -92,7 +92,7 @@ public class MonitorUserOnlineInfo {
     }
 
     /**
-     * 建立连接时间
+     * 建立连接时间。
      * @return connectionSetupTime
      */
     public String getConnectionSetupTime() {
@@ -109,7 +109,7 @@ public class MonitorUserOnlineInfo {
     }
 
     /**
-     * 结束连接时间
+     * 结束连接时间。
      * @return connectionEndTime
      */
     public String getConnectionEndTime() {

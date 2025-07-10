@@ -46,7 +46,7 @@ public class ListSiteConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 站点信息列表
+     * 站点信息列表。
      * @return siteInfos
      */
     public List<SiteInfo> getSiteInfos() {
@@ -63,7 +63,7 @@ public class ListSiteConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 站点总数
+     * 站点总数。
      * minimum: 0
      * maximum: 200000
      * @return totalCount

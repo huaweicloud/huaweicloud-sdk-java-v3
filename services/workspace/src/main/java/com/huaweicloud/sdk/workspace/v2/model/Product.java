@@ -126,34 +126,14 @@ public class Product {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sub_product_list")
-
-    private List<String> subProductList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package_type")
 
     private String packageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "series_type")
-
-    private String seriesType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private Map<String, String> name = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "default_desktop_num")
-
-    private Integer defaultDesktopNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "max_apply_desktop_num")
-
-    private Integer maxApplyDesktopNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "share_space_size")
@@ -566,39 +546,6 @@ public class Product {
         this.status = status;
     }
 
-    public Product withSubProductList(List<String> subProductList) {
-        this.subProductList = subProductList;
-        return this;
-    }
-
-    public Product addSubProductListItem(String subProductListItem) {
-        if (this.subProductList == null) {
-            this.subProductList = new ArrayList<>();
-        }
-        this.subProductList.add(subProductListItem);
-        return this;
-    }
-
-    public Product withSubProductList(Consumer<List<String>> subProductListSetter) {
-        if (this.subProductList == null) {
-            this.subProductList = new ArrayList<>();
-        }
-        subProductListSetter.accept(this.subProductList);
-        return this;
-    }
-
-    /**
-     * 专属主机的子产品。
-     * @return subProductList
-     */
-    public List<String> getSubProductList() {
-        return subProductList;
-    }
-
-    public void setSubProductList(List<String> subProductList) {
-        this.subProductList = subProductList;
-    }
-
     public Product withPackageType(String packageType) {
         this.packageType = packageType;
         return this;
@@ -614,23 +561,6 @@ public class Product {
 
     public void setPackageType(String packageType) {
         this.packageType = packageType;
-    }
-
-    public Product withSeriesType(String seriesType) {
-        this.seriesType = seriesType;
-        return this;
-    }
-
-    /**
-     * 套餐下的系列类型。 - 云工作站下分为云工作站D5、云工作站D7 - 专属办公版下分为鲲鹏专属、通用专属、G6a、G6r、G7a
-     * @return seriesType
-     */
-    public String getSeriesType() {
-        return seriesType;
-    }
-
-    public void setSeriesType(String seriesType) {
-        this.seriesType = seriesType;
     }
 
     public Product withName(Map<String, String> name) {
@@ -664,44 +594,6 @@ public class Product {
 
     public void setName(Map<String, String> name) {
         this.name = name;
-    }
-
-    public Product withDefaultDesktopNum(Integer defaultDesktopNum) {
-        this.defaultDesktopNum = defaultDesktopNum;
-        return this;
-    }
-
-    /**
-     * 专享主机套餐默认的桌面数。
-     * minimum: 0
-     * maximum: 100
-     * @return defaultDesktopNum
-     */
-    public Integer getDefaultDesktopNum() {
-        return defaultDesktopNum;
-    }
-
-    public void setDefaultDesktopNum(Integer defaultDesktopNum) {
-        this.defaultDesktopNum = defaultDesktopNum;
-    }
-
-    public Product withMaxApplyDesktopNum(Integer maxApplyDesktopNum) {
-        this.maxApplyDesktopNum = maxApplyDesktopNum;
-        return this;
-    }
-
-    /**
-     * 专享主机支持创建的最大桌面数。
-     * minimum: 0
-     * maximum: 100
-     * @return maxApplyDesktopNum
-     */
-    public Integer getMaxApplyDesktopNum() {
-        return maxApplyDesktopNum;
-    }
-
-    public void setMaxApplyDesktopNum(Integer maxApplyDesktopNum) {
-        this.maxApplyDesktopNum = maxApplyDesktopNum;
     }
 
     public Product withShareSpaceSize(Integer shareSpaceSize) {
@@ -746,10 +638,7 @@ public class Product {
             && Objects.equals(this.cloudServiceType, that.cloudServiceType)
             && Objects.equals(this.volumeProductType, that.volumeProductType)
             && Objects.equals(this.domainIds, that.domainIds) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.subProductList, that.subProductList)
-            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.seriesType, that.seriesType)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.defaultDesktopNum, that.defaultDesktopNum)
-            && Objects.equals(this.maxApplyDesktopNum, that.maxApplyDesktopNum)
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.name, that.name)
             && Objects.equals(this.shareSpaceSize, that.shareSpaceSize);
     }
 
@@ -777,12 +666,8 @@ public class Product {
             volumeProductType,
             domainIds,
             status,
-            subProductList,
             packageType,
-            seriesType,
             name,
-            defaultDesktopNum,
-            maxApplyDesktopNum,
             shareSpaceSize);
     }
 
@@ -812,12 +697,8 @@ public class Product {
         sb.append("    volumeProductType: ").append(toIndentedString(volumeProductType)).append("\n");
         sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    subProductList: ").append(toIndentedString(subProductList)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
-        sb.append("    seriesType: ").append(toIndentedString(seriesType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    defaultDesktopNum: ").append(toIndentedString(defaultDesktopNum)).append("\n");
-        sb.append("    maxApplyDesktopNum: ").append(toIndentedString(maxApplyDesktopNum)).append("\n");
         sb.append("    shareSpaceSize: ").append(toIndentedString(shareSpaceSize)).append("\n");
         sb.append("}");
         return sb.toString();

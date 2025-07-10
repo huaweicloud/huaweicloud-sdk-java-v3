@@ -39,7 +39,7 @@ public class TagResource {
     }
 
     /**
-     * 计算机信息
+     * 计算机信息。
      * @return resourceDetail
      */
     public String getResourceDetail() {
@@ -56,7 +56,7 @@ public class TagResource {
     }
 
     /**
-     * 计算机id
+     * 计算机id。
      * @return resourceId
      */
     public String getResourceId() {
@@ -73,7 +73,7 @@ public class TagResource {
     }
 
     /**
-     * 计算机名称
+     * 计算机名称。
      * @return resourceName
      */
     public String getResourceName() {
@@ -106,7 +106,7 @@ public class TagResource {
     }
 
     /**
-     * 标签对象
+     * 标签对象。
      * @return tags
      */
     public List<Tag> getTags() {

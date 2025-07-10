@@ -123,7 +123,7 @@ public class AdDomainInfo {
     }
 
     /**
-     * 域管理员帐号。
+     * 域管理员账号。
      * @return domainAdminAccount
      */
     public String getDomainAdminAccount() {

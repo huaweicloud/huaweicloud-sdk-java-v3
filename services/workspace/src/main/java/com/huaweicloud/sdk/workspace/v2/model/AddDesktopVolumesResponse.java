@@ -42,7 +42,7 @@ public class AddDesktopVolumesResponse extends SdkResponse {
     }
 
     /**
-     * 增加磁盘任务id
+     * 增加磁盘任务id。
      * @return jobId
      */
     public String getJobId() {
@@ -59,7 +59,7 @@ public class AddDesktopVolumesResponse extends SdkResponse {
     }
 
     /**
-     * 云运营平台CBC获取到JobId后，会使用getJobEndpoint当做URL，调用云服务，查询获取Job结果
+     * 云运营平台CBC获取到JobId后，会使用getJobEndpoint当做URL，调用云服务，查询获取Job结果。
      * @return getJobEndpoint
      */
     public String getGetJobEndpoint() {
@@ -76,7 +76,7 @@ public class AddDesktopVolumesResponse extends SdkResponse {
     }
 
     /**
-     * 在线开通最大时间
+     * 在线开通最大时间。
      * @return maxProvisionTime
      */
     public Integer getMaxProvisionTime() {
@@ -93,7 +93,7 @@ public class AddDesktopVolumesResponse extends SdkResponse {
     }
 
     /**
-     * 开通最小时间（云服务最快开通时长，或一般开通时长）
+     * 开通最小时间（云服务最快开通时长，或一般开通时长）。
      * @return minProvisionTime
      */
     public Integer getMinProvisionTime() {
@@ -110,7 +110,7 @@ public class AddDesktopVolumesResponse extends SdkResponse {
     }
 
     /**
-     * Job周期性查询时间，默认1分钟查询一次
+     * Job周期性查询时间，默认1分钟查询一次。
      * @return periodicQueryTime
      */
     public Integer getPeriodicQueryTime() {

@@ -60,7 +60,7 @@ public class BatchResInquiryResult {
     }
 
     /**
-     * ID标识,同一次询价中不能重复
+     * ID标识,同一次询价中不能重复。
      * @return id
      */
     public String getId() {
@@ -77,7 +77,7 @@ public class BatchResInquiryResult {
     }
 
     /**
-     * 变更后的产品ID
+     * 变更后的产品ID。
      * @return productId
      */
     public String getProductId() {
@@ -94,7 +94,7 @@ public class BatchResInquiryResult {
     }
 
     /**
-     * 总额，即最终优惠后的金额(降配场景下包含退还的现金、现金券、储值卡的总额)
+     * 总额，即最终优惠后的金额(降配场景下包含退还的现金、现金券、储值卡的总额)。
      * @return amount
      */
     public BigDecimal getAmount() {
@@ -127,7 +127,7 @@ public class BatchResInquiryResult {
     }
 
     /**
-     * 券的退订金额（降配存在）
+     * 券的退订金额（降配存在）。
      * @return couponResults
      */
     public List<CouponUnsubscribeResult> getCouponResults() {
@@ -144,7 +144,7 @@ public class BatchResInquiryResult {
     }
 
     /**
-     * 优惠额
+     * 优惠额。
      * @return discountAmount
      */
     public BigDecimal getDiscountAmount() {
@@ -161,7 +161,7 @@ public class BatchResInquiryResult {
     }
 
     /**
-     * 原总额，即优惠前总额
+     * 原总额，即优惠前总额。
      * @return originalAmount
      */
     public BigDecimal getOriginalAmount() {
@@ -178,7 +178,7 @@ public class BatchResInquiryResult {
     }
 
     /**
-     * 度量单位标识
+     * 度量单位标识。
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -195,7 +195,7 @@ public class BatchResInquiryResult {
     }
 
     /**
-     * 扩展参数
+     * 扩展参数。
      * @return extendParams
      */
     public String getExtendParams() {

@@ -7,14 +7,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**： 资产额外元数据。  **约束限制**： 根据asset_type选择对应结构填写，填写其他不匹配的结构会被忽略。 * HUMAN_MODEL: 填写human_model_meta * HUMAN_MODEL_2D: 填写human_model_2d_meta * SCENE：填写scene_meta * ANIMATION：填写animation_meta * MATERIAL：填写material_meta * VOICE_MODEL：填写voice_model_meta * VIDEO：填写video_meta * IMAGE：填写image_meta * PPT：填写ppt_meta * AUDIO: 填写audio_meta
+ * **参数解释**： 资产额外元数据。  **约束限制**： 根据asset_type选择对应结构填写，填写其他不匹配的结构会被忽略。 * HUMAN_MODEL_2D: 填写human_model_2d_meta * MATERIAL：填写material_meta * VOICE_MODEL：填写voice_model_meta * VIDEO：填写video_meta * IMAGE：填写image_meta * PPT：填写ppt_meta * AUDIO: 填写audio_meta
  */
 public class AssetExtraMeta {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "human_model_meta")
-
-    private HumanModelAssetMeta humanModelMeta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "voice_model_meta")
@@ -25,16 +20,6 @@ public class AssetExtraMeta {
     @JsonProperty(value = "ppt_meta")
 
     private PPTAssetMeta pptMeta;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "animation_meta")
-
-    private AnimationAssetMeta animationMeta;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scene_meta")
-
-    private SceneAssetMeta sceneMeta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "material_meta")
@@ -60,32 +45,6 @@ public class AssetExtraMeta {
     @JsonProperty(value = "audio_meta")
 
     private AudioAssetMeta audioMeta;
-
-    public AssetExtraMeta withHumanModelMeta(HumanModelAssetMeta humanModelMeta) {
-        this.humanModelMeta = humanModelMeta;
-        return this;
-    }
-
-    public AssetExtraMeta withHumanModelMeta(Consumer<HumanModelAssetMeta> humanModelMetaSetter) {
-        if (this.humanModelMeta == null) {
-            this.humanModelMeta = new HumanModelAssetMeta();
-            humanModelMetaSetter.accept(this.humanModelMeta);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get humanModelMeta
-     * @return humanModelMeta
-     */
-    public HumanModelAssetMeta getHumanModelMeta() {
-        return humanModelMeta;
-    }
-
-    public void setHumanModelMeta(HumanModelAssetMeta humanModelMeta) {
-        this.humanModelMeta = humanModelMeta;
-    }
 
     public AssetExtraMeta withVoiceModelMeta(VoiceModelAssetMeta voiceModelMeta) {
         this.voiceModelMeta = voiceModelMeta;
@@ -137,58 +96,6 @@ public class AssetExtraMeta {
 
     public void setPptMeta(PPTAssetMeta pptMeta) {
         this.pptMeta = pptMeta;
-    }
-
-    public AssetExtraMeta withAnimationMeta(AnimationAssetMeta animationMeta) {
-        this.animationMeta = animationMeta;
-        return this;
-    }
-
-    public AssetExtraMeta withAnimationMeta(Consumer<AnimationAssetMeta> animationMetaSetter) {
-        if (this.animationMeta == null) {
-            this.animationMeta = new AnimationAssetMeta();
-            animationMetaSetter.accept(this.animationMeta);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get animationMeta
-     * @return animationMeta
-     */
-    public AnimationAssetMeta getAnimationMeta() {
-        return animationMeta;
-    }
-
-    public void setAnimationMeta(AnimationAssetMeta animationMeta) {
-        this.animationMeta = animationMeta;
-    }
-
-    public AssetExtraMeta withSceneMeta(SceneAssetMeta sceneMeta) {
-        this.sceneMeta = sceneMeta;
-        return this;
-    }
-
-    public AssetExtraMeta withSceneMeta(Consumer<SceneAssetMeta> sceneMetaSetter) {
-        if (this.sceneMeta == null) {
-            this.sceneMeta = new SceneAssetMeta();
-            sceneMetaSetter.accept(this.sceneMeta);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get sceneMeta
-     * @return sceneMeta
-     */
-    public SceneAssetMeta getSceneMeta() {
-        return sceneMeta;
-    }
-
-    public void setSceneMeta(SceneAssetMeta sceneMeta) {
-        this.sceneMeta = sceneMeta;
     }
 
     public AssetExtraMeta withMaterialMeta(MaterialAssetMeta materialMeta) {
@@ -330,9 +237,7 @@ public class AssetExtraMeta {
             return false;
         }
         AssetExtraMeta that = (AssetExtraMeta) obj;
-        return Objects.equals(this.humanModelMeta, that.humanModelMeta)
-            && Objects.equals(this.voiceModelMeta, that.voiceModelMeta) && Objects.equals(this.pptMeta, that.pptMeta)
-            && Objects.equals(this.animationMeta, that.animationMeta) && Objects.equals(this.sceneMeta, that.sceneMeta)
+        return Objects.equals(this.voiceModelMeta, that.voiceModelMeta) && Objects.equals(this.pptMeta, that.pptMeta)
             && Objects.equals(this.materialMeta, that.materialMeta)
             && Objects.equals(this.humanModel2dMeta, that.humanModel2dMeta)
             && Objects.equals(this.imageMeta, that.imageMeta) && Objects.equals(this.videoMeta, that.videoMeta)
@@ -341,27 +246,15 @@ public class AssetExtraMeta {
 
     @Override
     public int hashCode() {
-        return Objects.hash(humanModelMeta,
-            voiceModelMeta,
-            pptMeta,
-            animationMeta,
-            sceneMeta,
-            materialMeta,
-            humanModel2dMeta,
-            imageMeta,
-            videoMeta,
-            audioMeta);
+        return Objects.hash(voiceModelMeta, pptMeta, materialMeta, humanModel2dMeta, imageMeta, videoMeta, audioMeta);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AssetExtraMeta {\n");
-        sb.append("    humanModelMeta: ").append(toIndentedString(humanModelMeta)).append("\n");
         sb.append("    voiceModelMeta: ").append(toIndentedString(voiceModelMeta)).append("\n");
         sb.append("    pptMeta: ").append(toIndentedString(pptMeta)).append("\n");
-        sb.append("    animationMeta: ").append(toIndentedString(animationMeta)).append("\n");
-        sb.append("    sceneMeta: ").append(toIndentedString(sceneMeta)).append("\n");
         sb.append("    materialMeta: ").append(toIndentedString(materialMeta)).append("\n");
         sb.append("    humanModel2dMeta: ").append(toIndentedString(humanModel2dMeta)).append("\n");
         sb.append("    imageMeta: ").append(toIndentedString(imageMeta)).append("\n");

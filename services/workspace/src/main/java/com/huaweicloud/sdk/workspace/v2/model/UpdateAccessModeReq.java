@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改接入方式请求
+ * 修改接入方式请求。
  */
 public class UpdateAccessModeReq {
 

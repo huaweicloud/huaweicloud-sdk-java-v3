@@ -30,7 +30,7 @@ public class ListUserUsageMetricResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class ListUserUsageMetricResponse extends SdkResponse {
     }
 
     /**
-     * 用户统计指标
+     * 用户统计指标。
      * @return items
      */
     public List<UserMetric> getItems() {

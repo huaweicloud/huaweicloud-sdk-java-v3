@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 带时间的指标
+ * 带时间的指标。
  */
 public class MetricsWithTime {
 
@@ -29,7 +29,7 @@ public class MetricsWithTime {
     }
 
     /**
-     * 时间
+     * 时间。
      * @return time
      */
     public String getTime() {
@@ -62,7 +62,7 @@ public class MetricsWithTime {
     }
 
     /**
-     * 指标值
+     * 指标值。
      * @return metrics
      */
     public List<Metric> getMetrics() {

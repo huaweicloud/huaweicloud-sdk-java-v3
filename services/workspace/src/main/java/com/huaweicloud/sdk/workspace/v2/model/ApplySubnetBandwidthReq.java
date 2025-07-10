@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ApplySubnetBandwidthReq
+ * 开通云办公带宽请求体。
  */
 public class ApplySubnetBandwidthReq {
 
@@ -34,11 +34,6 @@ public class ApplySubnetBandwidthReq {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
 
     public ApplySubnetBandwidthReq withBandwidthName(String bandwidthName) {
         this.bandwidthName = bandwidthName;
@@ -116,7 +111,7 @@ public class ApplySubnetBandwidthReq {
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -125,23 +120,6 @@ public class ApplySubnetBandwidthReq {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public ApplySubnetBandwidthReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 包周期订购ID，CBC订购回调时使用。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     @Override
@@ -156,13 +134,12 @@ public class ApplySubnetBandwidthReq {
         return Objects.equals(this.bandwidthName, that.bandwidthName) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.bandwidthSize, that.bandwidthSize)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.orderId, that.orderId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthName, subnetId, chargeMode, bandwidthSize, enterpriseProjectId, orderId);
+        return Objects.hash(bandwidthName, subnetId, chargeMode, bandwidthSize, enterpriseProjectId);
     }
 
     @Override
@@ -174,7 +151,6 @@ public class ApplySubnetBandwidthReq {
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

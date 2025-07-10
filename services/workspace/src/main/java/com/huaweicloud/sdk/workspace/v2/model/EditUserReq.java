@@ -5,13 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * EditUserReq
@@ -124,16 +121,6 @@ public class EditUserReq {
     private Boolean nextLoginChangePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_ids")
-
-    private List<String> groupIds = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alias_name")
-
-    private String aliasName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_never_expired")
 
     private Boolean passwordNeverExpired;
@@ -142,6 +129,11 @@ public class EditUserReq {
     @JsonProperty(value = "disabled")
 
     private Boolean disabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_info_map")
+
+    private String userInfoMap;
 
     public EditUserReq withDescription(String description) {
         this.description = description;
@@ -262,56 +254,6 @@ public class EditUserReq {
         this.nextLoginChangePassword = nextLoginChangePassword;
     }
 
-    public EditUserReq withGroupIds(List<String> groupIds) {
-        this.groupIds = groupIds;
-        return this;
-    }
-
-    public EditUserReq addGroupIdsItem(String groupIdsItem) {
-        if (this.groupIds == null) {
-            this.groupIds = new ArrayList<>();
-        }
-        this.groupIds.add(groupIdsItem);
-        return this;
-    }
-
-    public EditUserReq withGroupIds(Consumer<List<String>> groupIdsSetter) {
-        if (this.groupIds == null) {
-            this.groupIds = new ArrayList<>();
-        }
-        groupIdsSetter.accept(this.groupIds);
-        return this;
-    }
-
-    /**
-     * 用户组的专有ID列表。
-     * @return groupIds
-     */
-    public List<String> getGroupIds() {
-        return groupIds;
-    }
-
-    public void setGroupIds(List<String> groupIds) {
-        this.groupIds = groupIds;
-    }
-
-    public EditUserReq withAliasName(String aliasName) {
-        this.aliasName = aliasName;
-        return this;
-    }
-
-    /**
-     * 别名。
-     * @return aliasName
-     */
-    public String getAliasName() {
-        return aliasName;
-    }
-
-    public void setAliasName(String aliasName) {
-        this.aliasName = aliasName;
-    }
-
     public EditUserReq withPasswordNeverExpired(Boolean passwordNeverExpired) {
         this.passwordNeverExpired = passwordNeverExpired;
         return this;
@@ -346,6 +288,23 @@ public class EditUserReq {
         this.disabled = disabled;
     }
 
+    public EditUserReq withUserInfoMap(String userInfoMap) {
+        this.userInfoMap = userInfoMap;
+        return this;
+    }
+
+    /**
+     * 用户信息映射，包含用户的服务等级、操作模式和类型。
+     * @return userInfoMap
+     */
+    public String getUserInfoMap() {
+        return userInfoMap;
+    }
+
+    public void setUserInfoMap(String userInfoMap) {
+        this.userInfoMap = userInfoMap;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -360,9 +319,8 @@ public class EditUserReq {
             && Objects.equals(this.accountExpires, that.accountExpires)
             && Objects.equals(this.enableChangePassword, that.enableChangePassword)
             && Objects.equals(this.nextLoginChangePassword, that.nextLoginChangePassword)
-            && Objects.equals(this.groupIds, that.groupIds) && Objects.equals(this.aliasName, that.aliasName)
             && Objects.equals(this.passwordNeverExpired, that.passwordNeverExpired)
-            && Objects.equals(this.disabled, that.disabled);
+            && Objects.equals(this.disabled, that.disabled) && Objects.equals(this.userInfoMap, that.userInfoMap);
     }
 
     @Override
@@ -374,10 +332,9 @@ public class EditUserReq {
             accountExpires,
             enableChangePassword,
             nextLoginChangePassword,
-            groupIds,
-            aliasName,
             passwordNeverExpired,
-            disabled);
+            disabled,
+            userInfoMap);
     }
 
     @Override
@@ -391,10 +348,9 @@ public class EditUserReq {
         sb.append("    accountExpires: ").append(toIndentedString(accountExpires)).append("\n");
         sb.append("    enableChangePassword: ").append(toIndentedString(enableChangePassword)).append("\n");
         sb.append("    nextLoginChangePassword: ").append(toIndentedString(nextLoginChangePassword)).append("\n");
-        sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
-        sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
         sb.append("    passwordNeverExpired: ").append(toIndentedString(passwordNeverExpired)).append("\n");
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+        sb.append("    userInfoMap: ").append(toIndentedString(userInfoMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

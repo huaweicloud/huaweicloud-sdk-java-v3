@@ -41,7 +41,7 @@ public class ShowDesktopNetworksResponse extends SdkResponse {
     }
 
     /**
-     * 桌面网络信息列表
+     * 桌面网络信息列表。
      * @return networks
      */
     public List<DesktopNetworkResult> getNetworks() {

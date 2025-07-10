@@ -39,16 +39,6 @@ public class PolicyGroupForList {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scope_flag")
-
-    private Integer scopeFlag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tenant_id")
-
-    private String tenantId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
     private Policies policies;
@@ -145,42 +135,6 @@ public class PolicyGroupForList {
         this.description = description;
     }
 
-    public PolicyGroupForList withScopeFlag(Integer scopeFlag) {
-        this.scopeFlag = scopeFlag;
-        return this;
-    }
-
-    /**
-     * 策略来源。
-     * minimum: 0
-     * maximum: 1
-     * @return scopeFlag
-     */
-    public Integer getScopeFlag() {
-        return scopeFlag;
-    }
-
-    public void setScopeFlag(Integer scopeFlag) {
-        this.scopeFlag = scopeFlag;
-    }
-
-    public PolicyGroupForList withTenantId(String tenantId) {
-        this.tenantId = tenantId;
-        return this;
-    }
-
-    /**
-     * 租户ID。
-     * @return tenantId
-     */
-    public String getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-    }
-
     public PolicyGroupForList withPolicies(Policies policies) {
         this.policies = policies;
         return this;
@@ -252,22 +206,13 @@ public class PolicyGroupForList {
         return Objects.equals(this.policyGroupId, that.policyGroupId)
             && Objects.equals(this.policyGroupName, that.policyGroupName)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.scopeFlag, that.scopeFlag)
-            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.policies, that.policies)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.policies, that.policies)
             && Objects.equals(this.targets, that.targets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyGroupId,
-            policyGroupName,
-            priority,
-            updateTime,
-            description,
-            scopeFlag,
-            tenantId,
-            policies,
-            targets);
+        return Objects.hash(policyGroupId, policyGroupName, priority, updateTime, description, policies, targets);
     }
 
     @Override
@@ -279,8 +224,6 @@ public class PolicyGroupForList {
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    scopeFlag: ").append(toIndentedString(scopeFlag)).append("\n");
-        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
         sb.append("}");

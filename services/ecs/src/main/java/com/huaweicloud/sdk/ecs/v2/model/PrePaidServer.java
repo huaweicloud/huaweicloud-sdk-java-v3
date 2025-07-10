@@ -150,6 +150,11 @@ public class PrePaidServer {
 
     private UpdateServerMetadataOptionsRequestBody metadataOptions;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enclave_options")
+
+    private EnclaveOptions enclaveOptions;
+
     public PrePaidServer withAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
         return this;
@@ -779,6 +784,32 @@ public class PrePaidServer {
         this.metadataOptions = metadataOptions;
     }
 
+    public PrePaidServer withEnclaveOptions(EnclaveOptions enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+        return this;
+    }
+
+    public PrePaidServer withEnclaveOptions(Consumer<EnclaveOptions> enclaveOptionsSetter) {
+        if (this.enclaveOptions == null) {
+            this.enclaveOptions = new EnclaveOptions();
+            enclaveOptionsSetter.accept(this.enclaveOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enclaveOptions
+     * @return enclaveOptions
+     */
+    public EnclaveOptions getEnclaveOptions() {
+        return enclaveOptions;
+    }
+
+    public void setEnclaveOptions(EnclaveOptions enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -805,7 +836,8 @@ public class PrePaidServer {
             && Objects.equals(this.cpuOptions, that.cpuOptions)
             && Objects.equals(this.securityOptions, that.securityOptions)
             && Objects.equals(this.serialConsoleOptions, that.serialConsoleOptions)
-            && Objects.equals(this.metadataOptions, that.metadataOptions);
+            && Objects.equals(this.metadataOptions, that.metadataOptions)
+            && Objects.equals(this.enclaveOptions, that.enclaveOptions);
     }
 
     @Override
@@ -836,7 +868,8 @@ public class PrePaidServer {
             cpuOptions,
             securityOptions,
             serialConsoleOptions,
-            metadataOptions);
+            metadataOptions,
+            enclaveOptions);
     }
 
     @Override
@@ -870,6 +903,7 @@ public class PrePaidServer {
         sb.append("    securityOptions: ").append(toIndentedString(securityOptions)).append("\n");
         sb.append("    serialConsoleOptions: ").append(toIndentedString(serialConsoleOptions)).append("\n");
         sb.append("    metadataOptions: ").append(toIndentedString(metadataOptions)).append("\n");
+        sb.append("    enclaveOptions: ").append(toIndentedString(enclaveOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

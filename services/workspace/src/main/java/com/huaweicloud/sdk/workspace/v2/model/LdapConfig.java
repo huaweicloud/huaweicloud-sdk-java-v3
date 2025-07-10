@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * ldap认证配置
+ * ldap认证配置。
  */
 public class LdapConfig {
 
@@ -66,7 +66,7 @@ public class LdapConfig {
     private String objectClass;
 
     /**
-     * 安全类型
+     * 安全类型。
      */
     public static final class SecurityTypeEnum {
 
@@ -152,7 +152,7 @@ public class LdapConfig {
     }
 
     /**
-     * host
+     * host。
      * @return host
      */
     public String getHost() {
@@ -169,7 +169,7 @@ public class LdapConfig {
     }
 
     /**
-     * 端口,取值范围1-65535,默认389
+     * 端口,取值范围1-65535,默认389。
      * minimum: 1
      * maximum: 65535
      * @return port
@@ -188,7 +188,7 @@ public class LdapConfig {
     }
 
     /**
-     * base_dn
+     * base_dn。
      * @return baseDn
      */
     public String getBaseDn() {
@@ -205,7 +205,7 @@ public class LdapConfig {
     }
 
     /**
-     * 管理员dn
+     * 管理员dn。
      * @return administratorDn
      */
     public String getAdministratorDn() {
@@ -222,7 +222,7 @@ public class LdapConfig {
     }
 
     /**
-     * 管理员密码
+     * 管理员密码。
      * @return administratorPassword
      */
     public String getAdministratorPassword() {
@@ -239,7 +239,7 @@ public class LdapConfig {
     }
 
     /**
-     * 用户dn
+     * 用户dn。
      * @return userDn
      */
     public String getUserDn() {
@@ -256,7 +256,7 @@ public class LdapConfig {
     }
 
     /**
-     * 是否启用ssl
+     * 是否启用ssl。
      * @return useSsl
      */
     public Boolean getUseSsl() {
@@ -273,7 +273,7 @@ public class LdapConfig {
     }
 
     /**
-     * 证书
+     * 证书。
      * @return certContent
      */
     public String getCertContent() {
@@ -290,7 +290,7 @@ public class LdapConfig {
     }
 
     /**
-     * 用户名属性
+     * 用户名属性。
      * @return usernameAttribute
      */
     public String getUsernameAttribute() {
@@ -307,7 +307,7 @@ public class LdapConfig {
     }
 
     /**
-     * 用户ObjectClass
+     * 用户ObjectClass。
      * @return objectClass
      */
     public String getObjectClass() {
@@ -324,7 +324,7 @@ public class LdapConfig {
     }
 
     /**
-     * 安全类型
+     * 安全类型。
      * @return securityType
      */
     public SecurityTypeEnum getSecurityType() {

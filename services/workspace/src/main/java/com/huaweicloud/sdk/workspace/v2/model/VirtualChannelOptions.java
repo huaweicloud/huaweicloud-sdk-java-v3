@@ -31,7 +31,7 @@ public class VirtualChannelOptions {
     }
 
     /**
-     * 自定义虚拟通道注册名。目前仅支持ASCII码字符。
+     * 自定义虚拟通道注册名。目前仅支持ASCII码字符，长度不能超过65535个字符。
      * @return customVirtualChannelName
      */
     public String getCustomVirtualChannelName() {
@@ -48,7 +48,7 @@ public class VirtualChannelOptions {
     }
 
     /**
-     * 虚拟通道下载配置信息，需Base64加密。加密前目前仅支持ASCII码字符。
+     * 虚拟通道下载配置信息，需Base64加密。加密前目前仅支持ASCII码字符，长度不能超过65535个字符。
      * @return virtualChannelPluginDetails
      */
     public String getVirtualChannelPluginDetails() {
@@ -65,7 +65,7 @@ public class VirtualChannelOptions {
     }
 
     /**
-     * 第三方插件名称。
+     * 第三方插件名称，长度不能超过65535个字符。
      * @return thirdPartyPluginName
      */
     public String getThirdPartyPluginName() {

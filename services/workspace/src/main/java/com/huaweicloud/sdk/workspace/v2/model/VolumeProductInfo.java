@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 磁盘产品信息
+ * 磁盘产品信息。
  */
 public class VolumeProductInfo {
 
@@ -59,7 +59,7 @@ public class VolumeProductInfo {
     }
 
     /**
-     * 产品ID
+     * 产品ID。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -93,7 +93,7 @@ public class VolumeProductInfo {
     }
 
     /**
-     * 产品类型：workspace
+     * 产品类型：workspace。
      * @return volumeProductType
      */
     public String getVolumeProductType() {
@@ -110,7 +110,7 @@ public class VolumeProductInfo {
     }
 
     /**
-     * 资源类型
+     * 资源类型。
      * @return resourceType
      */
     public String getResourceType() {
@@ -127,7 +127,7 @@ public class VolumeProductInfo {
     }
 
     /**
-     * 云服务类型
+     * 云服务类型。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -193,7 +193,7 @@ public class VolumeProductInfo {
     }
 
     /**
-     * 磁盘名称
+     * 磁盘名称。
      * @return name
      */
     public List<I18nLanguage> getName() {

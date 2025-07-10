@@ -41,7 +41,7 @@ public class AppUserAccessData {
     }
 
     /**
-     * 用户名称
+     * 用户名称。
      * @return username
      */
     public String getUsername() {
@@ -58,7 +58,7 @@ public class AppUserAccessData {
     }
 
     /**
-     * 接入失败数
+     * 接入失败数。
      * @return accessFailedCount
      */
     public Integer getAccessFailedCount() {
@@ -75,7 +75,7 @@ public class AppUserAccessData {
     }
 
     /**
-     * 最近一次接入失败时间，UTC时间，格式为：2022-05-11T11:45:42Z
+     * 最近一次接入失败时间，UTC时间，格式为：2022-05-11T11:45:42Z。
      * @return lastAccessFailedTime
      */
     public String getLastAccessFailedTime() {
@@ -92,7 +92,7 @@ public class AppUserAccessData {
     }
 
     /**
-     * 错误码
+     * 错误码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -109,7 +109,7 @@ public class AppUserAccessData {
     }
 
     /**
-     * 错误信息
+     * 错误信息。
      * @return errorMsg
      */
     public String getErrorMsg() {

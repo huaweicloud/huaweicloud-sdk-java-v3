@@ -252,6 +252,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListProductsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListProductsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveJobsRequest;
@@ -923,6 +925,70 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateDialogUrlResponse::getXRequestId, CreateDialogUrlResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSmartChatJobRequest, ListSmartChatJobResponse> listSmartChatJob =
+        genForListSmartChatJob();
+
+    private static HttpRequestDef<ListSmartChatJobRequest, ListSmartChatJobResponse> genForListSmartChatJob() {
+        // basic
+        HttpRequestDef.Builder<ListSmartChatJobRequest, ListSmartChatJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSmartChatJobRequest.class, ListSmartChatJobResponse.class)
+                .withName("ListSmartChatJob")
+                .withUri("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("room_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartChatJobRequest::getRoomId, ListSmartChatJobRequest::setRoomId));
+        builder.<String>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartChatJobRequest::getState, ListSmartChatJobRequest::setState));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmartChatJobRequest::getOffset, ListSmartChatJobRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmartChatJobRequest::getLimit, ListSmartChatJobRequest::setLimit));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartChatJobRequest::getAuthorization,
+                ListSmartChatJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartChatJobRequest::getXSdkDate, ListSmartChatJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartChatJobRequest::getXProjectId, ListSmartChatJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartChatJobRequest::getXAppUserId, ListSmartChatJobRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSmartChatJobResponse::getXRequestId, ListSmartChatJobResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1622,11 +1688,6 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAssetsRequest::getAccurateQueryField, ListAssetsRequest::setAccurateQueryField));
-        builder.<String>withRequestField("render_engine",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetsRequest::getRenderEngine, ListAssetsRequest::setRenderEngine));
         builder.<List<String>>withRequestField("asset_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3394,6 +3455,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListHotWordsRequest.LanguageEnum.class),
             f -> f.withMarshaller(ListHotWordsRequest::getLanguage, ListHotWordsRequest::setLanguage));
+        builder.<ListHotWordsRequest.HotWordsTypeEnum>withRequestField("hot_words_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListHotWordsRequest.HotWordsTypeEnum.class),
+            f -> f.withMarshaller(ListHotWordsRequest::getHotWordsType, ListHotWordsRequest::setHotWordsType));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

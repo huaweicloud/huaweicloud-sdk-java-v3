@@ -48,7 +48,7 @@ public class ListDesktopPoolAuthorizedObjectsRequest {
     }
 
     /**
-     * 用于分页查询，查询的起始记录序号，从0开始
+     * 用于分页查询，查询的起始记录序号，从0开始。
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -67,7 +67,7 @@ public class ListDesktopPoolAuthorizedObjectsRequest {
     }
 
     /**
-     * 用于分页查询，返回桌面数量限制。取值范围0-100，默认值是10
+     * 用于分页查询，返回桌面数量限制。取值范围0-100，默认值是10。
      * minimum: 1
      * maximum: 100
      * @return limit

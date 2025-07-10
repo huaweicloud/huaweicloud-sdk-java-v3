@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 包周期资源对象
+ * 包周期资源对象。
  */
 public class Resource {
 
@@ -35,11 +35,6 @@ public class Resource {
     @JsonProperty(value = "create_desktops")
 
     private CreateDesktopReq createDesktops;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deh_hosts")
-
-    private Hosts dehHosts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rebuild_desktops")
@@ -86,11 +81,6 @@ public class Resource {
 
     private SubscribeUserSharerReq subscribeUserSharer;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_service_console_url")
-
-    private String cloudServiceConsoleUrl;
-
     public Resource withPeriodType(Integer periodType) {
         this.periodType = periodType;
         return this;
@@ -116,7 +106,7 @@ public class Resource {
     }
 
     /**
-     * 订购周期数
+     * 订购周期数。
      * minimum: 0
      * maximum: 2147483647
      * @return periodNum
@@ -135,7 +125,7 @@ public class Resource {
     }
 
     /**
-     * 是否续订
+     * 是否自动续订。
      * minimum: 0
      * maximum: 255
      * @return isAutoRenew
@@ -198,32 +188,6 @@ public class Resource {
 
     public void setCreateDesktops(CreateDesktopReq createDesktops) {
         this.createDesktops = createDesktops;
-    }
-
-    public Resource withDehHosts(Hosts dehHosts) {
-        this.dehHosts = dehHosts;
-        return this;
-    }
-
-    public Resource withDehHosts(Consumer<Hosts> dehHostsSetter) {
-        if (this.dehHosts == null) {
-            this.dehHosts = new Hosts();
-            dehHostsSetter.accept(this.dehHosts);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get dehHosts
-     * @return dehHosts
-     */
-    public Hosts getDehHosts() {
-        return dehHosts;
-    }
-
-    public void setDehHosts(Hosts dehHosts) {
-        this.dehHosts = dehHosts;
     }
 
     public Resource withRebuildDesktops(RebuildDesktopsReq rebuildDesktops) {
@@ -460,23 +424,6 @@ public class Resource {
         this.subscribeUserSharer = subscribeUserSharer;
     }
 
-    public Resource withCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-        return this;
-    }
-
-    /**
-     * 支付后跳转的地址
-     * @return cloudServiceConsoleUrl
-     */
-    public String getCloudServiceConsoleUrl() {
-        return cloudServiceConsoleUrl;
-    }
-
-    public void setCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -488,7 +435,7 @@ public class Resource {
         Resource that = (Resource) obj;
         return Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
             && Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.addVolumes, that.addVolumes)
-            && Objects.equals(this.createDesktops, that.createDesktops) && Objects.equals(this.dehHosts, that.dehHosts)
+            && Objects.equals(this.createDesktops, that.createDesktops)
             && Objects.equals(this.rebuildDesktops, that.rebuildDesktops)
             && Objects.equals(this.attachDesktops, that.attachDesktops)
             && Objects.equals(this.createExclusiveHosts, that.createExclusiveHosts)
@@ -497,8 +444,7 @@ public class Resource {
             && Objects.equals(this.expandDesktopPool, that.expandDesktopPool)
             && Objects.equals(this.applyDesktopsInternet, that.applyDesktopsInternet)
             && Objects.equals(this.applySubnetBandwidth, that.applySubnetBandwidth)
-            && Objects.equals(this.subscribeUserSharer, that.subscribeUserSharer)
-            && Objects.equals(this.cloudServiceConsoleUrl, that.cloudServiceConsoleUrl);
+            && Objects.equals(this.subscribeUserSharer, that.subscribeUserSharer);
     }
 
     @Override
@@ -508,7 +454,6 @@ public class Resource {
             isAutoRenew,
             addVolumes,
             createDesktops,
-            dehHosts,
             rebuildDesktops,
             attachDesktops,
             createExclusiveHosts,
@@ -517,8 +462,7 @@ public class Resource {
             expandDesktopPool,
             applyDesktopsInternet,
             applySubnetBandwidth,
-            subscribeUserSharer,
-            cloudServiceConsoleUrl);
+            subscribeUserSharer);
     }
 
     @Override
@@ -530,7 +474,6 @@ public class Resource {
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    addVolumes: ").append(toIndentedString(addVolumes)).append("\n");
         sb.append("    createDesktops: ").append(toIndentedString(createDesktops)).append("\n");
-        sb.append("    dehHosts: ").append(toIndentedString(dehHosts)).append("\n");
         sb.append("    rebuildDesktops: ").append(toIndentedString(rebuildDesktops)).append("\n");
         sb.append("    attachDesktops: ").append(toIndentedString(attachDesktops)).append("\n");
         sb.append("    createExclusiveHosts: ").append(toIndentedString(createExclusiveHosts)).append("\n");
@@ -540,7 +483,6 @@ public class Resource {
         sb.append("    applyDesktopsInternet: ").append(toIndentedString(applyDesktopsInternet)).append("\n");
         sb.append("    applySubnetBandwidth: ").append(toIndentedString(applySubnetBandwidth)).append("\n");
         sb.append("    subscribeUserSharer: ").append(toIndentedString(subscribeUserSharer)).append("\n");
-        sb.append("    cloudServiceConsoleUrl: ").append(toIndentedString(cloudServiceConsoleUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

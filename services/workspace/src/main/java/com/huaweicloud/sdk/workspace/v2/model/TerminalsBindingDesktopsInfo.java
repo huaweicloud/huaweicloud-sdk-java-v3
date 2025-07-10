@@ -36,7 +36,7 @@ public class TerminalsBindingDesktopsInfo {
     }
 
     /**
-     * MAC绑定策略ID
+     * MAC绑定策略ID。
      * @return id
      */
     public String getId() {
@@ -53,7 +53,7 @@ public class TerminalsBindingDesktopsInfo {
     }
 
     /**
-     * 终端MAC地址
+     * 终端MAC地址。
      * @return mac
      */
     public String getMac() {
@@ -70,7 +70,7 @@ public class TerminalsBindingDesktopsInfo {
     }
 
     /**
-     * 虚拟机名称
+     * 虚拟机名称。
      * @return desktopName
      */
     public String getDesktopName() {
@@ -87,7 +87,7 @@ public class TerminalsBindingDesktopsInfo {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {

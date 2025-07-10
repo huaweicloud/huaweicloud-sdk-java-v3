@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 该条告警记录的资源监控数据上报时间和监控数值
+ * 该条告警记录的资源监控数据上报时间和监控数值。
  */
 public class DataPointInfo {
 
@@ -26,7 +26,7 @@ public class DataPointInfo {
     }
 
     /**
-     * 计算出该条告警记录的资源监控数据上报的UTC时间
+     * 计算出该条告警记录的资源监控数据上报的UTC时间。
      * @return time
      */
     public String getTime() {
@@ -43,7 +43,7 @@ public class DataPointInfo {
     }
 
     /**
-     * 计算出该条告警记录的资源监控数据在该时间点的监控数值
+     * 计算出该条告警记录的资源监控数据在该时间点的监控数值。
      * @return value
      */
     public Double getValue() {

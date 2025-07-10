@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 分配情况统计
+ * 分配情况统计。
  */
 public class AttachStatistics {
 

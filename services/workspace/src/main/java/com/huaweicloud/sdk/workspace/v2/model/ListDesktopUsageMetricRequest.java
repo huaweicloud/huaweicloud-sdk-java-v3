@@ -88,7 +88,7 @@ public class ListDesktopUsageMetricRequest {
     }
 
     /**
-     * 查询截至时间(0时区)
+     * 查询截至时间(0时区)。
      * @return endTime
      */
     public String getEndTime() {
@@ -105,7 +105,7 @@ public class ListDesktopUsageMetricRequest {
     }
 
     /**
-     * 资源名称(模糊匹配)
+     * 资源名称(模糊匹配)。
      * @return resourceName
      */
     public String getResourceName() {
@@ -122,7 +122,7 @@ public class ListDesktopUsageMetricRequest {
     }
 
     /**
-     * 最小空闲天数
+     * 最小空闲天数。
      * minimum: 0
      * maximum: 180
      * @return minIdleDays
@@ -160,7 +160,7 @@ public class ListDesktopUsageMetricRequest {
     }
 
     /**
-     * 使用时长(hour)最小值
+     * 使用时长(hour)最小值。
      * minimum: 0
      * maximum: 2147483646
      * @return usageMinHours
@@ -179,7 +179,7 @@ public class ListDesktopUsageMetricRequest {
     }
 
     /**
-     * 使用时长(hour)最大值(必须大于等于usage_min_hours)
+     * 使用时长(hour)最大值(必须大于等于usage_min_hours)。
      * minimum: 0
      * maximum: 2147483646
      * @return usageMaxHours
@@ -232,7 +232,7 @@ public class ListDesktopUsageMetricRequest {
     }
 
     /**
-     * 查询的偏移量,默认值0
+     * 查询的偏移量,默认值0。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -251,7 +251,7 @@ public class ListDesktopUsageMetricRequest {
     }
 
     /**
-     * limit范围[1-100],默认值0
+     * limit范围[1-100],默认值0。
      * minimum: 1
      * maximum: 100
      * @return limit

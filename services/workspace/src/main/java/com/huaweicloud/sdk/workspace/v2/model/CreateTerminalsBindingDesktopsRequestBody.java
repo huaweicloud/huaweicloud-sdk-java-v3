@@ -41,7 +41,7 @@ public class CreateTerminalsBindingDesktopsRequestBody {
     }
 
     /**
-     * 需要新增的MAC绑定VM策略信息列表
+     * 需要新增的MAC绑定VM策略信息列表。
      * @return bindList
      */
     public List<CreateTerminalsBindingDesktopsInfo> getBindList() {

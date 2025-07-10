@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 短信辅助认证配置
+ * 短信辅助认证配置。
  */
 public class RadiusGatewayConfig {
 
@@ -46,7 +46,7 @@ public class RadiusGatewayConfig {
     }
 
     /**
-     * 是否启用
+     * 是否启用。
      * @return enable
      */
     public Boolean getEnable() {
@@ -63,7 +63,7 @@ public class RadiusGatewayConfig {
     }
 
     /**
-     * 用户名
+     * 用户名。
      * @return appId
      */
     public String getAppId() {
@@ -80,7 +80,7 @@ public class RadiusGatewayConfig {
     }
 
     /**
-     * 密码
+     * 密码。
      * @return password
      */
     public String getPassword() {
@@ -97,7 +97,7 @@ public class RadiusGatewayConfig {
     }
 
     /**
-     * 获取token地址
+     * 获取token地址。
      * @return tokenUrl
      */
     public String getTokenUrl() {
@@ -114,7 +114,7 @@ public class RadiusGatewayConfig {
     }
 
     /**
-     * 获取验证码地址
+     * 获取验证码地址。
      * @return verificationCipherUrl
      */
     public String getVerificationCipherUrl() {
@@ -131,7 +131,7 @@ public class RadiusGatewayConfig {
     }
 
     /**
-     * 证书内容（PEM）
+     * 证书内容（PEM）。
      * @return certContent
      */
     public String getCertContent() {

@@ -26,7 +26,7 @@ public class AdOuInfo {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return ouName
      */
     public String getOuName() {
@@ -43,7 +43,7 @@ public class AdOuInfo {
     }
 
     /**
-     * 域名地址
+     * 域名地址。
      * @return ouDn
      */
     public String getOuDn() {

@@ -29,21 +29,6 @@ public class AttachInstancesReq {
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "os_type")
-
-    private String osType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_name_policy_id")
 
     private String desktopNamePolicyId;
@@ -87,7 +72,7 @@ public class AttachInstancesReq {
     }
 
     /**
-     * 镜像类型，涉及变更镜像时需传（可选）
+     * 镜像类型，涉及变更镜像时需传（可选）。
      * @return imageType
      */
     public String getImageType() {
@@ -104,7 +89,7 @@ public class AttachInstancesReq {
     }
 
     /**
-     * 模板ID，涉及变更镜像时需传（可选）
+     * 模板ID，涉及变更镜像时需传（可选）。
      * @return imageId
      */
     public String getImageId() {
@@ -113,57 +98,6 @@ public class AttachInstancesReq {
 
     public void setImageId(String imageId) {
         this.imageId = imageId;
-    }
-
-    public AttachInstancesReq withOsType(String osType) {
-        this.osType = osType;
-        return this;
-    }
-
-    /**
-     * os类型，涉及变更镜像时需传（可选，该参数已废弃）。
-     * @return osType
-     */
-    public String getOsType() {
-        return osType;
-    }
-
-    public void setOsType(String osType) {
-        this.osType = osType;
-    }
-
-    public AttachInstancesReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 包周期订购ID，CBC订购回调时使用。（可选）
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public AttachInstancesReq withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 企业项目ID，默认\"0\",无用参数,废弃
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public AttachInstancesReq withDesktopNamePolicyId(String desktopNamePolicyId) {
@@ -193,15 +127,13 @@ public class AttachInstancesReq {
         }
         AttachInstancesReq that = (AttachInstancesReq) obj;
         return Objects.equals(this.desktops, that.desktops) && Objects.equals(this.imageType, that.imageType)
-            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.osType, that.osType)
-            && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.imageId, that.imageId)
             && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktops, imageType, imageId, osType, orderId, enterpriseProjectId, desktopNamePolicyId);
+        return Objects.hash(desktops, imageType, imageId, desktopNamePolicyId);
     }
 
     @Override
@@ -211,9 +143,6 @@ public class AttachInstancesReq {
         sb.append("    desktops: ").append(toIndentedString(desktops)).append("\n");
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
-        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
         sb.append("}");
         return sb.toString();

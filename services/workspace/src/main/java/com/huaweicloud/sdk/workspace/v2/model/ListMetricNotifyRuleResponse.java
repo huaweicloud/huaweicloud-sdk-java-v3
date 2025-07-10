@@ -30,7 +30,7 @@ public class ListMetricNotifyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class ListMetricNotifyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则列表
+     * 规则列表。
      * @return items
      */
     public List<MetricNotifyRule> getItems() {

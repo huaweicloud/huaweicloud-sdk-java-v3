@@ -46,7 +46,7 @@ public class ListOuDetailsResponse extends SdkResponse {
     }
 
     /**
-     * OU对象
+     * OU对象。
      * @return ous
      */
     public List<OuNameInfo> getOus() {
@@ -63,7 +63,7 @@ public class ListOuDetailsResponse extends SdkResponse {
     }
 
     /**
-     * OU总记录数
+     * OU总记录数。
      * @return totalCount
      */
     public Integer getTotalCount() {

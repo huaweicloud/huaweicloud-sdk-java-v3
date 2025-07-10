@@ -98,6 +98,16 @@ public class UpdateAccessPolicyReq {
 
     private List<IpInfo> ipWhiteList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_enable")
+
+    private Boolean isEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_block_all")
+
+    private Boolean isBlockAll;
+
     public UpdateAccessPolicyReq withOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
         return this;
@@ -148,6 +158,40 @@ public class UpdateAccessPolicyReq {
         this.ipWhiteList = ipWhiteList;
     }
 
+    public UpdateAccessPolicyReq withIsEnable(Boolean isEnable) {
+        this.isEnable = isEnable;
+        return this;
+    }
+
+    /**
+     * IP白名单是否生效。
+     * @return isEnable
+     */
+    public Boolean getIsEnable() {
+        return isEnable;
+    }
+
+    public void setIsEnable(Boolean isEnable) {
+        this.isEnable = isEnable;
+    }
+
+    public UpdateAccessPolicyReq withIsBlockAll(Boolean isBlockAll) {
+        this.isBlockAll = isBlockAll;
+        return this;
+    }
+
+    /**
+     * IP白名单是否禁止所有Ip接入。
+     * @return isBlockAll
+     */
+    public Boolean getIsBlockAll() {
+        return isBlockAll;
+    }
+
+    public void setIsBlockAll(Boolean isBlockAll) {
+        this.isBlockAll = isBlockAll;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -158,12 +202,13 @@ public class UpdateAccessPolicyReq {
         }
         UpdateAccessPolicyReq that = (UpdateAccessPolicyReq) obj;
         return Objects.equals(this.operationType, that.operationType)
-            && Objects.equals(this.ipWhiteList, that.ipWhiteList);
+            && Objects.equals(this.ipWhiteList, that.ipWhiteList) && Objects.equals(this.isEnable, that.isEnable)
+            && Objects.equals(this.isBlockAll, that.isBlockAll);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operationType, ipWhiteList);
+        return Objects.hash(operationType, ipWhiteList, isEnable, isBlockAll);
     }
 
     @Override
@@ -172,6 +217,8 @@ public class UpdateAccessPolicyReq {
         sb.append("class UpdateAccessPolicyReq {\n");
         sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
         sb.append("    ipWhiteList: ").append(toIndentedString(ipWhiteList)).append("\n");
+        sb.append("    isEnable: ").append(toIndentedString(isEnable)).append("\n");
+        sb.append("    isBlockAll: ").append(toIndentedString(isBlockAll)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -63,7 +63,7 @@ public class OuNameInfo {
     }
 
     /**
-     * 域id
+     * 域id。
      * @return domainId
      */
     public String getDomainId() {
@@ -80,7 +80,7 @@ public class OuNameInfo {
     }
 
     /**
-     * 域名称
+     * 域名称。
      * @return domain
      */
     public String getDomain() {
@@ -97,7 +97,7 @@ public class OuNameInfo {
     }
 
     /**
-     * OU名称
+     * OU名称。
      * @return ouName
      */
     public String getOuName() {
@@ -114,7 +114,7 @@ public class OuNameInfo {
     }
 
     /**
-     * ouDn
+     * ouDn。
      * @return ouDn
      */
     public String getOuDn() {
@@ -131,7 +131,7 @@ public class OuNameInfo {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {

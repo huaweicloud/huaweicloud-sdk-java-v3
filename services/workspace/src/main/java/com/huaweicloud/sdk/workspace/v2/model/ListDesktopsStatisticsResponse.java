@@ -160,7 +160,7 @@ public class ListDesktopsStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 每个桌面池的情况统计，当desktop_type指定为POOL时返回
+     * 每个桌面池的情况统计，当desktop_type指定为POOL时返回。
      * @return desktopPoolStatistics
      */
     public List<DesktopPoolStatistics> getDesktopPoolStatistics() {

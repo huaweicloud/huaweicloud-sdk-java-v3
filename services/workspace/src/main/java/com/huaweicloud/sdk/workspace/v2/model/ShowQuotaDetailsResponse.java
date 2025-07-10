@@ -46,7 +46,7 @@ public class ShowQuotaDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 配额资源列表
+     * 配额资源列表。
      * @return resources
      */
     public List<ResourceNoLimit> getResources() {
@@ -63,7 +63,7 @@ public class ShowQuotaDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 站点ID
+     * 站点ID。
      * @return siteId
      */
     public String getSiteId() {

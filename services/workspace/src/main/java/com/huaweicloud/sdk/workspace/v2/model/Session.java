@@ -26,6 +26,16 @@ public class Session {
 
     private Boolean disconnectOnLockFlag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_lock_start_time")
+
+    private String autoLockStartTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_lock_end_time")
+
+    private String autoLockEndTime;
+
     public Session withVdi(Vdi vdi) {
         this.vdi = vdi;
         return this;
@@ -58,7 +68,7 @@ public class Session {
     }
 
     /**
-     * 是否开启自助维护台抢占登陆。取值为：false：表示关闭。true：表示开启。
+     * 是否开启自助维护台抢占登录。取值为：false：表示关闭。true：表示开启。
      * @return selfHelpConsole
      */
     public Boolean getSelfHelpConsole() {
@@ -75,7 +85,7 @@ public class Session {
     }
 
     /**
-     * 是否锁屏后断开
+     * 是否锁屏后断开。
      * @return disconnectOnLockFlag
      */
     public Boolean getDisconnectOnLockFlag() {
@@ -84,6 +94,40 @@ public class Session {
 
     public void setDisconnectOnLockFlag(Boolean disconnectOnLockFlag) {
         this.disconnectOnLockFlag = disconnectOnLockFlag;
+    }
+
+    public Session withAutoLockStartTime(String autoLockStartTime) {
+        this.autoLockStartTime = autoLockStartTime;
+        return this;
+    }
+
+    /**
+     * 锁定生效开始时间，格式 hh:mm:ss
+     * @return autoLockStartTime
+     */
+    public String getAutoLockStartTime() {
+        return autoLockStartTime;
+    }
+
+    public void setAutoLockStartTime(String autoLockStartTime) {
+        this.autoLockStartTime = autoLockStartTime;
+    }
+
+    public Session withAutoLockEndTime(String autoLockEndTime) {
+        this.autoLockEndTime = autoLockEndTime;
+        return this;
+    }
+
+    /**
+     * 锁定生效开始时间，格式 hh:mm:ss
+     * @return autoLockEndTime
+     */
+    public String getAutoLockEndTime() {
+        return autoLockEndTime;
+    }
+
+    public void setAutoLockEndTime(String autoLockEndTime) {
+        this.autoLockEndTime = autoLockEndTime;
     }
 
     @Override
@@ -96,12 +140,14 @@ public class Session {
         }
         Session that = (Session) obj;
         return Objects.equals(this.vdi, that.vdi) && Objects.equals(this.selfHelpConsole, that.selfHelpConsole)
-            && Objects.equals(this.disconnectOnLockFlag, that.disconnectOnLockFlag);
+            && Objects.equals(this.disconnectOnLockFlag, that.disconnectOnLockFlag)
+            && Objects.equals(this.autoLockStartTime, that.autoLockStartTime)
+            && Objects.equals(this.autoLockEndTime, that.autoLockEndTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vdi, selfHelpConsole, disconnectOnLockFlag);
+        return Objects.hash(vdi, selfHelpConsole, disconnectOnLockFlag, autoLockStartTime, autoLockEndTime);
     }
 
     @Override
@@ -111,6 +157,8 @@ public class Session {
         sb.append("    vdi: ").append(toIndentedString(vdi)).append("\n");
         sb.append("    selfHelpConsole: ").append(toIndentedString(selfHelpConsole)).append("\n");
         sb.append("    disconnectOnLockFlag: ").append(toIndentedString(disconnectOnLockFlag)).append("\n");
+        sb.append("    autoLockStartTime: ").append(toIndentedString(autoLockStartTime)).append("\n");
+        sb.append("    autoLockEndTime: ").append(toIndentedString(autoLockEndTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

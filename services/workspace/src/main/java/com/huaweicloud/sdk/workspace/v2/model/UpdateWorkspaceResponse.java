@@ -32,7 +32,7 @@ public class UpdateWorkspaceResponse extends SdkResponse {
     }
 
     /**
-     * 修改云办公服务属性的任务ID
+     * 修改云办公服务属性的任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -49,7 +49,7 @@ public class UpdateWorkspaceResponse extends SdkResponse {
     }
 
     /**
-     * 企业ID
+     * 企业ID。
      * @return enterpriseId
      */
     public String getEnterpriseId() {
@@ -66,7 +66,7 @@ public class UpdateWorkspaceResponse extends SdkResponse {
     }
 
     /**
-     * 专线vnc访问的ip
+     * 专线vnc访问的ip。
      * @return dcVncIp
      */
     public String getDcVncIp() {

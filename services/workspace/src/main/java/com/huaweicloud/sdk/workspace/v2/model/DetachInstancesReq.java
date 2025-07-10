@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 解绑用户请求
+ * 解绑用户请求。
  */
 public class DetachInstancesReq {
 
@@ -45,7 +45,7 @@ public class DetachInstancesReq {
     }
 
     /**
-     * 桌面id,不能为空
+     * 桌面id列表，不能为空。
      * @return desktopIds
      */
     public List<String> getDesktopIds() {

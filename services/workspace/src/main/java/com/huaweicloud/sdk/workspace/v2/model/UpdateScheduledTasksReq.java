@@ -482,7 +482,7 @@ public class UpdateScheduledTasksReq {
     }
 
     /**
-     * 是否强制执行
+     * 是否强制执行。
      * @return forceExecute
      */
     public Boolean getForceExecute() {
@@ -516,7 +516,7 @@ public class UpdateScheduledTasksReq {
     }
 
     /**
-     * 是否启用
+     * 是否启用。
      * @return enable
      */
     public Boolean getEnable() {

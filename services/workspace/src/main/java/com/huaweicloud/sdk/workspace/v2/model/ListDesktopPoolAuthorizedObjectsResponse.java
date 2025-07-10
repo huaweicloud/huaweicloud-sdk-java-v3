@@ -46,7 +46,7 @@ public class ListDesktopPoolAuthorizedObjectsResponse extends SdkResponse {
     }
 
     /**
-     * 授权对象
+     * 授权对象。
      * @return objects
      */
     public List<AuthorizedObjects> getObjects() {
@@ -63,7 +63,7 @@ public class ListDesktopPoolAuthorizedObjectsResponse extends SdkResponse {
     }
 
     /**
-     * 满足条件的用户、用户组总数
+     * 满足条件的用户、用户组总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

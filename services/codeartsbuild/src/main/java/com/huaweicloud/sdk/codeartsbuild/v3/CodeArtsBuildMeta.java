@@ -1,5 +1,8 @@
 package com.huaweicloud.sdk.codeartsbuild.v3;
 
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionRequestBody;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobCountIsTopLimitRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobCountIsTopLimitResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobNameIsExistsRequest;
@@ -160,6 +163,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobNoticeConfigInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobNoticeConfigInfoResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobPipelineInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobPipelineInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobRolePermissionRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobRolePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobStatusRequest;
@@ -207,9 +212,14 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopTheJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopTheJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystorePermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystorePermissionRequestBody;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystorePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreResponse;
@@ -1465,6 +1475,41 @@ public class CodeArtsBuildMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("page_index",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobRequest::getPageIndex, ListJobRequest::setPageIndex));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobRequest::getPageSize, ListJobRequest::setPageSize));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobRequest::getSearch, ListJobRequest::setSearch));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobRequest::getSortField, ListJobRequest::setSortField));
+        builder.<String>withRequestField("sort_order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobRequest::getSortOrder, ListJobRequest::setSortOrder));
+        builder.<String>withRequestField("creator_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobRequest::getCreatorId, ListJobRequest::setCreatorId));
+        builder.<String>withRequestField("build_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobRequest::getBuildStatus, ListJobRequest::setBuildStatus));
 
         // response
 
@@ -1872,6 +1917,40 @@ public class CodeArtsBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobPipelineInfoRequest, ShowJobPipelineInfoResponse> showJobPipelineInfo =
+        genForShowJobPipelineInfo();
+
+    private static HttpRequestDef<ShowJobPipelineInfoRequest, ShowJobPipelineInfoResponse> genForShowJobPipelineInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowJobPipelineInfoRequest, ShowJobPipelineInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobPipelineInfoRequest.class, ShowJobPipelineInfoResponse.class)
+                .withName("ShowJobPipelineInfo")
+                .withUri("/v1/job/{job_id}/pipeline-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobPipelineInfoRequest::getJobId, ShowJobPipelineInfoRequest::setJobId));
+        builder.<String>withRequestField("all",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobPipelineInfoRequest::getAll, ShowJobPipelineInfoRequest::setAll));
+        builder.<String>withRequestField("check_param_used",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobPipelineInfoRequest::getCheckParamUsed,
+                ShowJobPipelineInfoRequest::setCheckParamUsed));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobRolePermissionRequest, ShowJobRolePermissionResponse> showJobRolePermission =
         genForShowJobRolePermission();
 
@@ -1995,6 +2074,33 @@ public class CodeArtsBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StopTheJobRequest, StopTheJobResponse> stopTheJob = genForStopTheJob();
+
+    private static HttpRequestDef<StopTheJobRequest, StopTheJobResponse> genForStopTheJob() {
+        // basic
+        HttpRequestDef.Builder<StopTheJobRequest, StopTheJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopTheJobRequest.class, StopTheJobResponse.class)
+                .withName("StopTheJob")
+                .withUri("/v1/job/{job_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopTheJobRequest::getJobId, StopTheJobRequest::setJobId));
+        builder.<Integer>withRequestField("build_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(StopTheJobRequest::getBuildNo, StopTheJobRequest::setBuildNo));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateNewJobRequest, UpdateNewJobResponse> updateNewJob = genForUpdateNewJob();
 
     private static HttpRequestDef<UpdateNewJobRequest, UpdateNewJobResponse> genForUpdateNewJob() {
@@ -2011,6 +2117,29 @@ public class CodeArtsBuildMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBuildJobRequestBody.class),
             f -> f.withMarshaller(UpdateNewJobRequest::getBody, UpdateNewJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddKeystorePermissionRequest, AddKeystorePermissionResponse> addKeystorePermission =
+        genForAddKeystorePermission();
+
+    private static HttpRequestDef<AddKeystorePermissionRequest, AddKeystorePermissionResponse> genForAddKeystorePermission() {
+        // basic
+        HttpRequestDef.Builder<AddKeystorePermissionRequest, AddKeystorePermissionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddKeystorePermissionRequest.class, AddKeystorePermissionResponse.class)
+            .withName("AddKeystorePermission")
+            .withUri("/v2/keystore/permission/add")
+            .withContentType("application/json");
+
+        // requests
+        builder.<AddKeystorePermissionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddKeystorePermissionRequestBody.class),
+            f -> f.withMarshaller(AddKeystorePermissionRequest::getBody, AddKeystorePermissionRequest::setBody));
 
         // response
 
@@ -2208,6 +2337,30 @@ public class CodeArtsBuildMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKeystoreRequestBody.class),
             f -> f.withMarshaller(UpdateKeystoreRequest::getBody, UpdateKeystoreRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKeystorePermissionRequest, UpdateKeystorePermissionResponse> updateKeystorePermission =
+        genForUpdateKeystorePermission();
+
+    private static HttpRequestDef<UpdateKeystorePermissionRequest, UpdateKeystorePermissionResponse> genForUpdateKeystorePermission() {
+        // basic
+        HttpRequestDef.Builder<UpdateKeystorePermissionRequest, UpdateKeystorePermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, UpdateKeystorePermissionRequest.class, UpdateKeystorePermissionResponse.class)
+                .withName("UpdateKeystorePermission")
+                .withUri("/v2/keystore/permission/edit")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateKeystorePermissionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateKeystorePermissionRequestBody.class),
+            f -> f.withMarshaller(UpdateKeystorePermissionRequest::getBody, UpdateKeystorePermissionRequest::setBody));
 
         // response
 

@@ -51,7 +51,7 @@ public class ListAdOuUsersResponse extends SdkResponse {
     }
 
     /**
-     * OU对象
+     * OU对象。
      * @return userInfos
      */
     public List<AdOuUserInfo> getUserInfos() {
@@ -68,7 +68,7 @@ public class ListAdOuUsersResponse extends SdkResponse {
     }
 
     /**
-     * 用户数
+     * 用户数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -85,7 +85,7 @@ public class ListAdOuUsersResponse extends SdkResponse {
     }
 
     /**
-     * 可以创建的用户数量
+     * 可以创建的用户数量。
      * @return enableCreateCount
      */
     public Integer getEnableCreateCount() {

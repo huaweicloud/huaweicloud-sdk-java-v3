@@ -27,7 +27,7 @@ public class UpdateMetricNotifyRuleRequest {
     }
 
     /**
-     * 通知规则ID
+     * 通知规则ID。
      * @return ruleId
      */
     public String getRuleId() {

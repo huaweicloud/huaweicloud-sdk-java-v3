@@ -41,7 +41,7 @@ public class ListMetricsTrendResponse extends SdkResponse {
     }
 
     /**
-     * 查询指标趋势响应
+     * 查询指标趋势响应。
      * @return body
      */
     public List<MetricsWithTime> getBody() {

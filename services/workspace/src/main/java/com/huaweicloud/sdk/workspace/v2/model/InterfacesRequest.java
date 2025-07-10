@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 接口请求
+ * 接口请求。
  */
 public class InterfacesRequest {
 
@@ -49,7 +49,7 @@ public class InterfacesRequest {
     }
 
     /**
-     * 方法
+     * 方法。
      * @return method
      */
     public String getMethod() {
@@ -82,7 +82,7 @@ public class InterfacesRequest {
     }
 
     /**
-     * 请求参数
+     * 请求参数。
      * @return params
      */
     public Map<String, String> getParams() {
@@ -115,7 +115,7 @@ public class InterfacesRequest {
     }
 
     /**
-     * 请求头信息
+     * 请求头信息。
      * @return headers
      */
     public Map<String, String> getHeaders() {
@@ -132,7 +132,7 @@ public class InterfacesRequest {
     }
 
     /**
-     * 请求体
+     * 请求体。
      * @return body
      */
     public String getBody() {
@@ -149,7 +149,7 @@ public class InterfacesRequest {
     }
 
     /**
-     * URL
+     * URL。
      * @return url
      */
     public String getUrl() {
@@ -182,7 +182,7 @@ public class InterfacesRequest {
     }
 
     /**
-     * 配置
+     * 配置。
      * @return configs
      */
     public Map<String, Object> getConfigs() {

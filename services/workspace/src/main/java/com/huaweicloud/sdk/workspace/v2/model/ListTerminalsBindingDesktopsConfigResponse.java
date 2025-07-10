@@ -17,7 +17,7 @@ import java.util.Objects;
 public class ListTerminalsBindingDesktopsConfigResponse extends SdkResponse {
 
     /**
-     * 绑定开关，只取值ON或OFF
+     * 绑定开关，只取值ON或OFF。
      */
     public static final class TcBindSwitchEnum {
 
@@ -92,7 +92,7 @@ public class ListTerminalsBindingDesktopsConfigResponse extends SdkResponse {
     private TcBindSwitchEnum tcBindSwitch;
 
     /**
-     * 自动绑定开关，只取值ON或OFF
+     * 自动绑定开关，只取值ON或OFF。
      */
     public static final class TcAutoBindSwitchEnum {
 
@@ -177,7 +177,7 @@ public class ListTerminalsBindingDesktopsConfigResponse extends SdkResponse {
     }
 
     /**
-     * 绑定开关，只取值ON或OFF
+     * 绑定开关，只取值ON或OFF。
      * @return tcBindSwitch
      */
     public TcBindSwitchEnum getTcBindSwitch() {
@@ -194,7 +194,7 @@ public class ListTerminalsBindingDesktopsConfigResponse extends SdkResponse {
     }
 
     /**
-     * 自动绑定开关，只取值ON或OFF
+     * 自动绑定开关，只取值ON或OFF。
      * @return tcAutoBindSwitch
      */
     public TcAutoBindSwitchEnum getTcAutoBindSwitch() {
@@ -211,7 +211,7 @@ public class ListTerminalsBindingDesktopsConfigResponse extends SdkResponse {
     }
 
     /**
-     * 最大绑定数量，默认值为1
+     * 最大绑定数量，默认值为1。
      * minimum: 1
      * maximum: 10
      * @return tcAutoBindMax

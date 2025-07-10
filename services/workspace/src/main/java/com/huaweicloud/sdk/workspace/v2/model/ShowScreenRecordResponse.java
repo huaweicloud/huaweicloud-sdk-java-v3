@@ -52,14 +52,39 @@ public class ShowScreenRecordResponse extends SdkResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_id")
+
+    private String policyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_bucket")
+
+    private String obsBucket;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_directory")
+
+    private String fileDirectory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_filename")
 
     private String videoFilename;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "video_file_sha256")
+
+    private String videoFileSha256;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_filename")
 
     private String eventFilename;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_file_sha256")
+
+    private String eventFileSha256;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -173,8 +198,6 @@ public class ShowScreenRecordResponse extends SdkResponse {
 
     /**
      * 文件大小（Byte）。
-     * minimum: 0
-     * maximum: 2147483647
      * @return size
      */
     public Integer getSize() {
@@ -191,7 +214,7 @@ public class ShowScreenRecordResponse extends SdkResponse {
     }
 
     /**
-     * 录屏类型。 - FULL：全程录屏。 - INTERVAL：间隔录屏。 - USER_OPERATION：用户操作录屏。 - SESSION：监听会话生命周期录屏。
+     * 录屏类型。 - FULL：全程录屏。 - INTERVAL：间隔录屏。 - OPERATION：用户操作录屏。 - SESSION：监听会话生命周期录屏。
      * @return type
      */
     public String getType() {
@@ -219,6 +242,57 @@ public class ShowScreenRecordResponse extends SdkResponse {
         this.status = status;
     }
 
+    public ShowScreenRecordResponse withPolicyId(String policyId) {
+        this.policyId = policyId;
+        return this;
+    }
+
+    /**
+     * 策略ID。
+     * @return policyId
+     */
+    public String getPolicyId() {
+        return policyId;
+    }
+
+    public void setPolicyId(String policyId) {
+        this.policyId = policyId;
+    }
+
+    public ShowScreenRecordResponse withObsBucket(String obsBucket) {
+        this.obsBucket = obsBucket;
+        return this;
+    }
+
+    /**
+     * OBS桶名称。
+     * @return obsBucket
+     */
+    public String getObsBucket() {
+        return obsBucket;
+    }
+
+    public void setObsBucket(String obsBucket) {
+        this.obsBucket = obsBucket;
+    }
+
+    public ShowScreenRecordResponse withFileDirectory(String fileDirectory) {
+        this.fileDirectory = fileDirectory;
+        return this;
+    }
+
+    /**
+     * 文件目录。
+     * @return fileDirectory
+     */
+    public String getFileDirectory() {
+        return fileDirectory;
+    }
+
+    public void setFileDirectory(String fileDirectory) {
+        this.fileDirectory = fileDirectory;
+    }
+
     public ShowScreenRecordResponse withVideoFilename(String videoFilename) {
         this.videoFilename = videoFilename;
         return this;
@@ -236,6 +310,23 @@ public class ShowScreenRecordResponse extends SdkResponse {
         this.videoFilename = videoFilename;
     }
 
+    public ShowScreenRecordResponse withVideoFileSha256(String videoFileSha256) {
+        this.videoFileSha256 = videoFileSha256;
+        return this;
+    }
+
+    /**
+     * 录屏文件sha256。
+     * @return videoFileSha256
+     */
+    public String getVideoFileSha256() {
+        return videoFileSha256;
+    }
+
+    public void setVideoFileSha256(String videoFileSha256) {
+        this.videoFileSha256 = videoFileSha256;
+    }
+
     public ShowScreenRecordResponse withEventFilename(String eventFilename) {
         this.eventFilename = eventFilename;
         return this;
@@ -251,6 +342,23 @@ public class ShowScreenRecordResponse extends SdkResponse {
 
     public void setEventFilename(String eventFilename) {
         this.eventFilename = eventFilename;
+    }
+
+    public ShowScreenRecordResponse withEventFileSha256(String eventFileSha256) {
+        this.eventFileSha256 = eventFileSha256;
+        return this;
+    }
+
+    /**
+     * 事件文件sha256。
+     * @return eventFileSha256
+     */
+    public String getEventFileSha256() {
+        return eventFileSha256;
+    }
+
+    public void setEventFileSha256(String eventFileSha256) {
+        this.eventFileSha256 = eventFileSha256;
     }
 
     public ShowScreenRecordResponse withStartTime(String startTime) {
@@ -311,8 +419,6 @@ public class ShowScreenRecordResponse extends SdkResponse {
 
     /**
      * 视频时长（秒）。
-     * minimum: 0
-     * maximum: 2147483647
      * @return duration
      */
     public Integer getDuration() {
@@ -336,10 +442,14 @@ public class ShowScreenRecordResponse extends SdkResponse {
             && Objects.equals(this.desktopName, that.desktopName)
             && Objects.equals(this.desktopPoolId, that.desktopPoolId) && Objects.equals(this.username, that.username)
             && Objects.equals(this.size, that.size) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.videoFilename, that.videoFilename)
-            && Objects.equals(this.eventFilename, that.eventFilename) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.duration, that.duration);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.policyId, that.policyId)
+            && Objects.equals(this.obsBucket, that.obsBucket) && Objects.equals(this.fileDirectory, that.fileDirectory)
+            && Objects.equals(this.videoFilename, that.videoFilename)
+            && Objects.equals(this.videoFileSha256, that.videoFileSha256)
+            && Objects.equals(this.eventFilename, that.eventFilename)
+            && Objects.equals(this.eventFileSha256, that.eventFileSha256)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.duration, that.duration);
     }
 
     @Override
@@ -352,8 +462,13 @@ public class ShowScreenRecordResponse extends SdkResponse {
             size,
             type,
             status,
+            policyId,
+            obsBucket,
+            fileDirectory,
             videoFilename,
+            videoFileSha256,
             eventFilename,
+            eventFileSha256,
             startTime,
             endTime,
             updateTime,
@@ -372,8 +487,13 @@ public class ShowScreenRecordResponse extends SdkResponse {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
+        sb.append("    obsBucket: ").append(toIndentedString(obsBucket)).append("\n");
+        sb.append("    fileDirectory: ").append(toIndentedString(fileDirectory)).append("\n");
         sb.append("    videoFilename: ").append(toIndentedString(videoFilename)).append("\n");
+        sb.append("    videoFileSha256: ").append(toIndentedString(videoFileSha256)).append("\n");
         sb.append("    eventFilename: ").append(toIndentedString(eventFilename)).append("\n");
+        sb.append("    eventFileSha256: ").append(toIndentedString(eventFileSha256)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

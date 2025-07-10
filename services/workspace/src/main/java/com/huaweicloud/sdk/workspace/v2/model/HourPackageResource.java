@@ -107,11 +107,6 @@ public class HourPackageResource {
     private UsedUpPolicyEnum usedUpPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_service_console_url")
-
-    private String cloudServiceConsoleUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_desktops")
 
     private CreateDesktopReq createDesktops;
@@ -122,7 +117,7 @@ public class HourPackageResource {
     }
 
     /**
-     * 订购周期类型：2：月；3：年;必填
+     * 订购周期类型：2：月；3：年;必填。
      * minimum: 0
      * maximum: 255
      * @return periodType
@@ -141,7 +136,7 @@ public class HourPackageResource {
     }
 
     /**
-     * 订购周期数
+     * 订购周期数。
      * minimum: 0
      * maximum: 2147483647
      * @return periodNum
@@ -160,7 +155,7 @@ public class HourPackageResource {
     }
 
     /**
-     * 是否自动续订
+     * 是否自动续订。
      * minimum: 0
      * maximum: 255
      * @return isAutoRenew
@@ -188,23 +183,6 @@ public class HourPackageResource {
 
     public void setUsedUpPolicy(UsedUpPolicyEnum usedUpPolicy) {
         this.usedUpPolicy = usedUpPolicy;
-    }
-
-    public HourPackageResource withCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-        return this;
-    }
-
-    /**
-     * 支付后跳转url
-     * @return cloudServiceConsoleUrl
-     */
-    public String getCloudServiceConsoleUrl() {
-        return cloudServiceConsoleUrl;
-    }
-
-    public void setCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
     }
 
     public HourPackageResource withCreateDesktops(CreateDesktopReq createDesktops) {
@@ -245,13 +223,12 @@ public class HourPackageResource {
         return Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
             && Objects.equals(this.isAutoRenew, that.isAutoRenew)
             && Objects.equals(this.usedUpPolicy, that.usedUpPolicy)
-            && Objects.equals(this.cloudServiceConsoleUrl, that.cloudServiceConsoleUrl)
             && Objects.equals(this.createDesktops, that.createDesktops);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(periodType, periodNum, isAutoRenew, usedUpPolicy, cloudServiceConsoleUrl, createDesktops);
+        return Objects.hash(periodType, periodNum, isAutoRenew, usedUpPolicy, createDesktops);
     }
 
     @Override
@@ -262,7 +239,6 @@ public class HourPackageResource {
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    usedUpPolicy: ").append(toIndentedString(usedUpPolicy)).append("\n");
-        sb.append("    cloudServiceConsoleUrl: ").append(toIndentedString(cloudServiceConsoleUrl)).append("\n");
         sb.append("    createDesktops: ").append(toIndentedString(createDesktops)).append("\n");
         sb.append("}");
         return sb.toString();

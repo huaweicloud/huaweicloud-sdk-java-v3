@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -38,10 +43,98 @@ public class ListNatGatewaysRequest {
 
     private String name;
 
+    /**
+     * Gets or Sets status
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
+        public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
+
+        /**
+         * Enum INACTIVE for value: "INACTIVE"
+         */
+        public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
+        /**
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
+         */
+        public static final StatusEnum PENDING_CREATE = new StatusEnum("PENDING_CREATE");
+
+        /**
+         * Enum PENDING_UPDATE for value: "PENDING_UPDATE"
+         */
+        public static final StatusEnum PENDING_UPDATE = new StatusEnum("PENDING_UPDATE");
+
+        /**
+         * Enum PENDING_DELETE for value: "PENDING_DELETE"
+         */
+        public static final StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("INACTIVE", INACTIVE);
+            map.put("PENDING_CREATE", PENDING_CREATE);
+            map.put("PENDING_UPDATE", PENDING_UPDATE);
+            map.put("PENDING_DELETE", PENDING_DELETE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private List<String> status = null;
+    private List<StatusEnum> status = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
@@ -132,7 +225,7 @@ public class ListNatGatewaysRequest {
     }
 
     /**
-     * 公网NAT网关实例的名字，长度限制为64。公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文
+     * 公网NAT网关实例的名字，长度限制为64。公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文。
      * @return name
      */
     public String getName() {
@@ -143,12 +236,12 @@ public class ListNatGatewaysRequest {
         this.name = name;
     }
 
-    public ListNatGatewaysRequest withStatus(List<String> status) {
+    public ListNatGatewaysRequest withStatus(List<StatusEnum> status) {
         this.status = status;
         return this;
     }
 
-    public ListNatGatewaysRequest addStatusItem(String statusItem) {
+    public ListNatGatewaysRequest addStatusItem(StatusEnum statusItem) {
         if (this.status == null) {
             this.status = new ArrayList<>();
         }
@@ -156,7 +249,7 @@ public class ListNatGatewaysRequest {
         return this;
     }
 
-    public ListNatGatewaysRequest withStatus(Consumer<List<String>> statusSetter) {
+    public ListNatGatewaysRequest withStatus(Consumer<List<StatusEnum>> statusSetter) {
         if (this.status == null) {
             this.status = new ArrayList<>();
         }
@@ -168,11 +261,11 @@ public class ListNatGatewaysRequest {
      * 公网NAT网关实例的状态。 枚举值：  ACTIVE PENDING_CREATE PENDING_UPDATE PENDING_DELETE INACTIVE
      * @return status
      */
-    public List<String> getStatus() {
+    public List<StatusEnum> getStatus() {
         return status;
     }
 
-    public void setStatus(List<String> status) {
+    public void setStatus(List<StatusEnum> status) {
         this.status = status;
     }
 
@@ -198,7 +291,7 @@ public class ListNatGatewaysRequest {
     }
 
     /**
-     * 公网NAT网关实例的规格。取值为： \"1\"：小型，SNAT最大连接数10000；\"2\"：中型，SNAT最大连接数50000；\"3\"：大型，SNAT最大连接数200000；\"4\"：超大型，SNAT最大连接数1000000
+     * 公网NAT网关实例的规格。取值为： \"1\"：小型，SNAT最大连接数10000；\"2\"：中型，SNAT最大连接数50000；\"3\"：大型，SNAT最大连接数200000；\"4\"：超大型，SNAT最大连接数1000000。
      * @return spec
      */
     public List<String> getSpec() {
@@ -232,8 +325,8 @@ public class ListNatGatewaysRequest {
     }
 
     /**
-     * 功能说明：每页返回的个数。取值范围：0~2000。默认值：2000。
-     * minimum: 0
+     * 功能说明：每页返回的个数。取值范围：1~2000。默认值：2000。
+     * minimum: 1
      * maximum: 2000
      * @return limit
      */

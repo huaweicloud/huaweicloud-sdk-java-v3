@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 询价结果
+ * 询价结果。
  */
 public class CloudServiceRatingResult {
 
@@ -34,7 +34,7 @@ public class CloudServiceRatingResult {
     }
 
     /**
-     * 下单请求体中的orderRequestId
+     * 下单请求体中的orderRequestId。
      * @return orderRequestId
      */
     public String getOrderRequestId() {
@@ -98,7 +98,7 @@ public class CloudServiceRatingResult {
     }
 
     /**
-     * 优惠询价结果
+     * 优惠询价结果。
      * @return optionalDiscountRatingResults
      */
     public List<OptionalDiscountRatingResult> getOptionalDiscountRatingResults() {

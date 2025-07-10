@@ -21,7 +21,7 @@ public class ListNatMappingConfigsRequest {
     }
 
     /**
-     * 站点ID
+     * 站点ID。
      * @return siteId
      */
     public String getSiteId() {

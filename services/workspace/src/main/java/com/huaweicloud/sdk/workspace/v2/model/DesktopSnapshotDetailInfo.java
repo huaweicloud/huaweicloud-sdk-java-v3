@@ -331,7 +331,7 @@ public class DesktopSnapshotDetailInfo {
     }
 
     /**
-     * 快照的创建时间，UTC时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z'。
+     * 快照的创建时间，UTC时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z。'
      * @return createTime
      */
     public String getCreateTime() {
@@ -365,7 +365,7 @@ public class DesktopSnapshotDetailInfo {
     }
 
     /**
-     * 快照的最近恢复时间，UTC时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z'。
+     * 快照的最近恢复时间，UTC时间，格式为：yyyy-MM-dd'T'HH:mm:ss'Z。'
      * @return lastRestoreTime
      */
     public String getLastRestoreTime() {

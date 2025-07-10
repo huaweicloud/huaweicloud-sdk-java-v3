@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 查询桌面池授权的用户、用户组响应的用户/用户组信息
+ * 查询桌面池授权的用户、用户组响应的用户/用户组信息。
  */
 public class AuthorizedObjects {
 
@@ -133,7 +133,7 @@ public class AuthorizedObjects {
     }
 
     /**
-     * 用户/用户组id
+     * 用户/用户组id。
      * @return objectId
      */
     public String getObjectId() {
@@ -150,7 +150,7 @@ public class AuthorizedObjects {
     }
 
     /**
-     * 用户/用户组名称
+     * 用户/用户组名称。
      * @return objectName
      */
     public String getObjectName() {

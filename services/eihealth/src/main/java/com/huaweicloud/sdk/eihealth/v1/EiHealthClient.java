@@ -94,6 +94,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSimilarityGraphTask
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFavoriteRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFavoriteResponse;
@@ -184,6 +186,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandPreviewTaskResponse
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteFavoriteRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteFavoriteResponse;
@@ -231,6 +235,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataTraceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataTraceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadPublicDataRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadPublicDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteJobRequest;
@@ -304,6 +310,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListDrugDatabaseResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListFavoriteRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListFavoriteResponse;
@@ -1720,6 +1728,35 @@ public class EiHealthClient {
     }
 
     /**
+     * 创建盘古药物分子大模型
+     *
+     * 创建盘古药物分子大模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDrugModelResourceRequest 请求对象
+     * @return CreateDrugModelResourceResponse
+     */
+    public CreateDrugModelResourceResponse createDrugModelResource(CreateDrugModelResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createDrugModelResource);
+    }
+
+    /**
+     * 创建盘古药物分子大模型
+     *
+     * 创建盘古药物分子大模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDrugModelResourceRequest 请求对象
+     * @return SyncInvoker<CreateDrugModelResourceRequest, CreateDrugModelResourceResponse>
+     */
+    public SyncInvoker<CreateDrugModelResourceRequest, CreateDrugModelResourceResponse> createDrugModelResourceInvoker(
+        CreateDrugModelResourceRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.createDrugModelResource, hcClient);
+    }
+
+    /**
      * 添加收藏
      *
      * 添加收藏。
@@ -2719,6 +2756,35 @@ public class EiHealthClient {
     public SyncInvoker<DeleteDrugModelRequest, DeleteDrugModelResponse> deleteDrugModelInvoker(
         DeleteDrugModelRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.deleteDrugModel, hcClient);
+    }
+
+    /**
+     * 退订盘古药物分子大模型
+     *
+     * 退订盘古药物分子大模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDrugModelResourceRequest 请求对象
+     * @return DeleteDrugModelResourceResponse
+     */
+    public DeleteDrugModelResourceResponse deleteDrugModelResource(DeleteDrugModelResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.deleteDrugModelResource);
+    }
+
+    /**
+     * 退订盘古药物分子大模型
+     *
+     * 退订盘古药物分子大模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDrugModelResourceRequest 请求对象
+     * @return SyncInvoker<DeleteDrugModelResourceRequest, DeleteDrugModelResourceResponse>
+     */
+    public SyncInvoker<DeleteDrugModelResourceRequest, DeleteDrugModelResourceResponse> deleteDrugModelResourceInvoker(
+        DeleteDrugModelResourceRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.deleteDrugModelResource, hcClient);
     }
 
     /**
@@ -4263,6 +4329,35 @@ public class EiHealthClient {
      */
     public SyncInvoker<ListDrugModelRequest, ListDrugModelResponse> listDrugModelInvoker(ListDrugModelRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.listDrugModel, hcClient);
+    }
+
+    /**
+     * 查询盘古药物分子大模型
+     *
+     * 查询盘古药物分子大模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDrugModelResourceRequest 请求对象
+     * @return ListDrugModelResourceResponse
+     */
+    public ListDrugModelResourceResponse listDrugModelResource(ListDrugModelResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listDrugModelResource);
+    }
+
+    /**
+     * 查询盘古药物分子大模型
+     *
+     * 查询盘古药物分子大模型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDrugModelResourceRequest 请求对象
+     * @return SyncInvoker<ListDrugModelResourceRequest, ListDrugModelResourceResponse>
+     */
+    public SyncInvoker<ListDrugModelResourceRequest, ListDrugModelResourceResponse> listDrugModelResourceInvoker(
+        ListDrugModelResourceRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.listDrugModelResource, hcClient);
     }
 
     /**
@@ -10444,6 +10539,35 @@ public class EiHealthClient {
     public SyncInvoker<UpdateNotebookRequest, UpdateNotebookResponse> updateNotebookInvoker(
         UpdateNotebookRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.updateNotebook, hcClient);
+    }
+
+    /**
+     * 文件下载
+     *
+     * 文件下载
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadPublicDataRequest 请求对象
+     * @return DownloadPublicDataResponse
+     */
+    public DownloadPublicDataResponse downloadPublicData(DownloadPublicDataRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.downloadPublicData);
+    }
+
+    /**
+     * 文件下载
+     *
+     * 文件下载
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadPublicDataRequest 请求对象
+     * @return SyncInvoker<DownloadPublicDataRequest, DownloadPublicDataResponse>
+     */
+    public SyncInvoker<DownloadPublicDataRequest, DownloadPublicDataResponse> downloadPublicDataInvoker(
+        DownloadPublicDataRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.downloadPublicData, hcClient);
     }
 
     /**

@@ -106,7 +106,7 @@ public class DeleteDesktopsReq {
     }
 
     /**
-     * 是否强制删除，true：强制删除，false：不强制删除
+     * 是否强制删除，true：强制删除，false：不强制删除。
      * @return isForceDelete
      */
     public Boolean getIsForceDelete() {

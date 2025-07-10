@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 变更桌面池请求。
@@ -17,19 +16,14 @@ public class ResizeDesktopPoolReq {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
+    @JsonProperty(value = "flavor_id")
 
-    private String orderId;
+    private String flavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
     private String mode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend_param")
-
-    private ResizeDesktopExtendParam extendParam;
 
     public ResizeDesktopPoolReq withProductId(String productId) {
         this.productId = productId;
@@ -48,21 +42,21 @@ public class ResizeDesktopPoolReq {
         this.productId = productId;
     }
 
-    public ResizeDesktopPoolReq withOrderId(String orderId) {
-        this.orderId = orderId;
+    public ResizeDesktopPoolReq withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
         return this;
     }
 
     /**
-     * 订单ID，包周期变更规格时使用。
-     * @return orderId
+     * 产品规格ID。可用区是边缘可用区时，必填此参数。
+     * @return flavorId
      */
-    public String getOrderId() {
-        return orderId;
+    public String getFlavorId() {
+        return flavorId;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
     }
 
     public ResizeDesktopPoolReq withMode(String mode) {
@@ -82,32 +76,6 @@ public class ResizeDesktopPoolReq {
         this.mode = mode;
     }
 
-    public ResizeDesktopPoolReq withExtendParam(ResizeDesktopExtendParam extendParam) {
-        this.extendParam = extendParam;
-        return this;
-    }
-
-    public ResizeDesktopPoolReq withExtendParam(Consumer<ResizeDesktopExtendParam> extendParamSetter) {
-        if (this.extendParam == null) {
-            this.extendParam = new ResizeDesktopExtendParam();
-            extendParamSetter.accept(this.extendParam);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get extendParam
-     * @return extendParam
-     */
-    public ResizeDesktopExtendParam getExtendParam() {
-        return extendParam;
-    }
-
-    public void setExtendParam(ResizeDesktopExtendParam extendParam) {
-        this.extendParam = extendParam;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -117,13 +85,13 @@ public class ResizeDesktopPoolReq {
             return false;
         }
         ResizeDesktopPoolReq that = (ResizeDesktopPoolReq) obj;
-        return Objects.equals(this.productId, that.productId) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.extendParam, that.extendParam);
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, orderId, mode, extendParam);
+        return Objects.hash(productId, flavorId, mode);
     }
 
     @Override
@@ -131,9 +99,8 @@ public class ResizeDesktopPoolReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeDesktopPoolReq {\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");
         return sb.toString();
     }

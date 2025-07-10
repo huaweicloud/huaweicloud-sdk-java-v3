@@ -43,7 +43,7 @@ public class SimpleResourceNoUsed {
     }
 
     /**
-     * 配额数
+     * 配额数。
      * minimum: 0
      * maximum: 2147483647
      * @return quota

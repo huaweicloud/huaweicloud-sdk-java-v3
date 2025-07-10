@@ -194,11 +194,6 @@ public class ListDesktopsDetailRequest {
     private String desktopIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sids")
-
-    private String sids;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -219,19 +214,9 @@ public class ListDesktopsDetailRequest {
     private String desktopType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "login_status")
-
-    private String loginStatus;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
     private String tag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fuzzy_query")
-
-    private Boolean fuzzyQuery;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
@@ -418,23 +403,6 @@ public class ListDesktopsDetailRequest {
         this.desktopIp = desktopIp;
     }
 
-    public ListDesktopsDetailRequest withSids(String sids) {
-        this.sids = sids;
-        return this;
-    }
-
-    /**
-     * 桌面的sid列表。
-     * @return sids
-     */
-    public String getSids() {
-        return sids;
-    }
-
-    public void setSids(String sids) {
-        this.sids = sids;
-    }
-
     public ListDesktopsDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -523,23 +491,6 @@ public class ListDesktopsDetailRequest {
         this.desktopType = desktopType;
     }
 
-    public ListDesktopsDetailRequest withLoginStatus(String loginStatus) {
-        this.loginStatus = loginStatus;
-        return this;
-    }
-
-    /**
-     * 桌面的登录状态。  - UNREGISTER：表示桌面未注册时的状态（桌面启动后，会自动注册）。关机后也会出现未注册的状态。 - REGISTERED：表示桌面注册以后，等待用户连接的状态。 - CONNECTED：表示用户已经成功登录，正在使用桌面。 - DISCONNECTED：表示桌面与客户端断开会话后显示的状态，可能为关闭客户端窗口，或客户端与桌面网络断开引起。
-     * @return loginStatus
-     */
-    public String getLoginStatus() {
-        return loginStatus;
-    }
-
-    public void setLoginStatus(String loginStatus) {
-        this.loginStatus = loginStatus;
-    }
-
     public ListDesktopsDetailRequest withTag(String tag) {
         this.tag = tag;
         return this;
@@ -555,23 +506,6 @@ public class ListDesktopsDetailRequest {
 
     public void setTag(String tag) {
         this.tag = tag;
-    }
-
-    public ListDesktopsDetailRequest withFuzzyQuery(Boolean fuzzyQuery) {
-        this.fuzzyQuery = fuzzyQuery;
-        return this;
-    }
-
-    /**
-     * 是不是模糊用户查询。
-     * @return fuzzyQuery
-     */
-    public Boolean getFuzzyQuery() {
-        return fuzzyQuery;
-    }
-
-    public void setFuzzyQuery(Boolean fuzzyQuery) {
-        this.fuzzyQuery = fuzzyQuery;
     }
 
     public ListDesktopsDetailRequest withPoolId(String poolId) {
@@ -614,7 +548,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -631,7 +565,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 镜像ID
+     * 镜像ID。
      * @return imageId
      */
     public String getImageId() {
@@ -665,7 +599,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 按照维护模式过滤
+     * 按照维护模式过滤。
      * @return inMaintenanceMode
      */
     public Boolean getInMaintenanceMode() {
@@ -682,7 +616,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 是否为协同桌面
+     * 是否为协同桌面。
      * @return isShareDesktop
      */
     public Boolean getIsShareDesktop() {
@@ -733,7 +667,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 查询可用区
+     * 查询可用区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -756,12 +690,10 @@ public class ListDesktopsDetailRequest {
         return Objects.equals(this.status, that.status) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.userNames, that.userNames) && Objects.equals(this.sortField, that.sortField)
             && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.sids, that.sids)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopType, that.desktopType)
-            && Objects.equals(this.loginStatus, that.loginStatus) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.fuzzyQuery, that.fuzzyQuery) && Objects.equals(this.poolId, that.poolId)
-            && Objects.equals(this.userAttached, that.userAttached)
+            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.desktopId, that.desktopId)
+            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.userAttached, that.userAttached)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
@@ -779,14 +711,11 @@ public class ListDesktopsDetailRequest {
             sortType,
             computerName,
             desktopIp,
-            sids,
             offset,
             limit,
             desktopId,
             desktopType,
-            loginStatus,
             tag,
-            fuzzyQuery,
             poolId,
             userAttached,
             enterpriseProjectId,
@@ -810,14 +739,11 @@ public class ListDesktopsDetailRequest {
         sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
-        sb.append("    sids: ").append(toIndentedString(sids)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
-        sb.append("    loginStatus: ").append(toIndentedString(loginStatus)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
-        sb.append("    fuzzyQuery: ").append(toIndentedString(fuzzyQuery)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    userAttached: ").append(toIndentedString(userAttached)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

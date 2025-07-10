@@ -46,11 +46,6 @@ public class ListPolicyGroupRequest {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scope_flag")
-
-    private Integer scopeFlag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_group_name_accurate")
 
     private Boolean isGroupNameAccurate;
@@ -80,7 +75,7 @@ public class ListPolicyGroupRequest {
     }
 
     /**
-     * 用于分页查询，查询的起始记录序号，从0开始。
+     * 用于分页查询，查询的起始记录序号，范围0~1000。
      * minimum: 0
      * maximum: 1000
      * @return offset
@@ -133,7 +128,7 @@ public class ListPolicyGroupRequest {
     }
 
     /**
-     * 根据优先级过滤结果。所带的值需要满足现有策略组已有最大优先级值
+     * 根据优先级过滤结果。所带的值需要满足现有策略组已有最大优先级值。
      * minimum: 0
      * maximum: 55
      * @return priority
@@ -152,7 +147,7 @@ public class ListPolicyGroupRequest {
     }
 
     /**
-     * 根据更新时间过滤结果。时间格式满足：yyyy-MM-dd HH:mm:ss
+     * 根据更新时间过滤结果。时间格式满足：yyyy-MM-dd HH:mm:ss。
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -169,7 +164,7 @@ public class ListPolicyGroupRequest {
     }
 
     /**
-     * 策略组描述
+     * 策略组描述。
      * @return description
      */
     public String getDescription() {
@@ -178,25 +173,6 @@ public class ListPolicyGroupRequest {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public ListPolicyGroupRequest withScopeFlag(Integer scopeFlag) {
-        this.scopeFlag = scopeFlag;
-        return this;
-    }
-
-    /**
-     * 策略来源，取值范围0或者1
-     * minimum: 0
-     * maximum: 1
-     * @return scopeFlag
-     */
-    public Integer getScopeFlag() {
-        return scopeFlag;
-    }
-
-    public void setScopeFlag(Integer scopeFlag) {
-        this.scopeFlag = scopeFlag;
     }
 
     public ListPolicyGroupRequest withIsGroupNameAccurate(Boolean isGroupNameAccurate) {
@@ -229,7 +205,7 @@ public class ListPolicyGroupRequest {
             && Objects.equals(this.policyGroupId, that.policyGroupId)
             && Objects.equals(this.policyGroupName, that.policyGroupName)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.scopeFlag, that.scopeFlag)
+            && Objects.equals(this.description, that.description)
             && Objects.equals(this.isGroupNameAccurate, that.isGroupNameAccurate);
     }
 
@@ -242,7 +218,6 @@ public class ListPolicyGroupRequest {
             priority,
             updateTime,
             description,
-            scopeFlag,
             isGroupNameAccurate);
     }
 
@@ -257,7 +232,6 @@ public class ListPolicyGroupRequest {
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    scopeFlag: ").append(toIndentedString(scopeFlag)).append("\n");
         sb.append("    isGroupNameAccurate: ").append(toIndentedString(isGroupNameAccurate)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -191,6 +191,11 @@ public class CreateAsyncTtsJobRequestBody {
 
     private Boolean isConcurrentResource;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
     public CreateAsyncTtsJobRequestBody withText(String text) {
         this.text = text;
         return this;
@@ -231,7 +236,7 @@ public class CreateAsyncTtsJobRequestBody {
     }
 
     /**
-     * 音色ID，获取方式详见[获取音色ID](metastudio_02_0054.xml)。
+     * 音色ID，获取方式详见[获取音色ID](metastudio_02_0054.xml)。  不同Region的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
      * @return voiceAssetId
      */
     public String getVoiceAssetId() {
@@ -571,6 +576,25 @@ public class CreateAsyncTtsJobRequestBody {
         this.isConcurrentResource = isConcurrentResource;
     }
 
+    public CreateAsyncTtsJobRequestBody withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 优先级（0-10），0为最高优先级，默认5
+     * minimum: 0
+     * maximum: 10
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -594,7 +618,8 @@ public class CreateAsyncTtsJobRequestBody {
             && Objects.equals(this.srtOutputExternalUrl, that.srtOutputExternalUrl)
             && Objects.equals(this.actionOutputExternalUrl, that.actionOutputExternalUrl)
             && Objects.equals(this.isVocabularyConfigEnable, that.isVocabularyConfigEnable)
-            && Objects.equals(this.isConcurrentResource, that.isConcurrentResource);
+            && Objects.equals(this.isConcurrentResource, that.isConcurrentResource)
+            && Objects.equals(this.priority, that.priority);
     }
 
     @Override
@@ -619,7 +644,8 @@ public class CreateAsyncTtsJobRequestBody {
             srtOutputExternalUrl,
             actionOutputExternalUrl,
             isVocabularyConfigEnable,
-            isConcurrentResource);
+            isConcurrentResource,
+            priority);
     }
 
     @Override
@@ -647,6 +673,7 @@ public class CreateAsyncTtsJobRequestBody {
         sb.append("    actionOutputExternalUrl: ").append(toIndentedString(actionOutputExternalUrl)).append("\n");
         sb.append("    isVocabularyConfigEnable: ").append(toIndentedString(isVocabularyConfigEnable)).append("\n");
         sb.append("    isConcurrentResource: ").append(toIndentedString(isConcurrentResource)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

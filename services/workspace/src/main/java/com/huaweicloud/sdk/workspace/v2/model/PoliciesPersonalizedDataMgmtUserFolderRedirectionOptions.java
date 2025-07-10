@@ -87,7 +87,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 还原本地目录启用
+     * 还原本地目录启用。
      * @return restoreLocalDirectoriesEnable
      */
     public Boolean getRestoreLocalDirectoriesEnable() {
@@ -105,7 +105,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 应用数据漫游启用
+     * 应用数据漫游启用。
      * @return appDataRoamingEnale
      */
     public Boolean getAppDataRoamingEnale() {
@@ -122,7 +122,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 桌面重定向
+     * 桌面重定向。
      * @return redirecDesktop
      */
     public Boolean getRedirecDesktop() {
@@ -139,7 +139,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 开始菜单
+     * 开始菜单。
      * @return redirecStartMenu
      */
     public Boolean getRedirecStartMenu() {
@@ -156,7 +156,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 文档
+     * 文档。
      * @return redirecDocuments
      */
     public Boolean getRedirecDocuments() {
@@ -173,7 +173,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 照片
+     * 照片。
      * @return redirecPictures
      */
     public Boolean getRedirecPictures() {
@@ -190,7 +190,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 音乐
+     * 音乐。
      * @return redirecMusic
      */
     public Boolean getRedirecMusic() {
@@ -207,7 +207,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 录音
+     * 录音。
      * @return redirecVideos
      */
     public Boolean getRedirecVideos() {
@@ -224,7 +224,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 最爱
+     * 最爱。
      * @return redirecFavorites
      */
     public Boolean getRedirecFavorites() {
@@ -241,7 +241,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 录音
+     * 录音。
      * @return redirecContacts
      */
     public Boolean getRedirecContacts() {
@@ -258,7 +258,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 下载
+     * 下载。
      * @return redirecDownloads
      */
     public Boolean getRedirecDownloads() {
@@ -275,7 +275,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 链接
+     * 链接。
      * @return redirecLinks
      */
     public Boolean getRedirecLinks() {
@@ -292,7 +292,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 查找
+     * 查找。
      * @return redirecSearches
      */
     public Boolean getRedirecSearches() {
@@ -309,7 +309,7 @@ public class PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions {
     }
 
     /**
-     * 游戏存储
+     * 游戏存储。
      * @return redirecSavedGames
      */
     public Boolean getRedirecSavedGames() {

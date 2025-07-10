@@ -61,7 +61,7 @@ public class ListUserUsageMetricRequest {
     }
 
     /**
-     * 查询起始时间(0时区)
+     * 查询起始时间(0时区)。
      * @return startTime
      */
     public String getStartTime() {
@@ -78,7 +78,7 @@ public class ListUserUsageMetricRequest {
     }
 
     /**
-     * 查询截至时间(0时区)
+     * 查询截至时间(0时区)。
      * @return endTime
      */
     public String getEndTime() {
@@ -95,7 +95,7 @@ public class ListUserUsageMetricRequest {
     }
 
     /**
-     * 用户名(模糊匹配)
+     * 用户名(模糊匹配)。
      * @return username
      */
     public String getUsername() {
@@ -112,7 +112,7 @@ public class ListUserUsageMetricRequest {
     }
 
     /**
-     * 使用时长最小值
+     * 使用时长最小值。
      * minimum: 0
      * maximum: 2147483646
      * @return usageMinHours
@@ -184,7 +184,7 @@ public class ListUserUsageMetricRequest {
     }
 
     /**
-     * 查询的偏移量,默认值0
+     * 查询的偏移量,默认值0。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -203,7 +203,7 @@ public class ListUserUsageMetricRequest {
     }
 
     /**
-     * limit范围[1-100],默认值0
+     * limit范围[1-100],默认值0。
      * minimum: 1
      * maximum: 100
      * @return limit

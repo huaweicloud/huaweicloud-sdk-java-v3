@@ -218,6 +218,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowDomainInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDomainInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowEchoTestPackageUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowEchoTestPackageUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowEtlDataRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowEtlDataResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByAssetIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByAssetIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByIdRequest;
@@ -2951,6 +2953,34 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ShowEchoTestPackageUsingRequest, ShowEchoTestPackageUsingResponse> showEchoTestPackageUsingAsyncInvoker(
         ShowEchoTestPackageUsingRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.showEchoTestPackageUsing, hcClient);
+    }
+
+    /**
+     * 查询指定表的内容
+     *
+     * 查询指定表的内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEtlDataRequest 请求对象
+     * @return CompletableFuture<ShowEtlDataResponse>
+     */
+    public CompletableFuture<ShowEtlDataResponse> showEtlDataAsync(ShowEtlDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showEtlData);
+    }
+
+    /**
+     * 查询指定表的内容
+     *
+     * 查询指定表的内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEtlDataRequest 请求对象
+     * @return AsyncInvoker<ShowEtlDataRequest, ShowEtlDataResponse>
+     */
+    public AsyncInvoker<ShowEtlDataRequest, ShowEtlDataResponse> showEtlDataAsyncInvoker(ShowEtlDataRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showEtlData, hcClient);
     }
 
     /**

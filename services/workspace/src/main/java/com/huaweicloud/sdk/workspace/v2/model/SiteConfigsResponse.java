@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 站点配置
+ * 站点配置。
  */
 public class SiteConfigsResponse {
 
@@ -292,7 +292,7 @@ public class SiteConfigsResponse {
     }
 
     /**
-     * 站点id
+     * 站点id。
      * @return siteId
      */
     public String getSiteId() {
@@ -326,7 +326,7 @@ public class SiteConfigsResponse {
     }
 
     /**
-     * 站点名称
+     * 站点名称。
      * @return siteName
      */
     public String getSiteName() {
@@ -463,7 +463,7 @@ public class SiteConfigsResponse {
     }
 
     /**
-     * 开通服务资源使用的可用分区
+     * 开通服务资源使用的可用分区。
      * @return availabilityZones
      */
     public List<String> getAvailabilityZones() {
@@ -480,7 +480,7 @@ public class SiteConfigsResponse {
     }
 
     /**
-     * 开通服务或取消服务的任务ID
+     * 开通服务或取消服务的任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -497,7 +497,7 @@ public class SiteConfigsResponse {
     }
 
     /**
-     * 初始化服务或清理资源的进度，格式为100%
+     * 初始化服务或清理资源的进度，格式为100%。
      * @return progress
      */
     public String getProgress() {
@@ -514,7 +514,7 @@ public class SiteConfigsResponse {
     }
 
     /**
-     * 失败错误码
+     * 失败错误码。
      * @return failCode
      */
     public Integer getFailCode() {
@@ -531,7 +531,7 @@ public class SiteConfigsResponse {
     }
 
     /**
-     * 失败原因
+     * 失败原因。
      * @return failReason
      */
     public String getFailReason() {

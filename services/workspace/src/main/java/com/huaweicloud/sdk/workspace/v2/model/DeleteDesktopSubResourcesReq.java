@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 删除桌面协同资源请求体
+ * 删除桌面协同资源请求体。
  */
 public class DeleteDesktopSubResourcesReq {
 
@@ -50,7 +50,7 @@ public class DeleteDesktopSubResourcesReq {
     }
 
     /**
-     * 桌面ID列表
+     * 桌面ID列表。
      * @return desktopIds
      */
     public List<String> getDesktopIds() {
@@ -67,7 +67,7 @@ public class DeleteDesktopSubResourcesReq {
     }
 
     /**
-     * 待删除附属资源类型。DESKTOP_SHARER：桌面协同资源
+     * 待删除附属资源类型。DESKTOP_SHARER：桌面协同资源。
      * @return subResourceType
      */
     public String getSubResourceType() {
@@ -84,7 +84,7 @@ public class DeleteDesktopSubResourcesReq {
     }
 
     /**
-     * 订单ID
+     * 订单ID。
      * @return orderId
      */
     public String getOrderId() {

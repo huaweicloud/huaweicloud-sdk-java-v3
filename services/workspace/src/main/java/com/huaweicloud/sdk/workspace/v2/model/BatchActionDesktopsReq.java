@@ -103,16 +103,6 @@ public class BatchActionDesktopsReq {
 
     private TypeEnum type;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_id")
-
-    private String hostId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
     public BatchActionDesktopsReq withDesktopIds(List<String> desktopIds) {
         this.desktopIds = desktopIds;
         return this;
@@ -152,7 +142,7 @@ public class BatchActionDesktopsReq {
     }
 
     /**
-     * 操作类型。 -os-start 启动。 -reboot 重启。 -os-stop 关机。 -os-hibernate 休眠。
+     * 操作类型。 - os-start 启动。 - reboot 重启。 - os-stop 关机。 - os-hibernate 休眠。
      * @return opType
      */
     public String getOpType() {
@@ -180,40 +170,6 @@ public class BatchActionDesktopsReq {
         this.type = type;
     }
 
-    public BatchActionDesktopsReq withHostId(String hostId) {
-        this.hostId = hostId;
-        return this;
-    }
-
-    /**
-     * 专属主机id，op_type值为os-start时本参数才生效，仅支持单个桌面操作，实现将关机的桌面先迁移到指定专属主机再开机，迁移过程耗时较长，需要等待一段时间。
-     * @return hostId
-     */
-    public String getHostId() {
-        return hostId;
-    }
-
-    public void setHostId(String hostId) {
-        this.hostId = hostId;
-    }
-
-    public BatchActionDesktopsReq withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 项目ID。
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -224,13 +180,12 @@ public class BatchActionDesktopsReq {
         }
         BatchActionDesktopsReq that = (BatchActionDesktopsReq) obj;
         return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.opType, that.opType)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.hostId, that.hostId)
-            && Objects.equals(this.projectId, that.projectId);
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopIds, opType, type, hostId, projectId);
+        return Objects.hash(desktopIds, opType, type);
     }
 
     @Override
@@ -240,8 +195,6 @@ public class BatchActionDesktopsReq {
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    opType: ").append(toIndentedString(opType)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

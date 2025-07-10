@@ -48,7 +48,7 @@ public class ListDesktopActionsRequest {
     }
 
     /**
-     * 每页限制数
+     * 每页限制数。
      * minimum: 0
      * maximum: 2000
      * @return offset
@@ -67,7 +67,7 @@ public class ListDesktopActionsRequest {
     }
 
     /**
-     * 起始位置
+     * 起始位置。
      * minimum: 0
      * maximum: 100
      * @return limit

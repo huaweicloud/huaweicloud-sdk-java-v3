@@ -41,7 +41,7 @@ public class ListAdOuUsersRequest {
     }
 
     /**
-     * OU的域名地址
+     * OU的域名地址。
      * @return ouDn
      */
     public String getOuDn() {
@@ -58,7 +58,7 @@ public class ListAdOuUsersRequest {
     }
 
     /**
-     * 用户名，支持模糊查询
+     * 用户名，支持模糊查询。
      * @return userName
      */
     public String getUserName() {
@@ -75,7 +75,7 @@ public class ListAdOuUsersRequest {
     }
 
     /**
-     * 用户是否已存在
+     * 用户是否已存在。
      * @return hasExisted
      */
     public Boolean getHasExisted() {
@@ -92,7 +92,7 @@ public class ListAdOuUsersRequest {
     }
 
     /**
-     * 用于分页查询，返回桌面数量限制。如果不指定，则返回所有符合条件的桌面
+     * 用于分页查询，返回桌面数量限制。如果不指定，则返回所有符合条件的桌面。
      * minimum: 0
      * maximum: 200
      * @return limit
@@ -111,7 +111,7 @@ public class ListAdOuUsersRequest {
     }
 
     /**
-     * 用于分页查询，查询的起始记录序号，从0开始
+     * 用于分页查询，查询的起始记录序号，从0开始。
      * minimum: 0
      * maximum: 10000
      * @return offset

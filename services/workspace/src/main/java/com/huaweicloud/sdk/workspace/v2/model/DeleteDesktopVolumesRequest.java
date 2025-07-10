@@ -12,11 +12,6 @@ import java.util.function.Consumer;
 public class DeleteDesktopVolumesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Service-Transaction-Id")
-
-    private String serviceTransactionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_id")
 
     private String desktopId;
@@ -25,23 +20,6 @@ public class DeleteDesktopVolumesRequest {
     @JsonProperty(value = "body")
 
     private DeleteVolumesReq body;
-
-    public DeleteDesktopVolumesRequest withServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-        return this;
-    }
-
-    /**
-     * CBC接口回调时，请求头里带上的业务ID
-     * @return serviceTransactionId
-     */
-    public String getServiceTransactionId() {
-        return serviceTransactionId;
-    }
-
-    public void setServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-    }
 
     public DeleteDesktopVolumesRequest withDesktopId(String desktopId) {
         this.desktopId = desktopId;
@@ -95,20 +73,18 @@ public class DeleteDesktopVolumesRequest {
             return false;
         }
         DeleteDesktopVolumesRequest that = (DeleteDesktopVolumesRequest) obj;
-        return Objects.equals(this.serviceTransactionId, that.serviceTransactionId)
-            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceTransactionId, desktopId, body);
+        return Objects.hash(desktopId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteDesktopVolumesRequest {\n");
-        sb.append("    serviceTransactionId: ").append(toIndentedString(serviceTransactionId)).append("\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

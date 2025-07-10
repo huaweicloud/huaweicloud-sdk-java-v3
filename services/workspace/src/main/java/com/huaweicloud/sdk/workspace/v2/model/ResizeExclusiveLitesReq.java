@@ -11,16 +11,6 @@ import java.util.Objects;
 public class ResizeExclusiveLitesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_id")
-
-    private String hostId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -35,47 +25,13 @@ public class ResizeExclusiveLitesReq {
 
     private Integer newQuantity;
 
-    public ResizeExclusiveLitesReq withHostId(String hostId) {
-        this.hostId = hostId;
-        return this;
-    }
-
-    /**
-     * 专享主机的hostId。
-     * @return hostId
-     */
-    public String getHostId() {
-        return hostId;
-    }
-
-    public void setHostId(String hostId) {
-        this.hostId = hostId;
-    }
-
-    public ResizeExclusiveLitesReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单ID，包周期专享主机变更桌面路数时使用。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
     public ResizeExclusiveLitesReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -131,22 +87,19 @@ public class ResizeExclusiveLitesReq {
             return false;
         }
         ResizeExclusiveLitesReq that = (ResizeExclusiveLitesReq) obj;
-        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.productId, that.productId) && Objects.equals(this.newQuantity, that.newQuantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, orderId, enterpriseProjectId, productId, newQuantity);
+        return Objects.hash(enterpriseProjectId, productId, newQuantity);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeExclusiveLitesReq {\n");
-        sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    newQuantity: ").append(toIndentedString(newQuantity)).append("\n");

@@ -155,7 +155,7 @@ public class ListScreenRecordsRequest {
     }
 
     /**
-     * 录屏类型。 - FULL：全程录屏。 - INTERVAL：间隔录屏。 - USER_OPERATION：用户操作录屏。 - SESSION：监听会话生命周期录屏。
+     * 录屏类型。 - FULL：全程录屏。 - INTERVAL：间隔录屏。 - OPERATION：用户操作录屏。 - SESSION：监听会话生命周期录屏。
      * @return type
      */
     public String getType() {
@@ -206,7 +206,7 @@ public class ListScreenRecordsRequest {
     }
 
     /**
-     * 用于排序，表示按照哪个字段排序。取值为录屏属性start_time、szie字段，默认为start_time。
+     * 用于排序，表示按照哪个字段排序。取值为录屏属性start_time字段。
      * @return sortField
      */
     public String getSortField() {
@@ -223,7 +223,7 @@ public class ListScreenRecordsRequest {
     }
 
     /**
-     * 用于排序，表示升序还是降序，取值为asc和desc。与sort_field一起组合使用，默认为降序desc。
+     * 用于排序，表示升序还是降序，取值为asc和desc。与sort_field一起组合使用。
      * @return sortType
      */
     public String getSortType() {

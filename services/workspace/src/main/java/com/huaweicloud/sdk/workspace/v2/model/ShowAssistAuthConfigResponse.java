@@ -17,16 +17,6 @@ public class ShowAssistAuthConfigResponse extends SdkResponse {
 
     private OtpConfigInfo otpConfigInfo;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "radius_config_info")
-
-    private RadiusConfigInfo radiusConfigInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "radius_gateway_config_info")
-
-    private RadiusGatewayConfigInfo radiusGatewayConfigInfo;
-
     public ShowAssistAuthConfigResponse withOtpConfigInfo(OtpConfigInfo otpConfigInfo) {
         this.otpConfigInfo = otpConfigInfo;
         return this;
@@ -53,59 +43,6 @@ public class ShowAssistAuthConfigResponse extends SdkResponse {
         this.otpConfigInfo = otpConfigInfo;
     }
 
-    public ShowAssistAuthConfigResponse withRadiusConfigInfo(RadiusConfigInfo radiusConfigInfo) {
-        this.radiusConfigInfo = radiusConfigInfo;
-        return this;
-    }
-
-    public ShowAssistAuthConfigResponse withRadiusConfigInfo(Consumer<RadiusConfigInfo> radiusConfigInfoSetter) {
-        if (this.radiusConfigInfo == null) {
-            this.radiusConfigInfo = new RadiusConfigInfo();
-            radiusConfigInfoSetter.accept(this.radiusConfigInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get radiusConfigInfo
-     * @return radiusConfigInfo
-     */
-    public RadiusConfigInfo getRadiusConfigInfo() {
-        return radiusConfigInfo;
-    }
-
-    public void setRadiusConfigInfo(RadiusConfigInfo radiusConfigInfo) {
-        this.radiusConfigInfo = radiusConfigInfo;
-    }
-
-    public ShowAssistAuthConfigResponse withRadiusGatewayConfigInfo(RadiusGatewayConfigInfo radiusGatewayConfigInfo) {
-        this.radiusGatewayConfigInfo = radiusGatewayConfigInfo;
-        return this;
-    }
-
-    public ShowAssistAuthConfigResponse withRadiusGatewayConfigInfo(
-        Consumer<RadiusGatewayConfigInfo> radiusGatewayConfigInfoSetter) {
-        if (this.radiusGatewayConfigInfo == null) {
-            this.radiusGatewayConfigInfo = new RadiusGatewayConfigInfo();
-            radiusGatewayConfigInfoSetter.accept(this.radiusGatewayConfigInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get radiusGatewayConfigInfo
-     * @return radiusGatewayConfigInfo
-     */
-    public RadiusGatewayConfigInfo getRadiusGatewayConfigInfo() {
-        return radiusGatewayConfigInfo;
-    }
-
-    public void setRadiusGatewayConfigInfo(RadiusGatewayConfigInfo radiusGatewayConfigInfo) {
-        this.radiusGatewayConfigInfo = radiusGatewayConfigInfo;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -115,14 +52,12 @@ public class ShowAssistAuthConfigResponse extends SdkResponse {
             return false;
         }
         ShowAssistAuthConfigResponse that = (ShowAssistAuthConfigResponse) obj;
-        return Objects.equals(this.otpConfigInfo, that.otpConfigInfo)
-            && Objects.equals(this.radiusConfigInfo, that.radiusConfigInfo)
-            && Objects.equals(this.radiusGatewayConfigInfo, that.radiusGatewayConfigInfo);
+        return Objects.equals(this.otpConfigInfo, that.otpConfigInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(otpConfigInfo, radiusConfigInfo, radiusGatewayConfigInfo);
+        return Objects.hash(otpConfigInfo);
     }
 
     @Override
@@ -130,8 +65,6 @@ public class ShowAssistAuthConfigResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAssistAuthConfigResponse {\n");
         sb.append("    otpConfigInfo: ").append(toIndentedString(otpConfigInfo)).append("\n");
-        sb.append("    radiusConfigInfo: ").append(toIndentedString(radiusConfigInfo)).append("\n");
-        sb.append("    radiusGatewayConfigInfo: ").append(toIndentedString(radiusGatewayConfigInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

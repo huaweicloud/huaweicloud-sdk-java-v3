@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -36,116 +31,10 @@ public class PoliciesPeripheralsDeviceRedirection {
 
     private Boolean twainRedirectionEnable;
 
-    /**
-     * 图形压缩级别。取值为： 不压缩：none。 低（速度最快）：low。 中（速度适中）：medium。 高（速度最慢）：high。 无损（无损压缩）：lossless。 低损（低损压缩）：low-loss。 中损（中损压缩）：medium-loss。 高损（高损压缩）：high-loss。
-     */
-    public static final class ImageCompressionLevelEnum {
-
-        /**
-         * Enum NONE for value: "none"
-         */
-        public static final ImageCompressionLevelEnum NONE = new ImageCompressionLevelEnum("none");
-
-        /**
-         * Enum LOW for value: "low"
-         */
-        public static final ImageCompressionLevelEnum LOW = new ImageCompressionLevelEnum("low");
-
-        /**
-         * Enum MEDIUM for value: "medium"
-         */
-        public static final ImageCompressionLevelEnum MEDIUM = new ImageCompressionLevelEnum("medium");
-
-        /**
-         * Enum HIGH for value: "high"
-         */
-        public static final ImageCompressionLevelEnum HIGH = new ImageCompressionLevelEnum("high");
-
-        /**
-         * Enum LOSSLESS for value: "lossless"
-         */
-        public static final ImageCompressionLevelEnum LOSSLESS = new ImageCompressionLevelEnum("lossless");
-
-        /**
-         * Enum LOW_LOSS for value: "low-loss"
-         */
-        public static final ImageCompressionLevelEnum LOW_LOSS = new ImageCompressionLevelEnum("low-loss");
-
-        /**
-         * Enum MEDIUM_LOSS for value: "medium-loss"
-         */
-        public static final ImageCompressionLevelEnum MEDIUM_LOSS = new ImageCompressionLevelEnum("medium-loss");
-
-        /**
-         * Enum HIGH_LOSS for value: "high-loss"
-         */
-        public static final ImageCompressionLevelEnum HIGH_LOSS = new ImageCompressionLevelEnum("high-loss");
-
-        private static final Map<String, ImageCompressionLevelEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ImageCompressionLevelEnum> createStaticFields() {
-            Map<String, ImageCompressionLevelEnum> map = new HashMap<>();
-            map.put("none", NONE);
-            map.put("low", LOW);
-            map.put("medium", MEDIUM);
-            map.put("high", HIGH);
-            map.put("lossless", LOSSLESS);
-            map.put("low-loss", LOW_LOSS);
-            map.put("medium-loss", MEDIUM_LOSS);
-            map.put("high-loss", HIGH_LOSS);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ImageCompressionLevelEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ImageCompressionLevelEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageCompressionLevelEnum(value));
-        }
-
-        public static ImageCompressionLevelEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ImageCompressionLevelEnum) {
-                return this.value.equals(((ImageCompressionLevelEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_compression_level")
 
-    private ImageCompressionLevelEnum imageCompressionLevel;
+    private String imageCompressionLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hid_redirection")
@@ -253,8 +142,7 @@ public class PoliciesPeripheralsDeviceRedirection {
         this.twainRedirectionEnable = twainRedirectionEnable;
     }
 
-    public PoliciesPeripheralsDeviceRedirection withImageCompressionLevel(
-        ImageCompressionLevelEnum imageCompressionLevel) {
+    public PoliciesPeripheralsDeviceRedirection withImageCompressionLevel(String imageCompressionLevel) {
         this.imageCompressionLevel = imageCompressionLevel;
         return this;
     }
@@ -263,11 +151,11 @@ public class PoliciesPeripheralsDeviceRedirection {
      * 图形压缩级别。取值为： 不压缩：none。 低（速度最快）：low。 中（速度适中）：medium。 高（速度最慢）：high。 无损（无损压缩）：lossless。 低损（低损压缩）：low-loss。 中损（中损压缩）：medium-loss。 高损（高损压缩）：high-loss。
      * @return imageCompressionLevel
      */
-    public ImageCompressionLevelEnum getImageCompressionLevel() {
+    public String getImageCompressionLevel() {
         return imageCompressionLevel;
     }
 
-    public void setImageCompressionLevel(ImageCompressionLevelEnum imageCompressionLevel) {
+    public void setImageCompressionLevel(String imageCompressionLevel) {
         this.imageCompressionLevel = imageCompressionLevel;
     }
 

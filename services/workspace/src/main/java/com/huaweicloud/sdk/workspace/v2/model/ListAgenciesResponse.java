@@ -41,7 +41,7 @@ public class ListAgenciesResponse extends SdkResponse {
     }
 
     /**
-     * 委托信息
+     * 委托信息。
      * @return existingAgencies
      */
     public List<AgenciesInfo> getExistingAgencies() {

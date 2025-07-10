@@ -35,7 +35,7 @@ public class ShowDesktopNetworkResponse extends SdkResponse {
     }
 
     /**
-     * 桌面名称
+     * 桌面名称。
      * @return computerName
      */
     public String getComputerName() {
@@ -52,7 +52,7 @@ public class ShowDesktopNetworkResponse extends SdkResponse {
     }
 
     /**
-     * 桌面ID
+     * 桌面ID。
      * @return computerId
      */
     public String getComputerId() {
@@ -85,7 +85,7 @@ public class ShowDesktopNetworkResponse extends SdkResponse {
     }
 
     /**
-     * 桌面网络信息
+     * 桌面网络信息。
      * @return networkInfos
      */
     public List<NetworkInfo> getNetworkInfos() {

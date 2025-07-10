@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ShowGrowthRateRequest {
 
     /**
-     * 环比周期 | DAY - 天 MONTH - 月
+     * 环比周期 | DAY - 天 MONTH - 月。
      */
     public static final class GrowPeriodEnum {
 
@@ -106,7 +106,7 @@ public class ShowGrowthRateRequest {
     }
 
     /**
-     * 环比周期 | DAY - 天 MONTH - 月
+     * 环比周期 | DAY - 天 MONTH - 月。
      * @return growPeriod
      */
     public GrowPeriodEnum getGrowPeriod() {
@@ -123,7 +123,7 @@ public class ShowGrowthRateRequest {
     }
 
     /**
-     * 指标名称
+     * 指标名称。
      * @return metricName
      */
     public String getMetricName() {
@@ -140,7 +140,7 @@ public class ShowGrowthRateRequest {
     }
 
     /**
-     * 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}=key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0=key,value&dim.1=key,value
+     * 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}=key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0=key,value&dim.1=key,value。
      * @return dim
      */
     public String getDim() {

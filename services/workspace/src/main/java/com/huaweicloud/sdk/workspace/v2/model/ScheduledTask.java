@@ -246,7 +246,7 @@ public class ScheduledTask {
     }
 
     /**
-     * 时区
+     * 时区。
      * @return timeZone
      */
     public String getTimeZone() {

@@ -118,6 +118,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.EtlRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExecuteTaskInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorResponse;
@@ -281,6 +282,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowDomainInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDomainInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowEchoTestPackageUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowEchoTestPackageUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowEtlDataRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowEtlDataResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByAssetIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByAssetIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowFactorByIdRequest;
@@ -3241,6 +3244,28 @@ public class CloudtestMeta {
             Object.class,
             f -> f.withMarshaller(ShowEchoTestPackageUsingResponse::getBody,
                 ShowEchoTestPackageUsingResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEtlDataRequest, ShowEtlDataResponse> showEtlData = genForShowEtlData();
+
+    private static HttpRequestDef<ShowEtlDataRequest, ShowEtlDataResponse> genForShowEtlData() {
+        // basic
+        HttpRequestDef.Builder<ShowEtlDataRequest, ShowEtlDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowEtlDataRequest.class, ShowEtlDataResponse.class)
+                .withName("ShowEtlData")
+                .withUri("/v4/testhub/etl/query-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<EtlRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EtlRequestBody.class),
+            f -> f.withMarshaller(ShowEtlDataRequest::getBody, ShowEtlDataRequest::setBody));
+
+        // response
 
         return builder.build();
     }

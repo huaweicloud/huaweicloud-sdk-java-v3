@@ -406,7 +406,7 @@ public class UserDetail {
     }
 
     /**
-     * 帐号类型(0：用户；1：用户组)。
+     * 账号类型(0：用户；1：用户组)。
      * minimum: 1
      * maximum: 55
      * @return accountType
@@ -461,7 +461,7 @@ public class UserDetail {
     }
 
     /**
-     * 是否是预创建的用户，true表示是预创建用户，false表示不是预创建用户
+     * 是否是预创建的用户，true表示是预创建用户，false表示不是预创建用户。
      * @return isPreUser
      */
     public Boolean getIsPreUser() {
@@ -613,7 +613,7 @@ public class UserDetail {
     }
 
     /**
-     * 用户是否订阅协同，true表示已订阅，false表示未订阅
+     * 用户是否订阅协同，true表示已订阅，false表示未订阅。
      * @return shareSpaceSubscription
      */
     public Boolean getShareSpaceSubscription() {
@@ -630,7 +630,7 @@ public class UserDetail {
     }
 
     /**
-     * 用户已绑定协同桌面数
+     * 用户已绑定协同桌面数。
      * minimum: 0
      * maximum: 100
      * @return shareSpaceDesktops

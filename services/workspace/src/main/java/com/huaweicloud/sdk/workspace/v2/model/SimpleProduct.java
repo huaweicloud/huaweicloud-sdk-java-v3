@@ -102,7 +102,7 @@ public class SimpleProduct {
     }
 
     /**
-     * CPU
+     * CPU。
      * @return cpu
      */
     public String getCpu() {

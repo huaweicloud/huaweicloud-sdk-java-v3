@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,10 +20,86 @@ public class CreateScriptReq {
 
     private String name;
 
+    /**
+     * 脚本类型：POWERSHELL/BAT/SHELL。
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum POWERSHELL for value: "POWERSHELL"
+         */
+        public static final TypeEnum POWERSHELL = new TypeEnum("POWERSHELL");
+
+        /**
+         * Enum BAT for value: "BAT"
+         */
+        public static final TypeEnum BAT = new TypeEnum("BAT");
+
+        /**
+         * Enum SHELL for value: "SHELL"
+         */
+        public static final TypeEnum SHELL = new TypeEnum("SHELL");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("POWERSHELL", POWERSHELL);
+            map.put("BAT", BAT);
+            map.put("SHELL", SHELL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -52,7 +133,7 @@ public class CreateScriptReq {
         this.name = name;
     }
 
-    public CreateScriptReq withType(String type) {
+    public CreateScriptReq withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -61,11 +142,11 @@ public class CreateScriptReq {
      * 脚本类型：POWERSHELL/BAT/SHELL。
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 

@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 结果
+ * 结果。
  */
 public class OfficialWebsiteRatingResult {
 
@@ -80,7 +80,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 订单总额，即最终优惠后的订单金额(预留实例只包含预付部分)
+     * 订单总额，即最终优惠后的订单金额(预留实例只包含预付部分)。
      * @return amount
      */
     public BigDecimal getAmount() {
@@ -97,7 +97,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 官网价(预留实例只包含预付部分)
+     * 官网价(预留实例只包含预付部分)。
      * @return officialWebsiteAmount
      */
     public BigDecimal getOfficialWebsiteAmount() {
@@ -114,7 +114,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 订单原总额，即优惠前订单总额(预留实例只包含预付部分)
+     * 订单原总额，即优惠前订单总额(预留实例只包含预付部分)。
      * @return originalAmount
      */
     public BigDecimal getOriginalAmount() {
@@ -131,7 +131,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 官网价优惠额(预留实例只包含预付部分)
+     * 官网价优惠额(预留实例只包含预付部分)。
      * @return officialWebsiteDiscountAmount
      */
     public BigDecimal getOfficialWebsiteDiscountAmount() {
@@ -148,7 +148,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 可选折扣优惠额(预留实例只包含预付部分)
+     * 可选折扣优惠额(预留实例只包含预付部分)。
      * @return optionalDiscountAmount
      */
     public BigDecimal getOptionalDiscountAmount() {
@@ -165,7 +165,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 总优惠额(预留实例只包含预付部分)
+     * 总优惠额(预留实例只包含预付部分)。
      * @return discountAmount
      */
     public BigDecimal getDiscountAmount() {
@@ -182,7 +182,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)
+     * 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)。
      * @return perAmount
      */
     public BigDecimal getPerAmount() {
@@ -199,7 +199,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 总分期金额的优惠额(perDiscountAmount = perOriginalAmount - perAmount)
+     * 总分期金额的优惠额(perDiscountAmount = perOriginalAmount - perAmount)。
      * @return perDiscountAmount
      */
     public BigDecimal getPerDiscountAmount() {
@@ -216,7 +216,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 总分期金额原价
+     * 总分期金额原价。
      * @return perOriginalAmount
      */
     public BigDecimal getPerOriginalAmount() {
@@ -233,7 +233,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 分期周期类型 2:月 4:小时
+     * 分期周期类型 2:月 4:小时。
      * @return perPeriodType
      */
     public Integer getPerPeriodType() {
@@ -250,7 +250,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 度量单位
+     * 度量单位。
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -284,7 +284,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 产品询价结果
+     * 产品询价结果。
      * @return productRatingResults
      */
     public List<ProductResult> getProductRatingResults() {

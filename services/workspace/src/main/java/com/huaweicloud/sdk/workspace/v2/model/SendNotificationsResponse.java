@@ -22,7 +22,7 @@ public class SendNotificationsResponse extends SdkResponse {
     }
 
     /**
-     * 发送桌面消息任务id
+     * 发送桌面消息任务id。
      * @return jobId
      */
     public String getJobId() {

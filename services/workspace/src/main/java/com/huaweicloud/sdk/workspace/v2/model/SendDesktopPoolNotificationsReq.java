@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 发送桌面池消息通知请求体
+ * 发送桌面池消息通知请求体。
  */
 public class SendDesktopPoolNotificationsReq {
 
@@ -21,7 +21,7 @@ public class SendDesktopPoolNotificationsReq {
     }
 
     /**
-     * 消息通知内容
+     * 消息通知内容。
      * @return notifications
      */
     public String getNotifications() {

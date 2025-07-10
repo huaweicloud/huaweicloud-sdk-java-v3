@@ -131,6 +131,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSimilarityGraphTask
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResourceReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFavoriteReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFavoriteRequest;
@@ -252,6 +255,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandPreviewTaskResponse
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteFavoriteRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteFavoriteResponse;
@@ -301,6 +306,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataTraceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataTraceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadPublicDataReq;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadPublicDataRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadPublicDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DrugFile;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionResponse;
@@ -388,6 +396,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListDrugDatabaseResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListFavoriteRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListFavoriteResponse;
@@ -1847,6 +1857,29 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDrugModelResourceRequest, CreateDrugModelResourceResponse> createDrugModelResource =
+        genForCreateDrugModelResource();
+
+    private static HttpRequestDef<CreateDrugModelResourceRequest, CreateDrugModelResourceResponse> genForCreateDrugModelResource() {
+        // basic
+        HttpRequestDef.Builder<CreateDrugModelResourceRequest, CreateDrugModelResourceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDrugModelResourceRequest.class, CreateDrugModelResourceResponse.class)
+            .withName("CreateDrugModelResource")
+            .withUri("/v1/{project_id}/drug/drug-model-resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateDrugModelResourceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDrugModelResourceReq.class),
+            f -> f.withMarshaller(CreateDrugModelResourceRequest::getBody, CreateDrugModelResourceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateFavoriteRequest, CreateFavoriteResponse> createFavorite =
         genForCreateFavorite();
 
@@ -2806,6 +2839,29 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDrugModelRequest::getModelId, DeleteDrugModelRequest::setModelId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDrugModelResourceRequest, DeleteDrugModelResourceResponse> deleteDrugModelResource =
+        genForDeleteDrugModelResource();
+
+    private static HttpRequestDef<DeleteDrugModelResourceRequest, DeleteDrugModelResourceResponse> genForDeleteDrugModelResource() {
+        // basic
+        HttpRequestDef.Builder<DeleteDrugModelResourceRequest, DeleteDrugModelResourceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDrugModelResourceRequest.class, DeleteDrugModelResourceResponse.class)
+            .withName("DeleteDrugModelResource")
+            .withUri("/v1/{project_id}/drug/drug-model-resources/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDrugModelResourceRequest::getId, DeleteDrugModelResourceRequest::setId));
 
         // response
 
@@ -4581,6 +4637,52 @@ public class EiHealthMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDrugModelResourceRequest, ListDrugModelResourceResponse> listDrugModelResource =
+        genForListDrugModelResource();
+
+    private static HttpRequestDef<ListDrugModelResourceRequest, ListDrugModelResourceResponse> genForListDrugModelResource() {
+        // basic
+        HttpRequestDef.Builder<ListDrugModelResourceRequest, ListDrugModelResourceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDrugModelResourceRequest.class, ListDrugModelResourceResponse.class)
+            .withName("ListDrugModelResource")
+            .withUri("/v1/{project_id}/drug/drug-model-resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("spec_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDrugModelResourceRequest::getSpecCode,
+                ListDrugModelResourceRequest::setSpecCode));
+        builder.<List<String>>withRequestField("status_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDrugModelResourceRequest::getStatusList,
+                ListDrugModelResourceRequest::setStatusList));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDrugModelResourceRequest::getLimit, ListDrugModelResourceRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDrugModelResourceRequest::getOffset, ListDrugModelResourceRequest::setOffset));
+
+        // response
+
+        builder.<String>withResponseField("X-Resource-Mappings",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDrugModelResourceResponse::getXResourceMappings,
+                ListDrugModelResourceResponse::setXResourceMappings));
         return builder.build();
     }
 
@@ -11190,6 +11292,29 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNotebookReq.class),
             f -> f.withMarshaller(UpdateNotebookRequest::getBody, UpdateNotebookRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadPublicDataRequest, DownloadPublicDataResponse> downloadPublicData =
+        genForDownloadPublicData();
+
+    private static HttpRequestDef<DownloadPublicDataRequest, DownloadPublicDataResponse> genForDownloadPublicData() {
+        // basic
+        HttpRequestDef.Builder<DownloadPublicDataRequest, DownloadPublicDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadPublicDataRequest.class, DownloadPublicDataResponse.class)
+                .withName("DownloadPublicData")
+                .withUri("/v1/{project_id}/data/download")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DownloadPublicDataReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DownloadPublicDataReq.class),
+            f -> f.withMarshaller(DownloadPublicDataRequest::getBody, DownloadPublicDataRequest::setBody));
 
         // response
 

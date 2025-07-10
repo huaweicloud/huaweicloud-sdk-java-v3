@@ -26,13 +26,23 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
 
     private String audioInfoFileUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_srt_file_url")
+
+    private String audioSrtFileUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_action_file_url")
+
+    private String audioActionFileUrl;
+
     public ShowAsyncTtsJobResponse withState(String state) {
         this.state = state;
         return this;
     }
 
     /**
-     * 音频文件是否已生成完成。该标记为PROCESSING时，应该每隔3秒再次调用本接口获取音频文件(WAITING 等待中,PROCESSING 处理中,SUCCEED 成功,FAILED 失败)
+     * 音频文件是否已生成完成。该标记为PROCESSING时，应该每隔3秒再次调用本接口获取音频文件(WAITING 等待中,PROCESSING 处理中,SUCCEED 成功,FAILED 失败)。当存在该字段时，会返回以下文件的下载链接。
      * @return state
      */
     public String getState() {
@@ -66,7 +76,7 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
     }
 
     /**
-     * 字幕文件下载链接，有效期为1个小时。
+     * 音频信息文件下载链接，有效期为1个小时。
      * @return audioInfoFileUrl
      */
     public String getAudioInfoFileUrl() {
@@ -75,6 +85,40 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
 
     public void setAudioInfoFileUrl(String audioInfoFileUrl) {
         this.audioInfoFileUrl = audioInfoFileUrl;
+    }
+
+    public ShowAsyncTtsJobResponse withAudioSrtFileUrl(String audioSrtFileUrl) {
+        this.audioSrtFileUrl = audioSrtFileUrl;
+        return this;
+    }
+
+    /**
+     * 字幕文件下载链接，有效期为1个小时。
+     * @return audioSrtFileUrl
+     */
+    public String getAudioSrtFileUrl() {
+        return audioSrtFileUrl;
+    }
+
+    public void setAudioSrtFileUrl(String audioSrtFileUrl) {
+        this.audioSrtFileUrl = audioSrtFileUrl;
+    }
+
+    public ShowAsyncTtsJobResponse withAudioActionFileUrl(String audioActionFileUrl) {
+        this.audioActionFileUrl = audioActionFileUrl;
+        return this;
+    }
+
+    /**
+     * 动作信息文件下载链接，有效期为1个小时。
+     * @return audioActionFileUrl
+     */
+    public String getAudioActionFileUrl() {
+        return audioActionFileUrl;
+    }
+
+    public void setAudioActionFileUrl(String audioActionFileUrl) {
+        this.audioActionFileUrl = audioActionFileUrl;
     }
 
     @Override
@@ -87,12 +131,14 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
         }
         ShowAsyncTtsJobResponse that = (ShowAsyncTtsJobResponse) obj;
         return Objects.equals(this.state, that.state) && Objects.equals(this.audioFileUrl, that.audioFileUrl)
-            && Objects.equals(this.audioInfoFileUrl, that.audioInfoFileUrl);
+            && Objects.equals(this.audioInfoFileUrl, that.audioInfoFileUrl)
+            && Objects.equals(this.audioSrtFileUrl, that.audioSrtFileUrl)
+            && Objects.equals(this.audioActionFileUrl, that.audioActionFileUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(state, audioFileUrl, audioInfoFileUrl);
+        return Objects.hash(state, audioFileUrl, audioInfoFileUrl, audioSrtFileUrl, audioActionFileUrl);
     }
 
     @Override
@@ -102,6 +148,8 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    audioFileUrl: ").append(toIndentedString(audioFileUrl)).append("\n");
         sb.append("    audioInfoFileUrl: ").append(toIndentedString(audioInfoFileUrl)).append("\n");
+        sb.append("    audioSrtFileUrl: ").append(toIndentedString(audioSrtFileUrl)).append("\n");
+        sb.append("    audioActionFileUrl: ").append(toIndentedString(audioActionFileUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

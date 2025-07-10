@@ -47,7 +47,7 @@ public class ListTerminalsBindingDesktopsResponse extends SdkResponse {
     }
 
     /**
-     * MAC绑定VM信息列表
+     * MAC绑定VM信息列表。
      * @return bindList
      */
     public List<TerminalsBindingDesktopsInfo> getBindList() {
@@ -64,7 +64,7 @@ public class ListTerminalsBindingDesktopsResponse extends SdkResponse {
     }
 
     /**
-     * 返回结果总条数
+     * 返回结果总条数。
      * minimum: 0
      * maximum: 8000
      * @return totalNum

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 短信辅助认证配置
+ * 短信辅助认证配置。
  */
 public class RadiusGatewayConfigInfo {
 
@@ -56,7 +56,7 @@ public class RadiusGatewayConfigInfo {
     }
 
     /**
-     * 是否启用
+     * 是否启用。
      * @return enable
      */
     public Boolean getEnable() {
@@ -73,7 +73,7 @@ public class RadiusGatewayConfigInfo {
     }
 
     /**
-     * 用户名
+     * 用户名。
      * @return appId
      */
     public String getAppId() {
@@ -90,7 +90,7 @@ public class RadiusGatewayConfigInfo {
     }
 
     /**
-     * 证书域名
+     * 证书域名。
      * @return certDomainName
      */
     public String getCertDomainName() {
@@ -107,7 +107,7 @@ public class RadiusGatewayConfigInfo {
     }
 
     /**
-     * 获取token地址
+     * 获取token地址。
      * @return tokenUrl
      */
     public String getTokenUrl() {
@@ -124,7 +124,7 @@ public class RadiusGatewayConfigInfo {
     }
 
     /**
-     * 获取验证码地址
+     * 获取验证码地址。
      * @return verificationCipherUrl
      */
     public String getVerificationCipherUrl() {
@@ -141,7 +141,7 @@ public class RadiusGatewayConfigInfo {
     }
 
     /**
-     * 认证类型
+     * 认证类型。
      * @return authType
      */
     public String getAuthType() {
@@ -158,7 +158,7 @@ public class RadiusGatewayConfigInfo {
     }
 
     /**
-     * 辅助认证类型
+     * 辅助认证类型。
      * @return assistAuthType
      */
     public String getAssistAuthType() {
@@ -175,7 +175,7 @@ public class RadiusGatewayConfigInfo {
     }
 
     /**
-     * 过期时间
+     * 过期时间。
      * @return expiration
      */
     public String getExpiration() {

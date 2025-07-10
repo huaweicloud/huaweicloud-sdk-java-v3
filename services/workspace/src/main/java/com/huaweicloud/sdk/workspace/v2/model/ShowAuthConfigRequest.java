@@ -21,7 +21,7 @@ public class ShowAuthConfigRequest {
     }
 
     /**
-     * 认证类型
+     * 认证类型。LOCAL_PASSWORD：本地密码认证模式，KERBEROS：Windows AD认证模式，LDAP：第三方LDAP模式，CLIENT_TOKEN：金审UKEY客户端Token认证模式，OAUTH2：第三方单点登录模式。
      * @return authType
      */
     public String getAuthType() {

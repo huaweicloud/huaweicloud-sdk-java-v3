@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 接入信息
+ * 接入信息。
  */
 public class AccessConfig {
 
@@ -71,7 +71,7 @@ public class AccessConfig {
     }
 
     /**
-     * 互联网接入地址，只有access_mode为“INTERNET”或“BOTH”时才会返回该参数
+     * 互联网接入地址，只有access_mode为“INTERNET”或“BOTH”时才会返回该参数。
      * @return internetAccessAddress
      */
     public String getInternetAccessAddress() {
@@ -88,7 +88,7 @@ public class AccessConfig {
     }
 
     /**
-     * 互联网接入端口
+     * 互联网接入端口。
      * @return internetAccessPort
      */
     public String getInternetAccessPort() {
@@ -105,7 +105,7 @@ public class AccessConfig {
     }
 
     /**
-     * 专线接入地址，只有access_mode为“DEDICATED”或“BOTH”时才会返回该参数
+     * 专线接入地址，只有access_mode为“DEDICATED”或“BOTH”时才会返回该参数。
      * @return dedicatedAccessAddress
      */
     public String getDedicatedAccessAddress() {
@@ -138,7 +138,7 @@ public class AccessConfig {
     }
 
     /**
-     * 专线接入备用地址，只有当开启专线备用线路时才会返回该参数
+     * 专线接入备用地址，只有当开启专线备用线路时才会返回该参数。
      * @return dedicatedAccessStandbyAddress
      */
     public List<String> getDedicatedAccessStandbyAddress() {
@@ -155,7 +155,7 @@ public class AccessConfig {
     }
 
     /**
-     * 专线备用线路失败错误码
+     * 专线备用线路失败错误码。
      * @return standbyAddressResultCode
      */
     public String getStandbyAddressResultCode() {

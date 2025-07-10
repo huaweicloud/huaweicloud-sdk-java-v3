@@ -21,7 +21,7 @@ public class PoliciesSeamlessOptions {
     }
 
     /**
-     * 软件路径。
+     * 软件路径。长度不能超过1000个字符。
      * @return seamlessApplyPath
      */
     public String getSeamlessApplyPath() {

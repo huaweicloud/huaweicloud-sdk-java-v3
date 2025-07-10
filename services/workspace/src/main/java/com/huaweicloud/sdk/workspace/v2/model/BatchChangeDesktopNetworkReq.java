@@ -72,7 +72,7 @@ public class BatchChangeDesktopNetworkReq {
     }
 
     /**
-     * 待切换VPC的ID
+     * 待切换VPC的ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -89,7 +89,7 @@ public class BatchChangeDesktopNetworkReq {
     }
 
     /**
-     * 待切换子网的ID
+     * 待切换子网的ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -122,7 +122,7 @@ public class BatchChangeDesktopNetworkReq {
     }
 
     /**
-     * 安全组ID列表
+     * 安全组ID列表。
      * @return securityGroupIds
      */
     public List<String> getSecurityGroupIds() {

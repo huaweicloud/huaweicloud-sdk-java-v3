@@ -24,7 +24,7 @@ public class CreateDesktopPoolAuthorizedObjectsRequestBody {
     private List<AuthorizedObjects> objects = null;
 
     /**
-     * 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组
+     * 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。
      */
     public static final class ActionEnum {
 
@@ -137,7 +137,7 @@ public class CreateDesktopPoolAuthorizedObjectsRequestBody {
     }
 
     /**
-     * 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组
+     * 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。
      * @return action
      */
     public ActionEnum getAction() {

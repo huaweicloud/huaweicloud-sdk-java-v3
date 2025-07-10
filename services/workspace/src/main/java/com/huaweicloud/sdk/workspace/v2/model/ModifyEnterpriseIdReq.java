@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 修改企业ID请求
+ * 修改企业ID请求。
  */
 public class ModifyEnterpriseIdReq {
 
@@ -21,7 +21,7 @@ public class ModifyEnterpriseIdReq {
     }
 
     /**
-     * 企业ID
+     * 企业ID。
      * @return enterpriseId
      */
     public String getEnterpriseId() {

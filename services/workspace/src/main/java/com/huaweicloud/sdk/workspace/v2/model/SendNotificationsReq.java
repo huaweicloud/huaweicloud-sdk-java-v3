@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 发送消息通知请求体
+ * 发送消息通知请求体。
  */
 public class SendNotificationsReq {
 
@@ -45,7 +45,7 @@ public class SendNotificationsReq {
     }
 
     /**
-     * 桌面列表
+     * 桌面列表。
      * @return desktopIds
      */
     public List<String> getDesktopIds() {
@@ -62,7 +62,7 @@ public class SendNotificationsReq {
     }
 
     /**
-     * 消息通知内容
+     * 消息通知内容。
      * @return notifications
      */
     public String getNotifications() {

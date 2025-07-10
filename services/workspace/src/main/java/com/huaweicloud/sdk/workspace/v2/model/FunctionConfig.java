@@ -29,7 +29,7 @@ public class FunctionConfig {
     private String name;
 
     /**
-     * 功能配置开关的状态，标识开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能
+     * 功能配置开关的状态，表示开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能。
      */
     public static final class StatusEnum {
 
@@ -114,7 +114,7 @@ public class FunctionConfig {
     }
 
     /**
-     * 功能配置id
+     * 功能配置id。
      * @return id
      */
     public String getId() {
@@ -131,7 +131,7 @@ public class FunctionConfig {
     }
 
     /**
-     * 功能配置名称
+     * 功能配置名称。
      * @return name
      */
     public String getName() {
@@ -148,7 +148,7 @@ public class FunctionConfig {
     }
 
     /**
-     * 功能配置开关的状态，标识开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能
+     * 功能配置开关的状态，表示开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -181,7 +181,7 @@ public class FunctionConfig {
     }
 
     /**
-     * 配置项列表，键值对格式
+     * 配置项列表，键值对格式。
      * @return values
      */
     public List<MapObject> getValues() {

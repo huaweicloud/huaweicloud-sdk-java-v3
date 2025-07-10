@@ -18,167 +18,10 @@ import java.util.function.Consumer;
  */
 public class ModifyWorkspaceAttributesReq {
 
-    /**
-     * 操作类型，做如下修改操作需要指定该参数。 - applyDedicatedStandbyNetwork: 开通专线备用线路 - cancelDedicatedStandbyNetwork: 关闭专线备用线路
-     */
-    public static final class OperateTypeEnum {
-
-        /**
-         * Enum APPLYDEDICATEDSTANDBYNETWORK for value: "applyDedicatedStandbyNetwork"
-         */
-        public static final OperateTypeEnum APPLYDEDICATEDSTANDBYNETWORK =
-            new OperateTypeEnum("applyDedicatedStandbyNetwork");
-
-        /**
-         * Enum CANCELDEDICATEDSTANDBYNETWORK for value: "cancelDedicatedStandbyNetwork"
-         */
-        public static final OperateTypeEnum CANCELDEDICATEDSTANDBYNETWORK =
-            new OperateTypeEnum("cancelDedicatedStandbyNetwork");
-
-        private static final Map<String, OperateTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, OperateTypeEnum> createStaticFields() {
-            Map<String, OperateTypeEnum> map = new HashMap<>();
-            map.put("applyDedicatedStandbyNetwork", APPLYDEDICATEDSTANDBYNETWORK);
-            map.put("cancelDedicatedStandbyNetwork", CANCELDEDICATEDSTANDBYNETWORK);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        OperateTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OperateTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperateTypeEnum(value));
-        }
-
-        public static OperateTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof OperateTypeEnum) {
-                return this.value.equals(((OperateTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "operate_type")
-
-    private OperateTypeEnum operateType;
-
-    /**
-     * 主认证方式。 - KERBEROS：KERBEROS。 - KERBEROS_THIRD_SSO：第三方登录认证。
-     */
-    public static final class AuthTypeEnum {
-
-        /**
-         * Enum KERBEROS for value: "KERBEROS"
-         */
-        public static final AuthTypeEnum KERBEROS = new AuthTypeEnum("KERBEROS");
-
-        /**
-         * Enum KERBEROS_THIRD_SSO for value: "KERBEROS_THIRD_SSO"
-         */
-        public static final AuthTypeEnum KERBEROS_THIRD_SSO = new AuthTypeEnum("KERBEROS_THIRD_SSO");
-
-        private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AuthTypeEnum> createStaticFields() {
-            Map<String, AuthTypeEnum> map = new HashMap<>();
-            map.put("KERBEROS", KERBEROS);
-            map.put("KERBEROS_THIRD_SSO", KERBEROS_THIRD_SSO);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AuthTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AuthTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
-        }
-
-        public static AuthTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AuthTypeEnum) {
-                return this.value.equals(((AuthTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auth_type")
-
-    private AuthTypeEnum authType;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_info")
 
     private AdDomainInfo adInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "third_gateway_info")
-
-    private ThirdGatewayConfigInfo thirdGatewayInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_domains")
@@ -282,11 +125,6 @@ public class ModifyWorkspaceAttributesReq {
     private List<String> subnetIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vpc_config_infos")
-
-    private List<VpcConfigInfo> vpcConfigInfos = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internet_access_port")
 
     private String internetAccessPort;
@@ -336,45 +174,6 @@ public class ModifyWorkspaceAttributesReq {
 
     private Boolean enableUserCreateSnapshot;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_support_ipv6")
-
-    private Boolean isSupportIpv6;
-
-    public ModifyWorkspaceAttributesReq withOperateType(OperateTypeEnum operateType) {
-        this.operateType = operateType;
-        return this;
-    }
-
-    /**
-     * 操作类型，做如下修改操作需要指定该参数。 - applyDedicatedStandbyNetwork: 开通专线备用线路 - cancelDedicatedStandbyNetwork: 关闭专线备用线路
-     * @return operateType
-     */
-    public OperateTypeEnum getOperateType() {
-        return operateType;
-    }
-
-    public void setOperateType(OperateTypeEnum operateType) {
-        this.operateType = operateType;
-    }
-
-    public ModifyWorkspaceAttributesReq withAuthType(AuthTypeEnum authType) {
-        this.authType = authType;
-        return this;
-    }
-
-    /**
-     * 主认证方式。 - KERBEROS：KERBEROS。 - KERBEROS_THIRD_SSO：第三方登录认证。
-     * @return authType
-     */
-    public AuthTypeEnum getAuthType() {
-        return authType;
-    }
-
-    public void setAuthType(AuthTypeEnum authType) {
-        this.authType = authType;
-    }
-
     public ModifyWorkspaceAttributesReq withAdInfo(AdDomainInfo adInfo) {
         this.adInfo = adInfo;
         return this;
@@ -399,32 +198,6 @@ public class ModifyWorkspaceAttributesReq {
 
     public void setAdInfo(AdDomainInfo adInfo) {
         this.adInfo = adInfo;
-    }
-
-    public ModifyWorkspaceAttributesReq withThirdGatewayInfo(ThirdGatewayConfigInfo thirdGatewayInfo) {
-        this.thirdGatewayInfo = thirdGatewayInfo;
-        return this;
-    }
-
-    public ModifyWorkspaceAttributesReq withThirdGatewayInfo(Consumer<ThirdGatewayConfigInfo> thirdGatewayInfoSetter) {
-        if (this.thirdGatewayInfo == null) {
-            this.thirdGatewayInfo = new ThirdGatewayConfigInfo();
-            thirdGatewayInfoSetter.accept(this.thirdGatewayInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get thirdGatewayInfo
-     * @return thirdGatewayInfo
-     */
-    public ThirdGatewayConfigInfo getThirdGatewayInfo() {
-        return thirdGatewayInfo;
-    }
-
-    public void setThirdGatewayInfo(ThirdGatewayConfigInfo thirdGatewayInfo) {
-        this.thirdGatewayInfo = thirdGatewayInfo;
     }
 
     public ModifyWorkspaceAttributesReq withAdDomains(AdDomain adDomains) {
@@ -537,39 +310,6 @@ public class ModifyWorkspaceAttributesReq {
         this.subnetIds = subnetIds;
     }
 
-    public ModifyWorkspaceAttributesReq withVpcConfigInfos(List<VpcConfigInfo> vpcConfigInfos) {
-        this.vpcConfigInfos = vpcConfigInfos;
-        return this;
-    }
-
-    public ModifyWorkspaceAttributesReq addVpcConfigInfosItem(VpcConfigInfo vpcConfigInfosItem) {
-        if (this.vpcConfigInfos == null) {
-            this.vpcConfigInfos = new ArrayList<>();
-        }
-        this.vpcConfigInfos.add(vpcConfigInfosItem);
-        return this;
-    }
-
-    public ModifyWorkspaceAttributesReq withVpcConfigInfos(Consumer<List<VpcConfigInfo>> vpcConfigInfosSetter) {
-        if (this.vpcConfigInfos == null) {
-            this.vpcConfigInfos = new ArrayList<>();
-        }
-        vpcConfigInfosSetter.accept(this.vpcConfigInfos);
-        return this;
-    }
-
-    /**
-     * VPC配置信息列表。
-     * @return vpcConfigInfos
-     */
-    public List<VpcConfigInfo> getVpcConfigInfos() {
-        return vpcConfigInfos;
-    }
-
-    public void setVpcConfigInfos(List<VpcConfigInfo> vpcConfigInfos) {
-        this.vpcConfigInfos = vpcConfigInfos;
-    }
-
     public ModifyWorkspaceAttributesReq withInternetAccessPort(String internetAccessPort) {
         this.internetAccessPort = internetAccessPort;
         return this;
@@ -627,7 +367,7 @@ public class ModifyWorkspaceAttributesReq {
     }
 
     /**
-     * 开通专线访问VNC功能，如果传入的是default则自动创建，如果传入的自定义的dc_vnc_ip则直接使用，如果传入的是close表示关闭自定义VNC
+     * 开通专线访问VNC功能，如果传入的是default则自动创建，如果传入的自定义的dc_vnc_ip则直接使用，如果传入的是close表示关闭自定义VNC。
      * @return dcVncIp
      */
     public String getDcVncIp() {
@@ -763,23 +503,6 @@ public class ModifyWorkspaceAttributesReq {
         this.enableUserCreateSnapshot = enableUserCreateSnapshot;
     }
 
-    public ModifyWorkspaceAttributesReq withIsSupportIpv6(Boolean isSupportIpv6) {
-        this.isSupportIpv6 = isSupportIpv6;
-        return this;
-    }
-
-    /**
-     * 是否开启ipv6。
-     * @return isSupportIpv6
-     */
-    public Boolean getIsSupportIpv6() {
-        return isSupportIpv6;
-    }
-
-    public void setIsSupportIpv6(Boolean isSupportIpv6) {
-        this.isSupportIpv6 = isSupportIpv6;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -789,13 +512,11 @@ public class ModifyWorkspaceAttributesReq {
             return false;
         }
         ModifyWorkspaceAttributesReq that = (ModifyWorkspaceAttributesReq) obj;
-        return Objects.equals(this.operateType, that.operateType) && Objects.equals(this.authType, that.authType)
-            && Objects.equals(this.adInfo, that.adInfo) && Objects.equals(this.thirdGatewayInfo, that.thirdGatewayInfo)
-            && Objects.equals(this.adDomains, that.adDomains) && Objects.equals(this.accessMode, that.accessMode)
+        return Objects.equals(this.adInfo, that.adInfo) && Objects.equals(this.adDomains, that.adDomains)
+            && Objects.equals(this.accessMode, that.accessMode)
             && Objects.equals(this.dedicatedSubnets, that.dedicatedSubnets)
             && Objects.equals(this.adnConflictNetwork, that.adnConflictNetwork)
             && Objects.equals(this.subnetIds, that.subnetIds)
-            && Objects.equals(this.vpcConfigInfos, that.vpcConfigInfos)
             && Objects.equals(this.internetAccessPort, that.internetAccessPort)
             && Objects.equals(this.enterpriseId, that.enterpriseId)
             && Objects.equals(this.isSendEmail, that.isSendEmail) && Objects.equals(this.dcVncIp, that.dcVncIp)
@@ -804,22 +525,17 @@ public class ModifyWorkspaceAttributesReq {
             && Objects.equals(this.applySharedVpcDedicatedParam, that.applySharedVpcDedicatedParam)
             && Objects.equals(this.applyDedicatedStandbyNetworkParam, that.applyDedicatedStandbyNetworkParam)
             && Objects.equals(this.isAuthorizedInstallAgent, that.isAuthorizedInstallAgent)
-            && Objects.equals(this.enableUserCreateSnapshot, that.enableUserCreateSnapshot)
-            && Objects.equals(this.isSupportIpv6, that.isSupportIpv6);
+            && Objects.equals(this.enableUserCreateSnapshot, that.enableUserCreateSnapshot);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operateType,
-            authType,
-            adInfo,
-            thirdGatewayInfo,
+        return Objects.hash(adInfo,
             adDomains,
             accessMode,
             dedicatedSubnets,
             adnConflictNetwork,
             subnetIds,
-            vpcConfigInfos,
             internetAccessPort,
             enterpriseId,
             isSendEmail,
@@ -829,24 +545,19 @@ public class ModifyWorkspaceAttributesReq {
             applySharedVpcDedicatedParam,
             applyDedicatedStandbyNetworkParam,
             isAuthorizedInstallAgent,
-            enableUserCreateSnapshot,
-            isSupportIpv6);
+            enableUserCreateSnapshot);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ModifyWorkspaceAttributesReq {\n");
-        sb.append("    operateType: ").append(toIndentedString(operateType)).append("\n");
-        sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    adInfo: ").append(toIndentedString(adInfo)).append("\n");
-        sb.append("    thirdGatewayInfo: ").append(toIndentedString(thirdGatewayInfo)).append("\n");
         sb.append("    adDomains: ").append(toIndentedString(adDomains)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    dedicatedSubnets: ").append(toIndentedString(dedicatedSubnets)).append("\n");
         sb.append("    adnConflictNetwork: ").append(toIndentedString(adnConflictNetwork)).append("\n");
         sb.append("    subnetIds: ").append(toIndentedString(subnetIds)).append("\n");
-        sb.append("    vpcConfigInfos: ").append(toIndentedString(vpcConfigInfos)).append("\n");
         sb.append("    internetAccessPort: ").append(toIndentedString(internetAccessPort)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
         sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
@@ -861,7 +572,6 @@ public class ModifyWorkspaceAttributesReq {
             .append("\n");
         sb.append("    isAuthorizedInstallAgent: ").append(toIndentedString(isAuthorizedInstallAgent)).append("\n");
         sb.append("    enableUserCreateSnapshot: ").append(toIndentedString(enableUserCreateSnapshot)).append("\n");
-        sb.append("    isSupportIpv6: ").append(toIndentedString(isSupportIpv6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

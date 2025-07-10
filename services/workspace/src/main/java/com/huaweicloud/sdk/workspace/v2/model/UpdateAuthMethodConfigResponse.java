@@ -22,7 +22,7 @@ public class UpdateAuthMethodConfigResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID
+     * 项目ID。
      * @return projectId
      */
     public String getProjectId() {

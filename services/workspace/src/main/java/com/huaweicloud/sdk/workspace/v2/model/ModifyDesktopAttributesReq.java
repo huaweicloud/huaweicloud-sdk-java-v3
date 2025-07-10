@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询云桌面列表响应
+ * 修改云桌面属性响应。
  */
 public class ModifyDesktopAttributesReq {
 

@@ -74,7 +74,7 @@ public class AlarmHistoryItem {
     }
 
     /**
-     * 告警记录
+     * 告警记录。
      * @return recordId
      */
     public String getRecordId() {
@@ -91,7 +91,7 @@ public class AlarmHistoryItem {
     }
 
     /**
-     * 告警规则ID
+     * 告警规则ID。
      * @return alarmId
      */
     public String getAlarmId() {
@@ -108,7 +108,7 @@ public class AlarmHistoryItem {
     }
 
     /**
-     * 告警规则的名称
+     * 告警规则的名称。
      * @return name
      */
     public String getName() {
@@ -142,7 +142,7 @@ public class AlarmHistoryItem {
     }
 
     /**
-     * 告警规则类型 | ALL_INSTANCE为全部资源指标告警， RESOURCE_GROUP为资源分组指标告警， MULTI_INSTANCE为指定资源指标告警， EVENT.SYS为系统事件告警， EVENT.CUSTOM自定义事件告警， DNSHealthCheck为健康检查告警；
+     * 告警规则类型 | ALL_INSTANCE为全部资源指标告警， RESOURCE_GROUP为资源分组指标告警， MULTI_INSTANCE为指定资源指标告警， EVENT.SYS为系统事件告警， EVENT.CUSTOM自定义事件告警， DNSHealthCheck为健康检查告警。
      * @return type
      */
     public String getType() {
@@ -176,7 +176,7 @@ public class AlarmHistoryItem {
     }
 
     /**
-     * 产生时间,UTC时间
+     * 产生时间,UTC时间。
      * @return beginTime
      */
     public String getBeginTime() {

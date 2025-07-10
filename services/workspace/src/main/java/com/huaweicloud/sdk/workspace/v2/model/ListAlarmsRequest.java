@@ -31,7 +31,7 @@ public class ListAlarmsRequest {
     }
 
     /**
-     * 告警级别 | 1 - 紧急 2 - 重要 3 - 次要 4 - 提示
+     * 告警级别 | 1 - 紧急 2 - 重要 3 - 次要 4 - 提示。
      * minimum: 1
      * maximum: 4
      * @return level
@@ -50,9 +50,9 @@ public class ListAlarmsRequest {
     }
 
     /**
-     * 分页偏移量
+     * 分页偏移量。
      * minimum: 0
-     * maximum: 999
+     * maximum: 2147483646
      * @return offset
      */
     public Integer getOffset() {
@@ -69,7 +69,7 @@ public class ListAlarmsRequest {
     }
 
     /**
-     * 分页大小
+     * 分页大小，默认100。
      * minimum: 1
      * maximum: 100
      * @return limit

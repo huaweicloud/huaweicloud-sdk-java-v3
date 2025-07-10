@@ -39,7 +39,7 @@ public class ListMetricsTrendRequest {
     private List<String> metricNames = null;
 
     /**
-     * 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据
+     * 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据。
      */
     public static final class PeriodEnum {
 
@@ -131,7 +131,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -148,7 +148,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -165,7 +165,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}=key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0=key,value&dim.1=key,value
+     * 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}=key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0=key,value&dim.1=key,value。
      * @return dim
      */
     public String getDim() {
@@ -198,7 +198,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 指标名称列表
+     * 指标名称列表。
      * @return metricNames
      */
     public List<String> getMetricNames() {
@@ -215,7 +215,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据
+     * 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据。
      * @return period
      */
     public PeriodEnum getPeriod() {

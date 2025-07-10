@@ -128,7 +128,7 @@ public class AutoscalePolicy {
     }
 
     /**
-     * 自动创建桌面上限
+     * 自动创建桌面上限。
      * minimum: 1
      * maximum: 1000
      * @return maxAutoCreated
@@ -147,7 +147,7 @@ public class AutoscalePolicy {
     }
 
     /**
-     * 空闲桌面低于多少时开始自动创建桌面
+     * 空闲桌面低于多少时开始自动创建桌面。
      * minimum: 1
      * maximum: 1000
      * @return minIdle
@@ -166,7 +166,7 @@ public class AutoscalePolicy {
     }
 
     /**
-     * 一次自动创建桌面的数量
+     * 一次自动创建桌面的数量。
      * minimum: 1
      * maximum: 100
      * @return onceAutoCreated

@@ -21,7 +21,7 @@ public class OrderExtendParam {
     }
 
     /**
-     * 是否自动付款。true:自动支付; false：不自动支付;默认false
+     * 是否自动付款。true:自动支付; false：不自动支付;默认false。
      * @return isAutoPay
      */
     public String getIsAutoPay() {

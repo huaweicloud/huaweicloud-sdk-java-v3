@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -60,80 +55,10 @@ public class PoliciesPeripheralsUsbPortRedirectionOptions {
 
     private String usbRedirectionCustomizationPolicy;
 
-    /**
-     * USB 重定向模式。取值为： 经典模式：Classical mode。 通用模式：Common mode。
-     */
-    public static final class UsbRedirectionModeEnum {
-
-        /**
-         * Enum CLASSICAL_MODE for value: "Classical mode"
-         */
-        public static final UsbRedirectionModeEnum CLASSICAL_MODE = new UsbRedirectionModeEnum("Classical mode");
-
-        /**
-         * Enum COMMON_MODE for value: "Common mode"
-         */
-        public static final UsbRedirectionModeEnum COMMON_MODE = new UsbRedirectionModeEnum("Common mode");
-
-        private static final Map<String, UsbRedirectionModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, UsbRedirectionModeEnum> createStaticFields() {
-            Map<String, UsbRedirectionModeEnum> map = new HashMap<>();
-            map.put("Classical mode", CLASSICAL_MODE);
-            map.put("Common mode", COMMON_MODE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        UsbRedirectionModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static UsbRedirectionModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UsbRedirectionModeEnum(value));
-        }
-
-        public static UsbRedirectionModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof UsbRedirectionModeEnum) {
-                return this.value.equals(((UsbRedirectionModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usb_redirection_mode")
 
-    private UsbRedirectionModeEnum usbRedirectionMode;
+    private String usbRedirectionMode;
 
     public PoliciesPeripheralsUsbPortRedirectionOptions withUsbImageEnable(Boolean usbImageEnable) {
         this.usbImageEnable = usbImageEnable;
@@ -278,7 +203,7 @@ public class PoliciesPeripheralsUsbPortRedirectionOptions {
     }
 
     /**
-     * USB端口重定向自定义策略。
+     * USB端口重定向自定义策略，长度不能超过18000个字符。
      * @return usbRedirectionCustomizationPolicy
      */
     public String getUsbRedirectionCustomizationPolicy() {
@@ -289,8 +214,7 @@ public class PoliciesPeripheralsUsbPortRedirectionOptions {
         this.usbRedirectionCustomizationPolicy = usbRedirectionCustomizationPolicy;
     }
 
-    public PoliciesPeripheralsUsbPortRedirectionOptions withUsbRedirectionMode(
-        UsbRedirectionModeEnum usbRedirectionMode) {
+    public PoliciesPeripheralsUsbPortRedirectionOptions withUsbRedirectionMode(String usbRedirectionMode) {
         this.usbRedirectionMode = usbRedirectionMode;
         return this;
     }
@@ -299,11 +223,11 @@ public class PoliciesPeripheralsUsbPortRedirectionOptions {
      * USB 重定向模式。取值为： 经典模式：Classical mode。 通用模式：Common mode。
      * @return usbRedirectionMode
      */
-    public UsbRedirectionModeEnum getUsbRedirectionMode() {
+    public String getUsbRedirectionMode() {
         return usbRedirectionMode;
     }
 
-    public void setUsbRedirectionMode(UsbRedirectionModeEnum usbRedirectionMode) {
+    public void setUsbRedirectionMode(String usbRedirectionMode) {
         this.usbRedirectionMode = usbRedirectionMode;
     }
 

@@ -26,7 +26,7 @@ public class ShowQuotaDetailsRequest {
     }
 
     /**
-     * 站点ID
+     * 站点ID。
      * @return siteId
      */
     public String getSiteId() {
@@ -43,7 +43,7 @@ public class ShowQuotaDetailsRequest {
     }
 
     /**
-     * 可用分区code
+     * 可用分区code。
      * @return azCode
      */
     public String getAzCode() {

@@ -26,11 +26,6 @@ public class UpdateSubnetBandwidthReq {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_mode")
 
     private String chargeMode;
@@ -77,7 +72,7 @@ public class UpdateSubnetBandwidthReq {
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -86,23 +81,6 @@ public class UpdateSubnetBandwidthReq {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public UpdateSubnetBandwidthReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 包周期订购ID，CBC订购回调时使用。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     public UpdateSubnetBandwidthReq withChargeMode(String chargeMode) {
@@ -134,12 +112,12 @@ public class UpdateSubnetBandwidthReq {
         return Objects.equals(this.bandwidthName, that.bandwidthName)
             && Objects.equals(this.bandwidthSize, that.bandwidthSize)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.chargeMode, that.chargeMode);
+            && Objects.equals(this.chargeMode, that.chargeMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthName, bandwidthSize, enterpriseProjectId, orderId, chargeMode);
+        return Objects.hash(bandwidthName, bandwidthSize, enterpriseProjectId, chargeMode);
     }
 
     @Override
@@ -149,7 +127,6 @@ public class UpdateSubnetBandwidthReq {
         sb.append("    bandwidthName: ").append(toIndentedString(bandwidthName)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("}");
         return sb.toString();

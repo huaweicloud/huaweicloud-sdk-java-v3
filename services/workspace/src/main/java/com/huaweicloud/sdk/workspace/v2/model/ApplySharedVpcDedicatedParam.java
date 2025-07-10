@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 共享Vpc专线入参
+ * 共享Vpc专线入参。
  */
 public class ApplySharedVpcDedicatedParam {
 
@@ -34,7 +34,7 @@ public class ApplySharedVpcDedicatedParam {
     }
 
     /**
-     * 租户指定的共享Vpc专线地址
+     * 租户指定的共享Vpc专线地址。
      * @return address
      */
     public String getAddress() {
@@ -51,7 +51,7 @@ public class ApplySharedVpcDedicatedParam {
     }
 
     /**
-     * 租户指定共享Vpc专线地址端口
+     * 租户指定共享Vpc专线地址端口。
      * minimum: 1025
      * maximum: 65535
      * @return port
@@ -86,7 +86,7 @@ public class ApplySharedVpcDedicatedParam {
     }
 
     /**
-     * 开通服务资源使用的可用分区，默认随机使用2个可用区
+     * 开通服务资源使用的可用分区，默认随机使用2个可用区。
      * @return availabilityZone
      */
     public List<String> getAvailabilityZone() {

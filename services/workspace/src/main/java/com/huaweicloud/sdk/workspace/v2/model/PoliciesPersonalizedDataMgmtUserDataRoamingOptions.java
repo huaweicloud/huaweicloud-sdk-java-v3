@@ -42,7 +42,7 @@ public class PoliciesPersonalizedDataMgmtUserDataRoamingOptions {
     }
 
     /**
-     * 配置文件流式处理启用
+     * 配置文件流式处理启用。
      * @return profileStreamingEnable
      */
     public Boolean getProfileStreamingEnable() {
@@ -76,7 +76,7 @@ public class PoliciesPersonalizedDataMgmtUserDataRoamingOptions {
     }
 
     /**
-     * 排除文件夹路径
+     * 排除文件夹路径。
      * @return excludeFoldersPath
      */
     public String getExcludeFoldersPath() {
@@ -93,7 +93,7 @@ public class PoliciesPersonalizedDataMgmtUserDataRoamingOptions {
     }
 
     /**
-     * 排除文件夹路径
+     * 排除文件夹路径。
      * @return roamingRegistryMethod
      */
     public String getRoamingRegistryMethod() {
@@ -110,7 +110,7 @@ public class PoliciesPersonalizedDataMgmtUserDataRoamingOptions {
     }
 
     /**
-     * 漫游注册路径
+     * 漫游注册路径。
      * @return roamingRegistryPath
      */
     public String getRoamingRegistryPath() {

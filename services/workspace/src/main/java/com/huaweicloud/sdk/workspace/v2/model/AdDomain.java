@@ -191,7 +191,7 @@ public class AdDomain {
     }
 
     /**
-     * 域管理员帐号。域类型为LOCAL_AD时需要配置。 必须为AD服务器上已经存在的域管理员帐号。
+     * 域管理员账号。域类型为LOCAL_AD时需要配置。 必须为AD服务器上已经存在的域管理员账号。
      * @return domainAdminAccount
      */
     public String getDomainAdminAccount() {

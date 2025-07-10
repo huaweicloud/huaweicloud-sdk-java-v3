@@ -175,7 +175,7 @@ public class HourPackageInfo {
     }
 
     /**
-     * 小时包已用用时长。
+     * 小时包已用时长。
      * @return useDuration
      */
     public Integer getUseDuration() {

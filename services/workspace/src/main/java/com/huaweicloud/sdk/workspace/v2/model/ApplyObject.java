@@ -21,7 +21,7 @@ public class ApplyObject {
     private String objectId;
 
     /**
-     * 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。 - DESKTOP_TAG：桌面标签
+     * 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面。 - DESKTOP_TAG：桌面标签。
      */
     public static final class ObjectTypeEnum {
 
@@ -135,7 +135,7 @@ public class ApplyObject {
     }
 
     /**
-     * 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。 - DESKTOP_TAG：桌面标签
+     * 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面。 - DESKTOP_TAG：桌面标签。
      * @return objectType
      */
     public ObjectTypeEnum getObjectType() {

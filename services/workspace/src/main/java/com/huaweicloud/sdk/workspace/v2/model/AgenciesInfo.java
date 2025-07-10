@@ -29,7 +29,7 @@ public class AgenciesInfo {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class AgenciesInfo {
     }
 
     /**
-     * 委托权限信息
+     * 委托权限信息。
      * @return permissions
      */
     public List<AgenciesPermissionInfo> getPermissions() {

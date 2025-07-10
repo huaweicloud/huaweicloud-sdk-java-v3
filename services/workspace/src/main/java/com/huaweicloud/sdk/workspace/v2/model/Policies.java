@@ -37,19 +37,9 @@ public class Policies {
     private PoliciesFileAndClipboard fileAndClipboard;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "access_control")
-
-    private AccessControl accessControl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session")
 
     private Session session;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bandwidth")
-
-    private Bandwidth bandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "virtual_channel")
@@ -72,7 +62,7 @@ public class Policies {
     private PoliciesSeamless seamless;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "personalizedDataMgmt")
+    @JsonProperty(value = "personalized_data_mgmt")
 
     private PoliciesPersonalizedDataMgmt personalizedDataMgmt;
 
@@ -216,32 +206,6 @@ public class Policies {
         this.fileAndClipboard = fileAndClipboard;
     }
 
-    public Policies withAccessControl(AccessControl accessControl) {
-        this.accessControl = accessControl;
-        return this;
-    }
-
-    public Policies withAccessControl(Consumer<AccessControl> accessControlSetter) {
-        if (this.accessControl == null) {
-            this.accessControl = new AccessControl();
-            accessControlSetter.accept(this.accessControl);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get accessControl
-     * @return accessControl
-     */
-    public AccessControl getAccessControl() {
-        return accessControl;
-    }
-
-    public void setAccessControl(AccessControl accessControl) {
-        this.accessControl = accessControl;
-    }
-
     public Policies withSession(Session session) {
         this.session = session;
         return this;
@@ -266,32 +230,6 @@ public class Policies {
 
     public void setSession(Session session) {
         this.session = session;
-    }
-
-    public Policies withBandwidth(Bandwidth bandwidth) {
-        this.bandwidth = bandwidth;
-        return this;
-    }
-
-    public Policies withBandwidth(Consumer<Bandwidth> bandwidthSetter) {
-        if (this.bandwidth == null) {
-            this.bandwidth = new Bandwidth();
-            bandwidthSetter.accept(this.bandwidth);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get bandwidth
-     * @return bandwidth
-     */
-    public Bandwidth getBandwidth() {
-        return bandwidth;
-    }
-
-    public void setBandwidth(Bandwidth bandwidth) {
-        this.bandwidth = bandwidth;
     }
 
     public Policies withVirtualChannel(VirtualChannel virtualChannel) {
@@ -488,9 +426,7 @@ public class Policies {
         return Objects.equals(this.peripherals, that.peripherals) && Objects.equals(this.audio, that.audio)
             && Objects.equals(this.client, that.client) && Objects.equals(this.display, that.display)
             && Objects.equals(this.fileAndClipboard, that.fileAndClipboard)
-            && Objects.equals(this.accessControl, that.accessControl) && Objects.equals(this.session, that.session)
-            && Objects.equals(this.bandwidth, that.bandwidth)
-            && Objects.equals(this.virtualChannel, that.virtualChannel)
+            && Objects.equals(this.session, that.session) && Objects.equals(this.virtualChannel, that.virtualChannel)
             && Objects.equals(this.watermark, that.watermark) && Objects.equals(this.keyboardMouse, that.keyboardMouse)
             && Objects.equals(this.seamless, that.seamless)
             && Objects.equals(this.personalizedDataMgmt, that.personalizedDataMgmt)
@@ -504,9 +440,7 @@ public class Policies {
             client,
             display,
             fileAndClipboard,
-            accessControl,
             session,
-            bandwidth,
             virtualChannel,
             watermark,
             keyboardMouse,
@@ -525,9 +459,7 @@ public class Policies {
         sb.append("    client: ").append(toIndentedString(client)).append("\n");
         sb.append("    display: ").append(toIndentedString(display)).append("\n");
         sb.append("    fileAndClipboard: ").append(toIndentedString(fileAndClipboard)).append("\n");
-        sb.append("    accessControl: ").append(toIndentedString(accessControl)).append("\n");
         sb.append("    session: ").append(toIndentedString(session)).append("\n");
-        sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    virtualChannel: ").append(toIndentedString(virtualChannel)).append("\n");
         sb.append("    watermark: ").append(toIndentedString(watermark)).append("\n");
         sb.append("    keyboardMouse: ").append(toIndentedString(keyboardMouse)).append("\n");

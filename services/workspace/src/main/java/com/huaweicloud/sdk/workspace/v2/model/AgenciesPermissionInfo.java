@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 委托权限信息
+ * 委托权限信息。
  */
 public class AgenciesPermissionInfo {
 
@@ -46,7 +46,7 @@ public class AgenciesPermissionInfo {
     }
 
     /**
-     * 委托权限项
+     * 委托权限项。
      * @return systemPermissionDisplayNames
      */
     public List<String> getSystemPermissionDisplayNames() {
@@ -82,7 +82,7 @@ public class AgenciesPermissionInfo {
     }
 
     /**
-     * 需要委托的权限项
+     * 需要委托的权限项。
      * @return wantedSystemPermissionDisplayNames
      */
     public List<String> getWantedSystemPermissionDisplayNames() {

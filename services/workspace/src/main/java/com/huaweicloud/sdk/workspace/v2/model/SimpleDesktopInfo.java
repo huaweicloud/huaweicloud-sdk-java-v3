@@ -14,6 +14,16 @@ import java.util.function.Consumer;
 public class SimpleDesktopInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_id")
 
     private String desktopId;
@@ -107,6 +117,40 @@ public class SimpleDesktopInfo {
     @JsonProperty(value = "task_status")
 
     private String taskStatus;
+
+    public SimpleDesktopInfo withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * domainId。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public SimpleDesktopInfo withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 项目id。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
 
     public SimpleDesktopInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
@@ -300,7 +344,7 @@ public class SimpleDesktopInfo {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -350,7 +394,7 @@ public class SimpleDesktopInfo {
     }
 
     /**
-     * 是否处于管理员维护模式
+     * 是否处于管理员维护模式。
      * @return inMaintenanceMode
      */
     public Boolean getInMaintenanceMode() {
@@ -367,7 +411,7 @@ public class SimpleDesktopInfo {
     }
 
     /**
-     * 桌面协同资源SKU码
+     * 桌面协同资源SKU码。
      * @return shareResourceSku
      */
     public String getShareResourceSku() {
@@ -384,7 +428,7 @@ public class SimpleDesktopInfo {
     }
 
     /**
-     * 桌面类型
+     * 桌面类型。
      * @return desktopType
      */
     public String getDesktopType() {
@@ -472,7 +516,8 @@ public class SimpleDesktopInfo {
             return false;
         }
         SimpleDesktopInfo that = (SimpleDesktopInfo) obj;
-        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.computerName, that.computerName)
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.osHostName, that.osHostName) && Objects.equals(this.created, that.created)
             && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.attachUserInfos, that.attachUserInfos)
@@ -488,7 +533,9 @@ public class SimpleDesktopInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId,
+        return Objects.hash(domainId,
+            projectId,
+            desktopId,
             computerName,
             osHostName,
             created,
@@ -513,6 +560,8 @@ public class SimpleDesktopInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SimpleDesktopInfo {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    osHostName: ").append(toIndentedString(osHostName)).append("\n");

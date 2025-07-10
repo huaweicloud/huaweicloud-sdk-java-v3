@@ -143,6 +143,16 @@ public class CreateUserRequest {
 
     private String aliasName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_info_map")
+
+    private String userInfoMap;
+
     public CreateUserRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -346,6 +356,40 @@ public class CreateUserRequest {
         this.aliasName = aliasName;
     }
 
+    public CreateUserRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreateUserRequest withUserInfoMap(String userInfoMap) {
+        this.userInfoMap = userInfoMap;
+        return this;
+    }
+
+    /**
+     * 用户信息映射，包含用户的服务等级、操作模式和类型。
+     * @return userInfoMap
+     */
+    public String getUserInfoMap() {
+        return userInfoMap;
+    }
+
+    public void setUserInfoMap(String userInfoMap) {
+        this.userInfoMap = userInfoMap;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -362,7 +406,9 @@ public class CreateUserRequest {
             && Objects.equals(this.enableChangePassword, that.enableChangePassword)
             && Objects.equals(this.nextLoginChangePassword, that.nextLoginChangePassword)
             && Objects.equals(this.groupIds, that.groupIds) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.aliasName, that.aliasName);
+            && Objects.equals(this.aliasName, that.aliasName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.userInfoMap, that.userInfoMap);
     }
 
     @Override
@@ -377,7 +423,9 @@ public class CreateUserRequest {
             nextLoginChangePassword,
             groupIds,
             description,
-            aliasName);
+            aliasName,
+            enterpriseProjectId,
+            userInfoMap);
     }
 
     @Override
@@ -395,6 +443,8 @@ public class CreateUserRequest {
         sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    userInfoMap: ").append(toIndentedString(userInfoMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

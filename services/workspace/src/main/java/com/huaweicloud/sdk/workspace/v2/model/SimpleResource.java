@@ -48,7 +48,7 @@ public class SimpleResource {
     }
 
     /**
-     * 配额数
+     * 配额数。
      * minimum: 0
      * maximum: 2147483647
      * @return quota
@@ -67,7 +67,7 @@ public class SimpleResource {
     }
 
     /**
-     * 配额已用值
+     * 配额已用值。
      * minimum: 0
      * maximum: 2147483647
      * @return used

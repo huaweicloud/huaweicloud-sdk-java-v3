@@ -78,6 +78,16 @@ public class CreateExternalIncidentRequest {
 
     private String creator;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incident_ownership")
+
+    private String incidentOwnership;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private Long startTime;
+
     public CreateExternalIncidentRequest withRegion(List<String> region) {
         this.region = region;
         return this;
@@ -363,6 +373,42 @@ public class CreateExternalIncidentRequest {
         this.creator = creator;
     }
 
+    public CreateExternalIncidentRequest withIncidentOwnership(String incidentOwnership) {
+        this.incidentOwnership = incidentOwnership;
+        return this;
+    }
+
+    /**
+     * 事件归属
+     * @return incidentOwnership
+     */
+    public String getIncidentOwnership() {
+        return incidentOwnership;
+    }
+
+    public void setIncidentOwnership(String incidentOwnership) {
+        this.incidentOwnership = incidentOwnership;
+    }
+
+    public CreateExternalIncidentRequest withStartTime(Long startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * 故障发生时间戳
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return startTime
+     */
+    public Long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -383,7 +429,9 @@ public class CreateExternalIncidentRequest {
             && Objects.equals(this.incidentSource, that.incidentSource)
             && Objects.equals(this.incidentAssignee, that.incidentAssignee)
             && Objects.equals(this.assigneeScene, that.assigneeScene)
-            && Objects.equals(this.assigneeRole, that.assigneeRole) && Objects.equals(this.creator, that.creator);
+            && Objects.equals(this.assigneeRole, that.assigneeRole) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.incidentOwnership, that.incidentOwnership)
+            && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override
@@ -400,7 +448,9 @@ public class CreateExternalIncidentRequest {
             incidentAssignee,
             assigneeScene,
             assigneeRole,
-            creator);
+            creator,
+            incidentOwnership,
+            startTime);
     }
 
     @Override
@@ -420,6 +470,8 @@ public class CreateExternalIncidentRequest {
         sb.append("    assigneeScene: ").append(toIndentedString(assigneeScene)).append("\n");
         sb.append("    assigneeRole: ").append(toIndentedString(assigneeRole)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+        sb.append("    incidentOwnership: ").append(toIndentedString(incidentOwnership)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

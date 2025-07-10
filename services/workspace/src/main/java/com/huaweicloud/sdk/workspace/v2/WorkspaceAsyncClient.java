@@ -265,8 +265,6 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
-import com.huaweicloud.sdk.workspace.v2.model.ListDesktopDetachInfoRequest;
-import com.huaweicloud.sdk.workspace.v2.model.ListDesktopDetachInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopOperationsRequest;
@@ -289,16 +287,12 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatisticsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatisticsResponse;
-import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatusRequest;
-import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDownloadAddressRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDownloadAddressResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewResponse;
-import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoRequest;
-import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListHourPackagesTypeRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHourPackagesTypeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListImagesRequest;
@@ -393,6 +387,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsLtsConfigurationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsLtsConfigurationsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserGroupsRequest;
@@ -435,6 +431,10 @@ import com.huaweicloud.sdk.workspace.v2.model.SendNotificationsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.SendNotificationsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.SetMaintenanceModeRequest;
 import com.huaweicloud.sdk.workspace.v2.model.SetMaintenanceModeResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SetRuleRestrictionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SetRuleRestrictionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SetUserEventsLtsConfigurationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SetUserEventsLtsConfigurationsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAuthConfigRequest;
@@ -467,6 +467,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowRemoteConsoleAddressRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowRemoteConsoleAddressResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowRuleRestrictionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowRuleRestrictionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScreenRecordRequest;
@@ -875,7 +877,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询告警统计
      *
-     * 返回各级别告警数
+     * 返回各级别告警数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -889,7 +891,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询告警统计
      *
-     * 返回各级别告警数
+     * 返回各级别告警数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -904,7 +906,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询告警列表
      *
-     * 从ces查询告警列表
+     * 从ces查询告警列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -918,7 +920,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询告警列表
      *
-     * 从ces查询告警列表
+     * 从ces查询告警列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1167,7 +1169,7 @@ public class WorkspaceAsyncClient {
     /**
      * 删除应用
      *
-     * 删除应用
+     * 删除应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1181,7 +1183,7 @@ public class WorkspaceAsyncClient {
     /**
      * 删除应用
      *
-     * 删除应用
+     * 删除应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1567,9 +1569,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 批量删除管控规则列表
+     * 批量删除管控规则
      *
-     * 批量删除管控规则列表。
+     * 批量删除管控规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1582,9 +1584,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 批量删除管控规则列表
+     * 批量删除管控规则
      *
-     * 批量删除管控规则列表。
+     * 批量删除管控规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1659,7 +1661,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询应用规则
      *
-     * 查询应用规则
+     * 查询应用规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1673,7 +1675,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询应用规则
      *
-     * 查询应用规则
+     * 查询应用规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1714,6 +1716,64 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 设置管控规则
+     *
+     * 设置管控规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRuleRestrictionRequest 请求对象
+     * @return CompletableFuture<SetRuleRestrictionResponse>
+     */
+    public CompletableFuture<SetRuleRestrictionResponse> setRuleRestrictionAsync(SetRuleRestrictionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.setRuleRestriction);
+    }
+
+    /**
+     * 设置管控规则
+     *
+     * 设置管控规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRuleRestrictionRequest 请求对象
+     * @return AsyncInvoker<SetRuleRestrictionRequest, SetRuleRestrictionResponse>
+     */
+    public AsyncInvoker<SetRuleRestrictionRequest, SetRuleRestrictionResponse> setRuleRestrictionAsyncInvoker(
+        SetRuleRestrictionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.setRuleRestriction, hcClient);
+    }
+
+    /**
+     * 查询管控规则
+     *
+     * 查询管控规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRuleRestrictionRequest 请求对象
+     * @return CompletableFuture<ShowRuleRestrictionResponse>
+     */
+    public CompletableFuture<ShowRuleRestrictionResponse> showRuleRestrictionAsync(ShowRuleRestrictionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showRuleRestriction);
+    }
+
+    /**
+     * 查询管控规则
+     *
+     * 查询管控规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRuleRestrictionRequest 请求对象
+     * @return AsyncInvoker<ShowRuleRestrictionRequest, ShowRuleRestrictionResponse>
+     */
+    public AsyncInvoker<ShowRuleRestrictionRequest, ShowRuleRestrictionResponse> showRuleRestrictionAsyncInvoker(
+        ShowRuleRestrictionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showRuleRestriction, hcClient);
+    }
+
+    /**
      * 修改应用规则
      *
      * 修改应用规则。
@@ -1745,7 +1805,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询辅助认证配置
      *
-     * 查询辅助认证的配置信息
+     * 查询辅助认证的配置信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1760,7 +1820,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询辅助认证配置
      *
-     * 查询辅助认证的配置信息
+     * 查询辅助认证的配置信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1804,7 +1864,7 @@ public class WorkspaceAsyncClient {
     /**
      * 更新辅助认证策略配置
      *
-     * 更新辅助认证策略配置
+     * 更新辅助认证策略配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1819,7 +1879,7 @@ public class WorkspaceAsyncClient {
     /**
      * 更新辅助认证策略配置
      *
-     * 更新辅助认证策略配置
+     * 更新辅助认证策略配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1894,7 +1954,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询可用分区列表概要
      *
-     * 该接口用于查询云桌面支持的可用分区列表
+     * 该接口用于查询云桌面支持的可用分区列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1908,7 +1968,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询可用分区列表概要
      *
-     * 该接口用于查询云桌面支持的可用分区列表
+     * 该接口用于查询云桌面支持的可用分区列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1976,67 +2036,6 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ExportUserLoginInfoNewRequest, ExportUserLoginInfoNewResponse> exportUserLoginInfoNewAsyncInvoker(
         ExportUserLoginInfoNewRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.exportUserLoginInfoNew, hcClient);
-    }
-
-    /**
-     * 查询桌面登录状态
-     *
-     * 该接口用于查询桌面登录状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDesktopsStatusRequest 请求对象
-     * @return CompletableFuture<ListDesktopsStatusResponse>
-     */
-    @Deprecated
-    public CompletableFuture<ListDesktopsStatusResponse> listDesktopsStatusAsync(ListDesktopsStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopsStatus);
-    }
-
-    /**
-     * 查询桌面登录状态
-     *
-     * 该接口用于查询桌面登录状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDesktopsStatusRequest 请求对象
-     * @return AsyncInvoker<ListDesktopsStatusRequest, ListDesktopsStatusResponse>
-     */
-    @Deprecated
-    public AsyncInvoker<ListDesktopsStatusRequest, ListDesktopsStatusResponse> listDesktopsStatusAsyncInvoker(
-        ListDesktopsStatusRequest request) {
-        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopsStatus, hcClient);
-    }
-
-    /**
-     * 查询登录人数
-     *
-     * 该接口用于查询登录人数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHistoryOnlineInfoRequest 请求对象
-     * @return CompletableFuture<ListHistoryOnlineInfoResponse>
-     */
-    public CompletableFuture<ListHistoryOnlineInfoResponse> listHistoryOnlineInfoAsync(
-        ListHistoryOnlineInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listHistoryOnlineInfo);
-    }
-
-    /**
-     * 查询登录人数
-     *
-     * 该接口用于查询登录人数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHistoryOnlineInfoRequest 请求对象
-     * @return AsyncInvoker<ListHistoryOnlineInfoRequest, ListHistoryOnlineInfoResponse>
-     */
-    public AsyncInvoker<ListHistoryOnlineInfoRequest, ListHistoryOnlineInfoResponse> listHistoryOnlineInfoAsyncInvoker(
-        ListHistoryOnlineInfoRequest request) {
-        return new AsyncInvoker<>(request, WorkspaceMeta.listHistoryOnlineInfo, hcClient);
     }
 
     /**
@@ -2130,7 +2129,7 @@ public class WorkspaceAsyncClient {
     /**
      * 分配用户
      *
-     * 将桌面分配给用户
+     * 将桌面分配给用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2144,7 +2143,7 @@ public class WorkspaceAsyncClient {
     /**
      * 分配用户
      *
-     * 将桌面分配给用户
+     * 将桌面分配给用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2219,7 +2218,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量切换桌面网络
      *
-     * 批量切换桌面vpc、子网、ip、安全组
+     * 批量切换桌面vpc、子网、ip、安全组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2234,7 +2233,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量切换桌面网络
      *
-     * 批量切换桌面vpc、子网、ip、安全组
+     * 批量切换桌面vpc、子网、ip、安全组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2278,7 +2277,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量解绑用户
      *
-     * 批量将桌面和用户解绑
+     * 批量将桌面和用户解绑。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2293,7 +2292,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量解绑用户
      *
-     * 批量将桌面和用户解绑
+     * 批量将桌面和用户解绑。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2306,9 +2305,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 安装ces-agent
+     * 安装agent
      *
-     * 批量为桌面安装agent
+     * 批量为桌面安装agent。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2320,9 +2319,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 安装ces-agent
+     * 安装agent
      *
-     * 批量为桌面安装agent
+     * 批量为桌面安装agent。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2396,7 +2395,7 @@ public class WorkspaceAsyncClient {
     /**
      * 操作桌面
      *
-     * 批量操作桌面，用于批量开机、关机和重启。
+     * 批量操作桌面，用于批量开机、关机、休眠和重启。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2410,7 +2409,7 @@ public class WorkspaceAsyncClient {
     /**
      * 操作桌面
      *
-     * 批量操作桌面，用于批量开机、关机和重启。
+     * 批量操作桌面，用于批量开机、关机、休眠和重启。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2455,7 +2454,7 @@ public class WorkspaceAsyncClient {
     /**
      * 切换桌面网络
      *
-     * 切换桌面vpc、子网、ip、安全组
+     * 切换桌面vpc、子网、ip、安全组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2470,7 +2469,7 @@ public class WorkspaceAsyncClient {
     /**
      * 切换桌面网络
      *
-     * 切换桌面vpc、子网、ip、安全组
+     * 切换桌面vpc、子网、ip、安全组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2485,7 +2484,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面转镜像
      *
-     * 桌面转镜像
+     * 桌面转镜像。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2500,7 +2499,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面转镜像
      *
-     * 桌面转镜像
+     * 桌面转镜像。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2633,7 +2632,7 @@ public class WorkspaceAsyncClient {
     /**
      * 解绑用户
      *
-     * 将桌面和用户解绑
+     * 将桌面和用户解绑。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2647,7 +2646,7 @@ public class WorkspaceAsyncClient {
     /**
      * 解绑用户
      *
-     * 将桌面和用户解绑
+     * 将桌面和用户解绑。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2716,36 +2715,6 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListDesktopActionsRequest, ListDesktopActionsResponse> listDesktopActionsAsyncInvoker(
         ListDesktopActionsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopActions, hcClient);
-    }
-
-    /**
-     * 查询桌面解绑信息
-     *
-     * 查询桌面解绑信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDesktopDetachInfoRequest 请求对象
-     * @return CompletableFuture<ListDesktopDetachInfoResponse>
-     */
-    public CompletableFuture<ListDesktopDetachInfoResponse> listDesktopDetachInfoAsync(
-        ListDesktopDetachInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopDetachInfo);
-    }
-
-    /**
-     * 查询桌面解绑信息
-     *
-     * 查询桌面解绑信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDesktopDetachInfoRequest 请求对象
-     * @return AsyncInvoker<ListDesktopDetachInfoRequest, ListDesktopDetachInfoResponse>
-     */
-    public AsyncInvoker<ListDesktopDetachInfoRequest, ListDesktopDetachInfoResponse> listDesktopDetachInfoAsyncInvoker(
-        ListDesktopDetachInfoRequest request) {
-        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopDetachInfo, hcClient);
     }
 
     /**
@@ -2897,7 +2866,7 @@ public class WorkspaceAsyncClient {
     /**
      * 发送消息通知
      *
-     * 用于管理员向桌面发送消息通知
+     * 用于管理员向桌面发送消息通知。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2911,7 +2880,7 @@ public class WorkspaceAsyncClient {
     /**
      * 发送消息通知
      *
-     * 用于管理员向桌面发送消息通知
+     * 用于管理员向桌面发送消息通知。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2926,7 +2895,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量设置桌面维护模式
      *
-     * 批量设置桌面管理员维护模式
+     * 批量设置桌面管理员维护模式。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2940,7 +2909,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量设置桌面维护模式
      *
-     * 批量设置桌面管理员维护模式
+     * 批量设置桌面管理员维护模式。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3014,7 +2983,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询桌面网络
      *
-     * 查询桌面vpc、子网、privateIp、EIP、安全组
+     * 查询桌面vpc、子网、privateIp、EIP、安全组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3028,7 +2997,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询桌面网络
      *
-     * 查询桌面vpc、子网、privateIp、EIP、安全组
+     * 查询桌面vpc、子网、privateIp、EIP、安全组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3043,7 +3012,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量查询桌面网络
      *
-     * 查询桌面vpc、子网、privateIp、EIP、安全组
+     * 查询桌面vpc、子网、privateIp、EIP、安全组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3057,7 +3026,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量查询桌面网络
      *
-     * 查询桌面vpc、子网、privateIp、EIP、安全组
+     * 查询桌面vpc、子网、privateIp、EIP、安全组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3756,7 +3725,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面池变更规格
      *
-     * 桌面池变更规格
+     * 桌面池变更规格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3770,7 +3739,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面池变更规格
      *
-     * 桌面池变更规格
+     * 桌面池变更规格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3785,7 +3754,7 @@ public class WorkspaceAsyncClient {
     /**
      * 发送消息通知
      *
-     * 用于管理员向桌面发送消息通知
+     * 用于管理员向桌面发送消息通知。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3800,7 +3769,7 @@ public class WorkspaceAsyncClient {
     /**
      * 发送消息通知
      *
-     * 用于管理员向桌面发送消息通知
+     * 用于管理员向桌面发送消息通知。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3904,7 +3873,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量添加多个桌面标签
      *
-     * 同时对多个桌面批量添加标签，如果创建的标签已经存在（key相同）则覆，最大支持100个桌面，每个桌面最大20个标签
+     * 同时对多个桌面批量添加标签，如果创建的标签已经存在（key相同）则覆，最大支持100个桌面，每个桌面最大20个标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3919,7 +3888,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量添加多个桌面标签
      *
-     * 同时对多个桌面批量添加标签，如果创建的标签已经存在（key相同）则覆，最大支持100个桌面，每个桌面最大20个标签
+     * 同时对多个桌面批量添加标签，如果创建的标签已经存在（key相同）则覆，最大支持100个桌面，每个桌面最大20个标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3934,7 +3903,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量添加删除标签
      *
-     * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功
+     * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3948,7 +3917,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量添加删除标签
      *
-     * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功
+     * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3963,7 +3932,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量删除多个桌面标签
      *
-     * 同时对多个桌面批量添加标签，删除时，如果删除的标签不存在默认处理成功，最大支持100个桌面，每个桌面最大20个标签
+     * 同时对多个桌面批量添加标签，删除时，如果删除的标签不存在默认处理成功，最大支持100个桌面，每个桌面最大20个标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3978,7 +3947,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量删除多个桌面标签
      *
-     * 同时对多个桌面批量添加标签，删除时，如果删除的标签不存在默认处理成功，最大支持100个桌面，每个桌面最大20个标签
+     * 同时对多个桌面批量添加标签，删除时，如果删除的标签不存在默认处理成功，最大支持100个桌面，每个桌面最大20个标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4049,7 +4018,7 @@ public class WorkspaceAsyncClient {
     /**
      * 使用标签过滤桌面
      *
-     * 使用标签过滤桌面
+     * 使用标签过滤桌面。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4063,7 +4032,7 @@ public class WorkspaceAsyncClient {
     /**
      * 使用标签过滤桌面
      *
-     * 使用标签过滤桌面
+     * 使用标签过滤桌面。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4078,7 +4047,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询项目标签
      *
-     * 查询租户的所有标签集合
+     * 查询租户的所有标签集合。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4092,7 +4061,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询项目标签
      *
-     * 查询租户的所有标签集合
+     * 查询租户的所有标签集合。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4107,7 +4076,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询桌面标签
      *
-     * 查询指定桌面的标签信息
+     * 查询指定桌面的标签信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4121,7 +4090,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询桌面标签
      *
-     * 查询指定桌面的标签信息
+     * 查询指定桌面的标签信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4397,7 +4366,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面增配变更批量询价
      *
-     * 包周期桌面增配变更批量询价
+     * 包周期桌面增配变更批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4412,7 +4381,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面增配变更批量询价
      *
-     * 包周期桌面增配变更批量询价
+     * 包周期桌面增配变更批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4457,7 +4426,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池添加单个磁盘批量询价
      *
-     * 包周期桌面池添加单个磁盘批量询价
+     * 包周期桌面池添加单个磁盘批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4472,7 +4441,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池添加单个磁盘批量询价
      *
-     * 包周期桌面池添加单个磁盘批量询价
+     * 包周期桌面池添加单个磁盘批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4487,7 +4456,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池切换镜像批量询价
      *
-     * 包周期桌面池切换镜像(由不收费镜像变更至收费镜像)批量询价
+     * 包周期桌面池切换镜像(由不收费镜像变更至收费镜像)批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4502,7 +4471,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池切换镜像批量询价
      *
-     * 包周期桌面池切换镜像(由不收费镜像变更至收费镜像)批量询价
+     * 包周期桌面池切换镜像(由不收费镜像变更至收费镜像)批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4517,7 +4486,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池扩容磁盘批量询价
      *
-     * 包周期桌面池扩容磁盘批量询价
+     * 包周期桌面池扩容磁盘批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4532,7 +4501,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池扩容磁盘批量询价
      *
-     * 包周期桌面池扩容磁盘批量询价
+     * 包周期桌面池扩容磁盘批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4547,7 +4516,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池变更规格批量询价
      *
-     * 包周期桌面池变更规格批量询价
+     * 包周期桌面池变更规格批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4562,7 +4531,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池变更规格批量询价
      *
-     * 包周期桌面池变更规格批量询价
+     * 包周期桌面池变更规格批量询价。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4930,9 +4899,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询已绑定桌面和未绑定的Eip
+     * 查询已绑定桌面和未绑定的EIP
      *
-     * 查询已绑定桌面和未绑定的Eip。
+     * 查询已绑定桌面和未绑定的EIP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4944,9 +4913,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询已绑定桌面和未绑定的Eip
+     * 查询已绑定桌面和未绑定的EIP
      *
-     * 查询已绑定桌面和未绑定的Eip。
+     * 查询已绑定桌面和未绑定的EIP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4988,7 +4957,7 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询Nat网关列表
+     * 查询NAT网关列表
      *
      * 查询NAT网关列表。
      * 
@@ -5002,7 +4971,7 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询Nat网关列表
+     * 查询NAT网关列表
      *
      * 查询NAT网关列表。
      * 
@@ -5136,7 +5105,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改云办公带宽
      *
-     * 修改云办公带宽
+     * 修改云办公带宽。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5151,7 +5120,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改云办公带宽
      *
-     * 修改云办公带宽
+     * 修改云办公带宽。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5166,7 +5135,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改云办公带宽的控制配置
      *
-     * 修改云办公带宽的控制配置
+     * 修改云办公带宽的控制配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5181,7 +5150,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改云办公带宽的控制配置
      *
-     * 修改云办公带宽的控制配置
+     * 修改云办公带宽的控制配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5196,7 +5165,7 @@ public class WorkspaceAsyncClient {
     /**
      * 创建变更订单
      *
-     * 变更规格、扩容磁盘[、按需转包周期生成订单](tag:inner)
+     * 变更规格、扩容磁盘。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5210,7 +5179,7 @@ public class WorkspaceAsyncClient {
     /**
      * 创建变更订单
      *
-     * 变更规格、扩容磁盘[、按需转包周期生成订单](tag:inner)
+     * 变更规格、扩容磁盘。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5225,7 +5194,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面批量变更下单
      *
-     * 包周期桌面批量变更下单
+     * 包周期桌面批量变更下单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5240,7 +5209,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面批量变更下单
      *
-     * 包周期桌面批量变更下单
+     * 包周期桌面批量变更下单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5284,7 +5253,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池批量变更下单
      *
-     * 包周期桌面池批量变更下单
+     * 包周期桌面池批量变更下单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5299,7 +5268,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期桌面池批量变更下单
      *
-     * 包周期桌面池批量变更下单
+     * 包周期桌面池批量变更下单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5314,7 +5283,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期下单
      *
-     * 包周期资源（桌面、磁盘[、云办公主机](tag:ZQ)）下订单。
+     * 包周期资源（桌面、磁盘）下订单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5328,7 +5297,7 @@ public class WorkspaceAsyncClient {
     /**
      * 包周期下单
      *
-     * 包周期资源（桌面、磁盘[、云办公主机](tag:ZQ)）下订单。
+     * 包周期资源（桌面、磁盘）下订单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5428,7 +5397,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询OU下用户信息
      *
-     * 查询OU下用户信息
+     * 查询OU下用户信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5442,7 +5411,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询OU下用户信息
      *
-     * 查询OU下用户信息
+     * 查询OU下用户信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5455,9 +5424,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询OU信息
+     * 查询AD里的OU列表
      *
-     * 查询OU信息
+     * 查询AD里的OU列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5469,9 +5438,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询OU信息
+     * 查询AD里的OU列表
      *
-     * 查询OU信息
+     * 查询AD里的OU列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5483,9 +5452,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询OU信息
+     * 查询OU列表
      *
-     * 查询OU信息
+     * 查询OU列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5497,9 +5466,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询OU信息
+     * 查询OU列表
      *
-     * 查询OU信息
+     * 查询OU列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5514,7 +5483,7 @@ public class WorkspaceAsyncClient {
     /**
      * 更新OU信息
      *
-     * 更新OU信息
+     * 更新OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5528,7 +5497,7 @@ public class WorkspaceAsyncClient {
     /**
      * 更新OU信息
      *
-     * 更新OU信息
+     * 更新OU信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5573,7 +5542,7 @@ public class WorkspaceAsyncClient {
     /**
      * 新增策略组
      *
-     * 新增策略组
+     * 新增策略组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5587,7 +5556,7 @@ public class WorkspaceAsyncClient {
     /**
      * 新增策略组
      *
-     * 新增策略组
+     * 新增策略组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5602,7 +5571,7 @@ public class WorkspaceAsyncClient {
     /**
      * 删除策略组
      *
-     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息
+     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5616,7 +5585,7 @@ public class WorkspaceAsyncClient {
     /**
      * 删除策略组
      *
-     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息
+     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5631,7 +5600,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询初始策略项
      *
-     * 查询初始策略项
+     * 查询初始策略项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5646,7 +5615,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询初始策略项
      *
-     * 查询初始策略项
+     * 查询初始策略项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5691,7 +5660,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询策略组
      *
-     * 根据策略组ID查询策略组详细信息，包含策略信息以及应用对象信息
+     * 根据策略组ID查询策略组详细信息，包含策略信息以及应用对象信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5706,7 +5675,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询策略组
      *
-     * 根据策略组ID查询策略组详细信息，包含策略信息以及应用对象信息
+     * 根据策略组ID查询策略组详细信息，包含策略信息以及应用对象信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5839,7 +5808,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改策略组
      *
-     * 修改指定策略组的信息
+     * 修改指定策略组的信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5853,7 +5822,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改策略组
      *
-     * 修改指定策略组的信息
+     * 修改指定策略组的信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6014,7 +5983,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询租户单个站点配额详情
      *
-     * 查询租户单个站点配额详情
+     * 查询租户单个站点配额详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6028,7 +5997,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询租户单个站点配额详情
      *
-     * 查询租户单个站点配额详情
+     * 查询租户单个站点配额详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6282,7 +6251,7 @@ public class WorkspaceAsyncClient {
     /**
      * 获取时区配置
      *
-     * 获取时区配置
+     * 获取时区配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6296,7 +6265,7 @@ public class WorkspaceAsyncClient {
     /**
      * 获取时区配置
      *
-     * 获取时区配置
+     * 获取时区配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6488,7 +6457,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询录屏详情
      *
-     * 查询录屏详情
+     * 查询录屏详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6502,7 +6471,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询录屏详情
      *
-     * 查询录屏详情
+     * 查询录屏详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6838,7 +6807,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面购买附属资源
      *
-     * 存量桌面购买附属资源
+     * 存量桌面购买附属资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6853,7 +6822,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面购买附属资源
      *
-     * 存量桌面购买附属资源
+     * 存量桌面购买附属资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6868,7 +6837,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面删除附属资源
      *
-     * 桌面删除附属资源
+     * 桌面删除附属资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6883,7 +6852,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面删除附属资源
      *
-     * 桌面删除附属资源
+     * 桌面删除附属资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6898,7 +6867,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询协同桌面默认用户配置
      *
-     * 查询协同桌面默认用户配置（当前功能公测中,需要使用请联系管理员申请使用）
+     * 查询协同桌面默认用户配置（当前功能公测中,需要使用请联系管理员申请使用）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6913,7 +6882,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询协同桌面默认用户配置
      *
-     * 查询协同桌面默认用户配置（当前功能公测中,需要使用请联系管理员申请使用）
+     * 查询协同桌面默认用户配置（当前功能公测中,需要使用请联系管理员申请使用）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6928,7 +6897,7 @@ public class WorkspaceAsyncClient {
     /**
      * 设置协同桌面默认用户配置
      *
-     * 设置协同桌面默认用户配置（当前功能公测中，需要使用请联系管理员申请使用）
+     * 设置协同桌面默认用户配置（当前功能公测中，需要使用请联系管理员申请使用）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6943,7 +6912,7 @@ public class WorkspaceAsyncClient {
     /**
      * 设置协同桌面默认用户配置
      *
-     * 设置协同桌面默认用户配置（当前功能公测中，需要使用请联系管理员申请使用）
+     * 设置协同桌面默认用户配置（当前功能公测中，需要使用请联系管理员申请使用）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6958,7 +6927,7 @@ public class WorkspaceAsyncClient {
     /**
      * 新增站点
      *
-     * 用于查询站点信息的接口
+     * 用于查询站点信息的接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6972,7 +6941,7 @@ public class WorkspaceAsyncClient {
     /**
      * 新增站点
      *
-     * 用于查询站点信息的接口
+     * 用于查询站点信息的接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6986,7 +6955,7 @@ public class WorkspaceAsyncClient {
     /**
      * 删除站点
      *
-     * 用于删除站点的接口
+     * 用于删除站点的接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7000,7 +6969,7 @@ public class WorkspaceAsyncClient {
     /**
      * 删除站点
      *
-     * 用于删除站点的接口
+     * 用于删除站点的接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7014,7 +6983,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询站点信息
      *
-     * 用于查询站点信息的接口
+     * 用于查询站点信息的接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7028,7 +6997,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询站点信息
      *
-     * 用于查询站点信息的接口
+     * 用于查询站点信息的接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7072,7 +7041,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改站点接入方式
      *
-     * 用于修改站点接入方式
+     * 用于修改站点接入方式。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7086,7 +7055,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改站点接入方式
      *
-     * 用于修改站点接入方式
+     * 用于修改站点接入方式。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7101,7 +7070,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改站点业务子网
      *
-     * 用于修改站点业务子网
+     * 用于修改站点业务子网。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7115,7 +7084,7 @@ public class WorkspaceAsyncClient {
     /**
      * 修改站点业务子网
      *
-     * 用于修改站点业务子网
+     * 用于修改站点业务子网。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7130,7 +7099,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量创建快照
      *
-     * 批量创建快照
+     * 批量创建快照。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7145,7 +7114,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量创建快照
      *
-     * 批量创建快照
+     * 批量创建快照。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7160,7 +7129,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量删除快照
      *
-     * 批量删除快照
+     * 批量删除快照。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7175,7 +7144,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量删除快照
      *
-     * 批量删除快照
+     * 批量删除快照。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7190,7 +7159,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量恢复快照
      *
-     * 批量恢快照
+     * 批量恢快照。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7205,7 +7174,7 @@ public class WorkspaceAsyncClient {
     /**
      * 批量恢复快照
      *
-     * 批量恢快照
+     * 批量恢快照。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7220,7 +7189,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询快照列表
      *
-     * 查询快照列表
+     * 查询快照列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7234,7 +7203,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询快照列表
      *
-     * 查询快照列表
+     * 查询快照列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7316,8 +7285,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询云应用接入统计数据
      *
-     * 查询云应用接入统计数据;
-     * 最多查询30天内的数据;
+     * 查询云应用接入统计数据，一次最多查询30天，支持最近30天的数据查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7332,8 +7300,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询云应用接入统计数据
      *
-     * 查询云应用接入统计数据;
-     * 最多查询30天内的数据;
+     * 查询云应用接入统计数据，一次最多查询30天，支持最近30天的数据查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7388,7 +7355,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面统计
      *
-     * 统计租户下的普通桌面、桌面池状态，默认仅统计总数
+     * 统计租户下的普通桌面、桌面池状态，默认仅统计总数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7403,7 +7370,7 @@ public class WorkspaceAsyncClient {
     /**
      * 桌面统计
      *
-     * 统计租户下的普通桌面、桌面池状态，默认仅统计总数
+     * 统计租户下的普通桌面、桌面池状态，默认仅统计总数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7479,7 +7446,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询通知规则
      *
-     * 查询对应指标的通知规则;
+     * 查询对应指标的通知规则;。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7494,7 +7461,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询通知规则
      *
-     * 查询对应指标的通知规则;
+     * 查询对应指标的通知规则;。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7509,7 +7476,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询指标
      *
-     * 查询指标
+     * 查询指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7523,7 +7490,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询指标
      *
-     * 查询指标
+     * 查询指标。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7537,7 +7504,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询指标趋势
      *
-     * 查询指标趋势
+     * 查询指标趋势。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7551,7 +7518,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询指标趋势
      *
-     * 查询指标趋势
+     * 查询指标趋势。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7684,7 +7651,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询指标环比值
      *
-     * 查询指标环比值
+     * 查询指标环比值。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7698,7 +7665,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询指标环比值
      *
-     * 查询指标环比值
+     * 查询指标环比值。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7713,7 +7680,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询接入云桌面或云应用各阶段时长数据
      *
-     * 查询接入云桌面或云应用各阶段时长数据
+     * 查询接入云桌面或云应用各阶段时长数据。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7728,7 +7695,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询接入云桌面或云应用各阶段时长数据
      *
-     * 查询接入云桌面或云应用各阶段时长数据
+     * 查询接入云桌面或云应用各阶段时长数据。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7743,7 +7710,7 @@ public class WorkspaceAsyncClient {
     /**
      * 更新通知规则
      *
-     * 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+     * 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7758,7 +7725,7 @@ public class WorkspaceAsyncClient {
     /**
      * 更新通知规则
      *
-     * 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+     * 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7802,7 +7769,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询租户个性配置列表
      *
-     * 查询租户个性配置列表
+     * 查询租户个性配置列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7816,7 +7783,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询租户个性配置列表
      *
-     * 查询租户个性配置列表
+     * 查询租户个性配置列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8387,7 +8354,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询用户事件
      *
-     * 查询用户事件
+     * 查询用户事件，一次最多查询30天，支持最近30天的数据查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8401,7 +8368,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询用户事件
      *
-     * 查询用户事件
+     * 查询用户事件，一次最多查询30天，支持最近30天的数据查询。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8411,6 +8378,66 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListUserEventsRequest, ListUserEventsResponse> listUserEventsAsyncInvoker(
         ListUserEventsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listUserEvents, hcClient);
+    }
+
+    /**
+     * 查询用户事件LTS配置
+     *
+     * 查询用户事件LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserEventsLtsConfigurationsRequest 请求对象
+     * @return CompletableFuture<ListUserEventsLtsConfigurationsResponse>
+     */
+    public CompletableFuture<ListUserEventsLtsConfigurationsResponse> listUserEventsLtsConfigurationsAsync(
+        ListUserEventsLtsConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUserEventsLtsConfigurations);
+    }
+
+    /**
+     * 查询用户事件LTS配置
+     *
+     * 查询用户事件LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserEventsLtsConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ListUserEventsLtsConfigurationsRequest, ListUserEventsLtsConfigurationsResponse>
+     */
+    public AsyncInvoker<ListUserEventsLtsConfigurationsRequest, ListUserEventsLtsConfigurationsResponse> listUserEventsLtsConfigurationsAsyncInvoker(
+        ListUserEventsLtsConfigurationsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listUserEventsLtsConfigurations, hcClient);
+    }
+
+    /**
+     * 配置用户事件LTS
+     *
+     * 配置用户事件LTS。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetUserEventsLtsConfigurationsRequest 请求对象
+     * @return CompletableFuture<SetUserEventsLtsConfigurationsResponse>
+     */
+    public CompletableFuture<SetUserEventsLtsConfigurationsResponse> setUserEventsLtsConfigurationsAsync(
+        SetUserEventsLtsConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.setUserEventsLtsConfigurations);
+    }
+
+    /**
+     * 配置用户事件LTS
+     *
+     * 配置用户事件LTS。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetUserEventsLtsConfigurationsRequest 请求对象
+     * @return AsyncInvoker<SetUserEventsLtsConfigurationsRequest, SetUserEventsLtsConfigurationsResponse>
+     */
+    public AsyncInvoker<SetUserEventsLtsConfigurationsRequest, SetUserEventsLtsConfigurationsResponse> setUserEventsLtsConfigurationsAsyncInvoker(
+        SetUserEventsLtsConfigurationsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.setUserEventsLtsConfigurations, hcClient);
     }
 
     /**
@@ -8443,9 +8470,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 增加桌面磁盘
+     * 批量增加桌面磁盘
      *
-     * 增加桌面磁盘。
+     * 批量增加桌面磁盘。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8457,9 +8484,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 增加桌面磁盘
+     * 批量增加桌面磁盘
      *
-     * 增加桌面磁盘。
+     * 批量增加桌面磁盘。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8503,7 +8530,7 @@ public class WorkspaceAsyncClient {
     /**
      * 扩容磁盘
      *
-     * 扩容磁盘
+     * 扩容磁盘。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8517,7 +8544,7 @@ public class WorkspaceAsyncClient {
     /**
      * 扩容磁盘
      *
-     * 扩容磁盘
+     * 扩容磁盘。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8561,7 +8588,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询磁盘产品信息
      *
-     * 查询磁盘产品信息
+     * 查询磁盘产品信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8576,7 +8603,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询磁盘产品信息
      *
-     * 查询磁盘产品信息
+     * 查询磁盘产品信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

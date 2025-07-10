@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量询价/下单公共参数
+ * 批量询价/下单公共参数。
  */
 public class BatchInquiryCommonInfo {
 
@@ -84,7 +84,7 @@ public class BatchInquiryCommonInfo {
     }
 
     /**
-     * 促销计划ID
+     * 促销计划ID。
      * @return promotionPlanId
      */
     public String getPromotionPlanId() {

@@ -41,7 +41,7 @@ public class ListMetricsResponse extends SdkResponse {
     }
 
     /**
-     * 查询指标响应体
+     * 查询指标响应体。
      * @return body
      */
     public List<Metric> getBody() {

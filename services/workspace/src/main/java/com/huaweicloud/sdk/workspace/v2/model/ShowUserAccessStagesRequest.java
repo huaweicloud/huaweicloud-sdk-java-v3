@@ -21,7 +21,7 @@ public class ShowUserAccessStagesRequest {
     }
 
     /**
-     * 事务id
+     * 事务id。
      * @return transactionId
      */
     public String getTransactionId() {

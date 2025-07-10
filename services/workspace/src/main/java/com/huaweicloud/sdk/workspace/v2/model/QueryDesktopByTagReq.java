@@ -64,7 +64,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * 默认为0
+     * 默认为0。
      * @return offset
      */
     public String getOffset() {
@@ -81,7 +81,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * 默认为1000
+     * 默认为1000。
      * @return limit
      */
     public String getLimit() {
@@ -98,7 +98,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可
+     * 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可。
      * @return action
      */
     public String getAction() {
@@ -115,7 +115,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * 包含任意一个标签,该字段为true时查询所有不带标签的资源
+     * 包含任意一个标签,该字段为true时查询所有不带标签的资源。
      * @return withoutAnyTag
      */
     public Boolean getWithoutAnyTag() {
@@ -148,7 +148,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * match对象
+     * match对象。
      * @return matches
      */
     public List<Match> getMatches() {
@@ -181,7 +181,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * 包含的标签对象，只要有一个不包含，就不符合，一个key对应多个value
+     * 包含的标签对象，只要有一个不包含，就不符合，一个key对应多个value。
      * @return tags
      */
     public List<Tags> getTags() {
@@ -214,7 +214,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * 包含任意标签，若全都不包含，不符合，一个key对应多个value
+     * 包含任意标签，若全都不包含，不符合，一个key对应多个value。
      * @return tagsAny
      */
     public List<Tags> getTagsAny() {
@@ -247,7 +247,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * 不包含标签，只要有一个不包含，就符合了，一个key对应多个value
+     * 不包含标签，只要有一个不包含，就符合了，一个key对应多个value。
      * @return notTags
      */
     public List<Tags> getNotTags() {
@@ -280,7 +280,7 @@ public class QueryDesktopByTagReq {
     }
 
     /**
-     * 不包含任意标签，只要包含其中一个，就不符合，一个key对应多个value
+     * 不包含任意标签，只要包含其中一个，就不符合，一个key对应多个value。
      * @return notTagsAny
      */
     public List<Tags> getNotTagsAny() {

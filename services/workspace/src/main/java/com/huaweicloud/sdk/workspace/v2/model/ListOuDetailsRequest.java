@@ -48,7 +48,7 @@ public class ListOuDetailsRequest {
     }
 
     /**
-     * 用于分页查询，返回桌面数量限制。如果不指定，则返回所有符合条件的桌面
+     * 用于分页查询，返回桌面数量限制。如果不指定，则返回所有符合条件的桌面。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -67,7 +67,7 @@ public class ListOuDetailsRequest {
     }
 
     /**
-     * 用于分页查询，查询的起始记录序号，从0开始
+     * 用于分页查询，查询的起始记录序号，从0开始。
      * minimum: 0
      * maximum: 10000
      * @return offset

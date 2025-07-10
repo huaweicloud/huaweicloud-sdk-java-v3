@@ -22,7 +22,7 @@ public class CreateScriptResponse extends SdkResponse {
     }
 
     /**
-     * 脚本ID
+     * 脚本ID。
      * @return scriptId
      */
     public String getScriptId() {

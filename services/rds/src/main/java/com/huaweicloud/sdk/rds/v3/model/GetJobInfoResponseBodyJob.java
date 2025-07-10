@@ -130,7 +130,7 @@ public class GetJobInfoResponseBodyJob {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entities")
 
-    private Object entities;
+    private GetJobInfoResponseBodyJobEntities entities;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fail_reason")
@@ -265,20 +265,29 @@ public class GetJobInfoResponseBodyJob {
         this.instance = instance;
     }
 
-    public GetJobInfoResponseBodyJob withEntities(Object entities) {
+    public GetJobInfoResponseBodyJob withEntities(GetJobInfoResponseBodyJobEntities entities) {
         this.entities = entities;
         return this;
     }
 
+    public GetJobInfoResponseBodyJob withEntities(Consumer<GetJobInfoResponseBodyJobEntities> entitiesSetter) {
+        if (this.entities == null) {
+            this.entities = new GetJobInfoResponseBodyJobEntities();
+            entitiesSetter.accept(this.entities);
+        }
+
+        return this;
+    }
+
     /**
-     * 根据不同的任务，显示不同的内容。
+     * Get entities
      * @return entities
      */
-    public Object getEntities() {
+    public GetJobInfoResponseBodyJobEntities getEntities() {
         return entities;
     }
 
-    public void setEntities(Object entities) {
+    public void setEntities(GetJobInfoResponseBodyJobEntities entities) {
         this.entities = entities;
     }
 

@@ -33,7 +33,7 @@ public class EstimateDesktopPoolResizeResponse extends SdkResponse {
     }
 
     /**
-     * 是否为升配
+     * 是否为升配。
      * @return isUpgrade
      */
     public Boolean getIsUpgrade() {

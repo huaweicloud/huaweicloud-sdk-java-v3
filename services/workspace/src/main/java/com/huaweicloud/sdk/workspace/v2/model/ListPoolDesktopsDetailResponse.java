@@ -56,7 +56,7 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
     }
 
     /**
-     * 池桌面详情
+     * 池桌面详情。
      * @return poolDesktops
      */
     public List<PoolDesktopsDetailInfo> getPoolDesktops() {

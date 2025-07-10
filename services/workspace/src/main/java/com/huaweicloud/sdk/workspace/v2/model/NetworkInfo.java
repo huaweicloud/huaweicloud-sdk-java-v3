@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 桌面网络信息：vpc、子网、私有ip、弹性ip、安全组
+ * 桌面网络信息：vpc、子网、私有ip、弹性ip、安全组。
  */
 public class NetworkInfo {
 
@@ -36,7 +36,7 @@ public class NetworkInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroup> securityGroups = null;
+    private List<SecurityGroupInfo> securityGroups = null;
 
     public NetworkInfo withVpcInfo(Vpc vpcInfo) {
         this.vpcInfo = vpcInfo;
@@ -142,12 +142,12 @@ public class NetworkInfo {
         this.publicIpInfo = publicIpInfo;
     }
 
-    public NetworkInfo withSecurityGroups(List<SecurityGroup> securityGroups) {
+    public NetworkInfo withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public NetworkInfo addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+    public NetworkInfo addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -155,7 +155,7 @@ public class NetworkInfo {
         return this;
     }
 
-    public NetworkInfo withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+    public NetworkInfo withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -164,14 +164,14 @@ public class NetworkInfo {
     }
 
     /**
-     * 桌面绑定的安全组列表
+     * 桌面绑定的安全组列表。
      * @return securityGroups
      */
-    public List<SecurityGroup> getSecurityGroups() {
+    public List<SecurityGroupInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

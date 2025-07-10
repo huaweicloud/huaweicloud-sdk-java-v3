@@ -186,6 +186,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
@@ -414,6 +416,9 @@ import com.huaweicloud.sdk.rds.v3.model.SetSecurityGroupRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetSecurityGroupResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogDownloadLinkRequest;
@@ -470,6 +475,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.SimplifiedInstancesRequest;
@@ -515,6 +522,9 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.rds.v3.model.ToPeriodReq;
+import com.huaweicloud.sdk.rds.v3.model.TransferBackupRequest;
+import com.huaweicloud.sdk.rds.v3.model.TransferBackupRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.TransferBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusResponse;
@@ -1723,6 +1733,78 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getXLanguage, ListAuditlogsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackupTransfersRequest, ListBackupTransfersResponse> listBackupTransfers =
+        genForListBackupTransfers();
+
+    private static HttpRequestDef<ListBackupTransfersRequest, ListBackupTransfersResponse> genForListBackupTransfers() {
+        // basic
+        HttpRequestDef.Builder<ListBackupTransfersRequest, ListBackupTransfersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackupTransfersRequest.class, ListBackupTransfersResponse.class)
+                .withName("ListBackupTransfers")
+                .withUri("/v3/{project_id}/transfer-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getLimit, ListBackupTransfersRequest::setLimit));
+        builder.<String>withRequestField("order_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getOrderField,
+                ListBackupTransfersRequest::setOrderField));
+        builder.<String>withRequestField("order_rule",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getOrderRule, ListBackupTransfersRequest::setOrderRule));
+        builder.<String>withRequestField("filter_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getFilterField,
+                ListBackupTransfersRequest::setFilterField));
+        builder.<String>withRequestField("filter_content",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getFilterContent,
+                ListBackupTransfersRequest::setFilterContent));
+        builder.<Long>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getBeginTime, ListBackupTransfersRequest::setBeginTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getEndTime, ListBackupTransfersRequest::setEndTime));
+        builder.<ListBackupTransfersRequest.TransferTypeEnum>withRequestField("transfer_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBackupTransfersRequest.TransferTypeEnum.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getTransferType,
+                ListBackupTransfersRequest::setTransferType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getOffset, ListBackupTransfersRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupTransfersRequest::getXLanguage, ListBackupTransfersRequest::setXLanguage));
 
         // response
 
@@ -4398,6 +4480,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetTransferPolicyRequest, SetTransferPolicyResponse> setTransferPolicy =
+        genForSetTransferPolicy();
+
+    private static HttpRequestDef<SetTransferPolicyRequest, SetTransferPolicyResponse> genForSetTransferPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetTransferPolicyRequest, SetTransferPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetTransferPolicyRequest.class, SetTransferPolicyResponse.class)
+                .withName("SetTransferPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/transfer/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTransferPolicyRequest::getInstanceId, SetTransferPolicyRequest::setInstanceId));
+        builder.<SetTransferPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SetTransferPolicyRequestBody.class),
+            f -> f.withMarshaller(SetTransferPolicyRequest::getBody, SetTransferPolicyRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetTransferPolicyResponse::getBody, SetTransferPolicyResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse> showAuditlogDownloadLink =
         genForShowAuditlogDownloadLink();
 
@@ -5077,6 +5192,29 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTransferPolicyRequest, ShowTransferPolicyResponse> showTransferPolicy =
+        genForShowTransferPolicy();
+
+    private static HttpRequestDef<ShowTransferPolicyRequest, ShowTransferPolicyResponse> genForShowTransferPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowTransferPolicyRequest, ShowTransferPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTransferPolicyRequest.class, ShowTransferPolicyResponse.class)
+                .withName("ShowTransferPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/transfer/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTransferPolicyRequest::getInstanceId, ShowTransferPolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowUpgradeDbMajorVersionStatusRequest, ShowUpgradeDbMajorVersionStatusResponse> showUpgradeDbMajorVersionStatus =
         genForShowUpgradeDbMajorVersionStatus();
 
@@ -5504,6 +5642,39 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SslOptionRequest.class),
             f -> f.withMarshaller(SwitchSslRequest::getBody, SwitchSslRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<TransferBackupRequest, TransferBackupResponse> transferBackup =
+        genForTransferBackup();
+
+    private static HttpRequestDef<TransferBackupRequest, TransferBackupResponse> genForTransferBackup() {
+        // basic
+        HttpRequestDef.Builder<TransferBackupRequest, TransferBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, TransferBackupRequest.class, TransferBackupResponse.class)
+                .withName("TransferBackup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/transfer")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(TransferBackupRequest::getInstanceId, TransferBackupRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(TransferBackupRequest::getXLanguage, TransferBackupRequest::setXLanguage));
+        builder.<TransferBackupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TransferBackupRequestBody.class),
+            f -> f.withMarshaller(TransferBackupRequest::getBody, TransferBackupRequest::setBody));
 
         // response
 

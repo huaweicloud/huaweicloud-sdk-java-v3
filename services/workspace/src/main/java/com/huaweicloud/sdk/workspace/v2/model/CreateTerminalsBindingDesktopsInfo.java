@@ -36,7 +36,7 @@ public class CreateTerminalsBindingDesktopsInfo {
     }
 
     /**
-     * 行号,用于批量导入
+     * 行号,用于批量导入。
      * minimum: 0
      * maximum: 8000
      * @return line
@@ -55,7 +55,7 @@ public class CreateTerminalsBindingDesktopsInfo {
     }
 
     /**
-     * 终端mac地址
+     * 终端mac地址。
      * @return mac
      */
     public String getMac() {
@@ -72,7 +72,7 @@ public class CreateTerminalsBindingDesktopsInfo {
     }
 
     /**
-     * 桌面名称，用于批量导入
+     * 桌面名称，用于批量导入。
      * @return desktopName
      */
     public String getDesktopName() {
@@ -89,7 +89,7 @@ public class CreateTerminalsBindingDesktopsInfo {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {

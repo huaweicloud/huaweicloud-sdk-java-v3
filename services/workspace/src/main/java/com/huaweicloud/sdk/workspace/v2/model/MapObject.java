@@ -26,7 +26,7 @@ public class MapObject {
     }
 
     /**
-     * 配置项的键
+     * 配置项的键。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class MapObject {
     }
 
     /**
-     * 配置项对应的值
+     * 配置项对应的值。
      * @return value
      */
     public String getValue() {

@@ -20,6 +20,16 @@ public class ListFlavorsRequest {
 
     private String flavorId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListFlavorsRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -54,6 +64,40 @@ public class ListFlavorsRequest {
         this.flavorId = flavorId;
     }
 
+    public ListFlavorsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * Get limit
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListFlavorsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * Get marker
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +108,13 @@ public class ListFlavorsRequest {
         }
         ListFlavorsRequest that = (ListFlavorsRequest) obj;
         return Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.flavorId, that.flavorId);
+            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZone, flavorId);
+        return Objects.hash(availabilityZone, flavorId, limit, marker);
     }
 
     @Override
@@ -78,6 +123,8 @@ public class ListFlavorsRequest {
         sb.append("class ListFlavorsRequest {\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

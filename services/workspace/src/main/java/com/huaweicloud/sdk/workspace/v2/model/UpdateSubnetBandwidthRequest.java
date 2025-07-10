@@ -17,11 +17,6 @@ public class UpdateSubnetBandwidthRequest {
     private String bandwidthId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Service-Transaction-Id")
-
-    private String serviceTransactionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private UpdateSubnetBandwidthReq body;
@@ -41,23 +36,6 @@ public class UpdateSubnetBandwidthRequest {
 
     public void setBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
-    }
-
-    public UpdateSubnetBandwidthRequest withServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-        return this;
-    }
-
-    /**
-     * CBC接口回调时，请求头里带上的业务ID
-     * @return serviceTransactionId
-     */
-    public String getServiceTransactionId() {
-        return serviceTransactionId;
-    }
-
-    public void setServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
     }
 
     public UpdateSubnetBandwidthRequest withBody(UpdateSubnetBandwidthReq body) {
@@ -95,14 +73,12 @@ public class UpdateSubnetBandwidthRequest {
             return false;
         }
         UpdateSubnetBandwidthRequest that = (UpdateSubnetBandwidthRequest) obj;
-        return Objects.equals(this.bandwidthId, that.bandwidthId)
-            && Objects.equals(this.serviceTransactionId, that.serviceTransactionId)
-            && Objects.equals(this.body, that.body);
+        return Objects.equals(this.bandwidthId, that.bandwidthId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthId, serviceTransactionId, body);
+        return Objects.hash(bandwidthId, body);
     }
 
     @Override
@@ -110,7 +86,6 @@ public class UpdateSubnetBandwidthRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateSubnetBandwidthRequest {\n");
         sb.append("    bandwidthId: ").append(toIndentedString(bandwidthId)).append("\n");
-        sb.append("    serviceTransactionId: ").append(toIndentedString(serviceTransactionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

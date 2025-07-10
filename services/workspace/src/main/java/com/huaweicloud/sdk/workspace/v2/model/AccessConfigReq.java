@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 接入配置
+ * 接入配置。
  */
 public class AccessConfigReq {
 

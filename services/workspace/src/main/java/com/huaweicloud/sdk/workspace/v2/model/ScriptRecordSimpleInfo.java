@@ -67,16 +67,6 @@ public class ScriptRecordSimpleInfo {
     private Integer executeOrder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "command_content")
-
-    private String commandContent;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "command_type")
-
-    private String commandType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_code")
 
     private String resultCode;
@@ -273,40 +263,6 @@ public class ScriptRecordSimpleInfo {
         this.executeOrder = executeOrder;
     }
 
-    public ScriptRecordSimpleInfo withCommandContent(String commandContent) {
-        this.commandContent = commandContent;
-        return this;
-    }
-
-    /**
-     * 命令行内容。
-     * @return commandContent
-     */
-    public String getCommandContent() {
-        return commandContent;
-    }
-
-    public void setCommandContent(String commandContent) {
-        this.commandContent = commandContent;
-    }
-
-    public ScriptRecordSimpleInfo withCommandType(String commandType) {
-        this.commandType = commandType;
-        return this;
-    }
-
-    /**
-     * 命令行类型(POWERSHELL/BAT/SHELL)。
-     * @return commandType
-     */
-    public String getCommandType() {
-        return commandType;
-    }
-
-    public void setCommandType(String commandType) {
-        this.commandType = commandType;
-    }
-
     public ScriptRecordSimpleInfo withResultCode(String resultCode) {
         this.resultCode = resultCode;
         return this;
@@ -355,9 +311,7 @@ public class ScriptRecordSimpleInfo {
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.executeOrder, that.executeOrder)
-            && Objects.equals(this.commandContent, that.commandContent)
-            && Objects.equals(this.commandType, that.commandType) && Objects.equals(this.resultCode, that.resultCode)
+            && Objects.equals(this.executeOrder, that.executeOrder) && Objects.equals(this.resultCode, that.resultCode)
             && Objects.equals(this.reason, that.reason);
     }
 
@@ -374,8 +328,6 @@ public class ScriptRecordSimpleInfo {
             endTime,
             status,
             executeOrder,
-            commandContent,
-            commandType,
             resultCode,
             reason);
     }
@@ -395,8 +347,6 @@ public class ScriptRecordSimpleInfo {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    executeOrder: ").append(toIndentedString(executeOrder)).append("\n");
-        sb.append("    commandContent: ").append(toIndentedString(commandContent)).append("\n");
-        sb.append("    commandType: ").append(toIndentedString(commandType)).append("\n");
         sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("}");

@@ -19,11 +19,6 @@ public class AddDesktopVolumesReq {
     private String desktopId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes")
 
     private List<Volume> volumes = null;
@@ -43,23 +38,6 @@ public class AddDesktopVolumesReq {
 
     public void setDesktopId(String desktopId) {
         this.desktopId = desktopId;
-    }
-
-    public AddDesktopVolumesReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单ID，包周期桌面添加磁盘时使用。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     public AddDesktopVolumesReq withVolumes(List<Volume> volumes) {
@@ -104,13 +82,12 @@ public class AddDesktopVolumesReq {
             return false;
         }
         AddDesktopVolumesReq that = (AddDesktopVolumesReq) obj;
-        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.volumes, that.volumes);
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.volumes, that.volumes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId, orderId, volumes);
+        return Objects.hash(desktopId, volumes);
     }
 
     @Override
@@ -118,7 +95,6 @@ public class AddDesktopVolumesReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddDesktopVolumesReq {\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
         sb.append("}");
         return sb.toString();

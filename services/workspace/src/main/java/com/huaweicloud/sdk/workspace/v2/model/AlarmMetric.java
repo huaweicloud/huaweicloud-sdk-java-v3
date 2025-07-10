@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 告警指标信息
+ * 告警指标信息。
  */
 public class AlarmMetric {
 
@@ -34,7 +34,7 @@ public class AlarmMetric {
     }
 
     /**
-     * 查询服务的命名空间
+     * 查询服务的命名空间。
      * @return namespace
      */
     public String getNamespace() {
@@ -51,7 +51,7 @@ public class AlarmMetric {
     }
 
     /**
-     * 资源的监控指标名称
+     * 资源的监控指标名称。
      * @return metricName
      */
     public String getMetricName() {

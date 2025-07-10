@@ -31,7 +31,7 @@ public class ListInternetRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -48,7 +48,7 @@ public class ListInternetRequest {
     }
 
     /**
-     * NAT网关名称
+     * NAT网关名称。
      * @return natName
      */
     public String getNatName() {
@@ -65,7 +65,7 @@ public class ListInternetRequest {
     }
 
     /**
-     * EIP地址
+     * EIP地址。
      * @return eip
      */
     public String getEip() {

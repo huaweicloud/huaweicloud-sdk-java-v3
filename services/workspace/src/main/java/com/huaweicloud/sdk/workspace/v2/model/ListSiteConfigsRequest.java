@@ -26,7 +26,7 @@ public class ListSiteConfigsRequest {
     }
 
     /**
-     * 可用区
+     * 可用区。
      * @return availabilityZoneId
      */
     public String getAvailabilityZoneId() {

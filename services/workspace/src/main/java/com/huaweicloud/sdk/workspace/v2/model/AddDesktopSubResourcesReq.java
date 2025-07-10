@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 桌面购买协同资源请求体
+ * 桌面购买协同资源请求体。
  */
 public class AddDesktopSubResourcesReq {
 
@@ -34,7 +34,7 @@ public class AddDesktopSubResourcesReq {
     }
 
     /**
-     * 桌面协同资源SKU码
+     * 桌面协同资源SKU码。
      * @return subResourceSku
      */
     public String getSubResourceSku() {
@@ -51,7 +51,7 @@ public class AddDesktopSubResourcesReq {
     }
 
     /**
-     * 订单ID
+     * 订单ID。
      * @return orderId
      */
     public String getOrderId() {
@@ -84,7 +84,7 @@ public class AddDesktopSubResourcesReq {
     }
 
     /**
-     * 桌面ID列表
+     * 桌面ID列表。
      * @return desktopIds
      */
     public List<String> getDesktopIds() {

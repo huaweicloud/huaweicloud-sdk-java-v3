@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量修改标签请求
+ * 批量修改标签请求。
  */
 public class TagsReq {
 
@@ -34,7 +34,7 @@ public class TagsReq {
     }
 
     /**
-     * 操作字符串create或delete
+     * 操作字符串create或delete。
      * @return action
      */
     public String getAction() {
@@ -67,7 +67,7 @@ public class TagsReq {
     }
 
     /**
-     * 标签对象
+     * 标签对象。
      * @return tags
      */
     public List<Tag> getTags() {
@@ -100,7 +100,7 @@ public class TagsReq {
     }
 
     /**
-     * 标签对象（已废弃）
+     * 标签对象（已废弃）。
      * @return sysTags
      */
     public List<Tag> getSysTags() {

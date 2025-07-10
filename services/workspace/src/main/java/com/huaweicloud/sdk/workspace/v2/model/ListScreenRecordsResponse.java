@@ -17,19 +17,19 @@ public class ListScreenRecordsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "screen_records")
 
-    private List<QueryScreenRecordDetailRsp> screenRecords = null;
+    private List<ScreenRecordDetail> screenRecords = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListScreenRecordsResponse withScreenRecords(List<QueryScreenRecordDetailRsp> screenRecords) {
+    public ListScreenRecordsResponse withScreenRecords(List<ScreenRecordDetail> screenRecords) {
         this.screenRecords = screenRecords;
         return this;
     }
 
-    public ListScreenRecordsResponse addScreenRecordsItem(QueryScreenRecordDetailRsp screenRecordsItem) {
+    public ListScreenRecordsResponse addScreenRecordsItem(ScreenRecordDetail screenRecordsItem) {
         if (this.screenRecords == null) {
             this.screenRecords = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListScreenRecordsResponse extends SdkResponse {
         return this;
     }
 
-    public ListScreenRecordsResponse withScreenRecords(Consumer<List<QueryScreenRecordDetailRsp>> screenRecordsSetter) {
+    public ListScreenRecordsResponse withScreenRecords(Consumer<List<ScreenRecordDetail>> screenRecordsSetter) {
         if (this.screenRecords == null) {
             this.screenRecords = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListScreenRecordsResponse extends SdkResponse {
      * 录屏记录。
      * @return screenRecords
      */
-    public List<QueryScreenRecordDetailRsp> getScreenRecords() {
+    public List<ScreenRecordDetail> getScreenRecords() {
         return screenRecords;
     }
 
-    public void setScreenRecords(List<QueryScreenRecordDetailRsp> screenRecords) {
+    public void setScreenRecords(List<ScreenRecordDetail> screenRecords) {
         this.screenRecords = screenRecords;
     }
 
@@ -64,8 +64,6 @@ public class ListScreenRecordsResponse extends SdkResponse {
 
     /**
      * 总数。
-     * minimum: 0
-     * maximum: 2147483647
      * @return totalCount
      */
     public Integer getTotalCount() {

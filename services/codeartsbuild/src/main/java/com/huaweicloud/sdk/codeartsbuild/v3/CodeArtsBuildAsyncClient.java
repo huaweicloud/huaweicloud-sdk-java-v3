@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.codeartsbuild.v3;
 
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobCountIsTopLimitRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobCountIsTopLimitResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobNameIsExistsRequest;
@@ -150,6 +152,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobNoticeConfigInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobNoticeConfigInfoResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobPipelineInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobPipelineInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobRolePermissionRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobRolePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobStatusRequest;
@@ -196,8 +200,12 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopTheJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopTheJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystorePermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystorePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNewJobRequest;
@@ -2002,6 +2010,35 @@ public class CodeArtsBuildAsyncClient {
     }
 
     /**
+     * 流水线查看构建任务信息
+     *
+     * 流水线查看构建任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowJobPipelineInfoRequest 请求对象
+     * @return CompletableFuture<ShowJobPipelineInfoResponse>
+     */
+    public CompletableFuture<ShowJobPipelineInfoResponse> showJobPipelineInfoAsync(ShowJobPipelineInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.showJobPipelineInfo);
+    }
+
+    /**
+     * 流水线查看构建任务信息
+     *
+     * 流水线查看构建任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowJobPipelineInfoRequest 请求对象
+     * @return AsyncInvoker<ShowJobPipelineInfoRequest, ShowJobPipelineInfoResponse>
+     */
+    public AsyncInvoker<ShowJobPipelineInfoRequest, ShowJobPipelineInfoResponse> showJobPipelineInfoAsyncInvoker(
+        ShowJobPipelineInfoRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.showJobPipelineInfo, hcClient);
+    }
+
+    /**
      * 获取构建任务的角色权限矩阵信息
      *
      * 获取构建任务的角色权限矩阵信息
@@ -2150,6 +2187,34 @@ public class CodeArtsBuildAsyncClient {
     }
 
     /**
+     * 停止构建任务v1
+     *
+     * 停止构建任务v1
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopTheJobRequest 请求对象
+     * @return CompletableFuture<StopTheJobResponse>
+     */
+    public CompletableFuture<StopTheJobResponse> stopTheJobAsync(StopTheJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.stopTheJob);
+    }
+
+    /**
+     * 停止构建任务v1
+     *
+     * 停止构建任务v1
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopTheJobRequest 请求对象
+     * @return AsyncInvoker<StopTheJobRequest, StopTheJobResponse>
+     */
+    public AsyncInvoker<StopTheJobRequest, StopTheJobResponse> stopTheJobAsyncInvoker(StopTheJobRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.stopTheJob, hcClient);
+    }
+
+    /**
      * 更新构建任务
      *
      * 更新构建任务
@@ -2176,6 +2241,36 @@ public class CodeArtsBuildAsyncClient {
     public AsyncInvoker<UpdateNewJobRequest, UpdateNewJobResponse> updateNewJobAsyncInvoker(
         UpdateNewJobRequest request) {
         return new AsyncInvoker<>(request, CodeArtsBuildMeta.updateNewJob, hcClient);
+    }
+
+    /**
+     * 添加文件权限
+     *
+     * 添加文件权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddKeystorePermissionRequest 请求对象
+     * @return CompletableFuture<AddKeystorePermissionResponse>
+     */
+    public CompletableFuture<AddKeystorePermissionResponse> addKeystorePermissionAsync(
+        AddKeystorePermissionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.addKeystorePermission);
+    }
+
+    /**
+     * 添加文件权限
+     *
+     * 添加文件权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddKeystorePermissionRequest 请求对象
+     * @return AsyncInvoker<AddKeystorePermissionRequest, AddKeystorePermissionResponse>
+     */
+    public AsyncInvoker<AddKeystorePermissionRequest, AddKeystorePermissionResponse> addKeystorePermissionAsyncInvoker(
+        AddKeystorePermissionRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.addKeystorePermission, hcClient);
     }
 
     /**
@@ -2382,6 +2477,36 @@ public class CodeArtsBuildAsyncClient {
     public AsyncInvoker<UpdateKeystoreRequest, UpdateKeystoreResponse> updateKeystoreAsyncInvoker(
         UpdateKeystoreRequest request) {
         return new AsyncInvoker<>(request, CodeArtsBuildMeta.updateKeystore, hcClient);
+    }
+
+    /**
+     * 配置文件权限
+     *
+     * 配置文件权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKeystorePermissionRequest 请求对象
+     * @return CompletableFuture<UpdateKeystorePermissionResponse>
+     */
+    public CompletableFuture<UpdateKeystorePermissionResponse> updateKeystorePermissionAsync(
+        UpdateKeystorePermissionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.updateKeystorePermission);
+    }
+
+    /**
+     * 配置文件权限
+     *
+     * 配置文件权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKeystorePermissionRequest 请求对象
+     * @return AsyncInvoker<UpdateKeystorePermissionRequest, UpdateKeystorePermissionResponse>
+     */
+    public AsyncInvoker<UpdateKeystorePermissionRequest, UpdateKeystorePermissionResponse> updateKeystorePermissionAsyncInvoker(
+        UpdateKeystorePermissionRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.updateKeystorePermission, hcClient);
     }
 
     /**

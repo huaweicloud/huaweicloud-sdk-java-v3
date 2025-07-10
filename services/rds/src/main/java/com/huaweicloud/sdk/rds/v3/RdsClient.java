@@ -137,6 +137,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
@@ -323,6 +325,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetSecurityGroupRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetSecurityGroupResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetTransferPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogDownloadLinkRequest;
@@ -379,6 +383,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartDatabaseProxyRequest;
@@ -411,6 +417,8 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.rds.v3.model.TransferBackupRequest;
+import com.huaweicloud.sdk.rds.v3.model.TransferBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
@@ -1518,6 +1526,35 @@ public class RdsClient {
      */
     public SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse> listAuditlogsInvoker(ListAuditlogsRequest request) {
         return new SyncInvoker<>(request, RdsMeta.listAuditlogs, hcClient);
+    }
+
+    /**
+     * 查询转储任务列表
+     *
+     * 查询转储任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupTransfersRequest 请求对象
+     * @return ListBackupTransfersResponse
+     */
+    public ListBackupTransfersResponse listBackupTransfers(ListBackupTransfersRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listBackupTransfers);
+    }
+
+    /**
+     * 查询转储任务列表
+     *
+     * 查询转储任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupTransfersRequest 请求对象
+     * @return SyncInvoker<ListBackupTransfersRequest, ListBackupTransfersResponse>
+     */
+    public SyncInvoker<ListBackupTransfersRequest, ListBackupTransfersResponse> listBackupTransfersInvoker(
+        ListBackupTransfersRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listBackupTransfers, hcClient);
     }
 
     /**
@@ -3567,6 +3604,35 @@ public class RdsClient {
     }
 
     /**
+     * 设置自动转储策略
+     *
+     * 设置自动转储策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTransferPolicyRequest 请求对象
+     * @return SetTransferPolicyResponse
+     */
+    public SetTransferPolicyResponse setTransferPolicy(SetTransferPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setTransferPolicy);
+    }
+
+    /**
+     * 设置自动转储策略
+     *
+     * 设置自动转储策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTransferPolicyRequest 请求对象
+     * @return SyncInvoker<SetTransferPolicyRequest, SetTransferPolicyResponse>
+     */
+    public SyncInvoker<SetTransferPolicyRequest, SetTransferPolicyResponse> setTransferPolicyInvoker(
+        SetTransferPolicyRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.setTransferPolicy, hcClient);
+    }
+
+    /**
      * 生成审计日志下载链接
      *
      * 生成审计日志下载链接。
@@ -4231,6 +4297,35 @@ public class RdsClient {
     }
 
     /**
+     * 查询自动转储策略
+     *
+     * 查询自动转储策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransferPolicyRequest 请求对象
+     * @return ShowTransferPolicyResponse
+     */
+    public ShowTransferPolicyResponse showTransferPolicy(ShowTransferPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showTransferPolicy);
+    }
+
+    /**
+     * 查询自动转储策略
+     *
+     * 查询自动转储策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransferPolicyRequest 请求对象
+     * @return SyncInvoker<ShowTransferPolicyRequest, ShowTransferPolicyResponse>
+     */
+    public SyncInvoker<ShowTransferPolicyRequest, ShowTransferPolicyResponse> showTransferPolicyInvoker(
+        ShowTransferPolicyRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showTransferPolicy, hcClient);
+    }
+
+    /**
      * 
      *
      * 查询大版本检查状态或升级状态。
@@ -4605,6 +4700,35 @@ public class RdsClient {
      */
     public SyncInvoker<SwitchSslRequest, SwitchSslResponse> switchSslInvoker(SwitchSslRequest request) {
         return new SyncInvoker<>(request, RdsMeta.switchSsl, hcClient);
+    }
+
+    /**
+     * 手动转储备份
+     *
+     * 手动转储备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferBackupRequest 请求对象
+     * @return TransferBackupResponse
+     */
+    public TransferBackupResponse transferBackup(TransferBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.transferBackup);
+    }
+
+    /**
+     * 手动转储备份
+     *
+     * 手动转储备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferBackupRequest 请求对象
+     * @return SyncInvoker<TransferBackupRequest, TransferBackupResponse>
+     */
+    public SyncInvoker<TransferBackupRequest, TransferBackupResponse> transferBackupInvoker(
+        TransferBackupRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.transferBackup, hcClient);
     }
 
     /**

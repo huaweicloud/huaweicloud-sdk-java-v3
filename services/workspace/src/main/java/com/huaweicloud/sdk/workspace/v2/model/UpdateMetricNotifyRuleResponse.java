@@ -52,7 +52,7 @@ public class UpdateMetricNotifyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则ID
+     * 规则ID。
      * @return ruleId
      */
     public String getRuleId() {
@@ -86,7 +86,7 @@ public class UpdateMetricNotifyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 统计持续周期(天)
+     * 统计持续周期(天)。
      * @return threshold
      */
     public Integer getThreshold() {
@@ -137,7 +137,7 @@ public class UpdateMetricNotifyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 启禁用规则 true:启用 false:禁用
+     * 启禁用规则 true:启用 false:禁用。
      * @return enable
      */
     public Boolean getEnable() {
@@ -154,7 +154,7 @@ public class UpdateMetricNotifyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 通知对象;smn的主题urn
+     * 通知对象;smn的主题urn。
      * @return notifyObject
      */
     public String getNotifyObject() {

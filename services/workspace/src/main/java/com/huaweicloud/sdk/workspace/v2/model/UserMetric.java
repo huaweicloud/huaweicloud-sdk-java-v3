@@ -29,7 +29,7 @@ public class UserMetric {
     }
 
     /**
-     * 用户名称
+     * 用户名称。
      * @return username
      */
     public String getUsername() {

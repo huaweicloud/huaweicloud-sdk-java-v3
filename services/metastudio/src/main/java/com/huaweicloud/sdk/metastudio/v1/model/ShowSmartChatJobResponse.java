@@ -25,7 +25,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     private String jobId;
 
     /**
-     * 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳 * IDLE: 空闲 * DELETING: 删除中
+     * 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * DELETING: 删除中
      */
     public static final class StateEnum {
 
@@ -166,11 +166,6 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     private String lastupdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rtc_room_info")
-
-    private RTCRoomInfoList rtcRoomInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chat_subtitle_config")
 
     private SmartChatSubtitleConfig chatSubtitleConfig;
@@ -184,16 +179,6 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     @JsonProperty(value = "voice_config_list")
 
     private List<SmartChatVoiceConfig> voiceConfigList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "chat_state")
-
-    private Integer chatState;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "language")
-
-    private LanguageEnum language;
 
     /**
      * 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
@@ -275,16 +260,6 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     @JsonProperty(value = "chat_video_type")
 
     private ChatVideoTypeEnum chatVideoType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "chat_access_address")
-
-    private String chatAccessAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "chat_access_rest_address")
-
-    private String chatAccessRestAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_transparent")
@@ -396,6 +371,111 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     private String clientId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_pool_mode")
+
+    private Boolean isPoolMode;
+
+    /**
+     * 对话结束原因 * NORMAL：正常结束 * MUTE_TIMEOUT：静音超时
+     */
+    public static final class JobFinishReasonEnum {
+
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final JobFinishReasonEnum NORMAL = new JobFinishReasonEnum("NORMAL");
+
+        /**
+         * Enum MUTE_TIMEOUT for value: "MUTE_TIMEOUT"
+         */
+        public static final JobFinishReasonEnum MUTE_TIMEOUT = new JobFinishReasonEnum("MUTE_TIMEOUT");
+
+        private static final Map<String, JobFinishReasonEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobFinishReasonEnum> createStaticFields() {
+            Map<String, JobFinishReasonEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("MUTE_TIMEOUT", MUTE_TIMEOUT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        JobFinishReasonEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static JobFinishReasonEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobFinishReasonEnum(value));
+        }
+
+        public static JobFinishReasonEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof JobFinishReasonEnum) {
+                return this.value.equals(((JobFinishReasonEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_finish_reason")
+
+    private JobFinishReasonEnum jobFinishReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rtc_room_info")
+
+    private RTCRoomInfoList rtcRoomInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_state")
+
+    private Integer chatState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_access_address")
+
+    private String chatAccessAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_access_rest_address")
+
+    private String chatAccessRestAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -423,7 +503,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     }
 
     /**
-     * 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳 * IDLE: 空闲 * DELETING: 删除中
+     * 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * DELETING: 删除中
      * @return state
      */
     public StateEnum getState() {
@@ -547,32 +627,6 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         this.lastupdateTime = lastupdateTime;
     }
 
-    public ShowSmartChatJobResponse withRtcRoomInfo(RTCRoomInfoList rtcRoomInfo) {
-        this.rtcRoomInfo = rtcRoomInfo;
-        return this;
-    }
-
-    public ShowSmartChatJobResponse withRtcRoomInfo(Consumer<RTCRoomInfoList> rtcRoomInfoSetter) {
-        if (this.rtcRoomInfo == null) {
-            this.rtcRoomInfo = new RTCRoomInfoList();
-            rtcRoomInfoSetter.accept(this.rtcRoomInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get rtcRoomInfo
-     * @return rtcRoomInfo
-     */
-    public RTCRoomInfoList getRtcRoomInfo() {
-        return rtcRoomInfo;
-    }
-
-    public void setRtcRoomInfo(RTCRoomInfoList rtcRoomInfo) {
-        this.rtcRoomInfo = rtcRoomInfo;
-    }
-
     public ShowSmartChatJobResponse withChatSubtitleConfig(SmartChatSubtitleConfig chatSubtitleConfig) {
         this.chatSubtitleConfig = chatSubtitleConfig;
         return this;
@@ -658,42 +712,6 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         this.voiceConfigList = voiceConfigList;
     }
 
-    public ShowSmartChatJobResponse withChatState(Integer chatState) {
-        this.chatState = chatState;
-        return this;
-    }
-
-    /**
-     * 数字人智能交互对话的状态。 0: 等待建链 1: 等待关闭链路 2: 建链成功 3: 进入休眠 4: 等待休眠
-     * minimum: 0
-     * maximum: 32
-     * @return chatState
-     */
-    public Integer getChatState() {
-        return chatState;
-    }
-
-    public void setChatState(Integer chatState) {
-        this.chatState = chatState;
-    }
-
-    public ShowSmartChatJobResponse withLanguage(LanguageEnum language) {
-        this.language = language;
-        return this;
-    }
-
-    /**
-     * Get language
-     * @return language
-     */
-    public LanguageEnum getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(LanguageEnum language) {
-        this.language = language;
-    }
-
     public ShowSmartChatJobResponse withChatVideoType(ChatVideoTypeEnum chatVideoType) {
         this.chatVideoType = chatVideoType;
         return this;
@@ -709,40 +727,6 @@ public class ShowSmartChatJobResponse extends SdkResponse {
 
     public void setChatVideoType(ChatVideoTypeEnum chatVideoType) {
         this.chatVideoType = chatVideoType;
-    }
-
-    public ShowSmartChatJobResponse withChatAccessAddress(String chatAccessAddress) {
-        this.chatAccessAddress = chatAccessAddress;
-        return this;
-    }
-
-    /**
-     * 智能交互接入地址。
-     * @return chatAccessAddress
-     */
-    public String getChatAccessAddress() {
-        return chatAccessAddress;
-    }
-
-    public void setChatAccessAddress(String chatAccessAddress) {
-        this.chatAccessAddress = chatAccessAddress;
-    }
-
-    public ShowSmartChatJobResponse withChatAccessRestAddress(String chatAccessRestAddress) {
-        this.chatAccessRestAddress = chatAccessRestAddress;
-        return this;
-    }
-
-    /**
-     * 智能交互Rest接口接入地址。
-     * @return chatAccessRestAddress
-     */
-    public String getChatAccessRestAddress() {
-        return chatAccessRestAddress;
-    }
-
-    public void setChatAccessRestAddress(String chatAccessRestAddress) {
-        this.chatAccessRestAddress = chatAccessRestAddress;
     }
 
     public ShowSmartChatJobResponse withIsTransparent(Boolean isTransparent) {
@@ -796,6 +780,136 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         this.clientId = clientId;
     }
 
+    public ShowSmartChatJobResponse withIsPoolMode(Boolean isPoolMode) {
+        this.isPoolMode = isPoolMode;
+        return this;
+    }
+
+    /**
+     * 是否是资源池模式
+     * @return isPoolMode
+     */
+    public Boolean getIsPoolMode() {
+        return isPoolMode;
+    }
+
+    public void setIsPoolMode(Boolean isPoolMode) {
+        this.isPoolMode = isPoolMode;
+    }
+
+    public ShowSmartChatJobResponse withJobFinishReason(JobFinishReasonEnum jobFinishReason) {
+        this.jobFinishReason = jobFinishReason;
+        return this;
+    }
+
+    /**
+     * 对话结束原因 * NORMAL：正常结束 * MUTE_TIMEOUT：静音超时
+     * @return jobFinishReason
+     */
+    public JobFinishReasonEnum getJobFinishReason() {
+        return jobFinishReason;
+    }
+
+    public void setJobFinishReason(JobFinishReasonEnum jobFinishReason) {
+        this.jobFinishReason = jobFinishReason;
+    }
+
+    public ShowSmartChatJobResponse withRtcRoomInfo(RTCRoomInfoList rtcRoomInfo) {
+        this.rtcRoomInfo = rtcRoomInfo;
+        return this;
+    }
+
+    public ShowSmartChatJobResponse withRtcRoomInfo(Consumer<RTCRoomInfoList> rtcRoomInfoSetter) {
+        if (this.rtcRoomInfo == null) {
+            this.rtcRoomInfo = new RTCRoomInfoList();
+            rtcRoomInfoSetter.accept(this.rtcRoomInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get rtcRoomInfo
+     * @return rtcRoomInfo
+     */
+    public RTCRoomInfoList getRtcRoomInfo() {
+        return rtcRoomInfo;
+    }
+
+    public void setRtcRoomInfo(RTCRoomInfoList rtcRoomInfo) {
+        this.rtcRoomInfo = rtcRoomInfo;
+    }
+
+    public ShowSmartChatJobResponse withChatState(Integer chatState) {
+        this.chatState = chatState;
+        return this;
+    }
+
+    /**
+     * 数字人智能交互对话的状态。 0: 等待建链 1: 等待关闭链路 2: 建链成功 3: 进入休眠 4: 等待休眠
+     * minimum: 0
+     * maximum: 32
+     * @return chatState
+     */
+    public Integer getChatState() {
+        return chatState;
+    }
+
+    public void setChatState(Integer chatState) {
+        this.chatState = chatState;
+    }
+
+    public ShowSmartChatJobResponse withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * Get language
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
+    }
+
+    public ShowSmartChatJobResponse withChatAccessAddress(String chatAccessAddress) {
+        this.chatAccessAddress = chatAccessAddress;
+        return this;
+    }
+
+    /**
+     * 智能交互接入地址。
+     * @return chatAccessAddress
+     */
+    public String getChatAccessAddress() {
+        return chatAccessAddress;
+    }
+
+    public void setChatAccessAddress(String chatAccessAddress) {
+        this.chatAccessAddress = chatAccessAddress;
+    }
+
+    public ShowSmartChatJobResponse withChatAccessRestAddress(String chatAccessRestAddress) {
+        this.chatAccessRestAddress = chatAccessRestAddress;
+        return this;
+    }
+
+    /**
+     * 智能交互Rest接口接入地址。
+     * @return chatAccessRestAddress
+     */
+    public String getChatAccessRestAddress() {
+        return chatAccessRestAddress;
+    }
+
+    public void setChatAccessRestAddress(String chatAccessRestAddress) {
+        this.chatAccessRestAddress = chatAccessRestAddress;
+    }
+
     public ShowSmartChatJobResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -829,17 +943,19 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorInfo, that.errorInfo)
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
-            && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo)
             && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig)
             && Objects.equals(this.videoConfig, that.videoConfig)
             && Objects.equals(this.voiceConfigList, that.voiceConfigList)
-            && Objects.equals(this.chatState, that.chatState) && Objects.equals(this.language, that.language)
             && Objects.equals(this.chatVideoType, that.chatVideoType)
-            && Objects.equals(this.chatAccessAddress, that.chatAccessAddress)
-            && Objects.equals(this.chatAccessRestAddress, that.chatAccessRestAddress)
             && Objects.equals(this.isTransparent, that.isTransparent)
             && Objects.equals(this.defaultLanguage, that.defaultLanguage)
-            && Objects.equals(this.clientId, that.clientId) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.clientId, that.clientId) && Objects.equals(this.isPoolMode, that.isPoolMode)
+            && Objects.equals(this.jobFinishReason, that.jobFinishReason)
+            && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo) && Objects.equals(this.chatState, that.chatState)
+            && Objects.equals(this.language, that.language)
+            && Objects.equals(this.chatAccessAddress, that.chatAccessAddress)
+            && Objects.equals(this.chatAccessRestAddress, that.chatAccessRestAddress)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -852,18 +968,20 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             errorInfo,
             createTime,
             lastupdateTime,
-            rtcRoomInfo,
             chatSubtitleConfig,
             videoConfig,
             voiceConfigList,
-            chatState,
-            language,
             chatVideoType,
-            chatAccessAddress,
-            chatAccessRestAddress,
             isTransparent,
             defaultLanguage,
             clientId,
+            isPoolMode,
+            jobFinishReason,
+            rtcRoomInfo,
+            chatState,
+            language,
+            chatAccessAddress,
+            chatAccessRestAddress,
             xRequestId);
     }
 
@@ -879,18 +997,20 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    lastupdateTime: ").append(toIndentedString(lastupdateTime)).append("\n");
-        sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
         sb.append("    chatSubtitleConfig: ").append(toIndentedString(chatSubtitleConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
         sb.append("    voiceConfigList: ").append(toIndentedString(voiceConfigList)).append("\n");
-        sb.append("    chatState: ").append(toIndentedString(chatState)).append("\n");
-        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
-        sb.append("    chatAccessAddress: ").append(toIndentedString(chatAccessAddress)).append("\n");
-        sb.append("    chatAccessRestAddress: ").append(toIndentedString(chatAccessRestAddress)).append("\n");
         sb.append("    isTransparent: ").append(toIndentedString(isTransparent)).append("\n");
         sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
         sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+        sb.append("    isPoolMode: ").append(toIndentedString(isPoolMode)).append("\n");
+        sb.append("    jobFinishReason: ").append(toIndentedString(jobFinishReason)).append("\n");
+        sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
+        sb.append("    chatState: ").append(toIndentedString(chatState)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    chatAccessAddress: ").append(toIndentedString(chatAccessAddress)).append("\n");
+        sb.append("    chatAccessRestAddress: ").append(toIndentedString(chatAccessRestAddress)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

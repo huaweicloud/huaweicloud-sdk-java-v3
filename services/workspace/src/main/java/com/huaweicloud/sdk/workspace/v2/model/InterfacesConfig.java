@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 接口配置
+ * 接口配置。
  */
 public class InterfacesConfig {
 
@@ -64,7 +64,7 @@ public class InterfacesConfig {
     }
 
     /**
-     * 应用平台
+     * 应用平台。
      * @return applyPlatform
      */
     public String getApplyPlatform() {
@@ -81,7 +81,7 @@ public class InterfacesConfig {
     }
 
     /**
-     * ID
+     * ID。
      * @return id
      */
     public String getId() {
@@ -98,7 +98,7 @@ public class InterfacesConfig {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return name
      */
     public String getName() {
@@ -115,7 +115,7 @@ public class InterfacesConfig {
     }
 
     /**
-     * 类型
+     * 类型。
      * @return type
      */
     public String getType() {
@@ -148,7 +148,7 @@ public class InterfacesConfig {
     }
 
     /**
-     * 结果
+     * 结果。
      * @return results
      */
     public Map<String, String> getResults() {
@@ -181,7 +181,7 @@ public class InterfacesConfig {
     }
 
     /**
-     * 分页信息
+     * 分页信息。
      * @return pagination
      */
     public Map<String, Object> getPagination() {
@@ -224,7 +224,7 @@ public class InterfacesConfig {
     }
 
     /**
-     * 响应
+     * 响应。
      * @return response
      */
     public String getResponse() {
@@ -241,7 +241,7 @@ public class InterfacesConfig {
     }
 
     /**
-     * 检查结果
+     * 检查结果。
      * @return resultCheck
      */
     public String getResultCheck() {

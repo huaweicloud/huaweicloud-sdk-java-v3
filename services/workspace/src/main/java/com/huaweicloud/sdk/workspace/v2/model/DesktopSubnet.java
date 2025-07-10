@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 子网信息
+ * 子网信息。
  */
 public class DesktopSubnet {
 
@@ -31,7 +31,7 @@ public class DesktopSubnet {
     }
 
     /**
-     * 桌面所在子网Id
+     * 桌面所在子网Id。
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class DesktopSubnet {
     }
 
     /**
-     * 桌面所在子网名称
+     * 桌面所在子网名称。
      * @return name
      */
     public String getName() {
@@ -65,7 +65,7 @@ public class DesktopSubnet {
     }
 
     /**
-     * 桌面所在子网网段
+     * 桌面所在子网网段。
      * @return cidr
      */
     public String getCidr() {

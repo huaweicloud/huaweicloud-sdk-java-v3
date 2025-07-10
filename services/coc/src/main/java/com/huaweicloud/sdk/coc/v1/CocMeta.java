@@ -3,7 +3,9 @@ package com.huaweicloud.sdk.coc.v1;
 import com.huaweicloud.sdk.coc.v1.model.AcceptScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.AcceptScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.AddScriptModel;
+import com.huaweicloud.sdk.coc.v1.model.AlarmToIncidentRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ApprovalJobScriptModel;
+import com.huaweicloud.sdk.coc.v1.model.AutoHandlerAlarmRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequest;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewResponse;
@@ -11,6 +13,11 @@ import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ClearAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.ClearAlarmRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.ClearAlarmResponse;
+import com.huaweicloud.sdk.coc.v1.model.CocUpdateChangeRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.CocUpdateChangeRequestBodyV2;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentRequest;
@@ -50,13 +57,18 @@ import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteTicketInfoRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteTicketInfoResponse;
 import com.huaweicloud.sdk.coc.v1.model.DiagnosisTaskSubmitBody;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.DownloadAttachmentRequest;
+import com.huaweicloud.sdk.coc.v1.model.DownloadAttachmentResponse;
 import com.huaweicloud.sdk.coc.v1.model.EditScriptModel;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteActionParams;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteActionParamsV2;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentRequsetBody;
@@ -65,6 +77,8 @@ import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteTicketActionRequest;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteTicketActionResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetDocumentAtomicInfoRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetDocumentAtomicInfoResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetDocumentRequest;
@@ -86,9 +100,13 @@ import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleExternalIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.InstancesBatchesMode;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptAnalyzeRequest;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptOrderOperationBody;
+import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsReq;
@@ -132,10 +150,17 @@ import com.huaweicloud.sdk.coc.v1.model.ListScriptResourceTagsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptResourceTagsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListSubTicketsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListSubTicketsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListTenantWarRoomRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketOperationHistoriesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListTicketParams;
 import com.huaweicloud.sdk.coc.v1.model.ListTicketParamsV2;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketParamsWithPage;
 import com.huaweicloud.sdk.coc.v1.model.ListTicketParamsWithPageV2;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
@@ -149,6 +174,8 @@ import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ScheduledTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ScriptExecuteModel;
+import com.huaweicloud.sdk.coc.v1.model.ShowAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailRequest;
@@ -165,9 +192,15 @@ import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceReq;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentRequest;
+import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateChangeRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateChangeResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsRequest;
@@ -178,6 +211,8 @@ import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateTicketRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateTicketResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -189,6 +224,142 @@ import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class CocMeta {
+
+    public static final HttpRequestDef<ClearAlarmRequest, ClearAlarmResponse> clearAlarm = genForClearAlarm();
+
+    private static HttpRequestDef<ClearAlarmRequest, ClearAlarmResponse> genForClearAlarm() {
+        // basic
+        HttpRequestDef.Builder<ClearAlarmRequest, ClearAlarmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ClearAlarmRequest.class, ClearAlarmResponse.class)
+                .withName("ClearAlarm")
+                .withUri("/v1/alarm-mgmt/alarms/cancel")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ClearAlarmRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ClearAlarmRequestBody.class),
+            f -> f.withMarshaller(ClearAlarmRequest::getBody, ClearAlarmRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<HandlerAlarmRequest, HandlerAlarmResponse> handlerAlarm = genForHandlerAlarm();
+
+    private static HttpRequestDef<HandlerAlarmRequest, HandlerAlarmResponse> genForHandlerAlarm() {
+        // basic
+        HttpRequestDef.Builder<HandlerAlarmRequest, HandlerAlarmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, HandlerAlarmRequest.class, HandlerAlarmResponse.class)
+                .withName("HandlerAlarm")
+                .withUri("/v1/alarm-mgmt/alarm/{alarm_id}/auto-process")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(HandlerAlarmRequest::getAlarmId, HandlerAlarmRequest::setAlarmId));
+        builder.<AutoHandlerAlarmRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AutoHandlerAlarmRequestBody.class),
+            f -> f.withMarshaller(HandlerAlarmRequest::getBody, HandlerAlarmRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(HandlerAlarmResponse::getBody, HandlerAlarmResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> listAlarmHandleHistories =
+        genForListAlarmHandleHistories();
+
+    private static HttpRequestDef<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> genForListAlarmHandleHistories() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListAlarmHandleHistoriesRequest.class, ListAlarmHandleHistoriesResponse.class)
+                .withName("ListAlarmHandleHistories")
+                .withUri("/v1/alarm-mgmt/alarm/{alarm_id}/handle-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getAlarmId,
+                ListAlarmHandleHistoriesRequest::setAlarmId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getOffset,
+                ListAlarmHandleHistoriesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getLimit,
+                ListAlarmHandleHistoriesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAlarmRequest, ShowAlarmResponse> showAlarm = genForShowAlarm();
+
+    private static HttpRequestDef<ShowAlarmRequest, ShowAlarmResponse> genForShowAlarm() {
+        // basic
+        HttpRequestDef.Builder<ShowAlarmRequest, ShowAlarmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAlarmRequest.class, ShowAlarmResponse.class)
+                .withName("ShowAlarm")
+                .withUri("/v1/alarm-mgmt/alarm/{alarm_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAlarmRequest::getAlarmId, ShowAlarmRequest::setAlarmId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<TransferAlarmToIncidentRequest, TransferAlarmToIncidentResponse> transferAlarmToIncident =
+        genForTransferAlarmToIncident();
+
+    private static HttpRequestDef<TransferAlarmToIncidentRequest, TransferAlarmToIncidentResponse> genForTransferAlarmToIncident() {
+        // basic
+        HttpRequestDef.Builder<TransferAlarmToIncidentRequest, TransferAlarmToIncidentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, TransferAlarmToIncidentRequest.class, TransferAlarmToIncidentResponse.class)
+            .withName("TransferAlarmToIncident")
+            .withUri("/v1/alarm-mgmt/alarms-linked-incident")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<AlarmToIncidentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AlarmToIncidentRequestBody.class),
+            f -> f.withMarshaller(TransferAlarmToIncidentRequest::getBody, TransferAlarmToIncidentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> batchCreateApplicationView =
         genForBatchCreateApplicationView();
@@ -211,6 +382,33 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(BatchCreateApplicationViewRequestBody.class),
             f -> f.withMarshaller(BatchCreateApplicationViewRequest::getBody,
                 BatchCreateApplicationViewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateChangeRequest, UpdateChangeResponse> updateChange = genForUpdateChange();
+
+    private static HttpRequestDef<UpdateChangeRequest, UpdateChangeResponse> genForUpdateChange() {
+        // basic
+        HttpRequestDef.Builder<UpdateChangeRequest, UpdateChangeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateChangeRequest.class, UpdateChangeResponse.class)
+                .withName("UpdateChange")
+                .withUri("/v2/changes/{change_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("change_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateChangeRequest::getChangeId, UpdateChangeRequest::setChangeId));
+        builder.<CocUpdateChangeRequestBodyV2>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CocUpdateChangeRequestBodyV2.class),
+            f -> f.withMarshaller(UpdateChangeRequest::getBody, UpdateChangeRequest::setBody));
 
         // response
 
@@ -1269,6 +1467,109 @@ public class CocMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteTicketInfoRequest, DeleteTicketInfoResponse> deleteTicketInfo =
+        genForDeleteTicketInfo();
+
+    private static HttpRequestDef<DeleteTicketInfoRequest, DeleteTicketInfoResponse> genForDeleteTicketInfo() {
+        // basic
+        HttpRequestDef.Builder<DeleteTicketInfoRequest, DeleteTicketInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTicketInfoRequest.class, DeleteTicketInfoResponse.class)
+                .withName("DeleteTicketInfo")
+                .withUri("/v1/{ticket_type}/tickets/{ticket_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTicketInfoRequest::getTicketType, DeleteTicketInfoRequest::setTicketType));
+        builder.<String>withRequestField("ticket_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTicketInfoRequest::getTicketId, DeleteTicketInfoRequest::setTicketId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubTicketsRequest, ListSubTicketsResponse> listSubTickets =
+        genForListSubTickets();
+
+    private static HttpRequestDef<ListSubTicketsRequest, ListSubTicketsResponse> genForListSubTickets() {
+        // basic
+        HttpRequestDef.Builder<ListSubTicketsRequest, ListSubTicketsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSubTicketsRequest.class, ListSubTicketsResponse.class)
+                .withName("ListSubTickets")
+                .withUri("/v1/{ticket_type}/tickets/{ticket_id}/list-sub-tickets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubTicketsRequest::getTicketType, ListSubTicketsRequest::setTicketType));
+        builder.<String>withRequestField("ticket_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubTicketsRequest::getTicketId, ListSubTicketsRequest::setTicketId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubTicketsRequest::getType, ListSubTicketsRequest::setType));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSubTicketsRequest::getLimit, ListSubTicketsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubTicketsRequest::getMarker, ListSubTicketsRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTicketRequest, UpdateTicketResponse> updateTicket = genForUpdateTicket();
+
+    private static HttpRequestDef<UpdateTicketRequest, UpdateTicketResponse> genForUpdateTicket() {
+        // basic
+        HttpRequestDef.Builder<UpdateTicketRequest, UpdateTicketResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTicketRequest.class, UpdateTicketResponse.class)
+                .withName("UpdateTicket")
+                .withUri("/v1/{ticket_type}/tickets/{ticket_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTicketRequest::getTicketType, UpdateTicketRequest::setTicketType));
+        builder.<String>withRequestField("ticket_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTicketRequest::getTicketId, UpdateTicketRequest::setTicketId));
+        builder.<CocUpdateChangeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CocUpdateChangeRequestBody.class),
+            f -> f.withMarshaller(UpdateTicketRequest::getBody, UpdateTicketRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCocIncidentRequest, CreateCocIncidentResponse> createCocIncident =
         genForCreateCocIncident();
 
@@ -1527,6 +1828,151 @@ public class CocMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCocTicketRequestBody.class),
             f -> f.withMarshaller(CreateTicketRequest::getBody, CreateTicketRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadAttachmentRequest, DownloadAttachmentResponse> downloadAttachment =
+        genForDownloadAttachment();
+
+    private static HttpRequestDef<DownloadAttachmentRequest, DownloadAttachmentResponse> genForDownloadAttachment() {
+        // basic
+        HttpRequestDef.Builder<DownloadAttachmentRequest, DownloadAttachmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadAttachmentRequest.class, DownloadAttachmentResponse.class)
+                .withName("DownloadAttachment")
+                .withUri("/v1/{ticket_type}/attachments/{doc_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAttachmentRequest::getTicketType, DownloadAttachmentRequest::setTicketType));
+        builder.<String>withRequestField("doc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAttachmentRequest::getDocId, DownloadAttachmentRequest::setDocId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteTicketActionRequest, ExecuteTicketActionResponse> executeTicketAction =
+        genForExecuteTicketAction();
+
+    private static HttpRequestDef<ExecuteTicketActionRequest, ExecuteTicketActionResponse> genForExecuteTicketAction() {
+        // basic
+        HttpRequestDef.Builder<ExecuteTicketActionRequest, ExecuteTicketActionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteTicketActionRequest.class, ExecuteTicketActionResponse.class)
+                .withName("ExecuteTicketAction")
+                .withUri("/v1/{ticket_type}/actions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteTicketActionRequest::getTicketType,
+                ExecuteTicketActionRequest::setTicketType));
+        builder.<ExecuteActionParams>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteActionParams.class),
+            f -> f.withMarshaller(ExecuteTicketActionRequest::getBody, ExecuteTicketActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTicketOperationHistoriesRequest, ListTicketOperationHistoriesResponse> listTicketOperationHistories =
+        genForListTicketOperationHistories();
+
+    private static HttpRequestDef<ListTicketOperationHistoriesRequest, ListTicketOperationHistoriesResponse> genForListTicketOperationHistories() {
+        // basic
+        HttpRequestDef.Builder<ListTicketOperationHistoriesRequest, ListTicketOperationHistoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListTicketOperationHistoriesRequest.class,
+                    ListTicketOperationHistoriesResponse.class)
+                .withName("ListTicketOperationHistories")
+                .withUri("/v1/{ticket_type}/list-histories")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTicketOperationHistoriesRequest::getTicketType,
+                ListTicketOperationHistoriesRequest::setTicketType));
+        builder.<ListTicketParams>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTicketParams.class),
+            f -> f.withMarshaller(ListTicketOperationHistoriesRequest::getBody,
+                ListTicketOperationHistoriesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTicketsRequest, ListTicketsResponse> listTickets = genForListTickets();
+
+    private static HttpRequestDef<ListTicketsRequest, ListTicketsResponse> genForListTickets() {
+        // basic
+        HttpRequestDef.Builder<ListTicketsRequest, ListTicketsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTicketsRequest.class, ListTicketsResponse.class)
+                .withName("ListTickets")
+                .withUri("/v1/{ticket_type}/list-tickets")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTicketsRequest::getTicketType, ListTicketsRequest::setTicketType));
+        builder.<ListTicketParamsWithPage>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTicketParamsWithPage.class),
+            f -> f.withMarshaller(ListTicketsRequest::getBody, ListTicketsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTicketInfoRequest, ShowTicketInfoResponse> showTicketInfo =
+        genForShowTicketInfo();
+
+    private static HttpRequestDef<ShowTicketInfoRequest, ShowTicketInfoResponse> genForShowTicketInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowTicketInfoRequest, ShowTicketInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTicketInfoRequest.class, ShowTicketInfoResponse.class)
+                .withName("ShowTicketInfo")
+                .withUri("/v1/{ticket_type}/tickets/{ticket_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ticket_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTicketInfoRequest::getTicketType, ShowTicketInfoRequest::setTicketType));
+        builder.<String>withRequestField("ticket_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTicketInfoRequest::getTicketId, ShowTicketInfoRequest::setTicketId));
 
         // response
 

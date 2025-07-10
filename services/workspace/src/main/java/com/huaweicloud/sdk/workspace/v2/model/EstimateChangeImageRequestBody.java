@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 包周期桌面池由不收费镜像切换至收费镜像的询价请求体
+ * 包周期桌面池由不收费镜像切换至收费镜像的询价请求体。
  */
 public class EstimateChangeImageRequestBody {
 
@@ -94,7 +94,7 @@ public class EstimateChangeImageRequestBody {
     }
 
     /**
-     * 促销计划ID
+     * 促销计划ID。
      * @return promotionPlanId
      */
     public String getPromotionPlanId() {

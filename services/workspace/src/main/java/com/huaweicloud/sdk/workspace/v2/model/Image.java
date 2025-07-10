@@ -126,7 +126,7 @@ public class Image {
     }
 
     /**
-     * 镜像运行需要的最小磁盘容量，单位为GB。取值为40～1024GB。。
+     * 镜像运行需要的最小磁盘容量，单位为GB。取值为40～1024GB。
      * @return minDisk
      */
     public Integer getMinDisk() {

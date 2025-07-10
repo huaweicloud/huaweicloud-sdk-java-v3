@@ -31,7 +31,7 @@ public class AdOuUserInfo {
     }
 
     /**
-     * 名称
+     * 名称。
      * @return userName
      */
     public String getUserName() {
@@ -48,7 +48,7 @@ public class AdOuUserInfo {
     }
 
     /**
-     * 过期时间 -1代表永不过期
+     * 过期时间 -1代表永不过期。
      * @return expiredTime
      */
     public String getExpiredTime() {
@@ -65,7 +65,7 @@ public class AdOuUserInfo {
     }
 
     /**
-     * 是否存在于用户列表
+     * 是否存在于用户列表。
      * @return hasExisted
      */
     public Boolean getHasExisted() {

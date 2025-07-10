@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * JobEntities
+ * 任务。
  */
 public class JobEntities {
 

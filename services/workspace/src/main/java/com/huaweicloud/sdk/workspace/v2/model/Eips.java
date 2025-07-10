@@ -73,7 +73,7 @@ public class Eips {
     }
 
     /**
-     * Eip地址。
+     * EIP地址。
      * @return address
      */
     public String getAddress() {
@@ -177,7 +177,7 @@ public class Eips {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

@@ -72,7 +72,7 @@ public class ShowQuotasResponse extends SdkResponse {
     }
 
     /**
-     * 站点配额信息，暂不包括中心站点
+     * 站点配额信息，暂不包括中心站点。
      * @return siteQuotas
      */
     public List<SiteQuotaNoLimit> getSiteQuotas() {

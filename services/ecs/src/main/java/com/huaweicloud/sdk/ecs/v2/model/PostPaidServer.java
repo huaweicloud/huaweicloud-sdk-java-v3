@@ -150,6 +150,11 @@ public class PostPaidServer {
 
     private UpdateServerMetadataOptionsRequestBody metadataOptions;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enclave_options")
+
+    private EnclaveOptions enclaveOptions;
+
     public PostPaidServer withAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
         return this;
@@ -778,6 +783,32 @@ public class PostPaidServer {
         this.metadataOptions = metadataOptions;
     }
 
+    public PostPaidServer withEnclaveOptions(EnclaveOptions enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+        return this;
+    }
+
+    public PostPaidServer withEnclaveOptions(Consumer<EnclaveOptions> enclaveOptionsSetter) {
+        if (this.enclaveOptions == null) {
+            this.enclaveOptions = new EnclaveOptions();
+            enclaveOptionsSetter.accept(this.enclaveOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enclaveOptions
+     * @return enclaveOptions
+     */
+    public EnclaveOptions getEnclaveOptions() {
+        return enclaveOptions;
+    }
+
+    public void setEnclaveOptions(EnclaveOptions enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -804,7 +835,8 @@ public class PostPaidServer {
             && Objects.equals(this.description, that.description) && Objects.equals(this.cpuOptions, that.cpuOptions)
             && Objects.equals(this.securityOptions, that.securityOptions)
             && Objects.equals(this.serialConsoleOptions, that.serialConsoleOptions)
-            && Objects.equals(this.metadataOptions, that.metadataOptions);
+            && Objects.equals(this.metadataOptions, that.metadataOptions)
+            && Objects.equals(this.enclaveOptions, that.enclaveOptions);
     }
 
     @Override
@@ -835,7 +867,8 @@ public class PostPaidServer {
             cpuOptions,
             securityOptions,
             serialConsoleOptions,
-            metadataOptions);
+            metadataOptions,
+            enclaveOptions);
     }
 
     @Override
@@ -869,6 +902,7 @@ public class PostPaidServer {
         sb.append("    securityOptions: ").append(toIndentedString(securityOptions)).append("\n");
         sb.append("    serialConsoleOptions: ").append(toIndentedString(serialConsoleOptions)).append("\n");
         sb.append("    metadataOptions: ").append(toIndentedString(metadataOptions)).append("\n");
+        sb.append("    enclaveOptions: ").append(toIndentedString(enclaveOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

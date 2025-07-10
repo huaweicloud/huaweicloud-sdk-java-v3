@@ -138,7 +138,7 @@ public class RebuildDesktopPoolReq {
     }
 
     /**
-     * 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传
+     * 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传。
      * @return orderId
      */
     public String getOrderId() {

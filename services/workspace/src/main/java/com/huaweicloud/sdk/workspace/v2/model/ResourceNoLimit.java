@@ -53,7 +53,7 @@ public class ResourceNoLimit {
     }
 
     /**
-     * 配额数
+     * 配额数。
      * minimum: 0
      * maximum: 2147483647
      * @return quota
@@ -72,7 +72,7 @@ public class ResourceNoLimit {
     }
 
     /**
-     * 配额已用值
+     * 配额已用值。
      * minimum: 0
      * maximum: 2147483647
      * @return used
@@ -91,7 +91,7 @@ public class ResourceNoLimit {
     }
 
     /**
-     * 配额单位
+     * 配额单位。
      * @return unit
      */
     public String getUnit() {

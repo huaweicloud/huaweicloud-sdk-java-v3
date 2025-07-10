@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Eip信息。
+ * EIP信息。
  */
 public class Eip {
 
@@ -111,7 +111,7 @@ public class Eip {
     }
 
     /**
-     * 桌面绑定的Eip的id，有值时优先绑定Eip。
+     * 桌面绑定的EIP的id，有值时优先绑定EIP。
      * @return id
      */
     public String getId() {
@@ -128,7 +128,7 @@ public class Eip {
     }
 
     /**
-     * EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP）
+     * EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP）。
      * @return type
      */
     public String getType() {
@@ -162,7 +162,7 @@ public class Eip {
     }
 
     /**
-     * 带宽大小
+     * 带宽大小。
      * minimum: 1
      * maximum: 2000
      * @return bandwidthSize

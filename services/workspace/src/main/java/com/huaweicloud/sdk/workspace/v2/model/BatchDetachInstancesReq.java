@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量解绑用户请求
+ * 批量解绑用户请求。
  */
 public class BatchDetachInstancesReq {
 

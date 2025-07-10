@@ -25,19 +25,14 @@ public class ListWorkspacesResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auth_type")
+    @JsonProperty(value = "is_global")
 
-    private String authType;
+    private Boolean isGlobal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_domains")
 
     private AdInfo adDomains;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "third_gateway_info")
-
-    private ThirdGatewayInfo thirdGatewayInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -70,19 +65,9 @@ public class ListWorkspacesResponse extends SdkResponse {
     private String dedicatedAccessAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dedicated_access_address_ipv6")
-
-    private String dedicatedAccessAddressIpv6;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internet_access_address")
 
     private String internetAccessAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "internet_access_address_ipv6")
-
-    private String internetAccessAddressIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internet_access_port")
@@ -283,16 +268,6 @@ public class ListWorkspacesResponse extends SdkResponse {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_resource_type")
-
-    private String projectResourceType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "assist_auth_config_info")
-
-    private AssistAuthConfigInfo assistAuthConfigInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_send_email")
 
     private Boolean isSendEmail;
@@ -313,24 +288,9 @@ public class ListWorkspacesResponse extends SdkResponse {
     private List<SiteConfigsResponse> siteConfigs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_multi_vpc")
-
-    private Boolean isMultiVpc;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_config_nat_mapping")
-
-    private Boolean isConfigNatMapping;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dc_vnc_ip")
 
     private String dcVncIp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dc_vnc_vpcep_id")
-
-    private String dcVncVpcepId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_authorized_install_agent")
@@ -364,21 +324,21 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.id = id;
     }
 
-    public ListWorkspacesResponse withAuthType(String authType) {
-        this.authType = authType;
+    public ListWorkspacesResponse withIsGlobal(Boolean isGlobal) {
+        this.isGlobal = isGlobal;
         return this;
     }
 
     /**
-     * 主认证方式。 - KERBEROS：KERBEROS。 - KERBEROS_THIRD_SSO：第三方登录认证。
-     * @return authType
+     * 开通服务是否是全局服务
+     * @return isGlobal
      */
-    public String getAuthType() {
-        return authType;
+    public Boolean getIsGlobal() {
+        return isGlobal;
     }
 
-    public void setAuthType(String authType) {
-        this.authType = authType;
+    public void setIsGlobal(Boolean isGlobal) {
+        this.isGlobal = isGlobal;
     }
 
     public ListWorkspacesResponse withAdDomains(AdInfo adDomains) {
@@ -405,32 +365,6 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     public void setAdDomains(AdInfo adDomains) {
         this.adDomains = adDomains;
-    }
-
-    public ListWorkspacesResponse withThirdGatewayInfo(ThirdGatewayInfo thirdGatewayInfo) {
-        this.thirdGatewayInfo = thirdGatewayInfo;
-        return this;
-    }
-
-    public ListWorkspacesResponse withThirdGatewayInfo(Consumer<ThirdGatewayInfo> thirdGatewayInfoSetter) {
-        if (this.thirdGatewayInfo == null) {
-            this.thirdGatewayInfo = new ThirdGatewayInfo();
-            thirdGatewayInfoSetter.accept(this.thirdGatewayInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get thirdGatewayInfo
-     * @return thirdGatewayInfo
-     */
-    public ThirdGatewayInfo getThirdGatewayInfo() {
-        return thirdGatewayInfo;
-    }
-
-    public void setThirdGatewayInfo(ThirdGatewayInfo thirdGatewayInfo) {
-        this.thirdGatewayInfo = thirdGatewayInfo;
     }
 
     public ListWorkspacesResponse withVpcId(String vpcId) {
@@ -535,23 +469,6 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.dedicatedAccessAddress = dedicatedAccessAddress;
     }
 
-    public ListWorkspacesResponse withDedicatedAccessAddressIpv6(String dedicatedAccessAddressIpv6) {
-        this.dedicatedAccessAddressIpv6 = dedicatedAccessAddressIpv6;
-        return this;
-    }
-
-    /**
-     * 专线接入ipv6地址，只有access_mode为“DEDICATED”或“BOTH”时才会返回该参数。
-     * @return dedicatedAccessAddressIpv6
-     */
-    public String getDedicatedAccessAddressIpv6() {
-        return dedicatedAccessAddressIpv6;
-    }
-
-    public void setDedicatedAccessAddressIpv6(String dedicatedAccessAddressIpv6) {
-        this.dedicatedAccessAddressIpv6 = dedicatedAccessAddressIpv6;
-    }
-
     public ListWorkspacesResponse withInternetAccessAddress(String internetAccessAddress) {
         this.internetAccessAddress = internetAccessAddress;
         return this;
@@ -567,23 +484,6 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     public void setInternetAccessAddress(String internetAccessAddress) {
         this.internetAccessAddress = internetAccessAddress;
-    }
-
-    public ListWorkspacesResponse withInternetAccessAddressIpv6(String internetAccessAddressIpv6) {
-        this.internetAccessAddressIpv6 = internetAccessAddressIpv6;
-        return this;
-    }
-
-    /**
-     * 互联网接入ipv6地址，只有access_mode为“INTERNET”或“BOTH”时才会返回该参数。
-     * @return internetAccessAddressIpv6
-     */
-    public String getInternetAccessAddressIpv6() {
-        return internetAccessAddressIpv6;
-    }
-
-    public void setInternetAccessAddressIpv6(String internetAccessAddressIpv6) {
-        this.internetAccessAddressIpv6 = internetAccessAddressIpv6;
     }
 
     public ListWorkspacesResponse withInternetAccessPort(String internetAccessPort) {
@@ -911,49 +811,6 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListWorkspacesResponse withProjectResourceType(String projectResourceType) {
-        this.projectResourceType = projectResourceType;
-        return this;
-    }
-
-    /**
-     * 资源池类型。 - \"public\"： 私有资源池 - \"private\"： 公有资源池
-     * @return projectResourceType
-     */
-    public String getProjectResourceType() {
-        return projectResourceType;
-    }
-
-    public void setProjectResourceType(String projectResourceType) {
-        this.projectResourceType = projectResourceType;
-    }
-
-    public ListWorkspacesResponse withAssistAuthConfigInfo(AssistAuthConfigInfo assistAuthConfigInfo) {
-        this.assistAuthConfigInfo = assistAuthConfigInfo;
-        return this;
-    }
-
-    public ListWorkspacesResponse withAssistAuthConfigInfo(Consumer<AssistAuthConfigInfo> assistAuthConfigInfoSetter) {
-        if (this.assistAuthConfigInfo == null) {
-            this.assistAuthConfigInfo = new AssistAuthConfigInfo();
-            assistAuthConfigInfoSetter.accept(this.assistAuthConfigInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get assistAuthConfigInfo
-     * @return assistAuthConfigInfo
-     */
-    public AssistAuthConfigInfo getAssistAuthConfigInfo() {
-        return assistAuthConfigInfo;
-    }
-
-    public void setAssistAuthConfigInfo(AssistAuthConfigInfo assistAuthConfigInfo) {
-        this.assistAuthConfigInfo = assistAuthConfigInfo;
-    }
-
     public ListWorkspacesResponse withIsSendEmail(Boolean isSendEmail) {
         this.isSendEmail = isSendEmail;
         return this;
@@ -1027,7 +884,7 @@ public class ListWorkspacesResponse extends SdkResponse {
     }
 
     /**
-     * 站点配置
+     * 站点配置。
      * @return siteConfigs
      */
     public List<SiteConfigsResponse> getSiteConfigs() {
@@ -1038,47 +895,13 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.siteConfigs = siteConfigs;
     }
 
-    public ListWorkspacesResponse withIsMultiVpc(Boolean isMultiVpc) {
-        this.isMultiVpc = isMultiVpc;
-        return this;
-    }
-
-    /**
-     * 是否支持多VPC。
-     * @return isMultiVpc
-     */
-    public Boolean getIsMultiVpc() {
-        return isMultiVpc;
-    }
-
-    public void setIsMultiVpc(Boolean isMultiVpc) {
-        this.isMultiVpc = isMultiVpc;
-    }
-
-    public ListWorkspacesResponse withIsConfigNatMapping(Boolean isConfigNatMapping) {
-        this.isConfigNatMapping = isConfigNatMapping;
-        return this;
-    }
-
-    /**
-     * 是否支持配置nat映射。
-     * @return isConfigNatMapping
-     */
-    public Boolean getIsConfigNatMapping() {
-        return isConfigNatMapping;
-    }
-
-    public void setIsConfigNatMapping(Boolean isConfigNatMapping) {
-        this.isConfigNatMapping = isConfigNatMapping;
-    }
-
     public ListWorkspacesResponse withDcVncIp(String dcVncIp) {
         this.dcVncIp = dcVncIp;
         return this;
     }
 
     /**
-     * 自定义的专线VNC地址
+     * 自定义的专线VNC地址。
      * @return dcVncIp
      */
     public String getDcVncIp() {
@@ -1087,23 +910,6 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     public void setDcVncIp(String dcVncIp) {
         this.dcVncIp = dcVncIp;
-    }
-
-    public ListWorkspacesResponse withDcVncVpcepId(String dcVncVpcepId) {
-        this.dcVncVpcepId = dcVncVpcepId;
-        return this;
-    }
-
-    /**
-     * 专线VNC VPC终端节点ID
-     * @return dcVncVpcepId
-     */
-    public String getDcVncVpcepId() {
-        return dcVncVpcepId;
-    }
-
-    public void setDcVncVpcepId(String dcVncVpcepId) {
-        this.dcVncVpcepId = dcVncVpcepId;
     }
 
     public ListWorkspacesResponse withIsAuthorizedInstallAgent(Boolean isAuthorizedInstallAgent) {
@@ -1166,16 +972,13 @@ public class ListWorkspacesResponse extends SdkResponse {
             return false;
         }
         ListWorkspacesResponse that = (ListWorkspacesResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.authType, that.authType)
-            && Objects.equals(this.adDomains, that.adDomains)
-            && Objects.equals(this.thirdGatewayInfo, that.thirdGatewayInfo) && Objects.equals(this.vpcId, that.vpcId)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.isGlobal, that.isGlobal)
+            && Objects.equals(this.adDomains, that.adDomains) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.accessMode, that.accessMode)
             && Objects.equals(this.adnConflictNetwork, that.adnConflictNetwork)
             && Objects.equals(this.dedicatedSubnets, that.dedicatedSubnets)
             && Objects.equals(this.dedicatedAccessAddress, that.dedicatedAccessAddress)
-            && Objects.equals(this.dedicatedAccessAddressIpv6, that.dedicatedAccessAddressIpv6)
             && Objects.equals(this.internetAccessAddress, that.internetAccessAddress)
-            && Objects.equals(this.internetAccessAddressIpv6, that.internetAccessAddressIpv6)
             && Objects.equals(this.internetAccessPort, that.internetAccessPort)
             && Objects.equals(this.status, that.status) && Objects.equals(this.accessStatus, that.accessStatus)
             && Objects.equals(this.subnetIds, that.subnetIds)
@@ -1188,14 +991,10 @@ public class ListWorkspacesResponse extends SdkResponse {
             && Objects.equals(this.failCode, that.failCode) && Objects.equals(this.failReason, that.failReason)
             && Objects.equals(this.enterpriseId, that.enterpriseId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.projectResourceType, that.projectResourceType)
-            && Objects.equals(this.assistAuthConfigInfo, that.assistAuthConfigInfo)
             && Objects.equals(this.isSendEmail, that.isSendEmail)
             && Objects.equals(this.authorizedCollectLog, that.authorizedCollectLog)
             && Objects.equals(this.authorizedHdaUpgrade, that.authorizedHdaUpgrade)
-            && Objects.equals(this.siteConfigs, that.siteConfigs) && Objects.equals(this.isMultiVpc, that.isMultiVpc)
-            && Objects.equals(this.isConfigNatMapping, that.isConfigNatMapping)
-            && Objects.equals(this.dcVncIp, that.dcVncIp) && Objects.equals(this.dcVncVpcepId, that.dcVncVpcepId)
+            && Objects.equals(this.siteConfigs, that.siteConfigs) && Objects.equals(this.dcVncIp, that.dcVncIp)
             && Objects.equals(this.isAuthorizedInstallAgent, that.isAuthorizedInstallAgent)
             && Objects.equals(this.isSupportIpv6, that.isSupportIpv6)
             && Objects.equals(this.enableUserCreateSnapshot, that.enableUserCreateSnapshot);
@@ -1204,18 +1003,15 @@ public class ListWorkspacesResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(id,
-            authType,
+            isGlobal,
             adDomains,
-            thirdGatewayInfo,
             vpcId,
             vpcName,
             accessMode,
             adnConflictNetwork,
             dedicatedSubnets,
             dedicatedAccessAddress,
-            dedicatedAccessAddressIpv6,
             internetAccessAddress,
-            internetAccessAddressIpv6,
             internetAccessPort,
             status,
             accessStatus,
@@ -1232,16 +1028,11 @@ public class ListWorkspacesResponse extends SdkResponse {
             failReason,
             enterpriseId,
             enterpriseProjectId,
-            projectResourceType,
-            assistAuthConfigInfo,
             isSendEmail,
             authorizedCollectLog,
             authorizedHdaUpgrade,
             siteConfigs,
-            isMultiVpc,
-            isConfigNatMapping,
             dcVncIp,
-            dcVncVpcepId,
             isAuthorizedInstallAgent,
             isSupportIpv6,
             enableUserCreateSnapshot);
@@ -1252,18 +1043,15 @@ public class ListWorkspacesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWorkspacesResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+        sb.append("    isGlobal: ").append(toIndentedString(isGlobal)).append("\n");
         sb.append("    adDomains: ").append(toIndentedString(adDomains)).append("\n");
-        sb.append("    thirdGatewayInfo: ").append(toIndentedString(thirdGatewayInfo)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    vpcName: ").append(toIndentedString(vpcName)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    adnConflictNetwork: ").append(toIndentedString(adnConflictNetwork)).append("\n");
         sb.append("    dedicatedSubnets: ").append(toIndentedString(dedicatedSubnets)).append("\n");
         sb.append("    dedicatedAccessAddress: ").append(toIndentedString(dedicatedAccessAddress)).append("\n");
-        sb.append("    dedicatedAccessAddressIpv6: ").append(toIndentedString(dedicatedAccessAddressIpv6)).append("\n");
         sb.append("    internetAccessAddress: ").append(toIndentedString(internetAccessAddress)).append("\n");
-        sb.append("    internetAccessAddressIpv6: ").append(toIndentedString(internetAccessAddressIpv6)).append("\n");
         sb.append("    internetAccessPort: ").append(toIndentedString(internetAccessPort)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
@@ -1282,16 +1070,11 @@ public class ListWorkspacesResponse extends SdkResponse {
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    projectResourceType: ").append(toIndentedString(projectResourceType)).append("\n");
-        sb.append("    assistAuthConfigInfo: ").append(toIndentedString(assistAuthConfigInfo)).append("\n");
         sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
         sb.append("    authorizedCollectLog: ").append(toIndentedString(authorizedCollectLog)).append("\n");
         sb.append("    authorizedHdaUpgrade: ").append(toIndentedString(authorizedHdaUpgrade)).append("\n");
         sb.append("    siteConfigs: ").append(toIndentedString(siteConfigs)).append("\n");
-        sb.append("    isMultiVpc: ").append(toIndentedString(isMultiVpc)).append("\n");
-        sb.append("    isConfigNatMapping: ").append(toIndentedString(isConfigNatMapping)).append("\n");
         sb.append("    dcVncIp: ").append(toIndentedString(dcVncIp)).append("\n");
-        sb.append("    dcVncVpcepId: ").append(toIndentedString(dcVncVpcepId)).append("\n");
         sb.append("    isAuthorizedInstallAgent: ").append(toIndentedString(isAuthorizedInstallAgent)).append("\n");
         sb.append("    isSupportIpv6: ").append(toIndentedString(isSupportIpv6)).append("\n");
         sb.append("    enableUserCreateSnapshot: ").append(toIndentedString(enableUserCreateSnapshot)).append("\n");

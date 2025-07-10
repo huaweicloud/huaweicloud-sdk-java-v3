@@ -71,6 +71,11 @@ public class UserEventRsp {
     private String clientMac;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_version")
+
+    private String clientVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_ip")
 
     private String sourceIp;
@@ -90,13 +95,18 @@ public class UserEventRsp {
 
     private String errorMsg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_type")
+
+    private String actionType;
+
     public UserEventRsp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
     /**
-     * 项目id
+     * 项目id。
      * @return projectId
      */
     public String getProjectId() {
@@ -113,7 +123,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 用户名
+     * 用户名。
      * @return username
      */
     public String getUsername() {
@@ -130,7 +140,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 企业id
+     * 企业id。
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -147,7 +157,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 事件之间的关联id
+     * 事件之间的关联id。
      * @return eventTraceId
      */
     public String getEventTraceId() {
@@ -164,7 +174,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 事件类型
+     * 事件类型。
      * @return eventType
      */
     public String getEventType() {
@@ -181,7 +191,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 事件时间，UTC时间
+     * 事件时间，格式为：UTC时间，例如\"1970-01-01T00:00:00Z\"。
      * @return eventTime
      */
     public String getEventTime() {
@@ -198,7 +208,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 操作对象类型
+     * 操作对象类型。
      * @return resourceType
      */
     public String getResourceType() {
@@ -215,7 +225,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 操作对象id
+     * 操作对象id。
      * @return resourceId
      */
     public String getResourceId() {
@@ -232,7 +242,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 操作对象名称
+     * 操作对象名称。
      * @return resourceName
      */
     public String getResourceName() {
@@ -249,7 +259,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 客户端类型
+     * 客户端类型。
      * @return clientType
      */
     public String getClientType() {
@@ -266,7 +276,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 客户端ip
+     * 客户端ip。
      * @return clientIp
      */
     public String getClientIp() {
@@ -283,7 +293,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 客户端mac地址
+     * 客户端mac地址。
      * @return clientMac
      */
     public String getClientMac() {
@@ -294,13 +304,30 @@ public class UserEventRsp {
         this.clientMac = clientMac;
     }
 
+    public UserEventRsp withClientVersion(String clientVersion) {
+        this.clientVersion = clientVersion;
+        return this;
+    }
+
+    /**
+     * 客户端版本。
+     * @return clientVersion
+     */
+    public String getClientVersion() {
+        return clientVersion;
+    }
+
+    public void setClientVersion(String clientVersion) {
+        this.clientVersion = clientVersion;
+    }
+
     public UserEventRsp withSourceIp(String sourceIp) {
         this.sourceIp = sourceIp;
         return this;
     }
 
     /**
-     * 操作用户源ip
+     * 操作用户源ip。
      * @return sourceIp
      */
     public String getSourceIp() {
@@ -317,7 +344,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 是否成功
+     * 是否成功。
      * @return isSuccess
      */
     public Boolean getIsSuccess() {
@@ -334,7 +361,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 错误码
+     * 错误码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -351,7 +378,7 @@ public class UserEventRsp {
     }
 
     /**
-     * 错误描述
+     * 错误描述。
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -360,6 +387,23 @@ public class UserEventRsp {
 
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
+    }
+
+    public UserEventRsp withActionType(String actionType) {
+        this.actionType = actionType;
+        return this;
+    }
+
+    /**
+     * 触发事件的类型，USER-用户触发，SYSTEM-系统触发。
+     * @return actionType
+     */
+    public String getActionType() {
+        return actionType;
+    }
+
+    public void setActionType(String actionType) {
+        this.actionType = actionType;
     }
 
     @Override
@@ -377,9 +421,10 @@ public class UserEventRsp {
             && Objects.equals(this.eventTime, that.eventTime) && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.clientType, that.clientType) && Objects.equals(this.clientIp, that.clientIp)
-            && Objects.equals(this.clientMac, that.clientMac) && Objects.equals(this.sourceIp, that.sourceIp)
-            && Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.errorCode, that.errorCode)
-            && Objects.equals(this.errorMsg, that.errorMsg);
+            && Objects.equals(this.clientMac, that.clientMac) && Objects.equals(this.clientVersion, that.clientVersion)
+            && Objects.equals(this.sourceIp, that.sourceIp) && Objects.equals(this.isSuccess, that.isSuccess)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.actionType, that.actionType);
     }
 
     @Override
@@ -396,10 +441,12 @@ public class UserEventRsp {
             clientType,
             clientIp,
             clientMac,
+            clientVersion,
             sourceIp,
             isSuccess,
             errorCode,
-            errorMsg);
+            errorMsg,
+            actionType);
     }
 
     @Override
@@ -418,10 +465,12 @@ public class UserEventRsp {
         sb.append("    clientType: ").append(toIndentedString(clientType)).append("\n");
         sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
         sb.append("    clientMac: ").append(toIndentedString(clientMac)).append("\n");
+        sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
         sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
         sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

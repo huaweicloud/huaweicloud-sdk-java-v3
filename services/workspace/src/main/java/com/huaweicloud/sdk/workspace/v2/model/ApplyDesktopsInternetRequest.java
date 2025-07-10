@@ -12,31 +12,9 @@ import java.util.function.Consumer;
 public class ApplyDesktopsInternetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Service-Transaction-Id")
-
-    private String serviceTransactionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ApplyDesktopsInternetReq body;
-
-    public ApplyDesktopsInternetRequest withServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-        return this;
-    }
-
-    /**
-     * CBC接口回调时，请求头里带上的业务ID
-     * @return serviceTransactionId
-     */
-    public String getServiceTransactionId() {
-        return serviceTransactionId;
-    }
-
-    public void setServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-    }
 
     public ApplyDesktopsInternetRequest withBody(ApplyDesktopsInternetReq body) {
         this.body = body;
@@ -73,20 +51,18 @@ public class ApplyDesktopsInternetRequest {
             return false;
         }
         ApplyDesktopsInternetRequest that = (ApplyDesktopsInternetRequest) obj;
-        return Objects.equals(this.serviceTransactionId, that.serviceTransactionId)
-            && Objects.equals(this.body, that.body);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceTransactionId, body);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplyDesktopsInternetRequest {\n");
-        sb.append("    serviceTransactionId: ").append(toIndentedString(serviceTransactionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

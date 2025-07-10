@@ -80,7 +80,7 @@ public class ListDesktopPoolsRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -135,7 +135,7 @@ public class ListDesktopPoolsRequest {
     }
 
     /**
-     * 按照维护状态过滤
+     * 按照维护状态过滤。
      * @return inMaintenanceMode
      */
     public Boolean getInMaintenanceMode() {

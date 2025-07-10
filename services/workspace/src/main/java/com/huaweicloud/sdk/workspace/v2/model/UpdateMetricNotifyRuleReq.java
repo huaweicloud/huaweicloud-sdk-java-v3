@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 设置通知规则
+ * 设置通知规则。
  */
 public class UpdateMetricNotifyRuleReq {
 
@@ -63,7 +63,7 @@ public class UpdateMetricNotifyRuleReq {
     }
 
     /**
-     * 规则配置-阈值(天)
+     * 规则配置-阈值(天)。
      * minimum: 1
      * maximum: 30
      * @return threshold
@@ -118,7 +118,7 @@ public class UpdateMetricNotifyRuleReq {
     }
 
     /**
-     * 启禁用规则 true:启用 false:禁用
+     * 启禁用规则 true:启用 false:禁用。
      * @return enable
      */
     public Boolean getEnable() {
@@ -135,7 +135,7 @@ public class UpdateMetricNotifyRuleReq {
     }
 
     /**
-     * 通知对象;smn的主题urn
+     * 通知对象;smn的主题urn。
      * @return notifyObject
      */
     public String getNotifyObject() {

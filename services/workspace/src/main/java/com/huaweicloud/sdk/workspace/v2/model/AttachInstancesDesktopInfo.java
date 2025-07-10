@@ -88,7 +88,7 @@ public class AttachInstancesDesktopInfo {
     }
 
     /**
-     * 合法用户邮箱，桌面分配成功后系统会通过发送邮件的方式通知用户
+     * 合法用户邮箱，桌面分配成功后系统会通过发送邮件的方式通知用户。
      * @return userEmail
      */
     public String getUserEmail() {

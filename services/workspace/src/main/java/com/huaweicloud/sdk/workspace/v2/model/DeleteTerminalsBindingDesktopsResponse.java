@@ -44,7 +44,7 @@ public class DeleteTerminalsBindingDesktopsResponse extends SdkResponse {
     }
 
     /**
-     * 需删除的策略ID列表
+     * 需删除的策略ID列表。
      * @return resultList
      */
     public List<DeleteTerminalsBindingDesktopsResult> getResultList() {

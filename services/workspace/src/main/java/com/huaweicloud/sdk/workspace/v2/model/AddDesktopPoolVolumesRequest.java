@@ -12,11 +12,6 @@ import java.util.function.Consumer;
 public class AddDesktopPoolVolumesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Service-Transaction-Id")
-
-    private String serviceTransactionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
 
     private String poolId;
@@ -25,23 +20,6 @@ public class AddDesktopPoolVolumesRequest {
     @JsonProperty(value = "body")
 
     private AddDesktopPoolVolumesReq body;
-
-    public AddDesktopPoolVolumesRequest withServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-        return this;
-    }
-
-    /**
-     * CBC接口回调时，请求头里带上的业务ID
-     * @return serviceTransactionId
-     */
-    public String getServiceTransactionId() {
-        return serviceTransactionId;
-    }
-
-    public void setServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-    }
 
     public AddDesktopPoolVolumesRequest withPoolId(String poolId) {
         this.poolId = poolId;
@@ -95,20 +73,18 @@ public class AddDesktopPoolVolumesRequest {
             return false;
         }
         AddDesktopPoolVolumesRequest that = (AddDesktopPoolVolumesRequest) obj;
-        return Objects.equals(this.serviceTransactionId, that.serviceTransactionId)
-            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceTransactionId, poolId, body);
+        return Objects.hash(poolId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddDesktopPoolVolumesRequest {\n");
-        sb.append("    serviceTransactionId: ").append(toIndentedString(serviceTransactionId)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

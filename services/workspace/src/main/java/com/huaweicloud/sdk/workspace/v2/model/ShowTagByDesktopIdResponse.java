@@ -41,7 +41,7 @@ public class ShowTagByDesktopIdResponse extends SdkResponse {
     }
 
     /**
-     * 标签
+     * 标签。
      * @return tags
      */
     public List<Tag> getTags() {

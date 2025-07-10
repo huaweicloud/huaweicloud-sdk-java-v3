@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 桌面携带标签数据结构
+ * 桌面携带标签数据结构。
  */
 public class DesktopTagsInfo {
 
@@ -29,7 +29,7 @@ public class DesktopTagsInfo {
     }
 
     /**
-     * 桌面ID
+     * 桌面ID。
      * @return desktopId
      */
     public String getDesktopId() {
@@ -62,7 +62,7 @@ public class DesktopTagsInfo {
     }
 
     /**
-     * 携带标签列表
+     * 携带标签列表。
      * @return tags
      */
     public List<Tag> getTags() {

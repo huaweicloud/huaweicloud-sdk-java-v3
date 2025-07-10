@@ -219,7 +219,7 @@ public class UpdateNatMappingConfig {
     }
 
     /**
-     * 0标识不开启，1表示开启。
+     * 是否支持标签、企业项目管理。0表示不开启，1表示开启。
      * minimum: 0
      * maximum: 1
      * @return accessFilterType
@@ -271,7 +271,7 @@ public class UpdateNatMappingConfig {
     }
 
     /**
-     * 标签对象
+     * 标签对象。
      * @return tags
      */
     public List<Tag> getTags() {

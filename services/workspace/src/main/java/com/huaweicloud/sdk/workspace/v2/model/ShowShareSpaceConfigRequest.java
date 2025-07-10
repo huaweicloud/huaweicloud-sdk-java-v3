@@ -21,7 +21,7 @@ public class ShowShareSpaceConfigRequest {
     }
 
     /**
-     * 查询协同桌面默认用户配置, share-space-user-conf
+     * 查询协同桌面默认用户配置, share-space-user-conf。
      * @return name
      */
     public String getName() {

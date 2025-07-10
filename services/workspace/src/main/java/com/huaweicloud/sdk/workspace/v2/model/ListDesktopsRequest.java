@@ -29,11 +29,6 @@ public class ListDesktopsRequest {
     private String desktopIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sids")
-
-    private List<String> sids = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -42,11 +37,6 @@ public class ListDesktopsRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "site_id")
-
-    private String siteId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
@@ -155,39 +145,6 @@ public class ListDesktopsRequest {
         this.desktopIp = desktopIp;
     }
 
-    public ListDesktopsRequest withSids(List<String> sids) {
-        this.sids = sids;
-        return this;
-    }
-
-    public ListDesktopsRequest addSidsItem(String sidsItem) {
-        if (this.sids == null) {
-            this.sids = new ArrayList<>();
-        }
-        this.sids.add(sidsItem);
-        return this;
-    }
-
-    public ListDesktopsRequest withSids(Consumer<List<String>> sidsSetter) {
-        if (this.sids == null) {
-            this.sids = new ArrayList<>();
-        }
-        sidsSetter.accept(this.sids);
-        return this;
-    }
-
-    /**
-     * 桌面的sid列表，一次只能查询20个sid。
-     * @return sids
-     */
-    public List<String> getSids() {
-        return sids;
-    }
-
-    public void setSids(List<String> sids) {
-        this.sids = sids;
-    }
-
     public ListDesktopsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -226,23 +183,6 @@ public class ListDesktopsRequest {
         this.limit = limit;
     }
 
-    public ListDesktopsRequest withSiteId(String siteId) {
-        this.siteId = siteId;
-        return this;
-    }
-
-    /**
-     * 用于筛选指定站点下的桌面列表
-     * @return siteId
-     */
-    public String getSiteId() {
-        return siteId;
-    }
-
-    public void setSiteId(String siteId) {
-        this.siteId = siteId;
-    }
-
     public ListDesktopsRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -266,7 +206,7 @@ public class ListDesktopsRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -300,7 +240,7 @@ public class ListDesktopsRequest {
     }
 
     /**
-     * 是否为协同桌面
+     * 是否为协同桌面。
      * @return isShareDesktop
      */
     public Boolean getIsShareDesktop() {
@@ -405,9 +345,8 @@ public class ListDesktopsRequest {
         }
         ListDesktopsRequest that = (ListDesktopsRequest) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.sids, that.sids)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.siteId, that.siteId) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.poolId, that.poolId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.desktopType, that.desktopType)
             && Objects.equals(this.isShareDesktop, that.isShareDesktop) && Objects.equals(this.subnetId, that.subnetId)
@@ -420,10 +359,8 @@ public class ListDesktopsRequest {
         return Objects.hash(userName,
             computerName,
             desktopIp,
-            sids,
             offset,
             limit,
-            siteId,
             poolId,
             enterpriseProjectId,
             desktopType,
@@ -441,10 +378,8 @@ public class ListDesktopsRequest {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
-        sb.append("    sids: ").append(toIndentedString(sids)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");

@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * BatchInquiryChangeRsp
+ * 批量变更询价响应体。
  */
 public class BatchInquiryChangeRsp {
 
@@ -70,7 +70,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 返回码，恒为0
+     * 返回码，恒为0。
      * @return retCode
      */
     public String getRetCode() {
@@ -87,7 +87,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 返回信息
+     * 返回信息。
      * @return errorTxt
      */
     public String getErrorTxt() {
@@ -104,7 +104,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 总额，即最终优惠后的金额(降配场景下包含退还的现金、现金券、储值卡的总额)
+     * 总额，即最终优惠后的金额(降配场景下包含退还的现金、现金券、储值卡的总额)。
      * @return amount
      */
     public BigDecimal getAmount() {
@@ -137,7 +137,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 券的退订金额（降配存在）
+     * 券的退订金额（降配存在）。
      * @return couponResults
      */
     public List<CouponUnsubscribeResult> getCouponResults() {
@@ -154,7 +154,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 优惠额
+     * 优惠额。
      * @return discountAmount
      */
     public BigDecimal getDiscountAmount() {
@@ -171,7 +171,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 原总额，即优惠前总额
+     * 原总额，即优惠前总额。
      * @return originalAmount
      */
     public BigDecimal getOriginalAmount() {
@@ -188,7 +188,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 度量单位标识
+     * 度量单位标识。
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -205,7 +205,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 货币单位代码（遵循ISO 4217标准）
+     * 货币单位代码（遵循ISO 4217标准）。
      * @return currency
      */
     public String getCurrency() {
@@ -239,7 +239,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 批价结果
+     * 批价结果。
      * @return productRatingResult
      */
     public List<BatchResInquiryResult> getProductRatingResult() {
@@ -256,7 +256,7 @@ public class BatchInquiryChangeRsp {
     }
 
     /**
-     * 扩展参数
+     * 扩展参数。
      * @return extendParams
      */
     public String getExtendParams() {

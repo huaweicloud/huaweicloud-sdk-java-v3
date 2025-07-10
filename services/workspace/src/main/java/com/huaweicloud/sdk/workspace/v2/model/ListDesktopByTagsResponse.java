@@ -35,7 +35,7 @@ public class ListDesktopByTagsResponse extends SdkResponse {
     }
 
     /**
-     * 指定查询信息列表的偏移量，默认为0
+     * 指定查询信息列表的偏移量，默认为0。
      * minimum: 0
      * maximum: 1000
      * @return offset
@@ -70,7 +70,7 @@ public class ListDesktopByTagsResponse extends SdkResponse {
     }
 
     /**
-     * 资源对象
+     * 资源对象。
      * @return resources
      */
     public List<TagResource> getResources() {
@@ -87,7 +87,7 @@ public class ListDesktopByTagsResponse extends SdkResponse {
     }
 
     /**
-     * 数量
+     * 数量。
      * minimum: 0
      * maximum: 1000
      * @return totalCount

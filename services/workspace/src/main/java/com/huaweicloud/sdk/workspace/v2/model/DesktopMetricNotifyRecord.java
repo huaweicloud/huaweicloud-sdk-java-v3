@@ -36,7 +36,7 @@ public class DesktopMetricNotifyRecord {
     }
 
     /**
-     * 满足通知规则阈值的桌面数
+     * 满足通知规则阈值的桌面数。
      * @return matchCount
      */
     public Integer getMatchCount() {
@@ -53,7 +53,7 @@ public class DesktopMetricNotifyRecord {
     }
 
     /**
-     * 指标名称
+     * 指标名称。
      * @return metricName
      */
     public String getMetricName() {
@@ -70,7 +70,7 @@ public class DesktopMetricNotifyRecord {
     }
 
     /**
-     * 统计持续周期(天)
+     * 统计持续周期(天)。
      * @return threshold
      */
     public Integer getThreshold() {

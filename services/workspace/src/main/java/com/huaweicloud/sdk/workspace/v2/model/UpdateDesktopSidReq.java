@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新桌面sid请求
+ * 更新桌面sid请求。
  */
 public class UpdateDesktopSidReq {
 
@@ -40,7 +40,7 @@ public class UpdateDesktopSidReq {
     }
 
     /**
-     * 虚拟机列表
+     * 虚拟机列表。
      * @return desktopIds
      */
     public List<String> getDesktopIds() {

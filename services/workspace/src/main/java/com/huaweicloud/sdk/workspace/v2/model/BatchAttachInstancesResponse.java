@@ -22,7 +22,7 @@ public class BatchAttachInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 分配桌面总任务id
+     * 分配桌面总任务id。
      * @return jobId
      */
     public String getJobId() {

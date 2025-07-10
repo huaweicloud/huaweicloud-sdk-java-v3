@@ -30,7 +30,7 @@ public class EstimateDesktopPoolAddVolumeResponse extends SdkResponse {
     }
 
     /**
-     * 币种，比如CNY
+     * 币种，比如CNY。
      * @return currency
      */
     public String getCurrency() {
@@ -66,7 +66,7 @@ public class EstimateDesktopPoolAddVolumeResponse extends SdkResponse {
     }
 
     /**
-     * 询价结果
+     * 询价结果。
      * @return cloudServiceRatingResults
      */
     public List<CloudServiceRatingResult> getCloudServiceRatingResults() {

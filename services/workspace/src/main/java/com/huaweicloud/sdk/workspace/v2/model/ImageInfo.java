@@ -21,11 +21,6 @@ public class ImageInfo {
     private String imageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "os_platform")
-
-    private String osPlatform;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
     private String osType;
@@ -104,23 +99,6 @@ public class ImageInfo {
         this.imageType = imageType;
     }
 
-    public ImageInfo withOsPlatform(String osPlatform) {
-        this.osPlatform = osPlatform;
-        return this;
-    }
-
-    /**
-     * 镜像平台分类，取值为Windows。
-     * @return osPlatform
-     */
-    public String getOsPlatform() {
-        return osPlatform;
-    }
-
-    public void setOsPlatform(String osPlatform) {
-        this.osPlatform = osPlatform;
-    }
-
     public ImageInfo withOsType(String osType) {
         this.osType = osType;
         return this;
@@ -144,7 +122,7 @@ public class ImageInfo {
     }
 
     /**
-     * 操作系统架构，目前取值arm，x86
+     * 操作系统架构，目前取值arm，x86。
      * @return architecture
      */
     public String getArchitecture() {
@@ -288,18 +266,17 @@ public class ImageInfo {
         }
         ImageInfo that = (ImageInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.imageType, that.imageType)
-            && Objects.equals(this.osPlatform, that.osPlatform) && Objects.equals(this.osType, that.osType)
-            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.osVersion, that.osVersion)
-            && Objects.equals(this.diskFormat, that.diskFormat) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.minRam, that.minRam) && Objects.equals(this.minDisk, that.minDisk)
-            && Objects.equals(this.productCode, that.productCode) && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.diskFormat, that.diskFormat)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.minRam, that.minRam)
+            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.productCode, that.productCode)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
             imageType,
-            osPlatform,
             osType,
             architecture,
             osVersion,
@@ -317,7 +294,6 @@ public class ImageInfo {
         sb.append("class ImageInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
-        sb.append("    osPlatform: ").append(toIndentedString(osPlatform)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");

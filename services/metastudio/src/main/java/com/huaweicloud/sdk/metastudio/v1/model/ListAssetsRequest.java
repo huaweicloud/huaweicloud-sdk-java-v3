@@ -256,11 +256,6 @@ public class ListAssetsRequest {
     private List<String> accurateQueryField = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "render_engine")
-
-    private String renderEngine;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_id")
 
     private List<String> assetId = null;
@@ -670,7 +665,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 资产类型。多个类型使用英文逗号分隔。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐 * AUDIO: 音频
+     * 资产类型。多个类型使用英文逗号分隔。 * VOICE_MODEL：音色模型（仅系统管理员可上传） * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐 * AUDIO: 音频
      * @return assetType
      */
     public String getAssetType() {
@@ -799,23 +794,6 @@ public class ListAssetsRequest {
         this.accurateQueryField = accurateQueryField;
     }
 
-    public ListAssetsRequest withRenderEngine(String renderEngine) {
-        this.renderEngine = renderEngine;
-        return this;
-    }
-
-    /**
-     * 可用引擎。 * UE：UE引擎 * MetaEngine：MetaEngine引擎 > 该字段当前只对MetaEngine白名单用户生效
-     * @return renderEngine
-     */
-    public String getRenderEngine() {
-        return renderEngine;
-    }
-
-    public void setRenderEngine(String renderEngine) {
-        this.renderEngine = renderEngine;
-    }
-
     public ListAssetsRequest withAssetId(List<String> assetId) {
         this.assetId = assetId;
         return this;
@@ -889,7 +867,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 系统属性。  key和value间用\":\"分隔，多个key之间用\",\"分隔。  如system_property=BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes  3D数字人资产属性： * STYLE_ID：风格Id * RENDER_ENGINE：引擎类型，可取值UE或MetaEngine * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）  租户组资产验签属性： * SIG：加签秘钥。取值方式SIG=HexEncode(HMAC-SHA256(group_id:EXP_TIME:NONCE,key)) * EXP_TIME：过期时间，当前时间增加增加10分钟。取值示例1627768613 * NONCE：随机字符串。取值示例：EycLQsHwxhzK9OW8UEKWNfH2I3CGR2nINuU1EBpv162d42d92s
+     * 系统属性。  key和value间用\":\"分隔，多个key之间用\",\"分隔。  如system_property=BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes  数字人资产属性： * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）  租户组资产验签属性： * SIG：加签秘钥。取值方式SIG=HexEncode(HMAC-SHA256(group_id:EXP_TIME:NONCE,key)) * EXP_TIME：过期时间，当前时间增加增加10分钟。取值示例1627768613 * NONCE：随机字符串。取值示例：EycLQsHwxhzK9OW8UEKWNfH2I3CGR2nINuU1EBpv162d42d92s
      * @return systemProperty
      */
     public String getSystemProperty() {
@@ -1122,9 +1100,8 @@ public class ListAssetsRequest {
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.assetSource, that.assetSource)
             && Objects.equals(this.assetState, that.assetState) && Objects.equals(this.styleId, that.styleId)
             && Objects.equals(this.accurateQueryField, that.accurateQueryField)
-            && Objects.equals(this.renderEngine, that.renderEngine) && Objects.equals(this.assetId, that.assetId)
-            && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.systemProperty, that.systemProperty)
+            && Objects.equals(this.assetId, that.assetId) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.systemProperty, that.systemProperty)
             && Objects.equals(this.actionEditable, that.actionEditable)
             && Objects.equals(this.isWithActionLibrary, that.isWithActionLibrary)
             && Objects.equals(this.isMovable, that.isMovable) && Objects.equals(this.voiceProvider, that.voiceProvider)
@@ -1156,7 +1133,6 @@ public class ListAssetsRequest {
             assetState,
             styleId,
             accurateQueryField,
-            renderEngine,
             assetId,
             sex,
             language,
@@ -1196,7 +1172,6 @@ public class ListAssetsRequest {
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
         sb.append("    styleId: ").append(toIndentedString(styleId)).append("\n");
         sb.append("    accurateQueryField: ").append(toIndentedString(accurateQueryField)).append("\n");
-        sb.append("    renderEngine: ").append(toIndentedString(renderEngine)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");

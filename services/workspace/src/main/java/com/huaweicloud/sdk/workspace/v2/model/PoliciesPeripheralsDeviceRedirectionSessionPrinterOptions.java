@@ -22,7 +22,7 @@ public class PoliciesPeripheralsDeviceRedirectionSessionPrinterOptions {
     }
 
     /**
-     * 会话打印机自定义策略。
+     * 会话打印机自定义策略。长度不能超过1000个字符。
      * @return sessionPrinterCustomizationPolicy
      */
     public String getSessionPrinterCustomizationPolicy() {

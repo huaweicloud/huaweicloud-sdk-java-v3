@@ -92,7 +92,7 @@ public class ListTargetOfPolicyGroupRequest {
     }
 
     /**
-     * 每页数量。范围0-1000
+     * 每页数量。范围0-1000。
      * minimum: 0
      * maximum: 1000
      * @return limit

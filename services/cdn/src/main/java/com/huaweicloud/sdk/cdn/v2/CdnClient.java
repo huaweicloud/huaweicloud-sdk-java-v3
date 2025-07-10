@@ -4,16 +4,26 @@ import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusRequest;
+import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRuleNewRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRuleNewResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateShareCacheGroupsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteShareCacheGroupsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DisableDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DisableDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
@@ -26,6 +36,10 @@ import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
@@ -68,8 +82,14 @@ import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateFullRuleRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateFullRuleResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateRuleNewRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateRuleNewResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequest;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -147,6 +167,35 @@ public class CdnClient {
     public SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsInvoker(
         BatchDeleteTagsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.batchDeleteTags, hcClient);
+    }
+
+    /**
+     * 批量更新规则状态及优先级
+     *
+     * 批量更新规则状态及优先级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateRuleStatusRequest 请求对象
+     * @return BatchUpdateRuleStatusResponse
+     */
+    public BatchUpdateRuleStatusResponse batchUpdateRuleStatus(BatchUpdateRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.batchUpdateRuleStatus);
+    }
+
+    /**
+     * 批量更新规则状态及优先级
+     *
+     * 批量更新规则状态及优先级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateRuleStatusRequest 请求对象
+     * @return SyncInvoker<BatchUpdateRuleStatusRequest, BatchUpdateRuleStatusResponse>
+     */
+    public SyncInvoker<BatchUpdateRuleStatusRequest, BatchUpdateRuleStatusResponse> batchUpdateRuleStatusInvoker(
+        BatchUpdateRuleStatusRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.batchUpdateRuleStatus, hcClient);
     }
 
     /**
@@ -236,6 +285,71 @@ public class CdnClient {
     }
 
     /**
+     * 创建规则引擎规则
+     *
+     * 规则引擎功能通过图形化的方式实现各种规则配置，实现更加灵活、细粒度的规则配置。通过限制触发条件，控制当前配置生效的资源范围，满足多种场景的配置需求。
+     * - 请提交工单开通规则引擎功能后再使用当前接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRuleNewRequest 请求对象
+     * @return CreateRuleNewResponse
+     */
+    public CreateRuleNewResponse createRuleNew(CreateRuleNewRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.createRuleNew);
+    }
+
+    /**
+     * 创建规则引擎规则
+     *
+     * 规则引擎功能通过图形化的方式实现各种规则配置，实现更加灵活、细粒度的规则配置。通过限制触发条件，控制当前配置生效的资源范围，满足多种场景的配置需求。
+     * - 请提交工单开通规则引擎功能后再使用当前接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRuleNewRequest 请求对象
+     * @return SyncInvoker<CreateRuleNewRequest, CreateRuleNewResponse>
+     */
+    public SyncInvoker<CreateRuleNewRequest, CreateRuleNewResponse> createRuleNewInvoker(CreateRuleNewRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.createRuleNew, hcClient);
+    }
+
+    /**
+     * 创建共享缓存组
+     *
+     * 配置共享缓存组，将一个域名设置为主域名，组内其他域名共享该域名的缓存，提高缓存命中率。
+     * - 只有缓存规则中“URL参数”的配置为“忽略参数”或者“不忽略参数”的域名才能加入共享缓存组。
+     * - 每个账号最多配置500个共享缓存组。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateShareCacheGroupsRequest 请求对象
+     * @return CreateShareCacheGroupsResponse
+     */
+    public CreateShareCacheGroupsResponse createShareCacheGroups(CreateShareCacheGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.createShareCacheGroups);
+    }
+
+    /**
+     * 创建共享缓存组
+     *
+     * 配置共享缓存组，将一个域名设置为主域名，组内其他域名共享该域名的缓存，提高缓存命中率。
+     * - 只有缓存规则中“URL参数”的配置为“忽略参数”或者“不忽略参数”的域名才能加入共享缓存组。
+     * - 每个账号最多配置500个共享缓存组。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateShareCacheGroupsRequest 请求对象
+     * @return SyncInvoker<CreateShareCacheGroupsRequest, CreateShareCacheGroupsResponse>
+     */
+    public SyncInvoker<CreateShareCacheGroupsRequest, CreateShareCacheGroupsResponse> createShareCacheGroupsInvoker(
+        CreateShareCacheGroupsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.createShareCacheGroups, hcClient);
+    }
+
+    /**
      * 创建资源标签配置接口
      *
      * 用于创建资源标签。
@@ -289,6 +403,67 @@ public class CdnClient {
      */
     public SyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainInvoker(DeleteDomainRequest request) {
         return new SyncInvoker<>(request, CdnMeta.deleteDomain, hcClient);
+    }
+
+    /**
+     * 删除规则引擎规则
+     *
+     * 删除规则引擎规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRuleNewRequest 请求对象
+     * @return DeleteRuleNewResponse
+     */
+    public DeleteRuleNewResponse deleteRuleNew(DeleteRuleNewRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.deleteRuleNew);
+    }
+
+    /**
+     * 删除规则引擎规则
+     *
+     * 删除规则引擎规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRuleNewRequest 请求对象
+     * @return SyncInvoker<DeleteRuleNewRequest, DeleteRuleNewResponse>
+     */
+    public SyncInvoker<DeleteRuleNewRequest, DeleteRuleNewResponse> deleteRuleNewInvoker(DeleteRuleNewRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.deleteRuleNew, hcClient);
+    }
+
+    /**
+     * 删除共享缓存组
+     *
+     * 删除新共享缓存组。
+     * - 共享缓存组内不包含关联域名时才可以删除。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteShareCacheGroupsRequest 请求对象
+     * @return DeleteShareCacheGroupsResponse
+     */
+    public DeleteShareCacheGroupsResponse deleteShareCacheGroups(DeleteShareCacheGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.deleteShareCacheGroups);
+    }
+
+    /**
+     * 删除共享缓存组
+     *
+     * 删除新共享缓存组。
+     * - 共享缓存组内不包含关联域名时才可以删除。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteShareCacheGroupsRequest 请求对象
+     * @return SyncInvoker<DeleteShareCacheGroupsRequest, DeleteShareCacheGroupsResponse>
+     */
+    public SyncInvoker<DeleteShareCacheGroupsRequest, DeleteShareCacheGroupsResponse> deleteShareCacheGroupsInvoker(
+        DeleteShareCacheGroupsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.deleteShareCacheGroups, hcClient);
     }
 
     /**
@@ -516,6 +691,66 @@ public class CdnClient {
      */
     public SyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsInvoker(ListDomainsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.listDomains, hcClient);
+    }
+
+    /**
+     * 查询规则引擎列表
+     *
+     * 查询规则引擎列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRuleDetailsRequest 请求对象
+     * @return ListRuleDetailsResponse
+     */
+    public ListRuleDetailsResponse listRuleDetails(ListRuleDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listRuleDetails);
+    }
+
+    /**
+     * 查询规则引擎列表
+     *
+     * 查询规则引擎列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRuleDetailsRequest 请求对象
+     * @return SyncInvoker<ListRuleDetailsRequest, ListRuleDetailsResponse>
+     */
+    public SyncInvoker<ListRuleDetailsRequest, ListRuleDetailsResponse> listRuleDetailsInvoker(
+        ListRuleDetailsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.listRuleDetails, hcClient);
+    }
+
+    /**
+     * 查询共享缓存组列表
+     *
+     * 查询共享缓存组列表。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListShareCacheGroupsRequest 请求对象
+     * @return ListShareCacheGroupsResponse
+     */
+    public ListShareCacheGroupsResponse listShareCacheGroups(ListShareCacheGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listShareCacheGroups);
+    }
+
+    /**
+     * 查询共享缓存组列表
+     *
+     * 查询共享缓存组列表。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListShareCacheGroupsRequest 请求对象
+     * @return SyncInvoker<ListShareCacheGroupsRequest, ListShareCacheGroupsResponse>
+     */
+    public SyncInvoker<ListShareCacheGroupsRequest, ListShareCacheGroupsResponse> listShareCacheGroupsInvoker(
+        ListShareCacheGroupsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.listShareCacheGroups, hcClient);
     }
 
     /**
@@ -1280,6 +1515,35 @@ public class CdnClient {
     }
 
     /**
+     * 全量更新规则引擎规则
+     *
+     * 全量更新规则引擎规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFullRuleRequest 请求对象
+     * @return UpdateFullRuleResponse
+     */
+    public UpdateFullRuleResponse updateFullRule(UpdateFullRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.updateFullRule);
+    }
+
+    /**
+     * 全量更新规则引擎规则
+     *
+     * 全量更新规则引擎规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFullRuleRequest 请求对象
+     * @return SyncInvoker<UpdateFullRuleRequest, UpdateFullRuleResponse>
+     */
+    public SyncInvoker<UpdateFullRuleRequest, UpdateFullRuleResponse> updateFullRuleInvoker(
+        UpdateFullRuleRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.updateFullRule, hcClient);
+    }
+
+    /**
      * 修改私有桶开启关闭状态
      *
      * 修改私有桶开启关闭状态。
@@ -1306,6 +1570,65 @@ public class CdnClient {
     public SyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> updatePrivateBucketAccessInvoker(
         UpdatePrivateBucketAccessRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updatePrivateBucketAccess, hcClient);
+    }
+
+    /**
+     * 更新规则引擎规则
+     *
+     * 更新规则引擎规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRuleNewRequest 请求对象
+     * @return UpdateRuleNewResponse
+     */
+    public UpdateRuleNewResponse updateRuleNew(UpdateRuleNewRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.updateRuleNew);
+    }
+
+    /**
+     * 更新规则引擎规则
+     *
+     * 更新规则引擎规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRuleNewRequest 请求对象
+     * @return SyncInvoker<UpdateRuleNewRequest, UpdateRuleNewResponse>
+     */
+    public SyncInvoker<UpdateRuleNewRequest, UpdateRuleNewResponse> updateRuleNewInvoker(UpdateRuleNewRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.updateRuleNew, hcClient);
+    }
+
+    /**
+     * 更新共享缓存组
+     *
+     * 更新共享缓存组。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateShareCacheGroupsRequest 请求对象
+     * @return UpdateShareCacheGroupsResponse
+     */
+    public UpdateShareCacheGroupsResponse updateShareCacheGroups(UpdateShareCacheGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.updateShareCacheGroups);
+    }
+
+    /**
+     * 更新共享缓存组
+     *
+     * 更新共享缓存组。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateShareCacheGroupsRequest 请求对象
+     * @return SyncInvoker<UpdateShareCacheGroupsRequest, UpdateShareCacheGroupsResponse>
+     */
+    public SyncInvoker<UpdateShareCacheGroupsRequest, UpdateShareCacheGroupsResponse> updateShareCacheGroupsInvoker(
+        UpdateShareCacheGroupsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.updateShareCacheGroups, hcClient);
     }
 
     /**

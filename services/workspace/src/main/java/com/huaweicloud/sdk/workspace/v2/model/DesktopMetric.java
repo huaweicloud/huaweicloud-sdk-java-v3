@@ -39,7 +39,7 @@ public class DesktopMetric {
     }
 
     /**
-     * 桌面ID
+     * 桌面ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -56,7 +56,7 @@ public class DesktopMetric {
     }
 
     /**
-     * 桌面池ID(仅桌面池中的桌面存在该字段)
+     * 桌面池ID(仅桌面池中的桌面存在该字段)。
      * @return resourcePoolId
      */
     public String getResourcePoolId() {
@@ -73,7 +73,7 @@ public class DesktopMetric {
     }
 
     /**
-     * 桌面名称
+     * 桌面名称。
      * @return resourceName
      */
     public String getResourceName() {

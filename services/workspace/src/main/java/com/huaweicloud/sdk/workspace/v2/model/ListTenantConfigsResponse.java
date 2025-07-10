@@ -41,7 +41,7 @@ public class ListTenantConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 租户个性配置列表
+     * 租户个性配置列表。
      * @return functionConfigs
      */
     public List<FunctionConfig> getFunctionConfigs() {

@@ -179,80 +179,10 @@ public class PoliciesDisplay {
 
     private String defaultMappingOrder;
 
-    /**
-     * 同屏显示模式。取值为： One-to-One：表示仅支持单路。 One-to-Many：表示支持多路。
-     */
-    public static final class DuplicateDisplayModeEnum {
-
-        /**
-         * Enum ONE_TO_ONE for value: "One-to-One"
-         */
-        public static final DuplicateDisplayModeEnum ONE_TO_ONE = new DuplicateDisplayModeEnum("One-to-One");
-
-        /**
-         * Enum ONE_TO_MANY for value: "One-to-Many"
-         */
-        public static final DuplicateDisplayModeEnum ONE_TO_MANY = new DuplicateDisplayModeEnum("One-to-Many");
-
-        private static final Map<String, DuplicateDisplayModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DuplicateDisplayModeEnum> createStaticFields() {
-            Map<String, DuplicateDisplayModeEnum> map = new HashMap<>();
-            map.put("One-to-One", ONE_TO_ONE);
-            map.put("One-to-Many", ONE_TO_MANY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DuplicateDisplayModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DuplicateDisplayModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DuplicateDisplayModeEnum(value));
-        }
-
-        public static DuplicateDisplayModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DuplicateDisplayModeEnum) {
-                return this.value.equals(((DuplicateDisplayModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duplicate_display_mode")
 
-    private DuplicateDisplayModeEnum duplicateDisplayMode;
+    private String duplicateDisplayMode;
 
     public PoliciesDisplay withDisplayLevel(DisplayLevelEnum displayLevel) {
         this.displayLevel = displayLevel;
@@ -503,7 +433,7 @@ public class PoliciesDisplay {
     }
 
     /**
-     * 应用感知配置。
+     * 应用感知配置。长度不能超过1024个字符。
      * @return applicationRecognition
      */
     public String getApplicationRecognition() {
@@ -548,7 +478,7 @@ public class PoliciesDisplay {
         this.defaultMappingOrder = defaultMappingOrder;
     }
 
-    public PoliciesDisplay withDuplicateDisplayMode(DuplicateDisplayModeEnum duplicateDisplayMode) {
+    public PoliciesDisplay withDuplicateDisplayMode(String duplicateDisplayMode) {
         this.duplicateDisplayMode = duplicateDisplayMode;
         return this;
     }
@@ -557,11 +487,11 @@ public class PoliciesDisplay {
      * 同屏显示模式。取值为： One-to-One：表示仅支持单路。 One-to-Many：表示支持多路。
      * @return duplicateDisplayMode
      */
-    public DuplicateDisplayModeEnum getDuplicateDisplayMode() {
+    public String getDuplicateDisplayMode() {
         return duplicateDisplayMode;
     }
 
-    public void setDuplicateDisplayMode(DuplicateDisplayModeEnum duplicateDisplayMode) {
+    public void setDuplicateDisplayMode(String duplicateDisplayMode) {
         this.duplicateDisplayMode = duplicateDisplayMode;
     }
 

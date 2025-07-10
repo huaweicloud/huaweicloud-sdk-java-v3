@@ -32,7 +32,7 @@ public class ShowRemoteConsoleAddressResponse extends SdkResponse {
     }
 
     /**
-     * 登录类型
+     * 登录类型。
      * @return type
      */
     public String getType() {
@@ -49,7 +49,7 @@ public class ShowRemoteConsoleAddressResponse extends SdkResponse {
     }
 
     /**
-     * 远程登录控制台地址
+     * 远程登录控制台地址。
      * @return url
      */
     public String getUrl() {
@@ -66,7 +66,7 @@ public class ShowRemoteConsoleAddressResponse extends SdkResponse {
     }
 
     /**
-     * 登录协议
+     * 登录协议。
      * @return protocol
      */
     public String getProtocol() {

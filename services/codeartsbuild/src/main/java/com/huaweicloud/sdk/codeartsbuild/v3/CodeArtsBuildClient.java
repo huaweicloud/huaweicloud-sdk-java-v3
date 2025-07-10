@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.codeartsbuild.v3;
 
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobCountIsTopLimitRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobCountIsTopLimitResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobNameIsExistsRequest;
@@ -150,6 +152,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobNoticeConfigInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobNoticeConfigInfoResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobPipelineInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobPipelineInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobRolePermissionRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobRolePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobStatusRequest;
@@ -196,8 +200,12 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopTheJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopTheJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystorePermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystorePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateKeystoreResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNewJobRequest;
@@ -1975,6 +1983,35 @@ public class CodeArtsBuildClient {
     }
 
     /**
+     * 流水线查看构建任务信息
+     *
+     * 流水线查看构建任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowJobPipelineInfoRequest 请求对象
+     * @return ShowJobPipelineInfoResponse
+     */
+    public ShowJobPipelineInfoResponse showJobPipelineInfo(ShowJobPipelineInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.showJobPipelineInfo);
+    }
+
+    /**
+     * 流水线查看构建任务信息
+     *
+     * 流水线查看构建任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowJobPipelineInfoRequest 请求对象
+     * @return SyncInvoker<ShowJobPipelineInfoRequest, ShowJobPipelineInfoResponse>
+     */
+    public SyncInvoker<ShowJobPipelineInfoRequest, ShowJobPipelineInfoResponse> showJobPipelineInfoInvoker(
+        ShowJobPipelineInfoRequest request) {
+        return new SyncInvoker<>(request, CodeArtsBuildMeta.showJobPipelineInfo, hcClient);
+    }
+
+    /**
      * 获取构建任务的角色权限矩阵信息
      *
      * 获取构建任务的角色权限矩阵信息
@@ -2120,6 +2157,34 @@ public class CodeArtsBuildClient {
     }
 
     /**
+     * 停止构建任务v1
+     *
+     * 停止构建任务v1
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopTheJobRequest 请求对象
+     * @return StopTheJobResponse
+     */
+    public StopTheJobResponse stopTheJob(StopTheJobRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.stopTheJob);
+    }
+
+    /**
+     * 停止构建任务v1
+     *
+     * 停止构建任务v1
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopTheJobRequest 请求对象
+     * @return SyncInvoker<StopTheJobRequest, StopTheJobResponse>
+     */
+    public SyncInvoker<StopTheJobRequest, StopTheJobResponse> stopTheJobInvoker(StopTheJobRequest request) {
+        return new SyncInvoker<>(request, CodeArtsBuildMeta.stopTheJob, hcClient);
+    }
+
+    /**
      * 更新构建任务
      *
      * 更新构建任务
@@ -2145,6 +2210,35 @@ public class CodeArtsBuildClient {
      */
     public SyncInvoker<UpdateNewJobRequest, UpdateNewJobResponse> updateNewJobInvoker(UpdateNewJobRequest request) {
         return new SyncInvoker<>(request, CodeArtsBuildMeta.updateNewJob, hcClient);
+    }
+
+    /**
+     * 添加文件权限
+     *
+     * 添加文件权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddKeystorePermissionRequest 请求对象
+     * @return AddKeystorePermissionResponse
+     */
+    public AddKeystorePermissionResponse addKeystorePermission(AddKeystorePermissionRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.addKeystorePermission);
+    }
+
+    /**
+     * 添加文件权限
+     *
+     * 添加文件权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddKeystorePermissionRequest 请求对象
+     * @return SyncInvoker<AddKeystorePermissionRequest, AddKeystorePermissionResponse>
+     */
+    public SyncInvoker<AddKeystorePermissionRequest, AddKeystorePermissionResponse> addKeystorePermissionInvoker(
+        AddKeystorePermissionRequest request) {
+        return new SyncInvoker<>(request, CodeArtsBuildMeta.addKeystorePermission, hcClient);
     }
 
     /**
@@ -2347,6 +2441,35 @@ public class CodeArtsBuildClient {
     public SyncInvoker<UpdateKeystoreRequest, UpdateKeystoreResponse> updateKeystoreInvoker(
         UpdateKeystoreRequest request) {
         return new SyncInvoker<>(request, CodeArtsBuildMeta.updateKeystore, hcClient);
+    }
+
+    /**
+     * 配置文件权限
+     *
+     * 配置文件权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKeystorePermissionRequest 请求对象
+     * @return UpdateKeystorePermissionResponse
+     */
+    public UpdateKeystorePermissionResponse updateKeystorePermission(UpdateKeystorePermissionRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.updateKeystorePermission);
+    }
+
+    /**
+     * 配置文件权限
+     *
+     * 配置文件权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKeystorePermissionRequest 请求对象
+     * @return SyncInvoker<UpdateKeystorePermissionRequest, UpdateKeystorePermissionResponse>
+     */
+    public SyncInvoker<UpdateKeystorePermissionRequest, UpdateKeystorePermissionResponse> updateKeystorePermissionInvoker(
+        UpdateKeystorePermissionRequest request) {
+        return new SyncInvoker<>(request, CodeArtsBuildMeta.updateKeystorePermission, hcClient);
     }
 
     /**

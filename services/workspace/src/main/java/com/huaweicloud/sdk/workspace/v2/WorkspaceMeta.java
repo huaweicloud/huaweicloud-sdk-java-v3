@@ -356,8 +356,6 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
-import com.huaweicloud.sdk.workspace.v2.model.ListDesktopDetachInfoRequest;
-import com.huaweicloud.sdk.workspace.v2.model.ListDesktopDetachInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopOperationsRequest;
@@ -380,8 +378,6 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatisticsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatisticsResponse;
-import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatusRequest;
-import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDownloadAddressRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDownloadAddressRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.ListDownloadAddressResponse;
@@ -390,8 +386,6 @@ import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewResponse;
-import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoRequest;
-import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListHourPackagesTypeRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHourPackagesTypeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListImagesRequest;
@@ -487,6 +481,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsLtsConfigurationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsLtsConfigurationsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserGroupsRequest;
@@ -550,6 +546,12 @@ import com.huaweicloud.sdk.workspace.v2.model.SendNotificationsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.SendNotificationsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.SetMaintenanceModeRequest;
 import com.huaweicloud.sdk.workspace.v2.model.SetMaintenanceModeResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SetRuleRestrictionReq;
+import com.huaweicloud.sdk.workspace.v2.model.SetRuleRestrictionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SetRuleRestrictionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SetUserEventsLtsConfigurationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SetUserEventsLtsConfigurationsRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.SetUserEventsLtsConfigurationsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAuthConfigRequest;
@@ -582,6 +584,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowRemoteConsoleAddressRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowRemoteConsoleAddressResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowRuleRestrictionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowRuleRestrictionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScreenRecordRequest;
@@ -1727,6 +1731,47 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetRuleRestrictionRequest, SetRuleRestrictionResponse> setRuleRestriction =
+        genForSetRuleRestriction();
+
+    private static HttpRequestDef<SetRuleRestrictionRequest, SetRuleRestrictionResponse> genForSetRuleRestriction() {
+        // basic
+        HttpRequestDef.Builder<SetRuleRestrictionRequest, SetRuleRestrictionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetRuleRestrictionRequest.class, SetRuleRestrictionResponse.class)
+                .withName("SetRuleRestriction")
+                .withUri("/v1/{project_id}/app-center/app-rules/actions/set-rule-restriction")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SetRuleRestrictionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetRuleRestrictionReq.class),
+            f -> f.withMarshaller(SetRuleRestrictionRequest::getBody, SetRuleRestrictionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRuleRestrictionRequest, ShowRuleRestrictionResponse> showRuleRestriction =
+        genForShowRuleRestriction();
+
+    private static HttpRequestDef<ShowRuleRestrictionRequest, ShowRuleRestrictionResponse> genForShowRuleRestriction() {
+        // basic
+        HttpRequestDef.Builder<ShowRuleRestrictionRequest, ShowRuleRestrictionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRuleRestrictionRequest.class, ShowRuleRestrictionResponse.class)
+                .withName("ShowRuleRestriction")
+                .withUri("/v1/{project_id}/app-center/app-rules/actions/get-rule-restriction")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAppRuleRequest, UpdateAppRuleResponse> updateAppRule =
         genForUpdateAppRule();
 
@@ -1959,65 +2004,6 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDesktopsStatusRequest, ListDesktopsStatusResponse> listDesktopsStatus =
-        genForListDesktopsStatus();
-
-    private static HttpRequestDef<ListDesktopsStatusRequest, ListDesktopsStatusResponse> genForListDesktopsStatus() {
-        // basic
-        HttpRequestDef.Builder<ListDesktopsStatusRequest, ListDesktopsStatusResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListDesktopsStatusRequest.class, ListDesktopsStatusResponse.class)
-                .withName("ListDesktopsStatus")
-                .withUri("/v2/{project_id}/desktops/status")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListHistoryOnlineInfoRequest, ListHistoryOnlineInfoResponse> listHistoryOnlineInfo =
-        genForListHistoryOnlineInfo();
-
-    private static HttpRequestDef<ListHistoryOnlineInfoRequest, ListHistoryOnlineInfoResponse> genForListHistoryOnlineInfo() {
-        // basic
-        HttpRequestDef.Builder<ListHistoryOnlineInfoRequest, ListHistoryOnlineInfoResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListHistoryOnlineInfoRequest.class, ListHistoryOnlineInfoResponse.class)
-            .withName("ListHistoryOnlineInfo")
-            .withUri("/v2/{project_id}/desktops/online-users")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryOnlineInfoRequest::getStartTime,
-                ListHistoryOnlineInfoRequest::setStartTime));
-        builder.<String>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryOnlineInfoRequest::getEndTime, ListHistoryOnlineInfoRequest::setEndTime));
-        builder.<String>withRequestField("query_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryOnlineInfoRequest::getQueryType,
-                ListHistoryOnlineInfoRequest::setQueryType));
-        builder.<Integer>withRequestField("client_hour",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryOnlineInfoRequest::getClientHour,
-                ListHistoryOnlineInfoRequest::setClientHour));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListHistoryOnlineInfoNewRequest, ListHistoryOnlineInfoNewResponse> listHistoryOnlineInfoNew =
         genForListHistoryOnlineInfoNew();
 
@@ -2049,12 +2035,6 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHistoryOnlineInfoNewRequest::getQueryType,
                 ListHistoryOnlineInfoNewRequest::setQueryType));
-        builder.<Integer>withRequestField("client_hour",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListHistoryOnlineInfoNewRequest::getClientHour,
-                ListHistoryOnlineInfoNewRequest::setClientHour));
 
         // response
 
@@ -2158,12 +2138,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AttachInstancesRequest::getServiceTransactionId,
-                AttachInstancesRequest::setServiceTransactionId));
         builder.<AttachInstancesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2329,12 +2303,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchLogoffDesktopsRequest::getServiceTransactionId,
-                BatchLogoffDesktopsRequest::setServiceTransactionId));
         builder.<LogoffDesktopsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2361,12 +2329,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchRebuildDesktopsSystemDiskRequest::getServiceTransactionId,
-                BatchRebuildDesktopsSystemDiskRequest::setServiceTransactionId));
         builder.<RebuildDesktopsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2514,12 +2476,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDesktopRequest::getServiceTransactionId,
-                CreateDesktopRequest::setServiceTransactionId));
         builder.<CreateDesktopReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2725,30 +2681,6 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDesktopDetachInfoRequest, ListDesktopDetachInfoResponse> listDesktopDetachInfo =
-        genForListDesktopDetachInfo();
-
-    private static HttpRequestDef<ListDesktopDetachInfoRequest, ListDesktopDetachInfoResponse> genForListDesktopDetachInfo() {
-        // basic
-        HttpRequestDef.Builder<ListDesktopDetachInfoRequest, ListDesktopDetachInfoResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListDesktopDetachInfoRequest.class, ListDesktopDetachInfoResponse.class)
-            .withName("ListDesktopDetachInfo")
-            .withUri("/v2/{project_id}/desktops/{desktop_id}/detach-info")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("desktop_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDesktopDetachInfoRequest::getDesktopId,
-                ListDesktopDetachInfoRequest::setDesktopId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListDesktopsRequest, ListDesktopsResponse> listDesktops = genForListDesktops();
 
     private static HttpRequestDef<ListDesktopsRequest, ListDesktopsResponse> genForListDesktops() {
@@ -2775,11 +2707,6 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsRequest::getDesktopIp, ListDesktopsRequest::setDesktopIp));
-        builder.<List<String>>withRequestField("sids",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDesktopsRequest::getSids, ListDesktopsRequest::setSids));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2790,11 +2717,6 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDesktopsRequest::getLimit, ListDesktopsRequest::setLimit));
-        builder.<String>withRequestField("site_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDesktopsRequest::getSiteId, ListDesktopsRequest::setSiteId));
         builder.<String>withRequestField("pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2935,11 +2857,6 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getDesktopIp, ListDesktopsDetailRequest::setDesktopIp));
-        builder.<String>withRequestField("sids",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDesktopsDetailRequest::getSids, ListDesktopsDetailRequest::setSids));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2961,22 +2878,11 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getDesktopType,
                 ListDesktopsDetailRequest::setDesktopType));
-        builder.<String>withRequestField("login_status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDesktopsDetailRequest::getLoginStatus,
-                ListDesktopsDetailRequest::setLoginStatus));
         builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getTag, ListDesktopsDetailRequest::setTag));
-        builder.<Boolean>withRequestField("fuzzy_query",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDesktopsDetailRequest::getFuzzyQuery, ListDesktopsDetailRequest::setFuzzyQuery));
         builder.<String>withRequestField("pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3074,12 +2980,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeDesktopRequest::getServiceTransactionId,
-                ResizeDesktopRequest::setServiceTransactionId));
         builder.<ResizeDesktopReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3540,12 +3440,6 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddDesktopPoolVolumesRequest::getPoolId, AddDesktopPoolVolumesRequest::setPoolId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDesktopPoolVolumesRequest::getServiceTransactionId,
-                AddDesktopPoolVolumesRequest::setServiceTransactionId));
         builder.<AddDesktopPoolVolumesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3569,12 +3463,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDesktopPoolRequest::getServiceTransactionId,
-                CreateDesktopPoolRequest::setServiceTransactionId));
         builder.<CreateDesktopPoolReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3749,12 +3637,6 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExpandDesktopPoolRequest::getPoolId, ExpandDesktopPoolRequest::setPoolId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandDesktopPoolRequest::getServiceTransactionId,
-                ExpandDesktopPoolRequest::setServiceTransactionId));
         builder.<ExpandDesktopPoolReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3785,12 +3667,6 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExpandDesktopPoolVolumesRequest::getPoolId,
                 ExpandDesktopPoolVolumesRequest::setPoolId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandDesktopPoolVolumesRequest::getServiceTransactionId,
-                ExpandDesktopPoolVolumesRequest::setServiceTransactionId));
         builder.<ExpandDesktopPoolVolumesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3947,12 +3823,6 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RebuildDesktopPoolRequest::getPoolId, RebuildDesktopPoolRequest::setPoolId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RebuildDesktopPoolRequest::getServiceTransactionId,
-                RebuildDesktopPoolRequest::setServiceTransactionId));
         builder.<RebuildDesktopPoolReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3981,12 +3851,6 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeDesktopPoolRequest::getPoolId, ResizeDesktopPoolRequest::setPoolId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeDesktopPoolRequest::getServiceTransactionId,
-                ResizeDesktopPoolRequest::setServiceTransactionId));
         builder.<ResizeDesktopPoolReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -4504,6 +4368,12 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListUsersOfGroupRequest.ActiveTypeEnum.class),
             f -> f.withMarshaller(ListUsersOfGroupRequest::getActiveType, ListUsersOfGroupRequest::setActiveType));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersOfGroupRequest::getEnterpriseProjectId,
+                ListUsersOfGroupRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5001,12 +4871,6 @@ public class WorkspaceMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplyDesktopsInternetRequest::getServiceTransactionId,
-                ApplyDesktopsInternetRequest::setServiceTransactionId));
         builder.<ApplyDesktopsInternetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -5053,12 +4917,6 @@ public class WorkspaceMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ApplySubnetBandwidthRequest::getServiceTransactionId,
-                ApplySubnetBandwidthRequest::setServiceTransactionId));
         builder.<ApplySubnetBandwidthReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -5274,7 +5132,7 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewaysRequest::getName, ListNatGatewaysRequest::setName));
-        builder.<List<String>>withRequestField("status",
+        builder.<List<ListNatGatewaysRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
@@ -5502,12 +5360,6 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubnetBandwidthRequest::getBandwidthId,
                 UpdateSubnetBandwidthRequest::setBandwidthId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSubnetBandwidthRequest::getServiceTransactionId,
-                UpdateSubnetBandwidthRequest::setServiceTransactionId));
         builder.<UpdateSubnetBandwidthReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -6086,11 +5938,6 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPolicyGroupRequest::getDescription, ListPolicyGroupRequest::setDescription));
-        builder.<Integer>withRequestField("scope_flag",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getScopeFlag, ListPolicyGroupRequest::setScopeFlag));
         builder.<Boolean>withRequestField("is_group_name_accurate",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -6154,11 +6001,6 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPolicyGroupInfoRequest::getDescription,
                 ListPolicyGroupInfoRequest::setDescription));
-        builder.<Integer>withRequestField("scope_flag",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyGroupInfoRequest::getScopeFlag, ListPolicyGroupInfoRequest::setScopeFlag));
 
         // response
 
@@ -6320,11 +6162,6 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProductsRequest::getProductId, ListProductsRequest::setProductId));
-        builder.<String>withRequestField("flavor_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getFlavorId, ListProductsRequest::setFlavorId));
         builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -6345,26 +6182,11 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProductsRequest::getArchitecture, ListProductsRequest::setArchitecture));
-        builder.<String>withRequestField("deh_product_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getDehProductId, ListProductsRequest::setDehProductId));
-        builder.<Boolean>withRequestField("is_deh",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListProductsRequest::getIsDeh, ListProductsRequest::setIsDeh));
         builder.<String>withRequestField("package_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProductsRequest::getPackageType, ListProductsRequest::setPackageType));
-        builder.<String>withRequestField("products_range",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductsRequest::getProductsRange, ListProductsRequest::setProductsRange));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -6523,11 +6345,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQuotasRequest::getType, ShowQuotasRequest::setType));
 
         // response
 
@@ -7449,12 +7266,6 @@ public class WorkspaceMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDesktopSubResourcesRequest::getServiceTransactionId,
-                AddDesktopSubResourcesRequest::setServiceTransactionId));
         builder.<AddDesktopSubResourcesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -7481,12 +7292,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDesktopSubResourcesRequest::getServiceTransactionId,
-                DeleteDesktopSubResourcesRequest::setServiceTransactionId));
         builder.<DeleteDesktopSubResourcesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -8954,11 +8759,6 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersRequest::getUserName, ListUsersRequest::setUserName));
-        builder.<String>withRequestField("user_email",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersRequest::getUserEmail, ListUsersRequest::setUserEmail));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -9001,6 +8801,11 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListUsersRequest::getIsQueryTotalDesktops,
                 ListUsersRequest::setIsQueryTotalDesktops));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getEnterpriseProjectId, ListUsersRequest::setEnterpriseProjectId));
 
         // response
 
@@ -9105,12 +8910,12 @@ public class WorkspaceMeta {
         // requests
         builder.<String>withRequestField("start_time",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUserEventsRequest::getStartTime, ListUserEventsRequest::setStartTime));
         builder.<String>withRequestField("end_time",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUserEventsRequest::getEndTime, ListUserEventsRequest::setEndTime));
         builder.<String>withRequestField("username",
@@ -9123,11 +8928,16 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUserEventsRequest::getEventType, ListUserEventsRequest::setEventType));
-        builder.<String>withRequestField("event_trace_id",
+        builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserEventsRequest::getEventTraceId, ListUserEventsRequest::setEventTraceId));
+            f -> f.withMarshaller(ListUserEventsRequest::getResourceId, ListUserEventsRequest::setResourceId));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserEventsRequest::getResourceName, ListUserEventsRequest::setResourceName));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -9138,6 +8948,54 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUserEventsRequest::getLimit, ListUserEventsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserEventsLtsConfigurationsRequest, ListUserEventsLtsConfigurationsResponse> listUserEventsLtsConfigurations =
+        genForListUserEventsLtsConfigurations();
+
+    private static HttpRequestDef<ListUserEventsLtsConfigurationsRequest, ListUserEventsLtsConfigurationsResponse> genForListUserEventsLtsConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListUserEventsLtsConfigurationsRequest, ListUserEventsLtsConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListUserEventsLtsConfigurationsRequest.class,
+                    ListUserEventsLtsConfigurationsResponse.class)
+                .withName("ListUserEventsLtsConfigurations")
+                .withUri("/v2/{project_id}/user-events/lts-configurations")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetUserEventsLtsConfigurationsRequest, SetUserEventsLtsConfigurationsResponse> setUserEventsLtsConfigurations =
+        genForSetUserEventsLtsConfigurations();
+
+    private static HttpRequestDef<SetUserEventsLtsConfigurationsRequest, SetUserEventsLtsConfigurationsResponse> genForSetUserEventsLtsConfigurations() {
+        // basic
+        HttpRequestDef.Builder<SetUserEventsLtsConfigurationsRequest, SetUserEventsLtsConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SetUserEventsLtsConfigurationsRequest.class,
+                    SetUserEventsLtsConfigurationsResponse.class)
+                .withName("SetUserEventsLtsConfigurations")
+                .withUri("/v2/{project_id}/user-events/lts-configurations")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<SetUserEventsLtsConfigurationsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetUserEventsLtsConfigurationsRequestBody.class),
+            f -> f.withMarshaller(SetUserEventsLtsConfigurationsRequest::getBody,
+                SetUserEventsLtsConfigurationsRequest::setBody));
 
         // response
 
@@ -9161,12 +9019,6 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddDesktopVolumesRequest::getDesktopId, AddDesktopVolumesRequest::setDesktopId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddDesktopVolumesRequest::getServiceTransactionId,
-                AddDesktopVolumesRequest::setServiceTransactionId));
         builder.<AddVolumesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -9189,12 +9041,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddVolumesRequest::getServiceTransactionId,
-                AddVolumesRequest::setServiceTransactionId));
         builder.<AddDesktopsVolumesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -9224,12 +9070,6 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDesktopVolumesRequest::getDesktopId,
                 DeleteDesktopVolumesRequest::setDesktopId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDesktopVolumesRequest::getServiceTransactionId,
-                DeleteDesktopVolumesRequest::setServiceTransactionId));
         builder.<DeleteVolumesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -9263,12 +9103,6 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExpandDesktopVolumeRequest::getVolumeId, ExpandDesktopVolumeRequest::setVolumeId));
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandDesktopVolumeRequest::getServiceTransactionId,
-                ExpandDesktopVolumeRequest::setServiceTransactionId));
         builder.<ExpandVolumeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -9292,12 +9126,6 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("Service-Transaction-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandVolumesRequest::getServiceTransactionId,
-                ExpandVolumesRequest::setServiceTransactionId));
         builder.<ExpandDesktopsVolumesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

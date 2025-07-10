@@ -145,6 +145,11 @@ public class HumanModel2DAssetMeta {
 
     private Boolean isFlexus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "voice_asset_id")
+
+    private String voiceAssetId;
+
     public HumanModel2DAssetMeta withIsActionEditable(Boolean isActionEditable) {
         this.isActionEditable = isActionEditable;
         return this;
@@ -330,6 +335,23 @@ public class HumanModel2DAssetMeta {
         this.isFlexus = isFlexus;
     }
 
+    public HumanModel2DAssetMeta withVoiceAssetId(String voiceAssetId) {
+        this.voiceAssetId = voiceAssetId;
+        return this;
+    }
+
+    /**
+     * 形象关联的声音资产ID。
+     * @return voiceAssetId
+     */
+    public String getVoiceAssetId() {
+        return voiceAssetId;
+    }
+
+    public void setVoiceAssetId(String voiceAssetId) {
+        this.voiceAssetId = voiceAssetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -346,7 +368,8 @@ public class HumanModel2DAssetMeta {
             && Objects.equals(this.modelResolution, that.modelResolution)
             && Objects.equals(this.deviceNames, that.deviceNames)
             && Objects.equals(this.isWithActionLibrary, that.isWithActionLibrary)
-            && Objects.equals(this.actionTagMap, that.actionTagMap) && Objects.equals(this.isFlexus, that.isFlexus);
+            && Objects.equals(this.actionTagMap, that.actionTagMap) && Objects.equals(this.isFlexus, that.isFlexus)
+            && Objects.equals(this.voiceAssetId, that.voiceAssetId);
     }
 
     @Override
@@ -359,7 +382,8 @@ public class HumanModel2DAssetMeta {
             deviceNames,
             isWithActionLibrary,
             actionTagMap,
-            isFlexus);
+            isFlexus,
+            voiceAssetId);
     }
 
     @Override
@@ -375,6 +399,7 @@ public class HumanModel2DAssetMeta {
         sb.append("    isWithActionLibrary: ").append(toIndentedString(isWithActionLibrary)).append("\n");
         sb.append("    actionTagMap: ").append(toIndentedString(actionTagMap)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
+        sb.append("    voiceAssetId: ").append(toIndentedString(voiceAssetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

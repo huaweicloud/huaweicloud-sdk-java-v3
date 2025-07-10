@@ -558,7 +558,7 @@ public class PoliciesKeyboardMouse {
     }
 
     /**
-     * 自助维护台抢占登陆。取值为： false：表示关闭。 true：表示开启。
+     * 自助维护台抢占登录。取值为： false：表示关闭。 true：表示开启。
      * @return selfhelpConsoleEnable
      */
     public Boolean getSelfhelpConsoleEnable() {

@@ -21,7 +21,7 @@ public class ListTimeZonesRequest {
     }
 
     /**
-     * 按照时区name过滤
+     * 按照时区name过滤。
      * @return timeZoneName
      */
     public String getTimeZoneName() {

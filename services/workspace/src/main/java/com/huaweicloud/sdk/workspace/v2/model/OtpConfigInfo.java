@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * OTP辅助认证方式配置
+ * OTP辅助认证方式配置。
  */
 public class OtpConfigInfo {
 
@@ -57,7 +57,7 @@ public class OtpConfigInfo {
     }
 
     /**
-     * 是否启用
+     * 是否启用。
      * @return enable
      */
     public Boolean getEnable() {
@@ -91,7 +91,7 @@ public class OtpConfigInfo {
     }
 
     /**
-     * 辅助认证服务器地址
+     * 辅助认证服务器地址。
      * @return authUrl
      */
     public String getAuthUrl() {
@@ -108,7 +108,7 @@ public class OtpConfigInfo {
     }
 
     /**
-     * 认证服务接入账号
+     * 认证服务接入账号。
      * @return appId
      */
     public String getAppId() {
@@ -125,7 +125,7 @@ public class OtpConfigInfo {
     }
 
     /**
-     * 认证服务接入密码
+     * 认证服务接入密码。
      * @return appSecret
      */
     public String getAppSecret() {
@@ -159,7 +159,7 @@ public class OtpConfigInfo {
     }
 
     /**
-     * pem格式证书内容
+     * pem格式证书内容。
      * @return certContent
      */
     public String getCertContent() {

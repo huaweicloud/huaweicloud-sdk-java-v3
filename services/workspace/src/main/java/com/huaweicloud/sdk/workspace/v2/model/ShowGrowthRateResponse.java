@@ -22,7 +22,7 @@ public class ShowGrowthRateResponse extends SdkResponse {
     }
 
     /**
-     * 环比值
+     * 环比值。
      * @return growthRate
      */
     public Double getGrowthRate() {

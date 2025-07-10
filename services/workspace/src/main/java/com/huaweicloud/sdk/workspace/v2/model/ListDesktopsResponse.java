@@ -24,11 +24,6 @@ public class ListDesktopsResponse extends SdkResponse {
 
     private List<SimpleDesktopInfo> desktops = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "desktop_infos")
-
-    private List<SimpleDesktopInfoDetail> desktopInfos = null;
-
     public ListDesktopsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -81,39 +76,6 @@ public class ListDesktopsResponse extends SdkResponse {
         this.desktops = desktops;
     }
 
-    public ListDesktopsResponse withDesktopInfos(List<SimpleDesktopInfoDetail> desktopInfos) {
-        this.desktopInfos = desktopInfos;
-        return this;
-    }
-
-    public ListDesktopsResponse addDesktopInfosItem(SimpleDesktopInfoDetail desktopInfosItem) {
-        if (this.desktopInfos == null) {
-            this.desktopInfos = new ArrayList<>();
-        }
-        this.desktopInfos.add(desktopInfosItem);
-        return this;
-    }
-
-    public ListDesktopsResponse withDesktopInfos(Consumer<List<SimpleDesktopInfoDetail>> desktopInfosSetter) {
-        if (this.desktopInfos == null) {
-            this.desktopInfos = new ArrayList<>();
-        }
-        desktopInfosSetter.accept(this.desktopInfos);
-        return this;
-    }
-
-    /**
-     * Workspace桌面列表。
-     * @return desktopInfos
-     */
-    public List<SimpleDesktopInfoDetail> getDesktopInfos() {
-        return desktopInfos;
-    }
-
-    public void setDesktopInfos(List<SimpleDesktopInfoDetail> desktopInfos) {
-        this.desktopInfos = desktopInfos;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -123,13 +85,12 @@ public class ListDesktopsResponse extends SdkResponse {
             return false;
         }
         ListDesktopsResponse that = (ListDesktopsResponse) obj;
-        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.desktops, that.desktops)
-            && Objects.equals(this.desktopInfos, that.desktopInfos);
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.desktops, that.desktops);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount, desktops, desktopInfos);
+        return Objects.hash(totalCount, desktops);
     }
 
     @Override
@@ -138,7 +99,6 @@ public class ListDesktopsResponse extends SdkResponse {
         sb.append("class ListDesktopsResponse {\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    desktops: ").append(toIndentedString(desktops)).append("\n");
-        sb.append("    desktopInfos: ").append(toIndentedString(desktopInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 指标维度，目前最大可添加4个维度
+ * 指标维度，目前最大可添加4个维度。
  */
 public class AlarmMetricDimension {
 
@@ -26,7 +26,7 @@ public class AlarmMetricDimension {
     }
 
     /**
-     * 资源维度
+     * 资源维度。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class AlarmMetricDimension {
     }
 
     /**
-     * 资源维度值
+     * 资源维度值。
      * @return value
      */
     public String getValue() {

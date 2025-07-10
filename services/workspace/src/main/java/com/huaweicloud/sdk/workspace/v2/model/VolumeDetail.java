@@ -11,21 +11,6 @@ import java.util.Objects;
 public class VolumeDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "encrypt_flag")
-
-    private String encryptFlag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kms_key")
-
-    private String kmsKey;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "key_alias")
-
-    private String keyAlias;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -34,11 +19,6 @@ public class VolumeDetail {
     @JsonProperty(value = "size")
 
     private Integer size;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kms_grant_id")
-
-    private String kmsGrantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
@@ -71,65 +51,9 @@ public class VolumeDetail {
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
-
-    private String clusterId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_spec_code")
 
     private String resourceSpecCode;
-
-    public VolumeDetail withEncryptFlag(String encryptFlag) {
-        this.encryptFlag = encryptFlag;
-        return this;
-    }
-
-    /**
-     * 标识磁盘是否加密，如果为1就是加密。
-     * @return encryptFlag
-     */
-    public String getEncryptFlag() {
-        return encryptFlag;
-    }
-
-    public void setEncryptFlag(String encryptFlag) {
-        this.encryptFlag = encryptFlag;
-    }
-
-    public VolumeDetail withKmsKey(String kmsKey) {
-        this.kmsKey = kmsKey;
-        return this;
-    }
-
-    /**
-     * 如果磁盘加密，传递的密钥。
-     * @return kmsKey
-     */
-    public String getKmsKey() {
-        return kmsKey;
-    }
-
-    public void setKmsKey(String kmsKey) {
-        this.kmsKey = kmsKey;
-    }
-
-    public VolumeDetail withKeyAlias(String keyAlias) {
-        this.keyAlias = keyAlias;
-        return this;
-    }
-
-    /**
-     * 如果磁盘加密，传递的密钥。
-     * @return keyAlias
-     */
-    public String getKeyAlias() {
-        return keyAlias;
-    }
-
-    public void setKeyAlias(String keyAlias) {
-        this.keyAlias = keyAlias;
-    }
 
     public VolumeDetail withType(String type) {
         this.type = type;
@@ -167,23 +91,6 @@ public class VolumeDetail {
         this.size = size;
     }
 
-    public VolumeDetail withKmsGrantId(String kmsGrantId) {
-        this.kmsGrantId = kmsGrantId;
-        return this;
-    }
-
-    /**
-     * 如果磁盘加密，授权ID。
-     * @return kmsGrantId
-     */
-    public String getKmsGrantId() {
-        return kmsGrantId;
-    }
-
-    public void setKmsGrantId(String kmsGrantId) {
-        this.kmsGrantId = kmsGrantId;
-    }
-
     public VolumeDetail withDevice(String device) {
         this.device = device;
         return this;
@@ -207,7 +114,7 @@ public class VolumeDetail {
     }
 
     /**
-     * 磁盘表唯一标识ID。
+     * 磁盘唯一标识ID。
      * @return id
      */
     public String getId() {
@@ -258,7 +165,7 @@ public class VolumeDetail {
     }
 
     /**
-     * 磁盘的创建时间
+     * 磁盘的创建时间。
      * @return createTime
      */
     public String getCreateTime() {
@@ -275,7 +182,7 @@ public class VolumeDetail {
     }
 
     /**
-     * 磁盘名
+     * 磁盘名。
      * @return displayName
      */
     public String getDisplayName() {
@@ -286,30 +193,13 @@ public class VolumeDetail {
         this.displayName = displayName;
     }
 
-    public VolumeDetail withClusterId(String clusterId) {
-        this.clusterId = clusterId;
-        return this;
-    }
-
-    /**
-     * 云服务器系统盘对应的存储池的ID。
-     * @return clusterId
-     */
-    public String getClusterId() {
-        return clusterId;
-    }
-
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
-    }
-
     public VolumeDetail withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
     }
 
     /**
-     * 规格
+     * 规格。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -329,51 +219,31 @@ public class VolumeDetail {
             return false;
         }
         VolumeDetail that = (VolumeDetail) obj;
-        return Objects.equals(this.encryptFlag, that.encryptFlag) && Objects.equals(this.kmsKey, that.kmsKey)
-            && Objects.equals(this.keyAlias, that.keyAlias) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.kmsGrantId, that.kmsGrantId)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
             && Objects.equals(this.device, that.device) && Objects.equals(this.id, that.id)
             && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.billResourceId, that.billResourceId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.displayName, that.displayName)
-            && Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(encryptFlag,
-            kmsKey,
-            keyAlias,
-            type,
-            size,
-            kmsGrantId,
-            device,
-            id,
-            volumeId,
-            billResourceId,
-            createTime,
-            displayName,
-            clusterId,
-            resourceSpecCode);
+        return Objects
+            .hash(type, size, device, id, volumeId, billResourceId, createTime, displayName, resourceSpecCode);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VolumeDetail {\n");
-        sb.append("    encryptFlag: ").append(toIndentedString(encryptFlag)).append("\n");
-        sb.append("    kmsKey: ").append(toIndentedString(kmsKey)).append("\n");
-        sb.append("    keyAlias: ").append(toIndentedString(keyAlias)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    kmsGrantId: ").append(toIndentedString(kmsGrantId)).append("\n");
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
         sb.append("    billResourceId: ").append(toIndentedString(billResourceId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
         sb.append("}");
         return sb.toString();

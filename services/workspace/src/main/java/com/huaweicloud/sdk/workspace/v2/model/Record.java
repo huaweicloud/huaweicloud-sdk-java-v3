@@ -105,13 +105,23 @@ public class Record {
 
     private Integer e2eRtt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_ip")
+
+    private String sourceIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
     public Record withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
     /**
-     * 租户id，不对外展示
+     * 租户id，不对外展示。
      * @return tenantId
      */
     public String getTenantId() {
@@ -128,7 +138,7 @@ public class Record {
     }
 
     /**
-     * 桌面sid
+     * 桌面sid。
      * @return sid
      */
     public String getSid() {
@@ -145,7 +155,7 @@ public class Record {
     }
 
     /**
-     * 事务id
+     * 事务id。
      * @return transactionId
      */
     public String getTransactionId() {
@@ -400,7 +410,7 @@ public class Record {
     }
 
     /**
-     * 网络时延ms
+     * 网络时延ms。
      * @return networkRtt
      */
     public Integer getNetworkRtt() {
@@ -417,7 +427,7 @@ public class Record {
     }
 
     /**
-     * 端到端时延 ms
+     * 端到端时延 ms。
      * @return e2eRtt
      */
     public Integer getE2eRtt() {
@@ -426,6 +436,40 @@ public class Record {
 
     public void setE2eRtt(Integer e2eRtt) {
         this.e2eRtt = e2eRtt;
+    }
+
+    public Record withSourceIp(String sourceIp) {
+        this.sourceIp = sourceIp;
+        return this;
+    }
+
+    /**
+     * 客户端源ip
+     * @return sourceIp
+     */
+    public String getSourceIp() {
+        return sourceIp;
+    }
+
+    public void setSourceIp(String sourceIp) {
+        this.sourceIp = sourceIp;
+    }
+
+    public Record withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出网IP
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
     }
 
     @Override
@@ -450,7 +494,8 @@ public class Record {
             && Objects.equals(this.connectionEndTime, that.connectionEndTime)
             && Objects.equals(this.isReconnect, that.isReconnect)
             && Objects.equals(this.connectionFailureReason, that.connectionFailureReason)
-            && Objects.equals(this.networkRtt, that.networkRtt) && Objects.equals(this.e2eRtt, that.e2eRtt);
+            && Objects.equals(this.networkRtt, that.networkRtt) && Objects.equals(this.e2eRtt, that.e2eRtt)
+            && Objects.equals(this.sourceIp, that.sourceIp) && Objects.equals(this.publicIp, that.publicIp);
     }
 
     @Override
@@ -473,7 +518,9 @@ public class Record {
             isReconnect,
             connectionFailureReason,
             networkRtt,
-            e2eRtt);
+            e2eRtt,
+            sourceIp,
+            publicIp);
     }
 
     @Override
@@ -499,6 +546,8 @@ public class Record {
         sb.append("    connectionFailureReason: ").append(toIndentedString(connectionFailureReason)).append("\n");
         sb.append("    networkRtt: ").append(toIndentedString(networkRtt)).append("\n");
         sb.append("    e2eRtt: ").append(toIndentedString(e2eRtt)).append("\n");
+        sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

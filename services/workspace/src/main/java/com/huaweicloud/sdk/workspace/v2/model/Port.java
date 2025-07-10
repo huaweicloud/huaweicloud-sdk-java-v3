@@ -26,7 +26,7 @@ public class Port {
     }
 
     /**
-     * 私有IP唯一标识
+     * 私有IP唯一标识。
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class Port {
     }
 
     /**
-     * 私有IP地址
+     * 私有IP地址。
      * @return ipAddress
      */
     public String getIpAddress() {

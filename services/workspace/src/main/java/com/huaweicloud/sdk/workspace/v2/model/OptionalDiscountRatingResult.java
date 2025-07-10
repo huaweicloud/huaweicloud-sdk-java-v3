@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 结果
+ * 结果。
  */
 public class OptionalDiscountRatingResult {
 
@@ -130,7 +130,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 折扣优惠Id
+     * 折扣优惠Id。
      * @return discountId
      */
     public String getDiscountId() {
@@ -147,7 +147,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 订单总额，即最终优惠后的订单金额(预留实例只包含预付部分)
+     * 订单总额，即最终优惠后的订单金额(预留实例只包含预付部分)。
      * @return amount
      */
     public BigDecimal getAmount() {
@@ -164,7 +164,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 官网价(预留实例只包含预付部分)
+     * 官网价(预留实例只包含预付部分)。
      * @return officialWebsiteAmount
      */
     public BigDecimal getOfficialWebsiteAmount() {
@@ -181,7 +181,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 订单原总额，即优惠前订单总额(预留实例只包含预付部分)
+     * 订单原总额，即优惠前订单总额(预留实例只包含预付部分)。
      * @return originalAmount
      */
     public BigDecimal getOriginalAmount() {
@@ -198,7 +198,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 官网价优惠额(预留实例只包含预付部分)
+     * 官网价优惠额(预留实例只包含预付部分)。
      * @return officialWebsiteDiscountAmount
      */
     public BigDecimal getOfficialWebsiteDiscountAmount() {
@@ -215,7 +215,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 可选折扣优惠额(预留实例只包含预付部分)
+     * 可选折扣优惠额(预留实例只包含预付部分)。
      * @return optionalDiscountAmount
      */
     public BigDecimal getOptionalDiscountAmount() {
@@ -232,7 +232,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 总优惠额(预留实例只包含预付部分)
+     * 总优惠额(预留实例只包含预付部分)。
      * @return discountAmount
      */
     public BigDecimal getDiscountAmount() {
@@ -249,7 +249,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)
+     * 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)。
      * @return perAmount
      */
     public BigDecimal getPerAmount() {
@@ -266,7 +266,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 总分期金额的优惠额(perDiscountAmount = perOriginalAmount - perAmount)
+     * 总分期金额的优惠额(perDiscountAmount = perOriginalAmount - perAmount)。
      * @return perDiscountAmount
      */
     public BigDecimal getPerDiscountAmount() {
@@ -283,7 +283,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 总分期金额原价
+     * 总分期金额原价。
      * @return perOriginalAmount
      */
     public BigDecimal getPerOriginalAmount() {
@@ -300,7 +300,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 总分期金额的官网价(批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)
+     * 总分期金额的官网价(批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)。
      * @return perOfficialWebsiteAmount
      */
     public BigDecimal getPerOfficialWebsiteAmount() {
@@ -318,7 +318,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 总分期金额的官网价官网价优惠额，即： perOfficialWebsiteDiscountAmount =perOriginalAmount-perOfficialWebsiteAmount (批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)
+     * 总分期金额的官网价官网价优惠额，即： perOfficialWebsiteDiscountAmount =perOriginalAmount-perOfficialWebsiteAmount (批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)。
      * @return perOfficialWebsiteDiscountAmount
      */
     public BigDecimal getPerOfficialWebsiteDiscountAmount() {
@@ -335,7 +335,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 总分期金额的可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额 perOptionalDiscountAmount= perOfficialWebsiteAmount- perAmount (批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)
+     * 总分期金额的可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额 perOptionalDiscountAmount= perOfficialWebsiteAmount- perAmount (批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)。
      * @return perOptionalDiscountAmount
      */
     public BigDecimal getPerOptionalDiscountAmount() {
@@ -352,7 +352,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 分期周期类型 2:月 4:小时
+     * 分期周期类型 2:月 4:小时。
      * @return perPeriodType
      */
     public Integer getPerPeriodType() {
@@ -369,7 +369,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 度量单位
+     * 度量单位。
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -386,7 +386,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 折扣优惠类型
+     * 折扣优惠类型。
      * @return discountType
      */
     public Integer getDiscountType() {
@@ -403,7 +403,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 折扣名称
+     * 折扣名称。
      * @return discountName
      */
     public String getDiscountName() {
@@ -420,7 +420,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 是否为最优折扣0：不是最优折扣；为缺省值。1：是最优折扣；最优折扣：在商务折扣、伙伴折扣和促销折扣中选择（优惠金额相等则按此顺序排优先级），折扣券不参与最优折扣的计算
+     * 是否为最优折扣0：不是最优折扣；为缺省值。1：是最优折扣；最优折扣：在商务折扣、伙伴折扣和促销折扣中选择（优惠金额相等则按此顺序排优先级），折扣券不参与最优折扣的计算。
      * @return bestOffer
      */
     public Integer getBestOffer() {
@@ -437,7 +437,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * sameRatioFlag
+     * sameRatioFlag。
      * @return sameRatioFlag
      */
     public Integer getSameRatioFlag() {
@@ -454,7 +454,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * sameRatioFlag为1时有值，表示该折扣的折扣率
+     * sameRatioFlag为1时有值，表示该折扣的折扣率。
      * @return discountRatio
      */
     public BigDecimal getDiscountRatio() {
@@ -471,7 +471,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 折扣优惠基本信息；调用者在确定好折扣优惠后、下单时，使用此字段值，填入到订购/变更接口中的promotionInfo字段
+     * 折扣优惠基本信息；调用者在确定好折扣优惠后、下单时，使用此字段值，填入到订购/变更接口中的promotionInfo字段。
      * @return promotionInfo
      */
     public String getPromotionInfo() {
@@ -505,7 +505,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 产品询价结果
+     * 产品询价结果。
      * @return productRatingResults
      */
     public List<ProductResult> getProductRatingResults() {

@@ -107,7 +107,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 在线信息
+     * 在线信息。
      * @return userOnlineInfo
      */
     public List<MonitorUserOnlineInfo> getUserOnlineInfo() {
@@ -124,7 +124,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 计算机登录状态，在线信息没值的情况下，查看计算机登录状态 0 未登录， 1 登录中, 2登录状态同当前
+     * 计算机登录状态，在线信息没值的情况下，查看计算机登录状态 0 未登录， 1 登录中, 2登录状态同当前。
      * minimum: 0
      * maximum: 255
      * @return onlineStatus
@@ -159,7 +159,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * cpu使用率信息
+     * cpu使用率信息。
      * @return cpuInfo
      */
     public List<Datapoints> getCpuInfo() {
@@ -192,7 +192,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 内存使用率信息
+     * 内存使用率信息。
      * @return memoryInfo
      */
     public List<Datapoints> getMemoryInfo() {
@@ -225,7 +225,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘使用率
+     * 磁盘使用率。
      * @return diskUtilInband
      */
     public List<Datapoints> getDiskUtilInband() {
@@ -258,7 +258,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘读带宽
+     * 磁盘读带宽。
      * @return diskReadBytesRate
      */
     public List<Datapoints> getDiskReadBytesRate() {
@@ -291,7 +291,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘写带宽
+     * 磁盘写带宽。
      * @return diskWriteBytesRate
      */
     public List<Datapoints> getDiskWriteBytesRate() {
@@ -325,7 +325,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘读IOPS
+     * 磁盘读IOPS。
      * @return diskReadRequestsRate
      */
     public List<Datapoints> getDiskReadRequestsRate() {
@@ -359,7 +359,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘写IOPS
+     * 磁盘写IOPS。
      * @return diskWriteRequestsRate
      */
     public List<Datapoints> getDiskWriteRequestsRate() {
@@ -395,7 +395,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 带内网络流入速率
+     * 带内网络流入速率。
      * @return networkIncomingBytesRateInband
      */
     public List<Datapoints> getNetworkIncomingBytesRateInband() {
@@ -431,7 +431,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 带内网络流出速率
+     * 带内网络流出速率。
      * @return networkOutgoingBytesRateInband
      */
     public List<Datapoints> getNetworkOutgoingBytesRateInband() {
@@ -467,7 +467,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 带外网络流入速率
+     * 带外网络流入速率。
      * @return networkIncomingBytesAggregateRate
      */
     public List<Datapoints> getNetworkIncomingBytesAggregateRate() {
@@ -503,7 +503,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 带外网络流出速率
+     * 带外网络流出速率。
      * @return networkOutgoingBytesAggregateRate
      */
     public List<Datapoints> getNetworkOutgoingBytesAggregateRate() {
@@ -537,7 +537,7 @@ public class ShowDesktopMonitorDataResponse extends SdkResponse {
     }
 
     /**
-     * 网络连接数
+     * 网络连接数。
      * @return networkVmConnections
      */
     public List<Datapoints> getNetworkVmConnections() {

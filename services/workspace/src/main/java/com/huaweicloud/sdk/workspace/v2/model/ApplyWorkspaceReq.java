@@ -14,94 +14,14 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 申请开通云办公服务请求
+ * 申请开通云办公服务请求。
  */
 public class ApplyWorkspaceReq {
-
-    /**
-     * 主认证方式。 - KERBEROS：KERBEROS。 - KERBEROS_THIRD_SSO：第三方登录认证。
-     */
-    public static final class AuthTypeEnum {
-
-        /**
-         * Enum KERBEROS for value: "KERBEROS"
-         */
-        public static final AuthTypeEnum KERBEROS = new AuthTypeEnum("KERBEROS");
-
-        /**
-         * Enum KERBEROS_THIRD_SSO for value: "KERBEROS_THIRD_SSO"
-         */
-        public static final AuthTypeEnum KERBEROS_THIRD_SSO = new AuthTypeEnum("KERBEROS_THIRD_SSO");
-
-        private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AuthTypeEnum> createStaticFields() {
-            Map<String, AuthTypeEnum> map = new HashMap<>();
-            map.put("KERBEROS", KERBEROS);
-            map.put("KERBEROS_THIRD_SSO", KERBEROS_THIRD_SSO);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AuthTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AuthTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
-        }
-
-        public static AuthTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AuthTypeEnum) {
-                return this.value.equals(((AuthTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auth_type")
-
-    private AuthTypeEnum authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_domains")
 
     private AdDomain adDomains;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "third_gateway_info")
-
-    private ThirdGatewayConfigInfo thirdGatewayInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_id")
@@ -215,51 +135,9 @@ public class ApplyWorkspaceReq {
     private String dedicatedSubnets;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "availability_zone")
-
-    private String availabilityZone;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publicip_type")
-
-    private String publicipType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "assist_auth_config")
-
-    private AssistAuthMethodConfigRequest assistAuthConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "site_configs")
-
-    private List<SiteConfigsRequest> siteConfigs = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_send_email")
 
     private Boolean isSendEmail;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
-
-    public ApplyWorkspaceReq withAuthType(AuthTypeEnum authType) {
-        this.authType = authType;
-        return this;
-    }
-
-    /**
-     * 主认证方式。 - KERBEROS：KERBEROS。 - KERBEROS_THIRD_SSO：第三方登录认证。
-     * @return authType
-     */
-    public AuthTypeEnum getAuthType() {
-        return authType;
-    }
-
-    public void setAuthType(AuthTypeEnum authType) {
-        this.authType = authType;
-    }
 
     public ApplyWorkspaceReq withAdDomains(AdDomain adDomains) {
         this.adDomains = adDomains;
@@ -285,32 +163,6 @@ public class ApplyWorkspaceReq {
 
     public void setAdDomains(AdDomain adDomains) {
         this.adDomains = adDomains;
-    }
-
-    public ApplyWorkspaceReq withThirdGatewayInfo(ThirdGatewayConfigInfo thirdGatewayInfo) {
-        this.thirdGatewayInfo = thirdGatewayInfo;
-        return this;
-    }
-
-    public ApplyWorkspaceReq withThirdGatewayInfo(Consumer<ThirdGatewayConfigInfo> thirdGatewayInfoSetter) {
-        if (this.thirdGatewayInfo == null) {
-            this.thirdGatewayInfo = new ThirdGatewayConfigInfo();
-            thirdGatewayInfoSetter.accept(this.thirdGatewayInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get thirdGatewayInfo
-     * @return thirdGatewayInfo
-     */
-    public ThirdGatewayConfigInfo getThirdGatewayInfo() {
-        return thirdGatewayInfo;
-    }
-
-    public void setThirdGatewayInfo(ThirdGatewayConfigInfo thirdGatewayInfo) {
-        this.thirdGatewayInfo = thirdGatewayInfo;
     }
 
     public ApplyWorkspaceReq withEnterpriseId(String enterpriseId) {
@@ -459,99 +311,6 @@ public class ApplyWorkspaceReq {
         this.dedicatedSubnets = dedicatedSubnets;
     }
 
-    public ApplyWorkspaceReq withAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
-        return this;
-    }
-
-    /**
-     * 开通服务资源使用的可用分区。
-     * @return availabilityZone
-     */
-    public String getAvailabilityZone() {
-        return availabilityZone;
-    }
-
-    public void setAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
-    }
-
-    public ApplyWorkspaceReq withPublicipType(String publicipType) {
-        this.publicipType = publicipType;
-        return this;
-    }
-
-    /**
-     * 外部网络。
-     * @return publicipType
-     */
-    public String getPublicipType() {
-        return publicipType;
-    }
-
-    public void setPublicipType(String publicipType) {
-        this.publicipType = publicipType;
-    }
-
-    public ApplyWorkspaceReq withAssistAuthConfig(AssistAuthMethodConfigRequest assistAuthConfig) {
-        this.assistAuthConfig = assistAuthConfig;
-        return this;
-    }
-
-    public ApplyWorkspaceReq withAssistAuthConfig(Consumer<AssistAuthMethodConfigRequest> assistAuthConfigSetter) {
-        if (this.assistAuthConfig == null) {
-            this.assistAuthConfig = new AssistAuthMethodConfigRequest();
-            assistAuthConfigSetter.accept(this.assistAuthConfig);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get assistAuthConfig
-     * @return assistAuthConfig
-     */
-    public AssistAuthMethodConfigRequest getAssistAuthConfig() {
-        return assistAuthConfig;
-    }
-
-    public void setAssistAuthConfig(AssistAuthMethodConfigRequest assistAuthConfig) {
-        this.assistAuthConfig = assistAuthConfig;
-    }
-
-    public ApplyWorkspaceReq withSiteConfigs(List<SiteConfigsRequest> siteConfigs) {
-        this.siteConfigs = siteConfigs;
-        return this;
-    }
-
-    public ApplyWorkspaceReq addSiteConfigsItem(SiteConfigsRequest siteConfigsItem) {
-        if (this.siteConfigs == null) {
-            this.siteConfigs = new ArrayList<>();
-        }
-        this.siteConfigs.add(siteConfigsItem);
-        return this;
-    }
-
-    public ApplyWorkspaceReq withSiteConfigs(Consumer<List<SiteConfigsRequest>> siteConfigsSetter) {
-        if (this.siteConfigs == null) {
-            this.siteConfigs = new ArrayList<>();
-        }
-        siteConfigsSetter.accept(this.siteConfigs);
-        return this;
-    }
-
-    /**
-     * 边缘开户信息
-     * @return siteConfigs
-     */
-    public List<SiteConfigsRequest> getSiteConfigs() {
-        return siteConfigs;
-    }
-
-    public void setSiteConfigs(List<SiteConfigsRequest> siteConfigs) {
-        this.siteConfigs = siteConfigs;
-    }
-
     public ApplyWorkspaceReq withIsSendEmail(Boolean isSendEmail) {
         this.isSendEmail = isSendEmail;
         return this;
@@ -569,23 +328,6 @@ public class ApplyWorkspaceReq {
         this.isSendEmail = isSendEmail;
     }
 
-    public ApplyWorkspaceReq withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 企业项目ID，默认\"0\"
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -595,26 +337,18 @@ public class ApplyWorkspaceReq {
             return false;
         }
         ApplyWorkspaceReq that = (ApplyWorkspaceReq) obj;
-        return Objects.equals(this.authType, that.authType) && Objects.equals(this.adDomains, that.adDomains)
-            && Objects.equals(this.thirdGatewayInfo, that.thirdGatewayInfo)
-            && Objects.equals(this.enterpriseId, that.enterpriseId) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.subnetIds, that.subnetIds)
+        return Objects.equals(this.adDomains, that.adDomains) && Objects.equals(this.enterpriseId, that.enterpriseId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetIds, that.subnetIds)
             && Objects.equals(this.manageSubnetCidr, that.manageSubnetCidr)
             && Objects.equals(this.accessMode, that.accessMode)
             && Objects.equals(this.applySharedVpcDedicatedParam, that.applySharedVpcDedicatedParam)
             && Objects.equals(this.dedicatedSubnets, that.dedicatedSubnets)
-            && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.publicipType, that.publicipType)
-            && Objects.equals(this.assistAuthConfig, that.assistAuthConfig)
-            && Objects.equals(this.siteConfigs, that.siteConfigs) && Objects.equals(this.isSendEmail, that.isSendEmail)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.isSendEmail, that.isSendEmail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authType,
-            adDomains,
-            thirdGatewayInfo,
+        return Objects.hash(adDomains,
             enterpriseId,
             vpcId,
             subnetIds,
@@ -622,21 +356,14 @@ public class ApplyWorkspaceReq {
             accessMode,
             applySharedVpcDedicatedParam,
             dedicatedSubnets,
-            availabilityZone,
-            publicipType,
-            assistAuthConfig,
-            siteConfigs,
-            isSendEmail,
-            enterpriseProjectId);
+            isSendEmail);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplyWorkspaceReq {\n");
-        sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    adDomains: ").append(toIndentedString(adDomains)).append("\n");
-        sb.append("    thirdGatewayInfo: ").append(toIndentedString(thirdGatewayInfo)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetIds: ").append(toIndentedString(subnetIds)).append("\n");
@@ -646,12 +373,7 @@ public class ApplyWorkspaceReq {
             .append(toIndentedString(applySharedVpcDedicatedParam))
             .append("\n");
         sb.append("    dedicatedSubnets: ").append(toIndentedString(dedicatedSubnets)).append("\n");
-        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-        sb.append("    publicipType: ").append(toIndentedString(publicipType)).append("\n");
-        sb.append("    assistAuthConfig: ").append(toIndentedString(assistAuthConfig)).append("\n");
-        sb.append("    siteConfigs: ").append(toIndentedString(siteConfigs)).append("\n");
         sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

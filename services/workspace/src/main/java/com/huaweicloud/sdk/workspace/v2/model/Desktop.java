@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Desktop
@@ -42,16 +39,6 @@ public class Desktop {
     @JsonProperty(value = "os_host_name")
 
     private String osHostName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nics")
-
-    private List<Nic> nics = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ou_name")
-
-    private String ouName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_name_prefix")
@@ -160,56 +147,6 @@ public class Desktop {
         this.osHostName = osHostName;
     }
 
-    public Desktop withNics(List<Nic> nics) {
-        this.nics = nics;
-        return this;
-    }
-
-    public Desktop addNicsItem(Nic nicsItem) {
-        if (this.nics == null) {
-            this.nics = new ArrayList<>();
-        }
-        this.nics.add(nicsItem);
-        return this;
-    }
-
-    public Desktop withNics(Consumer<List<Nic>> nicsSetter) {
-        if (this.nics == null) {
-            this.nics = new ArrayList<>();
-        }
-        nicsSetter.accept(this.nics);
-        return this;
-    }
-
-    /**
-     * 桌面对应的网卡信息，如果不指定则使用默认网卡。
-     * @return nics
-     */
-    public List<Nic> getNics() {
-        return nics;
-    }
-
-    public void setNics(List<Nic> nics) {
-        this.nics = nics;
-    }
-
-    public Desktop withOuName(String ouName) {
-        this.ouName = ouName;
-        return this;
-    }
-
-    /**
-     * 此参数仅在开通云桌面服务的domain_type为LOCAL_AD时有效。只允许输入汉字，半角字母，数字，空格，以及-_/$!@&*?.范围内的特殊字符，字符范围是1～255，OU名称不能包含分隔符(/),多级OU使用/隔开，最多支持五级，/前后不能有空格，例如3级的OU格式:ab/cd/ef。
-     * @return ouName
-     */
-    public String getOuName() {
-        return ouName;
-    }
-
-    public void setOuName(String ouName) {
-        this.ouName = ouName;
-    }
-
     public Desktop withDesktopNamePrefix(String desktopNamePrefix) {
         this.desktopNamePrefix = desktopNamePrefix;
         return this;
@@ -239,14 +176,12 @@ public class Desktop {
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.userEmail, that.userEmail)
             && Objects.equals(this.userPhone, that.userPhone) && Objects.equals(this.userGroup, that.userGroup)
             && Objects.equals(this.computerName, that.computerName) && Objects.equals(this.osHostName, that.osHostName)
-            && Objects.equals(this.nics, that.nics) && Objects.equals(this.ouName, that.ouName)
             && Objects.equals(this.desktopNamePrefix, that.desktopNamePrefix);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(userName, userEmail, userPhone, userGroup, computerName, osHostName, nics, ouName, desktopNamePrefix);
+        return Objects.hash(userName, userEmail, userPhone, userGroup, computerName, osHostName, desktopNamePrefix);
     }
 
     @Override
@@ -259,8 +194,6 @@ public class Desktop {
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    osHostName: ").append(toIndentedString(osHostName)).append("\n");
-        sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
-        sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    desktopNamePrefix: ").append(toIndentedString(desktopNamePrefix)).append("\n");
         sb.append("}");
         return sb.toString();

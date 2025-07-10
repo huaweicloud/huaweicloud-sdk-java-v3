@@ -30,7 +30,7 @@ public class ListDesktopUsageMetricResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class ListDesktopUsageMetricResponse extends SdkResponse {
     }
 
     /**
-     * 桌面统计指标
+     * 桌面统计指标。
      * @return items
      */
     public List<DesktopMetric> getItems() {

@@ -27,7 +27,7 @@ public class PoliciesCustom {
     }
 
     /**
-     * 自定义配置启用
+     * 自定义配置启用。
      * @return customConfiguration1Enable
      */
     public Boolean getCustomConfiguration1Enable() {

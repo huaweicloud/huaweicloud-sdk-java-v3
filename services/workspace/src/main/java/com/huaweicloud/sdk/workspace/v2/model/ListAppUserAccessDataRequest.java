@@ -51,7 +51,7 @@ public class ListAppUserAccessDataRequest {
     }
 
     /**
-     * 查询起始时间，格式为：UTC格式，例如\"2022-05-11T11:45:42Z\"
+     * 查询起始时间，格式为：UTC格式，例如\"2022-05-11T11:45:42Z。\"
      * @return startTime
      */
     public String getStartTime() {
@@ -68,7 +68,7 @@ public class ListAppUserAccessDataRequest {
     }
 
     /**
-     * 查询截至时间，格式为：UTC格式，例如\"2022-05-11T11:45:42Z\"
+     * 查询截至时间，格式为：UTC格式，例如\"2022-05-11T11:45:42Z。\"
      * @return endTime
      */
     public String getEndTime() {
@@ -85,7 +85,7 @@ public class ListAppUserAccessDataRequest {
     }
 
     /**
-     * 用户名(模糊匹配)
+     * 用户名(模糊匹配)。
      * @return username
      */
     public String getUsername() {
@@ -136,7 +136,7 @@ public class ListAppUserAccessDataRequest {
     }
 
     /**
-     * 查询的偏移量,默认值0
+     * 查询的偏移量,默认值0。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -155,7 +155,7 @@ public class ListAppUserAccessDataRequest {
     }
 
     /**
-     * limit范围[1-100],默认值10
+     * limit范围[1-100],默认值10。
      * minimum: 1
      * maximum: 100
      * @return limit

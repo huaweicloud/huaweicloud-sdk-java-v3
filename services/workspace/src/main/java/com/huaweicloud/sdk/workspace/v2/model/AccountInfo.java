@@ -36,7 +36,7 @@ public class AccountInfo {
     }
 
     /**
-     * 账户，账户的格式必须为:<i>账户(组)</i>的形式。
+     * 账户，账户的格式必须为:账户(组)的形式。
      * @return account
      */
     public String getAccount() {

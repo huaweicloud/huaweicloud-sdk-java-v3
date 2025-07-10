@@ -65,7 +65,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID
+     * 任务ID。
      * @return id
      */
     public String getId() {
@@ -82,7 +82,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务类型
+     * 任务类型。
      * @return jobType
      */
     public String getJobType() {
@@ -99,7 +99,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务开始时间
+     * 任务开始时间。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -116,7 +116,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务结束时间
+     * 任务结束时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -133,7 +133,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务状态
+     * 任务状态。
      * @return status
      */
     public String getStatus() {
@@ -150,7 +150,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务错误码
+     * 任务错误码。
      * @return jobErrorCode
      */
     public String getJobErrorCode() {
@@ -167,7 +167,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务失败原因
+     * 任务失败原因。
      * @return failReason
      */
     public String getFailReason() {
@@ -184,7 +184,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 子任务总数
+     * 子任务总数。
      * @return subJobsTotal
      */
     public Integer getSubJobsTotal() {
@@ -217,7 +217,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * 子任务列表
+     * 子任务列表。
      * @return subJobs
      */
     public List<JobDetailInfo> getSubJobs() {

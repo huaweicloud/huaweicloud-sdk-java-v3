@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 券的退订金额（降配存在）
+ * 券的退订金额（降配存在）。
  */
 public class CouponUnsubscribeResult {
 
@@ -36,7 +36,7 @@ public class CouponUnsubscribeResult {
     }
 
     /**
-     * 券ID
+     * 券ID。
      * @return couponId
      */
     public String getCouponId() {
@@ -53,7 +53,7 @@ public class CouponUnsubscribeResult {
     }
 
     /**
-     * 券类型 302：现金券 303：储值卡
+     * 券类型 302：现金券 303：储值卡。
      * @return couponType
      */
     public String getCouponType() {
@@ -70,7 +70,7 @@ public class CouponUnsubscribeResult {
     }
 
     /**
-     * 券退的金额
+     * 券退的金额。
      * @return amount
      */
     public Double getAmount() {
@@ -87,7 +87,7 @@ public class CouponUnsubscribeResult {
     }
 
     /**
-     * 度量单位'
+     * 度量单位。'
      * @return measureId
      */
     public Integer getMeasureId() {

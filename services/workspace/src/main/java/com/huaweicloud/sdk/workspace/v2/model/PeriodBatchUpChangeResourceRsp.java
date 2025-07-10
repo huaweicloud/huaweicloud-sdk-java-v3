@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 桌面池升配变更询价响应体
+ * 桌面池升配变更询价响应体。
  */
 public class PeriodBatchUpChangeResourceRsp {
 
@@ -39,7 +39,7 @@ public class PeriodBatchUpChangeResourceRsp {
     }
 
     /**
-     * 币种，比如CNY
+     * 币种，比如CNY。
      * @return currency
      */
     public String getCurrency() {
@@ -56,7 +56,7 @@ public class PeriodBatchUpChangeResourceRsp {
     }
 
     /**
-     * 扩展参数
+     * 扩展参数。
      * @return extendParams
      */
     public String getExtendParams() {
@@ -120,7 +120,7 @@ public class PeriodBatchUpChangeResourceRsp {
     }
 
     /**
-     * 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果
+     * 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果。
      * @return optionalDiscountRatingResults
      */
     public List<OptionalDiscountRatingResult> getOptionalDiscountRatingResults() {

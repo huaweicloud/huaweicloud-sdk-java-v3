@@ -15,11 +15,6 @@ public class Nic {
 
     private String subnetId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip_address")
-
-    private String ipAddress;
-
     public Nic withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -37,23 +32,6 @@ public class Nic {
         this.subnetId = subnetId;
     }
 
-    public Nic withIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-        return this;
-    }
-
-    /**
-     * IP地址，不填或空字符串将自动分配。
-     * @return ipAddress
-     */
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +41,12 @@ public class Nic {
             return false;
         }
         Nic that = (Nic) obj;
-        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress);
+        return Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId, ipAddress);
+        return Objects.hash(subnetId);
     }
 
     @Override
@@ -76,7 +54,6 @@ public class Nic {
         StringBuilder sb = new StringBuilder();
         sb.append("class Nic {\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
-        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

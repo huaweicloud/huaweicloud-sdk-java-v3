@@ -46,7 +46,7 @@ public class ListAlarmsResponse extends SdkResponse {
     }
 
     /**
-     * alarmHistories列表
+     * alarmHistories列表。
      * @return alarmHistories
      */
     public List<AlarmHistoryItem> getAlarmHistories() {
@@ -63,7 +63,7 @@ public class ListAlarmsResponse extends SdkResponse {
     }
 
     /**
-     * 告警记录列表总数
+     * 告警记录列表总数。
      * @return count
      */
     public Integer getCount() {

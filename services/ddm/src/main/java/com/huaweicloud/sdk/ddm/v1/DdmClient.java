@@ -107,6 +107,8 @@ import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceParamResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateInstancePortRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateInstancePortResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceSecurityGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceSecurityGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateReadAndWriteStrategyRequest;
@@ -1622,6 +1624,35 @@ public class DdmClient {
     public SyncInvoker<UpdateInstanceParamRequest, UpdateInstanceParamResponse> updateInstanceParamInvoker(
         UpdateInstanceParamRequest request) {
         return new SyncInvoker<>(request, DdmMeta.updateInstanceParam, hcClient);
+    }
+
+    /**
+     * 修改实例端口
+     *
+     * 修改实例端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstancePortRequest 请求对象
+     * @return UpdateInstancePortResponse
+     */
+    public UpdateInstancePortResponse updateInstancePort(UpdateInstancePortRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.updateInstancePort);
+    }
+
+    /**
+     * 修改实例端口
+     *
+     * 修改实例端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstancePortRequest 请求对象
+     * @return SyncInvoker<UpdateInstancePortRequest, UpdateInstancePortResponse>
+     */
+    public SyncInvoker<UpdateInstancePortRequest, UpdateInstancePortResponse> updateInstancePortInvoker(
+        UpdateInstancePortRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.updateInstancePort, hcClient);
     }
 
     /**

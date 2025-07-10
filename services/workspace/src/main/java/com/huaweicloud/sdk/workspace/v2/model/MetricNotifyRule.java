@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 指标通知规则
+ * 指标通知规则。
  */
 public class MetricNotifyRule {
 
@@ -51,7 +51,7 @@ public class MetricNotifyRule {
     }
 
     /**
-     * 规则ID
+     * 规则ID。
      * @return ruleId
      */
     public String getRuleId() {
@@ -85,7 +85,7 @@ public class MetricNotifyRule {
     }
 
     /**
-     * 统计持续周期(天)
+     * 统计持续周期(天)。
      * @return threshold
      */
     public Integer getThreshold() {
@@ -136,7 +136,7 @@ public class MetricNotifyRule {
     }
 
     /**
-     * 启禁用规则 true:启用 false:禁用
+     * 启禁用规则 true:启用 false:禁用。
      * @return enable
      */
     public Boolean getEnable() {
@@ -153,7 +153,7 @@ public class MetricNotifyRule {
     }
 
     /**
-     * 通知对象;smn的主题urn
+     * 通知对象;smn的主题urn。
      * @return notifyObject
      */
     public String getNotifyObject() {

@@ -31,7 +31,7 @@ public class AdditionalInfo {
     }
 
     /**
-     * 该条告警记录对应的资源ID
+     * 该条告警记录对应的资源ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -48,7 +48,7 @@ public class AdditionalInfo {
     }
 
     /**
-     * 该条告警记录对应的资源名称
+     * 该条告警记录对应的资源名称。
      * @return resourceName
      */
     public String getResourceName() {
@@ -65,7 +65,7 @@ public class AdditionalInfo {
     }
 
     /**
-     * 该条告警记录对应的事件监控ID，资源所产生的事件
+     * 该条告警记录对应的事件监控ID，资源所产生的事件。
      * @return eventId
      */
     public String getEventId() {

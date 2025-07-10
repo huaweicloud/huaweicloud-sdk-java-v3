@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 磁盘
+ * 磁盘。
  */
 public class Volume {
 
@@ -19,11 +19,6 @@ public class Volume {
     @JsonProperty(value = "size")
 
     private Integer size;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
-
-    private String clusterId;
 
     public Volume withType(String type) {
         this.type = type;
@@ -61,23 +56,6 @@ public class Volume {
         this.size = size;
     }
 
-    public Volume withClusterId(String clusterId) {
-        this.clusterId = clusterId;
-        return this;
-    }
-
-    /**
-     * 云服务器系统盘对应的存储池的ID
-     * @return clusterId
-     */
-    public String getClusterId() {
-        return clusterId;
-    }
-
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,13 +65,12 @@ public class Volume {
             return false;
         }
         Volume that = (Volume) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.clusterId, that.clusterId);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, size, clusterId);
+        return Objects.hash(type, size);
     }
 
     @Override
@@ -102,7 +79,6 @@ public class Volume {
         sb.append("class Volume {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 单个站点的配额
+ * 单个站点的配额。
  */
 public class SiteQuotaNoLimit {
 
@@ -45,7 +45,7 @@ public class SiteQuotaNoLimit {
     }
 
     /**
-     * 配额资源列表
+     * 配额资源列表。
      * @return resources
      */
     public List<ResourceNoLimit> getResources() {
@@ -62,7 +62,7 @@ public class SiteQuotaNoLimit {
     }
 
     /**
-     * 站点ID
+     * 站点ID。
      * @return siteId
      */
     public String getSiteId() {

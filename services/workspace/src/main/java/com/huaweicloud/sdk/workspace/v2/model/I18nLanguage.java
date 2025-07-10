@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 国际命名
+ * 国际命名。
  */
 public class I18nLanguage {
 
@@ -26,7 +26,7 @@ public class I18nLanguage {
     }
 
     /**
-     * 语言
+     * 语言。
      * @return language
      */
     public String getLanguage() {
@@ -43,7 +43,7 @@ public class I18nLanguage {
     }
 
     /**
-     * 值
+     * 值。
      * @return value
      */
     public String getValue() {

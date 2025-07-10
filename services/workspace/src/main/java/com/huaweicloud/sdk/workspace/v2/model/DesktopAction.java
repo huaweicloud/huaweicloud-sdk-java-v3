@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 桌面开关机实体
+ * 桌面开关机实体。
  */
 public class DesktopAction {
 
@@ -46,7 +46,7 @@ public class DesktopAction {
     }
 
     /**
-     * 行为动作
+     * 行为动作。
      * @return action
      */
     public String getAction() {
@@ -63,7 +63,7 @@ public class DesktopAction {
     }
 
     /**
-     * 行为完成状态信息
+     * 行为完成状态信息。
      * @return message
      */
     public String getMessage() {
@@ -80,7 +80,7 @@ public class DesktopAction {
     }
 
     /**
-     * 开始时间
+     * 开始时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -97,7 +97,7 @@ public class DesktopAction {
     }
 
     /**
-     * 结束时间
+     * 结束时间。
      * @return finishTime
      */
     public String getFinishTime() {
@@ -114,7 +114,7 @@ public class DesktopAction {
     }
 
     /**
-     * 结果
+     * 结果。
      * @return result
      */
     public String getResult() {
@@ -131,7 +131,7 @@ public class DesktopAction {
     }
 
     /**
-     * 异常信息
+     * 异常信息。
      * @return traceback
      */
     public String getTraceback() {

@@ -37,7 +37,7 @@ public class CreateRemoteAssistanceResponse extends SdkResponse {
     }
 
     /**
-     * 协同空间ID
+     * 协同空间ID。
      * @return shareSpaceId
      */
     public String getShareSpaceId() {
@@ -71,7 +71,7 @@ public class CreateRemoteAssistanceResponse extends SdkResponse {
     }
 
     /**
-     * 桌面的desktopId
+     * 桌面的desktopId。
      * @return desktopId
      */
     public String getDesktopId() {

@@ -25,7 +25,7 @@ public class ShowUserAccessStagesResponse extends SdkResponse {
     private String username;
 
     /**
-     * 接入阶段 | APP - 应用 DESKTOP - 桌面
+     * 接入阶段 | APP - 应用 DESKTOP - 桌面。
      */
     public static final class BizTypeEnum {
 
@@ -110,7 +110,7 @@ public class ShowUserAccessStagesResponse extends SdkResponse {
     }
 
     /**
-     * 用户名
+     * 用户名。
      * @return username
      */
     public String getUsername() {
@@ -127,7 +127,7 @@ public class ShowUserAccessStagesResponse extends SdkResponse {
     }
 
     /**
-     * 接入阶段 | APP - 应用 DESKTOP - 桌面
+     * 接入阶段 | APP - 应用 DESKTOP - 桌面。
      * @return bizType
      */
     public BizTypeEnum getBizType() {
@@ -160,7 +160,7 @@ public class ShowUserAccessStagesResponse extends SdkResponse {
     }
 
     /**
-     * 接入各阶段详情
+     * 接入各阶段详情。
      * @return stages
      */
     public List<UserAccessStage> getStages() {

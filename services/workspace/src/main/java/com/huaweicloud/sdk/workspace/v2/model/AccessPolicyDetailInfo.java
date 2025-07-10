@@ -173,6 +173,16 @@ public class AccessPolicyDetailInfo {
     private List<IpInfo> ipList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_enable")
+
+    private Boolean isEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_block_all")
+
+    private Boolean isBlockAll;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_total_count")
 
     private Integer ipTotalCount;
@@ -193,7 +203,7 @@ public class AccessPolicyDetailInfo {
     }
 
     /**
-     * 策略名
+     * 策略名。
      * @return policyName
      */
     public String getPolicyName() {
@@ -271,6 +281,40 @@ public class AccessPolicyDetailInfo {
         this.ipList = ipList;
     }
 
+    public AccessPolicyDetailInfo withIsEnable(Boolean isEnable) {
+        this.isEnable = isEnable;
+        return this;
+    }
+
+    /**
+     * IP白名单是否生效。只能单独更新，此值的优先级最高，传此值只修改该策略是否生效。
+     * @return isEnable
+     */
+    public Boolean getIsEnable() {
+        return isEnable;
+    }
+
+    public void setIsEnable(Boolean isEnable) {
+        this.isEnable = isEnable;
+    }
+
+    public AccessPolicyDetailInfo withIsBlockAll(Boolean isBlockAll) {
+        this.isBlockAll = isBlockAll;
+        return this;
+    }
+
+    /**
+     * IP白名单是否禁止所有Ip接入。is_enable为false时，无法修改此值。此值也只能单独更新。
+     * @return isBlockAll
+     */
+    public Boolean getIsBlockAll() {
+        return isBlockAll;
+    }
+
+    public void setIsBlockAll(Boolean isBlockAll) {
+        this.isBlockAll = isBlockAll;
+    }
+
     public AccessPolicyDetailInfo withIpTotalCount(Integer ipTotalCount) {
         this.ipTotalCount = ipTotalCount;
         return this;
@@ -336,13 +380,22 @@ public class AccessPolicyDetailInfo {
         return Objects.equals(this.policyName, that.policyName)
             && Objects.equals(this.blacklistType, that.blacklistType)
             && Objects.equals(this.accessControlType, that.accessControlType)
-            && Objects.equals(this.ipList, that.ipList) && Objects.equals(this.ipTotalCount, that.ipTotalCount)
+            && Objects.equals(this.ipList, that.ipList) && Objects.equals(this.isEnable, that.isEnable)
+            && Objects.equals(this.isBlockAll, that.isBlockAll) && Objects.equals(this.ipTotalCount, that.ipTotalCount)
             && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyName, blacklistType, accessControlType, ipList, ipTotalCount, policyId, createTime);
+        return Objects.hash(policyName,
+            blacklistType,
+            accessControlType,
+            ipList,
+            isEnable,
+            isBlockAll,
+            ipTotalCount,
+            policyId,
+            createTime);
     }
 
     @Override
@@ -353,6 +406,8 @@ public class AccessPolicyDetailInfo {
         sb.append("    blacklistType: ").append(toIndentedString(blacklistType)).append("\n");
         sb.append("    accessControlType: ").append(toIndentedString(accessControlType)).append("\n");
         sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
+        sb.append("    isEnable: ").append(toIndentedString(isEnable)).append("\n");
+        sb.append("    isBlockAll: ").append(toIndentedString(isBlockAll)).append("\n");
         sb.append("    ipTotalCount: ").append(toIndentedString(ipTotalCount)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

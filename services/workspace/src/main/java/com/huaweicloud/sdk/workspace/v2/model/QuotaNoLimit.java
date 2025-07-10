@@ -40,7 +40,7 @@ public class QuotaNoLimit {
     }
 
     /**
-     * 配额资源列表
+     * 配额资源列表。
      * @return resources
      */
     public List<ResourceNoLimit> getResources() {

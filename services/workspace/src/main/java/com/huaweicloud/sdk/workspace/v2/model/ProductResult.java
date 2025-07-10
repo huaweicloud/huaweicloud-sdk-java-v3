@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * 产品计算结果
+ * 产品计算结果。
  */
 public class ProductResult {
 
@@ -102,7 +102,7 @@ public class ProductResult {
     }
 
     /**
-     * 对应请求体中的ID
+     * 对应请求体中的ID。
      * @return id
      */
     public String getId() {
@@ -119,7 +119,7 @@ public class ProductResult {
     }
 
     /**
-     * 产品ID
+     * 产品ID。
      * @return productId
      */
     public String getProductId() {
@@ -136,7 +136,7 @@ public class ProductResult {
     }
 
     /**
-     * 总额，即最终优惠后的金额(预留实例只包含预付部分)
+     * 总额，即最终优惠后的金额(预留实例只包含预付部分)。
      * @return amount
      */
     public BigDecimal getAmount() {
@@ -153,7 +153,7 @@ public class ProductResult {
     }
 
     /**
-     * 优惠额(预留实例只包含预付部分)
+     * 优惠额(预留实例只包含预付部分)。
      * @return discountAmount
      */
     public BigDecimal getDiscountAmount() {
@@ -170,7 +170,7 @@ public class ProductResult {
     }
 
     /**
-     * 原总额，即优惠前总额(预留实例只包含预付部分)
+     * 原总额，即优惠前总额(预留实例只包含预付部分)。
      * @return originalAmount
      */
     public BigDecimal getOriginalAmount() {
@@ -187,7 +187,7 @@ public class ProductResult {
     }
 
     /**
-     * 官网价（非所有接口有该字段）(预留实例只包含预付部分)
+     * 官网价（非所有接口有该字段）(预留实例只包含预付部分)。
      * @return officialWebsiteAmount
      */
     public BigDecimal getOfficialWebsiteAmount() {
@@ -204,7 +204,7 @@ public class ProductResult {
     }
 
     /**
-     * 官网价优惠额（非所有接口有该字段）(预留实例只包含预付部分)
+     * 官网价优惠额（非所有接口有该字段）(预留实例只包含预付部分)。
      * @return officialWebsiteDiscountAmount
      */
     public BigDecimal getOfficialWebsiteDiscountAmount() {
@@ -221,7 +221,7 @@ public class ProductResult {
     }
 
     /**
-     * 可选折扣优惠额(预留实例只包含预付部分)，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额（非所有接口有该字段）
+     * 可选折扣优惠额(预留实例只包含预付部分)，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额（非所有接口有该字段）。
      * @return optionalDiscountAmount
      */
     public BigDecimal getOptionalDiscountAmount() {
@@ -238,7 +238,7 @@ public class ProductResult {
     }
 
     /**
-     * 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)
+     * 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)。
      * @return perAmount
      */
     public BigDecimal getPerAmount() {
@@ -255,7 +255,7 @@ public class ProductResult {
     }
 
     /**
-     * 总分期金额的优惠额(perDiscountAmount = perOriginalAmount - perAmount)
+     * 总分期金额的优惠额(perDiscountAmount = perOriginalAmount - perAmount)。
      * @return perDiscountAmount
      */
     public BigDecimal getPerDiscountAmount() {
@@ -272,7 +272,7 @@ public class ProductResult {
     }
 
     /**
-     * 总分期金额原价
+     * 总分期金额原价。
      * @return perOriginalAmount
      */
     public BigDecimal getPerOriginalAmount() {
@@ -289,7 +289,7 @@ public class ProductResult {
     }
 
     /**
-     * 分期金额的官网价
+     * 分期金额的官网价。
      * @return perOfficialWebsiteAmount
      */
     public BigDecimal getPerOfficialWebsiteAmount() {
@@ -306,7 +306,7 @@ public class ProductResult {
     }
 
     /**
-     * 分期金额的官网价官网价优惠额，即：perOfficialWebsiteDiscountAmount =perOriginalAmount-perOfficialWebsiteAmount
+     * 分期金额的官网价官网价优惠额，即：perOfficialWebsiteDiscountAmount =perOriginalAmount-perOfficialWebsiteAmount。
      * @return perOfficialWebsiteDiscountAmount
      */
     public BigDecimal getPerOfficialWebsiteDiscountAmount() {
@@ -323,7 +323,7 @@ public class ProductResult {
     }
 
     /**
-     * 分期金额的可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额 perOptionalDiscountAmount= perOfficialWebsiteAmount- perAmount
+     * 分期金额的可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额 perOptionalDiscountAmount= perOfficialWebsiteAmount- perAmount。
      * @return perOptionalDiscountAmount
      */
     public BigDecimal getPerOptionalDiscountAmount() {
@@ -340,7 +340,7 @@ public class ProductResult {
     }
 
     /**
-     * 分期周期类型 2:月 4:小时
+     * 分期周期类型 2:月 4:小时。
      * @return perPeriodType
      */
     public Integer getPerPeriodType() {
@@ -357,7 +357,7 @@ public class ProductResult {
     }
 
     /**
-     * 度量单位
+     * 度量单位。
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -374,7 +374,7 @@ public class ProductResult {
     }
 
     /**
-     * 扩展参数
+     * 扩展参数。
      * @return extendParams
      */
     public String getExtendParams() {

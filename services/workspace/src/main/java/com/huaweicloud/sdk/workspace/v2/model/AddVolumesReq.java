@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class AddVolumesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -28,30 +23,13 @@ public class AddVolumesReq {
 
     private List<Volume> volumes = null;
 
-    public AddVolumesReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单ID，包周期桌面添加磁盘时使用。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
     public AddVolumesReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -104,21 +82,19 @@ public class AddVolumesReq {
             return false;
         }
         AddVolumesReq that = (AddVolumesReq) obj;
-        return Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.volumes, that.volumes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, enterpriseProjectId, volumes);
+        return Objects.hash(enterpriseProjectId, volumes);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddVolumesReq {\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
         sb.append("}");

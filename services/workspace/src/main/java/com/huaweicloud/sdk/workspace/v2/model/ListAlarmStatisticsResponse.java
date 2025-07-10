@@ -42,7 +42,7 @@ public class ListAlarmStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 紧急告警记录列表总数
+     * 紧急告警记录列表总数。
      * @return criticalCount
      */
     public Integer getCriticalCount() {
@@ -59,7 +59,7 @@ public class ListAlarmStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 重要告警记录列表总数
+     * 重要告警记录列表总数。
      * @return majorCount
      */
     public Integer getMajorCount() {
@@ -76,7 +76,7 @@ public class ListAlarmStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 次要告警记录列表总数
+     * 次要告警记录列表总数。
      * @return minorCount
      */
     public Integer getMinorCount() {
@@ -93,7 +93,7 @@ public class ListAlarmStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 提示告警记录列表总数
+     * 提示告警记录列表总数。
      * @return infoCount
      */
     public Integer getInfoCount() {
@@ -110,7 +110,7 @@ public class ListAlarmStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 告警记录列表总数
+     * 告警记录列表总数。
      * @return total
      */
     public Integer getTotal() {

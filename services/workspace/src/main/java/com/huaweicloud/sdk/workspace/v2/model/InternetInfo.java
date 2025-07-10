@@ -61,7 +61,7 @@ public class InternetInfo {
     }
 
     /**
-     * VPC名称
+     * VPC名称。
      * @return vpcName
      */
     public String getVpcName() {
@@ -78,7 +78,7 @@ public class InternetInfo {
     }
 
     /**
-     * 子网id
+     * 子网id。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -95,7 +95,7 @@ public class InternetInfo {
     }
 
     /**
-     * 子网名称
+     * 子网名称。
      * @return subnetName
      */
     public String getSubnetName() {
@@ -112,7 +112,7 @@ public class InternetInfo {
     }
 
     /**
-     * NAT id
+     * NAT id。
      * @return natId
      */
     public String getNatId() {
@@ -129,7 +129,7 @@ public class InternetInfo {
     }
 
     /**
-     * NAT名称
+     * NAT名称。
      * @return natName
      */
     public String getNatName() {
@@ -146,7 +146,7 @@ public class InternetInfo {
     }
 
     /**
-     * 弹性公网IP
+     * 弹性公网IP。
      * @return eip
      */
     public String getEip() {
@@ -163,7 +163,7 @@ public class InternetInfo {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -180,7 +180,7 @@ public class InternetInfo {
     }
 
     /**
-     * 状态
+     * 状态。
      * @return status
      */
     public String getStatus() {
@@ -197,7 +197,7 @@ public class InternetInfo {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

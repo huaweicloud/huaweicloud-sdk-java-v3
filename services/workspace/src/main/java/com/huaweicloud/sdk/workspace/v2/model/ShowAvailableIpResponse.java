@@ -22,7 +22,7 @@ public class ShowAvailableIpResponse extends SdkResponse {
     }
 
     /**
-     * 可用ip数
+     * 可用ip数。
      * @return availableIp
      */
     public Integer getAvailableIp() {

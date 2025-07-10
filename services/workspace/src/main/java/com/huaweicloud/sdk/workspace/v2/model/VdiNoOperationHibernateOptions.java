@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 不操作休眠选项
+ * 不操作休眠选项。
  */
 public class VdiNoOperationHibernateOptions {
 
@@ -22,6 +22,8 @@ public class VdiNoOperationHibernateOptions {
 
     /**
      * 策略组ID。
+     * minimum: 0
+     * maximum: 86400
      * @return noOperationHibernateMinutes
      */
     public Integer getNoOperationHibernateMinutes() {

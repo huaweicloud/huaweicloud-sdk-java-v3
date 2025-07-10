@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.waf.v1.model.BandwidthStatisticsTimelineItem;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CountItem;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleResponse;
@@ -112,6 +114,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListAntileakageRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntileakageRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAntitamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntitamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesRequest;
@@ -134,6 +138,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListInstanceTagsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIpGroupResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListNoticeConfigsRequest;
@@ -152,12 +158,18 @@ import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListTopDomainsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListTopDomainsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.MigrateCompositeHostsRequest;
@@ -188,6 +200,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowGeoipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowGeoipRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowHostStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowHostStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowIgnoreRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowInstanceRequest;
@@ -196,6 +210,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowIpGroupResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowLtsInfoConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowLtsInfoConfigResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowPolicyGeoipMapRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowPolicyGeoipMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPolicyResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostRequest;
@@ -344,6 +360,30 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangePrepaidCloudWafRequestBody.class),
             f -> f.withMarshaller(ChangePrepaidCloudWafRequest::getBody, ChangePrepaidCloudWafRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmUserBundleRequest, ConfirmUserBundleResponse> confirmUserBundle =
+        genForConfirmUserBundle();
+
+    private static HttpRequestDef<ConfirmUserBundleRequest, ConfirmUserBundleResponse> genForConfirmUserBundle() {
+        // basic
+        HttpRequestDef.Builder<ConfirmUserBundleRequest, ConfirmUserBundleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ConfirmUserBundleRequest.class, ConfirmUserBundleResponse.class)
+                .withName("ConfirmUserBundle")
+                .withUri("/v1/{project_id}/waf/bundle")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmUserBundleRequest::getEnterpriseProjectId,
+                ConfirmUserBundleRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1665,6 +1705,40 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAttackActionTypesRequest, ListAttackActionTypesResponse> listAttackActionTypes =
+        genForListAttackActionTypes();
+
+    private static HttpRequestDef<ListAttackActionTypesRequest, ListAttackActionTypesResponse> genForListAttackActionTypes() {
+        // basic
+        HttpRequestDef.Builder<ListAttackActionTypesRequest, ListAttackActionTypesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAttackActionTypesRequest.class, ListAttackActionTypesResponse.class)
+            .withName("ListAttackActionTypes")
+            .withUri("/v1/{project_id}/waf/overviews/attack/action-types")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackActionTypesRequest::getEnterpriseProjectId,
+                ListAttackActionTypesRequest::setEnterpriseProjectId));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAttackActionTypesRequest::getFrom, ListAttackActionTypesRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAttackActionTypesRequest::getTo, ListAttackActionTypesRequest::setTo));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> listBandwidthTimeline =
         genForListBandwidthTimeline();
 
@@ -2167,6 +2241,30 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
+        genForListInstanceTags();
+
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForListInstanceTags() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
+                .withName("ListInstanceTags")
+                .withUri("/v1/{project_id}/waf/waf-instance/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTagsRequest::getEnterpriseProjectId,
+                ListInstanceTagsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListIpGroupRequest, ListIpGroupResponse> listIpGroup = genForListIpGroup();
 
     private static HttpRequestDef<ListIpGroupRequest, ListIpGroupResponse> genForListIpGroup() {
@@ -2572,6 +2670,63 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityReportSubscriptionsRequest, ListSecurityReportSubscriptionsResponse> listSecurityReportSubscriptions =
+        genForListSecurityReportSubscriptions();
+
+    private static HttpRequestDef<ListSecurityReportSubscriptionsRequest, ListSecurityReportSubscriptionsResponse> genForListSecurityReportSubscriptions() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityReportSubscriptionsRequest, ListSecurityReportSubscriptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityReportSubscriptionsRequest.class,
+                    ListSecurityReportSubscriptionsResponse.class)
+                .withName("ListSecurityReportSubscriptions")
+                .withUri("/v1/{project_id}/waf/security-report/subscriptions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportSubscriptionsRequest::getEnterpriseProjectId,
+                ListSecurityReportSubscriptionsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("report_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportSubscriptionsRequest::getReportName,
+                ListSecurityReportSubscriptionsRequest::setReportName));
+        builder.<String>withRequestField("report_category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportSubscriptionsRequest::getReportCategory,
+                ListSecurityReportSubscriptionsRequest::setReportCategory));
+        builder.<String>withRequestField("report_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportSubscriptionsRequest::getReportStatus,
+                ListSecurityReportSubscriptionsRequest::setReportStatus));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityReportSubscriptionsRequest::getOffset,
+                ListSecurityReportSubscriptionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityReportSubscriptionsRequest::getLimit,
+                ListSecurityReportSubscriptionsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> listStatistics =
         genForListStatistics();
 
@@ -2676,6 +2831,50 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTopDomainsRequest, ListTopDomainsResponse> listTopDomains =
+        genForListTopDomains();
+
+    private static HttpRequestDef<ListTopDomainsRequest, ListTopDomainsResponse> genForListTopDomains() {
+        // basic
+        HttpRequestDef.Builder<ListTopDomainsRequest, ListTopDomainsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopDomainsRequest.class, ListTopDomainsResponse.class)
+                .withName("ListTopDomains")
+                .withUri("/v1/{project_id}/waf/overviews/attack/top-domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopDomainsRequest::getEnterpriseProjectId,
+                ListTopDomainsRequest::setEnterpriseProjectId));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopDomainsRequest::getFrom, ListTopDomainsRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopDomainsRequest::getTo, ListTopDomainsRequest::setTo));
+        builder.<Integer>withRequestField("top",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopDomainsRequest::getTop, ListTopDomainsRequest::setTop));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTopDomainsRequest::getHosts, ListTopDomainsRequest::setHosts));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListValueListRequest, ListValueListResponse> listValueList =
         genForListValueList();
 
@@ -2703,6 +2902,105 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListValueListRequest::getName, ListValueListRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWebBasicProtectionRulesRequest, ListWebBasicProtectionRulesResponse> listWebBasicProtectionRules =
+        genForListWebBasicProtectionRules();
+
+    private static HttpRequestDef<ListWebBasicProtectionRulesRequest, ListWebBasicProtectionRulesResponse> genForListWebBasicProtectionRules() {
+        // basic
+        HttpRequestDef.Builder<ListWebBasicProtectionRulesRequest, ListWebBasicProtectionRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListWebBasicProtectionRulesRequest.class,
+                    ListWebBasicProtectionRulesResponse.class)
+                .withName("ListWebBasicProtectionRules")
+                .withUri("/v1/{project_id}/waf/policy/basic-protection/default-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getEnterpriseProjectId,
+                ListWebBasicProtectionRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getOffset,
+                ListWebBasicProtectionRulesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getLimit,
+                ListWebBasicProtectionRulesRequest::setLimit));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getFrom,
+                ListWebBasicProtectionRulesRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getTo,
+                ListWebBasicProtectionRulesRequest::setTo));
+        builder.<ListWebBasicProtectionRulesRequest.LevelEnum>withRequestField("level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWebBasicProtectionRulesRequest.LevelEnum.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getLevel,
+                ListWebBasicProtectionRulesRequest::setLevel));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getId,
+                ListWebBasicProtectionRulesRequest::setId));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getDescription,
+                ListWebBasicProtectionRulesRequest::setDescription));
+        builder.<String>withRequestField("cve_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getCveNumber,
+                ListWebBasicProtectionRulesRequest::setCveNumber));
+        builder.<ListWebBasicProtectionRulesRequest.RiskLevelEnum>withRequestField("risk_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWebBasicProtectionRulesRequest.RiskLevelEnum.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getRiskLevel,
+                ListWebBasicProtectionRulesRequest::setRiskLevel));
+        builder.<ListWebBasicProtectionRulesRequest.ProtectionTypeNamesEnum>withRequestField("protection_type_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWebBasicProtectionRulesRequest.ProtectionTypeNamesEnum.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getProtectionTypeNames,
+                ListWebBasicProtectionRulesRequest::setProtectionTypeNames));
+        builder.<String>withRequestField("application_type_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getApplicationTypeNames,
+                ListWebBasicProtectionRulesRequest::setApplicationTypeNames));
+        builder.<ListWebBasicProtectionRulesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWebBasicProtectionRulesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getXLanguage,
+                ListWebBasicProtectionRulesRequest::setXLanguage));
 
         // response
 
@@ -3160,6 +3458,29 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowHostStatusRequest, ShowHostStatusResponse> showHostStatus =
+        genForShowHostStatus();
+
+    private static HttpRequestDef<ShowHostStatusRequest, ShowHostStatusResponse> genForShowHostStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowHostStatusRequest, ShowHostStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHostStatusRequest.class, ShowHostStatusResponse.class)
+                .withName("ShowHostStatus")
+                .withUri("/v1/{project_id}/waf/instance/{host_id}/host-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHostStatusRequest::getHostId, ShowHostStatusRequest::setHostId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowIgnoreRuleRequest, ShowIgnoreRuleResponse> showIgnoreRule =
         genForShowIgnoreRule();
 
@@ -3296,6 +3617,29 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPolicyRequest::getEnterpriseProjectId,
                 ShowPolicyRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPolicyGeoipMapRequest, ShowPolicyGeoipMapResponse> showPolicyGeoipMap =
+        genForShowPolicyGeoipMap();
+
+    private static HttpRequestDef<ShowPolicyGeoipMapRequest, ShowPolicyGeoipMapResponse> genForShowPolicyGeoipMap() {
+        // basic
+        HttpRequestDef.Builder<ShowPolicyGeoipMapRequest, ShowPolicyGeoipMapResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPolicyGeoipMapRequest.class, ShowPolicyGeoipMapResponse.class)
+                .withName("ShowPolicyGeoipMap")
+                .withUri("/v1/{project_id}/waf/tag/geoip/map")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowPolicyGeoipMapRequest.LangEnum>withRequestField("lang",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowPolicyGeoipMapRequest.LangEnum.class),
+            f -> f.withMarshaller(ShowPolicyGeoipMapRequest::getLang, ShowPolicyGeoipMapRequest::setLang));
 
         // response
 

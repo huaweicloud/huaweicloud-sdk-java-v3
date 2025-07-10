@@ -87,7 +87,7 @@ public class DeleteDesktopRequest {
     }
 
     /**
-     * 是否强制删除
+     * 是否强制删除。
      * @return isForceDelete
      */
     public Boolean getIsForceDelete() {

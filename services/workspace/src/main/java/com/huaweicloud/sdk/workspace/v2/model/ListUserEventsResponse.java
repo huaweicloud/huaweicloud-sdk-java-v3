@@ -30,7 +30,7 @@ public class ListUserEventsResponse extends SdkResponse {
     }
 
     /**
-     * 事件总数
+     * 事件总数。
      * @return count
      */
     public Integer getCount() {
@@ -63,7 +63,7 @@ public class ListUserEventsResponse extends SdkResponse {
     }
 
     /**
-     * 用户事件列表
+     * 用户事件列表。
      * @return items
      */
     public List<UserEventRsp> getItems() {

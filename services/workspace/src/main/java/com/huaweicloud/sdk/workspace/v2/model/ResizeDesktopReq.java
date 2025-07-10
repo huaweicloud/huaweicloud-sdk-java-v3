@@ -24,29 +24,14 @@ public class ResizeDesktopReq {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flavor_id")
-
-    private String flavorId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dedicated_host_id")
+    @JsonProperty(value = "auto_placement")
 
-    private String dedicatedHostId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend_param")
-
-    private ResizeDesktopExtendParam extendParam;
+    private String autoPlacement;
 
     public ResizeDesktopReq withDesktops(List<ResizeDesktopData> desktops) {
         this.desktops = desktops;
@@ -98,23 +83,6 @@ public class ResizeDesktopReq {
         this.productId = productId;
     }
 
-    public ResizeDesktopReq withFlavorId(String flavorId) {
-        this.flavorId = flavorId;
-        return this;
-    }
-
-    /**
-     * 套餐flavorId。批量变更时，则变更为同一规格的虚拟机。
-     * @return flavorId
-     */
-    public String getFlavorId() {
-        return flavorId;
-    }
-
-    public void setFlavorId(String flavorId) {
-        this.flavorId = flavorId;
-    }
-
     public ResizeDesktopReq withMode(String mode) {
         this.mode = mode;
         return this;
@@ -132,64 +100,21 @@ public class ResizeDesktopReq {
         this.mode = mode;
     }
 
-    public ResizeDesktopReq withDedicatedHostId(String dedicatedHostId) {
-        this.dedicatedHostId = dedicatedHostId;
+    public ResizeDesktopReq withAutoPlacement(String autoPlacement) {
+        this.autoPlacement = autoPlacement;
         return this;
     }
 
     /**
-     * 专属主机ID。
-     * @return dedicatedHostId
+     * 是否自动放置，专属主机桌面变更规格时使用，默认是off关闭自动放置，on表示开启自动放置。
+     * @return autoPlacement
      */
-    public String getDedicatedHostId() {
-        return dedicatedHostId;
+    public String getAutoPlacement() {
+        return autoPlacement;
     }
 
-    public void setDedicatedHostId(String dedicatedHostId) {
-        this.dedicatedHostId = dedicatedHostId;
-    }
-
-    public ResizeDesktopReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单ID，包周期变更规格时使用。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public ResizeDesktopReq withExtendParam(ResizeDesktopExtendParam extendParam) {
-        this.extendParam = extendParam;
-        return this;
-    }
-
-    public ResizeDesktopReq withExtendParam(Consumer<ResizeDesktopExtendParam> extendParamSetter) {
-        if (this.extendParam == null) {
-            this.extendParam = new ResizeDesktopExtendParam();
-            extendParamSetter.accept(this.extendParam);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get extendParam
-     * @return extendParam
-     */
-    public ResizeDesktopExtendParam getExtendParam() {
-        return extendParam;
-    }
-
-    public void setExtendParam(ResizeDesktopExtendParam extendParam) {
-        this.extendParam = extendParam;
+    public void setAutoPlacement(String autoPlacement) {
+        this.autoPlacement = autoPlacement;
     }
 
     @Override
@@ -202,14 +127,12 @@ public class ResizeDesktopReq {
         }
         ResizeDesktopReq that = (ResizeDesktopReq) obj;
         return Objects.equals(this.desktops, that.desktops) && Objects.equals(this.productId, that.productId)
-            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.extendParam, that.extendParam);
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.autoPlacement, that.autoPlacement);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktops, productId, flavorId, mode, dedicatedHostId, orderId, extendParam);
+        return Objects.hash(desktops, productId, mode, autoPlacement);
     }
 
     @Override
@@ -218,11 +141,8 @@ public class ResizeDesktopReq {
         sb.append("class ResizeDesktopReq {\n");
         sb.append("    desktops: ").append(toIndentedString(desktops)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-        sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
+        sb.append("    autoPlacement: ").append(toIndentedString(autoPlacement)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,7 +22,7 @@ public class UpdateEnterpriseIdResponse extends SdkResponse {
     }
 
     /**
-     * 企业ID
+     * 企业ID。
      * @return enterpriseId
      */
     public String getEnterpriseId() {

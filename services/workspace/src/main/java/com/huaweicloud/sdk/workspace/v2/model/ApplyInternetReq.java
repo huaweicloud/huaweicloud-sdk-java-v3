@@ -66,7 +66,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * 公网NAT网关的规格，1：小型，2：中型，3：大型，4：超大型
+     * 公网NAT网关的规格，1：小型，2：中型，3：大型，4：超大型。
      * @return natSpec
      */
     public String getNatSpec() {
@@ -83,7 +83,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * traffic（按流量计费），bandwidth（按带宽计费）
+     * traffic（按流量计费），bandwidth（按带宽计费）。
      * @return eipChargeMode
      */
     public String getEipChargeMode() {
@@ -100,7 +100,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * 带宽大小
+     * 带宽大小。
      * minimum: 1
      * maximum: 2000
      * @return bandwidthSize
@@ -119,7 +119,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP），默认值：5_bgp
+     * EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP），默认值：5_bgp。
      * @return eipType
      */
     public String getEipType() {
@@ -136,7 +136,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * vpc的id
+     * vpc的id。
      * @return vpcId
      */
     public String getVpcId() {
@@ -153,7 +153,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * 子网的id
+     * 子网的id。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -170,7 +170,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -187,7 +187,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * nat的id，有传则使用该NAT，否则新建
+     * nat的id，有传则使用该NAT，否则新建。
      * @return natId
      */
     public String getNatId() {
@@ -204,7 +204,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * nat名称，默认值：nat-workspace
+     * nat名称，默认值：nat-workspace。
      * @return natName
      */
     public String getNatName() {
@@ -221,7 +221,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * eip名称，默认值：eip-workspace
+     * eip名称，默认值：eip-workspace。
      * @return eipName
      */
     public String getEipName() {

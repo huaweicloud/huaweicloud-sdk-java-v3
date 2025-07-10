@@ -72,7 +72,7 @@ public class VpcConfigInfo {
     }
 
     /**
-     * VPC ID
+     * VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -105,7 +105,7 @@ public class VpcConfigInfo {
     }
 
     /**
-     * 子网ID列表
+     * 子网ID列表。
      * @return subnetIds
      */
     public List<String> getSubnetIds() {
@@ -122,7 +122,7 @@ public class VpcConfigInfo {
     }
 
     /**
-     * 是否为默认接入VPC
+     * 是否为默认接入VPC。
      * @return defaultAccessVpc
      */
     public Boolean getDefaultAccessVpc() {

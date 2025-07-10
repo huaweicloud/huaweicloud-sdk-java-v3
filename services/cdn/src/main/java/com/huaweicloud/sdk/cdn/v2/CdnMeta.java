@@ -6,6 +6,9 @@ import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusRequest;
+import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusResponse;
+import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRulesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainResponse;
@@ -13,11 +16,21 @@ import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRuleNewRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRuleNewResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRuleRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateShareCacheGroupsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateShareCacheGroupsRequstBody;
+import com.huaweicloud.sdk.cdn.v2.model.CreateShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteShareCacheGroupsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteTagsRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.DisableDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DisableDomainResponse;
@@ -27,10 +40,15 @@ import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.EnableDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.EnableDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.FullUpdateRulesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyDomainConfigRequestBody;
@@ -78,9 +96,17 @@ import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateFullRuleRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateFullRuleResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessBody;
 import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateRuleNewRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateRuleNewResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateRuleRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsRequstBody;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequest;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerResponse;
@@ -146,6 +172,35 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(BatchDeleteTagsResponse::getXRequestId, BatchDeleteTagsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateRuleStatusRequest, BatchUpdateRuleStatusResponse> batchUpdateRuleStatus =
+        genForBatchUpdateRuleStatus();
+
+    private static HttpRequestDef<BatchUpdateRuleStatusRequest, BatchUpdateRuleStatusResponse> genForBatchUpdateRuleStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateRuleStatusRequest, BatchUpdateRuleStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchUpdateRuleStatusRequest.class, BatchUpdateRuleStatusResponse.class)
+            .withName("BatchUpdateRuleStatus")
+            .withUri("/v1.0/cdn/configuration/domains/{domain_name}/rules/batch-update")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateRuleStatusRequest::getDomainName,
+                BatchUpdateRuleStatusRequest::setDomainName));
+        builder.<BatchUpdateRulesRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateRulesRequest.class),
+            f -> f.withMarshaller(BatchUpdateRuleStatusRequest::getBody, BatchUpdateRuleStatusRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -246,6 +301,57 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateRuleNewRequest, CreateRuleNewResponse> createRuleNew =
+        genForCreateRuleNew();
+
+    private static HttpRequestDef<CreateRuleNewRequest, CreateRuleNewResponse> genForCreateRuleNew() {
+        // basic
+        HttpRequestDef.Builder<CreateRuleNewRequest, CreateRuleNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRuleNewRequest.class, CreateRuleNewResponse.class)
+                .withName("CreateRuleNew")
+                .withUri("/v1.0/cdn/configuration/domains/{domain_name}/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRuleNewRequest::getDomainName, CreateRuleNewRequest::setDomainName));
+        builder.<CreateRuleRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRuleRequest.class),
+            f -> f.withMarshaller(CreateRuleNewRequest::getBody, CreateRuleNewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateShareCacheGroupsRequest, CreateShareCacheGroupsResponse> createShareCacheGroups =
+        genForCreateShareCacheGroups();
+
+    private static HttpRequestDef<CreateShareCacheGroupsRequest, CreateShareCacheGroupsResponse> genForCreateShareCacheGroups() {
+        // basic
+        HttpRequestDef.Builder<CreateShareCacheGroupsRequest, CreateShareCacheGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateShareCacheGroupsRequest.class, CreateShareCacheGroupsResponse.class)
+            .withName("CreateShareCacheGroups")
+            .withUri("/v1.0/cdn/configuration/share-cache-groups")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateShareCacheGroupsRequstBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateShareCacheGroupsRequstBody.class),
+            f -> f.withMarshaller(CreateShareCacheGroupsRequest::getBody, CreateShareCacheGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTagsRequest, CreateTagsResponse> createTags = genForCreateTags();
 
     private static HttpRequestDef<CreateTagsRequest, CreateTagsResponse> genForCreateTags() {
@@ -303,6 +409,57 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteDomainResponse::getXRequestId, DeleteDomainResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRuleNewRequest, DeleteRuleNewResponse> deleteRuleNew =
+        genForDeleteRuleNew();
+
+    private static HttpRequestDef<DeleteRuleNewRequest, DeleteRuleNewResponse> genForDeleteRuleNew() {
+        // basic
+        HttpRequestDef.Builder<DeleteRuleNewRequest, DeleteRuleNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleNewRequest.class, DeleteRuleNewResponse.class)
+                .withName("DeleteRuleNew")
+                .withUri("/v1.0/cdn/configuration/domains/{domain_name}/rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRuleNewRequest::getDomainName, DeleteRuleNewRequest::setDomainName));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRuleNewRequest::getRuleId, DeleteRuleNewRequest::setRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteShareCacheGroupsRequest, DeleteShareCacheGroupsResponse> deleteShareCacheGroups =
+        genForDeleteShareCacheGroups();
+
+    private static HttpRequestDef<DeleteShareCacheGroupsRequest, DeleteShareCacheGroupsResponse> genForDeleteShareCacheGroups() {
+        // basic
+        HttpRequestDef.Builder<DeleteShareCacheGroupsRequest, DeleteShareCacheGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteShareCacheGroupsRequest.class, DeleteShareCacheGroupsResponse.class)
+            .withName("DeleteShareCacheGroups")
+            .withUri("/v1.0/cdn/configuration/share-cache-groups/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteShareCacheGroupsRequest::getId, DeleteShareCacheGroupsRequest::setId));
+
+        // response
+
         return builder.build();
     }
 
@@ -645,6 +802,57 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListDomainsResponse::getXRequestId, ListDomainsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRuleDetailsRequest, ListRuleDetailsResponse> listRuleDetails =
+        genForListRuleDetails();
+
+    private static HttpRequestDef<ListRuleDetailsRequest, ListRuleDetailsResponse> genForListRuleDetails() {
+        // basic
+        HttpRequestDef.Builder<ListRuleDetailsRequest, ListRuleDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRuleDetailsRequest.class, ListRuleDetailsResponse.class)
+                .withName("ListRuleDetails")
+                .withUri("/v1.0/cdn/configuration/domains/{domain_name}/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRuleDetailsRequest::getDomainName, ListRuleDetailsRequest::setDomainName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListShareCacheGroupsRequest, ListShareCacheGroupsResponse> listShareCacheGroups =
+        genForListShareCacheGroups();
+
+    private static HttpRequestDef<ListShareCacheGroupsRequest, ListShareCacheGroupsResponse> genForListShareCacheGroups() {
+        // basic
+        HttpRequestDef.Builder<ListShareCacheGroupsRequest, ListShareCacheGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListShareCacheGroupsRequest.class, ListShareCacheGroupsResponse.class)
+            .withName("ListShareCacheGroups")
+            .withUri("/v1.0/cdn/configuration/share-cache-groups")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListShareCacheGroupsRequest::getLimit, ListShareCacheGroupsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListShareCacheGroupsRequest::getOffset, ListShareCacheGroupsRequest::setOffset));
+
+        // response
+
         return builder.build();
     }
 
@@ -1599,6 +1807,34 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateFullRuleRequest, UpdateFullRuleResponse> updateFullRule =
+        genForUpdateFullRule();
+
+    private static HttpRequestDef<UpdateFullRuleRequest, UpdateFullRuleResponse> genForUpdateFullRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateFullRuleRequest, UpdateFullRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateFullRuleRequest.class, UpdateFullRuleResponse.class)
+                .withName("UpdateFullRule")
+                .withUri("/v1.0/cdn/configuration/domains/{domain_name}/rules/full-update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFullRuleRequest::getDomainName, UpdateFullRuleRequest::setDomainName));
+        builder.<FullUpdateRulesRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FullUpdateRulesRequest.class),
+            f -> f.withMarshaller(UpdateFullRuleRequest::getBody, UpdateFullRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse> updatePrivateBucketAccess =
         genForUpdatePrivateBucketAccess();
 
@@ -1641,6 +1877,67 @@ public class CdnMeta {
             String.class,
             f -> f.withMarshaller(UpdatePrivateBucketAccessResponse::getXRequestId,
                 UpdatePrivateBucketAccessResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRuleNewRequest, UpdateRuleNewResponse> updateRuleNew =
+        genForUpdateRuleNew();
+
+    private static HttpRequestDef<UpdateRuleNewRequest, UpdateRuleNewResponse> genForUpdateRuleNew() {
+        // basic
+        HttpRequestDef.Builder<UpdateRuleNewRequest, UpdateRuleNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRuleNewRequest.class, UpdateRuleNewResponse.class)
+                .withName("UpdateRuleNew")
+                .withUri("/v1.0/cdn/configuration/domains/{domain_name}/rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRuleNewRequest::getDomainName, UpdateRuleNewRequest::setDomainName));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRuleNewRequest::getRuleId, UpdateRuleNewRequest::setRuleId));
+        builder.<UpdateRuleRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRuleRequest.class),
+            f -> f.withMarshaller(UpdateRuleNewRequest::getBody, UpdateRuleNewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateShareCacheGroupsRequest, UpdateShareCacheGroupsResponse> updateShareCacheGroups =
+        genForUpdateShareCacheGroups();
+
+    private static HttpRequestDef<UpdateShareCacheGroupsRequest, UpdateShareCacheGroupsResponse> genForUpdateShareCacheGroups() {
+        // basic
+        HttpRequestDef.Builder<UpdateShareCacheGroupsRequest, UpdateShareCacheGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateShareCacheGroupsRequest.class, UpdateShareCacheGroupsResponse.class)
+            .withName("UpdateShareCacheGroups")
+            .withUri("/v1.0/cdn/configuration/share-cache-groups/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateShareCacheGroupsRequest::getId, UpdateShareCacheGroupsRequest::setId));
+        builder.<UpdateShareCacheGroupsRequstBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateShareCacheGroupsRequstBody.class),
+            f -> f.withMarshaller(UpdateShareCacheGroupsRequest::getBody, UpdateShareCacheGroupsRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 

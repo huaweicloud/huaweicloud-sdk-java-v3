@@ -41,7 +41,7 @@ public class ListVolumeProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘产品信息列表
+     * 磁盘产品信息列表。
      * @return volumes
      */
     public List<VolumeProductInfo> getVolumes() {

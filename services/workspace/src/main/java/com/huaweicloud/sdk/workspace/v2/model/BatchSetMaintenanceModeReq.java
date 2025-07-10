@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量设置桌面管理员维护模式
+ * 批量设置桌面管理员维护模式。
  */
 public class BatchSetMaintenanceModeReq {
 
@@ -45,7 +45,7 @@ public class BatchSetMaintenanceModeReq {
     }
 
     /**
-     * 需要设置维护模式的desktopId列表
+     * 需要设置维护模式的desktopId列表。
      * @return desktopIds
      */
     public List<String> getDesktopIds() {

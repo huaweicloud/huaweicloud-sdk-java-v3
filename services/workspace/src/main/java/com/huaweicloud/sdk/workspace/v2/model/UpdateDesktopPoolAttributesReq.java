@@ -215,7 +215,7 @@ public class UpdateDesktopPoolAttributesReq {
     }
 
     /**
-     * 是否处于管理员维护模式
+     * 是否处于管理员维护模式。
      * @return inMaintenanceMode
      */
     public Boolean getInMaintenanceMode() {
@@ -249,7 +249,7 @@ public class UpdateDesktopPoolAttributesReq {
     }
 
     /**
-     * 桌面池的可用区。
+     * 桌面池的可用区。桌面池的可用区是边缘可用区时，不支持修改。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

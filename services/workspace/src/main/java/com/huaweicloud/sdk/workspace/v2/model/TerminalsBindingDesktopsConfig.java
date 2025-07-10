@@ -16,7 +16,7 @@ import java.util.Objects;
 public class TerminalsBindingDesktopsConfig {
 
     /**
-     * 绑定开关，只取值ON或OFF
+     * 绑定开关，只取值ON或OFF。
      */
     public static final class TcBindSwitchEnum {
 
@@ -91,7 +91,7 @@ public class TerminalsBindingDesktopsConfig {
     private TcBindSwitchEnum tcBindSwitch;
 
     /**
-     * 自动绑定开关，只取值ON或OFF
+     * 自动绑定开关，只取值ON或OFF。
      */
     public static final class TcAutoBindSwitchEnum {
 
@@ -176,7 +176,7 @@ public class TerminalsBindingDesktopsConfig {
     }
 
     /**
-     * 绑定开关，只取值ON或OFF
+     * 绑定开关，只取值ON或OFF。
      * @return tcBindSwitch
      */
     public TcBindSwitchEnum getTcBindSwitch() {
@@ -193,7 +193,7 @@ public class TerminalsBindingDesktopsConfig {
     }
 
     /**
-     * 自动绑定开关，只取值ON或OFF
+     * 自动绑定开关，只取值ON或OFF。
      * @return tcAutoBindSwitch
      */
     public TcAutoBindSwitchEnum getTcAutoBindSwitch() {
@@ -210,7 +210,7 @@ public class TerminalsBindingDesktopsConfig {
     }
 
     /**
-     * 最大绑定数量，默认值为1
+     * 最大绑定数量，默认值为1。
      * minimum: 1
      * maximum: 10
      * @return tcAutoBindMax

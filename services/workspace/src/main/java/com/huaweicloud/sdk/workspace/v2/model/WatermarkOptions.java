@@ -168,7 +168,7 @@ public class WatermarkOptions {
     }
 
     /**
-     * 颜色。格式：RRGGBB。默认：2a2a2a
+     * 颜色。格式：RRGGBB。默认：2a2a2a。
      * @return color
      */
     public String getColor() {

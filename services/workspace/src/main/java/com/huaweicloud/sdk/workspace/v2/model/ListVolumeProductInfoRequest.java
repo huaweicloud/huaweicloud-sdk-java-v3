@@ -26,7 +26,7 @@ public class ListVolumeProductInfoRequest {
     }
 
     /**
-     * 可用分区
+     * 可用分区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

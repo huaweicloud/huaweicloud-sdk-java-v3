@@ -173,7 +173,7 @@ public class PoliciesFileAndClipboard {
     }
 
     /**
-     * 剪切板长度表示
+     * 剪切板长度表示。
      * @return clipLengthLimitFlagC2s
      */
     public Boolean getClipLengthLimitFlagC2s() {
@@ -190,7 +190,9 @@ public class PoliciesFileAndClipboard {
     }
 
     /**
-     * 剪切板客户端长度
+     * 剪切板客户端长度。
+     * minimum: 0
+     * maximum: 4096
      * @return clipLengthLimitC2s
      */
     public Integer getClipLengthLimitC2s() {
@@ -207,7 +209,7 @@ public class PoliciesFileAndClipboard {
     }
 
     /**
-     * 剪切板长度表示
+     * 剪切板长度表示。
      * @return clipLengthLimitFlagS2c
      */
     public Boolean getClipLengthLimitFlagS2c() {
@@ -224,7 +226,9 @@ public class PoliciesFileAndClipboard {
     }
 
     /**
-     * 剪切板客户端长度
+     * 剪切板客户端长度。
+     * minimum: 0
+     * maximum: 4096
      * @return clipLengthLimitS2c
      */
     public Integer getClipLengthLimitS2c() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 用户订阅协同请求体
+ * 用户订阅协同请求体。
  */
 public class SubscribeUserSharerReq {
 
@@ -19,19 +19,9 @@ public class SubscribeUserSharerReq {
     private String userSharerSku;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
     private List<User> users = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
 
     public SubscribeUserSharerReq withUserSharerSku(String userSharerSku) {
         this.userSharerSku = userSharerSku;
@@ -39,7 +29,7 @@ public class SubscribeUserSharerReq {
     }
 
     /**
-     * 用户协同资源SKU码
+     * 用户协同资源SKU码。
      * @return userSharerSku
      */
     public String getUserSharerSku() {
@@ -48,23 +38,6 @@ public class SubscribeUserSharerReq {
 
     public void setUserSharerSku(String userSharerSku) {
         this.userSharerSku = userSharerSku;
-    }
-
-    public SubscribeUserSharerReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单ID
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     public SubscribeUserSharerReq withUsers(List<User> users) {
@@ -100,23 +73,6 @@ public class SubscribeUserSharerReq {
         this.users = users;
     }
 
-    public SubscribeUserSharerReq withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 企业项目ID
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -126,14 +82,12 @@ public class SubscribeUserSharerReq {
             return false;
         }
         SubscribeUserSharerReq that = (SubscribeUserSharerReq) obj;
-        return Objects.equals(this.userSharerSku, that.userSharerSku) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.users, that.users)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+        return Objects.equals(this.userSharerSku, that.userSharerSku) && Objects.equals(this.users, that.users);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userSharerSku, orderId, users, enterpriseProjectId);
+        return Objects.hash(userSharerSku, users);
     }
 
     @Override
@@ -141,9 +95,7 @@ public class SubscribeUserSharerReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class SubscribeUserSharerReq {\n");
         sb.append("    userSharerSku: ").append(toIndentedString(userSharerSku)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    users: ").append(toIndentedString(users)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

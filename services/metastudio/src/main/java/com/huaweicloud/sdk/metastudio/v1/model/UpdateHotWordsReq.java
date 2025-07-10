@@ -21,6 +21,11 @@ public class UpdateHotWordsReq {
 
     private UpdateSisHotWords sisHotWords;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mobvoi_hot_words")
+
+    private UpdateMobvoiHotWords mobvoiHotWords;
+
     public UpdateHotWordsReq withHotWordsType(HotWordsTypeEnum hotWordsType) {
         this.hotWordsType = hotWordsType;
         return this;
@@ -64,6 +69,32 @@ public class UpdateHotWordsReq {
         this.sisHotWords = sisHotWords;
     }
 
+    public UpdateHotWordsReq withMobvoiHotWords(UpdateMobvoiHotWords mobvoiHotWords) {
+        this.mobvoiHotWords = mobvoiHotWords;
+        return this;
+    }
+
+    public UpdateHotWordsReq withMobvoiHotWords(Consumer<UpdateMobvoiHotWords> mobvoiHotWordsSetter) {
+        if (this.mobvoiHotWords == null) {
+            this.mobvoiHotWords = new UpdateMobvoiHotWords();
+            mobvoiHotWordsSetter.accept(this.mobvoiHotWords);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get mobvoiHotWords
+     * @return mobvoiHotWords
+     */
+    public UpdateMobvoiHotWords getMobvoiHotWords() {
+        return mobvoiHotWords;
+    }
+
+    public void setMobvoiHotWords(UpdateMobvoiHotWords mobvoiHotWords) {
+        this.mobvoiHotWords = mobvoiHotWords;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,12 +105,13 @@ public class UpdateHotWordsReq {
         }
         UpdateHotWordsReq that = (UpdateHotWordsReq) obj;
         return Objects.equals(this.hotWordsType, that.hotWordsType)
-            && Objects.equals(this.sisHotWords, that.sisHotWords);
+            && Objects.equals(this.sisHotWords, that.sisHotWords)
+            && Objects.equals(this.mobvoiHotWords, that.mobvoiHotWords);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hotWordsType, sisHotWords);
+        return Objects.hash(hotWordsType, sisHotWords, mobvoiHotWords);
     }
 
     @Override
@@ -88,6 +120,7 @@ public class UpdateHotWordsReq {
         sb.append("class UpdateHotWordsReq {\n");
         sb.append("    hotWordsType: ").append(toIndentedString(hotWordsType)).append("\n");
         sb.append("    sisHotWords: ").append(toIndentedString(sisHotWords)).append("\n");
+        sb.append("    mobvoiHotWords: ").append(toIndentedString(mobvoiHotWords)).append("\n");
         sb.append("}");
         return sb.toString();
     }

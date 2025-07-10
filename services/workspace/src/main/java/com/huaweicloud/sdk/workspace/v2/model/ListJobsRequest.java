@@ -46,7 +46,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 查询的偏移量。
+     * 查询的偏移量，默认值0。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -65,7 +65,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 单次查询的大小[1-100]。
+     * 单次查询的大小[1-100]，默认值10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -84,7 +84,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 实例ID
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -101,7 +101,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 应用ID
+     * 应用ID。
      * @return appId
      */
     public String getAppId() {
@@ -118,7 +118,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 安装实例的用户
+     * 安装实例的用户。
      * @return target
      */
     public String getTarget() {

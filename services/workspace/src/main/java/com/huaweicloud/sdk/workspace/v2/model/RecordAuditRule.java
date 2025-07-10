@@ -65,6 +65,21 @@ public class RecordAuditRule {
 
     private String regitPaths;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_filter_type")
+
+    private String appFilterType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_white_list")
+
+    private String appWhiteList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_black_list")
+
+    private String appBlackList;
+
     public RecordAuditRule withRecordType(String recordType) {
         this.recordType = recordType;
         return this;
@@ -252,6 +267,57 @@ public class RecordAuditRule {
         this.regitPaths = regitPaths;
     }
 
+    public RecordAuditRule withAppFilterType(String appFilterType) {
+        this.appFilterType = appFilterType;
+        return this;
+    }
+
+    /**
+     * 应用过滤类型，black（黑名单）或者white（白名单）二选一
+     * @return appFilterType
+     */
+    public String getAppFilterType() {
+        return appFilterType;
+    }
+
+    public void setAppFilterType(String appFilterType) {
+        this.appFilterType = appFilterType;
+    }
+
+    public RecordAuditRule withAppWhiteList(String appWhiteList) {
+        this.appWhiteList = appWhiteList;
+        return this;
+    }
+
+    /**
+     * APP开启/关闭白名单，仅监控配置的白名单应用列表
+     * @return appWhiteList
+     */
+    public String getAppWhiteList() {
+        return appWhiteList;
+    }
+
+    public void setAppWhiteList(String appWhiteList) {
+        this.appWhiteList = appWhiteList;
+    }
+
+    public RecordAuditRule withAppBlackList(String appBlackList) {
+        this.appBlackList = appBlackList;
+        return this;
+    }
+
+    /**
+     * APP开启/关闭黑名单，忽略黑名单里面的应用列表
+     * @return appBlackList
+     */
+    public String getAppBlackList() {
+        return appBlackList;
+    }
+
+    public void setAppBlackList(String appBlackList) {
+        this.appBlackList = appBlackList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -267,7 +333,10 @@ public class RecordAuditRule {
             && Objects.equals(this.opType, that.opType) && Objects.equals(this.audioRecord, that.audioRecord)
             && Objects.equals(this.fps, that.fps) && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.resolution, that.resolution) && Objects.equals(this.eventEnable, that.eventEnable)
-            && Objects.equals(this.fileSuffix, that.fileSuffix) && Objects.equals(this.regitPaths, that.regitPaths);
+            && Objects.equals(this.fileSuffix, that.fileSuffix) && Objects.equals(this.regitPaths, that.regitPaths)
+            && Objects.equals(this.appFilterType, that.appFilterType)
+            && Objects.equals(this.appWhiteList, that.appWhiteList)
+            && Objects.equals(this.appBlackList, that.appBlackList);
     }
 
     @Override
@@ -282,7 +351,10 @@ public class RecordAuditRule {
             resolution,
             eventEnable,
             fileSuffix,
-            regitPaths);
+            regitPaths,
+            appFilterType,
+            appWhiteList,
+            appBlackList);
     }
 
     @Override
@@ -300,6 +372,9 @@ public class RecordAuditRule {
         sb.append("    eventEnable: ").append(toIndentedString(eventEnable)).append("\n");
         sb.append("    fileSuffix: ").append(toIndentedString(fileSuffix)).append("\n");
         sb.append("    regitPaths: ").append(toIndentedString(regitPaths)).append("\n");
+        sb.append("    appFilterType: ").append(toIndentedString(appFilterType)).append("\n");
+        sb.append("    appWhiteList: ").append(toIndentedString(appWhiteList)).append("\n");
+        sb.append("    appBlackList: ").append(toIndentedString(appBlackList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

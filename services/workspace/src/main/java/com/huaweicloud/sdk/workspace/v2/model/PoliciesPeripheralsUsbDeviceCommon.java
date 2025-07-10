@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -16,93 +11,17 @@ import java.util.function.Consumer;
  */
 public class PoliciesPeripheralsUsbDeviceCommon {
 
-    /**
-     * 是否开启PC/SC智能卡重定向。取值为： Enable：表示已启动。 Closed：表示已关闭。 Disable：表示已禁用。
-     */
-    public static final class PcscSmartCardEnableEnum {
-
-        /**
-         * Enum ENABLE for value: "Enable"
-         */
-        public static final PcscSmartCardEnableEnum ENABLE = new PcscSmartCardEnableEnum("Enable");
-
-        /**
-         * Enum CLOSED for value: "Closed"
-         */
-        public static final PcscSmartCardEnableEnum CLOSED = new PcscSmartCardEnableEnum("Closed");
-
-        /**
-         * Enum DISABLE for value: "Disable"
-         */
-        public static final PcscSmartCardEnableEnum DISABLE = new PcscSmartCardEnableEnum("Disable");
-
-        private static final Map<String, PcscSmartCardEnableEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PcscSmartCardEnableEnum> createStaticFields() {
-            Map<String, PcscSmartCardEnableEnum> map = new HashMap<>();
-            map.put("Enable", ENABLE);
-            map.put("Closed", CLOSED);
-            map.put("Disable", DISABLE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PcscSmartCardEnableEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PcscSmartCardEnableEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PcscSmartCardEnableEnum(value));
-        }
-
-        public static PcscSmartCardEnableEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PcscSmartCardEnableEnum) {
-                return this.value.equals(((PcscSmartCardEnableEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pcsc_smart_card_enable")
 
-    private PcscSmartCardEnableEnum pcscSmartCardEnable;
+    private String pcscSmartCardEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common_options")
 
     private PoliciesPeripheralsUsbDeviceCommonCommonOptions commonOptions;
 
-    public PoliciesPeripheralsUsbDeviceCommon withPcscSmartCardEnable(PcscSmartCardEnableEnum pcscSmartCardEnable) {
+    public PoliciesPeripheralsUsbDeviceCommon withPcscSmartCardEnable(String pcscSmartCardEnable) {
         this.pcscSmartCardEnable = pcscSmartCardEnable;
         return this;
     }
@@ -111,11 +30,11 @@ public class PoliciesPeripheralsUsbDeviceCommon {
      * 是否开启PC/SC智能卡重定向。取值为： Enable：表示已启动。 Closed：表示已关闭。 Disable：表示已禁用。
      * @return pcscSmartCardEnable
      */
-    public PcscSmartCardEnableEnum getPcscSmartCardEnable() {
+    public String getPcscSmartCardEnable() {
         return pcscSmartCardEnable;
     }
 
-    public void setPcscSmartCardEnable(PcscSmartCardEnableEnum pcscSmartCardEnable) {
+    public void setPcscSmartCardEnable(String pcscSmartCardEnable) {
         this.pcscSmartCardEnable = pcscSmartCardEnable;
     }
 

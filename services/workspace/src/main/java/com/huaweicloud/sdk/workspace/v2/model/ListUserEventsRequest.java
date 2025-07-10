@@ -31,9 +31,14 @@ public class ListUserEventsRequest {
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "event_trace_id")
+    @JsonProperty(value = "resource_id")
 
-    private String eventTraceId;
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_name")
+
+    private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
@@ -51,7 +56,7 @@ public class ListUserEventsRequest {
     }
 
     /**
-     * 查询起始时间(0时区)
+     * 查询起始时间，格式为：UTC时间，例如\"1970-01-01T00:00:00Z\"。
      * @return startTime
      */
     public String getStartTime() {
@@ -68,7 +73,7 @@ public class ListUserEventsRequest {
     }
 
     /**
-     * 查询结束时间(0时区)
+     * 查询结束时间，格式为：UTC时间，例如\"1970-01-01T00:00:00Z\"。
      * @return endTime
      */
     public String getEndTime() {
@@ -85,7 +90,7 @@ public class ListUserEventsRequest {
     }
 
     /**
-     * 用户名（精确搜索）
+     * 用户名（精确搜索）。
      * @return username
      */
     public String getUsername() {
@@ -102,7 +107,7 @@ public class ListUserEventsRequest {
     }
 
     /**
-     * 事件类型
+     * 事件类型，英文逗号隔开。
      * @return eventType
      */
     public String getEventType() {
@@ -113,21 +118,38 @@ public class ListUserEventsRequest {
         this.eventType = eventType;
     }
 
-    public ListUserEventsRequest withEventTraceId(String eventTraceId) {
-        this.eventTraceId = eventTraceId;
+    public ListUserEventsRequest withResourceId(String resourceId) {
+        this.resourceId = resourceId;
         return this;
     }
 
     /**
-     * 事件之间的关联id
-     * @return eventTraceId
+     * 操作资源ID。
+     * @return resourceId
      */
-    public String getEventTraceId() {
-        return eventTraceId;
+    public String getResourceId() {
+        return resourceId;
     }
 
-    public void setEventTraceId(String eventTraceId) {
-        this.eventTraceId = eventTraceId;
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public ListUserEventsRequest withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
+    /**
+     * 操作资源名称。
+     * @return resourceName
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
     }
 
     public ListUserEventsRequest withOffset(Integer offset) {
@@ -136,7 +158,7 @@ public class ListUserEventsRequest {
     }
 
     /**
-     * 用于分页查询，查询的起始记录序号，从0开始
+     * 用于分页查询，查询的起始记录序号，从0开始。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -179,13 +201,13 @@ public class ListUserEventsRequest {
         ListUserEventsRequest that = (ListUserEventsRequest) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.username, that.username) && Objects.equals(this.eventType, that.eventType)
-            && Objects.equals(this.eventTraceId, that.eventTraceId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, username, eventType, eventTraceId, offset, limit);
+        return Objects.hash(startTime, endTime, username, eventType, resourceId, resourceName, offset, limit);
     }
 
     @Override
@@ -196,7 +218,8 @@ public class ListUserEventsRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
-        sb.append("    eventTraceId: ").append(toIndentedString(eventTraceId)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

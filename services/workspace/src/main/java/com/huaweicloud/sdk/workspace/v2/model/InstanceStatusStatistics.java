@@ -179,7 +179,7 @@ public class InstanceStatusStatistics {
     }
 
     /**
-     * 已分配数目
+     * 已分配数目。
      * minimum: 0
      * maximum: 2147483647
      * @return attachedNum
@@ -198,7 +198,7 @@ public class InstanceStatusStatistics {
     }
 
     /**
-     * 未分配数目
+     * 未分配数目。
      * minimum: 0
      * maximum: 2147483647
      * @return unattachedNum
@@ -217,7 +217,7 @@ public class InstanceStatusStatistics {
     }
 
     /**
-     * 不可分配数目(分配失败、解分配失败、解分配成功)
+     * 不可分配数目(分配失败、解分配失败、解分配成功)。
      * minimum: 0
      * maximum: 2147483647
      * @return cannotAttachNum
@@ -236,7 +236,7 @@ public class InstanceStatusStatistics {
     }
 
     /**
-     * 处理中(分配中、解分配中)
+     * 处理中(分配中、解分配中)。
      * minimum: 0
      * maximum: 2147483647
      * @return inProcessNum

@@ -45,7 +45,7 @@ public class UpdateSubnetIdsRequestBody {
     }
 
     /**
-     * 业务子网id
+     * 业务子网id。
      * @return subnetIds
      */
     public List<String> getSubnetIds() {

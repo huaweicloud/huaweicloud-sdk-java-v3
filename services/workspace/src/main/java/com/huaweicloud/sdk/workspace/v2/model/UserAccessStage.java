@@ -16,7 +16,7 @@ import java.util.Objects;
 public class UserAccessStage {
 
     /**
-     * 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接
+     * 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。
      */
     public static final class StageEnum {
 
@@ -132,7 +132,7 @@ public class UserAccessStage {
     }
 
     /**
-     * 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接
+     * 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。
      * @return stage
      */
     public StageEnum getStage() {
@@ -149,7 +149,7 @@ public class UserAccessStage {
     }
 
     /**
-     * 花费时长，单位：ms
+     * 花费时长，单位：ms。
      * @return duration
      */
     public Integer getDuration() {
@@ -166,7 +166,7 @@ public class UserAccessStage {
     }
 
     /**
-     * 接入阶段是否成功
+     * 接入阶段是否成功。
      * @return isSuccess
      */
     public Boolean getIsSuccess() {
@@ -183,7 +183,7 @@ public class UserAccessStage {
     }
 
     /**
-     * 开始时间戳
+     * 开始时间戳。
      * @return startTime
      */
     public Long getStartTime() {
@@ -200,7 +200,7 @@ public class UserAccessStage {
     }
 
     /**
-     * 结束时间戳
+     * 结束时间戳。
      * @return endTime
      */
     public Long getEndTime() {
@@ -217,7 +217,7 @@ public class UserAccessStage {
     }
 
     /**
-     * 错误码
+     * 错误码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -234,7 +234,7 @@ public class UserAccessStage {
     }
 
     /**
-     * 错误描述
+     * 错误描述。
      * @return errorMsg
      */
     public String getErrorMsg() {

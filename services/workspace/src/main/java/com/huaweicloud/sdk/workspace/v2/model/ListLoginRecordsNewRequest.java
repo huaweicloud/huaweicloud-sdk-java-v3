@@ -146,7 +146,7 @@ public class ListLoginRecordsNewRequest {
     }
 
     /**
-     * 用于分页查询，查询的起始记录序号，从0开始
+     * 用于分页查询，查询的起始记录序号，从0开始。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -184,7 +184,7 @@ public class ListLoginRecordsNewRequest {
     }
 
     /**
-     * 查询端到端时延的最小值
+     * 查询端到端时延的最小值。
      * minimum: 0
      * maximum: 10000
      * @return minNetworkRtt
@@ -203,7 +203,7 @@ public class ListLoginRecordsNewRequest {
     }
 
     /**
-     * 查询端到端时延的最大值
+     * 查询端到端时延的最大值。
      * minimum: 0
      * maximum: 10000
      * @return maxNetworkRtt

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 磁盘订单请求
+ * 磁盘订单请求。
  */
 public class AddVolumes {
 
@@ -29,7 +29,7 @@ public class AddVolumes {
     }
 
     /**
-     * 桌面ID
+     * 桌面ID。
      * @return desktopId
      */
     public String getDesktopId() {
@@ -62,7 +62,7 @@ public class AddVolumes {
     }
 
     /**
-     * 订单的磁盘信息列表
+     * 订单的磁盘信息列表。
      * @return volumes
      */
     public List<Volume> getVolumes() {

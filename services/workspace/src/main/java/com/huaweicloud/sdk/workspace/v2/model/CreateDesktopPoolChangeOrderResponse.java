@@ -41,7 +41,7 @@ public class CreateDesktopPoolChangeOrderResponse extends SdkResponse {
     }
 
     /**
-     * 批量生成订单结果
+     * 批量生成订单结果。
      * @return orders
      */
     public List<OrderV5> getOrders() {

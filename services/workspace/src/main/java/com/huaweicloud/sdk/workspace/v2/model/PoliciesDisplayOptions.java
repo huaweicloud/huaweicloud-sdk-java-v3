@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -41,83 +36,10 @@ public class PoliciesDisplayOptions {
 
     private Integer smoothingFactor;
 
-    /**
-     * 无损压缩模式。取值为： Basic Compression：表示初级压缩。 Deep Compression：表示深度压缩。
-     */
-    public static final class LosslessCompressionModeEnum {
-
-        /**
-         * Enum BASIC_COMPRESSION for value: "Basic Compression"
-         */
-        public static final LosslessCompressionModeEnum BASIC_COMPRESSION =
-            new LosslessCompressionModeEnum("Basic Compression");
-
-        /**
-         * Enum DEEP_COMPRESSION for value: "Deep Compression"
-         */
-        public static final LosslessCompressionModeEnum DEEP_COMPRESSION =
-            new LosslessCompressionModeEnum("Deep Compression");
-
-        private static final Map<String, LosslessCompressionModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, LosslessCompressionModeEnum> createStaticFields() {
-            Map<String, LosslessCompressionModeEnum> map = new HashMap<>();
-            map.put("Basic Compression", BASIC_COMPRESSION);
-            map.put("Deep Compression", DEEP_COMPRESSION);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        LosslessCompressionModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LosslessCompressionModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElse(new LosslessCompressionModeEnum(value));
-        }
-
-        public static LosslessCompressionModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof LosslessCompressionModeEnum) {
-                return this.value.equals(((LosslessCompressionModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lossless_compression_mode")
 
-    private LosslessCompressionModeEnum losslessCompressionMode;
+    private String losslessCompressionMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deep_compression_options")
@@ -134,81 +56,10 @@ public class PoliciesDisplayOptions {
 
     private Boolean colorEnhancementEnable;
 
-    /**
-     * 质量或带宽优先。取值为： Quality First：表示初级压缩。 Bandwidth First：表示深度压缩。
-     */
-    public static final class QualityBandwidthFirstEnum {
-
-        /**
-         * Enum QUALITY_FIRST for value: "Quality First"
-         */
-        public static final QualityBandwidthFirstEnum QUALITY_FIRST = new QualityBandwidthFirstEnum("Quality First");
-
-        /**
-         * Enum BANDWIDTH_FIRST for value: "Bandwidth First"
-         */
-        public static final QualityBandwidthFirstEnum BANDWIDTH_FIRST =
-            new QualityBandwidthFirstEnum("Bandwidth First");
-
-        private static final Map<String, QualityBandwidthFirstEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, QualityBandwidthFirstEnum> createStaticFields() {
-            Map<String, QualityBandwidthFirstEnum> map = new HashMap<>();
-            map.put("Quality First", QUALITY_FIRST);
-            map.put("Bandwidth First", BANDWIDTH_FIRST);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        QualityBandwidthFirstEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static QualityBandwidthFirstEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QualityBandwidthFirstEnum(value));
-        }
-
-        public static QualityBandwidthFirstEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof QualityBandwidthFirstEnum) {
-                return this.value.equals(((QualityBandwidthFirstEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality_bandwidth_first")
 
-    private QualityBandwidthFirstEnum qualityBandwidthFirst;
+    private String qualityBandwidthFirst;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_bit_rate_options")
@@ -230,110 +81,10 @@ public class PoliciesDisplayOptions {
 
     private Integer gopSize;
 
-    /**
-     * 编码预置。取值为： 预置1：Preset 1。 预置2：Preset 2。 预置3：Preset 3。 预置4：Preset 4。 预置5：Preset 5。 预置6：Preset 6。 预置7：Preset 7。
-     */
-    public static final class EncodingPresetEnum {
-
-        /**
-         * Enum PRESET_1 for value: "Preset 1"
-         */
-        public static final EncodingPresetEnum PRESET_1 = new EncodingPresetEnum("Preset 1");
-
-        /**
-         * Enum PRESET_2 for value: "Preset 2"
-         */
-        public static final EncodingPresetEnum PRESET_2 = new EncodingPresetEnum("Preset 2");
-
-        /**
-         * Enum PRESET_3 for value: "Preset 3"
-         */
-        public static final EncodingPresetEnum PRESET_3 = new EncodingPresetEnum("Preset 3");
-
-        /**
-         * Enum PRESET_4 for value: "Preset 4"
-         */
-        public static final EncodingPresetEnum PRESET_4 = new EncodingPresetEnum("Preset 4");
-
-        /**
-         * Enum PRESET_5 for value: "Preset 5"
-         */
-        public static final EncodingPresetEnum PRESET_5 = new EncodingPresetEnum("Preset 5");
-
-        /**
-         * Enum PRESET_6 for value: "Preset 6"
-         */
-        public static final EncodingPresetEnum PRESET_6 = new EncodingPresetEnum("Preset 6");
-
-        /**
-         * Enum PRESET_7 for value: "Preset 7"
-         */
-        public static final EncodingPresetEnum PRESET_7 = new EncodingPresetEnum("Preset 7");
-
-        private static final Map<String, EncodingPresetEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EncodingPresetEnum> createStaticFields() {
-            Map<String, EncodingPresetEnum> map = new HashMap<>();
-            map.put("Preset 1", PRESET_1);
-            map.put("Preset 2", PRESET_2);
-            map.put("Preset 3", PRESET_3);
-            map.put("Preset 4", PRESET_4);
-            map.put("Preset 5", PRESET_5);
-            map.put("Preset 6", PRESET_6);
-            map.put("Preset 7", PRESET_7);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EncodingPresetEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EncodingPresetEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EncodingPresetEnum(value));
-        }
-
-        public static EncodingPresetEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EncodingPresetEnum) {
-                return this.value.equals(((EncodingPresetEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encoding_preset")
 
-    private EncodingPresetEnum encodingPreset;
+    private String encodingPreset;
 
     public PoliciesDisplayOptions withDisplayBandwidth(Integer displayBandwidth) {
         this.displayBandwidth = displayBandwidth;
@@ -430,7 +181,7 @@ public class PoliciesDisplayOptions {
         this.smoothingFactor = smoothingFactor;
     }
 
-    public PoliciesDisplayOptions withLosslessCompressionMode(LosslessCompressionModeEnum losslessCompressionMode) {
+    public PoliciesDisplayOptions withLosslessCompressionMode(String losslessCompressionMode) {
         this.losslessCompressionMode = losslessCompressionMode;
         return this;
     }
@@ -439,11 +190,11 @@ public class PoliciesDisplayOptions {
      * 无损压缩模式。取值为： Basic Compression：表示初级压缩。 Deep Compression：表示深度压缩。
      * @return losslessCompressionMode
      */
-    public LosslessCompressionModeEnum getLosslessCompressionMode() {
+    public String getLosslessCompressionMode() {
         return losslessCompressionMode;
     }
 
-    public void setLosslessCompressionMode(LosslessCompressionModeEnum losslessCompressionMode) {
+    public void setLosslessCompressionMode(String losslessCompressionMode) {
         this.losslessCompressionMode = losslessCompressionMode;
     }
 
@@ -511,7 +262,7 @@ public class PoliciesDisplayOptions {
         this.colorEnhancementEnable = colorEnhancementEnable;
     }
 
-    public PoliciesDisplayOptions withQualityBandwidthFirst(QualityBandwidthFirstEnum qualityBandwidthFirst) {
+    public PoliciesDisplayOptions withQualityBandwidthFirst(String qualityBandwidthFirst) {
         this.qualityBandwidthFirst = qualityBandwidthFirst;
         return this;
     }
@@ -520,11 +271,11 @@ public class PoliciesDisplayOptions {
      * 质量或带宽优先。取值为： Quality First：表示初级压缩。 Bandwidth First：表示深度压缩。
      * @return qualityBandwidthFirst
      */
-    public QualityBandwidthFirstEnum getQualityBandwidthFirst() {
+    public String getQualityBandwidthFirst() {
         return qualityBandwidthFirst;
     }
 
-    public void setQualityBandwidthFirst(QualityBandwidthFirstEnum qualityBandwidthFirst) {
+    public void setQualityBandwidthFirst(String qualityBandwidthFirst) {
         this.qualityBandwidthFirst = qualityBandwidthFirst;
     }
 
@@ -622,7 +373,7 @@ public class PoliciesDisplayOptions {
         this.gopSize = gopSize;
     }
 
-    public PoliciesDisplayOptions withEncodingPreset(EncodingPresetEnum encodingPreset) {
+    public PoliciesDisplayOptions withEncodingPreset(String encodingPreset) {
         this.encodingPreset = encodingPreset;
         return this;
     }
@@ -631,11 +382,11 @@ public class PoliciesDisplayOptions {
      * 编码预置。取值为： 预置1：Preset 1。 预置2：Preset 2。 预置3：Preset 3。 预置4：Preset 4。 预置5：Preset 5。 预置6：Preset 6。 预置7：Preset 7。
      * @return encodingPreset
      */
-    public EncodingPresetEnum getEncodingPreset() {
+    public String getEncodingPreset() {
         return encodingPreset;
     }
 
-    public void setEncodingPreset(EncodingPresetEnum encodingPreset) {
+    public void setEncodingPreset(String encodingPreset) {
         this.encodingPreset = encodingPreset;
     }
 

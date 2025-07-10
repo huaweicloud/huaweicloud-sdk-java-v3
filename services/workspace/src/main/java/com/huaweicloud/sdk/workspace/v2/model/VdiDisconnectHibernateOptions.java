@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 休眠断开选项
+ * 休眠断开选项。
  */
 public class VdiDisconnectHibernateOptions {
 
@@ -22,6 +22,8 @@ public class VdiDisconnectHibernateOptions {
 
     /**
      * 断连休眠时间。
+     * minimum: 0
+     * maximum: 86400
      * @return disconnectHibernateMinutes
      */
     public Integer getDisconnectHibernateMinutes() {

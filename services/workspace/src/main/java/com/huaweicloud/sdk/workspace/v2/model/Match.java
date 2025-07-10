@@ -26,7 +26,7 @@ public class Match {
     }
 
     /**
-     * 搜索时要匹配的字段
+     * 搜索时要匹配的字段。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class Match {
     }
 
     /**
-     * 搜索时匹配的值，当key=resource_name时为模糊匹配
+     * 搜索时匹配的值，当key=resource_name时为模糊匹配。
      * @return value
      */
     public String getValue() {

@@ -104,7 +104,7 @@ public class CreateChangeImageOrderRequestBody {
     }
 
     /**
-     * 促销计划ID
+     * 促销计划ID。
      * @return promotionPlanId
      */
     public String getPromotionPlanId() {

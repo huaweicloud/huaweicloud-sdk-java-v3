@@ -179,7 +179,7 @@ public class RebuildDesktopsReq {
     }
 
     /**
-     * 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传
+     * 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传。
      * @return orderId
      */
     public String getOrderId() {
@@ -196,7 +196,7 @@ public class RebuildDesktopsReq {
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

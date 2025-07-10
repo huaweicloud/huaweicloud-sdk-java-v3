@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * API响应基类
+ * API响应基类。
  */
 public class BaseResponse {
 

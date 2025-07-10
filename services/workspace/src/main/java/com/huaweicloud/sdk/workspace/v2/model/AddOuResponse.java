@@ -22,7 +22,7 @@ public class AddOuResponse extends SdkResponse {
     }
 
     /**
-     * 创建OU的id
+     * 创建OU的id。
      * @return id
      */
     public String getId() {

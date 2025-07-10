@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 桌面网络查询结果
+ * 桌面网络查询结果。
  */
 public class DesktopNetworkResult {
 
@@ -39,7 +39,7 @@ public class DesktopNetworkResult {
     }
 
     /**
-     * 桌面名称
+     * 桌面名称。
      * @return computerName
      */
     public String getComputerName() {
@@ -56,7 +56,7 @@ public class DesktopNetworkResult {
     }
 
     /**
-     * 桌面ID
+     * 桌面ID。
      * @return computerId
      */
     public String getComputerId() {
@@ -73,7 +73,7 @@ public class DesktopNetworkResult {
     }
 
     /**
-     * 桌面IP
+     * 桌面IP。
      * @return computerIp
      */
     public String getComputerIp() {
@@ -106,7 +106,7 @@ public class DesktopNetworkResult {
     }
 
     /**
-     * 桌面网络信息
+     * 桌面网络信息。
      * @return networkInfos
      */
     public List<NetworkInfo> getNetworkInfos() {

@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,103 +25,10 @@ public class PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions {
 
     private Boolean syncClientDefaultPrinterEnable;
 
-    /**
-     * 通用打印机驱动。取值为：Default：linux客户端选择Universal Printing PS，windows客户端选择HDP XPSDrv Driver。HDP XPSDrv Driver。Universal Printing PCL 5。Universal Printing PCL 6。Universal Printing PS。
-     */
-    public static final class UniversalPrinterDriverEnum {
-
-        /**
-         * Enum DEFAULT for value: "Default"
-         */
-        public static final UniversalPrinterDriverEnum DEFAULT = new UniversalPrinterDriverEnum("Default");
-
-        /**
-         * Enum HDP_XPSDRV_DRIVER for value: "HDP XPSDrv Driver"
-         */
-        public static final UniversalPrinterDriverEnum HDP_XPSDRV_DRIVER =
-            new UniversalPrinterDriverEnum("HDP XPSDrv Driver");
-
-        /**
-         * Enum UNIVERSAL_PRINTING_PCL_5 for value: "Universal Printing PCL 5"
-         */
-        public static final UniversalPrinterDriverEnum UNIVERSAL_PRINTING_PCL_5 =
-            new UniversalPrinterDriverEnum("Universal Printing PCL 5");
-
-        /**
-         * Enum UNIVERSAL_PRINTING_PCL_6 for value: "Universal Printing PCL 6"
-         */
-        public static final UniversalPrinterDriverEnum UNIVERSAL_PRINTING_PCL_6 =
-            new UniversalPrinterDriverEnum("Universal Printing PCL 6");
-
-        /**
-         * Enum UNIVERSAL_PRINTING_PS for value: "Universal Printing PS"
-         */
-        public static final UniversalPrinterDriverEnum UNIVERSAL_PRINTING_PS =
-            new UniversalPrinterDriverEnum("Universal Printing PS");
-
-        private static final Map<String, UniversalPrinterDriverEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, UniversalPrinterDriverEnum> createStaticFields() {
-            Map<String, UniversalPrinterDriverEnum> map = new HashMap<>();
-            map.put("Default", DEFAULT);
-            map.put("HDP XPSDrv Driver", HDP_XPSDRV_DRIVER);
-            map.put("Universal Printing PCL 5", UNIVERSAL_PRINTING_PCL_5);
-            map.put("Universal Printing PCL 6", UNIVERSAL_PRINTING_PCL_6);
-            map.put("Universal Printing PS", UNIVERSAL_PRINTING_PS);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        UniversalPrinterDriverEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static UniversalPrinterDriverEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElse(new UniversalPrinterDriverEnum(value));
-        }
-
-        public static UniversalPrinterDriverEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof UniversalPrinterDriverEnum) {
-                return this.value.equals(((UniversalPrinterDriverEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "universal_printer_driver")
 
-    private UniversalPrinterDriverEnum universalPrinterDriver;
+    private String universalPrinterDriver;
 
     public PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions withMobilePrinterEnable(
         Boolean mobilePrinterEnable) {
@@ -183,7 +85,7 @@ public class PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions {
     }
 
     public PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions withUniversalPrinterDriver(
-        UniversalPrinterDriverEnum universalPrinterDriver) {
+        String universalPrinterDriver) {
         this.universalPrinterDriver = universalPrinterDriver;
         return this;
     }
@@ -192,11 +94,11 @@ public class PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions {
      * 通用打印机驱动。取值为：Default：linux客户端选择Universal Printing PS，windows客户端选择HDP XPSDrv Driver。HDP XPSDrv Driver。Universal Printing PCL 5。Universal Printing PCL 6。Universal Printing PS。
      * @return universalPrinterDriver
      */
-    public UniversalPrinterDriverEnum getUniversalPrinterDriver() {
+    public String getUniversalPrinterDriver() {
         return universalPrinterDriver;
     }
 
-    public void setUniversalPrinterDriver(UniversalPrinterDriverEnum universalPrinterDriver) {
+    public void setUniversalPrinterDriver(String universalPrinterDriver) {
         this.universalPrinterDriver = universalPrinterDriver;
     }
 

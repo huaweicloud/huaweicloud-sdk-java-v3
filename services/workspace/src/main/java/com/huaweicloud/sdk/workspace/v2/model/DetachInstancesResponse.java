@@ -46,7 +46,7 @@ public class DetachInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 操作失败桌面列表
+     * 操作失败桌面列表。
      * @return failedOperationList
      */
     public List<VmOperateResult> getFailedOperationList() {
@@ -63,7 +63,7 @@ public class DetachInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {

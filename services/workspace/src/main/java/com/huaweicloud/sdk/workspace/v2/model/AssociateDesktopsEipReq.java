@@ -26,7 +26,7 @@ public class AssociateDesktopsEipReq {
     }
 
     /**
-     * 桌面绑定的Eip的id。
+     * 桌面绑定的EIP的id。
      * @return eipId
      */
     public String getEipId() {

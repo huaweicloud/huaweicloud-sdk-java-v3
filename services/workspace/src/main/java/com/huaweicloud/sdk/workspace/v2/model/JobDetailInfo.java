@@ -67,11 +67,6 @@ public class JobDetailInfo {
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success_result")
-
-    private String successResult;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process")
 
     private Integer process;
@@ -287,23 +282,6 @@ public class JobDetailInfo {
         this.jobId = jobId;
     }
 
-    public JobDetailInfo withSuccessResult(String successResult) {
-        this.successResult = successResult;
-        return this;
-    }
-
-    /**
-     * 任务成功结果。
-     * @return successResult
-     */
-    public String getSuccessResult() {
-        return successResult;
-    }
-
-    public void setSuccessResult(String successResult) {
-        this.successResult = successResult;
-    }
-
     public JobDetailInfo withProcess(Integer process) {
         this.process = process;
         return this;
@@ -386,9 +364,9 @@ public class JobDetailInfo {
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.status, that.status)
             && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.failReason, that.failReason)
             && Objects.equals(this.host, that.host) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.successResult, that.successResult)
-            && Objects.equals(this.process, that.process) && Objects.equals(this.attachUser, that.attachUser)
-            && Objects.equals(this.entity, that.entity) && Objects.equals(this.ipAddress, that.ipAddress);
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.attachUser, that.attachUser) && Objects.equals(this.entity, that.entity)
+            && Objects.equals(this.ipAddress, that.ipAddress);
     }
 
     @Override
@@ -404,7 +382,6 @@ public class JobDetailInfo {
             host,
             projectId,
             jobId,
-            successResult,
             process,
             attachUser,
             entity,
@@ -426,7 +403,6 @@ public class JobDetailInfo {
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-        sb.append("    successResult: ").append(toIndentedString(successResult)).append("\n");
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
         sb.append("    attachUser: ").append(toIndentedString(attachUser)).append("\n");
         sb.append("    entity: ").append(toIndentedString(entity)).append("\n");

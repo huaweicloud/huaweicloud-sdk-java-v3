@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 桌面属性
+ * 桌面属性。
  */
 public class ModifyDesktopAttributesReqDesktop {
 
@@ -26,7 +26,7 @@ public class ModifyDesktopAttributesReqDesktop {
     }
 
     /**
-     * 桌面名
+     * 桌面名。
      * @return computerName
      */
     public String getComputerName() {
@@ -43,7 +43,7 @@ public class ModifyDesktopAttributesReqDesktop {
     }
 
     /**
-     * 是否开启快照的操作类型,\"0\":关闭 \"1\":开启
+     * 是否开启快照的操作类型,\"0\":关闭 \"1\":开启。
      * @return selfBackupManagement
      */
     public String getSelfBackupManagement() {

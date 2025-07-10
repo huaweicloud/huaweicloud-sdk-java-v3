@@ -26,11 +26,6 @@ public class VolumeInfo {
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
-
-    private String clusterId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_spec_code")
 
     private String resourceSpecCode;
@@ -88,30 +83,13 @@ public class VolumeInfo {
         this.size = size;
     }
 
-    public VolumeInfo withClusterId(String clusterId) {
-        this.clusterId = clusterId;
-        return this;
-    }
-
-    /**
-     * 云服务器系统盘对应的存储池的ID。
-     * @return clusterId
-     */
-    public String getClusterId() {
-        return clusterId;
-    }
-
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
-    }
-
     public VolumeInfo withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
     }
 
     /**
-     * 规格
+     * 规格。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -132,13 +110,12 @@ public class VolumeInfo {
         }
         VolumeInfo that = (VolumeInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.clusterId, that.clusterId)
-            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, size, clusterId, resourceSpecCode);
+        return Objects.hash(id, type, size, resourceSpecCode);
     }
 
     @Override
@@ -148,7 +125,6 @@ public class VolumeInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
         sb.append("}");
         return sb.toString();

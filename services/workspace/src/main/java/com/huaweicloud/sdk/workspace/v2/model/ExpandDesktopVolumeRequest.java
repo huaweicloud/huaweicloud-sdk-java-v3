@@ -17,11 +17,6 @@ public class ExpandDesktopVolumeRequest {
     private String desktopId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Service-Transaction-Id")
-
-    private String serviceTransactionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_id")
 
     private String volumeId;
@@ -46,23 +41,6 @@ public class ExpandDesktopVolumeRequest {
 
     public void setDesktopId(String desktopId) {
         this.desktopId = desktopId;
-    }
-
-    public ExpandDesktopVolumeRequest withServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
-        return this;
-    }
-
-    /**
-     * CBC接口回调时，请求头里带上的业务ID
-     * @return serviceTransactionId
-     */
-    public String getServiceTransactionId() {
-        return serviceTransactionId;
-    }
-
-    public void setServiceTransactionId(String serviceTransactionId) {
-        this.serviceTransactionId = serviceTransactionId;
     }
 
     public ExpandDesktopVolumeRequest withVolumeId(String volumeId) {
@@ -117,14 +95,13 @@ public class ExpandDesktopVolumeRequest {
             return false;
         }
         ExpandDesktopVolumeRequest that = (ExpandDesktopVolumeRequest) obj;
-        return Objects.equals(this.desktopId, that.desktopId)
-            && Objects.equals(this.serviceTransactionId, that.serviceTransactionId)
-            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId, serviceTransactionId, volumeId, body);
+        return Objects.hash(desktopId, volumeId, body);
     }
 
     @Override
@@ -132,7 +109,6 @@ public class ExpandDesktopVolumeRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExpandDesktopVolumeRequest {\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
-        sb.append("    serviceTransactionId: ").append(toIndentedString(serviceTransactionId)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 指标
+ * 指标。
  */
 public class Metric {
 
@@ -26,7 +26,7 @@ public class Metric {
     }
 
     /**
-     * 指标名称
+     * 指标名称。
      * @return metricName
      */
     public String getMetricName() {
@@ -43,7 +43,7 @@ public class Metric {
     }
 
     /**
-     * 指标值
+     * 指标值。
      * @return metricValue
      */
     public Double getMetricValue() {

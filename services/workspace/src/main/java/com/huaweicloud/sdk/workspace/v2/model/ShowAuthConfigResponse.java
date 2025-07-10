@@ -62,7 +62,7 @@ public class ShowAuthConfigResponse extends SdkResponse {
     }
 
     /**
-     * 当前状态
+     * 当前状态。
      * @return enable
      */
     public Boolean getEnable() {
@@ -122,7 +122,7 @@ public class ShowAuthConfigResponse extends SdkResponse {
     }
 
     /**
-     * 第三方认证接口配置信息
+     * 第三方认证接口配置信息。
      * @return thirdPartyAuthConfig
      */
     public List<ThirdPartyAuthConfig> getThirdPartyAuthConfig() {

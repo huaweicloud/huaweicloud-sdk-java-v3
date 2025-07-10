@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 认证配置请求
+ * 认证配置请求。
  */
 public class AuthMethodConfigRequest {
 

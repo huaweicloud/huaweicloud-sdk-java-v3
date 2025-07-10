@@ -45,18 +45,13 @@ public class ListPolicyGroupInfoRequest {
 
     private String description;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scope_flag")
-
-    private Integer scopeFlag;
-
     public ListPolicyGroupInfoRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 用于分页查询。范围0-100
+     * 用于分页查询。范围0-100。
      * minimum: 0
      * maximum: 100
      * @return limit
@@ -75,7 +70,7 @@ public class ListPolicyGroupInfoRequest {
     }
 
     /**
-     * 用于分页查询，查询的起始记录序号，从0开始。
+     * 用于分页查询，查询的起始记录序号，范围0-10000。
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -164,7 +159,7 @@ public class ListPolicyGroupInfoRequest {
     }
 
     /**
-     * 策略组描述
+     * 策略组描述。
      * @return description
      */
     public String getDescription() {
@@ -173,25 +168,6 @@ public class ListPolicyGroupInfoRequest {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public ListPolicyGroupInfoRequest withScopeFlag(Integer scopeFlag) {
-        this.scopeFlag = scopeFlag;
-        return this;
-    }
-
-    /**
-     * 策略来源，取值范围0或者1
-     * minimum: 0
-     * maximum: 1
-     * @return scopeFlag
-     */
-    public Integer getScopeFlag() {
-        return scopeFlag;
-    }
-
-    public void setScopeFlag(Integer scopeFlag) {
-        this.scopeFlag = scopeFlag;
     }
 
     @Override
@@ -207,13 +183,12 @@ public class ListPolicyGroupInfoRequest {
             && Objects.equals(this.policyGroupId, that.policyGroupId)
             && Objects.equals(this.policyGroupName, that.policyGroupName)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.scopeFlag, that.scopeFlag);
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(limit, offset, policyGroupId, policyGroupName, priority, updateTime, description, scopeFlag);
+        return Objects.hash(limit, offset, policyGroupId, policyGroupName, priority, updateTime, description);
     }
 
     @Override
@@ -227,7 +202,6 @@ public class ListPolicyGroupInfoRequest {
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    scopeFlag: ").append(toIndentedString(scopeFlag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

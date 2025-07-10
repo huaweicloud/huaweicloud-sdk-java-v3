@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import java.util.Objects;
 
 /**
- * 批价基础结果
+ * 批价基础结果。
  */
 public class BillingResult {
 

@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 第三方认证配置信息
+ * 第三方认证配置信息。
  */
 public class ThirdPartyAuthConfig {
 
@@ -27,11 +27,6 @@ public class ThirdPartyAuthConfig {
     @JsonProperty(value = "enable")
 
     private Boolean enable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_cooperate_password")
-
-    private Boolean isCooperatePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_object")
@@ -161,7 +156,7 @@ public class ThirdPartyAuthConfig {
     }
 
     /**
-     * 更新认证配置类型，认证类型为第三方单点登录时使用
+     * 更新认证配置类型，认证类型为第三方单点登录时使用。
      * @return updateType
      */
     public String getUpdateType() {
@@ -178,7 +173,7 @@ public class ThirdPartyAuthConfig {
     }
 
     /**
-     * 是否启用
+     * 是否启用。
      * @return enable
      */
     public Boolean getEnable() {
@@ -189,30 +184,13 @@ public class ThirdPartyAuthConfig {
         this.enable = enable;
     }
 
-    public ThirdPartyAuthConfig withIsCooperatePassword(Boolean isCooperatePassword) {
-        this.isCooperatePassword = isCooperatePassword;
-        return this;
-    }
-
-    /**
-     * 是否支持密码认证
-     * @return isCooperatePassword
-     */
-    public Boolean getIsCooperatePassword() {
-        return isCooperatePassword;
-    }
-
-    public void setIsCooperatePassword(Boolean isCooperatePassword) {
-        this.isCooperatePassword = isCooperatePassword;
-    }
-
     public ThirdPartyAuthConfig withUpdateObject(String updateObject) {
         this.updateObject = updateObject;
         return this;
     }
 
     /**
-     * 更新认证配置对象，认证类型为第三方单点登录时使用
+     * 更新认证配置对象，认证类型为第三方单点登录时使用。
      * @return updateObject
      */
     public String getUpdateObject() {
@@ -229,7 +207,7 @@ public class ThirdPartyAuthConfig {
     }
 
     /**
-     * 认证类型
+     * 认证类型。
      * @return authType
      */
     public String getAuthType() {
@@ -315,7 +293,7 @@ public class ThirdPartyAuthConfig {
     }
 
     /**
-     * 自定义接口配置
+     * 自定义接口配置。
      * @return customDefinition
      */
     public String getCustomDefinition() {
@@ -332,7 +310,7 @@ public class ThirdPartyAuthConfig {
     }
 
     /**
-     * oauth2配置
+     * oauth2配置。
      * @return oauthConfigs
      */
     public String getOauthConfigs() {
@@ -365,7 +343,7 @@ public class ThirdPartyAuthConfig {
     }
 
     /**
-     * 单点登录配置信息列表
+     * 单点登录配置信息列表。
      * @return ldapConfigs
      */
     public List<LdapConfig> getLdapConfigs() {
@@ -382,7 +360,7 @@ public class ThirdPartyAuthConfig {
     }
 
     /**
-     * 更新认证配置对象，认证类型为第三方密码时使用
+     * 更新认证配置对象，认证类型为第三方密码时使用。
      * @return thirdPasswordName
      */
     public String getThirdPasswordName() {
@@ -403,7 +381,6 @@ public class ThirdPartyAuthConfig {
         }
         ThirdPartyAuthConfig that = (ThirdPartyAuthConfig) obj;
         return Objects.equals(this.updateType, that.updateType) && Objects.equals(this.enable, that.enable)
-            && Objects.equals(this.isCooperatePassword, that.isCooperatePassword)
             && Objects.equals(this.updateObject, that.updateObject) && Objects.equals(this.authType, that.authType)
             && Objects.equals(this.clientInterfaceConfig, that.clientInterfaceConfig)
             && Objects.equals(this.serverInterfaceConfig, that.serverInterfaceConfig)
@@ -418,7 +395,6 @@ public class ThirdPartyAuthConfig {
     public int hashCode() {
         return Objects.hash(updateType,
             enable,
-            isCooperatePassword,
             updateObject,
             authType,
             clientInterfaceConfig,
@@ -436,7 +412,6 @@ public class ThirdPartyAuthConfig {
         sb.append("class ThirdPartyAuthConfig {\n");
         sb.append("    updateType: ").append(toIndentedString(updateType)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-        sb.append("    isCooperatePassword: ").append(toIndentedString(isCooperatePassword)).append("\n");
         sb.append("    updateObject: ").append(toIndentedString(updateObject)).append("\n");
         sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    clientInterfaceConfig: ").append(toIndentedString(clientInterfaceConfig)).append("\n");

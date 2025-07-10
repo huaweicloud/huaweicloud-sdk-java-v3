@@ -26,7 +26,7 @@ public class PublicIp {
     }
 
     /**
-     * 弹性IP唯一标识
+     * 弹性IP唯一标识。
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class PublicIp {
     }
 
     /**
-     * 弹性IP地址
+     * 弹性IP地址。
      * @return publicIpAddress
      */
     public String getPublicIpAddress() {

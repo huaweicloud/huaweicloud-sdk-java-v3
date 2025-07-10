@@ -70,7 +70,7 @@ public class ListMetricNotifyRecordRequest {
     }
 
     /**
-     * 查询的偏移量,默认值0
+     * 查询的偏移量,默认值0。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -89,7 +89,7 @@ public class ListMetricNotifyRecordRequest {
     }
 
     /**
-     * 单次查询的大小[1-100],默认值10
+     * 单次查询的大小[1-100],默认值10。
      * minimum: 1
      * maximum: 100
      * @return limit

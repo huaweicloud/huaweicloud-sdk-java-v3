@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListAgenciesRequest {
 
     /**
-     * 委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - SCREEN_RECORD：录屏审计。
+     * 委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - CLOUD_STORAGE 云存储。 - SCREEN_RECORD：录屏审计。
      */
     public static final class SceneEnum {
 
@@ -31,6 +31,11 @@ public class ListAgenciesRequest {
         public static final SceneEnum CLOUD_GAME = new SceneEnum("CLOUD_GAME");
 
         /**
+         * Enum CLOUD_STORAGE for value: "CLOUD_STORAGE"
+         */
+        public static final SceneEnum CLOUD_STORAGE = new SceneEnum("CLOUD_STORAGE");
+
+        /**
          * Enum SCREEN_RECORD for value: "SCREEN_RECORD"
          */
         public static final SceneEnum SCREEN_RECORD = new SceneEnum("SCREEN_RECORD");
@@ -41,6 +46,7 @@ public class ListAgenciesRequest {
             Map<String, SceneEnum> map = new HashMap<>();
             map.put("WORKSPACE", WORKSPACE);
             map.put("CLOUD_GAME", CLOUD_GAME);
+            map.put("CLOUD_STORAGE", CLOUD_STORAGE);
             map.put("SCREEN_RECORD", SCREEN_RECORD);
             return Collections.unmodifiableMap(map);
         }
@@ -102,7 +108,7 @@ public class ListAgenciesRequest {
     }
 
     /**
-     * 委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - SCREEN_RECORD：录屏审计。
+     * 委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - CLOUD_STORAGE 云存储。 - SCREEN_RECORD：录屏审计。
      * @return scene
      */
     public SceneEnum getScene() {

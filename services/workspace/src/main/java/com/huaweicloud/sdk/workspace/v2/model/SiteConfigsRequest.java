@@ -32,7 +32,7 @@ public class SiteConfigsRequest {
     }
 
     /**
-     * 开通服务资源使用的可用分区
+     * 开通服务资源使用的可用分区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

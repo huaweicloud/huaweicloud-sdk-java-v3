@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * vpc信息
+ * vpc信息。
  */
 public class Vpc {
 
@@ -31,7 +31,7 @@ public class Vpc {
     }
 
     /**
-     * 桌面所在vpcId
+     * 桌面所在vpcId。
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class Vpc {
     }
 
     /**
-     * 桌面所在vpc名称
+     * 桌面所在vpc名称。
      * @return name
      */
     public String getName() {
@@ -65,7 +65,7 @@ public class Vpc {
     }
 
     /**
-     * 桌面所在vpc网段
+     * 桌面所在vpc网段。
      * @return cidr
      */
     public String getCidr() {

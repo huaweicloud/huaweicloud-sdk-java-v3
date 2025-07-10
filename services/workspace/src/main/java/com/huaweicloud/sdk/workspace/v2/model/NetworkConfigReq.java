@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 网络配置
+ * 网络配置。
  */
 public class NetworkConfigReq {
 
@@ -29,7 +29,7 @@ public class NetworkConfigReq {
     }
 
     /**
-     * VPC ID
+     * VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -62,7 +62,7 @@ public class NetworkConfigReq {
     }
 
     /**
-     * 指定业务子网的网络id
+     * 指定业务子网的网络id。
      * @return subnetIds
      */
     public List<String> getSubnetIds() {

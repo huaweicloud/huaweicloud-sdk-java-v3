@@ -34,11 +34,6 @@ public class CreateExclusiveHostsReq {
     private Integer quantity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
     private String productId;
@@ -145,23 +140,6 @@ public class CreateExclusiveHostsReq {
         this.quantity = quantity;
     }
 
-    public CreateExclusiveHostsReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单ID。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
     public CreateExclusiveHostsReq withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -218,7 +196,7 @@ public class CreateExclusiveHostsReq {
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -334,8 +312,8 @@ public class CreateExclusiveHostsReq {
         CreateExclusiveHostsReq that = (CreateExclusiveHostsReq) obj;
         return Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.name, that.name)
             && Objects.equals(this.applyDesktopQuantity, that.applyDesktopQuantity)
-            && Objects.equals(this.quantity, that.quantity) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.imageVolumes, that.imageVolumes)
+            && Objects.equals(this.quantity, that.quantity) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.imageVolumes, that.imageVolumes)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.memoryVolumes, that.memoryVolumes) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.subnetId, that.subnetId)
@@ -348,7 +326,6 @@ public class CreateExclusiveHostsReq {
             name,
             applyDesktopQuantity,
             quantity,
-            orderId,
             productId,
             imageVolumes,
             enterpriseProjectId,
@@ -366,7 +343,6 @@ public class CreateExclusiveHostsReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    applyDesktopQuantity: ").append(toIndentedString(applyDesktopQuantity)).append("\n");
         sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    imageVolumes: ").append(toIndentedString(imageVolumes)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

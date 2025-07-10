@@ -46,7 +46,7 @@ public class ListProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * 标签对象
+     * 标签对象。
      * @return tags
      */
     public List<Tags> getTags() {
@@ -63,7 +63,7 @@ public class ListProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * 标签总数
+     * 标签总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

@@ -255,6 +255,11 @@ public class ServerDetail {
 
     private Hypervisor hypervisor;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_interfaces")
+
+    private List<NetworkInterfaces> networkInterfaces = null;
+
     public ServerDetail withStatus(String status) {
         this.status = status;
         return this;
@@ -1225,6 +1230,39 @@ public class ServerDetail {
         this.hypervisor = hypervisor;
     }
 
+    public ServerDetail withNetworkInterfaces(List<NetworkInterfaces> networkInterfaces) {
+        this.networkInterfaces = networkInterfaces;
+        return this;
+    }
+
+    public ServerDetail addNetworkInterfacesItem(NetworkInterfaces networkInterfacesItem) {
+        if (this.networkInterfaces == null) {
+            this.networkInterfaces = new ArrayList<>();
+        }
+        this.networkInterfaces.add(networkInterfacesItem);
+        return this;
+    }
+
+    public ServerDetail withNetworkInterfaces(Consumer<List<NetworkInterfaces>> networkInterfacesSetter) {
+        if (this.networkInterfaces == null) {
+            this.networkInterfaces = new ArrayList<>();
+        }
+        networkInterfacesSetter.accept(this.networkInterfaces);
+        return this;
+    }
+
+    /**
+     * 网卡信息
+     * @return networkInterfaces
+     */
+    public List<NetworkInterfaces> getNetworkInterfaces() {
+        return networkInterfaces;
+    }
+
+    public void setNetworkInterfaces(List<NetworkInterfaces> networkInterfaces) {
+        this.networkInterfaces = networkInterfaces;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1268,7 +1306,8 @@ public class ServerDetail {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.sysTags, that.sysTags) && Objects.equals(this.cpuOptions, that.cpuOptions)
             && Objects.equals(this.securityOptions, that.securityOptions)
-            && Objects.equals(this.hypervisor, that.hypervisor);
+            && Objects.equals(this.hypervisor, that.hypervisor)
+            && Objects.equals(this.networkInterfaces, that.networkInterfaces);
     }
 
     @Override
@@ -1320,7 +1359,8 @@ public class ServerDetail {
             sysTags,
             cpuOptions,
             securityOptions,
-            hypervisor);
+            hypervisor,
+            networkInterfaces);
     }
 
     @Override
@@ -1379,6 +1419,7 @@ public class ServerDetail {
         sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
         sb.append("    securityOptions: ").append(toIndentedString(securityOptions)).append("\n");
         sb.append("    hypervisor: ").append(toIndentedString(hypervisor)).append("\n");
+        sb.append("    networkInterfaces: ").append(toIndentedString(networkInterfaces)).append("\n");
         sb.append("}");
         return sb.toString();
     }

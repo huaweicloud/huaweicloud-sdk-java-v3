@@ -40,7 +40,7 @@ public class DeleteTerminalsBindingDesktopsRequestBody {
     }
 
     /**
-     * 绑定策略ID列表
+     * 绑定策略ID列表。
      * @return idList
      */
     public List<String> getIdList() {

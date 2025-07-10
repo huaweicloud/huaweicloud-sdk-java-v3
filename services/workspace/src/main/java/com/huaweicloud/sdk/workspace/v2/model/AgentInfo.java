@@ -31,7 +31,7 @@ public class AgentInfo {
     }
 
     /**
-     * 插件名称
+     * 插件名称。
      * @return agentName
      */
     public String getAgentName() {
@@ -48,7 +48,7 @@ public class AgentInfo {
     }
 
     /**
-     * 插件版本
+     * 插件版本。
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -65,7 +65,7 @@ public class AgentInfo {
     }
 
     /**
-     * 是否安装插件（是否）
+     * 是否安装插件（是否）。
      * @return isInstalled
      */
     public Boolean getIsInstalled() {

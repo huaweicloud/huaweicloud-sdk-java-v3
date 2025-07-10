@@ -38,11 +38,6 @@ public class CreateResizeOrderRequestBody {
 
     private String mode;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend_param")
-
-    private ResizeDesktopExtendParam extendParam;
-
     public CreateResizeOrderRequestBody withDesktopPoolId(String desktopPoolId) {
         this.desktopPoolId = desktopPoolId;
         return this;
@@ -99,7 +94,7 @@ public class CreateResizeOrderRequestBody {
     }
 
     /**
-     * 促销计划ID
+     * 促销计划ID。
      * @return promotionPlanId
      */
     public String getPromotionPlanId() {
@@ -144,32 +139,6 @@ public class CreateResizeOrderRequestBody {
         this.mode = mode;
     }
 
-    public CreateResizeOrderRequestBody withExtendParam(ResizeDesktopExtendParam extendParam) {
-        this.extendParam = extendParam;
-        return this;
-    }
-
-    public CreateResizeOrderRequestBody withExtendParam(Consumer<ResizeDesktopExtendParam> extendParamSetter) {
-        if (this.extendParam == null) {
-            this.extendParam = new ResizeDesktopExtendParam();
-            extendParamSetter.accept(this.extendParam);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get extendParam
-     * @return extendParam
-     */
-    public ResizeDesktopExtendParam getExtendParam() {
-        return extendParam;
-    }
-
-    public void setExtendParam(ResizeDesktopExtendParam extendParam) {
-        this.extendParam = extendParam;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -182,13 +151,12 @@ public class CreateResizeOrderRequestBody {
         return Objects.equals(this.desktopPoolId, that.desktopPoolId)
             && Objects.equals(this.desktopIds, that.desktopIds)
             && Objects.equals(this.promotionPlanId, that.promotionPlanId)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.extendParam, that.extendParam);
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.mode, that.mode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopPoolId, desktopIds, promotionPlanId, productId, mode, extendParam);
+        return Objects.hash(desktopPoolId, desktopIds, promotionPlanId, productId, mode);
     }
 
     @Override
@@ -200,7 +168,6 @@ public class CreateResizeOrderRequestBody {
         sb.append("    promotionPlanId: ").append(toIndentedString(promotionPlanId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -74,7 +74,7 @@ public class PoliciesPersonalizedDataMgmt {
     }
 
     /**
-     * 用户数据漫游
+     * 用户数据漫游。
      * @return userDataRoamingEnable
      */
     public Boolean getUserDataRoamingEnable() {
@@ -119,7 +119,7 @@ public class PoliciesPersonalizedDataMgmt {
     }
 
     /**
-     * 启用用户文件夹重定向
+     * 启用用户文件夹重定向。
      * @return userFolderRedirectionEnable
      */
     public Boolean getUserFolderRedirectionEnable() {
@@ -165,7 +165,7 @@ public class PoliciesPersonalizedDataMgmt {
     }
 
     /**
-     * 启用用户文件夹重定向
+     * 启用用户文件夹重定向。
      * @return logoffDeleteUserConfiguration
      */
     public Boolean getLogoffDeleteUserConfiguration() {
@@ -182,7 +182,7 @@ public class PoliciesPersonalizedDataMgmt {
     }
 
     /**
-     * 启用用户文件夹重定向
+     * 启用用户文件夹重定向。
      * @return networkDriveMappingEnable
      */
     public Boolean getNetworkDriveMappingEnable() {

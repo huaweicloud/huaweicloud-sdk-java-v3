@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建变更订单请求体
+ * 创建变更订单请求体。
  */
 public class CreateChangeOrderReq {
 
@@ -15,11 +15,6 @@ public class CreateChangeOrderReq {
     @JsonProperty(value = "type")
 
     private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_subscribe")
-
-    private Boolean isSubscribe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
@@ -35,11 +30,6 @@ public class CreateChangeOrderReq {
     @JsonProperty(value = "resize_product_id")
 
     private String resizeProductId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flavor_id")
-
-    private String flavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expand_volume_id")
@@ -62,11 +52,6 @@ public class CreateChangeOrderReq {
     private String exclusiveLitesProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_service_console_url")
-
-    private String cloudServiceConsoleUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -82,7 +67,7 @@ public class CreateChangeOrderReq {
     }
 
     /**
-     * 类型 resizeDesktops(变更规格)、expandVolumes(扩容磁盘)[、meteredToPeriod(按需转保周期)](tag:inner)
+     * 类型 resizeDesktops(变更规格)、expandVolumes(扩容磁盘)。
      * @return type
      */
     public String getType() {
@@ -93,30 +78,13 @@ public class CreateChangeOrderReq {
         this.type = type;
     }
 
-    public CreateChangeOrderReq withIsSubscribe(Boolean isSubscribe) {
-        this.isSubscribe = isSubscribe;
-        return this;
-    }
-
-    /**
-     * 是否订购 *  仅type 为 meteredToPeriod 按需转包时生效； *  默认值为false，不下单，只生成订单号，跳转cbc页面选择时长进行下单； *  若为true 则需要传period_type和period_num参数确定包周期类型和时长；
-     * @return isSubscribe
-     */
-    public Boolean getIsSubscribe() {
-        return isSubscribe;
-    }
-
-    public void setIsSubscribe(Boolean isSubscribe) {
-        this.isSubscribe = isSubscribe;
-    }
-
     public CreateChangeOrderReq withPeriodType(Integer periodType) {
         this.periodType = periodType;
         return this;
     }
 
     /**
-     * 周期类型，2：包月；3：包年[ type为 meteredToPeriod 并且 is_subscribe == true 时不能为空](tag:inner)
+     * 周期类型，2：包月；3：包年。
      * minimum: 0
      * maximum: 255
      * @return periodType
@@ -135,7 +103,7 @@ public class CreateChangeOrderReq {
     }
 
     /**
-     * 周期数[ type为 meteredToPeriod 并且 is_subscribe == true 时不能为空](tag:inner)
+     * 周期数。
      * minimum: 0
      * maximum: 2147483647
      * @return periodNum
@@ -154,7 +122,7 @@ public class CreateChangeOrderReq {
     }
 
     /**
-     * 变更后规格产品ID，当是resizeDesktops，必传
+     * 变更后规格产品ID，当是resizeDesktops，必传。
      * @return resizeProductId
      */
     public String getResizeProductId() {
@@ -165,30 +133,13 @@ public class CreateChangeOrderReq {
         this.resizeProductId = resizeProductId;
     }
 
-    public CreateChangeOrderReq withFlavorId(String flavorId) {
-        this.flavorId = flavorId;
-        return this;
-    }
-
-    /**
-     * 变更后规格产品flavorID。
-     * @return flavorId
-     */
-    public String getFlavorId() {
-        return flavorId;
-    }
-
-    public void setFlavorId(String flavorId) {
-        this.flavorId = flavorId;
-    }
-
     public CreateChangeOrderReq withExpandVolumeId(String expandVolumeId) {
         this.expandVolumeId = expandVolumeId;
         return this;
     }
 
     /**
-     * 扩容的云硬盘的ID，当是expandVolumes，必传
+     * 扩容的云硬盘的ID，当是expandVolumes，必传。
      * @return expandVolumeId
      */
     public String getExpandVolumeId() {
@@ -254,30 +205,13 @@ public class CreateChangeOrderReq {
         this.exclusiveLitesProductId = exclusiveLitesProductId;
     }
 
-    public CreateChangeOrderReq withCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-        return this;
-    }
-
-    /**
-     * 支付后跳转url
-     * @return cloudServiceConsoleUrl
-     */
-    public String getCloudServiceConsoleUrl() {
-        return cloudServiceConsoleUrl;
-    }
-
-    public void setCloudServiceConsoleUrl(String cloudServiceConsoleUrl) {
-        this.cloudServiceConsoleUrl = cloudServiceConsoleUrl;
-    }
-
     public CreateChangeOrderReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -323,14 +257,13 @@ public class CreateChangeOrderReq {
             return false;
         }
         CreateChangeOrderReq that = (CreateChangeOrderReq) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.isSubscribe, that.isSubscribe)
-            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum)
             && Objects.equals(this.resizeProductId, that.resizeProductId)
-            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.expandVolumeId, that.expandVolumeId)
+            && Objects.equals(this.expandVolumeId, that.expandVolumeId)
             && Objects.equals(this.expandNewSize, that.expandNewSize)
             && Objects.equals(this.newQuantity, that.newQuantity)
             && Objects.equals(this.exclusiveLitesProductId, that.exclusiveLitesProductId)
-            && Objects.equals(this.cloudServiceConsoleUrl, that.cloudServiceConsoleUrl)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.extendParam, that.extendParam);
     }
@@ -338,16 +271,13 @@ public class CreateChangeOrderReq {
     @Override
     public int hashCode() {
         return Objects.hash(type,
-            isSubscribe,
             periodType,
             periodNum,
             resizeProductId,
-            flavorId,
             expandVolumeId,
             expandNewSize,
             newQuantity,
             exclusiveLitesProductId,
-            cloudServiceConsoleUrl,
             enterpriseProjectId,
             extendParam);
     }
@@ -357,16 +287,13 @@ public class CreateChangeOrderReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateChangeOrderReq {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    isSubscribe: ").append(toIndentedString(isSubscribe)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    resizeProductId: ").append(toIndentedString(resizeProductId)).append("\n");
-        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    expandVolumeId: ").append(toIndentedString(expandVolumeId)).append("\n");
         sb.append("    expandNewSize: ").append(toIndentedString(expandNewSize)).append("\n");
         sb.append("    newQuantity: ").append(toIndentedString(newQuantity)).append("\n");
         sb.append("    exclusiveLitesProductId: ").append(toIndentedString(exclusiveLitesProductId)).append("\n");
-        sb.append("    cloudServiceConsoleUrl: ").append(toIndentedString(cloudServiceConsoleUrl)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");

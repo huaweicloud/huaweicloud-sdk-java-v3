@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 返回时区配置信息
+ * 返回时区配置信息。
  */
 public class Timezones {
 
@@ -41,7 +41,7 @@ public class Timezones {
     }
 
     /**
-     * 时区描述
+     * 时区描述。
      * @return timeZoneDesc
      */
     public String getTimeZoneDesc() {
@@ -58,7 +58,7 @@ public class Timezones {
     }
 
     /**
-     * 时区偏移量
+     * 时区偏移量。
      * @return timeZone
      */
     public String getTimeZone() {
@@ -75,7 +75,7 @@ public class Timezones {
     }
 
     /**
-     * 时区地名
+     * 时区地名。
      * @return timeZoneName
      */
     public String getTimeZoneName() {
@@ -92,7 +92,7 @@ public class Timezones {
     }
 
     /**
-     * 时区英文描述
+     * 时区英文描述。
      * @return timeZoneDescUs
      */
     public String getTimeZoneDescUs() {
@@ -109,7 +109,7 @@ public class Timezones {
     }
 
     /**
-     * 时区中文描述
+     * 时区中文描述。
      * @return timeZoneDescCn
      */
     public String getTimeZoneDescCn() {

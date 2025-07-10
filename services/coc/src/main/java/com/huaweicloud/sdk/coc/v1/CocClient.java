@@ -8,6 +8,8 @@ import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CancelDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ClearAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.ClearAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentRequest;
@@ -40,8 +42,12 @@ import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteTicketInfoRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteTicketInfoResponse;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.DownloadAttachmentRequest;
+import com.huaweicloud.sdk.coc.v1.model.DownloadAttachmentResponse;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentRequest;
@@ -50,6 +56,8 @@ import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteTicketActionRequest;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteTicketActionResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetDocumentAtomicInfoRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetDocumentAtomicInfoResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetDocumentRequest;
@@ -70,6 +78,10 @@ import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
@@ -112,6 +124,12 @@ import com.huaweicloud.sdk.coc.v1.model.ListScriptResourceTagsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptResourceTagsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListSubTicketsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListSubTicketsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketOperationHistoriesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketOperationHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListTicketsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
@@ -120,6 +138,8 @@ import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
 import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailRequest;
@@ -136,8 +156,14 @@ import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentRequest;
+import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateChangeRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateChangeResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsRequest;
@@ -146,6 +172,8 @@ import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateTicketRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateTicketResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -162,6 +190,148 @@ public class CocClient {
         ClientBuilder<CocClient> clientBuilder =
             new ClientBuilder<>(CocClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 批量清除告警
+     *
+     * 清除告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ClearAlarmRequest 请求对象
+     * @return ClearAlarmResponse
+     */
+    public ClearAlarmResponse clearAlarm(ClearAlarmRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.clearAlarm);
+    }
+
+    /**
+     * 批量清除告警
+     *
+     * 清除告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ClearAlarmRequest 请求对象
+     * @return SyncInvoker<ClearAlarmRequest, ClearAlarmResponse>
+     */
+    public SyncInvoker<ClearAlarmRequest, ClearAlarmResponse> clearAlarmInvoker(ClearAlarmRequest request) {
+        return new SyncInvoker<>(request, CocMeta.clearAlarm, hcClient);
+    }
+
+    /**
+     * 自动处理设置脚本和runbook
+     *
+     * 自动处理设置脚本和runbook
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HandlerAlarmRequest 请求对象
+     * @return HandlerAlarmResponse
+     */
+    public HandlerAlarmResponse handlerAlarm(HandlerAlarmRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.handlerAlarm);
+    }
+
+    /**
+     * 自动处理设置脚本和runbook
+     *
+     * 自动处理设置脚本和runbook
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HandlerAlarmRequest 请求对象
+     * @return SyncInvoker<HandlerAlarmRequest, HandlerAlarmResponse>
+     */
+    public SyncInvoker<HandlerAlarmRequest, HandlerAlarmResponse> handlerAlarmInvoker(HandlerAlarmRequest request) {
+        return new SyncInvoker<>(request, CocMeta.handlerAlarm, hcClient);
+    }
+
+    /**
+     * 查询告警工单历史
+     *
+     * 查询告警工单历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmHandleHistoriesRequest 请求对象
+     * @return ListAlarmHandleHistoriesResponse
+     */
+    public ListAlarmHandleHistoriesResponse listAlarmHandleHistories(ListAlarmHandleHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.listAlarmHandleHistories);
+    }
+
+    /**
+     * 查询告警工单历史
+     *
+     * 查询告警工单历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmHandleHistoriesRequest 请求对象
+     * @return SyncInvoker<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse>
+     */
+    public SyncInvoker<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> listAlarmHandleHistoriesInvoker(
+        ListAlarmHandleHistoriesRequest request) {
+        return new SyncInvoker<>(request, CocMeta.listAlarmHandleHistories, hcClient);
+    }
+
+    /**
+     * 查询Alarm
+     *
+     * Get alarm info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmRequest 请求对象
+     * @return ShowAlarmResponse
+     */
+    public ShowAlarmResponse showAlarm(ShowAlarmRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.showAlarm);
+    }
+
+    /**
+     * 查询Alarm
+     *
+     * Get alarm info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmRequest 请求对象
+     * @return SyncInvoker<ShowAlarmRequest, ShowAlarmResponse>
+     */
+    public SyncInvoker<ShowAlarmRequest, ShowAlarmResponse> showAlarmInvoker(ShowAlarmRequest request) {
+        return new SyncInvoker<>(request, CocMeta.showAlarm, hcClient);
+    }
+
+    /**
+     * 批量告警转事件
+     *
+     * 批量告警转事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferAlarmToIncidentRequest 请求对象
+     * @return TransferAlarmToIncidentResponse
+     */
+    public TransferAlarmToIncidentResponse transferAlarmToIncident(TransferAlarmToIncidentRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.transferAlarmToIncident);
+    }
+
+    /**
+     * 批量告警转事件
+     *
+     * 批量告警转事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferAlarmToIncidentRequest 请求对象
+     * @return SyncInvoker<TransferAlarmToIncidentRequest, TransferAlarmToIncidentResponse>
+     */
+    public SyncInvoker<TransferAlarmToIncidentRequest, TransferAlarmToIncidentResponse> transferAlarmToIncidentInvoker(
+        TransferAlarmToIncidentRequest request) {
+        return new SyncInvoker<>(request, CocMeta.transferAlarmToIncident, hcClient);
     }
 
     /**
@@ -191,6 +361,34 @@ public class CocClient {
     public SyncInvoker<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> batchCreateApplicationViewInvoker(
         BatchCreateApplicationViewRequest request) {
         return new SyncInvoker<>(request, CocMeta.batchCreateApplicationView, hcClient);
+    }
+
+    /**
+     * UpdateChange 更新变更单
+     *
+     * UpdateChange 更新变更单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateChangeRequest 请求对象
+     * @return UpdateChangeResponse
+     */
+    public UpdateChangeResponse updateChange(UpdateChangeRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.updateChange);
+    }
+
+    /**
+     * UpdateChange 更新变更单
+     *
+     * UpdateChange 更新变更单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateChangeRequest 请求对象
+     * @return SyncInvoker<UpdateChangeRequest, UpdateChangeResponse>
+     */
+    public SyncInvoker<UpdateChangeRequest, UpdateChangeResponse> updateChangeInvoker(UpdateChangeRequest request) {
+        return new SyncInvoker<>(request, CocMeta.updateChange, hcClient);
     }
 
     /**
@@ -1002,6 +1200,92 @@ public class CocClient {
     }
 
     /**
+     * 删除变更单
+     *
+     * 删除变更单，当变更单为撤销状态下，变更单可进行删除操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTicketInfoRequest 请求对象
+     * @return DeleteTicketInfoResponse
+     */
+    public DeleteTicketInfoResponse deleteTicketInfo(DeleteTicketInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.deleteTicketInfo);
+    }
+
+    /**
+     * 删除变更单
+     *
+     * 删除变更单，当变更单为撤销状态下，变更单可进行删除操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTicketInfoRequest 请求对象
+     * @return SyncInvoker<DeleteTicketInfoRequest, DeleteTicketInfoResponse>
+     */
+    public SyncInvoker<DeleteTicketInfoRequest, DeleteTicketInfoResponse> deleteTicketInfoInvoker(
+        DeleteTicketInfoRequest request) {
+        return new SyncInvoker<>(request, CocMeta.deleteTicketInfo, hcClient);
+    }
+
+    /**
+     * 搜索变更工单子单
+     *
+     * 搜索变更工单子单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubTicketsRequest 请求对象
+     * @return ListSubTicketsResponse
+     */
+    public ListSubTicketsResponse listSubTickets(ListSubTicketsRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.listSubTickets);
+    }
+
+    /**
+     * 搜索变更工单子单
+     *
+     * 搜索变更工单子单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubTicketsRequest 请求对象
+     * @return SyncInvoker<ListSubTicketsRequest, ListSubTicketsResponse>
+     */
+    public SyncInvoker<ListSubTicketsRequest, ListSubTicketsResponse> listSubTicketsInvoker(
+        ListSubTicketsRequest request) {
+        return new SyncInvoker<>(request, CocMeta.listSubTickets, hcClient);
+    }
+
+    /**
+     * 变更单状态修改
+     *
+     * 变更单状态修改，请求路径中的ticket_type为固定值change，且ticket_id传递变更单单号。此接口可操作变更开始、变更结束、变更取消和添加变更结果操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTicketRequest 请求对象
+     * @return UpdateTicketResponse
+     */
+    public UpdateTicketResponse updateTicket(UpdateTicketRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.updateTicket);
+    }
+
+    /**
+     * 变更单状态修改
+     *
+     * 变更单状态修改，请求路径中的ticket_type为固定值change，且ticket_id传递变更单单号。此接口可操作变更开始、变更结束、变更取消和添加变更结果操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTicketRequest 请求对象
+     * @return SyncInvoker<UpdateTicketRequest, UpdateTicketResponse>
+     */
+    public SyncInvoker<UpdateTicketRequest, UpdateTicketResponse> updateTicketInvoker(UpdateTicketRequest request) {
+        return new SyncInvoker<>(request, CocMeta.updateTicket, hcClient);
+    }
+
+    /**
      * CreateExternalIncident 创建事件单
      *
      * CreateExternalIncident 创建事件单
@@ -1289,6 +1573,151 @@ public class CocClient {
      */
     public SyncInvoker<CreateTicketRequest, CreateTicketResponse> createTicketInvoker(CreateTicketRequest request) {
         return new SyncInvoker<>(request, CocMeta.createTicket, hcClient);
+    }
+
+    /**
+     * 下载附件
+     *
+     * 附件下载操作需基于已上传的附件资源。上传附件时，需调用/v1/{ticket_type}/attachments接口完成上传；成功上传后，可从接口响应中获取doc_id参数。下载附件时，凭借此doc_id再次调用/v1/{ticket_type}/attachments接口，即可获取已上传的对应附件资源，实现附件全生命周期管理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadAttachmentRequest 请求对象
+     * @return DownloadAttachmentResponse
+     */
+    public DownloadAttachmentResponse downloadAttachment(DownloadAttachmentRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.downloadAttachment);
+    }
+
+    /**
+     * 下载附件
+     *
+     * 附件下载操作需基于已上传的附件资源。上传附件时，需调用/v1/{ticket_type}/attachments接口完成上传；成功上传后，可从接口响应中获取doc_id参数。下载附件时，凭借此doc_id再次调用/v1/{ticket_type}/attachments接口，即可获取已上传的对应附件资源，实现附件全生命周期管理。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadAttachmentRequest 请求对象
+     * @return SyncInvoker<DownloadAttachmentRequest, DownloadAttachmentResponse>
+     */
+    public SyncInvoker<DownloadAttachmentRequest, DownloadAttachmentResponse> downloadAttachmentInvoker(
+        DownloadAttachmentRequest request) {
+        return new SyncInvoker<>(request, CocMeta.downloadAttachment, hcClient);
+    }
+
+    /**
+     * 工单操作
+     *
+     * 变更单审批、撤销以及问题单的所有操作均通过此接口完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteTicketActionRequest 请求对象
+     * @return ExecuteTicketActionResponse
+     */
+    public ExecuteTicketActionResponse executeTicketAction(ExecuteTicketActionRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.executeTicketAction);
+    }
+
+    /**
+     * 工单操作
+     *
+     * 变更单审批、撤销以及问题单的所有操作均通过此接口完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteTicketActionRequest 请求对象
+     * @return SyncInvoker<ExecuteTicketActionRequest, ExecuteTicketActionResponse>
+     */
+    public SyncInvoker<ExecuteTicketActionRequest, ExecuteTicketActionResponse> executeTicketActionInvoker(
+        ExecuteTicketActionRequest request) {
+        return new SyncInvoker<>(request, CocMeta.executeTicketAction, hcClient);
+    }
+
+    /**
+     * 搜索工单历史
+     *
+     * List Histories
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTicketOperationHistoriesRequest 请求对象
+     * @return ListTicketOperationHistoriesResponse
+     */
+    public ListTicketOperationHistoriesResponse listTicketOperationHistories(
+        ListTicketOperationHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.listTicketOperationHistories);
+    }
+
+    /**
+     * 搜索工单历史
+     *
+     * List Histories
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTicketOperationHistoriesRequest 请求对象
+     * @return SyncInvoker<ListTicketOperationHistoriesRequest, ListTicketOperationHistoriesResponse>
+     */
+    public SyncInvoker<ListTicketOperationHistoriesRequest, ListTicketOperationHistoriesResponse> listTicketOperationHistoriesInvoker(
+        ListTicketOperationHistoriesRequest request) {
+        return new SyncInvoker<>(request, CocMeta.listTicketOperationHistories, hcClient);
+    }
+
+    /**
+     * 搜索工单
+     *
+     * List ticket
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTicketsRequest 请求对象
+     * @return ListTicketsResponse
+     */
+    public ListTicketsResponse listTickets(ListTicketsRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.listTickets);
+    }
+
+    /**
+     * 搜索工单
+     *
+     * List ticket
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTicketsRequest 请求对象
+     * @return SyncInvoker<ListTicketsRequest, ListTicketsResponse>
+     */
+    public SyncInvoker<ListTicketsRequest, ListTicketsResponse> listTicketsInvoker(ListTicketsRequest request) {
+        return new SyncInvoker<>(request, CocMeta.listTickets, hcClient);
+    }
+
+    /**
+     * 查询Ticket
+     *
+     * Get Ticket info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTicketInfoRequest 请求对象
+     * @return ShowTicketInfoResponse
+     */
+    public ShowTicketInfoResponse showTicketInfo(ShowTicketInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.showTicketInfo);
+    }
+
+    /**
+     * 查询Ticket
+     *
+     * Get Ticket info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTicketInfoRequest 请求对象
+     * @return SyncInvoker<ShowTicketInfoRequest, ShowTicketInfoResponse>
+     */
+    public SyncInvoker<ShowTicketInfoRequest, ShowTicketInfoResponse> showTicketInfoInvoker(
+        ShowTicketInfoRequest request) {
+        return new SyncInvoker<>(request, CocMeta.showTicketInfo, hcClient);
     }
 
     /**

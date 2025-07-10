@@ -56,7 +56,7 @@ public class ListHotWordsRequest {
     private Integer region;
 
     /**
-     * 智能交互语言  * zh_CN：简体中文（已下线，请使用CN）  * en_US：英语（已下线，请使用EN）  * CN: 中文  * EN: 英文
+     * 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      */
     public static final class LanguageEnum {
 
@@ -80,6 +80,26 @@ public class ListHotWordsRequest {
          */
         public static final LanguageEnum EN = new LanguageEnum("EN");
 
+        /**
+         * Enum ESP for value: "ESP"
+         */
+        public static final LanguageEnum ESP = new LanguageEnum("ESP");
+
+        /**
+         * Enum POR for value: "por"
+         */
+        public static final LanguageEnum POR = new LanguageEnum("por");
+
+        /**
+         * Enum ARABIC for value: "Arabic"
+         */
+        public static final LanguageEnum ARABIC = new LanguageEnum("Arabic");
+
+        /**
+         * Enum THAI for value: "Thai"
+         */
+        public static final LanguageEnum THAI = new LanguageEnum("Thai");
+
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LanguageEnum> createStaticFields() {
@@ -88,6 +108,10 @@ public class ListHotWordsRequest {
             map.put("en_US", EN_US);
             map.put("CN", CN);
             map.put("EN", EN);
+            map.put("ESP", ESP);
+            map.put("por", POR);
+            map.put("Arabic", ARABIC);
+            map.put("Thai", THAI);
             return Collections.unmodifiableMap(map);
         }
 
@@ -141,6 +165,81 @@ public class ListHotWordsRequest {
     @JsonProperty(value = "language")
 
     private LanguageEnum language;
+
+    /**
+     * * SIS:SIS热词 * MOBVOI:奇妙问ASR热词
+     */
+    public static final class HotWordsTypeEnum {
+
+        /**
+         * Enum SIS for value: "SIS"
+         */
+        public static final HotWordsTypeEnum SIS = new HotWordsTypeEnum("SIS");
+
+        /**
+         * Enum MOBVOI for value: "MOBVOI"
+         */
+        public static final HotWordsTypeEnum MOBVOI = new HotWordsTypeEnum("MOBVOI");
+
+        private static final Map<String, HotWordsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HotWordsTypeEnum> createStaticFields() {
+            Map<String, HotWordsTypeEnum> map = new HashMap<>();
+            map.put("SIS", SIS);
+            map.put("MOBVOI", MOBVOI);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HotWordsTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HotWordsTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HotWordsTypeEnum(value));
+        }
+
+        public static HotWordsTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HotWordsTypeEnum) {
+                return this.value.equals(((HotWordsTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hot_words_type")
+
+    private HotWordsTypeEnum hotWordsType;
 
     public ListHotWordsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -296,7 +395,7 @@ public class ListHotWordsRequest {
     }
 
     /**
-     * 智能交互语言  * zh_CN：简体中文（已下线，请使用CN）  * en_US：英语（已下线，请使用EN）  * CN: 中文  * EN: 英文
+     * 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      * @return language
      */
     public LanguageEnum getLanguage() {
@@ -305,6 +404,23 @@ public class ListHotWordsRequest {
 
     public void setLanguage(LanguageEnum language) {
         this.language = language;
+    }
+
+    public ListHotWordsRequest withHotWordsType(HotWordsTypeEnum hotWordsType) {
+        this.hotWordsType = hotWordsType;
+        return this;
+    }
+
+    /**
+     * * SIS:SIS热词 * MOBVOI:奇妙问ASR热词
+     * @return hotWordsType
+     */
+    public HotWordsTypeEnum getHotWordsType() {
+        return hotWordsType;
+    }
+
+    public void setHotWordsType(HotWordsTypeEnum hotWordsType) {
+        this.hotWordsType = hotWordsType;
     }
 
     @Override
@@ -320,12 +436,21 @@ public class ListHotWordsRequest {
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.robotId, that.robotId) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.language, that.language);
+            && Objects.equals(this.language, that.language) && Objects.equals(this.hotWordsType, that.hotWordsType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, offset, limit, robotId, region, language);
+        return Objects.hash(authorization,
+            xSdkDate,
+            xProjectId,
+            xAppUserId,
+            offset,
+            limit,
+            robotId,
+            region,
+            language,
+            hotWordsType);
     }
 
     @Override
@@ -341,6 +466,7 @@ public class ListHotWordsRequest {
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    hotWordsType: ").append(toIndentedString(hotWordsType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

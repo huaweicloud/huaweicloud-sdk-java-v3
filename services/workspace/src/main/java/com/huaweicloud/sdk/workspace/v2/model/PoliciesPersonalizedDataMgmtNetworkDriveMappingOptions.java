@@ -27,7 +27,7 @@ public class PoliciesPersonalizedDataMgmtNetworkDriveMappingOptions {
     }
 
     /**
-     * 网络驱动器映射路径
+     * 网络驱动器映射路径。
      * @return networkDriveMappingPath
      */
     public String getNetworkDriveMappingPath() {
@@ -44,7 +44,7 @@ public class PoliciesPersonalizedDataMgmtNetworkDriveMappingOptions {
     }
 
     /**
-     * 排除文件夹路径
+     * 排除文件夹路径。
      * @return driveLetter
      */
     public String getDriveLetter() {

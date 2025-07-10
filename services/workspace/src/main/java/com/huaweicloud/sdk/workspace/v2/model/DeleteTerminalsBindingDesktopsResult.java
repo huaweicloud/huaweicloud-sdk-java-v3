@@ -31,7 +31,7 @@ public class DeleteTerminalsBindingDesktopsResult {
     }
 
     /**
-     * 需删除的策略ID
+     * 需删除的策略ID。
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class DeleteTerminalsBindingDesktopsResult {
     }
 
     /**
-     * 删除操作的结果码
+     * 删除操作的结果码。
      * @return deleteResultCode
      */
     public String getDeleteResultCode() {
@@ -65,7 +65,7 @@ public class DeleteTerminalsBindingDesktopsResult {
     }
 
     /**
-     * 删除操作的结果信息
+     * 删除操作的结果信息。
      * @return deleteResultMsg
      */
     public String getDeleteResultMsg() {

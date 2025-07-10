@@ -14,31 +14,9 @@ import java.util.function.Consumer;
 public class ExpandDesktopPoolVolumesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes")
 
     private List<VolumeInfo> volumes = null;
-
-    public ExpandDesktopPoolVolumesReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 包周期订购ID，CBC订购回调时使用。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
 
     public ExpandDesktopPoolVolumesReq withVolumes(List<VolumeInfo> volumes) {
         this.volumes = volumes;
@@ -82,19 +60,18 @@ public class ExpandDesktopPoolVolumesReq {
             return false;
         }
         ExpandDesktopPoolVolumesReq that = (ExpandDesktopPoolVolumesReq) obj;
-        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.volumes, that.volumes);
+        return Objects.equals(this.volumes, that.volumes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, volumes);
+        return Objects.hash(volumes);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExpandDesktopPoolVolumesReq {\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
         sb.append("}");
         return sb.toString();

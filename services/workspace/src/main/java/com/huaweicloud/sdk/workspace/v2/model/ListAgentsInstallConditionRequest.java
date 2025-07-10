@@ -61,7 +61,7 @@ public class ListAgentsInstallConditionRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -78,7 +78,7 @@ public class ListAgentsInstallConditionRequest {
     }
 
     /**
-     * 桌面ID
+     * 桌面ID。
      * @return desktopId
      */
     public String getDesktopId() {
@@ -95,7 +95,7 @@ public class ListAgentsInstallConditionRequest {
     }
 
     /**
-     * 桌面名称
+     * 桌面名称。
      * @return desktopName
      */
     public String getDesktopName() {
@@ -112,7 +112,7 @@ public class ListAgentsInstallConditionRequest {
     }
 
     /**
-     * 桌面状态
+     * 桌面状态。
      * @return status
      */
     public String getStatus() {
@@ -129,7 +129,7 @@ public class ListAgentsInstallConditionRequest {
     }
 
     /**
-     * ip地址
+     * ip地址。
      * @return ipAddress
      */
     public String getIpAddress() {
@@ -146,7 +146,7 @@ public class ListAgentsInstallConditionRequest {
     }
 
     /**
-     * 插件是否已安装
+     * 插件是否已安装。
      * @return isInstalled
      */
     public Boolean getIsInstalled() {
@@ -163,7 +163,7 @@ public class ListAgentsInstallConditionRequest {
     }
 
     /**
-     * 桌面池id
+     * 桌面池id。
      * @return desktopPoolId
      */
     public String getDesktopPoolId() {

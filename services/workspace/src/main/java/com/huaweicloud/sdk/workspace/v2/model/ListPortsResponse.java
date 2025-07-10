@@ -41,7 +41,7 @@ public class ListPortsResponse extends SdkResponse {
     }
 
     /**
-     * 端口列表
+     * 端口列表。
      * @return ports
      */
     public List<NeutronPort> getPorts() {

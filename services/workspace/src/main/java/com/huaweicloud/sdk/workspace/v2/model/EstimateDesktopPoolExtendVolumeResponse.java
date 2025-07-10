@@ -40,7 +40,7 @@ public class EstimateDesktopPoolExtendVolumeResponse extends SdkResponse {
     }
 
     /**
-     * 币种，比如CNY
+     * 币种，比如CNY。
      * @return currency
      */
     public String getCurrency() {
@@ -57,7 +57,7 @@ public class EstimateDesktopPoolExtendVolumeResponse extends SdkResponse {
     }
 
     /**
-     * 扩展参数
+     * 扩展参数。
      * @return extendParams
      */
     public String getExtendParams() {
@@ -121,7 +121,7 @@ public class EstimateDesktopPoolExtendVolumeResponse extends SdkResponse {
     }
 
     /**
-     * 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果
+     * 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果。
      * @return optionalDiscountRatingResults
      */
     public List<OptionalDiscountRatingResult> getOptionalDiscountRatingResults() {

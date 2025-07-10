@@ -17,11 +17,6 @@ public class ListLoginStateResponse extends SdkResponse {
     private Integer inUseNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "stop_num")
-
-    private Integer stopNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unregistered_num")
 
     private Integer unregisteredNum;
@@ -58,25 +53,6 @@ public class ListLoginStateResponse extends SdkResponse {
 
     public void setInUseNum(Integer inUseNum) {
         this.inUseNum = inUseNum;
-    }
-
-    public ListLoginStateResponse withStopNum(Integer stopNum) {
-        this.stopNum = stopNum;
-        return this;
-    }
-
-    /**
-     * 关机数目(关机中、已关机)。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return stopNum
-     */
-    public Integer getStopNum() {
-        return stopNum;
-    }
-
-    public void setStopNum(Integer stopNum) {
-        this.stopNum = stopNum;
     }
 
     public ListLoginStateResponse withUnregisteredNum(Integer unregisteredNum) {
@@ -164,7 +140,7 @@ public class ListLoginStateResponse extends SdkResponse {
             return false;
         }
         ListLoginStateResponse that = (ListLoginStateResponse) obj;
-        return Objects.equals(this.inUseNum, that.inUseNum) && Objects.equals(this.stopNum, that.stopNum)
+        return Objects.equals(this.inUseNum, that.inUseNum)
             && Objects.equals(this.unregisteredNum, that.unregisteredNum)
             && Objects.equals(this.unableToConnectNum, that.unableToConnectNum)
             && Objects.equals(this.readyNum, that.readyNum)
@@ -173,7 +149,7 @@ public class ListLoginStateResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(inUseNum, stopNum, unregisteredNum, unableToConnectNum, readyNum, disconnectedNum);
+        return Objects.hash(inUseNum, unregisteredNum, unableToConnectNum, readyNum, disconnectedNum);
     }
 
     @Override
@@ -181,7 +157,6 @@ public class ListLoginStateResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListLoginStateResponse {\n");
         sb.append("    inUseNum: ").append(toIndentedString(inUseNum)).append("\n");
-        sb.append("    stopNum: ").append(toIndentedString(stopNum)).append("\n");
         sb.append("    unregisteredNum: ").append(toIndentedString(unregisteredNum)).append("\n");
         sb.append("    unableToConnectNum: ").append(toIndentedString(unableToConnectNum)).append("\n");
         sb.append("    readyNum: ").append(toIndentedString(readyNum)).append("\n");

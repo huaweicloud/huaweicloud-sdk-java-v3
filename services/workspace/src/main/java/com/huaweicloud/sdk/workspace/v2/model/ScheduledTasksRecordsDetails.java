@@ -71,7 +71,7 @@ public class ScheduledTasksRecordsDetails {
     }
 
     /**
-     * 任务执行记录详情id
+     * 任务执行记录详情id。
      * @return id
      */
     public String getId() {
@@ -88,7 +88,7 @@ public class ScheduledTasksRecordsDetails {
     }
 
     /**
-     * 任务执行记录id
+     * 任务执行记录id。
      * @return recordId
      */
     public String getRecordId() {
@@ -105,7 +105,7 @@ public class ScheduledTasksRecordsDetails {
     }
 
     /**
-     * 桌面id
+     * 桌面id。
      * @return desktopId
      */
     public String getDesktopId() {
@@ -241,7 +241,7 @@ public class ScheduledTasksRecordsDetails {
     }
 
     /**
-     * 时区
+     * 时区。
      * @return timeZone
      */
     public String getTimeZone() {

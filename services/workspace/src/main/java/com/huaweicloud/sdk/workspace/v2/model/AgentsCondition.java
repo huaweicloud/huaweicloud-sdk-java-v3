@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 桌面agent安装情况
+ * 桌面agent安装情况。
  */
 public class AgentsCondition {
 
@@ -64,7 +64,7 @@ public class AgentsCondition {
     }
 
     /**
-     * 桌面的desktopId
+     * 桌面的desktopId。
      * @return desktopId
      */
     public String getDesktopId() {
@@ -81,7 +81,7 @@ public class AgentsCondition {
     }
 
     /**
-     * 桌面名称
+     * 桌面名称。
      * @return desktopName
      */
     public String getDesktopName() {
@@ -98,7 +98,7 @@ public class AgentsCondition {
     }
 
     /**
-     * 桌面池id
+     * 桌面池id。
      * @return desktopPoolId
      */
     public String getDesktopPoolId() {
@@ -115,7 +115,7 @@ public class AgentsCondition {
     }
 
     /**
-     * 桌面运行状态
+     * 桌面运行状态。
      * @return status
      */
     public String getStatus() {
@@ -132,7 +132,7 @@ public class AgentsCondition {
     }
 
     /**
-     * 桌面的任务状态
+     * 桌面的任务状态。
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -149,7 +149,7 @@ public class AgentsCondition {
     }
 
     /**
-     * ip地址
+     * ip地址。
      * @return ipAddress
      */
     public String getIpAddress() {
@@ -166,7 +166,7 @@ public class AgentsCondition {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -216,7 +216,7 @@ public class AgentsCondition {
     }
 
     /**
-     * 单个桌面内的agent安装情况
+     * 单个桌面内的agent安装情况。
      * @return agentInfo
      */
     public List<AgentInfo> getAgentInfo() {

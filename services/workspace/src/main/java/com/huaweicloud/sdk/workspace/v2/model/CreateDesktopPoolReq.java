@@ -119,6 +119,11 @@ public class CreateDesktopPoolReq {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_id")
+
+    private String flavorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_type")
 
     private String imageType;
@@ -157,11 +162,6 @@ public class CreateDesktopPoolReq {
     @JsonProperty(value = "authorized_objects")
 
     private List<AuthorizedObjects> authorizedObjects = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ou_name")
@@ -300,6 +300,23 @@ public class CreateDesktopPoolReq {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public CreateDesktopPoolReq withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    /**
+     * 产品规格ID。可用区是边缘可用区时，必填此参数。
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
     }
 
     public CreateDesktopPoolReq withImageType(String imageType) {
@@ -511,23 +528,6 @@ public class CreateDesktopPoolReq {
         this.authorizedObjects = authorizedObjects;
     }
 
-    public CreateDesktopPoolReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 包周期订购ID，CBC订购回调时使用。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
     public CreateDesktopPoolReq withOuName(String ouName) {
         this.ouName = ouName;
         return this;
@@ -584,7 +584,7 @@ public class CreateDesktopPoolReq {
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0。\"
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -686,14 +686,13 @@ public class CreateDesktopPoolReq {
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.size, that.size) && Objects.equals(this.description, that.description)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.imageType, that.imageType)
-            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.rootVolume, that.rootVolume)
-            && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetIds, that.subnetIds)
             && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.authorizedObjects, that.authorizedObjects)
-            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.ouName, that.ouName)
-            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.ouName, that.ouName) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.disconnectedRetentionPeriod, that.disconnectedRetentionPeriod)
             && Objects.equals(this.enableAutoscale, that.enableAutoscale)
@@ -709,6 +708,7 @@ public class CreateDesktopPoolReq {
             description,
             availabilityZone,
             productId,
+            flavorId,
             imageType,
             imageId,
             rootVolume,
@@ -717,7 +717,6 @@ public class CreateDesktopPoolReq {
             subnetIds,
             securityGroups,
             authorizedObjects,
-            orderId,
             ouName,
             tags,
             enterpriseProjectId,
@@ -737,6 +736,7 @@ public class CreateDesktopPoolReq {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
@@ -745,7 +745,6 @@ public class CreateDesktopPoolReq {
         sb.append("    subnetIds: ").append(toIndentedString(subnetIds)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    authorizedObjects: ").append(toIndentedString(authorizedObjects)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

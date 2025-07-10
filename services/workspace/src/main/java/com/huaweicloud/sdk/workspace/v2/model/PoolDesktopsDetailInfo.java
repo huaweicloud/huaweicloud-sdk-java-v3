@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 池桌面详情
+ * 池桌面详情。
  */
 public class PoolDesktopsDetailInfo {
 
@@ -106,7 +106,7 @@ public class PoolDesktopsDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroup> securityGroups = null;
+    private List<SecurityGroupInfo> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_status")
@@ -184,11 +184,6 @@ public class PoolDesktopsDetailInfo {
     private String sid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "join_domain")
-
-    private String joinDomain;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
     private String orderId;
@@ -197,16 +192,6 @@ public class PoolDesktopsDetailInfo {
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deh_id")
-
-    private String dehId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "platform_kind")
-
-    private Integer platformKind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_support_internet")
@@ -300,94 +285,9 @@ public class PoolDesktopsDetailInfo {
     private List<String> internetModeList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "need_apply_adn")
-
-    private Boolean needApplyAdn;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_attaching_eip")
 
     private Boolean isAttachingEip;
-
-    /**
-     * 桌面来源。  - DEFAULT：默认桌面来源。 - ONEMOBILE：协同办公云桌面OneMobile。
-     */
-    public static final class DesktopIsvEnum {
-
-        /**
-         * Enum DEFAULT for value: "DEFAULT"
-         */
-        public static final DesktopIsvEnum DEFAULT = new DesktopIsvEnum("DEFAULT");
-
-        /**
-         * Enum ONEMOBILE for value: "ONEMOBILE"
-         */
-        public static final DesktopIsvEnum ONEMOBILE = new DesktopIsvEnum("ONEMOBILE");
-
-        private static final Map<String, DesktopIsvEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DesktopIsvEnum> createStaticFields() {
-            Map<String, DesktopIsvEnum> map = new HashMap<>();
-            map.put("DEFAULT", DEFAULT);
-            map.put("ONEMOBILE", ONEMOBILE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DesktopIsvEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DesktopIsvEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DesktopIsvEnum(value));
-        }
-
-        public static DesktopIsvEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DesktopIsvEnum) {
-                return this.value.equals(((DesktopIsvEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "desktop_isv")
-
-    private DesktopIsvEnum desktopIsv;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "creation_type")
-
-    private String creationType;
 
     /**
      * 分配状态。 - ATTACHED：已分配。 - UNATTACH：未分配 表示未关联。 - DEATTACHED：已解分配。 - ATTACHING：分配中。 - DEATTACHING：解分配中。 - ATTACHFAIL：分配失败。 - DEATTACHFAIL：解分配失败。 - WAITING：等待被分配中,描述从批量分配（解分配）下发到转入分配（解分配）的中间状态 同时方便单个关联流程的状态独立性。 - ATTACH_FAIL_CAN_ATTACH_AGAIN：分配失败,还可以再关联。 - DEATTACH_FAIL_CAN_DEATTACH_AGAIN：解分配失败,还可以再解分配。
@@ -722,7 +622,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 用户列表
+     * 用户列表。
      * @return userList
      */
     public List<String> getUserList() {
@@ -755,7 +655,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 用户组列表
+     * 用户组列表。
      * @return userGroupList
      */
     public List<String> getUserGroupList() {
@@ -789,7 +689,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * resource_type字段，分别表示：专属桌面（DEDICATED_DESKTOP）、池桌面（POOLED_DESKTOP）、渲染桌面（RENDER_DESKTOP）、专享主机（EXCLUSIVE_HOST）、多用户桌面(SHARED_DESKTOP)
+     * resource_type字段，分别表示：专属桌面（DEDICATED_DESKTOP）、池桌面（POOLED_DESKTOP）、渲染桌面（RENDER_DESKTOP）、专享主机（EXCLUSIVE_HOST）、多用户桌面(SHARED_DESKTOP)。
      * @return resourceType
      */
     public String getResourceType() {
@@ -899,7 +799,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 是否处于维护模式,true表示维护模式，false表示不处于维护模式
+     * 是否处于维护模式,true表示维护模式，false表示不处于维护模式。
      * @return inMaintenanceMode
      */
     public Boolean getInMaintenanceMode() {
@@ -927,12 +827,12 @@ public class PoolDesktopsDetailInfo {
         this.created = created;
     }
 
-    public PoolDesktopsDetailInfo withSecurityGroups(List<SecurityGroup> securityGroups) {
+    public PoolDesktopsDetailInfo withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public PoolDesktopsDetailInfo addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+    public PoolDesktopsDetailInfo addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -940,7 +840,7 @@ public class PoolDesktopsDetailInfo {
         return this;
     }
 
-    public PoolDesktopsDetailInfo withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+    public PoolDesktopsDetailInfo withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -952,11 +852,11 @@ public class PoolDesktopsDetailInfo {
      * 桌面安全组。
      * @return securityGroups
      */
-    public List<SecurityGroup> getSecurityGroups() {
+    public List<SecurityGroupInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 
@@ -1050,7 +950,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 桌面协同资源SKU码
+     * 桌面协同资源SKU码。
      * @return shareResourceSku
      */
     public String getShareResourceSku() {
@@ -1160,7 +1060,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 站点类型
+     * 站点类型。
      * @return siteType
      */
     public String getSiteType() {
@@ -1177,7 +1077,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 站点名字
+     * 站点名字。
      * @return siteName
      */
     public String getSiteName() {
@@ -1254,7 +1154,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * SID
+     * SID。
      * @return sid
      */
     public String getSid() {
@@ -1263,23 +1163,6 @@ public class PoolDesktopsDetailInfo {
 
     public void setSid(String sid) {
         this.sid = sid;
-    }
-
-    public PoolDesktopsDetailInfo withJoinDomain(String joinDomain) {
-        this.joinDomain = joinDomain;
-        return this;
-    }
-
-    /**
-     * 计算机是否加入域。  - 0：不加入域。 - 1：加入域。
-     * @return joinDomain
-     */
-    public String getJoinDomain() {
-        return joinDomain;
-    }
-
-    public void setJoinDomain(String joinDomain) {
-        this.joinDomain = joinDomain;
     }
 
     public PoolDesktopsDetailInfo withOrderId(String orderId) {
@@ -1332,49 +1215,13 @@ public class PoolDesktopsDetailInfo {
         this.tags = tags;
     }
 
-    public PoolDesktopsDetailInfo withDehId(String dehId) {
-        this.dehId = dehId;
-        return this;
-    }
-
-    /**
-     * 云办公主机id。
-     * @return dehId
-     */
-    public String getDehId() {
-        return dehId;
-    }
-
-    public void setDehId(String dehId) {
-        this.dehId = dehId;
-    }
-
-    public PoolDesktopsDetailInfo withPlatformKind(Integer platformKind) {
-        this.platformKind = platformKind;
-        return this;
-    }
-
-    /**
-     * 平台类型，0:fc fusioncompute平台 1:physical 物理机 2:openstack 3:workspace_manager 1.0平台 5:graphics_workstation 图形工作站 6:sce 容器桌面 10:other 其它平台。
-     * minimum: 0
-     * maximum: 100
-     * @return platformKind
-     */
-    public Integer getPlatformKind() {
-        return platformKind;
-    }
-
-    public void setPlatformKind(Integer platformKind) {
-        this.platformKind = platformKind;
-    }
-
     public PoolDesktopsDetailInfo withIsSupportInternet(Boolean isSupportInternet) {
         this.isSupportInternet = isSupportInternet;
         return this;
     }
 
     /**
-     * 是否开通互联网，true：已开通，false：未开通
+     * 是否开通互联网，true：已开通，false：未开通。
      * @return isSupportInternet
      */
     public Boolean getIsSupportInternet() {
@@ -1435,23 +1282,6 @@ public class PoolDesktopsDetailInfo {
         this.internetModeList = internetModeList;
     }
 
-    public PoolDesktopsDetailInfo withNeedApplyAdn(Boolean needApplyAdn) {
-        this.needApplyAdn = needApplyAdn;
-        return this;
-    }
-
-    /**
-     * 是否需要开通云办公带宽。
-     * @return needApplyAdn
-     */
-    public Boolean getNeedApplyAdn() {
-        return needApplyAdn;
-    }
-
-    public void setNeedApplyAdn(Boolean needApplyAdn) {
-        this.needApplyAdn = needApplyAdn;
-    }
-
     public PoolDesktopsDetailInfo withIsAttachingEip(Boolean isAttachingEip) {
         this.isAttachingEip = isAttachingEip;
         return this;
@@ -1467,40 +1297,6 @@ public class PoolDesktopsDetailInfo {
 
     public void setIsAttachingEip(Boolean isAttachingEip) {
         this.isAttachingEip = isAttachingEip;
-    }
-
-    public PoolDesktopsDetailInfo withDesktopIsv(DesktopIsvEnum desktopIsv) {
-        this.desktopIsv = desktopIsv;
-        return this;
-    }
-
-    /**
-     * 桌面来源。  - DEFAULT：默认桌面来源。 - ONEMOBILE：协同办公云桌面OneMobile。
-     * @return desktopIsv
-     */
-    public DesktopIsvEnum getDesktopIsv() {
-        return desktopIsv;
-    }
-
-    public void setDesktopIsv(DesktopIsvEnum desktopIsv) {
-        this.desktopIsv = desktopIsv;
-    }
-
-    public PoolDesktopsDetailInfo withCreationType(String creationType) {
-        this.creationType = creationType;
-        return this;
-    }
-
-    /**
-     * 桌面创建类型，null或者MANUALLY表示基础创建出来，AUTOSCALE：表示自动扩容出来的。
-     * @return creationType
-     */
-    public String getCreationType() {
-        return creationType;
-    }
-
-    public void setCreationType(String creationType) {
-        this.creationType = creationType;
     }
 
     public PoolDesktopsDetailInfo withAttachState(AttachStateEnum attachState) {
@@ -1526,7 +1322,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -1560,7 +1356,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 桌面计费资源ID
+     * 桌面计费资源ID。
      * @return billResourceId
      */
     public String getBillResourceId() {
@@ -1694,15 +1490,11 @@ public class PoolDesktopsDetailInfo {
             && Objects.equals(this.siteType, that.siteType) && Objects.equals(this.siteName, that.siteName)
             && Objects.equals(this.product, that.product) && Objects.equals(this.ouName, that.ouName)
             && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.sid, that.sid)
-            && Objects.equals(this.joinDomain, that.joinDomain) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.dehId, that.dehId)
-            && Objects.equals(this.platformKind, that.platformKind)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.isSupportInternet, that.isSupportInternet)
             && Objects.equals(this.internetMode, that.internetMode)
             && Objects.equals(this.internetModeList, that.internetModeList)
-            && Objects.equals(this.needApplyAdn, that.needApplyAdn)
             && Objects.equals(this.isAttachingEip, that.isAttachingEip)
-            && Objects.equals(this.desktopIsv, that.desktopIsv) && Objects.equals(this.creationType, that.creationType)
             && Objects.equals(this.attachState, that.attachState)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId)
@@ -1746,18 +1538,12 @@ public class PoolDesktopsDetailInfo {
             ouName,
             osVersion,
             sid,
-            joinDomain,
             orderId,
             tags,
-            dehId,
-            platformKind,
             isSupportInternet,
             internetMode,
             internetModeList,
-            needApplyAdn,
             isAttachingEip,
-            desktopIsv,
-            creationType,
             attachState,
             enterpriseProjectId,
             subnetId,
@@ -1805,18 +1591,12 @@ public class PoolDesktopsDetailInfo {
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
         sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
-        sb.append("    joinDomain: ").append(toIndentedString(joinDomain)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    dehId: ").append(toIndentedString(dehId)).append("\n");
-        sb.append("    platformKind: ").append(toIndentedString(platformKind)).append("\n");
         sb.append("    isSupportInternet: ").append(toIndentedString(isSupportInternet)).append("\n");
         sb.append("    internetMode: ").append(toIndentedString(internetMode)).append("\n");
         sb.append("    internetModeList: ").append(toIndentedString(internetModeList)).append("\n");
-        sb.append("    needApplyAdn: ").append(toIndentedString(needApplyAdn)).append("\n");
         sb.append("    isAttachingEip: ").append(toIndentedString(isAttachingEip)).append("\n");
-        sb.append("    desktopIsv: ").append(toIndentedString(desktopIsv)).append("\n");
-        sb.append("    creationType: ").append(toIndentedString(creationType)).append("\n");
         sb.append("    attachState: ").append(toIndentedString(attachState)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");

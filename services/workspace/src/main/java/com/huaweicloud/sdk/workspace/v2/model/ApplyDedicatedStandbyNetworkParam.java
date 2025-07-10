@@ -9,14 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 开通专线备用线路入参
+ * 开通专线备用线路入参。
  */
 public class ApplyDedicatedStandbyNetworkParam {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "site_id")
-
-    private String siteId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
@@ -33,30 +28,13 @@ public class ApplyDedicatedStandbyNetworkParam {
 
     private List<String> availabilityZone = null;
 
-    public ApplyDedicatedStandbyNetworkParam withSiteId(String siteId) {
-        this.siteId = siteId;
-        return this;
-    }
-
-    /**
-     * 租户的站点id
-     * @return siteId
-     */
-    public String getSiteId() {
-        return siteId;
-    }
-
-    public void setSiteId(String siteId) {
-        this.siteId = siteId;
-    }
-
     public ApplyDedicatedStandbyNetworkParam withAddress(String address) {
         this.address = address;
         return this;
     }
 
     /**
-     * 租户指定的专线备用地址
+     * 租户指定的专线备用地址。
      * @return address
      */
     public String getAddress() {
@@ -73,7 +51,7 @@ public class ApplyDedicatedStandbyNetworkParam {
     }
 
     /**
-     * 租户指定的专线备用地址端口
+     * 租户指定的专线备用地址端口。
      * minimum: 1025
      * maximum: 65535
      * @return port
@@ -108,7 +86,7 @@ public class ApplyDedicatedStandbyNetworkParam {
     }
 
     /**
-     * 开通服务资源使用的可用分区，默认随机使用2个可用区
+     * 开通服务资源使用的可用分区，默认随机使用2个可用区。
      * @return availabilityZone
      */
     public List<String> getAvailabilityZone() {
@@ -128,20 +106,19 @@ public class ApplyDedicatedStandbyNetworkParam {
             return false;
         }
         ApplyDedicatedStandbyNetworkParam that = (ApplyDedicatedStandbyNetworkParam) obj;
-        return Objects.equals(this.siteId, that.siteId) && Objects.equals(this.address, that.address)
-            && Objects.equals(this.port, that.port) && Objects.equals(this.availabilityZone, that.availabilityZone);
+        return Objects.equals(this.address, that.address) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(siteId, address, port, availabilityZone);
+        return Objects.hash(address, port, availabilityZone);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplyDedicatedStandbyNetworkParam {\n");
-        sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");

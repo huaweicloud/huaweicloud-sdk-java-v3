@@ -43,7 +43,7 @@ public class ShowScriptDetailRequest {
     }
 
     /**
-     * 执行脚本的任务ID
+     * 执行脚本的任务ID。
      * @return scriptTaskId
      */
     public String getScriptTaskId() {

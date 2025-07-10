@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 网络信息
+ * 网络信息。
  */
 public class NetworkConfig {
 
@@ -49,7 +49,7 @@ public class NetworkConfig {
     }
 
     /**
-     * VPC ID
+     * VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -66,7 +66,7 @@ public class NetworkConfig {
     }
 
     /**
-     * VPC名称
+     * VPC名称。
      * @return vpcName
      */
     public String getVpcName() {
@@ -99,7 +99,7 @@ public class NetworkConfig {
     }
 
     /**
-     * 业务子网，可以指定返回的网络ID订购桌面
+     * 业务子网，可以指定返回的网络ID订购桌面。
      * @return subnetIds
      */
     public List<String> getSubnetIds() {
@@ -116,7 +116,7 @@ public class NetworkConfig {
     }
 
     /**
-     * 后端管理组件占用的子网网段
+     * 后端管理组件占用的子网网段。
      * @return managementSubnetCidr
      */
     public String getManagementSubnetCidr() {
@@ -133,7 +133,7 @@ public class NetworkConfig {
     }
 
     /**
-     * subnet_ids所返回的业务子网中,被管理节点所占用的子网id
+     * subnet_ids所返回的业务子网中,被管理节点所占用的子网id。
      * @return managementNodeSubnetId
      */
     public String getManagementNodeSubnetId() {

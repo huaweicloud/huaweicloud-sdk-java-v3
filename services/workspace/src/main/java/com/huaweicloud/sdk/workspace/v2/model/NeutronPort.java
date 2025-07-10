@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 端口详情
+ * 端口详情。
  */
 public class NeutronPort {
 
@@ -29,6 +29,11 @@ public class NeutronPort {
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_id")
+
+    private String deviceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fixed_ips")
 
     private List<FixedIp> fixedIps = null;
@@ -39,7 +44,7 @@ public class NeutronPort {
     }
 
     /**
-     * 端口唯一标识
+     * 端口唯一标识。
      * @return id
      */
     public String getId() {
@@ -56,7 +61,7 @@ public class NeutronPort {
     }
 
     /**
-     * 私有ip状态
+     * 私有ip状态。
      * @return status
      */
     public String getStatus() {
@@ -73,7 +78,7 @@ public class NeutronPort {
     }
 
     /**
-     * 端口所属网络的ID
+     * 端口所属网络的ID。
      * @return networkId
      */
     public String getNetworkId() {
@@ -82,6 +87,23 @@ public class NeutronPort {
 
     public void setNetworkId(String networkId) {
         this.networkId = networkId;
+    }
+
+    public NeutronPort withDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+
+    /**
+     * 端口所属设备的Id。
+     * @return deviceId
+     */
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
     public NeutronPort withFixedIps(List<FixedIp> fixedIps) {
@@ -106,7 +128,7 @@ public class NeutronPort {
     }
 
     /**
-     * 端口IP
+     * 端口IP。
      * @return fixedIps
      */
     public List<FixedIp> getFixedIps() {
@@ -127,12 +149,13 @@ public class NeutronPort {
         }
         NeutronPort that = (NeutronPort) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.fixedIps, that.fixedIps);
+            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.fixedIps, that.fixedIps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, networkId, fixedIps);
+        return Objects.hash(id, status, networkId, deviceId, fixedIps);
     }
 
     @Override
@@ -142,6 +165,7 @@ public class NeutronPort {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
         sb.append("}");
         return sb.toString();

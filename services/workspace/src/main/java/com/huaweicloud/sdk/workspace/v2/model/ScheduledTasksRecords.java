@@ -31,6 +31,11 @@ public class ScheduledTasksRecords {
     private String scheduledType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "life_cycle_type")
+
+    private String lifeCycleType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -71,7 +76,7 @@ public class ScheduledTasksRecords {
     }
 
     /**
-     * 任务执行记录id
+     * 任务执行记录id。
      * @return id
      */
     public String getId() {
@@ -131,6 +136,23 @@ public class ScheduledTasksRecords {
 
     public void setScheduledType(String scheduledType) {
         this.scheduledType = scheduledType;
+    }
+
+    public ScheduledTasksRecords withLifeCycleType(String lifeCycleType) {
+        this.lifeCycleType = lifeCycleType;
+        return this;
+    }
+
+    /**
+     * 触发场景类型。
+     * @return lifeCycleType
+     */
+    public String getLifeCycleType() {
+        return lifeCycleType;
+    }
+
+    public void setLifeCycleType(String lifeCycleType) {
+        this.lifeCycleType = lifeCycleType;
     }
 
     public ScheduledTasksRecords withStatus(String status) {
@@ -207,7 +229,7 @@ public class ScheduledTasksRecords {
     }
 
     /**
-     * 时区
+     * 时区。
      * @return timeZone
      */
     public String getTimeZone() {
@@ -263,9 +285,10 @@ public class ScheduledTasksRecords {
         ScheduledTasksRecords that = (ScheduledTasksRecords) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.scheduledType, that.scheduledType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.successNum, that.successNum)
-            && Objects.equals(this.failedNum, that.failedNum) && Objects.equals(this.skipNum, that.skipNum)
-            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.executeTaskId, that.executeTaskId)
+            && Objects.equals(this.lifeCycleType, that.lifeCycleType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.successNum, that.successNum) && Objects.equals(this.failedNum, that.failedNum)
+            && Objects.equals(this.skipNum, that.skipNum) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.executeTaskId, that.executeTaskId)
             && Objects.equals(this.executeObjectType, that.executeObjectType);
     }
 
@@ -275,6 +298,7 @@ public class ScheduledTasksRecords {
             startTime,
             taskType,
             scheduledType,
+            lifeCycleType,
             status,
             successNum,
             failedNum,
@@ -292,6 +316,7 @@ public class ScheduledTasksRecords {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    scheduledType: ").append(toIndentedString(scheduledType)).append("\n");
+        sb.append("    lifeCycleType: ").append(toIndentedString(lifeCycleType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    successNum: ").append(toIndentedString(successNum)).append("\n");
         sb.append("    failedNum: ").append(toIndentedString(failedNum)).append("\n");
