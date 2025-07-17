@@ -61,12 +61,12 @@ public class DcRegion {
 
     public static final Region ME_EAST_1 = new Region("me-east-1", "https://dcaas.me-east-1.myhuaweicloud.com");
 
-    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://dcaas.af-north-1.myhuaweicloud.com");
-
-    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://dcaas.ru-moscow-1.myhuaweicloud.com");
-
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://dcaas.my-kualalumpur-1.myhuaweicloud.com");
+
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://dcaas.eu-west-101.myhuaweicloud.com");
+
+    public static final Region EU_WEST_0 = new Region("eu-west-0", "https://dcaas.eu-west-0.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DC");
 
@@ -95,9 +95,9 @@ public class DcRegion {
         map.put("tr-west-1", TR_WEST_1);
         map.put("cn-south-4", CN_SOUTH_4);
         map.put("me-east-1", ME_EAST_1);
-        map.put("af-north-1", AF_NORTH_1);
-        map.put("ru-moscow-1", RU_MOSCOW_1);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("eu-west-101", EU_WEST_101);
+        map.put("eu-west-0", EU_WEST_0);
         return Collections.unmodifiableMap(map);
     }
 

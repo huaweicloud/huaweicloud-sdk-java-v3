@@ -3189,6 +3189,11 @@ public class IefMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowQuotaRequest::getTypes, ShowQuotaRequest::setTypes));
+        builder.<String>withRequestField("ief-instance-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuotaRequest::getIefInstanceId, ShowQuotaRequest::setIefInstanceId));
 
         // response
 

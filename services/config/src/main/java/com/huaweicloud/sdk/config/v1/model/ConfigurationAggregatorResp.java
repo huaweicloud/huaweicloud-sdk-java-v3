@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.config.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -45,6 +47,11 @@ public class ConfigurationAggregatorResp {
     @JsonProperty(value = "created_at")
 
     private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
 
     public ConfigurationAggregatorResp withAggregatorName(String aggregatorName) {
         this.aggregatorName = aggregatorName;
@@ -176,6 +183,39 @@ public class ConfigurationAggregatorResp {
         this.createdAt = createdAt;
     }
 
+    public ConfigurationAggregatorResp withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ConfigurationAggregatorResp addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ConfigurationAggregatorResp withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -190,7 +230,8 @@ public class ConfigurationAggregatorResp {
             && Objects.equals(this.aggregatorUrn, that.aggregatorUrn)
             && Objects.equals(this.aggregatorType, that.aggregatorType)
             && Objects.equals(this.accountAggregationSources, that.accountAggregationSources)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -201,7 +242,8 @@ public class ConfigurationAggregatorResp {
             aggregatorType,
             accountAggregationSources,
             updatedAt,
-            createdAt);
+            createdAt,
+            tags);
     }
 
     @Override
@@ -215,6 +257,7 @@ public class ConfigurationAggregatorResp {
         sb.append("    accountAggregationSources: ").append(toIndentedString(accountAggregationSources)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -33,12 +33,18 @@ public class InstanceSetting {
          */
         public static final NetworkTypeEnum MOBILE_NETWORK = new NetworkTypeEnum("MOBILE_NETWORK");
 
+        /**
+         * Enum WIRED for value: "WIRED"
+         */
+        public static final NetworkTypeEnum WIRED = new NetworkTypeEnum("WIRED");
+
         private static final Map<String, NetworkTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NetworkTypeEnum> createStaticFields() {
             Map<String, NetworkTypeEnum> map = new HashMap<>();
             map.put("WIFI", WIFI);
             map.put("MOBILE_NETWORK", MOBILE_NETWORK);
+            map.put("WIRED", WIRED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -103,11 +109,17 @@ public class InstanceSetting {
          */
         public static final EncodingTypeEnum H264 = new EncodingTypeEnum("H264");
 
+        /**
+         * Enum H265 for value: "H265"
+         */
+        public static final EncodingTypeEnum H265 = new EncodingTypeEnum("H265");
+
         private static final Map<String, EncodingTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EncodingTypeEnum> createStaticFields() {
             Map<String, EncodingTypeEnum> map = new HashMap<>();
             map.put("H264", H264);
+            map.put("H265", H265);
             return Collections.unmodifiableMap(map);
         }
 

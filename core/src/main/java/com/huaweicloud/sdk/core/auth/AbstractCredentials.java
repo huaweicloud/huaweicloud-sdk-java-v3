@@ -226,6 +226,10 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         return Iam.getEndpoint();
     }
 
+    protected long getExpirationThresholdMillis() {
+        return expirationThresholdSeconds * 1000L;
+    }
+
     protected String getUsedIamEndpoint(String regionId) {
         if (!StringUtils.isEmpty(iamEndpoint)) {
             return iamEndpoint;
@@ -267,7 +271,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         if (Objects.isNull(expiredAt) || Objects.isNull(securityToken)) {
             return false;
         }
-        return expiredAt - TimeUtils.getTimeInMillis() < expirationThresholdSeconds;
+        return expiredAt - TimeUtils.getTimeInMillis() < getExpirationThresholdMillis();
     }
 
     protected void updateSecurityTokenFromMetadata() {
@@ -293,7 +297,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         if (Objects.isNull(authToken) || Objects.isNull(expiredAt)) {
             return true;
         }
-        return expiredAt - TimeUtils.getTimeInMillis() < expirationThresholdSeconds;
+        return expiredAt - TimeUtils.getTimeInMillis() < getExpirationThresholdMillis();
     }
 
     @SuppressWarnings("unchecked")

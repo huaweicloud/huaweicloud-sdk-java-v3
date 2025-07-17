@@ -27,11 +27,24 @@ public class CountResourcesByTagRequest {
         public static final ResourceTypeEnum CONFIG_POLICYASSIGNMENTS =
             new ResourceTypeEnum("config:policyAssignments");
 
+        /**
+         * Enum CONFIG_AGGREGATORS for value: "config:aggregators"
+         */
+        public static final ResourceTypeEnum CONFIG_AGGREGATORS = new ResourceTypeEnum("config:aggregators");
+
+        /**
+         * Enum CONFIG_AGGREGATIONAUTHORIZATIONS for value: "config:aggregationAuthorizations"
+         */
+        public static final ResourceTypeEnum CONFIG_AGGREGATIONAUTHORIZATIONS =
+            new ResourceTypeEnum("config:aggregationAuthorizations");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
             Map<String, ResourceTypeEnum> map = new HashMap<>();
             map.put("config:policyAssignments", CONFIG_POLICYASSIGNMENTS);
+            map.put("config:aggregators", CONFIG_AGGREGATORS);
+            map.put("config:aggregationAuthorizations", CONFIG_AGGREGATIONAUTHORIZATIONS);
             return Collections.unmodifiableMap(map);
         }
 

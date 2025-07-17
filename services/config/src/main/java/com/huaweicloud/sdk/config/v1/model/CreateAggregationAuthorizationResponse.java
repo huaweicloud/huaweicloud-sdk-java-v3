@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -25,6 +28,11 @@ public class CreateAggregationAuthorizationResponse extends SdkResponse {
     @JsonProperty(value = "created_at")
 
     private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
 
     public CreateAggregationAuthorizationResponse withAggregationAuthorizationUrn(String aggregationAuthorizationUrn) {
         this.aggregationAuthorizationUrn = aggregationAuthorizationUrn;
@@ -77,6 +85,39 @@ public class CreateAggregationAuthorizationResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
+    public CreateAggregationAuthorizationResponse withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateAggregationAuthorizationResponse addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateAggregationAuthorizationResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +129,12 @@ public class CreateAggregationAuthorizationResponse extends SdkResponse {
         CreateAggregationAuthorizationResponse that = (CreateAggregationAuthorizationResponse) obj;
         return Objects.equals(this.aggregationAuthorizationUrn, that.aggregationAuthorizationUrn)
             && Objects.equals(this.authorizedAccountId, that.authorizedAccountId)
-            && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aggregationAuthorizationUrn, authorizedAccountId, createdAt);
+        return Objects.hash(aggregationAuthorizationUrn, authorizedAccountId, createdAt, tags);
     }
 
     @Override
@@ -105,6 +146,7 @@ public class CreateAggregationAuthorizationResponse extends SdkResponse {
             .append("\n");
         sb.append("    authorizedAccountId: ").append(toIndentedString(authorizedAccountId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

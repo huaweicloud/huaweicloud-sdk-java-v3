@@ -45,6 +45,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAsrVocabularyReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAsrVocabularyRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequest;
@@ -158,6 +161,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAsrVocabularyRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigRequest;
@@ -215,6 +220,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListAsrVocabularyRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummarysReq;
@@ -311,6 +318,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAgencyRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAgencyResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAsrVocabularyAssociationRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAsrVocabularyAssociationResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAsrVocabularyRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
@@ -405,6 +416,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateAsrVocabularyReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateAsrVocabularyRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionResponse;
@@ -877,6 +891,353 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowAgencyResponse::getXRequestId, ShowAgencyResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAsrVocabularyRequest, CreateAsrVocabularyResponse> createAsrVocabulary =
+        genForCreateAsrVocabulary();
+
+    private static HttpRequestDef<CreateAsrVocabularyRequest, CreateAsrVocabularyResponse> genForCreateAsrVocabulary() {
+        // basic
+        HttpRequestDef.Builder<CreateAsrVocabularyRequest, CreateAsrVocabularyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAsrVocabularyRequest.class, CreateAsrVocabularyResponse.class)
+                .withName("CreateAsrVocabulary")
+                .withUri("/v1/{project_id}/digital-human-chat/asr-vocabulary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsrVocabularyRequest::getAuthorization,
+                CreateAsrVocabularyRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsrVocabularyRequest::getXSdkDate, CreateAsrVocabularyRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsrVocabularyRequest::getXProjectId,
+                CreateAsrVocabularyRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsrVocabularyRequest::getXAppUserId,
+                CreateAsrVocabularyRequest::setXAppUserId));
+        builder.<CreateAsrVocabularyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAsrVocabularyReq.class),
+            f -> f.withMarshaller(CreateAsrVocabularyRequest::getBody, CreateAsrVocabularyRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAsrVocabularyResponse::getXRequestId,
+                CreateAsrVocabularyResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAsrVocabularyRequest, DeleteAsrVocabularyResponse> deleteAsrVocabulary =
+        genForDeleteAsrVocabulary();
+
+    private static HttpRequestDef<DeleteAsrVocabularyRequest, DeleteAsrVocabularyResponse> genForDeleteAsrVocabulary() {
+        // basic
+        HttpRequestDef.Builder<DeleteAsrVocabularyRequest, DeleteAsrVocabularyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAsrVocabularyRequest.class, DeleteAsrVocabularyResponse.class)
+            .withName("DeleteAsrVocabulary")
+            .withUri("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asr_vocabulary_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAsrVocabularyRequest::getAsrVocabularyId,
+                DeleteAsrVocabularyRequest::setAsrVocabularyId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAsrVocabularyRequest::getAuthorization,
+                DeleteAsrVocabularyRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAsrVocabularyRequest::getXSdkDate, DeleteAsrVocabularyRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAsrVocabularyRequest::getXProjectId,
+                DeleteAsrVocabularyRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAsrVocabularyRequest::getXAppUserId,
+                DeleteAsrVocabularyRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAsrVocabularyResponse::getXRequestId,
+                DeleteAsrVocabularyResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAsrVocabularyRequest, ListAsrVocabularyResponse> listAsrVocabulary =
+        genForListAsrVocabulary();
+
+    private static HttpRequestDef<ListAsrVocabularyRequest, ListAsrVocabularyResponse> genForListAsrVocabulary() {
+        // basic
+        HttpRequestDef.Builder<ListAsrVocabularyRequest, ListAsrVocabularyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAsrVocabularyRequest.class, ListAsrVocabularyResponse.class)
+                .withName("ListAsrVocabulary")
+                .withUri("/v1/{project_id}/digital-human-chat/asr-vocabulary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAsrVocabularyRequest::getOffset, ListAsrVocabularyRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAsrVocabularyRequest::getLimit, ListAsrVocabularyRequest::setLimit));
+        builder.<ListAsrVocabularyRequest.VocabularyTypeEnum>withRequestField("vocabulary_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAsrVocabularyRequest.VocabularyTypeEnum.class),
+            f -> f.withMarshaller(ListAsrVocabularyRequest::getVocabularyType,
+                ListAsrVocabularyRequest::setVocabularyType));
+        builder.<ListAsrVocabularyRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAsrVocabularyRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ListAsrVocabularyRequest::getLanguage, ListAsrVocabularyRequest::setLanguage));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsrVocabularyRequest::getAuthorization,
+                ListAsrVocabularyRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsrVocabularyRequest::getXSdkDate, ListAsrVocabularyRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsrVocabularyRequest::getXProjectId, ListAsrVocabularyRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsrVocabularyRequest::getXAppUserId, ListAsrVocabularyRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsrVocabularyResponse::getXRequestId, ListAsrVocabularyResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAsrVocabularyRequest, ShowAsrVocabularyResponse> showAsrVocabulary =
+        genForShowAsrVocabulary();
+
+    private static HttpRequestDef<ShowAsrVocabularyRequest, ShowAsrVocabularyResponse> genForShowAsrVocabulary() {
+        // basic
+        HttpRequestDef.Builder<ShowAsrVocabularyRequest, ShowAsrVocabularyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAsrVocabularyRequest.class, ShowAsrVocabularyResponse.class)
+                .withName("ShowAsrVocabulary")
+                .withUri("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asr_vocabulary_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyRequest::getAsrVocabularyId,
+                ShowAsrVocabularyRequest::setAsrVocabularyId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyRequest::getAuthorization,
+                ShowAsrVocabularyRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyRequest::getXSdkDate, ShowAsrVocabularyRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyRequest::getXProjectId, ShowAsrVocabularyRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyRequest::getXAppUserId, ShowAsrVocabularyRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAsrVocabularyResponse::getXRequestId, ShowAsrVocabularyResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAsrVocabularyAssociationRequest, ShowAsrVocabularyAssociationResponse> showAsrVocabularyAssociation =
+        genForShowAsrVocabularyAssociation();
+
+    private static HttpRequestDef<ShowAsrVocabularyAssociationRequest, ShowAsrVocabularyAssociationResponse> genForShowAsrVocabularyAssociation() {
+        // basic
+        HttpRequestDef.Builder<ShowAsrVocabularyAssociationRequest, ShowAsrVocabularyAssociationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAsrVocabularyAssociationRequest.class,
+                    ShowAsrVocabularyAssociationResponse.class)
+                .withName("ShowAsrVocabularyAssociation")
+                .withUri("/v1/{project_id}/digital-human-chat/asr-vocabulary/association/{asr_vocabulary_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asr_vocabulary_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyAssociationRequest::getAsrVocabularyId,
+                ShowAsrVocabularyAssociationRequest::setAsrVocabularyId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAsrVocabularyAssociationRequest::getOffset,
+                ShowAsrVocabularyAssociationRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAsrVocabularyAssociationRequest::getLimit,
+                ShowAsrVocabularyAssociationRequest::setLimit));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyAssociationRequest::getAuthorization,
+                ShowAsrVocabularyAssociationRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyAssociationRequest::getXSdkDate,
+                ShowAsrVocabularyAssociationRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyAssociationRequest::getXProjectId,
+                ShowAsrVocabularyAssociationRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsrVocabularyAssociationRequest::getXAppUserId,
+                ShowAsrVocabularyAssociationRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAsrVocabularyAssociationResponse::getXRequestId,
+                ShowAsrVocabularyAssociationResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAsrVocabularyRequest, UpdateAsrVocabularyResponse> updateAsrVocabulary =
+        genForUpdateAsrVocabulary();
+
+    private static HttpRequestDef<UpdateAsrVocabularyRequest, UpdateAsrVocabularyResponse> genForUpdateAsrVocabulary() {
+        // basic
+        HttpRequestDef.Builder<UpdateAsrVocabularyRequest, UpdateAsrVocabularyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAsrVocabularyRequest.class, UpdateAsrVocabularyResponse.class)
+                .withName("UpdateAsrVocabulary")
+                .withUri("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asr_vocabulary_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAsrVocabularyRequest::getAsrVocabularyId,
+                UpdateAsrVocabularyRequest::setAsrVocabularyId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAsrVocabularyRequest::getAuthorization,
+                UpdateAsrVocabularyRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAsrVocabularyRequest::getXSdkDate, UpdateAsrVocabularyRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAsrVocabularyRequest::getXProjectId,
+                UpdateAsrVocabularyRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAsrVocabularyRequest::getXAppUserId,
+                UpdateAsrVocabularyRequest::setXAppUserId));
+        builder.<UpdateAsrVocabularyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAsrVocabularyReq.class),
+            f -> f.withMarshaller(UpdateAsrVocabularyRequest::getBody, UpdateAsrVocabularyRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAsrVocabularyResponse::getXRequestId,
+                UpdateAsrVocabularyResponse::setXRequestId));
         return builder.build();
     }
 

@@ -11,33 +11,9 @@ import java.util.Objects;
 public class ExecuteJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-request-id")
-
-    private String xRequestId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
     private String taskId;
-
-    public ExecuteJobRequest withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-        return this;
-    }
-
-    /**
-     * 消息跟踪唯一id
-     * @return xRequestId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-request-id")
-    public String getXRequestId() {
-        return xRequestId;
-    }
-
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-    }
 
     public ExecuteJobRequest withTaskId(String taskId) {
         this.taskId = taskId;
@@ -65,19 +41,18 @@ public class ExecuteJobRequest {
             return false;
         }
         ExecuteJobRequest that = (ExecuteJobRequest) obj;
-        return Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.taskId, that.taskId);
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, taskId);
+        return Objects.hash(taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExecuteJobRequest {\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();

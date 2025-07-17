@@ -9,10 +9,20 @@ import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.BatchShowSkuRequest;
+import com.huaweicloud.sdk.koophone.v1.model.BatchShowSkuResponse;
+import com.huaweicloud.sdk.koophone.v1.model.CancelInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.CancelInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.DeleteInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobResponse;
+import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceRequest;
@@ -135,11 +145,141 @@ public class KooPhoneAsyncClient {
     }
 
     /**
+     * 可售实例sku批量查询
+     *
+     * 实例sku批量查询。
+     * 接口返回租户下所有可售实例的规格信息。
+     * 根据query参数去查询具体的商品的sku信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchShowSkuRequest 请求对象
+     * @return CompletableFuture<BatchShowSkuResponse>
+     */
+    public CompletableFuture<BatchShowSkuResponse> batchShowSkuAsync(BatchShowSkuRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.batchShowSku);
+    }
+
+    /**
+     * 可售实例sku批量查询
+     *
+     * 实例sku批量查询。
+     * 接口返回租户下所有可售实例的规格信息。
+     * 根据query参数去查询具体的商品的sku信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchShowSkuRequest 请求对象
+     * @return AsyncInvoker<BatchShowSkuRequest, BatchShowSkuResponse>
+     */
+    public AsyncInvoker<BatchShowSkuRequest, BatchShowSkuResponse> batchShowSkuAsyncInvoker(
+        BatchShowSkuRequest request) {
+        return new AsyncInvoker<>(request, KooPhoneMeta.batchShowSku, hcClient);
+    }
+
+    /**
+     * 实例取消分配
+     *
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 将云机取消分配给租户指定的用户，调用后会清除用户云机使用数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelInstanceRequest 请求对象
+     * @return CompletableFuture<CancelInstanceResponse>
+     */
+    public CompletableFuture<CancelInstanceResponse> cancelInstanceAsync(CancelInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.cancelInstance);
+    }
+
+    /**
+     * 实例取消分配
+     *
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 将云机取消分配给租户指定的用户，调用后会清除用户云机使用数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelInstanceRequest 请求对象
+     * @return AsyncInvoker<CancelInstanceRequest, CancelInstanceResponse>
+     */
+    public AsyncInvoker<CancelInstanceRequest, CancelInstanceResponse> cancelInstanceAsyncInvoker(
+        CancelInstanceRequest request) {
+        return new AsyncInvoker<>(request, KooPhoneMeta.cancelInstance, hcClient);
+    }
+
+    /**
+     * 实例开通接口
+     *
+     * 租户可以通过调用该接口生成实例。
+     * 该接口需要结合BatchShowSku接口一起使用，在BatchShowSku接口中获取全量的可售的sku。租户根据自己需要去选择相应规格进行订购。
+     * 调用该接口时如果想要直接购买成功，请您先在账户上充值并在订购参数中选择isAutoPay为自动付费。
+     * 如果没有选择自动付费，在调完接口后请拿对应的订单号去您账号的待支付订单中选择手动付费。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInstanceRequest 请求对象
+     * @return CompletableFuture<CreateInstanceResponse>
+     */
+    public CompletableFuture<CreateInstanceResponse> createInstanceAsync(CreateInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.createInstance);
+    }
+
+    /**
+     * 实例开通接口
+     *
+     * 租户可以通过调用该接口生成实例。
+     * 该接口需要结合BatchShowSku接口一起使用，在BatchShowSku接口中获取全量的可售的sku。租户根据自己需要去选择相应规格进行订购。
+     * 调用该接口时如果想要直接购买成功，请您先在账户上充值并在订购参数中选择isAutoPay为自动付费。
+     * 如果没有选择自动付费，在调完接口后请拿对应的订单号去您账号的待支付订单中选择手动付费。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInstanceRequest 请求对象
+     * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     */
+    public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(
+        CreateInstanceRequest request) {
+        return new AsyncInvoker<>(request, KooPhoneMeta.createInstance, hcClient);
+    }
+
+    /**
+     * 实例删除
+     *
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 租户可以调用该openapi退订已经订购的包周期实例，不可以退订按需的实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceRequest 请求对象
+     * @return CompletableFuture<DeleteInstanceResponse>
+     */
+    public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.deleteInstance);
+    }
+
+    /**
+     * 实例删除
+     *
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 租户可以调用该openapi退订已经订购的包周期实例，不可以退订按需的实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceRequest 请求对象
+     * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
+     */
+    public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
+        DeleteInstanceRequest request) {
+        return new AsyncInvoker<>(request, KooPhoneMeta.deleteInstance, hcClient);
+    }
+
+    /**
      * 租户实例串流前获取设备的device_token
      *
      * 租户实例串流前获取设备的device_token，
      * 调用此api的前提条件是租户需要先购买koophone云手机实例。
-     * 调用该接口获取云机实例的device_token后作为鉴权信息，并携带云机实例的device_id去调用反参中的信令地址（signaling_url）。
+     * 调用该接口获取云机实例的device_token后作为鉴权信息，并携带云机实例的device_id去调用返参中的信令地址（signaling_url）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -156,7 +296,7 @@ public class KooPhoneAsyncClient {
      *
      * 租户实例串流前获取设备的device_token，
      * 调用此api的前提条件是租户需要先购买koophone云手机实例。
-     * 调用该接口获取云机实例的device_token后作为鉴权信息，并携带云机实例的device_id去调用反参中的信令地址（signaling_url）。
+     * 调用该接口获取云机实例的device_token后作为鉴权信息，并携带云机实例的device_id去调用返参中的信令地址（signaling_url）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -198,6 +338,37 @@ public class KooPhoneAsyncClient {
      */
     public AsyncInvoker<ExecuteJobRequest, ExecuteJobResponse> executeJobAsyncInvoker(ExecuteJobRequest request) {
         return new AsyncInvoker<>(request, KooPhoneMeta.executeJob, hcClient);
+    }
+
+    /**
+     * 实例分配
+     *
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 将云机分配给租户指定的用户，需要指定用户userId。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ProvisionInstanceRequest 请求对象
+     * @return CompletableFuture<ProvisionInstanceResponse>
+     */
+    public CompletableFuture<ProvisionInstanceResponse> provisionInstanceAsync(ProvisionInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.provisionInstance);
+    }
+
+    /**
+     * 实例分配
+     *
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 将云机分配给租户指定的用户，需要指定用户userId。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ProvisionInstanceRequest 请求对象
+     * @return AsyncInvoker<ProvisionInstanceRequest, ProvisionInstanceResponse>
+     */
+    public AsyncInvoker<ProvisionInstanceRequest, ProvisionInstanceResponse> provisionInstanceAsyncInvoker(
+        ProvisionInstanceRequest request) {
+        return new AsyncInvoker<>(request, KooPhoneMeta.provisionInstance, hcClient);
     }
 
     /**

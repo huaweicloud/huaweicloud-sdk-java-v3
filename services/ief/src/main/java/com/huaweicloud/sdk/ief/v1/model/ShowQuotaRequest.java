@@ -15,6 +15,11 @@ public class ShowQuotaRequest {
 
     private String types;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ief-instance-id")
+
+    private String iefInstanceId;
+
     public ShowQuotaRequest withTypes(String types) {
         this.types = types;
         return this;
@@ -32,6 +37,23 @@ public class ShowQuotaRequest {
         this.types = types;
     }
 
+    public ShowQuotaRequest withIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+        return this;
+    }
+
+    /**
+     * 铂金版实例ID，专业版实例为空值
+     * @return iefInstanceId
+     */
+    public String getIefInstanceId() {
+        return iefInstanceId;
+    }
+
+    public void setIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class ShowQuotaRequest {
             return false;
         }
         ShowQuotaRequest that = (ShowQuotaRequest) obj;
-        return Objects.equals(this.types, that.types);
+        return Objects.equals(this.types, that.types) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(types);
+        return Objects.hash(types, iefInstanceId);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class ShowQuotaRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowQuotaRequest {\n");
         sb.append("    types: ").append(toIndentedString(types)).append("\n");
+        sb.append("    iefInstanceId: ").append(toIndentedString(iefInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

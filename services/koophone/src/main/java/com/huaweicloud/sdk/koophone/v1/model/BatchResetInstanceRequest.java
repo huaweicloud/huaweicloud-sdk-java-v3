@@ -12,33 +12,9 @@ import java.util.function.Consumer;
 public class BatchResetInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-request-id")
-
-    private String xRequestId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private InstanceResetReq body;
-
-    public BatchResetInstanceRequest withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-        return this;
-    }
-
-    /**
-     * 消息跟踪唯一id
-     * @return xRequestId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-request-id")
-    public String getXRequestId() {
-        return xRequestId;
-    }
-
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-    }
 
     public BatchResetInstanceRequest withBody(InstanceResetReq body) {
         this.body = body;
@@ -75,19 +51,18 @@ public class BatchResetInstanceRequest {
             return false;
         }
         BatchResetInstanceRequest that = (BatchResetInstanceRequest) obj;
-        return Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, body);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchResetInstanceRequest {\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

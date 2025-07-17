@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 反参全部信息
+ * 返参全部信息
  */
 public class RmAuthTokenRespData {
 

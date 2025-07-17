@@ -11,15 +11,29 @@ import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.BatchShowSkuRequest;
+import com.huaweicloud.sdk.koophone.v1.model.BatchShowSkuResponse;
+import com.huaweicloud.sdk.koophone.v1.model.CancelInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.CancelInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.DeleteInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobResponse;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceAssignReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceAsyncCommandsReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceCreateReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceDeleteRequest;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceResetReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceStatusReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceSyncCommandsReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceUnassignReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceVideoSettingReq;
+import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceRequest;
@@ -40,12 +54,6 @@ public class KooPhoneMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("x-request-id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AsyncInvokeInstanceRequest::getXRequestId,
-                AsyncInvokeInstanceRequest::setXRequestId));
         builder.<InstanceAsyncCommandsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -69,11 +77,6 @@ public class KooPhoneMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("x-request-id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchResetInstanceRequest::getXRequestId, BatchResetInstanceRequest::setXRequestId));
         builder.<InstanceResetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -97,16 +100,102 @@ public class KooPhoneMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("x-request-id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowInstanceRequest::getXRequestId, BatchShowInstanceRequest::setXRequestId));
         builder.<InstanceStatusReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceStatusReq.class),
             f -> f.withMarshaller(BatchShowInstanceRequest::getBody, BatchShowInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchShowSkuRequest, BatchShowSkuResponse> batchShowSku = genForBatchShowSku();
+
+    private static HttpRequestDef<BatchShowSkuRequest, BatchShowSkuResponse> genForBatchShowSku() {
+        // basic
+        HttpRequestDef.Builder<BatchShowSkuRequest, BatchShowSkuResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchShowSkuRequest.class, BatchShowSkuResponse.class)
+                .withName("BatchShowSku")
+                .withUri("/v1/instances/sku")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowSkuRequest::getType, BatchShowSkuRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelInstanceRequest, CancelInstanceResponse> cancelInstance =
+        genForCancelInstance();
+
+    private static HttpRequestDef<CancelInstanceRequest, CancelInstanceResponse> genForCancelInstance() {
+        // basic
+        HttpRequestDef.Builder<CancelInstanceRequest, CancelInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelInstanceRequest.class, CancelInstanceResponse.class)
+                .withName("CancelInstance")
+                .withUri("/v1/instances/unassign")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstanceUnassignReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceUnassignReq.class),
+            f -> f.withMarshaller(CancelInstanceRequest::getBody, CancelInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
+        genForCreateInstance();
+
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForCreateInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
+                .withName("CreateInstance")
+                .withUri("/v1/instances/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstanceCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceCreateReq.class),
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
+        genForDeleteInstance();
+
+    private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genForDeleteInstance() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
+                .withName("DeleteInstance")
+                .withUri("/v1/instances/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstanceDeleteRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceDeleteRequest.class),
+            f -> f.withMarshaller(DeleteInstanceRequest::getBody, DeleteInstanceRequest::setBody));
 
         // response
 
@@ -154,11 +243,29 @@ public class KooPhoneMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExecuteJobRequest::getTaskId, ExecuteJobRequest::setTaskId));
-        builder.<String>withRequestField("x-request-id",
-            LocationType.Header,
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ProvisionInstanceRequest, ProvisionInstanceResponse> provisionInstance =
+        genForProvisionInstance();
+
+    private static HttpRequestDef<ProvisionInstanceRequest, ProvisionInstanceResponse> genForProvisionInstance() {
+        // basic
+        HttpRequestDef.Builder<ProvisionInstanceRequest, ProvisionInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ProvisionInstanceRequest.class, ProvisionInstanceResponse.class)
+                .withName("ProvisionInstance")
+                .withUri("/v1/instances/assign")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstanceAssignReq>withRequestField("body",
+            LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteJobRequest::getXRequestId, ExecuteJobRequest::setXRequestId));
+            TypeCasts.uncheckedConversion(InstanceAssignReq.class),
+            f -> f.withMarshaller(ProvisionInstanceRequest::getBody, ProvisionInstanceRequest::setBody));
 
         // response
 
@@ -176,11 +283,6 @@ public class KooPhoneMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("x-request-id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetVideoRequest::getXRequestId, SetVideoRequest::setXRequestId));
         builder.<InstanceVideoSettingReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -204,11 +306,6 @@ public class KooPhoneMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("x-request-id",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SyncInvokeInstanceRequest::getXRequestId, SyncInvokeInstanceRequest::setXRequestId));
         builder.<InstanceSyncCommandsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

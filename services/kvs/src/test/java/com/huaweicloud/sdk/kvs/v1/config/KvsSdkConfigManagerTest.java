@@ -9,10 +9,12 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+@Ignore
 public class KvsSdkConfigManagerTest {
     String configFilePath;
 

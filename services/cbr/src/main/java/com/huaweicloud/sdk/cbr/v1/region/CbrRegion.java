@@ -84,6 +84,11 @@ public class CbrRegion {
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://cbr.my-kualalumpur-1.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://cbr.cn-north-12.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://cbr.cn-southwest-3.myhuaweicloud.com");
+
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://cbr.ru-moscow-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CBR");
@@ -123,6 +128,8 @@ public class CbrRegion {
         map.put("ae-ad-1", AE_AD_1);
         map.put("eu-west-0", EU_WEST_0);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
         map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }

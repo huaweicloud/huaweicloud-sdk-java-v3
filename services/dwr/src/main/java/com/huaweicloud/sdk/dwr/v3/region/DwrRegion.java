@@ -21,6 +21,10 @@ public class DwrRegion {
 
     public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://dwr-lms.cn-north-11.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://dwr-lms.cn-north-9.myhuaweicloud.com");
+
+    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://dwr-lms.cn-east-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DWR");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -30,6 +34,8 @@ public class DwrRegion {
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-north-9", CN_NORTH_9);
+        map.put("cn-east-3", CN_EAST_3);
         return Collections.unmodifiableMap(map);
     }
 
