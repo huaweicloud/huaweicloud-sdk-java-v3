@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.Document;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -49,6 +51,12 @@ public class ScanKvRequestBody {
     @BsonProperty(value = "filter_expression")
 
     private ConditionExpression filterExpression;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "projection_fields")
+    @BsonProperty(value = "projection_fields")
+
+    private List<String> projectionFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sample_segments_count")
@@ -174,6 +182,39 @@ public class ScanKvRequestBody {
         this.filterExpression = filterExpression;
     }
 
+    public ScanKvRequestBody withProjectionFields(List<String> projectionFields) {
+        this.projectionFields = projectionFields;
+        return this;
+    }
+
+    public ScanKvRequestBody addProjectionFieldsItem(String projectionFieldsItem) {
+        if (this.projectionFields == null) {
+            this.projectionFields = new ArrayList<>();
+        }
+        this.projectionFields.add(projectionFieldsItem);
+        return this;
+    }
+
+    public ScanKvRequestBody withProjectionFields(Consumer<List<String>> projectionFieldsSetter) {
+        if (this.projectionFields == null) {
+            this.projectionFields = new ArrayList<>();
+        }
+        projectionFieldsSetter.accept(this.projectionFields);
+        return this;
+    }
+
+    /**
+     * 对kv_doc有效，返回指定字段列表，默认全部。
+     * @return projectionFields
+     */
+    public List<String> getProjectionFields() {
+        return projectionFields;
+    }
+
+    public void setProjectionFields(List<String> projectionFields) {
+        this.projectionFields = projectionFields;
+    }
+
     public ScanKvRequestBody withSampleSegmentsCount(Integer sampleSegmentsCount) {
         this.sampleSegmentsCount = sampleSegmentsCount;
         return this;
@@ -222,6 +263,7 @@ public class ScanKvRequestBody {
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.hintIndexName, that.hintIndexName)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.startKey, that.startKey)
             && Objects.equals(this.endKey, that.endKey) && Objects.equals(this.filterExpression, that.filterExpression)
+            && Objects.equals(this.projectionFields, that.projectionFields)
             && Objects.equals(this.sampleSegmentsCount, that.sampleSegmentsCount)
             && Objects.equals(this.returnCountOnly, that.returnCountOnly);
     }
@@ -234,6 +276,7 @@ public class ScanKvRequestBody {
             startKey,
             endKey,
             filterExpression,
+            projectionFields,
             sampleSegmentsCount,
             returnCountOnly);
     }
@@ -248,6 +291,7 @@ public class ScanKvRequestBody {
         sb.append("    startKey: ").append(toIndentedString(startKey)).append("\n");
         sb.append("    endKey: ").append(toIndentedString(endKey)).append("\n");
         sb.append("    filterExpression: ").append(toIndentedString(filterExpression)).append("\n");
+        sb.append("    projectionFields: ").append(toIndentedString(projectionFields)).append("\n");
         sb.append("    sampleSegmentsCount: ").append(toIndentedString(sampleSegmentsCount)).append("\n");
         sb.append("    returnCountOnly: ").append(toIndentedString(returnCountOnly)).append("\n");
         sb.append("}");

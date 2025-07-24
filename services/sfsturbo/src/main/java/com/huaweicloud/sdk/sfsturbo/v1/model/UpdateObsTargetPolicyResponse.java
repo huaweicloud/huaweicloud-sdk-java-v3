@@ -33,7 +33,7 @@ public class UpdateObsTargetPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 绑定关系id
+     * 绑定关系ID
      * @return targetId
      */
     public String getTargetId() {

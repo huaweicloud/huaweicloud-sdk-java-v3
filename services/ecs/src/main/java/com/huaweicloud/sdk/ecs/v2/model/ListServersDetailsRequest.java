@@ -270,7 +270,7 @@ public class ListServersDetailsRequest {
     }
 
     /**
-     * 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id={id1},{id2}  说明： 在使用server_id作为过滤条件时，不能同时使用其他过滤条件。如果同时指定server_id及其他过滤条件，则以server_id条件为准，其他过滤条件会被忽略 当server_id中含有不存在的云服务器ID时，返回的响应参数中该云服务器ID对应的servers结构体中除了id和fault其它字段均为null 为了避免API的URI过长，建议一次查询的server_id个数不超过100个
+     * 云服务器ID，格式为UUID，匹配规则为精确匹配  示例: server_id=id1,id2  说明： 在使用server_id作为过滤条件时，不能同时使用其他过滤条件。如果同时指定server_id及其他过滤条件，则以server_id条件为准，其他过滤条件会被忽略 当server_id中含有不存在的云服务器ID时，返回的响应参数中该云服务器ID对应的servers结构体中除了id和fault其它字段均为null 为了避免API的URI过长，建议一次查询的server_id个数不超过100个
      * @return serverId
      */
     public String getServerId() {

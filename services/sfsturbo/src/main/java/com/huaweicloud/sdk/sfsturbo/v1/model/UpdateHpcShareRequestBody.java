@@ -26,7 +26,7 @@ public class UpdateHpcShareRequestBody {
     }
 
     /**
-     * 更新文件系统的操作类型。当前仅支持取值 config_gc_time
+     * 更新文件系统的操作类型。当前仅支持取值 config_gc_time。
      * @return action
      */
     public String getAction() {

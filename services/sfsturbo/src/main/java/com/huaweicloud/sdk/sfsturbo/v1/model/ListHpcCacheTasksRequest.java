@@ -119,7 +119,7 @@ public class ListHpcCacheTasksRequest {
     }
 
     /**
-     * limit，默认值为 20
+     * limit，默认值为 1000
      * @return limit
      */
     public Long getLimit() {

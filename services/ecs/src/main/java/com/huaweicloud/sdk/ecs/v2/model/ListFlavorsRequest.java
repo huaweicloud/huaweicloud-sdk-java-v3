@@ -70,7 +70,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * Get limit
+     * 查询返回云服务器规格列表当前页面的数量。默认为1000
      * @return limit
      */
     public Integer getLimit() {
@@ -87,7 +87,7 @@ public class ListFlavorsRequest {
     }
 
     /**
-     * Get marker
+     * 从marker指定的flavor_id的下一条数据开始查询
      * @return marker
      */
     public String getMarker() {

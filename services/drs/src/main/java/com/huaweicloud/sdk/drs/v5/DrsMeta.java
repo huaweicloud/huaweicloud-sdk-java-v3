@@ -72,10 +72,16 @@ import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.DownloadBatchCreateTemplateRequest;
 import com.huaweicloud.sdk.drs.v5.model.DownloadBatchCreateTemplateResponse;
+import com.huaweicloud.sdk.drs.v5.model.DownloadCreateTemplateRequest;
+import com.huaweicloud.sdk.drs.v5.model.DownloadCreateTemplateResponse;
 import com.huaweicloud.sdk.drs.v5.model.DownloadDbObjectTemplateRequest;
 import com.huaweicloud.sdk.drs.v5.model.DownloadDbObjectTemplateResponse;
 import com.huaweicloud.sdk.drs.v5.model.ExecuteJobActionRequest;
 import com.huaweicloud.sdk.drs.v5.model.ExecuteJobActionResponse;
+import com.huaweicloud.sdk.drs.v5.model.ExportCreationTemplateRequest;
+import com.huaweicloud.sdk.drs.v5.model.ExportCreationTemplateResponse;
+import com.huaweicloud.sdk.drs.v5.model.ExportFilesReq;
+import com.huaweicloud.sdk.drs.v5.model.ExportJobsTemplateReq;
 import com.huaweicloud.sdk.drs.v5.model.ExportOperationInfoRequest;
 import com.huaweicloud.sdk.drs.v5.model.ExportOperationInfoResponse;
 import com.huaweicloud.sdk.drs.v5.model.ImportBatchCreateJobsRequest;
@@ -112,6 +118,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListReplicationJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListReplicationJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListTemplatesRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
@@ -153,6 +161,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowDirtyDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowDirtyDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowEnterpriseProjectRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowEnterpriseProjectResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowExportProgressRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowExportProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobDetailRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobDetailResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobListRequest;
@@ -1043,12 +1053,47 @@ public class DrsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadBatchCreateTemplateRequest::getEngineType,
+                DownloadBatchCreateTemplateRequest::setEngineType));
         builder.<DownloadBatchCreateTemplateRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownloadBatchCreateTemplateRequest.XLanguageEnum.class),
             f -> f.withMarshaller(DownloadBatchCreateTemplateRequest::getXLanguage,
                 DownloadBatchCreateTemplateRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadCreateTemplateRequest, DownloadCreateTemplateResponse> downloadCreateTemplate =
+        genForDownloadCreateTemplate();
+
+    private static HttpRequestDef<DownloadCreateTemplateRequest, DownloadCreateTemplateResponse> genForDownloadCreateTemplate() {
+        // basic
+        HttpRequestDef.Builder<DownloadCreateTemplateRequest, DownloadCreateTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DownloadCreateTemplateRequest.class, DownloadCreateTemplateResponse.class)
+            .withName("DownloadCreateTemplate")
+            .withUri("/v5/{project_id}/templates/download")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DownloadCreateTemplateRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DownloadCreateTemplateRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DownloadCreateTemplateRequest::getXLanguage,
+                DownloadCreateTemplateRequest::setXLanguage));
+        builder.<ExportFilesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportFilesReq.class),
+            f -> f.withMarshaller(DownloadCreateTemplateRequest::getBody, DownloadCreateTemplateRequest::setBody));
 
         // response
 
@@ -1119,6 +1164,35 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobActionReq.class),
             f -> f.withMarshaller(ExecuteJobActionRequest::getBody, ExecuteJobActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportCreationTemplateRequest, ExportCreationTemplateResponse> exportCreationTemplate =
+        genForExportCreationTemplate();
+
+    private static HttpRequestDef<ExportCreationTemplateRequest, ExportCreationTemplateResponse> genForExportCreationTemplate() {
+        // basic
+        HttpRequestDef.Builder<ExportCreationTemplateRequest, ExportCreationTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExportCreationTemplateRequest.class, ExportCreationTemplateResponse.class)
+            .withName("ExportCreationTemplate")
+            .withUri("/v5/{project_id}/jobs/export/template")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ExportCreationTemplateRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportCreationTemplateRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExportCreationTemplateRequest::getXLanguage,
+                ExportCreationTemplateRequest::setXLanguage));
+        builder.<ExportJobsTemplateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportJobsTemplateReq.class),
+            f -> f.withMarshaller(ExportCreationTemplateRequest::getBody, ExportCreationTemplateRequest::setBody));
 
         // response
 
@@ -1951,6 +2025,39 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
+        genForListTemplates();
+
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForListTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
+                .withName("ListTemplates")
+                .withUri("/v5/{project_id}/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getOffset, ListTemplatesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getLimit, ListTemplatesRequest::setLimit));
+        builder.<ListTemplatesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTemplatesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getXLanguage, ListTemplatesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListUserJdbcDriversRequest, ListUserJdbcDriversResponse> listUserJdbcDrivers =
         genForListUserJdbcDrivers();
 
@@ -2559,6 +2666,34 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ShowEnterpriseProjectRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowEnterpriseProjectRequest::getXLanguage,
                 ShowEnterpriseProjectRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExportProgressRequest, ShowExportProgressResponse> showExportProgress =
+        genForShowExportProgress();
+
+    private static HttpRequestDef<ShowExportProgressRequest, ShowExportProgressResponse> genForShowExportProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowExportProgressRequest, ShowExportProgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowExportProgressRequest.class, ShowExportProgressResponse.class)
+                .withName("ShowExportProgress")
+                .withUri("/v5/{project_id}/jobs/{async_job_id}/export/progress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("async_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExportProgressRequest::getAsyncJobId, ShowExportProgressRequest::setAsyncJobId));
+        builder.<ShowExportProgressRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowExportProgressRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowExportProgressRequest::getXLanguage, ShowExportProgressRequest::setXLanguage));
 
         // response
 

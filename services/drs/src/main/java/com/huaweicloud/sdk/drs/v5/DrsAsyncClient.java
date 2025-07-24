@@ -55,10 +55,14 @@ import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.DownloadBatchCreateTemplateRequest;
 import com.huaweicloud.sdk.drs.v5.model.DownloadBatchCreateTemplateResponse;
+import com.huaweicloud.sdk.drs.v5.model.DownloadCreateTemplateRequest;
+import com.huaweicloud.sdk.drs.v5.model.DownloadCreateTemplateResponse;
 import com.huaweicloud.sdk.drs.v5.model.DownloadDbObjectTemplateRequest;
 import com.huaweicloud.sdk.drs.v5.model.DownloadDbObjectTemplateResponse;
 import com.huaweicloud.sdk.drs.v5.model.ExecuteJobActionRequest;
 import com.huaweicloud.sdk.drs.v5.model.ExecuteJobActionResponse;
+import com.huaweicloud.sdk.drs.v5.model.ExportCreationTemplateRequest;
+import com.huaweicloud.sdk.drs.v5.model.ExportCreationTemplateResponse;
 import com.huaweicloud.sdk.drs.v5.model.ExportOperationInfoRequest;
 import com.huaweicloud.sdk.drs.v5.model.ExportOperationInfoResponse;
 import com.huaweicloud.sdk.drs.v5.model.ImportBatchCreateJobsRequest;
@@ -93,6 +97,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListReplicationJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListReplicationJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListTemplatesRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
@@ -125,6 +131,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowDirtyDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowDirtyDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowEnterpriseProjectRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowEnterpriseProjectResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowExportProgressRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowExportProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobDetailRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobDetailResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowHealthCompareJobListRequest;
@@ -987,6 +995,36 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 下载创建模板
+     *
+     * 下载根据已有任务导出的创建模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadCreateTemplateRequest 请求对象
+     * @return CompletableFuture<DownloadCreateTemplateResponse>
+     */
+    public CompletableFuture<DownloadCreateTemplateResponse> downloadCreateTemplateAsync(
+        DownloadCreateTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.downloadCreateTemplate);
+    }
+
+    /**
+     * 下载创建模板
+     *
+     * 下载根据已有任务导出的创建模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadCreateTemplateRequest 请求对象
+     * @return AsyncInvoker<DownloadCreateTemplateRequest, DownloadCreateTemplateResponse>
+     */
+    public AsyncInvoker<DownloadCreateTemplateRequest, DownloadCreateTemplateResponse> downloadCreateTemplateAsyncInvoker(
+        DownloadCreateTemplateRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.downloadCreateTemplate, hcClient);
+    }
+
+    /**
      * 对象选择（文件导入 - 模板下载）
      *
      * 对象选择（文件导入 - 模板下载）。
@@ -1043,6 +1081,36 @@ public class DrsAsyncClient {
     public AsyncInvoker<ExecuteJobActionRequest, ExecuteJobActionResponse> executeJobActionAsyncInvoker(
         ExecuteJobActionRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.executeJobAction, hcClient);
+    }
+
+    /**
+     * 导出创建模板
+     *
+     * 根据已有任务导出创建模板。（异步操作，需要调查询导出进度接口查询结果。）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportCreationTemplateRequest 请求对象
+     * @return CompletableFuture<ExportCreationTemplateResponse>
+     */
+    public CompletableFuture<ExportCreationTemplateResponse> exportCreationTemplateAsync(
+        ExportCreationTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.exportCreationTemplate);
+    }
+
+    /**
+     * 导出创建模板
+     *
+     * 根据已有任务导出创建模板。（异步操作，需要调查询导出进度接口查询结果。）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportCreationTemplateRequest 请求对象
+     * @return AsyncInvoker<ExportCreationTemplateRequest, ExportCreationTemplateResponse>
+     */
+    public AsyncInvoker<ExportCreationTemplateRequest, ExportCreationTemplateResponse> exportCreationTemplateAsyncInvoker(
+        ExportCreationTemplateRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.exportCreationTemplate, hcClient);
     }
 
     /**
@@ -1545,6 +1613,35 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 查询创建模板列表
+     *
+     * 查询批量创建模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTemplatesRequest 请求对象
+     * @return CompletableFuture<ListTemplatesResponse>
+     */
+    public CompletableFuture<ListTemplatesResponse> listTemplatesAsync(ListTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listTemplates);
+    }
+
+    /**
+     * 查询创建模板列表
+     *
+     * 查询批量创建模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
+     */
+    public AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesAsyncInvoker(
+        ListTemplatesRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.listTemplates, hcClient);
+    }
+
+    /**
      * 查询驱动文件列表
      *
      * 查询驱动文件列表。
@@ -2013,6 +2110,35 @@ public class DrsAsyncClient {
     public AsyncInvoker<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> showEnterpriseProjectAsyncInvoker(
         ShowEnterpriseProjectRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.showEnterpriseProject, hcClient);
+    }
+
+    /**
+     * 查询导出创建模板进度
+     *
+     * 查询导出批量创建模板进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowExportProgressRequest 请求对象
+     * @return CompletableFuture<ShowExportProgressResponse>
+     */
+    public CompletableFuture<ShowExportProgressResponse> showExportProgressAsync(ShowExportProgressRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.showExportProgress);
+    }
+
+    /**
+     * 查询导出创建模板进度
+     *
+     * 查询导出批量创建模板进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowExportProgressRequest 请求对象
+     * @return AsyncInvoker<ShowExportProgressRequest, ShowExportProgressResponse>
+     */
+    public AsyncInvoker<ShowExportProgressRequest, ShowExportProgressResponse> showExportProgressAsyncInvoker(
+        ShowExportProgressRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.showExportProgress, hcClient);
     }
 
     /**

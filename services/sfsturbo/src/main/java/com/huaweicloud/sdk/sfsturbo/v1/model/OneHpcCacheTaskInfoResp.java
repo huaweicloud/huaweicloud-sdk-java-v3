@@ -45,6 +45,11 @@ public class OneHpcCacheTaskInfoResp {
          */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
+        public static final StatusEnum DELETING = new StatusEnum("DELETING");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -52,6 +57,7 @@ public class OneHpcCacheTaskInfoResp {
             map.put("SUCCESS", SUCCESS);
             map.put("DOING", DOING);
             map.put("FAIL", FAIL);
+            map.put("DELETING", DELETING);
             return Collections.unmodifiableMap(map);
         }
 

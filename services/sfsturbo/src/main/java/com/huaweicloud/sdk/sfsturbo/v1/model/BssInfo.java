@@ -16,7 +16,7 @@ import java.util.Objects;
 public class BssInfo {
 
     /**
-     * 是否自动续费
+     * 是否自动续费。0表示不自动续费，1表示自动续费。
      */
     public static final class IsAutoRenewEnum {
 
@@ -171,7 +171,7 @@ public class BssInfo {
     private PeriodTypeEnum periodType;
 
     /**
-     * 是否生成订单后自动扣款
+     * 是否生成订单后自动扣款。0表示不自动续费，1表示自动续费。
      */
     public static final class IsAutoPayEnum {
 
@@ -251,7 +251,7 @@ public class BssInfo {
     }
 
     /**
-     * 是否自动续费
+     * 是否自动续费。0表示不自动续费，1表示自动续费。
      * @return isAutoRenew
      */
     public IsAutoRenewEnum getIsAutoRenew() {
@@ -304,7 +304,7 @@ public class BssInfo {
     }
 
     /**
-     * 是否生成订单后自动扣款
+     * 是否生成订单后自动扣款。0表示不自动续费，1表示自动续费。
      * @return isAutoPay
      */
     public IsAutoPayEnum getIsAutoPay() {

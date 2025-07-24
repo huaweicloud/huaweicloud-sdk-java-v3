@@ -16,13 +16,18 @@ public class DeleteLdapConfigResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-request-id")
+
+    private String xRequestId;
+
     public DeleteLdapConfigResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
     /**
-     * ldap异步任务的id。可通过查询job的状态详情接口查询job的执行状态。
+     * LDAP异步任务的id。可通过查询job的状态详情接口查询job的执行状态。
      * @return jobId
      */
     public String getJobId() {
@@ -31,6 +36,25 @@ public class DeleteLdapConfigResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public DeleteLdapConfigResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-request-id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
     }
 
     @Override
@@ -42,12 +66,12 @@ public class DeleteLdapConfigResponse extends SdkResponse {
             return false;
         }
         DeleteLdapConfigResponse that = (DeleteLdapConfigResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, xRequestId);
     }
 
     @Override
@@ -55,6 +79,7 @@ public class DeleteLdapConfigResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteLdapConfigResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

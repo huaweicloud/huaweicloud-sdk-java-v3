@@ -34,6 +34,11 @@ public class NetworkInterfaces {
     private List<String> ipv6Addresses = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "association")
 
     private Association association;
@@ -138,6 +143,23 @@ public class NetworkInterfaces {
         this.ipv6Addresses = ipv6Addresses;
     }
 
+    public NetworkInterfaces withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 子网id
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
     public NetworkInterfaces withAssociation(Association association) {
         this.association = association;
         return this;
@@ -175,13 +197,13 @@ public class NetworkInterfaces {
         NetworkInterfaces that = (NetworkInterfaces) obj;
         return Objects.equals(this.portId, that.portId) && Objects.equals(this.primary, that.primary)
             && Objects.equals(this.ipAddresses, that.ipAddresses)
-            && Objects.equals(this.ipv6Addresses, that.ipv6Addresses)
+            && Objects.equals(this.ipv6Addresses, that.ipv6Addresses) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.association, that.association);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(portId, primary, ipAddresses, ipv6Addresses, association);
+        return Objects.hash(portId, primary, ipAddresses, ipv6Addresses, subnetId, association);
     }
 
     @Override
@@ -192,6 +214,7 @@ public class NetworkInterfaces {
         sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
         sb.append("    ipAddresses: ").append(toIndentedString(ipAddresses)).append("\n");
         sb.append("    ipv6Addresses: ").append(toIndentedString(ipv6Addresses)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    association: ").append(toIndentedString(association)).append("\n");
         sb.append("}");
         return sb.toString();

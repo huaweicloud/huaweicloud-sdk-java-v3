@@ -5,12 +5,18 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.sfsturbo.v1.model.AddActiveDirectoryDomainRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.AddActiveDirectoryDomainRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.AddActiveDirectoryDomainResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.BatchAddSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.BatchAddSharedTagsRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.BatchAddSharedTagsResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareChargeModeRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareChargeModeV2Request;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareChargeModeV2Response;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameReq;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameResponse;
@@ -40,6 +46,9 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteActiveDirectoryDomainRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteActiveDirectoryDomainRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteActiveDirectoryDomainResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteBackendTargetRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteBackendTargetResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaRequest;
@@ -72,6 +81,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ListHpcCacheTasksRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListHpcCacheTasksResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListShareTypesRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListShareTypesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagRequest;
@@ -79,12 +90,16 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesResponse;
-import com.huaweicloud.sdk.sfsturbo.v1.model.OnePermRuleRequestInfo;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ReqConfigHpcCacheBackend;
 import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowActiveDirectoryDomainRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowActiveDirectoryDomainResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowBackendTargetInfoRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowBackendTargetInfoResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowClientIpInfoRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowClientIpInfoRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowClientIpInfoResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirRequest;
@@ -105,6 +120,9 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateActiveDirectoryDomainRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateActiveDirectoryDomainRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateActiveDirectoryDomainResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaResponse;
@@ -120,11 +138,48 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetAttributesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetPolicyRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetPolicyRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetPolicyResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateOnePermRuleRequestInfo;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleResponse;
 
 @SuppressWarnings("unchecked")
 public class SFSTurboMeta {
+
+    public static final HttpRequestDef<AddActiveDirectoryDomainRequest, AddActiveDirectoryDomainResponse> addActiveDirectoryDomain =
+        genForAddActiveDirectoryDomain();
+
+    private static HttpRequestDef<AddActiveDirectoryDomainRequest, AddActiveDirectoryDomainResponse> genForAddActiveDirectoryDomain() {
+        // basic
+        HttpRequestDef.Builder<AddActiveDirectoryDomainRequest, AddActiveDirectoryDomainResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, AddActiveDirectoryDomainRequest.class, AddActiveDirectoryDomainResponse.class)
+                .withName("AddActiveDirectoryDomain")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/active-directory-domain")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddActiveDirectoryDomainRequest::getShareId,
+                AddActiveDirectoryDomainRequest::setShareId));
+        builder.<AddActiveDirectoryDomainRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddActiveDirectoryDomainRequestBody.class),
+            f -> f.withMarshaller(AddActiveDirectoryDomainRequest::getBody, AddActiveDirectoryDomainRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddActiveDirectoryDomainResponse::getXRequestId,
+                AddActiveDirectoryDomainResponse::setXRequestId));
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchAddSharedTagsRequest, BatchAddSharedTagsResponse> batchAddSharedTags =
         genForBatchAddSharedTags();
@@ -179,6 +234,41 @@ public class SFSTurboMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeShareChargeModeV2Request, ChangeShareChargeModeV2Response> changeShareChargeModeV2 =
+        genForChangeShareChargeModeV2();
+
+    private static HttpRequestDef<ChangeShareChargeModeV2Request, ChangeShareChargeModeV2Response> genForChangeShareChargeModeV2() {
+        // basic
+        HttpRequestDef.Builder<ChangeShareChargeModeV2Request, ChangeShareChargeModeV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangeShareChargeModeV2Request.class, ChangeShareChargeModeV2Response.class)
+            .withName("ChangeShareChargeModeV2")
+            .withUri("/v2/{project_id}/sfs-turbo/shares/{share_id}/change-charge-mode")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeShareChargeModeV2Request::getShareId,
+                ChangeShareChargeModeV2Request::setShareId));
+        builder.<ChangeShareChargeModeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeShareChargeModeRequestBody.class),
+            f -> f.withMarshaller(ChangeShareChargeModeV2Request::getBody, ChangeShareChargeModeV2Request::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ChangeShareChargeModeV2Response::getXRequestId,
+                ChangeShareChargeModeV2Response::setXRequestId));
         return builder.build();
     }
 
@@ -328,6 +418,11 @@ public class SFSTurboMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateFsTaskResponse::getXRequestId, CreateFsTaskResponse::setXRequestId));
         return builder.build();
     }
 
@@ -390,6 +485,11 @@ public class SFSTurboMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateLdapConfigResponse::getXRequestId, CreateLdapConfigResponse::setXRequestId));
         return builder.build();
     }
 
@@ -468,6 +568,45 @@ public class SFSTurboMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteActiveDirectoryDomainRequest, DeleteActiveDirectoryDomainResponse> deleteActiveDirectoryDomain =
+        genForDeleteActiveDirectoryDomain();
+
+    private static HttpRequestDef<DeleteActiveDirectoryDomainRequest, DeleteActiveDirectoryDomainResponse> genForDeleteActiveDirectoryDomain() {
+        // basic
+        HttpRequestDef.Builder<DeleteActiveDirectoryDomainRequest, DeleteActiveDirectoryDomainResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteActiveDirectoryDomainRequest.class,
+                    DeleteActiveDirectoryDomainResponse.class)
+                .withName("DeleteActiveDirectoryDomain")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/active-directory-domain")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteActiveDirectoryDomainRequest::getShareId,
+                DeleteActiveDirectoryDomainRequest::setShareId));
+        builder.<DeleteActiveDirectoryDomainRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteActiveDirectoryDomainRequestBody.class),
+            f -> f.withMarshaller(DeleteActiveDirectoryDomainRequest::getBody,
+                DeleteActiveDirectoryDomainRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteActiveDirectoryDomainResponse::getXRequestId,
+                DeleteActiveDirectoryDomainResponse::setXRequestId));
         return builder.build();
     }
 
@@ -595,6 +734,11 @@ public class SFSTurboMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteFsTaskResponse::getXRequestId, DeleteFsTaskResponse::setXRequestId));
         return builder.build();
     }
 
@@ -652,6 +796,11 @@ public class SFSTurboMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteLdapConfigResponse::getXRequestId, DeleteLdapConfigResponse::setXRequestId));
         return builder.build();
     }
 
@@ -833,6 +982,11 @@ public class SFSTurboMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFsTasksResponse::getXRequestId, ListFsTasksResponse::setXRequestId));
         return builder.build();
     }
 
@@ -927,6 +1081,39 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListShareTypesRequest, ListShareTypesResponse> listShareTypes =
+        genForListShareTypes();
+
+    private static HttpRequestDef<ListShareTypesRequest, ListShareTypesResponse> genForListShareTypes() {
+        // basic
+        HttpRequestDef.Builder<ListShareTypesRequest, ListShareTypesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListShareTypesRequest.class, ListShareTypesResponse.class)
+                .withName("ListShareTypes")
+                .withUri("/v1/{project_id}/sfs-turbo/share-types")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListShareTypesRequest::getLimit, ListShareTypesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListShareTypesRequest::getOffset, ListShareTypesRequest::setOffset));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListShareTypesResponse::getXRequestId, ListShareTypesResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSharedTagsRequest, ListSharedTagsResponse> listSharedTags =
         genForListSharedTags();
 
@@ -966,15 +1153,15 @@ public class SFSTurboMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Long>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSharesRequest::getLimit, ListSharesRequest::setLimit));
-        builder.<Long>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSharesRequest::getOffset, ListSharesRequest::setOffset));
 
         // response
@@ -1044,6 +1231,39 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowActiveDirectoryDomainRequest, ShowActiveDirectoryDomainResponse> showActiveDirectoryDomain =
+        genForShowActiveDirectoryDomain();
+
+    private static HttpRequestDef<ShowActiveDirectoryDomainRequest, ShowActiveDirectoryDomainResponse> genForShowActiveDirectoryDomain() {
+        // basic
+        HttpRequestDef.Builder<ShowActiveDirectoryDomainRequest, ShowActiveDirectoryDomainResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowActiveDirectoryDomainRequest.class,
+                    ShowActiveDirectoryDomainResponse.class)
+                .withName("ShowActiveDirectoryDomain")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/active-directory-domain")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActiveDirectoryDomainRequest::getShareId,
+                ShowActiveDirectoryDomainRequest::setShareId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowActiveDirectoryDomainResponse::getXRequestId,
+                ShowActiveDirectoryDomainResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> showBackendTargetInfo =
         genForShowBackendTargetInfo();
 
@@ -1076,6 +1296,39 @@ public class SFSTurboMeta {
             String.class,
             f -> f.withMarshaller(ShowBackendTargetInfoResponse::getXRequestId,
                 ShowBackendTargetInfoResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClientIpInfoRequest, ShowClientIpInfoResponse> showClientIpInfo =
+        genForShowClientIpInfo();
+
+    private static HttpRequestDef<ShowClientIpInfoRequest, ShowClientIpInfoResponse> genForShowClientIpInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowClientIpInfoRequest, ShowClientIpInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowClientIpInfoRequest.class, ShowClientIpInfoResponse.class)
+                .withName("ShowClientIpInfo")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClientIpInfoRequest::getShareId, ShowClientIpInfoRequest::setShareId));
+        builder.<ShowClientIpInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowClientIpInfoRequestBody.class),
+            f -> f.withMarshaller(ShowClientIpInfoRequest::getBody, ShowClientIpInfoRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowClientIpInfoResponse::getXRequestId, ShowClientIpInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1196,6 +1449,11 @@ public class SFSTurboMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowFsTaskResponse::getXRequestId, ShowFsTaskResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1280,6 +1538,11 @@ public class SFSTurboMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowLdapConfigResponse::getXRequestId, ShowLdapConfigResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1352,6 +1615,45 @@ public class SFSTurboMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateActiveDirectoryDomainRequest, UpdateActiveDirectoryDomainResponse> updateActiveDirectoryDomain =
+        genForUpdateActiveDirectoryDomain();
+
+    private static HttpRequestDef<UpdateActiveDirectoryDomainRequest, UpdateActiveDirectoryDomainResponse> genForUpdateActiveDirectoryDomain() {
+        // basic
+        HttpRequestDef.Builder<UpdateActiveDirectoryDomainRequest, UpdateActiveDirectoryDomainResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateActiveDirectoryDomainRequest.class,
+                    UpdateActiveDirectoryDomainResponse.class)
+                .withName("UpdateActiveDirectoryDomain")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/active-directory-domain")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateActiveDirectoryDomainRequest::getShareId,
+                UpdateActiveDirectoryDomainRequest::setShareId));
+        builder.<UpdateActiveDirectoryDomainRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateActiveDirectoryDomainRequestBody.class),
+            f -> f.withMarshaller(UpdateActiveDirectoryDomainRequest::getBody,
+                UpdateActiveDirectoryDomainRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateActiveDirectoryDomainResponse::getXRequestId,
+                UpdateActiveDirectoryDomainResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1441,6 +1743,11 @@ public class SFSTurboMeta {
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateLdapConfigResponse::getXRequestId, UpdateLdapConfigResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1551,10 +1858,10 @@ public class SFSTurboMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePermRuleRequest::getRuleId, UpdatePermRuleRequest::setRuleId));
-        builder.<OnePermRuleRequestInfo>withRequestField("body",
+        builder.<UpdateOnePermRuleRequestInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OnePermRuleRequestInfo.class),
+            TypeCasts.uncheckedConversion(UpdateOnePermRuleRequestInfo.class),
             f -> f.withMarshaller(UpdatePermRuleRequest::getBody, UpdatePermRuleRequest::setBody));
 
         // response

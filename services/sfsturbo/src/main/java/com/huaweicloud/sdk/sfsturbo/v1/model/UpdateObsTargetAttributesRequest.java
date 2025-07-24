@@ -32,7 +32,7 @@ public class UpdateObsTargetAttributesRequest {
     }
 
     /**
-     * 文件系统id
+     * 文件系统ID
      * @return shareId
      */
     public String getShareId() {
@@ -49,7 +49,7 @@ public class UpdateObsTargetAttributesRequest {
     }
 
     /**
-     * 绑定关系id
+     * 绑定关系ID
      * @return targetId
      */
     public String getTargetId() {

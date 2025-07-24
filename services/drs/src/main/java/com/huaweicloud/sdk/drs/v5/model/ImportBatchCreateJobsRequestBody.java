@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.drs.v5.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
@@ -19,6 +20,11 @@ public class ImportBatchCreateJobsRequestBody implements SdkFormDataBody {
 
     private FormDataFilePart file;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public ImportBatchCreateJobsRequestBody withFile(FormDataFilePart file) {
         this.file = file;
         return this;
@@ -34,6 +40,23 @@ public class ImportBatchCreateJobsRequestBody implements SdkFormDataBody {
 
     public void setFile(FormDataFilePart file) {
         this.file = file;
+    }
+
+    public ImportBatchCreateJobsRequestBody withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 任务类型，迁移，同步，灾备等。 - migration - sync - cloudDataGuard
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public ImportBatchCreateJobsRequestBody withFile(InputStream inputStream, String fileName, String contentType) {
@@ -59,6 +82,9 @@ public class ImportBatchCreateJobsRequestBody implements SdkFormDataBody {
             private static final long serialVersionUID = 1L;
             {
                 put("file", file);
+                if (type != null) {
+                    put("type", new FormDataPart<>(type));
+                }
             }
         };
     }
@@ -72,12 +98,12 @@ public class ImportBatchCreateJobsRequestBody implements SdkFormDataBody {
             return false;
         }
         ImportBatchCreateJobsRequestBody that = (ImportBatchCreateJobsRequestBody) obj;
-        return Objects.equals(this.file, that.file);
+        return Objects.equals(this.file, that.file) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(file);
+        return Objects.hash(file, type);
     }
 
     @Override
@@ -85,6 +111,7 @@ public class ImportBatchCreateJobsRequestBody implements SdkFormDataBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImportBatchCreateJobsRequestBody {\n");
         sb.append("    file: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

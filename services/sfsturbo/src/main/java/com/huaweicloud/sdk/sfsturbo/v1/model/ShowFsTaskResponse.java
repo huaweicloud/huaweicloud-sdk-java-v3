@@ -118,6 +118,11 @@ public class ShowFsTaskResponse extends SdkResponse {
 
     private String endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-request-id")
+
+    private String xRequestId;
+
     public ShowFsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -212,6 +217,25 @@ public class ShowFsTaskResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
+    public ShowFsTaskResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-request-id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -223,12 +247,12 @@ public class ShowFsTaskResponse extends SdkResponse {
         ShowFsTaskResponse that = (ShowFsTaskResponse) obj;
         return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
             && Objects.equals(this.dirUsage, that.dirUsage) && Objects.equals(this.beginTime, that.beginTime)
-            && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, dirUsage, beginTime, endTime);
+        return Objects.hash(taskId, status, dirUsage, beginTime, endTime, xRequestId);
     }
 
     @Override
@@ -240,6 +264,7 @@ public class ShowFsTaskResponse extends SdkResponse {
         sb.append("    dirUsage: ").append(toIndentedString(dirUsage)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

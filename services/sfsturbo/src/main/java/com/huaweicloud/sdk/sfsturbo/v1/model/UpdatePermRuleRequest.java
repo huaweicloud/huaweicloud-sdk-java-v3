@@ -24,7 +24,7 @@ public class UpdatePermRuleRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private OnePermRuleRequestInfo body;
+    private UpdateOnePermRuleRequestInfo body;
 
     public UpdatePermRuleRequest withShareId(String shareId) {
         this.shareId = shareId;
@@ -32,7 +32,7 @@ public class UpdatePermRuleRequest {
     }
 
     /**
-     * 文件系统id
+     * 文件系统ID
      * @return shareId
      */
     public String getShareId() {
@@ -60,14 +60,14 @@ public class UpdatePermRuleRequest {
         this.ruleId = ruleId;
     }
 
-    public UpdatePermRuleRequest withBody(OnePermRuleRequestInfo body) {
+    public UpdatePermRuleRequest withBody(UpdateOnePermRuleRequestInfo body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePermRuleRequest withBody(Consumer<OnePermRuleRequestInfo> bodySetter) {
+    public UpdatePermRuleRequest withBody(Consumer<UpdateOnePermRuleRequestInfo> bodySetter) {
         if (this.body == null) {
-            this.body = new OnePermRuleRequestInfo();
+            this.body = new UpdateOnePermRuleRequestInfo();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdatePermRuleRequest {
      * Get body
      * @return body
      */
-    public OnePermRuleRequestInfo getBody() {
+    public UpdateOnePermRuleRequestInfo getBody() {
         return body;
     }
 
-    public void setBody(OnePermRuleRequestInfo body) {
+    public void setBody(UpdateOnePermRuleRequestInfo body) {
         this.body = body;
     }
 

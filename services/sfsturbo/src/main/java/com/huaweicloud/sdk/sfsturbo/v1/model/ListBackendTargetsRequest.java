@@ -31,7 +31,7 @@ public class ListBackendTargetsRequest {
     }
 
     /**
-     * 文件系统id
+     * 文件系统ID
      * @return shareId
      */
     public String getShareId() {

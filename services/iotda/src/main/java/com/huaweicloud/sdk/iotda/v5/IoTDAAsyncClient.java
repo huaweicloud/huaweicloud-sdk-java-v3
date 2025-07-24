@@ -83,6 +83,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceMessageRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyRequest;
@@ -2958,6 +2960,35 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<CreateMessageRequest, CreateMessageResponse> createMessageAsyncInvoker(
         CreateMessageRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.createMessage, hcClient);
+    }
+
+    /**
+     * 删除指定消息id的消息
+     *
+     * 应用服务器可调用此接口删除平台下发给设备的指定消息id的消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceMessageRequest 请求对象
+     * @return CompletableFuture<DeleteDeviceMessageResponse>
+     */
+    public CompletableFuture<DeleteDeviceMessageResponse> deleteDeviceMessageAsync(DeleteDeviceMessageRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteDeviceMessage);
+    }
+
+    /**
+     * 删除指定消息id的消息
+     *
+     * 应用服务器可调用此接口删除平台下发给设备的指定消息id的消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceMessageRequest 请求对象
+     * @return AsyncInvoker<DeleteDeviceMessageRequest, DeleteDeviceMessageResponse>
+     */
+    public AsyncInvoker<DeleteDeviceMessageRequest, DeleteDeviceMessageResponse> deleteDeviceMessageAsyncInvoker(
+        DeleteDeviceMessageRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteDeviceMessage, hcClient);
     }
 
     /**

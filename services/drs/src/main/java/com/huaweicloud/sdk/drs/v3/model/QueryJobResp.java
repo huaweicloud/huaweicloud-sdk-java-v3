@@ -1588,9 +1588,8 @@ public class QueryJobResp {
     }
 
     /**
-     * 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。
-     * minimum: 1
-     * maximum: 32
+     * 节点个数。
+     * minimum: 0
      * @return nodeNum
      */
     public Integer getNodeNum() {

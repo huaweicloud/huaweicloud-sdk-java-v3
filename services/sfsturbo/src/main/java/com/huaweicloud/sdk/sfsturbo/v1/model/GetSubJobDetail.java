@@ -51,7 +51,7 @@ public class GetSubJobDetail {
     }
 
     /**
-     * 子job的状态。success：成功。running：运行中。failed：失败。waiting：等待执行。
+     * 子任务的状态。success：成功。running：运行中。failed：失败。waiting：等待执行。
      * @return status
      */
     public String getStatus() {
@@ -68,7 +68,7 @@ public class GetSubJobDetail {
     }
 
     /**
-     * job的ID。
+     * 子任务的ID。
      * @return jobId
      */
     public String getJobId() {
@@ -85,7 +85,7 @@ public class GetSubJobDetail {
     }
 
     /**
-     * 子job的类型。
+     * 子任务的类型。
      * @return jobType
      */
     public String getJobType() {
@@ -102,7 +102,7 @@ public class GetSubJobDetail {
     }
 
     /**
-     * job开始时间。UTC时间，格式：'2016-01-02 15:04:05'
+     * 子任务开始时间。UTC时间，格式：'2016-01-02 15:04:05'
      * @return beginTime
      */
     public String getBeginTime() {
@@ -119,7 +119,7 @@ public class GetSubJobDetail {
     }
 
     /**
-     * job结束时间。UTC时间，格式：'2016-01-02 15:04:05'
+     * 子任务结束时间。UTC时间，格式：'2016-01-02 15:04:05'
      * @return endTime
      */
     public String getEndTime() {
@@ -136,7 +136,7 @@ public class GetSubJobDetail {
     }
 
     /**
-     * job执行失败时的错误码
+     * 子任务执行失败时的错误码
      * @return errorCode
      */
     public String getErrorCode() {
@@ -153,7 +153,7 @@ public class GetSubJobDetail {
     }
 
     /**
-     * job执行失败时的错误原因
+     * 子任务执行失败时的错误原因
      * @return failReason
      */
     public String getFailReason() {

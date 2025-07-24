@@ -108,6 +108,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceMessageRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyRequest;
@@ -3253,6 +3255,45 @@ public class IoTDAMeta {
             f -> f.withMarshaller(CreateMessageRequest::getBody, CreateMessageRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDeviceMessageRequest, DeleteDeviceMessageResponse> deleteDeviceMessage =
+        genForDeleteDeviceMessage();
+
+    private static HttpRequestDef<DeleteDeviceMessageRequest, DeleteDeviceMessageResponse> genForDeleteDeviceMessage() {
+        // basic
+        HttpRequestDef.Builder<DeleteDeviceMessageRequest, DeleteDeviceMessageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDeviceMessageRequest.class, DeleteDeviceMessageResponse.class)
+            .withName("DeleteDeviceMessage")
+            .withUri("/v5/iot/{project_id}/devices/{device_id}/messages/{message_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceMessageRequest::getDeviceId, DeleteDeviceMessageRequest::setDeviceId));
+        builder.<String>withRequestField("message_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceMessageRequest::getMessageId, DeleteDeviceMessageRequest::setMessageId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceMessageRequest::getInstanceId,
+                DeleteDeviceMessageRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDeviceMessageResponse::getBody, DeleteDeviceMessageResponse::setBody));
 
         return builder.build();
     }

@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.dbss.v1.model.DeleteInstancesRequest;
 import com.huaweicloud.sdk.dbss.v1.model.DeleteInstancesResponse;
 import com.huaweicloud.sdk.dbss.v1.model.DownloadAuditAgentRequest;
 import com.huaweicloud.sdk.dbss.v1.model.DownloadAuditAgentResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAlarmTopicConfigInfoRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAlarmTopicConfigInfoResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditAgentRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditAgentResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditAlarmLogRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.dbss.v1.model.ListSqlInjectionRulesRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListSqlInjectionRulesResponse;
 import com.huaweicloud.sdk.dbss.v1.model.RebootAuditInstanceRequest;
 import com.huaweicloud.sdk.dbss.v1.model.RebootAuditInstanceResponse;
+import com.huaweicloud.sdk.dbss.v1.model.SetAlarmTopicConfigInfoRequest;
+import com.huaweicloud.sdk.dbss.v1.model.SetAlarmTopicConfigInfoResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditQuotaRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditQuotaResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditRuleRiskRequest;
@@ -269,6 +273,35 @@ public class DbssClient {
     public SyncInvoker<DeleteInstancesRequest, DeleteInstancesResponse> deleteInstancesInvoker(
         DeleteInstancesRequest request) {
         return new SyncInvoker<>(request, DbssMeta.deleteInstances, hcClient);
+    }
+
+    /**
+     * 获取实例告警配置
+     *
+     * 获取实例告警配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmTopicConfigInfoRequest 请求对象
+     * @return ListAlarmTopicConfigInfoResponse
+     */
+    public ListAlarmTopicConfigInfoResponse listAlarmTopicConfigInfo(ListAlarmTopicConfigInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DbssMeta.listAlarmTopicConfigInfo);
+    }
+
+    /**
+     * 获取实例告警配置
+     *
+     * 获取实例告警配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmTopicConfigInfoRequest 请求对象
+     * @return SyncInvoker<ListAlarmTopicConfigInfoRequest, ListAlarmTopicConfigInfoResponse>
+     */
+    public SyncInvoker<ListAlarmTopicConfigInfoRequest, ListAlarmTopicConfigInfoResponse> listAlarmTopicConfigInfoInvoker(
+        ListAlarmTopicConfigInfoRequest request) {
+        return new SyncInvoker<>(request, DbssMeta.listAlarmTopicConfigInfo, hcClient);
     }
 
     /**
@@ -703,6 +736,35 @@ public class DbssClient {
     public SyncInvoker<RebootAuditInstanceRequest, RebootAuditInstanceResponse> rebootAuditInstanceInvoker(
         RebootAuditInstanceRequest request) {
         return new SyncInvoker<>(request, DbssMeta.rebootAuditInstance, hcClient);
+    }
+
+    /**
+     * 设置实例告警配置
+     *
+     * 设置实例告警配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAlarmTopicConfigInfoRequest 请求对象
+     * @return SetAlarmTopicConfigInfoResponse
+     */
+    public SetAlarmTopicConfigInfoResponse setAlarmTopicConfigInfo(SetAlarmTopicConfigInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DbssMeta.setAlarmTopicConfigInfo);
+    }
+
+    /**
+     * 设置实例告警配置
+     *
+     * 设置实例告警配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAlarmTopicConfigInfoRequest 请求对象
+     * @return SyncInvoker<SetAlarmTopicConfigInfoRequest, SetAlarmTopicConfigInfoResponse>
+     */
+    public SyncInvoker<SetAlarmTopicConfigInfoRequest, SetAlarmTopicConfigInfoResponse> setAlarmTopicConfigInfoInvoker(
+        SetAlarmTopicConfigInfoRequest request) {
+        return new SyncInvoker<>(request, DbssMeta.setAlarmTopicConfigInfo, hcClient);
     }
 
     /**

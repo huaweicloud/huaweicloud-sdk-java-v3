@@ -13,14 +13,14 @@ public class ListSharesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private Long limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private Long offset;
+    private Integer offset;
 
-    public ListSharesRequest withLimit(Long limit) {
+    public ListSharesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -28,18 +28,18 @@ public class ListSharesRequest {
     /**
      * 设置返回的文件系统个数的最大值，不填默认为1000个
      * minimum: 0
-     * maximum: 200
+     * maximum: 2000
      * @return limit
      */
-    public Long getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(Long limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
-    public ListSharesRequest withOffset(Long offset) {
+    public ListSharesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -49,11 +49,11 @@ public class ListSharesRequest {
      * minimum: 0
      * @return offset
      */
-    public Long getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(Long offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 

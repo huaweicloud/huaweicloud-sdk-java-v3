@@ -99,6 +99,16 @@ public class AutoExportPolicy {
 
     private List<EventsEnum> events = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prefix")
+
+    private String prefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "suffix")
+
+    private String suffix;
+
     public AutoExportPolicy withEvents(List<EventsEnum> events) {
         this.events = events;
         return this;
@@ -132,6 +142,40 @@ public class AutoExportPolicy {
         this.events = events;
     }
 
+    public AutoExportPolicy withPrefix(String prefix) {
+        this.prefix = prefix;
+        return this;
+    }
+
+    /**
+     * 后端存储内对象匹配前缀
+     * @return prefix
+     */
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
+    public AutoExportPolicy withSuffix(String suffix) {
+        this.suffix = suffix;
+        return this;
+    }
+
+    /**
+     * 后端存储内对象匹配后缀
+     * @return suffix
+     */
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -141,12 +185,13 @@ public class AutoExportPolicy {
             return false;
         }
         AutoExportPolicy that = (AutoExportPolicy) obj;
-        return Objects.equals(this.events, that.events);
+        return Objects.equals(this.events, that.events) && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.suffix, that.suffix);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(events);
+        return Objects.hash(events, prefix, suffix);
     }
 
     @Override
@@ -154,6 +199,8 @@ public class AutoExportPolicy {
         StringBuilder sb = new StringBuilder();
         sb.append("class AutoExportPolicy {\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+        sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

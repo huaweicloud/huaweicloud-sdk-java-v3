@@ -90,6 +90,11 @@ public class DownloadBatchCreateTemplateRequest {
 
     private XLanguageEnum xLanguage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine_type")
+
+    private String engineType;
+
     public DownloadBatchCreateTemplateRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -109,6 +114,23 @@ public class DownloadBatchCreateTemplateRequest {
         this.xLanguage = xLanguage;
     }
 
+    public DownloadBatchCreateTemplateRequest withEngineType(String engineType) {
+        this.engineType = engineType;
+        return this;
+    }
+
+    /**
+     * 数据库引擎。 - postgresql
+     * @return engineType
+     */
+    public String getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(String engineType) {
+        this.engineType = engineType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,12 +140,12 @@ public class DownloadBatchCreateTemplateRequest {
             return false;
         }
         DownloadBatchCreateTemplateRequest that = (DownloadBatchCreateTemplateRequest) obj;
-        return Objects.equals(this.xLanguage, that.xLanguage);
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.engineType, that.engineType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage);
+        return Objects.hash(xLanguage, engineType);
     }
 
     @Override
@@ -131,6 +153,7 @@ public class DownloadBatchCreateTemplateRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DownloadBatchCreateTemplateRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

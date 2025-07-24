@@ -92,11 +92,6 @@ public class BatchAddSharedTagsRequestBody {
 
     private List<ResourceTag> tags = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sys_tags")
-
-    private List<ResourceTag> sysTags = null;
-
     public BatchAddSharedTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -136,7 +131,7 @@ public class BatchAddSharedTagsRequestBody {
     }
 
     /**
-     * 标签列表。 用户权限时该字段必选。如果有op_service权限时，tags和sys_tags二选一。
+     * 标签列表。
      * @return tags
      */
     public List<ResourceTag> getTags() {
@@ -145,39 +140,6 @@ public class BatchAddSharedTagsRequestBody {
 
     public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
-    }
-
-    public BatchAddSharedTagsRequestBody withSysTags(List<ResourceTag> sysTags) {
-        this.sysTags = sysTags;
-        return this;
-    }
-
-    public BatchAddSharedTagsRequestBody addSysTagsItem(ResourceTag sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        this.sysTags.add(sysTagsItem);
-        return this;
-    }
-
-    public BatchAddSharedTagsRequestBody withSysTags(Consumer<List<ResourceTag>> sysTagsSetter) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        sysTagsSetter.accept(this.sysTags);
-        return this;
-    }
-
-    /**
-     * 系统标签列表。 op_service权限可以访问，和tags二选一。目前TMS调用时只包含一个resource_tag结构体，key固定为：_sys_enterprise_project_id。
-     * @return sysTags
-     */
-    public List<ResourceTag> getSysTags() {
-        return sysTags;
-    }
-
-    public void setSysTags(List<ResourceTag> sysTags) {
-        this.sysTags = sysTags;
     }
 
     @Override
@@ -189,13 +151,12 @@ public class BatchAddSharedTagsRequestBody {
             return false;
         }
         BatchAddSharedTagsRequestBody that = (BatchAddSharedTagsRequestBody) obj;
-        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.sysTags, that.sysTags);
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, tags, sysTags);
+        return Objects.hash(action, tags);
     }
 
     @Override
@@ -204,7 +165,6 @@ public class BatchAddSharedTagsRequestBody {
         sb.append("class BatchAddSharedTagsRequestBody {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

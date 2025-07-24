@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 public class ShowJobDetailResponse extends SdkResponse {
 
     /**
-     * job的状态。success：成功。running：运行中。failed：失败。waiting：等待执行
+     * job的状态。success：成功。running：运行中。failed：失败。waiting：等待执行。
      */
     public static final class StatusEnum {
 
@@ -152,7 +152,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     /**
-     * job的状态。success：成功。running：运行中。failed：失败。waiting：等待执行
+     * job的状态。success：成功。running：运行中。failed：失败。waiting：等待执行。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -203,7 +203,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     /**
-     * job开始时间。UTC时间，格式：'2016-01-02 15:04:05'
+     * job开始时间。UTC时间，格式：'2016-01-02 15:04:05'。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -220,7 +220,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     /**
-     * job结束时间。UTC时间，格式：'2016-01-02 15:04:05'
+     * job结束时间。UTC时间，格式：'2016-01-02 15:04:05'。
      * @return endTime
      */
     public String getEndTime() {
@@ -237,7 +237,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     /**
-     * job执行失败时的错误码
+     * job执行失败时的错误码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -254,7 +254,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     /**
-     * job执行失败时的错误原因
+     * job执行失败时的错误原因。
      * @return failReason
      */
     public String getFailReason() {
@@ -287,7 +287,7 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     /**
-     * 子任务列表
+     * 子任务列表。
      * @return subJobs
      */
     public List<GetSubJobDetail> getSubJobs() {

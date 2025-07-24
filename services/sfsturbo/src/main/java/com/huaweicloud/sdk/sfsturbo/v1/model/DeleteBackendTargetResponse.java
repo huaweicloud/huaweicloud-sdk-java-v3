@@ -37,21 +37,6 @@ public class DeleteBackendTargetResponse extends SdkResponse {
         public static final LifecycleEnum DELETING = new LifecycleEnum("DELETING");
 
         /**
-         * Enum AVAILABLE for value: "AVAILABLE"
-         */
-        public static final LifecycleEnum AVAILABLE = new LifecycleEnum("AVAILABLE");
-
-        /**
-         * Enum MISCONFIGURED for value: "MISCONFIGURED"
-         */
-        public static final LifecycleEnum MISCONFIGURED = new LifecycleEnum("MISCONFIGURED");
-
-        /**
-         * Enum CREATING for value: "CREATING"
-         */
-        public static final LifecycleEnum CREATING = new LifecycleEnum("CREATING");
-
-        /**
          * Enum FAILED for value: "FAILED"
          */
         public static final LifecycleEnum FAILED = new LifecycleEnum("FAILED");
@@ -61,9 +46,6 @@ public class DeleteBackendTargetResponse extends SdkResponse {
         private static Map<String, LifecycleEnum> createStaticFields() {
             Map<String, LifecycleEnum> map = new HashMap<>();
             map.put("DELETING", DELETING);
-            map.put("AVAILABLE", AVAILABLE);
-            map.put("MISCONFIGURED", MISCONFIGURED);
-            map.put("CREATING", CREATING);
             map.put("FAILED", FAILED);
             return Collections.unmodifiableMap(map);
         }
@@ -130,7 +112,7 @@ public class DeleteBackendTargetResponse extends SdkResponse {
     }
 
     /**
-     * 绑定关系id
+     * 绑定关系ID
      * @return targetId
      */
     public String getTargetId() {

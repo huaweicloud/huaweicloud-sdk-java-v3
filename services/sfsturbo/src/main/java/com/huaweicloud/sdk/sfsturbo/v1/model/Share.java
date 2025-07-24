@@ -84,7 +84,7 @@ public class Share {
     }
 
     /**
-     * 文件系统所在可用区(az)的编码 
+     * 文件系统所在可用区(az)的编码
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -178,7 +178,7 @@ public class Share {
     }
 
     /**
-     * 用户在某一区域下的安全组ID。 
+     * 用户在某一区域下的安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -195,7 +195,7 @@ public class Share {
     }
 
     /**
-     * 文件系统共享协议，有效值为NFS。NFS（Network File System），即网络文件系统。一种使用于分散式文件系统的协议，通过网络让不同的机器、不同的操作系统能够彼此分享数据。
+     * - NFS（Network File System），即网络文件系统。一种使用于分散式文件系统的协议，通过网络让不同的机器、不同的操作系统能够彼此分享数据。Linux系统建议使用NFS协议类型的文件系统。 - CIFS（Common Internet File System），通用Internet文件系统，是一种网络文件系统访问协议。CIFS协议是SMB协议的方言（定义特定版本的协议的消息数据包集称为方言），CIFS协议也是公共的或开放的SMB协议版本，它使程序可以访问远程Internet计算机上的文件并要求此计算机提供服务。通过CIFS协议，可实现Windows系统主机之间的网络文件共享。CIFS类型的文件系统不支持使用Linux操作系统的云服务器进行挂载。Windows系统建议使用CIFS协议类型的文件系统。 
      * @return shareProto
      */
     public String getShareProto() {
@@ -246,7 +246,7 @@ public class Share {
     }
 
     /**
-     * 用户在VPC下面的子网的网络ID。 
+     * 用户在VPC下面的子网的网络ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -263,7 +263,7 @@ public class Share {
     }
 
     /**
-     * 用户在某一区域下的VPC ID。 
+     * 用户在某一区域下的VPC ID。
      * @return vpcId
      */
     public String getVpcId() {

@@ -16,6 +16,11 @@ public class CreateFsTaskResponse extends SdkResponse {
 
     private String taskId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-request-id")
+
+    private String xRequestId;
+
     public CreateFsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -33,6 +38,25 @@ public class CreateFsTaskResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
+    public CreateFsTaskResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-request-id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +66,12 @@ public class CreateFsTaskResponse extends SdkResponse {
             return false;
         }
         CreateFsTaskResponse that = (CreateFsTaskResponse) obj;
-        return Objects.equals(this.taskId, that.taskId);
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId);
+        return Objects.hash(taskId, xRequestId);
     }
 
     @Override
@@ -55,6 +79,7 @@ public class CreateFsTaskResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateFsTaskResponse {\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,6 +25,26 @@ public class DataCompareOverviewInfo {
 
     private Integer status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compare_num")
+
+    private Integer compareNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compare_end_num")
+
+    private Integer compareEndNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_inconsistent_num")
+
+    private Integer dataInconsistentNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "uncomparable_num")
+
+    private Integer uncomparableNum;
+
     public DataCompareOverviewInfo withSourceDbName(String sourceDbName) {
         this.sourceDbName = sourceDbName;
         return this;
@@ -76,6 +96,74 @@ public class DataCompareOverviewInfo {
         this.status = status;
     }
 
+    public DataCompareOverviewInfo withCompareNum(Integer compareNum) {
+        this.compareNum = compareNum;
+        return this;
+    }
+
+    /**
+     * 总表数。
+     * @return compareNum
+     */
+    public Integer getCompareNum() {
+        return compareNum;
+    }
+
+    public void setCompareNum(Integer compareNum) {
+        this.compareNum = compareNum;
+    }
+
+    public DataCompareOverviewInfo withCompareEndNum(Integer compareEndNum) {
+        this.compareEndNum = compareEndNum;
+        return this;
+    }
+
+    /**
+     * 已完成表数。
+     * @return compareEndNum
+     */
+    public Integer getCompareEndNum() {
+        return compareEndNum;
+    }
+
+    public void setCompareEndNum(Integer compareEndNum) {
+        this.compareEndNum = compareEndNum;
+    }
+
+    public DataCompareOverviewInfo withDataInconsistentNum(Integer dataInconsistentNum) {
+        this.dataInconsistentNum = dataInconsistentNum;
+        return this;
+    }
+
+    /**
+     * 不一致表数。
+     * @return dataInconsistentNum
+     */
+    public Integer getDataInconsistentNum() {
+        return dataInconsistentNum;
+    }
+
+    public void setDataInconsistentNum(Integer dataInconsistentNum) {
+        this.dataInconsistentNum = dataInconsistentNum;
+    }
+
+    public DataCompareOverviewInfo withUncomparableNum(Integer uncomparableNum) {
+        this.uncomparableNum = uncomparableNum;
+        return this;
+    }
+
+    /**
+     * 无法对比表数。
+     * @return uncomparableNum
+     */
+    public Integer getUncomparableNum() {
+        return uncomparableNum;
+    }
+
+    public void setUncomparableNum(Integer uncomparableNum) {
+        this.uncomparableNum = uncomparableNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +174,17 @@ public class DataCompareOverviewInfo {
         }
         DataCompareOverviewInfo that = (DataCompareOverviewInfo) obj;
         return Objects.equals(this.sourceDbName, that.sourceDbName)
-            && Objects.equals(this.targetDbName, that.targetDbName) && Objects.equals(this.status, that.status);
+            && Objects.equals(this.targetDbName, that.targetDbName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.compareNum, that.compareNum)
+            && Objects.equals(this.compareEndNum, that.compareEndNum)
+            && Objects.equals(this.dataInconsistentNum, that.dataInconsistentNum)
+            && Objects.equals(this.uncomparableNum, that.uncomparableNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sourceDbName, targetDbName, status);
+        return Objects
+            .hash(sourceDbName, targetDbName, status, compareNum, compareEndNum, dataInconsistentNum, uncomparableNum);
     }
 
     @Override
@@ -101,6 +194,10 @@ public class DataCompareOverviewInfo {
         sb.append("    sourceDbName: ").append(toIndentedString(sourceDbName)).append("\n");
         sb.append("    targetDbName: ").append(toIndentedString(targetDbName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    compareNum: ").append(toIndentedString(compareNum)).append("\n");
+        sb.append("    compareEndNum: ").append(toIndentedString(compareEndNum)).append("\n");
+        sb.append("    dataInconsistentNum: ").append(toIndentedString(dataInconsistentNum)).append("\n");
+        sb.append("    uncomparableNum: ").append(toIndentedString(uncomparableNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

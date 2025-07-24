@@ -48,7 +48,7 @@ public class CreateFsDirQuotaRequestBody {
     }
 
     /**
-     * 目录的容量大小，单位：MB; 设置为0会导致数据无法写入目录; capacity和quota至少二选一
+     * 目录的容量大小，单位：MB; 不填写则默认为0，会导致数据无法写入目录; capacity和quota至少二选一。
      * @return capacity
      */
     public Integer getCapacity() {
@@ -65,7 +65,7 @@ public class CreateFsDirQuotaRequestBody {
     }
 
     /**
-     * 目录的inode数量限制; 设置为0会导致数据无法写入目录; capacity和quota至少二选一
+     * 目录的inode数量限制; 不填写则默认为0，会导致数据无法写入目录; capacity和quota至少二选一。
      * @return inode
      */
     public Integer getInode() {

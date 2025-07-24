@@ -19,11 +19,6 @@ public class ShowSharedTagsResponse extends SdkResponse {
 
     private List<ResourceTag> tags = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sys_tags")
-
-    private List<ResourceTag> sysTags = null;
-
     public ShowSharedTagsResponse withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
@@ -57,39 +52,6 @@ public class ShowSharedTagsResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    public ShowSharedTagsResponse withSysTags(List<ResourceTag> sysTags) {
-        this.sysTags = sysTags;
-        return this;
-    }
-
-    public ShowSharedTagsResponse addSysTagsItem(ResourceTag sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        this.sysTags.add(sysTagsItem);
-        return this;
-    }
-
-    public ShowSharedTagsResponse withSysTags(Consumer<List<ResourceTag>> sysTagsSetter) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        sysTagsSetter.accept(this.sysTags);
-        return this;
-    }
-
-    /**
-     * 仅op_service权限才可以获取此字段。  1.  目前只包含一个resource_tag结构体 key：_sys_enterprise_project_id  2.  目前key下面只包含一个value，0表示默认企业项目。  非op_service场景不能返回此字段。
-     * @return sysTags
-     */
-    public List<ResourceTag> getSysTags() {
-        return sysTags;
-    }
-
-    public void setSysTags(List<ResourceTag> sysTags) {
-        this.sysTags = sysTags;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -99,12 +61,12 @@ public class ShowSharedTagsResponse extends SdkResponse {
             return false;
         }
         ShowSharedTagsResponse that = (ShowSharedTagsResponse) obj;
-        return Objects.equals(this.tags, that.tags) && Objects.equals(this.sysTags, that.sysTags);
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags, sysTags);
+        return Objects.hash(tags);
     }
 
     @Override
@@ -112,7 +74,6 @@ public class ShowSharedTagsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowSharedTagsResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

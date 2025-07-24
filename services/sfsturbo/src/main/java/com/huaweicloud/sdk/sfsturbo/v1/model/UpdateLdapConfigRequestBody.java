@@ -1,17 +1,12 @@
 package com.huaweicloud.sdk.sfsturbo.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
- * ldap配置信息
+ * LDAP配置信息
  */
 public class UpdateLdapConfigRequestBody {
 
@@ -60,88 +55,13 @@ public class UpdateLdapConfigRequestBody {
 
     private Integer searchTimeout;
 
-    /**
-     * 访问ldap服务器失败后是否允许使用本地用户鉴权
-     */
-    public static final class AllowLocalUserEnum {
-
-        /**
-         * Enum YES for value: "Yes"
-         */
-        public static final AllowLocalUserEnum YES = new AllowLocalUserEnum("Yes");
-
-        /**
-         * Enum NO for value: "No"
-         */
-        public static final AllowLocalUserEnum NO = new AllowLocalUserEnum("No");
-
-        private static final Map<String, AllowLocalUserEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AllowLocalUserEnum> createStaticFields() {
-            Map<String, AllowLocalUserEnum> map = new HashMap<>();
-            map.put("Yes", YES);
-            map.put("No", NO);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AllowLocalUserEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AllowLocalUserEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AllowLocalUserEnum(value));
-        }
-
-        public static AllowLocalUserEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AllowLocalUserEnum) {
-                return this.value.equals(((AllowLocalUserEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "allow_local_user")
-
-    private AllowLocalUserEnum allowLocalUser;
-
     public UpdateLdapConfigRequestBody withUrl(String url) {
         this.url = url;
         return this;
     }
 
     /**
-     * ldap服务器的url，固定格式为 ldap://{ip_address}:{port_number} 或 ldaps://{ip_address}:{port_number}，例如ldap://192.168.xx.xx:60000
+     * LDAP服务器的url，固定格式为 ldap://{ip_address}:{port_number} 或 ldaps://{ip_address}:{port_number}，例如ldap://192.168.xx.xx:60000
      * @return url
      */
     public String getUrl() {
@@ -192,7 +112,7 @@ public class UpdateLdapConfigRequestBody {
     }
 
     /**
-     * ldap认证密码
+     * LDAP认证密码
      * @return password
      */
     public String getPassword() {
@@ -243,7 +163,7 @@ public class UpdateLdapConfigRequestBody {
     }
 
     /**
-     * ldap备节点的url，固定格式为 ldap://{ip_address}:{port_number} 或 ldaps://{ip_address}:{port_number}，例如ldap://192.168.xx.xx:60000
+     * LDAP备节点的url，固定格式为 ldap://{ip_address}:{port_number} 或 ldaps://{ip_address}:{port_number}，例如ldap://192.168.xx.xx:60000
      * @return backupUrl
      */
     public String getBackupUrl() {
@@ -260,7 +180,7 @@ public class UpdateLdapConfigRequestBody {
     }
 
     /**
-     * ldap的schema，不填写则默认为RFC2307
+     * LDAP的schema，不填写则默认为RFC2307
      * @return schema
      */
     public String getSchema() {
@@ -277,7 +197,7 @@ public class UpdateLdapConfigRequestBody {
     }
 
     /**
-     * ldap搜索的超时时间，单位为秒。不填写则默认为3秒
+     * LDAP搜索的超时时间，单位为秒。不填写则默认为3秒
      * @return searchTimeout
      */
     public Integer getSearchTimeout() {
@@ -286,23 +206,6 @@ public class UpdateLdapConfigRequestBody {
 
     public void setSearchTimeout(Integer searchTimeout) {
         this.searchTimeout = searchTimeout;
-    }
-
-    public UpdateLdapConfigRequestBody withAllowLocalUser(AllowLocalUserEnum allowLocalUser) {
-        this.allowLocalUser = allowLocalUser;
-        return this;
-    }
-
-    /**
-     * 访问ldap服务器失败后是否允许使用本地用户鉴权
-     * @return allowLocalUser
-     */
-    public AllowLocalUserEnum getAllowLocalUser() {
-        return allowLocalUser;
-    }
-
-    public void setAllowLocalUser(AllowLocalUserEnum allowLocalUser) {
-        this.allowLocalUser = allowLocalUser;
     }
 
     @Override
@@ -318,22 +221,12 @@ public class UpdateLdapConfigRequestBody {
             && Objects.equals(this.userDn, that.userDn) && Objects.equals(this.password, that.password)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.filterCondition, that.filterCondition)
             && Objects.equals(this.backupUrl, that.backupUrl) && Objects.equals(this.schema, that.schema)
-            && Objects.equals(this.searchTimeout, that.searchTimeout)
-            && Objects.equals(this.allowLocalUser, that.allowLocalUser);
+            && Objects.equals(this.searchTimeout, that.searchTimeout);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url,
-            baseDn,
-            userDn,
-            password,
-            vpcId,
-            filterCondition,
-            backupUrl,
-            schema,
-            searchTimeout,
-            allowLocalUser);
+        return Objects.hash(url, baseDn, userDn, password, vpcId, filterCondition, backupUrl, schema, searchTimeout);
     }
 
     @Override
@@ -349,7 +242,6 @@ public class UpdateLdapConfigRequestBody {
         sb.append("    backupUrl: ").append(toIndentedString(backupUrl)).append("\n");
         sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
         sb.append("    searchTimeout: ").append(toIndentedString(searchTimeout)).append("\n");
-        sb.append("    allowLocalUser: ").append(toIndentedString(allowLocalUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }

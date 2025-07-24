@@ -68,7 +68,7 @@ public class ListSharesByTagResponse extends SdkResponse {
     }
 
     /**
-     * 设置返回的文件系统的偏移量
+     * 返回的文件系统的总量
      * @return totalCount
      */
     public Integer getTotalCount() {

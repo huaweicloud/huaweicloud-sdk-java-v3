@@ -112,19 +112,19 @@ public class ActionReq {
         public static final ActionNameEnum SET_READONLY = new ActionNameEnum("set_readonly");
 
         /**
-         * Enum DIAGNOSIS_ for value: "diagnosis：一键诊断。"
+         * Enum DIAGNOSIS for value: "diagnosis"
          */
-        public static final ActionNameEnum DIAGNOSIS_ = new ActionNameEnum("diagnosis：一键诊断。");
+        public static final ActionNameEnum DIAGNOSIS = new ActionNameEnum("diagnosis");
 
         /**
-         * Enum START_REPAIR_ for value: "start_repair：开始数据修复。"
+         * Enum START_REPAIR for value: "start_repair"
          */
-        public static final ActionNameEnum START_REPAIR_ = new ActionNameEnum("start_repair：开始数据修复。");
+        public static final ActionNameEnum START_REPAIR = new ActionNameEnum("start_repair");
 
         /**
-         * Enum STOP_REPAIR_ for value: "stop_repair：停止数据修复。"
+         * Enum STOP_REPAIR for value: "stop_repair"
          */
-        public static final ActionNameEnum STOP_REPAIR_ = new ActionNameEnum("stop_repair：停止数据修复。");
+        public static final ActionNameEnum STOP_REPAIR = new ActionNameEnum("stop_repair");
 
         private static final Map<String, ActionNameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -147,9 +147,9 @@ public class ActionReq {
             map.put("set_writable", SET_WRITABLE);
             map.put("cloud_connection", CLOUD_CONNECTION);
             map.put("set_readonly", SET_READONLY);
-            map.put("diagnosis：一键诊断。", DIAGNOSIS_);
-            map.put("start_repair：开始数据修复。", START_REPAIR_);
-            map.put("stop_repair：停止数据修复。", STOP_REPAIR_);
+            map.put("diagnosis", DIAGNOSIS);
+            map.put("start_repair", START_REPAIR);
+            map.put("stop_repair", STOP_REPAIR);
             return Collections.unmodifiableMap(map);
         }
 

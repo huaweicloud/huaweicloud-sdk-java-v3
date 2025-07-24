@@ -32,6 +32,11 @@ public class ShowLdapConfigResponse extends SdkResponse {
     private String filterCondition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_url")
 
     private String backupUrl;
@@ -47,9 +52,9 @@ public class ShowLdapConfigResponse extends SdkResponse {
     private Integer searchTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "allow_local_user")
+    @JsonProperty(value = "X-request-id")
 
-    private String allowLocalUser;
+    private String xRequestId;
 
     public ShowLdapConfigResponse withUrl(String url) {
         this.url = url;
@@ -57,7 +62,7 @@ public class ShowLdapConfigResponse extends SdkResponse {
     }
 
     /**
-     * ldap服务器的url
+     * LDAP服务器的url
      * @return url
      */
     public String getUrl() {
@@ -119,13 +124,30 @@ public class ShowLdapConfigResponse extends SdkResponse {
         this.filterCondition = filterCondition;
     }
 
+    public ShowLdapConfigResponse withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * 保留字段，暂不支持
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
     public ShowLdapConfigResponse withBackupUrl(String backupUrl) {
         this.backupUrl = backupUrl;
         return this;
     }
 
     /**
-     * ldap备节点的url
+     * LDAP备节点的url
      * @return backupUrl
      */
     public String getBackupUrl() {
@@ -142,7 +164,7 @@ public class ShowLdapConfigResponse extends SdkResponse {
     }
 
     /**
-     * ldap的schema，不填写则默认为RFC2307
+     * LDAP的schema，不填写则默认为RFC2307
      * @return schema
      */
     public String getSchema() {
@@ -159,7 +181,7 @@ public class ShowLdapConfigResponse extends SdkResponse {
     }
 
     /**
-     * ldap搜索的超时时间，单位为秒。不填写则默认为3秒
+     * LDAP搜索的超时时间，单位为秒。不填写则默认为3秒
      * @return searchTimeout
      */
     public Integer getSearchTimeout() {
@@ -170,21 +192,23 @@ public class ShowLdapConfigResponse extends SdkResponse {
         this.searchTimeout = searchTimeout;
     }
 
-    public ShowLdapConfigResponse withAllowLocalUser(String allowLocalUser) {
-        this.allowLocalUser = allowLocalUser;
+    public ShowLdapConfigResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
         return this;
     }
 
     /**
-     * 访问ldap服务器失败后是否允许使用本地用户鉴权
-     * @return allowLocalUser
+     * Get xRequestId
+     * @return xRequestId
      */
-    public String getAllowLocalUser() {
-        return allowLocalUser;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-request-id")
+    public String getXRequestId() {
+        return xRequestId;
     }
 
-    public void setAllowLocalUser(String allowLocalUser) {
-        this.allowLocalUser = allowLocalUser;
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
     }
 
     @Override
@@ -198,14 +222,14 @@ public class ShowLdapConfigResponse extends SdkResponse {
         ShowLdapConfigResponse that = (ShowLdapConfigResponse) obj;
         return Objects.equals(this.url, that.url) && Objects.equals(this.baseDn, that.baseDn)
             && Objects.equals(this.userDn, that.userDn) && Objects.equals(this.filterCondition, that.filterCondition)
-            && Objects.equals(this.backupUrl, that.backupUrl) && Objects.equals(this.schema, that.schema)
-            && Objects.equals(this.searchTimeout, that.searchTimeout)
-            && Objects.equals(this.allowLocalUser, that.allowLocalUser);
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.backupUrl, that.backupUrl)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.searchTimeout, that.searchTimeout)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, baseDn, userDn, filterCondition, backupUrl, schema, searchTimeout, allowLocalUser);
+        return Objects.hash(url, baseDn, userDn, filterCondition, vpcId, backupUrl, schema, searchTimeout, xRequestId);
     }
 
     @Override
@@ -216,10 +240,11 @@ public class ShowLdapConfigResponse extends SdkResponse {
         sb.append("    baseDn: ").append(toIndentedString(baseDn)).append("\n");
         sb.append("    userDn: ").append(toIndentedString(userDn)).append("\n");
         sb.append("    filterCondition: ").append(toIndentedString(filterCondition)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    backupUrl: ").append(toIndentedString(backupUrl)).append("\n");
         sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
         sb.append("    searchTimeout: ").append(toIndentedString(searchTimeout)).append("\n");
-        sb.append("    allowLocalUser: ").append(toIndentedString(allowLocalUser)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

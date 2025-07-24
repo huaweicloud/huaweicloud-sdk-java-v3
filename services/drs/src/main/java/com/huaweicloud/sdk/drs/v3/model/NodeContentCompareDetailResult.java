@@ -65,6 +65,26 @@ public class NodeContentCompareDetailResult {
 
     private String compareLineConfigFilter;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "complete_shard_count")
+
+    private Integer completeShardCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_shard_count")
+
+    private Integer totalShardCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "progress")
+
+    private Double progress;
+
     public NodeContentCompareDetailResult withSourceDb(String sourceDb) {
         this.sourceDb = sourceDb;
         return this;
@@ -252,6 +272,74 @@ public class NodeContentCompareDetailResult {
         this.compareLineConfigFilter = compareLineConfigFilter;
     }
 
+    public NodeContentCompareDetailResult withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 全量比对状态。 -1：对比中 -2：已完成 -3：待对比 -4：已取消
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public NodeContentCompareDetailResult withCompleteShardCount(Integer completeShardCount) {
+        this.completeShardCount = completeShardCount;
+        return this;
+    }
+
+    /**
+     * 已对比分片数。
+     * @return completeShardCount
+     */
+    public Integer getCompleteShardCount() {
+        return completeShardCount;
+    }
+
+    public void setCompleteShardCount(Integer completeShardCount) {
+        this.completeShardCount = completeShardCount;
+    }
+
+    public NodeContentCompareDetailResult withTotalShardCount(Integer totalShardCount) {
+        this.totalShardCount = totalShardCount;
+        return this;
+    }
+
+    /**
+     * 总分片数。
+     * @return totalShardCount
+     */
+    public Integer getTotalShardCount() {
+        return totalShardCount;
+    }
+
+    public void setTotalShardCount(Integer totalShardCount) {
+        this.totalShardCount = totalShardCount;
+    }
+
+    public NodeContentCompareDetailResult withProgress(Double progress) {
+        this.progress = progress;
+        return this;
+    }
+
+    /**
+     * 比对进度。
+     * @return progress
+     */
+    public Double getProgress() {
+        return progress;
+    }
+
+    public void setProgress(Double progress) {
+        this.progress = progress;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -270,7 +358,11 @@ public class NodeContentCompareDetailResult {
             && Objects.equals(this.lineCompareResult, that.lineCompareResult)
             && Objects.equals(this.contentCompareResult, that.contentCompareResult)
             && Objects.equals(this.message, that.message)
-            && Objects.equals(this.compareLineConfigFilter, that.compareLineConfigFilter);
+            && Objects.equals(this.compareLineConfigFilter, that.compareLineConfigFilter)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.completeShardCount, that.completeShardCount)
+            && Objects.equals(this.totalShardCount, that.totalShardCount)
+            && Objects.equals(this.progress, that.progress);
     }
 
     @Override
@@ -285,7 +377,11 @@ public class NodeContentCompareDetailResult {
             lineCompareResult,
             contentCompareResult,
             message,
-            compareLineConfigFilter);
+            compareLineConfigFilter,
+            status,
+            completeShardCount,
+            totalShardCount,
+            progress);
     }
 
     @Override
@@ -303,6 +399,10 @@ public class NodeContentCompareDetailResult {
         sb.append("    contentCompareResult: ").append(toIndentedString(contentCompareResult)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    compareLineConfigFilter: ").append(toIndentedString(compareLineConfigFilter)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    completeShardCount: ").append(toIndentedString(completeShardCount)).append("\n");
+        sb.append("    totalShardCount: ").append(toIndentedString(totalShardCount)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,10 +3,14 @@ package com.huaweicloud.sdk.sfsturbo.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.sfsturbo.v1.model.AddActiveDirectoryDomainRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.AddActiveDirectoryDomainResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.BatchAddSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.BatchAddSharedTagsResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareChargeModeV2Request;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareChargeModeV2Response;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateBackendTargetRequest;
@@ -27,6 +31,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteActiveDirectoryDomainRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteActiveDirectoryDomainResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteBackendTargetRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteBackendTargetResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaRequest;
@@ -55,6 +61,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ListHpcCacheTasksRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListHpcCacheTasksResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListShareTypesRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListShareTypesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagRequest;
@@ -63,8 +71,12 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowActiveDirectoryDomainRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowActiveDirectoryDomainResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowBackendTargetInfoRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowBackendTargetInfoResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowClientIpInfoRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowClientIpInfoResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirRequest;
@@ -85,6 +97,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateActiveDirectoryDomainRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateActiveDirectoryDomainResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareRequest;
@@ -111,6 +125,36 @@ public class SFSTurboAsyncClient {
     public static ClientBuilder<SFSTurboAsyncClient> newBuilder() {
         ClientBuilder<SFSTurboAsyncClient> clientBuilder = new ClientBuilder<>(SFSTurboAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 加入AD域
+     *
+     * 加入AD域。Active Directory域（简称：AD域）提供统一的身份认证和授权管理。通过将SFS Turbo文件系统的挂载点接入AD域内，您可以在AD域中实现文件系统用户身份的认证管理和文件级别的访问权限控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddActiveDirectoryDomainRequest 请求对象
+     * @return CompletableFuture<AddActiveDirectoryDomainResponse>
+     */
+    public CompletableFuture<AddActiveDirectoryDomainResponse> addActiveDirectoryDomainAsync(
+        AddActiveDirectoryDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.addActiveDirectoryDomain);
+    }
+
+    /**
+     * 加入AD域
+     *
+     * 加入AD域。Active Directory域（简称：AD域）提供统一的身份认证和授权管理。通过将SFS Turbo文件系统的挂载点接入AD域内，您可以在AD域中实现文件系统用户身份的认证管理和文件级别的访问权限控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddActiveDirectoryDomainRequest 请求对象
+     * @return AsyncInvoker<AddActiveDirectoryDomainRequest, AddActiveDirectoryDomainResponse>
+     */
+    public AsyncInvoker<AddActiveDirectoryDomainRequest, AddActiveDirectoryDomainResponse> addActiveDirectoryDomainAsyncInvoker(
+        AddActiveDirectoryDomainRequest request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.addActiveDirectoryDomain, hcClient);
     }
 
     /**
@@ -177,6 +221,36 @@ public class SFSTurboAsyncClient {
     public AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroupAsyncInvoker(
         ChangeSecurityGroupRequest request) {
         return new AsyncInvoker<>(request, SFSTurboMeta.changeSecurityGroup, hcClient);
+    }
+
+    /**
+     * 修改文件系统计费模式由按需转为包周期
+     *
+     * 修改文件系统计费模式由按需转为包周期。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeShareChargeModeV2Request 请求对象
+     * @return CompletableFuture<ChangeShareChargeModeV2Response>
+     */
+    public CompletableFuture<ChangeShareChargeModeV2Response> changeShareChargeModeV2Async(
+        ChangeShareChargeModeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.changeShareChargeModeV2);
+    }
+
+    /**
+     * 修改文件系统计费模式由按需转为包周期
+     *
+     * 修改文件系统计费模式由按需转为包周期。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeShareChargeModeV2Request 请求对象
+     * @return AsyncInvoker<ChangeShareChargeModeV2Request, ChangeShareChargeModeV2Response>
+     */
+    public AsyncInvoker<ChangeShareChargeModeV2Request, ChangeShareChargeModeV2Response> changeShareChargeModeV2AsyncInvoker(
+        ChangeShareChargeModeV2Request request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.changeShareChargeModeV2, hcClient);
     }
 
     /**
@@ -266,9 +340,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 创建目标文件夹quota
+     * 创建目标文件夹配额
      *
-     * 创建目标文件夹quota。
+     * 创建目标文件夹配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -280,9 +354,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 创建目标文件夹quota
+     * 创建目标文件夹配额
      *
-     * 创建目标文件夹quota。
+     * 创建目标文件夹配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -353,13 +427,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 创建并绑定ldap配置
+     * 创建并绑定LDAP配置
      *
-     * 创建并绑定ldap配置。LDAP（Lightweight Directory Access Protocol），中文名称轻量级目录访问协议，是对目录服务器（Directory Server）进行访问、控制的一种标准协议。LDAP服务器可以集中式地管理用户和群组的归属关系，通过绑定LDAP服务器，当一个用户访问您的文件系统的文件时，SFS Turbo将会访问您的LDAP服务器以进行用户身份验证，并且获取用户和群组的归属关系，从而进行Linux标准的文件UGO权限的检查。要使用此功能，首先您需要搭建好LDAP服务器（当前SFS Turbo仅支持LDAP v3协议），常见提供LDAP协议访问的目录服务器实现有OpenLdap(Linux)，Active Directory(Windows)等，不同目录服务器的实现细节有所差别，绑定时需要指定对应的Schema（Schema配置错误将会导致SFS Turbo无法正确获取用户以及群组信息，可能导致无权限访问文件系统内文件），当前SFS Turbo支持的Schema有：
-     * 1. RFC2307（Openldap通常选择此Schema）
-     * 2. MS-AD-BIS（Active Directory通常选择此Schema，支持RFC2307bis，支持嵌套的群组）
-     * 
-     * SFS Turbo还支持配置主备LDAP服务器，当您的一台LDAP服务器故障无法访问后，SFS Turbo将会自动切换到备LDAP服务器访问，以免影响您的业务。同时，若您还选择将allow_local_user配置为Yes（默认为No），那么当您的LDAP服务器全部故障无法访问时，SFS Turbo将会使用您的本地用户以及群组信息，而非LDAP服务器中配置的信息进行身份验证和UGO权限检查，以最大程度减少故障影响面。
+     * 创建并绑定LDAP配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -371,13 +441,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 创建并绑定ldap配置
+     * 创建并绑定LDAP配置
      *
-     * 创建并绑定ldap配置。LDAP（Lightweight Directory Access Protocol），中文名称轻量级目录访问协议，是对目录服务器（Directory Server）进行访问、控制的一种标准协议。LDAP服务器可以集中式地管理用户和群组的归属关系，通过绑定LDAP服务器，当一个用户访问您的文件系统的文件时，SFS Turbo将会访问您的LDAP服务器以进行用户身份验证，并且获取用户和群组的归属关系，从而进行Linux标准的文件UGO权限的检查。要使用此功能，首先您需要搭建好LDAP服务器（当前SFS Turbo仅支持LDAP v3协议），常见提供LDAP协议访问的目录服务器实现有OpenLdap(Linux)，Active Directory(Windows)等，不同目录服务器的实现细节有所差别，绑定时需要指定对应的Schema（Schema配置错误将会导致SFS Turbo无法正确获取用户以及群组信息，可能导致无权限访问文件系统内文件），当前SFS Turbo支持的Schema有：
-     * 1. RFC2307（Openldap通常选择此Schema）
-     * 2. MS-AD-BIS（Active Directory通常选择此Schema，支持RFC2307bis，支持嵌套的群组）
-     * 
-     * SFS Turbo还支持配置主备LDAP服务器，当您的一台LDAP服务器故障无法访问后，SFS Turbo将会自动切换到备LDAP服务器访问，以免影响您的业务。同时，若您还选择将allow_local_user配置为Yes（默认为No），那么当您的LDAP服务器全部故障无法访问时，SFS Turbo将会使用您的本地用户以及群组信息，而非LDAP服务器中配置的信息进行身份验证和UGO权限检查，以最大程度减少故障影响面。
+     * 创建并绑定LDAP配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -482,6 +548,36 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 退出AD域
+     *
+     * 退出AD域。Active Directory域（简称：AD域）提供统一的身份认证和授权管理。通过将SFS Turbo文件系统的挂载点接入AD域内，您可以在AD域中实现文件系统用户身份的认证管理和文件级别的访问权限控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteActiveDirectoryDomainRequest 请求对象
+     * @return CompletableFuture<DeleteActiveDirectoryDomainResponse>
+     */
+    public CompletableFuture<DeleteActiveDirectoryDomainResponse> deleteActiveDirectoryDomainAsync(
+        DeleteActiveDirectoryDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.deleteActiveDirectoryDomain);
+    }
+
+    /**
+     * 退出AD域
+     *
+     * 退出AD域。Active Directory域（简称：AD域）提供统一的身份认证和授权管理。通过将SFS Turbo文件系统的挂载点接入AD域内，您可以在AD域中实现文件系统用户身份的认证管理和文件级别的访问权限控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteActiveDirectoryDomainRequest 请求对象
+     * @return AsyncInvoker<DeleteActiveDirectoryDomainRequest, DeleteActiveDirectoryDomainResponse>
+     */
+    public AsyncInvoker<DeleteActiveDirectoryDomainRequest, DeleteActiveDirectoryDomainResponse> deleteActiveDirectoryDomainAsyncInvoker(
+        DeleteActiveDirectoryDomainRequest request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.deleteActiveDirectoryDomain, hcClient);
+    }
+
+    /**
      * 删除后端存储
      *
      * 删除后端存储
@@ -539,9 +635,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 删除目标文件夹quota
+     * 删除目标文件夹配额
      *
-     * 删除目标文件夹quota。
+     * 删除目标文件夹配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -553,9 +649,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 删除目标文件夹quota
+     * 删除目标文件夹配额
      *
-     * 删除目标文件夹quota。
+     * 删除目标文件夹配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -626,13 +722,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 删除ldap配置
+     * 删除LDAP配置
      *
-     * 删除ldap配置。LDAP（Lightweight Directory Access Protocol），中文名称轻量级目录访问协议，是对目录服务器（Directory Server）进行访问、控制的一种标准协议。LDAP服务器可以集中式地管理用户和群组的归属关系，通过绑定LDAP服务器，当一个用户访问您的文件系统的文件时，SFS Turbo将会访问您的LDAP服务器以进行用户身份验证，并且获取用户和群组的归属关系，从而进行Linux标准的文件UGO权限的检查。要使用此功能，首先您需要搭建好LDAP服务器（当前SFS Turbo仅支持LDAP v3协议），常见提供LDAP协议访问的目录服务器实现有OpenLdap(Linux)，Active Directory(Windows)等，不同目录服务器的实现细节有所差别，绑定时需要指定对应的Schema（Schema配置错误将会导致SFS Turbo无法正确获取用户以及群组信息，可能导致无权限访问文件系统内文件），当前SFS Turbo支持的Schema有：
-     * 1. RFC2307（Openldap通常选择此Schema）
-     * 2. MS-AD-BIS（Active Directory通常选择此Schema，支持RFC2307bis，支持嵌套的群组）
-     * 
-     * SFS Turbo还支持配置主备LDAP服务器，当您的一台LDAP服务器故障无法访问后，SFS Turbo将会自动切换到备LDAP服务器访问，以免影响您的业务。同时，若您还选择将allow_local_user配置为Yes（默认为No），那么当您的LDAP服务器全部故障无法访问时，SFS Turbo将会使用您的本地用户以及群组信息，而非LDAP服务器中配置的信息进行身份验证和UGO权限检查，以最大程度减少故障影响面。
+     * 删除LDAP配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -644,13 +736,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 删除ldap配置
+     * 删除LDAP配置
      *
-     * 删除ldap配置。LDAP（Lightweight Directory Access Protocol），中文名称轻量级目录访问协议，是对目录服务器（Directory Server）进行访问、控制的一种标准协议。LDAP服务器可以集中式地管理用户和群组的归属关系，通过绑定LDAP服务器，当一个用户访问您的文件系统的文件时，SFS Turbo将会访问您的LDAP服务器以进行用户身份验证，并且获取用户和群组的归属关系，从而进行Linux标准的文件UGO权限的检查。要使用此功能，首先您需要搭建好LDAP服务器（当前SFS Turbo仅支持LDAP v3协议），常见提供LDAP协议访问的目录服务器实现有OpenLdap(Linux)，Active Directory(Windows)等，不同目录服务器的实现细节有所差别，绑定时需要指定对应的Schema（Schema配置错误将会导致SFS Turbo无法正确获取用户以及群组信息，可能导致无权限访问文件系统内文件），当前SFS Turbo支持的Schema有：
-     * 1. RFC2307（Openldap通常选择此Schema）
-     * 2. MS-AD-BIS（Active Directory通常选择此Schema，支持RFC2307bis，支持嵌套的群组）
-     * 
-     * SFS Turbo还支持配置主备LDAP服务器，当您的一台LDAP服务器故障无法访问后，SFS Turbo将会自动切换到备LDAP服务器访问，以免影响您的业务。同时，若您还选择将allow_local_user配置为Yes（默认为No），那么当您的LDAP服务器全部故障无法访问时，SFS Turbo将会使用您的本地用户以及群组信息，而非LDAP服务器中配置的信息进行身份验证和UGO权限检查，以最大程度减少故障影响面。
+     * 删除LDAP配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -892,6 +980,35 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 查询文件系统类型和配额
+     *
+     * 查询文件系统类型和配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListShareTypesRequest 请求对象
+     * @return CompletableFuture<ListShareTypesResponse>
+     */
+    public CompletableFuture<ListShareTypesResponse> listShareTypesAsync(ListShareTypesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.listShareTypes);
+    }
+
+    /**
+     * 查询文件系统类型和配额
+     *
+     * 查询文件系统类型和配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListShareTypesRequest 请求对象
+     * @return AsyncInvoker<ListShareTypesRequest, ListShareTypesResponse>
+     */
+    public AsyncInvoker<ListShareTypesRequest, ListShareTypesResponse> listShareTypesAsyncInvoker(
+        ListShareTypesRequest request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.listShareTypes, hcClient);
+    }
+
+    /**
      * 查询租户所有共享的标签
      *
      * 查询租户所有共享的标签集合。
@@ -1007,6 +1124,36 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 查询AD域配置
+     *
+     * 查询AD域配置。Active Directory域（简称：AD域）提供统一的身份认证和授权管理。通过将SFS Turbo文件系统的挂载点接入AD域内，您可以在AD域中实现文件系统用户身份的认证管理和文件级别的访问权限控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowActiveDirectoryDomainRequest 请求对象
+     * @return CompletableFuture<ShowActiveDirectoryDomainResponse>
+     */
+    public CompletableFuture<ShowActiveDirectoryDomainResponse> showActiveDirectoryDomainAsync(
+        ShowActiveDirectoryDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showActiveDirectoryDomain);
+    }
+
+    /**
+     * 查询AD域配置
+     *
+     * 查询AD域配置。Active Directory域（简称：AD域）提供统一的身份认证和授权管理。通过将SFS Turbo文件系统的挂载点接入AD域内，您可以在AD域中实现文件系统用户身份的认证管理和文件级别的访问权限控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowActiveDirectoryDomainRequest 请求对象
+     * @return AsyncInvoker<ShowActiveDirectoryDomainRequest, ShowActiveDirectoryDomainResponse>
+     */
+    public AsyncInvoker<ShowActiveDirectoryDomainRequest, ShowActiveDirectoryDomainResponse> showActiveDirectoryDomainAsyncInvoker(
+        ShowActiveDirectoryDomainRequest request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.showActiveDirectoryDomain, hcClient);
+    }
+
+    /**
      * 获取后端存储详细信息
      *
      * 获取后端存储详细信息
@@ -1034,6 +1181,35 @@ public class SFSTurboAsyncClient {
     public AsyncInvoker<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> showBackendTargetInfoAsyncInvoker(
         ShowBackendTargetInfoRequest request) {
         return new AsyncInvoker<>(request, SFSTurboMeta.showBackendTargetInfo, hcClient);
+    }
+
+    /**
+     * 获取已挂载的客户端ip信息
+     *
+     * 获取已挂载的客户端ip信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClientIpInfoRequest 请求对象
+     * @return CompletableFuture<ShowClientIpInfoResponse>
+     */
+    public CompletableFuture<ShowClientIpInfoResponse> showClientIpInfoAsync(ShowClientIpInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showClientIpInfo);
+    }
+
+    /**
+     * 获取已挂载的客户端ip信息
+     *
+     * 获取已挂载的客户端ip信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClientIpInfoRequest 请求对象
+     * @return AsyncInvoker<ShowClientIpInfoRequest, ShowClientIpInfoResponse>
+     */
+    public AsyncInvoker<ShowClientIpInfoRequest, ShowClientIpInfoResponse> showClientIpInfoAsyncInvoker(
+        ShowClientIpInfoRequest request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.showClientIpInfo, hcClient);
     }
 
     /**
@@ -1065,9 +1241,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询目标文件夹quota
+     * 查询目标文件夹配额
      *
-     * 查询目标文件夹quota。查询的used_capacity、used_inode数据可能有延迟。
+     * 查询目标文件夹配额。查询的used_capacity、used_inode数据可能有延迟。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1079,9 +1255,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询目标文件夹quota
+     * 查询目标文件夹配额
      *
-     * 查询目标文件夹quota。查询的used_capacity、used_inode数据可能有延迟。
+     * 查询目标文件夹配额。查询的used_capacity、used_inode数据可能有延迟。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1182,7 +1358,7 @@ public class SFSTurboAsyncClient {
     /**
      * 查询job的状态详情
      *
-     * 查询job的执行状态。 可用于查询SFS Turbo异步API的执行状态。例如：可使用调用创建并绑定ldap配置接口时返回的jobId，通过该接口查询job的执行状态。
+     * 用于查询SFS Turbo异步API的执行状态。例如：可使用调用创建并绑定LDAP配置接口时返回的jobId，通过该接口查询job的执行状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1196,7 +1372,7 @@ public class SFSTurboAsyncClient {
     /**
      * 查询job的状态详情
      *
-     * 查询job的执行状态。 可用于查询SFS Turbo异步API的执行状态。例如：可使用调用创建并绑定ldap配置接口时返回的jobId，通过该接口查询job的执行状态。
+     * 用于查询SFS Turbo异步API的执行状态。例如：可使用调用创建并绑定LDAP配置接口时返回的jobId，通过该接口查询job的执行状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1209,13 +1385,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询Ldap的配置
+     * 查询LDAP的配置
      *
-     * 查询Ldap的配置。LDAP（Lightweight Directory Access Protocol），中文名称轻量级目录访问协议，是对目录服务器（Directory Server）进行访问、控制的一种标准协议。LDAP服务器可以集中式地管理用户和群组的归属关系，通过绑定LDAP服务器，当一个用户访问您的文件系统的文件时，SFS Turbo将会访问您的LDAP服务器以进行用户身份验证，并且获取用户和群组的归属关系，从而进行Linux标准的文件UGO权限的检查。要使用此功能，首先您需要搭建好LDAP服务器（当前SFS Turbo仅支持LDAP v3协议），常见提供LDAP协议访问的目录服务器实现有OpenLdap(Linux)，Active Directory(Windows)等，不同目录服务器的实现细节有所差别，绑定时需要指定对应的Schema（Schema配置错误将会导致SFS Turbo无法正确获取用户以及群组信息，可能导致无权限访问文件系统内文件），当前SFS Turbo支持的Schema有：
-     * 1. RFC2307（Openldap通常选择此Schema）
-     * 2. MS-AD-BIS（Active Directory通常选择此Schema，支持RFC2307bis，支持嵌套的群组）
-     * 
-     * SFS Turbo还支持配置主备LDAP服务器，当您的一台LDAP服务器故障无法访问后，SFS Turbo将会自动切换到备LDAP服务器访问，以免影响您的业务。同时，若您还选择将allow_local_user配置为Yes（默认为No），那么当您的LDAP服务器全部故障无法访问时，SFS Turbo将会使用您的本地用户以及群组信息，而非LDAP服务器中配置的信息进行身份验证和UGO权限检查，以最大程度减少故障影响面。
+     * 查询LDAP的配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1227,13 +1399,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询Ldap的配置
+     * 查询LDAP的配置
      *
-     * 查询Ldap的配置。LDAP（Lightweight Directory Access Protocol），中文名称轻量级目录访问协议，是对目录服务器（Directory Server）进行访问、控制的一种标准协议。LDAP服务器可以集中式地管理用户和群组的归属关系，通过绑定LDAP服务器，当一个用户访问您的文件系统的文件时，SFS Turbo将会访问您的LDAP服务器以进行用户身份验证，并且获取用户和群组的归属关系，从而进行Linux标准的文件UGO权限的检查。要使用此功能，首先您需要搭建好LDAP服务器（当前SFS Turbo仅支持LDAP v3协议），常见提供LDAP协议访问的目录服务器实现有OpenLdap(Linux)，Active Directory(Windows)等，不同目录服务器的实现细节有所差别，绑定时需要指定对应的Schema（Schema配置错误将会导致SFS Turbo无法正确获取用户以及群组信息，可能导致无权限访问文件系统内文件），当前SFS Turbo支持的Schema有：
-     * 1. RFC2307（Openldap通常选择此Schema）
-     * 2. MS-AD-BIS（Active Directory通常选择此Schema，支持RFC2307bis，支持嵌套的群组）
-     * 
-     * SFS Turbo还支持配置主备LDAP服务器，当您的一台LDAP服务器故障无法访问后，SFS Turbo将会自动切换到备LDAP服务器访问，以免影响您的业务。同时，若您还选择将allow_local_user配置为Yes（默认为No），那么当您的LDAP服务器全部故障无法访问时，SFS Turbo将会使用您的本地用户以及群组信息，而非LDAP服务器中配置的信息进行身份验证和UGO权限检查，以最大程度减少故障影响面。
+     * 查询LDAP的配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1332,9 +1500,39 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 更新目标文件夹quota
+     * 修改AD域配置
      *
-     * 更新目标文件夹quota
+     * 修改AD域配置。Active Directory域（简称：AD域）提供统一的身份认证和授权管理。通过将SFS Turbo文件系统的挂载点接入AD域内，您可以在AD域中实现文件系统用户身份的认证管理和文件级别的访问权限控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateActiveDirectoryDomainRequest 请求对象
+     * @return CompletableFuture<UpdateActiveDirectoryDomainResponse>
+     */
+    public CompletableFuture<UpdateActiveDirectoryDomainResponse> updateActiveDirectoryDomainAsync(
+        UpdateActiveDirectoryDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.updateActiveDirectoryDomain);
+    }
+
+    /**
+     * 修改AD域配置
+     *
+     * 修改AD域配置。Active Directory域（简称：AD域）提供统一的身份认证和授权管理。通过将SFS Turbo文件系统的挂载点接入AD域内，您可以在AD域中实现文件系统用户身份的认证管理和文件级别的访问权限控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateActiveDirectoryDomainRequest 请求对象
+     * @return AsyncInvoker<UpdateActiveDirectoryDomainRequest, UpdateActiveDirectoryDomainResponse>
+     */
+    public AsyncInvoker<UpdateActiveDirectoryDomainRequest, UpdateActiveDirectoryDomainResponse> updateActiveDirectoryDomainAsyncInvoker(
+        UpdateActiveDirectoryDomainRequest request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.updateActiveDirectoryDomain, hcClient);
+    }
+
+    /**
+     * 更新目标文件夹配额
+     *
+     * 更新目标文件夹配额
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1346,9 +1544,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 更新目标文件夹quota
+     * 更新目标文件夹配额
      *
-     * 更新目标文件夹quota
+     * 更新目标文件夹配额
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1390,13 +1588,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 修改ldap配置
+     * 修改LDAP配置
      *
-     * 修改ldap配置。LDAP（Lightweight Directory Access Protocol），中文名称轻量级目录访问协议，是对目录服务器（Directory Server）进行访问、控制的一种标准协议。LDAP服务器可以集中式地管理用户和群组的归属关系，通过绑定LDAP服务器，当一个用户访问您的文件系统的文件时，SFS Turbo将会访问您的LDAP服务器以进行用户身份验证，并且获取用户和群组的归属关系，从而进行Linux标准的文件UGO权限的检查。要使用此功能，首先您需要搭建好LDAP服务器（当前SFS Turbo仅支持LDAP v3协议），常见提供LDAP协议访问的目录服务器实现有OpenLdap(Linux)，Active Directory(Windows)等，不同目录服务器的实现细节有所差别，绑定时需要指定对应的Schema（Schema配置错误将会导致SFS Turbo无法正确获取用户以及群组信息，可能导致无权限访问文件系统内文件），当前SFS Turbo支持的Schema有：
-     * 1. RFC2307（Openldap通常选择此Schema）
-     * 2. MS-AD-BIS（Active Directory通常选择此Schema，支持RFC2307bis，支持嵌套的群组）
-     * 
-     * SFS Turbo还支持配置主备LDAP服务器，当您的一台LDAP服务器故障无法访问后，SFS Turbo将会自动切换到备LDAP服务器访问，以免影响您的业务。同时，若您还选择将allow_local_user配置为Yes（默认为No），那么当您的LDAP服务器全部故障无法访问时，SFS Turbo将会使用您的本地用户以及群组信息，而非LDAP服务器中配置的信息进行身份验证和UGO权限检查，以最大程度减少故障影响面。
+     * 修改LDAP配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1408,13 +1602,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 修改ldap配置
+     * 修改LDAP配置
      *
-     * 修改ldap配置。LDAP（Lightweight Directory Access Protocol），中文名称轻量级目录访问协议，是对目录服务器（Directory Server）进行访问、控制的一种标准协议。LDAP服务器可以集中式地管理用户和群组的归属关系，通过绑定LDAP服务器，当一个用户访问您的文件系统的文件时，SFS Turbo将会访问您的LDAP服务器以进行用户身份验证，并且获取用户和群组的归属关系，从而进行Linux标准的文件UGO权限的检查。要使用此功能，首先您需要搭建好LDAP服务器（当前SFS Turbo仅支持LDAP v3协议），常见提供LDAP协议访问的目录服务器实现有OpenLdap(Linux)，Active Directory(Windows)等，不同目录服务器的实现细节有所差别，绑定时需要指定对应的Schema（Schema配置错误将会导致SFS Turbo无法正确获取用户以及群组信息，可能导致无权限访问文件系统内文件），当前SFS Turbo支持的Schema有：
-     * 1. RFC2307（Openldap通常选择此Schema）
-     * 2. MS-AD-BIS（Active Directory通常选择此Schema，支持RFC2307bis，支持嵌套的群组）
-     * 
-     * SFS Turbo还支持配置主备LDAP服务器，当您的一台LDAP服务器故障无法访问后，SFS Turbo将会自动切换到备LDAP服务器访问，以免影响您的业务。同时，若您还选择将allow_local_user配置为Yes（默认为No），那么当您的LDAP服务器全部故障无法访问时，SFS Turbo将会使用您的本地用户以及群组信息，而非LDAP服务器中配置的信息进行身份验证和UGO权限检查，以最大程度减少故障影响面。
+     * 修改LDAP配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

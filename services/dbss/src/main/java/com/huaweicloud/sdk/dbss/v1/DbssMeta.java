@@ -22,6 +22,7 @@ import com.huaweicloud.sdk.dbss.v1.model.BatchAddResourceTagResponse;
 import com.huaweicloud.sdk.dbss.v1.model.BatchDeleteResourceTagRequest;
 import com.huaweicloud.sdk.dbss.v1.model.BatchDeleteResourceTagResponse;
 import com.huaweicloud.sdk.dbss.v1.model.BatchSwitchesRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ConfigAlarmTopicRequest;
 import com.huaweicloud.sdk.dbss.v1.model.CountResourceInstanceByTagRequest;
 import com.huaweicloud.sdk.dbss.v1.model.CountResourceInstanceByTagResponse;
 import com.huaweicloud.sdk.dbss.v1.model.CreateDatabaseRequest;
@@ -37,6 +38,8 @@ import com.huaweicloud.sdk.dbss.v1.model.DeleteInstancesRequest;
 import com.huaweicloud.sdk.dbss.v1.model.DeleteInstancesResponse;
 import com.huaweicloud.sdk.dbss.v1.model.DownloadAuditAgentRequest;
 import com.huaweicloud.sdk.dbss.v1.model.DownloadAuditAgentResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAlarmTopicConfigInfoRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAlarmTopicConfigInfoResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditAgentRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditAgentResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditAlarmLogRequest;
@@ -81,6 +84,8 @@ import com.huaweicloud.sdk.dbss.v1.model.ResourceTagDeleteRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ResourceTagRequest;
 import com.huaweicloud.sdk.dbss.v1.model.SecurityGroupRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ServerIdBean;
+import com.huaweicloud.sdk.dbss.v1.model.SetAlarmTopicConfigInfoRequest;
+import com.huaweicloud.sdk.dbss.v1.model.SetAlarmTopicConfigInfoResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditQuotaRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditQuotaResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditRuleRiskRequest;
@@ -264,6 +269,31 @@ public class DbssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteInstanceDemandRequest.class),
             f -> f.withMarshaller(DeleteInstancesRequest::getBody, DeleteInstancesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmTopicConfigInfoRequest, ListAlarmTopicConfigInfoResponse> listAlarmTopicConfigInfo =
+        genForListAlarmTopicConfigInfo();
+
+    private static HttpRequestDef<ListAlarmTopicConfigInfoRequest, ListAlarmTopicConfigInfoResponse> genForListAlarmTopicConfigInfo() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmTopicConfigInfoRequest, ListAlarmTopicConfigInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListAlarmTopicConfigInfoRequest.class, ListAlarmTopicConfigInfoResponse.class)
+                .withName("ListAlarmTopicConfigInfo")
+                .withUri("/v1/{project_id}/{instance_id}/audit/alarm/topic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmTopicConfigInfoRequest::getInstanceId,
+                ListAlarmTopicConfigInfoRequest::setInstanceId));
 
         // response
 
@@ -693,6 +723,35 @@ public class DbssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ServerIdBean.class),
             f -> f.withMarshaller(RebootAuditInstanceRequest::getBody, RebootAuditInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetAlarmTopicConfigInfoRequest, SetAlarmTopicConfigInfoResponse> setAlarmTopicConfigInfo =
+        genForSetAlarmTopicConfigInfo();
+
+    private static HttpRequestDef<SetAlarmTopicConfigInfoRequest, SetAlarmTopicConfigInfoResponse> genForSetAlarmTopicConfigInfo() {
+        // basic
+        HttpRequestDef.Builder<SetAlarmTopicConfigInfoRequest, SetAlarmTopicConfigInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetAlarmTopicConfigInfoRequest.class, SetAlarmTopicConfigInfoResponse.class)
+            .withName("SetAlarmTopicConfigInfo")
+            .withUri("/v1/{project_id}/{instance_id}/audit/alarm/topic")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAlarmTopicConfigInfoRequest::getInstanceId,
+                SetAlarmTopicConfigInfoRequest::setInstanceId));
+        builder.<ConfigAlarmTopicRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfigAlarmTopicRequest.class),
+            f -> f.withMarshaller(SetAlarmTopicConfigInfoRequest::getBody, SetAlarmTopicConfigInfoRequest::setBody));
 
         // response
 
