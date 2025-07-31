@@ -86,7 +86,7 @@ public class HostVulInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cve_list")
 
-    private List<GeneralImageVulsResponseInfoCveList> cveList = null;
+    private List<HostVulInfoCveList> cveList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_affect_business")
@@ -139,7 +139,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 漏洞名称
+     * **参数解释**: 漏洞名称 **取值范围**: 字符范围0-256位 
      * @return vulName
      */
     public String getVulName() {
@@ -156,7 +156,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 漏洞ID
+     * **参数解释**: 漏洞ID **取值范围**: 字符范围0-64位 
      * @return vulId
      */
     public String getVulId() {
@@ -189,7 +189,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 漏洞标签列表
+     * **参数解释**: 漏洞标签列表 **取值范围**: 最小值0，最大值2147483647 
      * @return labelList
      */
     public List<String> getLabelList() {
@@ -206,7 +206,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 修复紧急度，包括如下：   - immediate_repair : 尽快修复   - delay_repair : 延后修复   - not_needed_repair : 暂可不修复
+     * **参数解释**: 修复紧急度 **取值范围**: - immediate_repair  : 尽快修复 - delay_repair      : 延后修复 - not_needed_repair : 暂可不修复 
      * @return repairNecessity
      */
     public String getRepairNecessity() {
@@ -223,7 +223,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 最近扫描时间
+     * **参数解释**: 最近扫描时间 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return scanTime
@@ -242,7 +242,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 漏洞类型，包含如下：   -linux_vul : linux漏洞   -windows_vul : windows漏洞   -web_cms : Web-CMS漏洞   -app_vul : 应用漏洞
+     * **参数解释**: 漏洞类型 **取值范围**: - linux_vul   : linux漏洞 - windows_vul : windows漏洞 - web_cms     : Web-CMS漏洞 - app_vul     : 应用漏洞 - urgent_vul  : 应急漏洞 
      * @return type
      */
     public String getType() {
@@ -275,7 +275,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 服务器上受该漏洞影响的软件列表
+     * **参数解释**: 服务器上受该漏洞影响的软件列表 **取值范围**: 最小值0，最大值2147483647 
      * @return appList
      */
     public List<HostVulInfoAppList> getAppList() {
@@ -292,7 +292,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 危险程度   - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危   - High : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危   - Medium : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危   - Low : 漏洞cvss评分小于4；对应控制台页面的低危
+     * **参数解释**: 危险程度 **取值范围**: - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危 - High     : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium   : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low      : 漏洞cvss评分小于4；对应控制台页面的低危 
      * @return severityLevel
      */
     public String getSeverityLevel() {
@@ -309,7 +309,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 解决方案
+     * **参数解释**: 解决方案 **取值范围**: 字符范围0-65534位 
      * @return solutionDetail
      */
     public String getSolutionDetail() {
@@ -326,7 +326,7 @@ public class HostVulInfo {
     }
 
     /**
-     * URL链接
+     * **参数解释**: URL链接 **取值范围**: 字符范围0-2083位 
      * @return url
      */
     public String getUrl() {
@@ -343,7 +343,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 漏洞描述
+     * **参数解释**: 漏洞描述 **取值范围**: 字符范围0-65534位 
      * @return description
      */
     public String getDescription() {
@@ -360,7 +360,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 修复命令行
+     * **参数解释**: 修复命令行 **取值范围**: 字符范围1-256位 
      * @return repairCmd
      */
     public String getRepairCmd() {
@@ -377,7 +377,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 漏洞状态   - vul_status_unfix : 未处理   - vul_status_ignored : 已忽略   - vul_status_verified : 验证中   - vul_status_fixing : 修复中   - vul_status_fixed : 修复成功   - vul_status_reboot : 修复成功待重启   - vul_status_failed : 修复失败   - vul_status_fix_after_reboot : 请重启主机再次修复
+     * **参数解释**: 漏洞状态 **取值范围**: - vul_status_unfix            : 未处理 - vul_status_ignored          : 已忽略 - vul_status_verified         : 验证中 - vul_status_fixing           : 修复中 - vul_status_fixed            : 修复成功 - vul_status_reboot           : 修复成功待重启 - vul_status_failed           : 修复失败 - vul_status_fix_after_reboot : 请重启主机再次修复 
      * @return status
      */
     public String getStatus() {
@@ -394,7 +394,7 @@ public class HostVulInfo {
     }
 
     /**
-     * HSS全网修复该漏洞的次数
+     * **参数解释**: HSS全网修复该漏洞的次数 **取值范围**: 最小值0，最大值1000000 
      * minimum: 0
      * maximum: 1000000
      * @return repairSuccessNum
@@ -407,12 +407,12 @@ public class HostVulInfo {
         this.repairSuccessNum = repairSuccessNum;
     }
 
-    public HostVulInfo withCveList(List<GeneralImageVulsResponseInfoCveList> cveList) {
+    public HostVulInfo withCveList(List<HostVulInfoCveList> cveList) {
         this.cveList = cveList;
         return this;
     }
 
-    public HostVulInfo addCveListItem(GeneralImageVulsResponseInfoCveList cveListItem) {
+    public HostVulInfo addCveListItem(HostVulInfoCveList cveListItem) {
         if (this.cveList == null) {
             this.cveList = new ArrayList<>();
         }
@@ -420,7 +420,7 @@ public class HostVulInfo {
         return this;
     }
 
-    public HostVulInfo withCveList(Consumer<List<GeneralImageVulsResponseInfoCveList>> cveListSetter) {
+    public HostVulInfo withCveList(Consumer<List<HostVulInfoCveList>> cveListSetter) {
         if (this.cveList == null) {
             this.cveList = new ArrayList<>();
         }
@@ -429,14 +429,14 @@ public class HostVulInfo {
     }
 
     /**
-     * CVE列表
+     * **参数解释**: CVE列表 **取值范围**: 最小值1，最大值10000 
      * @return cveList
      */
-    public List<GeneralImageVulsResponseInfoCveList> getCveList() {
+    public List<HostVulInfoCveList> getCveList() {
         return cveList;
     }
 
-    public void setCveList(List<GeneralImageVulsResponseInfoCveList> cveList) {
+    public void setCveList(List<HostVulInfoCveList> cveList) {
         this.cveList = cveList;
     }
 
@@ -446,7 +446,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 是否影响业务
+     * **参数解释**: 是否影响业务 **取值范围**: - true  : 影响业务 - false : 不影响业务 
      * @return isAffectBusiness
      */
     public Boolean getIsAffectBusiness() {
@@ -463,7 +463,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 首次扫描时间
+     * **参数解释**: 首次扫描时间 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return firstScanTime
@@ -482,7 +482,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 软件名称
+     * **参数解释**: 软件名称 **取值范围**: 字符长度0-256位 
      * @return appName
      */
     public String getAppName() {
@@ -499,7 +499,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 软件版本
+     * **参数解释**: 软件版本 **取值范围**: 字符长度0-256位 
      * @return appVersion
      */
     public String getAppVersion() {
@@ -516,7 +516,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 软件路径
+     * **参数解释**: 软件路径 **取值范围**: 字符长度0-512位 
      * @return appPath
      */
     public String getAppPath() {
@@ -533,7 +533,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 主机配额
+     * **参数解释**: 主机配额 **取值范围**: 字符长度0-128位 
      * @return version
      */
     public String getVersion() {
@@ -550,7 +550,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 是否可以回滚到修复漏洞时创建的备份
+     * **参数解释**: 是否可以回滚到修复漏洞时创建的备份 **取值范围**: - true  : 可以回滚 - false : 不可以回滚 
      * @return supportRestore
      */
     public Boolean getSupportRestore() {
@@ -584,7 +584,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 该漏洞不可进行的操作类型列表
+     * **参数解释**: 该漏洞不可进行的操作类型列表 **取值范围**: 最小值1，最大值10000 
      * @return disabledOperateTypes
      */
     public List<HostVulInfoDisabledOperateTypes> getDisabledOperateTypes() {
@@ -601,7 +601,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 修复优先级,包含如下 - Critical 紧急  - High 高  - Medium 中  - Low 低
+     * **参数解释**: 修复优先级 **取值范围**: - Critical : 紧急  - High     : 高  - Medium   : 中  - Low      : 低 
      * @return repairPriority
      */
     public String getRepairPriority() {

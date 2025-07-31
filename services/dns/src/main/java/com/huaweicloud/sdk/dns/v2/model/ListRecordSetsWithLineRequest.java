@@ -96,7 +96,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 待查询的记录集的域名类型。  取值范围： public: 公网域名 private: 内网域名  默认值为public。
+     * **参数解释：** 记录集所属域名的类型。 **约束限制：** 不涉及。 **取值范围：** - public：表示查询公网域名的记录集。 - private：表示查询内网域名的记录集。  **默认取值：** public。
      * @return zoneType
      */
     public String getZoneType() {
@@ -113,7 +113,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 分页查询起始的资源ID，为空时为查询第一页。  默认值为空。
+     * **参数解释：** 分页查询的起始资源ID。 - 查询第一页时，设置为空。 - 查询下一页时，设置为上一页最后一条资源的ID。  **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return marker
      */
     public String getMarker() {
@@ -130,7 +130,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 每页返回的资源个数。  取值范围：0~500  取值一般为10，20，50。默认值为500。
+     * **参数解释：** 分页查询时配置每页返回的资源个数。 **约束限制：** 不涉及。 **取值范围：** 0~500。 **默认取值：** 500
      * minimum: 0
      * maximum: 500
      * @return limit
@@ -149,7 +149,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当前设置marker不为空时，以marker为分页起始标识。
+     * **参数解释：** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 **约束限制：** 当设置marker不为空时，以marker为分页起始标识，offset不生效。。 **取值范围：** 0~2147483647。 **默认取值：** 0
      * minimum: 0
      * @return offset
      */
@@ -167,7 +167,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 域名的ID。
+     * **参数解释：** 域名的ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return zoneId
      */
     public String getZoneId() {
@@ -184,7 +184,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 解析线路ID。
+     * **参数解释：** 解析线路ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return lineId
      */
     public String getLineId() {
@@ -201,7 +201,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。
+     * **参数解释：** 记录集的标签，包括标签键和标签值。 取值格式：key1,value1|key2,value2。 **约束限制：** - 多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。 - 多个标签之间为“与”的关系。 - 搜索模式为精确搜索。如果资源标签值value是以&ast;开头时，则按照&ast;后面的值全模糊匹配。  **取值范围：** 最多可以查询20个标签。 **默认取值：** 不涉及。
      * @return tags
      */
     public String getTags() {
@@ -218,7 +218,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 待查询的记录集的状态。 取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
+     * **参数解释：** 记录集状态。 **约束限制：** 不涉及。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - PENDING_DISABLE：暂停中 - DISABLE：暂停 - ERROR：失败  **默认取值：** 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -235,7 +235,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 待查询的记录集的类型。  取值范围：A、CNAME、MX、AAAA、TXT、SRV、NS、CAA
+     * **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** - 公网域名的记录类型: A、AAAA、MX、CNAME、TXT、SRV、NS、SOA、CAA。 - 内网域名的记录类型: A、AAAA、MX、CNAME、TXT、PTR、SRV、NS、SOA。  **默认取值：** 不涉及。
      * @return type
      */
     public String getType() {
@@ -252,7 +252,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 待查询的记录集的域名中包含此name。  搜索模式默认为模糊搜索。  默认值为空。
+     * **参数解释：** 待查询的记录集的域名中包含此name。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -269,7 +269,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 待查询的记录集ID。
+     * **参数解释：** 待查询的记录集ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -286,7 +286,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 待查询的记录集的值中包含此records。  搜索模式默认为模糊搜索。  默认值为空。
+     * **参数解释：** 待查询的记录集的值。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return records
      */
     public String getRecords() {
@@ -303,7 +303,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 查询结果中记录集列表的排序字段。  取值范围： name：记录集名称 type：记录集类型  默认值为空，表示不排序。
+     * **参数解释：** 查询结果中记录集列表的排序字段。 **约束限制：** 不涉及。 **取值范围：** - name：记录集名称 - type：记录集类型 - created_at：创建时间 - updated_at：更新时间  **默认取值：** created_at
      * @return sortKey
      */
     public String getSortKey() {
@@ -320,7 +320,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 查询结果中记录集列表的排序方式。  取值范围： desc：降序排序 asc：升序排序  默认值为空，表示不排序。
+     * **参数解释：** 查询结果中记录集列表的排序方式。 **约束限制：** 不涉及。 **取值范围：** - desc：降序排序 - asc：升序排序  **默认取值：** desc
      * @return sortDir
      */
     public String getSortDir() {
@@ -337,7 +337,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 健康检查ID。  搜索模式默认为模糊搜索。  默认值为空。
+     * **参数解释：** 健康检查ID。 搜索模式默认为模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return healthCheckId
      */
     public String getHealthCheckId() {
@@ -354,7 +354,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 查询条件搜索模式。  取值范围： like：模糊搜索 equal：精确搜索
+     * **参数解释：** 查询条件搜索模式。 **约束限制：** 不涉及。 **取值范围：** - like：模糊搜索 - equal：精确搜索  **默认取值：** name默认模糊搜索，其他默认精确搜索。
      * @return searchMode
      */
     public String getSearchMode() {

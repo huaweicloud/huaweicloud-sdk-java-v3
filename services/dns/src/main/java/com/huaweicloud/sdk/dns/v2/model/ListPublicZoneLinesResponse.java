@@ -77,7 +77,7 @@ public class ListPublicZoneLinesResponse extends SdkResponse {
     }
 
     /**
-     * 查询公网域名的线路列表响应。
+     * **参数解释：** 查询公网域名的线路列表响应。 **取值范围：** 不涉及。
      * @return lines
      */
     public List<PublicZoneLines> getLines() {

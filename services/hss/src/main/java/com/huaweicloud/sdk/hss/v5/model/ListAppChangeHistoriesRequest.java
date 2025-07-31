@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListAppChangeHistoriesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
@@ -34,11 +39,6 @@ public class ListAppChangeHistoriesRequest {
     @JsonProperty(value = "variation_type")
 
     private String variationType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
@@ -70,13 +70,30 @@ public class ListAppChangeHistoriesRequest {
 
     private Long endTime;
 
+    public ListAppChangeHistoriesRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ListAppChangeHistoriesRequest withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
 
     /**
-     * 主机id
+     * **参数解释**: 主机id **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -93,7 +110,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 主机ip
+     * **参数解释**: 主机ip **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -110,7 +127,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 主机名称
+     * **参数解释**: 主机名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -127,7 +144,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 软件名称
+     * **参数解释**: 软件名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return appName
      */
     public String getAppName() {
@@ -144,7 +161,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 变更类型:   - add ：新建   - delete ：删除   - modify ：修改
+     * **参数解释**: 变更类型 **约束限制**: 不涉及 **取值范围**: - add：新建 - delete：删除 - modify：修改  **默认取值**: 不涉及 
      * @return variationType
      */
     public String getVariationType() {
@@ -155,30 +172,13 @@ public class ListAppChangeHistoriesRequest {
         this.variationType = variationType;
     }
 
-    public ListAppChangeHistoriesRequest withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
     public ListAppChangeHistoriesRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
         return this;
     }
 
     /**
-     * 排序的key值，目前只支持按照recent_scan_time排序，按照recent_scan_time排序时，根据sort_dir的值决定升序还是降序
+     * **参数解释**: 排序的key值，目前只支持按照recent_scan_time排序，按照recent_scan_time排序时，根据sort_dir的值决定升序还是降序 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return sortKey
      */
     public String getSortKey() {
@@ -195,7 +195,7 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 排序方式，默认为降序，当sort_key为按照recent_scan_time排序时，根据当前值决定升序还是降序，当sort_key为其他值时均为降序   - asc ：升序   - desc ：降序
+     * **参数解释**: 排序方式，默认为降序，当sort_key为按照recent_scan_time排序时，根据当前值决定升序还是降序，当sort_key为其他值时均为降序 **约束限制**: 不涉及 **取值范围**: - asc：升序 - desc：降序  **默认取值**: 不涉及 
      * @return sortDir
      */
     public String getSortDir() {
@@ -212,9 +212,9 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 每页显示数量
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
-     * maximum: 100
+     * maximum: 200
      * @return limit
      */
     public Integer getLimit() {
@@ -231,9 +231,9 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
-     * maximum: 10000
+     * maximum: 2000000
      * @return offset
      */
     public Integer getOffset() {
@@ -250,9 +250,9 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 变更开始时间，13位时间戳
+     * **参数解释**: 开始时间，13位时间戳 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值9223372036854775807 **默认取值**: 
      * minimum: 0
-     * maximum: 9007199254740992
+     * maximum: 9223372036854775807
      * @return startTime
      */
     public Long getStartTime() {
@@ -269,9 +269,9 @@ public class ListAppChangeHistoriesRequest {
     }
 
     /**
-     * 变更结束时间，13位时间戳
+     * **参数解释**: 结束时间，13位时间戳 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值9223372036854775807 **默认取值**: 
      * minimum: 0
-     * maximum: 9007199254740992
+     * maximum: 9223372036854775807
      * @return endTime
      */
     public Long getEndTime() {
@@ -291,23 +291,23 @@ public class ListAppChangeHistoriesRequest {
             return false;
         }
         ListAppChangeHistoriesRequest that = (ListAppChangeHistoriesRequest) obj;
-        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostIp, that.hostIp)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.variationType, that.variationType)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.variationType, that.variationType) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId,
+        return Objects.hash(enterpriseProjectId,
+            hostId,
             hostIp,
             hostName,
             appName,
             variationType,
-            enterpriseProjectId,
             sortKey,
             sortDir,
             limit,
@@ -320,12 +320,12 @@ public class ListAppChangeHistoriesRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAppChangeHistoriesRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    variationType: ").append(toIndentedString(variationType)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

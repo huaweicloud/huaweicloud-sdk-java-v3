@@ -61,7 +61,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * 主机id
+     * **参数解释**: 主机ID **取值范围**: 字符长度1-128位 
      * @return hostId
      */
     public String getHostId() {
@@ -78,7 +78,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * 监听ip
+     * **参数解释**: 监听ip **取值范围**: 字符长度1-128位 
      * @return laddr
      */
     public String getLaddr() {
@@ -95,7 +95,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * port status, normal, danger or unknow   - \"normal\" : 正常   - \"danger\" : 危险   - \"unknown\" : 未知
+     * **参数解释**: 端口状态 **取值范围**: normal: 正常 danger: 危险 unknown: 未知 
      * @return status
      */
     public String getStatus() {
@@ -112,7 +112,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * 端口号
+     * **参数解释**: 端口号 **取值范围**: 最小值0，最大值65535 
      * minimum: 0
      * maximum: 65535
      * @return port
@@ -131,7 +131,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * 端口类型：目前包括TCP，UDP两种
+     * **参数解释**: 端口类型：目前包括TCP，UDP两种 **取值范围**: TCP: TCP类型的端口 UDP: UDP类型的端口 
      * @return type
      */
     public String getType() {
@@ -148,7 +148,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * 进程ID
+     * **参数解释**: 进程ID **取值范围**: 最小值1，最大值65535 
      * minimum: 1
      * maximum: 65535
      * @return pid
@@ -167,7 +167,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * 进程可执行文件路径
+     * **参数解释**: 进程可执行文件路径 **取值范围**: 字符长度1-256位 
      * @return path
      */
     public String getPath() {
@@ -184,7 +184,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * agent id
+     * **参数解释**: Agent ID **取值范围**: 字符长度1-64位 
      * @return agentId
      */
     public String getAgentId() {
@@ -201,7 +201,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * 容器id
+     * **参数解释**: 容器 ID **取值范围**: 字符长度0-128位 
      * @return containerId
      */
     public String getContainerId() {

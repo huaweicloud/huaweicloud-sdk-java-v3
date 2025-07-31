@@ -215,6 +215,11 @@ public class CreateDigitalAssetRequestBody {
 
     private List<SupportedServiceEnum> supportedService = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_operation_config")
+
+    private List<AutoOperationConfig> autoOperationConfig = null;
+
     public CreateDigitalAssetRequestBody withAssetName(String assetName) {
         this.assetName = assetName;
         return this;
@@ -480,6 +485,40 @@ public class CreateDigitalAssetRequestBody {
         this.supportedService = supportedService;
     }
 
+    public CreateDigitalAssetRequestBody withAutoOperationConfig(List<AutoOperationConfig> autoOperationConfig) {
+        this.autoOperationConfig = autoOperationConfig;
+        return this;
+    }
+
+    public CreateDigitalAssetRequestBody addAutoOperationConfigItem(AutoOperationConfig autoOperationConfigItem) {
+        if (this.autoOperationConfig == null) {
+            this.autoOperationConfig = new ArrayList<>();
+        }
+        this.autoOperationConfig.add(autoOperationConfigItem);
+        return this;
+    }
+
+    public CreateDigitalAssetRequestBody withAutoOperationConfig(
+        Consumer<List<AutoOperationConfig>> autoOperationConfigSetter) {
+        if (this.autoOperationConfig == null) {
+            this.autoOperationConfig = new ArrayList<>();
+        }
+        autoOperationConfigSetter.accept(this.autoOperationConfig);
+        return this;
+    }
+
+    /**
+     * 资产自动处理任务。
+     * @return autoOperationConfig
+     */
+    public List<AutoOperationConfig> getAutoOperationConfig() {
+        return autoOperationConfig;
+    }
+
+    public void setAutoOperationConfig(List<AutoOperationConfig> autoOperationConfig) {
+        this.autoOperationConfig = autoOperationConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -497,7 +536,8 @@ public class CreateDigitalAssetRequestBody {
             && Objects.equals(this.sharedConfig, that.sharedConfig)
             && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover)
             && Objects.equals(this.assetOrder, that.assetOrder)
-            && Objects.equals(this.supportedService, that.supportedService);
+            && Objects.equals(this.supportedService, that.supportedService)
+            && Objects.equals(this.autoOperationConfig, that.autoOperationConfig);
     }
 
     @Override
@@ -512,7 +552,8 @@ public class CreateDigitalAssetRequestBody {
             sharedConfig,
             isNeedGenerateCover,
             assetOrder,
-            supportedService);
+            supportedService,
+            autoOperationConfig);
     }
 
     @Override
@@ -530,6 +571,7 @@ public class CreateDigitalAssetRequestBody {
         sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
         sb.append("    assetOrder: ").append(toIndentedString(assetOrder)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
+        sb.append("    autoOperationConfig: ").append(toIndentedString(autoOperationConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

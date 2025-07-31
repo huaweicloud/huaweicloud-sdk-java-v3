@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 服务器组ID
+ * **参数解释**: 服务器组ID **取值范围**: 字符长度0-64位 
  */
 public class GroupId {
 

@@ -230,7 +230,7 @@ public class ListPtrRecordsFloatingResp {
     }
 
     /**
-     * 资源标签。
+     * **参数解释：** 资源标签。 **取值范围：** 不涉及。
      * @return tags
      */
     public List<Tag> getTags() {

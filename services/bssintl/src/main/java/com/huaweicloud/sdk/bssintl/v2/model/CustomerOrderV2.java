@@ -172,7 +172,7 @@ public class CustomerOrderV2 {
     }
 
     /**
-     * 客户订单订单来源类型： 1：客户2：代理3：合同4：分销商
+     * 客户订单来源类型。1：客户 2：代理 3：合同 4：分销商 5：页面删除资源 6：补录订单 7：补偿订单 8：系统自动创建
      * @return sourceType
      */
     public Integer getSourceType() {

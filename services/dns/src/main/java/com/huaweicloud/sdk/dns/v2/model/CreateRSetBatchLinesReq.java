@@ -39,7 +39,7 @@ public class CreateRSetBatchLinesReq {
     }
 
     /**
-     * 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
+     * **参数解释：** 域名，后缀需以zone name结束且为FQDN（Fully Qualified Domain Name，全称域名），即以“.”结束的完整主机名。 如“www.example.com.”。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -56,7 +56,7 @@ public class CreateRSetBatchLinesReq {
     }
 
     /**
-     * 可选配置，对域名的描述。 长度不超过255个字符。
+     * **参数解释：** 记录集的描述信息。 **约束限制：** 不涉及。 **取值范围：** 长度不超过255个字符。 **默认取值：** 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -73,7 +73,7 @@ public class CreateRSetBatchLinesReq {
     }
 
     /**
-     * 记录集的类型。 取值范围：A,AAAA,MX,CNAME,TXT,NS,SRV,CAA。
+     * **参数解释：** 记录集的类型。 **约束限制：** 不涉及。 **取值范围：** A、AAAA、MX、CNAME、TXT、SRV、NS、SOA、CAA。 **默认取值：** 不涉及。
      * @return type
      */
     public String getType() {
@@ -106,7 +106,7 @@ public class CreateRSetBatchLinesReq {
     }
 
     /**
-     * 解析线路域名参数。最多支持50个。
+     * **参数解释：** 解析线路域名参数。 **约束限制：** 最多支持50个。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return lines
      */
     public List<BatchCreateRecordSetWithLine> getLines() {

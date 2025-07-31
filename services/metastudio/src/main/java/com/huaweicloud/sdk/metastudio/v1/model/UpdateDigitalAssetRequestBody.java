@@ -291,6 +291,11 @@ public class UpdateDigitalAssetRequestBody {
 
     private List<SupportedServiceEnum> supportedService = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_operation_config")
+
+    private List<AutoOperationConfig> autoOperationConfig = null;
+
     public UpdateDigitalAssetRequestBody withAssetName(String assetName) {
         this.assetName = assetName;
         return this;
@@ -556,6 +561,40 @@ public class UpdateDigitalAssetRequestBody {
         this.supportedService = supportedService;
     }
 
+    public UpdateDigitalAssetRequestBody withAutoOperationConfig(List<AutoOperationConfig> autoOperationConfig) {
+        this.autoOperationConfig = autoOperationConfig;
+        return this;
+    }
+
+    public UpdateDigitalAssetRequestBody addAutoOperationConfigItem(AutoOperationConfig autoOperationConfigItem) {
+        if (this.autoOperationConfig == null) {
+            this.autoOperationConfig = new ArrayList<>();
+        }
+        this.autoOperationConfig.add(autoOperationConfigItem);
+        return this;
+    }
+
+    public UpdateDigitalAssetRequestBody withAutoOperationConfig(
+        Consumer<List<AutoOperationConfig>> autoOperationConfigSetter) {
+        if (this.autoOperationConfig == null) {
+            this.autoOperationConfig = new ArrayList<>();
+        }
+        autoOperationConfigSetter.accept(this.autoOperationConfig);
+        return this;
+    }
+
+    /**
+     * 资产自动处理任务。
+     * @return autoOperationConfig
+     */
+    public List<AutoOperationConfig> getAutoOperationConfig() {
+        return autoOperationConfig;
+    }
+
+    public void setAutoOperationConfig(List<AutoOperationConfig> autoOperationConfig) {
+        this.autoOperationConfig = autoOperationConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -572,7 +611,8 @@ public class UpdateDigitalAssetRequestBody {
             && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties)
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.assetOrder, that.assetOrder)
-            && Objects.equals(this.supportedService, that.supportedService);
+            && Objects.equals(this.supportedService, that.supportedService)
+            && Objects.equals(this.autoOperationConfig, that.autoOperationConfig);
     }
 
     @Override
@@ -587,7 +627,8 @@ public class UpdateDigitalAssetRequestBody {
             systemProperties,
             sharedConfig,
             assetOrder,
-            supportedService);
+            supportedService,
+            autoOperationConfig);
     }
 
     @Override
@@ -605,6 +646,7 @@ public class UpdateDigitalAssetRequestBody {
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    assetOrder: ").append(toIndentedString(assetOrder)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
+        sb.append("    autoOperationConfig: ").append(toIndentedString(autoOperationConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

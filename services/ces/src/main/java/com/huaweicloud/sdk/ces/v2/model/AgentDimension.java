@@ -16,7 +16,7 @@ import java.util.Objects;
 public class AgentDimension {
 
     /**
-     * 维度名称，枚举类型，类型有：   mount_point：挂载点，   disk：磁盘，   proc：进程，   gpu：显卡，   raid: RAID控制器
+     * **参数解释**： 维度名称。 **取值范围**： 枚举类型，mount_point:挂载点，disk:磁盘，proc:进程，gpu:显卡，raid:RAID控制器。 
      */
     public static final class NameEnum {
 
@@ -124,7 +124,7 @@ public class AgentDimension {
     }
 
     /**
-     * 维度名称，枚举类型，类型有：   mount_point：挂载点，   disk：磁盘，   proc：进程，   gpu：显卡，   raid: RAID控制器
+     * **参数解释**： 维度名称。 **取值范围**： 枚举类型，mount_point:挂载点，disk:磁盘，proc:进程，gpu:显卡，raid:RAID控制器。 
      * @return name
      */
     public NameEnum getName() {
@@ -141,7 +141,7 @@ public class AgentDimension {
     }
 
     /**
-     * 维度值，32位字符串，如：2e84018fc8b4484b94e89aae212fe615
+     * **参数解释**： 维度值。 **取值范围**： 字符串长度为32。 
      * @return value
      */
     public String getValue() {
@@ -158,7 +158,7 @@ public class AgentDimension {
     }
 
     /**
-     * 实际维度信息，字符串，如：vda。
+     * **参数解释**： 实际维度信息。 **取值范围** 字符串长度在 1 到 1024 之间。 
      * @return originValue
      */
     public String getOriginValue() {

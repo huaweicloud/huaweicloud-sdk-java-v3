@@ -154,7 +154,7 @@ public class ListAssetsRequest {
     private String sortDir;
 
     /**
-     * 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * GROUP_CUSTOMIZATION：租户组资产 * ALL：所有资产  默认查询租户资产。
+     * 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * ALL：所有资产  默认查询租户资产。
      */
     public static final class AssetSourceEnum {
 
@@ -169,11 +169,6 @@ public class ListAssetsRequest {
         public static final AssetSourceEnum CUSTOMIZATION = new AssetSourceEnum("CUSTOMIZATION");
 
         /**
-         * Enum GROUP_CUSTOMIZATION for value: "GROUP_CUSTOMIZATION"
-         */
-        public static final AssetSourceEnum GROUP_CUSTOMIZATION = new AssetSourceEnum("GROUP_CUSTOMIZATION");
-
-        /**
          * Enum ALL for value: "ALL"
          */
         public static final AssetSourceEnum ALL = new AssetSourceEnum("ALL");
@@ -184,7 +179,6 @@ public class ListAssetsRequest {
             Map<String, AssetSourceEnum> map = new HashMap<>();
             map.put("SYSTEM", SYSTEM);
             map.put("CUSTOMIZATION", CUSTOMIZATION);
-            map.put("GROUP_CUSTOMIZATION", GROUP_CUSTOMIZATION);
             map.put("ALL", ALL);
             return Collections.unmodifiableMap(map);
         }
@@ -476,11 +470,6 @@ public class ListAssetsRequest {
 
     private String appUserId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_group_id")
-
-    private String projectGroupId;
-
     public ListAssetsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -716,7 +705,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * GROUP_CUSTOMIZATION：租户组资产 * ALL：所有资产  默认查询租户资产。
+     * 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * ALL：所有资产  默认查询租户资产。
      * @return assetSource
      */
     public AssetSourceEnum getAssetSource() {
@@ -867,7 +856,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 系统属性。  key和value间用\":\"分隔，多个key之间用\",\"分隔。  如system_property=BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes  数字人资产属性： * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）  租户组资产验签属性： * SIG：加签秘钥。取值方式SIG=HexEncode(HMAC-SHA256(group_id:EXP_TIME:NONCE,key)) * EXP_TIME：过期时间，当前时间增加增加10分钟。取值示例1627768613 * NONCE：随机字符串。取值示例：EycLQsHwxhzK9OW8UEKWNfH2I3CGR2nINuU1EBpv162d42d92s
+     * 系统属性。  key和value间用\":\"分隔，多个key之间用\",\"分隔。  如system_property=BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes  数字人资产属性： * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）
      * @return systemProperty
      */
     public String getSystemProperty() {
@@ -1065,23 +1054,6 @@ public class ListAssetsRequest {
         this.appUserId = appUserId;
     }
 
-    public ListAssetsRequest withProjectGroupId(String projectGroupId) {
-        this.projectGroupId = projectGroupId;
-        return this;
-    }
-
-    /**
-     * 租户组id。只支持asset_souce是ALL 或者GROUP_CUSTOMIZATION 来源。
-     * @return projectGroupId
-     */
-    public String getProjectGroupId() {
-        return projectGroupId;
-    }
-
-    public void setProjectGroupId(String projectGroupId) {
-        this.projectGroupId = projectGroupId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1110,8 +1082,7 @@ public class ListAssetsRequest {
             && Objects.equals(this.includeDeviceName, that.includeDeviceName)
             && Objects.equals(this.excludeDeviceName, that.excludeDeviceName)
             && Objects.equals(this.supportedService, that.supportedService)
-            && Objects.equals(this.appUserId, that.appUserId)
-            && Objects.equals(this.projectGroupId, that.projectGroupId);
+            && Objects.equals(this.appUserId, that.appUserId);
     }
 
     @Override
@@ -1147,8 +1118,7 @@ public class ListAssetsRequest {
             includeDeviceName,
             excludeDeviceName,
             supportedService,
-            appUserId,
-            projectGroupId);
+            appUserId);
     }
 
     @Override
@@ -1187,7 +1157,6 @@ public class ListAssetsRequest {
         sb.append("    excludeDeviceName: ").append(toIndentedString(excludeDeviceName)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
         sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
-        sb.append("    projectGroupId: ").append(toIndentedString(projectGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

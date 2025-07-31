@@ -26,7 +26,7 @@ public class Nameserver {
     }
 
     /**
-     * 主机名。
+     * **参数解释：** 主机名。 **取值范围：** 不涉及。
      * @return hostname
      */
     public String getHostname() {
@@ -43,7 +43,7 @@ public class Nameserver {
     }
 
     /**
-     * 优先级。
+     * **参数解释：** 优先级。 **取值范围：** 不涉及。
      * @return priority
      */
     public Integer getPriority() {

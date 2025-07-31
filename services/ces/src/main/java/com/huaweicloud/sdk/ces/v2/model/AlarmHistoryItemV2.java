@@ -35,7 +35,7 @@ public class AlarmHistoryItemV2 {
     private String name;
 
     /**
-     * 告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。
+     * **参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 
      */
     public static final class StatusEnum {
 
@@ -122,7 +122,7 @@ public class AlarmHistoryItemV2 {
     private StatusEnum status;
 
     /**
-     * 告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+     * **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 
      */
     public static final class LevelEnum {
 
@@ -208,10 +208,104 @@ public class AlarmHistoryItemV2 {
 
     private LevelEnum level;
 
+    /**
+     * **参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum EVENT_SYS for value: "EVENT.SYS"
+         */
+        public static final TypeEnum EVENT_SYS = new TypeEnum("EVENT.SYS");
+
+        /**
+         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
+         */
+        public static final TypeEnum EVENT_CUSTOM = new TypeEnum("EVENT.CUSTOM");
+
+        /**
+         * Enum DNSHEALTHCHECK for value: "DNSHealthCheck"
+         */
+        public static final TypeEnum DNSHEALTHCHECK = new TypeEnum("DNSHealthCheck");
+
+        /**
+         * Enum RESOURCE_GROUP for value: "RESOURCE_GROUP"
+         */
+        public static final TypeEnum RESOURCE_GROUP = new TypeEnum("RESOURCE_GROUP");
+
+        /**
+         * Enum MULTI_INSTANCE for value: "MULTI_INSTANCE"
+         */
+        public static final TypeEnum MULTI_INSTANCE = new TypeEnum("MULTI_INSTANCE");
+
+        /**
+         * Enum ALL_INSTANCE for value: "ALL_INSTANCE"
+         */
+        public static final TypeEnum ALL_INSTANCE = new TypeEnum("ALL_INSTANCE");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("EVENT.SYS", EVENT_SYS);
+            map.put("EVENT.CUSTOM", EVENT_CUSTOM);
+            map.put("DNSHealthCheck", DNSHEALTHCHECK);
+            map.put("RESOURCE_GROUP", RESOURCE_GROUP);
+            map.put("MULTI_INSTANCE", MULTI_INSTANCE);
+            map.put("ALL_INSTANCE", ALL_INSTANCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private AlarmType type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_enabled")
@@ -246,12 +340,12 @@ public class AlarmHistoryItemV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
-    private Metric metric;
+    private AlarmHistoryItemV2Metric metric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
-    private AlarmCondition condition;
+    private AlarmHistoryItemV2Condition condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "additional_info")
@@ -261,12 +355,12 @@ public class AlarmHistoryItemV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_actions")
 
-    private List<Notification> alarmActions = null;
+    private List<AlarmHistoryItemV2AlarmActions> alarmActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_actions")
 
-    private List<Notification> okActions = null;
+    private List<AlarmHistoryItemV2AlarmActions> okActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_points")
@@ -279,7 +373,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警记录ID
+     * **参数解释**： 告警记录ID。 **取值范围**： 字符串长度为24。 
      * @return recordId
      */
     public String getRecordId() {
@@ -296,7 +390,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警规则的ID，如：al1603131199286dzxpqK3Ez。
+     * **参数解释**： 告警规则的ID，如：al1603131199286dzxpqK3Ez。 **取值范围**： 字符串长度为24 
      * @return alarmId
      */
     public String getAlarmId() {
@@ -313,7 +407,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警规则的名称，如：alarm-test01。
+     * **参数解释**： 告警规则的名称，如：alarm-test01。 **取值范围**： 字符串长度在 1 到 128 之间。 
      * @return name
      */
     public String getName() {
@@ -330,7 +424,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。
+     * **参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -347,7 +441,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+     * **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 
      * @return level
      */
     public LevelEnum getLevel() {
@@ -358,20 +452,20 @@ public class AlarmHistoryItemV2 {
         this.level = level;
     }
 
-    public AlarmHistoryItemV2 withType(AlarmType type) {
+    public AlarmHistoryItemV2 withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * Get type
+     * **参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 
      * @return type
      */
-    public AlarmType getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(AlarmType type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -381,7 +475,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 是否发送通知，值为true或者false。
+     * **参数解释**： 是否发送通知 **取值范围**： true：发送通知 false：不发送通知 
      * @return actionEnabled
      */
     public Boolean getActionEnabled() {
@@ -398,7 +492,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 产生时间,UTC时间
+     * **参数解释**： 产生时间,UTC时间 **取值范围**： 不涉及。 
      * @return beginTime
      */
     public OffsetDateTime getBeginTime() {
@@ -415,7 +509,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 结束时间，UTC时间
+     * **参数解释**： 结束时间，UTC时间 **取值范围**： 不涉及。 
      * @return endTime
      */
     public OffsetDateTime getEndTime() {
@@ -432,7 +526,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 第一次告警时间，UTC时间
+     * **参数解释**： 第一次告警时间，UTC时间 **取值范围**： 不涉及。 
      * @return firstAlarmTime
      */
     public OffsetDateTime getFirstAlarmTime() {
@@ -449,7 +543,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 最后一次告警时间，UTC时间
+     * **参数解释**： 最后一次告警时间，UTC时间。 **取值范围**： 不涉及。 
      * @return lastAlarmTime
      */
     public OffsetDateTime getLastAlarmTime() {
@@ -466,7 +560,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警恢复时间，UTC时间
+     * **参数解释**： 告警恢复时间，UTC时间。 **取值范围**： 不涉及。 
      * @return alarmRecoveryTime
      */
     public OffsetDateTime getAlarmRecoveryTime() {
@@ -477,14 +571,14 @@ public class AlarmHistoryItemV2 {
         this.alarmRecoveryTime = alarmRecoveryTime;
     }
 
-    public AlarmHistoryItemV2 withMetric(Metric metric) {
+    public AlarmHistoryItemV2 withMetric(AlarmHistoryItemV2Metric metric) {
         this.metric = metric;
         return this;
     }
 
-    public AlarmHistoryItemV2 withMetric(Consumer<Metric> metricSetter) {
+    public AlarmHistoryItemV2 withMetric(Consumer<AlarmHistoryItemV2Metric> metricSetter) {
         if (this.metric == null) {
-            this.metric = new Metric();
+            this.metric = new AlarmHistoryItemV2Metric();
             metricSetter.accept(this.metric);
         }
 
@@ -495,22 +589,22 @@ public class AlarmHistoryItemV2 {
      * Get metric
      * @return metric
      */
-    public Metric getMetric() {
+    public AlarmHistoryItemV2Metric getMetric() {
         return metric;
     }
 
-    public void setMetric(Metric metric) {
+    public void setMetric(AlarmHistoryItemV2Metric metric) {
         this.metric = metric;
     }
 
-    public AlarmHistoryItemV2 withCondition(AlarmCondition condition) {
+    public AlarmHistoryItemV2 withCondition(AlarmHistoryItemV2Condition condition) {
         this.condition = condition;
         return this;
     }
 
-    public AlarmHistoryItemV2 withCondition(Consumer<AlarmCondition> conditionSetter) {
+    public AlarmHistoryItemV2 withCondition(Consumer<AlarmHistoryItemV2Condition> conditionSetter) {
         if (this.condition == null) {
-            this.condition = new AlarmCondition();
+            this.condition = new AlarmHistoryItemV2Condition();
             conditionSetter.accept(this.condition);
         }
 
@@ -521,11 +615,11 @@ public class AlarmHistoryItemV2 {
      * Get condition
      * @return condition
      */
-    public AlarmCondition getCondition() {
+    public AlarmHistoryItemV2Condition getCondition() {
         return condition;
     }
 
-    public void setCondition(AlarmCondition condition) {
+    public void setCondition(AlarmHistoryItemV2Condition condition) {
         this.condition = condition;
     }
 
@@ -555,12 +649,12 @@ public class AlarmHistoryItemV2 {
         this.additionalInfo = additionalInfo;
     }
 
-    public AlarmHistoryItemV2 withAlarmActions(List<Notification> alarmActions) {
+    public AlarmHistoryItemV2 withAlarmActions(List<AlarmHistoryItemV2AlarmActions> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
     }
 
-    public AlarmHistoryItemV2 addAlarmActionsItem(Notification alarmActionsItem) {
+    public AlarmHistoryItemV2 addAlarmActionsItem(AlarmHistoryItemV2AlarmActions alarmActionsItem) {
         if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
@@ -568,7 +662,7 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    public AlarmHistoryItemV2 withAlarmActions(Consumer<List<Notification>> alarmActionsSetter) {
+    public AlarmHistoryItemV2 withAlarmActions(Consumer<List<AlarmHistoryItemV2AlarmActions>> alarmActionsSetter) {
         if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
@@ -577,23 +671,23 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警触发的动作。  结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notification_list：告警状态发生变化时，被通知对象的列表。
+     * **参数解释**： 告警触发的动作列表。  结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notification_list：告警状态发生变化时，被通知对象的列表。 
      * @return alarmActions
      */
-    public List<Notification> getAlarmActions() {
+    public List<AlarmHistoryItemV2AlarmActions> getAlarmActions() {
         return alarmActions;
     }
 
-    public void setAlarmActions(List<Notification> alarmActions) {
+    public void setAlarmActions(List<AlarmHistoryItemV2AlarmActions> alarmActions) {
         this.alarmActions = alarmActions;
     }
 
-    public AlarmHistoryItemV2 withOkActions(List<Notification> okActions) {
+    public AlarmHistoryItemV2 withOkActions(List<AlarmHistoryItemV2AlarmActions> okActions) {
         this.okActions = okActions;
         return this;
     }
 
-    public AlarmHistoryItemV2 addOkActionsItem(Notification okActionsItem) {
+    public AlarmHistoryItemV2 addOkActionsItem(AlarmHistoryItemV2AlarmActions okActionsItem) {
         if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
@@ -601,7 +695,7 @@ public class AlarmHistoryItemV2 {
         return this;
     }
 
-    public AlarmHistoryItemV2 withOkActions(Consumer<List<Notification>> okActionsSetter) {
+    public AlarmHistoryItemV2 withOkActions(Consumer<List<AlarmHistoryItemV2AlarmActions>> okActionsSetter) {
         if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
@@ -610,14 +704,14 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：  notification：通知。  notification_list：告警状态发生变化时，被通知对象的列表。
+     * **参数解释**： 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：  notification：通知。  notification_list：告警状态发生变化时，被通知对象的列表。 
      * @return okActions
      */
-    public List<Notification> getOkActions() {
+    public List<AlarmHistoryItemV2AlarmActions> getOkActions() {
         return okActions;
     }
 
-    public void setOkActions(List<Notification> okActions) {
+    public void setOkActions(List<AlarmHistoryItemV2AlarmActions> okActions) {
         this.okActions = okActions;
     }
 

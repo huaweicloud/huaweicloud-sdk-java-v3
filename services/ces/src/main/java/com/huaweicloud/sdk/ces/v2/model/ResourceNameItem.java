@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * ResourceNameItem
+ * 资源名称
  */
 public class ResourceNameItem {
 
@@ -119,6 +119,11 @@ public class ResourceNameItem {
 
     private OperatorEnum operator;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_name_is_ignore_case")
+
+    private Boolean resourceNameIsIgnoreCase;
+
     public ResourceNameItem withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -153,6 +158,23 @@ public class ResourceNameItem {
         this.operator = operator;
     }
 
+    public ResourceNameItem withResourceNameIsIgnoreCase(Boolean resourceNameIsIgnoreCase) {
+        this.resourceNameIsIgnoreCase = resourceNameIsIgnoreCase;
+        return this;
+    }
+
+    /**
+     * 资源名称忽略大小写
+     * @return resourceNameIsIgnoreCase
+     */
+    public Boolean getResourceNameIsIgnoreCase() {
+        return resourceNameIsIgnoreCase;
+    }
+
+    public void setResourceNameIsIgnoreCase(Boolean resourceNameIsIgnoreCase) {
+        this.resourceNameIsIgnoreCase = resourceNameIsIgnoreCase;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -162,12 +184,13 @@ public class ResourceNameItem {
             return false;
         }
         ResourceNameItem that = (ResourceNameItem) obj;
-        return Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.operator, that.operator);
+        return Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.resourceNameIsIgnoreCase, that.resourceNameIsIgnoreCase);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceName, operator);
+        return Objects.hash(resourceName, operator, resourceNameIsIgnoreCase);
     }
 
     @Override
@@ -176,6 +199,7 @@ public class ResourceNameItem {
         sb.append("class ResourceNameItem {\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
+        sb.append("    resourceNameIsIgnoreCase: ").append(toIndentedString(resourceNameIsIgnoreCase)).append("\n");
         sb.append("}");
         return sb.toString();
     }

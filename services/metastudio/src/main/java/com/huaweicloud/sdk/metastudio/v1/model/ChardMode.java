@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。
+ * 资源计费类型。 * ON_DEMAND:按需计费，目前只有进阶版声音，最多制作三个任务 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。
  */
 public class ChardMode {
 
@@ -22,12 +22,18 @@ public class ChardMode {
      */
     public static final ChardMode ONE_TIME = new ChardMode("ONE_TIME");
 
+    /**
+     * Enum ON_DEMAND for value: "ON_DEMAND"
+     */
+    public static final ChardMode ON_DEMAND = new ChardMode("ON_DEMAND");
+
     private static final Map<String, ChardMode> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, ChardMode> createStaticFields() {
         Map<String, ChardMode> map = new HashMap<>();
         map.put("PERIODIC", PERIODIC);
         map.put("ONE_TIME", ONE_TIME);
+        map.put("ON_DEMAND", ON_DEMAND);
         return Collections.unmodifiableMap(map);
     }
 

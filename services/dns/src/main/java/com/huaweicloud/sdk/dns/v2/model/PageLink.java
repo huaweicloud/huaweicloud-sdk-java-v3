@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 指向当前资源或者其他资源的链接。当查询需要分页时，需要包含一个next链接指向下一页。
+ * **参数解释：** 指向当前页或者其他页的链接。当查询需要分页时，需要包含一个next链接指向下一页。 **取值范围：** 不涉及。
  */
 public class PageLink {
 
@@ -26,7 +26,7 @@ public class PageLink {
     }
 
     /**
-     * 当前资源的链接。
+     * **参数解释：** 当前页面的链接。 **取值范围：** 不涉及。
      * @return self
      */
     public String getSelf() {
@@ -43,7 +43,7 @@ public class PageLink {
     }
 
     /**
-     * 下一页资源的链接。
+     * **参数解释：** 下一页的链接。 **取值范围：** 不涉及。
      * @return next
      */
     public String getNext() {

@@ -46,7 +46,7 @@ public class ListAgentDimensionInfoResponse extends SdkResponse {
     }
 
     /**
-     * 维度信息
+     * **参数解释**： 维度信息。 
      * @return dimensions
      */
     public List<AgentDimension> getDimensions() {
@@ -63,7 +63,7 @@ public class ListAgentDimensionInfoResponse extends SdkResponse {
     }
 
     /**
-     * 维度信息总数
+     * **参数解释**： 维度信息总数。 **取值范围**： 整数，最小值为0，最大值为2147483647。 
      * minimum: 0
      * maximum: 2147483647
      * @return count

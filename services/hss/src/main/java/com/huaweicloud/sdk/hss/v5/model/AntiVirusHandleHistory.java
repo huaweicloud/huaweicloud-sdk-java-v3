@@ -176,7 +176,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {

@@ -106,6 +106,16 @@ public class ShowTenantDurationCfgResponse extends SdkResponse {
 
     private Integer ljznAdviceValue;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "short_assess_min")
+
+    private Integer shortAssessMin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "short_assess_max")
+
+    private Integer shortAssessMax;
+
     public ShowTenantDurationCfgResponse withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -465,6 +475,44 @@ public class ShowTenantDurationCfgResponse extends SdkResponse {
         this.ljznAdviceValue = ljznAdviceValue;
     }
 
+    public ShowTenantDurationCfgResponse withShortAssessMin(Integer shortAssessMin) {
+        this.shortAssessMin = shortAssessMin;
+        return this;
+    }
+
+    /**
+     * 短任务质量检测最低时长（秒）
+     * minimum: 0
+     * maximum: 2147483647
+     * @return shortAssessMin
+     */
+    public Integer getShortAssessMin() {
+        return shortAssessMin;
+    }
+
+    public void setShortAssessMin(Integer shortAssessMin) {
+        this.shortAssessMin = shortAssessMin;
+    }
+
+    public ShowTenantDurationCfgResponse withShortAssessMax(Integer shortAssessMax) {
+        this.shortAssessMax = shortAssessMax;
+        return this;
+    }
+
+    /**
+     * 短任务质量检测最高时长（秒）
+     * minimum: 0
+     * maximum: 2147483647
+     * @return shortAssessMax
+     */
+    public Integer getShortAssessMax() {
+        return shortAssessMax;
+    }
+
+    public void setShortAssessMax(Integer shortAssessMax) {
+        this.shortAssessMax = shortAssessMax;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -485,7 +533,9 @@ public class ShowTenantDurationCfgResponse extends SdkResponse {
             && Objects.equals(this.flexusAdviceValue, that.flexusAdviceValue)
             && Objects.equals(this.cmwwMin, that.cmwwMin) && Objects.equals(this.cmwwMax, that.cmwwMax)
             && Objects.equals(this.cmwwAdviceValue, that.cmwwAdviceValue) && Objects.equals(this.ljznMin, that.ljznMin)
-            && Objects.equals(this.ljznMax, that.ljznMax) && Objects.equals(this.ljznAdviceValue, that.ljznAdviceValue);
+            && Objects.equals(this.ljznMax, that.ljznMax) && Objects.equals(this.ljznAdviceValue, that.ljznAdviceValue)
+            && Objects.equals(this.shortAssessMin, that.shortAssessMin)
+            && Objects.equals(this.shortAssessMax, that.shortAssessMax);
     }
 
     @Override
@@ -508,7 +558,9 @@ public class ShowTenantDurationCfgResponse extends SdkResponse {
             cmwwAdviceValue,
             ljznMin,
             ljznMax,
-            ljznAdviceValue);
+            ljznAdviceValue,
+            shortAssessMin,
+            shortAssessMax);
     }
 
     @Override
@@ -534,6 +586,8 @@ public class ShowTenantDurationCfgResponse extends SdkResponse {
         sb.append("    ljznMin: ").append(toIndentedString(ljznMin)).append("\n");
         sb.append("    ljznMax: ").append(toIndentedString(ljznMax)).append("\n");
         sb.append("    ljznAdviceValue: ").append(toIndentedString(ljznAdviceValue)).append("\n");
+        sb.append("    shortAssessMin: ").append(toIndentedString(shortAssessMin)).append("\n");
+        sb.append("    shortAssessMax: ").append(toIndentedString(shortAssessMax)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -37,7 +37,7 @@ public class HierarchicalValue {
 
     /**
      * 紧急级别的阈值
-     * minimum: 0
+     * minimum: -1.7976931348623156E+108
      * maximum: 1.7976931348623156E+108
      * @return critical
      */
@@ -56,7 +56,7 @@ public class HierarchicalValue {
 
     /**
      * 重要级别的阈值
-     * minimum: 0
+     * minimum: -1.7976931348623156E+108
      * maximum: 1.7976931348623156E+108
      * @return major
      */
@@ -75,7 +75,7 @@ public class HierarchicalValue {
 
     /**
      * 次要级别的阈值
-     * minimum: 0
+     * minimum: -1.7976931348623156E+108
      * maximum: 1.7976931348623156E+108
      * @return minor
      */
@@ -94,7 +94,7 @@ public class HierarchicalValue {
 
     /**
      * 提示级别的阈值
-     * minimum: 0
+     * minimum: -1.7976931348623156E+108
      * maximum: 1.7976931348623156E+108
      * @return info
      */

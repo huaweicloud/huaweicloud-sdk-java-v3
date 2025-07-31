@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 版本对象。
+ * **参数解释：** 版本对象。 **取值范围：** 不涉及。
  */
 public class ValuesItem {
 
@@ -40,7 +40,7 @@ public class ValuesItem {
     }
 
     /**
-     * 所有版本列表。
+     * **参数解释：** 所有版本列表。 **取值范围：** 不涉及。
      * @return values
      */
     public List<ListApiVersionsItem> getValues() {

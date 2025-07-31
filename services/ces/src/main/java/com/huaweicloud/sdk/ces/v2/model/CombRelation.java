@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CombRelation
+ * 组合匹配参数
  */
 public class CombRelation {
 

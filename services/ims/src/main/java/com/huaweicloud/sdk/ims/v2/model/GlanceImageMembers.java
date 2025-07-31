@@ -40,6 +40,16 @@ public class GlanceImageMembers {
 
     private String schema;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_type")
+
+    private String memberType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "urn")
+
+    private String urn;
+
     public GlanceImageMembers withStatus(String status) {
         this.status = status;
         return this;
@@ -142,6 +152,40 @@ public class GlanceImageMembers {
         this.schema = schema;
     }
 
+    public GlanceImageMembers withMemberType(String memberType) {
+        this.memberType = memberType;
+        return this;
+    }
+
+    /**
+     * 共享成员类型。
+     * @return memberType
+     */
+    public String getMemberType() {
+        return memberType;
+    }
+
+    public void setMemberType(String memberType) {
+        this.memberType = memberType;
+    }
+
+    public GlanceImageMembers withUrn(String urn) {
+        this.urn = urn;
+        return this;
+    }
+
+    /**
+     * 共享组织的URN仅当member_type类型为organization时，才会返回urn字段。
+     * @return urn
+     */
+    public String getUrn() {
+        return urn;
+    }
+
+    public void setUrn(String urn) {
+        this.urn = urn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +197,13 @@ public class GlanceImageMembers {
         GlanceImageMembers that = (GlanceImageMembers) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.imageId, that.imageId)
-            && Objects.equals(this.memberId, that.memberId) && Objects.equals(this.schema, that.schema);
+            && Objects.equals(this.memberId, that.memberId) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.urn, that.urn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, createdAt, updatedAt, imageId, memberId, schema);
+        return Objects.hash(status, createdAt, updatedAt, imageId, memberId, schema, memberType, urn);
     }
 
     @Override
@@ -171,6 +216,8 @@ public class GlanceImageMembers {
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
         sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+        sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    urn: ").append(toIndentedString(urn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

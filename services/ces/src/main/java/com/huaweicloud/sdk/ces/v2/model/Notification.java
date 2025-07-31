@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class Notification {
 
     /**
-     * 通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组，autoscaling为AS通知。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 
+     * 通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组。autoscaling为AS通知，只在AS中使用，不推荐客户使用。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。
      */
     public static final class TypeEnum {
 
@@ -134,7 +134,7 @@ public class Notification {
     }
 
     /**
-     * 通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组，autoscaling为AS通知。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 
+     * 通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组。autoscaling为AS通知，只在AS中使用，不推荐客户使用。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。
      * @return type
      */
     public TypeEnum getType() {

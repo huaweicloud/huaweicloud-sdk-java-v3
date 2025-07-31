@@ -31,7 +31,7 @@ public class AvailableResourceIdsInfo {
     }
 
     /**
-     * 资源ID
+     * **参数解释**： 资源ID **取值范围**： 字符长度1-256位
      * @return resourceId
      */
     public String getResourceId() {
@@ -48,7 +48,7 @@ public class AvailableResourceIdsInfo {
     }
 
     /**
-     * 当前时间
+     * **参数解释**： 当前时间 **取值范围**： 字符长度1-64位
      * @return currentTime
      */
     public String getCurrentTime() {
@@ -65,7 +65,7 @@ public class AvailableResourceIdsInfo {
     }
 
     /**
-     * 是否共享配额   - shared：共享的   - unshared：非共享的
+     * **参数解释**： 是否共享配额 **取值范围**：   - shared：共享的   - unshared：非共享的
      * @return sharedQuota
      */
     public String getSharedQuota() {

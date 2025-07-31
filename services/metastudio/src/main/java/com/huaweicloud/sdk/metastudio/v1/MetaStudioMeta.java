@@ -147,6 +147,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsReq;
@@ -198,6 +200,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
@@ -283,6 +287,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
@@ -305,11 +311,15 @@ import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyGroupsRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameReq;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTtscGroupAssetsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTtscGroupAssetsRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTtscGroupAssetsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
@@ -472,6 +482,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptsReq;
@@ -2126,11 +2138,6 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetsRequest::getAppUserId, ListAssetsRequest::setAppUserId));
-        builder.<String>withRequestField("project_group_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetsRequest::getProjectGroupId, ListAssetsRequest::setProjectGroupId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -9384,6 +9391,12 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVoiceTrainingJobRequest::getSortDir, ListVoiceTrainingJobRequest::setSortDir));
+        builder.<Boolean>withRequestField("is_ondemand_resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getIsOndemandResource,
+                ListVoiceTrainingJobRequest::setIsOndemandResource));
         builder.<String>withRequestField("X-App-UserId",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -9408,6 +9421,11 @@ public class MetaStudioMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetJobBatchNameRequest::getXAppUserId, SetJobBatchNameRequest::setXAppUserId));
         builder.<SetJobBatchNameReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10315,6 +10333,63 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTtscVocabularyGroupsRequest, CreateTtscVocabularyGroupsResponse> createTtscVocabularyGroups =
+        genForCreateTtscVocabularyGroups();
+
+    private static HttpRequestDef<CreateTtscVocabularyGroupsRequest, CreateTtscVocabularyGroupsResponse> genForCreateTtscVocabularyGroups() {
+        // basic
+        HttpRequestDef.Builder<CreateTtscVocabularyGroupsRequest, CreateTtscVocabularyGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateTtscVocabularyGroupsRequest.class,
+                    CreateTtscVocabularyGroupsResponse.class)
+                .withName("CreateTtscVocabularyGroups")
+                .withUri("/v1/{project_id}/ttsc/vocabulary-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyGroupsRequest::getXRequestId,
+                CreateTtscVocabularyGroupsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyGroupsRequest::getAuthorization,
+                CreateTtscVocabularyGroupsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyGroupsRequest::getXSdkDate,
+                CreateTtscVocabularyGroupsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyGroupsRequest::getXProjectId,
+                CreateTtscVocabularyGroupsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyGroupsRequest::getXAppUserId,
+                CreateTtscVocabularyGroupsRequest::setXAppUserId));
+        builder.<SaveTtscVocabularyGroupsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveTtscVocabularyGroupsRequestBody.class),
+            f -> f.withMarshaller(CreateTtscVocabularyGroupsRequest::getBody,
+                CreateTtscVocabularyGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTtscVocabularyConfigsRequest, DeleteTtscVocabularyConfigsResponse> deleteTtscVocabularyConfigs =
         genForDeleteTtscVocabularyConfigs();
 
@@ -10384,6 +10459,75 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteTtscVocabularyGroupsRequest, DeleteTtscVocabularyGroupsResponse> deleteTtscVocabularyGroups =
+        genForDeleteTtscVocabularyGroups();
+
+    private static HttpRequestDef<DeleteTtscVocabularyGroupsRequest, DeleteTtscVocabularyGroupsResponse> genForDeleteTtscVocabularyGroups() {
+        // basic
+        HttpRequestDef.Builder<DeleteTtscVocabularyGroupsRequest, DeleteTtscVocabularyGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTtscVocabularyGroupsRequest.class,
+                    DeleteTtscVocabularyGroupsResponse.class)
+                .withName("DeleteTtscVocabularyGroups")
+                .withUri("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyGroupsRequest::getGroupId,
+                DeleteTtscVocabularyGroupsRequest::setGroupId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyGroupsRequest::getOffset,
+                DeleteTtscVocabularyGroupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyGroupsRequest::getLimit,
+                DeleteTtscVocabularyGroupsRequest::setLimit));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyGroupsRequest::getXRequestId,
+                DeleteTtscVocabularyGroupsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyGroupsRequest::getAuthorization,
+                DeleteTtscVocabularyGroupsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyGroupsRequest::getXSdkDate,
+                DeleteTtscVocabularyGroupsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyGroupsRequest::getXProjectId,
+                DeleteTtscVocabularyGroupsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyGroupsRequest::getXAppUserId,
+                DeleteTtscVocabularyGroupsRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTtscVocabularyConfigsRequest, ListTtscVocabularyConfigsResponse> listTtscVocabularyConfigs =
         genForListTtscVocabularyConfigs();
 
@@ -10417,6 +10561,18 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getIsVocabularyConfigEnable,
                 ListTtscVocabularyConfigsRequest::setIsVocabularyConfigEnable));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getGroupId,
+                ListTtscVocabularyConfigsRequest::setGroupId));
+        builder.<String>withRequestField("asset_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getAssetId,
+                ListTtscVocabularyConfigsRequest::setAssetId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -10483,6 +10639,55 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTtscVocabularyGroupsRequest, ListTtscVocabularyGroupsResponse> listTtscVocabularyGroups =
+        genForListTtscVocabularyGroups();
+
+    private static HttpRequestDef<ListTtscVocabularyGroupsRequest, ListTtscVocabularyGroupsResponse> genForListTtscVocabularyGroups() {
+        // basic
+        HttpRequestDef.Builder<ListTtscVocabularyGroupsRequest, ListTtscVocabularyGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListTtscVocabularyGroupsRequest.class, ListTtscVocabularyGroupsResponse.class)
+                .withName("ListTtscVocabularyGroups")
+                .withUri("/v1/{project_id}/ttsc/vocabulary-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyGroupsRequest::getXRequestId,
+                ListTtscVocabularyGroupsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyGroupsRequest::getAuthorization,
+                ListTtscVocabularyGroupsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyGroupsRequest::getXSdkDate,
+                ListTtscVocabularyGroupsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyGroupsRequest::getXProjectId,
+                ListTtscVocabularyGroupsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyGroupsRequest::getXAppUserId,
+                ListTtscVocabularyGroupsRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SaveTtscVocabularyConfigsRequest, SaveTtscVocabularyConfigsResponse> saveTtscVocabularyConfigs =
         genForSaveTtscVocabularyConfigs();
 
@@ -10540,6 +10745,60 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(SaveTtscVocabularyConfigsRequestBody.class),
             f -> f.withMarshaller(SaveTtscVocabularyConfigsRequest::getBody,
                 SaveTtscVocabularyConfigsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetTtscGroupAssetsRequest, SetTtscGroupAssetsResponse> setTtscGroupAssets =
+        genForSetTtscGroupAssets();
+
+    private static HttpRequestDef<SetTtscGroupAssetsRequest, SetTtscGroupAssetsResponse> genForSetTtscGroupAssets() {
+        // basic
+        HttpRequestDef.Builder<SetTtscGroupAssetsRequest, SetTtscGroupAssetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetTtscGroupAssetsRequest.class, SetTtscGroupAssetsResponse.class)
+                .withName("SetTtscGroupAssets")
+                .withUri("/v1/{project_id}/ttsc/group-assets/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTtscGroupAssetsRequest::getGroupId, SetTtscGroupAssetsRequest::setGroupId));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTtscGroupAssetsRequest::getXRequestId, SetTtscGroupAssetsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTtscGroupAssetsRequest::getAuthorization,
+                SetTtscGroupAssetsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTtscGroupAssetsRequest::getXSdkDate, SetTtscGroupAssetsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTtscGroupAssetsRequest::getXProjectId, SetTtscGroupAssetsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetTtscGroupAssetsRequest::getXAppUserId, SetTtscGroupAssetsRequest::setXAppUserId));
+        builder.<SetTtscGroupAssetsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetTtscGroupAssetsRequestBody.class),
+            f -> f.withMarshaller(SetTtscGroupAssetsRequest::getBody, SetTtscGroupAssetsRequest::setBody));
 
         // response
 
@@ -10698,6 +10957,69 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXAppUserId,
                 ShowTtsPhoneticSymbolRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTtscVocabularyGroupsRequest, UpdateTtscVocabularyGroupsResponse> updateTtscVocabularyGroups =
+        genForUpdateTtscVocabularyGroups();
+
+    private static HttpRequestDef<UpdateTtscVocabularyGroupsRequest, UpdateTtscVocabularyGroupsResponse> genForUpdateTtscVocabularyGroups() {
+        // basic
+        HttpRequestDef.Builder<UpdateTtscVocabularyGroupsRequest, UpdateTtscVocabularyGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateTtscVocabularyGroupsRequest.class,
+                    UpdateTtscVocabularyGroupsResponse.class)
+                .withName("UpdateTtscVocabularyGroups")
+                .withUri("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTtscVocabularyGroupsRequest::getGroupId,
+                UpdateTtscVocabularyGroupsRequest::setGroupId));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTtscVocabularyGroupsRequest::getXRequestId,
+                UpdateTtscVocabularyGroupsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTtscVocabularyGroupsRequest::getAuthorization,
+                UpdateTtscVocabularyGroupsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTtscVocabularyGroupsRequest::getXSdkDate,
+                UpdateTtscVocabularyGroupsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTtscVocabularyGroupsRequest::getXProjectId,
+                UpdateTtscVocabularyGroupsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTtscVocabularyGroupsRequest::getXAppUserId,
+                UpdateTtscVocabularyGroupsRequest::setXAppUserId));
+        builder.<SaveTtscVocabularyGroupsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveTtscVocabularyGroupsRequestBody.class),
+            f -> f.withMarshaller(UpdateTtscVocabularyGroupsRequest::getBody,
+                UpdateTtscVocabularyGroupsRequest::setBody));
 
         // response
 

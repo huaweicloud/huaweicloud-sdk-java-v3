@@ -77,7 +77,7 @@ public class ListPublicZonesResponse extends SdkResponse {
     }
 
     /**
-     * 查询公网域名的列表响应。
+     * **参数解释：** 查询公网域名的列表响应。 **取值范围：** 不涉及。
      * @return zones
      */
     public List<PublicZoneResp> getZones() {

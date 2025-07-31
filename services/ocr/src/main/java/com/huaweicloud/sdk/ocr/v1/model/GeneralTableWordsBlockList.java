@@ -31,7 +31,7 @@ public class GeneralTableWordsBlockList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "words_list")
 
-    private List<WordsListIem> wordsList = null;
+    private List<WordsListItem> wordsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
@@ -115,12 +115,12 @@ public class GeneralTableWordsBlockList {
         this.location = location;
     }
 
-    public GeneralTableWordsBlockList withWordsList(List<WordsListIem> wordsList) {
+    public GeneralTableWordsBlockList withWordsList(List<WordsListItem> wordsList) {
         this.wordsList = wordsList;
         return this;
     }
 
-    public GeneralTableWordsBlockList addWordsListItem(WordsListIem wordsListItem) {
+    public GeneralTableWordsBlockList addWordsListItem(WordsListItem wordsListItem) {
         if (this.wordsList == null) {
             this.wordsList = new ArrayList<>();
         }
@@ -128,7 +128,7 @@ public class GeneralTableWordsBlockList {
         return this;
     }
 
-    public GeneralTableWordsBlockList withWordsList(Consumer<List<WordsListIem>> wordsListSetter) {
+    public GeneralTableWordsBlockList withWordsList(Consumer<List<WordsListItem>> wordsListSetter) {
         if (this.wordsList == null) {
             this.wordsList = new ArrayList<>();
         }
@@ -140,11 +140,11 @@ public class GeneralTableWordsBlockList {
      * 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\"return_text_location\"为true时存在。 
      * @return wordsList
      */
-    public List<WordsListIem> getWordsList() {
+    public List<WordsListItem> getWordsList() {
         return wordsList;
     }
 
-    public void setWordsList(List<WordsListIem> wordsList) {
+    public void setWordsList(List<WordsListItem> wordsList) {
         this.wordsList = wordsList;
     }
 

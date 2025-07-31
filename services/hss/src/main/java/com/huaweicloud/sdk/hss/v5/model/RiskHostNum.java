@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 有风险服务器数
+ * **参数解释**: 有风险服务器数 **取值范围**: 0到2147483647 
  */
 public class RiskHostNum {
 

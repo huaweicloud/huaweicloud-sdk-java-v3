@@ -89,7 +89,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 记录集的ID。
+     * **参数解释：** 记录集的ID。 **取值范围：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -106,7 +106,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 记录集的名称。
+     * **参数解释：** 记录集的名称。 **取值范围：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -123,7 +123,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 记录集的描述信息。
+     * **参数解释：** 记录集的描述信息。 **取值范围：** 长度不超过255个字符。
      * @return description
      */
     public String getDescription() {
@@ -140,7 +140,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 托管该记录的域名ID。
+     * **参数解释：** 托管该记录的域名ID。 **取值范围：** 不涉及。
      * @return zoneId
      */
     public String getZoneId() {
@@ -157,7 +157,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 托管该记录的域名。
+     * **参数解释：** 托管该记录的域名。 **取值范围：** 不涉及。
      * @return zoneName
      */
     public String getZoneName() {
@@ -174,7 +174,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 记录类型。
+     * **参数解释：** 记录类型。 **取值范围：** - 公网域名的记录类型: A、AAAA、MX、CNAME、TXT、SRV、NS、SOA、CAA。 - 内网域名的记录类型: A、AAAA、MX、CNAME、TXT、PTR、SRV、NS、SOA。
      * @return type
      */
     public String getType() {
@@ -191,7 +191,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * **参数解释：** 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。 **取值范围：** 1~2147483647。
      * @return ttl
      */
     public Integer getTtl() {
@@ -224,7 +224,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 域名解析后的值。
+     * **参数解释：** 域名解析后的值。 **取值范围：** 不涉及。
      * @return records
      */
     public List<String> getRecords() {
@@ -241,7 +241,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 记录集的创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return createAt
      */
     public String getCreateAt() {
@@ -258,7 +258,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 记录集的最近一次修改时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return updateAt
      */
     public String getUpdateAt() {
@@ -275,7 +275,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 资源状态。
+     * **参数解释：** 记录集状态。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - PENDING_DISABLE：暂停中 - DISABLE：暂停 - ERROR：失败
      * @return status
      */
     public String getStatus() {
@@ -292,7 +292,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 标识是否由系统默认生成，系统默认生成的记录集不能删除。
+     * **参数解释：** 标识是否由系统默认生成，系统默认生成的记录集不能删除。 **取值范围：** 不涉及。
      * @return _default
      */
     public Boolean getDefault() {
@@ -309,7 +309,7 @@ public class ListRecordSets {
     }
 
     /**
-     * 该记录集所属的项目ID。
+     * **参数解释：** 该记录集所属的项目ID。 **取值范围：** 不涉及。
      * @return projectId
      */
     public String getProjectId() {

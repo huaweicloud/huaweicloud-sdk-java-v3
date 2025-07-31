@@ -30,9 +30,9 @@ public class ListAutoLaunchChangeHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * 自启动项变动总数
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
-     * maximum: 10000
+     * maximum: 2147483647
      * @return totalNum
      */
     public Integer getTotalNum() {

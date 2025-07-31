@@ -146,7 +146,7 @@ public class ConfigAlarmTopicRequest {
     }
 
     /**
-     * 告警等级 - high：高  - medium：中  - low：低
+     * 告警等级,默认为空。 - high：高  - medium：中  - low：低
      * @return alarmRisk
      */
     public List<String> getAlarmRisk() {
@@ -180,7 +180,7 @@ public class ConfigAlarmTopicRequest {
     }
 
     /**
-     * 通知消息主题URN,调用SMN服务接口获取
+     * 通知消息主题URN,调用SMN服务接口获取。当alarm_switch为ON时必填
      * @return alarmTopicUrn
      */
     public String getAlarmTopicUrn() {

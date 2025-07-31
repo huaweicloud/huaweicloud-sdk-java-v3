@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * EnterpriseProjectIdAndTags
+ * 企业项目Id或标签信息
  */
 public class EnterpriseProjectIdAndTags {
 

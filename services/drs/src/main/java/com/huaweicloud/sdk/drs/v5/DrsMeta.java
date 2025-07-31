@@ -143,6 +143,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowCompareProgressRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowCompareProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowDataFilteringResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowDataFilteringResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowDataProcessingRulesResultRequest;
@@ -2293,6 +2295,40 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowComparePolicyRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowComparePolicyRequest::getXLanguage, ShowComparePolicyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCompareProgressRequest, ShowCompareProgressResponse> showCompareProgress =
+        genForShowCompareProgress();
+
+    private static HttpRequestDef<ShowCompareProgressRequest, ShowCompareProgressResponse> genForShowCompareProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowCompareProgressRequest, ShowCompareProgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCompareProgressRequest.class, ShowCompareProgressResponse.class)
+                .withName("ShowCompareProgress")
+                .withUri("/v5/{project_id}/jobs/{job_id}/compare-progress/{compare_job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCompareProgressRequest::getJobId, ShowCompareProgressRequest::setJobId));
+        builder.<String>withRequestField("compare_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCompareProgressRequest::getCompareJobId,
+                ShowCompareProgressRequest::setCompareJobId));
+        builder.<ShowCompareProgressRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCompareProgressRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowCompareProgressRequest::getXLanguage, ShowCompareProgressRequest::setXLanguage));
 
         // response
 

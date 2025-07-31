@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class GetResourceGroupResources {
 
     /**
-     * 资源健康状态，取值为health（已设置告警规则且无告警触发的资源）、unhealthy（已设置告警规则且有告警触发的资源）、no_alarm_rule（未关联告警规则）
+     * 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
      */
     public static final class StatusEnum {
 
@@ -114,13 +114,99 @@ public class GetResourceGroupResources {
 
     private String enterpriseProjectId;
 
+    /**
+     * 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     */
+    public static final class EventStatusEnum {
+
+        /**
+         * Enum HEALTH for value: "health"
+         */
+        public static final EventStatusEnum HEALTH = new EventStatusEnum("health");
+
+        /**
+         * Enum UNHEALTHY for value: "unhealthy"
+         */
+        public static final EventStatusEnum UNHEALTHY = new EventStatusEnum("unhealthy");
+
+        /**
+         * Enum NO_ALARM_RULE for value: "no_alarm_rule"
+         */
+        public static final EventStatusEnum NO_ALARM_RULE = new EventStatusEnum("no_alarm_rule");
+
+        private static final Map<String, EventStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EventStatusEnum> createStaticFields() {
+            Map<String, EventStatusEnum> map = new HashMap<>();
+            map.put("health", HEALTH);
+            map.put("unhealthy", UNHEALTHY);
+            map.put("no_alarm_rule", NO_ALARM_RULE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EventStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EventStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventStatusEnum(value));
+        }
+
+        public static EventStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EventStatusEnum) {
+                return this.value.equals(((EventStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_status")
+
+    private EventStatusEnum eventStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_name")
+
+    private String resourceName;
+
     public GetResourceGroupResources withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 资源健康状态，取值为health（已设置告警规则且无告警触发的资源）、unhealthy（已设置告警规则且有告警触发的资源）、no_alarm_rule（未关联告警规则）
+     * 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
      * @return status
      */
     public StatusEnum getStatus() {
@@ -198,6 +284,40 @@ public class GetResourceGroupResources {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public GetResourceGroupResources withEventStatus(EventStatusEnum eventStatus) {
+        this.eventStatus = eventStatus;
+        return this;
+    }
+
+    /**
+     * 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * @return eventStatus
+     */
+    public EventStatusEnum getEventStatus() {
+        return eventStatus;
+    }
+
+    public void setEventStatus(EventStatusEnum eventStatus) {
+        this.eventStatus = eventStatus;
+    }
+
+    public GetResourceGroupResources withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
+    /**
+     * 资源名称
+     * @return resourceName
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -209,12 +329,14 @@ public class GetResourceGroupResources {
         GetResourceGroupResources that = (GetResourceGroupResources) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.dimensions, that.dimensions)
             && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.eventStatus, that.eventStatus)
+            && Objects.equals(this.resourceName, that.resourceName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, dimensions, tags, enterpriseProjectId);
+        return Objects.hash(status, dimensions, tags, enterpriseProjectId, eventStatus, resourceName);
     }
 
     @Override
@@ -225,6 +347,8 @@ public class GetResourceGroupResources {
         sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    eventStatus: ").append(toIndentedString(eventStatus)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

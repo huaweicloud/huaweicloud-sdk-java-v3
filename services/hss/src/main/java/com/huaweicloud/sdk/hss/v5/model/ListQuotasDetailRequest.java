@@ -88,7 +88,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -105,7 +105,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 主机开通的版本，包含如下7种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise：容器版。
+     * **参数解释**： 主机开通的版本 **约束限制**: 不涉及 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 **默认取值**: 不涉及
      * @return version
      */
     public String getVersion() {
@@ -122,7 +122,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 类别，包含如下几种：   - host_resource ：HOST_RESOURCE   - container_resource ：CONTAINER_RESOURCE
+     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - host_resource ：HOST_RESOURCE - container_resource ：CONTAINER_RESOURCE **默认取值**: 不涉及
      * @return category
      */
     public String getCategory() {
@@ -139,7 +139,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 配额状态，包含如下几种：   - normal ： QUOTA_STATUS_NORMAL   - expired ：QUOTA_STATUS_EXPIRED   - freeze ：QUOTA_STATUS_FREEZE
+     * **参数解释**: 配额状态 **约束限制**: 不涉及 **取值范围**: 包含如下三种： - normal ： QUOTA_STATUS_NORMAL - expired ：QUOTA_STATUS_EXPIRED - freeze ：QUOTA_STATUS_FREEZE **默认取值**: 不涉及
      * @return quotaStatus
      */
     public String getQuotaStatus() {
@@ -156,7 +156,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 使用状态，包含如下几种：   - idle ：USED_STATUS_IDLE   - used ：USED_STATUS_USED
+     * **参数解释**: 使用状态 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - idle ：USED_STATUS_IDLE - used ：USED_STATUS_USED **默认取值**: 不涉及
      * @return usedStatus
      */
     public String getUsedStatus() {
@@ -173,7 +173,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -190,7 +190,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * HSS配额的资源ID
+     * **参数解释** : HSS配额的资源ID **约束限制** : 不涉及 **取值范围** : 字符长度1-128位 **默认取值** : 不涉及 
      * @return resourceId
      */
     public String getResourceId() {
@@ -207,7 +207,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 收费模式，包含如下2种。   - packet_cycle ：包年/包月。   - on_demand ：按需。
+     * **参数解释**： 收费模式 **约束限制**: 不涉及 **取值范围**: - packet_cycle ：包年/包月。 - on_demand ：按需。 **默认取值**: 不涉及
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -224,7 +224,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 每页数量
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -243,7 +243,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
      * maximum: 2000000
      * @return offset

@@ -23,6 +23,16 @@ public class BatchAddMembersRequestBody {
 
     private List<String> projects = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domains")
+
+    private List<String> domains = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "organizations")
+
+    private List<String> organizations = null;
+
     public BatchAddMembersRequestBody withImages(List<String> images) {
         this.images = images;
         return this;
@@ -89,6 +99,72 @@ public class BatchAddMembersRequestBody {
         this.projects = projects;
     }
 
+    public BatchAddMembersRequestBody withDomains(List<String> domains) {
+        this.domains = domains;
+        return this;
+    }
+
+    public BatchAddMembersRequestBody addDomainsItem(String domainsItem) {
+        if (this.domains == null) {
+            this.domains = new ArrayList<>();
+        }
+        this.domains.add(domainsItem);
+        return this;
+    }
+
+    public BatchAddMembersRequestBody withDomains(Consumer<List<String>> domainsSetter) {
+        if (this.domains == null) {
+            this.domains = new ArrayList<>();
+        }
+        domainsSetter.accept(this.domains);
+        return this;
+    }
+
+    /**
+     * 账号ID列表
+     * @return domains
+     */
+    public List<String> getDomains() {
+        return domains;
+    }
+
+    public void setDomains(List<String> domains) {
+        this.domains = domains;
+    }
+
+    public BatchAddMembersRequestBody withOrganizations(List<String> organizations) {
+        this.organizations = organizations;
+        return this;
+    }
+
+    public BatchAddMembersRequestBody addOrganizationsItem(String organizationsItem) {
+        if (this.organizations == null) {
+            this.organizations = new ArrayList<>();
+        }
+        this.organizations.add(organizationsItem);
+        return this;
+    }
+
+    public BatchAddMembersRequestBody withOrganizations(Consumer<List<String>> organizationsSetter) {
+        if (this.organizations == null) {
+            this.organizations = new ArrayList<>();
+        }
+        organizationsSetter.accept(this.organizations);
+        return this;
+    }
+
+    /**
+     * 组织URN列表
+     * @return organizations
+     */
+    public List<String> getOrganizations() {
+        return organizations;
+    }
+
+    public void setOrganizations(List<String> organizations) {
+        this.organizations = organizations;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -98,12 +174,13 @@ public class BatchAddMembersRequestBody {
             return false;
         }
         BatchAddMembersRequestBody that = (BatchAddMembersRequestBody) obj;
-        return Objects.equals(this.images, that.images) && Objects.equals(this.projects, that.projects);
+        return Objects.equals(this.images, that.images) && Objects.equals(this.projects, that.projects)
+            && Objects.equals(this.domains, that.domains) && Objects.equals(this.organizations, that.organizations);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(images, projects);
+        return Objects.hash(images, projects, domains, organizations);
     }
 
     @Override
@@ -112,6 +189,8 @@ public class BatchAddMembersRequestBody {
         sb.append("class BatchAddMembersRequestBody {\n");
         sb.append("    images: ").append(toIndentedString(images)).append("\n");
         sb.append("    projects: ").append(toIndentedString(projects)).append("\n");
+        sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+        sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateScheduleRecordTasksRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateScheduleRecordTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenOnceRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenOnceResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateRequest;
@@ -471,6 +473,35 @@ public class LiveClient {
     public SyncInvoker<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> createStreamForbiddenInvoker(
         CreateStreamForbiddenRequest request) {
         return new SyncInvoker<>(request, LiveMeta.createStreamForbidden, hcClient);
+    }
+
+    /**
+     * 禁推闪断
+     *
+     * 直播推流闪断接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStreamForbiddenOnceRequest 请求对象
+     * @return CreateStreamForbiddenOnceResponse
+     */
+    public CreateStreamForbiddenOnceResponse createStreamForbiddenOnce(CreateStreamForbiddenOnceRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.createStreamForbiddenOnce);
+    }
+
+    /**
+     * 禁推闪断
+     *
+     * 直播推流闪断接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateStreamForbiddenOnceRequest 请求对象
+     * @return SyncInvoker<CreateStreamForbiddenOnceRequest, CreateStreamForbiddenOnceResponse>
+     */
+    public SyncInvoker<CreateStreamForbiddenOnceRequest, CreateStreamForbiddenOnceResponse> createStreamForbiddenOnceInvoker(
+        CreateStreamForbiddenOnceRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.createStreamForbiddenOnce, hcClient);
     }
 
     /**

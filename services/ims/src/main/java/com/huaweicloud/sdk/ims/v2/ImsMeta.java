@@ -26,12 +26,18 @@ import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersResponse;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageCrossRegionRequest;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageCrossRegionRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageCrossRegionResponse;
+import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionRequest;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionResponse;
+import com.huaweicloud.sdk.ims.v2.model.CreateDataImageInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.CreateDataImageInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.CreateDataImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.CreateDataImageRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.CreateDataImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.CreateImageInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.CreateImageInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.CreateImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.CreateImageRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.CreateImageResponse;
@@ -42,6 +48,8 @@ import com.huaweicloud.sdk.ims.v2.model.CreateWholeImageRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.CreateWholeImageResponse;
 import com.huaweicloud.sdk.ims.v2.model.DeleteImageTagRequest;
 import com.huaweicloud.sdk.ims.v2.model.DeleteImageTagResponse;
+import com.huaweicloud.sdk.ims.v2.model.ExportImageInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.ExportImageInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.ExportImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.ExportImageRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.ExportImageResponse;
@@ -82,6 +90,8 @@ import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageMemberResponse;
 import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickRequest;
 import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickResponse;
 import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsRequest;
@@ -333,6 +343,39 @@ public class ImsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CopyImageInRegionInSafeModeRequest, CopyImageInRegionInSafeModeResponse> copyImageInRegionInSafeMode =
+        genForCopyImageInRegionInSafeMode();
+
+    private static HttpRequestDef<CopyImageInRegionInSafeModeRequest, CopyImageInRegionInSafeModeResponse> genForCopyImageInRegionInSafeMode() {
+        // basic
+        HttpRequestDef.Builder<CopyImageInRegionInSafeModeRequest, CopyImageInRegionInSafeModeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CopyImageInRegionInSafeModeRequest.class,
+                    CopyImageInRegionInSafeModeResponse.class)
+                .withName("CopyImageInRegionInSafeMode")
+                .withUri("/v2.1/cloudimages/{image_id}/copy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyImageInRegionInSafeModeRequest::getImageId,
+                CopyImageInRegionInSafeModeRequest::setImageId));
+        builder.<CopyImageInRegionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CopyImageInRegionRequestBody.class),
+            f -> f.withMarshaller(CopyImageInRegionInSafeModeRequest::getBody,
+                CopyImageInRegionInSafeModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDataImageRequest, CreateDataImageResponse> createDataImage =
         genForCreateDataImage();
 
@@ -356,6 +399,33 @@ public class ImsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDataImageInSafeModeRequest, CreateDataImageInSafeModeResponse> createDataImageInSafeMode =
+        genForCreateDataImageInSafeMode();
+
+    private static HttpRequestDef<CreateDataImageInSafeModeRequest, CreateDataImageInSafeModeResponse> genForCreateDataImageInSafeMode() {
+        // basic
+        HttpRequestDef.Builder<CreateDataImageInSafeModeRequest, CreateDataImageInSafeModeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDataImageInSafeModeRequest.class,
+                    CreateDataImageInSafeModeResponse.class)
+                .withName("CreateDataImageInSafeMode")
+                .withUri("/v2.1/cloudimages/dataimages/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateDataImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDataImageRequestBody.class),
+            f -> f.withMarshaller(CreateDataImageInSafeModeRequest::getBody,
+                CreateDataImageInSafeModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateImageRequest, CreateImageResponse> createImage = genForCreateImage();
 
     private static HttpRequestDef<CreateImageRequest, CreateImageResponse> genForCreateImage() {
@@ -372,6 +442,29 @@ public class ImsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateImageRequestBody.class),
             f -> f.withMarshaller(CreateImageRequest::getBody, CreateImageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateImageInSafeModeRequest, CreateImageInSafeModeResponse> createImageInSafeMode =
+        genForCreateImageInSafeMode();
+
+    private static HttpRequestDef<CreateImageInSafeModeRequest, CreateImageInSafeModeResponse> genForCreateImageInSafeMode() {
+        // basic
+        HttpRequestDef.Builder<CreateImageInSafeModeRequest, CreateImageInSafeModeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateImageInSafeModeRequest.class, CreateImageInSafeModeResponse.class)
+            .withName("CreateImageInSafeMode")
+            .withUri("/v2.1/cloudimages/action")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateImageRequestBody.class),
+            f -> f.withMarshaller(CreateImageInSafeModeRequest::getBody, CreateImageInSafeModeRequest::setBody));
 
         // response
 
@@ -479,6 +572,34 @@ public class ImsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportImageInSafeModeRequest, ExportImageInSafeModeResponse> exportImageInSafeMode =
+        genForExportImageInSafeMode();
+
+    private static HttpRequestDef<ExportImageInSafeModeRequest, ExportImageInSafeModeResponse> genForExportImageInSafeMode() {
+        // basic
+        HttpRequestDef.Builder<ExportImageInSafeModeRequest, ExportImageInSafeModeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExportImageInSafeModeRequest.class, ExportImageInSafeModeResponse.class)
+            .withName("ExportImageInSafeMode")
+            .withUri("/v2.1/cloudimages/{image_id}/file")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportImageInSafeModeRequest::getImageId, ExportImageInSafeModeRequest::setImageId));
+        builder.<ExportImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportImageRequestBody.class),
+            f -> f.withMarshaller(ExportImageInSafeModeRequest::getBody, ExportImageInSafeModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ImportImageQuickRequest, ImportImageQuickResponse> importImageQuick =
         genForImportImageQuick();
 
@@ -496,6 +617,33 @@ public class ImsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuickImportImageByFileRequestBody.class),
             f -> f.withMarshaller(ImportImageQuickRequest::getBody, ImportImageQuickRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportImageQuickInSafeModeRequest, ImportImageQuickInSafeModeResponse> importImageQuickInSafeMode =
+        genForImportImageQuickInSafeMode();
+
+    private static HttpRequestDef<ImportImageQuickInSafeModeRequest, ImportImageQuickInSafeModeResponse> genForImportImageQuickInSafeMode() {
+        // basic
+        HttpRequestDef.Builder<ImportImageQuickInSafeModeRequest, ImportImageQuickInSafeModeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ImportImageQuickInSafeModeRequest.class,
+                    ImportImageQuickInSafeModeResponse.class)
+                .withName("ImportImageQuickInSafeMode")
+                .withUri("/v2.1/cloudimages/quickimport/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<QuickImportImageByFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QuickImportImageByFileRequestBody.class),
+            f -> f.withMarshaller(ImportImageQuickInSafeModeRequest::getBody,
+                ImportImageQuickInSafeModeRequest::setBody));
 
         // response
 

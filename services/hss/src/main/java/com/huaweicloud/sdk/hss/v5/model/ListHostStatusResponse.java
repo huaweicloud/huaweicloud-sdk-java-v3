@@ -30,7 +30,7 @@ public class ListHostStatusResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 总数 **取值范围**: 取值0-2097152 
      * minimum: 0
      * maximum: 2097152
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListHostStatusResponse extends SdkResponse {
     }
 
     /**
-     * 查询弹性云服务器状态列表
+     * **参数解释**: 查询弹性云服务器状态列表 **取值范围**: 不涉及 
      * @return dataList
      */
     public List<Host> getDataList() {

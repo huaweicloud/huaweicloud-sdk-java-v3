@@ -66,7 +66,7 @@ public class ShowAntivirusStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 影响主机数量
+     * **参数解释**: 影响主机数量 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return malwareHostNum

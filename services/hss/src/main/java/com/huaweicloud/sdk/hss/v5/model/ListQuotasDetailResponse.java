@@ -75,7 +75,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 包周期配额数
+     * **参数解释**： 包周期配额数 **取值范围**： 0到10000000 
      * minimum: 0
      * maximum: 10000000
      * @return packetCycleNum
@@ -94,7 +94,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 按需配额数
+     * **参数解释**： 按需配额数 **取值范围**： 0到10000000 
      * minimum: 0
      * maximum: 10000000
      * @return onDemandNum
@@ -113,7 +113,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 已使用配额数
+     * **参数解释**： 已使用配额数 **取值范围**： 0到10000000 
      * minimum: 0
      * maximum: 10000000
      * @return usedNum
@@ -132,7 +132,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 空闲配额数
+     * **参数解释**： 空闲配额数 **取值范围**： 0到10000000 
      * minimum: 0
      * maximum: 10000000
      * @return idleNum
@@ -151,7 +151,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 正常配额数
+     * **参数解释**： 正常配额数 **取值范围**： 0到10000000 
      * minimum: 0
      * maximum: 10000000
      * @return normalNum
@@ -170,7 +170,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 过期配额数
+     * **参数解释**： 过期配额数 **取值范围**： 0到10000000 
      * minimum: 0
      * maximum: 10000000
      * @return expiredNum
@@ -189,7 +189,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间 **取值范围**： 0到9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return createTime
@@ -208,7 +208,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 冻结配额数
+     * **参数解释**： 冻结配额数 **取值范围**： 0到10000000 
      * minimum: 0
      * maximum: 10000000
      * @return freezeNum
@@ -244,7 +244,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 配额统计列表
+     * **参数解释**： 配额统计列表 **取值范围**： 不涉及 
      * @return quotaStatisticsList
      */
     public List<QuotaStatisticsResponseInfo> getQuotaStatisticsList() {
@@ -261,7 +261,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 配额总数
+     * **参数解释**： 配额总数 **取值范围**： 0到10000000 
      * minimum: 0
      * maximum: 10000000
      * @return totalNum
@@ -296,7 +296,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     /**
-     * 配额列表
+     * **参数解释**： 配额列表 **取值范围**： 不涉及 
      * @return dataList
      */
     public List<QuotaResourcesResponseInfo> getDataList() {

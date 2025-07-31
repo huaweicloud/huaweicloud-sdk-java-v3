@@ -61,7 +61,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * Agent ID
+     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -78,7 +78,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * the type of change   - add ：新建   - delete ：删除   - modify ：修改
+     * **参数解释**: 变更类型 **取值范围**: - add：新建 - delete：删除 - modify：修改 
      * @return variationType
      */
     public String getVariationType() {
@@ -95,7 +95,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * host_id
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -112,7 +112,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 软件名称
+     * **参数解释**: 软件名称 **取值范围**: 字符长度1-256位 
      * @return appName
      */
     public String getAppName() {
@@ -129,7 +129,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -146,7 +146,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 服务器ip
+     * **参数解释**: 主机IP **取值范围**: 字符长度1-128位 
      * @return hostIp
      */
     public String getHostIp() {
@@ -163,7 +163,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 版本号
+     * **参数解释**: 版本号 **取值范围**: 字符长度1-128位 
      * @return version
      */
     public String getVersion() {
@@ -180,9 +180,9 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 软件更新时间，单位毫秒
+     * **参数解释**: 软件更新时间，单位毫秒 **取值范围**: 最小值0，最大值10000 
      * minimum: 0
-     * maximum: 4824430336000
+     * maximum: 9223372036854775807
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -199,9 +199,9 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 最近扫描时间，单位毫秒
+     * **参数解释**: 最近扫描时间，单位毫秒 **取值范围**: 最小值0，最大值10000 
      * minimum: 0
-     * maximum: 4824430336000
+     * maximum: 9223372036854775807
      * @return recentScanTime
      */
     public Long getRecentScanTime() {

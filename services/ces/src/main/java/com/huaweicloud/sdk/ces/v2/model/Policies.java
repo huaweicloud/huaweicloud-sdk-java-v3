@@ -301,7 +301,7 @@ public class Policies {
     }
 
     /**
-     * 服务的命名空间，查询各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+     * 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -369,7 +369,7 @@ public class Policies {
     }
 
     /**
-     * 数据聚合方式
+     * 聚合方式。average： 平均值，variance：方差，min：最小值，max：最大值，sum：求和，tp99：99百分位数，tp95：95百分位数，tp90：90百分位数
      * @return filter
      */
     public String getFilter() {
@@ -403,7 +403,7 @@ public class Policies {
     }
 
     /**
-     * 告警阈值(Number.MAX_VALUE)。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。
+     * 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。
      * minimum: 0
      * maximum: 1.7976931348623156E+108
      * @return value

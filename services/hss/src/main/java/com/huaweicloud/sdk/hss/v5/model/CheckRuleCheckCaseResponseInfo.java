@@ -31,7 +31,7 @@ public class CheckRuleCheckCaseResponseInfo {
     }
 
     /**
-     * 检测用例描述
+     * **参数解释**: 检测用例描述 **取值范围**: 不涉及 
      * @return checkDescription
      */
     public String getCheckDescription() {
@@ -48,7 +48,7 @@ public class CheckRuleCheckCaseResponseInfo {
     }
 
     /**
-     * 当前结果
+     * **参数解释**: 当前结果 **取值范围**: 不涉及 
      * @return currentValue
      */
     public String getCurrentValue() {
@@ -65,7 +65,7 @@ public class CheckRuleCheckCaseResponseInfo {
     }
 
     /**
-     * 期待结果
+     * **参数解释**: 期待结果 **取值范围**: 不涉及 
      * @return suggestValue
      */
     public String getSuggestValue() {

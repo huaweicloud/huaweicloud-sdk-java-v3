@@ -169,6 +169,11 @@ public class AssetFileInfo {
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_reason_code")
+
+    private String blockReasonCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
 
     private String reason;
@@ -316,6 +321,23 @@ public class AssetFileInfo {
         this.state = state;
     }
 
+    public AssetFileInfo withBlockReasonCode(String blockReasonCode) {
+        this.blockReasonCode = blockReasonCode;
+        return this;
+    }
+
+    /**
+     * 冻结原因编号。
+     * @return blockReasonCode
+     */
+    public String getBlockReasonCode() {
+        return blockReasonCode;
+    }
+
+    public void setBlockReasonCode(String blockReasonCode) {
+        this.blockReasonCode = blockReasonCode;
+    }
+
     public AssetFileInfo withReason(String reason) {
         this.reason = reason;
         return this;
@@ -373,7 +395,8 @@ public class AssetFileInfo {
             && Objects.equals(this.fileType, that.fileType)
             && Objects.equals(this.assetFileCategory, that.assetFileCategory)
             && Objects.equals(this.downloadUrl, that.downloadUrl) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.reason, that.reason) && Objects.equals(this.fileExtraMeta, that.fileExtraMeta);
+            && Objects.equals(this.blockReasonCode, that.blockReasonCode) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.fileExtraMeta, that.fileExtraMeta);
     }
 
     @Override
@@ -386,6 +409,7 @@ public class AssetFileInfo {
             assetFileCategory,
             downloadUrl,
             state,
+            blockReasonCode,
             reason,
             fileExtraMeta);
     }
@@ -402,6 +426,7 @@ public class AssetFileInfo {
         sb.append("    assetFileCategory: ").append(toIndentedString(assetFileCategory)).append("\n");
         sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    blockReasonCode: ").append(toIndentedString(blockReasonCode)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    fileExtraMeta: ").append(toIndentedString(fileExtraMeta)).append("\n");
         sb.append("}");

@@ -49,7 +49,7 @@ public class VersionItem {
     }
 
     /**
-     * 版本ID（版本号），如v2。
+     * **参数解释：** 版本号。 **取值范围：** v2。
      * @return id
      */
     public String getId() {
@@ -66,7 +66,7 @@ public class VersionItem {
     }
 
     /**
-     * 版本状态，为如下3种： CURRENT：表示该版本为主推版本。 SUPPORTED：表示为老版本，但是现在还继续支持。 DEPRECATED：表示为废弃版本，存在后续删除的可能。
+     * **参数解释：** 版本状态。 **取值范围：** - CURRENT：表示该版本为主推版本。 - SUPPORTED：表示为老版本，但是现在还继续支持。 - DEPRECATED：表示为废弃版本，存在后续删除的可能。
      * @return status
      */
     public String getStatus() {
@@ -99,7 +99,7 @@ public class VersionItem {
     }
 
     /**
-     * API的URL地址。
+     * **参数解释：** API的URL地址。 **取值范围：** 不涉及。
      * @return links
      */
     public List<LinksItem> getLinks() {
@@ -116,7 +116,7 @@ public class VersionItem {
     }
 
     /**
-     * 版本发布时间。
+     * **参数解释：** 版本发布时间。 **取值范围：** 不涉及。
      * @return updated
      */
     public String getUpdated() {
@@ -133,7 +133,7 @@ public class VersionItem {
     }
 
     /**
-     * 支持的最大微版本号。若该版本API不支持微版本，则为空。
+     * **参数解释：** 支持的最大微版本号。 **取值范围：** 若该版本API不支持微版本，则为空。
      * @return version
      */
     public String getVersion() {
@@ -150,7 +150,7 @@ public class VersionItem {
     }
 
     /**
-     * 支持的最小微版本号。若该版本API不支持微版本，则为空。
+     * **参数解释：** 支持的最小微版本号。 **取值范围：** 若该版本API不支持微版本，则为空。
      * @return minVersion
      */
     public String getMinVersion() {

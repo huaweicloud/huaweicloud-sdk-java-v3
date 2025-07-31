@@ -41,7 +41,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * 检查项参数ID
+     * **参数解释**: 检查项参数ID **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 10
      * @return ruleParamId
@@ -60,7 +60,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * 检查项参数描述
+     * **参数解释**: 检查项参数描述 **取值范围**: 不涉及 
      * @return ruleDesc
      */
     public String getRuleDesc() {
@@ -77,7 +77,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * 检查项参数默认值
+     * **参数解释**: 检查项参数默认值 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return defaultValue
@@ -96,7 +96,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * 检查项参数可取最小值
+     * **参数解释**: 检查项参数可取最小值 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return rangeMin
@@ -115,7 +115,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * 检查项参数可取最大值
+     * **参数解释**: 检查项参数可取最大值 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return rangeMax

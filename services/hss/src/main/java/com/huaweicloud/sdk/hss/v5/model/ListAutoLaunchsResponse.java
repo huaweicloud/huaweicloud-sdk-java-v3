@@ -30,9 +30,9 @@ public class ListAutoLaunchsResponse extends SdkResponse {
     }
 
     /**
-     * 自启动项总数
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
-     * maximum: 10000
+     * maximum: 2147483647
      * @return totalNum
      */
     public Integer getTotalNum() {
@@ -65,7 +65,7 @@ public class ListAutoLaunchsResponse extends SdkResponse {
     }
 
     /**
-     * 自启动项列表
+     * **参数解释**： 自启动项列表 **取值范围**： 不涉及 
      * @return dataList
      */
     public List<AutoLauchResponseInfo> getDataList() {

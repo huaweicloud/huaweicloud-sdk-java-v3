@@ -105,7 +105,7 @@ public class BackupVaultInfo {
     }
 
     /**
-     * 总容量，单位GB
+     * 存储库总容量，单位GB
      * minimum: 0
      * maximum: 2097152
      * @return vaultSize
@@ -124,7 +124,7 @@ public class BackupVaultInfo {
     }
 
     /**
-     * 已使用容量，单位MB
+     * 已使用容量，单位MB，指的是已有备份占用的容量，例如绑定了1台主机，已经有两个备份数，两个备份60G,则已使用容量为60G。
      * minimum: 0
      * maximum: 2097152
      * @return vaultUsed
@@ -143,7 +143,7 @@ public class BackupVaultInfo {
     }
 
     /**
-     * 已分配容量，单位GB，指绑定的服务器大小
+     * 已分配容量，单位GB，指绑定的服务器大小，例如绑定了1台主机，主机大小40G，则已分配容量为40G。
      * minimum: 0
      * maximum: 2097152
      * @return vaultAllocated
@@ -162,7 +162,7 @@ public class BackupVaultInfo {
     }
 
     /**
-     * 存储库创建模式，按需：post_paid，包周期：pre_paid
+     * 存储库创建模式：   - 按需：post_paid   - 包周期：pre_paid
      * @return vaultChargingMode
      */
     public String getVaultChargingMode() {
@@ -179,7 +179,7 @@ public class BackupVaultInfo {
     }
 
     /**
-     * 存储库状态。   - available ：可用。   - lock ：被锁定。   - frozen：冻结。   - deleting：删除中。   - error：错误。
+     * 存储库状态。   - available：可用。   - lock：被锁定。   - frozen：冻结。   - deleting：删除中。   - error：错误。
      * @return vaultStatus
      */
     public String getVaultStatus() {
@@ -230,7 +230,7 @@ public class BackupVaultInfo {
     }
 
     /**
-     * 策略是否启用
+     * 备份策略是否启用
      * @return backupPolicyEnabled
      */
     public Boolean getBackupPolicyEnabled() {

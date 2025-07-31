@@ -351,7 +351,7 @@ public class IsolateEventResponseInfo {
     }
 
     /**
-     * 容器实例名称
+     * **参数解释**： 容器实例名称 **取值范围**： 字符长度1-256位 
      * @return containerName
      */
     public String getContainerName() {
@@ -385,7 +385,7 @@ public class IsolateEventResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -402,7 +402,7 @@ public class IsolateEventResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {

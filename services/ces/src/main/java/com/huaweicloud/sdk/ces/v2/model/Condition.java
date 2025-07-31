@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Condition
+ * 匹配条件 
  */
 public class Condition {
 

@@ -101,7 +101,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 主机id
+     * **参数解释**: 主机id **取值范围**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -118,7 +118,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -135,7 +135,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 服务器IP（私有IP），为兼容用户使用，不删除此字段
+     * **参数解释**: 服务器IP（私有IP），为兼容用户使用，不删除此字段 **取值范围**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -152,7 +152,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**: 服务器私有IP **取值范围**: 不涉及 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -169,7 +169,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 服务器公网IP
+     * **参数解释**: 服务器公网IP **取值范围**: 不涉及 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -186,7 +186,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 口令最小长度的设置是否符合要求，符合为true，不符合为false
+     * **参数解释**: 口令最小长度的设置是否符合要求 **取值范围**: - true：符合要求 - false：不符合要求 
      * @return minLength
      */
     public Boolean getMinLength() {
@@ -203,7 +203,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 大写字母的设置是否符合要求，符合为true，不符合为false
+     * **参数解释**: 大写字母的设置是否符合要求 **取值范围**: - true：符合要求 - false：不符合要求 
      * @return uppercaseLetter
      */
     public Boolean getUppercaseLetter() {
@@ -220,7 +220,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 小写字母的设置是否符合要求，符合为true，不符合为false
+     * **参数解释**: 小写字母的设置是否符合要求 **取值范围**: - true：符合要求 - false：不符合要求 
      * @return lowercaseLetter
      */
     public Boolean getLowercaseLetter() {
@@ -237,7 +237,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 数字的设置是否符合要求，符合为true，不符合为false
+     * **参数解释**: 数字的设置是否符合要求，符合为true，不符合为false **取值范围**: - true：符合要求 - false：不符合要求 
      * @return number
      */
     public Boolean getNumber() {
@@ -254,7 +254,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 特殊字符的设置是否符合要求，符合为true，不符合为false
+     * **参数解释**: 特殊字符的设置是否符合要求，符合为true，不符合为false **取值范围**: - true：符合要求 - false：不符合要求 
      * @return specialCharacter
      */
     public Boolean getSpecialCharacter() {
@@ -271,7 +271,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 复杂口令策略中定义的口令最小长度
+     * **参数解释**: 复杂口令策略中定义的口令最小长度 **取值范围**: 8 - 26 
      * @return minLengthNum
      */
     public Integer getMinLengthNum() {
@@ -288,7 +288,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 复杂口令策略中定义的最少包含的大写字母数
+     * **参数解释**: 复杂口令策略中定义的最少包含的大写字母数 **取值范围**: 0 - 10 
      * @return minUppercaseLetter
      */
     public Integer getMinUppercaseLetter() {
@@ -305,7 +305,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 复杂口令策略中定义的最少包含的小写字母数
+     * **参数解释**: 复杂口令策略中定义的最少包含的小写字母数 **取值范围**: 0 - 10 
      * @return minLowercaseLetter
      */
     public Integer getMinLowercaseLetter() {
@@ -322,7 +322,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 复杂口令策略中定义的最少包含的数字数
+     * **参数解释**: 复杂口令策略中定义的最少包含的数字数 **取值范围**: 0 - 10 
      * @return minNumber
      */
     public Integer getMinNumber() {
@@ -339,7 +339,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 复杂口令策略中定义的最少包含的特殊字母数
+     * **参数解释**: 复杂口令策略中定义的最少包含的特殊字母数 **取值范围**: 0 - 10 
      * @return minSpecialCharacter
      */
     public Integer getMinSpecialCharacter() {
@@ -356,7 +356,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 最近扫描时间
+     * **参数解释**: 最近扫描时间 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return updateTime
@@ -375,7 +375,7 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     /**
-     * 修改建议
+     * **参数解释**: 修改建议 **取值范围**: 不涉及 
      * @return suggestion
      */
     public String getSuggestion() {

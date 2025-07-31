@@ -51,6 +51,16 @@ public class ListTtscVocabularyConfigsRequest {
     private String isVocabularyConfigEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_id")
+
+    private String assetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -219,6 +229,40 @@ public class ListTtscVocabularyConfigsRequest {
         this.isVocabularyConfigEnable = isVocabularyConfigEnable;
     }
 
+    public ListTtscVocabularyConfigsRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 分组id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public ListTtscVocabularyConfigsRequest withAssetId(String assetId) {
+        this.assetId = assetId;
+        return this;
+    }
+
+    /**
+     * 资产id
+     * @return assetId
+     */
+    public String getAssetId() {
+        return assetId;
+    }
+
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
+    }
+
     public ListTtscVocabularyConfigsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -322,6 +366,7 @@ public class ListTtscVocabularyConfigsRequest {
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.ttsServiceName, that.ttsServiceName)
             && Objects.equals(this.isVocabularyConfigEnable, that.isVocabularyConfigEnable)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.assetId, that.assetId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.searchKey, that.searchKey);
@@ -337,6 +382,8 @@ public class ListTtscVocabularyConfigsRequest {
             type,
             ttsServiceName,
             isVocabularyConfigEnable,
+            groupId,
+            assetId,
             limit,
             offset,
             startTime,
@@ -356,6 +403,8 @@ public class ListTtscVocabularyConfigsRequest {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    ttsServiceName: ").append(toIndentedString(ttsServiceName)).append("\n");
         sb.append("    isVocabularyConfigEnable: ").append(toIndentedString(isVocabularyConfigEnable)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

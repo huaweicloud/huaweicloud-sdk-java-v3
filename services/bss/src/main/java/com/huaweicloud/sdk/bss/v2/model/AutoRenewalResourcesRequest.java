@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,6 +15,11 @@ public class AutoRenewalResourcesRequest {
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private AutoRenewalResourcesReq body;
 
     public AutoRenewalResourcesRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -32,6 +38,32 @@ public class AutoRenewalResourcesRequest {
         this.resourceId = resourceId;
     }
 
+    public AutoRenewalResourcesRequest withBody(AutoRenewalResourcesReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public AutoRenewalResourcesRequest withBody(Consumer<AutoRenewalResourcesReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new AutoRenewalResourcesReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public AutoRenewalResourcesReq getBody() {
+        return body;
+    }
+
+    public void setBody(AutoRenewalResourcesReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +73,12 @@ public class AutoRenewalResourcesRequest {
             return false;
         }
         AutoRenewalResourcesRequest that = (AutoRenewalResourcesRequest) obj;
-        return Objects.equals(this.resourceId, that.resourceId);
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId);
+        return Objects.hash(resourceId, body);
     }
 
     @Override
@@ -54,6 +86,7 @@ public class AutoRenewalResourcesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class AutoRenewalResourcesRequest {\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

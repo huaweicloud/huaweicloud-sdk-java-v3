@@ -26,7 +26,7 @@ public class AppStatisticResponseInfo {
     }
 
     /**
-     * 软件名称
+     * **参数解释**: 软件名称 **取值范围**: 字符长度1-128位 
      * @return appName
      */
     public String getAppName() {
@@ -43,7 +43,7 @@ public class AppStatisticResponseInfo {
     }
 
     /**
-     * 进程数量
+     * **参数解释**: 进程数量 **取值范围**: 字符长度0-100000位 
      * minimum: 0
      * maximum: 100000
      * @return num

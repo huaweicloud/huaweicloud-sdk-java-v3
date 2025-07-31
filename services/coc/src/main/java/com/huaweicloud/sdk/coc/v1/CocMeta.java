@@ -38,6 +38,9 @@ import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalIssuesRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreatePasswordChangePlanRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreatePasswordChangePlanRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.CreatePasswordChangePlanResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventRequest;
@@ -169,6 +172,9 @@ import com.huaweicloud.sdk.coc.v1.model.OperateExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
 import com.huaweicloud.sdk.coc.v1.model.ReportCustomEventRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.ResetAccountPasswordRequest;
+import com.huaweicloud.sdk.coc.v1.model.ResetAccountPasswordRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.ResetAccountPasswordResponse;
 import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskResponse;
@@ -199,6 +205,9 @@ import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
 import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateAccountPasswordRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateAccountPasswordRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.UpdateAccountPasswordResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateChangeRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateChangeResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentRequest;
@@ -224,6 +233,76 @@ import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class CocMeta {
+
+    public static final HttpRequestDef<CreatePasswordChangePlanRequest, CreatePasswordChangePlanResponse> createPasswordChangePlan =
+        genForCreatePasswordChangePlan();
+
+    private static HttpRequestDef<CreatePasswordChangePlanRequest, CreatePasswordChangePlanResponse> genForCreatePasswordChangePlan() {
+        // basic
+        HttpRequestDef.Builder<CreatePasswordChangePlanRequest, CreatePasswordChangePlanResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreatePasswordChangePlanRequest.class, CreatePasswordChangePlanResponse.class)
+                .withName("CreatePasswordChangePlan")
+                .withUri("/v1/account-mgmt/accounts/password-change-plan")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreatePasswordChangePlanRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePasswordChangePlanRequestBody.class),
+            f -> f.withMarshaller(CreatePasswordChangePlanRequest::getBody, CreatePasswordChangePlanRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetAccountPasswordRequest, ResetAccountPasswordResponse> resetAccountPassword =
+        genForResetAccountPassword();
+
+    private static HttpRequestDef<ResetAccountPasswordRequest, ResetAccountPasswordResponse> genForResetAccountPassword() {
+        // basic
+        HttpRequestDef.Builder<ResetAccountPasswordRequest, ResetAccountPasswordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResetAccountPasswordRequest.class, ResetAccountPasswordResponse.class)
+            .withName("ResetAccountPassword")
+            .withUri("/v1/account-mgmt/accounts/password/reset")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ResetAccountPasswordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetAccountPasswordRequestBody.class),
+            f -> f.withMarshaller(ResetAccountPasswordRequest::getBody, ResetAccountPasswordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAccountPasswordRequest, UpdateAccountPasswordResponse> updateAccountPassword =
+        genForUpdateAccountPassword();
+
+    private static HttpRequestDef<UpdateAccountPasswordRequest, UpdateAccountPasswordResponse> genForUpdateAccountPassword() {
+        // basic
+        HttpRequestDef.Builder<UpdateAccountPasswordRequest, UpdateAccountPasswordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateAccountPasswordRequest.class, UpdateAccountPasswordResponse.class)
+            .withName("UpdateAccountPassword")
+            .withUri("/v1/account-mgmt/accounts/password/update")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UpdateAccountPasswordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAccountPasswordRequestBody.class),
+            f -> f.withMarshaller(UpdateAccountPasswordRequest::getBody, UpdateAccountPasswordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<ClearAlarmRequest, ClearAlarmResponse> clearAlarm = genForClearAlarm();
 

@@ -29,7 +29,7 @@ public class BatchSetZonesStatusRequestBody {
     }
 
     /**
-     * 待设置域名状态，支持DISABLE或ENABLE。
+     * **参数解释：** 待设置域名状态。 **约束限制：** 不涉及。 **取值范围：** - DISABLE：暂停解析 - ENABLE：启用解析  **默认取值：** 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -62,7 +62,7 @@ public class BatchSetZonesStatusRequestBody {
     }
 
     /**
-     * 待设置域名ID列表。 最多支持50个。
+     * **参数解释：** 待设置域名ID列表。 **约束限制：** 最多支持50个。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return zoneIds
      */
     public List<String> getZoneIds() {

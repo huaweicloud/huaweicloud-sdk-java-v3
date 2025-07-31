@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowResourceQuotasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -30,30 +25,13 @@ public class ShowResourceQuotasRequest {
 
     private String chargingMode;
 
-    public ShowResourceQuotasRequest withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * Region ID
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public ShowResourceQuotasRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -70,7 +48,7 @@ public class ShowResourceQuotasRequest {
     }
 
     /**
-     * 主机开通的版本，包含如下7种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise：容器版。
+     * **参数解释**： 主机开通的版本 **约束限制**: 不涉及 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 **默认取值**: 不涉及
      * @return version
      */
     public String getVersion() {
@@ -87,7 +65,7 @@ public class ShowResourceQuotasRequest {
     }
 
     /**
-     * 收费模式，包含如下2种。   - packet_cycle ：包年/包月。   - on_demand ：按需。
+     * **参数解释**： 收费模式 **约束限制**: 不涉及 **取值范围**: - packet_cycle ：包年/包月。 - on_demand ：按需。 **默认取值**: 不涉及
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -107,21 +85,19 @@ public class ShowResourceQuotasRequest {
             return false;
         }
         ShowResourceQuotasRequest that = (ShowResourceQuotasRequest) obj;
-        return Objects.equals(this.region, that.region)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.version, that.version) && Objects.equals(this.chargingMode, that.chargingMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, version, chargingMode);
+        return Objects.hash(enterpriseProjectId, version, chargingMode);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceQuotasRequest {\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");

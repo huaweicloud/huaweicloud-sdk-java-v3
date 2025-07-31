@@ -102,110 +102,10 @@ public class ExtendInfo {
 
     private FilterEnum filter;
 
-    /**
-     * 表示指标聚合周期，1表示原始值，60表示一分钟，300表示5分钟，1200表示20分钟，3600表示1小时，14400表示4小时，86400表示1天
-     */
-    public static final class PeriodEnum {
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final PeriodEnum NUMBER_1 = new PeriodEnum(1);
-
-        /**
-         * Enum NUMBER_60 for value: 60
-         */
-        public static final PeriodEnum NUMBER_60 = new PeriodEnum(60);
-
-        /**
-         * Enum NUMBER_300 for value: 300
-         */
-        public static final PeriodEnum NUMBER_300 = new PeriodEnum(300);
-
-        /**
-         * Enum NUMBER_1200 for value: 1200
-         */
-        public static final PeriodEnum NUMBER_1200 = new PeriodEnum(1200);
-
-        /**
-         * Enum NUMBER_3600 for value: 3600
-         */
-        public static final PeriodEnum NUMBER_3600 = new PeriodEnum(3600);
-
-        /**
-         * Enum NUMBER_14400 for value: 14400
-         */
-        public static final PeriodEnum NUMBER_14400 = new PeriodEnum(14400);
-
-        /**
-         * Enum NUMBER_86400 for value: 86400
-         */
-        public static final PeriodEnum NUMBER_86400 = new PeriodEnum(86400);
-
-        private static final Map<Integer, PeriodEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, PeriodEnum> createStaticFields() {
-            Map<Integer, PeriodEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(60, NUMBER_60);
-            map.put(300, NUMBER_300);
-            map.put(1200, NUMBER_1200);
-            map.put(3600, NUMBER_3600);
-            map.put(14400, NUMBER_14400);
-            map.put(86400, NUMBER_86400);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        PeriodEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PeriodEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
-        }
-
-        public static PeriodEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PeriodEnum) {
-                return this.value.equals(((PeriodEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
-    private PeriodEnum period;
+    private String period;
 
     /**
      * 展示时间，0表示使用自定义时间展示， 5分钟，15分钟，30分钟，1小时，2小时，3小时，12小时，24小时，7天，30天
@@ -557,20 +457,20 @@ public class ExtendInfo {
         this.filter = filter;
     }
 
-    public ExtendInfo withPeriod(PeriodEnum period) {
+    public ExtendInfo withPeriod(String period) {
         this.period = period;
         return this;
     }
 
     /**
-     * 表示指标聚合周期，1表示原始值，60表示一分钟，300表示5分钟，1200表示20分钟，3600表示1小时，14400表示4小时，86400表示1天
+     * '表示指标聚合周期，{1:表示原始值，60:表示一分钟，300:表示5分钟，1200:表示20分钟，3600:表示1小时，14400:表示4小时，86400:表示1天}' 
      * @return period
      */
-    public PeriodEnum getPeriod() {
+    public String getPeriod() {
         return period;
     }
 
-    public void setPeriod(PeriodEnum period) {
+    public void setPeriod(String period) {
         this.period = period;
     }
 

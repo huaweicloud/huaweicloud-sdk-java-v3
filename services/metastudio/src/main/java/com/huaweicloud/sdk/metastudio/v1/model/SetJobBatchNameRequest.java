@@ -12,9 +12,33 @@ import java.util.function.Consumer;
 public class SetJobBatchNameRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+
+    private String xAppUserId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private SetJobBatchNameReq body;
+
+    public SetJobBatchNameRequest withXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
+        return this;
+    }
+
+    /**
+     * 第三方用户ID。不允许输入中文。
+     * @return xAppUserId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+    public String getXAppUserId() {
+        return xAppUserId;
+    }
+
+    public void setXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
+    }
 
     public SetJobBatchNameRequest withBody(SetJobBatchNameReq body) {
         this.body = body;
@@ -51,18 +75,19 @@ public class SetJobBatchNameRequest {
             return false;
         }
         SetJobBatchNameRequest that = (SetJobBatchNameRequest) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(xAppUserId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SetJobBatchNameRequest {\n");
+        sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

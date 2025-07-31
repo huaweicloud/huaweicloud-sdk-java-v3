@@ -109,10 +109,10 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(ListAgentInvocationsRequest.InvocationTargetEnum.class),
             f -> f.withMarshaller(ListAgentInvocationsRequest::getInvocationTarget,
                 ListAgentInvocationsRequest::setInvocationTarget));
-        builder.<Integer>withRequestField("offset",
+        builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListAgentInvocationsRequest::getOffset, ListAgentInvocationsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,

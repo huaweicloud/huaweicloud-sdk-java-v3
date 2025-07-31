@@ -86,7 +86,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * Agent ID
+     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -103,7 +103,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 主机ID
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -120,7 +120,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -137,7 +137,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 服务器ip
+     * **参数解释**: 主机IP **取值范围**: 字符长度1-128位 
      * @return hostIp
      */
     public String getHostIp() {
@@ -171,7 +171,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 是否有登录权限
+     * **参数解释**: 是否允许登录 **约束限制**: 不涉及 **取值范围**: - true：是 - false：否  **默认取值**: 不涉及 
      * @return loginPermission
      */
     public Boolean getLoginPermission() {
@@ -188,7 +188,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 是否有root权限
+     * **参数解释**： 管理员权限 **取值范围**： - true：是 - false：否 
      * @return rootPermission
      */
     public Boolean getRootPermission() {
@@ -205,7 +205,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 用户组
+     * **参数解释**： 用户组 **取值范围**： 字符长度1-128位 
      * @return userGroupName
      */
     public String getUserGroupName() {
@@ -222,7 +222,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 用户目录
+     * **参数解释**： 用户目录 **取值范围**： 字符长度1-256位 
      * @return userHomeDir
      */
     public String getUserHomeDir() {
@@ -239,7 +239,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 用户启动shell
+     * **参数解释**: 用户启动shell **取值范围**: 字符长度1-128位 
      * @return shell
      */
     public String getShell() {
@@ -256,7 +256,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 最近扫描时间
+     * **参数解释**: 最近扫描时间 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return recentScanTime
@@ -275,7 +275,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 首次扫描时间
+     * **参数解释**: 首次扫描时间 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return firstScanTime
@@ -294,7 +294,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 容器id
+     * **参数解释**: 容器ID **取值范围**: 字符长度1-128位 
      * @return containerId
      */
     public String getContainerId() {
@@ -311,7 +311,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * 容器名称
+     * **参数解释**： 容器实例名称 **取值范围**： 字符长度1-256位 
      * @return containerName
      */
     public String getContainerName() {

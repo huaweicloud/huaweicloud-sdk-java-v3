@@ -71,7 +71,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 主机id
+     * **参数解释**: 服务器ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -88,7 +88,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 主机名称
+     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -105,7 +105,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 软件名称
+     * **参数解释**: 软件名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return appName
      */
     public String getAppName() {
@@ -122,7 +122,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 主机ip
+     * **参数解释**: 主机IP **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -139,7 +139,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 软件版本号
+     * **参数解释**: 软件版本号 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return version
      */
     public String getVersion() {
@@ -156,7 +156,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 安装目录
+     * **参数解释**: 安装目录 **约束限制**: 不涉及 **取值范围**: 字符长度0-512位 **默认取值**: 不涉及 
      * @return installDir
      */
     public String getInstallDir() {
@@ -173,7 +173,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -190,9 +190,9 @@ public class ListAppsRequest {
     }
 
     /**
-     * 每页显示数量
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
-     * maximum: 100
+     * maximum: 200
      * @return limit
      */
     public Integer getLimit() {
@@ -209,7 +209,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -228,7 +228,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 类别，默认为host，包含如下： - host：主机 - container：容器
+     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: - host：主机 - container：容器  **默认取值**: 不涉及 
      * @return category
      */
     public String getCategory() {
@@ -245,7 +245,7 @@ public class ListAppsRequest {
     }
 
     /**
-     * 是否模糊匹配，默认false表示精确匹配
+     * **参数解释**: 是否模糊匹配 **约束限制**: boolean类型 **取值范围**: 不涉及 **默认取值**: 不涉及 
      * @return partMatch
      */
     public Boolean getPartMatch() {

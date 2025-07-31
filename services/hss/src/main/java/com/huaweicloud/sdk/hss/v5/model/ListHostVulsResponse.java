@@ -30,7 +30,7 @@ public class ListHostVulsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 服务器上的漏洞总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListHostVulsResponse extends SdkResponse {
     }
 
     /**
-     * 服务器上的漏洞列表
+     * **参数解释**: 服务器上的漏洞列表 **取值范围**: 最小值0，最大值2147483647 
      * @return dataList
      */
     public List<HostVulInfo> getDataList() {

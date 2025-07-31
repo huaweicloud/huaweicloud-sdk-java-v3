@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.bss.v2.model.AdjustCouponQuotasReq;
 import com.huaweicloud.sdk.bss.v2.model.AdjustToIndirectPartnerReq;
 import com.huaweicloud.sdk.bss.v2.model.ApplyEnterpriseRealnameAuthsReq;
 import com.huaweicloud.sdk.bss.v2.model.ApplyIndividualRealnameAuthsReq;
+import com.huaweicloud.sdk.bss.v2.model.AutoRenewalResourcesReq;
 import com.huaweicloud.sdk.bss.v2.model.AutoRenewalResourcesRequest;
 import com.huaweicloud.sdk.bss.v2.model.AutoRenewalResourcesResponse;
 import com.huaweicloud.sdk.bss.v2.model.CancelAutoRenewalResourcesRequest;
@@ -242,6 +243,11 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AutoRenewalResourcesRequest::getResourceId,
                 AutoRenewalResourcesRequest::setResourceId));
+        builder.<AutoRenewalResourcesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AutoRenewalResourcesReq.class),
+            f -> f.withMarshaller(AutoRenewalResourcesRequest::getBody, AutoRenewalResourcesRequest::setBody));
 
         // response
 

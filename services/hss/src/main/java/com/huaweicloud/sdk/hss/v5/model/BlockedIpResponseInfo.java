@@ -137,7 +137,7 @@ public class BlockedIpResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -154,7 +154,7 @@ public class BlockedIpResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {

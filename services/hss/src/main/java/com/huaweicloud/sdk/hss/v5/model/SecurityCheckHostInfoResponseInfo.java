@@ -51,7 +51,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 主机ID
+     * **参数解释**: 主机ID **取值范围**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -68,7 +68,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -85,7 +85,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 服务器公网IP
+     * **参数解释**: 服务器公网IP **取值范围**: 不涉及 
      * @return hostPublicIp
      */
     public String getHostPublicIp() {
@@ -102,7 +102,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 服务器私网IP
+     * **参数解释**: 服务器私网IP **取值范围**: 不涉及 
      * @return hostPrivateIp
      */
     public String getHostPrivateIp() {
@@ -119,7 +119,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 扫描时间(ms)
+     * **参数解释**: 扫描时间(ms) **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return scanTime
@@ -138,7 +138,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 风险项数量
+     * **参数解释**: 风险项数量 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return failedNum
@@ -157,7 +157,7 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     /**
-     * 通过项数量
+     * **参数解释**: 通过项数量 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return passedNum

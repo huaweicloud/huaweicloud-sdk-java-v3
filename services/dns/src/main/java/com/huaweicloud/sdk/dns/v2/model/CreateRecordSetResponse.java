@@ -90,7 +90,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 记录集的ID。
+     * **参数解释：** 记录集的ID。 **取值范围：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -107,7 +107,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 记录集的名称。
+     * **参数解释：** 记录集的名称。 **取值范围：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -124,7 +124,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 记录集的描述信息。
+     * **参数解释：** 记录集的描述信息。 **取值范围：** 长度不超过255个字符。
      * @return description
      */
     public String getDescription() {
@@ -141,7 +141,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 托管该记录的域名ID。
+     * **参数解释：** 托管该记录的域名ID。 **取值范围：** 不涉及。
      * @return zoneId
      */
     public String getZoneId() {
@@ -158,7 +158,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 托管该记录的域名。
+     * **参数解释：** 托管该记录的域名。 **取值范围：** 不涉及。
      * @return zoneName
      */
     public String getZoneName() {
@@ -175,7 +175,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 记录类型。  公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。  内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
+     * **参数解释：** 记录类型。 **取值范围：** - 公网域名的记录类型: A、AAAA、MX、CNAME、TXT、SRV、NS、SOA、CAA。 - 内网域名的记录类型: A、AAAA、MX、CNAME、TXT、PTR、SRV、NS、SOA。
      * @return type
      */
     public String getType() {
@@ -192,7 +192,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。 如果您的服务地址经常更换，建议TTL值设置相对小些，反之，建议设置相对大些。
+     * **参数解释：** 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。 如果您的服务地址经常更换，建议TTL值设置相对小些，反之，建议设置相对大些。 **取值范围：** 1~2147483647。
      * @return ttl
      */
     public Integer getTtl() {
@@ -225,7 +225,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 域名解析后的值。
+     * **参数解释：** 域名解析后的值。 **取值范围：** 不涉及。
      * @return records
      */
     public List<String> getRecords() {
@@ -242,7 +242,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 记录集的创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return createAt
      */
     public String getCreateAt() {
@@ -259,7 +259,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 记录集的最近一次修改时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return updateAt
      */
     public String getUpdateAt() {
@@ -276,7 +276,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 资源状态。
+     * **参数解释：** 记录集状态。 **取值范围：** - PENDING_CREATE：创建中 - DISABLE：暂停
      * @return status
      */
     public String getStatus() {
@@ -293,7 +293,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 标识是否由系统默认生成，系统默认生成的记录集不能删除。
+     * **参数解释：** 标识是否由系统默认生成，系统默认生成的记录集不能删除。 **取值范围：** 不涉及。
      * @return _default
      */
     public Boolean getDefault() {
@@ -310,7 +310,7 @@ public class CreateRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 该记录集所属的项目ID。
+     * **参数解释：** 该记录集所属的项目ID。 **取值范围：** 不涉及。
      * @return projectId
      */
     public String getProjectId() {

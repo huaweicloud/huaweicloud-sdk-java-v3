@@ -1023,54 +1023,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 
 *For more, refer to [Frequently Asked Questions about SLF4J](https://www.slf4j.org/faq.html)*
 
-The version between slf4j supported by the SDK and the corresponding log implementation is shown in the following table:
-
-| slf4j-api | logback-classic | slf4j-log4j12 | slf4j-simple | slf4j-jdk14 |
-|-----------|-----------------|---------------|--------------|-------------|
-| 1.7.x     | 1.2.x           | 1.6.x/1.7.x   | 1.6.x/1.7.x  | 1.6.x/1.7.x |
-
-You can add corresponding library for log implementation according to actual situation of your target project. For
-example, you can add one of the following dependency to your **pom.xml** file:
-
-**logback**
-
-``` xml
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.3.12</version>
-</dependency>
-```
-
-**log4j**
-
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-log4j12</artifactId>
-    <version>1.7.36</version>
-</dependency>
-```
-
-**slf4j simple**
-
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>1.7.36</version>
-</dependency>
-```
-
-**jul**
-
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-jdk14</artifactId>
-    <version>1.7.36</version>
-</dependency>
-```
+Refer to [Declaring project dependencies for logging](https://www.slf4j.org/manual.html#projectDep) to check the version between slf4j supported by the SDK and the corresponding log implementation.
 
 The SDK will print the access log by default, every request will be recorded to the console like:
 

@@ -45,7 +45,7 @@ public class ShowCheckRuleDetailResponse extends SdkResponse {
     }
 
     /**
-     * 当前检查项（检测规则）的描述
+     * **参数解释**: 当前检查项（检测规则）的描述 **取值范围**: 不涉及 
      * @return description
      */
     public String getDescription() {
@@ -62,7 +62,7 @@ public class ShowCheckRuleDetailResponse extends SdkResponse {
     }
 
     /**
-     * 当前检查项（检测规则）的制定依据
+     * **参数解释**: 当前检查项（检测规则）的制定依据 **取值范围**: 不涉及 
      * @return reference
      */
     public String getReference() {
@@ -79,7 +79,7 @@ public class ShowCheckRuleDetailResponse extends SdkResponse {
     }
 
     /**
-     * 当前检查项（检测规则）的审计描述
+     * **参数解释**: 当前检查项（检测规则）的审计描述 **取值范围**: 不涉及 
      * @return audit
      */
     public String getAudit() {
@@ -96,7 +96,7 @@ public class ShowCheckRuleDetailResponse extends SdkResponse {
     }
 
     /**
-     * 当前检查项（检测规则）的修改建议
+     * **参数解释**: 当前检查项（检测规则）的修改建议 **取值范围**: 不涉及 
      * @return remediation
      */
     public String getRemediation() {
@@ -130,7 +130,7 @@ public class ShowCheckRuleDetailResponse extends SdkResponse {
     }
 
     /**
-     * 检测用例信息
+     * **参数解释**: 检测用例信息 **取值范围**: 不涉及 
      * @return checkInfoList
      */
     public List<CheckRuleCheckCaseResponseInfo> getCheckInfoList() {

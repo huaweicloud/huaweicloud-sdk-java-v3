@@ -30,7 +30,7 @@ public class ListWeakPasswordUsersResponse extends SdkResponse {
     }
 
     /**
-     * 弱口令总数
+     * **参数解释**: 弱口令总数 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListWeakPasswordUsersResponse extends SdkResponse {
     }
 
     /**
-     * 弱口令列表
+     * **参数解释**: 弱口令列表 **取值范围**: 不涉及 
      * @return dataList
      */
     public List<WeakPwdListInfoResponseInfo> getDataList() {

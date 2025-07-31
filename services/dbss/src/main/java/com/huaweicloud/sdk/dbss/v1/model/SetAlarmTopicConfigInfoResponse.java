@@ -12,31 +12,9 @@ import java.util.Objects;
 public class SetAlarmTopicConfigInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_use_topic")
-
-    private Boolean isUseTopic;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
-
-    public SetAlarmTopicConfigInfoResponse withIsUseTopic(Boolean isUseTopic) {
-        this.isUseTopic = isUseTopic;
-        return this;
-    }
-
-    /**
-     * 主题使用状态  - true: 已被使用  - false: 未被使用
-     * @return isUseTopic
-     */
-    public Boolean getIsUseTopic() {
-        return isUseTopic;
-    }
-
-    public void setIsUseTopic(Boolean isUseTopic) {
-        this.isUseTopic = isUseTopic;
-    }
 
     public SetAlarmTopicConfigInfoResponse withStatus(String status) {
         this.status = status;
@@ -64,19 +42,18 @@ public class SetAlarmTopicConfigInfoResponse extends SdkResponse {
             return false;
         }
         SetAlarmTopicConfigInfoResponse that = (SetAlarmTopicConfigInfoResponse) obj;
-        return Objects.equals(this.isUseTopic, that.isUseTopic) && Objects.equals(this.status, that.status);
+        return Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isUseTopic, status);
+        return Objects.hash(status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SetAlarmTopicConfigInfoResponse {\n");
-        sb.append("    isUseTopic: ").append(toIndentedString(isUseTopic)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

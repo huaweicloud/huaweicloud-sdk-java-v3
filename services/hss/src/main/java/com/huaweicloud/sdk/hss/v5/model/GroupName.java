@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 服务器组名称
+ * **参数解释**: 服务器组名称 **取值范围**: 字符长度0-256位 
  */
 public class GroupName {
 

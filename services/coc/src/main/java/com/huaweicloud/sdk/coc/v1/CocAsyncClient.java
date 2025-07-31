@@ -24,6 +24,8 @@ import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreatePasswordChangePlanRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreatePasswordChangePlanResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventRequest;
@@ -136,6 +138,8 @@ import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
+import com.huaweicloud.sdk.coc.v1.model.ResetAccountPasswordRequest;
+import com.huaweicloud.sdk.coc.v1.model.ResetAccountPasswordResponse;
 import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.RetryDiagnosisTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowAlarmRequest;
@@ -162,6 +166,8 @@ import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
 import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateAccountPasswordRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateAccountPasswordResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateChangeRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateChangeResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentRequest;
@@ -192,6 +198,96 @@ public class CocAsyncClient {
         ClientBuilder<CocAsyncClient> clientBuilder =
             new ClientBuilder<>(CocAsyncClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 创建改密计划
+     *
+     * 创建改密计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePasswordChangePlanRequest 请求对象
+     * @return CompletableFuture<CreatePasswordChangePlanResponse>
+     */
+    public CompletableFuture<CreatePasswordChangePlanResponse> createPasswordChangePlanAsync(
+        CreatePasswordChangePlanRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createPasswordChangePlan);
+    }
+
+    /**
+     * 创建改密计划
+     *
+     * 创建改密计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePasswordChangePlanRequest 请求对象
+     * @return AsyncInvoker<CreatePasswordChangePlanRequest, CreatePasswordChangePlanResponse>
+     */
+    public AsyncInvoker<CreatePasswordChangePlanRequest, CreatePasswordChangePlanResponse> createPasswordChangePlanAsyncInvoker(
+        CreatePasswordChangePlanRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createPasswordChangePlan, hcClient);
+    }
+
+    /**
+     * 主机密码重置
+     *
+     * 主机密码重置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetAccountPasswordRequest 请求对象
+     * @return CompletableFuture<ResetAccountPasswordResponse>
+     */
+    public CompletableFuture<ResetAccountPasswordResponse> resetAccountPasswordAsync(
+        ResetAccountPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.resetAccountPassword);
+    }
+
+    /**
+     * 主机密码重置
+     *
+     * 主机密码重置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetAccountPasswordRequest 请求对象
+     * @return AsyncInvoker<ResetAccountPasswordRequest, ResetAccountPasswordResponse>
+     */
+    public AsyncInvoker<ResetAccountPasswordRequest, ResetAccountPasswordResponse> resetAccountPasswordAsyncInvoker(
+        ResetAccountPasswordRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.resetAccountPassword, hcClient);
+    }
+
+    /**
+     * 回写改密结果
+     *
+     * 回写改密结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccountPasswordRequest 请求对象
+     * @return CompletableFuture<UpdateAccountPasswordResponse>
+     */
+    public CompletableFuture<UpdateAccountPasswordResponse> updateAccountPasswordAsync(
+        UpdateAccountPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateAccountPassword);
+    }
+
+    /**
+     * 回写改密结果
+     *
+     * 回写改密结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccountPasswordRequest 请求对象
+     * @return AsyncInvoker<UpdateAccountPasswordRequest, UpdateAccountPasswordResponse>
+     */
+    public AsyncInvoker<UpdateAccountPasswordRequest, UpdateAccountPasswordResponse> updateAccountPasswordAsyncInvoker(
+        UpdateAccountPasswordRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateAccountPassword, hcClient);
     }
 
     /**

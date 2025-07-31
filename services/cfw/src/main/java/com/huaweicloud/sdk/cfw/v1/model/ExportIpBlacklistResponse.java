@@ -22,11 +22,6 @@ public class ExportIpBlacklistResponse extends SdkResponse {
     private String contentDisposition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Content-Length")
-
-    private Integer contentLength;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Content-Type")
 
     private String contentType;
@@ -65,23 +60,6 @@ public class ExportIpBlacklistResponse extends SdkResponse {
         this.contentDisposition = contentDisposition;
     }
 
-    public ExportIpBlacklistResponse withContentLength(Integer contentLength) {
-        this.contentLength = contentLength;
-        return this;
-    }
-
-    /**
-     * Get contentLength
-     * @return contentLength
-     */
-    public Integer getContentLength() {
-        return contentLength;
-    }
-
-    public void setContentLength(Integer contentLength) {
-        this.contentLength = contentLength;
-    }
-
     public ExportIpBlacklistResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
@@ -109,13 +87,12 @@ public class ExportIpBlacklistResponse extends SdkResponse {
         }
         ExportIpBlacklistResponse that = (ExportIpBlacklistResponse) obj;
         return Objects.equals(this.body, that.body) && Objects.equals(this.contentDisposition, that.contentDisposition)
-            && Objects.equals(this.contentLength, that.contentLength)
             && Objects.equals(this.contentType, that.contentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body, contentDisposition, contentLength, contentType);
+        return Objects.hash(body, contentDisposition, contentType);
     }
 
     @Override
@@ -124,7 +101,6 @@ public class ExportIpBlacklistResponse extends SdkResponse {
         sb.append("class ExportIpBlacklistResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("    contentDisposition: ").append(toIndentedString(contentDisposition)).append("\n");
-        sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
         sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("}");
         return sb.toString();

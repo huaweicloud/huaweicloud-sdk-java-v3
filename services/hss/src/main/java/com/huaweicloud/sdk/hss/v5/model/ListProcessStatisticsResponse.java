@@ -30,7 +30,7 @@ public class ListProcessStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 进程统计信息总数,
+     * **参数解释** : 进程统计信息总数 **约束限制** : 不涉及 **取值范围** : 最小值0，最大值10000 **默认取值** : 不涉及 
      * minimum: 0
      * maximum: 10000
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListProcessStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 进程统计信息列表
+     * **参数解释**： 进程统计信息列表 **约束限制** : 不涉及 **取值范围**： 不涉及 **默认取值** : 不涉及 
      * @return dataList
      */
     public List<ProcessStatisticResponseInfo> getDataList() {

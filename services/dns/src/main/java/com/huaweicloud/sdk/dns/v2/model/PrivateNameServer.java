@@ -26,7 +26,7 @@ public class PrivateNameServer {
     }
 
     /**
-     * 优先级。如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。
+     * **参数解释：** 优先级。如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。 **取值范围：** 不涉及。
      * @return priority
      */
     public Integer getPriority() {
@@ -43,7 +43,7 @@ public class PrivateNameServer {
     }
 
     /**
-     * DNS服务器地址。
+     * **参数解释：** DNS服务器地址。 **取值范围：** 不涉及。
      * @return address
      */
     public String getAddress() {

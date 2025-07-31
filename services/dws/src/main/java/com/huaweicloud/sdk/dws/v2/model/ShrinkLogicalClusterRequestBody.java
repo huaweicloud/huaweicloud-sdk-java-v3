@@ -16,7 +16,7 @@ public class ShrinkLogicalClusterRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_rings")
 
-    private List<ClusterRingVo> clusterRings = null;
+    private List<ClusterRing> clusterRings = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parallel_jobs")
@@ -28,12 +28,12 @@ public class ShrinkLogicalClusterRequestBody {
 
     private String mode;
 
-    public ShrinkLogicalClusterRequestBody withClusterRings(List<ClusterRingVo> clusterRings) {
+    public ShrinkLogicalClusterRequestBody withClusterRings(List<ClusterRing> clusterRings) {
         this.clusterRings = clusterRings;
         return this;
     }
 
-    public ShrinkLogicalClusterRequestBody addClusterRingsItem(ClusterRingVo clusterRingsItem) {
+    public ShrinkLogicalClusterRequestBody addClusterRingsItem(ClusterRing clusterRingsItem) {
         if (this.clusterRings == null) {
             this.clusterRings = new ArrayList<>();
         }
@@ -41,7 +41,7 @@ public class ShrinkLogicalClusterRequestBody {
         return this;
     }
 
-    public ShrinkLogicalClusterRequestBody withClusterRings(Consumer<List<ClusterRingVo>> clusterRingsSetter) {
+    public ShrinkLogicalClusterRequestBody withClusterRings(Consumer<List<ClusterRing>> clusterRingsSetter) {
         if (this.clusterRings == null) {
             this.clusterRings = new ArrayList<>();
         }
@@ -53,11 +53,11 @@ public class ShrinkLogicalClusterRequestBody {
      * **参数解释**： 缩容主机环信息。  **约束限制**：  不涉及。 **取值范围**：  不涉及。 **默认取值**：  不涉及。
      * @return clusterRings
      */
-    public List<ClusterRingVo> getClusterRings() {
+    public List<ClusterRing> getClusterRings() {
         return clusterRings;
     }
 
-    public void setClusterRings(List<ClusterRingVo> clusterRings) {
+    public void setClusterRings(List<ClusterRing> clusterRings) {
         this.clusterRings = clusterRings;
     }
 

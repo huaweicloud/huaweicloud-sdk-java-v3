@@ -26,6 +26,11 @@ public class ClusterConfigResponseInfo {
     private Integer protectInterruptNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_degradation_node_num")
+
+    private Integer protectDegradationNodeNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unprotect_node_num")
 
     private Integer unprotectNodeNum;
@@ -123,6 +128,25 @@ public class ClusterConfigResponseInfo {
 
     public void setProtectInterruptNodeNum(Integer protectInterruptNodeNum) {
         this.protectInterruptNodeNum = protectInterruptNodeNum;
+    }
+
+    public ClusterConfigResponseInfo withProtectDegradationNodeNum(Integer protectDegradationNodeNum) {
+        this.protectDegradationNodeNum = protectDegradationNodeNum;
+        return this;
+    }
+
+    /**
+     * 集群防护降级节点数量
+     * minimum: 0
+     * maximum: 2000
+     * @return protectDegradationNodeNum
+     */
+    public Integer getProtectDegradationNodeNum() {
+        return protectDegradationNodeNum;
+    }
+
+    public void setProtectDegradationNodeNum(Integer protectDegradationNodeNum) {
+        this.protectDegradationNodeNum = protectDegradationNodeNum;
     }
 
     public ClusterConfigResponseInfo withUnprotectNodeNum(Integer unprotectNodeNum) {
@@ -296,6 +320,7 @@ public class ClusterConfigResponseInfo {
         return Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.protectNodeNum, that.protectNodeNum)
             && Objects.equals(this.protectInterruptNodeNum, that.protectInterruptNodeNum)
+            && Objects.equals(this.protectDegradationNodeNum, that.protectDegradationNodeNum)
             && Objects.equals(this.unprotectNodeNum, that.unprotectNodeNum)
             && Objects.equals(this.nodeTotalNum, that.nodeTotalNum)
             && Objects.equals(this.clusterName, that.clusterName)
@@ -311,6 +336,7 @@ public class ClusterConfigResponseInfo {
         return Objects.hash(clusterId,
             protectNodeNum,
             protectInterruptNodeNum,
+            protectDegradationNodeNum,
             unprotectNodeNum,
             nodeTotalNum,
             clusterName,
@@ -329,6 +355,7 @@ public class ClusterConfigResponseInfo {
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    protectNodeNum: ").append(toIndentedString(protectNodeNum)).append("\n");
         sb.append("    protectInterruptNodeNum: ").append(toIndentedString(protectInterruptNodeNum)).append("\n");
+        sb.append("    protectDegradationNodeNum: ").append(toIndentedString(protectDegradationNodeNum)).append("\n");
         sb.append("    unprotectNodeNum: ").append(toIndentedString(unprotectNodeNum)).append("\n");
         sb.append("    nodeTotalNum: ").append(toIndentedString(nodeTotalNum)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");

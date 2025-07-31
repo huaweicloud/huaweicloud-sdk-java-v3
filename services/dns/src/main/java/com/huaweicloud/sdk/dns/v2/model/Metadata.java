@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 返回满足过滤条件的资源总数。
+ * **参数解释：** 返回满足过滤条件的资源总数。 **取值范围：** 不涉及。
  */
 public class Metadata {
 
@@ -21,7 +21,7 @@ public class Metadata {
     }
 
     /**
-     * 满足查询条件的资源总数，不受分页（即limit、offset参数）影响。
+     * **参数解释：** 满足查询条件的资源总数，不受分页（即limit、offset参数）影响。 **取值范围：** 不涉及。
      * @return totalCount
      */
     public Integer getTotalCount() {

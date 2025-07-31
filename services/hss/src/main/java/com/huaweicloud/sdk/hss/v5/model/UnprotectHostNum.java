@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 未防护服务器数
+ * **参数解释**: 未防护服务器数 **取值范围**: 0到2147483647 
  */
 public class UnprotectHostNum {
 

@@ -29,7 +29,7 @@ public class TagValues {
     }
 
     /**
-     * 键。最大长度36个unicode字符。 key不能为空。(搜索时不对此参数做校验)
+     * 键。最大长度128个unicode字符。 key不能为空。(搜索时不对此参数做校验)
      * @return key
      */
     public String getKey() {
@@ -62,7 +62,7 @@ public class TagValues {
     }
 
     /**
-     * 值列表。每个值最大长度43个unicode字符。&ast;为系统保留字符。如果里面的value是以&ast;开头时，表示按照&ast;后面的值全模糊匹配。如果values缺失，则表示匹配任意值。value之间为或的关系。
+     * 值列表。每个值最大长度255个unicode字符。&ast;为系统保留字符。如果里面的value是以&ast;开头时，表示按照&ast;后面的值全模糊匹配。如果values缺失，则表示匹配任意值。value之间为或的关系。
      * @return values
      */
     public List<String> getValues() {

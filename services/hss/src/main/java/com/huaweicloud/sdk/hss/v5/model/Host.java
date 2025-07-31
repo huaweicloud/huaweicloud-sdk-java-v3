@@ -229,7 +229,7 @@ public class Host {
     private Boolean protectDegradation;
 
     /**
-     * 服务器来源
+     * **参数解释**： 服务器来源 **取值范围**： 包含如下3种。   - ecs ：华为云ecs。   - outside ：非华为云机器。   - workspace ：华为云workspace。
      */
     public static final class HostSourcesEnum {
 
@@ -360,7 +360,7 @@ public class Host {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-128位 
      * @return hostName
      */
     public String getHostName() {
@@ -377,7 +377,7 @@ public class Host {
     }
 
     /**
-     * 服务器ID
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-128位 
      * @return hostId
      */
     public String getHostId() {
@@ -394,7 +394,7 @@ public class Host {
     }
 
     /**
-     * Agent ID
+     * **参数解释**: Agent ID **取值范围**: 字符长度1-128位 
      * @return agentId
      */
     public String getAgentId() {
@@ -411,7 +411,7 @@ public class Host {
     }
 
     /**
-     * 私有IP地址
+     * **参数解释**: 私有IP地址 **取值范围**: 字符长度1-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -428,7 +428,7 @@ public class Host {
     }
 
     /**
-     * 弹性公网IP地址
+     * **参数解释**: 弹性公网IP地址 **取值范围**: 字符长度1-128位 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -445,7 +445,7 @@ public class Host {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释**: 企业项目ID **取值范围**: 字符长度0-256位 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -462,7 +462,7 @@ public class Host {
     }
 
     /**
-     * 所属企业项目名称
+     * **参数解释**: 所属企业项目名称 **取值范围**: 字符长度0-256位 
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {
@@ -479,7 +479,7 @@ public class Host {
     }
 
     /**
-     * 系统名称
+     * **参数解释**: 系统名称 **取值范围**: 字符长度0-128位 
      * @return osName
      */
     public String getOsName() {
@@ -496,7 +496,7 @@ public class Host {
     }
 
     /**
-     * 系统版本
+     * **参数解释**: 系统版本 **取值范围**: 字符长度0-256位 
      * @return osVersion
      */
     public String getOsVersion() {
@@ -513,7 +513,7 @@ public class Host {
     }
 
     /**
-     * 内核版本
+     * **参数解释**: 内核版本 **取值范围**: 字符长度0-256位 
      * @return kernelVersion
      */
     public String getKernelVersion() {
@@ -530,7 +530,7 @@ public class Host {
     }
 
     /**
-     * 服务器状态，包含如下4种。   - ACTIVE ：运行中。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * **参数解释**: 服务器状态 **取值范围**: 包含如下4种。 - ACTIVE ：运行中。 - SHUTOFF ：关机。 - BUILDING ：创建中。 - ERROR ：故障。
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -547,7 +547,7 @@ public class Host {
     }
 
     /**
-     * Agent状态，包含如下5种。   - installed ：已安装。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。
+     * **参数解释**: Agent状态 **取值范围**: 包含如下6种。 - installed ：已安装。 - not_installed ：未安装。 - online ：在线。 - offline ：离线。 - install_failed ：安装失败。 - installing ：安装中。
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -564,7 +564,7 @@ public class Host {
     }
 
     /**
-     * 安装结果，包含如下12种。   - install_succeed ：安装成功。   - network_access_timeout ：网络不通，访问超时。   - invalid_port ：无效端口。   - auth_failed ：认证错误，口令不正确。   - permission_denied ：权限错误，被拒绝。   - no_available_vpc ：没有相同VPC的agent在线虚拟机。   - install_exception ：安装异常。   - invalid_param ：参数错误。   - install_failed ：安装失败。   - package_unavailable ：安装包失效。   - os_type_not_support ：系统类型错误。   - os_arch_not_support ：架构类型错误。
+     * **参数解释**: 安装结果 **取值范围**: 包含如下12种。   - install_succeed ：安装成功。   - network_access_timeout ：网络不通，访问超时。   - invalid_port ：无效端口。   - auth_failed ：认证错误，口令不正确。   - permission_denied ：权限错误，被拒绝。   - no_available_vpc ：没有相同VPC的agent在线虚拟机。   - install_exception ：安装异常。   - invalid_param ：参数错误。   - install_failed ：安装失败。   - package_unavailable ：安装包失效。   - os_type_not_support ：系统类型错误。   - os_arch_not_support ：架构类型错误。
      * @return installResultCode
      */
     public String getInstallResultCode() {
@@ -581,7 +581,7 @@ public class Host {
     }
 
     /**
-     * 主机开通的版本，包含如下7种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise ：容器版。
+     * **参数解释**： 主机开通的版本 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。
      * @return version
      */
     public String getVersion() {
@@ -598,7 +598,7 @@ public class Host {
     }
 
     /**
-     * 防护状态，包含如下2种。 - closed ：未防护。 - opened ：防护中。 - protection_exception ：防护异常。
+     * **参数解释**： 防护状态 **取值范围**： 包含如下3种。 - closed ：未防护。 - opened ：防护中。 - protection_exception ：防护异常。
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -615,7 +615,7 @@ public class Host {
     }
 
     /**
-     * 系统镜像
+     * **参数解释**： 系统镜像 **取值范围**： 字符长度0-128位
      * @return osImage
      */
     public String getOsImage() {
@@ -632,7 +632,7 @@ public class Host {
     }
 
     /**
-     * 操作系统类型，包含如下2种。   - Linux ：Linux。   - Windows ：Windows。
+     * **参数解释**： 操作系统类型 **取值范围**： 包含如下2种。   - Linux ：Linux。   - Windows ：Windows。
      * @return osType
      */
     public String getOsType() {
@@ -649,7 +649,7 @@ public class Host {
     }
 
     /**
-     * 操作系统位数
+     * **参数解释**： 操作系统位数 **取值范围**： 字符长度0-128位
      * @return osBit
      */
     public String getOsBit() {
@@ -666,7 +666,7 @@ public class Host {
     }
 
     /**
-     * 云主机安全检测结果，包含如下4种。 - undetected ：未检测。 - clean ：无风险。 - risk ：有风险。 - scanning ：检测中。
+     * **参数解释**： 云主机安全检测结果 **取值范围**： 包含如下4种。 - undetected ：未检测。 - clean ：无风险。 - risk ：有风险。 - scanning ：检测中。
      * @return detectResult
      */
     public String getDetectResult() {
@@ -683,7 +683,7 @@ public class Host {
     }
 
     /**
-     * 试用版到期时间（-1表示非试用版配额，当值不为-1时为试用版本过期时间）
+     * **参数解释**： 试用版到期时间 **取值范围**： -1到4824695185000（-1表示非试用版配额，当值不为-1时为试用版本过期时间）
      * minimum: 0
      * maximum: 4824695185000
      * @return expireTime
@@ -702,7 +702,7 @@ public class Host {
     }
 
     /**
-     * 收费模式，包含如下2种。   - packet_cycle ：包年/包月。   - on_demand ：按需。
+     * **参数解释**： 收费模式 **取值范围**： 包含如下2种。   - packet_cycle ：包年/包月。   - on_demand ：按需。
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -719,7 +719,7 @@ public class Host {
     }
 
     /**
-     * 主机安全配额ID（UUID）
+     * **参数解释**： 主机安全配额ID（UUID） **取值范围**： 字符长度0-128位
      * @return resourceId
      */
     public String getResourceId() {
@@ -736,7 +736,7 @@ public class Host {
     }
 
     /**
-     * 是否非华为云机器
+     * **参数解释**： 是否非华为云机器 **取值范围**： true或者false
      * @return outsideHost
      */
     public Boolean getOutsideHost() {
@@ -753,7 +753,7 @@ public class Host {
     }
 
     /**
-     * 服务器组ID
+     * **参数解释**： 服务器组ID **取值范围**： 字符长度0-128位
      * @return groupId
      */
     public String getGroupId() {
@@ -770,7 +770,7 @@ public class Host {
     }
 
     /**
-     * 服务器组名称
+     * **参数解释**： 服务器组名称 **取值范围**： 字符长度0-128位
      * @return groupName
      */
     public String getGroupName() {
@@ -787,7 +787,7 @@ public class Host {
     }
 
     /**
-     * 策略组ID
+     * **参数解释**： 策略组ID **取值范围**： 字符长度0-128位
      * @return policyGroupId
      */
     public String getPolicyGroupId() {
@@ -804,7 +804,7 @@ public class Host {
     }
 
     /**
-     * 策略组名称
+     * **参数解释**： 策略组名称 **取值范围**： 字符长度0-128位
      * @return policyGroupName
      */
     public String getPolicyGroupName() {
@@ -821,7 +821,7 @@ public class Host {
     }
 
     /**
-     * 资产风险
+     * **参数解释**： 资产风险 **取值范围**： 0-2097152
      * minimum: 0
      * maximum: 2097152
      * @return asset
@@ -840,7 +840,7 @@ public class Host {
     }
 
     /**
-     * 漏洞风险总数，包含Linux软件漏洞、Windows系统漏洞、Web-CMS漏洞、应用漏洞
+     * **参数解释**： 漏洞风险总数，包含Linux软件漏洞、Windows系统漏洞、Web-CMS漏洞、应用漏洞 **取值范围**： 0-2097152
      * minimum: 0
      * maximum: 2097152
      * @return vulnerability
@@ -859,7 +859,7 @@ public class Host {
     }
 
     /**
-     * 基线风险总数，包含配置风险、弱口令
+     * **参数解释**： 基线风险总数，包含配置风险、弱口令 **取值范围**： 0-2097152
      * minimum: 0
      * maximum: 2097152
      * @return baseline
@@ -878,7 +878,7 @@ public class Host {
     }
 
     /**
-     * 入侵风险总数
+     * **参数解释**： 入侵风险总数 **取值范围**： 0-2097152
      * minimum: 0
      * maximum: 2097152
      * @return intrusion
@@ -897,7 +897,7 @@ public class Host {
     }
 
     /**
-     * 资产重要性，包含如下4种   - important ：重要资产   - common ：一般资产   - test ：测试资产
+     * **参数解释**： 资产重要性 **取值范围**： 包含如下3种   - important ：重要资产   - common ：一般资产   - test ：测试资产
      * @return assetValue
      */
     public String getAssetValue() {
@@ -930,7 +930,7 @@ public class Host {
     }
 
     /**
-     * 标签列表
+     * **参数解释**： 标签列表 **取值范围**： 不涉及
      * @return labels
      */
     public List<String> getLabels() {
@@ -947,7 +947,7 @@ public class Host {
     }
 
     /**
-     * agent安装时间，采用时间戳，默认毫秒，
+     * **参数解释**： agent安装时间，采用时间戳，默认毫秒 **取值范围**： 0-4824695185000
      * minimum: 0
      * maximum: 4824695185000
      * @return agentCreateTime
@@ -966,7 +966,7 @@ public class Host {
     }
 
     /**
-     * agent状态修改时间，采用时间戳，默认毫秒，
+     * **参数解释**： agent状态修改时间，采用时间戳，默认毫秒 **取值范围**： 0-4824695185000
      * minimum: 0
      * maximum: 4824695185000
      * @return agentUpdateTime
@@ -985,7 +985,7 @@ public class Host {
     }
 
     /**
-     * agent版本
+     * **参数解释**： agent版本 **取值范围**： 字符长度0-32位
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -1002,7 +1002,7 @@ public class Host {
     }
 
     /**
-     * 升级状态，包含如下4种。   - not_upgrade ：未升级，也就是默认状态，客户还没有给这台机器下发过升级。   - upgrading ：正在升级中。   - upgrade_failed ：升级失败。   - upgrade_succeed ：升级成功。
+     * **参数解释**： 升级状态 **取值范围**： 包含如下4种。   - not_upgrade ：未升级，也就是默认状态，客户还没有给这台机器下发过升级。   - upgrading ：正在升级中。   - upgrade_failed ：升级失败。   - upgrade_succeed ：升级成功。
      * @return upgradeStatus
      */
     public String getUpgradeStatus() {
@@ -1019,7 +1019,7 @@ public class Host {
     }
 
     /**
-     * 升级失败原因，只有当 upgrade_status 为 upgrade_failed 时才显示，包含如下6种。   - package_unavailable ：升级包解析失败，升级文件有错误。   - network_access_timeout ：下载升级包失败，网络异常。   - agent_offline ：agent离线。   - hostguard_abnormal ：agent工作进程异常。   - insufficient_disk_space ：磁盘空间不足。   - failed_to_replace_file ：替换文件失败。
+     * **参数解释**： 升级失败原因，只有当 upgrade_status 为 upgrade_failed 时才显示 **取值范围**： 包含如下6种。   - package_unavailable ：升级包解析失败，升级文件有错误。   - network_access_timeout ：下载升级包失败，网络异常。   - agent_offline ：agent离线。   - hostguard_abnormal ：agent工作进程异常。   - insufficient_disk_space ：磁盘空间不足。   - failed_to_replace_file ：替换文件失败。
      * @return upgradeResultCode
      */
     public String getUpgradeResultCode() {
@@ -1036,7 +1036,7 @@ public class Host {
     }
 
     /**
-     * 该服务器agent是否可升级
+     * **参数解释**： 该服务器agent是否可升级 **取值范围**： true或者false
      * @return upgradable
      */
     public Boolean getUpgradable() {
@@ -1053,7 +1053,7 @@ public class Host {
     }
 
     /**
-     * 开启防护时间，采用时间戳，默认毫秒，
+     * **参数解释**： 开启防护时间，采用时间戳，默认毫秒 **取值范围**： 0-4824695185000
      * minimum: 0
      * maximum: 4824695185000
      * @return openTime
@@ -1072,7 +1072,7 @@ public class Host {
     }
 
     /**
-     * 防护是否中断
+     * **参数解释**： 防护是否中断 **取值范围**： true或者false
      * @return protectInterrupt
      */
     public Boolean getProtectInterrupt() {
@@ -1089,7 +1089,7 @@ public class Host {
     }
 
     /**
-     * 防护是否降级
+     * **参数解释**： 防护是否降级 **取值范围**： true或者false
      * @return protectDegradation
      */
     public Boolean getProtectDegradation() {
@@ -1106,7 +1106,7 @@ public class Host {
     }
 
     /**
-     * 服务器来源
+     * **参数解释**： 服务器来源 **取值范围**： 包含如下3种。   - ecs ：华为云ecs。   - outside ：非华为云机器。   - workspace ：华为云workspace。
      * @return hostSources
      */
     public HostSourcesEnum getHostSources() {
@@ -1123,7 +1123,7 @@ public class Host {
     }
 
     /**
-     * 防护中断原因
+     * **参数解释**： 防护中断原因 **取值范围**： 字符长度1-32位
      * @return interruptReason
      */
     public String getInterruptReason() {
@@ -1140,7 +1140,7 @@ public class Host {
     }
 
     /**
-     * 防护降级原因
+     * **参数解释**： 防护降级原因 **取值范围**： 字符长度1-32位
      * @return degradationReason
      */
     public String getDegradationReason() {
@@ -1157,7 +1157,7 @@ public class Host {
     }
 
     /**
-     * 使用的密钥对名称
+     * **参数解释**： 使用的密钥对名称 **取值范围**： 字符长度1-32位
      * @return keyName
      */
     public String getKeyName() {
@@ -1174,7 +1174,7 @@ public class Host {
     }
 
     /**
-     * cce购买主机
+     * **参数解释**： cce购买主机 **取值范围**： 字符长度1-32位
      * @return autoOpenVersion
      */
     public String getAutoOpenVersion() {
@@ -1191,7 +1191,7 @@ public class Host {
     }
 
     /**
-     * 安装进度
+     * **参数解释**： 安装进度 **取值范围**： 0-100
      * minimum: 0
      * maximum: 100
      * @return installProgress
@@ -1210,7 +1210,7 @@ public class Host {
     }
 
     /**
-     * vpc id
+     * **参数解释**： vpc id **取值范围**： 字符长度0-128位
      * @return vpcId
      */
     public String getVpcId() {
@@ -1243,7 +1243,7 @@ public class Host {
     }
 
     /**
-     * 后台识别服务器常用登录地编号
+     * **参数解释**： 后台识别服务器常用登录地编号 **取值范围**： 不涉及
      * @return commonLoginAreaCodes
      */
     public List<Integer> getCommonLoginAreaCodes() {
@@ -1260,7 +1260,7 @@ public class Host {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称 **取值范围**： 字符长度1-128位
      * @return clusterName
      */
     public String getClusterName() {
@@ -1277,7 +1277,7 @@ public class Host {
     }
 
     /**
-     * 集群id
+     * **参数解释**： 集群id **取值范围**： 字符长度1-128位
      * @return clusterId
      */
     public String getClusterId() {

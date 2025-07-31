@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建训练任务请求。
@@ -139,6 +142,16 @@ public class CreateTrainingJobReq {
     @JsonProperty(value = "custom_text")
 
     private String customText;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ondemand_resource")
+
+    private Boolean isOndemandResource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_service")
+
+    private List<SupportedServiceEnum> supportedService = null;
 
     public CreateTrainingJobReq withTag(JobTag tag) {
         this.tag = tag;
@@ -327,6 +340,56 @@ public class CreateTrainingJobReq {
         this.customText = customText;
     }
 
+    public CreateTrainingJobReq withIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+        return this;
+    }
+
+    /**
+     * 是否使用按需资源
+     * @return isOndemandResource
+     */
+    public Boolean getIsOndemandResource() {
+        return isOndemandResource;
+    }
+
+    public void setIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+    }
+
+    public CreateTrainingJobReq withSupportedService(List<SupportedServiceEnum> supportedService) {
+        this.supportedService = supportedService;
+        return this;
+    }
+
+    public CreateTrainingJobReq addSupportedServiceItem(SupportedServiceEnum supportedServiceItem) {
+        if (this.supportedService == null) {
+            this.supportedService = new ArrayList<>();
+        }
+        this.supportedService.add(supportedServiceItem);
+        return this;
+    }
+
+    public CreateTrainingJobReq withSupportedService(Consumer<List<SupportedServiceEnum>> supportedServiceSetter) {
+        if (this.supportedService == null) {
+            this.supportedService = new ArrayList<>();
+        }
+        supportedServiceSetter.accept(this.supportedService);
+        return this;
+    }
+
+    /**
+     * 支持的业务类型。： * VIDEO_2D：分身数字人视频制作 * LIVE_2D：分身数字人直播 * CHAT_2D：分身数字人智能交互
+     * @return supportedService
+     */
+    public List<SupportedServiceEnum> getSupportedService() {
+        return supportedService;
+    }
+
+    public void setSupportedService(List<SupportedServiceEnum> supportedService) {
+        this.supportedService = supportedService;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -342,7 +405,9 @@ public class CreateTrainingJobReq {
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
             && Objects.equals(this.batchName, that.batchName)
             && Objects.equals(this.outputLanguage, that.outputLanguage)
-            && Objects.equals(this.customText, that.customText);
+            && Objects.equals(this.customText, that.customText)
+            && Objects.equals(this.isOndemandResource, that.isOndemandResource)
+            && Objects.equals(this.supportedService, that.supportedService);
     }
 
     @Override
@@ -357,7 +422,9 @@ public class CreateTrainingJobReq {
             dhtmsJobId,
             batchName,
             outputLanguage,
-            customText);
+            customText,
+            isOndemandResource,
+            supportedService);
     }
 
     @Override
@@ -375,6 +442,8 @@ public class CreateTrainingJobReq {
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    outputLanguage: ").append(toIndentedString(outputLanguage)).append("\n");
         sb.append("    customText: ").append(toIndentedString(customText)).append("\n");
+        sb.append("    isOndemandResource: ").append(toIndentedString(isOndemandResource)).append("\n");
+        sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

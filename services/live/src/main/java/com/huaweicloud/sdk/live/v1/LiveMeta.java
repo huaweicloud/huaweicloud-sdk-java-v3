@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateScheduleRecordTasksRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateScheduleRecordTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenOnceRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenOnceResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateRequest;
@@ -172,6 +174,7 @@ import com.huaweicloud.sdk.live.v1.model.ShowRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.StreamForbiddenOnceSetting;
 import com.huaweicloud.sdk.live.v1.model.StreamForbiddenSetting;
 import com.huaweicloud.sdk.live.v1.model.StreamTranscodingTemplate;
 import com.huaweicloud.sdk.live.v1.model.UpdateDelayConfigRequest;
@@ -457,6 +460,33 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StreamForbiddenSetting.class),
             f -> f.withMarshaller(CreateStreamForbiddenRequest::getBody, CreateStreamForbiddenRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateStreamForbiddenOnceRequest, CreateStreamForbiddenOnceResponse> createStreamForbiddenOnce =
+        genForCreateStreamForbiddenOnce();
+
+    private static HttpRequestDef<CreateStreamForbiddenOnceRequest, CreateStreamForbiddenOnceResponse> genForCreateStreamForbiddenOnce() {
+        // basic
+        HttpRequestDef.Builder<CreateStreamForbiddenOnceRequest, CreateStreamForbiddenOnceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateStreamForbiddenOnceRequest.class,
+                    CreateStreamForbiddenOnceResponse.class)
+                .withName("CreateStreamForbiddenOnce")
+                .withUri("/v1/{project_id}/stream/block-once")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<StreamForbiddenOnceSetting>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StreamForbiddenOnceSetting.class),
+            f -> f.withMarshaller(CreateStreamForbiddenOnceRequest::getBody,
+                CreateStreamForbiddenOnceRequest::setBody));
 
         // response
 

@@ -78,7 +78,7 @@ public class BatchDeleteRecordSetWithLineResponse extends SdkResponse {
     }
 
     /**
-     * 记录集的列表信息。
+     * **参数解释：** 记录集列表信息。 **取值范围：** 不涉及。
      * @return recordsets
      */
     public List<QueryRecordSetWithLineResp> getRecordsets() {

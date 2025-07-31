@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 查询服务的命名空间，各服务命名空间请参考“[服务维度名称](ces_03_0059.xml)”
+ * 查询服务的命名空间，各服务命名空间请参考“[服务命名名称](ces_03_0059.xml)”
  */
 public class NamespaceAllowedEmpty {
 

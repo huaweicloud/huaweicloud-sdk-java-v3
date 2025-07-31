@@ -80,7 +80,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 事件白名单SHA256
+     * **参数解释**: 事件白名单SHA256 **约束限制**: 不涉及 **取值范围**: 字符长度0-512位 **默认取值**: 不涉及
      * @return hash
      */
     public String getHash() {
@@ -97,7 +97,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 描述信息
+     * **参数解释**: 描述信息。 **约束限制**: 不涉及 **取值范围**: 字符长度0-64 **默认取值**: 不涉及
      * @return description
      */
     public String getDescription() {
@@ -114,7 +114,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 是否删除告警白名单规则(仅删除的白名单是规则类型时使用)
+     * **参数解释**: 是否删除告警白名单规则(仅删除的白名单是规则类型时使用) **约束限制**: 不涉及 **取值范围**: - true：删除告警白名单规则 - false: 不删除告警白名单规则 **默认取值**: 不涉及
      * @return deleteWhiteRule
      */
     public Boolean getDeleteWhiteRule() {
@@ -131,7 +131,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 加白字段，包含如下: - \"file_path\" # 文件路径 - \"process_path\" # 进程路径 - \"login_ip\" # 登录ip - \"reg_key\" #注册表key - \"process_cmdline\" # 进程命令行 - \"username\" # 用户名
+     * **参数解释**: 加白字段 **约束限制**: 不涉及 **取值范围**: - \"file_path\"：文件路径 - \"process_path\"：进程路径 - \"login_ip\"：登录ip - \"reg_key\"：注册表key - \"process_cmdline\"： 进程命令行 - \"username\"： 用户名 **默认取值**: 不涉及
      * @return whiteField
      */
     public String getWhiteField() {
@@ -148,7 +148,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 通配符，包含如下: - \"equal\" # 相等 - \"not_equal\" #不相等 - \"contain\" # 包含 - \"not_contain\" # 不包含
+     * **参数解释**: 通配符 **约束限制**: 不涉及 **取值范围**:   - \"equal\"： 相等   - \"not_equal\"：不相等   - \"contain\"： 包含   - \"not_contain\"： 不包含 **默认取值**: 不涉及
      * @return judgeType
      */
     public String getJudgeType() {
@@ -165,7 +165,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 加白字段值
+     * **参数解释**: 加白字段值 **约束限制**: 不涉及 **取值范围**: 字符长度0-512位 **默认取值**: 不涉及
      * @return fieldValue
      */
     public String getFieldValue() {
@@ -182,7 +182,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 文件哈希
+     * **参数解释**: 文件哈希 **约束限制**: 不涉及 **取值范围**: 字符长度0-512位 **默认取值**: 不涉及
      * @return fileHash
      */
     public String getFileHash() {
@@ -199,7 +199,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 文件路径
+     * **参数解释**: 文件路径 **约束限制**: 不涉及 **取值范围**: 字符长度0-512位 **默认取值**: 不涉及
      * @return filePath
      */
     public String getFilePath() {

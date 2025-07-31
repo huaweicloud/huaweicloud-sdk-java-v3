@@ -26,7 +26,7 @@ public class ProcessStatisticResponseInfo {
     }
 
     /**
-     * 进程的可执行文件路径
+     * **参数解释** : 进程的可执行文件路径 **约束限制** : 不涉及 **取值范围** : 字符长度1-256位 **默认取值** : 不涉及 
      * @return path
      */
     public String getPath() {
@@ -43,7 +43,7 @@ public class ProcessStatisticResponseInfo {
     }
 
     /**
-     * 进程数量
+     * **参数解释** : 进程数量 **约束限制** : 不涉及 **取值范围** : 最小值0，最大值10000 **默认取值** : 不涉及 
      * minimum: 0
      * maximum: 100000
      * @return num

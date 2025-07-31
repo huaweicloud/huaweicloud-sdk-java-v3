@@ -38,6 +38,11 @@ public class PutAlarmNotificationReq {
 
     private String notificationEndTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_timezone")
+
+    private String effectiveTimezone;
+
     public PutAlarmNotificationReq withNotificationEnabled(Boolean notificationEnabled) {
         this.notificationEnabled = notificationEnabled;
         return this;
@@ -155,6 +160,23 @@ public class PutAlarmNotificationReq {
         this.notificationEndTime = notificationEndTime;
     }
 
+    public PutAlarmNotificationReq withEffectiveTimezone(String effectiveTimezone) {
+        this.effectiveTimezone = effectiveTimezone;
+        return this;
+    }
+
+    /**
+     * 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"
+     * @return effectiveTimezone
+     */
+    public String getEffectiveTimezone() {
+        return effectiveTimezone;
+    }
+
+    public void setEffectiveTimezone(String effectiveTimezone) {
+        this.effectiveTimezone = effectiveTimezone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -168,13 +190,18 @@ public class PutAlarmNotificationReq {
             && Objects.equals(this.alarmNotifications, that.alarmNotifications)
             && Objects.equals(this.okNotifications, that.okNotifications)
             && Objects.equals(this.notificationBeginTime, that.notificationBeginTime)
-            && Objects.equals(this.notificationEndTime, that.notificationEndTime);
+            && Objects.equals(this.notificationEndTime, that.notificationEndTime)
+            && Objects.equals(this.effectiveTimezone, that.effectiveTimezone);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(notificationEnabled, alarmNotifications, okNotifications, notificationBeginTime, notificationEndTime);
+        return Objects.hash(notificationEnabled,
+            alarmNotifications,
+            okNotifications,
+            notificationBeginTime,
+            notificationEndTime,
+            effectiveTimezone);
     }
 
     @Override
@@ -186,6 +213,7 @@ public class PutAlarmNotificationReq {
         sb.append("    okNotifications: ").append(toIndentedString(okNotifications)).append("\n");
         sb.append("    notificationBeginTime: ").append(toIndentedString(notificationBeginTime)).append("\n");
         sb.append("    notificationEndTime: ").append(toIndentedString(notificationEndTime)).append("\n");
+        sb.append("    effectiveTimezone: ").append(toIndentedString(effectiveTimezone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

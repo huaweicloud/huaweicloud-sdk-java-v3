@@ -26,7 +26,7 @@ public class HostVulInfoDisabledOperateTypes {
     }
 
     /**
-     * 操作类型 - ignore : 忽略 - not_ignore : 取消忽略 - immediate_repair : 修复 - manual_repair: 人工修复 - verify : 验证 - add_to_whitelist : 加入白名单
+     * **参数解释**: 操作类型 **取值范围**: - ignore           : 忽略 - not_ignore       : 取消忽略 - immediate_repair : 修复 - manual_repair    : 人工修复 - verify           : 验证 - add_to_whitelist : 加入白名单 
      * @return operateType
      */
     public String getOperateType() {
@@ -43,7 +43,7 @@ public class HostVulInfoDisabledOperateTypes {
     }
 
     /**
-     * 不可进行操作的原因
+     * **参数解释**: 不可进行操作的原因 **取值范围**: 字符范围0-512位 
      * @return reason
      */
     public String getReason() {

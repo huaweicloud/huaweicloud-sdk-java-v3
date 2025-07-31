@@ -66,7 +66,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * HSS的Agent ID
+     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -83,7 +83,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 主机id
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -100,7 +100,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -117,7 +117,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 服务器ip
+     * **参数解释**: 主机IP **取值范围**: 字符长度1-128位 
      * @return hostIp
      */
     public String getHostIp() {
@@ -134,7 +134,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 软件名称
+     * **参数解释**: 软件名称 **取值范围**: 字符长度1-256位 
      * @return appName
      */
     public String getAppName() {
@@ -151,7 +151,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 版本号
+     * **参数解释**: 版本号 **取值范围**: 字符长度1-128位 
      * @return version
      */
     public String getVersion() {
@@ -168,7 +168,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 更新时间，最近一次更新的时间，用毫秒表示
+     * **参数解释**: 更新时间，最近一次更新的时间，用毫秒表示 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 2147483647
      * @return updateTime
@@ -187,7 +187,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 最近扫描时间，用毫秒表示
+     * **参数解释**: 最近扫描时间，用毫秒表示 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 2147483647
      * @return recentScanTime
@@ -206,7 +206,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 容器id
+     * **参数解释**: 容器ID **取值范围**: 字符长度1-128位 
      * @return containerId
      */
     public String getContainerId() {
@@ -223,7 +223,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * 容器名称
+     * **参数解释**： 容器实例名称 **取值范围**： 字符长度1-256位 
      * @return containerName
      */
     public String getContainerName() {

@@ -85,6 +85,11 @@ public class ListVoiceTrainingJobRequest {
 
     private String sortDir;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ondemand_resource")
+
+    private Boolean isOndemandResource;
+
     public ListVoiceTrainingJobRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -346,6 +351,23 @@ public class ListVoiceTrainingJobRequest {
         this.sortDir = sortDir;
     }
 
+    public ListVoiceTrainingJobRequest withIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+        return this;
+    }
+
+    /**
+     * 是否是按需任务
+     * @return isOndemandResource
+     */
+    public Boolean getIsOndemandResource() {
+        return isOndemandResource;
+    }
+
+    public void setIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -362,7 +384,8 @@ public class ListVoiceTrainingJobRequest {
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.voiceName, that.voiceName)
             && Objects.equals(this.tag, that.tag) && Objects.equals(this.jobType, that.jobType)
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir);
+            && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.isOndemandResource, that.isOndemandResource);
     }
 
     @Override
@@ -381,7 +404,8 @@ public class ListVoiceTrainingJobRequest {
             jobType,
             batchName,
             sortKey,
-            sortDir);
+            sortDir,
+            isOndemandResource);
     }
 
     @Override
@@ -403,6 +427,7 @@ public class ListVoiceTrainingJobRequest {
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
+        sb.append("    isOndemandResource: ").append(toIndentedString(isOndemandResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

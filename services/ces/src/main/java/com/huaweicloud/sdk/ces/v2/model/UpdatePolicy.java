@@ -19,7 +19,7 @@ public class UpdatePolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_info")
 
-    private ExtraInfo extraInfo;
+    private MetricExtraInfo extraInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
@@ -98,14 +98,14 @@ public class UpdatePolicy {
         this.metricName = metricName;
     }
 
-    public UpdatePolicy withExtraInfo(ExtraInfo extraInfo) {
+    public UpdatePolicy withExtraInfo(MetricExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
         return this;
     }
 
-    public UpdatePolicy withExtraInfo(Consumer<ExtraInfo> extraInfoSetter) {
+    public UpdatePolicy withExtraInfo(Consumer<MetricExtraInfo> extraInfoSetter) {
         if (this.extraInfo == null) {
-            this.extraInfo = new ExtraInfo();
+            this.extraInfo = new MetricExtraInfo();
             extraInfoSetter.accept(this.extraInfo);
         }
 
@@ -116,11 +116,11 @@ public class UpdatePolicy {
      * Get extraInfo
      * @return extraInfo
      */
-    public ExtraInfo getExtraInfo() {
+    public MetricExtraInfo getExtraInfo() {
         return extraInfo;
     }
 
-    public void setExtraInfo(ExtraInfo extraInfo) {
+    public void setExtraInfo(MetricExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
     }
 
@@ -149,7 +149,7 @@ public class UpdatePolicy {
     }
 
     /**
-     * 聚合方式, 支持的值为(average|min|max|sum)
+     * 聚合方式。average： 平均值，variance：方差，min：最小值，max：最大值，sum：求和，tp99：99百分位数，tp95：95百分位数，tp90：90百分位数
      * @return filter
      */
     public String getFilter() {
@@ -183,8 +183,8 @@ public class UpdatePolicy {
     }
 
     /**
-     * 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。 [具体阈值取值请参见附录中各服务监控指标中取值范围，如[支持监控的服务列表](ces_03_0059.xml)中ECS的CPU使用率cpu_util取值范围可配置80。](tag: dt,g42,dt_test,hk_g42,hk_sbc,hws,hws_hk,ocb,sbc,tm) 
-     * minimum: 0
+     * 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。 具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。 [具体阈值取值请参见附录中各服务监控指标中取值范围，如[支持监控的服务列表](ces_03_0059.xml)中ECS的CPU使用率cpu_util取值范围可配置80。] 
+     * minimum: -1.7976931348623156E+108
      * maximum: 1.7976931348623156E+108
      * @return value
      */
@@ -245,7 +245,7 @@ public class UpdatePolicy {
     }
 
     /**
-     * 告警策略类型，默认为空
+     * 告警策略类型，已废弃，不推荐使用。
      * @return type
      */
     public String getType() {
@@ -319,7 +319,7 @@ public class UpdatePolicy {
     }
 
     /**
-     * 服务的命名空间，查询各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+     * 产品层级规则增加namespace（服务命名空间）和dimension_name（服务维度名称）指明生效策略归属。各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -336,7 +336,7 @@ public class UpdatePolicy {
     }
 
     /**
-     * 指标维度名称。各服务资源的指标维度名称可查看：“[指标维度名称](ces_03_0059.xml)”。 约束与限制：    资源层级为子维度的告警规则，修改告警策略时，指标维度名必须与告警规则监控资源的维度保持一致。    资源层级为云产品的告警规则，修改告警策略时，指标维度名中首层维度必须与告警规则监控资源的维度保持一致。 举例：    ECS服务的资源层级为子维度、维度为云服务器的告警规则，需要设置维度名为：instance_id；    ECS服务的资源层级为云产品的告警规则时，维度名可以为：instance_id,disk
+     * 产品层级规则增加namespace（服务命名空间）和dimension_name（服务维度名称）指明生效策略归属。目前最大支持4个维度，各服务资源的指标维度名称可查看：“[服务维度名称](ces_03_0059.xml)”。 举例：单维度场景：instance_id；多维度场景：instance_id,disk
      * @return dimensionName
      */
     public String getDimensionName() {

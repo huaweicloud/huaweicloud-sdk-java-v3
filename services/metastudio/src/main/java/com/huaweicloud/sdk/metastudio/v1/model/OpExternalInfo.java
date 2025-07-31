@@ -18,6 +18,11 @@ public class OpExternalInfo {
 
     private List<String> reviewIdList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "algorithm_failure_reason")
+
+    private String algorithmFailureReason;
+
     public OpExternalInfo withReviewIdList(List<String> reviewIdList) {
         this.reviewIdList = reviewIdList;
         return this;
@@ -51,6 +56,23 @@ public class OpExternalInfo {
         this.reviewIdList = reviewIdList;
     }
 
+    public OpExternalInfo withAlgorithmFailureReason(String algorithmFailureReason) {
+        this.algorithmFailureReason = algorithmFailureReason;
+        return this;
+    }
+
+    /**
+     * 算法侧失败原因
+     * @return algorithmFailureReason
+     */
+    public String getAlgorithmFailureReason() {
+        return algorithmFailureReason;
+    }
+
+    public void setAlgorithmFailureReason(String algorithmFailureReason) {
+        this.algorithmFailureReason = algorithmFailureReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +82,13 @@ public class OpExternalInfo {
             return false;
         }
         OpExternalInfo that = (OpExternalInfo) obj;
-        return Objects.equals(this.reviewIdList, that.reviewIdList);
+        return Objects.equals(this.reviewIdList, that.reviewIdList)
+            && Objects.equals(this.algorithmFailureReason, that.algorithmFailureReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(reviewIdList);
+        return Objects.hash(reviewIdList, algorithmFailureReason);
     }
 
     @Override
@@ -73,6 +96,7 @@ public class OpExternalInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class OpExternalInfo {\n");
         sb.append("    reviewIdList: ").append(toIndentedString(reviewIdList)).append("\n");
+        sb.append("    algorithmFailureReason: ").append(toIndentedString(algorithmFailureReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

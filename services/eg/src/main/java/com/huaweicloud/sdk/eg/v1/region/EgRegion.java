@@ -33,6 +33,8 @@ public class EgRegion {
 
     public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://eg.na-mexico-1.myhuaweicloud.com");
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://eg.eu-west-101.myhuaweicloud.eu");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EG");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -48,6 +50,7 @@ public class EgRegion {
         map.put("cn-north-11", CN_NORTH_11);
         map.put("cn-north-9", CN_NORTH_9);
         map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

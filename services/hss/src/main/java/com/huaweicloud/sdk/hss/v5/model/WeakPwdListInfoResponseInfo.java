@@ -54,7 +54,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 主机ID
+     * **参数解释**: 主机ID **取值范围**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -71,7 +71,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -88,7 +88,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 服务器IP（私有IP），为兼容用户使用，不删除此字段
+     * **参数解释**: 服务器IP（私有IP），为兼容用户使用，不删除此字段 **取值范围**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -105,7 +105,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**: 服务器私有IP **取值范围**: 不涉及 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -122,7 +122,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 服务器公网IP
+     * **参数解释**: 服务器公网IP **取值范围**: 不涉及 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -139,7 +139,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 最近扫描时间，时间戳单位：毫秒
+     * **参数解释**: 最近扫描时间，时间戳单位：毫秒 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return updateTime
@@ -175,7 +175,7 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     /**
-     * 弱口令账号列表
+     * **参数解释**: 弱口令账号列表 **取值范围**: 不涉及 
      * @return weakPwdAccounts
      */
     public List<WeakPwdAccountInfoResponseInfo> getWeakPwdAccounts() {

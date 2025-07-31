@@ -34,7 +34,7 @@ public class ChangeHostsGroupRequestInfo {
     }
 
     /**
-     * 服务器组名称
+     * **参数解释**: 服务器组名称 **取值范围**: 字符长度0-256位 
      * @return groupName
      */
     public String getGroupName() {
@@ -51,7 +51,7 @@ public class ChangeHostsGroupRequestInfo {
     }
 
     /**
-     * 服务器组ID
+     * **参数解释**: 服务器组ID **取值范围**: 字符长度0-64位 
      * @return groupId
      */
     public String getGroupId() {
@@ -84,7 +84,7 @@ public class ChangeHostsGroupRequestInfo {
     }
 
     /**
-     * 主机id列表
+     * **参数解释**: 主机id列表 **取值范围**: 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {

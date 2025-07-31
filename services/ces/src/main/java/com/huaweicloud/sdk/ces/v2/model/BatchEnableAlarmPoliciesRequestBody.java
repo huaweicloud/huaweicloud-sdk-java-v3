@@ -62,7 +62,7 @@ public class BatchEnableAlarmPoliciesRequestBody {
     }
 
     /**
-     * 是否启用告警策略。true:开启，false:关闭。
+     * 是否启用告警策略。true:开启，false：关闭。
      * @return enabled
      */
     public Boolean getEnabled() {

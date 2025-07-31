@@ -48,8 +48,6 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListInvoicesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListInvoicesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListMeasureUnitsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListMeasureUnitsResponse;
-import com.huaweicloud.sdk.bssintl.v2.model.ListMonthlyExpendituresRequest;
-import com.huaweicloud.sdk.bssintl.v2.model.ListMonthlyExpendituresResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListOnDemandResourceRatingsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListOnDemandResourceRatingsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListOrderDiscountsRequest;
@@ -129,7 +127,7 @@ public class BssintlAsyncClient {
     /**
      * 设置包年/包月资源自动续费
      *
-     * 功能描述：客户可以设置包年/包月资源到期后转为按需资源计费
+     * 功能描述：为防止资源到期被删除，客户可为长期使用的包年/包月资源开通自动续费。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -144,7 +142,7 @@ public class BssintlAsyncClient {
     /**
      * 设置包年/包月资源自动续费
      *
-     * 功能描述：客户可以设置包年/包月资源到期后转为按需资源计费
+     * 功能描述：为防止资源到期被删除，客户可为长期使用的包年/包月资源开通自动续费。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -689,9 +687,9 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 查询资源内使用量
+     * 查询资源包使用量
      *
-     * 功能描述：客户在自建平台查询客户自己的资源包列表
+     * 功能描述：客户在自建平台根据资源项维度查询资源包使用量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -704,9 +702,9 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 查询资源内使用量
+     * 查询资源包使用量
      *
-     * 功能描述：客户在自建平台查询客户自己的资源包列表
+     * 功能描述：客户在自建平台根据资源项维度查询资源包使用量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -812,9 +810,9 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 查询使用量单位列表
+     * 查询度量单位列表
      *
-     * 功能描述：伙伴在伙伴销售平台上查询资源使用量的度量单位及名称，度量单位类型等。
+     * 功能描述：查询资源使用量，包年包月资源的时长及金额的度量单位及名称，度量单位类型等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -826,9 +824,9 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 查询使用量单位列表
+     * 查询度量单位列表
      *
-     * 功能描述：伙伴在伙伴销售平台上查询资源使用量的度量单位及名称，度量单位类型等。
+     * 功能描述：查询资源使用量，包年包月资源的时长及金额的度量单位及名称，度量单位类型等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -838,38 +836,6 @@ public class BssintlAsyncClient {
     public AsyncInvoker<ListMeasureUnitsRequest, ListMeasureUnitsResponse> listMeasureUnitsAsyncInvoker(
         ListMeasureUnitsRequest request) {
         return new AsyncInvoker<>(request, BssintlMeta.listMeasureUnits, hcClient);
-    }
-
-    /**
-     * 查询消费汇总(客户)
-     *
-     * 功能描述：客户可以查询自身的消费汇总单的功能，消费按月汇总。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListMonthlyExpendituresRequest 请求对象
-     * @return CompletableFuture<ListMonthlyExpendituresResponse>
-     */
-    @Deprecated
-    public CompletableFuture<ListMonthlyExpendituresResponse> listMonthlyExpendituresAsync(
-        ListMonthlyExpendituresRequest request) {
-        return hcClient.asyncInvokeHttp(request, BssintlMeta.listMonthlyExpenditures);
-    }
-
-    /**
-     * 查询消费汇总(客户)
-     *
-     * 功能描述：客户可以查询自身的消费汇总单的功能，消费按月汇总。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListMonthlyExpendituresRequest 请求对象
-     * @return AsyncInvoker<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse>
-     */
-    @Deprecated
-    public AsyncInvoker<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> listMonthlyExpendituresAsyncInvoker(
-        ListMonthlyExpendituresRequest request) {
-        return new AsyncInvoker<>(request, BssintlMeta.listMonthlyExpenditures, hcClient);
     }
 
     /**

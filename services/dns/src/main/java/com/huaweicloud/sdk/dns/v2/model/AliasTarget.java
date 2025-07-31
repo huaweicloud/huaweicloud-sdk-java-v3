@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 别名记录。
+ * **参数解释：** 别名记录。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
  */
 public class AliasTarget {
 
@@ -26,7 +26,7 @@ public class AliasTarget {
     }
 
     /**
-     * 资源服务类型，支持别名记录的服务。  取值范围： cloudsite：企业门户 waf：Web应用防火墙
+     * **参数解释：** 资源服务类型，支持别名记录的服务。 **约束限制：** 不涉及。 **取值范围：** - cloudsite：企业门户 - waf：Web应用防火墙  **默认取值：** 不涉及。
      * @return resourceType
      */
     public String getResourceType() {
@@ -43,7 +43,7 @@ public class AliasTarget {
     }
 
     /**
-     * 对应服务下的域名，由各服务提供。
+     * **参数解释：** 对应服务下的域名，由各服务提供。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return resourceDomainName
      */
     public String getResourceDomainName() {

@@ -84,6 +84,11 @@ public class ListAlarmResponseAlarms {
     private String notificationEndTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_timezone")
+
+    private String effectiveTimezone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -230,7 +235,7 @@ public class ListAlarmResponseAlarms {
     }
 
     /**
-     * 查询服务的命名空间，各服务命名空间请参考“[服务维度名称](ces_03_0059.xml)”
+     * 查询服务的命名空间，各服务命名空间请参考“[服务命名名称](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -458,6 +463,23 @@ public class ListAlarmResponseAlarms {
         this.notificationEndTime = notificationEndTime;
     }
 
+    public ListAlarmResponseAlarms withEffectiveTimezone(String effectiveTimezone) {
+        this.effectiveTimezone = effectiveTimezone;
+        return this;
+    }
+
+    /**
+     * 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"
+     * @return effectiveTimezone
+     */
+    public String getEffectiveTimezone() {
+        return effectiveTimezone;
+    }
+
+    public void setEffectiveTimezone(String effectiveTimezone) {
+        this.effectiveTimezone = effectiveTimezone;
+    }
+
     public ListAlarmResponseAlarms withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -544,6 +566,7 @@ public class ListAlarmResponseAlarms {
             && Objects.equals(this.okNotifications, that.okNotifications)
             && Objects.equals(this.notificationBeginTime, that.notificationBeginTime)
             && Objects.equals(this.notificationEndTime, that.notificationEndTime)
+            && Objects.equals(this.effectiveTimezone, that.effectiveTimezone)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.alarmTemplateId, that.alarmTemplateId)
             && Objects.equals(this.productName, that.productName)
@@ -565,6 +588,7 @@ public class ListAlarmResponseAlarms {
             okNotifications,
             notificationBeginTime,
             notificationEndTime,
+            effectiveTimezone,
             enterpriseProjectId,
             alarmTemplateId,
             productName,
@@ -588,6 +612,7 @@ public class ListAlarmResponseAlarms {
         sb.append("    okNotifications: ").append(toIndentedString(okNotifications)).append("\n");
         sb.append("    notificationBeginTime: ").append(toIndentedString(notificationBeginTime)).append("\n");
         sb.append("    notificationEndTime: ").append(toIndentedString(notificationEndTime)).append("\n");
+        sb.append("    effectiveTimezone: ").append(toIndentedString(effectiveTimezone)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    alarmTemplateId: ").append(toIndentedString(alarmTemplateId)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");

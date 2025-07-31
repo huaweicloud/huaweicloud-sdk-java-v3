@@ -1016,53 +1016,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 
 *更多关于使用slf4j的常见问题请参阅： [Frequently Asked Questions about SLF4J](https://www.slf4j.org/faq.html)*
 
-SDK支持的slf4j与对应的日志实现的版本关系，如下表所示：
-
-| slf4j-api | logback-classic | slf4j-log4j12 | slf4j-simple | slf4j-jdk14 |
-|-----------|-----------------|---------------|--------------|-------------|
-| 1.7.x     | 1.2.x           | 1.6.x/1.7.x   | 1.6.x/1.7.x  | 1.6.x/1.7.x |
-
-用户需要根据目标项目实际情况引入对应的日志实现，请在对应的工程项目的 pom.xml 文件中引入日志实现的依赖，如：
-
-**logback**
-
-``` xml
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.3.12</version>
-</dependency>
-```
-
-**log4j**
-
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-log4j12</artifactId>
-    <version>1.7.36</version>
-</dependency>
-```
-
-**slf4j simple**
-
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>1.7.36</version>
-</dependency>
-```
-
-**jul**
-
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-jdk14</artifactId>
-    <version>1.7.36</version>
-</dependency>
-```
+SDK支持的slf4j与对应的日志实现的版本关系请参考 [Declaring project dependencies for logging](https://www.slf4j.org/manual.html#projectDep)
 
 SDK 默认会打印访问日志，每次请求都会有一条记录：
 

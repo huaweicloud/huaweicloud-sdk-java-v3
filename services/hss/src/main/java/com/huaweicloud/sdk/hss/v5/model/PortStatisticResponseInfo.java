@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 开放端口统计信息
+ * **参数解释**: 开放端口统计信息 
  */
 public class PortStatisticResponseInfo {
 
@@ -36,7 +36,7 @@ public class PortStatisticResponseInfo {
     }
 
     /**
-     * 端口号
+     * **参数解释**: 端口号 **取值范围**: 最小值0，最大值65535 
      * minimum: 0
      * maximum: 65535
      * @return port
@@ -55,7 +55,7 @@ public class PortStatisticResponseInfo {
     }
 
     /**
-     * 端口类型
+     * **参数解释**: 端口类型 **取值范围**: - UDP - UDP6 - TCP - TCP6 
      * @return type
      */
     public String getType() {
@@ -72,7 +72,7 @@ public class PortStatisticResponseInfo {
     }
 
     /**
-     * 端口数量
+     * **参数解释**: 端口数量 **取值范围**: 最小值0，最大值65535 
      * minimum: 0
      * maximum: 10000
      * @return num
@@ -91,7 +91,7 @@ public class PortStatisticResponseInfo {
     }
 
     /**
-     * 危险类型:danger/unknown
+     * **参数解释**: 危险类型 **取值范围**: - danger: 危险端口 - normal: 正常端口 - unknow: 无已知危险的端口 
      * @return status
      */
     public String getStatus() {

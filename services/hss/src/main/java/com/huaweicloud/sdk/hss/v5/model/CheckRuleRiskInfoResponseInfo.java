@@ -79,7 +79,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 风险等级，包含如下:   - Low : 低危   - Medium : 中危   - High : 高危
+     * **参数解释**: 风险等级 **取值范围**: - Low : 低危 - Medium : 中危 - High : 高危 
      * @return severity
      */
     public String getSeverity() {
@@ -96,7 +96,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 配置检查（基线）的名称，例如SSH、CentOS 7、Windows
+     * **参数解释**: 配置检查（基线）的名称，例如SSH、CentOS 7、Windows **取值范围**: 不涉及 
      * @return checkName
      */
     public String getCheckName() {
@@ -113,7 +113,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 配置检查（基线）的类型,Linux系统支持的基线一般check_type和check_name相同,例如SSH、CentOS 7。 Windows系统支持的基线一般check_type和check_name不相同，例如check_name为Windows的配置检查（基线），它的check_type包含Windows Server 2019 R2、Windows Server 2016 R2等。
+     * **参数解释**: 配置检查（基线）的类型,Linux系统支持的基线一般check_type和check_name相同,例如SSH、CentOS 7。 Windows系统支持的基线一般check_type和check_name不相同，例如check_name为Windows的配置检查（基线），它的check_type包含Windows Server 2019 R2、Windows Server 2016 R2等。 **取值范围**: 不涉及 
      * @return checkType
      */
     public String getCheckType() {
@@ -130,7 +130,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 标准类型，包含如下:   - cn_standard : 等保合规标准   - hw_standard : 云安全实践标准
+     * **参数解释**: 标准类型 **取值范围**: - cn_standard：等保合规标准 - hw_standard：云安全实践标准 
      * @return standard
      */
     public String getStandard() {
@@ -147,7 +147,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 检查项（检查规则）名称
+     * **参数解释**: 检查项（检查规则）名称 **取值范围**: 不涉及 
      * @return checkRuleName
      */
     public String getCheckRuleName() {
@@ -164,7 +164,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 检查项ID
+     * **参数解释**: 检查项ID **取值范围**: 不涉及 
      * @return checkRuleId
      */
     public String getCheckRuleId() {
@@ -181,7 +181,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 受影响的服务器的数量，进行了当前基线检测的服务器数量
+     * **参数解释**: 受影响的服务器的数量，进行了当前基线检测的服务器数量 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum
@@ -200,7 +200,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 检测结果，包含如下：   - pass   - failed
+     * **参数解释**: 检测结果 **取值范围**: - pass : 检测通过 - failed : 检测不通过 
      * @return scanResult
      */
     public String getScanResult() {
@@ -217,7 +217,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 状态，包含如下：   - safe : 无需处理   - ignored : 已忽略   - unhandled : 未处理   - fixing : 修复中   - fix-failed : 修复失败   - verifying : 验证中
+     * **参数解释**: 检测项状态 **取值范围**: - safe : 无需处理 - ignored : 已忽略 - unhandled : 未处理 - fixing : 修复中 - fix-failed : 修复失败 - verifying : 验证中 
      * @return status
      */
     public String getStatus() {
@@ -234,7 +234,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 是否支持一键修复,1:支持一键修复,0:不支持
+     * **参数解释**: 是否支持一键修复 **取值范围**: - 1：支持一键修复 - 0：不支持 
      * minimum: 0
      * maximum: 2147483647
      * @return enableFix
@@ -253,7 +253,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 该检查项的修复&忽略&验证按钮是否可单击,true:按钮可单击,false:按钮不可单击
+     * **参数解释**: 该检查项的修复&忽略&验证按钮是否可单击 **取值范围**: - true：按钮可单击 - false：按钮不可单击 
      * @return enableClick
      */
     public Boolean getEnableClick() {
@@ -286,7 +286,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * 支持传递参数修复的检查项可传递参数的范围，只有支持传递参数修复的检查项才返回此数据
+     * **参数解释**: 支持传递参数修复的检查项可传递参数的范围，只有支持传递参数修复的检查项才返回此数据 **取值范围**: 不涉及 
      * @return ruleParams
      */
     public List<CheckRuleFixParamInfo> getRuleParams() {

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 任务标签。 * ECOMMERCE: 电商 * NEWS: 新闻 * MARKETING: 营销
+ * 任务标签。 * ECOMMERCE: 电商 * NEWS: 新闻 * MARKETING: 营销 * LIVE: 直播 * EDUCATION: 教培 * CUSTOMER: 客服 * STORYTELLING: 故事
  */
 public class JobTag {
 
@@ -27,6 +27,26 @@ public class JobTag {
      */
     public static final JobTag MARKETING = new JobTag("MARKETING");
 
+    /**
+     * Enum LIVE for value: "LIVE"
+     */
+    public static final JobTag LIVE = new JobTag("LIVE");
+
+    /**
+     * Enum EDUCATION for value: "EDUCATION"
+     */
+    public static final JobTag EDUCATION = new JobTag("EDUCATION");
+
+    /**
+     * Enum CUSTOMER for value: "CUSTOMER"
+     */
+    public static final JobTag CUSTOMER = new JobTag("CUSTOMER");
+
+    /**
+     * Enum STORYTELLING for value: "STORYTELLING"
+     */
+    public static final JobTag STORYTELLING = new JobTag("STORYTELLING");
+
     private static final Map<String, JobTag> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, JobTag> createStaticFields() {
@@ -34,6 +54,10 @@ public class JobTag {
         map.put("ECOMMERCE", ECOMMERCE);
         map.put("NEWS", NEWS);
         map.put("MARKETING", MARKETING);
+        map.put("LIVE", LIVE);
+        map.put("EDUCATION", EDUCATION);
+        map.put("CUSTOMER", CUSTOMER);
+        map.put("STORYTELLING", STORYTELLING);
         return Collections.unmodifiableMap(map);
     }
 

@@ -191,7 +191,7 @@ public class ListTagReq {
     }
 
     /**
-     * 每页返回的资源个数。  取值范围：1~1000  参数取值说明：  如果action为filter时，默认为1000。 如果action为count时，无此参数。
+     * 分页查询时配置每页返回的资源个数。  取值范围：1~1000  参数取值说明：  如果action为filter时，默认为1000。 如果action为count时，无此参数。
      * @return limit
      */
     public Integer getLimit() {

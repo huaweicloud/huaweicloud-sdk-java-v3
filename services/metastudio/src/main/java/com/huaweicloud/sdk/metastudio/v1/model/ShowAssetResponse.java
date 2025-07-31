@@ -388,6 +388,11 @@ public class ShowAssetResponse extends SdkResponse {
     private FailTypeEnum failType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_reason_code")
+
+    private String blockReasonCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
 
     private String reason;
@@ -421,6 +426,11 @@ public class ShowAssetResponse extends SdkResponse {
     @JsonProperty(value = "supported_service")
 
     private List<SupportedServiceEnum> supportedService = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_operation_config")
+
+    private List<AutoOperationConfig> autoOperationConfig = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -595,6 +605,23 @@ public class ShowAssetResponse extends SdkResponse {
 
     public void setFailType(FailTypeEnum failType) {
         this.failType = failType;
+    }
+
+    public ShowAssetResponse withBlockReasonCode(String blockReasonCode) {
+        this.blockReasonCode = blockReasonCode;
+        return this;
+    }
+
+    /**
+     * 冻结原因编号。
+     * @return blockReasonCode
+     */
+    public String getBlockReasonCode() {
+        return blockReasonCode;
+    }
+
+    public void setBlockReasonCode(String blockReasonCode) {
+        this.blockReasonCode = blockReasonCode;
     }
 
     public ShowAssetResponse withReason(String reason) {
@@ -791,6 +818,39 @@ public class ShowAssetResponse extends SdkResponse {
         this.supportedService = supportedService;
     }
 
+    public ShowAssetResponse withAutoOperationConfig(List<AutoOperationConfig> autoOperationConfig) {
+        this.autoOperationConfig = autoOperationConfig;
+        return this;
+    }
+
+    public ShowAssetResponse addAutoOperationConfigItem(AutoOperationConfig autoOperationConfigItem) {
+        if (this.autoOperationConfig == null) {
+            this.autoOperationConfig = new ArrayList<>();
+        }
+        this.autoOperationConfig.add(autoOperationConfigItem);
+        return this;
+    }
+
+    public ShowAssetResponse withAutoOperationConfig(Consumer<List<AutoOperationConfig>> autoOperationConfigSetter) {
+        if (this.autoOperationConfig == null) {
+            this.autoOperationConfig = new ArrayList<>();
+        }
+        autoOperationConfigSetter.accept(this.autoOperationConfig);
+        return this;
+    }
+
+    /**
+     * 资产自动处理任务。
+     * @return autoOperationConfig
+     */
+    public List<AutoOperationConfig> getAutoOperationConfig() {
+        return autoOperationConfig;
+    }
+
+    public void setAutoOperationConfig(List<AutoOperationConfig> autoOperationConfig) {
+        this.autoOperationConfig = autoOperationConfig;
+    }
+
     public ShowAssetResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -825,11 +885,12 @@ public class ShowAssetResponse extends SdkResponse {
             && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.assetType, that.assetType)
             && Objects.equals(this.assetState, that.assetState) && Objects.equals(this.failType, that.failType)
-            && Objects.equals(this.reason, that.reason) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.blockReasonCode, that.blockReasonCode) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties) && Objects.equals(this.files, that.files)
             && Objects.equals(this.assetOrder, that.assetOrder)
             && Objects.equals(this.supportedService, that.supportedService)
+            && Objects.equals(this.autoOperationConfig, that.autoOperationConfig)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -845,6 +906,7 @@ public class ShowAssetResponse extends SdkResponse {
             assetType,
             assetState,
             failType,
+            blockReasonCode,
             reason,
             tags,
             assetExtraMeta,
@@ -852,6 +914,7 @@ public class ShowAssetResponse extends SdkResponse {
             files,
             assetOrder,
             supportedService,
+            autoOperationConfig,
             xRequestId);
     }
 
@@ -869,6 +932,7 @@ public class ShowAssetResponse extends SdkResponse {
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
         sb.append("    failType: ").append(toIndentedString(failType)).append("\n");
+        sb.append("    blockReasonCode: ").append(toIndentedString(blockReasonCode)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
@@ -876,6 +940,7 @@ public class ShowAssetResponse extends SdkResponse {
         sb.append("    files: ").append(toIndentedString(files)).append("\n");
         sb.append("    assetOrder: ").append(toIndentedString(assetOrder)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
+        sb.append("    autoOperationConfig: ").append(toIndentedString(autoOperationConfig)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -118,6 +118,11 @@ public class SaveTtscVocabularyConfigsRequestBody {
 
     private String value;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public SaveTtscVocabularyConfigsRequestBody withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -169,6 +174,23 @@ public class SaveTtscVocabularyConfigsRequestBody {
         this.value = value;
     }
 
+    public SaveTtscVocabularyConfigsRequestBody withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 分组id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -179,12 +201,12 @@ public class SaveTtscVocabularyConfigsRequestBody {
         }
         SaveTtscVocabularyConfigsRequestBody that = (SaveTtscVocabularyConfigsRequestBody) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.key, that.key)
-            && Objects.equals(this.value, that.value);
+            && Objects.equals(this.value, that.value) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, key, value);
+        return Objects.hash(type, key, value, groupId);
     }
 
     @Override
@@ -194,6 +216,7 @@ public class SaveTtscVocabularyConfigsRequestBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

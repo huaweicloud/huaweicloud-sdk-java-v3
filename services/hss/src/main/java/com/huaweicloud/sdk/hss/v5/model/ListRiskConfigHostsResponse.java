@@ -30,7 +30,7 @@ public class ListRiskConfigHostsResponse extends SdkResponse {
     }
 
     /**
-     * 受配置检测影响的服务器数据总量
+     * **参数解释**: 受配置检测影响的服务器数据总量 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListRiskConfigHostsResponse extends SdkResponse {
     }
 
     /**
-     * 数据列表
+     * **参数解释**: 数据列表 **取值范围**: 不涉及 
      * @return dataList
      */
     public List<SecurityCheckHostInfoResponseInfo> getDataList() {

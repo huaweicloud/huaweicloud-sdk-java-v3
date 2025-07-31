@@ -76,7 +76,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -93,7 +93,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -110,7 +110,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * Agent ID
+     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {

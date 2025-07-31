@@ -18,6 +18,11 @@ public class ClusterRing {
 
     private List<RingHost> ringHosts = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "un_shrinkable_cluster_ring")
+
+    private Boolean unShrinkableClusterRing;
+
     public ClusterRing withRingHosts(List<RingHost> ringHosts) {
         this.ringHosts = ringHosts;
         return this;
@@ -51,6 +56,23 @@ public class ClusterRing {
         this.ringHosts = ringHosts;
     }
 
+    public ClusterRing withUnShrinkableClusterRing(Boolean unShrinkableClusterRing) {
+        this.unShrinkableClusterRing = unShrinkableClusterRing;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否可以缩容。 **约束限制**： 不涉及。 **取值范围**： false|true。 **默认取值**： 不涉及。
+     * @return unShrinkableClusterRing
+     */
+    public Boolean getUnShrinkableClusterRing() {
+        return unShrinkableClusterRing;
+    }
+
+    public void setUnShrinkableClusterRing(Boolean unShrinkableClusterRing) {
+        this.unShrinkableClusterRing = unShrinkableClusterRing;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +82,13 @@ public class ClusterRing {
             return false;
         }
         ClusterRing that = (ClusterRing) obj;
-        return Objects.equals(this.ringHosts, that.ringHosts);
+        return Objects.equals(this.ringHosts, that.ringHosts)
+            && Objects.equals(this.unShrinkableClusterRing, that.unShrinkableClusterRing);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ringHosts);
+        return Objects.hash(ringHosts, unShrinkableClusterRing);
     }
 
     @Override
@@ -73,6 +96,7 @@ public class ClusterRing {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterRing {\n");
         sb.append("    ringHosts: ").append(toIndentedString(ringHosts)).append("\n");
+        sb.append("    unShrinkableClusterRing: ").append(toIndentedString(unShrinkableClusterRing)).append("\n");
         sb.append("}");
         return sb.toString();
     }

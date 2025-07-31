@@ -41,7 +41,7 @@ public class WeakPwdAccountInfoResponseInfo {
     }
 
     /**
-     * 弱口令账号名称
+     * **参数解释**: 弱口令账号名称 **取值范围**: 不涉及 
      * @return userName
      */
     public String getUserName() {
@@ -58,7 +58,7 @@ public class WeakPwdAccountInfoResponseInfo {
     }
 
     /**
-     * 账号类型，包含如下:   - system   - mysql   - redis
+     * **参数解释**: 账号类型 **取值范围**: - system : 系统账号 - mysql  : mysql账号 - redis  : redis账号 
      * @return serviceType
      */
     public String getServiceType() {
@@ -75,7 +75,7 @@ public class WeakPwdAccountInfoResponseInfo {
     }
 
     /**
-     * 弱口令使用时长，单位天
+     * **参数解释**: 弱口令使用时长，单位天 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return duration
@@ -94,7 +94,7 @@ public class WeakPwdAccountInfoResponseInfo {
     }
 
     /**
-     * 脱敏弱口令
+     * **参数解释**: 脱敏弱口令 **取值范围**: 不涉及 
      * @return desensitizedWeakPasswords
      */
     public String getDesensitizedWeakPasswords() {
@@ -111,7 +111,7 @@ public class WeakPwdAccountInfoResponseInfo {
     }
 
     /**
-     * 修改建议
+     * **参数解释**: 修改建议 **取值范围**: 不涉及 
      * @return suggestion
      */
     public String getSuggestion() {

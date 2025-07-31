@@ -61,7 +61,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -78,7 +78,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 配置检查（基线）的名称，例如SSH、CentOS 7、Windows
+     * **参数解释**: 配置检查（基线）的名称，例如SSH、CentOS 7、Windows **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 不涉及 
      * @return checkName
      */
     public String getCheckName() {
@@ -95,7 +95,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 标准类型，包含如下: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准
+     * **参数解释**: 标准类型 **约束限制**: 不涉及 **取值范围**: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 **默认取值**: 不涉及 
      * @return standard
      */
     public String getStandard() {
@@ -112,7 +112,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 结果类型，包含如下： - safe ： 已通过 - unhandled : 未通过，且未忽略的 - ignored : 未通过，且已忽略的
+     * **参数解释**: 结果类型 **约束限制**: 不涉及 **取值范围**: - safe : 已通过 - unhandled : 未通过，且未忽略的 - ignored : 未通过，且已忽略的 **默认取值**: unhandled 
      * @return resultType
      */
     public String getResultType() {
@@ -129,7 +129,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 检查项（检查规则）名称，支持模糊匹配
+     * **参数解释**: 检查项（检查规则）名称，支持模糊匹配 **约束限制**: 不涉及 **取值范围**: 字符长度0-2048位 **默认取值**: 不涉及 
      * @return checkRuleName
      */
     public String getCheckRuleName() {
@@ -146,7 +146,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 风险等级，包含如下:   - Security : 安全   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
+     * **参数解释**: 风险等级 **约束限制**: 不涉及 **取值范围**: - Security : 安全 - Low : 低危 - Medium : 中危 - High : 高危 - Critical : 危急 **默认取值**: 不涉及 
      * @return severity
      */
     public String getSeverity() {
@@ -163,7 +163,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 主机ID，不赋值时，查租户所有主机
+     * **参数解释**: 主机ID，不赋值时，查租户所有主机 **约束限制**: 不涉及 **取值范围**: 字符长度0-64位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -180,8 +180,8 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 每页数量
-     * minimum: 0
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * minimum: 10
      * maximum: 200
      * @return limit
      */
@@ -199,7 +199,7 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
      * maximum: 2000000
      * @return offset

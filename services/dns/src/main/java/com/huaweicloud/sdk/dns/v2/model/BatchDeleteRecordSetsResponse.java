@@ -46,7 +46,7 @@ public class BatchDeleteRecordSetsResponse extends SdkResponse {
     }
 
     /**
-     * 删除记录集的列表响应。
+     * **参数解释：** 记录集列表信息。 **取值范围：** 不涉及。
      * @return recordsets
      */
     public List<RecordsetData> getRecordsets() {

@@ -31,6 +31,11 @@ public class VocabularyConfig {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -108,6 +113,23 @@ public class VocabularyConfig {
         this.type = type;
     }
 
+    public VocabularyConfig withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 分组id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     public VocabularyConfig withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -153,12 +175,13 @@ public class VocabularyConfig {
         VocabularyConfig that = (VocabularyConfig) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.key, that.key)
             && Objects.equals(this.value, that.value) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, key, value, type, createTime, updateTime);
+        return Objects.hash(id, key, value, type, groupId, createTime, updateTime);
     }
 
     @Override
@@ -169,6 +192,7 @@ public class VocabularyConfig {
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

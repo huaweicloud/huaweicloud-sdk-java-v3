@@ -193,7 +193,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,NAME（实例名称）,COMB（组合匹配）,Manual（手动添加）
+     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,NAME（实例名称）,不传为手动添加
      * @return type
      */
     public String getType() {
@@ -276,7 +276,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 云服务名称,格式为\"dcs,ecs\",支持的云服务providers请参考https://support.huaweicloud.com/api-rms/rms_06_0100.html
+     * 云服务名称,格式为\"dcs,ecs\",支持的云服务providers请参考《配置审计API参考》中的\"支持的服务和资源类型\"章节
      * @return providers
      */
     public String getProviders() {
@@ -312,7 +312,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 组合匹配参数
+     * 匹配企业项目或匹配标签参数
      * @return enterpriseProjectIdAndTags
      */
     public List<EnterpriseProjectIdAndTags> getEnterpriseProjectIdAndTags() {

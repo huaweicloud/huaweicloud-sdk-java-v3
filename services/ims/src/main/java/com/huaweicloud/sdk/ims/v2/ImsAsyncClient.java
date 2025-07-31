@@ -17,10 +17,16 @@ import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersRequest;
 import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersResponse;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageCrossRegionRequest;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageCrossRegionResponse;
+import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionRequest;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionResponse;
+import com.huaweicloud.sdk.ims.v2.model.CreateDataImageInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.CreateDataImageInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.CreateDataImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.CreateDataImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.CreateImageInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.CreateImageInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.CreateImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.CreateImageResponse;
 import com.huaweicloud.sdk.ims.v2.model.CreateOrUpdateTagsRequest;
@@ -29,6 +35,8 @@ import com.huaweicloud.sdk.ims.v2.model.CreateWholeImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.CreateWholeImageResponse;
 import com.huaweicloud.sdk.ims.v2.model.DeleteImageTagRequest;
 import com.huaweicloud.sdk.ims.v2.model.DeleteImageTagResponse;
+import com.huaweicloud.sdk.ims.v2.model.ExportImageInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.ExportImageInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.ExportImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.ExportImageResponse;
 import com.huaweicloud.sdk.ims.v2.model.GlanceAddImageMemberRequest;
@@ -63,6 +71,8 @@ import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageMemberRequest;
 import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageMemberResponse;
 import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickInSafeModeRequest;
+import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickInSafeModeResponse;
 import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickRequest;
 import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickResponse;
 import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsRequest;
@@ -357,6 +367,38 @@ public class ImsAsyncClient {
     }
 
     /**
+     * Region内复制镜像（新）
+     *
+     * 该接口为扩展接口，主要用于用户将一个已有镜像复制为另一个镜像。复制镜像时，可以更改镜像的加密等属性，以满足不同的场景。
+     * 该接口为异步接口，返回job_id说明任务下发成功，查询异步任务状态，如果是success说明任务执行成功，如果是failed说明任务执行失败。如何查询异步任务，请参见异步任务查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyImageInRegionInSafeModeRequest 请求对象
+     * @return CompletableFuture<CopyImageInRegionInSafeModeResponse>
+     */
+    public CompletableFuture<CopyImageInRegionInSafeModeResponse> copyImageInRegionInSafeModeAsync(
+        CopyImageInRegionInSafeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.copyImageInRegionInSafeMode);
+    }
+
+    /**
+     * Region内复制镜像（新）
+     *
+     * 该接口为扩展接口，主要用于用户将一个已有镜像复制为另一个镜像。复制镜像时，可以更改镜像的加密等属性，以满足不同的场景。
+     * 该接口为异步接口，返回job_id说明任务下发成功，查询异步任务状态，如果是success说明任务执行成功，如果是failed说明任务执行失败。如何查询异步任务，请参见异步任务查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyImageInRegionInSafeModeRequest 请求对象
+     * @return AsyncInvoker<CopyImageInRegionInSafeModeRequest, CopyImageInRegionInSafeModeResponse>
+     */
+    public AsyncInvoker<CopyImageInRegionInSafeModeRequest, CopyImageInRegionInSafeModeResponse> copyImageInRegionInSafeModeAsyncInvoker(
+        CopyImageInRegionInSafeModeRequest request) {
+        return new AsyncInvoker<>(request, ImsMeta.copyImageInRegionInSafeMode, hcClient);
+    }
+
+    /**
      * 使用外部镜像文件制作数据镜像
      *
      * 使用上传至OBS桶中的外部数据卷镜像文件制作数据镜像。作为异步接口，调用成功，只是说明后台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态。具体请参考异步任务查询。
@@ -383,6 +425,36 @@ public class ImsAsyncClient {
     public AsyncInvoker<CreateDataImageRequest, CreateDataImageResponse> createDataImageAsyncInvoker(
         CreateDataImageRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.createDataImage, hcClient);
+    }
+
+    /**
+     * 使用外部镜像文件制作数据镜像（新）
+     *
+     * 使用上传至OBS桶中的外部数据卷镜像文件制作数据镜像。作为异步接口，调用成功，只是说明后台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态。具体请参考异步任务查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDataImageInSafeModeRequest 请求对象
+     * @return CompletableFuture<CreateDataImageInSafeModeResponse>
+     */
+    public CompletableFuture<CreateDataImageInSafeModeResponse> createDataImageInSafeModeAsync(
+        CreateDataImageInSafeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.createDataImageInSafeMode);
+    }
+
+    /**
+     * 使用外部镜像文件制作数据镜像（新）
+     *
+     * 使用上传至OBS桶中的外部数据卷镜像文件制作数据镜像。作为异步接口，调用成功，只是说明后台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态。具体请参考异步任务查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDataImageInSafeModeRequest 请求对象
+     * @return AsyncInvoker<CreateDataImageInSafeModeRequest, CreateDataImageInSafeModeResponse>
+     */
+    public AsyncInvoker<CreateDataImageInSafeModeRequest, CreateDataImageInSafeModeResponse> createDataImageInSafeModeAsyncInvoker(
+        CreateDataImageInSafeModeRequest request) {
+        return new AsyncInvoker<>(request, ImsMeta.createDataImageInSafeMode, hcClient);
     }
 
     /**
@@ -433,6 +505,58 @@ public class ImsAsyncClient {
      */
     public AsyncInvoker<CreateImageRequest, CreateImageResponse> createImageAsyncInvoker(CreateImageRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.createImage, hcClient);
+    }
+
+    /**
+     * 制作镜像（新）
+     *
+     * 本接口用于制作私有镜像，支持：
+     * - 使用云服务器制作私有镜像。
+     * - 使用上传至OBS桶中的外部镜像文件制作私有镜像。
+     * - 使用数据卷制作系统盘镜像。
+     * 
+     * 作为异步接口，调用成功，只是说明云平台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态，具体请参考异步任务查询。
+     * 
+     * 不同场景必选参数说明：
+     * 
+     * - 使用云服务器制作镜像时的请求的必选参数：name,instance_id。
+     * - 使用上传至OBS桶中的外部镜像文件时的请求必选参数：name,image_url,min_disk。
+     * - 使用数据卷制作系统盘镜像时的请求必选参数：name,volume_id,os_version
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateImageInSafeModeRequest 请求对象
+     * @return CompletableFuture<CreateImageInSafeModeResponse>
+     */
+    public CompletableFuture<CreateImageInSafeModeResponse> createImageInSafeModeAsync(
+        CreateImageInSafeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.createImageInSafeMode);
+    }
+
+    /**
+     * 制作镜像（新）
+     *
+     * 本接口用于制作私有镜像，支持：
+     * - 使用云服务器制作私有镜像。
+     * - 使用上传至OBS桶中的外部镜像文件制作私有镜像。
+     * - 使用数据卷制作系统盘镜像。
+     * 
+     * 作为异步接口，调用成功，只是说明云平台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态，具体请参考异步任务查询。
+     * 
+     * 不同场景必选参数说明：
+     * 
+     * - 使用云服务器制作镜像时的请求的必选参数：name,instance_id。
+     * - 使用上传至OBS桶中的外部镜像文件时的请求必选参数：name,image_url,min_disk。
+     * - 使用数据卷制作系统盘镜像时的请求必选参数：name,volume_id,os_version
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateImageInSafeModeRequest 请求对象
+     * @return AsyncInvoker<CreateImageInSafeModeRequest, CreateImageInSafeModeResponse>
+     */
+    public AsyncInvoker<CreateImageInSafeModeRequest, CreateImageInSafeModeResponse> createImageInSafeModeAsyncInvoker(
+        CreateImageInSafeModeRequest request) {
+        return new AsyncInvoker<>(request, ImsMeta.createImageInSafeMode, hcClient);
     }
 
     /**
@@ -551,6 +675,36 @@ public class ImsAsyncClient {
     }
 
     /**
+     * 导出镜像（新）
+     *
+     * 该接口为扩展接口，用于用户将自己的私有镜像导出到指定的OBS桶中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportImageInSafeModeRequest 请求对象
+     * @return CompletableFuture<ExportImageInSafeModeResponse>
+     */
+    public CompletableFuture<ExportImageInSafeModeResponse> exportImageInSafeModeAsync(
+        ExportImageInSafeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.exportImageInSafeMode);
+    }
+
+    /**
+     * 导出镜像（新）
+     *
+     * 该接口为扩展接口，用于用户将自己的私有镜像导出到指定的OBS桶中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportImageInSafeModeRequest 请求对象
+     * @return AsyncInvoker<ExportImageInSafeModeRequest, ExportImageInSafeModeResponse>
+     */
+    public AsyncInvoker<ExportImageInSafeModeRequest, ExportImageInSafeModeResponse> exportImageInSafeModeAsyncInvoker(
+        ExportImageInSafeModeRequest request) {
+        return new AsyncInvoker<>(request, ImsMeta.exportImageInSafeMode, hcClient);
+    }
+
+    /**
      * 镜像文件快速导入
      *
      * 使用上传至OBS桶中的超大外部镜像文件制作私有镜像，目前仅支持RAW或ZVHD2格式镜像文件。且要求镜像文件大小不能超过1TB。
@@ -581,6 +735,40 @@ public class ImsAsyncClient {
     public AsyncInvoker<ImportImageQuickRequest, ImportImageQuickResponse> importImageQuickAsyncInvoker(
         ImportImageQuickRequest request) {
         return new AsyncInvoker<>(request, ImsMeta.importImageQuick, hcClient);
+    }
+
+    /**
+     * 镜像文件快速导入（新）
+     *
+     * 使用上传至OBS桶中的超大外部镜像文件制作私有镜像，目前仅支持RAW或ZVHD2格式镜像文件。且要求镜像文件大小不能超过1TB。
+     * 由于快速导入功能要求提前转换镜像文件格式为RAW或ZVHD2格式，因此镜像文件小于128GB时推荐您优先使用常规的创建私有镜像的方式。
+     * 作为异步接口，调用成功，只是说明后台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态，具体请参考异步任务查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportImageQuickInSafeModeRequest 请求对象
+     * @return CompletableFuture<ImportImageQuickInSafeModeResponse>
+     */
+    public CompletableFuture<ImportImageQuickInSafeModeResponse> importImageQuickInSafeModeAsync(
+        ImportImageQuickInSafeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ImsMeta.importImageQuickInSafeMode);
+    }
+
+    /**
+     * 镜像文件快速导入（新）
+     *
+     * 使用上传至OBS桶中的超大外部镜像文件制作私有镜像，目前仅支持RAW或ZVHD2格式镜像文件。且要求镜像文件大小不能超过1TB。
+     * 由于快速导入功能要求提前转换镜像文件格式为RAW或ZVHD2格式，因此镜像文件小于128GB时推荐您优先使用常规的创建私有镜像的方式。
+     * 作为异步接口，调用成功，只是说明后台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态，具体请参考异步任务查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportImageQuickInSafeModeRequest 请求对象
+     * @return AsyncInvoker<ImportImageQuickInSafeModeRequest, ImportImageQuickInSafeModeResponse>
+     */
+    public AsyncInvoker<ImportImageQuickInSafeModeRequest, ImportImageQuickInSafeModeResponse> importImageQuickInSafeModeAsyncInvoker(
+        ImportImageQuickInSafeModeRequest request) {
+        return new AsyncInvoker<>(request, ImsMeta.importImageQuickInSafeMode, hcClient);
     }
 
     /**

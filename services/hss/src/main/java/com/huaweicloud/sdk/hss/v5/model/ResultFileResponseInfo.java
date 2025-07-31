@@ -85,7 +85,7 @@ public class ResultFileResponseInfo {
     }
 
     /**
-     * 文件大小
+     * **参数解释**: 文件大小 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值9223372036854775807 **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return fileSize

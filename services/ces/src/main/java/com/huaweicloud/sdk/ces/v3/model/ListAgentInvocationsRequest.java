@@ -101,7 +101,7 @@ public class ListAgentInvocationsRequest {
     private String invocationId;
 
     /**
-     * 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试
+     * 任务类型, INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装
      */
     public static final class InvocationTypeEnum {
 
@@ -125,6 +125,16 @@ public class ListAgentInvocationsRequest {
          */
         public static final InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
 
+        /**
+         * Enum SET_REMOTE_INSTALLER for value: "SET_REMOTE_INSTALLER"
+         */
+        public static final InvocationTypeEnum SET_REMOTE_INSTALLER = new InvocationTypeEnum("SET_REMOTE_INSTALLER");
+
+        /**
+         * Enum REMOTE_INSTALL for value: "REMOTE_INSTALL"
+         */
+        public static final InvocationTypeEnum REMOTE_INSTALL = new InvocationTypeEnum("REMOTE_INSTALL");
+
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, InvocationTypeEnum> createStaticFields() {
@@ -133,6 +143,8 @@ public class ListAgentInvocationsRequest {
             map.put("UPDATE", UPDATE);
             map.put("ROLLBACK", ROLLBACK);
             map.put("RETRY", RETRY);
+            map.put("SET_REMOTE_INSTALLER", SET_REMOTE_INSTALLER);
+            map.put("REMOTE_INSTALL", REMOTE_INSTALL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -188,7 +200,7 @@ public class ListAgentInvocationsRequest {
     private InvocationTypeEnum invocationType;
 
     /**
-     * 任务对象，目前仅支持telescope
+     * 任务对象, 支持 telescope监控
      */
     public static final class InvocationTargetEnum {
 
@@ -259,7 +271,7 @@ public class ListAgentInvocationsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private Integer offset;
+    private Long offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -323,7 +335,7 @@ public class ListAgentInvocationsRequest {
     }
 
     /**
-     * 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试
+     * 任务类型, INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装
      * @return invocationType
      */
     public InvocationTypeEnum getInvocationType() {
@@ -340,7 +352,7 @@ public class ListAgentInvocationsRequest {
     }
 
     /**
-     * 任务对象，目前仅支持telescope
+     * 任务对象, 支持 telescope监控
      * @return invocationTarget
      */
     public InvocationTargetEnum getInvocationTarget() {
@@ -351,7 +363,7 @@ public class ListAgentInvocationsRequest {
         this.invocationTarget = invocationTarget;
     }
 
-    public ListAgentInvocationsRequest withOffset(Integer offset) {
+    public ListAgentInvocationsRequest withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
@@ -362,11 +374,11 @@ public class ListAgentInvocationsRequest {
      * maximum: 9999999999999
      * @return offset
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return offset;
     }
 
-    public void setOffset(Integer offset) {
+    public void setOffset(Long offset) {
         this.offset = offset;
     }
 

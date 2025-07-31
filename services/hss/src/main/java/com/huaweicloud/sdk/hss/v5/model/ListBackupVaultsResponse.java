@@ -30,7 +30,7 @@ public class ListBackupVaultsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 查询备份存储库总数
      * minimum: 0
      * maximum: 2097152
      * @return totalNum

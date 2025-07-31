@@ -30,7 +30,7 @@ public class ListPasswordComplexityResponse extends SdkResponse {
     }
 
     /**
-     * 记录总数
+     * **参数解释**: 记录总数 **取值范围**: 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListPasswordComplexityResponse extends SdkResponse {
     }
 
     /**
-     * 口令复杂度策略检测列表
+     * **参数解释**: 口令复杂度策略检测列表 **取值范围**: 不涉及 
      * @return dataList
      */
     public List<PwdPolicyInfoResponseInfo> getDataList() {

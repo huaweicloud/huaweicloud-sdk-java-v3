@@ -252,7 +252,7 @@ public class DnsClient {
     /**
      * 在内网域名上关联VPC
      *
-     * 在内网域名上关联VPC。
+     * 当您的内网域名创建完成后，可以通过调用此接口为内网域名关联新的VPC。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -266,7 +266,7 @@ public class DnsClient {
     /**
      * 在内网域名上关联VPC
      *
-     * 在内网域名上关联VPC。
+     * 当您的内网域名创建完成后，可以通过调用此接口为内网域名关联新的VPC。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -341,6 +341,7 @@ public class DnsClient {
      *
      * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
      * 响应结果中只包含本次实际删除的资源。
+     * 支持公网域名和内网域名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -357,6 +358,7 @@ public class DnsClient {
      *
      * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
      * 响应结果中只包含本次实际删除的资源。
+     * 支持公网域名和内网域名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -562,35 +564,6 @@ public class DnsClient {
     }
 
     /**
-     * 设置弹性公网IP的反向解析记录
-     *
-     * 设置弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateEipRecordSetRequest 请求对象
-     * @return CreateEipRecordSetResponse
-     */
-    public CreateEipRecordSetResponse createEipRecordSet(CreateEipRecordSetRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.createEipRecordSet);
-    }
-
-    /**
-     * 设置弹性公网IP的反向解析记录
-     *
-     * 设置弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateEipRecordSetRequest 请求对象
-     * @return SyncInvoker<CreateEipRecordSetRequest, CreateEipRecordSetResponse>
-     */
-    public SyncInvoker<CreateEipRecordSetRequest, CreateEipRecordSetResponse> createEipRecordSetInvoker(
-        CreateEipRecordSetRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.createEipRecordSet, hcClient);
-    }
-
-    /**
      * 创建终端节点
      *
      * 创建终端节点。
@@ -651,7 +624,7 @@ public class DnsClient {
     /**
      * 创建内网域名
      *
-     * 创建内网域名。
+     * 内网域名是指在VPC中生效的域名，内网域名创建后，用户可以将其与私网IP地址相关联，为云服务提供VPC内的内网域名解析服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -665,7 +638,7 @@ public class DnsClient {
     /**
      * 创建内网域名
      *
-     * 创建内网域名。
+     * 内网域名是指在VPC中生效的域名，内网域名创建后，用户可以将其与私网IP地址相关联，为云服务提供VPC内的内网域名解析服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -678,37 +651,10 @@ public class DnsClient {
     }
 
     /**
-     * 创建弹性公网IP的反向解析记录
-     *
-     * 创建弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePtrRequest 请求对象
-     * @return CreatePtrResponse
-     */
-    public CreatePtrResponse createPtr(CreatePtrRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.createPtr);
-    }
-
-    /**
-     * 创建弹性公网IP的反向解析记录
-     *
-     * 创建弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePtrRequest 请求对象
-     * @return SyncInvoker<CreatePtrRequest, CreatePtrResponse>
-     */
-    public SyncInvoker<CreatePtrRequest, CreatePtrResponse> createPtrInvoker(CreatePtrRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.createPtr, hcClient);
-    }
-
-    /**
      * 创建公网域名
      *
-     * 创建公网域名。
+     * 您在使用华为云云解析服务为自己注册的域名配置DNS解析之前，需要先将域名添加至云解析服务控制台。
+     * 一般情况下，通过华为云[域名注册服务](https://support.huaweicloud.com/domain/index.html)注册的域名无需添加，系统将在域名注册完成后自动添加。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -722,7 +668,8 @@ public class DnsClient {
     /**
      * 创建公网域名
      *
-     * 创建公网域名。
+     * 您在使用华为云云解析服务为自己注册的域名配置DNS解析之前，需要先将域名添加至云解析服务控制台。
+     * 一般情况下，通过华为云[域名注册服务](https://support.huaweicloud.com/domain/index.html)注册的域名无需添加，系统将在域名注册完成后自动添加。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -732,35 +679,6 @@ public class DnsClient {
     public SyncInvoker<CreatePublicZoneRequest, CreatePublicZoneResponse> createPublicZoneInvoker(
         CreatePublicZoneRequest request) {
         return new SyncInvoker<>(request, DnsMeta.createPublicZone, hcClient);
-    }
-
-    /**
-     * 创建记录集
-     *
-     * 创建记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateRecordSetRequest 请求对象
-     * @return CreateRecordSetResponse
-     */
-    public CreateRecordSetResponse createRecordSet(CreateRecordSetRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.createRecordSet);
-    }
-
-    /**
-     * 创建记录集
-     *
-     * 创建记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateRecordSetRequest 请求对象
-     * @return SyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse>
-     */
-    public SyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse> createRecordSetInvoker(
-        CreateRecordSetRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.createRecordSet, hcClient);
     }
 
     /**
@@ -791,35 +709,6 @@ public class DnsClient {
     public SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLinesInvoker(
         CreateRecordSetWithBatchLinesRequest request) {
         return new SyncInvoker<>(request, DnsMeta.createRecordSetWithBatchLines, hcClient);
-    }
-
-    /**
-     * 创建记录集
-     *
-     * 创建记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateRecordSetWithLineRequest 请求对象
-     * @return CreateRecordSetWithLineResponse
-     */
-    public CreateRecordSetWithLineResponse createRecordSetWithLine(CreateRecordSetWithLineRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.createRecordSetWithLine);
-    }
-
-    /**
-     * 创建记录集
-     *
-     * 创建记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateRecordSetWithLineRequest 请求对象
-     * @return SyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse>
-     */
-    public SyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse> createRecordSetWithLineInvoker(
-        CreateRecordSetWithLineRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.createRecordSetWithLine, hcClient);
     }
 
     /**
@@ -969,7 +858,7 @@ public class DnsClient {
     /**
      * 删除内网域名
      *
-     * 删除内网域名。
+     * 当您的内网域名不再使用时，您可以通过调用此接口将其删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -983,7 +872,7 @@ public class DnsClient {
     /**
      * 删除内网域名
      *
-     * 删除内网域名。
+     * 当您的内网域名不再使用时，您可以通过调用此接口将其删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -996,37 +885,9 @@ public class DnsClient {
     }
 
     /**
-     * 将弹性公网IP的反向解析记录恢复为默认值
-     *
-     * 将弹性公网IP的反向解析记录恢复为默认值。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeletePtrRequest 请求对象
-     * @return DeletePtrResponse
-     */
-    public DeletePtrResponse deletePtr(DeletePtrRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.deletePtr);
-    }
-
-    /**
-     * 将弹性公网IP的反向解析记录恢复为默认值
-     *
-     * 将弹性公网IP的反向解析记录恢复为默认值。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeletePtrRequest 请求对象
-     * @return SyncInvoker<DeletePtrRequest, DeletePtrResponse>
-     */
-    public SyncInvoker<DeletePtrRequest, DeletePtrResponse> deletePtrInvoker(DeletePtrRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.deletePtr, hcClient);
-    }
-
-    /**
      * 删除公网域名
      *
-     * 删除公网域名。
+     * 当您的公网域名不再使用时，您可以通过调用此接口将其删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1040,7 +901,7 @@ public class DnsClient {
     /**
      * 删除公网域名
      *
-     * 删除公网域名。
+     * 当您的公网域名不再使用时，您可以通过调用此接口将其删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1050,64 +911,6 @@ public class DnsClient {
     public SyncInvoker<DeletePublicZoneRequest, DeletePublicZoneResponse> deletePublicZoneInvoker(
         DeletePublicZoneRequest request) {
         return new SyncInvoker<>(request, DnsMeta.deletePublicZone, hcClient);
-    }
-
-    /**
-     * 删除记录集
-     *
-     * 删除记录集。删除有添加智能解析的记录集时，需要用记录集管理（新版本）模块中删除接口进行删除。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteRecordSetRequest 请求对象
-     * @return DeleteRecordSetResponse
-     */
-    public DeleteRecordSetResponse deleteRecordSet(DeleteRecordSetRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.deleteRecordSet);
-    }
-
-    /**
-     * 删除记录集
-     *
-     * 删除记录集。删除有添加智能解析的记录集时，需要用记录集管理（新版本）模块中删除接口进行删除。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteRecordSetRequest 请求对象
-     * @return SyncInvoker<DeleteRecordSetRequest, DeleteRecordSetResponse>
-     */
-    public SyncInvoker<DeleteRecordSetRequest, DeleteRecordSetResponse> deleteRecordSetInvoker(
-        DeleteRecordSetRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.deleteRecordSet, hcClient);
-    }
-
-    /**
-     * 删除记录集
-     *
-     * 删除记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteRecordSetsRequest 请求对象
-     * @return DeleteRecordSetsResponse
-     */
-    public DeleteRecordSetsResponse deleteRecordSets(DeleteRecordSetsRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.deleteRecordSets);
-    }
-
-    /**
-     * 删除记录集
-     *
-     * 删除记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteRecordSetsRequest 请求对象
-     * @return SyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse>
-     */
-    public SyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse> deleteRecordSetsInvoker(
-        DeleteRecordSetsRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.deleteRecordSets, hcClient);
     }
 
     /**
@@ -1230,7 +1033,7 @@ public class DnsClient {
     /**
      * 在内网域名上解关联VPC
      *
-     * 在内网域名上解关联VPC。
+     * 当您的内网域名创建完成后，可以通过调用此接口为内网域名解除已关联的VPC。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1244,7 +1047,7 @@ public class DnsClient {
     /**
      * 在内网域名上解关联VPC
      *
-     * 在内网域名上解关联VPC。
+     * 当您的内网域名创建完成后，可以通过调用此接口为内网域名解除已关联的VPC。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1257,9 +1060,9 @@ public class DnsClient {
     }
 
     /**
-     * 查询所有的云解析服务API版本号
+     * 查询API版本信息列表
      *
-     * 查询所有的云解析服务API版本号列表。
+     * 查询云解析服务支持的所有API版本信息列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1271,9 +1074,9 @@ public class DnsClient {
     }
 
     /**
-     * 查询所有的云解析服务API版本号
+     * 查询API版本信息列表
      *
-     * 查询所有的云解析服务API版本号列表。
+     * 查询云解析服务支持的所有API版本信息列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1461,7 +1264,7 @@ public class DnsClient {
     /**
      * 查询内网域名列表
      *
-     * 查询内网域名列表。
+     * 当您的内网域名创建成功后，您可以通过调用此接口查询单个内网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1475,7 +1278,7 @@ public class DnsClient {
     /**
      * 查询内网域名列表
      *
-     * 查询内网域名列表。
+     * 当您的内网域名创建成功后，您可以通过调用此接口查询单个内网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1488,95 +1291,9 @@ public class DnsClient {
     }
 
     /**
-     * 查询弹性公网IP的反向解析记录列表
-     *
-     * 查询弹性公网IP的反向解析记录列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPtrRecordsRequest 请求对象
-     * @return ListPtrRecordsResponse
-     */
-    public ListPtrRecordsResponse listPtrRecords(ListPtrRecordsRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.listPtrRecords);
-    }
-
-    /**
-     * 查询弹性公网IP的反向解析记录列表
-     *
-     * 查询弹性公网IP的反向解析记录列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPtrRecordsRequest 请求对象
-     * @return SyncInvoker<ListPtrRecordsRequest, ListPtrRecordsResponse>
-     */
-    public SyncInvoker<ListPtrRecordsRequest, ListPtrRecordsResponse> listPtrRecordsInvoker(
-        ListPtrRecordsRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.listPtrRecords, hcClient);
-    }
-
-    /**
-     * 查询弹性公网IP的反向解析记录列表
-     *
-     * 查询弹性公网IP的反向解析记录列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPtrsRequest 请求对象
-     * @return ListPtrsResponse
-     */
-    public ListPtrsResponse listPtrs(ListPtrsRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.listPtrs);
-    }
-
-    /**
-     * 查询弹性公网IP的反向解析记录列表
-     *
-     * 查询弹性公网IP的反向解析记录列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPtrsRequest 请求对象
-     * @return SyncInvoker<ListPtrsRequest, ListPtrsResponse>
-     */
-    public SyncInvoker<ListPtrsRequest, ListPtrsResponse> listPtrsInvoker(ListPtrsRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.listPtrs, hcClient);
-    }
-
-    /**
-     * 查询公网域名的线路列表
-     *
-     * 查询公网域名的线路列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPublicZoneLinesRequest 请求对象
-     * @return ListPublicZoneLinesResponse
-     */
-    public ListPublicZoneLinesResponse listPublicZoneLines(ListPublicZoneLinesRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.listPublicZoneLines);
-    }
-
-    /**
-     * 查询公网域名的线路列表
-     *
-     * 查询公网域名的线路列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPublicZoneLinesRequest 请求对象
-     * @return SyncInvoker<ListPublicZoneLinesRequest, ListPublicZoneLinesResponse>
-     */
-    public SyncInvoker<ListPublicZoneLinesRequest, ListPublicZoneLinesResponse> listPublicZoneLinesInvoker(
-        ListPublicZoneLinesRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.listPublicZoneLines, hcClient);
-    }
-
-    /**
      * 查询公网域名列表
      *
-     * 查询公网域名列表。
+     * 当您的公网域名创建成功后，您可以通过调用此接口查询所有公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1590,7 +1307,7 @@ public class DnsClient {
     /**
      * 查询公网域名列表
      *
-     * 查询公网域名列表。
+     * 当您的公网域名创建成功后，您可以通过调用此接口查询所有公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1600,93 +1317,6 @@ public class DnsClient {
     public SyncInvoker<ListPublicZonesRequest, ListPublicZonesResponse> listPublicZonesInvoker(
         ListPublicZonesRequest request) {
         return new SyncInvoker<>(request, DnsMeta.listPublicZones, hcClient);
-    }
-
-    /**
-     * 查询租户记录集列表
-     *
-     * 查询租户记录集列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRecordSetsRequest 请求对象
-     * @return ListRecordSetsResponse
-     */
-    public ListRecordSetsResponse listRecordSets(ListRecordSetsRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.listRecordSets);
-    }
-
-    /**
-     * 查询租户记录集列表
-     *
-     * 查询租户记录集列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRecordSetsRequest 请求对象
-     * @return SyncInvoker<ListRecordSetsRequest, ListRecordSetsResponse>
-     */
-    public SyncInvoker<ListRecordSetsRequest, ListRecordSetsResponse> listRecordSetsInvoker(
-        ListRecordSetsRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.listRecordSets, hcClient);
-    }
-
-    /**
-     * 查询域名下的记录集列表
-     *
-     * 查询域名下的记录集列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRecordSetsByZoneRequest 请求对象
-     * @return ListRecordSetsByZoneResponse
-     */
-    public ListRecordSetsByZoneResponse listRecordSetsByZone(ListRecordSetsByZoneRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.listRecordSetsByZone);
-    }
-
-    /**
-     * 查询域名下的记录集列表
-     *
-     * 查询域名下的记录集列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRecordSetsByZoneRequest 请求对象
-     * @return SyncInvoker<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse>
-     */
-    public SyncInvoker<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse> listRecordSetsByZoneInvoker(
-        ListRecordSetsByZoneRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.listRecordSetsByZone, hcClient);
-    }
-
-    /**
-     * 查询租户记录集列表
-     *
-     * 查询租户记录集列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRecordSetsWithLineRequest 请求对象
-     * @return ListRecordSetsWithLineResponse
-     */
-    public ListRecordSetsWithLineResponse listRecordSetsWithLine(ListRecordSetsWithLineRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.listRecordSetsWithLine);
-    }
-
-    /**
-     * 查询租户记录集列表
-     *
-     * 查询租户记录集列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRecordSetsWithLineRequest 请求对象
-     * @return SyncInvoker<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse>
-     */
-    public SyncInvoker<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse> listRecordSetsWithLineInvoker(
-        ListRecordSetsWithLineRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.listRecordSetsWithLine, hcClient);
     }
 
     /**
@@ -1775,38 +1405,9 @@ public class DnsClient {
     }
 
     /**
-     * 将弹性公网IP的反向解析记录恢复为默认值
-     *
-     * 将弹性公网IP的反向解析记录恢复为默认值。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RestorePtrRecordRequest 请求对象
-     * @return RestorePtrRecordResponse
-     */
-    public RestorePtrRecordResponse restorePtrRecord(RestorePtrRecordRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.restorePtrRecord);
-    }
-
-    /**
-     * 将弹性公网IP的反向解析记录恢复为默认值
-     *
-     * 将弹性公网IP的反向解析记录恢复为默认值。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RestorePtrRecordRequest 请求对象
-     * @return SyncInvoker<RestorePtrRecordRequest, RestorePtrRecordResponse>
-     */
-    public SyncInvoker<RestorePtrRecordRequest, RestorePtrRecordResponse> restorePtrRecordInvoker(
-        RestorePtrRecordRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.restorePtrRecord, hcClient);
-    }
-
-    /**
      * 设置内网域名的子域名递归解析代理
      *
-     * 设置内网域名的子域名递归解析代理。
+     * 当您的内网域名创建成功后，您可以通过调用此接口设置开启或者关闭内网域名的子域名递归解析代理。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1820,7 +1421,7 @@ public class DnsClient {
     /**
      * 设置内网域名的子域名递归解析代理
      *
-     * 设置内网域名的子域名递归解析代理。
+     * 当您的内网域名创建成功后，您可以通过调用此接口设置开启或者关闭内网域名的子域名递归解析代理。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1833,38 +1434,9 @@ public class DnsClient {
     }
 
     /**
-     * 设置记录集状态
+     * 查询指定版本号的API版本信息
      *
-     * 设置记录集状态。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetRecordSetsStatusRequest 请求对象
-     * @return SetRecordSetsStatusResponse
-     */
-    public SetRecordSetsStatusResponse setRecordSetsStatus(SetRecordSetsStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.setRecordSetsStatus);
-    }
-
-    /**
-     * 设置记录集状态
-     *
-     * 设置记录集状态。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetRecordSetsStatusRequest 请求对象
-     * @return SyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse>
-     */
-    public SyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> setRecordSetsStatusInvoker(
-        SetRecordSetsStatusRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.setRecordSetsStatus, hcClient);
-    }
-
-    /**
-     * 查询指定的云解析服务API版本号
-     *
-     * 查询指定的云解析服务API版本号。
+     * 查询指定版本号的云解析服务API版本信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1876,9 +1448,9 @@ public class DnsClient {
     }
 
     /**
-     * 查询指定的云解析服务API版本号
+     * 查询指定版本号的API版本信息
      *
-     * 查询指定的云解析服务API版本号。
+     * 查询指定版本号的云解析服务API版本信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1977,7 +1549,7 @@ public class DnsClient {
     /**
      * 查询内网域名
      *
-     * 查询内网域名。
+     * 当您的内网域名创建成功后，您可以通过调用此接口查询单个内网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1991,7 +1563,7 @@ public class DnsClient {
     /**
      * 查询内网域名
      *
-     * 查询内网域名。
+     * 当您的内网域名创建成功后，您可以通过调用此接口查询单个内网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2006,7 +1578,7 @@ public class DnsClient {
     /**
      * 查询内网域名的名称服务器
      *
-     * 查询内网域名的名称服务器。
+     * 当您的内网域名创建成功后，您可以通过调用此接口查询内网域名的名称服务器信息，包括优先级、DNS服务器地址等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2020,7 +1592,7 @@ public class DnsClient {
     /**
      * 查询内网域名的名称服务器
      *
-     * 查询内网域名的名称服务器。
+     * 当您的内网域名创建成功后，您可以通过调用此接口查询内网域名的名称服务器信息，包括优先级、DNS服务器地址等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2033,66 +1605,9 @@ public class DnsClient {
     }
 
     /**
-     * 查询弹性公网IP的反向解析记录
-     *
-     * 查询弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowPtrRequest 请求对象
-     * @return ShowPtrResponse
-     */
-    public ShowPtrResponse showPtr(ShowPtrRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.showPtr);
-    }
-
-    /**
-     * 查询弹性公网IP的反向解析记录
-     *
-     * 查询弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowPtrRequest 请求对象
-     * @return SyncInvoker<ShowPtrRequest, ShowPtrResponse>
-     */
-    public SyncInvoker<ShowPtrRequest, ShowPtrResponse> showPtrInvoker(ShowPtrRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.showPtr, hcClient);
-    }
-
-    /**
-     * 查询弹性公网IP的反向解析记录
-     *
-     * 查询弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowPtrRecordSetRequest 请求对象
-     * @return ShowPtrRecordSetResponse
-     */
-    public ShowPtrRecordSetResponse showPtrRecordSet(ShowPtrRecordSetRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.showPtrRecordSet);
-    }
-
-    /**
-     * 查询弹性公网IP的反向解析记录
-     *
-     * 查询弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowPtrRecordSetRequest 请求对象
-     * @return SyncInvoker<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse>
-     */
-    public SyncInvoker<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> showPtrRecordSetInvoker(
-        ShowPtrRecordSetRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.showPtrRecordSet, hcClient);
-    }
-
-    /**
      * 查询公网域名
      *
-     * 查询公网域名。
+     * 当您的公网域名创建成功后，您可以通过调用此接口查询单个公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2106,7 +1621,7 @@ public class DnsClient {
     /**
      * 查询公网域名
      *
-     * 查询公网域名。
+     * 当您的公网域名创建成功后，您可以通过调用此接口查询单个公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2121,7 +1636,7 @@ public class DnsClient {
     /**
      * 查询公网域名的名称服务器
      *
-     * 查询公网域名的名称服务器。
+     * 当您的公网域名创建成功后，您可以通过调用此接口查询公网域名的名称服务器信息，包括主机名、优先级等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2135,7 +1650,7 @@ public class DnsClient {
     /**
      * 查询公网域名的名称服务器
      *
-     * 查询公网域名的名称服务器。
+     * 当您的公网域名创建成功后，您可以通过调用此接口查询公网域名的名称服务器信息，包括主机名、优先级等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2145,92 +1660,6 @@ public class DnsClient {
     public SyncInvoker<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> showPublicZoneNameServerInvoker(
         ShowPublicZoneNameServerRequest request) {
         return new SyncInvoker<>(request, DnsMeta.showPublicZoneNameServer, hcClient);
-    }
-
-    /**
-     * 查询记录集
-     *
-     * 查询记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRecordSetRequest 请求对象
-     * @return ShowRecordSetResponse
-     */
-    public ShowRecordSetResponse showRecordSet(ShowRecordSetRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.showRecordSet);
-    }
-
-    /**
-     * 查询记录集
-     *
-     * 查询记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRecordSetRequest 请求对象
-     * @return SyncInvoker<ShowRecordSetRequest, ShowRecordSetResponse>
-     */
-    public SyncInvoker<ShowRecordSetRequest, ShowRecordSetResponse> showRecordSetInvoker(ShowRecordSetRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.showRecordSet, hcClient);
-    }
-
-    /**
-     * 查询域名下的记录集列表
-     *
-     * 查询域名下的记录集列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRecordSetByZoneRequest 请求对象
-     * @return ShowRecordSetByZoneResponse
-     */
-    public ShowRecordSetByZoneResponse showRecordSetByZone(ShowRecordSetByZoneRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.showRecordSetByZone);
-    }
-
-    /**
-     * 查询域名下的记录集列表
-     *
-     * 查询域名下的记录集列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRecordSetByZoneRequest 请求对象
-     * @return SyncInvoker<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse>
-     */
-    public SyncInvoker<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse> showRecordSetByZoneInvoker(
-        ShowRecordSetByZoneRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.showRecordSetByZone, hcClient);
-    }
-
-    /**
-     * 查询记录集
-     *
-     * 查询记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRecordSetWithLineRequest 请求对象
-     * @return ShowRecordSetWithLineResponse
-     */
-    public ShowRecordSetWithLineResponse showRecordSetWithLine(ShowRecordSetWithLineRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.showRecordSetWithLine);
-    }
-
-    /**
-     * 查询记录集
-     *
-     * 查询记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRecordSetWithLineRequest 请求对象
-     * @return SyncInvoker<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse>
-     */
-    public SyncInvoker<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse> showRecordSetWithLineInvoker(
-        ShowRecordSetWithLineRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.showRecordSetWithLine, hcClient);
     }
 
     /**
@@ -2292,9 +1721,9 @@ public class DnsClient {
     }
 
     /**
-     * 更新自定义线路
+     * 修改自定义线路
      *
-     * 更新自定义线路。
+     * 修改自定义线路。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2306,9 +1735,9 @@ public class DnsClient {
     }
 
     /**
-     * 更新自定义线路
+     * 修改自定义线路
      *
-     * 更新自定义线路。
+     * 修改自定义线路。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2350,9 +1779,9 @@ public class DnsClient {
     }
 
     /**
-     * 更新线路分组
+     * 修改线路分组
      *
-     * 更新线路分组。该接口部分区域未上线，如需使用请提交工单申请开通。
+     * 修改线路分组。该接口部分区域未上线，如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2364,9 +1793,9 @@ public class DnsClient {
     }
 
     /**
-     * 更新线路分组
+     * 修改线路分组
      *
-     * 更新线路分组。该接口部分区域未上线，如需使用请提交工单申请开通。
+     * 修改线路分组。该接口部分区域未上线，如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2381,7 +1810,7 @@ public class DnsClient {
     /**
      * 修改内网域名
      *
-     * 修改内网域名。
+     * 当您的内网域名创建成功后，您可以通过调用此接口修改内网域名的基本信息，包括TTL、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2395,7 +1824,7 @@ public class DnsClient {
     /**
      * 修改内网域名
      *
-     * 修改内网域名。
+     * 当您的内网域名创建成功后，您可以通过调用此接口修改内网域名的基本信息，包括TTL、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2410,7 +1839,7 @@ public class DnsClient {
     /**
      * 设置内网域名状态
      *
-     * 设置内网域名状态，支持暂停、启用域名。
+     * 当您的内网域名创建成功后，您可以通过调用此接口设置内网域名的状态，包括暂停、启用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2424,7 +1853,7 @@ public class DnsClient {
     /**
      * 设置内网域名状态
      *
-     * 设置内网域名状态，支持暂停、启用域名。
+     * 当您的内网域名创建成功后，您可以通过调用此接口设置内网域名的状态，包括暂停、启用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2437,66 +1866,9 @@ public class DnsClient {
     }
 
     /**
-     * 修改弹性公网IP的反向解析记录
-     *
-     * 修改弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdatePtrRequest 请求对象
-     * @return UpdatePtrResponse
-     */
-    public UpdatePtrResponse updatePtr(UpdatePtrRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.updatePtr);
-    }
-
-    /**
-     * 修改弹性公网IP的反向解析记录
-     *
-     * 修改弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdatePtrRequest 请求对象
-     * @return SyncInvoker<UpdatePtrRequest, UpdatePtrResponse>
-     */
-    public SyncInvoker<UpdatePtrRequest, UpdatePtrResponse> updatePtrInvoker(UpdatePtrRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.updatePtr, hcClient);
-    }
-
-    /**
-     * 修改弹性公网IP的反向解析记录
-     *
-     * 修改弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdatePtrRecordRequest 请求对象
-     * @return UpdatePtrRecordResponse
-     */
-    public UpdatePtrRecordResponse updatePtrRecord(UpdatePtrRecordRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.updatePtrRecord);
-    }
-
-    /**
-     * 修改弹性公网IP的反向解析记录
-     *
-     * 修改弹性公网IP的反向解析记录。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdatePtrRecordRequest 请求对象
-     * @return SyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse>
-     */
-    public SyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse> updatePtrRecordInvoker(
-        UpdatePtrRecordRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.updatePtrRecord, hcClient);
-    }
-
-    /**
      * 修改公网域名
      *
-     * 修改公网域名。
+     * 当您的公网域名创建成功后，您可以通过调用此接口修改公网域名的基本信息，包括TTL、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2510,7 +1882,7 @@ public class DnsClient {
     /**
      * 修改公网域名
      *
-     * 修改公网域名。
+     * 当您的公网域名创建成功后，您可以通过调用此接口修改公网域名的基本信息，包括TTL、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2525,7 +1897,7 @@ public class DnsClient {
     /**
      * 设置公网域名状态
      *
-     * 设置公网域名状态，支持暂停、启用域名。
+     * 当您的公网域名创建成功后，您可以通过调用此接口设置公网域名的状态，包括暂停、启用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2539,7 +1911,7 @@ public class DnsClient {
     /**
      * 设置公网域名状态
      *
-     * 设置公网域名状态，支持暂停、启用域名。
+     * 当您的公网域名创建成功后，您可以通过调用此接口设置公网域名的状态，包括暂停、启用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2549,64 +1921,6 @@ public class DnsClient {
     public SyncInvoker<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> updatePublicZoneStatusInvoker(
         UpdatePublicZoneStatusRequest request) {
         return new SyncInvoker<>(request, DnsMeta.updatePublicZoneStatus, hcClient);
-    }
-
-    /**
-     * 修改记录集
-     *
-     * 修改记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateRecordSetRequest 请求对象
-     * @return UpdateRecordSetResponse
-     */
-    public UpdateRecordSetResponse updateRecordSet(UpdateRecordSetRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.updateRecordSet);
-    }
-
-    /**
-     * 修改记录集
-     *
-     * 修改记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateRecordSetRequest 请求对象
-     * @return SyncInvoker<UpdateRecordSetRequest, UpdateRecordSetResponse>
-     */
-    public SyncInvoker<UpdateRecordSetRequest, UpdateRecordSetResponse> updateRecordSetInvoker(
-        UpdateRecordSetRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.updateRecordSet, hcClient);
-    }
-
-    /**
-     * 修改记录集
-     *
-     * 修改记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateRecordSetsRequest 请求对象
-     * @return UpdateRecordSetsResponse
-     */
-    public UpdateRecordSetsResponse updateRecordSets(UpdateRecordSetsRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.updateRecordSets);
-    }
-
-    /**
-     * 修改记录集
-     *
-     * 修改记录集。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateRecordSetsRequest 请求对象
-     * @return SyncInvoker<UpdateRecordSetsRequest, UpdateRecordSetsResponse>
-     */
-    public SyncInvoker<UpdateRecordSetsRequest, UpdateRecordSetsResponse> updateRecordSetsInvoker(
-        UpdateRecordSetsRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.updateRecordSets, hcClient);
     }
 
     /**
@@ -2723,6 +2037,696 @@ public class DnsClient {
     public SyncInvoker<ShowDnssecConfigRequest, ShowDnssecConfigResponse> showDnssecConfigInvoker(
         ShowDnssecConfigRequest request) {
         return new SyncInvoker<>(request, DnsMeta.showDnssecConfig, hcClient);
+    }
+
+    /**
+     * 设置弹性公网IP的反向解析记录
+     *
+     * 设置弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEipRecordSetRequest 请求对象
+     * @return CreateEipRecordSetResponse
+     */
+    public CreateEipRecordSetResponse createEipRecordSet(CreateEipRecordSetRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createEipRecordSet);
+    }
+
+    /**
+     * 设置弹性公网IP的反向解析记录
+     *
+     * 设置弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEipRecordSetRequest 请求对象
+     * @return SyncInvoker<CreateEipRecordSetRequest, CreateEipRecordSetResponse>
+     */
+    public SyncInvoker<CreateEipRecordSetRequest, CreateEipRecordSetResponse> createEipRecordSetInvoker(
+        CreateEipRecordSetRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.createEipRecordSet, hcClient);
+    }
+
+    /**
+     * 创建记录集
+     *
+     * 记录集是指一组资源记录的集合，这些资源记录属于同一域名，用于定义域名支持的解析类型以及解析值。您的域名创建完成后，可以通过调用此接口为域名添加不同类型的记录集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRecordSetRequest 请求对象
+     * @return CreateRecordSetResponse
+     */
+    public CreateRecordSetResponse createRecordSet(CreateRecordSetRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createRecordSet);
+    }
+
+    /**
+     * 创建记录集
+     *
+     * 记录集是指一组资源记录的集合，这些资源记录属于同一域名，用于定义域名支持的解析类型以及解析值。您的域名创建完成后，可以通过调用此接口为域名添加不同类型的记录集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRecordSetRequest 请求对象
+     * @return SyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse>
+     */
+    public SyncInvoker<CreateRecordSetRequest, CreateRecordSetResponse> createRecordSetInvoker(
+        CreateRecordSetRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.createRecordSet, hcClient);
+    }
+
+    /**
+     * 删除记录集
+     *
+     * 当您的记录集不再使用时，您可以通过调用此接口将其删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRecordSetRequest 请求对象
+     * @return DeleteRecordSetResponse
+     */
+    public DeleteRecordSetResponse deleteRecordSet(DeleteRecordSetRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.deleteRecordSet);
+    }
+
+    /**
+     * 删除记录集
+     *
+     * 当您的记录集不再使用时，您可以通过调用此接口将其删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRecordSetRequest 请求对象
+     * @return SyncInvoker<DeleteRecordSetRequest, DeleteRecordSetResponse>
+     */
+    public SyncInvoker<DeleteRecordSetRequest, DeleteRecordSetResponse> deleteRecordSetInvoker(
+        DeleteRecordSetRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.deleteRecordSet, hcClient);
+    }
+
+    /**
+     * 查询弹性公网IP的反向解析记录列表
+     *
+     * 查询弹性公网IP的反向解析记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPtrRecordsRequest 请求对象
+     * @return ListPtrRecordsResponse
+     */
+    public ListPtrRecordsResponse listPtrRecords(ListPtrRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listPtrRecords);
+    }
+
+    /**
+     * 查询弹性公网IP的反向解析记录列表
+     *
+     * 查询弹性公网IP的反向解析记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPtrRecordsRequest 请求对象
+     * @return SyncInvoker<ListPtrRecordsRequest, ListPtrRecordsResponse>
+     */
+    public SyncInvoker<ListPtrRecordsRequest, ListPtrRecordsResponse> listPtrRecordsInvoker(
+        ListPtrRecordsRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listPtrRecords, hcClient);
+    }
+
+    /**
+     * 查询租户记录集列表
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecordSetsRequest 请求对象
+     * @return ListRecordSetsResponse
+     */
+    public ListRecordSetsResponse listRecordSets(ListRecordSetsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listRecordSets);
+    }
+
+    /**
+     * 查询租户记录集列表
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecordSetsRequest 请求对象
+     * @return SyncInvoker<ListRecordSetsRequest, ListRecordSetsResponse>
+     */
+    public SyncInvoker<ListRecordSetsRequest, ListRecordSetsResponse> listRecordSetsInvoker(
+        ListRecordSetsRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listRecordSets, hcClient);
+    }
+
+    /**
+     * 查询域名下的记录集列表
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecordSetsByZoneRequest 请求对象
+     * @return ListRecordSetsByZoneResponse
+     */
+    public ListRecordSetsByZoneResponse listRecordSetsByZone(ListRecordSetsByZoneRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listRecordSetsByZone);
+    }
+
+    /**
+     * 查询域名下的记录集列表
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecordSetsByZoneRequest 请求对象
+     * @return SyncInvoker<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse>
+     */
+    public SyncInvoker<ListRecordSetsByZoneRequest, ListRecordSetsByZoneResponse> listRecordSetsByZoneInvoker(
+        ListRecordSetsByZoneRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listRecordSetsByZone, hcClient);
+    }
+
+    /**
+     * 将弹性公网IP的反向解析记录恢复为默认值
+     *
+     * 将弹性公网IP的反向解析记录恢复为默认值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestorePtrRecordRequest 请求对象
+     * @return RestorePtrRecordResponse
+     */
+    public RestorePtrRecordResponse restorePtrRecord(RestorePtrRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.restorePtrRecord);
+    }
+
+    /**
+     * 将弹性公网IP的反向解析记录恢复为默认值
+     *
+     * 将弹性公网IP的反向解析记录恢复为默认值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestorePtrRecordRequest 请求对象
+     * @return SyncInvoker<RestorePtrRecordRequest, RestorePtrRecordResponse>
+     */
+    public SyncInvoker<RestorePtrRecordRequest, RestorePtrRecordResponse> restorePtrRecordInvoker(
+        RestorePtrRecordRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.restorePtrRecord, hcClient);
+    }
+
+    /**
+     * 查询弹性公网IP的反向解析记录
+     *
+     * 查询弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPtrRecordSetRequest 请求对象
+     * @return ShowPtrRecordSetResponse
+     */
+    public ShowPtrRecordSetResponse showPtrRecordSet(ShowPtrRecordSetRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showPtrRecordSet);
+    }
+
+    /**
+     * 查询弹性公网IP的反向解析记录
+     *
+     * 查询弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPtrRecordSetRequest 请求对象
+     * @return SyncInvoker<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse>
+     */
+    public SyncInvoker<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> showPtrRecordSetInvoker(
+        ShowPtrRecordSetRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showPtrRecordSet, hcClient);
+    }
+
+    /**
+     * 查询记录集
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordSetRequest 请求对象
+     * @return ShowRecordSetResponse
+     */
+    public ShowRecordSetResponse showRecordSet(ShowRecordSetRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showRecordSet);
+    }
+
+    /**
+     * 查询记录集
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordSetRequest 请求对象
+     * @return SyncInvoker<ShowRecordSetRequest, ShowRecordSetResponse>
+     */
+    public SyncInvoker<ShowRecordSetRequest, ShowRecordSetResponse> showRecordSetInvoker(ShowRecordSetRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showRecordSet, hcClient);
+    }
+
+    /**
+     * 修改弹性公网IP的反向解析记录
+     *
+     * 修改弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePtrRecordRequest 请求对象
+     * @return UpdatePtrRecordResponse
+     */
+    public UpdatePtrRecordResponse updatePtrRecord(UpdatePtrRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.updatePtrRecord);
+    }
+
+    /**
+     * 修改弹性公网IP的反向解析记录
+     *
+     * 修改弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePtrRecordRequest 请求对象
+     * @return SyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse>
+     */
+    public SyncInvoker<UpdatePtrRecordRequest, UpdatePtrRecordResponse> updatePtrRecordInvoker(
+        UpdatePtrRecordRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.updatePtrRecord, hcClient);
+    }
+
+    /**
+     * 修改记录集
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口修改记录集的信息，包括域名、类型、记录值、TTL、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecordSetRequest 请求对象
+     * @return UpdateRecordSetResponse
+     */
+    public UpdateRecordSetResponse updateRecordSet(UpdateRecordSetRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.updateRecordSet);
+    }
+
+    /**
+     * 修改记录集
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口修改记录集的信息，包括域名、类型、记录值、TTL、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecordSetRequest 请求对象
+     * @return SyncInvoker<UpdateRecordSetRequest, UpdateRecordSetResponse>
+     */
+    public SyncInvoker<UpdateRecordSetRequest, UpdateRecordSetResponse> updateRecordSetInvoker(
+        UpdateRecordSetRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.updateRecordSet, hcClient);
+    }
+
+    /**
+     * 创建弹性公网IP的反向解析记录
+     *
+     * 创建弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePtrRequest 请求对象
+     * @return CreatePtrResponse
+     */
+    public CreatePtrResponse createPtr(CreatePtrRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createPtr);
+    }
+
+    /**
+     * 创建弹性公网IP的反向解析记录
+     *
+     * 创建弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePtrRequest 请求对象
+     * @return SyncInvoker<CreatePtrRequest, CreatePtrResponse>
+     */
+    public SyncInvoker<CreatePtrRequest, CreatePtrResponse> createPtrInvoker(CreatePtrRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.createPtr, hcClient);
+    }
+
+    /**
+     * 创建记录集
+     *
+     * 记录集是指一组资源记录的集合，这些资源记录属于同一域名，用于定义域名支持的解析类型以及解析值。您的域名创建完成后，可以通过调用此接口为域名添加不同类型的记录集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRecordSetWithLineRequest 请求对象
+     * @return CreateRecordSetWithLineResponse
+     */
+    public CreateRecordSetWithLineResponse createRecordSetWithLine(CreateRecordSetWithLineRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createRecordSetWithLine);
+    }
+
+    /**
+     * 创建记录集
+     *
+     * 记录集是指一组资源记录的集合，这些资源记录属于同一域名，用于定义域名支持的解析类型以及解析值。您的域名创建完成后，可以通过调用此接口为域名添加不同类型的记录集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRecordSetWithLineRequest 请求对象
+     * @return SyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse>
+     */
+    public SyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse> createRecordSetWithLineInvoker(
+        CreateRecordSetWithLineRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.createRecordSetWithLine, hcClient);
+    }
+
+    /**
+     * 将弹性公网IP的反向解析记录恢复为默认值
+     *
+     * 将弹性公网IP的反向解析记录恢复为默认值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePtrRequest 请求对象
+     * @return DeletePtrResponse
+     */
+    public DeletePtrResponse deletePtr(DeletePtrRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.deletePtr);
+    }
+
+    /**
+     * 将弹性公网IP的反向解析记录恢复为默认值
+     *
+     * 将弹性公网IP的反向解析记录恢复为默认值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePtrRequest 请求对象
+     * @return SyncInvoker<DeletePtrRequest, DeletePtrResponse>
+     */
+    public SyncInvoker<DeletePtrRequest, DeletePtrResponse> deletePtrInvoker(DeletePtrRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.deletePtr, hcClient);
+    }
+
+    /**
+     * 删除记录集
+     *
+     * 当您的记录集不再使用时，您可以通过调用此接口将其删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRecordSetsRequest 请求对象
+     * @return DeleteRecordSetsResponse
+     */
+    public DeleteRecordSetsResponse deleteRecordSets(DeleteRecordSetsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.deleteRecordSets);
+    }
+
+    /**
+     * 删除记录集
+     *
+     * 当您的记录集不再使用时，您可以通过调用此接口将其删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRecordSetsRequest 请求对象
+     * @return SyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse>
+     */
+    public SyncInvoker<DeleteRecordSetsRequest, DeleteRecordSetsResponse> deleteRecordSetsInvoker(
+        DeleteRecordSetsRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.deleteRecordSets, hcClient);
+    }
+
+    /**
+     * 查询弹性公网IP的反向解析记录列表
+     *
+     * 查询弹性公网IP的反向解析记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPtrsRequest 请求对象
+     * @return ListPtrsResponse
+     */
+    public ListPtrsResponse listPtrs(ListPtrsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listPtrs);
+    }
+
+    /**
+     * 查询弹性公网IP的反向解析记录列表
+     *
+     * 查询弹性公网IP的反向解析记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPtrsRequest 请求对象
+     * @return SyncInvoker<ListPtrsRequest, ListPtrsResponse>
+     */
+    public SyncInvoker<ListPtrsRequest, ListPtrsResponse> listPtrsInvoker(ListPtrsRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listPtrs, hcClient);
+    }
+
+    /**
+     * 查询公网域名的线路列表
+     *
+     * 公网域名支持设置线路解析，当您的公网域名创建完成并添加记录集时，可通过调用此接口查询公网域名的所有解析线路。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPublicZoneLinesRequest 请求对象
+     * @return ListPublicZoneLinesResponse
+     */
+    public ListPublicZoneLinesResponse listPublicZoneLines(ListPublicZoneLinesRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listPublicZoneLines);
+    }
+
+    /**
+     * 查询公网域名的线路列表
+     *
+     * 公网域名支持设置线路解析，当您的公网域名创建完成并添加记录集时，可通过调用此接口查询公网域名的所有解析线路。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPublicZoneLinesRequest 请求对象
+     * @return SyncInvoker<ListPublicZoneLinesRequest, ListPublicZoneLinesResponse>
+     */
+    public SyncInvoker<ListPublicZoneLinesRequest, ListPublicZoneLinesResponse> listPublicZoneLinesInvoker(
+        ListPublicZoneLinesRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listPublicZoneLines, hcClient);
+    }
+
+    /**
+     * 查询租户记录集列表
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecordSetsWithLineRequest 请求对象
+     * @return ListRecordSetsWithLineResponse
+     */
+    public ListRecordSetsWithLineResponse listRecordSetsWithLine(ListRecordSetsWithLineRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listRecordSetsWithLine);
+    }
+
+    /**
+     * 查询租户记录集列表
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecordSetsWithLineRequest 请求对象
+     * @return SyncInvoker<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse>
+     */
+    public SyncInvoker<ListRecordSetsWithLineRequest, ListRecordSetsWithLineResponse> listRecordSetsWithLineInvoker(
+        ListRecordSetsWithLineRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listRecordSetsWithLine, hcClient);
+    }
+
+    /**
+     * 设置记录集状态
+     *
+     * 当您的内网域名创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRecordSetsStatusRequest 请求对象
+     * @return SetRecordSetsStatusResponse
+     */
+    public SetRecordSetsStatusResponse setRecordSetsStatus(SetRecordSetsStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.setRecordSetsStatus);
+    }
+
+    /**
+     * 设置记录集状态
+     *
+     * 当您的内网域名创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRecordSetsStatusRequest 请求对象
+     * @return SyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse>
+     */
+    public SyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> setRecordSetsStatusInvoker(
+        SetRecordSetsStatusRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.setRecordSetsStatus, hcClient);
+    }
+
+    /**
+     * 查询弹性公网IP的反向解析记录
+     *
+     * 查询弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPtrRequest 请求对象
+     * @return ShowPtrResponse
+     */
+    public ShowPtrResponse showPtr(ShowPtrRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showPtr);
+    }
+
+    /**
+     * 查询弹性公网IP的反向解析记录
+     *
+     * 查询弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPtrRequest 请求对象
+     * @return SyncInvoker<ShowPtrRequest, ShowPtrResponse>
+     */
+    public SyncInvoker<ShowPtrRequest, ShowPtrResponse> showPtrInvoker(ShowPtrRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showPtr, hcClient);
+    }
+
+    /**
+     * 查询域名下的记录集列表
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordSetByZoneRequest 请求对象
+     * @return ShowRecordSetByZoneResponse
+     */
+    public ShowRecordSetByZoneResponse showRecordSetByZone(ShowRecordSetByZoneRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showRecordSetByZone);
+    }
+
+    /**
+     * 查询域名下的记录集列表
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordSetByZoneRequest 请求对象
+     * @return SyncInvoker<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse>
+     */
+    public SyncInvoker<ShowRecordSetByZoneRequest, ShowRecordSetByZoneResponse> showRecordSetByZoneInvoker(
+        ShowRecordSetByZoneRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showRecordSetByZone, hcClient);
+    }
+
+    /**
+     * 查询记录集
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordSetWithLineRequest 请求对象
+     * @return ShowRecordSetWithLineResponse
+     */
+    public ShowRecordSetWithLineResponse showRecordSetWithLine(ShowRecordSetWithLineRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showRecordSetWithLine);
+    }
+
+    /**
+     * 查询记录集
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordSetWithLineRequest 请求对象
+     * @return SyncInvoker<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse>
+     */
+    public SyncInvoker<ShowRecordSetWithLineRequest, ShowRecordSetWithLineResponse> showRecordSetWithLineInvoker(
+        ShowRecordSetWithLineRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showRecordSetWithLine, hcClient);
+    }
+
+    /**
+     * 修改弹性公网IP的反向解析记录
+     *
+     * 修改弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePtrRequest 请求对象
+     * @return UpdatePtrResponse
+     */
+    public UpdatePtrResponse updatePtr(UpdatePtrRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.updatePtr);
+    }
+
+    /**
+     * 修改弹性公网IP的反向解析记录
+     *
+     * 修改弹性公网IP的反向解析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePtrRequest 请求对象
+     * @return SyncInvoker<UpdatePtrRequest, UpdatePtrResponse>
+     */
+    public SyncInvoker<UpdatePtrRequest, UpdatePtrResponse> updatePtrInvoker(UpdatePtrRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.updatePtr, hcClient);
+    }
+
+    /**
+     * 修改记录集
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口修改记录集的信息，包括域名、类型、记录值、TTL、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecordSetsRequest 请求对象
+     * @return UpdateRecordSetsResponse
+     */
+    public UpdateRecordSetsResponse updateRecordSets(UpdateRecordSetsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.updateRecordSets);
+    }
+
+    /**
+     * 修改记录集
+     *
+     * 当您的记录集创建成功后，您可以通过调用此接口修改记录集的信息，包括域名、类型、记录值、TTL、描述等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecordSetsRequest 请求对象
+     * @return SyncInvoker<UpdateRecordSetsRequest, UpdateRecordSetsResponse>
+     */
+    public SyncInvoker<UpdateRecordSetsRequest, UpdateRecordSetsResponse> updateRecordSetsInvoker(
+        UpdateRecordSetsRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.updateRecordSets, hcClient);
     }
 
 }

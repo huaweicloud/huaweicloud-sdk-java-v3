@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * ResourceGroupTagRelation
+ * 标签的匹配规则
  */
 public class ResourceGroupTagRelation {
 

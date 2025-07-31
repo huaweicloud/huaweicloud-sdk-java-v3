@@ -31,7 +31,7 @@ public class PublicZoneLines {
     }
 
     /**
-     * 线路ID。
+     * **参数解释：** 线路ID。 **取值范围：** 不涉及。
      * @return line
      */
     public String getLine() {
@@ -48,7 +48,7 @@ public class PublicZoneLines {
     }
 
     /**
-     * 线路名称。
+     * **参数解释：** 线路名称。 **取值范围：** 不涉及。
      * @return lineName
      */
     public String getLineName() {
@@ -65,7 +65,7 @@ public class PublicZoneLines {
     }
 
     /**
-     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return createTime
      */
     public String getCreateTime() {

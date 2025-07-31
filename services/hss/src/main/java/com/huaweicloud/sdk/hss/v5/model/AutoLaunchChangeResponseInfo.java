@@ -71,7 +71,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * Agent ID
+     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -88,7 +88,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * the type of change   - add ：新建   - delete ：删除   - modify ：修改
+     * **参数解释**: 变更类型 **取值范围**: - add：新建 - delete：删除 - modify：修改 
      * @return variationType
      */
     public String getVariationType() {
@@ -105,7 +105,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 自启动项类型   - 0 ：自启动服务   - 1 ：定时任务   - 2 ：预加载动态库   - 3 ：Run注册表键   - 4 ：开机启动文件夹
+     * **参数解释**: 自启动项类型 **取值范围**: - 0：自启动服务 - 1：定时任务 - 2：预加载动态库 - 3：Run注册表键 - 4：开机启动文件夹 
      * minimum: 0
      * maximum: 11
      * @return type
@@ -124,7 +124,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * host_id
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -141,7 +141,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 弹性服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -158,7 +158,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 主机IP
+     * **参数解释**: 主机IP **取值范围**: 字符长度1-128位 
      * @return hostIp
      */
     public String getHostIp() {
@@ -175,7 +175,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 自启动项的路径
+     * **参数解释**: 自启动项的路径 **取值范围**: 字符长度1-256位 
      * @return path
      */
     public String getPath() {
@@ -192,7 +192,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 采用sha256算法生成的文件hash值
+     * **参数解释**: 采用sha256算法生成的文件hash值 **取值范围**: 字符长度1-128位 
      * @return hash
      */
     public String getHash() {
@@ -209,7 +209,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 运行用户
+     * **参数解释**: 运行用户 **取值范围**: 字符长度1-64位 
      * @return runUser
      */
     public String getRunUser() {
@@ -226,7 +226,7 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 自启动项名称
+     * **参数解释**: 自启动项名称 **取值范围**: 字符长度1-256位 
      * @return name
      */
     public String getName() {
@@ -243,9 +243,9 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     /**
-     * 最近更新时间，13位时间戳
+     * **参数解释**: 最近更新时间，13位时间戳 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
-     * maximum: 4824430336000
+     * maximum: 9223372036854775807
      * @return recentScanTime
      */
     public Long getRecentScanTime() {

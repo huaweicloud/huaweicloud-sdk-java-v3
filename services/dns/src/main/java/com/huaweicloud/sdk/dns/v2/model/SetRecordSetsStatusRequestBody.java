@@ -21,7 +21,7 @@ public class SetRecordSetsStatusRequestBody {
     }
 
     /**
-     * 解析记录状态。  取值范围：  ENABLE：启用解析 DISABLE：暂停解析。
+     * **参数解释：** 解析记录状态。 **取值范围：** - ENABLE：启用解析 - DISABLE：暂停解析
      * @return status
      */
     public String getStatus() {

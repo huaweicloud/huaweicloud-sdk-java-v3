@@ -1510,7 +1510,7 @@ public class BssAsyncClient {
     /**
      * 查询度量单位列表
      *
-     * 伙伴在伙伴销售平台上查询资源使用量，包年包月资源的时长及金额的度量单位及名称，度量单位类型等。
+     * 功能描述：查询资源使用量，包年包月资源的时长及金额的度量单位及名称，度量单位类型等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1524,7 +1524,7 @@ public class BssAsyncClient {
     /**
      * 查询度量单位列表
      *
-     * 伙伴在伙伴销售平台上查询资源使用量，包年包月资源的时长及金额的度量单位及名称，度量单位类型等。
+     * 功能描述：查询资源使用量，包年包月资源的时长及金额的度量单位及名称，度量单位类型等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

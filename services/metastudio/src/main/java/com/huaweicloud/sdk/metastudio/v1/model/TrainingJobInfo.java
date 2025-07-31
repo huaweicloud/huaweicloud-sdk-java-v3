@@ -126,6 +126,16 @@ public class TrainingJobInfo {
 
     private Boolean isRemake;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "assess_result")
+
+    private AssessResult assessResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ondemand_resource")
+
+    private Boolean isOndemandResource;
+
     public TrainingJobInfo withJobType(JobType jobType) {
         this.jobType = jobType;
         return this;
@@ -532,6 +542,49 @@ public class TrainingJobInfo {
         this.isRemake = isRemake;
     }
 
+    public TrainingJobInfo withAssessResult(AssessResult assessResult) {
+        this.assessResult = assessResult;
+        return this;
+    }
+
+    public TrainingJobInfo withAssessResult(Consumer<AssessResult> assessResultSetter) {
+        if (this.assessResult == null) {
+            this.assessResult = new AssessResult();
+            assessResultSetter.accept(this.assessResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get assessResult
+     * @return assessResult
+     */
+    public AssessResult getAssessResult() {
+        return assessResult;
+    }
+
+    public void setAssessResult(AssessResult assessResult) {
+        this.assessResult = assessResult;
+    }
+
+    public TrainingJobInfo withIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+        return this;
+    }
+
+    /**
+     * 是否是按需任务
+     * @return isOndemandResource
+     */
+    public Boolean getIsOndemandResource() {
+        return isOndemandResource;
+    }
+
+    public void setIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -555,7 +608,9 @@ public class TrainingJobInfo {
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
             && Objects.equals(this.batchName, that.batchName)
             && Objects.equals(this.allocatedResource, that.allocatedResource)
-            && Objects.equals(this.outputLanguage, that.outputLanguage) && Objects.equals(this.isRemake, that.isRemake);
+            && Objects.equals(this.outputLanguage, that.outputLanguage) && Objects.equals(this.isRemake, that.isRemake)
+            && Objects.equals(this.assessResult, that.assessResult)
+            && Objects.equals(this.isOndemandResource, that.isOndemandResource);
     }
 
     @Override
@@ -582,7 +637,9 @@ public class TrainingJobInfo {
             batchName,
             allocatedResource,
             outputLanguage,
-            isRemake);
+            isRemake,
+            assessResult,
+            isOndemandResource);
     }
 
     @Override
@@ -612,6 +669,8 @@ public class TrainingJobInfo {
         sb.append("    allocatedResource: ").append(toIndentedString(allocatedResource)).append("\n");
         sb.append("    outputLanguage: ").append(toIndentedString(outputLanguage)).append("\n");
         sb.append("    isRemake: ").append(toIndentedString(isRemake)).append("\n");
+        sb.append("    assessResult: ").append(toIndentedString(assessResult)).append("\n");
+        sb.append("    isOndemandResource: ").append(toIndentedString(isOndemandResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

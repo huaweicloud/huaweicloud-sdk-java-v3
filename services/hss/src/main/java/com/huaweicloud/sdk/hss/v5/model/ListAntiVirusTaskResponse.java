@@ -30,7 +30,7 @@ public class ListAntiVirusTaskResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum

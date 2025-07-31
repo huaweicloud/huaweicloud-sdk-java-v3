@@ -43,6 +43,11 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
 
     private String notificationEndTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_timezone")
+
+    private String effectiveTimezone;
+
     /**
      * NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
      */
@@ -251,6 +256,23 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
         this.notificationEndTime = notificationEndTime;
     }
 
+    public UpdateOneClickAlarmNotificationsRequestBody withEffectiveTimezone(String effectiveTimezone) {
+        this.effectiveTimezone = effectiveTimezone;
+        return this;
+    }
+
+    /**
+     * 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"
+     * @return effectiveTimezone
+     */
+    public String getEffectiveTimezone() {
+        return effectiveTimezone;
+    }
+
+    public void setEffectiveTimezone(String effectiveTimezone) {
+        this.effectiveTimezone = effectiveTimezone;
+    }
+
     public UpdateOneClickAlarmNotificationsRequestBody withNotificationManner(
         NotificationMannerEnum notificationManner) {
         this.notificationManner = notificationManner;
@@ -317,6 +339,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
             && Objects.equals(this.okNotifications, that.okNotifications)
             && Objects.equals(this.notificationBeginTime, that.notificationBeginTime)
             && Objects.equals(this.notificationEndTime, that.notificationEndTime)
+            && Objects.equals(this.effectiveTimezone, that.effectiveTimezone)
             && Objects.equals(this.notificationManner, that.notificationManner)
             && Objects.equals(this.notificationPolicyIds, that.notificationPolicyIds);
     }
@@ -328,6 +351,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
             okNotifications,
             notificationBeginTime,
             notificationEndTime,
+            effectiveTimezone,
             notificationManner,
             notificationPolicyIds);
     }
@@ -341,6 +365,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
         sb.append("    okNotifications: ").append(toIndentedString(okNotifications)).append("\n");
         sb.append("    notificationBeginTime: ").append(toIndentedString(notificationBeginTime)).append("\n");
         sb.append("    notificationEndTime: ").append(toIndentedString(notificationEndTime)).append("\n");
+        sb.append("    effectiveTimezone: ").append(toIndentedString(effectiveTimezone)).append("\n");
         sb.append("    notificationManner: ").append(toIndentedString(notificationManner)).append("\n");
         sb.append("    notificationPolicyIds: ").append(toIndentedString(notificationPolicyIds)).append("\n");
         sb.append("}");

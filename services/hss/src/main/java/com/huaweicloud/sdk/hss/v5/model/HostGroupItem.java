@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 服务器组信息
+ * **参数解释**: 服务器组信息 **取值范围**: 不涉及 
  */
 public class HostGroupItem {
 
@@ -54,7 +54,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 服务器组ID
+     * **参数解释**: 服务器组ID **取值范围**: 字符长度0-64位 
      * @return groupId
      */
     public String getGroupId() {
@@ -71,7 +71,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 服务器组名称
+     * **参数解释**: 服务器组名称 **取值范围**: 字符长度0-256位 
      * @return groupName
      */
     public String getGroupName() {
@@ -88,7 +88,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 影响主机数量
+     * **参数解释**: 影响主机数量 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum
@@ -107,7 +107,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 有风险服务器数
+     * **参数解释**: 有风险服务器数 **取值范围**: 0到2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return riskHostNum
@@ -126,7 +126,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 未防护服务器数
+     * **参数解释**: 未防护服务器数 **取值范围**: 0到2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return unprotectHostNum
@@ -161,7 +161,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 主机id列表
+     * **参数解释**: 主机id列表 **取值范围**: 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {
@@ -178,7 +178,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 是否是线下数据中心服务器组
+     * **参数解释**: 是否是线下数据中心服务器组 **取值范围**: true或者false 
      * @return isOutside
      */
     public Boolean getIsOutside() {

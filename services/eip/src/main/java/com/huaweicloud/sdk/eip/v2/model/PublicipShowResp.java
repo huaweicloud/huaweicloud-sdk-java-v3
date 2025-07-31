@@ -143,6 +143,11 @@ public class PublicipShowResp {
 
     private String publicIpAddress;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
+
     /**
      * 功能说明：弹性公网IP的状态  取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE， 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
      */
@@ -586,6 +591,39 @@ public class PublicipShowResp {
         this.publicIpAddress = publicIpAddress;
     }
 
+    public PublicipShowResp withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public PublicipShowResp addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public PublicipShowResp withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * - 功能说明：\"公网EIP标签\"
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     public PublicipShowResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -755,8 +793,9 @@ public class PublicipShowResp {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.portId, that.portId) && Objects.equals(this.privateIpAddress, that.privateIpAddress)
             && Objects.equals(this.profile, that.profile) && Objects.equals(this.publicIpAddress, that.publicIpAddress)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.tenantId, that.tenantId)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.publicIpv6Address, that.publicIpv6Address)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.publicIpv6Address, that.publicIpv6Address)
             && Objects.equals(this.ipVersion, that.ipVersion)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
             && Objects.equals(this.allowShareBandwidthTypes, that.allowShareBandwidthTypes)
@@ -776,6 +815,7 @@ public class PublicipShowResp {
             privateIpAddress,
             profile,
             publicIpAddress,
+            tags,
             status,
             tenantId,
             type,
@@ -801,6 +841,7 @@ public class PublicipShowResp {
         sb.append("    privateIpAddress: ").append(toIndentedString(privateIpAddress)).append("\n");
         sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
         sb.append("    publicIpAddress: ").append(toIndentedString(publicIpAddress)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

@@ -66,7 +66,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * 主机id
+     * **参数解释**: 服务器ID **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -83,7 +83,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * 主机名称
+     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -100,7 +100,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * 主机ip
+     * **参数解释**: 主机IP **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -117,7 +117,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * 端口号
+     * **参数解释**: 端口号 **约束限制**: 不涉及 **取值范围**: 最小值1，最大值65535 **默认取值**: 不涉及 
      * minimum: 1
      * maximum: 65535
      * @return port
@@ -136,7 +136,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * 端口类型：目前包括TCP，UDP两种
+     * **参数解释**: 端口类型：目前包括TCP，UDP两种 **约束限制**: 不涉及 **取值范围**: TCP: TCP类型的端口 UDP: UDP类型的端口 **默认取值**: 不涉及 
      * @return type
      */
     public String getType() {
@@ -153,7 +153,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * 端口状态，包含如下： - danger：危险端口 - unknow: 无已知危险的端口
+     * **参数解释**: 端口状态 **约束限制**: 不涉及 **取值范围**: danger: 危险端口 unknow: 无已知危险的端口 **默认取值**: 不涉及 
      * @return status
      */
     public String getStatus() {
@@ -170,7 +170,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 主机所属的企业项目ID。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。 **约束限制**: 开通企业项目功能后才需要配置企业项目。 **取值范围**: 字符长度0-256位 **默认取值**: 0 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -187,9 +187,9 @@ public class ListPortsRequest {
     }
 
     /**
-     * 每页显示数量
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
-     * maximum: 100
+     * maximum: 200
      * @return limit
      */
     public Integer getLimit() {
@@ -206,9 +206,9 @@ public class ListPortsRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
-     * maximum: 10000
+     * maximum: 2000000
      * @return offset
      */
     public Integer getOffset() {
@@ -225,7 +225,7 @@ public class ListPortsRequest {
     }
 
     /**
-     * 类别，默认为host，包含如下： - host：主机 - container：容器
+     * **参数解释**: 类别，默认为host **约束限制**: 不涉及 **取值范围**: host：主机 container：容器 **默认取值**: host 
      * @return category
      */
     public String getCategory() {

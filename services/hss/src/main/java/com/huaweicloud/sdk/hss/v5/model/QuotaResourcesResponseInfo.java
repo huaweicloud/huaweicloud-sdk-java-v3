@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 配额资源
+ * **参数解释**： 配额资源 **取值范围**： 不涉及 
  */
 public class QuotaResourcesResponseInfo {
 
@@ -84,7 +84,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 主机安全配额的资源ID
+     * **参数解释** : HSS配额的资源ID **取值范围** : 字符长度1-128位 
      * @return resourceId
      */
     public String getResourceId() {
@@ -101,7 +101,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 资源规格编码，包含如下:   - hss.version.basic : 基础版   - hss.version.advanced : 专业版   - hss.version.enterprise : 企业版   - hss.version.premium : 旗舰版   - hss.version.wtp : 网页防篡改版   - hss.version.container : 容器版
+     * **参数解释**： 资源规格编码 **取值范围**： 包含如下6种。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。
      * @return version
      */
     public String getVersion() {
@@ -118,7 +118,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 配额状态   - normal : 正常   - expired : 已过期   - freeze : 已冻结
+     * **参数解释**： 配额状态 **取值范围**： 包含如下3种。 - normal : 正常 - expired : 已过期 - freeze : 已冻结
      * @return quotaStatus
      */
     public String getQuotaStatus() {
@@ -135,7 +135,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 使用状态   - idle : 空闲   - used : 使用中
+     * **参数解释**： 使用状态 **取值范围**： 包含如下2种。 - idle : 空闲 - used : 使用中
      * @return usedStatus
      */
     public String getUsedStatus() {
@@ -152,7 +152,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 主机ID
+     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -169,7 +169,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-128位 
      * @return hostName
      */
     public String getHostName() {
@@ -186,7 +186,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 计费模式   - packet_cycle : 包周期   - on_demand : 按需
+     * **参数解释**： 计费模式 **取值范围**: - packet_cycle ：包周期。 - on_demand ：按需。
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -219,7 +219,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 标签
+     * **参数解释**： 标签 **取值范围**: 不涉及
      * @return tags
      */
     public List<TagInfo> getTags() {
@@ -236,7 +236,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 过期时间，-1表示没有到期时间
+     * **参数解释**： 过期时间 **取值范围**: -1到9223372036854775807，-1表示没有到期时间
      * minimum: 0
      * maximum: 9223372036854775807
      * @return expireTime
@@ -255,7 +255,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间 **取值范围**: 0到9223372036854775807
      * minimum: 0
      * maximum: 9223372036854775807
      * @return createTime
@@ -274,7 +274,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 是否共享配额   - shared：共享的   - unshared：非共享的
+     * **参数解释**： 是否共享配额 **取值范围**: - shared：共享的 - unshared：非共享的
      * @return sharedQuota
      */
     public String getSharedQuota() {
@@ -291,7 +291,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释**: 主机所属的企业项目ID。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。 **取值范围**: 字符长度1-256位 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -308,7 +308,7 @@ public class QuotaResourcesResponseInfo {
     }
 
     /**
-     * 所属企业项目名称
+     * **参数解释**: 所属企业项目名称 **取值范围**: 字符长度1-256位 
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {

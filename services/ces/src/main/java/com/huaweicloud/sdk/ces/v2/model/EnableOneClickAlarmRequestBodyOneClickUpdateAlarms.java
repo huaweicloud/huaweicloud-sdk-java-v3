@@ -46,7 +46,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<ResourcesInListResp> resources = null;
+    private List<List<Dimension>> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -84,7 +84,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     private String notificationEndTime;
 
     /**
-     * NOTIFICATION_POLICY(通知策略)
+     * 通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
      */
     public static final class NotificationMannerEnum {
 
@@ -94,11 +94,25 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
         public static final NotificationMannerEnum NOTIFICATION_POLICY =
             new NotificationMannerEnum("NOTIFICATION_POLICY");
 
+        /**
+         * Enum NOTIFICATION_GROUP for value: "NOTIFICATION_GROUP"
+         */
+        public static final NotificationMannerEnum NOTIFICATION_GROUP =
+            new NotificationMannerEnum("NOTIFICATION_GROUP");
+
+        /**
+         * Enum TOPIC_SUBSCRIPTION for value: "TOPIC_SUBSCRIPTION"
+         */
+        public static final NotificationMannerEnum TOPIC_SUBSCRIPTION =
+            new NotificationMannerEnum("TOPIC_SUBSCRIPTION");
+
         private static final Map<String, NotificationMannerEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NotificationMannerEnum> createStaticFields() {
             Map<String, NotificationMannerEnum> map = new HashMap<>();
             map.put("NOTIFICATION_POLICY", NOTIFICATION_POLICY);
+            map.put("NOTIFICATION_GROUP", NOTIFICATION_GROUP);
+            map.put("TOPIC_SUBSCRIPTION", TOPIC_SUBSCRIPTION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -215,7 +229,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 服务的命名空间，查询各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+     * 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -259,12 +273,12 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
         this.policies = policies;
     }
 
-    public EnableOneClickAlarmRequestBodyOneClickUpdateAlarms withResources(List<ResourcesInListResp> resources) {
+    public EnableOneClickAlarmRequestBodyOneClickUpdateAlarms withResources(List<List<Dimension>> resources) {
         this.resources = resources;
         return this;
     }
 
-    public EnableOneClickAlarmRequestBodyOneClickUpdateAlarms addResourcesItem(ResourcesInListResp resourcesItem) {
+    public EnableOneClickAlarmRequestBodyOneClickUpdateAlarms addResourcesItem(List<Dimension> resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -273,7 +287,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     public EnableOneClickAlarmRequestBodyOneClickUpdateAlarms withResources(
-        Consumer<List<ResourcesInListResp>> resourcesSetter) {
+        Consumer<List<List<Dimension>>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -285,11 +299,11 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
      * 资源列表，关联资源需要使用查询告警规则资源接口获取
      * @return resources
      */
-    public List<ResourcesInListResp> getResources() {
+    public List<List<Dimension>> getResources() {
         return resources;
     }
 
-    public void setResources(List<ResourcesInListResp> resources) {
+    public void setResources(List<List<Dimension>> resources) {
         this.resources = resources;
     }
 
@@ -455,7 +469,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * NOTIFICATION_POLICY(通知策略)
+     * 通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
      * @return notificationManner
      */
     public NotificationMannerEnum getNotificationManner() {

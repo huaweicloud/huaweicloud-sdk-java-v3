@@ -107,6 +107,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
@@ -155,6 +157,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
@@ -235,6 +239,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
@@ -255,6 +261,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTtscGroupAssetsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTtscGroupAssetsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2dModelTrainingJobRequest;
@@ -397,6 +405,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechRequest;
@@ -5695,6 +5705,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 设置TTS租户级词表分组配置
+     *
+     * 该接口用于设置TTS租户级词表分组配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTtscVocabularyGroupsRequest 请求对象
+     * @return CompletableFuture<CreateTtscVocabularyGroupsResponse>
+     */
+    public CompletableFuture<CreateTtscVocabularyGroupsResponse> createTtscVocabularyGroupsAsync(
+        CreateTtscVocabularyGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createTtscVocabularyGroups);
+    }
+
+    /**
+     * 设置TTS租户级词表分组配置
+     *
+     * 该接口用于设置TTS租户级词表分组配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTtscVocabularyGroupsRequest 请求对象
+     * @return AsyncInvoker<CreateTtscVocabularyGroupsRequest, CreateTtscVocabularyGroupsResponse>
+     */
+    public AsyncInvoker<CreateTtscVocabularyGroupsRequest, CreateTtscVocabularyGroupsResponse> createTtscVocabularyGroupsAsyncInvoker(
+        CreateTtscVocabularyGroupsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createTtscVocabularyGroups, hcClient);
+    }
+
+    /**
      * 删除TTS租户级自定义读法配置
      *
      * 该接口用于删除TTS租户级自定义读法配置。
@@ -5722,6 +5762,36 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<DeleteTtscVocabularyConfigsRequest, DeleteTtscVocabularyConfigsResponse> deleteTtscVocabularyConfigsAsyncInvoker(
         DeleteTtscVocabularyConfigsRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.deleteTtscVocabularyConfigs, hcClient);
+    }
+
+    /**
+     * 删除TTS租户级词表分组
+     *
+     * 该接口用于删除TTS租户级词表分组配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTtscVocabularyGroupsRequest 请求对象
+     * @return CompletableFuture<DeleteTtscVocabularyGroupsResponse>
+     */
+    public CompletableFuture<DeleteTtscVocabularyGroupsResponse> deleteTtscVocabularyGroupsAsync(
+        DeleteTtscVocabularyGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteTtscVocabularyGroups);
+    }
+
+    /**
+     * 删除TTS租户级词表分组
+     *
+     * 该接口用于删除TTS租户级词表分组配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTtscVocabularyGroupsRequest 请求对象
+     * @return AsyncInvoker<DeleteTtscVocabularyGroupsRequest, DeleteTtscVocabularyGroupsResponse>
+     */
+    public AsyncInvoker<DeleteTtscVocabularyGroupsRequest, DeleteTtscVocabularyGroupsResponse> deleteTtscVocabularyGroupsAsyncInvoker(
+        DeleteTtscVocabularyGroupsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deleteTtscVocabularyGroups, hcClient);
     }
 
     /**
@@ -5755,6 +5825,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 获取TTS租户级词表分组列表
+     *
+     * 该接口用于获取TTS租户级词表分组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTtscVocabularyGroupsRequest 请求对象
+     * @return CompletableFuture<ListTtscVocabularyGroupsResponse>
+     */
+    public CompletableFuture<ListTtscVocabularyGroupsResponse> listTtscVocabularyGroupsAsync(
+        ListTtscVocabularyGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listTtscVocabularyGroups);
+    }
+
+    /**
+     * 获取TTS租户级词表分组列表
+     *
+     * 该接口用于获取TTS租户级词表分组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTtscVocabularyGroupsRequest 请求对象
+     * @return AsyncInvoker<ListTtscVocabularyGroupsRequest, ListTtscVocabularyGroupsResponse>
+     */
+    public AsyncInvoker<ListTtscVocabularyGroupsRequest, ListTtscVocabularyGroupsResponse> listTtscVocabularyGroupsAsyncInvoker(
+        ListTtscVocabularyGroupsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listTtscVocabularyGroups, hcClient);
+    }
+
+    /**
      * 修改TTS租户级自定义读法配置
      *
      * 该接口用于修改TTS租户级自定义读法配置。
@@ -5782,6 +5882,35 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<SaveTtscVocabularyConfigsRequest, SaveTtscVocabularyConfigsResponse> saveTtscVocabularyConfigsAsyncInvoker(
         SaveTtscVocabularyConfigsRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.saveTtscVocabularyConfigs, hcClient);
+    }
+
+    /**
+     * 设置TTS租户级词表分组的资产列表
+     *
+     * 该接口用于设置TTS租户级词表分组的资产列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTtscGroupAssetsRequest 请求对象
+     * @return CompletableFuture<SetTtscGroupAssetsResponse>
+     */
+    public CompletableFuture<SetTtscGroupAssetsResponse> setTtscGroupAssetsAsync(SetTtscGroupAssetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.setTtscGroupAssets);
+    }
+
+    /**
+     * 设置TTS租户级词表分组的资产列表
+     *
+     * 该接口用于设置TTS租户级词表分组的资产列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTtscGroupAssetsRequest 请求对象
+     * @return AsyncInvoker<SetTtscGroupAssetsRequest, SetTtscGroupAssetsResponse>
+     */
+    public AsyncInvoker<SetTtscGroupAssetsRequest, SetTtscGroupAssetsResponse> setTtscGroupAssetsAsyncInvoker(
+        SetTtscGroupAssetsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.setTtscGroupAssets, hcClient);
     }
 
     /**
@@ -5870,6 +5999,36 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbolAsyncInvoker(
         ShowTtsPhoneticSymbolRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showTtsPhoneticSymbol, hcClient);
+    }
+
+    /**
+     * TTS租户级词表分组重命名
+     *
+     * 该接口用于对TTS租户级词表分组重命名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTtscVocabularyGroupsRequest 请求对象
+     * @return CompletableFuture<UpdateTtscVocabularyGroupsResponse>
+     */
+    public CompletableFuture<UpdateTtscVocabularyGroupsResponse> updateTtscVocabularyGroupsAsync(
+        UpdateTtscVocabularyGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateTtscVocabularyGroups);
+    }
+
+    /**
+     * TTS租户级词表分组重命名
+     *
+     * 该接口用于对TTS租户级词表分组重命名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTtscVocabularyGroupsRequest 请求对象
+     * @return AsyncInvoker<UpdateTtscVocabularyGroupsRequest, UpdateTtscVocabularyGroupsResponse>
+     */
+    public AsyncInvoker<UpdateTtscVocabularyGroupsRequest, UpdateTtscVocabularyGroupsResponse> updateTtscVocabularyGroupsAsyncInvoker(
+        UpdateTtscVocabularyGroupsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updateTtscVocabularyGroups, hcClient);
     }
 
     /**

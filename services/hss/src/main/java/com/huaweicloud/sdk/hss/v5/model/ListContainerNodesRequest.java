@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListContainerNodesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -36,6 +31,11 @@ public class ListContainerNodesRequest {
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_status")
 
     private String agentStatus;
@@ -50,30 +50,13 @@ public class ListContainerNodesRequest {
 
     private String containerTags;
 
-    public ListContainerNodesRequest withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * Region ID
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public ListContainerNodesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -90,7 +73,7 @@ public class ListContainerNodesRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -109,7 +92,7 @@ public class ListContainerNodesRequest {
     }
 
     /**
-     * 每页显示个数
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -128,7 +111,7 @@ public class ListContainerNodesRequest {
     }
 
     /**
-     * 节点名称
+     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -139,13 +122,30 @@ public class ListContainerNodesRequest {
         this.hostName = hostName;
     }
 
+    public ListContainerNodesRequest withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * **参数解释**: Region ID **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     public ListContainerNodesRequest withAgentStatus(String agentStatus) {
         this.agentStatus = agentStatus;
         return this;
     }
 
     /**
-     * Agent状态，包含如下3种。   - not_installed ：未安装   - online ：在线   - offline ：离线
+     * **参数解释**: Agent状态 **约束限制**: 不涉及 **取值范围**: - online: 在线状态 - offline: 离线状态 - not_installed: 未安装Agent **默认取值**: 不涉及 
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -162,7 +162,7 @@ public class ListContainerNodesRequest {
     }
 
     /**
-     * 防护状态，包含如下2种。   - closed ：关闭   - opened ：开启
+     * **参数解释**: Agent防护状态 **约束限制**: 不涉及 **取值范围**: - closed: 防护关闭状态 - opened: 防护开启状态 **默认取值**: 不涉及           
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -179,7 +179,7 @@ public class ListContainerNodesRequest {
     }
 
     /**
-     * 标签：用来识别cce容器节点和自建  - cce：cce节点  - self：自建节点  - other：其他节点
+     * **参数解释**: 标签: 用来识别cce集群节点和自建节点 **约束限制**: 不涉及 **取值范围**: - cce: CCE集群节点 - self: 自建集群节点 - other: 其它节点 **默认取值**: 不涉及 
      * @return containerTags
      */
     public String getContainerTags() {
@@ -199,10 +199,10 @@ public class ListContainerNodesRequest {
             return false;
         }
         ListContainerNodesRequest that = (ListContainerNodesRequest) obj;
-        return Objects.equals(this.region, that.region)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.containerTags, that.containerTags);
     }
@@ -210,18 +210,18 @@ public class ListContainerNodesRequest {
     @Override
     public int hashCode() {
         return Objects
-            .hash(region, enterpriseProjectId, offset, limit, hostName, agentStatus, protectStatus, containerTags);
+            .hash(enterpriseProjectId, offset, limit, hostName, region, agentStatus, protectStatus, containerTags);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListContainerNodesRequest {\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    containerTags: ").append(toIndentedString(containerTags)).append("\n");

@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListHostStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -84,11 +89,6 @@ public class ListHostStatusRequest {
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_intrusion")
@@ -201,14 +201,31 @@ public class ListHostStatusRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
+    public ListHostStatusRequest withRegion(String region) {
+        this.region = region;
+        return this;
+    }
 
-    private Integer offset;
+    /**
+     * Region ID
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
 
     public ListHostStatusRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -216,7 +233,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -233,7 +250,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 主机开通的版本，包含如下7种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise：容器版。
+     * **参数解释**： 主机开通的版本 **约束限制**: 不涉及 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 **默认取值**: 不涉及
      * @return version
      */
     public String getVersion() {
@@ -250,7 +267,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * Agent的状态分为两类： - installed：已安装。已安装状态包含以下四种情况：    - online：在线。表示Agent已经成功安装并且与HSS云端防护中心保持连接。    - offline：离线。表示虽然Agent已经安装，但当前与HSS云端防护中心的连接中断。    - install_failed：安装失败。表示在尝试安装过程中遇到错误或问题，导致安装未能完成。    - installing：安装中。表示当前正在进行Agent安装。 - not_installed ：未安装。表示服务器中尚未安装Agent。 如果您要筛选除在线以外所有状态的Agent，可设置not_online（仅作为查询条件）
+     * **参数解释**: Agent的状态 **约束限制**: 不涉及 **取值范围**: Agent的状态分为两类： - installed：已安装。已安装状态包含以下四种情况：   - online：在线。表示Agent已经成功安装并且与HSS云端防护中心保持连接。   - offline：离线。表示虽然Agent已经安装，但当前与HSS云端防护中心的连接中断。   - install_failed：安装失败。表示在尝试安装过程中遇到错误或问题，导致安装未能完成。   - installing：安装中。表示当前正在进行Agent安装。 - not_installed ：未安装。表示服务器中尚未安装Agent。 如果您要筛选除在线以外所有状态的Agent，可设置not_online（仅作为查询条件） **默认取值**: 不涉及
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -267,7 +284,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 检测结果，包含如下4种。   - undetected ：未检测。   - clean ：无风险。   - risk ：有风险。   - scanning ：检测中。
+     * **参数解释**: 检测结果 **约束限制**: 不涉及 **取值范围**: 包含如下4种。   - undetected ：未检测。   - clean ：无风险。   - risk ：有风险。   - scanning ：检测中。 **默认取值**: 不涉及
      * @return detectResult
      */
     public String getDetectResult() {
@@ -284,7 +301,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -301,7 +318,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 服务器ID
+     * **参数解释**: 服务器ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -318,7 +335,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 主机状态，包含如下4种。   - ACTIVE ：正在运行。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * **参数解释**: 主机状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种。 - ACTIVE ：正在运行。 - SHUTOFF ：关机。 - BUILDING ：创建中。 - ERROR ：故障。 **默认取值**: 不涉及
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -335,7 +352,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 操作系统类型，包含如下2种。   - Linux ：Linux。   - Windows ：Windows。
+     * **参数解释**: 操作系统类型 **约束限制**: 不涉及 **取值范围**: 包含如下2种。 - Linux ：Linux。 - Windows ：Windows。 **默认取值**: 不涉及
      * @return osType
      */
     public String getOsType() {
@@ -352,7 +369,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**: 服务器私有IP **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -386,7 +403,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 公网或私网IP
+     * **参数解释**: 公网或私网IP **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及
      * @return ipAddr
      */
     public String getIpAddr() {
@@ -403,7 +420,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。   - protection_exception ：防护异常。
+     * **参数解释**: 防护状态 **约束限制**: 不涉及 **取值范围**: 包含如下3种： - closed ：关闭。 - opened ：开启。 - protection_exception ：防护异常。 **默认取值**: 不涉及
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -437,7 +454,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 服务器组名称
+     * **参数解释**: 服务器组名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return groupName
      */
     public String getGroupName() {
@@ -454,7 +471,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * vpc id
+     * **参数解释**: VPC的ID **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return vpcId
      */
     public String getVpcId() {
@@ -465,30 +482,13 @@ public class ListHostStatusRequest {
         this.vpcId = vpcId;
     }
 
-    public ListHostStatusRequest withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * Region ID
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public ListHostStatusRequest withHasIntrusion(Boolean hasIntrusion) {
         this.hasIntrusion = hasIntrusion;
         return this;
     }
 
     /**
-     * 存在告警事件
+     * **参数解释**: 存在告警事件 **约束限制**: 不涉及 **取值范围**: true或者false **默认取值**: 不涉及 
      * @return hasIntrusion
      */
     public Boolean getHasIntrusion() {
@@ -505,7 +505,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 存在漏洞风险
+     * **参数解释**: 存在漏洞风险 **约束限制**: 不涉及 **取值范围**: true或者false **默认取值**: 不涉及 
      * @return hasVul
      */
     public Boolean getHasVul() {
@@ -522,7 +522,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 存在基线风险
+     * **参数解释**: 存在基线风险 **约束限制**: 不涉及 **取值范围**: true或者false **默认取值**: 不涉及 
      * @return hasBaseline
      */
     public Boolean getHasBaseline() {
@@ -539,7 +539,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 排序字段，只支持risk_num - risk_num：风险总量
+     * **参数解释**: 排序字段 **约束限制**: 不涉及 **取值范围**: 只支持risk_num **默认取值**: 不涉及 
      * @return sortKey
      */
     public String getSortKey() {
@@ -556,7 +556,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 排序的顺序 - asc: 正序 - desc: 倒序
+     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**: - asc: 正序 - desc: 倒序 **默认取值**: 不涉及 
      * @return sortDir
      */
     public String getSortDir() {
@@ -573,7 +573,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 策略组ID
+     * **参数解释**: 策略组ID **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return policyGroupId
      */
     public String getPolicyGroupId() {
@@ -590,7 +590,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 策略组名称
+     * **参数解释**: 策略组名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return policyGroupName
      */
     public String getPolicyGroupName() {
@@ -607,7 +607,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 收费模式，包含如下2种。   - packet_cycle ：包年/包月。   - on_demand ：按需。
+     * **参数解释**： 收费模式 **约束限制**: 不涉及 **取值范围**: - packet_cycle ：包年/包月。 - on_demand ：按需。 **默认取值**: 不涉及
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -624,7 +624,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否强制从ECS同步主机
+     * **参数解释** : 是否强制从ECS同步主机 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return refresh
      */
     public Boolean getRefresh() {
@@ -641,7 +641,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否获取主机常用登录地信息
+     * **参数解释** : 是否获取主机常用登录地信息 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return getCommonLoginLocations
      */
     public Boolean getGetCommonLoginLocations() {
@@ -658,7 +658,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否返回比当前版本高的所有版本
+     * **参数解释** : 是否返回比当前版本高的所有版本 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return aboveVersion
      */
     public Boolean getAboveVersion() {
@@ -675,7 +675,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否华为云主机
+     * **参数解释** : 是否华为云主机 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return outsideHost
      */
     public Boolean getOutsideHost() {
@@ -692,7 +692,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 资产重要性，包含如下4种   - important ：重要资产   - common ：一般资产   - test ：测试资产
+     * **参数解释** : 资产重要性 **约束限制** : 不涉及 **取值范围** : 包含如下4种 - important ：重要资产 - common ：一般资产 - test ：测试资产 **默认取值** : 不涉及 
      * @return assetValue
      */
     public String getAssetValue() {
@@ -709,7 +709,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 资产标签
+     * **参数解释** : 资产标签 **约束限制** : 不涉及 **取值范围** : 字符长度1-64位 **默认取值** : 不涉及 
      * @return label
      */
     public String getLabel() {
@@ -726,7 +726,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 资产服务器组
+     * **参数解释** : 资产服务器组 **约束限制** : 不涉及 **取值范围** : 字符长度1-64位 **默认取值** : 不涉及 
      * @return serverGroup
      */
     public String getServerGroup() {
@@ -743,7 +743,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * agent是否可升级
+     * **参数解释** : agent是否可升级 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return agentUpgradable
      */
     public Boolean getAgentUpgradable() {
@@ -760,7 +760,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否安装模式场景
+     * **参数解释** : 是否安装模式场景 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return installMode
      */
     public Boolean getInstallMode() {
@@ -777,7 +777,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否绑定DEW密钥
+     * **参数解释** : 是否绑定DEW密钥 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return bindingKey
      */
     public Boolean getBindingKey() {
@@ -794,7 +794,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否防护中断
+     * **参数解释** : 是否防护中断 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return protectInterrupt
      */
     public Boolean getProtectInterrupt() {
@@ -811,7 +811,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否集群内节点
+     * **参数解释** : 是否集群内节点 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return incluster
      */
     public Boolean getIncluster() {
@@ -828,7 +828,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 是否防护降级
+     * **参数解释** : 是否防护降级 **约束限制** : 不涉及 **取值范围** : true或者false **默认取值** : 不涉及 
      * @return protectDegradation
      */
     public Boolean getProtectDegradation() {
@@ -845,7 +845,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 集群ID
+     * **参数解释**: 集群ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return clusterId
      */
     public String getClusterId() {
@@ -856,32 +856,13 @@ public class ListHostStatusRequest {
         this.clusterId = clusterId;
     }
 
-    public ListHostStatusRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 每页显示数量
-     * minimum: 0
-     * maximum: 200
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     public ListHostStatusRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -894,6 +875,25 @@ public class ListHostStatusRequest {
         this.offset = offset;
     }
 
+    public ListHostStatusRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * minimum: 10
+     * maximum: 200
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -903,7 +903,8 @@ public class ListHostStatusRequest {
             return false;
         }
         ListHostStatusRequest that = (ListHostStatusRequest) obj;
-        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.version, that.version) && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.detectResult, that.detectResult) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostStatus, that.hostStatus)
@@ -911,10 +912,9 @@ public class ListHostStatusRequest {
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.ipAddr, that.ipAddr)
             && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.region, that.region) && Objects.equals(this.hasIntrusion, that.hasIntrusion)
-            && Objects.equals(this.hasVul, that.hasVul) && Objects.equals(this.hasBaseline, that.hasBaseline)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.policyGroupId, that.policyGroupId)
+            && Objects.equals(this.hasIntrusion, that.hasIntrusion) && Objects.equals(this.hasVul, that.hasVul)
+            && Objects.equals(this.hasBaseline, that.hasBaseline) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.policyGroupId, that.policyGroupId)
             && Objects.equals(this.policyGroupName, that.policyGroupName)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.refresh, that.refresh)
             && Objects.equals(this.getCommonLoginLocations, that.getCommonLoginLocations)
@@ -926,13 +926,14 @@ public class ListHostStatusRequest {
             && Objects.equals(this.protectInterrupt, that.protectInterrupt)
             && Objects.equals(this.incluster, that.incluster)
             && Objects.equals(this.protectDegradation, that.protectDegradation)
-            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId,
+        return Objects.hash(region,
+            enterpriseProjectId,
             version,
             agentStatus,
             detectResult,
@@ -947,7 +948,6 @@ public class ListHostStatusRequest {
             groupId,
             groupName,
             vpcId,
-            region,
             hasIntrusion,
             hasVul,
             hasBaseline,
@@ -970,14 +970,15 @@ public class ListHostStatusRequest {
             incluster,
             protectDegradation,
             clusterId,
-            limit,
-            offset);
+            offset,
+            limit);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHostStatusRequest {\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
@@ -993,7 +994,6 @@ public class ListHostStatusRequest {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    hasIntrusion: ").append(toIndentedString(hasIntrusion)).append("\n");
         sb.append("    hasVul: ").append(toIndentedString(hasVul)).append("\n");
         sb.append("    hasBaseline: ").append(toIndentedString(hasBaseline)).append("\n");
@@ -1016,8 +1016,8 @@ public class ListHostStatusRequest {
         sb.append("    incluster: ").append(toIndentedString(incluster)).append("\n");
         sb.append("    protectDegradation: ").append(toIndentedString(protectDegradation)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

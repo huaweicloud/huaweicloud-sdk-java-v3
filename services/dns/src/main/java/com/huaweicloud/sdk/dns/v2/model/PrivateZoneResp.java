@@ -114,7 +114,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 域名的ID，UUID形式的一个资源标识。
+     * **参数解释：** 域名的ID，UUID形式的一个资源标识。 **取值范围：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -131,7 +131,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 域名。
+     * **参数解释：** 域名。 **取值范围：** 由多个以点分隔的字符串组成，可包含字母、数字、汉字、中划线，中划线不能在开头或末尾，单个字符串不超过63个字符，域名总长度不超过254个字符。
      * @return name
      */
     public String getName() {
@@ -148,7 +148,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 对域名的描述信息。
+     * **参数解释：** 域名的描述信息。 **取值范围：** 长度不超过255个字符。
      * @return description
      */
     public String getDescription() {
@@ -165,7 +165,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
+     * **参数解释：** 管理该域名的管理员邮箱，用于生成该域名的SOA记录。 **取值范围：** 不涉及。
      * @return email
      */
     public String getEmail() {
@@ -182,7 +182,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 域名类型，内网（private）。
+     * **参数解释：** 域名类型。 **取值范围：** private：内网域名。
      * @return zoneType
      */
     public String getZoneType() {
@@ -199,7 +199,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 该域名下SOA记录中的ttl值。
+     * **参数解释：** 该域名下SOA记录中的有效缓存时间，以秒为单位。 **取值范围：** 1~2147483647。
      * @return ttl
      */
     public Integer getTtl() {
@@ -216,7 +216,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。
+     * **参数解释：** 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。 **取值范围：** 不涉及。
      * @return serial
      */
     public Integer getSerial() {
@@ -233,7 +233,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 资源状态。
+     * **参数解释：** 内网域名状态。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - PENDING_DISABLE：暂停中 - DISABLE：暂停 - ERROR：失败
      * @return status
      */
     public String getStatus() {
@@ -250,7 +250,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 该域名下的记录集个数。
+     * **参数解释：** 该域名下的记录集个数。 **取值范围：** 不涉及。
      * @return recordNum
      */
     public Integer getRecordNum() {
@@ -267,7 +267,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 内网域名的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前域名未开启递归解析代理 RECURSIVE：当前域名已开启递归解析代理
+     * **参数解释：** 内网域名的子域名递归解析代理模式。 **取值范围：** - AUTHORITY：当前域名未开启递归解析代理 - RECURSIVE：当前域名已开启递归解析代理
      * @return proxyPattern
      */
     public String getProxyPattern() {
@@ -284,7 +284,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 托管该域名的pool，由系统分配。
+     * **参数解释：** 托管该域名的pool，由系统分配。 **取值范围：** 不涉及。
      * @return poolId
      */
     public String getPoolId() {
@@ -301,7 +301,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 域名所属的项目ID。
+     * **参数解释：** 域名所属的项目ID。 **取值范围：** 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -318,7 +318,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 域名的创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -335,7 +335,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 域名的最近一次修改时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -394,7 +394,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 资源标签。
+     * **参数解释：** 资源标签。 **取值范围：** 不涉及。
      * @return tags
      */
     public List<Tag> getTags() {
@@ -427,7 +427,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 主从模式中，从DNS服务器获取DNS信息。
+     * **参数解释：** 主从模式中，从DNS服务器获取DNS信息。 **取值范围：** 不涉及。
      * @return masters
      */
     public List<String> getMasters() {
@@ -460,7 +460,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 与该域名关联的Router(VPC)列表。
+     * **参数解释：** 与该域名关联的Router(VPC)列表。 **取值范围：** 不涉及。
      * @return routers
      */
     public List<RouterWithStatus> getRouters() {
@@ -477,7 +477,7 @@ public class PrivateZoneResp {
     }
 
     /**
-     * 域名关联的企业项目ID，长度不超过36个字符。
+     * **参数解释：** 域名所属的企业项目ID。可以使用该字段过滤企业项目下的域名。 **取值范围：** 最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

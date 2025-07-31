@@ -113,6 +113,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowCompareProgressRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowCompareProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowDataFilteringResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowDataFilteringResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowDataProcessingRulesResultRequest;
@@ -1822,6 +1824,41 @@ public class DrsClient {
     public SyncInvoker<ShowComparePolicyRequest, ShowComparePolicyResponse> showComparePolicyInvoker(
         ShowComparePolicyRequest request) {
         return new SyncInvoker<>(request, DrsMeta.showComparePolicy, hcClient);
+    }
+
+    /**
+     * 查询对比任务进度
+     *
+     * 查询运行中对比任务的对比进度。
+     * 说明：
+     * - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB主备、GaussDB分布式-&gt;GaussDB分布式、GaussDB主备-&gt;MySQL、GaussDBv1-&gt;GaussDB主备、GaussDB主备-&gt;GaussDBv1的同步任务与独立校验任务支持查看对比进度。
+     * - 运行中的行对比与内容对比支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCompareProgressRequest 请求对象
+     * @return ShowCompareProgressResponse
+     */
+    public ShowCompareProgressResponse showCompareProgress(ShowCompareProgressRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showCompareProgress);
+    }
+
+    /**
+     * 查询对比任务进度
+     *
+     * 查询运行中对比任务的对比进度。
+     * 说明：
+     * - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB主备、GaussDB分布式-&gt;GaussDB分布式、GaussDB主备-&gt;MySQL、GaussDBv1-&gt;GaussDB主备、GaussDB主备-&gt;GaussDBv1的同步任务与独立校验任务支持查看对比进度。
+     * - 运行中的行对比与内容对比支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCompareProgressRequest 请求对象
+     * @return SyncInvoker<ShowCompareProgressRequest, ShowCompareProgressResponse>
+     */
+    public SyncInvoker<ShowCompareProgressRequest, ShowCompareProgressResponse> showCompareProgressInvoker(
+        ShowCompareProgressRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.showCompareProgress, hcClient);
     }
 
     /**

@@ -31,7 +31,7 @@ public class RouterWithStatus {
     }
 
     /**
-     * 资源状态。
+     * **参数解释：** 关联VPC的状态。 **取值范围：** 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -48,7 +48,7 @@ public class RouterWithStatus {
     }
 
     /**
-     * 关联VPC的ID。
+     * **参数解释：** 关联VPC的ID。 **取值范围：** 不涉及。
      * @return routerId
      */
     public String getRouterId() {
@@ -65,7 +65,7 @@ public class RouterWithStatus {
     }
 
     /**
-     * 关联VPC所在的region。
+     * **参数解释：** 关联VPC所在的region。 **取值范围：** 不涉及。
      * @return routerRegion
      */
     public String getRouterRegion() {

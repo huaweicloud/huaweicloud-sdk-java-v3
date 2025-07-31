@@ -24,7 +24,7 @@ public class BatchCreateInvocationRequestBody {
     private List<String> instanceIds = null;
 
     /**
-     * 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试
+     * 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装
      */
     public static final class InvocationTypeEnum {
 
@@ -48,6 +48,17 @@ public class BatchCreateInvocationRequestBody {
          */
         public static final InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
 
+        /**
+         * Enum SET_REMOTE_INSTALL_HOST for value: "SET_REMOTE_INSTALL_HOST"
+         */
+        public static final InvocationTypeEnum SET_REMOTE_INSTALL_HOST =
+            new InvocationTypeEnum("SET_REMOTE_INSTALL_HOST");
+
+        /**
+         * Enum REMOTE_INSTALL for value: "REMOTE_INSTALL"
+         */
+        public static final InvocationTypeEnum REMOTE_INSTALL = new InvocationTypeEnum("REMOTE_INSTALL");
+
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, InvocationTypeEnum> createStaticFields() {
@@ -56,6 +67,8 @@ public class BatchCreateInvocationRequestBody {
             map.put("UPDATE", UPDATE);
             map.put("ROLLBACK", ROLLBACK);
             map.put("RETRY", RETRY);
+            map.put("SET_REMOTE_INSTALL_HOST", SET_REMOTE_INSTALL_HOST);
+            map.put("REMOTE_INSTALL", REMOTE_INSTALL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -345,6 +358,11 @@ public class BatchCreateInvocationRequestBody {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_install_meta")
+
+    private List<RemoteInstallHostInfo> remoteInstallMeta = null;
+
     public BatchCreateInvocationRequestBody withInstanceIds(List<String> instanceIds) {
         this.instanceIds = instanceIds;
         return this;
@@ -384,7 +402,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试
+     * 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装
      * @return invocationType
      */
     public InvocationTypeEnum getInvocationType() {
@@ -496,6 +514,40 @@ public class BatchCreateInvocationRequestBody {
         this.version = version;
     }
 
+    public BatchCreateInvocationRequestBody withRemoteInstallMeta(List<RemoteInstallHostInfo> remoteInstallMeta) {
+        this.remoteInstallMeta = remoteInstallMeta;
+        return this;
+    }
+
+    public BatchCreateInvocationRequestBody addRemoteInstallMetaItem(RemoteInstallHostInfo remoteInstallMetaItem) {
+        if (this.remoteInstallMeta == null) {
+            this.remoteInstallMeta = new ArrayList<>();
+        }
+        this.remoteInstallMeta.add(remoteInstallMetaItem);
+        return this;
+    }
+
+    public BatchCreateInvocationRequestBody withRemoteInstallMeta(
+        Consumer<List<RemoteInstallHostInfo>> remoteInstallMetaSetter) {
+        if (this.remoteInstallMeta == null) {
+            this.remoteInstallMeta = new ArrayList<>();
+        }
+        remoteInstallMetaSetter.accept(this.remoteInstallMeta);
+        return this;
+    }
+
+    /**
+     * 创建远程安装任务时需要下发的被安装主机相关信息
+     * @return remoteInstallMeta
+     */
+    public List<RemoteInstallHostInfo> getRemoteInstallMeta() {
+        return remoteInstallMeta;
+    }
+
+    public void setRemoteInstallMeta(List<RemoteInstallHostInfo> remoteInstallMeta) {
+        this.remoteInstallMeta = remoteInstallMeta;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -510,12 +562,20 @@ public class BatchCreateInvocationRequestBody {
             && Objects.equals(this.invocationTarget, that.invocationTarget)
             && Objects.equals(this.invocationIds, that.invocationIds)
             && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.origin, that.origin)
-            && Objects.equals(this.version, that.version);
+            && Objects.equals(this.version, that.version)
+            && Objects.equals(this.remoteInstallMeta, that.remoteInstallMeta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceIds, invocationType, invocationTarget, invocationIds, versionType, origin, version);
+        return Objects.hash(instanceIds,
+            invocationType,
+            invocationTarget,
+            invocationIds,
+            versionType,
+            origin,
+            version,
+            remoteInstallMeta);
     }
 
     @Override
@@ -529,6 +589,7 @@ public class BatchCreateInvocationRequestBody {
         sb.append("    versionType: ").append(toIndentedString(versionType)).append("\n");
         sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    remoteInstallMeta: ").append(toIndentedString(remoteInstallMeta)).append("\n");
         sb.append("}");
         return sb.toString();
     }

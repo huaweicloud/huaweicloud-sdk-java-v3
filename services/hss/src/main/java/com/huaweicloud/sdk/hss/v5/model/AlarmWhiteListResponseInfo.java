@@ -73,7 +73,7 @@ public class AlarmWhiteListResponseInfo {
     }
 
     /**
-     * 事件白名单SHA256
+     * **参数解释**: 事件白名单SHA256 **约束限制**: 不涉及 **取值范围**: 字符长度0-512位 **默认取值**: 不涉及
      * @return hash
      */
     public String getHash() {
@@ -90,7 +90,7 @@ public class AlarmWhiteListResponseInfo {
     }
 
     /**
-     * 描述信息
+     * **参数解释**: 描述信息。 **约束限制**: 不涉及 **取值范围**: 字符长度0-64 **默认取值**: 不涉及
      * @return description
      */
     public String getDescription() {

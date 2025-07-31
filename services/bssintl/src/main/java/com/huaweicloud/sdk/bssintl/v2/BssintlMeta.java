@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.bssintl.v2;
 
 import com.huaweicloud.sdk.bssintl.v2.model.ApplyEnterpriseRealnameAuthsReq;
 import com.huaweicloud.sdk.bssintl.v2.model.ApplyIndividualRealnameAuthsReq;
+import com.huaweicloud.sdk.bssintl.v2.model.AutoRenewalResourcesReq;
 import com.huaweicloud.sdk.bssintl.v2.model.AutoRenewalResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.AutoRenewalResourcesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.CancelAutoRenewalResourcesRequest;
@@ -58,8 +59,6 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListInvoicesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListInvoicesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListMeasureUnitsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListMeasureUnitsResponse;
-import com.huaweicloud.sdk.bssintl.v2.model.ListMonthlyExpendituresRequest;
-import com.huaweicloud.sdk.bssintl.v2.model.ListMonthlyExpendituresResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListOnDemandResourceRatingsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListOnDemandResourceRatingsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListOrderDiscountsRequest;
@@ -160,6 +159,11 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AutoRenewalResourcesRequest::getResourceId,
                 AutoRenewalResourcesRequest::setResourceId));
+        builder.<AutoRenewalResourcesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AutoRenewalResourcesReq.class),
+            f -> f.withMarshaller(AutoRenewalResourcesRequest::getBody, AutoRenewalResourcesRequest::setBody));
 
         // response
 
@@ -1007,46 +1011,6 @@ public class BssintlMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMeasureUnitsRequest::getXLanguage, ListMeasureUnitsRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> listMonthlyExpenditures =
-        genForListMonthlyExpenditures();
-
-    private static HttpRequestDef<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> genForListMonthlyExpenditures() {
-        // basic
-        HttpRequestDef.Builder<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListMonthlyExpendituresRequest.class, ListMonthlyExpendituresResponse.class)
-            .withName("ListMonthlyExpenditures")
-            .withUri("/v1.0/{domain_id}/customer/account-mgr/bill/monthly-sum")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("cycle",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonthlyExpendituresRequest::getCycle, ListMonthlyExpendituresRequest::setCycle));
-        builder.<String>withRequestField("cloud_service_type_code",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonthlyExpendituresRequest::getCloudServiceTypeCode,
-                ListMonthlyExpendituresRequest::setCloudServiceTypeCode));
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonthlyExpendituresRequest::getType, ListMonthlyExpendituresRequest::setType));
-        builder.<String>withRequestField("enterpriseProjectId",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMonthlyExpendituresRequest::getEnterpriseProjectId,
-                ListMonthlyExpendituresRequest::setEnterpriseProjectId));
 
         // response
 

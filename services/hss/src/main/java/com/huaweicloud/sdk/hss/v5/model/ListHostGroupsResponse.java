@@ -30,7 +30,7 @@ public class ListHostGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListHostGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 服务器组列表
+     * **参数解释**: 服务器组列表 **取值范围**: 不涉及 
      * @return dataList
      */
     public List<HostGroupItem> getDataList() {

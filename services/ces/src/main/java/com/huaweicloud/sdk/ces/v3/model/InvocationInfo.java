@@ -119,7 +119,7 @@ public class InvocationInfo {
     private List<String> elasticIps = null;
 
     /**
-     * 任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)
+     * 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)
      */
     public static final class InvocationTypeEnum {
 
@@ -311,7 +311,7 @@ public class InvocationInfo {
     private InvocationStatusEnum invocationStatus;
 
     /**
-     * 任务对象，目前仅支持telescope
+     * 任务对象，目前支持telescope
      */
     public static final class InvocationTargetEnum {
 
@@ -398,6 +398,11 @@ public class InvocationInfo {
     @JsonProperty(value = "target_version")
 
     private String targetVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result_msg")
+
+    private String resultMsg;
 
     public InvocationInfo withInvocationId(String invocationId) {
         this.invocationId = invocationId;
@@ -539,7 +544,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)
+     * 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)
      * @return invocationType
      */
     public InvocationTypeEnum getInvocationType() {
@@ -573,7 +578,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务对象，目前仅支持telescope
+     * 任务对象，目前支持telescope
      * @return invocationTarget
      */
     public InvocationTargetEnum getInvocationTarget() {
@@ -656,6 +661,23 @@ public class InvocationInfo {
         this.targetVersion = targetVersion;
     }
 
+    public InvocationInfo withResultMsg(String resultMsg) {
+        this.resultMsg = resultMsg;
+        return this;
+    }
+
+    /**
+     * 任务执行结果信息
+     * @return resultMsg
+     */
+    public String getResultMsg() {
+        return resultMsg;
+    }
+
+    public void setResultMsg(String resultMsg) {
+        this.resultMsg = resultMsg;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -674,7 +696,7 @@ public class InvocationInfo {
             && Objects.equals(this.invocationTarget, that.invocationTarget)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.currentVersion, that.currentVersion)
-            && Objects.equals(this.targetVersion, that.targetVersion);
+            && Objects.equals(this.targetVersion, that.targetVersion) && Objects.equals(this.resultMsg, that.resultMsg);
     }
 
     @Override
@@ -691,7 +713,8 @@ public class InvocationInfo {
             createTime,
             updateTime,
             currentVersion,
-            targetVersion);
+            targetVersion,
+            resultMsg);
     }
 
     @Override
@@ -711,6 +734,7 @@ public class InvocationInfo {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
         sb.append("    targetVersion: ").append(toIndentedString(targetVersion)).append("\n");
+        sb.append("    resultMsg: ").append(toIndentedString(resultMsg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

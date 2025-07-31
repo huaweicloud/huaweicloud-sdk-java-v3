@@ -95,7 +95,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 域名的ID，UUID形式的一个资源标识。
+     * **参数解释：** 域名的ID，UUID形式的一个资源标识。 **取值范围：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -112,7 +112,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 域名。
+     * **参数解释：** 域名。 **取值范围：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -129,7 +129,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 对域名的描述信息。
+     * **参数解释：** 域名的描述信息。 **取值范围：** 长度不超过255个字符。
      * @return description
      */
     public String getDescription() {
@@ -146,7 +146,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
+     * **参数解释：** 管理该域名的管理员邮箱，用于生成该域名的SOA记录。 **取值范围：** 不涉及。
      * @return email
      */
     public String getEmail() {
@@ -163,7 +163,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 域名类型，公网（public）。
+     * **参数解释：** 域名类型。 **取值范围：** public：公网域名。
      * @return zoneType
      */
     public String getZoneType() {
@@ -180,7 +180,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 该域名下SOA记录中的ttl值。
+     * **参数解释：** 该域名下SOA记录中的有效缓存时间，以秒为单位。 **取值范围：** 1~2147483647。
      * @return ttl
      */
     public Integer getTtl() {
@@ -197,7 +197,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。
+     * **参数解释：** 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。 **取值范围：** 不涉及。
      * @return serial
      */
     public Integer getSerial() {
@@ -214,7 +214,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 资源状态。
+     * **参数解释：** 公网域名状态。 **取值范围：** - ACTIVE：正常 - DISABLE：暂停
      * @return status
      */
     public String getStatus() {
@@ -231,7 +231,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 该域名下的记录集个数。
+     * **参数解释：** 该域名下的记录集个数。 **取值范围：** 不涉及。
      * @return recordNum
      */
     public Integer getRecordNum() {
@@ -248,7 +248,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 托管该域名的pool，由系统分配。
+     * **参数解释：** 托管该域名的pool，由系统分配。 **取值范围：** 不涉及。
      * @return poolId
      */
     public String getPoolId() {
@@ -265,7 +265,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 域名所属的项目ID。
+     * **参数解释：** 域名所属的项目ID。 **取值范围：** 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -282,7 +282,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 域名的创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -299,7 +299,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 域名的最近一次修改时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -358,7 +358,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * 主从模式中，从DNS服务器获取DNS信息。目前暂未使用。
+     * **参数解释：** 主从模式中，从DNS服务器获取DNS信息。目前暂未使用。 **取值范围：** 不涉及。
      * @return masters
      */
     public List<String> getMasters() {

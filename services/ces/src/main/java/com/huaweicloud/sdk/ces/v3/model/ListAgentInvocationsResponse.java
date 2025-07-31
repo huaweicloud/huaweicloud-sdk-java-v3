@@ -22,7 +22,7 @@ public class ListAgentInvocationsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
-    private Integer count;
+    private Long count;
 
     public ListAgentInvocationsResponse withInvocations(List<InvocationInfo> invocations) {
         this.invocations = invocations;
@@ -57,7 +57,7 @@ public class ListAgentInvocationsResponse extends SdkResponse {
         this.invocations = invocations;
     }
 
-    public ListAgentInvocationsResponse withCount(Integer count) {
+    public ListAgentInvocationsResponse withCount(Long count) {
         this.count = count;
         return this;
     }
@@ -68,11 +68,11 @@ public class ListAgentInvocationsResponse extends SdkResponse {
      * maximum: 9999999999999
      * @return count
      */
-    public Integer getCount() {
+    public Long getCount() {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public void setCount(Long count) {
         this.count = count;
     }
 
