@@ -33,7 +33,7 @@ public class ListRepoDetailsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
 
-    private String marker;
+    private Integer marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_public")
@@ -110,7 +110,7 @@ public class ListRepoDetailsRequest {
         this.limit = limit;
     }
 
-    public ListRepoDetailsRequest withMarker(String marker) {
+    public ListRepoDetailsRequest withMarker(Integer marker) {
         this.marker = marker;
         return this;
     }
@@ -119,11 +119,11 @@ public class ListRepoDetailsRequest {
      * 分页查询下一次查询起始标记，接口的返回值nextMarker为下一次查询的起始标记。
      * @return marker
      */
-    public String getMarker() {
+    public Integer getMarker() {
         return marker;
     }
 
-    public void setMarker(String marker) {
+    public void setMarker(Integer marker) {
         this.marker = marker;
     }
 

@@ -49,8 +49,4 @@ public class ObsCredentials extends AbstractCredentials<ObsCredentials> {
     @Override
     public void processDerivedAuthParams(String derivedAuthServiceName, String regionId) {
     }
-
-    @Override
-    protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
-    }
 }

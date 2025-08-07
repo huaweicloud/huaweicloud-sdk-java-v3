@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.waf.v1.model.AccessProgress;
+import com.huaweicloud.sdk.waf.v1.model.AccessStatusBody;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostResponse;
@@ -12,6 +14,14 @@ import com.huaweicloud.sdk.waf.v1.model.BandwidthStatisticsTimelineItem;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
+import com.huaweicloud.sdk.waf.v1.model.CheckAgencyRequest;
+import com.huaweicloud.sdk.waf.v1.model.CheckAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyAntileakageMapRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyAntileakageMapResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyIpReputationMapRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyIpReputationMapResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CountItem;
@@ -142,6 +152,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListIpReputationRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListIpReputationRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListNoticeConfigsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListNoticeConfigsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsClassificationRequest;
@@ -152,6 +164,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListPremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPremiumHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPrivacyRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListProtectableResourcesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListProtectableResourcesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPunishmentRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPunishmentRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineRequest;
@@ -229,6 +243,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowWhiteBlackIpRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.StatisticsTimelineItem;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAccessProgressRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateAccessProgressResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigResponse;
@@ -255,6 +271,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateCustomRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateGeoipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateGeoipRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateGeoipRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateHostAccessStatusOfUnderlineRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateHostAccessStatusOfUnderlineResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostProtectStatusRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostProtectStatusRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostProtectStatusResponse;
@@ -278,12 +296,18 @@ import com.huaweicloud.sdk.waf.v1.model.UpdatePolicyResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePolicyRuleStatusRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePolicyRuleStatusRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePolicyRuleStatusResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostAccessStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostAccessStatusRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostAccessStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostProtectStatusRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostProtectStatusRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostProtectStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumInstanceRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumInstanceRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePrivacyRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePrivacyRuleResponse;
@@ -360,6 +384,101 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangePrepaidCloudWafRequestBody.class),
             f -> f.withMarshaller(ChangePrepaidCloudWafRequest::getBody, ChangePrepaidCloudWafRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckAgencyRequest, CheckAgencyResponse> checkAgency = genForCheckAgency();
+
+    private static HttpRequestDef<CheckAgencyRequest, CheckAgencyResponse> genForCheckAgency() {
+        // basic
+        HttpRequestDef.Builder<CheckAgencyRequest, CheckAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckAgencyRequest.class, CheckAgencyResponse.class)
+                .withName("CheckAgency")
+                .withUri("/v1/{project_id}/premium-waf/agency")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmPolicyAntileakageMapRequest, ConfirmPolicyAntileakageMapResponse> confirmPolicyAntileakageMap =
+        genForConfirmPolicyAntileakageMap();
+
+    private static HttpRequestDef<ConfirmPolicyAntileakageMapRequest, ConfirmPolicyAntileakageMapResponse> genForConfirmPolicyAntileakageMap() {
+        // basic
+        HttpRequestDef.Builder<ConfirmPolicyAntileakageMapRequest, ConfirmPolicyAntileakageMapResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ConfirmPolicyAntileakageMapRequest.class,
+                    ConfirmPolicyAntileakageMapResponse.class)
+                .withName("ConfirmPolicyAntileakageMap")
+                .withUri("/v1/{project_id}/waf/tag/antileakage/map")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("lang",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmPolicyAntileakageMapRequest::getLang,
+                ConfirmPolicyAntileakageMapRequest::setLang));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmPolicyIpReputationMapRequest, ConfirmPolicyIpReputationMapResponse> confirmPolicyIpReputationMap =
+        genForConfirmPolicyIpReputationMap();
+
+    private static HttpRequestDef<ConfirmPolicyIpReputationMapRequest, ConfirmPolicyIpReputationMapResponse> genForConfirmPolicyIpReputationMap() {
+        // basic
+        HttpRequestDef.Builder<ConfirmPolicyIpReputationMapRequest, ConfirmPolicyIpReputationMapResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ConfirmPolicyIpReputationMapRequest.class,
+                    ConfirmPolicyIpReputationMapResponse.class)
+                .withName("ConfirmPolicyIpReputationMap")
+                .withUri("/v1/{project_id}/waf/tag/ip-reputation/map")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("lang",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmPolicyIpReputationMapRequest::getLang,
+                ConfirmPolicyIpReputationMapRequest::setLang));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmPolicyIpReputationMapRequest::getType,
+                ConfirmPolicyIpReputationMapRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmThreatMapRequest, ConfirmThreatMapResponse> confirmThreatMap =
+        genForConfirmThreatMap();
+
+    private static HttpRequestDef<ConfirmThreatMapRequest, ConfirmThreatMapResponse> genForConfirmThreatMap() {
+        // basic
+        HttpRequestDef.Builder<ConfirmThreatMapRequest, ConfirmThreatMapResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ConfirmThreatMapRequest.class, ConfirmThreatMapResponse.class)
+                .withName("ConfirmThreatMap")
+                .withUri("/v1/{project_id}/waf/tag/threat/map")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1882,6 +2001,11 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getExpStatus, ListCertificatesRequest::setExpStatus));
+        builder.<Boolean>withRequestField("query_scm",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getQueryScm, ListCertificatesRequest::setQueryScm));
 
         // response
 
@@ -2308,6 +2432,46 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListIpReputationRulesRequest, ListIpReputationRulesResponse> listIpReputationRules =
+        genForListIpReputationRules();
+
+    private static HttpRequestDef<ListIpReputationRulesRequest, ListIpReputationRulesResponse> genForListIpReputationRules() {
+        // basic
+        HttpRequestDef.Builder<ListIpReputationRulesRequest, ListIpReputationRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListIpReputationRulesRequest.class, ListIpReputationRulesResponse.class)
+            .withName("ListIpReputationRules")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ip-reputation")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getPolicyId,
+                ListIpReputationRulesRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getEnterpriseProjectId,
+                ListIpReputationRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getOffset, ListIpReputationRulesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getLimit, ListIpReputationRulesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNoticeConfigsRequest, ListNoticeConfigsResponse> listNoticeConfigs =
         genForListNoticeConfigs();
 
@@ -2515,6 +2679,43 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPrivacyRuleRequest::getPagesize, ListPrivacyRuleRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProtectableResourcesRequest, ListProtectableResourcesResponse> listProtectableResources =
+        genForListProtectableResources();
+
+    private static HttpRequestDef<ListProtectableResourcesRequest, ListProtectableResourcesResponse> genForListProtectableResources() {
+        // basic
+        HttpRequestDef.Builder<ListProtectableResourcesRequest, ListProtectableResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListProtectableResourcesRequest.class, ListProtectableResourcesResponse.class)
+                .withName("ListProtectableResources")
+                .withUri("/v1/{project_id}/premium-waf/host/protectable-resources/{resource_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtectableResourcesRequest::getResourceType,
+                ListProtectableResourcesRequest::setResourceType));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtectableResourcesRequest::getVpcId,
+                ListProtectableResourcesRequest::setVpcId));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtectableResourcesRequest::getRegion,
+                ListProtectableResourcesRequest::setRegion));
 
         // response
 
@@ -3841,6 +4042,35 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAccessProgressRequest, UpdateAccessProgressResponse> updateAccessProgress =
+        genForUpdateAccessProgress();
+
+    private static HttpRequestDef<UpdateAccessProgressRequest, UpdateAccessProgressResponse> genForUpdateAccessProgress() {
+        // basic
+        HttpRequestDef.Builder<UpdateAccessProgressRequest, UpdateAccessProgressResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAccessProgressRequest.class, UpdateAccessProgressResponse.class)
+            .withName("UpdateAccessProgress")
+            .withUri("/v1/{project_id}/waf/instance/{instance_id}/access-progress")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAccessProgressRequest::getInstanceId,
+                UpdateAccessProgressRequest::setInstanceId));
+        builder.<AccessProgress>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AccessProgress.class),
+            f -> f.withMarshaller(UpdateAccessProgressRequest::getBody, UpdateAccessProgressRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAlertNoticeConfigRequest, UpdateAlertNoticeConfigResponse> updateAlertNoticeConfig =
         genForUpdateAlertNoticeConfig();
 
@@ -4218,6 +4448,39 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateHostAccessStatusOfUnderlineRequest, UpdateHostAccessStatusOfUnderlineResponse> updateHostAccessStatusOfUnderline =
+        genForUpdateHostAccessStatusOfUnderline();
+
+    private static HttpRequestDef<UpdateHostAccessStatusOfUnderlineRequest, UpdateHostAccessStatusOfUnderlineResponse> genForUpdateHostAccessStatusOfUnderline() {
+        // basic
+        HttpRequestDef.Builder<UpdateHostAccessStatusOfUnderlineRequest, UpdateHostAccessStatusOfUnderlineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateHostAccessStatusOfUnderlineRequest.class,
+                    UpdateHostAccessStatusOfUnderlineResponse.class)
+                .withName("UpdateHostAccessStatusOfUnderline")
+                .withUri("/v1/{project_id}/waf/instance/{instance_id}/access_status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHostAccessStatusOfUnderlineRequest::getInstanceId,
+                UpdateHostAccessStatusOfUnderlineRequest::setInstanceId));
+        builder.<AccessStatusBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AccessStatusBody.class),
+            f -> f.withMarshaller(UpdateHostAccessStatusOfUnderlineRequest::getBody,
+                UpdateHostAccessStatusOfUnderlineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse> updateHostProtectStatus =
         genForUpdateHostProtectStatus();
 
@@ -4514,6 +4777,39 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse> updatePremiumHostAccessStatus =
+        genForUpdatePremiumHostAccessStatus();
+
+    private static HttpRequestDef<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse> genForUpdatePremiumHostAccessStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdatePremiumHostAccessStatusRequest.class,
+                    UpdatePremiumHostAccessStatusResponse.class)
+                .withName("UpdatePremiumHostAccessStatus")
+                .withUri("/v1/{project_id}/premium-waf/host/{host_id}/access_status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePremiumHostAccessStatusRequest::getHostId,
+                UpdatePremiumHostAccessStatusRequest::setHostId));
+        builder.<UpdatePremiumHostAccessStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdatePremiumHostAccessStatusRequestBody.class),
+            f -> f.withMarshaller(UpdatePremiumHostAccessStatusRequest::getBody,
+                UpdatePremiumHostAccessStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdatePremiumHostProtectStatusRequest, UpdatePremiumHostProtectStatusResponse> updatePremiumHostProtectStatus =
         genForUpdatePremiumHostProtectStatus();
 
@@ -4547,6 +4843,35 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(UpdatePremiumHostProtectStatusRequestBody.class),
             f -> f.withMarshaller(UpdatePremiumHostProtectStatusRequest::getBody,
                 UpdatePremiumHostProtectStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePremiumInstanceRequest, UpdatePremiumInstanceResponse> updatePremiumInstance =
+        genForUpdatePremiumInstance();
+
+    private static HttpRequestDef<UpdatePremiumInstanceRequest, UpdatePremiumInstanceResponse> genForUpdatePremiumInstance() {
+        // basic
+        HttpRequestDef.Builder<UpdatePremiumInstanceRequest, UpdatePremiumInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdatePremiumInstanceRequest.class, UpdatePremiumInstanceResponse.class)
+            .withName("UpdatePremiumInstance")
+            .withUri("/v1/{project_id}/premium-waf/instance/{instance_id}/action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePremiumInstanceRequest::getInstanceId,
+                UpdatePremiumInstanceRequest::setInstanceId));
+        builder.<UpdatePremiumInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdatePremiumInstanceRequestBody.class),
+            f -> f.withMarshaller(UpdatePremiumInstanceRequest::getBody, UpdatePremiumInstanceRequest::setBody));
 
         // response
 

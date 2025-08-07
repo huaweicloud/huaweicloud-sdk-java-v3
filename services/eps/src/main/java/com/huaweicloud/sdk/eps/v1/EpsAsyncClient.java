@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.eps.v1.model.CreateEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.CreateEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.DeleteEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.DeleteEnterpriseProjectResponse;
 import com.huaweicloud.sdk.eps.v1.model.DisableEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.DisableEnterpriseProjectResponse;
 import com.huaweicloud.sdk.eps.v1.model.EnableEnterpriseProjectRequest;
@@ -13,16 +15,24 @@ import com.huaweicloud.sdk.eps.v1.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.eps.v1.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.eps.v1.model.ListEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.ListEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.ListMigrationRecordRequest;
+import com.huaweicloud.sdk.eps.v1.model.ListMigrationRecordResponse;
 import com.huaweicloud.sdk.eps.v1.model.ListProvidersRequest;
 import com.huaweicloud.sdk.eps.v1.model.ListProvidersResponse;
+import com.huaweicloud.sdk.eps.v1.model.ListResourceMappingRequest;
+import com.huaweicloud.sdk.eps.v1.model.ListResourceMappingResponse;
 import com.huaweicloud.sdk.eps.v1.model.MigrateResourceRequest;
 import com.huaweicloud.sdk.eps.v1.model.MigrateResourceResponse;
 import com.huaweicloud.sdk.eps.v1.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.eps.v1.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.eps.v1.model.ShowAssociatedResourcesRequest;
+import com.huaweicloud.sdk.eps.v1.model.ShowAssociatedResourcesResponse;
 import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectQuotaRequest;
 import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectQuotaResponse;
 import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.ShowEpConfigsRequest;
+import com.huaweicloud.sdk.eps.v1.model.ShowEpConfigsResponse;
 import com.huaweicloud.sdk.eps.v1.model.ShowResourceBindEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.ShowResourceBindEnterpriseProjectResponse;
 import com.huaweicloud.sdk.eps.v1.model.UpdateEnterpriseProjectRequest;
@@ -71,6 +81,36 @@ public class EpsAsyncClient {
     public AsyncInvoker<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> createEnterpriseProjectAsyncInvoker(
         CreateEnterpriseProjectRequest request) {
         return new AsyncInvoker<>(request, EpsMeta.createEnterpriseProject, hcClient);
+    }
+
+    /**
+     * 删除企业项目
+     *
+     * 删除企业项目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<DeleteEnterpriseProjectResponse>
+     */
+    public CompletableFuture<DeleteEnterpriseProjectResponse> deleteEnterpriseProjectAsync(
+        DeleteEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.deleteEnterpriseProject);
+    }
+
+    /**
+     * 删除企业项目
+     *
+     * 删除企业项目
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<DeleteEnterpriseProjectRequest, DeleteEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<DeleteEnterpriseProjectRequest, DeleteEnterpriseProjectResponse> deleteEnterpriseProjectAsyncInvoker(
+        DeleteEnterpriseProjectRequest request) {
+        return new AsyncInvoker<>(request, EpsMeta.deleteEnterpriseProject, hcClient);
     }
 
     /**
@@ -193,6 +233,35 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 查询资源迁移记录
+     *
+     * 查询资源迁移记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMigrationRecordRequest 请求对象
+     * @return CompletableFuture<ListMigrationRecordResponse>
+     */
+    public CompletableFuture<ListMigrationRecordResponse> listMigrationRecordAsync(ListMigrationRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.listMigrationRecord);
+    }
+
+    /**
+     * 查询资源迁移记录
+     *
+     * 查询资源迁移记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMigrationRecordRequest 请求对象
+     * @return AsyncInvoker<ListMigrationRecordRequest, ListMigrationRecordResponse>
+     */
+    public AsyncInvoker<ListMigrationRecordRequest, ListMigrationRecordResponse> listMigrationRecordAsyncInvoker(
+        ListMigrationRecordRequest request) {
+        return new AsyncInvoker<>(request, EpsMeta.listMigrationRecord, hcClient);
+    }
+
+    /**
      * 查询企业项目支持的服务
      *
      * 查询企业项目支持的服务
@@ -219,6 +288,35 @@ public class EpsAsyncClient {
     public AsyncInvoker<ListProvidersRequest, ListProvidersResponse> listProvidersAsyncInvoker(
         ListProvidersRequest request) {
         return new AsyncInvoker<>(request, EpsMeta.listProviders, hcClient);
+    }
+
+    /**
+     * 查询资源类型映射
+     *
+     * 查询资源类型映射
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceMappingRequest 请求对象
+     * @return CompletableFuture<ListResourceMappingResponse>
+     */
+    public CompletableFuture<ListResourceMappingResponse> listResourceMappingAsync(ListResourceMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.listResourceMapping);
+    }
+
+    /**
+     * 查询资源类型映射
+     *
+     * 查询资源类型映射
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceMappingRequest 请求对象
+     * @return AsyncInvoker<ListResourceMappingRequest, ListResourceMappingResponse>
+     */
+    public AsyncInvoker<ListResourceMappingRequest, ListResourceMappingResponse> listResourceMappingAsyncInvoker(
+        ListResourceMappingRequest request) {
+        return new AsyncInvoker<>(request, EpsMeta.listResourceMapping, hcClient);
     }
 
     /**
@@ -280,6 +378,36 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 查询关联资源
+     *
+     * 查询关联资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssociatedResourcesRequest 请求对象
+     * @return CompletableFuture<ShowAssociatedResourcesResponse>
+     */
+    public CompletableFuture<ShowAssociatedResourcesResponse> showAssociatedResourcesAsync(
+        ShowAssociatedResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.showAssociatedResources);
+    }
+
+    /**
+     * 查询关联资源
+     *
+     * 查询关联资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssociatedResourcesRequest 请求对象
+     * @return AsyncInvoker<ShowAssociatedResourcesRequest, ShowAssociatedResourcesResponse>
+     */
+    public AsyncInvoker<ShowAssociatedResourcesRequest, ShowAssociatedResourcesResponse> showAssociatedResourcesAsyncInvoker(
+        ShowAssociatedResourcesRequest request) {
+        return new AsyncInvoker<>(request, EpsMeta.showAssociatedResources, hcClient);
+    }
+
+    /**
      * 查询企业项目详情
      *
      * 查询企业项目详情。
@@ -337,6 +465,35 @@ public class EpsAsyncClient {
     public AsyncInvoker<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> showEnterpriseProjectQuotaAsyncInvoker(
         ShowEnterpriseProjectQuotaRequest request) {
         return new AsyncInvoker<>(request, EpsMeta.showEnterpriseProjectQuota, hcClient);
+    }
+
+    /**
+     * 查询服务配置
+     *
+     * 查询服务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEpConfigsRequest 请求对象
+     * @return CompletableFuture<ShowEpConfigsResponse>
+     */
+    public CompletableFuture<ShowEpConfigsResponse> showEpConfigsAsync(ShowEpConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.showEpConfigs);
+    }
+
+    /**
+     * 查询服务配置
+     *
+     * 查询服务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEpConfigsRequest 请求对象
+     * @return AsyncInvoker<ShowEpConfigsRequest, ShowEpConfigsResponse>
+     */
+    public AsyncInvoker<ShowEpConfigsRequest, ShowEpConfigsResponse> showEpConfigsAsyncInvoker(
+        ShowEpConfigsRequest request) {
+        return new AsyncInvoker<>(request, EpsMeta.showEpConfigs, hcClient);
     }
 
     /**

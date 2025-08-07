@@ -49,7 +49,7 @@ public class ListExtendedAvailabilityZonesResponse extends SdkResponse {
     }
 
     /**
-     * Get availabilityZones
+     * 可用区列表
      * @return availabilityZones
      */
     public List<ExtendedAvailabilityZone> getAvailabilityZones() {

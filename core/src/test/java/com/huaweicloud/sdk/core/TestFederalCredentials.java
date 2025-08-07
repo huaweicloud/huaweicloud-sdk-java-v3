@@ -65,17 +65,6 @@ public class TestFederalCredentials {
     }
 
     @Test
-    public void testBasicCredentialWithoutProjectId() {
-        BasicCredentials credentials =
-                new BasicCredentials().withIdpId(MOCK_IDP_ID).withIdTokenFile(MOCK_ID_TOKEN_FILE);
-        try {
-            credentials.processAuthParams(HC_CLIENT, MOCK_REGION_ID);
-        } catch (SdkException e) {
-            Assert.assertEquals("projectId is required when using idpId&idTokenFile", e.getMessage());
-        }
-    }
-
-    @Test
     public void testBasicCredential() {
         BasicCredentials credentials =
                 new BasicCredentials()
@@ -103,17 +92,6 @@ public class TestFederalCredentials {
             credentials.processAuthParams(HC_CLIENT, MOCK_REGION_ID);
         } catch (SdkException e) {
             Assert.assertEquals("idTokenFile is required when using idpId&idTokenFile", e.getMessage());
-        }
-    }
-
-    @Test
-    public void testGlobalCredentialWithoutDomainId() {
-        GlobalCredentials credentials =
-                new GlobalCredentials().withIdpId(MOCK_IDP_ID).withIdTokenFile(MOCK_ID_TOKEN_FILE);
-        try {
-            credentials.processAuthParams(HC_CLIENT, MOCK_REGION_ID);
-        } catch (SdkException e) {
-            Assert.assertEquals("domainId is required when using idpId&idTokenFile", e.getMessage());
         }
     }
 

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Match {
 
     /**
-     * Gets or Sets key
+     * 匹配的键
      */
     public static final class KeyEnum {
 
@@ -95,7 +95,7 @@ public class Match {
     }
 
     /**
-     * Get key
+     * 匹配的键
      * @return key
      */
     public KeyEnum getKey() {
@@ -112,7 +112,7 @@ public class Match {
     }
 
     /**
-     * Get value
+     * 匹配的值
      * @return value
      */
     public String getValue() {

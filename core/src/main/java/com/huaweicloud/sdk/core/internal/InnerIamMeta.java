@@ -43,22 +43,6 @@ public final class InnerIamMeta {
     public static final HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> KEYSTONE_LIST_PROJECTS
         = genForKeystoneListProjects();
 
-    /**
-     * @deprecated this method will be removed in the future version
-     * @since 3.1.89
-     */
-    @Deprecated
-    public static final HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>
-        KEYSTONE_CREATE_PROJECT = genForKeystoneCreateProject();
-
-    /**
-     * @deprecated this method will be removed in the future version
-     * @since 3.1.89
-     */
-    @Deprecated
-    public static final HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> KEYSTONE_LIST_REGIONS
-        = genForKeystoneListRegions();
-
     public static final HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>
         KEYSTONE_LIST_AUTH_DOMAINS = genForKeystoneListAuthDomains();
 

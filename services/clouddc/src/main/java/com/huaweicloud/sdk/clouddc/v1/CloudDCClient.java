@@ -28,8 +28,8 @@ import com.huaweicloud.sdk.clouddc.v1.model.ListEventsRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListEventsResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListIDcsRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListIDcsResponse;
-import com.huaweicloud.sdk.clouddc.v1.model.ListIRackRequest;
-import com.huaweicloud.sdk.clouddc.v1.model.ListIRackResponse;
+import com.huaweicloud.sdk.clouddc.v1.model.ListIRacksRequest;
+import com.huaweicloud.sdk.clouddc.v1.model.ListIRacksResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListServersRequest;
@@ -519,11 +519,11 @@ public class CloudDCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIRackRequest 请求对象
-     * @return ListIRackResponse
+     * @param request ListIRacksRequest 请求对象
+     * @return ListIRacksResponse
      */
-    public ListIRackResponse listIRack(ListIRackRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudDCMeta.listIRack);
+    public ListIRacksResponse listIRacks(ListIRacksRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudDCMeta.listIRacks);
     }
 
     /**
@@ -533,11 +533,11 @@ public class CloudDCClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIRackRequest 请求对象
-     * @return SyncInvoker<ListIRackRequest, ListIRackResponse>
+     * @param request ListIRacksRequest 请求对象
+     * @return SyncInvoker<ListIRacksRequest, ListIRacksResponse>
      */
-    public SyncInvoker<ListIRackRequest, ListIRackResponse> listIRackInvoker(ListIRackRequest request) {
-        return new SyncInvoker<>(request, CloudDCMeta.listIRack, hcClient);
+    public SyncInvoker<ListIRacksRequest, ListIRacksResponse> listIRacksInvoker(ListIRacksRequest request) {
+        return new SyncInvoker<>(request, CloudDCMeta.listIRacks, hcClient);
     }
 
     /**

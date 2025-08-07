@@ -84,7 +84,7 @@ public class ExtendedAvailabilityZone {
     }
 
     /**
-     * Get availableSpecs
+     * 该可用区下可选的VPN网关规格组合
      * @return availableSpecs
      */
     public List<AvailableSpec> getAvailableSpecs() {

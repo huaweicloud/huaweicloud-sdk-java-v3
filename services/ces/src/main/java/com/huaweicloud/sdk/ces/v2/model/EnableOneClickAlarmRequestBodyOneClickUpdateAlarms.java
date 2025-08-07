@@ -51,7 +51,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private AlarmType type;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
@@ -84,7 +84,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     private String notificationEndTime;
 
     /**
-     * 通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
+     * 此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
      */
     public static final class NotificationMannerEnum {
 
@@ -195,7 +195,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 告警名称, 只能包含0-9/a-z/A-Z/_/-或汉字，长度1-128
+     * 此字段已废弃。告警名称, 只能包含0-9/a-z/A-Z/_/-或汉字，长度1-128
      * @return name
      */
     public String getName() {
@@ -212,7 +212,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 告警描述，长度0-256
+     * 此字段已废弃。告警描述，长度0-256
      * @return description
      */
     public String getDescription() {
@@ -296,7 +296,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 资源列表，关联资源需要使用查询告警规则资源接口获取
+     * 此字段已废弃。资源列表，关联资源需要使用查询告警规则资源接口获取
      * @return resources
      */
     public List<List<Dimension>> getResources() {
@@ -307,20 +307,20 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
         this.resources = resources;
     }
 
-    public EnableOneClickAlarmRequestBodyOneClickUpdateAlarms withType(AlarmType type) {
+    public EnableOneClickAlarmRequestBodyOneClickUpdateAlarms withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * Get type
+     * 此字段已废弃。 **参数解释**： 告警规则类型 **约束限制**： 不涉及。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警； **默认取值**： 不涉及。 
      * @return type
      */
-    public AlarmType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(AlarmType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -347,7 +347,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 是否开启告警通知。true:开启，false:关闭。
+     * 此字段已废弃。是否开启告警通知。true:开启，false:关闭。
      * @return notificationEnabled
      */
     public Boolean getNotificationEnabled() {
@@ -383,7 +383,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 告警触发的动作
+     * 此字段已废弃。告警触发的动作
      * @return alarmNotifications
      */
     public List<Notification> getAlarmNotifications() {
@@ -417,7 +417,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 告警恢复触发的动作
+     * 此字段已废弃。告警恢复触发的动作
      * @return okNotifications
      */
     public List<Notification> getOkNotifications() {
@@ -434,7 +434,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 告警通知开启时间
+     * 此字段已废弃。告警通知开启时间
      * @return notificationBeginTime
      */
     public String getNotificationBeginTime() {
@@ -451,7 +451,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 告警通知关闭时间
+     * 此字段已废弃。告警通知关闭时间
      * @return notificationEndTime
      */
     public String getNotificationEndTime() {
@@ -469,7 +469,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
+     * 此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
      * @return notificationManner
      */
     public NotificationMannerEnum getNotificationManner() {
@@ -505,7 +505,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 关联的通知策略ID列表
+     * 此字段已废弃。关联的通知策略ID列表
      * @return notificationPolicyIds
      */
     public List<String> getNotificationPolicyIds() {

@@ -61,7 +61,7 @@ public class ListVpnServersByProjectResponse extends SdkResponse {
     }
 
     /**
-     * Get vpnServers
+     * 服务端列表
      * @return vpnServers
      */
     public List<ShowServerResponse> getVpnServers() {

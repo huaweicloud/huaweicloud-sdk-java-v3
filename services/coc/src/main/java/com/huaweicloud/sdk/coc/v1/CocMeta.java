@@ -98,13 +98,13 @@ import com.huaweicloud.sdk.coc.v1.model.GetScriptJobStatisticsRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptJobStatisticsResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.HandleAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.HandleAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleExternalIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentResponse;
-import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmRequest;
-import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.InstancesBatchesMode;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptAnalyzeRequest;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptOrderOperationBody;
@@ -326,13 +326,13 @@ public class CocMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<HandlerAlarmRequest, HandlerAlarmResponse> handlerAlarm = genForHandlerAlarm();
+    public static final HttpRequestDef<HandleAlarmRequest, HandleAlarmResponse> handleAlarm = genForHandleAlarm();
 
-    private static HttpRequestDef<HandlerAlarmRequest, HandlerAlarmResponse> genForHandlerAlarm() {
+    private static HttpRequestDef<HandleAlarmRequest, HandleAlarmResponse> genForHandleAlarm() {
         // basic
-        HttpRequestDef.Builder<HandlerAlarmRequest, HandlerAlarmResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, HandlerAlarmRequest.class, HandlerAlarmResponse.class)
-                .withName("HandlerAlarm")
+        HttpRequestDef.Builder<HandleAlarmRequest, HandleAlarmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, HandleAlarmRequest.class, HandleAlarmResponse.class)
+                .withName("HandleAlarm")
                 .withUri("/v1/alarm-mgmt/alarm/{alarm_id}/auto-process")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -341,19 +341,19 @@ public class CocMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(HandlerAlarmRequest::getAlarmId, HandlerAlarmRequest::setAlarmId));
+            f -> f.withMarshaller(HandleAlarmRequest::getAlarmId, HandleAlarmRequest::setAlarmId));
         builder.<AutoHandlerAlarmRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AutoHandlerAlarmRequestBody.class),
-            f -> f.withMarshaller(HandlerAlarmRequest::getBody, HandlerAlarmRequest::setBody));
+            f -> f.withMarshaller(HandleAlarmRequest::getBody, HandleAlarmRequest::setBody));
 
         // response
         builder.<Object>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             Object.class,
-            f -> f.withMarshaller(HandlerAlarmResponse::getBody, HandlerAlarmResponse::setBody));
+            f -> f.withMarshaller(HandleAlarmResponse::getBody, HandleAlarmResponse::setBody));
 
         return builder.build();
     }

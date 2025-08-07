@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CreateServerResponseBodyVpnServer
+ * VPN服务端
  */
 public class CreateServerResponseBodyVpnServer {
 

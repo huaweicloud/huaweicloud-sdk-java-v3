@@ -28,8 +28,8 @@ import com.huaweicloud.sdk.clouddc.v1.model.ListEventsRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListEventsResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListIDcsRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListIDcsResponse;
-import com.huaweicloud.sdk.clouddc.v1.model.ListIRackRequest;
-import com.huaweicloud.sdk.clouddc.v1.model.ListIRackResponse;
+import com.huaweicloud.sdk.clouddc.v1.model.ListIRacksRequest;
+import com.huaweicloud.sdk.clouddc.v1.model.ListIRacksResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListServersRequest;
@@ -526,11 +526,11 @@ public class CloudDCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIRackRequest 请求对象
-     * @return CompletableFuture<ListIRackResponse>
+     * @param request ListIRacksRequest 请求对象
+     * @return CompletableFuture<ListIRacksResponse>
      */
-    public CompletableFuture<ListIRackResponse> listIRackAsync(ListIRackRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudDCMeta.listIRack);
+    public CompletableFuture<ListIRacksResponse> listIRacksAsync(ListIRacksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudDCMeta.listIRacks);
     }
 
     /**
@@ -540,11 +540,11 @@ public class CloudDCAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIRackRequest 请求对象
-     * @return AsyncInvoker<ListIRackRequest, ListIRackResponse>
+     * @param request ListIRacksRequest 请求对象
+     * @return AsyncInvoker<ListIRacksRequest, ListIRacksResponse>
      */
-    public AsyncInvoker<ListIRackRequest, ListIRackResponse> listIRackAsyncInvoker(ListIRackRequest request) {
-        return new AsyncInvoker<>(request, CloudDCMeta.listIRack, hcClient);
+    public AsyncInvoker<ListIRacksRequest, ListIRacksResponse> listIRacksAsyncInvoker(ListIRacksRequest request) {
+        return new AsyncInvoker<>(request, CloudDCMeta.listIRacks, hcClient);
     }
 
     /**

@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationalUnitReques
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationalUnitResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreatePolicyResponse;
+import com.huaweicloud.sdk.organizations.v1.model.CreateResourceAccountRequest;
+import com.huaweicloud.sdk.organizations.v1.model.CreateResourceAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateTagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateTagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeclineHandshakeRequest;
@@ -192,6 +194,36 @@ public class OrganizationsAsyncClient {
     public AsyncInvoker<CreateAccountRequest, CreateAccountResponse> createAccountAsyncInvoker(
         CreateAccountRequest request) {
         return new AsyncInvoker<>(request, OrganizationsMeta.createAccount, hcClient);
+    }
+
+    /**
+     * 创建帐号
+     *
+     * 创建一个帐号，不携带手机号邮箱联系方式，生成的帐号将自动成为调用此接口的帐号所属组织的成员。此操作只能由组织的管理帐号调用。组织云服务将在新帐号中创建所需的服务关联委托和帐号访问委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateResourceAccountRequest 请求对象
+     * @return CompletableFuture<CreateResourceAccountResponse>
+     */
+    public CompletableFuture<CreateResourceAccountResponse> createResourceAccountAsync(
+        CreateResourceAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.createResourceAccount);
+    }
+
+    /**
+     * 创建帐号
+     *
+     * 创建一个帐号，不携带手机号邮箱联系方式，生成的帐号将自动成为调用此接口的帐号所属组织的成员。此操作只能由组织的管理帐号调用。组织云服务将在新帐号中创建所需的服务关联委托和帐号访问委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateResourceAccountRequest 请求对象
+     * @return AsyncInvoker<CreateResourceAccountRequest, CreateResourceAccountResponse>
+     */
+    public AsyncInvoker<CreateResourceAccountRequest, CreateResourceAccountResponse> createResourceAccountAsyncInvoker(
+        CreateResourceAccountRequest request) {
+        return new AsyncInvoker<>(request, OrganizationsMeta.createResourceAccount, hcClient);
     }
 
     /**

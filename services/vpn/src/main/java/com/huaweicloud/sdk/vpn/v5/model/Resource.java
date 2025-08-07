@@ -39,7 +39,7 @@ public class Resource {
     }
 
     /**
-     * Get resourceId
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -56,7 +56,7 @@ public class Resource {
     }
 
     /**
-     * Get resourceDetail
+     * 资源详情
      * @return resourceDetail
      */
     public Object getResourceDetail() {
@@ -89,7 +89,7 @@ public class Resource {
     }
 
     /**
-     * Get tags
+     * 标签列表
      * @return tags
      */
     public List<ResourceTag> getTags() {
@@ -106,7 +106,7 @@ public class Resource {
     }
 
     /**
-     * Get resourceName
+     * 资源名称
      * @return resourceName
      */
     public String getResourceName() {

@@ -247,7 +247,7 @@ public class ShowServerResponse {
     }
 
     /**
-     * Get clientCaCertificates
+     * 客户端CA证书列表
      * @return clientCaCertificates
      */
     public List<QueryClientCaCertificateBody> getClientCaCertificates() {

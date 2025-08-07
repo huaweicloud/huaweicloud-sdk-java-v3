@@ -1104,12 +1104,6 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmTemplatesRequest::getTemplateName,
                 ListAlarmTemplatesRequest::setTemplateName));
-        builder.<String>withRequestField("product_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlarmTemplatesRequest::getProductName,
-                ListAlarmTemplatesRequest::setProductName));
 
         // response
 

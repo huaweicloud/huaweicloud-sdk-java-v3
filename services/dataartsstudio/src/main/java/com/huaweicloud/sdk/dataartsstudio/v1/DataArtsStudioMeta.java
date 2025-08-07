@@ -7798,6 +7798,30 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactoryPendingItemsRequest::getItemName,
                 ListFactoryPendingItemsRequest::setItemName));
+        builder.<String>withRequestField("update_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getUpdateType,
+                ListFactoryPendingItemsRequest::setUpdateType));
+        builder.<String>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getTaskType,
+                ListFactoryPendingItemsRequest::setTaskType));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getStartTime,
+                ListFactoryPendingItemsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getEndTime,
+                ListFactoryPendingItemsRequest::setEndTime));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

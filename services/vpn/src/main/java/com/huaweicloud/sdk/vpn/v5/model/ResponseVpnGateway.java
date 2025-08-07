@@ -495,7 +495,7 @@ public class ResponseVpnGateway {
     }
 
     /**
-     * Get certificateId
+     * 证书ID
      * @return certificateId
      */
     public String getCertificateId() {

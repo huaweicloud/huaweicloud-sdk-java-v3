@@ -108,6 +108,11 @@ public class PolicyStatement {
 
     private Object condition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Sid")
+
+    private String sid;
+
     public PolicyStatement withEffect(EffectEnum effect) {
         this.effect = effect;
         return this;
@@ -208,6 +213,23 @@ public class PolicyStatement {
         this.condition = condition;
     }
 
+    public PolicyStatement withSid(String sid) {
+        this.sid = sid;
+        return this;
+    }
+
+    /**
+     * 策略Id
+     * @return sid
+     */
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -218,12 +240,13 @@ public class PolicyStatement {
         }
         PolicyStatement that = (PolicyStatement) obj;
         return Objects.equals(this.effect, that.effect) && Objects.equals(this.action, that.action)
-            && Objects.equals(this.resource, that.resource) && Objects.equals(this.condition, that.condition);
+            && Objects.equals(this.resource, that.resource) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.sid, that.sid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(effect, action, resource, condition);
+        return Objects.hash(effect, action, resource, condition, sid);
     }
 
     @Override
@@ -234,6 +257,7 @@ public class PolicyStatement {
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
         sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
+        sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

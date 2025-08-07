@@ -52,7 +52,7 @@ public class ShowVpnGatewayRoutingTableResponse extends SdkResponse {
     }
 
     /**
-     * Get routingTable
+     * VPN网关的路由表
      * @return routingTable
      */
     public List<VpnGatewayRoutingTableEntryVo> getRoutingTable() {
@@ -69,7 +69,7 @@ public class ShowVpnGatewayRoutingTableResponse extends SdkResponse {
     }
 
     /**
-     * Get totalCount
+     * 该网关下的路由总条数
      * @return totalCount
      */
     public Long getTotalCount() {

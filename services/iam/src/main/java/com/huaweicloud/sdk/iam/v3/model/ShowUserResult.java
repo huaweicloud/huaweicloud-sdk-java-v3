@@ -82,6 +82,11 @@ public class ShowUserResult {
     private String lastLoginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_pwd_auth_time")
+
+    private String lastPwdAuthTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pwd_strength")
 
     private String pwdStrength;
@@ -358,6 +363,23 @@ public class ShowUserResult {
         this.lastLoginTime = lastLoginTime;
     }
 
+    public ShowUserResult withLastPwdAuthTime(String lastPwdAuthTime) {
+        this.lastPwdAuthTime = lastPwdAuthTime;
+        return this;
+    }
+
+    /**
+     * IAM用户最后使用密码认证时间。
+     * @return lastPwdAuthTime
+     */
+    public String getLastPwdAuthTime() {
+        return lastPwdAuthTime;
+    }
+
+    public void setLastPwdAuthTime(String lastPwdAuthTime) {
+        this.lastPwdAuthTime = lastPwdAuthTime;
+    }
+
     public ShowUserResult withPwdStrength(String pwdStrength) {
         this.pwdStrength = pwdStrength;
         return this;
@@ -477,6 +499,7 @@ public class ShowUserResult {
             && Objects.equals(this.pwdStatus, that.pwdStatus) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.lastLoginTime, that.lastLoginTime)
+            && Objects.equals(this.lastPwdAuthTime, that.lastPwdAuthTime)
             && Objects.equals(this.pwdStrength, that.pwdStrength)
             && Objects.equals(this.isDomainOwner, that.isDomainOwner)
             && Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.description, that.description)
@@ -500,6 +523,7 @@ public class ShowUserResult {
             updateTime,
             createTime,
             lastLoginTime,
+            lastPwdAuthTime,
             pwdStrength,
             isDomainOwner,
             accessMode,
@@ -526,6 +550,7 @@ public class ShowUserResult {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    lastLoginTime: ").append(toIndentedString(lastLoginTime)).append("\n");
+        sb.append("    lastPwdAuthTime: ").append(toIndentedString(lastPwdAuthTime)).append("\n");
         sb.append("    pwdStrength: ").append(toIndentedString(pwdStrength)).append("\n");
         sb.append("    isDomainOwner: ").append(toIndentedString(isDomainOwner)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");

@@ -82,6 +82,15 @@ public class KafkaRegion {
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://dms.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://dms.cn-south-4.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://dms.cn-north-12.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://dms.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://dms.cn-north-11.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("KAFKA");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -118,6 +127,10 @@ public class KafkaRegion {
         map.put("af-north-1", AF_NORTH_1);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("cn-north-11", CN_NORTH_11);
         return Collections.unmodifiableMap(map);
     }
 

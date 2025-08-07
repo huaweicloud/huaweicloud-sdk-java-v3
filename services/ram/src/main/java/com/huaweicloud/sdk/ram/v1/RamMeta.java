@@ -48,6 +48,12 @@ import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationRequest;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationResponse;
 import com.huaweicloud.sdk.ram.v1.model.ResourceShareAssociationReqBody;
 import com.huaweicloud.sdk.ram.v1.model.ResourceSharesByTagsReqBody;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedPrincipalsReqBody;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesReqBody;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesResponse;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsReqBody;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsRequest;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsResponse;
@@ -455,6 +461,36 @@ public class RamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse> searchDistinctPrincipals =
+        genForSearchDistinctPrincipals();
+
+    private static HttpRequestDef<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse> genForSearchDistinctPrincipals() {
+        // basic
+        HttpRequestDef.Builder<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, SearchDistinctPrincipalsRequest.class, SearchDistinctPrincipalsResponse.class)
+                .withName("SearchDistinctPrincipals")
+                .withUri("/v1/shared-principals/search-distinct-principal")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchDistinctPrincipalsRequest::getXSecurityToken,
+                SearchDistinctPrincipalsRequest::setXSecurityToken));
+        builder.<SearchDistinctSharedPrincipalsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchDistinctSharedPrincipalsReqBody.class),
+            f -> f.withMarshaller(SearchDistinctPrincipalsRequest::getBody, SearchDistinctPrincipalsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> searchSharedPrincipals =
         genForSearchSharedPrincipals();
 
@@ -478,6 +514,39 @@ public class RamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SearchSharedPrincipalsReqBody.class),
             f -> f.withMarshaller(SearchSharedPrincipalsRequest::getBody, SearchSharedPrincipalsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> searchDistinctSharedResources =
+        genForSearchDistinctSharedResources();
+
+    private static HttpRequestDef<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> genForSearchDistinctSharedResources() {
+        // basic
+        HttpRequestDef.Builder<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SearchDistinctSharedResourcesRequest.class,
+                    SearchDistinctSharedResourcesResponse.class)
+                .withName("SearchDistinctSharedResources")
+                .withUri("/v1/shared-resources/search-distinct-resource")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchDistinctSharedResourcesRequest::getXSecurityToken,
+                SearchDistinctSharedResourcesRequest::setXSecurityToken));
+        builder.<SearchDistinctSharedResourcesReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchDistinctSharedResourcesReqBody.class),
+            f -> f.withMarshaller(SearchDistinctSharedResourcesRequest::getBody,
+                SearchDistinctSharedResourcesRequest::setBody));
 
         // response
 

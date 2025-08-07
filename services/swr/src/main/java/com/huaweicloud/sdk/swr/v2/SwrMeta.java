@@ -1162,10 +1162,10 @@ public class SwrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRepoDetailsRequest::getLimit, ListRepoDetailsRequest::setLimit));
-        builder.<String>withRequestField("marker",
+        builder.<Integer>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRepoDetailsRequest::getMarker, ListRepoDetailsRequest::setMarker));
         builder.<Boolean>withRequestField("is_public",
             LocationType.Query,
@@ -1426,6 +1426,16 @@ public class SwrMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRetentionHistoriesRequest::getRepository,
                 ListRetentionHistoriesRequest::setRepository));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRetentionHistoriesRequest::getLimit, ListRetentionHistoriesRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRetentionHistoriesRequest::getOffset, ListRetentionHistoriesRequest::setOffset));
         builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

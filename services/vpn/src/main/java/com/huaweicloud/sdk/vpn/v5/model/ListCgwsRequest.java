@@ -49,7 +49,7 @@ public class ListCgwsRequest {
 
     /**
      * 分页查询时每页返回的记录数量
-     * maximum: 200
+     * maximum: 2000
      * @return limit
      */
     public Integer getLimit() {

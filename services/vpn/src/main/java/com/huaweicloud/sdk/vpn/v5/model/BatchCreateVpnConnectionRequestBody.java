@@ -43,7 +43,7 @@ public class BatchCreateVpnConnectionRequestBody {
     }
 
     /**
-     * Get vpnConnections
+     * VPN连接对象数组
      * @return vpnConnections
      */
     public List<CreateVpnConnectionRequestBodyContent> getVpnConnections() {

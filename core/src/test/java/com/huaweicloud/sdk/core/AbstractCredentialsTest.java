@@ -45,11 +45,6 @@ public class AbstractCredentialsTest {
         }
 
         @Override
-        protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
-
-        }
-
-        @Override
         public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
             return null;
         }
@@ -62,10 +57,6 @@ public class AbstractCredentialsTest {
         @Override
         public ICredential deepClone() {
             return null;
-        }
-
-        public void setAuthToken(String authToken) {
-            this.authToken = authToken;
         }
 
         public void setExpiredAt(Long expiredAt) {
@@ -84,14 +75,6 @@ public class AbstractCredentialsTest {
             return super.getExpirationThresholdMillis();
         }
 
-    }
-
-
-    @Test
-    public void testNeedUpdateSecurityTokenFromMetadataAuthTokenNonNull() {
-        TestAbstractCredentials credentials = new TestAbstractCredentials();
-        credentials.setAuthToken("xxx");
-        Assert.assertFalse(credentials.needUpdateSecurityTokenFromMetadata());
     }
 
     @Test
@@ -138,7 +121,9 @@ public class AbstractCredentialsTest {
         TestAbstractCredentials credentials = new TestAbstractCredentials();
         credentials.setIdpId("id");
         credentials.setIdTokenFile("file");
-        credentials.setAuthToken("xxx");
+        credentials.setAk("ak");
+        credentials.setSk("sk");
+        credentials.setSecurityToken("xxx");
         credentials.setExpirationThresholdSeconds(60L);
         credentials.setExpiredAt(100000L);
 

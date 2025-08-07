@@ -66,9 +66,9 @@ public class ShowReposRespV3 {
     private String domainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace")
+    @JsonProperty(value = "namespace_name")
 
-    private String namespace;
+    private String namespaceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -262,21 +262,21 @@ public class ShowReposRespV3 {
         this.domainName = domainName;
     }
 
-    public ShowReposRespV3 withNamespace(String namespace) {
-        this.namespace = namespace;
+    public ShowReposRespV3 withNamespaceName(String namespaceName) {
+        this.namespaceName = namespaceName;
         return this;
     }
 
     /**
      * 租户的组织名称
-     * @return namespace
+     * @return namespaceName
      */
-    public String getNamespace() {
-        return namespace;
+    public String getNamespaceName() {
+        return namespaceName;
     }
 
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
+    public void setNamespaceName(String namespaceName) {
+        this.namespaceName = namespaceName;
     }
 
     public ShowReposRespV3 withStatus(Boolean status) {
@@ -310,8 +310,8 @@ public class ShowReposRespV3 {
             && Objects.equals(this.size, that.size) && Objects.equals(this.isPublic, that.isPublic)
             && Objects.equals(this.numImages, that.numImages) && Objects.equals(this.numDownload, that.numDownload)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.namespaceName, that.namespaceName) && Objects.equals(this.status, that.status);
     }
 
     @Override
@@ -327,7 +327,7 @@ public class ShowReposRespV3 {
             createdAt,
             updatedAt,
             domainName,
-            namespace,
+            namespaceName,
             status);
     }
 
@@ -346,7 +346,7 @@ public class ShowReposRespV3 {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
-        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    namespaceName: ").append(toIndentedString(namespaceName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CreateVpnAccessPolicyResponseBodyAccessPolicy
+ * VPN访问策略请求体对象
  */
 public class CreateVpnAccessPolicyResponseBodyAccessPolicy {
 

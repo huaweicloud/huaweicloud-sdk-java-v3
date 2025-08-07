@@ -75,6 +75,11 @@ public class BackupTransferInfo {
 
     private String prefix;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public BackupTransferInfo withId(String id) {
         this.id = id;
         return this;
@@ -296,6 +301,23 @@ public class BackupTransferInfo {
         this.prefix = prefix;
     }
 
+    public BackupTransferInfo withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 转储备份类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -312,7 +334,8 @@ public class BackupTransferInfo {
             && Objects.equals(this.destination, that.destination)
             && Objects.equals(this.backupBeginTime, that.backupBeginTime)
             && Objects.equals(this.backupEndTime, that.backupEndTime)
-            && Objects.equals(this.transferType, that.transferType) && Objects.equals(this.prefix, that.prefix);
+            && Objects.equals(this.transferType, that.transferType) && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
@@ -329,7 +352,8 @@ public class BackupTransferInfo {
             backupBeginTime,
             backupEndTime,
             transferType,
-            prefix);
+            prefix,
+            type);
     }
 
     @Override
@@ -349,6 +373,7 @@ public class BackupTransferInfo {
         sb.append("    backupEndTime: ").append(toIndentedString(backupEndTime)).append("\n");
         sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
         sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

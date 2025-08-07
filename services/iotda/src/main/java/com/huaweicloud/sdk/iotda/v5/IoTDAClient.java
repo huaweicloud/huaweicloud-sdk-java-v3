@@ -275,8 +275,7 @@ public class IoTDAClient {
     }
 
     public static ClientBuilder<IoTDAClient> newBuilder() {
-        ClientBuilder<IoTDAClient> clientBuilder =
-            new ClientBuilder<>(IoTDAClient::new, "BasicCredentials,IoTDACredentials");
+        ClientBuilder<IoTDAClient> clientBuilder = new ClientBuilder<>(IoTDAClient::new, "BasicCredentials");
         clientBuilder.withDerivedAuthServiceName("iotdm");
         return clientBuilder;
     }

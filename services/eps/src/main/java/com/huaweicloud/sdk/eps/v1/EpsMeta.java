@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.eps.v1.model.CreateEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.CreateEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.DeleteEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.DeleteEnterpriseProjectResponse;
 import com.huaweicloud.sdk.eps.v1.model.DisableAction;
 import com.huaweicloud.sdk.eps.v1.model.DisableEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.DisableEnterpriseProjectResponse;
@@ -18,18 +20,26 @@ import com.huaweicloud.sdk.eps.v1.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.eps.v1.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.eps.v1.model.ListEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.ListEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.ListMigrationRecordRequest;
+import com.huaweicloud.sdk.eps.v1.model.ListMigrationRecordResponse;
 import com.huaweicloud.sdk.eps.v1.model.ListProvidersRequest;
 import com.huaweicloud.sdk.eps.v1.model.ListProvidersResponse;
+import com.huaweicloud.sdk.eps.v1.model.ListResourceMappingRequest;
+import com.huaweicloud.sdk.eps.v1.model.ListResourceMappingResponse;
 import com.huaweicloud.sdk.eps.v1.model.MigrateResource;
 import com.huaweicloud.sdk.eps.v1.model.MigrateResourceRequest;
 import com.huaweicloud.sdk.eps.v1.model.MigrateResourceResponse;
 import com.huaweicloud.sdk.eps.v1.model.ResqEpResouce;
 import com.huaweicloud.sdk.eps.v1.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.eps.v1.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.eps.v1.model.ShowAssociatedResourcesRequest;
+import com.huaweicloud.sdk.eps.v1.model.ShowAssociatedResourcesResponse;
 import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectQuotaRequest;
 import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectQuotaResponse;
 import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.ShowEpConfigsRequest;
+import com.huaweicloud.sdk.eps.v1.model.ShowEpConfigsResponse;
 import com.huaweicloud.sdk.eps.v1.model.ShowResourceBindEnterpriseProjectRequest;
 import com.huaweicloud.sdk.eps.v1.model.ShowResourceBindEnterpriseProjectResponse;
 import com.huaweicloud.sdk.eps.v1.model.UpdateEnterpriseProjectRequest;
@@ -55,6 +65,30 @@ public class EpsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnterpriseProject.class),
             f -> f.withMarshaller(CreateEnterpriseProjectRequest::getBody, CreateEnterpriseProjectRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEnterpriseProjectRequest, DeleteEnterpriseProjectResponse> deleteEnterpriseProject =
+        genForDeleteEnterpriseProject();
+
+    private static HttpRequestDef<DeleteEnterpriseProjectRequest, DeleteEnterpriseProjectResponse> genForDeleteEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<DeleteEnterpriseProjectRequest, DeleteEnterpriseProjectResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteEnterpriseProjectRequest.class, DeleteEnterpriseProjectResponse.class)
+            .withName("DeleteEnterpriseProject")
+            .withUri("/v1.0/enterprise-projects/{enterprise_project_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEnterpriseProjectRequest::getEnterpriseProjectId,
+                DeleteEnterpriseProjectRequest::setEnterpriseProjectId));
 
         // response
 
@@ -191,6 +225,50 @@ public class EpsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMigrationRecordRequest, ListMigrationRecordResponse> listMigrationRecord =
+        genForListMigrationRecord();
+
+    private static HttpRequestDef<ListMigrationRecordRequest, ListMigrationRecordResponse> genForListMigrationRecord() {
+        // basic
+        HttpRequestDef.Builder<ListMigrationRecordRequest, ListMigrationRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMigrationRecordRequest.class, ListMigrationRecordResponse.class)
+                .withName("ListMigrationRecord")
+                .withUri("/v1.0/enterprise-projects/migrate-record/list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMigrationRecordRequest::getStartTime, ListMigrationRecordRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMigrationRecordRequest::getEndTime, ListMigrationRecordRequest::setEndTime));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMigrationRecordRequest::getOffset, ListMigrationRecordRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMigrationRecordRequest::getLimit, ListMigrationRecordRequest::setLimit));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMigrationRecordRequest::getResourceId,
+                ListMigrationRecordRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProvidersRequest, ListProvidersResponse> listProviders =
         genForListProviders();
 
@@ -223,6 +301,24 @@ public class EpsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProvidersRequest::getProvider, ListProvidersRequest::setProvider));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceMappingRequest, ListResourceMappingResponse> listResourceMapping =
+        genForListResourceMapping();
+
+    private static HttpRequestDef<ListResourceMappingRequest, ListResourceMappingResponse> genForListResourceMapping() {
+        // basic
+        HttpRequestDef.Builder<ListResourceMappingRequest, ListResourceMappingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourceMappingRequest.class, ListResourceMappingResponse.class)
+                .withName("ListResourceMapping")
+                .withUri("/v1.0/enterprise-projects/resources-mapping")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -281,6 +377,48 @@ public class EpsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAssociatedResourcesRequest, ShowAssociatedResourcesResponse> showAssociatedResources =
+        genForShowAssociatedResources();
+
+    private static HttpRequestDef<ShowAssociatedResourcesRequest, ShowAssociatedResourcesResponse> genForShowAssociatedResources() {
+        // basic
+        HttpRequestDef.Builder<ShowAssociatedResourcesRequest, ShowAssociatedResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAssociatedResourcesRequest.class, ShowAssociatedResourcesResponse.class)
+            .withName("ShowAssociatedResources")
+            .withUri("/v1.0/associated-resources/{resource_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssociatedResourcesRequest::getResourceId,
+                ShowAssociatedResourcesRequest::setResourceId));
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssociatedResourcesRequest::getProjectId,
+                ShowAssociatedResourcesRequest::setProjectId));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssociatedResourcesRequest::getRegionId,
+                ShowAssociatedResourcesRequest::setRegionId));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssociatedResourcesRequest::getResourceType,
+                ShowAssociatedResourcesRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> showEnterpriseProject =
         genForShowEnterpriseProject();
 
@@ -317,6 +455,24 @@ public class EpsMeta {
                     ShowEnterpriseProjectQuotaResponse.class)
                 .withName("ShowEnterpriseProjectQuota")
                 .withUri("/v1.0/enterprise-projects/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEpConfigsRequest, ShowEpConfigsResponse> showEpConfigs =
+        genForShowEpConfigs();
+
+    private static HttpRequestDef<ShowEpConfigsRequest, ShowEpConfigsResponse> genForShowEpConfigs() {
+        // basic
+        HttpRequestDef.Builder<ShowEpConfigsRequest, ShowEpConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEpConfigsRequest.class, ShowEpConfigsResponse.class)
+                .withName("ShowEpConfigs")
+                .withUri("/v1/enterprise-projects/configs")
                 .withContentType("application/json");
 
         // requests

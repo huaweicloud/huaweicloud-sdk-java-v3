@@ -29,7 +29,7 @@ public class Tag {
     }
 
     /**
-     * Get key
+     * 标签的键
      * @return key
      */
     public String getKey() {
@@ -62,7 +62,7 @@ public class Tag {
     }
 
     /**
-     * Get values
+     * 标签的值列表
      * @return values
      */
     public List<String> getValues() {

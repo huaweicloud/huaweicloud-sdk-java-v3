@@ -14,6 +14,11 @@ import java.util.stream.Collectors;
 
 public class CfwRegion {
 
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://cfw.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://cfw.cn-north-12.myhuaweicloud.com");
+
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://cfw.ru-moscow-1.myhuaweicloud.com");
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://cfw.eu-west-101.myhuaweicloud.eu");
@@ -76,6 +81,8 @@ public class CfwRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("cn-north-12", CN_NORTH_12);
         map.put("ru-moscow-1", RU_MOSCOW_1);
         map.put("eu-west-101", EU_WEST_101);
         map.put("cn-south-4", CN_SOUTH_4);

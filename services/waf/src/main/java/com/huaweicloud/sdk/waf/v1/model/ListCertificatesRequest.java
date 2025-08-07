@@ -40,6 +40,11 @@ public class ListCertificatesRequest {
 
     private Integer expStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query_scm")
+
+    private Boolean queryScm;
+
     public ListCertificatesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -142,6 +147,23 @@ public class ListCertificatesRequest {
         this.expStatus = expStatus;
     }
 
+    public ListCertificatesRequest withQueryScm(Boolean queryScm) {
+        this.queryScm = queryScm;
+        return this;
+    }
+
+    /**
+     * 查询结果的证书来源服务是否包括SCM服务，值为true或者false。
+     * @return queryScm
+     */
+    public Boolean getQueryScm() {
+        return queryScm;
+    }
+
+    public void setQueryScm(Boolean queryScm) {
+        this.queryScm = queryScm;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +176,12 @@ public class ListCertificatesRequest {
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.page, that.page) && Objects.equals(this.pagesize, that.pagesize)
             && Objects.equals(this.name, that.name) && Objects.equals(this.host, that.host)
-            && Objects.equals(this.expStatus, that.expStatus);
+            && Objects.equals(this.expStatus, that.expStatus) && Objects.equals(this.queryScm, that.queryScm);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, page, pagesize, name, host, expStatus);
+        return Objects.hash(enterpriseProjectId, page, pagesize, name, host, expStatus, queryScm);
     }
 
     @Override
@@ -172,6 +194,7 @@ public class ListCertificatesRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("    expStatus: ").append(toIndentedString(expStatus)).append("\n");
+        sb.append("    queryScm: ").append(toIndentedString(queryScm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

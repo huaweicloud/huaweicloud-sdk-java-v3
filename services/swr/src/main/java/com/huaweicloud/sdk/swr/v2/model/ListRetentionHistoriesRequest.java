@@ -21,6 +21,16 @@ public class ListRetentionHistoriesRequest {
     private String repository;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private String offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
 
     private String filter;
@@ -59,6 +69,40 @@ public class ListRetentionHistoriesRequest {
         this.repository = repository;
     }
 
+    public ListRetentionHistoriesRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 返回条数。注意：offset和limit参数需要配套使用。
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
+    public ListRetentionHistoriesRequest withOffset(String offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 起始索引。注意：offset和limit参数需要配套使用。
+     * @return offset
+     */
+    public String getOffset() {
+        return offset;
+    }
+
+    public void setOffset(String offset) {
+        this.offset = offset;
+    }
+
     public ListRetentionHistoriesRequest withFilter(String filter) {
         this.filter = filter;
         return this;
@@ -86,12 +130,13 @@ public class ListRetentionHistoriesRequest {
         }
         ListRetentionHistoriesRequest that = (ListRetentionHistoriesRequest) obj;
         return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.filter, that.filter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespace, repository, filter);
+        return Objects.hash(namespace, repository, limit, offset, filter);
     }
 
     @Override
@@ -100,6 +145,8 @@ public class ListRetentionHistoriesRequest {
         sb.append("class ListRetentionHistoriesRequest {\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    repository: ").append(toIndentedString(repository)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("}");
         return sb.toString();

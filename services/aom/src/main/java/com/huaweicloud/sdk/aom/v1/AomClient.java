@@ -1,7 +1,5 @@
 package com.huaweicloud.sdk.aom.v1;
 
-import com.huaweicloud.sdk.aom.v1.model.CreateFastExecuteScriptRequest;
-import com.huaweicloud.sdk.aom.v1.model.CreateFastExecuteScriptResponse;
 import com.huaweicloud.sdk.aom.v1.model.CreateWorkflowRequest;
 import com.huaweicloud.sdk.aom.v1.model.CreateWorkflowResponse;
 import com.huaweicloud.sdk.aom.v1.model.ExecuteWorkflowRequest;
@@ -43,35 +41,6 @@ public class AomClient {
     public static ClientBuilder<AomClient> newBuilder() {
         ClientBuilder<AomClient> clientBuilder = new ClientBuilder<>(AomClient::new);
         return clientBuilder;
-    }
-
-    /**
-     * 快速创建并执行脚本
-     *
-     * 该接口用于创建快速执行脚本的任务，可以指定脚本类型，执行用户，脚本参数，执行机器，脚本内容，在用户指定的机器上执行脚本。（注：接口目前开放的region为：华东-苏州二零一）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateFastExecuteScriptRequest 请求对象
-     * @return CreateFastExecuteScriptResponse
-     */
-    public CreateFastExecuteScriptResponse createFastExecuteScript(CreateFastExecuteScriptRequest request) {
-        return hcClient.syncInvokeHttp(request, AomMeta.createFastExecuteScript);
-    }
-
-    /**
-     * 快速创建并执行脚本
-     *
-     * 该接口用于创建快速执行脚本的任务，可以指定脚本类型，执行用户，脚本参数，执行机器，脚本内容，在用户指定的机器上执行脚本。（注：接口目前开放的region为：华东-苏州二零一）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateFastExecuteScriptRequest 请求对象
-     * @return SyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse>
-     */
-    public SyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> createFastExecuteScriptInvoker(
-        CreateFastExecuteScriptRequest request) {
-        return new SyncInvoker<>(request, AomMeta.createFastExecuteScript, hcClient);
     }
 
     /**

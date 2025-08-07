@@ -40,7 +40,7 @@ public class CreateResourcesTagsRequestBody {
     }
 
     /**
-     * Get tags
+     * 资源标签
      * @return tags
      */
     public List<ResourceTag> getTags() {

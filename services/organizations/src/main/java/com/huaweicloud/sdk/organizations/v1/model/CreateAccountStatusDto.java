@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 包含有关在组织中创建账号的CreateAccount请求的状态。
@@ -45,6 +46,11 @@ public class CreateAccountStatusDto {
     @JsonProperty(value = "failure_reason")
 
     private String failureReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failure_detail_msg")
+
+    private CreateAccountStatusDtoFailureDetailMsg failureDetailMsg;
 
     public CreateAccountStatusDto withAccountId(String accountId) {
         this.accountId = accountId;
@@ -165,6 +171,33 @@ public class CreateAccountStatusDto {
         this.failureReason = failureReason;
     }
 
+    public CreateAccountStatusDto withFailureDetailMsg(CreateAccountStatusDtoFailureDetailMsg failureDetailMsg) {
+        this.failureDetailMsg = failureDetailMsg;
+        return this;
+    }
+
+    public CreateAccountStatusDto withFailureDetailMsg(
+        Consumer<CreateAccountStatusDtoFailureDetailMsg> failureDetailMsgSetter) {
+        if (this.failureDetailMsg == null) {
+            this.failureDetailMsg = new CreateAccountStatusDtoFailureDetailMsg();
+            failureDetailMsgSetter.accept(this.failureDetailMsg);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get failureDetailMsg
+     * @return failureDetailMsg
+     */
+    public CreateAccountStatusDtoFailureDetailMsg getFailureDetailMsg() {
+        return failureDetailMsg;
+    }
+
+    public void setFailureDetailMsg(CreateAccountStatusDtoFailureDetailMsg failureDetailMsg) {
+        this.failureDetailMsg = failureDetailMsg;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +210,13 @@ public class CreateAccountStatusDto {
         return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.accountName, that.accountName)
             && Objects.equals(this.completedAt, that.completedAt) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.id, that.id) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.failureReason, that.failureReason);
+            && Objects.equals(this.failureReason, that.failureReason)
+            && Objects.equals(this.failureDetailMsg, that.failureDetailMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, accountName, completedAt, createdAt, id, state, failureReason);
+        return Objects.hash(accountId, accountName, completedAt, createdAt, id, state, failureReason, failureDetailMsg);
     }
 
     @Override
@@ -196,6 +230,7 @@ public class CreateAccountStatusDto {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
+        sb.append("    failureDetailMsg: ").append(toIndentedString(failureDetailMsg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

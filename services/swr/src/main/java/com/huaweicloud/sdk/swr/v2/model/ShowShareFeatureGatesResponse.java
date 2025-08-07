@@ -52,6 +52,16 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
     private Boolean enablePipeline;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_authorization_token")
+
+    private Boolean enableAuthorizationToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_resource")
+
+    private Boolean enableResource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_list_v3")
 
     private Boolean enableListV3;
@@ -192,6 +202,40 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
         this.enablePipeline = enablePipeline;
     }
 
+    public ShowShareFeatureGatesResponse withEnableAuthorizationToken(Boolean enableAuthorizationToken) {
+        this.enableAuthorizationToken = enableAuthorizationToken;
+        return this;
+    }
+
+    /**
+     * 是否支持增强型临时登录指令。设置为true时，前端获取登录指令时可以选择获取增强型登录指令。
+     * @return enableAuthorizationToken
+     */
+    public Boolean getEnableAuthorizationToken() {
+        return enableAuthorizationToken;
+    }
+
+    public void setEnableAuthorizationToken(Boolean enableAuthorizationToken) {
+        this.enableAuthorizationToken = enableAuthorizationToken;
+    }
+
+    public ShowShareFeatureGatesResponse withEnableResource(Boolean enableResource) {
+        this.enableResource = enableResource;
+        return this;
+    }
+
+    /**
+     * 是否支持镜像资源。设置为true时，前端界面显示“镜像资源”页签，可查看镜像中心。
+     * @return enableResource
+     */
+    public Boolean getEnableResource() {
+        return enableResource;
+    }
+
+    public void setEnableResource(Boolean enableResource) {
+        this.enableResource = enableResource;
+    }
+
     public ShowShareFeatureGatesResponse withEnableListV3(Boolean enableListV3) {
         this.enableListV3 = enableListV3;
         return this;
@@ -226,6 +270,8 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
             && Objects.equals(this.enableCciService, that.enableCciService)
             && Objects.equals(this.enableImageLabel, that.enableImageLabel)
             && Objects.equals(this.enablePipeline, that.enablePipeline)
+            && Objects.equals(this.enableAuthorizationToken, that.enableAuthorizationToken)
+            && Objects.equals(this.enableResource, that.enableResource)
             && Objects.equals(this.enableListV3, that.enableListV3);
     }
 
@@ -239,6 +285,8 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
             enableCciService,
             enableImageLabel,
             enablePipeline,
+            enableAuthorizationToken,
+            enableResource,
             enableListV3);
     }
 
@@ -254,6 +302,8 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
         sb.append("    enableCciService: ").append(toIndentedString(enableCciService)).append("\n");
         sb.append("    enableImageLabel: ").append(toIndentedString(enableImageLabel)).append("\n");
         sb.append("    enablePipeline: ").append(toIndentedString(enablePipeline)).append("\n");
+        sb.append("    enableAuthorizationToken: ").append(toIndentedString(enableAuthorizationToken)).append("\n");
+        sb.append("    enableResource: ").append(toIndentedString(enableResource)).append("\n");
         sb.append("    enableListV3: ").append(toIndentedString(enableListV3)).append("\n");
         sb.append("}");
         return sb.toString();

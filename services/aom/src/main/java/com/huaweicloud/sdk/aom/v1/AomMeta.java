@@ -1,12 +1,9 @@
 package com.huaweicloud.sdk.aom.v1;
 
-import com.huaweicloud.sdk.aom.v1.model.CreateFastExecuteScriptRequest;
-import com.huaweicloud.sdk.aom.v1.model.CreateFastExecuteScriptResponse;
 import com.huaweicloud.sdk.aom.v1.model.CreateWorkflowRequest;
 import com.huaweicloud.sdk.aom.v1.model.CreateWorkflowResponse;
 import com.huaweicloud.sdk.aom.v1.model.ExecuteWorkflowRequest;
 import com.huaweicloud.sdk.aom.v1.model.ExecuteWorkflowResponse;
-import com.huaweicloud.sdk.aom.v1.model.HISFastScript;
 import com.huaweicloud.sdk.aom.v1.model.ListAllJobByNameRequest;
 import com.huaweicloud.sdk.aom.v1.model.ListAllJobByNameResponse;
 import com.huaweicloud.sdk.aom.v1.model.ListAllScriptByNameRequest;
@@ -45,29 +42,6 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class AomMeta {
-
-    public static final HttpRequestDef<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> createFastExecuteScript =
-        genForCreateFastExecuteScript();
-
-    private static HttpRequestDef<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> genForCreateFastExecuteScript() {
-        // basic
-        HttpRequestDef.Builder<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateFastExecuteScriptRequest.class, CreateFastExecuteScriptResponse.class)
-            .withName("CreateFastExecuteScript")
-            .withUri("/v1/{project_id}/cms/fast-execute-script")
-            .withContentType("application/json");
-
-        // requests
-        builder.<HISFastScript>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(HISFastScript.class),
-            f -> f.withMarshaller(CreateFastExecuteScriptRequest::getBody, CreateFastExecuteScriptRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
 
     public static final HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflow =
         genForCreateWorkflow();

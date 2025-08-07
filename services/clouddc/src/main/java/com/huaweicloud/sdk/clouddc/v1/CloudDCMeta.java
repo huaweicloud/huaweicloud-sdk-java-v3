@@ -33,8 +33,8 @@ import com.huaweicloud.sdk.clouddc.v1.model.ListEventsRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListEventsResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListIDcsRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListIDcsResponse;
-import com.huaweicloud.sdk.clouddc.v1.model.ListIRackRequest;
-import com.huaweicloud.sdk.clouddc.v1.model.ListIRackResponse;
+import com.huaweicloud.sdk.clouddc.v1.model.ListIRacksRequest;
+import com.huaweicloud.sdk.clouddc.v1.model.ListIRacksResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.clouddc.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.clouddc.v1.model.ListServersRequest;
@@ -559,13 +559,13 @@ public class CloudDCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListIRackRequest, ListIRackResponse> listIRack = genForListIRack();
+    public static final HttpRequestDef<ListIRacksRequest, ListIRacksResponse> listIRacks = genForListIRacks();
 
-    private static HttpRequestDef<ListIRackRequest, ListIRackResponse> genForListIRack() {
+    private static HttpRequestDef<ListIRacksRequest, ListIRacksResponse> genForListIRacks() {
         // basic
-        HttpRequestDef.Builder<ListIRackRequest, ListIRackResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListIRackRequest.class, ListIRackResponse.class)
-                .withName("ListIRack")
+        HttpRequestDef.Builder<ListIRacksRequest, ListIRacksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIRacksRequest.class, ListIRacksResponse.class)
+                .withName("ListIRacks")
                 .withUri("/v1/{project_id}/iracks")
                 .withContentType("application/json");
 
@@ -574,22 +574,22 @@ public class CloudDCMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIRackRequest::getRegion, ListIRackRequest::setRegion));
+            f -> f.withMarshaller(ListIRacksRequest::getRegion, ListIRacksRequest::setRegion));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIRackRequest::getMarker, ListIRackRequest::setMarker));
+            f -> f.withMarshaller(ListIRacksRequest::getMarker, ListIRacksRequest::setMarker));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIRackRequest::getLimit, ListIRackRequest::setLimit));
-        builder.<ListIRackRequest.OrderEnum>withRequestField("order",
+            f -> f.withMarshaller(ListIRacksRequest::getLimit, ListIRacksRequest::setLimit));
+        builder.<ListIRacksRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListIRackRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListIRackRequest::getOrder, ListIRackRequest::setOrder));
+            TypeCasts.uncheckedConversion(ListIRacksRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListIRacksRequest::getOrder, ListIRacksRequest::setOrder));
 
         // response
 

@@ -76,12 +76,12 @@ import com.huaweicloud.sdk.coc.v1.model.GetScriptJobStatisticsRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptJobStatisticsResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.HandleAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.HandleAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentResponse;
-import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmRequest;
-import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
@@ -319,32 +319,31 @@ public class CocAsyncClient {
     }
 
     /**
-     * 自动处理设置脚本和runbook
+     * 自动处理告警
      *
-     * 自动处理设置脚本和runbook
+     * 自动处理告警
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request HandlerAlarmRequest 请求对象
-     * @return CompletableFuture<HandlerAlarmResponse>
+     * @param request HandleAlarmRequest 请求对象
+     * @return CompletableFuture<HandleAlarmResponse>
      */
-    public CompletableFuture<HandlerAlarmResponse> handlerAlarmAsync(HandlerAlarmRequest request) {
-        return hcClient.asyncInvokeHttp(request, CocMeta.handlerAlarm);
+    public CompletableFuture<HandleAlarmResponse> handleAlarmAsync(HandleAlarmRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.handleAlarm);
     }
 
     /**
-     * 自动处理设置脚本和runbook
+     * 自动处理告警
      *
-     * 自动处理设置脚本和runbook
+     * 自动处理告警
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request HandlerAlarmRequest 请求对象
-     * @return AsyncInvoker<HandlerAlarmRequest, HandlerAlarmResponse>
+     * @param request HandleAlarmRequest 请求对象
+     * @return AsyncInvoker<HandleAlarmRequest, HandleAlarmResponse>
      */
-    public AsyncInvoker<HandlerAlarmRequest, HandlerAlarmResponse> handlerAlarmAsyncInvoker(
-        HandlerAlarmRequest request) {
-        return new AsyncInvoker<>(request, CocMeta.handlerAlarm, hcClient);
+    public AsyncInvoker<HandleAlarmRequest, HandleAlarmResponse> handleAlarmAsyncInvoker(HandleAlarmRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.handleAlarm, hcClient);
     }
 
     /**

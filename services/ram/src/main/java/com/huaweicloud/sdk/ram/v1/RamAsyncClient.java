@@ -41,6 +41,10 @@ import com.huaweicloud.sdk.ram.v1.model.ListResourceTypesRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationRequest;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesResponse;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsRequest;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsResponse;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareCountByTagsRequest;
@@ -401,6 +405,36 @@ public class RamAsyncClient {
     }
 
     /**
+     * 检索资源使用者并去除其中的重复项
+     *
+     * 检索您正在共享资源的不同使用者或被共享资源给您的不同使用者并去除其中的重复项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchDistinctPrincipalsRequest 请求对象
+     * @return CompletableFuture<SearchDistinctPrincipalsResponse>
+     */
+    public CompletableFuture<SearchDistinctPrincipalsResponse> searchDistinctPrincipalsAsync(
+        SearchDistinctPrincipalsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RamMeta.searchDistinctPrincipals);
+    }
+
+    /**
+     * 检索资源使用者并去除其中的重复项
+     *
+     * 检索您正在共享资源的不同使用者或被共享资源给您的不同使用者并去除其中的重复项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchDistinctPrincipalsRequest 请求对象
+     * @return AsyncInvoker<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse>
+     */
+    public AsyncInvoker<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse> searchDistinctPrincipalsAsyncInvoker(
+        SearchDistinctPrincipalsRequest request) {
+        return new AsyncInvoker<>(request, RamMeta.searchDistinctPrincipals, hcClient);
+    }
+
+    /**
      * 检索资源使用者
      *
      * 检索共享资源的使用者。
@@ -428,6 +462,36 @@ public class RamAsyncClient {
     public AsyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> searchSharedPrincipalsAsyncInvoker(
         SearchSharedPrincipalsRequest request) {
         return new AsyncInvoker<>(request, RamMeta.searchSharedPrincipals, hcClient);
+    }
+
+    /**
+     * 检索共享的资源并去除其中的重复项
+     *
+     * 检索您添加到资源共享或被共享给您的不同资源并去除其中的重复项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchDistinctSharedResourcesRequest 请求对象
+     * @return CompletableFuture<SearchDistinctSharedResourcesResponse>
+     */
+    public CompletableFuture<SearchDistinctSharedResourcesResponse> searchDistinctSharedResourcesAsync(
+        SearchDistinctSharedResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RamMeta.searchDistinctSharedResources);
+    }
+
+    /**
+     * 检索共享的资源并去除其中的重复项
+     *
+     * 检索您添加到资源共享或被共享给您的不同资源并去除其中的重复项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchDistinctSharedResourcesRequest 请求对象
+     * @return AsyncInvoker<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse>
+     */
+    public AsyncInvoker<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> searchDistinctSharedResourcesAsyncInvoker(
+        SearchDistinctSharedResourcesRequest request) {
+        return new AsyncInvoker<>(request, RamMeta.searchDistinctSharedResources, hcClient);
     }
 
     /**

@@ -448,7 +448,7 @@ public class UpdateResponseVpnGateway {
     }
 
     /**
-     * Get certificateId
+     * 证书ID
      * @return certificateId
      */
     public String getCertificateId() {

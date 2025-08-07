@@ -24,6 +24,9 @@ import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationalUnitRespon
 import com.huaweicloud.sdk.organizations.v1.model.CreatePolicyReqBody;
 import com.huaweicloud.sdk.organizations.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreatePolicyResponse;
+import com.huaweicloud.sdk.organizations.v1.model.CreateResourceAccountReqBody;
+import com.huaweicloud.sdk.organizations.v1.model.CreateResourceAccountRequest;
+import com.huaweicloud.sdk.organizations.v1.model.CreateResourceAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateTagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateTagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeclineHandshakeRequest;
@@ -191,6 +194,35 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAccountReqBody.class),
             f -> f.withMarshaller(CreateAccountRequest::getBody, CreateAccountRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateResourceAccountRequest, CreateResourceAccountResponse> createResourceAccount =
+        genForCreateResourceAccount();
+
+    private static HttpRequestDef<CreateResourceAccountRequest, CreateResourceAccountResponse> genForCreateResourceAccount() {
+        // basic
+        HttpRequestDef.Builder<CreateResourceAccountRequest, CreateResourceAccountResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateResourceAccountRequest.class, CreateResourceAccountResponse.class)
+            .withName("CreateResourceAccount")
+            .withUri("/v2/organizations/accounts")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateResourceAccountRequest::getXSecurityToken,
+                CreateResourceAccountRequest::setXSecurityToken));
+        builder.<CreateResourceAccountReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateResourceAccountReqBody.class),
+            f -> f.withMarshaller(CreateResourceAccountRequest::getBody, CreateResourceAccountRequest::setBody));
 
         // response
 

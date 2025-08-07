@@ -25,7 +25,8 @@ import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
-import com.huaweicloud.sdk.core.internal.Iam;
+import com.huaweicloud.sdk.core.internal.model.CreateTemporaryAccessKeyByTokenResponse;
+import com.huaweicloud.sdk.core.internal.model.CreateTokenWithIdTokenResponse;
 import com.huaweicloud.sdk.core.internal.model.Credential;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import com.huaweicloud.sdk.core.utils.TimeUtils;
@@ -60,8 +61,6 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
 
     protected Long expiredAt;
 
-    protected String authToken;
-
     protected String regionId;
 
     protected String derivedAuthServiceName;
@@ -69,6 +68,8 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     protected MetadataAccessor metadataAccessor;
 
     private Function<HttpRequest, Boolean> derivedPredicate;
+
+    private static final long DEFAULT_DURATION_SECONDS = 6 * 60 * 60; // 6h
 
     private static final long DEFAULT_EXPIRATION_THRESHOLD_SECONDS = 2 * 60 * 60; // 2h
 
@@ -223,7 +224,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
             return iamEndpoint;
         }
 
-        return Iam.getEndpoint();
+        return IamHelper.getEndpoint();
     }
 
     protected long getExpirationThresholdMillis() {
@@ -235,7 +236,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
             return iamEndpoint;
         }
 
-        return Iam.getEndpoint(regionId);
+        return IamHelper.getEndpoint(regionId);
     }
 
     protected boolean isDerivedAuth(HttpRequest httpRequest) {
@@ -262,9 +263,6 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     protected boolean needUpdateSecurityTokenFromMetadata() {
-        if (Objects.nonNull(authToken)) {
-            return false;
-        }
         if (Objects.isNull(ak) && Objects.isNull(sk)) {
             return true;
         }
@@ -278,23 +276,14 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         if (metadataAccessor == null) {
             metadataAccessor = new MetadataAccessor();
         }
-        Credential credential = metadataAccessor.getCredentials();
-        ak = credential.getAccess();
-        sk = credential.getSecret();
-        securityToken = credential.getSecurityToken();
-        try {
-            String expiredTime = credential.getExpiresAt().replace("000Z", "Z");
-            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT, Locale.US).parse(expiredTime).getTime();
-        } catch (ParseException e) {
-            throw new SdkException(e);
-        }
+        updateTempCredentials(metadataAccessor.getCredentials());
     }
 
     protected boolean needUpdateFederalAuthToken() {
         if (Objects.isNull(idpId) || Objects.isNull(idTokenFile)) {
             return false;
         }
-        if (Objects.isNull(authToken) || Objects.isNull(expiredAt)) {
+        if (Objects.isNull(securityToken) || Objects.isNull(expiredAt)) {
             return true;
         }
         return expiredAt - TimeUtils.getTimeInMillis() < getExpirationThresholdMillis();
@@ -305,5 +294,30 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         return (T) this;
     }
 
-    protected abstract void updateFederalAuthTokenByIdToken(HttpClient httpClient);
+    protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
+        HttpRequest httpRequest = IamHelper.getUnscopedTokenWithIdTokenRequest(
+                getUsedIamEndpoint(), getIdpId(), getIdToken());
+        CreateTokenWithIdTokenResponse response = IamHelper.createTokenWithIdToken(httpClient, httpRequest);
+
+        HttpRequest request = IamHelper.getCreateTemporaryAccessKeyByTokenRequest(
+                getUsedIamEndpoint(), response.getSubjectToken(), DEFAULT_DURATION_SECONDS);
+        CreateTemporaryAccessKeyByTokenResponse credResp = IamHelper.createTemporaryAccessKeyByToken(
+                httpClient, request);
+        updateTempCredentials(credResp.getCredential());
+    }
+
+    private void updateTempCredentials(Credential credential) {
+        if (Objects.isNull(credential)) {
+            throw new SdkException("update temp credential failed, credential is null");
+        }
+        ak = credential.getAccess();
+        sk = credential.getSecret();
+        securityToken = credential.getSecurityToken();
+        try {
+            String expiredTime = credential.getExpiresAt().replace("000Z", "Z");
+            expiredAt = new SimpleDateFormat(IamHelper.EXPIRED_DATE_FORMAT, Locale.US).parse(expiredTime).getTime();
+        } catch (ParseException e) {
+            throw new SdkException(e);
+        }
+    }
 }

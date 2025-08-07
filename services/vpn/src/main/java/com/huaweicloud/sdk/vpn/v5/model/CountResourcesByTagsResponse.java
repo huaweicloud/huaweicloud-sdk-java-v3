@@ -22,7 +22,7 @@ public class CountResourcesByTagsResponse extends SdkResponse {
     }
 
     /**
-     * Get totalCount
+     * 总记录数
      * @return totalCount
      */
     public Integer getTotalCount() {

@@ -22,8 +22,13 @@ package com.huaweicloud.sdk.core;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequest;
+import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
 import junit.framework.AssertionFailedError;
 import org.junit.After;
 import org.junit.Assert;
@@ -33,6 +38,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
@@ -216,5 +222,52 @@ public class TestCredentials {
                             "new GlobalCredentials().withAk(ak).withSk(sk).withDomainId(domainId);",
                     exception.getCause().getMessage());
         }
+    }
+
+    @Test
+    public void testFederalCredential() {
+        wireMockRule.stubFor(WireMock.post("/v3.0/OS-AUTH/id-token/tokens")
+                .withHeader("X-Idp-Id", WireMock.equalTo("idp_id"))
+                .withRequestBody(WireMock.equalToJson("{\"auth\":{\"id_token\":{\"id\":\"id_token\"}}}"))
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withHeader("X-Subject-Token", "auth-token")
+                        .withBody("{\"token\":" +
+                                "{\"expires_at\":\"2018-03-13T03:00:01.168000Z\",\"methods\":[\"mapped\"]}}")
+                        .withStatus(200)));
+        wireMockRule.stubFor(WireMock.post("/v3.0/OS-CREDENTIAL/securitytokens")
+                .withRequestBody(WireMock.equalToJson("{\"auth\":{\"identity\":" +
+                        "{\"methods\":[\"token\"],\"token\":" +
+                        "{\"id\":\"auth-token\",\"duration_seconds\":21600}}}}"))
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withBody("{\"credential\":{\"access\":\"ak\"," +
+                                "\"expires_at\":\"2020-01-08T03:50:07.574000Z\"," +
+                                "\"secret\":\"sk\"," +
+                                "\"securitytoken\":\"sec-token\"}}")
+                        .withStatus(200)));
+        wireMockRule.start();
+
+        String iamEndpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        String filePath = Paths.get("src", "test", "resources", "TestIdTokenFile")
+                .toAbsolutePath().toString();
+        AbstractCredentials<?> credentials = new BasicCredentials()
+                .withIdpId("idp_id")
+                .withIdTokenFile(filePath)
+                .withIamEndpoint(iamEndpoint);
+        HttpRequest request = HttpRequest.newBuilder()
+                .withMethod(HttpMethod.GET)
+                .withPath("/test")
+                .withEndpoint(iamEndpoint)
+                .build();
+        DefaultHttpClient client = new DefaultHttpClient(
+                HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true));
+        request = credentials.syncProcessAuthRequest(request, client);
+        Assert.assertEquals("sec-token", request.getHeader("X-Security-Token"));
+        Assert.assertEquals("ak", credentials.getAk());
+        Assert.assertEquals("sk", credentials.getSk());
+        Assert.assertEquals("sec-token", credentials.getSecurityToken());
     }
 }

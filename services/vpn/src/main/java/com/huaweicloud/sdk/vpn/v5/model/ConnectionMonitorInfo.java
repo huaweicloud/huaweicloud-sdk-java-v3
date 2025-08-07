@@ -68,7 +68,7 @@ public class ConnectionMonitorInfo {
     }
 
     /**
-     * Get status
+     * VPN连接监控状态
      * @return status
      */
     public String getStatus() {

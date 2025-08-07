@@ -31,6 +31,26 @@ public class ListFactoryPendingItemsRequest {
     private String itemName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_type")
+
+    private String updateType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_type")
+
+    private String taskType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -110,6 +130,74 @@ public class ListFactoryPendingItemsRequest {
         this.itemName = itemName;
     }
 
+    public ListFactoryPendingItemsRequest withUpdateType(String updateType) {
+        this.updateType = updateType;
+        return this;
+    }
+
+    /**
+     * 变更类型。
+     * @return updateType
+     */
+    public String getUpdateType() {
+        return updateType;
+    }
+
+    public void setUpdateType(String updateType) {
+        this.updateType = updateType;
+    }
+
+    public ListFactoryPendingItemsRequest withTaskType(String taskType) {
+        this.taskType = taskType;
+        return this;
+    }
+
+    /**
+     * 任务类型。
+     * @return taskType
+     */
+    public String getTaskType() {
+        return taskType;
+    }
+
+    public void setTaskType(String taskType) {
+        this.taskType = taskType;
+    }
+
+    public ListFactoryPendingItemsRequest withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * 开始时间。
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public ListFactoryPendingItemsRequest withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 结束时间。
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
     public ListFactoryPendingItemsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -157,12 +245,23 @@ public class ListFactoryPendingItemsRequest {
         ListFactoryPendingItemsRequest that = (ListFactoryPendingItemsRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
             && Objects.equals(this.submitUserName, that.submitUserName) && Objects.equals(this.itemName, that.itemName)
+            && Objects.equals(this.updateType, that.updateType) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, xProjectId, submitUserName, itemName, limit, offset);
+        return Objects.hash(workspace,
+            xProjectId,
+            submitUserName,
+            itemName,
+            updateType,
+            taskType,
+            startTime,
+            endTime,
+            limit,
+            offset);
     }
 
     @Override
@@ -173,6 +272,10 @@ public class ListFactoryPendingItemsRequest {
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    submitUserName: ").append(toIndentedString(submitUserName)).append("\n");
         sb.append("    itemName: ").append(toIndentedString(itemName)).append("\n");
+        sb.append("    updateType: ").append(toIndentedString(updateType)).append("\n");
+        sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

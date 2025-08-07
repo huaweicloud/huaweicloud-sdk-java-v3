@@ -51,7 +51,7 @@ public class ShowVpnConnectionLogResponse extends SdkResponse {
     }
 
     /**
-     * Get logs
+     * 日志
      * @return logs
      */
     public List<Log> getLogs() {
@@ -85,7 +85,7 @@ public class ShowVpnConnectionLogResponse extends SdkResponse {
     }
 
     /**
-     * Get headerResponseToken
+     * 响应头令牌
      * @return headerResponseToken
      */
     public String getHeaderResponseToken() {

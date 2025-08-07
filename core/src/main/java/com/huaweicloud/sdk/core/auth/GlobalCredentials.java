@@ -26,20 +26,15 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
-import com.huaweicloud.sdk.core.internal.Iam;
 import com.huaweicloud.sdk.core.internal.InnerIamMeta;
-import com.huaweicloud.sdk.core.internal.model.CreateTokenWithIdTokenResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.LinkedHashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -85,9 +80,6 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
                     throw new SdkException("idpId is required when using idpId&idTokenFile");
                 } else if (StringUtils.isEmpty(getIdTokenFile())) {
                     throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
-                }
-                if (StringUtils.isEmpty(domainId)) {
-                    throw new SdkException("domainId is required when using idpId&idTokenFile");
                 }
             }
 
@@ -149,11 +141,6 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
             builder.addHeader(Constants.X_DOMAIN_ID, getDomainId());
         }
 
-        if (!StringUtils.isEmpty(authToken)) {
-            builder.addHeader(Constants.X_AUTH_TOKEN, authToken);
-            return builder.build();
-        }
-
         if (!StringUtils.isEmpty(getSecurityToken())) {
             builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
         }
@@ -173,20 +160,6 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
         builder.addHeaders(headers);
         return builder.build();
-    }
-
-    @Override
-    protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
-        HttpRequest httpRequest = Iam.getDomainTokenWithIdTokenRequest(
-                getUsedIamEndpoint(), getIdpId(), getIdToken(), domainId);
-        CreateTokenWithIdTokenResponse response = Iam.createTokenWithIdToken(httpClient, httpRequest);
-        authToken = response.getSubjectToken();
-        try {
-            String expiredTime = response.getToken().getExpiresAt().replace("000Z", "Z");
-            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT, Locale.US).parse(expiredTime).getTime();
-        } catch (ParseException e) {
-            throw new SdkException(e);
-        }
     }
 
     @Override

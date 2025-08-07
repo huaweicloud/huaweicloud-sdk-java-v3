@@ -31,7 +31,6 @@ public class CreateTemporaryAccessKeyInEcsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credential")
-
     private Credential credential;
 
     public CreateTemporaryAccessKeyInEcsResponse withCredential(Credential credential) {

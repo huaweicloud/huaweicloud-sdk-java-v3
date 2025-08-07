@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * InstanceRestartRequsetBody
@@ -13,22 +14,31 @@ public class InstanceRestartRequsetBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restart")
 
-    private Object restart;
+    private RestartConfiguration restart;
 
-    public InstanceRestartRequsetBody withRestart(Object restart) {
+    public InstanceRestartRequsetBody withRestart(RestartConfiguration restart) {
         this.restart = restart;
         return this;
     }
 
+    public InstanceRestartRequsetBody withRestart(Consumer<RestartConfiguration> restartSetter) {
+        if (this.restart == null) {
+            this.restart = new RestartConfiguration();
+            restartSetter.accept(this.restart);
+        }
+
+        return this;
+    }
+
     /**
-     * 空值
+     * Get restart
      * @return restart
      */
-    public Object getRestart() {
+    public RestartConfiguration getRestart() {
         return restart;
     }
 
-    public void setRestart(Object restart) {
+    public void setRestart(RestartConfiguration restart) {
         this.restart = restart;
     }
 

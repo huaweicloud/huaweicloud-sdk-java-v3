@@ -40,7 +40,7 @@ public class Quotas {
     }
 
     /**
-     * Get resources
+     * 资源对象
      * @return resources
      */
     public List<QuotaInfo> getResources() {

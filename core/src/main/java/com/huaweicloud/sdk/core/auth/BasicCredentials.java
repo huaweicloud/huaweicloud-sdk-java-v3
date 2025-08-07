@@ -26,9 +26,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
-import com.huaweicloud.sdk.core.internal.Iam;
 import com.huaweicloud.sdk.core.internal.InnerIamMeta;
-import com.huaweicloud.sdk.core.internal.model.CreateTokenWithIdTokenResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsResponse;
 import com.huaweicloud.sdk.core.internal.model.Project;
@@ -36,8 +34,6 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -88,9 +84,6 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                     throw new SdkException("idpId is required when using idpId&idTokenFile");
                 } else if (StringUtils.isEmpty(getIdTokenFile())) {
                     throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
-                }
-                if (StringUtils.isEmpty(projectId)) {
-                    throw new SdkException("projectId is required when using idpId&idTokenFile");
                 }
             }
 
@@ -169,11 +162,6 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             builder.addHeader(Constants.X_PROJECT_ID, projectId);
         }
 
-        if (!StringUtils.isEmpty(authToken)) {
-            builder.addHeader(Constants.X_AUTH_TOKEN, authToken);
-            return builder.build();
-        }
-
         if (!StringUtils.isEmpty(getSecurityToken())) {
             builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
         }
@@ -204,20 +192,6 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
         if (this.regionId == null) {
             this.regionId = regionId;
-        }
-    }
-
-    @Override
-    protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
-        HttpRequest httpRequest = Iam.getProjectTokenWithIdTokenRequest(
-                getUsedIamEndpoint(), getIdpId(), getIdToken(), projectId);
-        CreateTokenWithIdTokenResponse response = Iam.createTokenWithIdToken(httpClient, httpRequest);
-        authToken = response.getSubjectToken();
-        try {
-            String expiredTime = response.getToken().getExpiresAt().replace("000Z", "Z");
-            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT, Locale.US).parse(expiredTime).getTime();
-        } catch (ParseException e) {
-            throw new SdkException(e);
         }
     }
 

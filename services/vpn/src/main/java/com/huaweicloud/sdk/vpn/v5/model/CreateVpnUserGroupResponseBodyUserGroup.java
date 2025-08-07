@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CreateVpnUserGroupResponseBodyUserGroup
+ * VPN用户组
  */
 public class CreateVpnUserGroupResponseBodyUserGroup {
 

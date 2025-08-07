@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ImportClientCaCertificateRequestBodyClientCaCertificate
+ * 客户端CA证书
  */
 public class ImportClientCaCertificateRequestBodyClientCaCertificate {
 

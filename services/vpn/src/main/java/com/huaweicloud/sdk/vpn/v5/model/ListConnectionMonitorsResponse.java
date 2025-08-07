@@ -47,7 +47,7 @@ public class ListConnectionMonitorsResponse extends SdkResponse {
     }
 
     /**
-     * Get connectionMonitors
+     * VPN连接监控列表
      * @return connectionMonitors
      */
     public List<ConnectionMonitorInfo> getConnectionMonitors() {

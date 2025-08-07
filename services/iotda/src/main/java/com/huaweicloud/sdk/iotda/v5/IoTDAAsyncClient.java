@@ -277,8 +277,7 @@ public class IoTDAAsyncClient {
     }
 
     public static ClientBuilder<IoTDAAsyncClient> newBuilder() {
-        ClientBuilder<IoTDAAsyncClient> clientBuilder =
-            new ClientBuilder<>(IoTDAAsyncClient::new, "BasicCredentials,IoTDACredentials");
+        ClientBuilder<IoTDAAsyncClient> clientBuilder = new ClientBuilder<>(IoTDAAsyncClient::new, "BasicCredentials");
         clientBuilder.withDerivedAuthServiceName("iotdm");
         return clientBuilder;
     }

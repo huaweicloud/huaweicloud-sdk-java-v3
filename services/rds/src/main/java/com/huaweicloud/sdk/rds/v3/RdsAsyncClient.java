@@ -141,6 +141,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
@@ -191,6 +193,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListJobInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListMarketplaceEngineProductsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListMarketplaceEngineProductsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteBackupsRequest;
@@ -227,6 +231,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListScheduleTasksRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListScheduleTasksResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListShareBackupsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListShareBackupsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSimplifiedInstancesRequest;
@@ -245,6 +251,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlStatisticsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDatabasesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDatabasesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDbUsersRequest;
@@ -253,6 +261,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListTasksRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListTasksResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
@@ -271,6 +281,8 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.ResetViewSqlStatisticsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ResetViewSqlStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreLogReplayDatabaseRequest;
@@ -2636,6 +2648,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询定时任务列表
+     *
+     * 查询定时任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduleTasksRequest 请求对象
+     * @return CompletableFuture<ListScheduleTasksResponse>
+     */
+    public CompletableFuture<ListScheduleTasksResponse> listScheduleTasksAsync(ListScheduleTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listScheduleTasks);
+    }
+
+    /**
+     * 查询定时任务列表
+     *
+     * 查询定时任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduleTasksRequest 请求对象
+     * @return AsyncInvoker<ListScheduleTasksRequest, ListScheduleTasksResponse>
+     */
+    public AsyncInvoker<ListScheduleTasksRequest, ListScheduleTasksResponse> listScheduleTasksAsyncInvoker(
+        ListScheduleTasksRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listScheduleTasks, hcClient);
+    }
+
+    /**
      * 查询共享备份列表
      *
      * 查询共享备份列表
@@ -2958,6 +2999,34 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesAsyncInvoker(
         ListStorageTypesRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listStorageTypes, hcClient);
+    }
+
+    /**
+     * 查询及时任务列表
+     *
+     * 查询及时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTasksRequest 请求对象
+     * @return CompletableFuture<ListTasksResponse>
+     */
+    public CompletableFuture<ListTasksResponse> listTasksAsync(ListTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listTasks);
+    }
+
+    /**
+     * 查询及时任务列表
+     *
+     * 查询及时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTasksRequest 请求对象
+     * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
+     */
+    public AsyncInvoker<ListTasksRequest, ListTasksResponse> listTasksAsyncInvoker(ListTasksRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listTasks, hcClient);
     }
 
     /**
@@ -6961,6 +7030,65 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询sql统计列表
+     *
+     * 查询sql统计列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlStatisticsRequest 请求对象
+     * @return CompletableFuture<ListSqlStatisticsResponse>
+     */
+    public CompletableFuture<ListSqlStatisticsResponse> listSqlStatisticsAsync(ListSqlStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSqlStatistics);
+    }
+
+    /**
+     * 查询sql统计列表
+     *
+     * 查询sql统计列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListSqlStatisticsRequest, ListSqlStatisticsResponse>
+     */
+    public AsyncInvoker<ListSqlStatisticsRequest, ListSqlStatisticsResponse> listSqlStatisticsAsyncInvoker(
+        ListSqlStatisticsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listSqlStatistics, hcClient);
+    }
+
+    /**
+     * sql统计视图重置
+     *
+     * sql统计视图重置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetViewSqlStatisticsRequest 请求对象
+     * @return CompletableFuture<ResetViewSqlStatisticsResponse>
+     */
+    public CompletableFuture<ResetViewSqlStatisticsResponse> resetViewSqlStatisticsAsync(
+        ResetViewSqlStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.resetViewSqlStatistics);
+    }
+
+    /**
+     * sql统计视图重置
+     *
+     * sql统计视图重置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetViewSqlStatisticsRequest 请求对象
+     * @return AsyncInvoker<ResetViewSqlStatisticsRequest, ResetViewSqlStatisticsResponse>
+     */
+    public AsyncInvoker<ResetViewSqlStatisticsRequest, ResetViewSqlStatisticsResponse> resetViewSqlStatisticsAsyncInvoker(
+        ResetViewSqlStatisticsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.resetViewSqlStatistics, hcClient);
+    }
+
+    /**
      * 授权数据库帐号
      *
      * 授权数据库帐号。
@@ -7256,6 +7384,66 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> listAuthorizedSqlserverDbUsersAsyncInvoker(
         ListAuthorizedSqlserverDbUsersRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listAuthorizedSqlserverDbUsers, hcClient);
+    }
+
+    /**
+     * 查询云市场服务商列表
+     *
+     * 查询云市场服务商列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBusinessPartnersRequest 请求对象
+     * @return CompletableFuture<ListBusinessPartnersResponse>
+     */
+    public CompletableFuture<ListBusinessPartnersResponse> listBusinessPartnersAsync(
+        ListBusinessPartnersRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listBusinessPartners);
+    }
+
+    /**
+     * 查询云市场服务商列表
+     *
+     * 查询云市场服务商列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBusinessPartnersRequest 请求对象
+     * @return AsyncInvoker<ListBusinessPartnersRequest, ListBusinessPartnersResponse>
+     */
+    public AsyncInvoker<ListBusinessPartnersRequest, ListBusinessPartnersResponse> listBusinessPartnersAsyncInvoker(
+        ListBusinessPartnersRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listBusinessPartners, hcClient);
+    }
+
+    /**
+     * 查询云市场引擎商品列表
+     *
+     * 查询云市场引擎商品列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMarketplaceEngineProductsRequest 请求对象
+     * @return CompletableFuture<ListMarketplaceEngineProductsResponse>
+     */
+    public CompletableFuture<ListMarketplaceEngineProductsResponse> listMarketplaceEngineProductsAsync(
+        ListMarketplaceEngineProductsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listMarketplaceEngineProducts);
+    }
+
+    /**
+     * 查询云市场引擎商品列表
+     *
+     * 查询云市场引擎商品列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMarketplaceEngineProductsRequest 请求对象
+     * @return AsyncInvoker<ListMarketplaceEngineProductsRequest, ListMarketplaceEngineProductsResponse>
+     */
+    public AsyncInvoker<ListMarketplaceEngineProductsRequest, ListMarketplaceEngineProductsResponse> listMarketplaceEngineProductsAsyncInvoker(
+        ListMarketplaceEngineProductsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listMarketplaceEngineProducts, hcClient);
     }
 
     /**

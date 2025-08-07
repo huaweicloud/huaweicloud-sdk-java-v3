@@ -51,7 +51,7 @@ public class ListP2cVgwConnectionsResponse extends SdkResponse {
     }
 
     /**
-     * Get connections
+     * 连接信息
      * @return connections
      */
     public List<Connection> getConnections() {
