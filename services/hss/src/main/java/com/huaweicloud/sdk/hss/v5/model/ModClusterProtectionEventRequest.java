@@ -53,7 +53,7 @@ public class ModClusterProtectionEventRequest {
     }
 
     /**
-     * 操作类型 ignore 忽略 handle 处理 addWhiteImage 加白 
+     * 操作类型，包含以下几种： - ignore：忽略 - handle：处理 - addWhiteImage：加白
      * @return opr
      */
     public String getOpr() {

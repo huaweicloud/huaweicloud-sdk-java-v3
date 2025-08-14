@@ -33,7 +33,7 @@ public class NetworkTraffic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_network_traffic")
 
-    private Integer minNetworkTraffic;
+    private Double minNetworkTraffic;
 
     public NetworkTraffic withAvgNetworkTraffic(Float avgNetworkTraffic) {
         this.avgNetworkTraffic = avgNetworkTraffic;
@@ -103,7 +103,7 @@ public class NetworkTraffic {
         this.maxUpstream = maxUpstream;
     }
 
-    public NetworkTraffic withMinNetworkTraffic(Integer minNetworkTraffic) {
+    public NetworkTraffic withMinNetworkTraffic(Double minNetworkTraffic) {
         this.minNetworkTraffic = minNetworkTraffic;
         return this;
     }
@@ -112,11 +112,11 @@ public class NetworkTraffic {
      * 最小网络流量
      * @return minNetworkTraffic
      */
-    public Integer getMinNetworkTraffic() {
+    public Double getMinNetworkTraffic() {
         return minNetworkTraffic;
     }
 
-    public void setMinNetworkTraffic(Integer minNetworkTraffic) {
+    public void setMinNetworkTraffic(Double minNetworkTraffic) {
         this.minNetworkTraffic = minNetworkTraffic;
     }
 

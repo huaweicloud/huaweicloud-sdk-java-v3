@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 登录用户名
+ * **参数解释**： 登录用户名 **取值范围**： 字符长度1-256位 
  */
 public class LoginUserName {
 

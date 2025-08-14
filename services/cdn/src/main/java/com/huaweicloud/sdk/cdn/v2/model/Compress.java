@@ -25,6 +25,16 @@ public class Compress {
 
     private String fileType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compress_min_length")
+
+    private Long compressMinLength;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compress_max_length")
+
+    private Long compressMaxLength;
+
     public Compress withStatus(String status) {
         this.status = status;
         return this;
@@ -76,6 +86,44 @@ public class Compress {
         this.fileType = fileType;
     }
 
+    public Compress withCompressMinLength(Long compressMinLength) {
+        this.compressMinLength = compressMinLength;
+        return this;
+    }
+
+    /**
+     * 压缩区间最小范围
+     * minimum: 0
+     * maximum: 31457280
+     * @return compressMinLength
+     */
+    public Long getCompressMinLength() {
+        return compressMinLength;
+    }
+
+    public void setCompressMinLength(Long compressMinLength) {
+        this.compressMinLength = compressMinLength;
+    }
+
+    public Compress withCompressMaxLength(Long compressMaxLength) {
+        this.compressMaxLength = compressMaxLength;
+        return this;
+    }
+
+    /**
+     * 压缩区间最大范围
+     * minimum: 0
+     * maximum: 31457280
+     * @return compressMaxLength
+     */
+    public Long getCompressMaxLength() {
+        return compressMaxLength;
+    }
+
+    public void setCompressMaxLength(Long compressMaxLength) {
+        this.compressMaxLength = compressMaxLength;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +134,14 @@ public class Compress {
         }
         Compress that = (Compress) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.fileType, that.fileType);
+            && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.compressMinLength, that.compressMinLength)
+            && Objects.equals(this.compressMaxLength, that.compressMaxLength);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type, fileType);
+        return Objects.hash(status, type, fileType, compressMinLength, compressMaxLength);
     }
 
     @Override
@@ -101,6 +151,8 @@ public class Compress {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+        sb.append("    compressMinLength: ").append(toIndentedString(compressMinLength)).append("\n");
+        sb.append("    compressMaxLength: ").append(toIndentedString(compressMaxLength)).append("\n");
         sb.append("}");
         return sb.toString();
     }

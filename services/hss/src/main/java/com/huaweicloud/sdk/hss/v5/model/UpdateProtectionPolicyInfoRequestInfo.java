@@ -84,7 +84,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 策略ID **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
+     * **参数解释**: 需要修改的防护策略ID，您可以通过[查询勒索病毒的防护策略列表](ListProtectionPolicy.xml)接口获取ID。 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return policyId
      */
     public String getPolicyId() {
@@ -152,7 +152,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 是否开启动态诱饵，包含如下2种, 默认为关闭防护动态诱饵防护。 **约束限制**: 不涉及 **取值范围**: 包含两种：   - opened ：开启。   - closed ：关闭。   **默认取值**: closed 
+     * **参数解释**: 是否开启动态诱饵 **约束限制**: 不涉及 **取值范围**: 包含两种：   - opened ：开启。   - closed ：关闭。   **默认取值**: closed 
      * @return deployMode
      */
     public String getDeployMode() {
@@ -169,7 +169,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 防护目录,多个目录请用英文分号隔开，最多支持填写20个防护目录 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
+     * **参数解释**: 防护目录 **约束限制**: 多个目录请用英文分号隔开，最多支持填写20个防护目录 **取值范围**: 字符长度0-128位，特殊符号只允许使用._-+，不能以空格开头，防护目录长度不得超过256个字符。 **默认取值**: 不涉及 
      * @return protectionDirectory
      */
     public String getProtectionDirectory() {
@@ -186,7 +186,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 防护文件类型，例如：docx，txt，avi **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及         
+     * **参数解释**: 防护文件类型，例如：docx，txt，avi **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return protectionType
      */
     public String getProtectionType() {
@@ -203,7 +203,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 排除目录(选填)，多个目录请用英文分号隔开，最多支持填写20个排除目录 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及    
+     * **参数解释**: 排除目录(选填) **约束限制**: 多个目录请用英文分号隔开，最多支持填写20个排除目录 **取值范围**: 字符长度0-128位，特殊符号只允许使用._-+，不能以空格开头，防护目录长度不得超过256个字符。 **默认取值**: 不涉及 
      * @return excludeDirectory
      */
     public String getExcludeDirectory() {
@@ -236,7 +236,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 开启了此勒索防护策略的agent的id列表 **约束限制**: 不涉及 **取值范围**: 列表最大1000条，字符长度0-128位 **默认取值**: 不涉及  
+     * **参数解释**: 开启了此勒索防护策略的agent的id列表 **约束限制**: 不涉及 **取值范围**: 列表最大1000条 **默认取值**: 不涉及 
      * @return agentIdList
      */
     public List<String> getAgentIdList() {
@@ -270,7 +270,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 是否运行时检测，包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。 **约束限制**: 不涉及 **取值范围**: 包含两种： 不涉及 **默认取值**: 不涉及
+     * **参数解释**: 是否运行时检测 **约束限制**: 不涉及 **取值范围**: 包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。 **默认取值**: 不涉及
      * @return runtimeDetectionStatus
      */
     public String getRuntimeDetectionStatus() {
@@ -321,7 +321,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 是否开启AI勒索防护，包含如下2种, 默认为关闭AI勒索防护。当前只有Windows系统涉及 **约束限制**: 不涉及 **取值范围**: 包含两种：   - opened ：开启。   - closed ：关闭。 **默认取值**: closed
+     * **参数解释**: 是否开启AI勒索防护，包含如下2种。 **约束限制**: 当前只有Windows系统涉及 **取值范围**: 包含两种：   - opened ：开启。   - closed ：关闭。 **默认取值**: closed
      * @return aiProtectionStatus
      */
     public String getAiProtectionStatus() {

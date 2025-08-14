@@ -210,7 +210,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * 付费模式：   on_demand 按需   free 免费
+     * **参数解释**: 付费模式           **约束限制**: 不涉及 **取值范围**: 包含以下两种： - on_demand：按需。 - free：免费。  **默认取值**: 不涉及 
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -263,7 +263,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * 防护状态：   protecting 防护中   part_protect  部分防护   creating 开启中   error_protect 防护异常   unprotect 未防护   wait_protect 待防护
+     * **参数解释**: 防护状态           **约束限制**: 不涉及 **取值范围**: - protecting：防护中。 - part_protect：部分防护。 - creating：开启中。 - error_protect：防护异常。 - unprotect：未防护。 - wait_protect：待防护。  **默认取值**: 不涉及 
      * @return protectStatus
      */
     public String getProtectStatus() {

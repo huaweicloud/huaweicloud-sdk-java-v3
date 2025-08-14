@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -42,7 +43,7 @@ public class CreateInstanceOpitons {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private List<Map<String, String>> metadata = null;
+    private Map<String, String> metadata = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -155,36 +156,36 @@ public class CreateInstanceOpitons {
         this.password = password;
     }
 
-    public CreateInstanceOpitons withMetadata(List<Map<String, String>> metadata) {
+    public CreateInstanceOpitons withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public CreateInstanceOpitons addMetadataItem(Map<String, String> metadataItem) {
+    public CreateInstanceOpitons putMetadataItem(String key, String metadataItem) {
         if (this.metadata == null) {
-            this.metadata = new ArrayList<>();
+            this.metadata = new HashMap<>();
         }
-        this.metadata.add(metadataItem);
+        this.metadata.put(key, metadataItem);
         return this;
     }
 
-    public CreateInstanceOpitons withMetadata(Consumer<List<Map<String, String>>> metadataSetter) {
+    public CreateInstanceOpitons withMetadata(Consumer<Map<String, String>> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new ArrayList<>();
+            this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
         return this;
     }
 
     /**
-     * Get metadata
+     * 创建裸机实例的元数据。  可以通过元数据自定义键值对。   说明： 如果元数据中包含了敏感数据，您应当采取适当的措施来保护敏感数据，比如限制访问范围、加密等。 最多可注入10对键值（Key/Value）。 主键（Key）只能由大写字母（A-Z）、小写字母（a-z）、数字（0-9）、中划线（-）、下划线（_）、冒号（:）、空格（ ）和小数点（.）组成，长度为[1-255]个字符。     值（value）最大长度为255个字符。
      * @return metadata
      */
-    public List<Map<String, String>> getMetadata() {
+    public Map<String, String> getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(List<Map<String, String>> metadata) {
+    public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
 

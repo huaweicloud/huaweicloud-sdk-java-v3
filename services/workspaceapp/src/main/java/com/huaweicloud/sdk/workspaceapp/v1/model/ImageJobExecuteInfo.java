@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 任务执行失败信息
+ * 任务执行失败信息。
  */
 public class ImageJobExecuteInfo {
 

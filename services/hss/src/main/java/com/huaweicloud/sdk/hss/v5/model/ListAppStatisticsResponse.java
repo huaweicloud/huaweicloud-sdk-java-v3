@@ -65,7 +65,7 @@ public class ListAppStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 进程统计信息列表
+     * **参数解释**: 进程统计信息列表 **取值范围**: 最小值0，最大值10000 
      * @return dataList
      */
     public List<AppStatisticResponseInfo> getDataList() {

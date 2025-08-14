@@ -65,7 +65,7 @@ public class ListAppsResponse extends SdkResponse {
     }
 
     /**
-     * 软件列表
+     * **参数解释**: 软件列表 **取值范围**: 最小值0，最大值10000 
      * @return dataList
      */
     public List<AppResponseInfo> getDataList() {

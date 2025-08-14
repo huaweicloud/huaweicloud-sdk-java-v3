@@ -263,7 +263,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 最近更新时间搜索开始日期，时间单位 毫秒（ms）
+     * 最近更新时间搜索开始日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return startLatestUpdateTime
@@ -282,7 +282,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 最近更新时间搜索结束日期，时间单位 毫秒（ms）
+     * 最近更新时间搜索结束日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return endLatestUpdateTime
@@ -301,7 +301,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 最近一次扫描完成时间搜索开始日期，时间单位 毫秒（ms）
+     * 最近一次扫描完成时间搜索开始日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return startLatestScanTime
@@ -320,7 +320,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 最近一次扫描完成时间搜索结束日期，时间单位 毫秒（ms）
+     * 最近一次扫描完成时间搜索结束日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return endLatestScanTime

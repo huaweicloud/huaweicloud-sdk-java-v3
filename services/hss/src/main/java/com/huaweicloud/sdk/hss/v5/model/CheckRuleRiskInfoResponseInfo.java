@@ -79,7 +79,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * **参数解释**: 风险等级 **取值范围**: - Low : 低危 - Medium : 中危 - High : 高危 
+     * **参数解释**: 风险等级 **取值范围**: - Low：低危 - Medium：中危 - High：高危 
      * @return severity
      */
     public String getSeverity() {

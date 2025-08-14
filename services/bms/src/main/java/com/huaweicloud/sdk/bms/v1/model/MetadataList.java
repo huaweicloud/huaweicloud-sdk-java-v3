@@ -16,6 +16,11 @@ import java.util.UUID;
  */
 public class MetadataList {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "EcmResStatus")
+
+    private String ecmResStatus;
+
     /**
      * 裸金属服务器的计费类型。1：按包年包月计费（即prePaid：预付费方式）。
      */
@@ -366,6 +371,23 @@ public class MetadataList {
 
     private OsBitEnum osBit;
 
+    public MetadataList withEcmResStatus(String ecmResStatus) {
+        this.ecmResStatus = ecmResStatus;
+        return this;
+    }
+
+    /**
+     * 裸机的冻结状态
+     * @return ecmResStatus
+     */
+    public String getEcmResStatus() {
+        return ecmResStatus;
+    }
+
+    public void setEcmResStatus(String ecmResStatus) {
+        this.ecmResStatus = ecmResStatus;
+    }
+
     public MetadataList withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -615,7 +637,8 @@ public class MetadataList {
             return false;
         }
         MetadataList that = (MetadataList) obj;
-        return Objects.equals(this.chargingMode, that.chargingMode)
+        return Objects.equals(this.ecmResStatus, that.ecmResStatus)
+            && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.meteringOrderId, that.meteringOrderId)
             && Objects.equals(this.meteringProductId, that.meteringProductId) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.meteringImageId, that.meteringImageId)
@@ -630,7 +653,8 @@ public class MetadataList {
 
     @Override
     public int hashCode() {
-        return Objects.hash(chargingMode,
+        return Objects.hash(ecmResStatus,
+            chargingMode,
             meteringOrderId,
             meteringProductId,
             vpcId,
@@ -650,6 +674,7 @@ public class MetadataList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetadataList {\n");
+        sb.append("    ecmResStatus: ").append(toIndentedString(ecmResStatus)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    meteringOrderId: ").append(toIndentedString(meteringOrderId)).append("\n");
         sb.append("    meteringProductId: ").append(toIndentedString(meteringProductId)).append("\n");

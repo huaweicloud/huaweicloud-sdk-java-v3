@@ -36,7 +36,7 @@ public class QueryTemplatesItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template")
 
-    private QueryTemplate template;
+    private QueryTemplateVo template;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -181,14 +181,14 @@ public class QueryTemplatesItems {
         this.uuid = uuid;
     }
 
-    public QueryTemplatesItems withTemplate(QueryTemplate template) {
+    public QueryTemplatesItems withTemplate(QueryTemplateVo template) {
         this.template = template;
         return this;
     }
 
-    public QueryTemplatesItems withTemplate(Consumer<QueryTemplate> templateSetter) {
+    public QueryTemplatesItems withTemplate(Consumer<QueryTemplateVo> templateSetter) {
         if (this.template == null) {
-            this.template = new QueryTemplate();
+            this.template = new QueryTemplateVo();
             templateSetter.accept(this.template);
         }
 
@@ -199,11 +199,11 @@ public class QueryTemplatesItems {
      * Get template
      * @return template
      */
-    public QueryTemplate getTemplate() {
+    public QueryTemplateVo getTemplate() {
         return template;
     }
 
-    public void setTemplate(QueryTemplate template) {
+    public void setTemplate(QueryTemplateVo template) {
         this.template = template;
     }
 

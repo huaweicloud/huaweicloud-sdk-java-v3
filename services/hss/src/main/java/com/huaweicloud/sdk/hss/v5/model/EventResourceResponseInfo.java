@@ -141,7 +141,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 租户账号ID
+     * **参数解释**： 租户账号ID **取值范围**： 字符长度1-256位 
      * @return domainId
      */
     public String getDomainId() {
@@ -158,7 +158,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 项目ID
+     * **参数解释**： 项目ID **取值范围**： 字符长度1-256位 
      * @return projectId
      */
     public String getProjectId() {
@@ -175,7 +175,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释**： 企业项目ID **取值范围**： 字符长度1-256位 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -192,7 +192,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * Region名称
+     * **参数解释**： Region名称 **取值范围**： 字符长度1-256位 
      * @return regionName
      */
     public String getRegionName() {
@@ -209,7 +209,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * VPC ID
+     * **参数解释**： VPC ID **取值范围**： 字符长度1-256位 
      * @return vpcId
      */
     public String getVpcId() {
@@ -226,7 +226,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 云主机ID
+     * **参数解释**： 云主机ID **取值范围**： 字符长度1-256位 
      * @return cloudId
      */
     public String getCloudId() {
@@ -243,7 +243,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 虚拟机名称
+     * **参数解释**： 虚拟机名称 **取值范围**： 字符长度1-256位 
      * @return vmName
      */
     public String getVmName() {
@@ -260,7 +260,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 虚拟机UUID，即主机ID
+     * **参数解释**： 虚拟机UUID，即主机ID **取值范围**： 字符长度1-256位 
      * @return vmUuid
      */
     public String getVmUuid() {
@@ -277,7 +277,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 容器ID
+     * **参数解释**： 容器ID **取值范围**： 字符长度1-256位 
      * @return containerId
      */
     public String getContainerId() {
@@ -294,7 +294,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 容器状态
+     * **参数解释**： 容器状态 **取值范围**： 字符长度1-256位 
      * @return containerStatus
      */
     public String getContainerStatus() {
@@ -311,7 +311,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * pod uid
+     * **参数解释**： pod uid **取值范围**： 字符长度1-256位 
      * @return podUid
      */
     public String getPodUid() {
@@ -328,7 +328,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * pod name
+     * **参数解释**： pod name **取值范围**： 字符长度1-256位 
      * @return podName
      */
     public String getPodName() {
@@ -345,7 +345,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * namespace
+     * **参数解释**： namespace **取值范围**： 字符长度1-256位 
      * @return namespace
      */
     public String getNamespace() {
@@ -362,7 +362,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 集群id
+     * **参数解释**： 集群ID **取值范围**： 字符长度1-256位 
      * @return clusterId
      */
     public String getClusterId() {
@@ -379,7 +379,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称 **取值范围**： 字符长度1-256位 
      * @return clusterName
      */
     public String getClusterName() {
@@ -396,7 +396,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 镜像ID
+     * **参数解释**： 镜像ID **取值范围**： 字符长度1-256位 
      * @return imageId
      */
     public String getImageId() {
@@ -413,7 +413,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 镜像名称
+     * **参数解释**： 镜像名称 **取值范围**： 字符长度1-256位 
      * @return imageName
      */
     public String getImageName() {
@@ -430,7 +430,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 主机属性
+     * **参数解释**： 主机属性 **取值范围**： 字符长度1-256位 
      * @return hostAttr
      */
     public String getHostAttr() {
@@ -447,7 +447,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 业务服务
+     * **参数解释**： 业务服务 **取值范围**： 字符长度1-256位 
      * @return service
      */
     public String getService() {
@@ -464,7 +464,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 微服务
+     * **参数解释**： 微服务 **取值范围**： 字符长度1-256位 
      * @return microService
      */
     public String getMicroService() {
@@ -481,7 +481,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 系统CPU架构
+     * **参数解释**： 系统CPU架构 **取值范围**： 字符长度1-256位 
      * @return sysArch
      */
     public String getSysArch() {
@@ -498,7 +498,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 操作系统位数
+     * **参数解释**： 操作系统位数 **取值范围**： 字符长度1-256位 
      * @return osBit
      */
     public String getOsBit() {
@@ -515,7 +515,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 操作系统类型
+     * **参数解释**： 操作系统类型 **取值范围**： 字符长度1-256位 
      * @return osType
      */
     public String getOsType() {
@@ -532,7 +532,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 操作系统名称
+     * **参数解释**： 操作系统名称 **取值范围**： 字符长度1-256位 
      * @return osName
      */
     public String getOsName() {
@@ -549,7 +549,7 @@ public class EventResourceResponseInfo {
     }
 
     /**
-     * 操作系统版本
+     * **参数解释**： 操作系统版本 **取值范围**： 字符长度1-256位 
      * @return osVersion
      */
     public String getOsVersion() {

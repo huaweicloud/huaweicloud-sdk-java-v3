@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 登录源IP
+ * **参数解释**： 登录源IP **取值范围**： 字符长度1-256位 
  */
 public class LoginIp {
 

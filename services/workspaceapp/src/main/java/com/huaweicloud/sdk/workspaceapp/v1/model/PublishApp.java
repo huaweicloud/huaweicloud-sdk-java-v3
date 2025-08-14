@@ -78,6 +78,11 @@ public class PublishApp {
 
     private Boolean sandboxEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_extended_info")
+
+    private AppExtendedInfo appExtendedInfo;
+
     public PublishApp withName(String name) {
         this.name = name;
         return this;
@@ -319,6 +324,32 @@ public class PublishApp {
         this.sandboxEnable = sandboxEnable;
     }
 
+    public PublishApp withAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+        return this;
+    }
+
+    public PublishApp withAppExtendedInfo(Consumer<AppExtendedInfo> appExtendedInfoSetter) {
+        if (this.appExtendedInfo == null) {
+            this.appExtendedInfo = new AppExtendedInfo();
+            appExtendedInfoSetter.accept(this.appExtendedInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get appExtendedInfo
+     * @return appExtendedInfo
+     */
+    public AppExtendedInfo getAppExtendedInfo() {
+        return appExtendedInfo;
+    }
+
+    public void setAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -335,7 +366,8 @@ public class PublishApp {
             && Objects.equals(this.description, that.description) && Objects.equals(this.sourceType, that.sourceType)
             && Objects.equals(this.publisher, that.publisher)
             && Objects.equals(this.sourceImageIds, that.sourceImageIds)
-            && Objects.equals(this.sandboxEnable, that.sandboxEnable);
+            && Objects.equals(this.sandboxEnable, that.sandboxEnable)
+            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
     }
 
     @Override
@@ -352,7 +384,8 @@ public class PublishApp {
             sourceType,
             publisher,
             sourceImageIds,
-            sandboxEnable);
+            sandboxEnable,
+            appExtendedInfo);
     }
 
     @Override
@@ -372,6 +405,7 @@ public class PublishApp {
         sb.append("    publisher: ").append(toIndentedString(publisher)).append("\n");
         sb.append("    sourceImageIds: ").append(toIndentedString(sourceImageIds)).append("\n");
         sb.append("    sandboxEnable: ").append(toIndentedString(sandboxEnable)).append("\n");
+        sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

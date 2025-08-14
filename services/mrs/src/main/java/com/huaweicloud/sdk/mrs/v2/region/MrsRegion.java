@@ -71,6 +71,19 @@ public class MrsRegion {
 
     public static final Region AE_AD_1 = new Region("ae-ad-1", "https://mrs.ae-ad-1.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://mrs.cn-south-4.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://mrs.cn-east-5.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://mrs.cn-north-12.myhuaweicloud.com");
+
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://mrs.cn-east-4.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://mrs.cn-north-11.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://mrs.cn-southwest-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("MRS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -102,6 +115,12 @@ public class MrsRegion {
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("ru-moscow-1", RU_MOSCOW_1);
         map.put("ae-ad-1", AE_AD_1);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
         return Collections.unmodifiableMap(map);
     }
 

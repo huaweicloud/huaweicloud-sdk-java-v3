@@ -72,7 +72,7 @@ public class ImageVulCveInfo {
     }
 
     /**
-     * 公布时间，时间单位 毫秒（ms）
+     * 公布时间，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 2147483547
      * @return publishTime

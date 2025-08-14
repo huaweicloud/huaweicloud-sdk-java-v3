@@ -140,7 +140,7 @@ public class Resource {
     }
 
     /**
-     * 订购周期数取值大于0
+     * 订购周期数取值大于0。
      * minimum: 1
      * maximum: 2147483647
      * @return periodNum

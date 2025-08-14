@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 关联资源
+ * 关联资源。
  */
 public class RelativeResource {
 

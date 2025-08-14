@@ -111,7 +111,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * ID
+     * **参数解释**: ID **取值范围**: 字符长度0-255位 
      * @return id
      */
     public String getId() {
@@ -128,7 +128,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 区域
+     * **参数解释**: 区域 **取值范围**: 字符长度0-255位 
      * @return regionId
      */
     public String getRegionId() {
@@ -145,7 +145,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 容器ID
+     * **参数解释**: 容器ID **取值范围**: 字符长度0-255位 
      * @return containerId
      */
     public String getContainerId() {
@@ -162,7 +162,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 容器名称
+     * **参数解释**: 容器名称 **取值范围**: 字符长度0-255位 
      * @return containerName
      */
     public String getContainerName() {
@@ -179,7 +179,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 镜像名称
+     * **参数解释**: 镜像名称 **取值范围**: 字符长度0-255位 
      * @return imageName
      */
     public String getImageName() {
@@ -196,7 +196,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 容器状态，包含以下几种： -Running 运行中 -Terminated 终止 -Waiting 等待
+     * **参数解释**: 容器状态 **取值范围**: - Running：运行中。 - Terminated：终止。 - Waiting：等待。 
      * @return status
      */
     public String getStatus() {
@@ -213,9 +213,9 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 创建时间
+     * **参数解释**: 创建时间 **取值范围**: 取值0-4071095999000 
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 4071095999000
      * @return createTime
      */
     public Long getCreateTime() {
@@ -232,7 +232,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * cpu限制
+     * **参数解释**: cpu限制 **取值范围**: 字符长度0-64位 
      * @return cpuLimit
      */
     public String getCpuLimit() {
@@ -249,7 +249,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 内存限制
+     * **参数解释**: 内存限制 **取值范围**: 字符长度0-64位 
      * @return memoryLimit
      */
     public String getMemoryLimit() {
@@ -266,7 +266,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 重启次数
+     * **参数解释**: 重启次数 **取值范围**: 取值0-20 
      * minimum: 0
      * maximum: 20
      * @return restartCount
@@ -285,7 +285,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 所属pod名称
+     * **参数解释**: 所属pod名称 **取值范围**: 字符长度0-64位 
      * @return podName
      */
     public String getPodName() {
@@ -302,7 +302,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 所属集群
+     * **参数解释**: 所属集群 **取值范围**: 字符长度0-64位 
      * @return clusterName
      */
     public String getClusterName() {
@@ -319,7 +319,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 集群id
+     * **参数解释**: 集群id **取值范围**: 字符长度0-64位 
      * @return clusterId
      */
     public String getClusterId() {
@@ -336,7 +336,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 集群类型，包含以下几种： -k8s 原生集群 -cce CCE集群 -ali 阿里云集群 -tencent 腾讯云集群 -azure 微软云集群 -aws 亚马逊集群 -self_built_hw 华为云自建集群 -self_built_idc IDC自建集群
+     * **参数解释**: 集群类型 **取值范围**: - k8s：原生集群。 - cce：CCE集群。 - ali：阿里云集群。 - tencent：腾讯云集群。 - azure：微软云集群。 - aws：亚马逊集群。 - self_built_hw：华为云自建集群。 - self_built_idc：IDC自建集群。 
      * @return clusterType
      */
     public String getClusterType() {
@@ -353,7 +353,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 是否有风险
+     * **参数解释**: 是否有风险 **取值范围**: true和false，true代表有风险，false代表无风险 
      * @return risky
      */
     public Boolean getRisky() {
@@ -370,7 +370,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 低危风险数量
+     * **参数解释**: 低危风险数量 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return lowRisk
@@ -389,7 +389,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 中危风险数量
+     * **参数解释**: 中危风险数量 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return mediumRisk
@@ -408,7 +408,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 高危风险数量
+     * **参数解释**: 高危风险数量 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return highRisk
@@ -427,7 +427,7 @@ public class ContainerBaseInfo {
     }
 
     /**
-     * 致命风险数量
+     * **参数解释**: 致命风险数量 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return fatalRisk

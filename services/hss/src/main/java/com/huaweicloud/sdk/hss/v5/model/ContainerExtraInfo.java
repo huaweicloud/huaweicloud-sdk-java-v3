@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 沙箱额外配置,包括VPN引流沙箱，linux沙箱，RDP沙箱，mysql沙箱，其他沙箱默认为空
+ * 沙箱额外配置，包括VPN引流沙箱、linux沙箱、RDP沙箱、mysql沙箱，其他沙箱默认为空
  */
 public class ContainerExtraInfo {
 

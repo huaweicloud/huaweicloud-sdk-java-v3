@@ -56,6 +56,12 @@ public class IdentityCenterStoreRegion {
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://identitystore.cn-southwest-2.myhuaweicloud.com");
 
+    public static final Region AF_NORTH_1 =
+        new Region("af-north-1", "https://identitystore.af-north-1.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://identitystore.ap-southeast-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER =
         RegionProviderChain.getDefaultRegionProviderChain("IDENTITYCENTERSTORE");
 
@@ -78,6 +84,8 @@ public class IdentityCenterStoreRegion {
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("af-north-1", AF_NORTH_1);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
         return Collections.unmodifiableMap(map);
     }
 

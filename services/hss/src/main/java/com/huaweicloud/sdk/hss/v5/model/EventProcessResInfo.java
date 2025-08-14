@@ -280,7 +280,7 @@ public class EventProcessResInfo {
     }
 
     /**
-     * 进程ID
+     * **参数解释**： 进程ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return processPid
@@ -860,7 +860,7 @@ public class EventProcessResInfo {
     }
 
     /**
-     * **参数解释**： 逃逸后后执行的命令 **取值范围**： 字符长度1-128位 
+     * **参数解释**： 逃逸后执行的命令 **取值范围**： 字符长度1-128位 
      * @return escapeCmd
      */
     public String getEscapeCmd() {

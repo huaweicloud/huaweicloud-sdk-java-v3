@@ -326,7 +326,7 @@ public class ListSwrImageRepositoryRequest {
     }
 
     /**
-     * 创建时间开始日期，时间单位 毫秒（ms）
+     * 创建时间开始日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 4070880000000
      * @return startLatestUpdateTime
@@ -345,7 +345,7 @@ public class ListSwrImageRepositoryRequest {
     }
 
     /**
-     * 创建时间结束日期，时间单位 毫秒（ms）
+     * 创建时间结束日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 4070880000000
      * @return endLatestUpdateTime
@@ -364,7 +364,7 @@ public class ListSwrImageRepositoryRequest {
     }
 
     /**
-     * 最近一次扫描完成时间开始日期，时间单位 毫秒（ms）
+     * 最近一次扫描完成时间开始日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 4070880000000
      * @return startLatestScanTime
@@ -383,7 +383,7 @@ public class ListSwrImageRepositoryRequest {
     }
 
     /**
-     * 最近一次扫描完成时间结束日期，时间单位 毫秒（ms）
+     * 最近一次扫描完成时间结束日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 4070880000000
      * @return endLatestScanTime

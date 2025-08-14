@@ -31,6 +31,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppSubJobsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppSubJobsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteCloudStorageReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteCloudStorageRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteCloudStorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteImageServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteImageServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteImageServerResponse;
@@ -78,6 +81,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpdateTsviResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpgradeHdaVersionReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpgradeHdaVersionRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpgradeHdaVersionResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BindAppWarehouseBucketRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BindAppWarehouseBucketResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BucketNameReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageResponse;
@@ -93,6 +99,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppServersRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppServersResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateBucketOrAclRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateBucketOrAclResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateCloudStorageReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateCloudStorageRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateCloudStorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerResponse;
@@ -127,6 +136,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.CreateServerImageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateShareFolderReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateShareFolderRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateShareFolderResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateUserFolderAssignmentRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateUserFolderAssignmentResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateUserFolderReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateWarehouseAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateWarehouseAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateWarehouseAppResponse;
@@ -135,6 +147,11 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppIconRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppIconResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteCloudStorageAttachmentReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteCloudStorageAttachmentRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteCloudStorageAttachmentResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteCloudStorageRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteCloudStorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePersistentStorageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePersistentStorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePolicyGroupRequest;
@@ -180,6 +197,10 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListAvailabilityZoneRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAvailabilityZoneResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAzRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAzResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListCloudStorageAssignmentRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListCloudStorageAssignmentResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListCloudStorageRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListCloudStorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListConfigInfoReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListCorpConfigInfoRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListCorpConfigInfoResponse;
@@ -206,6 +227,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyTemplateRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyTemplateResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListProductRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListProductResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListProjectConfigsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListProjectConfigsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPublishedAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPublishedAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListScheduleTasksRequest;
@@ -280,6 +303,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppDetailRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppDetailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppGroupDetailRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppGroupDetailResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppWarehouseBucketRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppWarehouseBucketResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageJobRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageJobResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageServerRequest;
@@ -292,6 +317,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPolicyGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPolicyGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowProjectConfigRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowProjectConfigResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPublishableAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPublishableAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowScalingPolicyRequest;
@@ -323,6 +350,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateAppGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateCloudUserFolderAssignmentRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateCloudUserFolderAssignmentResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateImageServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateImageServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateImageServerResponse;
@@ -332,6 +361,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyTemplateReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyTemplateRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyTemplateResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePreBootPolicyReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePreBootPolicyRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePreBootPolicyResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskResponse;
@@ -346,6 +378,7 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateShareFolderAssignmentResp
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateTsviReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateUserFolderAssignmentRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateUserFolderAssignmentResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateUserFolderReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateWarehouseAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateWarehouseAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateWarehouseAppResponse;
@@ -357,6 +390,7 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconRequestBo
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconResponse;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class WorkspaceAppMeta {
@@ -400,6 +434,29 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteWarehouseAppReq.class),
             f -> f.withMarshaller(BatchDeleteWarehouseAppRequest::getBody, BatchDeleteWarehouseAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindAppWarehouseBucketRequest, BindAppWarehouseBucketResponse> bindAppWarehouseBucket =
+        genForBindAppWarehouseBucket();
+
+    private static HttpRequestDef<BindAppWarehouseBucketRequest, BindAppWarehouseBucketResponse> genForBindAppWarehouseBucket() {
+        // basic
+        HttpRequestDef.Builder<BindAppWarehouseBucketRequest, BindAppWarehouseBucketResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BindAppWarehouseBucketRequest.class, BindAppWarehouseBucketResponse.class)
+            .withName("BindAppWarehouseBucket")
+            .withUri("/v1/{project_id}/app-warehouse/bucket")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BucketNameReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BucketNameReq.class),
+            f -> f.withMarshaller(BindAppWarehouseBucketRequest::getBody, BindAppWarehouseBucketRequest::setBody));
 
         // response
 
@@ -513,6 +570,24 @@ public class WorkspaceAppMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWarehouseAppsRequest::getAppCategory, ListWarehouseAppsRequest::setAppCategory));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAppWarehouseBucketRequest, ShowAppWarehouseBucketResponse> showAppWarehouseBucket =
+        genForShowAppWarehouseBucket();
+
+    private static HttpRequestDef<ShowAppWarehouseBucketRequest, ShowAppWarehouseBucketResponse> genForShowAppWarehouseBucket() {
+        // basic
+        HttpRequestDef.Builder<ShowAppWarehouseBucketRequest, ShowAppWarehouseBucketResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAppWarehouseBucketRequest.class, ShowAppWarehouseBucketResponse.class)
+            .withName("ShowAppWarehouseBucket")
+            .withUri("/v1/{project_id}/app-warehouse/bucket")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -833,6 +908,35 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppReq.class),
             f -> f.withMarshaller(UpdateAppRequest::getBody, UpdateAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePreBootPolicyRequest, UpdatePreBootPolicyResponse> updatePreBootPolicy =
+        genForUpdatePreBootPolicy();
+
+    private static HttpRequestDef<UpdatePreBootPolicyRequest, UpdatePreBootPolicyResponse> genForUpdatePreBootPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdatePreBootPolicyRequest, UpdatePreBootPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdatePreBootPolicyRequest.class, UpdatePreBootPolicyResponse.class)
+                .withName("UpdatePreBootPolicy")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/apps/pre-boot-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePreBootPolicyRequest::getAppGroupId,
+                UpdatePreBootPolicyRequest::setAppGroupId));
+        builder.<UpdatePreBootPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePreBootPolicyReq.class),
+            f -> f.withMarshaller(UpdatePreBootPolicyRequest::getBody, UpdatePreBootPolicyRequest::setBody));
 
         // response
 
@@ -1344,6 +1448,12 @@ public class WorkspaceAppMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAppGroupId,
                 ListAppGroupAuthorizationRequest::setAppGroupId));
+        builder.<String>withRequestField("account_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAccountId,
+                ListAppGroupAuthorizationRequest::setAccountId));
         builder.<String>withRequestField("account",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1391,6 +1501,338 @@ public class WorkspaceAppMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteCloudStorageRequest, BatchDeleteCloudStorageResponse> batchDeleteCloudStorage =
+        genForBatchDeleteCloudStorage();
+
+    private static HttpRequestDef<BatchDeleteCloudStorageRequest, BatchDeleteCloudStorageResponse> genForBatchDeleteCloudStorage() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteCloudStorageRequest, BatchDeleteCloudStorageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteCloudStorageRequest.class, BatchDeleteCloudStorageResponse.class)
+            .withName("BatchDeleteCloudStorage")
+            .withUri("/v1/{project_id}/cloud-storages/actions/batch-delete-cloud-storages")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteCloudStorageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteCloudStorageReq.class),
+            f -> f.withMarshaller(BatchDeleteCloudStorageRequest::getBody, BatchDeleteCloudStorageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCloudStorageRequest, CreateCloudStorageResponse> createCloudStorage =
+        genForCreateCloudStorage();
+
+    private static HttpRequestDef<CreateCloudStorageRequest, CreateCloudStorageResponse> genForCreateCloudStorage() {
+        // basic
+        HttpRequestDef.Builder<CreateCloudStorageRequest, CreateCloudStorageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCloudStorageRequest.class, CreateCloudStorageResponse.class)
+                .withName("CreateCloudStorage")
+                .withUri("/v1/{project_id}/cloud-storages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateCloudStorageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCloudStorageReq.class),
+            f -> f.withMarshaller(CreateCloudStorageRequest::getBody, CreateCloudStorageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateUserFolderAssignmentRequest, CreateUserFolderAssignmentResponse> createUserFolderAssignment =
+        genForCreateUserFolderAssignment();
+
+    private static HttpRequestDef<CreateUserFolderAssignmentRequest, CreateUserFolderAssignmentResponse> genForCreateUserFolderAssignment() {
+        // basic
+        HttpRequestDef.Builder<CreateUserFolderAssignmentRequest, CreateUserFolderAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateUserFolderAssignmentRequest.class,
+                    CreateUserFolderAssignmentResponse.class)
+                .withName("CreateUserFolderAssignment")
+                .withUri("/v1/{project_id}/cloud-storages/{storage_id}/actions/create-folder")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("storage_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateUserFolderAssignmentRequest::getStorageId,
+                CreateUserFolderAssignmentRequest::setStorageId));
+        builder.<CreateUserFolderReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateUserFolderReq.class),
+            f -> f.withMarshaller(CreateUserFolderAssignmentRequest::getBody,
+                CreateUserFolderAssignmentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCloudStorageRequest, DeleteCloudStorageResponse> deleteCloudStorage =
+        genForDeleteCloudStorage();
+
+    private static HttpRequestDef<DeleteCloudStorageRequest, DeleteCloudStorageResponse> genForDeleteCloudStorage() {
+        // basic
+        HttpRequestDef.Builder<DeleteCloudStorageRequest, DeleteCloudStorageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCloudStorageRequest.class, DeleteCloudStorageResponse.class)
+                .withName("DeleteCloudStorage")
+                .withUri("/v1/{project_id}/cloud-storages/{storage_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("storage_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCloudStorageRequest::getStorageId, DeleteCloudStorageRequest::setStorageId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCloudStorageAttachmentRequest, DeleteCloudStorageAttachmentResponse> deleteCloudStorageAttachment =
+        genForDeleteCloudStorageAttachment();
+
+    private static HttpRequestDef<DeleteCloudStorageAttachmentRequest, DeleteCloudStorageAttachmentResponse> genForDeleteCloudStorageAttachment() {
+        // basic
+        HttpRequestDef.Builder<DeleteCloudStorageAttachmentRequest, DeleteCloudStorageAttachmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DeleteCloudStorageAttachmentRequest.class,
+                    DeleteCloudStorageAttachmentResponse.class)
+                .withName("DeleteCloudStorageAttachment")
+                .withUri("/v1/{project_id}/cloud-storages/{storage_id}/actions/delete-folder")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("storage_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCloudStorageAttachmentRequest::getStorageId,
+                DeleteCloudStorageAttachmentRequest::setStorageId));
+        builder.<DeleteCloudStorageAttachmentReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteCloudStorageAttachmentReq.class),
+            f -> f.withMarshaller(DeleteCloudStorageAttachmentRequest::getBody,
+                DeleteCloudStorageAttachmentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloudStorageRequest, ListCloudStorageResponse> listCloudStorage =
+        genForListCloudStorage();
+
+    private static HttpRequestDef<ListCloudStorageRequest, ListCloudStorageResponse> genForListCloudStorage() {
+        // basic
+        HttpRequestDef.Builder<ListCloudStorageRequest, ListCloudStorageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCloudStorageRequest.class, ListCloudStorageResponse.class)
+                .withName("ListCloudStorage")
+                .withUri("/v1/{project_id}/cloud-storages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudStorageRequest::getOffset, ListCloudStorageRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudStorageRequest::getLimit, ListCloudStorageRequest::setLimit));
+        builder.<String>withRequestField("storage_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudStorageRequest::getStorageId, ListCloudStorageRequest::setStorageId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudStorageRequest::getName, ListCloudStorageRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloudStorageAssignmentRequest, ListCloudStorageAssignmentResponse> listCloudStorageAssignment =
+        genForListCloudStorageAssignment();
+
+    private static HttpRequestDef<ListCloudStorageAssignmentRequest, ListCloudStorageAssignmentResponse> genForListCloudStorageAssignment() {
+        // basic
+        HttpRequestDef.Builder<ListCloudStorageAssignmentRequest, ListCloudStorageAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCloudStorageAssignmentRequest.class,
+                    ListCloudStorageAssignmentResponse.class)
+                .withName("ListCloudStorageAssignment")
+                .withUri("/v1/{project_id}/cloud-storages/actions/list-folders")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudStorageAssignmentRequest::getOffset,
+                ListCloudStorageAssignmentRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudStorageAssignmentRequest::getLimit,
+                ListCloudStorageAssignmentRequest::setLimit));
+        builder.<String>withRequestField("storage_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudStorageAssignmentRequest::getStorageId,
+                ListCloudStorageAssignmentRequest::setStorageId));
+        builder.<String>withRequestField("claim_mode",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudStorageAssignmentRequest::getClaimMode,
+                ListCloudStorageAssignmentRequest::setClaimMode));
+        builder.<String>withRequestField("attach",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudStorageAssignmentRequest::getAttach,
+                ListCloudStorageAssignmentRequest::setAttach));
+        builder.<List<String>>withRequestField("attach_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCloudStorageAssignmentRequest::getAttachNames,
+                ListCloudStorageAssignmentRequest::setAttachNames));
+        builder.<String>withRequestField("capacity_filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudStorageAssignmentRequest::getCapacityFilter,
+                ListCloudStorageAssignmentRequest::setCapacityFilter));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectConfigsRequest, ListProjectConfigsResponse> listProjectConfigs =
+        genForListProjectConfigs();
+
+    private static HttpRequestDef<ListProjectConfigsRequest, ListProjectConfigsResponse> genForListProjectConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListProjectConfigsRequest, ListProjectConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectConfigsRequest.class, ListProjectConfigsResponse.class)
+                .withName("ListProjectConfigs")
+                .withUri("/v1/{project_id}/cloud-storages/actions/list-project-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectConfigsRequest::getOffset, ListProjectConfigsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectConfigsRequest::getLimit, ListProjectConfigsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectConfigsRequest::getName, ListProjectConfigsRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectConfigRequest, ShowProjectConfigResponse> showProjectConfig =
+        genForShowProjectConfig();
+
+    private static HttpRequestDef<ShowProjectConfigRequest, ShowProjectConfigResponse> genForShowProjectConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectConfigRequest, ShowProjectConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProjectConfigRequest.class, ShowProjectConfigResponse.class)
+                .withName("ShowProjectConfig")
+                .withUri("/v1/{project_id}/cloud-storages/actions/project-config/{cloud_storage_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cloud_storage_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectConfigRequest::getCloudStorageId,
+                ShowProjectConfigRequest::setCloudStorageId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCloudUserFolderAssignmentRequest, UpdateCloudUserFolderAssignmentResponse> updateCloudUserFolderAssignment =
+        genForUpdateCloudUserFolderAssignment();
+
+    private static HttpRequestDef<UpdateCloudUserFolderAssignmentRequest, UpdateCloudUserFolderAssignmentResponse> genForUpdateCloudUserFolderAssignment() {
+        // basic
+        HttpRequestDef.Builder<UpdateCloudUserFolderAssignmentRequest, UpdateCloudUserFolderAssignmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PATCH,
+                    UpdateCloudUserFolderAssignmentRequest.class,
+                    UpdateCloudUserFolderAssignmentResponse.class)
+                .withName("UpdateCloudUserFolderAssignment")
+                .withUri("/v1/{project_id}/cloud-storages/{storage_id}/actions/update-folder/{cloud_assignment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("storage_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCloudUserFolderAssignmentRequest::getStorageId,
+                UpdateCloudUserFolderAssignmentRequest::setStorageId));
+        builder.<String>withRequestField("cloud_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCloudUserFolderAssignmentRequest::getCloudAssignmentId,
+                UpdateCloudUserFolderAssignmentRequest::setCloudAssignmentId));
+        builder.<UpdateUserFolderReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateUserFolderReq.class),
+            f -> f.withMarshaller(UpdateCloudUserFolderAssignmentRequest::getBody,
+                UpdateCloudUserFolderAssignmentRequest::setBody));
 
         // response
 

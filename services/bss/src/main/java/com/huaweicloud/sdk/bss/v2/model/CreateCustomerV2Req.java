@@ -185,7 +185,7 @@ public class CreateCustomerV2Req {
     }
 
     /**
-     * 合作类型。 1：顾问销售。 不传递或传递非1的值，默认会创建成代售模式的客户。
+     * 合作类型。 1：顾问销售。 不传递或传递非1的值，默认会创建成代售模式的客户。(字段预下线，新用户不再提供)
      * @return cooperationType
      */
     public String getCooperationType() {

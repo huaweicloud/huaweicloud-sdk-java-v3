@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 文件哈希
+ * **参数解释**： 文件哈希 **取值范围**： 字符长度1-256位 
  */
 public class FileHash {
 

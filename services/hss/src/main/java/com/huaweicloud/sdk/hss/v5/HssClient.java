@@ -37,8 +37,6 @@ import com.huaweicloud.sdk.hss.v5.model.BatchStartWebTamperProtectionRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchStartWebTamperProtectionResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchUpgradeAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchUpgradeAgentDaemonsetResponse;
-import com.huaweicloud.sdk.hss.v5.model.BatchUploadFilesRequest;
-import com.huaweicloud.sdk.hss.v5.model.BatchUploadFilesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPayPerScanStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPayPerScanStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPolicyRequest;
@@ -928,35 +926,6 @@ public class HssClient {
     }
 
     /**
-     * 批量卸载集群daemonset
-     *
-     * 批量卸载集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteAgentDaemonsetRequest 请求对象
-     * @return BatchDeleteAgentDaemonsetResponse
-     */
-    public BatchDeleteAgentDaemonsetResponse batchDeleteAgentDaemonset(BatchDeleteAgentDaemonsetRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.batchDeleteAgentDaemonset);
-    }
-
-    /**
-     * 批量卸载集群daemonset
-     *
-     * 批量卸载集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteAgentDaemonsetRequest 请求对象
-     * @return SyncInvoker<BatchDeleteAgentDaemonsetRequest, BatchDeleteAgentDaemonsetResponse>
-     */
-    public SyncInvoker<BatchDeleteAgentDaemonsetRequest, BatchDeleteAgentDaemonsetResponse> batchDeleteAgentDaemonsetInvoker(
-        BatchDeleteAgentDaemonsetRequest request) {
-        return new SyncInvoker<>(request, HssMeta.batchDeleteAgentDaemonset, hcClient);
-    }
-
-    /**
      * 镜像仓库镜像批量扫描
      *
      * 镜像仓库镜像批量扫描
@@ -988,7 +957,7 @@ public class HssClient {
     /**
      * 批量开启勒索病毒防护2.0
      *
-     * 批量开启勒索病毒防护,若开启备份防护，请保证该region有cbr云备份服务
+     * 批量开启勒索病毒防护，若开启备份防护，请保证该region有cbr云备份服务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1002,7 +971,7 @@ public class HssClient {
     /**
      * 批量开启勒索病毒防护2.0
      *
-     * 批量开启勒索病毒防护,若开启备份防护，请保证该region有cbr云备份服务
+     * 批量开启勒索病毒防护，若开启备份防护，请保证该region有cbr云备份服务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1012,64 +981,6 @@ public class HssClient {
     public SyncInvoker<BatchStartProtectionRequest, BatchStartProtectionResponse> batchStartProtectionInvoker(
         BatchStartProtectionRequest request) {
         return new SyncInvoker<>(request, HssMeta.batchStartProtection, hcClient);
-    }
-
-    /**
-     * 批量升级集群daemonset
-     *
-     * 批量升级集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchUpgradeAgentDaemonsetRequest 请求对象
-     * @return BatchUpgradeAgentDaemonsetResponse
-     */
-    public BatchUpgradeAgentDaemonsetResponse batchUpgradeAgentDaemonset(BatchUpgradeAgentDaemonsetRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.batchUpgradeAgentDaemonset);
-    }
-
-    /**
-     * 批量升级集群daemonset
-     *
-     * 批量升级集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchUpgradeAgentDaemonsetRequest 请求对象
-     * @return SyncInvoker<BatchUpgradeAgentDaemonsetRequest, BatchUpgradeAgentDaemonsetResponse>
-     */
-    public SyncInvoker<BatchUpgradeAgentDaemonsetRequest, BatchUpgradeAgentDaemonsetResponse> batchUpgradeAgentDaemonsetInvoker(
-        BatchUpgradeAgentDaemonsetRequest request) {
-        return new SyncInvoker<>(request, HssMeta.batchUpgradeAgentDaemonset, hcClient);
-    }
-
-    /**
-     * 编辑自定义查杀策略
-     *
-     * 编辑自定义查杀策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeAntivirusPolicyRequest 请求对象
-     * @return ChangeAntivirusPolicyResponse
-     */
-    public ChangeAntivirusPolicyResponse changeAntivirusPolicy(ChangeAntivirusPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.changeAntivirusPolicy);
-    }
-
-    /**
-     * 编辑自定义查杀策略
-     *
-     * 编辑自定义查杀策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeAntivirusPolicyRequest 请求对象
-     * @return SyncInvoker<ChangeAntivirusPolicyRequest, ChangeAntivirusPolicyResponse>
-     */
-    public SyncInvoker<ChangeAntivirusPolicyRequest, ChangeAntivirusPolicyResponse> changeAntivirusPolicyInvoker(
-        ChangeAntivirusPolicyRequest request) {
-        return new SyncInvoker<>(request, HssMeta.changeAntivirusPolicy, hcClient);
     }
 
     /**
@@ -1335,35 +1246,6 @@ public class HssClient {
     }
 
     /**
-     * 修改漏洞扫描策略
-     *
-     * 修改漏洞扫描策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeVulScanPolicyRequest 请求对象
-     * @return ChangeVulScanPolicyResponse
-     */
-    public ChangeVulScanPolicyResponse changeVulScanPolicy(ChangeVulScanPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.changeVulScanPolicy);
-    }
-
-    /**
-     * 修改漏洞扫描策略
-     *
-     * 修改漏洞扫描策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeVulScanPolicyRequest 请求对象
-     * @return SyncInvoker<ChangeVulScanPolicyRequest, ChangeVulScanPolicyResponse>
-     */
-    public SyncInvoker<ChangeVulScanPolicyRequest, ChangeVulScanPolicyResponse> changeVulScanPolicyInvoker(
-        ChangeVulScanPolicyRequest request) {
-        return new SyncInvoker<>(request, HssMeta.changeVulScanPolicy, hcClient);
-    }
-
-    /**
      * 修改漏洞的状态
      *
      * 修改漏洞的状态
@@ -1390,93 +1272,6 @@ public class HssClient {
     public SyncInvoker<ChangeVulStatusRequest, ChangeVulStatusResponse> changeVulStatusInvoker(
         ChangeVulStatusRequest request) {
         return new SyncInvoker<>(request, HssMeta.changeVulStatus, hcClient);
-    }
-
-    /**
-     * 创建集群daemonset
-     *
-     * 创建集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAgentDaemonsetRequest 请求对象
-     * @return CreateAgentDaemonsetResponse
-     */
-    public CreateAgentDaemonsetResponse createAgentDaemonset(CreateAgentDaemonsetRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.createAgentDaemonset);
-    }
-
-    /**
-     * 创建集群daemonset
-     *
-     * 创建集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAgentDaemonsetRequest 请求对象
-     * @return SyncInvoker<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse>
-     */
-    public SyncInvoker<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse> createAgentDaemonsetInvoker(
-        CreateAgentDaemonsetRequest request) {
-        return new SyncInvoker<>(request, HssMeta.createAgentDaemonset, hcClient);
-    }
-
-    /**
-     * 创建自定义查杀策略
-     *
-     * 创建自定义查杀策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAntiVirusPolicyRequest 请求对象
-     * @return CreateAntiVirusPolicyResponse
-     */
-    public CreateAntiVirusPolicyResponse createAntiVirusPolicy(CreateAntiVirusPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.createAntiVirusPolicy);
-    }
-
-    /**
-     * 创建自定义查杀策略
-     *
-     * 创建自定义查杀策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAntiVirusPolicyRequest 请求对象
-     * @return SyncInvoker<CreateAntiVirusPolicyRequest, CreateAntiVirusPolicyResponse>
-     */
-    public SyncInvoker<CreateAntiVirusPolicyRequest, CreateAntiVirusPolicyResponse> createAntiVirusPolicyInvoker(
-        CreateAntiVirusPolicyRequest request) {
-        return new SyncInvoker<>(request, HssMeta.createAntiVirusPolicy, hcClient);
-    }
-
-    /**
-     * 创建病毒扫描任务
-     *
-     * 创建病毒扫描任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAntiVirusTaskRequest 请求对象
-     * @return CreateAntiVirusTaskResponse
-     */
-    public CreateAntiVirusTaskResponse createAntiVirusTask(CreateAntiVirusTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.createAntiVirusTask);
-    }
-
-    /**
-     * 创建病毒扫描任务
-     *
-     * 创建病毒扫描任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAntiVirusTaskRequest 请求对象
-     * @return SyncInvoker<CreateAntiVirusTaskRequest, CreateAntiVirusTaskResponse>
-     */
-    public SyncInvoker<CreateAntiVirusTaskRequest, CreateAntiVirusTaskResponse> createAntiVirusTaskInvoker(
-        CreateAntiVirusTaskRequest request) {
-        return new SyncInvoker<>(request, HssMeta.createAntiVirusTask, hcClient);
     }
 
     /**
@@ -1627,35 +1422,6 @@ public class HssClient {
     }
 
     /**
-     * 创建多云集群
-     *
-     * 创建多云集群
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateMultiCloudClustersRequest 请求对象
-     * @return CreateMultiCloudClustersResponse
-     */
-    public CreateMultiCloudClustersResponse createMultiCloudClusters(CreateMultiCloudClustersRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.createMultiCloudClusters);
-    }
-
-    /**
-     * 创建多云集群
-     *
-     * 创建多云集群
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateMultiCloudClustersRequest 请求对象
-     * @return SyncInvoker<CreateMultiCloudClustersRequest, CreateMultiCloudClustersResponse>
-     */
-    public SyncInvoker<CreateMultiCloudClustersRequest, CreateMultiCloudClustersResponse> createMultiCloudClustersInvoker(
-        CreateMultiCloudClustersRequest request) {
-        return new SyncInvoker<>(request, HssMeta.createMultiCloudClusters, hcClient);
-    }
-
-    /**
      * HSS服务创建订单订购配额
      *
      * HSS服务创建订单订购配额，只支持包周期计费模式
@@ -1714,35 +1480,6 @@ public class HssClient {
     }
 
     /**
-     * 创建漏洞扫描任务
-     *
-     * 创建漏洞扫描任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateVulnerabilityScanTaskRequest 请求对象
-     * @return CreateVulnerabilityScanTaskResponse
-     */
-    public CreateVulnerabilityScanTaskResponse createVulnerabilityScanTask(CreateVulnerabilityScanTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.createVulnerabilityScanTask);
-    }
-
-    /**
-     * 创建漏洞扫描任务
-     *
-     * 创建漏洞扫描任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateVulnerabilityScanTaskRequest 请求对象
-     * @return SyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse>
-     */
-    public SyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse> createVulnerabilityScanTaskInvoker(
-        CreateVulnerabilityScanTaskRequest request) {
-        return new SyncInvoker<>(request, HssMeta.createVulnerabilityScanTask, hcClient);
-    }
-
-    /**
      * 删除账号
      *
      * 删除账号
@@ -1768,64 +1505,6 @@ public class HssClient {
      */
     public SyncInvoker<DeleteAccountRequest, DeleteAccountResponse> deleteAccountInvoker(DeleteAccountRequest request) {
         return new SyncInvoker<>(request, HssMeta.deleteAccount, hcClient);
-    }
-
-    /**
-     * 删除集群daemonset
-     *
-     * 删除集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAgentDaemonsetRequest 请求对象
-     * @return DeleteAgentDaemonsetResponse
-     */
-    public DeleteAgentDaemonsetResponse deleteAgentDaemonset(DeleteAgentDaemonsetRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.deleteAgentDaemonset);
-    }
-
-    /**
-     * 删除集群daemonset
-     *
-     * 删除集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAgentDaemonsetRequest 请求对象
-     * @return SyncInvoker<DeleteAgentDaemonsetRequest, DeleteAgentDaemonsetResponse>
-     */
-    public SyncInvoker<DeleteAgentDaemonsetRequest, DeleteAgentDaemonsetResponse> deleteAgentDaemonsetInvoker(
-        DeleteAgentDaemonsetRequest request) {
-        return new SyncInvoker<>(request, HssMeta.deleteAgentDaemonset, hcClient);
-    }
-
-    /**
-     * 删除自定义查杀策略
-     *
-     * 删除自定义查杀策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAntivirusPolicyRequest 请求对象
-     * @return DeleteAntivirusPolicyResponse
-     */
-    public DeleteAntivirusPolicyResponse deleteAntivirusPolicy(DeleteAntivirusPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.deleteAntivirusPolicy);
-    }
-
-    /**
-     * 删除自定义查杀策略
-     *
-     * 删除自定义查杀策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAntivirusPolicyRequest 请求对象
-     * @return SyncInvoker<DeleteAntivirusPolicyRequest, DeleteAntivirusPolicyResponse>
-     */
-    public SyncInvoker<DeleteAntivirusPolicyRequest, DeleteAntivirusPolicyResponse> deleteAntivirusPolicyInvoker(
-        DeleteAntivirusPolicyRequest request) {
-        return new SyncInvoker<>(request, HssMeta.deleteAntivirusPolicy, hcClient);
     }
 
     /**
@@ -2149,35 +1828,6 @@ public class HssClient {
     }
 
     /**
-     * 导出病毒扫描结果列表
-     *
-     * 导出病毒扫描结果列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ExportAntiVirusResultRequest 请求对象
-     * @return ExportAntiVirusResultResponse
-     */
-    public ExportAntiVirusResultResponse exportAntiVirusResult(ExportAntiVirusResultRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.exportAntiVirusResult);
-    }
-
-    /**
-     * 导出病毒扫描结果列表
-     *
-     * 导出病毒扫描结果列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ExportAntiVirusResultRequest 请求对象
-     * @return SyncInvoker<ExportAntiVirusResultRequest, ExportAntiVirusResultResponse>
-     */
-    public SyncInvoker<ExportAntiVirusResultRequest, ExportAntiVirusResultResponse> exportAntiVirusResultInvoker(
-        ExportAntiVirusResultRequest request) {
-        return new SyncInvoker<>(request, HssMeta.exportAntiVirusResult, hcClient);
-    }
-
-    /**
      * 创建容器导出任务
      *
      * 创建容器导出任务
@@ -2204,63 +1854,6 @@ public class HssClient {
     public SyncInvoker<ExportContainerListRequest, ExportContainerListResponse> exportContainerListInvoker(
         ExportContainerListRequest request) {
         return new SyncInvoker<>(request, HssMeta.exportContainerList, hcClient);
-    }
-
-    /**
-     * 导出漏洞及漏洞影响的主机的相关信息
-     *
-     * 导出漏洞及漏洞影响的主机的相关信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ExportVulsRequest 请求对象
-     * @return ExportVulsResponse
-     */
-    public ExportVulsResponse exportVuls(ExportVulsRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.exportVuls);
-    }
-
-    /**
-     * 导出漏洞及漏洞影响的主机的相关信息
-     *
-     * 导出漏洞及漏洞影响的主机的相关信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ExportVulsRequest 请求对象
-     * @return SyncInvoker<ExportVulsRequest, ExportVulsResponse>
-     */
-    public SyncInvoker<ExportVulsRequest, ExportVulsResponse> exportVulsInvoker(ExportVulsRequest request) {
-        return new SyncInvoker<>(request, HssMeta.exportVuls, hcClient);
-    }
-
-    /**
-     * 处置病毒扫描结果
-     *
-     * 处置病毒扫描结果
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request HandleAntiVirusResultRequest 请求对象
-     * @return HandleAntiVirusResultResponse
-     */
-    public HandleAntiVirusResultResponse handleAntiVirusResult(HandleAntiVirusResultRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.handleAntiVirusResult);
-    }
-
-    /**
-     * 处置病毒扫描结果
-     *
-     * 处置病毒扫描结果
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request HandleAntiVirusResultRequest 请求对象
-     * @return SyncInvoker<HandleAntiVirusResultRequest, HandleAntiVirusResultResponse>
-     */
-    public SyncInvoker<HandleAntiVirusResultRequest, HandleAntiVirusResultResponse> handleAntiVirusResultInvoker(
-        HandleAntiVirusResultRequest request) {
-        return new SyncInvoker<>(request, HssMeta.handleAntiVirusResult, hcClient);
     }
 
     /**
@@ -2347,122 +1940,6 @@ public class HssClient {
     public SyncInvoker<ListAlarmWhiteListRequest, ListAlarmWhiteListResponse> listAlarmWhiteListInvoker(
         ListAlarmWhiteListRequest request) {
         return new SyncInvoker<>(request, HssMeta.listAlarmWhiteList, hcClient);
-    }
-
-    /**
-     * 查询病毒查杀可选服务器列表
-     *
-     * 查询病毒查杀可选服务器列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAntiVirusHostRequest 请求对象
-     * @return ListAntiVirusHostResponse
-     */
-    public ListAntiVirusHostResponse listAntiVirusHost(ListAntiVirusHostRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listAntiVirusHost);
-    }
-
-    /**
-     * 查询病毒查杀可选服务器列表
-     *
-     * 查询病毒查杀可选服务器列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAntiVirusHostRequest 请求对象
-     * @return SyncInvoker<ListAntiVirusHostRequest, ListAntiVirusHostResponse>
-     */
-    public SyncInvoker<ListAntiVirusHostRequest, ListAntiVirusHostResponse> listAntiVirusHostInvoker(
-        ListAntiVirusHostRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listAntiVirusHost, hcClient);
-    }
-
-    /**
-     * 查询自定义查杀策略列表
-     *
-     * 查询自定义查杀策略列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAntiVirusPolicyRequest 请求对象
-     * @return ListAntiVirusPolicyResponse
-     */
-    public ListAntiVirusPolicyResponse listAntiVirusPolicy(ListAntiVirusPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listAntiVirusPolicy);
-    }
-
-    /**
-     * 查询自定义查杀策略列表
-     *
-     * 查询自定义查杀策略列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAntiVirusPolicyRequest 请求对象
-     * @return SyncInvoker<ListAntiVirusPolicyRequest, ListAntiVirusPolicyResponse>
-     */
-    public SyncInvoker<ListAntiVirusPolicyRequest, ListAntiVirusPolicyResponse> listAntiVirusPolicyInvoker(
-        ListAntiVirusPolicyRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listAntiVirusPolicy, hcClient);
-    }
-
-    /**
-     * 查询病毒扫描结果列表
-     *
-     * 查询病毒扫描结果列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAntiVirusResultRequest 请求对象
-     * @return ListAntiVirusResultResponse
-     */
-    public ListAntiVirusResultResponse listAntiVirusResult(ListAntiVirusResultRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listAntiVirusResult);
-    }
-
-    /**
-     * 查询病毒扫描结果列表
-     *
-     * 查询病毒扫描结果列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAntiVirusResultRequest 请求对象
-     * @return SyncInvoker<ListAntiVirusResultRequest, ListAntiVirusResultResponse>
-     */
-    public SyncInvoker<ListAntiVirusResultRequest, ListAntiVirusResultResponse> listAntiVirusResultInvoker(
-        ListAntiVirusResultRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listAntiVirusResult, hcClient);
-    }
-
-    /**
-     * 查看病毒扫描任务列表
-     *
-     * 查看病毒扫描任务列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAntiVirusTaskRequest 请求对象
-     * @return ListAntiVirusTaskResponse
-     */
-    public ListAntiVirusTaskResponse listAntiVirusTask(ListAntiVirusTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listAntiVirusTask);
-    }
-
-    /**
-     * 查看病毒扫描任务列表
-     *
-     * 查看病毒扫描任务列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAntiVirusTaskRequest 请求对象
-     * @return SyncInvoker<ListAntiVirusTaskRequest, ListAntiVirusTaskResponse>
-     */
-    public SyncInvoker<ListAntiVirusTaskRequest, ListAntiVirusTaskResponse> listAntiVirusTaskInvoker(
-        ListAntiVirusTaskRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listAntiVirusTask, hcClient);
     }
 
     /**
@@ -2671,7 +2148,7 @@ public class HssClient {
     /**
      * 查询备份存储库列表
      *
-     * 查询备份存储库列表，若进行绑定主机，则需要额外判断，同时满足以下条件：1.存储库状态为“可用”状态；2.备份策略状态为“已启用”；3.存储库有剩余可用备份容量；4.存储库绑定的服务器数量少于256。
+     * 查询备份存储库列表，若进行绑定主机，则需要额外判断，同时满足以下条件：1、存储库状态为“可用”状态；2、备份策略状态为“已启用”；3、存储库有剩余可用备份容量；4、存储库绑定的服务器数量少于256。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2685,7 +2162,7 @@ public class HssClient {
     /**
      * 查询备份存储库列表
      *
-     * 查询备份存储库列表，若进行绑定主机，则需要额外判断，同时满足以下条件：1.存储库状态为“可用”状态；2.备份策略状态为“已启用”；3.存储库有剩余可用备份容量；4.存储库绑定的服务器数量少于256。
+     * 查询备份存储库列表，若进行绑定主机，则需要额外判断，同时满足以下条件：1、存储库状态为“可用”状态；2、备份策略状态为“已启用”；3、存储库有剩余可用备份容量；4、存储库绑定的服务器数量少于256。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3572,65 +3049,6 @@ public class HssClient {
     }
 
     /**
-     * 查询主机静态网页防篡改防护动态
-     *
-     * 查询主机静态网页防篡改防护动态：展示服务器名称、服务器ip、防护策略、检测时间、防护文件、事件描述信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHostProtectHistoryInfoRequest 请求对象
-     * @return ListHostProtectHistoryInfoResponse
-     */
-    public ListHostProtectHistoryInfoResponse listHostProtectHistoryInfo(ListHostProtectHistoryInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listHostProtectHistoryInfo);
-    }
-
-    /**
-     * 查询主机静态网页防篡改防护动态
-     *
-     * 查询主机静态网页防篡改防护动态：展示服务器名称、服务器ip、防护策略、检测时间、防护文件、事件描述信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHostProtectHistoryInfoRequest 请求对象
-     * @return SyncInvoker<ListHostProtectHistoryInfoRequest, ListHostProtectHistoryInfoResponse>
-     */
-    public SyncInvoker<ListHostProtectHistoryInfoRequest, ListHostProtectHistoryInfoResponse> listHostProtectHistoryInfoInvoker(
-        ListHostProtectHistoryInfoRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listHostProtectHistoryInfo, hcClient);
-    }
-
-    /**
-     * 查询主机动态网页防篡改防护动态
-     *
-     * 查询主机动态网页防篡改防护动态：包含告警级别、服务器ip、服务器名称、威胁类型、告警时间、攻击源ip、攻击源url信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHostRaspProtectHistoryInfoRequest 请求对象
-     * @return ListHostRaspProtectHistoryInfoResponse
-     */
-    public ListHostRaspProtectHistoryInfoResponse listHostRaspProtectHistoryInfo(
-        ListHostRaspProtectHistoryInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listHostRaspProtectHistoryInfo);
-    }
-
-    /**
-     * 查询主机动态网页防篡改防护动态
-     *
-     * 查询主机动态网页防篡改防护动态：包含告警级别、服务器ip、服务器名称、威胁类型、告警时间、攻击源ip、攻击源url信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHostRaspProtectHistoryInfoRequest 请求对象
-     * @return SyncInvoker<ListHostRaspProtectHistoryInfoRequest, ListHostRaspProtectHistoryInfoResponse>
-     */
-    public SyncInvoker<ListHostRaspProtectHistoryInfoRequest, ListHostRaspProtectHistoryInfoResponse> listHostRaspProtectHistoryInfoInvoker(
-        ListHostRaspProtectHistoryInfoRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listHostRaspProtectHistoryInfo, hcClient);
-    }
-
-    /**
      * 查询云服务器列表
      *
      * 查询云服务器列表
@@ -3657,34 +3075,6 @@ public class HssClient {
     public SyncInvoker<ListHostStatusRequest, ListHostStatusResponse> listHostStatusInvoker(
         ListHostStatusRequest request) {
         return new SyncInvoker<>(request, HssMeta.listHostStatus, hcClient);
-    }
-
-    /**
-     * 查询单台服务器漏洞信息
-     *
-     * 查询单台服务器漏洞信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHostVulsRequest 请求对象
-     * @return ListHostVulsResponse
-     */
-    public ListHostVulsResponse listHostVuls(ListHostVulsRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listHostVuls);
-    }
-
-    /**
-     * 查询单台服务器漏洞信息
-     *
-     * 查询单台服务器漏洞信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListHostVulsRequest 请求对象
-     * @return SyncInvoker<ListHostVulsRequest, ListHostVulsResponse>
-     */
-    public SyncInvoker<ListHostVulsRequest, ListHostVulsResponse> listHostVulsInvoker(ListHostVulsRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listHostVuls, hcClient);
     }
 
     /**
@@ -3748,7 +3138,7 @@ public class HssClient {
     /**
      * 查询镜像安全配置检测结果列表
      *
-     * 查询镜像安全配置检测结果列表,当前支持检测CentOS 7、Debian 10、EulerOS和Ubuntu16镜像的系统配置项、SSH应用配置项。
+     * 查询镜像安全配置检测结果列表，当前支持检测CentOS 7、Debian 10、EulerOS和Ubuntu16镜像的系统配置项、SSH应用配置项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3762,7 +3152,7 @@ public class HssClient {
     /**
      * 查询镜像安全配置检测结果列表
      *
-     * 查询镜像安全配置检测结果列表,当前支持检测CentOS 7、Debian 10、EulerOS和Ubuntu16镜像的系统配置项、SSH应用配置项。
+     * 查询镜像安全配置检测结果列表，当前支持检测CentOS 7、Debian 10、EulerOS和Ubuntu16镜像的系统配置项、SSH应用配置项。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4324,35 +3714,6 @@ public class HssClient {
     public SyncInvoker<ListLoginWhiteListRequest, ListLoginWhiteListResponse> listLoginWhiteListInvoker(
         ListLoginWhiteListRequest request) {
         return new SyncInvoker<>(request, HssMeta.listLoginWhiteList, hcClient);
-    }
-
-    /**
-     * 查询多云集群
-     *
-     * 查询多云集群
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListMultiCloudClustersRequest 请求对象
-     * @return ListMultiCloudClustersResponse
-     */
-    public ListMultiCloudClustersResponse listMultiCloudClusters(ListMultiCloudClustersRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listMultiCloudClusters);
-    }
-
-    /**
-     * 查询多云集群
-     *
-     * 查询多云集群
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListMultiCloudClustersRequest 请求对象
-     * @return SyncInvoker<ListMultiCloudClustersRequest, ListMultiCloudClustersResponse>
-     */
-    public SyncInvoker<ListMultiCloudClustersRequest, ListMultiCloudClustersResponse> listMultiCloudClustersInvoker(
-        ListMultiCloudClustersRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listMultiCloudClusters, hcClient);
     }
 
     /**
@@ -5109,7 +4470,7 @@ public class HssClient {
     }
 
     /**
-     * 查询swr镜像仓库镜像列表
+     * 查询swr镜像仓库镜像列表-接口已废弃，不再推荐使用
      *
      * 查询swr镜像仓库镜像列表,如果需要从swr同步最新镜像，需要先调用“从swr同步镜像”接口
      * 
@@ -5123,7 +4484,7 @@ public class HssClient {
     }
 
     /**
-     * 查询swr镜像仓库镜像列表
+     * 查询swr镜像仓库镜像列表-接口已废弃，不再推荐使用
      *
      * 查询swr镜像仓库镜像列表,如果需要从swr同步最新镜像，需要先调用“从swr同步镜像”接口
      * 
@@ -5308,121 +4669,6 @@ public class HssClient {
     public SyncInvoker<ListVulHandleHistoryRequest, ListVulHandleHistoryResponse> listVulHandleHistoryInvoker(
         ListVulHandleHistoryRequest request) {
         return new SyncInvoker<>(request, HssMeta.listVulHandleHistory, hcClient);
-    }
-
-    /**
-     * 查询单个漏洞影响的云服务器信息
-     *
-     * 查询单个漏洞影响的云服务器信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVulHostsRequest 请求对象
-     * @return ListVulHostsResponse
-     */
-    public ListVulHostsResponse listVulHosts(ListVulHostsRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listVulHosts);
-    }
-
-    /**
-     * 查询单个漏洞影响的云服务器信息
-     *
-     * 查询单个漏洞影响的云服务器信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVulHostsRequest 请求对象
-     * @return SyncInvoker<ListVulHostsRequest, ListVulHostsResponse>
-     */
-    public SyncInvoker<ListVulHostsRequest, ListVulHostsResponse> listVulHostsInvoker(ListVulHostsRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listVulHosts, hcClient);
-    }
-
-    /**
-     * 查询漏洞扫描任务列表
-     *
-     * 查询漏洞扫描任务列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVulScanTaskRequest 请求对象
-     * @return ListVulScanTaskResponse
-     */
-    public ListVulScanTaskResponse listVulScanTask(ListVulScanTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listVulScanTask);
-    }
-
-    /**
-     * 查询漏洞扫描任务列表
-     *
-     * 查询漏洞扫描任务列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVulScanTaskRequest 请求对象
-     * @return SyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse>
-     */
-    public SyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse> listVulScanTaskInvoker(
-        ListVulScanTaskRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listVulScanTask, hcClient);
-    }
-
-    /**
-     * 查询漏洞扫描任务对应的主机列表
-     *
-     * 查询漏洞扫描任务对应的主机列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVulScanTaskHostRequest 请求对象
-     * @return ListVulScanTaskHostResponse
-     */
-    public ListVulScanTaskHostResponse listVulScanTaskHost(ListVulScanTaskHostRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listVulScanTaskHost);
-    }
-
-    /**
-     * 查询漏洞扫描任务对应的主机列表
-     *
-     * 查询漏洞扫描任务对应的主机列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVulScanTaskHostRequest 请求对象
-     * @return SyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse>
-     */
-    public SyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse> listVulScanTaskHostInvoker(
-        ListVulScanTaskHostRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listVulScanTaskHost, hcClient);
-    }
-
-    /**
-     * 查询漏洞列表
-     *
-     * 查询漏洞列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVulnerabilitiesRequest 请求对象
-     * @return ListVulnerabilitiesResponse
-     */
-    public ListVulnerabilitiesResponse listVulnerabilities(ListVulnerabilitiesRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listVulnerabilities);
-    }
-
-    /**
-     * 查询漏洞列表
-     *
-     * 查询漏洞列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVulnerabilitiesRequest 请求对象
-     * @return SyncInvoker<ListVulnerabilitiesRequest, ListVulnerabilitiesResponse>
-     */
-    public SyncInvoker<ListVulnerabilitiesRequest, ListVulnerabilitiesResponse> listVulnerabilitiesInvoker(
-        ListVulnerabilitiesRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listVulnerabilities, hcClient);
     }
 
     /**
@@ -5687,35 +4933,6 @@ public class HssClient {
     }
 
     /**
-     * 查询防护列表
-     *
-     * 查询防护列表：查询网页防篡改主机防护状态列表信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListWtpProtectHostRequest 请求对象
-     * @return ListWtpProtectHostResponse
-     */
-    public ListWtpProtectHostResponse listWtpProtectHost(ListWtpProtectHostRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.listWtpProtectHost);
-    }
-
-    /**
-     * 查询防护列表
-     *
-     * 查询防护列表：查询网页防篡改主机防护状态列表信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListWtpProtectHostRequest 请求对象
-     * @return SyncInvoker<ListWtpProtectHostRequest, ListWtpProtectHostResponse>
-     */
-    public SyncInvoker<ListWtpProtectHostRequest, ListWtpProtectHostResponse> listWtpProtectHostInvoker(
-        ListWtpProtectHostRequest request) {
-        return new SyncInvoker<>(request, HssMeta.listWtpProtectHost, hcClient);
-    }
-
-    /**
      * 编辑动态端口蜜罐策略
      *
      * 编辑动态端口蜜罐策略
@@ -5742,36 +4959,6 @@ public class HssClient {
     public SyncInvoker<ModifyDecoyPortPolicyRequest, ModifyDecoyPortPolicyResponse> modifyDecoyPortPolicyInvoker(
         ModifyDecoyPortPolicyRequest request) {
         return new SyncInvoker<>(request, HssMeta.modifyDecoyPortPolicy, hcClient);
-    }
-
-    /**
-     * 解析多云集群的配置文件
-     *
-     * 解析多云集群的配置文件
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ParseMultiCloudClusterConfigRequest 请求对象
-     * @return ParseMultiCloudClusterConfigResponse
-     */
-    public ParseMultiCloudClusterConfigResponse parseMultiCloudClusterConfig(
-        ParseMultiCloudClusterConfigRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.parseMultiCloudClusterConfig);
-    }
-
-    /**
-     * 解析多云集群的配置文件
-     *
-     * 解析多云集群的配置文件
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ParseMultiCloudClusterConfigRequest 请求对象
-     * @return SyncInvoker<ParseMultiCloudClusterConfigRequest, ParseMultiCloudClusterConfigResponse>
-     */
-    public SyncInvoker<ParseMultiCloudClusterConfigRequest, ParseMultiCloudClusterConfigResponse> parseMultiCloudClusterConfigInvoker(
-        ParseMultiCloudClusterConfigRequest request) {
-        return new SyncInvoker<>(request, HssMeta.parseMultiCloudClusterConfig, hcClient);
     }
 
     /**
@@ -5830,35 +5017,6 @@ public class HssClient {
     public SyncInvoker<RemoveLoginWhiteListRequest, RemoveLoginWhiteListResponse> removeLoginWhiteListInvoker(
         RemoveLoginWhiteListRequest request) {
         return new SyncInvoker<>(request, HssMeta.removeLoginWhiteList, hcClient);
-    }
-
-    /**
-     * 删除多云集群
-     *
-     * 删除多云集群
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RemoveMultiCloudClustersRequest 请求对象
-     * @return RemoveMultiCloudClustersResponse
-     */
-    public RemoveMultiCloudClustersResponse removeMultiCloudClusters(RemoveMultiCloudClustersRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.removeMultiCloudClusters);
-    }
-
-    /**
-     * 删除多云集群
-     *
-     * 删除多云集群
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RemoveMultiCloudClustersRequest 请求对象
-     * @return SyncInvoker<RemoveMultiCloudClustersRequest, RemoveMultiCloudClustersResponse>
-     */
-    public SyncInvoker<RemoveMultiCloudClustersRequest, RemoveMultiCloudClustersResponse> removeMultiCloudClustersInvoker(
-        RemoveMultiCloudClustersRequest request) {
-        return new SyncInvoker<>(request, HssMeta.removeMultiCloudClusters, hcClient);
     }
 
     /**
@@ -5949,34 +5107,6 @@ public class HssClient {
     }
 
     /**
-     * 开启/关闭动态网页防篡改防护
-     *
-     * 开启/关闭动态网页防篡改防护，下发/清空动态网页防篡改策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetRaspSwitchRequest 请求对象
-     * @return SetRaspSwitchResponse
-     */
-    public SetRaspSwitchResponse setRaspSwitch(SetRaspSwitchRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.setRaspSwitch);
-    }
-
-    /**
-     * 开启/关闭动态网页防篡改防护
-     *
-     * 开启/关闭动态网页防篡改防护，下发/清空动态网页防篡改策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetRaspSwitchRequest 请求对象
-     * @return SyncInvoker<SetRaspSwitchRequest, SetRaspSwitchResponse>
-     */
-    public SyncInvoker<SetRaspSwitchRequest, SetRaspSwitchResponse> setRaspSwitchInvoker(SetRaspSwitchRequest request) {
-        return new SyncInvoker<>(request, HssMeta.setRaspSwitch, hcClient);
-    }
-
-    /**
      * 设置双因子登录配置
      *
      * 设置双因子登录配置
@@ -6006,95 +5136,6 @@ public class HssClient {
     }
 
     /**
-     * 开启关闭网页防篡改防护
-     *
-     * 开启/关闭网页防篡改功能防护，下发/清空网页防篡改策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetWtpProtectionStatusInfoRequest 请求对象
-     * @return SetWtpProtectionStatusInfoResponse
-     */
-    public SetWtpProtectionStatusInfoResponse setWtpProtectionStatusInfo(SetWtpProtectionStatusInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.setWtpProtectionStatusInfo);
-    }
-
-    /**
-     * 开启关闭网页防篡改防护
-     *
-     * 开启/关闭网页防篡改功能防护，下发/清空网页防篡改策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetWtpProtectionStatusInfoRequest 请求对象
-     * @return SyncInvoker<SetWtpProtectionStatusInfoRequest, SetWtpProtectionStatusInfoResponse>
-     */
-    public SyncInvoker<SetWtpProtectionStatusInfoRequest, SetWtpProtectionStatusInfoResponse> setWtpProtectionStatusInfoInvoker(
-        SetWtpProtectionStatusInfoRequest request) {
-        return new SyncInvoker<>(request, HssMeta.setWtpProtectionStatusInfo, hcClient);
-    }
-
-    /**
-     * 获取部署模板
-     *
-     * 获取部署模板，在安装Daemonset的时候提供选择
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAgentDaemonsetDeployTemplateRequest 请求对象
-     * @return ShowAgentDaemonsetDeployTemplateResponse
-     */
-    public ShowAgentDaemonsetDeployTemplateResponse showAgentDaemonsetDeployTemplate(
-        ShowAgentDaemonsetDeployTemplateRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showAgentDaemonsetDeployTemplate);
-    }
-
-    /**
-     * 获取部署模板
-     *
-     * 获取部署模板，在安装Daemonset的时候提供选择
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAgentDaemonsetDeployTemplateRequest 请求对象
-     * @return SyncInvoker<ShowAgentDaemonsetDeployTemplateRequest, ShowAgentDaemonsetDeployTemplateResponse>
-     */
-    public SyncInvoker<ShowAgentDaemonsetDeployTemplateRequest, ShowAgentDaemonsetDeployTemplateResponse> showAgentDaemonsetDeployTemplateInvoker(
-        ShowAgentDaemonsetDeployTemplateRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showAgentDaemonsetDeployTemplate, hcClient);
-    }
-
-    /**
-     * 获取集群daemonset信息
-     *
-     * 获取集群daemonset信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAgentDaemonsetDetailInfoRequest 请求对象
-     * @return ShowAgentDaemonsetDetailInfoResponse
-     */
-    public ShowAgentDaemonsetDetailInfoResponse showAgentDaemonsetDetailInfo(
-        ShowAgentDaemonsetDetailInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showAgentDaemonsetDetailInfo);
-    }
-
-    /**
-     * 获取集群daemonset信息
-     *
-     * 获取集群daemonset信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAgentDaemonsetDetailInfoRequest 请求对象
-     * @return SyncInvoker<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse>
-     */
-    public SyncInvoker<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse> showAgentDaemonsetDetailInfoInvoker(
-        ShowAgentDaemonsetDetailInfoRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showAgentDaemonsetDetailInfo, hcClient);
-    }
-
-    /**
      * 资产管理-概览-资产状态-主机Agent状态
      *
      * 资产管理-概览-资产状态-主机Agent状态
@@ -6121,65 +5162,6 @@ public class HssClient {
     public SyncInvoker<ShowAgentStatisticsStatusRequest, ShowAgentStatisticsStatusResponse> showAgentStatisticsStatusInvoker(
         ShowAgentStatisticsStatusRequest request) {
         return new SyncInvoker<>(request, HssMeta.showAgentStatisticsStatus, hcClient);
-    }
-
-    /**
-     * 查询“病毒查杀按次计费”开关状态
-     *
-     * 查询“病毒查杀按次计费”开关状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAntivirusPayPerScanStatusRequest 请求对象
-     * @return ShowAntivirusPayPerScanStatusResponse
-     */
-    public ShowAntivirusPayPerScanStatusResponse showAntivirusPayPerScanStatus(
-        ShowAntivirusPayPerScanStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showAntivirusPayPerScanStatus);
-    }
-
-    /**
-     * 查询“病毒查杀按次计费”开关状态
-     *
-     * 查询“病毒查杀按次计费”开关状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAntivirusPayPerScanStatusRequest 请求对象
-     * @return SyncInvoker<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse>
-     */
-    public SyncInvoker<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse> showAntivirusPayPerScanStatusInvoker(
-        ShowAntivirusPayPerScanStatusRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showAntivirusPayPerScanStatus, hcClient);
-    }
-
-    /**
-     * 查询病毒查杀统计信息
-     *
-     * 查询病毒查杀统计信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAntivirusStatisticRequest 请求对象
-     * @return ShowAntivirusStatisticResponse
-     */
-    public ShowAntivirusStatisticResponse showAntivirusStatistic(ShowAntivirusStatisticRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showAntivirusStatistic);
-    }
-
-    /**
-     * 查询病毒查杀统计信息
-     *
-     * 查询病毒查杀统计信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAntivirusStatisticRequest 请求对象
-     * @return SyncInvoker<ShowAntivirusStatisticRequest, ShowAntivirusStatisticResponse>
-     */
-    public SyncInvoker<ShowAntivirusStatisticRequest, ShowAntivirusStatisticResponse> showAntivirusStatisticInvoker(
-        ShowAntivirusStatisticRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showAntivirusStatistic, hcClient);
     }
 
     /**
@@ -6243,7 +5225,7 @@ public class HssClient {
     /**
      * 查询HSS存储库绑定的备份策略信息
      *
-     * 查询HSS存储库绑定的备份策略信息,确保已经购买了勒索防护存储库，可以从cbr云备份服务进行验证，确保已经存在HSS_projectid命名的存储库已经购买
+     * 查询HSS存储库绑定的备份策略信息，确保已经购买了勒索防护存储库，可以从cbr云备份服务进行验证，确保已经存在HSS_projectid命名的存储库已经购买
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6257,7 +5239,7 @@ public class HssClient {
     /**
      * 查询HSS存储库绑定的备份策略信息
      *
-     * 查询HSS存储库绑定的备份策略信息,确保已经购买了勒索防护存储库，可以从cbr云备份服务进行验证，确保已经存在HSS_projectid命名的存储库已经购买
+     * 查询HSS存储库绑定的备份策略信息，确保已经购买了勒索防护存储库，可以从cbr云备份服务进行验证，确保已经存在HSS_projectid命名的存储库已经购买
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6418,7 +5400,7 @@ public class HssClient {
     /**
      * 呈现某一端口详细信息
      *
-     * 呈现某一端口详细信息，如本地端口：80                      类型：TCP 危险程度：正常 端口描述：常用于SSH(SecureShell)-远程登录协议，用于安全登录文件传输（SCP，SFTP）及端口重新定向。
+     * 呈现某一端口详细信息，如本地端口：80，类型：TCP，危险程度：正常，端口描述：常用于SSH(SecureShell)-远程登录协议，用于安全登录文件传输（SCP，SFTP）及端口重新定向。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6432,7 +5414,7 @@ public class HssClient {
     /**
      * 呈现某一端口详细信息
      *
-     * 呈现某一端口详细信息，如本地端口：80                      类型：TCP 危险程度：正常 端口描述：常用于SSH(SecureShell)-远程登录协议，用于安全登录文件传输（SCP，SFTP）及端口重新定向。
+     * 呈现某一端口详细信息，如本地端口：80，类型：TCP，危险程度：正常，端口描述：常用于SSH(SecureShell)-远程登录协议，用于安全登录文件传输（SCP，SFTP）及端口重新定向。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6824,66 +5806,6 @@ public class HssClient {
     }
 
     /**
-     * 获取多云集群的上传镜像指令
-     *
-     * 获取多云集群的上传镜像指令
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowMultiCloudClusterImageCommandRequest 请求对象
-     * @return ShowMultiCloudClusterImageCommandResponse
-     */
-    public ShowMultiCloudClusterImageCommandResponse showMultiCloudClusterImageCommand(
-        ShowMultiCloudClusterImageCommandRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showMultiCloudClusterImageCommand);
-    }
-
-    /**
-     * 获取多云集群的上传镜像指令
-     *
-     * 获取多云集群的上传镜像指令
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowMultiCloudClusterImageCommandRequest 请求对象
-     * @return SyncInvoker<ShowMultiCloudClusterImageCommandRequest, ShowMultiCloudClusterImageCommandResponse>
-     */
-    public SyncInvoker<ShowMultiCloudClusterImageCommandRequest, ShowMultiCloudClusterImageCommandResponse> showMultiCloudClusterImageCommandInvoker(
-        ShowMultiCloudClusterImageCommandRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showMultiCloudClusterImageCommand, hcClient);
-    }
-
-    /**
-     * 获取多云集群的代理安装脚本
-     *
-     * 获取多云集群的代理安装脚本
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowMultiCloudClusterProxyScriptRequest 请求对象
-     * @return ShowMultiCloudClusterProxyScriptResponse
-     */
-    public ShowMultiCloudClusterProxyScriptResponse showMultiCloudClusterProxyScript(
-        ShowMultiCloudClusterProxyScriptRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showMultiCloudClusterProxyScript);
-    }
-
-    /**
-     * 获取多云集群的代理安装脚本
-     *
-     * 获取多云集群的代理安装脚本
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowMultiCloudClusterProxyScriptRequest 请求对象
-     * @return SyncInvoker<ShowMultiCloudClusterProxyScriptRequest, ShowMultiCloudClusterProxyScriptResponse>
-     */
-    public SyncInvoker<ShowMultiCloudClusterProxyScriptRequest, ShowMultiCloudClusterProxyScriptResponse> showMultiCloudClusterProxyScriptInvoker(
-        ShowMultiCloudClusterProxyScriptRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showMultiCloudClusterProxyScript, hcClient);
-    }
-
-    /**
      * 集群网络策略总览
      *
      * 集群网络策略总览
@@ -7204,67 +6126,9 @@ public class HssClient {
     }
 
     /**
-     * 查询漏洞扫描策略
-     *
-     * 查询漏洞扫描策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowVulScanPolicyRequest 请求对象
-     * @return ShowVulScanPolicyResponse
-     */
-    public ShowVulScanPolicyResponse showVulScanPolicy(ShowVulScanPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showVulScanPolicy);
-    }
-
-    /**
-     * 查询漏洞扫描策略
-     *
-     * 查询漏洞扫描策略
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowVulScanPolicyRequest 请求对象
-     * @return SyncInvoker<ShowVulScanPolicyRequest, ShowVulScanPolicyResponse>
-     */
-    public SyncInvoker<ShowVulScanPolicyRequest, ShowVulScanPolicyResponse> showVulScanPolicyInvoker(
-        ShowVulScanPolicyRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showVulScanPolicy, hcClient);
-    }
-
-    /**
-     * 查询漏洞管理统计数据
-     *
-     * 查询漏洞管理统计数据
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowVulStaticsRequest 请求对象
-     * @return ShowVulStaticsResponse
-     */
-    public ShowVulStaticsResponse showVulStatics(ShowVulStaticsRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showVulStatics);
-    }
-
-    /**
-     * 查询漏洞管理统计数据
-     *
-     * 查询漏洞管理统计数据
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowVulStaticsRequest 请求对象
-     * @return SyncInvoker<ShowVulStaticsRequest, ShowVulStaticsResponse>
-     */
-    public SyncInvoker<ShowVulStaticsRequest, ShowVulStaticsResponse> showVulStaticsInvoker(
-        ShowVulStaticsRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showVulStatics, hcClient);
-    }
-
-    /**
      * 开启勒索病毒防护
      *
-     * 开启勒索病毒防护,请保证该region有cbr云备份服务，勒索服务与云备份服务有关联关系
+     * 开启勒索病毒防护，请保证该region有cbr云备份服务，勒索服务与云备份服务有关联关系
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7278,7 +6142,7 @@ public class HssClient {
     /**
      * 开启勒索病毒防护
      *
-     * 开启勒索病毒防护,请保证该region有cbr云备份服务，勒索服务与云备份服务有关联关系
+     * 开启勒索病毒防护，请保证该region有cbr云备份服务，勒索服务与云备份服务有关联关系
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7317,35 +6181,6 @@ public class HssClient {
     public SyncInvoker<StopProtectionRequest, StopProtectionResponse> stopProtectionInvoker(
         StopProtectionRequest request) {
         return new SyncInvoker<>(request, HssMeta.stopProtection, hcClient);
-    }
-
-    /**
-     * 取消扫描任务
-     *
-     * 取消扫描任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SwitchAntivirusTaskRequest 请求对象
-     * @return SwitchAntivirusTaskResponse
-     */
-    public SwitchAntivirusTaskResponse switchAntivirusTask(SwitchAntivirusTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.switchAntivirusTask);
-    }
-
-    /**
-     * 取消扫描任务
-     *
-     * 取消扫描任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SwitchAntivirusTaskRequest 请求对象
-     * @return SyncInvoker<SwitchAntivirusTaskRequest, SwitchAntivirusTaskResponse>
-     */
-    public SyncInvoker<SwitchAntivirusTaskRequest, SwitchAntivirusTaskResponse> switchAntivirusTaskInvoker(
-        SwitchAntivirusTaskRequest request) {
-        return new SyncInvoker<>(request, HssMeta.switchAntivirusTask, hcClient);
     }
 
     /**
@@ -7611,35 +6446,6 @@ public class HssClient {
     }
 
     /**
-     * 同步多云集群的接入状态
-     *
-     * 同步多云集群的接入状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SyncMultiCloudClusterStatusRequest 请求对象
-     * @return SyncMultiCloudClusterStatusResponse
-     */
-    public SyncMultiCloudClusterStatusResponse syncMultiCloudClusterStatus(SyncMultiCloudClusterStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.syncMultiCloudClusterStatus);
-    }
-
-    /**
-     * 同步多云集群的接入状态
-     *
-     * 同步多云集群的接入状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SyncMultiCloudClusterStatusRequest 请求对象
-     * @return SyncInvoker<SyncMultiCloudClusterStatusRequest, SyncMultiCloudClusterStatusResponse>
-     */
-    public SyncInvoker<SyncMultiCloudClusterStatusRequest, SyncMultiCloudClusterStatusResponse> syncMultiCloudClusterStatusInvoker(
-        SyncMultiCloudClusterStatusRequest request) {
-        return new SyncInvoker<>(request, HssMeta.syncMultiCloudClusterStatus, hcClient);
-    }
-
-    /**
      * 同步集群下安全组策略最新数据
      *
      * 同步集群下安全组策略最新数据
@@ -7666,35 +6472,6 @@ public class HssClient {
     public SyncInvoker<SyncSecurityGroupPoliciesRequest, SyncSecurityGroupPoliciesResponse> syncSecurityGroupPoliciesInvoker(
         SyncSecurityGroupPoliciesRequest request) {
         return new SyncInvoker<>(request, HssMeta.syncSecurityGroupPolicies, hcClient);
-    }
-
-    /**
-     * 更新集群daemonset
-     *
-     * 更新集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAgentDaemonsetRequest 请求对象
-     * @return UpdateAgentDaemonsetResponse
-     */
-    public UpdateAgentDaemonsetResponse updateAgentDaemonset(UpdateAgentDaemonsetRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.updateAgentDaemonset);
-    }
-
-    /**
-     * 更新集群daemonset
-     *
-     * 更新集群daemonset
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAgentDaemonsetRequest 请求对象
-     * @return SyncInvoker<UpdateAgentDaemonsetRequest, UpdateAgentDaemonsetResponse>
-     */
-    public SyncInvoker<UpdateAgentDaemonsetRequest, UpdateAgentDaemonsetResponse> updateAgentDaemonsetInvoker(
-        UpdateAgentDaemonsetRequest request) {
-        return new SyncInvoker<>(request, HssMeta.updateAgentDaemonset, hcClient);
     }
 
     /**
@@ -7754,35 +6531,6 @@ public class HssClient {
     public SyncInvoker<UpdateContainerNetworkPolicyRequest, UpdateContainerNetworkPolicyResponse> updateContainerNetworkPolicyInvoker(
         UpdateContainerNetworkPolicyRequest request) {
         return new SyncInvoker<>(request, HssMeta.updateContainerNetworkPolicy, hcClient);
-    }
-
-    /**
-     * 更新多云集群
-     *
-     * 更新多云集群
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateMultiCloudClustersRequest 请求对象
-     * @return UpdateMultiCloudClustersResponse
-     */
-    public UpdateMultiCloudClustersResponse updateMultiCloudClusters(UpdateMultiCloudClustersRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.updateMultiCloudClusters);
-    }
-
-    /**
-     * 更新多云集群
-     *
-     * 更新多云集群
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateMultiCloudClustersRequest 请求对象
-     * @return SyncInvoker<UpdateMultiCloudClustersRequest, UpdateMultiCloudClustersResponse>
-     */
-    public SyncInvoker<UpdateMultiCloudClustersRequest, UpdateMultiCloudClustersResponse> updateMultiCloudClustersInvoker(
-        UpdateMultiCloudClustersRequest request) {
-        return new SyncInvoker<>(request, HssMeta.updateMultiCloudClusters, hcClient);
     }
 
     /**
@@ -7931,6 +6679,35 @@ public class HssClient {
     }
 
     /**
+     * 编辑自定义查杀策略
+     *
+     * 编辑自定义查杀策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeAntivirusPolicyRequest 请求对象
+     * @return ChangeAntivirusPolicyResponse
+     */
+    public ChangeAntivirusPolicyResponse changeAntivirusPolicy(ChangeAntivirusPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.changeAntivirusPolicy);
+    }
+
+    /**
+     * 编辑自定义查杀策略
+     *
+     * 编辑自定义查杀策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeAntivirusPolicyRequest 请求对象
+     * @return SyncInvoker<ChangeAntivirusPolicyRequest, ChangeAntivirusPolicyResponse>
+     */
+    public SyncInvoker<ChangeAntivirusPolicyRequest, ChangeAntivirusPolicyResponse> changeAntivirusPolicyInvoker(
+        ChangeAntivirusPolicyRequest request) {
+        return new SyncInvoker<>(request, HssMeta.changeAntivirusPolicy, hcClient);
+    }
+
+    /**
      * 创建付费病毒扫描任务
      *
      * 创建付费病毒扫描任务
@@ -7957,6 +6734,180 @@ public class HssClient {
     public SyncInvoker<CreateAntiVirusPaidTaskRequest, CreateAntiVirusPaidTaskResponse> createAntiVirusPaidTaskInvoker(
         CreateAntiVirusPaidTaskRequest request) {
         return new SyncInvoker<>(request, HssMeta.createAntiVirusPaidTask, hcClient);
+    }
+
+    /**
+     * 创建自定义查杀策略
+     *
+     * 创建自定义查杀策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAntiVirusPolicyRequest 请求对象
+     * @return CreateAntiVirusPolicyResponse
+     */
+    public CreateAntiVirusPolicyResponse createAntiVirusPolicy(CreateAntiVirusPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.createAntiVirusPolicy);
+    }
+
+    /**
+     * 创建自定义查杀策略
+     *
+     * 创建自定义查杀策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAntiVirusPolicyRequest 请求对象
+     * @return SyncInvoker<CreateAntiVirusPolicyRequest, CreateAntiVirusPolicyResponse>
+     */
+    public SyncInvoker<CreateAntiVirusPolicyRequest, CreateAntiVirusPolicyResponse> createAntiVirusPolicyInvoker(
+        CreateAntiVirusPolicyRequest request) {
+        return new SyncInvoker<>(request, HssMeta.createAntiVirusPolicy, hcClient);
+    }
+
+    /**
+     * 创建病毒扫描任务
+     *
+     * 创建病毒扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAntiVirusTaskRequest 请求对象
+     * @return CreateAntiVirusTaskResponse
+     */
+    public CreateAntiVirusTaskResponse createAntiVirusTask(CreateAntiVirusTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.createAntiVirusTask);
+    }
+
+    /**
+     * 创建病毒扫描任务
+     *
+     * 创建病毒扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAntiVirusTaskRequest 请求对象
+     * @return SyncInvoker<CreateAntiVirusTaskRequest, CreateAntiVirusTaskResponse>
+     */
+    public SyncInvoker<CreateAntiVirusTaskRequest, CreateAntiVirusTaskResponse> createAntiVirusTaskInvoker(
+        CreateAntiVirusTaskRequest request) {
+        return new SyncInvoker<>(request, HssMeta.createAntiVirusTask, hcClient);
+    }
+
+    /**
+     * 删除自定义查杀策略
+     *
+     * 删除自定义查杀策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAntivirusPolicyRequest 请求对象
+     * @return DeleteAntivirusPolicyResponse
+     */
+    public DeleteAntivirusPolicyResponse deleteAntivirusPolicy(DeleteAntivirusPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.deleteAntivirusPolicy);
+    }
+
+    /**
+     * 删除自定义查杀策略
+     *
+     * 删除自定义查杀策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAntivirusPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteAntivirusPolicyRequest, DeleteAntivirusPolicyResponse>
+     */
+    public SyncInvoker<DeleteAntivirusPolicyRequest, DeleteAntivirusPolicyResponse> deleteAntivirusPolicyInvoker(
+        DeleteAntivirusPolicyRequest request) {
+        return new SyncInvoker<>(request, HssMeta.deleteAntivirusPolicy, hcClient);
+    }
+
+    /**
+     * 导出病毒扫描结果列表
+     *
+     * 导出病毒扫描结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportAntiVirusResultRequest 请求对象
+     * @return ExportAntiVirusResultResponse
+     */
+    public ExportAntiVirusResultResponse exportAntiVirusResult(ExportAntiVirusResultRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.exportAntiVirusResult);
+    }
+
+    /**
+     * 导出病毒扫描结果列表
+     *
+     * 导出病毒扫描结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportAntiVirusResultRequest 请求对象
+     * @return SyncInvoker<ExportAntiVirusResultRequest, ExportAntiVirusResultResponse>
+     */
+    public SyncInvoker<ExportAntiVirusResultRequest, ExportAntiVirusResultResponse> exportAntiVirusResultInvoker(
+        ExportAntiVirusResultRequest request) {
+        return new SyncInvoker<>(request, HssMeta.exportAntiVirusResult, hcClient);
+    }
+
+    /**
+     * 处置病毒扫描结果
+     *
+     * 处置病毒扫描结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HandleAntiVirusResultRequest 请求对象
+     * @return HandleAntiVirusResultResponse
+     */
+    public HandleAntiVirusResultResponse handleAntiVirusResult(HandleAntiVirusResultRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.handleAntiVirusResult);
+    }
+
+    /**
+     * 处置病毒扫描结果
+     *
+     * 处置病毒扫描结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HandleAntiVirusResultRequest 请求对象
+     * @return SyncInvoker<HandleAntiVirusResultRequest, HandleAntiVirusResultResponse>
+     */
+    public SyncInvoker<HandleAntiVirusResultRequest, HandleAntiVirusResultResponse> handleAntiVirusResultInvoker(
+        HandleAntiVirusResultRequest request) {
+        return new SyncInvoker<>(request, HssMeta.handleAntiVirusResult, hcClient);
+    }
+
+    /**
+     * 查询病毒查杀可选服务器列表
+     *
+     * 查询病毒查杀可选服务器列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAntiVirusHostRequest 请求对象
+     * @return ListAntiVirusHostResponse
+     */
+    public ListAntiVirusHostResponse listAntiVirusHost(ListAntiVirusHostRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listAntiVirusHost);
+    }
+
+    /**
+     * 查询病毒查杀可选服务器列表
+     *
+     * 查询病毒查杀可选服务器列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAntiVirusHostRequest 请求对象
+     * @return SyncInvoker<ListAntiVirusHostRequest, ListAntiVirusHostResponse>
+     */
+    public SyncInvoker<ListAntiVirusHostRequest, ListAntiVirusHostResponse> listAntiVirusHostInvoker(
+        ListAntiVirusHostRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listAntiVirusHost, hcClient);
     }
 
     /**
@@ -7989,6 +6940,93 @@ public class HssClient {
     }
 
     /**
+     * 查询自定义查杀策略列表
+     *
+     * 查询自定义查杀策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAntiVirusPolicyRequest 请求对象
+     * @return ListAntiVirusPolicyResponse
+     */
+    public ListAntiVirusPolicyResponse listAntiVirusPolicy(ListAntiVirusPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listAntiVirusPolicy);
+    }
+
+    /**
+     * 查询自定义查杀策略列表
+     *
+     * 查询自定义查杀策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAntiVirusPolicyRequest 请求对象
+     * @return SyncInvoker<ListAntiVirusPolicyRequest, ListAntiVirusPolicyResponse>
+     */
+    public SyncInvoker<ListAntiVirusPolicyRequest, ListAntiVirusPolicyResponse> listAntiVirusPolicyInvoker(
+        ListAntiVirusPolicyRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listAntiVirusPolicy, hcClient);
+    }
+
+    /**
+     * 查询病毒扫描结果列表
+     *
+     * 查询病毒扫描结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAntiVirusResultRequest 请求对象
+     * @return ListAntiVirusResultResponse
+     */
+    public ListAntiVirusResultResponse listAntiVirusResult(ListAntiVirusResultRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listAntiVirusResult);
+    }
+
+    /**
+     * 查询病毒扫描结果列表
+     *
+     * 查询病毒扫描结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAntiVirusResultRequest 请求对象
+     * @return SyncInvoker<ListAntiVirusResultRequest, ListAntiVirusResultResponse>
+     */
+    public SyncInvoker<ListAntiVirusResultRequest, ListAntiVirusResultResponse> listAntiVirusResultInvoker(
+        ListAntiVirusResultRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listAntiVirusResult, hcClient);
+    }
+
+    /**
+     * 查看病毒扫描任务列表
+     *
+     * 查看病毒扫描任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAntiVirusTaskRequest 请求对象
+     * @return ListAntiVirusTaskResponse
+     */
+    public ListAntiVirusTaskResponse listAntiVirusTask(ListAntiVirusTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listAntiVirusTask);
+    }
+
+    /**
+     * 查看病毒扫描任务列表
+     *
+     * 查看病毒扫描任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAntiVirusTaskRequest 请求对象
+     * @return SyncInvoker<ListAntiVirusTaskRequest, ListAntiVirusTaskResponse>
+     */
+    public SyncInvoker<ListAntiVirusTaskRequest, ListAntiVirusTaskResponse> listAntiVirusTaskInvoker(
+        ListAntiVirusTaskRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listAntiVirusTask, hcClient);
+    }
+
+    /**
      * 查询病毒查杀免费扫描次数
      *
      * 查询病毒查杀免费扫描次数
@@ -8015,6 +7053,94 @@ public class HssClient {
     public SyncInvoker<ShowAntivirusFreeQuotaRequest, ShowAntivirusFreeQuotaResponse> showAntivirusFreeQuotaInvoker(
         ShowAntivirusFreeQuotaRequest request) {
         return new SyncInvoker<>(request, HssMeta.showAntivirusFreeQuota, hcClient);
+    }
+
+    /**
+     * 查询“病毒查杀按次计费”开关状态
+     *
+     * 查询“病毒查杀按次计费”开关状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntivirusPayPerScanStatusRequest 请求对象
+     * @return ShowAntivirusPayPerScanStatusResponse
+     */
+    public ShowAntivirusPayPerScanStatusResponse showAntivirusPayPerScanStatus(
+        ShowAntivirusPayPerScanStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showAntivirusPayPerScanStatus);
+    }
+
+    /**
+     * 查询“病毒查杀按次计费”开关状态
+     *
+     * 查询“病毒查杀按次计费”开关状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntivirusPayPerScanStatusRequest 请求对象
+     * @return SyncInvoker<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse>
+     */
+    public SyncInvoker<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse> showAntivirusPayPerScanStatusInvoker(
+        ShowAntivirusPayPerScanStatusRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showAntivirusPayPerScanStatus, hcClient);
+    }
+
+    /**
+     * 查询病毒查杀统计信息
+     *
+     * 查询病毒查杀统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntivirusStatisticRequest 请求对象
+     * @return ShowAntivirusStatisticResponse
+     */
+    public ShowAntivirusStatisticResponse showAntivirusStatistic(ShowAntivirusStatisticRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showAntivirusStatistic);
+    }
+
+    /**
+     * 查询病毒查杀统计信息
+     *
+     * 查询病毒查杀统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntivirusStatisticRequest 请求对象
+     * @return SyncInvoker<ShowAntivirusStatisticRequest, ShowAntivirusStatisticResponse>
+     */
+    public SyncInvoker<ShowAntivirusStatisticRequest, ShowAntivirusStatisticResponse> showAntivirusStatisticInvoker(
+        ShowAntivirusStatisticRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showAntivirusStatistic, hcClient);
+    }
+
+    /**
+     * 取消扫描任务
+     *
+     * 取消扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchAntivirusTaskRequest 请求对象
+     * @return SwitchAntivirusTaskResponse
+     */
+    public SwitchAntivirusTaskResponse switchAntivirusTask(SwitchAntivirusTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.switchAntivirusTask);
+    }
+
+    /**
+     * 取消扫描任务
+     *
+     * 取消扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchAntivirusTaskRequest 请求对象
+     * @return SyncInvoker<SwitchAntivirusTaskRequest, SwitchAntivirusTaskResponse>
+     */
+    public SyncInvoker<SwitchAntivirusTaskRequest, SwitchAntivirusTaskResponse> switchAntivirusTaskInvoker(
+        SwitchAntivirusTaskRequest request) {
+        return new SyncInvoker<>(request, HssMeta.switchAntivirusTask, hcClient);
     }
 
     /**
@@ -8694,35 +7820,6 @@ public class HssClient {
     }
 
     /**
-     * 批量上传文件
-     *
-     * 批量上传文件
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchUploadFilesRequest 请求对象
-     * @return BatchUploadFilesResponse
-     */
-    public BatchUploadFilesResponse batchUploadFiles(BatchUploadFilesRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.batchUploadFiles);
-    }
-
-    /**
-     * 批量上传文件
-     *
-     * 批量上传文件
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchUploadFilesRequest 请求对象
-     * @return SyncInvoker<BatchUploadFilesRequest, BatchUploadFilesResponse>
-     */
-    public SyncInvoker<BatchUploadFilesRequest, BatchUploadFilesResponse> batchUploadFilesInvoker(
-        BatchUploadFilesRequest request) {
-        return new SyncInvoker<>(request, HssMeta.batchUploadFiles, hcClient);
-    }
-
-    /**
      * 查询项目配置
      *
      * 查询项目配置
@@ -8807,6 +7904,151 @@ public class HssClient {
     public SyncInvoker<SaveBrowsingHistoryRequest, SaveBrowsingHistoryResponse> saveBrowsingHistoryInvoker(
         SaveBrowsingHistoryRequest request) {
         return new SyncInvoker<>(request, HssMeta.saveBrowsingHistory, hcClient);
+    }
+
+    /**
+     * 批量卸载集群daemonset
+     *
+     * 批量卸载集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAgentDaemonsetRequest 请求对象
+     * @return BatchDeleteAgentDaemonsetResponse
+     */
+    public BatchDeleteAgentDaemonsetResponse batchDeleteAgentDaemonset(BatchDeleteAgentDaemonsetRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.batchDeleteAgentDaemonset);
+    }
+
+    /**
+     * 批量卸载集群daemonset
+     *
+     * 批量卸载集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAgentDaemonsetRequest 请求对象
+     * @return SyncInvoker<BatchDeleteAgentDaemonsetRequest, BatchDeleteAgentDaemonsetResponse>
+     */
+    public SyncInvoker<BatchDeleteAgentDaemonsetRequest, BatchDeleteAgentDaemonsetResponse> batchDeleteAgentDaemonsetInvoker(
+        BatchDeleteAgentDaemonsetRequest request) {
+        return new SyncInvoker<>(request, HssMeta.batchDeleteAgentDaemonset, hcClient);
+    }
+
+    /**
+     * 批量升级集群daemonset
+     *
+     * 批量升级集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpgradeAgentDaemonsetRequest 请求对象
+     * @return BatchUpgradeAgentDaemonsetResponse
+     */
+    public BatchUpgradeAgentDaemonsetResponse batchUpgradeAgentDaemonset(BatchUpgradeAgentDaemonsetRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.batchUpgradeAgentDaemonset);
+    }
+
+    /**
+     * 批量升级集群daemonset
+     *
+     * 批量升级集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpgradeAgentDaemonsetRequest 请求对象
+     * @return SyncInvoker<BatchUpgradeAgentDaemonsetRequest, BatchUpgradeAgentDaemonsetResponse>
+     */
+    public SyncInvoker<BatchUpgradeAgentDaemonsetRequest, BatchUpgradeAgentDaemonsetResponse> batchUpgradeAgentDaemonsetInvoker(
+        BatchUpgradeAgentDaemonsetRequest request) {
+        return new SyncInvoker<>(request, HssMeta.batchUpgradeAgentDaemonset, hcClient);
+    }
+
+    /**
+     * 创建集群daemonset
+     *
+     * 创建集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgentDaemonsetRequest 请求对象
+     * @return CreateAgentDaemonsetResponse
+     */
+    public CreateAgentDaemonsetResponse createAgentDaemonset(CreateAgentDaemonsetRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.createAgentDaemonset);
+    }
+
+    /**
+     * 创建集群daemonset
+     *
+     * 创建集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgentDaemonsetRequest 请求对象
+     * @return SyncInvoker<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse>
+     */
+    public SyncInvoker<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse> createAgentDaemonsetInvoker(
+        CreateAgentDaemonsetRequest request) {
+        return new SyncInvoker<>(request, HssMeta.createAgentDaemonset, hcClient);
+    }
+
+    /**
+     * 创建多云集群
+     *
+     * 创建多云集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMultiCloudClustersRequest 请求对象
+     * @return CreateMultiCloudClustersResponse
+     */
+    public CreateMultiCloudClustersResponse createMultiCloudClusters(CreateMultiCloudClustersRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.createMultiCloudClusters);
+    }
+
+    /**
+     * 创建多云集群
+     *
+     * 创建多云集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMultiCloudClustersRequest 请求对象
+     * @return SyncInvoker<CreateMultiCloudClustersRequest, CreateMultiCloudClustersResponse>
+     */
+    public SyncInvoker<CreateMultiCloudClustersRequest, CreateMultiCloudClustersResponse> createMultiCloudClustersInvoker(
+        CreateMultiCloudClustersRequest request) {
+        return new SyncInvoker<>(request, HssMeta.createMultiCloudClusters, hcClient);
+    }
+
+    /**
+     * 删除集群daemonset
+     *
+     * 删除集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAgentDaemonsetRequest 请求对象
+     * @return DeleteAgentDaemonsetResponse
+     */
+    public DeleteAgentDaemonsetResponse deleteAgentDaemonset(DeleteAgentDaemonsetRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.deleteAgentDaemonset);
+    }
+
+    /**
+     * 删除集群daemonset
+     *
+     * 删除集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAgentDaemonsetRequest 请求对象
+     * @return SyncInvoker<DeleteAgentDaemonsetRequest, DeleteAgentDaemonsetResponse>
+     */
+    public SyncInvoker<DeleteAgentDaemonsetRequest, DeleteAgentDaemonsetResponse> deleteAgentDaemonsetInvoker(
+        DeleteAgentDaemonsetRequest request) {
+        return new SyncInvoker<>(request, HssMeta.deleteAgentDaemonset, hcClient);
     }
 
     /**
@@ -8927,6 +8169,35 @@ public class HssClient {
     }
 
     /**
+     * 查询多云集群
+     *
+     * 查询多云集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMultiCloudClustersRequest 请求对象
+     * @return ListMultiCloudClustersResponse
+     */
+    public ListMultiCloudClustersResponse listMultiCloudClusters(ListMultiCloudClustersRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listMultiCloudClusters);
+    }
+
+    /**
+     * 查询多云集群
+     *
+     * 查询多云集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMultiCloudClustersRequest 请求对象
+     * @return SyncInvoker<ListMultiCloudClustersRequest, ListMultiCloudClustersResponse>
+     */
+    public SyncInvoker<ListMultiCloudClustersRequest, ListMultiCloudClustersResponse> listMultiCloudClustersInvoker(
+        ListMultiCloudClustersRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listMultiCloudClusters, hcClient);
+    }
+
+    /**
      * 修改CI/CD配置
      *
      * 修改CI/CD配置
@@ -8956,6 +8227,125 @@ public class HssClient {
     }
 
     /**
+     * 解析多云集群的配置文件
+     *
+     * 解析多云集群的配置文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ParseMultiCloudClusterConfigRequest 请求对象
+     * @return ParseMultiCloudClusterConfigResponse
+     */
+    public ParseMultiCloudClusterConfigResponse parseMultiCloudClusterConfig(
+        ParseMultiCloudClusterConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.parseMultiCloudClusterConfig);
+    }
+
+    /**
+     * 解析多云集群的配置文件
+     *
+     * 解析多云集群的配置文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ParseMultiCloudClusterConfigRequest 请求对象
+     * @return SyncInvoker<ParseMultiCloudClusterConfigRequest, ParseMultiCloudClusterConfigResponse>
+     */
+    public SyncInvoker<ParseMultiCloudClusterConfigRequest, ParseMultiCloudClusterConfigResponse> parseMultiCloudClusterConfigInvoker(
+        ParseMultiCloudClusterConfigRequest request) {
+        return new SyncInvoker<>(request, HssMeta.parseMultiCloudClusterConfig, hcClient);
+    }
+
+    /**
+     * 删除多云集群
+     *
+     * 删除多云集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveMultiCloudClustersRequest 请求对象
+     * @return RemoveMultiCloudClustersResponse
+     */
+    public RemoveMultiCloudClustersResponse removeMultiCloudClusters(RemoveMultiCloudClustersRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.removeMultiCloudClusters);
+    }
+
+    /**
+     * 删除多云集群
+     *
+     * 删除多云集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveMultiCloudClustersRequest 请求对象
+     * @return SyncInvoker<RemoveMultiCloudClustersRequest, RemoveMultiCloudClustersResponse>
+     */
+    public SyncInvoker<RemoveMultiCloudClustersRequest, RemoveMultiCloudClustersResponse> removeMultiCloudClustersInvoker(
+        RemoveMultiCloudClustersRequest request) {
+        return new SyncInvoker<>(request, HssMeta.removeMultiCloudClusters, hcClient);
+    }
+
+    /**
+     * 获取部署模板
+     *
+     * 获取部署模板，在安装Daemonset的时候提供选择
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgentDaemonsetDeployTemplateRequest 请求对象
+     * @return ShowAgentDaemonsetDeployTemplateResponse
+     */
+    public ShowAgentDaemonsetDeployTemplateResponse showAgentDaemonsetDeployTemplate(
+        ShowAgentDaemonsetDeployTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showAgentDaemonsetDeployTemplate);
+    }
+
+    /**
+     * 获取部署模板
+     *
+     * 获取部署模板，在安装Daemonset的时候提供选择
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgentDaemonsetDeployTemplateRequest 请求对象
+     * @return SyncInvoker<ShowAgentDaemonsetDeployTemplateRequest, ShowAgentDaemonsetDeployTemplateResponse>
+     */
+    public SyncInvoker<ShowAgentDaemonsetDeployTemplateRequest, ShowAgentDaemonsetDeployTemplateResponse> showAgentDaemonsetDeployTemplateInvoker(
+        ShowAgentDaemonsetDeployTemplateRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showAgentDaemonsetDeployTemplate, hcClient);
+    }
+
+    /**
+     * 获取集群daemonset信息
+     *
+     * 获取集群daemonset信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgentDaemonsetDetailInfoRequest 请求对象
+     * @return ShowAgentDaemonsetDetailInfoResponse
+     */
+    public ShowAgentDaemonsetDetailInfoResponse showAgentDaemonsetDetailInfo(
+        ShowAgentDaemonsetDetailInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showAgentDaemonsetDetailInfo);
+    }
+
+    /**
+     * 获取集群daemonset信息
+     *
+     * 获取集群daemonset信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgentDaemonsetDetailInfoRequest 请求对象
+     * @return SyncInvoker<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse>
+     */
+    public SyncInvoker<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse> showAgentDaemonsetDetailInfoInvoker(
+        ShowAgentDaemonsetDetailInfoRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showAgentDaemonsetDetailInfo, hcClient);
+    }
+
+    /**
      * 查询CI/CD配置信息
      *
      * 查询CI/CD配置信息
@@ -8982,6 +8372,153 @@ public class HssClient {
     public SyncInvoker<ShowCicdConfigurationRequest, ShowCicdConfigurationResponse> showCicdConfigurationInvoker(
         ShowCicdConfigurationRequest request) {
         return new SyncInvoker<>(request, HssMeta.showCicdConfiguration, hcClient);
+    }
+
+    /**
+     * 获取多云集群的上传镜像指令
+     *
+     * 获取多云集群的上传镜像指令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMultiCloudClusterImageCommandRequest 请求对象
+     * @return ShowMultiCloudClusterImageCommandResponse
+     */
+    public ShowMultiCloudClusterImageCommandResponse showMultiCloudClusterImageCommand(
+        ShowMultiCloudClusterImageCommandRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showMultiCloudClusterImageCommand);
+    }
+
+    /**
+     * 获取多云集群的上传镜像指令
+     *
+     * 获取多云集群的上传镜像指令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMultiCloudClusterImageCommandRequest 请求对象
+     * @return SyncInvoker<ShowMultiCloudClusterImageCommandRequest, ShowMultiCloudClusterImageCommandResponse>
+     */
+    public SyncInvoker<ShowMultiCloudClusterImageCommandRequest, ShowMultiCloudClusterImageCommandResponse> showMultiCloudClusterImageCommandInvoker(
+        ShowMultiCloudClusterImageCommandRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showMultiCloudClusterImageCommand, hcClient);
+    }
+
+    /**
+     * 获取多云集群的代理安装脚本
+     *
+     * 获取多云集群的代理安装脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMultiCloudClusterProxyScriptRequest 请求对象
+     * @return ShowMultiCloudClusterProxyScriptResponse
+     */
+    public ShowMultiCloudClusterProxyScriptResponse showMultiCloudClusterProxyScript(
+        ShowMultiCloudClusterProxyScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showMultiCloudClusterProxyScript);
+    }
+
+    /**
+     * 获取多云集群的代理安装脚本
+     *
+     * 获取多云集群的代理安装脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMultiCloudClusterProxyScriptRequest 请求对象
+     * @return SyncInvoker<ShowMultiCloudClusterProxyScriptRequest, ShowMultiCloudClusterProxyScriptResponse>
+     */
+    public SyncInvoker<ShowMultiCloudClusterProxyScriptRequest, ShowMultiCloudClusterProxyScriptResponse> showMultiCloudClusterProxyScriptInvoker(
+        ShowMultiCloudClusterProxyScriptRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showMultiCloudClusterProxyScript, hcClient);
+    }
+
+    /**
+     * 同步多云集群的接入状态
+     *
+     * 同步多云集群的接入状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncMultiCloudClusterStatusRequest 请求对象
+     * @return SyncMultiCloudClusterStatusResponse
+     */
+    public SyncMultiCloudClusterStatusResponse syncMultiCloudClusterStatus(SyncMultiCloudClusterStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.syncMultiCloudClusterStatus);
+    }
+
+    /**
+     * 同步多云集群的接入状态
+     *
+     * 同步多云集群的接入状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncMultiCloudClusterStatusRequest 请求对象
+     * @return SyncInvoker<SyncMultiCloudClusterStatusRequest, SyncMultiCloudClusterStatusResponse>
+     */
+    public SyncInvoker<SyncMultiCloudClusterStatusRequest, SyncMultiCloudClusterStatusResponse> syncMultiCloudClusterStatusInvoker(
+        SyncMultiCloudClusterStatusRequest request) {
+        return new SyncInvoker<>(request, HssMeta.syncMultiCloudClusterStatus, hcClient);
+    }
+
+    /**
+     * 更新集群daemonset
+     *
+     * 更新集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAgentDaemonsetRequest 请求对象
+     * @return UpdateAgentDaemonsetResponse
+     */
+    public UpdateAgentDaemonsetResponse updateAgentDaemonset(UpdateAgentDaemonsetRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.updateAgentDaemonset);
+    }
+
+    /**
+     * 更新集群daemonset
+     *
+     * 更新集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAgentDaemonsetRequest 请求对象
+     * @return SyncInvoker<UpdateAgentDaemonsetRequest, UpdateAgentDaemonsetResponse>
+     */
+    public SyncInvoker<UpdateAgentDaemonsetRequest, UpdateAgentDaemonsetResponse> updateAgentDaemonsetInvoker(
+        UpdateAgentDaemonsetRequest request) {
+        return new SyncInvoker<>(request, HssMeta.updateAgentDaemonset, hcClient);
+    }
+
+    /**
+     * 更新多云集群
+     *
+     * 更新多云集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMultiCloudClustersRequest 请求对象
+     * @return UpdateMultiCloudClustersResponse
+     */
+    public UpdateMultiCloudClustersResponse updateMultiCloudClusters(UpdateMultiCloudClustersRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.updateMultiCloudClusters);
+    }
+
+    /**
+     * 更新多云集群
+     *
+     * 更新多云集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMultiCloudClustersRequest 请求对象
+     * @return SyncInvoker<UpdateMultiCloudClustersRequest, UpdateMultiCloudClustersResponse>
+     */
+    public SyncInvoker<UpdateMultiCloudClustersRequest, UpdateMultiCloudClustersResponse> updateMultiCloudClustersInvoker(
+        UpdateMultiCloudClustersRequest request) {
+        return new SyncInvoker<>(request, HssMeta.updateMultiCloudClusters, hcClient);
     }
 
     /**
@@ -9300,6 +8837,64 @@ public class HssClient {
     }
 
     /**
+     * 修改漏洞扫描策略
+     *
+     * 修改漏洞扫描策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVulScanPolicyRequest 请求对象
+     * @return ChangeVulScanPolicyResponse
+     */
+    public ChangeVulScanPolicyResponse changeVulScanPolicy(ChangeVulScanPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.changeVulScanPolicy);
+    }
+
+    /**
+     * 修改漏洞扫描策略
+     *
+     * 修改漏洞扫描策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVulScanPolicyRequest 请求对象
+     * @return SyncInvoker<ChangeVulScanPolicyRequest, ChangeVulScanPolicyResponse>
+     */
+    public SyncInvoker<ChangeVulScanPolicyRequest, ChangeVulScanPolicyResponse> changeVulScanPolicyInvoker(
+        ChangeVulScanPolicyRequest request) {
+        return new SyncInvoker<>(request, HssMeta.changeVulScanPolicy, hcClient);
+    }
+
+    /**
+     * 创建漏洞扫描任务
+     *
+     * 创建漏洞扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVulnerabilityScanTaskRequest 请求对象
+     * @return CreateVulnerabilityScanTaskResponse
+     */
+    public CreateVulnerabilityScanTaskResponse createVulnerabilityScanTask(CreateVulnerabilityScanTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.createVulnerabilityScanTask);
+    }
+
+    /**
+     * 创建漏洞扫描任务
+     *
+     * 创建漏洞扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVulnerabilityScanTaskRequest 请求对象
+     * @return SyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse>
+     */
+    public SyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse> createVulnerabilityScanTaskInvoker(
+        CreateVulnerabilityScanTaskRequest request) {
+        return new SyncInvoker<>(request, HssMeta.createVulnerabilityScanTask, hcClient);
+    }
+
+    /**
      * 创建历史处理的漏洞导出任务
      *
      * 创建历史处理的漏洞导出任务
@@ -9356,6 +8951,62 @@ public class HssClient {
     public SyncInvoker<ExportVulHandleHistoryRequest, ExportVulHandleHistoryResponse> exportVulHandleHistoryInvoker(
         ExportVulHandleHistoryRequest request) {
         return new SyncInvoker<>(request, HssMeta.exportVulHandleHistory, hcClient);
+    }
+
+    /**
+     * 导出漏洞及漏洞影响的主机的相关信息
+     *
+     * 导出漏洞及漏洞影响的主机的相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportVulsRequest 请求对象
+     * @return ExportVulsResponse
+     */
+    public ExportVulsResponse exportVuls(ExportVulsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.exportVuls);
+    }
+
+    /**
+     * 导出漏洞及漏洞影响的主机的相关信息
+     *
+     * 导出漏洞及漏洞影响的主机的相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportVulsRequest 请求对象
+     * @return SyncInvoker<ExportVulsRequest, ExportVulsResponse>
+     */
+    public SyncInvoker<ExportVulsRequest, ExportVulsResponse> exportVulsInvoker(ExportVulsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.exportVuls, hcClient);
+    }
+
+    /**
+     * 查询单台服务器漏洞信息
+     *
+     * 查询单台服务器漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostVulsRequest 请求对象
+     * @return ListHostVulsResponse
+     */
+    public ListHostVulsResponse listHostVuls(ListHostVulsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listHostVuls);
+    }
+
+    /**
+     * 查询单台服务器漏洞信息
+     *
+     * 查询单台服务器漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostVulsRequest 请求对象
+     * @return SyncInvoker<ListHostVulsRequest, ListHostVulsResponse>
+     */
+    public SyncInvoker<ListHostVulsRequest, ListHostVulsResponse> listHostVulsInvoker(ListHostVulsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listHostVuls, hcClient);
     }
 
     /**
@@ -9417,6 +9068,121 @@ public class HssClient {
     }
 
     /**
+     * 查询单个漏洞影响的云服务器信息
+     *
+     * 查询单个漏洞影响的云服务器信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulHostsRequest 请求对象
+     * @return ListVulHostsResponse
+     */
+    public ListVulHostsResponse listVulHosts(ListVulHostsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listVulHosts);
+    }
+
+    /**
+     * 查询单个漏洞影响的云服务器信息
+     *
+     * 查询单个漏洞影响的云服务器信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulHostsRequest 请求对象
+     * @return SyncInvoker<ListVulHostsRequest, ListVulHostsResponse>
+     */
+    public SyncInvoker<ListVulHostsRequest, ListVulHostsResponse> listVulHostsInvoker(ListVulHostsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listVulHosts, hcClient);
+    }
+
+    /**
+     * 查询漏洞扫描任务列表
+     *
+     * 查询漏洞扫描任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulScanTaskRequest 请求对象
+     * @return ListVulScanTaskResponse
+     */
+    public ListVulScanTaskResponse listVulScanTask(ListVulScanTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listVulScanTask);
+    }
+
+    /**
+     * 查询漏洞扫描任务列表
+     *
+     * 查询漏洞扫描任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulScanTaskRequest 请求对象
+     * @return SyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse>
+     */
+    public SyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse> listVulScanTaskInvoker(
+        ListVulScanTaskRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listVulScanTask, hcClient);
+    }
+
+    /**
+     * 查询漏洞扫描任务对应的主机列表
+     *
+     * 查询漏洞扫描任务对应的主机列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulScanTaskHostRequest 请求对象
+     * @return ListVulScanTaskHostResponse
+     */
+    public ListVulScanTaskHostResponse listVulScanTaskHost(ListVulScanTaskHostRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listVulScanTaskHost);
+    }
+
+    /**
+     * 查询漏洞扫描任务对应的主机列表
+     *
+     * 查询漏洞扫描任务对应的主机列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulScanTaskHostRequest 请求对象
+     * @return SyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse>
+     */
+    public SyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse> listVulScanTaskHostInvoker(
+        ListVulScanTaskHostRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listVulScanTaskHost, hcClient);
+    }
+
+    /**
+     * 查询漏洞列表
+     *
+     * 查询漏洞列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulnerabilitiesRequest 请求对象
+     * @return ListVulnerabilitiesResponse
+     */
+    public ListVulnerabilitiesResponse listVulnerabilities(ListVulnerabilitiesRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listVulnerabilities);
+    }
+
+    /**
+     * 查询漏洞列表
+     *
+     * 查询漏洞列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulnerabilitiesRequest 请求对象
+     * @return SyncInvoker<ListVulnerabilitiesRequest, ListVulnerabilitiesResponse>
+     */
+    public SyncInvoker<ListVulnerabilitiesRequest, ListVulnerabilitiesResponse> listVulnerabilitiesInvoker(
+        ListVulnerabilitiesRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listVulnerabilities, hcClient);
+    }
+
+    /**
      * 记录用户查看漏洞任务管理页面的最后时间
      *
      * 记录用户查看漏洞任务管理页面的最后时间
@@ -9443,6 +9209,64 @@ public class HssClient {
     public SyncInvoker<RecordUserViewVulTaskRequest, RecordUserViewVulTaskResponse> recordUserViewVulTaskInvoker(
         RecordUserViewVulTaskRequest request) {
         return new SyncInvoker<>(request, HssMeta.recordUserViewVulTask, hcClient);
+    }
+
+    /**
+     * 查询漏洞扫描策略
+     *
+     * 查询漏洞扫描策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVulScanPolicyRequest 请求对象
+     * @return ShowVulScanPolicyResponse
+     */
+    public ShowVulScanPolicyResponse showVulScanPolicy(ShowVulScanPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showVulScanPolicy);
+    }
+
+    /**
+     * 查询漏洞扫描策略
+     *
+     * 查询漏洞扫描策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVulScanPolicyRequest 请求对象
+     * @return SyncInvoker<ShowVulScanPolicyRequest, ShowVulScanPolicyResponse>
+     */
+    public SyncInvoker<ShowVulScanPolicyRequest, ShowVulScanPolicyResponse> showVulScanPolicyInvoker(
+        ShowVulScanPolicyRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showVulScanPolicy, hcClient);
+    }
+
+    /**
+     * 查询漏洞管理统计数据
+     *
+     * 查询漏洞管理统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVulStaticsRequest 请求对象
+     * @return ShowVulStaticsResponse
+     */
+    public ShowVulStaticsResponse showVulStatics(ShowVulStaticsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showVulStatics);
+    }
+
+    /**
+     * 查询漏洞管理统计数据
+     *
+     * 查询漏洞管理统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVulStaticsRequest 请求对象
+     * @return SyncInvoker<ShowVulStaticsRequest, ShowVulStaticsResponse>
+     */
+    public SyncInvoker<ShowVulStaticsRequest, ShowVulStaticsResponse> showVulStaticsInvoker(
+        ShowVulStaticsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showVulStatics, hcClient);
     }
 
     /**
@@ -9534,6 +9358,65 @@ public class HssClient {
     }
 
     /**
+     * 查询主机静态网页防篡改防护动态
+     *
+     * 查询主机静态网页防篡改防护动态：展示服务器名称、服务器ip、防护策略、检测时间、防护文件、事件描述信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostProtectHistoryInfoRequest 请求对象
+     * @return ListHostProtectHistoryInfoResponse
+     */
+    public ListHostProtectHistoryInfoResponse listHostProtectHistoryInfo(ListHostProtectHistoryInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listHostProtectHistoryInfo);
+    }
+
+    /**
+     * 查询主机静态网页防篡改防护动态
+     *
+     * 查询主机静态网页防篡改防护动态：展示服务器名称、服务器ip、防护策略、检测时间、防护文件、事件描述信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostProtectHistoryInfoRequest 请求对象
+     * @return SyncInvoker<ListHostProtectHistoryInfoRequest, ListHostProtectHistoryInfoResponse>
+     */
+    public SyncInvoker<ListHostProtectHistoryInfoRequest, ListHostProtectHistoryInfoResponse> listHostProtectHistoryInfoInvoker(
+        ListHostProtectHistoryInfoRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listHostProtectHistoryInfo, hcClient);
+    }
+
+    /**
+     * 查询主机动态网页防篡改防护动态
+     *
+     * 查询主机动态网页防篡改防护动态：包含告警级别、服务器ip、服务器名称、威胁类型、告警时间、攻击源ip、攻击源url信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostRaspProtectHistoryInfoRequest 请求对象
+     * @return ListHostRaspProtectHistoryInfoResponse
+     */
+    public ListHostRaspProtectHistoryInfoResponse listHostRaspProtectHistoryInfo(
+        ListHostRaspProtectHistoryInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listHostRaspProtectHistoryInfo);
+    }
+
+    /**
+     * 查询主机动态网页防篡改防护动态
+     *
+     * 查询主机动态网页防篡改防护动态：包含告警级别、服务器ip、服务器名称、威胁类型、告警时间、攻击源ip、攻击源url信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHostRaspProtectHistoryInfoRequest 请求对象
+     * @return SyncInvoker<ListHostRaspProtectHistoryInfoRequest, ListHostRaspProtectHistoryInfoResponse>
+     */
+    public SyncInvoker<ListHostRaspProtectHistoryInfoRequest, ListHostRaspProtectHistoryInfoResponse> listHostRaspProtectHistoryInfoInvoker(
+        ListHostRaspProtectHistoryInfoRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listHostRaspProtectHistoryInfo, hcClient);
+    }
+
+    /**
      * 查询网页防篡改可选服务器列表
      *
      * 查询网页防篡改可选服务器列表
@@ -9560,6 +9443,92 @@ public class HssClient {
     public SyncInvoker<ListWebTamperHostRequest, ListWebTamperHostResponse> listWebTamperHostInvoker(
         ListWebTamperHostRequest request) {
         return new SyncInvoker<>(request, HssMeta.listWebTamperHost, hcClient);
+    }
+
+    /**
+     * 查询防护列表
+     *
+     * 查询防护列表：查询网页防篡改主机防护状态列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWtpProtectHostRequest 请求对象
+     * @return ListWtpProtectHostResponse
+     */
+    public ListWtpProtectHostResponse listWtpProtectHost(ListWtpProtectHostRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listWtpProtectHost);
+    }
+
+    /**
+     * 查询防护列表
+     *
+     * 查询防护列表：查询网页防篡改主机防护状态列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWtpProtectHostRequest 请求对象
+     * @return SyncInvoker<ListWtpProtectHostRequest, ListWtpProtectHostResponse>
+     */
+    public SyncInvoker<ListWtpProtectHostRequest, ListWtpProtectHostResponse> listWtpProtectHostInvoker(
+        ListWtpProtectHostRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listWtpProtectHost, hcClient);
+    }
+
+    /**
+     * 开启/关闭动态网页防篡改防护
+     *
+     * 开启/关闭动态网页防篡改防护，下发/清空动态网页防篡改策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRaspSwitchRequest 请求对象
+     * @return SetRaspSwitchResponse
+     */
+    public SetRaspSwitchResponse setRaspSwitch(SetRaspSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.setRaspSwitch);
+    }
+
+    /**
+     * 开启/关闭动态网页防篡改防护
+     *
+     * 开启/关闭动态网页防篡改防护，下发/清空动态网页防篡改策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRaspSwitchRequest 请求对象
+     * @return SyncInvoker<SetRaspSwitchRequest, SetRaspSwitchResponse>
+     */
+    public SyncInvoker<SetRaspSwitchRequest, SetRaspSwitchResponse> setRaspSwitchInvoker(SetRaspSwitchRequest request) {
+        return new SyncInvoker<>(request, HssMeta.setRaspSwitch, hcClient);
+    }
+
+    /**
+     * 开启关闭网页防篡改防护
+     *
+     * 开启/关闭网页防篡改功能防护，下发/清空网页防篡改策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetWtpProtectionStatusInfoRequest 请求对象
+     * @return SetWtpProtectionStatusInfoResponse
+     */
+    public SetWtpProtectionStatusInfoResponse setWtpProtectionStatusInfo(SetWtpProtectionStatusInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.setWtpProtectionStatusInfo);
+    }
+
+    /**
+     * 开启关闭网页防篡改防护
+     *
+     * 开启/关闭网页防篡改功能防护，下发/清空网页防篡改策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetWtpProtectionStatusInfoRequest 请求对象
+     * @return SyncInvoker<SetWtpProtectionStatusInfoRequest, SetWtpProtectionStatusInfoResponse>
+     */
+    public SyncInvoker<SetWtpProtectionStatusInfoRequest, SetWtpProtectionStatusInfoResponse> setWtpProtectionStatusInfoInvoker(
+        SetWtpProtectionStatusInfoRequest request) {
+        return new SyncInvoker<>(request, HssMeta.setWtpProtectionStatusInfo, hcClient);
     }
 
     /**

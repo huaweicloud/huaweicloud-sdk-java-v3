@@ -32,7 +32,7 @@ public class ListUserConnectionRequest {
     }
 
     /**
-     * 单次查询的大小[1-100]。
+     * 单次查询的大小[1-100]，默认值10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -51,7 +51,7 @@ public class ListUserConnectionRequest {
     }
 
     /**
-     * 查询的偏移量。
+     * 查询的偏移量，默认值0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset

@@ -86,7 +86,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: Agent ID **取值范围**: 字符长度1-64位 
      * @return agentId
      */
     public String getAgentId() {
@@ -103,7 +103,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
+     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -311,7 +311,7 @@ public class UserResponseInfo {
     }
 
     /**
-     * **参数解释**： 容器实例名称 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 容器实例名称，只有容器类型的告警有 **取值范围**： 字符长度1-256位 
      * @return containerName
      */
     public String getContainerName() {

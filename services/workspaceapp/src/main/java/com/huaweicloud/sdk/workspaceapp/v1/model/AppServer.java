@@ -868,7 +868,7 @@ public class AppServer {
     }
 
     /**
-     * 企业项目ID,仅企业项目会返回
+     * 企业项目ID,仅企业项目会返回。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -901,7 +901,7 @@ public class AppServer {
     }
 
     /**
-     * 标签信息
+     * 标签信息。
      * @return tags
      */
     public List<TmsTag> getTags() {

@@ -72,7 +72,7 @@ public class ListUsersResponse extends SdkResponse {
     }
 
     /**
-     * 身份源中的用户列表
+     * IdentityStore中的用户列表。
      * @return users
      */
     public List<UserDto> getUsers() {

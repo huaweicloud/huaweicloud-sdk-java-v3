@@ -39,7 +39,7 @@ public class LoginWhiteIpResponseInfo {
     }
 
     /**
-     * 白名单启用状态, 包含如下:   - true : 已启用   - false : 已禁用
+     * 白名单启用状态，包含如下：   - true：已启用   - false：已禁用
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -56,7 +56,7 @@ public class LoginWhiteIpResponseInfo {
     }
 
     /**
-     * 白名单IP或IP网段,IP网段由IP地址和掩码组成,以'/'连接。
+     * 白名单IP或IP网段，IP网段由IP地址和掩码组成，以‘/’连接。
      * @return whiteIp
      */
     public String getWhiteIp() {

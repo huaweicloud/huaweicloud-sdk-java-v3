@@ -142,7 +142,7 @@ public class ListPermissionSetsProvisionedToAccountRequest {
     }
 
     /**
-     * IAM身份中心实例的全局唯一标识符（ID）。
+     * IAM Identity Center实例的全局唯一标识符（ID）
      * @return instanceId
      */
     public String getInstanceId() {
@@ -159,7 +159,7 @@ public class ListPermissionSetsProvisionedToAccountRequest {
     }
 
     /**
-     * 每个请求返回的最大结果数
+     * 每个请求返回的最大结果数。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -195,7 +195,7 @@ public class ListPermissionSetsProvisionedToAccountRequest {
     }
 
     /**
-     * 账号的唯一身份标识
+     * 指定账户的唯一身份标识
      * @return accountId
      */
     public String getAccountId() {

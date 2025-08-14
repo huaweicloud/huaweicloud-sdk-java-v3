@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 沙箱类型,RDP沙箱专用
+ * 沙箱类型，RDP沙箱专用
  */
 public class ContainerExtraRdpInfo {
 

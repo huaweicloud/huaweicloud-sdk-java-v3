@@ -65,7 +65,7 @@ public class ListUsersResponse extends SdkResponse {
     }
 
     /**
-     * 账号信息列表
+     * **参数解释**: 账号信息列表 **取值范围**: 最小值0，最大值10000 
      * @return dataList
      */
     public List<UserResponseInfo> getDataList() {

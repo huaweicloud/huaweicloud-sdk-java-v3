@@ -50,7 +50,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 每个请求返回的最大结果数
+     * 每个请求返回的最大结果数。
      * minimum: 1
      * maximum: 100
      * @return limit

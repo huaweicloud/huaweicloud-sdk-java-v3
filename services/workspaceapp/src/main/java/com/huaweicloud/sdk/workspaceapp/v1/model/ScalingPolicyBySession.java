@@ -26,7 +26,7 @@ public class ScalingPolicyBySession {
     }
 
     /**
-     * 分组的总会话使用率(达到改阈值后扩容)。
+     * 分组的总会话使用率(达到该阈值后扩容)。
      * minimum: 1
      * maximum: 100
      * @return sessionUsageThreshold

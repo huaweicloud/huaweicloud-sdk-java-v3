@@ -126,7 +126,7 @@ public class CheckFeatureRuleInfo {
     }
 
     /**
-     * 防护动作,包含如下 -1 检测   -2 检测并阻断/拦截
+     * 防护动作，包含如下 -1 检测   -2 检测并阻断/拦截
      * minimum: 0
      * maximum: 2097152
      * @return protectiveAction
@@ -145,7 +145,7 @@ public class CheckFeatureRuleInfo {
     }
 
     /**
-     * 可选防护动作,包含如下 -1 检测   -2 检测并阻断/拦截   -3 都可以
+     * 可选防护动作，包含如下 -1 检测   -2 检测并阻断/拦截   -3 都可以
      * minimum: 0
      * maximum: 2097152
      * @return optionalProtectiveAction
@@ -164,7 +164,7 @@ public class CheckFeatureRuleInfo {
     }
 
     /**
-     * 开启状态,包含如下 -0 开启 -1 关闭
+     * 开启状态，包含如下 -0 开启 -1 关闭
      * minimum: 0
      * maximum: 2097152
      * @return enabled
@@ -183,7 +183,7 @@ public class CheckFeatureRuleInfo {
     }
 
     /**
-     * 是否可编辑配置信息,包含如下 -0 否   -1 是
+     * 是否可编辑配置信息，包含如下 -0 否   -1 是
      * minimum: 0
      * maximum: 2097152
      * @return editable

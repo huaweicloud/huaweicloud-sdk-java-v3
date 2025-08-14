@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 文件路径
+ * **参数解释**： 文件路径 **取值范围**： 字符长度1-256位 
  */
 public class FilePath {
 

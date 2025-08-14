@@ -17,6 +17,11 @@ public class CreateDigitalAssetResponse extends SdkResponse {
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "produce_id")
+
+    private String produceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -36,6 +41,23 @@ public class CreateDigitalAssetResponse extends SdkResponse {
 
     public void setAssetId(String assetId) {
         this.assetId = assetId;
+    }
+
+    public CreateDigitalAssetResponse withProduceId(String produceId) {
+        this.produceId = produceId;
+        return this;
+    }
+
+    /**
+     * ai标识ID。
+     * @return produceId
+     */
+    public String getProduceId() {
+        return produceId;
+    }
+
+    public void setProduceId(String produceId) {
+        this.produceId = produceId;
     }
 
     public CreateDigitalAssetResponse withXRequestId(String xRequestId) {
@@ -66,12 +88,13 @@ public class CreateDigitalAssetResponse extends SdkResponse {
             return false;
         }
         CreateDigitalAssetResponse that = (CreateDigitalAssetResponse) obj;
-        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.produceId, that.produceId)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, xRequestId);
+        return Objects.hash(assetId, produceId, xRequestId);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class CreateDigitalAssetResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDigitalAssetResponse {\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    produceId: ").append(toIndentedString(produceId)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

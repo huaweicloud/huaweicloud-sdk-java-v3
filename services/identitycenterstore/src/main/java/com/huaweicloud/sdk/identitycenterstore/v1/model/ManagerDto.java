@@ -21,7 +21,7 @@ public class ManagerDto {
     }
 
     /**
-     * 经理
+     * Manager信息
      * @return value
      */
     public String getValue() {

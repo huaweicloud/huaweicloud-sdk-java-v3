@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量删除子任务请求
+ * 批量删除子任务请求。
  */
 public class BatchDeleteSubJobsReq {
 
@@ -40,7 +40,7 @@ public class BatchDeleteSubJobsReq {
     }
 
     /**
-     * 批量唯一标识请求列表，一次请求数量区间 [1, 20]
+     * 批量唯一标识请求列表，一次请求数量区间 [1, 20]。
      * @return items
      */
     public List<String> getItems() {

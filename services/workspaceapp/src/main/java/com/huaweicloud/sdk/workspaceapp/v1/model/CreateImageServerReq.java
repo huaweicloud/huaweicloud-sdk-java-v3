@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建镜像实例请求
+ * 创建镜像实例请求。
  */
 public class CreateImageServerReq {
 
@@ -131,7 +131,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 镜像实例描述
+     * 镜像实例描述。
      * @return description
      */
     public String getDescription() {
@@ -217,7 +217,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 镜像实例网卡对应的子网唯一标识
+     * 镜像实例网卡对应的子网唯一标识。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -234,7 +234,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 镜像实例产品套餐ID
+     * 镜像实例产品套餐ID。
      * @return productId
      */
     public String getProductId() {
@@ -268,7 +268,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 镜像实例的可用区，空值表示随机选取可用区
+     * 镜像实例的可用区，空值表示随机选取可用区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -301,7 +301,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 云应用仓库软件唯一标识请求列表
+     * 云应用仓库软件唯一标识请求列表。
      * @return attachApps
      */
     public List<String> getAttachApps() {
@@ -351,7 +351,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 组织名称
+     * 组织名称。
      * @return ouName
      */
     public String getOuName() {
@@ -368,7 +368,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 是否为vdi单会话模式
+     * 是否为vdi单会话模式。
      * @return isVdi
      */
     public Boolean getIsVdi() {
@@ -428,7 +428,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 需要付费的会话数，单位/个
+     * 需要付费的会话数，单位/个。
      * minimum: 1
      * @return extraSessionSize
      */
@@ -488,7 +488,7 @@ public class CreateImageServerReq {
     }
 
     /**
-     * 标签信息，最多包含20个key,不允许重复
+     * 标签信息，最多包含20个key,不允许重复。
      * @return tags
      */
     public List<TmsTag> getTags() {

@@ -83,7 +83,7 @@ public class BatchStartProtectionRequestInfo {
     }
 
     /**
-     * 防护策略ID,若ransom_protection_status为opened,则该字段必选
+     * 防护策略ID，若ransom_protection_status为opened，则该字段必选
      * @return protectionPolicyId
      */
     public String getProtectionPolicyId() {

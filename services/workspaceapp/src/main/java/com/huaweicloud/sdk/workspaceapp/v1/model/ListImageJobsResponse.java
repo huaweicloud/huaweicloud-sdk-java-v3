@@ -65,7 +65,7 @@ public class ListImageJobsResponse extends SdkResponse {
     }
 
     /**
-     * 任务信息列表，返回列表条目数量上限为分页的最大上限值
+     * 任务信息列表，返回列表条目数量上限为分页的最大上限值。
      * @return items
      */
     public List<ImageJobInfo> getItems() {

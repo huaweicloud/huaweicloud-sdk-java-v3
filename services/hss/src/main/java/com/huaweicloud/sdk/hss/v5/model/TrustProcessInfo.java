@@ -26,7 +26,7 @@ public class TrustProcessInfo {
     }
 
     /**
-     * 进程路径
+     * **参数解释**: 进程路径 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及
      * @return path
      */
     public String getPath() {
@@ -43,7 +43,7 @@ public class TrustProcessInfo {
     }
 
     /**
-     * 进程hash
+     * **参数解释**: 进程hash **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及
      * @return hash
      */
     public String getHash() {

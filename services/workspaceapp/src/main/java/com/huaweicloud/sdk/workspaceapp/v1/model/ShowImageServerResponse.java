@@ -303,7 +303,7 @@ public class ShowImageServerResponse extends SdkResponse {
     }
 
     /**
-     * 镜像实例创建时间
+     * 镜像实例创建时间。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -320,7 +320,7 @@ public class ShowImageServerResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -337,7 +337,7 @@ public class ShowImageServerResponse extends SdkResponse {
     }
 
     /**
-     * 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)
+     * 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

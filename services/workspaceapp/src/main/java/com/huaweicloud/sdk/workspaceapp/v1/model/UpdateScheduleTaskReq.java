@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新定时任务
+ * 更新定时任务。
  */
 public class UpdateScheduleTaskReq {
 

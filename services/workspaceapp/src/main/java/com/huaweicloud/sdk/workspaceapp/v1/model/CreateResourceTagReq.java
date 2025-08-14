@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * tags
+ * tags。
  */
 public class CreateResourceTagReq {
 

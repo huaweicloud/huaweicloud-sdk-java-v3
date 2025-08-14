@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.kms.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -34,6 +39,91 @@ public class EncryptDatakeyRequestBody {
     @JsonProperty(value = "sequence")
 
     private String sequence;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pin")
+
+    private String pin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pin_type")
+
+    private String pinType;
+
+    /**
+     * 指定生成的密钥算法。有效值： SM2、RSA。
+     */
+    public static final class KeySpecEnum {
+
+        /**
+         * Enum SM2 for value: "SM2"
+         */
+        public static final KeySpecEnum SM2 = new KeySpecEnum("SM2");
+
+        /**
+         * Enum RSA for value: "RSA"
+         */
+        public static final KeySpecEnum RSA = new KeySpecEnum("RSA");
+
+        private static final Map<String, KeySpecEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, KeySpecEnum> createStaticFields() {
+            Map<String, KeySpecEnum> map = new HashMap<>();
+            map.put("SM2", SM2);
+            map.put("RSA", RSA);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        KeySpecEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static KeySpecEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeySpecEnum(value));
+        }
+
+        public static KeySpecEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof KeySpecEnum) {
+                return this.value.equals(((KeySpecEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_spec")
+
+    private KeySpecEnum keySpec;
 
     public EncryptDatakeyRequestBody withKeyId(String keyId) {
         this.keyId = keyId;
@@ -120,6 +210,57 @@ public class EncryptDatakeyRequestBody {
         this.sequence = sequence;
     }
 
+    public EncryptDatakeyRequestBody withPin(String pin) {
+        this.pin = pin;
+        return this;
+    }
+
+    /**
+     * 指定PIN码保护。仅四级密评场景支持该参数。
+     * @return pin
+     */
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
+    }
+
+    public EncryptDatakeyRequestBody withPinType(String pinType) {
+        this.pinType = pinType;
+        return this;
+    }
+
+    /**
+     * pin码的类型，默认为“CipherText”，可选“PlainText”。仅四级密评场景支持该参数。
+     * @return pinType
+     */
+    public String getPinType() {
+        return pinType;
+    }
+
+    public void setPinType(String pinType) {
+        this.pinType = pinType;
+    }
+
+    public EncryptDatakeyRequestBody withKeySpec(KeySpecEnum keySpec) {
+        this.keySpec = keySpec;
+        return this;
+    }
+
+    /**
+     * 指定生成的密钥算法。有效值： SM2、RSA。
+     * @return keySpec
+     */
+    public KeySpecEnum getKeySpec() {
+        return keySpec;
+    }
+
+    public void setKeySpec(KeySpecEnum keySpec) {
+        this.keySpec = keySpec;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +273,14 @@ public class EncryptDatakeyRequestBody {
         return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.plainText, that.plainText)
             && Objects.equals(this.datakeyPlainLength, that.datakeyPlainLength)
             && Objects.equals(this.additionalAuthenticatedData, that.additionalAuthenticatedData)
-            && Objects.equals(this.sequence, that.sequence);
+            && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.pin, that.pin)
+            && Objects.equals(this.pinType, that.pinType) && Objects.equals(this.keySpec, that.keySpec);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, plainText, datakeyPlainLength, additionalAuthenticatedData, sequence);
+        return Objects
+            .hash(keyId, plainText, datakeyPlainLength, additionalAuthenticatedData, sequence, pin, pinType, keySpec);
     }
 
     @Override
@@ -151,6 +294,9 @@ public class EncryptDatakeyRequestBody {
             .append(toIndentedString(additionalAuthenticatedData))
             .append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
+        sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
+        sb.append("    pinType: ").append(toIndentedString(pinType)).append("\n");
+        sb.append("    keySpec: ").append(toIndentedString(keySpec)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,6 +36,11 @@ public class KeystoreDetails {
     private String hsmClusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -125,6 +130,23 @@ public class KeystoreDetails {
         this.hsmClusterId = hsmClusterId;
     }
 
+    public KeystoreDetails withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * 集群ID。当类型为DEFAULT时，cluster_id为”0”。当类型为DHSM时，cluster_id为hsm_cluster_id。当类型为CDMS时，默认密码卡集群，集群ID为“1”。自定义密码卡集群，为cdms_cluster_id
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
     public KeystoreDetails withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -154,12 +176,13 @@ public class KeystoreDetails {
         return Objects.equals(this.keystoreId, that.keystoreId) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.keystoreAlias, that.keystoreAlias)
             && Objects.equals(this.keystoreType, that.keystoreType)
-            && Objects.equals(this.hsmClusterId, that.hsmClusterId) && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.hsmClusterId, that.hsmClusterId) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keystoreId, domainId, keystoreAlias, keystoreType, hsmClusterId, createTime);
+        return Objects.hash(keystoreId, domainId, keystoreAlias, keystoreType, hsmClusterId, clusterId, createTime);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class KeystoreDetails {
         sb.append("    keystoreAlias: ").append(toIndentedString(keystoreAlias)).append("\n");
         sb.append("    keystoreType: ").append(toIndentedString(keystoreType)).append("\n");
         sb.append("    hsmClusterId: ").append(toIndentedString(hsmClusterId)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");
         return sb.toString();

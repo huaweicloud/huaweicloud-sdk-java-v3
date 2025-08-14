@@ -124,7 +124,7 @@ public class AddressDto {
     }
 
     /**
-     * 一个布尔值，表示这是否为用户的主地址
+     * 一个布尔值，表示这是否是用户的主地址
      * @return primary
      */
     public Boolean getPrimary() {

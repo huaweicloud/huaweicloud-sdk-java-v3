@@ -121,7 +121,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** AgentId标识 **取值范围** 只能由英文字母、数字、特殊字符组成, 长度范围为[0-64]个字符 
+     * **参数解释**: Agent ID **取值范围**: 字符长度0-64位 
      * @return agentId
      */
     public String getAgentId() {
@@ -138,7 +138,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 服务器ID **取值范围** 只能由英文字母、数字、特殊字符组成, 长度范围为[0-128]个字符 
+     * **参数解释**: 服务器ID **取值范围**: 字符长度0-128位 
      * @return hostId
      */
     public String getHostId() {
@@ -155,7 +155,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 服务器名称 **取值范围** 只能由中文字符、英文字母、数字、特殊字符组成, 长度范围为[0-128]个字符         
+     * **参数解释**: 节点名称 **取值范围**: 字符长度0-128位 
      * @return hostName
      */
     public String getHostName() {
@@ -172,7 +172,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 服务器状态 **取值范围** - ACTIVE ：正在运行 - SHUTOFF ：关机 - BUILDING ：创建中 - ERROR ：故障 
+     * **参数解释**: 服务器状态 **取值范围**: 包含如下4种。   - ACTIVE：正在运行。   - SHUTOFF：关机。   - BUILDING：创建中。   - ERROR：故障。 
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -189,7 +189,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** Agent状态 **取值范围**         - not_installed ：未安装 - online ：在线 - offline ：离线 
+     * **参数解释**: Agent状态 **取值范围**: 包含如下3种。   - not_installed：未安装。   - online：在线。   - offline：离线。 
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -206,7 +206,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 防护状态 **取值范围**         - closed ：防护关闭状态 - opened ：防护开启状态 
+     * **参数解释**: 防护状态 **取值范围**: 包含如下2种。   - closed ：关闭。   - opened ：开启。 
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -223,7 +223,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 防护是否中断 **取值范围**         - true: 防护中断 - false: 防护未中断 
+     * **参数解释**: 防护是否中断 **取值范围**:   - ture：防护中断。   - false：防护未中断。 
      * @return protectInterrupt
      */
     public Boolean getProtectInterrupt() {
@@ -240,7 +240,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 防护是否降级 **取值范围**         - true: 防护降级 - false: 防护未降级 
+     * **参数解释**: 防护是否降级 **取值范围**:   - ture：防护降级。   - false：防护未降级。 
      * @return protectDegradation
      */
     public Boolean getProtectDegradation() {
@@ -257,7 +257,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 防护降级原因 **取值范围**         只能由中文字符、英文字母、数字、特殊字符组成, 长度范围为[1-32]个字符 
+     * **参数解释**: 防护降级原因 **取值范围**: 字符长度1-32位 
      * @return degradationReason
      */
     public String getDegradationReason() {
@@ -274,7 +274,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 标签：用来识别cce集群节点和自建集群节点 **取值范围**         - cce：cce节点 - self：自建节点 - other：其它节点 
+     * **参数解释**: 用来识别cce容器节点和自建节点的标签 **取值范围**: 包含如下3种。 - cce：cce节点 - self：自建节点 - other：其他节点 
      * @return containerTags
      */
     public String getContainerTags() {
@@ -291,7 +291,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 私有IP地址 **取值范围**         只能由数字、特殊字符组成, 长度范围为[0-128]个字符 
+     * **参数解释**: 私有IP地址 **取值范围**: 字符长度0-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -308,7 +308,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 弹性公网IP地址 **取值范围**         只能由数字、特殊字符组成, 长度范围为[0-128]个字符 
+     * **参数解释**: 弹性公网IP地址 **取值范围**: 字符长度0-128位 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -325,7 +325,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 主机安全配额ID（UUID） **取值范围**         只能由中文字符、英文字母、数字、特殊字符组成, 长度范围为[0-128]个字符 
+     * **参数解释**: 主机安全配额ID（UUID） **取值范围**: 字符长度0-128位 
      * @return resourceId
      */
     public String getResourceId() {
@@ -342,7 +342,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 服务器组名称 **取值范围**         只能由中文字符、英文字母、数字、特殊字符组成, 长度范围为[0-128]个字符         
+     * **参数解释**: 服务器组名称 **取值范围**: 字符长度1-128位 
      * @return groupName
      */
     public String getGroupName() {
@@ -359,7 +359,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 所属企业项目名称 **取值范围**         只能由中文字符、英文字母、数字、特殊字符组成, 长度范围为[0-256]个字符    
+     * **参数解释**: 所属企业项目名称 **取值范围**: 字符长度0-256位 
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {
@@ -376,7 +376,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 云主机安全检测结果 **取值范围**           - undetected ：未检测 - clean ：无风险 - risk ：有风险 - scanning ：检测中 
+     * **参数解释**: 云主机安全检测结果 **取值范围**: 包含如下4种。 - undetected：未检测。 - clean：无风险。 - risk：有风险。 - scanning：检测中。 
      * @return detectResult
      */
     public String getDetectResult() {
@@ -393,9 +393,9 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 资产风险 **取值范围**         0-2147483647 
+     * **参数解释**: 资产风险 **取值范围**: 取值0-2097152 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 2097152
      * @return asset
      */
     public Integer getAsset() {
@@ -412,9 +412,9 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 漏洞风险 **取值范围**         0-2147483647         
+     * **参数解释**: 漏洞风险 **取值范围**: 取值0-2097152 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 2097152
      * @return vulnerability
      */
     public Integer getVulnerability() {
@@ -431,9 +431,9 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 入侵风险 **取值范围**         0-2147483647          
+     * **参数解释**: 入侵风险 **取值范围**: 取值0-2097152 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 2097152
      * @return intrusion
      */
     public Integer getIntrusion() {
@@ -450,7 +450,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 策略组ID **取值范围**         只能由英文字母、数字、特殊字符组成, 长度范围为[1-128]个字符         
+     * **参数解释**: 策略组ID **取值范围**: 字符长度1-128位 
      * @return policyGroupId
      */
     public String getPolicyGroupId() {
@@ -467,7 +467,7 @@ public class ContainerNodeInfo {
     }
 
     /**
-     * **参数解释** 策略组名称 **取值范围**         只能由中文字母、英文字母、数字、特殊字符组成, 长度范围为[1-128]个字符              
+     * **参数解释**: 策略组名称 **取值范围**: 字符长度1-128位 
      * @return policyGroupName
      */
     public String getPolicyGroupName() {

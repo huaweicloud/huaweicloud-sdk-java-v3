@@ -373,7 +373,7 @@ public class ExportImageSecurityReportTaskRequestInfo {
     }
 
     /**
-     * 创建时间开始日期，时间单位 毫秒（ms）
+     * 创建时间开始日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 9223372036854775807
      * @return startLatestUpdateTime
@@ -392,7 +392,7 @@ public class ExportImageSecurityReportTaskRequestInfo {
     }
 
     /**
-     * 创建时间结束日期，时间单位 毫秒（ms）
+     * 创建时间结束日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 9223372036854775807
      * @return endLatestUpdateTime
@@ -411,7 +411,7 @@ public class ExportImageSecurityReportTaskRequestInfo {
     }
 
     /**
-     * 最近一次扫描完成时间开始日期，时间单位 毫秒（ms）
+     * 最近一次扫描完成时间开始日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 9223372036854775807
      * @return startLatestScanTime
@@ -430,7 +430,7 @@ public class ExportImageSecurityReportTaskRequestInfo {
     }
 
     /**
-     * 最近一次扫描完成时间结束日期，时间单位 毫秒（ms）
+     * 最近一次扫描完成时间结束日期，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 9223372036854775807
      * @return endLatestScanTime

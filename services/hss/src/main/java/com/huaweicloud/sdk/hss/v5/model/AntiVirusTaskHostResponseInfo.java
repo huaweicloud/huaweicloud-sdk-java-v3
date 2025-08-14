@@ -121,7 +121,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
+     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -155,7 +155,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**： 服务器私有IP **取值范围**： 字符长度1-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -172,7 +172,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 弹性公网IP地址
+     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -384,7 +384,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 操作系统类型，包含如下2种。   - Linux ：Linux。   - Windows ：Windows。
+     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux。 - Windows：Windows。 
      * @return osType
      */
     public String getOsType() {
@@ -469,7 +469,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 操作系统版本
+     * 系统版本
      * @return osVersion
      */
     public String getOsVersion() {

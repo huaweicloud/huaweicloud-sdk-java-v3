@@ -63,7 +63,7 @@ public class ListFutureExecutionsResponse extends SdkResponse {
     }
 
     /**
-     * 时区
+     * 时区。
      * @return timeZone
      */
     public String getTimeZone() {

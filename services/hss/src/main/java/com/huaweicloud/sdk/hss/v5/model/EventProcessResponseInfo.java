@@ -226,7 +226,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程名称
+     * **参数解释**： 进程名称 **取值范围**： 字符长度1-256位 
      * @return processName
      */
     public String getProcessName() {
@@ -243,7 +243,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程文件路径
+     * **参数解释**： 进程文件路径 **取值范围**： 字符长度1-256位 
      * @return processPath
      */
     public String getProcessPath() {
@@ -260,7 +260,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程id
+     * **参数解释**： 进程ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return processPid
@@ -279,7 +279,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程用户id
+     * **参数解释**： 进程用户ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return processUid
@@ -298,7 +298,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 运行进程的用户名
+     * **参数解释**： 运行进程的用户名 **取值范围**： 字符长度1-256位 
      * @return processUsername
      */
     public String getProcessUsername() {
@@ -315,7 +315,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程文件命令行
+     * **参数解释**： 进程文件命令行 **取值范围**： 字符长度1-256位 
      * @return processCmdline
      */
     public String getProcessCmdline() {
@@ -332,7 +332,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程文件名
+     * **参数解释**： 进程文件名 **取值范围**： 字符长度1-256位 
      * @return processFilename
      */
     public String getProcessFilename() {
@@ -349,7 +349,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程启动时间
+     * **参数解释**： 进程启动时间 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return processStartTime
@@ -368,7 +368,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程组ID
+     * **参数解释**： 进程组ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return processGid
@@ -387,7 +387,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程有效组ID
+     * **参数解释**： 进程有效组ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return processEgid
@@ -406,7 +406,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程有效用户ID
+     * **参数解释**： 进程有效用户ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return processEuid
@@ -425,7 +425,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 祖父进程文件路径
+     * **参数解释**： 祖父进程文件路径 **取值范围**： 字符长度1-256位 
      * @return ancestorProcessPath
      */
     public String getAncestorProcessPath() {
@@ -442,7 +442,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 祖父进程id
+     * **参数解释**： 祖父进程ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return ancestorProcessPid
@@ -461,7 +461,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 祖父进程文件命令行
+     * **参数解释**： 祖父进程文件命令行 **取值范围**： 字符长度1-512位 
      * @return ancestorProcessCmdline
      */
     public String getAncestorProcessCmdline() {
@@ -478,7 +478,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程名称
+     * **参数解释**： 父进程名称 **取值范围**： 字符长度1-256位 
      * @return parentProcessName
      */
     public String getParentProcessName() {
@@ -495,7 +495,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程文件路径
+     * **参数解释**： 父进程文件路径 **取值范围**： 字符长度1-256位 
      * @return parentProcessPath
      */
     public String getParentProcessPath() {
@@ -512,7 +512,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程id
+     * **参数解释**： 父进程ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return parentProcessPid
@@ -531,7 +531,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程用户id
+     * **参数解释**： 父进程用户ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return parentProcessUid
@@ -550,7 +550,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程文件命令行
+     * **参数解释**： 父进程文件命令行 **取值范围**： 字符长度1-512位 
      * @return parentProcessCmdline
      */
     public String getParentProcessCmdline() {
@@ -567,7 +567,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程文件名
+     * **参数解释**： 父进程文件名 **取值范围**： 字符长度1-256位 
      * @return parentProcessFilename
      */
     public String getParentProcessFilename() {
@@ -584,7 +584,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程启动时间
+     * **参数解释**： 父进程启动时间 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return parentProcessStartTime
@@ -603,7 +603,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程组ID
+     * **参数解释**： 父进程组ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return parentProcessGid
@@ -622,7 +622,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程有效组ID
+     * **参数解释**： 父进程有效组ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return parentProcessEgid
@@ -641,7 +641,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程有效用户ID
+     * **参数解释**： 父进程有效用户ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return parentProcessEuid
@@ -660,7 +660,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程名称
+     * **参数解释**： 子进程名称 **取值范围**： 字符长度1-256位 
      * @return childProcessName
      */
     public String getChildProcessName() {
@@ -677,7 +677,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程文件路径
+     * **参数解释**： 子进程文件路径 **取值范围**： 字符长度1-256位 
      * @return childProcessPath
      */
     public String getChildProcessPath() {
@@ -694,7 +694,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程id
+     * **参数解释**： 子进程id **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return childProcessPid
@@ -713,7 +713,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程用户id
+     * **参数解释**： 子进程用户id **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return childProcessUid
@@ -732,7 +732,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程文件命令行
+     * **参数解释**： 子进程文件命令行 **取值范围**： 字符长度1-256位 
      * @return childProcessCmdline
      */
     public String getChildProcessCmdline() {
@@ -749,7 +749,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程文件名
+     * **参数解释**： 子进程文件名 **取值范围**： 字符长度1-256位 
      * @return childProcessFilename
      */
     public String getChildProcessFilename() {
@@ -766,7 +766,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程启动时间
+     * **参数解释**： 子进程启动时间 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return childProcessStartTime
@@ -785,7 +785,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程组ID
+     * **参数解释**： 子进程组ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return childProcessGid
@@ -804,7 +804,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程有效组ID
+     * **参数解释**： 子进程有效组ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return childProcessEgid
@@ -823,7 +823,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 子进程有效用户ID
+     * **参数解释**： 子进程有效用户ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return childProcessEuid
@@ -842,7 +842,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 虚拟化命令
+     * **参数解释**： 虚拟化命令 **取值范围**： 字符长度1-256位 
      * @return virtCmd
      */
     public String getVirtCmd() {
@@ -859,7 +859,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 虚拟化进程名称
+     * **参数解释**： 虚拟化进程名称 **取值范围**： 字符长度1-256位 
      * @return virtProcessName
      */
     public String getVirtProcessName() {
@@ -876,7 +876,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 逃逸方式
+     * **参数解释**： 逃逸方式 **取值范围**： 字符长度1-256位 
      * @return escapeMode
      */
     public String getEscapeMode() {
@@ -893,7 +893,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 逃逸后后执行的命令
+     * **参数解释**： 逃逸后后执行的命令 **取值范围**： 字符长度1-256位 
      * @return escapeCmd
      */
     public String getEscapeCmd() {
@@ -910,7 +910,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程启动文件hash
+     * **参数解释**： 进程启动文件hash **取值范围**： 字符长度1-256位 
      * @return processHash
      */
     public String getProcessHash() {
@@ -927,7 +927,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 进程文件hash
+     * **参数解释**： 进程文件hash **取值范围**： 字符长度1-256位 
      * @return processFileHash
      */
     public String getProcessFileHash() {
@@ -944,7 +944,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * 父进程文件hash
+     * **参数解释**： 父进程文件hash **取值范围**： 字符长度1-256位 
      * @return parentProcessFileHash
      */
     public String getParentProcessFileHash() {

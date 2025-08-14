@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 应用仓库中的应用详细信息。
@@ -100,6 +101,11 @@ public class WarehouseApp {
     @JsonProperty(value = "app_icon")
 
     private String appIcon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_extended_info")
+
+    private AppExtendedInfo appExtendedInfo;
 
     public WarehouseApp withId(String id) {
         this.id = id;
@@ -407,6 +413,32 @@ public class WarehouseApp {
         this.appIcon = appIcon;
     }
 
+    public WarehouseApp withAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+        return this;
+    }
+
+    public WarehouseApp withAppExtendedInfo(Consumer<AppExtendedInfo> appExtendedInfoSetter) {
+        if (this.appExtendedInfo == null) {
+            this.appExtendedInfo = new AppExtendedInfo();
+            appExtendedInfoSetter.accept(this.appExtendedInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get appExtendedInfo
+     * @return appExtendedInfo
+     */
+    public AppExtendedInfo getAppExtendedInfo() {
+        return appExtendedInfo;
+    }
+
+    public void setAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -426,7 +458,8 @@ public class WarehouseApp {
             && Objects.equals(this.appiconStorePath, that.appiconStorePath)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.modifyTime, that.modifyTime)
             && Objects.equals(this.verifyTime, that.verifyTime) && Objects.equals(this.verifyStatus, that.verifyStatus)
-            && Objects.equals(this.verifyComment, that.verifyComment) && Objects.equals(this.appIcon, that.appIcon);
+            && Objects.equals(this.verifyComment, that.verifyComment) && Objects.equals(this.appIcon, that.appIcon)
+            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
     }
 
     @Override
@@ -448,7 +481,8 @@ public class WarehouseApp {
             verifyTime,
             verifyStatus,
             verifyComment,
-            appIcon);
+            appIcon,
+            appExtendedInfo);
     }
 
     @Override
@@ -473,6 +507,7 @@ public class WarehouseApp {
         sb.append("    verifyStatus: ").append(toIndentedString(verifyStatus)).append("\n");
         sb.append("    verifyComment: ").append(toIndentedString(verifyComment)).append("\n");
         sb.append("    appIcon: ").append(toIndentedString(appIcon)).append("\n");
+        sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

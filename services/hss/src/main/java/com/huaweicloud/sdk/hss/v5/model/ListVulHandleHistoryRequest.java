@@ -64,7 +64,7 @@ public class ListVulHandleHistoryRequest {
     private String clusterId;
 
     /**
-     * 排序字段，包含如下:   - handle_time : 处置时间
+     * 排序字段，包含如下：   - handle_time：处置时间
      */
     public static final class SortKeyEnum {
 
@@ -133,7 +133,7 @@ public class ListVulHandleHistoryRequest {
     private SortKeyEnum sortKey;
 
     /**
-     * 排序顺序，若sort_key不为空,设置返回结果按照sort_key升序或降序排序,默认降序排序,包含如下:   - asc : 升序   - desc : 降序
+     * 排序顺序，若sort_key不为空，设置返回结果按照sort_key升序或降序排序，默认降序排序，包含如下：   - asc：升序   - desc：降序
      */
     public static final class SortDirEnum {
 
@@ -266,7 +266,7 @@ public class ListVulHandleHistoryRequest {
     }
 
     /**
-     * 漏洞状态,包含如下:   - vul_status_unfix : 未处理   - vul_status_ignored : 已忽略   - vul_status_verified : 验证中   - vul_status_fixing : 修复中   - vul_status_fixed : 修复成功   - vul_status_reboot : 修复成功待重启   - vul_status_failed : 修复失败   - vul_status_fix_after_reboot : 请重启主机再次修复
+     * 漏洞状态，包含如下：   - vul_status_unfix：未处理   - vul_status_ignored：已忽略   - vul_status_verified：验证中   - vul_status_fixing：修复中   - vul_status_fixed：修复成功   - vul_status_reboot：修复成功待重启   - vul_status_failed：修复失败   - vul_status_fix_after_reboot：请重启主机再次修复
      * @return status
      */
     public List<String> getStatus() {
@@ -300,7 +300,7 @@ public class ListVulHandleHistoryRequest {
     }
 
     /**
-     * 漏洞类型,包含如下:   - linux_vul : Linux漏洞   - windows_vul : Windows漏洞   - web_cms : Web-CMS漏洞   - app_vul : 应用漏洞   - urgent_vul : 应急漏洞
+     * 漏洞类型，包含如下:   - linux_vul：Linux漏洞   - windows_vul：Windows漏洞   - web_cms：Web-CMS漏洞   - app_vul：应用漏洞   - urgent_vul：应急漏洞
      * @return vulType
      */
     public String getVulType() {
@@ -317,7 +317,7 @@ public class ListVulHandleHistoryRequest {
     }
 
     /**
-     * 资产重要性,包含如下:   - important : 重要资产   - common  : 一般资产   - test  : 测试资产
+     * 资产重要性，包含如下:   - important：重要资产   - common：一般资产   - test：测试资产
      * @return assetValue
      */
     public String getAssetValue() {
@@ -368,7 +368,7 @@ public class ListVulHandleHistoryRequest {
     }
 
     /**
-     * 服务器IP。
+     * 服务器IP
      * @return hostIp
      */
     public String getHostIp() {
@@ -385,7 +385,7 @@ public class ListVulHandleHistoryRequest {
     }
 
     /**
-     * 集群ID。
+     * 集群ID
      * @return clusterId
      */
     public String getClusterId() {
@@ -402,7 +402,7 @@ public class ListVulHandleHistoryRequest {
     }
 
     /**
-     * 排序字段，包含如下:   - handle_time : 处置时间
+     * 排序字段，包含如下：   - handle_time：处置时间
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -419,7 +419,7 @@ public class ListVulHandleHistoryRequest {
     }
 
     /**
-     * 排序顺序，若sort_key不为空,设置返回结果按照sort_key升序或降序排序,默认降序排序,包含如下:   - asc : 升序   - desc : 降序
+     * 排序顺序，若sort_key不为空，设置返回结果按照sort_key升序或降序排序，默认降序排序，包含如下：   - asc：升序   - desc：降序
      * @return sortDir
      */
     public SortDirEnum getSortDir() {

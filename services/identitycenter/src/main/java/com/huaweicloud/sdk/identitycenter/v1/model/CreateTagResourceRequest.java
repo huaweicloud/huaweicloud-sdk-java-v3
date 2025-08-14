@@ -22,7 +22,7 @@ public class CreateTagResourceRequest {
     private String xSecurityToken;
 
     /**
-     * 资源类型 identitycenter:permissionset（权限集）
+     * 资源类型 identitycenter:permissionset权限集
      */
     public static final class ResourceTypeEnum {
 
@@ -126,7 +126,7 @@ public class CreateTagResourceRequest {
     }
 
     /**
-     * 资源类型 identitycenter:permissionset（权限集）
+     * 资源类型 identitycenter:permissionset权限集
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

@@ -3144,6 +3144,12 @@ public class AosMeta {
                 ShowTemplateVersionContentRequest::setClientRequestId));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTemplateVersionContentResponse::getBody,
+                ShowTemplateVersionContentResponse::setBody));
 
         builder.<String>withResponseField("Location",
             LocationType.Header,

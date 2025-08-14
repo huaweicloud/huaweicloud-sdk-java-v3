@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 处置动作，包含如下:   - auto ：自动处置   - manual : 人工处置
+ * 处置动作，包含如下:   - auto：自动处置   - manual：人工处置
  */
 public class Action {
 

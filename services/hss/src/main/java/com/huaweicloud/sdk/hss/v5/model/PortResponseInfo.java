@@ -95,7 +95,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * **参数解释**: 端口状态 **取值范围**: normal: 正常 danger: 危险 unknown: 未知 
+     * **参数解释**: 端口状态 **取值范围**: - normal: 正常 - danger: 危险 - unknown: 未知 
      * @return status
      */
     public String getStatus() {
@@ -131,7 +131,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * **参数解释**: 端口类型：目前包括TCP，UDP两种 **取值范围**: TCP: TCP类型的端口 UDP: UDP类型的端口 
+     * **参数解释**: 端口类型：目前包括TCP，UDP两种 **取值范围**: - TCP: TCP类型的端口 - UDP: UDP类型的端口 
      * @return type
      */
     public String getType() {
@@ -201,7 +201,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * **参数解释**: 容器 ID **取值范围**: 字符长度0-128位 
+     * **参数解释**: 容器ID **取值范围**: 字符长度0-128位 
      * @return containerId
      */
     public String getContainerId() {

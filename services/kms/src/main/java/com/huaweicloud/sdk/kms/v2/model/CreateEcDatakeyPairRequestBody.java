@@ -128,6 +128,16 @@ public class CreateEcDatakeyPairRequestBody {
 
     private String sequence;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pin")
+
+    private String pin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pin_type")
+
+    private String pinType;
+
     public CreateEcDatakeyPairRequestBody withKeyId(String keyId) {
         this.keyId = keyId;
         return this;
@@ -213,6 +223,40 @@ public class CreateEcDatakeyPairRequestBody {
         this.sequence = sequence;
     }
 
+    public CreateEcDatakeyPairRequestBody withPin(String pin) {
+        this.pin = pin;
+        return this;
+    }
+
+    /**
+     * 指定PIN码保护。仅四级密评场景支持该参数。
+     * @return pin
+     */
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
+    }
+
+    public CreateEcDatakeyPairRequestBody withPinType(String pinType) {
+        this.pinType = pinType;
+        return this;
+    }
+
+    /**
+     * pin码的类型，默认为“CipherText”，可选“PlainText”。仅四级密评场景支持该参数。
+     * @return pinType
+     */
+    public String getPinType() {
+        return pinType;
+    }
+
+    public void setPinType(String pinType) {
+        this.pinType = pinType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -225,12 +269,13 @@ public class CreateEcDatakeyPairRequestBody {
         return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.keySpec, that.keySpec)
             && Objects.equals(this.withPlainText, that.withPlainText)
             && Objects.equals(this.additionalAuthenticatedData, that.additionalAuthenticatedData)
-            && Objects.equals(this.sequence, that.sequence);
+            && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.pin, that.pin)
+            && Objects.equals(this.pinType, that.pinType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, keySpec, withPlainText, additionalAuthenticatedData, sequence);
+        return Objects.hash(keyId, keySpec, withPlainText, additionalAuthenticatedData, sequence, pin, pinType);
     }
 
     @Override
@@ -244,6 +289,8 @@ public class CreateEcDatakeyPairRequestBody {
             .append(toIndentedString(additionalAuthenticatedData))
             .append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
+        sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
+        sb.append("    pinType: ").append(toIndentedString(pinType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

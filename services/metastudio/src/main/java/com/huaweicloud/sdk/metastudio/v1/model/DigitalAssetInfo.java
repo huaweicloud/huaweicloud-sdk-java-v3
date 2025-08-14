@@ -29,6 +29,11 @@ public class DigitalAssetInfo {
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "produce_id")
+
+    private String produceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_name")
 
     private String assetName;
@@ -465,6 +470,23 @@ public class DigitalAssetInfo {
         this.assetId = assetId;
     }
 
+    public DigitalAssetInfo withProduceId(String produceId) {
+        this.produceId = produceId;
+        return this;
+    }
+
+    /**
+     * ai标识ID。
+     * @return produceId
+     */
+    public String getProduceId() {
+        return produceId;
+    }
+
+    public void setProduceId(String produceId) {
+        this.produceId = produceId;
+    }
+
     public DigitalAssetInfo withAssetName(String assetName) {
         this.assetName = assetName;
         return this;
@@ -855,7 +877,7 @@ public class DigitalAssetInfo {
         }
         DigitalAssetInfo that = (DigitalAssetInfo) obj;
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.assetId, that.assetId)
-            && Objects.equals(this.assetName, that.assetName)
+            && Objects.equals(this.produceId, that.produceId) && Objects.equals(this.assetName, that.assetName)
             && Objects.equals(this.assetDescription, that.assetDescription)
             && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.assetType, that.assetType)
@@ -872,6 +894,7 @@ public class DigitalAssetInfo {
     public int hashCode() {
         return Objects.hash(projectId,
             assetId,
+            produceId,
             assetName,
             assetDescription,
             appUserId,
@@ -897,6 +920,7 @@ public class DigitalAssetInfo {
         sb.append("class DigitalAssetInfo {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    produceId: ").append(toIndentedString(produceId)).append("\n");
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
         sb.append("    assetDescription: ").append(toIndentedString(assetDescription)).append("\n");
         sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");

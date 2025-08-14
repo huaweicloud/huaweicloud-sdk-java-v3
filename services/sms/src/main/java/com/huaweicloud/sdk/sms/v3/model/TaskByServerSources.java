@@ -131,6 +131,11 @@ public class TaskByServerSources {
 
     private String logShareUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subtask_info")
+
+    private String subtaskInfo;
+
     public TaskByServerSources withId(String id) {
         this.id = id;
         return this;
@@ -573,6 +578,23 @@ public class TaskByServerSources {
         this.logShareUrl = logShareUrl;
     }
 
+    public TaskByServerSources withSubtaskInfo(String subtaskInfo) {
+        this.subtaskInfo = subtaskInfo;
+        return this;
+    }
+
+    /**
+     * 当前子任务及进度
+     * @return subtaskInfo
+     */
+    public String getSubtaskInfo() {
+        return subtaskInfo;
+    }
+
+    public void setSubtaskInfo(String subtaskInfo) {
+        this.subtaskInfo = subtaskInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -597,7 +619,7 @@ public class TaskByServerSources {
             && Objects.equals(this.cloneServer, that.cloneServer)
             && Objects.equals(this.remainSeconds, that.remainSeconds) && Objects.equals(this.logBucket, that.logBucket)
             && Objects.equals(this.logExpire, that.logExpire) && Objects.equals(this.logUploadTime, that.logUploadTime)
-            && Objects.equals(this.logShareUrl, that.logShareUrl);
+            && Objects.equals(this.logShareUrl, that.logShareUrl) && Objects.equals(this.subtaskInfo, that.subtaskInfo);
     }
 
     @Override
@@ -625,7 +647,8 @@ public class TaskByServerSources {
             logBucket,
             logExpire,
             logUploadTime,
-            logShareUrl);
+            logShareUrl,
+            subtaskInfo);
     }
 
     @Override
@@ -656,6 +679,7 @@ public class TaskByServerSources {
         sb.append("    logExpire: ").append(toIndentedString(logExpire)).append("\n");
         sb.append("    logUploadTime: ").append(toIndentedString(logUploadTime)).append("\n");
         sb.append("    logShareUrl: ").append(toIndentedString(logShareUrl)).append("\n");
+        sb.append("    subtaskInfo: ").append(toIndentedString(subtaskInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

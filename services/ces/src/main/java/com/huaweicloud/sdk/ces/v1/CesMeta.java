@@ -452,6 +452,11 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListEventDetailRequest.EventTypeEnum.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventType, ListEventDetailRequest::setEventType));
+        builder.<ListEventDetailRequest.SubEventTypeEnum>withRequestField("sub_event_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEventDetailRequest.SubEventTypeEnum.class),
+            f -> f.withMarshaller(ListEventDetailRequest::getSubEventType, ListEventDetailRequest::setSubEventType));
         builder.<String>withRequestField("event_source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -514,6 +519,11 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEventsRequest.EventTypeEnum.class),
             f -> f.withMarshaller(ListEventsRequest::getEventType, ListEventsRequest::setEventType));
+        builder.<ListEventsRequest.SubEventTypeEnum>withRequestField("sub_event_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEventsRequest.SubEventTypeEnum.class),
+            f -> f.withMarshaller(ListEventsRequest::getSubEventType, ListEventsRequest::setSubEventType));
         builder.<String>withRequestField("event_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

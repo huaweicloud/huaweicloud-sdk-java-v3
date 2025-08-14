@@ -127,7 +127,7 @@ public class PermissionSetProvisioningStatusDto {
     }
 
     /**
-     * 账号的唯一身份标识
+     * 指定账户的唯一身份标识.
      * @return accountId
      */
     public String getAccountId() {

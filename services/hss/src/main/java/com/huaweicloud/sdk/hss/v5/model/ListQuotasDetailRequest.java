@@ -71,7 +71,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * Region ID
+     * **参数解释**: 区域ID，用于查询目的区域内的资产。获取方式请参见[获取区域ID](hss_02_0026.xml)。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return region
      */
     public String getRegion() {
@@ -122,7 +122,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - host_resource ：HOST_RESOURCE - container_resource ：CONTAINER_RESOURCE **默认取值**: 不涉及
+     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - host_resource ：主机 - container_resource ：容器 **默认取值**: 不涉及
      * @return category
      */
     public String getCategory() {
@@ -139,7 +139,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * **参数解释**: 配额状态 **约束限制**: 不涉及 **取值范围**: 包含如下三种： - normal ： QUOTA_STATUS_NORMAL - expired ：QUOTA_STATUS_EXPIRED - freeze ：QUOTA_STATUS_FREEZE **默认取值**: 不涉及
+     * **参数解释**: 配额状态 **约束限制**: 不涉及 **取值范围**: 包含如下三种： - normal ： 正常 - expired ：过期 - freeze ：冻结 **默认取值**: 不涉及
      * @return quotaStatus
      */
     public String getQuotaStatus() {
@@ -156,7 +156,7 @@ public class ListQuotasDetailRequest {
     }
 
     /**
-     * **参数解释**: 使用状态 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - idle ：USED_STATUS_IDLE - used ：USED_STATUS_USED **默认取值**: 不涉及
+     * **参数解释**: 使用状态 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - idle ：空闲的 - used ：使用中 **默认取值**: 不涉及
      * @return usedStatus
      */
     public String getUsedStatus() {

@@ -156,7 +156,7 @@ public class ShowK8sContainerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 沙箱域名 使用 ',' 隔开
+     * 沙箱域名，域名之间使用 ',' 隔开
      * @return hosts
      */
     public String getHosts() {

@@ -65,7 +65,7 @@ public class ListJarPackageHostInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 服务器列表
+     * **参数解释** 服务器列表 **取值范围**: 不涉及
      * @return dataList
      */
     public List<JarPackageHostInfo> getDataList() {

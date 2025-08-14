@@ -73,7 +73,7 @@ public class UpdateGroupRequest {
     }
 
     /**
-     * 身份源中IAM身份中心用户组的全局唯一标识符（ID）
+     * 身份源中IdentityCenter用户组的全局唯一标识符（ID）
      * @return groupId
      */
     public String getGroupId() {

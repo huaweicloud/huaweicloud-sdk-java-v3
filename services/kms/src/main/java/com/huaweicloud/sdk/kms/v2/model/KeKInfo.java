@@ -20,6 +20,11 @@ public class KeKInfo {
 
     private String domainId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
     public KeKInfo withKeyId(String keyId) {
         this.keyId = keyId;
         return this;
@@ -54,6 +59,23 @@ public class KeKInfo {
         this.domainId = domainId;
     }
 
+    public KeKInfo withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * region ID。
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class KeKInfo {
             return false;
         }
         KeKInfo that = (KeKInfo) obj;
-        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.domainId, that.domainId);
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, domainId);
+        return Objects.hash(keyId, domainId, regionId);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class KeKInfo {
         sb.append("class KeKInfo {\n");
         sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

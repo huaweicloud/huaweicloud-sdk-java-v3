@@ -121,7 +121,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件路径
+     * **参数解释**： 文件路径 **取值范围**： 字符长度1-256位 
      * @return filePath
      */
     public String getFilePath() {
@@ -138,7 +138,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件别名
+     * **参数解释**： 文件别名 **取值范围**： 字符长度1-256位 
      * @return fileAlias
      */
     public String getFileAlias() {
@@ -155,7 +155,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件大小
+     * **参数解释**： 文件大小 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return fileSize
@@ -174,7 +174,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件最后一次修改时间
+     * **参数解释**： 文件最后一次修改时间 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return fileMtime
@@ -193,7 +193,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件最后一次访问时间
+     * **参数解释**： 文件最后一次访问时间 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return fileAtime
@@ -212,7 +212,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件最后一次状态改变时间
+     * **参数解释**： 文件最后一次状态改变时间 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return fileCtime
@@ -231,7 +231,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件hash,当前为sha256
+     * **参数解释**： 文件hash,当前为sha256 **取值范围**： 字符长度1-256位 
      * @return fileHash
      */
     public String getFileHash() {
@@ -248,7 +248,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件md5
+     * **参数解释**： 文件md5 **取值范围**： 字符长度1-256位 
      * @return fileMd5
      */
     public String getFileMd5() {
@@ -265,7 +265,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件sha256
+     * **参数解释**： 文件sha256 **取值范围**： 字符长度1-256位 
      * @return fileSha256
      */
     public String getFileSha256() {
@@ -282,7 +282,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件类型
+     * **参数解释**： 文件类型 **取值范围**： 字符长度1-256位 
      * @return fileType
      */
     public String getFileType() {
@@ -299,7 +299,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件内容
+     * **参数解释**： 文件内容 **取值范围**： 字符长度1-256位 
      * @return fileContent
      */
     public String getFileContent() {
@@ -316,7 +316,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件属性
+     * **参数解释**： 文件属性 **取值范围**： 字符长度1-256位 
      * @return fileAttr
      */
     public String getFileAttr() {
@@ -333,7 +333,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件操作类型
+     * **参数解释**： 文件操作类型 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return fileOperation
@@ -352,7 +352,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件动作
+     * **参数解释**： 文件动作 **取值范围**： 字符长度1-256位 
      * @return fileAction
      */
     public String getFileAction() {
@@ -369,7 +369,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 变更前后的属性
+     * **参数解释**： 变更前后的属性 **取值范围**： 字符长度1-256位 
      * @return fileChangeAttr
      */
     public String getFileChangeAttr() {
@@ -386,7 +386,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 新文件路径
+     * **参数解释**： 新文件路径 **取值范围**： 字符长度1-256位 
      * @return fileNewPath
      */
     public String getFileNewPath() {
@@ -403,7 +403,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件描述
+     * **参数解释**： 文件描述 **取值范围**： 字符长度1-256位 
      * @return fileDesc
      */
     public String getFileDesc() {
@@ -420,7 +420,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件关键字
+     * **参数解释**： 文件关键字 **取值范围**： 字符长度1-256位 
      * @return fileKeyWord
      */
     public String getFileKeyWord() {
@@ -437,7 +437,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 是否目录
+     * **参数解释**： 是否目录 **取值范围**： - true：是目录 - false：不是目录 
      * @return isDir
      */
     public Boolean getIsDir() {
@@ -454,7 +454,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件句柄信息
+     * **参数解释**： 文件句柄信息 **取值范围**： 字符长度1-256位 
      * @return fdInfo
      */
     public String getFdInfo() {
@@ -471,7 +471,7 @@ public class EventFileResponseInfo {
     }
 
     /**
-     * 文件句柄数量
+     * **参数解释**： 文件句柄数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return fdCount

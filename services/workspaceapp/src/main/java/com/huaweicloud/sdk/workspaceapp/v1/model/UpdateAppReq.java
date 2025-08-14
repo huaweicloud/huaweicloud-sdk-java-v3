@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 修改应用属性(注意非空字段的限制,操作时会使用入参的字段直接覆盖已有字段的值)。
@@ -49,6 +50,11 @@ public class UpdateAppReq {
     @JsonProperty(value = "sandbox_enable")
 
     private Boolean sandboxEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_extended_info")
+
+    private AppExtendedInfo appExtendedInfo;
 
     public UpdateAppReq withName(String name) {
         this.name = name;
@@ -186,6 +192,32 @@ public class UpdateAppReq {
         this.sandboxEnable = sandboxEnable;
     }
 
+    public UpdateAppReq withAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+        return this;
+    }
+
+    public UpdateAppReq withAppExtendedInfo(Consumer<AppExtendedInfo> appExtendedInfoSetter) {
+        if (this.appExtendedInfo == null) {
+            this.appExtendedInfo = new AppExtendedInfo();
+            appExtendedInfoSetter.accept(this.appExtendedInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get appExtendedInfo
+     * @return appExtendedInfo
+     */
+    public AppExtendedInfo getAppExtendedInfo() {
+        return appExtendedInfo;
+    }
+
+    public void setAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -199,12 +231,21 @@ public class UpdateAppReq {
             && Objects.equals(this.executePath, that.executePath) && Objects.equals(this.workPath, that.workPath)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.commandParam, that.commandParam) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.sandboxEnable, that.sandboxEnable);
+            && Objects.equals(this.sandboxEnable, that.sandboxEnable)
+            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, version, executePath, workPath, description, commandParam, state, sandboxEnable);
+        return Objects.hash(name,
+            version,
+            executePath,
+            workPath,
+            description,
+            commandParam,
+            state,
+            sandboxEnable,
+            appExtendedInfo);
     }
 
     @Override
@@ -219,6 +260,7 @@ public class UpdateAppReq {
         sb.append("    commandParam: ").append(toIndentedString(commandParam)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    sandboxEnable: ").append(toIndentedString(sandboxEnable)).append("\n");
+        sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

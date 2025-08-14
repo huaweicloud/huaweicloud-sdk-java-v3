@@ -26,7 +26,7 @@ public class ImageJobResourceInfo {
     }
 
     /**
-     * 资源ID
+     * 资源ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -43,7 +43,7 @@ public class ImageJobResourceInfo {
     }
 
     /**
-     * 产物名称，或者被操作资源名称
+     * 产物名称，或者被操作资源名称。
      * @return resourceName
      */
     public String getResourceName() {

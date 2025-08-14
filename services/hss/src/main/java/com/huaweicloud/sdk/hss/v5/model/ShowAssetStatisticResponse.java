@@ -77,7 +77,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 主机账号数量
+     * **参数解释**： 主机账号数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return accountNum
@@ -96,7 +96,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 开放端口数量
+     * **参数解释**： 开放端口数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return portNum
@@ -115,7 +115,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 进程数量
+     * **参数解释**： 进程数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return processNum
@@ -134,7 +134,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 软件数量
+     * **参数解释**： 软件数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return appNum
@@ -153,7 +153,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 自启动进程数量
+     * **参数解释**： 自启动进程数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return autoLaunchNum
@@ -172,7 +172,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * web框架数量
+     * **参数解释**： web框架数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return webFrameworkNum
@@ -191,7 +191,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * Web站点数量
+     * **参数解释**： Web站点数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return webSiteNum
@@ -210,7 +210,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * Jar包数量
+     * **参数解释**： Jar包数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return jarPackageNum
@@ -229,7 +229,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 内核模块数量
+     * **参数解释**： 内核模块数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return kernelModuleNum
@@ -248,7 +248,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * web服务数量
+     * **参数解释**： web服务数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return webServiceNum
@@ -267,7 +267,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * web应用数量
+     * **参数解释**： web应用数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return webAppNum
@@ -286,7 +286,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 数据库数量
+     * **参数解释**： 数据库数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return databaseNum

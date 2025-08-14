@@ -207,7 +207,7 @@ public class ListRansomwareProtectionNodesRequest {
     }
 
     /**
-     * 服务器IP地址,服务器公网IP地址
+     * 服务器IP地址，服务器公网IP地址
      * @return hostIp
      */
     public String getHostIp() {

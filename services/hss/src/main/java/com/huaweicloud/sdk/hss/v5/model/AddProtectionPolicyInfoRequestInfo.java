@@ -98,7 +98,7 @@ public class AddProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 是否开启动态诱饵，包含如下2种, 默认为关闭防护动态诱饵防护。   - opened ：开启。   - closed ：关闭。            
+     * 是否开启动态诱饵，包含如下2种，默认为关闭防护动态诱饵防护。   - opened ：开启。   - closed ：关闭。
      * @return deployMode
      */
     public String getDeployMode() {
@@ -115,7 +115,7 @@ public class AddProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 防护目录,多个目录请用英文分号隔开，最多支持填写20个防护目录
+     * 防护目录，多个目录请用英文分号隔开，最多支持填写20个防护目录
      * @return protectionDirectory
      */
     public String getProtectionDirectory() {
@@ -217,7 +217,7 @@ public class AddProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 是否开启AI勒索防护，包含如下2种, 默认为关闭AI勒索防护，当前只支持Windows防护策略   - opened ：开启。   - closed ：关闭。            
+     * 是否开启AI勒索防护，包含如下2种，默认为关闭AI勒索防护，当前只支持Windows防护策略   - opened ：开启。   - closed ：关闭。
      * @return aiProtectionStatus
      */
     public String getAiProtectionStatus() {

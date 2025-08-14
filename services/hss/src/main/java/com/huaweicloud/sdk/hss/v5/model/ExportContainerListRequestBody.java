@@ -96,7 +96,7 @@ public class ExportContainerListRequestBody {
     }
 
     /**
-     * **参数解释**: 集群类型。 **约束限制**: 不涉及 **取值范围**:   - cce : CCE集群   - ali : 阿里云集群   - tencent : 腾讯云集群   - azure : 微软云集群   - aws : 亚马逊集群   - self_built_hw : 华为云自建集群   - self_built_idc : IDC自建集群    **默认取值**: 不涉及 
+     * **参数解释**: 集群类型。 **约束限制**: 不涉及 **取值范围**:   - cce：CCE集群   - ali：阿里云集群   - tencent：腾讯云集群   - azure：微软云集群   - aws：亚马逊集群   - self_built_hw：华为云自建集群   - self_built_idc：IDC自建集群  **默认取值**: 不涉及 
      * @return clusterType
      */
     public String getClusterType() {
@@ -181,7 +181,7 @@ public class ExportContainerListRequestBody {
     }
 
     /**
-     * **参数解释**: 容器状态。 **约束限制**: 不涉及 **取值范围**:   - Running : 运行中   - Waiting : 等待   - Terminated : 终止   - Isolated : 已隔离   - Paused : 已暂停    **默认取值**: 不涉及 
+     * **参数解释**: 容器状态。 **约束限制**: 不涉及 **取值范围**:   - Running : 运行中   - Waiting : 等待   - Terminated : 终止   - Isolated : 已隔离   - Paused : 已暂停  **默认取值**: 不涉及 
      * @return status
      */
     public String getStatus() {
@@ -292,7 +292,7 @@ public class ExportContainerListRequestBody {
     }
 
     /**
-     * **参数解释**: 导出容器列表的表头信息。 **约束限制**: 不涉及 **取值范围**: 合法的key值及其对应的表头名称（表头名称可自定义）   - container_id：容器id   - container_name：容器名称   - image_name：镜像名称   - pod_name：所属POD   - cluster_name：所属集群   - cluster_type：集群类型   - status：状态   - risky：是否有安全风险   - low_risk：低危风险   - medium_risk：中危风险   - high_risk：高危风险   - fatal_risk：致命风险   - create_time：创建时间   - restart_count：重启次数   - cpu_limit：CPU限制   - memory_limit：内存限制    **默认取值**: 不涉及 
+     * **参数解释**: 导出容器列表的表头信息。 **约束限制**: 不涉及 **取值范围**: 合法的key值及其对应的表头名称（表头名称可自定义）   - container_id：容器id   - container_name：容器名称   - image_name：镜像名称   - pod_name：所属POD   - cluster_name：所属集群   - cluster_type：集群类型   - status：状态   - risky：是否有安全风险   - low_risk：低危风险   - medium_risk：中危风险   - high_risk：高危风险   - fatal_risk：致命风险   - create_time：创建时间   - restart_count：重启次数   - cpu_limit：CPU限制   - memory_limit：内存限制  **默认取值**: 不涉及 
      * @return exportHeaders
      */
     public List<List<String>> getExportHeaders() {

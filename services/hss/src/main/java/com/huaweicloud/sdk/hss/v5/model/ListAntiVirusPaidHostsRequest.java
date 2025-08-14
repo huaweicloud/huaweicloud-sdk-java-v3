@@ -206,7 +206,7 @@ public class ListAntiVirusPaidHostsRequest {
     }
 
     /**
-     * 任务类型，包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描
+     * 任务类型，包含如下:   - quick ：快速扫描   - full：全盘扫描   - custom : 自定义扫描
      * @return scanType
      */
     public String getScanType() {

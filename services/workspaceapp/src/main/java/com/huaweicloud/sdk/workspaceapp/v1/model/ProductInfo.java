@@ -573,7 +573,7 @@ public class ProductInfo {
     }
 
     /**
-     * 系列类型
+     * 系列类型。
      * @return seriesType
      */
     public String getSeriesType() {

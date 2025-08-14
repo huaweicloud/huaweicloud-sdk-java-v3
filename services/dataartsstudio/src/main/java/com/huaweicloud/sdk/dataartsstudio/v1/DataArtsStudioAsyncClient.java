@@ -441,6 +441,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataDetailsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataDetailsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityTableApproversRequest;
@@ -6891,6 +6893,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ListSecuritySecrecyLevelsRequest, ListSecuritySecrecyLevelsResponse> listSecuritySecrecyLevelsAsyncInvoker(
         ListSecuritySecrecyLevelsRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.listSecuritySecrecyLevels, hcClient);
+    }
+
+    /**
+     * 查询敏感数据发现详情
+     *
+     * 查询敏感数据发现详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecuritySensitiveDataDetailsRequest 请求对象
+     * @return CompletableFuture<ListSecuritySensitiveDataDetailsResponse>
+     */
+    public CompletableFuture<ListSecuritySensitiveDataDetailsResponse> listSecuritySensitiveDataDetailsAsync(
+        ListSecuritySensitiveDataDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listSecuritySensitiveDataDetails);
+    }
+
+    /**
+     * 查询敏感数据发现详情
+     *
+     * 查询敏感数据发现详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecuritySensitiveDataDetailsRequest 请求对象
+     * @return AsyncInvoker<ListSecuritySensitiveDataDetailsRequest, ListSecuritySensitiveDataDetailsResponse>
+     */
+    public AsyncInvoker<ListSecuritySensitiveDataDetailsRequest, ListSecuritySensitiveDataDetailsResponse> listSecuritySensitiveDataDetailsAsyncInvoker(
+        ListSecuritySensitiveDataDetailsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listSecuritySensitiveDataDetails, hcClient);
     }
 
     /**

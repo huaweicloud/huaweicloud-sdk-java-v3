@@ -325,7 +325,7 @@ public class PrivateImageRepositoryInfo {
     }
 
     /**
-     * 镜像版本最后更新时间，时间单位 毫秒（ms）
+     * 镜像版本最后更新时间，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 4070880000000
      * @return latestUpdateTime
@@ -344,7 +344,7 @@ public class PrivateImageRepositoryInfo {
     }
 
     /**
-     * 最近扫描时间，时间单位 毫秒（ms）
+     * 最近扫描时间，时间单位：毫秒（ms）
      * minimum: 0
      * maximum: 4070880000000
      * @return latestScanTime

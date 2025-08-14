@@ -30,7 +30,7 @@ public class ListProcessesHostResponse extends SdkResponse {
     }
 
     /**
-     * 主机统计信息总数,
+     * 主机统计信息总数
      * minimum: 0
      * maximum: 10000
      * @return totalNum

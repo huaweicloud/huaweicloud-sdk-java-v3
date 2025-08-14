@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * **参数解释**： 容器实例名称 **取值范围**： 字符长度1-256位 
+ * **参数解释**： 容器实例名称，只有容器类型的告警有 **取值范围**： 字符长度1-256位 
  */
 public class ContainerName {
 

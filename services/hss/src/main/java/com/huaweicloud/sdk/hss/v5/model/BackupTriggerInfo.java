@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 备份:策略时间调度规则
+ * **参数解释**: 备份:策略时间调度规则 **取值范围**: 不涉及 
  */
 public class BackupTriggerInfo {
 
@@ -71,7 +71,7 @@ public class BackupTriggerInfo {
     }
 
     /**
-     * **参数解释**: 调度器类型,目前只支持 time,定时调度。 **取值范围**: 字符长度0-256 
+     * **参数解释**: 调度器类型，目前只支持time，定时调度。 **取值范围**: 字符长度0-256 
      * @return type
      */
     public String getType() {

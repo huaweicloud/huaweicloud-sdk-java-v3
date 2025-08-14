@@ -34,7 +34,7 @@ public class ExecutionPlanItem {
     private String index;
 
     /**
-     * 资源变更的类型   * `ADD` - 新增资源   * `ADD_THEN_DELETE` - 由不可更新的资源返回，先创建新资源，再删除旧资源   * `DELETE ` - 删除资源   * `DELETE_THEN_ADD` - 由不可更新的资源返回，先删除旧资源，再创建新资源   * `UPDATE` - 更新资源    * `NO_OPERATION` - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
+     * 资源变更的类型 * `ADD` - 新增资源 * `ADD_THEN_DELETE` - 由不可更新的资源返回，先创建新资源，再删除旧资源 * `DELETE ` - 删除资源 * `DELETE_THEN_ADD` - 由不可更新的资源返回，先删除旧资源，再创建新资源 * `UPDATE` - 更新资源  * `NO_OPERATION` - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
      */
     public static final class ActionEnum {
 
@@ -143,7 +143,7 @@ public class ExecutionPlanItem {
     private String providerName;
 
     /**
-     * 资源模式   * `DATA` - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * `RESOURCE` - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
+     * 资源模式 * `DATA` - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件 * `RESOURCE` - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
      */
     public static final class ModeEnum {
 
@@ -294,7 +294,7 @@ public class ExecutionPlanItem {
     }
 
     /**
-     * 资源变更的类型   * `ADD` - 新增资源   * `ADD_THEN_DELETE` - 由不可更新的资源返回，先创建新资源，再删除旧资源   * `DELETE ` - 删除资源   * `DELETE_THEN_ADD` - 由不可更新的资源返回，先删除旧资源，再创建新资源   * `UPDATE` - 更新资源    * `NO_OPERATION` - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
+     * 资源变更的类型 * `ADD` - 新增资源 * `ADD_THEN_DELETE` - 由不可更新的资源返回，先创建新资源，再删除旧资源 * `DELETE ` - 删除资源 * `DELETE_THEN_ADD` - 由不可更新的资源返回，先删除旧资源，再创建新资源 * `UPDATE` - 更新资源  * `NO_OPERATION` - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
      * @return action
      */
     public ActionEnum getAction() {
@@ -345,7 +345,7 @@ public class ExecutionPlanItem {
     }
 
     /**
-     * 资源模式   * `DATA` - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * `RESOURCE` - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
+     * 资源模式 * `DATA` - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件 * `RESOURCE` - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
      * @return mode
      */
     public ModeEnum getMode() {
@@ -396,7 +396,7 @@ public class ExecutionPlanItem {
     }
 
     /**
-     * 资源的物理id，是唯一id，由为该资源提供服务的provider、云服务或其他服务提供方在资源部署的时候生成
+     * 资源的物理ID，是唯一ID，由为该资源提供服务的provider、云服务或其他服务提供方在资源部署的时候生成
      * @return resourceId
      */
     public String getResourceId() {

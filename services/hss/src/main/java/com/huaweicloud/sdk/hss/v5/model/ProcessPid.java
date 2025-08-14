@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 进程ID
+ * **参数解释**： 进程ID **取值范围**： 最小值0，最大值2147483647 
  */
 public class ProcessPid {
 

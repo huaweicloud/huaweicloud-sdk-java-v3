@@ -141,7 +141,7 @@ public class UpdateWebTamperHostPolicyRequestInfo {
     }
 
     /**
-     * rasp path
+     * 动态网页防篡改的Tomcat bin目录
      * @return raspPath
      */
     public String getRaspPath() {

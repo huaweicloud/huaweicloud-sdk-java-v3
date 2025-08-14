@@ -197,6 +197,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTaskResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsResponse;
@@ -208,6 +210,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadResultFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadResultFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadTemplateRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadTemplateResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserReq;
 import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserResponse;
@@ -217,7 +223,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandR
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ExportResourceRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ExportResourceResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.FilesCreateReq;
+import com.huaweicloud.sdk.metastudio.v1.model.ImportResourceRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ImportResourceRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.ImportResourceResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.InteractionRuleGroup;
 import com.huaweicloud.sdk.metastudio.v1.model.LargeFilesCreateReq;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
@@ -312,6 +323,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyGroupsRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.SearchTaskRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SearchTaskResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameReq;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameResponse;
@@ -390,6 +403,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantDurationCfgRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantDurationCfgResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
@@ -1250,6 +1265,301 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(UpdateAsrVocabularyResponse::getXRequestId,
                 UpdateAsrVocabularyResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
+
+    private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
+                .withName("DeleteTask")
+                .withUri("/v2/{project_id}/ies/task/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaskRequest::getId, DeleteTaskRequest::setId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaskRequest::getAuthorization, DeleteTaskRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaskRequest::getXSdkDate, DeleteTaskRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaskRequest::getXProjectId, DeleteTaskRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadResultFileRequest, DownloadResultFileResponse> downloadResultFile =
+        genForDownloadResultFile();
+
+    private static HttpRequestDef<DownloadResultFileRequest, DownloadResultFileResponse> genForDownloadResultFile() {
+        // basic
+        HttpRequestDef.Builder<DownloadResultFileRequest, DownloadResultFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadResultFileRequest.class, DownloadResultFileResponse.class)
+                .withName("DownloadResultFile")
+                .withUri("/v2/{project_id}/ies/result/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadResultFileRequest::getId, DownloadResultFileRequest::setId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadResultFileRequest::getAuthorization,
+                DownloadResultFileRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadResultFileRequest::getXSdkDate, DownloadResultFileRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadResultFileRequest::getXProjectId, DownloadResultFileRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadTemplateRequest, DownloadTemplateResponse> downloadTemplate =
+        genForDownloadTemplate();
+
+    private static HttpRequestDef<DownloadTemplateRequest, DownloadTemplateResponse> genForDownloadTemplate() {
+        // basic
+        HttpRequestDef.Builder<DownloadTemplateRequest, DownloadTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadTemplateRequest.class, DownloadTemplateResponse.class)
+                .withName("DownloadTemplate")
+                .withUri("/v2/{project_id}/ies/import/{resource}/template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTemplateRequest::getResource, DownloadTemplateRequest::setResource));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTemplateRequest::getAuthorization,
+                DownloadTemplateRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTemplateRequest::getXSdkDate, DownloadTemplateRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadTemplateRequest::getXProjectId, DownloadTemplateRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportResourceRequest, ExportResourceResponse> exportResource =
+        genForExportResource();
+
+    private static HttpRequestDef<ExportResourceRequest, ExportResourceResponse> genForExportResource() {
+        // basic
+        HttpRequestDef.Builder<ExportResourceRequest, ExportResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportResourceRequest.class, ExportResourceResponse.class)
+                .withName("ExportResource")
+                .withUri("/v2/{project_id}/ies/export/{resource}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportResourceRequest::getResource, ExportResourceRequest::setResource));
+        builder.<String>withRequestField("business_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportResourceRequest::getBusinessId, ExportResourceRequest::setBusinessId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportResourceRequest::getAuthorization, ExportResourceRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportResourceRequest::getXSdkDate, ExportResourceRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportResourceRequest::getXProjectId, ExportResourceRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportResourceRequest, ImportResourceResponse> importResource =
+        genForImportResource();
+
+    private static HttpRequestDef<ImportResourceRequest, ImportResourceResponse> genForImportResource() {
+        // basic
+        HttpRequestDef.Builder<ImportResourceRequest, ImportResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportResourceRequest.class, ImportResourceResponse.class)
+                .withName("ImportResource")
+                .withUri("/v2/{project_id}/ies/import/{resource}")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("resource",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportResourceRequest::getResource, ImportResourceRequest::setResource));
+        builder.<String>withRequestField("business_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportResourceRequest::getBusinessId, ImportResourceRequest::setBusinessId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportResourceRequest::getAuthorization, ImportResourceRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportResourceRequest::getXSdkDate, ImportResourceRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportResourceRequest::getXProjectId, ImportResourceRequest::setXProjectId));
+        builder.<ImportResourceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ImportResourceRequestBody.class),
+            f -> f.withMarshaller(ImportResourceRequest::getBody, ImportResourceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchTaskRequest, SearchTaskResponse> searchTask = genForSearchTask();
+
+    private static HttpRequestDef<SearchTaskRequest, SearchTaskResponse> genForSearchTask() {
+        // basic
+        HttpRequestDef.Builder<SearchTaskRequest, SearchTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchTaskRequest.class, SearchTaskResponse.class)
+                .withName("SearchTask")
+                .withUri("/v2/{project_id}/ies/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(SearchTaskRequest::getResource, SearchTaskRequest::setResource));
+        builder.<String>withRequestField("business_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchTaskRequest::getBusinessId, SearchTaskRequest::setBusinessId));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchTaskRequest::getBeginTime, SearchTaskRequest::setBeginTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchTaskRequest::getEndTime, SearchTaskRequest::setEndTime));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchTaskRequest::getAuthorization, SearchTaskRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchTaskRequest::getXSdkDate, SearchTaskRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchTaskRequest::getXProjectId, SearchTaskRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForShowTask();
+
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForShowTask() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
+                .withName("ShowTask")
+                .withUri("/v2/{project_id}/ies/task/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskRequest::getId, ShowTaskRequest::setId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskRequest::getAuthorization, ShowTaskRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskRequest::getXSdkDate, ShowTaskRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskRequest::getXProjectId, ShowTaskRequest::setXProjectId));
+
+        // response
+
         return builder.build();
     }
 
@@ -10652,6 +10962,24 @@ public class MetaStudioMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTtscVocabularyGroupsRequest::getLimit,
+                ListTtscVocabularyGroupsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTtscVocabularyGroupsRequest::getOffset,
+                ListTtscVocabularyGroupsRequest::setOffset));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyGroupsRequest::getGroupId,
+                ListTtscVocabularyGroupsRequest::setGroupId));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

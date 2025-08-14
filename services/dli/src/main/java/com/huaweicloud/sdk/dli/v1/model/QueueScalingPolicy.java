@@ -35,6 +35,11 @@ public class QueueScalingPolicy {
 
     private Integer maxCu;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inherit_elastic_resource_pool_max_cu")
+
+    private Boolean inheritElasticResourcePoolMaxCu;
+
     public QueueScalingPolicy withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -120,6 +125,23 @@ public class QueueScalingPolicy {
         this.maxCu = maxCu;
     }
 
+    public QueueScalingPolicy withInheritElasticResourcePoolMaxCu(Boolean inheritElasticResourcePoolMaxCu) {
+        this.inheritElasticResourcePoolMaxCu = inheritElasticResourcePoolMaxCu;
+        return this;
+    }
+
+    /**
+     * 是否继承资源池最大CU
+     * @return inheritElasticResourcePoolMaxCu
+     */
+    public Boolean getInheritElasticResourcePoolMaxCu() {
+        return inheritElasticResourcePoolMaxCu;
+    }
+
+    public void setInheritElasticResourcePoolMaxCu(Boolean inheritElasticResourcePoolMaxCu) {
+        this.inheritElasticResourcePoolMaxCu = inheritElasticResourcePoolMaxCu;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +154,13 @@ public class QueueScalingPolicy {
         return Objects.equals(this.priority, that.priority)
             && Objects.equals(this.impactStartTime, that.impactStartTime)
             && Objects.equals(this.impactStopTime, that.impactStopTime) && Objects.equals(this.minCu, that.minCu)
-            && Objects.equals(this.maxCu, that.maxCu);
+            && Objects.equals(this.maxCu, that.maxCu)
+            && Objects.equals(this.inheritElasticResourcePoolMaxCu, that.inheritElasticResourcePoolMaxCu);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(priority, impactStartTime, impactStopTime, minCu, maxCu);
+        return Objects.hash(priority, impactStartTime, impactStopTime, minCu, maxCu, inheritElasticResourcePoolMaxCu);
     }
 
     @Override
@@ -149,6 +172,9 @@ public class QueueScalingPolicy {
         sb.append("    impactStopTime: ").append(toIndentedString(impactStopTime)).append("\n");
         sb.append("    minCu: ").append(toIndentedString(minCu)).append("\n");
         sb.append("    maxCu: ").append(toIndentedString(maxCu)).append("\n");
+        sb.append("    inheritElasticResourcePoolMaxCu: ")
+            .append(toIndentedString(inheritElasticResourcePoolMaxCu))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

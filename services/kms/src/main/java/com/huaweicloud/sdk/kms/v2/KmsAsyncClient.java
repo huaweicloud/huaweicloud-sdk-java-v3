@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.kms.v2.model.CreateKmsTagRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateKmsTagResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateParametersForImportRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateParametersForImportResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreatePinRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreatePinResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateRandomRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateRandomResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairRequest;
@@ -567,6 +569,34 @@ public class KmsAsyncClient {
     public AsyncInvoker<CreateParametersForImportRequest, CreateParametersForImportResponse> createParametersForImportAsyncInvoker(
         CreateParametersForImportRequest request) {
         return new AsyncInvoker<>(request, KmsMeta.createParametersForImport, hcClient);
+    }
+
+    /**
+     * 创建PIN码
+     *
+     * - 功能介绍：创建pin码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePinRequest 请求对象
+     * @return CompletableFuture<CreatePinResponse>
+     */
+    public CompletableFuture<CreatePinResponse> createPinAsync(CreatePinRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.createPin);
+    }
+
+    /**
+     * 创建PIN码
+     *
+     * - 功能介绍：创建pin码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePinRequest 请求对象
+     * @return AsyncInvoker<CreatePinRequest, CreatePinResponse>
+     */
+    public AsyncInvoker<CreatePinRequest, CreatePinResponse> createPinAsyncInvoker(CreatePinRequest request) {
+        return new AsyncInvoker<>(request, KmsMeta.createPin, hcClient);
     }
 
     /**

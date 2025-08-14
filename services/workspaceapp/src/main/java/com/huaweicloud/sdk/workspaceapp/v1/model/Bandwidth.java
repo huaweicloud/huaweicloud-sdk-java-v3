@@ -605,7 +605,7 @@ public class Bandwidth {
     }
 
     /**
-     * 是否开启文件重定向带宽控制。取值为：false：表示关闭。true：表示开启
+     * 是否开启文件重定向带宽控制。取值为：false：表示关闭。true：表示开启。
      * @return fileRedirectionBandwidthControlEnable
      */
     public Boolean getFileRedirectionBandwidthControlEnable() {

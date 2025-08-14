@@ -889,7 +889,7 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     /**
-     * 企业项目ID,仅企业项目会返回
+     * 企业项目ID,仅企业项目会返回。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -922,7 +922,7 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     /**
-     * 标签信息
+     * 标签信息。
      * @return tags
      */
     public List<TmsTag> getTags() {

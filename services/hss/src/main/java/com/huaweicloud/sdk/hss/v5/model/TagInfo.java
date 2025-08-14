@@ -26,7 +26,7 @@ public class TagInfo {
     }
 
     /**
-     * 键。最大长度128个unicode字符。 key不能为空
+     * **参数解释**： 键 **取值范围**: 最大长度128个unicode字符。 key不能为空
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class TagInfo {
     }
 
     /**
-     * 值。最大长度255个unicode字符。
+     * **参数解释**： 值 **取值范围**: 最大长度255个unicode字符。
      * @return value
      */
     public String getValue() {

@@ -76,9 +76,9 @@ public class AopWorkflowInfo {
     private String currentApprovalVersionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "current_rejected_versoin_id")
+    @JsonProperty(value = "current_rejected_version_id")
 
-    private String currentRejectedVersoinId;
+    private String currentRejectedVersionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "aop_type")
@@ -316,21 +316,21 @@ public class AopWorkflowInfo {
         this.currentApprovalVersionId = currentApprovalVersionId;
     }
 
-    public AopWorkflowInfo withCurrentRejectedVersoinId(String currentRejectedVersoinId) {
-        this.currentRejectedVersoinId = currentRejectedVersoinId;
+    public AopWorkflowInfo withCurrentRejectedVersionId(String currentRejectedVersionId) {
+        this.currentRejectedVersionId = currentRejectedVersionId;
         return this;
     }
 
     /**
      * 当前拒绝的版本号
-     * @return currentRejectedVersoinId
+     * @return currentRejectedVersionId
      */
-    public String getCurrentRejectedVersoinId() {
-        return currentRejectedVersoinId;
+    public String getCurrentRejectedVersionId() {
+        return currentRejectedVersionId;
     }
 
-    public void setCurrentRejectedVersoinId(String currentRejectedVersoinId) {
-        this.currentRejectedVersoinId = currentRejectedVersoinId;
+    public void setCurrentRejectedVersionId(String currentRejectedVersionId) {
+        this.currentRejectedVersionId = currentRejectedVersionId;
     }
 
     public AopWorkflowInfo withAopType(String aopType) {
@@ -400,7 +400,7 @@ public class AopWorkflowInfo {
             && Objects.equals(this.approveRole, that.approveRole) && Objects.equals(this.enabled, that.enabled)
             && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
             && Objects.equals(this.currentApprovalVersionId, that.currentApprovalVersionId)
-            && Objects.equals(this.currentRejectedVersoinId, that.currentRejectedVersoinId)
+            && Objects.equals(this.currentRejectedVersionId, that.currentRejectedVersionId)
             && Objects.equals(this.aopType, that.aopType) && Objects.equals(this.engineType, that.engineType)
             && Objects.equals(this.dataclassId, that.dataclassId);
     }
@@ -420,7 +420,7 @@ public class AopWorkflowInfo {
             workspaceId,
             versionId,
             currentApprovalVersionId,
-            currentRejectedVersoinId,
+            currentRejectedVersionId,
             aopType,
             engineType,
             dataclassId);
@@ -443,7 +443,7 @@ public class AopWorkflowInfo {
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("    currentApprovalVersionId: ").append(toIndentedString(currentApprovalVersionId)).append("\n");
-        sb.append("    currentRejectedVersoinId: ").append(toIndentedString(currentRejectedVersoinId)).append("\n");
+        sb.append("    currentRejectedVersionId: ").append(toIndentedString(currentRejectedVersionId)).append("\n");
         sb.append("    aopType: ").append(toIndentedString(aopType)).append("\n");
         sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 路由策略
+ * 路由策略。
  */
 public class RoutePolicy {
 

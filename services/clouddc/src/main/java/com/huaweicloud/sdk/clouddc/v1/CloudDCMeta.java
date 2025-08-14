@@ -93,7 +93,7 @@ public class CloudDCMeta {
         HttpRequestDef.Builder<BatchCreateIrackTagsRequest, BatchCreateIrackTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchCreateIrackTagsRequest.class, BatchCreateIrackTagsResponse.class)
             .withName("BatchCreateIrackTags")
-            .withUri("/v1/{project_id}/irack/{id}/tags/create")
+            .withUri("/v1/{project_id}/iracks/{id}/tags/create")
             .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -154,7 +154,7 @@ public class CloudDCMeta {
         HttpRequestDef.Builder<BatchDeleteIrackTagsRequest, BatchDeleteIrackTagsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, BatchDeleteIrackTagsRequest.class, BatchDeleteIrackTagsResponse.class)
             .withName("BatchDeleteIrackTags")
-            .withUri("/v1/{project_id}/irack/{id}/tags/delete")
+            .withUri("/v1/{project_id}/iracks/{id}/tags/delete")
             .withContentType("application/json;charset=UTF-8");
 
         // requests

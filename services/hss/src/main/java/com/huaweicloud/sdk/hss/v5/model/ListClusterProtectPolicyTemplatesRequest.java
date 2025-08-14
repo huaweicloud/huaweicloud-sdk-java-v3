@@ -145,7 +145,7 @@ public class ListClusterProtectPolicyTemplatesRequest {
     }
 
     /**
-     * 策略模板应用资源类型，多个资源类型通过分号份隔连接
+     * 策略模板应用资源类型，多个资源类型通过分号分隔连接
      * @return targetKind
      */
     public String getTargetKind() {

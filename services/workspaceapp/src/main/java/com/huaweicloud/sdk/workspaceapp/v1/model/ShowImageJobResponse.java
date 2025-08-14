@@ -174,7 +174,7 @@ public class ShowImageJobResponse extends SdkResponse {
     }
 
     /**
-     * 子任务列表
+     * 子任务列表。
      * @return subJobs
      */
     public List<ImageJobDetailInfo> getSubJobs() {

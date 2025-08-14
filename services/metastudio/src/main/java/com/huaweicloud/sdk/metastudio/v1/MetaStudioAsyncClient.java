@@ -155,6 +155,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTaskResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyGroupsRequest;
@@ -165,6 +167,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadResultFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadResultFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadTemplateRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadTemplateResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandRequest;
@@ -173,6 +179,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandR
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ExportResourceRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ExportResourceResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ImportResourceRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ImportResourceResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeRequest;
@@ -257,6 +267,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SearchTaskRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SearchTaskResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetRequest;
@@ -333,6 +345,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantDurationCfgRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantDurationCfgResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
@@ -866,6 +880,206 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<UpdateAsrVocabularyRequest, UpdateAsrVocabularyResponse> updateAsrVocabularyAsyncInvoker(
         UpdateAsrVocabularyRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.updateAsrVocabulary, hcClient);
+    }
+
+    /**
+     * 删除导入导出任务
+     *
+     * 删除导入导出任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTaskRequest 请求对象
+     * @return CompletableFuture<DeleteTaskResponse>
+     */
+    public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteTask);
+    }
+
+    /**
+     * 删除导入导出任务
+     *
+     * 删除导入导出任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
+     */
+    public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deleteTask, hcClient);
+    }
+
+    /**
+     * 下载导入或导出的结果文件
+     *
+     * 下载导入或者导出结果文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadResultFileRequest 请求对象
+     * @return CompletableFuture<DownloadResultFileResponse>
+     */
+    public CompletableFuture<DownloadResultFileResponse> downloadResultFileAsync(DownloadResultFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.downloadResultFile);
+    }
+
+    /**
+     * 下载导入或导出的结果文件
+     *
+     * 下载导入或者导出结果文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadResultFileRequest 请求对象
+     * @return AsyncInvoker<DownloadResultFileRequest, DownloadResultFileResponse>
+     */
+    public AsyncInvoker<DownloadResultFileRequest, DownloadResultFileResponse> downloadResultFileAsyncInvoker(
+        DownloadResultFileRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.downloadResultFile, hcClient);
+    }
+
+    /**
+     * 下载信息导入模板
+     *
+     * 下载导入模板，返回导入模板文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadTemplateRequest 请求对象
+     * @return CompletableFuture<DownloadTemplateResponse>
+     */
+    public CompletableFuture<DownloadTemplateResponse> downloadTemplateAsync(DownloadTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.downloadTemplate);
+    }
+
+    /**
+     * 下载信息导入模板
+     *
+     * 下载导入模板，返回导入模板文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadTemplateRequest 请求对象
+     * @return AsyncInvoker<DownloadTemplateRequest, DownloadTemplateResponse>
+     */
+    public AsyncInvoker<DownloadTemplateRequest, DownloadTemplateResponse> downloadTemplateAsyncInvoker(
+        DownloadTemplateRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.downloadTemplate, hcClient);
+    }
+
+    /**
+     * 导出文件
+     *
+     * 导出文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportResourceRequest 请求对象
+     * @return CompletableFuture<ExportResourceResponse>
+     */
+    public CompletableFuture<ExportResourceResponse> exportResourceAsync(ExportResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.exportResource);
+    }
+
+    /**
+     * 导出文件
+     *
+     * 导出文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportResourceRequest 请求对象
+     * @return AsyncInvoker<ExportResourceRequest, ExportResourceResponse>
+     */
+    public AsyncInvoker<ExportResourceRequest, ExportResourceResponse> exportResourceAsyncInvoker(
+        ExportResourceRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.exportResource, hcClient);
+    }
+
+    /**
+     * 导入文件
+     *
+     * 导入文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportResourceRequest 请求对象
+     * @return CompletableFuture<ImportResourceResponse>
+     */
+    public CompletableFuture<ImportResourceResponse> importResourceAsync(ImportResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.importResource);
+    }
+
+    /**
+     * 导入文件
+     *
+     * 导入文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportResourceRequest 请求对象
+     * @return AsyncInvoker<ImportResourceRequest, ImportResourceResponse>
+     */
+    public AsyncInvoker<ImportResourceRequest, ImportResourceResponse> importResourceAsyncInvoker(
+        ImportResourceRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.importResource, hcClient);
+    }
+
+    /**
+     * 分页查询导入导出任务列表
+     *
+     * 分页查询导入导出任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchTaskRequest 请求对象
+     * @return CompletableFuture<SearchTaskResponse>
+     */
+    public CompletableFuture<SearchTaskResponse> searchTaskAsync(SearchTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.searchTask);
+    }
+
+    /**
+     * 分页查询导入导出任务列表
+     *
+     * 分页查询导入导出任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchTaskRequest 请求对象
+     * @return AsyncInvoker<SearchTaskRequest, SearchTaskResponse>
+     */
+    public AsyncInvoker<SearchTaskRequest, SearchTaskResponse> searchTaskAsyncInvoker(SearchTaskRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.searchTask, hcClient);
+    }
+
+    /**
+     * 查询导入导出任务详情
+     *
+     * 查询导入导出任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskRequest 请求对象
+     * @return CompletableFuture<ShowTaskResponse>
+     */
+    public CompletableFuture<ShowTaskResponse> showTaskAsync(ShowTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTask);
+    }
+
+    /**
+     * 查询导入导出任务详情
+     *
+     * 查询导入导出任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskRequest 请求对象
+     * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
+     */
+    public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showTask, hcClient);
     }
 
     /**

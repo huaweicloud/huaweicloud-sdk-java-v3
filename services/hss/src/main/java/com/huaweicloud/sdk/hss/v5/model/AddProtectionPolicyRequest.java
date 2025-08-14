@@ -12,19 +12,36 @@ import java.util.function.Consumer;
 public class AddProtectionPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private AddProtectionPolicyInfoRequestInfo body;
+
+    public AddProtectionPolicyRequest withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 区域ID，用于查询目的区域内的资产。获取方式请参见[获取区域ID](hss_02_0026.xml)。 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
 
     public AddProtectionPolicyRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -41,23 +58,6 @@ public class AddProtectionPolicyRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public AddProtectionPolicyRequest withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * region id
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
     }
 
     public AddProtectionPolicyRequest withBody(AddProtectionPolicyInfoRequestInfo body) {
@@ -95,21 +95,22 @@ public class AddProtectionPolicyRequest {
             return false;
         }
         AddProtectionPolicyRequest that = (AddProtectionPolicyRequest) obj;
-        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.region, that.region) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, region, body);
+        return Objects.hash(region, enterpriseProjectId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddProtectionPolicyRequest {\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

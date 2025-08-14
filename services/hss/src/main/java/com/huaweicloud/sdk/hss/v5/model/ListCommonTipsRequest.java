@@ -67,7 +67,7 @@ public class ListCommonTipsRequest {
     }
 
     /**
-     * 提示信息的类型，包含如下： - host_name ：主机名称。 - host_id：主机id。 - public_ip：公网ip。 - private_ip ：私网ip。 - vpc_id ：vpc id。 - cluster_id ：集群 id。 - host_tags：主机标签。
+     * 提示信息的类型，包含如下： - host_name：主机名称。 - host_id：主机id。 - public_ip：公网ip。 - private_ip：私网ip。 - vpc_id：vpc id。 - cluster_id：集群id。 - host_tags：主机标签。
      * @return type
      */
     public String getType() {

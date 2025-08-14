@@ -195,7 +195,7 @@ public class ListAntiVirusResultRequest {
     }
 
     /**
-     * 处置状态，包含如下:   - unhandled ：未处理   - handled : 已处理
+     * 处置状态，包含如下:   - unhandled：未处理   - handled：已处理
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -228,7 +228,7 @@ public class ListAntiVirusResultRequest {
     }
 
     /**
-     * 威胁等级，包含如下:   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 致命
+     * 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命
      * @return severityList
      */
     public List<String> getSeverityList() {
@@ -296,7 +296,7 @@ public class ListAntiVirusResultRequest {
     }
 
     /**
-     * 文件hash,当前为sha256
+     * 文件hash，当前为sha256
      * @return fileHash
      */
     public String getFileHash() {

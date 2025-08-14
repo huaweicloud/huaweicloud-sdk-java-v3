@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 沙箱类型,linux沙箱专用
+ * 沙箱类型，linux沙箱专用
  */
 public class ContainerExtraLinuxInfo {
 
@@ -21,7 +21,7 @@ public class ContainerExtraLinuxInfo {
     }
 
     /**
-     * 操作系统: - ubt : ubuntu - centos : centos - debian, - redhat, - opensuse, - kylin - uos - euleros
+     * 操作系统: - ubt : ubuntu - centos : centos - debian - redhat - opensuse - kylin - uos - euleros
      * @return os
      */
     public String getOs() {

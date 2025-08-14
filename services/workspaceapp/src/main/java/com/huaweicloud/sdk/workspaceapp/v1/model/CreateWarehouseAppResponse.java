@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -101,6 +102,11 @@ public class CreateWarehouseAppResponse extends SdkResponse {
     @JsonProperty(value = "app_icon")
 
     private String appIcon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_extended_info")
+
+    private AppExtendedInfo appExtendedInfo;
 
     public CreateWarehouseAppResponse withId(String id) {
         this.id = id;
@@ -408,6 +414,32 @@ public class CreateWarehouseAppResponse extends SdkResponse {
         this.appIcon = appIcon;
     }
 
+    public CreateWarehouseAppResponse withAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+        return this;
+    }
+
+    public CreateWarehouseAppResponse withAppExtendedInfo(Consumer<AppExtendedInfo> appExtendedInfoSetter) {
+        if (this.appExtendedInfo == null) {
+            this.appExtendedInfo = new AppExtendedInfo();
+            appExtendedInfoSetter.accept(this.appExtendedInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get appExtendedInfo
+     * @return appExtendedInfo
+     */
+    public AppExtendedInfo getAppExtendedInfo() {
+        return appExtendedInfo;
+    }
+
+    public void setAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -427,7 +459,8 @@ public class CreateWarehouseAppResponse extends SdkResponse {
             && Objects.equals(this.appiconStorePath, that.appiconStorePath)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.modifyTime, that.modifyTime)
             && Objects.equals(this.verifyTime, that.verifyTime) && Objects.equals(this.verifyStatus, that.verifyStatus)
-            && Objects.equals(this.verifyComment, that.verifyComment) && Objects.equals(this.appIcon, that.appIcon);
+            && Objects.equals(this.verifyComment, that.verifyComment) && Objects.equals(this.appIcon, that.appIcon)
+            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
     }
 
     @Override
@@ -449,7 +482,8 @@ public class CreateWarehouseAppResponse extends SdkResponse {
             verifyTime,
             verifyStatus,
             verifyComment,
-            appIcon);
+            appIcon,
+            appExtendedInfo);
     }
 
     @Override
@@ -474,6 +508,7 @@ public class CreateWarehouseAppResponse extends SdkResponse {
         sb.append("    verifyStatus: ").append(toIndentedString(verifyStatus)).append("\n");
         sb.append("    verifyComment: ").append(toIndentedString(verifyComment)).append("\n");
         sb.append("    appIcon: ").append(toIndentedString(appIcon)).append("\n");
+        sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

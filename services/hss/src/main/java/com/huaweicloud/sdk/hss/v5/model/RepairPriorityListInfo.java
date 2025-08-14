@@ -26,7 +26,7 @@ public class RepairPriorityListInfo {
     }
 
     /**
-     * 修复优先级 Critical 紧急 High 高 Medium 中 Low 低
+     * **参数解释**: 修复优先级 **取值范围**: - Critical：紧急 - High：高 - Medium：中 - Low：低 
      * @return repairPriority
      */
     public String getRepairPriority() {
@@ -43,7 +43,7 @@ public class RepairPriorityListInfo {
     }
 
     /**
-     * 当前修复优先级对应的主机数量
+     * **参数解释**: 当前修复优先级对应的主机数量 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum

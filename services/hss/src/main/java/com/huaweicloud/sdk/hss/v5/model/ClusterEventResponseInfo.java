@@ -235,7 +235,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 处理状态，包含如下:   - unhandled ：未处理   - handled : 已处理
+     * 处理状态，包含如下:   - unhandled：未处理   - handled：已处理
      * @return handleStatus
      */
     public String getHandleStatus() {

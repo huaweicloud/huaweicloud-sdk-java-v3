@@ -441,6 +441,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataDetailsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataDetailsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityTableApproversRequest;
@@ -6809,6 +6811,36 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListSecuritySecrecyLevelsRequest, ListSecuritySecrecyLevelsResponse> listSecuritySecrecyLevelsInvoker(
         ListSecuritySecrecyLevelsRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listSecuritySecrecyLevels, hcClient);
+    }
+
+    /**
+     * 查询敏感数据发现详情
+     *
+     * 查询敏感数据发现详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecuritySensitiveDataDetailsRequest 请求对象
+     * @return ListSecuritySensitiveDataDetailsResponse
+     */
+    public ListSecuritySensitiveDataDetailsResponse listSecuritySensitiveDataDetails(
+        ListSecuritySensitiveDataDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listSecuritySensitiveDataDetails);
+    }
+
+    /**
+     * 查询敏感数据发现详情
+     *
+     * 查询敏感数据发现详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecuritySensitiveDataDetailsRequest 请求对象
+     * @return SyncInvoker<ListSecuritySensitiveDataDetailsRequest, ListSecuritySensitiveDataDetailsResponse>
+     */
+    public SyncInvoker<ListSecuritySensitiveDataDetailsRequest, ListSecuritySensitiveDataDetailsResponse> listSecuritySensitiveDataDetailsInvoker(
+        ListSecuritySensitiveDataDetailsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listSecuritySensitiveDataDetails, hcClient);
     }
 
     /**

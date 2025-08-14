@@ -8,8 +8,14 @@ import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectPolicyAssignmentsStatesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectPolicyAssignmentsStatesSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectPolicyStatesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectPolicyStatesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectRemediationExecutionStatusesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectRemediationExecutionStatusesSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectResourcesPolicyStatesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectResourcesPolicyStatesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesRequest;
@@ -66,6 +72,8 @@ import com.huaweicloud.sdk.config.v1.model.ListAggregateDiscoveredResourcesReque
 import com.huaweicloud.sdk.config.v1.model.ListAggregateDiscoveredResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListAggregationAuthorizationsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListAggregationAuthorizationsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListAllProvidersRequest;
+import com.huaweicloud.sdk.config.v1.model.ListAllProvidersResponse;
 import com.huaweicloud.sdk.config.v1.model.ListAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListAllResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListAllTagsRequest;
@@ -1421,6 +1429,66 @@ public class ConfigAsyncClient {
     }
 
     /**
+     * 查询规则的合规总结
+     *
+     * 根据规则ID查询此规则的合规总结
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectPolicyAssignmentsStatesSummaryRequest 请求对象
+     * @return CompletableFuture<CollectPolicyAssignmentsStatesSummaryResponse>
+     */
+    public CompletableFuture<CollectPolicyAssignmentsStatesSummaryResponse> collectPolicyAssignmentsStatesSummaryAsync(
+        CollectPolicyAssignmentsStatesSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.collectPolicyAssignmentsStatesSummary);
+    }
+
+    /**
+     * 查询规则的合规总结
+     *
+     * 根据规则ID查询此规则的合规总结
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectPolicyAssignmentsStatesSummaryRequest 请求对象
+     * @return AsyncInvoker<CollectPolicyAssignmentsStatesSummaryRequest, CollectPolicyAssignmentsStatesSummaryResponse>
+     */
+    public AsyncInvoker<CollectPolicyAssignmentsStatesSummaryRequest, CollectPolicyAssignmentsStatesSummaryResponse> collectPolicyAssignmentsStatesSummaryAsyncInvoker(
+        CollectPolicyAssignmentsStatesSummaryRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.collectPolicyAssignmentsStatesSummary, hcClient);
+    }
+
+    /**
+     * 查询用户的合规总结
+     *
+     * 查询用户的合规总结
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectPolicyStatesSummaryRequest 请求对象
+     * @return CompletableFuture<CollectPolicyStatesSummaryResponse>
+     */
+    public CompletableFuture<CollectPolicyStatesSummaryResponse> collectPolicyStatesSummaryAsync(
+        CollectPolicyStatesSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.collectPolicyStatesSummary);
+    }
+
+    /**
+     * 查询用户的合规总结
+     *
+     * 查询用户的合规总结
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectPolicyStatesSummaryRequest 请求对象
+     * @return AsyncInvoker<CollectPolicyStatesSummaryRequest, CollectPolicyStatesSummaryResponse>
+     */
+    public AsyncInvoker<CollectPolicyStatesSummaryRequest, CollectPolicyStatesSummaryResponse> collectPolicyStatesSummaryAsyncInvoker(
+        CollectPolicyStatesSummaryRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.collectPolicyStatesSummary, hcClient);
+    }
+
+    /**
      * 列举修正最新记录
      *
      * 列举合规规则修正最新记录。
@@ -1448,6 +1516,36 @@ public class ConfigAsyncClient {
     public AsyncInvoker<CollectRemediationExecutionStatusesSummaryRequest, CollectRemediationExecutionStatusesSummaryResponse> collectRemediationExecutionStatusesSummaryAsyncInvoker(
         CollectRemediationExecutionStatusesSummaryRequest request) {
         return new AsyncInvoker<>(request, ConfigMeta.collectRemediationExecutionStatusesSummary, hcClient);
+    }
+
+    /**
+     * 查询用户资源的合规总结
+     *
+     * 查询用户资源的合规总结
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectResourcesPolicyStatesSummaryRequest 请求对象
+     * @return CompletableFuture<CollectResourcesPolicyStatesSummaryResponse>
+     */
+    public CompletableFuture<CollectResourcesPolicyStatesSummaryResponse> collectResourcesPolicyStatesSummaryAsync(
+        CollectResourcesPolicyStatesSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.collectResourcesPolicyStatesSummary);
+    }
+
+    /**
+     * 查询用户资源的合规总结
+     *
+     * 查询用户资源的合规总结
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectResourcesPolicyStatesSummaryRequest 请求对象
+     * @return AsyncInvoker<CollectResourcesPolicyStatesSummaryRequest, CollectResourcesPolicyStatesSummaryResponse>
+     */
+    public AsyncInvoker<CollectResourcesPolicyStatesSummaryRequest, CollectResourcesPolicyStatesSummaryResponse> collectResourcesPolicyStatesSummaryAsyncInvoker(
+        CollectResourcesPolicyStatesSummaryRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.collectResourcesPolicyStatesSummary, hcClient);
     }
 
     /**
@@ -2695,6 +2793,35 @@ public class ConfigAsyncClient {
     public AsyncInvoker<CountTrackedResourcesRequest, CountTrackedResourcesResponse> countTrackedResourcesAsyncInvoker(
         CountTrackedResourcesRequest request) {
         return new AsyncInvoker<>(request, ConfigMeta.countTrackedResources, hcClient);
+    }
+
+    /**
+     * 列举所有已对接的云服务
+     *
+     * 查询所有已对接Config的云服务、资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllProvidersRequest 请求对象
+     * @return CompletableFuture<ListAllProvidersResponse>
+     */
+    public CompletableFuture<ListAllProvidersResponse> listAllProvidersAsync(ListAllProvidersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listAllProviders);
+    }
+
+    /**
+     * 列举所有已对接的云服务
+     *
+     * 查询所有已对接Config的云服务、资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllProvidersRequest 请求对象
+     * @return AsyncInvoker<ListAllProvidersRequest, ListAllProvidersResponse>
+     */
+    public AsyncInvoker<ListAllProvidersRequest, ListAllProvidersResponse> listAllProvidersAsyncInvoker(
+        ListAllProvidersRequest request) {
+        return new AsyncInvoker<>(request, ConfigMeta.listAllProviders, hcClient);
     }
 
     /**

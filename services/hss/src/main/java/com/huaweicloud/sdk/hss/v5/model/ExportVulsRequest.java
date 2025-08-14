@@ -261,7 +261,7 @@ public class ExportVulsRequest {
     }
 
     /**
-     * 修复优先级 Critical 紧急 High  高 Medium 中 Low 低
+     * 修复优先级 Critical：紧急 High：高 Medium：中 Low：低
      * @return repairPriority
      */
     public String getRepairPriority() {

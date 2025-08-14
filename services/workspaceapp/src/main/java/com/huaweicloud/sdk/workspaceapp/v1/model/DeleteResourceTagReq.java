@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * tags
+ * tags。
  */
 public class DeleteResourceTagReq {
 
@@ -40,7 +40,7 @@ public class DeleteResourceTagReq {
     }
 
     /**
-     * 标签列表
+     * 标签列表。
      * @return tags
      */
     public List<TmsTag> getTags() {

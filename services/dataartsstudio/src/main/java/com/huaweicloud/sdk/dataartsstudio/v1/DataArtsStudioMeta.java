@@ -531,6 +531,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataDetailsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataDetailsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityTableApproversRequest;
@@ -9780,6 +9782,81 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecuritySecrecyLevelsRequest::getWorkspace,
                 ListSecuritySecrecyLevelsRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecuritySensitiveDataDetailsRequest, ListSecuritySensitiveDataDetailsResponse> listSecuritySensitiveDataDetails =
+        genForListSecuritySensitiveDataDetails();
+
+    private static HttpRequestDef<ListSecuritySensitiveDataDetailsRequest, ListSecuritySensitiveDataDetailsResponse> genForListSecuritySensitiveDataDetails() {
+        // basic
+        HttpRequestDef.Builder<ListSecuritySensitiveDataDetailsRequest, ListSecuritySensitiveDataDetailsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecuritySensitiveDataDetailsRequest.class,
+                    ListSecuritySensitiveDataDetailsResponse.class)
+                .withName("ListSecuritySensitiveDataDetails")
+                .withUri("/v1/{project_id}/security/sensitive-data/result/details")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getLimit,
+                ListSecuritySensitiveDataDetailsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getOffset,
+                ListSecuritySensitiveDataDetailsRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getMarker,
+                ListSecuritySensitiveDataDetailsRequest::setMarker));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getDatabaseName,
+                ListSecuritySensitiveDataDetailsRequest::setDatabaseName));
+        builder.<Long>withRequestField("find_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getFindStartTime,
+                ListSecuritySensitiveDataDetailsRequest::setFindStartTime));
+        builder.<Long>withRequestField("find_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getFindEndTime,
+                ListSecuritySensitiveDataDetailsRequest::setFindEndTime));
+        builder.<ListSecuritySensitiveDataDetailsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecuritySensitiveDataDetailsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getOrderBy,
+                ListSecuritySensitiveDataDetailsRequest::setOrderBy));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getOrderByAsc,
+                ListSecuritySensitiveDataDetailsRequest::setOrderByAsc));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecuritySensitiveDataDetailsRequest::getWorkspace,
+                ListSecuritySensitiveDataDetailsRequest::setWorkspace));
 
         // response
 

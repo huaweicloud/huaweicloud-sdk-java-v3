@@ -42,6 +42,9 @@ import com.huaweicloud.sdk.kms.v2.model.CreateKmsTagRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateKmsTagResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateParametersForImportRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateParametersForImportResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreatePinRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreatePinRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.CreatePinResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateRandomRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateRandomResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairRequest;
@@ -491,6 +494,28 @@ public class KmsMeta {
             TypeCasts.uncheckedConversion(GetParametersForImportRequestBody.class),
             f -> f.withMarshaller(CreateParametersForImportRequest::getBody,
                 CreateParametersForImportRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePinRequest, CreatePinResponse> createPin = genForCreatePin();
+
+    private static HttpRequestDef<CreatePinRequest, CreatePinResponse> genForCreatePin() {
+        // basic
+        HttpRequestDef.Builder<CreatePinRequest, CreatePinResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePinRequest.class, CreatePinResponse.class)
+                .withName("CreatePin")
+                .withUri("/v1.0/{project_id}/kms/create-pin")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreatePinRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePinRequestBody.class),
+            f -> f.withMarshaller(CreatePinRequest::getBody, CreatePinRequest::setBody));
 
         // response
 

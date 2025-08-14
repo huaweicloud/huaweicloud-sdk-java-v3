@@ -178,6 +178,11 @@ public class ListAlarmResponseAlarms {
 
     private ResourceLevelEnum resourceLevel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
     public ListAlarmResponseAlarms withAlarmId(String alarmId) {
         this.alarmId = alarmId;
         return this;
@@ -548,6 +553,39 @@ public class ListAlarmResponseAlarms {
         this.resourceLevel = resourceLevel;
     }
 
+    public ListAlarmResponseAlarms withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ListAlarmResponseAlarms addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ListAlarmResponseAlarms withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 租户标签列表
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -570,7 +608,7 @@ public class ListAlarmResponseAlarms {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.alarmTemplateId, that.alarmTemplateId)
             && Objects.equals(this.productName, that.productName)
-            && Objects.equals(this.resourceLevel, that.resourceLevel);
+            && Objects.equals(this.resourceLevel, that.resourceLevel) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -592,7 +630,8 @@ public class ListAlarmResponseAlarms {
             enterpriseProjectId,
             alarmTemplateId,
             productName,
-            resourceLevel);
+            resourceLevel,
+            tags);
     }
 
     @Override
@@ -617,6 +656,7 @@ public class ListAlarmResponseAlarms {
         sb.append("    alarmTemplateId: ").append(toIndentedString(alarmTemplateId)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("    resourceLevel: ").append(toIndentedString(resourceLevel)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

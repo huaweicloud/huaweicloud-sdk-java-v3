@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.coc.v1.model.ClearAlarmRequest;
 import com.huaweicloud.sdk.coc.v1.model.ClearAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
@@ -84,6 +86,8 @@ import com.huaweicloud.sdk.coc.v1.model.HandleIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListAssessTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListAssessTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
@@ -454,6 +458,64 @@ public class CocClient {
     public SyncInvoker<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> batchCreateApplicationViewInvoker(
         BatchCreateApplicationViewRequest request) {
         return new SyncInvoker<>(request, CocMeta.batchCreateApplicationView, hcClient);
+    }
+
+    /**
+     * 创建应用评估任务
+     *
+     * 创建应用评估任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssessTaskRequest 请求对象
+     * @return CreateAssessTaskResponse
+     */
+    public CreateAssessTaskResponse createAssessTask(CreateAssessTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.createAssessTask);
+    }
+
+    /**
+     * 创建应用评估任务
+     *
+     * 创建应用评估任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssessTaskRequest 请求对象
+     * @return SyncInvoker<CreateAssessTaskRequest, CreateAssessTaskResponse>
+     */
+    public SyncInvoker<CreateAssessTaskRequest, CreateAssessTaskResponse> createAssessTaskInvoker(
+        CreateAssessTaskRequest request) {
+        return new SyncInvoker<>(request, CocMeta.createAssessTask, hcClient);
+    }
+
+    /**
+     * 分页查询评估任务列表
+     *
+     * 分页查询评估任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssessTaskRequest 请求对象
+     * @return ListAssessTaskResponse
+     */
+    public ListAssessTaskResponse listAssessTask(ListAssessTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.listAssessTask);
+    }
+
+    /**
+     * 分页查询评估任务列表
+     *
+     * 分页查询评估任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssessTaskRequest 请求对象
+     * @return SyncInvoker<ListAssessTaskRequest, ListAssessTaskResponse>
+     */
+    public SyncInvoker<ListAssessTaskRequest, ListAssessTaskResponse> listAssessTaskInvoker(
+        ListAssessTaskRequest request) {
+        return new SyncInvoker<>(request, CocMeta.listAssessTask, hcClient);
     }
 
     /**

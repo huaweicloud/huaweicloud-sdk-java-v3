@@ -78,7 +78,7 @@ public class BaselineWhiteListsResponseInfo {
     }
 
     /**
-     * 基线检查白名单的规则范围 - specific_host 部分主机 - all_host      全部主机
+     * 基线检查白名单的规则范围 - specific_host：部分主机 - all_host：全部主机
      * @return ruleType
      */
     public String getRuleType() {

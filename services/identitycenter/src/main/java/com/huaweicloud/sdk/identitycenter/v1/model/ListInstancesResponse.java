@@ -46,7 +46,7 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * IAM身份中心实例信息列表
+     * IAM身份中心实例信息列表。
      * @return instances
      */
     public List<InstanceMetadataEntryDto> getInstances() {

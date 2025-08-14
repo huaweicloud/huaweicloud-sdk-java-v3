@@ -20,6 +20,9 @@ import com.huaweicloud.sdk.coc.v1.model.CocUpdateChangeRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CocUpdateChangeRequestBodyV2;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentResponse;
@@ -110,6 +113,8 @@ import com.huaweicloud.sdk.coc.v1.model.JobScriptAnalyzeRequest;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptOrderOperationBody;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListAssessTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListAssessTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsReq;
@@ -461,6 +466,68 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(BatchCreateApplicationViewRequestBody.class),
             f -> f.withMarshaller(BatchCreateApplicationViewRequest::getBody,
                 BatchCreateApplicationViewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAssessTaskRequest, CreateAssessTaskResponse> createAssessTask =
+        genForCreateAssessTask();
+
+    private static HttpRequestDef<CreateAssessTaskRequest, CreateAssessTaskResponse> genForCreateAssessTask() {
+        // basic
+        HttpRequestDef.Builder<CreateAssessTaskRequest, CreateAssessTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAssessTaskRequest.class, CreateAssessTaskResponse.class)
+                .withName("CreateAssessTask")
+                .withUri("/v1/assess-tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateAssessTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAssessTaskRequestBody.class),
+            f -> f.withMarshaller(CreateAssessTaskRequest::getBody, CreateAssessTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssessTaskRequest, ListAssessTaskResponse> listAssessTask =
+        genForListAssessTask();
+
+    private static HttpRequestDef<ListAssessTaskRequest, ListAssessTaskResponse> genForListAssessTask() {
+        // basic
+        HttpRequestDef.Builder<ListAssessTaskRequest, ListAssessTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAssessTaskRequest.class, ListAssessTaskResponse.class)
+                .withName("ListAssessTask")
+                .withUri("/v1/assess-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssessTaskRequest::getOffset, ListAssessTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssessTaskRequest::getLimit, ListAssessTaskRequest::setLimit));
+        builder.<String>withRequestField("application_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssessTaskRequest::getApplicationId, ListAssessTaskRequest::setApplicationId));
+        builder.<List<String>>withRequestField("assess_status_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAssessTaskRequest::getAssessStatusList,
+                ListAssessTaskRequest::setAssessStatusList));
 
         // response
 

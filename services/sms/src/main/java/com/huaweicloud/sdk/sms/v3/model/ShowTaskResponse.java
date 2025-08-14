@@ -430,6 +430,11 @@ public class ShowTaskResponse extends SdkResponse {
 
     private Boolean needMigrationTest;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subtask_info")
+
+    private String subtaskInfo;
+
     public ShowTaskResponse withName(String name) {
         this.name = name;
         return this;
@@ -1177,6 +1182,23 @@ public class ShowTaskResponse extends SdkResponse {
         this.needMigrationTest = needMigrationTest;
     }
 
+    public ShowTaskResponse withSubtaskInfo(String subtaskInfo) {
+        this.subtaskInfo = subtaskInfo;
+        return this;
+    }
+
+    /**
+     * 当前子任务及进度
+     * @return subtaskInfo
+     */
+    public String getSubtaskInfo() {
+        return subtaskInfo;
+    }
+
+    public void setSubtaskInfo(String subtaskInfo) {
+        this.subtaskInfo = subtaskInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1212,7 +1234,8 @@ public class ShowTaskResponse extends SdkResponse {
             && Objects.equals(this.totalMemUsage, that.totalMemUsage)
             && Objects.equals(this.agentMemUsage, that.agentMemUsage)
             && Objects.equals(this.totalDiskIo, that.totalDiskIo) && Objects.equals(this.agentDiskIo, that.agentDiskIo)
-            && Objects.equals(this.needMigrationTest, that.needMigrationTest);
+            && Objects.equals(this.needMigrationTest, that.needMigrationTest)
+            && Objects.equals(this.subtaskInfo, that.subtaskInfo);
     }
 
     @Override
@@ -1255,7 +1278,8 @@ public class ShowTaskResponse extends SdkResponse {
             agentMemUsage,
             totalDiskIo,
             agentDiskIo,
-            needMigrationTest);
+            needMigrationTest,
+            subtaskInfo);
     }
 
     @Override
@@ -1301,6 +1325,7 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    totalDiskIo: ").append(toIndentedString(totalDiskIo)).append("\n");
         sb.append("    agentDiskIo: ").append(toIndentedString(agentDiskIo)).append("\n");
         sb.append("    needMigrationTest: ").append(toIndentedString(needMigrationTest)).append("\n");
+        sb.append("    subtaskInfo: ").append(toIndentedString(subtaskInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

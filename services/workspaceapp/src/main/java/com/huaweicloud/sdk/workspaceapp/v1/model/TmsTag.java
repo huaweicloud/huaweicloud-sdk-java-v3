@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * tms标签
+ * tms标签。
  */
 public class TmsTag {
 

@@ -51,7 +51,7 @@ public class AntiVirusHostResponseInfo {
     }
 
     /**
-     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
+     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -85,7 +85,7 @@ public class AntiVirusHostResponseInfo {
     }
 
     /**
-     * 弹性公网IP地址
+     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -102,7 +102,7 @@ public class AntiVirusHostResponseInfo {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**： 服务器私有IP **取值范围**： 字符长度1-128位 
      * @return privateIp
      */
     public String getPrivateIp() {

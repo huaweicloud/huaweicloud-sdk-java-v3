@@ -1019,7 +1019,7 @@ public class Host {
     }
 
     /**
-     * **参数解释**： 升级失败原因，只有当 upgrade_status 为 upgrade_failed 时才显示 **取值范围**： 包含如下6种。   - package_unavailable ：升级包解析失败，升级文件有错误。   - network_access_timeout ：下载升级包失败，网络异常。   - agent_offline ：agent离线。   - hostguard_abnormal ：agent工作进程异常。   - insufficient_disk_space ：磁盘空间不足。   - failed_to_replace_file ：替换文件失败。
+     * **参数解释**： 升级失败原因，只有当upgrade_status为upgrade_failed时才显示 **取值范围**： 包含如下6种。   - package_unavailable ：升级包解析失败，升级文件有错误。   - network_access_timeout ：下载升级包失败，网络异常。   - agent_offline ：agent离线。   - hostguard_abnormal ：agent工作进程异常。   - insufficient_disk_space ：磁盘空间不足。   - failed_to_replace_file ：替换文件失败。
      * @return upgradeResultCode
      */
     public String getUpgradeResultCode() {

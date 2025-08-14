@@ -73,7 +73,7 @@ public class AppWhitelistEventDetailResInfo {
     }
 
     /**
-     * 进程ID
+     * **参数解释**： 进程ID **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return processPid
@@ -92,7 +92,7 @@ public class AppWhitelistEventDetailResInfo {
     }
 
     /**
-     * 文件哈希
+     * **参数解释**： 文件哈希 **取值范围**： 字符长度1-256位 
      * @return fileHash
      */
     public String getFileHash() {
@@ -109,7 +109,7 @@ public class AppWhitelistEventDetailResInfo {
     }
 
     /**
-     * 文件路径
+     * **参数解释**： 文件路径 **取值范围**： 字符长度1-256位 
      * @return filePath
      */
     public String getFilePath() {
@@ -126,7 +126,7 @@ public class AppWhitelistEventDetailResInfo {
     }
 
     /**
-     * 文件属性
+     * **参数解释**： 文件属性 **取值范围**： 字符长度1-256位 
      * @return fileAttr
      */
     public String getFileAttr() {
@@ -143,7 +143,7 @@ public class AppWhitelistEventDetailResInfo {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**： 服务器私有IP **取值范围**： 字符长度1-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -160,7 +160,7 @@ public class AppWhitelistEventDetailResInfo {
     }
 
     /**
-     * 登录源IP
+     * **参数解释**： 登录源IP **取值范围**： 字符长度1-256位 
      * @return loginIp
      */
     public String getLoginIp() {
@@ -177,7 +177,7 @@ public class AppWhitelistEventDetailResInfo {
     }
 
     /**
-     * 登录用户名
+     * **参数解释**： 登录用户名 **取值范围**： 字符长度1-256位 
      * @return loginUserName
      */
     public String getLoginUserName() {

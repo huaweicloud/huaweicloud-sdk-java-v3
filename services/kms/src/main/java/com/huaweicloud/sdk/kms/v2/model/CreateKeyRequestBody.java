@@ -301,6 +301,11 @@ public class CreateKeyRequestBody {
 
     private String keystoreId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vm_id")
+
+    private String vmId;
+
     public CreateKeyRequestBody withKeyAlias(String keyAlias) {
         this.keyAlias = keyAlias;
         return this;
@@ -426,7 +431,7 @@ public class CreateKeyRequestBody {
     }
 
     /**
-     * 密钥库ID，默认使用KMS默认密钥库
+     * 密钥库ID，默认为0，使用KMS默认密钥库；设置为1，则指定管理面CDMS集群；设置为2，则指定租户面共享CDMS集群；若需指定其他CDMS集群，需先执行创建密钥库操作
      * @return keystoreId
      */
     public String getKeystoreId() {
@@ -435,6 +440,23 @@ public class CreateKeyRequestBody {
 
     public void setKeystoreId(String keystoreId) {
         this.keystoreId = keystoreId;
+    }
+
+    public CreateKeyRequestBody withVmId(String vmId) {
+        this.vmId = vmId;
+        return this;
+    }
+
+    /**
+     * 虚机ID，密钥创建的虚机，仅四级密评场景生效
+     * @return vmId
+     */
+    public String getVmId() {
+        return vmId;
+    }
+
+    public void setVmId(String vmId) {
+        this.vmId = vmId;
     }
 
     @Override
@@ -450,13 +472,14 @@ public class CreateKeyRequestBody {
             && Objects.equals(this.keyUsage, that.keyUsage) && Objects.equals(this.keyDescription, that.keyDescription)
             && Objects.equals(this.origin, that.origin)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.keystoreId, that.keystoreId);
+            && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.keystoreId, that.keystoreId)
+            && Objects.equals(this.vmId, that.vmId);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(keyAlias, keySpec, keyUsage, keyDescription, origin, enterpriseProjectId, sequence, keystoreId);
+            .hash(keyAlias, keySpec, keyUsage, keyDescription, origin, enterpriseProjectId, sequence, keystoreId, vmId);
     }
 
     @Override
@@ -471,6 +494,7 @@ public class CreateKeyRequestBody {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("    keystoreId: ").append(toIndentedString(keystoreId)).append("\n");
+        sb.append("    vmId: ").append(toIndentedString(vmId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

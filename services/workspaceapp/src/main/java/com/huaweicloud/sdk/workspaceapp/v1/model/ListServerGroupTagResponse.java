@@ -41,7 +41,7 @@ public class ListServerGroupTagResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表
+     * 标签列表。
      * @return tags
      */
     public List<TmsTagValues> getTags() {

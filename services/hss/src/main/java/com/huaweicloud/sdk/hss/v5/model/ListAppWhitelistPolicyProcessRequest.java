@@ -148,7 +148,7 @@ public class ListAppWhitelistPolicyProcessRequest {
     }
 
     /**
-     * **参数解释**： 服务器名称 **约束限制**: 不涉及 **取值范围**: - trust：可信 - suspicious：可疑 - malicious：未知 - unknown：未知  **默认取值**: 不涉及 
+     * **参数解释**： 信任状态 **约束限制**: 不涉及 **取值范围**: - trust：可信 - suspicious：可疑 - malicious：未知 - unknown：未知  **默认取值**: 不涉及 
      * @return processStatus
      */
     public String getProcessStatus() {
@@ -165,7 +165,7 @@ public class ListAppWhitelistPolicyProcessRequest {
     }
 
     /**
-     * **参数解释**： 服务器名称 **约束限制**: 不涉及 **取值范围**: - system：系统程序 - interpretive：解释类程序 - normal：普通可执行程序  **默认取值**: 不涉及 
+     * **参数解释**： 进程类型 **约束限制**: 不涉及 **取值范围**: - system：系统程序 - interpretive：解释类程序 - normal：普通可执行程序  **默认取值**: 不涉及 
      * @return processType
      */
     public String getProcessType() {
@@ -233,7 +233,7 @@ public class ListAppWhitelistPolicyProcessRequest {
     }
 
     /**
-     * **参数解释**： 服务器名称 **约束限制**: 不涉及 **取值范围**: - confirmed：已确认 - unconfirmed：未确认  **默认取值**: 不涉及 
+     * **参数解释**： 确认状态 **约束限制**: 不涉及 **取值范围**: - confirmed：已确认 - unconfirmed：未确认  **默认取值**: 不涉及 
      * @return handleStatus
      */
     public String getHandleStatus() {

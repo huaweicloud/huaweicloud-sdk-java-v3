@@ -67,6 +67,16 @@ public class ProtectionServerInfo {
     private String ransomProtectionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ransom_protection_fail_reason")
+
+    private String ransomProtectionFailReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_decoy_dir")
+
+    private String failedDecoyDir;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_version")
 
     private String agentVersion;
@@ -192,7 +202,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 项目ID
+     * **参数解释**: 项目ID **取值范围**: 字符长度0-128 
      * @return projectId
      */
     public String getProjectId() {
@@ -209,7 +219,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释**: 企业项目ID **取值范围**: 字符长度0-128 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -226,7 +236,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 服务器ID
+     * **参数解释**: 服务器ID **取值范围**: 字符长度0-128 
      * @return hostId
      */
     public String getHostId() {
@@ -243,7 +253,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * Agent ID
+     * **参数解释**: Agent ID **取值范围**: 字符长度0-128 
      * @return agentId
      */
     public String getAgentId() {
@@ -260,7 +270,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度0-128 
      * @return hostName
      */
     public String getHostName() {
@@ -277,7 +287,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 弹性公网IP地址
+     * **参数解释**: 弹性公网IP地址 **取值范围**: 字符长度0-128 
      * @return hostIp
      */
     public String getHostIp() {
@@ -294,7 +304,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 私有IP地址
+     * **参数解释**: 私有IP地址 **取值范围**: 字符长度0-128 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -311,7 +321,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 操作系统类型，包含如下2种。   - Linux ：Linux。   - Windows ：Windows。
+     * **参数解释**: 操作系统类型 **取值范围**:   包含如下2种。     - Linux ：Linux。     - Windows ：Windows。
      * @return osType
      */
     public String getOsType() {
@@ -328,7 +338,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 系统名称
+     * **参数解释**: 系统名称 **取值范围**: 字符长度0-128 
      * @return osName
      */
     public String getOsName() {
@@ -345,7 +355,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 服务器状态，包含如下2种。   - ACTIVE ：运行中。   - SHUTOFF ：关机。
+     * **参数解释**: 服务器状态 **取值范围**: 包含如下2种。   - ACTIVE ：运行中。   - SHUTOFF ：关机。
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -362,7 +372,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 勒索防护状态，包含如下4种。   - closed ：关闭。   - opened ：开启。   - opening ：开启中。   - closing ：关闭中。
+     * **参数解释**: 勒索防护状态 **取值范围**: 包含如下6种。   - closed ：未开启。   - opened ：防护中。   - opening ：开启中。   - closing ：关闭中。   - protect_failed：防护失败。   - protect_degraded：防护降级
      * @return ransomProtectionStatus
      */
     public String getRansomProtectionStatus() {
@@ -373,13 +383,47 @@ public class ProtectionServerInfo {
         this.ransomProtectionStatus = ransomProtectionStatus;
     }
 
+    public ProtectionServerInfo withRansomProtectionFailReason(String ransomProtectionFailReason) {
+        this.ransomProtectionFailReason = ransomProtectionFailReason;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 勒索防护失败细分原因 **取值范围**: 包含如下4种。   - driver_load_failed ：驱动加载失败。   - protect_interrupted ：防护中断。   - decoy_deploy_totally_failed ：全部诱饵部署失败。   - decoy_deploy_partially_failed ：部分诱饵部署失败。
+     * @return ransomProtectionFailReason
+     */
+    public String getRansomProtectionFailReason() {
+        return ransomProtectionFailReason;
+    }
+
+    public void setRansomProtectionFailReason(String ransomProtectionFailReason) {
+        this.ransomProtectionFailReason = ransomProtectionFailReason;
+    }
+
+    public ProtectionServerInfo withFailedDecoyDir(String failedDecoyDir) {
+        this.failedDecoyDir = failedDecoyDir;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 诱饵防护失败的目录（仅部分诱饵部署失败状态有值） **取值范围**: 字符长度0-512 
+     * @return failedDecoyDir
+     */
+    public String getFailedDecoyDir() {
+        return failedDecoyDir;
+    }
+
+    public void setFailedDecoyDir(String failedDecoyDir) {
+        this.failedDecoyDir = failedDecoyDir;
+    }
+
     public ProtectionServerInfo withAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
         return this;
     }
 
     /**
-     * agent版本
+     * **参数解释**: agent版本 **取值范围**: 字符长度1-128 
      * @return agentVersion
      */
     public String getAgentVersion() {
@@ -396,7 +440,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 防护状态，包含如下2种。 - closed ：未防护。 - opened ：防护中。
+     * **参数解释**: 防护状态 **取值范围**: 包含如下2种。 - closed ：未防护。 - opened ：防护中。
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -413,7 +457,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 服务器组ID
+     * **参数解释**: 服务器组ID **取值范围**: 字符长度1-128 
      * @return groupId
      */
     public String getGroupId() {
@@ -430,7 +474,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 服务器组名称
+     * **参数解释**: 服务器组名称 **取值范围**: 字符长度1-128 
      * @return groupName
      */
     public String getGroupName() {
@@ -447,7 +491,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 防护策略ID
+     * **参数解释**: 防护策略ID **取值范围**: 字符长度1-128 
      * @return protectPolicyId
      */
     public String getProtectPolicyId() {
@@ -464,7 +508,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 防护策略名称
+     * **参数解释**: 防护策略名称 **取值范围**: 字符长度1-128 
      * @return protectPolicyName
      */
     public String getProtectPolicyName() {
@@ -507,7 +551,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 是否开启备份，包含如下3种。   - failed_to_turn_on_backup: 无法开启备份   - closed ：关闭。   - opened ：开启。
+     * **参数解释**: 是否开启备份 **取值范围**: 包含如下3种。   - failed_to_turn_on_backup: 无法开启备份   - closed ：关闭。   - opened ：开启。
      * @return backupProtectionStatus
      */
     public String getBackupProtectionStatus() {
@@ -524,7 +568,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 防护事件数
+     * **参数解释**: 防护事件数 **取值范围**: 取值0-2097152 
      * minimum: 0
      * maximum: 2097152
      * @return countProtectEvent
@@ -543,7 +587,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 已有备份数
+     * **参数解释**: 已有备份数 **取值范围**: 取值0-2097152 
      * minimum: 0
      * maximum: 2097152
      * @return countBackuped
@@ -562,7 +606,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * Agent状态
+     * **参数解释**: Agent状态 **取值范围**: 字符长度1-128 
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -579,7 +623,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 主机开通的版本，包含如下7种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise ：容器版。
+     * **参数解释**: 主机开通的版本    **取值范围**: 包含如下7种输入：   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise ：容器版。
      * @return version
      */
     public String getVersion() {
@@ -596,7 +640,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 服务器类型，包含如下3种输入。   - ecs ：ecs。   - outside ：线下主机。   - workspace ：云桌面。
+     * **参数解释**: 服务器类型 **取值范围**: 包含如下3种输入：   - ecs ：弹性云服务器。   - outside ：线下主机。   - workspace ：云桌面。
      * @return hostSource
      */
     public String getHostSource() {
@@ -613,7 +657,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 存储库ID
+     * **参数解释**: 存储库ID **取值范围**: 字符长度0-128 
      * @return vaultId
      */
     public String getVaultId() {
@@ -630,7 +674,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 存储库名称
+     * **参数解释**: 存储库名称 **取值范围**: 字符长度0-128 
      * @return vaultName
      */
     public String getVaultName() {
@@ -647,7 +691,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 总容量，单位GB
+     * **参数解释**: 总容量，单位GB **取值范围**: 取值0-2097152 
      * minimum: 0
      * maximum: 2097152
      * @return vaultSize
@@ -666,7 +710,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 已使用容量，单位MB
+     * **参数解释**: 已使用容量，单位MB **取值范围**: 取值0-2097152 
      * minimum: 0
      * maximum: 2097152
      * @return vaultUsed
@@ -685,7 +729,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 已分配容量，单位GB，指绑定的服务器大小
+     * **参数解释**: 已分配容量，单位GB，指绑定的服务器大小 **取值范围**: 取值0-2097152 
      * minimum: 0
      * maximum: 2097152
      * @return vaultAllocated
@@ -704,7 +748,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 存储库创建模式，按需：post_paid，包周期：pre_paid
+     * **参数解释**: 存储库创建模式 **取值范围**: 包含如下2种： - 按需：post_paid - 包周期：pre_paid 
      * @return vaultChargingMode
      */
     public String getVaultChargingMode() {
@@ -721,7 +765,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 存储库状态。   - available ：可用。   - lock ：被锁定。   - frozen：冻结。   - deleting：删除中。   - error：错误。
+     * **参数解释**: 存储库状态。 **取值范围**: 包含如下5种：   - available ：可用。   - lock ：被锁定。   - frozen：冻结。   - deleting：删除中。   - error：错误。
      * @return vaultStatus
      */
     public String getVaultStatus() {
@@ -738,7 +782,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 备份策略ID，若为空，则为未绑定状态，若不为空，通过backup_policy_enabled字段判断策略是否启用
+     * **参数解释**: 备份策略ID，若为空，则为未绑定状态，若不为空，通过backup_policy_enabled字段判断策略是否启用。 **取值范围**: 字符长度1-128 
      * @return backupPolicyId
      */
     public String getBackupPolicyId() {
@@ -755,7 +799,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 备份策略名称
+     * **参数解释**: 备份策略名称 **取值范围**: 字符长度1-128 
      * @return backupPolicyName
      */
     public String getBackupPolicyName() {
@@ -772,7 +816,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 策略是否启用
+     * **参数解释**: 策略是否启用 **取值范围**: 包含如下2种：   - true ：策略已启用。   - false ：策略未启用。 
      * @return backupPolicyEnabled
      */
     public Boolean getBackupPolicyEnabled() {
@@ -789,7 +833,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 已绑定服务器（个）
+     * **参数解释**: 已绑定服务器（个） **取值范围**: 取值0-2097152 
      * minimum: 0
      * maximum: 2097152
      * @return resourcesNum
@@ -818,6 +862,8 @@ public class ProtectionServerInfo {
             && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.osName, that.osName) && Objects.equals(this.hostStatus, that.hostStatus)
             && Objects.equals(this.ransomProtectionStatus, that.ransomProtectionStatus)
+            && Objects.equals(this.ransomProtectionFailReason, that.ransomProtectionFailReason)
+            && Objects.equals(this.failedDecoyDir, that.failedDecoyDir)
             && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.groupName, that.groupName)
@@ -853,6 +899,8 @@ public class ProtectionServerInfo {
             osName,
             hostStatus,
             ransomProtectionStatus,
+            ransomProtectionFailReason,
+            failedDecoyDir,
             agentVersion,
             protectStatus,
             groupId,
@@ -894,6 +942,8 @@ public class ProtectionServerInfo {
         sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
         sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
         sb.append("    ransomProtectionStatus: ").append(toIndentedString(ransomProtectionStatus)).append("\n");
+        sb.append("    ransomProtectionFailReason: ").append(toIndentedString(ransomProtectionFailReason)).append("\n");
+        sb.append("    failedDecoyDir: ").append(toIndentedString(failedDecoyDir)).append("\n");
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");

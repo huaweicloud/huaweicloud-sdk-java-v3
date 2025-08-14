@@ -153,7 +153,7 @@ public class AppWhitelistPolicyResponseInfo {
     }
 
     /**
-     * **参数解释**： 进程白名单策略类型进程白名单策略类型 **取值范围**: - allow：允许指定/授权进程运行 - block：阻止潜在恶意软件运行 
+     * **参数解释**： 进程白名单策略类型 **取值范围**: - allow：允许指定/授权进程运行 - block：阻止潜在恶意软件运行 
      * @return policyType
      */
     public String getPolicyType() {

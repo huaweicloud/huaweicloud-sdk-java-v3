@@ -396,7 +396,7 @@ public class ServerGroup {
     }
 
     /**
-     * 服务器组创建时间
+     * 服务器组创建时间。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -413,7 +413,7 @@ public class ServerGroup {
     }
 
     /**
-     * 服务器组更新时间
+     * 服务器组更新时间。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -447,7 +447,7 @@ public class ServerGroup {
     }
 
     /**
-     * 企业项目ID(0表示默认企业项目Id)
+     * 企业项目ID(0表示默认企业项目Id)。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -547,7 +547,7 @@ public class ServerGroup {
     }
 
     /**
-     * 站点类型 - CENTER/IES
+     * 站点类型 - CENTER/IES。
      * @return siteType
      */
     public String getSiteType() {
@@ -564,7 +564,7 @@ public class ServerGroup {
     }
 
     /**
-     * 站点id
+     * 站点id。
      * @return siteId
      */
     public String getSiteId() {
@@ -734,7 +734,7 @@ public class ServerGroup {
     }
 
     /**
-     * 标签信息
+     * 标签信息。
      * @return tags
      */
     public List<TmsTag> getTags() {

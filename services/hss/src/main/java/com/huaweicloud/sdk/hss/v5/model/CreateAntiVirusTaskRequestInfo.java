@@ -95,7 +95,7 @@ public class CreateAntiVirusTaskRequestInfo {
     }
 
     /**
-     * 处置动作，包含如下:   - auto ：自动处置   - manual : 人工处置
+     * 处置动作，包含如下:   - auto：自动处置   - manual：人工处置
      * @return action
      */
     public String getAction() {

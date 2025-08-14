@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 先上传应用文件，再提交向应用仓库中添加应用的请求。
@@ -54,6 +55,11 @@ public class CreateWarehouseAppReq {
     @JsonProperty(value = "app_file_size")
 
     private Integer appFileSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_extended_info")
+
+    private AppExtendedInfo appExtendedInfo;
 
     public CreateWarehouseAppReq withAppName(String appName) {
         this.appName = appName;
@@ -210,6 +216,32 @@ public class CreateWarehouseAppReq {
         this.appFileSize = appFileSize;
     }
 
+    public CreateWarehouseAppReq withAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+        return this;
+    }
+
+    public CreateWarehouseAppReq withAppExtendedInfo(Consumer<AppExtendedInfo> appExtendedInfoSetter) {
+        if (this.appExtendedInfo == null) {
+            this.appExtendedInfo = new AppExtendedInfo();
+            appExtendedInfoSetter.accept(this.appExtendedInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get appExtendedInfo
+     * @return appExtendedInfo
+     */
+    public AppExtendedInfo getAppExtendedInfo() {
+        return appExtendedInfo;
+    }
+
+    public void setAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -224,7 +256,8 @@ public class CreateWarehouseAppReq {
             && Objects.equals(this.appDescription, that.appDescription)
             && Objects.equals(this.versionName, that.versionName)
             && Objects.equals(this.appfileStorePath, that.appfileStorePath)
-            && Objects.equals(this.appIcon, that.appIcon) && Objects.equals(this.appFileSize, that.appFileSize);
+            && Objects.equals(this.appIcon, that.appIcon) && Objects.equals(this.appFileSize, that.appFileSize)
+            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
     }
 
     @Override
@@ -237,7 +270,8 @@ public class CreateWarehouseAppReq {
             versionName,
             appfileStorePath,
             appIcon,
-            appFileSize);
+            appFileSize,
+            appExtendedInfo);
     }
 
     @Override
@@ -253,6 +287,7 @@ public class CreateWarehouseAppReq {
         sb.append("    appfileStorePath: ").append(toIndentedString(appfileStorePath)).append("\n");
         sb.append("    appIcon: ").append(toIndentedString(appIcon)).append("\n");
         sb.append("    appFileSize: ").append(toIndentedString(appFileSize)).append("\n");
+        sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

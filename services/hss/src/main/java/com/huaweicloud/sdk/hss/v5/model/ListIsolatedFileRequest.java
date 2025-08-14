@@ -188,7 +188,7 @@ public class ListIsolatedFileRequest {
     }
 
     /**
-     * 文件hash,当前为sha256
+     * 文件hash，当前为sha256
      * @return fileHash
      */
     public String getFileHash() {
@@ -260,7 +260,7 @@ public class ListIsolatedFileRequest {
     }
 
     /**
-     * 隔离状态，包含如下:   - isolated : 已隔离   - restored : 已恢复   - isolating : 已下发隔离任务   - restoring : 已下发恢复任务
+     * 隔离状态，包含如下:   - isolated：已隔离   - restored：已恢复   - isolating：已下发隔离任务   - restoring：已下发恢复任务
      * @return isolationStatus
      */
     public String getIsolationStatus() {

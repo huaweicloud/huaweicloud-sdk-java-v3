@@ -56,7 +56,7 @@ public class WebTamperProtectDirRequestInfo {
     }
 
     /**
-     * protect dir list
+     * 防护目录列表
      * @return protectDirList
      */
     public List<WebTamperProtectHostDirRequestInfo> getProtectDirList() {

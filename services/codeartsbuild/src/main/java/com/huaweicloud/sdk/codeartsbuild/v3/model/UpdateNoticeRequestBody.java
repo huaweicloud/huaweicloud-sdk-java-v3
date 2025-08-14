@@ -24,9 +24,19 @@ public class UpdateNoticeRequestBody {
     private List<String> enabledEventTypeNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "send_switch")
+
+    private String sendSwitch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_config")
 
     private String paramConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "use_project_notice")
+
+    private String useProjectNotice;
 
     public UpdateNoticeRequestBody withNoticeType(String noticeType) {
         this.noticeType = noticeType;
@@ -78,6 +88,23 @@ public class UpdateNoticeRequestBody {
         this.enabledEventTypeNames = enabledEventTypeNames;
     }
 
+    public UpdateNoticeRequestBody withSendSwitch(String sendSwitch) {
+        this.sendSwitch = sendSwitch;
+        return this;
+    }
+
+    /**
+     * 是否开启消息通知。
+     * @return sendSwitch
+     */
+    public String getSendSwitch() {
+        return sendSwitch;
+    }
+
+    public void setSendSwitch(String sendSwitch) {
+        this.sendSwitch = sendSwitch;
+    }
+
     public UpdateNoticeRequestBody withParamConfig(String paramConfig) {
         this.paramConfig = paramConfig;
         return this;
@@ -95,6 +122,23 @@ public class UpdateNoticeRequestBody {
         this.paramConfig = paramConfig;
     }
 
+    public UpdateNoticeRequestBody withUseProjectNotice(String useProjectNotice) {
+        this.useProjectNotice = useProjectNotice;
+        return this;
+    }
+
+    /**
+     * 是否使用项目级消息通知设置。
+     * @return useProjectNotice
+     */
+    public String getUseProjectNotice() {
+        return useProjectNotice;
+    }
+
+    public void setUseProjectNotice(String useProjectNotice) {
+        this.useProjectNotice = useProjectNotice;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +150,13 @@ public class UpdateNoticeRequestBody {
         UpdateNoticeRequestBody that = (UpdateNoticeRequestBody) obj;
         return Objects.equals(this.noticeType, that.noticeType)
             && Objects.equals(this.enabledEventTypeNames, that.enabledEventTypeNames)
-            && Objects.equals(this.paramConfig, that.paramConfig);
+            && Objects.equals(this.sendSwitch, that.sendSwitch) && Objects.equals(this.paramConfig, that.paramConfig)
+            && Objects.equals(this.useProjectNotice, that.useProjectNotice);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(noticeType, enabledEventTypeNames, paramConfig);
+        return Objects.hash(noticeType, enabledEventTypeNames, sendSwitch, paramConfig, useProjectNotice);
     }
 
     @Override
@@ -120,7 +165,9 @@ public class UpdateNoticeRequestBody {
         sb.append("class UpdateNoticeRequestBody {\n");
         sb.append("    noticeType: ").append(toIndentedString(noticeType)).append("\n");
         sb.append("    enabledEventTypeNames: ").append(toIndentedString(enabledEventTypeNames)).append("\n");
+        sb.append("    sendSwitch: ").append(toIndentedString(sendSwitch)).append("\n");
         sb.append("    paramConfig: ").append(toIndentedString(paramConfig)).append("\n");
+        sb.append("    useProjectNotice: ").append(toIndentedString(useProjectNotice)).append("\n");
         sb.append("}");
         return sb.toString();
     }

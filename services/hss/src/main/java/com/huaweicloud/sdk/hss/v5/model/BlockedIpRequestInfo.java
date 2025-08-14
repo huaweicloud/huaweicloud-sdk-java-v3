@@ -31,7 +31,7 @@ public class BlockedIpRequestInfo {
     }
 
     /**
-     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
+     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -65,7 +65,7 @@ public class BlockedIpRequestInfo {
     }
 
     /**
-     * 登录类型，包含如下: - \"mysql\" # mysql服务 - \"rdp\" # rdp服务服务 - \"ssh\" # ssh服务 - \"vsftp\" # vsftp服务
+     * 登录类型，包含如下: - \"mysql\" # mysql服务 - \"rdp\" # rdp服务 - \"ssh\" # ssh服务 - \"vsftp\" # vsftp服务
      * @return loginType
      */
     public String getLoginType() {

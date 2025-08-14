@@ -56,7 +56,7 @@ public class WtpProtectDirResponseInfo {
     }
 
     /**
-     * protect dir list
+     * 防护目录列表
      * @return protectDirList
      */
     public List<WtpProtectHostDirResponseInfo> getProtectDirList() {

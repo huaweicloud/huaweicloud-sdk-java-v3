@@ -30,9 +30,9 @@ public class ListContainerNodesResponse extends SdkResponse {
     }
 
     /**
-     * 容器节点总数
+     * **参数解释**: 容器节点总数 **取值范围**: 取值0-65535 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 65535
      * @return totalNum
      */
     public Integer getTotalNum() {
@@ -65,7 +65,7 @@ public class ListContainerNodesResponse extends SdkResponse {
     }
 
     /**
-     * 容器节点列表
+     * **参数解释**: 容器节点列表 **取值范围**: 取值0-65535 
      * @return dataList
      */
     public List<ContainerNodeInfo> getDataList() {

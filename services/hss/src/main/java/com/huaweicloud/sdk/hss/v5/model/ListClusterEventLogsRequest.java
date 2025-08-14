@@ -171,7 +171,7 @@ public class ListClusterEventLogsRequest {
     }
 
     /**
-     * 事件类型，包含以下几种： - Warning 警告事件 - Normal 普通事件
+     * 事件类型，包含以下几种： - Warning：警告事件 - Normal：普通事件
      * @return eventType
      */
     public String getEventType() {

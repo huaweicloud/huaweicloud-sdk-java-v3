@@ -169,7 +169,7 @@ public class AuthorizationMail {
     }
 
     /**
-     * 授权类型： - ADD_GROUP_AUTHORIZATION 添加组授权邮件 - DEL_GROUP_AUTHORIZATION 删除组授权邮件 - ADD_GROUP_AUTHORIZATION_SMS 添加组授权短信 - DEL_GROUP_AUTHORIZATION_SMS 删除组授权短信
+     * 授权类型： - ADD_GROUP_AUTHORIZATION 添加组授权邮件 - DEL_GROUP_AUTHORIZATION 删除组授权邮件 - ADD_GROUP_AUTHORIZATION_SMS 添加组授权短信 - DEL_GROUP_AUTHORIZATION_SMS 删除组授权短信。
      * @return mailSendType
      */
     public String getMailSendType() {
@@ -186,7 +186,7 @@ public class AuthorizationMail {
     }
 
     /**
-     * 发送结果。 - SUEECESS -发送成功 - FAIL -发送失败
+     * 发送结果。 - SUEECESS -发送成功 - FAIL -发送失败。
      * @return mailSendResult
      */
     public String getMailSendResult() {

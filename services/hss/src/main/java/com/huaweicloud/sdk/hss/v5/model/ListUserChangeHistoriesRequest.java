@@ -122,7 +122,7 @@ public class ListUserChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 用户名 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
+     * **参数解释**: 用户名 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位  **默认取值**: 不涉及 
      * @return userName
      */
     public String getUserName() {
@@ -139,7 +139,7 @@ public class ListUserChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 是否有root权限 **约束限制**: 不涉及 **取值范围**: true: 具有root权限 false: 不具有root权限 **默认取值**: 不涉及 
+     * **参数解释**: 是否有root权限 **约束限制**: 不涉及 **取值范围**: true: 具有root权限 false: 不具有root权限  **默认取值**: 不涉及 
      * @return rootPermission
      */
     public Boolean getRootPermission() {
@@ -156,7 +156,7 @@ public class ListUserChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 服务器私有IP **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
+     * **参数解释**: 服务器私有IP **约束限制**: 不涉及 **取值范围**: 字符长度1-256位  **默认取值**: 不涉及 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -173,7 +173,7 @@ public class ListUserChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 账号变更类型 **约束限制**: 不涉及 **取值范围**: - ADD ：添加 - DELETE ：删除 - MODIFY ： 修改 **默认取值**: 不涉及 
+     * **参数解释**: 账号变更类型 **约束限制**: 不涉及 **取值范围**: - ADD ：添加 - DELETE ：删除 - MODIFY ： 修改  **默认取值**: 不涉及 
      * @return changeType
      */
     public String getChangeType() {
@@ -190,7 +190,7 @@ public class ListUserChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200  **默认取值**: 10 
      * minimum: 10
      * maximum: 100
      * @return limit
@@ -209,7 +209,7 @@ public class ListUserChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值10000 **默认取值**: 不涉及 
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值10000  **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -228,7 +228,7 @@ public class ListUserChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 变更开始时间，13位时间戳 **约束限制**: 不涉及 **取值范围**: 取值0-4070880000000 **默认取值**: 不涉及 
+     * **参数解释**: 变更开始时间，13位时间戳 **约束限制**: 不涉及 **取值范围**: 取值0-4070880000000  **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 4070880000000
      * @return startTime
@@ -247,7 +247,7 @@ public class ListUserChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 变更结束时间，13位时间戳 **约束限制**: 不涉及 **取值范围**: 取值0-4070880000000 **默认取值**: 不涉及 
+     * **参数解释**: 变更结束时间，13位时间戳 **约束限制**: 不涉及 **取值范围**: 取值0-4070880000000  **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 4070880000000
      * @return endTime

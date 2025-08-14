@@ -58,7 +58,7 @@ public class KubernetesEndpointPodInfo {
     }
 
     /**
-     * 关联端点 ID
+     * 关联端点ID
      * @return endpointId
      */
     public String getEndpointId() {

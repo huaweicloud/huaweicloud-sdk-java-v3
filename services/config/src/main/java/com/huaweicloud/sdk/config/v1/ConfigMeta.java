@@ -18,8 +18,14 @@ import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectPolicyAssignmentsStatesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectPolicyAssignmentsStatesSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectPolicyStatesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectPolicyStatesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectRemediationExecutionStatusesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectRemediationExecutionStatusesSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectResourcesPolicyStatesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectResourcesPolicyStatesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.ConfigurationAggregatorRequest;
@@ -78,6 +84,8 @@ import com.huaweicloud.sdk.config.v1.model.ListAggregateDiscoveredResourcesReque
 import com.huaweicloud.sdk.config.v1.model.ListAggregateDiscoveredResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListAggregationAuthorizationsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListAggregationAuthorizationsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListAllProvidersRequest;
+import com.huaweicloud.sdk.config.v1.model.ListAllProvidersResponse;
 import com.huaweicloud.sdk.config.v1.model.ListAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListAllResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListAllTagsRequest;
@@ -1675,6 +1683,67 @@ public class ConfigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CollectPolicyAssignmentsStatesSummaryRequest, CollectPolicyAssignmentsStatesSummaryResponse> collectPolicyAssignmentsStatesSummary =
+        genForCollectPolicyAssignmentsStatesSummary();
+
+    private static HttpRequestDef<CollectPolicyAssignmentsStatesSummaryRequest, CollectPolicyAssignmentsStatesSummaryResponse> genForCollectPolicyAssignmentsStatesSummary() {
+        // basic
+        HttpRequestDef.Builder<CollectPolicyAssignmentsStatesSummaryRequest, CollectPolicyAssignmentsStatesSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CollectPolicyAssignmentsStatesSummaryRequest.class,
+                    CollectPolicyAssignmentsStatesSummaryResponse.class)
+                .withName("CollectPolicyAssignmentsStatesSummary")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/policy-states/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectPolicyAssignmentsStatesSummaryRequest::getPolicyAssignmentId,
+                CollectPolicyAssignmentsStatesSummaryRequest::setPolicyAssignmentId));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectPolicyAssignmentsStatesSummaryRequest::getResourceName,
+                CollectPolicyAssignmentsStatesSummaryRequest::setResourceName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectPolicyStatesSummaryRequest, CollectPolicyStatesSummaryResponse> collectPolicyStatesSummary =
+        genForCollectPolicyStatesSummary();
+
+    private static HttpRequestDef<CollectPolicyStatesSummaryRequest, CollectPolicyStatesSummaryResponse> genForCollectPolicyStatesSummary() {
+        // basic
+        HttpRequestDef.Builder<CollectPolicyStatesSummaryRequest, CollectPolicyStatesSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CollectPolicyStatesSummaryRequest.class,
+                    CollectPolicyStatesSummaryResponse.class)
+                .withName("CollectPolicyStatesSummary")
+                .withUri("/v1/resource-manager/domains/{domain_id}/policy-states/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectPolicyStatesSummaryRequest::getTags,
+                CollectPolicyStatesSummaryRequest::setTags));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CollectRemediationExecutionStatusesSummaryRequest, CollectRemediationExecutionStatusesSummaryResponse> collectRemediationExecutionStatusesSummary =
         genForCollectRemediationExecutionStatusesSummary();
 
@@ -1715,6 +1784,51 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(RemediationExecutionStatusesSummaryRequestBody.class),
             f -> f.withMarshaller(CollectRemediationExecutionStatusesSummaryRequest::getBody,
                 CollectRemediationExecutionStatusesSummaryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectResourcesPolicyStatesSummaryRequest, CollectResourcesPolicyStatesSummaryResponse> collectResourcesPolicyStatesSummary =
+        genForCollectResourcesPolicyStatesSummary();
+
+    private static HttpRequestDef<CollectResourcesPolicyStatesSummaryRequest, CollectResourcesPolicyStatesSummaryResponse> genForCollectResourcesPolicyStatesSummary() {
+        // basic
+        HttpRequestDef.Builder<CollectResourcesPolicyStatesSummaryRequest, CollectResourcesPolicyStatesSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CollectResourcesPolicyStatesSummaryRequest.class,
+                    CollectResourcesPolicyStatesSummaryResponse.class)
+                .withName("CollectResourcesPolicyStatesSummary")
+                .withUri("/v1/resource-manager/domains/{domain_id}/resources/policy-states/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectResourcesPolicyStatesSummaryRequest::getResourceId,
+                CollectResourcesPolicyStatesSummaryRequest::setResourceId));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectResourcesPolicyStatesSummaryRequest::getResourceName,
+                CollectResourcesPolicyStatesSummaryRequest::setResourceName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CollectResourcesPolicyStatesSummaryRequest::getLimit,
+                CollectResourcesPolicyStatesSummaryRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectResourcesPolicyStatesSummaryRequest::getMarker,
+                CollectResourcesPolicyStatesSummaryRequest::setMarker));
 
         // response
 
@@ -3268,6 +3382,39 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(CountTrackedResourcesRequest::getResourceDeleted,
                 CountTrackedResourcesRequest::setResourceDeleted));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllProvidersRequest, ListAllProvidersResponse> listAllProviders =
+        genForListAllProviders();
+
+    private static HttpRequestDef<ListAllProvidersRequest, ListAllProvidersResponse> genForListAllProviders() {
+        // basic
+        HttpRequestDef.Builder<ListAllProvidersRequest, ListAllProvidersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllProvidersRequest.class, ListAllProvidersResponse.class)
+                .withName("ListAllProviders")
+                .withUri("/v1/resource-manager/domains/{domain_id}/all-providers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllProvidersRequest::getOffset, ListAllProvidersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllProvidersRequest::getLimit, ListAllProvidersRequest::setLimit));
+        builder.<ListAllProvidersRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAllProvidersRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListAllProvidersRequest::getXLanguage, ListAllProvidersRequest::setXLanguage));
 
         // response
 

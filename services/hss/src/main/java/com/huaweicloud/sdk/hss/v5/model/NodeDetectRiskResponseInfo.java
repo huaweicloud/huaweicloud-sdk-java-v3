@@ -187,7 +187,7 @@ public class NodeDetectRiskResponseInfo {
     }
 
     /**
-     * 付费模式 | on_demand 按需 free 免费
+     * 付费模式包括： - on_demand：按需 - free：免费
      * @return chargingMode
      */
     public String getChargingMode() {

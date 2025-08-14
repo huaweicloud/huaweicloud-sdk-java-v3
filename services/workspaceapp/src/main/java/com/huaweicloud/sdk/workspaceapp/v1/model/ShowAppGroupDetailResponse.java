@@ -243,7 +243,7 @@ public class ShowAppGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 应用组描述
+     * 应用组描述。
      * @return appServerGroupDescription
      */
     public String getAppServerGroupDescription() {

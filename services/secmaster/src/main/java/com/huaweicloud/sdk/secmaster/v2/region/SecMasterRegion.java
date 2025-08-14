@@ -74,6 +74,14 @@ public class SecMasterRegion {
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://secmaster.my-kualalumpur-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://secmaster.cn-east-5.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 =
+        new Region("cn-north-12", "https://secmaster.cn-north-12.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://secmaster.cn-southwest-3.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SECMASTER");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -105,6 +113,9 @@ public class SecMasterRegion {
         map.put("eu-west-101", EU_WEST_101);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
         return Collections.unmodifiableMap(map);
     }
 

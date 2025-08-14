@@ -30,7 +30,7 @@ public class ListVulnerabilitiesResponse extends SdkResponse {
     }
 
     /**
-     * 漏洞总数
+     * **参数解释**: 漏洞总数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListVulnerabilitiesResponse extends SdkResponse {
     }
 
     /**
-     * 软件漏洞列表
+     * **参数解释**: 漏洞数据列表 **取值范围**: 不涉及 
      * @return dataList
      */
     public List<VulInfo> getDataList() {

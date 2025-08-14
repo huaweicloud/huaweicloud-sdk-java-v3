@@ -41,7 +41,7 @@ public class WtpProtectHostDirResponseInfo {
     private String localBackupDir;
 
     /**
-     * 防护状态（closed-未开启，opened-防护中, opening-开启中, closing-关闭中, open_failed-防护失败)
+     * 防护状态（closed-未开启，opened-防护中，opening-开启中，closing-关闭中，open_failed-防护失败）
      */
     public static final class ProtectStatusEnum {
 
@@ -229,7 +229,7 @@ public class WtpProtectHostDirResponseInfo {
     }
 
     /**
-     * 防护状态（closed-未开启，opened-防护中, opening-开启中, closing-关闭中, open_failed-防护失败)
+     * 防护状态（closed-未开启，opened-防护中，opening-开启中，closing-关闭中，open_failed-防护失败）
      * @return protectStatus
      */
     public ProtectStatusEnum getProtectStatus() {

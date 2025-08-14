@@ -46,7 +46,7 @@ public class ListAccountsForProvisionedPermissionSetResponse extends SdkResponse
     }
 
     /**
-     * 账号ID列表
+     * 账户ID列表
      * @return accountIds
      */
     public List<String> getAccountIds() {

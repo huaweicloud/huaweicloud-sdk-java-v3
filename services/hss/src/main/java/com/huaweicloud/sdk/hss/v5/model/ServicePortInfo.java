@@ -58,7 +58,7 @@ public class ServicePortInfo {
     }
 
     /**
-     * 类型，可取值集合[http,https]
+     * 类型，可取值集合[http，https]
      * @return type
      */
     public String getType() {
@@ -75,7 +75,7 @@ public class ServicePortInfo {
     }
 
     /**
-     * 默认tcp。可取值集合[tcp,udp]
+     * 默认tcp。可取值集合[tcp，udp]
      * @return protocol
      */
     public String getProtocol() {

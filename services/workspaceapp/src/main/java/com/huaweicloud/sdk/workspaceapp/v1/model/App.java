@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 应用信息。
@@ -100,6 +101,16 @@ public class App {
     @JsonProperty(value = "sandbox_enable")
 
     private Boolean sandboxEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_pre_boot")
+
+    private Boolean isPreBoot;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_extended_info")
+
+    private AppExtendedInfo appExtendedInfo;
 
     public App withId(String id) {
         this.id = id;
@@ -407,6 +418,49 @@ public class App {
         this.sandboxEnable = sandboxEnable;
     }
 
+    public App withIsPreBoot(Boolean isPreBoot) {
+        this.isPreBoot = isPreBoot;
+        return this;
+    }
+
+    /**
+     * 是否开启应用预开，取值为： - false: 表示关闭应用预开。 - true: 表示开启应用预开。
+     * @return isPreBoot
+     */
+    public Boolean getIsPreBoot() {
+        return isPreBoot;
+    }
+
+    public void setIsPreBoot(Boolean isPreBoot) {
+        this.isPreBoot = isPreBoot;
+    }
+
+    public App withAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+        return this;
+    }
+
+    public App withAppExtendedInfo(Consumer<AppExtendedInfo> appExtendedInfoSetter) {
+        if (this.appExtendedInfo == null) {
+            this.appExtendedInfo = new AppExtendedInfo();
+            appExtendedInfoSetter.accept(this.appExtendedInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get appExtendedInfo
+     * @return appExtendedInfo
+     */
+    public AppExtendedInfo getAppExtendedInfo() {
+        return appExtendedInfo;
+    }
+
+    public void setAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -425,7 +479,8 @@ public class App {
             && Objects.equals(this.publishAt, that.publishAt) && Objects.equals(this.sourceType, that.sourceType)
             && Objects.equals(this.publisher, that.publisher) && Objects.equals(this.iconUrl, that.iconUrl)
             && Objects.equals(this.publishable, that.publishable)
-            && Objects.equals(this.sandboxEnable, that.sandboxEnable);
+            && Objects.equals(this.sandboxEnable, that.sandboxEnable) && Objects.equals(this.isPreBoot, that.isPreBoot)
+            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
     }
 
     @Override
@@ -447,7 +502,9 @@ public class App {
             publisher,
             iconUrl,
             publishable,
-            sandboxEnable);
+            sandboxEnable,
+            isPreBoot,
+            appExtendedInfo);
     }
 
     @Override
@@ -472,6 +529,8 @@ public class App {
         sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
         sb.append("    publishable: ").append(toIndentedString(publishable)).append("\n");
         sb.append("    sandboxEnable: ").append(toIndentedString(sandboxEnable)).append("\n");
+        sb.append("    isPreBoot: ").append(toIndentedString(isPreBoot)).append("\n");
+        sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

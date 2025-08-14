@@ -61,7 +61,7 @@ public class AddBaselineWhiteListRequestBody {
     }
 
     /**
-     * 基线检查白名单的规则范围 - specific_host 部分主机 - all_host      全部主机
+     * 基线检查白名单的规则范围 - specific_host：部分主机 - all_host：全部主机
      * @return ruleType
      */
     public String getRuleType() {
@@ -94,7 +94,7 @@ public class AddBaselineWhiteListRequestBody {
     }
 
     /**
-     * rule_type为specific_host时,该字段为待添加的白名单主机id列表, rule_type为all_host时无该字段
+     * rule_type为specific_host时，该字段为待添加的白名单主机id列表，rule_type为all_host时无该字段
      * @return hostIdList
      */
     public List<String> getHostIdList() {

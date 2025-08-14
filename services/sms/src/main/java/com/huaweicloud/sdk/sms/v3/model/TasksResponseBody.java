@@ -513,6 +513,11 @@ public class TasksResponseBody {
 
     private Boolean needMigrationTest;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subtask_info")
+
+    private String subtaskInfo;
+
     public TasksResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -1134,6 +1139,23 @@ public class TasksResponseBody {
         this.needMigrationTest = needMigrationTest;
     }
 
+    public TasksResponseBody withSubtaskInfo(String subtaskInfo) {
+        this.subtaskInfo = subtaskInfo;
+        return this;
+    }
+
+    /**
+     * 当前子任务及进度
+     * @return subtaskInfo
+     */
+    public String getSubtaskInfo() {
+        return subtaskInfo;
+    }
+
+    public void setSubtaskInfo(String subtaskInfo) {
+        this.subtaskInfo = subtaskInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1165,7 +1187,8 @@ public class TasksResponseBody {
             && Objects.equals(this.totalMemUsage, that.totalMemUsage)
             && Objects.equals(this.agentMemUsage, that.agentMemUsage)
             && Objects.equals(this.totalDiskIo, that.totalDiskIo) && Objects.equals(this.agentDiskIo, that.agentDiskIo)
-            && Objects.equals(this.needMigrationTest, that.needMigrationTest);
+            && Objects.equals(this.needMigrationTest, that.needMigrationTest)
+            && Objects.equals(this.subtaskInfo, that.subtaskInfo);
     }
 
     @Override
@@ -1200,7 +1223,8 @@ public class TasksResponseBody {
             agentMemUsage,
             totalDiskIo,
             agentDiskIo,
-            needMigrationTest);
+            needMigrationTest,
+            subtaskInfo);
     }
 
     @Override
@@ -1238,6 +1262,7 @@ public class TasksResponseBody {
         sb.append("    totalDiskIo: ").append(toIndentedString(totalDiskIo)).append("\n");
         sb.append("    agentDiskIo: ").append(toIndentedString(agentDiskIo)).append("\n");
         sb.append("    needMigrationTest: ").append(toIndentedString(needMigrationTest)).append("\n");
+        sb.append("    subtaskInfo: ").append(toIndentedString(subtaskInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

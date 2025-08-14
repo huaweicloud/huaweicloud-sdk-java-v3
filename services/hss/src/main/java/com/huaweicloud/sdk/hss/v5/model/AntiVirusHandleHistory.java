@@ -142,7 +142,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * 威胁等级，包含如下:   - Security：安全   - Low: 低危   - Medium: 中危   - High: 高危   - Critical: 危急
+     * **参数解释**： 威胁等级 **取值范围**： - Security：安全 - Low：低危 - Medium：中危 - High：高危 - Critical：危急 
      * @return severity
      */
     public String getSeverity() {
@@ -159,7 +159,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * 文件路径
+     * **参数解释**： 文件路径 **取值范围**： 字符长度1-256位 
      * @return filePath
      */
     public String getFilePath() {
@@ -193,7 +193,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**： 服务器私有IP **取值范围**： 字符长度1-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -210,7 +210,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * 弹性公网IP地址
+     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -244,7 +244,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * 发生时间，毫秒
+     * **参数解释**： 发生时间，毫秒 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return occurTime
@@ -263,7 +263,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * 处置状态，包含如下:   - unhandled：未处理   - handled: 已处理
+     * **参数解释**： 处理状态 **取值范围**： - unhandled：未处理 - handled：已处理 
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -280,7 +280,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * 处理方式，包含如下:   - mark_as_handled : 手动处理   - ignore : 忽略   - add_to_alarm_whitelist : 加入告警白名单   - isolate_and_kill : 隔离文件
+     * 处理方式，包含如下:   - mark_as_handled：手动处理   - ignore：忽略   - add_to_alarm_whitelist：加入告警白名单   - isolate_and_kill：隔离文件
      * @return handleMethod
      */
     public String getHandleMethod() {

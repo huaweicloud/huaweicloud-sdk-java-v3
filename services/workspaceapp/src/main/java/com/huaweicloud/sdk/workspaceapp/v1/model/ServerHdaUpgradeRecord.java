@@ -197,7 +197,7 @@ public class ServerHdaUpgradeRecord {
     }
 
     /**
-     * 更新时间
+     * 更新时间。
      * @return upgradeTime
      */
     public String getUpgradeTime() {

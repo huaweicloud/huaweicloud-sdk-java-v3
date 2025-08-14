@@ -538,7 +538,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 标签信息，最多包含20个key,不允许重复
+     * 标签信息，最多包含20个key,不允许重复。
      * @return tags
      */
     public List<TmsTag> getTags() {
@@ -555,7 +555,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)
+     * 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

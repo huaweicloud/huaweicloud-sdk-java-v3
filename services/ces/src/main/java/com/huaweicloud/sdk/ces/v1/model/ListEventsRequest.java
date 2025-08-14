@@ -90,6 +90,87 @@ public class ListEventsRequest {
 
     private EventTypeEnum eventType;
 
+    /**
+     * 事件子类, 枚举类型：SUB_EVENT.OPS 运维事件, SUB_EVENT.PLAN 计划事件，SUB_EVENT.CUSTOM 自定义事件
+     */
+    public static final class SubEventTypeEnum {
+
+        /**
+         * Enum SUB_EVENT_OPS for value: "SUB_EVENT.OPS"
+         */
+        public static final SubEventTypeEnum SUB_EVENT_OPS = new SubEventTypeEnum("SUB_EVENT.OPS");
+
+        /**
+         * Enum SUB_EVENT_PLAN for value: "SUB_EVENT.PLAN"
+         */
+        public static final SubEventTypeEnum SUB_EVENT_PLAN = new SubEventTypeEnum("SUB_EVENT.PLAN");
+
+        /**
+         * Enum SUB_EVENT_CUSTOM for value: "SUB_EVENT.CUSTOM"
+         */
+        public static final SubEventTypeEnum SUB_EVENT_CUSTOM = new SubEventTypeEnum("SUB_EVENT.CUSTOM");
+
+        private static final Map<String, SubEventTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SubEventTypeEnum> createStaticFields() {
+            Map<String, SubEventTypeEnum> map = new HashMap<>();
+            map.put("SUB_EVENT.OPS", SUB_EVENT_OPS);
+            map.put("SUB_EVENT.PLAN", SUB_EVENT_PLAN);
+            map.put("SUB_EVENT.CUSTOM", SUB_EVENT_CUSTOM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SubEventTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SubEventTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SubEventTypeEnum(value));
+        }
+
+        public static SubEventTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SubEventTypeEnum) {
+                return this.value.equals(((SubEventTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_event_type")
+
+    private SubEventTypeEnum subEventType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_name")
 
@@ -130,6 +211,23 @@ public class ListEventsRequest {
 
     public void setEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
+    }
+
+    public ListEventsRequest withSubEventType(SubEventTypeEnum subEventType) {
+        this.subEventType = subEventType;
+        return this;
+    }
+
+    /**
+     * 事件子类, 枚举类型：SUB_EVENT.OPS 运维事件, SUB_EVENT.PLAN 计划事件，SUB_EVENT.CUSTOM 自定义事件
+     * @return subEventType
+     */
+    public SubEventTypeEnum getSubEventType() {
+        return subEventType;
+    }
+
+    public void setSubEventType(SubEventTypeEnum subEventType) {
+        this.subEventType = subEventType;
     }
 
     public ListEventsRequest withEventName(String eventName) {
@@ -226,14 +324,15 @@ public class ListEventsRequest {
             return false;
         }
         ListEventsRequest that = (ListEventsRequest) obj;
-        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.eventName, that.eventName)
-            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
-            && Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit);
+        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.subEventType, that.subEventType)
+            && Objects.equals(this.eventName, that.eventName) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventType, eventName, from, to, start, limit);
+        return Objects.hash(eventType, subEventType, eventName, from, to, start, limit);
     }
 
     @Override
@@ -241,6 +340,7 @@ public class ListEventsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEventsRequest {\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+        sb.append("    subEventType: ").append(toIndentedString(subEventType)).append("\n");
         sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("    to: ").append(toIndentedString(to)).append("\n");

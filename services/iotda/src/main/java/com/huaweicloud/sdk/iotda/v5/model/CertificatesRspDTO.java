@@ -46,6 +46,21 @@ public class CertificatesRspDTO {
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ocsp_enable")
+
+    private Boolean ocspEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ocsp_server_ca_id")
+
+    private String ocspServerCaId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ocsp_ssl_enable")
+
+    private Boolean ocspSslEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_date")
 
     private String createDate;
@@ -179,6 +194,57 @@ public class CertificatesRspDTO {
         this.templateId = templateId;
     }
 
+    public CertificatesRspDTO withOcspEnable(Boolean ocspEnable) {
+        this.ocspEnable = ocspEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启该CA证书下的设备证书OCSP校验，当为true且设备证书信息中包含OCSP url时则平台会校验证书的状态，当证书状态为revoked时平台会拒绝设备连接，true：开启，false：关闭。
+     * @return ocspEnable
+     */
+    public Boolean getOcspEnable() {
+        return ocspEnable;
+    }
+
+    public void setOcspEnable(Boolean ocspEnable) {
+        this.ocspEnable = ocspEnable;
+    }
+
+    public CertificatesRspDTO withOcspServerCaId(String ocspServerCaId) {
+        this.ocspServerCaId = ocspServerCaId;
+        return this;
+    }
+
+    /**
+     * ocsp服务器端CA证书id，仅当ocsp服务器开启SSL时配置，平台使用该CA证书认证ocsp服务器。
+     * @return ocspServerCaId
+     */
+    public String getOcspServerCaId() {
+        return ocspServerCaId;
+    }
+
+    public void setOcspServerCaId(String ocspServerCaId) {
+        this.ocspServerCaId = ocspServerCaId;
+    }
+
+    public CertificatesRspDTO withOcspSslEnable(Boolean ocspSslEnable) {
+        this.ocspSslEnable = ocspSslEnable;
+        return this;
+    }
+
+    /**
+     * ocsp服务器是否开启SSL加密，开启后必须配置OCSP服务器CA证书。
+     * @return ocspSslEnable
+     */
+    public Boolean getOcspSslEnable() {
+        return ocspSslEnable;
+    }
+
+    public void setOcspSslEnable(Boolean ocspSslEnable) {
+        this.ocspSslEnable = ocspSslEnable;
+    }
+
     public CertificatesRspDTO withCreateDate(String createDate) {
         this.createDate = createDate;
         return this;
@@ -243,7 +309,10 @@ public class CertificatesRspDTO {
             && Objects.equals(this.owner, that.owner) && Objects.equals(this.status, that.status)
             && Objects.equals(this.verifyCode, that.verifyCode)
             && Objects.equals(this.provisionEnable, that.provisionEnable)
-            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.createDate, that.createDate)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.ocspEnable, that.ocspEnable)
+            && Objects.equals(this.ocspServerCaId, that.ocspServerCaId)
+            && Objects.equals(this.ocspSslEnable, that.ocspSslEnable)
+            && Objects.equals(this.createDate, that.createDate)
             && Objects.equals(this.effectiveDate, that.effectiveDate)
             && Objects.equals(this.expiryDate, that.expiryDate);
     }
@@ -257,6 +326,9 @@ public class CertificatesRspDTO {
             verifyCode,
             provisionEnable,
             templateId,
+            ocspEnable,
+            ocspServerCaId,
+            ocspSslEnable,
             createDate,
             effectiveDate,
             expiryDate);
@@ -273,6 +345,9 @@ public class CertificatesRspDTO {
         sb.append("    verifyCode: ").append(toIndentedString(verifyCode)).append("\n");
         sb.append("    provisionEnable: ").append(toIndentedString(provisionEnable)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+        sb.append("    ocspEnable: ").append(toIndentedString(ocspEnable)).append("\n");
+        sb.append("    ocspServerCaId: ").append(toIndentedString(ocspServerCaId)).append("\n");
+        sb.append("    ocspSslEnable: ").append(toIndentedString(ocspSslEnable)).append("\n");
         sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
         sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
         sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");

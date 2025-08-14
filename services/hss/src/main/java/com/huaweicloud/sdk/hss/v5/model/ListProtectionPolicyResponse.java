@@ -30,7 +30,7 @@ public class ListProtectionPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 策略总数
+     * **参数解释**: 策略总数 **取值范围**: 取值0-2097152 
      * minimum: 0
      * maximum: 2097152
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListProtectionPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 查询防护策略列表
+     * **参数解释**: 查询防护策略列表 **取值范围**: 取值0-2097152 
      * @return dataList
      */
     public List<ProtectionPolicyInfo> getDataList() {

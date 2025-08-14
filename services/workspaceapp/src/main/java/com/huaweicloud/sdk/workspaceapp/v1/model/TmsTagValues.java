@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * tms标签
+ * tms标签。
  */
 public class TmsTagValues {
 

@@ -113,7 +113,7 @@ public class ListAppStatisticsRequest {
     }
 
     /**
-     * **参数解释**: 类别，默认为host，包含如下： **约束限制**: 不涉及 **取值范围**: - host：主机 - container：容器  **默认取值**: 不涉及 
+     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: - host：主机 - container：容器  **默认取值**: 不涉及 
      * @return category
      */
     public String getCategory() {

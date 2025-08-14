@@ -26,6 +26,11 @@ public class ListAppGroupAuthorizationRequest {
     private String appGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_id")
+
+    private String accountId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account")
 
     private String account;
@@ -41,7 +46,7 @@ public class ListAppGroupAuthorizationRequest {
     }
 
     /**
-     * 单次查询的大小[1-100]。
+     * 单次查询的大小[1-100]，默认值10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -60,7 +65,7 @@ public class ListAppGroupAuthorizationRequest {
     }
 
     /**
-     * 查询的偏移量。
+     * 查询的偏移量，默认值0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -88,6 +93,23 @@ public class ListAppGroupAuthorizationRequest {
 
     public void setAppGroupId(String appGroupId) {
         this.appGroupId = appGroupId;
+    }
+
+    public ListAppGroupAuthorizationRequest withAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    /**
+     * 应用授权的用户(组)ID，精确查询。
+     * @return accountId
+     */
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
     public ListAppGroupAuthorizationRequest withAccount(String account) {
@@ -134,13 +156,13 @@ public class ListAppGroupAuthorizationRequest {
         }
         ListAppGroupAuthorizationRequest that = (ListAppGroupAuthorizationRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.appGroupId, that.appGroupId) && Objects.equals(this.account, that.account)
-            && Objects.equals(this.accountType, that.accountType);
+            && Objects.equals(this.appGroupId, that.appGroupId) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.accountType, that.accountType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, appGroupId, account, accountType);
+        return Objects.hash(limit, offset, appGroupId, accountId, account, accountType);
     }
 
     @Override
@@ -150,6 +172,7 @@ public class ListAppGroupAuthorizationRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    appGroupId: ").append(toIndentedString(appGroupId)).append("\n");
+        sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    account: ").append(toIndentedString(account)).append("\n");
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("}");

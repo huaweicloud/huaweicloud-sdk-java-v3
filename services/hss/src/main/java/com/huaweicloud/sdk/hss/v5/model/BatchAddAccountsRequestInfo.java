@@ -40,7 +40,7 @@ public class BatchAddAccountsRequestInfo {
     }
 
     /**
-     * 账号列表表详情
+     * 账号列表详情
      * @return dataList
      */
     public List<AddAccountsRequestInfo> getDataList() {

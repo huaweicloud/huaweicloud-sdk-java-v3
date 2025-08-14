@@ -48,7 +48,7 @@ public class ShowHostAssetManualCollectStatusRequest {
     }
 
     /**
-     * 资产类型 - web-app       web应用 - web-service   web服务 - web-framwork  web框架 - web-site      web站点  - midware       中间件 - database      数据库 - kernel-module 内核模块
+     * 资产类型 - web-app：web应用 - web-service：web服务 - web-framwork：web框架 - web-site：web站点  - midware：中间件 - database：数据库 - kernel-module：内核模块
      * @return type
      */
     public String getType() {

@@ -231,7 +231,7 @@ public class DeleteAccountAssignmentReqBody {
     }
 
     /**
-     * 目标账号身份标识
+     * 目标账户身份标识
      * @return targetId
      */
     public String getTargetId() {

@@ -66,7 +66,7 @@ public class ListAutoLaunchChangeHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * 软件历史变动记录列表
+     * **参数解释**： 软件历史变动记录列表 **取值范围**： 不涉及 
      * @return dataList
      */
     public List<AutoLaunchChangeResponseInfo> getDataList() {

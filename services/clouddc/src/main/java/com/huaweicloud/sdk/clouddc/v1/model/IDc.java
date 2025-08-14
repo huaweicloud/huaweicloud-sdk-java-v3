@@ -31,9 +31,9 @@ public class IDc {
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deccription")
+    @JsonProperty(value = "description")
 
-    private String deccription;
+    private String description;
 
     public IDc withName(String name) {
         this.name = name;
@@ -103,21 +103,21 @@ public class IDc {
         this.region = region;
     }
 
-    public IDc withDeccription(String deccription) {
-        this.deccription = deccription;
+    public IDc withDescription(String description) {
+        this.description = description;
         return this;
     }
 
     /**
-     * Get deccription
-     * @return deccription
+     * Get description
+     * @return description
      */
-    public String getDeccription() {
-        return deccription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDeccription(String deccription) {
-        this.deccription = deccription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -131,12 +131,12 @@ public class IDc {
         IDc that = (IDc) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.irackNum, that.irackNum)
             && Objects.equals(this.id, that.id) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.deccription, that.deccription);
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, irackNum, id, region, deccription);
+        return Objects.hash(name, irackNum, id, region, description);
     }
 
     @Override
@@ -147,7 +147,7 @@ public class IDc {
         sb.append("    irackNum: ").append(toIndentedString(irackNum)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
-        sb.append("    deccription: ").append(toIndentedString(deccription)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

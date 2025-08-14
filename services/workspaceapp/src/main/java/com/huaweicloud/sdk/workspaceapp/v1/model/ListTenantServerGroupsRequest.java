@@ -41,7 +41,7 @@ public class ListTenantServerGroupsRequest {
     }
 
     /**
-     * 查询的偏移量。
+     * 查询的偏移量，默认值0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -60,7 +60,7 @@ public class ListTenantServerGroupsRequest {
     }
 
     /**
-     * 查询的数量，值区间[1-100]。
+     * 查询的数量，值区间[1-100]，默认值10。
      * minimum: 1
      * maximum: 100
      * @return limit

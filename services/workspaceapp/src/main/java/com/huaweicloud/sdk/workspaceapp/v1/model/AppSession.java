@@ -615,7 +615,7 @@ public class AppSession {
     }
 
     /**
-     * 租户ID
+     * 租户ID。
      * @return tenantId
      */
     public String getTenantId() {

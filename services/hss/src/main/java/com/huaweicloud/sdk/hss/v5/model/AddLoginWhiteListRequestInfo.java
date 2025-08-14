@@ -41,7 +41,7 @@ public class AddLoginWhiteListRequestInfo {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**： 服务器私有IP **取值范围**： 字符长度1-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -58,7 +58,7 @@ public class AddLoginWhiteListRequestInfo {
     }
 
     /**
-     * 登录源IP
+     * **参数解释**： 登录源IP **取值范围**： 字符长度1-256位 
      * @return loginIp
      */
     public String getLoginIp() {
@@ -75,7 +75,7 @@ public class AddLoginWhiteListRequestInfo {
     }
 
     /**
-     * 登录用户名
+     * **参数解释**： 登录用户名 **取值范围**： 字符长度1-256位 
      * @return loginUserName
      */
     public String getLoginUserName() {

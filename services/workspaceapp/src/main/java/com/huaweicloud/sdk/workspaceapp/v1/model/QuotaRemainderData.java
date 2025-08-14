@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 配额剩余数量信息
+ * 配额剩余数量信息。
  */
 public class QuotaRemainderData {
 

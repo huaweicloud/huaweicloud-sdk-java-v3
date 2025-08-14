@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class AttachManagedRoleToPermissionSetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
@@ -22,14 +27,28 @@ public class AttachManagedRoleToPermissionSetRequest {
     private String permissionSetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-
-    private String xSecurityToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ResourceAttachManagedPolicyToPermissionSetReqBody body;
+
+    public AttachManagedRoleToPermissionSetRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public AttachManagedRoleToPermissionSetRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -37,7 +56,7 @@ public class AttachManagedRoleToPermissionSetRequest {
     }
 
     /**
-     * IAM身份中心实例的全局唯一标识符（ID）。
+     * IAM Identity Center实例的全局唯一标识符（ID）
      * @return instanceId
      */
     public String getInstanceId() {
@@ -63,25 +82,6 @@ public class AttachManagedRoleToPermissionSetRequest {
 
     public void setPermissionSetId(String permissionSetId) {
         this.permissionSetId = permissionSetId;
-    }
-
-    public AttachManagedRoleToPermissionSetRequest withXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
-        return this;
-    }
-
-    /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-     * @return xSecurityToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Security-Token")
-    public String getXSecurityToken() {
-        return xSecurityToken;
-    }
-
-    public void setXSecurityToken(String xSecurityToken) {
-        this.xSecurityToken = xSecurityToken;
     }
 
     public AttachManagedRoleToPermissionSetRequest withBody(ResourceAttachManagedPolicyToPermissionSetReqBody body) {
@@ -120,23 +120,23 @@ public class AttachManagedRoleToPermissionSetRequest {
             return false;
         }
         AttachManagedRoleToPermissionSetRequest that = (AttachManagedRoleToPermissionSetRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.permissionSetId, that.permissionSetId)
-            && Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.permissionSetId, that.permissionSetId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, permissionSetId, xSecurityToken, body);
+        return Objects.hash(xSecurityToken, instanceId, permissionSetId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AttachManagedRoleToPermissionSetRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    permissionSetId: ").append(toIndentedString(permissionSetId)).append("\n");
-        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

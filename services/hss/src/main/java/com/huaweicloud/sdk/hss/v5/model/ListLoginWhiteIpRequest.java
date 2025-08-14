@@ -43,7 +43,7 @@ public class ListLoginWhiteIpRequest {
     }
 
     /**
-     * 白名单IP/IP网段,IP网段由IP地址和掩码组成,以'/'连接。
+     * 白名单IP/IP网段，IP网段由IP地址和掩码组成，以‘/’连接。
      * @return whiteIp
      */
     public String getWhiteIp() {

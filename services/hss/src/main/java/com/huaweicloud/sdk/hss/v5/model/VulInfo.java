@@ -81,7 +81,7 @@ public class VulInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cve_list")
 
-    private List<ShowVulReportDataResponseInfoCveList> cveList = null;
+    private List<VulInfoCveList> cveList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "patch_url")
@@ -129,7 +129,7 @@ public class VulInfo {
     }
 
     /**
-     * 漏洞名称
+     * **参数解释**: 漏洞名称 **取值范围**: 字符长度0-256位 
      * @return vulName
      */
     public String getVulName() {
@@ -146,7 +146,7 @@ public class VulInfo {
     }
 
     /**
-     * 漏洞ID
+     * **参数解释**: 漏洞ID **取值范围**: 字符长度0-64位 
      * @return vulId
      */
     public String getVulId() {
@@ -179,7 +179,7 @@ public class VulInfo {
     }
 
     /**
-     * 漏洞标签
+     * **参数解释**: 漏洞标签列表 **取值范围**: 不涉及 
      * @return labelList
      */
     public List<String> getLabelList() {
@@ -196,7 +196,7 @@ public class VulInfo {
     }
 
     /**
-     * 修复必要性   - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危   - High : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危   - Medium : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危   - Low : 漏洞cvss评分小于4；对应控制台页面的低危
+     * **参数解释**: 漏洞修复的必要性 **取值范围**: - Critical：漏洞cvss评分大于等于9；对应控制台页面的高危 - High：漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium：漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low：漏洞cvss评分小于4；对应控制台页面的低危 
      * @return repairNecessity
      */
     public String getRepairNecessity() {
@@ -213,7 +213,7 @@ public class VulInfo {
     }
 
     /**
-     * 漏洞级别   - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危   - High : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危   - Medium : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危   - Low : 漏洞cvss评分小于4；对应控制台页面的低危
+     * **参数解释**: 漏洞风险级别 **取值范围**: - Critical：漏洞cvss评分大于等于9；对应控制台页面的高危 - High：漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium：漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low：漏洞cvss评分小于4；对应控制台页面的低危 
      * @return severityLevel
      */
     public String getSeverityLevel() {
@@ -230,7 +230,7 @@ public class VulInfo {
     }
 
     /**
-     * 受影响服务器台数
+     * **参数解释**: 受影响服务器台数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum
@@ -249,7 +249,7 @@ public class VulInfo {
     }
 
     /**
-     * 未处理主机台数，除已忽略和已修复的主机数量
+     * **参数解释**: 未处理主机台数：除已忽略和已修复的主机数量 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return unhandleHostNum
@@ -268,7 +268,7 @@ public class VulInfo {
     }
 
     /**
-     * 最近扫描时间，时间戳单位：毫秒
+     * **参数解释**: 最近扫描时间，时间戳单位：毫秒 **取值范围**: 取值0-9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return scanTime
@@ -287,7 +287,7 @@ public class VulInfo {
     }
 
     /**
-     * 修复漏洞的指导意见
+     * **参数解释**: 修复漏洞的指导意见 **取值范围**: 字符长度0-65534位 
      * @return solutionDetail
      */
     public String getSolutionDetail() {
@@ -304,7 +304,7 @@ public class VulInfo {
     }
 
     /**
-     * URL链接
+     * **参数解释**: URL链接 **取值范围**: 字符长度0-2083位 
      * @return url
      */
     public String getUrl() {
@@ -321,7 +321,7 @@ public class VulInfo {
     }
 
     /**
-     * 漏洞描述
+     * **参数解释**: 漏洞描述 **取值范围**: 字符长度0-65534位 
      * @return description
      */
     public String getDescription() {
@@ -338,7 +338,7 @@ public class VulInfo {
     }
 
     /**
-     * 漏洞类型，包含如下：   -linux_vul : linux漏洞   -windows_vul : windows漏洞   -web_cms : Web-CMS漏洞   -app_vul : 应用漏洞
+     * **参数解释**: 漏洞类型 **取值范围**: - linux_vul：linux漏洞 - windows_vul：windows漏洞 - web_cms：Web-CMS漏洞 - app_vul：应用漏洞 
      * @return type
      */
     public String getType() {
@@ -371,7 +371,7 @@ public class VulInfo {
     }
 
     /**
-     * 可处置该漏洞的主机列表
+     * **参数解释**: 可处置该漏洞的主机ID列表 **取值范围**: 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {
@@ -382,12 +382,12 @@ public class VulInfo {
         this.hostIdList = hostIdList;
     }
 
-    public VulInfo withCveList(List<ShowVulReportDataResponseInfoCveList> cveList) {
+    public VulInfo withCveList(List<VulInfoCveList> cveList) {
         this.cveList = cveList;
         return this;
     }
 
-    public VulInfo addCveListItem(ShowVulReportDataResponseInfoCveList cveListItem) {
+    public VulInfo addCveListItem(VulInfoCveList cveListItem) {
         if (this.cveList == null) {
             this.cveList = new ArrayList<>();
         }
@@ -395,7 +395,7 @@ public class VulInfo {
         return this;
     }
 
-    public VulInfo withCveList(Consumer<List<ShowVulReportDataResponseInfoCveList>> cveListSetter) {
+    public VulInfo withCveList(Consumer<List<VulInfoCveList>> cveListSetter) {
         if (this.cveList == null) {
             this.cveList = new ArrayList<>();
         }
@@ -404,14 +404,14 @@ public class VulInfo {
     }
 
     /**
-     * CVE列表
+     * **参数解释**: 漏洞关联的cve信息列表 **取值范围**: 不涉及 
      * @return cveList
      */
-    public List<ShowVulReportDataResponseInfoCveList> getCveList() {
+    public List<VulInfoCveList> getCveList() {
         return cveList;
     }
 
-    public void setCveList(List<ShowVulReportDataResponseInfoCveList> cveList) {
+    public void setCveList(List<VulInfoCveList> cveList) {
         this.cveList = cveList;
     }
 
@@ -421,7 +421,7 @@ public class VulInfo {
     }
 
     /**
-     * 补丁地址
+     * **参数解释**: 补丁地址 **取值范围**: 字符长度0-512位 
      * @return patchUrl
      */
     public String getPatchUrl() {
@@ -438,7 +438,7 @@ public class VulInfo {
     }
 
     /**
-     * 修复优先级 Critical 紧急 High 高 Medium 中 Low 低
+     * **参数解释**: 修复优先级 **取值范围**: - Critical：紧急 - High：高 - Medium：中 - Low：低 
      * @return repairPriority
      */
     public String getRepairPriority() {
@@ -481,7 +481,7 @@ public class VulInfo {
     }
 
     /**
-     * 修复成功次数
+     * **参数解释**: 修复成功次数 **取值范围**: 取值0-1000000 
      * minimum: 0
      * maximum: 1000000
      * @return repairSuccessNum
@@ -500,7 +500,7 @@ public class VulInfo {
     }
 
     /**
-     * 修复数量
+     * **参数解释**: 修复数量 **取值范围**: 取值0-1000000 
      * minimum: 0
      * maximum: 1000000
      * @return fixedNum
@@ -519,7 +519,7 @@ public class VulInfo {
     }
 
     /**
-     * 忽略数量
+     * **参数解释**: 忽略数量 **取值范围**: 取值0-1000000 
      * minimum: 0
      * maximum: 1000000
      * @return ignoredNum
@@ -538,7 +538,7 @@ public class VulInfo {
     }
 
     /**
-     * 验证数量
+     * **参数解释**: 验证数量 **取值范围**: 取值0-1000000 
      * minimum: 0
      * maximum: 1000000
      * @return verifyNum
@@ -573,7 +573,7 @@ public class VulInfo {
     }
 
     /**
-     * 修复优先级，每个修复优先级对应的主机数量
+     * **参数解释**: 修复优先级，每个修复优先级对应的主机数量 **取值范围**: 不涉及 
      * @return repairPriorityList
      */
     public List<RepairPriorityListInfo> getRepairPriorityList() {

@@ -97,7 +97,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * 操作系统类型，包含如下2种。   - Linux ：Linux。   - Windows ：Windows。
+     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux。 - Windows：Windows。 
      * @return osType
      */
     public String getOsType() {
@@ -114,7 +114,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * **参数解释**: 服务器ID **取值范围**: 字符长度1-64位 
+     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -148,7 +148,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * 文件哈希
+     * **参数解释**： 文件哈希 **取值范围**： 字符长度1-256位 
      * @return fileHash
      */
     public String getFileHash() {
@@ -165,7 +165,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * 文件路径
+     * **参数解释**： 文件路径 **取值范围**： 字符长度1-256位 
      * @return filePath
      */
     public String getFilePath() {
@@ -182,7 +182,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * 文件属性
+     * **参数解释**： 文件属性 **取值范围**： 字符长度1-256位 
      * @return fileAttr
      */
     public String getFileAttr() {
@@ -216,7 +216,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * 服务器私有IP
+     * **参数解释**： 服务器私有IP **取值范围**： 字符长度1-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -233,7 +233,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * 弹性公网IP地址
+     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -320,7 +320,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * 事件名称
+     * **参数解释**： 事件名称 **取值范围**： 字符长度1-256位 
      * @return eventName
      */
     public String getEventName() {

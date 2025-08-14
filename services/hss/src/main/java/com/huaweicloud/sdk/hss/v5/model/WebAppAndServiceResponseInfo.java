@@ -184,7 +184,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * install_path
+     * 安装路径
      * @return installPath
      */
     public String getInstallPath() {
@@ -201,7 +201,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * config_path 配置文件路径
+     * 配置文件路径
      * @return configPath
      */
     public String getConfigPath() {

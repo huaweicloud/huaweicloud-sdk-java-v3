@@ -128,7 +128,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * **参数解释**: 防护动作，包含如下2种。   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。 **取值范围**: 字符长度0-128
+     * **参数解释**: 防护动作 **取值范围**: 包含如下2种。   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。
      * @return protectionMode
      */
     public String getProtectionMode() {
@@ -145,7 +145,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * **参数解释**: 是否开启诱饵防护，包含如下1种, 默认为开启防护诱饵防护。   - opened ：开启。   - closed ：关闭。  **取值范围**: 字符长度0-128
+     * **参数解释**: 是否开启诱饵防护 **取值范围**: 包含如下1种，默认为开启防护诱饵防护。   - opened ：开启。
      * @return baitProtectionStatus
      */
     public String getBaitProtectionStatus() {
@@ -162,7 +162,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * **参数解释**: 是否开启动态诱饵防护，包含如下2种, 默认为关闭动态诱饵防护。   - opened ：开启。   - closed ：关闭。   **取值范围**: 字符长度0-128
+     * **参数解释**: 是否开启动态诱饵防护 **取值范围**: 包含如下2种，默认为关闭动态诱饵防护。   - opened ：开启。   - closed ：关闭。
      * @return deployMode
      */
     public String getDeployMode() {
@@ -230,7 +230,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * **参数解释**: 是否运行时检测，包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。 **取值范围**: 字符长度0-128
+     * **参数解释**: 是否运行时检测 **取值范围**: 包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。
      * @return runtimeDetectionStatus
      */
     public String getRuntimeDetectionStatus() {
@@ -333,7 +333,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * **参数解释**: 是否为默认策略，包含如下2种。   - 0 ：非默认策略。   - 1 ：默认策略 **取值范围**: 取值大小0-10
+     * **参数解释**: 是否为默认策略 **取值范围**: 包含如下2种。   - 0 ：非默认策略。   - 1 ：默认策略
      * minimum: 0
      * maximum: 10
      * @return defaultPolicy

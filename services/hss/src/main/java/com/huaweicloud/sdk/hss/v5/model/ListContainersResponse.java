@@ -35,7 +35,7 @@ public class ListContainersResponse extends SdkResponse {
     }
 
     /**
-     * 容器总数
+     * **参数解释**: 容器总数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -54,7 +54,7 @@ public class ListContainersResponse extends SdkResponse {
     }
 
     /**
-     * 最近更新时间
+     * **参数解释**: 最近更新时间 **取值范围**: 取值0-4071095999000 
      * minimum: 0
      * maximum: 4071095999000
      * @return lastUpdateTime
@@ -89,7 +89,7 @@ public class ListContainersResponse extends SdkResponse {
     }
 
     /**
-     * 容器基本信息列表
+     * **参数解释**: 容器基本信息列表 **取值范围**: 取值0-2147483647个ContainerBaseInfo对象 
      * @return dataList
      */
     public List<ContainerBaseInfo> getDataList() {

@@ -21,7 +21,7 @@ public class ListTagResourcesRequest {
     private String xSecurityToken;
 
     /**
-     * 资源类型 identitycenter:permissionset（权限集）
+     * 资源类型 identitycenter:permissionset权限集
      */
     public static final class ResourceTypeEnum {
 
@@ -130,7 +130,7 @@ public class ListTagResourcesRequest {
     }
 
     /**
-     * 资源类型 identitycenter:permissionset（权限集）
+     * 资源类型 identitycenter:permissionset权限集
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -164,7 +164,7 @@ public class ListTagResourcesRequest {
     }
 
     /**
-     * 每个请求返回的最大结果数
+     * 每个请求返回的最大结果数。
      * minimum: 1
      * maximum: 100
      * @return limit

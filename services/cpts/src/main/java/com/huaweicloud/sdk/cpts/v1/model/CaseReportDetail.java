@@ -46,7 +46,7 @@ public class CaseReportDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgRecBytes")
 
-    private Integer avgRecBytes;
+    private Double avgRecBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgRecBytesCheckPoint")
@@ -61,7 +61,7 @@ public class CaseReportDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgSentBytes")
 
-    private Integer avgSentBytes;
+    private Double avgSentBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avgSentBytesCheckPoint")
@@ -1075,7 +1075,7 @@ public class CaseReportDetail {
         this.avgNetworkTraffic = avgNetworkTraffic;
     }
 
-    public CaseReportDetail withAvgRecBytes(Integer avgRecBytes) {
+    public CaseReportDetail withAvgRecBytes(Double avgRecBytes) {
         this.avgRecBytes = avgRecBytes;
         return this;
     }
@@ -1084,11 +1084,11 @@ public class CaseReportDetail {
      * 平均下行带宽
      * @return avgRecBytes
      */
-    public Integer getAvgRecBytes() {
+    public Double getAvgRecBytes() {
         return avgRecBytes;
     }
 
-    public void setAvgRecBytes(Integer avgRecBytes) {
+    public void setAvgRecBytes(Double avgRecBytes) {
         this.avgRecBytes = avgRecBytes;
     }
 
@@ -1126,7 +1126,7 @@ public class CaseReportDetail {
         this.avgRecBytesCheckRes = avgRecBytesCheckRes;
     }
 
-    public CaseReportDetail withAvgSentBytes(Integer avgSentBytes) {
+    public CaseReportDetail withAvgSentBytes(Double avgSentBytes) {
         this.avgSentBytes = avgSentBytes;
         return this;
     }
@@ -1135,11 +1135,11 @@ public class CaseReportDetail {
      * 平均上行带宽
      * @return avgSentBytes
      */
-    public Integer getAvgSentBytes() {
+    public Double getAvgSentBytes() {
         return avgSentBytes;
     }
 
-    public void setAvgSentBytes(Integer avgSentBytes) {
+    public void setAvgSentBytes(Double avgSentBytes) {
         this.avgSentBytes = avgSentBytes;
     }
 

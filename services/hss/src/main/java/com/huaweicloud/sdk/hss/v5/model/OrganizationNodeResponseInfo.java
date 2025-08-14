@@ -80,7 +80,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * 组织的统一资源名称,格式：organizations::{management_account_id}:xxxxx:{org_id}/xxxxxxxx。
+     * 组织的统一资源名称，格式：organizations::{management_account_id}:xxxxx:{org_id}/xxxxxxxx。
      * @return urn
      */
     public String getUrn() {

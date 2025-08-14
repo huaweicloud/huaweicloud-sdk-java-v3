@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 提供关于IAM身份中心实例的信息
+ * 提供关于IdentityCenter实例的信息
  */
 public class InstanceMetadataEntryDto {
 
@@ -36,7 +36,7 @@ public class InstanceMetadataEntryDto {
     }
 
     /**
-     * 关联到IAM身份中心实例的身份源的全局唯一标识符（ID）
+     * 关联到IAM身份中心实例的身份源的全局唯一标识符（ID）。
      * @return identityStoreId
      */
     public String getIdentityStoreId() {
@@ -53,7 +53,7 @@ public class InstanceMetadataEntryDto {
     }
 
     /**
-     * IAM身份中心实例的全局唯一标识符（ID）
+     * Identity Center实例的全局唯一标识符（ID）
      * @return instanceId
      */
     public String getInstanceId() {

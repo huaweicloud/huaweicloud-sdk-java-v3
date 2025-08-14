@@ -48,7 +48,7 @@ public class ShowSingleBackupPolicyInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 策略是否启用 **约束限制**: 不涉及 **取值范围**: true或者false **默认取值**: 不涉及 
+     * **参数解释**: 策略是否启用 **取值范围**: - true：策略已启用 - false：策略未启用 
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -65,7 +65,7 @@ public class ShowSingleBackupPolicyInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 策略ID **约束限制**: 不涉及 **取值范围**: 字符长度1-128 **默认取值**: 不涉及 
+     * **参数解释**: 策略ID **取值范围**: 字符长度1-128 
      * @return id
      */
     public String getId() {
@@ -82,7 +82,7 @@ public class ShowSingleBackupPolicyInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 策略名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128 **默认取值**: 不涉及 
+     * **参数解释**: 策略名称 **取值范围**: 字符长度1-128 
      * @return name
      */
     public String getName() {
@@ -99,7 +99,7 @@ public class ShowSingleBackupPolicyInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 备份类型。当前包含如下1种。   - backup ：备份 **约束限制**: 不涉及 **取值范围**: 字符长度1-128 **默认取值**: 不涉及
+     * **参数解释**: 备份类型 **取值范围**: - backup ：备份
      * @return operationType
      */
     public String getOperationType() {

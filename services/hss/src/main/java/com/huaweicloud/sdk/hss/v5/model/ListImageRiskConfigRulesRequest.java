@@ -282,7 +282,7 @@ public class ListImageRiskConfigRulesRequest {
     }
 
     /**
-     * 结果类型，包含如下： - pass ： 已通过 - failed : 未通过
+     * 结果类型，包含如下： - pass：已通过 - failed：未通过
      * @return resultType
      */
     public String getResultType() {

@@ -30,9 +30,9 @@ public class ListProtectionServerResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 总数 **取值范围**: 取值0-65535 
      * minimum: 0
-     * maximum: 2097152
+     * maximum: 65535
      * @return totalNum
      */
     public Integer getTotalNum() {
@@ -65,7 +65,7 @@ public class ListProtectionServerResponse extends SdkResponse {
     }
 
     /**
-     * 查询勒索防护服务器列表
+     * **参数解释**: 查询勒索防护服务器列表 **取值范围**: 取值0-65535个ProtectionServerInfo对象 
      * @return dataList
      */
     public List<ProtectionServerInfo> getDataList() {

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 自定义策略
+ * 自定义策略。
  */
 public class PoliciesCustom {
 

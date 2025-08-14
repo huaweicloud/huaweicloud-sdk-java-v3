@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 修改应用仓库中的应用信息。
@@ -44,6 +45,11 @@ public class UpdateWarehouseAppReq {
     @JsonProperty(value = "app_icon")
 
     private String appIcon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_extended_info")
+
+    private AppExtendedInfo appExtendedInfo;
 
     public UpdateWarehouseAppReq withAppName(String appName) {
         this.appName = appName;
@@ -164,6 +170,32 @@ public class UpdateWarehouseAppReq {
         this.appIcon = appIcon;
     }
 
+    public UpdateWarehouseAppReq withAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+        return this;
+    }
+
+    public UpdateWarehouseAppReq withAppExtendedInfo(Consumer<AppExtendedInfo> appExtendedInfoSetter) {
+        if (this.appExtendedInfo == null) {
+            this.appExtendedInfo = new AppExtendedInfo();
+            appExtendedInfoSetter.accept(this.appExtendedInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get appExtendedInfo
+     * @return appExtendedInfo
+     */
+    public AppExtendedInfo getAppExtendedInfo() {
+        return appExtendedInfo;
+    }
+
+    public void setAppExtendedInfo(AppExtendedInfo appExtendedInfo) {
+        this.appExtendedInfo = appExtendedInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +208,14 @@ public class UpdateWarehouseAppReq {
         return Objects.equals(this.appName, that.appName) && Objects.equals(this.appCategory, that.appCategory)
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.versionId, that.versionId)
             && Objects.equals(this.appDescription, that.appDescription)
-            && Objects.equals(this.versionName, that.versionName) && Objects.equals(this.appIcon, that.appIcon);
+            && Objects.equals(this.versionName, that.versionName) && Objects.equals(this.appIcon, that.appIcon)
+            && Objects.equals(this.appExtendedInfo, that.appExtendedInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appName, appCategory, osType, versionId, appDescription, versionName, appIcon);
+        return Objects
+            .hash(appName, appCategory, osType, versionId, appDescription, versionName, appIcon, appExtendedInfo);
     }
 
     @Override
@@ -195,6 +229,7 @@ public class UpdateWarehouseAppReq {
         sb.append("    appDescription: ").append(toIndentedString(appDescription)).append("\n");
         sb.append("    versionName: ").append(toIndentedString(versionName)).append("\n");
         sb.append("    appIcon: ").append(toIndentedString(appIcon)).append("\n");
+        sb.append("    appExtendedInfo: ").append(toIndentedString(appExtendedInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

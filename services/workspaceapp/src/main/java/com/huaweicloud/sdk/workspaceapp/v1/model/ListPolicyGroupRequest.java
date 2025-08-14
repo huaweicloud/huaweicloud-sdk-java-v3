@@ -91,7 +91,7 @@ public class ListPolicyGroupRequest {
     }
 
     /**
-     * 根据策略组类型名字过滤结果。
+     * 根据策略组类型名字过滤结果, 0:VM类, 4:策略模板。
      * minimum: 0
      * maximum: 4
      * @return policyGroupType

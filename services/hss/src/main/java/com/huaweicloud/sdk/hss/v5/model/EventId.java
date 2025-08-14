@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 事件ID
+ * **参数解释**： 事件ID **取值范围**： 字符长度1-64位 
  */
 public class EventId {
 

@@ -3118,7 +3118,7 @@ public class CcMeta {
                 ListSupportBindingConnectionBandwidthsRequest::setRemoteArea));
         builder.<ListSupportBindingConnectionBandwidthsRequest.BindingServiceEnum>withRequestField("binding_service",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListSupportBindingConnectionBandwidthsRequest.BindingServiceEnum.class),
             f -> f.withMarshaller(ListSupportBindingConnectionBandwidthsRequest::getBindingService,
                 ListSupportBindingConnectionBandwidthsRequest::setBindingService));

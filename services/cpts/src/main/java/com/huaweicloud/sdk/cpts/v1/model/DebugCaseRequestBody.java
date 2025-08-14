@@ -30,6 +30,11 @@ public class DebugCaseRequestBody {
 
     private Integer withoutPackage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
     public DebugCaseRequestBody withStatus(Integer status) {
         this.status = status;
         return this;
@@ -104,6 +109,25 @@ public class DebugCaseRequestBody {
         this.withoutPackage = withoutPackage;
     }
 
+    public DebugCaseRequestBody withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 类型（0：事务（默认）；1：用例）
+     * minimum: 0
+     * maximum: 1
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -115,12 +139,12 @@ public class DebugCaseRequestBody {
         DebugCaseRequestBody that = (DebugCaseRequestBody) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.clusterType, that.clusterType)
-            && Objects.equals(this.withoutPackage, that.withoutPackage);
+            && Objects.equals(this.withoutPackage, that.withoutPackage) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, clusterId, clusterType, withoutPackage);
+        return Objects.hash(status, clusterId, clusterType, withoutPackage, type);
     }
 
     @Override
@@ -131,6 +155,7 @@ public class DebugCaseRequestBody {
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("    withoutPackage: ").append(toIndentedString(withoutPackage)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

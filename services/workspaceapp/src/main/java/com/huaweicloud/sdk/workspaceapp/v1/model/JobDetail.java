@@ -200,7 +200,7 @@ public class JobDetail {
     }
 
     /**
-     * Job执行结果码
+     * Job执行结果码。
      * @return executeCode
      */
     public String getExecuteCode() {

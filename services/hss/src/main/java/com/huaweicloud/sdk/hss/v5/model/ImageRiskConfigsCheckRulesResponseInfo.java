@@ -153,7 +153,7 @@ public class ImageRiskConfigsCheckRulesResponseInfo {
     }
 
     /**
-     * 检测结果，包含如下：   - pass    通过   - failed  未通过
+     * 检测结果，包含如下：   - pass：通过   - failed：未通过
      * @return scanResult
      */
     public String getScanResult() {

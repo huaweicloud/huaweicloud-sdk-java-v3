@@ -101,7 +101,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 用户uid
+     * **参数解释**： 用户uid **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return userId
@@ -120,7 +120,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 用户gid
+     * **参数解释**： 用户gid **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return userGid
@@ -139,7 +139,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 用户名称
+     * **参数解释**： 用户名称 **取值范围**： 字符长度1-256位 
      * @return userName
      */
     public String getUserName() {
@@ -156,7 +156,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 用户组名称
+     * **参数解释**： 用户组名称 **取值范围**： 字符长度1-256位 
      * @return userGroupName
      */
     public String getUserGroupName() {
@@ -173,7 +173,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 用户home目录
+     * **参数解释**： 用户home目录 **取值范围**： 字符长度1-256位 
      * @return userHomeDir
      */
     public String getUserHomeDir() {
@@ -190,7 +190,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 用户登录ip
+     * **参数解释**： 用户登录IP **取值范围**： 字符长度1-256位 
      * @return loginIp
      */
     public String getLoginIp() {
@@ -207,7 +207,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 服务类型，包含如下:   - system   - mysql   - redis
+     * **参数解释**： 服务类型 **取值范围**： - system：系统 - mysql：数据库 - redis：Redis 
      * @return serviceType
      */
     public String getServiceType() {
@@ -224,7 +224,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 登录服务端口
+     * **参数解释**： 登录服务端口 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return servicePort
@@ -243,7 +243,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 登录方式
+     * **参数解释**： 登录方式 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return loginMode
@@ -262,7 +262,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 用户最后一次登录时间
+     * **参数解释**： 用户最后一次登录时间 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return loginLastTime
@@ -281,7 +281,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 用户登录失败次数
+     * **参数解释**： 用户登录失败次数 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return loginFailCount
@@ -300,7 +300,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 口令hash
+     * **参数解释**： 口令hash **取值范围**： 字符长度1-256位 
      * @return pwdHash
      */
     public String getPwdHash() {
@@ -317,7 +317,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 匿名化处理后的口令
+     * **参数解释**： 匿名化处理后的口令 **取值范围**： 字符长度1-256位 
      * @return pwdWithFuzzing
      */
     public String getPwdWithFuzzing() {
@@ -334,7 +334,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 密码使用的天数
+     * **参数解释**： 密码使用的天数 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return pwdUsedDays
@@ -353,7 +353,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 口令的最短有效期限
+     * **参数解释**： 口令的最短有效期限 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return pwdMinDays
@@ -372,7 +372,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 口令的最长有效期限
+     * **参数解释**： 口令的最长有效期限 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return pwdMaxDays
@@ -391,7 +391,7 @@ public class EventUserResponseInfo {
     }
 
     /**
-     * 口令无效时提前告警天数
+     * **参数解释**： 口令无效时提前告警天数 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return pwdWarnLeftDays

@@ -104,7 +104,7 @@ public class OperateResultRequestInfo {
     }
 
     /**
-     * 发生时间，毫秒
+     * **参数解释**： 发生时间，毫秒 **取值范围**： 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return occurTime
@@ -123,7 +123,7 @@ public class OperateResultRequestInfo {
     }
 
     /**
-     * 文件哈希
+     * **参数解释**： 文件哈希 **取值范围**： 字符长度1-256位 
      * @return fileHash
      */
     public String getFileHash() {
@@ -140,7 +140,7 @@ public class OperateResultRequestInfo {
     }
 
     /**
-     * 文件路径
+     * **参数解释**： 文件路径 **取值范围**： 字符长度1-256位 
      * @return filePath
      */
     public String getFilePath() {
@@ -157,7 +157,7 @@ public class OperateResultRequestInfo {
     }
 
     /**
-     * 文件属性
+     * **参数解释**： 文件属性 **取值范围**： 字符长度1-256位 
      * @return fileAttr
      */
     public String getFileAttr() {

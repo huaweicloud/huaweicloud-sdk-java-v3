@@ -165,7 +165,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * 资产类型 - web-app       web应用 - web-service   web服务 - database      数据库
+     * 资产类型 - web-app：web应用 - web-service：web服务 - database：数据库
      * @return catalogue
      */
     public String getCatalogue() {
@@ -182,7 +182,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * 服务器名称(可选).可让用户根据主机名字搜索
+     * 服务器名称(可选)，可让用户根据主机名字搜索
      * @return hostName
      */
     public String getHostName() {
@@ -199,7 +199,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * 服务器id(可选).可让用户根据主机id搜索
+     * 服务器id(可选)，可让用户根据主机id搜索
      * @return hostId
      */
     public String getHostId() {
@@ -216,7 +216,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * 服务器ip(可选).可让用户根据主机ip搜索
+     * 服务器ip(可选)，可让用户根据主机ip搜索
      * @return hostIp
      */
     public String getHostIp() {
@@ -233,7 +233,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * WebAppAndService资产版本.可让用户根据版本搜索
+     * WebAppAndService资产版本，可让用户根据版本搜索
      * @return version
      */
     public String getVersion() {
@@ -250,7 +250,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * WebAppAndService资产安装目录.可让用户根据安装目录搜索
+     * WebAppAndService资产安装目录，可让用户根据安装目录搜索
      * @return installDir
      */
     public String getInstallDir() {

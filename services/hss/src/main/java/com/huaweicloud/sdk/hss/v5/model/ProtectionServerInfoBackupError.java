@@ -26,7 +26,7 @@ public class ProtectionServerInfoBackupError {
     }
 
     /**
-     * 错误编码，包含如下2种。   - 0 ：无错误信息。   - 1 ：已綁定至其它存储库，无法开启备份。   - 2 ：备份库已超过最大限额。   - 3 ：CBR接口调用异常。
+     * **参数解释**: 错误编码 **取值范围**: 包含如下4种。   - 0 ：无错误信息。   - 1 ：已綁定至其它存储库，无法开启备份。   - 2 ：备份库已超过最大限额。   - 3 ：CBR接口调用异常。
      * minimum: 0
      * maximum: 128
      * @return errorCode
@@ -45,7 +45,7 @@ public class ProtectionServerInfoBackupError {
     }
 
     /**
-     * 错误描述
+     * **参数解释**: 错误描述 **取值范围**: 字符长度1-128 
      * @return errorDescription
      */
     public String getErrorDescription() {
