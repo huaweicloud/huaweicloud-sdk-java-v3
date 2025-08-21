@@ -15,16 +15,16 @@ public class ListCustomerIpsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private HttpListCustomerIpsResponseData data;
+    private CustomerIpsPageInfo data;
 
-    public ListCustomerIpsResponse withData(HttpListCustomerIpsResponseData data) {
+    public ListCustomerIpsResponse withData(CustomerIpsPageInfo data) {
         this.data = data;
         return this;
     }
 
-    public ListCustomerIpsResponse withData(Consumer<HttpListCustomerIpsResponseData> dataSetter) {
+    public ListCustomerIpsResponse withData(Consumer<CustomerIpsPageInfo> dataSetter) {
         if (this.data == null) {
-            this.data = new HttpListCustomerIpsResponseData();
+            this.data = new CustomerIpsPageInfo();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class ListCustomerIpsResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public HttpListCustomerIpsResponseData getData() {
+    public CustomerIpsPageInfo getData() {
         return data;
     }
 
-    public void setData(HttpListCustomerIpsResponseData data) {
+    public void setData(CustomerIpsPageInfo data) {
         this.data = data;
     }
 

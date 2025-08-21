@@ -25,6 +25,16 @@ public class UpdateSnapshotSettingReq {
 
     private String basePath;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maxSnapshotBytesPerSeconds")
+
+    private String maxSnapshotBytesPerSeconds;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maxRestoreBytesPerSeconds")
+
+    private String maxRestoreBytesPerSeconds;
+
     public UpdateSnapshotSettingReq withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -76,6 +86,40 @@ public class UpdateSnapshotSettingReq {
         this.basePath = basePath;
     }
 
+    public UpdateSnapshotSettingReq withMaxSnapshotBytesPerSeconds(String maxSnapshotBytesPerSeconds) {
+        this.maxSnapshotBytesPerSeconds = maxSnapshotBytesPerSeconds;
+        return this;
+    }
+
+    /**
+     * 配置每个节点的最大备份速率（每秒），即当备份的速率超过该值时会被限流，避免速率太大导致资源占用过高，影响系统稳定性。实际备份速率不一定能达到该值，会受OBS、磁盘等影响。
+     * @return maxSnapshotBytesPerSeconds
+     */
+    public String getMaxSnapshotBytesPerSeconds() {
+        return maxSnapshotBytesPerSeconds;
+    }
+
+    public void setMaxSnapshotBytesPerSeconds(String maxSnapshotBytesPerSeconds) {
+        this.maxSnapshotBytesPerSeconds = maxSnapshotBytesPerSeconds;
+    }
+
+    public UpdateSnapshotSettingReq withMaxRestoreBytesPerSeconds(String maxRestoreBytesPerSeconds) {
+        this.maxRestoreBytesPerSeconds = maxRestoreBytesPerSeconds;
+        return this;
+    }
+
+    /**
+     * 配置每个节点的最大恢复速率（每秒），即当恢复的速率超过该值时会被限流，避免速率太大导致资源占用过高，影响系统稳定性。实际恢复速率不一定能达到该值，会受OBS、磁盘等影响。
+     * @return maxRestoreBytesPerSeconds
+     */
+    public String getMaxRestoreBytesPerSeconds() {
+        return maxRestoreBytesPerSeconds;
+    }
+
+    public void setMaxRestoreBytesPerSeconds(String maxRestoreBytesPerSeconds) {
+        this.maxRestoreBytesPerSeconds = maxRestoreBytesPerSeconds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +130,14 @@ public class UpdateSnapshotSettingReq {
         }
         UpdateSnapshotSettingReq that = (UpdateSnapshotSettingReq) obj;
         return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.agency, that.agency)
-            && Objects.equals(this.basePath, that.basePath);
+            && Objects.equals(this.basePath, that.basePath)
+            && Objects.equals(this.maxSnapshotBytesPerSeconds, that.maxSnapshotBytesPerSeconds)
+            && Objects.equals(this.maxRestoreBytesPerSeconds, that.maxRestoreBytesPerSeconds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucket, agency, basePath);
+        return Objects.hash(bucket, agency, basePath, maxSnapshotBytesPerSeconds, maxRestoreBytesPerSeconds);
     }
 
     @Override
@@ -101,6 +147,8 @@ public class UpdateSnapshotSettingReq {
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
+        sb.append("    maxSnapshotBytesPerSeconds: ").append(toIndentedString(maxSnapshotBytesPerSeconds)).append("\n");
+        sb.append("    maxRestoreBytesPerSeconds: ").append(toIndentedString(maxRestoreBytesPerSeconds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

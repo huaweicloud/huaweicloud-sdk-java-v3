@@ -94,12 +94,7 @@ public class ClientBuilder<T> {
         return this;
     }
 
-    /**
-     * @deprecated As of 3.1.27, because of the support of the multi-endpoint feature,
-     * use {@link #withEndpoints(List<String> endpoints)} instead
-     */
-    @Deprecated
-    public ClientBuilder<T> withEndpoint(String endpoint) {
+    public ClientBuilder<T> withEndpoint(String... endpoint) {
         return withEndpoints(Arrays.asList(endpoint));
     }
 

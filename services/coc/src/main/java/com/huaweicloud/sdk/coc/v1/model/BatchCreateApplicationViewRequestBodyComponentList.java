@@ -26,7 +26,7 @@ public class BatchCreateApplicationViewRequestBodyComponentList {
     }
 
     /**
-     * 名称
+     * **参数解释：** 组件名称。 **约束限制：** 不涉及。 **取值范围：** 由中文、英文字母、数字、中划线、下划线组成，长度在3~50个字符之间。 **默认取值：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class BatchCreateApplicationViewRequestBodyComponentList {
     }
 
     /**
-     * 父节点code
+     * **参数解释：** 父节点名称。 **约束限制：** 不涉及。 **取值范围：** 字符串，长度3到50个字符。 **默认取值：** 不涉及。
      * @return parentName
      */
     public String getParentName() {

@@ -71,6 +71,26 @@ public class ApigRegion {
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://apig.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://apig.cn-south-4.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://apig.cn-east-5.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://apig.cn-north-12.myhuaweicloud.com");
+
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://apig.cn-east-4.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://apig.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://apig.cn-south-2.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://apig.cn-north-11.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://apig.ap-southeast-5.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://apig.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("APIG");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -102,6 +122,15 @@ public class ApigRegion {
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("eu-west-0", EU_WEST_0);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("cn-south-2", CN_SOUTH_2);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

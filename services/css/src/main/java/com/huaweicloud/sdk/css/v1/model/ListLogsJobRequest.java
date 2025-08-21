@@ -16,9 +16,9 @@ public class ListLogsJobRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start")
+    @JsonProperty(value = "offset")
 
-    private Integer start;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -42,21 +42,21 @@ public class ListLogsJobRequest {
         this.clusterId = clusterId;
     }
 
-    public ListLogsJobRequest withStart(Integer start) {
-        this.start = start;
+    public ListLogsJobRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * 指定查询起始值，默认值为1，即从第1个任务开始查询。
-     * @return start
+     * @return offset
      */
-    public Integer getStart() {
-        return start;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setStart(Integer start) {
-        this.start = start;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ListLogsJobRequest withLimit(Integer limit) {
@@ -85,13 +85,13 @@ public class ListLogsJobRequest {
             return false;
         }
         ListLogsJobRequest that = (ListLogsJobRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.start, that.start)
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, start, limit);
+        return Objects.hash(clusterId, offset, limit);
     }
 
     @Override
@@ -99,7 +99,7 @@ public class ListLogsJobRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListLogsJobRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();

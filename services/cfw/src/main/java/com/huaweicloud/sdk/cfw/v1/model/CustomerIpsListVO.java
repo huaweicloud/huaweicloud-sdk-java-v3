@@ -46,11 +46,6 @@ public class CustomerIpsListVO {
     private String dstPorts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_id")
-
-    private String groupId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ips_cfw_id")
 
     private String ipsCfwId;
@@ -90,13 +85,18 @@ public class CustomerIpsListVO {
 
     private String srcPorts;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public CustomerIpsListVO withAction(Integer action) {
         this.action = action;
         return this;
     }
 
     /**
-     * 动作（0：只记录日志，1：重置/拦截）
+     * **参数解释**： 动作 **取值范围**： 0：只记录日志，1：重置/拦截
      * @return action
      */
     public Integer getAction() {
@@ -113,7 +113,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 操作系统
+     * **参数解释**： 影响操作系统 **取值范围**： 0 any、1 Windows、2 Linux、3 FreeBSD、4 Solaris、5 other Unix、6 网络设备、7 Mac OS、8 ios、9 android、10 others
      * @return affectedOs
      */
     public Integer getAffectedOs() {
@@ -130,7 +130,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 攻击类型
+     * **参数解释**： 攻击类型 **约束限制**： 不涉及 **取值范围**： 1：访问控制、2：漏洞扫描、3：邮件攻击、4：漏洞攻击、5：Web攻击、6：密码攻击、7：劫持攻击、8：协议异常、9：特洛伊木马、10：蠕虫、11：缓冲区溢出、12：黑客工具、13：间谍软件、14：DDos泛洪、15：应用层DDos攻击、16：其他可疑行为、17：可疑DNS活动、18：网络钓鱼、19：垃圾邮件、20：其他攻击 **默认取值**： 不涉及
      * @return attackType
      */
     public Integer getAttackType() {
@@ -147,7 +147,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 规则状态（0：初始化，1：配置中，2：配置成功，3：配置失败）
+     * **参数解释**： 规则状态 **取值范围**： 0：初始化，1：配置中，2：配置成功，3：配置失败
      * @return configStatus
      */
     public Integer getConfigStatus() {
@@ -164,7 +164,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 内容json存储
+     * **参数解释**： 匹配IPS攻击的内容 **取值范围**： 不涉及
      * @return content
      */
     public String getContent() {
@@ -181,7 +181,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 目的端口类型
+     * **参数解释**： 端口类型 **取值范围**： -1 Any，0 包含，1 排除
      * @return dstPortType
      */
     public Integer getDstPortType() {
@@ -198,7 +198,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 目的端口
+     * **参数解释**： 端口 **取值范围**： 1 - 65535
      * @return dstPorts
      */
     public String getDstPorts() {
@@ -209,30 +209,13 @@ public class CustomerIpsListVO {
         this.dstPorts = dstPorts;
     }
 
-    public CustomerIpsListVO withGroupId(String groupId) {
-        this.groupId = groupId;
-        return this;
-    }
-
-    /**
-     * 防火墙集群id
-     * @return groupId
-     */
-    public String getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
-    }
-
     public CustomerIpsListVO withIpsCfwId(String ipsCfwId) {
         this.ipsCfwId = ipsCfwId;
         return this;
     }
 
     /**
-     * cfw侧自定义ips规则id
+     * **参数解释**： cfw侧自定义IPS规则id **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return ipsCfwId
      */
     public String getIpsCfwId() {
@@ -249,7 +232,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 山石侧规则id
+     * **参数解释**： ips规则id **取值范围**： 不涉及
      * @return ipsId
      */
     public String getIpsId() {
@@ -266,7 +249,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * ips规则名称
+     * **参数解释**： ips规则名称 **取值范围**： 不涉及
      * @return ipsName
      */
     public String getIpsName() {
@@ -283,7 +266,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 协议
+     * **参数解释**： 协议类型 **取值范围**： 1 FTP、2 TELNET、3 SMTP、4 DNS_TCP、5 DNS_UDP、6 DHCP、7 TFTP、8 FINGER、9 HTTP、10 POP3、11 SUNRPC_TCP、12 SUNRPC_UDP、13 NNTP、14 MSRPC_TCP、15 MSRPC_UDP、16 NETBIOS_NAME_TCP、17 NETBIOS_NAME_UDP、18 NETBIOS_SMB、19 NETBIOS_DATAGRAM、20 IMAP4、21 SNMP、22 LDAP、23 MSSQL、24 ORACLE
      * @return protocol
      */
     public Integer getProtocol() {
@@ -300,7 +283,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 严重程度（critical：致命，high：高危，medium:中危，low:低危）
+     * **参数解释**： 严重程度 **取值范围**： critical：致命，high：高危，medium:中危，low:低危
      * @return severity
      */
     public Integer getSeverity() {
@@ -317,7 +300,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 影响软件
+     * **参数解释**： 影响软件 **取值范围**： 0 ANY、1 ADOBE、2 APACHE、3 APPLE、4 CA、5 CISCO、6 GOOGLE_CHROME、7 HP、8 IBM、9 IE、10 IIS、11 MC_AFEE、12 MEDIA_PLAYER、13 MICROSOFT_NET、14 MICROSOFT_EDGE、15 MICROSOFT_EXCHANGE、16 MICROSOFT_OFFICE、17 MICROSOFT_OUTLOOK、18 MICROSOFT_SHARE_POINT、19 MICROSOFT_WINDOWS、20 MOZILLA、21 MSSQL、22 MYSQL、23 NOVELL、24 ORACLE、25 SAMBA、26 SAMSUNG、27 SAP、28 SCADA、29 SQUID、30 SUN、31 SYMANTEC、32 TREND_MICRO、33 VMWARE、34 WORD_PRESS、35 Others
      * @return software
      */
     public Integer getSoftware() {
@@ -334,7 +317,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 源端口类型
+     * **参数解释**： 端口类型，-1 Any，0 包含，1 排除 **取值范围**： 不涉及
      * @return srcPortType
      */
     public Integer getSrcPortType() {
@@ -351,7 +334,7 @@ public class CustomerIpsListVO {
     }
 
     /**
-     * 源端口
+     * **参数解释**： 端口 **取值范围**： 不涉及
      * @return srcPorts
      */
     public String getSrcPorts() {
@@ -360,6 +343,23 @@ public class CustomerIpsListVO {
 
     public void setSrcPorts(String srcPorts) {
         this.srcPorts = srcPorts;
+    }
+
+    public CustomerIpsListVO withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群ID **取值范围**： 不涉及
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     @Override
@@ -374,11 +374,11 @@ public class CustomerIpsListVO {
         return Objects.equals(this.action, that.action) && Objects.equals(this.affectedOs, that.affectedOs)
             && Objects.equals(this.attackType, that.attackType) && Objects.equals(this.configStatus, that.configStatus)
             && Objects.equals(this.content, that.content) && Objects.equals(this.dstPortType, that.dstPortType)
-            && Objects.equals(this.dstPorts, that.dstPorts) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.ipsCfwId, that.ipsCfwId) && Objects.equals(this.ipsId, that.ipsId)
-            && Objects.equals(this.ipsName, that.ipsName) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.severity, that.severity) && Objects.equals(this.software, that.software)
-            && Objects.equals(this.srcPortType, that.srcPortType) && Objects.equals(this.srcPorts, that.srcPorts);
+            && Objects.equals(this.dstPorts, that.dstPorts) && Objects.equals(this.ipsCfwId, that.ipsCfwId)
+            && Objects.equals(this.ipsId, that.ipsId) && Objects.equals(this.ipsName, that.ipsName)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.software, that.software) && Objects.equals(this.srcPortType, that.srcPortType)
+            && Objects.equals(this.srcPorts, that.srcPorts) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
@@ -390,7 +390,6 @@ public class CustomerIpsListVO {
             content,
             dstPortType,
             dstPorts,
-            groupId,
             ipsCfwId,
             ipsId,
             ipsName,
@@ -398,7 +397,8 @@ public class CustomerIpsListVO {
             severity,
             software,
             srcPortType,
-            srcPorts);
+            srcPorts,
+            groupId);
     }
 
     @Override
@@ -412,7 +412,6 @@ public class CustomerIpsListVO {
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    dstPortType: ").append(toIndentedString(dstPortType)).append("\n");
         sb.append("    dstPorts: ").append(toIndentedString(dstPorts)).append("\n");
-        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    ipsCfwId: ").append(toIndentedString(ipsCfwId)).append("\n");
         sb.append("    ipsId: ").append(toIndentedString(ipsId)).append("\n");
         sb.append("    ipsName: ").append(toIndentedString(ipsName)).append("\n");
@@ -421,6 +420,7 @@ public class CustomerIpsListVO {
         sb.append("    software: ").append(toIndentedString(software)).append("\n");
         sb.append("    srcPortType: ").append(toIndentedString(srcPortType)).append("\n");
         sb.append("    srcPorts: ").append(toIndentedString(srcPorts)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

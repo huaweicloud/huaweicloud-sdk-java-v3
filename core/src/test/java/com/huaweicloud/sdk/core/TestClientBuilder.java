@@ -41,4 +41,16 @@ public class TestClientBuilder {
         endpintsField.setAccessible(true);
         Assert.assertEquals("https://endpoint", ((List<String>)endpintsField.get(client)).get(0));
     }
+
+    @Test
+    public void testBuildClient2() throws NoSuchFieldException, IllegalAccessException {
+        BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withProjectId("projectId");
+        HcClient client = new ClientBuilder<>(hcClient -> hcClient)
+                .withCredential(credentials)
+                .withEndpoint("endpoint")
+                .build();
+        Field endpintsField = client.getClass().getDeclaredField("endpoints");
+        endpintsField.setAccessible(true);
+        Assert.assertEquals("https://endpoint", ((List<String>)endpintsField.get(client)).get(0));
+    }
 }

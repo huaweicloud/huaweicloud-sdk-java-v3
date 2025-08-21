@@ -65,7 +65,7 @@ public class ExternalConfigRuleCompliance {
     }
 
     /**
-     * 控制策略ID。
+     * 外部规则ID。
      * @return controlId
      */
     public String getControlId() {

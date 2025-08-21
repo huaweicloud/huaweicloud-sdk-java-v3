@@ -53,7 +53,7 @@ public class GaussDBforNoSQLRegion {
     public static final Region CN_EAST_4 = new Region("cn-east-4", "https://gaussdb-nosql.cn-east-4.myhuaweicloud.com");
 
     public static final Region CN_SOUTH_4 =
-        new Region("cn-south-4", "https://nosql-gemini.cn-south-4.myhuaweicloud.com");
+        new Region("cn-south-4", "https://gaussdb-nosql.cn-south-4.myhuaweicloud.com");
 
     public static final Region CN_SOUTHWEST_3 =
         new Region("cn-southwest-3", "https://gaussdb-nosql.cn-southwest-3.myhuaweicloud.com");

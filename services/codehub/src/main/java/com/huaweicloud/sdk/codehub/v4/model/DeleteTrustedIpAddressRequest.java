@@ -26,7 +26,7 @@ public class DeleteTrustedIpAddressRequest {
     }
 
     /**
-     * ip的id
+     * **参数解释：** 仓库id，代码仓首页，Repository ID后的数字Id。
      * minimum: 1
      * maximum: 2147483647
      * @return id
@@ -45,7 +45,7 @@ public class DeleteTrustedIpAddressRequest {
     }
 
     /**
-     * ip的id
+     * **参数解释：** ip白名单id。
      * minimum: 1
      * maximum: 2147483647
      * @return ipId

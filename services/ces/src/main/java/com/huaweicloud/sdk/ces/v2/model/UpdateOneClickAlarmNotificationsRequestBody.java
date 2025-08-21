@@ -143,7 +143,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * 是否开启告警通知。true:开启，false:关闭。
+     * **参数解释**： 是否开启告警通知。 **约束限制**： 值为true时，其他必选字段均需填，值为false时，其他所有字段不可选。 **取值范围**： - true：开启告警通知。 - false：不开启告警通知。 **默认取值**： 不涉及。 
      * @return notificationEnabled
      */
     public Boolean getNotificationEnabled() {
@@ -177,7 +177,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * 告警触发的动作
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警触发的动作数量最多为10个。 **默认取值**： 不涉及。 
      * @return alarmNotifications
      */
     public List<Notification> getAlarmNotifications() {
@@ -211,7 +211,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * 告警恢复触发的动作
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警恢复触发的动作数量最多为10个。 **默认取值**： 不涉及。 
      * @return okNotifications
      */
     public List<Notification> getOkNotifications() {
@@ -228,7 +228,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * 告警通知开启时间
+     * **参数解释**： 每天告警通知的开始时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
      * @return notificationBeginTime
      */
     public String getNotificationBeginTime() {
@@ -245,7 +245,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * 告警通知关闭时间
+     * **参数解释**： 每天告警通知的结束时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
      * @return notificationEndTime
      */
     public String getNotificationEndTime() {

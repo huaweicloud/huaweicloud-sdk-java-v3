@@ -53,7 +53,7 @@ public class BatchCreateApplicationViewRequestBody {
     }
 
     /**
-     * 应用列表
+     * **参数解释：** 应用信息组成的列表。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return applicationList
      */
     public List<BatchCreateApplicationViewRequestBodyApplicationList> getApplicationList() {
@@ -89,7 +89,7 @@ public class BatchCreateApplicationViewRequestBody {
     }
 
     /**
-     * 组件列表
+     * **参数解释：** 组件信息组成的列表。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return componentList
      */
     public List<BatchCreateApplicationViewRequestBodyComponentList> getComponentList() {
@@ -125,7 +125,7 @@ public class BatchCreateApplicationViewRequestBody {
     }
 
     /**
-     * 分组列表
+     * **参数解释：** 分组信息组成的列表。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return groupList
      */
     public List<BatchCreateApplicationViewRequestBodyGroupList> getGroupList() {

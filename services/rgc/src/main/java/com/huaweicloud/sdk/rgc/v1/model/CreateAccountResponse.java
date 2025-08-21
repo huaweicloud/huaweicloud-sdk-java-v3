@@ -22,7 +22,7 @@ public class CreateAccountResponse extends SdkResponse {
     }
 
     /**
-     * 创建账号、纳管账号、纳管注册OU的操作ID。
+     * 创建账号、纳管账号、注册OU的操作ID。
      * @return operationId
      */
     public String getOperationId() {

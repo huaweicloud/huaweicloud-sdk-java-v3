@@ -7,19 +7,12 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dgc.v1.model.CancelScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CancelScriptResponse;
-import com.huaweicloud.sdk.dgc.v1.model.ConnectionInfo;
-import com.huaweicloud.sdk.dgc.v1.model.CreateConnectionRequest;
-import com.huaweicloud.sdk.dgc.v1.model.CreateConnectionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.CreateJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.CreateResourceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateResourceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateScriptResponse;
-import com.huaweicloud.sdk.dgc.v1.model.CreateSupplementdataRequest;
-import com.huaweicloud.sdk.dgc.v1.model.CreateSupplementdataResponse;
-import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionRequest;
-import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteReq;
@@ -30,23 +23,16 @@ import com.huaweicloud.sdk.dgc.v1.model.DeleteScriptResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptReq;
 import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptResponse;
-import com.huaweicloud.sdk.dgc.v1.model.ExportConnectionsRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ExportConnectionsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobListRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobListResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobsReq;
 import com.huaweicloud.sdk.dgc.v1.model.FilePath;
-import com.huaweicloud.sdk.dgc.v1.model.ImportConnectionReq;
-import com.huaweicloud.sdk.dgc.v1.model.ImportConnectionsRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ImportConnectionsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ImportFileReq;
 import com.huaweicloud.sdk.dgc.v1.model.ImportJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ImportJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.JobInfo;
-import com.huaweicloud.sdk.dgc.v1.model.ListConnectionsRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ListConnectionsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListJobInstancesRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListJobInstancesResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListJobsRequest;
@@ -57,8 +43,6 @@ import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptsResponse;
-import com.huaweicloud.sdk.dgc.v1.model.ListSupplementdataRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ListSupplementdataResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ResourceInfo;
@@ -67,8 +51,6 @@ import com.huaweicloud.sdk.dgc.v1.model.RestoreJobInstanceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.RunOnceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.RunOnceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ScriptInfo;
-import com.huaweicloud.sdk.dgc.v1.model.ShowConnectionRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ShowConnectionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ShowFileInfoRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ShowFileInfoResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ShowJobInstanceRequest;
@@ -88,11 +70,6 @@ import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobResponse;
-import com.huaweicloud.sdk.dgc.v1.model.StopSupplementdataRequest;
-import com.huaweicloud.sdk.dgc.v1.model.StopSupplementdataResponse;
-import com.huaweicloud.sdk.dgc.v1.model.SupplementDataInfo;
-import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionRequest;
-import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateResourceRequest;
@@ -129,34 +106,6 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelScriptRequest::getWorkspace, CancelScriptRequest::setWorkspace));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> createConnection =
-        genForCreateConnection();
-
-    private static HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> genForCreateConnection() {
-        // basic
-        HttpRequestDef.Builder<CreateConnectionRequest, CreateConnectionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateConnectionRequest.class, CreateConnectionResponse.class)
-                .withName("CreateConnection")
-                .withUri("/v1/{project_id}/connections")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConnectionRequest::getWorkspace, CreateConnectionRequest::setWorkspace));
-        builder.<ConnectionInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ConnectionInfo.class),
-            f -> f.withMarshaller(CreateConnectionRequest::getBody, CreateConnectionRequest::setBody));
 
         // response
 
@@ -244,64 +193,6 @@ public class DgcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ScriptInfo.class),
             f -> f.withMarshaller(CreateScriptRequest::getBody, CreateScriptRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateSupplementdataRequest, CreateSupplementdataResponse> createSupplementdata =
-        genForCreateSupplementdata();
-
-    private static HttpRequestDef<CreateSupplementdataRequest, CreateSupplementdataResponse> genForCreateSupplementdata() {
-        // basic
-        HttpRequestDef.Builder<CreateSupplementdataRequest, CreateSupplementdataResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateSupplementdataRequest.class, CreateSupplementdataResponse.class)
-            .withName("CreateSupplementdata")
-            .withUri("/v1.0/{project_id}/supplementdata")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSupplementdataRequest::getWorkspace,
-                CreateSupplementdataRequest::setWorkspace));
-        builder.<SupplementDataInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SupplementDataInfo.class),
-            f -> f.withMarshaller(CreateSupplementdataRequest::getBody, CreateSupplementdataRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnction =
-        genForDeleteConnction();
-
-    private static HttpRequestDef<DeleteConnctionRequest, DeleteConnctionResponse> genForDeleteConnction() {
-        // basic
-        HttpRequestDef.Builder<DeleteConnctionRequest, DeleteConnctionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteConnctionRequest.class, DeleteConnctionResponse.class)
-                .withName("DeleteConnction")
-                .withUri("/v1/{project_id}/connections/{connection_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connection_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnctionRequest::getConnectionName,
-                DeleteConnctionRequest::setConnectionName));
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConnctionRequest::getWorkspace, DeleteConnctionRequest::setWorkspace));
 
         // response
 
@@ -433,29 +324,6 @@ public class DgcMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportConnectionsRequest, ExportConnectionsResponse> exportConnections =
-        genForExportConnections();
-
-    private static HttpRequestDef<ExportConnectionsRequest, ExportConnectionsResponse> genForExportConnections() {
-        // basic
-        HttpRequestDef.Builder<ExportConnectionsRequest, ExportConnectionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ExportConnectionsRequest.class, ExportConnectionsResponse.class)
-                .withName("ExportConnections")
-                .withUri("/v1/{project_id}/connections/export")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportConnectionsRequest::getWorkspace, ExportConnectionsRequest::setWorkspace));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ExportJobRequest, ExportJobResponse> exportJob = genForExportJob();
 
     private static HttpRequestDef<ExportJobRequest, ExportJobResponse> genForExportJob() {
@@ -464,7 +332,7 @@ public class DgcMeta {
             HttpRequestDef.builder(HttpMethod.POST, ExportJobRequest.class, ExportJobResponse.class)
                 .withName("ExportJob")
                 .withUri("/v1/{project_id}/jobs/{job_name}/export")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("job_name",
@@ -477,6 +345,11 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportJobRequest::getWorkspace, ExportJobRequest::setWorkspace));
+        builder.<ExportJobsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportJobsReq.class),
+            f -> f.withMarshaller(ExportJobRequest::getBody, ExportJobRequest::setBody));
 
         // response
 
@@ -511,34 +384,6 @@ public class DgcMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportConnectionsRequest, ImportConnectionsResponse> importConnections =
-        genForImportConnections();
-
-    private static HttpRequestDef<ImportConnectionsRequest, ImportConnectionsResponse> genForImportConnections() {
-        // basic
-        HttpRequestDef.Builder<ImportConnectionsRequest, ImportConnectionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ImportConnectionsRequest.class, ImportConnectionsResponse.class)
-                .withName("ImportConnections")
-                .withUri("/v1/{project_id}/connections/import")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ImportConnectionsRequest::getWorkspace, ImportConnectionsRequest::setWorkspace));
-        builder.<ImportConnectionReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ImportConnectionReq.class),
-            f -> f.withMarshaller(ImportConnectionsRequest::getBody, ImportConnectionsRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ImportJobRequest, ImportJobResponse> importJob = genForImportJob();
 
     private static HttpRequestDef<ImportJobRequest, ImportJobResponse> genForImportJob() {
@@ -560,45 +405,6 @@ public class DgcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportFileReq.class),
             f -> f.withMarshaller(ImportJobRequest::getBody, ImportJobRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> listConnections =
-        genForListConnections();
-
-    private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForListConnections() {
-        // basic
-        HttpRequestDef.Builder<ListConnectionsRequest, ListConnectionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListConnectionsRequest.class, ListConnectionsResponse.class)
-                .withName("ListConnections")
-                .withUri("/v1/{project_id}/connections")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getLimit, ListConnectionsRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getOffset, ListConnectionsRequest::setOffset));
-        builder.<String>withRequestField("connectionName",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getConnectionName,
-                ListConnectionsRequest::setConnectionName));
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConnectionsRequest::getWorkspace, ListConnectionsRequest::setWorkspace));
 
         // response
 
@@ -823,69 +629,6 @@ public class DgcMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSupplementdataRequest, ListSupplementdataResponse> listSupplementdata =
-        genForListSupplementdata();
-
-    private static HttpRequestDef<ListSupplementdataRequest, ListSupplementdataResponse> genForListSupplementdata() {
-        // basic
-        HttpRequestDef.Builder<ListSupplementdataRequest, ListSupplementdataResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSupplementdataRequest.class, ListSupplementdataResponse.class)
-                .withName("ListSupplementdata")
-                .withUri("/v1.0/{project_id}/supplementdata")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("sort",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getSort, ListSupplementdataRequest::setSort));
-        builder.<String>withRequestField("page",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getPage, ListSupplementdataRequest::setPage));
-        builder.<String>withRequestField("size",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getSize, ListSupplementdataRequest::setSize));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getName, ListSupplementdataRequest::setName));
-        builder.<String>withRequestField("userName",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getUserName, ListSupplementdataRequest::setUserName));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getStatus, ListSupplementdataRequest::setStatus));
-        builder.<String>withRequestField("startDate",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getStartDate, ListSupplementdataRequest::setStartDate));
-        builder.<String>withRequestField("endDate",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getEndDate, ListSupplementdataRequest::setEndDate));
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSupplementdataRequest::getWorkspace, ListSupplementdataRequest::setWorkspace));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasks =
         genForListSystemTasks();
 
@@ -973,34 +716,6 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StartJobReq.class),
             f -> f.withMarshaller(RunOnceRequest::getBody, RunOnceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowConnectionRequest, ShowConnectionResponse> showConnection =
-        genForShowConnection();
-
-    private static HttpRequestDef<ShowConnectionRequest, ShowConnectionResponse> genForShowConnection() {
-        // basic
-        HttpRequestDef.Builder<ShowConnectionRequest, ShowConnectionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowConnectionRequest.class, ShowConnectionResponse.class)
-                .withName("ShowConnection")
-                .withUri("/v1/{project_id}/connections/{connection_name}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connection_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectionRequest::getConnectionName, ShowConnectionRequest::setConnectionName));
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowConnectionRequest::getWorkspace, ShowConnectionRequest::setWorkspace));
 
         // response
 
@@ -1272,69 +987,6 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopJobInstanceRequest::getWorkspace, StopJobInstanceRequest::setWorkspace));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<StopSupplementdataRequest, StopSupplementdataResponse> stopSupplementdata =
-        genForStopSupplementdata();
-
-    private static HttpRequestDef<StopSupplementdataRequest, StopSupplementdataResponse> genForStopSupplementdata() {
-        // basic
-        HttpRequestDef.Builder<StopSupplementdataRequest, StopSupplementdataResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, StopSupplementdataRequest.class, StopSupplementdataResponse.class)
-                .withName("StopSupplementdata")
-                .withUri("/v1.0/{project_id}/supplementdata/{instanceName}/stop")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instanceName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopSupplementdataRequest::getInstanceName,
-                StopSupplementdataRequest::setInstanceName));
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopSupplementdataRequest::getWorkspace, StopSupplementdataRequest::setWorkspace));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> updateConnection =
-        genForUpdateConnection();
-
-    private static HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> genForUpdateConnection() {
-        // basic
-        HttpRequestDef.Builder<UpdateConnectionRequest, UpdateConnectionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateConnectionRequest.class, UpdateConnectionResponse.class)
-                .withName("UpdateConnection")
-                .withUri("/v1/{project_id}/connections/{connection_name}")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("connection_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConnectionRequest::getConnectionName,
-                UpdateConnectionRequest::setConnectionName));
-        builder.<String>withRequestField("workspace",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateConnectionRequest::getWorkspace, UpdateConnectionRequest::setWorkspace));
-        builder.<ConnectionInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ConnectionInfo.class),
-            f -> f.withMarshaller(UpdateConnectionRequest::getBody, UpdateConnectionRequest::setBody));
 
         // response
 

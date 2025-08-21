@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.cfw.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,209 +13,20 @@ import java.util.function.Consumer;
  */
 public class CustomerIpsVO {
 
-    /**
-     * **参数解释**： 动作 **取值范围**： 0：只记录日志，1：重置/拦截
-     */
-    public static final class ActionEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ActionEnum NUMBER_0 = new ActionEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ActionEnum NUMBER_1 = new ActionEnum(1);
-
-        private static final Map<Integer, ActionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ActionEnum> createStaticFields() {
-            Map<Integer, ActionEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ActionEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ActionEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
-        }
-
-        public static ActionEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ActionEnum) {
-                return this.value.equals(((ActionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private ActionEnum action;
+    private Integer action;
 
-    /**
-     * **参数解释**： 影响操作系统 **取值范围**： 0 any、1 Windows、2 Linux、3 FreeBSD、4 Solaris、5 other Unix、6 网络设备、7 Mac OS、8 ios、9 android、10 others
-     */
-    public static final class AffectedOsEnum {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
 
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final AffectedOsEnum NUMBER_0 = new AffectedOsEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final AffectedOsEnum NUMBER_1 = new AffectedOsEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final AffectedOsEnum NUMBER_2 = new AffectedOsEnum(2);
-
-        /**
-         * Enum NUMBER_3 for value: 3
-         */
-        public static final AffectedOsEnum NUMBER_3 = new AffectedOsEnum(3);
-
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final AffectedOsEnum NUMBER_4 = new AffectedOsEnum(4);
-
-        /**
-         * Enum NUMBER_5 for value: 5
-         */
-        public static final AffectedOsEnum NUMBER_5 = new AffectedOsEnum(5);
-
-        /**
-         * Enum NUMBER_6 for value: 6
-         */
-        public static final AffectedOsEnum NUMBER_6 = new AffectedOsEnum(6);
-
-        /**
-         * Enum NUMBER_7 for value: 7
-         */
-        public static final AffectedOsEnum NUMBER_7 = new AffectedOsEnum(7);
-
-        /**
-         * Enum NUMBER_8 for value: 8
-         */
-        public static final AffectedOsEnum NUMBER_8 = new AffectedOsEnum(8);
-
-        /**
-         * Enum NUMBER_9 for value: 9
-         */
-        public static final AffectedOsEnum NUMBER_9 = new AffectedOsEnum(9);
-
-        /**
-         * Enum NUMBER_10 for value: 10
-         */
-        public static final AffectedOsEnum NUMBER_10 = new AffectedOsEnum(10);
-
-        private static final Map<Integer, AffectedOsEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, AffectedOsEnum> createStaticFields() {
-            Map<Integer, AffectedOsEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            map.put(3, NUMBER_3);
-            map.put(4, NUMBER_4);
-            map.put(5, NUMBER_5);
-            map.put(6, NUMBER_6);
-            map.put(7, NUMBER_7);
-            map.put(8, NUMBER_8);
-            map.put(9, NUMBER_9);
-            map.put(10, NUMBER_10);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        AffectedOsEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AffectedOsEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AffectedOsEnum(value));
-        }
-
-        public static AffectedOsEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AffectedOsEnum) {
-                return this.value.equals(((AffectedOsEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "affected_os")
 
-    private AffectedOsEnum affectedOs;
+    private Integer affectedOs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_type")
@@ -246,11 +52,6 @@ public class CustomerIpsVO {
     @JsonProperty(value = "dst_port")
 
     private Port dstPort;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_id")
-
-    private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ips_cfw_id")
@@ -287,7 +88,7 @@ public class CustomerIpsVO {
 
     private Port srcPort;
 
-    public CustomerIpsVO withAction(ActionEnum action) {
+    public CustomerIpsVO withAction(Integer action) {
         this.action = action;
         return this;
     }
@@ -296,15 +97,32 @@ public class CustomerIpsVO {
      * **参数解释**： 动作 **取值范围**： 0：只记录日志，1：重置/拦截
      * @return action
      */
-    public ActionEnum getAction() {
+    public Integer getAction() {
         return action;
     }
 
-    public void setAction(ActionEnum action) {
+    public void setAction(Integer action) {
         this.action = action;
     }
 
-    public CustomerIpsVO withAffectedOs(AffectedOsEnum affectedOs) {
+    public CustomerIpsVO withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 防火墙集群id **取值范围**： 不涉及
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public CustomerIpsVO withAffectedOs(Integer affectedOs) {
         this.affectedOs = affectedOs;
         return this;
     }
@@ -313,11 +131,11 @@ public class CustomerIpsVO {
      * **参数解释**： 影响操作系统 **取值范围**： 0 any、1 Windows、2 Linux、3 FreeBSD、4 Solaris、5 other Unix、6 网络设备、7 Mac OS、8 ios、9 android、10 others
      * @return affectedOs
      */
-    public AffectedOsEnum getAffectedOs() {
+    public Integer getAffectedOs() {
         return affectedOs;
     }
 
-    public void setAffectedOs(AffectedOsEnum affectedOs) {
+    public void setAffectedOs(Integer affectedOs) {
         this.affectedOs = affectedOs;
     }
 
@@ -435,23 +253,6 @@ public class CustomerIpsVO {
 
     public void setDstPort(Port dstPort) {
         this.dstPort = dstPort;
-    }
-
-    public CustomerIpsVO withGroupId(String groupId) {
-        this.groupId = groupId;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 防火墙集群id **取值范围**： 不涉及
-     * @return groupId
-     */
-    public String getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
     }
 
     public CustomerIpsVO withIpsCfwId(String ipsCfwId) {
@@ -597,10 +398,10 @@ public class CustomerIpsVO {
             return false;
         }
         CustomerIpsVO that = (CustomerIpsVO) obj;
-        return Objects.equals(this.action, that.action) && Objects.equals(this.affectedOs, that.affectedOs)
-            && Objects.equals(this.attackType, that.attackType) && Objects.equals(this.configStatus, that.configStatus)
-            && Objects.equals(this.contents, that.contents) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.groupId, that.groupId)
+        return Objects.equals(this.action, that.action) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.affectedOs, that.affectedOs) && Objects.equals(this.attackType, that.attackType)
+            && Objects.equals(this.configStatus, that.configStatus) && Objects.equals(this.contents, that.contents)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.dstPort, that.dstPort)
             && Objects.equals(this.ipsCfwId, that.ipsCfwId) && Objects.equals(this.ipsId, that.ipsId)
             && Objects.equals(this.ipsName, that.ipsName) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.severity, that.severity) && Objects.equals(this.software, that.software)
@@ -610,13 +411,13 @@ public class CustomerIpsVO {
     @Override
     public int hashCode() {
         return Objects.hash(action,
+            groupId,
             affectedOs,
             attackType,
             configStatus,
             contents,
             direction,
             dstPort,
-            groupId,
             ipsCfwId,
             ipsId,
             ipsName,
@@ -631,13 +432,13 @@ public class CustomerIpsVO {
         StringBuilder sb = new StringBuilder();
         sb.append("class CustomerIpsVO {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    affectedOs: ").append(toIndentedString(affectedOs)).append("\n");
         sb.append("    attackType: ").append(toIndentedString(attackType)).append("\n");
         sb.append("    configStatus: ").append(toIndentedString(configStatus)).append("\n");
         sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    dstPort: ").append(toIndentedString(dstPort)).append("\n");
-        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    ipsCfwId: ").append(toIndentedString(ipsCfwId)).append("\n");
         sb.append("    ipsId: ").append(toIndentedString(ipsId)).append("\n");
         sb.append("    ipsName: ").append(toIndentedString(ipsName)).append("\n");

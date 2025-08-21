@@ -11,9 +11,9 @@ import java.util.Objects;
 public class ListClustersDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start")
+    @JsonProperty(value = "offset")
 
-    private Integer start;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -25,21 +25,21 @@ public class ListClustersDetailsRequest {
 
     private String datastoreType;
 
-    public ListClustersDetailsRequest withStart(Integer start) {
-        this.start = start;
+    public ListClustersDetailsRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * 指定查询起始值，默认值为1，即从第1个集群开始查询。
-     * @return start
+     * @return offset
      */
-    public Integer getStart() {
-        return start;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setStart(Integer start) {
-        this.start = start;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ListClustersDetailsRequest withLimit(Integer limit) {
@@ -85,20 +85,20 @@ public class ListClustersDetailsRequest {
             return false;
         }
         ListClustersDetailsRequest that = (ListClustersDetailsRequest) obj;
-        return Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit)
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.datastoreType, that.datastoreType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(start, limit, datastoreType);
+        return Objects.hash(offset, limit, datastoreType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListClustersDetailsRequest {\n");
-        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("}");

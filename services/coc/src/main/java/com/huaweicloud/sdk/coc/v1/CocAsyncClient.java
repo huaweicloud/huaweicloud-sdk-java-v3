@@ -10,6 +10,8 @@ import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ClearAlarmRequest;
 import com.huaweicloud.sdk.coc.v1.model.ClearAlarmResponse;
+import com.huaweicloud.sdk.coc.v1.model.CountMultiCloudResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.CountMultiCloudResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskRequest;
@@ -116,8 +118,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskRequest;
@@ -166,6 +168,8 @@ import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoResponse;
+import com.huaweicloud.sdk.coc.v1.model.SyncMultiCloudResourceRequest;
+import com.huaweicloud.sdk.coc.v1.model.SyncMultiCloudResourceResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
 import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentRequest;
@@ -439,9 +443,9 @@ public class CocAsyncClient {
     }
 
     /**
-     * 批量创建应用视图
+     * 批量创建应用，分组，组件
      *
-     * 批量创建应用视图
+     * 批量创建应用，分组，组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -454,9 +458,9 @@ public class CocAsyncClient {
     }
 
     /**
-     * 批量创建应用视图
+     * 批量创建应用，分组，组件
      *
-     * 批量创建应用视图
+     * 批量创建应用，分组，组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1931,6 +1935,66 @@ public class CocAsyncClient {
     }
 
     /**
+     * 查询用户在云厂商的资源总数
+     *
+     * 查询用户在云厂商（阿里云、AWS、Azure和HCS）的资源总数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountMultiCloudResourcesRequest 请求对象
+     * @return CompletableFuture<CountMultiCloudResourcesResponse>
+     */
+    public CompletableFuture<CountMultiCloudResourcesResponse> countMultiCloudResourcesAsync(
+        CountMultiCloudResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.countMultiCloudResources);
+    }
+
+    /**
+     * 查询用户在云厂商的资源总数
+     *
+     * 查询用户在云厂商（阿里云、AWS、Azure和HCS）的资源总数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountMultiCloudResourcesRequest 请求对象
+     * @return AsyncInvoker<CountMultiCloudResourcesRequest, CountMultiCloudResourcesResponse>
+     */
+    public AsyncInvoker<CountMultiCloudResourcesRequest, CountMultiCloudResourcesResponse> countMultiCloudResourcesAsyncInvoker(
+        CountMultiCloudResourcesRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.countMultiCloudResources, hcClient);
+    }
+
+    /**
+     * 手动从云厂商同步用户资源
+     *
+     * 手动从云厂商同步用户资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncMultiCloudResourceRequest 请求对象
+     * @return CompletableFuture<SyncMultiCloudResourceResponse>
+     */
+    public CompletableFuture<SyncMultiCloudResourceResponse> syncMultiCloudResourceAsync(
+        SyncMultiCloudResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.syncMultiCloudResource);
+    }
+
+    /**
+     * 手动从云厂商同步用户资源
+     *
+     * 手动从云厂商同步用户资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncMultiCloudResourceRequest 请求对象
+     * @return AsyncInvoker<SyncMultiCloudResourceRequest, SyncMultiCloudResourceResponse>
+     */
+    public AsyncInvoker<SyncMultiCloudResourceRequest, SyncMultiCloudResourceResponse> syncMultiCloudResourceAsyncInvoker(
+        SyncMultiCloudResourceRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.syncMultiCloudResource, hcClient);
+    }
+
+    /**
      * 查询用户各种资源总数
      *
      * 查询用户各种资源总数
@@ -1962,30 +2026,36 @@ public class CocAsyncClient {
     /**
      * 查询用户所有资源
      *
-     * 查询用户所有资源
+     * 查询租户所有资源：
+     *  - 查询租户所有资源等相关信息，便于租户详细了解资源总体情况。
+     *  - 请求参数provider（云服务名称），type（云资源类型），limit（查询条数）必填，单次最大查询条数：500。
+     *  - 返回信息包括：资源ID，资源名称，云服务名称，资源类型，项目ID，租户ID，区域ID，企业项目ID，资源标签，资源详细属性，资源ingest属性，uniagentID，uniagent状态，是否托管，是否可运维。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListResourceRequest 请求对象
-     * @return CompletableFuture<ListResourceResponse>
+     * @param request ListResourcesRequest 请求对象
+     * @return CompletableFuture<ListResourcesResponse>
      */
-    public CompletableFuture<ListResourceResponse> listResourceAsync(ListResourceRequest request) {
-        return hcClient.asyncInvokeHttp(request, CocMeta.listResource);
+    public CompletableFuture<ListResourcesResponse> listResourcesAsync(ListResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listResources);
     }
 
     /**
      * 查询用户所有资源
      *
-     * 查询用户所有资源
+     * 查询租户所有资源：
+     *  - 查询租户所有资源等相关信息，便于租户详细了解资源总体情况。
+     *  - 请求参数provider（云服务名称），type（云资源类型），limit（查询条数）必填，单次最大查询条数：500。
+     *  - 返回信息包括：资源ID，资源名称，云服务名称，资源类型，项目ID，租户ID，区域ID，企业项目ID，资源标签，资源详细属性，资源ingest属性，uniagentID，uniagent状态，是否托管，是否可运维。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListResourceRequest 请求对象
-     * @return AsyncInvoker<ListResourceRequest, ListResourceResponse>
+     * @param request ListResourcesRequest 请求对象
+     * @return AsyncInvoker<ListResourcesRequest, ListResourcesResponse>
      */
-    public AsyncInvoker<ListResourceRequest, ListResourceResponse> listResourceAsyncInvoker(
-        ListResourceRequest request) {
-        return new AsyncInvoker<>(request, CocMeta.listResource, hcClient);
+    public AsyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesAsyncInvoker(
+        ListResourcesRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listResources, hcClient);
     }
 
     /**

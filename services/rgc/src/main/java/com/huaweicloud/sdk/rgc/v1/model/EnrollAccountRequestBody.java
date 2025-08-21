@@ -27,7 +27,7 @@ public class EnrollAccountRequestBody {
     }
 
     /**
-     * 注册OU 标识。
+     * 父注册OU ID。
      * @return parentOrganizationalUnitId
      */
     public String getParentOrganizationalUnitId() {

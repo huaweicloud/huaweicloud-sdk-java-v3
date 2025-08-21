@@ -269,6 +269,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDesignResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataMapLineageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataMapLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataServiceExcelRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataServiceExcelResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportLineageRequest;
@@ -4456,6 +4458,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ImportCatalogsRequest, ImportCatalogsResponse> importCatalogsAsyncInvoker(
         ImportCatalogsRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.importCatalogs, hcClient);
+    }
+
+    /**
+     * 导入血缘(邀测)
+     *
+     * 血缘导入接口，一次性获取所有作业算子的血缘。该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportDataMapLineageRequest 请求对象
+     * @return CompletableFuture<ImportDataMapLineageResponse>
+     */
+    public CompletableFuture<ImportDataMapLineageResponse> importDataMapLineageAsync(
+        ImportDataMapLineageRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.importDataMapLineage);
+    }
+
+    /**
+     * 导入血缘(邀测)
+     *
+     * 血缘导入接口，一次性获取所有作业算子的血缘。该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportDataMapLineageRequest 请求对象
+     * @return AsyncInvoker<ImportDataMapLineageRequest, ImportDataMapLineageResponse>
+     */
+    public AsyncInvoker<ImportDataMapLineageRequest, ImportDataMapLineageResponse> importDataMapLineageAsyncInvoker(
+        ImportDataMapLineageRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.importDataMapLineage, hcClient);
     }
 
     /**

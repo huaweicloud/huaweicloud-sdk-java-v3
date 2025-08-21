@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.css.v1.model.AddIndependentNodeResponse;
 import com.huaweicloud.sdk.css.v1.model.BatchAddOrDeleteTagOnClusterReq;
 import com.huaweicloud.sdk.css.v1.model.BindPublicReq;
 import com.huaweicloud.sdk.css.v1.model.BindPublicReqEipReq;
+import com.huaweicloud.sdk.css.v1.model.ChangeClusterSubnetRequest;
+import com.huaweicloud.sdk.css.v1.model.ChangeClusterSubnetResponse;
 import com.huaweicloud.sdk.css.v1.model.ChangeModeReq;
 import com.huaweicloud.sdk.css.v1.model.ChangeModeRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeModeResponse;
@@ -20,6 +22,7 @@ import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupReq;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.css.v1.model.CloseKibanaPublicReq;
+import com.huaweicloud.sdk.css.v1.model.ClusterChangeMainSubnet;
 import com.huaweicloud.sdk.css.v1.model.CreateAiOpsRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateAiOpsRequestBody;
 import com.huaweicloud.sdk.css.v1.model.CreateAiOpsResponse;
@@ -280,6 +283,39 @@ public class CssMeta {
             f -> f.withMarshaller(AddIndependentNodeRequest::getBody, AddIndependentNodeRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeClusterSubnetRequest, ChangeClusterSubnetResponse> changeClusterSubnet =
+        genForChangeClusterSubnet();
+
+    private static HttpRequestDef<ChangeClusterSubnetRequest, ChangeClusterSubnetResponse> genForChangeClusterSubnet() {
+        // basic
+        HttpRequestDef.Builder<ChangeClusterSubnetRequest, ChangeClusterSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeClusterSubnetRequest.class, ChangeClusterSubnetResponse.class)
+                .withName("ChangeClusterSubnet")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/subnet/change")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeClusterSubnetRequest::getClusterId, ChangeClusterSubnetRequest::setClusterId));
+        builder.<ClusterChangeMainSubnet>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClusterChangeMainSubnet.class),
+            f -> f.withMarshaller(ChangeClusterSubnetRequest::getBody, ChangeClusterSubnetRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ChangeClusterSubnetResponse::getBody, ChangeClusterSubnetResponse::setBody));
 
         return builder.build();
     }
@@ -789,11 +825,11 @@ public class CssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAiOpsRequest::getLimit, ListAiOpsRequest::setLimit));
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAiOpsRequest::getStart, ListAiOpsRequest::setStart));
+            f -> f.withMarshaller(ListAiOpsRequest::getOffset, ListAiOpsRequest::setOffset));
 
         // response
 
@@ -812,11 +848,11 @@ public class CssMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListClustersDetailsRequest::getStart, ListClustersDetailsRequest::setStart));
+            f -> f.withMarshaller(ListClustersDetailsRequest::getOffset, ListClustersDetailsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -939,11 +975,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getUpgradeType, ListImagesRequest::setUpgradeType));
-        builder.<String>withRequestField("start",
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImagesRequest::getStart, ListImagesRequest::setStart));
+            f -> f.withMarshaller(ListImagesRequest::getOffset, ListImagesRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -971,11 +1007,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLogsJobRequest::getClusterId, ListLogsJobRequest::setClusterId));
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLogsJobRequest::getStart, ListLogsJobRequest::setStart));
+            f -> f.withMarshaller(ListLogsJobRequest::getOffset, ListLogsJobRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1071,11 +1107,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListYmlsJobRequest::getClusterId, ListYmlsJobRequest::setClusterId));
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListYmlsJobRequest::getStart, ListYmlsJobRequest::setStart));
+            f -> f.withMarshaller(ListYmlsJobRequest::getOffset, ListYmlsJobRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1393,11 +1429,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcepConnectionRequest::getClusterId, ShowVpcepConnectionRequest::setClusterId));
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowVpcepConnectionRequest::getStart, ShowVpcepConnectionRequest::setStart));
+            f -> f.withMarshaller(ShowVpcepConnectionRequest::getOffset, ShowVpcepConnectionRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2319,11 +2355,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpgradeDetailRequest::getClusterId, UpgradeDetailRequest::setClusterId));
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpgradeDetailRequest::getStart, UpgradeDetailRequest::setStart));
+            f -> f.withMarshaller(UpgradeDetailRequest::getOffset, UpgradeDetailRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2631,11 +2667,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListActionsRequest::getClusterId, ListActionsRequest::setClusterId));
-        builder.<String>withRequestField("start",
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListActionsRequest::getStart, ListActionsRequest::setStart));
+            f -> f.withMarshaller(ListActionsRequest::getOffset, ListActionsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2663,11 +2699,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertsRequest::getClusterId, ListCertsRequest::setClusterId));
-        builder.<String>withRequestField("start",
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCertsRequest::getStart, ListCertsRequest::setStart));
+            f -> f.withMarshaller(ListCertsRequest::getOffset, ListCertsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2700,11 +2736,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConfsRequest::getClusterId, ListConfsRequest::setClusterId));
-        builder.<String>withRequestField("start",
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConfsRequest::getStart, ListConfsRequest::setStart));
+            f -> f.withMarshaller(ListConfsRequest::getOffset, ListConfsRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2733,11 +2769,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPipelinesRequest::getClusterId, ListPipelinesRequest::setClusterId));
-        builder.<String>withRequestField("start",
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPipelinesRequest::getStart, ListPipelinesRequest::setStart));
+            f -> f.withMarshaller(ListPipelinesRequest::getOffset, ListPipelinesRequest::setOffset));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

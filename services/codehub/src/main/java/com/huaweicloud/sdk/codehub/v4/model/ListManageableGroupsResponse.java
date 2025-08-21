@@ -17,19 +17,14 @@ public class ListManageableGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<GroupsManageableDto> body = null;
+    private List<ManageableGroupDto> body = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Total")
-
-    private String xTotal;
-
-    public ListManageableGroupsResponse withBody(List<GroupsManageableDto> body) {
+    public ListManageableGroupsResponse withBody(List<ManageableGroupDto> body) {
         this.body = body;
         return this;
     }
 
-    public ListManageableGroupsResponse addBodyItem(GroupsManageableDto bodyItem) {
+    public ListManageableGroupsResponse addBodyItem(ManageableGroupDto bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -37,7 +32,7 @@ public class ListManageableGroupsResponse extends SdkResponse {
         return this;
     }
 
-    public ListManageableGroupsResponse withBody(Consumer<List<GroupsManageableDto>> bodySetter) {
+    public ListManageableGroupsResponse withBody(Consumer<List<ManageableGroupDto>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -46,34 +41,15 @@ public class ListManageableGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 仓库ip白名单列表
+     * 拥有管理权限的代码组列表
      * @return body
      */
-    public List<GroupsManageableDto> getBody() {
+    public List<ManageableGroupDto> getBody() {
         return body;
     }
 
-    public void setBody(List<GroupsManageableDto> body) {
+    public void setBody(List<ManageableGroupDto> body) {
         this.body = body;
-    }
-
-    public ListManageableGroupsResponse withXTotal(String xTotal) {
-        this.xTotal = xTotal;
-        return this;
-    }
-
-    /**
-     * Get xTotal
-     * @return xTotal
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Total")
-    public String getXTotal() {
-        return xTotal;
-    }
-
-    public void setXTotal(String xTotal) {
-        this.xTotal = xTotal;
     }
 
     @Override
@@ -85,12 +61,12 @@ public class ListManageableGroupsResponse extends SdkResponse {
             return false;
         }
         ListManageableGroupsResponse that = (ListManageableGroupsResponse) obj;
-        return Objects.equals(this.body, that.body) && Objects.equals(this.xTotal, that.xTotal);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body, xTotal);
+        return Objects.hash(body);
     }
 
     @Override
@@ -98,7 +74,6 @@ public class ListManageableGroupsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListManageableGroupsResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
-        sb.append("    xTotal: ").append(toIndentedString(xTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

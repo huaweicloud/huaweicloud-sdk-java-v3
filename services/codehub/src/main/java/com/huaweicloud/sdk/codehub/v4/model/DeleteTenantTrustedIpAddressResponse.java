@@ -22,7 +22,7 @@ public class DeleteTenantTrustedIpAddressResponse extends SdkResponse {
     }
 
     /**
-     * 状态码
+     * **参数解释：** 状态码。
      * @return status
      */
     public String getStatus() {

@@ -16,9 +16,9 @@ public class ListCertsRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start")
+    @JsonProperty(value = "offset")
 
-    private String start;
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -47,21 +47,21 @@ public class ListCertsRequest {
         this.clusterId = clusterId;
     }
 
-    public ListCertsRequest withStart(String start) {
-        this.start = start;
+    public ListCertsRequest withOffset(String offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * 指定查询起始值，默认值为1，即从第1个证书开始查询。
-     * @return start
+     * @return offset
      */
-    public String getStart() {
-        return start;
+    public String getOffset() {
+        return offset;
     }
 
-    public void setStart(String start) {
-        this.start = start;
+    public void setOffset(String offset) {
+        this.offset = offset;
     }
 
     public ListCertsRequest withLimit(String limit) {
@@ -107,13 +107,13 @@ public class ListCertsRequest {
             return false;
         }
         ListCertsRequest that = (ListCertsRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.start, that.start)
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.certsType, that.certsType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, start, limit, certsType);
+        return Objects.hash(clusterId, offset, limit, certsType);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class ListCertsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCertsRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    certsType: ").append(toIndentedString(certsType)).append("\n");
         sb.append("}");

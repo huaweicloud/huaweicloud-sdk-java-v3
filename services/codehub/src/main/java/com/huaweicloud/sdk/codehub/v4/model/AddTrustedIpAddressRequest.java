@@ -27,7 +27,7 @@ public class AddTrustedIpAddressRequest {
     }
 
     /**
-     * 仓库id
+     * **参数解释：** 仓库id，代码仓首页，Repository ID后的数字Id。
      * minimum: 1
      * maximum: 2147483647
      * @return id

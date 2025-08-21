@@ -16,9 +16,9 @@ public class ListConfsRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start")
+    @JsonProperty(value = "offset")
 
-    private String start;
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -42,21 +42,21 @@ public class ListConfsRequest {
         this.clusterId = clusterId;
     }
 
-    public ListConfsRequest withStart(String start) {
-        this.start = start;
+    public ListConfsRequest withOffset(String offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * 指定查询起始值，默认值为1。
-     * @return start
+     * @return offset
      */
-    public String getStart() {
-        return start;
+    public String getOffset() {
+        return offset;
     }
 
-    public void setStart(String start) {
-        this.start = start;
+    public void setOffset(String offset) {
+        this.offset = offset;
     }
 
     public ListConfsRequest withLimit(String limit) {
@@ -85,13 +85,13 @@ public class ListConfsRequest {
             return false;
         }
         ListConfsRequest that = (ListConfsRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.start, that.start)
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, start, limit);
+        return Objects.hash(clusterId, offset, limit);
     }
 
     @Override
@@ -99,7 +99,7 @@ public class ListConfsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListConfsRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();

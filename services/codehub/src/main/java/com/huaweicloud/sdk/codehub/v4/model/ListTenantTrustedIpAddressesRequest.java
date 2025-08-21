@@ -26,7 +26,9 @@ public class ListTenantTrustedIpAddressesRequest {
     }
 
     /**
-     * 偏移量
+     * **参数解释：** 偏移量，从0开始。
+     * minimum: 0
+     * maximum: 2147483647
      * @return offset
      */
     public Integer getOffset() {
@@ -43,7 +45,9 @@ public class ListTenantTrustedIpAddressesRequest {
     }
 
     /**
-     * 返回数量
+     * **参数解释：** 返回数量。
+     * minimum: 1
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

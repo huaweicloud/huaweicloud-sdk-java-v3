@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +20,11 @@ public class ExportJobRequest {
     @JsonProperty(value = "job_name")
 
     private String jobName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private ExportJobsReq body;
 
     public ExportJobRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -54,6 +60,32 @@ public class ExportJobRequest {
         this.jobName = jobName;
     }
 
+    public ExportJobRequest withBody(ExportJobsReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public ExportJobRequest withBody(Consumer<ExportJobsReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new ExportJobsReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public ExportJobsReq getBody() {
+        return body;
+    }
+
+    public void setBody(ExportJobsReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +95,13 @@ public class ExportJobRequest {
             return false;
         }
         ExportJobRequest that = (ExportJobRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.jobName, that.jobName);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, jobName);
+        return Objects.hash(workspace, jobName, body);
     }
 
     @Override
@@ -77,6 +110,7 @@ public class ExportJobRequest {
         sb.append("class ExportJobRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

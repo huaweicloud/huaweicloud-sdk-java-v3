@@ -35,6 +35,11 @@ public class VatInvoiceRequestBody {
 
     private Integer pageNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ofd_to_image_mode")
+
+    private Boolean ofdToImageMode;
+
     public VatInvoiceRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -120,6 +125,23 @@ public class VatInvoiceRequestBody {
         this.pageNum = pageNum;
     }
 
+    public VatInvoiceRequestBody withOfdToImageMode(Boolean ofdToImageMode) {
+        this.ofdToImageMode = ofdToImageMode;
+        return this;
+    }
+
+    /**
+     * OFD转图片的模式开关。针对输入文件为OFD时，有两种处理方案： 方案一：直接解析OFD文件，并提取结构化信息 方案二：转成图片后再进行识别，该方案更鲁棒，但是时延会显著增加 取值范围包括： •  false：选择方案一 •  true：选择方案二 未传入该参数时默认为false，即选择方案一。 
+     * @return ofdToImageMode
+     */
+    public Boolean getOfdToImageMode() {
+        return ofdToImageMode;
+    }
+
+    public void setOfdToImageMode(Boolean ofdToImageMode) {
+        this.ofdToImageMode = ofdToImageMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +154,12 @@ public class VatInvoiceRequestBody {
         return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
             && Objects.equals(this.advancedMode, that.advancedMode)
             && Objects.equals(this.returnTextLocation, that.returnTextLocation)
-            && Objects.equals(this.pageNum, that.pageNum);
+            && Objects.equals(this.pageNum, that.pageNum) && Objects.equals(this.ofdToImageMode, that.ofdToImageMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, advancedMode, returnTextLocation, pageNum);
+        return Objects.hash(image, url, advancedMode, returnTextLocation, pageNum, ofdToImageMode);
     }
 
     @Override
@@ -149,6 +171,7 @@ public class VatInvoiceRequestBody {
         sb.append("    advancedMode: ").append(toIndentedString(advancedMode)).append("\n");
         sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
         sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    ofdToImageMode: ").append(toIndentedString(ofdToImageMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

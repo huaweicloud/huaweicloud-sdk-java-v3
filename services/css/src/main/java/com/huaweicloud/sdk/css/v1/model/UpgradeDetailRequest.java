@@ -16,9 +16,9 @@ public class UpgradeDetailRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start")
+    @JsonProperty(value = "offset")
 
-    private Integer start;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -47,21 +47,21 @@ public class UpgradeDetailRequest {
         this.clusterId = clusterId;
     }
 
-    public UpgradeDetailRequest withStart(Integer start) {
-        this.start = start;
+    public UpgradeDetailRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
-     * @return start
+     * @return offset
      */
-    public Integer getStart() {
-        return start;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setStart(Integer start) {
-        this.start = start;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public UpgradeDetailRequest withLimit(Integer limit) {
@@ -107,13 +107,13 @@ public class UpgradeDetailRequest {
             return false;
         }
         UpgradeDetailRequest that = (UpgradeDetailRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.start, that.start)
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.actionMode, that.actionMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, start, limit, actionMode);
+        return Objects.hash(clusterId, offset, limit, actionMode);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class UpgradeDetailRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpgradeDetailRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    actionMode: ").append(toIndentedString(actionMode)).append("\n");
         sb.append("}");

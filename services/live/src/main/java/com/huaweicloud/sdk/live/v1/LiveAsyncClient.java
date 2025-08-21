@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateFlowOutputRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateFlowsRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateFlowsResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskRequest;
@@ -41,6 +43,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteFlowOutputRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteFlowRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteFlowResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteHarvestTaskRequest;
@@ -63,6 +67,10 @@ import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.ListCesDimsInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.ListCesDimsInfoResponse;
+import com.huaweicloud.sdk.live.v1.model.ListCesInstanceRequest;
+import com.huaweicloud.sdk.live.v1.model.ListCesInstanceResponse;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListFlowsRequest;
@@ -95,6 +103,8 @@ import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowStartRequest;
@@ -129,6 +139,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowOutputInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowOutputInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigRequest;
@@ -274,6 +286,35 @@ public class LiveAsyncClient {
     public AsyncInvoker<CreateDomainMappingRequest, CreateDomainMappingResponse> createDomainMappingAsyncInvoker(
         CreateDomainMappingRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.createDomainMapping, hcClient);
+    }
+
+    /**
+     * 创建转推输出
+     *
+     * 创建转推输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFlowOutputRequest 请求对象
+     * @return CompletableFuture<CreateFlowOutputResponse>
+     */
+    public CompletableFuture<CreateFlowOutputResponse> createFlowOutputAsync(CreateFlowOutputRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createFlowOutput);
+    }
+
+    /**
+     * 创建转推输出
+     *
+     * 创建转推输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFlowOutputRequest 请求对象
+     * @return AsyncInvoker<CreateFlowOutputRequest, CreateFlowOutputResponse>
+     */
+    public AsyncInvoker<CreateFlowOutputRequest, CreateFlowOutputResponse> createFlowOutputAsyncInvoker(
+        CreateFlowOutputRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.createFlowOutput, hcClient);
     }
 
     /**
@@ -685,6 +726,35 @@ public class LiveAsyncClient {
      */
     public AsyncInvoker<DeleteFlowRequest, DeleteFlowResponse> deleteFlowAsyncInvoker(DeleteFlowRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.deleteFlow, hcClient);
+    }
+
+    /**
+     * 删除转推输出
+     *
+     * 删除转推输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFlowOutputRequest 请求对象
+     * @return CompletableFuture<DeleteFlowOutputResponse>
+     */
+    public CompletableFuture<DeleteFlowOutputResponse> deleteFlowOutputAsync(DeleteFlowOutputRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteFlowOutput);
+    }
+
+    /**
+     * 删除转推输出
+     *
+     * 删除转推输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFlowOutputRequest 请求对象
+     * @return AsyncInvoker<DeleteFlowOutputRequest, DeleteFlowOutputResponse>
+     */
+    public AsyncInvoker<DeleteFlowOutputRequest, DeleteFlowOutputResponse> deleteFlowOutputAsyncInvoker(
+        DeleteFlowOutputRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.deleteFlowOutput, hcClient);
     }
 
     /**
@@ -1341,6 +1411,35 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 更新转推输出
+     *
+     * 更新转推输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyFlowOutputRequest 请求对象
+     * @return CompletableFuture<ModifyFlowOutputResponse>
+     */
+    public CompletableFuture<ModifyFlowOutputResponse> modifyFlowOutputAsync(ModifyFlowOutputRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyFlowOutput);
+    }
+
+    /**
+     * 更新转推输出
+     *
+     * 更新转推输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyFlowOutputRequest 请求对象
+     * @return AsyncInvoker<ModifyFlowOutputRequest, ModifyFlowOutputResponse>
+     */
+    public AsyncInvoker<ModifyFlowOutputRequest, ModifyFlowOutputResponse> modifyFlowOutputAsyncInvoker(
+        ModifyFlowOutputRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyFlowOutput, hcClient);
+    }
+
+    /**
      * 修改流来源
      *
      * 修改流来源
@@ -1568,6 +1667,35 @@ public class LiveAsyncClient {
     public AsyncInvoker<ShowFlowDetailRequest, ShowFlowDetailResponse> showFlowDetailAsyncInvoker(
         ShowFlowDetailRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.showFlowDetail, hcClient);
+    }
+
+    /**
+     * 查询转推输出
+     *
+     * 查询转推输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOutputInfoRequest 请求对象
+     * @return CompletableFuture<ShowOutputInfoResponse>
+     */
+    public CompletableFuture<ShowOutputInfoResponse> showOutputInfoAsync(ShowOutputInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.showOutputInfo);
+    }
+
+    /**
+     * 查询转推输出
+     *
+     * 查询转推输出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOutputInfoRequest 请求对象
+     * @return AsyncInvoker<ShowOutputInfoRequest, ShowOutputInfoResponse>
+     */
+    public AsyncInvoker<ShowOutputInfoRequest, ShowOutputInfoResponse> showOutputInfoAsyncInvoker(
+        ShowOutputInfoRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.showOutputInfo, hcClient);
     }
 
     /**
@@ -2137,6 +2265,64 @@ public class LiveAsyncClient {
     public AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> updateTranscodingsTemplateAsyncInvoker(
         UpdateTranscodingsTemplateRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.updateTranscodingsTemplate, hcClient);
+    }
+
+    /**
+     * 维度配置信息查询
+     *
+     * 新增维度配置信息查询API
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCesDimsInfoRequest 请求对象
+     * @return CompletableFuture<ListCesDimsInfoResponse>
+     */
+    public CompletableFuture<ListCesDimsInfoResponse> listCesDimsInfoAsync(ListCesDimsInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listCesDimsInfo);
+    }
+
+    /**
+     * 维度配置信息查询
+     *
+     * 新增维度配置信息查询API
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCesDimsInfoRequest 请求对象
+     * @return AsyncInvoker<ListCesDimsInfoRequest, ListCesDimsInfoResponse>
+     */
+    public AsyncInvoker<ListCesDimsInfoRequest, ListCesDimsInfoResponse> listCesDimsInfoAsyncInvoker(
+        ListCesDimsInfoRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listCesDimsInfo, hcClient);
+    }
+
+    /**
+     * 实例查询
+     *
+     * 新增实例查询API
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCesInstanceRequest 请求对象
+     * @return CompletableFuture<ListCesInstanceResponse>
+     */
+    public CompletableFuture<ListCesInstanceResponse> listCesInstanceAsync(ListCesInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listCesInstance);
+    }
+
+    /**
+     * 实例查询
+     *
+     * 新增实例查询API
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCesInstanceRequest 请求对象
+     * @return AsyncInvoker<ListCesInstanceRequest, ListCesInstanceResponse>
+     */
+    public AsyncInvoker<ListCesInstanceRequest, ListCesInstanceResponse> listCesInstanceAsyncInvoker(
+        ListCesInstanceRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listCesInstance, hcClient);
     }
 
     /**

@@ -44,7 +44,7 @@ public class ShowComplianceStatusForOrganizationalUnitRequest {
     }
 
     /**
-     * 启用的控制策略信息。
+     * 控制策略ID。
      * @return controlId
      */
     public String getControlId() {

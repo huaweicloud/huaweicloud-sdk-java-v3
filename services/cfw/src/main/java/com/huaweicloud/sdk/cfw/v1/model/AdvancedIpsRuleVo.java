@@ -109,7 +109,7 @@ public class AdvancedIpsRuleVo {
     }
 
     /**
-     * Get status
+     * 开关状态：0表示关闭、1表示开启
      * @return status
      */
     public Integer getStatus() {

@@ -57,7 +57,7 @@ public class ShowBestPracticeStatusResponse extends SdkResponse {
     }
 
     /**
-     * 状态：进行中，成功，成败
+     * 状态：进行中，成功，失败
      * @return status
      */
     public String getStatus() {

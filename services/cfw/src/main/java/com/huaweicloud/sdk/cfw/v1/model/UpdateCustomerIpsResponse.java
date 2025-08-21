@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,25 +13,34 @@ import java.util.Objects;
 public class UpdateCustomerIpsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "data")
 
-    private Object body;
+    private UpdateCustomerIpsRespData data;
 
-    public UpdateCustomerIpsResponse withBody(Object body) {
-        this.body = body;
+    public UpdateCustomerIpsResponse withData(UpdateCustomerIpsRespData data) {
+        this.data = data;
+        return this;
+    }
+
+    public UpdateCustomerIpsResponse withData(Consumer<UpdateCustomerIpsRespData> dataSetter) {
+        if (this.data == null) {
+            this.data = new UpdateCustomerIpsRespData();
+            dataSetter.accept(this.data);
+        }
+
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * Get data
+     * @return data
      */
-    public Object getBody() {
-        return body;
+    public UpdateCustomerIpsRespData getData() {
+        return data;
     }
 
-    public void setBody(Object body) {
-        this.body = body;
+    public void setData(UpdateCustomerIpsRespData data) {
+        this.data = data;
     }
 
     @Override
@@ -42,19 +52,19 @@ public class UpdateCustomerIpsResponse extends SdkResponse {
             return false;
         }
         UpdateCustomerIpsResponse that = (UpdateCustomerIpsResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateCustomerIpsResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.css.v1.model.AddFavoriteRequest;
 import com.huaweicloud.sdk.css.v1.model.AddFavoriteResponse;
 import com.huaweicloud.sdk.css.v1.model.AddIndependentNodeRequest;
 import com.huaweicloud.sdk.css.v1.model.AddIndependentNodeResponse;
+import com.huaweicloud.sdk.css.v1.model.ChangeClusterSubnetRequest;
+import com.huaweicloud.sdk.css.v1.model.ChangeClusterSubnetResponse;
 import com.huaweicloud.sdk.css.v1.model.ChangeModeRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeModeResponse;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupRequest;
@@ -238,6 +240,39 @@ public class CssAsyncClient {
     public AsyncInvoker<AddIndependentNodeRequest, AddIndependentNodeResponse> addIndependentNodeAsyncInvoker(
         AddIndependentNodeRequest request) {
         return new AsyncInvoker<>(request, CssMeta.addIndependentNode, hcClient);
+    }
+
+    /**
+     * 切换集群子网
+     *
+     * 该接口可以在集群创建成功后，切换集群子网，扩容等添加节点场景下使用新子网绑定新增节点。
+     * 
+     * &gt;同VPC下的子网默认网络联通，请确保新子网与您业务系统的网络连通性。另：开启了自动创建ipv6地址的集群只支持切换到开启了ipv6的新子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeClusterSubnetRequest 请求对象
+     * @return CompletableFuture<ChangeClusterSubnetResponse>
+     */
+    public CompletableFuture<ChangeClusterSubnetResponse> changeClusterSubnetAsync(ChangeClusterSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.changeClusterSubnet);
+    }
+
+    /**
+     * 切换集群子网
+     *
+     * 该接口可以在集群创建成功后，切换集群子网，扩容等添加节点场景下使用新子网绑定新增节点。
+     * 
+     * &gt;同VPC下的子网默认网络联通，请确保新子网与您业务系统的网络连通性。另：开启了自动创建ipv6地址的集群只支持切换到开启了ipv6的新子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeClusterSubnetRequest 请求对象
+     * @return AsyncInvoker<ChangeClusterSubnetRequest, ChangeClusterSubnetResponse>
+     */
+    public AsyncInvoker<ChangeClusterSubnetRequest, ChangeClusterSubnetResponse> changeClusterSubnetAsyncInvoker(
+        ChangeClusterSubnetRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.changeClusterSubnet, hcClient);
     }
 
     /**
@@ -1793,7 +1828,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 切换集群实例AZ
+     * 切换集群实例可用区
      *
      * 该接口通过指定节点类型切换AZ。
      * 
@@ -1808,7 +1843,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 切换集群实例AZ
+     * 切换集群实例可用区
      *
      * 该接口通过指定节点类型切换AZ。
      * 

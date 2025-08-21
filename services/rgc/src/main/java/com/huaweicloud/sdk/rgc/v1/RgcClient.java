@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.rgc.v1.model.SetupLandingZoneRequest;
 import com.huaweicloud.sdk.rgc.v1.model.SetupLandingZoneResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowAvailableUpdatesRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowAvailableUpdatesResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeAccountInfoRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeAccountInfoResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeDetailsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeDetailsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeOverviewRequest;
@@ -144,6 +146,35 @@ public class RgcClient {
     public SyncInvoker<CreateBestPracticeDetectRequest, CreateBestPracticeDetectResponse> createBestPracticeDetectInvoker(
         CreateBestPracticeDetectRequest request) {
         return new SyncInvoker<>(request, RgcMeta.createBestPracticeDetect, hcClient);
+    }
+
+    /**
+     * 查询治理成熟度的账号详情
+     *
+     * 查询治理成熟度的账号详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBestPracticeAccountInfoRequest 请求对象
+     * @return ShowBestPracticeAccountInfoResponse
+     */
+    public ShowBestPracticeAccountInfoResponse showBestPracticeAccountInfo(ShowBestPracticeAccountInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, RgcMeta.showBestPracticeAccountInfo);
+    }
+
+    /**
+     * 查询治理成熟度的账号详情
+     *
+     * 查询治理成熟度的账号详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBestPracticeAccountInfoRequest 请求对象
+     * @return SyncInvoker<ShowBestPracticeAccountInfoRequest, ShowBestPracticeAccountInfoResponse>
+     */
+    public SyncInvoker<ShowBestPracticeAccountInfoRequest, ShowBestPracticeAccountInfoResponse> showBestPracticeAccountInfoInvoker(
+        ShowBestPracticeAccountInfoRequest request) {
+        return new SyncInvoker<>(request, RgcMeta.showBestPracticeAccountInfo, hcClient);
     }
 
     /**
@@ -641,9 +672,9 @@ public class RgcClient {
     }
 
     /**
-     * 查询注册账号开启的控制策略
+     * 查询纳管账号开启的控制策略
      *
-     * 查询组织里某个注册账号下开启的某个控制策略的详细信息。
+     * 查询组织里某个纳管账号下开启的某个控制策略的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -655,9 +686,9 @@ public class RgcClient {
     }
 
     /**
-     * 查询注册账号开启的控制策略
+     * 查询纳管账号开启的控制策略
      *
-     * 查询组织里某个注册账号下开启的某个控制策略的详细信息。
+     * 查询组织里某个纳管账号下开启的某个控制策略的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

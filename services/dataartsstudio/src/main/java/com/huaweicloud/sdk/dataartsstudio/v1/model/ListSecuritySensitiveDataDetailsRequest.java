@@ -204,7 +204,7 @@ public class ListSecuritySensitiveDataDetailsRequest {
     /**
      * 敏感数据发现开始时间。
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 9223372036854775807
      * @return findStartTime
      */
     public Long getFindStartTime() {
@@ -223,7 +223,7 @@ public class ListSecuritySensitiveDataDetailsRequest {
     /**
      * 敏感数据发现结束时间。
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 9223372036854775807
      * @return findEndTime
      */
     public Long getFindEndTime() {

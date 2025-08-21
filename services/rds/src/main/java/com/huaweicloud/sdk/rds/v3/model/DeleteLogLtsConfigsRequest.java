@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class DeleteLogLtsConfigsRequest {
 
     /**
-     * 引擎。
+     * 引擎，暂只支持mysql。
      */
     public static final class EngineEnum {
 
@@ -26,23 +26,11 @@ public class DeleteLogLtsConfigsRequest {
          */
         public static final EngineEnum MYSQL = new EngineEnum("mysql");
 
-        /**
-         * Enum POSTGRESQL for value: "postgresql"
-         */
-        public static final EngineEnum POSTGRESQL = new EngineEnum("postgresql");
-
-        /**
-         * Enum SQLSERVER for value: "sqlserver"
-         */
-        public static final EngineEnum SQLSERVER = new EngineEnum("sqlserver");
-
         private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineEnum> createStaticFields() {
             Map<String, EngineEnum> map = new HashMap<>();
             map.put("mysql", MYSQL);
-            map.put("postgresql", POSTGRESQL);
-            map.put("sqlserver", SQLSERVER);
             return Collections.unmodifiableMap(map);
         }
 
@@ -183,7 +171,7 @@ public class DeleteLogLtsConfigsRequest {
     }
 
     /**
-     * 引擎。
+     * 引擎，暂只支持mysql。
      * @return engine
      */
     public EngineEnum getEngine() {

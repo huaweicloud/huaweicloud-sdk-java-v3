@@ -46,7 +46,7 @@ public class ListTenantTrustedIpAddressesResponse extends SdkResponse {
     }
 
     /**
-     * 租户ip白名单列表
+     * Get body
      * @return body
      */
     public List<TenantTrustedIpAddressDto> getBody() {

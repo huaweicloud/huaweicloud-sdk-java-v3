@@ -76,7 +76,7 @@ public class ControlViolation {
     }
 
     /**
-     * 控制策略纳管账号ID。
+     * 纳管账号ID。
      * @return accountId
      */
     public String getAccountId() {
@@ -93,7 +93,7 @@ public class ControlViolation {
     }
 
     /**
-     * 控制策略纳管账号名称。
+     * 纳管账号名称。
      * @return accountName
      */
     public String getAccountName() {

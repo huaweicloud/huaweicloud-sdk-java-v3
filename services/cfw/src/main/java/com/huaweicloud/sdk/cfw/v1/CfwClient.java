@@ -46,6 +46,8 @@ import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateReportProfileRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateReportProfileResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateTagRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateTagResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountRequest;
@@ -68,6 +70,8 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteReportProfileRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteReportProfileResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetRequest;
@@ -76,12 +80,18 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteTagRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteTagResponse;
 import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.EnableMultiAccountRequest;
+import com.huaweicloud.sdk.cfw.v1.model.EnableMultiAccountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ExportLogsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ExportLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListAccountsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListAccountsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRulesRequest;
@@ -128,6 +138,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListFirewallListRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFirewallListResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListFlowStatisticRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListFlowStatisticResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistSwitchRequest;
@@ -144,12 +156,20 @@ import com.huaweicloud.sdk.cfw.v1.model.ListJobRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListJobResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationAccountsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationAccountsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationTreeRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationTreeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListReportProfilesRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListReportProfilesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListResourceTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListResourceTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRuleAclTagsRequest;
@@ -164,6 +184,8 @@ import com.huaweicloud.sdk.cfw.v1.model.RetryIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.RetryIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAccessDetailRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAccessDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAccessTopRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAccessTopResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAlarmConfigRequest;
@@ -172,6 +194,10 @@ import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusRuleRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusRuleResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusSwitchRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusSwitchResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAttackDetailRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAttackDetailResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTopRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTopResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTotalRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTotalResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTrendRequest;
@@ -182,10 +208,26 @@ import com.huaweicloud.sdk.cfw.v1.model.ShowCustomerIpsInfoRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowCustomerIpsInfoResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowDomainSetDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowDomainSetDetailResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedErRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedErResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedVpcRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedVpcResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFirewallReportRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFirewallReportResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowDetailRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowDetailResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowTopRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowTopResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowTrendRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowTrendResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowImportStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowImportStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowIpsUpdateTimeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowIpsUpdateTimeResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowLogsCountRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowLogsCountResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowReportProfileRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowReportProfileResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowTrafficTrendRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowTrafficTrendResponse;
 import com.huaweicloud.sdk.cfw.v1.model.SwitchAutoProtectStatusRequest;
@@ -216,6 +258,8 @@ import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateReportProfileRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateReportProfileResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -576,36 +620,6 @@ public class CfwClient {
     public SyncInvoker<CancelCaptureTaskRequest, CancelCaptureTaskResponse> cancelCaptureTaskInvoker(
         CancelCaptureTaskRequest request) {
         return new SyncInvoker<>(request, CfwMeta.cancelCaptureTask, hcClient);
-    }
-
-    /**
-     * 修改东西向防火墙防护状态
-     *
-     * 东西向防护开启/关闭
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeEastWestFirewallStatusRequest 请求对象
-     * @return ChangeEastWestFirewallStatusResponse
-     */
-    public ChangeEastWestFirewallStatusResponse changeEastWestFirewallStatus(
-        ChangeEastWestFirewallStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, CfwMeta.changeEastWestFirewallStatus);
-    }
-
-    /**
-     * 修改东西向防火墙防护状态
-     *
-     * 东西向防护开启/关闭
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeEastWestFirewallStatusRequest 请求对象
-     * @return SyncInvoker<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse>
-     */
-    public SyncInvoker<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatusInvoker(
-        ChangeEastWestFirewallStatusRequest request) {
-        return new SyncInvoker<>(request, CfwMeta.changeEastWestFirewallStatus, hcClient);
     }
 
     /**
@@ -1276,35 +1290,6 @@ public class CfwClient {
     public SyncInvoker<ListAttackLogsRequest, ListAttackLogsResponse> listAttackLogsInvoker(
         ListAttackLogsRequest request) {
         return new SyncInvoker<>(request, CfwMeta.listAttackLogs, hcClient);
-    }
-
-    /**
-     * 查询攻击统计
-     *
-     * 根据防火墙攻击日志，查询攻击统计信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAttackStatisticRequest 请求对象
-     * @return ListAttackStatisticResponse
-     */
-    public ListAttackStatisticResponse listAttackStatistic(ListAttackStatisticRequest request) {
-        return hcClient.syncInvokeHttp(request, CfwMeta.listAttackStatistic);
-    }
-
-    /**
-     * 查询攻击统计
-     *
-     * 根据防火墙攻击日志，查询攻击统计信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAttackStatisticRequest 请求对象
-     * @return SyncInvoker<ListAttackStatisticRequest, ListAttackStatisticResponse>
-     */
-    public SyncInvoker<ListAttackStatisticRequest, ListAttackStatisticResponse> listAttackStatisticInvoker(
-        ListAttackStatisticRequest request) {
-        return new SyncInvoker<>(request, CfwMeta.listAttackStatistic, hcClient);
     }
 
     /**
@@ -1999,34 +1984,6 @@ public class CfwClient {
     }
 
     /**
-     * 查询访问日志统计信息
-     *
-     * 获取访问日志的TOP统计信息，如TOP命中规则等
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAccessTopRequest 请求对象
-     * @return ShowAccessTopResponse
-     */
-    public ShowAccessTopResponse showAccessTop(ShowAccessTopRequest request) {
-        return hcClient.syncInvokeHttp(request, CfwMeta.showAccessTop);
-    }
-
-    /**
-     * 查询访问日志统计信息
-     *
-     * 获取访问日志的TOP统计信息，如TOP命中规则等
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAccessTopRequest 请求对象
-     * @return SyncInvoker<ShowAccessTopRequest, ShowAccessTopResponse>
-     */
-    public SyncInvoker<ShowAccessTopRequest, ShowAccessTopResponse> showAccessTopInvoker(ShowAccessTopRequest request) {
-        return new SyncInvoker<>(request, CfwMeta.showAccessTop, hcClient);
-    }
-
-    /**
      * 获取告警配置信息
      *
      * 获取告警配置信息
@@ -2114,64 +2071,6 @@ public class CfwClient {
     }
 
     /**
-     * 查询攻击概览
-     *
-     * 查询攻击概览
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAttackTotalRequest 请求对象
-     * @return ShowAttackTotalResponse
-     */
-    public ShowAttackTotalResponse showAttackTotal(ShowAttackTotalRequest request) {
-        return hcClient.syncInvokeHttp(request, CfwMeta.showAttackTotal);
-    }
-
-    /**
-     * 查询攻击概览
-     *
-     * 查询攻击概览
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAttackTotalRequest 请求对象
-     * @return SyncInvoker<ShowAttackTotalRequest, ShowAttackTotalResponse>
-     */
-    public SyncInvoker<ShowAttackTotalRequest, ShowAttackTotalResponse> showAttackTotalInvoker(
-        ShowAttackTotalRequest request) {
-        return new SyncInvoker<>(request, CfwMeta.showAttackTotal, hcClient);
-    }
-
-    /**
-     * 查询攻击趋势
-     *
-     * 查询攻击趋势
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAttackTrendRequest 请求对象
-     * @return ShowAttackTrendResponse
-     */
-    public ShowAttackTrendResponse showAttackTrend(ShowAttackTrendRequest request) {
-        return hcClient.syncInvokeHttp(request, CfwMeta.showAttackTrend);
-    }
-
-    /**
-     * 查询攻击趋势
-     *
-     * 查询攻击趋势
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAttackTrendRequest 请求对象
-     * @return SyncInvoker<ShowAttackTrendRequest, ShowAttackTrendResponse>
-     */
-    public SyncInvoker<ShowAttackTrendRequest, ShowAttackTrendResponse> showAttackTrendInvoker(
-        ShowAttackTrendRequest request) {
-        return new SyncInvoker<>(request, CfwMeta.showAttackTrend, hcClient);
-    }
-
-    /**
      * 查看域名组详情
      *
      * 查看域名组详情
@@ -2198,35 +2097,6 @@ public class CfwClient {
     public SyncInvoker<ShowDomainSetDetailRequest, ShowDomainSetDetailResponse> showDomainSetDetailInvoker(
         ShowDomainSetDetailRequest request) {
         return new SyncInvoker<>(request, CfwMeta.showDomainSetDetail, hcClient);
-    }
-
-    /**
-     * 查询流量趋势
-     *
-     * 查询流量趋势，包括南北向、EIP、东西向的流量趋势
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowTrafficTrendRequest 请求对象
-     * @return ShowTrafficTrendResponse
-     */
-    public ShowTrafficTrendResponse showTrafficTrend(ShowTrafficTrendRequest request) {
-        return hcClient.syncInvokeHttp(request, CfwMeta.showTrafficTrend);
-    }
-
-    /**
-     * 查询流量趋势
-     *
-     * 查询流量趋势，包括南北向、EIP、东西向的流量趋势
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowTrafficTrendRequest 请求对象
-     * @return SyncInvoker<ShowTrafficTrendRequest, ShowTrafficTrendResponse>
-     */
-    public SyncInvoker<ShowTrafficTrendRequest, ShowTrafficTrendResponse> showTrafficTrendInvoker(
-        ShowTrafficTrendRequest request) {
-        return new SyncInvoker<>(request, CfwMeta.showTrafficTrend, hcClient);
     }
 
     /**
@@ -3122,35 +2992,6 @@ public class CfwClient {
     }
 
     /**
-     * 获取自定义ips规则
-     *
-     * 获取自定义ips规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListCustomerIpsRequest 请求对象
-     * @return ListCustomerIpsResponse
-     */
-    public ListCustomerIpsResponse listCustomerIps(ListCustomerIpsRequest request) {
-        return hcClient.syncInvokeHttp(request, CfwMeta.listCustomerIps);
-    }
-
-    /**
-     * 获取自定义ips规则
-     *
-     * 获取自定义ips规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListCustomerIpsRequest 请求对象
-     * @return SyncInvoker<ListCustomerIpsRequest, ListCustomerIpsResponse>
-     */
-    public SyncInvoker<ListCustomerIpsRequest, ListCustomerIpsResponse> listCustomerIpsInvoker(
-        ListCustomerIpsRequest request) {
-        return new SyncInvoker<>(request, CfwMeta.listCustomerIps, hcClient);
-    }
-
-    /**
      * 查询防护模式
      *
      * 查询防护模式
@@ -3265,35 +3106,6 @@ public class CfwClient {
     }
 
     /**
-     * 查询自定义IPS规则详情
-     *
-     * 功能说明：自定义IPS规则详情，特性:根据路径输入的IPS ID查看对应的自定义IPS详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowCustomerIpsInfoRequest 请求对象
-     * @return ShowCustomerIpsInfoResponse
-     */
-    public ShowCustomerIpsInfoResponse showCustomerIpsInfo(ShowCustomerIpsInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, CfwMeta.showCustomerIpsInfo);
-    }
-
-    /**
-     * 查询自定义IPS规则详情
-     *
-     * 功能说明：自定义IPS规则详情，特性:根据路径输入的IPS ID查看对应的自定义IPS详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowCustomerIpsInfoRequest 请求对象
-     * @return SyncInvoker<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse>
-     */
-    public SyncInvoker<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse> showCustomerIpsInfoInvoker(
-        ShowCustomerIpsInfoRequest request) {
-        return new SyncInvoker<>(request, CfwMeta.showCustomerIpsInfo, hcClient);
-    }
-
-    /**
      * 获取ips规则细节
      *
      * 获取ips规则细节
@@ -3352,6 +3164,64 @@ public class CfwClient {
     }
 
     /**
+     * 查看自定义IPS规则列表
+     *
+     * 查看自定义IPS规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomerIpsRequest 请求对象
+     * @return ListCustomerIpsResponse
+     */
+    public ListCustomerIpsResponse listCustomerIps(ListCustomerIpsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listCustomerIps);
+    }
+
+    /**
+     * 查看自定义IPS规则列表
+     *
+     * 查看自定义IPS规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomerIpsRequest 请求对象
+     * @return SyncInvoker<ListCustomerIpsRequest, ListCustomerIpsResponse>
+     */
+    public SyncInvoker<ListCustomerIpsRequest, ListCustomerIpsResponse> listCustomerIpsInvoker(
+        ListCustomerIpsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listCustomerIps, hcClient);
+    }
+
+    /**
+     * 查询自定义IPS规则详情
+     *
+     * 功能说明：自定义IPS规则详情，特性:根据路径输入的IPS ID查看对应的自定义IPS详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomerIpsInfoRequest 请求对象
+     * @return ShowCustomerIpsInfoResponse
+     */
+    public ShowCustomerIpsInfoResponse showCustomerIpsInfo(ShowCustomerIpsInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showCustomerIpsInfo);
+    }
+
+    /**
+     * 查询自定义IPS规则详情
+     *
+     * 功能说明：自定义IPS规则详情，特性:根据路径输入的IPS ID查看对应的自定义IPS详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomerIpsInfoRequest 请求对象
+     * @return SyncInvoker<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse>
+     */
+    public SyncInvoker<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse> showCustomerIpsInfoInvoker(
+        ShowCustomerIpsInfoRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showCustomerIpsInfo, hcClient);
+    }
+
+    /**
      * 更新自定义IPS规则
      *
      * 更新自定义IPS规则
@@ -3378,6 +3248,811 @@ public class CfwClient {
     public SyncInvoker<UpdateCustomerIpsRequest, UpdateCustomerIpsResponse> updateCustomerIpsInvoker(
         UpdateCustomerIpsRequest request) {
         return new SyncInvoker<>(request, CfwMeta.updateCustomerIps, hcClient);
+    }
+
+    /**
+     * 查询攻击统计
+     *
+     * 根据防火墙攻击日志，查询攻击统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAttackStatisticRequest 请求对象
+     * @return ListAttackStatisticResponse
+     */
+    public ListAttackStatisticResponse listAttackStatistic(ListAttackStatisticRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listAttackStatistic);
+    }
+
+    /**
+     * 查询攻击统计
+     *
+     * 根据防火墙攻击日志，查询攻击统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAttackStatisticRequest 请求对象
+     * @return SyncInvoker<ListAttackStatisticRequest, ListAttackStatisticResponse>
+     */
+    public SyncInvoker<ListAttackStatisticRequest, ListAttackStatisticResponse> listAttackStatisticInvoker(
+        ListAttackStatisticRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listAttackStatistic, hcClient);
+    }
+
+    /**
+     * 查询流量日志统计
+     *
+     * 查询流量日志统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlowStatisticRequest 请求对象
+     * @return ListFlowStatisticResponse
+     */
+    public ListFlowStatisticResponse listFlowStatistic(ListFlowStatisticRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listFlowStatistic);
+    }
+
+    /**
+     * 查询流量日志统计
+     *
+     * 查询流量日志统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlowStatisticRequest 请求对象
+     * @return SyncInvoker<ListFlowStatisticRequest, ListFlowStatisticResponse>
+     */
+    public SyncInvoker<ListFlowStatisticRequest, ListFlowStatisticResponse> listFlowStatisticInvoker(
+        ListFlowStatisticRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listFlowStatistic, hcClient);
+    }
+
+    /**
+     * 查询访问控制统计详情
+     *
+     * 查询访问控制统计详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAccessDetailRequest 请求对象
+     * @return ShowAccessDetailResponse
+     */
+    public ShowAccessDetailResponse showAccessDetail(ShowAccessDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAccessDetail);
+    }
+
+    /**
+     * 查询访问控制统计详情
+     *
+     * 查询访问控制统计详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAccessDetailRequest 请求对象
+     * @return SyncInvoker<ShowAccessDetailRequest, ShowAccessDetailResponse>
+     */
+    public SyncInvoker<ShowAccessDetailRequest, ShowAccessDetailResponse> showAccessDetailInvoker(
+        ShowAccessDetailRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAccessDetail, hcClient);
+    }
+
+    /**
+     * 查询访问日志统计信息
+     *
+     * 获取访问日志的TOP统计信息，如TOP命中规则等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAccessTopRequest 请求对象
+     * @return ShowAccessTopResponse
+     */
+    public ShowAccessTopResponse showAccessTop(ShowAccessTopRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAccessTop);
+    }
+
+    /**
+     * 查询访问日志统计信息
+     *
+     * 获取访问日志的TOP统计信息，如TOP命中规则等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAccessTopRequest 请求对象
+     * @return SyncInvoker<ShowAccessTopRequest, ShowAccessTopResponse>
+     */
+    public SyncInvoker<ShowAccessTopRequest, ShowAccessTopResponse> showAccessTopInvoker(ShowAccessTopRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAccessTop, hcClient);
+    }
+
+    /**
+     * 查询攻击日志统计详情
+     *
+     * 查询攻击日志统计详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAttackDetailRequest 请求对象
+     * @return ShowAttackDetailResponse
+     */
+    public ShowAttackDetailResponse showAttackDetail(ShowAttackDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAttackDetail);
+    }
+
+    /**
+     * 查询攻击日志统计详情
+     *
+     * 查询攻击日志统计详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAttackDetailRequest 请求对象
+     * @return SyncInvoker<ShowAttackDetailRequest, ShowAttackDetailResponse>
+     */
+    public SyncInvoker<ShowAttackDetailRequest, ShowAttackDetailResponse> showAttackDetailInvoker(
+        ShowAttackDetailRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAttackDetail, hcClient);
+    }
+
+    /**
+     * 查询攻击日志TOP统计
+     *
+     * 查询攻击日志TOP统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAttackTopRequest 请求对象
+     * @return ShowAttackTopResponse
+     */
+    public ShowAttackTopResponse showAttackTop(ShowAttackTopRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAttackTop);
+    }
+
+    /**
+     * 查询攻击日志TOP统计
+     *
+     * 查询攻击日志TOP统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAttackTopRequest 请求对象
+     * @return SyncInvoker<ShowAttackTopRequest, ShowAttackTopResponse>
+     */
+    public SyncInvoker<ShowAttackTopRequest, ShowAttackTopResponse> showAttackTopInvoker(ShowAttackTopRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAttackTop, hcClient);
+    }
+
+    /**
+     * 查询攻击概览
+     *
+     * 查询攻击概览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAttackTotalRequest 请求对象
+     * @return ShowAttackTotalResponse
+     */
+    public ShowAttackTotalResponse showAttackTotal(ShowAttackTotalRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAttackTotal);
+    }
+
+    /**
+     * 查询攻击概览
+     *
+     * 查询攻击概览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAttackTotalRequest 请求对象
+     * @return SyncInvoker<ShowAttackTotalRequest, ShowAttackTotalResponse>
+     */
+    public SyncInvoker<ShowAttackTotalRequest, ShowAttackTotalResponse> showAttackTotalInvoker(
+        ShowAttackTotalRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAttackTotal, hcClient);
+    }
+
+    /**
+     * 查询攻击趋势
+     *
+     * 查询攻击趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAttackTrendRequest 请求对象
+     * @return ShowAttackTrendResponse
+     */
+    public ShowAttackTrendResponse showAttackTrend(ShowAttackTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAttackTrend);
+    }
+
+    /**
+     * 查询攻击趋势
+     *
+     * 查询攻击趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAttackTrendRequest 请求对象
+     * @return SyncInvoker<ShowAttackTrendRequest, ShowAttackTrendResponse>
+     */
+    public SyncInvoker<ShowAttackTrendRequest, ShowAttackTrendResponse> showAttackTrendInvoker(
+        ShowAttackTrendRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAttackTrend, hcClient);
+    }
+
+    /**
+     * 查询流量日志统计详情
+     *
+     * 查询流量日志统计详情，如统计某个源IP访问详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlowDetailRequest 请求对象
+     * @return ShowFlowDetailResponse
+     */
+    public ShowFlowDetailResponse showFlowDetail(ShowFlowDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showFlowDetail);
+    }
+
+    /**
+     * 查询流量日志统计详情
+     *
+     * 查询流量日志统计详情，如统计某个源IP访问详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlowDetailRequest 请求对象
+     * @return SyncInvoker<ShowFlowDetailRequest, ShowFlowDetailResponse>
+     */
+    public SyncInvoker<ShowFlowDetailRequest, ShowFlowDetailResponse> showFlowDetailInvoker(
+        ShowFlowDetailRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showFlowDetail, hcClient);
+    }
+
+    /**
+     * 查询流量TOP统计
+     *
+     * 查询流量TOP统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlowTopRequest 请求对象
+     * @return ShowFlowTopResponse
+     */
+    public ShowFlowTopResponse showFlowTop(ShowFlowTopRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showFlowTop);
+    }
+
+    /**
+     * 查询流量TOP统计
+     *
+     * 查询流量TOP统计
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlowTopRequest 请求对象
+     * @return SyncInvoker<ShowFlowTopRequest, ShowFlowTopResponse>
+     */
+    public SyncInvoker<ShowFlowTopRequest, ShowFlowTopResponse> showFlowTopInvoker(ShowFlowTopRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showFlowTop, hcClient);
+    }
+
+    /**
+     * 查询会话趋势
+     *
+     * 查询会话趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlowTrendRequest 请求对象
+     * @return ShowFlowTrendResponse
+     */
+    public ShowFlowTrendResponse showFlowTrend(ShowFlowTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showFlowTrend);
+    }
+
+    /**
+     * 查询会话趋势
+     *
+     * 查询会话趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlowTrendRequest 请求对象
+     * @return SyncInvoker<ShowFlowTrendRequest, ShowFlowTrendResponse>
+     */
+    public SyncInvoker<ShowFlowTrendRequest, ShowFlowTrendResponse> showFlowTrendInvoker(ShowFlowTrendRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showFlowTrend, hcClient);
+    }
+
+    /**
+     * 查询日志数量
+     *
+     * 统计日志数量，如统计风险IP的数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogsCountRequest 请求对象
+     * @return ShowLogsCountResponse
+     */
+    public ShowLogsCountResponse showLogsCount(ShowLogsCountRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showLogsCount);
+    }
+
+    /**
+     * 查询日志数量
+     *
+     * 统计日志数量，如统计风险IP的数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogsCountRequest 请求对象
+     * @return SyncInvoker<ShowLogsCountRequest, ShowLogsCountResponse>
+     */
+    public SyncInvoker<ShowLogsCountRequest, ShowLogsCountResponse> showLogsCountInvoker(ShowLogsCountRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showLogsCount, hcClient);
+    }
+
+    /**
+     * 查询流量趋势
+     *
+     * 查询流量趋势，包括南北向、EIP、东西向的流量趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrafficTrendRequest 请求对象
+     * @return ShowTrafficTrendResponse
+     */
+    public ShowTrafficTrendResponse showTrafficTrend(ShowTrafficTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showTrafficTrend);
+    }
+
+    /**
+     * 查询流量趋势
+     *
+     * 查询流量趋势，包括南北向、EIP、东西向的流量趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrafficTrendRequest 请求对象
+     * @return SyncInvoker<ShowTrafficTrendRequest, ShowTrafficTrendResponse>
+     */
+    public SyncInvoker<ShowTrafficTrendRequest, ShowTrafficTrendResponse> showTrafficTrendInvoker(
+        ShowTrafficTrendRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showTrafficTrend, hcClient);
+    }
+
+    /**
+     * 导出防火墙日志
+     *
+     * 导出防火墙日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportLogsRequest 请求对象
+     * @return ExportLogsResponse
+     */
+    public ExportLogsResponse exportLogs(ExportLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.exportLogs);
+    }
+
+    /**
+     * 导出防火墙日志
+     *
+     * 导出防火墙日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportLogsRequest 请求对象
+     * @return SyncInvoker<ExportLogsRequest, ExportLogsResponse>
+     */
+    public SyncInvoker<ExportLogsRequest, ExportLogsResponse> exportLogsInvoker(ExportLogsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.exportLogs, hcClient);
+    }
+
+    /**
+     * 查询防火墙日志
+     *
+     * 查询防火墙日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogsRequest 请求对象
+     * @return ListLogsResponse
+     */
+    public ListLogsResponse listLogs(ListLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listLogs);
+    }
+
+    /**
+     * 查询防火墙日志
+     *
+     * 查询防火墙日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogsRequest 请求对象
+     * @return SyncInvoker<ListLogsRequest, ListLogsResponse>
+     */
+    public SyncInvoker<ListLogsRequest, ListLogsResponse> listLogsInvoker(ListLogsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listLogs, hcClient);
+    }
+
+    /**
+     * 开启多账号管理
+     *
+     * 开启多账号管理
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableMultiAccountRequest 请求对象
+     * @return EnableMultiAccountResponse
+     */
+    public EnableMultiAccountResponse enableMultiAccount(EnableMultiAccountRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.enableMultiAccount);
+    }
+
+    /**
+     * 开启多账号管理
+     *
+     * 开启多账号管理
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableMultiAccountRequest 请求对象
+     * @return SyncInvoker<EnableMultiAccountRequest, EnableMultiAccountResponse>
+     */
+    public SyncInvoker<EnableMultiAccountRequest, EnableMultiAccountResponse> enableMultiAccountInvoker(
+        EnableMultiAccountRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.enableMultiAccount, hcClient);
+    }
+
+    /**
+     * 查询账号列表
+     *
+     * 查询账号列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccountsRequest 请求对象
+     * @return ListAccountsResponse
+     */
+    public ListAccountsResponse listAccounts(ListAccountsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listAccounts);
+    }
+
+    /**
+     * 查询账号列表
+     *
+     * 查询账号列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccountsRequest 请求对象
+     * @return SyncInvoker<ListAccountsRequest, ListAccountsResponse>
+     */
+    public SyncInvoker<ListAccountsRequest, ListAccountsResponse> listAccountsInvoker(ListAccountsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listAccounts, hcClient);
+    }
+
+    /**
+     * 查询组织账号列表
+     *
+     * 查询组织账号列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationAccountsRequest 请求对象
+     * @return ListOrganizationAccountsResponse
+     */
+    public ListOrganizationAccountsResponse listOrganizationAccounts(ListOrganizationAccountsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listOrganizationAccounts);
+    }
+
+    /**
+     * 查询组织账号列表
+     *
+     * 查询组织账号列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationAccountsRequest 请求对象
+     * @return SyncInvoker<ListOrganizationAccountsRequest, ListOrganizationAccountsResponse>
+     */
+    public SyncInvoker<ListOrganizationAccountsRequest, ListOrganizationAccountsResponse> listOrganizationAccountsInvoker(
+        ListOrganizationAccountsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listOrganizationAccounts, hcClient);
+    }
+
+    /**
+     * 查询组织结构
+     *
+     * 查询组织结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationTreeRequest 请求对象
+     * @return ListOrganizationTreeResponse
+     */
+    public ListOrganizationTreeResponse listOrganizationTree(ListOrganizationTreeRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listOrganizationTree);
+    }
+
+    /**
+     * 查询组织结构
+     *
+     * 查询组织结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationTreeRequest 请求对象
+     * @return SyncInvoker<ListOrganizationTreeRequest, ListOrganizationTreeResponse>
+     */
+    public SyncInvoker<ListOrganizationTreeRequest, ListOrganizationTreeResponse> listOrganizationTreeInvoker(
+        ListOrganizationTreeRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listOrganizationTree, hcClient);
+    }
+
+    /**
+     * 创建安全报告模板
+     *
+     * 创建安全报告模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReportProfileRequest 请求对象
+     * @return CreateReportProfileResponse
+     */
+    public CreateReportProfileResponse createReportProfile(CreateReportProfileRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.createReportProfile);
+    }
+
+    /**
+     * 创建安全报告模板
+     *
+     * 创建安全报告模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReportProfileRequest 请求对象
+     * @return SyncInvoker<CreateReportProfileRequest, CreateReportProfileResponse>
+     */
+    public SyncInvoker<CreateReportProfileRequest, CreateReportProfileResponse> createReportProfileInvoker(
+        CreateReportProfileRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.createReportProfile, hcClient);
+    }
+
+    /**
+     * 删除安全报告模板
+     *
+     * 删除安全报告模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReportProfileRequest 请求对象
+     * @return DeleteReportProfileResponse
+     */
+    public DeleteReportProfileResponse deleteReportProfile(DeleteReportProfileRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.deleteReportProfile);
+    }
+
+    /**
+     * 删除安全报告模板
+     *
+     * 删除安全报告模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReportProfileRequest 请求对象
+     * @return SyncInvoker<DeleteReportProfileRequest, DeleteReportProfileResponse>
+     */
+    public SyncInvoker<DeleteReportProfileRequest, DeleteReportProfileResponse> deleteReportProfileInvoker(
+        DeleteReportProfileRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.deleteReportProfile, hcClient);
+    }
+
+    /**
+     * 查询安全报告模板列表
+     *
+     * 查询安全报告模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReportProfilesRequest 请求对象
+     * @return ListReportProfilesResponse
+     */
+    public ListReportProfilesResponse listReportProfiles(ListReportProfilesRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listReportProfiles);
+    }
+
+    /**
+     * 查询安全报告模板列表
+     *
+     * 查询安全报告模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReportProfilesRequest 请求对象
+     * @return SyncInvoker<ListReportProfilesRequest, ListReportProfilesResponse>
+     */
+    public SyncInvoker<ListReportProfilesRequest, ListReportProfilesResponse> listReportProfilesInvoker(
+        ListReportProfilesRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listReportProfiles, hcClient);
+    }
+
+    /**
+     * 查询安全报告
+     *
+     * 查询安全报告
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFirewallReportRequest 请求对象
+     * @return ShowFirewallReportResponse
+     */
+    public ShowFirewallReportResponse showFirewallReport(ShowFirewallReportRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showFirewallReport);
+    }
+
+    /**
+     * 查询安全报告
+     *
+     * 查询安全报告
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFirewallReportRequest 请求对象
+     * @return SyncInvoker<ShowFirewallReportRequest, ShowFirewallReportResponse>
+     */
+    public SyncInvoker<ShowFirewallReportRequest, ShowFirewallReportResponse> showFirewallReportInvoker(
+        ShowFirewallReportRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showFirewallReport, hcClient);
+    }
+
+    /**
+     * 获取安全报告模板
+     *
+     * 获取安全报告模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReportProfileRequest 请求对象
+     * @return ShowReportProfileResponse
+     */
+    public ShowReportProfileResponse showReportProfile(ShowReportProfileRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showReportProfile);
+    }
+
+    /**
+     * 获取安全报告模板
+     *
+     * 获取安全报告模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReportProfileRequest 请求对象
+     * @return SyncInvoker<ShowReportProfileRequest, ShowReportProfileResponse>
+     */
+    public SyncInvoker<ShowReportProfileRequest, ShowReportProfileResponse> showReportProfileInvoker(
+        ShowReportProfileRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showReportProfile, hcClient);
+    }
+
+    /**
+     * 更新安全报告模板
+     *
+     * 更新安全报告模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateReportProfileRequest 请求对象
+     * @return UpdateReportProfileResponse
+     */
+    public UpdateReportProfileResponse updateReportProfile(UpdateReportProfileRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.updateReportProfile);
+    }
+
+    /**
+     * 更新安全报告模板
+     *
+     * 更新安全报告模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateReportProfileRequest 请求对象
+     * @return SyncInvoker<UpdateReportProfileRequest, UpdateReportProfileResponse>
+     */
+    public SyncInvoker<UpdateReportProfileRequest, UpdateReportProfileResponse> updateReportProfileInvoker(
+        UpdateReportProfileRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.updateReportProfile, hcClient);
+    }
+
+    /**
+     * 更新VPC间防火墙防护状态
+     *
+     * 更新VPC间防火墙防护状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeEastWestFirewallStatusRequest 请求对象
+     * @return ChangeEastWestFirewallStatusResponse
+     */
+    public ChangeEastWestFirewallStatusResponse changeEastWestFirewallStatus(
+        ChangeEastWestFirewallStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.changeEastWestFirewallStatus);
+    }
+
+    /**
+     * 更新VPC间防火墙防护状态
+     *
+     * 更新VPC间防火墙防护状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeEastWestFirewallStatusRequest 请求对象
+     * @return SyncInvoker<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse>
+     */
+    public SyncInvoker<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatusInvoker(
+        ChangeEastWestFirewallStatusRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.changeEastWestFirewallStatus, hcClient);
+    }
+
+    /**
+     * 查询VPC间防火墙使用的企业路由器信息
+     *
+     * 查询VPC间防火墙使用的企业路由器信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEwAssociatedErRequest 请求对象
+     * @return ShowEwAssociatedErResponse
+     */
+    public ShowEwAssociatedErResponse showEwAssociatedEr(ShowEwAssociatedErRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showEwAssociatedEr);
+    }
+
+    /**
+     * 查询VPC间防火墙使用的企业路由器信息
+     *
+     * 查询VPC间防火墙使用的企业路由器信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEwAssociatedErRequest 请求对象
+     * @return SyncInvoker<ShowEwAssociatedErRequest, ShowEwAssociatedErResponse>
+     */
+    public SyncInvoker<ShowEwAssociatedErRequest, ShowEwAssociatedErResponse> showEwAssociatedErInvoker(
+        ShowEwAssociatedErRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showEwAssociatedEr, hcClient);
+    }
+
+    /**
+     * 查询VPC边界防火墙使用的引流VPC信息
+     *
+     * 查询VPC边界防火墙使用的引流VPC信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEwAssociatedVpcRequest 请求对象
+     * @return ShowEwAssociatedVpcResponse
+     */
+    public ShowEwAssociatedVpcResponse showEwAssociatedVpc(ShowEwAssociatedVpcRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showEwAssociatedVpc);
+    }
+
+    /**
+     * 查询VPC边界防火墙使用的引流VPC信息
+     *
+     * 查询VPC边界防火墙使用的引流VPC信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEwAssociatedVpcRequest 请求对象
+     * @return SyncInvoker<ShowEwAssociatedVpcRequest, ShowEwAssociatedVpcResponse>
+     */
+    public SyncInvoker<ShowEwAssociatedVpcRequest, ShowEwAssociatedVpcResponse> showEwAssociatedVpcInvoker(
+        ShowEwAssociatedVpcRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showEwAssociatedVpc, hcClient);
     }
 
 }

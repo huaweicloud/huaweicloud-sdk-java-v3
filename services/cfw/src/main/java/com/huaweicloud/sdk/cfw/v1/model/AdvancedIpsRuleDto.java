@@ -135,7 +135,7 @@ public class AdvancedIpsRuleDto {
     }
 
     /**
-     * Get status
+     * 开关状态：0表示关闭、1表示开启
      * minimum: 0
      * maximum: 1
      * @return status

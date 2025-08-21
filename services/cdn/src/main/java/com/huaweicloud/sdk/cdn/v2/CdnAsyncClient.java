@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.cdn.v2;
 
+import com.huaweicloud.sdk.cdn.v2.model.ApplyDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ApplyDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsRequest;
@@ -8,6 +10,8 @@ import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
@@ -20,6 +24,8 @@ import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteShareCacheGroupsRequest;
@@ -44,6 +50,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowAppliedTemplateRecordRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowAppliedTemplateRecordResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoRequest;
@@ -58,6 +66,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksRequest;
@@ -82,6 +92,8 @@ import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateFullRuleRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateFullRuleResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessRequest;
@@ -109,6 +121,35 @@ public class CdnAsyncClient {
     public static ClientBuilder<CdnAsyncClient> newBuilder() {
         ClientBuilder<CdnAsyncClient> clientBuilder = new ClientBuilder<>(CdnAsyncClient::new, "GlobalCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 应用域名模板。
+     *
+     * 应用域名模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyDomainTemplateRequest 请求对象
+     * @return CompletableFuture<ApplyDomainTemplateResponse>
+     */
+    public CompletableFuture<ApplyDomainTemplateResponse> applyDomainTemplateAsync(ApplyDomainTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.applyDomainTemplate);
+    }
+
+    /**
+     * 应用域名模板。
+     *
+     * 应用域名模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyDomainTemplateRequest 请求对象
+     * @return AsyncInvoker<ApplyDomainTemplateRequest, ApplyDomainTemplateResponse>
+     */
+    public AsyncInvoker<ApplyDomainTemplateRequest, ApplyDomainTemplateResponse> applyDomainTemplateAsyncInvoker(
+        ApplyDomainTemplateRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.applyDomainTemplate, hcClient);
     }
 
     /**
@@ -228,6 +269,36 @@ public class CdnAsyncClient {
     public AsyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainAsyncInvoker(
         CreateDomainRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.createDomain, hcClient);
+    }
+
+    /**
+     * 创建域名模板。
+     *
+     * 创建域名模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDomainTemplateRequest 请求对象
+     * @return CompletableFuture<CreateDomainTemplateResponse>
+     */
+    public CompletableFuture<CreateDomainTemplateResponse> createDomainTemplateAsync(
+        CreateDomainTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.createDomainTemplate);
+    }
+
+    /**
+     * 创建域名模板。
+     *
+     * 创建域名模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDomainTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateDomainTemplateRequest, CreateDomainTemplateResponse>
+     */
+    public AsyncInvoker<CreateDomainTemplateRequest, CreateDomainTemplateResponse> createDomainTemplateAsyncInvoker(
+        CreateDomainTemplateRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.createDomainTemplate, hcClient);
     }
 
     /**
@@ -411,6 +482,36 @@ public class CdnAsyncClient {
     public AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainAsyncInvoker(
         DeleteDomainRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.deleteDomain, hcClient);
+    }
+
+    /**
+     * 删除域名模板。
+     *
+     * 删除域名模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteDomainTemplateResponse>
+     */
+    public CompletableFuture<DeleteDomainTemplateResponse> deleteDomainTemplateAsync(
+        DeleteDomainTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.deleteDomainTemplate);
+    }
+
+    /**
+     * 删除域名模板。
+     *
+     * 删除域名模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainTemplateRequest, DeleteDomainTemplateResponse>
+     */
+    public AsyncInvoker<DeleteDomainTemplateRequest, DeleteDomainTemplateResponse> deleteDomainTemplateAsyncInvoker(
+        DeleteDomainTemplateRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.deleteDomainTemplate, hcClient);
     }
 
     /**
@@ -844,6 +945,36 @@ public class CdnAsyncClient {
     }
 
     /**
+     * 查询域名模板应用记录。
+     *
+     * 查询域名模板应用记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAppliedTemplateRecordRequest 请求对象
+     * @return CompletableFuture<ShowAppliedTemplateRecordResponse>
+     */
+    public CompletableFuture<ShowAppliedTemplateRecordResponse> showAppliedTemplateRecordAsync(
+        ShowAppliedTemplateRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showAppliedTemplateRecord);
+    }
+
+    /**
+     * 查询域名模板应用记录。
+     *
+     * 查询域名模板应用记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAppliedTemplateRecordRequest 请求对象
+     * @return AsyncInvoker<ShowAppliedTemplateRecordRequest, ShowAppliedTemplateRecordResponse>
+     */
+    public AsyncInvoker<ShowAppliedTemplateRecordRequest, ShowAppliedTemplateRecordResponse> showAppliedTemplateRecordAsyncInvoker(
+        ShowAppliedTemplateRecordRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.showAppliedTemplateRecord, hcClient);
+    }
+
+    /**
      * 查询域名带宽峰值类数据
      *
      * - 查询域名带宽峰值类数据。
@@ -1138,6 +1269,35 @@ public class CdnAsyncClient {
     public AsyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse> showDomainStatsAsyncInvoker(
         ShowDomainStatsRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showDomainStats, hcClient);
+    }
+
+    /**
+     * 查询域名模板列表
+     *
+     * 查询域名模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainTemplateRequest 请求对象
+     * @return CompletableFuture<ShowDomainTemplateResponse>
+     */
+    public CompletableFuture<ShowDomainTemplateResponse> showDomainTemplateAsync(ShowDomainTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainTemplate);
+    }
+
+    /**
+     * 查询域名模板列表
+     *
+     * 查询域名模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowDomainTemplateRequest, ShowDomainTemplateResponse>
+     */
+    public AsyncInvoker<ShowDomainTemplateRequest, ShowDomainTemplateResponse> showDomainTemplateAsyncInvoker(
+        ShowDomainTemplateRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.showDomainTemplate, hcClient);
     }
 
     /**
@@ -1535,6 +1695,36 @@ public class CdnAsyncClient {
     public AsyncInvoker<UpdateDomainMultiCertificatesRequest, UpdateDomainMultiCertificatesResponse> updateDomainMultiCertificatesAsyncInvoker(
         UpdateDomainMultiCertificatesRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.updateDomainMultiCertificates, hcClient);
+    }
+
+    /**
+     * 修改域名模板。
+     *
+     * 修改域名模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainTemplateRequest 请求对象
+     * @return CompletableFuture<UpdateDomainTemplateResponse>
+     */
+    public CompletableFuture<UpdateDomainTemplateResponse> updateDomainTemplateAsync(
+        UpdateDomainTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.updateDomainTemplate);
+    }
+
+    /**
+     * 修改域名模板。
+     *
+     * 修改域名模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainTemplateRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainTemplateRequest, UpdateDomainTemplateResponse>
+     */
+    public AsyncInvoker<UpdateDomainTemplateRequest, UpdateDomainTemplateResponse> updateDomainTemplateAsyncInvoker(
+        UpdateDomainTemplateRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.updateDomainTemplate, hcClient);
     }
 
     /**

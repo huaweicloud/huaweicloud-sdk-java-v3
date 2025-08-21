@@ -108,7 +108,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 服务控制策略（SCP），配置规则。
+     * 策略类别。
      * @return implementation
      */
     public String getImplementation() {
@@ -125,7 +125,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 控制策略必须性。
+     * 实施建议。
      * @return guidance
      */
     public String getGuidance() {
@@ -325,7 +325,7 @@ public class ShowControlResponse extends SdkResponse {
     }
 
     /**
-     * 纳管账号的创建来源，包括CUSTOM和RGC。
+     * 控制策略来源。
      * @return owner
      */
     public String getOwner() {

@@ -22,7 +22,7 @@ public class DeleteGroupResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 删除结果
      * @return body
      */
     public String getBody() {

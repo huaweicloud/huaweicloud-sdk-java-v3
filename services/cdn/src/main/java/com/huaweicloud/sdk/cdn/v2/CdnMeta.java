@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.cdn.v2;
 
 import com.huaweicloud.sdk.cdn.v2.model.AccountConfigModifyRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ApplyDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ApplyDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
@@ -12,6 +14,8 @@ import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRulesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
@@ -25,8 +29,11 @@ import com.huaweicloud.sdk.cdn.v2.model.CreateShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateTemplateRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteShareCacheGroupsRequest;
@@ -57,6 +64,8 @@ import com.huaweicloud.sdk.cdn.v2.model.RefreshTaskRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesBody;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowAppliedTemplateRecordRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowAppliedTemplateRecordResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoRequest;
@@ -71,6 +80,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksRequest;
@@ -91,11 +102,14 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowVerifyDomainOwnerInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowVerifyDomainOwnerInfoResponse;
+import com.huaweicloud.sdk.cdn.v2.model.TemplateApplyRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainMultiCertificatesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainTemplateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainTemplateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateFullRuleRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateFullRuleResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdatePrivateBucketAccessBody;
@@ -118,6 +132,34 @@ import com.huaweicloud.sdk.core.http.LocationType;
 
 @SuppressWarnings("unchecked")
 public class CdnMeta {
+
+    public static final HttpRequestDef<ApplyDomainTemplateRequest, ApplyDomainTemplateResponse> applyDomainTemplate =
+        genForApplyDomainTemplate();
+
+    private static HttpRequestDef<ApplyDomainTemplateRequest, ApplyDomainTemplateResponse> genForApplyDomainTemplate() {
+        // basic
+        HttpRequestDef.Builder<ApplyDomainTemplateRequest, ApplyDomainTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ApplyDomainTemplateRequest.class, ApplyDomainTemplateResponse.class)
+                .withName("ApplyDomainTemplate")
+                .withUri("/v1.0/cdn/configuration/templates/{tml_id}/apply")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tml_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ApplyDomainTemplateRequest::getTmlId, ApplyDomainTemplateRequest::setTmlId));
+        builder.<TemplateApplyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(TemplateApplyRequestBody.class),
+            f -> f.withMarshaller(ApplyDomainTemplateRequest::getBody, ApplyDomainTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCopyDomainRequest, BatchCopyDomainResponse> batchCopyDomain =
         genForBatchCopyDomain();
@@ -228,6 +270,29 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateDomainResponse::getXRequestId, CreateDomainResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDomainTemplateRequest, CreateDomainTemplateResponse> createDomainTemplate =
+        genForCreateDomainTemplate();
+
+    private static HttpRequestDef<CreateDomainTemplateRequest, CreateDomainTemplateResponse> genForCreateDomainTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateDomainTemplateRequest, CreateDomainTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDomainTemplateRequest.class, CreateDomainTemplateResponse.class)
+            .withName("CreateDomainTemplate")
+            .withUri("/v1.0/cdn/configuration/templates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTemplateRequestBody.class),
+            f -> f.withMarshaller(CreateDomainTemplateRequest::getBody, CreateDomainTemplateRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -409,6 +474,29 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteDomainResponse::getXRequestId, DeleteDomainResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDomainTemplateRequest, DeleteDomainTemplateResponse> deleteDomainTemplate =
+        genForDeleteDomainTemplate();
+
+    private static HttpRequestDef<DeleteDomainTemplateRequest, DeleteDomainTemplateResponse> genForDeleteDomainTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainTemplateRequest, DeleteDomainTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDomainTemplateRequest.class, DeleteDomainTemplateResponse.class)
+            .withName("DeleteDomainTemplate")
+            .withUri("/v1.0/cdn/configuration/templates/{tml_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tml_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainTemplateRequest::getTmlId, DeleteDomainTemplateRequest::setTmlId));
+
+        // response
+
         return builder.build();
     }
 
@@ -907,6 +995,57 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAppliedTemplateRecordRequest, ShowAppliedTemplateRecordResponse> showAppliedTemplateRecord =
+        genForShowAppliedTemplateRecord();
+
+    private static HttpRequestDef<ShowAppliedTemplateRecordRequest, ShowAppliedTemplateRecordResponse> genForShowAppliedTemplateRecord() {
+        // basic
+        HttpRequestDef.Builder<ShowAppliedTemplateRecordRequest, ShowAppliedTemplateRecordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAppliedTemplateRecordRequest.class,
+                    ShowAppliedTemplateRecordResponse.class)
+                .withName("ShowAppliedTemplateRecord")
+                .withUri("/v1.0/cdn/configuration/tml-apply-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tml_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppliedTemplateRecordRequest::getTmlId,
+                ShowAppliedTemplateRecordRequest::setTmlId));
+        builder.<String>withRequestField("tml_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppliedTemplateRecordRequest::getTmlName,
+                ShowAppliedTemplateRecordRequest::setTmlName));
+        builder.<String>withRequestField("operator_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppliedTemplateRecordRequest::getOperatorId,
+                ShowAppliedTemplateRecordRequest::setOperatorId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAppliedTemplateRecordRequest::getOffset,
+                ShowAppliedTemplateRecordRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAppliedTemplateRecordRequest::getLimit,
+                ShowAppliedTemplateRecordRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse> showBandwidthCalc =
         genForShowBandwidthCalc();
 
@@ -1265,6 +1404,49 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainStatsRequest::getEnterpriseProjectId,
                 ShowDomainStatsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainTemplateRequest, ShowDomainTemplateResponse> showDomainTemplate =
+        genForShowDomainTemplate();
+
+    private static HttpRequestDef<ShowDomainTemplateRequest, ShowDomainTemplateResponse> genForShowDomainTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainTemplateRequest, ShowDomainTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainTemplateRequest.class, ShowDomainTemplateResponse.class)
+                .withName("ShowDomainTemplate")
+                .withUri("/v1.0/cdn/configuration/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tml_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainTemplateRequest::getTmlName, ShowDomainTemplateRequest::setTmlName));
+        builder.<String>withRequestField("tml_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainTemplateRequest::getTmlId, ShowDomainTemplateRequest::setTmlId));
+        builder.<Integer>withRequestField("tml_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDomainTemplateRequest::getTmlType, ShowDomainTemplateRequest::setTmlType));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainTemplateRequest::getLimit, ShowDomainTemplateRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainTemplateRequest::getOffset, ShowDomainTemplateRequest::setOffset));
 
         // response
 
@@ -1804,6 +1986,34 @@ public class CdnMeta {
             String.class,
             f -> f.withMarshaller(UpdateDomainMultiCertificatesResponse::getXRequestId,
                 UpdateDomainMultiCertificatesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainTemplateRequest, UpdateDomainTemplateResponse> updateDomainTemplate =
+        genForUpdateDomainTemplate();
+
+    private static HttpRequestDef<UpdateDomainTemplateRequest, UpdateDomainTemplateResponse> genForUpdateDomainTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainTemplateRequest, UpdateDomainTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDomainTemplateRequest.class, UpdateDomainTemplateResponse.class)
+            .withName("UpdateDomainTemplate")
+            .withUri("/v1.0/cdn/configuration/templates/{tml_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tml_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainTemplateRequest::getTmlId, UpdateDomainTemplateRequest::setTmlId));
+        builder.<CreateTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateTemplateRequestBody.class),
+            f -> f.withMarshaller(UpdateDomainTemplateRequest::getBody, UpdateDomainTemplateRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 

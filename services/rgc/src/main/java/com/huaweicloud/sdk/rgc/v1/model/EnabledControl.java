@@ -56,7 +56,7 @@ public class EnabledControl {
     }
 
     /**
-     * 管理纳管账号ID。
+     * 管理员账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -158,7 +158,7 @@ public class EnabledControl {
     }
 
     /**
-     * 纳管账号的创建来源，包括CUSTOM和RGC。
+     * 控制策略来源。
      * @return owner
      */
     public String getOwner() {

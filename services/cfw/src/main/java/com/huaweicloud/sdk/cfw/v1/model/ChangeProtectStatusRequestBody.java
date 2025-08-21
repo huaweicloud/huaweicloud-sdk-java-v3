@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 修改东西向防护状态请求体
+ * ChangeProtectStatusRequestBody
  */
 public class ChangeProtectStatusRequestBody {
 
@@ -21,7 +21,7 @@ public class ChangeProtectStatusRequestBody {
     private String objectId;
 
     /**
-     * 防护状态：0 开启，1 关闭
+     * **参数解释**： VPC边界防护状态 **约束限制**： 不涉及 **取值范围**： 0- 开启防护、1- 关闭防护 **默认取值**： 不涉及
      */
     public static final class StatusEnum {
 
@@ -101,7 +101,7 @@ public class ChangeProtectStatusRequestBody {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为1的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
+     * **参数解释**： 防护对象ID，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return objectId
      */
     public String getObjectId() {
@@ -118,7 +118,7 @@ public class ChangeProtectStatusRequestBody {
     }
 
     /**
-     * 防护状态：0 开启，1 关闭
+     * **参数解释**： VPC边界防护状态 **约束限制**： 不涉及 **取值范围**： 0- 开启防护、1- 关闭防护 **默认取值**： 不涉及
      * @return status
      */
     public StatusEnum getStatus() {

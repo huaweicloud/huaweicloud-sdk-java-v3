@@ -26,7 +26,7 @@ public class ListOperationRequest {
     }
 
     /**
-     * 账户ID。
+     * 纳管账号ID。
      * @return accountId
      */
     public String getAccountId() {

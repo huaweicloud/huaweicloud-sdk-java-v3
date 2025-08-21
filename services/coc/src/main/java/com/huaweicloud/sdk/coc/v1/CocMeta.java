@@ -18,6 +18,8 @@ import com.huaweicloud.sdk.coc.v1.model.ClearAlarmRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ClearAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.CocUpdateChangeRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CocUpdateChangeRequestBodyV2;
+import com.huaweicloud.sdk.coc.v1.model.CountMultiCloudResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.CountMultiCloudResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskRequest;
@@ -144,8 +146,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskRequest;
@@ -205,6 +207,9 @@ import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoResponse;
+import com.huaweicloud.sdk.coc.v1.model.SyncMultiCloudResourceRequest;
+import com.huaweicloud.sdk.coc.v1.model.SyncMultiCloudResourceRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.SyncMultiCloudResourceResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceReq;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
@@ -2152,6 +2157,77 @@ public class CocMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CountMultiCloudResourcesRequest, CountMultiCloudResourcesResponse> countMultiCloudResources =
+        genForCountMultiCloudResources();
+
+    private static HttpRequestDef<CountMultiCloudResourcesRequest, CountMultiCloudResourcesResponse> genForCountMultiCloudResources() {
+        // basic
+        HttpRequestDef.Builder<CountMultiCloudResourcesRequest, CountMultiCloudResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, CountMultiCloudResourcesRequest.class, CountMultiCloudResourcesResponse.class)
+                .withName("CountMultiCloudResources")
+                .withUri("/v1/multicloud-resources/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vendor",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountMultiCloudResourcesRequest::getVendor,
+                CountMultiCloudResourcesRequest::setVendor));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountMultiCloudResourcesRequest::getType, CountMultiCloudResourcesRequest::setType));
+        builder.<List<String>>withRequestField("resource_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountMultiCloudResourcesRequest::getResourceIdList,
+                CountMultiCloudResourcesRequest::setResourceIdList));
+        builder.<List<String>>withRequestField("name_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountMultiCloudResourcesRequest::getNameList,
+                CountMultiCloudResourcesRequest::setNameList));
+        builder.<List<String>>withRequestField("region_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountMultiCloudResourcesRequest::getRegionIdList,
+                CountMultiCloudResourcesRequest::setRegionIdList));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncMultiCloudResourceRequest, SyncMultiCloudResourceResponse> syncMultiCloudResource =
+        genForSyncMultiCloudResource();
+
+    private static HttpRequestDef<SyncMultiCloudResourceRequest, SyncMultiCloudResourceResponse> genForSyncMultiCloudResource() {
+        // basic
+        HttpRequestDef.Builder<SyncMultiCloudResourceRequest, SyncMultiCloudResourceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SyncMultiCloudResourceRequest.class, SyncMultiCloudResourceResponse.class)
+            .withName("SyncMultiCloudResource")
+            .withUri("/v1/multicloud-resources/sync")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<SyncMultiCloudResourceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SyncMultiCloudResourceRequestBody.class),
+            f -> f.withMarshaller(SyncMultiCloudResourceRequest::getBody, SyncMultiCloudResourceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CountMultiResourcesRequest, CountMultiResourcesResponse> countMultiResources =
         genForCountMultiResources();
 
@@ -2191,13 +2267,14 @@ public class CocMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourceRequest, ListResourceResponse> listResource = genForListResource();
+    public static final HttpRequestDef<ListResourcesRequest, ListResourcesResponse> listResources =
+        genForListResources();
 
-    private static HttpRequestDef<ListResourceRequest, ListResourceResponse> genForListResource() {
+    private static HttpRequestDef<ListResourcesRequest, ListResourcesResponse> genForListResources() {
         // basic
-        HttpRequestDef.Builder<ListResourceRequest, ListResourceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListResourceRequest.class, ListResourceResponse.class)
-                .withName("ListResource")
+        HttpRequestDef.Builder<ListResourcesRequest, ListResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourcesRequest.class, ListResourcesResponse.class)
+                .withName("ListResources")
                 .withUri("/v1/resources")
                 .withContentType("application/json");
 
@@ -2206,122 +2283,184 @@ public class CocMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getProvider, ListResourceRequest::setProvider));
+            f -> f.withMarshaller(ListResourcesRequest::getProvider, ListResourcesRequest::setProvider));
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getType, ListResourceRequest::setType));
+            f -> f.withMarshaller(ListResourcesRequest::getType, ListResourcesRequest::setType));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListResourceRequest::getLimit, ListResourceRequest::setLimit));
+            f -> f.withMarshaller(ListResourcesRequest::getLimit, ListResourcesRequest::setLimit));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getMarker, ListResourceRequest::setMarker));
+            f -> f.withMarshaller(ListResourcesRequest::getMarker, ListResourcesRequest::setMarker));
         builder.<List<String>>withRequestField("resource_id_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListResourceRequest::getResourceIdList, ListResourceRequest::setResourceIdList));
+            f -> f.withMarshaller(ListResourcesRequest::getResourceIdList, ListResourcesRequest::setResourceIdList));
+        builder.<List<String>>withRequestField("ip_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResourcesRequest::getIpList, ListResourcesRequest::setIpList));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getName, ListResourceRequest::setName));
+            f -> f.withMarshaller(ListResourcesRequest::getName, ListResourcesRequest::setName));
         builder.<String>withRequestField("region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getRegionId, ListResourceRequest::setRegionId));
+            f -> f.withMarshaller(ListResourcesRequest::getRegionId, ListResourcesRequest::setRegionId));
         builder.<String>withRequestField("az_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getAzId, ListResourceRequest::setAzId));
+            f -> f.withMarshaller(ListResourcesRequest::getAzId, ListResourcesRequest::setAzId));
         builder.<String>withRequestField("ip_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getIpType, ListResourceRequest::setIpType));
+            f -> f.withMarshaller(ListResourcesRequest::getIpType, ListResourcesRequest::setIpType));
         builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getIp, ListResourceRequest::setIp));
+            f -> f.withMarshaller(ListResourcesRequest::getIp, ListResourcesRequest::setIp));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getStatus, ListResourceRequest::setStatus));
+            f -> f.withMarshaller(ListResourcesRequest::getStatus, ListResourcesRequest::setStatus));
         builder.<String>withRequestField("agent_state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getAgentState, ListResourceRequest::setAgentState));
+            f -> f.withMarshaller(ListResourcesRequest::getAgentState, ListResourcesRequest::setAgentState));
         builder.<String>withRequestField("image_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getImageName, ListResourceRequest::setImageName));
+            f -> f.withMarshaller(ListResourcesRequest::getImageName, ListResourcesRequest::setImageName));
         builder.<String>withRequestField("os_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getOsType, ListResourceRequest::setOsType));
+            f -> f.withMarshaller(ListResourcesRequest::getOsType, ListResourcesRequest::setOsType));
         builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getTag, ListResourceRequest::setTag));
+            f -> f.withMarshaller(ListResourcesRequest::getTag, ListResourcesRequest::setTag));
         builder.<String>withRequestField("tag_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getTagKey, ListResourceRequest::setTagKey));
+            f -> f.withMarshaller(ListResourcesRequest::getTagKey, ListResourcesRequest::setTagKey));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getGroupId, ListResourceRequest::setGroupId));
+            f -> f.withMarshaller(ListResourcesRequest::getGroupId, ListResourcesRequest::setGroupId));
         builder.<String>withRequestField("component_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getComponentId, ListResourceRequest::setComponentId));
+            f -> f.withMarshaller(ListResourcesRequest::getComponentId, ListResourcesRequest::setComponentId));
         builder.<String>withRequestField("application_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getApplicationId, ListResourceRequest::setApplicationId));
+            f -> f.withMarshaller(ListResourcesRequest::getApplicationId, ListResourcesRequest::setApplicationId));
         builder.<String>withRequestField("cce_cluster_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getCceClusterId, ListResourceRequest::setCceClusterId));
+            f -> f.withMarshaller(ListResourcesRequest::getCceClusterId, ListResourcesRequest::setCceClusterId));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getVpcId, ListResourceRequest::setVpcId));
+            f -> f.withMarshaller(ListResourcesRequest::getVpcId, ListResourcesRequest::setVpcId));
         builder.<String>withRequestField("ep_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getEpId, ListResourceRequest::setEpId));
+            f -> f.withMarshaller(ListResourcesRequest::getEpId, ListResourcesRequest::setEpId));
         builder.<Boolean>withRequestField("is_delegated",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListResourceRequest::getIsDelegated, ListResourceRequest::setIsDelegated));
+            f -> f.withMarshaller(ListResourcesRequest::getIsDelegated, ListResourcesRequest::setIsDelegated));
         builder.<String>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceRequest::getProjectId, ListResourceRequest::setProjectId));
+            f -> f.withMarshaller(ListResourcesRequest::getProjectId, ListResourcesRequest::setProjectId));
+        builder.<Boolean>withRequestField("is_collected",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListResourcesRequest::getIsCollected, ListResourcesRequest::setIsCollected));
+        builder.<String>withRequestField("flavor_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getFlavorName, ListResourcesRequest::setFlavorName));
+        builder.<String>withRequestField("charging_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getChargingMode, ListResourcesRequest::setChargingMode));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getOffset, ListResourcesRequest::setOffset));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getEnterpriseProjectId,
+                ListResourcesRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("order_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getOrderField, ListResourcesRequest::setOrderField));
+        builder.<String>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getDirection, ListResourcesRequest::setDirection));
+        builder.<String>withRequestField("show_associated_groups",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getShowAssociatedGroups,
+                ListResourcesRequest::setShowAssociatedGroups));
+        builder.<String>withRequestField("operable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getOperable, ListResourcesRequest::setOperable));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getCreateSince, ListResourcesRequest::setCreateSince));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getCreateUntil, ListResourcesRequest::setCreateUntil));
 
         // response
 
@@ -2329,7 +2468,7 @@ public class CocMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListResourceResponse::getXRequestId, ListResourceResponse::setXRequestId));
+            f -> f.withMarshaller(ListResourcesResponse::getXRequestId, ListResourcesResponse::setXRequestId));
         return builder.build();
     }
 

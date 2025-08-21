@@ -172,7 +172,7 @@ public class TemplateParamVariable {
     }
 
     /**
-     * Get validations
+     * 模板的部署参数变量的校验规则。
      * @return validations
      */
     public List<TemplateParamVariableValidation> getValidations() {

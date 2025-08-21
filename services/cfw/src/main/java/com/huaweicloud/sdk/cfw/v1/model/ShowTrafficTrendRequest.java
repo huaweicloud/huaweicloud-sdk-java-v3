@@ -24,7 +24,7 @@ public class ShowTrafficTrendRequest {
     private String fwInstanceId;
 
     /**
-     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及 
+     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及
      */
     public static final class RangeEnum {
 
@@ -105,7 +105,7 @@ public class ShowTrafficTrendRequest {
     private RangeEnum range;
 
     /**
-     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及 
+     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
      */
     public static final class LogTypeEnum {
 
@@ -292,7 +292,7 @@ public class ShowTrafficTrendRequest {
     }
 
     /**
-     * **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及 
+     * **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -309,7 +309,7 @@ public class ShowTrafficTrendRequest {
     }
 
     /**
-     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及 
+     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及
      * @return range
      */
     public RangeEnum getRange() {
@@ -326,7 +326,7 @@ public class ShowTrafficTrendRequest {
     }
 
     /**
-     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及 
+     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
      * @return logType
      */
     public LogTypeEnum getLogType() {
@@ -343,9 +343,9 @@ public class ShowTrafficTrendRequest {
     }
 
     /**
-     * **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及 
+     * **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 4294967295000
+     * maximum: 9223372036854775807
      * @return startTime
      */
     public Long getStartTime() {
@@ -362,9 +362,9 @@ public class ShowTrafficTrendRequest {
     }
 
     /**
-     * **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及 
+     * **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 4294967295000
+     * maximum: 9223372036854775807
      * @return endTime
      */
     public Long getEndTime() {
@@ -397,7 +397,7 @@ public class ShowTrafficTrendRequest {
     }
 
     /**
-     * **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及 
+     * **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return vgwId
      */
     public List<String> getVgwId() {

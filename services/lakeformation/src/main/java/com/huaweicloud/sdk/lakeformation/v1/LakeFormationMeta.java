@@ -717,7 +717,7 @@ public class LakeFormationMeta {
         HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
                 .withName("CreateAgency")
-                .withUri("/v1/{project_id}/agency")
+                .withUri("/v2/agency")
                 .withContentType("application/json");
 
         // requests
@@ -739,7 +739,7 @@ public class LakeFormationMeta {
         HttpRequestDef.Builder<DeleteAgencyRequest, DeleteAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAgencyRequest.class, DeleteAgencyResponse.class)
                 .withName("DeleteAgency")
-                .withUri("/v1/{project_id}/agency")
+                .withUri("/v2/agency")
                 .withContentType("application/json");
 
         // requests
@@ -766,7 +766,7 @@ public class LakeFormationMeta {
         HttpRequestDef.Builder<ShowAgencyRequest, ShowAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgencyRequest.class, ShowAgencyResponse.class)
                 .withName("ShowAgency")
-                .withUri("/v1/{project_id}/agency")
+                .withUri("/v2/agency")
                 .withContentType("application/json");
 
         // requests
@@ -1567,7 +1567,7 @@ public class LakeFormationMeta {
         HttpRequestDef.Builder<CreateAgreementRequest, CreateAgreementResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgreementRequest.class, CreateAgreementResponse.class)
                 .withName("CreateAgreement")
-                .withUri("/v1/{project_id}/agreement")
+                .withUri("/v2/agreement")
                 .withContentType("application/json");
 
         // requests
@@ -1595,7 +1595,7 @@ public class LakeFormationMeta {
         HttpRequestDef.Builder<DeleteAgreementRequest, DeleteAgreementResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAgreementRequest.class, DeleteAgreementResponse.class)
                 .withName("DeleteAgreement")
-                .withUri("/v1/{project_id}/agreement")
+                .withUri("/v2/agreement")
                 .withContentType("application/json");
 
         // requests
@@ -1641,7 +1641,7 @@ public class LakeFormationMeta {
         HttpRequestDef.Builder<ShowAgreementRequest, ShowAgreementResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgreementRequest.class, ShowAgreementResponse.class)
                 .withName("ShowAgreement")
-                .withUri("/v1/{project_id}/agreement")
+                .withUri("/v2/agreement")
                 .withContentType("application/json");
 
         // requests

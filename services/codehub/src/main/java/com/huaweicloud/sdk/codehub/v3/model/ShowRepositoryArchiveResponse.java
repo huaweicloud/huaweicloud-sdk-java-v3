@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.codehub.v3.model;
 
-import com.huaweicloud.sdk.core.SdkResponse;
+import com.huaweicloud.sdk.core.SdkStreamResponse;
 
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class ShowRepositoryArchiveResponse extends SdkResponse {
+public class ShowRepositoryArchiveResponse extends SdkStreamResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {

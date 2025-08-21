@@ -81,7 +81,7 @@ public class TargetControl {
     }
 
     /**
-     * 管理纳管账号ID。
+     * 管理员账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -217,7 +217,7 @@ public class TargetControl {
     }
 
     /**
-     * 纳管账号的创建来源，包括CUSTOM和RGC。
+     * 控制策略来源。
      * @return owner
      */
     public String getOwner() {
@@ -285,7 +285,7 @@ public class TargetControl {
     }
 
     /**
-     * 服务控制策略（SCP），配置规则。
+     * 策略类别。
      * @return implementation
      */
     public String getImplementation() {

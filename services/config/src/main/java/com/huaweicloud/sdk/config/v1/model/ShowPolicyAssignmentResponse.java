@@ -115,6 +115,11 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
     private PolicyFilterDefinition policyFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_filter_v2")
+
+    private PolicyFilterDefinitionV2 policyFilterV2;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
     private String period;
@@ -261,6 +266,32 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
 
     public void setPolicyFilter(PolicyFilterDefinition policyFilter) {
         this.policyFilter = policyFilter;
+    }
+
+    public ShowPolicyAssignmentResponse withPolicyFilterV2(PolicyFilterDefinitionV2 policyFilterV2) {
+        this.policyFilterV2 = policyFilterV2;
+        return this;
+    }
+
+    public ShowPolicyAssignmentResponse withPolicyFilterV2(Consumer<PolicyFilterDefinitionV2> policyFilterV2Setter) {
+        if (this.policyFilterV2 == null) {
+            this.policyFilterV2 = new PolicyFilterDefinitionV2();
+            policyFilterV2Setter.accept(this.policyFilterV2);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get policyFilterV2
+     * @return policyFilterV2
+     */
+    public PolicyFilterDefinitionV2 getPolicyFilterV2() {
+        return policyFilterV2;
+    }
+
+    public void setPolicyFilterV2(PolicyFilterDefinitionV2 policyFilterV2) {
+        this.policyFilterV2 = policyFilterV2;
     }
 
     public ShowPolicyAssignmentResponse withPeriod(String period) {
@@ -502,7 +533,8 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
         ShowPolicyAssignmentResponse that = (ShowPolicyAssignmentResponse) obj;
         return Objects.equals(this.policyAssignmentType, that.policyAssignmentType) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.policyFilter, that.policyFilter) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.policyFilter, that.policyFilter)
+            && Objects.equals(this.policyFilterV2, that.policyFilterV2) && Objects.equals(this.period, that.period)
             && Objects.equals(this.state, that.state) && Objects.equals(this.created, that.created)
             && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
@@ -518,6 +550,7 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
             name,
             description,
             policyFilter,
+            policyFilterV2,
             period,
             state,
             created,
@@ -540,6 +573,7 @@ public class ShowPolicyAssignmentResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyFilter: ").append(toIndentedString(policyFilter)).append("\n");
+        sb.append("    policyFilterV2: ").append(toIndentedString(policyFilterV2)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");

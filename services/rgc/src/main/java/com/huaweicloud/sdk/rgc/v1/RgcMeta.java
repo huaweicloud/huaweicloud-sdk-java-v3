@@ -8,7 +8,6 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.rgc.v1.model.BestPracticeCheckItemDetail;
 import com.huaweicloud.sdk.rgc.v1.model.CheckLaunchRequest;
 import com.huaweicloud.sdk.rgc.v1.model.CheckLaunchResponse;
-import com.huaweicloud.sdk.rgc.v1.model.ControlOperateReqBody;
 import com.huaweicloud.sdk.rgc.v1.model.CreateAccountRequest;
 import com.huaweicloud.sdk.rgc.v1.model.CreateAccountResponse;
 import com.huaweicloud.sdk.rgc.v1.model.CreateBestPracticeDetectRequest;
@@ -28,8 +27,10 @@ import com.huaweicloud.sdk.rgc.v1.model.DeleteTemplateRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DeleteTemplateResponse;
 import com.huaweicloud.sdk.rgc.v1.model.DeregisterOrganizationalUnitRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DeregisterOrganizationalUnitResponse;
+import com.huaweicloud.sdk.rgc.v1.model.DisableControlOperateReqBody;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.DisableControlResponse;
+import com.huaweicloud.sdk.rgc.v1.model.EnableControlOperateReqBody;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlRequest;
 import com.huaweicloud.sdk.rgc.v1.model.EnableControlResponse;
 import com.huaweicloud.sdk.rgc.v1.model.EnrollAccountRequest;
@@ -70,6 +71,8 @@ import com.huaweicloud.sdk.rgc.v1.model.SetupLandingZoneRequest;
 import com.huaweicloud.sdk.rgc.v1.model.SetupLandingZoneResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowAvailableUpdatesRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowAvailableUpdatesResponse;
+import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeAccountInfoRequest;
+import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeAccountInfoResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeDetailsRequest;
 import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeDetailsResponse;
 import com.huaweicloud.sdk.rgc.v1.model.ShowBestPracticeOverviewRequest;
@@ -129,6 +132,27 @@ public class RgcMeta {
                 .builder(HttpMethod.POST, CreateBestPracticeDetectRequest.class, CreateBestPracticeDetectResponse.class)
                 .withName("CreateBestPracticeDetect")
                 .withUri("/v1/best-practice/detect")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBestPracticeAccountInfoRequest, ShowBestPracticeAccountInfoResponse> showBestPracticeAccountInfo =
+        genForShowBestPracticeAccountInfo();
+
+    private static HttpRequestDef<ShowBestPracticeAccountInfoRequest, ShowBestPracticeAccountInfoResponse> genForShowBestPracticeAccountInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowBestPracticeAccountInfoRequest, ShowBestPracticeAccountInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBestPracticeAccountInfoRequest.class,
+                    ShowBestPracticeAccountInfoResponse.class)
+                .withName("ShowBestPracticeAccountInfo")
+                .withUri("/v1/best-practice/account-info")
                 .withContentType("application/json");
 
         // requests
@@ -211,10 +235,10 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ControlOperateReqBody>withRequestField("body",
+        builder.<DisableControlOperateReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ControlOperateReqBody.class),
+            TypeCasts.uncheckedConversion(DisableControlOperateReqBody.class),
             f -> f.withMarshaller(DisableControlRequest::getBody, DisableControlRequest::setBody));
 
         // response
@@ -234,10 +258,10 @@ public class RgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ControlOperateReqBody>withRequestField("body",
+        builder.<EnableControlOperateReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ControlOperateReqBody.class),
+            TypeCasts.uncheckedConversion(EnableControlOperateReqBody.class),
             f -> f.withMarshaller(EnableControlRequest::getBody, EnableControlRequest::setBody));
 
         // response

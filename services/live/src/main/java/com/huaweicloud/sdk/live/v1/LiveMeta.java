@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.live.v1.model.AddFlowOutputsRequest;
 import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsRequest;
 import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsResponse;
 import com.huaweicloud.sdk.live.v1.model.CallbackUrl;
@@ -12,6 +13,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateFlowOutputRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateFlowsRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateFlowsRequestBody;
 import com.huaweicloud.sdk.live.v1.model.CreateFlowsResponse;
@@ -48,6 +51,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteFlowOutputRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteFlowRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteFlowResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteHarvestTaskRequest;
@@ -76,6 +81,11 @@ import com.huaweicloud.sdk.live.v1.model.DomainMapping;
 import com.huaweicloud.sdk.live.v1.model.GeoBlockingConfigInfo;
 import com.huaweicloud.sdk.live.v1.model.IPAuthInfo;
 import com.huaweicloud.sdk.live.v1.model.KeyChainInfo;
+import com.huaweicloud.sdk.live.v1.model.ListCesDimsInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.ListCesDimsInfoResponse;
+import com.huaweicloud.sdk.live.v1.model.ListCesInstanceRequest;
+import com.huaweicloud.sdk.live.v1.model.ListCesInstanceRequestBody;
+import com.huaweicloud.sdk.live.v1.model.ListCesInstanceResponse;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListFlowsRequest;
@@ -112,6 +122,8 @@ import com.huaweicloud.sdk.live.v1.model.LiveDomainCreateReq;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyDelayConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesRequestBody;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesResponse;
@@ -164,6 +176,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowOutputInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowOutputInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigRequest;
@@ -187,6 +201,7 @@ import com.huaweicloud.sdk.live.v1.model.UpdateDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateFlowOutputRequestBody;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateHarvestJobStatusRequest;
@@ -281,6 +296,35 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DomainMapping.class),
             f -> f.withMarshaller(CreateDomainMappingRequest::getBody, CreateDomainMappingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFlowOutputRequest, CreateFlowOutputResponse> createFlowOutput =
+        genForCreateFlowOutput();
+
+    private static HttpRequestDef<CreateFlowOutputRequest, CreateFlowOutputResponse> genForCreateFlowOutput() {
+        // basic
+        HttpRequestDef.Builder<CreateFlowOutputRequest, CreateFlowOutputResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFlowOutputRequest.class, CreateFlowOutputResponse.class)
+                .withName("CreateFlowOutput")
+                .withUri("/v1/{project_id}/flows/outputs")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFlowOutputRequest::getFlowId, CreateFlowOutputRequest::setFlowId));
+        builder.<List<AddFlowOutputsRequest>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CreateFlowOutputRequest::getBody, CreateFlowOutputRequest::setBody)
+                .withInnerContainerType(AddFlowOutputsRequest.class));
 
         // response
 
@@ -634,6 +678,34 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteFlowRequest::getFlowId, DeleteFlowRequest::setFlowId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFlowOutputRequest, DeleteFlowOutputResponse> deleteFlowOutput =
+        genForDeleteFlowOutput();
+
+    private static HttpRequestDef<DeleteFlowOutputRequest, DeleteFlowOutputResponse> genForDeleteFlowOutput() {
+        // basic
+        HttpRequestDef.Builder<DeleteFlowOutputRequest, DeleteFlowOutputResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFlowOutputRequest.class, DeleteFlowOutputResponse.class)
+                .withName("DeleteFlowOutput")
+                .withUri("/v1/{project_id}/flows/outputs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlowOutputRequest::getFlowId, DeleteFlowOutputRequest::setFlowId));
+        builder.<String>withRequestField("output_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlowOutputRequest::getOutputName, DeleteFlowOutputRequest::setOutputName));
 
         // response
 
@@ -1403,6 +1475,39 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyFlowOutputRequest, ModifyFlowOutputResponse> modifyFlowOutput =
+        genForModifyFlowOutput();
+
+    private static HttpRequestDef<ModifyFlowOutputRequest, ModifyFlowOutputResponse> genForModifyFlowOutput() {
+        // basic
+        HttpRequestDef.Builder<ModifyFlowOutputRequest, ModifyFlowOutputResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyFlowOutputRequest.class, ModifyFlowOutputResponse.class)
+                .withName("ModifyFlowOutput")
+                .withUri("/v1/{project_id}/flows/outputs")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyFlowOutputRequest::getFlowId, ModifyFlowOutputRequest::setFlowId));
+        builder.<String>withRequestField("output_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyFlowOutputRequest::getOutputName, ModifyFlowOutputRequest::setOutputName));
+        builder.<UpdateFlowOutputRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFlowOutputRequestBody.class),
+            f -> f.withMarshaller(ModifyFlowOutputRequest::getBody, ModifyFlowOutputRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyFlowSourcesRequest, ModifyFlowSourcesResponse> modifyFlowSources =
         genForModifyFlowSources();
 
@@ -1605,6 +1710,39 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFlowDetailRequest::getFlowId, ShowFlowDetailRequest::setFlowId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOutputInfoRequest, ShowOutputInfoResponse> showOutputInfo =
+        genForShowOutputInfo();
+
+    private static HttpRequestDef<ShowOutputInfoRequest, ShowOutputInfoResponse> genForShowOutputInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowOutputInfoRequest, ShowOutputInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOutputInfoRequest.class, ShowOutputInfoResponse.class)
+                .withName("ShowOutputInfo")
+                .withUri("/v1/{project_id}/flows/outputs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowOutputInfoRequest.DataDisplayEnum>withRequestField("data_display",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowOutputInfoRequest.DataDisplayEnum.class),
+            f -> f.withMarshaller(ShowOutputInfoRequest::getDataDisplay, ShowOutputInfoRequest::setDataDisplay));
+        builder.<String>withRequestField("flow_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOutputInfoRequest::getFlowId, ShowOutputInfoRequest::setFlowId));
+        builder.<String>withRequestField("output_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOutputInfoRequest::getOutputName, ShowOutputInfoRequest::setOutputName));
 
         // response
 
@@ -2106,6 +2244,52 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(StreamTranscodingTemplate.class),
             f -> f.withMarshaller(UpdateTranscodingsTemplateRequest::getBody,
                 UpdateTranscodingsTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCesDimsInfoRequest, ListCesDimsInfoResponse> listCesDimsInfo =
+        genForListCesDimsInfo();
+
+    private static HttpRequestDef<ListCesDimsInfoRequest, ListCesDimsInfoResponse> genForListCesDimsInfo() {
+        // basic
+        HttpRequestDef.Builder<ListCesDimsInfoRequest, ListCesDimsInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCesDimsInfoRequest.class, ListCesDimsInfoResponse.class)
+                .withName("ListCesDimsInfo")
+                .withUri("/v1/{project_id}/ott/dims-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCesDimsInfoRequest::getNamespace, ListCesDimsInfoRequest::setNamespace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCesInstanceRequest, ListCesInstanceResponse> listCesInstance =
+        genForListCesInstance();
+
+    private static HttpRequestDef<ListCesInstanceRequest, ListCesInstanceResponse> genForListCesInstance() {
+        // basic
+        HttpRequestDef.Builder<ListCesInstanceRequest, ListCesInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListCesInstanceRequest.class, ListCesInstanceResponse.class)
+                .withName("ListCesInstance")
+                .withUri("/v1/{project_id}/ott/instances")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<ListCesInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCesInstanceRequestBody.class),
+            f -> f.withMarshaller(ListCesInstanceRequest::getBody, ListCesInstanceRequest::setBody));
 
         // response
 

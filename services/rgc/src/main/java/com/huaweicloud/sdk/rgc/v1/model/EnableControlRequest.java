@@ -14,16 +14,16 @@ public class EnableControlRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ControlOperateReqBody body;
+    private EnableControlOperateReqBody body;
 
-    public EnableControlRequest withBody(ControlOperateReqBody body) {
+    public EnableControlRequest withBody(EnableControlOperateReqBody body) {
         this.body = body;
         return this;
     }
 
-    public EnableControlRequest withBody(Consumer<ControlOperateReqBody> bodySetter) {
+    public EnableControlRequest withBody(Consumer<EnableControlOperateReqBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ControlOperateReqBody();
+            this.body = new EnableControlOperateReqBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class EnableControlRequest {
      * Get body
      * @return body
      */
-    public ControlOperateReqBody getBody() {
+    public EnableControlOperateReqBody getBody() {
         return body;
     }
 
-    public void setBody(ControlOperateReqBody body) {
+    public void setBody(EnableControlOperateReqBody body) {
         this.body = body;
     }
 

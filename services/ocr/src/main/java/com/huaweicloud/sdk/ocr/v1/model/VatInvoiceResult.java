@@ -345,7 +345,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 小计金额，当传入多页PDF时返回此字段。 
+     * 小计金额，当传入为全电发票时返回此字段。 
      * @return sumAmount
      */
     public String getSumAmount() {
@@ -362,7 +362,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 小计税额，当传入多页PDF时返回此字段。 
+     * 小计税额，当传入为全电发票时返回此字段。 
      * @return sumTax
      */
     public String getSumTax() {

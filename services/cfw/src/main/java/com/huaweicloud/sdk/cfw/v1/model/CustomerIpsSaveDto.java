@@ -248,14 +248,14 @@ public class CustomerIpsSaveDto {
     private String fwInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ips_name")
-
-    private String ipsName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_id")
 
     private String objectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ips_name")
+
+    private String ipsName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
@@ -425,23 +425,6 @@ public class CustomerIpsSaveDto {
         this.fwInstanceId = fwInstanceId;
     }
 
-    public CustomerIpsSaveDto withIpsName(String ipsName) {
-        this.ipsName = ipsName;
-        return this;
-    }
-
-    /**
-     * **参数解释**： ips规则名称 **取值范围**： 不涉及
-     * @return ipsName
-     */
-    public String getIpsName() {
-        return ipsName;
-    }
-
-    public void setIpsName(String ipsName) {
-        this.ipsName = ipsName;
-    }
-
     public CustomerIpsSaveDto withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -457,6 +440,23 @@ public class CustomerIpsSaveDto {
 
     public void setObjectId(String objectId) {
         this.objectId = objectId;
+    }
+
+    public CustomerIpsSaveDto withIpsName(String ipsName) {
+        this.ipsName = ipsName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： ips规则名称 **取值范围**： 不涉及
+     * @return ipsName
+     */
+    public String getIpsName() {
+        return ipsName;
+    }
+
+    public void setIpsName(String ipsName) {
+        this.ipsName = ipsName;
     }
 
     public CustomerIpsSaveDto withProtocol(Integer protocol) {
@@ -554,8 +554,8 @@ public class CustomerIpsSaveDto {
         return Objects.equals(this.actionType, that.actionType) && Objects.equals(this.affectedOs, that.affectedOs)
             && Objects.equals(this.attackType, that.attackType) && Objects.equals(this.contents, that.contents)
             && Objects.equals(this.direction, that.direction) && Objects.equals(this.dstPort, that.dstPort)
-            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.ipsName, that.ipsName)
-            && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.objectId, that.objectId)
+            && Objects.equals(this.ipsName, that.ipsName) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.severity, that.severity) && Objects.equals(this.software, that.software)
             && Objects.equals(this.srcPort, that.srcPort);
     }
@@ -569,8 +569,8 @@ public class CustomerIpsSaveDto {
             direction,
             dstPort,
             fwInstanceId,
-            ipsName,
             objectId,
+            ipsName,
             protocol,
             severity,
             software,
@@ -588,8 +588,8 @@ public class CustomerIpsSaveDto {
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    dstPort: ").append(toIndentedString(dstPort)).append("\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
-        sb.append("    ipsName: ").append(toIndentedString(ipsName)).append("\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
+        sb.append("    ipsName: ").append(toIndentedString(ipsName)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    software: ").append(toIndentedString(software)).append("\n");

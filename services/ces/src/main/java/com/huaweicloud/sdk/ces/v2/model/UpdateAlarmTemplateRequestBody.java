@@ -24,7 +24,7 @@ public class UpdateAlarmTemplateRequestBody {
     private String templateName;
 
     /**
-     * **参数解释**： 自定义告警模板类型 **约束限制**： 不涉及。 **取值范围**： 枚举值。0：指标；2： 事件。 **默认取值**： 0 
+     * **参数解释**： 自定义告警模板类型 **约束限制**： 当template_type为0或者不选时，policies中的dimension_name必填。当template_type为2时，dimension_name为空。 **取值范围**： 枚举值。0：指标；2： 事件。 **默认取值**： 0 
      */
     public static final class TemplateTypeEnum {
 
@@ -131,7 +131,7 @@ public class UpdateAlarmTemplateRequestBody {
     }
 
     /**
-     * **参数解释**： 自定义告警模板类型 **约束限制**： 不涉及。 **取值范围**： 枚举值。0：指标；2： 事件。 **默认取值**： 0 
+     * **参数解释**： 自定义告警模板类型 **约束限制**： 当template_type为0或者不选时，policies中的dimension_name必填。当template_type为2时，dimension_name为空。 **取值范围**： 枚举值。0：指标；2： 事件。 **默认取值**： 0 
      * @return templateType
      */
     public TemplateTypeEnum getTemplateType() {

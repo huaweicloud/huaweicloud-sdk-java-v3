@@ -62,7 +62,7 @@ public class ShowManagedAccountTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 管理纳管账号ID。
+     * 管理员账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {

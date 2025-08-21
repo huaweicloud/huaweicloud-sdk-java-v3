@@ -51,7 +51,7 @@ public class DriftDetail {
     }
 
     /**
-     * 管理纳管账号ID。
+     * 管理员账号ID。
      * @return managedAccountId
      */
     public String getManagedAccountId() {

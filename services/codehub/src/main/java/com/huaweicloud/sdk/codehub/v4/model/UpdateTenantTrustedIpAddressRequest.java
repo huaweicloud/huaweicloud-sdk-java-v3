@@ -27,7 +27,7 @@ public class UpdateTenantTrustedIpAddressRequest {
     }
 
     /**
-     * ip的ip
+     * **参数解释：** ip白名单id。
      * minimum: 1
      * maximum: 2147483647
      * @return ipId

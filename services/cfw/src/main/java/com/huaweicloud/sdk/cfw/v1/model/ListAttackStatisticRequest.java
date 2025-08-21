@@ -24,7 +24,7 @@ public class ListAttackStatisticRequest {
     private String fwInstanceId;
 
     /**
-     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及 
+     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及
      */
     public static final class RangeEnum {
 
@@ -105,7 +105,7 @@ public class ListAttackStatisticRequest {
     private RangeEnum range;
 
     /**
-     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及 
+     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
      */
     public static final class LogTypeEnum {
 
@@ -192,7 +192,7 @@ public class ListAttackStatisticRequest {
     private LogTypeEnum logType;
 
     /**
-     * **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及 
+     * **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及
      */
     public static final class DirectionEnum {
 
@@ -356,13 +356,18 @@ public class ListAttackStatisticRequest {
 
     private ItemEnum item;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
     public ListAttackStatisticRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
     }
 
     /**
-     * **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及 
+     * **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -379,7 +384,7 @@ public class ListAttackStatisticRequest {
     }
 
     /**
-     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及 
+     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及
      * @return range
      */
     public RangeEnum getRange() {
@@ -396,7 +401,7 @@ public class ListAttackStatisticRequest {
     }
 
     /**
-     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及 
+     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
      * @return logType
      */
     public LogTypeEnum getLogType() {
@@ -413,7 +418,7 @@ public class ListAttackStatisticRequest {
     }
 
     /**
-     * **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及 
+     * **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及
      * @return direction
      */
     public DirectionEnum getDirection() {
@@ -430,9 +435,9 @@ public class ListAttackStatisticRequest {
     }
 
     /**
-     * **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及 
+     * **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 4294967295000
+     * maximum: 9223372036854775807
      * @return startTime
      */
     public Long getStartTime() {
@@ -449,9 +454,9 @@ public class ListAttackStatisticRequest {
     }
 
     /**
-     * **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及 
+     * **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 4294967295000
+     * maximum: 9223372036854775807
      * @return endTime
      */
     public Long getEndTime() {
@@ -484,7 +489,7 @@ public class ListAttackStatisticRequest {
     }
 
     /**
-     * **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及 
+     * **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return vgwId
      */
     public List<String> getVgwId() {
@@ -512,6 +517,25 @@ public class ListAttackStatisticRequest {
         this.item = item;
     }
 
+    public ListAttackStatisticRequest withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 聚合条数 **约束限制**： 不涉及 **取值范围**： 0到100条 **默认取值**： 50
+     * minimum: 1
+     * maximum: 100
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -524,12 +548,13 @@ public class ListAttackStatisticRequest {
         return Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.range, that.range)
             && Objects.equals(this.logType, that.logType) && Objects.equals(this.direction, that.direction)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.vgwId, that.vgwId) && Objects.equals(this.item, that.item);
+            && Objects.equals(this.vgwId, that.vgwId) && Objects.equals(this.item, that.item)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fwInstanceId, range, logType, direction, startTime, endTime, vgwId, item);
+        return Objects.hash(fwInstanceId, range, logType, direction, startTime, endTime, vgwId, item, size);
     }
 
     @Override
@@ -544,6 +569,7 @@ public class ListAttackStatisticRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    vgwId: ").append(toIndentedString(vgwId)).append("\n");
         sb.append("    item: ").append(toIndentedString(item)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("}");
         return sb.toString();
     }

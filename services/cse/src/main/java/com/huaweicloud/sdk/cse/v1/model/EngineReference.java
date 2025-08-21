@@ -53,12 +53,12 @@ public class EngineReference {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serviceLimit")
 
-    private Integer serviceLimit;
+    private String serviceLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceLimit")
 
-    private Integer instanceLimit;
+    private String instanceLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputs")
@@ -200,7 +200,7 @@ public class EngineReference {
         this.publicIpId = publicIpId;
     }
 
-    public EngineReference withServiceLimit(Integer serviceLimit) {
+    public EngineReference withServiceLimit(String serviceLimit) {
         this.serviceLimit = serviceLimit;
         return this;
     }
@@ -209,15 +209,15 @@ public class EngineReference {
      * 微服务引擎可支持的微服务总数
      * @return serviceLimit
      */
-    public Integer getServiceLimit() {
+    public String getServiceLimit() {
         return serviceLimit;
     }
 
-    public void setServiceLimit(Integer serviceLimit) {
+    public void setServiceLimit(String serviceLimit) {
         this.serviceLimit = serviceLimit;
     }
 
-    public EngineReference withInstanceLimit(Integer instanceLimit) {
+    public EngineReference withInstanceLimit(String instanceLimit) {
         this.instanceLimit = instanceLimit;
         return this;
     }
@@ -226,11 +226,11 @@ public class EngineReference {
      * 微服务引擎可支持的实例总数
      * @return instanceLimit
      */
-    public Integer getInstanceLimit() {
+    public String getInstanceLimit() {
         return instanceLimit;
     }
 
-    public void setInstanceLimit(Integer instanceLimit) {
+    public void setInstanceLimit(String instanceLimit) {
         this.instanceLimit = instanceLimit;
     }
 

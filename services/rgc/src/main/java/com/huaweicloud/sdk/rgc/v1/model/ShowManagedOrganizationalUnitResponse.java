@@ -73,7 +73,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * 管理纳管账号ID。
+     * 管理员账号ID。
      * @return manageAccountId
      */
     public String getManageAccountId() {
@@ -193,7 +193,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * 组织里某个注册OU下的纳管账号被创建的时间。
+     * 注册OU的创建时间。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -210,7 +210,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * Landing Zone版本。
+     * 注册OU的Landing Zone版本。
      * @return landingZoneVersion
      */
     public String getLandingZoneVersion() {
@@ -227,7 +227,7 @@ public class ShowManagedOrganizationalUnitResponse extends SdkResponse {
     }
 
     /**
-     * 组织里某个注册OU下的纳管账号最后一次更新的时间。
+     * 注册OU的更新时间。
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {

@@ -31,7 +31,7 @@ public class AssociateGroupUserGroupRequest {
     }
 
     /**
-     * 项目id
+     * **参数解释：** 项目的32位uuid，项目唯一标识，通过[[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)](tag:hws)[[查询项目列表](https://support.huaweicloud.com/intl/en-us/api-projectman/ListProjectsV4.html)](tag:hws_hk)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **取值范围：** 字符串长度32。
      * @return projectId
      */
     public String getProjectId() {
@@ -48,7 +48,7 @@ public class AssociateGroupUserGroupRequest {
     }
 
     /**
-     * 代码组 ID
+     * **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
      * minimum: 1
      * maximum: 2147483647
      * @return groupId
@@ -67,7 +67,7 @@ public class AssociateGroupUserGroupRequest {
     }
 
     /**
-     * 成员组 ID
+     * **参数解释：** 成员组id。 **取值范围：** 字符串长度32。
      * @return userGroupId
      */
     public String getUserGroupId() {

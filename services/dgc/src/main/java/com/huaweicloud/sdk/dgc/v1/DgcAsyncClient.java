@@ -5,18 +5,12 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.dgc.v1.model.CancelScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CancelScriptResponse;
-import com.huaweicloud.sdk.dgc.v1.model.CreateConnectionRequest;
-import com.huaweicloud.sdk.dgc.v1.model.CreateConnectionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.CreateJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.CreateResourceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateResourceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateScriptResponse;
-import com.huaweicloud.sdk.dgc.v1.model.CreateSupplementdataRequest;
-import com.huaweicloud.sdk.dgc.v1.model.CreateSupplementdataResponse;
-import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionRequest;
-import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteResourceRequest;
@@ -25,18 +19,12 @@ import com.huaweicloud.sdk.dgc.v1.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteScriptResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptResponse;
-import com.huaweicloud.sdk.dgc.v1.model.ExportConnectionsRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ExportConnectionsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobListRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobListResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobResponse;
-import com.huaweicloud.sdk.dgc.v1.model.ImportConnectionsRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ImportConnectionsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ImportJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ImportJobResponse;
-import com.huaweicloud.sdk.dgc.v1.model.ListConnectionsRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ListConnectionsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListJobInstancesRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListJobInstancesResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListJobsRequest;
@@ -47,16 +35,12 @@ import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptsResponse;
-import com.huaweicloud.sdk.dgc.v1.model.ListSupplementdataRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ListSupplementdataResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksResponse;
 import com.huaweicloud.sdk.dgc.v1.model.RestoreJobInstanceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.RestoreJobInstanceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.RunOnceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.RunOnceResponse;
-import com.huaweicloud.sdk.dgc.v1.model.ShowConnectionRequest;
-import com.huaweicloud.sdk.dgc.v1.model.ShowConnectionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ShowFileInfoRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ShowFileInfoResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ShowJobInstanceRequest;
@@ -75,10 +59,6 @@ import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobResponse;
-import com.huaweicloud.sdk.dgc.v1.model.StopSupplementdataRequest;
-import com.huaweicloud.sdk.dgc.v1.model.StopSupplementdataResponse;
-import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionRequest;
-import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateResourceRequest;
@@ -126,33 +106,6 @@ public class DgcAsyncClient {
     public AsyncInvoker<CancelScriptRequest, CancelScriptResponse> cancelScriptAsyncInvoker(
         CancelScriptRequest request) {
         return new AsyncInvoker<>(request, DgcMeta.cancelScript, hcClient);
-    }
-
-    /**
-     * 创建连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateConnectionRequest 请求对象
-     * @return CompletableFuture<CreateConnectionResponse>
-     */
-    public CompletableFuture<CreateConnectionResponse> createConnectionAsync(CreateConnectionRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.createConnection);
-    }
-
-    /**
-     * 创建连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateConnectionRequest 请求对象
-     * @return AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
-     */
-    public AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionAsyncInvoker(
-        CreateConnectionRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.createConnection, hcClient);
     }
 
     /**
@@ -233,61 +186,6 @@ public class DgcAsyncClient {
     public AsyncInvoker<CreateScriptRequest, CreateScriptResponse> createScriptAsyncInvoker(
         CreateScriptRequest request) {
         return new AsyncInvoker<>(request, DgcMeta.createScript, hcClient);
-    }
-
-    /**
-     * 创建补数据实例
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateSupplementdataRequest 请求对象
-     * @return CompletableFuture<CreateSupplementdataResponse>
-     */
-    public CompletableFuture<CreateSupplementdataResponse> createSupplementdataAsync(
-        CreateSupplementdataRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.createSupplementdata);
-    }
-
-    /**
-     * 创建补数据实例
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateSupplementdataRequest 请求对象
-     * @return AsyncInvoker<CreateSupplementdataRequest, CreateSupplementdataResponse>
-     */
-    public AsyncInvoker<CreateSupplementdataRequest, CreateSupplementdataResponse> createSupplementdataAsyncInvoker(
-        CreateSupplementdataRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.createSupplementdata, hcClient);
-    }
-
-    /**
-     * 删除连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteConnctionRequest 请求对象
-     * @return CompletableFuture<DeleteConnctionResponse>
-     */
-    public CompletableFuture<DeleteConnctionResponse> deleteConnctionAsync(DeleteConnctionRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.deleteConnction);
-    }
-
-    /**
-     * 删除连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteConnctionRequest 请求对象
-     * @return AsyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>
-     */
-    public AsyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnctionAsyncInvoker(
-        DeleteConnctionRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.deleteConnction, hcClient);
     }
 
     /**
@@ -398,33 +296,6 @@ public class DgcAsyncClient {
     }
 
     /**
-     * 导出连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ExportConnectionsRequest 请求对象
-     * @return CompletableFuture<ExportConnectionsResponse>
-     */
-    public CompletableFuture<ExportConnectionsResponse> exportConnectionsAsync(ExportConnectionsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.exportConnections);
-    }
-
-    /**
-     * 导出连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ExportConnectionsRequest 请求对象
-     * @return AsyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>
-     */
-    public AsyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse> exportConnectionsAsyncInvoker(
-        ExportConnectionsRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.exportConnections, hcClient);
-    }
-
-    /**
      * 导出作业
      *
      * 
@@ -478,33 +349,6 @@ public class DgcAsyncClient {
     }
 
     /**
-     * 导入连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ImportConnectionsRequest 请求对象
-     * @return CompletableFuture<ImportConnectionsResponse>
-     */
-    public CompletableFuture<ImportConnectionsResponse> importConnectionsAsync(ImportConnectionsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.importConnections);
-    }
-
-    /**
-     * 导入连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ImportConnectionsRequest 请求对象
-     * @return AsyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>
-     */
-    public AsyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse> importConnectionsAsyncInvoker(
-        ImportConnectionsRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.importConnections, hcClient);
-    }
-
-    /**
      * 导入作业
      *
      * 
@@ -528,33 +372,6 @@ public class DgcAsyncClient {
      */
     public AsyncInvoker<ImportJobRequest, ImportJobResponse> importJobAsyncInvoker(ImportJobRequest request) {
         return new AsyncInvoker<>(request, DgcMeta.importJob, hcClient);
-    }
-
-    /**
-     * 查询连接列表
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListConnectionsRequest 请求对象
-     * @return CompletableFuture<ListConnectionsResponse>
-     */
-    public CompletableFuture<ListConnectionsResponse> listConnectionsAsync(ListConnectionsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.listConnections);
-    }
-
-    /**
-     * 查询连接列表
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListConnectionsRequest 请求对象
-     * @return AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
-     */
-    public AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsAsyncInvoker(
-        ListConnectionsRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.listConnections, hcClient);
     }
 
     /**
@@ -689,33 +506,6 @@ public class DgcAsyncClient {
     }
 
     /**
-     * 查询补数据实例
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListSupplementdataRequest 请求对象
-     * @return CompletableFuture<ListSupplementdataResponse>
-     */
-    public CompletableFuture<ListSupplementdataResponse> listSupplementdataAsync(ListSupplementdataRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.listSupplementdata);
-    }
-
-    /**
-     * 查询补数据实例
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListSupplementdataRequest 请求对象
-     * @return AsyncInvoker<ListSupplementdataRequest, ListSupplementdataResponse>
-     */
-    public AsyncInvoker<ListSupplementdataRequest, ListSupplementdataResponse> listSupplementdataAsyncInvoker(
-        ListSupplementdataRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.listSupplementdata, hcClient);
-    }
-
-    /**
      * 查询系统任务详情
      *
      * 
@@ -793,33 +583,6 @@ public class DgcAsyncClient {
      */
     public AsyncInvoker<RunOnceRequest, RunOnceResponse> runOnceAsyncInvoker(RunOnceRequest request) {
         return new AsyncInvoker<>(request, DgcMeta.runOnce, hcClient);
-    }
-
-    /**
-     * 查询连接详情
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowConnectionRequest 请求对象
-     * @return CompletableFuture<ShowConnectionResponse>
-     */
-    public CompletableFuture<ShowConnectionResponse> showConnectionAsync(ShowConnectionRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.showConnection);
-    }
-
-    /**
-     * 查询连接详情
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowConnectionRequest 请求对象
-     * @return AsyncInvoker<ShowConnectionRequest, ShowConnectionResponse>
-     */
-    public AsyncInvoker<ShowConnectionRequest, ShowConnectionResponse> showConnectionAsyncInvoker(
-        ShowConnectionRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.showConnection, hcClient);
     }
 
     /**
@@ -1059,60 +822,6 @@ public class DgcAsyncClient {
     public AsyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse> stopJobInstanceAsyncInvoker(
         StopJobInstanceRequest request) {
         return new AsyncInvoker<>(request, DgcMeta.stopJobInstance, hcClient);
-    }
-
-    /**
-     * 停止补数据实例
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopSupplementdataRequest 请求对象
-     * @return CompletableFuture<StopSupplementdataResponse>
-     */
-    public CompletableFuture<StopSupplementdataResponse> stopSupplementdataAsync(StopSupplementdataRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.stopSupplementdata);
-    }
-
-    /**
-     * 停止补数据实例
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopSupplementdataRequest 请求对象
-     * @return AsyncInvoker<StopSupplementdataRequest, StopSupplementdataResponse>
-     */
-    public AsyncInvoker<StopSupplementdataRequest, StopSupplementdataResponse> stopSupplementdataAsyncInvoker(
-        StopSupplementdataRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.stopSupplementdata, hcClient);
-    }
-
-    /**
-     * 修改连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateConnectionRequest 请求对象
-     * @return CompletableFuture<UpdateConnectionResponse>
-     */
-    public CompletableFuture<UpdateConnectionResponse> updateConnectionAsync(UpdateConnectionRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.updateConnection);
-    }
-
-    /**
-     * 修改连接
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateConnectionRequest 请求对象
-     * @return AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
-     */
-    public AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionAsyncInvoker(
-        UpdateConnectionRequest request) {
-        return new AsyncInvoker<>(request, DgcMeta.updateConnection, hcClient);
     }
 
     /**

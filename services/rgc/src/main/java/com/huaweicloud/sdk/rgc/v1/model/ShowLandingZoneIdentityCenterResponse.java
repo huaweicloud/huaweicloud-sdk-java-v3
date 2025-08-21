@@ -91,7 +91,7 @@ public class ShowLandingZoneIdentityCenterResponse extends SdkResponse {
     }
 
     /**
-     * Get permissionSets
+     * Identity Center权限集。
      * @return permissionSets
      */
     public List<PermissionSet> getPermissionSets() {
@@ -124,7 +124,7 @@ public class ShowLandingZoneIdentityCenterResponse extends SdkResponse {
     }
 
     /**
-     * Get groups
+     * Identity Center用户组。
      * @return groups
      */
     public List<IdentityCenterGroup> getGroups() {

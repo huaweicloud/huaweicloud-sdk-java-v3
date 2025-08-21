@@ -46,7 +46,7 @@ public class ListTrustedIpAddressesResponse extends SdkResponse {
     }
 
     /**
-     * 仓库ip白名单列表
+     * Get body
      * @return body
      */
     public List<TrustedIpAddressDto> getBody() {

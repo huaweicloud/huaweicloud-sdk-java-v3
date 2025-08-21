@@ -24,82 +24,7 @@ public class ShowAccessTopRequest {
     private String fwInstanceId;
 
     /**
-     * **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及 
-     */
-    public static final class DirectionEnum {
-
-        /**
-         * Enum IN2OUT for value: "in2out"
-         */
-        public static final DirectionEnum IN2OUT = new DirectionEnum("in2out");
-
-        /**
-         * Enum OUT2IN for value: "out2in"
-         */
-        public static final DirectionEnum OUT2IN = new DirectionEnum("out2in");
-
-        private static final Map<String, DirectionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DirectionEnum> createStaticFields() {
-            Map<String, DirectionEnum> map = new HashMap<>();
-            map.put("in2out", IN2OUT);
-            map.put("out2in", OUT2IN);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DirectionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DirectionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
-        }
-
-        public static DirectionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DirectionEnum) {
-                return this.value.equals(((DirectionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "direction")
-
-    private DirectionEnum direction;
-
-    /**
-     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及 
+     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及
      */
     public static final class RangeEnum {
 
@@ -178,6 +103,81 @@ public class ShowAccessTopRequest {
     @JsonProperty(value = "range")
 
     private RangeEnum range;
+
+    /**
+     * **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及
+     */
+    public static final class DirectionEnum {
+
+        /**
+         * Enum IN2OUT for value: "in2out"
+         */
+        public static final DirectionEnum IN2OUT = new DirectionEnum("in2out");
+
+        /**
+         * Enum OUT2IN for value: "out2in"
+         */
+        public static final DirectionEnum OUT2IN = new DirectionEnum("out2in");
+
+        private static final Map<String, DirectionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DirectionEnum> createStaticFields() {
+            Map<String, DirectionEnum> map = new HashMap<>();
+            map.put("in2out", IN2OUT);
+            map.put("out2in", OUT2IN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DirectionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DirectionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
+        }
+
+        public static DirectionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DirectionEnum) {
+                return this.value.equals(((DirectionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "direction")
+
+    private DirectionEnum direction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -403,7 +403,7 @@ public class ShowAccessTopRequest {
     }
 
     /**
-     * **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及 
+     * **参数解释**： 防火墙ID，用户创建防火墙实例后产生的唯一ID，配置后可区分不同防火墙，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -414,30 +414,13 @@ public class ShowAccessTopRequest {
         this.fwInstanceId = fwInstanceId;
     }
 
-    public ShowAccessTopRequest withDirection(DirectionEnum direction) {
-        this.direction = direction;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及 
-     * @return direction
-     */
-    public DirectionEnum getDirection() {
-        return direction;
-    }
-
-    public void setDirection(DirectionEnum direction) {
-        this.direction = direction;
-    }
-
     public ShowAccessTopRequest withRange(RangeEnum range) {
         this.range = range;
         return this;
     }
 
     /**
-     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及 
+     * **参数解释**： 时间范围  **约束限制**： 不涉及 **取值范围**： 0为近一时 1近一天 2近七天   **默认取值**： 不涉及
      * @return range
      */
     public RangeEnum getRange() {
@@ -448,15 +431,32 @@ public class ShowAccessTopRequest {
         this.range = range;
     }
 
+    public ShowAccessTopRequest withDirection(DirectionEnum direction) {
+        this.direction = direction;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 会话方向 **约束限制**： 不涉及 **取值范围**： in2out为出云方向 out2in为入云方向 **默认取值**： 不涉及
+     * @return direction
+     */
+    public DirectionEnum getDirection() {
+        return direction;
+    }
+
+    public void setDirection(DirectionEnum direction) {
+        this.direction = direction;
+    }
+
     public ShowAccessTopRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及 
+     * **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 4294967295000
+     * maximum: 9223372036854775807
      * @return startTime
      */
     public Long getStartTime() {
@@ -473,9 +473,9 @@ public class ShowAccessTopRequest {
     }
 
     /**
-     * **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及 
+     * **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 4294967295000
+     * maximum: 9223372036854775807
      * @return endTime
      */
     public Long getEndTime() {
@@ -508,7 +508,7 @@ public class ShowAccessTopRequest {
     }
 
     /**
-     * **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及 
+     * **参数解释**： VGW ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return vgwId
      */
     public List<String> getVgwId() {
@@ -595,8 +595,8 @@ public class ShowAccessTopRequest {
             return false;
         }
         ShowAccessTopRequest that = (ShowAccessTopRequest) obj;
-        return Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.range, that.range) && Objects.equals(this.startTime, that.startTime)
+        return Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.range, that.range)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.vgwId, that.vgwId)
             && Objects.equals(this.logType, that.logType) && Objects.equals(this.item, that.item)
             && Objects.equals(this.ruleId, that.ruleId);
@@ -604,7 +604,7 @@ public class ShowAccessTopRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(fwInstanceId, direction, range, startTime, endTime, vgwId, logType, item, ruleId);
+        return Objects.hash(fwInstanceId, range, direction, startTime, endTime, vgwId, logType, item, ruleId);
     }
 
     @Override
@@ -612,8 +612,8 @@ public class ShowAccessTopRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAccessTopRequest {\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
-        sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    range: ").append(toIndentedString(range)).append("\n");
+        sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    vgwId: ").append(toIndentedString(vgwId)).append("\n");

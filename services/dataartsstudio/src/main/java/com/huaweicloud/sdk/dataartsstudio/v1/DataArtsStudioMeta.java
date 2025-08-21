@@ -351,6 +351,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportBuiltinCategoryParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataMapLineageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataMapLineageRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataMapLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataServiceExcelRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataServiceExcelRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportDataServiceExcelResponse;
@@ -5105,6 +5108,34 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportCatalogsRequestBody.class),
             f -> f.withMarshaller(ImportCatalogsRequest::getBody, ImportCatalogsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportDataMapLineageRequest, ImportDataMapLineageResponse> importDataMapLineage =
+        genForImportDataMapLineage();
+
+    private static HttpRequestDef<ImportDataMapLineageRequest, ImportDataMapLineageResponse> genForImportDataMapLineage() {
+        // basic
+        HttpRequestDef.Builder<ImportDataMapLineageRequest, ImportDataMapLineageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ImportDataMapLineageRequest.class, ImportDataMapLineageResponse.class)
+            .withName("ImportDataMapLineage")
+            .withUri("/v1/{project_id}/datamap/lineage/import")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportDataMapLineageRequest::getInstance, ImportDataMapLineageRequest::setInstance));
+        builder.<ImportDataMapLineageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportDataMapLineageRequestBody.class),
+            f -> f.withMarshaller(ImportDataMapLineageRequest::getBody, ImportDataMapLineageRequest::setBody));
 
         // response
 

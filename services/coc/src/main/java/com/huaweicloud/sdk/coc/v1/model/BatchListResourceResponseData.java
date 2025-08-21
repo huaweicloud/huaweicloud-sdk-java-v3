@@ -1,9 +1,13 @@
 package com.huaweicloud.sdk.coc.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +55,11 @@ public class BatchListResourceResponseData {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_name")
+
+    private String projectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
     private String regionId;
@@ -61,24 +70,117 @@ public class BatchListResourceResponseData {
     private String epId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ep_name")
+
+    private String epName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Tag> tags = null;
+    private Object tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id")
 
     private String agentId;
 
+    /**
+     * **参数解释：** uniagent的状态。 **取值范围：** - ONLINE：运行中。 - OFFLINE：异常。 - INSTALLING：安装中。 - FAILED：安装失败。 - UNINSTALLED：已卸载。 - null：未安装。
+     */
+    public static final class AgentStateEnum {
+
+        /**
+         * Enum ONLINE for value: "ONLINE"
+         */
+        public static final AgentStateEnum ONLINE = new AgentStateEnum("ONLINE");
+
+        /**
+         * Enum OFFLINE for value: "OFFLINE"
+         */
+        public static final AgentStateEnum OFFLINE = new AgentStateEnum("OFFLINE");
+
+        /**
+         * Enum INSTALLING for value: "INSTALLING"
+         */
+        public static final AgentStateEnum INSTALLING = new AgentStateEnum("INSTALLING");
+
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
+        public static final AgentStateEnum FAILED = new AgentStateEnum("FAILED");
+
+        /**
+         * Enum UNINSTALLED for value: "UNINSTALLED"
+         */
+        public static final AgentStateEnum UNINSTALLED = new AgentStateEnum("UNINSTALLED");
+
+        private static final Map<String, AgentStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AgentStateEnum> createStaticFields() {
+            Map<String, AgentStateEnum> map = new HashMap<>();
+            map.put("ONLINE", ONLINE);
+            map.put("OFFLINE", OFFLINE);
+            map.put("INSTALLING", INSTALLING);
+            map.put("FAILED", FAILED);
+            map.put("UNINSTALLED", UNINSTALLED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AgentStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AgentStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgentStateEnum(value));
+        }
+
+        public static AgentStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AgentStateEnum) {
+                return this.value.equals(((AgentStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_state")
 
-    private String agentState;
+    private AgentStateEnum agentState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private Map<String, Object> properties = null;
+    private Object properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ingest_properties")
@@ -91,9 +193,34 @@ public class BatchListResourceResponseData {
     private Boolean isDelegated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inner_ip")
+
+    private String innerIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operable")
 
     private String operable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_associate_group")
+
+    private Boolean isAssociateGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "associated_group_list")
+
+    private List<String> associatedGroupList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private OffsetDateTime createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private OffsetDateTime updateTime;
 
     public BatchListResourceResponseData withId(String id) {
         this.id = id;
@@ -101,7 +228,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * CMDB分配的资源ID
+     * **参数解释：** CMDB分配的资源ID。 **取值范围：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -118,7 +245,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * 云服务分配的资源ID
+     * **参数解释：** 云服务分配的资源ID。 **取值范围：** 字符串，长度在36个字符。
      * @return resourceId
      */
     public String getResourceId() {
@@ -135,7 +262,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * 租户ID
+     * **参数解释：** 租户id。 **取值范围：** 不涉及。
      * @return domainId
      */
     public String getDomainId() {
@@ -152,7 +279,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * 资源名称
+     * **参数解释：** 资源名称。 **取值范围：** 字符串，长度3到50个字符之间。
      * @return name
      */
     public String getName() {
@@ -169,7 +296,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * 云服务名称
+     * **参数解释：** 云服务名称。 **取值范围：** 字符串，长度1到64个字符之间。
      * @return provider
      */
     public String getProvider() {
@@ -186,7 +313,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * 资源类型
+     * **参数解释：** 资源类型。 **取值范围：** 资源类型较多，根据实际业务选择资源类型、常用资源类型如下： - cloudservers：弹性云服务器。 - servers：裸金属服务器。 - clusters：云容器引擎。 - instances：云数据库。
      * @return type
      */
     public String getType() {
@@ -203,7 +330,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * Openstack中的项目ID
+     * **参数解释：** Openstack中的项目ID。 **取值范围：** 字符串，长度32个字符。
      * @return projectId
      */
     public String getProjectId() {
@@ -214,13 +341,30 @@ public class BatchListResourceResponseData {
         this.projectId = projectId;
     }
 
+    public BatchListResourceResponseData withProjectName(String projectName) {
+        this.projectName = projectName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** region的子项目名称。 **取值范围：** 字符串，不超过255个字符。
+     * @return projectName
+     */
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
     public BatchListResourceResponseData withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
 
     /**
-     * region ID
+     * **参数解释：** 区域id。 **取值范围：** 字符串，长度0到64个字符。
      * @return regionId
      */
     public String getRegionId() {
@@ -237,7 +381,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释：** 企业项目ID。 **取值范围：** 请选择[[企业管理](https://support.huaweicloud.com/usermanual-em/em_eps_qs_0400.html)](tag:hws)[[企业管理](https://support.huaweicloud.com/intl/zh-cn/usermanual-em/em_eps_qs_0400.html)](tag:hws_hk)中存在的项目ID。
      * @return epId
      */
     public String getEpId() {
@@ -248,36 +392,37 @@ public class BatchListResourceResponseData {
         this.epId = epId;
     }
 
-    public BatchListResourceResponseData withTags(List<Tag> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public BatchListResourceResponseData addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public BatchListResourceResponseData withTags(Consumer<List<Tag>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
+    public BatchListResourceResponseData withEpName(String epName) {
+        this.epName = epName;
         return this;
     }
 
     /**
-     * 资源标签
+     * **参数解释：** 企业项目名称。 **取值范围：** 由中文、英文字母、数字、下划线、中划线组成，且不能使用任何大小写形式的“default”，不超过255个字符。
+     * @return epName
+     */
+    public String getEpName() {
+        return epName;
+    }
+
+    public void setEpName(String epName) {
+        this.epName = epName;
+    }
+
+    public BatchListResourceResponseData withTags(Object tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 资源标签。 **取值范围：** 不涉及。
      * @return tags
      */
-    public List<Tag> getTags() {
+    public Object getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(Object tags) {
         this.tags = tags;
     }
 
@@ -287,7 +432,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * uniAgent唯一id
+     * **参数解释：** uniagent的id值。 **取值范围：** 不涉及。
      * @return agentId
      */
     public String getAgentId() {
@@ -298,53 +443,37 @@ public class BatchListResourceResponseData {
         this.agentId = agentId;
     }
 
-    public BatchListResourceResponseData withAgentState(String agentState) {
+    public BatchListResourceResponseData withAgentState(AgentStateEnum agentState) {
         this.agentState = agentState;
         return this;
     }
 
     /**
-     * uniAgent状态
+     * **参数解释：** uniagent的状态。 **取值范围：** - ONLINE：运行中。 - OFFLINE：异常。 - INSTALLING：安装中。 - FAILED：安装失败。 - UNINSTALLED：已卸载。 - null：未安装。
      * @return agentState
      */
-    public String getAgentState() {
+    public AgentStateEnum getAgentState() {
         return agentState;
     }
 
-    public void setAgentState(String agentState) {
+    public void setAgentState(AgentStateEnum agentState) {
         this.agentState = agentState;
     }
 
-    public BatchListResourceResponseData withProperties(Map<String, Object> properties) {
+    public BatchListResourceResponseData withProperties(Object properties) {
         this.properties = properties;
         return this;
     }
 
-    public BatchListResourceResponseData putPropertiesItem(String key, Object propertiesItem) {
-        if (this.properties == null) {
-            this.properties = new HashMap<>();
-        }
-        this.properties.put(key, propertiesItem);
-        return this;
-    }
-
-    public BatchListResourceResponseData withProperties(Consumer<Map<String, Object>> propertiesSetter) {
-        if (this.properties == null) {
-            this.properties = new HashMap<>();
-        }
-        propertiesSetter.accept(this.properties);
-        return this;
-    }
-
     /**
-     * 资源详细属性
+     * **参数解释：** 资源详细属性。 **取值范围：** 不涉及。
      * @return properties
      */
-    public Map<String, Object> getProperties() {
+    public Object getProperties() {
         return properties;
     }
 
-    public void setProperties(Map<String, Object> properties) {
+    public void setProperties(Object properties) {
         this.properties = properties;
     }
 
@@ -370,7 +499,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * 采集属性
+     * **参数解释：** 采集属性。 **取值范围：** 不涉及。
      * @return ingestProperties
      */
     public Map<String, String> getIngestProperties() {
@@ -387,7 +516,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * 是否已托管
+     * **参数解释：** 是否已托管。 **取值范围：** - true：已经托管。 - false：未托管。
      * @return isDelegated
      */
     public Boolean getIsDelegated() {
@@ -398,13 +527,30 @@ public class BatchListResourceResponseData {
         this.isDelegated = isDelegated;
     }
 
+    public BatchListResourceResponseData withInnerIp(String innerIp) {
+        this.innerIp = innerIp;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 资源内网ip。 **取值范围：** 不涉及。
+     * @return innerIp
+     */
+    public String getInnerIp() {
+        return innerIp;
+    }
+
+    public void setInnerIp(String innerIp) {
+        this.innerIp = innerIp;
+    }
+
     public BatchListResourceResponseData withOperable(String operable) {
         this.operable = operable;
         return this;
     }
 
     /**
-     * 用户定义资源是否可运维实例
+     * **参数解释：** 用户定义资源是否可运维实例。 **取值范围：** - ENABLE：可运维实例。 - DISABLE：不可运维实例operable字段不存在。
      * @return operable
      */
     public String getOperable() {
@@ -413,6 +559,90 @@ public class BatchListResourceResponseData {
 
     public void setOperable(String operable) {
         this.operable = operable;
+    }
+
+    public BatchListResourceResponseData withIsAssociateGroup(Boolean isAssociateGroup) {
+        this.isAssociateGroup = isAssociateGroup;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否已被指定分组关联。 **取值范围：** - true：已被指定分组关联。 - false：未被指定分组关联。
+     * @return isAssociateGroup
+     */
+    public Boolean getIsAssociateGroup() {
+        return isAssociateGroup;
+    }
+
+    public void setIsAssociateGroup(Boolean isAssociateGroup) {
+        this.isAssociateGroup = isAssociateGroup;
+    }
+
+    public BatchListResourceResponseData withAssociatedGroupList(List<String> associatedGroupList) {
+        this.associatedGroupList = associatedGroupList;
+        return this;
+    }
+
+    public BatchListResourceResponseData addAssociatedGroupListItem(String associatedGroupListItem) {
+        if (this.associatedGroupList == null) {
+            this.associatedGroupList = new ArrayList<>();
+        }
+        this.associatedGroupList.add(associatedGroupListItem);
+        return this;
+    }
+
+    public BatchListResourceResponseData withAssociatedGroupList(Consumer<List<String>> associatedGroupListSetter) {
+        if (this.associatedGroupList == null) {
+            this.associatedGroupList = new ArrayList<>();
+        }
+        associatedGroupListSetter.accept(this.associatedGroupList);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 资源所关联的分组信息组成的列表。 **取值范围：** 不涉及。
+     * @return associatedGroupList
+     */
+    public List<String> getAssociatedGroupList() {
+        return associatedGroupList;
+    }
+
+    public void setAssociatedGroupList(List<String> associatedGroupList) {
+        this.associatedGroupList = associatedGroupList;
+    }
+
+    public BatchListResourceResponseData withCreateTime(OffsetDateTime createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 创建时间，参考ISO8601标准格式。 **取值范围：** 不涉及。
+     * @return createTime
+     */
+    public OffsetDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(OffsetDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public BatchListResourceResponseData withUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 修改时间，参考ISO8601标准格式。 **取值范围：** 不涉及。
+     * @return updateTime
+     */
+    public OffsetDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
@@ -427,12 +657,17 @@ public class BatchListResourceResponseData {
         return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.epId, that.epId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.epId, that.epId)
+            && Objects.equals(this.epName, that.epName) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.agentState, that.agentState)
             && Objects.equals(this.properties, that.properties)
             && Objects.equals(this.ingestProperties, that.ingestProperties)
-            && Objects.equals(this.isDelegated, that.isDelegated) && Objects.equals(this.operable, that.operable);
+            && Objects.equals(this.isDelegated, that.isDelegated) && Objects.equals(this.innerIp, that.innerIp)
+            && Objects.equals(this.operable, that.operable)
+            && Objects.equals(this.isAssociateGroup, that.isAssociateGroup)
+            && Objects.equals(this.associatedGroupList, that.associatedGroupList)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -444,15 +679,22 @@ public class BatchListResourceResponseData {
             provider,
             type,
             projectId,
+            projectName,
             regionId,
             epId,
+            epName,
             tags,
             agentId,
             agentState,
             properties,
             ingestProperties,
             isDelegated,
-            operable);
+            innerIp,
+            operable,
+            isAssociateGroup,
+            associatedGroupList,
+            createTime,
+            updateTime);
     }
 
     @Override
@@ -466,15 +708,22 @@ public class BatchListResourceResponseData {
         sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    epId: ").append(toIndentedString(epId)).append("\n");
+        sb.append("    epName: ").append(toIndentedString(epName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
         sb.append("    agentState: ").append(toIndentedString(agentState)).append("\n");
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    ingestProperties: ").append(toIndentedString(ingestProperties)).append("\n");
         sb.append("    isDelegated: ").append(toIndentedString(isDelegated)).append("\n");
+        sb.append("    innerIp: ").append(toIndentedString(innerIp)).append("\n");
         sb.append("    operable: ").append(toIndentedString(operable)).append("\n");
+        sb.append("    isAssociateGroup: ").append(toIndentedString(isAssociateGroup)).append("\n");
+        sb.append("    associatedGroupList: ").append(toIndentedString(associatedGroupList)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -13,34 +13,78 @@ import java.util.function.Consumer;
 public class ShowRecycleBinResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "recycle_bin")
+    @JsonProperty(value = "project_id")
 
-    private RecycleBin recycleBin;
+    private String projectId;
 
-    public ShowRecycleBinResponse withRecycleBin(RecycleBin recycleBin) {
-        this.recycleBin = recycleBin;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "switch")
+
+    private String _switch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy")
+
+    private RecycleBinPolicys policy;
+
+    public ShowRecycleBinResponse withProjectId(String projectId) {
+        this.projectId = projectId;
         return this;
     }
 
-    public ShowRecycleBinResponse withRecycleBin(Consumer<RecycleBin> recycleBinSetter) {
-        if (this.recycleBin == null) {
-            this.recycleBin = new RecycleBin();
-            recycleBinSetter.accept(this.recycleBin);
+    /**
+     * 项目ID
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public ShowRecycleBinResponse withSwitch(String _switch) {
+        this._switch = _switch;
+        return this;
+    }
+
+    /**
+     * 回收站配置开关
+     * @return _switch
+     */
+    public String getSwitch() {
+        return _switch;
+    }
+
+    public void setSwitch(String _switch) {
+        this._switch = _switch;
+    }
+
+    public ShowRecycleBinResponse withPolicy(RecycleBinPolicys policy) {
+        this.policy = policy;
+        return this;
+    }
+
+    public ShowRecycleBinResponse withPolicy(Consumer<RecycleBinPolicys> policySetter) {
+        if (this.policy == null) {
+            this.policy = new RecycleBinPolicys();
+            policySetter.accept(this.policy);
         }
 
         return this;
     }
 
     /**
-     * Get recycleBin
-     * @return recycleBin
+     * Get policy
+     * @return policy
      */
-    public RecycleBin getRecycleBin() {
-        return recycleBin;
+    public RecycleBinPolicys getPolicy() {
+        return policy;
     }
 
-    public void setRecycleBin(RecycleBin recycleBin) {
-        this.recycleBin = recycleBin;
+    public void setPolicy(RecycleBinPolicys policy) {
+        this.policy = policy;
     }
 
     @Override
@@ -52,19 +96,22 @@ public class ShowRecycleBinResponse extends SdkResponse {
             return false;
         }
         ShowRecycleBinResponse that = (ShowRecycleBinResponse) obj;
-        return Objects.equals(this.recycleBin, that.recycleBin);
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this._switch, that._switch)
+            && Objects.equals(this.policy, that.policy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(recycleBin);
+        return Objects.hash(projectId, _switch, policy);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRecycleBinResponse {\n");
-        sb.append("    recycleBin: ").append(toIndentedString(recycleBin)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    _switch: ").append(toIndentedString(_switch)).append("\n");
+        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

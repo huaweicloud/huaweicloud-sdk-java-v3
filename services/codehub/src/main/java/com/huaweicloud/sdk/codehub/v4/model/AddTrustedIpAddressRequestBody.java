@@ -1,19 +1,100 @@
 package com.huaweicloud.sdk.codehub.v4.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
- * 添加ip白名单请求体
+ * **参数解释：** 添加ip白名单请求体。
  */
 public class AddTrustedIpAddressRequestBody {
+
+    /**
+     * **参数解释：** 格式类型。 - 0，表示指定ip。 - 1，表示ip范围。 - 2，表示CIDR。
+     */
+    public static final class IpTypeEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final IpTypeEnum NUMBER_0 = new IpTypeEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final IpTypeEnum NUMBER_1 = new IpTypeEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final IpTypeEnum NUMBER_2 = new IpTypeEnum(2);
+
+        private static final Map<Integer, IpTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IpTypeEnum> createStaticFields() {
+            Map<Integer, IpTypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IpTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpTypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpTypeEnum(value));
+        }
+
+        public static IpTypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpTypeEnum) {
+                return this.value.equals(((IpTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_type")
 
-    private Integer ipType;
+    private IpTypeEnum ipType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_start")
@@ -25,40 +106,250 @@ public class AddTrustedIpAddressRequestBody {
 
     private String ipEnd;
 
+    /**
+     * **参数解释：** 是否允许访问代码仓库。 - 0，表示禁止访问。 - 1，表示允许访问。
+     */
+    public static final class ViewFlagEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final ViewFlagEnum NUMBER_0 = new ViewFlagEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final ViewFlagEnum NUMBER_1 = new ViewFlagEnum(1);
+
+        private static final Map<Integer, ViewFlagEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ViewFlagEnum> createStaticFields() {
+            Map<Integer, ViewFlagEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ViewFlagEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ViewFlagEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ViewFlagEnum(value));
+        }
+
+        public static ViewFlagEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ViewFlagEnum) {
+                return this.value.equals(((ViewFlagEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "view_flag")
 
-    private Integer viewFlag;
+    private ViewFlagEnum viewFlag;
+
+    /**
+     * **参数解释：** 是否允许下载代码。 - 0，表示禁止下载。 - 1，表示允许下载。
+     */
+    public static final class DownloadFlagEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final DownloadFlagEnum NUMBER_0 = new DownloadFlagEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final DownloadFlagEnum NUMBER_1 = new DownloadFlagEnum(1);
+
+        private static final Map<Integer, DownloadFlagEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, DownloadFlagEnum> createStaticFields() {
+            Map<Integer, DownloadFlagEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        DownloadFlagEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DownloadFlagEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DownloadFlagEnum(value));
+        }
+
+        public static DownloadFlagEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DownloadFlagEnum) {
+                return this.value.equals(((DownloadFlagEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "download_flag")
 
-    private Integer downloadFlag;
+    private DownloadFlagEnum downloadFlag;
+
+    /**
+     * **参数解释：** 是否允许提交代码。 - 0，表示禁止提交。 - 1，表示允许提交。
+     */
+    public static final class UploadFlagEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final UploadFlagEnum NUMBER_0 = new UploadFlagEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final UploadFlagEnum NUMBER_1 = new UploadFlagEnum(1);
+
+        private static final Map<Integer, UploadFlagEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, UploadFlagEnum> createStaticFields() {
+            Map<Integer, UploadFlagEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        UploadFlagEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static UploadFlagEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UploadFlagEnum(value));
+        }
+
+        public static UploadFlagEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof UploadFlagEnum) {
+                return this.value.equals(((UploadFlagEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upload_flag")
 
-    private Integer uploadFlag;
+    private UploadFlagEnum uploadFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
     private String remark;
 
-    public AddTrustedIpAddressRequestBody withIpType(Integer ipType) {
+    public AddTrustedIpAddressRequestBody withIpType(IpTypeEnum ipType) {
         this.ipType = ipType;
         return this;
     }
 
     /**
-     * 格式类型，指定ip，ip范围，CIDR
+     * **参数解释：** 格式类型。 - 0，表示指定ip。 - 1，表示ip范围。 - 2，表示CIDR。
      * @return ipType
      */
-    public Integer getIpType() {
+    public IpTypeEnum getIpType() {
         return ipType;
     }
 
-    public void setIpType(Integer ipType) {
+    public void setIpType(IpTypeEnum ipType) {
         this.ipType = ipType;
     }
 
@@ -68,7 +359,7 @@ public class AddTrustedIpAddressRequestBody {
     }
 
     /**
-     * 起始ip
+     * **参数解释：** 起始ip。
      * @return ipStart
      */
     public String getIpStart() {
@@ -85,7 +376,7 @@ public class AddTrustedIpAddressRequestBody {
     }
 
     /**
-     * 结束ip
+     * **参数解释：** 结束ip。
      * @return ipEnd
      */
     public String getIpEnd() {
@@ -96,54 +387,54 @@ public class AddTrustedIpAddressRequestBody {
         this.ipEnd = ipEnd;
     }
 
-    public AddTrustedIpAddressRequestBody withViewFlag(Integer viewFlag) {
+    public AddTrustedIpAddressRequestBody withViewFlag(ViewFlagEnum viewFlag) {
         this.viewFlag = viewFlag;
         return this;
     }
 
     /**
-     * 是否允许访问代码仓库
+     * **参数解释：** 是否允许访问代码仓库。 - 0，表示禁止访问。 - 1，表示允许访问。
      * @return viewFlag
      */
-    public Integer getViewFlag() {
+    public ViewFlagEnum getViewFlag() {
         return viewFlag;
     }
 
-    public void setViewFlag(Integer viewFlag) {
+    public void setViewFlag(ViewFlagEnum viewFlag) {
         this.viewFlag = viewFlag;
     }
 
-    public AddTrustedIpAddressRequestBody withDownloadFlag(Integer downloadFlag) {
+    public AddTrustedIpAddressRequestBody withDownloadFlag(DownloadFlagEnum downloadFlag) {
         this.downloadFlag = downloadFlag;
         return this;
     }
 
     /**
-     * 是否允许下载代码
+     * **参数解释：** 是否允许下载代码。 - 0，表示禁止下载。 - 1，表示允许下载。
      * @return downloadFlag
      */
-    public Integer getDownloadFlag() {
+    public DownloadFlagEnum getDownloadFlag() {
         return downloadFlag;
     }
 
-    public void setDownloadFlag(Integer downloadFlag) {
+    public void setDownloadFlag(DownloadFlagEnum downloadFlag) {
         this.downloadFlag = downloadFlag;
     }
 
-    public AddTrustedIpAddressRequestBody withUploadFlag(Integer uploadFlag) {
+    public AddTrustedIpAddressRequestBody withUploadFlag(UploadFlagEnum uploadFlag) {
         this.uploadFlag = uploadFlag;
         return this;
     }
 
     /**
-     * 是否允许提交代码
+     * **参数解释：** 是否允许提交代码。 - 0，表示禁止提交。 - 1，表示允许提交。
      * @return uploadFlag
      */
-    public Integer getUploadFlag() {
+    public UploadFlagEnum getUploadFlag() {
         return uploadFlag;
     }
 
-    public void setUploadFlag(Integer uploadFlag) {
+    public void setUploadFlag(UploadFlagEnum uploadFlag) {
         this.uploadFlag = uploadFlag;
     }
 
@@ -153,7 +444,7 @@ public class AddTrustedIpAddressRequestBody {
     }
 
     /**
-     * 备注
+     * **参数解释：** 备注。 **取值范围：** 字符串长度不少于0，不超过200。            
      * @return remark
      */
     public String getRemark() {

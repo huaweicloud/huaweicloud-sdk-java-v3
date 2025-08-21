@@ -40,7 +40,7 @@ public class AddLogConfigResponseBody {
     }
 
     /**
-     * 实例日志配置信息。
+     * 实例日志配置信息，最多20条。
      * @return logConfigs
      */
     public List<AddLogConfigs> getLogConfigs() {

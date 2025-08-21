@@ -21,9 +21,9 @@ public class ListAiOpsRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start")
+    @JsonProperty(value = "offset")
 
-    private Integer start;
+    private Integer offset;
 
     public ListAiOpsRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -59,21 +59,21 @@ public class ListAiOpsRequest {
         this.limit = limit;
     }
 
-    public ListAiOpsRequest withStart(Integer start) {
-        this.start = start;
+    public ListAiOpsRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
-     * @return start
+     * @return offset
      */
-    public Integer getStart() {
-        return start;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setStart(Integer start) {
-        this.start = start;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     @Override
@@ -86,12 +86,12 @@ public class ListAiOpsRequest {
         }
         ListAiOpsRequest that = (ListAiOpsRequest) obj;
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.start, that.start);
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, limit, start);
+        return Objects.hash(clusterId, limit, offset);
     }
 
     @Override
@@ -100,7 +100,7 @@ public class ListAiOpsRequest {
         sb.append("class ListAiOpsRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

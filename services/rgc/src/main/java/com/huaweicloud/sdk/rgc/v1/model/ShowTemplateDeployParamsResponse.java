@@ -41,7 +41,7 @@ public class ShowTemplateDeployParamsResponse extends SdkResponse {
     }
 
     /**
-     * Get variables
+     * 模板的部署参数。
      * @return variables
      */
     public List<TemplateParamVariable> getVariables() {

@@ -104,7 +104,7 @@ public class ShowControlsForAccountResponse extends SdkResponse {
     }
 
     /**
-     * 是否允许启用控制策略。
+     * 状态。
      * @return state
      */
     public String getState() {

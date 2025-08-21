@@ -64,6 +64,9 @@ import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallReq;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateReportProfileDto;
+import com.huaweicloud.sdk.cfw.v1.model.CreateReportProfileRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateReportProfileResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateTagRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateTagResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateTagsDto;
@@ -91,6 +94,8 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteReportProfileRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteReportProfileResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemDto;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
@@ -103,8 +108,13 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteTagsDto;
 import com.huaweicloud.sdk.cfw.v1.model.EipOperateProtectReq;
 import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.EnableMultiAccountRequest;
+import com.huaweicloud.sdk.cfw.v1.model.EnableMultiAccountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ExportLogsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ExportLogsRequestBody;
+import com.huaweicloud.sdk.cfw.v1.model.ExportLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.IpBlacklistDeleteDto;
@@ -115,6 +125,8 @@ import com.huaweicloud.sdk.cfw.v1.model.IpsRuleChangeDto;
 import com.huaweicloud.sdk.cfw.v1.model.IpsSwitchDTO;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListAccountsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListAccountsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRulesRequest;
@@ -161,6 +173,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListFirewallListRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFirewallListResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListFlowStatisticRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListFlowStatisticResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistSwitchRequest;
@@ -177,12 +191,21 @@ import com.huaweicloud.sdk.cfw.v1.model.ListJobRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListJobResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogsRequestBody;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationAccountsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationAccountsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationTreeRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationTreeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListReportProfilesRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListReportProfilesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListResourceTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListResourceTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRuleAclTagsRequest;
@@ -202,6 +225,8 @@ import com.huaweicloud.sdk.cfw.v1.model.RetryIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.RetryIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAccessDetailRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAccessDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAccessTopRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAccessTopResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAlarmConfigRequest;
@@ -210,6 +235,10 @@ import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusRuleRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusRuleResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusSwitchRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusSwitchResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAttackDetailRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAttackDetailResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTopRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTopResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTotalRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTotalResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTrendRequest;
@@ -220,10 +249,26 @@ import com.huaweicloud.sdk.cfw.v1.model.ShowCustomerIpsInfoRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowCustomerIpsInfoResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowDomainSetDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowDomainSetDetailResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedErRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedErResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedVpcRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedVpcResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFirewallReportRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFirewallReportResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowDetailRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowDetailResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowTopRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowTopResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowTrendRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowFlowTrendResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowImportStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowImportStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowIpsUpdateTimeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowIpsUpdateTimeResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowLogsCountRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowLogsCountResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowReportProfileRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowReportProfileResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowTrafficTrendRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowTrafficTrendResponse;
 import com.huaweicloud.sdk.cfw.v1.model.SwitchAutoProtectStatusRequest;
@@ -260,6 +305,9 @@ import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateReportProfileDto;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateReportProfileRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateReportProfileResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateSecurityPolciesActionDto;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetRequest;
@@ -685,45 +733,6 @@ public class CfwMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CancelCaptureTaskDto.class),
             f -> f.withMarshaller(CancelCaptureTaskRequest::getBody, CancelCaptureTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatus =
-        genForChangeEastWestFirewallStatus();
-
-    private static HttpRequestDef<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> genForChangeEastWestFirewallStatus() {
-        // basic
-        HttpRequestDef.Builder<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    ChangeEastWestFirewallStatusRequest.class,
-                    ChangeEastWestFirewallStatusResponse.class)
-                .withName("ChangeEastWestFirewallStatus")
-                .withUri("/v1/{project_id}/firewall/east-west/protect")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getEnterpriseProjectId,
-                ChangeEastWestFirewallStatusRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("fw_instance_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getFwInstanceId,
-                ChangeEastWestFirewallStatusRequest::setFwInstanceId));
-        builder.<ChangeProtectStatusRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ChangeProtectStatusRequestBody.class),
-            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getBody,
-                ChangeEastWestFirewallStatusRequest::setBody));
 
         // response
 
@@ -1827,65 +1836,6 @@ public class CfwMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAttackStatisticRequest, ListAttackStatisticResponse> listAttackStatistic =
-        genForListAttackStatistic();
-
-    private static HttpRequestDef<ListAttackStatisticRequest, ListAttackStatisticResponse> genForListAttackStatistic() {
-        // basic
-        HttpRequestDef.Builder<ListAttackStatisticRequest, ListAttackStatisticResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAttackStatisticRequest.class, ListAttackStatisticResponse.class)
-                .withName("ListAttackStatistic")
-                .withUri("/v1/{project_id}/cfw/logs/attack-statistic")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("fw_instance_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAttackStatisticRequest::getFwInstanceId,
-                ListAttackStatisticRequest::setFwInstanceId));
-        builder.<ListAttackStatisticRequest.RangeEnum>withRequestField("range",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAttackStatisticRequest.RangeEnum.class),
-            f -> f.withMarshaller(ListAttackStatisticRequest::getRange, ListAttackStatisticRequest::setRange));
-        builder.<ListAttackStatisticRequest.LogTypeEnum>withRequestField("log_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListAttackStatisticRequest.LogTypeEnum.class),
-            f -> f.withMarshaller(ListAttackStatisticRequest::getLogType, ListAttackStatisticRequest::setLogType));
-        builder.<ListAttackStatisticRequest.DirectionEnum>withRequestField("direction",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAttackStatisticRequest.DirectionEnum.class),
-            f -> f.withMarshaller(ListAttackStatisticRequest::getDirection, ListAttackStatisticRequest::setDirection));
-        builder.<Long>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttackStatisticRequest::getStartTime, ListAttackStatisticRequest::setStartTime));
-        builder.<Long>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAttackStatisticRequest::getEndTime, ListAttackStatisticRequest::setEndTime));
-        builder.<List<String>>withRequestField("vgw_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAttackStatisticRequest::getVgwId, ListAttackStatisticRequest::setVgwId));
-        builder.<ListAttackStatisticRequest.ItemEnum>withRequestField("item",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListAttackStatisticRequest.ItemEnum.class),
-            f -> f.withMarshaller(ListAttackStatisticRequest::getItem, ListAttackStatisticRequest::setItem));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse> listBlackWhiteLists =
         genForListBlackWhiteLists();
 
@@ -2950,69 +2900,6 @@ public class CfwMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAccessTopRequest, ShowAccessTopResponse> showAccessTop =
-        genForShowAccessTop();
-
-    private static HttpRequestDef<ShowAccessTopRequest, ShowAccessTopResponse> genForShowAccessTop() {
-        // basic
-        HttpRequestDef.Builder<ShowAccessTopRequest, ShowAccessTopResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAccessTopRequest.class, ShowAccessTopResponse.class)
-                .withName("ShowAccessTop")
-                .withUri("/v1/{project_id}/cfw/logs/access-top")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("fw_instance_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getFwInstanceId, ShowAccessTopRequest::setFwInstanceId));
-        builder.<ShowAccessTopRequest.DirectionEnum>withRequestField("direction",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowAccessTopRequest.DirectionEnum.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getDirection, ShowAccessTopRequest::setDirection));
-        builder.<ShowAccessTopRequest.RangeEnum>withRequestField("range",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowAccessTopRequest.RangeEnum.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getRange, ShowAccessTopRequest::setRange));
-        builder.<Long>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getStartTime, ShowAccessTopRequest::setStartTime));
-        builder.<Long>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getEndTime, ShowAccessTopRequest::setEndTime));
-        builder.<List<String>>withRequestField("vgw_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getVgwId, ShowAccessTopRequest::setVgwId));
-        builder.<ShowAccessTopRequest.LogTypeEnum>withRequestField("log_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowAccessTopRequest.LogTypeEnum.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getLogType, ShowAccessTopRequest::setLogType));
-        builder.<ShowAccessTopRequest.ItemEnum>withRequestField("item",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowAccessTopRequest.ItemEnum.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getItem, ShowAccessTopRequest::setItem));
-        builder.<List<String>>withRequestField("rule_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAccessTopRequest::getRuleId, ShowAccessTopRequest::setRuleId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowAlarmConfigRequest, ShowAlarmConfigResponse> showAlarmConfig =
         genForShowAlarmConfig();
 
@@ -3115,102 +3002,6 @@ public class CfwMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAttackTotalRequest, ShowAttackTotalResponse> showAttackTotal =
-        genForShowAttackTotal();
-
-    private static HttpRequestDef<ShowAttackTotalRequest, ShowAttackTotalResponse> genForShowAttackTotal() {
-        // basic
-        HttpRequestDef.Builder<ShowAttackTotalRequest, ShowAttackTotalResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAttackTotalRequest.class, ShowAttackTotalResponse.class)
-                .withName("ShowAttackTotal")
-                .withUri("/v1/{project_id}/cfw/logs/total-attack")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("fw_instance_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAttackTotalRequest::getFwInstanceId, ShowAttackTotalRequest::setFwInstanceId));
-        builder.<ShowAttackTotalRequest.RangeEnum>withRequestField("range",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowAttackTotalRequest.RangeEnum.class),
-            f -> f.withMarshaller(ShowAttackTotalRequest::getRange, ShowAttackTotalRequest::setRange));
-        builder.<ShowAttackTotalRequest.LogTypeEnum>withRequestField("log_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowAttackTotalRequest.LogTypeEnum.class),
-            f -> f.withMarshaller(ShowAttackTotalRequest::getLogType, ShowAttackTotalRequest::setLogType));
-        builder.<Long>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAttackTotalRequest::getStartTime, ShowAttackTotalRequest::setStartTime));
-        builder.<Long>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAttackTotalRequest::getEndTime, ShowAttackTotalRequest::setEndTime));
-        builder.<List<String>>withRequestField("vgw_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAttackTotalRequest::getVgwId, ShowAttackTotalRequest::setVgwId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowAttackTrendRequest, ShowAttackTrendResponse> showAttackTrend =
-        genForShowAttackTrend();
-
-    private static HttpRequestDef<ShowAttackTrendRequest, ShowAttackTrendResponse> genForShowAttackTrend() {
-        // basic
-        HttpRequestDef.Builder<ShowAttackTrendRequest, ShowAttackTrendResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAttackTrendRequest.class, ShowAttackTrendResponse.class)
-                .withName("ShowAttackTrend")
-                .withUri("/v1/{project_id}/cfw/logs/trend-attack")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("fw_instance_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAttackTrendRequest::getFwInstanceId, ShowAttackTrendRequest::setFwInstanceId));
-        builder.<ShowAttackTrendRequest.RangeEnum>withRequestField("range",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowAttackTrendRequest.RangeEnum.class),
-            f -> f.withMarshaller(ShowAttackTrendRequest::getRange, ShowAttackTrendRequest::setRange));
-        builder.<ShowAttackTrendRequest.LogTypeEnum>withRequestField("log_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowAttackTrendRequest.LogTypeEnum.class),
-            f -> f.withMarshaller(ShowAttackTrendRequest::getLogType, ShowAttackTrendRequest::setLogType));
-        builder.<Long>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAttackTrendRequest::getStartTime, ShowAttackTrendRequest::setStartTime));
-        builder.<Long>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowAttackTrendRequest::getEndTime, ShowAttackTrendRequest::setEndTime));
-        builder.<List<String>>withRequestField("vgw_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowAttackTrendRequest::getVgwId, ShowAttackTrendRequest::setVgwId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowDomainSetDetailRequest, ShowDomainSetDetailResponse> showDomainSetDetail =
         genForShowDomainSetDetail();
 
@@ -3241,64 +3032,6 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainSetDetailRequest::getEnterpriseProjectId,
                 ShowDomainSetDetailRequest::setEnterpriseProjectId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowTrafficTrendRequest, ShowTrafficTrendResponse> showTrafficTrend =
-        genForShowTrafficTrend();
-
-    private static HttpRequestDef<ShowTrafficTrendRequest, ShowTrafficTrendResponse> genForShowTrafficTrend() {
-        // basic
-        HttpRequestDef.Builder<ShowTrafficTrendRequest, ShowTrafficTrendResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTrafficTrendRequest.class, ShowTrafficTrendResponse.class)
-                .withName("ShowTrafficTrend")
-                .withUri("/v1/{project_id}/cfw/logs/traffic-trend")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("fw_instance_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTrafficTrendRequest::getFwInstanceId, ShowTrafficTrendRequest::setFwInstanceId));
-        builder.<ShowTrafficTrendRequest.RangeEnum>withRequestField("range",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowTrafficTrendRequest.RangeEnum.class),
-            f -> f.withMarshaller(ShowTrafficTrendRequest::getRange, ShowTrafficTrendRequest::setRange));
-        builder.<ShowTrafficTrendRequest.LogTypeEnum>withRequestField("log_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowTrafficTrendRequest.LogTypeEnum.class),
-            f -> f.withMarshaller(ShowTrafficTrendRequest::getLogType, ShowTrafficTrendRequest::setLogType));
-        builder.<Long>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTrafficTrendRequest::getStartTime, ShowTrafficTrendRequest::setStartTime));
-        builder.<Long>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowTrafficTrendRequest::getEndTime, ShowTrafficTrendRequest::setEndTime));
-        builder.<List<String>>withRequestField("vgw_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowTrafficTrendRequest::getVgwId, ShowTrafficTrendRequest::setVgwId));
-        builder.<ShowTrafficTrendRequest.AggTypeEnum>withRequestField("agg_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowTrafficTrendRequest.AggTypeEnum.class),
-            f -> f.withMarshaller(ShowTrafficTrendRequest::getAggType, ShowTrafficTrendRequest::setAggType));
-        builder.<List<String>>withRequestField("ip",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowTrafficTrendRequest::getIp, ShowTrafficTrendRequest::setIp));
 
         // response
 
@@ -4492,85 +4225,6 @@ public class CfwMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCustomerIpsRequest, ListCustomerIpsResponse> listCustomerIps =
-        genForListCustomerIps();
-
-    private static HttpRequestDef<ListCustomerIpsRequest, ListCustomerIpsResponse> genForListCustomerIps() {
-        // basic
-        HttpRequestDef.Builder<ListCustomerIpsRequest, ListCustomerIpsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListCustomerIpsRequest.class, ListCustomerIpsResponse.class)
-                .withName("ListCustomerIps")
-                .withUri("/v1/{project_id}/ips/custom-rule")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("action_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getActionType, ListCustomerIpsRequest::setActionType));
-        builder.<Integer>withRequestField("affected_os",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getAffectedOs, ListCustomerIpsRequest::setAffectedOs));
-        builder.<Integer>withRequestField("attack_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getAttackType, ListCustomerIpsRequest::setAttackType));
-        builder.<String>withRequestField("fw_instance_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getFwInstanceId, ListCustomerIpsRequest::setFwInstanceId));
-        builder.<String>withRequestField("ips_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getIpsName, ListCustomerIpsRequest::setIpsName));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getLimit, ListCustomerIpsRequest::setLimit));
-        builder.<String>withRequestField("object_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getObjectId, ListCustomerIpsRequest::setObjectId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getOffset, ListCustomerIpsRequest::setOffset));
-        builder.<Integer>withRequestField("protocol",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getProtocol, ListCustomerIpsRequest::setProtocol));
-        builder.<Integer>withRequestField("severity",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getSeverity, ListCustomerIpsRequest::setSeverity));
-        builder.<Integer>withRequestField("software",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getSoftware, ListCustomerIpsRequest::setSoftware));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomerIpsRequest::getEnterpriseProjectId,
-                ListCustomerIpsRequest::setEnterpriseProjectId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListIpsProtectModeRequest, ListIpsProtectModeResponse> listIpsProtectMode =
         genForListIpsProtectMode();
 
@@ -4766,40 +4420,6 @@ public class CfwMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse> showCustomerIpsInfo =
-        genForShowCustomerIpsInfo();
-
-    private static HttpRequestDef<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse> genForShowCustomerIpsInfo() {
-        // basic
-        HttpRequestDef.Builder<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowCustomerIpsInfoRequest.class, ShowCustomerIpsInfoResponse.class)
-                .withName("ShowCustomerIpsInfo")
-                .withUri("/v1/{project_id}/ips/custom-rule/{ips_cfw_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("ips_cfw_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerIpsInfoRequest::getIpsCfwId, ShowCustomerIpsInfoRequest::setIpsCfwId));
-        builder.<String>withRequestField("fw_instance_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerIpsInfoRequest::getFwInstanceId,
-                ShowCustomerIpsInfoRequest::setFwInstanceId));
-        builder.<String>withRequestField("object_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomerIpsInfoRequest::getObjectId, ShowCustomerIpsInfoRequest::setObjectId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowIpsUpdateTimeRequest, ShowIpsUpdateTimeResponse> showIpsUpdateTime =
         genForShowIpsUpdateTime();
 
@@ -4865,6 +4485,124 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCustomerIpsRequest, ListCustomerIpsResponse> listCustomerIps =
+        genForListCustomerIps();
+
+    private static HttpRequestDef<ListCustomerIpsRequest, ListCustomerIpsResponse> genForListCustomerIps() {
+        // basic
+        HttpRequestDef.Builder<ListCustomerIpsRequest, ListCustomerIpsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomerIpsRequest.class, ListCustomerIpsResponse.class)
+                .withName("ListCustomerIps")
+                .withUri("/v1/{project_id}/ips/custom-rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("action_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getActionType, ListCustomerIpsRequest::setActionType));
+        builder.<Integer>withRequestField("affected_os",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getAffectedOs, ListCustomerIpsRequest::setAffectedOs));
+        builder.<Integer>withRequestField("attack_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getAttackType, ListCustomerIpsRequest::setAttackType));
+        builder.<String>withRequestField("ips_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getIpsName, ListCustomerIpsRequest::setIpsName));
+        builder.<String>withRequestField("ips_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getIpsId, ListCustomerIpsRequest::setIpsId));
+        builder.<Integer>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getProtocol, ListCustomerIpsRequest::setProtocol));
+        builder.<Integer>withRequestField("severity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getSeverity, ListCustomerIpsRequest::setSeverity));
+        builder.<Integer>withRequestField("software",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getSoftware, ListCustomerIpsRequest::setSoftware));
+        builder.<String>withRequestField("object_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getObjectId, ListCustomerIpsRequest::setObjectId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getEnterpriseProjectId,
+                ListCustomerIpsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getFwInstanceId, ListCustomerIpsRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getLimit, ListCustomerIpsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerIpsRequest::getOffset, ListCustomerIpsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse> showCustomerIpsInfo =
+        genForShowCustomerIpsInfo();
+
+    private static HttpRequestDef<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse> genForShowCustomerIpsInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomerIpsInfoRequest, ShowCustomerIpsInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCustomerIpsInfoRequest.class, ShowCustomerIpsInfoResponse.class)
+                .withName("ShowCustomerIpsInfo")
+                .withUri("/v1/{project_id}/ips/custom-rule/{ips_cfw_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ips_cfw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerIpsInfoRequest::getIpsCfwId, ShowCustomerIpsInfoRequest::setIpsCfwId));
+        builder.<String>withRequestField("object_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerIpsInfoRequest::getObjectId, ShowCustomerIpsInfoRequest::setObjectId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerIpsInfoRequest::getFwInstanceId,
+                ShowCustomerIpsInfoRequest::setFwInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateCustomerIpsRequest, UpdateCustomerIpsResponse> updateCustomerIps =
         genForUpdateCustomerIps();
 
@@ -4887,6 +4625,1266 @@ public class CfwMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CustomerIpsSaveDto.class),
             f -> f.withMarshaller(UpdateCustomerIpsRequest::getBody, UpdateCustomerIpsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAttackStatisticRequest, ListAttackStatisticResponse> listAttackStatistic =
+        genForListAttackStatistic();
+
+    private static HttpRequestDef<ListAttackStatisticRequest, ListAttackStatisticResponse> genForListAttackStatistic() {
+        // basic
+        HttpRequestDef.Builder<ListAttackStatisticRequest, ListAttackStatisticResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAttackStatisticRequest.class, ListAttackStatisticResponse.class)
+                .withName("ListAttackStatistic")
+                .withUri("/v1/{project_id}/cfw/logs/attack-statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getFwInstanceId,
+                ListAttackStatisticRequest::setFwInstanceId));
+        builder.<ListAttackStatisticRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAttackStatisticRequest.RangeEnum.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getRange, ListAttackStatisticRequest::setRange));
+        builder.<ListAttackStatisticRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAttackStatisticRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getLogType, ListAttackStatisticRequest::setLogType));
+        builder.<ListAttackStatisticRequest.DirectionEnum>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAttackStatisticRequest.DirectionEnum.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getDirection, ListAttackStatisticRequest::setDirection));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getStartTime, ListAttackStatisticRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getEndTime, ListAttackStatisticRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getVgwId, ListAttackStatisticRequest::setVgwId));
+        builder.<ListAttackStatisticRequest.ItemEnum>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAttackStatisticRequest.ItemEnum.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getItem, ListAttackStatisticRequest::setItem));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAttackStatisticRequest::getSize, ListAttackStatisticRequest::setSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlowStatisticRequest, ListFlowStatisticResponse> listFlowStatistic =
+        genForListFlowStatistic();
+
+    private static HttpRequestDef<ListFlowStatisticRequest, ListFlowStatisticResponse> genForListFlowStatistic() {
+        // basic
+        HttpRequestDef.Builder<ListFlowStatisticRequest, ListFlowStatisticResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlowStatisticRequest.class, ListFlowStatisticResponse.class)
+                .withName("ListFlowStatistic")
+                .withUri("/v1/{project_id}/cfw/logs/flow-statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getFwInstanceId,
+                ListFlowStatisticRequest::setFwInstanceId));
+        builder.<ListFlowStatisticRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlowStatisticRequest.RangeEnum.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getRange, ListFlowStatisticRequest::setRange));
+        builder.<ListFlowStatisticRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListFlowStatisticRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getLogType, ListFlowStatisticRequest::setLogType));
+        builder.<ListFlowStatisticRequest.DirectionEnum>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlowStatisticRequest.DirectionEnum.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getDirection, ListFlowStatisticRequest::setDirection));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getStartTime, ListFlowStatisticRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getEndTime, ListFlowStatisticRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getVgwId, ListFlowStatisticRequest::setVgwId));
+        builder.<ListFlowStatisticRequest.AssetTypeEnum>withRequestField("asset_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlowStatisticRequest.AssetTypeEnum.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getAssetType, ListFlowStatisticRequest::setAssetType));
+        builder.<ListFlowStatisticRequest.ItemEnum>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListFlowStatisticRequest.ItemEnum.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getItem, ListFlowStatisticRequest::setItem));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlowStatisticRequest::getSize, ListFlowStatisticRequest::setSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAccessDetailRequest, ShowAccessDetailResponse> showAccessDetail =
+        genForShowAccessDetail();
+
+    private static HttpRequestDef<ShowAccessDetailRequest, ShowAccessDetailResponse> genForShowAccessDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowAccessDetailRequest, ShowAccessDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAccessDetailRequest.class, ShowAccessDetailResponse.class)
+                .withName("ShowAccessDetail")
+                .withUri("/v1/{project_id}/cfw/logs/top-access-detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getFwInstanceId, ShowAccessDetailRequest::setFwInstanceId));
+        builder.<ShowAccessDetailRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAccessDetailRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getRange, ShowAccessDetailRequest::setRange));
+        builder.<ShowAccessDetailRequest.DirectionEnum>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAccessDetailRequest.DirectionEnum.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getDirection, ShowAccessDetailRequest::setDirection));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getStartTime, ShowAccessDetailRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getEndTime, ShowAccessDetailRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getVgwId, ShowAccessDetailRequest::setVgwId));
+        builder.<ShowAccessDetailRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAccessDetailRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getLogType, ShowAccessDetailRequest::setLogType));
+        builder.<ShowAccessDetailRequest.ItemEnum>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAccessDetailRequest.ItemEnum.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getItem, ShowAccessDetailRequest::setItem));
+        builder.<String>withRequestField("item_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccessDetailRequest::getItemId, ShowAccessDetailRequest::setItemId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAccessTopRequest, ShowAccessTopResponse> showAccessTop =
+        genForShowAccessTop();
+
+    private static HttpRequestDef<ShowAccessTopRequest, ShowAccessTopResponse> genForShowAccessTop() {
+        // basic
+        HttpRequestDef.Builder<ShowAccessTopRequest, ShowAccessTopResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAccessTopRequest.class, ShowAccessTopResponse.class)
+                .withName("ShowAccessTop")
+                .withUri("/v1/{project_id}/cfw/logs/access-top")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getFwInstanceId, ShowAccessTopRequest::setFwInstanceId));
+        builder.<ShowAccessTopRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAccessTopRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getRange, ShowAccessTopRequest::setRange));
+        builder.<ShowAccessTopRequest.DirectionEnum>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAccessTopRequest.DirectionEnum.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getDirection, ShowAccessTopRequest::setDirection));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getStartTime, ShowAccessTopRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getEndTime, ShowAccessTopRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getVgwId, ShowAccessTopRequest::setVgwId));
+        builder.<ShowAccessTopRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAccessTopRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getLogType, ShowAccessTopRequest::setLogType));
+        builder.<ShowAccessTopRequest.ItemEnum>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAccessTopRequest.ItemEnum.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getItem, ShowAccessTopRequest::setItem));
+        builder.<List<String>>withRequestField("rule_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAccessTopRequest::getRuleId, ShowAccessTopRequest::setRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAttackDetailRequest, ShowAttackDetailResponse> showAttackDetail =
+        genForShowAttackDetail();
+
+    private static HttpRequestDef<ShowAttackDetailRequest, ShowAttackDetailResponse> genForShowAttackDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowAttackDetailRequest, ShowAttackDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAttackDetailRequest.class, ShowAttackDetailResponse.class)
+                .withName("ShowAttackDetail")
+                .withUri("/v1/{project_id}/cfw/logs/attack-detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getFwInstanceId, ShowAttackDetailRequest::setFwInstanceId));
+        builder.<ShowAttackDetailRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAttackDetailRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getRange, ShowAttackDetailRequest::setRange));
+        builder.<ShowAttackDetailRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAttackDetailRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getLogType, ShowAttackDetailRequest::setLogType));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getStartTime, ShowAttackDetailRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getEndTime, ShowAttackDetailRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getVgwId, ShowAttackDetailRequest::setVgwId));
+        builder.<ShowAttackDetailRequest.ActionEnum>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAttackDetailRequest.ActionEnum.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getAction, ShowAttackDetailRequest::setAction));
+        builder.<ShowAttackDetailRequest.ItemEnum>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAttackDetailRequest.ItemEnum.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getItem, ShowAttackDetailRequest::setItem));
+        builder.<String>withRequestField("value",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAttackDetailRequest::getValue, ShowAttackDetailRequest::setValue));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAttackTopRequest, ShowAttackTopResponse> showAttackTop =
+        genForShowAttackTop();
+
+    private static HttpRequestDef<ShowAttackTopRequest, ShowAttackTopResponse> genForShowAttackTop() {
+        // basic
+        HttpRequestDef.Builder<ShowAttackTopRequest, ShowAttackTopResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAttackTopRequest.class, ShowAttackTopResponse.class)
+                .withName("ShowAttackTop")
+                .withUri("/v1/{project_id}/cfw/logs/top-attack")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getFwInstanceId, ShowAttackTopRequest::setFwInstanceId));
+        builder.<ShowAttackTopRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAttackTopRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getRange, ShowAttackTopRequest::setRange));
+        builder.<ShowAttackTopRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAttackTopRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getLogType, ShowAttackTopRequest::setLogType));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getStartTime, ShowAttackTopRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getEndTime, ShowAttackTopRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getVgwId, ShowAttackTopRequest::setVgwId));
+        builder.<ShowAttackTopRequest.ActionEnum>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAttackTopRequest.ActionEnum.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getAction, ShowAttackTopRequest::setAction));
+        builder.<List<String>>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getItem, ShowAttackTopRequest::setItem));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAttackTopRequest::getSize, ShowAttackTopRequest::setSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAttackTotalRequest, ShowAttackTotalResponse> showAttackTotal =
+        genForShowAttackTotal();
+
+    private static HttpRequestDef<ShowAttackTotalRequest, ShowAttackTotalResponse> genForShowAttackTotal() {
+        // basic
+        HttpRequestDef.Builder<ShowAttackTotalRequest, ShowAttackTotalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAttackTotalRequest.class, ShowAttackTotalResponse.class)
+                .withName("ShowAttackTotal")
+                .withUri("/v1/{project_id}/cfw/logs/total-attack")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAttackTotalRequest::getFwInstanceId, ShowAttackTotalRequest::setFwInstanceId));
+        builder.<ShowAttackTotalRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAttackTotalRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowAttackTotalRequest::getRange, ShowAttackTotalRequest::setRange));
+        builder.<ShowAttackTotalRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAttackTotalRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowAttackTotalRequest::getLogType, ShowAttackTotalRequest::setLogType));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAttackTotalRequest::getStartTime, ShowAttackTotalRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAttackTotalRequest::getEndTime, ShowAttackTotalRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAttackTotalRequest::getVgwId, ShowAttackTotalRequest::setVgwId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAttackTrendRequest, ShowAttackTrendResponse> showAttackTrend =
+        genForShowAttackTrend();
+
+    private static HttpRequestDef<ShowAttackTrendRequest, ShowAttackTrendResponse> genForShowAttackTrend() {
+        // basic
+        HttpRequestDef.Builder<ShowAttackTrendRequest, ShowAttackTrendResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAttackTrendRequest.class, ShowAttackTrendResponse.class)
+                .withName("ShowAttackTrend")
+                .withUri("/v1/{project_id}/cfw/logs/trend-attack")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAttackTrendRequest::getFwInstanceId, ShowAttackTrendRequest::setFwInstanceId));
+        builder.<ShowAttackTrendRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAttackTrendRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowAttackTrendRequest::getRange, ShowAttackTrendRequest::setRange));
+        builder.<ShowAttackTrendRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAttackTrendRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowAttackTrendRequest::getLogType, ShowAttackTrendRequest::setLogType));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAttackTrendRequest::getStartTime, ShowAttackTrendRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowAttackTrendRequest::getEndTime, ShowAttackTrendRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAttackTrendRequest::getVgwId, ShowAttackTrendRequest::setVgwId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlowDetailRequest, ShowFlowDetailResponse> showFlowDetail =
+        genForShowFlowDetail();
+
+    private static HttpRequestDef<ShowFlowDetailRequest, ShowFlowDetailResponse> genForShowFlowDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowFlowDetailRequest, ShowFlowDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlowDetailRequest.class, ShowFlowDetailResponse.class)
+                .withName("ShowFlowDetail")
+                .withUri("/v1/{project_id}/cfw/logs/flow-detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getFwInstanceId, ShowFlowDetailRequest::setFwInstanceId));
+        builder.<ShowFlowDetailRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowDetailRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getRange, ShowFlowDetailRequest::setRange));
+        builder.<ShowFlowDetailRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowFlowDetailRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getLogType, ShowFlowDetailRequest::setLogType));
+        builder.<ShowFlowDetailRequest.DirectionEnum>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowDetailRequest.DirectionEnum.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getDirection, ShowFlowDetailRequest::setDirection));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getStartTime, ShowFlowDetailRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getEndTime, ShowFlowDetailRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getVgwId, ShowFlowDetailRequest::setVgwId));
+        builder.<ShowFlowDetailRequest.AssetTypeEnum>withRequestField("asset_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowDetailRequest.AssetTypeEnum.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getAssetType, ShowFlowDetailRequest::setAssetType));
+        builder.<ShowFlowDetailRequest.ItemEnum>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowFlowDetailRequest.ItemEnum.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getItem, ShowFlowDetailRequest::setItem));
+        builder.<String>withRequestField("value",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlowDetailRequest::getValue, ShowFlowDetailRequest::setValue));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlowTopRequest, ShowFlowTopResponse> showFlowTop = genForShowFlowTop();
+
+    private static HttpRequestDef<ShowFlowTopRequest, ShowFlowTopResponse> genForShowFlowTop() {
+        // basic
+        HttpRequestDef.Builder<ShowFlowTopRequest, ShowFlowTopResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlowTopRequest.class, ShowFlowTopResponse.class)
+                .withName("ShowFlowTop")
+                .withUri("/v1/{project_id}/cfw/logs/flow-top")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getFwInstanceId, ShowFlowTopRequest::setFwInstanceId));
+        builder.<ShowFlowTopRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowTopRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getRange, ShowFlowTopRequest::setRange));
+        builder.<ShowFlowTopRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowFlowTopRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getLogType, ShowFlowTopRequest::setLogType));
+        builder.<ShowFlowTopRequest.DirectionEnum>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowTopRequest.DirectionEnum.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getDirection, ShowFlowTopRequest::setDirection));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getStartTime, ShowFlowTopRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getEndTime, ShowFlowTopRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getVgwId, ShowFlowTopRequest::setVgwId));
+        builder.<ShowFlowTopRequest.AssetTypeEnum>withRequestField("asset_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowTopRequest.AssetTypeEnum.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getAssetType, ShowFlowTopRequest::setAssetType));
+        builder.<List<String>>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getItem, ShowFlowTopRequest::setItem));
+        builder.<ShowFlowTopRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowFlowTopRequest.OrderEnum.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getOrder, ShowFlowTopRequest::setOrder));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFlowTopRequest::getSize, ShowFlowTopRequest::setSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlowTrendRequest, ShowFlowTrendResponse> showFlowTrend =
+        genForShowFlowTrend();
+
+    private static HttpRequestDef<ShowFlowTrendRequest, ShowFlowTrendResponse> genForShowFlowTrend() {
+        // basic
+        HttpRequestDef.Builder<ShowFlowTrendRequest, ShowFlowTrendResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlowTrendRequest.class, ShowFlowTrendResponse.class)
+                .withName("ShowFlowTrend")
+                .withUri("/v1/{project_id}/cfw/logs/flow-trend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getFwInstanceId, ShowFlowTrendRequest::setFwInstanceId));
+        builder.<ShowFlowTrendRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowTrendRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getRange, ShowFlowTrendRequest::setRange));
+        builder.<ShowFlowTrendRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowFlowTrendRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getLogType, ShowFlowTrendRequest::setLogType));
+        builder.<ShowFlowTrendRequest.DirectionEnum>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowTrendRequest.DirectionEnum.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getDirection, ShowFlowTrendRequest::setDirection));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getStartTime, ShowFlowTrendRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getEndTime, ShowFlowTrendRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getVgwId, ShowFlowTrendRequest::setVgwId));
+        builder.<ShowFlowTrendRequest.AssetTypeEnum>withRequestField("asset_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFlowTrendRequest.AssetTypeEnum.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getAssetType, ShowFlowTrendRequest::setAssetType));
+        builder.<List<String>>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getIp, ShowFlowTrendRequest::setIp));
+        builder.<List<String>>withRequestField("vpc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowFlowTrendRequest::getVpc, ShowFlowTrendRequest::setVpc));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLogsCountRequest, ShowLogsCountResponse> showLogsCount =
+        genForShowLogsCount();
+
+    private static HttpRequestDef<ShowLogsCountRequest, ShowLogsCountResponse> genForShowLogsCount() {
+        // basic
+        HttpRequestDef.Builder<ShowLogsCountRequest, ShowLogsCountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLogsCountRequest.class, ShowLogsCountResponse.class)
+                .withName("ShowLogsCount")
+                .withUri("/v1/{project_id}/logs/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogsCountRequest::getFwInstanceId, ShowLogsCountRequest::setFwInstanceId));
+        builder.<ShowLogsCountRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowLogsCountRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowLogsCountRequest::getRange, ShowLogsCountRequest::setRange));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLogsCountRequest::getStartTime, ShowLogsCountRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLogsCountRequest::getEndTime, ShowLogsCountRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowLogsCountRequest::getVgwId, ShowLogsCountRequest::setVgwId));
+        builder.<ShowLogsCountRequest.ItemEnum>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowLogsCountRequest.ItemEnum.class),
+            f -> f.withMarshaller(ShowLogsCountRequest::getItem, ShowLogsCountRequest::setItem));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrafficTrendRequest, ShowTrafficTrendResponse> showTrafficTrend =
+        genForShowTrafficTrend();
+
+    private static HttpRequestDef<ShowTrafficTrendRequest, ShowTrafficTrendResponse> genForShowTrafficTrend() {
+        // basic
+        HttpRequestDef.Builder<ShowTrafficTrendRequest, ShowTrafficTrendResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTrafficTrendRequest.class, ShowTrafficTrendResponse.class)
+                .withName("ShowTrafficTrend")
+                .withUri("/v1/{project_id}/cfw/logs/traffic-trend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrafficTrendRequest::getFwInstanceId, ShowTrafficTrendRequest::setFwInstanceId));
+        builder.<ShowTrafficTrendRequest.RangeEnum>withRequestField("range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowTrafficTrendRequest.RangeEnum.class),
+            f -> f.withMarshaller(ShowTrafficTrendRequest::getRange, ShowTrafficTrendRequest::setRange));
+        builder.<ShowTrafficTrendRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowTrafficTrendRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowTrafficTrendRequest::getLogType, ShowTrafficTrendRequest::setLogType));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowTrafficTrendRequest::getStartTime, ShowTrafficTrendRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowTrafficTrendRequest::getEndTime, ShowTrafficTrendRequest::setEndTime));
+        builder.<List<String>>withRequestField("vgw_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowTrafficTrendRequest::getVgwId, ShowTrafficTrendRequest::setVgwId));
+        builder.<ShowTrafficTrendRequest.AggTypeEnum>withRequestField("agg_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowTrafficTrendRequest.AggTypeEnum.class),
+            f -> f.withMarshaller(ShowTrafficTrendRequest::getAggType, ShowTrafficTrendRequest::setAggType));
+        builder.<List<String>>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowTrafficTrendRequest::getIp, ShowTrafficTrendRequest::setIp));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportLogsRequest, ExportLogsResponse> exportLogs = genForExportLogs();
+
+    private static HttpRequestDef<ExportLogsRequest, ExportLogsResponse> genForExportLogs() {
+        // basic
+        HttpRequestDef.Builder<ExportLogsRequest, ExportLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportLogsRequest.class, ExportLogsResponse.class)
+                .withName("ExportLogs")
+                .withUri("/v1/{project_id}/cfw/{fw_instance_id}/logs/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportLogsRequest::getFwInstanceId, ExportLogsRequest::setFwInstanceId));
+        builder.<ExportLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportLogsRequestBody.class),
+            f -> f.withMarshaller(ExportLogsRequest::getBody, ExportLogsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogsRequest, ListLogsResponse> listLogs = genForListLogs();
+
+    private static HttpRequestDef<ListLogsRequest, ListLogsResponse> genForListLogs() {
+        // basic
+        HttpRequestDef.Builder<ListLogsRequest, ListLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListLogsRequest.class, ListLogsResponse.class)
+                .withName("ListLogs")
+                .withUri("/v1/{project_id}/cfw/{fw_instance_id}/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogsRequest::getFwInstanceId, ListLogsRequest::setFwInstanceId));
+        builder.<ListLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListLogsRequestBody.class),
+            f -> f.withMarshaller(ListLogsRequest::getBody, ListLogsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableMultiAccountRequest, EnableMultiAccountResponse> enableMultiAccount =
+        genForEnableMultiAccount();
+
+    private static HttpRequestDef<EnableMultiAccountRequest, EnableMultiAccountResponse> genForEnableMultiAccount() {
+        // basic
+        HttpRequestDef.Builder<EnableMultiAccountRequest, EnableMultiAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableMultiAccountRequest.class, EnableMultiAccountResponse.class)
+                .withName("EnableMultiAccount")
+                .withUri("/v1/{project_id}/system/multi-account/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableMultiAccountRequest::getFwInstanceId,
+                EnableMultiAccountRequest::setFwInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAccountsRequest, ListAccountsResponse> listAccounts = genForListAccounts();
+
+    private static HttpRequestDef<ListAccountsRequest, ListAccountsResponse> genForListAccounts() {
+        // basic
+        HttpRequestDef.Builder<ListAccountsRequest, ListAccountsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAccountsRequest.class, ListAccountsResponse.class)
+                .withName("ListAccounts")
+                .withUri("/v1/{project_id}/system/multi-account/accounts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccountsRequest::getFwInstanceId, ListAccountsRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAccountsRequest::getLimit, ListAccountsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAccountsRequest::getOffset, ListAccountsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOrganizationAccountsRequest, ListOrganizationAccountsResponse> listOrganizationAccounts =
+        genForListOrganizationAccounts();
+
+    private static HttpRequestDef<ListOrganizationAccountsRequest, ListOrganizationAccountsResponse> genForListOrganizationAccounts() {
+        // basic
+        HttpRequestDef.Builder<ListOrganizationAccountsRequest, ListOrganizationAccountsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListOrganizationAccountsRequest.class, ListOrganizationAccountsResponse.class)
+                .withName("ListOrganizationAccounts")
+                .withUri("/v1/{project_id}/system/multi-account/organization-accounts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationAccountsRequest::getFwInstanceId,
+                ListOrganizationAccountsRequest::setFwInstanceId));
+        builder.<String>withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationAccountsRequest::getParentId,
+                ListOrganizationAccountsRequest::setParentId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrganizationAccountsRequest::getLimit,
+                ListOrganizationAccountsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationAccountsRequest::getMarker,
+                ListOrganizationAccountsRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOrganizationTreeRequest, ListOrganizationTreeResponse> listOrganizationTree =
+        genForListOrganizationTree();
+
+    private static HttpRequestDef<ListOrganizationTreeRequest, ListOrganizationTreeResponse> genForListOrganizationTree() {
+        // basic
+        HttpRequestDef.Builder<ListOrganizationTreeRequest, ListOrganizationTreeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOrganizationTreeRequest.class, ListOrganizationTreeResponse.class)
+            .withName("ListOrganizationTree")
+            .withUri("/v1/{project_id}/system/multi-account/organization-tree")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationTreeRequest::getFwInstanceId,
+                ListOrganizationTreeRequest::setFwInstanceId));
+        builder.<String>withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationTreeRequest::getParentId, ListOrganizationTreeRequest::setParentId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrganizationTreeRequest::getLimit, ListOrganizationTreeRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationTreeRequest::getMarker, ListOrganizationTreeRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateReportProfileRequest, CreateReportProfileResponse> createReportProfile =
+        genForCreateReportProfile();
+
+    private static HttpRequestDef<CreateReportProfileRequest, CreateReportProfileResponse> genForCreateReportProfile() {
+        // basic
+        HttpRequestDef.Builder<CreateReportProfileRequest, CreateReportProfileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateReportProfileRequest.class, CreateReportProfileResponse.class)
+                .withName("CreateReportProfile")
+                .withUri("/v1/{project_id}/report-profile")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateReportProfileRequest::getFwInstanceId,
+                CreateReportProfileRequest::setFwInstanceId));
+        builder.<CreateReportProfileDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateReportProfileDto.class),
+            f -> f.withMarshaller(CreateReportProfileRequest::getBody, CreateReportProfileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteReportProfileRequest, DeleteReportProfileResponse> deleteReportProfile =
+        genForDeleteReportProfile();
+
+    private static HttpRequestDef<DeleteReportProfileRequest, DeleteReportProfileResponse> genForDeleteReportProfile() {
+        // basic
+        HttpRequestDef.Builder<DeleteReportProfileRequest, DeleteReportProfileResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteReportProfileRequest.class, DeleteReportProfileResponse.class)
+            .withName("DeleteReportProfile")
+            .withUri("/v1/{project_id}/report-profile/{report_profile_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_profile_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReportProfileRequest::getReportProfileId,
+                DeleteReportProfileRequest::setReportProfileId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReportProfileRequest::getFwInstanceId,
+                DeleteReportProfileRequest::setFwInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListReportProfilesRequest, ListReportProfilesResponse> listReportProfiles =
+        genForListReportProfiles();
+
+    private static HttpRequestDef<ListReportProfilesRequest, ListReportProfilesResponse> genForListReportProfiles() {
+        // basic
+        HttpRequestDef.Builder<ListReportProfilesRequest, ListReportProfilesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListReportProfilesRequest.class, ListReportProfilesResponse.class)
+                .withName("ListReportProfiles")
+                .withUri("/v1/{project_id}/report-profile")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListReportProfilesRequest.CategoryEnum>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListReportProfilesRequest.CategoryEnum.class),
+            f -> f.withMarshaller(ListReportProfilesRequest::getCategory, ListReportProfilesRequest::setCategory));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReportProfilesRequest::getFwInstanceId,
+                ListReportProfilesRequest::setFwInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReportProfilesRequest::getLimit, ListReportProfilesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReportProfilesRequest::getOffset, ListReportProfilesRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFirewallReportRequest, ShowFirewallReportResponse> showFirewallReport =
+        genForShowFirewallReport();
+
+    private static HttpRequestDef<ShowFirewallReportRequest, ShowFirewallReportResponse> genForShowFirewallReport() {
+        // basic
+        HttpRequestDef.Builder<ShowFirewallReportRequest, ShowFirewallReportResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFirewallReportRequest.class, ShowFirewallReportResponse.class)
+                .withName("ShowFirewallReport")
+                .withUri("/v1/{project_id}/report/{report_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFirewallReportRequest::getReportId, ShowFirewallReportRequest::setReportId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFirewallReportRequest::getFwInstanceId,
+                ShowFirewallReportRequest::setFwInstanceId));
+        builder.<String>withRequestField("report_profile_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFirewallReportRequest::getReportProfileId,
+                ShowFirewallReportRequest::setReportProfileId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReportProfileRequest, ShowReportProfileResponse> showReportProfile =
+        genForShowReportProfile();
+
+    private static HttpRequestDef<ShowReportProfileRequest, ShowReportProfileResponse> genForShowReportProfile() {
+        // basic
+        HttpRequestDef.Builder<ShowReportProfileRequest, ShowReportProfileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReportProfileRequest.class, ShowReportProfileResponse.class)
+                .withName("ShowReportProfile")
+                .withUri("/v1/{project_id}/report-profile/{report_profile_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_profile_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReportProfileRequest::getReportProfileId,
+                ShowReportProfileRequest::setReportProfileId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReportProfileRequest::getFwInstanceId,
+                ShowReportProfileRequest::setFwInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateReportProfileRequest, UpdateReportProfileResponse> updateReportProfile =
+        genForUpdateReportProfile();
+
+    private static HttpRequestDef<UpdateReportProfileRequest, UpdateReportProfileResponse> genForUpdateReportProfile() {
+        // basic
+        HttpRequestDef.Builder<UpdateReportProfileRequest, UpdateReportProfileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateReportProfileRequest.class, UpdateReportProfileResponse.class)
+                .withName("UpdateReportProfile")
+                .withUri("/v1/{project_id}/report-profile/{report_profile_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_profile_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReportProfileRequest::getReportProfileId,
+                UpdateReportProfileRequest::setReportProfileId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReportProfileRequest::getFwInstanceId,
+                UpdateReportProfileRequest::setFwInstanceId));
+        builder.<UpdateReportProfileDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateReportProfileDto.class),
+            f -> f.withMarshaller(UpdateReportProfileRequest::getBody, UpdateReportProfileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatus =
+        genForChangeEastWestFirewallStatus();
+
+    private static HttpRequestDef<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> genForChangeEastWestFirewallStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ChangeEastWestFirewallStatusRequest.class,
+                    ChangeEastWestFirewallStatusResponse.class)
+                .withName("ChangeEastWestFirewallStatus")
+                .withUri("/v1/{project_id}/firewall/east-west/protect")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ChangeProtectStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeProtectStatusRequestBody.class),
+            f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getBody,
+                ChangeEastWestFirewallStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEwAssociatedErRequest, ShowEwAssociatedErResponse> showEwAssociatedEr =
+        genForShowEwAssociatedEr();
+
+    private static HttpRequestDef<ShowEwAssociatedErRequest, ShowEwAssociatedErResponse> genForShowEwAssociatedEr() {
+        // basic
+        HttpRequestDef.Builder<ShowEwAssociatedErRequest, ShowEwAssociatedErResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEwAssociatedErRequest.class, ShowEwAssociatedErResponse.class)
+                .withName("ShowEwAssociatedEr")
+                .withUri("/v1/{project_id}/firewall/east-west/enterprise-router")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEwAssociatedErRequest::getFwInstanceId,
+                ShowEwAssociatedErRequest::setFwInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEwAssociatedVpcRequest, ShowEwAssociatedVpcResponse> showEwAssociatedVpc =
+        genForShowEwAssociatedVpc();
+
+    private static HttpRequestDef<ShowEwAssociatedVpcRequest, ShowEwAssociatedVpcResponse> genForShowEwAssociatedVpc() {
+        // basic
+        HttpRequestDef.Builder<ShowEwAssociatedVpcRequest, ShowEwAssociatedVpcResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEwAssociatedVpcRequest.class, ShowEwAssociatedVpcResponse.class)
+                .withName("ShowEwAssociatedVpc")
+                .withUri("/v1/{project_id}/firewall/east-west/inspection-vpc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEwAssociatedVpcRequest::getFwInstanceId,
+                ShowEwAssociatedVpcRequest::setFwInstanceId));
 
         // response
 
