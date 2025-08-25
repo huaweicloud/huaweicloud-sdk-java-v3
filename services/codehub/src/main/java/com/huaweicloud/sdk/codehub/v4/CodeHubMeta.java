@@ -101,6 +101,8 @@ import com.huaweicloud.sdk.codehub.v4.model.CreateMergeRequestTemplateRequest;
 import com.huaweicloud.sdk.codehub.v4.model.CreateMergeRequestTemplateResponse;
 import com.huaweicloud.sdk.codehub.v4.model.CreateProjectMergeRequestApproverSettingRequest;
 import com.huaweicloud.sdk.codehub.v4.model.CreateProjectMergeRequestApproverSettingResponse;
+import com.huaweicloud.sdk.codehub.v4.model.CreateProjectProtectedBranchesRequest;
+import com.huaweicloud.sdk.codehub.v4.model.CreateProjectProtectedBranchesResponse;
 import com.huaweicloud.sdk.codehub.v4.model.CreateRepositoryFilePushPermissionDto;
 import com.huaweicloud.sdk.codehub.v4.model.CreateRepositoryLabelRequest;
 import com.huaweicloud.sdk.codehub.v4.model.CreateRepositoryLabelResponse;
@@ -255,6 +257,8 @@ import com.huaweicloud.sdk.codehub.v4.model.ListProjectMergeRequestCanBeAssigned
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectMergeRequestCanBeAssignedUsersResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectNoteRequiredAttributesRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectNoteRequiredAttributesResponse;
+import com.huaweicloud.sdk.codehub.v4.model.ListProjectProtectedBranchesRequest;
+import com.huaweicloud.sdk.codehub.v4.model.ListProjectProtectedBranchesResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectSubgroupsAndRepositoriesRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectSubgroupsAndRepositoriesResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectWebhookLogsRequest;
@@ -333,6 +337,9 @@ import com.huaweicloud.sdk.codehub.v4.model.PermissionDto;
 import com.huaweicloud.sdk.codehub.v4.model.PermissionInheritEnabledDto;
 import com.huaweicloud.sdk.codehub.v4.model.PostMergeRequestParamsDtoForOpenApi;
 import com.huaweicloud.sdk.codehub.v4.model.PostNoteRequiredAttributeDto;
+import com.huaweicloud.sdk.codehub.v4.model.ProjectProtectedBranchApiDto;
+import com.huaweicloud.sdk.codehub.v4.model.ProjectSettingsInheritCfgDto;
+import com.huaweicloud.sdk.codehub.v4.model.ProtectedBranchBodyApiDto;
 import com.huaweicloud.sdk.codehub.v4.model.ProtectedBranchProtectedActionBodyDto;
 import com.huaweicloud.sdk.codehub.v4.model.PutMergeRequestParamsDto;
 import com.huaweicloud.sdk.codehub.v4.model.RebaseMergeRequestForOpenApiRequest;
@@ -373,6 +380,7 @@ import com.huaweicloud.sdk.codehub.v4.model.ReviewMergeRequestResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ReviewSettingParamDto;
 import com.huaweicloud.sdk.codehub.v4.model.SendUserEmailVerifyCodeRequest;
 import com.huaweicloud.sdk.codehub.v4.model.SendUserEmailVerifyCodeResponse;
+import com.huaweicloud.sdk.codehub.v4.model.SettingsInheritCfgBodyApiDto;
 import com.huaweicloud.sdk.codehub.v4.model.ShowActualHeadPipelineRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ShowActualHeadPipelineResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ShowAverageEvaluationRequest;
@@ -453,6 +461,8 @@ import com.huaweicloud.sdk.codehub.v4.model.ShowProjectMergeRequestSettingReques
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectMergeRequestSettingResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectReviewSettingsRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectReviewSettingsResponse;
+import com.huaweicloud.sdk.codehub.v4.model.ShowProjectSettingsInheritCfgRequest;
+import com.huaweicloud.sdk.codehub.v4.model.ShowProjectSettingsInheritCfgResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectWatermarkRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectWatermarkResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectWebhookLogRequest;
@@ -565,6 +575,8 @@ import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectNoteRequiredAttributesR
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectNoteRequiredAttributesResponse;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectReviewSettingsRequest;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectReviewSettingsResponse;
+import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectSettingsInheritCfgRequest;
+import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectSettingsInheritCfgResponse;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectWatermarkRequest;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectWatermarkResponse;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectWebhookRequest;
@@ -6260,6 +6272,41 @@ public class CodeHubMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> showProjectSettingsInheritCfg =
+        genForShowProjectSettingsInheritCfg();
+
+    private static HttpRequestDef<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> genForShowProjectSettingsInheritCfg() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowProjectSettingsInheritCfgRequest.class,
+                    ShowProjectSettingsInheritCfgResponse.class)
+                .withName("ShowProjectSettingsInheritCfg")
+                .withUri("/v4/projects/{project_id}/settings-inherit-cfg")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectSettingsInheritCfgRequest::getProjectId,
+                ShowProjectSettingsInheritCfgRequest::setProjectId));
+
+        // response
+        builder.<List<ProjectSettingsInheritCfgDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowProjectSettingsInheritCfgResponse::getBody,
+                    ShowProjectSettingsInheritCfgResponse::setBody)
+                .withInnerContainerType(ProjectSettingsInheritCfgDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProjectWatermarkRequest, ShowProjectWatermarkResponse> showProjectWatermark =
         genForShowProjectWatermark();
 
@@ -6280,6 +6327,47 @@ public class CodeHubMeta {
                 ShowProjectWatermarkRequest::setProjectId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> updateProjectSettingsInheritCfg =
+        genForUpdateProjectSettingsInheritCfg();
+
+    private static HttpRequestDef<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> genForUpdateProjectSettingsInheritCfg() {
+        // basic
+        HttpRequestDef.Builder<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateProjectSettingsInheritCfgRequest.class,
+                    UpdateProjectSettingsInheritCfgResponse.class)
+                .withName("UpdateProjectSettingsInheritCfg")
+                .withUri("/v4/projects/{project_id}/settings-inherit-cfg")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProjectSettingsInheritCfgRequest::getProjectId,
+                UpdateProjectSettingsInheritCfgRequest::setProjectId));
+        builder.<SettingsInheritCfgBodyApiDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SettingsInheritCfgBodyApiDto.class),
+            f -> f.withMarshaller(UpdateProjectSettingsInheritCfgRequest::getBody,
+                UpdateProjectSettingsInheritCfgRequest::setBody));
+
+        // response
+        builder.<List<ProjectSettingsInheritCfgDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(UpdateProjectSettingsInheritCfgResponse::getBody,
+                    UpdateProjectSettingsInheritCfgResponse::setBody)
+                .withInnerContainerType(ProjectSettingsInheritCfgDto.class));
 
         return builder.build();
     }
@@ -6428,6 +6516,39 @@ public class CodeHubMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateProjectProtectedBranchesRequest, CreateProjectProtectedBranchesResponse> createProjectProtectedBranches =
+        genForCreateProjectProtectedBranches();
+
+    private static HttpRequestDef<CreateProjectProtectedBranchesRequest, CreateProjectProtectedBranchesResponse> genForCreateProjectProtectedBranches() {
+        // basic
+        HttpRequestDef.Builder<CreateProjectProtectedBranchesRequest, CreateProjectProtectedBranchesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateProjectProtectedBranchesRequest.class,
+                    CreateProjectProtectedBranchesResponse.class)
+                .withName("CreateProjectProtectedBranches")
+                .withUri("/v4/projects/{project_id}/protected-branches")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProjectProtectedBranchesRequest::getProjectId,
+                CreateProjectProtectedBranchesRequest::setProjectId));
+        builder.<ProtectedBranchBodyApiDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProtectedBranchBodyApiDto.class),
+            f -> f.withMarshaller(CreateProjectProtectedBranchesRequest::getBody,
+                CreateProjectProtectedBranchesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteProtectedBranchRequest, DeleteProtectedBranchResponse> deleteProtectedBranch =
         genForDeleteProtectedBranch();
 
@@ -6455,6 +6576,77 @@ public class CodeHubMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectProtectedBranchesRequest, ListProjectProtectedBranchesResponse> listProjectProtectedBranches =
+        genForListProjectProtectedBranches();
+
+    private static HttpRequestDef<ListProjectProtectedBranchesRequest, ListProjectProtectedBranchesResponse> genForListProjectProtectedBranches() {
+        // basic
+        HttpRequestDef.Builder<ListProjectProtectedBranchesRequest, ListProjectProtectedBranchesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListProjectProtectedBranchesRequest.class,
+                    ListProjectProtectedBranchesResponse.class)
+                .withName("ListProjectProtectedBranches")
+                .withUri("/v4/projects/{project_id}/protected-branches")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectProtectedBranchesRequest::getProjectId,
+                ListProjectProtectedBranchesRequest::setProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectProtectedBranchesRequest::getOffset,
+                ListProjectProtectedBranchesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectProtectedBranchesRequest::getLimit,
+                ListProjectProtectedBranchesRequest::setLimit));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectProtectedBranchesRequest::getSearch,
+                ListProjectProtectedBranchesRequest::setSearch));
+        builder.<Boolean>withRequestField("user_actions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListProjectProtectedBranchesRequest::getUserActions,
+                ListProjectProtectedBranchesRequest::setUserActions));
+        builder.<String>withRequestField("view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectProtectedBranchesRequest::getView,
+                ListProjectProtectedBranchesRequest::setView));
+
+        // response
+        builder.<List<ProjectProtectedBranchApiDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListProjectProtectedBranchesResponse::getBody,
+                    ListProjectProtectedBranchesResponse::setBody)
+                .withInnerContainerType(ProjectProtectedBranchApiDto.class));
+
+        builder.<String>withResponseField("X-Total",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListProjectProtectedBranchesResponse::getXTotal,
+                ListProjectProtectedBranchesResponse::setXTotal));
         return builder.build();
     }
 

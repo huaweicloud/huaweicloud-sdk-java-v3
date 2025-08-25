@@ -72,6 +72,8 @@ import com.huaweicloud.sdk.codehub.v4.model.CreateMergeRequestTemplateRequest;
 import com.huaweicloud.sdk.codehub.v4.model.CreateMergeRequestTemplateResponse;
 import com.huaweicloud.sdk.codehub.v4.model.CreateProjectMergeRequestApproverSettingRequest;
 import com.huaweicloud.sdk.codehub.v4.model.CreateProjectMergeRequestApproverSettingResponse;
+import com.huaweicloud.sdk.codehub.v4.model.CreateProjectProtectedBranchesRequest;
+import com.huaweicloud.sdk.codehub.v4.model.CreateProjectProtectedBranchesResponse;
 import com.huaweicloud.sdk.codehub.v4.model.CreateRepositoryLabelRequest;
 import com.huaweicloud.sdk.codehub.v4.model.CreateRepositoryLabelResponse;
 import com.huaweicloud.sdk.codehub.v4.model.CreateRepositorySystemLabelsRequest;
@@ -206,6 +208,8 @@ import com.huaweicloud.sdk.codehub.v4.model.ListProjectMergeRequestCanBeAssigned
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectMergeRequestCanBeAssignedUsersResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectNoteRequiredAttributesRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectNoteRequiredAttributesResponse;
+import com.huaweicloud.sdk.codehub.v4.model.ListProjectProtectedBranchesRequest;
+import com.huaweicloud.sdk.codehub.v4.model.ListProjectProtectedBranchesResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectSubgroupsAndRepositoriesRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectSubgroupsAndRepositoriesResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ListProjectWebhookLogsRequest;
@@ -362,6 +366,8 @@ import com.huaweicloud.sdk.codehub.v4.model.ShowProjectMergeRequestSettingReques
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectMergeRequestSettingResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectReviewSettingsRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectReviewSettingsResponse;
+import com.huaweicloud.sdk.codehub.v4.model.ShowProjectSettingsInheritCfgRequest;
+import com.huaweicloud.sdk.codehub.v4.model.ShowProjectSettingsInheritCfgResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectWatermarkRequest;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectWatermarkResponse;
 import com.huaweicloud.sdk.codehub.v4.model.ShowProjectWebhookLogRequest;
@@ -460,6 +466,8 @@ import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectNoteRequiredAttributesR
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectNoteRequiredAttributesResponse;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectReviewSettingsRequest;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectReviewSettingsResponse;
+import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectSettingsInheritCfgRequest;
+import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectSettingsInheritCfgResponse;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectWatermarkRequest;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectWatermarkResponse;
 import com.huaweicloud.sdk.codehub.v4.model.UpdateProjectWebhookRequest;
@@ -4567,6 +4575,36 @@ public class CodeHubAsyncClient {
     }
 
     /**
+     * 获取项目继承设置项
+     *
+     * 获取项目继承设置项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectSettingsInheritCfgRequest 请求对象
+     * @return CompletableFuture<ShowProjectSettingsInheritCfgResponse>
+     */
+    public CompletableFuture<ShowProjectSettingsInheritCfgResponse> showProjectSettingsInheritCfgAsync(
+        ShowProjectSettingsInheritCfgRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.showProjectSettingsInheritCfg);
+    }
+
+    /**
+     * 获取项目继承设置项
+     *
+     * 获取项目继承设置项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectSettingsInheritCfgRequest 请求对象
+     * @return AsyncInvoker<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse>
+     */
+    public AsyncInvoker<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> showProjectSettingsInheritCfgAsyncInvoker(
+        ShowProjectSettingsInheritCfgRequest request) {
+        return new AsyncInvoker<>(request, CodeHubMeta.showProjectSettingsInheritCfg, hcClient);
+    }
+
+    /**
      * 获取项目水印设置
      *
      * 获取项目水印设置
@@ -4594,6 +4632,36 @@ public class CodeHubAsyncClient {
     public AsyncInvoker<ShowProjectWatermarkRequest, ShowProjectWatermarkResponse> showProjectWatermarkAsyncInvoker(
         ShowProjectWatermarkRequest request) {
         return new AsyncInvoker<>(request, CodeHubMeta.showProjectWatermark, hcClient);
+    }
+
+    /**
+     * 更新项目继承设置项
+     *
+     * 更新项目继承设置项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProjectSettingsInheritCfgRequest 请求对象
+     * @return CompletableFuture<UpdateProjectSettingsInheritCfgResponse>
+     */
+    public CompletableFuture<UpdateProjectSettingsInheritCfgResponse> updateProjectSettingsInheritCfgAsync(
+        UpdateProjectSettingsInheritCfgRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.updateProjectSettingsInheritCfg);
+    }
+
+    /**
+     * 更新项目继承设置项
+     *
+     * 更新项目继承设置项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateProjectSettingsInheritCfgRequest 请求对象
+     * @return AsyncInvoker<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse>
+     */
+    public AsyncInvoker<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> updateProjectSettingsInheritCfgAsyncInvoker(
+        UpdateProjectSettingsInheritCfgRequest request) {
+        return new AsyncInvoker<>(request, CodeHubMeta.updateProjectSettingsInheritCfg, hcClient);
     }
 
     /**
@@ -4717,6 +4785,36 @@ public class CodeHubAsyncClient {
     }
 
     /**
+     * 创建项目下保护分支
+     *
+     * 创建项目下保护分支
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProjectProtectedBranchesRequest 请求对象
+     * @return CompletableFuture<CreateProjectProtectedBranchesResponse>
+     */
+    public CompletableFuture<CreateProjectProtectedBranchesResponse> createProjectProtectedBranchesAsync(
+        CreateProjectProtectedBranchesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.createProjectProtectedBranches);
+    }
+
+    /**
+     * 创建项目下保护分支
+     *
+     * 创建项目下保护分支
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateProjectProtectedBranchesRequest 请求对象
+     * @return AsyncInvoker<CreateProjectProtectedBranchesRequest, CreateProjectProtectedBranchesResponse>
+     */
+    public AsyncInvoker<CreateProjectProtectedBranchesRequest, CreateProjectProtectedBranchesResponse> createProjectProtectedBranchesAsyncInvoker(
+        CreateProjectProtectedBranchesRequest request) {
+        return new AsyncInvoker<>(request, CodeHubMeta.createProjectProtectedBranches, hcClient);
+    }
+
+    /**
      * 删除仓库保护分支
      *
      * 删除仓库保护分支
@@ -4744,6 +4842,36 @@ public class CodeHubAsyncClient {
     public AsyncInvoker<DeleteProtectedBranchRequest, DeleteProtectedBranchResponse> deleteProtectedBranchAsyncInvoker(
         DeleteProtectedBranchRequest request) {
         return new AsyncInvoker<>(request, CodeHubMeta.deleteProtectedBranch, hcClient);
+    }
+
+    /**
+     * 获取项目下保护分支列表
+     *
+     * 获取项目下保护分支列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectProtectedBranchesRequest 请求对象
+     * @return CompletableFuture<ListProjectProtectedBranchesResponse>
+     */
+    public CompletableFuture<ListProjectProtectedBranchesResponse> listProjectProtectedBranchesAsync(
+        ListProjectProtectedBranchesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.listProjectProtectedBranches);
+    }
+
+    /**
+     * 获取项目下保护分支列表
+     *
+     * 获取项目下保护分支列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectProtectedBranchesRequest 请求对象
+     * @return AsyncInvoker<ListProjectProtectedBranchesRequest, ListProjectProtectedBranchesResponse>
+     */
+    public AsyncInvoker<ListProjectProtectedBranchesRequest, ListProjectProtectedBranchesResponse> listProjectProtectedBranchesAsyncInvoker(
+        ListProjectProtectedBranchesRequest request) {
+        return new AsyncInvoker<>(request, CodeHubMeta.listProjectProtectedBranches, hcClient);
     }
 
     /**

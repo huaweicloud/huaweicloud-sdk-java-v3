@@ -28,6 +28,11 @@ public class UserForList {
 
     private List<String> hosts = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "comment")
+
+    private String comment;
+
     public UserForList withName(String name) {
         this.name = name;
         return this;
@@ -111,6 +116,23 @@ public class UserForList {
         this.hosts = hosts;
     }
 
+    public UserForList withComment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    /**
+     * 数据库用户备注
+     * @return comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -121,12 +143,12 @@ public class UserForList {
         }
         UserForList that = (UserForList) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.databases, that.databases)
-            && Objects.equals(this.hosts, that.hosts);
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.comment, that.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, databases, hosts);
+        return Objects.hash(name, databases, hosts, comment);
     }
 
     @Override
@@ -136,6 +158,7 @@ public class UserForList {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
+        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
         sb.append("}");
         return sb.toString();
     }
