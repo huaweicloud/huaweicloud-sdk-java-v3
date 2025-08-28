@@ -61,7 +61,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
+     * **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -80,7 +80,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return marker
      */
     public String getMarker() {
@@ -97,7 +97,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker
+     * **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -114,7 +114,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 参数解释：任务ID。
+     * **参数解释**：任务ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return jobId
      */
     public String getJobId() {
@@ -131,7 +131,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 参数解释：任务类型。
+     * **参数解释**：任务类型。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return jobType
      */
     public String getJobType() {
@@ -148,7 +148,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 参数解释：任务状态。  取值范围：INIT,RUNNING,FAIL,SUCCESS,ROLLBACKING,COMPLETE,ROLLBACK_FAIL,CANCEL
+     * **参数解释**：任务状态。  **约束限制**：不涉及  **取值范围**：INIT,RUNNING,FAIL,SUCCESS,ROLLBACKING,COMPLETE,ROLLBACK_FAIL,CANCEL  **默认取值**：不涉及
      * @return status
      */
     public String getStatus() {
@@ -165,7 +165,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 参数解释： 任务的错误码。
+     * **参数解释**：任务的错误码。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return errorCode
      */
     public String getErrorCode() {
@@ -182,7 +182,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 参数解释：资源ID。
+     * **参数解释**：资源ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return resourceId
      */
     public String getResourceId() {
@@ -199,7 +199,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * 参数解释：查询任务的开始时间大于等于传入时间的任务。格式：yyyy-MM-dd'T'HH:mm:ss
+     * **参数解释**：查询任务的开始时间大于等于传入时间的任务。格式：yyyy-MM-dd'T'HH:mm:ss  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return beginTime
      */
     public String getBeginTime() {

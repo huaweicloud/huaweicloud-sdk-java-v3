@@ -184,7 +184,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return marker
      */
     public String getMarker() {
@@ -201,7 +201,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
+     * **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -220,7 +220,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -336,7 +336,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 参数解释：负载均衡器的启用状态。  取值范围： - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt)
+     * **参数解释**：负载均衡器的启用状态。  **取值范围**： - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -485,7 +485,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器的IPv4虚拟IP地址。  支持多值查询，查询条件格式：*vip_address=xxx&vip_address=xxx*。
+     * 负载均衡器的IPv4私网IP地址。  支持多值查询，查询条件格式：*vip_address=xxx&vip_address=xxx*。
      * @return vipAddress
      */
     public List<String> getVipAddress() {
@@ -683,7 +683,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器绑定的公网IP。例如要查询绑定以下公网IP的LB： \"publicips=\": [     {         \"public_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",         \"public_address\": \"88.88.14.122\",         \"ip_version\": 4     } ] 可以通如下查询： publicips=ip_version%3D4&publicips=public_address%3D88.88.14.122&publicips=public_id%3De9b72a9d-4275-455e-a724-853504e4d9c6   支持多值查询，查询条件格式： - publicip_id作为查询条件： *publicips=publicip_id=xxx&publicips=publicip_id=xxx* - publicip_address作为查询条件： *publicips=publicip_address=xxx&publicips=publicip_address=xxx* - ip_version作为查询条件： *publicips=ip_version=xxx&publicips=ip_version=xxx*  注：该字段与eips字段一致。
+     * 负载均衡器绑定的公网IP。例如要查询绑定以下公网IP的LB： \"publicips=\": [     {         \"public_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",         \"public_address\": \"88.88.14.122\",         \"ip_version\": 4     } ] 可以通如下查询： publicips=ip_version%3D4&publicips=public_address%3D88.88.14.122&publicips=public_id%3De9b72a9d-4275-455e-a724-853504e4d9c6  支持多值查询，查询条件格式： - publicip_id作为查询条件： *publicips=publicip_id=xxx&publicips=publicip_id=xxx* - publicip_address作为查询条件： *publicips=publicip_address=xxx&publicips=publicip_address=xxx* - ip_version作为查询条件： *publicips=ip_version=xxx&publicips=ip_version=xxx*  注：该字段与eips字段一致。
      * @return publicips
      */
     public List<String> getPublicips() {
@@ -916,7 +916,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 参数解释：负载均衡器所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:loadbalancers:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  **约束限制**： 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:loadbalancers:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -966,7 +966,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 是否开启删除保护，false 不开启，true 开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1098,7 +1098,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器绑定的公网IP。示例如下：  {     \"global_eips\": [         {             \"global_eip_id\": \"24000000-0000-0000-0000-100000000001\",             \"global_eip_address\": \"10.10.10.10\",             \"ip_version\": 4         }     ] }   支持多值查询，查询条件格式：  - global_eip_id作为查询条件：*global_eips=global_eip_id=xxx&global_eips=global_eip_id=xxx*。  - global_eip_address作为查询条件：*global_eips=global_eip_address=xxx&global_eips=global_eip_address=xxx*。  - ip_version作为查询条件：*global_eips=ip_version=xxx&global_eips=ip_version=xxx*。
+     * 负载均衡器绑定的公网IP。示例如下：  {     \"global_eips\": [         {             \"global_eip_id\": \"24000000-0000-0000-0000-100000000001\",             \"global_eip_address\": \"10.10.10.10\",             \"ip_version\": 4         }     ] }  支持多值查询，查询条件格式：  - global_eip_id作为查询条件：*global_eips=global_eip_id=xxx&global_eips=global_eip_id=xxx*。  - global_eip_address作为查询条件：*global_eips=global_eip_address=xxx&global_eips=global_eip_address=xxx*。  - ip_version作为查询条件：*global_eips=ip_version=xxx&global_eips=ip_version=xxx*。
      * @return globalEips
      */
     public List<String> getGlobalEips() {

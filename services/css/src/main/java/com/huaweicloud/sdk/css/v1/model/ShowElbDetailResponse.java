@@ -126,7 +126,7 @@ public class ShowElbDetailResponse extends SdkResponse {
     }
 
     /**
-     * elb开关信息。
+     * 是否开启elb。 - true: 打开elb - false： 关闭elb
      * @return elbEnable
      */
     public Boolean getElbEnable() {

@@ -1865,7 +1865,7 @@ public class KooMessageMeta {
         HttpRequestDef.Builder<ListAimTemplateReportsRequest, ListAimTemplateReportsResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ListAimTemplateReportsRequest.class, ListAimTemplateReportsResponse.class)
             .withName("ListAimTemplateReports")
-            .withUri("/v1/aim/tempalte-reports/query")
+            .withUri("/v1/aim/template-reports/query")
             .withContentType("application/json");
 
         // requests

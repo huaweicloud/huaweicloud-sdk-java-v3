@@ -142,6 +142,8 @@ import com.huaweicloud.sdk.lts.v2.model.ListLogGroupsRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListLogGroupsResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogHistogramRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListLogHistogramResponse;
+import com.huaweicloud.sdk.lts.v2.model.ListLogStreamIndexRequest;
+import com.huaweicloud.sdk.lts.v2.model.ListLogStreamIndexResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogStreamRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListLogStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogStreamsRequest;
@@ -1407,6 +1409,34 @@ public class LtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLogStreamRequest::getLogGroupId, ListLogStreamRequest::setLogGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogStreamIndexRequest, ListLogStreamIndexResponse> listLogStreamIndex =
+        genForListLogStreamIndex();
+
+    private static HttpRequestDef<ListLogStreamIndexRequest, ListLogStreamIndexResponse> genForListLogStreamIndex() {
+        // basic
+        HttpRequestDef.Builder<ListLogStreamIndexRequest, ListLogStreamIndexResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogStreamIndexRequest.class, ListLogStreamIndexResponse.class)
+                .withName("ListLogStreamIndex")
+                .withUri("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogStreamIndexRequest::getGroupId, ListLogStreamIndexRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogStreamIndexRequest::getStreamId, ListLogStreamIndexRequest::setStreamId));
 
         // response
 

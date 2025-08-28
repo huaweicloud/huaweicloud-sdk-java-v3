@@ -84,7 +84,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 策略ID。
+     * **参数解释**：策略ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return l7policyId
      */
     public String getL7policyId() {
@@ -101,7 +101,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
+     * **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -120,7 +120,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return marker
      */
     public String getMarker() {
@@ -137,7 +137,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -170,7 +170,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 转发规则ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * **参数解释**：转发规则ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return id
      */
     public List<String> getId() {
@@ -203,7 +203,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 转发匹配方式。  取值： - EQUAL_TO 表示精确匹配。 - REGEX 表示正则匹配。 - STARTS_WITH 表示前缀匹配。  支持多值查询，查询条件格式：*compare_type=xxx&compare_type=xxx*。
+     * **参数解释**：转发匹配方式。 支持多值查询，查询条件格式：*compare_type=xxx&compare_type=xxx*。  **约束限制**：不涉及  **取值范围**： - EQUAL_TO 表示精确匹配。 - REGEX 表示正则匹配。 - STARTS_WITH 表示前缀匹配。  **默认取值**：不涉及
      * @return compareType
      */
     public List<String> getCompareType() {
@@ -236,7 +236,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 转发规则的配置状态。  取值：ACTIVE 表示正常。  支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。
+     * **参数解释**：转发规则的配置状态。 支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。  **约束限制**：不涉及  **取值范围**：ACTIVE 表示正常。  **默认取值**：不涉及
      * @return provisioningStatus
      */
     public List<String> getProvisioningStatus() {
@@ -253,7 +253,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
+     * **参数解释**：是否反向匹配。  **约束限制**：不涉及  **取值范围**：false  **默认取值**：不涉及
      * @return invert
      */
     public Boolean getInvert() {
@@ -270,7 +270,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 转发规则的管理状态。  不支持该字段，请勿使用。
+     * **参数解释**：转发规则的管理状态。 不支持该字段，请勿使用。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -303,7 +303,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 匹配内容的值。  支持多值查询，查询条件格式：*value=xxx&value=xxx*。
+     * **参数解释**：匹配内容的值。 支持多值查询，查询条件格式：*value=xxx&value=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return value
      */
     public List<String> getValue() {
@@ -336,7 +336,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 匹配内容的键值，用于标识规则。  支持多值查询，查询条件格式：*key=xxx&key=xxx*。  不支持该字段，请勿使用。
+     * **参数解释**：匹配内容的键值，用于标识规则。 支持多值查询，查询条件格式：*key=xxx&key=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return key
      */
     public List<String> getKey() {
@@ -369,7 +369,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 匹配类别，可以为HOST_NAME，PATH。  一个l7policy下创建的l7rule的type不能重复。  支持多值查询，查询条件格式：*type=xxx&type=xxx*。
+     * **参数解释**：匹配类别，可以为HOST_NAME，PATH。 支持多值查询，查询条件格式：*type=xxx&type=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return type
      */
     public List<String> getType() {
@@ -402,7 +402,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 参数解释：所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:l7rules:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  **约束限制**： - 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:l7rules:list权限。 - 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {

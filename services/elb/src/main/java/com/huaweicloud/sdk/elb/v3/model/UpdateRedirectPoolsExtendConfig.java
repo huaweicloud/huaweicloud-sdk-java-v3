@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 参数解释：转发到的后端主机组的配置。  约束限制：当action为REDIRECT_TO_POOL时生效。
+ * **参数解释**：转发到的后端服务器组的配置。  **约束限制**：当action为REDIRECT_TO_POOL时生效。
  */
 public class UpdateRedirectPoolsExtendConfig {
 
@@ -52,7 +52,7 @@ public class UpdateRedirectPoolsExtendConfig {
     }
 
     /**
-     * 参数解释：是否开启url重定向
+     * **参数解释**：是否开启url重定向。  **约束限制**：不涉及  **取值范围**：true 开启，false 未开启。  **默认取值**：不涉及
      * @return rewriteUrlEnable
      */
     public Boolean getRewriteUrlEnable() {

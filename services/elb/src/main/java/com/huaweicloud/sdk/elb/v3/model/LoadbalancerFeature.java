@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 参数解释：ELB实例特性。
+ * **参数解释**：ELB实例特性。
  */
 public class LoadbalancerFeature {
 
@@ -31,7 +31,7 @@ public class LoadbalancerFeature {
     }
 
     /**
-     * 参数解释：特性名称。
+     * **参数解释**：特性名称。  **取值范围**：不涉及
      * @return feature
      */
     public String getFeature() {
@@ -48,7 +48,7 @@ public class LoadbalancerFeature {
     }
 
     /**
-     * 参数解释：特性值(value字段)的类型，如：INT，表示整型。
+     * **参数解释**：特性值(value字段)的类型，如：INT，表示整型。  **取值范围**：不涉及
      * @return type
      */
     public String getType() {
@@ -65,7 +65,7 @@ public class LoadbalancerFeature {
     }
 
     /**
-     * 参数解释：特性值。如开关类型的特性取值true/false，表示特性开启关闭；配额类型的特性取值整数，表示限制配额。
+     * **参数解释**：特性值。如开关类型的特性取值true/false，表示特性开启关闭；配额类型的特性取值整数，表示限制配额。  **取值范围**：不涉及
      * @return value
      */
     public String getValue() {

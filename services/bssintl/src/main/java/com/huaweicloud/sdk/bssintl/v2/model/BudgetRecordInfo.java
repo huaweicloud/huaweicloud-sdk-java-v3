@@ -139,7 +139,7 @@ public class BudgetRecordInfo {
     }
 
     /**
-     * |参数名称：伙伴名称| |参数的约束及描述：范围限制：0-64|
+     * |参数名称：伙伴名称| |参数的约束及描述：范围限制：0-256|
      * @return partnerCorpName
      */
     public String getPartnerCorpName() {
@@ -156,7 +156,7 @@ public class BudgetRecordInfo {
     }
 
     /**
-     * |参数名称：伙伴账号名| |参数的约束及描述：范围限制：0-256|
+     * |参数名称：伙伴账号名| |参数的约束及描述：范围限制：0-128|
      * @return partnerAccountName
      */
     public String getPartnerAccountName() {

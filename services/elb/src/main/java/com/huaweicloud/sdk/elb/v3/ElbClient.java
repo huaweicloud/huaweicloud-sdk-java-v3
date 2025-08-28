@@ -365,7 +365,7 @@ public class ElbClient {
      * 移除负载均衡器可用区
      *
      * 移除负载均衡器的可用区。
-     * &gt; 移除可用区可能导致已有链接断开，请谨慎操作。
+     * &gt; 移除可用区可能导致已有连接断开，请谨慎操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -380,7 +380,7 @@ public class ElbClient {
      * 移除负载均衡器可用区
      *
      * 移除负载均衡器的可用区。
-     * &gt; 移除可用区可能导致已有链接断开，请谨慎操作。
+     * &gt; 移除可用区可能导致已有连接断开，请谨慎操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -454,9 +454,9 @@ public class ElbClient {
      * 变更负载均衡器计费模式
      *
      * 负载均衡器计费模式变更，当前支持的计费模式变更为：
-     * 1. 按需计费转包周期计费；
-     * 2. 按需按规格计费转按需按使用量计费；
-     * 3. 按需按使用量计费转按需按规格计费；
+     * 1. 按需计费转包周期计费。
+     * 2. 按需按规格计费转按需按使用量计费。
+     * 3. 按需按使用量计费转按需按规格计费。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -472,9 +472,9 @@ public class ElbClient {
      * 变更负载均衡器计费模式
      *
      * 负载均衡器计费模式变更，当前支持的计费模式变更为：
-     * 1. 按需计费转包周期计费；
-     * 2. 按需按规格计费转按需按使用量计费；
-     * 3. 按需按使用量计费转按需按规格计费；
+     * 1. 按需计费转包周期计费。
+     * 2. 按需按规格计费转按需按使用量计费。
+     * 3. 按需按使用量计费转按需按规格计费。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -518,7 +518,7 @@ public class ElbClient {
     /**
      * 创建证书
      *
-     * 创建证书。用于HTTPS协议监听器。
+     * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书管理服务(CCM)的证书，或者使用自有证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -532,7 +532,7 @@ public class ElbClient {
     /**
      * 创建证书
      *
-     * 创建证书。用于HTTPS协议监听器。
+     * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书管理服务(CCM)的证书，或者使用自有证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -547,7 +547,7 @@ public class ElbClient {
     /**
      * 修改证书私钥字段回显开关
      *
-     * 开启或关闭证书私钥字段回显开关。
+     * 开启或关闭ELB证书的私钥字段回显开关。该开关用于设置各个ELB证书接口的响应字段private_key和enc_private_key是否展示。若开启则证书的详情、列表、更新和创建接口返回私钥内容；不开启则返回脱敏后内容（******）。该开关影响整个租户项目（project），默认开启。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -562,7 +562,7 @@ public class ElbClient {
     /**
      * 修改证书私钥字段回显开关
      *
-     * 开启或关闭证书私钥字段回显开关。
+     * 开启或关闭ELB证书的私钥字段回显开关。该开关用于设置各个ELB证书接口的响应字段private_key和enc_private_key是否展示。若开启则证书的详情、列表、更新和创建接口返回私钥内容；不开启则返回脱敏后内容（******）。该开关影响整个租户项目（project），默认开启。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -663,7 +663,7 @@ public class ElbClient {
     /**
      * 创建监听器
      *
-     * 创建监听器。
+     * 创建监听器。支持通过该接口创建独享型及共享型LB实例下的监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -677,7 +677,7 @@ public class ElbClient {
     /**
      * 创建监听器
      *
-     * 创建监听器。
+     * 创建监听器。支持通过该接口创建独享型及共享型LB实例下的监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -895,7 +895,7 @@ public class ElbClient {
     /**
      * 创建自定义安全策略
      *
-     * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+     * 创建自定义安全策略。用于在创建HTTPS/TLS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
      * 
      * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
@@ -911,7 +911,7 @@ public class ElbClient {
     /**
      * 创建自定义安全策略
      *
-     * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+     * 创建自定义安全策略。用于在创建HTTPS/TLS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
      * 
      * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
@@ -928,7 +928,7 @@ public class ElbClient {
     /**
      * 删除证书
      *
-     * 删除证书。
+     * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -942,7 +942,7 @@ public class ElbClient {
     /**
      * 删除证书
      *
-     * 删除证书。
+     * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1472,7 +1472,7 @@ public class ElbClient {
     /**
      * 查询证书列表
      *
-     * 查询证书列表。
+     * 查询ELB证书列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1486,7 +1486,7 @@ public class ElbClient {
     /**
      * 查询证书列表
      *
-     * 查询证书列表。
+     * 查询ELB证书列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1530,7 +1530,7 @@ public class ElbClient {
     /**
      * 查询规格列表
      *
-     * 查询当前region下可用的负载均衡规格列表。
+     * 查询当前局点可用的负载均衡器规格。用于在创建独享型负载均衡器时指定4层或7层规格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1544,7 +1544,7 @@ public class ElbClient {
     /**
      * 查询规格列表
      *
-     * 查询当前region下可用的负载均衡规格列表。
+     * 查询当前局点可用的负载均衡器规格。用于在创建独享型负载均衡器时指定4层或7层规格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1587,7 +1587,7 @@ public class ElbClient {
     /**
      * 查询异步任务的job列表
      *
-     * 用于查询实例导出、实例复制、实例升级等异步接口任务的状态。
+     * 用于查询实例复制、实例升级等异步接口任务列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1601,7 +1601,7 @@ public class ElbClient {
     /**
      * 查询异步任务的job列表
      *
-     * 用于查询实例导出、实例复制、实例升级等异步接口任务的状态。
+     * 用于查询实例复制、实例升级等异步接口任务列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1843,7 +1843,7 @@ public class ElbClient {
     /**
      * 查询后端服务器组列表
      *
-     * 后端服务器组列表。
+     * 查询后端服务器组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1857,7 +1857,7 @@ public class ElbClient {
     /**
      * 查询后端服务器组列表
      *
-     * 后端服务器组列表。
+     * 查询后端服务器组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1871,7 +1871,7 @@ public class ElbClient {
     /**
      * 查询配额使用详情
      *
-     * 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
+     * 查询负载均衡服务相关的各类资源的当前配额和已使用配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1885,7 +1885,7 @@ public class ElbClient {
     /**
      * 查询配额使用详情
      *
-     * 查询指定项目中负载均衡相关的各类资源的当前配额和已使用配额信息。
+     * 查询负载均衡服务相关的各类资源的当前配额和已使用配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2020,7 +2020,7 @@ public class ElbClient {
     /**
      * 查询证书详情
      *
-     * 查询证书详情。
+     * 查询ELB证书详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2034,7 +2034,7 @@ public class ElbClient {
     /**
      * 查询证书详情
      *
-     * 查询证书详情。
+     * 查询ELB证书详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2049,7 +2049,7 @@ public class ElbClient {
     /**
      * 查询证书私钥字段回显开关
      *
-     * 查询证书私钥回显开关当前的状态，开启或关闭。
+     * 查询证书私钥回显开关的状态。该开关用于设置各个ELB证书接口的响应字段private_key和enc_private_key是否展示。若开启则这些接口返回私钥内容；不开启则返回脱敏后内容（******）。该开关影响整个租户项目（project），默认开启。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2064,7 +2064,7 @@ public class ElbClient {
     /**
      * 查询证书私钥字段回显开关
      *
-     * 查询证书私钥回显开关当前的状态，开启或关闭。
+     * 查询证书私钥回显开关的状态。该开关用于设置各个ELB证书接口的响应字段private_key和enc_private_key是否展示。若开启则这些接口返回私钥内容；不开启则返回脱敏后内容（******）。该开关影响整个租户项目（project），默认开启。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2136,7 +2136,7 @@ public class ElbClient {
     /**
      * 查询异步任务的job状态
      *
-     * 用于查询模板导入、实例复制、实例升级等异步接口任务的状态
+     * 用于查询实例复制、实例升级等异步接口任务的状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2150,7 +2150,7 @@ public class ElbClient {
     /**
      * 查询异步任务的job状态
      *
-     * 用于查询模板导入、实例复制、实例升级等异步接口任务的状态
+     * 用于查询实例复制、实例升级等异步接口任务的状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2220,7 +2220,7 @@ public class ElbClient {
     /**
      * 查询监听器详情
      *
-     * 监听器详情。
+     * 查询监听器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2234,7 +2234,7 @@ public class ElbClient {
     /**
      * 查询监听器详情
      *
-     * 监听器详情。
+     * 查询监听器详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2275,9 +2275,9 @@ public class ElbClient {
     }
 
     /**
-     * 查询负载均衡器占用的port列表
+     * 查询负载均衡器占用的下联面子网端口列表
      *
-     * 查询负载均衡器内部转发占用的port列表。
+     * 查询负载均衡器占用的下联面子网端口和IP地址信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2289,9 +2289,9 @@ public class ElbClient {
     }
 
     /**
-     * 查询负载均衡器占用的port列表
+     * 查询负载均衡器占用的下联面子网端口列表
      *
-     * 查询负载均衡器内部转发占用的port列表。
+     * 查询负载均衡器占用的下联面子网端口和IP地址信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2483,7 +2483,7 @@ public class ElbClient {
     /**
      * 查询配额详情
      *
-     * 查询指定项目中负载均衡相关的各类资源的当前配额。
+     * 查询指定项目中负载均衡相关的各类资源的当前配额。接口返回只包含总配额，不包含已使用配额。若需要查询已使用配额，可使用查询配额使用详情（GET /v3/{project_id}/elb/quotas/details）接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2497,7 +2497,7 @@ public class ElbClient {
     /**
      * 查询配额详情
      *
-     * 查询指定项目中负载均衡相关的各类资源的当前配额。
+     * 查询指定项目中负载均衡相关的各类资源的当前配额。接口返回只包含总配额，不包含已使用配额。若需要查询已使用配额，可使用查询配额使用详情（GET /v3/{project_id}/elb/quotas/details）接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2511,7 +2511,7 @@ public class ElbClient {
     /**
      * 查询回收站的配置
      *
-     * 查询回收站的配置
+     * 查询回收站的配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2525,7 +2525,7 @@ public class ElbClient {
     /**
      * 查询回收站的配置
      *
-     * 查询回收站的配置
+     * 查询回收站的配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2569,7 +2569,8 @@ public class ElbClient {
     /**
      * 更新证书
      *
-     * 更新证书。
+     * 更新ELB证书。不能更新证书类型，但可以更新证书内容和私钥等。
+     * 注意：更新证书会影响当前证书已关联的监听器，请谨慎操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2583,7 +2584,8 @@ public class ElbClient {
     /**
      * 更新证书
      *
-     * 更新证书。
+     * 更新ELB证书。不能更新证书类型，但可以更新证书内容和私钥等。
+     * 注意：更新证书会影响当前证书已关联的监听器，请谨慎操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2942,7 +2944,10 @@ public class ElbClient {
     /**
      * 查询API版本列表信息
      *
-     * 返回ELB当前所有可用的API版本。
+     * 查询当前ELB服务所有可用的API版本。通常情况下高版本API（当前v3为最高版本）比低版本API支持更多更全的特性。
+     * 不同版本接口使用时需要注意如下事项：
+     * - 创建负载均衡器（POST /v3/{project_id}/elb/loadbalancers）接口无法创建共享型ELB实例。需要通过v2/v2.0接口创建，或者通过批量创建负载均衡器（/v3/{project_id}/elb/loadbalancers/batch-create）、复制已有负载均衡器（/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/clone）这两个接口创建。
+     * - 其他v3接口都可以同时处理独享型和共享型实例及其子资源。例如：可以使用创建监听器接口（POST /v3/{project_id}/elb/listeners）创建共享型ELB下的监听器。但在这种情况下部分独享型实例特有的特性将不会支持，具体见各API说明。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2956,7 +2961,10 @@ public class ElbClient {
     /**
      * 查询API版本列表信息
      *
-     * 返回ELB当前所有可用的API版本。
+     * 查询当前ELB服务所有可用的API版本。通常情况下高版本API（当前v3为最高版本）比低版本API支持更多更全的特性。
+     * 不同版本接口使用时需要注意如下事项：
+     * - 创建负载均衡器（POST /v3/{project_id}/elb/loadbalancers）接口无法创建共享型ELB实例。需要通过v2/v2.0接口创建，或者通过批量创建负载均衡器（/v3/{project_id}/elb/loadbalancers/batch-create）、复制已有负载均衡器（/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/clone）这两个接口创建。
+     * - 其他v3接口都可以同时处理独享型和共享型实例及其子资源。例如：可以使用创建监听器接口（POST /v3/{project_id}/elb/listeners）创建共享型ELB下的监听器。但在这种情况下部分独享型实例特有的特性将不会支持，具体见各API说明。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2971,7 +2979,9 @@ public class ElbClient {
     /**
      * 删除IP地址组的IP列表项
      *
-     * 批量删除IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt)
+     * 批量删除IP地址组中IP列表的IP地址项。
+     * 注意：删除IP列表的IP地址项会影响所有已关联的监听器，请谨慎操作。
+     * [荷兰region不支持该API](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2985,7 +2995,9 @@ public class ElbClient {
     /**
      * 删除IP地址组的IP列表项
      *
-     * 批量删除IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt)
+     * 批量删除IP地址组中IP列表的IP地址项。
+     * 注意：删除IP列表的IP地址项会影响所有已关联的监听器，请谨慎操作。
+     * [荷兰region不支持该API](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3002,24 +3014,15 @@ public class ElbClient {
      *
      * 计算以下几种场景的预占用IP数量：
      * 
-     * - 计算创建LB所需IP数量：
-     * 传入字段availability_zone_id，及可选字段l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。
+     * - 计算创建LB所需IP数量：传入字段availability_zone_id，及可选字段l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。
+     * - 计算创建LB的第一个七层监听器后新增占用IP数量：传入loadbalancer_id，其他字段不传。
+     * - 计算LB变更（规格变更或特性开启）新增占用IP数量：传入字段loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。可以同时传入多个字段，表示同时进行多种变更所需要新增的占用IP数量。
+     * - 计算共享型ELB升级为独享型ELB所需新增占用IP数量：传入sence、loadbalancer_id，其他字段不传。
+     * - 计算ELB实例开启NAT64特性所需新增占用IP数量：传入nat64_enable、loadbalancer_id，其他字段不传。
      * 
-     * - 计算创建LB的第一个七层监听器后新增占用IP数量：
-     * 传入loadbalancer_id，其他字段不传。
-     * 
-     * - 计算LB变更（规格变更或特性开启）新增占用IP数量：
-     * 传入字段loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。可以同时传入多个字段，表示同时进行多种变更所需要新增的占用IP数量。
-     * 
-     * - 计算共享型ELB升级为独享型ELB所需占用IP数量：
-     * 传入sence、loadbalancer_id，其他字段不传。
-     * 
-     * - 计算ELB实例开启NAT64特性所需占用IP数量：
-     * 传入nat64_enable、loadbalancer_id，其他字段不传。
-     * 
-     * 说明：
+     * 注意：
      * - 计算出来的预占IP数大于等于最终实际占用的IP数。
-     * - 新增占用IP数量，不包含已占用的IP数。
+     * - 只计算新增占用IP数量，不包含已占用的IP数。
      * 
      * [不支持传入l7_flavor_id。](tag:hcso,hk_vdf,srg,fcs)
      * 
@@ -3037,24 +3040,15 @@ public class ElbClient {
      *
      * 计算以下几种场景的预占用IP数量：
      * 
-     * - 计算创建LB所需IP数量：
-     * 传入字段availability_zone_id，及可选字段l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。
+     * - 计算创建LB所需IP数量：传入字段availability_zone_id，及可选字段l7_flavor_id、ip_target_enable、ip_version，不能传loadbalancer_id。
+     * - 计算创建LB的第一个七层监听器后新增占用IP数量：传入loadbalancer_id，其他字段不传。
+     * - 计算LB变更（规格变更或特性开启）新增占用IP数量：传入字段loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。可以同时传入多个字段，表示同时进行多种变更所需要新增的占用IP数量。
+     * - 计算共享型ELB升级为独享型ELB所需新增占用IP数量：传入sence、loadbalancer_id，其他字段不传。
+     * - 计算ELB实例开启NAT64特性所需新增占用IP数量：传入nat64_enable、loadbalancer_id，其他字段不传。
      * 
-     * - 计算创建LB的第一个七层监听器后新增占用IP数量：
-     * 传入loadbalancer_id，其他字段不传。
-     * 
-     * - 计算LB变更（规格变更或特性开启）新增占用IP数量：
-     * 传入字段loadbalancer_id，及l7_flavor_id不为空或ip_target_enable为true。可以同时传入多个字段，表示同时进行多种变更所需要新增的占用IP数量。
-     * 
-     * - 计算共享型ELB升级为独享型ELB所需占用IP数量：
-     * 传入sence、loadbalancer_id，其他字段不传。
-     * 
-     * - 计算ELB实例开启NAT64特性所需占用IP数量：
-     * 传入nat64_enable、loadbalancer_id，其他字段不传。
-     * 
-     * 说明：
+     * 注意：
      * - 计算出来的预占IP数大于等于最终实际占用的IP数。
-     * - 新增占用IP数量，不包含已占用的IP数。
+     * - 只计算新增占用IP数量，不包含已占用的IP数。
      * 
      * [不支持传入l7_flavor_id。](tag:hcso,hk_vdf,srg,fcs)
      * 
@@ -3071,9 +3065,10 @@ public class ElbClient {
     /**
      * 创建IP地址组
      *
-     * 创建IP地址组。输入的ip可为ip地址、CIDR子网或者ip地址段，格式为ip-ip，例如10.12.3.1-10.12.3.10，支持IPV4和IPV6。
+     * 创建IP地址组。IP地址组用于关联监听器，设置监听器访问控制，指定可以访问或者禁止访问监听器的IP地址。
+     * 支持IPv4和IPv6类型地址，可以设置单个IP地址、IP地址段和连续IP地址范围。IP地址范围的格式为ip-ip，例如10.12.3.1-10.12.3.10。
      * 
-     * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
+     * 注意：0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
      * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
@@ -3089,9 +3084,10 @@ public class ElbClient {
     /**
      * 创建IP地址组
      *
-     * 创建IP地址组。输入的ip可为ip地址、CIDR子网或者ip地址段，格式为ip-ip，例如10.12.3.1-10.12.3.10，支持IPV4和IPV6。
+     * 创建IP地址组。IP地址组用于关联监听器，设置监听器访问控制，指定可以访问或者禁止访问监听器的IP地址。
+     * 支持IPv4和IPv6类型地址，可以设置单个IP地址、IP地址段和连续IP地址范围。IP地址范围的格式为ip-ip，例如10.12.3.1-10.12.3.10。
      * 
-     * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
+     * 注意：0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
      * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
@@ -3107,7 +3103,7 @@ public class ElbClient {
     /**
      * 删除IP地址组
      *
-     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 删除IP地址组。已关联监听器的IP地址组无法直接删除，需要先解除关联关系。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3121,7 +3117,7 @@ public class ElbClient {
     /**
      * 删除IP地址组
      *
-     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
+     * 删除IP地址组。已关联监听器的IP地址组无法直接删除，需要先解除关联关系。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3220,10 +3216,12 @@ public class ElbClient {
     /**
      * 更新IP地址组
      *
-     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。
-     * 输入的ip可为ip地址、CIDR子网或者ip地址段，格式为ip-ip，例如10.12.3.1-10.12.3.10，支持IPV4和IPV6。
+     * 更新IP地址组。若要更新其中的IP地址列表，则只支持全量更新。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。
+     * 支持IPv4和IPv6类型地址，可以设置单个IP地址、IP地址段和连续IP地址范围。IP地址范围的格式为ip-ip，例如10.12.3.1-10.12.3.10。
      * 
-     * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
+     * 注意：
+     * - 0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
+     * - 更新IP地址组中的ip_list会影响所有已关联的监听器，请谨慎操作。
      * 
      * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
@@ -3239,10 +3237,12 @@ public class ElbClient {
     /**
      * 更新IP地址组
      *
-     * 更新IP地址组，只支持全量更新IP。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。
-     * 输入的ip可为ip地址、CIDR子网或者ip地址段，格式为ip-ip，例如10.12.3.1-10.12.3.10，支持IPV4和IPV6。
+     * 更新IP地址组。若要更新其中的IP地址列表，则只支持全量更新。即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。
+     * 支持IPv4和IPv6类型地址，可以设置单个IP地址、IP地址段和连续IP地址范围。IP地址范围的格式为ip-ip，例如10.12.3.1-10.12.3.10。
      * 
-     * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
+     * 注意：
+     * - 0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
+     * - 更新IP地址组中的ip_list会影响所有已关联的监听器，请谨慎操作。
      * 
      * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
@@ -3258,7 +3258,12 @@ public class ElbClient {
     /**
      * 更新IP地址组的IP列表项
      *
-     * 添加新的IP地址到IP地址组的IP列表信息，或更新已有IP地址的描述。[荷兰region不支持该API](tag:dt)
+     * 添加新的IP地址到IP地址组的IP列表中，或更新已有IP地址的描述。不支持通过该接口删除ip_list中已有的IP地址。
+     * 注意：
+     * - 0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
+     * - 更新IP地址组中的ip_list会影响所有已关联的监听器，请谨慎操作。
+     * 
+     * [荷兰region不支持该API](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3272,7 +3277,12 @@ public class ElbClient {
     /**
      * 更新IP地址组的IP列表项
      *
-     * 添加新的IP地址到IP地址组的IP列表信息，或更新已有IP地址的描述。[荷兰region不支持该API](tag:dt)
+     * 添加新的IP地址到IP地址组的IP列表中，或更新已有IP地址的描述。不支持通过该接口删除ip_list中已有的IP地址。
+     * 注意：
+     * - 0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
+     * - 更新IP地址组中的ip_list会影响所有已关联的监听器，请谨慎操作。
+     * 
+     * [荷兰region不支持该API](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

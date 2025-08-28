@@ -38,7 +38,7 @@ public class KernelModuleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Long size;
+    private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
@@ -75,18 +75,13 @@ public class KernelModuleInfo {
 
     private Long recordTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "first_scan_time")
-
-    private Long firstScanTime;
-
     public KernelModuleInfo withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 内核模块名称
+     * **参数解释**: 内核模块名称 **取值范围**: 字符长度0-256 
      * @return name
      */
     public String getName() {
@@ -103,7 +98,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 文件名称
+     * **参数解释**: 文件名称 **取值范围**: 字符长度0-256 
      * @return fileName
      */
     public String getFileName() {
@@ -120,7 +115,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 内核模块版本号
+     * **参数解释**: 内核模块版本号 **取值范围**: 字符长度0-64 
      * @return version
      */
     public String getVersion() {
@@ -137,7 +132,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 源码版本号
+     * **参数解释**: 源码版本号 **取值范围**: 字符长度0-64 
      * @return srcversion
      */
     public String getSrcversion() {
@@ -154,7 +149,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 文件路径
+     * **参数解释**: 文件路径 **取值范围**: 字符长度0-1024 
      * @return path
      */
     public String getPath() {
@@ -165,20 +160,20 @@ public class KernelModuleInfo {
         this.path = path;
     }
 
-    public KernelModuleInfo withSize(Long size) {
+    public KernelModuleInfo withSize(Integer size) {
         this.size = size;
         return this;
     }
 
     /**
-     * 文件大小
+     * **参数解释**: 文件大小 **取值范围**: 最小值0，最大值2147483647 
      * @return size
      */
-    public Long getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(Long size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
@@ -188,7 +183,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 文件权限
+     * **参数解释**: 文件权限 **取值范围**: 字符长度0-32 
      * @return mode
      */
     public String getMode() {
@@ -205,7 +200,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 文件用户ID
+     * **参数解释**: 文件用户ID **取值范围**: 最小值0，最大值2147483647 
      * @return uid
      */
     public Integer getUid() {
@@ -222,7 +217,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 文件创建时间
+     * **参数解释**: 文件创建时间 **取值范围**: 最小值0，最大值2^63-1 
      * @return ctime
      */
     public Long getCtime() {
@@ -239,7 +234,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 最后修改时间
+     * **参数解释**: 最后修改时间 **取值范围**: 最小值0，最大值2^63-1 
      * @return mtime
      */
     public Long getMtime() {
@@ -256,7 +251,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 文件哈希
+     * **参数解释**: 文件哈希 **取值范围**: 字符长度0-64 
      * @return hash
      */
     public String getHash() {
@@ -273,7 +268,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 内核模块描述信息
+     * **参数解释**: 内核模块描述信息 **取值范围**: 字符长度0-256 
      * @return desc
      */
     public String getDesc() {
@@ -290,7 +285,7 @@ public class KernelModuleInfo {
     }
 
     /**
-     * 扫描时间
+     * **参数解释**: 扫描时间 **取值范围**: 最小值0，最大值2^63-1 
      * @return recordTime
      */
     public Long getRecordTime() {
@@ -299,23 +294,6 @@ public class KernelModuleInfo {
 
     public void setRecordTime(Long recordTime) {
         this.recordTime = recordTime;
-    }
-
-    public KernelModuleInfo withFirstScanTime(Long firstScanTime) {
-        this.firstScanTime = firstScanTime;
-        return this;
-    }
-
-    /**
-     * 首次扫描时间
-     * @return firstScanTime
-     */
-    public Long getFirstScanTime() {
-        return firstScanTime;
-    }
-
-    public void setFirstScanTime(Long firstScanTime) {
-        this.firstScanTime = firstScanTime;
     }
 
     @Override
@@ -333,26 +311,13 @@ public class KernelModuleInfo {
             && Objects.equals(this.mode, that.mode) && Objects.equals(this.uid, that.uid)
             && Objects.equals(this.ctime, that.ctime) && Objects.equals(this.mtime, that.mtime)
             && Objects.equals(this.hash, that.hash) && Objects.equals(this.desc, that.desc)
-            && Objects.equals(this.recordTime, that.recordTime)
-            && Objects.equals(this.firstScanTime, that.firstScanTime);
+            && Objects.equals(this.recordTime, that.recordTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name,
-            fileName,
-            version,
-            srcversion,
-            path,
-            size,
-            mode,
-            uid,
-            ctime,
-            mtime,
-            hash,
-            desc,
-            recordTime,
-            firstScanTime);
+        return Objects
+            .hash(name, fileName, version, srcversion, path, size, mode, uid, ctime, mtime, hash, desc, recordTime);
     }
 
     @Override
@@ -372,7 +337,6 @@ public class KernelModuleInfo {
         sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("    recordTime: ").append(toIndentedString(recordTime)).append("\n");
-        sb.append("    firstScanTime: ").append(toIndentedString(firstScanTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

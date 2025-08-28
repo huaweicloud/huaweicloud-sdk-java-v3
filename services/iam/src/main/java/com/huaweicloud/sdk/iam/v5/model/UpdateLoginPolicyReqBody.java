@@ -64,7 +64,7 @@ public class UpdateLoginPolicyReqBody {
     }
 
     /**
-     * 如果IAM用户在该值设置的有效期（天）内未登录，则被停用，不适用于根用户。
+     * 如果IAM用户在该值设置的有效期（天）内未登录，则被停用，不适用于根用户，取值范围为[0,240]。
      * minimum: 0
      * maximum: 240
      * @return userValidityPeriod
@@ -100,7 +100,7 @@ public class UpdateLoginPolicyReqBody {
     }
 
     /**
-     * IAM用户登录锁定时长（分钟）。
+     * IAM用户登录锁定时长（分钟），取值范围为[15,1440]。
      * minimum: 15
      * maximum: 1440
      * @return lockoutDuration
@@ -119,7 +119,7 @@ public class UpdateLoginPolicyReqBody {
     }
 
     /**
-     * 限定时间内登录失败次数。
+     * 限定时间内登录失败次数，取值范围为[3,10]。
      * minimum: 3
      * maximum: 10
      * @return loginFailedTimes
@@ -138,7 +138,7 @@ public class UpdateLoginPolicyReqBody {
     }
 
     /**
-     * 限定时间长度（分钟）。
+     * 限定时间长度（分钟），取值范围为[15,60]。
      * minimum: 15
      * maximum: 60
      * @return periodWithLoginFailures
@@ -157,7 +157,7 @@ public class UpdateLoginPolicyReqBody {
     }
 
     /**
-     * 登录会话失效时间。
+     * 登录会话失效时间，取值范围为[15,1440]。
      * minimum: 15
      * maximum: 1440
      * @return sessionTimeout
@@ -210,7 +210,7 @@ public class UpdateLoginPolicyReqBody {
     }
 
     /**
-     * 允许访问的IP地址或网段。
+     * 允许访问的IP地址或网段，例如\"xxx.xxx.xxx.xxx/24\"。
      * @return allowAddressNetmasks
      */
     public List<AllowAddressNetmask> getAllowAddressNetmasks() {
@@ -243,7 +243,7 @@ public class UpdateLoginPolicyReqBody {
     }
 
     /**
-     * 允许访问的IP地址区间。
+     * 允许访问的IP地址区间，取值为IP地址区间，例如\"0.0.0.0-255.255.255.255\"。
      * @return allowIpRanges
      */
     public List<AllowIpRange> getAllowIpRanges() {

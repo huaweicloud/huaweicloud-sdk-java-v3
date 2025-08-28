@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 参数解释：分组检查项汇总。
+ * **参数解释**：分组检查项汇总。
  */
 public class MemberCheckJobResultItem {
 
@@ -54,7 +54,7 @@ public class MemberCheckJobResultItem {
     }
 
     /**
-     * 参数解释：检查项名称
+     * **参数解释**：检查项名称。  **取值范围**：不涉及
      * @return name
      */
     public String getName() {
@@ -71,7 +71,7 @@ public class MemberCheckJobResultItem {
     }
 
     /**
-     * 参数解释：异常原因
+     * **参数解释**：异常原因。  **取值范围**：不涉及
      * @return reason
      */
     public String getReason() {
@@ -88,7 +88,7 @@ public class MemberCheckJobResultItem {
     }
 
     /**
-     * 参数解释：重要级别，分为Major(严重)和Tips(提示)
+     * **参数解释**：重要级别，分为Major(严重)和Tips(提示)。  **取值范围**：不涉及
      * @return severity
      */
     public String getSeverity() {
@@ -105,7 +105,7 @@ public class MemberCheckJobResultItem {
     }
 
     /**
-     * 参数解释：检查类别，config表示配置检查
+     * **参数解释**：检查类别，config表示配置检查。  **取值范围**：不涉及
      * @return subject
      */
     public String getSubject() {
@@ -122,7 +122,7 @@ public class MemberCheckJobResultItem {
     }
 
     /**
-     * 参数解释：任务ID。
+     * **参数解释**：任务ID。  **取值范围**：不涉及
      * @return jobId
      */
     public String getJobId() {
@@ -139,7 +139,7 @@ public class MemberCheckJobResultItem {
     }
 
     /**
-     * 参数解释：异常原因模板
+     * **参数解释**：异常原因模板。  **取值范围**：不涉及
      * @return reasonTemplate
      */
     public String getReasonTemplate() {
@@ -172,7 +172,7 @@ public class MemberCheckJobResultItem {
     }
 
     /**
-     * 参数解释：异常结果变量参数表，用于结合异常原因模板动态生成异常原因
+     * **参数解释**：异常结果变量参数表，用于结合异常原因模板动态生成异常原因。  **取值范围**：不涉及
      * @return reasonParams
      */
     public List<String> getReasonParams() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * LB状态树的转发策略状态信息
+ * **参数解释**：监听器下的7层转发策略的状态信息。
  */
 public class LoadBalancerStatusPolicy {
 
@@ -44,7 +44,7 @@ public class LoadBalancerStatusPolicy {
     }
 
     /**
-     * 匹配后动作。  取值： - REDIRECT_TO_POOL：转发到后端服务器组。 - REDIRECT_TO_LISTENER：转发到监听器。
+     * **参数解释**：匹配后动作。  **取值范围**： - REDIRECT_TO_POOL：转发到后端服务器组。 - REDIRECT_TO_LISTENER：转发到监听器。
      * @return action
      */
     public String getAction() {
@@ -61,7 +61,7 @@ public class LoadBalancerStatusPolicy {
     }
 
     /**
-     * 转发策略ID。
+     * **参数解释**：转发策略ID。  **取值范围**：不涉及
      * @return id
      */
     public String getId() {
@@ -78,7 +78,7 @@ public class LoadBalancerStatusPolicy {
     }
 
     /**
-     * 转发策略的配置状态。  取值范围： - ACTIVE: 默认值，表示正常。 [- ERROR: 表示当前策略与同一监听器下的其他策略存在相同的规则配置。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs)
+     * **参数解释**：转发策略的配置状态。  **取值范围**： - ACTIVE: 默认值，表示正常。 [- ERROR: 表示当前策略与同一监听器下的其他策略存在相同的规则配置。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs)
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {
@@ -95,7 +95,7 @@ public class LoadBalancerStatusPolicy {
     }
 
     /**
-     * 转发策略名称。
+     * **参数解释**：转发策略名称。  **取值范围**：不涉及
      * @return name
      */
     public String getName() {
@@ -128,7 +128,7 @@ public class LoadBalancerStatusPolicy {
     }
 
     /**
-     * 转发规则状态信息。
+     * **参数解释**：当前转发策略下的所有转发规则状的态信息。
      * @return rules
      */
     public List<LoadBalancerStatusL7Rule> getRules() {

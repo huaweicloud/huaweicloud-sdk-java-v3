@@ -308,7 +308,7 @@ public class BaseJob {
     }
 
     /**
-     * 参数解释：资源ID。
+     * **参数解释**：资源ID。
      * @return resourceId
      */
     public String getResourceId() {

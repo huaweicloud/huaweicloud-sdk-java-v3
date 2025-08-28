@@ -22,6 +22,8 @@ import com.huaweicloud.sdk.as.v1.model.BatchUnprotectScalingInstancesRequest;
 import com.huaweicloud.sdk.as.v1.model.BatchUnprotectScalingInstancesResponse;
 import com.huaweicloud.sdk.as.v1.model.BatchUnsetScalingInstancesStantbyRequest;
 import com.huaweicloud.sdk.as.v1.model.BatchUnsetScalingInstancesStantbyResponse;
+import com.huaweicloud.sdk.as.v1.model.CloseWarmPoolRequest;
+import com.huaweicloud.sdk.as.v1.model.CloseWarmPoolResponse;
 import com.huaweicloud.sdk.as.v1.model.CreateGroupScheduledTaskRequest;
 import com.huaweicloud.sdk.as.v1.model.CreateGroupScheduledTaskResponse;
 import com.huaweicloud.sdk.as.v1.model.CreateLifyCycleHookRequest;
@@ -90,10 +92,14 @@ import com.huaweicloud.sdk.as.v1.model.ListScalingTagInfosByTenantIdRequest;
 import com.huaweicloud.sdk.as.v1.model.ListScalingTagInfosByTenantIdResponse;
 import com.huaweicloud.sdk.as.v1.model.ListScalingV2PoliciesRequest;
 import com.huaweicloud.sdk.as.v1.model.ListScalingV2PoliciesResponse;
+import com.huaweicloud.sdk.as.v1.model.ListWarmPoolInstancesRequest;
+import com.huaweicloud.sdk.as.v1.model.ListWarmPoolInstancesResponse;
 import com.huaweicloud.sdk.as.v1.model.PauseScalingGroupRequest;
 import com.huaweicloud.sdk.as.v1.model.PauseScalingGroupResponse;
 import com.huaweicloud.sdk.as.v1.model.PauseScalingPolicyRequest;
 import com.huaweicloud.sdk.as.v1.model.PauseScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.PutWarmPoolRequest;
+import com.huaweicloud.sdk.as.v1.model.PutWarmPoolResponse;
 import com.huaweicloud.sdk.as.v1.model.ResumeScalingGroupRequest;
 import com.huaweicloud.sdk.as.v1.model.ResumeScalingGroupResponse;
 import com.huaweicloud.sdk.as.v1.model.ResumeScalingPolicyRequest;
@@ -114,6 +120,8 @@ import com.huaweicloud.sdk.as.v1.model.ShowScalingPolicyRequest;
 import com.huaweicloud.sdk.as.v1.model.ShowScalingPolicyResponse;
 import com.huaweicloud.sdk.as.v1.model.ShowScalingV2PolicyRequest;
 import com.huaweicloud.sdk.as.v1.model.ShowScalingV2PolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowWarmPoolRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowWarmPoolResponse;
 import com.huaweicloud.sdk.as.v1.model.UpdateGroupScheduledTaskRequest;
 import com.huaweicloud.sdk.as.v1.model.UpdateGroupScheduledTaskResponse;
 import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookRequest;
@@ -471,6 +479,35 @@ public class AsAsyncClient {
     public AsyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> batchUnsetScalingInstancesStantbyAsyncInvoker(
         BatchUnsetScalingInstancesStantbyRequest request) {
         return new AsyncInvoker<>(request, AsMeta.batchUnsetScalingInstancesStantby, hcClient);
+    }
+
+    /**
+     * 关闭暖池
+     *
+     * 关闭伸缩组的暖池
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloseWarmPoolRequest 请求对象
+     * @return CompletableFuture<CloseWarmPoolResponse>
+     */
+    public CompletableFuture<CloseWarmPoolResponse> closeWarmPoolAsync(CloseWarmPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.closeWarmPool);
+    }
+
+    /**
+     * 关闭暖池
+     *
+     * 关闭伸缩组的暖池
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloseWarmPoolRequest 请求对象
+     * @return AsyncInvoker<CloseWarmPoolRequest, CloseWarmPoolResponse>
+     */
+    public AsyncInvoker<CloseWarmPoolRequest, CloseWarmPoolResponse> closeWarmPoolAsyncInvoker(
+        CloseWarmPoolRequest request) {
+        return new AsyncInvoker<>(request, AsMeta.closeWarmPool, hcClient);
     }
 
     /**
@@ -1361,6 +1398,36 @@ public class AsAsyncClient {
     }
 
     /**
+     * 查询暖池内实例信息
+     *
+     * 查询暖池内实例信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWarmPoolInstancesRequest 请求对象
+     * @return CompletableFuture<ListWarmPoolInstancesResponse>
+     */
+    public CompletableFuture<ListWarmPoolInstancesResponse> listWarmPoolInstancesAsync(
+        ListWarmPoolInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.listWarmPoolInstances);
+    }
+
+    /**
+     * 查询暖池内实例信息
+     *
+     * 查询暖池内实例信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWarmPoolInstancesRequest 请求对象
+     * @return AsyncInvoker<ListWarmPoolInstancesRequest, ListWarmPoolInstancesResponse>
+     */
+    public AsyncInvoker<ListWarmPoolInstancesRequest, ListWarmPoolInstancesResponse> listWarmPoolInstancesAsyncInvoker(
+        ListWarmPoolInstancesRequest request) {
+        return new AsyncInvoker<>(request, AsMeta.listWarmPoolInstances, hcClient);
+    }
+
+    /**
      * 停止弹性伸缩组
      *
      * 启用或停止一个指定弹性伸缩组。已停用状态的伸缩组，不会自动触发任何伸缩活动。当伸缩组正在进行伸缩活动，即使停用，正在进行的伸缩活动也不会立即停止。
@@ -1416,6 +1483,34 @@ public class AsAsyncClient {
     public AsyncInvoker<PauseScalingPolicyRequest, PauseScalingPolicyResponse> pauseScalingPolicyAsyncInvoker(
         PauseScalingPolicyRequest request) {
         return new AsyncInvoker<>(request, AsMeta.pauseScalingPolicy, hcClient);
+    }
+
+    /**
+     * 开启暖池
+     *
+     * 开启并修改暖池参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PutWarmPoolRequest 请求对象
+     * @return CompletableFuture<PutWarmPoolResponse>
+     */
+    public CompletableFuture<PutWarmPoolResponse> putWarmPoolAsync(PutWarmPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.putWarmPool);
+    }
+
+    /**
+     * 开启暖池
+     *
+     * 开启并修改暖池参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PutWarmPoolRequest 请求对象
+     * @return AsyncInvoker<PutWarmPoolRequest, PutWarmPoolResponse>
+     */
+    public AsyncInvoker<PutWarmPoolRequest, PutWarmPoolResponse> putWarmPoolAsyncInvoker(PutWarmPoolRequest request) {
+        return new AsyncInvoker<>(request, AsMeta.putWarmPool, hcClient);
     }
 
     /**
@@ -1649,6 +1744,35 @@ public class AsAsyncClient {
     public AsyncInvoker<ShowScalingPolicyRequest, ShowScalingPolicyResponse> showScalingPolicyAsyncInvoker(
         ShowScalingPolicyRequest request) {
         return new AsyncInvoker<>(request, AsMeta.showScalingPolicy, hcClient);
+    }
+
+    /**
+     * 查询暖池信息
+     *
+     * 查询暖池信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWarmPoolRequest 请求对象
+     * @return CompletableFuture<ShowWarmPoolResponse>
+     */
+    public CompletableFuture<ShowWarmPoolResponse> showWarmPoolAsync(ShowWarmPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.showWarmPool);
+    }
+
+    /**
+     * 查询暖池信息
+     *
+     * 查询暖池信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWarmPoolRequest 请求对象
+     * @return AsyncInvoker<ShowWarmPoolRequest, ShowWarmPoolResponse>
+     */
+    public AsyncInvoker<ShowWarmPoolRequest, ShowWarmPoolResponse> showWarmPoolAsyncInvoker(
+        ShowWarmPoolRequest request) {
+        return new AsyncInvoker<>(request, AsMeta.showWarmPool, hcClient);
     }
 
     /**

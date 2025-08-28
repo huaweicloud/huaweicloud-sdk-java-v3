@@ -126,6 +126,81 @@ public class InstanceCreateReq {
 
     private InstanceCreateReqChargeParam chargeParam;
 
+    /**
+     * 网络线路类型。非必填参数，枚举值：EIP和ADN。默认是EIP类型，ADN网络要填。
+     */
+    public static final class NetworkEnum {
+
+        /**
+         * Enum EIP for value: "EIP"
+         */
+        public static final NetworkEnum EIP = new NetworkEnum("EIP");
+
+        /**
+         * Enum ADN for value: "ADN"
+         */
+        public static final NetworkEnum ADN = new NetworkEnum("ADN");
+
+        private static final Map<String, NetworkEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NetworkEnum> createStaticFields() {
+            Map<String, NetworkEnum> map = new HashMap<>();
+            map.put("EIP", EIP);
+            map.put("ADN", ADN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        NetworkEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NetworkEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetworkEnum(value));
+        }
+
+        public static NetworkEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NetworkEnum) {
+                return this.value.equals(((NetworkEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network")
+
+    private NetworkEnum network;
+
     public InstanceCreateReq withOs(OsEnum os) {
         this.os = os;
         return this;
@@ -234,8 +309,8 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 购买实例数量，最大200
-     * maximum: 200
+     * 购买实例数量，最大2000
+     * maximum: 2000
      * @return count
      */
     public Integer getCount() {
@@ -272,6 +347,23 @@ public class InstanceCreateReq {
         this.chargeParam = chargeParam;
     }
 
+    public InstanceCreateReq withNetwork(NetworkEnum network) {
+        this.network = network;
+        return this;
+    }
+
+    /**
+     * 网络线路类型。非必填参数，枚举值：EIP和ADN。默认是EIP类型，ADN网络要填。
+     * @return network
+     */
+    public NetworkEnum getNetwork() {
+        return network;
+    }
+
+    public void setNetwork(NetworkEnum network) {
+        this.network = network;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -285,12 +377,13 @@ public class InstanceCreateReq {
             && Objects.equals(this.bandSkuId, that.bandSkuId) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.instanceNamePrefix, that.instanceNamePrefix)
             && Objects.equals(this.bandSize, that.bandSize) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.chargeParam, that.chargeParam);
+            && Objects.equals(this.chargeParam, that.chargeParam) && Objects.equals(this.network, that.network);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(os, instanceSkuId, bandSkuId, regionId, instanceNamePrefix, bandSize, count, chargeParam);
+        return Objects
+            .hash(os, instanceSkuId, bandSkuId, regionId, instanceNamePrefix, bandSize, count, chargeParam, network);
     }
 
     @Override
@@ -305,6 +398,7 @@ public class InstanceCreateReq {
         sb.append("    bandSize: ").append(toIndentedString(bandSize)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    chargeParam: ").append(toIndentedString(chargeParam)).append("\n");
+        sb.append("    network: ").append(toIndentedString(network)).append("\n");
         sb.append("}");
         return sb.toString();
     }

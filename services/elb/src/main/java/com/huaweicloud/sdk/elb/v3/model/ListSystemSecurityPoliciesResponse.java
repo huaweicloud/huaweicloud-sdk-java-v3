@@ -49,7 +49,7 @@ public class ListSystemSecurityPoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 系统安全策略列表。
+     * **参数解释**：系统安全策略列表。
      * @return systemSecurityPolicies
      */
     public List<SystemSecurityPolicy> getSystemSecurityPolicies() {
@@ -66,7 +66,7 @@ public class ListSystemSecurityPoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
      * @return requestId
      */
     public String getRequestId() {

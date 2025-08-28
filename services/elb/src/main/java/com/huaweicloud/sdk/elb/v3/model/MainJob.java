@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 实例复制等异步任务查询的响应体定义
+ * **参数解释**：实例复制等异步任务查询的响应体定义。
  */
 public class MainJob {
 
@@ -316,7 +316,7 @@ public class MainJob {
     }
 
     /**
-     * 参数解释：资源ID。
+     * **参数解释**：资源ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -349,7 +349,7 @@ public class MainJob {
     }
 
     /**
-     * 子任务列表
+     * **参数解释**：子任务列表。
      * @return subJobs
      */
     public List<SubJob> getSubJobs() {

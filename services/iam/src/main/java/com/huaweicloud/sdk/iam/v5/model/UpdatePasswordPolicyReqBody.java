@@ -56,7 +56,7 @@ public class UpdatePasswordPolicyReqBody {
     }
 
     /**
-     * 同一字符连续出现的最大次数。
+     * 同一字符连续出现的最大次数，取值范围为[0,32]。
      * minimum: 0
      * maximum: 32
      * @return maximumConsecutiveIdenticalChars
@@ -75,7 +75,7 @@ public class UpdatePasswordPolicyReqBody {
     }
 
     /**
-     * 密码最短使用时间（分钟）。
+     * 密码最短使用时间（分钟），取值范围为[0,1440]。
      * minimum: 0
      * maximum: 1440
      * @return minimumPasswordAge
@@ -94,7 +94,7 @@ public class UpdatePasswordPolicyReqBody {
     }
 
     /**
-     * 密码最小字符数。
+     * 密码最小字符数，取值范围为[8,32]。
      * minimum: 8
      * maximum: 32
      * @return minimumPasswordLength
@@ -113,7 +113,7 @@ public class UpdatePasswordPolicyReqBody {
     }
 
     /**
-     * 密码不能与历史密码重复次数。
+     * 密码不能与历史密码重复次数，取值范围为[0,24]。
      * minimum: 0
      * maximum: 24
      * @return passwordReusePrevention
@@ -132,7 +132,7 @@ public class UpdatePasswordPolicyReqBody {
     }
 
     /**
-     * 密码是否可以是用户名或用户名的反序。
+     * 密码是否可以是用户名或用户名的反序。默认值为true，为true时表示密码不可以是用户名或用户名的反序。
      * @return passwordNotUsernameOrInvert
      */
     public Boolean getPasswordNotUsernameOrInvert() {
@@ -149,7 +149,7 @@ public class UpdatePasswordPolicyReqBody {
     }
 
     /**
-     * 密码有效期（天）。
+     * 密码有效期（天），取值范围为[0,180]。
      * minimum: 0
      * maximum: 180
      * @return passwordValidityPeriod
@@ -168,7 +168,7 @@ public class UpdatePasswordPolicyReqBody {
     }
 
     /**
-     * 至少包含字符种类的个数。
+     * 至少包含字符种类的个数，取值范围为[2,4]。
      * minimum: 2
      * maximum: 4
      * @return passwordCharCombination

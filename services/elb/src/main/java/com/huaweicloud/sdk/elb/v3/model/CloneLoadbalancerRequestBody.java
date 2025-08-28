@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 复制负载均衡器接口请求体。
+ * **参数解释**：复制负载均衡器请求体。  **约束限制**：不涉及
  */
 public class CloneLoadbalancerRequestBody {
 
@@ -27,7 +27,7 @@ public class CloneLoadbalancerRequestBody {
     }
 
     /**
-     * 参数解释：单次最大复制数量。  取值范围：1-10  默认取值：1
+     * **参数解释**：单次最大复制数量。  **约束限制**：不涉及  **取值范围**：1-10  **默认取值**：1
      * @return count
      */
     public Integer getCount() {

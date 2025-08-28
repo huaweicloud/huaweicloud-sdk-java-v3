@@ -24,7 +24,7 @@ public class ChangeLoadbalancerChargeModeRequestBody {
     private List<String> loadbalancerIds = null;
 
     /**
-     * 计费模式。取值： - prepaid：包周期计费[（仅当不传pay_type时，允许设为该值）](tag:hws)
+     * **参数解释**：计费模式。  **约束限制**：不涉及  **取值范围**：仅支持设置为'prepaid'-包周期计费。  **默认取值**：不涉及
      */
     public static final class ChargeModeEnum {
 
@@ -119,7 +119,7 @@ public class ChangeLoadbalancerChargeModeRequestBody {
     }
 
     /**
-     * 需要修改计费类型的负载均衡器ID列表。
+     * **参数解释**：需要修改计费类型的负载均衡器ID列表。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return loadbalancerIds
      */
     public List<String> getLoadbalancerIds() {
@@ -136,7 +136,7 @@ public class ChangeLoadbalancerChargeModeRequestBody {
     }
 
     /**
-     * 计费模式。取值： - prepaid：包周期计费[（仅当不传pay_type时，允许设为该值）](tag:hws)
+     * **参数解释**：计费模式。  **约束限制**：不涉及  **取值范围**：仅支持设置为'prepaid'-包周期计费。  **默认取值**：不涉及
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {

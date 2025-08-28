@@ -26,7 +26,7 @@ public class ListAvailabilityZonesRequest {
     }
 
     /**
-     * 参数解释：网络公共边界组。
+     * **参数解释**：公网边界组。  **约束限制**：不涉及  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  **默认取值**：不涉及
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {
@@ -43,7 +43,7 @@ public class ListAvailabilityZonesRequest {
     }
 
     /**
-     * 参数解释：负载均衡器ID。
+     * **参数解释**：负载均衡器ID。传入可查询对应ELB支持的可用区列表。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {

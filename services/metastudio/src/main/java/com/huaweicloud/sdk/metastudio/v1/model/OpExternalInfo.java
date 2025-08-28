@@ -23,6 +23,11 @@ public class OpExternalInfo {
 
     private String algorithmFailureReason;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "admin_audit_failure_reason")
+
+    private String adminAuditFailureReason;
+
     public OpExternalInfo withReviewIdList(List<String> reviewIdList) {
         this.reviewIdList = reviewIdList;
         return this;
@@ -73,6 +78,23 @@ public class OpExternalInfo {
         this.algorithmFailureReason = algorithmFailureReason;
     }
 
+    public OpExternalInfo withAdminAuditFailureReason(String adminAuditFailureReason) {
+        this.adminAuditFailureReason = adminAuditFailureReason;
+        return this;
+    }
+
+    /**
+     * 管理员驳回的原因
+     * @return adminAuditFailureReason
+     */
+    public String getAdminAuditFailureReason() {
+        return adminAuditFailureReason;
+    }
+
+    public void setAdminAuditFailureReason(String adminAuditFailureReason) {
+        this.adminAuditFailureReason = adminAuditFailureReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +105,13 @@ public class OpExternalInfo {
         }
         OpExternalInfo that = (OpExternalInfo) obj;
         return Objects.equals(this.reviewIdList, that.reviewIdList)
-            && Objects.equals(this.algorithmFailureReason, that.algorithmFailureReason);
+            && Objects.equals(this.algorithmFailureReason, that.algorithmFailureReason)
+            && Objects.equals(this.adminAuditFailureReason, that.adminAuditFailureReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(reviewIdList, algorithmFailureReason);
+        return Objects.hash(reviewIdList, algorithmFailureReason, adminAuditFailureReason);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class OpExternalInfo {
         sb.append("class OpExternalInfo {\n");
         sb.append("    reviewIdList: ").append(toIndentedString(reviewIdList)).append("\n");
         sb.append("    algorithmFailureReason: ").append(toIndentedString(algorithmFailureReason)).append("\n");
+        sb.append("    adminAuditFailureReason: ").append(toIndentedString(adminAuditFailureReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

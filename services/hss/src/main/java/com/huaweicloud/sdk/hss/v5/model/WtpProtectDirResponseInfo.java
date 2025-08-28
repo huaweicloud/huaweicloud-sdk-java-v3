@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * WtpProtectDirResponseInfo
+ * 防护目录信息
  */
 public class WtpProtectDirResponseInfo {
 
@@ -56,7 +56,7 @@ public class WtpProtectDirResponseInfo {
     }
 
     /**
-     * 防护目录列表
+     * **参数解释**: 防护目录列表 **取值范围**: 最少0条，最多50条 
      * @return protectDirList
      */
     public List<WtpProtectHostDirResponseInfo> getProtectDirList() {
@@ -90,7 +90,7 @@ public class WtpProtectDirResponseInfo {
     }
 
     /**
-     * 排除文件类型
+     * **参数解释**: 排除文件类型 **取值范围**: 字符长度0-512位 
      * @return excludeFileType
      */
     public String getExcludeFileType() {
@@ -107,7 +107,7 @@ public class WtpProtectDirResponseInfo {
     }
 
     /**
-     * 防护模式，包含如下4种   - recovery ：恢复模式   - alarm ：告警模式
+     * **参数解释**: 防护模式 **取值范围**: - recovery ：拦截模式。 - alarm ：告警模式。 
      * @return protectMode
      */
     public String getProtectMode() {

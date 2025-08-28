@@ -104,7 +104,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return marker
      */
     public String getMarker() {
@@ -121,7 +121,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
+     * **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -140,7 +140,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -173,7 +173,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx****。
+     * **参数解释**：健康检查ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx****。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return id
      */
     public List<String> getId() {
@@ -206,7 +206,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查端口号。  支持多值查询，查询条件格式：***monitor_port=xxx&monitor_port=xxx***。
+     * **参数解释**：健康检查端口号。 支持多值查询，查询条件格式：***monitor_port=xxx&monitor_port=xxx***。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return monitorPort
      */
     public List<Integer> getMonitorPort() {
@@ -239,7 +239,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 发送健康检查请求的域名。  取值：以数字或字母开头，只能包含数字、字母、’-’、’.’。  支持多值查询，查询条件格式：**domain_name=xxx&domain_name=xxx**。
+     * **参数解释**：发送健康检查请求的域名。 支持多值查询，查询条件格式：**domain_name=xxx&domain_name=xxx**。  **约束限制**：不涉及  **取值范围**：以数字或字母开头，只能包含数字、字母、’-’、’.’。  **默认取值**：不涉及
      * @return domainName
      */
     public List<String> getDomainName() {
@@ -272,7 +272,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * **参数解释**：健康检查名称。 支持多值查询，查询条件格式：*name=xxx&name=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return name
      */
     public List<String> getName() {
@@ -305,7 +305,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查间隔。  取值：1-50s。  支持多值查询，查询条件格式：*delay=xxx&delay=xxx*。
+     * **参数解释**：健康检查间隔。 支持多值查询，查询条件格式：*delay=xxx&delay=xxx*。  **约束限制**：不涉及  **取值范围**：1-50，单位：秒。  **默认取值**：不涉及
      * @return delay
      */
     public List<Integer> getDelay() {
@@ -338,7 +338,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查连续成功多少次后，将后端服务器的健康检查状态由OFFLINE判定为ONLINE。取值范围：1-10。  支持多值查询，查询条件格式：*******max_retries=xxx&max_retries=xxx*******。
+     * **参数解释**：健康检查连续成功多少次后，将后端服务器的健康检查状态由OFFLINE判定为ONLINE。 支持多值查询，查询条件格式：*******max_retries=xxx&max_retries=xxx*******。  **约束限制**：不涉及  **取值范围**：1-10  **默认取值**：不涉及
      * @return maxRetries
      */
     public List<Integer> getMaxRetries() {
@@ -355,7 +355,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 参数解释：健康检查的管理状态。  取值范围： - true：表示开启健康检查。 - false表示关闭健康检查。
+     * **参数解释**：健康检查的管理状态。  **约束限制**：不涉及  **取值范围**： - true：表示开启健康检查。 - false表示关闭健康检查。  **默认取值**：不涉及
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -388,7 +388,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查连续失败多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE。取值范围：1-10。  支持多值查询，查询条件格式：******max_retries_down=xxx&max_retries_down=xxx******。
+     * **参数解释**：健康检查连续失败多少次后，将后端服务器的健康检查状态由ONLINE判定为OFFLINE。 支持多值查询，查询条件格式：******max_retries_down=xxx&max_retries_down=xxx******。  **约束限制**：不涉及  **取值范围**：1-10  **默认取值**：不涉及
      * @return maxRetriesDown
      */
     public List<Integer> getMaxRetriesDown() {
@@ -405,7 +405,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 一次健康检查请求的超时时间。
+     * **参数解释**：一次健康检查请求的超时时间。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return timeout
      */
     public Integer getTimeout() {
@@ -438,7 +438,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
+     * **参数解释**：健康检查请求协议。 支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。  **约束限制**：不涉及  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  **默认取值**：不涉及
      * @return type
      */
     public List<String> getType() {
@@ -471,7 +471,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  该字段仅在HTTP/HTTPS/GRPC协议下有效，其他协议可以设置但不会生效。  支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
+     * **参数解释**：期望响应状态码。 支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。  **约束限制**： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return expectedCodes
      */
     public List<String> getExpectedCodes() {
@@ -504,7 +504,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查测试member健康时发送的http请求路径。默认为“/”。  使用说明：以“/”开头。当type为HTTP/HTTPS时生效。  支持多值查询，查询条件格式：***url_path=xxx&url_path=xxx***。
+     * **参数解释**：健康检查测试member健康时发送的http请求路径。 支持多值查询，查询条件格式：***url_path=xxx&url_path=xxx***。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return urlPath
      */
     public List<String> getUrlPath() {
@@ -537,7 +537,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * HTTP请求方法。  取值：GET、HEAD、POST。  支持多值查询，查询条件格式：**http_method=xxx&http_method=xxx**。
+     * **参数解释**：HTTP请求方法。 支持多值查询，查询条件格式：**http_method=xxx&http_method=xxx**。  **约束限制**：不涉及  **取值范围**：GET、HEAD、POST  **默认取值**：不涉及
      * @return httpMethod
      */
     public List<String> getHttpMethod() {
@@ -570,7 +570,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 参数解释：所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:healthmonitors:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  **约束限制**： - 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:healthmonitors:list权限。 - 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {

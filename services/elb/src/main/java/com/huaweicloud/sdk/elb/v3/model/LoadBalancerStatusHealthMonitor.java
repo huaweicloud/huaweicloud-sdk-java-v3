@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * LB状态树的后端服务器组健康检查器状态信息。
+ * **参数解释**：LB状态树的后端服务器组健康检查器状态信息。
  */
 public class LoadBalancerStatusHealthMonitor {
 
@@ -36,7 +36,7 @@ public class LoadBalancerStatusHealthMonitor {
     }
 
     /**
-     * 协议类型。取值：TCP、UDP_CONNECT或HTTP。
+     * **参数解释**：健康检查器协议类型。  **取值范围**：TCP、UDP_CONNECT、HTTP。
      * @return type
      */
     public String getType() {
@@ -53,7 +53,7 @@ public class LoadBalancerStatusHealthMonitor {
     }
 
     /**
-     * 健康检查器ID。
+     * **参数解释**：健康检查器ID。  **取值范围**：不涉及
      * @return id
      */
     public String getId() {
@@ -70,7 +70,7 @@ public class LoadBalancerStatusHealthMonitor {
     }
 
     /**
-     * 健康检查器名称。
+     * **参数解释**：健康检查器名称。  **取值范围**：不涉及
      * @return name
      */
     public String getName() {
@@ -87,7 +87,7 @@ public class LoadBalancerStatusHealthMonitor {
     }
 
     /**
-     * 健康检查器的配置状态。取值：ACTIVE表示使用中。
+     * **参数解释**：健康检查器的配置状态。  **取值范围**：ACTIVE表示使用中。
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {

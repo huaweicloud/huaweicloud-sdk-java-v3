@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新云日志请求体
+ * UpdateLogtankRequestBody
  */
 public class UpdateLogtankRequestBody {
 

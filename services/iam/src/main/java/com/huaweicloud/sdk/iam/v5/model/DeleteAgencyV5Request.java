@@ -21,7 +21,7 @@ public class DeleteAgencyV5Request {
     }
 
     /**
-     * 委托或信任委托ID，长度为1到64个字符，只包含字母、数字和\"-\"的字符串。
+     * 信任委托ID，长度为1到64个字符，只包含字母、数字和\"-\"的字符串。
      * @return agencyId
      */
     public String getAgencyId() {

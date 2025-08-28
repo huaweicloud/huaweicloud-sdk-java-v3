@@ -21,7 +21,7 @@ public class WebTamperTimingOffConfigInfoRequestInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timing_range_list")
 
-    private List<TimingRangeConfigInfo> timingRangeList = null;
+    private List<TimingRangeConfigRequestInfo> timingRangeList = null;
 
     public WebTamperTimingOffConfigInfoRequestInfo withWeekOffList(List<Integer> weekOffList) {
         this.weekOffList = weekOffList;
@@ -56,12 +56,14 @@ public class WebTamperTimingOffConfigInfoRequestInfo {
         this.weekOffList = weekOffList;
     }
 
-    public WebTamperTimingOffConfigInfoRequestInfo withTimingRangeList(List<TimingRangeConfigInfo> timingRangeList) {
+    public WebTamperTimingOffConfigInfoRequestInfo withTimingRangeList(
+        List<TimingRangeConfigRequestInfo> timingRangeList) {
         this.timingRangeList = timingRangeList;
         return this;
     }
 
-    public WebTamperTimingOffConfigInfoRequestInfo addTimingRangeListItem(TimingRangeConfigInfo timingRangeListItem) {
+    public WebTamperTimingOffConfigInfoRequestInfo addTimingRangeListItem(
+        TimingRangeConfigRequestInfo timingRangeListItem) {
         if (this.timingRangeList == null) {
             this.timingRangeList = new ArrayList<>();
         }
@@ -70,7 +72,7 @@ public class WebTamperTimingOffConfigInfoRequestInfo {
     }
 
     public WebTamperTimingOffConfigInfoRequestInfo withTimingRangeList(
-        Consumer<List<TimingRangeConfigInfo>> timingRangeListSetter) {
+        Consumer<List<TimingRangeConfigRequestInfo>> timingRangeListSetter) {
         if (this.timingRangeList == null) {
             this.timingRangeList = new ArrayList<>();
         }
@@ -82,11 +84,11 @@ public class WebTamperTimingOffConfigInfoRequestInfo {
      * 时间段
      * @return timingRangeList
      */
-    public List<TimingRangeConfigInfo> getTimingRangeList() {
+    public List<TimingRangeConfigRequestInfo> getTimingRangeList() {
         return timingRangeList;
     }
 
-    public void setTimingRangeList(List<TimingRangeConfigInfo> timingRangeList) {
+    public void setTimingRangeList(List<TimingRangeConfigRequestInfo> timingRangeList) {
         this.timingRangeList = timingRangeList;
     }
 

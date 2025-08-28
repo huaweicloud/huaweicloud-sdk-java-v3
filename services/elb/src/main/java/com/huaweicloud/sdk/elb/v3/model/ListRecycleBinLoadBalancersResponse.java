@@ -52,7 +52,7 @@ public class ListRecycleBinLoadBalancersResponse extends SdkResponse {
     }
 
     /**
-     * 回收站中的弹性负载均衡器实例列表。
+     * **参数解释**：回收站中的弹性负载均衡器实例列表。  **取值范围**：不涉及
      * @return loadbalancers
      */
     public List<RecycleLoadBalancer> getLoadbalancers() {
@@ -95,7 +95,7 @@ public class ListRecycleBinLoadBalancersResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
      * @return requestId
      */
     public String getRequestId() {

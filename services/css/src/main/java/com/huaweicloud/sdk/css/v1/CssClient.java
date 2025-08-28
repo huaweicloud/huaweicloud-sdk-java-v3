@@ -1553,9 +1553,9 @@ public class CssClient {
     }
 
     /**
-     * 开启日志功能
+     * 开启日志备份或日志采集功能
      *
-     * 该接口用于开启日志功能。
+     * 该接口用于开启集群的日志备份或日志采集功能开关。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1567,9 +1567,9 @@ public class CssClient {
     }
 
     /**
-     * 开启日志功能
+     * 开启日志备份或日志采集功能
      *
-     * 该接口用于开启日志功能。
+     * 该接口用于开启集群的日志备份或日志采集功能开关。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1868,9 +1868,9 @@ public class CssClient {
     }
 
     /**
-     * 修改集群名称
+     * 修改集群名称或描述
      *
-     * 该接口用于修改集群名称。
+     * 该接口用于修改集群名称或描述。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1882,9 +1882,9 @@ public class CssClient {
     }
 
     /**
-     * 修改集群名称
+     * 修改集群名称或描述
      *
-     * 该接口用于修改集群名称。
+     * 该接口用于修改集群名称或描述。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

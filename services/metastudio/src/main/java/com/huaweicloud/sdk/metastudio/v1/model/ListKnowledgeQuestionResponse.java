@@ -45,9 +45,9 @@ public class ListKnowledgeQuestionResponse extends SdkResponse {
     }
 
     /**
-     * 页面起始页,从0开始
+     * 与第一条数据的偏移量
      * minimum: 0
-     * maximum: 1000000
+     * maximum: 2147483647
      * @return offset
      */
     public Integer getOffset() {
@@ -64,9 +64,9 @@ public class ListKnowledgeQuestionResponse extends SdkResponse {
     }
 
     /**
-     * 每页显示的条目数量
-     * minimum: 0
-     * maximum: 1000000
+     * 页面大小
+     * minimum: 1
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -85,7 +85,7 @@ public class ListKnowledgeQuestionResponse extends SdkResponse {
     /**
      * 总数量
      * minimum: 0
-     * maximum: 1000000
+     * maximum: 2147483647
      * @return count
      */
     public Integer getCount() {

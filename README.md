@@ -296,6 +296,7 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
     * [3.3 Custom Configuration](#33-custom-configuration-top)
         * [3.3.1 IAM endpoint configuration](#331-iam-endpoint-configuration-top)
         * [3.3.2 Region configuration](#332-region-configuration-top)
+    * [3.4 User Agent](#34-user-agent-top)
 * [4. Send Requests and Handle Responses](#4-send-requests-and-handle-responses-top)
     * [4.1 Exceptions](#41-exceptions-top)
 * [5. Use Asynchronous Client](#5-use-asynchronous-client-top)
@@ -951,6 +952,24 @@ import com.huaweicloud.sdk.ecs.v2.region.EcsRegion;
 
 Region region1 = EcsRegion.valueOf("cn-north-1");
 Region region2 = EcsRegion.valueOf("cn-north-9");
+```
+
+#### 3.4 User Agent [:top:](#user-manual-top)
+
+Additional information will be appended to the User-Agent in the request header by default since **v3.1.164**. It is used by service to identify what SDK language, java version, and platform info a client is using to call into their service, and a random identifier will be generated and appended to the User-Agent. The identifier will be stored in the user's home directory, as `~/.huaweicloud/application_id` on Linux and `C:\Users\USER_NAME\.huaweicloud\application_id` on Windows.
+
+The above information will be used to protect the security of your and your users' Huawei Cloud accounts.
+
+You can disable this automatic User-Agent augmentation by explicitly setting a custom User-Agent header value. The value is recommended to be less than 50 characters and should use US-ASCII visible characters:
+
+```java
+HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
+        // Append custom User-Agent information to replace the default
+        .withUserAgent("custom user agent...");
+
+IamClient client = IamClient.newBuilder()
+        .withHttpConfig(httpConfig)
+        .build();
 ```
 
 ### 4. Send Requests and Handle Responses [:top:](#user-manual-top)

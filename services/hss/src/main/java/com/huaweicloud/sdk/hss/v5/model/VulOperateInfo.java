@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 漏洞列表
+ * **参数解释**: 漏洞列表 
  */
 public class VulOperateInfo {
 
@@ -29,7 +29,7 @@ public class VulOperateInfo {
     }
 
     /**
-     * 漏洞ID
+     * **参数解释**: 漏洞ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64 **默认取值**: 不涉及 
      * @return vulId
      */
     public String getVulId() {
@@ -62,7 +62,7 @@ public class VulOperateInfo {
     }
 
     /**
-     * 主机列表
+     * **参数解释**: 主机列表 **约束限制**: 不涉及 **取值范围**: 取值1-500 **默认取值**: 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {

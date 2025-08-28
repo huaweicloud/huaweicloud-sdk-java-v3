@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
 import com.huaweicloud.sdk.waf.v1.model.CheckAgencyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CheckAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyAntileakageMapRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyAntileakageMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyIpReputationMapRequest;
@@ -61,6 +63,9 @@ import com.huaweicloud.sdk.waf.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpGroupRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyResponse;
@@ -106,6 +111,8 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePremiumHostRequest;
@@ -128,6 +135,14 @@ import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRequestDistributionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRequestDistributionResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMScoreDistributionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMScoreDistributionResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMTimelineRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMTopnRequestRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMTopnRequestResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCertificatesRequest;
@@ -172,6 +187,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
@@ -180,6 +197,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListTopDomainsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListTopDomainsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListTopIpRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListTopIpResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListTopUrlRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListTopUrlResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesRequest;
@@ -243,6 +264,7 @@ import com.huaweicloud.sdk.waf.v1.model.ShowValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowWhiteBlackIpRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.StatisticsTimelineItem;
+import com.huaweicloud.sdk.waf.v1.model.TypedStatBucket;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAccessProgressRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAccessProgressResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAlertNoticeConfigRequest;
@@ -285,6 +307,9 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIpGroupRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIpReputationRuleRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateLtsInfoConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateLtsInfoConfigRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateLtsInfoConfigResponse;
@@ -401,6 +426,36 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmIpReputationRuleRequest, ConfirmIpReputationRuleResponse> confirmIpReputationRule =
+        genForConfirmIpReputationRule();
+
+    private static HttpRequestDef<ConfirmIpReputationRuleRequest, ConfirmIpReputationRuleResponse> genForConfirmIpReputationRule() {
+        // basic
+        HttpRequestDef.Builder<ConfirmIpReputationRuleRequest, ConfirmIpReputationRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ConfirmIpReputationRuleRequest.class, ConfirmIpReputationRuleResponse.class)
+            .withName("ConfirmIpReputationRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ip-reputation/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmIpReputationRuleRequest::getPolicyId,
+                ConfirmIpReputationRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmIpReputationRuleRequest::getRuleId,
+                ConfirmIpReputationRuleRequest::setRuleId));
 
         // response
 
@@ -896,6 +951,41 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateIpGroupRequestBody.class),
             f -> f.withMarshaller(CreateIpGroupRequest::getBody, CreateIpGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateIpReputationRuleRequest, CreateIpReputationRuleResponse> createIpReputationRule =
+        genForCreateIpReputationRule();
+
+    private static HttpRequestDef<CreateIpReputationRuleRequest, CreateIpReputationRuleResponse> genForCreateIpReputationRule() {
+        // basic
+        HttpRequestDef.Builder<CreateIpReputationRuleRequest, CreateIpReputationRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateIpReputationRuleRequest.class, CreateIpReputationRuleResponse.class)
+            .withName("CreateIpReputationRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ip-reputation")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIpReputationRuleRequest::getPolicyId,
+                CreateIpReputationRuleRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIpReputationRuleRequest::getEnterpriseProjectId,
+                CreateIpReputationRuleRequest::setEnterpriseProjectId));
+        builder.<CreateIpReputationRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateIpReputationRuleRequestBody.class),
+            f -> f.withMarshaller(CreateIpReputationRuleRequest::getBody, CreateIpReputationRuleRequest::setBody));
 
         // response
 
@@ -1508,6 +1598,41 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteIpReputationRuleRequest, DeleteIpReputationRuleResponse> deleteIpReputationRule =
+        genForDeleteIpReputationRule();
+
+    private static HttpRequestDef<DeleteIpReputationRuleRequest, DeleteIpReputationRuleResponse> genForDeleteIpReputationRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteIpReputationRuleRequest, DeleteIpReputationRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteIpReputationRuleRequest.class, DeleteIpReputationRuleResponse.class)
+            .withName("DeleteIpReputationRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ip-reputation/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpReputationRuleRequest::getPolicyId,
+                DeleteIpReputationRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpReputationRuleRequest::getRuleId, DeleteIpReputationRuleRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpReputationRuleRequest::getEnterpriseProjectId,
+                DeleteIpReputationRuleRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> deletePolicy = genForDeletePolicy();
 
     private static HttpRequestDef<DeletePolicyRequest, DeletePolicyResponse> genForDeletePolicy() {
@@ -1916,6 +2041,269 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListBandwidthTimelineResponse::getBody, ListBandwidthTimelineResponse::setBody)
                 .withInnerContainerType(BandwidthStatisticsTimelineItem.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBotMRequestDistributionRequest, ListBotMRequestDistributionResponse> listBotMRequestDistribution =
+        genForListBotMRequestDistribution();
+
+    private static HttpRequestDef<ListBotMRequestDistributionRequest, ListBotMRequestDistributionResponse> genForListBotMRequestDistribution() {
+        // basic
+        HttpRequestDef.Builder<ListBotMRequestDistributionRequest, ListBotMRequestDistributionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListBotMRequestDistributionRequest.class,
+                    ListBotMRequestDistributionResponse.class)
+                .withName("ListBotMRequestDistribution")
+                .withUri("/v1/{project_id}/waf/overviews/bot-manager/bot-request-distribution")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMRequestDistributionRequest::getStartTime,
+                ListBotMRequestDistributionRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMRequestDistributionRequest::getEndTime,
+                ListBotMRequestDistributionRequest::setEndTime));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMRequestDistributionRequest::getTenantId,
+                ListBotMRequestDistributionRequest::setTenantId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMRequestDistributionRequest::getEnterpriseProjectId,
+                ListBotMRequestDistributionRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBotMRequestDistributionRequest::getHosts,
+                ListBotMRequestDistributionRequest::setHosts));
+        builder.<List<String>>withRequestField("domains",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBotMRequestDistributionRequest::getDomains,
+                ListBotMRequestDistributionRequest::setDomains));
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMRequestDistributionRequest::getRegion,
+                ListBotMRequestDistributionRequest::setRegion));
+        builder.<String>withRequestField("site",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMRequestDistributionRequest::getSite,
+                ListBotMRequestDistributionRequest::setSite));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBotMScoreDistributionRequest, ListBotMScoreDistributionResponse> listBotMScoreDistribution =
+        genForListBotMScoreDistribution();
+
+    private static HttpRequestDef<ListBotMScoreDistributionRequest, ListBotMScoreDistributionResponse> genForListBotMScoreDistribution() {
+        // basic
+        HttpRequestDef.Builder<ListBotMScoreDistributionRequest, ListBotMScoreDistributionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListBotMScoreDistributionRequest.class,
+                    ListBotMScoreDistributionResponse.class)
+                .withName("ListBotMScoreDistribution")
+                .withUri("/v1/{project_id}/waf/overviews/bot-manager/bot-score-distribution")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMScoreDistributionRequest::getStartTime,
+                ListBotMScoreDistributionRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMScoreDistributionRequest::getEndTime,
+                ListBotMScoreDistributionRequest::setEndTime));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMScoreDistributionRequest::getTenantId,
+                ListBotMScoreDistributionRequest::setTenantId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMScoreDistributionRequest::getEnterpriseProjectId,
+                ListBotMScoreDistributionRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBotMScoreDistributionRequest::getHosts,
+                ListBotMScoreDistributionRequest::setHosts));
+        builder.<List<String>>withRequestField("domains",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBotMScoreDistributionRequest::getDomains,
+                ListBotMScoreDistributionRequest::setDomains));
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMScoreDistributionRequest::getRegion,
+                ListBotMScoreDistributionRequest::setRegion));
+        builder.<String>withRequestField("site",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMScoreDistributionRequest::getSite,
+                ListBotMScoreDistributionRequest::setSite));
+
+        // response
+        builder.<List<TypedStatBucket>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListBotMScoreDistributionResponse::getBody, ListBotMScoreDistributionResponse::setBody)
+                .withInnerContainerType(TypedStatBucket.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBotMTimelineRequest, ListBotMTimelineResponse> listBotMTimeline =
+        genForListBotMTimeline();
+
+    private static HttpRequestDef<ListBotMTimelineRequest, ListBotMTimelineResponse> genForListBotMTimeline() {
+        // basic
+        HttpRequestDef.Builder<ListBotMTimelineRequest, ListBotMTimelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBotMTimelineRequest.class, ListBotMTimelineResponse.class)
+                .withName("ListBotMTimeline")
+                .withUri("/v1/{project_id}/waf/overviews/bot-manager/bot-request-on-timeline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMTimelineRequest::getStartTime, ListBotMTimelineRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMTimelineRequest::getEndTime, ListBotMTimelineRequest::setEndTime));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTimelineRequest::getTenantId, ListBotMTimelineRequest::setTenantId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTimelineRequest::getEnterpriseProjectId,
+                ListBotMTimelineRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBotMTimelineRequest::getHosts, ListBotMTimelineRequest::setHosts));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTimelineRequest::getDomain, ListBotMTimelineRequest::setDomain));
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTimelineRequest::getRegion, ListBotMTimelineRequest::setRegion));
+        builder.<String>withRequestField("site",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTimelineRequest::getSite, ListBotMTimelineRequest::setSite));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBotMTopnRequestRequest, ListBotMTopnRequestResponse> listBotMTopnRequest =
+        genForListBotMTopnRequest();
+
+    private static HttpRequestDef<ListBotMTopnRequestRequest, ListBotMTopnRequestResponse> genForListBotMTopnRequest() {
+        // basic
+        HttpRequestDef.Builder<ListBotMTopnRequestRequest, ListBotMTopnRequestResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBotMTopnRequestRequest.class, ListBotMTopnRequestResponse.class)
+                .withName("ListBotMTopnRequest")
+                .withUri("/v1/{project_id}/waf/overviews/bot-manager/topn-bot-request")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMTopnRequestRequest::getStartTime, ListBotMTopnRequestRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMTopnRequestRequest::getEndTime, ListBotMTopnRequestRequest::setEndTime));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTopnRequestRequest::getTenantId, ListBotMTopnRequestRequest::setTenantId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTopnRequestRequest::getEnterpriseProjectId,
+                ListBotMTopnRequestRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBotMTopnRequestRequest::getHosts, ListBotMTopnRequestRequest::setHosts));
+        builder.<Long>withRequestField("topn",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBotMTopnRequestRequest::getTopn, ListBotMTopnRequestRequest::setTopn));
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTopnRequestRequest::getRegion, ListBotMTopnRequestRequest::setRegion));
+        builder.<String>withRequestField("site",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMTopnRequestRequest::getSite, ListBotMTopnRequestRequest::setSite));
+
+        // response
 
         return builder.build();
     }
@@ -2871,6 +3259,71 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimeline =
+        genForListResponseCodeTimeline();
+
+    private static HttpRequestDef<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> genForListResponseCodeTimeline() {
+        // basic
+        HttpRequestDef.Builder<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListResponseCodeTimelineRequest.class, ListResponseCodeTimelineResponse.class)
+                .withName("ListResponseCodeTimeline")
+                .withUri("/v1/{project_id}/waf/overviews/response-code/timeline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getEnterpriseProjectId,
+                ListResponseCodeTimelineRequest::setEnterpriseProjectId));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getFrom, ListResponseCodeTimelineRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getTo, ListResponseCodeTimelineRequest::setTo));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getHosts,
+                ListResponseCodeTimelineRequest::setHosts));
+        builder.<List<String>>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getInstances,
+                ListResponseCodeTimelineRequest::setInstances));
+        builder.<ListResponseCodeTimelineRequest.ResponseSourceEnum>withRequestField("response_source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListResponseCodeTimelineRequest.ResponseSourceEnum.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getResponseSource,
+                ListResponseCodeTimelineRequest::setResponseSource));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getGroupBy,
+                ListResponseCodeTimelineRequest::setGroupBy));
+
+        // response
+        builder.<List<StatisticsTimelineItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineResponse::getBody, ListResponseCodeTimelineResponse::setBody)
+                .withInnerContainerType(StatisticsTimelineItem.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityReportSubscriptionsRequest, ListSecurityReportSubscriptionsResponse> listSecurityReportSubscriptions =
         genForListSecurityReportSubscriptions();
 
@@ -3070,6 +3523,101 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopDomainsRequest::getHosts, ListTopDomainsRequest::setHosts));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopIpRequest, ListTopIpResponse> listTopIp = genForListTopIp();
+
+    private static HttpRequestDef<ListTopIpRequest, ListTopIpResponse> genForListTopIp() {
+        // basic
+        HttpRequestDef.Builder<ListTopIpRequest, ListTopIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopIpRequest.class, ListTopIpResponse.class)
+                .withName("ListTopIp")
+                .withUri("/v1/{project_id}/waf/overviews/attack/ip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopIpRequest::getEnterpriseProjectId, ListTopIpRequest::setEnterpriseProjectId));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopIpRequest::getFrom, ListTopIpRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopIpRequest::getTo, ListTopIpRequest::setTo));
+        builder.<Integer>withRequestField("top",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopIpRequest::getTop, ListTopIpRequest::setTop));
+        builder.<String>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopIpRequest::getHosts, ListTopIpRequest::setHosts));
+        builder.<String>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopIpRequest::getInstances, ListTopIpRequest::setInstances));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopUrlRequest, ListTopUrlResponse> listTopUrl = genForListTopUrl();
+
+    private static HttpRequestDef<ListTopUrlRequest, ListTopUrlResponse> genForListTopUrl() {
+        // basic
+        HttpRequestDef.Builder<ListTopUrlRequest, ListTopUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopUrlRequest.class, ListTopUrlResponse.class)
+                .withName("ListTopUrl")
+                .withUri("/v1/{project_id}/waf/overviews/attack/url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopUrlRequest::getEnterpriseProjectId,
+                ListTopUrlRequest::setEnterpriseProjectId));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopUrlRequest::getFrom, ListTopUrlRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopUrlRequest::getTo, ListTopUrlRequest::setTo));
+        builder.<Integer>withRequestField("top",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopUrlRequest::getTop, ListTopUrlRequest::setTop));
+        builder.<String>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopUrlRequest::getHosts, ListTopUrlRequest::setHosts));
+        builder.<String>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopUrlRequest::getInstances, ListTopUrlRequest::setInstances));
 
         // response
 
@@ -4588,6 +5136,46 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateIpGroupRequestBody.class),
             f -> f.withMarshaller(UpdateIpGroupRequest::getBody, UpdateIpGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateIpReputationRuleRequest, UpdateIpReputationRuleResponse> updateIpReputationRule =
+        genForUpdateIpReputationRule();
+
+    private static HttpRequestDef<UpdateIpReputationRuleRequest, UpdateIpReputationRuleResponse> genForUpdateIpReputationRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateIpReputationRuleRequest, UpdateIpReputationRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateIpReputationRuleRequest.class, UpdateIpReputationRuleResponse.class)
+            .withName("UpdateIpReputationRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ip-reputation/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIpReputationRuleRequest::getPolicyId,
+                UpdateIpReputationRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIpReputationRuleRequest::getRuleId, UpdateIpReputationRuleRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIpReputationRuleRequest::getEnterpriseProjectId,
+                UpdateIpReputationRuleRequest::setEnterpriseProjectId));
+        builder.<UpdateIpReputationRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateIpReputationRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateIpReputationRuleRequest::getBody, UpdateIpReputationRuleRequest::setBody));
 
         // response
 

@@ -27,7 +27,7 @@ public class UpgradeLoadbalancerResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。 注：自动生成 。
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
      * @return requestId
      */
     public String getRequestId() {
@@ -44,7 +44,7 @@ public class UpgradeLoadbalancerResponse extends SdkResponse {
     }
 
     /**
-     * 升级的任务ID。
+     * **参数解释**：升级的任务ID。  **取值范围**：不涉及
      * @return jobId
      */
     public String getJobId() {

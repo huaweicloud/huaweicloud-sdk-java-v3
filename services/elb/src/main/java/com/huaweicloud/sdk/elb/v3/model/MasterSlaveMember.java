@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 后端服务器信息。
+ * **参数解释**：后端服务器信息。
  */
 public class MasterSlaveMember {
 
@@ -94,7 +94,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器ID。
+     * **参数解释**：后端服务器ID。  **取值范围**：不涉及
      * @return id
      */
     public String getId() {
@@ -111,7 +111,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器名称。
+     * **参数解释**：后端服务器名称。  **取值范围**：不涉及
      * @return name
      */
     public String getName() {
@@ -128,7 +128,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器的管理状态。  取值：true、false。  虽然创建、更新请求支持该字段，但实际取值决定于后端服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+     * **参数解释**：后端服务器的管理状态。 虽然创建、更新请求支持该字段，但实际取值决定于后端服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。  **取值范围**：true、false。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -145,7 +145,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器所在子网的IPv4子网ID或IPv6子网ID。  若所属的LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为**私网IPv4**地址，所在的pool的协议必须为UDP/TCP/TLS/HTTP/HTTPS/QUIC/GRPC。  使用说明：该子网和关联的负载均衡器的子网必须在同一VPC下。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt)
+     * **参数解释**：后端服务器所在子网的IPv4子网ID或IPv6子网ID。 若所属的LB的IP类型后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为**私网IPv4**地址，所在的pool的协议必须为UDP/TCP/TLS/HTTP/HTTPS/QUIC/GRPC。  **取值范围**：不涉及  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt)
      * @return subnetCidrId
      */
     public String getSubnetCidrId() {
@@ -162,7 +162,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器业务端口。 >在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
+     * **参数解释**：后端服务器业务端口。  >在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
      * minimum: 1
      * maximum: 65535
      * @return protocolPort
@@ -181,7 +181,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器对应的IP地址。  使用说明： - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为**私网IPv4**地址。 - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址必须在subnet_cidr_id对应的子网网段中，可以是**私网IPv4**或IPv6。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt)
+     * **参数解释**：后端服务器对应的IP地址。  **取值范围**：不涉及  [不支持IPv6，请勿设置为IPv6地址。](tag:dt)
      * @return address
      */
     public String getAddress() {
@@ -198,7 +198,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 当前后端服务器的IP地址版本，由后端系统自动根据传入的address字段确定。取值：v4、v6。
+     * **参数解释**：当前后端服务器的IP地址版本，由后端系统自动根据传入的address字段确定。  **取值范围**：v4、v6
      * @return ipVersion
      */
     public String getIpVersion() {
@@ -215,7 +215,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 设备所有者。  取值： - 空，表示后端服务器未关联到ECS。 - compute:{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。 - compute:subeni，表示辅助弹性网卡。  不支持该字段，请勿使用。
+     * **参数解释**：设备所有者。  **取值范围**：不涉及 - 空，表示后端服务器未关联到ECS。 - compute:{az_name}，表示关联到ECS，其中{az_name}表示ECS所在可用区名。 - compute:subeni，表示辅助弹性网卡。  不支持该字段，请勿使用。
      * @return deviceOwner
      */
     public String getDeviceOwner() {
@@ -232,7 +232,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 关联的ECS ID，为空表示后端服务器未关联到ECS。  不支持该字段，请勿使用。
+     * **参数解释**：关联的ECS ID，为空表示后端服务器未关联到ECS。  **取值范围**：不涉及  不支持该字段，请勿使用。
      * @return deviceId
      */
     public String getDeviceId() {
@@ -249,7 +249,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器的健康状态。  取值： - ONLINE：后端服务器正常。 - NO_MONITOR：后端服务器所在的服务器组没有健康检查器。 - OFFLINE：后端服务器关联的ECS服务器不存在或已关机。
+     * **参数解释**：后端服务器的健康状态。  **取值范围**：不涉及 - ONLINE：后端服务器正常。 - NO_MONITOR：后端服务器所在的服务器组没有健康检查器。 - OFFLINE：后端服务器关联的ECS服务器不存在或已关机。
      * @return operatingStatus
      */
     public String getOperatingStatus() {
@@ -292,7 +292,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器的类型。  取值： - ip：跨VPC的member。 - instance：关联到ECS的member。
+     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：跨VPC的member。 - instance：关联到ECS的member。
      * @return memberType
      */
     public String getMemberType() {
@@ -309,7 +309,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * member关联的实例ID。空表示member关联的实例为非真实设备 （如：跨VPC场景）
+     * **参数解释**：member关联的实例ID。空表示member关联的实例为非真实设备 （如：跨VPC场景）。  **取值范围**：不涉及
      * @return instanceId
      */
     public String getInstanceId() {
@@ -326,7 +326,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器的主备状态。
+     * **参数解释**：后端服务器的主备状态。  **取值范围**：不涉及
      * @return role
      */
     public String getRole() {
@@ -359,7 +359,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * 后端服务器监听器粒度的的健康状态。 若绑定的监听器在该字段中，则以该字段中监听器对应的operating_status为准。 若绑定的监听器不在该字段中，则以外层的operating_status为准。
+     * **参数解释**：后端服务器监听器粒度的的健康状态。 若绑定的监听器在该字段中，则以该字段中监听器对应的operating_status为准。 若绑定的监听器不在该字段中，则以外层的operating_status为准。  **取值范围**：不涉及
      * @return status
      */
     public List<ListenerMemberInfo> getStatus() {

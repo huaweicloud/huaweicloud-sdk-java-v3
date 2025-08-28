@@ -32,7 +32,7 @@ public class UpdateL7RuleRequest {
     }
 
     /**
-     * 策略ID。
+     * **参数解释**：策略ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return l7policyId
      */
     public String getL7policyId() {
@@ -49,7 +49,7 @@ public class UpdateL7RuleRequest {
     }
 
     /**
-     * 规则ID。
+     * **参数解释**：规则ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return l7ruleId
      */
     public String getL7ruleId() {

@@ -26,7 +26,7 @@ public class TimingRangeConfigInfo {
     }
 
     /**
-     * 时间范围
+     * **参数解释**: 自动关闭防护的时间段范围 **取值范围**: 字符长度0-512位 
      * @return timeRange
      */
     public String getTimeRange() {
@@ -43,7 +43,7 @@ public class TimingRangeConfigInfo {
     }
 
     /**
-     * 描述
+     * **参数解释**: 自动关闭防护的时间段描述 **取值范围**: 字符长度0-512位 
      * @return description
      */
     public String getDescription() {

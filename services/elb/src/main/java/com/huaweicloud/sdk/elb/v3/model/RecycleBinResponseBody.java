@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 回收站响应体。
+ * **参数解释**：回收站响应体。
  */
 public class RecycleBinResponseBody {
 
@@ -32,7 +32,7 @@ public class RecycleBinResponseBody {
     }
 
     /**
-     * 参数解释：项目ID。
+     * **参数解释**：项目ID。获取方式请参见[获取项目ID](elb_fl_0008.xml)。  **取值范围**：长度为32个字符，由小写字母和数字组成。
      * @return projectId
      */
     public String getProjectId() {
@@ -75,7 +75,7 @@ public class RecycleBinResponseBody {
     }
 
     /**
-     * 是否启用回收站。  取值： - true：启用回收站。 - false：不启用回收站。
+     * **参数解释**：是否启用回收站。  **取值范围**： - true：启用回收站。 - false：不启用回收站。
      * @return enable
      */
     public Boolean getEnable() {

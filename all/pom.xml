@@ -8,13 +8,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.1.163</version>
+        <version>3.1.164</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>huaweicloud-sdk-all</artifactId>
-    <version>3.1.163</version>
+    <version>3.1.164</version>
     <name>Huawei Cloud SDK for Java</name>
     <description>Huawei Cloud SDK for Java provides all services</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
@@ -24,7 +24,7 @@
             <dependency>
                 <groupId>com.huaweicloud.sdk</groupId>
                 <artifactId>huaweicloud-sdk-bom</artifactId>
-                <version>3.1.163</version>
+                <version>3.1.164</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -235,7 +235,7 @@
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dcos</artifactId>
-            <version>3.1.163</version>
+            <version>3.1.164</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
@@ -788,15 +788,11 @@
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
-            <artifactId>huaweicloud-sdk-modelarts</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cpcs</artifactId>
         </dependency>
     </dependencies>
     <build>
-        <finalName>${project.artifactId}-3.1.163</finalName>
+        <finalName>${project.artifactId}-3.1.164</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>

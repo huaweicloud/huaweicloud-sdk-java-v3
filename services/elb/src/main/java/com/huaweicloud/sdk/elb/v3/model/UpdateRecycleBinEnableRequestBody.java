@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新回收站启用开关的请求体。
+ * **参数解释**：更新回收站启用开关的请求体。
  */
 public class UpdateRecycleBinEnableRequestBody {
 

@@ -32,7 +32,7 @@ public class AttachedPluginInfo {
     private String pluginName;
 
     /**
-     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像
+     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像 - oidc_auth: OIDC认证 - jwt_auth: JWT认证
      */
     public static final class PluginTypeEnum {
 
@@ -76,6 +76,16 @@ public class AttachedPluginInfo {
          */
         public static final PluginTypeEnum PROXY_MIRROR = new PluginTypeEnum("proxy_mirror");
 
+        /**
+         * Enum OIDC_AUTH for value: "oidc_auth"
+         */
+        public static final PluginTypeEnum OIDC_AUTH = new PluginTypeEnum("oidc_auth");
+
+        /**
+         * Enum JWT_AUTH for value: "jwt_auth"
+         */
+        public static final PluginTypeEnum JWT_AUTH = new PluginTypeEnum("jwt_auth");
+
         private static final Map<String, PluginTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PluginTypeEnum> createStaticFields() {
@@ -88,6 +98,8 @@ public class AttachedPluginInfo {
             map.put("third_auth", THIRD_AUTH);
             map.put("proxy_cache", PROXY_CACHE);
             map.put("proxy_mirror", PROXY_MIRROR);
+            map.put("oidc_auth", OIDC_AUTH);
+            map.put("jwt_auth", JWT_AUTH);
             return Collections.unmodifiableMap(map);
         }
 
@@ -303,7 +315,7 @@ public class AttachedPluginInfo {
     }
 
     /**
-     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像
+     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像 - oidc_auth: OIDC认证 - jwt_auth: JWT认证
      * @return pluginType
      */
     public PluginTypeEnum getPluginType() {

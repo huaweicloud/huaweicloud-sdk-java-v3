@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 参数解释：后端服务器检测任务结果。
+ * **参数解释**：后端服务器检测任务结果。
  */
 public class MemberCheckJobInfo {
 
@@ -62,7 +62,7 @@ public class MemberCheckJobInfo {
     }
 
     /**
-     * 参数解释：processed检查完成，processing检查中，failed检查失败
+     * **参数解释**：processed检查完成，processing检查中，failed检查失败。  **取值范围**：不涉及
      * @return status
      */
     public String getStatus() {
@@ -105,7 +105,7 @@ public class MemberCheckJobInfo {
     }
 
     /**
-     * 参数解释：任务创建时间。
+     * **参数解释**：任务创建时间。  **取值范围**：不涉及
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -122,7 +122,7 @@ public class MemberCheckJobInfo {
     }
 
     /**
-     * 参数解释：任务更新时间
+     * **参数解释**：任务更新时间。  **取值范围**：不涉及
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -139,7 +139,7 @@ public class MemberCheckJobInfo {
     }
 
     /**
-     * 参数解释：任务ID。
+     * **参数解释**：任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -156,7 +156,7 @@ public class MemberCheckJobInfo {
     }
 
     /**
-     * 参数解释：检查项总个数
+     * **参数解释**：检查项总个数。  **取值范围**：不涉及
      * @return checkItemTotalNum
      */
     public Integer getCheckItemTotalNum() {
@@ -173,7 +173,7 @@ public class MemberCheckJobInfo {
     }
 
     /**
-     * 参数解释：已检查完成的检查项个数
+     * **参数解释**：已检查完成的检查项个数。  **取值范围**：不涉及
      * @return checkItemFinishedNum
      */
     public Integer getCheckItemFinishedNum() {
@@ -190,7 +190,7 @@ public class MemberCheckJobInfo {
     }
 
     /**
-     * 参数解释：后端服务器所关联的监听器，查询在该监听器下后端服务器的状态。
+     * **参数解释**：后端服务器所关联的监听器，查询在该监听器下后端服务器的状态。  **取值范围**：不涉及
      * @return listenerId
      */
     public String getListenerId() {
@@ -207,7 +207,7 @@ public class MemberCheckJobInfo {
     }
 
     /**
-     * 参数解释：后端服务器ID。
+     * **参数解释**：后端服务器ID。  **取值范围**：不涉及
      * @return memberId
      */
     public String getMemberId() {

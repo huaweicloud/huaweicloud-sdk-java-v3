@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新自定义安全策略的请求参数。
+ * **参数解释**：更新自定义安全策略的请求参数。  **约束限制**：不涉及
  */
 public class UpdateSecurityPolicyOption {
 
@@ -273,7 +273,7 @@ public class UpdateSecurityPolicyOption {
     }
 
     /**
-     * 自定义安全策略的名称。
+     * **参数解释**：自定义安全策略的名称。  **约束限制**：不涉及  **取值范围**：0到255个字符  **默认取值**：不涉及
      * @return name
      */
     public String getName() {
@@ -290,7 +290,7 @@ public class UpdateSecurityPolicyOption {
     }
 
     /**
-     * 自定义安全策略的描述信息。
+     * **参数解释**：自定义安全策略的描述信息。  **约束限制**：不涉及  **取值范围**：0到255个字符  **默认取值**：不涉及
      * @return description
      */
     public String getDescription() {
@@ -323,7 +323,7 @@ public class UpdateSecurityPolicyOption {
     }
 
     /**
-     * 自定义安全策略选择的TLS协议列表。取值：TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
+     * **参数解释**：自定义安全策略选择的TLS协议列表。  **约束限制**：不涉及  **取值范围**：TLSv1, TLSv1.1, TLSv1.2, TLSv1.3  **默认取值**：不涉及
      * @return protocols
      */
     public List<String> getProtocols() {
@@ -356,7 +356,7 @@ public class UpdateSecurityPolicyOption {
     }
 
     /**
-     * 自定义安全策略的加密套件列表。支持以下加密套件：  ECDHE-RSA-AES256-GCM-SHA384,ECDHE-RSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384,ECDHE-ECDSA-AES128-GCM-SHA256, AES128-GCM-SHA256,AES256-GCM-SHA384,ECDHE-ECDSA-AES128-SHA256, ECDHE-RSA-AES128-SHA256,AES128-SHA256,AES256-SHA256, ECDHE-ECDSA-AES256-SHA384,ECDHE-RSA-AES256-SHA384, ECDHE-ECDSA-AES128-SHA,ECDHE-RSA-AES128-SHA,ECDHE-RSA-AES256-SHA, ECDHE-ECDSA-AES256-SHA,AES128-SHA,AES256-SHA,CAMELLIA128-SHA, DES-CBC3-SHA,CAMELLIA256-SHA,ECDHE-RSA-CHACHA20-POLY1305, ECDHE-ECDSA-CHACHA20-POLY1305,TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256, TLS_AES_128_CCM_SHA256,TLS_AES_128_CCM_8_SHA256  使用说明： - 协议和加密套件必须匹配，即ciphers中必须至少有一种有与协议匹配的加密套件。  > 协议与加密套件的匹配关系可参考系统安全策略
+     * **参数解释**：自定义安全策略的加密套件列表。  **约束限制**：协议和加密套件必须匹配，即ciphers中必须至少有一种与协议匹配的加密套件。  **取值范围**： ECDHE-RSA-AES256-GCM-SHA384,ECDHE-RSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384,ECDHE-ECDSA-AES128-GCM-SHA256, AES128-GCM-SHA256,AES256-GCM-SHA384,ECDHE-ECDSA-AES128-SHA256, ECDHE-RSA-AES128-SHA256,AES128-SHA256,AES256-SHA256, ECDHE-ECDSA-AES256-SHA384,ECDHE-RSA-AES256-SHA384, ECDHE-ECDSA-AES128-SHA,ECDHE-RSA-AES128-SHA,ECDHE-RSA-AES256-SHA, ECDHE-ECDSA-AES256-SHA,AES128-SHA,AES256-SHA,CAMELLIA128-SHA, DES-CBC3-SHA,CAMELLIA256-SHA,ECDHE-RSA-CHACHA20-POLY1305, ECDHE-ECDSA-CHACHA20-POLY1305,TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256, TLS_AES_128_CCM_SHA256,TLS_AES_128_CCM_8_SHA256  **默认取值**：不涉及  > 协议与加密套件的匹配关系可参考系统安全策略
      * @return ciphers
      */
     public List<CiphersEnum> getCiphers() {

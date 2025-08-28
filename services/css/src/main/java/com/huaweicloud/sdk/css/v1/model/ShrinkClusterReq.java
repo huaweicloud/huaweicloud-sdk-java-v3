@@ -18,6 +18,21 @@ public class ShrinkClusterReq {
 
     private List<ShrinkNodeReq> shrink = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private String agencyName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_type")
+
+    private String operationType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_load_check")
+
+    private Boolean clusterLoadCheck;
+
     public ShrinkClusterReq withShrink(List<ShrinkNodeReq> shrink) {
         this.shrink = shrink;
         return this;
@@ -51,6 +66,57 @@ public class ShrinkClusterReq {
         this.shrink = shrink;
     }
 
+    public ShrinkClusterReq withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 委托名称，委托给CSS服务，允许CSS调用您的其他云服务。
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
+    public ShrinkClusterReq withOperationType(String operationType) {
+        this.operationType = operationType;
+        return this;
+    }
+
+    /**
+     * 操作类型。
+     * @return operationType
+     */
+    public String getOperationType() {
+        return operationType;
+    }
+
+    public void setOperationType(String operationType) {
+        this.operationType = operationType;
+    }
+
+    public ShrinkClusterReq withClusterLoadCheck(Boolean clusterLoadCheck) {
+        this.clusterLoadCheck = clusterLoadCheck;
+        return this;
+    }
+
+    /**
+     * 是否需要检查集群负载。
+     * @return clusterLoadCheck
+     */
+    public Boolean getClusterLoadCheck() {
+        return clusterLoadCheck;
+    }
+
+    public void setClusterLoadCheck(Boolean clusterLoadCheck) {
+        this.clusterLoadCheck = clusterLoadCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +126,14 @@ public class ShrinkClusterReq {
             return false;
         }
         ShrinkClusterReq that = (ShrinkClusterReq) obj;
-        return Objects.equals(this.shrink, that.shrink);
+        return Objects.equals(this.shrink, that.shrink) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.operationType, that.operationType)
+            && Objects.equals(this.clusterLoadCheck, that.clusterLoadCheck);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(shrink);
+        return Objects.hash(shrink, agencyName, operationType, clusterLoadCheck);
     }
 
     @Override
@@ -73,6 +141,9 @@ public class ShrinkClusterReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShrinkClusterReq {\n");
         sb.append("    shrink: ").append(toIndentedString(shrink)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
+        sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
+        sb.append("    clusterLoadCheck: ").append(toIndentedString(clusterLoadCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

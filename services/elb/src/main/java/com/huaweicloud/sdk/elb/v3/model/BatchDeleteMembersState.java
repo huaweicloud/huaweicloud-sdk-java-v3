@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 批量创建后端服务器响应结果
+ * BatchDeleteMembersState
  */
 public class BatchDeleteMembersState {
 
@@ -26,7 +26,7 @@ public class BatchDeleteMembersState {
     }
 
     /**
-     * 后端服务器ID。  > 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
+     * **参数解释**：后端服务器ID。  **取值范围**：不涉及  > 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class BatchDeleteMembersState {
     }
 
     /**
-     * 当前后端服务器删除结果状态。  取值： - successful：删除成功。 - not found：member不存在。
+     * **参数解释**：当前后端服务器删除结果状态。  **取值范围**： - successful：删除成功。 - not found：member不存在。
      * @return retStatus
      */
     public String getRetStatus() {

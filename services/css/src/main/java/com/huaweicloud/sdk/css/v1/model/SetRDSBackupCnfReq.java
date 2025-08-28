@@ -40,6 +40,11 @@ public class SetRDSBackupCnfReq {
 
     private String deleteAuto;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frequency")
+
+    private String frequency;
+
     public SetRDSBackupCnfReq withIndices(String indices) {
         this.indices = indices;
         return this;
@@ -142,6 +147,23 @@ public class SetRDSBackupCnfReq {
         this.deleteAuto = deleteAuto;
     }
 
+    public SetRDSBackupCnfReq withFrequency(String frequency) {
+        this.frequency = frequency;
+        return this;
+    }
+
+    /**
+     * 自动创建快照的执行频次。
+     * @return frequency
+     */
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +175,13 @@ public class SetRDSBackupCnfReq {
         SetRDSBackupCnfReq that = (SetRDSBackupCnfReq) obj;
         return Objects.equals(this.indices, that.indices) && Objects.equals(this.prefix, that.prefix)
             && Objects.equals(this.period, that.period) && Objects.equals(this.keepday, that.keepday)
-            && Objects.equals(this.enable, that.enable) && Objects.equals(this.deleteAuto, that.deleteAuto);
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.deleteAuto, that.deleteAuto)
+            && Objects.equals(this.frequency, that.frequency);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(indices, prefix, period, keepday, enable, deleteAuto);
+        return Objects.hash(indices, prefix, period, keepday, enable, deleteAuto, frequency);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class SetRDSBackupCnfReq {
         sb.append("    keepday: ").append(toIndentedString(keepday)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    deleteAuto: ").append(toIndentedString(deleteAuto)).append("\n");
+        sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * LB状态树的后端服务器组状态信息。
+ * **参数解释**：后端服务器组的状态信息。
  */
 public class LoadBalancerStatusPool {
 
@@ -49,7 +49,7 @@ public class LoadBalancerStatusPool {
     }
 
     /**
-     * 后端服务器组的配置状态。  取值： - ACTIVE：使用中。
+     * **参数解释**：后端服务器组的配置状态。  **取值范围**： - ACTIVE：使用中。
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {
@@ -66,7 +66,7 @@ public class LoadBalancerStatusPool {
     }
 
     /**
-     * 后端服务器组名。
+     * **参数解释**：后端服务器组名称。  **取值范围**：不涉及
      * @return name
      */
     public String getName() {
@@ -125,7 +125,7 @@ public class LoadBalancerStatusPool {
     }
 
     /**
-     * 后端服务器状态信息。
+     * **参数解释**：当前后端服务器组下所有后端服务器的状态信息。
      * @return members
      */
     public List<LoadBalancerStatusMember> getMembers() {
@@ -142,7 +142,7 @@ public class LoadBalancerStatusPool {
     }
 
     /**
-     * 参数解释：后端服务器组ID。
+     * **参数解释**：后端服务器组ID。  **取值范围**：不涉及
      * @return id
      */
     public String getId() {
@@ -159,7 +159,7 @@ public class LoadBalancerStatusPool {
     }
 
     /**
-     * 后端服务器组的操作状态。  取值： - ONLINE：创建时默认状态，表后端服务器组正常。 - DEGRADED：该后端服务器组下存在member为的operating_status=OFFLINE。 - DISABLED：负载均衡器或后端服务器组的admin_state_up=false。  说明： DEGRADED和DISABLED仅在当前接口返回， 查询后端服务器组详情等其他接口返回的operating_status字段不存在这两个状态值。
+     * **参数解释**：后端服务器组的操作状态。  **取值范围**： - ONLINE：创建时默认状态，表后端服务器组正常。 - DEGRADED：该后端服务器组下存在member为的operating_status=OFFLINE。 - DISABLED：负载均衡器或后端服务器组的admin_state_up=false。  > DEGRADED和DISABLED仅在当前接口返回， 查询后端服务器组详情等其他接口返回的operating_status字段不存在这两个状态值。
      * @return operatingStatus
      */
     public String getOperatingStatus() {

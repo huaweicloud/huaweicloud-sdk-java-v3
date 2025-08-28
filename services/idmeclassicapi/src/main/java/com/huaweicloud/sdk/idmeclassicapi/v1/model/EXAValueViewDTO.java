@@ -278,7 +278,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展属性类型。  **约束限制：**  不涉及。  **取值范围：**  - STRING：文本 - TEXT：长文本 - INTEGER：整型 - LONG：长整型 - DECIMAL：浮点型 - DECIMAL_WITH_PRECISION：浮点型（自定义精度） - FILE：文件 - BOOLEAN：布尔值 - DATE：日期 - ENUM：枚举 - CATEGORY：分类 - URL：URL - REFERENCE_OBJECT：参考对象  **默认取值：**  不涉及。 
      * @return type
      */
     public String getType() {

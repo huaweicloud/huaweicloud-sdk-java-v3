@@ -291,6 +291,11 @@ public class SmartLiveJob {
 
     private UsedResourceTypeEnum usedResourceType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ai_mark_on")
+
+    private Boolean isAiMarkOn;
+
     public SmartLiveJob withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -715,6 +720,23 @@ public class SmartLiveJob {
         this.usedResourceType = usedResourceType;
     }
 
+    public SmartLiveJob withIsAiMarkOn(Boolean isAiMarkOn) {
+        this.isAiMarkOn = isAiMarkOn;
+        return this;
+    }
+
+    /**
+     * AI标识开关
+     * @return isAiMarkOn
+     */
+    public Boolean getIsAiMarkOn() {
+        return isAiMarkOn;
+    }
+
+    public void setIsAiMarkOn(Boolean isAiMarkOn) {
+        this.isAiMarkOn = isAiMarkOn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -739,7 +761,8 @@ public class SmartLiveJob {
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
             && Objects.equals(this.liveJobLog, that.liveJobLog)
             && Objects.equals(this.relationLivePlatformInfo, that.relationLivePlatformInfo)
-            && Objects.equals(this.usedResourceType, that.usedResourceType);
+            && Objects.equals(this.usedResourceType, that.usedResourceType)
+            && Objects.equals(this.isAiMarkOn, that.isAiMarkOn);
     }
 
     @Override
@@ -764,7 +787,8 @@ public class SmartLiveJob {
             coStreamerConfig,
             liveJobLog,
             relationLivePlatformInfo,
-            usedResourceType);
+            usedResourceType,
+            isAiMarkOn);
     }
 
     @Override
@@ -792,6 +816,7 @@ public class SmartLiveJob {
         sb.append("    liveJobLog: ").append(toIndentedString(liveJobLog)).append("\n");
         sb.append("    relationLivePlatformInfo: ").append(toIndentedString(relationLivePlatformInfo)).append("\n");
         sb.append("    usedResourceType: ").append(toIndentedString(usedResourceType)).append("\n");
+        sb.append("    isAiMarkOn: ").append(toIndentedString(isAiMarkOn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

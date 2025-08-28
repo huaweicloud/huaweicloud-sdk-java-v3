@@ -32,7 +32,7 @@ public class GetCallerIdentityResponse extends SdkResponse {
     }
 
     /**
-     * 华为云账号ID。
+     * 账号ID。
      * @return accountId
      */
     public String getAccountId() {

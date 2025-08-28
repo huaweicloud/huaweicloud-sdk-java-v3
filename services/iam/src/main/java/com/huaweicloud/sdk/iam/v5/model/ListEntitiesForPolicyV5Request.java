@@ -21,7 +21,7 @@ public class ListEntitiesForPolicyV5Request {
     private String policyId;
 
     /**
-     * 实体类型。
+     * 实体类型，包含user、 group 和 agency三种类型。
      */
     public static final class EntityTypeEnum {
 
@@ -134,7 +134,7 @@ public class ListEntitiesForPolicyV5Request {
     }
 
     /**
-     * 实体类型。
+     * 实体类型，包含user、 group 和 agency三种类型。
      * @return entityType
      */
     public EntityTypeEnum getEntityType() {
@@ -151,7 +151,7 @@ public class ListEntitiesForPolicyV5Request {
     }
 
     /**
-     * 每页显示的条目数量。
+     * 每页显示的条目数量，范围为1到200条，默认为100条。
      * minimum: 1
      * maximum: 200
      * @return limit

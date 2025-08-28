@@ -106,9 +106,14 @@ public class UpgradingTheKernelBody {
     private String agency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "check_load")
+    @JsonProperty(value = "cluster_load_check")
 
-    private Boolean checkLoad;
+    private Boolean clusterLoadCheck;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "batch_size")
+
+    private Integer batchSize;
 
     public UpgradingTheKernelBody withTargetImageId(String targetImageId) {
         this.targetImageId = targetImageId;
@@ -178,21 +183,38 @@ public class UpgradingTheKernelBody {
         this.agency = agency;
     }
 
-    public UpgradingTheKernelBody withCheckLoad(Boolean checkLoad) {
-        this.checkLoad = checkLoad;
+    public UpgradingTheKernelBody withClusterLoadCheck(Boolean clusterLoadCheck) {
+        this.clusterLoadCheck = clusterLoadCheck;
         return this;
     }
 
     /**
      * 是否校验负载。默认为true。 - true：进行校验。 - false：不进行校验。
-     * @return checkLoad
+     * @return clusterLoadCheck
      */
-    public Boolean getCheckLoad() {
-        return checkLoad;
+    public Boolean getClusterLoadCheck() {
+        return clusterLoadCheck;
     }
 
-    public void setCheckLoad(Boolean checkLoad) {
-        this.checkLoad = checkLoad;
+    public void setClusterLoadCheck(Boolean clusterLoadCheck) {
+        this.clusterLoadCheck = clusterLoadCheck;
+    }
+
+    public UpgradingTheKernelBody withBatchSize(Integer batchSize) {
+        this.batchSize = batchSize;
+        return this;
+    }
+
+    /**
+     * 数据节点迁移数据并发度。
+     * @return batchSize
+     */
+    public Integer getBatchSize() {
+        return batchSize;
+    }
+
+    public void setBatchSize(Integer batchSize) {
+        this.batchSize = batchSize;
     }
 
     @Override
@@ -207,12 +229,13 @@ public class UpgradingTheKernelBody {
         return Objects.equals(this.targetImageId, that.targetImageId)
             && Objects.equals(this.upgradeType, that.upgradeType)
             && Objects.equals(this.indicesBackupCheck, that.indicesBackupCheck)
-            && Objects.equals(this.agency, that.agency) && Objects.equals(this.checkLoad, that.checkLoad);
+            && Objects.equals(this.agency, that.agency) && Objects.equals(this.clusterLoadCheck, that.clusterLoadCheck)
+            && Objects.equals(this.batchSize, that.batchSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetImageId, upgradeType, indicesBackupCheck, agency, checkLoad);
+        return Objects.hash(targetImageId, upgradeType, indicesBackupCheck, agency, clusterLoadCheck, batchSize);
     }
 
     @Override
@@ -223,7 +246,8 @@ public class UpgradingTheKernelBody {
         sb.append("    upgradeType: ").append(toIndentedString(upgradeType)).append("\n");
         sb.append("    indicesBackupCheck: ").append(toIndentedString(indicesBackupCheck)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
-        sb.append("    checkLoad: ").append(toIndentedString(checkLoad)).append("\n");
+        sb.append("    clusterLoadCheck: ").append(toIndentedString(clusterLoadCheck)).append("\n");
+        sb.append("    batchSize: ").append(toIndentedString(batchSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

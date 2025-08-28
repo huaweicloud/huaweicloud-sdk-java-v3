@@ -293,6 +293,11 @@ public class ShowSmartLiveResponse extends SdkResponse {
     private UsedResourceTypeEnum usedResourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ai_mark_on")
+
+    private Boolean isAiMarkOn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -723,6 +728,23 @@ public class ShowSmartLiveResponse extends SdkResponse {
         this.usedResourceType = usedResourceType;
     }
 
+    public ShowSmartLiveResponse withIsAiMarkOn(Boolean isAiMarkOn) {
+        this.isAiMarkOn = isAiMarkOn;
+        return this;
+    }
+
+    /**
+     * AI标识开关
+     * @return isAiMarkOn
+     */
+    public Boolean getIsAiMarkOn() {
+        return isAiMarkOn;
+    }
+
+    public void setIsAiMarkOn(Boolean isAiMarkOn) {
+        this.isAiMarkOn = isAiMarkOn;
+    }
+
     public ShowSmartLiveResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -767,7 +789,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
             && Objects.equals(this.liveJobLog, that.liveJobLog)
             && Objects.equals(this.relationLivePlatformInfo, that.relationLivePlatformInfo)
             && Objects.equals(this.usedResourceType, that.usedResourceType)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.isAiMarkOn, that.isAiMarkOn) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -793,6 +815,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
             liveJobLog,
             relationLivePlatformInfo,
             usedResourceType,
+            isAiMarkOn,
             xRequestId);
     }
 
@@ -821,6 +844,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
         sb.append("    liveJobLog: ").append(toIndentedString(liveJobLog)).append("\n");
         sb.append("    relationLivePlatformInfo: ").append(toIndentedString(relationLivePlatformInfo)).append("\n");
         sb.append("    usedResourceType: ").append(toIndentedString(usedResourceType)).append("\n");
+        sb.append("    isAiMarkOn: ").append(toIndentedString(isAiMarkOn)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

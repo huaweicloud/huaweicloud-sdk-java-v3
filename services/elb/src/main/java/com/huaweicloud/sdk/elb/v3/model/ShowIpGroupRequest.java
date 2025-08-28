@@ -21,7 +21,7 @@ public class ShowIpGroupRequest {
     }
 
     /**
-     * 参数解释：IP地址组ID。
+     * **参数解释**：IP地址组ID。
      * @return ipgroupId
      */
     public String getIpgroupId() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 参数解释：后端服务器组基于部分DST CID的多径分发策略
+ * QuicCidHashStrategy
  */
 public class QuicCidHashStrategy {
 
@@ -26,7 +26,7 @@ public class QuicCidHashStrategy {
     }
 
     /**
-     * 参数解释：仅当负载均衡算法为QUIC_CID的时候才生效，表示hash的时候取CID的长度。 取值范围：1-20 默认取值：3
+     * **参数解释**：表示hash的时候取CID的长度。  **约束限制**：仅当负载均衡算法为QUIC_CID的时候才生效。  **取值范围**：1-20  **默认取值**：3
      * @return len
      */
     public Integer getLen() {
@@ -43,7 +43,7 @@ public class QuicCidHashStrategy {
     }
 
     /**
-     * 参数解释：仅当负载均衡算法为QUIC_CID的时候才生效，表示hash的时候取CID的偏移量。 取值范围：0-19 默认取值：1
+     * **参数解释**：表示hash的时候取CID的偏移量。  **约束限制**：仅当负载均衡算法为QUIC_CID的时候才生效。  **取值范围**：0-19  **默认取值**：1
      * @return offset
      */
     public Integer getOffset() {

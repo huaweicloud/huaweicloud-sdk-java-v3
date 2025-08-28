@@ -165,7 +165,7 @@ public class QueryRequestCountVo {
     }
 
     /**
-     * **参数解释：**  实体类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  实体类型。  **约束限制：**  不涉及。  **取值范围：**  - ENTITY：数据实体。 - RRELATION：关系实体。  **默认取值：**  不涉及。
      * @return entityType
      */
     public String getEntityType() {

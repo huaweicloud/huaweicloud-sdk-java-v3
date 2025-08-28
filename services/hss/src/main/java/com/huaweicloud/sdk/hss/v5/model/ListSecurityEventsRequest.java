@@ -416,7 +416,7 @@ public class ListSecurityEventsRequest {
     }
 
     /**
-     * **参数解释**： 自定义时间，查询时间段的终止时间，毫秒级时间戳，end_time减去begin_time小于等于2天，与查询时间范围天数互斥 **约束限制**： 不涉及 **取值范围**： 字符长度13位 **默认 
+     * **参数解释**： 自定义时间，查询时间段的终止时间，毫秒级时间戳，end_time减去begin_time小于等于2天，与查询时间范围天数互斥 **约束限制**： 不涉及 **取值范围**： 字符长度13位 **默认取值**： 不涉及 
      * @return endTime
      */
     public String getEndTime() {

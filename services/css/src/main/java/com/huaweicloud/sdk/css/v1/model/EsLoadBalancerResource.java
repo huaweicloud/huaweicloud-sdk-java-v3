@@ -101,7 +101,7 @@ public class EsLoadBalancerResource {
     }
 
     /**
-     * 是否独享型LB。 - false：共享型。 - true：独享型。
+     * Indicates whether the LB is an exclusive LB. - false：共享型。 - true：独享型。
      * @return guaranteed
      */
     public String getGuaranteed() {

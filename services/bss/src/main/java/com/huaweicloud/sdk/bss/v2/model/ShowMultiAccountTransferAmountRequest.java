@@ -50,7 +50,7 @@ public class ShowMultiAccountTransferAmountRequest {
     /**
      * 偏移量，默认值为0。只有信用账户有效。
      * minimum: 0
-     * maximum: 21474836476
+     * maximum: 2147483647
      * @return offset
      */
     public Integer getOffset() {

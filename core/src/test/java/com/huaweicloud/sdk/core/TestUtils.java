@@ -61,6 +61,13 @@ public class TestUtils {
         return createHcClient(logger, endpoint, new BasicCredentials().withAk("test").withSk("test").withProjectId("pp"));
     }
 
+    public static HcClient createHcClientWithUaConfig(String endpoint) {
+        return new HcClient(HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true)
+                .withUserAgent("Custom user agent"))
+                .withCredential(new BasicCredentials().withAk("test").withSk("test").withProjectId("pp"))
+                .withEndpoints(Collections.singletonList(endpoint));
+    }
+
     public static Consumer<InputStream> getDownloadConsumer(Logger logger) {
         return inputStream -> {
             byte[] bytes = new byte[512];

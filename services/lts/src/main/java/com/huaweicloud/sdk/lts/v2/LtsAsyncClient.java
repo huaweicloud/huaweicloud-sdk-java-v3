@@ -107,6 +107,8 @@ import com.huaweicloud.sdk.lts.v2.model.ListLogGroupsRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListLogGroupsResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogHistogramRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListLogHistogramResponse;
+import com.huaweicloud.sdk.lts.v2.model.ListLogStreamIndexRequest;
+import com.huaweicloud.sdk.lts.v2.model.ListLogStreamIndexResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogStreamRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListLogStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogStreamsRequest;
@@ -1488,6 +1490,35 @@ public class LtsAsyncClient {
     public AsyncInvoker<ListLogStreamRequest, ListLogStreamResponse> listLogStreamAsyncInvoker(
         ListLogStreamRequest request) {
         return new AsyncInvoker<>(request, LtsMeta.listLogStream, hcClient);
+    }
+
+    /**
+     * 查询日志流索引
+     *
+     * 查询日志流索引。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogStreamIndexRequest 请求对象
+     * @return CompletableFuture<ListLogStreamIndexResponse>
+     */
+    public CompletableFuture<ListLogStreamIndexResponse> listLogStreamIndexAsync(ListLogStreamIndexRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.listLogStreamIndex);
+    }
+
+    /**
+     * 查询日志流索引
+     *
+     * 查询日志流索引。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogStreamIndexRequest 请求对象
+     * @return AsyncInvoker<ListLogStreamIndexRequest, ListLogStreamIndexResponse>
+     */
+    public AsyncInvoker<ListLogStreamIndexRequest, ListLogStreamIndexResponse> listLogStreamIndexAsyncInvoker(
+        ListLogStreamIndexRequest request) {
+        return new AsyncInvoker<>(request, LtsMeta.listLogStreamIndex, hcClient);
     }
 
     /**

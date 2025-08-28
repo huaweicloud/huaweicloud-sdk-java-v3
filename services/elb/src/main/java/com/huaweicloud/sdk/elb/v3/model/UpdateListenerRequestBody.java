@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * This is a auto create Body Object
+ * UpdateListenerRequestBody
  */
 public class UpdateListenerRequestBody {
 

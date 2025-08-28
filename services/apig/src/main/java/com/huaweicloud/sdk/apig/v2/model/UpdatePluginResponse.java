@@ -28,7 +28,7 @@ public class UpdatePluginResponse extends SdkResponse {
     private String pluginName;
 
     /**
-     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像
+     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像 - oidc_auth: OIDC认证 - jwt_auth: JWT认证
      */
     public static final class PluginTypeEnum {
 
@@ -72,6 +72,16 @@ public class UpdatePluginResponse extends SdkResponse {
          */
         public static final PluginTypeEnum PROXY_MIRROR = new PluginTypeEnum("proxy_mirror");
 
+        /**
+         * Enum OIDC_AUTH for value: "oidc_auth"
+         */
+        public static final PluginTypeEnum OIDC_AUTH = new PluginTypeEnum("oidc_auth");
+
+        /**
+         * Enum JWT_AUTH for value: "jwt_auth"
+         */
+        public static final PluginTypeEnum JWT_AUTH = new PluginTypeEnum("jwt_auth");
+
         private static final Map<String, PluginTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PluginTypeEnum> createStaticFields() {
@@ -84,6 +94,8 @@ public class UpdatePluginResponse extends SdkResponse {
             map.put("third_auth", THIRD_AUTH);
             map.put("proxy_cache", PROXY_CACHE);
             map.put("proxy_mirror", PROXY_MIRROR);
+            map.put("oidc_auth", OIDC_AUTH);
+            map.put("jwt_auth", JWT_AUTH);
             return Collections.unmodifiableMap(map);
         }
 
@@ -267,7 +279,7 @@ public class UpdatePluginResponse extends SdkResponse {
     }
 
     /**
-     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像
+     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像 - oidc_auth: OIDC认证 - jwt_auth: JWT认证
      * @return pluginType
      */
     public PluginTypeEnum getPluginType() {
@@ -301,7 +313,7 @@ public class UpdatePluginResponse extends SdkResponse {
     }
 
     /**
-     * 插件定义内容，支持json。参考提供的具体模型定义  CorsPluginContent：跨域资源共享 定义内容 SetRespHeadersContent：HTTP响应头管理 定义内容 KafkaLogContent：Kafka日志推送 定义内容 BreakerContent：断路器 定义内容 RateLimitContent 流量控制 定义内容 ThirdAuthContent: 第三方认证 定义内容 ProxyCacheContent: 响应缓存 定义内容 ProxyMirrorContent: 请求镜像 定义内容
+     * 插件定义内容，支持json。参考提供的具体模型定义  [CorsPluginContent](apig-api-CorsPluginContent.xml)：跨域资源共享 定义内容 [SetRespHeadersContent](apig-api-SetRespHeadersContent.xml)：HTTP响应头管理 定义内容 [KafkaLogContent](apig-api-KafkaLogContent.xml)：Kafka日志推送 定义内容 [BreakerContent](apig-api-BreakerContent.xml)：断路器 定义内容 [RateLimitContent](apig-api-RateLimitContent.xml)：流量控制 定义内容 [ThirdAuthContent](apig-api-ThirdAuthContent.xml)：第三方认证 定义内容 [ProxyCacheContent](apig-api-ProxyCacheContent.xml)：响应缓存 定义内容 [ProxyMirrorContent](apig-api-ProxyMirrorContent.xml)：请求镜像 定义内容 [OIDCAuthContent](apig-api-OIDCAuthContent.xml)：OIDC认证 定义内容 [JWTAuthContent](apig-api-JWTAuthContent.xml)：JWT认证 定义内容
      * @return pluginContent
      */
     public String getPluginContent() {

@@ -26,7 +26,7 @@ public class ShowL7RuleRequest {
     }
 
     /**
-     * 7层转发策略。
+     * **参数解释**：7层转发策略。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return l7policyId
      */
     public String getL7policyId() {
@@ -43,7 +43,7 @@ public class ShowL7RuleRequest {
     }
 
     /**
-     * 7层转发规则。
+     * **参数解释**：7层转发规则。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return l7ruleId
      */
     public String getL7ruleId() {

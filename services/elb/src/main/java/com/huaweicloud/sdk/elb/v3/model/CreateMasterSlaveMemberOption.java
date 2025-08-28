@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 创建主备后端服务器请求参数
+ * **参数解释**：创建主备后端服务器请求参数。  **约束限制**：不涉及
  */
 public class CreateMasterSlaveMemberOption {
 
@@ -41,7 +41,7 @@ public class CreateMasterSlaveMemberOption {
     private String subnetCidrId;
 
     /**
-     * 后端服务器的主备状态。  取值范围： - master：主后端服务器。 - slave：备后端服务器。
+     * **参数解释**：后端服务器的主备状态。  **约束限制**：不涉及  **取值范围**： - master：主后端服务器。 - slave：备后端服务器。  **默认取值**：不涉及
      */
     public static final class RoleEnum {
 
@@ -121,7 +121,7 @@ public class CreateMasterSlaveMemberOption {
     }
 
     /**
-     * 后端服务器对应的IP地址。  使用说明： - 若subnet_cidr_id为空，表示添加跨VPC后端，此时address必须为**私网IPv4**地址。 - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。 该IP地址必须在subnet_cidr_id对应的子网网段中，可以是**私网IPv4**或IPv6。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt)
+     * **参数解释**：后端服务器对应的IP地址。  **约束限制**： - 若subnet_cidr_id为空，表示添加IP类型后端，此时address必须为**私网IPv4**地址。 - 若subnet_cidr_id不为空，表示是一个关联到ECS的后端服务器。该IP地址必须在subnet_cidr_id对应的子网网段中，可以是**私网IPv4**或IPv6。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿设置为IPv6地址。](tag:dt)
      * @return address
      */
     public String getAddress() {
@@ -138,7 +138,7 @@ public class CreateMasterSlaveMemberOption {
     }
 
     /**
-     * 后端服务器的管理状态。  取值：true。  虽然创建、更新请求支持该字段，但实际取值决定于后端服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+     * **参数解释**：后端服务器的管理状态。  **约束限制**：虽然创建、更新请求支持该字段，但实际取值决定于后端服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。  **取值范围**：true 弹性云服务器存在，false 弹性云服务器不存在。  **默认取值**：不涉及
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -155,7 +155,7 @@ public class CreateMasterSlaveMemberOption {
     }
 
     /**
-     * 后端服务器名称。
+     * **参数解释**：后端服务器名称。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return name
      */
     public String getName() {
@@ -172,7 +172,7 @@ public class CreateMasterSlaveMemberOption {
     }
 
     /**
-     * 后端服务器业务端口。 >在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
+     * **参数解释**：后端服务器业务端口  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  >在开启端口透传的pool下创建member传该字段不生效，可不传该字段。
      * minimum: 1
      * maximum: 65535
      * @return protocolPort
@@ -191,7 +191,7 @@ public class CreateMasterSlaveMemberOption {
     }
 
     /**
-     * 后端服务器所在的子网ID，可以是子网的IPv4子网ID或IPv6子网ID。  使用说明： - 该子网和关联的负载均衡器的子网必须在同一VPC下。 - 若所属LB的跨VPC后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为**私网IPv4**地址，所在的pool的协议必须为UDP/TCP/TLS/HTTP/HTTPS/QUIC/GRPC。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt)
+     * **参数解释**：后端服务器所在的子网ID，可以是子网的IPv4子网ID或IPv6子网ID。  **约束限制**： - 该子网和关联的负载均衡器的子网必须在同一VPC下。 - 若所属LB的IP类型后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为**私网IPv4**地址，所在的pool的协议必须为UDP/TCP/TLS/HTTP/HTTPS/QUIC/GRPC。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt)
      * @return subnetCidrId
      */
     public String getSubnetCidrId() {
@@ -208,7 +208,7 @@ public class CreateMasterSlaveMemberOption {
     }
 
     /**
-     * 后端服务器的主备状态。  取值范围： - master：主后端服务器。 - slave：备后端服务器。
+     * **参数解释**：后端服务器的主备状态。  **约束限制**：不涉及  **取值范围**： - master：主后端服务器。 - slave：备后端服务器。  **默认取值**：不涉及
      * @return role
      */
     public RoleEnum getRole() {

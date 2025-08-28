@@ -22,7 +22,7 @@ public class UserLastLogin {
     }
 
     /**
-     * IAM用户最后登录时间。若不存在则表示从未登录过。
+     * IAM用户最后登录时间。若为null，则表示从未登录过。
      * @return lastLoginAt
      */
     public OffsetDateTime getLastLoginAt() {

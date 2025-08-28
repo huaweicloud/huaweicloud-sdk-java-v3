@@ -36,7 +36,7 @@ public class SystemSecurityPolicy {
     }
 
     /**
-     * 系统安全策略的名称。
+     * **参数解释**：系统安全策略的名称。  **取值范围**：不涉及
      * @return name
      */
     public String getName() {
@@ -53,7 +53,7 @@ public class SystemSecurityPolicy {
     }
 
     /**
-     * 系统安全策略的TLS协议列表。
+     * **参数解释**：系统安全策略的TLS协议列表。  **取值范围**：不涉及
      * @return protocols
      */
     public String getProtocols() {
@@ -70,7 +70,7 @@ public class SystemSecurityPolicy {
     }
 
     /**
-     * 系统安全策略的加密套件列表。
+     * **参数解释**：系统安全策略的加密套件列表。  **取值范围**：不涉及
      * @return ciphers
      */
     public String getCiphers() {
@@ -87,7 +87,7 @@ public class SystemSecurityPolicy {
     }
 
     /**
-     * 项目id。
+     * **参数解释**：项目ID。获取方式请参见[获取项目ID](elb_fl_0008.xml)。  **取值范围**：长度为32个字符，由小写字母和数字组成。
      * @return projectId
      */
     public String getProjectId() {

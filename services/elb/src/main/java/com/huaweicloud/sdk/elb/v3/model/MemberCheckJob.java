@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 参数解释：后端服务器检测任务信息。
+ * **参数解释**：后端服务器检测任务信息。
  */
 public class MemberCheckJob {
 
@@ -21,7 +21,7 @@ public class MemberCheckJob {
     }
 
     /**
-     * 参数解释：任务ID，根据该任务ID可以查询到任务执行结果。
+     * **参数解释**：任务ID，根据该任务ID可以查询到任务执行结果。  **取值范围**：不涉及
      * @return jobId
      */
     public String getJobId() {

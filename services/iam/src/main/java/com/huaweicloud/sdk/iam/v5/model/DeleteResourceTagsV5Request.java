@@ -24,7 +24,7 @@ public class DeleteResourceTagsV5Request {
     private String resourceId;
 
     /**
-     * 资源类型，可以为“信任委托”（agency）或“IAM用户”（user）。
+     * 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）。
      */
     public static final class ResourceTypeEnum {
 
@@ -126,7 +126,7 @@ public class DeleteResourceTagsV5Request {
     }
 
     /**
-     * 资源类型，可以为“信任委托”（agency）或“IAM用户”（user）。
+     * 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）。
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

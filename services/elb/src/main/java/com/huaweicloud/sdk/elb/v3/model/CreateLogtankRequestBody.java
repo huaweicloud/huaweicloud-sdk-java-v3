@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建云日志请求体
+ * **参数解释**：创建云日志请求参数。  **约束限制**：不涉及
  */
 public class CreateLogtankRequestBody {
 

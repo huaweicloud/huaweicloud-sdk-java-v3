@@ -61,6 +61,9 @@ import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcResponse;
+import com.huaweicloud.sdk.ecs.v2.model.CreateLaunchTemplateRequest;
+import com.huaweicloud.sdk.ecs.v2.model.CreateLaunchTemplateRequestBody;
+import com.huaweicloud.sdk.ecs.v2.model.CreateLaunchTemplateResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersResponse;
@@ -785,6 +788,35 @@ public class EcsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLaunchTemplateRequest, CreateLaunchTemplateResponse> createLaunchTemplate =
+        genForCreateLaunchTemplate();
+
+    private static HttpRequestDef<CreateLaunchTemplateRequest, CreateLaunchTemplateResponse> genForCreateLaunchTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateLaunchTemplateRequest, CreateLaunchTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateLaunchTemplateRequest.class, CreateLaunchTemplateResponse.class)
+            .withName("CreateLaunchTemplate")
+            .withUri("/v3/{project_id}/launch-templates")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateLaunchTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLaunchTemplateRequestBody.class),
+            f -> f.withMarshaller(CreateLaunchTemplateRequest::getBody, CreateLaunchTemplateRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateLaunchTemplateResponse::getXRequestId,
+                CreateLaunchTemplateResponse::setXRequestId));
         return builder.build();
     }
 

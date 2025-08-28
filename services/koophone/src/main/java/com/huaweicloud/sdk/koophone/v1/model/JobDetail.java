@@ -21,9 +21,14 @@ public class JobDetail {
     private String jobId;
 
     /**
-     * 任务状态。1 表示运行中，2表示成功，-1表示失败
+     * 任务状态。0：未执行，1：运行中，2：成功，3：失败，-1：表示失败。如果是查询实例执行异步命令接口的结果状态，则状态枚举值为1、2和-1。 如果是查询实例安装app接口的任务执行结果状态，则状态枚举值为0、1、2、3。
      */
     public static final class StatusEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
 
         /**
          * Enum NUMBER_1 for value: 1
@@ -36,17 +41,18 @@ public class JobDetail {
         public static final StatusEnum NUMBER_2 = new StatusEnum(2);
 
         /**
-         * Enum NUMBER_MINUS_1 for value: -1
+         * Enum NUMBER_3 for value: 3
          */
-        public static final StatusEnum NUMBER_MINUS_1 = new StatusEnum(-1);
+        public static final StatusEnum NUMBER_3 = new StatusEnum(3);
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Integer, StatusEnum> createStaticFields() {
             Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
             map.put(1, NUMBER_1);
             map.put(2, NUMBER_2);
-            map.put(-1, NUMBER_MINUS_1);
+            map.put(3, NUMBER_3);
             return Collections.unmodifiableMap(map);
         }
 
@@ -139,7 +145,7 @@ public class JobDetail {
     }
 
     /**
-     * 任务状态。1 表示运行中，2表示成功，-1表示失败
+     * 任务状态。0：未执行，1：运行中，2：成功，3：失败，-1：表示失败。如果是查询实例执行异步命令接口的结果状态，则状态枚举值为1、2和-1。 如果是查询实例安装app接口的任务执行结果状态，则状态枚举值为0、1、2、3。
      * @return status
      */
     public StatusEnum getStatus() {

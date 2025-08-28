@@ -24,6 +24,11 @@ public class HumanModel2DAssetMeta {
     private Boolean isActionEditable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_live_copy")
+
+    private Boolean isLiveCopy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_real_background")
 
     private Boolean isRealBackground;
@@ -165,6 +170,23 @@ public class HumanModel2DAssetMeta {
 
     public void setIsActionEditable(Boolean isActionEditable) {
         this.isActionEditable = isActionEditable;
+    }
+
+    public HumanModel2DAssetMeta withIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否是直播间复刻任务 **约束限制**： 不涉及 **取值范围**： * true: 是直播间复刻任务 * false: 不是直播间复刻任务
+     * @return isLiveCopy
+     */
+    public Boolean getIsLiveCopy() {
+        return isLiveCopy;
+    }
+
+    public void setIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
     }
 
     public HumanModel2DAssetMeta withIsRealBackground(Boolean isRealBackground) {
@@ -362,6 +384,7 @@ public class HumanModel2DAssetMeta {
         }
         HumanModel2DAssetMeta that = (HumanModel2DAssetMeta) obj;
         return Objects.equals(this.isActionEditable, that.isActionEditable)
+            && Objects.equals(this.isLiveCopy, that.isLiveCopy)
             && Objects.equals(this.isRealBackground, that.isRealBackground)
             && Objects.equals(this.supportLive, that.supportLive)
             && Objects.equals(this.modelVersion, that.modelVersion)
@@ -375,6 +398,7 @@ public class HumanModel2DAssetMeta {
     @Override
     public int hashCode() {
         return Objects.hash(isActionEditable,
+            isLiveCopy,
             isRealBackground,
             supportLive,
             modelVersion,
@@ -391,6 +415,7 @@ public class HumanModel2DAssetMeta {
         StringBuilder sb = new StringBuilder();
         sb.append("class HumanModel2DAssetMeta {\n");
         sb.append("    isActionEditable: ").append(toIndentedString(isActionEditable)).append("\n");
+        sb.append("    isLiveCopy: ").append(toIndentedString(isLiveCopy)).append("\n");
         sb.append("    isRealBackground: ").append(toIndentedString(isRealBackground)).append("\n");
         sb.append("    supportLive: ").append(toIndentedString(supportLive)).append("\n");
         sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");

@@ -43,7 +43,7 @@ public class AsymmetricSignatureWithDomainId {
     }
 
     /**
-     * 凭证非对称签名开关。
+     * 非对称签名开关。
      * @return asymmetricSignatureSwitch
      */
     public Boolean getAsymmetricSignatureSwitch() {

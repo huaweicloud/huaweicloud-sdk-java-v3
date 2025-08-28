@@ -49,7 +49,7 @@ public class ShowLoadBalancerPortsRequest {
     }
 
     /**
-     * 负载均衡器ID。
+     * **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -82,7 +82,7 @@ public class ShowLoadBalancerPortsRequest {
     }
 
     /**
-     * port id。  支持多值查询，查询条件格式：*port_id=xxx&port_id=xxx*。
+     * **参数解释**：负载均衡器占用的端口ID。  支持多值查询，查询条件格式：*port_id=xxx&port_id=xxx*。
      * @return portId
      */
     public List<String> getPortId() {
@@ -115,7 +115,7 @@ public class ShowLoadBalancerPortsRequest {
     }
 
     /**
-     * ipv4 地址。  支持多值查询，查询条件格式：*ip_address=xxx&ip_address=xxx*。
+     * **参数解释**：负载均衡器占用的私有IPv4地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*ip_address=xxx&ip_address=xxx*。
      * @return ipAddress
      */
     public List<String> getIpAddress() {
@@ -148,7 +148,7 @@ public class ShowLoadBalancerPortsRequest {
     }
 
     /**
-     * ipv6 地址。  支持多值查询，查询条件格式：*ipv6_address=xxx&ipv6_address=xxx*。
+     * **参数解释**：负载均衡器占用的IPv6地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*ipv6_address=xxx&ipv6_address=xxx*。
      * @return ipv6Address
      */
     public List<String> getIpv6Address() {
@@ -181,7 +181,7 @@ public class ShowLoadBalancerPortsRequest {
     }
 
     /**
-     * port类型。  支持多值查询，查询条件格式：*type=xxx&type=xxx*。
+     * **参数解释**：子网端口类型。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*type=xxx&type=xxx*。
      * @return type
      */
     public List<String> getType() {
@@ -214,7 +214,7 @@ public class ShowLoadBalancerPortsRequest {
     }
 
     /**
-     * 虚拟网络id。  支持多值查询，查询条件格式：*virsubnet_id=xxx&virsubnet_id=xxx*。
+     * **参数解释**：子网端口所在下联面子网网络ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*virsubnet_id=xxx&virsubnet_id=xxx*。
      * @return virsubnetId
      */
     public List<String> getVirsubnetId() {

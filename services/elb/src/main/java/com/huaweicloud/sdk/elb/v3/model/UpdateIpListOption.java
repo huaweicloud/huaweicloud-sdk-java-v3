@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新IP地址组IP列表请求参数。
+ * **参数解释**：更新IP地址组IP列表的请求参数。  **约束限制**：不涉及
  */
 public class UpdateIpListOption {
 
@@ -21,7 +21,7 @@ public class UpdateIpListOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_list")
 
-    private List<UpadateIpGroupIpOption> ipList = null;
+    private List<UpdateIpGroupIpOption> ipList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -34,7 +34,7 @@ public class UpdateIpListOption {
     }
 
     /**
-     * 参数解释：IP地址组的名称
+     * **参数解释**：IP地址组的名称。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return name
      */
     public String getName() {
@@ -45,12 +45,12 @@ public class UpdateIpListOption {
         this.name = name;
     }
 
-    public UpdateIpListOption withIpList(List<UpadateIpGroupIpOption> ipList) {
+    public UpdateIpListOption withIpList(List<UpdateIpGroupIpOption> ipList) {
         this.ipList = ipList;
         return this;
     }
 
-    public UpdateIpListOption addIpListItem(UpadateIpGroupIpOption ipListItem) {
+    public UpdateIpListOption addIpListItem(UpdateIpGroupIpOption ipListItem) {
         if (this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
@@ -58,7 +58,7 @@ public class UpdateIpListOption {
         return this;
     }
 
-    public UpdateIpListOption withIpList(Consumer<List<UpadateIpGroupIpOption>> ipListSetter) {
+    public UpdateIpListOption withIpList(Consumer<List<UpdateIpGroupIpOption>> ipListSetter) {
         if (this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
@@ -67,14 +67,14 @@ public class UpdateIpListOption {
     }
 
     /**
-     * 参数解释：IP地址组中包含的IP列表。
+     * **参数解释**：IP地址组中包含的IP列表。 只支持添加新的IP地址到IP地址组的IP列表中，或更新已有IP地址的描述。不会删除或修改ip_list中已有的IP地址。  **约束限制**：不涉及
      * @return ipList
      */
-    public List<UpadateIpGroupIpOption> getIpList() {
+    public List<UpdateIpGroupIpOption> getIpList() {
         return ipList;
     }
 
-    public void setIpList(List<UpadateIpGroupIpOption> ipList) {
+    public void setIpList(List<UpdateIpGroupIpOption> ipList) {
         this.ipList = ipList;
     }
 
@@ -84,7 +84,7 @@ public class UpdateIpListOption {
     }
 
     /**
-     * 参数解释：IP地址组的描述信息
+     * **参数解释**：备注信息。  **约束限制**：不涉及  **取值范围**：长度为0-255个字符。  **默认取值**：不涉及
      * @return description
      */
     public String getDescription() {

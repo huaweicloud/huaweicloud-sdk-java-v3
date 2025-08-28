@@ -25,6 +25,21 @@ public class GetLogBackupReq {
 
     private String logType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_index")
+
+    private String timeIndex;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keyword")
+
+    private String keyword;
+
     public GetLogBackupReq withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -76,6 +91,57 @@ public class GetLogBackupReq {
         this.logType = logType;
     }
 
+    public GetLogBackupReq withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 指定返回日志的条数，默认返回100条，最大返回10000条日志，且日志大小不超过1MB。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public GetLogBackupReq withTimeIndex(String timeIndex) {
+        this.timeIndex = timeIndex;
+        return this;
+    }
+
+    /**
+     * 返回指定时间之前的日志。
+     * @return timeIndex
+     */
+    public String getTimeIndex() {
+        return timeIndex;
+    }
+
+    public void setTimeIndex(String timeIndex) {
+        this.timeIndex = timeIndex;
+    }
+
+    public GetLogBackupReq withKeyword(String keyword) {
+        this.keyword = keyword;
+        return this;
+    }
+
+    /**
+     * 基于日志内容字段值需要过滤的关键字，注意搜索到的日志包含关键字。
+     * @return keyword
+     */
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +152,13 @@ public class GetLogBackupReq {
         }
         GetLogBackupReq that = (GetLogBackupReq) obj;
         return Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.level, that.level)
-            && Objects.equals(this.logType, that.logType);
+            && Objects.equals(this.logType, that.logType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.timeIndex, that.timeIndex) && Objects.equals(this.keyword, that.keyword);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceName, level, logType);
+        return Objects.hash(instanceName, level, logType, limit, timeIndex, keyword);
     }
 
     @Override
@@ -101,6 +168,9 @@ public class GetLogBackupReq {
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    timeIndex: ").append(toIndentedString(timeIndex)).append("\n");
+        sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 后端服务器操作状态。
+ * MemberStatus
  */
 public class MemberStatus {
 
@@ -42,7 +42,7 @@ public class MemberStatus {
     }
 
     /**
-     * 参数解释：监听器ID
+     * **参数解释**：监听器ID  **取值范围**：不涉及
      * @return listenerId
      */
     public String getListenerId() {
@@ -59,7 +59,7 @@ public class MemberStatus {
     }
 
     /**
-     * 参数解释：后端服务器的健康状态。  取值范围： - ONLINE：后端服务器正常。 - NO_MONITOR：后端服务器所在的服务器组没有健康检查器。 - OFFLINE：后端服务器关联的ECS服务器不存在或已关机。
+     * **参数解释**：后端服务器的健康状态。  **取值范围**： - ONLINE：后端服务器正常。 - NO_MONITOR：后端服务器所在的服务器组没有健康检查器。 - OFFLINE：后端服务器关联的ECS服务器不存在或已关机。
      * @return operatingStatus
      */
     public String getOperatingStatus() {
@@ -102,7 +102,7 @@ public class MemberStatus {
     }
 
     /**
-     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
+     * **参数解释**：创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  **取值范围**：不涉及
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -119,7 +119,7 @@ public class MemberStatus {
     }
 
     /**
-     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
+     * **参数解释**：更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  **取值范围**：不涉及
      * @return updatedAt
      */
     public String getUpdatedAt() {

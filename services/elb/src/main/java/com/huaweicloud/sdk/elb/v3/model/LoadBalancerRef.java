@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 参数解释：负载均衡器信息
+ * LoadBalancerRef
  */
 public class LoadBalancerRef {
 
@@ -21,7 +21,7 @@ public class LoadBalancerRef {
     }
 
     /**
-     * 参数解释：负载均衡器ID。
+     * **参数解释**：负载均衡器ID。  **取值范围**：不涉及
      * @return id
      */
     public String getId() {

@@ -27,7 +27,7 @@ public class UpdateIpGroupRequest {
     }
 
     /**
-     * 参数解释：待更新的IP地址组的ID。
+     * **参数解释**：待更新的IP地址组的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return ipgroupId
      */
     public String getIpgroupId() {

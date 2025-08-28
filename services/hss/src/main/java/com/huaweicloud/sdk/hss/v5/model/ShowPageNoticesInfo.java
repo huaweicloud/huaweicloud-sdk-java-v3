@@ -63,7 +63,7 @@ public class ShowPageNoticesInfo {
     }
 
     /**
-     * 通知类型，包含如下两种。 - links :超链接 - text  :文本
+     * 通知类型，包含如下两种。 - links：超链接 - text：文本
      * @return type
      */
     public String getType() {
@@ -131,7 +131,7 @@ public class ShowPageNoticesInfo {
     }
 
     /**
-     * 通知等级，包含如下3种。 - error :紧急 - warn :重要 - prompt :提示
+     * **参数解释** 通知等级 **取值范围** - error：紧急 - warn：重要 - prompt：提示
      * @return level
      */
     public String getLevel() {

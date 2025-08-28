@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 子任务
+ * **参数解释**：子任务
  */
 public class SubJob {
 
@@ -316,7 +316,7 @@ public class SubJob {
     }
 
     /**
-     * 参数解释：资源ID。
+     * **参数解释**：资源ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -349,7 +349,7 @@ public class SubJob {
     }
 
     /**
-     * 任务关联的资源列表
+     * **参数解释**：任务关联的资源列表。
      * @return entities
      */
     public List<JobEntities> getEntities() {

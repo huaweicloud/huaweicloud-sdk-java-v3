@@ -70,7 +70,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 防护目录数
+     * **参数解释**: 防护目录数 **取值范围**: 取值0-50 
      * minimum: 0
      * maximum: 50
      * @return protectDirNum
@@ -116,7 +116,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 定时开关状态
+     * **参数解释**: 定时开关状态 **取值范围**: - True ：开启定时关闭防护功能。 - False ：未开启定时关闭防护功能。 
      * @return enableTimingOff
      */
     public Boolean getEnableTimingOff() {
@@ -161,7 +161,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 动态网页防篡改开启状态
+     * **参数解释**: 动态网页防篡改开启状态 **取值范围**: - True ：开启动态网页防篡改防护。 - False ：未开启动态网页防篡改防护。 
      * @return enableRaspProtect
      */
     public Boolean getEnableRaspProtect() {
@@ -178,7 +178,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * rasp path
+     * **参数解释**: 动态网页防篡改的Tomcat bin目录 **取值范围**: 字符长度0-512位 
      * @return raspPath
      */
     public String getRaspPath() {
@@ -195,7 +195,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 特权进程状态
+     * **参数解释**: 特权进程开启状态 **取值范围**: - True ：开启特权进程。 - False ：未开启特权进程。 
      * @return enablePrivilegedProcess
      */
     public Boolean getEnablePrivilegedProcess() {
@@ -212,7 +212,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 特权进程子进程可信状态
+     * **参数解释**: 特权进程子进程可信状态，需先开启特权进程 **取值范围**: - True ：开启特权进程子进程可信。 - False ：未开启特权进程子进程可信。 
      * @return privilegedChildStatus
      */
     public Boolean getPrivilegedChildStatus() {
@@ -246,7 +246,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 特权进程路径集合
+     * **参数解释**: 特权进程文件路径列表 **取值范围**: 最少0条，最多10条 
      * @return privilegedProcessPathList
      */
     public List<String> getPrivilegedProcessPathList() {

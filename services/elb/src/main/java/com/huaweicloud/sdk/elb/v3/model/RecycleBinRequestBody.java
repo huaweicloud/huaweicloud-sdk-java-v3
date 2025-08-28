@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新回收站启用开关的请求体。
+ * **参数解释**：更新回收站启用开关的请求体。
  */
 public class RecycleBinRequestBody {
 
@@ -21,7 +21,7 @@ public class RecycleBinRequestBody {
     }
 
     /**
-     * 是否启用回收站。  取值： - true：启用回收站。 - false：不启用回收站。
+     * **参数解释**：是否启用回收站。  **取值范围**： - true：启用回收站。 - false：不启用回收站。
      * @return enable
      */
     public Boolean getEnable() {

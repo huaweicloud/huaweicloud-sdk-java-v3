@@ -86,6 +86,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.SetResourcesRenewConfigRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.SetResourcesRenewConfigResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerExpenditureQuotaRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerExpenditureQuotaResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerMonthlySumRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerMonthlySumResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsRequest;
@@ -1375,6 +1377,36 @@ public class BssintlClient {
     public SyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> showCustomerAccountBalancesInvoker(
         ShowCustomerAccountBalancesRequest request) {
         return new SyncInvoker<>(request, BssintlMeta.showCustomerAccountBalances, hcClient);
+    }
+
+    /**
+     * 查询消费配额
+     *
+     * 功能描述：客户可以查询自身的消费配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomerExpenditureQuotaRequest 请求对象
+     * @return ShowCustomerExpenditureQuotaResponse
+     */
+    public ShowCustomerExpenditureQuotaResponse showCustomerExpenditureQuota(
+        ShowCustomerExpenditureQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.showCustomerExpenditureQuota);
+    }
+
+    /**
+     * 查询消费配额
+     *
+     * 功能描述：客户可以查询自身的消费配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomerExpenditureQuotaRequest 请求对象
+     * @return SyncInvoker<ShowCustomerExpenditureQuotaRequest, ShowCustomerExpenditureQuotaResponse>
+     */
+    public SyncInvoker<ShowCustomerExpenditureQuotaRequest, ShowCustomerExpenditureQuotaResponse> showCustomerExpenditureQuotaInvoker(
+        ShowCustomerExpenditureQuotaRequest request) {
+        return new SyncInvoker<>(request, BssintlMeta.showCustomerExpenditureQuota, hcClient);
     }
 
     /**

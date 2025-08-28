@@ -114,6 +114,11 @@ public class LayerConfig {
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sequence_no")
+
+    private Integer sequenceNo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
 
     private LayerPositionConfig position;
@@ -192,6 +197,25 @@ public class LayerConfig {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+    }
+
+    public LayerConfig withSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 播放到对应的段落，显示对应的图层。该字段向前兼容，可以不填，字段可选。 只支持直播业务。 **约束限制**： 段落sequence_no。 **默认取值**： 不涉及。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return sequenceNo
+     */
+    public Integer getSequenceNo() {
+        return sequenceNo;
+    }
+
+    public void setSequenceNo(Integer sequenceNo) {
+        this.sequenceNo = sequenceNo;
     }
 
     public LayerConfig withPosition(LayerPositionConfig position) {
@@ -360,16 +384,24 @@ public class LayerConfig {
         }
         LayerConfig that = (LayerConfig) obj;
         return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.assetId, that.assetId)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.position, that.position)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.rotation, that.rotation)
-            && Objects.equals(this.imageConfig, that.imageConfig) && Objects.equals(this.videoConfig, that.videoConfig)
-            && Objects.equals(this.textConfig, that.textConfig);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.sequenceNo, that.sequenceNo)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.rotation, that.rotation) && Objects.equals(this.imageConfig, that.imageConfig)
+            && Objects.equals(this.videoConfig, that.videoConfig) && Objects.equals(this.textConfig, that.textConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(layerType, assetId, groupId, position, size, rotation, imageConfig, videoConfig, textConfig);
+        return Objects.hash(layerType,
+            assetId,
+            groupId,
+            sequenceNo,
+            position,
+            size,
+            rotation,
+            imageConfig,
+            videoConfig,
+            textConfig);
     }
 
     @Override
@@ -379,6 +411,7 @@ public class LayerConfig {
         sb.append("    layerType: ").append(toIndentedString(layerType)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    sequenceNo: ").append(toIndentedString(sequenceNo)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    rotation: ").append(toIndentedString(rotation)).append("\n");

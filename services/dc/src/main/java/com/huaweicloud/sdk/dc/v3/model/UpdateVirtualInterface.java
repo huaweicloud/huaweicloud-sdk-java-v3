@@ -33,6 +33,81 @@ public class UpdateVirtualInterface {
 
     private Integer bandwidth;
 
+    /**
+     * 虚拟接口的优先级，支持两种优先级状态normal和low。 接口优先级相同时表示负载关系，接口优先级不同时表示主备关系，出云流量优先转到优先级更高的normal接口。 目前仅BGP模式接口支持。
+     */
+    public static final class PriorityEnum {
+
+        /**
+         * Enum NORMAL for value: "normal"
+         */
+        public static final PriorityEnum NORMAL = new PriorityEnum("normal");
+
+        /**
+         * Enum LOW for value: "low"
+         */
+        public static final PriorityEnum LOW = new PriorityEnum("low");
+
+        private static final Map<String, PriorityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PriorityEnum> createStaticFields() {
+            Map<String, PriorityEnum> map = new HashMap<>();
+            map.put("normal", NORMAL);
+            map.put("low", LOW);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PriorityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PriorityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PriorityEnum(value));
+        }
+
+        public static PriorityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PriorityEnum) {
+                return this.value.equals(((PriorityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private PriorityEnum priority;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_ep_group")
 
@@ -181,6 +256,23 @@ public class UpdateVirtualInterface {
         this.bandwidth = bandwidth;
     }
 
+    public UpdateVirtualInterface withPriority(PriorityEnum priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 虚拟接口的优先级，支持两种优先级状态normal和low。 接口优先级相同时表示负载关系，接口优先级不同时表示主备关系，出云流量优先转到优先级更高的normal接口。 目前仅BGP模式接口支持。
+     * @return priority
+     */
+    public PriorityEnum getPriority() {
+        return priority;
+    }
+
+    public void setPriority(PriorityEnum priority) {
+        this.priority = priority;
+    }
+
     public UpdateVirtualInterface withRemoteEpGroup(List<String> remoteEpGroup) {
         this.remoteEpGroup = remoteEpGroup;
         return this;
@@ -308,7 +400,8 @@ public class UpdateVirtualInterface {
         }
         UpdateVirtualInterface that = (UpdateVirtualInterface) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
+            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
             && Objects.equals(this.serviceEpGroup, that.serviceEpGroup)
             && Objects.equals(this.enableBfd, that.enableBfd) && Objects.equals(this.enableNqa, that.enableNqa)
             && Objects.equals(this.status, that.status);
@@ -316,7 +409,8 @@ public class UpdateVirtualInterface {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, bandwidth, remoteEpGroup, serviceEpGroup, enableBfd, enableNqa, status);
+        return Objects
+            .hash(name, description, bandwidth, priority, remoteEpGroup, serviceEpGroup, enableBfd, enableNqa, status);
     }
 
     @Override
@@ -326,6 +420,7 @@ public class UpdateVirtualInterface {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    remoteEpGroup: ").append(toIndentedString(remoteEpGroup)).append("\n");
         sb.append("    serviceEpGroup: ").append(toIndentedString(serviceEpGroup)).append("\n");
         sb.append("    enableBfd: ").append(toIndentedString(enableBfd)).append("\n");

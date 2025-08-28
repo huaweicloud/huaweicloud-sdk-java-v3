@@ -46,7 +46,7 @@ public class ShowLoadBalancerPortsResponse extends SdkResponse {
     }
 
     /**
-     * 当前ELB占用的ports列表。
+     * **参数解释**：当前ELB占用的子网端口列表。
      * @return ports
      */
     public List<LocalPort> getPorts() {
@@ -63,7 +63,7 @@ public class ShowLoadBalancerPortsResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
      * @return requestId
      */
     public String getRequestId() {

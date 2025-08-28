@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.tms.v1.model.ListTagKeysRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListTagKeysResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListTagValuesRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListTagValuesResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListTagsRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.ModifyPrefineTag;
 import com.huaweicloud.sdk.tms.v1.model.ReqCreatePredefineTag;
 import com.huaweicloud.sdk.tms.v1.model.ReqCreateTag;
@@ -325,6 +327,38 @@ public class TmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTagValuesRequest::getKey, ListTagValuesRequest::setKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
+
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
+        // basic
+        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
+                .withName("ListTags")
+                .withUri("/v1.0/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_types",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsRequest::getResourceTypes, ListTagsRequest::setResourceTypes));
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsRequest::getProjectId, ListTagsRequest::setProjectId));
+        builder.<ListTagsRequest.TagTypesEnum>withRequestField("tag_types",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTagsRequest.TagTypesEnum.class),
+            f -> f.withMarshaller(ListTagsRequest::getTagTypes, ListTagsRequest::setTagTypes));
 
         // response
 

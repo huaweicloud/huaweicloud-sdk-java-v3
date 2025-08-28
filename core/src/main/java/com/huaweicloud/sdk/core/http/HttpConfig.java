@@ -66,6 +66,8 @@ public class HttpConfig {
 
     private int proxyPort;
 
+    private String userAgent;
+
     private SSLSocketFactory sslSocketFactory;
 
     private X509TrustManager trustManager;
@@ -300,6 +302,19 @@ public class HttpConfig {
 
     public HttpConfig withProxyPort(int proxyPort) {
         setProxyPort(proxyPort);
+        return this;
+    }
+
+    public String getUserAgent() {
+        return userAgent;
+    }
+
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
+    }
+
+    public HttpConfig withUserAgent(String userAgent) {
+        setUserAgent(userAgent);
         return this;
     }
 

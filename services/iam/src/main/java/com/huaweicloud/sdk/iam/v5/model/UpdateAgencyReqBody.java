@@ -26,7 +26,7 @@ public class UpdateAgencyReqBody {
     }
 
     /**
-     * 委托或信任委托最大会话时长，默认为3600秒。
+     * 信任委托最大会话时长，默认为3600秒，取值范围为[3600,43200]。
      * minimum: 3600
      * maximum: 43200
      * @return maxSessionDuration
@@ -45,7 +45,7 @@ public class UpdateAgencyReqBody {
     }
 
     /**
-     * 委托或信任委托描述信息。
+     * 信任委托描述信息。
      * @return description
      */
     public String getDescription() {

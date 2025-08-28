@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 证书信息。
+ * **参数解释**：ELB证书信息。注意：真正的证书在内层字段中。
  */
 public class CertificateInfo {
 
@@ -114,7 +114,7 @@ public class CertificateInfo {
     private String source;
 
     /**
-     * 参数解释：修改保护状态  约束限制：无  取值范围：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护  默认取值：nonProtection
+     * **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
      */
     public static final class ProtectionStatusEnum {
 
@@ -199,7 +199,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书的管理状态。  不支持该字段，请勿使用。
+     * **参数解释**：证书的管理状态。该字段当前无用，设置为true或者false都不影响证书使用。  **取值范围**： - true：表示证书可用。 - false：表示证书不可用。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -216,7 +216,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书的内容。PEM编码格式。
+     * **参数解释**：证书内容。支持最大11层证书链(含证书和证书链)。  **取值范围**：PEM编码格式，最大长度65536个字符。
      * @return certificate
      */
     public String getCertificate() {
@@ -233,7 +233,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书的描述。
+     * **参数解释**：证书的描述。  **取值范围**：0-255个字符。
      * @return description
      */
     public String getDescription() {
@@ -250,7 +250,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分隔，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\".\"分隔，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com。  泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com
+     * **参数解释**：服务器证书所签域名。  **取值范围**：总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分隔，不超过100个域名。 - 普通域名：由若干字符串组成，字符串间以\".\"分隔，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com。 - 泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com。
      * @return domain
      */
     public String getDomain() {
@@ -267,7 +267,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书ID。
+     * **参数解释**：ELB证书管理对象ID。  **取值范围**：由32位数字和小写字母组成。
      * @return id
      */
     public String getId() {
@@ -284,7 +284,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书的名称。
+     * **参数解释**：证书的名称。  **取值范围**：0-255个字符。
      * @return name
      */
     public String getName() {
@@ -301,7 +301,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 服务器证书的私钥。PEM编码格式。  当type为client时，该参数被忽略，不影响证书的创建和使用。  当type为server时，该字段必须符合格式要求，且私钥必须是有效的。
+     * **参数解释**：服务器证书的私钥。  **取值范围**：PEM编码格式，最大长度8192个字符。
      * @return privateKey
      */
     public String getPrivateKey() {
@@ -318,7 +318,7 @@ public class CertificateInfo {
     }
 
     /**
-     * SSL证书的类型。分为服务器证书(server)、CA证书(client)。默认值：server。
+     * **参数解释**：证书的类型。  **取值范围**： - server：服务器证书。 - client：CA证书。 - server_sm：服务器SM双证书。
      * @return type
      */
     public String getType() {
@@ -335,7 +335,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书创建时间。
+     * **参数解释**：创建时间。  **取值范围**：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -352,7 +352,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书更新时间。
+     * **参数解释**：更新时间。  **取值范围**：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -369,7 +369,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书使用截止时间。
+     * **参数解释**：证书有效期的截止时间。  **取值范围**：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
      * @return expireTime
      */
     public String getExpireTime() {
@@ -386,7 +386,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书所在项目ID。
+     * **参数解释**：项目ID。获取方式请参见[获取项目ID](elb_fl_0008.xml)。  **取值范围**：长度为32个字符，由小写字母和数字组成。
      * @return projectId
      */
     public String getProjectId() {
@@ -403,7 +403,7 @@ public class CertificateInfo {
     }
 
     /**
-     * HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。  注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
+     * **参数解释**：服务器SM双证书的证书内容。 支持最大11层证书链(含证书和证书链)。  **取值范围**：PEM编码格式。最大长度65536字符。
      * @return encCertificate
      */
     public String getEncCertificate() {
@@ -420,7 +420,7 @@ public class CertificateInfo {
     }
 
     /**
-     * HTTPS协议使用的SM加密证书私钥。  取值：PEM编码格式。  注意：仅在当前局点的SM加密证书特性开启才会返回该字段。
+     * **参数解释**：服务器SM双证书的私钥。  **取值范围**：PEM编码格式，最大长度8192个字符。
      * @return encPrivateKey
      */
     public String getEncPrivateKey() {
@@ -437,7 +437,7 @@ public class CertificateInfo {
     }
 
     /**
-     * SCM证书ID。
+     * **参数解释**：云证书管理服务（CCM）中的证书ID。  **取值范围**：不涉及
      * @return scmCertificateId
      */
     public String getScmCertificateId() {
@@ -454,7 +454,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书绑定的主域名。
+     * **参数解释**：证书绑定的主域名。  **取值范围**：不涉及
      * @return commonName
      */
     public String getCommonName() {
@@ -471,7 +471,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书指纹。
+     * **参数解释**：证书指纹。  **取值范围**：不涉及
      * @return fingerprint
      */
     public String getFingerprint() {
@@ -504,7 +504,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书绑定的所有域名。
+     * **参数解释**：证书绑定的域名列表。  **取值范围**：不涉及
      * @return subjectAlternativeNames
      */
     public List<String> getSubjectAlternativeNames() {
@@ -521,7 +521,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 参数解释：证书来源 取值范围：无  默认取值：当scm_certificate_id不为空，且未传入source时，默认取值为“scm”； 其他情况下默认为空。
+     * **参数解释**：标记当前证书来源。  **取值范围**： - scm：表示关联云证书管理服务（CCM）中的证书。 - 空值：表示自有证书。
      * @return source
      */
     public String getSource() {
@@ -538,7 +538,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 参数解释：修改保护状态  约束限制：无  取值范围：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护  默认取值：nonProtection
+     * **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
      * @return protectionStatus
      */
     public ProtectionStatusEnum getProtectionStatus() {
@@ -555,7 +555,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 参数解释：设置修改保护的原因  约束限制：仅当protection_status为consoleProtection时有效  取值范围：无  默认取值：空
+     * **参数解释**：修改保护的原因。  **取值范围**：不涉及
      * @return protectionReason
      */
     public String getProtectionReason() {

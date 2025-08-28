@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.tms.v1.model.ListTagKeysRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListTagKeysResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListTagValuesRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListTagValuesResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListTagsRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.tms.v1.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.tms.v1.model.ShowResourceTagRequest;
@@ -329,6 +331,34 @@ public class TmsClient {
      */
     public SyncInvoker<ListTagValuesRequest, ListTagValuesResponse> listTagValuesInvoker(ListTagValuesRequest request) {
         return new SyncInvoker<>(request, TmsMeta.listTagValues, hcClient);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询指定区域和实例类型中租户的所有标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsRequest 请求对象
+     * @return ListTagsResponse
+     */
+    public ListTagsResponse listTags(ListTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, TmsMeta.listTags);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询指定区域和实例类型中租户的所有标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsRequest 请求对象
+     * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
+     */
+    public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
+        return new SyncInvoker<>(request, TmsMeta.listTags, hcClient);
     }
 
     /**

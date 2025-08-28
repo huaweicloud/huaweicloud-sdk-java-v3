@@ -5,6 +5,12 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.koophone.v1.model.AsyncInvokeInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.AsyncInvokeInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.BatchBackupInstancesRequest;
+import com.huaweicloud.sdk.koophone.v1.model.BatchBackupInstancesResponse;
+import com.huaweicloud.sdk.koophone.v1.model.BatchPrepareInstancesRequest;
+import com.huaweicloud.sdk.koophone.v1.model.BatchPrepareInstancesResponse;
+import com.huaweicloud.sdk.koophone.v1.model.BatchRebootInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.BatchRebootInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceRequest;
@@ -21,10 +27,16 @@ import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobResponse;
+import com.huaweicloud.sdk.koophone.v1.model.InstallAppRequest;
+import com.huaweicloud.sdk.koophone.v1.model.InstallAppResponse;
+import com.huaweicloud.sdk.koophone.v1.model.ListInstancesRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoResponse;
+import com.huaweicloud.sdk.koophone.v1.model.ShowProgressRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ShowProgressResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceResponse;
 
@@ -74,6 +86,99 @@ public class KooPhoneClient {
     public SyncInvoker<AsyncInvokeInstanceRequest, AsyncInvokeInstanceResponse> asyncInvokeInstanceInvoker(
         AsyncInvokeInstanceRequest request) {
         return new SyncInvoker<>(request, KooPhoneMeta.asyncInvokeInstance, hcClient);
+    }
+
+    /**
+     * 实例备份
+     *
+     * 实例数据批量备份到OBS，然后释放物理实例。
+     * 调用此api的前提条件是实例数据已还原到物理机。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBackupInstancesRequest 请求对象
+     * @return BatchBackupInstancesResponse
+     */
+    public BatchBackupInstancesResponse batchBackupInstances(BatchBackupInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, KooPhoneMeta.batchBackupInstances);
+    }
+
+    /**
+     * 实例备份
+     *
+     * 实例数据批量备份到OBS，然后释放物理实例。
+     * 调用此api的前提条件是实例数据已还原到物理机。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBackupInstancesRequest 请求对象
+     * @return SyncInvoker<BatchBackupInstancesRequest, BatchBackupInstancesResponse>
+     */
+    public SyncInvoker<BatchBackupInstancesRequest, BatchBackupInstancesResponse> batchBackupInstancesInvoker(
+        BatchBackupInstancesRequest request) {
+        return new SyncInvoker<>(request, KooPhoneMeta.batchBackupInstances, hcClient);
+    }
+
+    /**
+     * 实例批量准备
+     *
+     * 实例批量准备。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 调用该接口后，当前实例会被准备到可以串流的状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchPrepareInstancesRequest 请求对象
+     * @return BatchPrepareInstancesResponse
+     */
+    public BatchPrepareInstancesResponse batchPrepareInstances(BatchPrepareInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, KooPhoneMeta.batchPrepareInstances);
+    }
+
+    /**
+     * 实例批量准备
+     *
+     * 实例批量准备。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 调用该接口后，当前实例会被准备到可以串流的状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchPrepareInstancesRequest 请求对象
+     * @return SyncInvoker<BatchPrepareInstancesRequest, BatchPrepareInstancesResponse>
+     */
+    public SyncInvoker<BatchPrepareInstancesRequest, BatchPrepareInstancesResponse> batchPrepareInstancesInvoker(
+        BatchPrepareInstancesRequest request) {
+        return new SyncInvoker<>(request, KooPhoneMeta.batchPrepareInstances, hcClient);
+    }
+
+    /**
+     * 实例重启
+     *
+     * 调用此接口可以批量重启云机实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRebootInstanceRequest 请求对象
+     * @return BatchRebootInstanceResponse
+     */
+    public BatchRebootInstanceResponse batchRebootInstance(BatchRebootInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, KooPhoneMeta.batchRebootInstance);
+    }
+
+    /**
+     * 实例重启
+     *
+     * 调用此接口可以批量重启云机实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRebootInstanceRequest 请求对象
+     * @return SyncInvoker<BatchRebootInstanceRequest, BatchRebootInstanceResponse>
+     */
+    public SyncInvoker<BatchRebootInstanceRequest, BatchRebootInstanceResponse> batchRebootInstanceInvoker(
+        BatchRebootInstanceRequest request) {
+        return new SyncInvoker<>(request, KooPhoneMeta.batchRebootInstance, hcClient);
     }
 
     /**
@@ -310,6 +415,8 @@ public class KooPhoneClient {
      * 实例执行任务批量查询。
      * 调用此api的前提条件是租户需要先购买koophone云手机实例。
      * 该接口需要和实例执行异步命令接口一起使用，使用实例执行异步命令接口返回的task_id作为路径上的参数以此获取异步命令执行的结果。
+     * 同时，该接口也可以和实例安装app接口一起使用，使用实例安装app接口返回的task_id作为路径上的参数，以此获取实例安装app的执行结果。
+     * 实例安装app接口返回的task_id有固定前缀“ZGCA”或者“FULFILL”,和实例执行异步命令接口返回的task_id有所区分。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -326,6 +433,8 @@ public class KooPhoneClient {
      * 实例执行任务批量查询。
      * 调用此api的前提条件是租户需要先购买koophone云手机实例。
      * 该接口需要和实例执行异步命令接口一起使用，使用实例执行异步命令接口返回的task_id作为路径上的参数以此获取异步命令执行的结果。
+     * 同时，该接口也可以和实例安装app接口一起使用，使用实例安装app接口返回的task_id作为路径上的参数，以此获取实例安装app的执行结果。
+     * 实例安装app接口返回的task_id有固定前缀“ZGCA”或者“FULFILL”,和实例执行异步命令接口返回的task_id有所区分。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -334,6 +443,70 @@ public class KooPhoneClient {
      */
     public SyncInvoker<ExecuteJobRequest, ExecuteJobResponse> executeJobInvoker(ExecuteJobRequest request) {
         return new SyncInvoker<>(request, KooPhoneMeta.executeJob, hcClient);
+    }
+
+    /**
+     * 实例安装app
+     *
+     * 调用此接口可以向云机实例批量安装app。
+     * 接口返回当前安装任务的task_id，此task_id有固定前缀“ZGCA”。
+     * 用户根据返回的task_id，调用GetTask实例执行任务查询接口去查询执行结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InstallAppRequest 请求对象
+     * @return InstallAppResponse
+     */
+    public InstallAppResponse installApp(InstallAppRequest request) {
+        return hcClient.syncInvokeHttp(request, KooPhoneMeta.installApp);
+    }
+
+    /**
+     * 实例安装app
+     *
+     * 调用此接口可以向云机实例批量安装app。
+     * 接口返回当前安装任务的task_id，此task_id有固定前缀“ZGCA”。
+     * 用户根据返回的task_id，调用GetTask实例执行任务查询接口去查询执行结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InstallAppRequest 请求对象
+     * @return SyncInvoker<InstallAppRequest, InstallAppResponse>
+     */
+    public SyncInvoker<InstallAppRequest, InstallAppResponse> installAppInvoker(InstallAppRequest request) {
+        return new SyncInvoker<>(request, KooPhoneMeta.installApp, hcClient);
+    }
+
+    /**
+     * 实例批量查询
+     *
+     * 实例批量查询。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 接口返回租户下所有实例信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesRequest 请求对象
+     * @return ListInstancesResponse
+     */
+    public ListInstancesResponse listInstances(ListInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, KooPhoneMeta.listInstances);
+    }
+
+    /**
+     * 实例批量查询
+     *
+     * 实例批量查询。
+     * 调用此api的前提条件是租户需要先购买koophone云手机实例。
+     * 接口返回租户下所有实例信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesRequest 请求对象
+     * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
+     */
+    public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
+        return new SyncInvoker<>(request, KooPhoneMeta.listInstances, hcClient);
     }
 
     /**
@@ -397,6 +570,38 @@ public class KooPhoneClient {
      */
     public SyncInvoker<SetVideoRequest, SetVideoResponse> setVideoInvoker(SetVideoRequest request) {
         return new SyncInvoker<>(request, KooPhoneMeta.setVideo, hcClient);
+    }
+
+    /**
+     * 实例准备进度
+     *
+     * 实例准备进度。
+     * 调用此api的前提条件是需要先调用prepare接口。
+     * 循环调用此接口直到云机状态为正常则可开启串流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProgressRequest 请求对象
+     * @return ShowProgressResponse
+     */
+    public ShowProgressResponse showProgress(ShowProgressRequest request) {
+        return hcClient.syncInvokeHttp(request, KooPhoneMeta.showProgress);
+    }
+
+    /**
+     * 实例准备进度
+     *
+     * 实例准备进度。
+     * 调用此api的前提条件是需要先调用prepare接口。
+     * 循环调用此接口直到云机状态为正常则可开启串流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProgressRequest 请求对象
+     * @return SyncInvoker<ShowProgressRequest, ShowProgressResponse>
+     */
+    public SyncInvoker<ShowProgressRequest, ShowProgressResponse> showProgressInvoker(ShowProgressRequest request) {
+        return new SyncInvoker<>(request, KooPhoneMeta.showProgress, hcClient);
     }
 
     /**

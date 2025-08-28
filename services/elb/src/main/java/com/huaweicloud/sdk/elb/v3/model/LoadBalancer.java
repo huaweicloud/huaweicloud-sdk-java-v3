@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 负载均衡器的详细信息。
+ * **参数解释**：负载均衡器的详细信息。
  */
 public class LoadBalancer {
 
@@ -189,7 +189,7 @@ public class LoadBalancer {
     private List<String> elbVirsubnetIds = null;
 
     /**
-     * 参数解释：下联面子网类型。  取值范围： - ipv4：ipv4 - dualstack：双栈
+     * **参数解释**：下联面子网类型。  **取值范围**： - ipv4：仅支持IPv4 - dualstack：双栈，同时支持IPv4和IPv6。
      */
     public static final class ElbVirsubnetTypeEnum {
 
@@ -294,7 +294,7 @@ public class LoadBalancer {
     private String chargeMode;
 
     /**
-     * 参数解释：lb 模式，默认为lb，ep模式LB支持跨租户访问。  不支持该字段，请勿使用。
+     * **参数解释**：LB模式。  **取值范围**： - lb：默认模式，不支持跨租户访问。 - ep：ep模式，LB支持跨租户访问。  不支持该字段，请勿使用。
      */
     public static final class ServiceLbModeEnum {
 
@@ -389,7 +389,7 @@ public class LoadBalancer {
     private String wafFailureAction;
 
     /**
-     * 参数解释：修改保护状态。  取值范围： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。  默认取值：nonProtection
+     * **参数解释**：修改保护状态。  **取值范围**： - nonProtection：不保护。 - consoleProtection：控制台修改保护。
      */
     public static final class ProtectionStatusEnum {
 
@@ -484,7 +484,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器ID。
+     * **参数解释**：负载均衡器ID。  **取值范围**：不涉及
      * @return id
      */
     public String getId() {
@@ -501,7 +501,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器描述信息。
+     * **参数解释**：负载均衡器描述信息。  **取值范围**：不涉及
      * @return description
      */
     public String getDescription() {
@@ -518,7 +518,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的配置状态。  取值范围： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
+     * **参数解释**：负载均衡器的配置状态。  **取值范围**： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {
@@ -535,7 +535,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的启用状态。  取值范围： - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt)
+     * **参数解释**：负载均衡器的启用状态。  **取值范围**： - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -552,7 +552,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的生产者名称。固定为vlb。
+     * **参数解释**：负载均衡器的生产者名称。固定为vlb。  **取值范围**：不涉及
      * @return provider
      */
     public String getProvider() {
@@ -585,7 +585,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器直接关联的后端服务器组的ID列表。
+     * **参数解释**：负载均衡器直接关联的后端服务器组的ID列表。
      * @return pools
      */
     public List<PoolRef> getPools() {
@@ -618,7 +618,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器关联的监听器的ID列表。
+     * **参数解释**：负载均衡器关联的监听器的ID列表。
      * @return listeners
      */
     public List<ListenerRef> getListeners() {
@@ -635,7 +635,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的操作状态。  取值范围： - ONLINE：在线。 - FROZEN：已冻结。
+     * **参数解释**：负载均衡器的操作状态。  **取值范围**： - ONLINE：在线。 - FROZEN：已冻结。
      * @return operatingStatus
      */
     public String getOperatingStatus() {
@@ -652,7 +652,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的名称。
+     * **参数解释**：负载均衡器的名称。  **取值范围**：不涉及
      * @return name
      */
     public String getName() {
@@ -669,7 +669,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器所属的项目ID。
+     * **参数解释**：负载均衡器所属的项目ID。  **取值范围**：不涉及
      * @return projectId
      */
     public String getProjectId() {
@@ -686,7 +686,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。
+     * **参数解释**：负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。  **取值范围**：不涉及
      * @return vipSubnetCidrId
      */
     public String getVipSubnetCidrId() {
@@ -703,7 +703,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的IPv4虚拟IP地址。
+     * **参数解释**：负载均衡器的IPv4私网IP地址。  **取值范围**：不涉及
      * @return vipAddress
      */
     public String getVipAddress() {
@@ -720,7 +720,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的IPv4对应的port ID。 [创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。 ](tag:dt,hcso_dt)
+     * **参数解释**：负载均衡器的IPv4对应的port ID。 [创建弹性负载均衡时，会自动为负载均衡创建一个port并关联一个默认的安全组，这个安全组对所有流量不生效。 ](tag:dt,hcso_dt)  **取值范围**：不涉及
      * @return vipPortId
      */
     public String getVipPortId() {
@@ -753,7 +753,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡的标签列表。
+     * **参数解释**：负载均衡的标签列表。
      * @return tags
      */
     public List<Tag> getTags() {
@@ -770,7 +770,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的创建时间。  取值范围： 格式：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * **参数解释**：负载均衡器的创建时间。  **取值范围**： 格式：yyyy-MM-dd'T'HH:mm:ss'Z'
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -787,7 +787,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的更新时间。  取值范围; 格式：yyyy-MM-dd'T'HH:mm:ss'Z'
+     * **参数解释**：负载均衡器的更新时间。  **取值范围**： 格式：yyyy-MM-dd'T'HH:mm:ss'Z'
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -804,7 +804,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：是否独享型LB。  取值范围： - false：共享型。 - true：独享型。
+     * **参数解释**：是否独享型LB。  **取值范围**： - false：共享型。 - true：独享型。
      * @return guaranteed
      */
     public Boolean getGuaranteed() {
@@ -821,7 +821,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器所在VPC ID。
+     * **参数解释**：负载均衡器所在VPC ID。  **取值范围**：不涉及
      * @return vpcId
      */
     public String getVpcId() {
@@ -854,7 +854,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器绑定的EIP。  约束限制：只支持绑定一个EIP。  注：该字段与publicips一致。
+     * **参数解释**：负载均衡器绑定的EIP。  > 该字段与publicips一致。
      * @return eips
      */
     public List<EipInfo> getEips() {
@@ -871,7 +871,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：双栈类型负载均衡器的IPv6地址。  [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：双栈类型负载均衡器的IPv6地址。  **取值范围**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipAddress
      */
     public String getIpv6VipAddress() {
@@ -888,7 +888,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：双栈类型负载均衡器所在子网的IPv6网络ID，也称为该负载均衡器实例的前端子网。  [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：双栈类型负载均衡器所在子网的IPv6网络ID，也称为该负载均衡器实例的前端子网。  **取值范围**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipVirsubnetId
      */
     public String getIpv6VipVirsubnetId() {
@@ -905,7 +905,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：双栈类型负载均衡器的IPv6对应的port ID。  [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：双栈类型负载均衡器的IPv6对应的port ID。  **取值范围**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipPortId
      */
     public String getIpv6VipPortId() {
@@ -938,7 +938,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器所在的可用区列表。
+     * **参数解释**：负载均衡器所在的可用区列表。  **取值范围**：不涉及
      * @return availabilityZoneList
      */
     public List<String> getAvailabilityZoneList() {
@@ -955,7 +955,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：企业项目ID。创建时不传则返回\"0\"，表示资源属于default企业项目。  注意：\"0\"并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:dt,hcso_dt)
+     * **参数解释**：资源所属的企业项目ID。  **取值范围**： - \"0\"：表示资源属于default企业项目。 - UUID格式的字符串，表示非默认企业项目。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -972,7 +972,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：资源账单信息。  取值范围： - 空：按需计费。 [- 非空：包周期计费，格式为：order_id:product_id:region_id:project_id。如：CS2107161019CDJZZ:OFFI569702121789763584:az1:057ef081eb00d2732fd1c01a9be75e6f](tag:hws)  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,srg,fcs,fcs_vm,dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,ct)
+     * **参数解释**：资源账单信息。  **取值范围**： - 空：按需计费。 [- 非空：包周期计费，格式为：order_id:product_id:region_id:project_id。如：CS2107161019CDJZZ:OFFI569702121789763584:az1:057ef081eb00d2732fd1c01a9be75e6f](tag:hws)  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,srg,fcs,fcs_vm,dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,ct)
      * @return billingInfo
      */
     public String getBillingInfo() {
@@ -989,7 +989,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：网络型规格ID。  对于弹性扩缩容实例，表示上限规格。  约束限制： - 当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费； - 当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hk_vdf,fcs)
+     * **参数解释**：负载均衡器4层规格ID。 若当前负载均衡器是弹性规格实例，则该字段表示4层上限规格。  **取值范围**：不涉及  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hk_vdf,fcs)
      * @return l4FlavorId
      */
     public String getL4FlavorId() {
@@ -1006,7 +1006,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：四层弹性Flavor ID。  不支持该字段，请勿使用。
+     * **参数解释**：四层弹性规格ID。  **取值范围**：不涉及  > 该字段已经废弃，请勿使用。
      * @return l4ScaleFlavorId
      */
     public String getL4ScaleFlavorId() {
@@ -1023,7 +1023,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：应用型ID。 对于弹性扩缩容实例，表示上限规格ID。  约束限制： - 当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费； - 当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hk_vdf,srg,fcs)
+     * **参数解释**：负载均衡器7层规格ID。 若当前负载均衡器是弹性规格实例，则该字段表示7层上限规格。  **取值范围**：不涉及  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hk_vdf,srg,fcs)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -1040,7 +1040,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：七层弹性Flavor ID。  不支持该字段，请勿使用。
+     * **参数解释**：七层弹性Flavor ID。  **取值范围**：不涉及  > 该字段已经废弃，请勿使用。
      * @return l7ScaleFlavorId
      */
     public String getL7ScaleFlavorId() {
@@ -1057,7 +1057,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 网关型LB的Flavor ID。  [使用说明：当gw_flavor_id不传时，会使用默认gateway flavor （默认gateway flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  不支持该字段，请勿使用。
+     * **参数解释**：网关型负载均衡器的规格ID。  **取值范围**：不涉及  不支持该字段，请勿使用。
      * @return gwFlavorId
      */
     public String getGwFlavorId() {
@@ -1074,7 +1074,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器类别。  取值范围： - gateway 表示网关类型负载均衡器。 - null 表示其他非网关类型负载均衡器。  默认取值：null。  不支持该字段，请勿使用。
+     * **参数解释**：负载均衡器类别。  **取值范围**： - gateway 表示网关类型负载均衡器。 - null 表示其他非网关类型负载均衡器。  不支持该字段，请勿使用。
      * @return loadbalancerType
      */
     public String getLoadbalancerType() {
@@ -1107,7 +1107,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器绑定的公网IP。只支持绑定一个公网IP。  注：该字段与eips一致。
+     * **参数解释**：负载均衡器绑定的公网IP。  > 该字段与eips一致。
      * @return publicips
      */
     public List<PublicIpInfo> getPublicips() {
@@ -1140,7 +1140,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器绑定的global eip。  约束限制：只支持绑定一个globaleip。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,hcso_dt,hk_vdf,srg,fcs,ctc,ocb,hws_ocb)
+     * **参数解释**：负载均衡器绑定的global eip。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,hcso_dt,hk_vdf,srg,fcs,ctc,ocb,hws_ocb)
      * @return globalEips
      */
     public List<GlobalEipInfo> getGlobalEips() {
@@ -1173,7 +1173,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：下联面子网的网络ID列表。
+     * **参数解释**：下联面子网的网络ID列表。  **取值范围**：不涉及
      * @return elbVirsubnetIds
      */
     public List<String> getElbVirsubnetIds() {
@@ -1190,7 +1190,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：下联面子网类型。  取值范围： - ipv4：ipv4 - dualstack：双栈
+     * **参数解释**：下联面子网类型。  **取值范围**： - ipv4：仅支持IPv4 - dualstack：双栈，同时支持IPv4和IPv6。
      * @return elbVirsubnetType
      */
     public ElbVirsubnetTypeEnum getElbVirsubnetType() {
@@ -1207,7 +1207,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：是否启用跨VPC后端转发。 [开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt,hcso_dt,hws_eu) [开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他云、云下数据中心的服务器。](tag:srg,fcs)  约束限制： - 开启后不能关闭。 - 使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。 [- 仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt) [- 网关型LB不支持该特性。](tag:hws_eu)  取值范围： - true：开启。 - false：不开启。  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * **参数解释**：是否启用IP类型后端转发。 [开启IP类型后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt,hcso_dt,hws_eu) [开启IP类型后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、云下数据中心的服务器。](tag:srg,fcs)  **取值范围**： - true：开启。 - false：不开启。  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -1224,7 +1224,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器的冻结场景。 [若负载均衡器有多个冻结场景，用逗号分隔。  取值范围： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - AREAR：欠费冻结场景。](tag:hws,hws_hk)  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,hcso_dt,ocb,hws_ocb)
+     * **参数解释**：负载均衡器的冻结场景。 若负载均衡器有多个冻结场景，用逗号分隔。  **取值范围**： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - AREAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,hcso_dt,ocb,hws_ocb)
      * @return frozenScene
      */
     public String getFrozenScene() {
@@ -1241,7 +1241,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：是否开启删除保护。  约束限制： - 仅当前局点启用删除保护特性后才会返回该字段。 - 退场时需要先关闭所有资源的删除保护开关。  取值范围： - false：不开启。 - true：开启。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * **参数解释**：是否开启删除保护。仅当前局点启用删除保护特性后才会返回该字段。  **取值范围**： - false：不开启。 - true：开启。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1284,7 +1284,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：LB所属AZ组。
+     * **参数解释**：公网边界组。  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  [不支持该字段，请勿使用。](tag:hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42)
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {
@@ -1301,7 +1301,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器实例的计费模式。  取值范围： - flavor：按规格计费 - lcu：按使用量计费 - 空值：若是共享型表示免费实例。若是独享型则与flavor模式一致，都是按规格计费。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42)
+     * **参数解释**：负载均衡器实例的计费模式。  **取值范围**： - flavor：按规格计费。 - lcu：按使用量计费。 - 空值：若是共享型表示免费实例。若是独享型则与flavor模式一致，都是按规格计费。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42)
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -1318,7 +1318,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：lb 模式，默认为lb，ep模式LB支持跨租户访问。  不支持该字段，请勿使用。
+     * **参数解释**：LB模式。  **取值范围**： - lb：默认模式，不支持跨租户访问。 - ep：ep模式，LB支持跨租户访问。  不支持该字段，请勿使用。
      * @return serviceLbMode
      */
     public ServiceLbModeEnum getServiceLbMode() {
@@ -1335,7 +1335,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：标识实例归属哪个内部服务。  不支持该字段，请勿使用。
+     * **参数解释**：标识实例归属哪个内部服务。  **取值范围**：不涉及  不支持该字段，请勿使用。
      * @return instanceType
      */
     public String getInstanceType() {
@@ -1352,7 +1352,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：标识实例绑定内部服务的实例id。  不支持该字段，请勿使用。
+     * **参数解释**：标识实例绑定内部服务的实例ID。  **取值范围**：不涉及  不支持该字段，请勿使用。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -1386,7 +1386,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：pp扩展。  不支持该字段，请勿使用。
+     * **参数解释**：pp扩展。  不支持该字段，请勿使用。
      * @return proxyProtocolExtensions
      */
     public List<ProxyProtocolExtension> getProxyProtocolExtensions() {
@@ -1403,7 +1403,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：WAF故障时的流量处理策略。  约束限制：只有绑定了waf的LB实例，该字段才会生效。  取值范围：discard:丢弃，forward: 转发到后端。  默认取值：forward  [不支持该字段，请勿使用。](tag:hws_eu,hws_test,hcs,hcs_sm,hcso,hk_vdf,srg,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,ocb,ctc,cmcc,tm,ct,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
+     * **参数解释**：WAF故障时的流量处理策略。  **取值范围**：discard:丢弃，forward: 转发到后端。  [不支持该字段，请勿使用。](tag:hws_eu,hws_test,hcs,hcs_sm,hcso,hk_vdf,srg,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,ocb,ctc,cmcc,tm,ct,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
      * @return wafFailureAction
      */
     public String getWafFailureAction() {
@@ -1420,7 +1420,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：修改保护状态。  取值范围： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。  默认取值：nonProtection
+     * **参数解释**：修改保护状态。  **取值范围**： - nonProtection：不保护。 - consoleProtection：控制台修改保护。
      * @return protectionStatus
      */
     public ProtectionStatusEnum getProtectionStatus() {
@@ -1437,7 +1437,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：设置保护的原因。作为protection_status的转态设置的原因。  约束限制：仅当protection_status为consoleProtection时有效。  取值范围：除'<'和'>'外通用Unicode字符集字符，最大255个字符。
+     * **参数解释**：设置保护的原因。作为protection_status的转态设置的原因。  **取值范围**：除'<'和'>'外通用Unicode字符集字符，最大255个字符。
      * @return protectionReason
      */
     public String getProtectionReason() {
@@ -1454,7 +1454,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：LB所绑定的logtank对应的group id
+     * **参数解释**：LB所关联的云日志服务（LTS）的日志组ID。  **取值范围**：不涉及
      * @return logGroupId
      */
     public String getLogGroupId() {
@@ -1471,7 +1471,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：LB所绑定的logtank对应的topic id
+     * **参数解释**：LB所关联的云日志服务（LTS）的日志组下的日志流ID。  **取值范围**：不涉及
      * @return logTopicId
      */
     public String getLogTopicId() {

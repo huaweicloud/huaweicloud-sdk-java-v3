@@ -662,6 +662,9 @@ public class DnsAsyncClient {
      *
      * 您在使用华为云云解析服务为自己注册的域名配置DNS解析之前，需要先将域名添加至云解析服务控制台。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request CreatePublicZoneRequest 请求对象
@@ -675,6 +678,9 @@ public class DnsAsyncClient {
      * 创建公网域名
      *
      * 您在使用华为云云解析服务为自己注册的域名配置DNS解析之前，需要先将域名添加至云解析服务控制台。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -894,6 +900,9 @@ public class DnsAsyncClient {
      *
      * 当您的公网域名不再使用时，您可以通过调用此接口将其删除。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request DeletePublicZoneRequest 请求对象
@@ -907,6 +916,9 @@ public class DnsAsyncClient {
      * 删除公网域名
      *
      * 当您的公网域名不再使用时，您可以通过调用此接口将其删除。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1302,6 +1314,9 @@ public class DnsAsyncClient {
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口查询所有公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request ListPublicZonesRequest 请求对象
@@ -1315,6 +1330,9 @@ public class DnsAsyncClient {
      * 查询公网域名列表
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口查询所有公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1620,6 +1638,9 @@ public class DnsAsyncClient {
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口查询单个公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request ShowPublicZoneRequest 请求对象
@@ -1633,6 +1654,9 @@ public class DnsAsyncClient {
      * 查询公网域名
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口查询单个公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1649,6 +1673,9 @@ public class DnsAsyncClient {
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口查询公网域名的名称服务器信息，包括主机名、优先级等。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request ShowPublicZoneNameServerRequest 请求对象
@@ -1663,6 +1690,9 @@ public class DnsAsyncClient {
      * 查询公网域名的名称服务器
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口查询公网域名的名称服务器信息，包括主机名、优先级等。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1883,6 +1913,9 @@ public class DnsAsyncClient {
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口修改公网域名的基本信息，包括TTL、描述等。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request UpdatePublicZoneRequest 请求对象
@@ -1896,6 +1929,9 @@ public class DnsAsyncClient {
      * 修改公网域名
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口修改公网域名的基本信息，包括TTL、描述等。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1912,6 +1948,9 @@ public class DnsAsyncClient {
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口设置公网域名的状态，包括暂停、启用。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request UpdatePublicZoneStatusRequest 请求对象
@@ -1926,6 +1965,9 @@ public class DnsAsyncClient {
      * 设置公网域名状态
      *
      * 当您的公网域名创建成功后，您可以通过调用此接口设置公网域名的状态，包括暂停、启用。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 资源ID
+ * **参数解释**：资源ID
  */
 public class ResourceID {
 
@@ -21,7 +21,7 @@ public class ResourceID {
     }
 
     /**
-     * 资源ID
+     * **参数解释**：资源ID
      * @return id
      */
     public String getId() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 回收站的回收配置。
+ * **参数解释**：回收站的回收配置。
  */
 public class RecycleBinPolicy {
 
@@ -26,7 +26,7 @@ public class RecycleBinPolicy {
     }
 
     /**
-     * 允许进入回收站的最小创建时间，不足此时长则删除时不满足进入回收站的条件。
+     * **参数解释**：允许进入回收站的最小创建时间，不足此时长则删除时不满足进入回收站的条件。  **取值范围**：不涉及
      * @return recycleThresholdHour
      */
     public Integer getRecycleThresholdHour() {
@@ -43,7 +43,7 @@ public class RecycleBinPolicy {
     }
 
     /**
-     * 进入回收站的最大保留时长。
+     * **参数解释**：进入回收站的最大保留时长。  **取值范围**：不涉及
      * @return retentionHour
      */
     public Integer getRetentionHour() {

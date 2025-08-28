@@ -1,0 +1,289 @@
+package com.huaweicloud.sdk.waf.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class DeleteIpReputationRuleResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policyid")
+
+    private String policyid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timestamp")
+
+    private Long timestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private DeleteIpReputationRuleResponseBodyAction action;
+
+    public DeleteIpReputationRuleResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 被删除规则的ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public DeleteIpReputationRuleResponse withPolicyid(String policyid) {
+        this.policyid = policyid;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 所属防护策略ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return policyid
+     */
+    public String getPolicyid() {
+        return policyid;
+    }
+
+    public void setPolicyid(String policyid) {
+        this.policyid = policyid;
+    }
+
+    public DeleteIpReputationRuleResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 被删除规则的名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public DeleteIpReputationRuleResponse withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 规则删除时间戳（毫秒级） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return timestamp
+     */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public DeleteIpReputationRuleResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 被删除规则的描述 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public DeleteIpReputationRuleResponse withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 规则删除时的状态（0表示已关闭/删除） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public DeleteIpReputationRuleResponse withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 规则类型（如idc表示机房IP情报类型） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public DeleteIpReputationRuleResponse withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public DeleteIpReputationRuleResponse addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public DeleteIpReputationRuleResponse withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 规则关联的标签列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public DeleteIpReputationRuleResponse withAction(DeleteIpReputationRuleResponseBodyAction action) {
+        this.action = action;
+        return this;
+    }
+
+    public DeleteIpReputationRuleResponse withAction(Consumer<DeleteIpReputationRuleResponseBodyAction> actionSetter) {
+        if (this.action == null) {
+            this.action = new DeleteIpReputationRuleResponseBodyAction();
+            actionSetter.accept(this.action);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get action
+     * @return action
+     */
+    public DeleteIpReputationRuleResponseBodyAction getAction() {
+        return action;
+    }
+
+    public void setAction(DeleteIpReputationRuleResponseBodyAction action) {
+        this.action = action;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        DeleteIpReputationRuleResponse that = (DeleteIpReputationRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.action, that.action);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, policyid, name, timestamp, description, status, type, tags, action);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DeleteIpReputationRuleResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

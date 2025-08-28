@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 参数解释：转发策略限速的配置。
+ * **参数解释**：转发策略限速的配置。  **约束限制**：不涉及
  */
 public class CreateTrafficLimitConfig {
 
@@ -31,7 +31,7 @@ public class CreateTrafficLimitConfig {
     }
 
     /**
-     * 参数解释：转发策略qps限速。  取值范围：0-100000，单位：个/秒。0表示不限速。
+     * **参数解释**：转发策略qps限速。  **约束限制**：不涉及  **取值范围**：0-100000，单位：个/秒。0表示不限速。  **默认取值**：不涉及
      * minimum: 0
      * maximum: 100000
      * @return qps
@@ -50,7 +50,7 @@ public class CreateTrafficLimitConfig {
     }
 
     /**
-     * 参数解释：对转发策略单源(单个客户端IP)进行限速。  约束限制： - quic监听器下转发策略不支持配置单源限速。 - 指定该字段时，赋值可以为0或者为null。 - 如果qps不为0，per_source_ip_qps需要小于qps。  取值范围：0-100000，单位：个/秒。0表示不限速。
+     * **参数解释**：对转发策略单源(单个客户端IP)进行限速。  **约束限制**： - quic监听器下转发策略不支持配置单源限速。 - 指定该字段时，赋值可以为0或者为null。 - 如果qps不为0，per_source_ip_qps需要小于qps。  **取值范围**：0-100000，单位：个/秒。0表示不限速。  **默认取值**：不涉及
      * minimum: 0
      * maximum: 100000
      * @return perSourceIpQps
@@ -69,7 +69,7 @@ public class CreateTrafficLimitConfig {
     }
 
     /**
-     * 参数解释：设置当单源qps超限时，允许的局部突增请求数量。超出该限制的请求将返回503。  取值范围：0-100000，单位：个/秒。
+     * **参数解释**：设置当单源qps超限时，允许的局部突增请求数量。超出该限制的请求将返回503。  **约束限制**：不涉及  **取值范围**：0-100000，单位：个/秒。  **默认取值**：不涉及
      * minimum: 0
      * maximum: 100000
      * @return burst

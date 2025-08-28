@@ -17,6 +17,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CheckRecallKnowledgeLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CheckRecallKnowledgeLibraryResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CheckVoiceAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CheckVoiceAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitJobReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
@@ -68,6 +72,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDocumentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDocumentRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFASReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsResponse;
@@ -79,14 +86,26 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateHotWordsReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateHotWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInstructionLibraryReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInstructionLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInstructionLibraryResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInstructionReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInstructionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractiveChatReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractiveChatRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractiveChatResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeIntentReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeLibraryReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeQuestionResponse;
@@ -98,6 +117,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLivePlatformReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLivePlatformResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateLlmConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateLlmConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateLlmConfigResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateMcpServerReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateMcpServerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateMcpServerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateMetaStudioOrdersReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateMetaStudioOrdersRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateMetaStudioOrdersResponse;
@@ -117,12 +142,21 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobResp
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePluginConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePluginConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePluginConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateProductRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateProductResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateQuestionAnswerReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateQuestionAnswerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateQuestionAnswerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateRoleReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateRoleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateRoleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomResponse;
@@ -171,28 +205,46 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteDocumentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteDocumentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteHotWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInstructionLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInstructionLibraryResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInstructionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteLivePlatformResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteLlmConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteLlmConfigResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteMcpServerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteMcpServerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeletePacifyWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeletePacifyWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeletePluginConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeletePluginConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteQuestionAnswerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteQuestionAnswerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteRoleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteRoleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
@@ -210,6 +262,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DocumentSegmentInfo;
+import com.huaweicloud.sdk.metastudio.v1.model.DocumentSegmentParam;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadDocumentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DownloadDocumentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DownloadResultFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DownloadResultFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DownloadTemplateRequest;
@@ -246,18 +302,28 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanBusinessCardReque
 import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDocumentInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDocumentInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDocumentSegmentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDocumentSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionLibraryResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillRequest;
@@ -266,14 +332,24 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListLivePlatformProductsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListLivePlatformProductsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListLivePlatformsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListLivePlatformsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListLlmConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListLlmConfigResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListMcpServerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListMcpServerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPacifyWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListPluginConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListPluginConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListProductsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListProductsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListQuestionAnswerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListQuestionAnswerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListRoleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListRoleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartChatRoomsRequest;
@@ -311,7 +387,11 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.PictureModelingByUrlReq;
+import com.huaweicloud.sdk.metastudio.v1.model.PreviewDocumentSegmentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.PreviewDocumentSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ProductAssetReleation;
+import com.huaweicloud.sdk.metastudio.v1.model.RecallKnowledgeLibraryInfo;
+import com.huaweicloud.sdk.metastudio.v1.model.RecallKnowledgeLibraryRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.ReplicationAssetInfo;
 import com.huaweicloud.sdk.metastudio.v1.model.ReportLiveEventReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeReq;
@@ -319,6 +399,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscTenantConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscTenantConfigsRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscTenantConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsResponse;
@@ -355,24 +438,36 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowDocumentInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowDocumentInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionLibraryResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLlmConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLlmConfigResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowMcpServerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowMcpServerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsIntentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsRequest;
@@ -387,12 +482,20 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPluginConfigDefaultInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPluginConfigDefaultInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPluginConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPluginConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowProductResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowQuestionAnswerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowQuestionAnswerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowResourceUsageRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowResourceUsageResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowRoleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowRoleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatRoomRequest;
@@ -411,12 +514,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVocabularySwitchConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVocabularySwitchConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechRequest;
@@ -424,6 +531,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SmartChatJobsReq;
+import com.huaweicloud.sdk.metastudio.v1.model.StartDocumentSegmentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.StartDocumentSegmentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.StartDocumentSegmentTaskReq;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveReq;
@@ -455,6 +565,14 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDocumentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDocumentRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDocumentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDocumentSegmentInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDocumentSegmentInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDocumentSegmentParamRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDocumentSegmentParamResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDocumentSegmentReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotQuestionResponse;
@@ -464,11 +582,20 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotWordsSwitchReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotWordsSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateHotWordsSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionLibraryReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionLibraryResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeLibraryReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeLibraryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionResponse;
@@ -478,6 +605,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateLivePlatformReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateLivePlatformResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateLlmConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateLlmConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateLlmConfigResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateMcpServerReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateMcpServerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateMcpServerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsResponse;
@@ -487,12 +620,21 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsSwitchResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsTriggerTimeReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsTriggerTimeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsTriggerTimeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePluginConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePluginConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePluginConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateQuestionAnswerReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateQuestionAnswerRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateQuestionAnswerResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateRoleReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateRoleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateRoleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
@@ -3067,6 +3209,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDigitalHumanVideoRequest::getJobId, ListDigitalHumanVideoRequest::setJobId));
+        builder.<List<String>>withRequestField("job_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getJobIds, ListDigitalHumanVideoRequest::setJobIds));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3552,6 +3699,631 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(ShowPhotoDigitalHumanVideoResponse::getXRequestId,
                 ShowPhotoDigitalHumanVideoResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDocumentRequest, CreateDocumentResponse> createDocument =
+        genForCreateDocument();
+
+    private static HttpRequestDef<CreateDocumentRequest, CreateDocumentResponse> genForCreateDocument() {
+        // basic
+        HttpRequestDef.Builder<CreateDocumentRequest, CreateDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDocumentRequest.class, CreateDocumentResponse.class)
+                .withName("CreateDocument")
+                .withUri("/v1/{project_id}/wise-brain-manager/document")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("knowledge_library_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getKnowledgeLibraryId,
+                CreateDocumentRequest::setKnowledgeLibraryId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getAuthorization, CreateDocumentRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getXSdkDate, CreateDocumentRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getXProjectId, CreateDocumentRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getXAppUserId, CreateDocumentRequest::setXAppUserId));
+        builder.<CreateDocumentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDocumentRequestBody.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getBody, CreateDocumentRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDocumentResponse::getXRequestId, CreateDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDocumentRequest, DeleteDocumentResponse> deleteDocument =
+        genForDeleteDocument();
+
+    private static HttpRequestDef<DeleteDocumentRequest, DeleteDocumentResponse> genForDeleteDocument() {
+        // basic
+        HttpRequestDef.Builder<DeleteDocumentRequest, DeleteDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteDocumentRequest.class, DeleteDocumentResponse.class)
+                .withName("DeleteDocument")
+                .withUri("/v1/{project_id}/wise-brain-manager/document/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDocumentRequest::getAuthorization, DeleteDocumentRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDocumentRequest::getXSdkDate, DeleteDocumentRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDocumentRequest::getXProjectId, DeleteDocumentRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDocumentRequest::getXAppUserId, DeleteDocumentRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteDocumentRequest::getBody, DeleteDocumentRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDocumentResponse::getXRequestId, DeleteDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadDocumentRequest, DownloadDocumentResponse> downloadDocument =
+        genForDownloadDocument();
+
+    private static HttpRequestDef<DownloadDocumentRequest, DownloadDocumentResponse> genForDownloadDocument() {
+        // basic
+        HttpRequestDef.Builder<DownloadDocumentRequest, DownloadDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadDocumentRequest.class, DownloadDocumentResponse.class)
+                .withName("DownloadDocument")
+                .withUri("/v1/{project_id}/wise-brain-manager/document/{document_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadDocumentRequest::getDocumentId, DownloadDocumentRequest::setDocumentId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadDocumentRequest::getAuthorization,
+                DownloadDocumentRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadDocumentRequest::getXSdkDate, DownloadDocumentRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadDocumentRequest::getXProjectId, DownloadDocumentRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadDocumentRequest::getXAppUserId, DownloadDocumentRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DownloadDocumentResponse::getXRequestId, DownloadDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDocumentInfoRequest, ListDocumentInfoResponse> listDocumentInfo =
+        genForListDocumentInfo();
+
+    private static HttpRequestDef<ListDocumentInfoRequest, ListDocumentInfoResponse> genForListDocumentInfo() {
+        // basic
+        HttpRequestDef.Builder<ListDocumentInfoRequest, ListDocumentInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDocumentInfoRequest.class, ListDocumentInfoResponse.class)
+                .withName("ListDocumentInfo")
+                .withUri("/v1/{project_id}/wise-brain-manager/document")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDocumentInfoRequest::getOffset, ListDocumentInfoRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDocumentInfoRequest::getLimit, ListDocumentInfoRequest::setLimit));
+        builder.<String>withRequestField("knowledge_library_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentInfoRequest::getKnowledgeLibraryId,
+                ListDocumentInfoRequest::setKnowledgeLibraryId));
+        builder.<String>withRequestField("file_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentInfoRequest::getFileName, ListDocumentInfoRequest::setFileName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentInfoRequest::getAuthorization,
+                ListDocumentInfoRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentInfoRequest::getXSdkDate, ListDocumentInfoRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentInfoRequest::getXProjectId, ListDocumentInfoRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentInfoRequest::getXAppUserId, ListDocumentInfoRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDocumentInfoResponse::getXRequestId, ListDocumentInfoResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDocumentInfoRequest, ShowDocumentInfoResponse> showDocumentInfo =
+        genForShowDocumentInfo();
+
+    private static HttpRequestDef<ShowDocumentInfoRequest, ShowDocumentInfoResponse> genForShowDocumentInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowDocumentInfoRequest, ShowDocumentInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDocumentInfoRequest.class, ShowDocumentInfoResponse.class)
+                .withName("ShowDocumentInfo")
+                .withUri("/v1/{project_id}/wise-brain-manager/document/detail/{document_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDocumentInfoRequest::getDocumentId, ShowDocumentInfoRequest::setDocumentId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDocumentInfoRequest::getAuthorization,
+                ShowDocumentInfoRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDocumentInfoRequest::getXSdkDate, ShowDocumentInfoRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDocumentInfoRequest::getXProjectId, ShowDocumentInfoRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDocumentInfoRequest::getXAppUserId, ShowDocumentInfoRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDocumentInfoResponse::getXRequestId, ShowDocumentInfoResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDocumentRequest, UpdateDocumentResponse> updateDocument =
+        genForUpdateDocument();
+
+    private static HttpRequestDef<UpdateDocumentRequest, UpdateDocumentResponse> genForUpdateDocument() {
+        // basic
+        HttpRequestDef.Builder<UpdateDocumentRequest, UpdateDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateDocumentRequest.class, UpdateDocumentResponse.class)
+                .withName("UpdateDocument")
+                .withUri("/v1/{project_id}/wise-brain-manager/document/update/{document_id}")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getDocumentId, UpdateDocumentRequest::setDocumentId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getAuthorization, UpdateDocumentRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getXSdkDate, UpdateDocumentRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getXProjectId, UpdateDocumentRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getXAppUserId, UpdateDocumentRequest::setXAppUserId));
+        builder.<UpdateDocumentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDocumentRequestBody.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getBody, UpdateDocumentRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDocumentResponse::getXRequestId, UpdateDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDocumentSegmentRequest, ListDocumentSegmentResponse> listDocumentSegment =
+        genForListDocumentSegment();
+
+    private static HttpRequestDef<ListDocumentSegmentRequest, ListDocumentSegmentResponse> genForListDocumentSegment() {
+        // basic
+        HttpRequestDef.Builder<ListDocumentSegmentRequest, ListDocumentSegmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDocumentSegmentRequest.class, ListDocumentSegmentResponse.class)
+                .withName("ListDocumentSegment")
+                .withUri("/v1/{project_id}/wise-brain-manager/document-segment/list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDocumentSegmentRequest::getOffset, ListDocumentSegmentRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDocumentSegmentRequest::getLimit, ListDocumentSegmentRequest::setLimit));
+        builder.<String>withRequestField("document_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentSegmentRequest::getDocumentId,
+                ListDocumentSegmentRequest::setDocumentId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentSegmentRequest::getAuthorization,
+                ListDocumentSegmentRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentSegmentRequest::getXSdkDate, ListDocumentSegmentRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentSegmentRequest::getXProjectId,
+                ListDocumentSegmentRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentSegmentRequest::getXAppUserId,
+                ListDocumentSegmentRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDocumentSegmentResponse::getXRequestId,
+                ListDocumentSegmentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PreviewDocumentSegmentRequest, PreviewDocumentSegmentResponse> previewDocumentSegment =
+        genForPreviewDocumentSegment();
+
+    private static HttpRequestDef<PreviewDocumentSegmentRequest, PreviewDocumentSegmentResponse> genForPreviewDocumentSegment() {
+        // basic
+        HttpRequestDef.Builder<PreviewDocumentSegmentRequest, PreviewDocumentSegmentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, PreviewDocumentSegmentRequest.class, PreviewDocumentSegmentResponse.class)
+            .withName("PreviewDocumentSegment")
+            .withUri("/v1/{project_id}/wise-brain-manager/document-segment/preview")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PreviewDocumentSegmentRequest::getDocumentId,
+                PreviewDocumentSegmentRequest::setDocumentId));
+        builder.<Integer>withRequestField("preview_lines",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(PreviewDocumentSegmentRequest::getPreviewLines,
+                PreviewDocumentSegmentRequest::setPreviewLines));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PreviewDocumentSegmentRequest::getAuthorization,
+                PreviewDocumentSegmentRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PreviewDocumentSegmentRequest::getXSdkDate,
+                PreviewDocumentSegmentRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PreviewDocumentSegmentRequest::getXProjectId,
+                PreviewDocumentSegmentRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PreviewDocumentSegmentRequest::getXAppUserId,
+                PreviewDocumentSegmentRequest::setXAppUserId));
+        builder.<DocumentSegmentParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DocumentSegmentParam.class),
+            f -> f.withMarshaller(PreviewDocumentSegmentRequest::getBody, PreviewDocumentSegmentRequest::setBody));
+
+        // response
+        builder.<List<DocumentSegmentInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(PreviewDocumentSegmentResponse::getBody, PreviewDocumentSegmentResponse::setBody)
+                .withInnerContainerType(DocumentSegmentInfo.class));
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PreviewDocumentSegmentResponse::getXRequestId,
+                PreviewDocumentSegmentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartDocumentSegmentRequest, StartDocumentSegmentResponse> startDocumentSegment =
+        genForStartDocumentSegment();
+
+    private static HttpRequestDef<StartDocumentSegmentRequest, StartDocumentSegmentResponse> genForStartDocumentSegment() {
+        // basic
+        HttpRequestDef.Builder<StartDocumentSegmentRequest, StartDocumentSegmentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartDocumentSegmentRequest.class, StartDocumentSegmentResponse.class)
+            .withName("StartDocumentSegment")
+            .withUri("/v1/{project_id}/wise-brain-manager/document-segment/segment")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartDocumentSegmentRequest::getAuthorization,
+                StartDocumentSegmentRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartDocumentSegmentRequest::getXSdkDate, StartDocumentSegmentRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartDocumentSegmentRequest::getXProjectId,
+                StartDocumentSegmentRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartDocumentSegmentRequest::getXAppUserId,
+                StartDocumentSegmentRequest::setXAppUserId));
+        builder.<StartDocumentSegmentTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartDocumentSegmentTaskReq.class),
+            f -> f.withMarshaller(StartDocumentSegmentRequest::getBody, StartDocumentSegmentRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StartDocumentSegmentResponse::getXRequestId,
+                StartDocumentSegmentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDocumentSegmentInfoRequest, UpdateDocumentSegmentInfoResponse> updateDocumentSegmentInfo =
+        genForUpdateDocumentSegmentInfo();
+
+    private static HttpRequestDef<UpdateDocumentSegmentInfoRequest, UpdateDocumentSegmentInfoResponse> genForUpdateDocumentSegmentInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateDocumentSegmentInfoRequest, UpdateDocumentSegmentInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateDocumentSegmentInfoRequest.class,
+                    UpdateDocumentSegmentInfoResponse.class)
+                .withName("UpdateDocumentSegmentInfo")
+                .withUri("/v1/{project_id}/wise-brain-manager/document-segment/update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentInfoRequest::getAuthorization,
+                UpdateDocumentSegmentInfoRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentInfoRequest::getXSdkDate,
+                UpdateDocumentSegmentInfoRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentInfoRequest::getXProjectId,
+                UpdateDocumentSegmentInfoRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentInfoRequest::getXAppUserId,
+                UpdateDocumentSegmentInfoRequest::setXAppUserId));
+        builder.<UpdateDocumentSegmentReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDocumentSegmentReq.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentInfoRequest::getBody,
+                UpdateDocumentSegmentInfoRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDocumentSegmentInfoResponse::getXRequestId,
+                UpdateDocumentSegmentInfoResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDocumentSegmentParamRequest, UpdateDocumentSegmentParamResponse> updateDocumentSegmentParam =
+        genForUpdateDocumentSegmentParam();
+
+    private static HttpRequestDef<UpdateDocumentSegmentParamRequest, UpdateDocumentSegmentParamResponse> genForUpdateDocumentSegmentParam() {
+        // basic
+        HttpRequestDef.Builder<UpdateDocumentSegmentParamRequest, UpdateDocumentSegmentParamResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDocumentSegmentParamRequest.class,
+                    UpdateDocumentSegmentParamResponse.class)
+                .withName("UpdateDocumentSegmentParam")
+                .withUri("/v1/{project_id}/wise-brain-manager/document-segment/{document_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentParamRequest::getDocumentId,
+                UpdateDocumentSegmentParamRequest::setDocumentId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentParamRequest::getAuthorization,
+                UpdateDocumentSegmentParamRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentParamRequest::getXSdkDate,
+                UpdateDocumentSegmentParamRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentParamRequest::getXProjectId,
+                UpdateDocumentSegmentParamRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentParamRequest::getXAppUserId,
+                UpdateDocumentSegmentParamRequest::setXAppUserId));
+        builder.<DocumentSegmentParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DocumentSegmentParam.class),
+            f -> f.withMarshaller(UpdateDocumentSegmentParamRequest::getBody,
+                UpdateDocumentSegmentParamRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDocumentSegmentParamResponse::getXRequestId,
+                UpdateDocumentSegmentParamResponse::setXRequestId));
         return builder.build();
     }
 
@@ -4371,6 +5143,558 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateInstructionLibraryRequest, CreateInstructionLibraryResponse> createInstructionLibrary =
+        genForCreateInstructionLibrary();
+
+    private static HttpRequestDef<CreateInstructionLibraryRequest, CreateInstructionLibraryResponse> genForCreateInstructionLibrary() {
+        // basic
+        HttpRequestDef.Builder<CreateInstructionLibraryRequest, CreateInstructionLibraryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateInstructionLibraryRequest.class, CreateInstructionLibraryResponse.class)
+                .withName("CreateInstructionLibrary")
+                .withUri("/v1/{project_id}/wise-brain-manager/instruction-library")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstructionLibraryRequest::getAuthorization,
+                CreateInstructionLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstructionLibraryRequest::getXSdkDate,
+                CreateInstructionLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstructionLibraryRequest::getXProjectId,
+                CreateInstructionLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstructionLibraryRequest::getXAppUserId,
+                CreateInstructionLibraryRequest::setXAppUserId));
+        builder.<CreateInstructionLibraryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstructionLibraryReq.class),
+            f -> f.withMarshaller(CreateInstructionLibraryRequest::getBody, CreateInstructionLibraryRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateInstructionLibraryResponse::getXRequestId,
+                CreateInstructionLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInstructionLibraryRequest, DeleteInstructionLibraryResponse> deleteInstructionLibrary =
+        genForDeleteInstructionLibrary();
+
+    private static HttpRequestDef<DeleteInstructionLibraryRequest, DeleteInstructionLibraryResponse> genForDeleteInstructionLibrary() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstructionLibraryRequest, DeleteInstructionLibraryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, DeleteInstructionLibraryRequest.class, DeleteInstructionLibraryResponse.class)
+                .withName("DeleteInstructionLibrary")
+                .withUri("/v1/{project_id}/wise-brain-manager/instruction-library/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstructionLibraryRequest::getAuthorization,
+                DeleteInstructionLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstructionLibraryRequest::getXSdkDate,
+                DeleteInstructionLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstructionLibraryRequest::getXProjectId,
+                DeleteInstructionLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstructionLibraryRequest::getXAppUserId,
+                DeleteInstructionLibraryRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteInstructionLibraryRequest::getBody, DeleteInstructionLibraryRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteInstructionLibraryResponse::getXRequestId,
+                DeleteInstructionLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstructionLibraryRequest, ListInstructionLibraryResponse> listInstructionLibrary =
+        genForListInstructionLibrary();
+
+    private static HttpRequestDef<ListInstructionLibraryRequest, ListInstructionLibraryResponse> genForListInstructionLibrary() {
+        // basic
+        HttpRequestDef.Builder<ListInstructionLibraryRequest, ListInstructionLibraryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstructionLibraryRequest.class, ListInstructionLibraryResponse.class)
+            .withName("ListInstructionLibrary")
+            .withUri("/v1/{project_id}/wise-brain-manager/instruction-library")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstructionLibraryRequest::getOffset, ListInstructionLibraryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstructionLibraryRequest::getLimit, ListInstructionLibraryRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionLibraryRequest::getName, ListInstructionLibraryRequest::setName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionLibraryRequest::getAuthorization,
+                ListInstructionLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionLibraryRequest::getXSdkDate,
+                ListInstructionLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionLibraryRequest::getXProjectId,
+                ListInstructionLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionLibraryRequest::getXAppUserId,
+                ListInstructionLibraryRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstructionLibraryResponse::getXRequestId,
+                ListInstructionLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstructionLibraryRequest, ShowInstructionLibraryResponse> showInstructionLibrary =
+        genForShowInstructionLibrary();
+
+    private static HttpRequestDef<ShowInstructionLibraryRequest, ShowInstructionLibraryResponse> genForShowInstructionLibrary() {
+        // basic
+        HttpRequestDef.Builder<ShowInstructionLibraryRequest, ShowInstructionLibraryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInstructionLibraryRequest.class, ShowInstructionLibraryResponse.class)
+            .withName("ShowInstructionLibrary")
+            .withUri("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instruction_library_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionLibraryRequest::getInstructionLibraryId,
+                ShowInstructionLibraryRequest::setInstructionLibraryId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionLibraryRequest::getAuthorization,
+                ShowInstructionLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionLibraryRequest::getXSdkDate,
+                ShowInstructionLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionLibraryRequest::getXProjectId,
+                ShowInstructionLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionLibraryRequest::getXAppUserId,
+                ShowInstructionLibraryRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInstructionLibraryResponse::getXRequestId,
+                ShowInstructionLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstructionLibraryRequest, UpdateInstructionLibraryResponse> updateInstructionLibrary =
+        genForUpdateInstructionLibrary();
+
+    private static HttpRequestDef<UpdateInstructionLibraryRequest, UpdateInstructionLibraryResponse> genForUpdateInstructionLibrary() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstructionLibraryRequest, UpdateInstructionLibraryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateInstructionLibraryRequest.class, UpdateInstructionLibraryResponse.class)
+                .withName("UpdateInstructionLibrary")
+                .withUri("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instruction_library_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionLibraryRequest::getInstructionLibraryId,
+                UpdateInstructionLibraryRequest::setInstructionLibraryId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionLibraryRequest::getAuthorization,
+                UpdateInstructionLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionLibraryRequest::getXSdkDate,
+                UpdateInstructionLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionLibraryRequest::getXProjectId,
+                UpdateInstructionLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionLibraryRequest::getXAppUserId,
+                UpdateInstructionLibraryRequest::setXAppUserId));
+        builder.<UpdateInstructionLibraryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstructionLibraryReq.class),
+            f -> f.withMarshaller(UpdateInstructionLibraryRequest::getBody, UpdateInstructionLibraryRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateInstructionLibraryResponse::getXRequestId,
+                UpdateInstructionLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstructionRequest, CreateInstructionResponse> createInstruction =
+        genForCreateInstruction();
+
+    private static HttpRequestDef<CreateInstructionRequest, CreateInstructionResponse> genForCreateInstruction() {
+        // basic
+        HttpRequestDef.Builder<CreateInstructionRequest, CreateInstructionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInstructionRequest.class, CreateInstructionResponse.class)
+                .withName("CreateInstruction")
+                .withUri("/v1/{project_id}/wise-brain-manager/instruction")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstructionRequest::getAuthorization,
+                CreateInstructionRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstructionRequest::getXSdkDate, CreateInstructionRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstructionRequest::getXProjectId, CreateInstructionRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstructionRequest::getXAppUserId, CreateInstructionRequest::setXAppUserId));
+        builder.<CreateInstructionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstructionReq.class),
+            f -> f.withMarshaller(CreateInstructionRequest::getBody, CreateInstructionRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateInstructionResponse::getXRequestId, CreateInstructionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInstructionRequest, DeleteInstructionResponse> deleteInstruction =
+        genForDeleteInstruction();
+
+    private static HttpRequestDef<DeleteInstructionRequest, DeleteInstructionResponse> genForDeleteInstruction() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstructionRequest, DeleteInstructionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteInstructionRequest.class, DeleteInstructionResponse.class)
+                .withName("DeleteInstruction")
+                .withUri("/v1/{project_id}/wise-brain-manager/instruction/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstructionRequest::getAuthorization,
+                DeleteInstructionRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstructionRequest::getXSdkDate, DeleteInstructionRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstructionRequest::getXProjectId, DeleteInstructionRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstructionRequest::getXAppUserId, DeleteInstructionRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteInstructionRequest::getBody, DeleteInstructionRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteInstructionResponse::getXRequestId, DeleteInstructionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstructionRequest, ListInstructionResponse> listInstruction =
+        genForListInstruction();
+
+    private static HttpRequestDef<ListInstructionRequest, ListInstructionResponse> genForListInstruction() {
+        // basic
+        HttpRequestDef.Builder<ListInstructionRequest, ListInstructionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstructionRequest.class, ListInstructionResponse.class)
+                .withName("ListInstruction")
+                .withUri("/v1/{project_id}/wise-brain-manager/instruction")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstructionRequest::getOffset, ListInstructionRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstructionRequest::getLimit, ListInstructionRequest::setLimit));
+        builder.<String>withRequestField("instruction_library_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionRequest::getInstructionLibraryId,
+                ListInstructionRequest::setInstructionLibraryId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionRequest::getName, ListInstructionRequest::setName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionRequest::getAuthorization, ListInstructionRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionRequest::getXSdkDate, ListInstructionRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionRequest::getXProjectId, ListInstructionRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstructionRequest::getXAppUserId, ListInstructionRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstructionResponse::getXRequestId, ListInstructionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstructionRequest, ShowInstructionResponse> showInstruction =
+        genForShowInstruction();
+
+    private static HttpRequestDef<ShowInstructionRequest, ShowInstructionResponse> genForShowInstruction() {
+        // basic
+        HttpRequestDef.Builder<ShowInstructionRequest, ShowInstructionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstructionRequest.class, ShowInstructionResponse.class)
+                .withName("ShowInstruction")
+                .withUri("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instruction_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionRequest::getInstructionId, ShowInstructionRequest::setInstructionId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionRequest::getAuthorization, ShowInstructionRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionRequest::getXSdkDate, ShowInstructionRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionRequest::getXProjectId, ShowInstructionRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstructionRequest::getXAppUserId, ShowInstructionRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInstructionResponse::getXRequestId, ShowInstructionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstructionRequest, UpdateInstructionResponse> updateInstruction =
+        genForUpdateInstruction();
+
+    private static HttpRequestDef<UpdateInstructionRequest, UpdateInstructionResponse> genForUpdateInstruction() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstructionRequest, UpdateInstructionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstructionRequest.class, UpdateInstructionResponse.class)
+                .withName("UpdateInstruction")
+                .withUri("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instruction_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionRequest::getInstructionId,
+                UpdateInstructionRequest::setInstructionId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionRequest::getAuthorization,
+                UpdateInstructionRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionRequest::getXSdkDate, UpdateInstructionRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionRequest::getXProjectId, UpdateInstructionRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstructionRequest::getXAppUserId, UpdateInstructionRequest::setXAppUserId));
+        builder.<UpdateInstructionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstructionReq.class),
+            f -> f.withMarshaller(UpdateInstructionRequest::getBody, UpdateInstructionRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateInstructionResponse::getXRequestId, UpdateInstructionResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroup =
         genForCreateInteractionRuleGroup();
 
@@ -4626,6 +5950,59 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(UpdateInteractionRuleGroupResponse::getXRequestId,
                 UpdateInteractionRuleGroupResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInteractiveChatRequest, CreateInteractiveChatResponse> createInteractiveChat =
+        genForCreateInteractiveChat();
+
+    private static HttpRequestDef<CreateInteractiveChatRequest, CreateInteractiveChatResponse> genForCreateInteractiveChat() {
+        // basic
+        HttpRequestDef.Builder<CreateInteractiveChatRequest, CreateInteractiveChatResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateInteractiveChatRequest.class, CreateInteractiveChatResponse.class)
+            .withName("CreateInteractiveChat")
+            .withUri("/v1/{project_id}/wise-brain-manager/chat")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractiveChatRequest::getAuthorization,
+                CreateInteractiveChatRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractiveChatRequest::getXSdkDate,
+                CreateInteractiveChatRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractiveChatRequest::getXProjectId,
+                CreateInteractiveChatRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractiveChatRequest::getXAppUserId,
+                CreateInteractiveChatRequest::setXAppUserId));
+        builder.<CreateInteractiveChatReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInteractiveChatReq.class),
+            f -> f.withMarshaller(CreateInteractiveChatRequest::getBody, CreateInteractiveChatRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateInteractiveChatResponse::getXRequestId,
+                CreateInteractiveChatResponse::setXRequestId));
         return builder.build();
     }
 
@@ -4959,6 +6336,363 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(UpdateKnowledgeIntentResponse::getXRequestId,
                 UpdateKnowledgeIntentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckRecallKnowledgeLibraryRequest, CheckRecallKnowledgeLibraryResponse> checkRecallKnowledgeLibrary =
+        genForCheckRecallKnowledgeLibrary();
+
+    private static HttpRequestDef<CheckRecallKnowledgeLibraryRequest, CheckRecallKnowledgeLibraryResponse> genForCheckRecallKnowledgeLibrary() {
+        // basic
+        HttpRequestDef.Builder<CheckRecallKnowledgeLibraryRequest, CheckRecallKnowledgeLibraryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckRecallKnowledgeLibraryRequest.class,
+                    CheckRecallKnowledgeLibraryResponse.class)
+                .withName("CheckRecallKnowledgeLibrary")
+                .withUri("/v1/{project_id}/wise-brain-manager/knowledge-library/recall")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRecallKnowledgeLibraryRequest::getAuthorization,
+                CheckRecallKnowledgeLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRecallKnowledgeLibraryRequest::getXSdkDate,
+                CheckRecallKnowledgeLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRecallKnowledgeLibraryRequest::getXProjectId,
+                CheckRecallKnowledgeLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckRecallKnowledgeLibraryRequest::getXAppUserId,
+                CheckRecallKnowledgeLibraryRequest::setXAppUserId));
+        builder.<RecallKnowledgeLibraryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RecallKnowledgeLibraryRequestBody.class),
+            f -> f.withMarshaller(CheckRecallKnowledgeLibraryRequest::getBody,
+                CheckRecallKnowledgeLibraryRequest::setBody));
+
+        // response
+        builder.<List<RecallKnowledgeLibraryInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(CheckRecallKnowledgeLibraryResponse::getBody,
+                    CheckRecallKnowledgeLibraryResponse::setBody)
+                .withInnerContainerType(RecallKnowledgeLibraryInfo.class));
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckRecallKnowledgeLibraryResponse::getXRequestId,
+                CheckRecallKnowledgeLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateKnowledgeLibraryRequest, CreateKnowledgeLibraryResponse> createKnowledgeLibrary =
+        genForCreateKnowledgeLibrary();
+
+    private static HttpRequestDef<CreateKnowledgeLibraryRequest, CreateKnowledgeLibraryResponse> genForCreateKnowledgeLibrary() {
+        // basic
+        HttpRequestDef.Builder<CreateKnowledgeLibraryRequest, CreateKnowledgeLibraryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateKnowledgeLibraryRequest.class, CreateKnowledgeLibraryResponse.class)
+            .withName("CreateKnowledgeLibrary")
+            .withUri("/v1/{project_id}/wise-brain-manager/knowledge-library")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateKnowledgeLibraryRequest::getAuthorization,
+                CreateKnowledgeLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateKnowledgeLibraryRequest::getXSdkDate,
+                CreateKnowledgeLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateKnowledgeLibraryRequest::getXProjectId,
+                CreateKnowledgeLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateKnowledgeLibraryRequest::getXAppUserId,
+                CreateKnowledgeLibraryRequest::setXAppUserId));
+        builder.<CreateKnowledgeLibraryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateKnowledgeLibraryReq.class),
+            f -> f.withMarshaller(CreateKnowledgeLibraryRequest::getBody, CreateKnowledgeLibraryRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateKnowledgeLibraryResponse::getXRequestId,
+                CreateKnowledgeLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteKnowledgeLibraryRequest, DeleteKnowledgeLibraryResponse> deleteKnowledgeLibrary =
+        genForDeleteKnowledgeLibrary();
+
+    private static HttpRequestDef<DeleteKnowledgeLibraryRequest, DeleteKnowledgeLibraryResponse> genForDeleteKnowledgeLibrary() {
+        // basic
+        HttpRequestDef.Builder<DeleteKnowledgeLibraryRequest, DeleteKnowledgeLibraryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteKnowledgeLibraryRequest.class, DeleteKnowledgeLibraryResponse.class)
+            .withName("DeleteKnowledgeLibrary")
+            .withUri("/v1/{project_id}/wise-brain-manager/knowledge-library/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKnowledgeLibraryRequest::getAuthorization,
+                DeleteKnowledgeLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKnowledgeLibraryRequest::getXSdkDate,
+                DeleteKnowledgeLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKnowledgeLibraryRequest::getXProjectId,
+                DeleteKnowledgeLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKnowledgeLibraryRequest::getXAppUserId,
+                DeleteKnowledgeLibraryRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteKnowledgeLibraryRequest::getBody, DeleteKnowledgeLibraryRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteKnowledgeLibraryResponse::getXRequestId,
+                DeleteKnowledgeLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListKnowledgeLibraryRequest, ListKnowledgeLibraryResponse> listKnowledgeLibrary =
+        genForListKnowledgeLibrary();
+
+    private static HttpRequestDef<ListKnowledgeLibraryRequest, ListKnowledgeLibraryResponse> genForListKnowledgeLibrary() {
+        // basic
+        HttpRequestDef.Builder<ListKnowledgeLibraryRequest, ListKnowledgeLibraryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListKnowledgeLibraryRequest.class, ListKnowledgeLibraryResponse.class)
+            .withName("ListKnowledgeLibrary")
+            .withUri("/v1/{project_id}/wise-brain-manager/knowledge-library")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getOffset, ListKnowledgeLibraryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getLimit, ListKnowledgeLibraryRequest::setLimit));
+        builder.<ListKnowledgeLibraryRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListKnowledgeLibraryRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getLanguage, ListKnowledgeLibraryRequest::setLanguage));
+        builder.<ListKnowledgeLibraryRequest.KnowledgeTypeEnum>withRequestField("knowledge_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListKnowledgeLibraryRequest.KnowledgeTypeEnum.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getKnowledgeType,
+                ListKnowledgeLibraryRequest::setKnowledgeType));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getName, ListKnowledgeLibraryRequest::setName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getAuthorization,
+                ListKnowledgeLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getXSdkDate, ListKnowledgeLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getXProjectId,
+                ListKnowledgeLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKnowledgeLibraryRequest::getXAppUserId,
+                ListKnowledgeLibraryRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListKnowledgeLibraryResponse::getXRequestId,
+                ListKnowledgeLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKnowledgeLibraryRequest, ShowKnowledgeLibraryResponse> showKnowledgeLibrary =
+        genForShowKnowledgeLibrary();
+
+    private static HttpRequestDef<ShowKnowledgeLibraryRequest, ShowKnowledgeLibraryResponse> genForShowKnowledgeLibrary() {
+        // basic
+        HttpRequestDef.Builder<ShowKnowledgeLibraryRequest, ShowKnowledgeLibraryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowKnowledgeLibraryRequest.class, ShowKnowledgeLibraryResponse.class)
+            .withName("ShowKnowledgeLibrary")
+            .withUri("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("knowledge_library_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKnowledgeLibraryRequest::getKnowledgeLibraryId,
+                ShowKnowledgeLibraryRequest::setKnowledgeLibraryId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKnowledgeLibraryRequest::getAuthorization,
+                ShowKnowledgeLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKnowledgeLibraryRequest::getXSdkDate, ShowKnowledgeLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKnowledgeLibraryRequest::getXProjectId,
+                ShowKnowledgeLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKnowledgeLibraryRequest::getXAppUserId,
+                ShowKnowledgeLibraryRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowKnowledgeLibraryResponse::getXRequestId,
+                ShowKnowledgeLibraryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKnowledgeLibraryRequest, UpdateKnowledgeLibraryResponse> updateKnowledgeLibrary =
+        genForUpdateKnowledgeLibrary();
+
+    private static HttpRequestDef<UpdateKnowledgeLibraryRequest, UpdateKnowledgeLibraryResponse> genForUpdateKnowledgeLibrary() {
+        // basic
+        HttpRequestDef.Builder<UpdateKnowledgeLibraryRequest, UpdateKnowledgeLibraryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateKnowledgeLibraryRequest.class, UpdateKnowledgeLibraryResponse.class)
+            .withName("UpdateKnowledgeLibrary")
+            .withUri("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("knowledge_library_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKnowledgeLibraryRequest::getKnowledgeLibraryId,
+                UpdateKnowledgeLibraryRequest::setKnowledgeLibraryId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKnowledgeLibraryRequest::getAuthorization,
+                UpdateKnowledgeLibraryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKnowledgeLibraryRequest::getXSdkDate,
+                UpdateKnowledgeLibraryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKnowledgeLibraryRequest::getXProjectId,
+                UpdateKnowledgeLibraryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKnowledgeLibraryRequest::getXAppUserId,
+                UpdateKnowledgeLibraryRequest::setXAppUserId));
+        builder.<UpdateKnowledgeLibraryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateKnowledgeLibraryReq.class),
+            f -> f.withMarshaller(UpdateKnowledgeLibraryRequest::getBody, UpdateKnowledgeLibraryRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateKnowledgeLibraryResponse::getXRequestId,
+                UpdateKnowledgeLibraryResponse::setXRequestId));
         return builder.build();
     }
 
@@ -6010,6 +7744,518 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateLlmConfigRequest, CreateLlmConfigResponse> createLlmConfig =
+        genForCreateLlmConfig();
+
+    private static HttpRequestDef<CreateLlmConfigRequest, CreateLlmConfigResponse> genForCreateLlmConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateLlmConfigRequest, CreateLlmConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLlmConfigRequest.class, CreateLlmConfigResponse.class)
+                .withName("CreateLlmConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/llm-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLlmConfigRequest::getAuthorization, CreateLlmConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLlmConfigRequest::getXSdkDate, CreateLlmConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLlmConfigRequest::getXProjectId, CreateLlmConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLlmConfigRequest::getXAppUserId, CreateLlmConfigRequest::setXAppUserId));
+        builder.<CreateLlmConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLlmConfigReq.class),
+            f -> f.withMarshaller(CreateLlmConfigRequest::getBody, CreateLlmConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateLlmConfigResponse::getXRequestId, CreateLlmConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLlmConfigRequest, DeleteLlmConfigResponse> deleteLlmConfig =
+        genForDeleteLlmConfig();
+
+    private static HttpRequestDef<DeleteLlmConfigRequest, DeleteLlmConfigResponse> genForDeleteLlmConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteLlmConfigRequest, DeleteLlmConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteLlmConfigRequest.class, DeleteLlmConfigResponse.class)
+                .withName("DeleteLlmConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/llm-config/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLlmConfigRequest::getAuthorization, DeleteLlmConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLlmConfigRequest::getXSdkDate, DeleteLlmConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLlmConfigRequest::getXProjectId, DeleteLlmConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLlmConfigRequest::getXAppUserId, DeleteLlmConfigRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteLlmConfigRequest::getBody, DeleteLlmConfigRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteLlmConfigResponse::getXRequestId, DeleteLlmConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLlmConfigRequest, ListLlmConfigResponse> listLlmConfig =
+        genForListLlmConfig();
+
+    private static HttpRequestDef<ListLlmConfigRequest, ListLlmConfigResponse> genForListLlmConfig() {
+        // basic
+        HttpRequestDef.Builder<ListLlmConfigRequest, ListLlmConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLlmConfigRequest.class, ListLlmConfigResponse.class)
+                .withName("ListLlmConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/llm-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLlmConfigRequest::getOffset, ListLlmConfigRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLlmConfigRequest::getLimit, ListLlmConfigRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLlmConfigRequest::getName, ListLlmConfigRequest::setName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLlmConfigRequest::getAuthorization, ListLlmConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLlmConfigRequest::getXSdkDate, ListLlmConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLlmConfigRequest::getXProjectId, ListLlmConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLlmConfigRequest::getXAppUserId, ListLlmConfigRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListLlmConfigResponse::getXRequestId, ListLlmConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLlmConfigRequest, ShowLlmConfigResponse> showLlmConfig =
+        genForShowLlmConfig();
+
+    private static HttpRequestDef<ShowLlmConfigRequest, ShowLlmConfigResponse> genForShowLlmConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowLlmConfigRequest, ShowLlmConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLlmConfigRequest.class, ShowLlmConfigResponse.class)
+                .withName("ShowLlmConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("llm_config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLlmConfigRequest::getLlmConfigId, ShowLlmConfigRequest::setLlmConfigId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLlmConfigRequest::getAuthorization, ShowLlmConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLlmConfigRequest::getXSdkDate, ShowLlmConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLlmConfigRequest::getXProjectId, ShowLlmConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLlmConfigRequest::getXAppUserId, ShowLlmConfigRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowLlmConfigResponse::getXRequestId, ShowLlmConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLlmConfigRequest, UpdateLlmConfigResponse> updateLlmConfig =
+        genForUpdateLlmConfig();
+
+    private static HttpRequestDef<UpdateLlmConfigRequest, UpdateLlmConfigResponse> genForUpdateLlmConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateLlmConfigRequest, UpdateLlmConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLlmConfigRequest.class, UpdateLlmConfigResponse.class)
+                .withName("UpdateLlmConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("llm_config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLlmConfigRequest::getLlmConfigId, UpdateLlmConfigRequest::setLlmConfigId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLlmConfigRequest::getAuthorization, UpdateLlmConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLlmConfigRequest::getXSdkDate, UpdateLlmConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLlmConfigRequest::getXProjectId, UpdateLlmConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLlmConfigRequest::getXAppUserId, UpdateLlmConfigRequest::setXAppUserId));
+        builder.<UpdateLlmConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLlmConfigReq.class),
+            f -> f.withMarshaller(UpdateLlmConfigRequest::getBody, UpdateLlmConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateLlmConfigResponse::getXRequestId, UpdateLlmConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMcpServerRequest, CreateMcpServerResponse> createMcpServer =
+        genForCreateMcpServer();
+
+    private static HttpRequestDef<CreateMcpServerRequest, CreateMcpServerResponse> genForCreateMcpServer() {
+        // basic
+        HttpRequestDef.Builder<CreateMcpServerRequest, CreateMcpServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMcpServerRequest.class, CreateMcpServerResponse.class)
+                .withName("CreateMcpServer")
+                .withUri("/v1/{project_id}/wise-brain-manager/mcp-server")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMcpServerRequest::getAuthorization, CreateMcpServerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMcpServerRequest::getXSdkDate, CreateMcpServerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMcpServerRequest::getXProjectId, CreateMcpServerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMcpServerRequest::getXAppUserId, CreateMcpServerRequest::setXAppUserId));
+        builder.<CreateMcpServerReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMcpServerReq.class),
+            f -> f.withMarshaller(CreateMcpServerRequest::getBody, CreateMcpServerRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateMcpServerResponse::getXRequestId, CreateMcpServerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMcpServerRequest, DeleteMcpServerResponse> deleteMcpServer =
+        genForDeleteMcpServer();
+
+    private static HttpRequestDef<DeleteMcpServerRequest, DeleteMcpServerResponse> genForDeleteMcpServer() {
+        // basic
+        HttpRequestDef.Builder<DeleteMcpServerRequest, DeleteMcpServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteMcpServerRequest.class, DeleteMcpServerResponse.class)
+                .withName("DeleteMcpServer")
+                .withUri("/v1/{project_id}/wise-brain-manager/mcp-server/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMcpServerRequest::getAuthorization, DeleteMcpServerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMcpServerRequest::getXSdkDate, DeleteMcpServerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMcpServerRequest::getXProjectId, DeleteMcpServerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMcpServerRequest::getXAppUserId, DeleteMcpServerRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteMcpServerRequest::getBody, DeleteMcpServerRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteMcpServerResponse::getXRequestId, DeleteMcpServerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMcpServerRequest, ListMcpServerResponse> listMcpServer =
+        genForListMcpServer();
+
+    private static HttpRequestDef<ListMcpServerRequest, ListMcpServerResponse> genForListMcpServer() {
+        // basic
+        HttpRequestDef.Builder<ListMcpServerRequest, ListMcpServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMcpServerRequest.class, ListMcpServerResponse.class)
+                .withName("ListMcpServer")
+                .withUri("/v1/{project_id}/wise-brain-manager/mcp-server")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMcpServerRequest::getOffset, ListMcpServerRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMcpServerRequest::getLimit, ListMcpServerRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMcpServerRequest::getName, ListMcpServerRequest::setName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMcpServerRequest::getAuthorization, ListMcpServerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMcpServerRequest::getXSdkDate, ListMcpServerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMcpServerRequest::getXProjectId, ListMcpServerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMcpServerRequest::getXAppUserId, ListMcpServerRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListMcpServerResponse::getXRequestId, ListMcpServerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMcpServerRequest, ShowMcpServerResponse> showMcpServer =
+        genForShowMcpServer();
+
+    private static HttpRequestDef<ShowMcpServerRequest, ShowMcpServerResponse> genForShowMcpServer() {
+        // basic
+        HttpRequestDef.Builder<ShowMcpServerRequest, ShowMcpServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMcpServerRequest.class, ShowMcpServerResponse.class)
+                .withName("ShowMcpServer")
+                .withUri("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("mcp_server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMcpServerRequest::getMcpServerId, ShowMcpServerRequest::setMcpServerId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMcpServerRequest::getAuthorization, ShowMcpServerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMcpServerRequest::getXSdkDate, ShowMcpServerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMcpServerRequest::getXProjectId, ShowMcpServerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMcpServerRequest::getXAppUserId, ShowMcpServerRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowMcpServerResponse::getXRequestId, ShowMcpServerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMcpServerRequest, UpdateMcpServerResponse> updateMcpServer =
+        genForUpdateMcpServer();
+
+    private static HttpRequestDef<UpdateMcpServerRequest, UpdateMcpServerResponse> genForUpdateMcpServer() {
+        // basic
+        HttpRequestDef.Builder<UpdateMcpServerRequest, UpdateMcpServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMcpServerRequest.class, UpdateMcpServerResponse.class)
+                .withName("UpdateMcpServer")
+                .withUri("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("mcp_server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMcpServerRequest::getMcpServerId, UpdateMcpServerRequest::setMcpServerId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMcpServerRequest::getAuthorization, UpdateMcpServerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMcpServerRequest::getXSdkDate, UpdateMcpServerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMcpServerRequest::getXProjectId, UpdateMcpServerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMcpServerRequest::getXAppUserId, UpdateMcpServerRequest::setXAppUserId));
+        builder.<UpdateMcpServerReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateMcpServerReq.class),
+            f -> f.withMarshaller(UpdateMcpServerRequest::getBody, UpdateMcpServerRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateMcpServerResponse::getXRequestId, UpdateMcpServerResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateOnceCodeRequest, CreateOnceCodeResponse> createOnceCode =
         genForCreateOnceCode();
 
@@ -6967,6 +9213,329 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePluginConfigRequest, CreatePluginConfigResponse> createPluginConfig =
+        genForCreatePluginConfig();
+
+    private static HttpRequestDef<CreatePluginConfigRequest, CreatePluginConfigResponse> genForCreatePluginConfig() {
+        // basic
+        HttpRequestDef.Builder<CreatePluginConfigRequest, CreatePluginConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePluginConfigRequest.class, CreatePluginConfigResponse.class)
+                .withName("CreatePluginConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/plugin-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginConfigRequest::getAuthorization,
+                CreatePluginConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginConfigRequest::getXSdkDate, CreatePluginConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginConfigRequest::getXProjectId, CreatePluginConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginConfigRequest::getXAppUserId, CreatePluginConfigRequest::setXAppUserId));
+        builder.<CreatePluginConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePluginConfigReq.class),
+            f -> f.withMarshaller(CreatePluginConfigRequest::getBody, CreatePluginConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePluginConfigResponse::getXRequestId,
+                CreatePluginConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePluginConfigRequest, DeletePluginConfigResponse> deletePluginConfig =
+        genForDeletePluginConfig();
+
+    private static HttpRequestDef<DeletePluginConfigRequest, DeletePluginConfigResponse> genForDeletePluginConfig() {
+        // basic
+        HttpRequestDef.Builder<DeletePluginConfigRequest, DeletePluginConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeletePluginConfigRequest.class, DeletePluginConfigResponse.class)
+                .withName("DeletePluginConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/plugin-config/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginConfigRequest::getAuthorization,
+                DeletePluginConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginConfigRequest::getXSdkDate, DeletePluginConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginConfigRequest::getXProjectId, DeletePluginConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginConfigRequest::getXAppUserId, DeletePluginConfigRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeletePluginConfigRequest::getBody, DeletePluginConfigRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeletePluginConfigResponse::getXRequestId,
+                DeletePluginConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPluginConfigRequest, ListPluginConfigResponse> listPluginConfig =
+        genForListPluginConfig();
+
+    private static HttpRequestDef<ListPluginConfigRequest, ListPluginConfigResponse> genForListPluginConfig() {
+        // basic
+        HttpRequestDef.Builder<ListPluginConfigRequest, ListPluginConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPluginConfigRequest.class, ListPluginConfigResponse.class)
+                .withName("ListPluginConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/plugin-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginConfigRequest::getOffset, ListPluginConfigRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginConfigRequest::getLimit, ListPluginConfigRequest::setLimit));
+        builder.<ListPluginConfigRequest.PluginProviderEnum>withRequestField("plugin_provider",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPluginConfigRequest.PluginProviderEnum.class),
+            f -> f.withMarshaller(ListPluginConfigRequest::getPluginProvider,
+                ListPluginConfigRequest::setPluginProvider));
+        builder.<ListPluginConfigRequest.PluginTypeEnum>withRequestField("plugin_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPluginConfigRequest.PluginTypeEnum.class),
+            f -> f.withMarshaller(ListPluginConfigRequest::getPluginType, ListPluginConfigRequest::setPluginType));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginConfigRequest::getAuthorization,
+                ListPluginConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginConfigRequest::getXSdkDate, ListPluginConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginConfigRequest::getXProjectId, ListPluginConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginConfigRequest::getXAppUserId, ListPluginConfigRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPluginConfigResponse::getXRequestId, ListPluginConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPluginConfigRequest, ShowPluginConfigResponse> showPluginConfig =
+        genForShowPluginConfig();
+
+    private static HttpRequestDef<ShowPluginConfigRequest, ShowPluginConfigResponse> genForShowPluginConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowPluginConfigRequest, ShowPluginConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPluginConfigRequest.class, ShowPluginConfigResponse.class)
+                .withName("ShowPluginConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("plugin_config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigRequest::getPluginConfigId,
+                ShowPluginConfigRequest::setPluginConfigId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigRequest::getAuthorization,
+                ShowPluginConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigRequest::getXSdkDate, ShowPluginConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigRequest::getXProjectId, ShowPluginConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigRequest::getXAppUserId, ShowPluginConfigRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPluginConfigResponse::getXRequestId, ShowPluginConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPluginConfigDefaultInfoRequest, ShowPluginConfigDefaultInfoResponse> showPluginConfigDefaultInfo =
+        genForShowPluginConfigDefaultInfo();
+
+    private static HttpRequestDef<ShowPluginConfigDefaultInfoRequest, ShowPluginConfigDefaultInfoResponse> genForShowPluginConfigDefaultInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowPluginConfigDefaultInfoRequest, ShowPluginConfigDefaultInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPluginConfigDefaultInfoRequest.class,
+                    ShowPluginConfigDefaultInfoResponse.class)
+                .withName("ShowPluginConfigDefaultInfo")
+                .withUri("/v1/{project_id}/wise-brain-manager/plugin-config-default")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigDefaultInfoRequest::getAuthorization,
+                ShowPluginConfigDefaultInfoRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigDefaultInfoRequest::getXSdkDate,
+                ShowPluginConfigDefaultInfoRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigDefaultInfoRequest::getXProjectId,
+                ShowPluginConfigDefaultInfoRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginConfigDefaultInfoRequest::getXAppUserId,
+                ShowPluginConfigDefaultInfoRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPluginConfigDefaultInfoResponse::getXRequestId,
+                ShowPluginConfigDefaultInfoResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePluginConfigRequest, UpdatePluginConfigResponse> updatePluginConfig =
+        genForUpdatePluginConfig();
+
+    private static HttpRequestDef<UpdatePluginConfigRequest, UpdatePluginConfigResponse> genForUpdatePluginConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdatePluginConfigRequest, UpdatePluginConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePluginConfigRequest.class, UpdatePluginConfigResponse.class)
+                .withName("UpdatePluginConfig")
+                .withUri("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("plugin_config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginConfigRequest::getPluginConfigId,
+                UpdatePluginConfigRequest::setPluginConfigId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginConfigRequest::getAuthorization,
+                UpdatePluginConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginConfigRequest::getXSdkDate, UpdatePluginConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginConfigRequest::getXProjectId, UpdatePluginConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginConfigRequest::getXAppUserId, UpdatePluginConfigRequest::setXAppUserId));
+        builder.<UpdatePluginConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePluginConfigReq.class),
+            f -> f.withMarshaller(UpdatePluginConfigRequest::getBody, UpdatePluginConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePluginConfigResponse::getXRequestId,
+                UpdatePluginConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
         genForCreateProduct();
 
@@ -7303,6 +9872,286 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateQuestionAnswerRequest, CreateQuestionAnswerResponse> createQuestionAnswer =
+        genForCreateQuestionAnswer();
+
+    private static HttpRequestDef<CreateQuestionAnswerRequest, CreateQuestionAnswerResponse> genForCreateQuestionAnswer() {
+        // basic
+        HttpRequestDef.Builder<CreateQuestionAnswerRequest, CreateQuestionAnswerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateQuestionAnswerRequest.class, CreateQuestionAnswerResponse.class)
+            .withName("CreateQuestionAnswer")
+            .withUri("/v1/{project_id}/wise-brain-manager/question-answer")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateQuestionAnswerRequest::getAuthorization,
+                CreateQuestionAnswerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateQuestionAnswerRequest::getXSdkDate, CreateQuestionAnswerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateQuestionAnswerRequest::getXProjectId,
+                CreateQuestionAnswerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateQuestionAnswerRequest::getXAppUserId,
+                CreateQuestionAnswerRequest::setXAppUserId));
+        builder.<CreateQuestionAnswerReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateQuestionAnswerReq.class),
+            f -> f.withMarshaller(CreateQuestionAnswerRequest::getBody, CreateQuestionAnswerRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateQuestionAnswerResponse::getXRequestId,
+                CreateQuestionAnswerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteQuestionAnswerRequest, DeleteQuestionAnswerResponse> deleteQuestionAnswer =
+        genForDeleteQuestionAnswer();
+
+    private static HttpRequestDef<DeleteQuestionAnswerRequest, DeleteQuestionAnswerResponse> genForDeleteQuestionAnswer() {
+        // basic
+        HttpRequestDef.Builder<DeleteQuestionAnswerRequest, DeleteQuestionAnswerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteQuestionAnswerRequest.class, DeleteQuestionAnswerResponse.class)
+            .withName("DeleteQuestionAnswer")
+            .withUri("/v1/{project_id}/wise-brain-manager/question-answer/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQuestionAnswerRequest::getAuthorization,
+                DeleteQuestionAnswerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQuestionAnswerRequest::getXSdkDate, DeleteQuestionAnswerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQuestionAnswerRequest::getXProjectId,
+                DeleteQuestionAnswerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQuestionAnswerRequest::getXAppUserId,
+                DeleteQuestionAnswerRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteQuestionAnswerRequest::getBody, DeleteQuestionAnswerRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteQuestionAnswerResponse::getXRequestId,
+                DeleteQuestionAnswerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQuestionAnswerRequest, ListQuestionAnswerResponse> listQuestionAnswer =
+        genForListQuestionAnswer();
+
+    private static HttpRequestDef<ListQuestionAnswerRequest, ListQuestionAnswerResponse> genForListQuestionAnswer() {
+        // basic
+        HttpRequestDef.Builder<ListQuestionAnswerRequest, ListQuestionAnswerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuestionAnswerRequest.class, ListQuestionAnswerResponse.class)
+                .withName("ListQuestionAnswer")
+                .withUri("/v1/{project_id}/wise-brain-manager/question-answer")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQuestionAnswerRequest::getOffset, ListQuestionAnswerRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQuestionAnswerRequest::getLimit, ListQuestionAnswerRequest::setLimit));
+        builder.<String>withRequestField("knowledge_library_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuestionAnswerRequest::getKnowledgeLibraryId,
+                ListQuestionAnswerRequest::setKnowledgeLibraryId));
+        builder.<String>withRequestField("question",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuestionAnswerRequest::getQuestion, ListQuestionAnswerRequest::setQuestion));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuestionAnswerRequest::getAuthorization,
+                ListQuestionAnswerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuestionAnswerRequest::getXSdkDate, ListQuestionAnswerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuestionAnswerRequest::getXProjectId, ListQuestionAnswerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuestionAnswerRequest::getXAppUserId, ListQuestionAnswerRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListQuestionAnswerResponse::getXRequestId,
+                ListQuestionAnswerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuestionAnswerRequest, ShowQuestionAnswerResponse> showQuestionAnswer =
+        genForShowQuestionAnswer();
+
+    private static HttpRequestDef<ShowQuestionAnswerRequest, ShowQuestionAnswerResponse> genForShowQuestionAnswer() {
+        // basic
+        HttpRequestDef.Builder<ShowQuestionAnswerRequest, ShowQuestionAnswerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuestionAnswerRequest.class, ShowQuestionAnswerResponse.class)
+                .withName("ShowQuestionAnswer")
+                .withUri("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("question_answer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuestionAnswerRequest::getQuestionAnswerId,
+                ShowQuestionAnswerRequest::setQuestionAnswerId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuestionAnswerRequest::getAuthorization,
+                ShowQuestionAnswerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuestionAnswerRequest::getXSdkDate, ShowQuestionAnswerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuestionAnswerRequest::getXProjectId, ShowQuestionAnswerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuestionAnswerRequest::getXAppUserId, ShowQuestionAnswerRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowQuestionAnswerResponse::getXRequestId,
+                ShowQuestionAnswerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateQuestionAnswerRequest, UpdateQuestionAnswerResponse> updateQuestionAnswer =
+        genForUpdateQuestionAnswer();
+
+    private static HttpRequestDef<UpdateQuestionAnswerRequest, UpdateQuestionAnswerResponse> genForUpdateQuestionAnswer() {
+        // basic
+        HttpRequestDef.Builder<UpdateQuestionAnswerRequest, UpdateQuestionAnswerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateQuestionAnswerRequest.class, UpdateQuestionAnswerResponse.class)
+            .withName("UpdateQuestionAnswer")
+            .withUri("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("question_answer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQuestionAnswerRequest::getQuestionAnswerId,
+                UpdateQuestionAnswerRequest::setQuestionAnswerId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQuestionAnswerRequest::getAuthorization,
+                UpdateQuestionAnswerRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQuestionAnswerRequest::getXSdkDate, UpdateQuestionAnswerRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQuestionAnswerRequest::getXProjectId,
+                UpdateQuestionAnswerRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQuestionAnswerRequest::getXAppUserId,
+                UpdateQuestionAnswerRequest::setXAppUserId));
+        builder.<UpdateQuestionAnswerReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateQuestionAnswerReq.class),
+            f -> f.withMarshaller(UpdateQuestionAnswerRequest::getBody, UpdateQuestionAnswerRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateQuestionAnswerResponse::getXRequestId,
+                UpdateQuestionAnswerResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRobotRequest, CreateRobotResponse> createRobot = genForCreateRobot();
 
     private static HttpRequestDef<CreateRobotRequest, CreateRobotResponse> genForCreateRobot() {
@@ -7604,6 +10453,257 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ValidateRobotResponse::getXRequestId, ValidateRobotResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRoleRequest, CreateRoleResponse> createRole = genForCreateRole();
+
+    private static HttpRequestDef<CreateRoleRequest, CreateRoleResponse> genForCreateRole() {
+        // basic
+        HttpRequestDef.Builder<CreateRoleRequest, CreateRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRoleRequest.class, CreateRoleResponse.class)
+                .withName("CreateRole")
+                .withUri("/v1/{project_id}/wise-brain-manager/role")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRoleRequest::getAuthorization, CreateRoleRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRoleRequest::getXSdkDate, CreateRoleRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRoleRequest::getXProjectId, CreateRoleRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRoleRequest::getXAppUserId, CreateRoleRequest::setXAppUserId));
+        builder.<CreateRoleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRoleReq.class),
+            f -> f.withMarshaller(CreateRoleRequest::getBody, CreateRoleRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRoleResponse::getXRequestId, CreateRoleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRoleRequest, DeleteRoleResponse> deleteRole = genForDeleteRole();
+
+    private static HttpRequestDef<DeleteRoleRequest, DeleteRoleResponse> genForDeleteRole() {
+        // basic
+        HttpRequestDef.Builder<DeleteRoleRequest, DeleteRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteRoleRequest.class, DeleteRoleResponse.class)
+                .withName("DeleteRole")
+                .withUri("/v1/{project_id}/wise-brain-manager/role/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoleRequest::getAuthorization, DeleteRoleRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoleRequest::getXSdkDate, DeleteRoleRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoleRequest::getXProjectId, DeleteRoleRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRoleRequest::getXAppUserId, DeleteRoleRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteRoleRequest::getBody, DeleteRoleRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRoleResponse::getXRequestId, DeleteRoleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRoleRequest, ListRoleResponse> listRole = genForListRole();
+
+    private static HttpRequestDef<ListRoleRequest, ListRoleResponse> genForListRole() {
+        // basic
+        HttpRequestDef.Builder<ListRoleRequest, ListRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRoleRequest.class, ListRoleResponse.class)
+                .withName("ListRole")
+                .withUri("/v1/{project_id}/wise-brain-manager/role")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRoleRequest::getOffset, ListRoleRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRoleRequest::getLimit, ListRoleRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoleRequest::getName, ListRoleRequest::setName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoleRequest::getAuthorization, ListRoleRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoleRequest::getXSdkDate, ListRoleRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoleRequest::getXProjectId, ListRoleRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoleRequest::getXAppUserId, ListRoleRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoleResponse::getXRequestId, ListRoleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRoleRequest, ShowRoleResponse> showRole = genForShowRole();
+
+    private static HttpRequestDef<ShowRoleRequest, ShowRoleResponse> genForShowRole() {
+        // basic
+        HttpRequestDef.Builder<ShowRoleRequest, ShowRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRoleRequest.class, ShowRoleResponse.class)
+                .withName("ShowRole")
+                .withUri("/v1/{project_id}/wise-brain-manager/role/{role_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoleRequest::getRoleId, ShowRoleRequest::setRoleId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoleRequest::getAuthorization, ShowRoleRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoleRequest::getXSdkDate, ShowRoleRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoleRequest::getXProjectId, ShowRoleRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRoleRequest::getXAppUserId, ShowRoleRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRoleResponse::getXRequestId, ShowRoleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRoleRequest, UpdateRoleResponse> updateRole = genForUpdateRole();
+
+    private static HttpRequestDef<UpdateRoleRequest, UpdateRoleResponse> genForUpdateRole() {
+        // basic
+        HttpRequestDef.Builder<UpdateRoleRequest, UpdateRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRoleRequest.class, UpdateRoleResponse.class)
+                .withName("UpdateRole")
+                .withUri("/v1/{project_id}/wise-brain-manager/role/{role_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoleRequest::getRoleId, UpdateRoleRequest::setRoleId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoleRequest::getAuthorization, UpdateRoleRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoleRequest::getXSdkDate, UpdateRoleRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoleRequest::getXProjectId, UpdateRoleRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRoleRequest::getXAppUserId, UpdateRoleRequest::setXAppUserId));
+        builder.<UpdateRoleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRoleReq.class),
+            f -> f.withMarshaller(UpdateRoleRequest::getBody, UpdateRoleRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateRoleResponse::getXRequestId, UpdateRoleResponse::setXRequestId));
         return builder.build();
     }
 
@@ -10493,6 +13593,189 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckVoiceAssetRequest, CheckVoiceAssetResponse> checkVoiceAsset =
+        genForCheckVoiceAsset();
+
+    private static HttpRequestDef<CheckVoiceAssetRequest, CheckVoiceAssetResponse> genForCheckVoiceAsset() {
+        // basic
+        HttpRequestDef.Builder<CheckVoiceAssetRequest, CheckVoiceAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckVoiceAssetRequest.class, CheckVoiceAssetResponse.class)
+                .withName("CheckVoiceAsset")
+                .withUri("/v1/{project_id}/ttsc/check-voice-asset/{voice_asset_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("voice_asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckVoiceAssetRequest::getVoiceAssetId, CheckVoiceAssetRequest::setVoiceAssetId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckVoiceAssetRequest::getAuthorization, CheckVoiceAssetRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckVoiceAssetRequest::getXSdkDate, CheckVoiceAssetRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckVoiceAssetRequest::getXProjectId, CheckVoiceAssetRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckVoiceAssetRequest::getXAppUserId, CheckVoiceAssetRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTtsJobRequest, ShowTtsJobResponse> showTtsJob = genForShowTtsJob();
+
+    private static HttpRequestDef<ShowTtsJobRequest, ShowTtsJobResponse> genForShowTtsJob() {
+        // basic
+        HttpRequestDef.Builder<ShowTtsJobRequest, ShowTtsJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTtsJobRequest.class, ShowTtsJobResponse.class)
+                .withName("ShowTtsJob")
+                .withUri("/v1/{project_id}/ttsc/tts-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getLimit, ShowTtsJobRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getOffset, ShowTtsJobRequest::setOffset));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getCreateSince, ShowTtsJobRequest::setCreateSince));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getCreateUntil, ShowTtsJobRequest::setCreateUntil));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getJobId, ShowTtsJobRequest::setJobId));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getJobType, ShowTtsJobRequest::setJobType));
+        builder.<String>withRequestField("tts_service_enum",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getTtsServiceEnum, ShowTtsJobRequest::setTtsServiceEnum));
+        builder.<String>withRequestField("business_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getBusinessType, ShowTtsJobRequest::setBusinessType));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getAuthorization, ShowTtsJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getXSdkDate, ShowTtsJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getXProjectId, ShowTtsJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsJobRequest::getXAppUserId, ShowTtsJobRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbol =
+        genForShowTtsPhoneticSymbol();
+
+    private static HttpRequestDef<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> genForShowTtsPhoneticSymbol() {
+        // basic
+        HttpRequestDef.Builder<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTtsPhoneticSymbolRequest.class, ShowTtsPhoneticSymbolResponse.class)
+            .withName("ShowTtsPhoneticSymbol")
+            .withUri("/v1/{project_id}/ttsc/phonetic-symbol")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getOffset, ShowTtsPhoneticSymbolRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getLimit, ShowTtsPhoneticSymbolRequest::setLimit));
+        builder.<String>withRequestField("word",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getWord, ShowTtsPhoneticSymbolRequest::setWord));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXRequestId,
+                ShowTtsPhoneticSymbolRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getAuthorization,
+                ShowTtsPhoneticSymbolRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXSdkDate,
+                ShowTtsPhoneticSymbolRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXProjectId,
+                ShowTtsPhoneticSymbolRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXAppUserId,
+                ShowTtsPhoneticSymbolRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAsyncTtsJobRequest, CreateAsyncTtsJobResponse> createAsyncTtsJob =
         genForCreateAsyncTtsJob();
 
@@ -10580,6 +13863,101 @@ public class MetaStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTtsAuditionRequestBody.class),
             f -> f.withMarshaller(CreateTtsAuditionRequest::getBody, CreateTtsAuditionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> showAsyncTtsJob =
+        genForShowAsyncTtsJob();
+
+    private static HttpRequestDef<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> genForShowAsyncTtsJob() {
+        // basic
+        HttpRequestDef.Builder<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAsyncTtsJobRequest.class, ShowAsyncTtsJobResponse.class)
+                .withName("ShowAsyncTtsJob")
+                .withUri("/v1/{project_id}/ttsc/async-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getJobId, ShowAsyncTtsJobRequest::setJobId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getAuthorization, ShowAsyncTtsJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXSdkDate, ShowAsyncTtsJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXProjectId, ShowAsyncTtsJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXAppUserId, ShowAsyncTtsJobRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> showTtsAuditionFile =
+        genForShowTtsAuditionFile();
+
+    private static HttpRequestDef<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> genForShowTtsAuditionFile() {
+        // basic
+        HttpRequestDef.Builder<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTtsAuditionFileRequest.class, ShowTtsAuditionFileResponse.class)
+                .withName("ShowTtsAuditionFile")
+                .withUri("/v1/{project_id}/ttsc/audition-file/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getJobId, ShowTtsAuditionFileRequest::setJobId));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXRequestId,
+                ShowTtsAuditionFileRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getAuthorization,
+                ShowTtsAuditionFileRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXSdkDate, ShowTtsAuditionFileRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXProjectId,
+                ShowTtsAuditionFileRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXAppUserId,
+                ShowTtsAuditionFileRequest::setXAppUserId));
 
         // response
 
@@ -11016,6 +14394,59 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SaveTtscTenantConfigsRequest, SaveTtscTenantConfigsResponse> saveTtscTenantConfigs =
+        genForSaveTtscTenantConfigs();
+
+    private static HttpRequestDef<SaveTtscTenantConfigsRequest, SaveTtscTenantConfigsResponse> genForSaveTtscTenantConfigs() {
+        // basic
+        HttpRequestDef.Builder<SaveTtscTenantConfigsRequest, SaveTtscTenantConfigsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SaveTtscTenantConfigsRequest.class, SaveTtscTenantConfigsResponse.class)
+            .withName("SaveTtscTenantConfigs")
+            .withUri("/v1/{project_id}/ttsc/tenant-configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscTenantConfigsRequest::getXRequestId,
+                SaveTtscTenantConfigsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscTenantConfigsRequest::getAuthorization,
+                SaveTtscTenantConfigsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscTenantConfigsRequest::getXSdkDate,
+                SaveTtscTenantConfigsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscTenantConfigsRequest::getXProjectId,
+                SaveTtscTenantConfigsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscTenantConfigsRequest::getXAppUserId,
+                SaveTtscTenantConfigsRequest::setXAppUserId));
+        builder.<SaveTtscTenantConfigsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveTtscTenantConfigsRequestBody.class),
+            f -> f.withMarshaller(SaveTtscTenantConfigsRequest::getBody, SaveTtscTenantConfigsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SaveTtscVocabularyConfigsRequest, SaveTtscVocabularyConfigsResponse> saveTtscVocabularyConfigs =
         genForSaveTtscVocabularyConfigs();
 
@@ -11133,158 +14564,69 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> showAsyncTtsJob =
-        genForShowAsyncTtsJob();
+    public static final HttpRequestDef<ShowVocabularySwitchConfigsRequest, ShowVocabularySwitchConfigsResponse> showVocabularySwitchConfigs =
+        genForShowVocabularySwitchConfigs();
 
-    private static HttpRequestDef<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> genForShowAsyncTtsJob() {
+    private static HttpRequestDef<ShowVocabularySwitchConfigsRequest, ShowVocabularySwitchConfigsResponse> genForShowVocabularySwitchConfigs() {
         // basic
-        HttpRequestDef.Builder<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAsyncTtsJobRequest.class, ShowAsyncTtsJobResponse.class)
-                .withName("ShowAsyncTtsJob")
-                .withUri("/v1/{project_id}/ttsc/async-jobs/{job_id}")
+        HttpRequestDef.Builder<ShowVocabularySwitchConfigsRequest, ShowVocabularySwitchConfigsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowVocabularySwitchConfigsRequest.class,
+                    ShowVocabularySwitchConfigsResponse.class)
+                .withName("ShowVocabularySwitchConfigs")
+                .withUri("/v1/{project_id}/ttsc/tenant-configs")
                 .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getJobId, ShowAsyncTtsJobRequest::setJobId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getAuthorization, ShowAsyncTtsJobRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXSdkDate, ShowAsyncTtsJobRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXProjectId, ShowAsyncTtsJobRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXAppUserId, ShowAsyncTtsJobRequest::setXAppUserId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> showTtsAuditionFile =
-        genForShowTtsAuditionFile();
-
-    private static HttpRequestDef<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> genForShowTtsAuditionFile() {
-        // basic
-        HttpRequestDef.Builder<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTtsAuditionFileRequest.class, ShowTtsAuditionFileResponse.class)
-                .withName("ShowTtsAuditionFile")
-                .withUri("/v1/{project_id}/ttsc/audition-file/{job_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getJobId, ShowTtsAuditionFileRequest::setJobId));
-        builder.<String>withRequestField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXRequestId,
-                ShowTtsAuditionFileRequest::setXRequestId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getAuthorization,
-                ShowTtsAuditionFileRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXSdkDate, ShowTtsAuditionFileRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXProjectId,
-                ShowTtsAuditionFileRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXAppUserId,
-                ShowTtsAuditionFileRequest::setXAppUserId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbol =
-        genForShowTtsPhoneticSymbol();
-
-    private static HttpRequestDef<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> genForShowTtsPhoneticSymbol() {
-        // basic
-        HttpRequestDef.Builder<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowTtsPhoneticSymbolRequest.class, ShowTtsPhoneticSymbolResponse.class)
-            .withName("ShowTtsPhoneticSymbol")
-            .withUri("/v1/{project_id}/ttsc/phonetic-symbol")
-            .withContentType("application/json");
 
         // requests
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getOffset, ShowTtsPhoneticSymbolRequest::setOffset));
+            f -> f.withMarshaller(ShowVocabularySwitchConfigsRequest::getOffset,
+                ShowVocabularySwitchConfigsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getLimit, ShowTtsPhoneticSymbolRequest::setLimit));
-        builder.<String>withRequestField("word",
+            f -> f.withMarshaller(ShowVocabularySwitchConfigsRequest::getLimit,
+                ShowVocabularySwitchConfigsRequest::setLimit));
+        builder.<String>withRequestField("key",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getWord, ShowTtsPhoneticSymbolRequest::setWord));
+            f -> f.withMarshaller(ShowVocabularySwitchConfigsRequest::getKey,
+                ShowVocabularySwitchConfigsRequest::setKey));
         builder.<String>withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXRequestId,
-                ShowTtsPhoneticSymbolRequest::setXRequestId));
+            f -> f.withMarshaller(ShowVocabularySwitchConfigsRequest::getXRequestId,
+                ShowVocabularySwitchConfigsRequest::setXRequestId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getAuthorization,
-                ShowTtsPhoneticSymbolRequest::setAuthorization));
+            f -> f.withMarshaller(ShowVocabularySwitchConfigsRequest::getAuthorization,
+                ShowVocabularySwitchConfigsRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXSdkDate,
-                ShowTtsPhoneticSymbolRequest::setXSdkDate));
+            f -> f.withMarshaller(ShowVocabularySwitchConfigsRequest::getXSdkDate,
+                ShowVocabularySwitchConfigsRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXProjectId,
-                ShowTtsPhoneticSymbolRequest::setXProjectId));
+            f -> f.withMarshaller(ShowVocabularySwitchConfigsRequest::getXProjectId,
+                ShowVocabularySwitchConfigsRequest::setXProjectId));
         builder.<String>withRequestField("X-App-UserId",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXAppUserId,
-                ShowTtsPhoneticSymbolRequest::setXAppUserId));
+            f -> f.withMarshaller(ShowVocabularySwitchConfigsRequest::getXAppUserId,
+                ShowVocabularySwitchConfigsRequest::setXAppUserId));
 
         // response
 

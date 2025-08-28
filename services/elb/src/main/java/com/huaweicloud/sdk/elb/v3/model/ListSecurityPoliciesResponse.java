@@ -51,7 +51,7 @@ public class ListSecurityPoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 自定义安全策略列表返回对象。
+     * **参数解释**：自定义安全策略列表返回对象。
      * @return securityPolicies
      */
     public List<SecurityPolicy> getSecurityPolicies() {
@@ -68,7 +68,7 @@ public class ListSecurityPoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
      * @return requestId
      */
     public String getRequestId() {

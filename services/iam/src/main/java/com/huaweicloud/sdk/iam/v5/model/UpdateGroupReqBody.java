@@ -26,7 +26,7 @@ public class UpdateGroupReqBody {
     }
 
     /**
-     * 用户组名，可包含中文、英文、数字、空格、\"_\"、\"-\"、\"{\"和\"}\"的字符串。
+     * 用户组名，长度为1到128个字符，可包含中文、英文、数字、空格、\"_\"、\"-\"、\"{\"和\"}\"的字符串。
      * @return newGroupName
      */
     public String getNewGroupName() {
@@ -43,7 +43,7 @@ public class UpdateGroupReqBody {
     }
 
     /**
-     * 用户组描述信息，不能包含特定字符\"@\"、\"#\"、\"%\"、\"&\"、\"<\"、\">\"、\"\\\\\"、\"$\"、\"^\"和\"*\"的字符串。
+     * 用户组描述信息，长度为0到255字符，不能包含特定字符\"@\"、\"#\"、\"%\"、\"&\"、\"<\"、\">\"、\"\\\\\"、\"$\"、\"^\"和\"*\"的字符串。
      * @return newGroupDescription
      */
     public String getNewGroupDescription() {

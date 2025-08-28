@@ -25,6 +25,16 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
     private Integer countConcurrency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count_client_nums")
+
+    private Integer countClientNums;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count_client_nums_token")
+
+    private Integer countClientNumsToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "smart_chat_rooms")
 
     private List<SmartChatRoomBaseInfo> smartChatRooms = null;
@@ -70,6 +80,44 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
 
     public void setCountConcurrency(Integer countConcurrency) {
         this.countConcurrency = countConcurrency;
+    }
+
+    public ListSmartChatRoomsResponse withCountClientNums(Integer countClientNums) {
+        this.countClientNums = countClientNums;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 智能交互对话按接入端计费总路数。
+     * minimum: 0
+     * maximum: 1024000
+     * @return countClientNums
+     */
+    public Integer getCountClientNums() {
+        return countClientNums;
+    }
+
+    public void setCountClientNums(Integer countClientNums) {
+        this.countClientNums = countClientNums;
+    }
+
+    public ListSmartChatRoomsResponse withCountClientNumsToken(Integer countClientNumsToken) {
+        this.countClientNumsToken = countClientNumsToken;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 智能交互对话按接入端计费（Token）总路数。
+     * minimum: 0
+     * maximum: 1024000
+     * @return countClientNumsToken
+     */
+    public Integer getCountClientNumsToken() {
+        return countClientNumsToken;
+    }
+
+    public void setCountClientNumsToken(Integer countClientNumsToken) {
+        this.countClientNumsToken = countClientNumsToken;
     }
 
     public ListSmartChatRoomsResponse withSmartChatRooms(List<SmartChatRoomBaseInfo> smartChatRooms) {
@@ -134,13 +182,15 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
         }
         ListSmartChatRoomsResponse that = (ListSmartChatRoomsResponse) obj;
         return Objects.equals(this.count, that.count) && Objects.equals(this.countConcurrency, that.countConcurrency)
+            && Objects.equals(this.countClientNums, that.countClientNums)
+            && Objects.equals(this.countClientNumsToken, that.countClientNumsToken)
             && Objects.equals(this.smartChatRooms, that.smartChatRooms)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, countConcurrency, smartChatRooms, xRequestId);
+        return Objects.hash(count, countConcurrency, countClientNums, countClientNumsToken, smartChatRooms, xRequestId);
     }
 
     @Override
@@ -149,6 +199,8 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
         sb.append("class ListSmartChatRoomsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    countConcurrency: ").append(toIndentedString(countConcurrency)).append("\n");
+        sb.append("    countClientNums: ").append(toIndentedString(countClientNums)).append("\n");
+        sb.append("    countClientNumsToken: ").append(toIndentedString(countClientNumsToken)).append("\n");
         sb.append("    smartChatRooms: ").append(toIndentedString(smartChatRooms)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");

@@ -65,7 +65,7 @@ public class ListWebTamperHostResponse extends SdkResponse {
     }
 
     /**
-     * data list
+     * 可开启网页防篡改的服务器列表
      * @return dataList
      */
     public List<WebTamperHostResponseInfo> getDataList() {

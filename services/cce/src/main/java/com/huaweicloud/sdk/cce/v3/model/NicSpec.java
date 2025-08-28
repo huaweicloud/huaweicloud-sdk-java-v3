@@ -72,7 +72,7 @@ public class NicSpec {
     }
 
     /**
-     * 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。扩展网卡不支持指定fiexdIps。
+     * 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。扩展网卡不支持指定fixedIps。
      * @return fixedIps
      */
     public List<String> getFixedIps() {

@@ -41,7 +41,7 @@ public class ShowIpGroupRelatedListenersResponse extends SdkResponse {
     }
 
     /**
-     * IP地址组关联的所有监听器ID列表
+     * **参数解释**：IP地址组关联的所有监听器ID列表。
      * @return listeners
      */
     public List<ListenerRef> getListeners() {

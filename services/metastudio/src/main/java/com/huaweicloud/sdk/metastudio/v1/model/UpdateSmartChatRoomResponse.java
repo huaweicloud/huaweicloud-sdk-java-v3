@@ -54,10 +54,101 @@ public class UpdateSmartChatRoomResponse extends SdkResponse {
 
     private String robotId;
 
+    /**
+     * 计费模式，默认值CONCURRENCY * CONCURRENCY：并发计费 * CLIENT：按接入端计费 * CLIENT_TOKENS: 按接入端计费（TOKENS）
+     */
+    public static final class BillingModeEnum {
+
+        /**
+         * Enum CONCURRENCY for value: "CONCURRENCY"
+         */
+        public static final BillingModeEnum CONCURRENCY = new BillingModeEnum("CONCURRENCY");
+
+        /**
+         * Enum CLIENT for value: "CLIENT"
+         */
+        public static final BillingModeEnum CLIENT = new BillingModeEnum("CLIENT");
+
+        /**
+         * Enum CLIENT_TOKENS for value: "CLIENT_TOKENS"
+         */
+        public static final BillingModeEnum CLIENT_TOKENS = new BillingModeEnum("CLIENT_TOKENS");
+
+        private static final Map<String, BillingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BillingModeEnum> createStaticFields() {
+            Map<String, BillingModeEnum> map = new HashMap<>();
+            map.put("CONCURRENCY", CONCURRENCY);
+            map.put("CLIENT", CLIENT);
+            map.put("CLIENT_TOKENS", CLIENT_TOKENS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        BillingModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BillingModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BillingModeEnum(value));
+        }
+
+        public static BillingModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BillingModeEnum) {
+                return this.value.equals(((BillingModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "billing_mode")
+
+    private BillingModeEnum billingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reuse_resource")
+
+    private Boolean reuseResource;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "concurrency")
 
     private Integer concurrency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_nums")
+
+    private Integer clientNums;
 
     /**
      * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
@@ -452,6 +543,40 @@ public class UpdateSmartChatRoomResponse extends SdkResponse {
         this.robotId = robotId;
     }
 
+    public UpdateSmartChatRoomResponse withBillingMode(BillingModeEnum billingMode) {
+        this.billingMode = billingMode;
+        return this;
+    }
+
+    /**
+     * 计费模式，默认值CONCURRENCY * CONCURRENCY：并发计费 * CLIENT：按接入端计费 * CLIENT_TOKENS: 按接入端计费（TOKENS）
+     * @return billingMode
+     */
+    public BillingModeEnum getBillingMode() {
+        return billingMode;
+    }
+
+    public void setBillingMode(BillingModeEnum billingMode) {
+        this.billingMode = billingMode;
+    }
+
+    public UpdateSmartChatRoomResponse withReuseResource(Boolean reuseResource) {
+        this.reuseResource = reuseResource;
+        return this;
+    }
+
+    /**
+     * 是否允许使用未分配的并发数（端模式下不能复用），默认不使用。
+     * @return reuseResource
+     */
+    public Boolean getReuseResource() {
+        return reuseResource;
+    }
+
+    public void setReuseResource(Boolean reuseResource) {
+        this.reuseResource = reuseResource;
+    }
+
     public UpdateSmartChatRoomResponse withConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
         return this;
@@ -469,6 +594,25 @@ public class UpdateSmartChatRoomResponse extends SdkResponse {
 
     public void setConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
+    }
+
+    public UpdateSmartChatRoomResponse withClientNums(Integer clientNums) {
+        this.clientNums = clientNums;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 允许接入终端端数量。
+     * minimum: 0
+     * maximum: 1024
+     * @return clientNums
+     */
+    public Integer getClientNums() {
+        return clientNums;
+    }
+
+    public void setClientNums(Integer clientNums) {
+        this.clientNums = clientNums;
     }
 
     public UpdateSmartChatRoomResponse withDefaultLanguage(DefaultLanguageEnum defaultLanguage) {
@@ -788,7 +932,9 @@ public class UpdateSmartChatRoomResponse extends SdkResponse {
             && Objects.equals(this.modelAssetId, that.modelAssetId)
             && Objects.equals(this.voiceConfig, that.voiceConfig)
             && Objects.equals(this.voiceConfigList, that.voiceConfigList) && Objects.equals(this.robotId, that.robotId)
-            && Objects.equals(this.concurrency, that.concurrency)
+            && Objects.equals(this.billingMode, that.billingMode)
+            && Objects.equals(this.reuseResource, that.reuseResource)
+            && Objects.equals(this.concurrency, that.concurrency) && Objects.equals(this.clientNums, that.clientNums)
             && Objects.equals(this.defaultLanguage, that.defaultLanguage)
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
             && Objects.equals(this.layerConfig, that.layerConfig)
@@ -812,7 +958,10 @@ public class UpdateSmartChatRoomResponse extends SdkResponse {
             voiceConfig,
             voiceConfigList,
             robotId,
+            billingMode,
+            reuseResource,
             concurrency,
+            clientNums,
             defaultLanguage,
             backgroundConfig,
             layerConfig,
@@ -840,7 +989,10 @@ public class UpdateSmartChatRoomResponse extends SdkResponse {
         sb.append("    voiceConfig: ").append(toIndentedString(voiceConfig)).append("\n");
         sb.append("    voiceConfigList: ").append(toIndentedString(voiceConfigList)).append("\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
+        sb.append("    billingMode: ").append(toIndentedString(billingMode)).append("\n");
+        sb.append("    reuseResource: ").append(toIndentedString(reuseResource)).append("\n");
         sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
+        sb.append("    clientNums: ").append(toIndentedString(clientNums)).append("\n");
         sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
         sb.append("    backgroundConfig: ").append(toIndentedString(backgroundConfig)).append("\n");
         sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");

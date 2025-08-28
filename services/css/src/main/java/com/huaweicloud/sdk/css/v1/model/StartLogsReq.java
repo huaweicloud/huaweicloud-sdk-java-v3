@@ -26,6 +26,16 @@ public class StartLogsReq {
     private String logBucket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_enable")
+
+    private Boolean autoEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period")
+
+    private String period;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index_prefix")
 
     private String indexPrefix;
@@ -91,6 +101,40 @@ public class StartLogsReq {
         this.logBucket = logBucket;
     }
 
+    public StartLogsReq withAutoEnable(Boolean autoEnable) {
+        this.autoEnable = autoEnable;
+        return this;
+    }
+
+    /**
+     * 集群日志是否开启自动备份。
+     * @return autoEnable
+     */
+    public Boolean getAutoEnable() {
+        return autoEnable;
+    }
+
+    public void setAutoEnable(Boolean autoEnable) {
+        this.autoEnable = autoEnable;
+    }
+
+    public StartLogsReq withPeriod(String period) {
+        this.period = period;
+        return this;
+    }
+
+    /**
+     * 集群日志备份开始时间。
+     * @return period
+     */
+    public String getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(String period) {
+        this.period = period;
+    }
+
     public StartLogsReq withIndexPrefix(String indexPrefix) {
         this.indexPrefix = indexPrefix;
         return this;
@@ -154,14 +198,15 @@ public class StartLogsReq {
         }
         StartLogsReq that = (StartLogsReq) obj;
         return Objects.equals(this.agency, that.agency) && Objects.equals(this.logBasePath, that.logBasePath)
-            && Objects.equals(this.logBucket, that.logBucket) && Objects.equals(this.indexPrefix, that.indexPrefix)
+            && Objects.equals(this.logBucket, that.logBucket) && Objects.equals(this.autoEnable, that.autoEnable)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.indexPrefix, that.indexPrefix)
             && Objects.equals(this.keepDays, that.keepDays)
             && Objects.equals(this.targetClusterId, that.targetClusterId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(agency, logBasePath, logBucket, indexPrefix, keepDays, targetClusterId);
+        return Objects.hash(agency, logBasePath, logBucket, autoEnable, period, indexPrefix, keepDays, targetClusterId);
     }
 
     @Override
@@ -171,6 +216,8 @@ public class StartLogsReq {
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    logBasePath: ").append(toIndentedString(logBasePath)).append("\n");
         sb.append("    logBucket: ").append(toIndentedString(logBucket)).append("\n");
+        sb.append("    autoEnable: ").append(toIndentedString(autoEnable)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    indexPrefix: ").append(toIndentedString(indexPrefix)).append("\n");
         sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
         sb.append("    targetClusterId: ").append(toIndentedString(targetClusterId)).append("\n");

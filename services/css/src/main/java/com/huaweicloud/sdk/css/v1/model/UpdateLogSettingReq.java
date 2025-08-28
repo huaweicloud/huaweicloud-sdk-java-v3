@@ -25,6 +25,31 @@ public class UpdateLogSettingReq {
 
     private String logBucket;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "index_prefix")
+
+    private String indexPrefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keep_days")
+
+    private Integer keepDays;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_cluster_id")
+
+    private String targetClusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_enable")
+
+    private Boolean autoEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period")
+
+    private String period;
+
     public UpdateLogSettingReq withAgency(String agency) {
         this.agency = agency;
         return this;
@@ -76,6 +101,91 @@ public class UpdateLogSettingReq {
         this.logBucket = logBucket;
     }
 
+    public UpdateLogSettingReq withIndexPrefix(String indexPrefix) {
+        this.indexPrefix = indexPrefix;
+        return this;
+    }
+
+    /**
+     * 设置保存日志的索引前缀。
+     * @return indexPrefix
+     */
+    public String getIndexPrefix() {
+        return indexPrefix;
+    }
+
+    public void setIndexPrefix(String indexPrefix) {
+        this.indexPrefix = indexPrefix;
+    }
+
+    public UpdateLogSettingReq withKeepDays(Integer keepDays) {
+        this.keepDays = keepDays;
+        return this;
+    }
+
+    /**
+     * 修改日志保存的天数。
+     * @return keepDays
+     */
+    public Integer getKeepDays() {
+        return keepDays;
+    }
+
+    public void setKeepDays(Integer keepDays) {
+        this.keepDays = keepDays;
+    }
+
+    public UpdateLogSettingReq withTargetClusterId(String targetClusterId) {
+        this.targetClusterId = targetClusterId;
+        return this;
+    }
+
+    /**
+     * 设置保存日志的目标集群ID。
+     * @return targetClusterId
+     */
+    public String getTargetClusterId() {
+        return targetClusterId;
+    }
+
+    public void setTargetClusterId(String targetClusterId) {
+        this.targetClusterId = targetClusterId;
+    }
+
+    public UpdateLogSettingReq withAutoEnable(Boolean autoEnable) {
+        this.autoEnable = autoEnable;
+        return this;
+    }
+
+    /**
+     * 集群日志是否开启自动备份。
+     * @return autoEnable
+     */
+    public Boolean getAutoEnable() {
+        return autoEnable;
+    }
+
+    public void setAutoEnable(Boolean autoEnable) {
+        this.autoEnable = autoEnable;
+    }
+
+    public UpdateLogSettingReq withPeriod(String period) {
+        this.period = period;
+        return this;
+    }
+
+    /**
+     * 集群日志备份开始时间。
+     * @return period
+     */
+    public String getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(String period) {
+        this.period = period;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +196,15 @@ public class UpdateLogSettingReq {
         }
         UpdateLogSettingReq that = (UpdateLogSettingReq) obj;
         return Objects.equals(this.agency, that.agency) && Objects.equals(this.logBasePath, that.logBasePath)
-            && Objects.equals(this.logBucket, that.logBucket);
+            && Objects.equals(this.logBucket, that.logBucket) && Objects.equals(this.indexPrefix, that.indexPrefix)
+            && Objects.equals(this.keepDays, that.keepDays)
+            && Objects.equals(this.targetClusterId, that.targetClusterId)
+            && Objects.equals(this.autoEnable, that.autoEnable) && Objects.equals(this.period, that.period);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(agency, logBasePath, logBucket);
+        return Objects.hash(agency, logBasePath, logBucket, indexPrefix, keepDays, targetClusterId, autoEnable, period);
     }
 
     @Override
@@ -101,6 +214,11 @@ public class UpdateLogSettingReq {
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    logBasePath: ").append(toIndentedString(logBasePath)).append("\n");
         sb.append("    logBucket: ").append(toIndentedString(logBucket)).append("\n");
+        sb.append("    indexPrefix: ").append(toIndentedString(indexPrefix)).append("\n");
+        sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
+        sb.append("    targetClusterId: ").append(toIndentedString(targetClusterId)).append("\n");
+        sb.append("    autoEnable: ").append(toIndentedString(autoEnable)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("}");
         return sb.toString();
     }

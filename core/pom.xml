@@ -5,14 +5,14 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.1.163</version>
+        <version>3.1.164</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
     <artifactId>huaweicloud-sdk-core</artifactId>
-    <version>3.1.163</version>
+    <version>3.1.164</version>
     <name>Huawei Cloud SDK for Java Core</name>
     <description>Core library for Huawei Cloud Java SDK</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>

@@ -31,7 +31,7 @@ public class ListAccessKeysV5Request {
     }
 
     /**
-     * IAM用户ID，长度为1到64个字符，只包含字母、数字和\"-\"的字符串。
+     * IAM用户ID。
      * @return userId
      */
     public String getUserId() {
@@ -48,7 +48,7 @@ public class ListAccessKeysV5Request {
     }
 
     /**
-     * 每页显示的条目数量。
+     * 每页显示的条目数量，范围为1到200条，默认为100条。
      * minimum: 1
      * maximum: 200
      * @return limit

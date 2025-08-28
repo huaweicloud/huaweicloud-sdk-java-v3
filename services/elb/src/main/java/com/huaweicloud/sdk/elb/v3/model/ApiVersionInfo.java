@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * This is a auto create Response Object
+ * **参数解释**：可用API版本信息。
  */
 public class ApiVersionInfo {
 
@@ -21,7 +21,7 @@ public class ApiVersionInfo {
     private String id;
 
     /**
-     * API版本的状态。  取值： - CURRENT：当前版本。 - STABLE：稳定版本。 - DEPRECATED：废弃版本。  说明： 所有支持的API版本中最高版状态为CURRENT，其他版本状态为STABLE。
+     * **参数解释**：API版本的状态。  **取值范围**： - CURRENT：当前版本，当前所支持的API版本中最高的版本。 - STABLE：稳定版本，其他可用版本。 - DEPRECATED：废弃版本。
      */
     public static final class StatusEnum {
 
@@ -107,7 +107,7 @@ public class ApiVersionInfo {
     }
 
     /**
-     * API版本号。  取值：由高到低版本分别为v3，v2，v2.0。
+     * **参数解释**：API版本号。  **取值范围**：由高到低版本分别为v3，v2，v2.0。
      * @return id
      */
     public String getId() {
@@ -124,7 +124,7 @@ public class ApiVersionInfo {
     }
 
     /**
-     * API版本的状态。  取值： - CURRENT：当前版本。 - STABLE：稳定版本。 - DEPRECATED：废弃版本。  说明： 所有支持的API版本中最高版状态为CURRENT，其他版本状态为STABLE。
+     * **参数解释**：API版本的状态。  **取值范围**： - CURRENT：当前版本，当前所支持的API版本中最高的版本。 - STABLE：稳定版本，其他可用版本。 - DEPRECATED：废弃版本。
      * @return status
      */
     public StatusEnum getStatus() {

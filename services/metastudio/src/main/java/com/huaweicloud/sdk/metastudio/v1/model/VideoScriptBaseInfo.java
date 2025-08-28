@@ -36,7 +36,7 @@ public class VideoScriptBaseInfo {
     private String modelAssetId;
 
     /**
-     * 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人
+     * 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人
      */
     public static final class ModelAssetTypeEnum {
 
@@ -45,17 +45,11 @@ public class VideoScriptBaseInfo {
          */
         public static final ModelAssetTypeEnum HUMAN_MODEL_2D = new ModelAssetTypeEnum("HUMAN_MODEL_2D");
 
-        /**
-         * Enum HUMAN_MODEL_3D for value: "HUMAN_MODEL_3D"
-         */
-        public static final ModelAssetTypeEnum HUMAN_MODEL_3D = new ModelAssetTypeEnum("HUMAN_MODEL_3D");
-
         private static final Map<String, ModelAssetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModelAssetTypeEnum> createStaticFields() {
             Map<String, ModelAssetTypeEnum> map = new HashMap<>();
             map.put("HUMAN_MODEL_2D", HUMAN_MODEL_2D);
-            map.put("HUMAN_MODEL_3D", HUMAN_MODEL_3D);
             return Collections.unmodifiableMap(map);
         }
 
@@ -209,7 +203,7 @@ public class VideoScriptBaseInfo {
     }
 
     /**
-     * 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人
+     * 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人
      * @return modelAssetType
      */
     public ModelAssetTypeEnum getModelAssetType() {

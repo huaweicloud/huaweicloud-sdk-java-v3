@@ -30,7 +30,7 @@ public class BatchUpdateMembersResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
      * @return requestId
      */
     public String getRequestId() {
@@ -63,7 +63,7 @@ public class BatchUpdateMembersResponse extends SdkResponse {
     }
 
     /**
-     * 后端服务器对象列表。
+     * **参数解释**：后端服务器对象列表。
      * @return members
      */
     public List<BatchUpdateMember> getMembers() {

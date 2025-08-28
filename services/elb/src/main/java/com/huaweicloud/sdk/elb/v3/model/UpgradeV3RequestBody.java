@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 负载均衡器产品升级接口
+ * **参数解释**：升级负载均衡器请求体。  **约束限制**：不涉及
  */
 public class UpgradeV3RequestBody {
 
     /**
-     * 升级操作： - start：开始升级，仅负载均衡器的provisioning_status为ACTIVE时支持。 - complete：升级完成确认，仅实例的provision_status为UPGRADED时支持。确认后，实例无法再执行回退。 - rollback：回滚，仅实例的provision_status为UPGRADED,UPGRADE_FAILED,ROLLBACK_FAILED时支持。
+     * **参数解释**：升级过程的操作。  **约束限制**：不涉及  **取值范围**： - start：开始升级。只有当负载均衡器的provisioning_status为ACTIVE时，才能开始升级。 - complete：确认升级完成。只有当实例的provisioning_status为UPGRADED时，才能确认升级完成。确认后，实例无法再执行回退。 - rollback：回退升级，只有当实例的provisioning_status为UPGRADED、UPGRADE_FAILED或ROLLBACK_FAILED时，才能回退升级。  **默认取值**：不涉及
      */
     public static final class ActionEnum {
 
@@ -135,7 +135,7 @@ public class UpgradeV3RequestBody {
     }
 
     /**
-     * 升级操作： - start：开始升级，仅负载均衡器的provisioning_status为ACTIVE时支持。 - complete：升级完成确认，仅实例的provision_status为UPGRADED时支持。确认后，实例无法再执行回退。 - rollback：回滚，仅实例的provision_status为UPGRADED,UPGRADE_FAILED,ROLLBACK_FAILED时支持。
+     * **参数解释**：升级过程的操作。  **约束限制**：不涉及  **取值范围**： - start：开始升级。只有当负载均衡器的provisioning_status为ACTIVE时，才能开始升级。 - complete：确认升级完成。只有当实例的provisioning_status为UPGRADED时，才能确认升级完成。确认后，实例无法再执行回退。 - rollback：回退升级，只有当实例的provisioning_status为UPGRADED、UPGRADE_FAILED或ROLLBACK_FAILED时，才能回退升级。  **默认取值**：不涉及
      * @return action
      */
     public ActionEnum getAction() {
@@ -152,7 +152,7 @@ public class UpgradeV3RequestBody {
     }
 
     /**
-     * 四层规格ID。仅action为start时生效。 负载均衡器有四层监听器时该字段必须指定。 l4_flavor_id和l7_flavor_id不能同时为空。
+     * **参数解释**：四层规格ID。仅action为start时生效。  **约束限制**： - 负载均衡器有四层监听器时该字段必须指定。 - l4_flavor_id和l7_flavor_id不能同时为空。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return l4FlavorId
      */
     public String getL4FlavorId() {
@@ -169,7 +169,7 @@ public class UpgradeV3RequestBody {
     }
 
     /**
-     * 七层规格ID。仅action为start时生效。 负载均衡器有七层监听器时该字段必须指定。 l4_flavor_id和l7_flavor_id不能同时为空。
+     * **参数解释**：七层规格ID。仅action为start时生效。  **约束限制**： - 负载均衡器有七层监听器时该字段必须指定。 - l4_flavor_id和l7_flavor_id不能同时为空。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -202,7 +202,7 @@ public class UpgradeV3RequestBody {
     }
 
     /**
-     * 可用区列表。仅在action为start时生效。且action为start时，该字段必传 可通过GET https://{ELB_Endpoint}/v3/{project_id}/elb/availability-zones 接口来查询可用区集合列表。创建负载均衡器时，从查询结果选择某一个可用区集合，并从中选择一个或多个可用区。
+     * **参数解释**：可用区列表。仅在action为start时生效，且action为start时，该字段必传。 可通过GET https://{ELB_Endpoint}/v3/{project_id}/elb/availability-zones 接口来查询可用区集合列表。创建负载均衡器时，从查询结果选择某一个可用区集合，并从中选择一个或多个可用区。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return availabilityZoneList
      */
     public List<String> getAvailabilityZoneList() {
@@ -219,7 +219,7 @@ public class UpgradeV3RequestBody {
     }
 
     /**
-     * 双栈类型负载均衡器所在子网的IPv6网络ID。 若实例升级到独享型后期望使用IPv6功能，则升级时该字段必传。  可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  使用说明： ipv6_vip_virsubnet_id需要属于原共享型实例所属VPC。 ipv6_vip_virsubnet_id所属子网需要开启IPv6。  [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：双栈类型负载均衡器所在子网的IPv6网络ID。 可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的id得到。  **约束限制**： - 若实例升级到独享型后期望使用IPv6功能，则升级时该字段必传。 - ipv6_vip_virsubnet_id所属VPC必须与原共享型实例所属VPC相同。 - ipv6_vip_virsubnet_id所属子网需要开启IPv6。  **取值范围**：不涉及  **默认取值**：不涉及 [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipVirsubnetId
      */
     public String getIpv6VipVirsubnetId() {
@@ -236,7 +236,7 @@ public class UpgradeV3RequestBody {
     }
 
     /**
-     * 负载均衡器的IPv6虚拟IP。该地址必须包含在所在子网的IPv6网段内，且未被占用。  使用说明：  传入ipv6_vip_address时必须传入ipv6_vip_virsubnet_id。 不传入ipv6_vip_address，但传入ipv6_vip_virsubnet_id，则自动分配IPv6虚拟IP。 不传入ipv6_vip_address，且不传ipv6_vip_virsubnet_id，则不分配虚拟IP，ipv6_vip_address=null。  [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：负载均衡器的IPv6私网IP。  **约束限制**： - 该地址必须包含在所属子网的IPv6网段内，且未被占用。 - 传入ipv6_vip_address时必须传入ipv6_vip_virsubnet_id。 - 不传入ipv6_vip_address，但传入ipv6_vip_virsubnet_id，则自动分配IPv6私网IP。 - 不传入ipv6_vip_address，且不传ipv6_vip_virsubnet_id，则不分配私网IP，ipv6_vip_address=null。  **取值范围**：不涉及  **默认取值**：不涉及 [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipAddress
      */
     public String getIpv6VipAddress() {
@@ -269,7 +269,7 @@ public class UpgradeV3RequestBody {
     }
 
     /**
-     * 下联面子网的网络ID列表。仅action为start时生效。 可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的neutron_network_id得到。  若不指定该字段，则选择vip_subnet_cidr_id子网对应的网络ID。  下联面子网必须属于该LB所在的VPC。
+     * **参数解释**：下联面子网的网络ID列表。 可以通过GET https://{VPC_Endpoint}/v1/{project_id}/subnets 响应参数中的neutron_network_id得到。  **约束限制**： - 仅action为start时生效。 - 若不指定该字段，则选择vip_subnet_cidr_id子网对应的网络ID。 - 下联面子网必须属于该LB所在的VPC。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return elbVirsubnetIds
      */
     public List<String> getElbVirsubnetIds() {

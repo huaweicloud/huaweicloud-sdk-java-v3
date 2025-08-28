@@ -15,6 +15,11 @@ public class UpdateClusterNameReq {
 
     private String displayName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desc")
+
+    private String desc;
+
     public UpdateClusterNameReq withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
@@ -32,6 +37,23 @@ public class UpdateClusterNameReq {
         this.displayName = displayName;
     }
 
+    public UpdateClusterNameReq withDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+
+    /**
+     * 修改后集群描述。
+     * @return desc
+     */
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class UpdateClusterNameReq {
             return false;
         }
         UpdateClusterNameReq that = (UpdateClusterNameReq) obj;
-        return Objects.equals(this.displayName, that.displayName);
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.desc, that.desc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(displayName);
+        return Objects.hash(displayName, desc);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class UpdateClusterNameReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateClusterNameReq {\n");
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+        sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

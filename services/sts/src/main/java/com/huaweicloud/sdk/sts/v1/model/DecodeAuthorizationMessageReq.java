@@ -21,7 +21,7 @@ public class DecodeAuthorizationMessageReq {
     }
 
     /**
-     * 加密的鉴权失败原因。
+     * 加密的鉴权失败原因，字符串长度范围[1,10240]。
      * @return encodedMessage
      */
     public String getEncodedMessage() {

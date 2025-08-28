@@ -195,7 +195,7 @@ public class AssetListRequestBody {
     /**
      * 偏移量
      * minimum: 0
-     * maximum: 10000
+     * maximum: 1000000
      * @return offset
      */
     public Integer getOffset() {
@@ -214,7 +214,7 @@ public class AssetListRequestBody {
     /**
      * 每页条目数量
      * minimum: 0
-     * maximum: 100
+     * maximum: 500
      * @return limit
      */
     public Integer getLimit() {

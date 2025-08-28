@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 新增负载均衡器可用区请求体
+ * BatchAddAvailableZonesRequestBody
  */
 public class BatchAddAvailableZonesRequestBody {
 
@@ -41,7 +41,7 @@ public class BatchAddAvailableZonesRequestBody {
     }
 
     /**
-     * 新增的可用区列表，不能为空。
+     * **参数解释**：新增的可用区列表。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return availabilityZoneList
      */
     public List<String> getAvailabilityZoneList() {

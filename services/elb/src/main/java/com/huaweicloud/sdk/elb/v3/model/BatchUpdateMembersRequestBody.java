@@ -40,7 +40,7 @@ public class BatchUpdateMembersRequestBody {
     }
 
     /**
-     * 后端服务器对象。
+     * **参数解释**：后端服务器对象。  **约束限制**：不涉及
      * @return members
      */
     public List<BatchUpdateMembersOption> getMembers() {

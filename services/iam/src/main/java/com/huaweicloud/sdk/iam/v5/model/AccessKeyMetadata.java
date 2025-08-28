@@ -37,7 +37,7 @@ public class AccessKeyMetadata {
     }
 
     /**
-     * IAM用户ID，长度为1到64个字符，只包含字母、数字和\"-\"的字符串。
+     * IAM用户ID。
      * @return userId
      */
     public String getUserId() {

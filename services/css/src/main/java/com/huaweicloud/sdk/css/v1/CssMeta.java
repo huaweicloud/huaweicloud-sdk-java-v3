@@ -2012,6 +2012,16 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, UpdateInstanceRequest::setInstanceId));
+        builder.<String>withRequestField("migrateData",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceRequest::getMigrateData, UpdateInstanceRequest::setMigrateData));
+        builder.<String>withRequestField("agency",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceRequest::getAgency, UpdateInstanceRequest::setAgency));
 
         // response
 

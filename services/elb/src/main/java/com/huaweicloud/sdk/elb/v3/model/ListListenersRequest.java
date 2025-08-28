@@ -174,7 +174,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
+     * **参数解释**：每页返回的个数。  **约束限制**：不涉及  **取值范围**：0-2000  **默认取值**：2000
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -193,7 +193,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * **参数解释**：上一页最后一条记录的ID。  **约束限制**： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return marker
      */
     public String getMarker() {
@@ -210,7 +210,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。
+     * **参数解释**：是否反向查询。  **约束限制**： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker。  **取值范围**： - true：查询上一页。 - false：查询下一页。  **默认取值**：false
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -243,7 +243,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的前端监听端口。  [当监听器的protocol为IP时，前端端口固定为0。](tag:hws_eu) 支持多值查询，查询条件格式：*protocol_port=xxx&protocol_port=xxx*。
+     * **参数解释**：监听器的前端监听端口。 支持多值查询，查询条件格式：*protocol_port=xxx&protocol_port=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return protocolPort
      */
     public List<String> getProtocolPort() {
@@ -276,7 +276,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS。 说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,srg,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [取值：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
+     * **参数解释**：监听器的监听协议。 支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  **约束限制**：不涉及  [取值范围：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS。 说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,srg,fcs,dt)  [取值范围：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [取值范围：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)  **默认取值**：不涉及  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -309,7 +309,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的描述信息。  支持多值查询，查询条件格式：*description=xxx&description=xxx*。
+     * **参数解释**：监听器的描述信息。 支持多值查询，查询条件格式：*description=xxx&description=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return description
      */
     public List<String> getDescription() {
@@ -342,7 +342,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的服务器证书ID。  支持多值查询，查询条件格式： *default_tls_container_ref=xxx&default_tls_container_ref=xxx*。
+     * **参数解释**：监听器的服务器证书ID。 支持多值查询，查询条件格式： *default_tls_container_ref=xxx&default_tls_container_ref=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return defaultTlsContainerRef
      */
     public List<String> getDefaultTlsContainerRef() {
@@ -375,7 +375,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的CA证书ID。  支持多值查询，查询条件格式： *client_ca_tls_container_ref=xxx&client_ca_tls_container_ref=xxx*。
+     * **参数解释**：监听器的CA证书ID。 支持多值查询，查询条件格式： *client_ca_tls_container_ref=xxx&client_ca_tls_container_ref=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return clientCaTlsContainerRef
      */
     public List<String> getClientCaTlsContainerRef() {
@@ -392,7 +392,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的管理状态。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * **参数解释**：监听器的管理状态。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -409,7 +409,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 参数解释：查询结果是否包含回收站负载均衡器的监听器  取值范围： - true ：包含回收站elb的监听器。 - false：不包含回收站elb的监听器。
+     * **参数解释**：查询结果是否包含回收站负载均衡器的监听器  **约束限制**：不涉及  **取值范围**： - true ：包含回收站elb的监听器。 - false：不包含回收站elb的监听器。  **默认取值**：不涉及
      * @return includeRecycleBin
      */
     public Boolean getIncludeRecycleBin() {
@@ -442,7 +442,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * ​监听器的最大连接数。  取值：-1表示不限制连接数。  支持多值查询，查询条件格式：*connection_limit=xxx&connection_limit=xxx*。  不支持该字段，请勿使用。
+     * **参数解释**：监听器的最大连接数。 支持多值查询，查询条件格式：*connection_limit=xxx&connection_limit=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return connectionLimit
      */
     public List<Integer> getConnectionLimit() {
@@ -475,7 +475,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的默认后端服务器组ID。当请求没有匹配的转发策略时，转发到默认后端服务器上处理。  支持多值查询，查询条件格式：*default_pool_id=xxx&default_pool_id=xxx*。
+     * **参数解释**：监听器的默认后端服务器组ID。当请求没有匹配的转发策略时，转发到默认后端服务器组上处理。 支持多值查询，查询条件格式：*default_pool_id=xxx&default_pool_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return defaultPoolId
      */
     public List<String> getDefaultPoolId() {
@@ -508,7 +508,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * **参数解释**：监听器ID。 支持多值查询，查询条件格式：*id=xxx&id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return id
      */
     public List<String> getId() {
@@ -541,7 +541,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * **参数解释**：监听器名称。 支持多值查询，查询条件格式：*name=xxx&name=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return name
      */
     public List<String> getName() {
@@ -558,7 +558,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
+     * **参数解释**：客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  **约束限制**：不涉及  **取值范围**：true 开启，false 不开启。  **默认取值**：不涉及  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
      * @return http2Enable
      */
     public Boolean getHttp2Enable() {
@@ -591,7 +591,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器所属的负载均衡器ID。  支持多值查询，查询条件格式：*loadbalancer_id=xxx&loadbalancer_id=xxx*。
+     * **参数解释**：监听器所属的负载均衡器ID。 支持多值查询，查询条件格式：*loadbalancer_id=xxx&loadbalancer_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return loadbalancerId
      */
     public List<String> getLoadbalancerId() {
@@ -624,7 +624,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器使用的安全策略。  支持多值查询，查询条件格式：*tls_ciphers_policy=xxx&tls_ciphers_policy=xxx*。
+     * **参数解释**：监听器使用的安全策略。 支持多值查询，查询条件格式：*tls_ciphers_policy=xxx&tls_ciphers_policy=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return tlsCiphersPolicy
      */
     public List<String> getTlsCiphersPolicy() {
@@ -657,7 +657,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 后端服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
+     * **参数解释**：后端服务器的IP地址。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return memberAddress
      */
     public List<String> getMemberAddress() {
@@ -690,7 +690,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
+     * **参数解释**：后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return memberDeviceId
      */
     public List<String> getMemberDeviceId() {
@@ -723,7 +723,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 参数解释：所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:listeners:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * **参数解释**：资源所属的企业项目ID。 支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  **约束限制**： 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:listeners:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -740,7 +740,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否开启后端服务器的重试。  取值：true 开启重试，false 不开启重试。
+     * **参数解释**：是否开启后端服务器的重试。  **约束限制**：不涉及  **取值范围**：true 开启，false 不开启。  **默认取值**：不涉及
      * @return enableMemberRetry
      */
     public Boolean getEnableMemberRetry() {
@@ -773,7 +773,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回HTTP504错误码。  取值：1-300s。  支持多值查询，查询条件格式：*member_timeout=xxx&member_timeout=xxx*。
+     * **参数解释**：等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回HTTP504错误码。 支持多值查询，查询条件格式：*member_timeout=xxx&member_timeout=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return memberTimeout
      */
     public List<Integer> getMemberTimeout() {
@@ -806,7 +806,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 等待客户端请求超时时间，包括两种情况： - 读取整个客户端请求头的超时时长：如果客户端未在超时时长内发送完整个请求头，则请求将被中断 - 两个连续body体的数据包到达LB的时间间隔，超出client_timeout将会断开连接。  取值：1-300s。  支持多值查询，查询条件格式：*client_timeout=xxx&client_timeout=xxx*。
+     * **参数解释**：等待客户端请求超时时间，包括两种情况： - 读取整个客户端请求头的超时时长：如果客户端未在超时时长内发送完整个请求头，则请求将被中断 - 两个连续body体的数据包到达LB的时间间隔，超出client_timeout将会断开连接。 支持多值查询，查询条件格式：*client_timeout=xxx&client_timeout=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return clientTimeout
      */
     public List<Integer> getClientTimeout() {
@@ -839,7 +839,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 参数解释：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  约束限制：共享型实例的UDP监听器不支持此字段。  取值范围： - TCP监听器[和IP监听器](tag:hws_eu)：10-4000s，默认值为300s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。  支持多值查询，查询条件格式：*keepalive_timeout=xxx&keepalive_timeout=xxx*。
+     * **参数解释**：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。 支持多值查询，查询条件格式：*keepalive_timeout=xxx&keepalive_timeout=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return keepaliveTimeout
      */
     public List<Integer> getKeepaliveTimeout() {
@@ -856,7 +856,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。  [仅作用于共享型LB的TCP/UDP监听器。取值：true开启，false不开启。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
+     * **参数解释**：是否开启后客户端IP地址将透传到后端服务器。 [仅作用于共享型LB的TCP/UDP监听器。](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)  **约束限制**：不涉及  **取值范围**：true开启，false不开启。  **默认取值**：不涉及
      * @return transparentClientIpEnable
      */
     public Boolean getTransparentClientIpEnable() {
@@ -873,7 +873,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否开启proxy_protocol。仅TLS监听器可指定，其他协议的监听器该字段不生效，proxy_protocol不开启。
+     * **参数解释**：是否开启proxy_protocol。  **约束限制**：不涉及  **取值范围**：true开启，false不开启。  **默认取值**：不涉及
      * @return proxyProtocolEnable
      */
     public Boolean getProxyProtocolEnable() {
@@ -890,7 +890,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  取值：true开启，false不开启。  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * **参数解释**：是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  **约束限制**：不涉及  **取值范围**：true开启，false不开启。  **默认取值**：不涉及  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return enhanceL7policyEnable
      */
     public Boolean getEnhanceL7policyEnable() {
@@ -923,7 +923,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 后端服务器ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_instance_id=xxx&member_instance_id=xxx*。
+     * **参数解释**：后端服务器ID。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*member_instance_id=xxx&member_instance_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return memberInstanceId
      */
     public List<String> getMemberInstanceId() {
@@ -956,7 +956,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * **参数解释**：修改保护状态。 支持多值查询，查询条件格式：*protection_status=xxx&protection_status=xxx*。  **约束限制**：不涉及  **取值范围**： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护  **默认取值**：不涉及
      * @return protectionStatus
      */
     public List<String> getProtectionStatus() {
@@ -973,7 +973,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 参数解释：监听器0-RTT能力开关。
+     * **参数解释**：是否开启监听器0-RTT功能。  **约束限制**：不涉及  **取值范围**：true开启，false不开启。  **默认取值**：不涉及
      * @return sslEarlyDataEnable
      */
     public Boolean getSslEarlyDataEnable() {
@@ -990,7 +990,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 是否开启nat64地址族转换功能。  取值：true 开启，false 不开启。
+     * **参数解释**：是否开启nat64地址转换功能。  **约束限制**：不涉及  **取值范围**：true开启，false不开启。  **默认取值**：不涉及
      * @return nat64Enable
      */
     public Boolean getNat64Enable() {

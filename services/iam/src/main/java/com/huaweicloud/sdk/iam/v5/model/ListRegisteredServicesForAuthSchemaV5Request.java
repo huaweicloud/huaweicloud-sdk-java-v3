@@ -26,7 +26,7 @@ public class ListRegisteredServicesForAuthSchemaV5Request {
     }
 
     /**
-     * 每页显示的条目数量。
+     * 每页显示的条目数量，范围为1到200条，默认为100条。
      * minimum: 1
      * maximum: 200
      * @return limit

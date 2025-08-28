@@ -61,7 +61,7 @@ public class UpdateCertificateOption {
     private String source;
 
     /**
-     * 参数解释：修改保护状态  约束限制：无  取值范围：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护  默认取值：nonProtection
+     * **参数解释**：修改保护状态   **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
      */
     public static final class ProtectionStatusEnum {
 
@@ -146,7 +146,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * 证书的内容。PEM编码格式。 最大长度65536字符。 支持证书链，最大11层(含证书和证书链)。
+     * **参数解释**：证书内容。 支持最大11层证书链(含证书和证书链)。  **约束限制**：不涉及  **取值范围**：PEM编码格式，最大长度65536个字符。  **默认取值**：不涉及
      * @return certificate
      */
     public String getCertificate() {
@@ -163,7 +163,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * 证书的描述。
+     * **参数解释**：证书的描述。  **约束限制**：不涉及  **取值范围**：0-255个字符。  **默认取值**：不涉及
      * @return description
      */
     public String getDescription() {
@@ -180,7 +180,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * 证书的名称。
+     * **参数解释**：证书的名称。  **约束限制**：不涉及  **取值范围**：0-255个字符。  **默认取值**：不涉及
      * @return name
      */
     public String getName() {
@@ -197,7 +197,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * 服务器证书的私钥。PEM编码格式。 当type为client时，该参数被忽略，不影响证书的创建和使用。若传入不符合格式值，则会报错。 当type为server时，该字段必须符合格式要求，且私钥必须是有效的。 最大长度8192字符。
+     * **参数解释**：服务器证书的私钥。  **约束限制**：不涉及  **取值范围**：PEM编码格式，最大长度8192个字符。  **默认取值**：不涉及
      * @return privateKey
      */
     public String getPrivateKey() {
@@ -214,7 +214,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分隔，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\".\"分隔，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；  泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com
+     * **参数解释**：服务器证书所签域名。  **约束限制**：该字段仅type为server时有效（其他类型证书，字段可传入，但不会生效）。  **取值范围**：总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分隔，不超过100个域名。 - 普通域名：由若干字符串组成，字符串间以\".\"分隔，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com。 - 泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com。  **默认取值**：不涉及
      * @return domain
      */
     public String getDomain() {
@@ -231,7 +231,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * HTTPS协议使用的SM加密证书内容。支持证书链，最大11层(含证书和证书链)。  取值：PEM编码格式。最大长度65536字符。  使用说明：仅type为server_sm时有效。
+     * **参数解释**：服务器SM双证书的证书内容。 支持最大11层证书链(含证书和证书链)。  **约束限制**：仅当type为server_sm时，才支持传入。  **取值范围**：PEM编码格式。最大长度65536字符。  **默认取值**：不涉及
      * @return encCertificate
      */
     public String getEncCertificate() {
@@ -248,7 +248,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * HTTPS协议使用的SM加密证书内容。  取值：PEM编码格式。最大长度8192字符。  使用说明：仅type为server_sm时有效。
+     * **参数解释**：服务器SM双证书的私钥。  **约束限制**：仅当type为server_sm时，才支持传入。  **取值范围**：PEM编码格式，最大长度8192个字符。  **默认取值**：不涉及
      * @return encPrivateKey
      */
     public String getEncPrivateKey() {
@@ -265,7 +265,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * scm证书id
+     * **参数解释**：云证书管理服务（CCM）中的证书ID。  **约束限制**：仅记录证书ID，不验证其是否真实存在云证书管理服务中。并且需要将云证书管理服务中对应证书的内容手动设置到当前接口相应字段中（可能涉及字段certificate、private_key、enc_certificate和enc_private_key）  **取值范围**：不涉及  **默认取值**：不涉及
      * @return scmCertificateId
      */
     public String getScmCertificateId() {
@@ -282,7 +282,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * 参数解释：证书来源 取值范围：无  默认取值：当scm_certificate_id不为空，且未传入source时，默认取值为“scm”； 其他情况下默认为空。
+     * **参数解释**：标记当前证书来源。  **约束限制**：无  **取值范围**： - scm：表示关联云证书管理服务（CCM）中的证书。 - 空值：表示自有证书。  **默认取值**：不涉及
      * @return source
      */
     public String getSource() {
@@ -299,7 +299,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * 参数解释：修改保护状态  约束限制：无  取值范围：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护  默认取值：nonProtection
+     * **参数解释**：修改保护状态   **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
      * @return protectionStatus
      */
     public ProtectionStatusEnum getProtectionStatus() {
@@ -316,7 +316,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * 参数解释：设置修改保护的原因  约束限制：仅当protection_status为consoleProtection时有效  取值范围：无  默认取值：空
+     * **参数解释**：设置修改保护的原因   **约束限制**：仅当protection_status为consoleProtection时有效   **取值范围**：不涉及   **默认取值**：空
      * @return protectionReason
      */
     public String getProtectionReason() {

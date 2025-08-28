@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 参数解释：监听器
+ * **参数解释**：关联的监听器。  **默认取值**：不涉及
  */
 public class ListenerRef {
 
@@ -21,7 +21,7 @@ public class ListenerRef {
     }
 
     /**
-     * 参数解释：监听器ID。
+     * **参数解释**：监听器ID。  **取值范围**：不涉及
      * @return id
      */
     public String getId() {

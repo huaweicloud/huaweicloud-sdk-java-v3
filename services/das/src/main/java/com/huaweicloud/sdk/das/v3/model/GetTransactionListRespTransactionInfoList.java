@@ -28,7 +28,7 @@ public class GetTransactionListRespTransactionInfoList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "occurrence_time")
 
-    private Integer occurrenceTime;
+    private Long occurrenceTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
@@ -91,7 +91,7 @@ public class GetTransactionListRespTransactionInfoList {
         this.holdLocks = holdLocks;
     }
 
-    public GetTransactionListRespTransactionInfoList withOccurrenceTime(Integer occurrenceTime) {
+    public GetTransactionListRespTransactionInfoList withOccurrenceTime(Long occurrenceTime) {
         this.occurrenceTime = occurrenceTime;
         return this;
     }
@@ -100,11 +100,11 @@ public class GetTransactionListRespTransactionInfoList {
      * 发生时间
      * @return occurrenceTime
      */
-    public Integer getOccurrenceTime() {
+    public Long getOccurrenceTime() {
         return occurrenceTime;
     }
 
-    public void setOccurrenceTime(Integer occurrenceTime) {
+    public void setOccurrenceTime(Long occurrenceTime) {
         this.occurrenceTime = occurrenceTime;
     }
 

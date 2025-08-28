@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 配额信息，包括总配额和已使用配额。
+ * **参数解释**：配额信息，包括总配额和已使用配额。
  */
 public class QuotaInfo {
 
@@ -36,7 +36,7 @@ public class QuotaInfo {
     }
 
     /**
-     * 资源类型。  取值：loadbalancer、listener、ipgroup、pool、member、healthmonitor、l7policy、certificate、security_policy、listeners_per_loadbalancer、listeners_per_pool、members_per_pool、condition_per_policy、ipgroup_bindings、ipgroup_max_length、ipgroups_per_listener、pools_per_l7policy、l7policies_per_listener、free_instance_members_per_pool、free_instance_listeners_per_loadbalancer。
+     * **参数解释**：配额类型。  **取值范围**：loadbalancer、listener、ipgroup、pool、member、healthmonitor、l7policy、certificate、security_policy、listeners_per_loadbalancer、listeners_per_pool、members_per_pool、condition_per_policy、ipgroup_bindings、ipgroup_max_length、ipgroups_per_listener、pools_per_l7policy、l7policies_per_listener、free_instance_members_per_pool、free_instance_listeners_per_loadbalancer。
      * @return quotaKey
      */
     public String getQuotaKey() {
@@ -53,7 +53,7 @@ public class QuotaInfo {
     }
 
     /**
-     * 总配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * **参数解释**：总配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return quotaLimit
      */
     public Integer getQuotaLimit() {
@@ -70,7 +70,7 @@ public class QuotaInfo {
     }
 
     /**
-     * 已使用配额。
+     * **参数解释**：已使用配额。  **取值范围**：大于等于0。
      * @return used
      */
     public Integer getUsed() {
@@ -87,7 +87,7 @@ public class QuotaInfo {
     }
 
     /**
-     * 配额单位。  取值：count，表示个数。
+     * **参数解释**：配额单位。  **取值范围**：count，表示个数。
      * @return unit
      */
     public String getUnit() {

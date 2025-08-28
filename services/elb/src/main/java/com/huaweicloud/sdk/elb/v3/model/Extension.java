@@ -26,7 +26,7 @@ public class Extension {
     }
 
     /**
-     * ep id
+     * **参数解释**：EP ID.  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return epId
      */
     public String getEpId() {
@@ -43,7 +43,7 @@ public class Extension {
     }
 
     /**
-     * ep service id
+     * **参数解释**：EP Service ID.  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return epServiceId
      */
     public String getEpServiceId() {

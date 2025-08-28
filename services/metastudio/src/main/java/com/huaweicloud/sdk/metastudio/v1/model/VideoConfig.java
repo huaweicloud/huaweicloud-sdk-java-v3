@@ -92,7 +92,7 @@ public class VideoConfig {
     private ClipModeEnum clipMode;
 
     /**
-     * **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： 不涉及
+     * **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： H264
      */
     public static final class CodecEnum {
 
@@ -309,6 +309,11 @@ public class VideoConfig {
 
     private String outputExternalUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_vocabulary_config_enable")
+
+    private Boolean isVocabularyConfigEnable;
+
     public VideoConfig withClipMode(ClipModeEnum clipMode) {
         this.clipMode = clipMode;
         return this;
@@ -332,7 +337,7 @@ public class VideoConfig {
     }
 
     /**
-     * **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： 不涉及
+     * **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： H264
      * @return codec
      */
     public CodecEnum getCodec() {
@@ -549,6 +554,23 @@ public class VideoConfig {
         this.outputExternalUrl = outputExternalUrl;
     }
 
+    public VideoConfig withIsVocabularyConfigEnable(Boolean isVocabularyConfigEnable) {
+        this.isVocabularyConfigEnable = isVocabularyConfigEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否应用当前租户的读法配置 **约束限制**： 仅分身数字人视频制作支持。 **取值范围** * true: 开启 * false: 不开启
+     * @return isVocabularyConfigEnable
+     */
+    public Boolean getIsVocabularyConfigEnable() {
+        return isVocabularyConfigEnable;
+    }
+
+    public void setIsVocabularyConfigEnable(Boolean isVocabularyConfigEnable) {
+        this.isVocabularyConfigEnable = isVocabularyConfigEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -566,7 +588,8 @@ public class VideoConfig {
             && Objects.equals(this.dy, that.dy)
             && Objects.equals(this.isEnableSuperResolution, that.isEnableSuperResolution)
             && Objects.equals(this.isEndAtFirstFrame, that.isEndAtFirstFrame)
-            && Objects.equals(this.outputExternalUrl, that.outputExternalUrl);
+            && Objects.equals(this.outputExternalUrl, that.outputExternalUrl)
+            && Objects.equals(this.isVocabularyConfigEnable, that.isVocabularyConfigEnable);
     }
 
     @Override
@@ -583,7 +606,8 @@ public class VideoConfig {
             dy,
             isEnableSuperResolution,
             isEndAtFirstFrame,
-            outputExternalUrl);
+            outputExternalUrl,
+            isVocabularyConfigEnable);
     }
 
     @Override
@@ -603,6 +627,7 @@ public class VideoConfig {
         sb.append("    isEnableSuperResolution: ").append(toIndentedString(isEnableSuperResolution)).append("\n");
         sb.append("    isEndAtFirstFrame: ").append(toIndentedString(isEndAtFirstFrame)).append("\n");
         sb.append("    outputExternalUrl: ").append(toIndentedString(outputExternalUrl)).append("\n");
+        sb.append("    isVocabularyConfigEnable: ").append(toIndentedString(isVocabularyConfigEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

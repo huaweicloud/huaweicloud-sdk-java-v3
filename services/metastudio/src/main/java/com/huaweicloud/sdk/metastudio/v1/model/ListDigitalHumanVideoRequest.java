@@ -93,6 +93,11 @@ public class ListDigitalHumanVideoRequest {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_ids")
+
+    private List<String> jobIds = null;
+
     public ListDigitalHumanVideoRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -391,6 +396,39 @@ public class ListDigitalHumanVideoRequest {
         this.jobId = jobId;
     }
 
+    public ListDigitalHumanVideoRequest withJobIds(List<String> jobIds) {
+        this.jobIds = jobIds;
+        return this;
+    }
+
+    public ListDigitalHumanVideoRequest addJobIdsItem(String jobIdsItem) {
+        if (this.jobIds == null) {
+            this.jobIds = new ArrayList<>();
+        }
+        this.jobIds.add(jobIdsItem);
+        return this;
+    }
+
+    public ListDigitalHumanVideoRequest withJobIds(Consumer<List<String>> jobIdsSetter) {
+        if (this.jobIds == null) {
+            this.jobIds = new ArrayList<>();
+        }
+        jobIdsSetter.accept(this.jobIds);
+        return this;
+    }
+
+    /**
+     * 批量查询的任务ID
+     * @return jobIds
+     */
+    public List<String> getJobIds() {
+        return jobIds;
+    }
+
+    public void setJobIds(List<String> jobIds) {
+        this.jobIds = jobIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -408,7 +446,8 @@ public class ListDigitalHumanVideoRequest {
             && Objects.equals(this.createSince, that.createSince)
             && Objects.equals(this.fuzzyQueryField, that.fuzzyQueryField)
             && Objects.equals(this.scriptId, that.scriptId) && Objects.equals(this.assetName, that.assetName)
-            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.jobId, that.jobId);
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobIds, that.jobIds);
     }
 
     @Override
@@ -428,7 +467,8 @@ public class ListDigitalHumanVideoRequest {
             scriptId,
             assetName,
             jobType,
-            jobId);
+            jobId,
+            jobIds);
     }
 
     @Override
@@ -451,6 +491,7 @@ public class ListDigitalHumanVideoRequest {
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    jobIds: ").append(toIndentedString(jobIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

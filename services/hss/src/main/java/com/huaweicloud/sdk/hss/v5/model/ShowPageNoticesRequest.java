@@ -43,7 +43,7 @@ public class ShowPageNoticesRequest {
     }
 
     /**
-     * 访问页面位置，包含下面这些页面 - hostMgmt : 主机管理-云服务器 - hostProtectQuota : 主机管理-防护配额 - containerNodeList : 容器管理-容器节点管理 - containerProtectQuota : 容器管理-容器防护配额 - containerMirror : 容器管理-容器镜像 - container : 容器管理-容器 - clusterAgent : 容器管理-集群Agent管理 - vulView : 漏洞管理-漏洞视图 - vulHostView : 漏洞管理-主机视图 - ransomwareProtection : 勒索病毒防护 - policyMgmt : 策略管理 - antiVirus : 病毒查杀 - hostAlarm : 安全告警事件-主机安全告警 - containerAlarm : 安全告警事件-容器安全告警
+     * **参数解释** 访问页面位置 **取值范围** - hostMgmt：主机管理-云服务器 - hostProtectQuota：主机管理-防护配额 - containerNodeList：容器管理-容器节点管理 - containerProtectQuota：容器管理-容器防护配额 - containerMirror：容器管理-容器镜像 - container：容器管理-容器 - clusterAgent：容器管理-集群Agent管理 - vulView：漏洞管理-漏洞视图 - vulHostView：漏洞管理-主机视图 - ransomwareProtection：勒索病毒防护 - policyMgmt：策略管理 - antiVirus：病毒查杀 - hostAlarm：安全告警事件-主机安全告警 - containerAlarm：安全告警事件-容器安全告警
      * @return pageLocation
      */
     public String getPageLocation() {

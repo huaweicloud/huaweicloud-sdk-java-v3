@@ -23,7 +23,17 @@ public class SkuSpecBaseResponsePoolInfoAosp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private String id;
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network")
+
+    private String network;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable")
+
+    private Boolean enable;
 
     public SkuSpecBaseResponsePoolInfoAosp withVersion(String version) {
         this.version = version;
@@ -59,7 +69,7 @@ public class SkuSpecBaseResponsePoolInfoAosp {
         this.resPoolId = resPoolId;
     }
 
-    public SkuSpecBaseResponsePoolInfoAosp withId(String id) {
+    public SkuSpecBaseResponsePoolInfoAosp withId(Integer id) {
         this.id = id;
         return this;
     }
@@ -68,12 +78,46 @@ public class SkuSpecBaseResponsePoolInfoAosp {
      * sku表该数据主键id
      * @return id
      */
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public SkuSpecBaseResponsePoolInfoAosp withNetwork(String network) {
+        this.network = network;
+        return this;
+    }
+
+    /**
+     * 网络类型。取值：EIP, ADN
+     * @return network
+     */
+    public String getNetwork() {
+        return network;
+    }
+
+    public void setNetwork(String network) {
+        this.network = network;
+    }
+
+    public SkuSpecBaseResponsePoolInfoAosp withEnable(Boolean enable) {
+        this.enable = enable;
+        return this;
+    }
+
+    /**
+     * 是否开启。取值：true, fasle
+     * @return enable
+     */
+    public Boolean getEnable() {
+        return enable;
+    }
+
+    public void setEnable(Boolean enable) {
+        this.enable = enable;
     }
 
     @Override
@@ -86,12 +130,13 @@ public class SkuSpecBaseResponsePoolInfoAosp {
         }
         SkuSpecBaseResponsePoolInfoAosp that = (SkuSpecBaseResponsePoolInfoAosp) obj;
         return Objects.equals(this.version, that.version) && Objects.equals(this.resPoolId, that.resPoolId)
-            && Objects.equals(this.id, that.id);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.network, that.network)
+            && Objects.equals(this.enable, that.enable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version, resPoolId, id);
+        return Objects.hash(version, resPoolId, id, network, enable);
     }
 
     @Override
@@ -101,6 +146,8 @@ public class SkuSpecBaseResponsePoolInfoAosp {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    resPoolId: ").append(toIndentedString(resPoolId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    network: ").append(toIndentedString(network)).append("\n");
+        sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

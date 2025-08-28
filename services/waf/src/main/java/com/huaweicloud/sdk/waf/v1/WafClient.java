@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
 import com.huaweicloud.sdk.waf.v1.model.CheckAgencyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CheckAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyAntileakageMapRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyAntileakageMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyIpReputationMapRequest;
@@ -41,6 +43,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostRequest;
@@ -79,6 +83,8 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePremiumHostRequest;
@@ -101,6 +107,14 @@ import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRequestDistributionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRequestDistributionResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMScoreDistributionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMScoreDistributionResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMTimelineRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMTopnRequestRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMTopnRequestResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCertificatesRequest;
@@ -145,6 +159,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
@@ -153,6 +169,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListTopDomainsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListTopDomainsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListTopIpRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListTopIpResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListTopUrlRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListTopUrlResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesRequest;
@@ -243,6 +263,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateLtsInfoConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateLtsInfoConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePolicyProtectHostRequest;
@@ -371,6 +393,35 @@ public class WafClient {
      */
     public SyncInvoker<CheckAgencyRequest, CheckAgencyResponse> checkAgencyInvoker(CheckAgencyRequest request) {
         return new SyncInvoker<>(request, WafMeta.checkAgency, hcClient);
+    }
+
+    /**
+     * 根据Id查询地理位置防护规则
+     *
+     * 根据Id查询IP情报防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmIpReputationRuleRequest 请求对象
+     * @return ConfirmIpReputationRuleResponse
+     */
+    public ConfirmIpReputationRuleResponse confirmIpReputationRule(ConfirmIpReputationRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.confirmIpReputationRule);
+    }
+
+    /**
+     * 根据Id查询地理位置防护规则
+     *
+     * 根据Id查询IP情报防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmIpReputationRuleRequest 请求对象
+     * @return SyncInvoker<ConfirmIpReputationRuleRequest, ConfirmIpReputationRuleResponse>
+     */
+    public SyncInvoker<ConfirmIpReputationRuleRequest, ConfirmIpReputationRuleResponse> confirmIpReputationRuleInvoker(
+        ConfirmIpReputationRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.confirmIpReputationRule, hcClient);
     }
 
     /**
@@ -834,6 +885,35 @@ public class WafClient {
      */
     public SyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroupInvoker(CreateIpGroupRequest request) {
         return new SyncInvoker<>(request, WafMeta.createIpGroup, hcClient);
+    }
+
+    /**
+     * 创建机房IP情报规则
+     *
+     * 创建IP情报规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIpReputationRuleRequest 请求对象
+     * @return CreateIpReputationRuleResponse
+     */
+    public CreateIpReputationRuleResponse createIpReputationRule(CreateIpReputationRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createIpReputationRule);
+    }
+
+    /**
+     * 创建机房IP情报规则
+     *
+     * 创建IP情报规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIpReputationRuleRequest 请求对象
+     * @return SyncInvoker<CreateIpReputationRuleRequest, CreateIpReputationRuleResponse>
+     */
+    public SyncInvoker<CreateIpReputationRuleRequest, CreateIpReputationRuleResponse> createIpReputationRuleInvoker(
+        CreateIpReputationRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.createIpReputationRule, hcClient);
     }
 
     /**
@@ -1385,6 +1465,35 @@ public class WafClient {
     }
 
     /**
+     * 删除机房IP情报防护规则
+     *
+     * 删除IP情报防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpReputationRuleRequest 请求对象
+     * @return DeleteIpReputationRuleResponse
+     */
+    public DeleteIpReputationRuleResponse deleteIpReputationRule(DeleteIpReputationRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteIpReputationRule);
+    }
+
+    /**
+     * 删除机房IP情报防护规则
+     *
+     * 删除IP情报防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpReputationRuleRequest 请求对象
+     * @return SyncInvoker<DeleteIpReputationRuleRequest, DeleteIpReputationRuleResponse>
+     */
+    public SyncInvoker<DeleteIpReputationRuleRequest, DeleteIpReputationRuleResponse> deleteIpReputationRuleInvoker(
+        DeleteIpReputationRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.deleteIpReputationRule, hcClient);
+    }
+
+    /**
      * 删除防护策略
      *
      * 删除防护策略，若策略正在使用，则需要先接解除域名与策略的绑定关系才能删除策略。
@@ -1700,6 +1809,122 @@ public class WafClient {
     public SyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> listBandwidthTimelineInvoker(
         ListBandwidthTimelineRequest request) {
         return new SyncInvoker<>(request, WafMeta.listBandwidthTimeline, hcClient);
+    }
+
+    /**
+     * 查询BotM中bot的请求分布
+     *
+     * 查询BotM中bot的请求分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMRequestDistributionRequest 请求对象
+     * @return ListBotMRequestDistributionResponse
+     */
+    public ListBotMRequestDistributionResponse listBotMRequestDistribution(ListBotMRequestDistributionRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listBotMRequestDistribution);
+    }
+
+    /**
+     * 查询BotM中bot的请求分布
+     *
+     * 查询BotM中bot的请求分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMRequestDistributionRequest 请求对象
+     * @return SyncInvoker<ListBotMRequestDistributionRequest, ListBotMRequestDistributionResponse>
+     */
+    public SyncInvoker<ListBotMRequestDistributionRequest, ListBotMRequestDistributionResponse> listBotMRequestDistributionInvoker(
+        ListBotMRequestDistributionRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listBotMRequestDistribution, hcClient);
+    }
+
+    /**
+     * 查询BotM中bot的评分分布
+     *
+     * 查询BotM中bot的评分分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMScoreDistributionRequest 请求对象
+     * @return ListBotMScoreDistributionResponse
+     */
+    public ListBotMScoreDistributionResponse listBotMScoreDistribution(ListBotMScoreDistributionRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listBotMScoreDistribution);
+    }
+
+    /**
+     * 查询BotM中bot的评分分布
+     *
+     * 查询BotM中bot的评分分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMScoreDistributionRequest 请求对象
+     * @return SyncInvoker<ListBotMScoreDistributionRequest, ListBotMScoreDistributionResponse>
+     */
+    public SyncInvoker<ListBotMScoreDistributionRequest, ListBotMScoreDistributionResponse> listBotMScoreDistributionInvoker(
+        ListBotMScoreDistributionRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listBotMScoreDistribution, hcClient);
+    }
+
+    /**
+     * 查询BotM中bot的请求时间趋势
+     *
+     * 查询BotM中bot的请求时间趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMTimelineRequest 请求对象
+     * @return ListBotMTimelineResponse
+     */
+    public ListBotMTimelineResponse listBotMTimeline(ListBotMTimelineRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listBotMTimeline);
+    }
+
+    /**
+     * 查询BotM中bot的请求时间趋势
+     *
+     * 查询BotM中bot的请求时间趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMTimelineRequest 请求对象
+     * @return SyncInvoker<ListBotMTimelineRequest, ListBotMTimelineResponse>
+     */
+    public SyncInvoker<ListBotMTimelineRequest, ListBotMTimelineResponse> listBotMTimelineInvoker(
+        ListBotMTimelineRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listBotMTimeline, hcClient);
+    }
+
+    /**
+     * 查询BotM中top n的bot请求
+     *
+     * 查询BotM中topn的bot请求
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMTopnRequestRequest 请求对象
+     * @return ListBotMTopnRequestResponse
+     */
+    public ListBotMTopnRequestResponse listBotMTopnRequest(ListBotMTopnRequestRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listBotMTopnRequest);
+    }
+
+    /**
+     * 查询BotM中top n的bot请求
+     *
+     * 查询BotM中topn的bot请求
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMTopnRequestRequest 请求对象
+     * @return SyncInvoker<ListBotMTopnRequestRequest, ListBotMTopnRequestResponse>
+     */
+    public SyncInvoker<ListBotMTopnRequestRequest, ListBotMTopnRequestResponse> listBotMTopnRequestInvoker(
+        ListBotMTopnRequestRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listBotMTopnRequest, hcClient);
     }
 
     /**
@@ -2333,6 +2558,35 @@ public class WafClient {
     }
 
     /**
+     * 查询安全统计响应码数据
+     *
+     * 查询安全统计响应码数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResponseCodeTimelineRequest 请求对象
+     * @return ListResponseCodeTimelineResponse
+     */
+    public ListResponseCodeTimelineResponse listResponseCodeTimeline(ListResponseCodeTimelineRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listResponseCodeTimeline);
+    }
+
+    /**
+     * 查询安全统计响应码数据
+     *
+     * 查询安全统计响应码数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResponseCodeTimelineRequest 请求对象
+     * @return SyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse>
+     */
+    public SyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimelineInvoker(
+        ListResponseCodeTimelineRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listResponseCodeTimeline, hcClient);
+    }
+
+    /**
      * 查询安全报告订阅列表
      *
      * 查询安全报告订阅列表
@@ -2447,6 +2701,62 @@ public class WafClient {
     public SyncInvoker<ListTopDomainsRequest, ListTopDomainsResponse> listTopDomainsInvoker(
         ListTopDomainsRequest request) {
         return new SyncInvoker<>(request, WafMeta.listTopDomains, hcClient);
+    }
+
+    /**
+     * 查询攻击源ip
+     *
+     * 查询攻击源ip
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopIpRequest 请求对象
+     * @return ListTopIpResponse
+     */
+    public ListTopIpResponse listTopIp(ListTopIpRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listTopIp);
+    }
+
+    /**
+     * 查询攻击源ip
+     *
+     * 查询攻击源ip
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopIpRequest 请求对象
+     * @return SyncInvoker<ListTopIpRequest, ListTopIpResponse>
+     */
+    public SyncInvoker<ListTopIpRequest, ListTopIpResponse> listTopIpInvoker(ListTopIpRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listTopIp, hcClient);
+    }
+
+    /**
+     * 查询被攻击url
+     *
+     * 查询被攻击url
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopUrlRequest 请求对象
+     * @return ListTopUrlResponse
+     */
+    public ListTopUrlResponse listTopUrl(ListTopUrlRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listTopUrl);
+    }
+
+    /**
+     * 查询被攻击url
+     *
+     * 查询被攻击url
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopUrlRequest 请求对象
+     * @return SyncInvoker<ListTopUrlRequest, ListTopUrlResponse>
+     */
+    public SyncInvoker<ListTopUrlRequest, ListTopUrlResponse> listTopUrlInvoker(ListTopUrlRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listTopUrl, hcClient);
     }
 
     /**
@@ -3740,6 +4050,35 @@ public class WafClient {
      */
     public SyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupInvoker(UpdateIpGroupRequest request) {
         return new SyncInvoker<>(request, WafMeta.updateIpGroup, hcClient);
+    }
+
+    /**
+     * 更新机房IP情报防护规则
+     *
+     * 更新IP情报防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpReputationRuleRequest 请求对象
+     * @return UpdateIpReputationRuleResponse
+     */
+    public UpdateIpReputationRuleResponse updateIpReputationRule(UpdateIpReputationRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateIpReputationRule);
+    }
+
+    /**
+     * 更新机房IP情报防护规则
+     *
+     * 更新IP情报防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpReputationRuleRequest 请求对象
+     * @return SyncInvoker<UpdateIpReputationRuleRequest, UpdateIpReputationRuleResponse>
+     */
+    public SyncInvoker<UpdateIpReputationRuleRequest, UpdateIpReputationRuleResponse> updateIpReputationRuleInvoker(
+        UpdateIpReputationRuleRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateIpReputationRule, hcClient);
     }
 
     /**

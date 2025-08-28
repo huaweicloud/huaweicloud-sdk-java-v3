@@ -893,7 +893,7 @@ public class EventProcessResponseInfo {
     }
 
     /**
-     * **参数解释**： 逃逸后后执行的命令 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 逃逸后执行的命令 **取值范围**： 字符长度1-256位 
      * @return escapeCmd
      */
     public String getEscapeCmd() {

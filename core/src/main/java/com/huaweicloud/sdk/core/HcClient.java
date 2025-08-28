@@ -42,6 +42,7 @@ import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
+import com.huaweicloud.sdk.core.impl.DefaultUserAgent;
 import com.huaweicloud.sdk.core.progress.ProgressInputStream;
 import com.huaweicloud.sdk.core.progress.ProgressRequest;
 import com.huaweicloud.sdk.core.progress.SimpleProgressManager;
@@ -362,9 +363,13 @@ public class HcClient implements CustomizationConfigure {
             headers.putAll(extraHeaders);
         }
         // user-agent
-        String userAgent = headers.containsKey(Constants.USER_AGENT) ?
-                Constants.USER_AGENT_VALUE + ";" + headers.get(Constants.USER_AGENT) : Constants.USER_AGENT_VALUE;
-        headers.put(Constants.USER_AGENT, userAgent);
+        StringBuilder usString = new StringBuilder(Constants.USER_AGENT_VALUE);
+        String customUa = headers.getOrDefault(Constants.USER_AGENT, this.httpConfig.getUserAgent());
+        if (!StringUtils.isEmpty(customUa)) {
+            usString.append(DefaultUserAgent.SEMICOLON).append(customUa);
+        }
+
+        headers.put(Constants.USER_AGENT, usString.toString());
 
         builder.addHeaders(headers);
     }

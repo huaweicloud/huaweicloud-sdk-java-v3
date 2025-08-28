@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 子任务关联的资源列表
+ * **参数解释**：子任务关联的资源列表
  */
 public class JobEntities {
 
@@ -26,7 +26,7 @@ public class JobEntities {
     }
 
     /**
-     * 子任务关联的资源ID
+     * **参数解释**：子任务关联的资源ID。  **取值范围**：不涉及
      * @return resourceId
      */
     public String getResourceId() {
@@ -43,7 +43,7 @@ public class JobEntities {
     }
 
     /**
-     * 子任务关联的资源类型
+     * **参数解释**：子任务关联的资源类型。  **取值范围**：不涉及
      * @return resourceType
      */
     public String getResourceType() {

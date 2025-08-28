@@ -40,7 +40,7 @@ public class BatchCreateMembersRequestBody {
     }
 
     /**
-     * 后端服务器对象。
+     * **参数解释**：批量添加member请求参数。  **约束限制**：不涉及
      * @return members
      */
     public List<BatchCreateMembersOption> getMembers() {

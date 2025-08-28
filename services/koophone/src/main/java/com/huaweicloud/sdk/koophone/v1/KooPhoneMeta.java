@@ -7,6 +7,12 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.koophone.v1.model.AsyncInvokeInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.AsyncInvokeInstanceResponse;
+import com.huaweicloud.sdk.koophone.v1.model.BatchBackupInstancesRequest;
+import com.huaweicloud.sdk.koophone.v1.model.BatchBackupInstancesResponse;
+import com.huaweicloud.sdk.koophone.v1.model.BatchPrepareInstancesRequest;
+import com.huaweicloud.sdk.koophone.v1.model.BatchPrepareInstancesResponse;
+import com.huaweicloud.sdk.koophone.v1.model.BatchRebootInstanceRequest;
+import com.huaweicloud.sdk.koophone.v1.model.BatchRebootInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.BatchResetInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.BatchShowInstanceRequest;
@@ -23,19 +29,30 @@ import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteInstanceAuthTokenResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobResponse;
+import com.huaweicloud.sdk.koophone.v1.model.InstallAppReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstallAppRequest;
+import com.huaweicloud.sdk.koophone.v1.model.InstallAppResponse;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceAssignReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceAsyncCommandsReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceBatchBackupReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceBatchPrepareReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceCommandsReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceCreateReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceDeleteRequest;
+import com.huaweicloud.sdk.koophone.v1.model.InstancePrepareProgressReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceResetReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceStatusReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceSyncCommandsReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceUnassignReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceVideoSettingReq;
+import com.huaweicloud.sdk.koophone.v1.model.ListInstancesRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoResponse;
+import com.huaweicloud.sdk.koophone.v1.model.ShowProgressRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ShowProgressResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceResponse;
 
@@ -59,6 +76,75 @@ public class KooPhoneMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceAsyncCommandsReq.class),
             f -> f.withMarshaller(AsyncInvokeInstanceRequest::getBody, AsyncInvokeInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchBackupInstancesRequest, BatchBackupInstancesResponse> batchBackupInstances =
+        genForBatchBackupInstances();
+
+    private static HttpRequestDef<BatchBackupInstancesRequest, BatchBackupInstancesResponse> genForBatchBackupInstances() {
+        // basic
+        HttpRequestDef.Builder<BatchBackupInstancesRequest, BatchBackupInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchBackupInstancesRequest.class, BatchBackupInstancesResponse.class)
+            .withName("BatchBackupInstances")
+            .withUri("/v1/instances/backup")
+            .withContentType("application/json");
+
+        // requests
+        builder.<InstanceBatchBackupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceBatchBackupReq.class),
+            f -> f.withMarshaller(BatchBackupInstancesRequest::getBody, BatchBackupInstancesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchPrepareInstancesRequest, BatchPrepareInstancesResponse> batchPrepareInstances =
+        genForBatchPrepareInstances();
+
+    private static HttpRequestDef<BatchPrepareInstancesRequest, BatchPrepareInstancesResponse> genForBatchPrepareInstances() {
+        // basic
+        HttpRequestDef.Builder<BatchPrepareInstancesRequest, BatchPrepareInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchPrepareInstancesRequest.class, BatchPrepareInstancesResponse.class)
+            .withName("BatchPrepareInstances")
+            .withUri("/v1/instances/prepare")
+            .withContentType("application/json");
+
+        // requests
+        builder.<InstanceBatchPrepareReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceBatchPrepareReq.class),
+            f -> f.withMarshaller(BatchPrepareInstancesRequest::getBody, BatchPrepareInstancesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRebootInstanceRequest, BatchRebootInstanceResponse> batchRebootInstance =
+        genForBatchRebootInstance();
+
+    private static HttpRequestDef<BatchRebootInstanceRequest, BatchRebootInstanceResponse> genForBatchRebootInstance() {
+        // basic
+        HttpRequestDef.Builder<BatchRebootInstanceRequest, BatchRebootInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchRebootInstanceRequest.class, BatchRebootInstanceResponse.class)
+                .withName("BatchRebootInstance")
+                .withUri("/v1/instances/reboot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstanceCommandsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceCommandsReq.class),
+            f -> f.withMarshaller(BatchRebootInstanceRequest::getBody, BatchRebootInstanceRequest::setBody));
 
         // response
 
@@ -249,6 +335,86 @@ public class KooPhoneMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InstallAppRequest, InstallAppResponse> installApp = genForInstallApp();
+
+    private static HttpRequestDef<InstallAppRequest, InstallAppResponse> genForInstallApp() {
+        // basic
+        HttpRequestDef.Builder<InstallAppRequest, InstallAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InstallAppRequest.class, InstallAppResponse.class)
+                .withName("InstallApp")
+                .withUri("/v1/instances/app/install")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstallAppReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(InstallAppReq.class),
+            f -> f.withMarshaller(InstallAppRequest::getBody, InstallAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
+        genForListInstances();
+
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
+                .withName("ListInstances")
+                .withUri("/v1/instances/batch-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("x-request-id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getXRequestId, ListInstancesRequest::setXRequestId));
+        builder.<String>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getPageNo, ListInstancesRequest::setPageNo));
+        builder.<String>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getPageSize, ListInstancesRequest::setPageSize));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getInstanceId, ListInstancesRequest::setInstanceId));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getInstanceName, ListInstancesRequest::setInstanceName));
+        builder.<String>withRequestField("query_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getQueryStartTime, ListInstancesRequest::setQueryStartTime));
+        builder.<String>withRequestField("query_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getQueryEndTime, ListInstancesRequest::setQueryEndTime));
+        builder.<String>withRequestField("pool_scene_tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getPoolSceneTag, ListInstancesRequest::setPoolSceneTag));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ProvisionInstanceRequest, ProvisionInstanceResponse> provisionInstance =
         genForProvisionInstance();
 
@@ -288,6 +454,28 @@ public class KooPhoneMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceVideoSettingReq.class),
             f -> f.withMarshaller(SetVideoRequest::getBody, SetVideoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProgressRequest, ShowProgressResponse> showProgress = genForShowProgress();
+
+    private static HttpRequestDef<ShowProgressRequest, ShowProgressResponse> genForShowProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowProgressRequest, ShowProgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowProgressRequest.class, ShowProgressResponse.class)
+                .withName("ShowProgress")
+                .withUri("/v1/instances/prepare-progress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InstancePrepareProgressReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstancePrepareProgressReq.class),
+            f -> f.withMarshaller(ShowProgressRequest::getBody, ShowProgressRequest::setBody));
 
         // response
 

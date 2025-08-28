@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeServerOsWithoutCloudInitResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ChangeVpcResponse;
+import com.huaweicloud.sdk.ecs.v2.model.CreateLaunchTemplateRequest;
+import com.huaweicloud.sdk.ecs.v2.model.CreateLaunchTemplateResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.CreatePostPaidServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupRequest;
@@ -781,6 +783,35 @@ public class EcsClient {
      */
     public SyncInvoker<ChangeVpcRequest, ChangeVpcResponse> changeVpcInvoker(ChangeVpcRequest request) {
         return new SyncInvoker<>(request, EcsMeta.changeVpc, hcClient);
+    }
+
+    /**
+     * 创建模板
+     *
+     * 创建启动模板。将创建一个全新的模板，并自动生成版本号为1的作为默认版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLaunchTemplateRequest 请求对象
+     * @return CreateLaunchTemplateResponse
+     */
+    public CreateLaunchTemplateResponse createLaunchTemplate(CreateLaunchTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.createLaunchTemplate);
+    }
+
+    /**
+     * 创建模板
+     *
+     * 创建启动模板。将创建一个全新的模板，并自动生成版本号为1的作为默认版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLaunchTemplateRequest 请求对象
+     * @return SyncInvoker<CreateLaunchTemplateRequest, CreateLaunchTemplateResponse>
+     */
+    public SyncInvoker<CreateLaunchTemplateRequest, CreateLaunchTemplateResponse> createLaunchTemplateInvoker(
+        CreateLaunchTemplateRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.createLaunchTemplate, hcClient);
     }
 
     /**

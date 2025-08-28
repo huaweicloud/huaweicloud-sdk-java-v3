@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 创建云日志请求参数。
+ * CreateLogtankOption
  */
 public class CreateLogtankOption {
 
@@ -31,7 +31,7 @@ public class CreateLogtankOption {
     }
 
     /**
-     * 负载均衡器id
+     * **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -48,7 +48,7 @@ public class CreateLogtankOption {
     }
 
     /**
-     * 日志组别id，其他（非ELB）服务提供
+     * **参数解释**：日志组别id，其他（非ELB）服务提供。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return logGroupId
      */
     public String getLogGroupId() {
@@ -65,7 +65,7 @@ public class CreateLogtankOption {
     }
 
     /**
-     * 日志订阅主题id，其他（非ELB）服务提供
+     * **参数解释**：日志订阅主题id，其他（非ELB）服务提供。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return logTopicId
      */
     public String getLogTopicId() {

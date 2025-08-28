@@ -112,6 +112,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.SetResourcesRenewConfigRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.SetResourcesRenewConfigResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerExpenditureQuotaRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerExpenditureQuotaResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerMonthlySumRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerMonthlySumResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsRequest;
@@ -1593,6 +1595,27 @@ public class BssintlMeta {
                     ShowCustomerAccountBalancesResponse.class)
                 .withName("ShowCustomerAccountBalances")
                 .withUri("/v2/accounts/customer-accounts/balances")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCustomerExpenditureQuotaRequest, ShowCustomerExpenditureQuotaResponse> showCustomerExpenditureQuota =
+        genForShowCustomerExpenditureQuota();
+
+    private static HttpRequestDef<ShowCustomerExpenditureQuotaRequest, ShowCustomerExpenditureQuotaResponse> genForShowCustomerExpenditureQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomerExpenditureQuotaRequest, ShowCustomerExpenditureQuotaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCustomerExpenditureQuotaRequest.class,
+                    ShowCustomerExpenditureQuotaResponse.class)
+                .withName("ShowCustomerExpenditureQuota")
+                .withUri("/v2/accounts/customer-accounts/expenditure-quota")
                 .withContentType("application/json");
 
         // requests

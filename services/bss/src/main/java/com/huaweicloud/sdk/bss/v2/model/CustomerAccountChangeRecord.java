@@ -60,6 +60,26 @@ public class CustomerAccountChangeRecord {
 
     private String paymentChannelNo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consume_time")
+
+    private String consumeTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_name")
+
+    private String accountName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_service_type_name")
+
+    private String cloudServiceTypeName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type_name")
+
+    private String resourceTypeName;
+
     public CustomerAccountChangeRecord withAccountChangeId(String accountChangeId) {
         this.accountChangeId = accountChangeId;
         return this;
@@ -230,6 +250,74 @@ public class CustomerAccountChangeRecord {
         this.paymentChannelNo = paymentChannelNo;
     }
 
+    public CustomerAccountChangeRecord withConsumeTime(String consumeTime) {
+        this.consumeTime = consumeTime;
+        return this;
+    }
+
+    /**
+     * |参数名称：消费时间| |参数约束及描述：消费时间，UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ。包年/包月：与账单交易时间一致（交易类型为调帐时为账单的计费开始时间和结束时间），按需/分期：为账单的计费开始时间和结束时间。|
+     * @return consumeTime
+     */
+    public String getConsumeTime() {
+        return consumeTime;
+    }
+
+    public void setConsumeTime(String consumeTime) {
+        this.consumeTime = consumeTime;
+    }
+
+    public CustomerAccountChangeRecord withAccountName(String accountName) {
+        this.accountName = accountName;
+        return this;
+    }
+
+    /**
+     * |参数名称：账号名称| |参数约束及描述：账号名称，范围限制：0-128|
+     * @return accountName
+     */
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public CustomerAccountChangeRecord withCloudServiceTypeName(String cloudServiceTypeName) {
+        this.cloudServiceTypeName = cloudServiceTypeName;
+        return this;
+    }
+
+    /**
+     * |参数名称：云服务类型名称| |参数约束及描述：产品的云服务名称，范围限制：0-200|
+     * @return cloudServiceTypeName
+     */
+    public String getCloudServiceTypeName() {
+        return cloudServiceTypeName;
+    }
+
+    public void setCloudServiceTypeName(String cloudServiceTypeName) {
+        this.cloudServiceTypeName = cloudServiceTypeName;
+    }
+
+    public CustomerAccountChangeRecord withResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+        return this;
+    }
+
+    /**
+     * |参数名称：资源类型名称，该字段为预留字段。| |参数约束及描述：产品的资源类型名称，范围限制：0-200|
+     * @return resourceTypeName
+     */
+    public String getResourceTypeName() {
+        return resourceTypeName;
+    }
+
+    public void setResourceTypeName(String resourceTypeName) {
+        this.resourceTypeName = resourceTypeName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -247,7 +335,10 @@ public class CustomerAccountChangeRecord {
             && Objects.equals(this.revenueExpenseType, that.revenueExpenseType)
             && Objects.equals(this.billCycle, that.billCycle)
             && Objects.equals(this.paymentChannelId, that.paymentChannelId)
-            && Objects.equals(this.paymentChannelNo, that.paymentChannelNo);
+            && Objects.equals(this.paymentChannelNo, that.paymentChannelNo)
+            && Objects.equals(this.consumeTime, that.consumeTime) && Objects.equals(this.accountName, that.accountName)
+            && Objects.equals(this.cloudServiceTypeName, that.cloudServiceTypeName)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName);
     }
 
     @Override
@@ -261,7 +352,11 @@ public class CustomerAccountChangeRecord {
             revenueExpenseType,
             billCycle,
             paymentChannelId,
-            paymentChannelNo);
+            paymentChannelNo,
+            consumeTime,
+            accountName,
+            cloudServiceTypeName,
+            resourceTypeName);
     }
 
     @Override
@@ -278,6 +373,10 @@ public class CustomerAccountChangeRecord {
         sb.append("    billCycle: ").append(toIndentedString(billCycle)).append("\n");
         sb.append("    paymentChannelId: ").append(toIndentedString(paymentChannelId)).append("\n");
         sb.append("    paymentChannelNo: ").append(toIndentedString(paymentChannelNo)).append("\n");
+        sb.append("    consumeTime: ").append(toIndentedString(consumeTime)).append("\n");
+        sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
+        sb.append("    cloudServiceTypeName: ").append(toIndentedString(cloudServiceTypeName)).append("\n");
+        sb.append("    resourceTypeName: ").append(toIndentedString(resourceTypeName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

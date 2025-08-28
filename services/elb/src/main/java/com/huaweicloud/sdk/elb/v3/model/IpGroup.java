@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * IP地址组信息。
+ * **参数解释**：IP地址组信息。
  */
 public class IpGroup {
 
@@ -64,7 +64,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：IP地址组的ID。
+     * **参数解释**：IP地址组的ID。  **取值范围**：不涉及
      * @return id
      */
     public String getId() {
@@ -81,7 +81,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：IP地址组的名称。
+     * **参数解释**：IP地址组的名称。  **取值范围**：不涉及
      * @return name
      */
     public String getName() {
@@ -98,7 +98,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：IP地址组的描述信息。
+     * **参数解释**：IP地址组的描述信息。  **取值范围**：不涉及
      * @return description
      */
     public String getDescription() {
@@ -131,7 +131,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：IP地址组中包含的IP或网段列表。[]表示任意IP。
+     * **参数解释**：IP地址组中包含的IP地址列表。[]表示任意IP。
      * @return ipList
      */
     public List<IpInfo> getIpList() {
@@ -164,7 +164,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：与IP地址组关联的监听器的ID列表。
+     * **参数解释**：与IP地址组关联的监听器的ID列表。
      * @return listeners
      */
     public List<ListenerRef> getListeners() {
@@ -181,7 +181,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：IP地址组的项目ID。
+     * **参数解释**：IP地址组的项目ID。  **取值范围**：不涉及
      * @return projectId
      */
     public String getProjectId() {
@@ -198,7 +198,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * **参数解释**：资源所属的企业项目ID。  **取值范围**： - \"0\"：表示资源属于default企业项目。 - UUID格式的字符串，表示非默认企业项目。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -215,7 +215,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：IP地址组的创建时间。
+     * **参数解释**：IP地址组的创建时间。  **取值范围**：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -232,7 +232,7 @@ public class IpGroup {
     }
 
     /**
-     * 参数解释：IP地址组的更新时间。
+     * **参数解释**：IP地址组的更新时间。  **取值范围**：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
      * @return updatedAt
      */
     public String getUpdatedAt() {

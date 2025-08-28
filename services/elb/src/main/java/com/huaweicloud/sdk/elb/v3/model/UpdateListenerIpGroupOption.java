@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * listener对象中的ipgroup信息
+ * **参数解释**：listener对象中的ipgroup信息。  **约束限制**：不涉及
  */
 public class UpdateListenerIpGroupOption {
 
@@ -26,7 +26,7 @@ public class UpdateListenerIpGroupOption {
     private Boolean enableIpgroup;
 
     /**
-     * 参数解释：访问控制组的类型。  取值范围： - white:白名单，只允许指定ip访问。 - black:黑名单，不允许指定ip访问。
+     * **参数解释**：访问控制组的类型。  **约束限制**：不涉及  **取值范围**： - white:白名单，只允许指定ip访问。 - black:黑名单，不允许指定ip访问。  **默认取值**：不涉及
      */
     public static final class TypeEnum {
 
@@ -106,7 +106,7 @@ public class UpdateListenerIpGroupOption {
     }
 
     /**
-     * 参数解释：监听器关联的访问控制组的id。 创建时必选，更新时非必选。  约束限制：指定的ipgroup必须已存在，不能指定为null，否则与enable_ipgroup冲突。
+     * **参数解释**：监听器关联的访问控制组的id。创建时必选，更新时非必选。  **约束限制**：指定的ipgroup必须已存在，不能指定为null，否则与enable_ipgroup冲突。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return ipgroupId
      */
     public String getIpgroupId() {
@@ -123,7 +123,7 @@ public class UpdateListenerIpGroupOption {
     }
 
     /**
-     * 参数解释：访问控制组的状态。 开启访问控制的监听器，允许直接删除。  取值范围： - true:开启访问控制。 - false：关闭访问控制。
+     * **参数解释**：访问控制组的状态。开启访问控制的监听器，允许直接删除。  **约束限制**：不涉及  **取值范围**： - true:开启访问控制。 - false：关闭访问控制。  **默认取值**：不涉及
      * @return enableIpgroup
      */
     public Boolean getEnableIpgroup() {
@@ -140,7 +140,7 @@ public class UpdateListenerIpGroupOption {
     }
 
     /**
-     * 参数解释：访问控制组的类型。  取值范围： - white:白名单，只允许指定ip访问。 - black:黑名单，不允许指定ip访问。
+     * **参数解释**：访问控制组的类型。  **约束限制**：不涉及  **取值范围**： - white:白名单，只允许指定ip访问。 - black:黑名单，不允许指定ip访问。  **默认取值**：不涉及
      * @return type
      */
     public TypeEnum getType() {

@@ -11,36 +11,34 @@ import java.util.Objects;
 public class UpdateFlavorByTypeReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "need_check_replica")
-
-    private Boolean needCheckReplica;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_flavor_id")
 
     private String newFlavorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_type")
+
+    private String operationType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_check_replica")
+
+    private Boolean needCheckReplica;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
 
-    public UpdateFlavorByTypeReq withNeedCheckReplica(Boolean needCheckReplica) {
-        this.needCheckReplica = needCheckReplica;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_check_cluster_status")
 
-    /**
-     * 是否需要检查副本，取值范围为true或false。默认开启校验。 - true: 开启副本校验。 - false: 忽略副本校验。  >Master和Client节点不是数据节点，因此不需要进行副本校验。即使选择true，也不会进行副本校验。
-     * @return needCheckReplica
-     */
-    public Boolean getNeedCheckReplica() {
-        return needCheckReplica;
-    }
+    private Boolean needCheckClusterStatus;
 
-    public void setNeedCheckReplica(Boolean needCheckReplica) {
-        this.needCheckReplica = needCheckReplica;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_load_check")
+
+    private Boolean clusterLoadCheck;
 
     public UpdateFlavorByTypeReq withNewFlavorId(String newFlavorId) {
         this.newFlavorId = newFlavorId;
@@ -57,6 +55,40 @@ public class UpdateFlavorByTypeReq {
 
     public void setNewFlavorId(String newFlavorId) {
         this.newFlavorId = newFlavorId;
+    }
+
+    public UpdateFlavorByTypeReq withOperationType(String operationType) {
+        this.operationType = operationType;
+        return this;
+    }
+
+    /**
+     * 操作类型。
+     * @return operationType
+     */
+    public String getOperationType() {
+        return operationType;
+    }
+
+    public void setOperationType(String operationType) {
+        this.operationType = operationType;
+    }
+
+    public UpdateFlavorByTypeReq withNeedCheckReplica(Boolean needCheckReplica) {
+        this.needCheckReplica = needCheckReplica;
+        return this;
+    }
+
+    /**
+     * 是否需要检查副本，取值范围为true或false。默认开启校验。 - true: 开启副本校验。 - false: 忽略副本校验。  >Master和Client节点不是数据节点，因此不需要进行副本校验。即使选择true，也不会进行副本校验。
+     * @return needCheckReplica
+     */
+    public Boolean getNeedCheckReplica() {
+        return needCheckReplica;
+    }
+
+    public void setNeedCheckReplica(Boolean needCheckReplica) {
+        this.needCheckReplica = needCheckReplica;
     }
 
     public UpdateFlavorByTypeReq withIsAutoPay(Integer isAutoPay) {
@@ -76,6 +108,40 @@ public class UpdateFlavorByTypeReq {
         this.isAutoPay = isAutoPay;
     }
 
+    public UpdateFlavorByTypeReq withNeedCheckClusterStatus(Boolean needCheckClusterStatus) {
+        this.needCheckClusterStatus = needCheckClusterStatus;
+        return this;
+    }
+
+    /**
+     * 是否需要检查集群状态，取值范围为true或false。默认开启校验。
+     * @return needCheckClusterStatus
+     */
+    public Boolean getNeedCheckClusterStatus() {
+        return needCheckClusterStatus;
+    }
+
+    public void setNeedCheckClusterStatus(Boolean needCheckClusterStatus) {
+        this.needCheckClusterStatus = needCheckClusterStatus;
+    }
+
+    public UpdateFlavorByTypeReq withClusterLoadCheck(Boolean clusterLoadCheck) {
+        this.clusterLoadCheck = clusterLoadCheck;
+        return this;
+    }
+
+    /**
+     * 是否需要检查集群负载，取值范围为true或false。默认开启校验。
+     * @return clusterLoadCheck
+     */
+    public Boolean getClusterLoadCheck() {
+        return clusterLoadCheck;
+    }
+
+    public void setClusterLoadCheck(Boolean clusterLoadCheck) {
+        this.clusterLoadCheck = clusterLoadCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,22 +151,30 @@ public class UpdateFlavorByTypeReq {
             return false;
         }
         UpdateFlavorByTypeReq that = (UpdateFlavorByTypeReq) obj;
-        return Objects.equals(this.needCheckReplica, that.needCheckReplica)
-            && Objects.equals(this.newFlavorId, that.newFlavorId) && Objects.equals(this.isAutoPay, that.isAutoPay);
+        return Objects.equals(this.newFlavorId, that.newFlavorId)
+            && Objects.equals(this.operationType, that.operationType)
+            && Objects.equals(this.needCheckReplica, that.needCheckReplica)
+            && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.needCheckClusterStatus, that.needCheckClusterStatus)
+            && Objects.equals(this.clusterLoadCheck, that.clusterLoadCheck);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(needCheckReplica, newFlavorId, isAutoPay);
+        return Objects
+            .hash(newFlavorId, operationType, needCheckReplica, isAutoPay, needCheckClusterStatus, clusterLoadCheck);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateFlavorByTypeReq {\n");
-        sb.append("    needCheckReplica: ").append(toIndentedString(needCheckReplica)).append("\n");
         sb.append("    newFlavorId: ").append(toIndentedString(newFlavorId)).append("\n");
+        sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
+        sb.append("    needCheckReplica: ").append(toIndentedString(needCheckReplica)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    needCheckClusterStatus: ").append(toIndentedString(needCheckClusterStatus)).append("\n");
+        sb.append("    clusterLoadCheck: ").append(toIndentedString(clusterLoadCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

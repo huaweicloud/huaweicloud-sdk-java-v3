@@ -17,6 +17,11 @@ public class BindPublicReq {
     private BindPublicReqEip eip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "white_list")
+
+    private String whiteList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
@@ -47,6 +52,23 @@ public class BindPublicReq {
         this.eip = eip;
     }
 
+    public BindPublicReq withWhiteList(String whiteList) {
+        this.whiteList = whiteList;
+        return this;
+    }
+
+    /**
+     * 公网访问控制白名单。
+     * @return whiteList
+     */
+    public String getWhiteList() {
+        return whiteList;
+    }
+
+    public void setWhiteList(String whiteList) {
+        this.whiteList = whiteList;
+    }
+
     public BindPublicReq withIsAutoPay(Integer isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -73,12 +95,13 @@ public class BindPublicReq {
             return false;
         }
         BindPublicReq that = (BindPublicReq) obj;
-        return Objects.equals(this.eip, that.eip) && Objects.equals(this.isAutoPay, that.isAutoPay);
+        return Objects.equals(this.eip, that.eip) && Objects.equals(this.whiteList, that.whiteList)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eip, isAutoPay);
+        return Objects.hash(eip, whiteList, isAutoPay);
     }
 
     @Override
@@ -86,6 +109,7 @@ public class BindPublicReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class BindPublicReq {\n");
         sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
+        sb.append("    whiteList: ").append(toIndentedString(whiteList)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();

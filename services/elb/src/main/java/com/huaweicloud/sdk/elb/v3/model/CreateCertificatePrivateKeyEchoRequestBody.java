@@ -21,7 +21,7 @@ public class CreateCertificatePrivateKeyEchoRequestBody {
     }
 
     /**
-     * 证书回显开关，项目粒度的,默认情况下,\"private_key_echo\"是true,证书的返回体中展示私钥。 当值为false时,证书的返回体中不展示私钥。
+     * **参数解释**：ELB证书的私钥回显开关。  **约束限制**：不涉及  **取值范围**： - true：开启回显，证书的列表、详情、创建和更新接口响应字段将会显示私钥内容。 - false：关闭回显，证书的所有接口响应不显私钥内容，使用脱敏内容（*****）代替。  **默认取值**：不涉及
      * @return privateKeyEcho
      */
     public Boolean getPrivateKeyEcho() {

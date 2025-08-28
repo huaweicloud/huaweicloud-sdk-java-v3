@@ -118,7 +118,7 @@ public class ListPolicyGroupRequest {
     }
 
     /**
-     * **参数解释**: 是否只查询容器版策略组 **约束限制**: 不涉及 **取值范围**: - true: 只查询容器版策略组 - false: 查询全部策略组 **默认取值**: false 
+     * **参数解释**: 是否只查询容器版策略组 **约束限制**: 不涉及 **取值范围**: - true: 只查询容器版策略组。注：当limit传参为200时，仅返回容器版策略组。 - false: 查询全部策略组。注：当limit传参为200时，仅返回旗舰版策略组。  **默认取值**: false 
      * @return containerMode
      */
     public Boolean getContainerMode() {

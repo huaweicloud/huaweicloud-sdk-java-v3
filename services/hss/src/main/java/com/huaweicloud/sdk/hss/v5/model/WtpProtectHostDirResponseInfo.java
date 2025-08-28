@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.hss.v5.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -40,98 +35,10 @@ public class WtpProtectHostDirResponseInfo {
 
     private String localBackupDir;
 
-    /**
-     * 防护状态（closed-未开启，opened-防护中，opening-开启中，closing-关闭中，open_failed-防护失败）
-     */
-    public static final class ProtectStatusEnum {
-
-        /**
-         * Enum CLOSED for value: "closed"
-         */
-        public static final ProtectStatusEnum CLOSED = new ProtectStatusEnum("closed");
-
-        /**
-         * Enum OPENED for value: "opened"
-         */
-        public static final ProtectStatusEnum OPENED = new ProtectStatusEnum("opened");
-
-        /**
-         * Enum OPENING for value: "opening"
-         */
-        public static final ProtectStatusEnum OPENING = new ProtectStatusEnum("opening");
-
-        /**
-         * Enum CLOSING for value: "closing"
-         */
-        public static final ProtectStatusEnum CLOSING = new ProtectStatusEnum("closing");
-
-        /**
-         * Enum OPEN_FAILED for value: "open_failed"
-         */
-        public static final ProtectStatusEnum OPEN_FAILED = new ProtectStatusEnum("open_failed");
-
-        private static final Map<String, ProtectStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProtectStatusEnum> createStaticFields() {
-            Map<String, ProtectStatusEnum> map = new HashMap<>();
-            map.put("closed", CLOSED);
-            map.put("opened", OPENED);
-            map.put("opening", OPENING);
-            map.put("closing", CLOSING);
-            map.put("open_failed", OPEN_FAILED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProtectStatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtectStatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectStatusEnum(value));
-        }
-
-        public static ProtectStatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProtectStatusEnum) {
-                return this.value.equals(((ProtectStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
-    private ProtectStatusEnum protectStatus;
+    private String protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
@@ -144,7 +51,7 @@ public class WtpProtectHostDirResponseInfo {
     }
 
     /**
-     * 防护目录
+     * **参数解释**: 防护目录 **取值范围**: 字符长度0-512位 
      * @return protectDir
      */
     public String getProtectDir() {
@@ -161,7 +68,7 @@ public class WtpProtectHostDirResponseInfo {
     }
 
     /**
-     * 排除子目录
+     * **参数解释**: 排除子目录 **取值范围**: 字符长度0-512位 
      * @return excludeChildDir
      */
     public String getExcludeChildDir() {
@@ -178,7 +85,7 @@ public class WtpProtectHostDirResponseInfo {
     }
 
     /**
-     * 排除文件路径
+     * **参数解释**: 排除文件路径 **取值范围**: 字符长度0-512位 
      * @return excludeFilePath
      */
     public String getExcludeFilePath() {
@@ -212,7 +119,7 @@ public class WtpProtectHostDirResponseInfo {
     }
 
     /**
-     * 本地备份路径
+     * **参数解释**: 本地备份路径 **取值范围**: 字符长度0-512位 
      * @return localBackupDir
      */
     public String getLocalBackupDir() {
@@ -223,20 +130,20 @@ public class WtpProtectHostDirResponseInfo {
         this.localBackupDir = localBackupDir;
     }
 
-    public WtpProtectHostDirResponseInfo withProtectStatus(ProtectStatusEnum protectStatus) {
+    public WtpProtectHostDirResponseInfo withProtectStatus(String protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
 
     /**
-     * 防护状态（closed-未开启，opened-防护中，opening-开启中，closing-关闭中，open_failed-防护失败）
+     * **参数解释**: 防护状态 **取值范围**: - closed ：未开启。 - opened ：防护中。 - opening ：开启中。 - closing ：关闭中。 - open_failed ：防护失败。 
      * @return protectStatus
      */
-    public ProtectStatusEnum getProtectStatus() {
+    public String getProtectStatus() {
         return protectStatus;
     }
 
-    public void setProtectStatus(ProtectStatusEnum protectStatus) {
+    public void setProtectStatus(String protectStatus) {
         this.protectStatus = protectStatus;
     }
 
@@ -246,7 +153,7 @@ public class WtpProtectHostDirResponseInfo {
     }
 
     /**
-     * 失败原因
+     * **参数解释**: 失败原因，当防护状态为open_failed时存在失败原因 **取值范围**: 字符长度0-512位 
      * @return error
      */
     public String getError() {

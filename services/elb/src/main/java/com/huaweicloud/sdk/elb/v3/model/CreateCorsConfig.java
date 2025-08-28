@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 参数解释：转发策略跨域的配置。
+ * **参数解释**：转发策略跨域的配置。  **约束限制**：不涉及
  */
 public class CreateCorsConfig {
 
@@ -65,7 +65,7 @@ public class CreateCorsConfig {
     }
 
     /**
-     * 参数解释：允许的访问来源列表。支持只配置一个元素*，或配置一个或多个值。  约束限制： - 单个值必须以http://或者https://开头，后边加一个正确的域名或一级泛域名。（例：http://_*.test.abc.example.com） - 单个值可以不加端口，也可以指定端口，端口范围：1~65535。
+     * **参数解释**：允许的访问来源列表。支持只配置一个元素*，或配置一个或多个值。  **约束限制**： - 单个值必须以http://或者https://开头，后边加一个正确的域名或一级泛域名。（例：http://_*.test.abc.example.com） - 单个值可以不加端口，也可以指定端口，端口范围：1~65535。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return allowOrigin
      */
     public List<String> getAllowOrigin() {
@@ -98,7 +98,7 @@ public class CreateCorsConfig {
     }
 
     /**
-     * 参数解释：选择跨域访问时允许的 HTTP 方法。
+     * **参数解释**：选择跨域访问时允许的 HTTP 方法。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return allowMethods
      */
     public List<String> getAllowMethods() {
@@ -131,7 +131,7 @@ public class CreateCorsConfig {
     }
 
     /**
-     * 参数解释：允许跨域的 Header 列表。
+     * **参数解释**：允许跨域的 Header 列表。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return allowHeaders
      */
     public List<String> getAllowHeaders() {
@@ -164,7 +164,7 @@ public class CreateCorsConfig {
     }
 
     /**
-     * 参数解释：允许暴露的Header列表。
+     * **参数解释**：允许暴露的Header列表。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return exposeHeaders
      */
     public List<String> getExposeHeaders() {
@@ -181,7 +181,7 @@ public class CreateCorsConfig {
     }
 
     /**
-     * 参数解释：是否允许携带凭证信息。  取值范围： - true：是。 - false：否。
+     * **参数解释**：是否允许携带凭证信息。  **约束限制**：不涉及  **取值范围**：true 是，false 否。  **默认取值**：不涉及
      * @return allowCredentials
      */
     public Boolean getAllowCredentials() {
@@ -198,7 +198,7 @@ public class CreateCorsConfig {
     }
 
     /**
-     * 参数解释：预检请求在浏览器的最大缓存时间，单位：秒。  取值范围：-1~172800。
+     * **参数解释**：预检请求在浏览器的最大缓存时间，单位：秒。  **约束限制**：不涉及  **取值范围**：-1~172800  **默认取值**：不涉及
      * minimum: -1
      * maximum: 172800
      * @return maxAge

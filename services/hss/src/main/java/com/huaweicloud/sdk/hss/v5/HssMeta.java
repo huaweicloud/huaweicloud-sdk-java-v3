@@ -22,12 +22,18 @@ import com.huaweicloud.sdk.hss.v5.model.AddHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.AddLoginWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.AddLoginWhiteListRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.AddLoginWhiteListResponse;
+import com.huaweicloud.sdk.hss.v5.model.AddPolicyGroupRequest;
+import com.huaweicloud.sdk.hss.v5.model.AddPolicyGroupRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.AddPolicyGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.AddPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.AddPolicyRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.AddPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.AddProtectionPolicyInfoRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.AddProtectionPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.AddProtectionPolicyResponse;
+import com.huaweicloud.sdk.hss.v5.model.AddRegistryRequest;
+import com.huaweicloud.sdk.hss.v5.model.AddRegistryRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.AddRegistryResponse;
 import com.huaweicloud.sdk.hss.v5.model.AddSystemUserWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.AddSystemUserWhiteListRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.AddSystemUserWhiteListResponse;
@@ -43,6 +49,9 @@ import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchDeleteAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchDeleteAgentDaemonsetResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchDeleteDaemonsetRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.BatchDeleteRegistryRequest;
+import com.huaweicloud.sdk.hss.v5.model.BatchDeleteRegistryRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.BatchDeleteRegistryResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanPrivateImageRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageResponse;
@@ -58,6 +67,9 @@ import com.huaweicloud.sdk.hss.v5.model.BatchUpgradeAgentDaemonsetResponse;
 import com.huaweicloud.sdk.hss.v5.model.CCEClusterIdListRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.CCEClusterInfoListRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.CceIntegrationProtectionRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.ChangeAgentAutoUpgradeStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ChangeAgentAutoUpgradeStatusRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.ChangeAgentAutoUpgradeStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPayPerScanStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPayPerScanStatusRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPayPerScanStatusResponse;
@@ -70,6 +82,10 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeAppWhitelistPolicyProcessStatusRes
 import com.huaweicloud.sdk.hss.v5.model.ChangeAppWhitelistPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAppWhitelistPolicyRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAppWhitelistPolicyResponse;
+import com.huaweicloud.sdk.hss.v5.model.ChangeAutoKillVirusStatusRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.ChangeAutoOpenQuotaStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ChangeAutoOpenQuotaStatusRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.ChangeAutoOpenQuotaStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeBaselineWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeBaselineWhiteListRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.ChangeBaselineWhiteListResponse;
@@ -91,9 +107,17 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeIsolatedFileRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeIsolatedFileRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ChangeIsolatedFileResponse;
+import com.huaweicloud.sdk.hss.v5.model.ChangeMalwareCollectStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ChangeMalwareCollectStatusRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.ChangeMalwareCollectStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangePasswordComplexityStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangePasswordComplexityStatusRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.ChangePasswordComplexityStatusResponse;
+import com.huaweicloud.sdk.hss.v5.model.ChangePolicyGroupRequest;
+import com.huaweicloud.sdk.hss.v5.model.ChangePolicyGroupRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.ChangePolicyGroupResponse;
+import com.huaweicloud.sdk.hss.v5.model.ChangePolicySwitchStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ChangePolicySwitchStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyResponse;
@@ -159,6 +183,9 @@ import com.huaweicloud.sdk.hss.v5.model.DeleteAppWhitelistPolicyHostResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAppWhitelistPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAppWhitelistPolicyRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAppWhitelistPolicyResponse;
+import com.huaweicloud.sdk.hss.v5.model.DeleteBackupHostInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.DeleteBackupHostInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.DeleteBackupHostRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.DeleteBaselineWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteBaselineWhiteListRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.DeleteBaselineWhiteListResponse;
@@ -178,16 +205,24 @@ import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteIsolatedFileRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteIsolatedFileRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.DeleteIsolatedFileResponse;
+import com.huaweicloud.sdk.hss.v5.model.DeletePolicyGroupRequest;
+import com.huaweicloud.sdk.hss.v5.model.DeletePolicyGroupRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.DeletePolicyGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeletePolicyRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteProtectionPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteProtectionPolicyResponse;
+import com.huaweicloud.sdk.hss.v5.model.DeleteRegistryRequest;
+import com.huaweicloud.sdk.hss.v5.model.DeleteRegistryResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteSecurityGroupPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteSecurityGroupPolicyRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.DeleteSecurityGroupPolicyResponse;
+import com.huaweicloud.sdk.hss.v5.model.DownloadAssetFileRequest;
+import com.huaweicloud.sdk.hss.v5.model.DownloadAssetFileRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.DownloadAssetFileResponse;
 import com.huaweicloud.sdk.hss.v5.model.ExportAntiVirusResultRequest;
 import com.huaweicloud.sdk.hss.v5.model.ExportAntiVirusResultRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.ExportAntiVirusResultResponse;
@@ -200,6 +235,9 @@ import com.huaweicloud.sdk.hss.v5.model.ExportHandledVulnerabilitiesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ExportImageSecurityReportTaskRequest;
 import com.huaweicloud.sdk.hss.v5.model.ExportImageSecurityReportTaskRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ExportImageSecurityReportTaskResponse;
+import com.huaweicloud.sdk.hss.v5.model.ExportRisksRequest;
+import com.huaweicloud.sdk.hss.v5.model.ExportRisksRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.ExportRisksResponse;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulHandleHistoryRequest;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulHandleHistoryRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulHandleHistoryResponse;
@@ -211,10 +249,15 @@ import com.huaweicloud.sdk.hss.v5.model.ExportWebTamperHostRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ExportWebTamperHostResponse;
 import com.huaweicloud.sdk.hss.v5.model.HandleAntiVirusResultRequest;
 import com.huaweicloud.sdk.hss.v5.model.HandleAntiVirusResultResponse;
+import com.huaweicloud.sdk.hss.v5.model.HandleImageVulnerabilityRequest;
+import com.huaweicloud.sdk.hss.v5.model.HandleImageVulnerabilityRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.HandleImageVulnerabilityResponse;
 import com.huaweicloud.sdk.hss.v5.model.HoneypotPortPolicyContent;
 import com.huaweicloud.sdk.hss.v5.model.IdArray;
 import com.huaweicloud.sdk.hss.v5.model.ListAccountsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAccountsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAgentAutoUpgradeStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAgentAutoUpgradeStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAgentInstallScriptRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAgentInstallScriptResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListRequest;
@@ -251,12 +294,18 @@ import com.huaweicloud.sdk.hss.v5.model.ListAppsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAppsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAssociateRegistriesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAssociateRegistriesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAutoKillVirusStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAutoKillVirusStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAutoLaunchChangeHistoriesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAutoLaunchChangeHistoriesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAutoLaunchStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAutoLaunchStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAutoLaunchsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAutoLaunchsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAutoOpenQuotaStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAutoOpenQuotaStatusResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListBackupHostsInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListBackupHostsInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListBackupVaultsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListBackupVaultsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListBaselineWhiteListsRequest;
@@ -319,6 +368,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListDecoyPortPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListDecoyPortPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListDownloadExportedFileRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListDownloadExportedFileResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListEventAttCkRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListEventAttCkResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListEventHandleHistoryRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListEventHandleHistoryResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListFileEventsRequest;
@@ -332,6 +383,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListGlobalAssetScanTaskResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHandleAffectBaselineRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHandleAffectBaselineRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.ListHandleAffectBaselineResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListHandleVulsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListHandleVulsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostGroupsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHostGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostProtectHistoryInfoRequest;
@@ -348,18 +401,26 @@ import com.huaweicloud.sdk.hss.v5.model.ListIacFileRisksRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListIacFileRisksResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListIacFilesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListIacFilesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListImageHandleAffectVulnerabilitiesRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListImageHandleAffectVulnerabilitiesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListImageLocalRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListImageLocalResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigRulesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigRulesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListImageRiskConfigsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListImageScanTaskRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListImageScanTaskResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListImageVulnerabilitiesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListImageVulnerabilitiesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListImageWhiteListsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListImageWhiteListsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListIsolatedFileRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListIsolatedFileResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageHostInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListJarPackageInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListJarPackageInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListK8sCronJobsRequest;
@@ -376,6 +437,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListK8sStatefulSetsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListK8sStatefulSetsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListKernelModuleHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListKernelModuleHostInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListKernelModuleInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListKernelModuleInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListKernelModuleStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListKernelModuleStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListKubernetesClusterDetailsRequest;
@@ -384,6 +447,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListKubernetesEndpointDetailsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListKubernetesEndpointDetailsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListKubernetesServiceDetailsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListKubernetesServiceDetailsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListLockedStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListLockedStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListLoginCommonIpRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListLoginCommonIpResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListLoginCommonLocationRequest;
@@ -392,6 +457,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListLoginWhiteIpRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListLoginWhiteIpResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListLoginWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListLoginWhiteListResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListMalwareCollectStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListMalwareCollectStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListMultiCloudClustersRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListMultiCloudClustersResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListNamespacesRequest;
@@ -402,6 +469,10 @@ import com.huaweicloud.sdk.hss.v5.model.ListOrganizationTreeRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListOrganizationTreeResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListPluginInstallScriptRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListPluginInstallScriptResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListPluginsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListPluginsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPoliciesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPoliciesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPolicyGroupRequest;
@@ -437,6 +508,10 @@ import com.huaweicloud.sdk.hss.v5.model.ListRaspEventsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListRaspEventsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListRaspPoliciesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListRaspPoliciesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListRegistryRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListRegistryResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListRegistryStatisticsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListRegistryStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListRiskConfigCheckRulesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListRiskConfigCheckRulesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListRiskConfigHostsRequest;
@@ -467,12 +542,22 @@ import com.huaweicloud.sdk.hss.v5.model.ListUserStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListUserStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListUsersRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListUsersResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListVulAffectImagesRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListVulAffectImagesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListVulContainerAppsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListVulContainerAppsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListVulContainersRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListVulContainersResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListVulHandleHistoryRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListVulHandleHistoryResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListVulHostAppsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListVulHostAppsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListVulHostBackupsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListVulHostBackupsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListVulHostProcessRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListVulHostProcessResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListVulHostVaultsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListVulHostVaultsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListVulHostsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListVulHostsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListVulScanTaskHostRequest;
@@ -491,10 +576,14 @@ import com.huaweicloud.sdk.hss.v5.model.ListWebAppAndServicesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListWebAppAndServicesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListWebFrameworkHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListWebFrameworkHostInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListWebFrameworkInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListWebFrameworkInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListWebFrameworkStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListWebFrameworkStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListWebSiteHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListWebSiteHostInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListWebSiteInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListWebSiteInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListWebSiteStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListWebSiteStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListWebTamperHostRequest;
@@ -520,6 +609,7 @@ import com.huaweicloud.sdk.hss.v5.model.MultiCloudClusterSyncStatusRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.OperateAntiVirusResultRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ParseMultiCloudClusterConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.ParseMultiCloudClusterConfigResponse;
+import com.huaweicloud.sdk.hss.v5.model.PolicySwitchRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ProtectionInfoRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.RecordUserViewVulTaskRequest;
 import com.huaweicloud.sdk.hss.v5.model.RecordUserViewVulTaskRequestInfo;
@@ -536,6 +626,8 @@ import com.huaweicloud.sdk.hss.v5.model.RemoveSystemUserWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.RemoveSystemUserWhiteListRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.RemoveSystemUserWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.ResourceProductDataObjectInfo;
+import com.huaweicloud.sdk.hss.v5.model.RestoreVulHostBackupRequest;
+import com.huaweicloud.sdk.hss.v5.model.RestoreVulHostBackupResponse;
 import com.huaweicloud.sdk.hss.v5.model.RunHostAssetManualCollectRequest;
 import com.huaweicloud.sdk.hss.v5.model.RunHostAssetManualCollectResponse;
 import com.huaweicloud.sdk.hss.v5.model.RunImageSynchronizeRequest;
@@ -545,9 +637,18 @@ import com.huaweicloud.sdk.hss.v5.model.SaveBrowsingHistoryRequest;
 import com.huaweicloud.sdk.hss.v5.model.SaveBrowsingHistoryRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.SaveBrowsingHistoryResponse;
 import com.huaweicloud.sdk.hss.v5.model.SecurityGroup;
+import com.huaweicloud.sdk.hss.v5.model.SetMalwareRemindersRequest;
+import com.huaweicloud.sdk.hss.v5.model.SetMalwareRemindersRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.SetMalwareRemindersResponse;
+import com.huaweicloud.sdk.hss.v5.model.SetProtectDirSwitchInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.SetProtectDirSwitchInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.SetProtectDirSwitchRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.SetRaspSwitchRequest;
 import com.huaweicloud.sdk.hss.v5.model.SetRaspSwitchRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.SetRaspSwitchResponse;
+import com.huaweicloud.sdk.hss.v5.model.SetRemoteBackupInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.SetRemoteBackupInfoRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.SetRemoteBackupInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.SetTwoFactorLoginConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.SetTwoFactorLoginConfigRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.SetTwoFactorLoginConfigResponse;
@@ -602,6 +703,8 @@ import com.huaweicloud.sdk.hss.v5.model.ShowContainerProtectionStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowContainerProtectionStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowDecoyPortPolicyDetailsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowDecoyPortPolicyDetailsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowEventAttackTagRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowEventAttackTagResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowFileStatisticRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowFileStatisticResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowHostAssetManualCollectStatusRequest;
@@ -612,6 +715,10 @@ import com.huaweicloud.sdk.hss.v5.model.ShowImageAssetStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowImageAssetStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowImageCheckRuleDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowImageCheckRuleDetailResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowImageUploadCommandRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowImageUploadCommandResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowImageWhiteListDetailRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowImageWhiteListDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowK8sContainerDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowK8sContainerDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowK8sPodDetailRequest;
@@ -622,6 +729,10 @@ import com.huaweicloud.sdk.hss.v5.model.ShowKubernetesServiceInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowKubernetesServiceInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowLatestExportTaskByTypeRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowLatestExportTaskByTypeResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowMalwareRemindersRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowMalwareRemindersResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowMultiCloudClusterAuthRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowMultiCloudClusterAuthResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowMultiCloudClusterImageCommandRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowMultiCloudClusterImageCommandResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowMultiCloudClusterProxyScriptRequest;
@@ -632,6 +743,8 @@ import com.huaweicloud.sdk.hss.v5.model.ShowOsStatisticsInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowOsStatisticsInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowPageNoticesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowPageNoticesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowPolicySwitchStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowPolicySwitchStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowProductdataOfferingInfosRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowProductdataOfferingInfosResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowQuotaStatisticsInfoRequest;
@@ -642,14 +755,22 @@ import com.huaweicloud.sdk.hss.v5.model.ShowRaspProtectStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowRaspProtectStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowRaspServerDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowRaspServerDetailResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowRemoteBackupHostInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowRemoteBackupHostInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowResourceQuotasRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowResourceQuotasResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowRiskConfigDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowRiskConfigDetailResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowSecurityCheckClusterReportRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowSecurityCheckClusterReportResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowSingleBackupPolicyInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowSingleBackupPolicyInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowTaskStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowTaskStatisticsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowVulBackupStatisticsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowVulBackupStatisticsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowVulReportDataRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowVulReportDataResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowVulScanPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowVulScanPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowVulStaticsRequest;
@@ -660,6 +781,10 @@ import com.huaweicloud.sdk.hss.v5.model.ShowWebTamperHostPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowWebTamperHostPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowWebTamperRaspPathRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowWebTamperRaspPathResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowWtpProtectStatisticsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowWtpProtectStatisticsResponse;
+import com.huaweicloud.sdk.hss.v5.model.StartAutoKillVirusStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.StartAutoKillVirusStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.StartProtectionRequest;
 import com.huaweicloud.sdk.hss.v5.model.StartProtectionResponse;
 import com.huaweicloud.sdk.hss.v5.model.StopProtectionRequest;
@@ -701,6 +826,9 @@ import com.huaweicloud.sdk.hss.v5.model.SyncSecurityGroupPoliciesRequest;
 import com.huaweicloud.sdk.hss.v5.model.SyncSecurityGroupPoliciesResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAgentDaemonsetResponse;
+import com.huaweicloud.sdk.hss.v5.model.UpdateBackupHostInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.UpdateBackupHostInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.UpdateBackupHostRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupPolicyInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupPolicyInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupPolicyRequestInfo;
@@ -717,6 +845,9 @@ import com.huaweicloud.sdk.hss.v5.model.UpdatePolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateProtectionPolicyInfoRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.UpdateProtectionPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateProtectionPolicyResponse;
+import com.huaweicloud.sdk.hss.v5.model.UpdateRegistryRequest;
+import com.huaweicloud.sdk.hss.v5.model.UpdateRegistryRequestBody;
+import com.huaweicloud.sdk.hss.v5.model.UpdateRegistryResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateSecurityGroupPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateSecurityGroupPolicyRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.UpdateSecurityGroupPolicyResponse;
@@ -729,6 +860,8 @@ import com.huaweicloud.sdk.hss.v5.model.UpdateWebTamperHostPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateWebTamperRaspPathRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateWebTamperRaspPathRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.UpdateWebTamperRaspPathResponse;
+import com.huaweicloud.sdk.hss.v5.model.VulBackupStatisticsRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.VulReportRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.Workload;
 
 import java.util.List;
@@ -967,40 +1100,6 @@ public class HssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> associatePolicyGroup =
-        genForAssociatePolicyGroup();
-
-    private static HttpRequestDef<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> genForAssociatePolicyGroup() {
-        // basic
-        HttpRequestDef.Builder<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, AssociatePolicyGroupRequest.class, AssociatePolicyGroupResponse.class)
-            .withName("AssociatePolicyGroup")
-            .withUri("/v5/{project_id}/policy/deploy")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociatePolicyGroupRequest::getEnterpriseProjectId,
-                AssociatePolicyGroupRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociatePolicyGroupRequest::getRegion, AssociatePolicyGroupRequest::setRegion));
-        builder.<AssociatePolicyGroupRequestInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociatePolicyGroupRequestInfo.class),
-            f -> f.withMarshaller(AssociatePolicyGroupRequest::getBody, AssociatePolicyGroupRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<BatchAddAccountsRequest, BatchAddAccountsResponse> batchAddAccounts =
         genForBatchAddAccounts();
 
@@ -1136,6 +1235,72 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchStartProtectionRequestInfo.class),
             f -> f.withMarshaller(BatchStartProtectionRequest::getBody, BatchStartProtectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeAgentAutoUpgradeStatusRequest, ChangeAgentAutoUpgradeStatusResponse> changeAgentAutoUpgradeStatus =
+        genForChangeAgentAutoUpgradeStatus();
+
+    private static HttpRequestDef<ChangeAgentAutoUpgradeStatusRequest, ChangeAgentAutoUpgradeStatusResponse> genForChangeAgentAutoUpgradeStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeAgentAutoUpgradeStatusRequest, ChangeAgentAutoUpgradeStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ChangeAgentAutoUpgradeStatusRequest.class,
+                    ChangeAgentAutoUpgradeStatusResponse.class)
+                .withName("ChangeAgentAutoUpgradeStatus")
+                .withUri("/v5/{project_id}/setting/config/agent-auto-upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeAgentAutoUpgradeStatusRequest::getEnterpriseProjectId,
+                ChangeAgentAutoUpgradeStatusRequest::setEnterpriseProjectId));
+        builder.<ChangeAgentAutoUpgradeStatusRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeAgentAutoUpgradeStatusRequestInfo.class),
+            f -> f.withMarshaller(ChangeAgentAutoUpgradeStatusRequest::getBody,
+                ChangeAgentAutoUpgradeStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeAutoOpenQuotaStatusRequest, ChangeAutoOpenQuotaStatusResponse> changeAutoOpenQuotaStatus =
+        genForChangeAutoOpenQuotaStatus();
+
+    private static HttpRequestDef<ChangeAutoOpenQuotaStatusRequest, ChangeAutoOpenQuotaStatusResponse> genForChangeAutoOpenQuotaStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeAutoOpenQuotaStatusRequest, ChangeAutoOpenQuotaStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ChangeAutoOpenQuotaStatusRequest.class,
+                    ChangeAutoOpenQuotaStatusResponse.class)
+                .withName("ChangeAutoOpenQuotaStatus")
+                .withUri("/v5/{project_id}/setting/config/auto-open-quota")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeAutoOpenQuotaStatusRequest::getEnterpriseProjectId,
+                ChangeAutoOpenQuotaStatusRequest::setEnterpriseProjectId));
+        builder.<ChangeAutoOpenQuotaStatusRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeAutoOpenQuotaStatusRequestInfo.class),
+            f -> f.withMarshaller(ChangeAutoOpenQuotaStatusRequest::getBody,
+                ChangeAutoOpenQuotaStatusRequest::setBody));
 
         // response
 
@@ -1423,6 +1588,39 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeMalwareCollectStatusRequest, ChangeMalwareCollectStatusResponse> changeMalwareCollectStatus =
+        genForChangeMalwareCollectStatus();
+
+    private static HttpRequestDef<ChangeMalwareCollectStatusRequest, ChangeMalwareCollectStatusResponse> genForChangeMalwareCollectStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeMalwareCollectStatusRequest, ChangeMalwareCollectStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ChangeMalwareCollectStatusRequest.class,
+                    ChangeMalwareCollectStatusResponse.class)
+                .withName("ChangeMalwareCollectStatus")
+                .withUri("/v5/{project_id}/setting/malware/collect")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeMalwareCollectStatusRequest::getEnterpriseProjectId,
+                ChangeMalwareCollectStatusRequest::setEnterpriseProjectId));
+        builder.<ChangeMalwareCollectStatusRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeMalwareCollectStatusRequestInfo.class),
+            f -> f.withMarshaller(ChangeMalwareCollectStatusRequest::getBody,
+                ChangeMalwareCollectStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangePasswordComplexityStatusRequest, ChangePasswordComplexityStatusResponse> changePasswordComplexityStatus =
         genForChangePasswordComplexityStatus();
 
@@ -1456,6 +1654,36 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(ChangePasswordComplexityStatusRequestBody.class),
             f -> f.withMarshaller(ChangePasswordComplexityStatusRequest::getBody,
                 ChangePasswordComplexityStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangePolicySwitchStatusRequest, ChangePolicySwitchStatusResponse> changePolicySwitchStatus =
+        genForChangePolicySwitchStatus();
+
+    private static HttpRequestDef<ChangePolicySwitchStatusRequest, ChangePolicySwitchStatusResponse> genForChangePolicySwitchStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangePolicySwitchStatusRequest, ChangePolicySwitchStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ChangePolicySwitchStatusRequest.class, ChangePolicySwitchStatusResponse.class)
+                .withName("ChangePolicySwitchStatus")
+                .withUri("/v5/{project_id}/policy/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangePolicySwitchStatusRequest::getEnterpriseProjectId,
+                ChangePolicySwitchStatusRequest::setEnterpriseProjectId));
+        builder.<PolicySwitchRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PolicySwitchRequestInfo.class),
+            f -> f.withMarshaller(ChangePolicySwitchStatusRequest::getBody, ChangePolicySwitchStatusRequest::setBody));
 
         // response
 
@@ -2141,6 +2369,45 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadAssetFileRequest, DownloadAssetFileResponse> downloadAssetFile =
+        genForDownloadAssetFile();
+
+    private static HttpRequestDef<DownloadAssetFileRequest, DownloadAssetFileResponse> genForDownloadAssetFile() {
+        // basic
+        HttpRequestDef.Builder<DownloadAssetFileRequest, DownloadAssetFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadAssetFileRequest.class, DownloadAssetFileResponse.class)
+                .withName("DownloadAssetFile")
+                .withUri("/v5/{project_id}/asset/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAssetFileRequest::getEnterpriseProjectId,
+                DownloadAssetFileRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("asset_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAssetFileRequest::getAssetType, DownloadAssetFileRequest::setAssetType));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAssetFileRequest::getCategory, DownloadAssetFileRequest::setCategory));
+        builder.<DownloadAssetFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DownloadAssetFileRequestBody.class),
+            f -> f.withMarshaller(DownloadAssetFileRequest::getBody, DownloadAssetFileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportContainerListRequest, ExportContainerListResponse> exportContainerList =
         genForExportContainerList();
 
@@ -2221,6 +2488,33 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListAccountsResponse::getXRequestId, ListAccountsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAgentAutoUpgradeStatusRequest, ListAgentAutoUpgradeStatusResponse> listAgentAutoUpgradeStatus =
+        genForListAgentAutoUpgradeStatus();
+
+    private static HttpRequestDef<ListAgentAutoUpgradeStatusRequest, ListAgentAutoUpgradeStatusResponse> genForListAgentAutoUpgradeStatus() {
+        // basic
+        HttpRequestDef.Builder<ListAgentAutoUpgradeStatusRequest, ListAgentAutoUpgradeStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAgentAutoUpgradeStatusRequest.class,
+                    ListAgentAutoUpgradeStatusResponse.class)
+                .withName("ListAgentAutoUpgradeStatus")
+                .withUri("/v5/{project_id}/setting/config/agent-auto-upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentAutoUpgradeStatusRequest::getEnterpriseProjectId,
+                ListAgentAutoUpgradeStatusRequest::setEnterpriseProjectId));
+
+        // response
+
         return builder.build();
     }
 
@@ -2654,6 +2948,30 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAutoKillVirusStatusRequest, ListAutoKillVirusStatusResponse> listAutoKillVirusStatus =
+        genForListAutoKillVirusStatus();
+
+    private static HttpRequestDef<ListAutoKillVirusStatusRequest, ListAutoKillVirusStatusResponse> genForListAutoKillVirusStatus() {
+        // basic
+        HttpRequestDef.Builder<ListAutoKillVirusStatusRequest, ListAutoKillVirusStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAutoKillVirusStatusRequest.class, ListAutoKillVirusStatusResponse.class)
+            .withName("ListAutoKillVirusStatus")
+            .withUri("/v5/{project_id}/setting/virus-kill")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoKillVirusStatusRequest::getEnterpriseProjectId,
+                ListAutoKillVirusStatusRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAutoLaunchChangeHistoriesRequest, ListAutoLaunchChangeHistoriesResponse> listAutoLaunchChangeHistories =
         genForListAutoLaunchChangeHistories();
 
@@ -2858,6 +3176,30 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListAutoLaunchsRequest::getPartMatch, ListAutoLaunchsRequest::setPartMatch));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutoOpenQuotaStatusRequest, ListAutoOpenQuotaStatusResponse> listAutoOpenQuotaStatus =
+        genForListAutoOpenQuotaStatus();
+
+    private static HttpRequestDef<ListAutoOpenQuotaStatusRequest, ListAutoOpenQuotaStatusResponse> genForListAutoOpenQuotaStatus() {
+        // basic
+        HttpRequestDef.Builder<ListAutoOpenQuotaStatusRequest, ListAutoOpenQuotaStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAutoOpenQuotaStatusRequest.class, ListAutoOpenQuotaStatusResponse.class)
+            .withName("ListAutoOpenQuotaStatus")
+            .withUri("/v5/{project_id}/setting/config/auto-open-quota")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoOpenQuotaStatusRequest::getEnterpriseProjectId,
+                ListAutoOpenQuotaStatusRequest::setEnterpriseProjectId));
 
         // response
 
@@ -4297,6 +4639,110 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEventAttCkRequest, ListEventAttCkResponse> listEventAttCk =
+        genForListEventAttCk();
+
+    private static HttpRequestDef<ListEventAttCkRequest, ListEventAttCkResponse> genForListEventAttCk() {
+        // basic
+        HttpRequestDef.Builder<ListEventAttCkRequest, ListEventAttCkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventAttCkRequest.class, ListEventAttCkResponse.class)
+                .withName("ListEventAttCk")
+                .withUri("/v5/{project_id}/event/att-ck")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getEnterpriseProjectId,
+                ListEventAttCkRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("last_days",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getLastDays, ListEventAttCkRequest::setLastDays));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getCategory, ListEventAttCkRequest::setCategory));
+        builder.<String>withRequestField("host_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getHostName, ListEventAttCkRequest::setHostName));
+        builder.<String>withRequestField("host_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getHostId, ListEventAttCkRequest::setHostId));
+        builder.<String>withRequestField("private_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getPrivateIp, ListEventAttCkRequest::setPrivateIp));
+        builder.<String>withRequestField("public_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getPublicIp, ListEventAttCkRequest::setPublicIp));
+        builder.<String>withRequestField("container_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getContainerName, ListEventAttCkRequest::setContainerName));
+        builder.<Integer>withRequestField("event_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getEventType, ListEventAttCkRequest::setEventType));
+        builder.<String>withRequestField("handle_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getHandleStatus, ListEventAttCkRequest::setHandleStatus));
+        builder.<String>withRequestField("severity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getSeverity, ListEventAttCkRequest::setSeverity));
+        builder.<List<String>>withRequestField("severity_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getSeverityList, ListEventAttCkRequest::setSeverityList));
+        builder.<String>withRequestField("attack_tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getAttackTag, ListEventAttCkRequest::setAttackTag));
+        builder.<String>withRequestField("asset_value",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getAssetValue, ListEventAttCkRequest::setAssetValue));
+        builder.<List<String>>withRequestField("tag_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getTagList, ListEventAttCkRequest::setTagList));
+        builder.<String>withRequestField("event_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getEventName, ListEventAttCkRequest::setEventName));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventAttCkRequest::getRegion, ListEventAttCkRequest::setRegion));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEventHandleHistoryRequest, ListEventHandleHistoryResponse> listEventHandleHistory =
         genForListEventHandleHistory();
 
@@ -4432,6 +4878,89 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListGlobalAssetScanTaskRequest::getCategory,
                 ListGlobalAssetScanTaskRequest::setCategory));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHandleVulsRequest, ListHandleVulsResponse> listHandleVuls =
+        genForListHandleVuls();
+
+    private static HttpRequestDef<ListHandleVulsRequest, ListHandleVulsResponse> genForListHandleVuls() {
+        // basic
+        HttpRequestDef.Builder<ListHandleVulsRequest, ListHandleVulsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHandleVulsRequest.class, ListHandleVulsResponse.class)
+                .withName("ListHandleVuls")
+                .withUri("/v5/{project_id}/vulnerability/handle/vulnerabilities")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getLimit, ListHandleVulsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getOffset, ListHandleVulsRequest::setOffset));
+        builder.<String>withRequestField("vul_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getVulName, ListHandleVulsRequest::setVulName));
+        builder.<String>withRequestField("cve_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getCveId, ListHandleVulsRequest::setCveId));
+        builder.<String>withRequestField("label_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getLabelList, ListHandleVulsRequest::setLabelList));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getStatus, ListHandleVulsRequest::setStatus));
+        builder.<String>withRequestField("asset_value",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getAssetValue, ListHandleVulsRequest::setAssetValue));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getGroupName, ListHandleVulsRequest::setGroupName));
+        builder.<String>withRequestField("host_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getHostName, ListHandleVulsRequest::setHostName));
+        builder.<String>withRequestField("host_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getHostIp, ListHandleVulsRequest::setHostIp));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getType, ListHandleVulsRequest::setType));
+        builder.<String>withRequestField("handle_circle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getHandleCircle, ListHandleVulsRequest::setHandleCircle));
+        builder.<String>withRequestField("repair_priority",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandleVulsRequest::getRepairPriority, ListHandleVulsRequest::setRepairPriority));
 
         // response
 
@@ -4700,6 +5229,63 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHostStatusRequest::getRegion, ListHostStatusRequest::setRegion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageHandleAffectVulnerabilitiesRequest, ListImageHandleAffectVulnerabilitiesResponse> listImageHandleAffectVulnerabilities =
+        genForListImageHandleAffectVulnerabilities();
+
+    private static HttpRequestDef<ListImageHandleAffectVulnerabilitiesRequest, ListImageHandleAffectVulnerabilitiesResponse> genForListImageHandleAffectVulnerabilities() {
+        // basic
+        HttpRequestDef.Builder<ListImageHandleAffectVulnerabilitiesRequest, ListImageHandleAffectVulnerabilitiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListImageHandleAffectVulnerabilitiesRequest.class,
+                    ListImageHandleAffectVulnerabilitiesResponse.class)
+                .withName("ListImageHandleAffectVulnerabilities")
+                .withUri("/v5/{project_id}/image/vulnerability/handle-affect-vulnerabilities")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageHandleAffectVulnerabilitiesRequest::getEnterpriseProjectId,
+                ListImageHandleAffectVulnerabilitiesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageHandleAffectVulnerabilitiesRequest::getOffset,
+                ListImageHandleAffectVulnerabilitiesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageHandleAffectVulnerabilitiesRequest::getLimit,
+                ListImageHandleAffectVulnerabilitiesRequest::setLimit));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageHandleAffectVulnerabilitiesRequest::getImageName,
+                ListImageHandleAffectVulnerabilitiesRequest::setImageName));
+        builder.<String>withRequestField("vul_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageHandleAffectVulnerabilitiesRequest::getVulName,
+                ListImageHandleAffectVulnerabilitiesRequest::setVulName));
+        builder.<HandleImageVulnerabilityRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HandleImageVulnerabilityRequestBody.class),
+            f -> f.withMarshaller(ListImageHandleAffectVulnerabilitiesRequest::getBody,
+                ListImageHandleAffectVulnerabilitiesRequest::setBody));
 
         // response
 
@@ -5288,6 +5874,45 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListJarPackageInfoRequest, ListJarPackageInfoResponse> listJarPackageInfo =
+        genForListJarPackageInfo();
+
+    private static HttpRequestDef<ListJarPackageInfoRequest, ListJarPackageInfoResponse> genForListJarPackageInfo() {
+        // basic
+        HttpRequestDef.Builder<ListJarPackageInfoRequest, ListJarPackageInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJarPackageInfoRequest.class, ListJarPackageInfoResponse.class)
+                .withName("ListJarPackageInfo")
+                .withUri("/v5/{project_id}/asset/{host_id}/jar-package")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJarPackageInfoRequest::getHostId, ListJarPackageInfoRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJarPackageInfoRequest::getEnterpriseProjectId,
+                ListJarPackageInfoRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("file_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJarPackageInfoRequest::getFileName, ListJarPackageInfoRequest::setFileName));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJarPackageInfoRequest::getCategory, ListJarPackageInfoRequest::setCategory));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListJarPackageStatisticsRequest, ListJarPackageStatisticsResponse> listJarPackageStatistics =
         genForListJarPackageStatistics();
 
@@ -5697,6 +6322,40 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListKernelModuleInfoRequest, ListKernelModuleInfoResponse> listKernelModuleInfo =
+        genForListKernelModuleInfo();
+
+    private static HttpRequestDef<ListKernelModuleInfoRequest, ListKernelModuleInfoResponse> genForListKernelModuleInfo() {
+        // basic
+        HttpRequestDef.Builder<ListKernelModuleInfoRequest, ListKernelModuleInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListKernelModuleInfoRequest.class, ListKernelModuleInfoResponse.class)
+            .withName("ListKernelModuleInfo")
+            .withUri("/v5/{project_id}/asset/{host_id}/kernel-module")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKernelModuleInfoRequest::getHostId, ListKernelModuleInfoRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKernelModuleInfoRequest::getEnterpriseProjectId,
+                ListKernelModuleInfoRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKernelModuleInfoRequest::getName, ListKernelModuleInfoRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListKernelModuleStatisticsRequest, ListKernelModuleStatisticsResponse> listKernelModuleStatistics =
         genForListKernelModuleStatistics();
 
@@ -6051,6 +6710,31 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMalwareCollectStatusRequest, ListMalwareCollectStatusResponse> listMalwareCollectStatus =
+        genForListMalwareCollectStatus();
+
+    private static HttpRequestDef<ListMalwareCollectStatusRequest, ListMalwareCollectStatusResponse> genForListMalwareCollectStatus() {
+        // basic
+        HttpRequestDef.Builder<ListMalwareCollectStatusRequest, ListMalwareCollectStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListMalwareCollectStatusRequest.class, ListMalwareCollectStatusResponse.class)
+                .withName("ListMalwareCollectStatus")
+                .withUri("/v5/{project_id}/setting/malware/collect")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMalwareCollectStatusRequest::getEnterpriseProjectId,
+                ListMalwareCollectStatusRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNamespacesRequest, ListNamespacesResponse> listNamespaces =
         genForListNamespaces();
 
@@ -6246,6 +6930,202 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPluginInstallScriptRequest, ListPluginInstallScriptResponse> listPluginInstallScript =
+        genForListPluginInstallScript();
+
+    private static HttpRequestDef<ListPluginInstallScriptRequest, ListPluginInstallScriptResponse> genForListPluginInstallScript() {
+        // basic
+        HttpRequestDef.Builder<ListPluginInstallScriptRequest, ListPluginInstallScriptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPluginInstallScriptRequest.class, ListPluginInstallScriptResponse.class)
+            .withName("ListPluginInstallScript")
+            .withUri("/v5/{project_id}/setting/docker-plugin-install-script")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginInstallScriptRequest::getEnterpriseProjectId,
+                ListPluginInstallScriptRequest::setEnterpriseProjectId));
+        builder.<Boolean>withRequestField("outside_host",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPluginInstallScriptRequest::getOutsideHost,
+                ListPluginInstallScriptRequest::setOutsideHost));
+        builder.<Boolean>withRequestField("batch_install",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPluginInstallScriptRequest::getBatchInstall,
+                ListPluginInstallScriptRequest::setBatchInstall));
+        builder.<String>withRequestField("plugin",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginInstallScriptRequest::getPlugin,
+                ListPluginInstallScriptRequest::setPlugin));
+        builder.<String>withRequestField("operate_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginInstallScriptRequest::getOperateType,
+                ListPluginInstallScriptRequest::setOperateType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForListPlugins();
+
+    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForListPlugins() {
+        // basic
+        HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPluginsRequest.class, ListPluginsResponse.class)
+                .withName("ListPlugins")
+                .withUri("/v5/{project_id}/setting/plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getEnterpriseProjectId,
+                ListPluginsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("host_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getHostName, ListPluginsRequest::setHostName));
+        builder.<String>withRequestField("host_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getHostId, ListPluginsRequest::setHostId));
+        builder.<String>withRequestField("private_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPrivateIp, ListPluginsRequest::setPrivateIp));
+        builder.<String>withRequestField("public_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPublicIp, ListPluginsRequest::setPublicIp));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getGroupId, ListPluginsRequest::setGroupId));
+        builder.<String>withRequestField("asset_value",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getAssetValue, ListPluginsRequest::setAssetValue));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginsRequest::getLimit, ListPluginsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginsRequest::getOffset, ListPluginsRequest::setOffset));
+        builder.<String>withRequestField("agent_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getAgentStatus, ListPluginsRequest::setAgentStatus));
+        builder.<String>withRequestField("detect_result",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getDetectResult, ListPluginsRequest::setDetectResult));
+        builder.<String>withRequestField("host_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getHostStatus, ListPluginsRequest::setHostStatus));
+        builder.<String>withRequestField("os_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getOsType, ListPluginsRequest::setOsType));
+        builder.<String>withRequestField("ip_addr",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getIpAddr, ListPluginsRequest::setIpAddr));
+        builder.<String>withRequestField("protect_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getProtectStatus, ListPluginsRequest::setProtectStatus));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getGroupName, ListPluginsRequest::setGroupName));
+        builder.<String>withRequestField("policy_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPolicyGroupId, ListPluginsRequest::setPolicyGroupId));
+        builder.<String>withRequestField("policy_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPolicyGroupName, ListPluginsRequest::setPolicyGroupName));
+        builder.<String>withRequestField("label",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getLabel, ListPluginsRequest::setLabel));
+        builder.<String>withRequestField("charging_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getChargingMode, ListPluginsRequest::setChargingMode));
+        builder.<Boolean>withRequestField("refresh",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPluginsRequest::getRefresh, ListPluginsRequest::setRefresh));
+        builder.<Boolean>withRequestField("above_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPluginsRequest::getAboveVersion, ListPluginsRequest::setAboveVersion));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getName, ListPluginsRequest::setName));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getVersion, ListPluginsRequest::setVersion));
+        builder.<String>withRequestField("plugin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPlugin, ListPluginsRequest::setPlugin));
+        builder.<Boolean>withRequestField("outside_host",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPluginsRequest::getOutsideHost, ListPluginsRequest::setOutsideHost));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> listPolicies = genForListPolicies();
 
     private static HttpRequestDef<ListPoliciesRequest, ListPoliciesResponse> genForListPolicies() {
@@ -6278,55 +7158,6 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPoliciesRequest::getAgentId, ListPoliciesRequest::setAgentId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPolicyGroupRequest, ListPolicyGroupResponse> listPolicyGroup =
-        genForListPolicyGroup();
-
-    private static HttpRequestDef<ListPolicyGroupRequest, ListPolicyGroupResponse> genForListPolicyGroup() {
-        // basic
-        HttpRequestDef.Builder<ListPolicyGroupRequest, ListPolicyGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPolicyGroupRequest.class, ListPolicyGroupResponse.class)
-                .withName("ListPolicyGroup")
-                .withUri("/v5/{project_id}/policy/groups")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getEnterpriseProjectId,
-                ListPolicyGroupRequest::setEnterpriseProjectId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getOffset, ListPolicyGroupRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getLimit, ListPolicyGroupRequest::setLimit));
-        builder.<String>withRequestField("group_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getGroupName, ListPolicyGroupRequest::setGroupName));
-        builder.<Boolean>withRequestField("container_mode",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getContainerMode, ListPolicyGroupRequest::setContainerMode));
-        builder.<String>withRequestField("group_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyGroupRequest::getGroupId, ListPolicyGroupRequest::setGroupId));
 
         // response
 
@@ -8132,6 +8963,185 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListVulHostAppsRequest, ListVulHostAppsResponse> listVulHostApps =
+        genForListVulHostApps();
+
+    private static HttpRequestDef<ListVulHostAppsRequest, ListVulHostAppsResponse> genForListVulHostApps() {
+        // basic
+        HttpRequestDef.Builder<ListVulHostAppsRequest, ListVulHostAppsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVulHostAppsRequest.class, ListVulHostAppsResponse.class)
+                .withName("ListVulHostApps")
+                .withUri("/v5/{project_id}/vulnerability/{host_id}/apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostAppsRequest::getHostId, ListVulHostAppsRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostAppsRequest::getEnterpriseProjectId,
+                ListVulHostAppsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("vul_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostAppsRequest::getVulId, ListVulHostAppsRequest::setVulId));
+        builder.<String>withRequestField("handle_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostAppsRequest::getHandleStatus, ListVulHostAppsRequest::setHandleStatus));
+        builder.<String>withRequestField("container_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostAppsRequest::getContainerId, ListVulHostAppsRequest::setContainerId));
+        builder.<Boolean>withRequestField("is_container",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListVulHostAppsRequest::getIsContainer, ListVulHostAppsRequest::setIsContainer));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVulHostBackupsRequest, ListVulHostBackupsResponse> listVulHostBackups =
+        genForListVulHostBackups();
+
+    private static HttpRequestDef<ListVulHostBackupsRequest, ListVulHostBackupsResponse> genForListVulHostBackups() {
+        // basic
+        HttpRequestDef.Builder<ListVulHostBackupsRequest, ListVulHostBackupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVulHostBackupsRequest.class, ListVulHostBackupsResponse.class)
+                .withName("ListVulHostBackups")
+                .withUri("/v5/{project_id}/vulnerability/backup/backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostBackupsRequest::getEnterpriseProjectId,
+                ListVulHostBackupsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("vul_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostBackupsRequest::getVulId, ListVulHostBackupsRequest::setVulId));
+        builder.<String>withRequestField("host_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostBackupsRequest::getHostId, ListVulHostBackupsRequest::setHostId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVulHostProcessRequest, ListVulHostProcessResponse> listVulHostProcess =
+        genForListVulHostProcess();
+
+    private static HttpRequestDef<ListVulHostProcessRequest, ListVulHostProcessResponse> genForListVulHostProcess() {
+        // basic
+        HttpRequestDef.Builder<ListVulHostProcessRequest, ListVulHostProcessResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVulHostProcessRequest.class, ListVulHostProcessResponse.class)
+                .withName("ListVulHostProcess")
+                .withUri("/v5/{project_id}/vulnerability/{host_id}/process")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostProcessRequest::getHostId, ListVulHostProcessRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostProcessRequest::getEnterpriseProjectId,
+                ListVulHostProcessRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVulHostProcessRequest::getOffset, ListVulHostProcessRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVulHostProcessRequest::getLimit, ListVulHostProcessRequest::setLimit));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostProcessRequest::getAppName, ListVulHostProcessRequest::setAppName));
+        builder.<String>withRequestField("handle_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostProcessRequest::getHandleStatus,
+                ListVulHostProcessRequest::setHandleStatus));
+        builder.<String>withRequestField("container_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostProcessRequest::getContainerId,
+                ListVulHostProcessRequest::setContainerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVulHostVaultsRequest, ListVulHostVaultsResponse> listVulHostVaults =
+        genForListVulHostVaults();
+
+    private static HttpRequestDef<ListVulHostVaultsRequest, ListVulHostVaultsResponse> genForListVulHostVaults() {
+        // basic
+        HttpRequestDef.Builder<ListVulHostVaultsRequest, ListVulHostVaultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVulHostVaultsRequest.class, ListVulHostVaultsResponse.class)
+                .withName("ListVulHostVaults")
+                .withUri("/v5/{project_id}/vulnerability/backup/host-vaults")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostVaultsRequest::getEnterpriseProjectId,
+                ListVulHostVaultsRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVulHostVaultsRequest::getLimit, ListVulHostVaultsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVulHostVaultsRequest::getOffset, ListVulHostVaultsRequest::setOffset));
+        builder.<String>withRequestField("backup_info_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostVaultsRequest::getBackupInfoId,
+                ListVulHostVaultsRequest::setBackupInfoId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListVulnerabilityCveRequest, ListVulnerabilityCveResponse> listVulnerabilityCve =
         genForListVulnerabilityCve();
 
@@ -8440,6 +9450,45 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListWebFrameworkInfoRequest, ListWebFrameworkInfoResponse> listWebFrameworkInfo =
+        genForListWebFrameworkInfo();
+
+    private static HttpRequestDef<ListWebFrameworkInfoRequest, ListWebFrameworkInfoResponse> genForListWebFrameworkInfo() {
+        // basic
+        HttpRequestDef.Builder<ListWebFrameworkInfoRequest, ListWebFrameworkInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListWebFrameworkInfoRequest.class, ListWebFrameworkInfoResponse.class)
+            .withName("ListWebFrameworkInfo")
+            .withUri("/v5/{project_id}/asset/{host_id}/web-framework")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebFrameworkInfoRequest::getHostId, ListWebFrameworkInfoRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebFrameworkInfoRequest::getEnterpriseProjectId,
+                ListWebFrameworkInfoRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("file_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebFrameworkInfoRequest::getFileName, ListWebFrameworkInfoRequest::setFileName));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebFrameworkInfoRequest::getCategory, ListWebFrameworkInfoRequest::setCategory));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListWebFrameworkStatisticsRequest, ListWebFrameworkStatisticsResponse> listWebFrameworkStatistics =
         genForListWebFrameworkStatistics();
 
@@ -8544,6 +9593,45 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListWebSiteHostInfoRequest::getPartMatch, ListWebSiteHostInfoRequest::setPartMatch));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWebSiteInfoRequest, ListWebSiteInfoResponse> listWebSiteInfo =
+        genForListWebSiteInfo();
+
+    private static HttpRequestDef<ListWebSiteInfoRequest, ListWebSiteInfoResponse> genForListWebSiteInfo() {
+        // basic
+        HttpRequestDef.Builder<ListWebSiteInfoRequest, ListWebSiteInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWebSiteInfoRequest.class, ListWebSiteInfoResponse.class)
+                .withName("ListWebSiteInfo")
+                .withUri("/v5/{project_id}/asset/{host_id}/web-site")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebSiteInfoRequest::getHostId, ListWebSiteInfoRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebSiteInfoRequest::getEnterpriseProjectId,
+                ListWebSiteInfoRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebSiteInfoRequest::getDomain, ListWebSiteInfoRequest::setDomain));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWebSiteInfoRequest::getCategory, ListWebSiteInfoRequest::setCategory));
 
         // response
 
@@ -8760,6 +9848,35 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreVulHostBackupRequest, RestoreVulHostBackupResponse> restoreVulHostBackup =
+        genForRestoreVulHostBackup();
+
+    private static HttpRequestDef<RestoreVulHostBackupRequest, RestoreVulHostBackupResponse> genForRestoreVulHostBackup() {
+        // basic
+        HttpRequestDef.Builder<RestoreVulHostBackupRequest, RestoreVulHostBackupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, RestoreVulHostBackupRequest.class, RestoreVulHostBackupResponse.class)
+            .withName("RestoreVulHostBackup")
+            .withUri("/v5/{project_id}/vulnerability/backup/{backup_id}/restore")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreVulHostBackupRequest::getBackupId, RestoreVulHostBackupRequest::setBackupId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreVulHostBackupRequest::getEnterpriseProjectId,
+                RestoreVulHostBackupRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunHostAssetManualCollectRequest, RunHostAssetManualCollectResponse> runHostAssetManualCollect =
         genForRunHostAssetManualCollect();
 
@@ -8827,6 +9944,35 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunImageSynchronizeRequestInfo.class),
             f -> f.withMarshaller(RunImageSynchronizeRequest::getBody, RunImageSynchronizeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetMalwareRemindersRequest, SetMalwareRemindersResponse> setMalwareReminders =
+        genForSetMalwareReminders();
+
+    private static HttpRequestDef<SetMalwareRemindersRequest, SetMalwareRemindersResponse> genForSetMalwareReminders() {
+        // basic
+        HttpRequestDef.Builder<SetMalwareRemindersRequest, SetMalwareRemindersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetMalwareRemindersRequest.class, SetMalwareRemindersResponse.class)
+                .withName("SetMalwareReminders")
+                .withUri("/v5/{project_id}/setting/malware/reminders")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetMalwareRemindersRequest::getEnterpriseProjectId,
+                SetMalwareRemindersRequest::setEnterpriseProjectId));
+        builder.<SetMalwareRemindersRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetMalwareRemindersRequestBody.class),
+            f -> f.withMarshaller(SetMalwareRemindersRequest::getBody, SetMalwareRemindersRequest::setBody));
 
         // response
 
@@ -9315,6 +10461,118 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowEventAttackTagRequest, ShowEventAttackTagResponse> showEventAttackTag =
+        genForShowEventAttackTag();
+
+    private static HttpRequestDef<ShowEventAttackTagRequest, ShowEventAttackTagResponse> genForShowEventAttackTag() {
+        // basic
+        HttpRequestDef.Builder<ShowEventAttackTagRequest, ShowEventAttackTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEventAttackTagRequest.class, ShowEventAttackTagResponse.class)
+                .withName("ShowEventAttackTag")
+                .withUri("/v5/{project_id}/event/attack-tag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getEnterpriseProjectId,
+                ShowEventAttackTagRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("last_days",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getLastDays, ShowEventAttackTagRequest::setLastDays));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getCategory, ShowEventAttackTagRequest::setCategory));
+        builder.<String>withRequestField("host_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getHostName, ShowEventAttackTagRequest::setHostName));
+        builder.<String>withRequestField("host_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getHostId, ShowEventAttackTagRequest::setHostId));
+        builder.<String>withRequestField("private_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getPrivateIp, ShowEventAttackTagRequest::setPrivateIp));
+        builder.<String>withRequestField("public_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getPublicIp, ShowEventAttackTagRequest::setPublicIp));
+        builder.<String>withRequestField("container_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getContainerName,
+                ShowEventAttackTagRequest::setContainerName));
+        builder.<Integer>withRequestField("event_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getEventType, ShowEventAttackTagRequest::setEventType));
+        builder.<String>withRequestField("handle_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getHandleStatus,
+                ShowEventAttackTagRequest::setHandleStatus));
+        builder.<String>withRequestField("severity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getSeverity, ShowEventAttackTagRequest::setSeverity));
+        builder.<List<String>>withRequestField("severity_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getSeverityList,
+                ShowEventAttackTagRequest::setSeverityList));
+        builder.<String>withRequestField("attack_tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getAttackTag, ShowEventAttackTagRequest::setAttackTag));
+        builder.<String>withRequestField("asset_value",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getAssetValue, ShowEventAttackTagRequest::setAssetValue));
+        builder.<List<String>>withRequestField("tag_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getTagList, ShowEventAttackTagRequest::setTagList));
+        builder.<String>withRequestField("att_ck",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getAttCk, ShowEventAttackTagRequest::setAttCk));
+        builder.<String>withRequestField("event_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getEventName, ShowEventAttackTagRequest::setEventName));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEventAttackTagRequest::getRegion, ShowEventAttackTagRequest::setRegion));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowHostAssetManualCollectStatusRequest, ShowHostAssetManualCollectStatusResponse> showHostAssetManualCollectStatus =
         genForShowHostAssetManualCollectStatus();
 
@@ -9657,6 +10915,30 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowMalwareRemindersRequest, ShowMalwareRemindersResponse> showMalwareReminders =
+        genForShowMalwareReminders();
+
+    private static HttpRequestDef<ShowMalwareRemindersRequest, ShowMalwareRemindersResponse> genForShowMalwareReminders() {
+        // basic
+        HttpRequestDef.Builder<ShowMalwareRemindersRequest, ShowMalwareRemindersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowMalwareRemindersRequest.class, ShowMalwareRemindersResponse.class)
+            .withName("ShowMalwareReminders")
+            .withUri("/v5/{project_id}/setting/malware/reminders")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMalwareRemindersRequest::getEnterpriseProjectId,
+                ShowMalwareRemindersRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowNetworkStatisticsRequest, ShowNetworkStatisticsResponse> showNetworkStatistics =
         genForShowNetworkStatistics();
 
@@ -9728,6 +11010,36 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPageNoticesRequest::getPageLocation, ShowPageNoticesRequest::setPageLocation));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPolicySwitchStatusRequest, ShowPolicySwitchStatusResponse> showPolicySwitchStatus =
+        genForShowPolicySwitchStatus();
+
+    private static HttpRequestDef<ShowPolicySwitchStatusRequest, ShowPolicySwitchStatusResponse> genForShowPolicySwitchStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowPolicySwitchStatusRequest, ShowPolicySwitchStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPolicySwitchStatusRequest.class, ShowPolicySwitchStatusResponse.class)
+            .withName("ShowPolicySwitchStatus")
+            .withUri("/v5/{project_id}/policy/switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPolicySwitchStatusRequest::getEnterpriseProjectId,
+                ShowPolicySwitchStatusRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("policy_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPolicySwitchStatusRequest::getPolicyName,
+                ShowPolicySwitchStatusRequest::setPolicyName));
 
         // response
 
@@ -10023,6 +11335,94 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSingleBackupPolicyInfoRequest::getEnterpriseProjectId,
                 ShowSingleBackupPolicyInfoRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVulBackupStatisticsRequest, ShowVulBackupStatisticsResponse> showVulBackupStatistics =
+        genForShowVulBackupStatistics();
+
+    private static HttpRequestDef<ShowVulBackupStatisticsRequest, ShowVulBackupStatisticsResponse> genForShowVulBackupStatistics() {
+        // basic
+        HttpRequestDef.Builder<ShowVulBackupStatisticsRequest, ShowVulBackupStatisticsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowVulBackupStatisticsRequest.class, ShowVulBackupStatisticsResponse.class)
+            .withName("ShowVulBackupStatistics")
+            .withUri("/v5/{project_id}/vulnerability/backup-statistics")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVulBackupStatisticsRequest::getEnterpriseProjectId,
+                ShowVulBackupStatisticsRequest::setEnterpriseProjectId));
+        builder.<VulBackupStatisticsRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VulBackupStatisticsRequestInfo.class),
+            f -> f.withMarshaller(ShowVulBackupStatisticsRequest::getBody, ShowVulBackupStatisticsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVulReportDataRequest, ShowVulReportDataResponse> showVulReportData =
+        genForShowVulReportData();
+
+    private static HttpRequestDef<ShowVulReportDataRequest, ShowVulReportDataResponse> genForShowVulReportData() {
+        // basic
+        HttpRequestDef.Builder<ShowVulReportDataRequest, ShowVulReportDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowVulReportDataRequest.class, ShowVulReportDataResponse.class)
+                .withName("ShowVulReportData")
+                .withUri("/v5/{project_id}/vulnerability/report/data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVulReportDataRequest::getEnterpriseProjectId,
+                ShowVulReportDataRequest::setEnterpriseProjectId));
+        builder.<VulReportRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VulReportRequestBody.class),
+            f -> f.withMarshaller(ShowVulReportDataRequest::getBody, ShowVulReportDataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartAutoKillVirusStatusRequest, StartAutoKillVirusStatusResponse> startAutoKillVirusStatus =
+        genForStartAutoKillVirusStatus();
+
+    private static HttpRequestDef<StartAutoKillVirusStatusRequest, StartAutoKillVirusStatusResponse> genForStartAutoKillVirusStatus() {
+        // basic
+        HttpRequestDef.Builder<StartAutoKillVirusStatusRequest, StartAutoKillVirusStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, StartAutoKillVirusStatusRequest.class, StartAutoKillVirusStatusResponse.class)
+                .withName("StartAutoKillVirusStatus")
+                .withUri("/v5/{project_id}/setting/virus-kill")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartAutoKillVirusStatusRequest::getEnterpriseProjectId,
+                StartAutoKillVirusStatusRequest::setEnterpriseProjectId));
+        builder.<ChangeAutoKillVirusStatusRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeAutoKillVirusStatusRequestInfo.class),
+            f -> f.withMarshaller(StartAutoKillVirusStatusRequest::getBody, StartAutoKillVirusStatusRequest::setBody));
 
         // response
 
@@ -12384,6 +13784,44 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportRisksRequest, ExportRisksResponse> exportRisks = genForExportRisks();
+
+    private static HttpRequestDef<ExportRisksRequest, ExportRisksResponse> genForExportRisks() {
+        // basic
+        HttpRequestDef.Builder<ExportRisksRequest, ExportRisksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportRisksRequest.class, ExportRisksResponse.class)
+                .withName("ExportRisks")
+                .withUri("/v5/{project_id}/container/cluster/risk/export-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportRisksRequest::getEnterpriseProjectId,
+                ExportRisksRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("risk_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportRisksRequest::getRiskType, ExportRisksRequest::setRiskType));
+        builder.<Integer>withRequestField("export_size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportRisksRequest::getExportSize, ExportRisksRequest::setExportSize));
+        builder.<ExportRisksRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportRisksRequestBody.class),
+            f -> f.withMarshaller(ExportRisksRequest::getBody, ExportRisksRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClusterRiskAffectResourcesRequest, ListClusterRiskAffectResourcesResponse> listClusterRiskAffectResources =
         genForListClusterRiskAffectResources();
 
@@ -12636,6 +14074,34 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddRegistryRequest, AddRegistryResponse> addRegistry = genForAddRegistry();
+
+    private static HttpRequestDef<AddRegistryRequest, AddRegistryResponse> genForAddRegistry() {
+        // basic
+        HttpRequestDef.Builder<AddRegistryRequest, AddRegistryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddRegistryRequest.class, AddRegistryResponse.class)
+                .withName("AddRegistry")
+                .withUri("/v5/{project_id}/image/registries")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddRegistryRequest::getEnterpriseProjectId,
+                AddRegistryRequest::setEnterpriseProjectId));
+        builder.<AddRegistryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddRegistryRequestBody.class),
+            f -> f.withMarshaller(AddRegistryRequest::getBody, AddRegistryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteAgentDaemonsetRequest, BatchDeleteAgentDaemonsetResponse> batchDeleteAgentDaemonset =
         genForBatchDeleteAgentDaemonset();
 
@@ -12663,6 +14129,35 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(BatchDeleteDaemonsetRequestBody.class),
             f -> f.withMarshaller(BatchDeleteAgentDaemonsetRequest::getBody,
                 BatchDeleteAgentDaemonsetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteRegistryRequest, BatchDeleteRegistryResponse> batchDeleteRegistry =
+        genForBatchDeleteRegistry();
+
+    private static HttpRequestDef<BatchDeleteRegistryRequest, BatchDeleteRegistryResponse> genForBatchDeleteRegistry() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteRegistryRequest, BatchDeleteRegistryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteRegistryRequest.class, BatchDeleteRegistryResponse.class)
+                .withName("BatchDeleteRegistry")
+                .withUri("/v5/{project_id}/image/registries/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteRegistryRequest::getEnterpriseProjectId,
+                BatchDeleteRegistryRequest::setEnterpriseProjectId));
+        builder.<BatchDeleteRegistryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRegistryRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteRegistryRequest::getBody, BatchDeleteRegistryRequest::setBody));
 
         // response
 
@@ -12832,6 +14327,35 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteCicdConfigurationsRequestBody.class),
             f -> f.withMarshaller(DeleteCicdConfigurationsRequest::getBody, DeleteCicdConfigurationsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRegistryRequest, DeleteRegistryResponse> deleteRegistry =
+        genForDeleteRegistry();
+
+    private static HttpRequestDef<DeleteRegistryRequest, DeleteRegistryResponse> genForDeleteRegistry() {
+        // basic
+        HttpRequestDef.Builder<DeleteRegistryRequest, DeleteRegistryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRegistryRequest.class, DeleteRegistryResponse.class)
+                .withName("DeleteRegistry")
+                .withUri("/v5/{project_id}/image/registries/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRegistryRequest::getId, DeleteRegistryRequest::setId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRegistryRequest::getEnterpriseProjectId,
+                DeleteRegistryRequest::setEnterpriseProjectId));
 
         // response
 
@@ -13009,6 +14533,94 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMultiCloudClustersRequest::getLimit, ListMultiCloudClustersRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRegistryRequest, ListRegistryResponse> listRegistry = genForListRegistry();
+
+    private static HttpRequestDef<ListRegistryRequest, ListRegistryResponse> genForListRegistry() {
+        // basic
+        HttpRequestDef.Builder<ListRegistryRequest, ListRegistryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRegistryRequest.class, ListRegistryResponse.class)
+                .withName("ListRegistry")
+                .withUri("/v5/{project_id}/image/registries")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegistryRequest::getEnterpriseProjectId,
+                ListRegistryRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRegistryRequest::getOffset, ListRegistryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRegistryRequest::getLimit, ListRegistryRequest::setLimit));
+        builder.<String>withRequestField("registry_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegistryRequest::getRegistryName, ListRegistryRequest::setRegistryName));
+        builder.<String>withRequestField("registry_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegistryRequest::getRegistryId, ListRegistryRequest::setRegistryId));
+        builder.<String>withRequestField("registry_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegistryRequest::getRegistryType, ListRegistryRequest::setRegistryType));
+        builder.<String>withRequestField("registry_addr",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegistryRequest::getRegistryAddr, ListRegistryRequest::setRegistryAddr));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegistryRequest::getStatus, ListRegistryRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRegistryStatisticsRequest, ListRegistryStatisticsResponse> listRegistryStatistics =
+        genForListRegistryStatistics();
+
+    private static HttpRequestDef<ListRegistryStatisticsRequest, ListRegistryStatisticsResponse> genForListRegistryStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListRegistryStatisticsRequest, ListRegistryStatisticsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRegistryStatisticsRequest.class, ListRegistryStatisticsResponse.class)
+            .withName("ListRegistryStatistics")
+            .withUri("/v5/{project_id}/image/registries/statistics")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegistryStatisticsRequest::getEnterpriseProjectId,
+                ListRegistryStatisticsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("registry_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegistryStatisticsRequest::getRegistryType,
+                ListRegistryStatisticsRequest::setRegistryType));
 
         // response
 
@@ -13205,6 +14817,81 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowImageUploadCommandRequest, ShowImageUploadCommandResponse> showImageUploadCommand =
+        genForShowImageUploadCommand();
+
+    private static HttpRequestDef<ShowImageUploadCommandRequest, ShowImageUploadCommandResponse> genForShowImageUploadCommand() {
+        // basic
+        HttpRequestDef.Builder<ShowImageUploadCommandRequest, ShowImageUploadCommandResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowImageUploadCommandRequest.class, ShowImageUploadCommandResponse.class)
+            .withName("ShowImageUploadCommand")
+            .withUri("/v5/{project_id}/image/registries/image-upload-command")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("registry_addr",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageUploadCommandRequest::getRegistryAddr,
+                ShowImageUploadCommandRequest::setRegistryAddr));
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageUploadCommandRequest::getNamespace,
+                ShowImageUploadCommandRequest::setNamespace));
+        builder.<String>withRequestField("username",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageUploadCommandRequest::getUsername,
+                ShowImageUploadCommandRequest::setUsername));
+        builder.<String>withRequestField("password",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageUploadCommandRequest::getPassword,
+                ShowImageUploadCommandRequest::setPassword));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMultiCloudClusterAuthRequest, ShowMultiCloudClusterAuthResponse> showMultiCloudClusterAuth =
+        genForShowMultiCloudClusterAuth();
+
+    private static HttpRequestDef<ShowMultiCloudClusterAuthRequest, ShowMultiCloudClusterAuthResponse> genForShowMultiCloudClusterAuth() {
+        // basic
+        HttpRequestDef.Builder<ShowMultiCloudClusterAuthRequest, ShowMultiCloudClusterAuthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowMultiCloudClusterAuthRequest.class,
+                    ShowMultiCloudClusterAuthResponse.class)
+                .withName("ShowMultiCloudClusterAuth")
+                .withUri("/v5/{project_id}/container/kubernetes/multi-cloud/clusters/{cluster_id}/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMultiCloudClusterAuthRequest::getClusterId,
+                ShowMultiCloudClusterAuthRequest::setClusterId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMultiCloudClusterAuthRequest::getEnterpriseProjectId,
+                ShowMultiCloudClusterAuthRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMultiCloudClusterImageCommandRequest, ShowMultiCloudClusterImageCommandResponse> showMultiCloudClusterImageCommand =
         genForShowMultiCloudClusterImageCommand();
 
@@ -13392,6 +15079,40 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateMultiCloudClusterRequestBody.class),
             f -> f.withMarshaller(UpdateMultiCloudClustersRequest::getBody, UpdateMultiCloudClustersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRegistryRequest, UpdateRegistryResponse> updateRegistry =
+        genForUpdateRegistry();
+
+    private static HttpRequestDef<UpdateRegistryRequest, UpdateRegistryResponse> genForUpdateRegistry() {
+        // basic
+        HttpRequestDef.Builder<UpdateRegistryRequest, UpdateRegistryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRegistryRequest.class, UpdateRegistryResponse.class)
+                .withName("UpdateRegistry")
+                .withUri("/v5/{project_id}/image/registries/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRegistryRequest::getId, UpdateRegistryRequest::setId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRegistryRequest::getEnterpriseProjectId,
+                UpdateRegistryRequest::setEnterpriseProjectId));
+        builder.<UpdateRegistryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateRegistryRequestBody.class),
+            f -> f.withMarshaller(UpdateRegistryRequest::getBody, UpdateRegistryRequest::setBody));
 
         // response
 
@@ -13818,6 +15539,554 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListIacFilesRequest::getCicdName, ListIacFilesRequest::setCicdName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<HandleImageVulnerabilityRequest, HandleImageVulnerabilityResponse> handleImageVulnerability =
+        genForHandleImageVulnerability();
+
+    private static HttpRequestDef<HandleImageVulnerabilityRequest, HandleImageVulnerabilityResponse> genForHandleImageVulnerability() {
+        // basic
+        HttpRequestDef.Builder<HandleImageVulnerabilityRequest, HandleImageVulnerabilityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, HandleImageVulnerabilityRequest.class, HandleImageVulnerabilityResponse.class)
+                .withName("HandleImageVulnerability")
+                .withUri("/v5/{project_id}/image/vulnerability/handle")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(HandleImageVulnerabilityRequest::getEnterpriseProjectId,
+                HandleImageVulnerabilityRequest::setEnterpriseProjectId));
+        builder.<HandleImageVulnerabilityRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HandleImageVulnerabilityRequestBody.class),
+            f -> f.withMarshaller(HandleImageVulnerabilityRequest::getBody, HandleImageVulnerabilityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageWhiteListsRequest, ListImageWhiteListsResponse> listImageWhiteLists =
+        genForListImageWhiteLists();
+
+    private static HttpRequestDef<ListImageWhiteListsRequest, ListImageWhiteListsResponse> genForListImageWhiteLists() {
+        // basic
+        HttpRequestDef.Builder<ListImageWhiteListsRequest, ListImageWhiteListsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageWhiteListsRequest.class, ListImageWhiteListsResponse.class)
+                .withName("ListImageWhiteLists")
+                .withUri("/v5/{project_id}/image/whitelists")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageWhiteListsRequest::getEnterpriseProjectId,
+                ListImageWhiteListsRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageWhiteListsRequest::getOffset, ListImageWhiteListsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageWhiteListsRequest::getLimit, ListImageWhiteListsRequest::setLimit));
+        builder.<String>withRequestField("global_image_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageWhiteListsRequest::getGlobalImageType,
+                ListImageWhiteListsRequest::setGlobalImageType));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageWhiteListsRequest::getType, ListImageWhiteListsRequest::setType));
+        builder.<String>withRequestField("vul_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageWhiteListsRequest::getVulName, ListImageWhiteListsRequest::setVulName));
+        builder.<String>withRequestField("vul_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageWhiteListsRequest::getVulType, ListImageWhiteListsRequest::setVulType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVulAffectImagesRequest, ListVulAffectImagesResponse> listVulAffectImages =
+        genForListVulAffectImages();
+
+    private static HttpRequestDef<ListVulAffectImagesRequest, ListVulAffectImagesResponse> genForListVulAffectImages() {
+        // basic
+        HttpRequestDef.Builder<ListVulAffectImagesRequest, ListVulAffectImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVulAffectImagesRequest.class, ListVulAffectImagesResponse.class)
+                .withName("ListVulAffectImages")
+                .withUri("/v5/{project_id}/vulnerability/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getEnterpriseProjectId,
+                ListVulAffectImagesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getOffset, ListVulAffectImagesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getLimit, ListVulAffectImagesRequest::setLimit));
+        builder.<Boolean>withRequestField("is_handled",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getIsHandled, ListVulAffectImagesRequest::setIsHandled));
+        builder.<String>withRequestField("vul_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getVulId, ListVulAffectImagesRequest::setVulId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getType, ListVulAffectImagesRequest::setType));
+        builder.<String>withRequestField("image_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getImageType, ListVulAffectImagesRequest::setImageType));
+        builder.<String>withRequestField("repair_necessity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getRepairNecessity,
+                ListVulAffectImagesRequest::setRepairNecessity));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getImageId, ListVulAffectImagesRequest::setImageId));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getImageName, ListVulAffectImagesRequest::setImageName));
+        builder.<String>withRequestField("registry_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getRegistryName,
+                ListVulAffectImagesRequest::setRegistryName));
+        builder.<String>withRequestField("registry_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getRegistryType,
+                ListVulAffectImagesRequest::setRegistryType));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getStatus, ListVulAffectImagesRequest::setStatus));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulAffectImagesRequest::getClusterId, ListVulAffectImagesRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowImageWhiteListDetailRequest, ShowImageWhiteListDetailResponse> showImageWhiteListDetail =
+        genForShowImageWhiteListDetail();
+
+    private static HttpRequestDef<ShowImageWhiteListDetailRequest, ShowImageWhiteListDetailResponse> genForShowImageWhiteListDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowImageWhiteListDetailRequest, ShowImageWhiteListDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowImageWhiteListDetailRequest.class, ShowImageWhiteListDetailResponse.class)
+                .withName("ShowImageWhiteListDetail")
+                .withUri("/v5/{project_id}/image/whitelists/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageWhiteListDetailRequest::getId, ShowImageWhiteListDetailRequest::setId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageWhiteListDetailRequest::getEnterpriseProjectId,
+                ShowImageWhiteListDetailRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowImageWhiteListDetailRequest::getOffset,
+                ShowImageWhiteListDetailRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowImageWhiteListDetailRequest::getLimit,
+                ShowImageWhiteListDetailRequest::setLimit));
+        builder.<String>withRequestField("global_image_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageWhiteListDetailRequest::getGlobalImageType,
+                ShowImageWhiteListDetailRequest::setGlobalImageType));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageWhiteListDetailRequest::getType, ShowImageWhiteListDetailRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageScanTaskRequest, ListImageScanTaskResponse> listImageScanTask =
+        genForListImageScanTask();
+
+    private static HttpRequestDef<ListImageScanTaskRequest, ListImageScanTaskResponse> genForListImageScanTask() {
+        // basic
+        HttpRequestDef.Builder<ListImageScanTaskRequest, ListImageScanTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageScanTaskRequest.class, ListImageScanTaskResponse.class)
+                .withName("ListImageScanTask")
+                .withUri("/v5/{project_id}/image/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getEnterpriseProjectId,
+                ListImageScanTaskRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("global_image_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getGlobalImageType,
+                ListImageScanTaskRequest::setGlobalImageType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getOffset, ListImageScanTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getLimit, ListImageScanTaskRequest::setLimit));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getType, ListImageScanTaskRequest::setType));
+        builder.<String>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getTaskType, ListImageScanTaskRequest::setTaskType));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getTaskName, ListImageScanTaskRequest::setTaskName));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getTaskId, ListImageScanTaskRequest::setTaskId));
+        builder.<Long>withRequestField("create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getCreateTime, ListImageScanTaskRequest::setCreateTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getEndTime, ListImageScanTaskRequest::setEndTime));
+        builder.<String>withRequestField("task_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getTaskStatus, ListImageScanTaskRequest::setTaskStatus));
+        builder.<Integer>withRequestField("scan_scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageScanTaskRequest::getScanScope, ListImageScanTaskRequest::setScanScope));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddPolicyGroupRequest, AddPolicyGroupResponse> addPolicyGroup =
+        genForAddPolicyGroup();
+
+    private static HttpRequestDef<AddPolicyGroupRequest, AddPolicyGroupResponse> genForAddPolicyGroup() {
+        // basic
+        HttpRequestDef.Builder<AddPolicyGroupRequest, AddPolicyGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddPolicyGroupRequest.class, AddPolicyGroupResponse.class)
+                .withName("AddPolicyGroup")
+                .withUri("/v5/{project_id}/policy/group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddPolicyGroupRequest::getEnterpriseProjectId,
+                AddPolicyGroupRequest::setEnterpriseProjectId));
+        builder.<AddPolicyGroupRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddPolicyGroupRequestInfo.class),
+            f -> f.withMarshaller(AddPolicyGroupRequest::getBody, AddPolicyGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> associatePolicyGroup =
+        genForAssociatePolicyGroup();
+
+    private static HttpRequestDef<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> genForAssociatePolicyGroup() {
+        // basic
+        HttpRequestDef.Builder<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AssociatePolicyGroupRequest.class, AssociatePolicyGroupResponse.class)
+            .withName("AssociatePolicyGroup")
+            .withUri("/v5/{project_id}/policy/deploy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociatePolicyGroupRequest::getEnterpriseProjectId,
+                AssociatePolicyGroupRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociatePolicyGroupRequest::getRegion, AssociatePolicyGroupRequest::setRegion));
+        builder.<AssociatePolicyGroupRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociatePolicyGroupRequestInfo.class),
+            f -> f.withMarshaller(AssociatePolicyGroupRequest::getBody, AssociatePolicyGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangePolicyGroupRequest, ChangePolicyGroupResponse> changePolicyGroup =
+        genForChangePolicyGroup();
+
+    private static HttpRequestDef<ChangePolicyGroupRequest, ChangePolicyGroupResponse> genForChangePolicyGroup() {
+        // basic
+        HttpRequestDef.Builder<ChangePolicyGroupRequest, ChangePolicyGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangePolicyGroupRequest.class, ChangePolicyGroupResponse.class)
+                .withName("ChangePolicyGroup")
+                .withUri("/v5/{project_id}/policy/group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangePolicyGroupRequest::getEnterpriseProjectId,
+                ChangePolicyGroupRequest::setEnterpriseProjectId));
+        builder.<ChangePolicyGroupRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangePolicyGroupRequestInfo.class),
+            f -> f.withMarshaller(ChangePolicyGroupRequest::getBody, ChangePolicyGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePolicyGroupRequest, DeletePolicyGroupResponse> deletePolicyGroup =
+        genForDeletePolicyGroup();
+
+    private static HttpRequestDef<DeletePolicyGroupRequest, DeletePolicyGroupResponse> genForDeletePolicyGroup() {
+        // basic
+        HttpRequestDef.Builder<DeletePolicyGroupRequest, DeletePolicyGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyGroupRequest.class, DeletePolicyGroupResponse.class)
+                .withName("DeletePolicyGroup")
+                .withUri("/v5/{project_id}/policy/group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyGroupRequest::getEnterpriseProjectId,
+                DeletePolicyGroupRequest::setEnterpriseProjectId));
+        builder.<DeletePolicyGroupRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeletePolicyGroupRequestInfo.class),
+            f -> f.withMarshaller(DeletePolicyGroupRequest::getBody, DeletePolicyGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPolicyGroupRequest, ListPolicyGroupResponse> listPolicyGroup =
+        genForListPolicyGroup();
+
+    private static HttpRequestDef<ListPolicyGroupRequest, ListPolicyGroupResponse> genForListPolicyGroup() {
+        // basic
+        HttpRequestDef.Builder<ListPolicyGroupRequest, ListPolicyGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPolicyGroupRequest.class, ListPolicyGroupResponse.class)
+                .withName("ListPolicyGroup")
+                .withUri("/v5/{project_id}/policy/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyGroupRequest::getEnterpriseProjectId,
+                ListPolicyGroupRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyGroupRequest::getOffset, ListPolicyGroupRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyGroupRequest::getLimit, ListPolicyGroupRequest::setLimit));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyGroupRequest::getGroupName, ListPolicyGroupRequest::setGroupName));
+        builder.<Boolean>withRequestField("container_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPolicyGroupRequest::getContainerMode, ListPolicyGroupRequest::setContainerMode));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyGroupRequest::getGroupId, ListPolicyGroupRequest::setGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLockedStatusRequest, ListLockedStatusResponse> listLockedStatus =
+        genForListLockedStatus();
+
+    private static HttpRequestDef<ListLockedStatusRequest, ListLockedStatusResponse> genForListLockedStatus() {
+        // basic
+        HttpRequestDef.Builder<ListLockedStatusRequest, ListLockedStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLockedStatusRequest.class, ListLockedStatusResponse.class)
+                .withName("ListLockedStatus")
+                .withUri("/v5/{project_id}/resources/{resource_id}/locked-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLockedStatusRequest::getResourceId, ListLockedStatusRequest::setResourceId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLockedStatusRequest::getEnterpriseProjectId,
+                ListLockedStatusRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityCheckClusterReportRequest, ShowSecurityCheckClusterReportResponse> showSecurityCheckClusterReport =
+        genForShowSecurityCheckClusterReport();
+
+    private static HttpRequestDef<ShowSecurityCheckClusterReportRequest, ShowSecurityCheckClusterReportResponse> genForShowSecurityCheckClusterReport() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityCheckClusterReportRequest, ShowSecurityCheckClusterReportResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityCheckClusterReportRequest.class,
+                    ShowSecurityCheckClusterReportResponse.class)
+                .withName("ShowSecurityCheckClusterReport")
+                .withUri("/v5/{project_id}/security-check/containers/cluster-reports/{report_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityCheckClusterReportRequest::getReportId,
+                ShowSecurityCheckClusterReportRequest::setReportId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityCheckClusterReportRequest::getEnterpriseProjectId,
+                ShowSecurityCheckClusterReportRequest::setEnterpriseProjectId));
+        builder.<ShowSecurityCheckClusterReportRequest.XLanguageEnum>withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSecurityCheckClusterReportRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSecurityCheckClusterReportRequest::getXLanguage,
+                ShowSecurityCheckClusterReportRequest::setXLanguage));
 
         // response
 
@@ -14793,6 +17062,35 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteBackupHostInfoRequest, DeleteBackupHostInfoResponse> deleteBackupHostInfo =
+        genForDeleteBackupHostInfo();
+
+    private static HttpRequestDef<DeleteBackupHostInfoRequest, DeleteBackupHostInfoResponse> genForDeleteBackupHostInfo() {
+        // basic
+        HttpRequestDef.Builder<DeleteBackupHostInfoRequest, DeleteBackupHostInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBackupHostInfoRequest.class, DeleteBackupHostInfoResponse.class)
+            .withName("DeleteBackupHostInfo")
+            .withUri("/v5/{project_id}/wtp/backup-hosts")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackupHostInfoRequest::getEnterpriseProjectId,
+                DeleteBackupHostInfoRequest::setEnterpriseProjectId));
+        builder.<DeleteBackupHostRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteBackupHostRequestInfo.class),
+            f -> f.withMarshaller(DeleteBackupHostInfoRequest::getBody, DeleteBackupHostInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportWebTamperHostRequest, ExportWebTamperHostResponse> exportWebTamperHost =
         genForExportWebTamperHost();
 
@@ -14816,6 +17114,45 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportWebTamperHostRequestInfo.class),
             f -> f.withMarshaller(ExportWebTamperHostRequest::getBody, ExportWebTamperHostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackupHostsInfoRequest, ListBackupHostsInfoResponse> listBackupHostsInfo =
+        genForListBackupHostsInfo();
+
+    private static HttpRequestDef<ListBackupHostsInfoRequest, ListBackupHostsInfoResponse> genForListBackupHostsInfo() {
+        // basic
+        HttpRequestDef.Builder<ListBackupHostsInfoRequest, ListBackupHostsInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackupHostsInfoRequest.class, ListBackupHostsInfoResponse.class)
+                .withName("ListBackupHostsInfo")
+                .withUri("/v5/{project_id}/wtp/backup-hosts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupHostsInfoRequest::getEnterpriseProjectId,
+                ListBackupHostsInfoRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackupHostsInfoRequest::getLimit, ListBackupHostsInfoRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackupHostsInfoRequest::getOffset, ListBackupHostsInfoRequest::setOffset));
+        builder.<Boolean>withRequestField("is_run",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListBackupHostsInfoRequest::getIsRun, ListBackupHostsInfoRequest::setIsRun));
 
         // response
 
@@ -15145,6 +17482,41 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetProtectDirSwitchInfoRequest, SetProtectDirSwitchInfoResponse> setProtectDirSwitchInfo =
+        genForSetProtectDirSwitchInfo();
+
+    private static HttpRequestDef<SetProtectDirSwitchInfoRequest, SetProtectDirSwitchInfoResponse> genForSetProtectDirSwitchInfo() {
+        // basic
+        HttpRequestDef.Builder<SetProtectDirSwitchInfoRequest, SetProtectDirSwitchInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetProtectDirSwitchInfoRequest.class, SetProtectDirSwitchInfoResponse.class)
+            .withName("SetProtectDirSwitchInfo")
+            .withUri("/v5/{project_id}/wtp/{host_id}/protect-directories/status")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetProtectDirSwitchInfoRequest::getHostId,
+                SetProtectDirSwitchInfoRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetProtectDirSwitchInfoRequest::getEnterpriseProjectId,
+                SetProtectDirSwitchInfoRequest::setEnterpriseProjectId));
+        builder.<SetProtectDirSwitchRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetProtectDirSwitchRequestInfo.class),
+            f -> f.withMarshaller(SetProtectDirSwitchInfoRequest::getBody, SetProtectDirSwitchInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetRaspSwitchRequest, SetRaspSwitchResponse> setRaspSwitch =
         genForSetRaspSwitch();
 
@@ -15173,6 +17545,40 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetRaspSwitchRequestInfo.class),
             f -> f.withMarshaller(SetRaspSwitchRequest::getBody, SetRaspSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetRemoteBackupInfoRequest, SetRemoteBackupInfoResponse> setRemoteBackupInfo =
+        genForSetRemoteBackupInfo();
+
+    private static HttpRequestDef<SetRemoteBackupInfoRequest, SetRemoteBackupInfoResponse> genForSetRemoteBackupInfo() {
+        // basic
+        HttpRequestDef.Builder<SetRemoteBackupInfoRequest, SetRemoteBackupInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetRemoteBackupInfoRequest.class, SetRemoteBackupInfoResponse.class)
+                .withName("SetRemoteBackupInfo")
+                .withUri("/v5/{project_id}/wtp/{host_id}/set-remote-backup")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetRemoteBackupInfoRequest::getHostId, SetRemoteBackupInfoRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetRemoteBackupInfoRequest::getEnterpriseProjectId,
+                SetRemoteBackupInfoRequest::setEnterpriseProjectId));
+        builder.<SetRemoteBackupInfoRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetRemoteBackupInfoRequestInfo.class),
+            f -> f.withMarshaller(SetRemoteBackupInfoRequest::getBody, SetRemoteBackupInfoRequest::setBody));
 
         // response
 
@@ -15212,6 +17618,37 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(SetWtpProtectionStatusRequestInfo.class),
             f -> f.withMarshaller(SetWtpProtectionStatusInfoRequest::getBody,
                 SetWtpProtectionStatusInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRemoteBackupHostInfoRequest, ShowRemoteBackupHostInfoResponse> showRemoteBackupHostInfo =
+        genForShowRemoteBackupHostInfo();
+
+    private static HttpRequestDef<ShowRemoteBackupHostInfoRequest, ShowRemoteBackupHostInfoResponse> genForShowRemoteBackupHostInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowRemoteBackupHostInfoRequest, ShowRemoteBackupHostInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowRemoteBackupHostInfoRequest.class, ShowRemoteBackupHostInfoResponse.class)
+                .withName("ShowRemoteBackupHostInfo")
+                .withUri("/v5/{project_id}/wtp/{host_id}/backup-host")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRemoteBackupHostInfoRequest::getHostId,
+                ShowRemoteBackupHostInfoRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRemoteBackupHostInfoRequest::getEnterpriseProjectId,
+                ShowRemoteBackupHostInfoRequest::setEnterpriseProjectId));
 
         // response
 
@@ -15277,6 +17714,60 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWebTamperRaspPathRequest::getHostName,
                 ShowWebTamperRaspPathRequest::setHostName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWtpProtectStatisticsRequest, ShowWtpProtectStatisticsResponse> showWtpProtectStatistics =
+        genForShowWtpProtectStatistics();
+
+    private static HttpRequestDef<ShowWtpProtectStatisticsRequest, ShowWtpProtectStatisticsResponse> genForShowWtpProtectStatistics() {
+        // basic
+        HttpRequestDef.Builder<ShowWtpProtectStatisticsRequest, ShowWtpProtectStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowWtpProtectStatisticsRequest.class, ShowWtpProtectStatisticsResponse.class)
+                .withName("ShowWtpProtectStatistics")
+                .withUri("/v5/{project_id}/wtp/statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWtpProtectStatisticsRequest::getEnterpriseProjectId,
+                ShowWtpProtectStatisticsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBackupHostInfoRequest, UpdateBackupHostInfoResponse> updateBackupHostInfo =
+        genForUpdateBackupHostInfo();
+
+    private static HttpRequestDef<UpdateBackupHostInfoRequest, UpdateBackupHostInfoResponse> genForUpdateBackupHostInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateBackupHostInfoRequest, UpdateBackupHostInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateBackupHostInfoRequest.class, UpdateBackupHostInfoResponse.class)
+            .withName("UpdateBackupHostInfo")
+            .withUri("/v5/{project_id}/wtp/backup-hosts")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBackupHostInfoRequest::getEnterpriseProjectId,
+                UpdateBackupHostInfoRequest::setEnterpriseProjectId));
+        builder.<UpdateBackupHostRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBackupHostRequestInfo.class),
+            f -> f.withMarshaller(UpdateBackupHostInfoRequest::getBody, UpdateBackupHostInfoRequest::setBody));
 
         // response
 

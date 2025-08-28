@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 包周期选项，pay_type&#x3D;prepaid或charge_mode为prepaid时填写。
+ * **参数解释**：包周期选项。  **约束限制**：pay_type&#x3D;prepaid或charge_mode为prepaid时填写。
  */
 public class PrepaidChangeChargeModeOption {
 
@@ -29,7 +29,7 @@ public class PrepaidChangeChargeModeOption {
     private List<String> publicipIds = null;
 
     /**
-     * 订购周期类型，当前支持包月和包年： month：月（默认）； year：年；
+     * **参数解释**：订购周期类型。  **约束限制**：不涉及  **取值范围**： - month：月 - year：年  **默认取值**：month
      */
     public static final class PeriodTypeEnum {
 
@@ -124,7 +124,7 @@ public class PrepaidChangeChargeModeOption {
     }
 
     /**
-     * 是否连同独享按带宽计费的弹性公网IP一起转包周期。 1. 弹性公网IP转包周期之后可以单独解绑，绑定到其他实例，删除 2. 只有独享且按带宽计费的弹性公网IP才被允许转包周期 默认值：false
+     * **参数解释**：是否连同独享按带宽计费的弹性公网IP一起转包周期。 弹性公网IP转包周期之后可以单独解绑、绑定到其他实例和删除EIP。  **约束限制**：只有独享且按带宽计费的弹性公网IP才被允许转包周期。  **取值范围**： - true：连同EIP一起转包周期。 - false：仅转ELB，不转EIP。  **默认取值**：false
      * @return includePublicip
      */
     public Boolean getIncludePublicip() {
@@ -157,7 +157,7 @@ public class PrepaidChangeChargeModeOption {
     }
 
     /**
-     * 需要一起按需转包的弹性公网IP的ID。 若include_publicip为false，不能指定该字段。 若include_publicip为true，该字段为未指定时，表示所有绑定的v4 eip都需要一起转包周期。 若include_publicip为true，该字段列表非空，表示只将指定的v4 eip转包。 若include_publicip为true，该字段列表为空，表示不指定任一eip转包，与include_publicip为false等效。
+     * **参数解释**：需要一起按需转包的弹性公网IP的ID。  **约束限制**： - 若include_publicip为false，不能指定该字段。 - 若include_publicip为true，该字段为未指定时，表示所有绑定的v4 eip都需要一起转包周期。 - 若include_publicip为true，该字段列表非空，表示只将指定的v4 eip转包。 - 若include_publicip为true，该字段列表为空，表示不指定任一eip转包，与include_publicip为false等效。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return publicipIds
      */
     public List<String> getPublicipIds() {
@@ -174,7 +174,7 @@ public class PrepaidChangeChargeModeOption {
     }
 
     /**
-     * 订购周期类型，当前支持包月和包年： month：月（默认）； year：年；
+     * **参数解释**：订购周期类型。  **约束限制**：不涉及  **取值范围**： - month：月 - year：年  **默认取值**：month
      * @return periodType
      */
     public PeriodTypeEnum getPeriodType() {
@@ -191,7 +191,7 @@ public class PrepaidChangeChargeModeOption {
     }
 
     /**
-     * 订购周期数（默认1），取值会随运营策略变化。 period_type为month时，为[1,9]， period_type为year时，为[1,3]
+     * **参数解释**：订购周期数，取值会随运营策略变化。  **约束限制**：不涉及  **取值范围**： - period_type为month时，为[1,9] - period_type为year时，为[1,3]  **默认取值**：1
      * minimum: 1
      * maximum: 9
      * @return periodNum
@@ -210,7 +210,7 @@ public class PrepaidChangeChargeModeOption {
     }
 
     /**
-     * 是否自动续订； true：自动续订 false：不自动续订（默认）
+     * **参数解释**：是否自动续订。  **约束限制**：不涉及  **取值范围**： - true：自动续订。 - false：不自动续订。  **默认取值**：false
      * @return autoRenew
      */
     public Boolean getAutoRenew() {
@@ -227,7 +227,7 @@ public class PrepaidChangeChargeModeOption {
     }
 
     /**
-     * 下单订购后，是否自动从客户的账户中支付； true：自动支付； false：不自动支付（默认）。 自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。
+     * **参数解释**：下单订购后，是否自动从客户的账户中支付。  **约束限制**：自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。  **取值范围**： - true：自动支付。 - false：不自动支付。  **默认取值**：false
      * @return autoPay
      */
     public Boolean getAutoPay() {

@@ -30,6 +30,7 @@ import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
+import com.huaweicloud.sdk.core.impl.DefaultUserAgent;
 import com.huaweicloud.sdk.core.region.Region;
 
 import java.util.ArrayList;
@@ -167,6 +168,10 @@ public class ClientBuilder<T> {
         hcClient.withEndpoints(endpoints).withCredential(credential);
         if (Objects.nonNull(exceptionHandler)) {
             hcClient.withExceptionHandler(exceptionHandler);
+        }
+
+        if (httpConfig.getUserAgent() == null) {
+            httpConfig.setUserAgent(DefaultUserAgent.userAgentString());
         }
 
         T t = creator.apply(hcClient);

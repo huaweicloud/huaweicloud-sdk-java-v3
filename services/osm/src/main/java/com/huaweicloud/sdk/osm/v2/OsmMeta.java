@@ -7,7 +7,6 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.osm.v2.model.AccessoryJsonFormatReq;
 import com.huaweicloud.sdk.osm.v2.model.AgreeTenantAuthorizationV2Req;
-import com.huaweicloud.sdk.osm.v2.model.AskQuestionReq;
 import com.huaweicloud.sdk.osm.v2.model.CheckHostsRequest;
 import com.huaweicloud.sdk.osm.v2.model.CheckHostsResponse;
 import com.huaweicloud.sdk.osm.v2.model.CheckNeedVerifyRequest;
@@ -17,8 +16,6 @@ import com.huaweicloud.sdk.osm.v2.model.CheckVerifyCodesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ConfirmAuthorizationsRequest;
 import com.huaweicloud.sdk.osm.v2.model.ConfirmAuthorizationsResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateAndDeletePrivilegeReq;
-import com.huaweicloud.sdk.osm.v2.model.CreateAskQuestionRequest;
-import com.huaweicloud.sdk.osm.v2.model.CreateAskQuestionResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseExtendsParamRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseExtendsParamResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseLabelsRequest;
@@ -29,8 +26,6 @@ import com.huaweicloud.sdk.osm.v2.model.CreateDiagnoseFeedbackRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateDiagnoseFeedbackResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateDiagnoseJobRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateDiagnoseJobResponse;
-import com.huaweicloud.sdk.osm.v2.model.CreateEvaluateRequest;
-import com.huaweicloud.sdk.osm.v2.model.CreateEvaluateResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateFeedbackReq;
 import com.huaweicloud.sdk.osm.v2.model.CreateFeedbackRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateFeedbackResponse;
@@ -44,20 +39,12 @@ import com.huaweicloud.sdk.osm.v2.model.CreateMessagesResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateOrderIncidentV2Req;
 import com.huaweicloud.sdk.osm.v2.model.CreatePrivilegesRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreatePrivilegesResponse;
-import com.huaweicloud.sdk.osm.v2.model.CreateQaAskRequest;
-import com.huaweicloud.sdk.osm.v2.model.CreateQaAskResponse;
-import com.huaweicloud.sdk.osm.v2.model.CreateQaFeedbacksRequest;
-import com.huaweicloud.sdk.osm.v2.model.CreateQaFeedbacksResponse;
-import com.huaweicloud.sdk.osm.v2.model.CreateQuestionInSessionRequest;
-import com.huaweicloud.sdk.osm.v2.model.CreateQuestionInSessionResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateRelationsReq;
 import com.huaweicloud.sdk.osm.v2.model.CreateRelationsRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateRelationsResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateScoreV2Req;
 import com.huaweicloud.sdk.osm.v2.model.CreateScoresRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateScoresResponse;
-import com.huaweicloud.sdk.osm.v2.model.CreateSessionRequest;
-import com.huaweicloud.sdk.osm.v2.model.CreateSessionResponse;
 import com.huaweicloud.sdk.osm.v2.model.DeleteAccessoriesRequest;
 import com.huaweicloud.sdk.osm.v2.model.DeleteAccessoriesResponse;
 import com.huaweicloud.sdk.osm.v2.model.DeleteCaseLabelsRequest;
@@ -73,15 +60,12 @@ import com.huaweicloud.sdk.osm.v2.model.DownloadCasesRequest;
 import com.huaweicloud.sdk.osm.v2.model.DownloadCasesResponse;
 import com.huaweicloud.sdk.osm.v2.model.DownloadImagesRequest;
 import com.huaweicloud.sdk.osm.v2.model.DownloadImagesResponse;
-import com.huaweicloud.sdk.osm.v2.model.EvaluateRequestReq;
 import com.huaweicloud.sdk.osm.v2.model.ListAccessoryAccessUrlsRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListAccessoryAccessUrlsResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListAgenciesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListAgenciesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListAreaCodesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListAreaCodesResponse;
-import com.huaweicloud.sdk.osm.v2.model.ListArticlesRequest;
-import com.huaweicloud.sdk.osm.v2.model.ListArticlesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListAuthorizationsRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListAuthorizationsResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListCaseCategoriesRequest;
@@ -114,8 +98,6 @@ import com.huaweicloud.sdk.osm.v2.model.ListDiagnoseResourcesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListDiagnoseResourcesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListExtendsParamsRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListExtendsParamsResponse;
-import com.huaweicloud.sdk.osm.v2.model.ListFeedbackOptionRequest;
-import com.huaweicloud.sdk.osm.v2.model.ListFeedbackOptionResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListHasVerifiedContactsRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListHasVerifiedContactsResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListHistoryOperateLogsRequest;
@@ -130,8 +112,6 @@ import com.huaweicloud.sdk.osm.v2.model.ListMoreInstantMessagesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListMoreInstantMessagesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListNewInstantMessagesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListNewInstantMessagesResponse;
-import com.huaweicloud.sdk.osm.v2.model.ListNoticesRequest;
-import com.huaweicloud.sdk.osm.v2.model.ListNoticesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListOrderIncidentRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListOrderIncidentResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListPrivilegesRequest;
@@ -140,8 +120,6 @@ import com.huaweicloud.sdk.osm.v2.model.ListProblemTypesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListProblemTypesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListProductCategoriesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListProductCategoriesResponse;
-import com.huaweicloud.sdk.osm.v2.model.ListRecommendWordsRequest;
-import com.huaweicloud.sdk.osm.v2.model.ListRecommendWordsResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListRegionsRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListRegionsResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListRelationRequest;
@@ -152,33 +130,21 @@ import com.huaweicloud.sdk.osm.v2.model.ListSeveritiesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListSeveritiesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListSubCustomersRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListSubCustomersResponse;
-import com.huaweicloud.sdk.osm.v2.model.ListToolsRequest;
-import com.huaweicloud.sdk.osm.v2.model.ListToolsResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListTransportHistoriesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListTransportHistoriesResponse;
 import com.huaweicloud.sdk.osm.v2.model.ListUnreadNewInstantMessagesRequest;
 import com.huaweicloud.sdk.osm.v2.model.ListUnreadNewInstantMessagesResponse;
 import com.huaweicloud.sdk.osm.v2.model.OperateAuthorizationV2Req;
 import com.huaweicloud.sdk.osm.v2.model.PutCaseExtParamReq;
-import com.huaweicloud.sdk.osm.v2.model.QaAskReq;
-import com.huaweicloud.sdk.osm.v2.model.QaFeedbackReq;
-import com.huaweicloud.sdk.osm.v2.model.QueryAssociatedQuestionReq;
 import com.huaweicloud.sdk.osm.v2.model.QueryDiagnoseItemsReq;
 import com.huaweicloud.sdk.osm.v2.model.QueryTscDiagnoseResourcesReq;
 import com.huaweicloud.sdk.osm.v2.model.RevokeMessageRequest;
 import com.huaweicloud.sdk.osm.v2.model.RevokeMessageResponse;
-import com.huaweicloud.sdk.osm.v2.model.SearchArticlesReq;
-import com.huaweicloud.sdk.osm.v2.model.SearchNoticesReq;
-import com.huaweicloud.sdk.osm.v2.model.SearchQaPairsReq;
-import com.huaweicloud.sdk.osm.v2.model.SearchToolsReq;
 import com.huaweicloud.sdk.osm.v2.model.SendVerifyCodeReq;
 import com.huaweicloud.sdk.osm.v2.model.SendVerifyCodesRequest;
 import com.huaweicloud.sdk.osm.v2.model.SendVerifyCodesResponse;
-import com.huaweicloud.sdk.osm.v2.model.SessionAskQuestionReq;
 import com.huaweicloud.sdk.osm.v2.model.ShowAccessoryLimitsRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowAccessoryLimitsResponse;
-import com.huaweicloud.sdk.osm.v2.model.ShowAssociatedQuestionsRequest;
-import com.huaweicloud.sdk.osm.v2.model.ShowAssociatedQuestionsResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowAuthorizationDetailRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowAuthorizationDetailResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowCaseDetailRequest;
@@ -201,14 +167,8 @@ import com.huaweicloud.sdk.osm.v2.model.ShowPartnersCasesPrivilegeRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersCasesPrivilegeResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersServiceInfoRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersServiceInfoResponse;
-import com.huaweicloud.sdk.osm.v2.model.ShowQaPairDetailRequest;
-import com.huaweicloud.sdk.osm.v2.model.ShowQaPairDetailResponse;
-import com.huaweicloud.sdk.osm.v2.model.ShowQaPairsRequest;
-import com.huaweicloud.sdk.osm.v2.model.ShowQaPairsResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowSignedLatestPublishedAgreementRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowSignedLatestPublishedAgreementResponse;
-import com.huaweicloud.sdk.osm.v2.model.ShowThemeRequest;
-import com.huaweicloud.sdk.osm.v2.model.ShowThemeResponse;
 import com.huaweicloud.sdk.osm.v2.model.SignAgreementReq;
 import com.huaweicloud.sdk.osm.v2.model.SignPublishedAgreementRequest;
 import com.huaweicloud.sdk.osm.v2.model.SignPublishedAgreementResponse;
@@ -416,44 +376,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAskQuestionRequest, CreateAskQuestionResponse> createAskQuestion =
-        genForCreateAskQuestion();
-
-    private static HttpRequestDef<CreateAskQuestionRequest, CreateAskQuestionResponse> genForCreateAskQuestion() {
-        // basic
-        HttpRequestDef.Builder<CreateAskQuestionRequest, CreateAskQuestionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAskQuestionRequest.class, CreateAskQuestionResponse.class)
-                .withName("CreateAskQuestion")
-                .withUri("/v2/irobot/qapairs/ask")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAskQuestionRequest::getXServiceKey, CreateAskQuestionRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAskQuestionRequest::getXSite, CreateAskQuestionRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAskQuestionRequest::getXLanguage, CreateAskQuestionRequest::setXLanguage));
-        builder.<AskQuestionReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(AskQuestionReq.class),
-            f -> f.withMarshaller(CreateAskQuestionRequest::getBody, CreateAskQuestionRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateCaseExtendsParamRequest, CreateCaseExtendsParamResponse> createCaseExtendsParam =
         genForCreateCaseExtendsParam();
 
@@ -635,54 +557,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateEvaluateRequest, CreateEvaluateResponse> createEvaluate =
-        genForCreateEvaluate();
-
-    private static HttpRequestDef<CreateEvaluateRequest, CreateEvaluateResponse> genForCreateEvaluate() {
-        // basic
-        HttpRequestDef.Builder<CreateEvaluateRequest, CreateEvaluateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateEvaluateRequest.class, CreateEvaluateResponse.class)
-                .withName("CreateEvaluate")
-                .withUri("/v2/irobot/sessions/{session_id}/{request_id}/evaluate")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("session_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getSessionId, CreateEvaluateRequest::setSessionId));
-        builder.<String>withRequestField("request_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getRequestId, CreateEvaluateRequest::setRequestId));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getXServiceKey, CreateEvaluateRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getXSite, CreateEvaluateRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getXLanguage, CreateEvaluateRequest::setXLanguage));
-        builder.<EvaluateRequestReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(EvaluateRequestReq.class),
-            f -> f.withMarshaller(CreateEvaluateRequest::getBody, CreateEvaluateRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateFeedbackRequest, CreateFeedbackResponse> createFeedback =
         genForCreateFeedback();
 
@@ -824,133 +698,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateQaAskRequest, CreateQaAskResponse> createQaAsk = genForCreateQaAsk();
-
-    private static HttpRequestDef<CreateQaAskRequest, CreateQaAskResponse> genForCreateQaAsk() {
-        // basic
-        HttpRequestDef.Builder<CreateQaAskRequest, CreateQaAskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateQaAskRequest.class, CreateQaAskResponse.class)
-                .withName("CreateQaAsk")
-                .withUri("/v2/irobot/ask")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaAskRequest::getXServiceKey, CreateQaAskRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaAskRequest::getXSite, CreateQaAskRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaAskRequest::getXLanguage, CreateQaAskRequest::setXLanguage));
-        builder.<QaAskReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(QaAskReq.class),
-            f -> f.withMarshaller(CreateQaAskRequest::getBody, CreateQaAskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> createQaFeedbacks =
-        genForCreateQaFeedbacks();
-
-    private static HttpRequestDef<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> genForCreateQaFeedbacks() {
-        // basic
-        HttpRequestDef.Builder<CreateQaFeedbacksRequest, CreateQaFeedbacksResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateQaFeedbacksRequest.class, CreateQaFeedbacksResponse.class)
-                .withName("CreateQaFeedbacks")
-                .withUri("/v2/irobot/feedbacks")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateQaFeedbacksRequest.FeedbackTypeEnum>withRequestField("feedback_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateQaFeedbacksRequest.FeedbackTypeEnum.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getFeedbackType,
-                CreateQaFeedbacksRequest::setFeedbackType));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXServiceKey, CreateQaFeedbacksRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXSite, CreateQaFeedbacksRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getXLanguage, CreateQaFeedbacksRequest::setXLanguage));
-        builder.<QaFeedbackReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(QaFeedbackReq.class),
-            f -> f.withMarshaller(CreateQaFeedbacksRequest::getBody, CreateQaFeedbacksRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> createQuestionInSession =
-        genForCreateQuestionInSession();
-
-    private static HttpRequestDef<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> genForCreateQuestionInSession() {
-        // basic
-        HttpRequestDef.Builder<CreateQuestionInSessionRequest, CreateQuestionInSessionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateQuestionInSessionRequest.class, CreateQuestionInSessionResponse.class)
-            .withName("CreateQuestionInSession")
-            .withUri("/v2/irobot/sessions/{session_id}/ask")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("session_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getSessionId,
-                CreateQuestionInSessionRequest::setSessionId));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXServiceKey,
-                CreateQuestionInSessionRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXSite, CreateQuestionInSessionRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getXLanguage,
-                CreateQuestionInSessionRequest::setXLanguage));
-        builder.<SessionAskQuestionReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(SessionAskQuestionReq.class),
-            f -> f.withMarshaller(CreateQuestionInSessionRequest::getBody, CreateQuestionInSessionRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateRelationsRequest, CreateRelationsResponse> createRelations =
         genForCreateRelations();
 
@@ -1030,39 +777,6 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateScoreV2Req.class),
             f -> f.withMarshaller(CreateScoresRequest::getBody, CreateScoresRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateSessionRequest, CreateSessionResponse> createSession =
-        genForCreateSession();
-
-    private static HttpRequestDef<CreateSessionRequest, CreateSessionResponse> genForCreateSession() {
-        // basic
-        HttpRequestDef.Builder<CreateSessionRequest, CreateSessionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateSessionRequest.class, CreateSessionResponse.class)
-                .withName("CreateSession")
-                .withUri("/v2/irobot/sessions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSessionRequest::getXServiceKey, CreateSessionRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSessionRequest::getXSite, CreateSessionRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateSessionRequest::getXLanguage, CreateSessionRequest::setXLanguage));
 
         // response
 
@@ -1522,48 +1236,6 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAreaCodesRequest::getXTimeZone, ListAreaCodesRequest::setXTimeZone));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListArticlesRequest, ListArticlesResponse> listArticles = genForListArticles();
-
-    private static HttpRequestDef<ListArticlesRequest, ListArticlesResponse> genForListArticles() {
-        // basic
-        HttpRequestDef.Builder<ListArticlesRequest, ListArticlesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListArticlesRequest.class, ListArticlesResponse.class)
-                .withName("ListArticles")
-                .withUri("/v2/irobot/articles/search")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("search_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArticlesRequest::getSearchType, ListArticlesRequest::setSearchType));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArticlesRequest::getXServiceKey, ListArticlesRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArticlesRequest::getXSite, ListArticlesRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListArticlesRequest::getXLanguage, ListArticlesRequest::setXLanguage));
-        builder.<SearchArticlesReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(SearchArticlesReq.class),
-            f -> f.withMarshaller(ListArticlesRequest::getBody, ListArticlesRequest::setBody));
 
         // response
 
@@ -2236,51 +1908,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFeedbackOptionRequest, ListFeedbackOptionResponse> listFeedbackOption =
-        genForListFeedbackOption();
-
-    private static HttpRequestDef<ListFeedbackOptionRequest, ListFeedbackOptionResponse> genForListFeedbackOption() {
-        // basic
-        HttpRequestDef.Builder<ListFeedbackOptionRequest, ListFeedbackOptionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListFeedbackOptionRequest.class, ListFeedbackOptionResponse.class)
-                .withName("ListFeedbackOption")
-                .withUri("/v2/irobot/feedbacks/options")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ListFeedbackOptionRequest.StatusEnum>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListFeedbackOptionRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getStatus, ListFeedbackOptionRequest::setStatus));
-        builder.<ListFeedbackOptionRequest.FeedbackSourceEnum>withRequestField("feedback_source",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListFeedbackOptionRequest.FeedbackSourceEnum.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getFeedbackSource,
-                ListFeedbackOptionRequest::setFeedbackSource));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getXServiceKey,
-                ListFeedbackOptionRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getXSite, ListFeedbackOptionRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFeedbackOptionRequest::getXLanguage, ListFeedbackOptionRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> listHasVerifiedContacts =
         genForListHasVerifiedContacts();
 
@@ -2725,43 +2352,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNoticesRequest, ListNoticesResponse> listNotices = genForListNotices();
-
-    private static HttpRequestDef<ListNoticesRequest, ListNoticesResponse> genForListNotices() {
-        // basic
-        HttpRequestDef.Builder<ListNoticesRequest, ListNoticesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListNoticesRequest.class, ListNoticesResponse.class)
-                .withName("ListNotices")
-                .withUri("/v2/irobot/notices/search")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNoticesRequest::getXServiceKey, ListNoticesRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNoticesRequest::getXSite, ListNoticesRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNoticesRequest::getXLanguage, ListNoticesRequest::setXLanguage));
-        builder.<SearchNoticesReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(SearchNoticesReq.class),
-            f -> f.withMarshaller(ListNoticesRequest::getBody, ListNoticesRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListOrderIncidentRequest, ListOrderIncidentResponse> listOrderIncident =
         genForListOrderIncident();
 
@@ -2984,56 +2574,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRecommendWordsRequest, ListRecommendWordsResponse> listRecommendWords =
-        genForListRecommendWords();
-
-    private static HttpRequestDef<ListRecommendWordsRequest, ListRecommendWordsResponse> genForListRecommendWords() {
-        // basic
-        HttpRequestDef.Builder<ListRecommendWordsRequest, ListRecommendWordsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListRecommendWordsRequest.class, ListRecommendWordsResponse.class)
-                .withName("ListRecommendWords")
-                .withUri("/v2/irobot/recommend-words")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("recommend_word_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getRecommendWordId,
-                ListRecommendWordsRequest::setRecommendWordId));
-        builder.<Integer>withRequestField("level_value",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getLevelValue, ListRecommendWordsRequest::setLevelValue));
-        builder.<String>withRequestField("theme_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getThemeName, ListRecommendWordsRequest::setThemeName));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getXServiceKey,
-                ListRecommendWordsRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getXSite, ListRecommendWordsRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRecommendWordsRequest::getXLanguage, ListRecommendWordsRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForListRegions();
 
     private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForListRegions() {
@@ -3225,43 +2765,6 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubCustomersRequest::getXTimeZone, ListSubCustomersRequest::setXTimeZone));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListToolsRequest, ListToolsResponse> listTools = genForListTools();
-
-    private static HttpRequestDef<ListToolsRequest, ListToolsResponse> genForListTools() {
-        // basic
-        HttpRequestDef.Builder<ListToolsRequest, ListToolsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListToolsRequest.class, ListToolsResponse.class)
-                .withName("ListTools")
-                .withUri("/v2/irobot/tools/search")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListToolsRequest::getXServiceKey, ListToolsRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListToolsRequest::getXSite, ListToolsRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListToolsRequest::getXLanguage, ListToolsRequest::setXLanguage));
-        builder.<SearchToolsReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(SearchToolsReq.class),
-            f -> f.withMarshaller(ListToolsRequest::getBody, ListToolsRequest::setBody));
 
         // response
 
@@ -3502,46 +3005,6 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAccessoryLimitsRequest::getXTimeZone, ShowAccessoryLimitsRequest::setXTimeZone));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> showAssociatedQuestions =
-        genForShowAssociatedQuestions();
-
-    private static HttpRequestDef<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> genForShowAssociatedQuestions() {
-        // basic
-        HttpRequestDef.Builder<ShowAssociatedQuestionsRequest, ShowAssociatedQuestionsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ShowAssociatedQuestionsRequest.class, ShowAssociatedQuestionsResponse.class)
-            .withName("ShowAssociatedQuestions")
-            .withUri("/v2/irobot/qapairs/associate")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXServiceKey,
-                ShowAssociatedQuestionsRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXSite, ShowAssociatedQuestionsRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getXLanguage,
-                ShowAssociatedQuestionsRequest::setXLanguage));
-        builder.<QueryAssociatedQuestionReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(QueryAssociatedQuestionReq.class),
-            f -> f.withMarshaller(ShowAssociatedQuestionsRequest::getBody, ShowAssociatedQuestionsRequest::setBody));
 
         // response
 
@@ -3985,86 +3448,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQaPairDetailRequest, ShowQaPairDetailResponse> showQaPairDetail =
-        genForShowQaPairDetail();
-
-    private static HttpRequestDef<ShowQaPairDetailRequest, ShowQaPairDetailResponse> genForShowQaPairDetail() {
-        // basic
-        HttpRequestDef.Builder<ShowQaPairDetailRequest, ShowQaPairDetailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowQaPairDetailRequest.class, ShowQaPairDetailResponse.class)
-                .withName("ShowQaPairDetail")
-                .withUri("/v2/irobot/qapairs/{qa_pair_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("qa_pair_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairDetailRequest::getQaPairId, ShowQaPairDetailRequest::setQaPairId));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairDetailRequest::getXServiceKey, ShowQaPairDetailRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairDetailRequest::getXSite, ShowQaPairDetailRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairDetailRequest::getXLanguage, ShowQaPairDetailRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowQaPairsRequest, ShowQaPairsResponse> showQaPairs = genForShowQaPairs();
-
-    private static HttpRequestDef<ShowQaPairsRequest, ShowQaPairsResponse> genForShowQaPairs() {
-        // basic
-        HttpRequestDef.Builder<ShowQaPairsRequest, ShowQaPairsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ShowQaPairsRequest.class, ShowQaPairsResponse.class)
-                .withName("ShowQaPairs")
-                .withUri("/v2/irobot/qapairs/search")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ShowQaPairsRequest.SearchTypeEnum>withRequestField("search_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowQaPairsRequest.SearchTypeEnum.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getSearchType, ShowQaPairsRequest::setSearchType));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getXServiceKey, ShowQaPairsRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getXSite, ShowQaPairsRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getXLanguage, ShowQaPairsRequest::setXLanguage));
-        builder.<SearchQaPairsReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(SearchQaPairsReq.class),
-            f -> f.withMarshaller(ShowQaPairsRequest::getBody, ShowQaPairsRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowSignedLatestPublishedAgreementRequest, ShowSignedLatestPublishedAgreementResponse> showSignedLatestPublishedAgreement =
         genForShowSignedLatestPublishedAgreement();
 
@@ -4104,54 +3487,6 @@ public class OsmMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getXTimeZone,
                 ShowSignedLatestPublishedAgreementRequest::setXTimeZone));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowThemeRequest, ShowThemeResponse> showTheme = genForShowTheme();
-
-    private static HttpRequestDef<ShowThemeRequest, ShowThemeResponse> genForShowTheme() {
-        // basic
-        HttpRequestDef.Builder<ShowThemeRequest, ShowThemeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowThemeRequest.class, ShowThemeResponse.class)
-                .withName("ShowTheme")
-                .withUri("/v2/irobot/themes/convert")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("product_type_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getProductTypeId, ShowThemeRequest::setProductTypeId));
-        builder.<String>withRequestField("product_type_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getProductTypeName, ShowThemeRequest::setProductTypeName));
-        builder.<String>withRequestField("product_type_short_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getProductTypeShortName,
-                ShowThemeRequest::setProductTypeShortName));
-        builder.<String>withRequestField("x-service-key",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getXServiceKey, ShowThemeRequest::setXServiceKey));
-        builder.<String>withRequestField("x-site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getXSite, ShowThemeRequest::setXSite));
-        builder.<String>withRequestField("x-language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowThemeRequest::getXLanguage, ShowThemeRequest::setXLanguage));
 
         // response
 

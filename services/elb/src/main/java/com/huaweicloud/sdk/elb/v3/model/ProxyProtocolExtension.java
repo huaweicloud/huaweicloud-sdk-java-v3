@@ -32,7 +32,7 @@ public class ProxyProtocolExtension {
     }
 
     /**
-     * ipv4 vip地址
+     * **参数解释**：ipv4 vip地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return vipAddress
      */
     public String getVipAddress() {
@@ -49,7 +49,7 @@ public class ProxyProtocolExtension {
     }
 
     /**
-     * ipv6 vip地址
+     * **参数解释**：ipv6 vip地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return ipv6VipAddress
      */
     public String getIpv6VipAddress() {

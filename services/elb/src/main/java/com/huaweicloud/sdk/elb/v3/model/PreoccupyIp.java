@@ -21,7 +21,7 @@ public class PreoccupyIp {
     }
 
     /**
-     * 预占IP总数
+     * **参数解释**：预占IP总数。  **取值范围**：大于等于0整数。
      * @return total
      */
     public Integer getTotal() {

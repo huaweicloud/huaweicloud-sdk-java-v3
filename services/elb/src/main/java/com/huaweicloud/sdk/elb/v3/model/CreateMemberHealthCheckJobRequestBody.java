@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 参数解释：创建后端服务器检测任务请求body体。
+ * **参数解释**：创建后端服务器检测任务请求body体。
  */
 public class CreateMemberHealthCheckJobRequestBody {
 

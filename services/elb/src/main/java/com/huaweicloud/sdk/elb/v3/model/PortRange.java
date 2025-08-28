@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 端口监听范围（闭区间)，最多指定20个端口组，每个组范围不可有重叠部分 &gt;仅当protocol_port为0时可以传入。
+ * PortRange
  */
 public class PortRange {
 
@@ -26,7 +26,7 @@ public class PortRange {
     }
 
     /**
-     * 起始端口
+     * **参数解释**：起始端口。  **约束限制**：不涉及  **取值范围**：1-65535  **默认取值：不涉及
      * minimum: 1
      * maximum: 65535
      * @return startPort
@@ -45,7 +45,7 @@ public class PortRange {
     }
 
     /**
-     * 结束端口，需大于等于起始端口
+     * **参数解释**：结束端口，需大于等于起始端口  **约束限制**：不涉及  **取值范围**：1-65535  **默认取值：不涉及
      * minimum: 1
      * maximum: 65535
      * @return endPort

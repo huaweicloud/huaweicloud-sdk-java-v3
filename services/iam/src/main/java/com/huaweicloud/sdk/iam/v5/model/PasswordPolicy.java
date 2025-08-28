@@ -151,7 +151,7 @@ public class PasswordPolicy {
     }
 
     /**
-     * 密码是否可以是用户名或用户名的反序。
+     * 密码是否可以是用户名或用户名的反序。默认值为true，为true时表示密码不可以是用户名或用户名的反序。
      * @return passwordNotUsernameOrInvert
      */
     public Boolean getPasswordNotUsernameOrInvert() {

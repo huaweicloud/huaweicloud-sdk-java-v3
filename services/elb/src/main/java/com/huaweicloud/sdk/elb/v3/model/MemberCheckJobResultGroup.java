@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 参数解释：配置检查。
+ * **参数解释**：配置检查。
  */
 public class MemberCheckJobResultGroup {
 
@@ -34,7 +34,7 @@ public class MemberCheckJobResultGroup {
     }
 
     /**
-     * 参数解释：检查结果，true表示检查通过，false为检查不通过。
+     * **参数解释**：检查结果，true表示检查通过，false为检查不通过。  **取值范围**：不涉及
      * @return checkResult
      */
     public Boolean getCheckResult() {
@@ -67,7 +67,7 @@ public class MemberCheckJobResultGroup {
     }
 
     /**
-     * 参数解释：分组检查项汇总。
+     * Get checkItems
      * @return checkItems
      */
     public List<MemberCheckJobResultItem> getCheckItems() {
@@ -84,7 +84,7 @@ public class MemberCheckJobResultGroup {
     }
 
     /**
-     * 参数解释：processed检查完成，processing检查中，failed检查失败
+     * **参数解释**：processed检查完成，processing检查中，failed检查失败。  **取值范围**：不涉及
      * @return checkStatus
      */
     public String getCheckStatus() {

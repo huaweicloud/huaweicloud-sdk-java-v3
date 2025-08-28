@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 监听器对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。 若需要绑定访问控制组，则ipgroup_id是必须的。  [不支持该字段，请勿使用。](tag:hcso_dt)
+ * **参数解释**：监听器对象中的控制组（ipgroup）信息，可以不传或传null或{}，表示监听器不绑定访问控制组。 若需要绑定访问控制组，则ipgroup_id是必须的。  **约束限制**：不涉及  [不支持该字段，请勿使用。](tag:hcso_dt)
  */
 public class CreateListenerIpGroupOption {
 
@@ -26,7 +26,7 @@ public class CreateListenerIpGroupOption {
     private Boolean enableIpgroup;
 
     /**
-     * 参数解释：访问控制组的类型。  取值范围： - white：白名单，只允许指定ip访问。 - black：黑名单，不允许指定ip访问。  默认取值：white
+     * **参数解释**：访问控制组的类型。  **约束限制**：不涉及  **取值范围**： - white：白名单，只允许指定ip访问。 - black：黑名单，不允许指定ip访问。  **默认取值**：white
      */
     public static final class TypeEnum {
 
@@ -106,7 +106,7 @@ public class CreateListenerIpGroupOption {
     }
 
     /**
-     * 参数解释：监听器关联的访问控制组的id。  约束限制： - 当关联的ipgroup中的ip_list为[]，且类型为白名单时，表示禁止所有ip的访问。 - 当关联的ipgroup中的ip_list为[]，且类型为黑名单时，表示允许所有ip的访问。
+     * **参数解释**：监听器关联的访问控制组的id。  **约束限制**： - 当关联的ipgroup中的ip_list为[]，且类型为白名单时，表示禁止所有ip的访问。 - 当关联的ipgroup中的ip_list为[]，且类型为黑名单时，表示允许所有ip的访问。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return ipgroupId
      */
     public String getIpgroupId() {
@@ -123,7 +123,7 @@ public class CreateListenerIpGroupOption {
     }
 
     /**
-     * 参数解释：访问控制组的状态。  取值范围： - true：开启访问控制，默认值。 - false：关闭访问控制。
+     * **参数解释**：访问控制组的状态。  **约束限制**：不涉及  **取值范围**： - true：开启访问控制，默认值。 - false：关闭访问控制。  **默认取值**：不涉及
      * @return enableIpgroup
      */
     public Boolean getEnableIpgroup() {
@@ -140,7 +140,7 @@ public class CreateListenerIpGroupOption {
     }
 
     /**
-     * 参数解释：访问控制组的类型。  取值范围： - white：白名单，只允许指定ip访问。 - black：黑名单，不允许指定ip访问。  默认取值：white
+     * **参数解释**：访问控制组的类型。  **约束限制**：不涉及  **取值范围**： - white：白名单，只允许指定ip访问。 - black：黑名单，不允许指定ip访问。  **默认取值**：white
      * @return type
      */
     public TypeEnum getType() {

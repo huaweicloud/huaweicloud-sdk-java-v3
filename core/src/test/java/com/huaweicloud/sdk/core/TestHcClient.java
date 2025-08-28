@@ -140,7 +140,7 @@ public class TestHcClient {
                         .withStatus(200)));
 
         wireMockRule.stubFor(WireMock.get("/test-extra-headers")
-                .withHeader("User-Agent", equalTo("huaweicloud-usdk-java/3.0;test-user-agent"))
+                .withHeader("User-Agent", equalTo("huaweicloud-usdk-java/3.0; test-user-agent"))
                 .withHeader("Test-Client-Header", equalTo("Test-Client-Header-Value"))
                 .withHeader("Test-Request-Override-Client-Header", equalTo("Test-Request-Header-Value"))
                 .withHeader("Test-Request-Header", equalTo("Test-Request-Header-Value"))
@@ -150,6 +150,13 @@ public class TestHcClient {
                         .withStatus(200)));
 
         wireMockRule.stubFor(WireMock.get("/")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
+                        .withBody("")
+                        .withStatus(200)));
+
+        wireMockRule.stubFor(WireMock.get("/custom-user-agent")
+                .withHeader("User-Agent", equalTo("huaweicloud-usdk-java/3.0; Custom user agent"))
                 .willReturn(WireMock.aResponse()
                         .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
                         .withBody("")
@@ -265,6 +272,18 @@ public class TestHcClient {
                 .withUri("/user-agent")
                 .withContentType("application/json").build();
         SdkResponse response = (SdkResponse) hcClient.syncInvokeHttp(new Object(), reqDef);
+        Assert.assertEquals(200, response.getHttpStatusCode());
+    }
+
+    @Test
+    public void testCustomeUserAgentHeader() {
+        HttpRequestDef reqDef = new HttpRequestDef.Builder(HttpMethod.GET, Object.class, SdkResponse.class)
+                .withName("TestCustomUserAgent")
+                .withUri("/custom-user-agent")
+                .withContentType("application/json").build();
+        HcClient client = TestUtils.createHcClientWithUaConfig(
+                String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort()));
+        SdkResponse response = (SdkResponse) client.syncInvokeHttp(new Object(), reqDef);
         Assert.assertEquals(200, response.getHttpStatusCode());
     }
 

@@ -21,6 +21,11 @@ public class StartAutoCreateSnapshotsReq {
     private Integer keepday;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frequency")
+
+    private String frequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
     private String period;
@@ -62,6 +67,23 @@ public class StartAutoCreateSnapshotsReq {
 
     public void setKeepday(Integer keepday) {
         this.keepday = keepday;
+    }
+
+    public StartAutoCreateSnapshotsReq withFrequency(String frequency) {
+        this.frequency = frequency;
+        return this;
+    }
+
+    /**
+     * 自动创建快照的执行频次。
+     * @return frequency
+     */
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
     }
 
     public StartAutoCreateSnapshotsReq withPeriod(String period) {
@@ -108,12 +130,13 @@ public class StartAutoCreateSnapshotsReq {
         }
         StartAutoCreateSnapshotsReq that = (StartAutoCreateSnapshotsReq) obj;
         return Objects.equals(this.indices, that.indices) && Objects.equals(this.keepday, that.keepday)
-            && Objects.equals(this.period, that.period) && Objects.equals(this.prefix, that.prefix);
+            && Objects.equals(this.frequency, that.frequency) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.prefix, that.prefix);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(indices, keepday, period, prefix);
+        return Objects.hash(indices, keepday, frequency, period, prefix);
     }
 
     @Override
@@ -122,6 +145,7 @@ public class StartAutoCreateSnapshotsReq {
         sb.append("class StartAutoCreateSnapshotsReq {\n");
         sb.append("    indices: ").append(toIndentedString(indices)).append("\n");
         sb.append("    keepday: ").append(toIndentedString(keepday)).append("\n");
+        sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
         sb.append("}");

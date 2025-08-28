@@ -109,7 +109,7 @@ public class VideoScriptsShowInfo {
     private String modelAssetId;
 
     /**
-     * **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人  **默认取值**： 不涉及
+     * **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人  **默认取值**： 不涉及
      */
     public static final class ModelAssetTypeEnum {
 
@@ -118,17 +118,11 @@ public class VideoScriptsShowInfo {
          */
         public static final ModelAssetTypeEnum HUMAN_MODEL_2D = new ModelAssetTypeEnum("HUMAN_MODEL_2D");
 
-        /**
-         * Enum HUMAN_MODEL_3D for value: "HUMAN_MODEL_3D"
-         */
-        public static final ModelAssetTypeEnum HUMAN_MODEL_3D = new ModelAssetTypeEnum("HUMAN_MODEL_3D");
-
         private static final Map<String, ModelAssetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModelAssetTypeEnum> createStaticFields() {
             Map<String, ModelAssetTypeEnum> map = new HashMap<>();
             map.put("HUMAN_MODEL_2D", HUMAN_MODEL_2D);
-            map.put("HUMAN_MODEL_3D", HUMAN_MODEL_3D);
             return Collections.unmodifiableMap(map);
         }
 
@@ -192,11 +186,6 @@ public class VideoScriptsShowInfo {
     @JsonProperty(value = "video_config")
 
     private VideoConfig videoConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scene_asset_id")
-
-    private String sceneAssetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priv_data")
@@ -302,7 +291,7 @@ public class VideoScriptsShowInfo {
     }
 
     /**
-     * **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人  **默认取值**： 不涉及
+     * **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人  **默认取值**： 不涉及
      * @return modelAssetType
      */
     public ModelAssetTypeEnum getModelAssetType() {
@@ -363,23 +352,6 @@ public class VideoScriptsShowInfo {
 
     public void setVideoConfig(VideoConfig videoConfig) {
         this.videoConfig = videoConfig;
-    }
-
-    public VideoScriptsShowInfo withSceneAssetId(String sceneAssetId) {
-        this.sceneAssetId = sceneAssetId;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 场景资产ID。 **约束限制**： 分身数字人视频制作不需要填写该参数。 **取值范围**： 字符长度0-64位 **默认取值**： 不涉及
-     * @return sceneAssetId
-     */
-    public String getSceneAssetId() {
-        return sceneAssetId;
-    }
-
-    public void setSceneAssetId(String sceneAssetId) {
-        this.sceneAssetId = sceneAssetId;
     }
 
     public VideoScriptsShowInfo withPrivData(String privData) {
@@ -550,7 +522,7 @@ public class VideoScriptsShowInfo {
             && Objects.equals(this.viewMode, that.viewMode) && Objects.equals(this.modelAssetId, that.modelAssetId)
             && Objects.equals(this.modelAssetType, that.modelAssetType)
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.videoConfig, that.videoConfig)
-            && Objects.equals(this.sceneAssetId, that.sceneAssetId) && Objects.equals(this.privData, that.privData)
+            && Objects.equals(this.privData, that.privData)
             && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig) && Objects.equals(this.audioFiles, that.audioFiles)
             && Objects.equals(this.actionConfig, that.actionConfig)
@@ -566,7 +538,6 @@ public class VideoScriptsShowInfo {
             modelAssetType,
             voiceConfig,
             videoConfig,
-            sceneAssetId,
             privData,
             backgroundMusicConfig,
             reviewConfig,
@@ -586,7 +557,6 @@ public class VideoScriptsShowInfo {
         sb.append("    modelAssetType: ").append(toIndentedString(modelAssetType)).append("\n");
         sb.append("    voiceConfig: ").append(toIndentedString(voiceConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
-        sb.append("    sceneAssetId: ").append(toIndentedString(sceneAssetId)).append("\n");
         sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
         sb.append("    backgroundMusicConfig: ").append(toIndentedString(backgroundMusicConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");

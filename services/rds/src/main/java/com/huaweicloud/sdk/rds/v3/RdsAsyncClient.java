@@ -1294,7 +1294,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 解除LTS配置信息
      *
      * 解除LTS配置信息
      * 
@@ -1308,7 +1308,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 解除LTS配置信息
      *
      * 解除LTS配置信息
      * 
@@ -1845,7 +1845,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例的错误日志数据
      *
      * 查询实例的错误日志数据。
      * 
@@ -1859,7 +1859,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例的错误日志数据
      *
      * 查询实例的错误日志数据。
      * 
@@ -1960,7 +1960,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例大版本升级检查历史
      *
      * 查询实例大版本升级检查历史。
      * 
@@ -1975,7 +1975,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例大版本升级检查历史
      *
      * 查询实例大版本升级检查历史。
      * 
@@ -2229,7 +2229,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 获取LTS配置信息
      *
      * 获取LTS配置信息
      * 
@@ -2243,7 +2243,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 获取LTS配置信息
      *
      * 获取LTS配置信息
      * 
@@ -2439,7 +2439,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询预定义标签
      *
      * 查询预定义标签
      * 
@@ -2453,7 +2453,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询预定义标签
      *
      * 查询预定义标签
      * 
@@ -2706,7 +2706,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 获取指定实例详情
      *
      * 获取指定实例详情
      * 
@@ -2721,7 +2721,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 获取指定实例详情
      *
      * 获取指定实例详情
      * 
@@ -2767,7 +2767,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例慢日志的统计数据
      *
      * 查询实例慢日志的统计数据。
      * 
@@ -2782,7 +2782,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例慢日志的统计数据
      *
      * 查询实例慢日志的统计数据。
      * 
@@ -2855,7 +2855,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例的慢日志数据
      *
      * 查询实例的慢日志数据。
      * 
@@ -2869,7 +2869,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例的慢日志数据
      *
      * 查询实例的慢日志数据。
      * 
@@ -3060,7 +3060,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例大版本升级历史信息
      *
      * 查询实例大版本升级历史信息。
      * 
@@ -3075,7 +3075,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例大版本升级历史信息
      *
      * 查询实例大版本升级历史信息。
      * 
@@ -3569,7 +3569,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 关联LTS配置信息
      *
      * 关联LTS配置信息
      * 
@@ -3583,7 +3583,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 关联LTS配置信息
      *
      * 关联LTS配置信息
      * 
@@ -3868,7 +3868,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例可升级的目标版本
      *
      * 查询实例可升级的目标版本
      * 
@@ -3883,7 +3883,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例可升级的目标版本
      *
      * 查询实例可升级的目标版本
      * 
@@ -4074,7 +4074,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例ipv4域名
      *
      * 查询实例ipv4域名
      * 
@@ -4088,7 +4088,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询实例ipv4域名
      *
      * 查询实例ipv4域名
      * 
@@ -4456,7 +4456,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询大版本检查状态或升级状态
      *
      * 查询大版本检查状态或升级状态。
      * 
@@ -4471,7 +4471,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 查询大版本检查状态或升级状态
      *
      * 查询大版本检查状态或升级状态。
      * 
@@ -5247,7 +5247,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * PostgreSQL数据库升级大版本
      *
      * PostgreSQL数据库升级大版本。
      * 
@@ -5262,7 +5262,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * PostgreSQL数据库升级大版本
      *
      * PostgreSQL数据库升级大版本。
      * 
@@ -5277,7 +5277,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 大版本升级前进行升级检查
      *
      * 大版本升级前进行升级检查。
      * 
@@ -5292,7 +5292,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 大版本升级前进行升级检查
      *
      * 大版本升级前进行升级检查。
      * 
@@ -6851,7 +6851,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 数据库帐号授权
      *
      * 数据库帐号授权。
      * 
@@ -6866,7 +6866,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 数据库帐号授权
      *
      * 数据库帐号授权。
      * 

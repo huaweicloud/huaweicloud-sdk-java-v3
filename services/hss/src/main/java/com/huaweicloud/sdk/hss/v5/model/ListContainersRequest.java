@@ -119,7 +119,7 @@ public class ListContainersRequest {
     }
 
     /**
-     * **参数解释**: 是否是集群纳管的容器 **约束限制**: 不涉及 **取值范围**:   - ture：是集群纳管的容器。   - false：不是集群纳管的容器。 **默认取值**: false 
+     * **参数解释**: 是否是集群纳管的容器 **约束限制**: 不涉及 **取值范围**:   - true：是集群纳管的容器。   - false：不是集群纳管的容器。 **默认取值**: false 
      * @return clusterContainer
      */
     public Boolean getClusterContainer() {

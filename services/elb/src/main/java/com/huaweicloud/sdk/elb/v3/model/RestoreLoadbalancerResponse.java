@@ -32,7 +32,7 @@ public class RestoreLoadbalancerResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。 注：自动生成 。
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
      * @return requestId
      */
     public String getRequestId() {
@@ -49,7 +49,7 @@ public class RestoreLoadbalancerResponse extends SdkResponse {
     }
 
     /**
-     * ELB实例的类型，v2或者v3。
+     * **参数解释**：ELB实例的类型。  **取值范围**： - v2：共享型ELB。 - v3：独享型ELB。
      * @return type
      */
     public String getType() {
@@ -66,7 +66,7 @@ public class RestoreLoadbalancerResponse extends SdkResponse {
     }
 
     /**
-     * 还原负载均衡器的任务ID。
+     * **参数解释**：还原负载均衡器的任务ID。  **取值范围**：不涉及
      * @return jobId
      */
     public String getJobId() {

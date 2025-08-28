@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新云日志请求参数。
+ * UpdateLogtankOption
  */
 public class UpdateLogtankOption {
 
@@ -26,7 +26,7 @@ public class UpdateLogtankOption {
     }
 
     /**
-     * 日志组别id，其他（非ELB）服务提供
+     * **参数解释**：日志组别id，其他（非ELB）服务提供。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return logGroupId
      */
     public String getLogGroupId() {
@@ -43,7 +43,7 @@ public class UpdateLogtankOption {
     }
 
     /**
-     * 日志订阅主题id，其他（非ELB）服务提供
+     * **参数解释**：日志订阅主题id，其他（非ELB）服务提供。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return logTopicId
      */
     public String getLogTopicId() {
