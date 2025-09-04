@@ -429,6 +429,12 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLogGroupRequest::getEnterpriseProjectId,
+                CreateLogGroupRequest::setEnterpriseProjectId));
         builder.<CreateLogGroupParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

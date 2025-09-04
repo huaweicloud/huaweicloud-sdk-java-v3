@@ -590,7 +590,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品套餐过期时间,产品将在改时间点后逐步下架。
+     * 产品套餐过期时间,产品将在该时间点后逐步下架。
      * @return expireTime
      */
     public OffsetDateTime getExpireTime() {

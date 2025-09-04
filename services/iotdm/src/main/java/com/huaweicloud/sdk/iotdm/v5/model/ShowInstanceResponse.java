@@ -45,6 +45,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -146,7 +151,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数说明**：实例名称 **取值范围**：由中文字符，英文字母、数字及“_”、“-”组成，且长度为[1-64]个字符。 
+     * **参数说明**：实例名称。 **取值范围**：由中文字符，英文字母、数字及“_”、“-”组成，且长度为[1-64]个字符。 
      * @return name
      */
     public String getName() {
@@ -189,7 +194,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数说明**：实例状态。 **取值范围**： - CREATING：实例正在创建 - ACTIVE：实例正常 - FROZEN：实例冻结 - MODIFYING：实例正在变更规格 - FAILED：实例创建失败 
+     * **参数说明**：实例状态。 **取值范围**： - CREATING：实例正在创建 - ACTIVE：实例正常 - FROZEN：实例冻结 - TRADING: 实例正在进行交易 - MODIFYING：实例正在变更规格 - MODIFY_FAILED: 实例变更失败 - FAILED：实例创建失败 
      * @return status
      */
     public String getStatus() {
@@ -200,13 +205,30 @@ public class ShowInstanceResponse extends SdkResponse {
         this.status = status;
     }
 
+    public ShowInstanceResponse withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * **参数说明**：实例所属region。 
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
     public ShowInstanceResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * **参数说明**：设备接入实例的描述信息。 **取值范围**：由中文，字母，数字，句号，逗号，下划线（“_”），中划线（“-”），空格组成，且长度为[1-256]个字符。 
+     * **参数说明**：设备接入实例的描述信息。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_，,.。、&-等字符的组合。 
      * @return description
      */
     public String getDescription() {
@@ -239,7 +261,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数说明**：设备接入实例的接入信息 
+     * **参数说明**：设备接入实例的接入信息。 
      * @return accessInfos
      */
     public List<AccessInfo> getAccessInfos() {
@@ -256,7 +278,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数说明**：实例的创建时间。时间格式例如：2023-01-28T06:57:52Z 
+     * **参数说明**：实例的创建时间。时间格式例如：2023-01-28T06:57:52Z。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -273,7 +295,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数说明**：实例的最近一次更新的时间。时间格式例如：2023-01-28T06:57:52Z 
+     * **参数说明**：实例的最近一次更新的时间。时间格式例如：2023-01-28T06:57:52Z。 
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -340,7 +362,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数说明**：订单号，仅包年包月实例返回该参数。[查看订单详情请参考[[查询订单详情](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0075746564.html)。]](tag:hws)
+     * **参数说明**：订单号，仅包年包月实例返回该参数。[查看订单详情请参考[查询订单详情](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0075746564.html)。](tag:hws) 
      * @return orderId
      */
     public String getOrderId() {
@@ -415,8 +437,9 @@ public class ShowInstanceResponse extends SdkResponse {
         return Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.name, that.name)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.accessInfos, that.accessInfos)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.accessInfos, that.accessInfos) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.operateWindow, that.operateWindow)
@@ -431,6 +454,7 @@ public class ShowInstanceResponse extends SdkResponse {
             name,
             flavor,
             status,
+            regionId,
             description,
             accessInfos,
             createTime,
@@ -452,6 +476,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    accessInfos: ").append(toIndentedString(accessInfos)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

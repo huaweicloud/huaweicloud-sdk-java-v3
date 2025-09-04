@@ -25,10 +25,14 @@ import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddFlowControlPolicy;
 import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddHarmonySoftBusDTO;
+import com.huaweicloud.sdk.iotda.v5.model.AddHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddProduct;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddRuleReq;
+import com.huaweicloud.sdk.iotda.v5.model.AddSecurityProfileDTO;
 import com.huaweicloud.sdk.iotda.v5.model.AddTunnelDto;
 import com.huaweicloud.sdk.iotda.v5.model.AddTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddTunnelResponse;
@@ -58,12 +62,15 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequestBody;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAsyncCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAsyncCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateAuthenticationTemplate;
 import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTask;
 import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCertificateDTO;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthenticationTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizer;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizerResponse;
@@ -94,6 +101,10 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateSecurityProfileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateSecurityProfileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateSyncHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateSyncHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileRequest;
@@ -104,8 +115,12 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthenticationTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceMessageRequest;
@@ -116,10 +131,14 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceShadowRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceShadowResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
@@ -138,6 +157,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteSecurityProfileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteSecurityProfileResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeviceBroadcastRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeviceMessageRequest;
@@ -157,8 +178,14 @@ import com.huaweicloud.sdk.iotda.v5.model.ListBridgesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBridgesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthenticationTemplatesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthenticationTemplatesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthorizersRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthorizersResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceByDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceByDeviceCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
@@ -169,12 +196,15 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDevicePoliciesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicePoliciesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceProxiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
@@ -195,6 +225,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListSecurityProfilesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListSecurityProfilesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.QueryResourceByTagsDTO;
 import com.huaweicloud.sdk.iotda.v5.model.QueueInfo;
 import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecret;
@@ -206,6 +238,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetFingerprint;
 import com.huaweicloud.sdk.iotda.v5.model.ResetFingerprintRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ResetFingerprintResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ResetHarmonySoftBusKeyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ResetHarmonySoftBusKeyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.RetryBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.RetryBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.Rule;
@@ -221,8 +255,12 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthenticationTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageRequest;
@@ -239,6 +277,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
@@ -257,6 +297,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowSecurityProfileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowSecurityProfileResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequestBody;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyResponse;
@@ -276,15 +318,21 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateActionReq;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationDTO;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateAuthenticationTemplate;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateBacklogPolicy;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateDTO;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDesireds;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDevice;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthenticationTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizer;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizerResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceCertificate;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupDTO;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
@@ -318,6 +366,9 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleReq;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateSecurityProfileDTO;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateSecurityProfileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateSecurityProfileResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UploadBatchTaskFileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UploadBatchTaskFileRequestBody;
 import com.huaweicloud.sdk.iotda.v5.model.UploadBatchTaskFileResponse;
@@ -1822,6 +1873,195 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDeviceAuthenticationTemplateRequest, CreateDeviceAuthenticationTemplateResponse> createDeviceAuthenticationTemplate =
+        genForCreateDeviceAuthenticationTemplate();
+
+    private static HttpRequestDef<CreateDeviceAuthenticationTemplateRequest, CreateDeviceAuthenticationTemplateResponse> genForCreateDeviceAuthenticationTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateDeviceAuthenticationTemplateRequest, CreateDeviceAuthenticationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDeviceAuthenticationTemplateRequest.class,
+                    CreateDeviceAuthenticationTemplateResponse.class)
+                .withName("CreateDeviceAuthenticationTemplate")
+                .withUri("/v5/iot/{project_id}/device-authentication-templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDeviceAuthenticationTemplateRequest::getInstanceId,
+                CreateDeviceAuthenticationTemplateRequest::setInstanceId));
+        builder.<CreateAuthenticationTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAuthenticationTemplate.class),
+            f -> f.withMarshaller(CreateDeviceAuthenticationTemplateRequest::getBody,
+                CreateDeviceAuthenticationTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDeviceAuthenticationTemplateRequest, DeleteDeviceAuthenticationTemplateResponse> deleteDeviceAuthenticationTemplate =
+        genForDeleteDeviceAuthenticationTemplate();
+
+    private static HttpRequestDef<DeleteDeviceAuthenticationTemplateRequest, DeleteDeviceAuthenticationTemplateResponse> genForDeleteDeviceAuthenticationTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteDeviceAuthenticationTemplateRequest, DeleteDeviceAuthenticationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDeviceAuthenticationTemplateRequest.class,
+                    DeleteDeviceAuthenticationTemplateResponse.class)
+                .withName("DeleteDeviceAuthenticationTemplate")
+                .withUri("/v5/iot/{project_id}/device-authentication-templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceAuthenticationTemplateRequest::getTemplateId,
+                DeleteDeviceAuthenticationTemplateRequest::setTemplateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceAuthenticationTemplateRequest::getInstanceId,
+                DeleteDeviceAuthenticationTemplateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDeviceAuthenticationTemplatesRequest, ListDeviceAuthenticationTemplatesResponse> listDeviceAuthenticationTemplates =
+        genForListDeviceAuthenticationTemplates();
+
+    private static HttpRequestDef<ListDeviceAuthenticationTemplatesRequest, ListDeviceAuthenticationTemplatesResponse> genForListDeviceAuthenticationTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListDeviceAuthenticationTemplatesRequest, ListDeviceAuthenticationTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDeviceAuthenticationTemplatesRequest.class,
+                    ListDeviceAuthenticationTemplatesResponse.class)
+                .withName("ListDeviceAuthenticationTemplates")
+                .withUri("/v5/iot/{project_id}/device-authentication-templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceAuthenticationTemplatesRequest::getTemplateName,
+                ListDeviceAuthenticationTemplatesRequest::setTemplateName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeviceAuthenticationTemplatesRequest::getLimit,
+                ListDeviceAuthenticationTemplatesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceAuthenticationTemplatesRequest::getMarker,
+                ListDeviceAuthenticationTemplatesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeviceAuthenticationTemplatesRequest::getOffset,
+                ListDeviceAuthenticationTemplatesRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceAuthenticationTemplatesRequest::getInstanceId,
+                ListDeviceAuthenticationTemplatesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeviceAuthenticationTemplateRequest, ShowDeviceAuthenticationTemplateResponse> showDeviceAuthenticationTemplate =
+        genForShowDeviceAuthenticationTemplate();
+
+    private static HttpRequestDef<ShowDeviceAuthenticationTemplateRequest, ShowDeviceAuthenticationTemplateResponse> genForShowDeviceAuthenticationTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowDeviceAuthenticationTemplateRequest, ShowDeviceAuthenticationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDeviceAuthenticationTemplateRequest.class,
+                    ShowDeviceAuthenticationTemplateResponse.class)
+                .withName("ShowDeviceAuthenticationTemplate")
+                .withUri("/v5/iot/{project_id}/device-authentication-templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceAuthenticationTemplateRequest::getTemplateId,
+                ShowDeviceAuthenticationTemplateRequest::setTemplateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceAuthenticationTemplateRequest::getInstanceId,
+                ShowDeviceAuthenticationTemplateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDeviceAuthenticationTemplateRequest, UpdateDeviceAuthenticationTemplateResponse> updateDeviceAuthenticationTemplate =
+        genForUpdateDeviceAuthenticationTemplate();
+
+    private static HttpRequestDef<UpdateDeviceAuthenticationTemplateRequest, UpdateDeviceAuthenticationTemplateResponse> genForUpdateDeviceAuthenticationTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateDeviceAuthenticationTemplateRequest, UpdateDeviceAuthenticationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDeviceAuthenticationTemplateRequest.class,
+                    UpdateDeviceAuthenticationTemplateResponse.class)
+                .withName("UpdateDeviceAuthenticationTemplate")
+                .withUri("/v5/iot/{project_id}/device-authentication-templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeviceAuthenticationTemplateRequest::getTemplateId,
+                UpdateDeviceAuthenticationTemplateRequest::setTemplateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeviceAuthenticationTemplateRequest::getInstanceId,
+                UpdateDeviceAuthenticationTemplateRequest::setInstanceId));
+        builder.<UpdateAuthenticationTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAuthenticationTemplate.class),
+            f -> f.withMarshaller(UpdateDeviceAuthenticationTemplateRequest::getBody,
+                UpdateDeviceAuthenticationTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDeviceAuthorizerRequest, CreateDeviceAuthorizerResponse> createDeviceAuthorizer =
         genForCreateDeviceAuthorizer();
 
@@ -1990,6 +2230,191 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDeviceAuthorizer.class),
             f -> f.withMarshaller(UpdateDeviceAuthorizerRequest::getBody, UpdateDeviceAuthorizerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDeviceCertificateRequest, DeleteDeviceCertificateResponse> deleteDeviceCertificate =
+        genForDeleteDeviceCertificate();
+
+    private static HttpRequestDef<DeleteDeviceCertificateRequest, DeleteDeviceCertificateResponse> genForDeleteDeviceCertificate() {
+        // basic
+        HttpRequestDef.Builder<DeleteDeviceCertificateRequest, DeleteDeviceCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDeviceCertificateRequest.class, DeleteDeviceCertificateResponse.class)
+            .withName("DeleteDeviceCertificate")
+            .withUri("/v5/iot/{project_id}/device-certificates/{certificate_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceCertificateRequest::getCertificateId,
+                DeleteDeviceCertificateRequest::setCertificateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceCertificateRequest::getInstanceId,
+                DeleteDeviceCertificateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDeviceByDeviceCertificateRequest, ListDeviceByDeviceCertificateResponse> listDeviceByDeviceCertificate =
+        genForListDeviceByDeviceCertificate();
+
+    private static HttpRequestDef<ListDeviceByDeviceCertificateRequest, ListDeviceByDeviceCertificateResponse> genForListDeviceByDeviceCertificate() {
+        // basic
+        HttpRequestDef.Builder<ListDeviceByDeviceCertificateRequest, ListDeviceByDeviceCertificateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListDeviceByDeviceCertificateRequest.class,
+                    ListDeviceByDeviceCertificateResponse.class)
+                .withName("ListDeviceByDeviceCertificate")
+                .withUri("/v5/iot/{project_id}/device-certificates/{certificate_id}/list-device")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceByDeviceCertificateRequest::getCertificateId,
+                ListDeviceByDeviceCertificateRequest::setCertificateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceByDeviceCertificateRequest::getInstanceId,
+                ListDeviceByDeviceCertificateRequest::setInstanceId));
+        builder.<ListDeviceRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListDeviceRequest.class),
+            f -> f.withMarshaller(ListDeviceByDeviceCertificateRequest::getBody,
+                ListDeviceByDeviceCertificateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDeviceCertificateRequest, ListDeviceCertificateResponse> listDeviceCertificate =
+        genForListDeviceCertificate();
+
+    private static HttpRequestDef<ListDeviceCertificateRequest, ListDeviceCertificateResponse> genForListDeviceCertificate() {
+        // basic
+        HttpRequestDef.Builder<ListDeviceCertificateRequest, ListDeviceCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDeviceCertificateRequest.class, ListDeviceCertificateResponse.class)
+            .withName("ListDeviceCertificate")
+            .withUri("/v5/iot/{project_id}/device-certificates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("common_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceCertificateRequest::getCommonName,
+                ListDeviceCertificateRequest::setCommonName));
+        builder.<String>withRequestField("fingerprint",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceCertificateRequest::getFingerprint,
+                ListDeviceCertificateRequest::setFingerprint));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeviceCertificateRequest::getLimit, ListDeviceCertificateRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceCertificateRequest::getMarker, ListDeviceCertificateRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDeviceCertificateRequest::getOffset, ListDeviceCertificateRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceCertificateRequest::getInstanceId,
+                ListDeviceCertificateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeviceCertificateRequest, ShowDeviceCertificateResponse> showDeviceCertificate =
+        genForShowDeviceCertificate();
+
+    private static HttpRequestDef<ShowDeviceCertificateRequest, ShowDeviceCertificateResponse> genForShowDeviceCertificate() {
+        // basic
+        HttpRequestDef.Builder<ShowDeviceCertificateRequest, ShowDeviceCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDeviceCertificateRequest.class, ShowDeviceCertificateResponse.class)
+            .withName("ShowDeviceCertificate")
+            .withUri("/v5/iot/{project_id}/device-certificates/{certificate_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceCertificateRequest::getCertificateId,
+                ShowDeviceCertificateRequest::setCertificateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceCertificateRequest::getInstanceId,
+                ShowDeviceCertificateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDeviceCertificateRequest, UpdateDeviceCertificateResponse> updateDeviceCertificate =
+        genForUpdateDeviceCertificate();
+
+    private static HttpRequestDef<UpdateDeviceCertificateRequest, UpdateDeviceCertificateResponse> genForUpdateDeviceCertificate() {
+        // basic
+        HttpRequestDef.Builder<UpdateDeviceCertificateRequest, UpdateDeviceCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDeviceCertificateRequest.class, UpdateDeviceCertificateResponse.class)
+            .withName("UpdateDeviceCertificate")
+            .withUri("/v5/iot/{project_id}/device-certificates/{certificate_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeviceCertificateRequest::getCertificateId,
+                UpdateDeviceCertificateRequest::setCertificateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDeviceCertificateRequest::getInstanceId,
+                UpdateDeviceCertificateRequest::setInstanceId));
+        builder.<UpdateDeviceCertificate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDeviceCertificate.class),
+            f -> f.withMarshaller(UpdateDeviceCertificateRequest::getBody, UpdateDeviceCertificateRequest::setBody));
 
         // response
 
@@ -2864,6 +3289,34 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDeviceShadowRequest, DeleteDeviceShadowResponse> deleteDeviceShadow =
+        genForDeleteDeviceShadow();
+
+    private static HttpRequestDef<DeleteDeviceShadowRequest, DeleteDeviceShadowResponse> genForDeleteDeviceShadow() {
+        // basic
+        HttpRequestDef.Builder<DeleteDeviceShadowRequest, DeleteDeviceShadowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceShadowRequest.class, DeleteDeviceShadowResponse.class)
+                .withName("DeleteDeviceShadow")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/shadow")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceShadowRequest::getDeviceId, DeleteDeviceShadowRequest::setDeviceId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceShadowRequest::getInstanceId, DeleteDeviceShadowRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDeviceShadowRequest, ShowDeviceShadowResponse> showDeviceShadow =
         genForShowDeviceShadow();
 
@@ -3220,6 +3673,210 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFunctionsRequest::getInstanceId, ListFunctionsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddHarmonySoftBusRequest, AddHarmonySoftBusResponse> addHarmonySoftBus =
+        genForAddHarmonySoftBus();
+
+    private static HttpRequestDef<AddHarmonySoftBusRequest, AddHarmonySoftBusResponse> genForAddHarmonySoftBus() {
+        // basic
+        HttpRequestDef.Builder<AddHarmonySoftBusRequest, AddHarmonySoftBusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddHarmonySoftBusRequest.class, AddHarmonySoftBusResponse.class)
+                .withName("AddHarmonySoftBus")
+                .withUri("/v5/iot/{project_id}/harmony-soft-bus")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddHarmonySoftBusRequest::getInstanceId, AddHarmonySoftBusRequest::setInstanceId));
+        builder.<AddHarmonySoftBusDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddHarmonySoftBusDTO.class),
+            f -> f.withMarshaller(AddHarmonySoftBusRequest::getBody, AddHarmonySoftBusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSyncHarmonySoftBusRequest, CreateSyncHarmonySoftBusResponse> createSyncHarmonySoftBus =
+        genForCreateSyncHarmonySoftBus();
+
+    private static HttpRequestDef<CreateSyncHarmonySoftBusRequest, CreateSyncHarmonySoftBusResponse> genForCreateSyncHarmonySoftBus() {
+        // basic
+        HttpRequestDef.Builder<CreateSyncHarmonySoftBusRequest, CreateSyncHarmonySoftBusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateSyncHarmonySoftBusRequest.class, CreateSyncHarmonySoftBusResponse.class)
+                .withName("CreateSyncHarmonySoftBus")
+                .withUri("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}/sync")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bus_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSyncHarmonySoftBusRequest::getBusId,
+                CreateSyncHarmonySoftBusRequest::setBusId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSyncHarmonySoftBusRequest::getInstanceId,
+                CreateSyncHarmonySoftBusRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSyncHarmonySoftBusResponse::getBody,
+                CreateSyncHarmonySoftBusResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHarmonySoftBusRequest, DeleteHarmonySoftBusResponse> deleteHarmonySoftBus =
+        genForDeleteHarmonySoftBus();
+
+    private static HttpRequestDef<DeleteHarmonySoftBusRequest, DeleteHarmonySoftBusResponse> genForDeleteHarmonySoftBus() {
+        // basic
+        HttpRequestDef.Builder<DeleteHarmonySoftBusRequest, DeleteHarmonySoftBusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteHarmonySoftBusRequest.class, DeleteHarmonySoftBusResponse.class)
+            .withName("DeleteHarmonySoftBus")
+            .withUri("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bus_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHarmonySoftBusRequest::getBusId, DeleteHarmonySoftBusRequest::setBusId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHarmonySoftBusRequest::getInstanceId,
+                DeleteHarmonySoftBusRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHarmonySoftBusRequest, ListHarmonySoftBusResponse> listHarmonySoftBus =
+        genForListHarmonySoftBus();
+
+    private static HttpRequestDef<ListHarmonySoftBusRequest, ListHarmonySoftBusResponse> genForListHarmonySoftBus() {
+        // basic
+        HttpRequestDef.Builder<ListHarmonySoftBusRequest, ListHarmonySoftBusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHarmonySoftBusRequest.class, ListHarmonySoftBusResponse.class)
+                .withName("ListHarmonySoftBus")
+                .withUri("/v5/iot/{project_id}/harmony-soft-bus")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHarmonySoftBusRequest::getLimit, ListHarmonySoftBusRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarmonySoftBusRequest::getMarker, ListHarmonySoftBusRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHarmonySoftBusRequest::getOffset, ListHarmonySoftBusRequest::setOffset));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarmonySoftBusRequest::getGroupId, ListHarmonySoftBusRequest::setGroupId));
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarmonySoftBusRequest::getAppId, ListHarmonySoftBusRequest::setAppId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarmonySoftBusRequest::getInstanceId, ListHarmonySoftBusRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetHarmonySoftBusKeyRequest, ResetHarmonySoftBusKeyResponse> resetHarmonySoftBusKey =
+        genForResetHarmonySoftBusKey();
+
+    private static HttpRequestDef<ResetHarmonySoftBusKeyRequest, ResetHarmonySoftBusKeyResponse> genForResetHarmonySoftBusKey() {
+        // basic
+        HttpRequestDef.Builder<ResetHarmonySoftBusKeyRequest, ResetHarmonySoftBusKeyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResetHarmonySoftBusKeyRequest.class, ResetHarmonySoftBusKeyResponse.class)
+            .withName("ResetHarmonySoftBusKey")
+            .withUri("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}/reset-bus-key")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bus_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetHarmonySoftBusKeyRequest::getBusId, ResetHarmonySoftBusKeyRequest::setBusId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetHarmonySoftBusKeyRequest::getInstanceId,
+                ResetHarmonySoftBusKeyRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResetHarmonySoftBusKeyResponse::getBody, ResetHarmonySoftBusKeyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHarmonySoftBusRequest, ShowHarmonySoftBusResponse> showHarmonySoftBus =
+        genForShowHarmonySoftBus();
+
+    private static HttpRequestDef<ShowHarmonySoftBusRequest, ShowHarmonySoftBusResponse> genForShowHarmonySoftBus() {
+        // basic
+        HttpRequestDef.Builder<ShowHarmonySoftBusRequest, ShowHarmonySoftBusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHarmonySoftBusRequest.class, ShowHarmonySoftBusResponse.class)
+                .withName("ShowHarmonySoftBus")
+                .withUri("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bus_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHarmonySoftBusRequest::getBusId, ShowHarmonySoftBusRequest::setBusId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHarmonySoftBusRequest::getInstanceId, ShowHarmonySoftBusRequest::setInstanceId));
 
         // response
 
@@ -4781,6 +5438,185 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Rule.class),
             f -> f.withMarshaller(UpdateRuleRequest::getBody, UpdateRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityProfileRequest, CreateSecurityProfileResponse> createSecurityProfile =
+        genForCreateSecurityProfile();
+
+    private static HttpRequestDef<CreateSecurityProfileRequest, CreateSecurityProfileResponse> genForCreateSecurityProfile() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityProfileRequest, CreateSecurityProfileResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSecurityProfileRequest.class, CreateSecurityProfileResponse.class)
+            .withName("CreateSecurityProfile")
+            .withUri("/v5/iot/{project_id}/security-profiles")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityProfileRequest::getInstanceId,
+                CreateSecurityProfileRequest::setInstanceId));
+        builder.<AddSecurityProfileDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddSecurityProfileDTO.class),
+            f -> f.withMarshaller(CreateSecurityProfileRequest::getBody, CreateSecurityProfileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecurityProfileRequest, DeleteSecurityProfileResponse> deleteSecurityProfile =
+        genForDeleteSecurityProfile();
+
+    private static HttpRequestDef<DeleteSecurityProfileRequest, DeleteSecurityProfileResponse> genForDeleteSecurityProfile() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecurityProfileRequest, DeleteSecurityProfileResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSecurityProfileRequest.class, DeleteSecurityProfileResponse.class)
+            .withName("DeleteSecurityProfile")
+            .withUri("/v5/iot/{project_id}/security-profiles/{profile_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("profile_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityProfileRequest::getProfileId,
+                DeleteSecurityProfileRequest::setProfileId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityProfileRequest::getInstanceId,
+                DeleteSecurityProfileRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityProfilesRequest, ListSecurityProfilesResponse> listSecurityProfiles =
+        genForListSecurityProfiles();
+
+    private static HttpRequestDef<ListSecurityProfilesRequest, ListSecurityProfilesResponse> genForListSecurityProfiles() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityProfilesRequest, ListSecurityProfilesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSecurityProfilesRequest.class, ListSecurityProfilesResponse.class)
+            .withName("ListSecurityProfiles")
+            .withUri("/v5/iot/{project_id}/security-profiles")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("security_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityProfilesRequest::getSecurityType,
+                ListSecurityProfilesRequest::setSecurityType));
+        builder.<String>withRequestField("target_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityProfilesRequest::getTargetType,
+                ListSecurityProfilesRequest::setTargetType));
+        builder.<String>withRequestField("target_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityProfilesRequest::getTargetId, ListSecurityProfilesRequest::setTargetId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityProfilesRequest::getLimit, ListSecurityProfilesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityProfilesRequest::getMarker, ListSecurityProfilesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityProfilesRequest::getOffset, ListSecurityProfilesRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityProfilesRequest::getInstanceId,
+                ListSecurityProfilesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityProfileRequest, ShowSecurityProfileResponse> showSecurityProfile =
+        genForShowSecurityProfile();
+
+    private static HttpRequestDef<ShowSecurityProfileRequest, ShowSecurityProfileResponse> genForShowSecurityProfile() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityProfileRequest, ShowSecurityProfileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSecurityProfileRequest.class, ShowSecurityProfileResponse.class)
+                .withName("ShowSecurityProfile")
+                .withUri("/v5/iot/{project_id}/security-profiles/{profile_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("profile_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityProfileRequest::getProfileId, ShowSecurityProfileRequest::setProfileId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityProfileRequest::getInstanceId,
+                ShowSecurityProfileRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityProfileRequest, UpdateSecurityProfileResponse> updateSecurityProfile =
+        genForUpdateSecurityProfile();
+
+    private static HttpRequestDef<UpdateSecurityProfileRequest, UpdateSecurityProfileResponse> genForUpdateSecurityProfile() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityProfileRequest, UpdateSecurityProfileResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSecurityProfileRequest.class, UpdateSecurityProfileResponse.class)
+            .withName("UpdateSecurityProfile")
+            .withUri("/v5/iot/{project_id}/security-profiles/{profile_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("profile_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityProfileRequest::getProfileId,
+                UpdateSecurityProfileRequest::setProfileId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityProfileRequest::getInstanceId,
+                UpdateSecurityProfileRequest::setInstanceId));
+        builder.<UpdateSecurityProfileDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSecurityProfileDTO.class),
+            f -> f.withMarshaller(UpdateSecurityProfileRequest::getBody, UpdateSecurityProfileRequest::setBody));
 
         // response
 

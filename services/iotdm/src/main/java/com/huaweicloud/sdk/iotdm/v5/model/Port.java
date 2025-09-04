@@ -21,6 +21,11 @@ public class Port {
     private Integer appAmqpsPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_mqtts_port")
+
+    private Integer appMqttsPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_coap_port")
 
     private Integer deviceCoapPort;
@@ -51,7 +56,7 @@ public class Port {
     }
 
     /**
-     * **参数说明**：应用接入HTTPS协议端口，默认值：443 
+     * **参数说明**：应用接入HTTPS协议端口，默认值：443。 
      * minimum: 0
      * maximum: 65535
      * @return appHttpsPort
@@ -70,7 +75,7 @@ public class Port {
     }
 
     /**
-     * **参数说明**：应用接入AMQP协议端口, 默认值：5671 
+     * **参数说明**：应用接入AMQP协议端口, 默认值：5671。 
      * minimum: 0
      * maximum: 65535
      * @return appAmqpsPort
@@ -83,13 +88,32 @@ public class Port {
         this.appAmqpsPort = appAmqpsPort;
     }
 
+    public Port withAppMqttsPort(Integer appMqttsPort) {
+        this.appMqttsPort = appMqttsPort;
+        return this;
+    }
+
+    /**
+     * **参数说明**：应用接入MQTTS协议端口, 默认值：8883。 
+     * minimum: 0
+     * maximum: 65535
+     * @return appMqttsPort
+     */
+    public Integer getAppMqttsPort() {
+        return appMqttsPort;
+    }
+
+    public void setAppMqttsPort(Integer appMqttsPort) {
+        this.appMqttsPort = appMqttsPort;
+    }
+
     public Port withDeviceCoapPort(Integer deviceCoapPort) {
         this.deviceCoapPort = deviceCoapPort;
         return this;
     }
 
     /**
-     * **参数说明**：设备接入COAP协议端口, 默认值：5683 
+     * **参数说明**：设备接入COAP协议端口, 默认值：5683。 
      * minimum: 0
      * maximum: 65535
      * @return deviceCoapPort
@@ -108,7 +132,7 @@ public class Port {
     }
 
     /**
-     * **参数说明**：设备接入COAPS协议端口, 默认值：5684 
+     * **参数说明**：设备接入COAPS协议端口, 默认值：5684。 
      * minimum: 0
      * maximum: 65535
      * @return deviceCoapsPort
@@ -127,7 +151,7 @@ public class Port {
     }
 
     /**
-     * **参数说明**：设备接入MQTT协议端口, 默认值：1883 
+     * **参数说明**：设备接入MQTT协议端口, 默认值：1883。 
      * minimum: 0
      * maximum: 65535
      * @return deviceMqttPort
@@ -146,7 +170,7 @@ public class Port {
     }
 
     /**
-     * **参数说明**：设备接入MQTTS协议端口, 默认值：8883 
+     * **参数说明**：设备接入MQTTS协议端口, 默认值：8883。 
      * minimum: 0
      * maximum: 65535
      * @return deviceMqttsPort
@@ -165,7 +189,7 @@ public class Port {
     }
 
     /**
-     * **参数说明**：设备接入HTTPS协议端口, 默认值：443 
+     * **参数说明**：设备接入HTTPS协议端口, 默认值：443。 
      * minimum: 0
      * maximum: 65535
      * @return deviceHttpsPort
@@ -189,6 +213,7 @@ public class Port {
         Port that = (Port) obj;
         return Objects.equals(this.appHttpsPort, that.appHttpsPort)
             && Objects.equals(this.appAmqpsPort, that.appAmqpsPort)
+            && Objects.equals(this.appMqttsPort, that.appMqttsPort)
             && Objects.equals(this.deviceCoapPort, that.deviceCoapPort)
             && Objects.equals(this.deviceCoapsPort, that.deviceCoapsPort)
             && Objects.equals(this.deviceMqttPort, that.deviceMqttPort)
@@ -200,6 +225,7 @@ public class Port {
     public int hashCode() {
         return Objects.hash(appHttpsPort,
             appAmqpsPort,
+            appMqttsPort,
             deviceCoapPort,
             deviceCoapsPort,
             deviceMqttPort,
@@ -213,6 +239,7 @@ public class Port {
         sb.append("class Port {\n");
         sb.append("    appHttpsPort: ").append(toIndentedString(appHttpsPort)).append("\n");
         sb.append("    appAmqpsPort: ").append(toIndentedString(appAmqpsPort)).append("\n");
+        sb.append("    appMqttsPort: ").append(toIndentedString(appMqttsPort)).append("\n");
         sb.append("    deviceCoapPort: ").append(toIndentedString(deviceCoapPort)).append("\n");
         sb.append("    deviceCoapsPort: ").append(toIndentedString(deviceCoapsPort)).append("\n");
         sb.append("    deviceMqttPort: ").append(toIndentedString(deviceMqttPort)).append("\n");

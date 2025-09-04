@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
@@ -21,6 +23,8 @@ import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateSnapshotsRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateSnapshotsResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSqlLimitRulesRequest;
@@ -81,6 +85,8 @@ import com.huaweicloud.sdk.das.v3.model.ListRiskItemsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListRiskItemsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListRiskTrendRequest;
 import com.huaweicloud.sdk.das.v3.model.ListRiskTrendResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSnapshotsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSnapshotsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
@@ -99,8 +105,14 @@ import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
@@ -381,6 +393,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 设置全量死锁开关
+     *
+     * 设置全量死锁开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeFullDeadLockSwitchRequest 请求对象
+     * @return CompletableFuture<ChangeFullDeadLockSwitchResponse>
+     */
+    public CompletableFuture<ChangeFullDeadLockSwitchResponse> changeFullDeadLockSwitchAsync(
+        ChangeFullDeadLockSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.changeFullDeadLockSwitch);
+    }
+
+    /**
+     * 设置全量死锁开关
+     *
+     * 设置全量死锁开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeFullDeadLockSwitchRequest 请求对象
+     * @return AsyncInvoker<ChangeFullDeadLockSwitchRequest, ChangeFullDeadLockSwitchResponse>
+     */
+    public AsyncInvoker<ChangeFullDeadLockSwitchRequest, ChangeFullDeadLockSwitchResponse> changeFullDeadLockSwitchAsyncInvoker(
+        ChangeFullDeadLockSwitchRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.changeFullDeadLockSwitch, hcClient);
+    }
+
+    /**
      * 设置SQL限流开关状态
      *
      * 设置SQL限流开关状态。目前仅支持MySQL数据库。
@@ -499,6 +541,35 @@ public class DasAsyncClient {
     public AsyncInvoker<CreateHealthReportTaskRequest, CreateHealthReportTaskResponse> createHealthReportTaskAsyncInvoker(
         CreateHealthReportTaskRequest request) {
         return new AsyncInvoker<>(request, DasMeta.createHealthReportTask, hcClient);
+    }
+
+    /**
+     * 创建快照
+     *
+     * 创建快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSnapshotsRequest 请求对象
+     * @return CompletableFuture<CreateSnapshotsResponse>
+     */
+    public CompletableFuture<CreateSnapshotsResponse> createSnapshotsAsync(CreateSnapshotsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.createSnapshots);
+    }
+
+    /**
+     * 创建快照
+     *
+     * 创建快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSnapshotsRequest 请求对象
+     * @return AsyncInvoker<CreateSnapshotsRequest, CreateSnapshotsResponse>
+     */
+    public AsyncInvoker<CreateSnapshotsRequest, CreateSnapshotsResponse> createSnapshotsAsyncInvoker(
+        CreateSnapshotsRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.createSnapshots, hcClient);
     }
 
     /**
@@ -1361,6 +1432,35 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询快照列表
+     *
+     * 查询快照列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotsRequest 请求对象
+     * @return CompletableFuture<ListSnapshotsResponse>
+     */
+    public CompletableFuture<ListSnapshotsResponse> listSnapshotsAsync(ListSnapshotsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listSnapshots);
+    }
+
+    /**
+     * 查询快照列表
+     *
+     * 查询快照列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSnapshotsRequest 请求对象
+     * @return AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse>
+     */
+    public AsyncInvoker<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsAsyncInvoker(
+        ListSnapshotsRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listSnapshots, hcClient);
+    }
+
+    /**
      * 获取空间分析数据列表
      *
      * 获取空间分析数据列表。实例级别数据来源于文件系统，库级别和表级别数据来源于information_schema.tables表。空间&amp;元数据分析最多分析10000张表，若缺少库表空间数据，可能是因为数据库实例表个数过多或者账号未保存密码。如果为保存密码，请使用用户管理接口或页面录入数据库账号。 支持MySQL、GaussDB(for MySQL)和SQLServer引擎。
@@ -1599,6 +1699,66 @@ public class DasAsyncClient {
     }
 
     /**
+     * 获取全量死锁信息
+     *
+     * 获取全量死锁信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFullDeadLockListRequest 请求对象
+     * @return CompletableFuture<ShowFullDeadLockListResponse>
+     */
+    public CompletableFuture<ShowFullDeadLockListResponse> showFullDeadLockListAsync(
+        ShowFullDeadLockListRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showFullDeadLockList);
+    }
+
+    /**
+     * 获取全量死锁信息
+     *
+     * 获取全量死锁信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFullDeadLockListRequest 请求对象
+     * @return AsyncInvoker<ShowFullDeadLockListRequest, ShowFullDeadLockListResponse>
+     */
+    public AsyncInvoker<ShowFullDeadLockListRequest, ShowFullDeadLockListResponse> showFullDeadLockListAsyncInvoker(
+        ShowFullDeadLockListRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showFullDeadLockList, hcClient);
+    }
+
+    /**
+     * 获取全量死锁开关
+     *
+     * 获取全量死锁开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFullDeadLockSwitchRequest 请求对象
+     * @return CompletableFuture<ShowFullDeadLockSwitchResponse>
+     */
+    public CompletableFuture<ShowFullDeadLockSwitchResponse> showFullDeadLockSwitchAsync(
+        ShowFullDeadLockSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showFullDeadLockSwitch);
+    }
+
+    /**
+     * 获取全量死锁开关
+     *
+     * 获取全量死锁开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFullDeadLockSwitchRequest 请求对象
+     * @return AsyncInvoker<ShowFullDeadLockSwitchRequest, ShowFullDeadLockSwitchResponse>
+     */
+    public AsyncInvoker<ShowFullDeadLockSwitchRequest, ShowFullDeadLockSwitchResponse> showFullDeadLockSwitchAsyncInvoker(
+        ShowFullDeadLockSwitchRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showFullDeadLockSwitch, hcClient);
+    }
+
+    /**
      * 获取实例健康诊断报告内容
      *
      * 获取实例健康诊断报告内容。
@@ -1626,6 +1786,36 @@ public class DasAsyncClient {
     public AsyncInvoker<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> showInstanceHealthReportAsyncInvoker(
         ShowInstanceHealthReportRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showInstanceHealthReport, hcClient);
+    }
+
+    /**
+     * 获取死锁的快照信息
+     *
+     * 获取死锁的快照信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLatestDeadLockSnapshotRequest 请求对象
+     * @return CompletableFuture<ShowLatestDeadLockSnapshotResponse>
+     */
+    public CompletableFuture<ShowLatestDeadLockSnapshotResponse> showLatestDeadLockSnapshotAsync(
+        ShowLatestDeadLockSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showLatestDeadLockSnapshot);
+    }
+
+    /**
+     * 获取死锁的快照信息
+     *
+     * 获取死锁的快照信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLatestDeadLockSnapshotRequest 请求对象
+     * @return AsyncInvoker<ShowLatestDeadLockSnapshotRequest, ShowLatestDeadLockSnapshotResponse>
+     */
+    public AsyncInvoker<ShowLatestDeadLockSnapshotRequest, ShowLatestDeadLockSnapshotResponse> showLatestDeadLockSnapshotAsyncInvoker(
+        ShowLatestDeadLockSnapshotRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showLatestDeadLockSnapshot, hcClient);
     }
 
     /**

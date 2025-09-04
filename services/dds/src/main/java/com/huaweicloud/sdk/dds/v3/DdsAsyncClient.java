@@ -83,6 +83,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListAuditlogsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListAuditlogsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListAz2MigrateRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListAz2MigrateResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListBackupDownloadPolicyRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListBackupDownloadPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListBackupsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListBackupsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListConfigurationsRequest;
@@ -153,6 +155,8 @@ import com.huaweicloud.sdk.dds.v3.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.RestoreInstanceResponse;
 import com.huaweicloud.sdk.dds.v3.model.RestoreNewInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.RestoreNewInstanceResponse;
+import com.huaweicloud.sdk.dds.v3.model.SaveBackupDownloadPolicyRequest;
+import com.huaweicloud.sdk.dds.v3.model.SaveBackupDownloadPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.SetAutoEnlargePoliciesRequest;
@@ -225,6 +229,8 @@ import com.huaweicloud.sdk.dds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetResponse;
+import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyRequest;
+import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateClientNetworkRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateClientNetworkResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateConfigurationParameterRequest;
@@ -1399,6 +1405,36 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 查询备份下载策略
+     *
+     * 查询备份下载策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupDownloadPolicyRequest 请求对象
+     * @return CompletableFuture<ListBackupDownloadPolicyResponse>
+     */
+    public CompletableFuture<ListBackupDownloadPolicyResponse> listBackupDownloadPolicyAsync(
+        ListBackupDownloadPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.listBackupDownloadPolicy);
+    }
+
+    /**
+     * 查询备份下载策略
+     *
+     * 查询备份下载策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupDownloadPolicyRequest 请求对象
+     * @return AsyncInvoker<ListBackupDownloadPolicyRequest, ListBackupDownloadPolicyResponse>
+     */
+    public AsyncInvoker<ListBackupDownloadPolicyRequest, ListBackupDownloadPolicyResponse> listBackupDownloadPolicyAsyncInvoker(
+        ListBackupDownloadPolicyRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.listBackupDownloadPolicy, hcClient);
+    }
+
+    /**
      * 查询备份列表
      *
      * 根据指定条件查询备份列表。
@@ -2414,6 +2450,36 @@ public class DdsAsyncClient {
     public AsyncInvoker<RestoreNewInstanceRequest, RestoreNewInstanceResponse> restoreNewInstanceAsyncInvoker(
         RestoreNewInstanceRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.restoreNewInstance, hcClient);
+    }
+
+    /**
+     * 创建备份下载策略
+     *
+     * 创建备份下载策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveBackupDownloadPolicyRequest 请求对象
+     * @return CompletableFuture<SaveBackupDownloadPolicyResponse>
+     */
+    public CompletableFuture<SaveBackupDownloadPolicyResponse> saveBackupDownloadPolicyAsync(
+        SaveBackupDownloadPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.saveBackupDownloadPolicy);
+    }
+
+    /**
+     * 创建备份下载策略
+     *
+     * 创建备份下载策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveBackupDownloadPolicyRequest 请求对象
+     * @return AsyncInvoker<SaveBackupDownloadPolicyRequest, SaveBackupDownloadPolicyResponse>
+     */
+    public AsyncInvoker<SaveBackupDownloadPolicyRequest, SaveBackupDownloadPolicyResponse> saveBackupDownloadPolicyAsyncInvoker(
+        SaveBackupDownloadPolicyRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.saveBackupDownloadPolicy, hcClient);
     }
 
     /**
@@ -3443,6 +3509,36 @@ public class DdsAsyncClient {
     public AsyncInvoker<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> switchoverReplicaSetAsyncInvoker(
         SwitchoverReplicaSetRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.switchoverReplicaSet, hcClient);
+    }
+
+    /**
+     * 更新备份下载策略
+     *
+     * 更新备份下载策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBackupDownloadPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateBackupDownloadPolicyResponse>
+     */
+    public CompletableFuture<UpdateBackupDownloadPolicyResponse> updateBackupDownloadPolicyAsync(
+        UpdateBackupDownloadPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.updateBackupDownloadPolicy);
+    }
+
+    /**
+     * 更新备份下载策略
+     *
+     * 更新备份下载策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBackupDownloadPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateBackupDownloadPolicyRequest, UpdateBackupDownloadPolicyResponse>
+     */
+    public AsyncInvoker<UpdateBackupDownloadPolicyRequest, UpdateBackupDownloadPolicyResponse> updateBackupDownloadPolicyAsyncInvoker(
+        UpdateBackupDownloadPolicyRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.updateBackupDownloadPolicy, hcClient);
     }
 
     /**

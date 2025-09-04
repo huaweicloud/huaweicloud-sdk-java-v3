@@ -35,6 +35,11 @@ public class ChargeInfo {
 
     private Boolean isAutoPay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "promotion_infos")
+
+    private String promotionInfos;
+
     public ChargeInfo withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -75,7 +80,7 @@ public class ChargeInfo {
     }
 
     /**
-     * **参数说明**：订购设备接入实例的周期数。charge_mode为prePaid时生效，且为必选值。 **取值范围**：period_type=month（周期类型为月）时，取值为[1，9]；period_type=year（周期类型为年）时，取值为[1，3]\" 
+     * **参数说明**：订购设备接入实例的周期数。charge_mode为prePaid时生效，且为必选值。 **取值范围**：period_type=month（周期类型为月）时，取值为[1，9]；period_type=year（周期类型为年）时，取值为[1，3]\"。 
      * minimum: 1
      * maximum: 9
      * @return periodNum
@@ -111,7 +116,7 @@ public class ChargeInfo {
     }
 
     /**
-     * **参数说明**：创建包年/包月实例时可指定，表示是否自动从客户的账户中支付，此字段不影响自动续订的支付方式。 **取值范围**：true - 自动支付，从账户余额自动扣费; false - 默认值，只提交订单不支付。[需要客户参考[\"支付包年/包月产品订单\"](https://support.huaweicloud.com/api-bpconsole/api_order_00016.html#section0)进行支付，或者在华为云官网页面使用进行支付。](tag:hws) 
+     * **参数说明**：创建包年/包月实例时可指定，表示是否自动从客户的账户中支付，此字段不影响自动续订的支付方式。 **取值范围**：true - 自动支付，从账户余额自动扣费; false - 默认值，只提交订单不支付。[需要客户参考[支付包年/包月产品订单](https://support.huaweicloud.com/api-bpconsole/api_order_00016.html#section0)进行支付，或者在华为云官网页面使用进行支付。](tag:hws) 
      * @return isAutoPay
      */
     public Boolean getIsAutoPay() {
@@ -120,6 +125,23 @@ public class ChargeInfo {
 
     public void setIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
+    }
+
+    public ChargeInfo withPromotionInfos(String promotionInfos) {
+        this.promotionInfos = promotionInfos;
+        return this;
+    }
+
+    /**
+     * **参数说明**：促销信息。 
+     * @return promotionInfos
+     */
+    public String getPromotionInfos() {
+        return promotionInfos;
+    }
+
+    public void setPromotionInfos(String promotionInfos) {
+        this.promotionInfos = promotionInfos;
     }
 
     @Override
@@ -133,12 +155,13 @@ public class ChargeInfo {
         ChargeInfo that = (ChargeInfo) obj;
         return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.periodType, that.periodType)
             && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
-            && Objects.equals(this.isAutoPay, that.isAutoPay);
+            && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.promotionInfos, that.promotionInfos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chargeMode, periodType, periodNum, isAutoRenew, isAutoPay);
+        return Objects.hash(chargeMode, periodType, periodNum, isAutoRenew, isAutoPay, promotionInfos);
     }
 
     @Override
@@ -150,6 +173,7 @@ public class ChargeInfo {
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    promotionInfos: ").append(toIndentedString(promotionInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

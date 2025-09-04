@@ -355,7 +355,7 @@ public class GetObjectRequest implements ProgressRequest {
     }
 
     /**
-     * 图片处理服务。  示例：  命令方式：x-image-process=image/commands  样式方式：x-image-process=style/stylename  详见[《图片处理特性指南》](https://support.huaweicloud.com/fg-obs/obs_01_0001.html)。 
+     * 图片处理服务。  示例：  命令方式：x-image-process=image/commands  样式方式：x-image-process=style/stylename  详见[《图片处理特性指南》](https://support.huaweicloud.com/usermanual-obs/obs_01_0001.html)。 
      * @return xImageProcess
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

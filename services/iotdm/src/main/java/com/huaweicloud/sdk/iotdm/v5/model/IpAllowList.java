@@ -26,7 +26,7 @@ public class IpAllowList {
     }
 
     /**
-     * **参数说明**：白名单ip地址 
+     * **参数说明**：白名单ip地址。 
      * @return address
      */
     public String getAddress() {
@@ -43,7 +43,7 @@ public class IpAllowList {
     }
 
     /**
-     * **参数说明**：描述 
+     * **参数说明**：描述。 
      * @return description
      */
     public String getDescription() {

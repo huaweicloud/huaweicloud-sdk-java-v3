@@ -20,6 +20,7 @@ import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceUsersResponse;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsReq;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.BatchModifyGroupDescriptionReq;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstanceReq;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesResponse;
@@ -3097,10 +3098,10 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceGroupRequest::getInstanceId,
                 UpdateInstanceGroupRequest::setInstanceId));
-        builder.<GroupCreateReq>withRequestField("body",
+        builder.<BatchModifyGroupDescriptionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(GroupCreateReq.class),
+            TypeCasts.uncheckedConversion(BatchModifyGroupDescriptionReq.class),
             f -> f.withMarshaller(UpdateInstanceGroupRequest::getBody, UpdateInstanceGroupRequest::setBody));
 
         // response

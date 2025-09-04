@@ -85,6 +85,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisaste
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterSwitchoverResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportSlowSqlRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportSlowSqlResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
@@ -179,6 +181,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsRequest;
@@ -1455,6 +1459,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ExecuteCrossCloudReleaseDisasterRequest, ExecuteCrossCloudReleaseDisasterResponse> executeCrossCloudReleaseDisasterAsyncInvoker(
         ExecuteCrossCloudReleaseDisasterRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudReleaseDisaster, hcClient);
+    }
+
+    /**
+     * 表信息导出
+     *
+     * 表信息导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportSlowSqlRequest 请求对象
+     * @return CompletableFuture<ExportSlowSqlResponse>
+     */
+    public CompletableFuture<ExportSlowSqlResponse> exportSlowSqlAsync(ExportSlowSqlRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.exportSlowSql);
+    }
+
+    /**
+     * 表信息导出
+     *
+     * 表信息导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportSlowSqlRequest 请求对象
+     * @return AsyncInvoker<ExportSlowSqlRequest, ExportSlowSqlResponse>
+     */
+    public AsyncInvoker<ExportSlowSqlRequest, ExportSlowSqlResponse> exportSlowSqlAsyncInvoker(
+        ExportSlowSqlRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.exportSlowSql, hcClient);
     }
 
     /**
@@ -2779,6 +2812,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListScheduleTaskRequest, ListScheduleTaskResponse> listScheduleTaskAsyncInvoker(
         ListScheduleTaskRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listScheduleTask, hcClient);
+    }
+
+    /**
+     * 识别SQL文本中的表信息
+     *
+     * 识别SQL文本中的表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSchemaAndTableRequest 请求对象
+     * @return CompletableFuture<ListSchemaAndTableResponse>
+     */
+    public CompletableFuture<ListSchemaAndTableResponse> listSchemaAndTableAsync(ListSchemaAndTableRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSchemaAndTable);
+    }
+
+    /**
+     * 识别SQL文本中的表信息
+     *
+     * 识别SQL文本中的表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSchemaAndTableRequest 请求对象
+     * @return AsyncInvoker<ListSchemaAndTableRequest, ListSchemaAndTableResponse>
+     */
+    public AsyncInvoker<ListSchemaAndTableRequest, ListSchemaAndTableResponse> listSchemaAndTableAsyncInvoker(
+        ListSchemaAndTableRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSchemaAndTable, hcClient);
     }
 
     /**

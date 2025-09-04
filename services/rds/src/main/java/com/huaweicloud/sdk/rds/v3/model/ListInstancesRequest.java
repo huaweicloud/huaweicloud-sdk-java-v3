@@ -298,6 +298,11 @@ public class ListInstancesRequest {
 
     private String tags;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_type")
+
+    private String groupType;
+
     public ListInstancesRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -487,6 +492,23 @@ public class ListInstancesRequest {
         this.tags = tags;
     }
 
+    public ListInstancesRequest withGroupType(String groupType) {
+        this.groupType = groupType;
+        return this;
+    }
+
+    /**
+     * 查询flexusrds实例，传flexus。其他场景不传。
+     * @return groupType
+     */
+    public String getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -501,12 +523,13 @@ public class ListInstancesRequest {
             && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.epsId, that.epsId)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.groupType, that.groupType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, id, name, type, datastoreType, epsId, vpcId, subnetId, offset, limit, tags);
+        return Objects
+            .hash(xLanguage, id, name, type, datastoreType, epsId, vpcId, subnetId, offset, limit, tags, groupType);
     }
 
     @Override
@@ -524,6 +547,7 @@ public class ListInstancesRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

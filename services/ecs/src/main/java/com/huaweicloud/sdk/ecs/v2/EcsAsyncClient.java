@@ -21,10 +21,14 @@ import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDetachVolumesRequest;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDetachVolumesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchRebootServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchRebootServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchResetServersPasswordRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchResetServersPasswordResponse;
+import com.huaweicloud.sdk.ecs.v2.model.BatchResizeServersRequest;
+import com.huaweicloud.sdk.ecs.v2.model.BatchResizeServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchStartServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchStartServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchStopServersRequest;
@@ -67,6 +71,10 @@ import com.huaweicloud.sdk.ecs.v2.model.DetachServerVolumeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DetachServerVolumeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ExecuteServerDumpRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ExecuteServerDumpResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ExecuteServerRedeployRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ExecuteServerRedeployResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListCloudServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListCloudServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesRequest;
@@ -151,6 +159,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ResizeServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ResizeServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowAppendableVolumeQuotaRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowAppendableVolumeQuotaResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowMetadataOptionsRequest;
@@ -494,6 +504,33 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 批量卸载卷
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDetachVolumesRequest 请求对象
+     * @return CompletableFuture<BatchDetachVolumesResponse>
+     */
+    public CompletableFuture<BatchDetachVolumesResponse> batchDetachVolumesAsync(BatchDetachVolumesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.batchDetachVolumes);
+    }
+
+    /**
+     * 批量卸载卷
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDetachVolumesRequest 请求对象
+     * @return AsyncInvoker<BatchDetachVolumesRequest, BatchDetachVolumesResponse>
+     */
+    public AsyncInvoker<BatchDetachVolumesRequest, BatchDetachVolumesResponse> batchDetachVolumesAsyncInvoker(
+        BatchDetachVolumesRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.batchDetachVolumes, hcClient);
+    }
+
+    /**
      * 批量重启云服务器
      *
      * 根据给定的云服务器ID列表，批量重启云服务器，一次最多可以重启1000台。
@@ -550,6 +587,35 @@ public class EcsAsyncClient {
     public AsyncInvoker<BatchResetServersPasswordRequest, BatchResetServersPasswordResponse> batchResetServersPasswordAsyncInvoker(
         BatchResetServersPasswordRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.batchResetServersPassword, hcClient);
+    }
+
+    /**
+     * 批量变更云服务器规格
+     *
+     * 批量变更云服务器规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResizeServersRequest 请求对象
+     * @return CompletableFuture<BatchResizeServersResponse>
+     */
+    public CompletableFuture<BatchResizeServersResponse> batchResizeServersAsync(BatchResizeServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.batchResizeServers);
+    }
+
+    /**
+     * 批量变更云服务器规格
+     *
+     * 批量变更云服务器规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResizeServersRequest 请求对象
+     * @return AsyncInvoker<BatchResizeServersRequest, BatchResizeServersResponse>
+     */
+    public AsyncInvoker<BatchResizeServersRequest, BatchResizeServersResponse> batchResizeServersAsyncInvoker(
+        BatchResizeServersRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.batchResizeServers, hcClient);
     }
 
     /**
@@ -1265,6 +1331,65 @@ public class EcsAsyncClient {
     public AsyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> disassociateServerVirtualIpAsyncInvoker(
         DisassociateServerVirtualIpRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.disassociateServerVirtualIp, hcClient);
+    }
+
+    /**
+     * 触发云服务器内核dump
+     *
+     * 触发云服务器内核dump
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteServerDumpRequest 请求对象
+     * @return CompletableFuture<ExecuteServerDumpResponse>
+     */
+    public CompletableFuture<ExecuteServerDumpResponse> executeServerDumpAsync(ExecuteServerDumpRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.executeServerDump);
+    }
+
+    /**
+     * 触发云服务器内核dump
+     *
+     * 触发云服务器内核dump
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteServerDumpRequest 请求对象
+     * @return AsyncInvoker<ExecuteServerDumpRequest, ExecuteServerDumpResponse>
+     */
+    public AsyncInvoker<ExecuteServerDumpRequest, ExecuteServerDumpResponse> executeServerDumpAsyncInvoker(
+        ExecuteServerDumpRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.executeServerDump, hcClient);
+    }
+
+    /**
+     * 重部署云服务器
+     *
+     * 重部署云服务器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteServerRedeployRequest 请求对象
+     * @return CompletableFuture<ExecuteServerRedeployResponse>
+     */
+    public CompletableFuture<ExecuteServerRedeployResponse> executeServerRedeployAsync(
+        ExecuteServerRedeployRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.executeServerRedeploy);
+    }
+
+    /**
+     * 重部署云服务器
+     *
+     * 重部署云服务器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteServerRedeployRequest 请求对象
+     * @return AsyncInvoker<ExecuteServerRedeployRequest, ExecuteServerRedeployResponse>
+     */
+    public AsyncInvoker<ExecuteServerRedeployRequest, ExecuteServerRedeployResponse> executeServerRedeployAsyncInvoker(
+        ExecuteServerRedeployRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.executeServerRedeploy, hcClient);
     }
 
     /**
@@ -2514,6 +2639,36 @@ public class EcsAsyncClient {
     public AsyncInvoker<RevertRecycleBinServerRequest, RevertRecycleBinServerResponse> revertRecycleBinServerAsyncInvoker(
         RevertRecycleBinServerRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.revertRecycleBinServer, hcClient);
+    }
+
+    /**
+     * 查询包周期虚拟机可以追加卷数量
+     *
+     * 查询包周期虚拟机可以追加卷数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAppendableVolumeQuotaRequest 请求对象
+     * @return CompletableFuture<ShowAppendableVolumeQuotaResponse>
+     */
+    public CompletableFuture<ShowAppendableVolumeQuotaResponse> showAppendableVolumeQuotaAsync(
+        ShowAppendableVolumeQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.showAppendableVolumeQuota);
+    }
+
+    /**
+     * 查询包周期虚拟机可以追加卷数量
+     *
+     * 查询包周期虚拟机可以追加卷数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAppendableVolumeQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowAppendableVolumeQuotaRequest, ShowAppendableVolumeQuotaResponse>
+     */
+    public AsyncInvoker<ShowAppendableVolumeQuotaRequest, ShowAppendableVolumeQuotaResponse> showAppendableVolumeQuotaAsyncInvoker(
+        ShowAppendableVolumeQuotaRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.showAppendableVolumeQuota, hcClient);
     }
 
     /**

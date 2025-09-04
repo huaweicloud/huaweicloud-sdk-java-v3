@@ -40,7 +40,7 @@ public class BindInstanceTags {
     }
 
     /**
-     * 实例标签
+     * **参数说明**：实例标签。 
      * @return tags
      */
     public List<Tag> getTags() {

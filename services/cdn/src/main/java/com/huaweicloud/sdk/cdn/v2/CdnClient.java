@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.cdn.v2.model.CreateRuleNewRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRuleNewResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateShareCacheGroupsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateShareCacheGroupsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateSubscriptionTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateSubscriptionTaskResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteDomainRequest;
@@ -30,6 +32,8 @@ import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteRuleNewResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteShareCacheGroupsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DeleteShareCacheGroupsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteSubscriptionTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DeleteSubscriptionTaskResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DisableDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DisableDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
@@ -38,18 +42,30 @@ import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.EnableDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.EnableDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopIpsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopIpsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopOriginUrlRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopOriginUrlResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopUasRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopUasResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListDomainClientStatsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListDomainClientStatsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListSubscriptionTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListSubscriptionTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.SetStatsConfigRequest;
+import com.huaweicloud.sdk.cdn.v2.model.SetStatsConfigResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowAppliedTemplateRecordRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowAppliedTemplateRecordResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcRequest;
@@ -78,6 +94,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowLogsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowQuotaRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowQuotaResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowStatsConfigsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowStatsConfigsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
@@ -102,6 +120,8 @@ import com.huaweicloud.sdk.cdn.v2.model.UpdateRuleNewRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateRuleNewResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateSubscriptionTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateSubscriptionTaskResponse;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequest;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -420,6 +440,35 @@ public class CdnClient {
     }
 
     /**
+     * 创建运营报表订阅任务
+     *
+     * create subscription task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubscriptionTaskRequest 请求对象
+     * @return CreateSubscriptionTaskResponse
+     */
+    public CreateSubscriptionTaskResponse createSubscriptionTask(CreateSubscriptionTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.createSubscriptionTask);
+    }
+
+    /**
+     * 创建运营报表订阅任务
+     *
+     * create subscription task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubscriptionTaskRequest 请求对象
+     * @return SyncInvoker<CreateSubscriptionTaskRequest, CreateSubscriptionTaskResponse>
+     */
+    public SyncInvoker<CreateSubscriptionTaskRequest, CreateSubscriptionTaskResponse> createSubscriptionTaskInvoker(
+        CreateSubscriptionTaskRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.createSubscriptionTask, hcClient);
+    }
+
+    /**
      * 创建资源标签配置接口
      *
      * 用于创建资源标签。
@@ -563,6 +612,35 @@ public class CdnClient {
     public SyncInvoker<DeleteShareCacheGroupsRequest, DeleteShareCacheGroupsResponse> deleteShareCacheGroupsInvoker(
         DeleteShareCacheGroupsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.deleteShareCacheGroups, hcClient);
+    }
+
+    /**
+     * 删除运营报表订阅任务
+     *
+     * delete subscription task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionTaskRequest 请求对象
+     * @return DeleteSubscriptionTaskResponse
+     */
+    public DeleteSubscriptionTaskResponse deleteSubscriptionTask(DeleteSubscriptionTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.deleteSubscriptionTask);
+    }
+
+    /**
+     * 删除运营报表订阅任务
+     *
+     * delete subscription task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionTaskRequest 请求对象
+     * @return SyncInvoker<DeleteSubscriptionTaskRequest, DeleteSubscriptionTaskResponse>
+     */
+    public SyncInvoker<DeleteSubscriptionTaskRequest, DeleteSubscriptionTaskResponse> deleteSubscriptionTaskInvoker(
+        DeleteSubscriptionTaskRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.deleteSubscriptionTask, hcClient);
     }
 
     /**
@@ -724,6 +802,64 @@ public class CdnClient {
     }
 
     /**
+     * 查询域名top ip统计分析数据
+     *
+     * - 查询域名top ip统计分析数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopIpsRequest 请求对象
+     * @return ListCdnDomainTopIpsResponse
+     */
+    public ListCdnDomainTopIpsResponse listCdnDomainTopIps(ListCdnDomainTopIpsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listCdnDomainTopIps);
+    }
+
+    /**
+     * 查询域名top ip统计分析数据
+     *
+     * - 查询域名top ip统计分析数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopIpsRequest 请求对象
+     * @return SyncInvoker<ListCdnDomainTopIpsRequest, ListCdnDomainTopIpsResponse>
+     */
+    public SyncInvoker<ListCdnDomainTopIpsRequest, ListCdnDomainTopIpsResponse> listCdnDomainTopIpsInvoker(
+        ListCdnDomainTopIpsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.listCdnDomainTopIps, hcClient);
+    }
+
+    /**
+     * 查询域名top回源URL数据
+     *
+     * - 查询域名top 回源URL数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopOriginUrlRequest 请求对象
+     * @return ListCdnDomainTopOriginUrlResponse
+     */
+    public ListCdnDomainTopOriginUrlResponse listCdnDomainTopOriginUrl(ListCdnDomainTopOriginUrlRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listCdnDomainTopOriginUrl);
+    }
+
+    /**
+     * 查询域名top回源URL数据
+     *
+     * - 查询域名top 回源URL数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopOriginUrlRequest 请求对象
+     * @return SyncInvoker<ListCdnDomainTopOriginUrlRequest, ListCdnDomainTopOriginUrlResponse>
+     */
+    public SyncInvoker<ListCdnDomainTopOriginUrlRequest, ListCdnDomainTopOriginUrlResponse> listCdnDomainTopOriginUrlInvoker(
+        ListCdnDomainTopOriginUrlRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.listCdnDomainTopOriginUrl, hcClient);
+    }
+
+    /**
      * 查询统计TOP100 referer数据明细
      *
      * - 查询TOP100 referer数据。
@@ -762,6 +898,74 @@ public class CdnClient {
     public SyncInvoker<ListCdnDomainTopRefersRequest, ListCdnDomainTopRefersResponse> listCdnDomainTopRefersInvoker(
         ListCdnDomainTopRefersRequest request) {
         return new SyncInvoker<>(request, CdnMeta.listCdnDomainTopRefers, hcClient);
+    }
+
+    /**
+     * 查询域名top ua统计分析数据
+     *
+     * - 统计分析TOP UA统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopUasRequest 请求对象
+     * @return ListCdnDomainTopUasResponse
+     */
+    public ListCdnDomainTopUasResponse listCdnDomainTopUas(ListCdnDomainTopUasRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listCdnDomainTopUas);
+    }
+
+    /**
+     * 查询域名top ua统计分析数据
+     *
+     * - 统计分析TOP UA统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopUasRequest 请求对象
+     * @return SyncInvoker<ListCdnDomainTopUasRequest, ListCdnDomainTopUasResponse>
+     */
+    public SyncInvoker<ListCdnDomainTopUasRequest, ListCdnDomainTopUasResponse> listCdnDomainTopUasInvoker(
+        ListCdnDomainTopUasRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.listCdnDomainTopUas, hcClient);
+    }
+
+    /**
+     * 按域名维度查询每天客户端访问详情统计
+     *
+     * - 按域名维度查询每天客户端访问详情统计。
+     * - 支持查询90天内的数据。
+     * - ip_num查询跨度只支持1天,uv查询跨度只支持5分钟。
+     * - 起始时间和结束时间，左闭右开，需要同时指定。如查询2022-07-12 00:00:00 到 2022-07-13 00:00:00 的数据，表示取 [2022-07-12 00:00:00, 2022-07-13 00:00:00)的统计数据。
+     * - ip_num开始时间、结束时间必须传毫秒级时间戳，必须为凌晨0点整时刻点，如果传的不是凌晨0点整时刻点，返回数据可能与预期不一致。
+     * - uv必须为5分钟整时刻点，如：0分、5分、10分、15分等，如果传的不是5分钟时刻点，返回数据可能与预期不一致
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainClientStatsRequest 请求对象
+     * @return ListDomainClientStatsResponse
+     */
+    public ListDomainClientStatsResponse listDomainClientStats(ListDomainClientStatsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listDomainClientStats);
+    }
+
+    /**
+     * 按域名维度查询每天客户端访问详情统计
+     *
+     * - 按域名维度查询每天客户端访问详情统计。
+     * - 支持查询90天内的数据。
+     * - ip_num查询跨度只支持1天,uv查询跨度只支持5分钟。
+     * - 起始时间和结束时间，左闭右开，需要同时指定。如查询2022-07-12 00:00:00 到 2022-07-13 00:00:00 的数据，表示取 [2022-07-12 00:00:00, 2022-07-13 00:00:00)的统计数据。
+     * - ip_num开始时间、结束时间必须传毫秒级时间戳，必须为凌晨0点整时刻点，如果传的不是凌晨0点整时刻点，返回数据可能与预期不一致。
+     * - uv必须为5分钟整时刻点，如：0分、5分、10分、15分等，如果传的不是5分钟时刻点，返回数据可能与预期不一致
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainClientStatsRequest 请求对象
+     * @return SyncInvoker<ListDomainClientStatsRequest, ListDomainClientStatsResponse>
+     */
+    public SyncInvoker<ListDomainClientStatsRequest, ListDomainClientStatsResponse> listDomainClientStatsInvoker(
+        ListDomainClientStatsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.listDomainClientStats, hcClient);
     }
 
     /**
@@ -853,6 +1057,35 @@ public class CdnClient {
     }
 
     /**
+     * 分页查询运营报表订阅任务
+     *
+     * query subscription task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriptionTasksRequest 请求对象
+     * @return ListSubscriptionTasksResponse
+     */
+    public ListSubscriptionTasksResponse listSubscriptionTasks(ListSubscriptionTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.listSubscriptionTasks);
+    }
+
+    /**
+     * 分页查询运营报表订阅任务
+     *
+     * query subscription task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriptionTasksRequest 请求对象
+     * @return SyncInvoker<ListSubscriptionTasksRequest, ListSubscriptionTasksResponse>
+     */
+    public SyncInvoker<ListSubscriptionTasksRequest, ListSubscriptionTasksResponse> listSubscriptionTasksInvoker(
+        ListSubscriptionTasksRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.listSubscriptionTasks, hcClient);
+    }
+
+    /**
      * 修改租户配置
      *
      * 修改租户配置，当前仅支持开启OBS和SCM委托授权。
@@ -924,6 +1157,35 @@ public class CdnClient {
     public SyncInvoker<SetChargeModesRequest, SetChargeModesResponse> setChargeModesInvoker(
         SetChargeModesRequest request) {
         return new SyncInvoker<>(request, CdnMeta.setChargeModes, hcClient);
+    }
+
+    /**
+     * 设置统计配置
+     *
+     * - 设置统计配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetStatsConfigRequest 请求对象
+     * @return SetStatsConfigResponse
+     */
+    public SetStatsConfigResponse setStatsConfig(SetStatsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.setStatsConfig);
+    }
+
+    /**
+     * 设置统计配置
+     *
+     * - 设置统计配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetStatsConfigRequest 请求对象
+     * @return SyncInvoker<SetStatsConfigRequest, SetStatsConfigResponse>
+     */
+    public SyncInvoker<SetStatsConfigRequest, SetStatsConfigResponse> setStatsConfigInvoker(
+        SetStatsConfigRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.setStatsConfig, hcClient);
     }
 
     /**
@@ -1420,6 +1682,39 @@ public class CdnClient {
     }
 
     /**
+     * 查询统计配置
+     *
+     * - 配置类型：目前支持，
+     * - 0：热点统计。
+     * - 1：ces上报。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStatsConfigsRequest 请求对象
+     * @return ShowStatsConfigsResponse
+     */
+    public ShowStatsConfigsResponse showStatsConfigs(ShowStatsConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showStatsConfigs);
+    }
+
+    /**
+     * 查询统计配置
+     *
+     * - 配置类型：目前支持，
+     * - 0：热点统计。
+     * - 1：ces上报。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStatsConfigsRequest 请求对象
+     * @return SyncInvoker<ShowStatsConfigsRequest, ShowStatsConfigsResponse>
+     */
+    public SyncInvoker<ShowStatsConfigsRequest, ShowStatsConfigsResponse> showStatsConfigsInvoker(
+        ShowStatsConfigsRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.showStatsConfigs, hcClient);
+    }
+
+    /**
      * 查询资源标签列表配置接口
      *
      * 用于查询资源标签列表。
@@ -1815,6 +2110,35 @@ public class CdnClient {
     public SyncInvoker<UpdateShareCacheGroupsRequest, UpdateShareCacheGroupsResponse> updateShareCacheGroupsInvoker(
         UpdateShareCacheGroupsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.updateShareCacheGroups, hcClient);
+    }
+
+    /**
+     * 修改运营报表订阅任务
+     *
+     * modify subscription task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubscriptionTaskRequest 请求对象
+     * @return UpdateSubscriptionTaskResponse
+     */
+    public UpdateSubscriptionTaskResponse updateSubscriptionTask(UpdateSubscriptionTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.updateSubscriptionTask);
+    }
+
+    /**
+     * 修改运营报表订阅任务
+     *
+     * modify subscription task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubscriptionTaskRequest 请求对象
+     * @return SyncInvoker<UpdateSubscriptionTaskRequest, UpdateSubscriptionTaskResponse>
+     */
+    public SyncInvoker<UpdateSubscriptionTaskRequest, UpdateSubscriptionTaskResponse> updateSubscriptionTaskInvoker(
+        UpdateSubscriptionTaskRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.updateSubscriptionTask, hcClient);
     }
 
     /**

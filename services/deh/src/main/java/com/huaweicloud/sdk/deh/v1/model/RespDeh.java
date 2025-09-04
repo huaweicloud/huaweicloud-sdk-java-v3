@@ -19,9 +19,9 @@ public class RespDeh {
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resouce_detail")
+    @JsonProperty(value = "resource_detail")
 
-    private String resouceDetail;
+    private String resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -50,21 +50,21 @@ public class RespDeh {
         this.resourceId = resourceId;
     }
 
-    public RespDeh withResouceDetail(String resouceDetail) {
-        this.resouceDetail = resouceDetail;
+    public RespDeh withResourceDetail(String resourceDetail) {
+        this.resourceDetail = resourceDetail;
         return this;
     }
 
     /**
      * 专属主机详情。  该字段用于后续扩展，默认为空。
-     * @return resouceDetail
+     * @return resourceDetail
      */
-    public String getResouceDetail() {
-        return resouceDetail;
+    public String getResourceDetail() {
+        return resourceDetail;
     }
 
-    public void setResouceDetail(String resouceDetail) {
-        this.resouceDetail = resouceDetail;
+    public void setResourceDetail(String resourceDetail) {
+        this.resourceDetail = resourceDetail;
     }
 
     public RespDeh withTags(List<ResourceTag> tags) {
@@ -127,13 +127,13 @@ public class RespDeh {
         }
         RespDeh that = (RespDeh) obj;
         return Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.resouceDetail, that.resouceDetail) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.resourceDetail, that.resourceDetail) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.resourceName, that.resourceName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resouceDetail, tags, resourceName);
+        return Objects.hash(resourceId, resourceDetail, tags, resourceName);
     }
 
     @Override
@@ -141,7 +141,7 @@ public class RespDeh {
         StringBuilder sb = new StringBuilder();
         sb.append("class RespDeh {\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
-        sb.append("    resouceDetail: ").append(toIndentedString(resouceDetail)).append("\n");
+        sb.append("    resourceDetail: ").append(toIndentedString(resourceDetail)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("}");

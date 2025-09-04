@@ -43,7 +43,7 @@ public class ForwardingInfo {
     }
 
     /**
-     * **参数说明**：是否启用SNAT配置 **取值范围**： - true: SNAT配置已启用 - false: SNAT配置未启用 
+     * **参数说明**：是否启用SNAT配置。 **取值范围**： - true: SNAT配置已启用 - false: SNAT配置未启用 
      * @return enableSnat
      */
     public Boolean getEnableSnat() {

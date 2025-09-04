@@ -36,6 +36,11 @@ public class AddKeystorePermissionRequestBody {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_id")
+
+    private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "setting")
 
     private Boolean setting;
@@ -130,6 +135,23 @@ public class AddKeystorePermissionRequestBody {
         this.userName = userName;
     }
 
+    public AddKeystorePermissionRequestBody withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    /**
+     * 用户ID
+     * @return userId
+     */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     public AddKeystorePermissionRequestBody withSetting(Boolean setting) {
         this.setting = setting;
         return this;
@@ -175,13 +197,13 @@ public class AddKeystorePermissionRequestBody {
         AddKeystorePermissionRequestBody that = (AddKeystorePermissionRequestBody) obj;
         return Objects.equals(this.delete, that.delete) && Objects.equals(this.keystoreId, that.keystoreId)
             && Objects.equals(this.modify, that.modify) && Objects.equals(this.usage, that.usage)
-            && Objects.equals(this.userName, that.userName) && Objects.equals(this.setting, that.setting)
-            && Objects.equals(this.canAbsent, that.canAbsent);
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.setting, that.setting) && Objects.equals(this.canAbsent, that.canAbsent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(delete, keystoreId, modify, usage, userName, setting, canAbsent);
+        return Objects.hash(delete, keystoreId, modify, usage, userName, userId, setting, canAbsent);
     }
 
     @Override
@@ -193,6 +215,7 @@ public class AddKeystorePermissionRequestBody {
         sb.append("    modify: ").append(toIndentedString(modify)).append("\n");
         sb.append("    usage: ").append(toIndentedString(usage)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    setting: ").append(toIndentedString(setting)).append("\n");
         sb.append("    canAbsent: ").append(toIndentedString(canAbsent)).append("\n");
         sb.append("}");

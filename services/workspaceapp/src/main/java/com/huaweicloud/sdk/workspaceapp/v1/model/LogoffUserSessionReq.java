@@ -135,7 +135,7 @@ public class LogoffUserSessionReq {
     }
 
     /**
-     * 延迟多长时间注销会话。
+     * 延迟多长时间注销会话， 单位：秒。
      * minimum: 0
      * maximum: 999999
      * @return delayTime

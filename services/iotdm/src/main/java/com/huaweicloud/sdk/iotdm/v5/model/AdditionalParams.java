@@ -47,7 +47,7 @@ public class AdditionalParams {
     }
 
     /**
-     * **参数说明**：企业版实例的VPCID 
+     * **参数说明**：企业版实例的VPCID。 
      * @return vpcId
      */
     public String getVpcId() {
@@ -64,7 +64,7 @@ public class AdditionalParams {
     }
 
     /**
-     * **参数说明**：企业版实例的子网ID 
+     * **参数说明**：企业版实例的子网ID。 
      * @return subnetId
      */
     public String getSubnetId() {
@@ -81,7 +81,7 @@ public class AdditionalParams {
     }
 
     /**
-     * **参数说明**：企业版实例的安全组ID。请确保所选安全组已放通22端口（Linux SSH登录），3389端口（Windows远程登录）和ICMP协议（Ping） 
+     * **参数说明**：企业版实例的安全组ID。请确保所选安全组已放通22端口（Linux SSH登录），3389端口（Windows远程登录）和ICMP协议（Ping）。 
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -98,7 +98,7 @@ public class AdditionalParams {
     }
 
     /**
-     * **参数说明**：SMN的topic urn, 当企业版实例创建成功时，平台将通过该topic发送通知 
+     * **参数说明**：SMN的topic urn, 当企业版实例创建成功时，平台将通过该topic发送通知。 
      * @return smnTopicUrn
      */
     public String getSmnTopicUrn() {
@@ -115,7 +115,7 @@ public class AdditionalParams {
     }
 
     /**
-     * **参数说明**：实例支持的加密算法 **取值范围**： - COMMON_ALGORITHM: 通用加密算法（支持RSA，SHA256等国际通用的密码算法） - SM_ALGORITHM: 支持SM系列商密算法（支持SM2，SM3，SM4等国密算法） 
+     * **参数说明**：实例支持的加密算法。 **取值范围**： - COMMON_ALGORITHM: 通用加密算法（支持RSA，SHA256等国际通用的密码算法） - SM_ALGORITHM: 支持SM系列商密算法（支持SM2，SM3，SM4等国密算法） 
      * @return cipheringAlgorithm
      */
     public String getCipheringAlgorithm() {

@@ -71,6 +71,16 @@ public class Policies {
 
     private PoliciesUserProfile userProfile;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "url_redirection")
+
+    private PoliciesUrlRedirection urlRedirection;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "folder_redirection")
+
+    private PoliciesFolderRedirection folderRedirection;
+
     public Policies withPeripherals(PoliciesPeripherals peripherals) {
         this.peripherals = peripherals;
         return this;
@@ -383,6 +393,58 @@ public class Policies {
         this.userProfile = userProfile;
     }
 
+    public Policies withUrlRedirection(PoliciesUrlRedirection urlRedirection) {
+        this.urlRedirection = urlRedirection;
+        return this;
+    }
+
+    public Policies withUrlRedirection(Consumer<PoliciesUrlRedirection> urlRedirectionSetter) {
+        if (this.urlRedirection == null) {
+            this.urlRedirection = new PoliciesUrlRedirection();
+            urlRedirectionSetter.accept(this.urlRedirection);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get urlRedirection
+     * @return urlRedirection
+     */
+    public PoliciesUrlRedirection getUrlRedirection() {
+        return urlRedirection;
+    }
+
+    public void setUrlRedirection(PoliciesUrlRedirection urlRedirection) {
+        this.urlRedirection = urlRedirection;
+    }
+
+    public Policies withFolderRedirection(PoliciesFolderRedirection folderRedirection) {
+        this.folderRedirection = folderRedirection;
+        return this;
+    }
+
+    public Policies withFolderRedirection(Consumer<PoliciesFolderRedirection> folderRedirectionSetter) {
+        if (this.folderRedirection == null) {
+            this.folderRedirection = new PoliciesFolderRedirection();
+            folderRedirectionSetter.accept(this.folderRedirection);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get folderRedirection
+     * @return folderRedirection
+     */
+    public PoliciesFolderRedirection getFolderRedirection() {
+        return folderRedirection;
+    }
+
+    public void setFolderRedirection(PoliciesFolderRedirection folderRedirection) {
+        this.folderRedirection = folderRedirection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -398,7 +460,9 @@ public class Policies {
             && Objects.equals(this.session, that.session) && Objects.equals(this.virtualChannel, that.virtualChannel)
             && Objects.equals(this.keyboardMouse, that.keyboardMouse) && Objects.equals(this.bandwidth, that.bandwidth)
             && Objects.equals(this.custom, that.custom) && Objects.equals(this.cloudStorage, that.cloudStorage)
-            && Objects.equals(this.userProfile, that.userProfile);
+            && Objects.equals(this.userProfile, that.userProfile)
+            && Objects.equals(this.urlRedirection, that.urlRedirection)
+            && Objects.equals(this.folderRedirection, that.folderRedirection);
     }
 
     @Override
@@ -414,7 +478,9 @@ public class Policies {
             bandwidth,
             custom,
             cloudStorage,
-            userProfile);
+            userProfile,
+            urlRedirection,
+            folderRedirection);
     }
 
     @Override
@@ -433,6 +499,8 @@ public class Policies {
         sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
         sb.append("    cloudStorage: ").append(toIndentedString(cloudStorage)).append("\n");
         sb.append("    userProfile: ").append(toIndentedString(userProfile)).append("\n");
+        sb.append("    urlRedirection: ").append(toIndentedString(urlRedirection)).append("\n");
+        sb.append("    folderRedirection: ").append(toIndentedString(folderRedirection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

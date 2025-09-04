@@ -154,6 +154,9 @@ import com.huaweicloud.sdk.as.v1.model.UpdateGroupScheduledTaskResponse;
 import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookOption;
 import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookRequest;
 import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookResponse;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingConfigOption;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingConfigRequest;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingConfigResponse;
 import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupOption;
 import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupRequest;
 import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupResponse;
@@ -2002,6 +2005,35 @@ public class AsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLifeCycleHookOption.class),
             f -> f.withMarshaller(UpdateLifeCycleHookRequest::getBody, UpdateLifeCycleHookRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScalingConfigRequest, UpdateScalingConfigResponse> updateScalingConfig =
+        genForUpdateScalingConfig();
+
+    private static HttpRequestDef<UpdateScalingConfigRequest, UpdateScalingConfigResponse> genForUpdateScalingConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateScalingConfigRequest, UpdateScalingConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScalingConfigRequest.class, UpdateScalingConfigResponse.class)
+                .withName("UpdateScalingConfig")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("scaling_configuration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScalingConfigRequest::getScalingConfigurationId,
+                UpdateScalingConfigRequest::setScalingConfigurationId));
+        builder.<UpdateScalingConfigOption>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateScalingConfigOption.class),
+            f -> f.withMarshaller(UpdateScalingConfigRequest::getBody, UpdateScalingConfigRequest::setBody));
 
         // response
 

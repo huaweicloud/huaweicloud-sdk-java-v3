@@ -85,7 +85,7 @@ public class ListProductRequest {
     }
 
     /**
-     * 可用分区，如果不为空，将按可用分区进行过滤后返回。 - 获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone\"。
+     * 可用分区，如果不为空，将按可用分区进行过滤后返回。 - [获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone\"。](tag:HW)[获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone/summary\"。](tag:HCS)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

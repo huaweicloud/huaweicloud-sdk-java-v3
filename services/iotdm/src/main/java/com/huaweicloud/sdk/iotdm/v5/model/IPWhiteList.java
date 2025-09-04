@@ -29,7 +29,7 @@ public class IPWhiteList {
     }
 
     /**
-     * **参数说明**：启用Ip白名单访问控制 
+     * **参数说明**：启用Ip白名单访问控制。 
      * @return enable
      */
     public Boolean getEnable() {
@@ -62,7 +62,7 @@ public class IPWhiteList {
     }
 
     /**
-     * 允许访问企业版实例的IP地址列表 
+     * **参数说明**：允许访问企业版实例的IP地址列表。 
      * @return allowList
      */
     public List<IpAllowList> getAllowList() {

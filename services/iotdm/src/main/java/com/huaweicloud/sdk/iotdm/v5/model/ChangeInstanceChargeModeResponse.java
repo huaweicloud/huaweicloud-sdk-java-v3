@@ -22,7 +22,7 @@ public class ChangeInstanceChargeModeResponse extends SdkResponse {
     }
 
     /**
-     * **参数说明**：订单号。[查看订单详情请参考[查询订单详情](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0075746564.html)。](tag:hws)\" 
+     * **参数说明**：订单号。[查看订单详情请参考[查询订单详情](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0075746564.html)。](tag:hws) 
      * @return orderId
      */
     public String getOrderId() {

@@ -87,8 +87,13 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.BucketNameReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CheckAppGroupReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CheckAppGroupRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CheckAppGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckQuotaRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckQuotaResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CountImageSubJobsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CountImageSubJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CountSubJobsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CountSubJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppGroupReq;
@@ -179,6 +184,13 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteWarehouseAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteWarehouseAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DisassociateAppGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DisassociateAppGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ExportAppConnectionRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ExportAppConnectionResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ExportSessionsReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ExportSessionsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ExportSessionsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ExportUserConnectionRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ExportUserConnectionResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.InitializeTenantReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.InitializeTenantRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.InitializeTenantResponse;
@@ -204,6 +216,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListCloudStorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListConfigInfoReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListCorpConfigInfoRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListCorpConfigInfoResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListFoldersAndFilesRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListFoldersAndFilesResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsResponse;
@@ -292,6 +306,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ResendAuthorizationMailReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ResendAuthorizedMailReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ResetUserProfileReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ResetUserProfileRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ResetUserProfileResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.SendAuthorizationMailRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.SendAuthorizationMailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.SendAuthorizedMailRequest;
@@ -305,6 +322,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppGroupDetailRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppGroupDetailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppWarehouseBucketRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppWarehouseBucketResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowHdaUpgradeFlagRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowHdaUpgradeFlagResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageJobRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageJobResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageServerRequest;
@@ -317,6 +336,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPolicyGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPolicyGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPrivacyStatementRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPrivacyStatementResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowProjectConfigRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowProjectConfigResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPublishableAppRequest;
@@ -341,6 +362,15 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerVncRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerVncResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowSessionTypesRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowSessionTypesResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.SignPrivacyStatementReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.SignPrivacyStatementRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.SignPrivacyStatementResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFilePreReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFilePreRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFilePreResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFileReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFileRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFileResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppResponse;
@@ -388,6 +418,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconRequestBody;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ValidateServerGroupRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ValidateServerGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ValidateSeverGroupReq;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -967,7 +1000,7 @@ public class WorkspaceAppMeta {
             f -> f.withMarshaller(UploadAppIconRequest::getAppId, UploadAppIconRequest::setAppId));
         builder.<UploadAppIconRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UploadAppIconRequestBody.class),
             f -> f.withMarshaller(UploadAppIconRequest::getBody, UploadAppIconRequest::setBody));
 
@@ -1057,6 +1090,29 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteAppGroupReq.class),
             f -> f.withMarshaller(BatchDeleteAppGroupRequest::getBody, BatchDeleteAppGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckAppGroupRequest, CheckAppGroupResponse> checkAppGroup =
+        genForCheckAppGroup();
+
+    private static HttpRequestDef<CheckAppGroupRequest, CheckAppGroupResponse> genForCheckAppGroup() {
+        // basic
+        HttpRequestDef.Builder<CheckAppGroupRequest, CheckAppGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckAppGroupRequest.class, CheckAppGroupResponse.class)
+                .withName("CheckAppGroup")
+                .withUri("/v1/{project_id}/app-groups/rules/validate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CheckAppGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckAppGroupReq.class),
+            f -> f.withMarshaller(CheckAppGroupRequest::getBody, CheckAppGroupRequest::setBody));
 
         // response
 
@@ -1743,6 +1799,50 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFoldersAndFilesRequest, ListFoldersAndFilesResponse> listFoldersAndFiles =
+        genForListFoldersAndFiles();
+
+    private static HttpRequestDef<ListFoldersAndFilesRequest, ListFoldersAndFilesResponse> genForListFoldersAndFiles() {
+        // basic
+        HttpRequestDef.Builder<ListFoldersAndFilesRequest, ListFoldersAndFilesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFoldersAndFilesRequest.class, ListFoldersAndFilesResponse.class)
+                .withName("ListFoldersAndFiles")
+                .withUri("/v1/{project_id}/cloud-storages/actions/list-folder-files")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFoldersAndFilesRequest::getUserName, ListFoldersAndFilesRequest::setUserName));
+        builder.<String>withRequestField("cloud_storage_assignment_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFoldersAndFilesRequest::getCloudStorageAssignmentId,
+                ListFoldersAndFilesRequest::setCloudStorageAssignmentId));
+        builder.<String>withRequestField("folder_url",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFoldersAndFilesRequest::getFolderUrl, ListFoldersAndFilesRequest::setFolderUrl));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFoldersAndFilesRequest::getMarker, ListFoldersAndFilesRequest::setMarker));
+        builder.<Integer>withRequestField("max_keys",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFoldersAndFilesRequest::getMaxKeys, ListFoldersAndFilesRequest::setMaxKeys));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectConfigsRequest, ListProjectConfigsResponse> listProjectConfigs =
         genForListProjectConfigs();
 
@@ -1776,6 +1876,29 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetUserProfileRequest, ResetUserProfileResponse> resetUserProfile =
+        genForResetUserProfile();
+
+    private static HttpRequestDef<ResetUserProfileRequest, ResetUserProfileResponse> genForResetUserProfile() {
+        // basic
+        HttpRequestDef.Builder<ResetUserProfileRequest, ResetUserProfileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetUserProfileRequest.class, ResetUserProfileResponse.class)
+                .withName("ResetUserProfile")
+                .withUri("/v1/{project_id}/cloud-storages/actions/reset-userprofile")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResetUserProfileReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetUserProfileReq.class),
+            f -> f.withMarshaller(ResetUserProfileRequest::getBody, ResetUserProfileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProjectConfigRequest, ShowProjectConfigResponse> showProjectConfig =
         genForShowProjectConfig();
 
@@ -1794,6 +1917,51 @@ public class WorkspaceAppMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProjectConfigRequest::getCloudStorageId,
                 ShowProjectConfigRequest::setCloudStorageId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<TransferFileRequest, TransferFileResponse> transferFile = genForTransferFile();
+
+    private static HttpRequestDef<TransferFileRequest, TransferFileResponse> genForTransferFile() {
+        // basic
+        HttpRequestDef.Builder<TransferFileRequest, TransferFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, TransferFileRequest.class, TransferFileResponse.class)
+                .withName("TransferFile")
+                .withUri("/v1/{project_id}/cloud-storages/actions/transfer-file")
+                .withContentType("application/json");
+
+        // requests
+        builder.<TransferFileReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TransferFileReq.class),
+            f -> f.withMarshaller(TransferFileRequest::getBody, TransferFileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<TransferFilePreRequest, TransferFilePreResponse> transferFilePre =
+        genForTransferFilePre();
+
+    private static HttpRequestDef<TransferFilePreRequest, TransferFilePreResponse> genForTransferFilePre() {
+        // basic
+        HttpRequestDef.Builder<TransferFilePreRequest, TransferFilePreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, TransferFilePreRequest.class, TransferFilePreResponse.class)
+                .withName("TransferFilePre")
+                .withUri("/v1/{project_id}/cloud-storages/actions/pre-transfer-file")
+                .withContentType("application/json");
+
+        // requests
+        builder.<TransferFilePreReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TransferFilePreReq.class),
+            f -> f.withMarshaller(TransferFilePreRequest::getBody, TransferFilePreRequest::setBody));
 
         // response
 
@@ -2109,6 +2277,39 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteSubJobsReq.class),
             f -> f.withMarshaller(BatchDeleteImageSubJobsRequest::getBody, BatchDeleteImageSubJobsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountImageSubJobsRequest, CountImageSubJobsResponse> countImageSubJobs =
+        genForCountImageSubJobs();
+
+    private static HttpRequestDef<CountImageSubJobsRequest, CountImageSubJobsResponse> genForCountImageSubJobs() {
+        // basic
+        HttpRequestDef.Builder<CountImageSubJobsRequest, CountImageSubJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountImageSubJobsRequest.class, CountImageSubJobsResponse.class)
+                .withName("CountImageSubJobs")
+                .withUri("/v1/{project_id}/image-server-sub-jobs/actions/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountImageSubJobsRequest::getStatus, CountImageSubJobsRequest::setStatus));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountImageSubJobsRequest::getJobType, CountImageSubJobsRequest::setJobType));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountImageSubJobsRequest::getJobId, CountImageSubJobsRequest::setJobId));
 
         // response
 
@@ -3286,6 +3487,53 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPrivacyStatementRequest, ShowPrivacyStatementResponse> showPrivacyStatement =
+        genForShowPrivacyStatement();
+
+    private static HttpRequestDef<ShowPrivacyStatementRequest, ShowPrivacyStatementResponse> genForShowPrivacyStatement() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivacyStatementRequest, ShowPrivacyStatementResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPrivacyStatementRequest.class, ShowPrivacyStatementResponse.class)
+            .withName("ShowPrivacyStatement")
+            .withUri("/v1/{project_id}/privacy-statement")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivacyStatementRequest::getXLanguage,
+                ShowPrivacyStatementRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SignPrivacyStatementRequest, SignPrivacyStatementResponse> signPrivacyStatement =
+        genForSignPrivacyStatement();
+
+    private static HttpRequestDef<SignPrivacyStatementRequest, SignPrivacyStatementResponse> genForSignPrivacyStatement() {
+        // basic
+        HttpRequestDef.Builder<SignPrivacyStatementRequest, SignPrivacyStatementResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SignPrivacyStatementRequest.class, SignPrivacyStatementResponse.class)
+            .withName("SignPrivacyStatement")
+            .withUri("/v1/{project_id}/privacy-statement")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SignPrivacyStatementReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SignPrivacyStatementReq.class),
+            f -> f.withMarshaller(SignPrivacyStatementRequest::getBody, SignPrivacyStatementRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckQuotaRequest, CheckQuotaResponse> checkQuota = genForCheckQuota();
 
     private static HttpRequestDef<CheckQuotaRequest, CheckQuotaResponse> genForCheckQuota() {
@@ -3963,6 +4211,17 @@ public class WorkspaceAppMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Linked-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppServersRequest::getXLinkedId, CreateAppServersRequest::setXLinkedId));
+        builder.<String>withRequestField("Service-Transaction-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppServersRequest::getServiceTransactionId,
+                CreateAppServersRequest::setServiceTransactionId));
         builder.<CreateAppServerReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -4247,6 +4506,24 @@ public class WorkspaceAppMeta {
                     ShowAccessAgentLatestVersionResponse.class)
                 .withName("ShowAccessAgentLatestVersion")
                 .withUri("/v1/{project_id}/app-servers/access-agent/latest-version")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHdaUpgradeFlagRequest, ShowHdaUpgradeFlagResponse> showHdaUpgradeFlag =
+        genForShowHdaUpgradeFlag();
+
+    private static HttpRequestDef<ShowHdaUpgradeFlagRequest, ShowHdaUpgradeFlagResponse> genForShowHdaUpgradeFlag() {
+        // basic
+        HttpRequestDef.Builder<ShowHdaUpgradeFlagRequest, ShowHdaUpgradeFlagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHdaUpgradeFlagRequest.class, ShowHdaUpgradeFlagResponse.class)
+                .withName("ShowHdaUpgradeFlag")
+                .withUri("/v1/{project_id}/app-servers/access-agent/upgrade-flag")
                 .withContentType("application/json");
 
         // requests
@@ -4611,6 +4888,98 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerGroupReq.class),
             f -> f.withMarshaller(UpdateServerGroupRequest::getBody, UpdateServerGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateServerGroupRequest, ValidateServerGroupResponse> validateServerGroup =
+        genForValidateServerGroup();
+
+    private static HttpRequestDef<ValidateServerGroupRequest, ValidateServerGroupResponse> genForValidateServerGroup() {
+        // basic
+        HttpRequestDef.Builder<ValidateServerGroupRequest, ValidateServerGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ValidateServerGroupRequest.class, ValidateServerGroupResponse.class)
+                .withName("ValidateServerGroup")
+                .withUri("/v1/{project_id}/app-server-groups/rules/validate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ValidateSeverGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ValidateSeverGroupReq.class),
+            f -> f.withMarshaller(ValidateServerGroupRequest::getBody, ValidateServerGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportAppConnectionRequest, ExportAppConnectionResponse> exportAppConnection =
+        genForExportAppConnection();
+
+    private static HttpRequestDef<ExportAppConnectionRequest, ExportAppConnectionResponse> genForExportAppConnection() {
+        // basic
+        HttpRequestDef.Builder<ExportAppConnectionRequest, ExportAppConnectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportAppConnectionRequest.class, ExportAppConnectionResponse.class)
+                .withName("ExportAppConnection")
+                .withUri("/v1/{project_id}/session/app-connection/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListAppConnectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAppConnectionReq.class),
+            f -> f.withMarshaller(ExportAppConnectionRequest::getBody, ExportAppConnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportSessionsRequest, ExportSessionsResponse> exportSessions =
+        genForExportSessions();
+
+    private static HttpRequestDef<ExportSessionsRequest, ExportSessionsResponse> genForExportSessions() {
+        // basic
+        HttpRequestDef.Builder<ExportSessionsRequest, ExportSessionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportSessionsRequest.class, ExportSessionsResponse.class)
+                .withName("ExportSessions")
+                .withUri("/v1/{project_id}/session/list-sessions/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ExportSessionsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportSessionsReq.class),
+            f -> f.withMarshaller(ExportSessionsRequest::getBody, ExportSessionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportUserConnectionRequest, ExportUserConnectionResponse> exportUserConnection =
+        genForExportUserConnection();
+
+    private static HttpRequestDef<ExportUserConnectionRequest, ExportUserConnectionResponse> genForExportUserConnection() {
+        // basic
+        HttpRequestDef.Builder<ExportUserConnectionRequest, ExportUserConnectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExportUserConnectionRequest.class, ExportUserConnectionResponse.class)
+            .withName("ExportUserConnection")
+            .withUri("/v1/{project_id}/session/user-connection/export")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListUserConnectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListUserConnectionReq.class),
+            f -> f.withMarshaller(ExportUserConnectionRequest::getBody, ExportUserConnectionRequest::setBody));
 
         // response
 

@@ -20,6 +20,11 @@ public class ListPolicyGroupResponse extends SdkResponse {
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
     private List<PolicyGroup> items = null;
@@ -41,6 +46,23 @@ public class ListPolicyGroupResponse extends SdkResponse {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public ListPolicyGroupResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 去除条件查询影响的策略总数量。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     public ListPolicyGroupResponse withItems(List<PolicyGroup> items) {
@@ -85,12 +107,13 @@ public class ListPolicyGroupResponse extends SdkResponse {
             return false;
         }
         ListPolicyGroupResponse that = (ListPolicyGroupResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.items, that.items);
+        return Objects.equals(this.count, that.count) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, items);
+        return Objects.hash(count, totalCount, items);
     }
 
     @Override
@@ -98,6 +121,7 @@ public class ListPolicyGroupResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPolicyGroupResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("}");
         return sb.toString();

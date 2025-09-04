@@ -121,6 +121,11 @@ public class EpDetail {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_flag")
+
+    private Boolean deleteFlag;
+
     public EpDetail withId(String id) {
         this.id = id;
         return this;
@@ -240,6 +245,23 @@ public class EpDetail {
         this.type = type;
     }
 
+    public EpDetail withDeleteFlag(Boolean deleteFlag) {
+        this.deleteFlag = deleteFlag;
+        return this;
+    }
+
+    /**
+     * 删除标识，false-未删除；true-已删除
+     * @return deleteFlag
+     */
+    public Boolean getDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(Boolean deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -252,12 +274,12 @@ public class EpDetail {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.type, that.type);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.deleteFlag, that.deleteFlag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, status, createdAt, updatedAt, type);
+        return Objects.hash(id, name, description, status, createdAt, updatedAt, type, deleteFlag);
     }
 
     @Override
@@ -271,6 +293,7 @@ public class EpDetail {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    deleteFlag: ").append(toIndentedString(deleteFlag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

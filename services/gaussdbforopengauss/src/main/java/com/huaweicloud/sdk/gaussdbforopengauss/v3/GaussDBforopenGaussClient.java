@@ -85,6 +85,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisaste
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterSwitchoverResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportSlowSqlRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportSlowSqlResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
@@ -179,6 +181,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsRequest;
@@ -1442,6 +1446,34 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ExecuteCrossCloudReleaseDisasterRequest, ExecuteCrossCloudReleaseDisasterResponse> executeCrossCloudReleaseDisasterInvoker(
         ExecuteCrossCloudReleaseDisasterRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudReleaseDisaster, hcClient);
+    }
+
+    /**
+     * 表信息导出
+     *
+     * 表信息导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportSlowSqlRequest 请求对象
+     * @return ExportSlowSqlResponse
+     */
+    public ExportSlowSqlResponse exportSlowSql(ExportSlowSqlRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.exportSlowSql);
+    }
+
+    /**
+     * 表信息导出
+     *
+     * 表信息导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportSlowSqlRequest 请求对象
+     * @return SyncInvoker<ExportSlowSqlRequest, ExportSlowSqlResponse>
+     */
+    public SyncInvoker<ExportSlowSqlRequest, ExportSlowSqlResponse> exportSlowSqlInvoker(ExportSlowSqlRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.exportSlowSql, hcClient);
     }
 
     /**
@@ -2741,6 +2773,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListScheduleTaskRequest, ListScheduleTaskResponse> listScheduleTaskInvoker(
         ListScheduleTaskRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listScheduleTask, hcClient);
+    }
+
+    /**
+     * 识别SQL文本中的表信息
+     *
+     * 识别SQL文本中的表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSchemaAndTableRequest 请求对象
+     * @return ListSchemaAndTableResponse
+     */
+    public ListSchemaAndTableResponse listSchemaAndTable(ListSchemaAndTableRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listSchemaAndTable);
+    }
+
+    /**
+     * 识别SQL文本中的表信息
+     *
+     * 识别SQL文本中的表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSchemaAndTableRequest 请求对象
+     * @return SyncInvoker<ListSchemaAndTableRequest, ListSchemaAndTableResponse>
+     */
+    public SyncInvoker<ListSchemaAndTableRequest, ListSchemaAndTableResponse> listSchemaAndTableInvoker(
+        ListSchemaAndTableRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listSchemaAndTable, hcClient);
     }
 
     /**

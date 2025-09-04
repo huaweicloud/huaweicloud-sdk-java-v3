@@ -64,7 +64,7 @@ public class AccessInfo {
     }
 
     /**
-     * **参数说明**：接入地址的类型，如应用接入的HTTPS协议的取值为：APP_HTTPS，设备接入的MQTT协议的取值为：DEVICE_MQTT **取值范围**： - APP_HTTPS：应用接入HTTPS协议 - APP_AMQP：应用接入AMQP协议 - APP_MQTT：应用接入MQTT协议 - DEVICE_COAP：设备接入COAP协议 - DEVICE_MQTT：设备接入MQTT协议 - DEVICE_HTTPS：设备接入HTTPS协议 
+     * **参数说明**：接入地址的类型，如应用接入的HTTPS协议的取值为：APP_HTTPS，设备接入的MQTT协议的取值为：DEVICE_MQTT。 **取值范围**： - APP_HTTPS：应用接入HTTPS协议 - APP_AMQP：应用接入AMQP协议 - APP_MQTT：应用接入MQTT协议 - DEVICE_COAP：设备接入COAP协议 - DEVICE_MQTT：设备接入MQTT协议 - DEVICE_HTTPS：设备接入HTTPS协议 
      * @return type
      */
     public String getType() {
@@ -81,7 +81,7 @@ public class AccessInfo {
     }
 
     /**
-     * **参数说明**：实例的应用/设备的安全接入端口 
+     * **参数说明**：实例的应用/设备的安全接入端口。 
      * minimum: 0
      * maximum: 65535
      * @return port
@@ -138,7 +138,7 @@ public class AccessInfo {
     }
 
     /**
-     * **参数说明**：实例的接入域名 
+     * **参数说明**：实例的接入域名。 
      * @return domainName
      */
     public String getDomainName() {
@@ -171,7 +171,7 @@ public class AccessInfo {
     }
 
     /**
-     * **参数说明**：实例的私网接入地址列表 
+     * **参数说明**：实例的私网接入地址列表。 
      * @return privateAddresses
      */
     public List<String> getPrivateAddresses() {
@@ -204,7 +204,7 @@ public class AccessInfo {
     }
 
     /**
-     * **参数说明**：实例的公网接入地址 
+     * **参数说明**：实例的公网接入地址。 
      * @return publicAddress
      */
     public List<String> getPublicAddress() {
@@ -237,7 +237,7 @@ public class AccessInfo {
     }
 
     /**
-     * **参数说明**：实例的ipv6接入地址列表 
+     * **参数说明**：实例的ipv6接入地址列表。 
      * @return ipv6Address
      */
     public List<String> getIpv6Address() {

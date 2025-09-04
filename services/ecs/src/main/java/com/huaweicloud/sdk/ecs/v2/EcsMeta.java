@@ -31,12 +31,17 @@ import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerTagsRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDetachVolumesRequest;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDetachVolumesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchRebootServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchRebootServersRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.BatchRebootServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchResetServersPasswordRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchResetServersPasswordRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.BatchResetServersPasswordResponse;
+import com.huaweicloud.sdk.ecs.v2.model.BatchResizeServersReq;
+import com.huaweicloud.sdk.ecs.v2.model.BatchResizeServersRequest;
+import com.huaweicloud.sdk.ecs.v2.model.BatchResizeServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchStartServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchStartServersRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.BatchStartServersResponse;
@@ -94,6 +99,10 @@ import com.huaweicloud.sdk.ecs.v2.model.DetachServerVolumeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ExecuteServerDumpRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ExecuteServerDumpResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ExecuteServerRedeployRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ExecuteServerRedeployResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListCloudServersRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListCloudServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesRequest;
@@ -193,6 +202,8 @@ import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ScheduledEventAcceptBody;
 import com.huaweicloud.sdk.ecs.v2.model.ScheduledEventUpdateBody;
+import com.huaweicloud.sdk.ecs.v2.model.ShowAppendableVolumeQuotaRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowAppendableVolumeQuotaResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowMetadataOptionsRequest;
@@ -242,6 +253,7 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerResponse;
+import com.huaweicloud.sdk.ecs.v2.model.VolumeBatchDetachRequest;
 
 import java.util.List;
 
@@ -517,6 +529,34 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDetachVolumesRequest, BatchDetachVolumesResponse> batchDetachVolumes =
+        genForBatchDetachVolumes();
+
+    private static HttpRequestDef<BatchDetachVolumesRequest, BatchDetachVolumesResponse> genForBatchDetachVolumes() {
+        // basic
+        HttpRequestDef.Builder<BatchDetachVolumesRequest, BatchDetachVolumesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDetachVolumesRequest.class, BatchDetachVolumesResponse.class)
+                .withName("BatchDetachVolumes")
+                .withUri("/v1/{project_id}/batchaction/detachvolumes/{volume_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDetachVolumesRequest::getVolumeId, BatchDetachVolumesRequest::setVolumeId));
+        builder.<VolumeBatchDetachRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VolumeBatchDetachRequest.class),
+            f -> f.withMarshaller(BatchDetachVolumesRequest::getBody, BatchDetachVolumesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchRebootServersRequest, BatchRebootServersResponse> batchRebootServers =
         genForBatchRebootServers();
 
@@ -561,6 +601,29 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(BatchResetServersPasswordRequestBody.class),
             f -> f.withMarshaller(BatchResetServersPasswordRequest::getBody,
                 BatchResetServersPasswordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchResizeServersRequest, BatchResizeServersResponse> batchResizeServers =
+        genForBatchResizeServers();
+
+    private static HttpRequestDef<BatchResizeServersRequest, BatchResizeServersResponse> genForBatchResizeServers() {
+        // basic
+        HttpRequestDef.Builder<BatchResizeServersRequest, BatchResizeServersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchResizeServersRequest.class, BatchResizeServersResponse.class)
+                .withName("BatchResizeServers")
+                .withUri("/v1/{project_id}/cloudservers/batch-resize")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchResizeServersReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchResizeServersReq.class),
+            f -> f.withMarshaller(BatchResizeServersRequest::getBody, BatchResizeServersRequest::setBody));
 
         // response
 
@@ -1141,6 +1204,53 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(DisassociateServerVirtualIpRequestBody.class),
             f -> f.withMarshaller(DisassociateServerVirtualIpRequest::getBody,
                 DisassociateServerVirtualIpRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteServerDumpRequest, ExecuteServerDumpResponse> executeServerDump =
+        genForExecuteServerDump();
+
+    private static HttpRequestDef<ExecuteServerDumpRequest, ExecuteServerDumpResponse> genForExecuteServerDump() {
+        // basic
+        HttpRequestDef.Builder<ExecuteServerDumpRequest, ExecuteServerDumpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteServerDumpRequest.class, ExecuteServerDumpResponse.class)
+                .withName("ExecuteServerDump")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/actions/trigger-crash-dump")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteServerDumpRequest::getServerId, ExecuteServerDumpRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteServerRedeployRequest, ExecuteServerRedeployResponse> executeServerRedeploy =
+        genForExecuteServerRedeploy();
+
+    private static HttpRequestDef<ExecuteServerRedeployRequest, ExecuteServerRedeployResponse> genForExecuteServerRedeploy() {
+        // basic
+        HttpRequestDef.Builder<ExecuteServerRedeployRequest, ExecuteServerRedeployResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExecuteServerRedeployRequest.class, ExecuteServerRedeployResponse.class)
+            .withName("ExecuteServerRedeploy")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/actions/redeploy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteServerRedeployRequest::getServerId,
+                ExecuteServerRedeployRequest::setServerId));
 
         // response
 
@@ -2724,6 +2834,33 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RevertRecycleBinServerRequest::getServerId,
                 RevertRecycleBinServerRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAppendableVolumeQuotaRequest, ShowAppendableVolumeQuotaResponse> showAppendableVolumeQuota =
+        genForShowAppendableVolumeQuota();
+
+    private static HttpRequestDef<ShowAppendableVolumeQuotaRequest, ShowAppendableVolumeQuotaResponse> genForShowAppendableVolumeQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowAppendableVolumeQuotaRequest, ShowAppendableVolumeQuotaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAppendableVolumeQuotaRequest.class,
+                    ShowAppendableVolumeQuotaResponse.class)
+                .withName("ShowAppendableVolumeQuota")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/appendvolumequota")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppendableVolumeQuotaRequest::getServerId,
+                ShowAppendableVolumeQuotaRequest::setServerId));
 
         // response
 

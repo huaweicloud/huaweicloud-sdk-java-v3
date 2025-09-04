@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.iotda.v5.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddTunnelRequest;
@@ -43,6 +45,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthenticationTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceAuthorizerResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyRequest;
@@ -69,6 +73,10 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateSecurityProfileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateSecurityProfileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateSyncHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateSyncHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileRequest;
@@ -79,8 +87,12 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBridgeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthenticationTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceAuthorizerResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceMessageRequest;
@@ -91,10 +103,14 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceShadowRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceShadowResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
@@ -113,6 +129,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteSecurityProfileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteSecurityProfileResponse;
 import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListAsyncCommandsRequest;
@@ -127,8 +145,14 @@ import com.huaweicloud.sdk.iotda.v5.model.ListBridgesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBridgesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthenticationTemplatesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthenticationTemplatesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthorizersRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceAuthorizersResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceByDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceByDeviceCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsByDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
@@ -145,6 +169,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
@@ -165,12 +191,16 @@ import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListSecurityProfilesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListSecurityProfilesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecretRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecretResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetFingerprintRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ResetFingerprintResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ResetHarmonySoftBusKeyRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ResetHarmonySoftBusKeyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.RetryBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.RetryBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.SearchDevicesRequest;
@@ -183,8 +213,12 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthenticationTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageRequest;
@@ -201,6 +235,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
@@ -219,6 +255,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowSecurityProfileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowSecurityProfileResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.StopBatchTaskRequest;
@@ -235,8 +273,12 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthenticationTemplateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizerRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceAuthorizerResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDevicePolicyRequest;
@@ -263,6 +305,8 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleActionRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleActionResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateSecurityProfileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateSecurityProfileResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UploadBatchTaskFileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UploadBatchTaskFileResponse;
 
@@ -1472,6 +1516,156 @@ public class IoTDAClient {
     }
 
     /**
+     * 创建设备鉴权模板
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个设备鉴权模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDeviceAuthenticationTemplateRequest 请求对象
+     * @return CreateDeviceAuthenticationTemplateResponse
+     */
+    public CreateDeviceAuthenticationTemplateResponse createDeviceAuthenticationTemplate(
+        CreateDeviceAuthenticationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createDeviceAuthenticationTemplate);
+    }
+
+    /**
+     * 创建设备鉴权模板
+     *
+     * 应用服务器可调用此接口在物联网平台创建一个设备鉴权模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDeviceAuthenticationTemplateRequest 请求对象
+     * @return SyncInvoker<CreateDeviceAuthenticationTemplateRequest, CreateDeviceAuthenticationTemplateResponse>
+     */
+    public SyncInvoker<CreateDeviceAuthenticationTemplateRequest, CreateDeviceAuthenticationTemplateResponse> createDeviceAuthenticationTemplateInvoker(
+        CreateDeviceAuthenticationTemplateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.createDeviceAuthenticationTemplate, hcClient);
+    }
+
+    /**
+     * 删除设备鉴权模板
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定设备鉴权模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceAuthenticationTemplateRequest 请求对象
+     * @return DeleteDeviceAuthenticationTemplateResponse
+     */
+    public DeleteDeviceAuthenticationTemplateResponse deleteDeviceAuthenticationTemplate(
+        DeleteDeviceAuthenticationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteDeviceAuthenticationTemplate);
+    }
+
+    /**
+     * 删除设备鉴权模板
+     *
+     * 应用服务器可调用此接口在物联网平台上删除指定设备鉴权模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceAuthenticationTemplateRequest 请求对象
+     * @return SyncInvoker<DeleteDeviceAuthenticationTemplateRequest, DeleteDeviceAuthenticationTemplateResponse>
+     */
+    public SyncInvoker<DeleteDeviceAuthenticationTemplateRequest, DeleteDeviceAuthenticationTemplateResponse> deleteDeviceAuthenticationTemplateInvoker(
+        DeleteDeviceAuthenticationTemplateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteDeviceAuthenticationTemplate, hcClient);
+    }
+
+    /**
+     * 查询设备鉴权模板列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询设备鉴权模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceAuthenticationTemplatesRequest 请求对象
+     * @return ListDeviceAuthenticationTemplatesResponse
+     */
+    public ListDeviceAuthenticationTemplatesResponse listDeviceAuthenticationTemplates(
+        ListDeviceAuthenticationTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listDeviceAuthenticationTemplates);
+    }
+
+    /**
+     * 查询设备鉴权模板列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询设备鉴权模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceAuthenticationTemplatesRequest 请求对象
+     * @return SyncInvoker<ListDeviceAuthenticationTemplatesRequest, ListDeviceAuthenticationTemplatesResponse>
+     */
+    public SyncInvoker<ListDeviceAuthenticationTemplatesRequest, ListDeviceAuthenticationTemplatesResponse> listDeviceAuthenticationTemplatesInvoker(
+        ListDeviceAuthenticationTemplatesRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listDeviceAuthenticationTemplates, hcClient);
+    }
+
+    /**
+     * 查询设备鉴权模板详情
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定设备鉴权模板ID的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeviceAuthenticationTemplateRequest 请求对象
+     * @return ShowDeviceAuthenticationTemplateResponse
+     */
+    public ShowDeviceAuthenticationTemplateResponse showDeviceAuthenticationTemplate(
+        ShowDeviceAuthenticationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showDeviceAuthenticationTemplate);
+    }
+
+    /**
+     * 查询设备鉴权模板详情
+     *
+     * 应用服务器可调用此接口在物联网平台查询指定设备鉴权模板ID的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeviceAuthenticationTemplateRequest 请求对象
+     * @return SyncInvoker<ShowDeviceAuthenticationTemplateRequest, ShowDeviceAuthenticationTemplateResponse>
+     */
+    public SyncInvoker<ShowDeviceAuthenticationTemplateRequest, ShowDeviceAuthenticationTemplateResponse> showDeviceAuthenticationTemplateInvoker(
+        ShowDeviceAuthenticationTemplateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showDeviceAuthenticationTemplate, hcClient);
+    }
+
+    /**
+     * 修改设备鉴权模板
+     *
+     * 应用服务器可调用此接口在物联网平台上修改指定设备鉴权模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDeviceAuthenticationTemplateRequest 请求对象
+     * @return UpdateDeviceAuthenticationTemplateResponse
+     */
+    public UpdateDeviceAuthenticationTemplateResponse updateDeviceAuthenticationTemplate(
+        UpdateDeviceAuthenticationTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateDeviceAuthenticationTemplate);
+    }
+
+    /**
+     * 修改设备鉴权模板
+     *
+     * 应用服务器可调用此接口在物联网平台上修改指定设备鉴权模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDeviceAuthenticationTemplateRequest 请求对象
+     * @return SyncInvoker<UpdateDeviceAuthenticationTemplateRequest, UpdateDeviceAuthenticationTemplateResponse>
+     */
+    public SyncInvoker<UpdateDeviceAuthenticationTemplateRequest, UpdateDeviceAuthenticationTemplateResponse> updateDeviceAuthenticationTemplateInvoker(
+        UpdateDeviceAuthenticationTemplateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.updateDeviceAuthenticationTemplate, hcClient);
+    }
+
+    /**
      * 创建自定义鉴权
      *
      * 应用服务器可调用此接口在物联网平台创建一个自定义鉴权。自定义鉴权是指用户可以通过函数服务自定义实现鉴权逻辑，以对接入平台的设备进行身份认证。
@@ -1618,6 +1812,152 @@ public class IoTDAClient {
     public SyncInvoker<UpdateDeviceAuthorizerRequest, UpdateDeviceAuthorizerResponse> updateDeviceAuthorizerInvoker(
         UpdateDeviceAuthorizerRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.updateDeviceAuthorizer, hcClient);
+    }
+
+    /**
+     * 删除设备证书
+     *
+     * 应用服务器可调用此接口在物联网平台删除一个设备证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceCertificateRequest 请求对象
+     * @return DeleteDeviceCertificateResponse
+     */
+    public DeleteDeviceCertificateResponse deleteDeviceCertificate(DeleteDeviceCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteDeviceCertificate);
+    }
+
+    /**
+     * 删除设备证书
+     *
+     * 应用服务器可调用此接口在物联网平台删除一个设备证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceCertificateRequest 请求对象
+     * @return SyncInvoker<DeleteDeviceCertificateRequest, DeleteDeviceCertificateResponse>
+     */
+    public SyncInvoker<DeleteDeviceCertificateRequest, DeleteDeviceCertificateResponse> deleteDeviceCertificateInvoker(
+        DeleteDeviceCertificateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteDeviceCertificate, hcClient);
+    }
+
+    /**
+     * 查询使用指定设备证书的设备列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询使用指定设备证书的设备列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceByDeviceCertificateRequest 请求对象
+     * @return ListDeviceByDeviceCertificateResponse
+     */
+    public ListDeviceByDeviceCertificateResponse listDeviceByDeviceCertificate(
+        ListDeviceByDeviceCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listDeviceByDeviceCertificate);
+    }
+
+    /**
+     * 查询使用指定设备证书的设备列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询使用指定设备证书的设备列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceByDeviceCertificateRequest 请求对象
+     * @return SyncInvoker<ListDeviceByDeviceCertificateRequest, ListDeviceByDeviceCertificateResponse>
+     */
+    public SyncInvoker<ListDeviceByDeviceCertificateRequest, ListDeviceByDeviceCertificateResponse> listDeviceByDeviceCertificateInvoker(
+        ListDeviceByDeviceCertificateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listDeviceByDeviceCertificate, hcClient);
+    }
+
+    /**
+     * 查询设备证书列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询设备证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceCertificateRequest 请求对象
+     * @return ListDeviceCertificateResponse
+     */
+    public ListDeviceCertificateResponse listDeviceCertificate(ListDeviceCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listDeviceCertificate);
+    }
+
+    /**
+     * 查询设备证书列表
+     *
+     * 应用服务器可调用此接口在物联网平台查询设备证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDeviceCertificateRequest 请求对象
+     * @return SyncInvoker<ListDeviceCertificateRequest, ListDeviceCertificateResponse>
+     */
+    public SyncInvoker<ListDeviceCertificateRequest, ListDeviceCertificateResponse> listDeviceCertificateInvoker(
+        ListDeviceCertificateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listDeviceCertificate, hcClient);
+    }
+
+    /**
+     * 查询设备证书
+     *
+     * 应用服务器可调用此接口在物联网平台更新一个设备证书状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeviceCertificateRequest 请求对象
+     * @return ShowDeviceCertificateResponse
+     */
+    public ShowDeviceCertificateResponse showDeviceCertificate(ShowDeviceCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showDeviceCertificate);
+    }
+
+    /**
+     * 查询设备证书
+     *
+     * 应用服务器可调用此接口在物联网平台更新一个设备证书状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeviceCertificateRequest 请求对象
+     * @return SyncInvoker<ShowDeviceCertificateRequest, ShowDeviceCertificateResponse>
+     */
+    public SyncInvoker<ShowDeviceCertificateRequest, ShowDeviceCertificateResponse> showDeviceCertificateInvoker(
+        ShowDeviceCertificateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showDeviceCertificate, hcClient);
+    }
+
+    /**
+     * 更新设备证书
+     *
+     * 应用服务器可调用此接口在物联网平台更新一个设备证书状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDeviceCertificateRequest 请求对象
+     * @return UpdateDeviceCertificateResponse
+     */
+    public UpdateDeviceCertificateResponse updateDeviceCertificate(UpdateDeviceCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateDeviceCertificate);
+    }
+
+    /**
+     * 更新设备证书
+     *
+     * 应用服务器可调用此接口在物联网平台更新一个设备证书状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDeviceCertificateRequest 请求对象
+     * @return SyncInvoker<UpdateDeviceCertificateRequest, UpdateDeviceCertificateResponse>
+     */
+    public SyncInvoker<UpdateDeviceCertificateRequest, UpdateDeviceCertificateResponse> updateDeviceCertificateInvoker(
+        UpdateDeviceCertificateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.updateDeviceCertificate, hcClient);
     }
 
     /**
@@ -2563,6 +2903,35 @@ public class IoTDAClient {
     }
 
     /**
+     * 删除设备影子数据
+     *
+     * 应用服务器可调用此接口删除指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）中的所有数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceShadowRequest 请求对象
+     * @return DeleteDeviceShadowResponse
+     */
+    public DeleteDeviceShadowResponse deleteDeviceShadow(DeleteDeviceShadowRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteDeviceShadow);
+    }
+
+    /**
+     * 删除设备影子数据
+     *
+     * 应用服务器可调用此接口删除指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）中的所有数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDeviceShadowRequest 请求对象
+     * @return SyncInvoker<DeleteDeviceShadowRequest, DeleteDeviceShadowResponse>
+     */
+    public SyncInvoker<DeleteDeviceShadowRequest, DeleteDeviceShadowResponse> deleteDeviceShadowInvoker(
+        DeleteDeviceShadowRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteDeviceShadow, hcClient);
+    }
+
+    /**
      * 查询设备影子数据
      *
      * 应用服务器可调用此接口查询指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）。
@@ -2896,6 +3265,180 @@ public class IoTDAClient {
      */
     public SyncInvoker<ListFunctionsRequest, ListFunctionsResponse> listFunctionsInvoker(ListFunctionsRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.listFunctions, hcClient);
+    }
+
+    /**
+     * 创建鸿蒙软总线
+     *
+     * 应用服务器可调用此接口新建鸿蒙软总线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddHarmonySoftBusRequest 请求对象
+     * @return AddHarmonySoftBusResponse
+     */
+    public AddHarmonySoftBusResponse addHarmonySoftBus(AddHarmonySoftBusRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.addHarmonySoftBus);
+    }
+
+    /**
+     * 创建鸿蒙软总线
+     *
+     * 应用服务器可调用此接口新建鸿蒙软总线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddHarmonySoftBusRequest 请求对象
+     * @return SyncInvoker<AddHarmonySoftBusRequest, AddHarmonySoftBusResponse>
+     */
+    public SyncInvoker<AddHarmonySoftBusRequest, AddHarmonySoftBusResponse> addHarmonySoftBusInvoker(
+        AddHarmonySoftBusRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.addHarmonySoftBus, hcClient);
+    }
+
+    /**
+     * 同步鸿蒙软总线信息
+     *
+     * 应用服务器可调用此接口向组内设备同步鸿蒙软总线信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSyncHarmonySoftBusRequest 请求对象
+     * @return CreateSyncHarmonySoftBusResponse
+     */
+    public CreateSyncHarmonySoftBusResponse createSyncHarmonySoftBus(CreateSyncHarmonySoftBusRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createSyncHarmonySoftBus);
+    }
+
+    /**
+     * 同步鸿蒙软总线信息
+     *
+     * 应用服务器可调用此接口向组内设备同步鸿蒙软总线信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSyncHarmonySoftBusRequest 请求对象
+     * @return SyncInvoker<CreateSyncHarmonySoftBusRequest, CreateSyncHarmonySoftBusResponse>
+     */
+    public SyncInvoker<CreateSyncHarmonySoftBusRequest, CreateSyncHarmonySoftBusResponse> createSyncHarmonySoftBusInvoker(
+        CreateSyncHarmonySoftBusRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.createSyncHarmonySoftBus, hcClient);
+    }
+
+    /**
+     * 删除鸿蒙软总线
+     *
+     * 应用服务器可调用此接口删除指定鸿蒙软总线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHarmonySoftBusRequest 请求对象
+     * @return DeleteHarmonySoftBusResponse
+     */
+    public DeleteHarmonySoftBusResponse deleteHarmonySoftBus(DeleteHarmonySoftBusRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteHarmonySoftBus);
+    }
+
+    /**
+     * 删除鸿蒙软总线
+     *
+     * 应用服务器可调用此接口删除指定鸿蒙软总线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHarmonySoftBusRequest 请求对象
+     * @return SyncInvoker<DeleteHarmonySoftBusRequest, DeleteHarmonySoftBusResponse>
+     */
+    public SyncInvoker<DeleteHarmonySoftBusRequest, DeleteHarmonySoftBusResponse> deleteHarmonySoftBusInvoker(
+        DeleteHarmonySoftBusRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteHarmonySoftBus, hcClient);
+    }
+
+    /**
+     * 查询鸿蒙软总线列表
+     *
+     * 应用服务器可调用此接口查询鸿蒙软总线列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHarmonySoftBusRequest 请求对象
+     * @return ListHarmonySoftBusResponse
+     */
+    public ListHarmonySoftBusResponse listHarmonySoftBus(ListHarmonySoftBusRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listHarmonySoftBus);
+    }
+
+    /**
+     * 查询鸿蒙软总线列表
+     *
+     * 应用服务器可调用此接口查询鸿蒙软总线列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHarmonySoftBusRequest 请求对象
+     * @return SyncInvoker<ListHarmonySoftBusRequest, ListHarmonySoftBusResponse>
+     */
+    public SyncInvoker<ListHarmonySoftBusRequest, ListHarmonySoftBusResponse> listHarmonySoftBusInvoker(
+        ListHarmonySoftBusRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listHarmonySoftBus, hcClient);
+    }
+
+    /**
+     * 重置鸿蒙软总线秘钥
+     *
+     * 应用服务器可调用此接口重置鸿蒙软总线秘钥, 重置后状态变为未同步需要用户调用同步接口想组内设备同步最新秘钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetHarmonySoftBusKeyRequest 请求对象
+     * @return ResetHarmonySoftBusKeyResponse
+     */
+    public ResetHarmonySoftBusKeyResponse resetHarmonySoftBusKey(ResetHarmonySoftBusKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.resetHarmonySoftBusKey);
+    }
+
+    /**
+     * 重置鸿蒙软总线秘钥
+     *
+     * 应用服务器可调用此接口重置鸿蒙软总线秘钥, 重置后状态变为未同步需要用户调用同步接口想组内设备同步最新秘钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetHarmonySoftBusKeyRequest 请求对象
+     * @return SyncInvoker<ResetHarmonySoftBusKeyRequest, ResetHarmonySoftBusKeyResponse>
+     */
+    public SyncInvoker<ResetHarmonySoftBusKeyRequest, ResetHarmonySoftBusKeyResponse> resetHarmonySoftBusKeyInvoker(
+        ResetHarmonySoftBusKeyRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.resetHarmonySoftBusKey, hcClient);
+    }
+
+    /**
+     * 查询鸿蒙软总线
+     *
+     * 应用服务器可调用此接口查询指定ID的鸿蒙软总线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHarmonySoftBusRequest 请求对象
+     * @return ShowHarmonySoftBusResponse
+     */
+    public ShowHarmonySoftBusResponse showHarmonySoftBus(ShowHarmonySoftBusRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showHarmonySoftBus);
+    }
+
+    /**
+     * 查询鸿蒙软总线
+     *
+     * 应用服务器可调用此接口查询指定ID的鸿蒙软总线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHarmonySoftBusRequest 请求对象
+     * @return SyncInvoker<ShowHarmonySoftBusRequest, ShowHarmonySoftBusResponse>
+     */
+    public SyncInvoker<ShowHarmonySoftBusRequest, ShowHarmonySoftBusResponse> showHarmonySoftBusInvoker(
+        ShowHarmonySoftBusRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showHarmonySoftBus, hcClient);
     }
 
     /**
@@ -4189,6 +4732,195 @@ public class IoTDAClient {
      */
     public SyncInvoker<UpdateRuleRequest, UpdateRuleResponse> updateRuleInvoker(UpdateRuleRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.updateRule, hcClient);
+    }
+
+    /**
+     * 创建或更新安全态势感知配置
+     *
+     * #### 接口说明
+     * 应用服务器调用该接口创建安全态势感知配置。
+     * #### 限制
+     * #### 目前支持的安全配置项有：
+     * 
+     * | 配置名              | 默认告警级别 |   默认安全级别   | 设备维度 | 平台检测/设备上报 | 配置结构体   | 说明        |
+     * | :------------------ | :----------- | :--------------- | :------- | :---------------- | :----------------- | :-----------|
+     * | DEVICE_MEMORY_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;memory_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备内存泄漏检测，report_period：上报周期单位(小时) 取值范围[1, 24]；memory_threshold内存检测阈值百分比，取值范围：[1, 100] |
+     * | DEVICE_PORT_CHECK   | CRITICAL     | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;safety_ports\&quot;,\&quot;value\&quot;:[80,8080]},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备异常端口检测，report_period：上报周期单位(小时) 取值范围[1, 24]；safety_ports：安全端口白名单，数组，取值范围:[1, 65535] |
+     * | DEVICE_CPU_USAGE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;cpu_usage_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备CPU使用率检测，report_period：上报周期单位(小时) 取值范围[1, 24]；cpu_usage_threshold：CPU检测阈值百分比，取值范围：[1, 100] |
+     * | DEVICE_DISK_SPACE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;disk_space_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备磁盘使用率检测，report_period：上报周期单位(小时) 取值范围[1, 24]；disk_space_threshold：磁盘检测阈值百分比，取值范围：[1, 100] |
+     * | DEVICE_BATTERY_PERCENTAGE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;battery_percentage_threshold\&quot;,\&quot;value\&quot;:20},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备电池电量检测，report_period：上报周期单位(小时) 取值范围[1, 24]；battery_percentage_threshold：电池检测阈值百分比，取值范围：[1, 100] |
+     * | DEVICE_LOGIN_LOCAL_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备本地登录检测 |
+     * | DEVICE_MALICIOUS_IP_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | {\&quot;key\&quot;:\&quot;safety_ips\&quot;,\&quot;value\&quot;:[\&quot;192.168.0.0/16\&quot;]} | 设备恶意ip检测 |
+     * | DEVICE_LOGIN_BRUTE_FORCE_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备暴力破解登录检测 |
+     * | DEVICE_FILE_TAMPER_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备本地文件篡改检测 |
+     * | INSECURE_TLS_PROTOCOL_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备使用不安全的TLS协议接入检测 |
+     * | INSECURE_CIPHER_SUITE_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备使用不安全TLS加密套件接入检测 |
+     * | CONNECT_MULTIPLE_TIMES_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备单位时间内多次建链检测 |
+     * | SECRET_COMPLEXITY_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备弱密码检测 |
+     * | TLS_CONNECT_CHECK | MINOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备是否使用TLS加密通讯协议检测 |
+     * | DEVICE_AUTH_FAIL_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备鉴权失败检测 |
+     * | DEVICE_OFFLINE_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备异常离线检测 |
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityProfileRequest 请求对象
+     * @return CreateSecurityProfileResponse
+     */
+    public CreateSecurityProfileResponse createSecurityProfile(CreateSecurityProfileRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createSecurityProfile);
+    }
+
+    /**
+     * 创建或更新安全态势感知配置
+     *
+     * #### 接口说明
+     * 应用服务器调用该接口创建安全态势感知配置。
+     * #### 限制
+     * #### 目前支持的安全配置项有：
+     * 
+     * | 配置名              | 默认告警级别 |   默认安全级别   | 设备维度 | 平台检测/设备上报 | 配置结构体   | 说明        |
+     * | :------------------ | :----------- | :--------------- | :------- | :---------------- | :----------------- | :-----------|
+     * | DEVICE_MEMORY_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;memory_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备内存泄漏检测，report_period：上报周期单位(小时) 取值范围[1, 24]；memory_threshold内存检测阈值百分比，取值范围：[1, 100] |
+     * | DEVICE_PORT_CHECK   | CRITICAL     | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;safety_ports\&quot;,\&quot;value\&quot;:[80,8080]},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备异常端口检测，report_period：上报周期单位(小时) 取值范围[1, 24]；safety_ports：安全端口白名单，数组，取值范围:[1, 65535] |
+     * | DEVICE_CPU_USAGE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;cpu_usage_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备CPU使用率检测，report_period：上报周期单位(小时) 取值范围[1, 24]；cpu_usage_threshold：CPU检测阈值百分比，取值范围：[1, 100] |
+     * | DEVICE_DISK_SPACE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;disk_space_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备磁盘使用率检测，report_period：上报周期单位(小时) 取值范围[1, 24]；disk_space_threshold：磁盘检测阈值百分比，取值范围：[1, 100] |
+     * | DEVICE_BATTERY_PERCENTAGE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;battery_percentage_threshold\&quot;,\&quot;value\&quot;:20},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备电池电量检测，report_period：上报周期单位(小时) 取值范围[1, 24]；battery_percentage_threshold：电池检测阈值百分比，取值范围：[1, 100] |
+     * | DEVICE_LOGIN_LOCAL_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备本地登录检测 |
+     * | DEVICE_MALICIOUS_IP_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | {\&quot;key\&quot;:\&quot;safety_ips\&quot;,\&quot;value\&quot;:[\&quot;192.168.0.0/16\&quot;]} | 设备恶意ip检测 |
+     * | DEVICE_LOGIN_BRUTE_FORCE_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备暴力破解登录检测 |
+     * | DEVICE_FILE_TAMPER_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备本地文件篡改检测 |
+     * | INSECURE_TLS_PROTOCOL_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备使用不安全的TLS协议接入检测 |
+     * | INSECURE_CIPHER_SUITE_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备使用不安全TLS加密套件接入检测 |
+     * | CONNECT_MULTIPLE_TIMES_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备单位时间内多次建链检测 |
+     * | SECRET_COMPLEXITY_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备弱密码检测 |
+     * | TLS_CONNECT_CHECK | MINOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备是否使用TLS加密通讯协议检测 |
+     * | DEVICE_AUTH_FAIL_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备鉴权失败检测 |
+     * | DEVICE_OFFLINE_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备异常离线检测 |
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityProfileRequest 请求对象
+     * @return SyncInvoker<CreateSecurityProfileRequest, CreateSecurityProfileResponse>
+     */
+    public SyncInvoker<CreateSecurityProfileRequest, CreateSecurityProfileResponse> createSecurityProfileInvoker(
+        CreateSecurityProfileRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.createSecurityProfile, hcClient);
+    }
+
+    /**
+     * 删除某个具体id的安全态势感知配置信息
+     *
+     * 应用服务器可调用此接口删除某个具体id的安全态势感知配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecurityProfileRequest 请求对象
+     * @return DeleteSecurityProfileResponse
+     */
+    public DeleteSecurityProfileResponse deleteSecurityProfile(DeleteSecurityProfileRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteSecurityProfile);
+    }
+
+    /**
+     * 删除某个具体id的安全态势感知配置信息
+     *
+     * 应用服务器可调用此接口删除某个具体id的安全态势感知配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecurityProfileRequest 请求对象
+     * @return SyncInvoker<DeleteSecurityProfileRequest, DeleteSecurityProfileResponse>
+     */
+    public SyncInvoker<DeleteSecurityProfileRequest, DeleteSecurityProfileResponse> deleteSecurityProfileInvoker(
+        DeleteSecurityProfileRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteSecurityProfile, hcClient);
+    }
+
+    /**
+     * 查询安全态势感知配置信息列表
+     *
+     * 接口说明：应用服务器调用该接口查询安全态势感知配置列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityProfilesRequest 请求对象
+     * @return ListSecurityProfilesResponse
+     */
+    public ListSecurityProfilesResponse listSecurityProfiles(ListSecurityProfilesRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listSecurityProfiles);
+    }
+
+    /**
+     * 查询安全态势感知配置信息列表
+     *
+     * 接口说明：应用服务器调用该接口查询安全态势感知配置列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityProfilesRequest 请求对象
+     * @return SyncInvoker<ListSecurityProfilesRequest, ListSecurityProfilesResponse>
+     */
+    public SyncInvoker<ListSecurityProfilesRequest, ListSecurityProfilesResponse> listSecurityProfilesInvoker(
+        ListSecurityProfilesRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listSecurityProfiles, hcClient);
+    }
+
+    /**
+     * 查询某个具体id的安全态势感知配置详情
+     *
+     * 应用服务器可调用此接口查询某个具体id的安全态势感知配置详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityProfileRequest 请求对象
+     * @return ShowSecurityProfileResponse
+     */
+    public ShowSecurityProfileResponse showSecurityProfile(ShowSecurityProfileRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showSecurityProfile);
+    }
+
+    /**
+     * 查询某个具体id的安全态势感知配置详情
+     *
+     * 应用服务器可调用此接口查询某个具体id的安全态势感知配置详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityProfileRequest 请求对象
+     * @return SyncInvoker<ShowSecurityProfileRequest, ShowSecurityProfileResponse>
+     */
+    public SyncInvoker<ShowSecurityProfileRequest, ShowSecurityProfileResponse> showSecurityProfileInvoker(
+        ShowSecurityProfileRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showSecurityProfile, hcClient);
+    }
+
+    /**
+     * 更新某个具体id的安全态势感知配置信息
+     *
+     * 应用服务器可调用此接口更新某个具体id的安全态势感知配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityProfileRequest 请求对象
+     * @return UpdateSecurityProfileResponse
+     */
+    public UpdateSecurityProfileResponse updateSecurityProfile(UpdateSecurityProfileRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateSecurityProfile);
+    }
+
+    /**
+     * 更新某个具体id的安全态势感知配置信息
+     *
+     * 应用服务器可调用此接口更新某个具体id的安全态势感知配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityProfileRequest 请求对象
+     * @return SyncInvoker<UpdateSecurityProfileRequest, UpdateSecurityProfileResponse>
+     */
+    public SyncInvoker<UpdateSecurityProfileRequest, UpdateSecurityProfileResponse> updateSecurityProfileInvoker(
+        UpdateSecurityProfileRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.updateSecurityProfile, hcClient);
     }
 
     /**

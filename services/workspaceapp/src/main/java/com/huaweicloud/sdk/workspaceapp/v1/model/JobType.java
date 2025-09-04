@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * job类型： * &#x60;CREATE_SERVER&#x60; - 创建服务器 * &#x60;DELETE_SERVER&#x60; - 删除服务器 * &#x60;UPDATE_FREEZE_STATUS&#x60; - 修改服务器冻结状态 * &#x60;CREATE_SERVER_IMAGE&#x60; - 构建镜像 * &#x60;REINSTALL_OS&#x60; - 重装操作系统 * &#x60;CHANGE_SERVER_IMAGE&#x60; - 更换镜像 * &#x60;REJOIN_DOMAIN&#x60; - 重新加域 * &#x60;MIGRATE_SERVER&#x60; - 迁移服务器 * &#x60;UPGRADE_ACCESS_AGENT&#x60; - hda升级 * &#x60;UPDATE_SERVER_TSVI&#x60; - 更新虚拟会话IP * &#x60;SCHEDULED_TASK&#x60; - 定时任务job * &#x60;COLLECT_HDA_LOG&#x60; - 收集hda日志 * &#x60;COLLECT_APS_LOG&#x60; - 收集aps日志 * &#x60;CREATE_SERVER_SNAPSHOT&#x60; - 创建服务器快照 * &#x60;DELETE_SERVER_SNAPSHOT&#x60; - 删除服务器快照 * &#x60;RESTORE_SERVER_SNAPSHOT&#x60; - 恢复服务器快照 * &#x60;BATCH_INSTALL_APP&#x60; - 批量安装应用
+ * job类型： * &#x60;CREATE_SERVER&#x60; - 创建服务器 * &#x60;DELETE_SERVER&#x60; - 删除服务器 * &#x60;UPDATE_FREEZE_STATUS&#x60; - 修改服务器冻结状态 * &#x60;CREATE_SERVER_IMAGE&#x60; - 构建镜像 * &#x60;REINSTALL_OS&#x60; - 重装操作系统 * &#x60;CHANGE_SERVER_IMAGE&#x60; - 更换镜像 * &#x60;REJOIN_DOMAIN&#x60; - 重新加域 * &#x60;MIGRATE_SERVER&#x60; - 迁移服务器 * &#x60;UPGRADE_ACCESS_AGENT&#x60; - hda升级 * &#x60;UPDATE_SERVER_TSVI&#x60; - 更新虚拟会话IP * &#x60;SCHEDULED_TASK&#x60; - 定时任务job * &#x60;COLLECT_HDA_LOG&#x60; - 收集hda日志 * &#x60;COLLECT_APS_LOG&#x60; - 收集aps日志 * &#x60;CREATE_SERVER_SNAPSHOT&#x60; - 创建服务器快照 * &#x60;DELETE_SERVER_SNAPSHOT&#x60; - 删除服务器快照 * &#x60;RESTORE_SERVER_SNAPSHOT&#x60; - 恢复服务器快照 * &#x60;BATCH_INSTALL_APP&#x60; - 批量安装应用 * &#x60;INSTALL_CES_AGENT&#x60; - 安装CES服务AGENT * &#x60;UNINSTALL_CES_AGENT&#x60; - 卸载CES服务AGENT
  */
 public class JobType {
 
@@ -97,6 +97,16 @@ public class JobType {
      */
     public static final JobType BATCH_INSTALL_APP = new JobType("BATCH_INSTALL_APP");
 
+    /**
+     * Enum INSTALL_CES_AGENT for value: "INSTALL_CES_AGENT"
+     */
+    public static final JobType INSTALL_CES_AGENT = new JobType("INSTALL_CES_AGENT");
+
+    /**
+     * Enum UNINSTALL_CES_AGENT for value: "UNINSTALL_CES_AGENT"
+     */
+    public static final JobType UNINSTALL_CES_AGENT = new JobType("UNINSTALL_CES_AGENT");
+
     private static final Map<String, JobType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, JobType> createStaticFields() {
@@ -118,6 +128,8 @@ public class JobType {
         map.put("DELETE_SERVER_SNAPSHOT", DELETE_SERVER_SNAPSHOT);
         map.put("RESTORE_SERVER_SNAPSHOT", RESTORE_SERVER_SNAPSHOT);
         map.put("BATCH_INSTALL_APP", BATCH_INSTALL_APP);
+        map.put("INSTALL_CES_AGENT", INSTALL_CES_AGENT);
+        map.put("UNINSTALL_CES_AGENT", UNINSTALL_CES_AGENT);
         return Collections.unmodifiableMap(map);
     }
 

@@ -56,7 +56,7 @@ public class EcsNetWork {
     }
 
     /**
-     * IP地址信息。
+     * IP地址信息
      * @return addr
      */
     public String getAddr() {

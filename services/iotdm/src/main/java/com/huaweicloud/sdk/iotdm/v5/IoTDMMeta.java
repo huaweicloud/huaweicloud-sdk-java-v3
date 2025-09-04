@@ -57,11 +57,6 @@ public class IoTDMMeta {
             f -> f.withMarshaller(BindInstanceTagsRequest::getBody, BindInstanceTagsRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(BindInstanceTagsResponse::getBody, BindInstanceTagsResponse::setBody));
 
         return builder.build();
     }
@@ -138,11 +133,6 @@ public class IoTDMMeta {
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteInstanceResponse::getBody, DeleteInstanceResponse::setBody));
 
         return builder.build();
     }
@@ -264,11 +254,6 @@ public class IoTDMMeta {
             f -> f.withMarshaller(UnbindInstanceTagsRequest::getBody, UnbindInstanceTagsRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UnbindInstanceTagsResponse::getBody, UnbindInstanceTagsResponse::setBody));
 
         return builder.build();
     }

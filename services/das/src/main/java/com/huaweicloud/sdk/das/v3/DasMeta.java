@@ -15,6 +15,9 @@ import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeBody;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchRequestBody;
+import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusBody;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
@@ -32,6 +35,9 @@ import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateSnapshotsRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateSnapshotsRequestBody;
+import com.huaweicloud.sdk.das.v3.model.CreateSnapshotsResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskBody;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskResponse;
@@ -99,6 +105,8 @@ import com.huaweicloud.sdk.das.v3.model.ListRiskItemsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListRiskItemsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListRiskTrendRequest;
 import com.huaweicloud.sdk.das.v3.model.ListRiskTrendResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSnapshotsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSnapshotsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
@@ -120,8 +128,14 @@ import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
@@ -411,6 +425,42 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeFullDeadLockSwitchRequest, ChangeFullDeadLockSwitchResponse> changeFullDeadLockSwitch =
+        genForChangeFullDeadLockSwitch();
+
+    private static HttpRequestDef<ChangeFullDeadLockSwitchRequest, ChangeFullDeadLockSwitchResponse> genForChangeFullDeadLockSwitch() {
+        // basic
+        HttpRequestDef.Builder<ChangeFullDeadLockSwitchRequest, ChangeFullDeadLockSwitchResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ChangeFullDeadLockSwitchRequest.class, ChangeFullDeadLockSwitchResponse.class)
+                .withName("ChangeFullDeadLockSwitch")
+                .withUri("/v3/{project_id}/instances/{instance_id}/set-fulldeadlock-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeFullDeadLockSwitchRequest::getInstanceId,
+                ChangeFullDeadLockSwitchRequest::setInstanceId));
+        builder.<ChangeFullDeadLockSwitchRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ChangeFullDeadLockSwitchRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ChangeFullDeadLockSwitchRequest::getXLanguage,
+                ChangeFullDeadLockSwitchRequest::setXLanguage));
+        builder.<ChangeFullDeadLockSwitchRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeFullDeadLockSwitchRequestBody.class),
+            f -> f.withMarshaller(ChangeFullDeadLockSwitchRequest::getBody, ChangeFullDeadLockSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeSqlLimitSwitchStatusRequest, ChangeSqlLimitSwitchStatusResponse> changeSqlLimitSwitchStatus =
         genForChangeSqlLimitSwitchStatus();
 
@@ -551,6 +601,39 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateHealthReportReq.class),
             f -> f.withMarshaller(CreateHealthReportTaskRequest::getBody, CreateHealthReportTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSnapshotsRequest, CreateSnapshotsResponse> createSnapshots =
+        genForCreateSnapshots();
+
+    private static HttpRequestDef<CreateSnapshotsRequest, CreateSnapshotsResponse> genForCreateSnapshots() {
+        // basic
+        HttpRequestDef.Builder<CreateSnapshotsRequest, CreateSnapshotsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSnapshotsRequest.class, CreateSnapshotsResponse.class)
+                .withName("CreateSnapshots")
+                .withUri("/v3/{project_id}/connections/{connection_id}/instance/create-snapshot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSnapshotsRequest::getConnectionId, CreateSnapshotsRequest::setConnectionId));
+        builder.<CreateSnapshotsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateSnapshotsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateSnapshotsRequest::getXLanguage, CreateSnapshotsRequest::setXLanguage));
+        builder.<CreateSnapshotsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateSnapshotsRequestBody.class),
+            f -> f.withMarshaller(CreateSnapshotsRequest::getBody, CreateSnapshotsRequest::setBody));
 
         // response
 
@@ -2008,6 +2091,59 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshots =
+        genForListSnapshots();
+
+    private static HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> genForListSnapshots() {
+        // basic
+        HttpRequestDef.Builder<ListSnapshotsRequest, ListSnapshotsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSnapshotsRequest.class, ListSnapshotsResponse.class)
+                .withName("ListSnapshots")
+                .withUri("/v3/{project_id}/connections/{connection_id}/instance/list-snapshots")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSnapshotsRequest::getConnectionId, ListSnapshotsRequest::setConnectionId));
+        builder.<Long>withRequestField("module",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSnapshotsRequest::getModule, ListSnapshotsRequest::setModule));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSnapshotsRequest::getStartAt, ListSnapshotsRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSnapshotsRequest::getEndAt, ListSnapshotsRequest::setEndAt));
+        builder.<Integer>withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSnapshotsRequest::getPerPage, ListSnapshotsRequest::setPerPage));
+        builder.<Integer>withRequestField("cur_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSnapshotsRequest::getCurPage, ListSnapshotsRequest::setCurPage));
+        builder.<ListSnapshotsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSnapshotsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSnapshotsRequest::getXLanguage, ListSnapshotsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> listSpaceAnalysis =
         genForListSpaceAnalysis();
 
@@ -2357,6 +2493,86 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFullDeadLockListRequest, ShowFullDeadLockListResponse> showFullDeadLockList =
+        genForShowFullDeadLockList();
+
+    private static HttpRequestDef<ShowFullDeadLockListRequest, ShowFullDeadLockListResponse> genForShowFullDeadLockList() {
+        // basic
+        HttpRequestDef.Builder<ShowFullDeadLockListRequest, ShowFullDeadLockListResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowFullDeadLockListRequest.class, ShowFullDeadLockListResponse.class)
+            .withName("ShowFullDeadLockList")
+            .withUri("/v3/{project_id}/instances/{instance_id}/show-fulldeadlock-list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFullDeadLockListRequest::getInstanceId,
+                ShowFullDeadLockListRequest::setInstanceId));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFullDeadLockListRequest::getStartAt, ShowFullDeadLockListRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFullDeadLockListRequest::getEndAt, ShowFullDeadLockListRequest::setEndAt));
+        builder.<Integer>withRequestField("page_num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFullDeadLockListRequest::getPageNum, ShowFullDeadLockListRequest::setPageNum));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFullDeadLockListRequest::getPageSize, ShowFullDeadLockListRequest::setPageSize));
+        builder.<ShowFullDeadLockListRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFullDeadLockListRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowFullDeadLockListRequest::getXLanguage,
+                ShowFullDeadLockListRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFullDeadLockSwitchRequest, ShowFullDeadLockSwitchResponse> showFullDeadLockSwitch =
+        genForShowFullDeadLockSwitch();
+
+    private static HttpRequestDef<ShowFullDeadLockSwitchRequest, ShowFullDeadLockSwitchResponse> genForShowFullDeadLockSwitch() {
+        // basic
+        HttpRequestDef.Builder<ShowFullDeadLockSwitchRequest, ShowFullDeadLockSwitchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowFullDeadLockSwitchRequest.class, ShowFullDeadLockSwitchResponse.class)
+            .withName("ShowFullDeadLockSwitch")
+            .withUri("/v3/{project_id}/instances/{instance_id}/show-fulldeadlock-switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFullDeadLockSwitchRequest::getInstanceId,
+                ShowFullDeadLockSwitchRequest::setInstanceId));
+        builder.<ShowFullDeadLockSwitchRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowFullDeadLockSwitchRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowFullDeadLockSwitchRequest::getXLanguage,
+                ShowFullDeadLockSwitchRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> showInstanceHealthReport =
         genForShowInstanceHealthReport();
 
@@ -2388,6 +2604,44 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ShowInstanceHealthReportRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowInstanceHealthReportRequest::getXLanguage,
                 ShowInstanceHealthReportRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLatestDeadLockSnapshotRequest, ShowLatestDeadLockSnapshotResponse> showLatestDeadLockSnapshot =
+        genForShowLatestDeadLockSnapshot();
+
+    private static HttpRequestDef<ShowLatestDeadLockSnapshotRequest, ShowLatestDeadLockSnapshotResponse> genForShowLatestDeadLockSnapshot() {
+        // basic
+        HttpRequestDef.Builder<ShowLatestDeadLockSnapshotRequest, ShowLatestDeadLockSnapshotResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowLatestDeadLockSnapshotRequest.class,
+                    ShowLatestDeadLockSnapshotResponse.class)
+                .withName("ShowLatestDeadLockSnapshot")
+                .withUri("/v3/{project_id}/connections/{connection_id}/instance/show-latestdeadlock-snapshot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLatestDeadLockSnapshotRequest::getConnectionId,
+                ShowLatestDeadLockSnapshotRequest::setConnectionId));
+        builder.<Integer>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowLatestDeadLockSnapshotRequest::getId, ShowLatestDeadLockSnapshotRequest::setId));
+        builder.<ShowLatestDeadLockSnapshotRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowLatestDeadLockSnapshotRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowLatestDeadLockSnapshotRequest::getXLanguage,
+                ShowLatestDeadLockSnapshotRequest::setXLanguage));
 
         // response
 

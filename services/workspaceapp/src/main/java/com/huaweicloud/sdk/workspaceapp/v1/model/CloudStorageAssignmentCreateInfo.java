@@ -51,12 +51,12 @@ public class CloudStorageAssignmentCreateInfo {
     private AttachType attachType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "errorMessage")
+    @JsonProperty(value = "error_message")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isSuccess")
+    @JsonProperty(value = "is_success")
 
     private Boolean isSuccess;
 

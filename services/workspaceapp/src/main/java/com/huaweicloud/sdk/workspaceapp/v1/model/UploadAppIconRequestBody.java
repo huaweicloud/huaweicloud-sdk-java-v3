@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.workspaceapp.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
@@ -19,6 +20,11 @@ public class UploadAppIconRequestBody implements SdkFormDataBody {
 
     private FormDataFilePart data;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "icon_url")
+
+    private String iconUrl;
+
     public UploadAppIconRequestBody withData(FormDataFilePart data) {
         this.data = data;
         return this;
@@ -34,6 +40,23 @@ public class UploadAppIconRequestBody implements SdkFormDataBody {
 
     public void setData(FormDataFilePart data) {
         this.data = data;
+    }
+
+    public UploadAppIconRequestBody withIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
+        return this;
+    }
+
+    /**
+     * base64编码后的png格式图标。
+     * @return iconUrl
+     */
+    public String getIconUrl() {
+        return iconUrl;
+    }
+
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
     }
 
     public UploadAppIconRequestBody withData(InputStream inputStream, String fileName, String contentType) {
@@ -57,7 +80,12 @@ public class UploadAppIconRequestBody implements SdkFormDataBody {
 
             private static final long serialVersionUID = 1L;
             {
-                put("data", data);
+                if (data != null) {
+                    put("data", data);
+                }
+                if (iconUrl != null) {
+                    put("icon_url", new FormDataPart<>(iconUrl));
+                }
             }
         };
     }
@@ -71,12 +99,12 @@ public class UploadAppIconRequestBody implements SdkFormDataBody {
             return false;
         }
         UploadAppIconRequestBody that = (UploadAppIconRequestBody) obj;
-        return Objects.equals(this.data, that.data);
+        return Objects.equals(this.data, that.data) && Objects.equals(this.iconUrl, that.iconUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data);
+        return Objects.hash(data, iconUrl);
     }
 
     @Override
@@ -84,6 +112,7 @@ public class UploadAppIconRequestBody implements SdkFormDataBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UploadAppIconRequestBody {\n");
         sb.append("    data: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
+        sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

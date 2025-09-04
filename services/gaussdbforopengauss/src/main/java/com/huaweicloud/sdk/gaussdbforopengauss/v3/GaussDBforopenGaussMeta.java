@@ -105,6 +105,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisaste
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterSwitchoverResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportSlowSqlRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportSlowSqlResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExportTableVolumeRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBUpgradeInstancesVersionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenDatabaseForCreation;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussDatabaseSchemaReq;
@@ -206,6 +209,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsRequest;
@@ -1632,6 +1638,39 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(ReleaseDisasterReq.class),
             f -> f.withMarshaller(ExecuteCrossCloudReleaseDisasterRequest::getBody,
                 ExecuteCrossCloudReleaseDisasterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportSlowSqlRequest, ExportSlowSqlResponse> exportSlowSql =
+        genForExportSlowSql();
+
+    private static HttpRequestDef<ExportSlowSqlRequest, ExportSlowSqlResponse> genForExportSlowSql() {
+        // basic
+        HttpRequestDef.Builder<ExportSlowSqlRequest, ExportSlowSqlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportSlowSqlRequest.class, ExportSlowSqlResponse.class)
+                .withName("ExportSlowSql")
+                .withUri("/v3/{project_id}/instances/{instance_id}/table-volume/export")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportSlowSqlRequest::getInstanceId, ExportSlowSqlRequest::setInstanceId));
+        builder.<ExportSlowSqlRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportSlowSqlRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExportSlowSqlRequest::getXLanguage, ExportSlowSqlRequest::setXLanguage));
+        builder.<ExportTableVolumeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportTableVolumeRequestBody.class),
+            f -> f.withMarshaller(ExportSlowSqlRequest::getBody, ExportSlowSqlRequest::setBody));
 
         // response
 
@@ -3571,6 +3610,39 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListScheduleTaskRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListScheduleTaskRequest::getXLanguage, ListScheduleTaskRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSchemaAndTableRequest, ListSchemaAndTableResponse> listSchemaAndTable =
+        genForListSchemaAndTable();
+
+    private static HttpRequestDef<ListSchemaAndTableRequest, ListSchemaAndTableResponse> genForListSchemaAndTable() {
+        // basic
+        HttpRequestDef.Builder<ListSchemaAndTableRequest, ListSchemaAndTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListSchemaAndTableRequest.class, ListSchemaAndTableResponse.class)
+                .withName("ListSchemaAndTable")
+                .withUri("/v3/{project_id}/instances/{instance_id}/parse/schema-table")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSchemaAndTableRequest::getInstanceId, ListSchemaAndTableRequest::setInstanceId));
+        builder.<ListSchemaAndTableRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSchemaAndTableRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSchemaAndTableRequest::getXLanguage, ListSchemaAndTableRequest::setXLanguage));
+        builder.<ListSchemaAndTableRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSchemaAndTableRequestBody.class),
+            f -> f.withMarshaller(ListSchemaAndTableRequest::getBody, ListSchemaAndTableRequest::setBody));
 
         // response
 

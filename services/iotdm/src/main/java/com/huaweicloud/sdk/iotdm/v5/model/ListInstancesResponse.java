@@ -35,7 +35,7 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 设备接入实例的总数
+     * **参数说明**：设备接入实例的总数。 
      * minimum: 1
      * maximum: 10000
      * @return count
@@ -54,7 +54,7 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 本次分页查询结果中最后一条记录的ID，可在下一次分页查询时使用
+     * **参数说明**：本次分页查询结果中最后一条记录的ID，可在下一次分页查询时使用。 
      * @return marker
      */
     public String getMarker() {
@@ -87,7 +87,7 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 设备接入实例的详情列表
+     * **参数说明**：设备接入实例的详情列表。 
      * @return instances
      */
     public List<QueryInstanceSimplify> getInstances() {

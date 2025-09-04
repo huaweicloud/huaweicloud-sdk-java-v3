@@ -26,7 +26,7 @@ public class Match {
     }
 
     /**
-     * 键。取值范围为policy , organizational-unit, account。
+     * 键。第一期限定为resource_name,后续扩展。
      * @return key
      */
     public String getKey() {

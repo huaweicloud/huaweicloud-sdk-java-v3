@@ -27,7 +27,7 @@ public class CreateAppServersResponse extends SdkResponse {
     }
 
     /**
-     * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态,按需购买返回该参数。
+     * [对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态,按需购买返回该参数。](tag:HW)[对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态。](tag:HCS)
      * @return jobId
      */
     public String getJobId() {

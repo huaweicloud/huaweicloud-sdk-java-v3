@@ -26,14 +26,14 @@ public class ServerAddress {
     private String osEXTIPSMACMacAddr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "OS-EXT-IPS:type")
-
-    private String osEXTIPSType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-IPS:port_id")
 
     private String osEXTIPSPortId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "OS-EXT-IPS:type")
+
+    private String osEXTIPSType;
 
     public ServerAddress withAddr(String addr) {
         this.addr = addr;
@@ -58,7 +58,7 @@ public class ServerAddress {
     }
 
     /**
-     * IP地址类型： `4` - IPV4 `6` - IPV6
+     * IP地址类型， `4` - IPV4 `6` - IPV6
      * @return version
      */
     public String getVersion() {
@@ -75,7 +75,7 @@ public class ServerAddress {
     }
 
     /**
-     * MAC地址。
+     * MAC地址
      * @return osEXTIPSMACMacAddr
      */
     public String getOsEXTIPSMACMacAddr() {
@@ -86,30 +86,13 @@ public class ServerAddress {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
     }
 
-    public ServerAddress withOsEXTIPSType(String osEXTIPSType) {
-        this.osEXTIPSType = osEXTIPSType;
-        return this;
-    }
-
-    /**
-     * IP地址分配方式，字符串是大小写不敏感格式。 * `fixed` - 代表私有IP地址。 * `floating` - 代表浮动IP地址。
-     * @return osEXTIPSType
-     */
-    public String getOsEXTIPSType() {
-        return osEXTIPSType;
-    }
-
-    public void setOsEXTIPSType(String osEXTIPSType) {
-        this.osEXTIPSType = osEXTIPSType;
-    }
-
     public ServerAddress withOsEXTIPSPortId(String osEXTIPSPortId) {
         this.osEXTIPSPortId = osEXTIPSPortId;
         return this;
     }
 
     /**
-     * IP地址对应的端口ID。
+     * IP地址分配方式 * `fixed` - 代表私有IP地址 * `floating` - 代表浮动IP地址
      * @return osEXTIPSPortId
      */
     public String getOsEXTIPSPortId() {
@@ -118,6 +101,23 @@ public class ServerAddress {
 
     public void setOsEXTIPSPortId(String osEXTIPSPortId) {
         this.osEXTIPSPortId = osEXTIPSPortId;
+    }
+
+    public ServerAddress withOsEXTIPSType(String osEXTIPSType) {
+        this.osEXTIPSType = osEXTIPSType;
+        return this;
+    }
+
+    /**
+     * IP地址对应的端口ID。
+     * @return osEXTIPSType
+     */
+    public String getOsEXTIPSType() {
+        return osEXTIPSType;
+    }
+
+    public void setOsEXTIPSType(String osEXTIPSType) {
+        this.osEXTIPSType = osEXTIPSType;
     }
 
     @Override
@@ -131,13 +131,13 @@ public class ServerAddress {
         ServerAddress that = (ServerAddress) obj;
         return Objects.equals(this.addr, that.addr) && Objects.equals(this.version, that.version)
             && Objects.equals(this.osEXTIPSMACMacAddr, that.osEXTIPSMACMacAddr)
-            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType)
-            && Objects.equals(this.osEXTIPSPortId, that.osEXTIPSPortId);
+            && Objects.equals(this.osEXTIPSPortId, that.osEXTIPSPortId)
+            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(addr, version, osEXTIPSMACMacAddr, osEXTIPSType, osEXTIPSPortId);
+        return Objects.hash(addr, version, osEXTIPSMACMacAddr, osEXTIPSPortId, osEXTIPSType);
     }
 
     @Override
@@ -147,8 +147,8 @@ public class ServerAddress {
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    osEXTIPSMACMacAddr: ").append(toIndentedString(osEXTIPSMACMacAddr)).append("\n");
-        sb.append("    osEXTIPSType: ").append(toIndentedString(osEXTIPSType)).append("\n");
         sb.append("    osEXTIPSPortId: ").append(toIndentedString(osEXTIPSPortId)).append("\n");
+        sb.append("    osEXTIPSType: ").append(toIndentedString(osEXTIPSType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

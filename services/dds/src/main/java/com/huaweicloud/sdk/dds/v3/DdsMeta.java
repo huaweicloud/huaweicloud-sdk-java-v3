@@ -116,6 +116,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListAuditlogsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListAuditlogsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListAz2MigrateRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListAz2MigrateResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListBackupDownloadPolicyRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListBackupDownloadPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListBackupsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListBackupsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListConfigurationsRequest;
@@ -202,6 +204,9 @@ import com.huaweicloud.sdk.dds.v3.model.RestoreInstanceResponse;
 import com.huaweicloud.sdk.dds.v3.model.RestoreNewInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.RestoreNewInstanceRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.RestoreNewInstanceResponse;
+import com.huaweicloud.sdk.dds.v3.model.SaveBackupDownloadPolicyRequest;
+import com.huaweicloud.sdk.dds.v3.model.SaveBackupDownloadPolicyRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.SaveBackupDownloadPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyResponse;
@@ -280,6 +285,9 @@ import com.huaweicloud.sdk.dds.v3.model.SwitchSslRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetResponse;
+import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyRequest;
+import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateClientNetworkRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateClientNetworkResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateConfigurationParameterRequest;
@@ -1387,6 +1395,25 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAz2MigrateRequest::getInstanceId, ListAz2MigrateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackupDownloadPolicyRequest, ListBackupDownloadPolicyResponse> listBackupDownloadPolicy =
+        genForListBackupDownloadPolicy();
+
+    private static HttpRequestDef<ListBackupDownloadPolicyRequest, ListBackupDownloadPolicyResponse> genForListBackupDownloadPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListBackupDownloadPolicyRequest, ListBackupDownloadPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListBackupDownloadPolicyRequest.class, ListBackupDownloadPolicyResponse.class)
+                .withName("ListBackupDownloadPolicy")
+                .withUri("/v3/{project_id}/backups/download-policy")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -2632,6 +2659,36 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SaveBackupDownloadPolicyRequest, SaveBackupDownloadPolicyResponse> saveBackupDownloadPolicy =
+        genForSaveBackupDownloadPolicy();
+
+    private static HttpRequestDef<SaveBackupDownloadPolicyRequest, SaveBackupDownloadPolicyResponse> genForSaveBackupDownloadPolicy() {
+        // basic
+        HttpRequestDef.Builder<SaveBackupDownloadPolicyRequest, SaveBackupDownloadPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, SaveBackupDownloadPolicyRequest.class, SaveBackupDownloadPolicyResponse.class)
+                .withName("SaveBackupDownloadPolicy")
+                .withUri("/v3/{project_id}/backups/download-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SaveBackupDownloadPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveBackupDownloadPolicyRequestBody.class),
+            f -> f.withMarshaller(SaveBackupDownloadPolicyRequest::getBody, SaveBackupDownloadPolicyRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SaveBackupDownloadPolicyResponse::getBody,
+                SaveBackupDownloadPolicyResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse> setAuditlogPolicy =
         genForSetAuditlogPolicy();
 
@@ -3651,6 +3708,39 @@ public class DdsMeta {
                 SwitchoverReplicaSetRequest::setInstanceId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBackupDownloadPolicyRequest, UpdateBackupDownloadPolicyResponse> updateBackupDownloadPolicy =
+        genForUpdateBackupDownloadPolicy();
+
+    private static HttpRequestDef<UpdateBackupDownloadPolicyRequest, UpdateBackupDownloadPolicyResponse> genForUpdateBackupDownloadPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateBackupDownloadPolicyRequest, UpdateBackupDownloadPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateBackupDownloadPolicyRequest.class,
+                    UpdateBackupDownloadPolicyResponse.class)
+                .withName("UpdateBackupDownloadPolicy")
+                .withUri("/v3/{project_id}/backups/download-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateBackupDownloadPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBackupDownloadPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateBackupDownloadPolicyRequest::getBody,
+                UpdateBackupDownloadPolicyRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateBackupDownloadPolicyResponse::getBody,
+                UpdateBackupDownloadPolicyResponse::setBody));
 
         return builder.build();
     }

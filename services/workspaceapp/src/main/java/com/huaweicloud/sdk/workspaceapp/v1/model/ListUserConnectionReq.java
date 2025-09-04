@@ -372,7 +372,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用开始时间，格式 2022-10-31 08:07:39。
+     * 登录应用开始时间，格式 2022-10-31T08:07:39Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -406,7 +406,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用开始时间，格式 2022-10-31 08:07:39。
+     * 登录应用开始时间，格式 2022-10-31T08:07:39Z。
      * @return loginStartTime
      */
     public OffsetDateTime getLoginStartTime() {
@@ -423,7 +423,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用结束时间，格式 2022-10-31 08:07:39。
+     * 登录应用结束时间，格式 2022-10-31T08:07:39Z。
      * @return loginEndTime
      */
     public OffsetDateTime getLoginEndTime() {

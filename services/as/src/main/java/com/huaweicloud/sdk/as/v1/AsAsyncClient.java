@@ -126,6 +126,8 @@ import com.huaweicloud.sdk.as.v1.model.UpdateGroupScheduledTaskRequest;
 import com.huaweicloud.sdk.as.v1.model.UpdateGroupScheduledTaskResponse;
 import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookRequest;
 import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookResponse;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingConfigRequest;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingConfigResponse;
 import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupRequest;
 import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupResponse;
 import com.huaweicloud.sdk.as.v1.model.UpdateScalingPolicyRequest;
@@ -1832,6 +1834,35 @@ public class AsAsyncClient {
     public AsyncInvoker<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse> updateLifeCycleHookAsyncInvoker(
         UpdateLifeCycleHookRequest request) {
         return new AsyncInvoker<>(request, AsMeta.updateLifeCycleHook, hcClient);
+    }
+
+    /**
+     * 修改伸缩配置
+     *
+     * 修改伸缩配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScalingConfigRequest 请求对象
+     * @return CompletableFuture<UpdateScalingConfigResponse>
+     */
+    public CompletableFuture<UpdateScalingConfigResponse> updateScalingConfigAsync(UpdateScalingConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.updateScalingConfig);
+    }
+
+    /**
+     * 修改伸缩配置
+     *
+     * 修改伸缩配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScalingConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateScalingConfigRequest, UpdateScalingConfigResponse>
+     */
+    public AsyncInvoker<UpdateScalingConfigRequest, UpdateScalingConfigResponse> updateScalingConfigAsyncInvoker(
+        UpdateScalingConfigRequest request) {
+        return new AsyncInvoker<>(request, AsMeta.updateScalingConfig, hcClient);
     }
 
     /**

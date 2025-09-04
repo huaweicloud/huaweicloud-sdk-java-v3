@@ -22,7 +22,7 @@ public class ResizeInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数说明**：订单号，修改包年包月实例时返回该参数，修改按需实例时返回为空。查看订单详情请参考[[查询订单详情](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0075746564.html)]\" 
+     * **参数说明**：订单号，修改包年包月实例时返回该参数，修改按需实例时返回为空。[查看订单详情请参考[查询订单详情](https://support.huaweicloud.com/api-bpconsole/zh-cn_topic_0075746564.html)。](tag:hws) 
      * @return orderId
      */
     public String getOrderId() {

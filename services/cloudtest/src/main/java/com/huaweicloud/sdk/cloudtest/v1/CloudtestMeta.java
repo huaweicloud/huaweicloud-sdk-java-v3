@@ -100,6 +100,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetTreeRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteBasicAwByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteBasicAwByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteCacheFileRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteCacheFileResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteFacotrByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteFacotrByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapBackupByIdRequest;
@@ -116,6 +118,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTemplateByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseInfo;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.EtlRequestBody;
@@ -169,6 +173,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListIssueTreeRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListIssueTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorIssueTreeRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorIssueTreeResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorsInfoRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorsInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListIteratorsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListLinesUsingRequest;
@@ -252,6 +258,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.SaveTaskSettingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.SaveTaskSettingRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.SaveTaskSettingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.SaveTestReportCustomDetailRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.SaveTestReportCustomDetailResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.SearchRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ServiceRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.SetTaskResultRequest;
@@ -377,6 +385,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.TestCasesQueryInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanIssueDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanJournalList;
+import com.huaweicloud.sdk.cloudtest.v1.model.TestReportCustomDetailInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestReportInfoRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestcasePlanQueryParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeRequest;
@@ -401,10 +410,15 @@ import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestReportCustomDetailByUriRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestReportCustomDetailByUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadCacheFileRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadCacheFileRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadCacheFileResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgResponse;
@@ -1149,6 +1163,49 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteCacheFileRequest, DeleteCacheFileResponse> deleteCacheFile =
+        genForDeleteCacheFile();
+
+    private static HttpRequestDef<DeleteCacheFileRequest, DeleteCacheFileResponse> genForDeleteCacheFile() {
+        // basic
+        HttpRequestDef.Builder<DeleteCacheFileRequest, DeleteCacheFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCacheFileRequest.class, DeleteCacheFileResponse.class)
+                .withName("DeleteCacheFile")
+                .withUri("/v4/{project_id}/resources/temp-attachments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCacheFileRequest::getProjectId, DeleteCacheFileRequest::setProjectId));
+        builder.<String>withRequestField("file_path",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCacheFileRequest::getFilePath, DeleteCacheFileRequest::setFilePath));
+        builder.<String>withRequestField("uri",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCacheFileRequest::getUri, DeleteCacheFileRequest::setUri));
+        builder.<String>withRequestField("parent_uri",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCacheFileRequest::getParentUri, DeleteCacheFileRequest::setParentUri));
+        builder.<Boolean>withRequestField("bak_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteCacheFileRequest::getBakUp, DeleteCacheFileRequest::setBakUp));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteFacotrByIdRequest, DeleteFacotrByIdResponse> deleteFacotrById =
         genForDeleteFacotrById();
 
@@ -1268,6 +1325,52 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTestCaseCommentRequest::getVersionUri,
                 DeleteTestCaseCommentRequest::setVersionUri));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTestReportCustomDetailByUriRequest, DeleteTestReportCustomDetailByUriResponse> deleteTestReportCustomDetailByUri =
+        genForDeleteTestReportCustomDetailByUri();
+
+    private static HttpRequestDef<DeleteTestReportCustomDetailByUriRequest, DeleteTestReportCustomDetailByUriResponse> genForDeleteTestReportCustomDetailByUri() {
+        // basic
+        HttpRequestDef.Builder<DeleteTestReportCustomDetailByUriRequest, DeleteTestReportCustomDetailByUriResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTestReportCustomDetailByUriRequest.class,
+                    DeleteTestReportCustomDetailByUriResponse.class)
+                .withName("DeleteTestReportCustomDetailByUri")
+                .withUri(
+                    "/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos/{custom_info_uri}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTestReportCustomDetailByUriRequest::getProjectId,
+                DeleteTestReportCustomDetailByUriRequest::setProjectId));
+        builder.<String>withRequestField("version_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTestReportCustomDetailByUriRequest::getVersionUri,
+                DeleteTestReportCustomDetailByUriRequest::setVersionUri));
+        builder.<String>withRequestField("report_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTestReportCustomDetailByUriRequest::getReportUri,
+                DeleteTestReportCustomDetailByUriRequest::setReportUri));
+        builder.<String>withRequestField("custom_info_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTestReportCustomDetailByUriRequest::getCustomInfoUri,
+                DeleteTestReportCustomDetailByUriRequest::setCustomInfoUri));
 
         // response
 
@@ -1810,6 +1913,29 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IteratorVersionsQueryInfo.class),
             f -> f.withMarshaller(ListIteratorsRequest::getBody, ListIteratorsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIteratorsInfoRequest, ListIteratorsInfoResponse> listIteratorsInfo =
+        genForListIteratorsInfo();
+
+    private static HttpRequestDef<ListIteratorsInfoRequest, ListIteratorsInfoResponse> genForListIteratorsInfo() {
+        // basic
+        HttpRequestDef.Builder<ListIteratorsInfoRequest, ListIteratorsInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListIteratorsInfoRequest.class, ListIteratorsInfoResponse.class)
+                .withName("ListIteratorsInfo")
+                .withUri("/v4/iterators/info/batch-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<IteratorVersionsQueryInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IteratorVersionsQueryInfo.class),
+            f -> f.withMarshaller(ListIteratorsInfoRequest::getBody, ListIteratorsInfoRequest::setBody));
 
         // response
 
@@ -2843,6 +2969,51 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SaveTaskSettingRequestBody.class),
             f -> f.withMarshaller(SaveTaskSettingRequest::getBody, SaveTaskSettingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SaveTestReportCustomDetailRequest, SaveTestReportCustomDetailResponse> saveTestReportCustomDetail =
+        genForSaveTestReportCustomDetail();
+
+    private static HttpRequestDef<SaveTestReportCustomDetailRequest, SaveTestReportCustomDetailResponse> genForSaveTestReportCustomDetail() {
+        // basic
+        HttpRequestDef.Builder<SaveTestReportCustomDetailRequest, SaveTestReportCustomDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SaveTestReportCustomDetailRequest.class,
+                    SaveTestReportCustomDetailResponse.class)
+                .withName("SaveTestReportCustomDetail")
+                .withUri("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTestReportCustomDetailRequest::getProjectId,
+                SaveTestReportCustomDetailRequest::setProjectId));
+        builder.<String>withRequestField("version_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTestReportCustomDetailRequest::getVersionUri,
+                SaveTestReportCustomDetailRequest::setVersionUri));
+        builder.<String>withRequestField("report_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTestReportCustomDetailRequest::getReportUri,
+                SaveTestReportCustomDetailRequest::setReportUri));
+        builder.<TestReportCustomDetailInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TestReportCustomDetailInfo.class),
+            f -> f.withMarshaller(SaveTestReportCustomDetailRequest::getBody,
+                SaveTestReportCustomDetailRequest::setBody));
 
         // response
 
@@ -4693,6 +4864,58 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateTestReportCustomDetailByUriRequest, UpdateTestReportCustomDetailByUriResponse> updateTestReportCustomDetailByUri =
+        genForUpdateTestReportCustomDetailByUri();
+
+    private static HttpRequestDef<UpdateTestReportCustomDetailByUriRequest, UpdateTestReportCustomDetailByUriResponse> genForUpdateTestReportCustomDetailByUri() {
+        // basic
+        HttpRequestDef.Builder<UpdateTestReportCustomDetailByUriRequest, UpdateTestReportCustomDetailByUriResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateTestReportCustomDetailByUriRequest.class,
+                    UpdateTestReportCustomDetailByUriResponse.class)
+                .withName("UpdateTestReportCustomDetailByUri")
+                .withUri(
+                    "/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos/{custom_info_uri}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTestReportCustomDetailByUriRequest::getProjectId,
+                UpdateTestReportCustomDetailByUriRequest::setProjectId));
+        builder.<String>withRequestField("version_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTestReportCustomDetailByUriRequest::getVersionUri,
+                UpdateTestReportCustomDetailByUriRequest::setVersionUri));
+        builder.<String>withRequestField("report_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTestReportCustomDetailByUriRequest::getReportUri,
+                UpdateTestReportCustomDetailByUriRequest::setReportUri));
+        builder.<String>withRequestField("custom_info_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTestReportCustomDetailByUriRequest::getCustomInfoUri,
+                UpdateTestReportCustomDetailByUriRequest::setCustomInfoUri));
+        builder.<TestReportCustomDetailInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TestReportCustomDetailInfo.class),
+            f -> f.withMarshaller(UpdateTestReportCustomDetailByUriRequest::getBody,
+                UpdateTestReportCustomDetailByUriRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateUserDnsMappingRequest, UpdateUserDnsMappingResponse> updateUserDnsMapping =
         genForUpdateUserDnsMapping();
 
@@ -4744,6 +4967,49 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TestCaseInfo.class),
             f -> f.withMarshaller(UpdateVersionTestCaseRequest::getBody, UpdateVersionTestCaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadCacheFileRequest, UploadCacheFileResponse> uploadCacheFile =
+        genForUploadCacheFile();
+
+    private static HttpRequestDef<UploadCacheFileRequest, UploadCacheFileResponse> genForUploadCacheFile() {
+        // basic
+        HttpRequestDef.Builder<UploadCacheFileRequest, UploadCacheFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadCacheFileRequest.class, UploadCacheFileResponse.class)
+                .withName("UploadCacheFile")
+                .withUri("/v4/{project_id}/resources/temp-attachments")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadCacheFileRequest::getProjectId, UploadCacheFileRequest::setProjectId));
+        builder.<Boolean>withRequestField("override",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(UploadCacheFileRequest::getOverride, UploadCacheFileRequest::setOverride));
+        builder.<String>withRequestField("parent_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadCacheFileRequest::getParentType, UploadCacheFileRequest::setParentType));
+        builder.<String>withRequestField("parent_uri",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadCacheFileRequest::getParentUri, UploadCacheFileRequest::setParentUri));
+        builder.<UploadCacheFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadCacheFileRequestBody.class),
+            f -> f.withMarshaller(UploadCacheFileRequest::getBody, UploadCacheFileRequest::setBody));
 
         // response
 
