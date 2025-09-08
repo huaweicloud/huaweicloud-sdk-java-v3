@@ -34,4 +34,4 @@ jobs:
           EXCLUDED_TEST_SERVICES: ${{ vars.EXCLUDED_TEST_SERVICES }}
         shell: bash
       - name: Maven CI
-        run: mvn -U -B clean install
+        run: mvn -U -B clean install -Dnet.bytebuddy.experimental=true
