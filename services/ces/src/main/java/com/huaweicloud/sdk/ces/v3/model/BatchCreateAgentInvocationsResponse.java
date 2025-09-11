@@ -42,7 +42,7 @@ public class BatchCreateAgentInvocationsResponse extends SdkResponse {
     }
 
     /**
-     * 创建任务的信息列表
+     * **参数解释**: 创建任务的信息列表 **取值范围**: 数组长度范围为[0,100] 
      * @return invocations
      */
     public List<BatchCreateInvocationInfo> getInvocations() {

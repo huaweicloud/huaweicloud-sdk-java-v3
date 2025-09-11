@@ -168,7 +168,7 @@ public class ListAgentDimensionInfoRequest {
     }
 
     /**
-     * **参数描述**： 维度值。 **约束限制**： 不涉及。  **取值范围**： 32位字符串，如：2e84018fc8b4484b94e89aae212fe615。 **默认取值**： 不涉及。 
+     * **参数描述**： 维度值(建议：同一个instance_id下相同dim_value对应的原始维度值origin_value是一样的，无需多次调用，建议根据instance_id + dim_value作为key进行缓存重复使用)。 **约束限制**： 不涉及。  **取值范围**： 32位字符串，如：2e84018fc8b4484b94e89aae212fe615。 **默认取值**： 不涉及。 
      * @return dimValue
      */
     public String getDimValue() {

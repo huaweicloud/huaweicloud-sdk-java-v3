@@ -46,7 +46,7 @@ public class ListInstanceAccessoriesRequest {
     private Integer limit;
 
     /**
-     * 附件类型，signature.cosign
+     * 附件类型，支持的附件类型有：signature.cosign
      */
     public static final class TypeEnum {
 
@@ -224,7 +224,7 @@ public class ListInstanceAccessoriesRequest {
     }
 
     /**
-     * 附件类型，signature.cosign
+     * 附件类型，支持的附件类型有：signature.cosign
      * @return type
      */
     public TypeEnum getType() {

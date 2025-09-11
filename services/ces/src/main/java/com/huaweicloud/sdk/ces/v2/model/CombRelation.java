@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 组合匹配参数
+ * **参数解释** 组合匹配参数。 **约束限制** 不涉及。 
  */
 public class CombRelation {
 
     /**
-     * 逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 
+     * **参数解释** 逻辑运算符。 **约束限制** 不涉及。 **取值范围** - ALL: 所有条件匹配成功。 - ANY: 任意条件匹配成功。 **默认取值** 不涉及。 
      */
     public static final class LogicalOperatorEnum {
 
@@ -104,7 +104,7 @@ public class CombRelation {
     }
 
     /**
-     * 逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 
+     * **参数解释** 逻辑运算符。 **约束限制** 不涉及。 **取值范围** - ALL: 所有条件匹配成功。 - ANY: 任意条件匹配成功。 **默认取值** 不涉及。 
      * @return logicalOperator
      */
     public LogicalOperatorEnum getLogicalOperator() {
@@ -137,7 +137,7 @@ public class CombRelation {
     }
 
     /**
-     * 组合匹配资源分组的匹配条件
+     * **参数解释** 组合匹配资源分组的匹配条件。 **约束限制** 不超过50个条件。 
      * @return conditions
      */
     public List<Condition> getConditions() {

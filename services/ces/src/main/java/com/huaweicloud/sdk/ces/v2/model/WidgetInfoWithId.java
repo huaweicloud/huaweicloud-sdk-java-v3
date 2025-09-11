@@ -31,7 +31,7 @@ public class WidgetInfoWithId {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
-    private List<WidgetMetric> metrics = null;
+    private List<WidgetMetricResp> metrics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "title")
@@ -49,7 +49,7 @@ public class WidgetInfoWithId {
     private Boolean thresholdEnabled;
 
     /**
-     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
+     * **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 
      */
     public static final class ViewEnum {
 
@@ -148,7 +148,7 @@ public class WidgetInfoWithId {
     private ViewEnum view;
 
     /**
-     * 指标展示类型，single 单指标展示，multiple 多指标展示
+     * **参数解释** 指标展示类型 **取值范围** - single:单指标展示 - multiple:多指标展示 
      */
     public static final class MetricDisplayModeEnum {
 
@@ -225,12 +225,12 @@ public class WidgetInfoWithId {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private BaseWidgetInfoProperties properties;
+    private BaseWidgetInfoRespProperties properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
-    private UpdateWidgetInfoLocation location;
+    private BaseWidgetInfoRespLocation location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -248,7 +248,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 视图id
+     * **参数解释** 视图id **取值范围** 字符串必须以wg开头，包含22个字母和数字，长度为24个字符。 
      * @return widgetId
      */
     public String getWidgetId() {
@@ -265,7 +265,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 视图分区id
+     * **参数解释** 视图分组id **取值范围** 字符串必须以dg开头，包含22个字母和数字，长度为24个字符或者为default，default代表不分组 
      * @return groupId
      */
     public String getGroupId() {
@@ -276,12 +276,12 @@ public class WidgetInfoWithId {
         this.groupId = groupId;
     }
 
-    public WidgetInfoWithId withMetrics(List<WidgetMetric> metrics) {
+    public WidgetInfoWithId withMetrics(List<WidgetMetricResp> metrics) {
         this.metrics = metrics;
         return this;
     }
 
-    public WidgetInfoWithId addMetricsItem(WidgetMetric metricsItem) {
+    public WidgetInfoWithId addMetricsItem(WidgetMetricResp metricsItem) {
         if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
@@ -289,7 +289,7 @@ public class WidgetInfoWithId {
         return this;
     }
 
-    public WidgetInfoWithId withMetrics(Consumer<List<WidgetMetric>> metricsSetter) {
+    public WidgetInfoWithId withMetrics(Consumer<List<WidgetMetricResp>> metricsSetter) {
         if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
@@ -298,14 +298,14 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 指标列表
+     * **参数解释** 指标列表 
      * @return metrics
      */
-    public List<WidgetMetric> getMetrics() {
+    public List<WidgetMetricResp> getMetrics() {
         return metrics;
     }
 
-    public void setMetrics(List<WidgetMetric> metrics) {
+    public void setMetrics(List<WidgetMetricResp> metrics) {
         this.metrics = metrics;
     }
 
@@ -315,7 +315,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 监控视图标题
+     * **参数解释** 监控视图标题 **取值范围** 长度为[1,128]个字符，允许包括以下内容：1、中文汉字；2、拉丁字母；3、英文大小写字母；4、数字(0-9)；5、符号： ” \" ≤ < > & % _ : / ; “ ' ? + , ~ ， （ ） º ( ) [ . - 
      * @return title
      */
     public String getTitle() {
@@ -332,7 +332,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 监控视图指标的阈值
+     * **参数解释** 监控视图指标的阈值 **取值范围** 最小值为0，最大值为1.7976931348623157e+308 
      * minimum: 0
      * maximum: 1.7976931348623157E+308
      * @return threshold
@@ -351,7 +351,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 阈值是否展示，true:展示，false:不展示
+     * **参数解释** 阈值是否展示 **取值范围** - true:展示 - false:不展示 
      * @return thresholdEnabled
      */
     public Boolean getThresholdEnabled() {
@@ -368,7 +368,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
+     * **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 
      * @return view
      */
     public ViewEnum getView() {
@@ -385,7 +385,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 指标展示类型，single 单指标展示，multiple 多指标展示
+     * **参数解释** 指标展示类型 **取值范围** - single:单指标展示 - multiple:多指标展示 
      * @return metricDisplayMode
      */
     public MetricDisplayModeEnum getMetricDisplayMode() {
@@ -396,14 +396,14 @@ public class WidgetInfoWithId {
         this.metricDisplayMode = metricDisplayMode;
     }
 
-    public WidgetInfoWithId withProperties(BaseWidgetInfoProperties properties) {
+    public WidgetInfoWithId withProperties(BaseWidgetInfoRespProperties properties) {
         this.properties = properties;
         return this;
     }
 
-    public WidgetInfoWithId withProperties(Consumer<BaseWidgetInfoProperties> propertiesSetter) {
+    public WidgetInfoWithId withProperties(Consumer<BaseWidgetInfoRespProperties> propertiesSetter) {
         if (this.properties == null) {
-            this.properties = new BaseWidgetInfoProperties();
+            this.properties = new BaseWidgetInfoRespProperties();
             propertiesSetter.accept(this.properties);
         }
 
@@ -414,22 +414,22 @@ public class WidgetInfoWithId {
      * Get properties
      * @return properties
      */
-    public BaseWidgetInfoProperties getProperties() {
+    public BaseWidgetInfoRespProperties getProperties() {
         return properties;
     }
 
-    public void setProperties(BaseWidgetInfoProperties properties) {
+    public void setProperties(BaseWidgetInfoRespProperties properties) {
         this.properties = properties;
     }
 
-    public WidgetInfoWithId withLocation(UpdateWidgetInfoLocation location) {
+    public WidgetInfoWithId withLocation(BaseWidgetInfoRespLocation location) {
         this.location = location;
         return this;
     }
 
-    public WidgetInfoWithId withLocation(Consumer<UpdateWidgetInfoLocation> locationSetter) {
+    public WidgetInfoWithId withLocation(Consumer<BaseWidgetInfoRespLocation> locationSetter) {
         if (this.location == null) {
-            this.location = new UpdateWidgetInfoLocation();
+            this.location = new BaseWidgetInfoRespLocation();
             locationSetter.accept(this.location);
         }
 
@@ -440,11 +440,11 @@ public class WidgetInfoWithId {
      * Get location
      * @return location
      */
-    public UpdateWidgetInfoLocation getLocation() {
+    public BaseWidgetInfoRespLocation getLocation() {
         return location;
     }
 
-    public void setLocation(UpdateWidgetInfoLocation location) {
+    public void setLocation(BaseWidgetInfoRespLocation location) {
         this.location = location;
     }
 
@@ -454,7 +454,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 单位
+     * **参数解释** 单位 **取值范围** 长度为[0,32]个字符 
      * @return unit
      */
     public String getUnit() {
@@ -471,7 +471,7 @@ public class WidgetInfoWithId {
     }
 
     /**
-     * 监控看板创建时间
+     * **参数解释** 监控看板创建时间 **取值范围** 最小值为1111111111111，最大值为9999999999999 
      * minimum: 1111111111111
      * maximum: 9999999999999
      * @return createTime

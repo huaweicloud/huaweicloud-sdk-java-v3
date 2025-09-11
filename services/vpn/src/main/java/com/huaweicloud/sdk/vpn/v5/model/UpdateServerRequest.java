@@ -53,12 +53,24 @@ public class UpdateServerRequest {
          */
         public static final ClientAuthTypeEnum LOCAL_PASSWORD = new ClientAuthTypeEnum("LOCAL_PASSWORD");
 
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final ClientAuthTypeEnum IAM = new ClientAuthTypeEnum("IAM");
+
+        /**
+         * Enum FEDERATED for value: "FEDERATED"
+         */
+        public static final ClientAuthTypeEnum FEDERATED = new ClientAuthTypeEnum("FEDERATED");
+
         private static final Map<String, ClientAuthTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ClientAuthTypeEnum> createStaticFields() {
             Map<String, ClientAuthTypeEnum> map = new HashMap<>();
             map.put("CERT", CERT);
             map.put("LOCAL_PASSWORD", LOCAL_PASSWORD);
+            map.put("IAM", IAM);
+            map.put("FEDERATED", FEDERATED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -117,6 +129,11 @@ public class UpdateServerRequest {
     @JsonProperty(value = "dns_servers")
 
     private List<String> dnsServers = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "idp_name")
+
+    private String idpName;
 
     public UpdateServerRequest withClientCidr(String clientCidr) {
         this.clientCidr = clientCidr;
@@ -271,6 +288,23 @@ public class UpdateServerRequest {
         this.dnsServers = dnsServers;
     }
 
+    public UpdateServerRequest withIdpName(String idpName) {
+        this.idpName = idpName;
+        return this;
+    }
+
+    /**
+     * 身份提供商名称。
+     * @return idpName
+     */
+    public String getIdpName() {
+        return idpName;
+    }
+
+    public void setIdpName(String idpName) {
+        this.idpName = idpName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -284,12 +318,13 @@ public class UpdateServerRequest {
             && Objects.equals(this.serverCertificate, that.serverCertificate)
             && Objects.equals(this.sslOptions, that.sslOptions)
             && Objects.equals(this.clientAuthType, that.clientAuthType)
-            && Objects.equals(this.dnsServers, that.dnsServers);
+            && Objects.equals(this.dnsServers, that.dnsServers) && Objects.equals(this.idpName, that.idpName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientCidr, localSubnets, serverCertificate, sslOptions, clientAuthType, dnsServers);
+        return Objects
+            .hash(clientCidr, localSubnets, serverCertificate, sslOptions, clientAuthType, dnsServers, idpName);
     }
 
     @Override
@@ -302,6 +337,7 @@ public class UpdateServerRequest {
         sb.append("    sslOptions: ").append(toIndentedString(sslOptions)).append("\n");
         sb.append("    clientAuthType: ").append(toIndentedString(clientAuthType)).append("\n");
         sb.append("    dnsServers: ").append(toIndentedString(dnsServers)).append("\n");
+        sb.append("    idpName: ").append(toIndentedString(idpName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

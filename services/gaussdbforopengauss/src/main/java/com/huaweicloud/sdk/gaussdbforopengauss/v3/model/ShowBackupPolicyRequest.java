@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ShowBackupPolicyRequest {
 
     /**
-     * 语言。默认值：en-us。
+     * **参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**:   - zh-cn   - en-us  **默认取值**: en-us
      */
     public static final class XLanguageEnum {
 
@@ -101,7 +101,7 @@ public class ShowBackupPolicyRequest {
     }
 
     /**
-     * 语言。默认值：en-us。
+     * **参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**:   - zh-cn   - en-us  **默认取值**: en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -120,7 +120,7 @@ public class ShowBackupPolicyRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**: 实例ID，此参数是用户创建实例的唯一标识。 **约束限制**: 不涉及。 **取值范围**: 只能由英文字母、数字组成，且长度为36个字符。 **默认取值**: 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {

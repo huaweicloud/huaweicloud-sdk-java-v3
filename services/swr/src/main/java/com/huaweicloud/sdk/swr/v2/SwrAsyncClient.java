@@ -87,6 +87,8 @@ import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceRetentionPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceRetentionPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceSignPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceSignPolicyResponse;
+import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceTagRequest;
+import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceTagResponse;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceWebhookRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceWebhookResponse;
 import com.huaweicloud.sdk.swr.v2.model.DeleteNamespaceAuthRequest;
@@ -2288,9 +2290,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 创建触发器策略
+     * 创建触发器
      *
-     * 创建触发器策略
+     * 创建触发器
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2303,9 +2305,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 创建触发器策略
+     * 创建触发器
      *
-     * 创建触发器策略
+     * 创建触发器
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2435,9 +2437,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 删除制品
+     * 删除制品版本
      *
-     * 删除制品
+     * 删除制品版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2450,9 +2452,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 删除制品
+     * 删除制品版本
      *
-     * 删除制品
+     * 删除制品版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2764,9 +2766,38 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 删除触发器策略
+     * 删除制品的Tag
      *
-     * 删除触发器策略
+     * 删除制品Tag
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceTagRequest 请求对象
+     * @return CompletableFuture<DeleteInstanceTagResponse>
+     */
+    public CompletableFuture<DeleteInstanceTagResponse> deleteInstanceTagAsync(DeleteInstanceTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.deleteInstanceTag);
+    }
+
+    /**
+     * 删除制品的Tag
+     *
+     * 删除制品Tag
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceTagRequest 请求对象
+     * @return AsyncInvoker<DeleteInstanceTagRequest, DeleteInstanceTagResponse>
+     */
+    public AsyncInvoker<DeleteInstanceTagRequest, DeleteInstanceTagResponse> deleteInstanceTagAsyncInvoker(
+        DeleteInstanceTagRequest request) {
+        return new AsyncInvoker<>(request, SwrMeta.deleteInstanceTag, hcClient);
+    }
+
+    /**
+     * 删除触发器
+     *
+     * 删除触发器
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2779,9 +2810,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 删除触发器策略
+     * 删除触发器
      *
-     * 删除触发器策略
+     * 删除触发器
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3121,7 +3152,7 @@ public class SwrAsyncClient {
     /**
      * 获取仓库实例的所有制品版本列表
      *
-     * 获取仓库实例的所有制品版本列表（此接口只在企业仓库实例版本大于25.6.0以上的版本才支持）
+     * 获取仓库实例的所有制品版本列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3136,7 +3167,7 @@ public class SwrAsyncClient {
     /**
      * 获取仓库实例的所有制品版本列表
      *
-     * 获取仓库实例的所有制品版本列表（此接口只在企业仓库实例版本大于25.6.0以上的版本才支持）
+     * 获取仓库实例的所有制品版本列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3897,9 +3928,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 获取触发器策略列表
+     * 获取触发器列表
      *
-     * 获取触发器策略列表
+     * 获取触发器列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3912,9 +3943,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 获取触发器策略列表
+     * 获取触发器列表
      *
-     * 获取触发器策略列表
+     * 获取触发器列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4074,9 +4105,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 获取制品详情
+     * 获取制品版本详情
      *
-     * 获取制品详情
+     * 获取制品版本详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4089,9 +4120,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 获取制品详情
+     * 获取制品版本详情
      *
-     * 获取制品详情
+     * 获取制品版本详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4463,9 +4494,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 获取触发器策略详情
+     * 获取触发器详情
      *
-     * 获取触发器策略详情
+     * 获取触发器详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4477,9 +4508,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 获取触发器策略详情
+     * 获取触发器详情
      *
-     * 获取触发器策略详情
+     * 获取触发器详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4642,7 +4673,7 @@ public class SwrAsyncClient {
     /**
      * 更新公网访问白名单
      *
-     * 更新公网访问白名单，更新为全量更新方式
+     * 更新公网访问白名单，更新方式为全量更新方式
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4657,7 +4688,7 @@ public class SwrAsyncClient {
     /**
      * 更新公网访问白名单
      *
-     * 更新公网访问白名单，更新为全量更新方式
+     * 更新公网访问白名单，更新方式为全量更新方式
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4880,9 +4911,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 修改触发器策略
+     * 修改触发器
      *
-     * 修改触发器策略
+     * 修改触发器
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4895,9 +4926,9 @@ public class SwrAsyncClient {
     }
 
     /**
-     * 修改触发器策略
+     * 修改触发器
      *
-     * 修改触发器策略
+     * 修改触发器
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

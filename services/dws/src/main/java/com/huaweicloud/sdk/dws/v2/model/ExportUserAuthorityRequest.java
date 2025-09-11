@@ -2,15 +2,13 @@ package com.huaweicloud.sdk.dws.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.progress.ProgressListener;
-import com.huaweicloud.sdk.core.progress.ProgressRequest;
 
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ExportUserAuthorityRequest implements ProgressRequest {
+public class ExportUserAuthorityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
@@ -31,30 +29,6 @@ public class ExportUserAuthorityRequest implements ProgressRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
-
-    private ProgressListener progressListener;
-
-    private long progressInterval;
-
-    @Override
-    public void setProgressListener(ProgressListener progressListener) {
-        this.progressListener = progressListener;
-    }
-
-    @Override
-    public ProgressListener getProgressListener() {
-        return progressListener;
-    }
-
-    @Override
-    public void setProgressInterval(long progressInterval) {
-        this.progressInterval = progressInterval;
-    }
-
-    @Override
-    public long getProgressInterval() {
-        return progressInterval;
-    }
 
     public ExportUserAuthorityRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;

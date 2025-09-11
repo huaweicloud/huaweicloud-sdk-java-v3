@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 屏蔽告警通知或者屏蔽告警计算的实现方式。ALARM_RULE：通过告警规则屏蔽告警通知，RESOURCE：通过资源屏蔽告警通知，RESOURCE_POLICY_NOTIFICATION：通过告警策略和告警资源屏蔽告警通知，RESOURCE_POLICY_ALARM：通过告警策略和告警资源屏蔽计算告警。
+ * **参数解释**： 屏蔽告警通知或者屏蔽告警计算的实现方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值，只能为ALARM_RULE、RESOURCE、RESOURCE_POLICY_NOTIFICATION、RESOURCE_POLICY_ALARM，长度为[1,32]个字符。 - ALARM_RULE：通过告警规则屏蔽告警通知。 - RESOURCE：通过资源屏蔽告警通知。 - RESOURCE_POLICY_NOTIFICATION：通过告警策略和告警资源屏蔽告警通知。 - RESOURCE_POLICY_ALARM：通过告警策略和告警资源屏蔽计算告警。           **默认取值**： 不涉及。 
  */
 public class RelationType {
 

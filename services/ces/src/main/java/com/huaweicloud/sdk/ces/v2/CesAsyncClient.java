@@ -18,6 +18,8 @@ import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchListSpecifiedMetricDataRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchListSpecifiedMetricDataResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMasksRequest;
@@ -387,6 +389,36 @@ public class CesAsyncClient {
     public AsyncInvoker<BatchEnableAlarmRulesRequest, BatchEnableAlarmRulesResponse> batchEnableAlarmRulesAsyncInvoker(
         BatchEnableAlarmRulesRequest request) {
         return new AsyncInvoker<>(request, CesMeta.batchEnableAlarmRules, hcClient);
+    }
+
+    /**
+     * 批量查询指标数据
+     *
+     * 批量查询指标数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchListSpecifiedMetricDataRequest 请求对象
+     * @return CompletableFuture<BatchListSpecifiedMetricDataResponse>
+     */
+    public CompletableFuture<BatchListSpecifiedMetricDataResponse> batchListSpecifiedMetricDataAsync(
+        BatchListSpecifiedMetricDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.batchListSpecifiedMetricData);
+    }
+
+    /**
+     * 批量查询指标数据
+     *
+     * 批量查询指标数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchListSpecifiedMetricDataRequest 请求对象
+     * @return AsyncInvoker<BatchListSpecifiedMetricDataRequest, BatchListSpecifiedMetricDataResponse>
+     */
+    public AsyncInvoker<BatchListSpecifiedMetricDataRequest, BatchListSpecifiedMetricDataResponse> batchListSpecifiedMetricDataAsyncInvoker(
+        BatchListSpecifiedMetricDataRequest request) {
+        return new AsyncInvoker<>(request, CesMeta.batchListSpecifiedMetricData, hcClient);
     }
 
     /**
@@ -802,9 +834,9 @@ public class CesAsyncClient {
     }
 
     /**
-     * 查询主机监控维度指标信息
+     * 查询主机监控原始维度值
      *
-     * 根据ECS/BMS资源ID查询磁盘、挂载点、进程、显卡、RAID控制器维度指标信息；维度NPU已经为原始值，不需要调用该接口进行额外查询获取指标信息
+     * 根据ECS/BMS资源ID及特殊维度值(仅支持磁盘、挂载点、进程、显卡、RAID控制器)查询该特殊维度对应的原始维度值；其他维度无需调用该接口
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -817,9 +849,9 @@ public class CesAsyncClient {
     }
 
     /**
-     * 查询主机监控维度指标信息
+     * 查询主机监控原始维度值
      *
-     * 根据ECS/BMS资源ID查询磁盘、挂载点、进程、显卡、RAID控制器维度指标信息；维度NPU已经为原始值，不需要调用该接口进行额外查询获取指标信息
+     * 根据ECS/BMS资源ID及特殊维度值(仅支持磁盘、挂载点、进程、显卡、RAID控制器)查询该特殊维度对应的原始维度值；其他维度无需调用该接口
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

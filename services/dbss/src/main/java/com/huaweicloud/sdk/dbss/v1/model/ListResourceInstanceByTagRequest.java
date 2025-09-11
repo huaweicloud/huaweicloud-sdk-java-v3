@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ListResourceInstanceByTagRequest {
 
     /**
-     * 资源类型。 - auditInstance
+     * **参数解释**：  资源类型。 **约束限制**： 不涉及 **取值范围**：  - auditInstance: 审计  **默认取值**： 不涉及 
      */
     public static final class ResourceTypeEnum {
 
@@ -106,7 +106,7 @@ public class ListResourceInstanceByTagRequest {
     }
 
     /**
-     * 资源类型。 - auditInstance
+     * **参数解释**：  资源类型。 **约束限制**： 不涉及 **取值范围**：  - auditInstance: 审计  **默认取值**： 不涉及 
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -123,7 +123,7 @@ public class ListResourceInstanceByTagRequest {
     }
 
     /**
-     * 查询记录数（action为count时无此参数）如果action为filter默认为1000，limit最多为1000,不能为负数，最小值为1。
+     * **参数解释**： 每页查询记录数。 **约束限制**： 仅支持大于0的整数 **取值范围**： 大于0小于等于10000 **默认取值**： 默认值为1000 
      * @return limit
      */
     public String getLimit() {
@@ -140,7 +140,7 @@ public class ListResourceInstanceByTagRequest {
     }
 
     /**
-     * 索引位置，偏移量（action为count时无此参数）从第一条数据偏移offset条数据后开始查询，如果action为filter默认为0（偏移0条数据，表示从第一条数据开始查询）,必须为数字，不能为负数。
+     * **参数解释**： 分页偏移量，从第一条数据偏移offset条数据后开始查询 **约束限制**： 仅支持大于等于0的整数 **取值范围**： 大于等于0 **默认取值**： 默认值为0 
      * @return offset
      */
     public String getOffset() {

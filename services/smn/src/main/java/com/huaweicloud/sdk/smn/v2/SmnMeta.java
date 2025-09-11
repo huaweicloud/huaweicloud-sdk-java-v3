@@ -16,14 +16,21 @@ import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsRequestBo
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsByTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsByTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsRequestBody;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchSubscriptionsFilterPolicesRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesResponse;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionResponse;
+import com.huaweicloud.sdk.smn.v2.model.ConfirmSubscriptionRequest;
+import com.huaweicloud.sdk.smn.v2.model.ConfirmSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointResponse;
@@ -56,12 +63,16 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.smn.v2.model.DeleteSubscriptionsByTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.DeleteSubscriptionsByTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributeByNameRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributeByNameResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicResponse;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertRequest;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertResponse;
 import com.huaweicloud.sdk.smn.v2.model.HttpDetectRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesResponse;
@@ -71,6 +82,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListInstanceRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankResponse;
@@ -80,6 +93,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplatesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplatesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListProtocolsRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListProtocolsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceInstancesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceInstancesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceTagsRequest;
@@ -113,6 +128,8 @@ import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyResponse;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionRequest;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
@@ -267,6 +284,65 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteSubscriptionsRequest, BatchDeleteSubscriptionsResponse> batchDeleteSubscriptions =
+        genForBatchDeleteSubscriptions();
+
+    private static HttpRequestDef<BatchDeleteSubscriptionsRequest, BatchDeleteSubscriptionsResponse> genForBatchDeleteSubscriptions() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSubscriptionsRequest, BatchDeleteSubscriptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteSubscriptionsRequest.class,
+                    BatchDeleteSubscriptionsResponse.class)
+                .withName("BatchDeleteSubscriptions")
+                .withUri("/v2/{project_id}/notifications/subscriptions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchDeleteSubscriptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteSubscriptionsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteSubscriptionsRequest::getBody, BatchDeleteSubscriptionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSubscriptionsByTopicRequest, BatchDeleteSubscriptionsByTopicResponse> batchDeleteSubscriptionsByTopic =
+        genForBatchDeleteSubscriptionsByTopic();
+
+    private static HttpRequestDef<BatchDeleteSubscriptionsByTopicRequest, BatchDeleteSubscriptionsByTopicResponse> genForBatchDeleteSubscriptionsByTopic() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSubscriptionsByTopicRequest, BatchDeleteSubscriptionsByTopicResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteSubscriptionsByTopicRequest.class,
+                    BatchDeleteSubscriptionsByTopicResponse.class)
+                .withName("BatchDeleteSubscriptionsByTopic")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSubscriptionsByTopicRequest::getTopicUrn,
+                BatchDeleteSubscriptionsByTopicRequest::setTopicUrn));
+        builder.<BatchDeleteSubscriptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteSubscriptionsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteSubscriptionsByTopicRequest::getBody,
+                BatchDeleteSubscriptionsByTopicRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteSubscriptionsFilterPolicesRequest, BatchDeleteSubscriptionsFilterPolicesResponse> batchDeleteSubscriptionsFilterPolices =
         genForBatchDeleteSubscriptionsFilterPolices();
 
@@ -339,6 +415,39 @@ public class SmnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelSubscriptionRequest::getSubscriptionUrn,
                 CancelSubscriptionRequest::setSubscriptionUrn));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> confirmSubscription =
+        genForConfirmSubscription();
+
+    private static HttpRequestDef<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> genForConfirmSubscription() {
+        // basic
+        HttpRequestDef.Builder<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ConfirmSubscriptionRequest.class, ConfirmSubscriptionResponse.class)
+                .withName("ConfirmSubscription")
+                .withUri("/rest/v2/notifications/subscription/confirm")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmSubscriptionRequest::getTopicUrn, ConfirmSubscriptionRequest::setTopicUrn));
+        builder.<String>withRequestField("endpoint",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmSubscriptionRequest::getEndpoint, ConfirmSubscriptionRequest::setEndpoint));
+        builder.<String>withRequestField("token",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmSubscriptionRequest::getToken, ConfirmSubscriptionRequest::setToken));
 
         // response
 
@@ -595,6 +704,39 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSubscriptionsByTopicRequest, DeleteSubscriptionsByTopicResponse> deleteSubscriptionsByTopic =
+        genForDeleteSubscriptionsByTopic();
+
+    private static HttpRequestDef<DeleteSubscriptionsByTopicRequest, DeleteSubscriptionsByTopicResponse> genForDeleteSubscriptionsByTopic() {
+        // basic
+        HttpRequestDef.Builder<DeleteSubscriptionsByTopicRequest, DeleteSubscriptionsByTopicResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSubscriptionsByTopicRequest.class,
+                    DeleteSubscriptionsByTopicResponse.class)
+                .withName("DeleteSubscriptionsByTopic")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions/{subscription_urn}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubscriptionsByTopicRequest::getTopicUrn,
+                DeleteSubscriptionsByTopicRequest::setTopicUrn));
+        builder.<String>withRequestField("subscription_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubscriptionsByTopicRequest::getSubscriptionUrn,
+                DeleteSubscriptionsByTopicRequest::setSubscriptionUrn));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTopicRequest, DeleteTopicResponse> deleteTopic = genForDeleteTopic();
 
     private static HttpRequestDef<DeleteTopicRequest, DeleteTopicResponse> genForDeleteTopic() {
@@ -668,6 +810,58 @@ public class SmnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTopicAttributesRequest::getTopicUrn,
                 DeleteTopicAttributesRequest::setTopicUrn));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadHttpCertRequest, DownloadHttpCertResponse> downloadHttpCert =
+        genForDownloadHttpCert();
+
+    private static HttpRequestDef<DownloadHttpCertRequest, DownloadHttpCertResponse> genForDownloadHttpCert() {
+        // basic
+        HttpRequestDef.Builder<DownloadHttpCertRequest, DownloadHttpCertResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadHttpCertRequest.class, DownloadHttpCertResponse.class)
+                .withName("DownloadHttpCert")
+                .withUri("/smn/{certificate_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadHttpCertRequest::getCertificateId,
+                DownloadHttpCertRequest::setCertificateId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DownloadHttpCertResponse::getBody, DownloadHttpCertResponse::setBody));
+
+        builder.<String>withResponseField("content-type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DownloadHttpCertResponse::getContentType, DownloadHttpCertResponse::setContentType));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloudServiceRequest, ListCloudServiceResponse> listCloudService =
+        genForListCloudService();
+
+    private static HttpRequestDef<ListCloudServiceRequest, ListCloudServiceResponse> genForListCloudService() {
+        // basic
+        HttpRequestDef.Builder<ListCloudServiceRequest, ListCloudServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCloudServiceRequest.class, ListCloudServiceResponse.class)
+                .withName("ListCloudService")
+                .withUri("/v2/notifications/cloud_service")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -779,6 +973,24 @@ public class SmnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, ListProjectTagsRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProtocolsRequest, ListProtocolsResponse> listProtocols =
+        genForListProtocols();
+
+    private static HttpRequestDef<ListProtocolsRequest, ListProtocolsResponse> genForListProtocols() {
+        // basic
+        HttpRequestDef.Builder<ListProtocolsRequest, ListProtocolsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProtocolsRequest.class, ListProtocolsResponse.class)
+                .withName("ListProtocols")
+                .withUri("/v2/notifications/protocols")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1211,6 +1423,30 @@ public class SmnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNotifyPolicyRequest::getTopicUrn, ShowNotifyPolicyRequest::setTopicUrn));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnsubscribeSubscriptionRequest, UnsubscribeSubscriptionResponse> unsubscribeSubscription =
+        genForUnsubscribeSubscription();
+
+    private static HttpRequestDef<UnsubscribeSubscriptionRequest, UnsubscribeSubscriptionResponse> genForUnsubscribeSubscription() {
+        // basic
+        HttpRequestDef.Builder<UnsubscribeSubscriptionRequest, UnsubscribeSubscriptionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, UnsubscribeSubscriptionRequest.class, UnsubscribeSubscriptionResponse.class)
+            .withName("UnsubscribeSubscription")
+            .withUri("/rest/v2/notifications/subscription/unsubscribe")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subscription_urn",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnsubscribeSubscriptionRequest::getSubscriptionUrn,
+                UnsubscribeSubscriptionRequest::setSubscriptionUrn));
 
         // response
 

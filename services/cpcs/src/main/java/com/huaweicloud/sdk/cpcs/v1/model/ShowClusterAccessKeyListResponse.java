@@ -42,7 +42,7 @@ public class ShowClusterAccessKeyListResponse extends SdkResponse {
     }
 
     /**
-     * Get result
+     * 已授权的访问密钥列表
      * @return result
      */
     public List<ShowClusterAccessKeyListResponseBodyResult> getResult() {

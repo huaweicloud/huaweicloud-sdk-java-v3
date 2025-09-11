@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -34,12 +33,12 @@ public class ArtifactTag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "push_time")
 
-    private OffsetDateTime pushTime;
+    private String pushTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pull_time")
 
-    private OffsetDateTime pullTime;
+    private String pullTime;
 
     public ArtifactTag withId(Long id) {
         this.id = id;
@@ -109,7 +108,7 @@ public class ArtifactTag {
         this.name = name;
     }
 
-    public ArtifactTag withPushTime(OffsetDateTime pushTime) {
+    public ArtifactTag withPushTime(String pushTime) {
         this.pushTime = pushTime;
         return this;
     }
@@ -118,15 +117,15 @@ public class ArtifactTag {
      * tag的上传时间
      * @return pushTime
      */
-    public OffsetDateTime getPushTime() {
+    public String getPushTime() {
         return pushTime;
     }
 
-    public void setPushTime(OffsetDateTime pushTime) {
+    public void setPushTime(String pushTime) {
         this.pushTime = pushTime;
     }
 
-    public ArtifactTag withPullTime(OffsetDateTime pullTime) {
+    public ArtifactTag withPullTime(String pullTime) {
         this.pullTime = pullTime;
         return this;
     }
@@ -135,11 +134,11 @@ public class ArtifactTag {
      * tag的下载时间
      * @return pullTime
      */
-    public OffsetDateTime getPullTime() {
+    public String getPullTime() {
         return pullTime;
     }
 
-    public void setPullTime(OffsetDateTime pullTime) {
+    public void setPullTime(String pullTime) {
         this.pullTime = pullTime;
     }
 

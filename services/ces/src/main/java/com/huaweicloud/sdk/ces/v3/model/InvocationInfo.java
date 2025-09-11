@@ -34,7 +34,7 @@ public class InvocationInfo {
     private String instanceName;
 
     /**
-     * 主机类型，ECS弹性云服务器，BMS裸金属服务器
+     * **参数解释**: 主机类型，仅支持ECS弹性云服务器和BMS裸金属服务器 **取值范围**: - ECS: 弹性云服务器 - BMS：裸金属服务器 
      */
     public static final class InstanceTypeEnum {
 
@@ -119,7 +119,7 @@ public class InvocationInfo {
     private List<String> elasticIps = null;
 
     /**
-     * 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)
+     * **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 
      */
     public static final class InvocationTypeEnum {
 
@@ -206,7 +206,7 @@ public class InvocationInfo {
     private InvocationTypeEnum invocationType;
 
     /**
-     * 任务状态，PENDING 待执行，RUNNING 运行中，TIMEOUT 超时，FAILED 失败，SUCCEEDED 成功，CANCELED 取消，ROLLBACKED已回退
+     * **参数解释**: 任务状态 **取值范围**: - PENDING：待执行 - RUNNING：运行中 - TIMEOUT：超时 - FAILED：失败 - SUCCEEDED：成功 - CANCELED：取消 - ROLLBACKED：已回退 
      */
     public static final class InvocationStatusEnum {
 
@@ -311,7 +311,7 @@ public class InvocationInfo {
     private InvocationStatusEnum invocationStatus;
 
     /**
-     * 任务对象，目前支持telescope
+     * **参数解释**: 任务对象, 支持telescope监控 **取值范围**: - telescope: 主机监控插件telescope 
      */
     public static final class InvocationTargetEnum {
 
@@ -410,7 +410,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务id
+     * **参数解释**: 任务id **取值范围**: 以字母或数字开头，后续可以包含字母、数字、下划线（_）或连字符（-），长度至少为1，且不允许出现其他字符 
      * @return invocationId
      */
     public String getInvocationId() {
@@ -427,7 +427,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 主机id
+     * **参数解释**: 主机id **取值范围**: 1到64个字符的字符串，且只包含字母、数字和连字符 
      * @return instanceId
      */
     public String getInstanceId() {
@@ -444,7 +444,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 主机名称
+     * **参数解释**: 主机名称 **取值范围**: 字符串长度范围为[1,128] 
      * @return instanceName
      */
     public String getInstanceName() {
@@ -461,7 +461,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 主机类型，ECS弹性云服务器，BMS裸金属服务器
+     * **参数解释**: 主机类型，仅支持ECS弹性云服务器和BMS裸金属服务器 **取值范围**: - ECS: 弹性云服务器 - BMS：裸金属服务器 
      * @return instanceType
      */
     public InstanceTypeEnum getInstanceType() {
@@ -494,7 +494,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 内网ip列表
+     * **参数解释**: 内网ip列表 **取值范围**: 返回数组长度为[0,10]，数组内元素格式为：长度为1到15个字符的字符串，其中每个字符可以是数字（0-9）或任意其他单个字符 
      * @return intranetIps
      */
     public List<String> getIntranetIps() {
@@ -527,7 +527,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 弹性公网ip列表
+     * **参数解释**: 弹性公网ip列表 **取值范围**: 返回数组长度为[0,10]，数组内元素格式为：长度为1到15个字符的字符串，其中每个字符可以是数字（0-9）或任意其他单个字符 
      * @return elasticIps
      */
     public List<String> getElasticIps() {
@@ -544,7 +544,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)
+     * **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 
      * @return invocationType
      */
     public InvocationTypeEnum getInvocationType() {
@@ -561,7 +561,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务状态，PENDING 待执行，RUNNING 运行中，TIMEOUT 超时，FAILED 失败，SUCCEEDED 成功，CANCELED 取消，ROLLBACKED已回退
+     * **参数解释**: 任务状态 **取值范围**: - PENDING：待执行 - RUNNING：运行中 - TIMEOUT：超时 - FAILED：失败 - SUCCEEDED：成功 - CANCELED：取消 - ROLLBACKED：已回退 
      * @return invocationStatus
      */
     public InvocationStatusEnum getInvocationStatus() {
@@ -578,7 +578,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务对象，目前支持telescope
+     * **参数解释**: 任务对象, 支持telescope监控 **取值范围**: - telescope: 主机监控插件telescope 
      * @return invocationTarget
      */
     public InvocationTargetEnum getInvocationTarget() {
@@ -595,7 +595,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务创建时间
+     * **参数解释**: 任务创建时间 **取值范围**: 数字范围为[1111111111111,9999999999999] 
      * minimum: 1111111111111
      * maximum: 9999999999999
      * @return createTime
@@ -614,7 +614,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务更新时间
+     * **参数解释**: 任务更新时间 **取值范围**: 数字范围为[1111111111111,9999999999999] 
      * minimum: 1111111111111
      * maximum: 9999999999999
      * @return updateTime
@@ -633,7 +633,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 当前版本
+     * **参数解释**: 当前版本 **取值范围**: 字符串长度范围为[1,64] 
      * @return currentVersion
      */
     public String getCurrentVersion() {
@@ -650,7 +650,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 目标版本
+     * **参数解释**: 目标版本 **取值范围**: 字符串长度范围为[1,64] 
      * @return targetVersion
      */
     public String getTargetVersion() {
@@ -667,7 +667,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务执行结果信息
+     * **参数解释**: 任务执行结果信息 **取值范围**: 字符串长度范围为[1,5000] 
      * @return resultMsg
      */
     public String getResultMsg() {

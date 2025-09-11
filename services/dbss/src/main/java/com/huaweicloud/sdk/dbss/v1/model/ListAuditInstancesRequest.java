@@ -26,7 +26,7 @@ public class ListAuditInstancesRequest {
     }
 
     /**
-     * 偏移量，默认0。
+     * **参数解释**： 分页偏移量，从第一条数据偏移offset条数据后开始查询 **约束限制**： 仅支持大于等于0的整数 **取值范围**： 大于等于0 **默认取值**： 默认值为0 
      * @return offset
      */
     public String getOffset() {
@@ -43,7 +43,7 @@ public class ListAuditInstancesRequest {
     }
 
     /**
-     * 查询记录数，默认100，最大1000。
+     * 查询记录数
      * @return limit
      */
     public String getLimit() {

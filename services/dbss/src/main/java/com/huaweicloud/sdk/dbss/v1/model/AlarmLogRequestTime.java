@@ -26,46 +26,46 @@ public class AlarmLogRequestTime {
         public static final TimeRangeEnum HALF_HOUR = new TimeRangeEnum("HALF_HOUR");
 
         /**
-         * Enum _HOUR for value: " HOUR"
+         * Enum HOUR for value: "HOUR"
          */
-        public static final TimeRangeEnum _HOUR = new TimeRangeEnum(" HOUR");
+        public static final TimeRangeEnum HOUR = new TimeRangeEnum("HOUR");
 
         /**
-         * Enum _THREE_HOUR for value: " THREE_HOUR"
+         * Enum THREE_HOUR for value: "THREE_HOUR"
          */
-        public static final TimeRangeEnum _THREE_HOUR = new TimeRangeEnum(" THREE_HOUR");
+        public static final TimeRangeEnum THREE_HOUR = new TimeRangeEnum("THREE_HOUR");
 
         /**
-         * Enum _TWELVE_HOUR for value: " TWELVE_HOUR"
+         * Enum TWELVE_HOUR for value: "TWELVE_HOUR"
          */
-        public static final TimeRangeEnum _TWELVE_HOUR = new TimeRangeEnum(" TWELVE_HOUR");
+        public static final TimeRangeEnum TWELVE_HOUR = new TimeRangeEnum("TWELVE_HOUR");
 
         /**
-         * Enum _DAY for value: " DAY"
+         * Enum DAY for value: "DAY"
          */
-        public static final TimeRangeEnum _DAY = new TimeRangeEnum(" DAY");
+        public static final TimeRangeEnum DAY = new TimeRangeEnum("DAY");
 
         /**
-         * Enum _WEEK for value: " WEEK"
+         * Enum WEEK for value: "WEEK"
          */
-        public static final TimeRangeEnum _WEEK = new TimeRangeEnum(" WEEK");
+        public static final TimeRangeEnum WEEK = new TimeRangeEnum("WEEK");
 
         /**
-         * Enum _MONTH_ for value: " MONTH;"
+         * Enum MONTH for value: "MONTH"
          */
-        public static final TimeRangeEnum _MONTH_ = new TimeRangeEnum(" MONTH;");
+        public static final TimeRangeEnum MONTH = new TimeRangeEnum("MONTH");
 
         private static final Map<String, TimeRangeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TimeRangeEnum> createStaticFields() {
             Map<String, TimeRangeEnum> map = new HashMap<>();
             map.put("HALF_HOUR", HALF_HOUR);
-            map.put(" HOUR", _HOUR);
-            map.put(" THREE_HOUR", _THREE_HOUR);
-            map.put(" TWELVE_HOUR", _TWELVE_HOUR);
-            map.put(" DAY", _DAY);
-            map.put(" WEEK", _WEEK);
-            map.put(" MONTH;", _MONTH_);
+            map.put("HOUR", HOUR);
+            map.put("THREE_HOUR", THREE_HOUR);
+            map.put("TWELVE_HOUR", TWELVE_HOUR);
+            map.put("DAY", DAY);
+            map.put("WEEK", WEEK);
+            map.put("MONTH", MONTH);
             return Collections.unmodifiableMap(map);
         }
 

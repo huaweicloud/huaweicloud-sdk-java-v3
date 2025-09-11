@@ -29,7 +29,7 @@ public class CreateInstanceRequestBody {
     private String description;
 
     /**
-     * 企业仓库实例规格，目前支持基础版(swr.ee.basic)，企业版(swr.ee.professional)
+     * 企业仓库实例规格，目前支持企业版(swr.ee.professional)
      */
     public static final class SpecEnum {
 
@@ -316,7 +316,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 企业仓库实例规格，目前支持基础版(swr.ee.basic)，企业版(swr.ee.professional)
+     * 企业仓库实例规格，目前支持企业版(swr.ee.professional)
      * @return spec
      */
     public SpecEnum getSpec() {

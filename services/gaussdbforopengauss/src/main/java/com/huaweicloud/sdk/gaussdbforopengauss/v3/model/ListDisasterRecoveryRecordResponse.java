@@ -17,14 +17,14 @@ public class ListDisasterRecoveryRecordResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "records")
 
-    private List<RecordInfoResponse> records = null;
+    private List<RecordInfoResponseResult> records = null;
 
-    public ListDisasterRecoveryRecordResponse withRecords(List<RecordInfoResponse> records) {
+    public ListDisasterRecoveryRecordResponse withRecords(List<RecordInfoResponseResult> records) {
         this.records = records;
         return this;
     }
 
-    public ListDisasterRecoveryRecordResponse addRecordsItem(RecordInfoResponse recordsItem) {
+    public ListDisasterRecoveryRecordResponse addRecordsItem(RecordInfoResponseResult recordsItem) {
         if (this.records == null) {
             this.records = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListDisasterRecoveryRecordResponse extends SdkResponse {
         return this;
     }
 
-    public ListDisasterRecoveryRecordResponse withRecords(Consumer<List<RecordInfoResponse>> recordsSetter) {
+    public ListDisasterRecoveryRecordResponse withRecords(Consumer<List<RecordInfoResponseResult>> recordsSetter) {
         if (this.records == null) {
             this.records = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ListDisasterRecoveryRecordResponse extends SdkResponse {
     }
 
     /**
-     * 操作记录
+     * **参数解释**: 操作记录。
      * @return records
      */
-    public List<RecordInfoResponse> getRecords() {
+    public List<RecordInfoResponseResult> getRecords() {
         return records;
     }
 
-    public void setRecords(List<RecordInfoResponse> records) {
+    public void setRecords(List<RecordInfoResponseResult> records) {
         this.records = records;
     }
 

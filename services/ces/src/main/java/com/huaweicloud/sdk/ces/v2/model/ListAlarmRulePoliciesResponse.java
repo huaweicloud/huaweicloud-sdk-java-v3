@@ -17,19 +17,19 @@ public class ListAlarmRulePoliciesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    private List<ListPolicy> policies = null;
+    private List<ListPolicyResp> policies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ListAlarmRulePoliciesResponse withPolicies(List<ListPolicy> policies) {
+    public ListAlarmRulePoliciesResponse withPolicies(List<ListPolicyResp> policies) {
         this.policies = policies;
         return this;
     }
 
-    public ListAlarmRulePoliciesResponse addPoliciesItem(ListPolicy policiesItem) {
+    public ListAlarmRulePoliciesResponse addPoliciesItem(ListPolicyResp policiesItem) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListAlarmRulePoliciesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAlarmRulePoliciesResponse withPolicies(Consumer<List<ListPolicy>> policiesSetter) {
+    public ListAlarmRulePoliciesResponse withPolicies(Consumer<List<ListPolicyResp>> policiesSetter) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -46,14 +46,14 @@ public class ListAlarmRulePoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 策略信息
+     * **参数解释**： 告警策略信息列表。 
      * @return policies
      */
-    public List<ListPolicy> getPolicies() {
+    public List<ListPolicyResp> getPolicies() {
         return policies;
     }
 
-    public void setPolicies(List<ListPolicy> policies) {
+    public void setPolicies(List<ListPolicyResp> policies) {
         this.policies = policies;
     }
 
@@ -63,7 +63,7 @@ public class ListAlarmRulePoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 指定告警规则对应的策略总数
+     * **参数解释**： 指定告警规则对应的策略总数。 **取值范围**： 0-100 
      * minimum: 0
      * maximum: 100
      * @return count

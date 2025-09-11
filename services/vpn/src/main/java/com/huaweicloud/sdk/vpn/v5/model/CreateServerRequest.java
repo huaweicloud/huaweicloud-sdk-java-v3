@@ -112,12 +112,24 @@ public class CreateServerRequest {
          */
         public static final ClientAuthTypeEnum LOCAL_PASSWORD = new ClientAuthTypeEnum("LOCAL_PASSWORD");
 
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final ClientAuthTypeEnum IAM = new ClientAuthTypeEnum("IAM");
+
+        /**
+         * Enum FEDERATED for value: "FEDERATED"
+         */
+        public static final ClientAuthTypeEnum FEDERATED = new ClientAuthTypeEnum("FEDERATED");
+
         private static final Map<String, ClientAuthTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ClientAuthTypeEnum> createStaticFields() {
             Map<String, ClientAuthTypeEnum> map = new HashMap<>();
             map.put("CERT", CERT);
             map.put("LOCAL_PASSWORD", LOCAL_PASSWORD);
+            map.put("IAM", IAM);
+            map.put("FEDERATED", FEDERATED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -191,6 +203,11 @@ public class CreateServerRequest {
     @JsonProperty(value = "dns_servers")
 
     private List<String> dnsServers = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "idp_name")
+
+    private String idpName;
 
     public CreateServerRequest withTunnelProtocol(TunnelProtocolEnum tunnelProtocol) {
         this.tunnelProtocol = tunnelProtocol;
@@ -398,6 +415,23 @@ public class CreateServerRequest {
         this.dnsServers = dnsServers;
     }
 
+    public CreateServerRequest withIdpName(String idpName) {
+        this.idpName = idpName;
+        return this;
+    }
+
+    /**
+     * 身份提供商名称。
+     * @return idpName
+     */
+    public String getIdpName() {
+        return idpName;
+    }
+
+    public void setIdpName(String idpName) {
+        this.idpName = idpName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -412,7 +446,8 @@ public class CreateServerRequest {
             && Objects.equals(this.clientAuthType, that.clientAuthType)
             && Objects.equals(this.serverCertificate, that.serverCertificate)
             && Objects.equals(this.clientCaCertificates, that.clientCaCertificates)
-            && Objects.equals(this.sslOptions, that.sslOptions) && Objects.equals(this.dnsServers, that.dnsServers);
+            && Objects.equals(this.sslOptions, that.sslOptions) && Objects.equals(this.dnsServers, that.dnsServers)
+            && Objects.equals(this.idpName, that.idpName);
     }
 
     @Override
@@ -424,7 +459,8 @@ public class CreateServerRequest {
             serverCertificate,
             clientCaCertificates,
             sslOptions,
-            dnsServers);
+            dnsServers,
+            idpName);
     }
 
     @Override
@@ -439,6 +475,7 @@ public class CreateServerRequest {
         sb.append("    clientCaCertificates: ").append(toIndentedString(clientCaCertificates)).append("\n");
         sb.append("    sslOptions: ").append(toIndentedString(sslOptions)).append("\n");
         sb.append("    dnsServers: ").append(toIndentedString(dnsServers)).append("\n");
+        sb.append("    idpName: ").append(toIndentedString(idpName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

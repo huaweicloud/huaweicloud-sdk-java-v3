@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 额外信息
+ * **参数解释** 额外信息 **约束限制** 不涉及 
  */
 public class BaseWidgetInfoProperties {
 
     /**
-     * 聚合类型，目前只有TopN这一种类型，折线图不支持该参数
+     * **参数解释** 聚合类型 **约束限制** 折线图不支持该参数 **取值范围** 目前只有TopN这一种类型 **默认取值** 不涉及 
      */
     public static final class FilterEnum {
 
@@ -93,7 +93,7 @@ public class BaseWidgetInfoProperties {
     private Integer topN;
 
     /**
-     * 排序字段，asc正序，desc倒序，折线图不支持该参数
+     * **参数解释** 排序字段 **约束限制** 折线图不支持该参数   **取值范围** - asc:正序 - desc:倒序 **默认取值** 不涉及 
      */
     public static final class OrderEnum {
 
@@ -183,7 +183,7 @@ public class BaseWidgetInfoProperties {
     private Boolean yesterdayCompareEnable;
 
     /**
-     * 图例位置标记，hide表示隐藏图例，right表示图例放在监控视图右侧，bottom表示图例放在监控视图底部，表格不支持该参数
+     * **参数解释** 图例位置标记 **约束限制** 表格不支持该参数                 **取值范围** - hide:表示隐藏图例 - right:表示图例放在监控视图右侧 - bottom:表示图例放在监控视图底部 **默认取值** 不涉及 
      */
     public static final class LegendLocationEnum {
 
@@ -264,7 +264,7 @@ public class BaseWidgetInfoProperties {
     private LegendLocationEnum legendLocation;
 
     /**
-     * 统计值名称, last:当前值,max:最大值,min:最小值,avg:平均值,sum:求和值
+     * **参数解释** 统计值名称 **约束限制** 不涉及 **取值范围** - last:当前值 - max:最大值 - min:最小值 - avg:平均值 - sum:求和值 **默认取值** 不涉及 
      */
     public static final class LegendValuesEnum {
 
@@ -372,7 +372,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 聚合类型，目前只有TopN这一种类型，折线图不支持该参数
+     * **参数解释** 聚合类型 **约束限制** 折线图不支持该参数 **取值范围** 目前只有TopN这一种类型 **默认取值** 不涉及 
      * @return filter
      */
     public FilterEnum getFilter() {
@@ -389,7 +389,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * Top前N个；折线图时为随机展示的时序数据条数
+     * **参数解释** Top前N个；折线图时为随机展示的时序数据条数 **约束限制** 不涉及               **取值范围** 最小值为1，最大值为2147483647 **默认取值** 100 
      * minimum: 1
      * maximum: 2147483647
      * @return topN
@@ -408,7 +408,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 排序字段，asc正序，desc倒序，折线图不支持该参数
+     * **参数解释** 排序字段 **约束限制** 折线图不支持该参数   **取值范围** - asc:正序 - desc:倒序 **默认取值** 不涉及 
      * @return order
      */
     public OrderEnum getOrder() {
@@ -425,7 +425,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 监控视图的描述信息
+     * **参数解释** 监控视图的描述信息 **约束限制** 不涉及                 **取值范围** 长度为[0,200]个字符 **默认取值** 不涉及 
      * @return description
      */
     public String getDescription() {
@@ -442,7 +442,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 是否展示同比（上周同一时间）数据，true:展示，false:不展示
+     * **参数解释** 是否展示同比（上周同一时间）数据 **约束限制** 不涉及                 **取值范围** - true:展示 - false:不展示 **默认取值** 不涉及 
      * @return lastWeekCompareEnable
      */
     public Boolean getLastWeekCompareEnable() {
@@ -459,7 +459,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 是否展示环比（昨天同一时间）数据，true:展示，false:不展示
+     * **参数解释** 是否展示环比（昨天同一时间）数据 **约束限制** 不涉及                 **取值范围** - true:展示 - false:不展示 **默认取值** 不涉及 
      * @return yesterdayCompareEnable
      */
     public Boolean getYesterdayCompareEnable() {
@@ -476,7 +476,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 图例位置标记，hide表示隐藏图例，right表示图例放在监控视图右侧，bottom表示图例放在监控视图底部，表格不支持该参数
+     * **参数解释** 图例位置标记 **约束限制** 表格不支持该参数                 **取值范围** - hide:表示隐藏图例 - right:表示图例放在监控视图右侧 - bottom:表示图例放在监控视图底部 **默认取值** 不涉及 
      * @return legendLocation
      */
     public LegendLocationEnum getLegendLocation() {
@@ -509,7 +509,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 当前时序数据需要在图例中展示的统计值名称列表，表格不支持该参数；条形图和柱状图仅支持配置当前值
+     * **参数解释** 当前时序数据需要在图例中展示的统计值名称列表 **约束限制** 表格不支持该参数；条形图和柱状图仅支持配置当前值 
      * @return legendValues
      */
     public List<LegendValuesEnum> getLegendValues() {
@@ -542,7 +542,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 监控视图的阈值辅助线配置
+     * **参数解释** 监控视图的阈值辅助线配置 **约束限制** 不涉及 
      * @return thresholds
      */
     public List<ThresholdInfo> getThresholds() {
@@ -559,7 +559,7 @@ public class BaseWidgetInfoProperties {
     }
 
     /**
-     * 同比环比总开关是否生效;true:生效；false:不生效
+     * **参数解释** 同比环比总开关是否生效 **约束限制** 不涉及               **取值范围** - true:生效 - false:不生效 **默认取值** 不涉及 
      * @return isAllCompareEnable
      */
     public Boolean getIsAllCompareEnable() {

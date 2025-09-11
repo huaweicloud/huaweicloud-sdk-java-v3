@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 匹配条件 
+ * **参数解释** 匹配条件 **约束限制** 不涉及 
  */
 public class Condition {
 
@@ -19,7 +19,7 @@ public class Condition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
 
-    private ResourceNameItem instanceName;
+    private CombResourceName instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
@@ -32,7 +32,7 @@ public class Condition {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释** 企业项目ID **约束限制** 不涉及 **取值范围** 由数字、字母和-组成，或者为0（默认企业项目ID） **默认取值** 不涉及 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -43,14 +43,14 @@ public class Condition {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public Condition withInstanceName(ResourceNameItem instanceName) {
+    public Condition withInstanceName(CombResourceName instanceName) {
         this.instanceName = instanceName;
         return this;
     }
 
-    public Condition withInstanceName(Consumer<ResourceNameItem> instanceNameSetter) {
+    public Condition withInstanceName(Consumer<CombResourceName> instanceNameSetter) {
         if (this.instanceName == null) {
-            this.instanceName = new ResourceNameItem();
+            this.instanceName = new CombResourceName();
             instanceNameSetter.accept(this.instanceName);
         }
 
@@ -61,11 +61,11 @@ public class Condition {
      * Get instanceName
      * @return instanceName
      */
-    public ResourceNameItem getInstanceName() {
+    public CombResourceName getInstanceName() {
         return instanceName;
     }
 
-    public void setInstanceName(ResourceNameItem instanceName) {
+    public void setInstanceName(CombResourceName instanceName) {
         this.instanceName = instanceName;
     }
 

@@ -41,7 +41,7 @@ public class BatchDeleteOneClickAlarmsResponse extends SdkResponse {
     }
 
     /**
-     * 成功删除的一键告警ID列表
+     * **参数解释**： 成功删除的一键告警ID列表。 
      * @return oneClickAlarmIds
      */
     public List<String> getOneClickAlarmIds() {

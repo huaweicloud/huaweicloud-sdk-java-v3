@@ -21,7 +21,7 @@ public class ShowWidgetRequest {
     }
 
     /**
-     * 监控视图id
+     * **参数解释**: 监控视图id。 **约束限制**: 不涉及。 **取值范围**: 字符串必须以wg开头，包含22个字母和数字，长度为24个字符。 **默认取值**: 不涉及。 
      * @return widgetId
      */
     public String getWidgetId() {

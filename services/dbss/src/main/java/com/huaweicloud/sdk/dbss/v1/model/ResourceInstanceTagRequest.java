@@ -41,7 +41,7 @@ public class ResourceInstanceTagRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
 
-    private TagKeyValuesBean sysTags;
+    private List<TagKeyValuesBean> sysTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "without_any_tag")
@@ -213,29 +213,36 @@ public class ResourceInstanceTagRequest {
         this.notTagsAny = notTagsAny;
     }
 
-    public ResourceInstanceTagRequest withSysTags(TagKeyValuesBean sysTags) {
+    public ResourceInstanceTagRequest withSysTags(List<TagKeyValuesBean> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    public ResourceInstanceTagRequest withSysTags(Consumer<TagKeyValuesBean> sysTagsSetter) {
+    public ResourceInstanceTagRequest addSysTagsItem(TagKeyValuesBean sysTagsItem) {
         if (this.sysTags == null) {
-            this.sysTags = new TagKeyValuesBean();
-            sysTagsSetter.accept(this.sysTags);
+            this.sysTags = new ArrayList<>();
         }
+        this.sysTags.add(sysTagsItem);
+        return this;
+    }
 
+    public ResourceInstanceTagRequest withSysTags(Consumer<List<TagKeyValuesBean>> sysTagsSetter) {
+        if (this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
+        sysTagsSetter.accept(this.sysTags);
         return this;
     }
 
     /**
-     * Get sysTags
+     * 仅op_service权限可以使用此字段做资源实例过滤条件。 目前TMS调用时只包含一个tag结构体。 key：_sys_enterprise_project_id value：企业项目id列表 目前TMS调用时，key下面只包含一个value。0表示默认企业项目 sys_tags和租户标签过滤条件（without_any_tag 、tags、tags_any、not_tags、not_tags_any）不能同时使用 无sys_tags时按照tag接口处理，无tag过滤条件时返回全量数据
      * @return sysTags
      */
-    public TagKeyValuesBean getSysTags() {
+    public List<TagKeyValuesBean> getSysTags() {
         return sysTags;
     }
 
-    public void setSysTags(TagKeyValuesBean sysTags) {
+    public void setSysTags(List<TagKeyValuesBean> sysTags) {
         this.sysTags = sysTags;
     }
 

@@ -2,15 +2,13 @@ package com.huaweicloud.sdk.dws.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.progress.ProgressListener;
-import com.huaweicloud.sdk.core.progress.ProgressRequest;
 
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ExportDatabaseUsersRequest implements ProgressRequest {
+public class ExportDatabaseUsersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
@@ -31,30 +29,6 @@ public class ExportDatabaseUsersRequest implements ProgressRequest {
     @JsonProperty(value = "type")
 
     private String type;
-
-    private ProgressListener progressListener;
-
-    private long progressInterval;
-
-    @Override
-    public void setProgressListener(ProgressListener progressListener) {
-        this.progressListener = progressListener;
-    }
-
-    @Override
-    public ProgressListener getProgressListener() {
-        return progressListener;
-    }
-
-    @Override
-    public void setProgressInterval(long progressInterval) {
-        this.progressInterval = progressInterval;
-    }
-
-    @Override
-    public long getProgressInterval() {
-        return progressInterval;
-    }
 
     public ExportDatabaseUsersRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;

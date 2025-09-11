@@ -42,7 +42,7 @@ public class ListSchemaAndTableResponse extends SdkResponse {
     }
 
     /**
-     * 数据库表信息列表
+     * **参数解释**: 数据库表信息列表。
      * @return databaseTables
      */
     public List<DatabaseSchemaTableResult> getDatabaseTables() {

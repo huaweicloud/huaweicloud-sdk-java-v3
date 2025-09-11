@@ -37,8 +37,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateAsrVocabularyRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequest;
@@ -145,8 +143,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.DeleteAsrVocabularyRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.DeleteAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigRequest;
@@ -231,8 +227,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.List2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListActiveCodeResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ListAsrVocabularyRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ListAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
@@ -351,10 +345,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAgencyRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAgencyResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ShowAsrVocabularyAssociationRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ShowAsrVocabularyAssociationResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ShowAsrVocabularyRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ShowAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
@@ -457,6 +447,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SignAgreementRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SignAgreementResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SignSpecialAgreementRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SignSpecialAgreementResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartDocumentSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartDocumentSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobRequest;
@@ -473,8 +467,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.UpdateAsrVocabularyRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.UpdateAsrVocabularyResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDialogReportConfigRequest;
@@ -817,181 +809,6 @@ public class MetaStudioClient {
      */
     public SyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyInvoker(ShowAgencyRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.showAgency, hcClient);
-    }
-
-    /**
-     * 创建热词表
-     *
-     * 该接口用于创建热词表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAsrVocabularyRequest 请求对象
-     * @return CreateAsrVocabularyResponse
-     */
-    public CreateAsrVocabularyResponse createAsrVocabulary(CreateAsrVocabularyRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createAsrVocabulary);
-    }
-
-    /**
-     * 创建热词表
-     *
-     * 该接口用于创建热词表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAsrVocabularyRequest 请求对象
-     * @return SyncInvoker<CreateAsrVocabularyRequest, CreateAsrVocabularyResponse>
-     */
-    public SyncInvoker<CreateAsrVocabularyRequest, CreateAsrVocabularyResponse> createAsrVocabularyInvoker(
-        CreateAsrVocabularyRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.createAsrVocabulary, hcClient);
-    }
-
-    /**
-     * 删除热词表
-     *
-     * 该接口用于删除热词表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAsrVocabularyRequest 请求对象
-     * @return DeleteAsrVocabularyResponse
-     */
-    public DeleteAsrVocabularyResponse deleteAsrVocabulary(DeleteAsrVocabularyRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteAsrVocabulary);
-    }
-
-    /**
-     * 删除热词表
-     *
-     * 该接口用于删除热词表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAsrVocabularyRequest 请求对象
-     * @return SyncInvoker<DeleteAsrVocabularyRequest, DeleteAsrVocabularyResponse>
-     */
-    public SyncInvoker<DeleteAsrVocabularyRequest, DeleteAsrVocabularyResponse> deleteAsrVocabularyInvoker(
-        DeleteAsrVocabularyRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.deleteAsrVocabulary, hcClient);
-    }
-
-    /**
-     * 查询热词表列表
-     *
-     * 该接口用于查询热词表列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAsrVocabularyRequest 请求对象
-     * @return ListAsrVocabularyResponse
-     */
-    public ListAsrVocabularyResponse listAsrVocabulary(ListAsrVocabularyRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listAsrVocabulary);
-    }
-
-    /**
-     * 查询热词表列表
-     *
-     * 该接口用于查询热词表列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAsrVocabularyRequest 请求对象
-     * @return SyncInvoker<ListAsrVocabularyRequest, ListAsrVocabularyResponse>
-     */
-    public SyncInvoker<ListAsrVocabularyRequest, ListAsrVocabularyResponse> listAsrVocabularyInvoker(
-        ListAsrVocabularyRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.listAsrVocabulary, hcClient);
-    }
-
-    /**
-     * 查询热词表详情
-     *
-     * 该接口用于查询热词表详情。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAsrVocabularyRequest 请求对象
-     * @return ShowAsrVocabularyResponse
-     */
-    public ShowAsrVocabularyResponse showAsrVocabulary(ShowAsrVocabularyRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showAsrVocabulary);
-    }
-
-    /**
-     * 查询热词表详情
-     *
-     * 该接口用于查询热词表详情。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAsrVocabularyRequest 请求对象
-     * @return SyncInvoker<ShowAsrVocabularyRequest, ShowAsrVocabularyResponse>
-     */
-    public SyncInvoker<ShowAsrVocabularyRequest, ShowAsrVocabularyResponse> showAsrVocabularyInvoker(
-        ShowAsrVocabularyRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.showAsrVocabulary, hcClient);
-    }
-
-    /**
-     * 查询热词表关联详情
-     *
-     * 该接口用于查询热词表关联详情。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAsrVocabularyAssociationRequest 请求对象
-     * @return ShowAsrVocabularyAssociationResponse
-     */
-    public ShowAsrVocabularyAssociationResponse showAsrVocabularyAssociation(
-        ShowAsrVocabularyAssociationRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showAsrVocabularyAssociation);
-    }
-
-    /**
-     * 查询热词表关联详情
-     *
-     * 该接口用于查询热词表关联详情。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAsrVocabularyAssociationRequest 请求对象
-     * @return SyncInvoker<ShowAsrVocabularyAssociationRequest, ShowAsrVocabularyAssociationResponse>
-     */
-    public SyncInvoker<ShowAsrVocabularyAssociationRequest, ShowAsrVocabularyAssociationResponse> showAsrVocabularyAssociationInvoker(
-        ShowAsrVocabularyAssociationRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.showAsrVocabularyAssociation, hcClient);
-    }
-
-    /**
-     * 修改热词表
-     *
-     * 该接口用于修改热词表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAsrVocabularyRequest 请求对象
-     * @return UpdateAsrVocabularyResponse
-     */
-    public UpdateAsrVocabularyResponse updateAsrVocabulary(UpdateAsrVocabularyRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateAsrVocabulary);
-    }
-
-    /**
-     * 修改热词表
-     *
-     * 该接口用于修改热词表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAsrVocabularyRequest 请求对象
-     * @return SyncInvoker<UpdateAsrVocabularyRequest, UpdateAsrVocabularyResponse>
-     */
-    public SyncInvoker<UpdateAsrVocabularyRequest, UpdateAsrVocabularyResponse> updateAsrVocabularyInvoker(
-        UpdateAsrVocabularyRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.updateAsrVocabulary, hcClient);
     }
 
     /**
@@ -6644,6 +6461,63 @@ public class MetaStudioClient {
     public SyncInvoker<ShowResourceUsageRequest, ShowResourceUsageResponse> showResourceUsageInvoker(
         ShowResourceUsageRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.showResourceUsage, hcClient);
+    }
+
+    /**
+     * 签署云服务声明
+     *
+     * 签署云服务声明。调用此接口前请知悉[[metastudio隐私协议](https://www.huaweicloud.com/declaration/tsa_metastudio.html)](tag:hws)[[metastudio隐私协议](https://www.huaweicloud.com/intl/en-us/declaration-sg/tsa-metastudio.html)](tag:hws_hk)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SignAgreementRequest 请求对象
+     * @return SignAgreementResponse
+     */
+    public SignAgreementResponse signAgreement(SignAgreementRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.signAgreement);
+    }
+
+    /**
+     * 签署云服务声明
+     *
+     * 签署云服务声明。调用此接口前请知悉[[metastudio隐私协议](https://www.huaweicloud.com/declaration/tsa_metastudio.html)](tag:hws)[[metastudio隐私协议](https://www.huaweicloud.com/intl/en-us/declaration-sg/tsa-metastudio.html)](tag:hws_hk)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SignAgreementRequest 请求对象
+     * @return SyncInvoker<SignAgreementRequest, SignAgreementResponse>
+     */
+    public SyncInvoker<SignAgreementRequest, SignAgreementResponse> signAgreementInvoker(SignAgreementRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.signAgreement, hcClient);
+    }
+
+    /**
+     * 签署特殊云服务声明
+     *
+     * 签署特殊云服务声明,目前可签署自动支付协议。开启自动支付协议之后,调用下单接口时，华为云将进行自动扣费。若因账户余额不足导致扣费失败，系统会生成待支付订单，您可前往费用中心-我的订单查看，届时您需手动完成支付。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SignSpecialAgreementRequest 请求对象
+     * @return SignSpecialAgreementResponse
+     */
+    public SignSpecialAgreementResponse signSpecialAgreement(SignSpecialAgreementRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.signSpecialAgreement);
+    }
+
+    /**
+     * 签署特殊云服务声明
+     *
+     * 签署特殊云服务声明,目前可签署自动支付协议。开启自动支付协议之后,调用下单接口时，华为云将进行自动扣费。若因账户余额不足导致扣费失败，系统会生成待支付订单，您可前往费用中心-我的订单查看，届时您需手动完成支付。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SignSpecialAgreementRequest 请求对象
+     * @return SyncInvoker<SignSpecialAgreementRequest, SignSpecialAgreementResponse>
+     */
+    public SyncInvoker<SignSpecialAgreementRequest, SignSpecialAgreementResponse> signSpecialAgreementInvoker(
+        SignSpecialAgreementRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.signSpecialAgreement, hcClient);
     }
 
     /**

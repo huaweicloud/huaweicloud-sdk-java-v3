@@ -133,6 +133,11 @@ public class ListAlarmTemplatesRequest {
 
     private String templateName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_name")
+
+    private String productName;
+
     public ListAlarmTemplatesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -194,7 +199,7 @@ public class ListAlarmTemplatesRequest {
     }
 
     /**
-     * 资源维度，多维度用\",\"分割，只能包含0-9、a-z、A-Z、_、-、#、/、(、），每个维度的最大长度为32。字符串总长度最小为1，最大为131。
+     * 资源维度，必须以字母开头，多维度用\",\"分隔，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32
      * @return dimName
      */
     public String getDimName() {
@@ -239,6 +244,23 @@ public class ListAlarmTemplatesRequest {
         this.templateName = templateName;
     }
 
+    public ListAlarmTemplatesRequest withProductName(String productName) {
+        this.productName = productName;
+        return this;
+    }
+
+    /**
+     * 支持按照产品名称粒度进行查询告警模板，产品名称一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"
+     * @return productName
+     */
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -251,12 +273,13 @@ public class ListAlarmTemplatesRequest {
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimName, that.dimName)
             && Objects.equals(this.templateType, that.templateType)
-            && Objects.equals(this.templateName, that.templateName);
+            && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.productName, that.productName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, namespace, dimName, templateType, templateName);
+        return Objects.hash(offset, limit, namespace, dimName, templateType, templateName, productName);
     }
 
     @Override
@@ -269,6 +292,7 @@ public class ListAlarmTemplatesRequest {
         sb.append("    dimName: ").append(toIndentedString(dimName)).append("\n");
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
+        sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

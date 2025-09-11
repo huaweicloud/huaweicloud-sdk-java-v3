@@ -161,6 +161,8 @@ import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.RevertRecycleBinServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowAppendableVolumeQuotaRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowAppendableVolumeQuotaResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowFlavorCapacityRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowFlavorCapacityResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowMetadataOptionsRequest;
@@ -169,6 +171,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
@@ -2672,6 +2676,35 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 查询flavor的容量
+     *
+     * 查询flavor的容量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorCapacityRequest 请求对象
+     * @return CompletableFuture<ShowFlavorCapacityResponse>
+     */
+    public CompletableFuture<ShowFlavorCapacityResponse> showFlavorCapacityAsync(ShowFlavorCapacityRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.showFlavorCapacity);
+    }
+
+    /**
+     * 查询flavor的容量
+     *
+     * 查询flavor的容量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorCapacityRequest 请求对象
+     * @return AsyncInvoker<ShowFlavorCapacityRequest, ShowFlavorCapacityResponse>
+     */
+    public AsyncInvoker<ShowFlavorCapacityRequest, ShowFlavorCapacityResponse> showFlavorCapacityAsyncInvoker(
+        ShowFlavorCapacityRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.showFlavorCapacity, hcClient);
+    }
+
+    /**
      * 查询云服务器元数据配置
      *
      * 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
@@ -2789,6 +2822,36 @@ public class EcsAsyncClient {
      */
     public AsyncInvoker<ShowServerRequest, ShowServerResponse> showServerAsyncInvoker(ShowServerRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.showServer, hcClient);
+    }
+
+    /**
+     * 查询虚拟机可挂载网卡
+     *
+     * 查询虚拟机可挂载网卡
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerAttachableNicNumRequest 请求对象
+     * @return CompletableFuture<ShowServerAttachableNicNumResponse>
+     */
+    public CompletableFuture<ShowServerAttachableNicNumResponse> showServerAttachableNicNumAsync(
+        ShowServerAttachableNicNumRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.showServerAttachableNicNum);
+    }
+
+    /**
+     * 查询虚拟机可挂载网卡
+     *
+     * 查询虚拟机可挂载网卡
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerAttachableNicNumRequest 请求对象
+     * @return AsyncInvoker<ShowServerAttachableNicNumRequest, ShowServerAttachableNicNumResponse>
+     */
+    public AsyncInvoker<ShowServerAttachableNicNumRequest, ShowServerAttachableNicNumResponse> showServerAttachableNicNumAsyncInvoker(
+        ShowServerAttachableNicNumRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.showServerAttachableNicNum, hcClient);
     }
 
     /**

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * **参数解释**： 每天告警通知的结束时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+ * **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
  */
 public class NotificationEndTime {
 

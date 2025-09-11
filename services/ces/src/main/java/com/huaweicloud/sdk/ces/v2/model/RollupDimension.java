@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 聚合维度
+ * **参数解释** 聚合维度 **约束限制** 不涉及 **取值范围** 长度为[1,32]个字符 **默认取值** 不涉及 
  */
 public class RollupDimension {
 

@@ -118,7 +118,7 @@ public class ReplicationPolicy {
     }
 
     /**
-     * 策略描述描述
+     * 策略描述
      * @return description
      */
     public String getDescription() {
@@ -237,7 +237,7 @@ public class ReplicationPolicy {
     }
 
     /**
-     * repo的范围模式
+     * repo过滤类型
      * @return repoScopeMode
      */
     public String getRepoScopeMode() {
@@ -297,7 +297,7 @@ public class ReplicationPolicy {
     }
 
     /**
-     * 是否使用
+     * 是否启用
      * @return enabled
      */
     public Boolean getEnabled() {

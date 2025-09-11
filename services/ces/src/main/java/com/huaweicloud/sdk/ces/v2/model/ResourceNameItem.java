@@ -21,7 +21,7 @@ public class ResourceNameItem {
     private String resourceName;
 
     /**
-     * 实例操作符，含义是真实资源的名称与资源名称条件值的运算关系。   include表示包含   prefix表示前缀   suffix表示后缀   notInclude表示不包含   equal表示相等   all表示全部 
+     * **参数解释** 实例操作符，含义是真实资源的名称与资源名称条件值的运算关系。 **约束限制** 不涉及 **取值范围** - include: 表示包含 - prefix: 表示前缀 - suffix: 表示后缀 - notInclude: 表示不包含 - equal: 表示相等 - all: 表示全部 **默认取值** 不涉及 
      */
     public static final class OperatorEnum {
 
@@ -130,7 +130,7 @@ public class ResourceNameItem {
     }
 
     /**
-     * 资源名称条件值
+     * **参数解释** 资源名称条件值 **约束限制** 不涉及 **取值范围** 长度[0,128]个字符 **默认取值** 不涉及 
      * @return resourceName
      */
     public String getResourceName() {
@@ -147,7 +147,7 @@ public class ResourceNameItem {
     }
 
     /**
-     * 实例操作符，含义是真实资源的名称与资源名称条件值的运算关系。   include表示包含   prefix表示前缀   suffix表示后缀   notInclude表示不包含   equal表示相等   all表示全部 
+     * **参数解释** 实例操作符，含义是真实资源的名称与资源名称条件值的运算关系。 **约束限制** 不涉及 **取值范围** - include: 表示包含 - prefix: 表示前缀 - suffix: 表示后缀 - notInclude: 表示不包含 - equal: 表示相等 - all: 表示全部 **默认取值** 不涉及 
      * @return operator
      */
     public OperatorEnum getOperator() {
@@ -164,7 +164,7 @@ public class ResourceNameItem {
     }
 
     /**
-     * 资源名称忽略大小写
+     * **参数解释** 资源名称忽略大小写 **约束限制** 不涉及 **取值范围** - true: 名称忽略大小写 - false: 名称不忽略大小写 **默认取值** false 
      * @return resourceNameIsIgnoreCase
      */
     public Boolean getResourceNameIsIgnoreCase() {

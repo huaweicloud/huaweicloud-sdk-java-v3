@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -113,7 +112,7 @@ public class Accessory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     public Accessory withId(Long id) {
         this.id = id;
@@ -155,7 +154,7 @@ public class Accessory {
     }
 
     /**
-     * 附件所属制品ID.
+     * 附件所属的父制品ID.
      * @return subjectArtifactId
      */
     public Long getSubjectArtifactId() {
@@ -217,7 +216,7 @@ public class Accessory {
         this.type = type;
     }
 
-    public Accessory withCreatedAt(OffsetDateTime createdAt) {
+    public Accessory withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -226,11 +225,11 @@ public class Accessory {
      * 附件的创建时间
      * @return createdAt
      */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 

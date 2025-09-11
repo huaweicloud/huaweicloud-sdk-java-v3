@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源名称匹配参数
+ * **参数解释** 资源名称匹配参数 **约束限制** 不涉及 
  */
 public class Instance {
 
@@ -24,7 +24,7 @@ public class Instance {
     private String productName;
 
     /**
-     * 逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 
+     * **参数解释** 逻辑运算符 **约束限制** 不涉及 **取值范围** - ALL: 所有条件匹配成功 - ANY: 任意条件匹配成功 **默认取值** 不涉及 
      */
     public static final class LogicalOperatorEnum {
 
@@ -109,7 +109,7 @@ public class Instance {
     }
 
     /**
-     * 云产品名称
+     * **参数解释** 云产品名称 **约束限制** 不涉及 **取值范围** 长度为[1,16]个字符 **默认取值** 不涉及 
      * @return productName
      */
     public String getProductName() {
@@ -126,7 +126,7 @@ public class Instance {
     }
 
     /**
-     * 逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 
+     * **参数解释** 逻辑运算符 **约束限制** 不涉及 **取值范围** - ALL: 所有条件匹配成功 - ANY: 任意条件匹配成功 **默认取值** 不涉及 
      * @return logicalOperator
      */
     public LogicalOperatorEnum getLogicalOperator() {
@@ -159,7 +159,7 @@ public class Instance {
     }
 
     /**
-     * 资源名称匹配参数数组
+     * **参数解释** 资源名称匹配参数数组 **约束限制** 不超过10个名称 
      * @return instanceNames
      */
     public List<ResourceNameItem> getInstanceNames() {

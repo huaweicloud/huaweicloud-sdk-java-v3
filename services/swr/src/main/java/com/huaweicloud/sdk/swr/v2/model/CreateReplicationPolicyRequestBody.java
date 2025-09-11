@@ -265,7 +265,7 @@ public class CreateReplicationPolicyRequestBody {
     }
 
     /**
-     * 是否使用，默认为false
+     * 是否启用，默认为false
      * @return enabled
      */
     public Boolean getEnabled() {

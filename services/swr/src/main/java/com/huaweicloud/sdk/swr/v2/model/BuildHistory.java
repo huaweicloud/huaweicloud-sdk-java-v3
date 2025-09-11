@@ -97,7 +97,7 @@ public class BuildHistory {
     }
 
     /**
-     * 层格式
+     * 镜像层格式
      * @return mediaType
      */
     public String getMediaType() {
@@ -114,7 +114,7 @@ public class BuildHistory {
     }
 
     /**
-     * 层大小
+     * 镜像层大小
      * @return size
      */
     public Integer getSize() {
@@ -131,7 +131,7 @@ public class BuildHistory {
     }
 
     /**
-     * 层sha256信息
+     * 镜像层sha256信息
      * @return digest
      */
     public String getDigest() {

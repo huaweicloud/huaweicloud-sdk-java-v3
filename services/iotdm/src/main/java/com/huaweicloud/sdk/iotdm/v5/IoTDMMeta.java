@@ -16,13 +16,21 @@ import com.huaweicloud.sdk.iotdm.v5.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.iotdm.v5.model.ListInstanceFlavorsRequest;
+import com.huaweicloud.sdk.iotdm.v5.model.ListInstanceFlavorsResponse;
+import com.huaweicloud.sdk.iotdm.v5.model.ListInstanceTasksRequest;
+import com.huaweicloud.sdk.iotdm.v5.model.ListInstanceTasksResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.ListInstancesRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.ListInstancesResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.ResizeInstance;
 import com.huaweicloud.sdk.iotdm.v5.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.iotdm.v5.model.RetryInstanceTaskRequest;
+import com.huaweicloud.sdk.iotdm.v5.model.RetryInstanceTaskResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.iotdm.v5.model.ShowInstanceTaskRequest;
+import com.huaweicloud.sdk.iotdm.v5.model.ShowInstanceTaskResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.UnbindInstanceTags;
 import com.huaweicloud.sdk.iotdm.v5.model.UnbindInstanceTagsRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.UnbindInstanceTagsResponse;
@@ -32,6 +40,45 @@ import com.huaweicloud.sdk.iotdm.v5.model.UpdateInstanceResponse;
 
 @SuppressWarnings("unchecked")
 public class IoTDMMeta {
+
+    public static final HttpRequestDef<ListInstanceFlavorsRequest, ListInstanceFlavorsResponse> listInstanceFlavors =
+        genForListInstanceFlavors();
+
+    private static HttpRequestDef<ListInstanceFlavorsRequest, ListInstanceFlavorsResponse> genForListInstanceFlavors() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceFlavorsRequest, ListInstanceFlavorsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceFlavorsRequest.class, ListInstanceFlavorsResponse.class)
+                .withName("ListInstanceFlavors")
+                .withUri("/v5/iot/{project_id}/iotda-instances/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceFlavorsRequest::getOffset, ListInstanceFlavorsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceFlavorsRequest::getLimit, ListInstanceFlavorsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceFlavorsRequest::getMarker, ListInstanceFlavorsRequest::setMarker));
+        builder.<String>withRequestField("instance_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceFlavorsRequest::getInstanceType,
+                ListInstanceFlavorsRequest::setInstanceType));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BindInstanceTagsRequest, BindInstanceTagsResponse> bindInstanceTags =
         genForBindInstanceTags();
@@ -280,6 +327,100 @@ public class IoTDMMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstance.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceTasksRequest, ListInstanceTasksResponse> listInstanceTasks =
+        genForListInstanceTasks();
+
+    private static HttpRequestDef<ListInstanceTasksRequest, ListInstanceTasksResponse> genForListInstanceTasks() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceTasksRequest, ListInstanceTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceTasksRequest.class, ListInstanceTasksResponse.class)
+                .withName("ListInstanceTasks")
+                .withUri("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTasksRequest::getInstanceId, ListInstanceTasksRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceTasksRequest::getOffset, ListInstanceTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceTasksRequest::getLimit, ListInstanceTasksRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTasksRequest::getMarker, ListInstanceTasksRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryInstanceTaskRequest, RetryInstanceTaskResponse> retryInstanceTask =
+        genForRetryInstanceTask();
+
+    private static HttpRequestDef<RetryInstanceTaskRequest, RetryInstanceTaskResponse> genForRetryInstanceTask() {
+        // basic
+        HttpRequestDef.Builder<RetryInstanceTaskRequest, RetryInstanceTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RetryInstanceTaskRequest.class, RetryInstanceTaskResponse.class)
+                .withName("RetryInstanceTask")
+                .withUri("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks/{task_id}/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryInstanceTaskRequest::getInstanceId, RetryInstanceTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryInstanceTaskRequest::getTaskId, RetryInstanceTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceTaskRequest, ShowInstanceTaskResponse> showInstanceTask =
+        genForShowInstanceTask();
+
+    private static HttpRequestDef<ShowInstanceTaskRequest, ShowInstanceTaskResponse> genForShowInstanceTask() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceTaskRequest, ShowInstanceTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceTaskRequest.class, ShowInstanceTaskResponse.class)
+                .withName("ShowInstanceTask")
+                .withUri("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceTaskRequest::getInstanceId, ShowInstanceTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceTaskRequest::getTaskId, ShowInstanceTaskRequest::setTaskId));
 
         // response
 

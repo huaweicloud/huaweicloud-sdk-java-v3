@@ -36,10 +36,14 @@ import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ModifyVmNicRequest;
+import com.huaweicloud.sdk.bms.v1.model.ModifyVmNicResponse;
 import com.huaweicloud.sdk.bms.v1.model.ReinstallBaremetalServerOsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ReinstallBaremetalServerOsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickRequest;
 import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowAvailableResourceRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowAvailableResourceResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsRequest;
@@ -620,6 +624,34 @@ public class BmsAsyncClient {
     }
 
     /**
+     * 编辑port
+     *
+     * 编辑port
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyVmNicRequest 请求对象
+     * @return CompletableFuture<ModifyVmNicResponse>
+     */
+    public CompletableFuture<ModifyVmNicResponse> modifyVmNicAsync(ModifyVmNicRequest request) {
+        return hcClient.asyncInvokeHttp(request, BmsMeta.modifyVmNic);
+    }
+
+    /**
+     * 编辑port
+     *
+     * 编辑port
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyVmNicRequest 请求对象
+     * @return AsyncInvoker<ModifyVmNicRequest, ModifyVmNicResponse>
+     */
+    public AsyncInvoker<ModifyVmNicRequest, ModifyVmNicResponse> modifyVmNicAsyncInvoker(ModifyVmNicRequest request) {
+        return new AsyncInvoker<>(request, BmsMeta.modifyVmNic, hcClient);
+    }
+
+    /**
      * 重装裸金属服务器操作系统
      *
      * 重装裸金属服务器的操作系统。快速发放裸金属服务器支持裸金属服务器数据盘不变的情况下，使用原镜像重装系统盘。重装操作系统支持密码或者密钥注入
@@ -676,6 +708,36 @@ public class BmsAsyncClient {
     public AsyncInvoker<ResetPwdOneClickRequest, ResetPwdOneClickResponse> resetPwdOneClickAsyncInvoker(
         ResetPwdOneClickRequest request) {
         return new AsyncInvoker<>(request, BmsMeta.resetPwdOneClick, hcClient);
+    }
+
+    /**
+     * 查询可用资源
+     *
+     * 查询可用资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableResourceRequest 请求对象
+     * @return CompletableFuture<ShowAvailableResourceResponse>
+     */
+    public CompletableFuture<ShowAvailableResourceResponse> showAvailableResourceAsync(
+        ShowAvailableResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, BmsMeta.showAvailableResource);
+    }
+
+    /**
+     * 查询可用资源
+     *
+     * 查询可用资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableResourceRequest 请求对象
+     * @return AsyncInvoker<ShowAvailableResourceRequest, ShowAvailableResourceResponse>
+     */
+    public AsyncInvoker<ShowAvailableResourceRequest, ShowAvailableResourceResponse> showAvailableResourceAsyncInvoker(
+        ShowAvailableResourceRequest request) {
+        return new AsyncInvoker<>(request, BmsMeta.showAvailableResource, hcClient);
     }
 
     /**

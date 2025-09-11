@@ -109,7 +109,7 @@ public class CreateInstancePeriodRequestProductInfos {
     }
 
     /**
-     * 产品规格描述。json字符串格式 ：{\"specDesc\":{\"zh-cn\":{\"key1\":\"value1\"},\"en-us\":{\"key1\":\"value1\"}}}。key和value为用户自定义希望展示的产品描述信息。
+     * 产品规格描述。json字符串格式 ：{\"specDesc\":{\"zh-cn\":{\"key1\":\"value1\"},\"en-us\":{\"key1\":\"value1\"}}}
      * @return productSpecDesc
      */
     public String getProductSpecDesc() {

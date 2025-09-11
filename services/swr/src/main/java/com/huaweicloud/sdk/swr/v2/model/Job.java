@@ -78,7 +78,7 @@ public class Job {
     }
 
     /**
-     * 触发器策略ID
+     * 触发器ID
      * @return policyId
      */
     public Integer getPolicyId() {

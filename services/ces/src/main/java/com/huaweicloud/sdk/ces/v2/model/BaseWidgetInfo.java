@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 监控视图信息
+ * **参数解释** 监控视图信息 **约束限制** 不涉及 
  */
 public class BaseWidgetInfo {
 
@@ -44,7 +44,7 @@ public class BaseWidgetInfo {
     private Boolean thresholdEnabled;
 
     /**
-     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
+     * **参数解释** 监控视图图表类型 **约束限制** 不涉及   **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 **默认取值** 不涉及 
      */
     public static final class ViewEnum {
 
@@ -143,7 +143,7 @@ public class BaseWidgetInfo {
     private ViewEnum view;
 
     /**
-     * 指标展示类型，single 单指标展示，multiple 多指标展示
+     * **参数解释** 指标展示类型 **约束限制** 不涉及   **取值范围** - single:单指标展示 - multiple:多指标展示 **默认取值** 不涉及 
      */
     public static final class MetricDisplayModeEnum {
 
@@ -225,7 +225,7 @@ public class BaseWidgetInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
 
-    private UpdateWidgetInfoLocation location;
+    private BaseWidgetInfoLocation location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -238,7 +238,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 视图分区id
+     * **参数解释** 视图分组id **约束限制** 不涉及           **取值范围** 字符串必须以dg开头，包含22个字母和数字，长度为24个字符 **默认取值** 不涉及 
      * @return groupId
      */
     public String getGroupId() {
@@ -271,7 +271,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 指标列表
+     * **参数解释** 指标列表 **约束限制** 包含的指标数量最多为200个，最少为1个 
      * @return metrics
      */
     public List<WidgetMetric> getMetrics() {
@@ -288,7 +288,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 监控视图标题
+     * **参数解释** 监控视图标题 **约束限制** 不涉及           **取值范围** 长度为[1,128]个字符，允许包括以下内容：1、中文汉字；2、拉丁字母；3、英文大小写字母；4、数字(0-9)；5、符号： ” \" ≤ < > & % _ : / ; “ ' ? + , ~ ， （ ） º ( ) [ . - **默认取值** 不涉及 
      * @return title
      */
     public String getTitle() {
@@ -305,7 +305,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 监控视图指标的阈值
+     * **参数解释** 监控视图指标的阈值 **约束限制** 不涉及   **取值范围** 最小值为0，最大值为1.7976931348623157e+308 **默认取值** 不涉及 
      * minimum: 0
      * maximum: 1.7976931348623157E+308
      * @return threshold
@@ -324,7 +324,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 阈值是否展示，true:展示，false:不展示
+     * **参数解释** 阈值是否展示 **约束限制** 不涉及   **取值范围** - true:展示 - false:不展示 **默认取值** 不涉及 
      * @return thresholdEnabled
      */
     public Boolean getThresholdEnabled() {
@@ -341,7 +341,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
+     * **参数解释** 监控视图图表类型 **约束限制** 不涉及   **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 **默认取值** 不涉及 
      * @return view
      */
     public ViewEnum getView() {
@@ -358,7 +358,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 指标展示类型，single 单指标展示，multiple 多指标展示
+     * **参数解释** 指标展示类型 **约束限制** 不涉及   **取值范围** - single:单指标展示 - multiple:多指标展示 **默认取值** 不涉及 
      * @return metricDisplayMode
      */
     public MetricDisplayModeEnum getMetricDisplayMode() {
@@ -395,14 +395,14 @@ public class BaseWidgetInfo {
         this.properties = properties;
     }
 
-    public BaseWidgetInfo withLocation(UpdateWidgetInfoLocation location) {
+    public BaseWidgetInfo withLocation(BaseWidgetInfoLocation location) {
         this.location = location;
         return this;
     }
 
-    public BaseWidgetInfo withLocation(Consumer<UpdateWidgetInfoLocation> locationSetter) {
+    public BaseWidgetInfo withLocation(Consumer<BaseWidgetInfoLocation> locationSetter) {
         if (this.location == null) {
-            this.location = new UpdateWidgetInfoLocation();
+            this.location = new BaseWidgetInfoLocation();
             locationSetter.accept(this.location);
         }
 
@@ -413,11 +413,11 @@ public class BaseWidgetInfo {
      * Get location
      * @return location
      */
-    public UpdateWidgetInfoLocation getLocation() {
+    public BaseWidgetInfoLocation getLocation() {
         return location;
     }
 
-    public void setLocation(UpdateWidgetInfoLocation location) {
+    public void setLocation(BaseWidgetInfoLocation location) {
         this.location = location;
     }
 
@@ -427,7 +427,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 单位
+     * **参数解释** 单位 **约束限制** 不涉及 **取值范围** 长度为[0,32]个字符 **默认取值** 不涉及 
      * @return unit
      */
     public String getUnit() {

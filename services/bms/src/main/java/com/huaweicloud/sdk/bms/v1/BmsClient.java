@@ -36,10 +36,14 @@ import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ModifyVmNicRequest;
+import com.huaweicloud.sdk.bms.v1.model.ModifyVmNicResponse;
 import com.huaweicloud.sdk.bms.v1.model.ReinstallBaremetalServerOsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ReinstallBaremetalServerOsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickRequest;
 import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowAvailableResourceRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowAvailableResourceResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsRequest;
@@ -605,6 +609,34 @@ public class BmsClient {
     }
 
     /**
+     * 编辑port
+     *
+     * 编辑port
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyVmNicRequest 请求对象
+     * @return ModifyVmNicResponse
+     */
+    public ModifyVmNicResponse modifyVmNic(ModifyVmNicRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.modifyVmNic);
+    }
+
+    /**
+     * 编辑port
+     *
+     * 编辑port
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyVmNicRequest 请求对象
+     * @return SyncInvoker<ModifyVmNicRequest, ModifyVmNicResponse>
+     */
+    public SyncInvoker<ModifyVmNicRequest, ModifyVmNicResponse> modifyVmNicInvoker(ModifyVmNicRequest request) {
+        return new SyncInvoker<>(request, BmsMeta.modifyVmNic, hcClient);
+    }
+
+    /**
      * 重装裸金属服务器操作系统
      *
      * 重装裸金属服务器的操作系统。快速发放裸金属服务器支持裸金属服务器数据盘不变的情况下，使用原镜像重装系统盘。重装操作系统支持密码或者密钥注入
@@ -660,6 +692,35 @@ public class BmsClient {
     public SyncInvoker<ResetPwdOneClickRequest, ResetPwdOneClickResponse> resetPwdOneClickInvoker(
         ResetPwdOneClickRequest request) {
         return new SyncInvoker<>(request, BmsMeta.resetPwdOneClick, hcClient);
+    }
+
+    /**
+     * 查询可用资源
+     *
+     * 查询可用资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableResourceRequest 请求对象
+     * @return ShowAvailableResourceResponse
+     */
+    public ShowAvailableResourceResponse showAvailableResource(ShowAvailableResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.showAvailableResource);
+    }
+
+    /**
+     * 查询可用资源
+     *
+     * 查询可用资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableResourceRequest 请求对象
+     * @return SyncInvoker<ShowAvailableResourceRequest, ShowAvailableResourceResponse>
+     */
+    public SyncInvoker<ShowAvailableResourceRequest, ShowAvailableResourceResponse> showAvailableResourceInvoker(
+        ShowAvailableResourceRequest request) {
+        return new SyncInvoker<>(request, BmsMeta.showAvailableResource, hcClient);
     }
 
     /**

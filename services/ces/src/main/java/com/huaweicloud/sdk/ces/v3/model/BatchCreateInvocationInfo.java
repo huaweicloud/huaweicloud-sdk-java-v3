@@ -26,7 +26,7 @@ public class BatchCreateInvocationInfo {
     private String invocationId;
 
     /**
-     * 任务结果, successful成功，error失败
+     * **参数解释**: 任务结果, successful成功，error失败 **取值范围**: - successful: 成功 - error: 失败 
      */
     public static final class RetStatusEnum {
 
@@ -116,7 +116,7 @@ public class BatchCreateInvocationInfo {
     }
 
     /**
-     * 机器id
+     * **参数解释**: 机器id **取值范围**: 1到64个字符的字符串，且只包含字母、数字和连字符 
      * @return instanceId
      */
     public String getInstanceId() {
@@ -133,7 +133,7 @@ public class BatchCreateInvocationInfo {
     }
 
     /**
-     * 任务id
+     * **参数解释**: 任务id **取值范围**: 1到64个字符的字符串，且只包含字母、数字和连字符 
      * @return invocationId
      */
     public String getInvocationId() {
@@ -150,7 +150,7 @@ public class BatchCreateInvocationInfo {
     }
 
     /**
-     * 任务结果, successful成功，error失败
+     * **参数解释**: 任务结果, successful成功，error失败 **取值范围**: - successful: 成功 - error: 失败 
      * @return retStatus
      */
     public RetStatusEnum getRetStatus() {
@@ -167,7 +167,7 @@ public class BatchCreateInvocationInfo {
     }
 
     /**
-     * 错误码
+     * **参数解释**: 错误码 **取值范围**: 以\"invocationmgr.\"开头且后跟4位数字的完整字符串 
      * @return errorCode
      */
     public String getErrorCode() {
@@ -184,7 +184,7 @@ public class BatchCreateInvocationInfo {
     }
 
     /**
-     * 错误信息
+     * **参数解释**: 错误信息 **取值范围**: 数组长度范围为[1,128] 
      * @return errorMsg
      */
     public String getErrorMsg() {

@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -54,12 +53,12 @@ public class SignatureExecutionSubTask {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
-    private OffsetDateTime updatedAt;
+    private String updatedAt;
 
     public SignatureExecutionSubTask withId(Long id) {
         this.id = id;
@@ -197,7 +196,7 @@ public class SignatureExecutionSubTask {
         this.statusText = statusText;
     }
 
-    public SignatureExecutionSubTask withCreatedAt(OffsetDateTime createdAt) {
+    public SignatureExecutionSubTask withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -206,15 +205,15 @@ public class SignatureExecutionSubTask {
      * 创建时间
      * @return createdAt
      */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public SignatureExecutionSubTask withUpdatedAt(OffsetDateTime updatedAt) {
+    public SignatureExecutionSubTask withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -223,11 +222,11 @@ public class SignatureExecutionSubTask {
      * 更新时间
      * @return updatedAt
      */
-    public OffsetDateTime getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(OffsetDateTime updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 

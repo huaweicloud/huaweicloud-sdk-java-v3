@@ -11,12 +11,18 @@ import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsByTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsByTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesResponse;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionResponse;
+import com.huaweicloud.sdk.smn.v2.model.ConfirmSubscriptionRequest;
+import com.huaweicloud.sdk.smn.v2.model.ConfirmSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationRequest;
@@ -43,12 +49,16 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.smn.v2.model.DeleteSubscriptionsByTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.DeleteSubscriptionsByTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributeByNameRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributeByNameResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicResponse;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertRequest;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointAttributesRequest;
@@ -57,6 +67,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplateDetailsRequest;
@@ -65,6 +77,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplatesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplatesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListProtocolsRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListProtocolsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceInstancesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceInstancesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceTagsRequest;
@@ -95,6 +109,8 @@ import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyResponse;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionRequest;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationRequest;
@@ -253,6 +269,66 @@ public class SmnAsyncClient {
     }
 
     /**
+     * 批量删除订阅
+     *
+     * 批量删除订阅，每个订阅终端的删除结果在响应体中依次展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubscriptionsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSubscriptionsResponse>
+     */
+    public CompletableFuture<BatchDeleteSubscriptionsResponse> batchDeleteSubscriptionsAsync(
+        BatchDeleteSubscriptionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.batchDeleteSubscriptions);
+    }
+
+    /**
+     * 批量删除订阅
+     *
+     * 批量删除订阅，每个订阅终端的删除结果在响应体中依次展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubscriptionsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSubscriptionsRequest, BatchDeleteSubscriptionsResponse>
+     */
+    public AsyncInvoker<BatchDeleteSubscriptionsRequest, BatchDeleteSubscriptionsResponse> batchDeleteSubscriptionsAsyncInvoker(
+        BatchDeleteSubscriptionsRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.batchDeleteSubscriptions, hcClient);
+    }
+
+    /**
+     * 批量删除指定主题的订阅
+     *
+     * 批量删除指定主题的订阅，每个订阅终端的删除结果在响应体中依次展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubscriptionsByTopicRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSubscriptionsByTopicResponse>
+     */
+    public CompletableFuture<BatchDeleteSubscriptionsByTopicResponse> batchDeleteSubscriptionsByTopicAsync(
+        BatchDeleteSubscriptionsByTopicRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.batchDeleteSubscriptionsByTopic);
+    }
+
+    /**
+     * 批量删除指定主题的订阅
+     *
+     * 批量删除指定主题的订阅，每个订阅终端的删除结果在响应体中依次展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubscriptionsByTopicRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSubscriptionsByTopicRequest, BatchDeleteSubscriptionsByTopicResponse>
+     */
+    public AsyncInvoker<BatchDeleteSubscriptionsByTopicRequest, BatchDeleteSubscriptionsByTopicResponse> batchDeleteSubscriptionsByTopicAsyncInvoker(
+        BatchDeleteSubscriptionsByTopicRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.batchDeleteSubscriptionsByTopic, hcClient);
+    }
+
+    /**
      * 批量删除订阅过滤策略
      *
      * 删除订阅者的消息过滤策略。
@@ -339,6 +415,35 @@ public class SmnAsyncClient {
     public AsyncInvoker<CancelSubscriptionRequest, CancelSubscriptionResponse> cancelSubscriptionAsyncInvoker(
         CancelSubscriptionRequest request) {
         return new AsyncInvoker<>(request, SmnMeta.cancelSubscription, hcClient);
+    }
+
+    /**
+     * 确认订阅
+     *
+     * 确认订阅主题消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmSubscriptionRequest 请求对象
+     * @return CompletableFuture<ConfirmSubscriptionResponse>
+     */
+    public CompletableFuture<ConfirmSubscriptionResponse> confirmSubscriptionAsync(ConfirmSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.confirmSubscription);
+    }
+
+    /**
+     * 确认订阅
+     *
+     * 确认订阅主题消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmSubscriptionRequest 请求对象
+     * @return AsyncInvoker<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse>
+     */
+    public AsyncInvoker<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> confirmSubscriptionAsyncInvoker(
+        ConfirmSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.confirmSubscription, hcClient);
     }
 
     /**
@@ -608,6 +713,36 @@ public class SmnAsyncClient {
     }
 
     /**
+     * 删除指定主题的订阅
+     *
+     * 删除指定主题的订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionsByTopicRequest 请求对象
+     * @return CompletableFuture<DeleteSubscriptionsByTopicResponse>
+     */
+    public CompletableFuture<DeleteSubscriptionsByTopicResponse> deleteSubscriptionsByTopicAsync(
+        DeleteSubscriptionsByTopicRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.deleteSubscriptionsByTopic);
+    }
+
+    /**
+     * 删除指定主题的订阅
+     *
+     * 删除指定主题的订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionsByTopicRequest 请求对象
+     * @return AsyncInvoker<DeleteSubscriptionsByTopicRequest, DeleteSubscriptionsByTopicResponse>
+     */
+    public AsyncInvoker<DeleteSubscriptionsByTopicRequest, DeleteSubscriptionsByTopicResponse> deleteSubscriptionsByTopicAsyncInvoker(
+        DeleteSubscriptionsByTopicRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.deleteSubscriptionsByTopic, hcClient);
+    }
+
+    /**
      * 删除主题
      *
      * 删除主题。
@@ -693,6 +828,64 @@ public class SmnAsyncClient {
     public AsyncInvoker<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> deleteTopicAttributesAsyncInvoker(
         DeleteTopicAttributesRequest request) {
         return new AsyncInvoker<>(request, SmnMeta.deleteTopicAttributes, hcClient);
+    }
+
+    /**
+     * 下载证书
+     *
+     * 下载http消息校验证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadHttpCertRequest 请求对象
+     * @return CompletableFuture<DownloadHttpCertResponse>
+     */
+    public CompletableFuture<DownloadHttpCertResponse> downloadHttpCertAsync(DownloadHttpCertRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.downloadHttpCert);
+    }
+
+    /**
+     * 下载证书
+     *
+     * 下载http消息校验证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadHttpCertRequest 请求对象
+     * @return AsyncInvoker<DownloadHttpCertRequest, DownloadHttpCertResponse>
+     */
+    public AsyncInvoker<DownloadHttpCertRequest, DownloadHttpCertResponse> downloadHttpCertAsyncInvoker(
+        DownloadHttpCertRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.downloadHttpCert, hcClient);
+    }
+
+    /**
+     * 查询授权云服务列表
+     *
+     * 查询授权云服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudServiceRequest 请求对象
+     * @return CompletableFuture<ListCloudServiceResponse>
+     */
+    public CompletableFuture<ListCloudServiceResponse> listCloudServiceAsync(ListCloudServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.listCloudService);
+    }
+
+    /**
+     * 查询授权云服务列表
+     *
+     * 查询授权云服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudServiceRequest 请求对象
+     * @return AsyncInvoker<ListCloudServiceRequest, ListCloudServiceResponse>
+     */
+    public AsyncInvoker<ListCloudServiceRequest, ListCloudServiceResponse> listCloudServiceAsyncInvoker(
+        ListCloudServiceRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.listCloudService, hcClient);
     }
 
     /**
@@ -810,6 +1003,35 @@ public class SmnAsyncClient {
     public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
         ListProjectTagsRequest request) {
         return new AsyncInvoker<>(request, SmnMeta.listProjectTags, hcClient);
+    }
+
+    /**
+     * 查询协议列表
+     *
+     * 查询SMN支持的协议列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProtocolsRequest 请求对象
+     * @return CompletableFuture<ListProtocolsResponse>
+     */
+    public CompletableFuture<ListProtocolsResponse> listProtocolsAsync(ListProtocolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.listProtocols);
+    }
+
+    /**
+     * 查询协议列表
+     *
+     * 查询SMN支持的协议列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProtocolsRequest 请求对象
+     * @return AsyncInvoker<ListProtocolsRequest, ListProtocolsResponse>
+     */
+    public AsyncInvoker<ListProtocolsRequest, ListProtocolsResponse> listProtocolsAsyncInvoker(
+        ListProtocolsRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.listProtocols, hcClient);
     }
 
     /**
@@ -1238,6 +1460,36 @@ public class SmnAsyncClient {
     public AsyncInvoker<ShowNotifyPolicyRequest, ShowNotifyPolicyResponse> showNotifyPolicyAsyncInvoker(
         ShowNotifyPolicyRequest request) {
         return new AsyncInvoker<>(request, SmnMeta.showNotifyPolicy, hcClient);
+    }
+
+    /**
+     * 取消订阅
+     *
+     * 取消订阅主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribeSubscriptionRequest 请求对象
+     * @return CompletableFuture<UnsubscribeSubscriptionResponse>
+     */
+    public CompletableFuture<UnsubscribeSubscriptionResponse> unsubscribeSubscriptionAsync(
+        UnsubscribeSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.unsubscribeSubscription);
+    }
+
+    /**
+     * 取消订阅
+     *
+     * 取消订阅主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribeSubscriptionRequest 请求对象
+     * @return AsyncInvoker<UnsubscribeSubscriptionRequest, UnsubscribeSubscriptionResponse>
+     */
+    public AsyncInvoker<UnsubscribeSubscriptionRequest, UnsubscribeSubscriptionResponse> unsubscribeSubscriptionAsyncInvoker(
+        UnsubscribeSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.unsubscribeSubscription, hcClient);
     }
 
     /**

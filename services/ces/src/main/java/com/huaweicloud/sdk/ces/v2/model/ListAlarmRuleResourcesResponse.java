@@ -17,19 +17,19 @@ public class ListAlarmRuleResourcesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<List<Dimension>> resources = null;
+    private List<List<DimensionResp>> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ListAlarmRuleResourcesResponse withResources(List<List<Dimension>> resources) {
+    public ListAlarmRuleResourcesResponse withResources(List<List<DimensionResp>> resources) {
         this.resources = resources;
         return this;
     }
 
-    public ListAlarmRuleResourcesResponse addResourcesItem(List<Dimension> resourcesItem) {
+    public ListAlarmRuleResourcesResponse addResourcesItem(List<DimensionResp> resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListAlarmRuleResourcesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAlarmRuleResourcesResponse withResources(Consumer<List<List<Dimension>>> resourcesSetter) {
+    public ListAlarmRuleResourcesResponse withResources(Consumer<List<List<DimensionResp>>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -46,14 +46,14 @@ public class ListAlarmRuleResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 资源信息
+     * **参数解释**： 资源信息。 
      * @return resources
      */
-    public List<List<Dimension>> getResources() {
+    public List<List<DimensionResp>> getResources() {
         return resources;
     }
 
-    public void setResources(List<List<Dimension>> resources) {
+    public void setResources(List<List<DimensionResp>> resources) {
         this.resources = resources;
     }
 
@@ -63,7 +63,7 @@ public class ListAlarmRuleResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 资源总数
+     * **参数解释**： 资源总数。 **取值范围**： [0,2147483647] 
      * minimum: 0
      * maximum: 2147483647
      * @return count

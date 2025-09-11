@@ -11,12 +11,20 @@ import com.huaweicloud.sdk.iotdm.v5.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.iotdm.v5.model.ListInstanceFlavorsRequest;
+import com.huaweicloud.sdk.iotdm.v5.model.ListInstanceFlavorsResponse;
+import com.huaweicloud.sdk.iotdm.v5.model.ListInstanceTasksRequest;
+import com.huaweicloud.sdk.iotdm.v5.model.ListInstanceTasksResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.ListInstancesRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.ListInstancesResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.iotdm.v5.model.RetryInstanceTaskRequest;
+import com.huaweicloud.sdk.iotdm.v5.model.RetryInstanceTaskResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.iotdm.v5.model.ShowInstanceTaskRequest;
+import com.huaweicloud.sdk.iotdm.v5.model.ShowInstanceTaskResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.UnbindInstanceTagsRequest;
 import com.huaweicloud.sdk.iotdm.v5.model.UnbindInstanceTagsResponse;
 import com.huaweicloud.sdk.iotdm.v5.model.UpdateInstanceRequest;
@@ -35,6 +43,35 @@ public class IoTDMAsyncClient {
     public static ClientBuilder<IoTDMAsyncClient> newBuilder() {
         ClientBuilder<IoTDMAsyncClient> clientBuilder = new ClientBuilder<>(IoTDMAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 查询实例规格列表
+     *
+     * 用户可以调用此接口查询设备接入服务支持的实例规格列表。支持的实例规格请参见[[产品规格说明](https://support.huaweicloud.com/productdesc-iothub/iot_04_0014.html)](tag:hws)[[产品规格说明](https://support.huaweicloud.com/intl/zh-cn/productdesc-iothub/iot_04_0014.html)](tag:hws_hk)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceFlavorsRequest 请求对象
+     * @return CompletableFuture<ListInstanceFlavorsResponse>
+     */
+    public CompletableFuture<ListInstanceFlavorsResponse> listInstanceFlavorsAsync(ListInstanceFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDMMeta.listInstanceFlavors);
+    }
+
+    /**
+     * 查询实例规格列表
+     *
+     * 用户可以调用此接口查询设备接入服务支持的实例规格列表。支持的实例规格请参见[[产品规格说明](https://support.huaweicloud.com/productdesc-iothub/iot_04_0014.html)](tag:hws)[[产品规格说明](https://support.huaweicloud.com/intl/zh-cn/productdesc-iothub/iot_04_0014.html)](tag:hws_hk)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceFlavorsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceFlavorsRequest, ListInstanceFlavorsResponse>
+     */
+    public AsyncInvoker<ListInstanceFlavorsRequest, ListInstanceFlavorsResponse> listInstanceFlavorsAsyncInvoker(
+        ListInstanceFlavorsRequest request) {
+        return new AsyncInvoker<>(request, IoTDMMeta.listInstanceFlavors, hcClient);
     }
 
     /**
@@ -307,6 +344,93 @@ public class IoTDMAsyncClient {
     public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(
         UpdateInstanceRequest request) {
         return new AsyncInvoker<>(request, IoTDMMeta.updateInstance, hcClient);
+    }
+
+    /**
+     * 查询实例任务列表
+     *
+     * 用户可以调用此接口查询设备接入实例任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceTasksRequest 请求对象
+     * @return CompletableFuture<ListInstanceTasksResponse>
+     */
+    public CompletableFuture<ListInstanceTasksResponse> listInstanceTasksAsync(ListInstanceTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDMMeta.listInstanceTasks);
+    }
+
+    /**
+     * 查询实例任务列表
+     *
+     * 用户可以调用此接口查询设备接入实例任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceTasksRequest 请求对象
+     * @return AsyncInvoker<ListInstanceTasksRequest, ListInstanceTasksResponse>
+     */
+    public AsyncInvoker<ListInstanceTasksRequest, ListInstanceTasksResponse> listInstanceTasksAsyncInvoker(
+        ListInstanceTasksRequest request) {
+        return new AsyncInvoker<>(request, IoTDMMeta.listInstanceTasks, hcClient);
+    }
+
+    /**
+     * 重试实例任务
+     *
+     * 用户可以调用此接口对运行失败的实例任务进行重试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryInstanceTaskRequest 请求对象
+     * @return CompletableFuture<RetryInstanceTaskResponse>
+     */
+    public CompletableFuture<RetryInstanceTaskResponse> retryInstanceTaskAsync(RetryInstanceTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDMMeta.retryInstanceTask);
+    }
+
+    /**
+     * 重试实例任务
+     *
+     * 用户可以调用此接口对运行失败的实例任务进行重试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryInstanceTaskRequest 请求对象
+     * @return AsyncInvoker<RetryInstanceTaskRequest, RetryInstanceTaskResponse>
+     */
+    public AsyncInvoker<RetryInstanceTaskRequest, RetryInstanceTaskResponse> retryInstanceTaskAsyncInvoker(
+        RetryInstanceTaskRequest request) {
+        return new AsyncInvoker<>(request, IoTDMMeta.retryInstanceTask, hcClient);
+    }
+
+    /**
+     * 查询实例任务详情
+     *
+     * 用户可以调用此接口查询设备接入实例任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceTaskRequest 请求对象
+     * @return CompletableFuture<ShowInstanceTaskResponse>
+     */
+    public CompletableFuture<ShowInstanceTaskResponse> showInstanceTaskAsync(ShowInstanceTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDMMeta.showInstanceTask);
+    }
+
+    /**
+     * 查询实例任务详情
+     *
+     * 用户可以调用此接口查询设备接入实例任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceTaskRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceTaskRequest, ShowInstanceTaskResponse>
+     */
+    public AsyncInvoker<ShowInstanceTaskRequest, ShowInstanceTaskResponse> showInstanceTaskAsyncInvoker(
+        ShowInstanceTaskRequest request) {
+        return new AsyncInvoker<>(request, IoTDMMeta.showInstanceTask, hcClient);
     }
 
 }

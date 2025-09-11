@@ -17,19 +17,19 @@ public class ListAlarmRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarms")
 
-    private List<ListAlarmResponseAlarms> alarms = null;
+    private List<ListAlarmRespBodyAlarms> alarms = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ListAlarmRulesResponse withAlarms(List<ListAlarmResponseAlarms> alarms) {
+    public ListAlarmRulesResponse withAlarms(List<ListAlarmRespBodyAlarms> alarms) {
         this.alarms = alarms;
         return this;
     }
 
-    public ListAlarmRulesResponse addAlarmsItem(ListAlarmResponseAlarms alarmsItem) {
+    public ListAlarmRulesResponse addAlarmsItem(ListAlarmRespBodyAlarms alarmsItem) {
         if (this.alarms == null) {
             this.alarms = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListAlarmRulesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAlarmRulesResponse withAlarms(Consumer<List<ListAlarmResponseAlarms>> alarmsSetter) {
+    public ListAlarmRulesResponse withAlarms(Consumer<List<ListAlarmRespBodyAlarms>> alarmsSetter) {
         if (this.alarms == null) {
             this.alarms = new ArrayList<>();
         }
@@ -46,14 +46,14 @@ public class ListAlarmRulesResponse extends SdkResponse {
     }
 
     /**
-     * 告警规则列表
+     * **参数解释**： 告警规则列表。 **取值范围**： 长度为[1,100]个字符。 
      * @return alarms
      */
-    public List<ListAlarmResponseAlarms> getAlarms() {
+    public List<ListAlarmRespBodyAlarms> getAlarms() {
         return alarms;
     }
 
-    public void setAlarms(List<ListAlarmResponseAlarms> alarms) {
+    public void setAlarms(List<ListAlarmRespBodyAlarms> alarms) {
         this.alarms = alarms;
     }
 
@@ -63,7 +63,7 @@ public class ListAlarmRulesResponse extends SdkResponse {
     }
 
     /**
-     * 告警规则总数
+     * **参数解释**： 告警规则总数。 **取值范围**： [0,10000] 
      * minimum: 0
      * maximum: 10000
      * @return count

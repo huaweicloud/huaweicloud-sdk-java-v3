@@ -43,7 +43,7 @@ public class Filter {
     }
 
     /**
-     * 过滤类型对应的正则表达式(name对应的是命名空间及制品仓库，例如library/_**tag对应的是版本，例如：**repo和tag正则表达式有多个时，用逗号分隔，且在最外层加{}，如library/{test,test*,*test})
+     * 过滤类型对应的正则表达式(type为name时，对应的是命名空间及制品仓库，例如library/_**； type为tag时，对应的是制品版本，例如：**repo和**tag； 正则表达式有多个时，用英文逗号分隔，且在最外层加{}，如library/{test,test*,*test})
      * @return value
      */
     public String getValue() {

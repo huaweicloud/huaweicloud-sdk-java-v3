@@ -45,6 +45,8 @@ import com.huaweicloud.sdk.ga.v1.model.DisassociateListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.DisassociateListenerResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListAllPopsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListAllPopsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointsRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListTagsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListTagsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListTenantQuotasRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListTenantQuotasResponse;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpRequest;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpResponse;
 import com.huaweicloud.sdk.ga.v1.model.ShowAcceleratorRequest;
@@ -1235,6 +1239,63 @@ public class GaClient {
      */
     public SyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtankInvoker(UpdateLogtankRequest request) {
         return new SyncInvoker<>(request, GaMeta.updateLogtank, hcClient);
+    }
+
+    /**
+     * 查询pop列表
+     *
+     * 查询pop列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllPopsRequest 请求对象
+     * @return ListAllPopsResponse
+     */
+    public ListAllPopsResponse listAllPops(ListAllPopsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.listAllPops);
+    }
+
+    /**
+     * 查询pop列表
+     *
+     * 查询pop列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllPopsRequest 请求对象
+     * @return SyncInvoker<ListAllPopsRequest, ListAllPopsResponse>
+     */
+    public SyncInvoker<ListAllPopsRequest, ListAllPopsResponse> listAllPopsInvoker(ListAllPopsRequest request) {
+        return new SyncInvoker<>(request, GaMeta.listAllPops, hcClient);
+    }
+
+    /**
+     * 查询配额列表
+     *
+     * 查询配额列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantQuotasRequest 请求对象
+     * @return ListTenantQuotasResponse
+     */
+    public ListTenantQuotasResponse listTenantQuotas(ListTenantQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.listTenantQuotas);
+    }
+
+    /**
+     * 查询配额列表
+     *
+     * 查询配额列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantQuotasRequest 请求对象
+     * @return SyncInvoker<ListTenantQuotasRequest, ListTenantQuotasResponse>
+     */
+    public SyncInvoker<ListTenantQuotasRequest, ListTenantQuotasResponse> listTenantQuotasInvoker(
+        ListTenantQuotasRequest request) {
+        return new SyncInvoker<>(request, GaMeta.listTenantQuotas, hcClient);
     }
 
     /**

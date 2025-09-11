@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -178,7 +177,7 @@ public class ShowInstanceInternalEndpointResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private OffsetDateTime createdAt;
+    private String createdAt;
 
     public ShowInstanceInternalEndpointResponse withId(String id) {
         this.id = id;
@@ -418,7 +417,7 @@ public class ShowInstanceInternalEndpointResponse extends SdkResponse {
         this.statusText = statusText;
     }
 
-    public ShowInstanceInternalEndpointResponse withCreatedAt(OffsetDateTime createdAt) {
+    public ShowInstanceInternalEndpointResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -427,11 +426,11 @@ public class ShowInstanceInternalEndpointResponse extends SdkResponse {
      * 访问控制的创建时间
      * @return createdAt
      */
-    public OffsetDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 

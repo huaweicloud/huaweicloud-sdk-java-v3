@@ -74,7 +74,7 @@ public class CreateResourceGroupRequestBody {
     private String productNames;
 
     /**
-     * 资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度 product 云产品 dimension 子维度 
+     * **参数解释** 资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度。 **约束限制** 不涉及。 **取值范围** - product: 云产品 - dimension: 子维度 **默认取值** 不涉及。 
      */
     public static final class ResourceLevelEnum {
 
@@ -159,7 +159,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 资源分组的名称，只能为字母、数字、汉字、-、_，最大长度为128
+     * **参数解释** 资源分组的名称 **约束限制** 不涉及 **取值范围** 只能为字母、数字、汉字、-或_，长度为[1,128]个字符 **默认取值** 不涉及 
      * @return groupName
      */
     public String getGroupName() {
@@ -176,7 +176,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 资源分组归属企业项目ID
+     * **参数解释** 资源分组归属企业项目ID **约束限制** 不涉及 **取值范围** 由数字、字母和-组成，或者为0（默认企业项目ID）。 **默认取值** 不涉及 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -193,7 +193,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,NAME（实例名称）,不传为手动添加
+     * **参数解释** 资源分组添加资源方式 **约束限制** 不涉及 **取值范围** 取值只能为EPS（同步企业项目），TAG（标签动态匹配），NAME（实例名称），COMB（组合匹配），不传为手动添加。 **默认取值** 不涉及 
      * @return type
      */
     public String getType() {
@@ -226,7 +226,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 标签动态匹配时的关联标签,type为TAG时必传
+     * **参数解释** 标签动态匹配时的关联标签。 **约束限制** type为TAG时必传，不超过50个标签。 
      * @return tags
      */
     public List<ResourceGroupTagRelation> getTags() {
@@ -259,7 +259,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 该资源分组内包含的资源来源的企业项目ID，type为EPS时必传
+     * **参数解释** 该资源分组内包含的资源来源的企业项目ID。 **约束限制** type为EPS时必传，不超过50个企业项目ID。 
      * @return associationEpIds
      */
     public List<String> getAssociationEpIds() {
@@ -276,7 +276,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 云服务名称,格式为\"dcs,ecs\",支持的云服务providers请参考《配置审计API参考》中的\"支持的服务和资源类型\"章节
+     * **参数解释** 云服务名称,格式为\"dcs,ecs\",支持的云服务providers请参考《配置审计API参考》中的\"支持的服务和资源类型\"章节 **约束限制** 不涉及 **取值范围** 长度为[0,512]个字符 **默认取值** 不涉及 
      * @return providers
      */
     public String getProviders() {
@@ -312,7 +312,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 匹配企业项目或匹配标签参数
+     * **参数解释** 匹配企业项目或匹配标签参数。 **约束限制** 不超过50个条件。 
      * @return enterpriseProjectIdAndTags
      */
     public List<EnterpriseProjectIdAndTags> getEnterpriseProjectIdAndTags() {
@@ -345,7 +345,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 手动创建时的资源详情
+     * **参数解释** 手动创建时的资源详情。 **约束限制** 不超过1000个资源。 
      * @return resources
      */
     public List<Resource> getResources() {
@@ -378,7 +378,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 手动创建，选择资源层级为云产品时的资源详情
+     * **参数解释** 手动创建，选择资源层级为云产品时的资源详情。 **约束限制** 不超过50个资源。 
      * @return productResources
      */
     public List<ProductResource> getProductResources() {
@@ -411,7 +411,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 实例名称匹配参数
+     * **参数解释** 实例名称匹配参数。 **约束限制** type为NAME时必传，不超过50个实例。 
      * @return instances
      */
     public List<Instance> getInstances() {
@@ -428,7 +428,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 创建资源层级为云产品时的云产品的取值，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。多个云产品则用“;”隔开，如\"SERVICE.BMS,instance_id;SYS.ECS,instance_id\"。
+     * **参数解释** 创建资源层级为云产品时的云产品的取值，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。多个云产品则用“;”隔开，如\"SERVICE.BMS,instance_id;SYS.ECS,instance_id\"。 **约束限制** 不涉及。 **取值范围** 长度[0,10240]个字符 **默认取值** 不涉及。
      * @return productNames
      */
     public String getProductNames() {
@@ -445,7 +445,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度 product 云产品 dimension 子维度 
+     * **参数解释** 资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度。 **约束限制** 不涉及。 **取值范围** - product: 云产品 - dimension: 子维度 **默认取值** 不涉及。 
      * @return resourceLevel
      */
     public ResourceLevelEnum getResourceLevel() {

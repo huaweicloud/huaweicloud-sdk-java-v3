@@ -31,6 +31,26 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
 
     private Boolean enableAsyncStatusLog;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_id")
+
+    private String logGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_id")
+
+    private String logStreamId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_name")
+
+    private String logGroupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_name")
+
+    private String logStreamName;
+
     public UpdateFunctionAsyncInvokeConfigRequestBody withMaxAsyncEventAgeInSeconds(Integer maxAsyncEventAgeInSeconds) {
         this.maxAsyncEventAgeInSeconds = maxAsyncEventAgeInSeconds;
         return this;
@@ -114,6 +134,74 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         this.enableAsyncStatusLog = enableAsyncStatusLog;
     }
 
+    public UpdateFunctionAsyncInvokeConfigRequestBody withLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+        return this;
+    }
+
+    /**
+     * 自定义日志查询组id。
+     * @return logGroupId
+     */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    public void setLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+    }
+
+    public UpdateFunctionAsyncInvokeConfigRequestBody withLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+        return this;
+    }
+
+    /**
+     * 自定义日志查询流id。
+     * @return logStreamId
+     */
+    public String getLogStreamId() {
+        return logStreamId;
+    }
+
+    public void setLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+    }
+
+    public UpdateFunctionAsyncInvokeConfigRequestBody withLogGroupName(String logGroupName) {
+        this.logGroupName = logGroupName;
+        return this;
+    }
+
+    /**
+     * 自定义日志查询组名称。
+     * @return logGroupName
+     */
+    public String getLogGroupName() {
+        return logGroupName;
+    }
+
+    public void setLogGroupName(String logGroupName) {
+        this.logGroupName = logGroupName;
+    }
+
+    public UpdateFunctionAsyncInvokeConfigRequestBody withLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+        return this;
+    }
+
+    /**
+     * 自定义日志查询流名称。
+     * @return logStreamName
+     */
+    public String getLogStreamName() {
+        return logStreamName;
+    }
+
+    public void setLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -126,12 +214,22 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         return Objects.equals(this.maxAsyncEventAgeInSeconds, that.maxAsyncEventAgeInSeconds)
             && Objects.equals(this.maxAsyncRetryAttempts, that.maxAsyncRetryAttempts)
             && Objects.equals(this.destinationConfig, that.destinationConfig)
-            && Objects.equals(this.enableAsyncStatusLog, that.enableAsyncStatusLog);
+            && Objects.equals(this.enableAsyncStatusLog, that.enableAsyncStatusLog)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamName, that.logStreamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maxAsyncEventAgeInSeconds, maxAsyncRetryAttempts, destinationConfig, enableAsyncStatusLog);
+        return Objects.hash(maxAsyncEventAgeInSeconds,
+            maxAsyncRetryAttempts,
+            destinationConfig,
+            enableAsyncStatusLog,
+            logGroupId,
+            logStreamId,
+            logGroupName,
+            logStreamName);
     }
 
     @Override
@@ -142,6 +240,10 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
         sb.append("    maxAsyncRetryAttempts: ").append(toIndentedString(maxAsyncRetryAttempts)).append("\n");
         sb.append("    destinationConfig: ").append(toIndentedString(destinationConfig)).append("\n");
         sb.append("    enableAsyncStatusLog: ").append(toIndentedString(enableAsyncStatusLog)).append("\n");
+        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
+        sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
+        sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
+        sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

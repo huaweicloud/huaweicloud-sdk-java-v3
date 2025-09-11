@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.swr.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -39,7 +38,7 @@ public class AuditLog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "op_time")
 
-    private OffsetDateTime opTime;
+    private String opTime;
 
     public AuditLog withId(Long id) {
         this.id = id;
@@ -47,7 +46,7 @@ public class AuditLog {
     }
 
     /**
-     * audit log ID
+     * Audit log ID
      * @return id
      */
     public Long getId() {
@@ -126,7 +125,7 @@ public class AuditLog {
         this.username = username;
     }
 
-    public AuditLog withOpTime(OffsetDateTime opTime) {
+    public AuditLog withOpTime(String opTime) {
         this.opTime = opTime;
         return this;
     }
@@ -135,11 +134,11 @@ public class AuditLog {
      * 操作时间
      * @return opTime
      */
-    public OffsetDateTime getOpTime() {
+    public String getOpTime() {
         return opTime;
     }
 
-    public void setOpTime(OffsetDateTime opTime) {
+    public void setOpTime(String opTime) {
         this.opTime = opTime;
     }
 

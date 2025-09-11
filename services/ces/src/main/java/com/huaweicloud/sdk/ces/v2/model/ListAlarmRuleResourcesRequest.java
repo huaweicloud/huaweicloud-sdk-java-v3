@@ -31,7 +31,7 @@ public class ListAlarmRuleResourcesRequest {
     }
 
     /**
-     * Alarm实例ID
+     * **参数解释**： 告警规则ID。 **约束限制**： 不涉及。 **取值范围**： 以al开头，后跟22位的字母或数字。          **默认取值**： 不涉及。 
      * @return alarmId
      */
     public String getAlarmId() {
@@ -48,7 +48,7 @@ public class ListAlarmRuleResourcesRequest {
     }
 
     /**
-     * 分页偏移量
+     * **参数描述**： 分页偏移量。 **约束限制**： 不涉及。 **取值范围**： 最小值为0，最大值为10000。 **默认取值**： 0 
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -67,7 +67,7 @@ public class ListAlarmRuleResourcesRequest {
     }
 
     /**
-     * 分页大小
+     * **参数描述**： 分页大小。 **约束限制**： 不涉及。 **取值范围**： 最小值为1，最大值为100。 **默认取值**： 10 
      * minimum: 1
      * maximum: 100
      * @return limit

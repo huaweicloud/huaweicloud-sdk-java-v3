@@ -22,12 +22,12 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_notifications")
 
-    private List<Notification> alarmNotifications = null;
+    private List<NotificationResp> alarmNotifications = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_notifications")
 
-    private List<Notification> okNotifications = null;
+    private List<NotificationResp> okNotifications = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_begin_time")
@@ -45,7 +45,7 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启告警通知。true:开启，false:关闭。
+     * **参数解释**： 是否开启告警通知。     **取值范围**： 布尔值。 - true:开启。 - false:关闭。 
      * @return notificationEnabled
      */
     public Boolean getNotificationEnabled() {
@@ -56,12 +56,12 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
         this.notificationEnabled = notificationEnabled;
     }
 
-    public UpdateAlarmNotificationsResponse withAlarmNotifications(List<Notification> alarmNotifications) {
+    public UpdateAlarmNotificationsResponse withAlarmNotifications(List<NotificationResp> alarmNotifications) {
         this.alarmNotifications = alarmNotifications;
         return this;
     }
 
-    public UpdateAlarmNotificationsResponse addAlarmNotificationsItem(Notification alarmNotificationsItem) {
+    public UpdateAlarmNotificationsResponse addAlarmNotificationsItem(NotificationResp alarmNotificationsItem) {
         if (this.alarmNotifications == null) {
             this.alarmNotifications = new ArrayList<>();
         }
@@ -70,7 +70,7 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     }
 
     public UpdateAlarmNotificationsResponse withAlarmNotifications(
-        Consumer<List<Notification>> alarmNotificationsSetter) {
+        Consumer<List<NotificationResp>> alarmNotificationsSetter) {
         if (this.alarmNotifications == null) {
             this.alarmNotifications = new ArrayList<>();
         }
@@ -79,23 +79,23 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警触发的动作数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **取值范围**： 包含的通知信息的数量最多为10个。 
      * @return alarmNotifications
      */
-    public List<Notification> getAlarmNotifications() {
+    public List<NotificationResp> getAlarmNotifications() {
         return alarmNotifications;
     }
 
-    public void setAlarmNotifications(List<Notification> alarmNotifications) {
+    public void setAlarmNotifications(List<NotificationResp> alarmNotifications) {
         this.alarmNotifications = alarmNotifications;
     }
 
-    public UpdateAlarmNotificationsResponse withOkNotifications(List<Notification> okNotifications) {
+    public UpdateAlarmNotificationsResponse withOkNotifications(List<NotificationResp> okNotifications) {
         this.okNotifications = okNotifications;
         return this;
     }
 
-    public UpdateAlarmNotificationsResponse addOkNotificationsItem(Notification okNotificationsItem) {
+    public UpdateAlarmNotificationsResponse addOkNotificationsItem(NotificationResp okNotificationsItem) {
         if (this.okNotifications == null) {
             this.okNotifications = new ArrayList<>();
         }
@@ -103,7 +103,8 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
         return this;
     }
 
-    public UpdateAlarmNotificationsResponse withOkNotifications(Consumer<List<Notification>> okNotificationsSetter) {
+    public UpdateAlarmNotificationsResponse withOkNotifications(
+        Consumer<List<NotificationResp>> okNotificationsSetter) {
         if (this.okNotifications == null) {
             this.okNotifications = new ArrayList<>();
         }
@@ -112,14 +113,14 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警恢复触发的动作数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **取值范围**： 包含的通知信息的数量最多为10个。 
      * @return okNotifications
      */
-    public List<Notification> getOkNotifications() {
+    public List<NotificationResp> getOkNotifications() {
         return okNotifications;
     }
 
-    public void setOkNotifications(List<Notification> okNotifications) {
+    public void setOkNotifications(List<NotificationResp> okNotifications) {
         this.okNotifications = okNotifications;
     }
 
@@ -129,7 +130,7 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 每天告警通知的开始时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警通知开启时间。    **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
      * @return notificationBeginTime
      */
     public String getNotificationBeginTime() {
@@ -146,7 +147,7 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 每天告警通知的结束时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警通知关闭时间。    **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
      * @return notificationEndTime
      */
     public String getNotificationEndTime() {

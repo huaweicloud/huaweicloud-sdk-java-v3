@@ -48,7 +48,7 @@ public class ListInstanceAllArtifactsRequest {
     }
 
     /**
-     * 分页查询时的查询标记，使用上一次接口调用返回的nextMarker值。默认值为1。**注意：marker和limit参数需要配套使用。**
+     * 分页查询时的查询标记，使用上一次接口调用返回的next_marker值。默认值为1。**注意：marker和limit参数需要配套使用。**
      * @return marker
      */
     public Integer getMarker() {

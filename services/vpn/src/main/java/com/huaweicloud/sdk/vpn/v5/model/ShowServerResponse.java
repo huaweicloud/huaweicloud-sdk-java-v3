@@ -65,6 +65,11 @@ public class ShowServerResponse {
     private List<String> dnsServers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "idp_name")
+
+    private String idpName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -317,6 +322,23 @@ public class ShowServerResponse {
         this.dnsServers = dnsServers;
     }
 
+    public ShowServerResponse withIdpName(String idpName) {
+        this.idpName = idpName;
+        return this;
+    }
+
+    /**
+     * 身份提供商名称。
+     * @return idpName
+     */
+    public String getIdpName() {
+        return idpName;
+    }
+
+    public void setIdpName(String idpName) {
+        this.idpName = idpName;
+    }
+
     public ShowServerResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -384,8 +406,8 @@ public class ShowServerResponse {
             && Objects.equals(this.serverCertificate, that.serverCertificate)
             && Objects.equals(this.clientCaCertificates, that.clientCaCertificates)
             && Objects.equals(this.sslOptions, that.sslOptions) && Objects.equals(this.dnsServers, that.dnsServers)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.idpName, that.idpName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
@@ -400,6 +422,7 @@ public class ShowServerResponse {
             clientCaCertificates,
             sslOptions,
             dnsServers,
+            idpName,
             status,
             createdAt,
             updatedAt);
@@ -419,6 +442,7 @@ public class ShowServerResponse {
         sb.append("    clientCaCertificates: ").append(toIndentedString(clientCaCertificates)).append("\n");
         sb.append("    sslOptions: ").append(toIndentedString(sslOptions)).append("\n");
         sb.append("    dnsServers: ").append(toIndentedString(dnsServers)).append("\n");
+        sb.append("    idpName: ").append(toIndentedString(idpName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

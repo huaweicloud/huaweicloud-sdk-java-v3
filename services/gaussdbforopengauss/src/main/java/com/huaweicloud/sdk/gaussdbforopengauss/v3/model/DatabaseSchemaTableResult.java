@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 数据库表结构及其所属 schema
+ * DatabaseSchemaTableResult
  */
 public class DatabaseSchemaTableResult {
 
@@ -26,7 +26,7 @@ public class DatabaseSchemaTableResult {
     }
 
     /**
-     * 表名称
+     * **参数解释**: 表名称。 **取值范围**: 不涉及。
      * @return tableName
      */
     public String getTableName() {
@@ -43,7 +43,7 @@ public class DatabaseSchemaTableResult {
     }
 
     /**
-     * schema名称
+     * **参数解释**: schema名称。 **取值范围**: 不涉及。
      * @return schemaName
      */
     public String getSchemaName() {

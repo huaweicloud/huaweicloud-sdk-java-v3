@@ -19,6 +19,9 @@ public class ScmRegion {
     public static final Region AP_SOUTHEAST_1 =
         new Region("ap-southeast-1", "https://scm.ap-southeast-1.myhuaweicloud.com");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://scm.my-kualalumpur-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SCM");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -27,6 +30,7 @@ public class ScmRegion {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -24,7 +24,7 @@ public class AgentStatusInfo {
     private String instanceId;
 
     /**
-     * uniagent运行状态,none无，running运行中，silent静默中，unknown故障
+     * **参数解释**: uniagent运行状态 **取值范围**: - none: 未安装 - running: 运行中 - silent: 静默状态，用于大规模插件异常时，紧急规避的一种措施，现象是kill掉telescope，只保留uniagent的心跳功能 - unknown: 心跳故障，不上报心跳数据，属于连接丢失故障 
      */
     public static final class UniagentStatusEnum {
 
@@ -121,7 +121,7 @@ public class AgentStatusInfo {
     }
 
     /**
-     * 机器id
+     * **参数解释**: 机器id **取值范围**: 1到64个字符的字符串，且只包含字母、数字和连字符 
      * @return instanceId
      */
     public String getInstanceId() {
@@ -138,7 +138,7 @@ public class AgentStatusInfo {
     }
 
     /**
-     * uniagent运行状态,none无，running运行中，silent静默中，unknown故障
+     * **参数解释**: uniagent运行状态 **取值范围**: - none: 未安装 - running: 运行中 - silent: 静默状态，用于大规模插件异常时，紧急规避的一种措施，现象是kill掉telescope，只保留uniagent的心跳功能 - unknown: 心跳故障，不上报心跳数据，属于连接丢失故障 
      * @return uniagentStatus
      */
     public UniagentStatusEnum getUniagentStatus() {
@@ -171,7 +171,7 @@ public class AgentStatusInfo {
     }
 
     /**
-     * 插件信息列表
+     * **参数解释**: 插件信息列表 **取值范围**: 数组长度为[1,10] 
      * @return extensions
      */
     public List<ExtensionInfo> getExtensions() {

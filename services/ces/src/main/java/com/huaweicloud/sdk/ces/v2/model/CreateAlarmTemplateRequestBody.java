@@ -24,7 +24,7 @@ public class CreateAlarmTemplateRequestBody {
     private String templateName;
 
     /**
-     * 自定义告警模板类型 0：指标 2： 事件
+     * **参数解释**： 自定义告警模板类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - 0：指标。 - 2： 事件。           **默认取值**： 0 
      */
     public static final class TemplateTypeEnum {
 
@@ -119,7 +119,7 @@ public class CreateAlarmTemplateRequestBody {
     }
 
     /**
-     * 告警模板的名称，以字母或汉字开头，可包含字母、数字、汉字、_、-，长度范围[1,128]
+     * **参数解释**： 告警模板的名称。 **约束限制**： 不涉及。 **取值范围**： 以字母或汉字开头，可包含字母、数字、汉字、_、-，长度为[1,128]个字符。           **默认取值**： 不涉及。 
      * @return templateName
      */
     public String getTemplateName() {
@@ -136,7 +136,7 @@ public class CreateAlarmTemplateRequestBody {
     }
 
     /**
-     * 自定义告警模板类型 0：指标 2： 事件
+     * **参数解释**： 自定义告警模板类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - 0：指标。 - 2： 事件。           **默认取值**： 0 
      * @return templateType
      */
     public TemplateTypeEnum getTemplateType() {
@@ -153,7 +153,7 @@ public class CreateAlarmTemplateRequestBody {
     }
 
     /**
-     * 告警模板的描述，长度范围[0,256]，该字段默认值为空字符串
+     * **参数解释**： 告警模板的描述     **约束限制**： 不涉及。 **取值范围**： 长度范围[0,256]。          **默认取值**： 空字符串。 
      * @return templateDescription
      */
     public String getTemplateDescription() {
@@ -170,7 +170,7 @@ public class CreateAlarmTemplateRequestBody {
     }
 
     /**
-     * 是否对模板名称已经存在的告警模板进行覆盖。true:覆盖同名告警模板；false：不覆盖，新建告警模板。
+     * **参数解释**： 是否对模板名称已经存在的告警模板进行覆盖。 **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:覆盖同名告警模板。 - false：不覆盖，新建告警模板。           **默认取值**： false 
      * @return isOverwrite
      */
     public Boolean getIsOverwrite() {
@@ -203,7 +203,7 @@ public class CreateAlarmTemplateRequestBody {
     }
 
     /**
-     * 告警模板策略列表
+     * **参数解释**： 告警模板策略列表。 **约束限制**： 不超过1000个策略。 
      * @return policies
      */
     public List<Policies> getPolicies() {

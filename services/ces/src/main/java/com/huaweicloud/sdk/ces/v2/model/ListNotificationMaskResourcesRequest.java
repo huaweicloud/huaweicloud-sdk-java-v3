@@ -31,7 +31,7 @@ public class ListNotificationMaskResourcesRequest {
     }
 
     /**
-     * 屏蔽规则ID
+     * **参数解释**： 屏蔽规则ID。    **约束限制**： 不涉及。 **取值范围**： 只能包含字母、数字，长度为[1,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationMaskId
      */
     public String getNotificationMaskId() {

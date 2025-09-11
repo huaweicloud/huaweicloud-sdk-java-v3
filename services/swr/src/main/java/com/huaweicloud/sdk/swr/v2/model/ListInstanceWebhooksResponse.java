@@ -46,7 +46,7 @@ public class ListInstanceWebhooksResponse extends SdkResponse {
     }
 
     /**
-     * 触发器策略列表
+     * 触发器列表
      * @return policies
      */
     public List<WebhookPolicyDetail> getPolicies() {
@@ -63,7 +63,7 @@ public class ListInstanceWebhooksResponse extends SdkResponse {
     }
 
     /**
-     * 触发器策略总数
+     * 触发器总数
      * @return total
      */
     public Integer getTotal() {

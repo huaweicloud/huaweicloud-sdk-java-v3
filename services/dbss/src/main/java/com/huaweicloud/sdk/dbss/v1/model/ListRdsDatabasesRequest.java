@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListRdsDatabasesRequest {
 
     /**
-     * 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
+     * **参数解释**： 数据库类型 **约束限制**： 区分大小写，只能传递取值范围内的值 **取值范围**：   - MYSQL   - ORACLE   - POSTGRESQL   - SQLSERVER   - DAMENG   - TAURUS   - DWS   - KINGBASE   - MARIADB   - GAUSSDBOPENGAUSS **默认取值**： 不涉及 
      */
     public static final class DbTypeEnum {
 
@@ -24,6 +24,11 @@ public class ListRdsDatabasesRequest {
          * Enum MYSQL for value: "MYSQL"
          */
         public static final DbTypeEnum MYSQL = new DbTypeEnum("MYSQL");
+
+        /**
+         * Enum ORACLE for value: "ORACLE"
+         */
+        public static final DbTypeEnum ORACLE = new DbTypeEnum("ORACLE");
 
         /**
          * Enum POSTGRESQL for value: "POSTGRESQL"
@@ -36,6 +41,11 @@ public class ListRdsDatabasesRequest {
         public static final DbTypeEnum SQLSERVER = new DbTypeEnum("SQLSERVER");
 
         /**
+         * Enum DAMENG for value: "DAMENG"
+         */
+        public static final DbTypeEnum DAMENG = new DbTypeEnum("DAMENG");
+
+        /**
          * Enum TAURUS for value: "TAURUS"
          */
         public static final DbTypeEnum TAURUS = new DbTypeEnum("TAURUS");
@@ -44,6 +54,11 @@ public class ListRdsDatabasesRequest {
          * Enum DWS for value: "DWS"
          */
         public static final DbTypeEnum DWS = new DbTypeEnum("DWS");
+
+        /**
+         * Enum KINGBASE for value: "KINGBASE"
+         */
+        public static final DbTypeEnum KINGBASE = new DbTypeEnum("KINGBASE");
 
         /**
          * Enum MARIADB for value: "MARIADB"
@@ -60,10 +75,13 @@ public class ListRdsDatabasesRequest {
         private static Map<String, DbTypeEnum> createStaticFields() {
             Map<String, DbTypeEnum> map = new HashMap<>();
             map.put("MYSQL", MYSQL);
+            map.put("ORACLE", ORACLE);
             map.put("POSTGRESQL", POSTGRESQL);
             map.put("SQLSERVER", SQLSERVER);
+            map.put("DAMENG", DAMENG);
             map.put("TAURUS", TAURUS);
             map.put("DWS", DWS);
+            map.put("KINGBASE", KINGBASE);
             map.put("MARIADB", MARIADB);
             map.put("GAUSSDBOPENGAUSS", GAUSSDBOPENGAUSS);
             return Collections.unmodifiableMap(map);
@@ -136,7 +154,7 @@ public class ListRdsDatabasesRequest {
     }
 
     /**
-     * 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
+     * **参数解释**： 数据库类型 **约束限制**： 区分大小写，只能传递取值范围内的值 **取值范围**：   - MYSQL   - ORACLE   - POSTGRESQL   - SQLSERVER   - DAMENG   - TAURUS   - DWS   - KINGBASE   - MARIADB   - GAUSSDBOPENGAUSS **默认取值**： 不涉及 
      * @return dbType
      */
     public DbTypeEnum getDbType() {
@@ -153,7 +171,7 @@ public class ListRdsDatabasesRequest {
     }
 
     /**
-     * 偏移量，从第一条数据偏移offset条数据后开始查询，默认为0。
+     * **参数解释**： 分页偏移量，从第一条数据偏移offset条数据后开始查询 **约束限制**： 仅支持大于等于0的整数 **取值范围**： 大于等于0 **默认取值**： 默认值为0 
      * @return offset
      */
     public String getOffset() {
@@ -170,7 +188,7 @@ public class ListRdsDatabasesRequest {
     }
 
     /**
-     * 查询记录数，默认为100。
+     * **参数解释**： 每页查询记录数。 **约束限制**： 仅支持大于0的整数 **取值范围**： 大于0小于等于10000 **默认取值**： 默认值为100 
      * @return limit
      */
     public String getLimit() {

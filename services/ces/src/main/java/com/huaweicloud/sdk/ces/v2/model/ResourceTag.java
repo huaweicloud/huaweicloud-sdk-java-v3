@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 资源标签
+ * **参数解释**： 资源标签。   **约束限制**： 不涉及。 
  */
 public class ResourceTag {
 
@@ -26,7 +26,7 @@ public class ResourceTag {
     }
 
     /**
-     * 键；最大长度128个unicode字符。
+     * **参数解释**： 标签名。 **约束限制**： 不涉及。 **取值范围**： 最大长度128个unicode字符。           **默认取值**： 不涉及。 
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ResourceTag {
     }
 
     /**
-     * 值。最大长度255个unicode字符。
+     * **参数解释**： 标签值。 **约束限制**： 不涉及。 **取值范围**： 最大长度255个unicode字符。           **默认取值**： 不涉及。 
      * @return value
      */
     public String getValue() {

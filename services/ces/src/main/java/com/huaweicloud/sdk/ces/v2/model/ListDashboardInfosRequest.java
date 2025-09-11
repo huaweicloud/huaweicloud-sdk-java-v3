@@ -36,7 +36,7 @@ public class ListDashboardInfosRequest {
     private String dashboardId;
 
     /**
-     * 监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板
+     * **参数解释**： 监控看板类型。 **约束限制**： 不涉及。 **取值范围**： - monitor_dashboard:表示监控大盘 - other:表示自定义看板 **默认取值**： 不涉及。 
      */
     public static final class DashboardTypeEnum {
 
@@ -116,7 +116,7 @@ public class ListDashboardInfosRequest {
     }
 
     /**
-     * 企业项目Id
+     * **参数解释**： 企业项目ID。 **约束限制**： 不涉及。 **取值范围**： 只能包含小写字母、数字、“-”、“_”，可以自定义企业项目ID，长度为36个字符。也可以为0（代表默认企业项目ID），all_granted_eps（代表所有企业项目ID）。           **默认取值**： 不涉及。 
      * @return enterpriseId
      */
     public String getEnterpriseId() {
@@ -133,7 +133,7 @@ public class ListDashboardInfosRequest {
     }
 
     /**
-     * 指定企业项目下监控看板是否收藏，true:收藏，false:未收藏，填此参数时，enterprise_id必填
+     * **参数解释**： 指定企业项目下监控看板是否收藏。 **约束限制**： 填此参数时，enterprise_id必填。 **取值范围**： - true:收藏 - false:未收藏          **默认取值**： 不涉及。 
      * @return isFavorite
      */
     public Boolean getIsFavorite() {
@@ -150,7 +150,7 @@ public class ListDashboardInfosRequest {
     }
 
     /**
-     * 监控看板名称
+     * **参数解释**： 监控看板名称。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,128]个字符，只允许中文、英文、数字0-9、_和-          **默认取值**： 不涉及。 
      * @return dashboardName
      */
     public String getDashboardName() {
@@ -167,7 +167,7 @@ public class ListDashboardInfosRequest {
     }
 
     /**
-     * 监控看板id
+     * **参数解释**： 监控看板id。 **约束限制**： 不涉及。 **取值范围**： 以db开头，包含22个字母和数字，长度为24个字符 **默认取值**： 不涉及。 
      * @return dashboardId
      */
     public String getDashboardId() {
@@ -184,7 +184,7 @@ public class ListDashboardInfosRequest {
     }
 
     /**
-     * 监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板
+     * **参数解释**： 监控看板类型。 **约束限制**： 不涉及。 **取值范围**： - monitor_dashboard:表示监控大盘 - other:表示自定义看板 **默认取值**： 不涉及。 
      * @return dashboardType
      */
     public DashboardTypeEnum getDashboardType() {

@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 监控视图的阈值辅助线配置
+ * **参数解释** 监控视图的阈值辅助线配置 **约束限制** 不涉及 
  */
 public class ThresholdInfo {
 
@@ -22,7 +22,7 @@ public class ThresholdInfo {
     private BigDecimal threshold;
 
     /**
-     * 监控视图辅助线的颜色,\"#B50E65\"紫色,\"#F23030\"红色,\"#FF8800\"橙色,\"#F2E70C\"黄色
+     * **参数解释** 监控视图辅助线的颜色 **约束限制** 不涉及           **取值范围** - \"#B50E65\":紫色 - \"#F23030\":红色 - \"#FF8800\":橙色 - \"#F2E70C\":黄色 **默认取值** 不涉及 
      */
     public static final class ThresholdColorEnum {
 
@@ -114,7 +114,7 @@ public class ThresholdInfo {
     }
 
     /**
-     * 监控视图辅助线的阈值
+     * **参数解释** 监控视图辅助线的阈值 **约束限制** 不涉及 **取值范围** 最小值为0，最大值为2147483647 **默认取值** 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return threshold
@@ -133,7 +133,7 @@ public class ThresholdInfo {
     }
 
     /**
-     * 监控视图辅助线的颜色,\"#B50E65\"紫色,\"#F23030\"红色,\"#FF8800\"橙色,\"#F2E70C\"黄色
+     * **参数解释** 监控视图辅助线的颜色 **约束限制** 不涉及           **取值范围** - \"#B50E65\":紫色 - \"#F23030\":红色 - \"#FF8800\":橙色 - \"#F2E70C\":黄色 **默认取值** 不涉及 
      * @return thresholdColor
      */
     public ThresholdColorEnum getThresholdColor() {

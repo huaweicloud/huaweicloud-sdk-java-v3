@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
-import com.huaweicloud.sdk.core.SdkStreamResponse;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class ExportDatabaseUsersResponse extends SdkStreamResponse {
+public class ExportDatabaseUsersResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {

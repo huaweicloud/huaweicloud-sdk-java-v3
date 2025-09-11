@@ -59,7 +59,7 @@ public class AlarmTemplates {
     }
 
     /**
-     * 告警模板的名称，以字母或汉字开头，可包含字母、数字、汉字、_、-，长度范围[1,128]
+     * **参数解释**： 告警模板的名称。 **约束限制**： 不涉及。 **取值范围**： 以字母或汉字开头，可包含字母、数字、汉字、_、-，长度为[1,128]个字符。           **默认取值**： 不涉及。 
      * @return templateName
      */
     public String getTemplateName() {
@@ -110,7 +110,7 @@ public class AlarmTemplates {
     }
 
     /**
-     * 告警模板的描述，长度范围[0,256]，该字段默认值为空字符串
+     * **参数解释**： 告警模板的描述     **约束限制**： 不涉及。 **取值范围**： 长度范围[0,256]。          **默认取值**： 空字符串。 
      * @return templateDescription
      */
     public String getTemplateDescription() {

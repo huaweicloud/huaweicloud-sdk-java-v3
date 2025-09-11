@@ -68,7 +68,7 @@ public class UpdateImmutableRuleBody {
     }
 
     /**
-     * 不可变规则是否生效，默认值为false
+     * 不可变策略是否生效，默认值为false
      * @return disabled
      */
     public Boolean getDisabled() {

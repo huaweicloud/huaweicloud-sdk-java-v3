@@ -183,7 +183,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * 告警规则id，以al开头，包含22个数字或字母
+     * **参数解释**： 告警规则id。     **约束限制**： 不涉及。 **取值范围**： 以al开头，后跟22个数字或字母。           **默认取值**： 不涉及。 
      * @return alarmId
      */
     public String getAlarmId() {
@@ -200,7 +200,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * 告警名称, 只能包含0-9/a-z/A-Z/_/-或汉字，长度1-128
+     * **参数解释**： 告警名称。 **约束限制**： 不涉及。 **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度[1，128]个字符。           **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -217,7 +217,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * 告警描述，长度0-256
+     * **参数解释**： 告警描述。     **约束限制**： 不涉及。 **取值范围**： 长度为[0,256]个字符。        **默认取值**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -234,7 +234,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+     * **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
      * @return namespace
      */
     public String getNamespace() {
@@ -334,7 +334,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * 是否开启告警规则。true:开启，false:关闭。
+     * **参数解释**： 是否开启告警规则。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -351,7 +351,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * 是否开启告警通知。true:开启，false:关闭。
+     * **参数解释**： 是否开启告警通知。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
      * @return notificationEnabled
      */
     public Boolean getNotificationEnabled() {
@@ -384,7 +384,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警触发的动作数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
      * @return alarmNotifications
      */
     public List<Notification> getAlarmNotifications() {
@@ -417,7 +417,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警恢复触发的动作数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
      * @return okNotifications
      */
     public List<Notification> getOkNotifications() {
@@ -434,7 +434,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * **参数解释**： 每天告警通知的开始时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警通知开启时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationBeginTime
      */
     public String getNotificationBeginTime() {
@@ -451,7 +451,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * **参数解释**： 每天告警通知的结束时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationEndTime
      */
     public String getNotificationEndTime() {
@@ -468,7 +468,7 @@ public class ListAlarmsRespAlarms {
     }
 
     /**
-     * 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"
+     * **参数解释**： 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"。    **约束限制**： 不涉及。 **取值范围**： 长度为[1,16]个字符。           **默认取值**： 不涉及。 
      * @return effectiveTimezone
      */
     public String getEffectiveTimezone() {

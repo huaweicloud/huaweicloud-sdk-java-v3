@@ -41,7 +41,7 @@ public class Target {
     }
 
     /**
-     * 触发器类型，可选http
+     * 触发类型，可选http
      * @return type
      */
     public String getType() {

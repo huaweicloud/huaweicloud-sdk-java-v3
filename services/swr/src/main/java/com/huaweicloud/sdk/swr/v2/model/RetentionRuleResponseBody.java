@@ -66,7 +66,7 @@ public class RetentionRuleResponseBody {
     }
 
     /**
-     * Get id
+     * 镜像老化策略ID
      * @return id
      */
     public Integer getId() {

@@ -106,7 +106,7 @@ public class BatchUpdateNotificationMaskTimeRequestBody {
     }
 
     /**
-     * 屏蔽起始日期，yyyy-MM-dd。
+     * **参数解释**： 屏蔽起始日期。           **约束限制**： 不涉及。 **取值范围**： 字符长度为10，格式为：yyyy-MM-dd           **默认取值**： 不涉及。 
      * @return startDate
      */
     public LocalDate getStartDate() {
@@ -123,7 +123,7 @@ public class BatchUpdateNotificationMaskTimeRequestBody {
     }
 
     /**
-     * 屏蔽起始时间，HH:mm:ss。
+     * **参数解释**： 屏蔽起始时间。          **约束限制**： 不涉及。 **取值范围**： 字符长度为8，格式为：HH:mm:ss         **默认取值**： 不涉及。 
      * @return startTime
      */
     public String getStartTime() {
@@ -140,7 +140,7 @@ public class BatchUpdateNotificationMaskTimeRequestBody {
     }
 
     /**
-     * 屏蔽截止日期，yyyy-MM-dd。
+     * **参数解释**： 屏蔽截止日期。           **约束限制**： 不涉及。 **取值范围**： 字符长度为10，格式为：yyyy-MM-dd           **默认取值**： 不涉及。 
      * @return endDate
      */
     public LocalDate getEndDate() {
@@ -157,7 +157,7 @@ public class BatchUpdateNotificationMaskTimeRequestBody {
     }
 
     /**
-     * 屏蔽截止时间，HH:mm:ss。
+     * **参数解释**： 屏蔽截止时间。          **约束限制**： 不涉及。 **取值范围**： 字符长度为8，格式为：HH:mm:ss         **默认取值**： 不涉及。 
      * @return endTime
      */
     public String getEndTime() {
@@ -174,7 +174,7 @@ public class BatchUpdateNotificationMaskTimeRequestBody {
     }
 
     /**
-     * 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"
+     * **参数解释**： 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"。    **约束限制**： 不涉及。 **取值范围**： 长度为[1,16]个字符。           **默认取值**： 不涉及。 
      * @return effectiveTimezone
      */
     public String getEffectiveTimezone() {

@@ -153,6 +153,11 @@ public class EnableOneClickAlarmRequestBody {
     private Boolean isReset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabled_alarm_ids")
+
+    private List<String> enabledAlarmIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "one_click_update_alarms")
 
     private List<EnableOneClickAlarmRequestBodyOneClickUpdateAlarms> oneClickUpdateAlarms = null;
@@ -163,7 +168,7 @@ public class EnableOneClickAlarmRequestBody {
     }
 
     /**
-     * 一键告警ID
+     * **参数解释**： 一键告警ID。 **约束限制**： 不涉及。 **取值范围**： 只能为字母或者数字，字符长度为[1,64] **默认取值**： 不涉及。 
      * @return oneClickAlarmId
      */
     public String getOneClickAlarmId() {
@@ -206,7 +211,7 @@ public class EnableOneClickAlarmRequestBody {
     }
 
     /**
-     * 是否开启告警通知。true:开启，false:关闭。
+     * **参数解释**： 是否开启告警通知。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
      * @return notificationEnabled
      */
     public Boolean getNotificationEnabled() {
@@ -240,7 +245,7 @@ public class EnableOneClickAlarmRequestBody {
     }
 
     /**
-     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警触发的动作数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
      * @return alarmNotifications
      */
     public List<Notification> getAlarmNotifications() {
@@ -273,7 +278,7 @@ public class EnableOneClickAlarmRequestBody {
     }
 
     /**
-     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警恢复触发的动作数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
      * @return okNotifications
      */
     public List<Notification> getOkNotifications() {
@@ -290,7 +295,7 @@ public class EnableOneClickAlarmRequestBody {
     }
 
     /**
-     * **参数解释**： 每天告警通知的开始时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警通知开启时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationBeginTime
      */
     public String getNotificationBeginTime() {
@@ -307,7 +312,7 @@ public class EnableOneClickAlarmRequestBody {
     }
 
     /**
-     * **参数解释**： 每天告警通知的结束时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationEndTime
      */
     public String getNotificationEndTime() {
@@ -324,7 +329,7 @@ public class EnableOneClickAlarmRequestBody {
     }
 
     /**
-     * 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"
+     * **参数解释**： 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"。    **约束限制**： 不涉及。 **取值范围**： 长度为[1,16]个字符。           **默认取值**： 不涉及。 
      * @return effectiveTimezone
      */
     public String getEffectiveTimezone() {
@@ -403,6 +408,39 @@ public class EnableOneClickAlarmRequestBody {
         this.isReset = isReset;
     }
 
+    public EnableOneClickAlarmRequestBody withEnabledAlarmIds(List<String> enabledAlarmIds) {
+        this.enabledAlarmIds = enabledAlarmIds;
+        return this;
+    }
+
+    public EnableOneClickAlarmRequestBody addEnabledAlarmIdsItem(String enabledAlarmIdsItem) {
+        if (this.enabledAlarmIds == null) {
+            this.enabledAlarmIds = new ArrayList<>();
+        }
+        this.enabledAlarmIds.add(enabledAlarmIdsItem);
+        return this;
+    }
+
+    public EnableOneClickAlarmRequestBody withEnabledAlarmIds(Consumer<List<String>> enabledAlarmIdsSetter) {
+        if (this.enabledAlarmIds == null) {
+            this.enabledAlarmIds = new ArrayList<>();
+        }
+        enabledAlarmIdsSetter.accept(this.enabledAlarmIds);
+        return this;
+    }
+
+    /**
+     * **参数解释**: 开启一键告警时可选需要的开启的一键告警规则ID，默认为该服务下的所有一键告警规则ID。 **约束限制**: 数组元素个数[0,50] **取值范围**: 不涉及。 **默认取值**: 该服务下一键告警全部告警规则。 
+     * @return enabledAlarmIds
+     */
+    public List<String> getEnabledAlarmIds() {
+        return enabledAlarmIds;
+    }
+
+    public void setEnabledAlarmIds(List<String> enabledAlarmIds) {
+        this.enabledAlarmIds = enabledAlarmIds;
+    }
+
     public EnableOneClickAlarmRequestBody withOneClickUpdateAlarms(
         List<EnableOneClickAlarmRequestBodyOneClickUpdateAlarms> oneClickUpdateAlarms) {
         this.oneClickUpdateAlarms = oneClickUpdateAlarms;
@@ -458,7 +496,7 @@ public class EnableOneClickAlarmRequestBody {
             && Objects.equals(this.effectiveTimezone, that.effectiveTimezone)
             && Objects.equals(this.notificationManner, that.notificationManner)
             && Objects.equals(this.notificationPolicyIds, that.notificationPolicyIds)
-            && Objects.equals(this.isReset, that.isReset)
+            && Objects.equals(this.isReset, that.isReset) && Objects.equals(this.enabledAlarmIds, that.enabledAlarmIds)
             && Objects.equals(this.oneClickUpdateAlarms, that.oneClickUpdateAlarms);
     }
 
@@ -475,6 +513,7 @@ public class EnableOneClickAlarmRequestBody {
             notificationManner,
             notificationPolicyIds,
             isReset,
+            enabledAlarmIds,
             oneClickUpdateAlarms);
     }
 
@@ -493,6 +532,7 @@ public class EnableOneClickAlarmRequestBody {
         sb.append("    notificationManner: ").append(toIndentedString(notificationManner)).append("\n");
         sb.append("    notificationPolicyIds: ").append(toIndentedString(notificationPolicyIds)).append("\n");
         sb.append("    isReset: ").append(toIndentedString(isReset)).append("\n");
+        sb.append("    enabledAlarmIds: ").append(toIndentedString(enabledAlarmIds)).append("\n");
         sb.append("    oneClickUpdateAlarms: ").append(toIndentedString(oneClickUpdateAlarms)).append("\n");
         sb.append("}");
         return sb.toString();

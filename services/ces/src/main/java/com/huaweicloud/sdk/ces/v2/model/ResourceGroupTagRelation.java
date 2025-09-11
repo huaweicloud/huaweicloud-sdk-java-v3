@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 标签的匹配规则
+ * **参数解释** 标签的匹配规则 **约束限制** 不涉及 
  */
 public class ResourceGroupTagRelation {
 
@@ -21,7 +21,7 @@ public class ResourceGroupTagRelation {
     private String key;
 
     /**
-     * tag操作符，含义是标签key与value的关系。   include表示包含   prefix表示前缀   suffix表示后缀   notInclude表示不包含   equal表示相等   当operator为equal，value为空字符串时表示为全部   all表示全部 
+     * **参数解释** tag操作符，含义是标签key与value的关系 **约束限制** 不涉及 **取值范围** - include: 表示包含 - prefix: 表示前缀 - suffix: 表示后缀 - notInclude: 表示不包含 - equal: 表示相等，当operator为equal，value为空字符串时表示为全部 - all: 表示全部 **默认取值** 不涉及 
      */
     public static final class OperatorEnum {
 
@@ -130,7 +130,7 @@ public class ResourceGroupTagRelation {
     }
 
     /**
-     * TMS标签键规范。
+     * **参数解释** TMS标签键规范 **约束限制** 不涉及 **取值范围** 长度为[1,128]个字符 **默认取值** 不涉及 
      * @return key
      */
     public String getKey() {
@@ -147,7 +147,7 @@ public class ResourceGroupTagRelation {
     }
 
     /**
-     * tag操作符，含义是标签key与value的关系。   include表示包含   prefix表示前缀   suffix表示后缀   notInclude表示不包含   equal表示相等   当operator为equal，value为空字符串时表示为全部   all表示全部 
+     * **参数解释** tag操作符，含义是标签key与value的关系 **约束限制** 不涉及 **取值范围** - include: 表示包含 - prefix: 表示前缀 - suffix: 表示后缀 - notInclude: 表示不包含 - equal: 表示相等，当operator为equal，value为空字符串时表示为全部 - all: 表示全部 **默认取值** 不涉及 
      * @return operator
      */
     public OperatorEnum getOperator() {
@@ -164,7 +164,7 @@ public class ResourceGroupTagRelation {
     }
 
     /**
-     * TMS标签值规范。
+     * **参数解释** TMS标签值规范 **约束限制** 不涉及 **取值范围** 长度为[0，255]个字符 **默认取值** 不涉及 
      * @return value
      */
     public String getValue() {

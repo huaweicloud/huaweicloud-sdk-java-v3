@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -21,86 +23,10 @@ public class AlarmLogRequest {
 
     private AlarmLogRequestTime time;
 
-    /**
-     * 风险级别 - LOW - MEDIUM - HIGH
-     */
-    public static final class RiskEnum {
-
-        /**
-         * Enum LOW for value: "LOW"
-         */
-        public static final RiskEnum LOW = new RiskEnum("LOW");
-
-        /**
-         * Enum MEDIUM for value: "MEDIUM"
-         */
-        public static final RiskEnum MEDIUM = new RiskEnum("MEDIUM");
-
-        /**
-         * Enum HIGH for value: "HIGH"
-         */
-        public static final RiskEnum HIGH = new RiskEnum("HIGH");
-
-        private static final Map<String, RiskEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RiskEnum> createStaticFields() {
-            Map<String, RiskEnum> map = new HashMap<>();
-            map.put("LOW", LOW);
-            map.put("MEDIUM", MEDIUM);
-            map.put("HIGH", HIGH);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RiskEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RiskEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RiskEnum(value));
-        }
-
-        public static RiskEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RiskEnum) {
-                return this.value.equals(((RiskEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk")
 
-    private RiskEnum risk;
+    private List<String> risk = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -218,20 +144,36 @@ public class AlarmLogRequest {
         this.time = time;
     }
 
-    public AlarmLogRequest withRisk(RiskEnum risk) {
+    public AlarmLogRequest withRisk(List<String> risk) {
         this.risk = risk;
         return this;
     }
 
+    public AlarmLogRequest addRiskItem(String riskItem) {
+        if (this.risk == null) {
+            this.risk = new ArrayList<>();
+        }
+        this.risk.add(riskItem);
+        return this;
+    }
+
+    public AlarmLogRequest withRisk(Consumer<List<String>> riskSetter) {
+        if (this.risk == null) {
+            this.risk = new ArrayList<>();
+        }
+        riskSetter.accept(this.risk);
+        return this;
+    }
+
     /**
-     * 风险级别 - LOW - MEDIUM - HIGH
+     * 风险级别 - LOW: 低 - MEDIUM：中 - HIGH：高
      * @return risk
      */
-    public RiskEnum getRisk() {
+    public List<String> getRisk() {
         return risk;
     }
 
-    public void setRisk(RiskEnum risk) {
+    public void setRisk(List<String> risk) {
         this.risk = risk;
     }
 

@@ -24,6 +24,16 @@ public class ShowVmMonitorResponse extends SdkResponse {
 
     private String metricName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max")
+
+    private Double max;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "average")
+
+    private Double average;
+
     public ShowVmMonitorResponse withDatapoints(List<Datapoint> datapoints) {
         this.datapoints = datapoints;
         return this;
@@ -74,6 +84,40 @@ public class ShowVmMonitorResponse extends SdkResponse {
         this.metricName = metricName;
     }
 
+    public ShowVmMonitorResponse withMax(Double max) {
+        this.max = max;
+        return this;
+    }
+
+    /**
+     * 最大值，未计算默认为0
+     * @return max
+     */
+    public Double getMax() {
+        return max;
+    }
+
+    public void setMax(Double max) {
+        this.max = max;
+    }
+
+    public ShowVmMonitorResponse withAverage(Double average) {
+        this.average = average;
+        return this;
+    }
+
+    /**
+     * 平均值，未计算默认为0
+     * @return average
+     */
+    public Double getAverage() {
+        return average;
+    }
+
+    public void setAverage(Double average) {
+        this.average = average;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +127,13 @@ public class ShowVmMonitorResponse extends SdkResponse {
             return false;
         }
         ShowVmMonitorResponse that = (ShowVmMonitorResponse) obj;
-        return Objects.equals(this.datapoints, that.datapoints) && Objects.equals(this.metricName, that.metricName);
+        return Objects.equals(this.datapoints, that.datapoints) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.max, that.max) && Objects.equals(this.average, that.average);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datapoints, metricName);
+        return Objects.hash(datapoints, metricName, max, average);
     }
 
     @Override
@@ -97,6 +142,8 @@ public class ShowVmMonitorResponse extends SdkResponse {
         sb.append("class ShowVmMonitorResponse {\n");
         sb.append("    datapoints: ").append(toIndentedString(datapoints)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
+        sb.append("    max: ").append(toIndentedString(max)).append("\n");
+        sb.append("    average: ").append(toIndentedString(average)).append("\n");
         sb.append("}");
         return sb.toString();
     }

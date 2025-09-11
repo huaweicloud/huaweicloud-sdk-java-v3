@@ -267,7 +267,7 @@ public class ListResourceGroupsServicesResourcesRequest {
     }
 
     /**
-     * 资源维度信息，多个维度按字母序使用逗号分割
+     * 资源维度信息，多个维度按字母序使用逗号分隔
      * @return dimName
      */
     public String getDimName() {

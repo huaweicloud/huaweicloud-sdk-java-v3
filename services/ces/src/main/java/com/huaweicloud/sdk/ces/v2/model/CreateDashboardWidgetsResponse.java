@@ -41,7 +41,7 @@ public class CreateDashboardWidgetsResponse extends SdkResponse {
     }
 
     /**
-     * 批量创建监控视图返回结果
+     * **参数解释** 批量创建监控视图返回结果 
      * @return widgetIds
      */
     public List<String> getWidgetIds() {

@@ -19,9 +19,9 @@ public class ListResourceTag {
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
+    @JsonProperty(value = "values")
 
-    private List<String> value = null;
+    private List<String> values = null;
 
     public ListResourceTag withKey(String key) {
         this.key = key;
@@ -40,37 +40,37 @@ public class ListResourceTag {
         this.key = key;
     }
 
-    public ListResourceTag withValue(List<String> value) {
-        this.value = value;
+    public ListResourceTag withValues(List<String> values) {
+        this.values = values;
         return this;
     }
 
-    public ListResourceTag addValueItem(String valueItem) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
+    public ListResourceTag addValuesItem(String valuesItem) {
+        if (this.values == null) {
+            this.values = new ArrayList<>();
         }
-        this.value.add(valueItem);
+        this.values.add(valuesItem);
         return this;
     }
 
-    public ListResourceTag withValue(Consumer<List<String>> valueSetter) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
+    public ListResourceTag withValues(Consumer<List<String>> valuesSetter) {
+        if (this.values == null) {
+            this.values = new ArrayList<>();
         }
-        valueSetter.accept(this.value);
+        valuesSetter.accept(this.values);
         return this;
     }
 
     /**
      * 标签值列表\"。
-     * @return value
+     * @return values
      */
-    public List<String> getValue() {
-        return value;
+    public List<String> getValues() {
+        return values;
     }
 
-    public void setValue(List<String> value) {
-        this.value = value;
+    public void setValues(List<String> values) {
+        this.values = values;
     }
 
     @Override
@@ -82,12 +82,12 @@ public class ListResourceTag {
             return false;
         }
         ListResourceTag that = (ListResourceTag) obj;
-        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
+        return Objects.equals(this.key, that.key) && Objects.equals(this.values, that.values);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, value);
+        return Objects.hash(key, values);
     }
 
     @Override
@@ -95,7 +95,7 @@ public class ListResourceTag {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourceTag {\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    values: ").append(toIndentedString(values)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListScheduleTaskRequest {
 
     /**
-     * 语言。
+     * **参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**:   - zh-cn   - en-us  **默认取值**: en-us
      */
     public static final class XLanguageEnum {
 
@@ -283,7 +283,7 @@ public class ListScheduleTaskRequest {
     }
 
     /**
-     * 语言。
+     * **参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**:   - zh-cn   - en-us  **默认取值**: en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -37,7 +37,7 @@ public class CcspServiceInfo {
     }
 
     /**
-     * 当前租户拥有的专属密码服务集群数量
+     * 当前租户拥有的密码服务集群数量
      * @return clusterNum
      */
     public Integer getClusterNum() {
@@ -54,7 +54,7 @@ public class CcspServiceInfo {
     }
 
     /**
-     * 当前租户拥有的专属密码服务实例数量
+     * 当前租户拥有的密码服务实例数量
      * @return instanceNum
      */
     public Integer getInstanceNum() {
@@ -71,7 +71,7 @@ public class CcspServiceInfo {
     }
 
     /**
-     * 当前租户的可创建的专属密码服务实例配额数
+     * 当前租户的可创建的密码服务实例配额数
      * @return instanceQuota
      */
     public Integer getInstanceQuota() {

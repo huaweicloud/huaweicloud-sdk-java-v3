@@ -22,6 +22,9 @@ public class EpsRegion {
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://eps.ru-moscow-1.myhuaweicloud.com",
         "https://eps.ru-moscow-1.myhuaweicloud.cn");
 
+    public static final Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
+        "https://eps.my-kualalumpur-1.myhuaweicloud.com", "https://eps.my-kualalumpur-1.myhuaweicloud.cn");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EPS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -31,6 +34,7 @@ public class EpsRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("eu-west-101", EU_WEST_101);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         return Collections.unmodifiableMap(map);
     }
 

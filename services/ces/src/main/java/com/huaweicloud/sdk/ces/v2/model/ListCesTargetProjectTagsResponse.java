@@ -17,14 +17,14 @@ public class ListCesTargetProjectTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Tag> tags = null;
+    private List<TagResp> tags = null;
 
-    public ListCesTargetProjectTagsResponse withTags(List<Tag> tags) {
+    public ListCesTargetProjectTagsResponse withTags(List<TagResp> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ListCesTargetProjectTagsResponse addTagsItem(Tag tagsItem) {
+    public ListCesTargetProjectTagsResponse addTagsItem(TagResp tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListCesTargetProjectTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ListCesTargetProjectTagsResponse withTags(Consumer<List<Tag>> tagsSetter) {
+    public ListCesTargetProjectTagsResponse withTags(Consumer<List<TagResp>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ListCesTargetProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * 租户标签列表
+     * **参数解释**： 租户标签列表。 
      * @return tags
      */
-    public List<Tag> getTags() {
+    public List<TagResp> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<TagResp> tags) {
         this.tags = tags;
     }
 

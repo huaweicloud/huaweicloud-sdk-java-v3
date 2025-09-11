@@ -226,7 +226,7 @@ public class ListInstanceStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 触发器策略的配额
+     * 触发器的配额
      * @return notifyPolicyQuota
      */
     public Long getNotifyPolicyQuota() {
@@ -311,7 +311,7 @@ public class ListInstanceStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 触发器策略的总数
+     * 触发器的总数
      * @return notifyPolicyCount
      */
     public Long getNotifyPolicyCount() {

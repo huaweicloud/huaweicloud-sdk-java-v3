@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -21,92 +16,10 @@ public class AuditSqlRequest {
 
     private AuditSqlRequestTime time;
 
-    /**
-     * 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
-     */
-    public static final class RiskLevelsEnum {
-
-        /**
-         * Enum HIGH for value: "HIGH"
-         */
-        public static final RiskLevelsEnum HIGH = new RiskLevelsEnum("HIGH");
-
-        /**
-         * Enum MEDIUM for value: "MEDIUM"
-         */
-        public static final RiskLevelsEnum MEDIUM = new RiskLevelsEnum("MEDIUM");
-
-        /**
-         * Enum LOW for value: "LOW"
-         */
-        public static final RiskLevelsEnum LOW = new RiskLevelsEnum("LOW");
-
-        /**
-         * Enum NO_RISK for value: "NO_RISK"
-         */
-        public static final RiskLevelsEnum NO_RISK = new RiskLevelsEnum("NO_RISK");
-
-        private static final Map<String, RiskLevelsEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RiskLevelsEnum> createStaticFields() {
-            Map<String, RiskLevelsEnum> map = new HashMap<>();
-            map.put("HIGH", HIGH);
-            map.put("MEDIUM", MEDIUM);
-            map.put("LOW", LOW);
-            map.put("NO_RISK", NO_RISK);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        RiskLevelsEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RiskLevelsEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RiskLevelsEnum(value));
-        }
-
-        public static RiskLevelsEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof RiskLevelsEnum) {
-                return this.value.equals(((RiskLevelsEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "risk_levels")
 
-    private RiskLevelsEnum riskLevels;
+    private String riskLevels;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_ip")
@@ -189,20 +102,20 @@ public class AuditSqlRequest {
         this.time = time;
     }
 
-    public AuditSqlRequest withRiskLevels(RiskLevelsEnum riskLevels) {
+    public AuditSqlRequest withRiskLevels(String riskLevels) {
         this.riskLevels = riskLevels;
         return this;
     }
 
     /**
-     * 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
+     * 风险级别 - HIGH：高 - MEDIUM：中 - LOW：低 - NO_RISK：无
      * @return riskLevels
      */
-    public RiskLevelsEnum getRiskLevels() {
+    public String getRiskLevels() {
         return riskLevels;
     }
 
-    public void setRiskLevels(RiskLevelsEnum riskLevels) {
+    public void setRiskLevels(String riskLevels) {
         this.riskLevels = riskLevels;
     }
 

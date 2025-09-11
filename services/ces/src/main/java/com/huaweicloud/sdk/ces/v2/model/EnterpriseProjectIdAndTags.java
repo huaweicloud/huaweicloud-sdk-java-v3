@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 企业项目Id或标签信息
+ * **参数解释** 企业项目Id或标签信息 **约束限制** 不涉及 
  */
 public class EnterpriseProjectIdAndTags {
 
@@ -27,7 +27,7 @@ public class EnterpriseProjectIdAndTags {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释** 企业项目ID **约束限制** 不涉及 **取值范围** 由字母、数字、_和-组成，长度为[1,128]个字符 **默认取值** 不涉及 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

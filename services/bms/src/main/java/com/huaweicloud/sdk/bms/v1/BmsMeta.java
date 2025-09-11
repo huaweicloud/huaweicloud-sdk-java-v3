@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.bms.v1.model.AddServerNicsResponse;
 import com.huaweicloud.sdk.bms.v1.model.AttachBaremetalServerVolumeRequest;
 import com.huaweicloud.sdk.bms.v1.model.AttachBaremetalServerVolumeResponse;
 import com.huaweicloud.sdk.bms.v1.model.AttachVolumeBody;
+import com.huaweicloud.sdk.bms.v1.model.BareMetalModifyPortRequest;
 import com.huaweicloud.sdk.bms.v1.model.BatchCreateBaremetalServerTagsRequest;
 import com.huaweicloud.sdk.bms.v1.model.BatchCreateBaremetalServerTagsRequestBody;
 import com.huaweicloud.sdk.bms.v1.model.BatchCreateBaremetalServerTagsResponse;
@@ -44,6 +45,8 @@ import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ModifyVmNicRequest;
+import com.huaweicloud.sdk.bms.v1.model.ModifyVmNicResponse;
 import com.huaweicloud.sdk.bms.v1.model.OSChangeReq;
 import com.huaweicloud.sdk.bms.v1.model.OsReinstallBody;
 import com.huaweicloud.sdk.bms.v1.model.OsStartBody;
@@ -54,6 +57,8 @@ import com.huaweicloud.sdk.bms.v1.model.ReinstallBaremetalServerOsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ResetPasswordBody;
 import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickRequest;
 import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowAvailableResourceRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowAvailableResourceResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsResponse;
 import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsRequest;
@@ -673,6 +678,33 @@ public class BmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyVmNicRequest, ModifyVmNicResponse> modifyVmNic = genForModifyVmNic();
+
+    private static HttpRequestDef<ModifyVmNicRequest, ModifyVmNicResponse> genForModifyVmNic() {
+        // basic
+        HttpRequestDef.Builder<ModifyVmNicRequest, ModifyVmNicResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyVmNicRequest.class, ModifyVmNicResponse.class)
+                .withName("ModifyVmNic")
+                .withUri("/v1/{project_id}/baremetalservers/nics/{nic_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("nic_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyVmNicRequest::getNicId, ModifyVmNicRequest::setNicId));
+        builder.<BareMetalModifyPortRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BareMetalModifyPortRequest.class),
+            f -> f.withMarshaller(ModifyVmNicRequest::getBody, ModifyVmNicRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse> reinstallBaremetalServerOs =
         genForReinstallBaremetalServerOs();
 
@@ -728,6 +760,24 @@ public class BmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetPasswordBody.class),
             f -> f.withMarshaller(ResetPwdOneClickRequest::getBody, ResetPwdOneClickRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAvailableResourceRequest, ShowAvailableResourceResponse> showAvailableResource =
+        genForShowAvailableResource();
+
+    private static HttpRequestDef<ShowAvailableResourceRequest, ShowAvailableResourceResponse> genForShowAvailableResource() {
+        // basic
+        HttpRequestDef.Builder<ShowAvailableResourceRequest, ShowAvailableResourceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAvailableResourceRequest.class, ShowAvailableResourceResponse.class)
+            .withName("ShowAvailableResource")
+            .withUri("/v1/{project_id}/baremetalservers/available_resource")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 

@@ -182,7 +182,7 @@ public class UpdateWebhookPolicyRequestBody {
     }
 
     /**
-     * 是否使用
+     * 是否启用
      * @return enabled
      */
     public Boolean getEnabled() {

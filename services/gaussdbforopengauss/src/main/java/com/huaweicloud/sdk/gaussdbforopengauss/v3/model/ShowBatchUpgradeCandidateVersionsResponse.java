@@ -32,12 +32,12 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hotfix_upgrade_infos")
 
-    private List<HotfixInfo> hotfixUpgradeInfos = null;
+    private List<HotfixInfoResult> hotfixUpgradeInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hotfix_rollback_infos")
 
-    private List<HotfixInfo> hotfixRollbackInfos = null;
+    private List<HotfixInfoResult> hotfixRollbackInfos = null;
 
     public ShowBatchUpgradeCandidateVersionsResponse withUpgradeTypeList(List<UpgradeTypeInfo> upgradeTypeList) {
         this.upgradeTypeList = upgradeTypeList;
@@ -126,12 +126,13 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
         this.upgradeCandidateVersions = upgradeCandidateVersions;
     }
 
-    public ShowBatchUpgradeCandidateVersionsResponse withHotfixUpgradeInfos(List<HotfixInfo> hotfixUpgradeInfos) {
+    public ShowBatchUpgradeCandidateVersionsResponse withHotfixUpgradeInfos(List<HotfixInfoResult> hotfixUpgradeInfos) {
         this.hotfixUpgradeInfos = hotfixUpgradeInfos;
         return this;
     }
 
-    public ShowBatchUpgradeCandidateVersionsResponse addHotfixUpgradeInfosItem(HotfixInfo hotfixUpgradeInfosItem) {
+    public ShowBatchUpgradeCandidateVersionsResponse addHotfixUpgradeInfosItem(
+        HotfixInfoResult hotfixUpgradeInfosItem) {
         if (this.hotfixUpgradeInfos == null) {
             this.hotfixUpgradeInfos = new ArrayList<>();
         }
@@ -140,7 +141,7 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     public ShowBatchUpgradeCandidateVersionsResponse withHotfixUpgradeInfos(
-        Consumer<List<HotfixInfo>> hotfixUpgradeInfosSetter) {
+        Consumer<List<HotfixInfoResult>> hotfixUpgradeInfosSetter) {
         if (this.hotfixUpgradeInfos == null) {
             this.hotfixUpgradeInfos = new ArrayList<>();
         }
@@ -152,20 +153,22 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
      * 可以升级的热补丁信息。
      * @return hotfixUpgradeInfos
      */
-    public List<HotfixInfo> getHotfixUpgradeInfos() {
+    public List<HotfixInfoResult> getHotfixUpgradeInfos() {
         return hotfixUpgradeInfos;
     }
 
-    public void setHotfixUpgradeInfos(List<HotfixInfo> hotfixUpgradeInfos) {
+    public void setHotfixUpgradeInfos(List<HotfixInfoResult> hotfixUpgradeInfos) {
         this.hotfixUpgradeInfos = hotfixUpgradeInfos;
     }
 
-    public ShowBatchUpgradeCandidateVersionsResponse withHotfixRollbackInfos(List<HotfixInfo> hotfixRollbackInfos) {
+    public ShowBatchUpgradeCandidateVersionsResponse withHotfixRollbackInfos(
+        List<HotfixInfoResult> hotfixRollbackInfos) {
         this.hotfixRollbackInfos = hotfixRollbackInfos;
         return this;
     }
 
-    public ShowBatchUpgradeCandidateVersionsResponse addHotfixRollbackInfosItem(HotfixInfo hotfixRollbackInfosItem) {
+    public ShowBatchUpgradeCandidateVersionsResponse addHotfixRollbackInfosItem(
+        HotfixInfoResult hotfixRollbackInfosItem) {
         if (this.hotfixRollbackInfos == null) {
             this.hotfixRollbackInfos = new ArrayList<>();
         }
@@ -174,7 +177,7 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     public ShowBatchUpgradeCandidateVersionsResponse withHotfixRollbackInfos(
-        Consumer<List<HotfixInfo>> hotfixRollbackInfosSetter) {
+        Consumer<List<HotfixInfoResult>> hotfixRollbackInfosSetter) {
         if (this.hotfixRollbackInfos == null) {
             this.hotfixRollbackInfos = new ArrayList<>();
         }
@@ -186,11 +189,11 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
      * 可以回滚的热补丁信息。
      * @return hotfixRollbackInfos
      */
-    public List<HotfixInfo> getHotfixRollbackInfos() {
+    public List<HotfixInfoResult> getHotfixRollbackInfos() {
         return hotfixRollbackInfos;
     }
 
-    public void setHotfixRollbackInfos(List<HotfixInfo> hotfixRollbackInfos) {
+    public void setHotfixRollbackInfos(List<HotfixInfoResult> hotfixRollbackInfos) {
         this.hotfixRollbackInfos = hotfixRollbackInfos;
     }
 

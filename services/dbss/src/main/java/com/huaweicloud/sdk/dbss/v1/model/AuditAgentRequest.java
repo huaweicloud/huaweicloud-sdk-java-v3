@@ -20,160 +20,20 @@ public class AuditAgentRequest {
 
     private String dbId;
 
-    /**
-     * 模式 - 0：创建agent - 1：选择已有agent
-     */
-    public static final class ModeEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ModeEnum NUMBER_0 = new ModeEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ModeEnum NUMBER_1 = new ModeEnum(1);
-
-        private static final Map<Integer, ModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ModeEnum> createStaticFields() {
-            Map<Integer, ModeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ModeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ModeEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
-        }
-
-        public static ModeEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ModeEnum) {
-                return this.value.equals(((ModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
-    private ModeEnum mode;
+    private Integer mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id")
 
     private String agentId;
 
-    /**
-     * agent类型 - APP：应用端 - DB：数据库端
-     */
-    public static final class AgentTypeEnum {
-
-        /**
-         * Enum APP for value: "APP"
-         */
-        public static final AgentTypeEnum APP = new AgentTypeEnum("APP");
-
-        /**
-         * Enum DB for value: "DB"
-         */
-        public static final AgentTypeEnum DB = new AgentTypeEnum("DB");
-
-        private static final Map<String, AgentTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AgentTypeEnum> createStaticFields() {
-            Map<String, AgentTypeEnum> map = new HashMap<>();
-            map.put("APP", APP);
-            map.put("DB", DB);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AgentTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AgentTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgentTypeEnum(value));
-        }
-
-        public static AgentTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AgentTypeEnum) {
-                return this.value.equals(((AgentTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_type")
 
-    private AgentTypeEnum agentType;
+    private String agentType;
 
     /**
      * agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64
@@ -293,7 +153,7 @@ public class AuditAgentRequest {
         this.dbId = dbId;
     }
 
-    public AuditAgentRequest withMode(ModeEnum mode) {
+    public AuditAgentRequest withMode(Integer mode) {
         this.mode = mode;
         return this;
     }
@@ -302,11 +162,11 @@ public class AuditAgentRequest {
      * 模式 - 0：创建agent - 1：选择已有agent
      * @return mode
      */
-    public ModeEnum getMode() {
+    public Integer getMode() {
         return mode;
     }
 
-    public void setMode(ModeEnum mode) {
+    public void setMode(Integer mode) {
         this.mode = mode;
     }
 
@@ -327,7 +187,7 @@ public class AuditAgentRequest {
         this.agentId = agentId;
     }
 
-    public AuditAgentRequest withAgentType(AgentTypeEnum agentType) {
+    public AuditAgentRequest withAgentType(String agentType) {
         this.agentType = agentType;
         return this;
     }
@@ -336,11 +196,11 @@ public class AuditAgentRequest {
      * agent类型 - APP：应用端 - DB：数据库端
      * @return agentType
      */
-    public AgentTypeEnum getAgentType() {
+    public String getAgentType() {
         return agentType;
     }
 
-    public void setAgentType(AgentTypeEnum agentType) {
+    public void setAgentType(String agentType) {
         this.agentType = agentType;
     }
 

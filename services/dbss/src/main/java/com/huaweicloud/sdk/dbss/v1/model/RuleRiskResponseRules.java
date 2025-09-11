@@ -158,7 +158,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险级别 - LOW - MEDIUM - HIGH - NO_RISK]
+     * 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
      * @return riskLevel
      */
     public String getRiskLevel() {

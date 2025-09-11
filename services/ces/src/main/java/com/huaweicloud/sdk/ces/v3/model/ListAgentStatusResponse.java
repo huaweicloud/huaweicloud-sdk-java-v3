@@ -41,7 +41,7 @@ public class ListAgentStatusResponse extends SdkResponse {
     }
 
     /**
-     * agent插件状态列表
+     * **参数解释**: agent插件状态列表 **取值范围**: 数组长度为[1,2000] 
      * @return agentStatus
      */
     public List<AgentStatusInfo> getAgentStatus() {

@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 维度信息列表
+ * **参数描述** 维度信息列表。       **约束限制** 不涉及 
  */
 public class DimensionInfo {
 
@@ -24,7 +24,7 @@ public class DimensionInfo {
     private String name;
 
     /**
-     * 资源类型, all_instances: 全部资源, specific_instances: 指定资源
+     * **参数描述**： 资源类型。 **约束限制** 不涉及 **取值范围**： - all_instances: 全部资源 - specific_instances: 指定资源 **默认取值** 不涉及 
      */
     public static final class FilterTypeEnum {
 
@@ -109,7 +109,7 @@ public class DimensionInfo {
     }
 
     /**
-     * 维度名称，多维度用逗号分隔，各服务支持的维度可参考：“[服务维度名称](ces_03_0059.xml)”
+     * **参数描述**： 维度名称。 **约束限制** 不涉及 **取值范围**： 多维度用逗号分隔，各服务支持的维度可参考：“[服务维度名称](ces_03_0059.xml)”。必须以字母开头，只能包含0-9/a-z/A-Z/_/-，多维度用\",\"分隔，每个维度的最大长度为32。总长度为[1,131]个字符。目前最大支持4个维度。举例：单维度场景：instance_id；多维度场景：instance_id,disk **默认取值** 不涉及 
      * @return name
      */
     public String getName() {
@@ -126,7 +126,7 @@ public class DimensionInfo {
     }
 
     /**
-     * 资源类型, all_instances: 全部资源, specific_instances: 指定资源
+     * **参数描述**： 资源类型。 **约束限制** 不涉及 **取值范围**： - all_instances: 全部资源 - specific_instances: 指定资源 **默认取值** 不涉及 
      * @return filterType
      */
     public FilterTypeEnum getFilterType() {
@@ -159,7 +159,7 @@ public class DimensionInfo {
     }
 
     /**
-     * 维度值列表
+     * **参数描述**： 维度值列表。 **约束限制** 不涉及 
      * @return values
      */
     public List<String> getValues() {

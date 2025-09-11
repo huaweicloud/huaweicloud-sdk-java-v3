@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * ExtendInfo
+ * 看板相关拓展信息
  */
 public class ExtendInfo {
 
@@ -332,12 +332,12 @@ public class ExtendInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
 
-    private Integer from;
+    private Long from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "to")
 
-    private Integer to;
+    private Long to;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "screen_color")
@@ -463,7 +463,7 @@ public class ExtendInfo {
     }
 
     /**
-     * '表示指标聚合周期，{1:表示原始值，60:表示一分钟，300:表示5分钟，1200:表示20分钟，3600:表示1小时，14400:表示4小时，86400:表示1天}' 
+     * '表示指标聚合周期，{1:表示原始值，60:表示一分钟，300:表示5分钟，1200:表示20分钟，3600:表示1小时，14400:表示4小时，86400:表示1天}'' 
      * @return period
      */
     public String getPeriod() {
@@ -508,7 +508,7 @@ public class ExtendInfo {
         this.refreshTime = refreshTime;
     }
 
-    public ExtendInfo withFrom(Integer from) {
+    public ExtendInfo withFrom(Long from) {
         this.from = from;
         return this;
     }
@@ -519,15 +519,15 @@ public class ExtendInfo {
      * maximum: 9999999999999
      * @return from
      */
-    public Integer getFrom() {
+    public Long getFrom() {
         return from;
     }
 
-    public void setFrom(Integer from) {
+    public void setFrom(Long from) {
         this.from = from;
     }
 
-    public ExtendInfo withTo(Integer to) {
+    public ExtendInfo withTo(Long to) {
         this.to = to;
         return this;
     }
@@ -538,11 +538,11 @@ public class ExtendInfo {
      * maximum: 9999999999999
      * @return to
      */
-    public Integer getTo() {
+    public Long getTo() {
         return to;
     }
 
-    public void setTo(Integer to) {
+    public void setTo(Long to) {
         this.to = to;
     }
 

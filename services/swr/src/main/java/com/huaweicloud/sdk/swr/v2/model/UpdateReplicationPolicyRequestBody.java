@@ -86,7 +86,7 @@ public class UpdateReplicationPolicyRequestBody {
     }
 
     /**
-     * 策略描述描述
+     * 策略描述
      * @return description
      */
     public String getDescription() {
@@ -265,7 +265,7 @@ public class UpdateReplicationPolicyRequestBody {
     }
 
     /**
-     * 是否使用，默认为false
+     * 是否启用，默认为false
      * @return enabled
      */
     public Boolean getEnabled() {

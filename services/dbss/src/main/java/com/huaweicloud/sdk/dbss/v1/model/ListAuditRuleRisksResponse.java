@@ -24,6 +24,11 @@ public class ListAuditRuleRisksResponse extends SdkResponse {
 
     private Integer total;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customize_total")
+
+    private Integer customizeTotal;
+
     public ListAuditRuleRisksResponse withRules(List<RuleRiskResponseRules> rules) {
         this.rules = rules;
         return this;
@@ -74,6 +79,23 @@ public class ListAuditRuleRisksResponse extends SdkResponse {
         this.total = total;
     }
 
+    public ListAuditRuleRisksResponse withCustomizeTotal(Integer customizeTotal) {
+        this.customizeTotal = customizeTotal;
+        return this;
+    }
+
+    /**
+     * 自定义规则总数
+     * @return customizeTotal
+     */
+    public Integer getCustomizeTotal() {
+        return customizeTotal;
+    }
+
+    public void setCustomizeTotal(Integer customizeTotal) {
+        this.customizeTotal = customizeTotal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +105,13 @@ public class ListAuditRuleRisksResponse extends SdkResponse {
             return false;
         }
         ListAuditRuleRisksResponse that = (ListAuditRuleRisksResponse) obj;
-        return Objects.equals(this.rules, that.rules) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.rules, that.rules) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.customizeTotal, that.customizeTotal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rules, total);
+        return Objects.hash(rules, total, customizeTotal);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class ListAuditRuleRisksResponse extends SdkResponse {
         sb.append("class ListAuditRuleRisksResponse {\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    customizeTotal: ").append(toIndentedString(customizeTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

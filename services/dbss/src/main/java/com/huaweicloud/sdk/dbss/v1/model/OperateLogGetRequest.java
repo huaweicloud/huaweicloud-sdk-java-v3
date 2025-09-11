@@ -26,92 +26,10 @@ public class OperateLogGetRequest {
 
     private String userName;
 
-    /**
-     * 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
-     */
-    public static final class ActionEnum {
-
-        /**
-         * Enum CREATE for value: "CREATE"
-         */
-        public static final ActionEnum CREATE = new ActionEnum("CREATE");
-
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
-        public static final ActionEnum DELETE = new ActionEnum("DELETE");
-
-        /**
-         * Enum DOWNLOAD for value: "DOWNLOAD"
-         */
-        public static final ActionEnum DOWNLOAD = new ActionEnum("DOWNLOAD");
-
-        /**
-         * Enum UPDATE for value: "UPDATE"
-         */
-        public static final ActionEnum UPDATE = new ActionEnum("UPDATE");
-
-        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ActionEnum> createStaticFields() {
-            Map<String, ActionEnum> map = new HashMap<>();
-            map.put("CREATE", CREATE);
-            map.put("DELETE", DELETE);
-            map.put("DOWNLOAD", DOWNLOAD);
-            map.put("UPDATE", UPDATE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ActionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ActionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
-        }
-
-        public static ActionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ActionEnum) {
-                return this.value.equals(((ActionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private ActionEnum action;
+    private String action;
 
     /**
      * 执行结果 - success - fail
@@ -241,7 +159,7 @@ public class OperateLogGetRequest {
         this.userName = userName;
     }
 
-    public OperateLogGetRequest withAction(ActionEnum action) {
+    public OperateLogGetRequest withAction(String action) {
         this.action = action;
         return this;
     }
@@ -250,11 +168,11 @@ public class OperateLogGetRequest {
      * 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
      * @return action
      */
-    public ActionEnum getAction() {
+    public String getAction() {
         return action;
     }
 
-    public void setAction(ActionEnum action) {
+    public void setAction(String action) {
         this.action = action;
     }
 

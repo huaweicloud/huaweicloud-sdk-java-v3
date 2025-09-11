@@ -1,0 +1,91 @@
+package com.huaweicloud.sdk.dbss.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * WhitelistBatchDeleteRequest
+ */
+public class WhitelistBatchDeleteRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whitelists")
+
+    private List<String> whitelists = null;
+
+    public WhitelistBatchDeleteRequest withWhitelists(List<String> whitelists) {
+        this.whitelists = whitelists;
+        return this;
+    }
+
+    public WhitelistBatchDeleteRequest addWhitelistsItem(String whitelistsItem) {
+        if (this.whitelists == null) {
+            this.whitelists = new ArrayList<>();
+        }
+        this.whitelists.add(whitelistsItem);
+        return this;
+    }
+
+    public WhitelistBatchDeleteRequest withWhitelists(Consumer<List<String>> whitelistsSetter) {
+        if (this.whitelists == null) {
+            this.whitelists = new ArrayList<>();
+        }
+        whitelistsSetter.accept(this.whitelists);
+        return this;
+    }
+
+    /**
+     * 白名单记录ID
+     * @return whitelists
+     */
+    public List<String> getWhitelists() {
+        return whitelists;
+    }
+
+    public void setWhitelists(List<String> whitelists) {
+        this.whitelists = whitelists;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        WhitelistBatchDeleteRequest that = (WhitelistBatchDeleteRequest) obj;
+        return Objects.equals(this.whitelists, that.whitelists);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(whitelists);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class WhitelistBatchDeleteRequest {\n");
+        sb.append("    whitelists: ").append(toIndentedString(whitelists)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

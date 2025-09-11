@@ -96,7 +96,7 @@ public class WebhookPolicyDetail {
     }
 
     /**
-     * 触发器策略名称
+     * 触发器名称
      * @return name
      */
     public String getName() {
@@ -113,7 +113,7 @@ public class WebhookPolicyDetail {
     }
 
     /**
-     * 触发器策略描述
+     * 触发器描述
      * @return description
      */
     public String getDescription() {
@@ -196,7 +196,7 @@ public class WebhookPolicyDetail {
     }
 
     /**
-     * 是否使用，可选true或false
+     * 是否启用，可选true或false
      * @return enabled
      */
     public Boolean getEnabled() {

@@ -66,7 +66,7 @@ public class ImmutableRule {
     }
 
     /**
-     * 不可变规则ID
+     * 不可变策略ID
      * @return id
      */
     public Integer getId() {
@@ -83,7 +83,7 @@ public class ImmutableRule {
     }
 
     /**
-     * Get namespaceId
+     * 命名空间ID
      * @return namespaceId
      */
     public Integer getNamespaceId() {
@@ -100,7 +100,7 @@ public class ImmutableRule {
     }
 
     /**
-     * Get namespaceName
+     * 命名空间名称
      * @return namespaceName
      */
     public String getNamespaceName() {
@@ -117,7 +117,7 @@ public class ImmutableRule {
     }
 
     /**
-     * Get priority
+     * 优先级，保留字段
      * @return priority
      */
     public Integer getPriority() {
@@ -134,7 +134,7 @@ public class ImmutableRule {
     }
 
     /**
-     * 不可变规则是否生效
+     * 不可变策略是否生效
      * @return disabled
      */
     public Boolean getDisabled() {

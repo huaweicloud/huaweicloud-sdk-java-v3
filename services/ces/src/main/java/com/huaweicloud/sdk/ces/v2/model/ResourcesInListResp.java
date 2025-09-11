@@ -26,7 +26,7 @@ public class ResourcesInListResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
 
-    private List<MetricDimension> dimensions = null;
+    private List<MetricDimensionResp> dimensions = null;
 
     public ResourcesInListResp withResourceGroupId(String resourceGroupId) {
         this.resourceGroupId = resourceGroupId;
@@ -34,7 +34,7 @@ public class ResourcesInListResp {
     }
 
     /**
-     * 资源分组ID，监控范围为资源分组时存在该值
+     * **参数解释**： 资源分组ID，监控范围为资源分组时存在该值。 **取值范围**： 以rg开头，后跟22个字母或数字。 
      * @return resourceGroupId
      */
     public String getResourceGroupId() {
@@ -51,7 +51,7 @@ public class ResourcesInListResp {
     }
 
     /**
-     * 资源分组名称，监控范围为资源分组时存在该值
+     * **参数解释**： 资源分组名称，监控范围为资源分组时存在该值。 **取值范围**： 长度为[1,128]个字符。 
      * @return resourceGroupName
      */
     public String getResourceGroupName() {
@@ -62,12 +62,12 @@ public class ResourcesInListResp {
         this.resourceGroupName = resourceGroupName;
     }
 
-    public ResourcesInListResp withDimensions(List<MetricDimension> dimensions) {
+    public ResourcesInListResp withDimensions(List<MetricDimensionResp> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
-    public ResourcesInListResp addDimensionsItem(MetricDimension dimensionsItem) {
+    public ResourcesInListResp addDimensionsItem(MetricDimensionResp dimensionsItem) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -75,7 +75,7 @@ public class ResourcesInListResp {
         return this;
     }
 
-    public ResourcesInListResp withDimensions(Consumer<List<MetricDimension>> dimensionsSetter) {
+    public ResourcesInListResp withDimensions(Consumer<List<MetricDimensionResp>> dimensionsSetter) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -84,14 +84,14 @@ public class ResourcesInListResp {
     }
 
     /**
-     * 维度信息
+     * **参数解释**： 维度信息。 
      * @return dimensions
      */
-    public List<MetricDimension> getDimensions() {
+    public List<MetricDimensionResp> getDimensions() {
         return dimensions;
     }
 
-    public void setDimensions(List<MetricDimension> dimensions) {
+    public void setDimensions(List<MetricDimensionResp> dimensions) {
         this.dimensions = dimensions;
     }
 

@@ -29,6 +29,9 @@ import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmPoliciesRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmsRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchListSpecifiedMetricDataRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchListSpecifiedMetricDataRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchListSpecifiedMetricDataResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeResponse;
@@ -97,7 +100,6 @@ import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsServicesResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsServicesResourcesResponse;
-import com.huaweicloud.sdk.ces.v2.model.PoliciesReqV2;
 import com.huaweicloud.sdk.ces.v2.model.PostAlarmsReqV2;
 import com.huaweicloud.sdk.ces.v2.model.PutAlarmNotificationReq;
 import com.huaweicloud.sdk.ces.v2.model.PutResourceGroupReq;
@@ -110,6 +112,7 @@ import com.huaweicloud.sdk.ces.v2.model.ShowWidgetRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowWidgetResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmNotificationsRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmNotificationsResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesReqBodyV2;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateRequest;
@@ -372,6 +375,33 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchEnableAlarmsRequestBody.class),
             f -> f.withMarshaller(BatchEnableAlarmRulesRequest::getBody, BatchEnableAlarmRulesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchListSpecifiedMetricDataRequest, BatchListSpecifiedMetricDataResponse> batchListSpecifiedMetricData =
+        genForBatchListSpecifiedMetricData();
+
+    private static HttpRequestDef<BatchListSpecifiedMetricDataRequest, BatchListSpecifiedMetricDataResponse> genForBatchListSpecifiedMetricData() {
+        // basic
+        HttpRequestDef.Builder<BatchListSpecifiedMetricDataRequest, BatchListSpecifiedMetricDataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchListSpecifiedMetricDataRequest.class,
+                    BatchListSpecifiedMetricDataResponse.class)
+                .withName("BatchListSpecifiedMetricData")
+                .withUri("/v2/{project_id}/batch-query-metric-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchListSpecifiedMetricDataRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchListSpecifiedMetricDataRequestBody.class),
+            f -> f.withMarshaller(BatchListSpecifiedMetricDataRequest::getBody,
+                BatchListSpecifiedMetricDataRequest::setBody));
 
         // response
 
@@ -1104,6 +1134,12 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmTemplatesRequest::getTemplateName,
                 ListAlarmTemplatesRequest::setTemplateName));
+        builder.<String>withRequestField("product_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmTemplatesRequest::getProductName,
+                ListAlarmTemplatesRequest::setProductName));
 
         // response
 
@@ -1593,10 +1629,10 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAlarmRulePoliciesRequest::getAlarmId,
                 UpdateAlarmRulePoliciesRequest::setAlarmId));
-        builder.<PoliciesReqV2>withRequestField("body",
+        builder.<UpdateAlarmRulePoliciesReqBodyV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(PoliciesReqV2.class),
+            TypeCasts.uncheckedConversion(UpdateAlarmRulePoliciesReqBodyV2.class),
             f -> f.withMarshaller(UpdateAlarmRulePoliciesRequest::getBody, UpdateAlarmRulePoliciesRequest::setBody));
 
         // response

@@ -21,7 +21,7 @@ public class IsFavoriteItem {
     }
 
     /**
-     * 监控看板是否标记收藏, true: 收藏, false: 未收藏
+     * **参数解释** 监控看板是否标记收藏 **取值范围** - true: 收藏, - false: 未收藏 
      * @return isFavorite
      */
     public Boolean getIsFavorite() {

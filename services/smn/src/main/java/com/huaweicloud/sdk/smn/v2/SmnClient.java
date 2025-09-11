@@ -11,12 +11,18 @@ import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateOrDeleteResourceTagsResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchCreateSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsByTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsByTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsFilterPolicesResponse;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsRequest;
+import com.huaweicloud.sdk.smn.v2.model.BatchDeleteSubscriptionsResponse;
 import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesRequest;
 import com.huaweicloud.sdk.smn.v2.model.BatchUpdateSubscriptionsFilterPolicesResponse;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.CancelSubscriptionResponse;
+import com.huaweicloud.sdk.smn.v2.model.ConfirmSubscriptionRequest;
+import com.huaweicloud.sdk.smn.v2.model.ConfirmSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationRequest;
@@ -43,12 +49,16 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.smn.v2.model.DeleteSubscriptionsByTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.DeleteSubscriptionsByTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributeByNameRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributeByNameResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicResponse;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertRequest;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointAttributesRequest;
@@ -57,6 +67,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplateDetailsRequest;
@@ -65,6 +77,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplatesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplatesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListProtocolsRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListProtocolsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceInstancesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceInstancesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListResourceTagsRequest;
@@ -95,6 +109,8 @@ import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyResponse;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionRequest;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationRequest;
@@ -251,6 +267,65 @@ public class SmnClient {
     }
 
     /**
+     * 批量删除订阅
+     *
+     * 批量删除订阅，每个订阅终端的删除结果在响应体中依次展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubscriptionsRequest 请求对象
+     * @return BatchDeleteSubscriptionsResponse
+     */
+    public BatchDeleteSubscriptionsResponse batchDeleteSubscriptions(BatchDeleteSubscriptionsRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.batchDeleteSubscriptions);
+    }
+
+    /**
+     * 批量删除订阅
+     *
+     * 批量删除订阅，每个订阅终端的删除结果在响应体中依次展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubscriptionsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSubscriptionsRequest, BatchDeleteSubscriptionsResponse>
+     */
+    public SyncInvoker<BatchDeleteSubscriptionsRequest, BatchDeleteSubscriptionsResponse> batchDeleteSubscriptionsInvoker(
+        BatchDeleteSubscriptionsRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.batchDeleteSubscriptions, hcClient);
+    }
+
+    /**
+     * 批量删除指定主题的订阅
+     *
+     * 批量删除指定主题的订阅，每个订阅终端的删除结果在响应体中依次展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubscriptionsByTopicRequest 请求对象
+     * @return BatchDeleteSubscriptionsByTopicResponse
+     */
+    public BatchDeleteSubscriptionsByTopicResponse batchDeleteSubscriptionsByTopic(
+        BatchDeleteSubscriptionsByTopicRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.batchDeleteSubscriptionsByTopic);
+    }
+
+    /**
+     * 批量删除指定主题的订阅
+     *
+     * 批量删除指定主题的订阅，每个订阅终端的删除结果在响应体中依次展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubscriptionsByTopicRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSubscriptionsByTopicRequest, BatchDeleteSubscriptionsByTopicResponse>
+     */
+    public SyncInvoker<BatchDeleteSubscriptionsByTopicRequest, BatchDeleteSubscriptionsByTopicResponse> batchDeleteSubscriptionsByTopicInvoker(
+        BatchDeleteSubscriptionsByTopicRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.batchDeleteSubscriptionsByTopic, hcClient);
+    }
+
+    /**
      * 批量删除订阅过滤策略
      *
      * 删除订阅者的消息过滤策略。
@@ -337,6 +412,35 @@ public class SmnClient {
     public SyncInvoker<CancelSubscriptionRequest, CancelSubscriptionResponse> cancelSubscriptionInvoker(
         CancelSubscriptionRequest request) {
         return new SyncInvoker<>(request, SmnMeta.cancelSubscription, hcClient);
+    }
+
+    /**
+     * 确认订阅
+     *
+     * 确认订阅主题消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmSubscriptionRequest 请求对象
+     * @return ConfirmSubscriptionResponse
+     */
+    public ConfirmSubscriptionResponse confirmSubscription(ConfirmSubscriptionRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.confirmSubscription);
+    }
+
+    /**
+     * 确认订阅
+     *
+     * 确认订阅主题消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmSubscriptionRequest 请求对象
+     * @return SyncInvoker<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse>
+     */
+    public SyncInvoker<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> confirmSubscriptionInvoker(
+        ConfirmSubscriptionRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.confirmSubscription, hcClient);
     }
 
     /**
@@ -602,6 +706,35 @@ public class SmnClient {
     }
 
     /**
+     * 删除指定主题的订阅
+     *
+     * 删除指定主题的订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionsByTopicRequest 请求对象
+     * @return DeleteSubscriptionsByTopicResponse
+     */
+    public DeleteSubscriptionsByTopicResponse deleteSubscriptionsByTopic(DeleteSubscriptionsByTopicRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.deleteSubscriptionsByTopic);
+    }
+
+    /**
+     * 删除指定主题的订阅
+     *
+     * 删除指定主题的订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionsByTopicRequest 请求对象
+     * @return SyncInvoker<DeleteSubscriptionsByTopicRequest, DeleteSubscriptionsByTopicResponse>
+     */
+    public SyncInvoker<DeleteSubscriptionsByTopicRequest, DeleteSubscriptionsByTopicResponse> deleteSubscriptionsByTopicInvoker(
+        DeleteSubscriptionsByTopicRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.deleteSubscriptionsByTopic, hcClient);
+    }
+
+    /**
      * 删除主题
      *
      * 删除主题。
@@ -685,6 +818,64 @@ public class SmnClient {
     public SyncInvoker<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> deleteTopicAttributesInvoker(
         DeleteTopicAttributesRequest request) {
         return new SyncInvoker<>(request, SmnMeta.deleteTopicAttributes, hcClient);
+    }
+
+    /**
+     * 下载证书
+     *
+     * 下载http消息校验证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadHttpCertRequest 请求对象
+     * @return DownloadHttpCertResponse
+     */
+    public DownloadHttpCertResponse downloadHttpCert(DownloadHttpCertRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.downloadHttpCert);
+    }
+
+    /**
+     * 下载证书
+     *
+     * 下载http消息校验证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadHttpCertRequest 请求对象
+     * @return SyncInvoker<DownloadHttpCertRequest, DownloadHttpCertResponse>
+     */
+    public SyncInvoker<DownloadHttpCertRequest, DownloadHttpCertResponse> downloadHttpCertInvoker(
+        DownloadHttpCertRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.downloadHttpCert, hcClient);
+    }
+
+    /**
+     * 查询授权云服务列表
+     *
+     * 查询授权云服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudServiceRequest 请求对象
+     * @return ListCloudServiceResponse
+     */
+    public ListCloudServiceResponse listCloudService(ListCloudServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.listCloudService);
+    }
+
+    /**
+     * 查询授权云服务列表
+     *
+     * 查询授权云服务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudServiceRequest 请求对象
+     * @return SyncInvoker<ListCloudServiceRequest, ListCloudServiceResponse>
+     */
+    public SyncInvoker<ListCloudServiceRequest, ListCloudServiceResponse> listCloudServiceInvoker(
+        ListCloudServiceRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.listCloudService, hcClient);
     }
 
     /**
@@ -800,6 +991,34 @@ public class SmnClient {
     public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
         ListProjectTagsRequest request) {
         return new SyncInvoker<>(request, SmnMeta.listProjectTags, hcClient);
+    }
+
+    /**
+     * 查询协议列表
+     *
+     * 查询SMN支持的协议列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProtocolsRequest 请求对象
+     * @return ListProtocolsResponse
+     */
+    public ListProtocolsResponse listProtocols(ListProtocolsRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.listProtocols);
+    }
+
+    /**
+     * 查询协议列表
+     *
+     * 查询SMN支持的协议列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProtocolsRequest 请求对象
+     * @return SyncInvoker<ListProtocolsRequest, ListProtocolsResponse>
+     */
+    public SyncInvoker<ListProtocolsRequest, ListProtocolsResponse> listProtocolsInvoker(ListProtocolsRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.listProtocols, hcClient);
     }
 
     /**
@@ -1223,6 +1442,35 @@ public class SmnClient {
     public SyncInvoker<ShowNotifyPolicyRequest, ShowNotifyPolicyResponse> showNotifyPolicyInvoker(
         ShowNotifyPolicyRequest request) {
         return new SyncInvoker<>(request, SmnMeta.showNotifyPolicy, hcClient);
+    }
+
+    /**
+     * 取消订阅
+     *
+     * 取消订阅主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribeSubscriptionRequest 请求对象
+     * @return UnsubscribeSubscriptionResponse
+     */
+    public UnsubscribeSubscriptionResponse unsubscribeSubscription(UnsubscribeSubscriptionRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.unsubscribeSubscription);
+    }
+
+    /**
+     * 取消订阅
+     *
+     * 取消订阅主题
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribeSubscriptionRequest 请求对象
+     * @return SyncInvoker<UnsubscribeSubscriptionRequest, UnsubscribeSubscriptionResponse>
+     */
+    public SyncInvoker<UnsubscribeSubscriptionRequest, UnsubscribeSubscriptionResponse> unsubscribeSubscriptionInvoker(
+        UnsubscribeSubscriptionRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.unsubscribeSubscription, hcClient);
     }
 
     /**

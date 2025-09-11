@@ -174,7 +174,7 @@ public class MeetingCredentials implements ICredential {
                 .withDeptCode(deptCode)
                 .withClientType(CLIENT_TYPE_API)
                 .withTenantScene(tenantSceneEnum);
-            authorization = "HMAC-SHA256 signature=" + appAuthInfoV2.build();
+            authorization = "HMAC-SHA256 signature=" + appAuthInfoV2.build() + ",access=" + Base64.getEncoder().encodeToString(appId.getBytes(StandardCharsets.UTF_8));
             requestBody = JsonUtils.toJSON(appAuthInfoV2);
         }
 

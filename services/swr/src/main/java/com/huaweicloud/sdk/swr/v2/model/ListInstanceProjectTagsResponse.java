@@ -41,7 +41,7 @@ public class ListInstanceProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * 项目下资源标签列表
+     * 标签列表
      * @return tags
      */
     public List<ProjectTag> getTags() {

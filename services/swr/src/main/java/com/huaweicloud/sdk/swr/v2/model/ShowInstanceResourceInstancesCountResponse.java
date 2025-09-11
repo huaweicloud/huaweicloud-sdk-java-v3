@@ -22,7 +22,7 @@ public class ShowInstanceResourceInstancesCountResponse extends SdkResponse {
     }
 
     /**
-     * 资源实例数量
+     * 资源数量
      * @return totalCount
      */
     public Integer getTotalCount() {

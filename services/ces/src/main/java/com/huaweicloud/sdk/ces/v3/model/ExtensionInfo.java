@@ -21,7 +21,7 @@ public class ExtensionInfo {
     private String name;
 
     /**
-     * 插件状态, none未安装，running运行中，stopped已停止，fault故障（进程异常），unknown故障（连接异常）
+     * **参数解释**:  插件状态 **取值范围**: - none: 未安装 - running: 运行中 - stopped: 已停止 - fault: 故障（进程异常） - unknown: 故障（连接异常） 
      */
     public static final class StatusEnum {
 
@@ -124,7 +124,7 @@ public class ExtensionInfo {
     }
 
     /**
-     * 插件名称
+     * **参数解释**: 插件名称 **取值范围**: 数组长度为[1,64] 
      * @return name
      */
     public String getName() {
@@ -141,7 +141,7 @@ public class ExtensionInfo {
     }
 
     /**
-     * 插件状态, none未安装，running运行中，stopped已停止，fault故障（进程异常），unknown故障（连接异常）
+     * **参数解释**:  插件状态 **取值范围**: - none: 未安装 - running: 运行中 - stopped: 已停止 - fault: 故障（进程异常） - unknown: 故障（连接异常） 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -158,7 +158,7 @@ public class ExtensionInfo {
     }
 
     /**
-     * 插件版本
+     * **参数解释**: 插件版本 **取值范围**: 数组长度为[1,32] 
      * @return version
      */
     public String getVersion() {

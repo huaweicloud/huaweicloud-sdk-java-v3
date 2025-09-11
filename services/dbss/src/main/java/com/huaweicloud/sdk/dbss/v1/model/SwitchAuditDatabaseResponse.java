@@ -22,7 +22,7 @@ public class SwitchAuditDatabaseResponse extends SdkResponse {
     }
 
     /**
-     * 响应状态
+     * 状态  - SUCCESS:成功  - FAILED:失败
      * @return status
      */
     public String getStatus() {

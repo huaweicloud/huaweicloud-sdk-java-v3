@@ -113,6 +113,8 @@ import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceRetentionPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceRetentionPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceSignPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceSignPolicyResponse;
+import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceTagRequest;
+import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceTagResponse;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceWebhookRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteInstanceWebhookResponse;
 import com.huaweicloud.sdk.swr.v2.model.DeleteNamespaceAuthRequest;
@@ -3224,6 +3226,47 @@ public class SwrMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(DeleteInstanceSignPolicyRequest::getPolicyId,
                 DeleteInstanceSignPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInstanceTagRequest, DeleteInstanceTagResponse> deleteInstanceTag =
+        genForDeleteInstanceTag();
+
+    private static HttpRequestDef<DeleteInstanceTagRequest, DeleteInstanceTagResponse> genForDeleteInstanceTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstanceTagRequest, DeleteInstanceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteInstanceTagRequest.class, DeleteInstanceTagResponse.class)
+            .withName("DeleteInstanceTag")
+            .withUri(
+                "/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags/{tag_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceTagRequest::getInstanceId, DeleteInstanceTagRequest::setInstanceId));
+        builder.<String>withRequestField("namespace_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceTagRequest::getNamespaceName,
+                DeleteInstanceTagRequest::setNamespaceName));
+        builder.<String>withRequestField("repository_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceTagRequest::getRepositoryName,
+                DeleteInstanceTagRequest::setRepositoryName));
+        builder.<String>withRequestField("tag_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceTagRequest::getTagName, DeleteInstanceTagRequest::setTagName));
 
         // response
 

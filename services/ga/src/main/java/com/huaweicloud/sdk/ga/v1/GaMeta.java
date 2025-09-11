@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.ga.v1.model.DisassociateListenerRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.DisassociateListenerResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListAllPopsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListAllPopsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointsRequest;
@@ -78,6 +80,8 @@ import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListTagsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListTagsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListTenantQuotasRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListTenantQuotasResponse;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpRequest;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpResponse;
@@ -1273,6 +1277,56 @@ public class GaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLogtankRequestBody.class),
             f -> f.withMarshaller(UpdateLogtankRequest::getBody, UpdateLogtankRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllPopsRequest, ListAllPopsResponse> listAllPops = genForListAllPops();
+
+    private static HttpRequestDef<ListAllPopsRequest, ListAllPopsResponse> genForListAllPops() {
+        // basic
+        HttpRequestDef.Builder<ListAllPopsRequest, ListAllPopsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllPopsRequest.class, ListAllPopsResponse.class)
+                .withName("ListAllPops")
+                .withUri("/v1/pops")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllPopsRequest::getLimit, ListAllPopsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllPopsRequest::getMarker, ListAllPopsRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTenantQuotasRequest, ListTenantQuotasResponse> listTenantQuotas =
+        genForListTenantQuotas();
+
+    private static HttpRequestDef<ListTenantQuotasRequest, ListTenantQuotasResponse> genForListTenantQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListTenantQuotasRequest, ListTenantQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTenantQuotasRequest.class, ListTenantQuotasResponse.class)
+                .withName("ListTenantQuotas")
+                .withUri("/v1/{domain_id}/ga/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantQuotasRequest::getDomainId, ListTenantQuotasRequest::setDomainId));
 
         // response
 

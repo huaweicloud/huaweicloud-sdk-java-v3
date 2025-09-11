@@ -24,7 +24,7 @@ public class BatchCreateInvocationRequestBody {
     private List<String> instanceIds = null;
 
     /**
-     * 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装
+     * **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 
      */
     public static final class InvocationTypeEnum {
 
@@ -49,10 +49,9 @@ public class BatchCreateInvocationRequestBody {
         public static final InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
 
         /**
-         * Enum SET_REMOTE_INSTALL_HOST for value: "SET_REMOTE_INSTALL_HOST"
+         * Enum SET_REMOTE_INSTALLER for value: "SET_REMOTE_INSTALLER"
          */
-        public static final InvocationTypeEnum SET_REMOTE_INSTALL_HOST =
-            new InvocationTypeEnum("SET_REMOTE_INSTALL_HOST");
+        public static final InvocationTypeEnum SET_REMOTE_INSTALLER = new InvocationTypeEnum("SET_REMOTE_INSTALLER");
 
         /**
          * Enum REMOTE_INSTALL for value: "REMOTE_INSTALL"
@@ -67,7 +66,7 @@ public class BatchCreateInvocationRequestBody {
             map.put("UPDATE", UPDATE);
             map.put("ROLLBACK", ROLLBACK);
             map.put("RETRY", RETRY);
-            map.put("SET_REMOTE_INSTALL_HOST", SET_REMOTE_INSTALL_HOST);
+            map.put("SET_REMOTE_INSTALLER", SET_REMOTE_INSTALLER);
             map.put("REMOTE_INSTALL", REMOTE_INSTALL);
             return Collections.unmodifiableMap(map);
         }
@@ -124,7 +123,7 @@ public class BatchCreateInvocationRequestBody {
     private InvocationTypeEnum invocationType;
 
     /**
-     * 任务对象，目前仅支持telescope
+     * **参数解释**: 任务对象，目前仅支持telescope **取值范围**: - telescope：主机监控插件telescope 
      */
     public static final class InvocationTargetEnum {
 
@@ -198,7 +197,7 @@ public class BatchCreateInvocationRequestBody {
     private List<String> invocationIds = null;
 
     /**
-     * 插件升级时需要选择升级“基础版本”还是“增强版本”，传值“BASIC_VERSION”表示升级成基础版本，传值“ADVANCE_VERSION”表示升级成增强版本
+     * **参数解释**: 插件升级时需要选择升级“基础版本”还是“增强版本” **取值范围**: - BASIC_VERSION: 升级成基础版本 - ADVANCE_VERSION: 升级成增强版本 
      */
     public static final class VersionTypeEnum {
 
@@ -273,7 +272,7 @@ public class BatchCreateInvocationRequestBody {
     private VersionTypeEnum versionType;
 
     /**
-     * Agent任务接口调用源，CES表示由Console调用，APICOM_BMS表示由裸金属服务器调用，ADMIN_SERVER表示由运维平台调用
+     * **参数解释**: Agent任务接口调用源 **取值范围**: - CES: 由Console调用 - APICOM_BMS: 由裸金属服务器调用 - ADMIN_SERVER: 由运维平台调用 
      */
     public static final class OriginEnum {
 
@@ -385,7 +384,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * 主机id列表（INSTALL和UPDATE时必须）
+     * **参数解释**: 主机id列表（INSTALL和UPDATE时必须） **取值范围**: 数组长度范围为[1,100] 
      * @return instanceIds
      */
     public List<String> getInstanceIds() {
@@ -402,7 +401,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装
+     * **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 
      * @return invocationType
      */
     public InvocationTypeEnum getInvocationType() {
@@ -419,7 +418,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * 任务对象，目前仅支持telescope
+     * **参数解释**: 任务对象，目前仅支持telescope **取值范围**: - telescope：主机监控插件telescope 
      * @return invocationTarget
      */
     public InvocationTargetEnum getInvocationTarget() {
@@ -452,7 +451,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * 任务ID列表（ROLLBACK和RETRY时必须）
+     * **参数解释**: 任务ID列表（ROLLBACK和RETRY时必须） **取值范围**: 数组长度范围为[1,100] 
      * @return invocationIds
      */
     public List<String> getInvocationIds() {
@@ -469,7 +468,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * 插件升级时需要选择升级“基础版本”还是“增强版本”，传值“BASIC_VERSION”表示升级成基础版本，传值“ADVANCE_VERSION”表示升级成增强版本
+     * **参数解释**: 插件升级时需要选择升级“基础版本”还是“增强版本” **取值范围**: - BASIC_VERSION: 升级成基础版本 - ADVANCE_VERSION: 升级成增强版本 
      * @return versionType
      */
     public VersionTypeEnum getVersionType() {
@@ -486,7 +485,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * Agent任务接口调用源，CES表示由Console调用，APICOM_BMS表示由裸金属服务器调用，ADMIN_SERVER表示由运维平台调用
+     * **参数解释**: Agent任务接口调用源 **取值范围**: - CES: 由Console调用 - APICOM_BMS: 由裸金属服务器调用 - ADMIN_SERVER: 由运维平台调用 
      * @return origin
      */
     public OriginEnum getOrigin() {
@@ -503,7 +502,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * 版本号
+     * **参数解释**: 版本号 **取值范围**: 数组长度范围为[0,64] 
      * @return version
      */
     public String getVersion() {
@@ -537,7 +536,7 @@ public class BatchCreateInvocationRequestBody {
     }
 
     /**
-     * 创建远程安装任务时需要下发的被安装主机相关信息
+     * **参数解释**: 创建远程安装任务时需要下发的被安装主机相关信息 **取值范围**: 数组长度范围为[0,100] 
      * @return remoteInstallMeta
      */
     public List<RemoteInstallHostInfo> getRemoteInstallMeta() {

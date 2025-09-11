@@ -19,6 +19,11 @@ public class ShowAppAccessKeyListResponse extends SdkResponse {
 
     private List<AccessKeyInfo> result = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_num")
+
+    private Integer totalNum;
+
     public ShowAppAccessKeyListResponse withResult(List<AccessKeyInfo> result) {
         this.result = result;
         return this;
@@ -52,6 +57,23 @@ public class ShowAppAccessKeyListResponse extends SdkResponse {
         this.result = result;
     }
 
+    public ShowAppAccessKeyListResponse withTotalNum(Integer totalNum) {
+        this.totalNum = totalNum;
+        return this;
+    }
+
+    /**
+     * 满足条件的密钥总数
+     * @return totalNum
+     */
+    public Integer getTotalNum() {
+        return totalNum;
+    }
+
+    public void setTotalNum(Integer totalNum) {
+        this.totalNum = totalNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ShowAppAccessKeyListResponse extends SdkResponse {
             return false;
         }
         ShowAppAccessKeyListResponse that = (ShowAppAccessKeyListResponse) obj;
-        return Objects.equals(this.result, that.result);
+        return Objects.equals(this.result, that.result) && Objects.equals(this.totalNum, that.totalNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result);
+        return Objects.hash(result, totalNum);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ShowAppAccessKeyListResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAppAccessKeyListResponse {\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -38,6 +38,12 @@ import com.huaweicloud.sdk.projectman.v4.model.CheckProjectNameV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.CreateCustomfieldV1Req;
 import com.huaweicloud.sdk.projectman.v4.model.CreateCustomfieldsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.CreateCustomfieldsResponse;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueAttachmentRequest;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueAttachmentRequestBody;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueAttachmentResponse;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueRequest;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueRequestBody;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CreateIssueRequestV4;
 import com.huaweicloud.sdk.projectman.v4.model.CreateIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.CreateIssueV4Response;
@@ -53,6 +59,8 @@ import com.huaweicloud.sdk.projectman.v4.model.CreateProjectModuleResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CreateProjectV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.CreateProjectV4RequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.CreateProjectV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.CreateScrumPlanToProjectRequest;
+import com.huaweicloud.sdk.projectman.v4.model.CreateScrumPlanToProjectResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueRequestV4;
 import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueV4Response;
@@ -66,10 +74,14 @@ import com.huaweicloud.sdk.projectman.v4.model.DeleteProjectModuleRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteProjectModuleResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteProjectV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteProjectV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteScrumPlanInProjectRequest;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteScrumPlanInProjectResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadAttachmentResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadImageFileRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadImageFileResponse;
+import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdIssueAttachmentRequest;
+import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdIssueAttachmentResponse;
 import com.huaweicloud.sdk.projectman.v4.model.IssueRequestV4;
 import com.huaweicloud.sdk.projectman.v4.model.ListAssociatedIssuesRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ListAssociatedIssuesResponse;
@@ -81,6 +93,8 @@ import com.huaweicloud.sdk.projectman.v4.model.ListChildIssuesV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListChildIssuesV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.ListDomainNotAddedProjectsV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListDomainNotAddedProjectsV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.ListIpdProjectIssuesRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ListIpdProjectIssuesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueAssociatedCommitsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueAssociatedCommitsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueCommentsV4Request;
@@ -141,6 +155,7 @@ import com.huaweicloud.sdk.projectman.v4.model.MetricRequest3;
 import com.huaweicloud.sdk.projectman.v4.model.MetricRequestV2;
 import com.huaweicloud.sdk.projectman.v4.model.RemoveProjectRequest;
 import com.huaweicloud.sdk.projectman.v4.model.RemoveProjectResponse;
+import com.huaweicloud.sdk.projectman.v4.model.SearchIpdIssuesRequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.SearchIssuesRequest;
 import com.huaweicloud.sdk.projectman.v4.model.SearchIssuesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowBugDensityV2Request;
@@ -153,6 +168,8 @@ import com.huaweicloud.sdk.projectman.v4.model.ShowCurUserInfoRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowCurUserInfoResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowCurUserRoleRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowCurUserRoleResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIpdAttachmentByWorkItemIdRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIpdAttachmentByWorkItemIdResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueCompletionRateRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueCompletionRateResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueConfigFieldsRequest;
@@ -172,6 +189,10 @@ import com.huaweicloud.sdk.projectman.v4.model.ShowProjectSummaryV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.ShowProjectWorkHoursRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowProjectWorkHoursRequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.ShowProjectWorkHoursResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ShowScrumIssueSeveritiesRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ShowScrumIssueSeveritiesResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ShowScrumPlansByConditionRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ShowScrumPlansByConditionResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowWorkItemWrokflowConfigRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowWorkItemWrokflowConfigResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowWorkflowTemplateRequest;
@@ -196,6 +217,8 @@ import com.huaweicloud.sdk.projectman.v4.model.UpdateProjectModuleResponse;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateProjectRequestV4;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateProjectV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateProjectV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.UpdateScrumPlanInProjectRequest;
+import com.huaweicloud.sdk.projectman.v4.model.UpdateScrumPlanInProjectResponse;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateUserNickNameRequestV4;
 import com.huaweicloud.sdk.projectman.v4.model.UploadAttachmentsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.UploadAttachmentsRequestBody;
@@ -1015,6 +1038,126 @@ public class ProjectManMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateIpdProjectIssueRequest, CreateIpdProjectIssueResponse> createIpdProjectIssue =
+        genForCreateIpdProjectIssue();
+
+    private static HttpRequestDef<CreateIpdProjectIssueRequest, CreateIpdProjectIssueResponse> genForCreateIpdProjectIssue() {
+        // basic
+        HttpRequestDef.Builder<CreateIpdProjectIssueRequest, CreateIpdProjectIssueResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateIpdProjectIssueRequest.class, CreateIpdProjectIssueResponse.class)
+            .withName("CreateIpdProjectIssue")
+            .withUri("/v1/ipdprojectservice/projects/{project_id}/issues")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIpdProjectIssueRequest::getProjectId,
+                CreateIpdProjectIssueRequest::setProjectId));
+        builder.<CreateIpdProjectIssueRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateIpdProjectIssueRequestBody.class),
+            f -> f.withMarshaller(CreateIpdProjectIssueRequest::getBody, CreateIpdProjectIssueRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateIpdProjectIssueAttachmentRequest, CreateIpdProjectIssueAttachmentResponse> createIpdProjectIssueAttachment =
+        genForCreateIpdProjectIssueAttachment();
+
+    private static HttpRequestDef<CreateIpdProjectIssueAttachmentRequest, CreateIpdProjectIssueAttachmentResponse> genForCreateIpdProjectIssueAttachment() {
+        // basic
+        HttpRequestDef.Builder<CreateIpdProjectIssueAttachmentRequest, CreateIpdProjectIssueAttachmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateIpdProjectIssueAttachmentRequest.class,
+                    CreateIpdProjectIssueAttachmentResponse.class)
+                .withName("CreateIpdProjectIssueAttachment")
+                .withUri("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/attachments/upload")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIpdProjectIssueAttachmentRequest::getProjectId,
+                CreateIpdProjectIssueAttachmentRequest::setProjectId));
+        builder.<String>withRequestField("issue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIpdProjectIssueAttachmentRequest::getIssueId,
+                CreateIpdProjectIssueAttachmentRequest::setIssueId));
+        builder.<CreateIpdProjectIssueAttachmentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateIpdProjectIssueAttachmentRequestBody.class),
+            f -> f.withMarshaller(CreateIpdProjectIssueAttachmentRequest::getBody,
+                CreateIpdProjectIssueAttachmentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIpdProjectIssuesRequest, ListIpdProjectIssuesResponse> listIpdProjectIssues =
+        genForListIpdProjectIssues();
+
+    private static HttpRequestDef<ListIpdProjectIssuesRequest, ListIpdProjectIssuesResponse> genForListIpdProjectIssues() {
+        // basic
+        HttpRequestDef.Builder<ListIpdProjectIssuesRequest, ListIpdProjectIssuesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListIpdProjectIssuesRequest.class, ListIpdProjectIssuesResponse.class)
+            .withName("ListIpdProjectIssues")
+            .withUri("/v1/ipdprojectservice/projects/{project_id}/issues/query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpdProjectIssuesRequest::getProjectId,
+                ListIpdProjectIssuesRequest::setProjectId));
+        builder.<Boolean>withRequestField("is_backlog",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListIpdProjectIssuesRequest::getIsBacklog,
+                ListIpdProjectIssuesRequest::setIsBacklog));
+        builder.<String>withRequestField("issue_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpdProjectIssuesRequest::getIssueType,
+                ListIpdProjectIssuesRequest::setIssueType));
+        builder.<String>withRequestField("src_domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpdProjectIssuesRequest::getSrcDomainId,
+                ListIpdProjectIssuesRequest::setSrcDomainId));
+        builder.<String>withRequestField("view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpdProjectIssuesRequest::getView, ListIpdProjectIssuesRequest::setView));
+        builder.<SearchIpdIssuesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchIpdIssuesRequestBody.class),
+            f -> f.withMarshaller(ListIpdProjectIssuesRequest::getBody, ListIpdProjectIssuesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListIssueFieldsRequest, ListIssueFieldsResponse> listIssueFields =
         genForListIssueFields();
 
@@ -1204,6 +1347,227 @@ public class ProjectManMeta {
             f -> f.withMarshaller(TransferWorkItemFlowRequest::getBody, TransferWorkItemFlowRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadIpdIssueAttachmentRequest, DownloadIpdIssueAttachmentResponse> downloadIpdIssueAttachment =
+        genForDownloadIpdIssueAttachment();
+
+    private static HttpRequestDef<DownloadIpdIssueAttachmentRequest, DownloadIpdIssueAttachmentResponse> genForDownloadIpdIssueAttachment() {
+        // basic
+        HttpRequestDef.Builder<DownloadIpdIssueAttachmentRequest, DownloadIpdIssueAttachmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    DownloadIpdIssueAttachmentRequest.class,
+                    DownloadIpdIssueAttachmentResponse.class)
+                .withName("DownloadIpdIssueAttachment")
+                .withUri("/v1/ipdprojectservice/projects/{project_id}/attachments/download/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadIpdIssueAttachmentRequest::getProjectId,
+                DownloadIpdIssueAttachmentRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadIpdIssueAttachmentRequest::getId, DownloadIpdIssueAttachmentRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIpdAttachmentByWorkItemIdRequest, ShowIpdAttachmentByWorkItemIdResponse> showIpdAttachmentByWorkItemId =
+        genForShowIpdAttachmentByWorkItemId();
+
+    private static HttpRequestDef<ShowIpdAttachmentByWorkItemIdRequest, ShowIpdAttachmentByWorkItemIdResponse> genForShowIpdAttachmentByWorkItemId() {
+        // basic
+        HttpRequestDef.Builder<ShowIpdAttachmentByWorkItemIdRequest, ShowIpdAttachmentByWorkItemIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowIpdAttachmentByWorkItemIdRequest.class,
+                    ShowIpdAttachmentByWorkItemIdResponse.class)
+                .withName("ShowIpdAttachmentByWorkItemId")
+                .withUri("/v1/ipdprojectservice/projects/{project_id}/attachments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpdAttachmentByWorkItemIdRequest::getProjectId,
+                ShowIpdAttachmentByWorkItemIdRequest::setProjectId));
+        builder.<String>withRequestField("issue_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpdAttachmentByWorkItemIdRequest::getIssueId,
+                ShowIpdAttachmentByWorkItemIdRequest::setIssueId));
+        builder.<String>withRequestField("source_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpdAttachmentByWorkItemIdRequest::getSourceProjectId,
+                ShowIpdAttachmentByWorkItemIdRequest::setSourceProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateScrumPlanToProjectRequest, CreateScrumPlanToProjectResponse> createScrumPlanToProject =
+        genForCreateScrumPlanToProject();
+
+    private static HttpRequestDef<CreateScrumPlanToProjectRequest, CreateScrumPlanToProjectResponse> genForCreateScrumPlanToProject() {
+        // basic
+        HttpRequestDef.Builder<CreateScrumPlanToProjectRequest, CreateScrumPlanToProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateScrumPlanToProjectRequest.class, CreateScrumPlanToProjectResponse.class)
+                .withName("CreateScrumPlanToProject")
+                .withUri("/v3/plan/{project_id}/management")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateScrumPlanToProjectRequest::getProjectId,
+                CreateScrumPlanToProjectRequest::setProjectId));
+        builder.<String>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateScrumPlanToProjectRequest::getBody, CreateScrumPlanToProjectRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateScrumPlanToProjectResponse::getBody,
+                CreateScrumPlanToProjectResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScrumPlanInProjectRequest, DeleteScrumPlanInProjectResponse> deleteScrumPlanInProject =
+        genForDeleteScrumPlanInProject();
+
+    private static HttpRequestDef<DeleteScrumPlanInProjectRequest, DeleteScrumPlanInProjectResponse> genForDeleteScrumPlanInProject() {
+        // basic
+        HttpRequestDef.Builder<DeleteScrumPlanInProjectRequest, DeleteScrumPlanInProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteScrumPlanInProjectRequest.class,
+                    DeleteScrumPlanInProjectResponse.class)
+                .withName("DeleteScrumPlanInProject")
+                .withUri("/v3/plan/{project_id}/management")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScrumPlanInProjectRequest::getProjectId,
+                DeleteScrumPlanInProjectRequest::setProjectId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteScrumPlanInProjectResponse::getBody,
+                DeleteScrumPlanInProjectResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScrumPlansByConditionRequest, ShowScrumPlansByConditionResponse> showScrumPlansByCondition =
+        genForShowScrumPlansByCondition();
+
+    private static HttpRequestDef<ShowScrumPlansByConditionRequest, ShowScrumPlansByConditionResponse> genForShowScrumPlansByCondition() {
+        // basic
+        HttpRequestDef.Builder<ShowScrumPlansByConditionRequest, ShowScrumPlansByConditionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowScrumPlansByConditionRequest.class,
+                    ShowScrumPlansByConditionResponse.class)
+                .withName("ShowScrumPlansByCondition")
+                .withUri("/v3/plan/{project_id}/managements")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScrumPlansByConditionRequest::getProjectId,
+                ShowScrumPlansByConditionRequest::setProjectId));
+        builder.<String>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScrumPlansByConditionRequest::getBody,
+                ShowScrumPlansByConditionRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowScrumPlansByConditionResponse::getBody,
+                ShowScrumPlansByConditionResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScrumPlanInProjectRequest, UpdateScrumPlanInProjectResponse> updateScrumPlanInProject =
+        genForUpdateScrumPlanInProject();
+
+    private static HttpRequestDef<UpdateScrumPlanInProjectRequest, UpdateScrumPlanInProjectResponse> genForUpdateScrumPlanInProject() {
+        // basic
+        HttpRequestDef.Builder<UpdateScrumPlanInProjectRequest, UpdateScrumPlanInProjectResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateScrumPlanInProjectRequest.class, UpdateScrumPlanInProjectResponse.class)
+                .withName("UpdateScrumPlanInProject")
+                .withUri("/v3/plan/{project_id}/management/{plan_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScrumPlanInProjectRequest::getProjectId,
+                UpdateScrumPlanInProjectRequest::setProjectId));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScrumPlanInProjectRequest::getPlanId,
+                UpdateScrumPlanInProjectRequest::setPlanId));
+        builder.<String>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScrumPlanInProjectRequest::getBody, UpdateScrumPlanInProjectRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateScrumPlanInProjectResponse::getBody,
+                UpdateScrumPlanInProjectResponse::setBody));
 
         return builder.build();
     }
@@ -2794,6 +3158,31 @@ public class ProjectManMeta {
             f -> f.withMarshaller(UploadIssueImgRequest::getBody, UploadIssueImgRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScrumIssueSeveritiesRequest, ShowScrumIssueSeveritiesResponse> showScrumIssueSeverities =
+        genForShowScrumIssueSeverities();
+
+    private static HttpRequestDef<ShowScrumIssueSeveritiesRequest, ShowScrumIssueSeveritiesResponse> genForShowScrumIssueSeverities() {
+        // basic
+        HttpRequestDef.Builder<ShowScrumIssueSeveritiesRequest, ShowScrumIssueSeveritiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowScrumIssueSeveritiesRequest.class, ShowScrumIssueSeveritiesResponse.class)
+                .withName("ShowScrumIssueSeverities")
+                .withUri("/v2/issue-severity/all")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowScrumIssueSeveritiesResponse::getBody,
+                ShowScrumIssueSeveritiesResponse::setBody));
 
         return builder.build();
     }

@@ -204,6 +204,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ScheduledEventAcceptBody;
 import com.huaweicloud.sdk.ecs.v2.model.ScheduledEventUpdateBody;
 import com.huaweicloud.sdk.ecs.v2.model.ShowAppendableVolumeQuotaRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowAppendableVolumeQuotaResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowFlavorCapacityRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowFlavorCapacityResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowJobResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowMetadataOptionsRequest;
@@ -212,6 +214,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerGroupRequest;
@@ -2867,6 +2871,29 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFlavorCapacityRequest, ShowFlavorCapacityResponse> showFlavorCapacity =
+        genForShowFlavorCapacity();
+
+    private static HttpRequestDef<ShowFlavorCapacityRequest, ShowFlavorCapacityResponse> genForShowFlavorCapacity() {
+        // basic
+        HttpRequestDef.Builder<ShowFlavorCapacityRequest, ShowFlavorCapacityResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlavorCapacityRequest.class, ShowFlavorCapacityResponse.class)
+                .withName("ShowFlavorCapacity")
+                .withUri("/v1/{project_id}/cloudservers/flavors/{flavor_id}/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlavorCapacityRequest::getFlavorId, ShowFlavorCapacityRequest::setFlavorId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMetadataOptionsRequest, ShowMetadataOptionsResponse> showMetadataOptions =
         genForShowMetadataOptions();
 
@@ -2948,6 +2975,33 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerRequest::getServerId, ShowServerRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerAttachableNicNumRequest, ShowServerAttachableNicNumResponse> showServerAttachableNicNum =
+        genForShowServerAttachableNicNum();
+
+    private static HttpRequestDef<ShowServerAttachableNicNumRequest, ShowServerAttachableNicNumResponse> genForShowServerAttachableNicNum() {
+        // basic
+        HttpRequestDef.Builder<ShowServerAttachableNicNumRequest, ShowServerAttachableNicNumResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowServerAttachableNicNumRequest.class,
+                    ShowServerAttachableNicNumResponse.class)
+                .withName("ShowServerAttachableNicNum")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-interface_extension")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerAttachableNicNumRequest::getServerId,
+                ShowServerAttachableNicNumRequest::setServerId));
 
         // response
 

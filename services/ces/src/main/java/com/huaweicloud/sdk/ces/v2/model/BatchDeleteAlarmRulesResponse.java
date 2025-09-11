@@ -41,7 +41,7 @@ public class BatchDeleteAlarmRulesResponse extends SdkResponse {
     }
 
     /**
-     * 成功删除的告警规则ID列表
+     * **参数解释**： 成功删除的告警规则ID列表 
      * @return alarmIds
      */
     public List<String> getAlarmIds() {

@@ -22,7 +22,7 @@ public class CreateImmutableRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则ID
+     * 策略ID
      * @return id
      */
     public Integer getId() {

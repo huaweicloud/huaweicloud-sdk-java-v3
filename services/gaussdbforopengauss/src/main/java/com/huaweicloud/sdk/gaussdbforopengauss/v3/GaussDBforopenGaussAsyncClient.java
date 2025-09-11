@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AddHbaConfsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AddHbaConfsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AddInstanceTagsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AddInstanceTagsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbPrivilegesRequest;
@@ -13,8 +15,12 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectWdrSnapshotRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectWdrSnapshotResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationRequest;
@@ -43,18 +49,24 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateReadonlyNodesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateReadonlyNodesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateSlowLogDownloadRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateSlowLogDownloadResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateWdrSnapshotRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateWdrSnapshotResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseSchemaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseSchemaResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteHbaConfsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteHbaConfsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceTagRequest;
@@ -65,6 +77,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteReadonlyNodesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteReadonlyNodesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
@@ -113,8 +127,12 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseInstancesReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseRolesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseRolesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemaTablesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemaTablesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemasResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeSummaryRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeSummaryResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatastoresDetailsRequest;
@@ -129,6 +147,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDisasterRecoveryRecordRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDisasterRecoveryRecordResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEnhanceFullSqlStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEnhanceFullSqlStatisticsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesRequest;
@@ -139,6 +159,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHbaInfoHistoryRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHbaInfoHistoryResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHbaInfosRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHbaInfosResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceDetailsRequest;
@@ -155,8 +179,16 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKeyViewExecuteNodeRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKeyViewExecuteNodeResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKmsTdeKeyRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKmsTdeKeyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListLtsConfigsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListLtsConfigsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListMetricDatasRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListMetricDatasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListNodeLimitSqlModelRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListNodeLimitSqlModelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesRequest;
@@ -169,6 +201,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListReadonlyNodesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListReadonlyNodesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRealTimeSessionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesDetailsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRecycleInstancesRequest;
@@ -183,14 +219,30 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionStatisticsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlDetailsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlDetailsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlExcuteNodesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlExcuteNodesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTableDefinitionRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTableDefinitionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTableDefinitionsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTableDefinitionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopSqlsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopSqlsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetDrConfigRequest;
@@ -201,6 +253,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreHbaInfoRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreHbaInfoResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResumePluginExtensionsRequest;
@@ -219,6 +273,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetNewBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SetRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowAlarmStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowAlarmStatisticsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBalanceStatusRequest;
@@ -235,28 +291,44 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowErrorLogSwitchStatusRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowErrorLogSwitchStatusResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowGlobalSlowSqlDetailRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowGlobalSlowSqlDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceDiskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceDiskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceMetricDataRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceMetricDataResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstancesStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstancesStatisticsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowKmsKeyDetailRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowKmsKeyDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowMetricNamesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowMetricNamesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowParameterGroupDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowParameterGroupDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowProjectQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowProjectQuotasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionOverviewRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSessionOverviewResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSlowLogDownloadRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSlowLogDownloadResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSlowSqlPlanRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSlowSqlPlanResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSlowSqlStackRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSlowSqlStackResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSourceInstanceDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSourceInstanceDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowSslCertDownloadLinkRequest;
@@ -265,20 +337,34 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowUpgradeCandidateVers
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowUpgradeCandidateVersionsDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowUpgradeCandidateVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowUpgradeCandidateVersionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowWdrSnapshotStatusRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowWdrSnapshotStatusResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartMysqlCompatibilityRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartMysqlCompatibilityResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopFreeSessionRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopFreeSessionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopSessionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchWdrSnapshotStatusRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchWdrSnapshotStatusResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SyncLimitDataRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SyncLimitDataResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UnbindLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UnbindLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationRequest;
@@ -289,6 +375,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateMysqlCompatibilityRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateMysqlCompatibilityResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateRedistributionControlRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateRedistributionControlResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstanceVersionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstanceVersionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstancesVersionRequest;
@@ -312,6 +400,34 @@ public class GaussDBforopenGaussAsyncClient {
         ClientBuilder<GaussDBforopenGaussAsyncClient> clientBuilder =
             new ClientBuilder<>(GaussDBforopenGaussAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 新增客户端接入认证配置
+     *
+     * 新增客户端接入认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddHbaConfsRequest 请求对象
+     * @return CompletableFuture<AddHbaConfsResponse>
+     */
+    public CompletableFuture<AddHbaConfsResponse> addHbaConfsAsync(AddHbaConfsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.addHbaConfs);
+    }
+
+    /**
+     * 新增客户端接入认证配置
+     *
+     * 新增客户端接入认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddHbaConfsRequest 请求对象
+     * @return AsyncInvoker<AddHbaConfsRequest, AddHbaConfsResponse>
+     */
+    public AsyncInvoker<AddHbaConfsRequest, AddHbaConfsResponse> addHbaConfsAsyncInvoker(AddHbaConfsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.addHbaConfs, hcClient);
     }
 
     /**
@@ -431,7 +547,7 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 查询批量实例可升级的版本和升级类型。
+     * 查询批量实例可升级的版本和升级类型
      *
      * 查询批量实例可升级的版本和升级类型。
      * 
@@ -446,7 +562,7 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 查询批量实例可升级的版本和升级类型。
+     * 查询批量实例可升级的版本和升级类型
      *
      * 查询批量实例可升级的版本和升级类型。
      * 
@@ -872,6 +988,35 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 创建只读节点
+     *
+     * 创建只读节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReadonlyNodesRequest 请求对象
+     * @return CompletableFuture<CreateReadonlyNodesResponse>
+     */
+    public CompletableFuture<CreateReadonlyNodesResponse> createReadonlyNodesAsync(CreateReadonlyNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createReadonlyNodes);
+    }
+
+    /**
+     * 创建只读节点
+     *
+     * 创建只读节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReadonlyNodesRequest 请求对象
+     * @return AsyncInvoker<CreateReadonlyNodesRequest, CreateReadonlyNodesResponse>
+     */
+    public AsyncInvoker<CreateReadonlyNodesRequest, CreateReadonlyNodesResponse> createReadonlyNodesAsyncInvoker(
+        CreateReadonlyNodesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.createReadonlyNodes, hcClient);
+    }
+
+    /**
      * 恢复到新实例
      *
      * 根据备份恢复新实例。
@@ -1049,6 +1194,35 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 删除客户端接入认证配置
+     *
+     * 删除客户端接入认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHbaConfsRequest 请求对象
+     * @return CompletableFuture<DeleteHbaConfsResponse>
+     */
+    public CompletableFuture<DeleteHbaConfsResponse> deleteHbaConfsAsync(DeleteHbaConfsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.deleteHbaConfs);
+    }
+
+    /**
+     * 删除客户端接入认证配置
+     *
+     * 删除客户端接入认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHbaConfsRequest 请求对象
+     * @return AsyncInvoker<DeleteHbaConfsRequest, DeleteHbaConfsResponse>
+     */
+    public AsyncInvoker<DeleteHbaConfsRequest, DeleteHbaConfsResponse> deleteHbaConfsAsyncInvoker(
+        DeleteHbaConfsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.deleteHbaConfs, hcClient);
+    }
+
+    /**
      * 删除实例
      *
      * 删除数据库实例。
@@ -1161,6 +1335,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupAsyncInvoker(
         DeleteManualBackupRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 删除只读节点
+     *
+     * 删除只读节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReadonlyNodesRequest 请求对象
+     * @return CompletableFuture<DeleteReadonlyNodesResponse>
+     */
+    public CompletableFuture<DeleteReadonlyNodesResponse> deleteReadonlyNodesAsync(DeleteReadonlyNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.deleteReadonlyNodes);
+    }
+
+    /**
+     * 删除只读节点
+     *
+     * 删除只读节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReadonlyNodesRequest 请求对象
+     * @return AsyncInvoker<DeleteReadonlyNodesRequest, DeleteReadonlyNodesResponse>
+     */
+    public AsyncInvoker<DeleteReadonlyNodesRequest, DeleteReadonlyNodesResponse> deleteReadonlyNodesAsyncInvoker(
+        DeleteReadonlyNodesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.deleteReadonlyNodes, hcClient);
     }
 
     /**
@@ -1462,9 +1665,9 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 表信息导出
+     * 导出表信息
      *
-     * 表信息导出
+     * 导出表信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1476,9 +1679,9 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 表信息导出
+     * 导出表信息
      *
-     * 表信息导出
+     * 导出表信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1873,6 +2076,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询数据库表列表
+     *
+     * 查询指定实例的数据库表列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseSchemaTablesRequest 请求对象
+     * @return CompletableFuture<ListDatabaseSchemaTablesResponse>
+     */
+    public CompletableFuture<ListDatabaseSchemaTablesResponse> listDatabaseSchemaTablesAsync(
+        ListDatabaseSchemaTablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listDatabaseSchemaTables);
+    }
+
+    /**
+     * 查询数据库表列表
+     *
+     * 查询指定实例的数据库表列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseSchemaTablesRequest 请求对象
+     * @return AsyncInvoker<ListDatabaseSchemaTablesRequest, ListDatabaseSchemaTablesResponse>
+     */
+    public AsyncInvoker<ListDatabaseSchemaTablesRequest, ListDatabaseSchemaTablesResponse> listDatabaseSchemaTablesAsyncInvoker(
+        ListDatabaseSchemaTablesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listDatabaseSchemaTables, hcClient);
+    }
+
+    /**
      * 查询数据库SCHEMA列表
      *
      * 查询指定实例的数据库SCHEMA列表。
@@ -1899,6 +2132,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> listDatabaseSchemasAsyncInvoker(
         ListDatabaseSchemasRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listDatabaseSchemas, hcClient);
+    }
+
+    /**
+     * 查询数据盘空间概况
+     *
+     * 查询数据盘空间概况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseVolumeSummaryRequest 请求对象
+     * @return CompletableFuture<ListDatabaseVolumeSummaryResponse>
+     */
+    public CompletableFuture<ListDatabaseVolumeSummaryResponse> listDatabaseVolumeSummaryAsync(
+        ListDatabaseVolumeSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listDatabaseVolumeSummary);
+    }
+
+    /**
+     * 查询数据盘空间概况
+     *
+     * 查询数据盘空间概况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseVolumeSummaryRequest 请求对象
+     * @return AsyncInvoker<ListDatabaseVolumeSummaryRequest, ListDatabaseVolumeSummaryResponse>
+     */
+    public AsyncInvoker<ListDatabaseVolumeSummaryRequest, ListDatabaseVolumeSummaryResponse> listDatabaseVolumeSummaryAsyncInvoker(
+        ListDatabaseVolumeSummaryRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listDatabaseVolumeSummary, hcClient);
     }
 
     /**
@@ -2251,6 +2514,64 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询客户端接入认证配置修改历史
+     *
+     * 查询实例的客户端接入认证配置修改历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHbaInfoHistoryRequest 请求对象
+     * @return CompletableFuture<ListHbaInfoHistoryResponse>
+     */
+    public CompletableFuture<ListHbaInfoHistoryResponse> listHbaInfoHistoryAsync(ListHbaInfoHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listHbaInfoHistory);
+    }
+
+    /**
+     * 查询客户端接入认证配置修改历史
+     *
+     * 查询实例的客户端接入认证配置修改历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHbaInfoHistoryRequest 请求对象
+     * @return AsyncInvoker<ListHbaInfoHistoryRequest, ListHbaInfoHistoryResponse>
+     */
+    public AsyncInvoker<ListHbaInfoHistoryRequest, ListHbaInfoHistoryResponse> listHbaInfoHistoryAsyncInvoker(
+        ListHbaInfoHistoryRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listHbaInfoHistory, hcClient);
+    }
+
+    /**
+     * 查询客户端接入认证配置
+     *
+     * 查询客户端接入认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHbaInfosRequest 请求对象
+     * @return CompletableFuture<ListHbaInfosResponse>
+     */
+    public CompletableFuture<ListHbaInfosResponse> listHbaInfosAsync(ListHbaInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listHbaInfos);
+    }
+
+    /**
+     * 查询客户端接入认证配置
+     *
+     * 查询客户端接入认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHbaInfosRequest 请求对象
+     * @return AsyncInvoker<ListHbaInfosRequest, ListHbaInfosResponse>
+     */
+    public AsyncInvoker<ListHbaInfosRequest, ListHbaInfosResponse> listHbaInfosAsyncInvoker(
+        ListHbaInfosRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listHbaInfos, hcClient);
+    }
+
+    /**
      * 查询参数模板的修改历史
      *
      * 查询参数模板的修改历史记录。
@@ -2487,6 +2808,94 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询关键视图下发节点信息
+     *
+     * 查询该实例下可用于执行会话查杀功能的节点 (非日志类型的CN或DN节点) 和其所包含的CN、DN组件信息。该接口是会话查杀功能的前提，其返回值中的每一对节点和组件ID是后续查杀会话接口的入参。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKeyViewExecuteNodeRequest 请求对象
+     * @return CompletableFuture<ListKeyViewExecuteNodeResponse>
+     */
+    public CompletableFuture<ListKeyViewExecuteNodeResponse> listKeyViewExecuteNodeAsync(
+        ListKeyViewExecuteNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listKeyViewExecuteNode);
+    }
+
+    /**
+     * 查询关键视图下发节点信息
+     *
+     * 查询该实例下可用于执行会话查杀功能的节点 (非日志类型的CN或DN节点) 和其所包含的CN、DN组件信息。该接口是会话查杀功能的前提，其返回值中的每一对节点和组件ID是后续查杀会话接口的入参。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKeyViewExecuteNodeRequest 请求对象
+     * @return AsyncInvoker<ListKeyViewExecuteNodeRequest, ListKeyViewExecuteNodeResponse>
+     */
+    public AsyncInvoker<ListKeyViewExecuteNodeRequest, ListKeyViewExecuteNodeResponse> listKeyViewExecuteNodeAsyncInvoker(
+        ListKeyViewExecuteNodeRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listKeyViewExecuteNode, hcClient);
+    }
+
+    /**
+     * 查询KMS秘钥列表
+     *
+     * 查询当前可使用的kms秘钥列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKmsTdeKeyRequest 请求对象
+     * @return CompletableFuture<ListKmsTdeKeyResponse>
+     */
+    public CompletableFuture<ListKmsTdeKeyResponse> listKmsTdeKeyAsync(ListKmsTdeKeyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listKmsTdeKey);
+    }
+
+    /**
+     * 查询KMS秘钥列表
+     *
+     * 查询当前可使用的kms秘钥列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKmsTdeKeyRequest 请求对象
+     * @return AsyncInvoker<ListKmsTdeKeyRequest, ListKmsTdeKeyResponse>
+     */
+    public AsyncInvoker<ListKmsTdeKeyRequest, ListKmsTdeKeyResponse> listKmsTdeKeyAsyncInvoker(
+        ListKmsTdeKeyRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listKmsTdeKey, hcClient);
+    }
+
+    /**
+     * 查询实例列表指标
+     *
+     * 查询实例列表指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricDatasRequest 请求对象
+     * @return CompletableFuture<ListMetricDatasResponse>
+     */
+    public CompletableFuture<ListMetricDatasResponse> listMetricDatasAsync(ListMetricDatasRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listMetricDatas);
+    }
+
+    /**
+     * 查询实例列表指标
+     *
+     * 查询实例列表指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMetricDatasRequest 请求对象
+     * @return AsyncInvoker<ListMetricDatasRequest, ListMetricDatasResponse>
+     */
+    public AsyncInvoker<ListMetricDatasRequest, ListMetricDatasResponse> listMetricDatasAsyncInvoker(
+        ListMetricDatasRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listMetricDatas, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -2632,6 +3041,65 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
         ListProjectTagsRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listProjectTags, hcClient);
+    }
+
+    /**
+     * 查询只读节点信息
+     *
+     * 查询实例的只读节点列表，以及实例可支持的最大只读节点数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReadonlyNodesRequest 请求对象
+     * @return CompletableFuture<ListReadonlyNodesResponse>
+     */
+    public CompletableFuture<ListReadonlyNodesResponse> listReadonlyNodesAsync(ListReadonlyNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listReadonlyNodes);
+    }
+
+    /**
+     * 查询只读节点信息
+     *
+     * 查询实例的只读节点列表，以及实例可支持的最大只读节点数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReadonlyNodesRequest 请求对象
+     * @return AsyncInvoker<ListReadonlyNodesRequest, ListReadonlyNodesResponse>
+     */
+    public AsyncInvoker<ListReadonlyNodesRequest, ListReadonlyNodesResponse> listReadonlyNodesAsyncInvoker(
+        ListReadonlyNodesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listReadonlyNodes, hcClient);
+    }
+
+    /**
+     * 查询实时会话
+     *
+     * 查询数据库实例节点的实时会话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRealTimeSessionsRequest 请求对象
+     * @return CompletableFuture<ListRealTimeSessionsResponse>
+     */
+    public CompletableFuture<ListRealTimeSessionsResponse> listRealTimeSessionsAsync(
+        ListRealTimeSessionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listRealTimeSessions);
+    }
+
+    /**
+     * 查询实时会话
+     *
+     * 查询数据库实例节点的实时会话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRealTimeSessionsRequest 请求对象
+     * @return AsyncInvoker<ListRealTimeSessionsRequest, ListRealTimeSessionsResponse>
+     */
+    public AsyncInvoker<ListRealTimeSessionsRequest, ListRealTimeSessionsResponse> listRealTimeSessionsAsyncInvoker(
+        ListRealTimeSessionsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listRealTimeSessions, hcClient);
     }
 
     /**
@@ -2817,7 +3285,7 @@ public class GaussDBforopenGaussAsyncClient {
     /**
      * 识别SQL文本中的表信息
      *
-     * 识别SQL文本中的表信息
+     * 识别SQL文本中的表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2831,7 +3299,7 @@ public class GaussDBforopenGaussAsyncClient {
     /**
      * 识别SQL文本中的表信息
      *
-     * 识别SQL文本中的表信息
+     * 识别SQL文本中的表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2841,6 +3309,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListSchemaAndTableRequest, ListSchemaAndTableResponse> listSchemaAndTableAsyncInvoker(
         ListSchemaAndTableRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSchemaAndTable, hcClient);
+    }
+
+    /**
+     * 查询实时会话统计
+     *
+     * 查询数据库实例节点的实时会话统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSessionStatisticsRequest 请求对象
+     * @return CompletableFuture<ListSessionStatisticsResponse>
+     */
+    public CompletableFuture<ListSessionStatisticsResponse> listSessionStatisticsAsync(
+        ListSessionStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSessionStatistics);
+    }
+
+    /**
+     * 查询实时会话统计
+     *
+     * 查询数据库实例节点的实时会话统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSessionStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListSessionStatisticsRequest, ListSessionStatisticsResponse>
+     */
+    public AsyncInvoker<ListSessionStatisticsRequest, ListSessionStatisticsResponse> listSessionStatisticsAsyncInvoker(
+        ListSessionStatisticsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSessionStatistics, hcClient);
     }
 
     /**
@@ -2903,6 +3401,65 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询表定义信息
+     *
+     * 查询表定义信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTableDefinitionRequest 请求对象
+     * @return CompletableFuture<ListTableDefinitionResponse>
+     */
+    public CompletableFuture<ListTableDefinitionResponse> listTableDefinitionAsync(ListTableDefinitionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listTableDefinition);
+    }
+
+    /**
+     * 查询表定义信息
+     *
+     * 查询表定义信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTableDefinitionRequest 请求对象
+     * @return AsyncInvoker<ListTableDefinitionRequest, ListTableDefinitionResponse>
+     */
+    public AsyncInvoker<ListTableDefinitionRequest, ListTableDefinitionResponse> listTableDefinitionAsyncInvoker(
+        ListTableDefinitionRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listTableDefinition, hcClient);
+    }
+
+    /**
+     * 查询指定表的表定义信息列表
+     *
+     * 查询指定表的表定义信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTableDefinitionsRequest 请求对象
+     * @return CompletableFuture<ListTableDefinitionsResponse>
+     */
+    public CompletableFuture<ListTableDefinitionsResponse> listTableDefinitionsAsync(
+        ListTableDefinitionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listTableDefinitions);
+    }
+
+    /**
+     * 查询指定表的表定义信息列表
+     *
+     * 查询指定表的表定义信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTableDefinitionsRequest 请求对象
+     * @return AsyncInvoker<ListTableDefinitionsRequest, ListTableDefinitionsResponse>
+     */
+    public AsyncInvoker<ListTableDefinitionsRequest, ListTableDefinitionsResponse> listTableDefinitionsAsyncInvoker(
+        ListTableDefinitionsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listTableDefinitions, hcClient);
+    }
+
+    /**
      * 查询任务列表
      *
      * 获取任务中心的任务列表。
@@ -2957,6 +3514,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse> modifyEpsQuotaAsyncInvoker(
         ModifyEpsQuotaRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.modifyEpsQuota, hcClient);
+    }
+
+    /**
+     * 修改客户端接入认证配置
+     *
+     * 修改客户端接入认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyHbaConfRequest 请求对象
+     * @return CompletableFuture<ModifyHbaConfResponse>
+     */
+    public CompletableFuture<ModifyHbaConfResponse> modifyHbaConfAsync(ModifyHbaConfRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.modifyHbaConf);
+    }
+
+    /**
+     * 修改客户端接入认证配置
+     *
+     * 修改客户端接入认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyHbaConfRequest 请求对象
+     * @return AsyncInvoker<ModifyHbaConfRequest, ModifyHbaConfResponse>
+     */
+    public AsyncInvoker<ModifyHbaConfRequest, ModifyHbaConfResponse> modifyHbaConfAsyncInvoker(
+        ModifyHbaConfRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.modifyHbaConf, hcClient);
     }
 
     /**
@@ -3102,6 +3688,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceAsyncInvoker(
         RestartInstanceRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.restartInstance, hcClient);
+    }
+
+    /**
+     * 恢复客户端接入认证配置信息
+     *
+     * 恢复客户端接入认证配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreHbaInfoRequest 请求对象
+     * @return CompletableFuture<RestoreHbaInfoResponse>
+     */
+    public CompletableFuture<RestoreHbaInfoResponse> restoreHbaInfoAsync(RestoreHbaInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.restoreHbaInfo);
+    }
+
+    /**
+     * 恢复客户端接入认证配置信息
+     *
+     * 恢复客户端接入认证配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreHbaInfoRequest 请求对象
+     * @return AsyncInvoker<RestoreHbaInfoRequest, RestoreHbaInfoResponse>
+     */
+    public AsyncInvoker<RestoreHbaInfoRequest, RestoreHbaInfoResponse> restoreHbaInfoAsyncInvoker(
+        RestoreHbaInfoRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.restoreHbaInfo, hcClient);
     }
 
     /**
@@ -3366,6 +3981,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyAsyncInvoker(
         SetRecyclePolicyRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.setRecyclePolicy, hcClient);
+    }
+
+    /**
+     * 实例告警信息汇总统计
+     *
+     * 实例告警信息汇总统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowAlarmStatisticsResponse>
+     */
+    public CompletableFuture<ShowAlarmStatisticsResponse> showAlarmStatisticsAsync(ShowAlarmStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showAlarmStatistics);
+    }
+
+    /**
+     * 实例告警信息汇总统计
+     *
+     * 实例告警信息汇总统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowAlarmStatisticsRequest, ShowAlarmStatisticsResponse>
+     */
+    public AsyncInvoker<ShowAlarmStatisticsRequest, ShowAlarmStatisticsResponse> showAlarmStatisticsAsyncInvoker(
+        ShowAlarmStatisticsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showAlarmStatistics, hcClient);
     }
 
     /**
@@ -3665,6 +4309,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询实例指标数据
+     *
+     * 查询实例指标数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceMetricDataRequest 请求对象
+     * @return CompletableFuture<ShowInstanceMetricDataResponse>
+     */
+    public CompletableFuture<ShowInstanceMetricDataResponse> showInstanceMetricDataAsync(
+        ShowInstanceMetricDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceMetricData);
+    }
+
+    /**
+     * 查询实例指标数据
+     *
+     * 查询实例指标数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceMetricDataRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceMetricDataRequest, ShowInstanceMetricDataResponse>
+     */
+    public AsyncInvoker<ShowInstanceMetricDataRequest, ShowInstanceMetricDataResponse> showInstanceMetricDataAsyncInvoker(
+        ShowInstanceMetricDataRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceMetricData, hcClient);
+    }
+
+    /**
      * 获取指定实例的参数模板
      *
      * 获取指定实例的参数模板。
@@ -3755,6 +4429,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 实例状态统计
+     *
+     * 实例状态统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstancesStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowInstancesStatisticsResponse>
+     */
+    public CompletableFuture<ShowInstancesStatisticsResponse> showInstancesStatisticsAsync(
+        ShowInstancesStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showInstancesStatistics);
+    }
+
+    /**
+     * 实例状态统计
+     *
+     * 实例状态统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstancesStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowInstancesStatisticsRequest, ShowInstancesStatisticsResponse>
+     */
+    public AsyncInvoker<ShowInstancesStatisticsRequest, ShowInstancesStatisticsResponse> showInstancesStatisticsAsyncInvoker(
+        ShowInstancesStatisticsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showInstancesStatistics, hcClient);
+    }
+
+    /**
      * 获取指定ID的任务信息。
      *
      * 获取指定ID的任务信息。
@@ -3781,6 +4485,64 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailAsyncInvoker(
         ShowJobDetailRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showJobDetail, hcClient);
+    }
+
+    /**
+     * 查询KMS秘钥详情
+     *
+     * 查询KMS秘钥详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKmsKeyDetailRequest 请求对象
+     * @return CompletableFuture<ShowKmsKeyDetailResponse>
+     */
+    public CompletableFuture<ShowKmsKeyDetailResponse> showKmsKeyDetailAsync(ShowKmsKeyDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showKmsKeyDetail);
+    }
+
+    /**
+     * 查询KMS秘钥详情
+     *
+     * 查询KMS秘钥详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKmsKeyDetailRequest 请求对象
+     * @return AsyncInvoker<ShowKmsKeyDetailRequest, ShowKmsKeyDetailResponse>
+     */
+    public AsyncInvoker<ShowKmsKeyDetailRequest, ShowKmsKeyDetailResponse> showKmsKeyDetailAsyncInvoker(
+        ShowKmsKeyDetailRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showKmsKeyDetail, hcClient);
+    }
+
+    /**
+     * 查询指标分组的指标名称
+     *
+     * 查询指标分组的指标名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetricNamesRequest 请求对象
+     * @return CompletableFuture<ShowMetricNamesResponse>
+     */
+    public CompletableFuture<ShowMetricNamesResponse> showMetricNamesAsync(ShowMetricNamesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showMetricNames);
+    }
+
+    /**
+     * 查询指标分组的指标名称
+     *
+     * 查询指标分组的指标名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetricNamesRequest 请求对象
+     * @return AsyncInvoker<ShowMetricNamesRequest, ShowMetricNamesResponse>
+     */
+    public AsyncInvoker<ShowMetricNamesRequest, ShowMetricNamesResponse> showMetricNamesAsyncInvoker(
+        ShowMetricNamesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showMetricNames, hcClient);
     }
 
     /**
@@ -3870,6 +4632,35 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询实时会话概览
+     *
+     * 查询数据库实例节点的实时会话概览信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSessionOverviewRequest 请求对象
+     * @return CompletableFuture<ShowSessionOverviewResponse>
+     */
+    public CompletableFuture<ShowSessionOverviewResponse> showSessionOverviewAsync(ShowSessionOverviewRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showSessionOverview);
+    }
+
+    /**
+     * 查询实时会话概览
+     *
+     * 查询数据库实例节点的实时会话概览信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSessionOverviewRequest 请求对象
+     * @return AsyncInvoker<ShowSessionOverviewRequest, ShowSessionOverviewResponse>
+     */
+    public AsyncInvoker<ShowSessionOverviewRequest, ShowSessionOverviewResponse> showSessionOverviewAsyncInvoker(
+        ShowSessionOverviewRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showSessionOverview, hcClient);
+    }
+
+    /**
      * 查询慢日志下载信息
      *
      * 查询慢日志下载信息
@@ -3896,6 +4687,64 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ShowSlowLogDownloadRequest, ShowSlowLogDownloadResponse> showSlowLogDownloadAsyncInvoker(
         ShowSlowLogDownloadRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showSlowLogDownload, hcClient);
+    }
+
+    /**
+     * 查询SQL执行计划信息
+     *
+     * 查询等待事件的SQL执行计划信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowSqlPlanRequest 请求对象
+     * @return CompletableFuture<ShowSlowSqlPlanResponse>
+     */
+    public CompletableFuture<ShowSlowSqlPlanResponse> showSlowSqlPlanAsync(ShowSlowSqlPlanRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showSlowSqlPlan);
+    }
+
+    /**
+     * 查询SQL执行计划信息
+     *
+     * 查询等待事件的SQL执行计划信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowSqlPlanRequest 请求对象
+     * @return AsyncInvoker<ShowSlowSqlPlanRequest, ShowSlowSqlPlanResponse>
+     */
+    public AsyncInvoker<ShowSlowSqlPlanRequest, ShowSlowSqlPlanResponse> showSlowSqlPlanAsyncInvoker(
+        ShowSlowSqlPlanRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showSlowSqlPlan, hcClient);
+    }
+
+    /**
+     * 查询SQL堆栈信息
+     *
+     * 查询等待事件的SQL堆栈信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowSqlStackRequest 请求对象
+     * @return CompletableFuture<ShowSlowSqlStackResponse>
+     */
+    public CompletableFuture<ShowSlowSqlStackResponse> showSlowSqlStackAsync(ShowSlowSqlStackRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showSlowSqlStack);
+    }
+
+    /**
+     * 查询SQL堆栈信息
+     *
+     * 查询等待事件的SQL堆栈信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowSqlStackRequest 请求对象
+     * @return AsyncInvoker<ShowSlowSqlStackRequest, ShowSlowSqlStackResponse>
+     */
+    public AsyncInvoker<ShowSlowSqlStackRequest, ShowSlowSqlStackResponse> showSlowSqlStackAsyncInvoker(
+        ShowSlowSqlStackRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showSlowSqlStack, hcClient);
     }
 
     /**
@@ -4019,9 +4868,9 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 启动数据库
+     * 启动实例/节点
      *
-     * 启动数据库，同时支持节点级别的启动操作
+     * 启动实例/节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4033,9 +4882,9 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 启动数据库
+     * 启动实例/节点
      *
-     * 启动数据库，同时支持节点级别的启动操作
+     * 启动实例/节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4106,9 +4955,38 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 停止数据库
+     * 结束空闲会话
      *
-     * 停止数据库,同时支持节点级别的停止操作
+     * 结束空闲会话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopFreeSessionRequest 请求对象
+     * @return CompletableFuture<StopFreeSessionResponse>
+     */
+    public CompletableFuture<StopFreeSessionResponse> stopFreeSessionAsync(StopFreeSessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.stopFreeSession);
+    }
+
+    /**
+     * 结束空闲会话
+     *
+     * 结束空闲会话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopFreeSessionRequest 请求对象
+     * @return AsyncInvoker<StopFreeSessionRequest, StopFreeSessionResponse>
+     */
+    public AsyncInvoker<StopFreeSessionRequest, StopFreeSessionResponse> stopFreeSessionAsyncInvoker(
+        StopFreeSessionRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.stopFreeSession, hcClient);
+    }
+
+    /**
+     * 停止实例/节点
+     *
+     * 停止数据库，同时支持节点级别的停止操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4120,9 +4998,9 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 停止数据库
+     * 停止实例/节点
      *
-     * 停止数据库,同时支持节点级别的停止操作
+     * 停止数据库，同时支持节点级别的停止操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4132,6 +5010,34 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<StopInstanceRequest, StopInstanceResponse> stopInstanceAsyncInvoker(
         StopInstanceRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.stopInstance, hcClient);
+    }
+
+    /**
+     * 结束会话
+     *
+     * 查杀指定会话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopSessionRequest 请求对象
+     * @return CompletableFuture<StopSessionResponse>
+     */
+    public CompletableFuture<StopSessionResponse> stopSessionAsync(StopSessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.stopSession);
+    }
+
+    /**
+     * 结束会话
+     *
+     * 查杀指定会话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopSessionRequest 请求对象
+     * @return AsyncInvoker<StopSessionRequest, StopSessionResponse>
+     */
+    public AsyncInvoker<StopSessionRequest, StopSessionResponse> stopSessionAsyncInvoker(StopSessionRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.stopSession, hcClient);
     }
 
     /**
@@ -4161,6 +5067,64 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse> switchConfigurationAsyncInvoker(
         SwitchConfigurationRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.switchConfiguration, hcClient);
+    }
+
+    /**
+     * 开启透明加密
+     *
+     * 开启透明加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchKmsTdeRequest 请求对象
+     * @return CompletableFuture<SwitchKmsTdeResponse>
+     */
+    public CompletableFuture<SwitchKmsTdeResponse> switchKmsTdeAsync(SwitchKmsTdeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.switchKmsTde);
+    }
+
+    /**
+     * 开启透明加密
+     *
+     * 开启透明加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchKmsTdeRequest 请求对象
+     * @return AsyncInvoker<SwitchKmsTdeRequest, SwitchKmsTdeResponse>
+     */
+    public AsyncInvoker<SwitchKmsTdeRequest, SwitchKmsTdeResponse> switchKmsTdeAsyncInvoker(
+        SwitchKmsTdeRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.switchKmsTde, hcClient);
+    }
+
+    /**
+     * 分布式实例一主一备一日志形态切换到一主两备形态
+     *
+     * 当前只支持分布式独立部署一主一备一日志切换至一主两备形态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchReplicaRequest 请求对象
+     * @return CompletableFuture<SwitchReplicaResponse>
+     */
+    public CompletableFuture<SwitchReplicaResponse> switchReplicaAsync(SwitchReplicaRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.switchReplica);
+    }
+
+    /**
+     * 分布式实例一主一备一日志形态切换到一主两备形态
+     *
+     * 当前只支持分布式独立部署一主一备一日志切换至一主两备形态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchReplicaRequest 请求对象
+     * @return AsyncInvoker<SwitchReplicaRequest, SwitchReplicaResponse>
+     */
+    public AsyncInvoker<SwitchReplicaRequest, SwitchReplicaResponse> switchReplicaAsyncInvoker(
+        SwitchReplicaRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.switchReplica, hcClient);
     }
 
     /**
@@ -4307,6 +5271,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<UpdateMysqlCompatibilityRequest, UpdateMysqlCompatibilityResponse> updateMysqlCompatibilityAsyncInvoker(
         UpdateMysqlCompatibilityRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.updateMysqlCompatibility, hcClient);
+    }
+
+    /**
+     * 修改重分布参数
+     *
+     * 修改重分布参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRedistributionControlRequest 请求对象
+     * @return CompletableFuture<UpdateRedistributionControlResponse>
+     */
+    public CompletableFuture<UpdateRedistributionControlResponse> updateRedistributionControlAsync(
+        UpdateRedistributionControlRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.updateRedistributionControl);
+    }
+
+    /**
+     * 修改重分布参数
+     *
+     * 修改重分布参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRedistributionControlRequest 请求对象
+     * @return AsyncInvoker<UpdateRedistributionControlRequest, UpdateRedistributionControlResponse>
+     */
+    public AsyncInvoker<UpdateRedistributionControlRequest, UpdateRedistributionControlResponse> updateRedistributionControlAsyncInvoker(
+        UpdateRedistributionControlRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.updateRedistributionControl, hcClient);
     }
 
     /**
@@ -4472,6 +5466,93 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 关联LTS日志流
+     *
+     * 关联LTS日志流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindLtsConfigRequest 请求对象
+     * @return CompletableFuture<BindLtsConfigResponse>
+     */
+    public CompletableFuture<BindLtsConfigResponse> bindLtsConfigAsync(BindLtsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.bindLtsConfig);
+    }
+
+    /**
+     * 关联LTS日志流
+     *
+     * 关联LTS日志流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindLtsConfigRequest 请求对象
+     * @return AsyncInvoker<BindLtsConfigRequest, BindLtsConfigResponse>
+     */
+    public AsyncInvoker<BindLtsConfigRequest, BindLtsConfigResponse> bindLtsConfigAsyncInvoker(
+        BindLtsConfigRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.bindLtsConfig, hcClient);
+    }
+
+    /**
+     * 查看LTS日志配置信息
+     *
+     * 查看LTS日志配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLtsConfigsRequest 请求对象
+     * @return CompletableFuture<ListLtsConfigsResponse>
+     */
+    public CompletableFuture<ListLtsConfigsResponse> listLtsConfigsAsync(ListLtsConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listLtsConfigs);
+    }
+
+    /**
+     * 查看LTS日志配置信息
+     *
+     * 查看LTS日志配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLtsConfigsRequest 请求对象
+     * @return AsyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>
+     */
+    public AsyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse> listLtsConfigsAsyncInvoker(
+        ListLtsConfigsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listLtsConfigs, hcClient);
+    }
+
+    /**
+     * 解除关联LTS日志流
+     *
+     * 解除关联LTS日志流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindLtsConfigRequest 请求对象
+     * @return CompletableFuture<UnbindLtsConfigResponse>
+     */
+    public CompletableFuture<UnbindLtsConfigResponse> unbindLtsConfigAsync(UnbindLtsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.unbindLtsConfig);
+    }
+
+    /**
+     * 解除关联LTS日志流
+     *
+     * 解除关联LTS日志流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindLtsConfigRequest 请求对象
+     * @return AsyncInvoker<UnbindLtsConfigRequest, UnbindLtsConfigResponse>
+     */
+    public AsyncInvoker<UnbindLtsConfigRequest, UnbindLtsConfigResponse> unbindLtsConfigAsyncInvoker(
+        UnbindLtsConfigRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.unbindLtsConfig, hcClient);
+    }
+
+    /**
      * 创建限流任务
      *
      * 根据具体范围和类型，进行限流任务的创建
@@ -4527,6 +5608,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<DeleteLimitTaskRequest, DeleteLimitTaskResponse> deleteLimitTaskAsyncInvoker(
         DeleteLimitTaskRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.deleteLimitTask, hcClient);
+    }
+
+    /**
+     * 查询实例全量SQL聚合统计列表
+     *
+     * 查询GaussDB数据库实例全量SQL聚合统计列表，主要统计各唯一SQL ID下的SQL记录总数量以及相关时间指标的平均值。支持增强型条件过滤， 如可以对SQL文本（query字段）进行多条件合并查询，对total_sql_time、sql_count字段进行大于、小于、区间范围等条件的过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEnhanceFullSqlStatisticsRequest 请求对象
+     * @return CompletableFuture<ListEnhanceFullSqlStatisticsResponse>
+     */
+    public CompletableFuture<ListEnhanceFullSqlStatisticsResponse> listEnhanceFullSqlStatisticsAsync(
+        ListEnhanceFullSqlStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listEnhanceFullSqlStatistics);
+    }
+
+    /**
+     * 查询实例全量SQL聚合统计列表
+     *
+     * 查询GaussDB数据库实例全量SQL聚合统计列表，主要统计各唯一SQL ID下的SQL记录总数量以及相关时间指标的平均值。支持增强型条件过滤， 如可以对SQL文本（query字段）进行多条件合并查询，对total_sql_time、sql_count字段进行大于、小于、区间范围等条件的过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEnhanceFullSqlStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListEnhanceFullSqlStatisticsRequest, ListEnhanceFullSqlStatisticsResponse>
+     */
+    public AsyncInvoker<ListEnhanceFullSqlStatisticsRequest, ListEnhanceFullSqlStatisticsResponse> listEnhanceFullSqlStatisticsAsyncInvoker(
+        ListEnhanceFullSqlStatisticsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listEnhanceFullSqlStatistics, hcClient);
     }
 
     /**
@@ -4586,6 +5697,123 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListNodeLimitSqlModelRequest, ListNodeLimitSqlModelResponse> listNodeLimitSqlModelAsyncInvoker(
         ListNodeLimitSqlModelRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listNodeLimitSqlModel, hcClient);
+    }
+
+    /**
+     * 查询慢SQL详情
+     *
+     * 根据归一化SQLID，查询该SQL模板详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowSqlDetailsRequest 请求对象
+     * @return CompletableFuture<ListSlowSqlDetailsResponse>
+     */
+    public CompletableFuture<ListSlowSqlDetailsResponse> listSlowSqlDetailsAsync(ListSlowSqlDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSlowSqlDetails);
+    }
+
+    /**
+     * 查询慢SQL详情
+     *
+     * 根据归一化SQLID，查询该SQL模板详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowSqlDetailsRequest 请求对象
+     * @return AsyncInvoker<ListSlowSqlDetailsRequest, ListSlowSqlDetailsResponse>
+     */
+    public AsyncInvoker<ListSlowSqlDetailsRequest, ListSlowSqlDetailsResponse> listSlowSqlDetailsAsyncInvoker(
+        ListSlowSqlDetailsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSlowSqlDetails, hcClient);
+    }
+
+    /**
+     * 查询慢SQL列表
+     *
+     * 查询慢SQL列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowSqlsRequest 请求对象
+     * @return CompletableFuture<ListSlowSqlsResponse>
+     */
+    public CompletableFuture<ListSlowSqlsResponse> listSlowSqlsAsync(ListSlowSqlsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSlowSqls);
+    }
+
+    /**
+     * 查询慢SQL列表
+     *
+     * 查询慢SQL列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowSqlsRequest 请求对象
+     * @return AsyncInvoker<ListSlowSqlsRequest, ListSlowSqlsResponse>
+     */
+    public AsyncInvoker<ListSlowSqlsRequest, ListSlowSqlsResponse> listSlowSqlsAsyncInvoker(
+        ListSlowSqlsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSlowSqls, hcClient);
+    }
+
+    /**
+     * 查询慢SQL节点信息
+     *
+     * 根据实例ID查询慢SQL节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlExcuteNodesRequest 请求对象
+     * @return CompletableFuture<ListSqlExcuteNodesResponse>
+     */
+    public CompletableFuture<ListSqlExcuteNodesResponse> listSqlExcuteNodesAsync(ListSqlExcuteNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSqlExcuteNodes);
+    }
+
+    /**
+     * 查询慢SQL节点信息
+     *
+     * 根据实例ID查询慢SQL节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlExcuteNodesRequest 请求对象
+     * @return AsyncInvoker<ListSqlExcuteNodesRequest, ListSqlExcuteNodesResponse>
+     */
+    public AsyncInvoker<ListSqlExcuteNodesRequest, ListSqlExcuteNodesResponse> listSqlExcuteNodesAsyncInvoker(
+        ListSqlExcuteNodesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSqlExcuteNodes, hcClient);
+    }
+
+    /**
+     * 查询全局慢SQL详情
+     *
+     * 根据唯一SQLID，查询指定组件的慢SQL详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGlobalSlowSqlDetailRequest 请求对象
+     * @return CompletableFuture<ShowGlobalSlowSqlDetailResponse>
+     */
+    public CompletableFuture<ShowGlobalSlowSqlDetailResponse> showGlobalSlowSqlDetailAsync(
+        ShowGlobalSlowSqlDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showGlobalSlowSqlDetail);
+    }
+
+    /**
+     * 查询全局慢SQL详情
+     *
+     * 根据唯一SQLID，查询指定组件的慢SQL详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGlobalSlowSqlDetailRequest 请求对象
+     * @return AsyncInvoker<ShowGlobalSlowSqlDetailRequest, ShowGlobalSlowSqlDetailResponse>
+     */
+    public AsyncInvoker<ShowGlobalSlowSqlDetailRequest, ShowGlobalSlowSqlDetailResponse> showGlobalSlowSqlDetailAsyncInvoker(
+        ShowGlobalSlowSqlDetailRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showGlobalSlowSqlDetail, hcClient);
     }
 
     /**
@@ -4673,6 +5901,152 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<UpdateLimitTaskRequest, UpdateLimitTaskResponse> updateLimitTaskAsyncInvoker(
         UpdateLimitTaskRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.updateLimitTask, hcClient);
+    }
+
+    /**
+     * 查询TopSQL列表
+     *
+     * 查询TopSQL列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopSqlsRequest 请求对象
+     * @return CompletableFuture<ListTopSqlsResponse>
+     */
+    public CompletableFuture<ListTopSqlsResponse> listTopSqlsAsync(ListTopSqlsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listTopSqls);
+    }
+
+    /**
+     * 查询TopSQL列表
+     *
+     * 查询TopSQL列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopSqlsRequest 请求对象
+     * @return AsyncInvoker<ListTopSqlsRequest, ListTopSqlsResponse>
+     */
+    public AsyncInvoker<ListTopSqlsRequest, ListTopSqlsResponse> listTopSqlsAsyncInvoker(ListTopSqlsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listTopSqls, hcClient);
+    }
+
+    /**
+     * 采集WDR快照报告
+     *
+     * 采集WDR快照报告。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectWdrSnapshotRequest 请求对象
+     * @return CompletableFuture<CollectWdrSnapshotResponse>
+     */
+    public CompletableFuture<CollectWdrSnapshotResponse> collectWdrSnapshotAsync(CollectWdrSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.collectWdrSnapshot);
+    }
+
+    /**
+     * 采集WDR快照报告
+     *
+     * 采集WDR快照报告。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectWdrSnapshotRequest 请求对象
+     * @return AsyncInvoker<CollectWdrSnapshotRequest, CollectWdrSnapshotResponse>
+     */
+    public AsyncInvoker<CollectWdrSnapshotRequest, CollectWdrSnapshotResponse> collectWdrSnapshotAsyncInvoker(
+        CollectWdrSnapshotRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.collectWdrSnapshot, hcClient);
+    }
+
+    /**
+     * 生成WDR快照
+     *
+     * 生成WDR快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWdrSnapshotRequest 请求对象
+     * @return CompletableFuture<CreateWdrSnapshotResponse>
+     */
+    public CompletableFuture<CreateWdrSnapshotResponse> createWdrSnapshotAsync(CreateWdrSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createWdrSnapshot);
+    }
+
+    /**
+     * 生成WDR快照
+     *
+     * 生成WDR快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWdrSnapshotRequest 请求对象
+     * @return AsyncInvoker<CreateWdrSnapshotRequest, CreateWdrSnapshotResponse>
+     */
+    public AsyncInvoker<CreateWdrSnapshotRequest, CreateWdrSnapshotResponse> createWdrSnapshotAsyncInvoker(
+        CreateWdrSnapshotRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.createWdrSnapshot, hcClient);
+    }
+
+    /**
+     * 查询WDR快照开关状态
+     *
+     * 查询WDR快照开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWdrSnapshotStatusRequest 请求对象
+     * @return CompletableFuture<ShowWdrSnapshotStatusResponse>
+     */
+    public CompletableFuture<ShowWdrSnapshotStatusResponse> showWdrSnapshotStatusAsync(
+        ShowWdrSnapshotStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showWdrSnapshotStatus);
+    }
+
+    /**
+     * 查询WDR快照开关状态
+     *
+     * 查询WDR快照开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWdrSnapshotStatusRequest 请求对象
+     * @return AsyncInvoker<ShowWdrSnapshotStatusRequest, ShowWdrSnapshotStatusResponse>
+     */
+    public AsyncInvoker<ShowWdrSnapshotStatusRequest, ShowWdrSnapshotStatusResponse> showWdrSnapshotStatusAsyncInvoker(
+        ShowWdrSnapshotStatusRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showWdrSnapshotStatus, hcClient);
+    }
+
+    /**
+     * 打开或关闭WDR快照开关
+     *
+     * 打开或关闭WDR快照开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchWdrSnapshotStatusRequest 请求对象
+     * @return CompletableFuture<SwitchWdrSnapshotStatusResponse>
+     */
+    public CompletableFuture<SwitchWdrSnapshotStatusResponse> switchWdrSnapshotStatusAsync(
+        SwitchWdrSnapshotStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.switchWdrSnapshotStatus);
+    }
+
+    /**
+     * 打开或关闭WDR快照开关
+     *
+     * 打开或关闭WDR快照开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchWdrSnapshotStatusRequest 请求对象
+     * @return AsyncInvoker<SwitchWdrSnapshotStatusRequest, SwitchWdrSnapshotStatusResponse>
+     */
+    public AsyncInvoker<SwitchWdrSnapshotStatusRequest, SwitchWdrSnapshotStatusResponse> switchWdrSnapshotStatusAsyncInvoker(
+        SwitchWdrSnapshotStatusRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.switchWdrSnapshotStatus, hcClient);
     }
 
 }

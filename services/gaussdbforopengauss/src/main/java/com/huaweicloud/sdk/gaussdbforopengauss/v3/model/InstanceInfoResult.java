@@ -31,7 +31,7 @@ public class InstanceInfoResult {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**: 实例ID。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {

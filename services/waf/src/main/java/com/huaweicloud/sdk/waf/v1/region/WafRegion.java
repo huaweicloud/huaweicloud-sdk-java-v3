@@ -75,6 +75,11 @@ public class WafRegion {
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://waf.ap-southeast-4.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://waf.ap-southeast-5.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://waf.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("WAF");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -108,6 +113,8 @@ public class WafRegion {
         map.put("eu-west-101", EU_WEST_101);
         map.put("ru-moscow-1", RU_MOSCOW_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 
