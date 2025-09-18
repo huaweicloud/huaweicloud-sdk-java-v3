@@ -21,11 +21,6 @@ public class UpdateHttpBlockTrustIpRuleRequestBody {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private Integer status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addr")
 
     private String addr;
@@ -77,25 +72,6 @@ public class UpdateHttpBlockTrustIpRuleRequestBody {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public UpdateHttpBlockTrustIpRuleRequestBody withStatus(Integer status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 规则开关： - 0：关闭 - 1：开启 
-     * minimum: 0
-     * maximum: 1
-     * @return status
-     */
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
     }
 
     public UpdateHttpBlockTrustIpRuleRequestBody withAddr(String addr) {
@@ -178,14 +154,14 @@ public class UpdateHttpBlockTrustIpRuleRequestBody {
         }
         UpdateHttpBlockTrustIpRuleRequestBody that = (UpdateHttpBlockTrustIpRuleRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.addr, that.addr)
-            && Objects.equals(this.white, that.white) && Objects.equals(this.followedActionId, that.followedActionId)
+            && Objects.equals(this.addr, that.addr) && Objects.equals(this.white, that.white)
+            && Objects.equals(this.followedActionId, that.followedActionId)
             && Objects.equals(this.ipGroupId, that.ipGroupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, status, addr, white, followedActionId, ipGroupId);
+        return Objects.hash(name, description, addr, white, followedActionId, ipGroupId);
     }
 
     @Override
@@ -194,7 +170,6 @@ public class UpdateHttpBlockTrustIpRuleRequestBody {
         sb.append("class UpdateHttpBlockTrustIpRuleRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
         sb.append("    followedActionId: ").append(toIndentedString(followedActionId)).append("\n");

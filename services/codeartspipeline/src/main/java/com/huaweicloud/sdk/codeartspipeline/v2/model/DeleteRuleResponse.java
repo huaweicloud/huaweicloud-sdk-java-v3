@@ -22,7 +22,7 @@ public class DeleteRuleResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * **参数解释**： 是否删除成功。 **取值范围**： - true：删除成功。 - false：删除失败。 
      * @return status
      */
     public Boolean getStatus() {

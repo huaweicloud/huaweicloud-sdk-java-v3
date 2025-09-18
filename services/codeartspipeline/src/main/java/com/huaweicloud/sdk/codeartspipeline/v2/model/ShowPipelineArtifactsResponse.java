@@ -41,7 +41,7 @@ public class ShowPipelineArtifactsResponse extends SdkResponse {
     }
 
     /**
-     * 产物列表
+     * **参数解释**： 流水线任务产物列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return artifacts
      */
     public List<Artifact> getArtifacts() {

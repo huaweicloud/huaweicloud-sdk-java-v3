@@ -34,6 +34,11 @@ public class FullStagePluginsRelationVOPluginsList {
     private Boolean disabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db_record_name")
+
+    private String dbRecordName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
 
     private String groupName;
@@ -84,6 +89,21 @@ public class FullStagePluginsRelationVOPluginsList {
     private Integer multiStepEditable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "location")
+
+    private String location;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publisher_unique_id")
+
+    private String publisherUniqueId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_version")
+
+    private String manifestVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "standard")
 
     private Boolean standard;
@@ -94,7 +114,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 唯一ID。 **取值范围**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -111,7 +131,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 展示名。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -128,7 +148,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 插件名。 **取值范围**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -145,7 +165,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 禁用
+     * **参数解释**： 当前插件对后续选择使用的流水线是否为禁用状态，默认为false。 **取值范围**： - true：被禁用。 - false：未被禁用。 
      * @return disabled
      */
     public Boolean getDisabled() {
@@ -156,13 +176,30 @@ public class FullStagePluginsRelationVOPluginsList {
         this.disabled = disabled;
     }
 
+    public FullStagePluginsRelationVOPluginsList withDbRecordName(String dbRecordName) {
+        this.dbRecordName = dbRecordName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 插件记录展示名称。 **取值范围**： 不涉及。 
+     * @return dbRecordName
+     */
+    public String getDbRecordName() {
+        return dbRecordName;
+    }
+
+    public void setDbRecordName(String dbRecordName) {
+        this.dbRecordName = dbRecordName;
+    }
+
     public FullStagePluginsRelationVOPluginsList withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
     /**
-     * 组名
+     * **参数解释**： 流水线stage下的分组名称。 **取值范围**： 不涉及。 
      * @return groupName
      */
     public String getGroupName() {
@@ -179,7 +216,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 组类型
+     * **参数解释**： 流水线stage下的分组类型。 **取值范围**： 不涉及。 
      * @return groupType
      */
     public String getGroupType() {
@@ -196,7 +233,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 插件属性
+     * **参数解释**： 标识是否为官方插件。 **取值范围**： 不涉及。 
      * @return pluginAttribution
      */
     public String getPluginAttribution() {
@@ -213,7 +250,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 组合插件
+     * **参数解释**： 标识是否为多个step组成的组。 **取值范围**： - single：单step插件。 - multi：组合插件。 
      * @return pluginCompositionType
      */
     public String getPluginCompositionType() {
@@ -230,7 +267,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 运行属性
+     * **参数解释**： 运行属性。 **取值范围**： - agent：运行基于流水线agent。 - agentLess：运行无需流水线agent。 
      * @return runtimeAttribution
      */
     public String getRuntimeAttribution() {
@@ -264,7 +301,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 基础插件列表
+     * **参数解释**： 基础插件列表。 **取值范围**： 不涉及。 
      * @return allSteps
      */
     public List<FullStagePluginsRelationVOAllSteps> getAllSteps() {
@@ -281,7 +318,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 描述
+     * **参数解释**： 扩展插件描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -298,7 +335,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 版本属性
+     * **参数解释**： 标识是否为一个草稿。 **取值范围**： 不涉及。 
      * @return versionAttribution
      */
     public String getVersionAttribution() {
@@ -315,7 +352,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 图标URL
+     * **参数解释**： 扩展插件图标URL。 **取值范围**： 不涉及。 
      * @return iconUrl
      */
     public String getIconUrl() {
@@ -332,7 +369,7 @@ public class FullStagePluginsRelationVOPluginsList {
     }
 
     /**
-     * 是否可编辑
+     * **参数解释**： 标识是否可继续进行添加步骤，默认是1，可进行添加。 **取值范围**： - 0：不可继续进行添加步骤。 - 1：可继续进行添加步骤。 
      * @return multiStepEditable
      */
     public Integer getMultiStepEditable() {
@@ -343,13 +380,64 @@ public class FullStagePluginsRelationVOPluginsList {
         this.multiStepEditable = multiStepEditable;
     }
 
+    public FullStagePluginsRelationVOPluginsList withLocation(String location) {
+        this.location = location;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 使用位置。 **取值范围**： 不涉及。 
+     * @return location
+     */
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public FullStagePluginsRelationVOPluginsList withPublisherUniqueId(String publisherUniqueId) {
+        this.publisherUniqueId = publisherUniqueId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 发布商ID。 **取值范围**： 不涉及。 
+     * @return publisherUniqueId
+     */
+    public String getPublisherUniqueId() {
+        return publisherUniqueId;
+    }
+
+    public void setPublisherUniqueId(String publisherUniqueId) {
+        this.publisherUniqueId = publisherUniqueId;
+    }
+
+    public FullStagePluginsRelationVOPluginsList withManifestVersion(String manifestVersion) {
+        this.manifestVersion = manifestVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 插件版本标识符。 **取值范围**： 不涉及。 
+     * @return manifestVersion
+     */
+    public String getManifestVersion() {
+        return manifestVersion;
+    }
+
+    public void setManifestVersion(String manifestVersion) {
+        this.manifestVersion = manifestVersion;
+    }
+
     public FullStagePluginsRelationVOPluginsList withStandard(Boolean standard) {
         this.standard = standard;
         return this;
     }
 
     /**
-     * 标准
+     * **参数解释**： 标识是否为标准化的插件。 **取值范围**： - true：是标准化的插件。 - false：不是标准化的插件。 
      * @return standard
      */
     public Boolean getStandard() {
@@ -371,7 +459,8 @@ public class FullStagePluginsRelationVOPluginsList {
         FullStagePluginsRelationVOPluginsList that = (FullStagePluginsRelationVOPluginsList) obj;
         return Objects.equals(this.uniqueId, that.uniqueId) && Objects.equals(this.displayName, that.displayName)
             && Objects.equals(this.pluginName, that.pluginName) && Objects.equals(this.disabled, that.disabled)
-            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupType, that.groupType)
+            && Objects.equals(this.dbRecordName, that.dbRecordName) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.groupType, that.groupType)
             && Objects.equals(this.pluginAttribution, that.pluginAttribution)
             && Objects.equals(this.pluginCompositionType, that.pluginCompositionType)
             && Objects.equals(this.runtimeAttribution, that.runtimeAttribution)
@@ -379,6 +468,9 @@ public class FullStagePluginsRelationVOPluginsList {
             && Objects.equals(this.versionAttribution, that.versionAttribution)
             && Objects.equals(this.iconUrl, that.iconUrl)
             && Objects.equals(this.multiStepEditable, that.multiStepEditable)
+            && Objects.equals(this.location, that.location)
+            && Objects.equals(this.publisherUniqueId, that.publisherUniqueId)
+            && Objects.equals(this.manifestVersion, that.manifestVersion)
             && Objects.equals(this.standard, that.standard);
     }
 
@@ -388,6 +480,7 @@ public class FullStagePluginsRelationVOPluginsList {
             displayName,
             pluginName,
             disabled,
+            dbRecordName,
             groupName,
             groupType,
             pluginAttribution,
@@ -398,6 +491,9 @@ public class FullStagePluginsRelationVOPluginsList {
             versionAttribution,
             iconUrl,
             multiStepEditable,
+            location,
+            publisherUniqueId,
+            manifestVersion,
             standard);
     }
 
@@ -409,6 +505,7 @@ public class FullStagePluginsRelationVOPluginsList {
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    pluginName: ").append(toIndentedString(pluginName)).append("\n");
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+        sb.append("    dbRecordName: ").append(toIndentedString(dbRecordName)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
         sb.append("    pluginAttribution: ").append(toIndentedString(pluginAttribution)).append("\n");
@@ -419,6 +516,9 @@ public class FullStagePluginsRelationVOPluginsList {
         sb.append("    versionAttribution: ").append(toIndentedString(versionAttribution)).append("\n");
         sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
         sb.append("    multiStepEditable: ").append(toIndentedString(multiStepEditable)).append("\n");
+        sb.append("    location: ").append(toIndentedString(location)).append("\n");
+        sb.append("    publisherUniqueId: ").append(toIndentedString(publisherUniqueId)).append("\n");
+        sb.append("    manifestVersion: ").append(toIndentedString(manifestVersion)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("}");
         return sb.toString();

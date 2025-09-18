@@ -46,7 +46,7 @@ public class Rule {
     }
 
     /**
-     * 规则ID
+     * **参数解释**： 规则ID。 **取值范围**： 不涉及。 
      * @return id
      */
     public String getId() {
@@ -63,7 +63,7 @@ public class Rule {
     }
 
     /**
-     * 规则类型
+     * **参数解释**： 规则类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -80,7 +80,7 @@ public class Rule {
     }
 
     /**
-     * 规则名称
+     * **参数解释**： 规则名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -97,7 +97,7 @@ public class Rule {
     }
 
     /**
-     * 规则版本
+     * **参数解释**： 规则版本。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -114,7 +114,7 @@ public class Rule {
     }
 
     /**
-     * 最近操作人员
+     * **参数解释**： 最近操作人员。 **取值范围**： 不涉及。 
      * @return operator
      */
     public String getOperator() {
@@ -131,7 +131,7 @@ public class Rule {
     }
 
     /**
-     * 最近操作时间
+     * **参数解释**： 最近操作时间。 **取值范围**： 不涉及。 
      * @return operateTime
      */
     public Long getOperateTime() {

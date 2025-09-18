@@ -29,7 +29,7 @@ public class CreateRuleSetReq {
     }
 
     /**
-     * 策略名称
+     * **参数解释**： 策略名称 **约束限制**： 策略名称仅支持中文、大小写英文字母、数字、‘-’、‘_’。 **取值范围**： 不超过128个字符。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class CreateRuleSetReq {
     }
 
     /**
-     * 规则集合
+     * **参数解释**： 规则列表 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return rules
      */
     public List<RequestRuleInstance> getRules() {

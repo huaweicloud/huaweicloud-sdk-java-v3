@@ -212,7 +212,7 @@ public class TemplateState {
     }
 
     /**
-     * 任务参数,map类型数据
+     * 任务参数，map类型数据
      * @return parameters
      */
     public Map<String, Object> getParameters() {

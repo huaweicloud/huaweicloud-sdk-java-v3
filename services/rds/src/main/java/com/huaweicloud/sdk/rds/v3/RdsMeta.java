@@ -232,6 +232,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
@@ -485,6 +487,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyRequest;
@@ -533,6 +537,7 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.rds.v3.model.TaskDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ToPeriodReq;
 import com.huaweicloud.sdk.rds.v3.model.TransferBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.TransferBackupRequestBody;
@@ -5302,6 +5307,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetail =
+        genForShowTaskDetail();
+
+    private static HttpRequestDef<ShowTaskDetailRequest, ShowTaskDetailResponse> genForShowTaskDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskDetailRequest, ShowTaskDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowTaskDetailRequest.class, ShowTaskDetailResponse.class)
+                .withName("ShowTaskDetail")
+                .withUri("/v3/{project_id}/instances/{instance_id}/task-center-detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskDetailRequest::getInstanceId, ShowTaskDetailRequest::setInstanceId));
+        builder.<TaskDetailRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TaskDetailRequest.class),
+            f -> f.withMarshaller(ShowTaskDetailRequest::getBody, ShowTaskDetailRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTaskDetailResponse::getXRequestId, ShowTaskDetailResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTdeStatusRequest, ShowTdeStatusResponse> showTdeStatus =
         genForShowTdeStatus();
 
@@ -8350,6 +8388,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyProxyWeightRequest.class),
             f -> f.withMarshaller(UpdateReadWeightRequest::getBody, UpdateReadWeightRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse> listInstancesNoIndexTables =
+        genForListInstancesNoIndexTables();
+
+    private static HttpRequestDef<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse> genForListInstancesNoIndexTables() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstancesNoIndexTablesRequest.class,
+                    ListInstancesNoIndexTablesResponse.class)
+                .withName("ListInstancesNoIndexTables")
+                .withUri("/v3/{project_id}/instances/{instance_id}/no-index-tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesNoIndexTablesRequest::getInstanceId,
+                ListInstancesNoIndexTablesRequest::setInstanceId));
+        builder.<Boolean>withRequestField("newest",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListInstancesNoIndexTablesRequest::getNewest,
+                ListInstancesNoIndexTablesRequest::setNewest));
+        builder.<String>withRequestField("table_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesNoIndexTablesRequest::getTableType,
+                ListInstancesNoIndexTablesRequest::setTableType));
 
         // response
 

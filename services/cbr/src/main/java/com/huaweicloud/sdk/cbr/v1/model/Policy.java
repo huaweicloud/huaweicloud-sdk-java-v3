@@ -123,6 +123,11 @@ public class Policy {
 
     private List<PolicyAssociateVault> associatedVaults = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_type")
+
+    private String policyType;
+
     public Policy withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -276,6 +281,23 @@ public class Policy {
         this.associatedVaults = associatedVaults;
     }
 
+    public Policy withPolicyType(String policyType) {
+        this.policyType = policyType;
+        return this;
+    }
+
+    /**
+     * 策略类型，取值范围如下： - custom_policy：普通用户策略 - organization_policy_v1：老版本组织策略 - organization_policy_v2：新版本组织策略 - organization_policy_removed：退出组织的用户已绑定在存储库上的新版本组织策略（不自动解绑策略与存储库绑定关系，但是不能新绑定存储库）
+     * @return policyType
+     */
+    public String getPolicyType() {
+        return policyType;
+    }
+
+    public void setPolicyType(String policyType) {
+        this.policyType = policyType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -289,12 +311,14 @@ public class Policy {
             && Objects.equals(this.name, that.name)
             && Objects.equals(this.operationDefinition, that.operationDefinition)
             && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.trigger, that.trigger)
-            && Objects.equals(this.associatedVaults, that.associatedVaults);
+            && Objects.equals(this.associatedVaults, that.associatedVaults)
+            && Objects.equals(this.policyType, that.policyType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, id, name, operationDefinition, operationType, trigger, associatedVaults);
+        return Objects
+            .hash(enabled, id, name, operationDefinition, operationType, trigger, associatedVaults, policyType);
     }
 
     @Override
@@ -308,6 +332,7 @@ public class Policy {
         sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
         sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n");
         sb.append("    associatedVaults: ").append(toIndentedString(associatedVaults)).append("\n");
+        sb.append("    policyType: ").append(toIndentedString(policyType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

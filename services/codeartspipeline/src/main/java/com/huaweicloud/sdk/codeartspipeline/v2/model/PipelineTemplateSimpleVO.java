@@ -74,16 +74,6 @@ public class PipelineTemplateSimpleVO {
     private String updaterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private Long createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
-
-    private Long updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_collect")
 
     private Boolean isCollect;
@@ -104,7 +94,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板ID
+     * **参数解释**： 模板ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -121,7 +111,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板名称
+     * **参数解释**： 模板名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -138,7 +128,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板图标
+     * **参数解释**： 模板图标。 **取值范围**： 不涉及。 
      * @return icon
      */
     public String getIcon() {
@@ -155,7 +145,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 流水线结构定义版本，新版默认为3.0
+     * **参数解释**： 版本。 **取值范围**： 默认3.0。 
      * @return manifestVersion
      */
     public String getManifestVersion() {
@@ -172,7 +162,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板语言
+     * **参数解释**： 模板语言。 **取值范围**： - java。 - python。 - nodejs。 - go。 - net。 - cpp。 - php。 - other。 - none。 
      * @return language
      */
     public String getLanguage() {
@@ -189,7 +179,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板描述
+     * **参数解释**： 模板描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -206,7 +196,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 是否系统模板
+     * **参数解释**： 是否系统模板。 **取值范围**： - true：是系统模板。 - false：不是系统模板。 
      * @return isSystem
      */
     public Boolean getIsSystem() {
@@ -223,7 +213,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板局点
+     * **参数解释**： 模板局点。 **取值范围**： 不涉及。 
      * @return region
      */
     public String getRegion() {
@@ -240,7 +230,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板所属租户ID
+     * **参数解释**： 模板所属租户ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return domainId
      */
     public String getDomainId() {
@@ -257,7 +247,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板创建人ID
+     * **参数解释**： 模板创建人ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return creatorId
      */
     public String getCreatorId() {
@@ -274,7 +264,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板创建人名称
+     * **参数解释**： 模板创建人名称。 **取值范围**： 不涉及。 
      * @return creatorName
      */
     public String getCreatorName() {
@@ -291,7 +281,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板更新人ID
+     * **参数解释**： 模板更新人ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return updaterId
      */
     public String getUpdaterId() {
@@ -302,47 +292,13 @@ public class PipelineTemplateSimpleVO {
         this.updaterId = updaterId;
     }
 
-    public PipelineTemplateSimpleVO withCreateTime(Long createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
-    public Long getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
-    public PipelineTemplateSimpleVO withUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    /**
-     * 更新时间
-     * @return updateTime
-     */
-    public Long getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-    }
-
     public PipelineTemplateSimpleVO withIsCollect(Boolean isCollect) {
         this.isCollect = isCollect;
         return this;
     }
 
     /**
-     * 是否收藏
+     * **参数解释**： 是否收藏。 **取值范围**： - true：收藏。 - false：不收藏。 
      * @return isCollect
      */
     public Boolean getIsCollect() {
@@ -359,7 +315,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 是否展示流水线源
+     * **参数解释**： 是否展示流水线源。 **取值范围**： - true：展示流水线源。 - false：不展示流水线源。 
      * @return isShowSource
      */
     public String getIsShowSource() {
@@ -392,7 +348,7 @@ public class PipelineTemplateSimpleVO {
     }
 
     /**
-     * 模板编排stages
+     * **参数解释**： 模板编排的阶段列表。 **约束限制**： 不涉及。 
      * @return stages
      */
     public List<PipelineTemplateSimpleVOStages> getStages() {
@@ -418,7 +374,6 @@ public class PipelineTemplateSimpleVO {
             && Objects.equals(this.isSystem, that.isSystem) && Objects.equals(this.region, that.region)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.creatorId, that.creatorId)
             && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.updaterId, that.updaterId)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.isCollect, that.isCollect) && Objects.equals(this.isShowSource, that.isShowSource)
             && Objects.equals(this.stages, that.stages);
     }
@@ -437,8 +392,6 @@ public class PipelineTemplateSimpleVO {
             creatorId,
             creatorName,
             updaterId,
-            createTime,
-            updateTime,
             isCollect,
             isShowSource,
             stages);
@@ -460,8 +413,6 @@ public class PipelineTemplateSimpleVO {
         sb.append("    creatorId: ").append(toIndentedString(creatorId)).append("\n");
         sb.append("    creatorName: ").append(toIndentedString(creatorName)).append("\n");
         sb.append("    updaterId: ").append(toIndentedString(updaterId)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    isCollect: ").append(toIndentedString(isCollect)).append("\n");
         sb.append("    isShowSource: ").append(toIndentedString(isShowSource)).append("\n");
         sb.append("    stages: ").append(toIndentedString(stages)).append("\n");

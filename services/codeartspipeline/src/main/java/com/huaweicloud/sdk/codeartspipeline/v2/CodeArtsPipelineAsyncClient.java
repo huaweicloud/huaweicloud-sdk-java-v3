@@ -30,6 +30,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteActionsRunPipelineRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteActionsRunPipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupRequest;
@@ -46,6 +48,10 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListAvailablePublisherRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListAvailablePublisherResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostRequest;
@@ -92,8 +98,14 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryRunActionsPipelineRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryRunActionsPipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RunActionsPipelineRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RunActionsPipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowActionsRunsDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowActionsRunsDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
@@ -2541,6 +2553,185 @@ public class CodeArtsPipelineAsyncClient {
     public AsyncInvoker<UploadPublisherIconRequest, UploadPublisherIconResponse> uploadPublisherIconAsyncInvoker(
         UploadPublisherIconRequest request) {
         return new AsyncInvoker<>(request, CodeArtsPipelineMeta.uploadPublisherIcon, hcClient);
+    }
+
+    /**
+     * 删除gitcode流水线运行详情
+     *
+     * 删除gitcode流水线运行详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteActionsRunPipelineRequest 请求对象
+     * @return CompletableFuture<DeleteActionsRunPipelineResponse>
+     */
+    public CompletableFuture<DeleteActionsRunPipelineResponse> deleteActionsRunPipelineAsync(
+        DeleteActionsRunPipelineRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.deleteActionsRunPipeline);
+    }
+
+    /**
+     * 删除gitcode流水线运行详情
+     *
+     * 删除gitcode流水线运行详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteActionsRunPipelineRequest 请求对象
+     * @return AsyncInvoker<DeleteActionsRunPipelineRequest, DeleteActionsRunPipelineResponse>
+     */
+    public AsyncInvoker<DeleteActionsRunPipelineRequest, DeleteActionsRunPipelineResponse> deleteActionsRunPipelineAsyncInvoker(
+        DeleteActionsRunPipelineRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.deleteActionsRunPipeline, hcClient);
+    }
+
+    /**
+     * 查询gitcode流水线运行记录
+     *
+     * 查询gitcode流水线运行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListActionsPipelineRunsRequest 请求对象
+     * @return CompletableFuture<ListActionsPipelineRunsResponse>
+     */
+    public CompletableFuture<ListActionsPipelineRunsResponse> listActionsPipelineRunsAsync(
+        ListActionsPipelineRunsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.listActionsPipelineRuns);
+    }
+
+    /**
+     * 查询gitcode流水线运行记录
+     *
+     * 查询gitcode流水线运行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListActionsPipelineRunsRequest 请求对象
+     * @return AsyncInvoker<ListActionsPipelineRunsRequest, ListActionsPipelineRunsResponse>
+     */
+    public AsyncInvoker<ListActionsPipelineRunsRequest, ListActionsPipelineRunsResponse> listActionsPipelineRunsAsyncInvoker(
+        ListActionsPipelineRunsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listActionsPipelineRuns, hcClient);
+    }
+
+    /**
+     * 查询gitcode流水线action列表
+     *
+     * 查询gitcode流水线action列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListActionsPipelineRunsByRunIdsRequest 请求对象
+     * @return CompletableFuture<ListActionsPipelineRunsByRunIdsResponse>
+     */
+    public CompletableFuture<ListActionsPipelineRunsByRunIdsResponse> listActionsPipelineRunsByRunIdsAsync(
+        ListActionsPipelineRunsByRunIdsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.listActionsPipelineRunsByRunIds);
+    }
+
+    /**
+     * 查询gitcode流水线action列表
+     *
+     * 查询gitcode流水线action列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListActionsPipelineRunsByRunIdsRequest 请求对象
+     * @return AsyncInvoker<ListActionsPipelineRunsByRunIdsRequest, ListActionsPipelineRunsByRunIdsResponse>
+     */
+    public AsyncInvoker<ListActionsPipelineRunsByRunIdsRequest, ListActionsPipelineRunsByRunIdsResponse> listActionsPipelineRunsByRunIdsAsyncInvoker(
+        ListActionsPipelineRunsByRunIdsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.listActionsPipelineRunsByRunIds, hcClient);
+    }
+
+    /**
+     * 重试运行gitcode流水线
+     *
+     * 重试运行gitcode流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryRunActionsPipelineRequest 请求对象
+     * @return CompletableFuture<RetryRunActionsPipelineResponse>
+     */
+    public CompletableFuture<RetryRunActionsPipelineResponse> retryRunActionsPipelineAsync(
+        RetryRunActionsPipelineRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.retryRunActionsPipeline);
+    }
+
+    /**
+     * 重试运行gitcode流水线
+     *
+     * 重试运行gitcode流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryRunActionsPipelineRequest 请求对象
+     * @return AsyncInvoker<RetryRunActionsPipelineRequest, RetryRunActionsPipelineResponse>
+     */
+    public AsyncInvoker<RetryRunActionsPipelineRequest, RetryRunActionsPipelineResponse> retryRunActionsPipelineAsyncInvoker(
+        RetryRunActionsPipelineRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.retryRunActionsPipeline, hcClient);
+    }
+
+    /**
+     * 运行gitcode流水线
+     *
+     * 运行gitcode流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunActionsPipelineRequest 请求对象
+     * @return CompletableFuture<RunActionsPipelineResponse>
+     */
+    public CompletableFuture<RunActionsPipelineResponse> runActionsPipelineAsync(RunActionsPipelineRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.runActionsPipeline);
+    }
+
+    /**
+     * 运行gitcode流水线
+     *
+     * 运行gitcode流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunActionsPipelineRequest 请求对象
+     * @return AsyncInvoker<RunActionsPipelineRequest, RunActionsPipelineResponse>
+     */
+    public AsyncInvoker<RunActionsPipelineRequest, RunActionsPipelineResponse> runActionsPipelineAsyncInvoker(
+        RunActionsPipelineRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.runActionsPipeline, hcClient);
+    }
+
+    /**
+     * 查询gitcode流水线运行详情
+     *
+     * 查询gitcode流水线运行详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowActionsRunsDetailRequest 请求对象
+     * @return CompletableFuture<ShowActionsRunsDetailResponse>
+     */
+    public CompletableFuture<ShowActionsRunsDetailResponse> showActionsRunsDetailAsync(
+        ShowActionsRunsDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.showActionsRunsDetail);
+    }
+
+    /**
+     * 查询gitcode流水线运行详情
+     *
+     * 查询gitcode流水线运行详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowActionsRunsDetailRequest 请求对象
+     * @return AsyncInvoker<ShowActionsRunsDetailRequest, ShowActionsRunsDetailResponse>
+     */
+    public AsyncInvoker<ShowActionsRunsDetailRequest, ShowActionsRunsDetailResponse> showActionsRunsDetailAsyncInvoker(
+        ShowActionsRunsDetailRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsPipelineMeta.showActionsRunsDetail, hcClient);
     }
 
 }

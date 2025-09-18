@@ -27,7 +27,7 @@ public class UpdateStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * **参数解释**： 是否调用成功。 **取值范围**： - true：调用成功。 - false：调用失败。 
      * @return status
      */
     public Boolean getStatus() {
@@ -44,7 +44,7 @@ public class UpdateStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 策略ID
+     * **参数解释**： 策略ID，策略的唯一标识，通过[获取策略列表](ListStrategy.xml)接口获取，data.id即为策略ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return ruleSetId
      */
     public String getRuleSetId() {

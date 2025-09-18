@@ -71,7 +71,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * CodeArts项目id
+     * **参数解释**： 项目id。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return projectId
      */
     public String getProjectId() {
@@ -88,7 +88,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * CodeArts项目名字
+     * **参数解释**： 项目名称。 **取值范围**： 不涉及。 
      * @return projectName
      */
     public String getProjectName() {
@@ -105,7 +105,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 流水线id
+     * **参数解释**： 流水线id。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -122,7 +122,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 流水线名字
+     * **参数解释**： 流水线名称。 **取值范围**： 不涉及。 
      * @return pipelineName
      */
     public String getPipelineName() {
@@ -139,7 +139,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 流水线创建人id
+     * **参数解释**： 流水线创建人id。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return creatorId
      */
     public String getCreatorId() {
@@ -156,7 +156,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 流水线创建人名字
+     * **参数解释**： 流水线创建人名字。 **取值范围**： 不涉及。 
      * @return creatorName
      */
     public String getCreatorName() {
@@ -173,7 +173,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 流水线创建人id
+     * **参数解释**： 流水线执行人id。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return executorId
      */
     public String getExecutorId() {
@@ -190,7 +190,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 流水线执行人名字
+     * **参数解释**： 流水线执行人名字。 **取值范围**： 不涉及。 
      * @return executorName
      */
     public String getExecutorName() {
@@ -207,7 +207,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 启动时间
+     * **参数解释**： 启动时间。 **取值范围**： 不涉及。 
      * @return startTime
      */
     public String getStartTime() {
@@ -224,7 +224,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -241,7 +241,7 @@ public class PipelineBasicInfo {
     }
 
     /**
-     * 用户是否关注流水线：true（关注），false（未关注）
+     * **参数解释**： 用户是否关注流水线。 **取值范围**： - true：关注流水线。 - false：未关注流水线。 
      * @return watched
      */
     public String getWatched() {

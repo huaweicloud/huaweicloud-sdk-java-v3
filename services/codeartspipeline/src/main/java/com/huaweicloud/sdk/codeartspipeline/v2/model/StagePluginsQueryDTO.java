@@ -66,7 +66,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 用于区分插件为流水线可使用/模板可使用
+     * **参数解释**： 用于区分插件为流水线可使用/模板可使用。 **约束限制**： 不涉及。 **取值范围**： - pipeline：流水线可使用。 - template：模板可使用。 **默认取值**： 不涉及。 
      * @return useCondition
      */
     public String getUseCondition() {
@@ -83,7 +83,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 微服务ID
+     * **参数解释**： 微服务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return compId
      */
     public String getCompId() {
@@ -100,7 +100,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 微服务名
+     * **参数解释**： 微服务名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return compName
      */
     public String getCompName() {
@@ -117,7 +117,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 局点ID
+     * **参数解释**： 局点ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return cloudId
      */
     public String getCloudId() {
@@ -134,7 +134,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 策略ID
+     * **参数解释**： 策略ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return strategyId
      */
     public String getStrategyId() {
@@ -151,7 +151,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 流水线类型
+     * **参数解释**： 流水线类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return category
      */
     public String getCategory() {
@@ -168,7 +168,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 是否发布流水线
+     * **参数解释**： 是否发布流水线。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return publishTab
      */
     public String getPublishTab() {
@@ -185,7 +185,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 部署平台
+     * **参数解释**： 部署平台。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return platform
      */
     public String getPlatform() {
@@ -202,7 +202,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 组件类型
+     * **参数解释**： 组件类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return compExtendType
      */
     public String getCompExtendType() {
@@ -219,7 +219,7 @@ public class StagePluginsQueryDTO {
     }
 
     /**
-     * 部署类型
+     * **参数解释**： 部署类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return deployType
      */
     public String getDeployType() {

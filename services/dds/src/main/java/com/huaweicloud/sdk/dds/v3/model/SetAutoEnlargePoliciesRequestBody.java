@@ -21,7 +21,7 @@ public class SetAutoEnlargePoliciesRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    private List<DiskAutoExpansionPolicy> policies = null;
+    private List<DiskSetAutoExpansionPolicy> policies = null;
 
     public SetAutoEnlargePoliciesRequestBody withSwitchOption(String switchOption) {
         this.switchOption = switchOption;
@@ -29,7 +29,7 @@ public class SetAutoEnlargePoliciesRequestBody {
     }
 
     /**
-     * 自动扩容开关。 - on:开启磁盘自动扩容策略。 - off: 关闭磁盘自动扩容策略。 默认值为on。
+     * **参数解释：** 自动扩容开关。 **约束限制：** 不涉及。 **取值范围：** - on:开启磁盘自动扩容策略。 - off: 关闭磁盘自动扩容策略。 **默认取值：** on。
      * @return switchOption
      */
     public String getSwitchOption() {
@@ -40,12 +40,12 @@ public class SetAutoEnlargePoliciesRequestBody {
         this.switchOption = switchOption;
     }
 
-    public SetAutoEnlargePoliciesRequestBody withPolicies(List<DiskAutoExpansionPolicy> policies) {
+    public SetAutoEnlargePoliciesRequestBody withPolicies(List<DiskSetAutoExpansionPolicy> policies) {
         this.policies = policies;
         return this;
     }
 
-    public SetAutoEnlargePoliciesRequestBody addPoliciesItem(DiskAutoExpansionPolicy policiesItem) {
+    public SetAutoEnlargePoliciesRequestBody addPoliciesItem(DiskSetAutoExpansionPolicy policiesItem) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class SetAutoEnlargePoliciesRequestBody {
         return this;
     }
 
-    public SetAutoEnlargePoliciesRequestBody withPolicies(Consumer<List<DiskAutoExpansionPolicy>> policiesSetter) {
+    public SetAutoEnlargePoliciesRequestBody withPolicies(Consumer<List<DiskSetAutoExpansionPolicy>> policiesSetter) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -62,14 +62,14 @@ public class SetAutoEnlargePoliciesRequestBody {
     }
 
     /**
-     * 磁盘自动扩容策略。 最大支持设置10个实例的策略。
+     * **参数解释：** 磁盘自动扩容策略。 **约束限制：** 最大支持设置10个实例的策略。 **取值范围：** 不涉及。 **默认取值：** 不涉及。 **参数解释：** 不涉及。
      * @return policies
      */
-    public List<DiskAutoExpansionPolicy> getPolicies() {
+    public List<DiskSetAutoExpansionPolicy> getPolicies() {
         return policies;
     }
 
-    public void setPolicies(List<DiskAutoExpansionPolicy> policies) {
+    public void setPolicies(List<DiskSetAutoExpansionPolicy> policies) {
         this.policies = policies;
     }
 

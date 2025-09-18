@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 分支网络状态。 - AVAILABLE (可用) - UPDATING (处理中) - FAILED (失败) - CREATING (创建中 - DELETING (删除中) - DELETED (已刪除) - NON-COMPLETE (配置未完成) - RESTORING (恢复中)
+ * 分支网络状态。 - AVAILABLE (可用) - UPDATING (处理中) - FAILED (失败) - CREATING (创建中 - DELETING (删除中) - DELETED (已删除) - NON-COMPLETE (配置未完成) - RESTORING (恢复中)
  */
 public class SiteNetworkStateEnum {
 

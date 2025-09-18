@@ -6,6 +6,10 @@
 
 <h1 align="center">华为云开发者 Java 软件开发工具包（Java SDK）</h1>
 
+![Java](https://img.shields.io/badge/Java-8%2B-007396?logo=java&logoColor=white)
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.huaweicloud.sdk/huaweicloud-sdk)](https://central.sonatype.com/search?q=huaweicloud-sdk&namespace=com.huaweicloud.sdk)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
+
 欢迎使用华为云 Java SDK 。
 
 华为云 Java SDK 让您无需关心请求细节即可快速使用弹性云服务器（ECS）、虚拟私有云（VPC）等多个华为云服务。
@@ -31,7 +35,7 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 
 指定依赖时请选择特定的版本号，否则可能会在构建时导致不可预见的问题。
 
-您可以通过 [SDK中心](https://console.huaweicloud.com/apiexplorer/#/sdkcenter?language=Java) 或 [Maven中心仓库](https://search.maven.org/search?q=huaweicloud-sdk) 查询SDK版本信息。
+您可以通过 [SDK中心](https://console.huaweicloud.com/apiexplorer/#/sdkcenter?language=Java) 或 [Maven中心仓库](https://central.sonatype.com/search?q=huaweicloud-sdk&namespace=com.huaweicloud.sdk) 查询SDK版本信息。
 
 ### 独立服务包：
 

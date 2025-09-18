@@ -887,7 +887,7 @@ public class RocketMQMeta {
             f -> f.withMarshaller(ListEngineProductsRequest::getType, ListEngineProductsRequest::setType));
         builder.<String>withRequestField("product_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEngineProductsRequest::getProductId, ListEngineProductsRequest::setProductId));
         builder.<Integer>withRequestField("limit",

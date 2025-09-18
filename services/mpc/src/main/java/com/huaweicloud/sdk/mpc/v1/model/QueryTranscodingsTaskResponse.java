@@ -213,6 +213,11 @@ public class QueryTranscodingsTaskResponse {
 
     private List<AdditionalManifests> additionalManifests = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private List<FileMetaData> metadata = null;
+
     public QueryTranscodingsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -655,6 +660,39 @@ public class QueryTranscodingsTaskResponse {
         this.additionalManifests = additionalManifests;
     }
 
+    public QueryTranscodingsTaskResponse withMetadata(List<FileMetaData> metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse addMetadataItem(FileMetaData metadataItem) {
+        if (this.metadata == null) {
+            this.metadata = new ArrayList<>();
+        }
+        this.metadata.add(metadataItem);
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse withMetadata(Consumer<List<FileMetaData>> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new ArrayList<>();
+        }
+        metadataSetter.accept(this.metadata);
+        return this;
+    }
+
+    /**
+     * 输出文件的metadata信息 
+     * @return metadata
+     */
+    public List<FileMetaData> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(List<FileMetaData> metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -674,7 +712,8 @@ public class QueryTranscodingsTaskResponse {
             && Objects.equals(this.thumbnailOutput, that.thumbnailOutput)
             && Objects.equals(this.thumbnailOutputname, that.thumbnailOutputname)
             && Objects.equals(this.picInfo, that.picInfo) && Objects.equals(this.avParameters, that.avParameters)
-            && Objects.equals(this.additionalManifests, that.additionalManifests);
+            && Objects.equals(this.additionalManifests, that.additionalManifests)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override
@@ -697,7 +736,8 @@ public class QueryTranscodingsTaskResponse {
             thumbnailOutputname,
             picInfo,
             avParameters,
-            additionalManifests);
+            additionalManifests,
+            metadata);
     }
 
     @Override
@@ -723,6 +763,7 @@ public class QueryTranscodingsTaskResponse {
         sb.append("    picInfo: ").append(toIndentedString(picInfo)).append("\n");
         sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
         sb.append("    additionalManifests: ").append(toIndentedString(additionalManifests)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

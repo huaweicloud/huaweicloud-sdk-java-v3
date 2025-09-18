@@ -69,7 +69,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 流水线ID
+     * **参数解释**： 流水线ID，可以通过[查询流水线列表](ListPipelines.xml)接口，其中pipelines.pipelineId即为流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -86,7 +86,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * git链接
+     * **参数解释**： 代码仓git链接。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return gitUrl
      */
     public String getGitUrl() {
@@ -103,7 +103,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 代码仓类型
+     * **参数解释**： git代码仓类型。 **约束限制**： 不涉及。 **取值范围**： - codehub。 - gitee。 - github。 - gitcode。 - gitlab。 **默认取值**： 不涉及。 
      * @return gitType
      */
     public String getGitType() {
@@ -120,7 +120,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 是否自动提交
+     * **参数解释**： 是否自动提交。gitee仓库特有，webhook触发流水线后，自动添加评论。 **约束限制**： 不涉及。 **取值范围**： - true：是自动提交。 - false：不是自动提交。 **默认取值**： 不涉及。 
      * @return isAutoCommit
      */
     public Boolean getIsAutoCommit() {
@@ -153,7 +153,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 事件
+     * **参数解释**： 触发事件列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return events
      */
     public List<CodeEvent> getEvents() {
@@ -170,7 +170,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 回调id
+     * **参数解释**： 系统生成的回调ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return hookId
      */
     public String getHookId() {
@@ -187,7 +187,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 仓库id
+     * **参数解释**： Repo仓库ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return repoId
      */
     public String getRepoId() {
@@ -204,7 +204,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 扩展点id
+     * **参数解释**： 代码源扩展点ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return endpointId
      */
     public String getEndpointId() {
@@ -221,7 +221,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 回调链接
+     * **参数解释**： 回调链接，注册Webhook时生成。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return callbackUrl
      */
     public String getCallbackUrl() {
@@ -238,7 +238,7 @@ public class PipelineTrigger {
     }
 
     /**
-     * 用户token
+     * **参数解释**： 用户token，注册Webhook时生成。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return securityToken
      */
     public String getSecurityToken() {

@@ -42,7 +42,7 @@ public class ShowInstanceStatusResponse extends SdkResponse {
     }
 
     /**
-     * 实例ID
+     * 流水线创建实例ID
      * @return taskId
      */
     public String getTaskId() {
@@ -59,7 +59,7 @@ public class ShowInstanceStatusResponse extends SdkResponse {
     }
 
     /**
-     * 实例创建状态，取值和含义:initializing：初始化中；processing：处理中；finished：已完成；succeeded：成功
+     * 实例创建状态，取值和含义：initializing：初始化中；processing：处理中；finished：已完成；succeeded：成功
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -93,7 +93,7 @@ public class ShowInstanceStatusResponse extends SdkResponse {
     }
 
     /**
-     * 流水线名字
+     * 流水线名称
      * @return pipelineName
      */
     public String getPipelineName() {

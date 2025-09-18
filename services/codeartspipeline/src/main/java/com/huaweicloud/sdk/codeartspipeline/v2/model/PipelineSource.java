@@ -27,7 +27,7 @@ public class PipelineSource {
     }
 
     /**
-     * 流水线源类型
+     * **参数解释**： 流水线源类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {

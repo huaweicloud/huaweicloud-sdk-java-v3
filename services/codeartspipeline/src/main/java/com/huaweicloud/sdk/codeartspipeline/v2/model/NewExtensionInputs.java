@@ -57,7 +57,7 @@ public class NewExtensionInputs {
     }
 
     /**
-     * 名称
+     * **参数解释**： 名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -74,7 +74,7 @@ public class NewExtensionInputs {
     }
 
     /**
-     * 类型
+     * **参数解释**： 类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -91,7 +91,7 @@ public class NewExtensionInputs {
     }
 
     /**
-     * 标签
+     * **参数解释**： 标签。 **取值范围**： 不涉及。 
      * @return label
      */
     public String getLabel() {
@@ -108,7 +108,7 @@ public class NewExtensionInputs {
     }
 
     /**
-     * 说明
+     * **参数解释**： 说明。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -125,7 +125,7 @@ public class NewExtensionInputs {
     }
 
     /**
-     * 默认值
+     * **参数解释**： 默认值。 **取值范围**： 不涉及。 
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -142,7 +142,7 @@ public class NewExtensionInputs {
     }
 
     /**
-     * 必填
+     * **参数解释**： 是否必填。 **取值范围**： - true：必填。 - false：非必填。 
      * @return required
      */
     public Boolean getRequired() {

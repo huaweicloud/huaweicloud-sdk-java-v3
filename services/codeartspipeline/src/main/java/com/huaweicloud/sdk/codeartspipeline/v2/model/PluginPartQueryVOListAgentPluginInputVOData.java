@@ -56,13 +56,38 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
 
     private String layoutContent;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend_prop")
+
+    private ExtensionExtendProp extendProp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "front_data_prop")
+
+    private String frontDataProp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "label")
+
+    private String label;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "required")
+
+    private String required;
+
     public PluginPartQueryVOListAgentPluginInputVOData withUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
         return this;
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 插件输入项唯一ID。 **取值范围**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -79,7 +104,7 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
     }
 
     /**
-     * 名称
+     * **参数解释**： 插件输入项名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -96,7 +121,7 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
     }
 
     /**
-     * 默认值
+     * **参数解释**： 插件输入项默认值。 **取值范围**： 不涉及。 
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -113,7 +138,7 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 插件名称。 **取值范围**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -130,7 +155,7 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
     }
 
     /**
-     * 版本
+     * **参数解释**： 插件版本。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -147,7 +172,7 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
     }
 
     /**
-     * 类型
+     * **参数解释**： 插件输入项类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -164,7 +189,7 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
     }
 
     /**
-     * 租户ID
+     * **参数解释**： 租户id。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -207,7 +232,7 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
     }
 
     /**
-     * 样式信息
+     * **参数解释**： 插件输入项样式信息。 **取值范围**： 不涉及。 
      * @return layoutContent
      */
     public String getLayoutContent() {
@@ -216,6 +241,100 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
 
     public void setLayoutContent(String layoutContent) {
         this.layoutContent = layoutContent;
+    }
+
+    public PluginPartQueryVOListAgentPluginInputVOData withExtendProp(ExtensionExtendProp extendProp) {
+        this.extendProp = extendProp;
+        return this;
+    }
+
+    public PluginPartQueryVOListAgentPluginInputVOData withExtendProp(Consumer<ExtensionExtendProp> extendPropSetter) {
+        if (this.extendProp == null) {
+            this.extendProp = new ExtensionExtendProp();
+            extendPropSetter.accept(this.extendProp);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extendProp
+     * @return extendProp
+     */
+    public ExtensionExtendProp getExtendProp() {
+        return extendProp;
+    }
+
+    public void setExtendProp(ExtensionExtendProp extendProp) {
+        this.extendProp = extendProp;
+    }
+
+    public PluginPartQueryVOListAgentPluginInputVOData withFrontDataProp(String frontDataProp) {
+        this.frontDataProp = frontDataProp;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 前端渲染使用的数据信息。 **取值范围**： 不涉及。 
+     * @return frontDataProp
+     */
+    public String getFrontDataProp() {
+        return frontDataProp;
+    }
+
+    public void setFrontDataProp(String frontDataProp) {
+        this.frontDataProp = frontDataProp;
+    }
+
+    public PluginPartQueryVOListAgentPluginInputVOData withLabel(String label) {
+        this.label = label;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 标签。 **取值范围**： 不涉及。 
+     * @return label
+     */
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public PluginPartQueryVOListAgentPluginInputVOData withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 描述。 **取值范围**： 不涉及。 
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public PluginPartQueryVOListAgentPluginInputVOData withRequired(String required) {
+        this.required = required;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否必须。 **取值范围**： 不涉及。 
+     * @return required
+     */
+    public String getRequired() {
+        return required;
+    }
+
+    public void setRequired(String required) {
+        this.required = required;
     }
 
     @Override
@@ -231,13 +350,28 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
             && Objects.equals(this.defaultValue, that.defaultValue) && Objects.equals(this.pluginName, that.pluginName)
             && Objects.equals(this.version, that.version) && Objects.equals(this.type, that.type)
             && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.validation, that.validation)
-            && Objects.equals(this.layoutContent, that.layoutContent);
+            && Objects.equals(this.layoutContent, that.layoutContent)
+            && Objects.equals(this.extendProp, that.extendProp)
+            && Objects.equals(this.frontDataProp, that.frontDataProp) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.required, that.required);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(uniqueId, name, defaultValue, pluginName, version, type, workspaceId, validation, layoutContent);
+        return Objects.hash(uniqueId,
+            name,
+            defaultValue,
+            pluginName,
+            version,
+            type,
+            workspaceId,
+            validation,
+            layoutContent,
+            extendProp,
+            frontDataProp,
+            label,
+            description,
+            required);
     }
 
     @Override
@@ -253,6 +387,11 @@ public class PluginPartQueryVOListAgentPluginInputVOData {
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    validation: ").append(toIndentedString(validation)).append("\n");
         sb.append("    layoutContent: ").append(toIndentedString(layoutContent)).append("\n");
+        sb.append("    extendProp: ").append(toIndentedString(extendProp)).append("\n");
+        sb.append("    frontDataProp: ").append(toIndentedString(frontDataProp)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    required: ").append(toIndentedString(required)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * PipelineGroupVo
+ * 流水线分组详情
  */
 public class PipelineGroupVo {
 
@@ -79,7 +79,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 分组ID
+     * **参数解释**： 分组ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -96,7 +96,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 租户ID
+     * **参数解释**： 租户ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return domainId
      */
     public String getDomainId() {
@@ -113,7 +113,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 项目ID
+     * **参数解释**： 项目ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return projectId
      */
     public String getProjectId() {
@@ -130,7 +130,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 分组名
+     * **参数解释**： 分组名。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return name
      */
     public String getName() {
@@ -147,7 +147,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 父分组ID
+     * **参数解释**： 父分组ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return parentId
      */
     public String getParentId() {
@@ -164,7 +164,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 分组路径ID
+     * **参数解释**： 分组路径ID。例如id1.id2.id3 代表分组id3的父分组为id2，分组id2的父分组为id1。 **取值范围**： 不涉及。 
      * @return pathId
      */
     public String getPathId() {
@@ -181,7 +181,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 序号
+     * **参数解释**： 序号。 **取值范围**： 大于等于1。 
      * @return ordinal
      */
     public Integer getOrdinal() {
@@ -198,7 +198,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 创建用户ID
+     * **参数解释**： 创建用户ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return creator
      */
     public String getCreator() {
@@ -215,7 +215,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 更新用户ID
+     * **参数解释**： 更新用户ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return updater
      */
     public String getUpdater() {
@@ -232,7 +232,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。 
      * @return createTime
      */
     public Long getCreateTime() {
@@ -249,7 +249,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 更新时间
+     * **参数解释**： 更新时间。 **取值范围**： 不涉及。 
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -282,7 +282,7 @@ public class PipelineGroupVo {
     }
 
     /**
-     * 子分组列表
+     * **参数解释**： 流水线分组详情。 **取值范围**： 不涉及。 
      * @return children
      */
     public List<PipelineGroupVo> getChildren() {

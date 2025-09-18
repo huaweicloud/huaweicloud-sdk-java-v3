@@ -44,6 +44,16 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     private String groupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "standard")
+
+    private Boolean standard;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db_record_name")
+
+    private String dbRecordName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_attribution")
 
     private String pluginAttribution;
@@ -61,7 +71,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "all_steps")
 
-    private List<FullStagePluginsRelationVOAllSteps> allSteps = null;
+    private List<PageInfoBusinessTypeDefinitionVOAllSteps> allSteps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -104,7 +114,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 唯一ID。 **取值范围**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -121,7 +131,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 展示名。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -138,7 +148,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 插件名。 **取值范围**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -155,7 +165,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 禁用
+     * **参数解释**： 是否禁用。 **取值范围**： - true：禁用。 - false：未禁用。 
      * @return disabled
      */
     public Boolean getDisabled() {
@@ -172,7 +182,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 组名
+     * **参数解释**： 组名。 **取值范围**： 不涉及。 
      * @return groupName
      */
     public String getGroupName() {
@@ -189,7 +199,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 组类型
+     * **参数解释**： 组类型。 **取值范围**： 不涉及。 
      * @return groupType
      */
     public String getGroupType() {
@@ -200,13 +210,47 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
         this.groupType = groupType;
     }
 
+    public PageInfoBusinessTypeDefinitionVOPluginsList withStandard(Boolean standard) {
+        this.standard = standard;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否标准化的插件。 **取值范围**： - true：是。 - false：否。 
+     * @return standard
+     */
+    public Boolean getStandard() {
+        return standard;
+    }
+
+    public void setStandard(Boolean standard) {
+        this.standard = standard;
+    }
+
+    public PageInfoBusinessTypeDefinitionVOPluginsList withDbRecordName(String dbRecordName) {
+        this.dbRecordName = dbRecordName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 插件记录名称。 **取值范围**： 不涉及。 
+     * @return dbRecordName
+     */
+    public String getDbRecordName() {
+        return dbRecordName;
+    }
+
+    public void setDbRecordName(String dbRecordName) {
+        this.dbRecordName = dbRecordName;
+    }
+
     public PageInfoBusinessTypeDefinitionVOPluginsList withPluginAttribution(String pluginAttribution) {
         this.pluginAttribution = pluginAttribution;
         return this;
     }
 
     /**
-     * 属性
+     * **参数解释**： 插件属性。 **取值范围**： 不涉及。 
      * @return pluginAttribution
      */
     public String getPluginAttribution() {
@@ -223,7 +267,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 组合插件
+     * **参数解释**： 组合插件。 **取值范围**： 不涉及。 
      * @return pluginCompositionType
      */
     public String getPluginCompositionType() {
@@ -240,7 +284,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 运行属性
+     * **参数解释**： 插件运行属性。 **取值范围**： 不涉及。 
      * @return runtimeAttribution
      */
     public String getRuntimeAttribution() {
@@ -251,13 +295,14 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
         this.runtimeAttribution = runtimeAttribution;
     }
 
-    public PageInfoBusinessTypeDefinitionVOPluginsList withAllSteps(List<FullStagePluginsRelationVOAllSteps> allSteps) {
+    public PageInfoBusinessTypeDefinitionVOPluginsList withAllSteps(
+        List<PageInfoBusinessTypeDefinitionVOAllSteps> allSteps) {
         this.allSteps = allSteps;
         return this;
     }
 
     public PageInfoBusinessTypeDefinitionVOPluginsList addAllStepsItem(
-        FullStagePluginsRelationVOAllSteps allStepsItem) {
+        PageInfoBusinessTypeDefinitionVOAllSteps allStepsItem) {
         if (this.allSteps == null) {
             this.allSteps = new ArrayList<>();
         }
@@ -266,7 +311,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     public PageInfoBusinessTypeDefinitionVOPluginsList withAllSteps(
-        Consumer<List<FullStagePluginsRelationVOAllSteps>> allStepsSetter) {
+        Consumer<List<PageInfoBusinessTypeDefinitionVOAllSteps>> allStepsSetter) {
         if (this.allSteps == null) {
             this.allSteps = new ArrayList<>();
         }
@@ -275,14 +320,14 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 基础插件列表
+     * **参数解释**： 基础插件列表。 **取值范围**： 不涉及。 
      * @return allSteps
      */
-    public List<FullStagePluginsRelationVOAllSteps> getAllSteps() {
+    public List<PageInfoBusinessTypeDefinitionVOAllSteps> getAllSteps() {
         return allSteps;
     }
 
-    public void setAllSteps(List<FullStagePluginsRelationVOAllSteps> allSteps) {
+    public void setAllSteps(List<PageInfoBusinessTypeDefinitionVOAllSteps> allSteps) {
         this.allSteps = allSteps;
     }
 
@@ -292,7 +337,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 描述
+     * **参数解释**： 插件描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -309,7 +354,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 版本属性
+     * **参数解释**： 插件版本属性。 **取值范围**： 不涉及。 
      * @return versionAttribution
      */
     public String getVersionAttribution() {
@@ -326,7 +371,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 图标URL
+     * **参数解释**： 插件图标URL。 **取值范围**： 不涉及。 
      * @return iconUrl
      */
     public String getIconUrl() {
@@ -343,7 +388,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 可编辑
+     * **参数解释**： 插件可编辑。 **取值范围**： 不涉及。 
      * @return multiStepEditable
      */
     public Integer getMultiStepEditable() {
@@ -360,7 +405,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 地址
+     * **参数解释**： 插件地址。 **取值范围**： 不涉及。 
      * @return location
      */
     public String getLocation() {
@@ -377,7 +422,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 发布商ID
+     * **参数解释**： 插件发布商ID。 **取值范围**： 不涉及。 
      * @return publisherUniqueId
      */
     public String getPublisherUniqueId() {
@@ -394,7 +439,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     }
 
     /**
-     * 版本
+     * **参数解释**： 插件版本。 **取值范围**： 不涉及。 
      * @return manifestVersion
      */
     public String getManifestVersion() {
@@ -417,6 +462,7 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
         return Objects.equals(this.uniqueId, that.uniqueId) && Objects.equals(this.displayName, that.displayName)
             && Objects.equals(this.pluginName, that.pluginName) && Objects.equals(this.disabled, that.disabled)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupType, that.groupType)
+            && Objects.equals(this.standard, that.standard) && Objects.equals(this.dbRecordName, that.dbRecordName)
             && Objects.equals(this.pluginAttribution, that.pluginAttribution)
             && Objects.equals(this.pluginCompositionType, that.pluginCompositionType)
             && Objects.equals(this.runtimeAttribution, that.runtimeAttribution)
@@ -437,6 +483,8 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
             disabled,
             groupName,
             groupType,
+            standard,
+            dbRecordName,
             pluginAttribution,
             pluginCompositionType,
             runtimeAttribution,
@@ -460,6 +508,8 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
+        sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
+        sb.append("    dbRecordName: ").append(toIndentedString(dbRecordName)).append("\n");
         sb.append("    pluginAttribution: ").append(toIndentedString(pluginAttribution)).append("\n");
         sb.append("    pluginCompositionType: ").append(toIndentedString(pluginCompositionType)).append("\n");
         sb.append("    runtimeAttribution: ").append(toIndentedString(runtimeAttribution)).append("\n");

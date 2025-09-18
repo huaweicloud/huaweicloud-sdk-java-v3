@@ -40,7 +40,7 @@ public class ListPipelineSimpleInfoResponse extends SdkResponse {
     }
 
     /**
-     * 偏移量,表示从此偏移量开始查询,offset大于等于0
+     * **参数解释**： 偏移量，表示从此偏移量开始查询。 **取值范围**： 大于等于0。 
      * @return offset
      */
     public Integer getOffset() {
@@ -57,7 +57,7 @@ public class ListPipelineSimpleInfoResponse extends SdkResponse {
     }
 
     /**
-     * 每次查询的条目数量
+     * **参数解释**： 每次查询的条目数量。 **取值范围**： 大于等于0。 
      * @return limit
      */
     public Integer getLimit() {
@@ -74,7 +74,7 @@ public class ListPipelineSimpleInfoResponse extends SdkResponse {
     }
 
     /**
-     * 总条目数量
+     * **参数解释**： 总条目数量。 **取值范围**： 大于等于0。 
      * @return total
      */
     public Integer getTotal() {
@@ -107,7 +107,7 @@ public class ListPipelineSimpleInfoResponse extends SdkResponse {
     }
 
     /**
-     * 执行状况数据列表
+     * **参数解释**： 流水线列表。 **取值范围**： 不涉及。 
      * @return result
      */
     public List<PipelineBasicInfo> getResult() {

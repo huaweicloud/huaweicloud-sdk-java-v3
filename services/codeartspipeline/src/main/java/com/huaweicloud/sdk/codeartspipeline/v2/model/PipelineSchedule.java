@@ -31,7 +31,7 @@ public class PipelineSchedule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
 
-    private String enable;
+    private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "days_of_week")
@@ -49,7 +49,7 @@ public class PipelineSchedule {
     }
 
     /**
-     * 任务ID
+     * **参数解释**： 定时任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return uuid
      */
     public String getUuid() {
@@ -66,7 +66,7 @@ public class PipelineSchedule {
     }
 
     /**
-     * 任务类型
+     * **参数解释**： 任务类型。 **约束限制**： 不涉及。 **取值范围**： 只支持fixed。 **默认取值**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -83,7 +83,7 @@ public class PipelineSchedule {
     }
 
     /**
-     * 任务名称
+     * **参数解释**： 任务名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -94,20 +94,20 @@ public class PipelineSchedule {
         this.name = name;
     }
 
-    public PipelineSchedule withEnable(String enable) {
+    public PipelineSchedule withEnable(Boolean enable) {
         this.enable = enable;
         return this;
     }
 
     /**
-     * 是否可用
+     * **参数解释**： 是否启用。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return enable
      */
-    public String getEnable() {
+    public Boolean getEnable() {
         return enable;
     }
 
-    public void setEnable(String enable) {
+    public void setEnable(Boolean enable) {
         this.enable = enable;
     }
 
@@ -133,7 +133,7 @@ public class PipelineSchedule {
     }
 
     /**
-     * 一周内具体时间
+     * **参数解释**： 一周内具体执行日。周日至周六对应1-7。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return daysOfWeek
      */
     public List<Integer> getDaysOfWeek() {
@@ -150,7 +150,7 @@ public class PipelineSchedule {
     }
 
     /**
-     * 时区
+     * **参数解释**： 时区。 **约束限制**： 不涉及。 **取值范围**： - \"China Standard Time\"。 - \"GMT Standard Time\"。 - \"South Africa Standard Time\"。 - \"Russian Standard Time\"。 - \"SE Asia Standard Time\"。  - \"Singapore Standard Time\"。 - \"Pacific SA Standard Time\"。 - \"E. South America Standard Time\"。  - \"Central Standard Time (Mexico)\"。 - \"Egypt Standard Time\"。 - \"Saudi Arabia Standard Time\"。 **默认取值**： 不涉及。 
      * @return timeZone
      */
     public String getTimeZone() {

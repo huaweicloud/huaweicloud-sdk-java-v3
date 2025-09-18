@@ -22,7 +22,7 @@ public class StopPipelineRunResponse extends SdkResponse {
     }
 
     /**
-     * 操作是否成功
+     * **参数解释**： 操作是否成功。 **取值范围**： - true：操作成功。 - false：操作失败。 
      * @return success
      */
     public Boolean getSuccess() {

@@ -74,7 +74,7 @@ public class RuleInstance {
     }
 
     /**
-     * 规则实例ID
+     * **参数解释**： 规则实例ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -91,7 +91,7 @@ public class RuleInstance {
     }
 
     /**
-     * 规则类型ID
+     * **参数解释**： 规则类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -108,7 +108,7 @@ public class RuleInstance {
     }
 
     /**
-     * 规则名称
+     * **参数解释**： 规则名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -125,7 +125,7 @@ public class RuleInstance {
     }
 
     /**
-     * 规则版本
+     * **参数解释**： 规则版本。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -142,7 +142,7 @@ public class RuleInstance {
     }
 
     /**
-     * 插件ID
+     * **参数解释**： 插件ID。 **取值范围**： 不涉及。 
      * @return pluginId
      */
     public String getPluginId() {
@@ -159,7 +159,7 @@ public class RuleInstance {
     }
 
     /**
-     * 插件名称
+     * **参数解释**： 插件名称。 **取值范围**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -176,7 +176,7 @@ public class RuleInstance {
     }
 
     /**
-     * 插件版本号
+     * **参数解释**： 插件版本号。 **取值范围**： 不涉及。 
      * @return pluginVersion
      */
     public String getPluginVersion() {
@@ -193,7 +193,7 @@ public class RuleInstance {
     }
 
     /**
-     * 是否生效
+     * **参数解释**： 规则是否生效。 **取值范围**： - true：规则生效。 - false：规则不生效。 
      * @return isValid
      */
     public Boolean getIsValid() {
@@ -210,7 +210,7 @@ public class RuleInstance {
     }
 
     /**
-     * 是否可编辑
+     * **参数解释**： 规则是否可编辑。 **取值范围**： - true：规则可编辑。 - false：规则不可编辑。 
      * @return editable
      */
     public Boolean getEditable() {
@@ -243,7 +243,7 @@ public class RuleInstance {
     }
 
     /**
-     * 规则属性列表
+     * **参数解释**： 规则实例集合。 **取值范围**： 不涉及。 
      * @return content
      */
     public List<RuleInstanceContent> getContent() {

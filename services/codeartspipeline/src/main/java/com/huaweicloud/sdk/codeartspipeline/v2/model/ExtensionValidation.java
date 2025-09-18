@@ -41,7 +41,7 @@ public class ExtensionValidation {
     }
 
     /**
-     * 消息
+     * **参数解释**： 若插件输入项为必填而实际未填写时，提示的信息。 **取值范围**： 不涉及。 
      * @return requiredMessage
      */
     public String getRequiredMessage() {
@@ -58,7 +58,7 @@ public class ExtensionValidation {
     }
 
     /**
-     * 正则
+     * **参数解释**： 插件输入项值的校验正则表达式。 **取值范围**： 不涉及。 
      * @return regex
      */
     public String getRegex() {
@@ -75,7 +75,7 @@ public class ExtensionValidation {
     }
 
     /**
-     * 正则消息
+     * **参数解释**： 若插件输入项的值不满足regex中的正则表达式时，提示的信息。 **取值范围**： 不涉及。 
      * @return regexMessage
      */
     public String getRegexMessage() {
@@ -92,7 +92,7 @@ public class ExtensionValidation {
     }
 
     /**
-     * 最大长度
+     * **参数解释**： 插件输入项值的最大长度。 **取值范围**： 不涉及。 
      * @return maxLength
      */
     public Integer getMaxLength() {
@@ -109,7 +109,7 @@ public class ExtensionValidation {
     }
 
     /**
-     * 最小长度
+     * **参数解释**： 插件输入项值的最小长度。 **取值范围**： 不涉及。 
      * @return minLength
      */
     public Integer getMinLength() {

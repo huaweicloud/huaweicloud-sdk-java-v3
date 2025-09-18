@@ -28,7 +28,7 @@ public class ShowAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 自动扩容开关。 - on：开启磁盘自动扩容策略。 - off: 关闭磁盘自动扩容策略。 默认值为on。
+     * **参数解释：** 自动扩容开关。 **取值范围：** - on:开启磁盘自动扩容策略。 - off: 关闭磁盘自动扩容策略。
      * @return switchOption
      */
     public String getSwitchOption() {

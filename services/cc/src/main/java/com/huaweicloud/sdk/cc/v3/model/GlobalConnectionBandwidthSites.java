@@ -40,6 +40,11 @@ public class GlobalConnectionBandwidthSites {
     private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name_en")
 
     private String nameEn;
@@ -146,11 +151,6 @@ public class GlobalConnectionBandwidthSites {
     private List<SiteGroupReferenceInfo> groupList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_id")
-
-    private String regionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_border_group")
 
     private String publicBorderGroup;
@@ -223,13 +223,30 @@ public class GlobalConnectionBandwidthSites {
         this.updatedAt = updatedAt;
     }
 
+    public GlobalConnectionBandwidthSites withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * RegionID。
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
     public GlobalConnectionBandwidthSites withNameEn(String nameEn) {
         this.nameEn = nameEn;
         return this;
     }
 
     /**
-     * 功能说明：站点信息自定义的英文名字。 取值范围：1-255个字符
+     * 功能说明：站点信息自定义的英文名称。 取值范围：1-255个字符
      * @return nameEn
      */
     public String getNameEn() {
@@ -246,7 +263,7 @@ public class GlobalConnectionBandwidthSites {
     }
 
     /**
-     * 功能说明：站点信息自定义的中文名字。 取值范围：1-64个字符。
+     * 功能说明：站点信息自定义的中文名称。 取值范围：1-64个字符。
      * @return nameCn
      */
     public String getNameCn() {
@@ -341,23 +358,6 @@ public class GlobalConnectionBandwidthSites {
         this.groupList = groupList;
     }
 
-    public GlobalConnectionBandwidthSites withRegionId(String regionId) {
-        this.regionId = regionId;
-        return this;
-    }
-
-    /**
-     * 功能说明：对应华为云标准region的id，该站点继承自华为云region时才需要填写该字段。 取值范围：0-64个字符。
-     * @return regionId
-     */
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId;
-    }
-
     public GlobalConnectionBandwidthSites withPublicBorderGroup(String publicBorderGroup) {
         this.publicBorderGroup = publicBorderGroup;
         return this;
@@ -386,10 +386,10 @@ public class GlobalConnectionBandwidthSites {
         GlobalConnectionBandwidthSites that = (GlobalConnectionBandwidthSites) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.nameCn, that.nameCn)
-            && Objects.equals(this.siteCode, that.siteCode) && Objects.equals(this.siteType, that.siteType)
-            && Objects.equals(this.serviceList, that.serviceList) && Objects.equals(this.groupList, that.groupList)
-            && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.nameCn, that.nameCn) && Objects.equals(this.siteCode, that.siteCode)
+            && Objects.equals(this.siteType, that.siteType) && Objects.equals(this.serviceList, that.serviceList)
+            && Objects.equals(this.groupList, that.groupList)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
@@ -399,13 +399,13 @@ public class GlobalConnectionBandwidthSites {
             description,
             createdAt,
             updatedAt,
+            regionId,
             nameEn,
             nameCn,
             siteCode,
             siteType,
             serviceList,
             groupList,
-            regionId,
             publicBorderGroup);
     }
 
@@ -417,13 +417,13 @@ public class GlobalConnectionBandwidthSites {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    nameEn: ").append(toIndentedString(nameEn)).append("\n");
         sb.append("    nameCn: ").append(toIndentedString(nameCn)).append("\n");
         sb.append("    siteCode: ").append(toIndentedString(siteCode)).append("\n");
         sb.append("    siteType: ").append(toIndentedString(siteType)).append("\n");
         sb.append("    serviceList: ").append(toIndentedString(serviceList)).append("\n");
         sb.append("    groupList: ").append(toIndentedString(groupList)).append("\n");
-        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();

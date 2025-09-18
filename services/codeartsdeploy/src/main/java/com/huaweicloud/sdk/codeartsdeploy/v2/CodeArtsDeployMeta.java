@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdatePermissionLevelReq
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdatePermissionLevelResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckCanCreateRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckCanCreateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckDeployStatusRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckDeployStatusResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckIsDuplicateAppNameRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckIsDuplicateAppNameResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckWhetherHostGroupCanBeCreatedRequest;
@@ -137,6 +139,8 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateRequest
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.StopDeployTaskRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.StopDeployTaskResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.TasksSuccessRateQuery;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.TemplateTaskRequestBody;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppDisableStatusRequest;
@@ -892,6 +896,39 @@ public class CodeArtsDeployMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckDeployStatusRequest, CheckDeployStatusResponse> checkDeployStatus =
+        genForCheckDeployStatus();
+
+    private static HttpRequestDef<CheckDeployStatusRequest, CheckDeployStatusResponse> genForCheckDeployStatus() {
+        // basic
+        HttpRequestDef.Builder<CheckDeployStatusRequest, CheckDeployStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckDeployStatusRequest.class, CheckDeployStatusResponse.class)
+                .withName("CheckDeployStatus")
+                .withUri("/v2/tasks/{task_id}/state")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDeployStatusRequest::getTaskId, CheckDeployStatusRequest::setTaskId));
+        builder.<String>withRequestField("record_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDeployStatusRequest::getRecordId, CheckDeployStatusRequest::setRecordId));
+        builder.<Boolean>withRequestField("step_state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CheckDeployStatusRequest::getStepState, CheckDeployStatusRequest::setStepState));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironment =
         genForCreateEnvironment();
 
@@ -1269,6 +1306,39 @@ public class CodeArtsDeployMeta {
             TypeCasts.uncheckedConversion(EnvironmentPermissionV2Body.class),
             f -> f.withMarshaller(UpdateEnvironmentPermissionRequest::getBody,
                 UpdateEnvironmentPermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopDeployTaskRequest, StopDeployTaskResponse> stopDeployTask =
+        genForStopDeployTask();
+
+    private static HttpRequestDef<StopDeployTaskRequest, StopDeployTaskResponse> genForStopDeployTask() {
+        // basic
+        HttpRequestDef.Builder<StopDeployTaskRequest, StopDeployTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopDeployTaskRequest.class, StopDeployTaskResponse.class)
+                .withName("StopDeployTask")
+                .withUri("/v2/tasks/{task_id}/records/{record_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopDeployTaskRequest::getTaskId, StopDeployTaskRequest::setTaskId));
+        builder.<String>withRequestField("record_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopDeployTaskRequest::getRecordId, StopDeployTaskRequest::setRecordId));
+        builder.<String>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopDeployTaskRequest::getBody, StopDeployTaskRequest::setBody));
 
         // response
 

@@ -6,6 +6,10 @@ English | [简体中文](README_CN.md)
 
 <h1 align="center">Huawei Cloud Java Software Development Kit (Java SDK)</h1>
 
+![Java](https://img.shields.io/badge/Java-8%2B-007396?logo=java&logoColor=white)
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.huaweicloud.sdk/huaweicloud-sdk)](https://central.sonatype.com/search?q=huaweicloud-sdk&namespace=com.huaweicloud.sdk)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
+
 The Huawei Cloud Java SDK allows you to easily work with Huawei Cloud services such as Elastic Compute Service (ECS) and
 Virtual Private Cloud (VPC) without the need to handle API related tasks.
 
@@ -32,7 +36,7 @@ Java project.
 
 Please choose a specific version number when specifying dependencies, otherwise it may cause unforeseen issues at build time.
 
-You can get the SDK version information through [SDK center](https://console-intl.huaweicloud.com/apiexplorer/#/sdkcenter?language=Java) or [Maven central repository](https://search.maven.org/search?q=huaweicloud-sdk).
+You can get the SDK version information through [SDK center](https://console-intl.huaweicloud.com/apiexplorer/#/sdkcenter?language=Java) or [Maven central repository](https://central.sonatype.com/search?q=huaweicloud-sdk&namespace=com.huaweicloud.sdk).
 
 ### Individual Services
 

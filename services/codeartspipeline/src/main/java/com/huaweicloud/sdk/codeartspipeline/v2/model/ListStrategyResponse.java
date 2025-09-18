@@ -46,7 +46,7 @@ public class ListStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 规则实例列表
+     * **参数解释**： 规则实例列表。 **取值范围**： 不涉及。 
      * @return data
      */
     public List<RuleSet> getData() {
@@ -63,7 +63,7 @@ public class ListStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**： 规则总数。 **取值范围**： 不涉及。 
      * @return total
      */
     public Long getTotal() {

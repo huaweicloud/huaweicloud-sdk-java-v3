@@ -26,7 +26,7 @@ public class RequestRuleInstance {
     }
 
     /**
-     * 规则实例ID
+     * **参数解释**： 规则实例ID **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class RequestRuleInstance {
     }
 
     /**
-     * 规则实例状态
+     * **参数解释**： 规则实例状态 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return isValid
      */
     public Boolean getIsValid() {

@@ -102,7 +102,7 @@ public class Stages {
     }
 
     /**
-     * -
+     * 阶段运行参数
      * @return parameters
      */
     public Object getParameters() {

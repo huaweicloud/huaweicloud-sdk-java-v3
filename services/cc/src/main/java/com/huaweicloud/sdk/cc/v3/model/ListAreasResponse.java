@@ -20,6 +20,11 @@ public class ListAreasResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "areas")
 
     private List<Area> areas = null;
@@ -39,6 +44,32 @@ public class ListAreasResponse extends SdkResponse {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public ListAreasResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListAreasResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
     }
 
     public ListAreasResponse withAreas(List<Area> areas) {
@@ -83,12 +114,13 @@ public class ListAreasResponse extends SdkResponse {
             return false;
         }
         ListAreasResponse that = (ListAreasResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.areas, that.areas);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.areas, that.areas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, areas);
+        return Objects.hash(requestId, pageInfo, areas);
     }
 
     @Override
@@ -96,6 +128,7 @@ public class ListAreasResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAreasResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    areas: ").append(toIndentedString(areas)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -27,7 +27,7 @@ public class BatchResizeServersResponse extends SdkResponse {
     }
 
     /**
-     * 订单号，创建包年包月的弹性云服务器时返回该参数。
+     * Get orderId
      * @return orderId
      */
     public String getOrderId() {
@@ -44,7 +44,7 @@ public class BatchResizeServersResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID，变更按需的弹性云服务器规格时返回该参数。
+     * Get jobId
      * @return jobId
      */
     public String getJobId() {

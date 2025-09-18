@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 更新带宽包实例的请求体
@@ -31,9 +32,19 @@ public class UpdateBandwidthPackage {
     private Integer bandwidth;
 
     /**
-     * 带宽包实例在大陆站或国际站的计费方式： - 5：大陆站按95方式计费 - 6：国际站按95方式计费
+     * 带宽包实例在大陆站或国际站的计费方式： - 1：大陆站包周期 - 2：国际站包周期 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
      */
     public static final class BillingModeEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final BillingModeEnum NUMBER_1 = new BillingModeEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final BillingModeEnum NUMBER_2 = new BillingModeEnum(2);
 
         /**
          * Enum NUMBER_5 for value: 5
@@ -49,6 +60,8 @@ public class UpdateBandwidthPackage {
 
         private static Map<Integer, BillingModeEnum> createStaticFields() {
             Map<Integer, BillingModeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
             map.put(5, NUMBER_5);
             map.put(6, NUMBER_6);
             return Collections.unmodifiableMap(map);
@@ -104,6 +117,11 @@ public class UpdateBandwidthPackage {
     @JsonProperty(value = "billing_mode")
 
     private BillingModeEnum billingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prepaid_options")
+
+    private UpdatePrepaidOptions prepaidOptions;
 
     public UpdateBandwidthPackage withName(String name) {
         this.name = name;
@@ -164,7 +182,7 @@ public class UpdateBandwidthPackage {
     }
 
     /**
-     * 带宽包实例在大陆站或国际站的计费方式： - 5：大陆站按95方式计费 - 6：国际站按95方式计费
+     * 带宽包实例在大陆站或国际站的计费方式： - 1：大陆站包周期 - 2：国际站包周期 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
      * @return billingMode
      */
     public BillingModeEnum getBillingMode() {
@@ -173,6 +191,32 @@ public class UpdateBandwidthPackage {
 
     public void setBillingMode(BillingModeEnum billingMode) {
         this.billingMode = billingMode;
+    }
+
+    public UpdateBandwidthPackage withPrepaidOptions(UpdatePrepaidOptions prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+        return this;
+    }
+
+    public UpdateBandwidthPackage withPrepaidOptions(Consumer<UpdatePrepaidOptions> prepaidOptionsSetter) {
+        if (this.prepaidOptions == null) {
+            this.prepaidOptions = new UpdatePrepaidOptions();
+            prepaidOptionsSetter.accept(this.prepaidOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get prepaidOptions
+     * @return prepaidOptions
+     */
+    public UpdatePrepaidOptions getPrepaidOptions() {
+        return prepaidOptions;
+    }
+
+    public void setPrepaidOptions(UpdatePrepaidOptions prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
     }
 
     @Override
@@ -185,12 +229,13 @@ public class UpdateBandwidthPackage {
         }
         UpdateBandwidthPackage that = (UpdateBandwidthPackage) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.billingMode, that.billingMode);
+            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.billingMode, that.billingMode)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, bandwidth, billingMode);
+        return Objects.hash(name, description, bandwidth, billingMode, prepaidOptions);
     }
 
     @Override
@@ -201,6 +246,7 @@ public class UpdateBandwidthPackage {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    billingMode: ").append(toIndentedString(billingMode)).append("\n");
+        sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

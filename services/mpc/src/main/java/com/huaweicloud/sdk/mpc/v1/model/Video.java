@@ -255,9 +255,9 @@ public class Video {
     }
 
     /**
-     * 编码质量等级。  取值如下： - 1：VIDEO_PRESET_HSPEED2 - 2：VIDEO_PRESET_HSPEED - 3：VIDEO_PRESET_NORMAL > 值越大，表示编码的质量越高，转码耗时也越长。 
+     * 编码质量等级。  取值如下： - 1：VIDEO_PRESET_SPEED，编码快速档位 - 3：VIDEO_PRESET_HIGHQUALITY，编码高质量档位 - 4：VIDEO_PRESET_QUALITY，编码质量档位 - 5：VIDEO_PRESET_BALANCE，编码平衡档位  默认值1。 
      * minimum: 1
-     * maximum: 4
+     * maximum: 5
      * @return preset
      */
     public Integer getPreset() {

@@ -11,6 +11,12 @@ import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.BandwidthStatisticsTimelineItem;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
@@ -26,6 +32,8 @@ import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CopyPolicyByIdRequest;
+import com.huaweicloud.sdk.waf.v1.model.CopyPolicyByIdResponse;
 import com.huaweicloud.sdk.waf.v1.model.CountItem;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleResponse;
@@ -81,6 +89,9 @@ import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateValueListRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateValueListResponse;
@@ -121,6 +132,8 @@ import com.huaweicloud.sdk.waf.v1.model.DeletePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteWhiteBlackIpRuleRequest;
@@ -137,6 +150,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMRequestDistributionRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMRequestDistributionResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMScoreDistributionRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMScoreDistributionResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMTimelineRequest;
@@ -189,6 +204,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportHistoryPeriodsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportHistoryPeriodsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
@@ -255,6 +274,10 @@ import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportContentRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportContentResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSourceIpRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowSourceIpResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSubscriptionInfoRequest;
@@ -281,6 +304,9 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMRuleStatusRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleResponse;
@@ -339,6 +365,9 @@ import com.huaweicloud.sdk.waf.v1.model.UpdatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePunishmentRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateSecurityReportSubscriptionRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateValueListRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateValueListResponse;
@@ -380,6 +409,68 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ApplyCertificateToHostRequestBody.class),
             f -> f.withMarshaller(ApplyCertificateToHostRequest::getBody, ApplyCertificateToHostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteCompositeHostsRequest, BatchDeleteCompositeHostsResponse> batchDeleteCompositeHosts =
+        genForBatchDeleteCompositeHosts();
+
+    private static HttpRequestDef<BatchDeleteCompositeHostsRequest, BatchDeleteCompositeHostsResponse> genForBatchDeleteCompositeHosts() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteCompositeHostsRequest, BatchDeleteCompositeHostsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteCompositeHostsRequest.class,
+                    BatchDeleteCompositeHostsResponse.class)
+                .withName("BatchDeleteCompositeHosts")
+                .withUri("/v1/{project_id}/composite-waf/hosts/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteCompositeHostsRequest::getEnterpriseProjectId,
+                BatchDeleteCompositeHostsRequest::setEnterpriseProjectId));
+        builder.<BatchDeleteCompositeHostsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteCompositeHostsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteCompositeHostsRequest::getBody,
+                BatchDeleteCompositeHostsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePoliciesRequest, BatchDeletePoliciesResponse> batchDeletePolicies =
+        genForBatchDeletePolicies();
+
+    private static HttpRequestDef<BatchDeletePoliciesRequest, BatchDeletePoliciesResponse> genForBatchDeletePolicies() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePoliciesRequest, BatchDeletePoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeletePoliciesRequest.class, BatchDeletePoliciesResponse.class)
+                .withName("BatchDeletePolicies")
+                .withUri("/v1/{project_id}/waf/policies/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeletePoliciesRequest::getEnterpriseProjectId,
+                BatchDeletePoliciesRequest::setEnterpriseProjectId));
+        builder.<BatchDeletePoliciesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeletePoliciesRequestBody.class),
+            f -> f.withMarshaller(BatchDeletePoliciesRequest::getBody, BatchDeletePoliciesRequest::setBody));
 
         // response
 
@@ -558,6 +649,40 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmUserBundleRequest::getEnterpriseProjectId,
                 ConfirmUserBundleRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopyPolicyByIdRequest, CopyPolicyByIdResponse> copyPolicyById =
+        genForCopyPolicyById();
+
+    private static HttpRequestDef<CopyPolicyByIdRequest, CopyPolicyByIdResponse> genForCopyPolicyById() {
+        // basic
+        HttpRequestDef.Builder<CopyPolicyByIdRequest, CopyPolicyByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyPolicyByIdRequest.class, CopyPolicyByIdResponse.class)
+                .withName("CopyPolicyById")
+                .withUri("/v1/{project_id}/waf/policies/{src_policy_id}/copy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("src_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyPolicyByIdRequest::getSrcPolicyId, CopyPolicyByIdRequest::setSrcPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyPolicyByIdRequest::getEnterpriseProjectId,
+                CopyPolicyByIdRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("dest_policy_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyPolicyByIdRequest::getDestPolicyName, CopyPolicyByIdRequest::setDestPolicyName));
 
         // response
 
@@ -2108,6 +2233,29 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBotMRequestDistributionRequest::getSite,
                 ListBotMRequestDistributionRequest::setSite));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBotMRulesRequest, ListBotMRulesResponse> listBotMRules =
+        genForListBotMRules();
+
+    private static HttpRequestDef<ListBotMRulesRequest, ListBotMRulesResponse> genForListBotMRules() {
+        // basic
+        HttpRequestDef.Builder<ListBotMRulesRequest, ListBotMRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBotMRulesRequest.class, ListBotMRulesResponse.class)
+                .withName("ListBotMRules")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBotMRulesRequest::getPolicyId, ListBotMRulesRequest::setPolicyId));
 
         // response
 
@@ -4812,6 +4960,42 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse> updateBotMCategoryStatus =
+        genForUpdateBotMCategoryStatus();
+
+    private static HttpRequestDef<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse> genForUpdateBotMCategoryStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateBotMCategoryStatusRequest.class, UpdateBotMCategoryStatusResponse.class)
+                .withName("UpdateBotMCategoryStatus")
+                .withUri("/v1/{project_id}/waf/policy/{policy_id}/bot-manager/category/{category_id}/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMCategoryStatusRequest::getPolicyId,
+                UpdateBotMCategoryStatusRequest::setPolicyId));
+        builder.<String>withRequestField("category_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBotMCategoryStatusRequest::getCategoryId,
+                UpdateBotMCategoryStatusRequest::setCategoryId));
+        builder.<UpdateBotMRuleStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBotMRuleStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateBotMCategoryStatusRequest::getBody, UpdateBotMCategoryStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRule = genForUpdateCcRule();
 
     private static HttpRequestDef<UpdateCcRuleRequest, UpdateCcRuleResponse> genForUpdateCcRule() {
@@ -5612,6 +5796,237 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWhiteBlackIpRuleRequestBody.class),
             f -> f.withMarshaller(UpdateWhiteblackipRuleRequest::getBody, UpdateWhiteblackipRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityReportSubscriptionRequest, CreateSecurityReportSubscriptionResponse> createSecurityReportSubscription =
+        genForCreateSecurityReportSubscription();
+
+    private static HttpRequestDef<CreateSecurityReportSubscriptionRequest, CreateSecurityReportSubscriptionResponse> genForCreateSecurityReportSubscription() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityReportSubscriptionRequest, CreateSecurityReportSubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityReportSubscriptionRequest.class,
+                    CreateSecurityReportSubscriptionResponse.class)
+                .withName("CreateSecurityReportSubscription")
+                .withUri("/v1/{project_id}/waf/security-report/subscriptions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateSecurityReportSubscriptionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSecurityReportSubscriptionRequestBody.class),
+            f -> f.withMarshaller(CreateSecurityReportSubscriptionRequest::getBody,
+                CreateSecurityReportSubscriptionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecurityReportSubscriptionRequest, DeleteSecurityReportSubscriptionResponse> deleteSecurityReportSubscription =
+        genForDeleteSecurityReportSubscription();
+
+    private static HttpRequestDef<DeleteSecurityReportSubscriptionRequest, DeleteSecurityReportSubscriptionResponse> genForDeleteSecurityReportSubscription() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecurityReportSubscriptionRequest, DeleteSecurityReportSubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSecurityReportSubscriptionRequest.class,
+                    DeleteSecurityReportSubscriptionResponse.class)
+                .withName("DeleteSecurityReportSubscription")
+                .withUri("/v1/{project_id}/waf/security-report/subscriptions/{subscription_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityReportSubscriptionRequest::getSubscriptionId,
+                DeleteSecurityReportSubscriptionRequest::setSubscriptionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityReportHistoryPeriodsRequest, ListSecurityReportHistoryPeriodsResponse> listSecurityReportHistoryPeriods =
+        genForListSecurityReportHistoryPeriods();
+
+    private static HttpRequestDef<ListSecurityReportHistoryPeriodsRequest, ListSecurityReportHistoryPeriodsResponse> genForListSecurityReportHistoryPeriods() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityReportHistoryPeriodsRequest, ListSecurityReportHistoryPeriodsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityReportHistoryPeriodsRequest.class,
+                    ListSecurityReportHistoryPeriodsResponse.class)
+                .withName("ListSecurityReportHistoryPeriods")
+                .withUri("/v1/{project_id}/waf/security-report/history-periods")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportHistoryPeriodsRequest::getSubscriptionId,
+                ListSecurityReportHistoryPeriodsRequest::setSubscriptionId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityReportHistoryPeriodsRequest::getLimit,
+                ListSecurityReportHistoryPeriodsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityReportHistoryPeriodsRequest::getOffset,
+                ListSecurityReportHistoryPeriodsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse> listSecurityReportSendingRecords =
+        genForListSecurityReportSendingRecords();
+
+    private static HttpRequestDef<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse> genForListSecurityReportSendingRecords() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityReportSendingRecordsRequest.class,
+                    ListSecurityReportSendingRecordsResponse.class)
+                .withName("ListSecurityReportSendingRecords")
+                .withUri("/v1/{project_id}/waf/security-report/sending-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportSendingRecordsRequest::getReportName,
+                ListSecurityReportSendingRecordsRequest::setReportName));
+        builder.<String>withRequestField("report_category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportSendingRecordsRequest::getReportCategory,
+                ListSecurityReportSendingRecordsRequest::setReportCategory));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityReportSendingRecordsRequest::getLimit,
+                ListSecurityReportSendingRecordsRequest::setLimit));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityReportSendingRecordsRequest::getOffset,
+                ListSecurityReportSendingRecordsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityReportContentRequest, ShowSecurityReportContentResponse> showSecurityReportContent =
+        genForShowSecurityReportContent();
+
+    private static HttpRequestDef<ShowSecurityReportContentRequest, ShowSecurityReportContentResponse> genForShowSecurityReportContent() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityReportContentRequest, ShowSecurityReportContentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityReportContentRequest.class,
+                    ShowSecurityReportContentResponse.class)
+                .withName("ShowSecurityReportContent")
+                .withUri("/v1/{project_id}/waf/security-reports/{report_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityReportContentRequest::getReportId,
+                ShowSecurityReportContentRequest::setReportId));
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityReportContentRequest::getSubscriptionId,
+                ShowSecurityReportContentRequest::setSubscriptionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityReportSubscriptionRequest, ShowSecurityReportSubscriptionResponse> showSecurityReportSubscription =
+        genForShowSecurityReportSubscription();
+
+    private static HttpRequestDef<ShowSecurityReportSubscriptionRequest, ShowSecurityReportSubscriptionResponse> genForShowSecurityReportSubscription() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityReportSubscriptionRequest, ShowSecurityReportSubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityReportSubscriptionRequest.class,
+                    ShowSecurityReportSubscriptionResponse.class)
+                .withName("ShowSecurityReportSubscription")
+                .withUri("/v1/{project_id}/waf/security-report/subscriptions/{subscription_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityReportSubscriptionRequest::getSubscriptionId,
+                ShowSecurityReportSubscriptionRequest::setSubscriptionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityReportSubscriptionRequest, UpdateSecurityReportSubscriptionResponse> updateSecurityReportSubscription =
+        genForUpdateSecurityReportSubscription();
+
+    private static HttpRequestDef<UpdateSecurityReportSubscriptionRequest, UpdateSecurityReportSubscriptionResponse> genForUpdateSecurityReportSubscription() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityReportSubscriptionRequest, UpdateSecurityReportSubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityReportSubscriptionRequest.class,
+                    UpdateSecurityReportSubscriptionResponse.class)
+                .withName("UpdateSecurityReportSubscription")
+                .withUri("/v1/{project_id}/waf/security-report/subscriptions/{subscription_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityReportSubscriptionRequest::getSubscriptionId,
+                UpdateSecurityReportSubscriptionRequest::setSubscriptionId));
+        builder.<UpdateSecurityReportSubscriptionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSecurityReportSubscriptionRequestBody.class),
+            f -> f.withMarshaller(UpdateSecurityReportSubscriptionRequest::getBody,
+                UpdateSecurityReportSubscriptionRequest::setBody));
 
         // response
 

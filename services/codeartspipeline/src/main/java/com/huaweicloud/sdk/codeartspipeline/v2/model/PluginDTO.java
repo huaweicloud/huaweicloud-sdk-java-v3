@@ -69,6 +69,16 @@ public class PluginDTO {
     private String maintainers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugin_composition_type")
+
+    private String pluginCompositionType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_version")
+
+    private String manifestVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -84,6 +94,11 @@ public class PluginDTO {
     private PluginDTOExecutionInfo executionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_info")
+
+    private List<PluginDTOOutputInfo> outputInfo = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_info")
 
     private List<PluginDTOInputInfo> inputInfo = null;
@@ -94,7 +109,7 @@ public class PluginDTO {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 扩展插件唯一ID。可以通过[查询插件版本详情](ShowPluginVersion.xml)接口，获取响应参数中unique_id。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -111,7 +126,7 @@ public class PluginDTO {
     }
 
     /**
-     * 图标URL
+     * **参数解释**： 插件展示图标URL。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return iconUrl
      */
     public String getIconUrl() {
@@ -128,7 +143,7 @@ public class PluginDTO {
     }
 
     /**
-     * 运行属性
+     * **参数解释**： 运行属性。 **约束限制**： 不涉及。 **取值范围**： - agent：基于agent运行。 - agentless：无需agent运行。 **默认取值**： 不涉及。 
      * @return runtimeAttribution
      */
     public String getRuntimeAttribution() {
@@ -145,7 +160,7 @@ public class PluginDTO {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 插件名。 **约束限制**： 仅支持输入大小写英文字母、数字、'-'、'_'。 **取值范围**： 1到50位字符。 **默认取值**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -162,7 +177,7 @@ public class PluginDTO {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 展示名。 **约束限制**： 仅支持输入大小写英文字母、中文、空格、数字、'-'、'_'、'.'。 **取值范围**： 1到50位字符。 **默认取值**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -179,7 +194,7 @@ public class PluginDTO {
     }
 
     /**
-     * 业务类型
+     * **参数解释**： 业务类型。 **约束限制**： 仅支持输入大小写英文字母、数字、'-'、'_'。 **取值范围**： 1到50位字符。 **默认取值**： 不涉及。 
      * @return businessType
      */
     public String getBusinessType() {
@@ -196,7 +211,7 @@ public class PluginDTO {
     }
 
     /**
-     * 业务类型展示名
+     * **参数解释**： 插件业务类型展示名。 **约束限制**： 不涉及。 **取值范围**： - 构建。 - 代码检查。 - 部署。 - 测试。 - 通用。 **默认取值**： 不涉及。 
      * @return businessTypeDisplayName
      */
     public String getBusinessTypeDisplayName() {
@@ -213,7 +228,7 @@ public class PluginDTO {
     }
 
     /**
-     * 描述
+     * **参数解释**： 插件描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -230,7 +245,7 @@ public class PluginDTO {
     }
 
     /**
-     * 是否私有
+     * **参数解释**： 是否私有插件。 **约束限制**： 不涉及。 **取值范围**： - 1：私有插件。 - 0：公开插件。 **默认取值**： 0。 
      * @return isPrivate
      */
     public Integer getIsPrivate() {
@@ -247,7 +262,7 @@ public class PluginDTO {
     }
 
     /**
-     * 局点
+     * **参数解释**： 局点。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return region
      */
     public String getRegion() {
@@ -264,7 +279,7 @@ public class PluginDTO {
     }
 
     /**
-     * 维护者
+     * **参数解释**： 插件维护者。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return maintainers
      */
     public String getMaintainers() {
@@ -275,13 +290,47 @@ public class PluginDTO {
         this.maintainers = maintainers;
     }
 
+    public PluginDTO withPluginCompositionType(String pluginCompositionType) {
+        this.pluginCompositionType = pluginCompositionType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 插件的组合类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return pluginCompositionType
+     */
+    public String getPluginCompositionType() {
+        return pluginCompositionType;
+    }
+
+    public void setPluginCompositionType(String pluginCompositionType) {
+        this.pluginCompositionType = pluginCompositionType;
+    }
+
+    public PluginDTO withManifestVersion(String manifestVersion) {
+        this.manifestVersion = manifestVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 用于区分新旧版数据版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return manifestVersion
+     */
+    public String getManifestVersion() {
+        return manifestVersion;
+    }
+
+    public void setManifestVersion(String manifestVersion) {
+        this.manifestVersion = manifestVersion;
+    }
+
     public PluginDTO withVersion(String version) {
         this.version = version;
         return this;
     }
 
     /**
-     * 版本号
+     * **参数解释**： 插件版本号。 **约束限制**： 必须是类似 x.xx.xx（例如：1.0.2） 的格式，其中：x 是 1 到 2 位的数字（范围 0 到 99）。xx 是点后跟随的数字部分，且每部分可以是 1 位或 2 位数字。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -298,7 +347,7 @@ public class PluginDTO {
     }
 
     /**
-     * 版本号说明
+     * **参数解释**： 插件小版本版本号说明。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return versionDescription
      */
     public String getVersionDescription() {
@@ -335,6 +384,39 @@ public class PluginDTO {
         this.executionInfo = executionInfo;
     }
 
+    public PluginDTO withOutputInfo(List<PluginDTOOutputInfo> outputInfo) {
+        this.outputInfo = outputInfo;
+        return this;
+    }
+
+    public PluginDTO addOutputInfoItem(PluginDTOOutputInfo outputInfoItem) {
+        if (this.outputInfo == null) {
+            this.outputInfo = new ArrayList<>();
+        }
+        this.outputInfo.add(outputInfoItem);
+        return this;
+    }
+
+    public PluginDTO withOutputInfo(Consumer<List<PluginDTOOutputInfo>> outputInfoSetter) {
+        if (this.outputInfo == null) {
+            this.outputInfo = new ArrayList<>();
+        }
+        outputInfoSetter.accept(this.outputInfo);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 插件输出相关内容。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+     * @return outputInfo
+     */
+    public List<PluginDTOOutputInfo> getOutputInfo() {
+        return outputInfo;
+    }
+
+    public void setOutputInfo(List<PluginDTOOutputInfo> outputInfo) {
+        this.outputInfo = outputInfo;
+    }
+
     public PluginDTO withInputInfo(List<PluginDTOInputInfo> inputInfo) {
         this.inputInfo = inputInfo;
         return this;
@@ -357,7 +439,7 @@ public class PluginDTO {
     }
 
     /**
-     * 输入信息
+     * **参数解释**： 输入信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return inputInfo
      */
     public List<PluginDTOInputInfo> getInputInfo() {
@@ -384,9 +466,11 @@ public class PluginDTO {
             && Objects.equals(this.businessTypeDisplayName, that.businessTypeDisplayName)
             && Objects.equals(this.description, that.description) && Objects.equals(this.isPrivate, that.isPrivate)
             && Objects.equals(this.region, that.region) && Objects.equals(this.maintainers, that.maintainers)
-            && Objects.equals(this.version, that.version)
+            && Objects.equals(this.pluginCompositionType, that.pluginCompositionType)
+            && Objects.equals(this.manifestVersion, that.manifestVersion) && Objects.equals(this.version, that.version)
             && Objects.equals(this.versionDescription, that.versionDescription)
-            && Objects.equals(this.executionInfo, that.executionInfo) && Objects.equals(this.inputInfo, that.inputInfo);
+            && Objects.equals(this.executionInfo, that.executionInfo)
+            && Objects.equals(this.outputInfo, that.outputInfo) && Objects.equals(this.inputInfo, that.inputInfo);
     }
 
     @Override
@@ -402,9 +486,12 @@ public class PluginDTO {
             isPrivate,
             region,
             maintainers,
+            pluginCompositionType,
+            manifestVersion,
             version,
             versionDescription,
             executionInfo,
+            outputInfo,
             inputInfo);
     }
 
@@ -423,9 +510,12 @@ public class PluginDTO {
         sb.append("    isPrivate: ").append(toIndentedString(isPrivate)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    maintainers: ").append(toIndentedString(maintainers)).append("\n");
+        sb.append("    pluginCompositionType: ").append(toIndentedString(pluginCompositionType)).append("\n");
+        sb.append("    manifestVersion: ").append(toIndentedString(manifestVersion)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
         sb.append("    executionInfo: ").append(toIndentedString(executionInfo)).append("\n");
+        sb.append("    outputInfo: ").append(toIndentedString(outputInfo)).append("\n");
         sb.append("    inputInfo: ").append(toIndentedString(inputInfo)).append("\n");
         sb.append("}");
         return sb.toString();

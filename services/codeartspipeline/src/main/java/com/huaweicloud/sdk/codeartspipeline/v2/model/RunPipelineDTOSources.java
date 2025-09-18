@@ -27,7 +27,7 @@ public class RunPipelineDTOSources {
     }
 
     /**
-     * 源类型
+     * **参数解释**： 流水线源类型，目前支持“code”、“artifact”等代码源类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return type
      */
     public String getType() {

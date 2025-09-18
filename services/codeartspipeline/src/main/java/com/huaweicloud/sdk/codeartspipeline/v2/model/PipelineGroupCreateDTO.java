@@ -31,7 +31,7 @@ public class PipelineGroupCreateDTO {
     }
 
     /**
-     * 流水线分组名
+     * **参数解释**： 流水线分组名。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -48,7 +48,7 @@ public class PipelineGroupCreateDTO {
     }
 
     /**
-     * 项目名
+     * **参数解释**： CodeArts项目ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return projectId
      */
     public String getProjectId() {
@@ -65,7 +65,7 @@ public class PipelineGroupCreateDTO {
     }
 
     /**
-     * 父分组ID
+     * **参数解释**： 父分组ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return parentId
      */
     public String getParentId() {

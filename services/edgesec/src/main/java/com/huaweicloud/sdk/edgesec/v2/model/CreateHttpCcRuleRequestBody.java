@@ -58,10 +58,92 @@ public class CreateHttpCcRuleRequestBody {
 
     private Integer lockTime;
 
+    /**
+     * 限速模式：   - ip：IP限速，根据IP区分单个Web访问者。   - cookie：用户限速，根据Cookie键值区分单个Web访问者   - header：用户限速，根据Header区分单个Web访问者。   - ip_segment_c：根据IP C段区分单个Web访问者。
+     */
+    public static final class TagTypeEnum {
+
+        /**
+         * Enum IP for value: "ip"
+         */
+        public static final TagTypeEnum IP = new TagTypeEnum("ip");
+
+        /**
+         * Enum COOKIE for value: "cookie"
+         */
+        public static final TagTypeEnum COOKIE = new TagTypeEnum("cookie");
+
+        /**
+         * Enum HEADER for value: "header"
+         */
+        public static final TagTypeEnum HEADER = new TagTypeEnum("header");
+
+        /**
+         * Enum IP_SEGMENT_C for value: "ip_segment_c"
+         */
+        public static final TagTypeEnum IP_SEGMENT_C = new TagTypeEnum("ip_segment_c");
+
+        private static final Map<String, TagTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TagTypeEnum> createStaticFields() {
+            Map<String, TagTypeEnum> map = new HashMap<>();
+            map.put("ip", IP);
+            map.put("cookie", COOKIE);
+            map.put("header", HEADER);
+            map.put("ip_segment_c", IP_SEGMENT_C);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TagTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TagTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TagTypeEnum(value));
+        }
+
+        public static TagTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TagTypeEnum) {
+                return this.value.equals(((TagTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_type")
 
-    private String tagType;
+    private TagTypeEnum tagType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_index")
@@ -405,20 +487,20 @@ public class CreateHttpCcRuleRequestBody {
         this.lockTime = lockTime;
     }
 
-    public CreateHttpCcRuleRequestBody withTagType(String tagType) {
+    public CreateHttpCcRuleRequestBody withTagType(TagTypeEnum tagType) {
         this.tagType = tagType;
         return this;
     }
 
     /**
-     * 防护模式
+     * 限速模式：   - ip：IP限速，根据IP区分单个Web访问者。   - cookie：用户限速，根据Cookie键值区分单个Web访问者   - header：用户限速，根据Header区分单个Web访问者。   - ip_segment_c：根据IP C段区分单个Web访问者。
      * @return tagType
      */
-    public String getTagType() {
+    public TagTypeEnum getTagType() {
         return tagType;
     }
 
-    public void setTagType(String tagType) {
+    public void setTagType(TagTypeEnum tagType) {
         this.tagType = tagType;
     }
 

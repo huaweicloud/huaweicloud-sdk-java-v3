@@ -84,7 +84,7 @@ public class Artifact {
     }
 
     /**
-     * 项目ID
+     * **参数解释**： 项目ID，获取方式请参见[获取项目ID](https://support.huaweicloud.com/api-codeartsrepo/codehub_api_0014.html)。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return projectId
      */
     public String getProjectId() {
@@ -101,7 +101,7 @@ public class Artifact {
     }
 
     /**
-     * 名称
+     * **参数解释**： 产物名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -118,7 +118,7 @@ public class Artifact {
     }
 
     /**
-     * 版本
+     * **参数解释**： 产物版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return artifactVersion
      */
     public String getArtifactVersion() {
@@ -135,7 +135,7 @@ public class Artifact {
     }
 
     /**
-     * 存放平台类型
+     * **参数解释**： 产物存放平台。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return uploadTarget
      */
     public String getUploadTarget() {
@@ -152,7 +152,7 @@ public class Artifact {
     }
 
     /**
-     * 产物包类型
+     * **参数解释**： 产物包类型，例如jar。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return artifactPackageType
      */
     public String getArtifactPackageType() {
@@ -169,7 +169,7 @@ public class Artifact {
     }
 
     /**
-     * 制品仓路径
+     * **参数解释**： 制品仓文件存放路径。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return artifactUri
      */
     public String getArtifactUri() {
@@ -186,7 +186,7 @@ public class Artifact {
     }
 
     /**
-     * 制品仓下载链接
+     * **参数解释**： 制品仓下载链接。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return artifactDownloadUrlWithId
      */
     public String getArtifactDownloadUrlWithId() {
@@ -203,7 +203,7 @@ public class Artifact {
     }
 
     /**
-     * 产物类型
+     * **参数解释**： 产物类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return artifactType
      */
     public String getArtifactType() {
@@ -236,7 +236,7 @@ public class Artifact {
     }
 
     /**
-     * 哈希码
+     * **参数解释**： 产物哈希码。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return hashCode
      */
     public List<ArtifactHashCode> getHashCode() {
@@ -253,7 +253,7 @@ public class Artifact {
     }
 
     /**
-     * 构建任务ID
+     * **参数解释**： 构建任务ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return jobId
      */
     public String getJobId() {
@@ -270,7 +270,7 @@ public class Artifact {
     }
 
     /**
-     * 构建任务编号
+     * **参数解释**： 构建任务编号。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return buildNo
      */
     public Integer getBuildNo() {
@@ -287,7 +287,7 @@ public class Artifact {
     }
 
     /**
-     * 构建任务序号
+     * **参数解释**： 构建任务序号。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return dailyBuildNumber
      */
     public String getDailyBuildNumber() {
@@ -304,7 +304,7 @@ public class Artifact {
     }
 
     /**
-     * 产物大小
+     * **参数解释**： 产物大小。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return fileSize
      */
     public String getFileSize() {

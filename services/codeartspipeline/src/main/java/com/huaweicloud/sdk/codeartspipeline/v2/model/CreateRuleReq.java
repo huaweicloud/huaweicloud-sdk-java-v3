@@ -54,7 +54,7 @@ public class CreateRuleReq {
     }
 
     /**
-     * 类型：Build,Gate,Deploy,Test,Normal
+     * **参数解释**： 创建规则的类型。 **约束限制**： 不涉及。 **取值范围**： - Build。 - Gate。 - Deploy。 - Test。 - Normal。 **默认取值**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -71,7 +71,7 @@ public class CreateRuleReq {
     }
 
     /**
-     * 规则名称
+     * **参数解释**： 规则名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -88,7 +88,7 @@ public class CreateRuleReq {
     }
 
     /**
-     * 布局内容
+     * **参数解释**： 布局内容。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return layoutContent
      */
     public String getLayoutContent() {
@@ -105,7 +105,7 @@ public class CreateRuleReq {
     }
 
     /**
-     * 插件ID
+     * **参数解释**： 扩展插件唯一ID。可以通过[查询插件版本详情](ShowPluginVersion.xml)接口，获取响应参数中unique_id。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return pluginId
      */
     public String getPluginId() {
@@ -122,7 +122,7 @@ public class CreateRuleReq {
     }
 
     /**
-     * 插件名称
+     * **参数解释**： 扩展插件名称。 **约束限制**： 仅支持输入大小写英文字母、数字、'-'、'_'。 **取值范围**： 1到50位字符。 **默认取值**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -139,7 +139,7 @@ public class CreateRuleReq {
     }
 
     /**
-     * 插件版本号
+     * **参数解释**： 插件版本号。 **约束限制**： 必须是类似 x.xx.xx 的格式，其中：x 是 1 到 2 位的数字（范围 0 到 99）。xx 是点后跟随的数字部分，且每部分可以是 1 位或 2 位数字。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return pluginVersion
      */
     public String getPluginVersion() {
@@ -172,7 +172,7 @@ public class CreateRuleReq {
     }
 
     /**
-     * 规则属性分组列表
+     * **参数解释**： 规则属性分组列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return content
      */
     public List<RuleContent> getContent() {

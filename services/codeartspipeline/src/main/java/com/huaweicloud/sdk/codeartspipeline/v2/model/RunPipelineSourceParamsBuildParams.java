@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 构建参数
+ * **参数解释**： 构建相关参数。 **取值范围**： 不涉及。 
  */
 public class RunPipelineSourceParamsBuildParams {
 
@@ -81,7 +81,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 合并请求事件类型
+     * **参数解释**： 合并请求事件类型 **取值范围**： - open：打开。 - reopen：重开。 - update：更新。 - merge：合并。 
      * @return action
      */
     public String getAction() {
@@ -98,7 +98,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 基于分支还是tag运行
+     * **参数解释**： 基于分支还是tag运行。 **取值范围**： - branch：分支触发。 - tag：标签触发。 
      * @return buildType
      */
     public String getBuildType() {
@@ -115,7 +115,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 代码仓提交ID
+     * **参数解释**： 代码仓提交ID。 **取值范围**： 不涉及。 
      * @return commitId
      */
     public String getCommitId() {
@@ -132,7 +132,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 运行事件类型
+     * **参数解释**： CodeArts项目ID。 **取值范围**： - Manual：手动触发。 - Scheduler：定时任务。 - MR：MR触发。 - Push：Push事件触发。 - CreateTag：Tag事件触发。 - Issue：Issue触发。 - Note：评论触发。 
      * @return eventType
      */
     public String getEventType() {
@@ -149,7 +149,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 合并请求ID
+     * **参数解释**： 合并请求ID。 **取值范围**： 不涉及。 
      * @return mergeId
      */
     public String getMergeId() {
@@ -166,7 +166,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 代码仓提交信息
+     * **参数解释**： 代码仓提交信息。 **取值范围**： 不涉及。 
      * @return message
      */
     public String getMessage() {
@@ -183,7 +183,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 源分支
+     * **参数解释**： 源分支。 **取值范围**： 不涉及。 
      * @return sourceBranch
      */
     public String getSourceBranch() {
@@ -200,7 +200,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 标签
+     * **参数解释**： 标签。 **取值范围**： 不涉及。 
      * @return tag
      */
     public String getTag() {
@@ -217,7 +217,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 目标分支
+     * **参数解释**： 目标分支。 **取值范围**： 不涉及。 
      * @return targetBranch
      */
     public String getTargetBranch() {
@@ -234,7 +234,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * codehub代码仓ID
+     * **参数解释**： Repo代码仓ID。 **取值范围**： 不涉及。 
      * @return codehubId
      */
     public String getCodehubId() {
@@ -251,7 +251,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 源codehub代码仓ID
+     * **参数解释**： 源Repo代码仓ID。 **取值范围**： 不涉及。 
      * @return sourceCodehubId
      */
     public String getSourceCodehubId() {
@@ -268,7 +268,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 源codehub代码仓地址
+     * **参数解释**： 源Repo代码仓地址。 **取值范围**： 不涉及。 
      * @return sourceCodehubUrl
      */
     public String getSourceCodehubUrl() {
@@ -285,7 +285,7 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     /**
-     * 源codehub代码仓http地址
+     * **参数解释**： 源Repo代码仓http地址。 **取值范围**： 不涉及。 
      * @return sourceCodehubHttpUrl
      */
     public String getSourceCodehubHttpUrl() {

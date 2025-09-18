@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 流水线日志查询请求体 startOffset 和 endOffset 均设置为 0，则代表查询全量日志。
+ * **参数解释**： 流水线日志查询请求体。 **约束限制**： startOffset 和 endOffset 均设置为 0，则代表查询全量日志。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
  */
 public class LogQuery {
 
@@ -36,7 +36,7 @@ public class LogQuery {
     }
 
     /**
-     * 日志起始偏移
+     * **参数解释**： 日志起始偏移。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return startOffset
      */
     public Long getStartOffset() {
@@ -53,7 +53,7 @@ public class LogQuery {
     }
 
     /**
-     * 日志结束偏移
+     * **参数解释**： 日志结束偏移。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return endOffset
      */
     public Long getEndOffset() {
@@ -70,7 +70,7 @@ public class LogQuery {
     }
 
     /**
-     * 最大日志行数
+     * **参数解释**： 最大日志行数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return limit
      */
     public Long getLimit() {
@@ -87,7 +87,7 @@ public class LogQuery {
     }
 
     /**
-     * 排序规则[\"asc\",\"desc\"]
+     * **参数解释**： 排序规则。 **约束限制**： 不涉及。 **取值范围**： - asc：按排序字段升序。 - desc：按排序字段降序 **默认取值**： 不涉及。 
      * @return sort
      */
     public String getSort() {

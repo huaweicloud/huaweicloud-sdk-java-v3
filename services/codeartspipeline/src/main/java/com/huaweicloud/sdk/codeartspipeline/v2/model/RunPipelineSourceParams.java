@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 源参数
+ * **参数解释**： 代码源相关参数。 **取值范围**： 不涉及。 
  */
 public class RunPipelineSourceParams {
 
@@ -67,7 +67,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * 代码仓类型
+     * **参数解释**： 代码仓类型。 **取值范围**： - codehub。 - gitee。 - github。 - gitcode。 - gitlab。 
      * @return gitType
      */
     public String getGitType() {
@@ -84,7 +84,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * 代码仓https地址
+     * **参数解释**： 代码仓https地址。 **取值范围**： 不涉及。 
      * @return gitUrl
      */
     public String getGitUrl() {
@@ -101,7 +101,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * 代码仓ssh地址
+     * **参数解释**： 代码仓ssh地址。 **取值范围**： 不涉及。 
      * @return sshGitUrl
      */
     public String getSshGitUrl() {
@@ -118,7 +118,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * 代码仓页面地址
+     * **参数解释**： 代码仓页面地址。 **取值范围**： 不涉及。 
      * @return webUrl
      */
     public String getWebUrl() {
@@ -135,7 +135,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * 代码仓名
+     * **参数解释**： 代码仓名。 **取值范围**： 不涉及。 
      * @return repoName
      */
     public String getRepoName() {
@@ -152,7 +152,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * 默认分支
+     * **参数解释**： 默认分支。 **取值范围**： 不涉及。 
      * @return defaultBranch
      */
     public String getDefaultBranch() {
@@ -169,7 +169,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * 扩展点ID
+     * **参数解释**： 扩展点ID。 **取值范围**： 不涉及。 
      * @return endpointId
      */
     public String getEndpointId() {
@@ -186,7 +186,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * codehub代码仓ID
+     * **参数解释**： Repo代码仓ID。 **取值范围**： 不涉及。 
      * @return codehubId
      */
     public String getCodehubId() {
@@ -203,7 +203,7 @@ public class RunPipelineSourceParams {
     }
 
     /**
-     * 代码仓别名
+     * **参数解释**： 代码仓别名。 **取值范围**： 不涉及。 
      * @return alias
      */
     public String getAlias() {

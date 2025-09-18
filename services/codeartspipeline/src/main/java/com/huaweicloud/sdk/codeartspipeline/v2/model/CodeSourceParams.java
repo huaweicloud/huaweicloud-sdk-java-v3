@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 源参数
+ * **参数解释**： 流水线源参数，包含流水线源的详细信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
  */
 public class CodeSourceParams {
 
@@ -61,7 +61,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * 代码仓类型
+     * **参数解释**： 代码仓类型。 **约束限制**： 不涉及。 **取值范围**： - codehub。 - gitee。 - github。 - gitcode。 - gitlab。 **默认取值**： 不涉及。 
      * @return gitType
      */
     public String getGitType() {
@@ -78,7 +78,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * codehub代码仓ID
+     * **参数解释**： CodeArts Repo代码仓ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return codehubId
      */
     public String getCodehubId() {
@@ -95,7 +95,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * 扩展点ID
+     * **参数解释**： 代码源扩展点ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return endpointId
      */
     public String getEndpointId() {
@@ -112,7 +112,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * 默认分支
+     * **参数解释**： 默认分支。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return defaultBranch
      */
     public String getDefaultBranch() {
@@ -129,7 +129,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * 代码仓https地址
+     * **参数解释**： Git仓库https地址，例如https://example.com/CloudPipelinezycs00001/2000.git。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return gitUrl
      */
     public String getGitUrl() {
@@ -146,7 +146,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * 代码仓ssh地址
+     * **参数解释**： ssh_git链接地址，例如https://example.com/CloudPipelinezycs00001/2000.git。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return sshGitUrl
      */
     public String getSshGitUrl() {
@@ -163,7 +163,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * 代码仓页面地址
+     * **参数解释**： 网页url。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return webUrl
      */
     public String getWebUrl() {
@@ -180,7 +180,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * 代码仓名称
+     * **参数解释**： 流水线源名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return repoName
      */
     public String getRepoName() {
@@ -197,7 +197,7 @@ public class CodeSourceParams {
     }
 
     /**
-     * 代码仓别名
+     * **参数解释**： 代码仓别名。 **约束限制**： 不涉及。 **取值范围**： 仅支持输入大小写英文字母、数字、“_”，至多128个字符。 **默认取值**： 不涉及。 
      * @return alias
      */
     public String getAlias() {

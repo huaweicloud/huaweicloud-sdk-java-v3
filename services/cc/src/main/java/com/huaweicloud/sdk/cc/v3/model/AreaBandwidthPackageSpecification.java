@@ -16,12 +16,12 @@ public class AreaBandwidthPackageSpecification {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_area_id")
 
-    private AreaIdDef localAreaId;
+    private LocalAreaIdDef localAreaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_area_id")
 
-    private AreaIdDef remoteAreaId;
+    private RemoteAreaIdDef remoteAreaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -33,7 +33,7 @@ public class AreaBandwidthPackageSpecification {
 
     private List<SpecificationCodeInfo> specCodes = null;
 
-    public AreaBandwidthPackageSpecification withLocalAreaId(AreaIdDef localAreaId) {
+    public AreaBandwidthPackageSpecification withLocalAreaId(LocalAreaIdDef localAreaId) {
         this.localAreaId = localAreaId;
         return this;
     }
@@ -42,15 +42,15 @@ public class AreaBandwidthPackageSpecification {
      * Get localAreaId
      * @return localAreaId
      */
-    public AreaIdDef getLocalAreaId() {
+    public LocalAreaIdDef getLocalAreaId() {
         return localAreaId;
     }
 
-    public void setLocalAreaId(AreaIdDef localAreaId) {
+    public void setLocalAreaId(LocalAreaIdDef localAreaId) {
         this.localAreaId = localAreaId;
     }
 
-    public AreaBandwidthPackageSpecification withRemoteAreaId(AreaIdDef remoteAreaId) {
+    public AreaBandwidthPackageSpecification withRemoteAreaId(RemoteAreaIdDef remoteAreaId) {
         this.remoteAreaId = remoteAreaId;
         return this;
     }
@@ -59,11 +59,11 @@ public class AreaBandwidthPackageSpecification {
      * Get remoteAreaId
      * @return remoteAreaId
      */
-    public AreaIdDef getRemoteAreaId() {
+    public RemoteAreaIdDef getRemoteAreaId() {
         return remoteAreaId;
     }
 
-    public void setRemoteAreaId(AreaIdDef remoteAreaId) {
+    public void setRemoteAreaId(RemoteAreaIdDef remoteAreaId) {
         this.remoteAreaId = remoteAreaId;
     }
 

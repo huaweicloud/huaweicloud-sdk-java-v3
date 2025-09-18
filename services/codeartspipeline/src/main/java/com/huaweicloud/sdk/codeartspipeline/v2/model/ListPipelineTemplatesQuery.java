@@ -51,7 +51,7 @@ public class ListPipelineTemplatesQuery {
     }
 
     /**
-     * 创建模板时，用户选择的语言
+     * **参数解释**： 模板语言。 **约束限制**： 不涉及。 **取值范围**： - java。 - python。 - nodejs。 - go。 - net。 - cpp。 - php。 - other。 - none。 **默认取值**： 不涉及。 
      * @return language
      */
     public String getLanguage() {
@@ -68,7 +68,7 @@ public class ListPipelineTemplatesQuery {
     }
 
     /**
-     * 是否系统模板
+     * **参数解释**： 是否系统模板。 **约束限制**： 不涉及。 **取值范围**： - true：是系统模板 - false：不是系统模板。 **默认取值**： 不涉及。 
      * @return isSystem
      */
     public Boolean getIsSystem() {
@@ -85,7 +85,7 @@ public class ListPipelineTemplatesQuery {
     }
 
     /**
-     * 模板名称
+     * **参数解释**： 模板名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -102,7 +102,7 @@ public class ListPipelineTemplatesQuery {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询，offset大于等于0，默认为0
+     * **参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： offset大于等于0。 **默认取值**： 默认为0。 
      * @return offset
      */
     public Long getOffset() {
@@ -119,7 +119,7 @@ public class ListPipelineTemplatesQuery {
     }
 
     /**
-     * 每次查询的条目数量，默认为10。
+     * **参数解释**： 每次查询的条目数量。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 默认为10。 
      * @return limit
      */
     public Long getLimit() {
@@ -136,7 +136,7 @@ public class ListPipelineTemplatesQuery {
     }
 
     /**
-     * 用于排序的字段，非必选。取值为：name，create_time
+     * **参数解释**： 用于排序的字段，非必选。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return sortKey
      */
     public String getSortKey() {
@@ -153,7 +153,7 @@ public class ListPipelineTemplatesQuery {
     }
 
     /**
-     * 排序类型，非必选。asc按排序字段升序，desc按排序字段降序
+     * **参数解释**：   排序类型，非必选。 **约束限制**： 不涉及。 **取值范围**： - asc：按排序字段升序。 - desc：按排序字段降序。 **默认取值**： 不涉及。 
      * @return sortDir
      */
     public String getSortDir() {

@@ -39,6 +39,11 @@ public class CcCondition {
         public static final CategoryEnum IPV6 = new CategoryEnum("ipv6");
 
         /**
+         * Enum ASN for value: "asn"
+         */
+        public static final CategoryEnum ASN = new CategoryEnum("asn");
+
+        /**
          * Enum PARAMS for value: "params"
          */
         public static final CategoryEnum PARAMS = new CategoryEnum("params");
@@ -49,9 +54,54 @@ public class CcCondition {
         public static final CategoryEnum COOKIE = new CategoryEnum("cookie");
 
         /**
+         * Enum REFERER for value: "referer"
+         */
+        public static final CategoryEnum REFERER = new CategoryEnum("referer");
+
+        /**
+         * Enum USER_AGENT for value: "user-agent"
+         */
+        public static final CategoryEnum USER_AGENT = new CategoryEnum("user-agent");
+
+        /**
          * Enum HEADER for value: "header"
          */
         public static final CategoryEnum HEADER = new CategoryEnum("header");
+
+        /**
+         * Enum RESPONSE_CODE for value: "response_code"
+         */
+        public static final CategoryEnum RESPONSE_CODE = new CategoryEnum("response_code");
+
+        /**
+         * Enum RESPONSE_HEADER for value: "response_header"
+         */
+        public static final CategoryEnum RESPONSE_HEADER = new CategoryEnum("response_header");
+
+        /**
+         * Enum RESPONSE_BODY for value: "response_body"
+         */
+        public static final CategoryEnum RESPONSE_BODY = new CategoryEnum("response_body");
+
+        /**
+         * Enum REQUEST_BODY for value: "request_body"
+         */
+        public static final CategoryEnum REQUEST_BODY = new CategoryEnum("request_body");
+
+        /**
+         * Enum METHOD for value: "method"
+         */
+        public static final CategoryEnum METHOD = new CategoryEnum("method");
+
+        /**
+         * Enum TLS_FINGERPRINT for value: "tls_fingerprint"
+         */
+        public static final CategoryEnum TLS_FINGERPRINT = new CategoryEnum("tls_fingerprint");
+
+        /**
+         * Enum TLS_JA3_FINGERPRINT for value: "tls_ja3_fingerprint"
+         */
+        public static final CategoryEnum TLS_JA3_FINGERPRINT = new CategoryEnum("tls_ja3_fingerprint");
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
 
@@ -60,9 +110,19 @@ public class CcCondition {
             map.put("url", URL);
             map.put("ip", IP);
             map.put("ipv6", IPV6);
+            map.put("asn", ASN);
             map.put("params", PARAMS);
             map.put("cookie", COOKIE);
+            map.put("referer", REFERER);
+            map.put("user-agent", USER_AGENT);
             map.put("header", HEADER);
+            map.put("response_code", RESPONSE_CODE);
+            map.put("response_header", RESPONSE_HEADER);
+            map.put("response_body", RESPONSE_BODY);
+            map.put("request_body", REQUEST_BODY);
+            map.put("method", METHOD);
+            map.put("tls_fingerprint", TLS_FINGERPRINT);
+            map.put("tls_ja3_fingerprint", TLS_JA3_FINGERPRINT);
             return Collections.unmodifiableMap(map);
         }
 

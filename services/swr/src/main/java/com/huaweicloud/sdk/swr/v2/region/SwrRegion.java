@@ -77,6 +77,10 @@ public class SwrRegion {
     public static final Region AP_SOUTHEAST_5 =
         new Region("ap-southeast-5", "https://swr-api.ap-southeast-5.myhuaweicloud.com");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://swr-api.cn-east-5.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://swr-api.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SWR");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -111,6 +115,8 @@ public class SwrRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("eu-west-0", EU_WEST_0);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

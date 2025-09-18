@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -49,6 +50,11 @@ public class PageInfoBusinessTypeDefinitionVOData {
     private Boolean disabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "addables")
+
+    private List<Map<String, Boolean>> addables = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
 
     private List<String> conditions = null;
@@ -64,7 +70,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 业务类型
+     * **参数解释**： 业务类型。 **取值范围**： 不涉及。 
      * @return businessType
      */
     public String getBusinessType() {
@@ -81,7 +87,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 展示名。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -98,7 +104,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 唯一ID。 **取值范围**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -115,7 +121,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 可编辑
+     * **参数解释**： 是否可编辑。 **取值范围**： - true：可编辑。 - false：不可编辑。 
      * @return editable
      */
     public Boolean getEditable() {
@@ -132,7 +138,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 可移除
+     * **参数解释**： 是否可移除。 **取值范围**： - true：可移除。 - false：不可移除。 
      * @return removable
      */
     public Boolean getRemovable() {
@@ -149,7 +155,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 可复制
+     * **参数解释**： 是否可复制。 **取值范围**： - true：可复制。 - false：不可复制。 
      * @return cloneable
      */
     public Boolean getCloneable() {
@@ -166,7 +172,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 禁用
+     * **参数解释**： 是否禁用。 **取值范围**： - true：禁用。 - false：未禁用。 
      * @return disabled
      */
     public Boolean getDisabled() {
@@ -175,6 +181,39 @@ public class PageInfoBusinessTypeDefinitionVOData {
 
     public void setDisabled(Boolean disabled) {
         this.disabled = disabled;
+    }
+
+    public PageInfoBusinessTypeDefinitionVOData withAddables(List<Map<String, Boolean>> addables) {
+        this.addables = addables;
+        return this;
+    }
+
+    public PageInfoBusinessTypeDefinitionVOData addAddablesItem(Map<String, Boolean> addablesItem) {
+        if (this.addables == null) {
+            this.addables = new ArrayList<>();
+        }
+        this.addables.add(addablesItem);
+        return this;
+    }
+
+    public PageInfoBusinessTypeDefinitionVOData withAddables(Consumer<List<Map<String, Boolean>>> addablesSetter) {
+        if (this.addables == null) {
+            this.addables = new ArrayList<>();
+        }
+        addablesSetter.accept(this.addables);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否可添加。 **取值范围**： 不涉及。 
+     * @return addables
+     */
+    public List<Map<String, Boolean>> getAddables() {
+        return addables;
+    }
+
+    public void setAddables(List<Map<String, Boolean>> addables) {
+        this.addables = addables;
     }
 
     public PageInfoBusinessTypeDefinitionVOData withConditions(List<String> conditions) {
@@ -199,7 +238,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 条件
+     * **参数解释**： 条件。 **取值范围**： 不涉及。 
      * @return conditions
      */
     public List<String> getConditions() {
@@ -235,7 +274,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
     }
 
     /**
-     * 插件列表
+     * **参数解释**： 插件列表。 **取值范围**： 不涉及。 
      * @return pluginsList
      */
     public List<PageInfoBusinessTypeDefinitionVOPluginsList> getPluginsList() {
@@ -259,7 +298,8 @@ public class PageInfoBusinessTypeDefinitionVOData {
             && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.uniqueId, that.uniqueId)
             && Objects.equals(this.editable, that.editable) && Objects.equals(this.removable, that.removable)
             && Objects.equals(this.cloneable, that.cloneable) && Objects.equals(this.disabled, that.disabled)
-            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.pluginsList, that.pluginsList);
+            && Objects.equals(this.addables, that.addables) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.pluginsList, that.pluginsList);
     }
 
     @Override
@@ -271,6 +311,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
             removable,
             cloneable,
             disabled,
+            addables,
             conditions,
             pluginsList);
     }
@@ -286,6 +327,7 @@ public class PageInfoBusinessTypeDefinitionVOData {
         sb.append("    removable: ").append(toIndentedString(removable)).append("\n");
         sb.append("    cloneable: ").append(toIndentedString(cloneable)).append("\n");
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+        sb.append("    addables: ").append(toIndentedString(addables)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("    pluginsList: ").append(toIndentedString(pluginsList)).append("\n");
         sb.append("}");

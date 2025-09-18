@@ -91,7 +91,7 @@ public class PipelineExecuteStates {
     }
 
     /**
-     * 流水线执行状态.取值和含义:waiting:等待;running:执行中;verifying:待审核;suspending:挂起;completed:完成
+     * 流水线执行状态。
      * @return status
      */
     public String getStatus() {

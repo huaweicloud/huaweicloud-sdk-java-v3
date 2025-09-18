@@ -55,13 +55,18 @@ public class RuleSet {
 
     private Boolean isPublic;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_legacy")
+
+    private Boolean isLegacy;
+
     public RuleSet withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 规则模版实例ID
+     * **参数解释**： 规则模板实例ID。 **取值范围**： 不涉及。 
      * @return id
      */
     public String getId() {
@@ -78,7 +83,7 @@ public class RuleSet {
     }
 
     /**
-     * 规则模版实例名称
+     * **参数解释**： 规则模板实例名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -95,7 +100,7 @@ public class RuleSet {
     }
 
     /**
-     * 类型
+     * **参数解释**： 规则实例类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -112,7 +117,7 @@ public class RuleSet {
     }
 
     /**
-     * 版本
+     * **参数解释**： 规则实例版本。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -129,7 +134,7 @@ public class RuleSet {
     }
 
     /**
-     * 最近操作人
+     * **参数解释**： 规则实例最近操作人。 **取值范围**： 不涉及。 
      * @return operator
      */
     public String getOperator() {
@@ -146,7 +151,7 @@ public class RuleSet {
     }
 
     /**
-     * 最近操作时间
+     * **参数解释**： 规则实例最近操作时间。 **取值范围**： 不涉及。 
      * @return operateTime
      */
     public Long getOperateTime() {
@@ -163,7 +168,7 @@ public class RuleSet {
     }
 
     /**
-     * 是否生效
+     * **参数解释**： 规则实例是否生效。 **取值范围**： - true：规则生效。 - false：规则不生效。 
      * @return isValid
      */
     public Boolean getIsValid() {
@@ -180,7 +185,7 @@ public class RuleSet {
     }
 
     /**
-     * 租户级、项目级
+     * **参数解释**： 规则实例生效级别。 **取值范围**： 不涉及。 
      * @return level
      */
     public String getLevel() {
@@ -197,7 +202,7 @@ public class RuleSet {
     }
 
     /**
-     * 是否系统级
+     * **参数解释**： 规则实例是否系统级。 **取值范围**： - true：规则实例是系统级。 - false：规则实例不是系统级。 
      * @return isPublic
      */
     public Boolean getIsPublic() {
@@ -206,6 +211,23 @@ public class RuleSet {
 
     public void setIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
+    }
+
+    public RuleSet withIsLegacy(Boolean isLegacy) {
+        this.isLegacy = isLegacy;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 规则实例是1.0的数据。 **取值范围**： - true：规则实例是1.0的数据。 - false：规则实例是1.0的数据。 
+     * @return isLegacy
+     */
+    public Boolean getIsLegacy() {
+        return isLegacy;
+    }
+
+    public void setIsLegacy(Boolean isLegacy) {
+        this.isLegacy = isLegacy;
     }
 
     @Override
@@ -221,12 +243,12 @@ public class RuleSet {
             && Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
             && Objects.equals(this.operator, that.operator) && Objects.equals(this.operateTime, that.operateTime)
             && Objects.equals(this.isValid, that.isValid) && Objects.equals(this.level, that.level)
-            && Objects.equals(this.isPublic, that.isPublic);
+            && Objects.equals(this.isPublic, that.isPublic) && Objects.equals(this.isLegacy, that.isLegacy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, version, operator, operateTime, isValid, level, isPublic);
+        return Objects.hash(id, name, type, version, operator, operateTime, isValid, level, isPublic, isLegacy);
     }
 
     @Override
@@ -242,6 +264,7 @@ public class RuleSet {
         sb.append("    isValid: ").append(toIndentedString(isValid)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
+        sb.append("    isLegacy: ").append(toIndentedString(isLegacy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -399,6 +399,11 @@ public class ListGlobalConnectionBandwidthConfigs {
 
     private Boolean enableSpecCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ces_enabled")
+
+    private Boolean cesEnabled;
+
     public ListGlobalConnectionBandwidthConfigs withSizeRange(List<GlobalConnectionBandwidthSizeRange> sizeRange) {
         this.sizeRange = sizeRange;
         return this;
@@ -724,6 +729,23 @@ public class ListGlobalConnectionBandwidthConfigs {
         this.enableSpecCode = enableSpecCode;
     }
 
+    public ListGlobalConnectionBandwidthConfigs withCesEnabled(Boolean cesEnabled) {
+        this.cesEnabled = cesEnabled;
+        return this;
+    }
+
+    /**
+     * 是否支持CES监控。
+     * @return cesEnabled
+     */
+    public Boolean getCesEnabled() {
+        return cesEnabled;
+    }
+
+    public void setCesEnabled(Boolean cesEnabled) {
+        this.cesEnabled = cesEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -741,7 +763,8 @@ public class ListGlobalConnectionBandwidthConfigs {
             && Objects.equals(this.slaLevel, that.slaLevel) && Objects.equals(this.bindLimit, that.bindLimit)
             && Objects.equals(this.enableAreaBandwidth, that.enableAreaBandwidth)
             && Objects.equals(this.enableChange95, that.enableChange95)
-            && Objects.equals(this.enableSpecCode, that.enableSpecCode);
+            && Objects.equals(this.enableSpecCode, that.enableSpecCode)
+            && Objects.equals(this.cesEnabled, that.cesEnabled);
     }
 
     @Override
@@ -758,7 +781,8 @@ public class ListGlobalConnectionBandwidthConfigs {
             bindLimit,
             enableAreaBandwidth,
             enableChange95,
-            enableSpecCode);
+            enableSpecCode,
+            cesEnabled);
     }
 
     @Override
@@ -778,6 +802,7 @@ public class ListGlobalConnectionBandwidthConfigs {
         sb.append("    enableAreaBandwidth: ").append(toIndentedString(enableAreaBandwidth)).append("\n");
         sb.append("    enableChange95: ").append(toIndentedString(enableChange95)).append("\n");
         sb.append("    enableSpecCode: ").append(toIndentedString(enableSpecCode)).append("\n");
+        sb.append("    cesEnabled: ").append(toIndentedString(cesEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

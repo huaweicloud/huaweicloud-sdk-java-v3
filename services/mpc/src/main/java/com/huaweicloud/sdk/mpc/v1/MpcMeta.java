@@ -17,9 +17,6 @@ import com.huaweicloud.sdk.mpc.v1.model.CreateAnimatedGraphicsTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.CreateEditingJobReq;
 import com.huaweicloud.sdk.mpc.v1.model.CreateEditingJobRequest;
 import com.huaweicloud.sdk.mpc.v1.model.CreateEditingJobResponse;
-import com.huaweicloud.sdk.mpc.v1.model.CreateEncryptReq;
-import com.huaweicloud.sdk.mpc.v1.model.CreateEncryptTaskRequest;
-import com.huaweicloud.sdk.mpc.v1.model.CreateEncryptTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.CreateExtractTaskReq;
 import com.huaweicloud.sdk.mpc.v1.model.CreateExtractTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.CreateExtractTaskResponse;
@@ -59,8 +56,6 @@ import com.huaweicloud.sdk.mpc.v1.model.DeleteAnimatedGraphicsTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteAnimatedGraphicsTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteEditingJobRequest;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteEditingJobResponse;
-import com.huaweicloud.sdk.mpc.v1.model.DeleteEncryptTaskRequest;
-import com.huaweicloud.sdk.mpc.v1.model.DeleteEncryptTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteExtractTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteExtractTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteMediaProcessTaskRequest;
@@ -93,8 +88,6 @@ import com.huaweicloud.sdk.mpc.v1.model.ListAnimatedGraphicsTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.ListAnimatedGraphicsTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.ListEditingJobRequest;
 import com.huaweicloud.sdk.mpc.v1.model.ListEditingJobResponse;
-import com.huaweicloud.sdk.mpc.v1.model.ListEncryptTaskRequest;
-import com.huaweicloud.sdk.mpc.v1.model.ListEncryptTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.ListExtractTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.ListExtractTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.ListMediaProcessTaskRequest;
@@ -542,100 +535,6 @@ public class MpcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEditingJobRequest::getXLanguage, ListEditingJobRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateEncryptTaskRequest, CreateEncryptTaskResponse> createEncryptTask =
-        genForCreateEncryptTask();
-
-    private static HttpRequestDef<CreateEncryptTaskRequest, CreateEncryptTaskResponse> genForCreateEncryptTask() {
-        // basic
-        HttpRequestDef.Builder<CreateEncryptTaskRequest, CreateEncryptTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateEncryptTaskRequest.class, CreateEncryptTaskResponse.class)
-                .withName("CreateEncryptTask")
-                .withUri("/v1/{project_id}/encryptions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateEncryptReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateEncryptReq.class),
-            f -> f.withMarshaller(CreateEncryptTaskRequest::getBody, CreateEncryptTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> deleteEncryptTask =
-        genForDeleteEncryptTask();
-
-    private static HttpRequestDef<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> genForDeleteEncryptTask() {
-        // basic
-        HttpRequestDef.Builder<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEncryptTaskRequest.class, DeleteEncryptTaskResponse.class)
-                .withName("DeleteEncryptTask")
-                .withUri("/v1/{project_id}/encryptions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEncryptTaskRequest::getTaskId, DeleteEncryptTaskRequest::setTaskId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListEncryptTaskRequest, ListEncryptTaskResponse> listEncryptTask =
-        genForListEncryptTask();
-
-    private static HttpRequestDef<ListEncryptTaskRequest, ListEncryptTaskResponse> genForListEncryptTask() {
-        // basic
-        HttpRequestDef.Builder<ListEncryptTaskRequest, ListEncryptTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListEncryptTaskRequest.class, ListEncryptTaskResponse.class)
-                .withName("ListEncryptTask")
-                .withUri("/v1/{project_id}/encryptions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<List<String>>withRequestField("task_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getTaskId, ListEncryptTaskRequest::setTaskId));
-        builder.<ListEncryptTaskRequest.StatusEnum>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListEncryptTaskRequest.StatusEnum.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getStatus, ListEncryptTaskRequest::setStatus));
-        builder.<String>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getStartTime, ListEncryptTaskRequest::setStartTime));
-        builder.<String>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getEndTime, ListEncryptTaskRequest::setEndTime));
-        builder.<Integer>withRequestField("page",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getPage, ListEncryptTaskRequest::setPage));
-        builder.<Integer>withRequestField("size",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListEncryptTaskRequest::getSize, ListEncryptTaskRequest::setSize));
 
         // response
 

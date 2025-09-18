@@ -471,9 +471,9 @@ public class ListGlobalConnectionBandwidthsRequest {
     }
 
     /**
-     * 每页返回的个数。 取值范围：1~1000。
+     * 每页返回的个数。 取值范围：1~2000。
      * minimum: 1
-     * maximum: 1000
+     * maximum: 2000
      * @return limit
      */
     public Integer getLimit() {
@@ -556,7 +556,7 @@ public class ListGlobalConnectionBandwidthsRequest {
     }
 
     /**
-     * 根据名字查询，可查询多个名字。
+     * 根据名称查询，可查询多个名称。
      * @return name
      */
     public List<String> getName() {
@@ -789,7 +789,7 @@ public class ListGlobalConnectionBandwidthsRequest {
     }
 
     /**
-     * 根据计费方式过滤全域互联带宽列表： - bwd: 按带宽计费 - 95: 按传统型95计费 - 95avr (日95计费)
+     * 根据计费方式过滤全域互联带宽列表： - bwd: 按带宽计费 - '95': 按传统型95计费 - 95avr (日95计费)
      * @return chargeMode
      */
     public List<ChargeModeEnum> getChargeMode() {

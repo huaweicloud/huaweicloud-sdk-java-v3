@@ -517,6 +517,11 @@ public class GlobalConnectionBandwidth {
     private OffsetDateTime updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "directional_connections")
+
+    private List<DirectionalConnection> directionalConnections = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_share")
 
     private Boolean enableShare;
@@ -600,7 +605,7 @@ public class GlobalConnectionBandwidth {
     }
 
     /**
-     * 功能说明：全域互联带宽是否跨境，判断依据：带宽是否涉及从中国大陆到其他国家。 取值范围：True：跨境；False：非跨境 
+     * 全域互联带宽跨境属性。
      * @return bordercross
      */
     public Boolean getBordercross() {
@@ -901,6 +906,40 @@ public class GlobalConnectionBandwidth {
         this.updatedAt = updatedAt;
     }
 
+    public GlobalConnectionBandwidth withDirectionalConnections(List<DirectionalConnection> directionalConnections) {
+        this.directionalConnections = directionalConnections;
+        return this;
+    }
+
+    public GlobalConnectionBandwidth addDirectionalConnectionsItem(DirectionalConnection directionalConnectionsItem) {
+        if (this.directionalConnections == null) {
+            this.directionalConnections = new ArrayList<>();
+        }
+        this.directionalConnections.add(directionalConnectionsItem);
+        return this;
+    }
+
+    public GlobalConnectionBandwidth withDirectionalConnections(
+        Consumer<List<DirectionalConnection>> directionalConnectionsSetter) {
+        if (this.directionalConnections == null) {
+            this.directionalConnections = new ArrayList<>();
+        }
+        directionalConnectionsSetter.accept(this.directionalConnections);
+        return this;
+    }
+
+    /**
+     * 有向连接列表。
+     * @return directionalConnections
+     */
+    public List<DirectionalConnection> getDirectionalConnections() {
+        return directionalConnections;
+    }
+
+    public void setDirectionalConnections(List<DirectionalConnection> directionalConnections) {
+        this.directionalConnections = directionalConnections;
+    }
+
     public GlobalConnectionBandwidth withEnableShare(Boolean enableShare) {
         this.enableShare = enableShare;
         return this;
@@ -974,6 +1013,7 @@ public class GlobalConnectionBandwidth {
             && Objects.equals(this.adminState, that.adminState) && Objects.equals(this.frozen, that.frozen)
             && Objects.equals(this.specCodeId, that.specCodeId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.directionalConnections, that.directionalConnections)
             && Objects.equals(this.enableShare, that.enableShare) && Objects.equals(this.instances, that.instances);
     }
 
@@ -1000,6 +1040,7 @@ public class GlobalConnectionBandwidth {
             tags,
             createdAt,
             updatedAt,
+            directionalConnections,
             enableShare,
             instances);
     }
@@ -1029,6 +1070,7 @@ public class GlobalConnectionBandwidth {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    directionalConnections: ").append(toIndentedString(directionalConnections)).append("\n");
         sb.append("    enableShare: ").append(toIndentedString(enableShare)).append("\n");
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("}");

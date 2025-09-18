@@ -63,7 +63,7 @@ public class Area {
     }
 
     /**
-     * Area ID。
+     * 大区ID。
      * @return id
      */
     public String getId() {
@@ -80,7 +80,7 @@ public class Area {
     }
 
     /**
-     * 英文 Area Name。
+     * 大区英文名称。
      * @return enName
      */
     public String getEnName() {
@@ -97,7 +97,7 @@ public class Area {
     }
 
     /**
-     * 西语 Area Name。
+     * 大区西语名称。
      * @return esName
      */
     public String getEsName() {
@@ -114,7 +114,7 @@ public class Area {
     }
 
     /**
-     * 葡语 Area Name。
+     * 大区葡语名称。
      * @return ptName
      */
     public String getPtName() {

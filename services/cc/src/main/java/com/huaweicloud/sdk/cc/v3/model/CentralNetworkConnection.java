@@ -255,7 +255,7 @@ public class CentralNetworkConnection {
     /**
      * 带宽值，单位Mbps。
      * minimum: 1
-     * maximum: 999999
+     * maximum: 9999999999
      * @return bandwidthSize
      */
     public Long getBandwidthSize() {

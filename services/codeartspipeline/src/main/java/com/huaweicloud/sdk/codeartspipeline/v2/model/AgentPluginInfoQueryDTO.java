@@ -44,7 +44,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * 可选的查询条件-插件名
+     * **参数解释**： 可选的查询条件-插件名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -61,7 +61,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * 可选的查询条件-匹配名称
+     * **参数解释**： 可选的查询条件-匹配名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return regexName
      */
     public String getRegexName() {
@@ -78,7 +78,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * 维护者
+     * **参数解释**： 维护者。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return maintainer
      */
     public String getMaintainer() {
@@ -111,7 +111,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * 业务类型,[Build,Gate,Deploy,Test,Normal]
+     * **参数解释**： 业务类型。 **约束限制**： 不涉及。 **取值范围**： - Build。 - Gate。 - Deploy。 - Test。 - Normal。 **默认取值**： 不涉及。 
      * @return businessType
      */
     public List<String> getBusinessType() {
@@ -128,7 +128,7 @@ public class AgentPluginInfoQueryDTO {
     }
 
     /**
-     * 插件属性，official/custom
+     * **参数解释**： 插件属性。 **约束限制**： 不涉及。 **取值范围**： - official：自定义插件。 - custom：基础插件。 **默认取值**： 不涉及。 
      * @return pluginAttribution
      */
     public String getPluginAttribution() {

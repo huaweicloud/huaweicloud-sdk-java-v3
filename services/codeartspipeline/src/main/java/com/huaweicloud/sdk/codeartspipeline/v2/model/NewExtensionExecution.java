@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 执行信息
+ * **参数解释**： 插件类型。 **取值范围**： 不涉及。 
  */
 public class NewExtensionExecution {
 
@@ -31,7 +31,7 @@ public class NewExtensionExecution {
     }
 
     /**
-     * 入口
+     * **参数解释**： 插件类型。 **取值范围**： 不涉及。 
      * @return target
      */
     public String getTarget() {
@@ -48,7 +48,7 @@ public class NewExtensionExecution {
     }
 
     /**
-     * 类型
+     * **参数解释**： 插件类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -65,7 +65,7 @@ public class NewExtensionExecution {
     }
 
     /**
-     * sha256
+     * **参数解释**： sha256。 **取值范围**： 不涉及。 
      * @return sha256
      */
     public String getSha256() {

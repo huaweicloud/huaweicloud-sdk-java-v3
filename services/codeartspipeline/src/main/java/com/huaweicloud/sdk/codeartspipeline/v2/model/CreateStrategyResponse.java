@@ -27,7 +27,7 @@ public class CreateStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * **参数解释**： 是否创建成功。 **取值范围**： - true：创建成功。 - false：创建失败。 
      * @return status
      */
     public Boolean getStatus() {
@@ -44,7 +44,7 @@ public class CreateStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 策略ID
+     * **参数解释**： 策略ID **取值范围**： 32位字符，由数字和字母组成。 
      * @return ruleSetId
      */
     public String getRuleSetId() {

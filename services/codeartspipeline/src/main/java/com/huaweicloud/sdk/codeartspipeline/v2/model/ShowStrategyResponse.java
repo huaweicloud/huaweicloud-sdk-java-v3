@@ -64,13 +64,28 @@ public class ShowStrategyResponse extends SdkResponse {
 
     private List<RuleInstance> ruleInstances = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "level")
+
+    private String level;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_public")
+
+    private Boolean isPublic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_legacy")
+
+    private Boolean isLegacy;
+
     public ShowStrategyResponse withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 规则模版实例ID
+     * **参数解释**： 规则模板实例ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -87,7 +102,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 规则模版实例名称
+     * **参数解释**： 规则模板实例名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -104,7 +119,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 类型
+     * **参数解释**： 规则模板类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -121,7 +136,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 版本
+     * **参数解释**： 规则模板策略。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -138,7 +153,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 创建人
+     * **参数解释**： 策略创建人。 **取值范围**： 不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -155,7 +170,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 策略创建时间。 **取值范围**： 不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -172,7 +187,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 最近更新人
+     * **参数解释**： 策略最近更新人。 **取值范围**： 不涉及。 
      * @return updater
      */
     public String getUpdater() {
@@ -189,7 +204,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 最近更新时间
+     * **参数解释**： 策略最近更新时间。 **取值范围**： 不涉及。 
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -206,7 +221,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 是否生效
+     * **参数解释**： 策略是否生效。 **取值范围**： - true：策略生效。 - false：策略不生效。 
      * @return isValid
      */
     public Boolean getIsValid() {
@@ -239,7 +254,7 @@ public class ShowStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 规则实例集合
+     * **参数解释**： 规则实例集合。 **取值范围**： 不涉及。 
      * @return ruleInstances
      */
     public List<RuleInstance> getRuleInstances() {
@@ -248,6 +263,57 @@ public class ShowStrategyResponse extends SdkResponse {
 
     public void setRuleInstances(List<RuleInstance> ruleInstances) {
         this.ruleInstances = ruleInstances;
+    }
+
+    public ShowStrategyResponse withLevel(String level) {
+        this.level = level;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 规则实例生效级别。 **取值范围**： 不涉及。 
+     * @return level
+     */
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public ShowStrategyResponse withIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 规则实例是否系统级。 **取值范围**： - true：规则实例是系统级。 - false：规则实例不是系统级。 
+     * @return isPublic
+     */
+    public Boolean getIsPublic() {
+        return isPublic;
+    }
+
+    public void setIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
+    }
+
+    public ShowStrategyResponse withIsLegacy(Boolean isLegacy) {
+        this.isLegacy = isLegacy;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 规则实例是1.0的数据。 **取值范围**： - true：规则实例是1.0的数据。 - false：规则实例是1.0的数据。 
+     * @return isLegacy
+     */
+    public Boolean getIsLegacy() {
+        return isLegacy;
+    }
+
+    public void setIsLegacy(Boolean isLegacy) {
+        this.isLegacy = isLegacy;
     }
 
     @Override
@@ -263,12 +329,26 @@ public class ShowStrategyResponse extends SdkResponse {
             && Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
             && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updater, that.updater) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.isValid, that.isValid) && Objects.equals(this.ruleInstances, that.ruleInstances);
+            && Objects.equals(this.isValid, that.isValid) && Objects.equals(this.ruleInstances, that.ruleInstances)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.isPublic, that.isPublic)
+            && Objects.equals(this.isLegacy, that.isLegacy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, version, creator, createTime, updater, updateTime, isValid, ruleInstances);
+        return Objects.hash(id,
+            name,
+            type,
+            version,
+            creator,
+            createTime,
+            updater,
+            updateTime,
+            isValid,
+            ruleInstances,
+            level,
+            isPublic,
+            isLegacy);
     }
 
     @Override
@@ -285,6 +365,9 @@ public class ShowStrategyResponse extends SdkResponse {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    isValid: ").append(toIndentedString(isValid)).append("\n");
         sb.append("    ruleInstances: ").append(toIndentedString(ruleInstances)).append("\n");
+        sb.append("    level: ").append(toIndentedString(level)).append("\n");
+        sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
+        sb.append("    isLegacy: ").append(toIndentedString(isLegacy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

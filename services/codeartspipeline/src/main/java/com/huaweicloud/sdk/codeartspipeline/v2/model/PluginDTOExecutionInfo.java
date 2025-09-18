@@ -4,31 +4,42 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
- * 执行信息
+ * **参数解释**： 执行信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
  */
 public class PluginDTOExecutionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inner_execution_info")
 
-    private Object innerExecutionInfo;
+    private PluginDTOExecutionInfoInnerExecutionInfo innerExecutionInfo;
 
-    public PluginDTOExecutionInfo withInnerExecutionInfo(Object innerExecutionInfo) {
+    public PluginDTOExecutionInfo withInnerExecutionInfo(PluginDTOExecutionInfoInnerExecutionInfo innerExecutionInfo) {
         this.innerExecutionInfo = innerExecutionInfo;
         return this;
     }
 
+    public PluginDTOExecutionInfo withInnerExecutionInfo(
+        Consumer<PluginDTOExecutionInfoInnerExecutionInfo> innerExecutionInfoSetter) {
+        if (this.innerExecutionInfo == null) {
+            this.innerExecutionInfo = new PluginDTOExecutionInfoInnerExecutionInfo();
+            innerExecutionInfoSetter.accept(this.innerExecutionInfo);
+        }
+
+        return this;
+    }
+
     /**
-     * 执行信息
+     * Get innerExecutionInfo
      * @return innerExecutionInfo
      */
-    public Object getInnerExecutionInfo() {
+    public PluginDTOExecutionInfoInnerExecutionInfo getInnerExecutionInfo() {
         return innerExecutionInfo;
     }
 
-    public void setInnerExecutionInfo(Object innerExecutionInfo) {
+    public void setInnerExecutionInfo(PluginDTOExecutionInfoInnerExecutionInfo innerExecutionInfo) {
         this.innerExecutionInfo = innerExecutionInfo;
     }
 

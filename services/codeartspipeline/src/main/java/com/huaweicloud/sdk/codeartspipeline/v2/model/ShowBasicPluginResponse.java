@@ -55,6 +55,11 @@ public class ShowBasicPluginResponse extends SdkResponse {
     private List<NewExtensionInputs> inputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_source_bindings")
+
+    private List<NewExtensionDataSourceBindings> dataSourceBindings = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outputs")
 
     private List<NewExtensionOutputs> outputs = null;
@@ -70,7 +75,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 类型
+     * **参数解释**： 插件类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -87,7 +92,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 名称
+     * **参数解释**： 插件名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -104,7 +109,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 插件展示名。 **取值范围**： 不涉及。 
      * @return friendlyName
      */
     public String getFriendlyName() {
@@ -121,7 +126,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 业务类型
+     * **参数解释**： 业务类型。 **取值范围**： 不涉及。 
      * @return category
      */
     public String getCategory() {
@@ -138,7 +143,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 描述
+     * **参数解释**： 插件描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -155,7 +160,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 版本
+     * **参数解释**： 插件版本。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -172,7 +177,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 版本说明
+     * **参数解释**： 插件版本说明。 **取值范围**： 不涉及。 
      * @return versionDescription
      */
     public String getVersionDescription() {
@@ -205,7 +210,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 输入信息
+     * **参数解释**： 输入信息。 **取值范围**： 不涉及。 
      * @return inputs
      */
     public List<NewExtensionInputs> getInputs() {
@@ -214,6 +219,40 @@ public class ShowBasicPluginResponse extends SdkResponse {
 
     public void setInputs(List<NewExtensionInputs> inputs) {
         this.inputs = inputs;
+    }
+
+    public ShowBasicPluginResponse withDataSourceBindings(List<NewExtensionDataSourceBindings> dataSourceBindings) {
+        this.dataSourceBindings = dataSourceBindings;
+        return this;
+    }
+
+    public ShowBasicPluginResponse addDataSourceBindingsItem(NewExtensionDataSourceBindings dataSourceBindingsItem) {
+        if (this.dataSourceBindings == null) {
+            this.dataSourceBindings = new ArrayList<>();
+        }
+        this.dataSourceBindings.add(dataSourceBindingsItem);
+        return this;
+    }
+
+    public ShowBasicPluginResponse withDataSourceBindings(
+        Consumer<List<NewExtensionDataSourceBindings>> dataSourceBindingsSetter) {
+        if (this.dataSourceBindings == null) {
+            this.dataSourceBindings = new ArrayList<>();
+        }
+        dataSourceBindingsSetter.accept(this.dataSourceBindings);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 数据源绑定信息。 **取值范围**： 不涉及。 
+     * @return dataSourceBindings
+     */
+    public List<NewExtensionDataSourceBindings> getDataSourceBindings() {
+        return dataSourceBindings;
+    }
+
+    public void setDataSourceBindings(List<NewExtensionDataSourceBindings> dataSourceBindings) {
+        this.dataSourceBindings = dataSourceBindings;
     }
 
     public ShowBasicPluginResponse withOutputs(List<NewExtensionOutputs> outputs) {
@@ -238,7 +277,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
     }
 
     /**
-     * 输出信息
+     * **参数解释**： 输出信息。 **取值范围**： 不涉及。 
      * @return outputs
      */
     public List<NewExtensionOutputs> getOutputs() {
@@ -288,8 +327,9 @@ public class ShowBasicPluginResponse extends SdkResponse {
             && Objects.equals(this.friendlyName, that.friendlyName) && Objects.equals(this.category, that.category)
             && Objects.equals(this.description, that.description) && Objects.equals(this.version, that.version)
             && Objects.equals(this.versionDescription, that.versionDescription)
-            && Objects.equals(this.inputs, that.inputs) && Objects.equals(this.outputs, that.outputs)
-            && Objects.equals(this.execution, that.execution);
+            && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.dataSourceBindings, that.dataSourceBindings)
+            && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.execution, that.execution);
     }
 
     @Override
@@ -302,6 +342,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
             version,
             versionDescription,
             inputs,
+            dataSourceBindings,
             outputs,
             execution);
     }
@@ -318,6 +359,7 @@ public class ShowBasicPluginResponse extends SdkResponse {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
+        sb.append("    dataSourceBindings: ").append(toIndentedString(dataSourceBindings)).append("\n");
         sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
         sb.append("    execution: ").append(toIndentedString(execution)).append("\n");
         sb.append("}");

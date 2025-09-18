@@ -56,7 +56,7 @@ public class PipelineBuildResult {
     }
 
     /**
-     * 执行ID
+     * **参数解释**： 流水线执行ID。 **取值范围**： 不涉及。 
      * @return buildId
      */
     public String getBuildId() {
@@ -73,7 +73,7 @@ public class PipelineBuildResult {
     }
 
     /**
-     * 运行耗时
+     * **参数解释**： 运行耗时，单位为毫秒。 **取值范围**： 不涉及。 
      * @return elapseTime
      */
     public String getElapseTime() {
@@ -90,7 +90,7 @@ public class PipelineBuildResult {
     }
 
     /**
-     * 执行结束时间
+     * **参数解释**： 执行结束时间。 **取值范围**： 不涉及。 
      * @return endTime
      */
     public String getEndTime() {
@@ -107,7 +107,7 @@ public class PipelineBuildResult {
     }
 
     /**
-     * 运行结果
+     * **参数解释**： 运行结果。 **取值范围**： - success：成功。 - error：失败。 - aborted：终止。 
      * @return outcome
      */
     public String getOutcome() {
@@ -124,7 +124,7 @@ public class PipelineBuildResult {
     }
 
     /**
-     * 流水线id
+     * **参数解释**： 流水线id。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -141,7 +141,7 @@ public class PipelineBuildResult {
     }
 
     /**
-     * 流水线名称
+     * **参数解释**： 流水线名称。 **取值范围**： 不涉及。 
      * @return pipelineName
      */
     public String getPipelineName() {
@@ -158,7 +158,7 @@ public class PipelineBuildResult {
     }
 
     /**
-     * 执行开始时间
+     * **参数解释**： 执行开始时间。 **取值范围**： 不涉及。 
      * @return startTime
      */
     public String getStartTime() {
@@ -175,7 +175,7 @@ public class PipelineBuildResult {
     }
 
     /**
-     * 运行状态
+     * **参数解释**： 运行状态。 **取值范围**： - waiting：等待中。 - running：运行中。 - verifying：待审核。 - suspending：挂起。 - completed：执行完成。 
      * @return status
      */
     public String getStatus() {

@@ -30,14 +30,14 @@ public class ShowRuleResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_valid")
+
+    private Boolean isValid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "layout_content")
-
-    private String layoutContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_id")
@@ -85,7 +85,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则ID
+     * **参数解释**： 规则ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -102,7 +102,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则类型
+     * **参数解释**： 规则类型。 **取值范围**： - Build：构建。 - Gate：代码检查。 - Test：测试。 
      * @return type
      */
     public String getType() {
@@ -119,7 +119,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则名称
+     * **参数解释**： 规则名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -130,13 +130,30 @@ public class ShowRuleResponse extends SdkResponse {
         this.name = name;
     }
 
+    public ShowRuleResponse withIsValid(Boolean isValid) {
+        this.isValid = isValid;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 规则是否有效。 **取值范围**： true:有效，false:无效 
+     * @return isValid
+     */
+    public Boolean getIsValid() {
+        return isValid;
+    }
+
+    public void setIsValid(Boolean isValid) {
+        this.isValid = isValid;
+    }
+
     public ShowRuleResponse withVersion(String version) {
         this.version = version;
         return this;
     }
 
     /**
-     * 规则版本
+     * **参数解释**： 规则版本。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -147,30 +164,13 @@ public class ShowRuleResponse extends SdkResponse {
         this.version = version;
     }
 
-    public ShowRuleResponse withLayoutContent(String layoutContent) {
-        this.layoutContent = layoutContent;
-        return this;
-    }
-
-    /**
-     * 布局内容
-     * @return layoutContent
-     */
-    public String getLayoutContent() {
-        return layoutContent;
-    }
-
-    public void setLayoutContent(String layoutContent) {
-        this.layoutContent = layoutContent;
-    }
-
     public ShowRuleResponse withPluginId(String pluginId) {
         this.pluginId = pluginId;
         return this;
     }
 
     /**
-     * 插件ID
+     * **参数解释**： 扩展插件唯一ID。 **取值范围**： 不涉及。 
      * @return pluginId
      */
     public String getPluginId() {
@@ -187,7 +187,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 插件名称
+     * **参数解释**： 扩展插件名称。 **取值范围**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -204,7 +204,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 插件版本号
+     * **参数解释**： 扩展插件版本号。 **取值范围**： 不涉及。 
      * @return pluginVersion
      */
     public String getPluginVersion() {
@@ -221,7 +221,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 创建人
+     * **参数解释**： 规则创建人。 **取值范围**： 不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -238,7 +238,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 规则创建时间。 **取值范围**： 不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -255,7 +255,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 更新人
+     * **参数解释**： 规则最后更新人。 **取值范围**： 不涉及。 
      * @return updater
      */
     public String getUpdater() {
@@ -272,7 +272,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间
+     * **参数解释**： 规则最后更新时间。 **取值范围**： 不涉及。 
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -305,7 +305,7 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则属性列表
+     * **参数解释**： 规则详细属性。 **取值范围**： 不涉及。 
      * @return content
      */
     public List<RuleContent> getContent() {
@@ -326,8 +326,8 @@ public class ShowRuleResponse extends SdkResponse {
         }
         ShowRuleResponse that = (ShowRuleResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.layoutContent, that.layoutContent) && Objects.equals(this.pluginId, that.pluginId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.isValid, that.isValid)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.pluginId, that.pluginId)
             && Objects.equals(this.pluginName, that.pluginName)
             && Objects.equals(this.pluginVersion, that.pluginVersion) && Objects.equals(this.creator, that.creator)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updater, that.updater)
@@ -339,8 +339,8 @@ public class ShowRuleResponse extends SdkResponse {
         return Objects.hash(id,
             type,
             name,
+            isValid,
             version,
-            layoutContent,
             pluginId,
             pluginName,
             pluginVersion,
@@ -358,8 +358,8 @@ public class ShowRuleResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    isValid: ").append(toIndentedString(isValid)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    layoutContent: ").append(toIndentedString(layoutContent)).append("\n");
         sb.append("    pluginId: ").append(toIndentedString(pluginId)).append("\n");
         sb.append("    pluginName: ").append(toIndentedString(pluginName)).append("\n");
         sb.append("    pluginVersion: ").append(toIndentedString(pluginVersion)).append("\n");

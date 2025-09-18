@@ -43,6 +43,11 @@ public class MediaDetail {
 
     private OutputWatermarkPara outputWatermarkParas;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private List<FileMetaData> metadata = null;
+
     public MediaDetail withFeatures(List<String> features) {
         this.features = features;
         return this;
@@ -220,6 +225,39 @@ public class MediaDetail {
         this.outputWatermarkParas = outputWatermarkParas;
     }
 
+    public MediaDetail withMetadata(List<FileMetaData> metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public MediaDetail addMetadataItem(FileMetaData metadataItem) {
+        if (this.metadata == null) {
+            this.metadata = new ArrayList<>();
+        }
+        this.metadata.add(metadataItem);
+        return this;
+    }
+
+    public MediaDetail withMetadata(Consumer<List<FileMetaData>> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new ArrayList<>();
+        }
+        metadataSetter.accept(this.metadata);
+        return this;
+    }
+
+    /**
+     * 输出文件的metadata信息 
+     * @return metadata
+     */
+    public List<FileMetaData> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(List<FileMetaData> metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -233,13 +271,19 @@ public class MediaDetail {
             && Objects.equals(this.outputVideoParas, that.outputVideoParas)
             && Objects.equals(this.replaceSubIndex, that.replaceSubIndex)
             && Objects.equals(this.outputThumbnailPara, that.outputThumbnailPara)
-            && Objects.equals(this.outputWatermarkParas, that.outputWatermarkParas);
+            && Objects.equals(this.outputWatermarkParas, that.outputWatermarkParas)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(features, originPara, outputVideoParas, replaceSubIndex, outputThumbnailPara, outputWatermarkParas);
+        return Objects.hash(features,
+            originPara,
+            outputVideoParas,
+            replaceSubIndex,
+            outputThumbnailPara,
+            outputWatermarkParas,
+            metadata);
     }
 
     @Override
@@ -252,6 +296,7 @@ public class MediaDetail {
         sb.append("    replaceSubIndex: ").append(toIndentedString(replaceSubIndex)).append("\n");
         sb.append("    outputThumbnailPara: ").append(toIndentedString(outputThumbnailPara)).append("\n");
         sb.append("    outputWatermarkParas: ").append(toIndentedString(outputWatermarkParas)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -69,7 +69,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 参数名称
+     * **参数解释**： 自定义参数名称。 **取值范围**： 仅支持大小写英文字母、数字、“_”，不超过128个字符。 
      * @return name
      */
     public String getName() {
@@ -86,7 +86,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 序号
+     * **参数解释**： 序号。 **取值范围**： [1, 2147483647]。 
      * @return sequence
      */
     public Integer getSequence() {
@@ -103,7 +103,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 类型
+     * **参数解释**： 自定义参数的类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -120,7 +120,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 默认值
+     * **参数解释**： 自定义参数的默认值。 **取值范围**： 不涉及。 
      * @return value
      */
     public String getValue() {
@@ -137,7 +137,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 是否私密
+     * **参数解释**： 是否为私密参数。 **取值范围**： - true：是私密参数。 - false：不是私密参数。 
      * @return isSecret
      */
     public Boolean getIsSecret() {
@@ -154,7 +154,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 描述
+     * **参数解释**： 自定义参数描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -171,7 +171,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 是否运行时设置
+     * **参数解释**： 是否运行时设置。 **取值范围**： - true：运行时设置。 - false：非运行时设置。 
      * @return isRuntime
      */
     public Boolean getIsRuntime() {
@@ -204,7 +204,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 限定枚举值
+     * **参数解释**： 限定枚举值列表。 **取值范围**： 不涉及。 
      * @return limits
      */
     public List<String> getLimits() {
@@ -221,7 +221,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 自增长参数是否被重置
+     * **参数解释**： 自增长参数是否被重置。 **取值范围**： - true：被重置。 - false：不被重置。 
      * @return isReset
      */
     public Boolean getIsReset() {
@@ -238,7 +238,7 @@ public class PipelineVariable {
     }
 
     /**
-     * 自增长参数最新值
+     * **参数解释**： 自增长参数最新值。 **取值范围**： 不涉及。 
      * @return latestValue
      */
     public String getLatestValue() {

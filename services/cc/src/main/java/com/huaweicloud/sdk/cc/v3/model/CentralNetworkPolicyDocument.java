@@ -34,7 +34,7 @@ public class CentralNetworkPolicyDocument {
     }
 
     /**
-     * 中心网络默认平面的名字。
+     * 中心网络默认平面的名称。
      * @return defaultPlane
      */
     public String getDefaultPlane() {

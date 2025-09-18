@@ -73,6 +73,8 @@ public class LtsRegion {
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://lts.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://lts.cn-north-12.myhuaweicloud.com");
+
     public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://lts.cn-south-4.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("LTS");
@@ -107,6 +109,7 @@ public class LtsRegion {
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("cn-north-12", CN_NORTH_12);
         map.put("cn-south-4", CN_SOUTH_4);
         return Collections.unmodifiableMap(map);
     }

@@ -22,7 +22,7 @@ public class UpdateRedistributionControlResponse extends SdkResponse {
     }
 
     /**
-     * 任务流id
+     * **参数解释**: 修改重分布参数的任务ID。 **取值范围**: 不涉及。
      * @return result
      */
     public String getResult() {

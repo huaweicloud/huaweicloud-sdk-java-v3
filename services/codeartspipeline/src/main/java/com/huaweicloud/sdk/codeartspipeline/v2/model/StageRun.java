@@ -99,7 +99,7 @@ public class StageRun {
     }
 
     /**
-     * 阶段ID
+     * **参数解释**： 阶段ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -116,7 +116,7 @@ public class StageRun {
     }
 
     /**
-     * 阶段类型
+     * **参数解释**： 阶段类型。 **取值范围**： 不涉及。 
      * @return category
      */
     public String getCategory() {
@@ -133,7 +133,7 @@ public class StageRun {
     }
 
     /**
-     * 阶段名称
+     * **参数解释**： 阶段名称。 **取值范围**： 仅支持输入中文、大小写英文字母、数字、'-'、'_'、','、';'、':'、'.'、'/'、'('、')'、'（'、'）'及空格，其中空格不可在名称开头或结尾使用，且长度为[1,128]个字符。 
      * @return name
      */
     public String getName() {
@@ -150,7 +150,7 @@ public class StageRun {
     }
 
     /**
-     * 唯一标识
+     * **参数解释**： 阶段唯一标识。 **取值范围**： 不涉及。 
      * @return identifier
      */
     public String getIdentifier() {
@@ -167,7 +167,7 @@ public class StageRun {
     }
 
     /**
-     * 是否总是运行
+     * **参数解释**： 是否总是运行。 **取值范围**： - true：总是运行。 - false：非总是运行。 
      * @return runAlways
      */
     public Boolean getRunAlways() {
@@ -184,7 +184,7 @@ public class StageRun {
     }
 
     /**
-     * 是否并行
+     * **参数解释**： 是否并行。 **取值范围**： 不涉及。 
      * @return parallel
      */
     public String getParallel() {
@@ -201,7 +201,7 @@ public class StageRun {
     }
 
     /**
-     * 是否选中
+     * **参数解释**： 是否选中。 **取值范围**： - true：选中。 - false：未选中。 
      * @return isSelect
      */
     public Boolean getIsSelect() {
@@ -218,7 +218,7 @@ public class StageRun {
     }
 
     /**
-     * 序列号
+     * **参数解释**： 序列号。 **取值范围**： 大于等于0。 
      * @return sequence
      */
     public Integer getSequence() {
@@ -251,7 +251,7 @@ public class StageRun {
     }
 
     /**
-     * 依赖
+     * **参数解释**： 依赖阶段的identifier信息。 **取值范围**： 不涉及。 
      * @return dependsOn
      */
     public List<String> getDependsOn() {
@@ -268,7 +268,7 @@ public class StageRun {
     }
 
     /**
-     * 运行条件
+     * **参数解释**： 运行条件。 **取值范围**： 不涉及。 
      * @return condition
      */
     public String getCondition() {
@@ -285,7 +285,7 @@ public class StageRun {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： - INIT：初始化。 - QUEUED：排队。 - RUNNING：运行中。 - CANCELED：取消。 - COMPLETED：已完成。 - FAILED：失败。 - SKIPPED：跳过。 - IGNORED：忽略。 - PAUSED：暂停。 - SUSPEND：挂起。 - ASYNC_RUNNING：异步运行。 - ASYNC_FAILED：异步失败。 - UNSELECTED：未选择。 - REDISPATCH：重新调度。 
      * @return status
      */
     public String getStatus() {
@@ -302,7 +302,7 @@ public class StageRun {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 阶段开始时间。 **取值范围**： 不涉及。 
      * @return startTime
      */
     public Long getStartTime() {
@@ -319,7 +319,7 @@ public class StageRun {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 阶段结束时间。 **取值范围**： 不涉及。 
      * @return endTime
      */
     public Long getEndTime() {
@@ -352,7 +352,7 @@ public class StageRun {
     }
 
     /**
-     * 阶段准入
+     * **参数解释**： 阶段准入。 **取值范围**： 不涉及。 
      * @return pre
      */
     public List<StepRun> getPre() {
@@ -385,7 +385,7 @@ public class StageRun {
     }
 
     /**
-     * 阶段准出
+     * **参数解释**： 阶段准出。 **取值范围**： 不涉及。 
      * @return post
      */
     public List<StepRun> getPost() {
@@ -418,7 +418,7 @@ public class StageRun {
     }
 
     /**
-     * 任务
+     * **参数解释**： 任务列表。 **取值范围**： 不涉及。 
      * @return jobs
      */
     public List<JobRun> getJobs() {

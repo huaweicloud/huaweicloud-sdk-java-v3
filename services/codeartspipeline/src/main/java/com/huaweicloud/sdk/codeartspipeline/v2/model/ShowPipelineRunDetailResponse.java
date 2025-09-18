@@ -150,7 +150,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线运行实例ID
+     * **参数解释**： 流水线运行实例ID，[启动流水线](RunPipeline.xml)接口的返回值即为流水线运行实例ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -167,7 +167,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线ID
+     * **参数解释**： 流水线ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -184,7 +184,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线版本
+     * **参数解释**： 流水线版本。 **取值范围**： 默认3.0。 
      * @return manifestVersion
      */
     public String getManifestVersion() {
@@ -201,7 +201,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线名称
+     * **参数解释**： 流水线名称。 **取值范围**： 仅包含中文、大小写英文字母、数字、'-'和'_'，且长度为[1,128]个字符。 
      * @return name
      */
     public String getName() {
@@ -218,7 +218,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 运行描述
+     * **参数解释**： 流水线运行描述。 **取值范围**： 最长1024字符。 
      * @return description
      */
     public String getDescription() {
@@ -235,7 +235,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是否为变更流水线
+     * **参数解释**： 是否为变更流水线。 **取值范围**： - true：是变更流水线。 - false：不是变更流水线。 
      * @return isPublish
      */
     public Boolean getIsPublish() {
@@ -252,7 +252,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 运行人ID
+     * **参数解释**： 运行人ID，用户的userId。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return executorId
      */
     public String getExecutorId() {
@@ -269,7 +269,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 运行人名称
+     * **参数解释**： 运行人名称。 **取值范围**： 不涉及。 
      * @return executorName
      */
     public String getExecutorName() {
@@ -286,7 +286,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * **参数解释**： 流水线运行实例状态。 **取值范围**： - COMPLETED：已完成。 - RUNNING：运行中。 - FAILED：失败。 - CANCELED：取消。 - PAUSED：暂停。 - SUSPEND：挂起。 - IGNORED：忽略。 
      * @return status
      */
     public String getStatus() {
@@ -303,7 +303,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 触发类型
+     * **参数解释**： 流水线触发类型。 - Manual：手动触发。 - Scheduler：定时任务。 - MR：MR触发。 - Push：Push事件触发。 - CreateTag：Tag事件触发。 - Issue：Issue触发。 - Note：评论触发。 **取值范围**： 不涉及。 
      * @return triggerType
      */
     public String getTriggerType() {
@@ -320,7 +320,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 运行序号
+     * **参数解释**： 流水线运行序号。 **取值范围**： 大于等于 1。 
      * @return runNumber
      */
     public Integer getRunNumber() {
@@ -337,7 +337,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 流水线开始时间。 **取值范围**： 不涉及。 
      * @return startTime
      */
     public Long getStartTime() {
@@ -354,7 +354,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 流水线结束时间。 **取值范围**： 不涉及。 
      * @return endTime
      */
     public Long getEndTime() {
@@ -387,7 +387,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 阶段信息
+     * **参数解释**： 阶段运行信息列表，包含各个阶段的详细运行信息。 **约束限制**： 不涉及。 
      * @return stages
      */
     public List<StageRun> getStages() {
@@ -404,7 +404,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 租户ID
+     * **参数解释**： 租户ID，用户账号的domainId。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return domainId
      */
     public String getDomainId() {
@@ -421,7 +421,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID
+     * **参数解释**： 项目ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return projectId
      */
     public String getProjectId() {
@@ -438,7 +438,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 局点
+     * **参数解释**： 局点。 **取值范围**： 不涉及。 
      * @return region
      */
     public String getRegion() {
@@ -455,7 +455,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 组件ID
+     * **参数解释**： 微服务ID。可以通过[查询微服务列表](ListMicroservice.xml)接口获取，其中data.id即为微服务ID。 **取值范围**： 不涉及。 
      * @return componentId
      */
     public String getComponentId() {
@@ -472,7 +472,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 语言
+     * **参数解释**： 语言，暂时仅包含中英文。 **取值范围**： zh-cn, en-us。 
      * @return language
      */
     public String getLanguage() {
@@ -505,7 +505,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 运行源信息
+     * **参数解释**： 流水线执行源信息。 **取值范围**： 不涉及。 
      * @return sources
      */
     public List<RunPipelineSource> getSources() {
@@ -538,7 +538,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线运行产物
+     * **参数解释**： 流水线运行产物。 **取值范围**： 不涉及。 
      * @return artifacts
      */
     public List<PackageInfo> getArtifacts() {
@@ -555,7 +555,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线运行实例ID
+     * **参数解释**： 流水线运行实例ID，[启动流水线](RunPipeline.xml)接口的返回值即为流水线运行实例ID。 **取值范围**： 不涉及。 
      * @return subjectId
      */
     public String getSubjectId() {
@@ -572,7 +572,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 分组ID
+     * **参数解释**： 分组ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return groupId
      */
     public String getGroupId() {
@@ -589,7 +589,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 分组名称
+     * **参数解释**： 分组名称。 **取值范围**： 不涉及。 
      * @return groupName
      */
     public String getGroupName() {
@@ -606,7 +606,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 详情页地址
+     * **参数解释**： 详情页地址。 **取值范围**： 不涉及。 
      * @return detailUrl
      */
     public String getDetailUrl() {
@@ -623,7 +623,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     /**
-     * 当前系统时间
+     * **参数解释**： 当前系统时间。 **取值范围**： 不涉及。 
      * @return currentSystemTime
      */
     public Long getCurrentSystemTime() {

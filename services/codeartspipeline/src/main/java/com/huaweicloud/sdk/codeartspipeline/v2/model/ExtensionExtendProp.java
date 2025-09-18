@@ -21,6 +21,11 @@ public class ExtensionExtendProp {
     private String apiType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_placeholder")
+
+    private String showPlaceholder;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
     private String options;
@@ -41,7 +46,7 @@ public class ExtensionExtendProp {
     }
 
     /**
-     * API 选项
+     * **参数解释**： API选项。 **取值范围**： 不涉及。 
      * @return apiOptions
      */
     public String getApiOptions() {
@@ -58,7 +63,7 @@ public class ExtensionExtendProp {
     }
 
     /**
-     * API 类型
+     * **参数解释**： API类型。 **取值范围**： 不涉及。 
      * @return apiType
      */
     public String getApiType() {
@@ -69,13 +74,30 @@ public class ExtensionExtendProp {
         this.apiType = apiType;
     }
 
+    public ExtensionExtendProp withShowPlaceholder(String showPlaceholder) {
+        this.showPlaceholder = showPlaceholder;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 显示占位符。 **取值范围**： 不涉及。 
+     * @return showPlaceholder
+     */
+    public String getShowPlaceholder() {
+        return showPlaceholder;
+    }
+
+    public void setShowPlaceholder(String showPlaceholder) {
+        this.showPlaceholder = showPlaceholder;
+    }
+
     public ExtensionExtendProp withOptions(String options) {
         this.options = options;
         return this;
     }
 
     /**
-     * 选项
+     * **参数解释**： 选项。 **取值范围**： 不涉及。 
      * @return options
      */
     public String getOptions() {
@@ -92,7 +114,7 @@ public class ExtensionExtendProp {
     }
 
     /**
-     * 禁用条件
+     * **参数解释**： 禁用条件。 **取值范围**： 不涉及。 
      * @return disabledConditions
      */
     public String getDisabledConditions() {
@@ -109,7 +131,7 @@ public class ExtensionExtendProp {
     }
 
     /**
-     * 可见条件
+     * **参数解释**： 可见条件。 **取值范围**： 不涉及。 
      * @return visibleConditions
      */
     public String getVisibleConditions() {
@@ -130,14 +152,14 @@ public class ExtensionExtendProp {
         }
         ExtensionExtendProp that = (ExtensionExtendProp) obj;
         return Objects.equals(this.apiOptions, that.apiOptions) && Objects.equals(this.apiType, that.apiType)
-            && Objects.equals(this.options, that.options)
+            && Objects.equals(this.showPlaceholder, that.showPlaceholder) && Objects.equals(this.options, that.options)
             && Objects.equals(this.disabledConditions, that.disabledConditions)
             && Objects.equals(this.visibleConditions, that.visibleConditions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(apiOptions, apiType, options, disabledConditions, visibleConditions);
+        return Objects.hash(apiOptions, apiType, showPlaceholder, options, disabledConditions, visibleConditions);
     }
 
     @Override
@@ -146,6 +168,7 @@ public class ExtensionExtendProp {
         sb.append("class ExtensionExtendProp {\n");
         sb.append("    apiOptions: ").append(toIndentedString(apiOptions)).append("\n");
         sb.append("    apiType: ").append(toIndentedString(apiType)).append("\n");
+        sb.append("    showPlaceholder: ").append(toIndentedString(showPlaceholder)).append("\n");
         sb.append("    options: ").append(toIndentedString(options)).append("\n");
         sb.append("    disabledConditions: ").append(toIndentedString(disabledConditions)).append("\n");
         sb.append("    visibleConditions: ").append(toIndentedString(visibleConditions)).append("\n");

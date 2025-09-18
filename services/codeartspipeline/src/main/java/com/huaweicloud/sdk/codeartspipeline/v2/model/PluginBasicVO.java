@@ -21,6 +21,11 @@ public class PluginBasicVO {
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db_record_name")
+
+    private String dbRecordName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -110,13 +115,38 @@ public class PluginBasicVO {
 
     private Integer active;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version_state")
+
+    private String versionState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publisher_unique_id")
+
+    private String publisherUniqueId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creator")
+
+    private String creator;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_version")
+
+    private String manifestVersion;
+
     public PluginBasicVO withPluginName(String pluginName) {
         this.pluginName = pluginName;
         return this;
     }
 
     /**
-     * 插件名
+     * **参数解释**： 扩展插件名称。 **取值范围**： 1到50位字符。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -133,7 +163,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 扩展插件名称。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -144,13 +174,30 @@ public class PluginBasicVO {
         this.displayName = displayName;
     }
 
+    public PluginBasicVO withDbRecordName(String dbRecordName) {
+        this.dbRecordName = dbRecordName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 插件记录展示名称。 **取值范围**： 不涉及。 
+     * @return dbRecordName
+     */
+    public String getDbRecordName() {
+        return dbRecordName;
+    }
+
+    public void setDbRecordName(String dbRecordName) {
+        this.dbRecordName = dbRecordName;
+    }
+
     public PluginBasicVO withVersion(String version) {
         this.version = version;
         return this;
     }
 
     /**
-     * 版本
+     * **参数解释**： 扩展插件版本号。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -167,7 +214,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 版本说明
+     * **参数解释**： 扩展插件版本号说明。 **取值范围**： 不涉及。 
      * @return versionDescription
      */
     public String getVersionDescription() {
@@ -184,7 +231,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 描述
+     * **参数解释**： 扩展插件描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -201,7 +248,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 版本属性
+     * **参数解释**： 扩展插件版本属性。 **取值范围**： - draft：草稿版本。 - formal：正式版本。 
      * @return versionAttribution
      */
     public String getVersionAttribution() {
@@ -218,7 +265,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 扩展插件唯一ID。 **取值范围**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -235,7 +282,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 操作人
+     * **参数解释**： 扩展插件最后更新人。 **取值范围**： 不涉及。 
      * @return opUser
      */
     public String getOpUser() {
@@ -252,7 +299,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 操作时间
+     * **参数解释**： 扩展插件最后更新时间。 **取值范围**： 不涉及。 
      * @return opTime
      */
     public String getOpTime() {
@@ -269,7 +316,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 组合类型
+     * **参数解释**： 用于标识插件是否为多个step组成的组合插件。 **取值范围**： - multi：组合插件。 - single：非组合插件。 
      * @return pluginCompositionType
      */
     public String getPluginCompositionType() {
@@ -286,7 +333,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 属性
+     * **参数解释**： 扩展插件属性。 **取值范围**： - custom：自定义插件。 - official：官方插件。 - published：已发布的发布商插件。 
      * @return pluginAttribution
      */
     public String getPluginAttribution() {
@@ -303,7 +350,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 租户ID
+     * **参数解释**： 租户ID，用户的domainId。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -320,7 +367,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 业务类型
+     * **参数解释**： 扩展插件业务类型。 **取值范围**： 不涉及。 
      * @return businessType
      */
     public String getBusinessType() {
@@ -337,7 +384,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 业务类型展示名
+     * **参数解释**： 扩展插件业务类型展示名称。 **取值范围**： 不涉及。 
      * @return businessTypeDisplayName
      */
     public String getBusinessTypeDisplayName() {
@@ -354,7 +401,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 维护者
+     * **参数解释**： 扩展插件维护人。 **取值范围**： 不涉及。 
      * @return maintainers
      */
     public String getMaintainers() {
@@ -371,7 +418,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 图标URL
+     * **参数解释**： 扩展插件图标地址。 **取值范围**： 不涉及。 
      * @return iconUrl
      */
     public String getIconUrl() {
@@ -388,7 +435,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 引用次数
+     * **参数解释**： 扩展插件被流水线引用次数。 **取值范围**： 不涉及。 
      * @return referCount
      */
     public Integer getReferCount() {
@@ -405,7 +452,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 使用次数
+     * **参数解释**： 扩展插件被流水线使用次数。 **取值范围**： 不涉及。 
      * @return usageCount
      */
     public Integer getUsageCount() {
@@ -422,7 +469,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 运行属性
+     * **参数解释**： 运行属性。 **取值范围**： - agent：运行基于流水线agent。 - agentLess：运行无需流水线agent。 
      * @return runtimeAttribution
      */
     public String getRuntimeAttribution() {
@@ -439,7 +486,7 @@ public class PluginBasicVO {
     }
 
     /**
-     * 是否激活
+     * **参数解释**： 扩展插件是否激活。 **取值范围**： - true：激活。 - false：未激活。 
      * @return active
      */
     public Integer getActive() {
@@ -448,6 +495,91 @@ public class PluginBasicVO {
 
     public void setActive(Integer active) {
         this.active = active;
+    }
+
+    public PluginBasicVO withVersionState(String versionState) {
+        this.versionState = versionState;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前插件版本状态。 **取值范围**： 不涉及。 
+     * @return versionState
+     */
+    public String getVersionState() {
+        return versionState;
+    }
+
+    public void setVersionState(String versionState) {
+        this.versionState = versionState;
+    }
+
+    public PluginBasicVO withPublisherUniqueId(String publisherUniqueId) {
+        this.publisherUniqueId = publisherUniqueId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 发布商ID。 **取值范围**： 不涉及。 
+     * @return publisherUniqueId
+     */
+    public String getPublisherUniqueId() {
+        return publisherUniqueId;
+    }
+
+    public void setPublisherUniqueId(String publisherUniqueId) {
+        this.publisherUniqueId = publisherUniqueId;
+    }
+
+    public PluginBasicVO withCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 创建者名称。 **取值范围**： 不涉及。 
+     * @return creator
+     */
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public PluginBasicVO withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。 
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public PluginBasicVO withManifestVersion(String manifestVersion) {
+        this.manifestVersion = manifestVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 插件版本标识符。 **取值范围**： 不涉及。 
+     * @return manifestVersion
+     */
+    public String getManifestVersion() {
+        return manifestVersion;
+    }
+
+    public void setManifestVersion(String manifestVersion) {
+        this.manifestVersion = manifestVersion;
     }
 
     @Override
@@ -460,7 +592,7 @@ public class PluginBasicVO {
         }
         PluginBasicVO that = (PluginBasicVO) obj;
         return Objects.equals(this.pluginName, that.pluginName) && Objects.equals(this.displayName, that.displayName)
-            && Objects.equals(this.version, that.version)
+            && Objects.equals(this.dbRecordName, that.dbRecordName) && Objects.equals(this.version, that.version)
             && Objects.equals(this.versionDescription, that.versionDescription)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.versionAttribution, that.versionAttribution)
@@ -474,13 +606,17 @@ public class PluginBasicVO {
             && Objects.equals(this.maintainers, that.maintainers) && Objects.equals(this.iconUrl, that.iconUrl)
             && Objects.equals(this.referCount, that.referCount) && Objects.equals(this.usageCount, that.usageCount)
             && Objects.equals(this.runtimeAttribution, that.runtimeAttribution)
-            && Objects.equals(this.active, that.active);
+            && Objects.equals(this.active, that.active) && Objects.equals(this.versionState, that.versionState)
+            && Objects.equals(this.publisherUniqueId, that.publisherUniqueId)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.manifestVersion, that.manifestVersion);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(pluginName,
             displayName,
+            dbRecordName,
             version,
             versionDescription,
             description,
@@ -498,7 +634,12 @@ public class PluginBasicVO {
             referCount,
             usageCount,
             runtimeAttribution,
-            active);
+            active,
+            versionState,
+            publisherUniqueId,
+            creator,
+            createTime,
+            manifestVersion);
     }
 
     @Override
@@ -507,6 +648,7 @@ public class PluginBasicVO {
         sb.append("class PluginBasicVO {\n");
         sb.append("    pluginName: ").append(toIndentedString(pluginName)).append("\n");
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+        sb.append("    dbRecordName: ").append(toIndentedString(dbRecordName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -525,6 +667,11 @@ public class PluginBasicVO {
         sb.append("    usageCount: ").append(toIndentedString(usageCount)).append("\n");
         sb.append("    runtimeAttribution: ").append(toIndentedString(runtimeAttribution)).append("\n");
         sb.append("    active: ").append(toIndentedString(active)).append("\n");
+        sb.append("    versionState: ").append(toIndentedString(versionState)).append("\n");
+        sb.append("    publisherUniqueId: ").append(toIndentedString(publisherUniqueId)).append("\n");
+        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    manifestVersion: ").append(toIndentedString(manifestVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

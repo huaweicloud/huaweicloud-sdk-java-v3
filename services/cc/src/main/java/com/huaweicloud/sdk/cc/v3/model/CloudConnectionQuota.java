@@ -31,7 +31,7 @@ public class CloudConnectionQuota {
     private String regionId;
 
     /**
-     * 配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 某云连接实例下可加载的Region数 - cloud_connection_route: 某云连接实例下可加载的路由数 - region_network_instance: 某云连接实例下某个Region下可加载的网络实例数
+     * 配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 云连接实例下可加载的Region数 - cloud_connection_route: 云连接实例下可加载的路由数 - region_network_instance: 云连接实例下某个Region下可加载的网络实例数
      */
     public static final class QuotaTypeEnum {
 
@@ -184,7 +184,7 @@ public class CloudConnectionQuota {
     }
 
     /**
-     * 配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 某云连接实例下可加载的Region数 - cloud_connection_route: 某云连接实例下可加载的路由数 - region_network_instance: 某云连接实例下某个Region下可加载的网络实例数
+     * 配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 云连接实例下可加载的Region数 - cloud_connection_route: 云连接实例下可加载的路由数 - region_network_instance: 云连接实例下某个Region下可加载的网络实例数
      * @return quotaType
      */
     public QuotaTypeEnum getQuotaType() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 流水线及其最近一次运行信息
+ * **参数解释**： 流水线及其最近一次运行信息。 **取值范围**： 不涉及。 
  */
 public class PipelineLatestRun {
 
@@ -89,7 +89,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 流水线ID
+     * **参数解释**： 流水线ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -106,7 +106,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 流水线运行实例ID
+     * **参数解释**： 流水线运行实例ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return pipelineRunId
      */
     public String getPipelineRunId() {
@@ -123,7 +123,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 执行人ID
+     * **参数解释**： 执行人ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return executorId
      */
     public String getExecutorId() {
@@ -140,7 +140,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 执行人名称
+     * **参数解释**： 执行人名称。 **取值范围**： 不涉及。 
      * @return executorName
      */
     public String getExecutorName() {
@@ -174,7 +174,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 阶段状态信息
+     * **参数解释**： 阶段状态信息列表，包含各阶段的详细状态信息。 **约束限制**： 不涉及。 
      * @return stageStatusList
      */
     public List<PipelineLatestRunStageStatusList> getStageStatusList() {
@@ -191,7 +191,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 流水线状态
+     * **参数解释**： 流水线运行实例状态。 **取值范围**： - COMPLETED：已完成。 - RUNNING：运行中。 - FAILED：失败。 - CANCELED：取消。 - PAUSED：暂停。 - SUSPEND：挂起。 - IGNORED：忽略。 
      * @return status
      */
     public String getStatus() {
@@ -208,7 +208,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 运行序号
+     * **参数解释**： 流水线运行序号。 **取值范围**： 大于等于 1。 
      * @return runNumber
      */
     public Integer getRunNumber() {
@@ -225,7 +225,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 触发类型
+     * **参数解释**： 触发类型。 **取值范围**： - Manual：手动触发。 - Scheduler：定时任务。 - MR：MR触发。 - Push：Push事件触发。 - CreateTag：Tag事件触发。 - Issue：Issue触发。 - Note：评论触发。 
      * @return triggerType
      */
     public String getTriggerType() {
@@ -294,7 +294,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 流水线开始时间。 **取值范围**： 不涉及。 
      * @return startTime
      */
     public Long getStartTime() {
@@ -311,7 +311,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 流水线结束时间。 **取值范围**： 不涉及。 
      * @return endTime
      */
     public Long getEndTime() {
@@ -328,7 +328,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 修改页地址
+     * **参数解释**： 修改页地址。 **取值范围**： 不涉及。 
      * @return modifyUrl
      */
     public String getModifyUrl() {
@@ -345,7 +345,7 @@ public class PipelineLatestRun {
     }
 
     /**
-     * 详情页地址
+     * **参数解释**： 详情页地址。 **取值范围**： 不涉及。 
      * @return detailUrl
      */
     public String getDetailUrl() {

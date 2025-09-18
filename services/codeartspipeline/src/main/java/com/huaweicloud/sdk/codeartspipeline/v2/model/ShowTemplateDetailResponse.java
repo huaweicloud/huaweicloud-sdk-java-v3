@@ -248,7 +248,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * region
+     * 局点
      * @return region
      */
     public String getRegion() {

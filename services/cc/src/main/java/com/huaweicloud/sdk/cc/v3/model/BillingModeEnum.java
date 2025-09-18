@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 带宽包实例在大陆站或国际站的计费方式。 1：大陆站包周期。 2：国际站包周期。 3：大陆站按需计费。 4：国际站按需计费。 5：大陆站按95方式计费。 6：国际站按95方式计费。
+ * 带宽包实例在大陆站或国际站的计费方式。 1：大陆站包周期。 2：国际站包周期。 3：大陆站按需计费。 4：国际站按需计费。 5：大陆站按95方式计费。 6：国际站按95方式计费。 7：大陆站按日95方式计费。 8：国际站按日95方式计费。
  */
 public class BillingModeEnum {
 
@@ -42,6 +42,16 @@ public class BillingModeEnum {
      */
     public static final BillingModeEnum NUMBER_6 = new BillingModeEnum(6);
 
+    /**
+     * Enum NUMBER_7 for value: 7
+     */
+    public static final BillingModeEnum NUMBER_7 = new BillingModeEnum(7);
+
+    /**
+     * Enum NUMBER_8 for value: 8
+     */
+    public static final BillingModeEnum NUMBER_8 = new BillingModeEnum(8);
+
     private static final Map<Integer, BillingModeEnum> STATIC_FIELDS = createStaticFields();
 
     private static Map<Integer, BillingModeEnum> createStaticFields() {
@@ -52,6 +62,8 @@ public class BillingModeEnum {
         map.put(4, NUMBER_4);
         map.put(5, NUMBER_5);
         map.put(6, NUMBER_6);
+        map.put(7, NUMBER_7);
+        map.put(8, NUMBER_8);
         return Collections.unmodifiableMap(map);
     }
 

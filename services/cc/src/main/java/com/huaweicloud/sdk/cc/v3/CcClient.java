@@ -1919,238 +1919,6 @@ public class CcClient {
     }
 
     /**
-     * 批量添加账户全域互联带宽资源标签
-     *
-     * TMS批量添加资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchCreateGcbResourceTagsRequest 请求对象
-     * @return BatchCreateGcbResourceTagsResponse
-     */
-    public BatchCreateGcbResourceTagsResponse batchCreateGcbResourceTags(BatchCreateGcbResourceTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, CcMeta.batchCreateGcbResourceTags);
-    }
-
-    /**
-     * 批量添加账户全域互联带宽资源标签
-     *
-     * TMS批量添加资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchCreateGcbResourceTagsRequest 请求对象
-     * @return SyncInvoker<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse>
-     */
-    public SyncInvoker<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse> batchCreateGcbResourceTagsInvoker(
-        BatchCreateGcbResourceTagsRequest request) {
-        return new SyncInvoker<>(request, CcMeta.batchCreateGcbResourceTags, hcClient);
-    }
-
-    /**
-     * 批量删除账户全域互联带宽资源标签
-     *
-     * 批量删除账户全域互联带宽资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteGcbResourceTagsRequest 请求对象
-     * @return BatchDeleteGcbResourceTagsResponse
-     */
-    public BatchDeleteGcbResourceTagsResponse batchDeleteGcbResourceTags(BatchDeleteGcbResourceTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, CcMeta.batchDeleteGcbResourceTags);
-    }
-
-    /**
-     * 批量删除账户全域互联带宽资源标签
-     *
-     * 批量删除账户全域互联带宽资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteGcbResourceTagsRequest 请求对象
-     * @return SyncInvoker<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse>
-     */
-    public SyncInvoker<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse> batchDeleteGcbResourceTagsInvoker(
-        BatchDeleteGcbResourceTagsRequest request) {
-        return new SyncInvoker<>(request, CcMeta.batchDeleteGcbResourceTags, hcClient);
-    }
-
-    /**
-     * 查询账户全域互联带宽资源标签数量
-     *
-     * 查询账户全域互联带宽资源标签数量
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CountGcbResourceByTagRequest 请求对象
-     * @return CountGcbResourceByTagResponse
-     */
-    public CountGcbResourceByTagResponse countGcbResourceByTag(CountGcbResourceByTagRequest request) {
-        return hcClient.syncInvokeHttp(request, CcMeta.countGcbResourceByTag);
-    }
-
-    /**
-     * 查询账户全域互联带宽资源标签数量
-     *
-     * 查询账户全域互联带宽资源标签数量
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CountGcbResourceByTagRequest 请求对象
-     * @return SyncInvoker<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse>
-     */
-    public SyncInvoker<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse> countGcbResourceByTagInvoker(
-        CountGcbResourceByTagRequest request) {
-        return new SyncInvoker<>(request, CcMeta.countGcbResourceByTag, hcClient);
-    }
-
-    /**
-     * 添加账户全域互联带宽资源标签
-     *
-     * 添加账户全域互联带宽资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateGcbResourceTagRequest 请求对象
-     * @return CreateGcbResourceTagResponse
-     */
-    public CreateGcbResourceTagResponse createGcbResourceTag(CreateGcbResourceTagRequest request) {
-        return hcClient.syncInvokeHttp(request, CcMeta.createGcbResourceTag);
-    }
-
-    /**
-     * 添加账户全域互联带宽资源标签
-     *
-     * 添加账户全域互联带宽资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateGcbResourceTagRequest 请求对象
-     * @return SyncInvoker<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse>
-     */
-    public SyncInvoker<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse> createGcbResourceTagInvoker(
-        CreateGcbResourceTagRequest request) {
-        return new SyncInvoker<>(request, CcMeta.createGcbResourceTag, hcClient);
-    }
-
-    /**
-     * 删除账户全域互联带宽资源标签
-     *
-     * 删除账户全域互联带宽资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteGcbResourceTagRequest 请求对象
-     * @return DeleteGcbResourceTagResponse
-     */
-    public DeleteGcbResourceTagResponse deleteGcbResourceTag(DeleteGcbResourceTagRequest request) {
-        return hcClient.syncInvokeHttp(request, CcMeta.deleteGcbResourceTag);
-    }
-
-    /**
-     * 删除账户全域互联带宽资源标签
-     *
-     * 删除账户全域互联带宽资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteGcbResourceTagRequest 请求对象
-     * @return SyncInvoker<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse>
-     */
-    public SyncInvoker<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse> deleteGcbResourceTagInvoker(
-        DeleteGcbResourceTagRequest request) {
-        return new SyncInvoker<>(request, CcMeta.deleteGcbResourceTag, hcClient);
-    }
-
-    /**
-     * 查询账户全域互联带宽资源实例列表
-     *
-     * 查询账户全域互联带宽资源实例列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGcbResourceByTagRequest 请求对象
-     * @return ListGcbResourceByTagResponse
-     */
-    public ListGcbResourceByTagResponse listGcbResourceByTag(ListGcbResourceByTagRequest request) {
-        return hcClient.syncInvokeHttp(request, CcMeta.listGcbResourceByTag);
-    }
-
-    /**
-     * 查询账户全域互联带宽资源实例列表
-     *
-     * 查询账户全域互联带宽资源实例列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGcbResourceByTagRequest 请求对象
-     * @return SyncInvoker<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse>
-     */
-    public SyncInvoker<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse> listGcbResourceByTagInvoker(
-        ListGcbResourceByTagRequest request) {
-        return new SyncInvoker<>(request, CcMeta.listGcbResourceByTag, hcClient);
-    }
-
-    /**
-     * 查询账户全域互联带宽资源的标签
-     *
-     * 查询账户全域互联带宽资源的标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGcbResourceTagsRequest 请求对象
-     * @return ListGcbResourceTagsResponse
-     */
-    public ListGcbResourceTagsResponse listGcbResourceTags(ListGcbResourceTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, CcMeta.listGcbResourceTags);
-    }
-
-    /**
-     * 查询账户全域互联带宽资源的标签
-     *
-     * 查询账户全域互联带宽资源的标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGcbResourceTagsRequest 请求对象
-     * @return SyncInvoker<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse>
-     */
-    public SyncInvoker<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse> listGcbResourceTagsInvoker(
-        ListGcbResourceTagsRequest request) {
-        return new SyncInvoker<>(request, CcMeta.listGcbResourceTags, hcClient);
-    }
-
-    /**
-     * 查询账户全域互联带宽所有资源标签
-     *
-     * 查询账户全域互联带宽所有资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGcbTenantTagsRequest 请求对象
-     * @return ListGcbTenantTagsResponse
-     */
-    public ListGcbTenantTagsResponse listGcbTenantTags(ListGcbTenantTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, CcMeta.listGcbTenantTags);
-    }
-
-    /**
-     * 查询账户全域互联带宽所有资源标签
-     *
-     * 查询账户全域互联带宽所有资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGcbTenantTagsRequest 请求对象
-     * @return SyncInvoker<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse>
-     */
-    public SyncInvoker<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse> listGcbTenantTagsInvoker(
-        ListGcbTenantTagsRequest request) {
-        return new SyncInvoker<>(request, CcMeta.listGcbTenantTags, hcClient);
-    }
-
-    /**
      * 全域互联带宽绑定实例
      *
      * 全域互联带宽绑定实例。
@@ -2518,6 +2286,238 @@ public class CcClient {
     public SyncInvoker<UpdateGlobalConnectionBandwidthRequest, UpdateGlobalConnectionBandwidthResponse> updateGlobalConnectionBandwidthInvoker(
         UpdateGlobalConnectionBandwidthRequest request) {
         return new SyncInvoker<>(request, CcMeta.updateGlobalConnectionBandwidth, hcClient);
+    }
+
+    /**
+     * 批量添加账户全域互联带宽资源标签
+     *
+     * TMS批量添加资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateGcbResourceTagsRequest 请求对象
+     * @return BatchCreateGcbResourceTagsResponse
+     */
+    public BatchCreateGcbResourceTagsResponse batchCreateGcbResourceTags(BatchCreateGcbResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.batchCreateGcbResourceTags);
+    }
+
+    /**
+     * 批量添加账户全域互联带宽资源标签
+     *
+     * TMS批量添加资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateGcbResourceTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse>
+     */
+    public SyncInvoker<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse> batchCreateGcbResourceTagsInvoker(
+        BatchCreateGcbResourceTagsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.batchCreateGcbResourceTags, hcClient);
+    }
+
+    /**
+     * 批量删除账户全域互联带宽资源标签
+     *
+     * 批量删除账户全域互联带宽资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteGcbResourceTagsRequest 请求对象
+     * @return BatchDeleteGcbResourceTagsResponse
+     */
+    public BatchDeleteGcbResourceTagsResponse batchDeleteGcbResourceTags(BatchDeleteGcbResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.batchDeleteGcbResourceTags);
+    }
+
+    /**
+     * 批量删除账户全域互联带宽资源标签
+     *
+     * 批量删除账户全域互联带宽资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteGcbResourceTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse> batchDeleteGcbResourceTagsInvoker(
+        BatchDeleteGcbResourceTagsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.batchDeleteGcbResourceTags, hcClient);
+    }
+
+    /**
+     * 查询账户全域互联带宽资源标签数量
+     *
+     * 查询账户全域互联带宽资源标签数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountGcbResourceByTagRequest 请求对象
+     * @return CountGcbResourceByTagResponse
+     */
+    public CountGcbResourceByTagResponse countGcbResourceByTag(CountGcbResourceByTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.countGcbResourceByTag);
+    }
+
+    /**
+     * 查询账户全域互联带宽资源标签数量
+     *
+     * 查询账户全域互联带宽资源标签数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountGcbResourceByTagRequest 请求对象
+     * @return SyncInvoker<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse>
+     */
+    public SyncInvoker<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse> countGcbResourceByTagInvoker(
+        CountGcbResourceByTagRequest request) {
+        return new SyncInvoker<>(request, CcMeta.countGcbResourceByTag, hcClient);
+    }
+
+    /**
+     * 添加账户全域互联带宽资源标签
+     *
+     * 添加账户全域互联带宽资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGcbResourceTagRequest 请求对象
+     * @return CreateGcbResourceTagResponse
+     */
+    public CreateGcbResourceTagResponse createGcbResourceTag(CreateGcbResourceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.createGcbResourceTag);
+    }
+
+    /**
+     * 添加账户全域互联带宽资源标签
+     *
+     * 添加账户全域互联带宽资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGcbResourceTagRequest 请求对象
+     * @return SyncInvoker<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse>
+     */
+    public SyncInvoker<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse> createGcbResourceTagInvoker(
+        CreateGcbResourceTagRequest request) {
+        return new SyncInvoker<>(request, CcMeta.createGcbResourceTag, hcClient);
+    }
+
+    /**
+     * 删除账户全域互联带宽资源标签
+     *
+     * 删除账户全域互联带宽资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGcbResourceTagRequest 请求对象
+     * @return DeleteGcbResourceTagResponse
+     */
+    public DeleteGcbResourceTagResponse deleteGcbResourceTag(DeleteGcbResourceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.deleteGcbResourceTag);
+    }
+
+    /**
+     * 删除账户全域互联带宽资源标签
+     *
+     * 删除账户全域互联带宽资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGcbResourceTagRequest 请求对象
+     * @return SyncInvoker<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse>
+     */
+    public SyncInvoker<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse> deleteGcbResourceTagInvoker(
+        DeleteGcbResourceTagRequest request) {
+        return new SyncInvoker<>(request, CcMeta.deleteGcbResourceTag, hcClient);
+    }
+
+    /**
+     * 查询账户全域互联带宽资源实例列表
+     *
+     * 查询账户全域互联带宽资源实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGcbResourceByTagRequest 请求对象
+     * @return ListGcbResourceByTagResponse
+     */
+    public ListGcbResourceByTagResponse listGcbResourceByTag(ListGcbResourceByTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listGcbResourceByTag);
+    }
+
+    /**
+     * 查询账户全域互联带宽资源实例列表
+     *
+     * 查询账户全域互联带宽资源实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGcbResourceByTagRequest 请求对象
+     * @return SyncInvoker<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse>
+     */
+    public SyncInvoker<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse> listGcbResourceByTagInvoker(
+        ListGcbResourceByTagRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listGcbResourceByTag, hcClient);
+    }
+
+    /**
+     * 查询账户全域互联带宽资源的标签
+     *
+     * 查询账户全域互联带宽资源的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGcbResourceTagsRequest 请求对象
+     * @return ListGcbResourceTagsResponse
+     */
+    public ListGcbResourceTagsResponse listGcbResourceTags(ListGcbResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listGcbResourceTags);
+    }
+
+    /**
+     * 查询账户全域互联带宽资源的标签
+     *
+     * 查询账户全域互联带宽资源的标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGcbResourceTagsRequest 请求对象
+     * @return SyncInvoker<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse>
+     */
+    public SyncInvoker<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse> listGcbResourceTagsInvoker(
+        ListGcbResourceTagsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listGcbResourceTags, hcClient);
+    }
+
+    /**
+     * 查询账户全域互联带宽所有资源标签
+     *
+     * 查询账户全域互联带宽所有资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGcbTenantTagsRequest 请求对象
+     * @return ListGcbTenantTagsResponse
+     */
+    public ListGcbTenantTagsResponse listGcbTenantTags(ListGcbTenantTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listGcbTenantTags);
+    }
+
+    /**
+     * 查询账户全域互联带宽所有资源标签
+     *
+     * 查询账户全域互联带宽所有资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGcbTenantTagsRequest 请求对象
+     * @return SyncInvoker<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse>
+     */
+    public SyncInvoker<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse> listGcbTenantTagsInvoker(
+        ListGcbTenantTagsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listGcbTenantTags, hcClient);
     }
 
     /**
@@ -3169,7 +3169,7 @@ public class CcClient {
     }
 
     /**
-     * 查询当前支持的Area列表
+     * 查询当前支持的大区列表
      *
      * 查询当前支持的大区列表。
      * 
@@ -3183,7 +3183,7 @@ public class CcClient {
     }
 
     /**
-     * 查询当前支持的Area列表
+     * 查询当前支持的大区列表
      *
      * 查询当前支持的大区列表。
      * 
@@ -3314,9 +3314,9 @@ public class CcClient {
     }
 
     /**
-     * 查询当前支持的Region列表
+     * 查询当前支持的区域列表
      *
-     * 查询当前支持的Region列表。
+     * 查询当前支持的区域列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3328,9 +3328,9 @@ public class CcClient {
     }
 
     /**
-     * 查询当前支持的Region列表
+     * 查询当前支持的区域列表
      *
-     * 查询当前支持的Region列表。
+     * 查询当前支持的区域列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

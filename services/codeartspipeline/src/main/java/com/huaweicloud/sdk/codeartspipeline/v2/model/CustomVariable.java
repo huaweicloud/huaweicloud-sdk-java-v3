@@ -79,7 +79,7 @@ public class CustomVariable {
     }
 
     /**
-     * 流水线ID
+     * **参数解释**： 流水线ID，可以通过[查询流水线列表](ListPipelines.xml)接口，其中pipelines.pipelineId即为流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -96,7 +96,7 @@ public class CustomVariable {
     }
 
     /**
-     * 自定义参数名称
+     * **参数解释**： 自定义参数名称。 **约束限制**： 不涉及。 **取值范围**： 仅支持大小写英文字母、数字、“_”，不超过128个字符。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -113,7 +113,7 @@ public class CustomVariable {
     }
 
     /**
-     * 自定义参数顺序
+     * **参数解释**： 参数序号，从1开始。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return sequence
      */
     public Integer getSequence() {
@@ -130,7 +130,7 @@ public class CustomVariable {
     }
 
     /**
-     * 自定义参数类型
+     * **参数解释**： 自定义参数类型。 **约束限制**： 不涉及。 **取值范围**： - autoIncrement：自增长参数。 - enum：枚举参数。 - string：字符串参数。 **默认取值**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -147,7 +147,7 @@ public class CustomVariable {
     }
 
     /**
-     * 自定义参数默认值
+     * **参数解释**： 自定义参数默认值。 **约束限制**： 不涉及。 **取值范围**： 最长8192字符。 **默认取值**： 不涉及。 
      * @return value
      */
     public String getValue() {
@@ -164,7 +164,7 @@ public class CustomVariable {
     }
 
     /**
-     * 是否私密参数
+     * **参数解释**： 是否私密参数。 **约束限制**： 不涉及。 **取值范围**： - true：是私密参数。 - false：不是私密参数。 **默认取值**： false。 
      * @return isSecret
      */
     public Boolean getIsSecret() {
@@ -181,7 +181,7 @@ public class CustomVariable {
     }
 
     /**
-     * 自定义参数描述
+     * **参数解释**： 参数描述。 **约束限制**： 不涉及。 **取值范围**： 最长1024字符。 **默认取值**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -198,7 +198,7 @@ public class CustomVariable {
     }
 
     /**
-     * 是否运行时设置
+     * **参数解释**： 是否运行时设置参数。 **约束限制**： 不涉及。 **取值范围**： - true：是运行时设置参数。 - false：不是运行时设置参数。 **默认取值**： false。 
      * @return isRuntime
      */
     public Boolean getIsRuntime() {
@@ -231,7 +231,7 @@ public class CustomVariable {
     }
 
     /**
-     * 参数限制
+     * **参数解释**： 枚举值列表。 **约束限制**： 不涉及。 **取值范围**： 每个枚举值不超过1024字符。 **默认取值**： 不涉及。 
      * @return limits
      */
     public List<Object> getLimits() {
@@ -248,7 +248,7 @@ public class CustomVariable {
     }
 
     /**
-     * 是否重置
+     * **参数解释**： 是否重置。自增长参数被编辑，则使用编辑后的值，否则进行末位数字递增。 **约束限制**： 不涉及。 **取值范围**： - true：使用编辑后的参数值。 - false：使用自增长参数。 **默认取值**： false。 
      * @return isReset
      */
     public Boolean getIsReset() {
@@ -265,7 +265,7 @@ public class CustomVariable {
     }
 
     /**
-     * 最近一次参数值
+     * **参数解释**： 最近一次运行的参数值。 **约束限制**： 不涉及。 **取值范围**： 最长8192字符。 **默认取值**： 不涉及。 
      * @return latestValue
      */
     public String getLatestValue() {
@@ -282,7 +282,7 @@ public class CustomVariable {
     }
 
     /**
-     * 运行时传入值
+     * **参数解释**： 流水线运行时设置参数的传入值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return runtimeValue
      */
     public String getRuntimeValue() {

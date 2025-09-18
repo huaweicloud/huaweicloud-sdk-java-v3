@@ -31,7 +31,7 @@ public class PublishPluginDTO {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 插件名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -48,7 +48,7 @@ public class PublishPluginDTO {
     }
 
     /**
-     * 版本
+     * **参数解释**： 版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -65,7 +65,7 @@ public class PublishPluginDTO {
     }
 
     /**
-     * 发布商ID
+     * **参数解释**： 发布商ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return publisherUniqueId
      */
     public String getPublisherUniqueId() {

@@ -27,11 +27,6 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
 
     private LtsIdInfo ltsIdInfo;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enabale")
-
-    private Boolean enabale;
-
     public ShowLtsInfoConfigResponse withId(String id) {
         this.id = id;
         return this;
@@ -92,23 +87,6 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
         this.ltsIdInfo = ltsIdInfo;
     }
 
-    public ShowLtsInfoConfigResponse withEnabale(Boolean enabale) {
-        this.enabale = enabale;
-        return this;
-    }
-
-    /**
-     * 该参数废弃，请忽略
-     * @return enabale
-     */
-    public Boolean getEnabale() {
-        return enabale;
-    }
-
-    public void setEnabale(Boolean enabale) {
-        this.enabale = enabale;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -119,12 +97,12 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
         }
         ShowLtsInfoConfigResponse that = (ShowLtsInfoConfigResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled)
-            && Objects.equals(this.ltsIdInfo, that.ltsIdInfo) && Objects.equals(this.enabale, that.enabale);
+            && Objects.equals(this.ltsIdInfo, that.ltsIdInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, enabled, ltsIdInfo, enabale);
+        return Objects.hash(id, enabled, ltsIdInfo);
     }
 
     @Override
@@ -134,7 +112,6 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    ltsIdInfo: ").append(toIndentedString(ltsIdInfo)).append("\n");
-        sb.append("    enabale: ").append(toIndentedString(enabale)).append("\n");
         sb.append("}");
         return sb.toString();
     }

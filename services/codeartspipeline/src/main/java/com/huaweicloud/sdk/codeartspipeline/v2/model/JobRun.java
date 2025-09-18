@@ -31,7 +31,7 @@ public class JobRun {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "async")
 
-    private Boolean async;
+    private String async;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -109,7 +109,7 @@ public class JobRun {
     }
 
     /**
-     * 任务ID
+     * **参数解释**： 任务ID。 **取值范围**： 不涉及。 
      * @return id
      */
     public String getId() {
@@ -126,7 +126,7 @@ public class JobRun {
     }
 
     /**
-     * 任务类型
+     * **参数解释**： 任务类型。 **取值范围**： 不涉及。 
      * @return category
      */
     public String getCategory() {
@@ -143,7 +143,7 @@ public class JobRun {
     }
 
     /**
-     * 序列号
+     * **参数解释**： 序列号。 **取值范围**： 不涉及。 
      * @return sequence
      */
     public Integer getSequence() {
@@ -154,20 +154,20 @@ public class JobRun {
         this.sequence = sequence;
     }
 
-    public JobRun withAsync(Boolean async) {
+    public JobRun withAsync(String async) {
         this.async = async;
         return this;
     }
 
     /**
-     * 是否异步
+     * **参数解释**： 是否异步。 **取值范围**： - true：异步。 - false：非异步。 
      * @return async
      */
-    public Boolean getAsync() {
+    public String getAsync() {
         return async;
     }
 
-    public void setAsync(Boolean async) {
+    public void setAsync(String async) {
         this.async = async;
     }
 
@@ -177,7 +177,7 @@ public class JobRun {
     }
 
     /**
-     * 任务名称
+     * **参数解释**： 任务名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -194,7 +194,7 @@ public class JobRun {
     }
 
     /**
-     * 任务唯一标识
+     * **参数解释**： 任务唯一标识。 **取值范围**： 不涉及。 
      * @return identifier
      */
     public String getIdentifier() {
@@ -227,7 +227,7 @@ public class JobRun {
     }
 
     /**
-     * 依赖
+     * **参数解释**： 依赖。 **取值范围**： 不涉及。 
      * @return dependsOn
      */
     public List<String> getDependsOn() {
@@ -244,7 +244,7 @@ public class JobRun {
     }
 
     /**
-     * 运行条件
+     * **参数解释**： 运行条件。 **取值范围**： 不涉及。 
      * @return condition
      */
     public String getCondition() {
@@ -261,7 +261,7 @@ public class JobRun {
     }
 
     /**
-     * 执行资源
+     * **参数解释**： 执行资源。 **取值范围**： 不涉及。 
      * @return resource
      */
     public String getResource() {
@@ -278,7 +278,7 @@ public class JobRun {
     }
 
     /**
-     * 是否选中
+     * **参数解释**： 是否选中。 **取值范围**： - true：选中。 - false：未选中。 
      * @return isSelect
      */
     public Boolean getIsSelect() {
@@ -295,7 +295,7 @@ public class JobRun {
     }
 
     /**
-     * 任务超时设置
+     * **参数解释**： 任务超时设置。 **取值范围**： 不涉及。 
      * @return timeout
      */
     public String getTimeout() {
@@ -312,7 +312,7 @@ public class JobRun {
     }
 
     /**
-     * 任务上次下发ID
+     * **参数解释**： 任务上次下发ID。 **取值范围**： 不涉及。 
      * @return lastDispatchId
      */
     public String getLastDispatchId() {
@@ -329,7 +329,7 @@ public class JobRun {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： - INIT：初始化。 - QUEUED：排队。 - RUNNING：运行中。 - CANCELED：取消。 - COMPLETED：已完成。 - FAILED：失败。 - SKIPPED：跳过。 - IGNORED：忽略。 - PAUSED：暂停。 - SUSPEND：挂起。 - ASYNC_RUNNING：异步运行。 - ASYNC_FAILED：异步失败。 - UNSELECTED：未选择。 - REDISPATCH：重新调度。 
      * @return status
      */
     public String getStatus() {
@@ -346,7 +346,7 @@ public class JobRun {
     }
 
     /**
-     * 错误信息
+     * **参数解释**： 错误信息。 **取值范围**： 不涉及。 
      * @return message
      */
     public String getMessage() {
@@ -363,7 +363,7 @@ public class JobRun {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 任务开始时间。 **取值范围**： 不涉及。 
      * @return startTime
      */
     public Long getStartTime() {
@@ -380,7 +380,7 @@ public class JobRun {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 任务结束时间。 **取值范围**： 不涉及。 
      * @return endTime
      */
     public Long getEndTime() {
@@ -413,7 +413,7 @@ public class JobRun {
     }
 
     /**
-     * 步骤
+     * **参数解释**： 步骤。 **取值范围**： 不涉及。 
      * @return steps
      */
     public List<StepRun> getSteps() {
@@ -430,7 +430,7 @@ public class JobRun {
     }
 
     /**
-     * 任务执行ID
+     * **参数解释**： 任务执行ID。 **取值范围**： 不涉及。 
      * @return execId
      */
     public String getExecId() {

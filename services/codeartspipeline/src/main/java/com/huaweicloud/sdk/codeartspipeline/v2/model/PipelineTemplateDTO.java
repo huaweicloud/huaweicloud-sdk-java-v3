@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.codeartspipeline.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -29,7 +31,7 @@ public class PipelineTemplateDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "variables")
 
-    private CustomVariable variables;
+    private List<CustomVariable> variables = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "definition")
@@ -57,7 +59,7 @@ public class PipelineTemplateDTO {
     }
 
     /**
-     * 模板名称
+     * **参数解释**： 模板名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -74,7 +76,7 @@ public class PipelineTemplateDTO {
     }
 
     /**
-     * 模板描述
+     * **参数解释**： 模板描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -91,7 +93,7 @@ public class PipelineTemplateDTO {
     }
 
     /**
-     * 模板语言
+     * **参数解释**： 模板语言。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return language
      */
     public String getLanguage() {
@@ -102,29 +104,36 @@ public class PipelineTemplateDTO {
         this.language = language;
     }
 
-    public PipelineTemplateDTO withVariables(CustomVariable variables) {
+    public PipelineTemplateDTO withVariables(List<CustomVariable> variables) {
         this.variables = variables;
         return this;
     }
 
-    public PipelineTemplateDTO withVariables(Consumer<CustomVariable> variablesSetter) {
+    public PipelineTemplateDTO addVariablesItem(CustomVariable variablesItem) {
         if (this.variables == null) {
-            this.variables = new CustomVariable();
-            variablesSetter.accept(this.variables);
+            this.variables = new ArrayList<>();
         }
+        this.variables.add(variablesItem);
+        return this;
+    }
 
+    public PipelineTemplateDTO withVariables(Consumer<List<CustomVariable>> variablesSetter) {
+        if (this.variables == null) {
+            this.variables = new ArrayList<>();
+        }
+        variablesSetter.accept(this.variables);
         return this;
     }
 
     /**
-     * Get variables
+     * **参数解释**： 自定义参数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return variables
      */
-    public CustomVariable getVariables() {
+    public List<CustomVariable> getVariables() {
         return variables;
     }
 
-    public void setVariables(CustomVariable variables) {
+    public void setVariables(List<CustomVariable> variables) {
         this.variables = variables;
     }
 
@@ -134,7 +143,7 @@ public class PipelineTemplateDTO {
     }
 
     /**
-     * 模板编排json，包含stages
+     * **参数解释**： 模板编排json，包含stages。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return definition
      */
     public String getDefinition() {
@@ -151,7 +160,7 @@ public class PipelineTemplateDTO {
     }
 
     /**
-     * 是否系统模板
+     * **参数解释**： 是否系统模板。 **约束限制**： 不涉及。 **取值范围**： - true：是系统模板。 - false：不是系统模板。 **默认取值**： 不涉及。 
      * @return isSystem
      */
     public Boolean getIsSystem() {
@@ -168,7 +177,7 @@ public class PipelineTemplateDTO {
     }
 
     /**
-     * 所属租户ID
+     * **参数解释**： 租户id。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return domainId
      */
     public String getDomainId() {
@@ -185,7 +194,7 @@ public class PipelineTemplateDTO {
     }
 
     /**
-     * 是否显示流水线源
+     * **参数解释**： 是否显示流水线源。 **约束限制**： 不涉及。 **取值范围**： - true：显示流水线源。 - false：不显示流水线源。 **默认取值**： 不涉及。 
      * @return isShowSource
      */
     public Boolean getIsShowSource() {

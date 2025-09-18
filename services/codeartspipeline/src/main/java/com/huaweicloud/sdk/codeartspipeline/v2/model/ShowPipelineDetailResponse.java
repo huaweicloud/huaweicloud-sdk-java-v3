@@ -119,13 +119,18 @@ public class ShowPipelineDetailResponse extends SdkResponse {
 
     private String definition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_level")
+
+    private Integer securityLevel;
+
     public ShowPipelineDetailResponse withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 流水线ID
+     * **参数解释**： 流水线ID，可以通过[查询流水线列表](ListPipelines.xml)接口，其中pipelines.pipelineId即为流水线ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -142,7 +147,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线名称
+     * **参数解释**： 流水线名称。 **取值范围**： 仅包含中文、大小写英文字母、数字、'-'和'_'，且长度为[1,128]个字符。 
      * @return name
      */
     public String getName() {
@@ -159,7 +164,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 描述
+     * **参数解释**： 对流水线的补充描述。 **取值范围**： 不超过1024字符。 
      * @return description
      */
     public String getDescription() {
@@ -176,7 +181,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线版本
+     * **参数解释**： 流水线版本，默认为3.0。 **取值范围**： 不涉及。 
      * @return manifestVersion
      */
     public String getManifestVersion() {
@@ -193,7 +198,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 局点
+     * **参数解释**： 当前环境所属局点。 **取值范围**： 不涉及。 
      * @return region
      */
     public String getRegion() {
@@ -210,7 +215,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 所属租户ID
+     * **参数解释**： 所属租户ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return domainId
      */
     public String getDomainId() {
@@ -227,7 +232,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 所属项目ID
+     * **参数解释**： 项目ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return projectId
      */
     public String getProjectId() {
@@ -244,7 +249,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 所属微服务ID
+     * **参数解释**： 所属微服务ID。可以通过[查询微服务列表](ListMicroservice.xml)接口获取，其中data.id即为微服务ID。 **取值范围**： 不涉及。 
      * @return componentId
      */
     public String getComponentId() {
@@ -261,7 +266,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是否为变更流水线
+     * **参数解释**： 是否为变更流水线。 **取值范围**： - true：是变更流水线。 - false：不是变更流水线。 
      * @return isPublish
      */
     public Boolean getIsPublish() {
@@ -278,7 +283,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建人ID
+     * **参数解释**： 流水线创建人ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return creatorId
      */
     public String getCreatorId() {
@@ -295,7 +300,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建人名称
+     * **参数解释**： 流水线创建人名称。 **取值范围**： 不涉及。 
      * @return creatorName
      */
     public String getCreatorName() {
@@ -312,7 +317,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 更新人ID
+     * **参数解释**： 流水线上次更新人ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return updaterId
      */
     public String getUpdaterId() {
@@ -329,7 +334,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 更新人名称
+     * **参数解释**： 流水线创建时间。 **取值范围**： 不涉及。 
      * @return createTime
      */
     public Long getCreateTime() {
@@ -346,7 +351,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间
+     * **参数解释**： 流水线更新时间。 **取值范围**： 不涉及。 
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -363,7 +368,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是否被当前用户收藏
+     * **参数解释**： 流水线是否被当前用户收藏。 **取值范围**： - true：流水线已被收藏。 - false：流水线未被收藏。 
      * @return isCollect
      */
     public Boolean getIsCollect() {
@@ -396,7 +401,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线源
+     * **参数解释**： 流水线源列表。 **取值范围**： 不涉及。 
      * @return sources
      */
     public List<PipelineSource> getSources() {
@@ -429,7 +434,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线自定义参数
+     * **参数解释**： 流水线自定义参数。 **取值范围**： 不涉及。 
      * @return variables
      */
     public List<PipelineVariable> getVariables() {
@@ -462,7 +467,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线定时任务设置
+     * **参数解释**： 流水线定时任务设置。 **取值范围**： 不涉及。 
      * @return schedules
      */
     public List<PipelineSchedule> getSchedules() {
@@ -495,7 +500,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线事件触发设置
+     * **参数解释**： 流水线事件触发设置。 **取值范围**： 不涉及。 
      * @return triggers
      */
     public List<PipelineTrigger> getTriggers() {
@@ -512,7 +517,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线所属分组ID
+     * **参数解释**： 流水线所属分组ID。 **取值范围**： 不涉及。 
      * @return groupId
      */
     public String getGroupId() {
@@ -529,7 +534,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线定义
+     * **参数解释**： 流水线定义JSON。 **取值范围**： 不涉及。 
      * @return definition
      */
     public String getDefinition() {
@@ -538,6 +543,23 @@ public class ShowPipelineDetailResponse extends SdkResponse {
 
     public void setDefinition(String definition) {
         this.definition = definition;
+    }
+
+    public ShowPipelineDetailResponse withSecurityLevel(Integer securityLevel) {
+        this.securityLevel = securityLevel;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线涉密等级。 **取值范围**： 不涉及。 
+     * @return securityLevel
+     */
+    public Integer getSecurityLevel() {
+        return securityLevel;
+    }
+
+    public void setSecurityLevel(Integer securityLevel) {
+        this.securityLevel = securityLevel;
     }
 
     @Override
@@ -559,7 +581,8 @@ public class ShowPipelineDetailResponse extends SdkResponse {
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.isCollect, that.isCollect)
             && Objects.equals(this.sources, that.sources) && Objects.equals(this.variables, that.variables)
             && Objects.equals(this.schedules, that.schedules) && Objects.equals(this.triggers, that.triggers)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.definition, that.definition);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.definition, that.definition)
+            && Objects.equals(this.securityLevel, that.securityLevel);
     }
 
     @Override
@@ -584,7 +607,8 @@ public class ShowPipelineDetailResponse extends SdkResponse {
             schedules,
             triggers,
             groupId,
-            definition);
+            definition,
+            securityLevel);
     }
 
     @Override
@@ -612,6 +636,7 @@ public class ShowPipelineDetailResponse extends SdkResponse {
         sb.append("    triggers: ").append(toIndentedString(triggers)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
+        sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

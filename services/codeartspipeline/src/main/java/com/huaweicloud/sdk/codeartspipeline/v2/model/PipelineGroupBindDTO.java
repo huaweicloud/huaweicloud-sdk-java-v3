@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * PipelineGroupBindDTO
+ * **参数解释**： 流水线分组参数详情。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
  */
 public class PipelineGroupBindDTO {
 
@@ -29,7 +29,7 @@ public class PipelineGroupBindDTO {
     }
 
     /**
-     * 分组ID
+     * **参数解释**： 分组ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return groupId
      */
     public String getGroupId() {
@@ -62,7 +62,7 @@ public class PipelineGroupBindDTO {
     }
 
     /**
-     * 流水线集合
+     * **参数解释**： 流水线集合。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return pipelines
      */
     public List<PipelineGroupBindDTOPipelines> getPipelines() {

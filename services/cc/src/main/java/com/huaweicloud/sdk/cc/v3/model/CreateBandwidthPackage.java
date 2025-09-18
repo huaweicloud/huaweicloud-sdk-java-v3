@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建带宽包请求体。
@@ -38,12 +39,12 @@ public class CreateBandwidthPackage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_area_id")
 
-    private AreaIdDef localAreaId;
+    private LocalAreaIdDef localAreaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_area_id")
 
-    private AreaIdDef remoteAreaId;
+    private RemoteAreaIdDef remoteAreaId;
 
     /**
      * 带宽包实例的计费方式。 bandwidth是按带宽计费。
@@ -115,9 +116,19 @@ public class CreateBandwidthPackage {
     private ChargeModeEnum chargeMode;
 
     /**
-     * 带宽包实例在大陆站或国际站的计费方式： - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
+     * 带宽包实例在大陆站或国际站的计费方式： - 1：大陆站包周期 - 2：国际站包周期 - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
      */
     public static final class BillingModeEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final BillingModeEnum NUMBER_1 = new BillingModeEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final BillingModeEnum NUMBER_2 = new BillingModeEnum(2);
 
         /**
          * Enum NUMBER_3 for value: 3
@@ -143,6 +154,8 @@ public class CreateBandwidthPackage {
 
         private static Map<Integer, BillingModeEnum> createStaticFields() {
             Map<Integer, BillingModeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
             map.put(3, NUMBER_3);
             map.put(4, NUMBER_4);
             map.put(5, NUMBER_5);
@@ -360,6 +373,11 @@ public class CreateBandwidthPackage {
 
     private InterflowModeEnum interflowMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prepaid_options")
+
+    private CreatePrepaidOptions prepaidOptions;
+
     public CreateBandwidthPackage withName(String name) {
         this.name = name;
         return this;
@@ -428,7 +446,7 @@ public class CreateBandwidthPackage {
         this.projectId = projectId;
     }
 
-    public CreateBandwidthPackage withLocalAreaId(AreaIdDef localAreaId) {
+    public CreateBandwidthPackage withLocalAreaId(LocalAreaIdDef localAreaId) {
         this.localAreaId = localAreaId;
         return this;
     }
@@ -437,15 +455,15 @@ public class CreateBandwidthPackage {
      * Get localAreaId
      * @return localAreaId
      */
-    public AreaIdDef getLocalAreaId() {
+    public LocalAreaIdDef getLocalAreaId() {
         return localAreaId;
     }
 
-    public void setLocalAreaId(AreaIdDef localAreaId) {
+    public void setLocalAreaId(LocalAreaIdDef localAreaId) {
         this.localAreaId = localAreaId;
     }
 
-    public CreateBandwidthPackage withRemoteAreaId(AreaIdDef remoteAreaId) {
+    public CreateBandwidthPackage withRemoteAreaId(RemoteAreaIdDef remoteAreaId) {
         this.remoteAreaId = remoteAreaId;
         return this;
     }
@@ -454,11 +472,11 @@ public class CreateBandwidthPackage {
      * Get remoteAreaId
      * @return remoteAreaId
      */
-    public AreaIdDef getRemoteAreaId() {
+    public RemoteAreaIdDef getRemoteAreaId() {
         return remoteAreaId;
     }
 
-    public void setRemoteAreaId(AreaIdDef remoteAreaId) {
+    public void setRemoteAreaId(RemoteAreaIdDef remoteAreaId) {
         this.remoteAreaId = remoteAreaId;
     }
 
@@ -485,7 +503,7 @@ public class CreateBandwidthPackage {
     }
 
     /**
-     * 带宽包实例在大陆站或国际站的计费方式： - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
+     * 带宽包实例在大陆站或国际站的计费方式： - 1：大陆站包周期 - 2：国际站包周期 - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
      * @return billingMode
      */
     public BillingModeEnum getBillingMode() {
@@ -583,6 +601,32 @@ public class CreateBandwidthPackage {
         this.interflowMode = interflowMode;
     }
 
+    public CreateBandwidthPackage withPrepaidOptions(CreatePrepaidOptions prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+        return this;
+    }
+
+    public CreateBandwidthPackage withPrepaidOptions(Consumer<CreatePrepaidOptions> prepaidOptionsSetter) {
+        if (this.prepaidOptions == null) {
+            this.prepaidOptions = new CreatePrepaidOptions();
+            prepaidOptionsSetter.accept(this.prepaidOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get prepaidOptions
+     * @return prepaidOptions
+     */
+    public CreatePrepaidOptions getPrepaidOptions() {
+        return prepaidOptions;
+    }
+
+    public void setPrepaidOptions(CreatePrepaidOptions prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -598,7 +642,8 @@ public class CreateBandwidthPackage {
             && Objects.equals(this.remoteAreaId, that.remoteAreaId) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.billingMode, that.billingMode) && Objects.equals(this.bandwidth, that.bandwidth)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.interflowMode, that.interflowMode);
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.interflowMode, that.interflowMode)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
     }
 
     @Override
@@ -615,7 +660,8 @@ public class CreateBandwidthPackage {
             resourceId,
             resourceType,
             specCode,
-            interflowMode);
+            interflowMode,
+            prepaidOptions);
     }
 
     @Override
@@ -635,6 +681,7 @@ public class CreateBandwidthPackage {
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    interflowMode: ").append(toIndentedString(interflowMode)).append("\n");
+        sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

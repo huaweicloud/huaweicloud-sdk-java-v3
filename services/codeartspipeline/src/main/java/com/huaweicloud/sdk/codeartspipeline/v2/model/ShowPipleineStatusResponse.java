@@ -265,7 +265,7 @@ public class ShowPipleineStatusResponse extends SdkResponse {
     }
 
     /**
-     * 流水线运行状态
+     * 流水线运行状态。取值及含义：waiting：等待；running：执行中；verifying：待审核；suspending：挂起；completed：完成。
      * @return status
      */
     public String getStatus() {
@@ -282,7 +282,7 @@ public class ShowPipleineStatusResponse extends SdkResponse {
     }
 
     /**
-     * 流水线执行结果
+     * 流水线执行结果。取值及含义：success：成功；error：失败；aborted：终止
      * @return outcome
      */
     public String getOutcome() {

@@ -21,11 +21,6 @@ public class UpdateLtsInfoConfigRequestBody {
 
     private LtsIdInfo ltsIdInfo;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enabale")
-
-    private Boolean enabale;
-
     public UpdateLtsInfoConfigRequestBody withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -69,23 +64,6 @@ public class UpdateLtsInfoConfigRequestBody {
         this.ltsIdInfo = ltsIdInfo;
     }
 
-    public UpdateLtsInfoConfigRequestBody withEnabale(Boolean enabale) {
-        this.enabale = enabale;
-        return this;
-    }
-
-    /**
-     * 该参数废弃，请忽略
-     * @return enabale
-     */
-    public Boolean getEnabale() {
-        return enabale;
-    }
-
-    public void setEnabale(Boolean enabale) {
-        this.enabale = enabale;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -95,13 +73,12 @@ public class UpdateLtsInfoConfigRequestBody {
             return false;
         }
         UpdateLtsInfoConfigRequestBody that = (UpdateLtsInfoConfigRequestBody) obj;
-        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.ltsIdInfo, that.ltsIdInfo)
-            && Objects.equals(this.enabale, that.enabale);
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.ltsIdInfo, that.ltsIdInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, ltsIdInfo, enabale);
+        return Objects.hash(enabled, ltsIdInfo);
     }
 
     @Override
@@ -110,7 +87,6 @@ public class UpdateLtsInfoConfigRequestBody {
         sb.append("class UpdateLtsInfoConfigRequestBody {\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    ltsIdInfo: ").append(toIndentedString(ltsIdInfo)).append("\n");
-        sb.append("    enabale: ").append(toIndentedString(enabale)).append("\n");
         sb.append("}");
         return sb.toString();
     }

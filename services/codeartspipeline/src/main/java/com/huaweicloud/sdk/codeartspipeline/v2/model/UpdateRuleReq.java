@@ -24,11 +24,6 @@ public class UpdateRuleReq {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "layout_content")
-
-    private String layoutContent;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_id")
 
     private String pluginId;
@@ -54,7 +49,7 @@ public class UpdateRuleReq {
     }
 
     /**
-     * 规则类型
+     * **参数解释**： 规则类型。 **约束限制**： 不涉及。 **取值范围**： - Build：构建。 - Gate：代码检查。 - Test：测试。 **默认取值**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -71,7 +66,7 @@ public class UpdateRuleReq {
     }
 
     /**
-     * 规则名称
+     * **参数解释**： 规则名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -82,30 +77,13 @@ public class UpdateRuleReq {
         this.name = name;
     }
 
-    public UpdateRuleReq withLayoutContent(String layoutContent) {
-        this.layoutContent = layoutContent;
-        return this;
-    }
-
-    /**
-     * 布局内容
-     * @return layoutContent
-     */
-    public String getLayoutContent() {
-        return layoutContent;
-    }
-
-    public void setLayoutContent(String layoutContent) {
-        this.layoutContent = layoutContent;
-    }
-
     public UpdateRuleReq withPluginId(String pluginId) {
         this.pluginId = pluginId;
         return this;
     }
 
     /**
-     * 插件ID
+     * **参数解释**： 扩展插件唯一ID。可以通过[查询插件版本详情](ShowPluginVersion.xml)接口，获取响应参数中unique_id。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return pluginId
      */
     public String getPluginId() {
@@ -122,7 +100,7 @@ public class UpdateRuleReq {
     }
 
     /**
-     * 插件名称
+     * **参数解释**： 扩展插件名称。 **约束限制**： 仅支持输入大小写英文字母、数字、'-'、'_'。 **取值范围**： 1到50位字符。 **默认取值**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -139,7 +117,7 @@ public class UpdateRuleReq {
     }
 
     /**
-     * 插件版本号
+     * **参数解释**： 扩展插件版本号。 **约束限制**： 仅支持输入大小写英文字母、数字、'-'、'_'。 **取值范围**： 1到50位字符。 **默认取值**： 不涉及。 
      * @return pluginVersion
      */
     public String getPluginVersion() {
@@ -172,7 +150,7 @@ public class UpdateRuleReq {
     }
 
     /**
-     * 规则属性集
+     * **参数解释**： 规则详细属性。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return content
      */
     public List<RuleContent> getContent() {
@@ -193,14 +171,13 @@ public class UpdateRuleReq {
         }
         UpdateRuleReq that = (UpdateRuleReq) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.layoutContent, that.layoutContent) && Objects.equals(this.pluginId, that.pluginId)
-            && Objects.equals(this.pluginName, that.pluginName)
+            && Objects.equals(this.pluginId, that.pluginId) && Objects.equals(this.pluginName, that.pluginName)
             && Objects.equals(this.pluginVersion, that.pluginVersion) && Objects.equals(this.content, that.content);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, name, layoutContent, pluginId, pluginName, pluginVersion, content);
+        return Objects.hash(type, name, pluginId, pluginName, pluginVersion, content);
     }
 
     @Override
@@ -209,7 +186,6 @@ public class UpdateRuleReq {
         sb.append("class UpdateRuleReq {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    layoutContent: ").append(toIndentedString(layoutContent)).append("\n");
         sb.append("    pluginId: ").append(toIndentedString(pluginId)).append("\n");
         sb.append("    pluginName: ").append(toIndentedString(pluginName)).append("\n");
         sb.append("    pluginVersion: ").append(toIndentedString(pluginVersion)).append("\n");

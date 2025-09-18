@@ -91,7 +91,7 @@ public class PublisherVO {
     }
 
     /**
-     * 发布商ID
+     * **参数解释**： 发布商ID。可通过[查询发布商详情](ShowPublisher.xml)查询。 **取值范围**： 不涉及。 
      * @return publisherUniqueId
      */
     public String getPublisherUniqueId() {
@@ -108,7 +108,7 @@ public class PublisherVO {
     }
 
     /**
-     * 用户ID
+     * **参数解释**： 用户ID。 **取值范围**： 不涉及。 
      * @return userId
      */
     public String getUserId() {
@@ -125,7 +125,7 @@ public class PublisherVO {
     }
 
     /**
-     * 租户ID
+     * **参数解释**： 租户ID。 **取值范围**： 不涉及。 
      * @return tenantId
      */
     public String getTenantId() {
@@ -142,7 +142,7 @@ public class PublisherVO {
     }
 
     /**
-     * 描述
+     * **参数解释**： 发布商描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -159,7 +159,7 @@ public class PublisherVO {
     }
 
     /**
-     * 图标URL
+     * **参数解释**： 发布商图标URL。 **取值范围**： 不涉及。 
      * @return logoUrl
      */
     public String getLogoUrl() {
@@ -176,7 +176,7 @@ public class PublisherVO {
     }
 
     /**
-     * 网页地址
+     * **参数解释**： 创建发布商时填入的网页地址。 **取值范围**： 不涉及。 
      * @return website
      */
     public String getWebsite() {
@@ -193,7 +193,7 @@ public class PublisherVO {
     }
 
     /**
-     * 地址
+     * **参数解释**： 创建发布商时填入的帮助地址。 **取值范围**： 不涉及。 
      * @return supportUrl
      */
     public String getSupportUrl() {
@@ -210,7 +210,7 @@ public class PublisherVO {
     }
 
     /**
-     * 地址
+     * **参数解释**： 创建发布商时填入的源地址。 **取值范围**： 不涉及。 
      * @return sourceUrl
      */
     public String getSourceUrl() {
@@ -227,7 +227,7 @@ public class PublisherVO {
     }
 
     /**
-     * 英文名
+     * **参数解释**： 发布商英文名。 **取值范围**： 不涉及。 
      * @return enName
      */
     public String getEnName() {
@@ -244,7 +244,7 @@ public class PublisherVO {
     }
 
     /**
-     * 名称
+     * **参数解释**： 发布商中文名。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -261,7 +261,7 @@ public class PublisherVO {
     }
 
     /**
-     * 授权状态
+     * **参数解释**： 授权状态。 **取值范围**： 不涉及。 
      * @return authStatus
      */
     public String getAuthStatus() {
@@ -278,7 +278,7 @@ public class PublisherVO {
     }
 
     /**
-     * 是否删除
+     * **参数解释**： 是否删除。 **取值范围**： - 0：未删除。 - 1：已删除。 
      * @return isDelete
      */
     public Integer getIsDelete() {
@@ -295,7 +295,7 @@ public class PublisherVO {
     }
 
     /**
-     * 最后更新人
+     * **参数解释**： 最后更新人名称。 **取值范围**： 不涉及。 
      * @return lastUpdateUserName
      */
     public String getLastUpdateUserName() {
@@ -312,7 +312,7 @@ public class PublisherVO {
     }
 
     /**
-     * 最后更新人ID
+     * **参数解释**： 最后更新人用户ID。 **取值范围**： 不涉及。 
      * @return lastUpdateUserId
      */
     public String getLastUpdateUserId() {
@@ -329,7 +329,7 @@ public class PublisherVO {
     }
 
     /**
-     * 最后更新时间
+     * **参数解释**： 最后更新时间。 **取值范围**： 不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {

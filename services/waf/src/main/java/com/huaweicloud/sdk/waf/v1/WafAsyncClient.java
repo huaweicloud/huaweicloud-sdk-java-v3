@@ -5,6 +5,10 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteCompositeHostsResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
 import com.huaweicloud.sdk.waf.v1.model.CheckAgencyRequest;
@@ -19,6 +23,8 @@ import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CopyPolicyByIdRequest;
+import com.huaweicloud.sdk.waf.v1.model.CopyPolicyByIdResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAnticrawlerRuleRequest;
@@ -55,6 +61,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleRequest;
@@ -93,6 +101,8 @@ import com.huaweicloud.sdk.waf.v1.model.DeletePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteWhiteBlackIpRuleRequest;
@@ -109,6 +119,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMRequestDistributionRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMRequestDistributionResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListBotMRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMScoreDistributionRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMScoreDistributionResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBotMTimelineRequest;
@@ -161,6 +173,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportHistoryPeriodsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportHistoryPeriodsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
@@ -225,6 +241,10 @@ import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportContentRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportContentResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSourceIpRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowSourceIpResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSubscriptionInfoRequest;
@@ -245,6 +265,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAnticrawlerRuleTypeResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateBotMCategoryStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCcRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateCertificateRequest;
@@ -285,6 +307,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdatePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateWhiteblackipRuleRequest;
@@ -333,6 +357,65 @@ public class WafAsyncClient {
     public AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse> applyCertificateToHostAsyncInvoker(
         ApplyCertificateToHostRequest request) {
         return new AsyncInvoker<>(request, WafMeta.applyCertificateToHost, hcClient);
+    }
+
+    /**
+     * 批量删除租户域名
+     *
+     * 批量删除租户域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCompositeHostsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteCompositeHostsResponse>
+     */
+    public CompletableFuture<BatchDeleteCompositeHostsResponse> batchDeleteCompositeHostsAsync(
+        BatchDeleteCompositeHostsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchDeleteCompositeHosts);
+    }
+
+    /**
+     * 批量删除租户域名
+     *
+     * 批量删除租户域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCompositeHostsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteCompositeHostsRequest, BatchDeleteCompositeHostsResponse>
+     */
+    public AsyncInvoker<BatchDeleteCompositeHostsRequest, BatchDeleteCompositeHostsResponse> batchDeleteCompositeHostsAsyncInvoker(
+        BatchDeleteCompositeHostsRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchDeleteCompositeHosts, hcClient);
+    }
+
+    /**
+     * 批量删除防护策略
+     *
+     * 批量删除防护策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePoliciesRequest 请求对象
+     * @return CompletableFuture<BatchDeletePoliciesResponse>
+     */
+    public CompletableFuture<BatchDeletePoliciesResponse> batchDeletePoliciesAsync(BatchDeletePoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchDeletePolicies);
+    }
+
+    /**
+     * 批量删除防护策略
+     *
+     * 批量删除防护策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePoliciesRequest 请求对象
+     * @return AsyncInvoker<BatchDeletePoliciesRequest, BatchDeletePoliciesResponse>
+     */
+    public AsyncInvoker<BatchDeletePoliciesRequest, BatchDeletePoliciesResponse> batchDeletePoliciesAsyncInvoker(
+        BatchDeletePoliciesRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchDeletePolicies, hcClient);
     }
 
     /**
@@ -545,6 +628,35 @@ public class WafAsyncClient {
     public AsyncInvoker<ConfirmUserBundleRequest, ConfirmUserBundleResponse> confirmUserBundleAsyncInvoker(
         ConfirmUserBundleRequest request) {
         return new AsyncInvoker<>(request, WafMeta.confirmUserBundle, hcClient);
+    }
+
+    /**
+     * 根据Id复制防护策略
+     *
+     * 根据Id复制防护策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyPolicyByIdRequest 请求对象
+     * @return CompletableFuture<CopyPolicyByIdResponse>
+     */
+    public CompletableFuture<CopyPolicyByIdResponse> copyPolicyByIdAsync(CopyPolicyByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.copyPolicyById);
+    }
+
+    /**
+     * 根据Id复制防护策略
+     *
+     * 根据Id复制防护策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyPolicyByIdRequest 请求对象
+     * @return AsyncInvoker<CopyPolicyByIdRequest, CopyPolicyByIdResponse>
+     */
+    public AsyncInvoker<CopyPolicyByIdRequest, CopyPolicyByIdResponse> copyPolicyByIdAsyncInvoker(
+        CopyPolicyByIdRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.copyPolicyById, hcClient);
     }
 
     /**
@@ -1868,6 +1980,35 @@ public class WafAsyncClient {
     public AsyncInvoker<ListBotMRequestDistributionRequest, ListBotMRequestDistributionResponse> listBotMRequestDistributionAsyncInvoker(
         ListBotMRequestDistributionRequest request) {
         return new AsyncInvoker<>(request, WafMeta.listBotMRequestDistribution, hcClient);
+    }
+
+    /**
+     * 查询BotM所有规则
+     *
+     * 查询BotM所有规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMRulesRequest 请求对象
+     * @return CompletableFuture<ListBotMRulesResponse>
+     */
+    public CompletableFuture<ListBotMRulesResponse> listBotMRulesAsync(ListBotMRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listBotMRules);
+    }
+
+    /**
+     * 查询BotM所有规则
+     *
+     * 查询BotM所有规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBotMRulesRequest 请求对象
+     * @return AsyncInvoker<ListBotMRulesRequest, ListBotMRulesResponse>
+     */
+    public AsyncInvoker<ListBotMRulesRequest, ListBotMRulesResponse> listBotMRulesAsyncInvoker(
+        ListBotMRulesRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listBotMRules, hcClient);
     }
 
     /**
@@ -3205,9 +3346,9 @@ public class WafAsyncClient {
     }
 
     /**
-     * 删除地理位置控制防护规则
+     * 查询地理位置控制防护规则详情
      *
-     * 删除地理位置控制防护规则
+     * 查询地理位置控制防护规则详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3219,9 +3360,9 @@ public class WafAsyncClient {
     }
 
     /**
-     * 删除地理位置控制防护规则
+     * 查询地理位置控制防护规则详情
      *
-     * 删除地理位置控制防护规则
+     * 查询地理位置控制防护规则详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3845,6 +3986,36 @@ public class WafAsyncClient {
     public AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse> updateAntileakageRuleAsyncInvoker(
         UpdateAntileakageRuleRequest request) {
         return new AsyncInvoker<>(request, WafMeta.updateAntileakageRule, hcClient);
+    }
+
+    /**
+     * 更新BotM的Category[已知BOT检测/请求特征检测]启用状态
+     *
+     * 更新BotM规则启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMCategoryStatusRequest 请求对象
+     * @return CompletableFuture<UpdateBotMCategoryStatusResponse>
+     */
+    public CompletableFuture<UpdateBotMCategoryStatusResponse> updateBotMCategoryStatusAsync(
+        UpdateBotMCategoryStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateBotMCategoryStatus);
+    }
+
+    /**
+     * 更新BotM的Category[已知BOT检测/请求特征检测]启用状态
+     *
+     * 更新BotM规则启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBotMCategoryStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse>
+     */
+    public AsyncInvoker<UpdateBotMCategoryStatusRequest, UpdateBotMCategoryStatusResponse> updateBotMCategoryStatusAsyncInvoker(
+        UpdateBotMCategoryStatusRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.updateBotMCategoryStatus, hcClient);
     }
 
     /**
@@ -4492,6 +4663,216 @@ public class WafAsyncClient {
     public AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse> updateWhiteblackipRuleAsyncInvoker(
         UpdateWhiteblackipRuleRequest request) {
         return new AsyncInvoker<>(request, WafMeta.updateWhiteblackipRule, hcClient);
+    }
+
+    /**
+     * 创建安全报告订阅
+     *
+     * 创建安全报告订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityReportSubscriptionRequest 请求对象
+     * @return CompletableFuture<CreateSecurityReportSubscriptionResponse>
+     */
+    public CompletableFuture<CreateSecurityReportSubscriptionResponse> createSecurityReportSubscriptionAsync(
+        CreateSecurityReportSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createSecurityReportSubscription);
+    }
+
+    /**
+     * 创建安全报告订阅
+     *
+     * 创建安全报告订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityReportSubscriptionRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityReportSubscriptionRequest, CreateSecurityReportSubscriptionResponse>
+     */
+    public AsyncInvoker<CreateSecurityReportSubscriptionRequest, CreateSecurityReportSubscriptionResponse> createSecurityReportSubscriptionAsyncInvoker(
+        CreateSecurityReportSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createSecurityReportSubscription, hcClient);
+    }
+
+    /**
+     * 删除安全报告订阅
+     *
+     * 删除安全报告订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecurityReportSubscriptionRequest 请求对象
+     * @return CompletableFuture<DeleteSecurityReportSubscriptionResponse>
+     */
+    public CompletableFuture<DeleteSecurityReportSubscriptionResponse> deleteSecurityReportSubscriptionAsync(
+        DeleteSecurityReportSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteSecurityReportSubscription);
+    }
+
+    /**
+     * 删除安全报告订阅
+     *
+     * 删除安全报告订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecurityReportSubscriptionRequest 请求对象
+     * @return AsyncInvoker<DeleteSecurityReportSubscriptionRequest, DeleteSecurityReportSubscriptionResponse>
+     */
+    public AsyncInvoker<DeleteSecurityReportSubscriptionRequest, DeleteSecurityReportSubscriptionResponse> deleteSecurityReportSubscriptionAsyncInvoker(
+        DeleteSecurityReportSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.deleteSecurityReportSubscription, hcClient);
+    }
+
+    /**
+     * 查询安全报告历史统计周期列表
+     *
+     * 查询安全报告历史统计周期列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityReportHistoryPeriodsRequest 请求对象
+     * @return CompletableFuture<ListSecurityReportHistoryPeriodsResponse>
+     */
+    public CompletableFuture<ListSecurityReportHistoryPeriodsResponse> listSecurityReportHistoryPeriodsAsync(
+        ListSecurityReportHistoryPeriodsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listSecurityReportHistoryPeriods);
+    }
+
+    /**
+     * 查询安全报告历史统计周期列表
+     *
+     * 查询安全报告历史统计周期列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityReportHistoryPeriodsRequest 请求对象
+     * @return AsyncInvoker<ListSecurityReportHistoryPeriodsRequest, ListSecurityReportHistoryPeriodsResponse>
+     */
+    public AsyncInvoker<ListSecurityReportHistoryPeriodsRequest, ListSecurityReportHistoryPeriodsResponse> listSecurityReportHistoryPeriodsAsyncInvoker(
+        ListSecurityReportHistoryPeriodsRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listSecurityReportHistoryPeriods, hcClient);
+    }
+
+    /**
+     * 查询安全报告发送记录
+     *
+     * 查询安全报告发送记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityReportSendingRecordsRequest 请求对象
+     * @return CompletableFuture<ListSecurityReportSendingRecordsResponse>
+     */
+    public CompletableFuture<ListSecurityReportSendingRecordsResponse> listSecurityReportSendingRecordsAsync(
+        ListSecurityReportSendingRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listSecurityReportSendingRecords);
+    }
+
+    /**
+     * 查询安全报告发送记录
+     *
+     * 查询安全报告发送记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityReportSendingRecordsRequest 请求对象
+     * @return AsyncInvoker<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse>
+     */
+    public AsyncInvoker<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse> listSecurityReportSendingRecordsAsyncInvoker(
+        ListSecurityReportSendingRecordsRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listSecurityReportSendingRecords, hcClient);
+    }
+
+    /**
+     * 查询安全报告内容
+     *
+     * 查询安全报告内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityReportContentRequest 请求对象
+     * @return CompletableFuture<ShowSecurityReportContentResponse>
+     */
+    public CompletableFuture<ShowSecurityReportContentResponse> showSecurityReportContentAsync(
+        ShowSecurityReportContentRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showSecurityReportContent);
+    }
+
+    /**
+     * 查询安全报告内容
+     *
+     * 查询安全报告内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityReportContentRequest 请求对象
+     * @return AsyncInvoker<ShowSecurityReportContentRequest, ShowSecurityReportContentResponse>
+     */
+    public AsyncInvoker<ShowSecurityReportContentRequest, ShowSecurityReportContentResponse> showSecurityReportContentAsyncInvoker(
+        ShowSecurityReportContentRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.showSecurityReportContent, hcClient);
+    }
+
+    /**
+     * 查询安全报告订阅
+     *
+     * 查询安全报告订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityReportSubscriptionRequest 请求对象
+     * @return CompletableFuture<ShowSecurityReportSubscriptionResponse>
+     */
+    public CompletableFuture<ShowSecurityReportSubscriptionResponse> showSecurityReportSubscriptionAsync(
+        ShowSecurityReportSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showSecurityReportSubscription);
+    }
+
+    /**
+     * 查询安全报告订阅
+     *
+     * 查询安全报告订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecurityReportSubscriptionRequest 请求对象
+     * @return AsyncInvoker<ShowSecurityReportSubscriptionRequest, ShowSecurityReportSubscriptionResponse>
+     */
+    public AsyncInvoker<ShowSecurityReportSubscriptionRequest, ShowSecurityReportSubscriptionResponse> showSecurityReportSubscriptionAsyncInvoker(
+        ShowSecurityReportSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.showSecurityReportSubscription, hcClient);
+    }
+
+    /**
+     * 修改安全报告的订阅
+     *
+     * 修改安全报告的订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityReportSubscriptionRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityReportSubscriptionResponse>
+     */
+    public CompletableFuture<UpdateSecurityReportSubscriptionResponse> updateSecurityReportSubscriptionAsync(
+        UpdateSecurityReportSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateSecurityReportSubscription);
+    }
+
+    /**
+     * 修改安全报告的订阅
+     *
+     * 修改安全报告的订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityReportSubscriptionRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityReportSubscriptionRequest, UpdateSecurityReportSubscriptionResponse>
+     */
+    public AsyncInvoker<UpdateSecurityReportSubscriptionRequest, UpdateSecurityReportSubscriptionResponse> updateSecurityReportSubscriptionAsyncInvoker(
+        UpdateSecurityReportSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.updateSecurityReportSubscription, hcClient);
     }
 
 }

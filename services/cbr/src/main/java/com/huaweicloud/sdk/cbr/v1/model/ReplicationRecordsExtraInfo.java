@@ -31,9 +31,9 @@ public class ReplicationRecordsExtraInfo {
     private Boolean autoTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "destinatio_vault_id")
+    @JsonProperty(value = "destination_vault_id")
 
-    private String destinatioVaultId;
+    private String destinationVaultId;
 
     public ReplicationRecordsExtraInfo withProgress(Integer progress) {
         this.progress = progress;
@@ -103,21 +103,21 @@ public class ReplicationRecordsExtraInfo {
         this.autoTrigger = autoTrigger;
     }
 
-    public ReplicationRecordsExtraInfo withDestinatioVaultId(String destinatioVaultId) {
-        this.destinatioVaultId = destinatioVaultId;
+    public ReplicationRecordsExtraInfo withDestinationVaultId(String destinationVaultId) {
+        this.destinationVaultId = destinationVaultId;
         return this;
     }
 
     /**
      * 目标端的存储库id
-     * @return destinatioVaultId
+     * @return destinationVaultId
      */
-    public String getDestinatioVaultId() {
-        return destinatioVaultId;
+    public String getDestinationVaultId() {
+        return destinationVaultId;
     }
 
-    public void setDestinatioVaultId(String destinatioVaultId) {
-        this.destinatioVaultId = destinatioVaultId;
+    public void setDestinationVaultId(String destinationVaultId) {
+        this.destinationVaultId = destinationVaultId;
     }
 
     @Override
@@ -131,12 +131,12 @@ public class ReplicationRecordsExtraInfo {
         ReplicationRecordsExtraInfo that = (ReplicationRecordsExtraInfo) obj;
         return Objects.equals(this.progress, that.progress) && Objects.equals(this.failCode, that.failCode)
             && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.autoTrigger, that.autoTrigger)
-            && Objects.equals(this.destinatioVaultId, that.destinatioVaultId);
+            && Objects.equals(this.destinationVaultId, that.destinationVaultId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(progress, failCode, failReason, autoTrigger, destinatioVaultId);
+        return Objects.hash(progress, failCode, failReason, autoTrigger, destinationVaultId);
     }
 
     @Override
@@ -147,7 +147,7 @@ public class ReplicationRecordsExtraInfo {
         sb.append("    failCode: ").append(toIndentedString(failCode)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    autoTrigger: ").append(toIndentedString(autoTrigger)).append("\n");
-        sb.append("    destinatioVaultId: ").append(toIndentedString(destinatioVaultId)).append("\n");
+        sb.append("    destinationVaultId: ").append(toIndentedString(destinationVaultId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

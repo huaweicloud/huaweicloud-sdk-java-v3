@@ -46,7 +46,7 @@ public class ListRuleResponse extends SdkResponse {
     }
 
     /**
-     * 静态规则列表
+     * **参数解释**： 静态规则列表。 **取值范围**： 不涉及。 
      * @return data
      */
     public List<Rule> getData() {
@@ -63,7 +63,7 @@ public class ListRuleResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**： 本次查询的静态规则总数。 **取值范围**： 不涉及。 
      * @return total
      */
     public Integer getTotal() {

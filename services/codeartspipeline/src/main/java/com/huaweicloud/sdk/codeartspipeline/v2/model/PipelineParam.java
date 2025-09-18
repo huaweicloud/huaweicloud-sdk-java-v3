@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 流水线参数
+ * **参数解释**： 流水线参数 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
  */
 public class PipelineParam {
 
@@ -46,7 +46,7 @@ public class PipelineParam {
     }
 
     /**
-     * 流水线参数名字
+     * **参数解释**： 流水线参数名字 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -63,7 +63,7 @@ public class PipelineParam {
     }
 
     /**
-     * 流水线参数值
+     * **参数解释**： 流水线参数值 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return value
      */
     public String getValue() {
@@ -80,7 +80,7 @@ public class PipelineParam {
     }
 
     /**
-     * 流水线参数描述
+     * **参数解释**： 流水线参数描述 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -97,7 +97,7 @@ public class PipelineParam {
     }
 
     /**
-     * 流水线参数类型
+     * **参数解释**： 流水线参数类型 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return paramType
      */
     public String getParamType() {
@@ -114,7 +114,7 @@ public class PipelineParam {
     }
 
     /**
-     * 是否静态参数
+     * **参数解释**： 是否静态参数。 **约束限制**： 不涉及。 **取值范围**： - true：是静态参数。 - false：不是静态参数。 **默认取值**： 不涉及。 
      * @return isStatic
      */
     public Boolean getIsStatic() {
@@ -131,7 +131,7 @@ public class PipelineParam {
     }
 
     /**
-     * 是否默认参数
+     * **参数解释**： 是否默认参数。 **约束限制**： 不涉及。 **取值范围**： - true：是默认参数。 - false：不是默认参数。 **默认取值**： 不涉及。 
      * @return isDefault
      */
     public Boolean getIsDefault() {

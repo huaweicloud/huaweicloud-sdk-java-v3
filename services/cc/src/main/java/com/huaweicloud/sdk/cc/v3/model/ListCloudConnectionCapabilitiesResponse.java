@@ -22,7 +22,7 @@ public class ListCloudConnectionCapabilitiesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capabilities")
 
-    private List<CloudConnectionCapability> capabilities = null;
+    private List<CloudConnectionCapabilityInfo> capabilities = null;
 
     public ListCloudConnectionCapabilitiesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -41,12 +41,12 @@ public class ListCloudConnectionCapabilitiesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListCloudConnectionCapabilitiesResponse withCapabilities(List<CloudConnectionCapability> capabilities) {
+    public ListCloudConnectionCapabilitiesResponse withCapabilities(List<CloudConnectionCapabilityInfo> capabilities) {
         this.capabilities = capabilities;
         return this;
     }
 
-    public ListCloudConnectionCapabilitiesResponse addCapabilitiesItem(CloudConnectionCapability capabilitiesItem) {
+    public ListCloudConnectionCapabilitiesResponse addCapabilitiesItem(CloudConnectionCapabilityInfo capabilitiesItem) {
         if (this.capabilities == null) {
             this.capabilities = new ArrayList<>();
         }
@@ -55,7 +55,7 @@ public class ListCloudConnectionCapabilitiesResponse extends SdkResponse {
     }
 
     public ListCloudConnectionCapabilitiesResponse withCapabilities(
-        Consumer<List<CloudConnectionCapability>> capabilitiesSetter) {
+        Consumer<List<CloudConnectionCapabilityInfo>> capabilitiesSetter) {
         if (this.capabilities == null) {
             this.capabilities = new ArrayList<>();
         }
@@ -67,11 +67,11 @@ public class ListCloudConnectionCapabilitiesResponse extends SdkResponse {
      * 租户能力列表。
      * @return capabilities
      */
-    public List<CloudConnectionCapability> getCapabilities() {
+    public List<CloudConnectionCapabilityInfo> getCapabilities() {
         return capabilities;
     }
 
-    public void setCapabilities(List<CloudConnectionCapability> capabilities) {
+    public void setCapabilities(List<CloudConnectionCapabilityInfo> capabilities) {
         this.capabilities = capabilities;
     }
 

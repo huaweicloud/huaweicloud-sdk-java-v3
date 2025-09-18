@@ -93,7 +93,7 @@ public class RegionBandwidthPackageSpecification {
     }
 
     /**
-     * 互通Region带宽包的规格ID。
+     * 互通区域带宽包的规格ID。
      * @return id
      */
     public String getId() {
@@ -110,7 +110,7 @@ public class RegionBandwidthPackageSpecification {
     }
 
     /**
-     * 互通Region带宽包的规格名字。
+     * 互通区域带宽包的规格名称。
      * @return name
      */
     public String getName() {
@@ -127,7 +127,7 @@ public class RegionBandwidthPackageSpecification {
     }
 
     /**
-     * 互通Region带宽包的规格英文名字。
+     * 互通区域带宽包的规格英文名称。
      * @return enName
      */
     public String getEnName() {
@@ -144,7 +144,7 @@ public class RegionBandwidthPackageSpecification {
     }
 
     /**
-     * 互通Region带宽包的规格西语名字。
+     * 互通区域带宽包的规格西语名称。
      * @return esName
      */
     public String getEsName() {
@@ -161,7 +161,7 @@ public class RegionBandwidthPackageSpecification {
     }
 
     /**
-     * 互通Region带宽包的规格葡语名字。
+     * 互通区域带宽包的规格葡语名称。
      * @return ptName
      */
     public String getPtName() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * PipelineMoveToGroupResponseVo
+ * **参数解释**： 响应详情。 **取值范围**： 不涉及。 
  */
 public class PipelineMoveToGroupResponseVo {
 
@@ -31,7 +31,7 @@ public class PipelineMoveToGroupResponseVo {
     }
 
     /**
-     * 响应码 [\"failed\", \"success\"]
+     * **参数解释**： 响应码。 **取值范围**： - failed：失败。 - success：成功。 
      * @return code
      */
     public String getCode() {
@@ -48,7 +48,7 @@ public class PipelineMoveToGroupResponseVo {
     }
 
     /**
-     * 流水线ID
+     * **参数解释**： 流水线ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -65,7 +65,7 @@ public class PipelineMoveToGroupResponseVo {
     }
 
     /**
-     * 流水线名
+     * **参数解释**： 流水线名。 **取值范围**： 不涉及。 
      * @return pipelineName
      */
     public String getPipelineName() {

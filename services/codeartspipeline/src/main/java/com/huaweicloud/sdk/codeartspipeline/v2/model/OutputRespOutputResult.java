@@ -26,7 +26,7 @@ public class OutputRespOutputResult {
     }
 
     /**
-     * output名称
+     * **参数解释**： 步骤输出key值。 **取值范围**： 不涉及。 
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class OutputRespOutputResult {
     }
 
     /**
-     * output值
+     * **参数解释**： 步骤输出value值。 **取值范围**： 不涉及。 
      * @return value
      */
     public String getValue() {

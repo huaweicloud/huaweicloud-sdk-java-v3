@@ -41,7 +41,7 @@ public class PluginDTOInputInfo {
     }
 
     /**
-     * 名称
+     * **参数解释**： 插件输入配置的唯一标识。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -58,7 +58,7 @@ public class PluginDTOInputInfo {
     }
 
     /**
-     * 默认值
+     * **参数解释**： 插件输入配置的默认值，未填写时默认显示。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -75,7 +75,7 @@ public class PluginDTOInputInfo {
     }
 
     /**
-     * 输入类型
+     * **参数解释**： 插件输入配置的输入类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -92,7 +92,7 @@ public class PluginDTOInputInfo {
     }
 
     /**
-     * 验证
+     * **参数解释**： 插件输入配置的输入内容的正则校验规则。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return validation
      */
     public String getValidation() {
@@ -109,7 +109,7 @@ public class PluginDTOInputInfo {
     }
 
     /**
-     * 样式信息
+     * **参数解释**： 样式信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return layoutContent
      */
     public String getLayoutContent() {

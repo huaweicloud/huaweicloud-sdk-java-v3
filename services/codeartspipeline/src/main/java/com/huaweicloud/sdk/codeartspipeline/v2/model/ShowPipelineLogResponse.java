@@ -32,11 +32,6 @@ public class ShowPipelineLogResponse extends SdkResponse {
     private String log;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "location")
-
-    private String location;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "step_run_id")
 
     private String stepRunId;
@@ -47,7 +42,7 @@ public class ShowPipelineLogResponse extends SdkResponse {
     }
 
     /**
-     * 是否有更多日志
+     * **参数解释**： 是否有更多日志。 **取值范围**： - true：有更多日志。 - false：没有更多日志。 
      * @return hasMore
      */
     public Boolean getHasMore() {
@@ -64,7 +59,7 @@ public class ShowPipelineLogResponse extends SdkResponse {
     }
 
     /**
-     * 查询日志结束偏移。填入请求体end_offset字段，用于查询下一页日志。
+     * **参数解释**： 查询日志结束偏移。填入请求体end_offset字段，用于查询下一页日志。 **取值范围**： 不涉及。 
      * @return endOffset
      */
     public String getEndOffset() {
@@ -81,7 +76,7 @@ public class ShowPipelineLogResponse extends SdkResponse {
     }
 
     /**
-     * 查询日志起始偏移。填入请求体start_offset字段，用于查询下一页日志。
+     * **参数解释**： 查询日志起始偏移。填入请求体start_offset字段，用于查询下一页日志。 **取值范围**： 不涉及。 
      * @return startOffset
      */
     public String getStartOffset() {
@@ -98,7 +93,7 @@ public class ShowPipelineLogResponse extends SdkResponse {
     }
 
     /**
-     * 日志内容
+     * **参数解释**： 日志内容。 **取值范围**： 不涉及。 
      * @return log
      */
     public String getLog() {
@@ -109,30 +104,13 @@ public class ShowPipelineLogResponse extends SdkResponse {
         this.log = log;
     }
 
-    public ShowPipelineLogResponse withLocation(String location) {
-        this.location = location;
-        return this;
-    }
-
-    /**
-     * 日志存储位置
-     * @return location
-     */
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
     public ShowPipelineLogResponse withStepRunId(String stepRunId) {
         this.stepRunId = stepRunId;
         return this;
     }
 
     /**
-     * 所属步骤ID
+     * **参数解释**： 所属步骤ID。 **取值范围**： 不涉及。 
      * @return stepRunId
      */
     public String getStepRunId() {
@@ -154,12 +132,12 @@ public class ShowPipelineLogResponse extends SdkResponse {
         ShowPipelineLogResponse that = (ShowPipelineLogResponse) obj;
         return Objects.equals(this.hasMore, that.hasMore) && Objects.equals(this.endOffset, that.endOffset)
             && Objects.equals(this.startOffset, that.startOffset) && Objects.equals(this.log, that.log)
-            && Objects.equals(this.location, that.location) && Objects.equals(this.stepRunId, that.stepRunId);
+            && Objects.equals(this.stepRunId, that.stepRunId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hasMore, endOffset, startOffset, log, location, stepRunId);
+        return Objects.hash(hasMore, endOffset, startOffset, log, stepRunId);
     }
 
     @Override
@@ -170,7 +148,6 @@ public class ShowPipelineLogResponse extends SdkResponse {
         sb.append("    endOffset: ").append(toIndentedString(endOffset)).append("\n");
         sb.append("    startOffset: ").append(toIndentedString(startOffset)).append("\n");
         sb.append("    log: ").append(toIndentedString(log)).append("\n");
-        sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    stepRunId: ").append(toIndentedString(stepRunId)).append("\n");
         sb.append("}");
         return sb.toString();

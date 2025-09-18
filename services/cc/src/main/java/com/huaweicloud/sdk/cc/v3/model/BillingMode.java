@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 本端大区ID。
+ * 计费方式。
  */
 public class BillingMode {
 

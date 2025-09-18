@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 流水线源参数
+ * **参数解释**： 流水线源参数。 **取值范围**： 不涉及。 
  */
 public class PipelineSourceParam {
 
@@ -111,7 +111,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码/制品源参数 - 代码仓/制品源别名。别名仅支持输入大小写英文字母、数字、“_”，至多128个字符
+     * **参数解释**： 代码/制品源参数 - 代码仓/制品源别名。 **取值范围**： 别名仅支持输入大小写英文字母、数字、“_”，至多128个字符。 
      * @return alias
      */
     public String getAlias() {
@@ -128,7 +128,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码源参数 - git类型
+     * **参数解释**： git代码仓类型。 **取值范围**： - codehub。 - gitee。 - github。 - gitcode。 - gitlab。 
      * @return gitType
      */
     public String getGitType() {
@@ -145,7 +145,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码源参数 - Repo代码仓ID
+     * **参数解释**： Repo代码仓ID。 **取值范围**： 不涉及。 
      * @return codehubId
      */
     public String getCodehubId() {
@@ -162,7 +162,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码源参数 - 扩展点id
+     * **参数解释**： 扩展点id。 **取值范围**： 不涉及。 
      * @return endpointId
      */
     public String getEndpointId() {
@@ -179,7 +179,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码源参数 - 默认分支
+     * **参数解释**： 默认分支。 **取值范围**： 不涉及。 
      * @return defaultBranch
      */
     public String getDefaultBranch() {
@@ -196,7 +196,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码源参数 - git链接
+     * **参数解释**： git链接。 **取值范围**： 不涉及。 
      * @return gitUrl
      */
     public String getGitUrl() {
@@ -213,7 +213,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码源参数 - ssh_git链接
+     * **参数解释**： ssh_git链接。 **取值范围**： 不涉及。 
      * @return sshGitUrl
      */
     public String getSshGitUrl() {
@@ -230,7 +230,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码源参数 - 网页url
+     * **参数解释**： 网页url。 **取值范围**： 不涉及。 
      * @return webUrl
      */
     public String getWebUrl() {
@@ -247,7 +247,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 代码源参数 - 流水线源名称
+     * **参数解释**： 流水线源名称。 **取值范围**： 不涉及。 
      * @return repoName
      */
     public String getRepoName() {
@@ -264,7 +264,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 制品源类型，generic/docker
+     * **参数解释**： 制品源类型。 **取值范围**： 仅包含[generic，docker]。 
      * @return artifactType
      */
     public String getArtifactType() {
@@ -281,7 +281,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 制品源类型名
+     * **参数解释**： 制品源类型名。 **取值范围**： 不涉及。 
      * @return artifactTypeName
      */
     public String getArtifactTypeName() {
@@ -298,7 +298,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 过滤分支
+     * **参数解释**： 过滤分支。 **取值范围**： 不涉及。 
      * @return branchFilter
      */
     public String getBranchFilter() {
@@ -315,7 +315,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 目录
+     * **参数解释**： 制品源所在目录。 **取值范围**： 不涉及。 
      * @return directory
      */
     public String getDirectory() {
@@ -332,7 +332,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 目录ID
+     * **参数解释**： 目录ID。 **取值范围**： 不涉及。 
      * @return directoryId
      */
     public String getDirectoryId() {
@@ -349,7 +349,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - Docker组织
+     * **参数解释**： Docker组织。 **取值范围**： 不涉及。 
      * @return organization
      */
     public String getOrganization() {
@@ -366,7 +366,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 包名称
+     * **参数解释**： 软件包名称。 **取值范围**： 不涉及。 
      * @return packageName
      */
     public String getPackageName() {
@@ -383,7 +383,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 版本
+     * **参数解释**： 制品源版本。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -400,7 +400,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 获取制品源版本的策略，latest/specificVersion
+     * **参数解释**： 获取制品源版本的策略。 **取值范围**： 仅包含[latest，specificVersion]。 
      * @return versionStrategy
      */
     public String getVersionStrategy() {
@@ -417,7 +417,7 @@ public class PipelineSourceParam {
     }
 
     /**
-     * 制品源参数 - 制品源名称,如CloudArtifact
+     * **参数解释**： 制品源名称。 **取值范围**： 不涉及。 
      * @return sourceSystem
      */
     public String getSourceSystem() {

@@ -13,9 +13,9 @@ public class LocalAreaId {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_area_id")
 
-    private AreaIdDef localAreaId;
+    private LocalAreaIdDef localAreaId;
 
-    public LocalAreaId withLocalAreaId(AreaIdDef localAreaId) {
+    public LocalAreaId withLocalAreaId(LocalAreaIdDef localAreaId) {
         this.localAreaId = localAreaId;
         return this;
     }
@@ -24,11 +24,11 @@ public class LocalAreaId {
      * Get localAreaId
      * @return localAreaId
      */
-    public AreaIdDef getLocalAreaId() {
+    public LocalAreaIdDef getLocalAreaId() {
         return localAreaId;
     }
 
-    public void setLocalAreaId(AreaIdDef localAreaId) {
+    public void setLocalAreaId(LocalAreaIdDef localAreaId) {
         this.localAreaId = localAreaId;
     }
 

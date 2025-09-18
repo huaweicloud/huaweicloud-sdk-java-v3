@@ -46,7 +46,7 @@ public class PluginPartQueryVOListAgentPluginOutputVOData {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 唯一ID。 **取值范围**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -63,7 +63,7 @@ public class PluginPartQueryVOListAgentPluginOutputVOData {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 扩展插件名称。 **取值范围**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -80,7 +80,7 @@ public class PluginPartQueryVOListAgentPluginOutputVOData {
     }
 
     /**
-     * 版本
+     * **参数解释**： 扩展插件版本号。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -97,7 +97,7 @@ public class PluginPartQueryVOListAgentPluginOutputVOData {
     }
 
     /**
-     * 租户ID
+     * **参数解释**： 租户ID。 **取值范围**： 不涉及。 
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -114,7 +114,7 @@ public class PluginPartQueryVOListAgentPluginOutputVOData {
     }
 
     /**
-     * 名称
+     * **参数解释**： 定义的插件输出名称。 **取值范围**： 不涉及。 
      * @return outputKey
      */
     public String getOutputKey() {
@@ -131,7 +131,7 @@ public class PluginPartQueryVOListAgentPluginOutputVOData {
     }
 
     /**
-     * 值
+     * **参数解释**： 定义的插件输出内容。 **取值范围**： 不涉及。 
      * @return outputValue
      */
     public String getOutputValue() {

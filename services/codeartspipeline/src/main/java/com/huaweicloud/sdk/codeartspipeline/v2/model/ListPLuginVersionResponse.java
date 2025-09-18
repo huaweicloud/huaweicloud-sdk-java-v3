@@ -40,7 +40,7 @@ public class ListPLuginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 偏移
+     * **参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： offset大于等于0。 **默认取值**： 默认为0。 
      * @return offset
      */
     public Integer getOffset() {
@@ -57,7 +57,7 @@ public class ListPLuginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 大小
+     * **参数解释**： 每次查询的条目数量。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。 
      * @return limit
      */
     public Integer getLimit() {
@@ -74,7 +74,7 @@ public class ListPLuginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**： 总条目数量。 **取值范围**： 大于等于0。 
      * @return total
      */
     public Integer getTotal() {
@@ -107,7 +107,7 @@ public class ListPLuginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 结果集
+     * **参数解释**： 扩展插件列表。 **取值范围**： 不涉及。 
      * @return data
      */
     public List<PluginBasicVO> getData() {

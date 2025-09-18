@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 运行制品源参数
+ * **参数解释**： 制品源参数。 **取值范围**： 不涉及。 
  */
 public class PipelineLatestRunArtifactParams {
 
@@ -36,7 +36,7 @@ public class PipelineLatestRunArtifactParams {
     }
 
     /**
-     * 包版本
+     * **参数解释**： 包版本。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -53,7 +53,7 @@ public class PipelineLatestRunArtifactParams {
     }
 
     /**
-     * 过滤分支
+     * **参数解释**： 过滤分支。 **取值范围**： 不涉及。 
      * @return branchFilter
      */
     public String getBranchFilter() {
@@ -70,7 +70,7 @@ public class PipelineLatestRunArtifactParams {
     }
 
     /**
-     * 包名称
+     * **参数解释**： 包名称。 **取值范围**： 不涉及。 
      * @return packageName
      */
     public String getPackageName() {
@@ -87,7 +87,7 @@ public class PipelineLatestRunArtifactParams {
     }
 
     /**
-     * docker组织信息
+     * **参数解释**： docker组织。 **取值范围**： 不涉及。 
      * @return organization
      */
     public String getOrganization() {

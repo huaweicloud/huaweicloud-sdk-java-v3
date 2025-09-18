@@ -51,7 +51,7 @@ public class PageInfoOptionalSinglePluginVOData {
     }
 
     /**
-     * 名称
+     * **参数解释**： 扩展插件唯一标识。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -68,7 +68,7 @@ public class PageInfoOptionalSinglePluginVOData {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 扩展插件在插件市场和流水线显示的名称。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -85,7 +85,7 @@ public class PageInfoOptionalSinglePluginVOData {
     }
 
     /**
-     * 属性
+     * **参数解释**： 标识是否为官方插件。 **取值范围**： 不涉及。 
      * @return pluginAttribution
      */
     public String getPluginAttribution() {
@@ -102,7 +102,7 @@ public class PageInfoOptionalSinglePluginVOData {
     }
 
     /**
-     * 图标URL
+     * **参数解释**： 图标URL。 **取值范围**： 不涉及。 
      * @return iconUrl
      */
     public String getIconUrl() {
@@ -119,7 +119,7 @@ public class PageInfoOptionalSinglePluginVOData {
     }
 
     /**
-     * 描述
+     * **参数解释**： 插件描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -136,7 +136,7 @@ public class PageInfoOptionalSinglePluginVOData {
     }
 
     /**
-     * 发布商ID
+     * **参数解释**： 发布商ID。 **取值范围**： 不涉及。 
      * @return publisherId
      */
     public String getPublisherId() {
@@ -153,7 +153,7 @@ public class PageInfoOptionalSinglePluginVOData {
     }
 
     /**
-     * 版本
+     * **参数解释**： 版本。 **取值范围**： 不涉及。 
      * @return manifestVersion
      */
     public String getManifestVersion() {

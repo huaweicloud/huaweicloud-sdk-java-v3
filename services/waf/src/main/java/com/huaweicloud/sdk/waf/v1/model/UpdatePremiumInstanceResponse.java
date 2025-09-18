@@ -75,14 +75,9 @@ public class UpdatePremiumInstanceResponse extends SdkResponse {
     private String floatIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "securityGroupId")
+    @JsonProperty(value = "security_group_ids")
 
-    private List<String> securityGroupId = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mgrSecurityGroupId")
-
-    private String mgrSecurityGroupId;
+    private List<String> securityGroupIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -353,54 +348,37 @@ public class UpdatePremiumInstanceResponse extends SdkResponse {
         this.floatIp = floatIp;
     }
 
-    public UpdatePremiumInstanceResponse withSecurityGroupId(List<String> securityGroupId) {
-        this.securityGroupId = securityGroupId;
+    public UpdatePremiumInstanceResponse withSecurityGroupIds(List<String> securityGroupIds) {
+        this.securityGroupIds = securityGroupIds;
         return this;
     }
 
-    public UpdatePremiumInstanceResponse addSecurityGroupIdItem(String securityGroupIdItem) {
-        if (this.securityGroupId == null) {
-            this.securityGroupId = new ArrayList<>();
+    public UpdatePremiumInstanceResponse addSecurityGroupIdsItem(String securityGroupIdsItem) {
+        if (this.securityGroupIds == null) {
+            this.securityGroupIds = new ArrayList<>();
         }
-        this.securityGroupId.add(securityGroupIdItem);
+        this.securityGroupIds.add(securityGroupIdsItem);
         return this;
     }
 
-    public UpdatePremiumInstanceResponse withSecurityGroupId(Consumer<List<String>> securityGroupIdSetter) {
-        if (this.securityGroupId == null) {
-            this.securityGroupId = new ArrayList<>();
+    public UpdatePremiumInstanceResponse withSecurityGroupIds(Consumer<List<String>> securityGroupIdsSetter) {
+        if (this.securityGroupIds == null) {
+            this.securityGroupIds = new ArrayList<>();
         }
-        securityGroupIdSetter.accept(this.securityGroupId);
+        securityGroupIdsSetter.accept(this.securityGroupIds);
         return this;
     }
 
     /**
      * **参数解释：** 独享引擎ECS绑定的安全组 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
-     * @return securityGroupId
+     * @return securityGroupIds
      */
-    public List<String> getSecurityGroupId() {
-        return securityGroupId;
+    public List<String> getSecurityGroupIds() {
+        return securityGroupIds;
     }
 
-    public void setSecurityGroupId(List<String> securityGroupId) {
-        this.securityGroupId = securityGroupId;
-    }
-
-    public UpdatePremiumInstanceResponse withMgrSecurityGroupId(String mgrSecurityGroupId) {
-        this.mgrSecurityGroupId = mgrSecurityGroupId;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 独享引擎ECS绑定的用于WAF服务的安全组 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
-     * @return mgrSecurityGroupId
-     */
-    public String getMgrSecurityGroupId() {
-        return mgrSecurityGroupId;
-    }
-
-    public void setMgrSecurityGroupId(String mgrSecurityGroupId) {
-        this.mgrSecurityGroupId = mgrSecurityGroupId;
+    public void setSecurityGroupIds(List<String> securityGroupIds) {
+        this.securityGroupIds = securityGroupIds;
     }
 
     public UpdatePremiumInstanceResponse withStatus(Integer status) {
@@ -655,10 +633,9 @@ public class UpdatePremiumInstanceResponse extends SdkResponse {
             && Objects.equals(this.cpuFlavor, that.cpuFlavor) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.serviceIp, that.serviceIp)
             && Objects.equals(this.serviceIpv6, that.serviceIpv6) && Objects.equals(this.floatIp, that.floatIp)
-            && Objects.equals(this.securityGroupId, that.securityGroupId)
-            && Objects.equals(this.mgrSecurityGroupId, that.mgrSecurityGroupId)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.runStatus, that.runStatus)
-            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.upgradable, that.upgradable)
+            && Objects.equals(this.securityGroupIds, that.securityGroupIds) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.runStatus, that.runStatus) && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.upgradable, that.upgradable)
             && Objects.equals(this.cloudServiceType, that.cloudServiceType)
             && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
@@ -681,8 +658,7 @@ public class UpdatePremiumInstanceResponse extends SdkResponse {
             serviceIp,
             serviceIpv6,
             floatIp,
-            securityGroupId,
-            mgrSecurityGroupId,
+            securityGroupIds,
             status,
             runStatus,
             accessStatus,
@@ -714,8 +690,7 @@ public class UpdatePremiumInstanceResponse extends SdkResponse {
         sb.append("    serviceIp: ").append(toIndentedString(serviceIp)).append("\n");
         sb.append("    serviceIpv6: ").append(toIndentedString(serviceIpv6)).append("\n");
         sb.append("    floatIp: ").append(toIndentedString(floatIp)).append("\n");
-        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
-        sb.append("    mgrSecurityGroupId: ").append(toIndentedString(mgrSecurityGroupId)).append("\n");
+        sb.append("    securityGroupIds: ").append(toIndentedString(securityGroupIds)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    runStatus: ").append(toIndentedString(runStatus)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");

@@ -34,7 +34,7 @@ public class PluginPartQueryVOListAgentPluginOutputVO {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 扩展插件名称。 **取值范围**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -51,7 +51,7 @@ public class PluginPartQueryVOListAgentPluginOutputVO {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 扩展插件展示名称。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -85,7 +85,7 @@ public class PluginPartQueryVOListAgentPluginOutputVO {
     }
 
     /**
-     * 结果集
+     * **参数解释**： 扩展插件输出详细信息。 **取值范围**： 不涉及。 
      * @return data
      */
     public List<PluginPartQueryVOListAgentPluginOutputVOData> getData() {

@@ -27,7 +27,7 @@ public class ListExecutionStepsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<ExcutionStep> data = null;
+    private List<ExecutionStep> data = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
@@ -73,12 +73,12 @@ public class ListExecutionStepsResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
-    public ListExecutionStepsResponse withData(List<ExcutionStep> data) {
+    public ListExecutionStepsResponse withData(List<ExecutionStep> data) {
         this.data = data;
         return this;
     }
 
-    public ListExecutionStepsResponse addDataItem(ExcutionStep dataItem) {
+    public ListExecutionStepsResponse addDataItem(ExecutionStep dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -86,7 +86,7 @@ public class ListExecutionStepsResponse extends SdkResponse {
         return this;
     }
 
-    public ListExecutionStepsResponse withData(Consumer<List<ExcutionStep>> dataSetter) {
+    public ListExecutionStepsResponse withData(Consumer<List<ExecutionStep>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -98,11 +98,11 @@ public class ListExecutionStepsResponse extends SdkResponse {
      * 返回数据
      * @return data
      */
-    public List<ExcutionStep> getData() {
+    public List<ExecutionStep> getData() {
         return data;
     }
 
-    public void setData(List<ExcutionStep> data) {
+    public void setData(List<ExecutionStep> data) {
         this.data = data;
     }
 

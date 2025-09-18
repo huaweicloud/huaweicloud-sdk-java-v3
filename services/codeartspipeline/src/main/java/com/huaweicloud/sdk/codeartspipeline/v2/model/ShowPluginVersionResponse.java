@@ -67,12 +67,12 @@ public class ShowPluginVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input_info")
 
-    private List<PluginPartQueryVOListAgentPluginInputVOData> inputInfo = null;
+    private List<PluginInstanceVOInputInfo> inputInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugin_execution")
 
-    private Object pluginExecution;
+    private PluginExecutionVO pluginExecution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_attribution")
@@ -85,7 +85,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 扩展插件名称。 **取值范围**： 1到50位字符。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -102,7 +102,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 扩展插件展示名称。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -119,7 +119,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 操作人
+     * **参数解释**： 扩展插件最后更新人。 **取值范围**： 不涉及。 
      * @return opUser
      */
     public String getOpUser() {
@@ -136,7 +136,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 操作时间
+     * **参数解释**： 扩展插件最后更新时间。 **取值范围**： 不涉及。 
      * @return opTime
      */
     public String getOpTime() {
@@ -153,7 +153,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 版本
+     * **参数解释**： 扩展插件版本号。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -170,7 +170,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 扩展插件唯一ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -187,7 +187,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 版本说明
+     * **参数解释**： 扩展插件版本说明。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return versionDescription
      */
     public String getVersionDescription() {
@@ -204,7 +204,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 版本属性
+     * **参数解释**： 扩展插件版本属性。 **取值范围**： - draft：草稿版本。 - formal：正式版本。 
      * @return versionAttribution
      */
     public String getVersionAttribution() {
@@ -221,7 +221,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 组合插件类型
+     * **参数解释**： 用于标识扩展插件是否为多个step组成的组合插件。 **取值范围**： - multi：组合插件。 - single：非组合插件。 
      * @return pluginCompositionType
      */
     public String getPluginCompositionType() {
@@ -238,7 +238,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 插件属性
+     * **参数解释**： 扩展插件属性。 **取值范围**： - custom：自定义插件。 - official：官方插件。 - published：已发布的发布商插件。 
      * @return pluginAttribution
      */
     public String getPluginAttribution() {
@@ -249,12 +249,12 @@ public class ShowPluginVersionResponse extends SdkResponse {
         this.pluginAttribution = pluginAttribution;
     }
 
-    public ShowPluginVersionResponse withInputInfo(List<PluginPartQueryVOListAgentPluginInputVOData> inputInfo) {
+    public ShowPluginVersionResponse withInputInfo(List<PluginInstanceVOInputInfo> inputInfo) {
         this.inputInfo = inputInfo;
         return this;
     }
 
-    public ShowPluginVersionResponse addInputInfoItem(PluginPartQueryVOListAgentPluginInputVOData inputInfoItem) {
+    public ShowPluginVersionResponse addInputInfoItem(PluginInstanceVOInputInfo inputInfoItem) {
         if (this.inputInfo == null) {
             this.inputInfo = new ArrayList<>();
         }
@@ -262,8 +262,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
         return this;
     }
 
-    public ShowPluginVersionResponse withInputInfo(
-        Consumer<List<PluginPartQueryVOListAgentPluginInputVOData>> inputInfoSetter) {
+    public ShowPluginVersionResponse withInputInfo(Consumer<List<PluginInstanceVOInputInfo>> inputInfoSetter) {
         if (this.inputInfo == null) {
             this.inputInfo = new ArrayList<>();
         }
@@ -272,31 +271,40 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 输入信息
+     * **参数解释**： 插件输入项详细信息。 **取值范围**： 不涉及。 
      * @return inputInfo
      */
-    public List<PluginPartQueryVOListAgentPluginInputVOData> getInputInfo() {
+    public List<PluginInstanceVOInputInfo> getInputInfo() {
         return inputInfo;
     }
 
-    public void setInputInfo(List<PluginPartQueryVOListAgentPluginInputVOData> inputInfo) {
+    public void setInputInfo(List<PluginInstanceVOInputInfo> inputInfo) {
         this.inputInfo = inputInfo;
     }
 
-    public ShowPluginVersionResponse withPluginExecution(Object pluginExecution) {
+    public ShowPluginVersionResponse withPluginExecution(PluginExecutionVO pluginExecution) {
         this.pluginExecution = pluginExecution;
         return this;
     }
 
+    public ShowPluginVersionResponse withPluginExecution(Consumer<PluginExecutionVO> pluginExecutionSetter) {
+        if (this.pluginExecution == null) {
+            this.pluginExecution = new PluginExecutionVO();
+            pluginExecutionSetter.accept(this.pluginExecution);
+        }
+
+        return this;
+    }
+
     /**
-     * 执行信息
+     * Get pluginExecution
      * @return pluginExecution
      */
-    public Object getPluginExecution() {
+    public PluginExecutionVO getPluginExecution() {
         return pluginExecution;
     }
 
-    public void setPluginExecution(Object pluginExecution) {
+    public void setPluginExecution(PluginExecutionVO pluginExecution) {
         this.pluginExecution = pluginExecution;
     }
 
@@ -306,7 +314,7 @@ public class ShowPluginVersionResponse extends SdkResponse {
     }
 
     /**
-     * 运行属性
+     * **参数解释**： 运行属性。 **取值范围**： - agent：运行基于流水线agent。 - agentLess：运行无需流水线agent。 
      * @return runtimeAttribution
      */
     public String getRuntimeAttribution() {

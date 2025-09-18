@@ -27,7 +27,7 @@ public class SwitchStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * **参数解释**： 更新状态是否成功。 **取值范围**： - true：状态更新成功。 - false：状态更新失败。 
      * @return status
      */
     public Boolean getStatus() {
@@ -44,7 +44,7 @@ public class SwitchStrategyResponse extends SdkResponse {
     }
 
     /**
-     * 策略ID
+     * **参数解释**： 更新的策略ID。 **取值范围**： 不涉及。 
      * @return ruleSetId
      */
     public String getRuleSetId() {

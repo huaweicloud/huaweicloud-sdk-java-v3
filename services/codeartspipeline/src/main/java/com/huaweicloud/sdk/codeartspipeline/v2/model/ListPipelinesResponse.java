@@ -40,7 +40,7 @@ public class ListPipelinesResponse extends SdkResponse {
     }
 
     /**
-     * 起始偏移
+     * **参数解释**： 起始偏移。 **取值范围**： 不涉及。 
      * @return offset
      */
     public Integer getOffset() {
@@ -57,7 +57,7 @@ public class ListPipelinesResponse extends SdkResponse {
     }
 
     /**
-     * 查询大小
+     * **参数解释**： 查询大小。 **取值范围**： 不涉及。 
      * @return limit
      */
     public Integer getLimit() {
@@ -74,7 +74,7 @@ public class ListPipelinesResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**： 记录总数。 **取值范围**： 不涉及。 
      * @return total
      */
     public Integer getTotal() {
@@ -107,7 +107,7 @@ public class ListPipelinesResponse extends SdkResponse {
     }
 
     /**
-     * 流水线
+     * **参数解释**： 流水线。 **取值范围**： 不涉及。 
      * @return pipelines
      */
     public List<ListPipelinesPagePipelines> getPipelines() {

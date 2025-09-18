@@ -36,7 +36,7 @@ public class PackageInfo {
     }
 
     /**
-     * 产物名
+     * **参数解释**： 产物名。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -53,7 +53,7 @@ public class PackageInfo {
     }
 
     /**
-     * 产物类型
+     * **参数解释**： 产物类型。 **取值范围**： 不涉及。 
      * @return packageType
      */
     public String getPackageType() {
@@ -70,7 +70,7 @@ public class PackageInfo {
     }
 
     /**
-     * 产物版本号
+     * **参数解释**： 产物版本号。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -87,7 +87,7 @@ public class PackageInfo {
     }
 
     /**
-     * 产物下载地址
+     * **参数解释**： 产物下载地址。 **取值范围**： 不涉及。 
      * @return downloadUrl
      */
     public String getDownloadUrl() {

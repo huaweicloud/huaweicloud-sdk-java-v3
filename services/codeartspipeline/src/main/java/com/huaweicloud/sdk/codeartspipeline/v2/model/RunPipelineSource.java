@@ -27,7 +27,7 @@ public class RunPipelineSource {
     }
 
     /**
-     * 源类型
+     * **参数解释**： 源类型。 **取值范围**： 目前支持code - 代码源类型。 
      * @return type
      */
     public String getType() {

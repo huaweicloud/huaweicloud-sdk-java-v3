@@ -61,7 +61,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 名称
+     * **参数解释**： 发布商名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -78,7 +78,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 用户ID
+     * **参数解释**： 用户ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return userId
      */
     public String getUserId() {
@@ -95,7 +95,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 描述
+     * **参数解释**： 发布商描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -112,7 +112,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 图标URL
+     * **参数解释**： 发布商图标URL。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return logoUrl
      */
     public String getLogoUrl() {
@@ -129,7 +129,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 网页地址
+     * **参数解释**： 发布商网页地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return website
      */
     public String getWebsite() {
@@ -146,7 +146,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 地址
+     * **参数解释**： 发布商帮助地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return supportUrl
      */
     public String getSupportUrl() {
@@ -163,7 +163,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 地址
+     * **参数解释**： 发布商源码地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return sourceUrl
      */
     public String getSourceUrl() {
@@ -180,7 +180,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 英文名
+     * **参数解释**： 发布商英文名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return enName
      */
     public String getEnName() {
@@ -197,7 +197,7 @@ public class PublisherRequest {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 发布商ID。可通过[查询发布商详情](ShowPublisher.xml)查询。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return publisherUniqueId
      */
     public String getPublisherUniqueId() {

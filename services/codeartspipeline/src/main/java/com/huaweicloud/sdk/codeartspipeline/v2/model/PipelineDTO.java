@@ -78,13 +78,18 @@ public class PipelineDTO {
 
     private PipelineConcurrencyMgmt concurrencyControl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_level")
+
+    private Integer securityLevel;
+
     public PipelineDTO withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 流水线名称
+     * **参数解释**： 流水线名称。 **约束限制**： 不涉及。 **取值范围**： 仅包含中文、大小写英文字母、数字、'-'和'_'，且长度为[1,128]个字符。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -101,7 +106,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 流水线描述
+     * **参数解释**： 流水线描述。 **约束限制**： 不涉及。 **取值范围**： 不超过1024字符。 **默认取值**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -118,7 +123,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 是否为发布流水线
+     * **参数解释**： 是否为变更流水线。 **约束限制**： 不涉及。 **取值范围**： - true：变更流水线。 - false：非变更流水线。 **默认取值**： 不涉及。 
      * @return isPublish
      */
     public Boolean getIsPublish() {
@@ -151,7 +156,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 流水线源
+     * **参数解释**： 流水线源信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return sources
      */
     public List<CodeSource> getSources() {
@@ -184,7 +189,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 流水线自定义全局变量
+     * **参数解释**： 流水线自定义全局变量列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return variables
      */
     public List<CustomVariable> getVariables() {
@@ -217,7 +222,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 流水线定时执行配置
+     * **参数解释**： 流水线定时执行配置列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return schedules
      */
     public List<PipelineSchedule> getSchedules() {
@@ -250,7 +255,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 流水线代码事件触发配置
+     * **参数解释**： 流水线代码事件触发配置。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return triggers
      */
     public List<PipelineTrigger> getTriggers() {
@@ -267,7 +272,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 流水线结构定义版本，新版默认为3.0
+     * **参数解释**： 流水线结构定义版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 3.0。 
      * @return manifestVersion
      */
     public String getManifestVersion() {
@@ -284,7 +289,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 流水线结构定义
+     * **参数解释**： 流水线结构定义JSON。该字段结构复杂，建议使用页面编辑流水线后，从[查询流水线详情](ShowPipelineDetail.xml)接口获取。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return definition
      */
     public String getDefinition() {
@@ -301,7 +306,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 项目名称
+     * **参数解释**： 项目名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return projectName
      */
     public String getProjectName() {
@@ -318,7 +323,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 流水线组ID
+     * **参数解释**： 流水线组ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
      * @return groupId
      */
     public String getGroupId() {
@@ -335,7 +340,7 @@ public class PipelineDTO {
     }
 
     /**
-     * 若为复制场景，则为原流水线ID
+     * **参数解释**： 复制场景使用，为流水线组ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
      * @return id
      */
     public String getId() {
@@ -372,6 +377,23 @@ public class PipelineDTO {
         this.concurrencyControl = concurrencyControl;
     }
 
+    public PipelineDTO withSecurityLevel(Integer securityLevel) {
+        this.securityLevel = securityLevel;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线涉密等级。 **约束限制**： 非涉密场景不涉及，涉密场景必填。 **取值范围**： 正整数（1为最低密级）。 **默认取值**： 不涉及。 
+     * @return securityLevel
+     */
+    public Integer getSecurityLevel() {
+        return securityLevel;
+    }
+
+    public void setSecurityLevel(Integer securityLevel) {
+        this.securityLevel = securityLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -388,7 +410,8 @@ public class PipelineDTO {
             && Objects.equals(this.manifestVersion, that.manifestVersion)
             && Objects.equals(this.definition, that.definition) && Objects.equals(this.projectName, that.projectName)
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.concurrencyControl, that.concurrencyControl);
+            && Objects.equals(this.concurrencyControl, that.concurrencyControl)
+            && Objects.equals(this.securityLevel, that.securityLevel);
     }
 
     @Override
@@ -405,7 +428,8 @@ public class PipelineDTO {
             projectName,
             groupId,
             id,
-            concurrencyControl);
+            concurrencyControl,
+            securityLevel);
     }
 
     @Override
@@ -425,6 +449,7 @@ public class PipelineDTO {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    concurrencyControl: ").append(toIndentedString(concurrencyControl)).append("\n");
+        sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

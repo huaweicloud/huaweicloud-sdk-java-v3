@@ -26,7 +26,7 @@ public class ArtifactHashCode {
     }
 
     /**
-     * 哈希算法
+     * **参数解释**： 哈希算法。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return hashType
      */
     public String getHashType() {
@@ -43,7 +43,7 @@ public class ArtifactHashCode {
     }
 
     /**
-     * 哈希值
+     * **参数解释**： 哈希值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return hashValue
      */
     public String getHashValue() {

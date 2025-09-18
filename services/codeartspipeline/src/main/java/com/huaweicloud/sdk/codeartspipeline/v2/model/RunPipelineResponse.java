@@ -22,7 +22,7 @@ public class RunPipelineResponse extends SdkResponse {
     }
 
     /**
-     * Get pipelineRunId
+     * **参数解释**： 流水线运行实例ID，[启动流水线](RunPipeline.xml)接口的返回值即为流水线运行实例ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return pipelineRunId
      */
     public String getPipelineRunId() {

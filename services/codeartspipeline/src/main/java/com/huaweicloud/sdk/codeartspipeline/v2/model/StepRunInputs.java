@@ -26,7 +26,7 @@ public class StepRunInputs {
     }
 
     /**
-     * 输入参数名
+     * **参数解释**： 输入参数名。 **取值范围**： 不涉及。 
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class StepRunInputs {
     }
 
     /**
-     * 输入参数值
+     * **参数解释**： 输入参数值。 **取值范围**： 不涉及。 
      * @return value
      */
     public Object getValue() {

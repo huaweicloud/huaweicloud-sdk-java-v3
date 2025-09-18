@@ -75,16 +75,6 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     private String updaterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private Long createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
-
-    private Long updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_collect")
 
     private String isCollect;
@@ -105,7 +95,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 模板ID
+     * **参数解释**： 模板ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -122,7 +112,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 模板名称
+     * **参数解释**： 模板名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -139,7 +129,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 模板图标
+     * **参数解释**： 模板图标。 **取值范围**： 不涉及。 
      * @return icon
      */
     public String getIcon() {
@@ -156,7 +146,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 流水线结构定义版本，新版默认为3.0
+     * **参数解释**： 版本。 **取值范围**： 默认3.0。 
      * @return manifestVersion
      */
     public String getManifestVersion() {
@@ -173,7 +163,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 模板语言
+     * **参数解释**： 模板语言。 **取值范围**： - java。 - python。 - nodejs。 - go。 - net。 - cpp。 - php。 - other。 - none。 
      * @return language
      */
     public String getLanguage() {
@@ -190,7 +180,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 模板描述
+     * **参数解释**： 模板描述。 **取值范围**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -207,7 +197,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是否系统模板
+     * **参数解释**： 是否系统模板。 **取值范围**： - true：是系统模板。 - false：不是系统模板。 
      * @return isSystem
      */
     public Boolean getIsSystem() {
@@ -224,7 +214,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 所属局点
+     * **参数解释**： 模板局点。 **取值范围**： 不涉及。 
      * @return region
      */
     public String getRegion() {
@@ -241,7 +231,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 所属租户ID
+     * **参数解释**： 模板所属租户ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return domainId
      */
     public String getDomainId() {
@@ -274,7 +264,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 使用的自定义参数
+     * **参数解释**： 自定义参数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return variables
      */
     public List<CustomVariable> getVariables() {
@@ -291,7 +281,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建人ID
+     * **参数解释**： 模板创建人ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return creatorId
      */
     public String getCreatorId() {
@@ -308,7 +298,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 编辑人ID
+     * **参数解释**： 模板更新人ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return updaterId
      */
     public String getUpdaterId() {
@@ -319,47 +309,13 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
         this.updaterId = updaterId;
     }
 
-    public ShowPipelineTemplateDetailResponse withCreateTime(Long createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    /**
-     * 创建日期
-     * @return createTime
-     */
-    public Long getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
-    public ShowPipelineTemplateDetailResponse withUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    /**
-     * 更新日期
-     * @return updateTime
-     */
-    public Long getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-    }
-
     public ShowPipelineTemplateDetailResponse withIsCollect(String isCollect) {
         this.isCollect = isCollect;
         return this;
     }
 
     /**
-     * 是否收藏
+     * **参数解释**： 是否收藏。 **取值范围**： - true：收藏。 - false：不收藏。 
      * @return isCollect
      */
     public String getIsCollect() {
@@ -376,7 +332,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是否显示流水线源
+     * **参数解释**： 是否展示流水线源。 **取值范围**： - true：展示流水线源。 - false：不展示流水线源。 
      * @return isShowSource
      */
     public Boolean getIsShowSource() {
@@ -393,7 +349,7 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     /**
-     * 模板编排json，包含stages
+     * **参数解释**： 模板编排json，包含stages。 **取值范围**： 不涉及。 
      * @return definition
      */
     public String getDefinition() {
@@ -419,7 +375,6 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
             && Objects.equals(this.isSystem, that.isSystem) && Objects.equals(this.region, that.region)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.variables, that.variables)
             && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.updaterId, that.updaterId)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.isCollect, that.isCollect) && Objects.equals(this.isShowSource, that.isShowSource)
             && Objects.equals(this.definition, that.definition);
     }
@@ -438,8 +393,6 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
             variables,
             creatorId,
             updaterId,
-            createTime,
-            updateTime,
             isCollect,
             isShowSource,
             definition);
@@ -461,8 +414,6 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
         sb.append("    variables: ").append(toIndentedString(variables)).append("\n");
         sb.append("    creatorId: ").append(toIndentedString(creatorId)).append("\n");
         sb.append("    updaterId: ").append(toIndentedString(updaterId)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    isCollect: ").append(toIndentedString(isCollect)).append("\n");
         sb.append("    isShowSource: ").append(toIndentedString(isShowSource)).append("\n");
         sb.append("    definition: ").append(toIndentedString(definition)).append("\n");

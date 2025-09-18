@@ -31,7 +31,7 @@ public class FullStagePluginsRelationVOAddables {
     }
 
     /**
-     * 额外属性1
+     * **参数解释**： 额外属性1。 **取值范围**： 不涉及。 
      * @return additionalProp1
      */
     public Boolean getAdditionalProp1() {
@@ -48,7 +48,7 @@ public class FullStagePluginsRelationVOAddables {
     }
 
     /**
-     * 额外属性2
+     * **参数解释**： 额外属性2。 **取值范围**： 不涉及。 
      * @return additionalProp2
      */
     public Boolean getAdditionalProp2() {
@@ -65,7 +65,7 @@ public class FullStagePluginsRelationVOAddables {
     }
 
     /**
-     * 额外属性3
+     * **参数解释**： 额外属性3。 **取值范围**： 不涉及。 
      * @return additionalProp3
      */
     public Boolean getAdditionalProp3() {

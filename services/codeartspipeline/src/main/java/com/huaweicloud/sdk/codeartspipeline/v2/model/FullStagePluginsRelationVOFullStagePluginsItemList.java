@@ -88,7 +88,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 插件列表
+     * **参数解释**： 插件列表。 **取值范围**： 不涉及。 
      * @return pluginsList
      */
     public List<FullStagePluginsRelationVOPluginsList> getPluginsList() {
@@ -105,7 +105,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 扩展插件展示名。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -122,7 +122,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 业务类型
+     * **参数解释**： 扩展插件业务类型。 **取值范围**： 不涉及。 
      * @return businessType
      */
     public String getBusinessType() {
@@ -139,7 +139,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 扩展插件唯一ID。 **默认取值**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -172,7 +172,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 条件
+     * **参数解释**： 运行条件。 **取值范围**： 不涉及。 
      * @return conditions
      */
     public List<String> getConditions() {
@@ -208,7 +208,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 额外属性
+     * **参数解释**： 额外属性。 **取值范围**： 不涉及。 
      * @return addables
      */
     public List<FullStagePluginsRelationVOAddables> getAddables() {
@@ -225,7 +225,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 是否可编辑
+     * **参数解释**： 是否可编辑。 **取值范围**： - true：可编辑。 - false：不可编辑。 
      * @return editable
      */
     public Boolean getEditable() {
@@ -242,7 +242,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 是否可移除
+     * **参数解释**： 是否可移除。 **取值范围**： - true：可移除。 - false：不可移除。 
      * @return removable
      */
     public Boolean getRemovable() {
@@ -259,7 +259,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 是否可复制
+     * **参数解释**： 是否可复制。 **取值范围**： - true：可复制。 - false：不可复制。 
      * @return cloneable
      */
     public Boolean getCloneable() {
@@ -276,7 +276,7 @@ public class FullStagePluginsRelationVOFullStagePluginsItemList {
     }
 
     /**
-     * 禁用
+     * **参数解释**： 是否禁用。 **取值范围**： - true：禁用。 - false：未禁用。 
      * @return disabled
      */
     public Boolean getDisabled() {

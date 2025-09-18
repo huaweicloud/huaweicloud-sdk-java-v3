@@ -2051,6 +2051,12 @@ public class CcMeta {
 
         // response
 
+        builder.<String>withResponseField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteCloudConnectionResponse::getXRequestId,
+                DeleteCloudConnectionResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2299,6 +2305,18 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudConnectionCapabilitiesRequest::getLimit,
+                ListCloudConnectionCapabilitiesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudConnectionCapabilitiesRequest::getMarker,
+                ListCloudConnectionCapabilitiesRequest::setMarker));
         builder.<String>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2340,7 +2358,7 @@ public class CcMeta {
                 ListCloudConnectionQuotasRequest::setMarker));
         builder.<ListCloudConnectionQuotasRequest.QuotaTypeEnum>withRequestField("quota_type",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCloudConnectionQuotasRequest.QuotaTypeEnum.class),
             f -> f.withMarshaller(ListCloudConnectionQuotasRequest::getQuotaType,
                 ListCloudConnectionQuotasRequest::setQuotaType));
@@ -2438,228 +2456,6 @@ public class CcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCloudConnectionRoutesRequest::getId, ShowCloudConnectionRoutesRequest::setId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse> batchCreateGcbResourceTags =
-        genForBatchCreateGcbResourceTags();
-
-    private static HttpRequestDef<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse> genForBatchCreateGcbResourceTags() {
-        // basic
-        HttpRequestDef.Builder<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    BatchCreateGcbResourceTagsRequest.class,
-                    BatchCreateGcbResourceTagsResponse.class)
-                .withName("BatchCreateGcbResourceTags")
-                .withUri("/v3/gcb/{resource_id}/tags/create")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateGcbResourceTagsRequest::getResourceId,
-                BatchCreateGcbResourceTagsRequest::setResourceId));
-        builder.<CreateDeleteGcbTagsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateDeleteGcbTagsRequestBody.class),
-            f -> f.withMarshaller(BatchCreateGcbResourceTagsRequest::getBody,
-                BatchCreateGcbResourceTagsRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse> batchDeleteGcbResourceTags =
-        genForBatchDeleteGcbResourceTags();
-
-    private static HttpRequestDef<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse> genForBatchDeleteGcbResourceTags() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    BatchDeleteGcbResourceTagsRequest.class,
-                    BatchDeleteGcbResourceTagsResponse.class)
-                .withName("BatchDeleteGcbResourceTags")
-                .withUri("/v3/gcb/{resource_id}/tags/delete")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteGcbResourceTagsRequest::getResourceId,
-                BatchDeleteGcbResourceTagsRequest::setResourceId));
-        builder.<CreateDeleteGcbTagsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateDeleteGcbTagsRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteGcbResourceTagsRequest::getBody,
-                BatchDeleteGcbResourceTagsRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse> countGcbResourceByTag =
-        genForCountGcbResourceByTag();
-
-    private static HttpRequestDef<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse> genForCountGcbResourceByTag() {
-        // basic
-        HttpRequestDef.Builder<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CountGcbResourceByTagRequest.class, CountGcbResourceByTagResponse.class)
-            .withName("CountGcbResourceByTag")
-            .withUri("/v3/gcb/resource-instances/count")
-            .withContentType("application/json");
-
-        // requests
-        builder.<QueryResourceByTagRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(QueryResourceByTagRequestBody.class),
-            f -> f.withMarshaller(CountGcbResourceByTagRequest::getBody, CountGcbResourceByTagRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse> createGcbResourceTag =
-        genForCreateGcbResourceTag();
-
-    private static HttpRequestDef<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse> genForCreateGcbResourceTag() {
-        // basic
-        HttpRequestDef.Builder<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateGcbResourceTagRequest.class, CreateGcbResourceTagResponse.class)
-            .withName("CreateGcbResourceTag")
-            .withUri("/v3/gcb/{resource_id}/tags")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateGcbResourceTagRequest::getResourceId,
-                CreateGcbResourceTagRequest::setResourceId));
-        builder.<CreateGcbTagRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateGcbTagRequestBody.class),
-            f -> f.withMarshaller(CreateGcbResourceTagRequest::getBody, CreateGcbResourceTagRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse> deleteGcbResourceTag =
-        genForDeleteGcbResourceTag();
-
-    private static HttpRequestDef<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse> genForDeleteGcbResourceTag() {
-        // basic
-        HttpRequestDef.Builder<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeleteGcbResourceTagRequest.class, DeleteGcbResourceTagResponse.class)
-            .withName("DeleteGcbResourceTag")
-            .withUri("/v3/gcb/{resource_id}/tags/{tag_key}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGcbResourceTagRequest::getResourceId,
-                DeleteGcbResourceTagRequest::setResourceId));
-        builder.<String>withRequestField("tag_key",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGcbResourceTagRequest::getTagKey, DeleteGcbResourceTagRequest::setTagKey));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse> listGcbResourceByTag =
-        genForListGcbResourceByTag();
-
-    private static HttpRequestDef<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse> genForListGcbResourceByTag() {
-        // basic
-        HttpRequestDef.Builder<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ListGcbResourceByTagRequest.class, ListGcbResourceByTagResponse.class)
-            .withName("ListGcbResourceByTag")
-            .withUri("/v3/gcb/resource-instances/filter")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGcbResourceByTagRequest::getLimit, ListGcbResourceByTagRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGcbResourceByTagRequest::getOffset, ListGcbResourceByTagRequest::setOffset));
-        builder.<QueryResourceByTagRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(QueryResourceByTagRequestBody.class),
-            f -> f.withMarshaller(ListGcbResourceByTagRequest::getBody, ListGcbResourceByTagRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse> listGcbResourceTags =
-        genForListGcbResourceTags();
-
-    private static HttpRequestDef<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse> genForListGcbResourceTags() {
-        // basic
-        HttpRequestDef.Builder<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListGcbResourceTagsRequest.class, ListGcbResourceTagsResponse.class)
-                .withName("ListGcbResourceTags")
-                .withUri("/v3/gcb/{resource_id}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGcbResourceTagsRequest::getResourceId,
-                ListGcbResourceTagsRequest::setResourceId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse> listGcbTenantTags =
-        genForListGcbTenantTags();
-
-    private static HttpRequestDef<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse> genForListGcbTenantTags() {
-        // basic
-        HttpRequestDef.Builder<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListGcbTenantTagsRequest.class, ListGcbTenantTagsResponse.class)
-                .withName("ListGcbTenantTags")
-                .withUri("/v3/gcb/tags")
-                .withContentType("application/json");
-
-        // requests
 
         // response
 
@@ -3188,6 +2984,228 @@ public class CcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse> batchCreateGcbResourceTags =
+        genForBatchCreateGcbResourceTags();
+
+    private static HttpRequestDef<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse> genForBatchCreateGcbResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateGcbResourceTagsRequest, BatchCreateGcbResourceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateGcbResourceTagsRequest.class,
+                    BatchCreateGcbResourceTagsResponse.class)
+                .withName("BatchCreateGcbResourceTags")
+                .withUri("/v3/gcb/{resource_id}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateGcbResourceTagsRequest::getResourceId,
+                BatchCreateGcbResourceTagsRequest::setResourceId));
+        builder.<CreateDeleteGcbTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDeleteGcbTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateGcbResourceTagsRequest::getBody,
+                BatchCreateGcbResourceTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse> batchDeleteGcbResourceTags =
+        genForBatchDeleteGcbResourceTags();
+
+    private static HttpRequestDef<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse> genForBatchDeleteGcbResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteGcbResourceTagsRequest, BatchDeleteGcbResourceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteGcbResourceTagsRequest.class,
+                    BatchDeleteGcbResourceTagsResponse.class)
+                .withName("BatchDeleteGcbResourceTags")
+                .withUri("/v3/gcb/{resource_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteGcbResourceTagsRequest::getResourceId,
+                BatchDeleteGcbResourceTagsRequest::setResourceId));
+        builder.<CreateDeleteGcbTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDeleteGcbTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteGcbResourceTagsRequest::getBody,
+                BatchDeleteGcbResourceTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse> countGcbResourceByTag =
+        genForCountGcbResourceByTag();
+
+    private static HttpRequestDef<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse> genForCountGcbResourceByTag() {
+        // basic
+        HttpRequestDef.Builder<CountGcbResourceByTagRequest, CountGcbResourceByTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CountGcbResourceByTagRequest.class, CountGcbResourceByTagResponse.class)
+            .withName("CountGcbResourceByTag")
+            .withUri("/v3/gcb/resource-instances/count")
+            .withContentType("application/json");
+
+        // requests
+        builder.<QueryResourceByTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryResourceByTagRequestBody.class),
+            f -> f.withMarshaller(CountGcbResourceByTagRequest::getBody, CountGcbResourceByTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse> createGcbResourceTag =
+        genForCreateGcbResourceTag();
+
+    private static HttpRequestDef<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse> genForCreateGcbResourceTag() {
+        // basic
+        HttpRequestDef.Builder<CreateGcbResourceTagRequest, CreateGcbResourceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateGcbResourceTagRequest.class, CreateGcbResourceTagResponse.class)
+            .withName("CreateGcbResourceTag")
+            .withUri("/v3/gcb/{resource_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGcbResourceTagRequest::getResourceId,
+                CreateGcbResourceTagRequest::setResourceId));
+        builder.<CreateGcbTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateGcbTagRequestBody.class),
+            f -> f.withMarshaller(CreateGcbResourceTagRequest::getBody, CreateGcbResourceTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse> deleteGcbResourceTag =
+        genForDeleteGcbResourceTag();
+
+    private static HttpRequestDef<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse> genForDeleteGcbResourceTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteGcbResourceTagRequest, DeleteGcbResourceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteGcbResourceTagRequest.class, DeleteGcbResourceTagResponse.class)
+            .withName("DeleteGcbResourceTag")
+            .withUri("/v3/gcb/{resource_id}/tags/{tag_key}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGcbResourceTagRequest::getResourceId,
+                DeleteGcbResourceTagRequest::setResourceId));
+        builder.<String>withRequestField("tag_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGcbResourceTagRequest::getTagKey, DeleteGcbResourceTagRequest::setTagKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse> listGcbResourceByTag =
+        genForListGcbResourceByTag();
+
+    private static HttpRequestDef<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse> genForListGcbResourceByTag() {
+        // basic
+        HttpRequestDef.Builder<ListGcbResourceByTagRequest, ListGcbResourceByTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListGcbResourceByTagRequest.class, ListGcbResourceByTagResponse.class)
+            .withName("ListGcbResourceByTag")
+            .withUri("/v3/gcb/resource-instances/filter")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGcbResourceByTagRequest::getLimit, ListGcbResourceByTagRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGcbResourceByTagRequest::getOffset, ListGcbResourceByTagRequest::setOffset));
+        builder.<QueryResourceByTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryResourceByTagRequestBody.class),
+            f -> f.withMarshaller(ListGcbResourceByTagRequest::getBody, ListGcbResourceByTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse> listGcbResourceTags =
+        genForListGcbResourceTags();
+
+    private static HttpRequestDef<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse> genForListGcbResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ListGcbResourceTagsRequest, ListGcbResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGcbResourceTagsRequest.class, ListGcbResourceTagsResponse.class)
+                .withName("ListGcbResourceTags")
+                .withUri("/v3/gcb/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGcbResourceTagsRequest::getResourceId,
+                ListGcbResourceTagsRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse> listGcbTenantTags =
+        genForListGcbTenantTags();
+
+    private static HttpRequestDef<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse> genForListGcbTenantTags() {
+        // basic
+        HttpRequestDef.Builder<ListGcbTenantTagsRequest, ListGcbTenantTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGcbTenantTagsRequest.class, ListGcbTenantTagsResponse.class)
+                .withName("ListGcbTenantTags")
+                .withUri("/v3/gcb/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateInterRegionBandwidthRequest, CreateInterRegionBandwidthResponse> createInterRegionBandwidth =
         genForCreateInterRegionBandwidth();
 
@@ -3396,6 +3414,12 @@ public class CcMeta {
 
         // response
 
+        builder.<String>withResponseField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteNetworkInstanceResponse::getXRequestId,
+                DeleteNetworkInstanceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -3938,6 +3962,12 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAreaBandwidthPackageSpecificationsRequest::getOffset,
+                ListAreaBandwidthPackageSpecificationsRequest::setOffset));
         builder.<List<String>>withRequestField("local_area_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3967,6 +3997,16 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAreasRequest::getLimit, ListAreasRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAreasRequest::getMarker, ListAreasRequest::setMarker));
 
         // response
 
@@ -4129,6 +4169,18 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRegionBandwidthPackageSpecificationsRequest::getLimit,
+                ListRegionBandwidthPackageSpecificationsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegionBandwidthPackageSpecificationsRequest::getMarker,
+                ListRegionBandwidthPackageSpecificationsRequest::setMarker));
         builder.<String>withRequestField("local_region_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -4158,6 +4210,16 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRegionsRequest::getLimit, ListRegionsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegionsRequest::getMarker, ListRegionsRequest::setMarker));
 
         // response
 

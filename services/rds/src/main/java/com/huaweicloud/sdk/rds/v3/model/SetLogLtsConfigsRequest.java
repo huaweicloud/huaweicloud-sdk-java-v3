@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class SetLogLtsConfigsRequest {
 
     /**
-     * 引擎，暂只支持mysql。
+     * 发动机类型。
      */
     public static final class EngineEnum {
 
@@ -171,7 +171,7 @@ public class SetLogLtsConfigsRequest {
     }
 
     /**
-     * 引擎，暂只支持mysql。
+     * 发动机类型。
      * @return engine
      */
     public EngineEnum getEngine() {

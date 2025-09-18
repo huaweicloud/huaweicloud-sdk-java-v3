@@ -60,7 +60,7 @@ public class Workflow {
     }
 
     /**
-     * 任务类型,list类型数据
+     * **参数解释**： 任务类型，list类型数据。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return parameter
      */
     public List<PipelineParam> getParameter() {
@@ -93,7 +93,7 @@ public class Workflow {
     }
 
     /**
-     * 源码仓,list类型数据
+     * **参数解释**： 源码仓，list类型数据。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return source
      */
     public List<Source> getSource() {
@@ -110,7 +110,7 @@ public class Workflow {
     }
 
     /**
-     * 流水线名字
+     * **参数解释**： 流水线名字 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -127,7 +127,7 @@ public class Workflow {
     }
 
     /**
-     * 项目ID
+     * **参数解释**： 项目ID **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return projectId
      */
     public String getProjectId() {
@@ -144,7 +144,7 @@ public class Workflow {
     }
 
     /**
-     * 项目名字
+     * **参数解释**： 项目名字 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return projectName
      */
     public String getProjectName() {

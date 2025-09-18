@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 支持的Region。
+ * 支持的区域。
  */
 public class Region {
 
@@ -159,7 +159,7 @@ public class Region {
     }
 
     /**
-     * Region ID。
+     * 区域ID。
      * @return id
      */
     public String getId() {
@@ -176,7 +176,7 @@ public class Region {
     }
 
     /**
-     * 大区名。
+     * 大区名称。
      * @return areaName
      */
     public String getAreaName() {
@@ -209,7 +209,7 @@ public class Region {
     }
 
     /**
-     * 云连接使用场景 er vpc vgw。
+     * 云连接使用场景。  - er（企业路由器） - vpc（虚拟私有云） - vgw（虚拟网关）
      * @return usedScenes
      */
     public List<UsedScenesEnum> getUsedScenes() {

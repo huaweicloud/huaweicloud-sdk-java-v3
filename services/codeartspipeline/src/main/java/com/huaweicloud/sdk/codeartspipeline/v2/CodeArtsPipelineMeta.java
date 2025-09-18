@@ -2,6 +2,10 @@ package com.huaweicloud.sdk.codeartspipeline.v2;
 
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ActionsManualRunPipelineDTO;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ActionsPipelineRunsPollingQueryDTO;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ActionsPipelineRunsQueryDTO;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ActionsReRunPipelineDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AgentPluginInfoQueryDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupResponse;
@@ -34,6 +38,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleSetReq;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteActionsRunPipelineRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteActionsRunPipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupRequest;
@@ -50,6 +56,10 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListAvailablePublisherRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListAvailablePublisherResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostRequest;
@@ -119,9 +129,15 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryRunActionsPipelineRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryRunActionsPipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RunActionsPipelineRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RunActionsPipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowActionsRunsDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowActionsRunsDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
@@ -2993,6 +3009,200 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(UploadPublisherIconResponse::getBody, UploadPublisherIconResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteActionsRunPipelineRequest, DeleteActionsRunPipelineResponse> deleteActionsRunPipeline =
+        genForDeleteActionsRunPipeline();
+
+    private static HttpRequestDef<DeleteActionsRunPipelineRequest, DeleteActionsRunPipelineResponse> genForDeleteActionsRunPipeline() {
+        // basic
+        HttpRequestDef.Builder<DeleteActionsRunPipelineRequest, DeleteActionsRunPipelineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteActionsRunPipelineRequest.class,
+                    DeleteActionsRunPipelineResponse.class)
+                .withName("DeleteActionsRunPipeline")
+                .withUri("/v6/{domain_id}/api/pac/pipelines/actions/{pipeline_id}/{pipeline_run_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteActionsRunPipelineRequest::getDomainId,
+                DeleteActionsRunPipelineRequest::setDomainId));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteActionsRunPipelineRequest::getPipelineId,
+                DeleteActionsRunPipelineRequest::setPipelineId));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteActionsRunPipelineRequest::getPipelineRunId,
+                DeleteActionsRunPipelineRequest::setPipelineRunId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListActionsPipelineRunsRequest, ListActionsPipelineRunsResponse> listActionsPipelineRuns =
+        genForListActionsPipelineRuns();
+
+    private static HttpRequestDef<ListActionsPipelineRunsRequest, ListActionsPipelineRunsResponse> genForListActionsPipelineRuns() {
+        // basic
+        HttpRequestDef.Builder<ListActionsPipelineRunsRequest, ListActionsPipelineRunsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListActionsPipelineRunsRequest.class, ListActionsPipelineRunsResponse.class)
+            .withName("ListActionsPipelineRuns")
+            .withUri("/v6/{domain_id}/api/pac/pipelines/actions")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActionsPipelineRunsRequest::getDomainId,
+                ListActionsPipelineRunsRequest::setDomainId));
+        builder.<ActionsPipelineRunsQueryDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ActionsPipelineRunsQueryDTO.class),
+            f -> f.withMarshaller(ListActionsPipelineRunsRequest::getBody, ListActionsPipelineRunsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListActionsPipelineRunsByRunIdsRequest, ListActionsPipelineRunsByRunIdsResponse> listActionsPipelineRunsByRunIds =
+        genForListActionsPipelineRunsByRunIds();
+
+    private static HttpRequestDef<ListActionsPipelineRunsByRunIdsRequest, ListActionsPipelineRunsByRunIdsResponse> genForListActionsPipelineRunsByRunIds() {
+        // basic
+        HttpRequestDef.Builder<ListActionsPipelineRunsByRunIdsRequest, ListActionsPipelineRunsByRunIdsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListActionsPipelineRunsByRunIdsRequest.class,
+                    ListActionsPipelineRunsByRunIdsResponse.class)
+                .withName("ListActionsPipelineRunsByRunIds")
+                .withUri("/v6/{domain_id}/api/pac/pipelines/actions/list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActionsPipelineRunsByRunIdsRequest::getDomainId,
+                ListActionsPipelineRunsByRunIdsRequest::setDomainId));
+        builder.<ActionsPipelineRunsPollingQueryDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ActionsPipelineRunsPollingQueryDTO.class),
+            f -> f.withMarshaller(ListActionsPipelineRunsByRunIdsRequest::getBody,
+                ListActionsPipelineRunsByRunIdsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryRunActionsPipelineRequest, RetryRunActionsPipelineResponse> retryRunActionsPipeline =
+        genForRetryRunActionsPipeline();
+
+    private static HttpRequestDef<RetryRunActionsPipelineRequest, RetryRunActionsPipelineResponse> genForRetryRunActionsPipeline() {
+        // basic
+        HttpRequestDef.Builder<RetryRunActionsPipelineRequest, RetryRunActionsPipelineResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RetryRunActionsPipelineRequest.class, RetryRunActionsPipelineResponse.class)
+            .withName("RetryRunActionsPipeline")
+            .withUri("/v6/{domain_id}/api/pac/pipelines/actions/rerun")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryRunActionsPipelineRequest::getDomainId,
+                RetryRunActionsPipelineRequest::setDomainId));
+        builder.<ActionsReRunPipelineDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ActionsReRunPipelineDTO.class),
+            f -> f.withMarshaller(RetryRunActionsPipelineRequest::getBody, RetryRunActionsPipelineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunActionsPipelineRequest, RunActionsPipelineResponse> runActionsPipeline =
+        genForRunActionsPipeline();
+
+    private static HttpRequestDef<RunActionsPipelineRequest, RunActionsPipelineResponse> genForRunActionsPipeline() {
+        // basic
+        HttpRequestDef.Builder<RunActionsPipelineRequest, RunActionsPipelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunActionsPipelineRequest.class, RunActionsPipelineResponse.class)
+                .withName("RunActionsPipeline")
+                .withUri("/v6/{domain_id}/api/pac/pipelines/actions/run")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunActionsPipelineRequest::getDomainId, RunActionsPipelineRequest::setDomainId));
+        builder.<ActionsManualRunPipelineDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ActionsManualRunPipelineDTO.class),
+            f -> f.withMarshaller(RunActionsPipelineRequest::getBody, RunActionsPipelineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowActionsRunsDetailRequest, ShowActionsRunsDetailResponse> showActionsRunsDetail =
+        genForShowActionsRunsDetail();
+
+    private static HttpRequestDef<ShowActionsRunsDetailRequest, ShowActionsRunsDetailResponse> genForShowActionsRunsDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowActionsRunsDetailRequest, ShowActionsRunsDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowActionsRunsDetailRequest.class, ShowActionsRunsDetailResponse.class)
+            .withName("ShowActionsRunsDetail")
+            .withUri("/v6/{domain_id}/api/pac/pipelines/actions/{pipeline_id}/{pipeline_run_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActionsRunsDetailRequest::getDomainId,
+                ShowActionsRunsDetailRequest::setDomainId));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActionsRunsDetailRequest::getPipelineId,
+                ShowActionsRunsDetailRequest::setPipelineId));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowActionsRunsDetailRequest::getPipelineRunId,
+                ShowActionsRunsDetailRequest::setPipelineRunId));
+
+        // response
 
         return builder.build();
     }

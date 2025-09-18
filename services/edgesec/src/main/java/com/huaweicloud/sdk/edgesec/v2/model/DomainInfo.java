@@ -28,17 +28,7 @@ public class DomainInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dispatch_status")
 
-    private String dispatchStatus;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "web_name")
-
-    private String webName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
+    private Integer dispatchStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
@@ -111,55 +101,21 @@ public class DomainInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public DomainInfo withDispatchStatus(String dispatchStatus) {
+    public DomainInfo withDispatchStatus(Integer dispatchStatus) {
         this.dispatchStatus = dispatchStatus;
         return this;
     }
 
     /**
-     * - 调度状态: - 调度异常：dispatch_abnormal - 未调度：un_dispatch - 调度中：dispatching - 已调度：dispatched - 删除中：dispatch_deleting
+     * - 调度状态: - 1：调度中 - 2：已调度 - 3：删除中
      * @return dispatchStatus
      */
-    public String getDispatchStatus() {
+    public Integer getDispatchStatus() {
         return dispatchStatus;
     }
 
-    public void setDispatchStatus(String dispatchStatus) {
+    public void setDispatchStatus(Integer dispatchStatus) {
         this.dispatchStatus = dispatchStatus;
-    }
-
-    public DomainInfo withWebName(String webName) {
-        this.webName = webName;
-        return this;
-    }
-
-    /**
-     * 网站名称
-     * @return webName
-     */
-    public String getWebName() {
-        return webName;
-    }
-
-    public void setWebName(String webName) {
-        this.webName = webName;
-    }
-
-    public DomainInfo withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public DomainInfo withPolicyId(String policyId) {
@@ -241,24 +197,15 @@ public class DomainInfo {
         DomainInfo that = (DomainInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.domainName, that.domainName)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.dispatchStatus, that.dispatchStatus) && Objects.equals(this.webName, that.webName)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.policyId, that.policyId)
+            && Objects.equals(this.dispatchStatus, that.dispatchStatus) && Objects.equals(this.policyId, that.policyId)
             && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            domainName,
-            enterpriseProjectId,
-            dispatchStatus,
-            webName,
-            description,
-            policyId,
-            protectStatus,
-            createTime,
-            updateTime);
+        return Objects
+            .hash(id, domainName, enterpriseProjectId, dispatchStatus, policyId, protectStatus, createTime, updateTime);
     }
 
     @Override
@@ -269,8 +216,6 @@ public class DomainInfo {
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    dispatchStatus: ").append(toIndentedString(dispatchStatus)).append("\n");
-        sb.append("    webName: ").append(toIndentedString(webName)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

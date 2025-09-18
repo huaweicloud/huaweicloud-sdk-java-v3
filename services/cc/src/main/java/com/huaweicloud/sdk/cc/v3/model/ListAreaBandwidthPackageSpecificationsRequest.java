@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class ListAreaBandwidthPackageSpecificationsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_area_id")
 
     private List<String> localAreaId = null;
@@ -22,6 +27,25 @@ public class ListAreaBandwidthPackageSpecificationsRequest {
     @JsonProperty(value = "remote_area_id")
 
     private List<String> remoteAreaId = null;
+
+    public ListAreaBandwidthPackageSpecificationsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * （索引位置，偏移量）， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数（action为count时无此参数） 从第一条数据偏移offset条数据后开始查询，如果action为filter默认为0（偏移0条数据，表示从第一条数据开始查询）,必须为数字，不能为负数。
+     * minimum: 0
+     * maximum: 100000000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
 
     public ListAreaBandwidthPackageSpecificationsRequest withLocalAreaId(List<String> localAreaId) {
         this.localAreaId = localAreaId;
@@ -45,7 +69,7 @@ public class ListAreaBandwidthPackageSpecificationsRequest {
     }
 
     /**
-     * 根据本端大区ID过滤带宽包资源规格列表
+     * 根据本端大区ID过滤带宽包资源规格列表。
      * @return localAreaId
      */
     public List<String> getLocalAreaId() {
@@ -78,7 +102,7 @@ public class ListAreaBandwidthPackageSpecificationsRequest {
     }
 
     /**
-     * 根据对端大区ID过滤带宽包资源规格列表
+     * 根据对端大区ID过滤带宽包资源规格列表。
      * @return remoteAreaId
      */
     public List<String> getRemoteAreaId() {
@@ -98,19 +122,20 @@ public class ListAreaBandwidthPackageSpecificationsRequest {
             return false;
         }
         ListAreaBandwidthPackageSpecificationsRequest that = (ListAreaBandwidthPackageSpecificationsRequest) obj;
-        return Objects.equals(this.localAreaId, that.localAreaId)
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.localAreaId, that.localAreaId)
             && Objects.equals(this.remoteAreaId, that.remoteAreaId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(localAreaId, remoteAreaId);
+        return Objects.hash(offset, localAreaId, remoteAreaId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAreaBandwidthPackageSpecificationsRequest {\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    localAreaId: ").append(toIndentedString(localAreaId)).append("\n");
         sb.append("    remoteAreaId: ").append(toIndentedString(remoteAreaId)).append("\n");
         sb.append("}");

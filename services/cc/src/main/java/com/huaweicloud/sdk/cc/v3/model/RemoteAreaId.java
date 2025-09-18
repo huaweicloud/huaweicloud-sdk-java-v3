@@ -13,9 +13,9 @@ public class RemoteAreaId {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote_area_id")
 
-    private AreaIdDef remoteAreaId;
+    private RemoteAreaIdDef remoteAreaId;
 
-    public RemoteAreaId withRemoteAreaId(AreaIdDef remoteAreaId) {
+    public RemoteAreaId withRemoteAreaId(RemoteAreaIdDef remoteAreaId) {
         this.remoteAreaId = remoteAreaId;
         return this;
     }
@@ -24,11 +24,11 @@ public class RemoteAreaId {
      * Get remoteAreaId
      * @return remoteAreaId
      */
-    public AreaIdDef getRemoteAreaId() {
+    public RemoteAreaIdDef getRemoteAreaId() {
         return remoteAreaId;
     }
 
-    public void setRemoteAreaId(AreaIdDef remoteAreaId) {
+    public void setRemoteAreaId(RemoteAreaIdDef remoteAreaId) {
         this.remoteAreaId = remoteAreaId;
     }
 

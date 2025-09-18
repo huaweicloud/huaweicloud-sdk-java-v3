@@ -66,13 +66,18 @@ public class ListPipelinesPagePipelines {
 
     private Integer convertSign;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_level")
+
+    private Integer securityLevel;
+
     public ListPipelinesPagePipelines withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
         return this;
     }
 
     /**
-     * 流水线ID
+     * **参数解释**： 流水线ID，可以通过[查询流水线列表](ListPipelines.xml)接口，其中pipelines.pipelineId即为流水线ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -89,7 +94,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 流水线名称
+     * **参数解释**： 流水线名称。 **取值范围**： 仅包含中文、大小写英文字母、数字、'-'和'_'，且长度为[1,128]个字符。 
      * @return name
      */
     public String getName() {
@@ -106,7 +111,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 项目ID
+     * **参数解释**： 项目ID。 **取值范围**： 32位字符，仅由数字和字母组成。 
      * @return projectId
      */
     public String getProjectId() {
@@ -123,7 +128,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 项目名称
+     * **参数解释**： 项目名称。 **取值范围**： 不涉及。 
      * @return projectName
      */
     public String getProjectName() {
@@ -140,7 +145,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 组件ID
+     * **参数解释**： 组件ID。 **取值范围**： 不涉及。 
      * @return componentId
      */
     public String getComponentId() {
@@ -157,7 +162,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 是否为变更流水线
+     * **参数解释**： 是否为变更流水线。 **取值范围**： - true：是变更流水线。 - false：不是变更流水线。 
      * @return isPublish
      */
     public Boolean getIsPublish() {
@@ -174,7 +179,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 是否收藏此流水线
+     * **参数解释**： 是否收藏此流水线。 **取值范围**： - true：已收藏流水线。 - false：未收藏流水线。 
      * @return isCollect
      */
     public Boolean getIsCollect() {
@@ -191,7 +196,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 流水线版本
+     * **参数解释**： 流水线版本。 **取值范围**： 默认3.0。 
      * @return manifestVersion
      */
     public String getManifestVersion() {
@@ -208,7 +213,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。 
      * @return createTime
      */
     public Long getCreateTime() {
@@ -251,7 +256,7 @@ public class ListPipelinesPagePipelines {
     }
 
     /**
-     * 旧版转新版标识
+     * **参数解释**： 旧版转新版标识。 **取值范围**： 不涉及。 
      * @return convertSign
      */
     public Integer getConvertSign() {
@@ -260,6 +265,23 @@ public class ListPipelinesPagePipelines {
 
     public void setConvertSign(Integer convertSign) {
         this.convertSign = convertSign;
+    }
+
+    public ListPipelinesPagePipelines withSecurityLevel(Integer securityLevel) {
+        this.securityLevel = securityLevel;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线涉密等级。 **取值范围**： 正整数。 null：未设置密级。 1：最低密级。 
+     * @return securityLevel
+     */
+    public Integer getSecurityLevel() {
+        return securityLevel;
+    }
+
+    public void setSecurityLevel(Integer securityLevel) {
+        this.securityLevel = securityLevel;
     }
 
     @Override
@@ -277,7 +299,8 @@ public class ListPipelinesPagePipelines {
             && Objects.equals(this.isCollect, that.isCollect)
             && Objects.equals(this.manifestVersion, that.manifestVersion)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.latestRun, that.latestRun)
-            && Objects.equals(this.convertSign, that.convertSign);
+            && Objects.equals(this.convertSign, that.convertSign)
+            && Objects.equals(this.securityLevel, that.securityLevel);
     }
 
     @Override
@@ -292,7 +315,8 @@ public class ListPipelinesPagePipelines {
             manifestVersion,
             createTime,
             latestRun,
-            convertSign);
+            convertSign,
+            securityLevel);
     }
 
     @Override
@@ -310,6 +334,7 @@ public class ListPipelinesPagePipelines {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    latestRun: ").append(toIndentedString(latestRun)).append("\n");
         sb.append("    convertSign: ").append(toIndentedString(convertSign)).append("\n");
+        sb.append("    securityLevel: ").append(toIndentedString(securityLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

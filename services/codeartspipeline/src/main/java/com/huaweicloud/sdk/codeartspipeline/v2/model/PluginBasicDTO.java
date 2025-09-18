@@ -76,7 +76,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 唯一ID
+     * **参数解释**： 扩展插件UUID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
      * @return uniqueId
      */
     public String getUniqueId() {
@@ -93,7 +93,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 图标URL
+     * **参数解释**： 扩展插件图标URL。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return iconUrl
      */
     public String getIconUrl() {
@@ -110,7 +110,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 运行属性
+     * **参数解释**： 运行属性。 **约束限制**： 不涉及。 **取值范围**： - agent：基于agent运行。 - agentless：无需agent运行。 **默认取值**： 不涉及。 
      * @return runtimeAttribution
      */
     public String getRuntimeAttribution() {
@@ -127,7 +127,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 扩展插件唯一标识。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -144,7 +144,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 扩展插件展示名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -161,7 +161,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 业务类型
+     * **参数解释**： 扩展插件业务类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return businessType
      */
     public String getBusinessType() {
@@ -178,7 +178,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 业务类型展示名
+     * **参数解释**： 扩展插件业务类型展示名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return businessTypeDisplayName
      */
     public String getBusinessTypeDisplayName() {
@@ -195,7 +195,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 描述
+     * **参数解释**： 扩展插件描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -212,7 +212,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 是否私有
+     * **参数解释**： 是否私有。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return isPrivate
      */
     public Integer getIsPrivate() {
@@ -229,7 +229,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 局点
+     * **参数解释**： 局点。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return region
      */
     public String getRegion() {
@@ -246,7 +246,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 维护者
+     * **参数解释**： 维护者。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return maintainers
      */
     public String getMaintainers() {
@@ -263,7 +263,7 @@ public class PluginBasicDTO {
     }
 
     /**
-     * 组合插件类型
+     * **参数解释**： 标识是否为多个step组成的组。 **约束限制**： 不涉及。 **取值范围**： - single：单step插件。 - multi：组合插件。 **默认取值**： 不涉及。 
      * @return pluginCompositionType
      */
     public String getPluginCompositionType() {

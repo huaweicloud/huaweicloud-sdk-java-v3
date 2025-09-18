@@ -40,7 +40,7 @@ public class ListTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**： 总条目数量。 **取值范围**： 大于等于0。 
      * @return total
      */
     public Integer getTotal() {
@@ -107,7 +107,7 @@ public class ListTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 模板数据,list类型数据
+     * 模板数据，list类型数据。
      * @return content
      */
     public List<TemplateView> getContent() {

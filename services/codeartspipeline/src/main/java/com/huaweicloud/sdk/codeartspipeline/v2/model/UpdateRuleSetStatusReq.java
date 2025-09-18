@@ -21,7 +21,7 @@ public class UpdateRuleSetStatusReq {
     }
 
     /**
-     * 规则模版实例状态
+     * **参数解释**： 规则模板实例状态。 **约束限制**： 不涉及。 **取值范围**： - true：开。 - false：关。 **默认取值**： 不涉及。 
      * @return isValid
      */
     public Boolean getIsValid() {

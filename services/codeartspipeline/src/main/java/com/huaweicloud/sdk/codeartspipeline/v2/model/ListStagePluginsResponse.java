@@ -44,7 +44,7 @@ public class ListStagePluginsResponse extends SdkResponse {
     }
 
     /**
-     * 结果集
+     * **参数解释**： 结果集。 **取值范围**： 不涉及。 
      * @return fullStagePluginsItemList
      */
     public List<FullStagePluginsRelationVOFullStagePluginsItemList> getFullStagePluginsItemList() {

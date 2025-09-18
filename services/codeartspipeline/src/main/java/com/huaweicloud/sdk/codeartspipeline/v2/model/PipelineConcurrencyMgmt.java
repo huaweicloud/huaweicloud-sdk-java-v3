@@ -46,7 +46,7 @@ public class PipelineConcurrencyMgmt {
     }
 
     /**
-     * 流水线id
+     * **参数解释**： 流水线ID，可以通过[查询流水线列表](ListPipelines.xml)接口，其中pipelines.pipelineId即为流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符串。 **默认取值**： 不涉及。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -63,7 +63,7 @@ public class PipelineConcurrencyMgmt {
     }
 
     /**
-     * 并行数量
+     * **参数解释**： [流水线并发个数](tag:hws,hws_hk,hws_eu,ctc,cmcc,g42,sbc,hcs,hcs_site,hcs_sm,hcs_sitesm,fcs)[，最大并发受套餐和购买并发数限制](tag:hws,hws_hk,hws_eu,ctc,cmcc,g42,sbc)[。](tag:hws,hws_hk,hws_eu,ctc,cmcc,g42,sbc,hcs,hcs_site,hcs_sm,hcs_sitesm,fcs) **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return concurrencyNumber
      */
     public Integer getConcurrencyNumber() {
@@ -80,7 +80,7 @@ public class PipelineConcurrencyMgmt {
     }
 
     /**
-     * 超出情况下策略
+     * **参数解释**： 超出并发数时排队策略。 **约束限制**： 不涉及。 **取值范围**： - ABORT：忽略不执行。 - QUEUE：排队等待。 **默认取值**： 不涉及。 
      * @return exceedAction
      */
     public String getExceedAction() {
@@ -97,7 +97,7 @@ public class PipelineConcurrencyMgmt {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return createTime
      */
     public Long getCreateTime() {
@@ -114,7 +114,7 @@ public class PipelineConcurrencyMgmt {
     }
 
     /**
-     * 更新时间
+     * **参数解释**： 更新时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -131,7 +131,7 @@ public class PipelineConcurrencyMgmt {
     }
 
     /**
-     * 是否有效
+     * **参数解释**： 是否启用。 **约束限制**： 不涉及。 **取值范围**： - true：启用。 - false：未启用。 **默认取值**： 不涉及。 
      * @return enable
      */
     public Boolean getEnable() {

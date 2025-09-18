@@ -94,7 +94,7 @@ public class StepRun {
     }
 
     /**
-     * 步骤名称
+     * **参数解释**： 步骤名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -111,7 +111,7 @@ public class StepRun {
     }
 
     /**
-     * 步骤插件
+     * **参数解释**： 步骤插件名。 **取值范围**： 不涉及。 
      * @return task
      */
     public String getTask() {
@@ -128,7 +128,7 @@ public class StepRun {
     }
 
     /**
-     * 插件业务类型
+     * **参数解释**： 插件业务类型。 **取值范围**： - Normal：通用。 - Build：构建。 - Test：测试。 - Check：代码检查。 - Deploy：部署。 
      * @return businessType
      */
     public String getBusinessType() {
@@ -161,7 +161,7 @@ public class StepRun {
     }
 
     /**
-     * 输入参数
+     * **参数解释**： 输入参数。 **取值范围**： 不涉及。 
      * @return inputs
      */
     public List<StepRunInputs> getInputs() {
@@ -178,7 +178,7 @@ public class StepRun {
     }
 
     /**
-     * 序列号
+     * **参数解释**： 序列号。 **取值范围**： 不涉及。 
      * @return sequence
      */
     public Integer getSequence() {
@@ -195,7 +195,7 @@ public class StepRun {
     }
 
     /**
-     * 官方插件版本号
+     * **参数解释**： 官方插件版本号。 **取值范围**： 不涉及。 
      * @return officialTaskVersion
      */
     public String getOfficialTaskVersion() {
@@ -212,7 +212,7 @@ public class StepRun {
     }
 
     /**
-     * 唯一标识符
+     * **参数解释**： 唯一标识符。 **取值范围**： 不涉及。 
      * @return identifier
      */
     public String getIdentifier() {
@@ -229,7 +229,7 @@ public class StepRun {
     }
 
     /**
-     * 是否可编辑
+     * **参数解释**： 是否可编辑。 **取值范围**： - true：可编辑。 - false：不可编辑。 
      * @return multiStepEditable
      */
     public Integer getMultiStepEditable() {
@@ -246,7 +246,7 @@ public class StepRun {
     }
 
     /**
-     * 步骤ID
+     * **参数解释**： 步骤ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return id
      */
     public String getId() {
@@ -279,7 +279,7 @@ public class StepRun {
     }
 
     /**
-     * 扩展点
+     * **参数解释**： 扩展点ID列表。 **取值范围**： 不涉及。 
      * @return endpointIds
      */
     public List<String> getEndpointIds() {
@@ -296,7 +296,7 @@ public class StepRun {
     }
 
     /**
-     * 上次下发任务ID
+     * **参数解释**： 上次下发任务ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return lastDispatchId
      */
     public String getLastDispatchId() {
@@ -313,7 +313,7 @@ public class StepRun {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： - RUNNING：运行中。 - CANCELED：取消。 - COMPLETED：已完成。 - FAILED：失败。 
      * @return status
      */
     public String getStatus() {
@@ -330,7 +330,7 @@ public class StepRun {
     }
 
     /**
-     * 错误消息
+     * **参数解释**： 错误消息。 **取值范围**： 不涉及。 
      * @return message
      */
     public String getMessage() {
@@ -347,7 +347,7 @@ public class StepRun {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 步骤开始时间。 **取值范围**： 不涉及。 
      * @return startTime
      */
     public Long getStartTime() {
@@ -364,7 +364,7 @@ public class StepRun {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 步骤结束时间。 **取值范围**： 不涉及。 
      * @return endTime
      */
     public Long getEndTime() {

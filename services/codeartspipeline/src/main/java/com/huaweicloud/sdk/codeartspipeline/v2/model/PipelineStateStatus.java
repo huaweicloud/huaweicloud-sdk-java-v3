@@ -181,7 +181,7 @@ public class PipelineStateStatus {
     }
 
     /**
-     * 运行状态
+     * 运行状态。取值和含义：waiting：等待;running：执行中;verifying：待审核；suspending：挂起;completed：完成
      * @return status
      */
     public String getStatus() {
@@ -198,7 +198,7 @@ public class PipelineStateStatus {
     }
 
     /**
-     * 运行结果
+     * 运行结果。取值及含义：success：成功；error：失败；aborted：终止
      * @return outcome
      */
     public String getOutcome() {

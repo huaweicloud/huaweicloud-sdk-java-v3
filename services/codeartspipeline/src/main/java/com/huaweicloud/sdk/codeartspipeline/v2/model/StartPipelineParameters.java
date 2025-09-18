@@ -40,7 +40,7 @@ public class StartPipelineParameters {
     }
 
     /**
-     * 启动流水线时的构建参数
+     * **参数解释**： 启动流水线时的构建参数。 **约束限制**： 不涉及。 **取值范围**： 不超过8192个字符。 **默认取值**： 不涉及。 
      * @return buildParams
      */
     public List<StartPipelineBuildParams> getBuildParams() {

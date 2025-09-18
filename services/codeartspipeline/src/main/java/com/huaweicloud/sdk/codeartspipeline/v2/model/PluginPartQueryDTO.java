@@ -41,7 +41,7 @@ public class PluginPartQueryDTO {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 插件名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -58,7 +58,7 @@ public class PluginPartQueryDTO {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 展示名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -75,7 +75,7 @@ public class PluginPartQueryDTO {
     }
 
     /**
-     * 版本号
+     * **参数解释**： 版本号。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -92,7 +92,7 @@ public class PluginPartQueryDTO {
     }
 
     /**
-     * 插件属性,custom/official
+     * **参数解释**： 插件属性。 **约束限制**： 不涉及。 **取值范围**： - custom：自定义插件。 - official：官方插件。 **默认取值**： 不涉及。 
      * @return pluginAttribution
      */
     public String getPluginAttribution() {
@@ -109,7 +109,7 @@ public class PluginPartQueryDTO {
     }
 
     /**
-     * 版本属性,draft/formal
+     * **参数解释**： 版本属性。 **约束限制**： 不涉及。 **取值范围**： - draft：草稿版本。 - formal：正式版本。 **默认取值**： 不涉及。 
      * @return versionAttribution
      */
     public String getVersionAttribution() {

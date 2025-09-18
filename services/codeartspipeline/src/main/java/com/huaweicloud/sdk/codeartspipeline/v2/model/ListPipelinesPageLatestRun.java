@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 最近一次运行信息
+ * **参数解释**： 最近一次运行信息。 **取值范围**： 不涉及。 
  */
 public class ListPipelinesPageLatestRun {
 
@@ -61,7 +61,7 @@ public class ListPipelinesPageLatestRun {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "artifact_params")
 
-    private ListPipelinesPageLatestRunArtifactParams artifactParams;
+    private PipelineLatestRunArtifactParams artifactParams;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -89,7 +89,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 流水线ID
+     * **参数解释**： 流水线ID，可以通过[查询流水线列表](ListPipelines.xml)接口，其中pipelines.pipelineId即为流水线ID。 **取值范围**： 不涉及。 
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -106,7 +106,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 流水线运行实例ID
+     * **参数解释**： 流水线运行实例ID，[启动流水线](RunPipeline.xml)接口的返回值即为流水线运行实例ID。 **取值范围**： 不涉及。 
      * @return pipelineRunId
      */
     public String getPipelineRunId() {
@@ -123,7 +123,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 执行人ID
+     * **参数解释**： 执行人ID。 **取值范围**： 不涉及。 
      * @return executorId
      */
     public String getExecutorId() {
@@ -140,7 +140,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 执行人名称
+     * **参数解释**： 执行人名称。 **取值范围**： 不涉及。 
      * @return executorName
      */
     public String getExecutorName() {
@@ -176,7 +176,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 阶段信息列表
+     * **参数解释**： 阶段信息列表。 **取值范围**： 不涉及。 
      * @return stageStatusList
      */
     public List<ListPipelinesPageLatestRunStageStatusList> getStageStatusList() {
@@ -193,7 +193,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 状态
+     * **参数解释**： 流水线运行实例状态。 **取值范围**： - COMPLETED：已完成。 - RUNNING：运行中。 - FAILED：失败。 - CANCELED：取消。 - PAUSED：暂停。 - SUSPEND：挂起。 - IGNORED：忽略。 
      * @return status
      */
     public String getStatus() {
@@ -210,7 +210,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 运行序号
+     * **参数解释**： 流水线运行序号。 **取值范围**： 大于等于 1。 
      * @return runNumber
      */
     public Integer getRunNumber() {
@@ -227,7 +227,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 触发类型
+     * **参数解释**： 触发类型 **取值范围**： - Manual：手动触发。 - Scheduler：定时任务。 - MR：MR触发。 - Push：Push事件触发。 - CreateTag：Tag事件触发。 - Issue：Issue触发。 - Note：评论触发。 
      * @return triggerType
      */
     public String getTriggerType() {
@@ -265,15 +265,15 @@ public class ListPipelinesPageLatestRun {
         this.buildParams = buildParams;
     }
 
-    public ListPipelinesPageLatestRun withArtifactParams(ListPipelinesPageLatestRunArtifactParams artifactParams) {
+    public ListPipelinesPageLatestRun withArtifactParams(PipelineLatestRunArtifactParams artifactParams) {
         this.artifactParams = artifactParams;
         return this;
     }
 
     public ListPipelinesPageLatestRun withArtifactParams(
-        Consumer<ListPipelinesPageLatestRunArtifactParams> artifactParamsSetter) {
+        Consumer<PipelineLatestRunArtifactParams> artifactParamsSetter) {
         if (this.artifactParams == null) {
-            this.artifactParams = new ListPipelinesPageLatestRunArtifactParams();
+            this.artifactParams = new PipelineLatestRunArtifactParams();
             artifactParamsSetter.accept(this.artifactParams);
         }
 
@@ -284,11 +284,11 @@ public class ListPipelinesPageLatestRun {
      * Get artifactParams
      * @return artifactParams
      */
-    public ListPipelinesPageLatestRunArtifactParams getArtifactParams() {
+    public PipelineLatestRunArtifactParams getArtifactParams() {
         return artifactParams;
     }
 
-    public void setArtifactParams(ListPipelinesPageLatestRunArtifactParams artifactParams) {
+    public void setArtifactParams(PipelineLatestRunArtifactParams artifactParams) {
         this.artifactParams = artifactParams;
     }
 
@@ -298,7 +298,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 开始时间
+     * **参数解释**： 流水线开始时间。 **取值范围**： 不涉及。 
      * @return startTime
      */
     public Long getStartTime() {
@@ -315,7 +315,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 结束时间
+     * **参数解释**： 流水线结束时间。 **取值范围**： 不涉及。 
      * @return endTime
      */
     public Long getEndTime() {
@@ -332,7 +332,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 修改页地址
+     * **参数解释**： 修改页地址。 **取值范围**： 不涉及。 
      * @return modifyUrl
      */
     public String getModifyUrl() {
@@ -349,7 +349,7 @@ public class ListPipelinesPageLatestRun {
     }
 
     /**
-     * 详情页地址
+     * **参数解释**： 详情页地址。 **取值范围**： 不涉及。 
      * @return detailUrl
      */
     public String getDetailUrl() {

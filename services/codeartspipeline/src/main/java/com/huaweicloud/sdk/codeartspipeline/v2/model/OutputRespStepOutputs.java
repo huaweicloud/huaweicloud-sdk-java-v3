@@ -29,7 +29,7 @@ public class OutputRespStepOutputs {
     }
 
     /**
-     * Get stepRunId
+     * **参数解释**： 步骤ID。 **取值范围**： 32位字符，由数字和字母组成。 
      * @return stepRunId
      */
     public String getStepRunId() {
@@ -62,7 +62,7 @@ public class OutputRespStepOutputs {
     }
 
     /**
-     * Get outputResult
+     * **参数解释**： 步骤输出。 **取值范围**： 不涉及。 
      * @return outputResult
      */
     public List<OutputRespOutputResult> getOutputResult() {

@@ -183,6 +183,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
@@ -393,6 +395,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyRequest;
@@ -4398,6 +4402,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取任务信息
+     *
+     * 获取任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskDetailRequest 请求对象
+     * @return CompletableFuture<ShowTaskDetailResponse>
+     */
+    public CompletableFuture<ShowTaskDetailResponse> showTaskDetailAsync(ShowTaskDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showTaskDetail);
+    }
+
+    /**
+     * 获取任务信息
+     *
+     * 获取任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskDetailRequest 请求对象
+     * @return AsyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>
+     */
+    public AsyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetailAsyncInvoker(
+        ShowTaskDetailRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showTaskDetail, hcClient);
+    }
+
+    /**
      * 根据实例id查询sqlserver TDE状态
      *
      * 根据实例id查询sqlserver TDE状态
@@ -7027,6 +7060,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<UpdateReadWeightRequest, UpdateReadWeightResponse> updateReadWeightAsyncInvoker(
         UpdateReadWeightRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.updateReadWeight, hcClient);
+    }
+
+    /**
+     * 查询无索引表诊断数据
+     *
+     * 查询无索引表诊断数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesNoIndexTablesRequest 请求对象
+     * @return CompletableFuture<ListInstancesNoIndexTablesResponse>
+     */
+    public CompletableFuture<ListInstancesNoIndexTablesResponse> listInstancesNoIndexTablesAsync(
+        ListInstancesNoIndexTablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesNoIndexTables);
+    }
+
+    /**
+     * 查询无索引表诊断数据
+     *
+     * 查询无索引表诊断数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesNoIndexTablesRequest 请求对象
+     * @return AsyncInvoker<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse>
+     */
+    public AsyncInvoker<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse> listInstancesNoIndexTablesAsyncInvoker(
+        ListInstancesNoIndexTablesRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listInstancesNoIndexTables, hcClient);
     }
 
     /**

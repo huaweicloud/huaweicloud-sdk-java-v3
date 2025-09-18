@@ -46,7 +46,7 @@ public class RuleInstanceProperty {
     }
 
     /**
-     * 属性键
+     * **参数解释**： 规则属性键。 **取值范围**： 不涉及。 
      * @return key
      */
     public String getKey() {
@@ -63,7 +63,7 @@ public class RuleInstanceProperty {
     }
 
     /**
-     * 类型
+     * **参数解释**： 规则类型。 **取值范围**： 不涉及。 
      * @return type
      */
     public String getType() {
@@ -80,7 +80,7 @@ public class RuleInstanceProperty {
     }
 
     /**
-     * 展示名称
+     * **参数解释**： 展示名称。 **取值范围**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -97,7 +97,7 @@ public class RuleInstanceProperty {
     }
 
     /**
-     * 比较运算符
+     * **参数解释**： 比较运算符。 **取值范围**： 不涉及。 
      * @return operator
      */
     public String getOperator() {
@@ -114,7 +114,7 @@ public class RuleInstanceProperty {
     }
 
     /**
-     * 属性值
+     * **参数解释**： 属性值。 **取值范围**： 不涉及。 
      * @return value
      */
     public String getValue() {
@@ -131,7 +131,7 @@ public class RuleInstanceProperty {
     }
 
     /**
-     * 数据类型
+     * **参数解释**： 数据类型。 **取值范围**： 不涉及。 
      * @return valueType
      */
     public String getValueType() {

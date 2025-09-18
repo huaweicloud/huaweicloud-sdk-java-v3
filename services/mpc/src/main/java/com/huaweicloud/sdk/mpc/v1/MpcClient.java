@@ -11,8 +11,6 @@ import com.huaweicloud.sdk.mpc.v1.model.CreateAnimatedGraphicsTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.CreateAnimatedGraphicsTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.CreateEditingJobRequest;
 import com.huaweicloud.sdk.mpc.v1.model.CreateEditingJobResponse;
-import com.huaweicloud.sdk.mpc.v1.model.CreateEncryptTaskRequest;
-import com.huaweicloud.sdk.mpc.v1.model.CreateEncryptTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.CreateExtractTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.CreateExtractTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.CreateMbTasksReportRequest;
@@ -45,8 +43,6 @@ import com.huaweicloud.sdk.mpc.v1.model.DeleteAnimatedGraphicsTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteAnimatedGraphicsTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteEditingJobRequest;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteEditingJobResponse;
-import com.huaweicloud.sdk.mpc.v1.model.DeleteEncryptTaskRequest;
-import com.huaweicloud.sdk.mpc.v1.model.DeleteEncryptTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteExtractTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteExtractTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.DeleteMediaProcessTaskRequest;
@@ -79,8 +75,6 @@ import com.huaweicloud.sdk.mpc.v1.model.ListAnimatedGraphicsTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.ListAnimatedGraphicsTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.ListEditingJobRequest;
 import com.huaweicloud.sdk.mpc.v1.model.ListEditingJobResponse;
-import com.huaweicloud.sdk.mpc.v1.model.ListEncryptTaskRequest;
-import com.huaweicloud.sdk.mpc.v1.model.ListEncryptTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.ListExtractTaskRequest;
 import com.huaweicloud.sdk.mpc.v1.model.ListExtractTaskResponse;
 import com.huaweicloud.sdk.mpc.v1.model.ListMediaProcessTaskRequest;
@@ -551,109 +545,6 @@ public class MpcClient {
     public SyncInvoker<ListEditingJobRequest, ListEditingJobResponse> listEditingJobInvoker(
         ListEditingJobRequest request) {
         return new SyncInvoker<>(request, MpcMeta.listEditingJob, hcClient);
-    }
-
-    /**
-     * 新建独立加密任务
-     *
-     * 支持独立加密，包括创建、查询、删除独立加密任务。该API已废弃。
-     * 
-     * 约束：
-     *   - 只支持转码后的文件进行加密。
-     *   - 加密的文件必须是m3u8或者mpd结尾的文件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateEncryptTaskRequest 请求对象
-     * @return CreateEncryptTaskResponse
-     */
-    public CreateEncryptTaskResponse createEncryptTask(CreateEncryptTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, MpcMeta.createEncryptTask);
-    }
-
-    /**
-     * 新建独立加密任务
-     *
-     * 支持独立加密，包括创建、查询、删除独立加密任务。该API已废弃。
-     * 
-     * 约束：
-     *   - 只支持转码后的文件进行加密。
-     *   - 加密的文件必须是m3u8或者mpd结尾的文件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateEncryptTaskRequest 请求对象
-     * @return SyncInvoker<CreateEncryptTaskRequest, CreateEncryptTaskResponse>
-     */
-    public SyncInvoker<CreateEncryptTaskRequest, CreateEncryptTaskResponse> createEncryptTaskInvoker(
-        CreateEncryptTaskRequest request) {
-        return new SyncInvoker<>(request, MpcMeta.createEncryptTask, hcClient);
-    }
-
-    /**
-     * 取消独立加密任务
-     *
-     * 取消独立加密任务。该API已废弃。
-     * 
-     * 约束：
-     * 
-     *   只能取消正在任务队列中排队的任务。已开始加密或已完成的加密任务不能取消。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteEncryptTaskRequest 请求对象
-     * @return DeleteEncryptTaskResponse
-     */
-    public DeleteEncryptTaskResponse deleteEncryptTask(DeleteEncryptTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, MpcMeta.deleteEncryptTask);
-    }
-
-    /**
-     * 取消独立加密任务
-     *
-     * 取消独立加密任务。该API已废弃。
-     * 
-     * 约束：
-     * 
-     *   只能取消正在任务队列中排队的任务。已开始加密或已完成的加密任务不能取消。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteEncryptTaskRequest 请求对象
-     * @return SyncInvoker<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse>
-     */
-    public SyncInvoker<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> deleteEncryptTaskInvoker(
-        DeleteEncryptTaskRequest request) {
-        return new SyncInvoker<>(request, MpcMeta.deleteEncryptTask, hcClient);
-    }
-
-    /**
-     * 查询独立加密任务
-     *
-     * 查询独立加密任务状态。返回任务执行结果或当前状态。该API已废弃。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListEncryptTaskRequest 请求对象
-     * @return ListEncryptTaskResponse
-     */
-    public ListEncryptTaskResponse listEncryptTask(ListEncryptTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, MpcMeta.listEncryptTask);
-    }
-
-    /**
-     * 查询独立加密任务
-     *
-     * 查询独立加密任务状态。返回任务执行结果或当前状态。该API已废弃。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListEncryptTaskRequest 请求对象
-     * @return SyncInvoker<ListEncryptTaskRequest, ListEncryptTaskResponse>
-     */
-    public SyncInvoker<ListEncryptTaskRequest, ListEncryptTaskResponse> listEncryptTaskInvoker(
-        ListEncryptTaskRequest request) {
-        return new SyncInvoker<>(request, MpcMeta.listEncryptTask, hcClient);
     }
 
     /**

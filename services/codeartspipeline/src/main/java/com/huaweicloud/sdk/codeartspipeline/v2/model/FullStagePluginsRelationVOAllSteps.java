@@ -31,7 +31,7 @@ public class FullStagePluginsRelationVOAllSteps {
     }
 
     /**
-     * 插件名
+     * **参数解释**： 扩展插件插件名。 **取值范围**： 不涉及。 
      * @return pluginName
      */
     public String getPluginName() {
@@ -48,7 +48,7 @@ public class FullStagePluginsRelationVOAllSteps {
     }
 
     /**
-     * 展示名
+     * **参数解释**： 扩展插件展示名。 **取值范围**： 不涉及。 
      * @return displayName
      */
     public String getDisplayName() {
@@ -65,7 +65,7 @@ public class FullStagePluginsRelationVOAllSteps {
     }
 
     /**
-     * 版本
+     * **参数解释**： 扩展插件版本号。 **取值范围**： 不涉及。 
      * @return version
      */
     public String getVersion() {

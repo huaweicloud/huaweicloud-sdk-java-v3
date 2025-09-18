@@ -41,7 +41,7 @@ public class ShowPublisherResponse extends SdkResponse {
     }
 
     /**
-     * 发布商详情
+     * **参数解释**： 发布商详情。 **取值范围**： 不涉及。 
      * @return publisherDetailMap
      */
     public Map<String, PublisherVO> getPublisherDetailMap() {

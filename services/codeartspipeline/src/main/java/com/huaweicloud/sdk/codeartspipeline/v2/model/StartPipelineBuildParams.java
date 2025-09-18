@@ -26,7 +26,7 @@ public class StartPipelineBuildParams {
     }
 
     /**
-     * 构建参数名
+     * **参数解释**： 构建参数名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class StartPipelineBuildParams {
     }
 
     /**
-     * 构建参数值，最大长度为8192
+     * **参数解释**： 构建参数值。 **约束限制**： 不涉及。 **取值范围**： 不超过8192个字符。 **默认取值**： 不涉及。 
      * @return value
      */
     public String getValue() {
