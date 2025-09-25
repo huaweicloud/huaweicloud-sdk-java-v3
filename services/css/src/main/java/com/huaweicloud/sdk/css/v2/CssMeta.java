@@ -8,6 +8,12 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.css.v2.model.CreateClusterReq;
 import com.huaweicloud.sdk.css.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.css.v2.model.CreateClusterResponse;
+import com.huaweicloud.sdk.css.v2.model.DeleteConfReqNew;
+import com.huaweicloud.sdk.css.v2.model.DeleteLogstashConfRequest;
+import com.huaweicloud.sdk.css.v2.model.DeleteLogstashConfResponse;
+import com.huaweicloud.sdk.css.v2.model.DeleteLogstashTemplateRequest;
+import com.huaweicloud.sdk.css.v2.model.DeleteLogstashTemplateResponse;
+import com.huaweicloud.sdk.css.v2.model.DeleteTemplateReqNew;
 import com.huaweicloud.sdk.css.v2.model.RestartClusterReq;
 import com.huaweicloud.sdk.css.v2.model.RestartClusterRequest;
 import com.huaweicloud.sdk.css.v2.model.RestartClusterResponse;
@@ -150,6 +156,62 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopAutoCreateSnapshotsRequest::getClusterId,
                 StopAutoCreateSnapshotsRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLogstashConfRequest, DeleteLogstashConfResponse> deleteLogstashConf =
+        genForDeleteLogstashConf();
+
+    private static HttpRequestDef<DeleteLogstashConfRequest, DeleteLogstashConfResponse> genForDeleteLogstashConf() {
+        // basic
+        HttpRequestDef.Builder<DeleteLogstashConfRequest, DeleteLogstashConfResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteLogstashConfRequest.class, DeleteLogstashConfResponse.class)
+                .withName("DeleteLogstashConf")
+                .withUri("/v2.0/{project_id}/clusters/{cluster_id}/lgsconf/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogstashConfRequest::getClusterId, DeleteLogstashConfRequest::setClusterId));
+        builder.<DeleteConfReqNew>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteConfReqNew.class),
+            f -> f.withMarshaller(DeleteLogstashConfRequest::getBody, DeleteLogstashConfRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(DeleteLogstashConfResponse::getBody, DeleteLogstashConfResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLogstashTemplateRequest, DeleteLogstashTemplateResponse> deleteLogstashTemplate =
+        genForDeleteLogstashTemplate();
+
+    private static HttpRequestDef<DeleteLogstashTemplateRequest, DeleteLogstashTemplateResponse> genForDeleteLogstashTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteLogstashTemplateRequest, DeleteLogstashTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteLogstashTemplateRequest.class, DeleteLogstashTemplateResponse.class)
+            .withName("DeleteLogstashTemplate")
+            .withUri("/v2.0/{project_id}/lgsconf/deletetemplate")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteTemplateReqNew>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTemplateReqNew.class),
+            f -> f.withMarshaller(DeleteLogstashTemplateRequest::getBody, DeleteLogstashTemplateRequest::setBody));
 
         // response
 

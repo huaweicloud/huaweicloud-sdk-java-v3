@@ -17,9 +17,9 @@ public class BotMBehaviorDetectionRule {
     private BotMRule rule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "strategy")
+    @JsonProperty(value = "defense_strategy")
 
-    private BotMDefenseStrategy strategy;
+    private BotMDefenseStrategy defenseStrategy;
 
     public BotMBehaviorDetectionRule withRule(BotMRule rule) {
         this.rule = rule;
@@ -47,30 +47,30 @@ public class BotMBehaviorDetectionRule {
         this.rule = rule;
     }
 
-    public BotMBehaviorDetectionRule withStrategy(BotMDefenseStrategy strategy) {
-        this.strategy = strategy;
+    public BotMBehaviorDetectionRule withDefenseStrategy(BotMDefenseStrategy defenseStrategy) {
+        this.defenseStrategy = defenseStrategy;
         return this;
     }
 
-    public BotMBehaviorDetectionRule withStrategy(Consumer<BotMDefenseStrategy> strategySetter) {
-        if (this.strategy == null) {
-            this.strategy = new BotMDefenseStrategy();
-            strategySetter.accept(this.strategy);
+    public BotMBehaviorDetectionRule withDefenseStrategy(Consumer<BotMDefenseStrategy> defenseStrategySetter) {
+        if (this.defenseStrategy == null) {
+            this.defenseStrategy = new BotMDefenseStrategy();
+            defenseStrategySetter.accept(this.defenseStrategy);
         }
 
         return this;
     }
 
     /**
-     * Get strategy
-     * @return strategy
+     * Get defenseStrategy
+     * @return defenseStrategy
      */
-    public BotMDefenseStrategy getStrategy() {
-        return strategy;
+    public BotMDefenseStrategy getDefenseStrategy() {
+        return defenseStrategy;
     }
 
-    public void setStrategy(BotMDefenseStrategy strategy) {
-        this.strategy = strategy;
+    public void setDefenseStrategy(BotMDefenseStrategy defenseStrategy) {
+        this.defenseStrategy = defenseStrategy;
     }
 
     @Override
@@ -82,12 +82,12 @@ public class BotMBehaviorDetectionRule {
             return false;
         }
         BotMBehaviorDetectionRule that = (BotMBehaviorDetectionRule) obj;
-        return Objects.equals(this.rule, that.rule) && Objects.equals(this.strategy, that.strategy);
+        return Objects.equals(this.rule, that.rule) && Objects.equals(this.defenseStrategy, that.defenseStrategy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rule, strategy);
+        return Objects.hash(rule, defenseStrategy);
     }
 
     @Override
@@ -95,7 +95,7 @@ public class BotMBehaviorDetectionRule {
         StringBuilder sb = new StringBuilder();
         sb.append("class BotMBehaviorDetectionRule {\n");
         sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
-        sb.append("    strategy: ").append(toIndentedString(strategy)).append("\n");
+        sb.append("    defenseStrategy: ").append(toIndentedString(defenseStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

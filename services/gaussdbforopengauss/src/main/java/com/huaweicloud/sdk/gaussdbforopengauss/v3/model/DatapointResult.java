@@ -29,7 +29,7 @@ public class DatapointResult {
     }
 
     /**
-     * 指标项名，实例指标用实例ID、节点指标用节点名称、组件指标用组件名称。
+     * **参数解释**: 指标项名，实例指标用实例ID、节点指标用节点名称、组件指标用组件名称。 **取值范围**: 不涉及。
      * @return datapointName
      */
     public String getDatapointName() {
@@ -62,7 +62,7 @@ public class DatapointResult {
     }
 
     /**
-     * 指标值集合。
+     * **参数解释**: 指标值集合。
      * @return datapointValues
      */
     public List<String> getDatapointValues() {

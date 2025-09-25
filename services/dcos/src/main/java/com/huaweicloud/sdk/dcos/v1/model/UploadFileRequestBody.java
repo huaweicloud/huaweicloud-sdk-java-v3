@@ -36,7 +36,7 @@ public class UploadFileRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 文件上传场景,如工单附件上传:order
+     * 文件上传场景,如服务单附件上传:order
      * @return sceneCode
      */
     public String getSceneCode() {
@@ -53,7 +53,7 @@ public class UploadFileRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 文件名称,用户上传工单附件的文件名
+     * 文件名称,用户上传服务单附件的文件名
      * @return fileName
      */
     public String getFileName() {
@@ -70,7 +70,7 @@ public class UploadFileRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 文件,用户上传的工单附件
+     * 文件,用户上传的服务单附件
      * @return file
      */
     public FormDataFilePart getFile() {

@@ -24,6 +24,21 @@ public class DrugJobDto {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eihealth_project_id")
+
+    private String eihealthProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eihealth_project_name")
+
+    private String eihealthProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upstream_job_info")
+
+    private String upstreamJobInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
     private List<String> labels = null;
@@ -115,6 +130,57 @@ public class DrugJobDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public DrugJobDto withEihealthProjectId(String eihealthProjectId) {
+        this.eihealthProjectId = eihealthProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 作业所属空间ID。 **约束限制**： 不涉及 **取值范围**： 长度为[1-63]个字符，允许大小写字母、数字、以及特殊字符中划线（-）。 **默认取值**： 不涉及 
+     * @return eihealthProjectId
+     */
+    public String getEihealthProjectId() {
+        return eihealthProjectId;
+    }
+
+    public void setEihealthProjectId(String eihealthProjectId) {
+        this.eihealthProjectId = eihealthProjectId;
+    }
+
+    public DrugJobDto withEihealthProjectName(String eihealthProjectName) {
+        this.eihealthProjectName = eihealthProjectName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 作业所属空间名称。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return eihealthProjectName
+     */
+    public String getEihealthProjectName() {
+        return eihealthProjectName;
+    }
+
+    public void setEihealthProjectName(String eihealthProjectName) {
+        this.eihealthProjectName = eihealthProjectName;
+    }
+
+    public DrugJobDto withUpstreamJobInfo(String upstreamJobInfo) {
+        this.upstreamJobInfo = upstreamJobInfo;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 上游作业信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return upstreamJobInfo
+     */
+    public String getUpstreamJobInfo() {
+        return upstreamJobInfo;
+    }
+
+    public void setUpstreamJobInfo(String upstreamJobInfo) {
+        this.upstreamJobInfo = upstreamJobInfo;
     }
 
     public DrugJobDto withLabels(List<String> labels) {
@@ -356,11 +422,13 @@ public class DrugJobDto {
         }
         DrugJobDto that = (DrugJobDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.labels, that.labels) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.finishTime, that.finishTime) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.failedMessage, that.failedMessage) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.outputDir, that.outputDir)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.eihealthProjectName, that.eihealthProjectName)
+            && Objects.equals(this.upstreamJobInfo, that.upstreamJobInfo) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.failedMessage, that.failedMessage)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.outputDir, that.outputDir)
             && Objects.equals(this.expectChargeNum, that.expectChargeNum)
             && Objects.equals(this.realChargeNum, that.realChargeNum) && Objects.equals(this.progress, that.progress);
     }
@@ -369,6 +437,9 @@ public class DrugJobDto {
     public int hashCode() {
         return Objects.hash(id,
             name,
+            eihealthProjectId,
+            eihealthProjectName,
+            upstreamJobInfo,
             labels,
             status,
             type,
@@ -389,6 +460,9 @@ public class DrugJobDto {
         sb.append("class DrugJobDto {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    eihealthProjectId: ").append(toIndentedString(eihealthProjectId)).append("\n");
+        sb.append("    eihealthProjectName: ").append(toIndentedString(eihealthProjectName)).append("\n");
+        sb.append("    upstreamJobInfo: ").append(toIndentedString(upstreamJobInfo)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

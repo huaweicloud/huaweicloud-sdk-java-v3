@@ -2,6 +2,10 @@ package com.huaweicloud.sdk.codeartsbuild.v3;
 
 import com.huaweicloud.sdk.codeartsbuild.v3.model.AddFavouriteCustomTemplateRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.AddFavouriteCustomTemplateResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddFavouriteOfficialTemplateRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddFavouriteOfficialTemplateResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddFavouriteTaskRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.AddFavouriteTaskResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.AddKeystorePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ApplyProjectPermissionRequest;
@@ -54,8 +58,12 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableNoticeRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableNoticeResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableTheJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableTheJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildFullLogRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildFullLogResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildLogRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildLogResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildRealTimeLogRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildRealTimeLogResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadJunitCoverageZipRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadJunitCoverageZipResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreByNameRequest;
@@ -122,6 +130,10 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.MoveGroupRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.MoveGroupResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RemoverFavouriteCustomTemplateRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RemoverFavouriteCustomTemplateResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.RemoverFavouriteOfficialTemplateRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.RemoverFavouriteOfficialTemplateResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.RemoverFavouriteTaskRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.RemoverFavouriteTaskResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RestoreRecyclingJobsRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RestoreRecyclingJobsResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequest;
@@ -130,6 +142,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.SaveTemplateUsedInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.SaveTemplateUsedInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.SetKeepTimeRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.SetKeepTimeResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowActionIInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowActionIInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowAvailableInnerSpecRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowAvailableInnerSpecResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildDetailsRequest;
@@ -1617,6 +1631,35 @@ public class CodeArtsBuildAsyncClient {
     }
 
     /**
+     * 收藏任务
+     *
+     * 收藏任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFavouriteTaskRequest 请求对象
+     * @return CompletableFuture<AddFavouriteTaskResponse>
+     */
+    public CompletableFuture<AddFavouriteTaskResponse> addFavouriteTaskAsync(AddFavouriteTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.addFavouriteTask);
+    }
+
+    /**
+     * 收藏任务
+     *
+     * 收藏任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFavouriteTaskRequest 请求对象
+     * @return AsyncInvoker<AddFavouriteTaskRequest, AddFavouriteTaskResponse>
+     */
+    public AsyncInvoker<AddFavouriteTaskRequest, AddFavouriteTaskResponse> addFavouriteTaskAsyncInvoker(
+        AddFavouriteTaskRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.addFavouriteTask, hcClient);
+    }
+
+    /**
      * 任务是否使用项目级权限
      *
      * 任务是否使用项目级权限
@@ -2167,6 +2210,36 @@ public class CodeArtsBuildAsyncClient {
     public AsyncInvoker<ListUpdateJobHistoryRequest, ListUpdateJobHistoryResponse> listUpdateJobHistoryAsyncInvoker(
         ListUpdateJobHistoryRequest request) {
         return new AsyncInvoker<>(request, CodeArtsBuildMeta.listUpdateJobHistory, hcClient);
+    }
+
+    /**
+     * 取消收藏任务
+     *
+     * 取消收藏任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoverFavouriteTaskRequest 请求对象
+     * @return CompletableFuture<RemoverFavouriteTaskResponse>
+     */
+    public CompletableFuture<RemoverFavouriteTaskResponse> removerFavouriteTaskAsync(
+        RemoverFavouriteTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.removerFavouriteTask);
+    }
+
+    /**
+     * 取消收藏任务
+     *
+     * 取消收藏任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoverFavouriteTaskRequest 请求对象
+     * @return AsyncInvoker<RemoverFavouriteTaskRequest, RemoverFavouriteTaskResponse>
+     */
+    public AsyncInvoker<RemoverFavouriteTaskRequest, RemoverFavouriteTaskResponse> removerFavouriteTaskAsyncInvoker(
+        RemoverFavouriteTaskRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.removerFavouriteTask, hcClient);
     }
 
     /**
@@ -3106,6 +3179,95 @@ public class CodeArtsBuildAsyncClient {
     }
 
     /**
+     * 下载全量构建日志
+     *
+     * 下载全量构建日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadBuildFullLogRequest 请求对象
+     * @return CompletableFuture<DownloadBuildFullLogResponse>
+     */
+    public CompletableFuture<DownloadBuildFullLogResponse> downloadBuildFullLogAsync(
+        DownloadBuildFullLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.downloadBuildFullLog);
+    }
+
+    /**
+     * 下载全量构建日志
+     *
+     * 下载全量构建日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadBuildFullLogRequest 请求对象
+     * @return AsyncInvoker<DownloadBuildFullLogRequest, DownloadBuildFullLogResponse>
+     */
+    public AsyncInvoker<DownloadBuildFullLogRequest, DownloadBuildFullLogResponse> downloadBuildFullLogAsyncInvoker(
+        DownloadBuildFullLogRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.downloadBuildFullLog, hcClient);
+    }
+
+    /**
+     * 获取运行全量日志
+     *
+     * 获取运行全量日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadBuildRealTimeLogRequest 请求对象
+     * @return CompletableFuture<DownloadBuildRealTimeLogResponse>
+     */
+    public CompletableFuture<DownloadBuildRealTimeLogResponse> downloadBuildRealTimeLogAsync(
+        DownloadBuildRealTimeLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.downloadBuildRealTimeLog);
+    }
+
+    /**
+     * 获取运行全量日志
+     *
+     * 获取运行全量日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadBuildRealTimeLogRequest 请求对象
+     * @return AsyncInvoker<DownloadBuildRealTimeLogRequest, DownloadBuildRealTimeLogResponse>
+     */
+    public AsyncInvoker<DownloadBuildRealTimeLogRequest, DownloadBuildRealTimeLogResponse> downloadBuildRealTimeLogAsyncInvoker(
+        DownloadBuildRealTimeLogRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.downloadBuildRealTimeLog, hcClient);
+    }
+
+    /**
+     * 任务执行后获取构建日志
+     *
+     * 任务执行后获取构建日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowActionIInfoRequest 请求对象
+     * @return CompletableFuture<ShowActionIInfoResponse>
+     */
+    public CompletableFuture<ShowActionIInfoResponse> showActionIInfoAsync(ShowActionIInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.showActionIInfo);
+    }
+
+    /**
+     * 任务执行后获取构建日志
+     *
+     * 任务执行后获取构建日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowActionIInfoRequest 请求对象
+     * @return AsyncInvoker<ShowActionIInfoRequest, ShowActionIInfoResponse>
+     */
+    public AsyncInvoker<ShowActionIInfoRequest, ShowActionIInfoResponse> showActionIInfoAsyncInvoker(
+        ShowActionIInfoRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.showActionIInfo, hcClient);
+    }
+
+    /**
      * 下载构建日志(待下线)
      *
      * 下载构建日志(待下线)
@@ -3752,6 +3914,36 @@ public class CodeArtsBuildAsyncClient {
     }
 
     /**
+     * 收藏官方模板
+     *
+     * 收藏官方模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFavouriteOfficialTemplateRequest 请求对象
+     * @return CompletableFuture<AddFavouriteOfficialTemplateResponse>
+     */
+    public CompletableFuture<AddFavouriteOfficialTemplateResponse> addFavouriteOfficialTemplateAsync(
+        AddFavouriteOfficialTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.addFavouriteOfficialTemplate);
+    }
+
+    /**
+     * 收藏官方模板
+     *
+     * 收藏官方模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFavouriteOfficialTemplateRequest 请求对象
+     * @return AsyncInvoker<AddFavouriteOfficialTemplateRequest, AddFavouriteOfficialTemplateResponse>
+     */
+    public AsyncInvoker<AddFavouriteOfficialTemplateRequest, AddFavouriteOfficialTemplateResponse> addFavouriteOfficialTemplateAsyncInvoker(
+        AddFavouriteOfficialTemplateRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.addFavouriteOfficialTemplate, hcClient);
+    }
+
+    /**
      * 创建构建模板
      *
      * 创建构建模板
@@ -3926,6 +4118,36 @@ public class CodeArtsBuildAsyncClient {
     public AsyncInvoker<RemoverFavouriteCustomTemplateRequest, RemoverFavouriteCustomTemplateResponse> removerFavouriteCustomTemplateAsyncInvoker(
         RemoverFavouriteCustomTemplateRequest request) {
         return new AsyncInvoker<>(request, CodeArtsBuildMeta.removerFavouriteCustomTemplate, hcClient);
+    }
+
+    /**
+     * 取消收藏官方模板
+     *
+     * 取消收藏官方模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoverFavouriteOfficialTemplateRequest 请求对象
+     * @return CompletableFuture<RemoverFavouriteOfficialTemplateResponse>
+     */
+    public CompletableFuture<RemoverFavouriteOfficialTemplateResponse> removerFavouriteOfficialTemplateAsync(
+        RemoverFavouriteOfficialTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsBuildMeta.removerFavouriteOfficialTemplate);
+    }
+
+    /**
+     * 取消收藏官方模板
+     *
+     * 取消收藏官方模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoverFavouriteOfficialTemplateRequest 请求对象
+     * @return AsyncInvoker<RemoverFavouriteOfficialTemplateRequest, RemoverFavouriteOfficialTemplateResponse>
+     */
+    public AsyncInvoker<RemoverFavouriteOfficialTemplateRequest, RemoverFavouriteOfficialTemplateResponse> removerFavouriteOfficialTemplateAsyncInvoker(
+        RemoverFavouriteOfficialTemplateRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsBuildMeta.removerFavouriteOfficialTemplate, hcClient);
     }
 
     /**

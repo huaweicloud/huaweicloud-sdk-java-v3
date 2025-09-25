@@ -50,6 +50,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateAdmetJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateAdmetJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateAppResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateAssetResourceReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateAssetResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateAssetResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobResponse;
@@ -111,6 +114,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateLigandPreviewTaskReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateLigandSdfReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateLigandSimilarityGraphTaskReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateLigandSvgReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateMessageAdditionsReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateMessageAdditionsRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateMessageAdditionsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateModelReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateMolBatchDownloadTaskReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateMolBatchDownloadTaskRequest;
@@ -149,6 +155,10 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateWorkflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateWorkflowResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteAppResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteAssetResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteAssetResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteChatRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteChatResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingClusterRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteCssClusterRequest;
@@ -227,6 +237,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.JobDto;
 import com.huaweicloud.sdk.eihealth.v1.model.ListAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListAppResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListAssetRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListAssetResourceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListAssetResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListAssetResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBaseModelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBaseModelResponse;
@@ -234,6 +246,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListBucketRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBucketResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListCceClusterRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListCceClusterResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListChatRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListChatResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListClusterAllNodeLabelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListClusterAllNodeLabelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListClusterInstallStepRequest;
@@ -251,8 +265,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListDrugDatabaseResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelRequest;
-import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResourceRequest;
-import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResource1Request;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResource1Response;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListFavoriteRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListFavoriteResponse;
@@ -359,6 +373,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowAssetVersionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAssetVersionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowBucketStorageRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowBucketStorageResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowChatRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowChatResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowClusteringJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowClusteringJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowCpiJobRequest;
@@ -444,6 +460,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.UpdateAgencyRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateAgencyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateAppResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateChatReq;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateChatRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateChatResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateDrugDatabaseReq;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateDrugDatabaseRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateDrugDatabaseResponse;
@@ -954,6 +973,29 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAssetResourceRequest, CreateAssetResourceResponse> createAssetResource =
+        genForCreateAssetResource();
+
+    private static HttpRequestDef<CreateAssetResourceRequest, CreateAssetResourceResponse> genForCreateAssetResource() {
+        // basic
+        HttpRequestDef.Builder<CreateAssetResourceRequest, CreateAssetResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAssetResourceRequest.class, CreateAssetResourceResponse.class)
+                .withName("CreateAssetResource")
+                .withUri("/v1/{project_id}/assets/asset-resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateAssetResourceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAssetResourceReq.class),
+            f -> f.withMarshaller(CreateAssetResourceRequest::getBody, CreateAssetResourceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateClusterJobRequest, CreateClusterJobResponse> createClusterJob =
         genForCreateClusterJob();
 
@@ -1326,6 +1368,40 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateMessageAdditionsRequest, CreateMessageAdditionsResponse> createMessageAdditions =
+        genForCreateMessageAdditions();
+
+    private static HttpRequestDef<CreateMessageAdditionsRequest, CreateMessageAdditionsResponse> genForCreateMessageAdditions() {
+        // basic
+        HttpRequestDef.Builder<CreateMessageAdditionsRequest, CreateMessageAdditionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateMessageAdditionsRequest.class, CreateMessageAdditionsResponse.class)
+            .withName("CreateMessageAdditions")
+            .withUri("/v1/{project_id}/chats/{chat_id}/messages/{message_id}/additions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMessageAdditionsRequest::getChatId, CreateMessageAdditionsRequest::setChatId));
+        builder.<String>withRequestField("message_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMessageAdditionsRequest::getMessageId,
+                CreateMessageAdditionsRequest::setMessageId));
+        builder.<CreateMessageAdditionsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMessageAdditionsReq.class),
+            f -> f.withMarshaller(CreateMessageAdditionsRequest::getBody, CreateMessageAdditionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateMolBatchDownloadTaskRequest, CreateMolBatchDownloadTaskResponse> createMolBatchDownloadTask =
         genForCreateMolBatchDownloadTask();
 
@@ -1657,6 +1733,51 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppRequest::getEihealthProjectId, DeleteAppRequest::setEihealthProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAssetResourceRequest, DeleteAssetResourceResponse> deleteAssetResource =
+        genForDeleteAssetResource();
+
+    private static HttpRequestDef<DeleteAssetResourceRequest, DeleteAssetResourceResponse> genForDeleteAssetResource() {
+        // basic
+        HttpRequestDef.Builder<DeleteAssetResourceRequest, DeleteAssetResourceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAssetResourceRequest.class, DeleteAssetResourceResponse.class)
+            .withName("DeleteAssetResource")
+            .withUri("/v1/{project_id}/assets/asset-resources/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetResourceRequest::getId, DeleteAssetResourceRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteChatRequest, DeleteChatResponse> deleteChat = genForDeleteChat();
+
+    private static HttpRequestDef<DeleteChatRequest, DeleteChatResponse> genForDeleteChat() {
+        // basic
+        HttpRequestDef.Builder<DeleteChatRequest, DeleteChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteChatRequest.class, DeleteChatResponse.class)
+                .withName("DeleteChat")
+                .withUri("/v1/{project_id}/chats/{chat_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteChatRequest::getChatId, DeleteChatRequest::setChatId));
 
         // response
 
@@ -2461,6 +2582,50 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAssetResourceRequest, ListAssetResourceResponse> listAssetResource =
+        genForListAssetResource();
+
+    private static HttpRequestDef<ListAssetResourceRequest, ListAssetResourceResponse> genForListAssetResource() {
+        // basic
+        HttpRequestDef.Builder<ListAssetResourceRequest, ListAssetResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAssetResourceRequest.class, ListAssetResourceResponse.class)
+                .withName("ListAssetResource")
+                .withUri("/v1/{project_id}/assets/asset-resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("spec_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetResourceRequest::getSpecCode, ListAssetResourceRequest::setSpecCode));
+        builder.<List<String>>withRequestField("status_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAssetResourceRequest::getStatusList, ListAssetResourceRequest::setStatusList));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssetResourceRequest::getLimit, ListAssetResourceRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssetResourceRequest::getOffset, ListAssetResourceRequest::setOffset));
+
+        // response
+
+        builder.<String>withResponseField("X-Resource-Mappings",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAssetResourceResponse::getXResourceMappings,
+                ListAssetResourceResponse::setXResourceMappings));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBaseModelRequest, ListBaseModelResponse> listBaseModel =
         genForListBaseModel();
 
@@ -2533,6 +2698,43 @@ public class EiHealthMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListChatRequest, ListChatResponse> listChat = genForListChat();
+
+    private static HttpRequestDef<ListChatRequest, ListChatResponse> genForListChat() {
+        // basic
+        HttpRequestDef.Builder<ListChatRequest, ListChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListChatRequest.class, ListChatResponse.class)
+                .withName("ListChat")
+                .withUri("/v1/{project_id}/chats")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListChatRequest::getLimit, ListChatRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListChatRequest::getOffset, ListChatRequest::setOffset));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChatRequest::getSortDir, ListChatRequest::setSortDir));
+        builder.<String>withRequestField("title",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChatRequest::getTitle, ListChatRequest::setTitle));
 
         // response
 
@@ -2966,14 +3168,14 @@ public class EiHealthMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDrugModelResourceRequest, ListDrugModelResourceResponse> listDrugModelResource =
-        genForListDrugModelResource();
+    public static final HttpRequestDef<ListDrugModelResource1Request, ListDrugModelResource1Response> listDrugModelResource1 =
+        genForListDrugModelResource1();
 
-    private static HttpRequestDef<ListDrugModelResourceRequest, ListDrugModelResourceResponse> genForListDrugModelResource() {
+    private static HttpRequestDef<ListDrugModelResource1Request, ListDrugModelResource1Response> genForListDrugModelResource1() {
         // basic
-        HttpRequestDef.Builder<ListDrugModelResourceRequest, ListDrugModelResourceResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListDrugModelResourceRequest.class, ListDrugModelResourceResponse.class)
-            .withName("ListDrugModelResource")
+        HttpRequestDef.Builder<ListDrugModelResource1Request, ListDrugModelResource1Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDrugModelResource1Request.class, ListDrugModelResource1Response.class)
+            .withName("ListDrugModelResource1")
             .withUri("/v1/{project_id}/drug/drug-model-resources")
             .withContentType("application/json");
 
@@ -2982,24 +3184,24 @@ public class EiHealthMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDrugModelResourceRequest::getSpecCode,
-                ListDrugModelResourceRequest::setSpecCode));
+            f -> f.withMarshaller(ListDrugModelResource1Request::getSpecCode,
+                ListDrugModelResource1Request::setSpecCode));
         builder.<List<String>>withRequestField("status_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListDrugModelResourceRequest::getStatusList,
-                ListDrugModelResourceRequest::setStatusList));
+            f -> f.withMarshaller(ListDrugModelResource1Request::getStatusList,
+                ListDrugModelResource1Request::setStatusList));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDrugModelResourceRequest::getLimit, ListDrugModelResourceRequest::setLimit));
+            f -> f.withMarshaller(ListDrugModelResource1Request::getLimit, ListDrugModelResource1Request::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDrugModelResourceRequest::getOffset, ListDrugModelResourceRequest::setOffset));
+            f -> f.withMarshaller(ListDrugModelResource1Request::getOffset, ListDrugModelResource1Request::setOffset));
 
         // response
 
@@ -3007,8 +3209,8 @@ public class EiHealthMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListDrugModelResourceResponse::getXResourceMappings,
-                ListDrugModelResourceResponse::setXResourceMappings));
+            f -> f.withMarshaller(ListDrugModelResource1Response::getXResourceMappings,
+                ListDrugModelResource1Response::setXResourceMappings));
         return builder.build();
     }
 
@@ -4335,6 +4537,33 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowChatRequest, ShowChatResponse> showChat = genForShowChat();
+
+    private static HttpRequestDef<ShowChatRequest, ShowChatResponse> genForShowChat() {
+        // basic
+        HttpRequestDef.Builder<ShowChatRequest, ShowChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowChatRequest.class, ShowChatResponse.class)
+                .withName("ShowChat")
+                .withUri("/v1/{project_id}/chats/{chat_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChatRequest::getChatId, ShowChatRequest::setChatId));
+
+        // response
+
+        builder.<String>withResponseField("X-Chat-Route-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowChatResponse::getXChatRouteId, ShowChatResponse::setXChatRouteId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowClusteringJobRequest, ShowClusteringJobResponse> showClusteringJob =
         genForShowClusteringJob();
 
@@ -5360,6 +5589,33 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AppReq.class),
             f -> f.withMarshaller(UpdateAppRequest::getBody, UpdateAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateChatRequest, UpdateChatResponse> updateChat = genForUpdateChat();
+
+    private static HttpRequestDef<UpdateChatRequest, UpdateChatResponse> genForUpdateChat() {
+        // basic
+        HttpRequestDef.Builder<UpdateChatRequest, UpdateChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateChatRequest.class, UpdateChatResponse.class)
+                .withName("UpdateChat")
+                .withUri("/v1/{project_id}/chats/{chat_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chat_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateChatRequest::getChatId, UpdateChatRequest::setChatId));
+        builder.<UpdateChatReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateChatReq.class),
+            f -> f.withMarshaller(UpdateChatRequest::getBody, UpdateChatRequest::setBody));
 
         // response
 

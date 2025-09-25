@@ -98,7 +98,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 变更类型 **取值范围**     - ADD ：添加 - DELETE ：删除 - MODIFY ： 修改 
+     * **参数解释** 变更类型 **取值范围** - ADD ：添加 - DELETE ：删除 - MODIFY ： 修改 
      * @return changeType
      */
     public String getChangeType() {
@@ -115,7 +115,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 主机ID **取值范围** 长度1-128         
+     * **参数解释** 主机ID **取值范围** 长度1-128 
      * @return hostId
      */
     public String getHostId() {
@@ -132,7 +132,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 服务器名称 **取值范围** 长度1-128        
+     * **参数解释** 服务器名称 **取值范围** 长度1-128 
      * @return hostName
      */
     public String getHostName() {
@@ -149,7 +149,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 服务器私有IP **取值范围** 长度1-128      
+     * **参数解释** 服务器私有IP **取值范围** 长度1-128 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -166,7 +166,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 是否有登录权限 **取值范围** true: 具有登录权限 false: 不具有登录权限     
+     * **参数解释** 是否有登录权限 **取值范围** true: 具有登录权限 false: 不具有登录权限 
      * @return loginPermission
      */
     public Boolean getLoginPermission() {
@@ -183,7 +183,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 是否有root权限 **取值范围** true: 具有root权限 false: 不具有root权限           
+     * **参数解释** 是否有root权限 **取值范围** true: 具有root权限 false: 不具有root权限 
      * @return rootPermission
      */
     public Boolean getRootPermission() {
@@ -234,7 +234,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 用户启动shell **取值范围** 长度1-128         
+     * **参数解释** 用户启动shell **取值范围** 长度1-128 
      * @return shell
      */
     public String getShell() {
@@ -251,7 +251,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 用户名称 **取值范围** 长度1-128         
+     * **参数解释** 用户名称 **取值范围** 长度1-128 
      * @return userName
      */
     public String getUserName() {
@@ -268,7 +268,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 到期时间，采用时间戳，默认毫秒 **取值范围** 长度0-4070880000000      
+     * **参数解释** 到期时间，采用时间戳，默认毫秒 **取值范围** 长度0-4070880000000 
      * minimum: 0
      * maximum: 4070880000000
      * @return expireTime
@@ -287,7 +287,7 @@ public class UserChangeHistoryResponseInfo {
     }
 
     /**
-     * **参数解释** 账号增加、修改、删除等操作的变更时间 **取值范围** 长度0-4070880000000            
+     * **参数解释** 账号增加、修改、删除等操作的变更时间 **取值范围** 长度0-4070880000000 
      * minimum: 0
      * maximum: 4070880000000
      * @return recentScanTime

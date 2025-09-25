@@ -16,11 +16,6 @@ public class ShowWebTamperRaspPathRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_name")
-
-    private String hostName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
@@ -42,30 +37,13 @@ public class ShowWebTamperRaspPathRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ShowWebTamperRaspPathRequest withHostName(String hostName) {
-        this.hostName = hostName;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
-     * @return hostName
-     */
-    public String getHostName() {
-        return hostName;
-    }
-
-    public void setHostName(String hostName) {
-        this.hostName = hostName;
-    }
-
     public ShowWebTamperRaspPathRequest withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
 
     /**
-     * 服务器id
+     * **参数解释**: 服务器ID，仅支持Linux服务器，要求服务器已开启网页防篡改防护，或已关闭防护但未删除网页防篡改策略 **约束限制**: 需要使用 ListWtpProtectHost 接口查询网页防篡改主机防护状态列表信息，在 ListWtpProtectHost 接口的响应体中，os_type 等于 Linux 的 host_id 是符合查询条件的服务器ID **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -86,12 +64,12 @@ public class ShowWebTamperRaspPathRequest {
         }
         ShowWebTamperRaspPathRequest that = (ShowWebTamperRaspPathRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostId, that.hostId);
+            && Objects.equals(this.hostId, that.hostId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hostName, hostId);
+        return Objects.hash(enterpriseProjectId, hostId);
     }
 
     @Override
@@ -99,7 +77,6 @@ public class ShowWebTamperRaspPathRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowWebTamperRaspPathRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("}");
         return sb.toString();

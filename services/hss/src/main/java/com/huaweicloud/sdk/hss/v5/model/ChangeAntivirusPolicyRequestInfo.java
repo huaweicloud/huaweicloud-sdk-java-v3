@@ -29,6 +29,11 @@ public class ChangeAntivirusPolicyRequestInfo {
     private String startType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_type")
+
+    private String scanType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scan_period")
 
     private String scanPeriod;
@@ -137,6 +142,23 @@ public class ChangeAntivirusPolicyRequestInfo {
 
     public void setStartType(String startType) {
         this.startType = startType;
+    }
+
+    public ChangeAntivirusPolicyRequestInfo withScanType(String scanType) {
+        this.scanType = scanType;
+        return this;
+    }
+
+    /**
+     * 任务类型，包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描
+     * @return scanType
+     */
+    public String getScanType() {
+        return scanType;
+    }
+
+    public void setScanType(String scanType) {
+        this.scanType = scanType;
     }
 
     public ChangeAntivirusPolicyRequestInfo withScanPeriod(String scanPeriod) {
@@ -395,7 +417,8 @@ public class ChangeAntivirusPolicyRequestInfo {
         }
         ChangeAntivirusPolicyRequestInfo that = (ChangeAntivirusPolicyRequestInfo) obj;
         return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.policyName, that.policyName)
-            && Objects.equals(this.startType, that.startType) && Objects.equals(this.scanPeriod, that.scanPeriod)
+            && Objects.equals(this.startType, that.startType) && Objects.equals(this.scanType, that.scanType)
+            && Objects.equals(this.scanPeriod, that.scanPeriod)
             && Objects.equals(this.scanPeriodDate, that.scanPeriodDate) && Objects.equals(this.scanTime, that.scanTime)
             && Objects.equals(this.scanHour, that.scanHour) && Objects.equals(this.scanMinute, that.scanMinute)
             && Objects.equals(this.timezoneOffset, that.timezoneOffset)
@@ -409,6 +432,7 @@ public class ChangeAntivirusPolicyRequestInfo {
         return Objects.hash(policyId,
             policyName,
             startType,
+            scanType,
             scanPeriod,
             scanPeriodDate,
             scanTime,
@@ -430,6 +454,7 @@ public class ChangeAntivirusPolicyRequestInfo {
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
         sb.append("    startType: ").append(toIndentedString(startType)).append("\n");
+        sb.append("    scanType: ").append(toIndentedString(scanType)).append("\n");
         sb.append("    scanPeriod: ").append(toIndentedString(scanPeriod)).append("\n");
         sb.append("    scanPeriodDate: ").append(toIndentedString(scanPeriodDate)).append("\n");
         sb.append("    scanTime: ").append(toIndentedString(scanTime)).append("\n");

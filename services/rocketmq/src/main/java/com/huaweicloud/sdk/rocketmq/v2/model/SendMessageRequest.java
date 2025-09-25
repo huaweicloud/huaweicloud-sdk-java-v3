@@ -24,7 +24,7 @@ public class SendMessageRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private SendMessageResp body;
+    private SendMessageRep body;
 
     public SendMessageRequest withEngine(String engine) {
         this.engine = engine;
@@ -60,14 +60,14 @@ public class SendMessageRequest {
         this.instanceId = instanceId;
     }
 
-    public SendMessageRequest withBody(SendMessageResp body) {
+    public SendMessageRequest withBody(SendMessageRep body) {
         this.body = body;
         return this;
     }
 
-    public SendMessageRequest withBody(Consumer<SendMessageResp> bodySetter) {
+    public SendMessageRequest withBody(Consumer<SendMessageRep> bodySetter) {
         if (this.body == null) {
-            this.body = new SendMessageResp();
+            this.body = new SendMessageRep();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class SendMessageRequest {
      * Get body
      * @return body
      */
-    public SendMessageResp getBody() {
+    public SendMessageRep getBody() {
         return body;
     }
 
-    public void setBody(SendMessageResp body) {
+    public void setBody(SendMessageRep body) {
         this.body = body;
     }
 

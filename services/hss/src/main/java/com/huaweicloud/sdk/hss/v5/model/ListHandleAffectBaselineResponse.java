@@ -40,7 +40,7 @@ public class ListHandleAffectBaselineResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 该操作影响的范围的总数 **取值范围**   取值0-5000
+     * **参数解释** 该操作影响的范围的总数 **取值范围** 取值0-5000
      * minimum: 0
      * maximum: 5000
      * @return totalRuleNum
@@ -59,7 +59,7 @@ public class ListHandleAffectBaselineResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 该操作影响的检查项数 **取值范围**   取值0-5000
+     * **参数解释** 该操作影响的检查项数 **取值范围** 取值0-5000
      * minimum: 0
      * maximum: 5000
      * @return ruleNum
@@ -78,7 +78,7 @@ public class ListHandleAffectBaselineResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 该操作影响的主机数 **取值范围**   取值0-5000
+     * **参数解释** 该操作影响的主机数 **取值范围** 取值0-5000
      * minimum: 0
      * maximum: 5000
      * @return hostNum

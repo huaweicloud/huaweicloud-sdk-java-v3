@@ -103,6 +103,11 @@ public class Vault {
 
     private Boolean locked;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
     public Vault withBilling(Billing billing) {
         this.billing = billing;
         return this;
@@ -461,6 +466,23 @@ public class Vault {
         this.locked = locked;
     }
 
+    public Vault withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 存储库可用区信息，最大支持32字符。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -480,7 +502,7 @@ public class Vault {
             && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
             && Objects.equals(this.threshold, that.threshold)
             && Objects.equals(this.sysLockSourceService, that.sysLockSourceService)
-            && Objects.equals(this.locked, that.locked);
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
@@ -502,7 +524,8 @@ public class Vault {
             smnNotify,
             threshold,
             sysLockSourceService,
-            locked);
+            locked,
+            availabilityZone);
     }
 
     @Override
@@ -527,6 +550,7 @@ public class Vault {
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

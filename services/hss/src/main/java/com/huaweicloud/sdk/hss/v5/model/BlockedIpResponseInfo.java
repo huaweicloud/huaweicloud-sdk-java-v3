@@ -41,7 +41,7 @@ public class BlockedIpResponseInfo {
     private Integer interceptNum;
 
     /**
-     * 拦截状态，包含如下:   - \"intercepted\" # 已拦截   - \"canceled\" # 已解除拦截   - \"cancelling\" # 待解除拦截
+     * **参数解释**： 拦截状态 **约束限制**: 不涉及 **取值范围**: - intercepted：已拦截。 - canceled：已解除拦截。 - cancelling：待解除拦截。  **默认取值**: 不涉及 
      */
     public static final class InterceptStatusEnum {
 
@@ -188,7 +188,7 @@ public class BlockedIpResponseInfo {
     }
 
     /**
-     * 登录类型，包含如下: - \"mysql\" # mysql服务 - \"rdp\" # rdp服务 - \"ssh\" # ssh服务 - \"vsftp\" # vsftp服务
+     * **参数解释**： 登录类型 **约束限制**: 不涉及 **取值范围**: - mysql：mysql服务。 - rdp：rdp服务。 - ssh：ssh服务。 - vsftp：vsftp服务。  **默认取值**: 不涉及 
      * @return loginType
      */
     public String getLoginType() {
@@ -224,7 +224,7 @@ public class BlockedIpResponseInfo {
     }
 
     /**
-     * 拦截状态，包含如下:   - \"intercepted\" # 已拦截   - \"canceled\" # 已解除拦截   - \"cancelling\" # 待解除拦截
+     * **参数解释**： 拦截状态 **约束限制**: 不涉及 **取值范围**: - intercepted：已拦截。 - canceled：已解除拦截。 - cancelling：待解除拦截。  **默认取值**: 不涉及 
      * @return interceptStatus
      */
     public InterceptStatusEnum getInterceptStatus() {

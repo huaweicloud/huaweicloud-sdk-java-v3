@@ -58,7 +58,7 @@ public class ServicePortInfo {
     }
 
     /**
-     * 类型，可取值集合[http，https]
+     * **参数解释**: 类型 **约束限制**: 不涉及 **取值范围**:   - http：http类端口   - https：https类端口  **默认取值**: 不涉及 
      * @return type
      */
     public String getType() {

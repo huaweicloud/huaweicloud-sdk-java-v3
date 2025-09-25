@@ -60,7 +60,7 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘自动扩容开关。
+     * **参数解释**: 磁盘自动扩容开关。 **取值范围**: 不涉及。
      * @return switchOption
      */
     public Boolean getSwitchOption() {
@@ -77,7 +77,7 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 存储自动扩容上限。
+     * **参数解释**: 存储自动扩容上限。 **取值范围**: 不涉及。
      * @return limitVolumeSize
      */
     public Integer getLimitVolumeSize() {
@@ -94,7 +94,7 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 最小扩容磁盘容量。
+     * **参数解释**: 最小扩容磁盘容量。 **取值范围**: 不涉及。
      * @return minVolumeSize
      */
     public Integer getMinVolumeSize() {
@@ -111,7 +111,7 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 最大扩容磁盘容量。
+     * **参数解释**: 最大扩容磁盘容量。 **取值范围**: 不涉及。
      * @return maxVolumeSize
      */
     public Integer getMaxVolumeSize() {
@@ -128,7 +128,7 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 可用存储空间率。
+     * **参数解释**: 可用存储空间率。 **取值范围**: 不涉及。
      * @return triggerAvailablePercent
      */
     public Integer getTriggerAvailablePercent() {
@@ -161,7 +161,7 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 空间率集合。
+     * **参数解释**: 空间率集合。 **取值范围**: 不涉及。
      * @return percents
      */
     public List<Integer> getPercents() {
@@ -178,7 +178,7 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 扩容步长，固定大小扩容方式。
+     * **参数解释**: 扩容步长，固定大小扩容方式。 **取值范围**: 不涉及。
      * @return stepSize
      */
     public Integer getStepSize() {
@@ -195,7 +195,7 @@ public class SearchAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 扩容步长，百分比扩容方式。
+     * **参数解释**: 扩容步长，百分比扩容方式。 **取值范围**: 不涉及。
      * @return stepPercent
      */
     public Integer getStepPercent() {

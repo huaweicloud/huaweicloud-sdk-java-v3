@@ -115,12 +115,30 @@ public class ListProvidersRequest {
          */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
+        /**
+         * Enum FR_FR for value: "fr-fr"
+         */
+        public static final XLanguageEnum FR_FR = new XLanguageEnum("fr-fr");
+
+        /**
+         * Enum ES_US for value: "es-us"
+         */
+        public static final XLanguageEnum ES_US = new XLanguageEnum("es-us");
+
+        /**
+         * Enum PT_BR for value: "pt-br"
+         */
+        public static final XLanguageEnum PT_BR = new XLanguageEnum("pt-br");
+
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, XLanguageEnum> createStaticFields() {
             Map<String, XLanguageEnum> map = new HashMap<>();
             map.put("zh-cn", ZH_CN);
             map.put("en-us", EN_US);
+            map.put("fr-fr", FR_FR);
+            map.put("es-us", ES_US);
+            map.put("pt-br", PT_BR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -182,7 +200,7 @@ public class ListProvidersRequest {
 
     /**
      * 分页偏移
-     * minimum: 1
+     * minimum: 0
      * maximum: 1000
      * @return offset
      */

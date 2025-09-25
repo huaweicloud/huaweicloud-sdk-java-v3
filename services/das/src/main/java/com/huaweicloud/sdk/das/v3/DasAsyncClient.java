@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequest;
+import com.huaweicloud.sdk.das.v3.model.CheckCredentialResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionRequest;
@@ -99,6 +101,8 @@ import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.SaveCredentialRequest;
+import com.huaweicloud.sdk.das.v3.model.SaveCredentialResponse;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
@@ -109,6 +113,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
@@ -135,6 +141,8 @@ import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesResponse;
 
@@ -511,6 +519,35 @@ public class DasAsyncClient {
     public AsyncInvoker<ChangeTransactionSwitchStatusRequest, ChangeTransactionSwitchStatusResponse> changeTransactionSwitchStatusAsyncInvoker(
         ChangeTransactionSwitchStatusRequest request) {
         return new AsyncInvoker<>(request, DasMeta.changeTransactionSwitchStatus, hcClient);
+    }
+
+    /**
+     * 测试AK/SK
+     *
+     * 测试AK/SK，测试用户AK/SK能否正常访问OBS桶。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckCredentialRequest 请求对象
+     * @return CompletableFuture<CheckCredentialResponse>
+     */
+    public CompletableFuture<CheckCredentialResponse> checkCredentialAsync(CheckCredentialRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.checkCredential);
+    }
+
+    /**
+     * 测试AK/SK
+     *
+     * 测试AK/SK，测试用户AK/SK能否正常访问OBS桶。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckCredentialRequest 请求对象
+     * @return AsyncInvoker<CheckCredentialRequest, CheckCredentialResponse>
+     */
+    public AsyncInvoker<CheckCredentialRequest, CheckCredentialResponse> checkCredentialAsyncInvoker(
+        CheckCredentialRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.checkCredential, hcClient);
     }
 
     /**
@@ -1639,6 +1676,35 @@ public class DasAsyncClient {
     }
 
     /**
+     * 保存AK/SK
+     *
+     * 保存AK/SK，用于后台任务访问OBS上传实例诊断报告
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveCredentialRequest 请求对象
+     * @return CompletableFuture<SaveCredentialResponse>
+     */
+    public CompletableFuture<SaveCredentialResponse> saveCredentialAsync(SaveCredentialRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.saveCredential);
+    }
+
+    /**
+     * 保存AK/SK
+     *
+     * 保存AK/SK，用于后台任务访问OBS上传实例诊断报告
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveCredentialRequest 请求对象
+     * @return AsyncInvoker<SaveCredentialRequest, SaveCredentialResponse>
+     */
+    public AsyncInvoker<SaveCredentialRequest, SaveCredentialResponse> saveCredentialAsyncInvoker(
+        SaveCredentialRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.saveCredential, hcClient);
+    }
+
+    /**
      * 设置指标阈值
      *
      * 设置指标阈值
@@ -1756,6 +1822,36 @@ public class DasAsyncClient {
     public AsyncInvoker<ShowFullDeadLockSwitchRequest, ShowFullDeadLockSwitchResponse> showFullDeadLockSwitchAsyncInvoker(
         ShowFullDeadLockSwitchRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showFullDeadLockSwitch, hcClient);
+    }
+
+    /**
+     * 查看实例诊断报告设置
+     *
+     * 查看实例诊断报告设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHealthReportSettingsRequest 请求对象
+     * @return CompletableFuture<ShowHealthReportSettingsResponse>
+     */
+    public CompletableFuture<ShowHealthReportSettingsResponse> showHealthReportSettingsAsync(
+        ShowHealthReportSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showHealthReportSettings);
+    }
+
+    /**
+     * 查看实例诊断报告设置
+     *
+     * 查看实例诊断报告设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHealthReportSettingsRequest 请求对象
+     * @return AsyncInvoker<ShowHealthReportSettingsRequest, ShowHealthReportSettingsResponse>
+     */
+    public AsyncInvoker<ShowHealthReportSettingsRequest, ShowHealthReportSettingsResponse> showHealthReportSettingsAsyncInvoker(
+        ShowHealthReportSettingsRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showHealthReportSettings, hcClient);
     }
 
     /**
@@ -2148,6 +2244,36 @@ public class DasAsyncClient {
     public AsyncInvoker<UpdateDbUserRequest, UpdateDbUserResponse> updateDbUserAsyncInvoker(
         UpdateDbUserRequest request) {
         return new AsyncInvoker<>(request, DasMeta.updateDbUser, hcClient);
+    }
+
+    /**
+     * 更新实例诊断报告设置
+     *
+     * 更新实例诊断报告设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHealthReportSettingsRequest 请求对象
+     * @return CompletableFuture<UpdateHealthReportSettingsResponse>
+     */
+    public CompletableFuture<UpdateHealthReportSettingsResponse> updateHealthReportSettingsAsync(
+        UpdateHealthReportSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.updateHealthReportSettings);
+    }
+
+    /**
+     * 更新实例诊断报告设置
+     *
+     * 更新实例诊断报告设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHealthReportSettingsRequest 请求对象
+     * @return AsyncInvoker<UpdateHealthReportSettingsRequest, UpdateHealthReportSettingsResponse>
+     */
+    public AsyncInvoker<UpdateHealthReportSettingsRequest, UpdateHealthReportSettingsResponse> updateHealthReportSettingsAsyncInvoker(
+        UpdateHealthReportSettingsRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.updateHealthReportSettings, hcClient);
     }
 
     /**

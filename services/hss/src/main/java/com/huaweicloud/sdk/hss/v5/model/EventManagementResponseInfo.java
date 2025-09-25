@@ -223,6 +223,11 @@ public class EventManagementResponseInfo {
 
     private Integer eventCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operate_type")
+
+    private String operateType;
+
     public EventManagementResponseInfo withEventId(String eventId) {
         this.eventId = eventId;
         return this;
@@ -1052,6 +1057,23 @@ public class EventManagementResponseInfo {
         this.eventCount = eventCount;
     }
 
+    public EventManagementResponseInfo withOperateType(String operateType) {
+        this.operateType = operateType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 操作类型 **取值范围**： - add ：创建。 - delete ：删除。 - change_attribute ： 修改文件属性。 - modify ：修改文件内容。 - move ：移动。 
+     * @return operateType
+     */
+    public String getOperateType() {
+        return operateType;
+    }
+
+    public void setOperateType(String operateType) {
+        this.operateType = operateType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1087,7 +1109,7 @@ public class EventManagementResponseInfo {
             && Objects.equals(this.userInfoList, that.userInfoList)
             && Objects.equals(this.fileInfoList, that.fileInfoList)
             && Objects.equals(this.eventDetails, that.eventDetails) && Objects.equals(this.tagList, that.tagList)
-            && Objects.equals(this.eventCount, that.eventCount);
+            && Objects.equals(this.eventCount, that.eventCount) && Objects.equals(this.operateType, that.operateType);
     }
 
     @Override
@@ -1133,7 +1155,8 @@ public class EventManagementResponseInfo {
             fileInfoList,
             eventDetails,
             tagList,
-            eventCount);
+            eventCount,
+            operateType);
     }
 
     @Override
@@ -1182,6 +1205,7 @@ public class EventManagementResponseInfo {
         sb.append("    eventDetails: ").append(toIndentedString(eventDetails)).append("\n");
         sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
         sb.append("    eventCount: ").append(toIndentedString(eventCount)).append("\n");
+        sb.append("    operateType: ").append(toIndentedString(operateType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

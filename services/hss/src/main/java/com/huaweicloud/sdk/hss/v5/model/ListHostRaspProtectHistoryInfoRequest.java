@@ -11,14 +11,14 @@ import java.util.Objects;
 public class ListHostRaspProtectHistoryInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
@@ -50,40 +50,13 @@ public class ListHostRaspProtectHistoryInfoRequest {
 
     private Integer alarmLevel;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "severity")
-
-    private String severity;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "protect_status")
-
-    private String protectStatus;
-
-    public ListHostRaspProtectHistoryInfoRequest withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * Region ID
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public ListHostRaspProtectHistoryInfoRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -94,13 +67,30 @@ public class ListHostRaspProtectHistoryInfoRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListHostRaspProtectHistoryInfoRequest withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 区域ID，用于查询目的区域内的资产。获取方式请参见[获取区域ID](hss_02_0026.xml)。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     public ListHostRaspProtectHistoryInfoRequest withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
 
     /**
-     * Host Id，为空时查所有主机
+     * **参数解释**: 服务器ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -117,7 +107,7 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * 起始时间(ms)
+     * **参数解释**: 查询起始时间，单位毫秒，不可早于30天前，如早于30天前，则按照30天前计算。 **约束限制**: 不涉及 **取值范围**: 取值0-4070880000000 **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 4070880000000
      * @return startTime
@@ -136,7 +126,7 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * 终止时间(ms)
+     * **参数解释**: 查询终止时间，单位毫秒，不可早于start_time，且与start_time相差不可超过30天，否则按照start_time的1天后计算。 **约束限制**: 不涉及 **取值范围**: 取值0-4070880000000 **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 4070880000000
      * @return endTime
@@ -155,9 +145,9 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * limit
-     * minimum: 0
-     * maximum: 100
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * minimum: 10
+     * maximum: 200
      * @return limit
      */
     public Integer getLimit() {
@@ -174,9 +164,9 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
-     * maximum: 100
+     * maximum: 2000000
      * @return offset
      */
     public Integer getOffset() {
@@ -193,9 +183,9 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     /**
-     * 告警级别 - 1 : 低危 - 2 : 中危 - 3 : 高危 - 4 : 严重
+     * **参数解释**: 告警等级 **约束限制**: 不涉及 **取值范围**: - 1 : 紧急。 - 2 : 重要。 - 3 : 次要。 - 4 : 提示。  **默认取值**: 不涉及 
      * minimum: 0
-     * maximum: 100
+     * maximum: 10
      * @return alarmLevel
      */
     public Integer getAlarmLevel() {
@@ -204,40 +194,6 @@ public class ListHostRaspProtectHistoryInfoRequest {
 
     public void setAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
-    }
-
-    public ListHostRaspProtectHistoryInfoRequest withSeverity(String severity) {
-        this.severity = severity;
-        return this;
-    }
-
-    /**
-     * 威胁等级   - Security : 安全   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
-     * @return severity
-     */
-    public String getSeverity() {
-        return severity;
-    }
-
-    public void setSeverity(String severity) {
-        this.severity = severity;
-    }
-
-    public ListHostRaspProtectHistoryInfoRequest withProtectStatus(String protectStatus) {
-        this.protectStatus = protectStatus;
-        return this;
-    }
-
-    /**
-     * 防护状态   - closed : 未开启   - opened : 防护中
-     * @return protectStatus
-     */
-    public String getProtectStatus() {
-        return protectStatus;
-    }
-
-    public void setProtectStatus(String protectStatus) {
-        this.protectStatus = protectStatus;
     }
 
     @Override
@@ -249,42 +205,30 @@ public class ListHostRaspProtectHistoryInfoRequest {
             return false;
         }
         ListHostRaspProtectHistoryInfoRequest that = (ListHostRaspProtectHistoryInfoRequest) obj;
-        return Objects.equals(this.region, that.region)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.alarmLevel, that.alarmLevel)
-            && Objects.equals(this.severity, that.severity) && Objects.equals(this.protectStatus, that.protectStatus);
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.alarmLevel, that.alarmLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region,
-            enterpriseProjectId,
-            hostId,
-            startTime,
-            endTime,
-            limit,
-            offset,
-            alarmLevel,
-            severity,
-            protectStatus);
+        return Objects.hash(enterpriseProjectId, region, hostId, startTime, endTime, limit, offset, alarmLevel);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHostRaspProtectHistoryInfoRequest {\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
-        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-        sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -37,8 +37,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListAvailableZonesRequest;
@@ -580,34 +578,6 @@ public class RocketMQAsyncClient {
      */
     public AsyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserAsyncInvoker(DeleteUserRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.deleteUser, hcClient);
-    }
-
-    /**
-     * 开启RocketMQ实例域名访问能力
-     *
-     * 开启RocketMQ实例域名访问能力。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request EnableDnsRequest 请求对象
-     * @return CompletableFuture<EnableDnsResponse>
-     */
-    public CompletableFuture<EnableDnsResponse> enableDnsAsync(EnableDnsRequest request) {
-        return hcClient.asyncInvokeHttp(request, RocketMQMeta.enableDns);
-    }
-
-    /**
-     * 开启RocketMQ实例域名访问能力
-     *
-     * 开启RocketMQ实例域名访问能力。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request EnableDnsRequest 请求对象
-     * @return AsyncInvoker<EnableDnsRequest, EnableDnsResponse>
-     */
-    public AsyncInvoker<EnableDnsRequest, EnableDnsResponse> enableDnsAsyncInvoker(EnableDnsRequest request) {
-        return new AsyncInvoker<>(request, RocketMQMeta.enableDns, hcClient);
     }
 
     /**

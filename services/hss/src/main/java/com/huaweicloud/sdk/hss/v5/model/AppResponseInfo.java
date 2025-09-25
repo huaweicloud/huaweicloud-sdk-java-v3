@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 软件信息
+ * 软件响应信息
  */
 public class AppResponseInfo {
 
@@ -41,14 +41,9 @@ public class AppResponseInfo {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
+    @JsonProperty(value = "install_dir")
 
-    private Long updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "recent_scan_time")
-
-    private Long recentScanTime;
+    private String installDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_id")
@@ -60,13 +55,23 @@ public class AppResponseInfo {
 
     private String containerName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recent_scan_time")
+
+    private Long recentScanTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
+
     public AppResponseInfo withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
     }
 
     /**
-     * **参数解释**: Agent ID **取值范围**: 字符长度1-64位 
+     * **参数解释**： agent ID **取值范围**： 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -83,7 +88,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
+     * **参数解释**： 服务器 ID **取值范围**： 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -100,7 +105,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
+     * **参数解释**： 服务器名称 **取值范围**： 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -117,7 +122,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * **参数解释**: 主机IP **取值范围**: 字符长度1-128位 
+     * **参数解释**： 服务器 IP **取值范围**： 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -134,7 +139,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * **参数解释**: 软件名称 **取值范围**: 字符长度1-256位 
+     * **参数解释**： 软件名称 **取值范围**： 不涉及 
      * @return appName
      */
     public String getAppName() {
@@ -151,7 +156,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * **参数解释**: 版本号 **取值范围**: 字符长度1-128位 
+     * **参数解释**： 软件版本 **取值范围**： 不涉及 
      * @return version
      */
     public String getVersion() {
@@ -162,42 +167,21 @@ public class AppResponseInfo {
         this.version = version;
     }
 
-    public AppResponseInfo withUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public AppResponseInfo withInstallDir(String installDir) {
+        this.installDir = installDir;
         return this;
     }
 
     /**
-     * **参数解释**: 更新时间，最近一次更新的时间，用毫秒表示 **取值范围**: 最小值0，最大值9223372036854775807 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return updateTime
+     * **参数解释**： 软件安装路径 **取值范围**： 不涉及 
+     * @return installDir
      */
-    public Long getUpdateTime() {
-        return updateTime;
+    public String getInstallDir() {
+        return installDir;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public AppResponseInfo withRecentScanTime(Long recentScanTime) {
-        this.recentScanTime = recentScanTime;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 最近扫描时间，用毫秒表示 **取值范围**: 最小值0，最大值9223372036854775807 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return recentScanTime
-     */
-    public Long getRecentScanTime() {
-        return recentScanTime;
-    }
-
-    public void setRecentScanTime(Long recentScanTime) {
-        this.recentScanTime = recentScanTime;
+    public void setInstallDir(String installDir) {
+        this.installDir = installDir;
     }
 
     public AppResponseInfo withContainerId(String containerId) {
@@ -206,7 +190,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * **参数解释**: 容器ID **取值范围**: 字符长度1-128位 
+     * **参数解释**： 容器 ID **取值范围**： 不涉及 
      * @return containerId
      */
     public String getContainerId() {
@@ -223,7 +207,7 @@ public class AppResponseInfo {
     }
 
     /**
-     * **参数解释**： 容器实例名称，只有容器类型的告警有 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 容器名称 **取值范围**： 不涉及 
      * @return containerName
      */
     public String getContainerName() {
@@ -232,6 +216,40 @@ public class AppResponseInfo {
 
     public void setContainerName(String containerName) {
         this.containerName = containerName;
+    }
+
+    public AppResponseInfo withRecentScanTime(Long recentScanTime) {
+        this.recentScanTime = recentScanTime;
+        return this;
+    }
+
+    /**
+     * **参数解释** 最近扫描时间 **取值范围** 不涉及 
+     * @return recentScanTime
+     */
+    public Long getRecentScanTime() {
+        return recentScanTime;
+    }
+
+    public void setRecentScanTime(Long recentScanTime) {
+        this.recentScanTime = recentScanTime;
+    }
+
+    public AppResponseInfo withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释** 更新时间 **取值范围** 不涉及 
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
@@ -246,10 +264,10 @@ public class AppResponseInfo {
         return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.hostId, that.hostId)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.appName, that.appName) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.installDir, that.installDir) && Objects.equals(this.containerId, that.containerId)
+            && Objects.equals(this.containerName, that.containerName)
             && Objects.equals(this.recentScanTime, that.recentScanTime)
-            && Objects.equals(this.containerId, that.containerId)
-            && Objects.equals(this.containerName, that.containerName);
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -260,10 +278,11 @@ public class AppResponseInfo {
             hostIp,
             appName,
             version,
-            updateTime,
-            recentScanTime,
+            installDir,
             containerId,
-            containerName);
+            containerName,
+            recentScanTime,
+            updateTime);
     }
 
     @Override
@@ -276,10 +295,11 @@ public class AppResponseInfo {
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    recentScanTime: ").append(toIndentedString(recentScanTime)).append("\n");
+        sb.append("    installDir: ").append(toIndentedString(installDir)).append("\n");
         sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
         sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
+        sb.append("    recentScanTime: ").append(toIndentedString(recentScanTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

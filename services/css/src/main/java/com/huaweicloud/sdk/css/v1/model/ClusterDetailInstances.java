@@ -56,6 +56,11 @@ public class ClusterDetailInstances {
 
     private ShowClusterVolumeRsp volume;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnetId")
+
+    private String subnetId;
+
     public ClusterDetailInstances withStatus(String status) {
         this.status = status;
         return this;
@@ -218,6 +223,23 @@ public class ClusterDetailInstances {
         this.volume = volume;
     }
 
+    public ClusterDetailInstances withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 当前节点所属子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -231,12 +253,12 @@ public class ClusterDetailInstances {
             && Objects.equals(this.type, that.type) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.specCode, that.specCode)
             && Objects.equals(this.azCode, that.azCode) && Objects.equals(this.ip, that.ip)
-            && Objects.equals(this.volume, that.volume);
+            && Objects.equals(this.volume, that.volume) && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, resourceId, type, id, name, specCode, azCode, ip, volume);
+        return Objects.hash(status, resourceId, type, id, name, specCode, azCode, ip, volume, subnetId);
     }
 
     @Override
@@ -252,6 +274,7 @@ public class ClusterDetailInstances {
         sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

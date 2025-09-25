@@ -93,6 +93,11 @@ public class VaultCreate {
 
     private Boolean locked;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
     public VaultCreate withBackupPolicyId(String backupPolicyId) {
         this.backupPolicyId = backupPolicyId;
         return this;
@@ -417,6 +422,23 @@ public class VaultCreate {
         this.locked = locked;
     }
 
+    public VaultCreate withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 存储库可用区信息，最大支持32字符。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -436,7 +458,7 @@ public class VaultCreate {
             && Objects.equals(this.backupNamePrefix, that.backupNamePrefix)
             && Objects.equals(this.demandBilling, that.demandBilling)
             && Objects.equals(this.sysLockSourceService, that.sysLockSourceService)
-            && Objects.equals(this.locked, that.locked);
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
@@ -456,7 +478,8 @@ public class VaultCreate {
             backupNamePrefix,
             demandBilling,
             sysLockSourceService,
-            locked);
+            locked,
+            availabilityZone);
     }
 
     @Override
@@ -479,6 +502,7 @@ public class VaultCreate {
         sb.append("    demandBilling: ").append(toIndentedString(demandBilling)).append("\n");
         sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -601,7 +601,7 @@ public class HostVulInfo {
     }
 
     /**
-     * **参数解释**: 修复优先级 **取值范围**: - Critical : 紧急  - High     : 高  - Medium   : 中  - Low      : 低 
+     * **参数解释**: 修复优先级 **取值范围**: - Critical : 紧急 - High     : 高 - Medium   : 中 - Low      : 低 
      * @return repairPriority
      */
     public String getRepairPriority() {

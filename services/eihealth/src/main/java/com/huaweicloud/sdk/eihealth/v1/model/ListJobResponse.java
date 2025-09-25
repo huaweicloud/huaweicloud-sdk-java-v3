@@ -24,6 +24,16 @@ public class ListJobResponse extends SdkResponse {
 
     private Integer count;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "running_count")
+
+    private Integer runningCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "waiting_count")
+
+    private Integer waitingCount;
+
     public ListJobResponse withJobs(List<JobListDto> jobs) {
         this.jobs = jobs;
         return this;
@@ -74,6 +84,40 @@ public class ListJobResponse extends SdkResponse {
         this.count = count;
     }
 
+    public ListJobResponse withRunningCount(Integer runningCount) {
+        this.runningCount = runningCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 运行中作业总数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return runningCount
+     */
+    public Integer getRunningCount() {
+        return runningCount;
+    }
+
+    public void setRunningCount(Integer runningCount) {
+        this.runningCount = runningCount;
+    }
+
+    public ListJobResponse withWaitingCount(Integer waitingCount) {
+        this.waitingCount = waitingCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 等待中作业总数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return waitingCount
+     */
+    public Integer getWaitingCount() {
+        return waitingCount;
+    }
+
+    public void setWaitingCount(Integer waitingCount) {
+        this.waitingCount = waitingCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +127,14 @@ public class ListJobResponse extends SdkResponse {
             return false;
         }
         ListJobResponse that = (ListJobResponse) obj;
-        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.count, that.count);
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.runningCount, that.runningCount)
+            && Objects.equals(this.waitingCount, that.waitingCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs, count);
+        return Objects.hash(jobs, count, runningCount, waitingCount);
     }
 
     @Override
@@ -97,6 +143,8 @@ public class ListJobResponse extends SdkResponse {
         sb.append("class ListJobResponse {\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    runningCount: ").append(toIndentedString(runningCount)).append("\n");
+        sb.append("    waitingCount: ").append(toIndentedString(waitingCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

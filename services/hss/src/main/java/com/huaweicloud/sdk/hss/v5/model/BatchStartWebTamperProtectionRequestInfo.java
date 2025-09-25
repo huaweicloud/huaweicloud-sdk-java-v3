@@ -19,14 +19,14 @@ public class BatchStartWebTamperProtectionRequestInfo {
     private List<String> hostIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_id")
-
-    private String resourceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
     private String chargingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -90,7 +90,7 @@ public class BatchStartWebTamperProtectionRequestInfo {
     }
 
     /**
-     * 主机ID数组，不能为空
+     * **参数解释**: 需要开启防护的服务器ID列表，仅支持填写未开启网页防篡改防护的服务器ID，已开启网页防篡改防护的服务器可使用UpdateWebTamperHostPolicy接口进行修改策略。 **约束限制** : 仅支持填写未开启网页防篡改防护的服务器ID，且Linux服务器和Windows服务器不可同时填写，需分批开启。 **取值范围**: 最少1条，最多20000条 **默认取值** : 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {
@@ -101,30 +101,13 @@ public class BatchStartWebTamperProtectionRequestInfo {
         this.hostIdList = hostIdList;
     }
 
-    public BatchStartWebTamperProtectionRequestInfo withResourceId(String resourceId) {
-        this.resourceId = resourceId;
-        return this;
-    }
-
-    /**
-     * 资源ID
-     * @return resourceId
-     */
-    public String getResourceId() {
-        return resourceId;
-    }
-
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
-    }
-
     public BatchStartWebTamperProtectionRequestInfo withChargingMode(String chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
     /**
-     * 计费模式   - packet_cycle: 包周期
+     * **参数解释**: 计费模式 **约束限制**: 不涉及 **取值范围**: - packet_cycle: 包年/包月，可填写resource_id。 - on_demand: 按需计费，无需填写resource_id。  **默认取值**: on_demand 
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -133,6 +116,23 @@ public class BatchStartWebTamperProtectionRequestInfo {
 
     public void setChargingMode(String chargingMode) {
         this.chargingMode = chargingMode;
+    }
+
+    public BatchStartWebTamperProtectionRequestInfo withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 资源ID，即网页防篡改配额的配额ID，当charging_mode选择packet_cycle时可填写该字段，表示使用一个指定配额，也可不填写该字段，表示随机选择符合的配额。 **约束限制** : 不涉及 **取值范围**: 字符长度0-64位 **默认取值** : 不涉及 
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
     }
 
     public BatchStartWebTamperProtectionRequestInfo withTags(List<TagInfo> tags) {
@@ -157,7 +157,7 @@ public class BatchStartWebTamperProtectionRequestInfo {
     }
 
     /**
-     * 资源标签列表
+     * **参数解释**： 资源标签列表，仅计费模式选择按需计费时支持填写。 **约束限制**: 仅计费模式选择按需计费时支持填写。 **取值范围**: 最少0条，最多2097152条 **默认取值**: 不涉及
      * @return tags
      */
     public List<TagInfo> getTags() {
@@ -201,7 +201,7 @@ public class BatchStartWebTamperProtectionRequestInfo {
     }
 
     /**
-     * 定时开关状态
+     * **参数解释**: 定时开关设置状态 **约束限制**: 不涉及 **取值范围**: - True ：开启定时关闭防护功能，必须填写timing_off_config_info。 - False ：关闭定时关闭防护功能，无需填写timing_off_config_info。  **默认取值**: False 
      * @return enableTimingOff
      */
     public Boolean getEnableTimingOff() {
@@ -246,7 +246,7 @@ public class BatchStartWebTamperProtectionRequestInfo {
     }
 
     /**
-     * 动态网页防篡改开启状态
+     * **参数解释**: 动态网页防篡改开启状态，仅Linux服务器支持。 **约束限制**: 仅Linux服务器支持开启动态网页防篡改，Windows服务器不可填写该字段。 **取值范围**: - True ：开启动态网页防篡改，必须填写rasp_path。 - False ：关闭动态网页防篡改，无需填写rasp_path。  **默认取值**: False 
      * @return enableRaspProtect
      */
     public Boolean getEnableRaspProtect() {
@@ -263,7 +263,7 @@ public class BatchStartWebTamperProtectionRequestInfo {
     }
 
     /**
-     * rasp path
+     * **参数解释**: 动态网页防篡改的Tomcat bin目录，仅Linux服务器支持。 **约束限制**: 仅Linux服务器支持配置动态网页防篡改的Tomcat bin目录，Windows服务器不可填写该字段。 **取值范围**: 字符长度1-256位，必须以/开头，不能以/结尾，只能包含英文大小写字母，数字，下划线，中划线和点。 **默认取值**: 不涉及 
      * @return raspPath
      */
     public String getRaspPath() {
@@ -280,7 +280,7 @@ public class BatchStartWebTamperProtectionRequestInfo {
     }
 
     /**
-     * 特权进程状态
+     * **参数解释**: 特权进程开启状态 **约束限制**: 不涉及 **取值范围**: - True ：开启特权进程，必须填写privileged_process_info。 - False ：关闭特权进程，无需填写privileged_process_info。  **默认取值**: False 
      * @return enablePrivilegedProcess
      */
     public Boolean getEnablePrivilegedProcess() {
@@ -328,8 +328,8 @@ public class BatchStartWebTamperProtectionRequestInfo {
             return false;
         }
         BatchStartWebTamperProtectionRequestInfo that = (BatchStartWebTamperProtectionRequestInfo) obj;
-        return Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.tags, that.tags)
+        return Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.protectDirInfo, that.protectDirInfo)
             && Objects.equals(this.enableTimingOff, that.enableTimingOff)
             && Objects.equals(this.timingOffConfigInfo, that.timingOffConfigInfo)
@@ -342,8 +342,8 @@ public class BatchStartWebTamperProtectionRequestInfo {
     @Override
     public int hashCode() {
         return Objects.hash(hostIdList,
-            resourceId,
             chargingMode,
+            resourceId,
             tags,
             protectDirInfo,
             enableTimingOff,
@@ -359,8 +359,8 @@ public class BatchStartWebTamperProtectionRequestInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchStartWebTamperProtectionRequestInfo {\n");
         sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
-        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    protectDirInfo: ").append(toIndentedString(protectDirInfo)).append("\n");
         sb.append("    enableTimingOff: ").append(toIndentedString(enableTimingOff)).append("\n");

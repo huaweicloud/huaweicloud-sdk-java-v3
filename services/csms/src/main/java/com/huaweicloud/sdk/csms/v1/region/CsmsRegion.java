@@ -80,6 +80,8 @@ public class CsmsRegion {
     public static final Region CN_SOUTHWEST_3 =
         new Region("cn-southwest-3", "https://kms.cn-southwest-3.myhuaweicloud.com");
 
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://kms.af-south-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CSMS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -115,6 +117,7 @@ public class CsmsRegion {
         map.put("cn-north-11", CN_NORTH_11);
         map.put("af-north-1", AF_NORTH_1);
         map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("af-south-1", AF_SOUTH_1);
         return Collections.unmodifiableMap(map);
     }
 

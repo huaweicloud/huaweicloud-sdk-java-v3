@@ -30,7 +30,7 @@ public class ShowBackgroundTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务数量。
+     * **参数解释**： 任务数量。 **取值范围**： 不涉及。
      * @return taskCount
      */
     public String getTaskCount() {
@@ -63,7 +63,7 @@ public class ShowBackgroundTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务列表。
+     * **参数解释**： 任务列表。
      * @return tasks
      */
     public List<ListBackgroundTasksRespTasks> getTasks() {

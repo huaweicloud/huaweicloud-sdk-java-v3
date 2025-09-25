@@ -27,6 +27,11 @@ public class ShowWorkflowResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_name")
+
+    private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -118,6 +123,23 @@ public class ShowWorkflowResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ShowWorkflowResponse withUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 创建用户名称。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public ShowWorkflowResponse withVersion(String version) {
@@ -382,10 +404,11 @@ public class ShowWorkflowResponse extends SdkResponse {
         }
         ShowWorkflowResponse that = (ShowWorkflowResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.summary, that.summary)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
-            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.outputDir, that.outputDir)
-            && Objects.equals(this.tasks, that.tasks) && Objects.equals(this.appSnapshotSign, that.appSnapshotSign)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.outputDir, that.outputDir) && Objects.equals(this.tasks, that.tasks)
+            && Objects.equals(this.appSnapshotSign, that.appSnapshotSign)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.sourceProjectName, that.sourceProjectName)
             && Objects.equals(this.sourceResourceId, that.sourceResourceId);
@@ -395,6 +418,7 @@ public class ShowWorkflowResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(id,
             name,
+            userName,
             version,
             summary,
             description,
@@ -415,6 +439,7 @@ public class ShowWorkflowResponse extends SdkResponse {
         sb.append("class ShowWorkflowResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

@@ -19,6 +19,11 @@ public class CreateClusterBody {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desc")
+
+    private String desc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupStrategy")
 
     private CreateClusterBackupStrategyBody backupStrategy;
@@ -88,6 +93,16 @@ public class CreateClusterBody {
 
     private PayInfoBody payInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "diskEncryption")
+
+    private DiskEncryptionInfo diskEncryption;
+
     public CreateClusterBody withName(String name) {
         this.name = name;
         return this;
@@ -103,6 +118,23 @@ public class CreateClusterBody {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public CreateClusterBody withDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+
+    /**
+     * 集群描述。
+     * @return desc
+     */
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public CreateClusterBody withBackupStrategy(CreateClusterBackupStrategyBody backupStrategy) {
@@ -438,6 +470,49 @@ public class CreateClusterBody {
         this.payInfo = payInfo;
     }
 
+    public CreateClusterBody withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 集群是否开启自动分配IPv6地址。
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public CreateClusterBody withDiskEncryption(DiskEncryptionInfo diskEncryption) {
+        this.diskEncryption = diskEncryption;
+        return this;
+    }
+
+    public CreateClusterBody withDiskEncryption(Consumer<DiskEncryptionInfo> diskEncryptionSetter) {
+        if (this.diskEncryption == null) {
+            this.diskEncryption = new DiskEncryptionInfo();
+            diskEncryptionSetter.accept(this.diskEncryption);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get diskEncryption
+     * @return diskEncryption
+     */
+    public DiskEncryptionInfo getDiskEncryption() {
+        return diskEncryption;
+    }
+
+    public void setDiskEncryption(DiskEncryptionInfo diskEncryption) {
+        this.diskEncryption = diskEncryption;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -447,20 +522,24 @@ public class CreateClusterBody {
             return false;
         }
         CreateClusterBody that = (CreateClusterBody) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.backupStrategy, that.backupStrategy)
-            && Objects.equals(this.roles, that.roles) && Objects.equals(this.nics, that.nics)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.backupStrategy, that.backupStrategy) && Objects.equals(this.roles, that.roles)
+            && Objects.equals(this.nics, that.nics)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.datastore, that.datastore)
             && Objects.equals(this.authorityEnable, that.authorityEnable)
             && Objects.equals(this.httpsEnable, that.httpsEnable) && Objects.equals(this.adminPwd, that.adminPwd)
             && Objects.equals(this.publicIPReq, that.publicIPReq) && Objects.equals(this.loadBalance, that.loadBalance)
-            && Objects.equals(this.publicKibanaReq, that.publicKibanaReq) && Objects.equals(this.payInfo, that.payInfo);
+            && Objects.equals(this.publicKibanaReq, that.publicKibanaReq) && Objects.equals(this.payInfo, that.payInfo)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.diskEncryption, that.diskEncryption);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name,
+            desc,
             backupStrategy,
             roles,
             nics,
@@ -474,7 +553,9 @@ public class CreateClusterBody {
             publicIPReq,
             loadBalance,
             publicKibanaReq,
-            payInfo);
+            payInfo,
+            ipv6Enable,
+            diskEncryption);
     }
 
     @Override
@@ -482,6 +563,7 @@ public class CreateClusterBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateClusterBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
         sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
@@ -496,6 +578,8 @@ public class CreateClusterBody {
         sb.append("    loadBalance: ").append(toIndentedString(loadBalance)).append("\n");
         sb.append("    publicKibanaReq: ").append(toIndentedString(publicKibanaReq)).append("\n");
         sb.append("    payInfo: ").append(toIndentedString(payInfo)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    diskEncryption: ").append(toIndentedString(diskEncryption)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -429,7 +429,7 @@ public class VulHostInfo {
     }
 
     /**
-     * **参数解释**: 操作系统 **取值范围**: 字符范围0-32位 
+     * **参数解释**: 操作系统 **取值范围**: - Linux ：linux系统 - Windows：windows系统 
      * @return osType
      */
     public String getOsType() {
@@ -569,7 +569,7 @@ public class VulHostInfo {
     }
 
     /**
-     * **参数解释**: 修复优先级 **取值范围**: - Critical : 紧急  - High     : 高  - Medium   : 中  - Low      : 低 
+     * **参数解释**: 修复优先级 **取值范围**: - Critical : 紧急 - High     : 高 - Medium   : 中 - Low      : 低 
      * @return repairPriority
      */
     public String getRepairPriority() {

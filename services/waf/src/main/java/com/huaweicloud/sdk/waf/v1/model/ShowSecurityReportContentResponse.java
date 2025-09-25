@@ -48,9 +48,14 @@ public class ShowSecurityReportContentResponse extends SdkResponse {
     private String subscriptionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "report_content_subscription_info")
+    @JsonProperty(value = "report_content_info")
 
-    private SecurityReportContentResponseReportContentSubscriptionInfo reportContentSubscriptionInfo;
+    private SecurityReportContentResponseReportContentInfo reportContentInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stat_period")
@@ -176,33 +181,49 @@ public class ShowSecurityReportContentResponse extends SdkResponse {
         this.subscriptionType = subscriptionType;
     }
 
-    public ShowSecurityReportContentResponse withReportContentSubscriptionInfo(
-        SecurityReportContentResponseReportContentSubscriptionInfo reportContentSubscriptionInfo) {
-        this.reportContentSubscriptionInfo = reportContentSubscriptionInfo;
+    public ShowSecurityReportContentResponse withReportContentInfo(
+        SecurityReportContentResponseReportContentInfo reportContentInfo) {
+        this.reportContentInfo = reportContentInfo;
         return this;
     }
 
-    public ShowSecurityReportContentResponse withReportContentSubscriptionInfo(
-        Consumer<SecurityReportContentResponseReportContentSubscriptionInfo> reportContentSubscriptionInfoSetter) {
-        if (this.reportContentSubscriptionInfo == null) {
-            this.reportContentSubscriptionInfo = new SecurityReportContentResponseReportContentSubscriptionInfo();
-            reportContentSubscriptionInfoSetter.accept(this.reportContentSubscriptionInfo);
+    public ShowSecurityReportContentResponse withReportContentInfo(
+        Consumer<SecurityReportContentResponseReportContentInfo> reportContentInfoSetter) {
+        if (this.reportContentInfo == null) {
+            this.reportContentInfo = new SecurityReportContentResponseReportContentInfo();
+            reportContentInfoSetter.accept(this.reportContentInfo);
         }
 
         return this;
     }
 
     /**
-     * Get reportContentSubscriptionInfo
-     * @return reportContentSubscriptionInfo
+     * Get reportContentInfo
+     * @return reportContentInfo
      */
-    public SecurityReportContentResponseReportContentSubscriptionInfo getReportContentSubscriptionInfo() {
-        return reportContentSubscriptionInfo;
+    public SecurityReportContentResponseReportContentInfo getReportContentInfo() {
+        return reportContentInfo;
     }
 
-    public void setReportContentSubscriptionInfo(
-        SecurityReportContentResponseReportContentSubscriptionInfo reportContentSubscriptionInfo) {
-        this.reportContentSubscriptionInfo = reportContentSubscriptionInfo;
+    public void setReportContentInfo(SecurityReportContentResponseReportContentInfo reportContentInfo) {
+        this.reportContentInfo = reportContentInfo;
+    }
+
+    public ShowSecurityReportContentResponse withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 创建时间，报告的创建时间。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return createTime
+     */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
     }
 
     public ShowSecurityReportContentResponse withStatPeriod(SecurityReportContentResponseStatPeriod statPeriod) {
@@ -246,8 +267,8 @@ public class ShowSecurityReportContentResponse extends SdkResponse {
             && Objects.equals(this.reportName, that.reportName)
             && Objects.equals(this.reportCategory, that.reportCategory) && Objects.equals(this.topicUrn, that.topicUrn)
             && Objects.equals(this.subscriptionType, that.subscriptionType)
-            && Objects.equals(this.reportContentSubscriptionInfo, that.reportContentSubscriptionInfo)
-            && Objects.equals(this.statPeriod, that.statPeriod);
+            && Objects.equals(this.reportContentInfo, that.reportContentInfo)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.statPeriod, that.statPeriod);
     }
 
     @Override
@@ -259,7 +280,8 @@ public class ShowSecurityReportContentResponse extends SdkResponse {
             reportCategory,
             topicUrn,
             subscriptionType,
-            reportContentSubscriptionInfo,
+            reportContentInfo,
+            createTime,
             statPeriod);
     }
 
@@ -274,9 +296,8 @@ public class ShowSecurityReportContentResponse extends SdkResponse {
         sb.append("    reportCategory: ").append(toIndentedString(reportCategory)).append("\n");
         sb.append("    topicUrn: ").append(toIndentedString(topicUrn)).append("\n");
         sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
-        sb.append("    reportContentSubscriptionInfo: ")
-            .append(toIndentedString(reportContentSubscriptionInfo))
-            .append("\n");
+        sb.append("    reportContentInfo: ").append(toIndentedString(reportContentInfo)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    statPeriod: ").append(toIndentedString(statPeriod)).append("\n");
         sb.append("}");
         return sb.toString();

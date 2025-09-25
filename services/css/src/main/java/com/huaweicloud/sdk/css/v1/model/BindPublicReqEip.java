@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 public class BindPublicReqEip {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bandWidth")
+    @JsonProperty(value = "band_width")
 
     private BindPublicReqEipBandWidth bandWidth;
 

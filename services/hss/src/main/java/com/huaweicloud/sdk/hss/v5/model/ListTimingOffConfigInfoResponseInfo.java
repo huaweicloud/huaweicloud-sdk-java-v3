@@ -23,11 +23,6 @@ public class ListTimingOffConfigInfoResponseInfo {
 
     private List<TimingRangeConfigInfo> timingRangeList = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_num")
-
-    private Integer totalNum;
-
     public ListTimingOffConfigInfoResponseInfo withWeekOffList(List<Integer> weekOffList) {
         this.weekOffList = weekOffList;
         return this;
@@ -50,7 +45,7 @@ public class ListTimingOffConfigInfoResponseInfo {
     }
 
     /**
-     * **参数解释**: 自动关闭防护周期列表 **取值范围**: 最少0条，最多7条 
+     * **参数解释**: 自动关闭防护周期列表。1代表周一；2代表周二；3代表周三；4代表周四；5代表周五；6代表周六；7代表周日。 **取值范围**: 最少0条，最多7条 
      * @return weekOffList
      */
     public List<Integer> getWeekOffList() {
@@ -95,25 +90,6 @@ public class ListTimingOffConfigInfoResponseInfo {
         this.timingRangeList = timingRangeList;
     }
 
-    public ListTimingOffConfigInfoResponseInfo withTotalNum(Integer totalNum) {
-        this.totalNum = totalNum;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return totalNum
-     */
-    public Integer getTotalNum() {
-        return totalNum;
-    }
-
-    public void setTotalNum(Integer totalNum) {
-        this.totalNum = totalNum;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -124,13 +100,12 @@ public class ListTimingOffConfigInfoResponseInfo {
         }
         ListTimingOffConfigInfoResponseInfo that = (ListTimingOffConfigInfoResponseInfo) obj;
         return Objects.equals(this.weekOffList, that.weekOffList)
-            && Objects.equals(this.timingRangeList, that.timingRangeList)
-            && Objects.equals(this.totalNum, that.totalNum);
+            && Objects.equals(this.timingRangeList, that.timingRangeList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(weekOffList, timingRangeList, totalNum);
+        return Objects.hash(weekOffList, timingRangeList);
     }
 
     @Override
@@ -139,7 +114,6 @@ public class ListTimingOffConfigInfoResponseInfo {
         sb.append("class ListTimingOffConfigInfoResponseInfo {\n");
         sb.append("    weekOffList: ").append(toIndentedString(weekOffList)).append("\n");
         sb.append("    timingRangeList: ").append(toIndentedString(timingRangeList)).append("\n");
-        sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

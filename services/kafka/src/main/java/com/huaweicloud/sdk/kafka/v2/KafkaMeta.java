@@ -82,8 +82,6 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaTopicQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.EnableDnsRequest;
-import com.huaweicloud.sdk.kafka.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.GroupCreateReq;
 import com.huaweicloud.sdk.kafka.v2.model.KafkaDiagnosisCheckEntity;
 import com.huaweicloud.sdk.kafka.v2.model.KafkaTopicQuota;
@@ -1000,28 +998,6 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(DeleteKafkaUserClientQuotaTaskReq.class),
             f -> f.withMarshaller(DeleteKafkaUserClientQuotaTaskRequest::getBody,
                 DeleteKafkaUserClientQuotaTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<EnableDnsRequest, EnableDnsResponse> enableDns = genForEnableDns();
-
-    private static HttpRequestDef<EnableDnsRequest, EnableDnsResponse> genForEnableDns() {
-        // basic
-        HttpRequestDef.Builder<EnableDnsRequest, EnableDnsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, EnableDnsRequest.class, EnableDnsResponse.class)
-                .withName("EnableDns")
-                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/dns")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableDnsRequest::getInstanceId, EnableDnsRequest::setInstanceId));
 
         // response
 

@@ -41,11 +41,6 @@ public class ListAppWhitelistEventRequest {
     private String hostIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "private_ip")
-
-    private String privateIp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_status")
 
     private String handleStatus;
@@ -102,7 +97,7 @@ public class ListAppWhitelistEventRequest {
     }
 
     /**
-     * 自定义查询时间，与查询时间范围天数互斥，查询时间段的起始时间，毫秒级时间戳，end_time减去begin_time小于等于2天，与查询时间范围天数互斥
+     * 自定义查询时间，开始时间
      * @return beginTime
      */
     public Long getBeginTime() {
@@ -119,7 +114,7 @@ public class ListAppWhitelistEventRequest {
     }
 
     /**
-     * 自定义查询时间，与查询时间范围天数互斥，查询时间段的起始时间，毫秒级时间戳，end_time减去begin_time小于等于2天，与查询时间范围天数互斥
+     * 自定义查询时间，结束时间
      * @return endTime
      */
     public Long getEndTime() {
@@ -153,7 +148,7 @@ public class ListAppWhitelistEventRequest {
     }
 
     /**
-     * **参数解释**: 主机IP **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
+     * **参数解释**: 服务器IP **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -164,30 +159,13 @@ public class ListAppWhitelistEventRequest {
         this.hostIp = hostIp;
     }
 
-    public ListAppWhitelistEventRequest withPrivateIp(String privateIp) {
-        this.privateIp = privateIp;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 服务器私有IP **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
-     * @return privateIp
-     */
-    public String getPrivateIp() {
-        return privateIp;
-    }
-
-    public void setPrivateIp(String privateIp) {
-        this.privateIp = privateIp;
-    }
-
     public ListAppWhitelistEventRequest withHandleStatus(String handleStatus) {
         this.handleStatus = handleStatus;
         return this;
     }
 
     /**
-     * **参数解释**： 是否已处理 **约束限制**: 不涉及 **取值范围**: - true：是 - false：否  **默认取值**: 不涉及 
+     * **参数解释**： 是否已处理 **约束限制**: 不涉及 **取值范围**: - handled：已处理 - unhandled：未处理  **默认取值**: 不涉及 
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -248,23 +226,14 @@ public class ListAppWhitelistEventRequest {
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.lastDays, that.lastDays) && Objects.equals(this.beginTime, that.beginTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.privateIp, that.privateIp)
-            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.handleStatus, that.handleStatus)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId,
-            lastDays,
-            beginTime,
-            endTime,
-            hostName,
-            hostIp,
-            privateIp,
-            handleStatus,
-            offset,
-            limit);
+        return Objects
+            .hash(enterpriseProjectId, lastDays, beginTime, endTime, hostName, hostIp, handleStatus, offset, limit);
     }
 
     @Override
@@ -277,7 +246,6 @@ public class ListAppWhitelistEventRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
-        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

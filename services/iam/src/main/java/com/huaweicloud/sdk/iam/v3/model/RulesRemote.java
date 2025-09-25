@@ -28,6 +28,11 @@ public class RulesRemote {
 
     private List<String> notAnyOf = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "regex")
+
+    private Boolean regex;
+
     public RulesRemote withType(String type) {
         this.type = type;
         return this;
@@ -111,6 +116,23 @@ public class RulesRemote {
         this.notAnyOf = notAnyOf;
     }
 
+    public RulesRemote withRegex(Boolean regex) {
+        this.regex = regex;
+        return this;
+    }
+
+    /**
+     * 同级的any_one_of或not_any_of的值是否支持正则表达式，true：支持正则表达式，false：不支持正则表达式，默认为false。
+     * @return regex
+     */
+    public Boolean getRegex() {
+        return regex;
+    }
+
+    public void setRegex(Boolean regex) {
+        this.regex = regex;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -121,12 +143,12 @@ public class RulesRemote {
         }
         RulesRemote that = (RulesRemote) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.anyOneOf, that.anyOneOf)
-            && Objects.equals(this.notAnyOf, that.notAnyOf);
+            && Objects.equals(this.notAnyOf, that.notAnyOf) && Objects.equals(this.regex, that.regex);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, anyOneOf, notAnyOf);
+        return Objects.hash(type, anyOneOf, notAnyOf, regex);
     }
 
     @Override
@@ -136,6 +158,7 @@ public class RulesRemote {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    anyOneOf: ").append(toIndentedString(anyOneOf)).append("\n");
         sb.append("    notAnyOf: ").append(toIndentedString(notAnyOf)).append("\n");
+        sb.append("    regex: ").append(toIndentedString(regex)).append("\n");
         sb.append("}");
         return sb.toString();
     }

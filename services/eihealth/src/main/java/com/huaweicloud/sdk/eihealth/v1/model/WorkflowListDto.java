@@ -24,6 +24,16 @@ public class WorkflowListDto {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eihealth_project_id")
+
+    private String eihealthProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eihealth_project_name")
+
+    private String eihealthProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -100,6 +110,40 @@ public class WorkflowListDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public WorkflowListDto withEihealthProjectId(String eihealthProjectId) {
+        this.eihealthProjectId = eihealthProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流程所属空间ID。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return eihealthProjectId
+     */
+    public String getEihealthProjectId() {
+        return eihealthProjectId;
+    }
+
+    public void setEihealthProjectId(String eihealthProjectId) {
+        this.eihealthProjectId = eihealthProjectId;
+    }
+
+    public WorkflowListDto withEihealthProjectName(String eihealthProjectName) {
+        this.eihealthProjectName = eihealthProjectName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流程所属空间名称。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return eihealthProjectName
+     */
+    public String getEihealthProjectName() {
+        return eihealthProjectName;
+    }
+
+    public void setEihealthProjectName(String eihealthProjectName) {
+        this.eihealthProjectName = eihealthProjectName;
     }
 
     public WorkflowListDto withVersion(String version) {
@@ -281,6 +325,8 @@ public class WorkflowListDto {
         }
         WorkflowListDto that = (WorkflowListDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.eihealthProjectName, that.eihealthProjectName)
             && Objects.equals(this.version, that.version) && Objects.equals(this.summary, that.summary)
             && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
@@ -293,6 +339,8 @@ public class WorkflowListDto {
     public int hashCode() {
         return Objects.hash(id,
             name,
+            eihealthProjectId,
+            eihealthProjectName,
             version,
             summary,
             description,
@@ -310,6 +358,8 @@ public class WorkflowListDto {
         sb.append("class WorkflowListDto {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    eihealthProjectId: ").append(toIndentedString(eihealthProjectId)).append("\n");
+        sb.append("    eihealthProjectName: ").append(toIndentedString(eihealthProjectName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

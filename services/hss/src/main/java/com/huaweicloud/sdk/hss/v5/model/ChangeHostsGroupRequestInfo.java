@@ -84,7 +84,7 @@ public class ChangeHostsGroupRequestInfo {
     }
 
     /**
-     * **参数解释**: 主机id列表 **取值范围**: 不涉及 
+     * **参数解释**: 服务器ID列表 **取值范围**: 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {

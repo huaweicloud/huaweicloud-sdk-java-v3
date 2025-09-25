@@ -21,7 +21,7 @@ public class ShowOrderInformationRequest {
     }
 
     /**
-     * 工单类型编码
+     * 服务单类型编码
      * @return modelCode
      */
     public String getModelCode() {

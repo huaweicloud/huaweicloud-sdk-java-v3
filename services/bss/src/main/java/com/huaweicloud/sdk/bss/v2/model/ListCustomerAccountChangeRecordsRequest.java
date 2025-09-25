@@ -100,7 +100,7 @@ public class ListCustomerAccountChangeRecordsRequest {
     }
 
     /**
-     * |参数名称：交易类型。RECHARGE：充值DEDEUCT：消费REFUND：退款RFROZEN：冻结TRANS：转账，余额和保证金互换（老商务模式，当前已无保证金账户）ADJUST：调账（华为核销等）BEADJUST：经销商拨款BERETRIEVE：经销商回收BEUNBIND：解绑/关联模式切换导致的回收EXPIRED：过期清零BONUSCONVERT：奖励金转换（老商务模式，当前已无奖励金账户）TRADE_MODE_TRANSFER：交易模式变更DEPOSIT：保证金| |参数的约束及描述：非必填|
+     * |参数名称：交易类型| |参数的约束及描述：该参数非必填，RECHARGE：充值 DEDEUCT：消费 REFUND：退款 RFROZEN：冻结 TRANS：转账，余额和保证金互换（老商务模式，当前已无保证金账户） ADJUST：调账（华为核销等） BEUNBIND：解绑/关联模式切换导致的回收 EXPIRED：过期清零 BONUSCONVERT：奖励金转换（老商务模式，当前已无奖励金账户） TRADE_MODE_TRANSFER：交易模式变更 DEPOSIT：保证金 BEADJUST：经销商拨款 BERETRIEVE：经销商回收。此参数不携带、携带值为空时，不作为筛选条件。|
      * @return tradeType
      */
     public String getTradeType() {

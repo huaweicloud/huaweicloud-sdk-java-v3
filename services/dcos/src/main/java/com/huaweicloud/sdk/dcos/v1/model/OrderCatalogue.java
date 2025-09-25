@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 工单目录-后续结合项目信息
+ * 服务单目录-后续结合项目信息
  */
 public class OrderCatalogue {
 
@@ -36,7 +36,7 @@ public class OrderCatalogue {
     }
 
     /**
-     * 工单类型编码
+     * 服务单类型编码
      * @return code
      */
     public String getCode() {

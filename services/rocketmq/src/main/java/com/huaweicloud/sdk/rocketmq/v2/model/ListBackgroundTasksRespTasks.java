@@ -141,7 +141,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * **参数解释**： 任务状态。 **取值范围**： 不涉及。
+     * **参数解释**： 任务状态。 **取值范围**： - CREATED：后台任务状态为创建成功。 - SUCCESS：后台任务状态为成功。 - FAILED：后台任务状态为失败。 - DELETED：后台任务状态为已删除。 - EXECUTING：后台任务状态为执行中。 - CANCELLED：定时任务状态为取消。
      * @return status
      */
     public String getStatus() {

@@ -69,6 +69,8 @@ import com.huaweicloud.sdk.iam.v5.model.GetAsymmetricSignatureSwitchV5Request;
 import com.huaweicloud.sdk.iam.v5.model.GetAsymmetricSignatureSwitchV5Response;
 import com.huaweicloud.sdk.iam.v5.model.GetAuthorizationSchemaV5Request;
 import com.huaweicloud.sdk.iam.v5.model.GetAuthorizationSchemaV5Response;
+import com.huaweicloud.sdk.iam.v5.model.GetFeatureStatusV5Request;
+import com.huaweicloud.sdk.iam.v5.model.GetFeatureStatusV5Response;
 import com.huaweicloud.sdk.iam.v5.model.GetPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.GetPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.GetPolicyVersionV5Request;
@@ -192,6 +194,95 @@ public class IamAsyncClient {
     }
 
     /**
+     * 获取账号非对称签名开关状态
+     *
+     * 该接口用于获取账号非对称签名开关的状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetAsymmetricSignatureSwitchV5Request 请求对象
+     * @return CompletableFuture<GetAsymmetricSignatureSwitchV5Response>
+     */
+    public CompletableFuture<GetAsymmetricSignatureSwitchV5Response> getAsymmetricSignatureSwitchV5Async(
+        GetAsymmetricSignatureSwitchV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.getAsymmetricSignatureSwitchV5);
+    }
+
+    /**
+     * 获取账号非对称签名开关状态
+     *
+     * 该接口用于获取账号非对称签名开关的状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetAsymmetricSignatureSwitchV5Request 请求对象
+     * @return AsyncInvoker<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response>
+     */
+    public AsyncInvoker<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response> getAsymmetricSignatureSwitchV5AsyncInvoker(
+        GetAsymmetricSignatureSwitchV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.getAsymmetricSignatureSwitchV5, hcClient);
+    }
+
+    /**
+     * 获取此账号的功能状态
+     *
+     * 该接口可以用于获取此账号的功能状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetFeatureStatusV5Request 请求对象
+     * @return CompletableFuture<GetFeatureStatusV5Response>
+     */
+    public CompletableFuture<GetFeatureStatusV5Response> getFeatureStatusV5Async(GetFeatureStatusV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.getFeatureStatusV5);
+    }
+
+    /**
+     * 获取此账号的功能状态
+     *
+     * 该接口可以用于获取此账号的功能状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetFeatureStatusV5Request 请求对象
+     * @return AsyncInvoker<GetFeatureStatusV5Request, GetFeatureStatusV5Response>
+     */
+    public AsyncInvoker<GetFeatureStatusV5Request, GetFeatureStatusV5Response> getFeatureStatusV5AsyncInvoker(
+        GetFeatureStatusV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.getFeatureStatusV5, hcClient);
+    }
+
+    /**
+     * 设置账号开启或关闭非对称签名
+     *
+     * 该接口用于设置账号开启或关闭非对称签名功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAsymmetricSignatureSwitchV5Request 请求对象
+     * @return CompletableFuture<SetAsymmetricSignatureSwitchV5Response>
+     */
+    public CompletableFuture<SetAsymmetricSignatureSwitchV5Response> setAsymmetricSignatureSwitchV5Async(
+        SetAsymmetricSignatureSwitchV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.setAsymmetricSignatureSwitchV5);
+    }
+
+    /**
+     * 设置账号开启或关闭非对称签名
+     *
+     * 该接口用于设置账号开启或关闭非对称签名功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAsymmetricSignatureSwitchV5Request 请求对象
+     * @return AsyncInvoker<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response>
+     */
+    public AsyncInvoker<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response> setAsymmetricSignatureSwitchV5AsyncInvoker(
+        SetAsymmetricSignatureSwitchV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.setAsymmetricSignatureSwitchV5, hcClient);
+    }
+
+    /**
      * 创建信任委托
      *
      * 该接口可以用于创建信任委托。
@@ -225,6 +316,36 @@ public class IamAsyncClient {
     }
 
     /**
+     * 创建服务关联委托
+     *
+     * 该接口可以用于创建服务关联委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateServiceLinkedAgencyV5Request 请求对象
+     * @return CompletableFuture<CreateServiceLinkedAgencyV5Response>
+     */
+    public CompletableFuture<CreateServiceLinkedAgencyV5Response> createServiceLinkedAgencyV5Async(
+        CreateServiceLinkedAgencyV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createServiceLinkedAgencyV5);
+    }
+
+    /**
+     * 创建服务关联委托
+     *
+     * 该接口可以用于创建服务关联委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateServiceLinkedAgencyV5Request 请求对象
+     * @return AsyncInvoker<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response>
+     */
+    public AsyncInvoker<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response> createServiceLinkedAgencyV5AsyncInvoker(
+        CreateServiceLinkedAgencyV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.createServiceLinkedAgencyV5, hcClient);
+    }
+
+    /**
      * 删除信任委托
      *
      * 该接口可以用于删除信任委托。
@@ -254,6 +375,36 @@ public class IamAsyncClient {
     }
 
     /**
+     * 删除服务关联委托
+     *
+     * 该接口可以用于服务关联委托删除自己。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServiceLinkedAgencyV5Request 请求对象
+     * @return CompletableFuture<DeleteServiceLinkedAgencyV5Response>
+     */
+    public CompletableFuture<DeleteServiceLinkedAgencyV5Response> deleteServiceLinkedAgencyV5Async(
+        DeleteServiceLinkedAgencyV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.deleteServiceLinkedAgencyV5);
+    }
+
+    /**
+     * 删除服务关联委托
+     *
+     * 该接口可以用于服务关联委托删除自己。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServiceLinkedAgencyV5Request 请求对象
+     * @return AsyncInvoker<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response>
+     */
+    public AsyncInvoker<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response> deleteServiceLinkedAgencyV5AsyncInvoker(
+        DeleteServiceLinkedAgencyV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.deleteServiceLinkedAgencyV5, hcClient);
+    }
+
+    /**
      * 查询委托或信任委托详情
      *
      * 该接口可以用于查询委托或信任委托详情。
@@ -279,6 +430,36 @@ public class IamAsyncClient {
      */
     public AsyncInvoker<GetAgencyV5Request, GetAgencyV5Response> getAgencyV5AsyncInvoker(GetAgencyV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.getAgencyV5, hcClient);
+    }
+
+    /**
+     * 获取服务关联委托删除状态
+     *
+     * 该接口可以用于获取服务关联委托删除状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetServiceLinkedAgencyDeletionStatusV5Request 请求对象
+     * @return CompletableFuture<GetServiceLinkedAgencyDeletionStatusV5Response>
+     */
+    public CompletableFuture<GetServiceLinkedAgencyDeletionStatusV5Response> getServiceLinkedAgencyDeletionStatusV5Async(
+        GetServiceLinkedAgencyDeletionStatusV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.getServiceLinkedAgencyDeletionStatusV5);
+    }
+
+    /**
+     * 获取服务关联委托删除状态
+     *
+     * 该接口可以用于获取服务关联委托删除状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetServiceLinkedAgencyDeletionStatusV5Request 请求对象
+     * @return AsyncInvoker<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response>
+     */
+    public AsyncInvoker<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response> getServiceLinkedAgencyDeletionStatusV5AsyncInvoker(
+        GetServiceLinkedAgencyDeletionStatusV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.getServiceLinkedAgencyDeletionStatusV5, hcClient);
     }
 
     /**
@@ -369,66 +550,6 @@ public class IamAsyncClient {
     }
 
     /**
-     * 获取账号非对称签名开关状态
-     *
-     * 该接口用于获取账号非对称签名开关的状态。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetAsymmetricSignatureSwitchV5Request 请求对象
-     * @return CompletableFuture<GetAsymmetricSignatureSwitchV5Response>
-     */
-    public CompletableFuture<GetAsymmetricSignatureSwitchV5Response> getAsymmetricSignatureSwitchV5Async(
-        GetAsymmetricSignatureSwitchV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.getAsymmetricSignatureSwitchV5);
-    }
-
-    /**
-     * 获取账号非对称签名开关状态
-     *
-     * 该接口用于获取账号非对称签名开关的状态。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetAsymmetricSignatureSwitchV5Request 请求对象
-     * @return AsyncInvoker<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response>
-     */
-    public AsyncInvoker<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response> getAsymmetricSignatureSwitchV5AsyncInvoker(
-        GetAsymmetricSignatureSwitchV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.getAsymmetricSignatureSwitchV5, hcClient);
-    }
-
-    /**
-     * 设置账号开启或关闭非对称签名
-     *
-     * 该接口用于设置账号开启或关闭非对称签名功能。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetAsymmetricSignatureSwitchV5Request 请求对象
-     * @return CompletableFuture<SetAsymmetricSignatureSwitchV5Response>
-     */
-    public CompletableFuture<SetAsymmetricSignatureSwitchV5Response> setAsymmetricSignatureSwitchV5Async(
-        SetAsymmetricSignatureSwitchV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.setAsymmetricSignatureSwitchV5);
-    }
-
-    /**
-     * 设置账号开启或关闭非对称签名
-     *
-     * 该接口用于设置账号开启或关闭非对称签名功能。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetAsymmetricSignatureSwitchV5Request 请求对象
-     * @return AsyncInvoker<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response>
-     */
-    public AsyncInvoker<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response> setAsymmetricSignatureSwitchV5AsyncInvoker(
-        SetAsymmetricSignatureSwitchV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.setAsymmetricSignatureSwitchV5, hcClient);
-    }
-
-    /**
      * 查询指定服务授权概要
      *
      * 该接口可以用于查询指定云服务的授权概要。
@@ -486,6 +607,36 @@ public class IamAsyncClient {
     public AsyncInvoker<ListRegisteredServicesForAuthSchemaV5Request, ListRegisteredServicesForAuthSchemaV5Response> listRegisteredServicesForAuthSchemaV5AsyncInvoker(
         ListRegisteredServicesForAuthSchemaV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.listRegisteredServicesForAuthSchemaV5, hcClient);
+    }
+
+    /**
+     * 获取全部服务主体
+     *
+     * 该接口可以用于获取全部服务主体。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServicePrincipalsV5Request 请求对象
+     * @return CompletableFuture<ListServicePrincipalsV5Response>
+     */
+    public CompletableFuture<ListServicePrincipalsV5Response> listServicePrincipalsV5Async(
+        ListServicePrincipalsV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listServicePrincipalsV5);
+    }
+
+    /**
+     * 获取全部服务主体
+     *
+     * 该接口可以用于获取全部服务主体。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServicePrincipalsV5Request 请求对象
+     * @return AsyncInvoker<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response>
+     */
+    public AsyncInvoker<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response> listServicePrincipalsV5AsyncInvoker(
+        ListServicePrincipalsV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.listServicePrincipalsV5, hcClient);
     }
 
     /**
@@ -868,6 +1019,36 @@ public class IamAsyncClient {
     }
 
     /**
+     * 为指定身份策略创建一个新版本
+     *
+     * 该接口可以用于为指定身份策略创建一个新版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePolicyVersionV5Request 请求对象
+     * @return CompletableFuture<CreatePolicyVersionV5Response>
+     */
+    public CompletableFuture<CreatePolicyVersionV5Response> createPolicyVersionV5Async(
+        CreatePolicyVersionV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createPolicyVersionV5);
+    }
+
+    /**
+     * 为指定身份策略创建一个新版本
+     *
+     * 该接口可以用于为指定身份策略创建一个新版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePolicyVersionV5Request 请求对象
+     * @return AsyncInvoker<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response>
+     */
+    public AsyncInvoker<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response> createPolicyVersionV5AsyncInvoker(
+        CreatePolicyVersionV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.createPolicyVersionV5, hcClient);
+    }
+
+    /**
      * 删除自定义身份策略
      *
      * 该接口可以用于删除一个存在的自定义身份策略，必须确保该自定义身份策略没有附加在任何IAM用户、用户组、委托或信任委托上。
@@ -894,6 +1075,36 @@ public class IamAsyncClient {
     public AsyncInvoker<DeletePolicyV5Request, DeletePolicyV5Response> deletePolicyV5AsyncInvoker(
         DeletePolicyV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.deletePolicyV5, hcClient);
+    }
+
+    /**
+     * 删除指定身份策略版本
+     *
+     * 该接口可以用于删除指定身份策略的指定版本。默认身份策略版本不能被删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePolicyVersionV5Request 请求对象
+     * @return CompletableFuture<DeletePolicyVersionV5Response>
+     */
+    public CompletableFuture<DeletePolicyVersionV5Response> deletePolicyVersionV5Async(
+        DeletePolicyVersionV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.deletePolicyVersionV5);
+    }
+
+    /**
+     * 删除指定身份策略版本
+     *
+     * 该接口可以用于删除指定身份策略的指定版本。默认身份策略版本不能被删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePolicyVersionV5Request 请求对象
+     * @return AsyncInvoker<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response>
+     */
+    public AsyncInvoker<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response> deletePolicyVersionV5AsyncInvoker(
+        DeletePolicyVersionV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.deletePolicyVersionV5, hcClient);
     }
 
     /**
@@ -925,6 +1136,35 @@ public class IamAsyncClient {
     }
 
     /**
+     * 查询指定身份策略版本
+     *
+     * 该接口可以用于查询指定身份策略的指定版本的相关信息，包括身份策略文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetPolicyVersionV5Request 请求对象
+     * @return CompletableFuture<GetPolicyVersionV5Response>
+     */
+    public CompletableFuture<GetPolicyVersionV5Response> getPolicyVersionV5Async(GetPolicyVersionV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.getPolicyVersionV5);
+    }
+
+    /**
+     * 查询指定身份策略版本
+     *
+     * 该接口可以用于查询指定身份策略的指定版本的相关信息，包括身份策略文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetPolicyVersionV5Request 请求对象
+     * @return AsyncInvoker<GetPolicyVersionV5Request, GetPolicyVersionV5Response>
+     */
+    public AsyncInvoker<GetPolicyVersionV5Request, GetPolicyVersionV5Response> getPolicyVersionV5AsyncInvoker(
+        GetPolicyVersionV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.getPolicyVersionV5, hcClient);
+    }
+
+    /**
      * 查询所有身份策略
      *
      * 该接口可以用于查询所有身份策略，包含系统预置身份策略和自定义身份策略。
@@ -951,6 +1191,66 @@ public class IamAsyncClient {
     public AsyncInvoker<ListPoliciesV5Request, ListPoliciesV5Response> listPoliciesV5AsyncInvoker(
         ListPoliciesV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.listPoliciesV5, hcClient);
+    }
+
+    /**
+     * 查询指定身份策略的所有版本
+     *
+     * 该接口可以用于查询指定身份策略的所有版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyVersionsV5Request 请求对象
+     * @return CompletableFuture<ListPolicyVersionsV5Response>
+     */
+    public CompletableFuture<ListPolicyVersionsV5Response> listPolicyVersionsV5Async(
+        ListPolicyVersionsV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listPolicyVersionsV5);
+    }
+
+    /**
+     * 查询指定身份策略的所有版本
+     *
+     * 该接口可以用于查询指定身份策略的所有版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyVersionsV5Request 请求对象
+     * @return AsyncInvoker<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response>
+     */
+    public AsyncInvoker<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response> listPolicyVersionsV5AsyncInvoker(
+        ListPolicyVersionsV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.listPolicyVersionsV5, hcClient);
+    }
+
+    /**
+     * 将指定身份策略版本设置为默认版本
+     *
+     * 该接口可以用于将指定身份策略的指定版本设置为默认版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetDefaultPolicyVersionV5Request 请求对象
+     * @return CompletableFuture<SetDefaultPolicyVersionV5Response>
+     */
+    public CompletableFuture<SetDefaultPolicyVersionV5Response> setDefaultPolicyVersionV5Async(
+        SetDefaultPolicyVersionV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.setDefaultPolicyVersionV5);
+    }
+
+    /**
+     * 将指定身份策略版本设置为默认版本
+     *
+     * 该接口可以用于将指定身份策略的指定版本设置为默认版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetDefaultPolicyVersionV5Request 请求对象
+     * @return AsyncInvoker<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response>
+     */
+    public AsyncInvoker<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> setDefaultPolicyVersionV5AsyncInvoker(
+        SetDefaultPolicyVersionV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.setDefaultPolicyVersionV5, hcClient);
     }
 
     /**
@@ -1250,155 +1550,6 @@ public class IamAsyncClient {
     }
 
     /**
-     * 为指定身份策略创建一个新版本
-     *
-     * 该接口可以用于为指定身份策略创建一个新版本。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePolicyVersionV5Request 请求对象
-     * @return CompletableFuture<CreatePolicyVersionV5Response>
-     */
-    public CompletableFuture<CreatePolicyVersionV5Response> createPolicyVersionV5Async(
-        CreatePolicyVersionV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.createPolicyVersionV5);
-    }
-
-    /**
-     * 为指定身份策略创建一个新版本
-     *
-     * 该接口可以用于为指定身份策略创建一个新版本。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePolicyVersionV5Request 请求对象
-     * @return AsyncInvoker<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response>
-     */
-    public AsyncInvoker<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response> createPolicyVersionV5AsyncInvoker(
-        CreatePolicyVersionV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.createPolicyVersionV5, hcClient);
-    }
-
-    /**
-     * 删除指定身份策略版本
-     *
-     * 该接口可以用于删除指定身份策略的指定版本。默认身份策略版本不能被删除。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeletePolicyVersionV5Request 请求对象
-     * @return CompletableFuture<DeletePolicyVersionV5Response>
-     */
-    public CompletableFuture<DeletePolicyVersionV5Response> deletePolicyVersionV5Async(
-        DeletePolicyVersionV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.deletePolicyVersionV5);
-    }
-
-    /**
-     * 删除指定身份策略版本
-     *
-     * 该接口可以用于删除指定身份策略的指定版本。默认身份策略版本不能被删除。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeletePolicyVersionV5Request 请求对象
-     * @return AsyncInvoker<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response>
-     */
-    public AsyncInvoker<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response> deletePolicyVersionV5AsyncInvoker(
-        DeletePolicyVersionV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.deletePolicyVersionV5, hcClient);
-    }
-
-    /**
-     * 查询指定身份策略版本
-     *
-     * 该接口可以用于查询指定身份策略的指定版本的相关信息，包括身份策略文档。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetPolicyVersionV5Request 请求对象
-     * @return CompletableFuture<GetPolicyVersionV5Response>
-     */
-    public CompletableFuture<GetPolicyVersionV5Response> getPolicyVersionV5Async(GetPolicyVersionV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.getPolicyVersionV5);
-    }
-
-    /**
-     * 查询指定身份策略版本
-     *
-     * 该接口可以用于查询指定身份策略的指定版本的相关信息，包括身份策略文档。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetPolicyVersionV5Request 请求对象
-     * @return AsyncInvoker<GetPolicyVersionV5Request, GetPolicyVersionV5Response>
-     */
-    public AsyncInvoker<GetPolicyVersionV5Request, GetPolicyVersionV5Response> getPolicyVersionV5AsyncInvoker(
-        GetPolicyVersionV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.getPolicyVersionV5, hcClient);
-    }
-
-    /**
-     * 查询指定身份策略的所有版本
-     *
-     * 该接口可以用于查询指定身份策略的所有版本信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPolicyVersionsV5Request 请求对象
-     * @return CompletableFuture<ListPolicyVersionsV5Response>
-     */
-    public CompletableFuture<ListPolicyVersionsV5Response> listPolicyVersionsV5Async(
-        ListPolicyVersionsV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.listPolicyVersionsV5);
-    }
-
-    /**
-     * 查询指定身份策略的所有版本
-     *
-     * 该接口可以用于查询指定身份策略的所有版本信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPolicyVersionsV5Request 请求对象
-     * @return AsyncInvoker<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response>
-     */
-    public AsyncInvoker<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response> listPolicyVersionsV5AsyncInvoker(
-        ListPolicyVersionsV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.listPolicyVersionsV5, hcClient);
-    }
-
-    /**
-     * 将指定身份策略版本设置为默认版本
-     *
-     * 该接口可以用于将指定身份策略的指定版本设置为默认版本。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetDefaultPolicyVersionV5Request 请求对象
-     * @return CompletableFuture<SetDefaultPolicyVersionV5Response>
-     */
-    public CompletableFuture<SetDefaultPolicyVersionV5Response> setDefaultPolicyVersionV5Async(
-        SetDefaultPolicyVersionV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.setDefaultPolicyVersionV5);
-    }
-
-    /**
-     * 将指定身份策略版本设置为默认版本
-     *
-     * 该接口可以用于将指定身份策略的指定版本设置为默认版本。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetDefaultPolicyVersionV5Request 请求对象
-     * @return AsyncInvoker<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response>
-     */
-    public AsyncInvoker<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> setDefaultPolicyVersionV5AsyncInvoker(
-        SetDefaultPolicyVersionV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.setDefaultPolicyVersionV5, hcClient);
-    }
-
-    /**
      * 删除指定资源的部分标签
      *
      * 该接口可以用于删除指定资源的部分标签。
@@ -1660,126 +1811,6 @@ public class IamAsyncClient {
     public AsyncInvoker<UpdateTokenPolicyV5Request, UpdateTokenPolicyV5Response> updateTokenPolicyV5AsyncInvoker(
         UpdateTokenPolicyV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.updateTokenPolicyV5, hcClient);
-    }
-
-    /**
-     * 创建服务关联委托
-     *
-     * 该接口可以用于创建服务关联委托。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateServiceLinkedAgencyV5Request 请求对象
-     * @return CompletableFuture<CreateServiceLinkedAgencyV5Response>
-     */
-    public CompletableFuture<CreateServiceLinkedAgencyV5Response> createServiceLinkedAgencyV5Async(
-        CreateServiceLinkedAgencyV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.createServiceLinkedAgencyV5);
-    }
-
-    /**
-     * 创建服务关联委托
-     *
-     * 该接口可以用于创建服务关联委托。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateServiceLinkedAgencyV5Request 请求对象
-     * @return AsyncInvoker<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response>
-     */
-    public AsyncInvoker<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response> createServiceLinkedAgencyV5AsyncInvoker(
-        CreateServiceLinkedAgencyV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.createServiceLinkedAgencyV5, hcClient);
-    }
-
-    /**
-     * 删除服务关联委托
-     *
-     * 该接口可以用于服务关联委托删除自己。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteServiceLinkedAgencyV5Request 请求对象
-     * @return CompletableFuture<DeleteServiceLinkedAgencyV5Response>
-     */
-    public CompletableFuture<DeleteServiceLinkedAgencyV5Response> deleteServiceLinkedAgencyV5Async(
-        DeleteServiceLinkedAgencyV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.deleteServiceLinkedAgencyV5);
-    }
-
-    /**
-     * 删除服务关联委托
-     *
-     * 该接口可以用于服务关联委托删除自己。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteServiceLinkedAgencyV5Request 请求对象
-     * @return AsyncInvoker<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response>
-     */
-    public AsyncInvoker<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response> deleteServiceLinkedAgencyV5AsyncInvoker(
-        DeleteServiceLinkedAgencyV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.deleteServiceLinkedAgencyV5, hcClient);
-    }
-
-    /**
-     * 获取服务关联委托删除状态
-     *
-     * 该接口可以用于获取服务关联委托删除状态。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetServiceLinkedAgencyDeletionStatusV5Request 请求对象
-     * @return CompletableFuture<GetServiceLinkedAgencyDeletionStatusV5Response>
-     */
-    public CompletableFuture<GetServiceLinkedAgencyDeletionStatusV5Response> getServiceLinkedAgencyDeletionStatusV5Async(
-        GetServiceLinkedAgencyDeletionStatusV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.getServiceLinkedAgencyDeletionStatusV5);
-    }
-
-    /**
-     * 获取服务关联委托删除状态
-     *
-     * 该接口可以用于获取服务关联委托删除状态。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetServiceLinkedAgencyDeletionStatusV5Request 请求对象
-     * @return AsyncInvoker<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response>
-     */
-    public AsyncInvoker<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response> getServiceLinkedAgencyDeletionStatusV5AsyncInvoker(
-        GetServiceLinkedAgencyDeletionStatusV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.getServiceLinkedAgencyDeletionStatusV5, hcClient);
-    }
-
-    /**
-     * 获取全部服务主体
-     *
-     * 该接口可以用于获取全部服务主体。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListServicePrincipalsV5Request 请求对象
-     * @return CompletableFuture<ListServicePrincipalsV5Response>
-     */
-    public CompletableFuture<ListServicePrincipalsV5Response> listServicePrincipalsV5Async(
-        ListServicePrincipalsV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.listServicePrincipalsV5);
-    }
-
-    /**
-     * 获取全部服务主体
-     *
-     * 该接口可以用于获取全部服务主体。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListServicePrincipalsV5Request 请求对象
-     * @return AsyncInvoker<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response>
-     */
-    public AsyncInvoker<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response> listServicePrincipalsV5AsyncInvoker(
-        ListServicePrincipalsV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.listServicePrincipalsV5, hcClient);
     }
 
     /**

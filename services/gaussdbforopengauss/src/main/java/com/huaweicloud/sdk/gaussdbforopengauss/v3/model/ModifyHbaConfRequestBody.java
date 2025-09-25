@@ -11,47 +11,47 @@ import java.util.Objects;
 public class ModifyHbaConfRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "before_confs")
+    @JsonProperty(value = "before_conf")
 
-    private Object beforeConfs;
+    private Object beforeConf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "after_confs")
+    @JsonProperty(value = "after_conf")
 
-    private Object afterConfs;
+    private Object afterConf;
 
-    public ModifyHbaConfRequestBody withBeforeConfs(Object beforeConfs) {
-        this.beforeConfs = beforeConfs;
+    public ModifyHbaConfRequestBody withBeforeConf(Object beforeConf) {
+        this.beforeConf = beforeConf;
         return this;
     }
 
     /**
      * **参数解释**: 需要修改的hba配置信息。 **约束限制**: 不涉及。
-     * @return beforeConfs
+     * @return beforeConf
      */
-    public Object getBeforeConfs() {
-        return beforeConfs;
+    public Object getBeforeConf() {
+        return beforeConf;
     }
 
-    public void setBeforeConfs(Object beforeConfs) {
-        this.beforeConfs = beforeConfs;
+    public void setBeforeConf(Object beforeConf) {
+        this.beforeConf = beforeConf;
     }
 
-    public ModifyHbaConfRequestBody withAfterConfs(Object afterConfs) {
-        this.afterConfs = afterConfs;
+    public ModifyHbaConfRequestBody withAfterConf(Object afterConf) {
+        this.afterConf = afterConf;
         return this;
     }
 
     /**
      * **参数解释**: 修改后的hba配置信息。 **约束限制**: 不涉及。
-     * @return afterConfs
+     * @return afterConf
      */
-    public Object getAfterConfs() {
-        return afterConfs;
+    public Object getAfterConf() {
+        return afterConf;
     }
 
-    public void setAfterConfs(Object afterConfs) {
-        this.afterConfs = afterConfs;
+    public void setAfterConf(Object afterConf) {
+        this.afterConf = afterConf;
     }
 
     @Override
@@ -63,20 +63,20 @@ public class ModifyHbaConfRequestBody {
             return false;
         }
         ModifyHbaConfRequestBody that = (ModifyHbaConfRequestBody) obj;
-        return Objects.equals(this.beforeConfs, that.beforeConfs) && Objects.equals(this.afterConfs, that.afterConfs);
+        return Objects.equals(this.beforeConf, that.beforeConf) && Objects.equals(this.afterConf, that.afterConf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(beforeConfs, afterConfs);
+        return Objects.hash(beforeConf, afterConf);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ModifyHbaConfRequestBody {\n");
-        sb.append("    beforeConfs: ").append(toIndentedString(beforeConfs)).append("\n");
-        sb.append("    afterConfs: ").append(toIndentedString(afterConfs)).append("\n");
+        sb.append("    beforeConf: ").append(toIndentedString(beforeConf)).append("\n");
+        sb.append("    afterConf: ").append(toIndentedString(afterConf)).append("\n");
         sb.append("}");
         return sb.toString();
     }

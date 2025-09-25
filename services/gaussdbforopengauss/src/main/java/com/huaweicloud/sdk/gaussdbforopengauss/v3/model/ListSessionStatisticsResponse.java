@@ -20,9 +20,9 @@ public class ListSessionStatisticsResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "statistics")
+    @JsonProperty(value = "statistics_list")
 
-    private List<DimensionListResult> statistics = null;
+    private List<DimensionListResult> statisticsList = null;
 
     public ListSessionStatisticsResponse withTotal(Integer total) {
         this.total = total;
@@ -41,37 +41,37 @@ public class ListSessionStatisticsResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListSessionStatisticsResponse withStatistics(List<DimensionListResult> statistics) {
-        this.statistics = statistics;
+    public ListSessionStatisticsResponse withStatisticsList(List<DimensionListResult> statisticsList) {
+        this.statisticsList = statisticsList;
         return this;
     }
 
-    public ListSessionStatisticsResponse addStatisticsItem(DimensionListResult statisticsItem) {
-        if (this.statistics == null) {
-            this.statistics = new ArrayList<>();
+    public ListSessionStatisticsResponse addStatisticsListItem(DimensionListResult statisticsListItem) {
+        if (this.statisticsList == null) {
+            this.statisticsList = new ArrayList<>();
         }
-        this.statistics.add(statisticsItem);
+        this.statisticsList.add(statisticsListItem);
         return this;
     }
 
-    public ListSessionStatisticsResponse withStatistics(Consumer<List<DimensionListResult>> statisticsSetter) {
-        if (this.statistics == null) {
-            this.statistics = new ArrayList<>();
+    public ListSessionStatisticsResponse withStatisticsList(Consumer<List<DimensionListResult>> statisticsListSetter) {
+        if (this.statisticsList == null) {
+            this.statisticsList = new ArrayList<>();
         }
-        statisticsSetter.accept(this.statistics);
+        statisticsListSetter.accept(this.statisticsList);
         return this;
     }
 
     /**
      * **参数解释**: 会话统计列表。
-     * @return statistics
+     * @return statisticsList
      */
-    public List<DimensionListResult> getStatistics() {
-        return statistics;
+    public List<DimensionListResult> getStatisticsList() {
+        return statisticsList;
     }
 
-    public void setStatistics(List<DimensionListResult> statistics) {
-        this.statistics = statistics;
+    public void setStatisticsList(List<DimensionListResult> statisticsList) {
+        this.statisticsList = statisticsList;
     }
 
     @Override
@@ -83,12 +83,12 @@ public class ListSessionStatisticsResponse extends SdkResponse {
             return false;
         }
         ListSessionStatisticsResponse that = (ListSessionStatisticsResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.statistics, that.statistics);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.statisticsList, that.statisticsList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, statistics);
+        return Objects.hash(total, statisticsList);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class ListSessionStatisticsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSessionStatisticsResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    statistics: ").append(toIndentedString(statistics)).append("\n");
+        sb.append("    statisticsList: ").append(toIndentedString(statisticsList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

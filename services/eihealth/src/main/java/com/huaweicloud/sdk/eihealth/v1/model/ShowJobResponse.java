@@ -62,6 +62,11 @@ public class ShowJobResponse extends SdkResponse {
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finish_time")
 
     private String finishTime;
@@ -283,6 +288,23 @@ public class ShowJobResponse extends SdkResponse {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public ShowJobResponse withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 作业开始时间。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
     public ShowJobResponse withFinishTime(String finishTime) {
@@ -583,7 +605,8 @@ public class ShowJobResponse extends SdkResponse {
             && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeout, that.timeout)
             && Objects.equals(this.outputDir, that.outputDir) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.finishTime, that.finishTime)
             && Objects.equals(this.failedMessage, that.failedMessage)
             && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.toolInfo, that.toolInfo)
             && Objects.equals(this.tasks, that.tasks) && Objects.equals(this.taskRuntimeInfo, that.taskRuntimeInfo)
@@ -603,6 +626,7 @@ public class ShowJobResponse extends SdkResponse {
             outputDir,
             status,
             createTime,
+            startTime,
             finishTime,
             failedMessage,
             failedReason,
@@ -629,6 +653,7 @@ public class ShowJobResponse extends SdkResponse {
         sb.append("    outputDir: ").append(toIndentedString(outputDir)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    finishTime: ").append(toIndentedString(finishTime)).append("\n");
         sb.append("    failedMessage: ").append(toIndentedString(failedMessage)).append("\n");
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");

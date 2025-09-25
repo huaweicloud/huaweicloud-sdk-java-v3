@@ -21,11 +21,6 @@ public class WtpProtectHostDirResponseInfo {
     private String excludeChildDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "exclude_file_path")
-
-    private String excludeFilePath;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exclue_file_path")
 
     private String exclueFilePath;
@@ -79,23 +74,6 @@ public class WtpProtectHostDirResponseInfo {
         this.excludeChildDir = excludeChildDir;
     }
 
-    public WtpProtectHostDirResponseInfo withExcludeFilePath(String excludeFilePath) {
-        this.excludeFilePath = excludeFilePath;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 排除文件路径 **取值范围**: 字符长度0-512位 
-     * @return excludeFilePath
-     */
-    public String getExcludeFilePath() {
-        return excludeFilePath;
-    }
-
-    public void setExcludeFilePath(String excludeFilePath) {
-        this.excludeFilePath = excludeFilePath;
-    }
-
     public WtpProtectHostDirResponseInfo withExclueFilePath(String exclueFilePath) {
         this.exclueFilePath = exclueFilePath;
         return this;
@@ -119,7 +97,7 @@ public class WtpProtectHostDirResponseInfo {
     }
 
     /**
-     * **参数解释**: 本地备份路径 **取值范围**: 字符长度0-512位 
+     * **参数解释**: 本地备份路径，仅Linux服务器支持设置本地备份路径。 **取值范围**: 字符长度0-512位 
      * @return localBackupDir
      */
     public String getLocalBackupDir() {
@@ -175,7 +153,6 @@ public class WtpProtectHostDirResponseInfo {
         WtpProtectHostDirResponseInfo that = (WtpProtectHostDirResponseInfo) obj;
         return Objects.equals(this.protectDir, that.protectDir)
             && Objects.equals(this.excludeChildDir, that.excludeChildDir)
-            && Objects.equals(this.excludeFilePath, that.excludeFilePath)
             && Objects.equals(this.exclueFilePath, that.exclueFilePath)
             && Objects.equals(this.localBackupDir, that.localBackupDir)
             && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.error, that.error);
@@ -183,8 +160,7 @@ public class WtpProtectHostDirResponseInfo {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(protectDir, excludeChildDir, excludeFilePath, exclueFilePath, localBackupDir, protectStatus, error);
+        return Objects.hash(protectDir, excludeChildDir, exclueFilePath, localBackupDir, protectStatus, error);
     }
 
     @Override
@@ -193,7 +169,6 @@ public class WtpProtectHostDirResponseInfo {
         sb.append("class WtpProtectHostDirResponseInfo {\n");
         sb.append("    protectDir: ").append(toIndentedString(protectDir)).append("\n");
         sb.append("    excludeChildDir: ").append(toIndentedString(excludeChildDir)).append("\n");
-        sb.append("    excludeFilePath: ").append(toIndentedString(excludeFilePath)).append("\n");
         sb.append("    exclueFilePath: ").append(toIndentedString(exclueFilePath)).append("\n");
         sb.append("    localBackupDir: ").append(toIndentedString(localBackupDir)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");

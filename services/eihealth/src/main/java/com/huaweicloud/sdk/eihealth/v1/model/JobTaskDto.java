@@ -24,6 +24,16 @@ public class JobTaskDto {
     private List<TaskParameterDto> inputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "outputs")
+
+    private List<TaskParameterDto> outputs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_dir")
+
+    private String outputDir;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
     private TaskResourceDto resources;
@@ -83,6 +93,56 @@ public class JobTaskDto {
         this.inputs = inputs;
     }
 
+    public JobTaskDto withOutputs(List<TaskParameterDto> outputs) {
+        this.outputs = outputs;
+        return this;
+    }
+
+    public JobTaskDto addOutputsItem(TaskParameterDto outputsItem) {
+        if (this.outputs == null) {
+            this.outputs = new ArrayList<>();
+        }
+        this.outputs.add(outputsItem);
+        return this;
+    }
+
+    public JobTaskDto withOutputs(Consumer<List<TaskParameterDto>> outputsSetter) {
+        if (this.outputs == null) {
+            this.outputs = new ArrayList<>();
+        }
+        outputsSetter.accept(this.outputs);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 任务的输出参数信息。 **约束限制**： 最多支持128个参数。 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return outputs
+     */
+    public List<TaskParameterDto> getOutputs() {
+        return outputs;
+    }
+
+    public void setOutputs(List<TaskParameterDto> outputs) {
+        this.outputs = outputs;
+    }
+
+    public JobTaskDto withOutputDir(String outputDir) {
+        this.outputDir = outputDir;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 子任务结果存储目录，默认为空。 **约束限制**： 不涉及 **取值范围**： 长度[0,128]。 **默认取值**： 不涉及 
+     * @return outputDir
+     */
+    public String getOutputDir() {
+        return outputDir;
+    }
+
+    public void setOutputDir(String outputDir) {
+        this.outputDir = outputDir;
+    }
+
     public JobTaskDto withResources(TaskResourceDto resources) {
         this.resources = resources;
         return this;
@@ -136,12 +196,13 @@ public class JobTaskDto {
         }
         JobTaskDto that = (JobTaskDto) obj;
         return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.outputDir, that.outputDir)
             && Objects.equals(this.resources, that.resources) && Objects.equals(this.ioAccType, that.ioAccType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskName, inputs, resources, ioAccType);
+        return Objects.hash(taskName, inputs, outputs, outputDir, resources, ioAccType);
     }
 
     @Override
@@ -150,6 +211,8 @@ public class JobTaskDto {
         sb.append("class JobTaskDto {\n");
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
+        sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
+        sb.append("    outputDir: ").append(toIndentedString(outputDir)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    ioAccType: ").append(toIndentedString(ioAccType)).append("\n");
         sb.append("}");

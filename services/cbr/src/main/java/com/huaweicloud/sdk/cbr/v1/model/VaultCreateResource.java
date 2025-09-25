@@ -94,21 +94,6 @@ public class VaultCreateResource {
     private Integer threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "errText")
-
-    private String errText;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "retCode")
-
-    private String retCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "orders")
-
-    private List<CbcOrderResult> orders = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_name_prefix")
 
     private String backupNamePrefix;
@@ -137,6 +122,11 @@ public class VaultCreateResource {
     @JsonProperty(value = "locked")
 
     private Boolean locked;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
 
     public VaultCreateResource withBilling(Billing billing) {
         this.billing = billing;
@@ -462,73 +452,6 @@ public class VaultCreateResource {
         this.threshold = threshold;
     }
 
-    public VaultCreateResource withErrText(String errText) {
-        this.errText = errText;
-        return this;
-    }
-
-    /**
-     * 包周期创建错误信息
-     * @return errText
-     */
-    public String getErrText() {
-        return errText;
-    }
-
-    public void setErrText(String errText) {
-        this.errText = errText;
-    }
-
-    public VaultCreateResource withRetCode(String retCode) {
-        this.retCode = retCode;
-        return this;
-    }
-
-    /**
-     * 包周期订购结果
-     * @return retCode
-     */
-    public String getRetCode() {
-        return retCode;
-    }
-
-    public void setRetCode(String retCode) {
-        this.retCode = retCode;
-    }
-
-    public VaultCreateResource withOrders(List<CbcOrderResult> orders) {
-        this.orders = orders;
-        return this;
-    }
-
-    public VaultCreateResource addOrdersItem(CbcOrderResult ordersItem) {
-        if (this.orders == null) {
-            this.orders = new ArrayList<>();
-        }
-        this.orders.add(ordersItem);
-        return this;
-    }
-
-    public VaultCreateResource withOrders(Consumer<List<CbcOrderResult>> ordersSetter) {
-        if (this.orders == null) {
-            this.orders = new ArrayList<>();
-        }
-        ordersSetter.accept(this.orders);
-        return this;
-    }
-
-    /**
-     * 包周期创建订单信息
-     * @return orders
-     */
-    public List<CbcOrderResult> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<CbcOrderResult> orders) {
-        this.orders = orders;
-    }
-
     public VaultCreateResource withBackupNamePrefix(String backupNamePrefix) {
         this.backupNamePrefix = backupNamePrefix;
         return this;
@@ -631,6 +554,23 @@ public class VaultCreateResource {
         this.locked = locked;
     }
 
+    public VaultCreateResource withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 存储库可用区信息，最大支持32字符。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -648,13 +588,12 @@ public class VaultCreateResource {
             && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
             && Objects.equals(this.userId, that.userId) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
-            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.errText, that.errText)
-            && Objects.equals(this.retCode, that.retCode) && Objects.equals(this.orders, that.orders)
+            && Objects.equals(this.threshold, that.threshold)
             && Objects.equals(this.backupNamePrefix, that.backupNamePrefix)
             && Objects.equals(this.demandBilling, that.demandBilling)
             && Objects.equals(this.cbcDeleteCount, that.cbcDeleteCount) && Objects.equals(this.frozen, that.frozen)
             && Objects.equals(this.sysLockSourceService, that.sysLockSourceService)
-            && Objects.equals(this.locked, that.locked);
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
@@ -675,15 +614,13 @@ public class VaultCreateResource {
             autoExpand,
             smnNotify,
             threshold,
-            errText,
-            retCode,
-            orders,
             backupNamePrefix,
             demandBilling,
             cbcDeleteCount,
             frozen,
             sysLockSourceService,
-            locked);
+            locked,
+            availabilityZone);
     }
 
     @Override
@@ -706,15 +643,13 @@ public class VaultCreateResource {
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
-        sb.append("    errText: ").append(toIndentedString(errText)).append("\n");
-        sb.append("    retCode: ").append(toIndentedString(retCode)).append("\n");
-        sb.append("    orders: ").append(toIndentedString(orders)).append("\n");
         sb.append("    backupNamePrefix: ").append(toIndentedString(backupNamePrefix)).append("\n");
         sb.append("    demandBilling: ").append(toIndentedString(demandBilling)).append("\n");
         sb.append("    cbcDeleteCount: ").append(toIndentedString(cbcDeleteCount)).append("\n");
         sb.append("    frozen: ").append(toIndentedString(frozen)).append("\n");
         sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,7 +21,7 @@ public class ListProjectTagsRequest {
     }
 
     /**
-     * 资源类别，hss
+     * **参数解释**: 资源类别 **约束限制**: 不涉及 **取值范围**: - hss：主机安全服务 **默认取值**: hss 
      * @return resourceType
      */
     public String getResourceType() {

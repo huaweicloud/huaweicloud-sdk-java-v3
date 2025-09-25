@@ -11,6 +11,21 @@ import java.util.Objects;
 public class SlowSqlDetailResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db_name")
+
+    private String dbName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schema_name")
+
+    private String schemaName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql")
+
+    private String sql;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_id")
 
     private String sqlId;
@@ -109,6 +124,57 @@ public class SlowSqlDetailResult {
     @JsonProperty(value = "lock_time")
 
     private Integer lockTime;
+
+    public SlowSqlDetailResult withDbName(String dbName) {
+        this.dbName = dbName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 数据库名称。 **取值范围**: 不涉及。
+     * @return dbName
+     */
+    public String getDbName() {
+        return dbName;
+    }
+
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
+
+    public SlowSqlDetailResult withSchemaName(String schemaName) {
+        this.schemaName = schemaName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: SCHEMA名称。 **取值范围**: 不涉及。
+     * @return schemaName
+     */
+    public String getSchemaName() {
+        return schemaName;
+    }
+
+    public void setSchemaName(String schemaName) {
+        this.schemaName = schemaName;
+    }
+
+    public SlowSqlDetailResult withSql(String sql) {
+        this.sql = sql;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 变量替换后的完整SQL。当sql_text不返回变量值时，sql返回空字符串。 **取值范围**: 不涉及。
+     * @return sql
+     */
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
 
     public SlowSqlDetailResult withSqlId(String sqlId) {
         this.sqlId = sqlId;
@@ -459,12 +525,13 @@ public class SlowSqlDetailResult {
             return false;
         }
         SlowSqlDetailResult that = (SlowSqlDetailResult) obj;
-        return Objects.equals(this.sqlId, that.sqlId) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.clientPort, that.clientPort)
-            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.nodeName, that.nodeName)
-            && Objects.equals(this.sqlText, that.sqlText) && Objects.equals(this.queryPlan, that.queryPlan)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.finishTime, that.finishTime)
-            && Objects.equals(this.returnedRows, that.returnedRows)
+        return Objects.equals(this.dbName, that.dbName) && Objects.equals(this.schemaName, that.schemaName)
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlId, that.sqlId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.clientIp, that.clientIp)
+            && Objects.equals(this.clientPort, that.clientPort) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.sqlText, that.sqlText)
+            && Objects.equals(this.queryPlan, that.queryPlan) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.finishTime, that.finishTime) && Objects.equals(this.returnedRows, that.returnedRows)
             && Objects.equals(this.fetchedRows, that.fetchedRows)
             && Objects.equals(this.fetchedPages, that.fetchedPages) && Objects.equals(this.hitPages, that.hitPages)
             && Objects.equals(this.totalTime, that.totalTime) && Objects.equals(this.cpuTime, that.cpuTime)
@@ -474,7 +541,10 @@ public class SlowSqlDetailResult {
 
     @Override
     public int hashCode() {
-        return Objects.hash(sqlId,
+        return Objects.hash(dbName,
+            schemaName,
+            sql,
+            sqlId,
             userName,
             clientIp,
             clientPort,
@@ -500,6 +570,9 @@ public class SlowSqlDetailResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SlowSqlDetailResult {\n");
+        sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
+        sb.append("    schemaName: ").append(toIndentedString(schemaName)).append("\n");
+        sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
         sb.append("    sqlId: ").append(toIndentedString(sqlId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");

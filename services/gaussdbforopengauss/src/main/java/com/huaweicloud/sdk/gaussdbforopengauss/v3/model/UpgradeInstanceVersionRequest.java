@@ -24,7 +24,7 @@ public class UpgradeInstanceVersionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private OpenGaussUpgradeRequest body;
+    private UpgradeRequestBody body;
 
     public UpgradeInstanceVersionRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -62,14 +62,14 @@ public class UpgradeInstanceVersionRequest {
         this.instanceId = instanceId;
     }
 
-    public UpgradeInstanceVersionRequest withBody(OpenGaussUpgradeRequest body) {
+    public UpgradeInstanceVersionRequest withBody(UpgradeRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpgradeInstanceVersionRequest withBody(Consumer<OpenGaussUpgradeRequest> bodySetter) {
+    public UpgradeInstanceVersionRequest withBody(Consumer<UpgradeRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new OpenGaussUpgradeRequest();
+            this.body = new UpgradeRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -80,11 +80,11 @@ public class UpgradeInstanceVersionRequest {
      * Get body
      * @return body
      */
-    public OpenGaussUpgradeRequest getBody() {
+    public UpgradeRequestBody getBody() {
         return body;
     }
 
-    public void setBody(OpenGaussUpgradeRequest body) {
+    public void setBody(UpgradeRequestBody body) {
         this.body = body;
     }
 

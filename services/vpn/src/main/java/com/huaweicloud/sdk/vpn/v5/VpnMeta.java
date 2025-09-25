@@ -31,6 +31,9 @@ import com.huaweicloud.sdk.vpn.v5.model.CreateCgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorResponse;
+import com.huaweicloud.sdk.vpn.v5.model.CreateP2cVgwRequest;
+import com.huaweicloud.sdk.vpn.v5.model.CreateP2cVgwRequestBody;
+import com.huaweicloud.sdk.vpn.v5.model.CreateP2cVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateResourcesTagsRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.CreateServerRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVgwCertificateRequest;
@@ -61,6 +64,8 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteResourcesTagsRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwResponse;
@@ -599,6 +604,61 @@ public class VpnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCgwRequestBody.class),
             f -> f.withMarshaller(UpdateCgwRequest::getBody, UpdateCgwRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateP2cVgwRequest, CreateP2cVgwResponse> createP2cVgw = genForCreateP2cVgw();
+
+    private static HttpRequestDef<CreateP2cVgwRequest, CreateP2cVgwResponse> genForCreateP2cVgw() {
+        // basic
+        HttpRequestDef.Builder<CreateP2cVgwRequest, CreateP2cVgwResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateP2cVgwRequest.class, CreateP2cVgwResponse.class)
+                .withName("CreateP2cVgw")
+                .withUri("/v5/{project_id}/p2c-vpn-gateways")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateP2cVgwRequest::getXClientToken, CreateP2cVgwRequest::setXClientToken));
+        builder.<CreateP2cVgwRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateP2cVgwRequestBody.class),
+            f -> f.withMarshaller(CreateP2cVgwRequest::getBody, CreateP2cVgwRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateP2cVgwResponse::getHeaderResponseToken,
+                CreateP2cVgwResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteP2cVgwRequest, DeleteP2cVgwResponse> deleteP2cVgw = genForDeleteP2cVgw();
+
+    private static HttpRequestDef<DeleteP2cVgwRequest, DeleteP2cVgwResponse> genForDeleteP2cVgw() {
+        // basic
+        HttpRequestDef.Builder<DeleteP2cVgwRequest, DeleteP2cVgwResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteP2cVgwRequest.class, DeleteP2cVgwResponse.class)
+                .withName("DeleteP2cVgw")
+                .withUri("/v5/{project_id}/p2c-vpn-gateways/{p2c_vgw_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("p2c_vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteP2cVgwRequest::getP2cVgwId, DeleteP2cVgwRequest::setP2cVgwId));
 
         // response
 

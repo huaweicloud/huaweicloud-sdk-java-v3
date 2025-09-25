@@ -39,7 +39,7 @@ public class ConfigurationAggregatorRequest {
     }
 
     /**
-     * 资源聚合器名称。
+     * 资源聚合器名称
      * @return aggregatorName
      */
     public String getAggregatorName() {

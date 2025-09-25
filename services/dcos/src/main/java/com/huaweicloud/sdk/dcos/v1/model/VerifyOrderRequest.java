@@ -27,7 +27,7 @@ public class VerifyOrderRequest {
     }
 
     /**
-     * 工单号
+     * 服务单号
      * @return number
      */
     public String getNumber() {

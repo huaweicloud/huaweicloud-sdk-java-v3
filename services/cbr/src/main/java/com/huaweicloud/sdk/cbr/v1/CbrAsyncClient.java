@@ -60,6 +60,8 @@ import com.huaweicloud.sdk.cbr.v1.model.ListDomainProjectsRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListDomainProjectsResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListExternalVaultRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListExternalVaultResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ListFeaturesRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListOpLogsRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListOpLogsResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPoliciesRequest;
@@ -96,6 +98,8 @@ import com.huaweicloud.sdk.cbr.v1.model.ShowCheckpointRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowCheckpointResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ShowFeatureRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ShowFeatureResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowMemberDetailRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowMemberDetailResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowMembersDetailRequest;
@@ -1050,6 +1054,37 @@ public class CbrAsyncClient {
     }
 
     /**
+     * 查询服务支持的特性列表
+     *
+     * 查询服务支持的特性列表
+     * &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFeaturesRequest 请求对象
+     * @return CompletableFuture<ListFeaturesResponse>
+     */
+    public CompletableFuture<ListFeaturesResponse> listFeaturesAsync(ListFeaturesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.listFeatures);
+    }
+
+    /**
+     * 查询服务支持的特性列表
+     *
+     * 查询服务支持的特性列表
+     * &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFeaturesRequest 请求对象
+     * @return AsyncInvoker<ListFeaturesRequest, ListFeaturesResponse>
+     */
+    public AsyncInvoker<ListFeaturesRequest, ListFeaturesResponse> listFeaturesAsyncInvoker(
+        ListFeaturesRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.listFeatures, hcClient);
+    }
+
+    /**
      * 查询任务列表
      *
      * 查询任务列表
@@ -1567,6 +1602,36 @@ public class CbrAsyncClient {
      */
     public AsyncInvoker<ShowDomainRequest, ShowDomainResponse> showDomainAsyncInvoker(ShowDomainRequest request) {
         return new AsyncInvoker<>(request, CbrMeta.showDomain, hcClient);
+    }
+
+    /**
+     * 查询指定特性
+     *
+     * 查询服务指定特性
+     * &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFeatureRequest 请求对象
+     * @return CompletableFuture<ShowFeatureResponse>
+     */
+    public CompletableFuture<ShowFeatureResponse> showFeatureAsync(ShowFeatureRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.showFeature);
+    }
+
+    /**
+     * 查询指定特性
+     *
+     * 查询服务指定特性
+     * &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFeatureRequest 请求对象
+     * @return AsyncInvoker<ShowFeatureRequest, ShowFeatureResponse>
+     */
+    public AsyncInvoker<ShowFeatureRequest, ShowFeatureResponse> showFeatureAsyncInvoker(ShowFeatureRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.showFeature, hcClient);
     }
 
     /**

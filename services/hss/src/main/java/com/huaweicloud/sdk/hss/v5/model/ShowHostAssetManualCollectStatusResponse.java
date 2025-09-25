@@ -27,7 +27,7 @@ public class ShowHostAssetManualCollectStatusResponse extends SdkResponse {
     }
 
     /**
-     * 手动检测状态
+     * **参数解释**： 手动检测状态 **取值范围**： - neverscan：从未扫描过 - scanning：扫描中 - scanned：扫描完成 - failed：扫描失败 - longscanning：扫描超时
      * @return scanStatus
      */
     public String getScanStatus() {
@@ -44,7 +44,7 @@ public class ShowHostAssetManualCollectStatusResponse extends SdkResponse {
     }
 
     /**
-     * 检测完成时间
+     * **参数解释**： 检测完成时间 **取值范围**： 最小值0，最大值2^63-1
      * @return scannedTime
      */
     public Long getScannedTime() {

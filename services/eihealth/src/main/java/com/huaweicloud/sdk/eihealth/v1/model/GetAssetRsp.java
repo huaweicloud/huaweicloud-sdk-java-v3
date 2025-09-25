@@ -24,6 +24,11 @@ public class GetAssetRsp {
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -105,6 +110,23 @@ public class GetAssetRsp {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public GetAssetRsp withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 领域。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
     public GetAssetRsp withName(String name) {
@@ -319,17 +341,19 @@ public class GetAssetRsp {
         }
         GetAssetRsp that = (GetAssetRsp) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.category, that.category)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.title, that.title)
-            && Objects.equals(this.labels, that.labels) && Objects.equals(this.picture, that.picture)
-            && Objects.equals(this.vendorId, that.vendorId) && Objects.equals(this.versions, that.versions)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.stars, that.stars) && Objects.equals(this.subscribes, that.subscribes);
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.picture, that.picture) && Objects.equals(this.vendorId, that.vendorId)
+            && Objects.equals(this.versions, that.versions) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.stars, that.stars)
+            && Objects.equals(this.subscribes, that.subscribes);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
             category,
+            domain,
             name,
             title,
             labels,
@@ -348,6 +372,7 @@ public class GetAssetRsp {
         sb.append("class GetAssetRsp {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");

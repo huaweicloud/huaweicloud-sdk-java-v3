@@ -15,46 +15,46 @@ import java.util.function.Consumer;
 public class ListHbaInfoHistoryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "hba_confs")
+    @JsonProperty(value = "hba_histories")
 
-    private List<HbaHistoryResult> hbaConfs = null;
+    private List<HbaHistoryResult> hbaHistories = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Long totalCount;
 
-    public ListHbaInfoHistoryResponse withHbaConfs(List<HbaHistoryResult> hbaConfs) {
-        this.hbaConfs = hbaConfs;
+    public ListHbaInfoHistoryResponse withHbaHistories(List<HbaHistoryResult> hbaHistories) {
+        this.hbaHistories = hbaHistories;
         return this;
     }
 
-    public ListHbaInfoHistoryResponse addHbaConfsItem(HbaHistoryResult hbaConfsItem) {
-        if (this.hbaConfs == null) {
-            this.hbaConfs = new ArrayList<>();
+    public ListHbaInfoHistoryResponse addHbaHistoriesItem(HbaHistoryResult hbaHistoriesItem) {
+        if (this.hbaHistories == null) {
+            this.hbaHistories = new ArrayList<>();
         }
-        this.hbaConfs.add(hbaConfsItem);
+        this.hbaHistories.add(hbaHistoriesItem);
         return this;
     }
 
-    public ListHbaInfoHistoryResponse withHbaConfs(Consumer<List<HbaHistoryResult>> hbaConfsSetter) {
-        if (this.hbaConfs == null) {
-            this.hbaConfs = new ArrayList<>();
+    public ListHbaInfoHistoryResponse withHbaHistories(Consumer<List<HbaHistoryResult>> hbaHistoriesSetter) {
+        if (this.hbaHistories == null) {
+            this.hbaHistories = new ArrayList<>();
         }
-        hbaConfsSetter.accept(this.hbaConfs);
+        hbaHistoriesSetter.accept(this.hbaHistories);
         return this;
     }
 
     /**
      * **参数解释**: hba修改历史信息。
-     * @return hbaConfs
+     * @return hbaHistories
      */
-    public List<HbaHistoryResult> getHbaConfs() {
-        return hbaConfs;
+    public List<HbaHistoryResult> getHbaHistories() {
+        return hbaHistories;
     }
 
-    public void setHbaConfs(List<HbaHistoryResult> hbaConfs) {
-        this.hbaConfs = hbaConfs;
+    public void setHbaHistories(List<HbaHistoryResult> hbaHistories) {
+        this.hbaHistories = hbaHistories;
     }
 
     public ListHbaInfoHistoryResponse withTotalCount(Long totalCount) {
@@ -83,19 +83,19 @@ public class ListHbaInfoHistoryResponse extends SdkResponse {
             return false;
         }
         ListHbaInfoHistoryResponse that = (ListHbaInfoHistoryResponse) obj;
-        return Objects.equals(this.hbaConfs, that.hbaConfs) && Objects.equals(this.totalCount, that.totalCount);
+        return Objects.equals(this.hbaHistories, that.hbaHistories) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hbaConfs, totalCount);
+        return Objects.hash(hbaHistories, totalCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHbaInfoHistoryResponse {\n");
-        sb.append("    hbaConfs: ").append(toIndentedString(hbaConfs)).append("\n");
+        sb.append("    hbaHistories: ").append(toIndentedString(hbaHistories)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();

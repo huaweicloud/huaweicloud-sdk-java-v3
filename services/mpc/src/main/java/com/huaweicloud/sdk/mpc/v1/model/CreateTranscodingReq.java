@@ -98,6 +98,11 @@ public class CreateTranscodingReq {
 
     private AudioProcess audioProcess;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private List<FileMetaData> metadata = null;
+
     public CreateTranscodingReq withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -559,6 +564,39 @@ public class CreateTranscodingReq {
         this.audioProcess = audioProcess;
     }
 
+    public CreateTranscodingReq withMetadata(List<FileMetaData> metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public CreateTranscodingReq addMetadataItem(FileMetaData metadataItem) {
+        if (this.metadata == null) {
+            this.metadata = new ArrayList<>();
+        }
+        this.metadata.add(metadataItem);
+        return this;
+    }
+
+    public CreateTranscodingReq withMetadata(Consumer<List<FileMetaData>> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new ArrayList<>();
+        }
+        metadataSetter.accept(this.metadata);
+        return this;
+    }
+
+    /**
+     * metadata设置，默认只支持AIGC 
+     * @return metadata
+     */
+    public List<FileMetaData> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(List<FileMetaData> metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -578,7 +616,7 @@ public class CreateTranscodingReq {
             && Objects.equals(this.subtitle, that.subtitle) && Objects.equals(this.encryption, that.encryption)
             && Objects.equals(this.crop, that.crop) && Objects.equals(this.audioTrack, that.audioTrack)
             && Objects.equals(this.multiAudio, that.multiAudio) && Objects.equals(this.videoProcess, that.videoProcess)
-            && Objects.equals(this.audioProcess, that.audioProcess);
+            && Objects.equals(this.audioProcess, that.audioProcess) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override
@@ -599,7 +637,8 @@ public class CreateTranscodingReq {
             audioTrack,
             multiAudio,
             videoProcess,
-            audioProcess);
+            audioProcess,
+            metadata);
     }
 
     @Override
@@ -623,6 +662,7 @@ public class CreateTranscodingReq {
         sb.append("    multiAudio: ").append(toIndentedString(multiAudio)).append("\n");
         sb.append("    videoProcess: ").append(toIndentedString(videoProcess)).append("\n");
         sb.append("    audioProcess: ").append(toIndentedString(audioProcess)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

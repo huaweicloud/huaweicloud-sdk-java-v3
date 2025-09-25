@@ -26,7 +26,7 @@ public class ShowLimitTaskNodeOption {
     }
 
     /**
-     * 节点id。
+     * **参数解释**: 节点ID。 **取值范围**: 不涉及。
      * @return nodeId
      */
     public String getNodeId() {
@@ -43,7 +43,7 @@ public class ShowLimitTaskNodeOption {
     }
 
     /**
-     * 该节点执行的sql语句id。
+     * **参数解释**: 该节点执行的sql语句ID。 **取值范围**: 不涉及。
      * @return sqlId
      */
     public String getSqlId() {

@@ -32,56 +32,6 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class DcosMeta {
 
-    public static final HttpRequestDef<ShowPageAssetListResultRequest, ShowPageAssetListResultResponse> showPageAssetListResult =
-        genForShowPageAssetListResult();
-
-    private static HttpRequestDef<ShowPageAssetListResultRequest, ShowPageAssetListResultResponse> genForShowPageAssetListResult() {
-        // basic
-        HttpRequestDef.Builder<ShowPageAssetListResultRequest, ShowPageAssetListResultResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ShowPageAssetListResultRequest.class, ShowPageAssetListResultResponse.class)
-            .withName("ShowPageAssetListResult")
-            .withUri("/v1/assets")
-            .withContentType("application/json");
-
-        // requests
-        builder.<AssetListRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssetListRequestBody.class),
-            f -> f.withMarshaller(ShowPageAssetListResultRequest::getBody, ShowPageAssetListResultRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UploadFileRequest, UploadFileResponse> uploadFile = genForUploadFile();
-
-    private static HttpRequestDef<UploadFileRequest, UploadFileResponse> genForUploadFile() {
-        // basic
-        HttpRequestDef.Builder<UploadFileRequest, UploadFileResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UploadFileRequest.class, UploadFileResponse.class)
-                .withName("UploadFile")
-                .withUri("/v1/files/upload-file")
-                .withContentType("multipart/form-data");
-
-        // requests
-        builder.<UploadFileRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UploadFileRequestBody.class),
-            f -> f.withMarshaller(UploadFileRequest::getBody, UploadFileRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UploadFileResponse::getXRequestId, UploadFileResponse::setXRequestId));
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListOrderRequest, ListOrderResponse> listOrder = genForListOrder();
 
     private static HttpRequestDef<ListOrderRequest, ListOrderResponse> genForListOrder() {
@@ -248,6 +198,56 @@ public class DcosMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPageAssetListResultRequest, ShowPageAssetListResultResponse> showPageAssetListResult =
+        genForShowPageAssetListResult();
+
+    private static HttpRequestDef<ShowPageAssetListResultRequest, ShowPageAssetListResultResponse> genForShowPageAssetListResult() {
+        // basic
+        HttpRequestDef.Builder<ShowPageAssetListResultRequest, ShowPageAssetListResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowPageAssetListResultRequest.class, ShowPageAssetListResultResponse.class)
+            .withName("ShowPageAssetListResult")
+            .withUri("/v1/assets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<AssetListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssetListRequestBody.class),
+            f -> f.withMarshaller(ShowPageAssetListResultRequest::getBody, ShowPageAssetListResultRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadFileRequest, UploadFileResponse> uploadFile = genForUploadFile();
+
+    private static HttpRequestDef<UploadFileRequest, UploadFileResponse> genForUploadFile() {
+        // basic
+        HttpRequestDef.Builder<UploadFileRequest, UploadFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadFileRequest.class, UploadFileResponse.class)
+                .withName("UploadFile")
+                .withUri("/v1/files/upload-file")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<UploadFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadFileRequestBody.class),
+            f -> f.withMarshaller(UploadFileRequest::getBody, UploadFileRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UploadFileResponse::getXRequestId, UploadFileResponse::setXRequestId));
         return builder.build();
     }
 

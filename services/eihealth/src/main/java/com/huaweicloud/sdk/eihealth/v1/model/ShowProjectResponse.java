@@ -94,6 +94,11 @@ public class ShowProjectResponse extends SdkResponse {
 
     private Long storageQuota;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_tenant")
+
+    private String storageTenant;
+
     public ShowProjectResponse withId(String id) {
         this.id = id;
         return this;
@@ -398,6 +403,23 @@ public class ShowProjectResponse extends SdkResponse {
         this.storageQuota = storageQuota;
     }
 
+    public ShowProjectResponse withStorageTenant(String storageTenant) {
+        this.storageTenant = storageTenant;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 空间桶来源租户。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return storageTenant
+     */
+    public String getStorageTenant() {
+        return storageTenant;
+    }
+
+    public void setStorageTenant(String storageTenant) {
+        this.storageTenant = storageTenant;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -415,7 +437,8 @@ public class ShowProjectResponse extends SdkResponse {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.isCore, that.isCore)
-            && Objects.equals(this.storageQuota, that.storageQuota);
+            && Objects.equals(this.storageQuota, that.storageQuota)
+            && Objects.equals(this.storageTenant, that.storageTenant);
     }
 
     @Override
@@ -435,7 +458,8 @@ public class ShowProjectResponse extends SdkResponse {
             updateTime,
             deleteTime,
             isCore,
-            storageQuota);
+            storageQuota,
+            storageTenant);
     }
 
     @Override
@@ -458,6 +482,7 @@ public class ShowProjectResponse extends SdkResponse {
         sb.append("    deleteTime: ").append(toIndentedString(deleteTime)).append("\n");
         sb.append("    isCore: ").append(toIndentedString(isCore)).append("\n");
         sb.append("    storageQuota: ").append(toIndentedString(storageQuota)).append("\n");
+        sb.append("    storageTenant: ").append(toIndentedString(storageTenant)).append("\n");
         sb.append("}");
         return sb.toString();
     }

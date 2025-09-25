@@ -24,6 +24,11 @@ public class ListImagesResponse extends SdkResponse {
 
     private List<GetTargetImageIdDetail> imageInfoList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "totalSize")
+
+    private Integer totalSize;
+
     public ListImagesResponse withNeedUploadUpgradePlugin(Boolean needUploadUpgradePlugin) {
         this.needUploadUpgradePlugin = needUploadUpgradePlugin;
         return this;
@@ -74,6 +79,23 @@ public class ListImagesResponse extends SdkResponse {
         this.imageInfoList = imageInfoList;
     }
 
+    public ListImagesResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * 目标镜像数量。
+     * @return totalSize
+     */
+    public Integer getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -84,12 +106,12 @@ public class ListImagesResponse extends SdkResponse {
         }
         ListImagesResponse that = (ListImagesResponse) obj;
         return Objects.equals(this.needUploadUpgradePlugin, that.needUploadUpgradePlugin)
-            && Objects.equals(this.imageInfoList, that.imageInfoList);
+            && Objects.equals(this.imageInfoList, that.imageInfoList) && Objects.equals(this.totalSize, that.totalSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(needUploadUpgradePlugin, imageInfoList);
+        return Objects.hash(needUploadUpgradePlugin, imageInfoList, totalSize);
     }
 
     @Override
@@ -98,6 +120,7 @@ public class ListImagesResponse extends SdkResponse {
         sb.append("class ListImagesResponse {\n");
         sb.append("    needUploadUpgradePlugin: ").append(toIndentedString(needUploadUpgradePlugin)).append("\n");
         sb.append("    imageInfoList: ").append(toIndentedString(imageInfoList)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

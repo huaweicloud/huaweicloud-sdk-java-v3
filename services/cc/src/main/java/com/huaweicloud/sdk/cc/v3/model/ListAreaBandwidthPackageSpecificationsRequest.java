@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class ListAreaBandwidthPackageSpecificationsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -27,6 +32,25 @@ public class ListAreaBandwidthPackageSpecificationsRequest {
     @JsonProperty(value = "remote_area_id")
 
     private List<String> remoteAreaId = null;
+
+    public ListAreaBandwidthPackageSpecificationsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的个数。 取值范围：1~2000。
+     * minimum: 1
+     * maximum: 2000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
 
     public ListAreaBandwidthPackageSpecificationsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -122,19 +146,21 @@ public class ListAreaBandwidthPackageSpecificationsRequest {
             return false;
         }
         ListAreaBandwidthPackageSpecificationsRequest that = (ListAreaBandwidthPackageSpecificationsRequest) obj;
-        return Objects.equals(this.offset, that.offset) && Objects.equals(this.localAreaId, that.localAreaId)
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.localAreaId, that.localAreaId)
             && Objects.equals(this.remoteAreaId, that.remoteAreaId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, localAreaId, remoteAreaId);
+        return Objects.hash(limit, offset, localAreaId, remoteAreaId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAreaBandwidthPackageSpecificationsRequest {\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    localAreaId: ").append(toIndentedString(localAreaId)).append("\n");
         sb.append("    remoteAreaId: ").append(toIndentedString(remoteAreaId)).append("\n");

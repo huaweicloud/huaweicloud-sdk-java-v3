@@ -5,6 +5,10 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.css.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.css.v2.model.CreateClusterResponse;
+import com.huaweicloud.sdk.css.v2.model.DeleteLogstashConfRequest;
+import com.huaweicloud.sdk.css.v2.model.DeleteLogstashConfResponse;
+import com.huaweicloud.sdk.css.v2.model.DeleteLogstashTemplateRequest;
+import com.huaweicloud.sdk.css.v2.model.DeleteLogstashTemplateResponse;
 import com.huaweicloud.sdk.css.v2.model.RestartClusterRequest;
 import com.huaweicloud.sdk.css.v2.model.RestartClusterResponse;
 import com.huaweicloud.sdk.css.v2.model.RollingRestartRequest;
@@ -178,6 +182,65 @@ public class CssAsyncClient {
     public AsyncInvoker<StopAutoCreateSnapshotsRequest, StopAutoCreateSnapshotsResponse> stopAutoCreateSnapshotsAsyncInvoker(
         StopAutoCreateSnapshotsRequest request) {
         return new AsyncInvoker<>(request, CssMeta.stopAutoCreateSnapshots, hcClient);
+    }
+
+    /**
+     * 删除配置文件
+     *
+     * 删除配置文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLogstashConfRequest 请求对象
+     * @return CompletableFuture<DeleteLogstashConfResponse>
+     */
+    public CompletableFuture<DeleteLogstashConfResponse> deleteLogstashConfAsync(DeleteLogstashConfRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.deleteLogstashConf);
+    }
+
+    /**
+     * 删除配置文件
+     *
+     * 删除配置文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLogstashConfRequest 请求对象
+     * @return AsyncInvoker<DeleteLogstashConfRequest, DeleteLogstashConfResponse>
+     */
+    public AsyncInvoker<DeleteLogstashConfRequest, DeleteLogstashConfResponse> deleteLogstashConfAsyncInvoker(
+        DeleteLogstashConfRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.deleteLogstashConf, hcClient);
+    }
+
+    /**
+     * Delete Custom Template
+     *
+     * This interface is used to delete custom templates.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLogstashTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteLogstashTemplateResponse>
+     */
+    public CompletableFuture<DeleteLogstashTemplateResponse> deleteLogstashTemplateAsync(
+        DeleteLogstashTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.deleteLogstashTemplate);
+    }
+
+    /**
+     * Delete Custom Template
+     *
+     * This interface is used to delete custom templates.
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLogstashTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteLogstashTemplateRequest, DeleteLogstashTemplateResponse>
+     */
+    public AsyncInvoker<DeleteLogstashTemplateRequest, DeleteLogstashTemplateResponse> deleteLogstashTemplateAsyncInvoker(
+        DeleteLogstashTemplateRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.deleteLogstashTemplate, hcClient);
     }
 
 }

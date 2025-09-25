@@ -39,9 +39,9 @@ public class TrafficDetectionConditionDTO {
     private List<String> matchContents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value_list_ref")
+    @JsonProperty(value = "value_list_res")
 
-    private String valueListRef;
+    private String valueListRes;
 
     public TrafficDetectionConditionDTO withId(String id) {
         this.id = id;
@@ -144,21 +144,21 @@ public class TrafficDetectionConditionDTO {
         this.matchContents = matchContents;
     }
 
-    public TrafficDetectionConditionDTO withValueListRef(String valueListRef) {
-        this.valueListRef = valueListRef;
+    public TrafficDetectionConditionDTO withValueListRes(String valueListRes) {
+        this.valueListRes = valueListRes;
         return this;
     }
 
     /**
      * **参数解释：** 引用表Id，关联预设的匹配内容列表ID（如无则不填）。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
-     * @return valueListRef
+     * @return valueListRes
      */
-    public String getValueListRef() {
-        return valueListRef;
+    public String getValueListRes() {
+        return valueListRes;
     }
 
-    public void setValueListRef(String valueListRef) {
-        this.valueListRef = valueListRef;
+    public void setValueListRes(String valueListRes) {
+        this.valueListRes = valueListRes;
     }
 
     @Override
@@ -174,12 +174,12 @@ public class TrafficDetectionConditionDTO {
             && Objects.equals(this.matchFieldIndex, that.matchFieldIndex)
             && Objects.equals(this.logicalOperator, that.logicalOperator)
             && Objects.equals(this.matchContents, that.matchContents)
-            && Objects.equals(this.valueListRef, that.valueListRef);
+            && Objects.equals(this.valueListRes, that.valueListRes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, matchField, matchFieldIndex, logicalOperator, matchContents, valueListRef);
+        return Objects.hash(id, matchField, matchFieldIndex, logicalOperator, matchContents, valueListRes);
     }
 
     @Override
@@ -191,7 +191,7 @@ public class TrafficDetectionConditionDTO {
         sb.append("    matchFieldIndex: ").append(toIndentedString(matchFieldIndex)).append("\n");
         sb.append("    logicalOperator: ").append(toIndentedString(logicalOperator)).append("\n");
         sb.append("    matchContents: ").append(toIndentedString(matchContents)).append("\n");
-        sb.append("    valueListRef: ").append(toIndentedString(valueListRef)).append("\n");
+        sb.append("    valueListRes: ").append(toIndentedString(valueListRes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

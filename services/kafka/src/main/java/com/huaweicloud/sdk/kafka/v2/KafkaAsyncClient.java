@@ -61,8 +61,6 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaTopicQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaTopicQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.EnableDnsRequest;
-import com.huaweicloud.sdk.kafka.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
@@ -985,34 +983,6 @@ public class KafkaAsyncClient {
     public AsyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTaskAsyncInvoker(
         DeleteKafkaUserClientQuotaTaskRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.deleteKafkaUserClientQuotaTask, hcClient);
-    }
-
-    /**
-     * 开启Kafka实例域名访问能力
-     *
-     * 开启Kafka实例域名访问后，客户端可以通过域名连接Kafka实例。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request EnableDnsRequest 请求对象
-     * @return CompletableFuture<EnableDnsResponse>
-     */
-    public CompletableFuture<EnableDnsResponse> enableDnsAsync(EnableDnsRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.enableDns);
-    }
-
-    /**
-     * 开启Kafka实例域名访问能力
-     *
-     * 开启Kafka实例域名访问后，客户端可以通过域名连接Kafka实例。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request EnableDnsRequest 请求对象
-     * @return AsyncInvoker<EnableDnsRequest, EnableDnsResponse>
-     */
-    public AsyncInvoker<EnableDnsRequest, EnableDnsResponse> enableDnsAsyncInvoker(EnableDnsRequest request) {
-        return new AsyncInvoker<>(request, KafkaMeta.enableDns, hcClient);
     }
 
     /**

@@ -175,7 +175,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 自定义查询时间，与查询时间范围天数互斥，查询时间段的起始时间，毫秒级时间戳，end_time减去begin_time小于等于2天，与查询时间范围天数互斥
+     * 自定义查询时间，开始时间
      * @return beginTime
      */
     public String getBeginTime() {
@@ -192,7 +192,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 自定义时间，查询时间段的终止时间，毫秒级时间戳，end_time减去begin_time小于等于2天，与查询时间范围天数互斥
+     * 自定义查询时间，结束时间
      * @return endTime
      */
     public String getEndTime() {

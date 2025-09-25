@@ -1924,6 +1924,12 @@ public class ObsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetBucketCustomedomainRequest::getCustomdomain,
                 SetBucketCustomedomainRequest::setCustomdomain));
+        builder.<String>withRequestField("Content-MD5",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketCustomedomainRequest::getContentMD5,
+                SetBucketCustomedomainRequest::setContentMD5));
         builder.<String>withRequestField("Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

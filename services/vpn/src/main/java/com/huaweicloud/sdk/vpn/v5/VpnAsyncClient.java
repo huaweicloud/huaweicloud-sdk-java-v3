@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.vpn.v5.model.CreateCgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateCgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateConnectionMonitorResponse;
+import com.huaweicloud.sdk.vpn.v5.model.CreateP2cVgwRequest;
+import com.huaweicloud.sdk.vpn.v5.model.CreateP2cVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVgwCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVgwCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CreateVgwRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnAccessPolicyRequest;
@@ -577,6 +581,64 @@ public class VpnAsyncClient {
      */
     public AsyncInvoker<UpdateCgwRequest, UpdateCgwResponse> updateCgwAsyncInvoker(UpdateCgwRequest request) {
         return new AsyncInvoker<>(request, VpnMeta.updateCgw, hcClient);
+    }
+
+    /**
+     * 创建P2C VPN网关
+     *
+     * 创建终端入云VPN网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateP2cVgwRequest 请求对象
+     * @return CompletableFuture<CreateP2cVgwResponse>
+     */
+    public CompletableFuture<CreateP2cVgwResponse> createP2cVgwAsync(CreateP2cVgwRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.createP2cVgw);
+    }
+
+    /**
+     * 创建P2C VPN网关
+     *
+     * 创建终端入云VPN网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateP2cVgwRequest 请求对象
+     * @return AsyncInvoker<CreateP2cVgwRequest, CreateP2cVgwResponse>
+     */
+    public AsyncInvoker<CreateP2cVgwRequest, CreateP2cVgwResponse> createP2cVgwAsyncInvoker(
+        CreateP2cVgwRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.createP2cVgw, hcClient);
+    }
+
+    /**
+     * 删除P2C VPN网关
+     *
+     * 根据P2C VPN网关ID，删除指定的VPN网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteP2cVgwRequest 请求对象
+     * @return CompletableFuture<DeleteP2cVgwResponse>
+     */
+    public CompletableFuture<DeleteP2cVgwResponse> deleteP2cVgwAsync(DeleteP2cVgwRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.deleteP2cVgw);
+    }
+
+    /**
+     * 删除P2C VPN网关
+     *
+     * 根据P2C VPN网关ID，删除指定的VPN网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteP2cVgwRequest 请求对象
+     * @return AsyncInvoker<DeleteP2cVgwRequest, DeleteP2cVgwResponse>
+     */
+    public AsyncInvoker<DeleteP2cVgwRequest, DeleteP2cVgwResponse> deleteP2cVgwAsyncInvoker(
+        DeleteP2cVgwRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.deleteP2cVgw, hcClient);
     }
 
     /**

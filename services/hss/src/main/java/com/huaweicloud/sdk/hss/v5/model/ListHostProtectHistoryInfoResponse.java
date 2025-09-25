@@ -15,75 +15,31 @@ import java.util.function.Consumer;
 public class ListHostProtectHistoryInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_name")
-
-    private String hostName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "protect_status")
-
-    private String protectStatus;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
 
-    private Long totalNum;
+    private Integer totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_list")
 
     private List<HostProtectHistoryResponseInfo> dataList = null;
 
-    public ListHostProtectHistoryInfoResponse withHostName(String hostName) {
-        this.hostName = hostName;
-        return this;
-    }
-
-    /**
-     * 服务器名称
-     * @return hostName
-     */
-    public String getHostName() {
-        return hostName;
-    }
-
-    public void setHostName(String hostName) {
-        this.hostName = hostName;
-    }
-
-    public ListHostProtectHistoryInfoResponse withProtectStatus(String protectStatus) {
-        this.protectStatus = protectStatus;
-        return this;
-    }
-
-    /**
-     * 防护状态   - close : 未开启   - opened : 防护中
-     * @return protectStatus
-     */
-    public String getProtectStatus() {
-        return protectStatus;
-    }
-
-    public void setProtectStatus(String protectStatus) {
-        this.protectStatus = protectStatus;
-    }
-
-    public ListHostProtectHistoryInfoResponse withTotalNum(Long totalNum) {
+    public ListHostProtectHistoryInfoResponse withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
     }
 
     /**
-     * total number of static WTPs
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
-     * maximum: 20000000
+     * maximum: 2147483647
      * @return totalNum
      */
-    public Long getTotalNum() {
+    public Integer getTotalNum() {
         return totalNum;
     }
 
-    public void setTotalNum(Long totalNum) {
+    public void setTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
     }
 
@@ -110,7 +66,7 @@ public class ListHostProtectHistoryInfoResponse extends SdkResponse {
     }
 
     /**
-     * data list
+     * **参数解释**: 静态网页防篡改防护事件列表 **取值范围**: 最小值0，最大值200 
      * @return dataList
      */
     public List<HostProtectHistoryResponseInfo> getDataList() {
@@ -130,21 +86,18 @@ public class ListHostProtectHistoryInfoResponse extends SdkResponse {
             return false;
         }
         ListHostProtectHistoryInfoResponse that = (ListHostProtectHistoryInfoResponse) obj;
-        return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.protectStatus, that.protectStatus)
-            && Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostName, protectStatus, totalNum, dataList);
+        return Objects.hash(totalNum, dataList);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHostProtectHistoryInfoResponse {\n");
-        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
-        sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("    dataList: ").append(toIndentedString(dataList)).append("\n");
         sb.append("}");

@@ -131,7 +131,7 @@ public class AgentPolicyInfo {
     }
 
     /**
-     * 策略应用状态:not_applied-未应用、protection_degradation_not_applied-防护降级未应用、processing-应用中、applied-已应用
+     * **参数解释**: 策略应用状态 **约束限制**: 不涉及 **取值范围**: Agent的状态分为两类： - not_applied：未应用 - protection_degradation_not_applied：防护降级未应用 - processing：应用中 - applied：已应用 **默认取值**: 不涉及
      * @return policyStatus
      */
     public String getPolicyStatus() {

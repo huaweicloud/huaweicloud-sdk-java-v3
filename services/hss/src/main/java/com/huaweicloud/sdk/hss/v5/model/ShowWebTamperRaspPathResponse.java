@@ -22,7 +22,7 @@ public class ShowWebTamperRaspPathResponse extends SdkResponse {
     }
 
     /**
-     * rasp path
+     * **参数解释**: 动态网页防篡改的Tomcat bin目录 **取值范围**: 字符长度0-512位 
      * @return raspPath
      */
     public String getRaspPath() {

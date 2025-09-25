@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 文件属主
+ * 文件属性
  */
 public class FileOwner {
 

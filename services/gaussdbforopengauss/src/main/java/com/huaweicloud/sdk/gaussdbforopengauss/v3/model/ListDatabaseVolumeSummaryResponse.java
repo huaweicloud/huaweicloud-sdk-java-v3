@@ -37,12 +37,12 @@ public class ListDatabaseVolumeSummaryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cn_components")
 
-    private List<ComponentInfoResult> cnComponents = null;
+    private List<CnComponentInfoResult> cnComponents = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dn_components")
 
-    private List<ComponentInfoResult> dnComponents = null;
+    private List<DnComponentInfoResult> dnComponents = null;
 
     public ListDatabaseVolumeSummaryResponse withDataDiskCapacity(String dataDiskCapacity) {
         this.dataDiskCapacity = dataDiskCapacity;
@@ -112,12 +112,12 @@ public class ListDatabaseVolumeSummaryResponse extends SdkResponse {
         this.estimatedRemainingDays = estimatedRemainingDays;
     }
 
-    public ListDatabaseVolumeSummaryResponse withCnComponents(List<ComponentInfoResult> cnComponents) {
+    public ListDatabaseVolumeSummaryResponse withCnComponents(List<CnComponentInfoResult> cnComponents) {
         this.cnComponents = cnComponents;
         return this;
     }
 
-    public ListDatabaseVolumeSummaryResponse addCnComponentsItem(ComponentInfoResult cnComponentsItem) {
+    public ListDatabaseVolumeSummaryResponse addCnComponentsItem(CnComponentInfoResult cnComponentsItem) {
         if (this.cnComponents == null) {
             this.cnComponents = new ArrayList<>();
         }
@@ -125,7 +125,8 @@ public class ListDatabaseVolumeSummaryResponse extends SdkResponse {
         return this;
     }
 
-    public ListDatabaseVolumeSummaryResponse withCnComponents(Consumer<List<ComponentInfoResult>> cnComponentsSetter) {
+    public ListDatabaseVolumeSummaryResponse withCnComponents(
+        Consumer<List<CnComponentInfoResult>> cnComponentsSetter) {
         if (this.cnComponents == null) {
             this.cnComponents = new ArrayList<>();
         }
@@ -137,20 +138,20 @@ public class ListDatabaseVolumeSummaryResponse extends SdkResponse {
      * **参数解释**: CN节点信息。
      * @return cnComponents
      */
-    public List<ComponentInfoResult> getCnComponents() {
+    public List<CnComponentInfoResult> getCnComponents() {
         return cnComponents;
     }
 
-    public void setCnComponents(List<ComponentInfoResult> cnComponents) {
+    public void setCnComponents(List<CnComponentInfoResult> cnComponents) {
         this.cnComponents = cnComponents;
     }
 
-    public ListDatabaseVolumeSummaryResponse withDnComponents(List<ComponentInfoResult> dnComponents) {
+    public ListDatabaseVolumeSummaryResponse withDnComponents(List<DnComponentInfoResult> dnComponents) {
         this.dnComponents = dnComponents;
         return this;
     }
 
-    public ListDatabaseVolumeSummaryResponse addDnComponentsItem(ComponentInfoResult dnComponentsItem) {
+    public ListDatabaseVolumeSummaryResponse addDnComponentsItem(DnComponentInfoResult dnComponentsItem) {
         if (this.dnComponents == null) {
             this.dnComponents = new ArrayList<>();
         }
@@ -158,7 +159,8 @@ public class ListDatabaseVolumeSummaryResponse extends SdkResponse {
         return this;
     }
 
-    public ListDatabaseVolumeSummaryResponse withDnComponents(Consumer<List<ComponentInfoResult>> dnComponentsSetter) {
+    public ListDatabaseVolumeSummaryResponse withDnComponents(
+        Consumer<List<DnComponentInfoResult>> dnComponentsSetter) {
         if (this.dnComponents == null) {
             this.dnComponents = new ArrayList<>();
         }
@@ -170,11 +172,11 @@ public class ListDatabaseVolumeSummaryResponse extends SdkResponse {
      * **参数解释**: DN节点信息。
      * @return dnComponents
      */
-    public List<ComponentInfoResult> getDnComponents() {
+    public List<DnComponentInfoResult> getDnComponents() {
         return dnComponents;
     }
 
-    public void setDnComponents(List<ComponentInfoResult> dnComponents) {
+    public void setDnComponents(List<DnComponentInfoResult> dnComponents) {
         this.dnComponents = dnComponents;
     }
 

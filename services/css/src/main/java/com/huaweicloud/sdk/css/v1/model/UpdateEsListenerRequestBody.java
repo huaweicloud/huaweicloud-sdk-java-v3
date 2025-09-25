@@ -16,6 +16,11 @@ public class UpdateEsListenerRequestBody {
 
     private EsListenerRequest listener;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public UpdateEsListenerRequestBody withListener(EsListenerRequest listener) {
         this.listener = listener;
         return this;
@@ -42,6 +47,23 @@ public class UpdateEsListenerRequestBody {
         this.listener = listener;
     }
 
+    public UpdateEsListenerRequestBody withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 类型：searchTool 表示修改Elasticsearch/Opensearch负载均衡器，viewTool 表示修改Kibana/Opensearch Dashboard 负载均衡器，默认为searchTool 。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -51,12 +73,12 @@ public class UpdateEsListenerRequestBody {
             return false;
         }
         UpdateEsListenerRequestBody that = (UpdateEsListenerRequestBody) obj;
-        return Objects.equals(this.listener, that.listener);
+        return Objects.equals(this.listener, that.listener) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(listener);
+        return Objects.hash(listener, type);
     }
 
     @Override
@@ -64,6 +86,7 @@ public class UpdateEsListenerRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateEsListenerRequestBody {\n");
         sb.append("    listener: ").append(toIndentedString(listener)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

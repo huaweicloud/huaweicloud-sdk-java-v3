@@ -24,7 +24,7 @@ public class MetricDataResult {
     private String metric;
 
     /**
-     * **参数解释** 指标类型 *取值范围* - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 
+     * **参数解释** 指标类型 **取值范围** - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 
      */
     public static final class TypeEnum {
 
@@ -142,7 +142,7 @@ public class MetricDataResult {
     }
 
     /**
-     * **参数解释** 指标类型 *取值范围* - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 
+     * **参数解释** 指标类型 **取值范围** - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 
      * @return type
      */
     public TypeEnum getType() {
@@ -192,7 +192,7 @@ public class MetricDataResult {
     }
 
     /**
-     * **参数解释**: 指标维度及指标值。 **取值范围**: 不涉及。
+     * **参数解释**: 指标维度及指标值。
      * @return datapoints
      */
     public List<DatapointResult> getDatapoints() {
@@ -225,7 +225,7 @@ public class MetricDataResult {
     }
 
     /**
-     * **参数解释**: 时间戳，例如1699495140000。 **取值范围**: 不涉及。
+     * **参数解释**: 时间戳，例如1699495140000。
      * @return timestamps
      */
     public List<String> getTimestamps() {

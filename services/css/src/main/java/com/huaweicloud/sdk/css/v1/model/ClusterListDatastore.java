@@ -25,6 +25,16 @@ public class ClusterListDatastore {
 
     private Boolean supportSecuritymode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subVersion")
+
+    private String subVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isEosCluster")
+
+    private Boolean isEosCluster;
+
     public ClusterListDatastore withType(String type) {
         this.type = type;
         return this;
@@ -76,6 +86,40 @@ public class ClusterListDatastore {
         this.supportSecuritymode = supportSecuritymode;
     }
 
+    public ClusterListDatastore withSubVersion(String subVersion) {
+        this.subVersion = subVersion;
+        return this;
+    }
+
+    /**
+     * 集群发布版本号。
+     * @return subVersion
+     */
+    public String getSubVersion() {
+        return subVersion;
+    }
+
+    public void setSubVersion(String subVersion) {
+        this.subVersion = subVersion;
+    }
+
+    public ClusterListDatastore withIsEosCluster(Boolean isEosCluster) {
+        this.isEosCluster = isEosCluster;
+        return this;
+    }
+
+    /**
+     * 表示集群发布版本是否EOS。
+     * @return isEosCluster
+     */
+    public Boolean getIsEosCluster() {
+        return isEosCluster;
+    }
+
+    public void setIsEosCluster(Boolean isEosCluster) {
+        this.isEosCluster = isEosCluster;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +130,13 @@ public class ClusterListDatastore {
         }
         ClusterListDatastore that = (ClusterListDatastore) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.supportSecuritymode, that.supportSecuritymode);
+            && Objects.equals(this.supportSecuritymode, that.supportSecuritymode)
+            && Objects.equals(this.subVersion, that.subVersion) && Objects.equals(this.isEosCluster, that.isEosCluster);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, version, supportSecuritymode);
+        return Objects.hash(type, version, supportSecuritymode, subVersion, isEosCluster);
     }
 
     @Override
@@ -101,6 +146,8 @@ public class ClusterListDatastore {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    supportSecuritymode: ").append(toIndentedString(supportSecuritymode)).append("\n");
+        sb.append("    subVersion: ").append(toIndentedString(subVersion)).append("\n");
+        sb.append("    isEosCluster: ").append(toIndentedString(isEosCluster)).append("\n");
         sb.append("}");
         return sb.toString();
     }

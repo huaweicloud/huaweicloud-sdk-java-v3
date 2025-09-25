@@ -43,6 +43,11 @@ public class CreateProjectReq {
 
     private String bucketName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_tenant")
+
+    private String storageTenant;
+
     public CreateProjectReq withDescription(String description) {
         this.description = description;
         return this;
@@ -161,6 +166,23 @@ public class CreateProjectReq {
         this.bucketName = bucketName;
     }
 
+    public CreateProjectReq withStorageTenant(String storageTenant) {
+        this.storageTenant = storageTenant;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 空间桶来源租户，TERMINATE表示最终租户桶。 **约束限制**： 不涉及 **取值范围**： * TERMINATE： 最终租户桶。 * RESOURCE： 资源租户桶。 **默认取值**： TERMINATE 
+     * @return storageTenant
+     */
+    public String getStorageTenant() {
+        return storageTenant;
+    }
+
+    public void setStorageTenant(String storageTenant) {
+        this.storageTenant = storageTenant;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -172,12 +194,13 @@ public class CreateProjectReq {
         CreateProjectReq that = (CreateProjectReq) obj;
         return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.isCore, that.isCore)
-            && Objects.equals(this.isNewBucket, that.isNewBucket) && Objects.equals(this.bucketName, that.bucketName);
+            && Objects.equals(this.isNewBucket, that.isNewBucket) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.storageTenant, that.storageTenant);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, name, tags, isCore, isNewBucket, bucketName);
+        return Objects.hash(description, name, tags, isCore, isNewBucket, bucketName, storageTenant);
     }
 
     @Override
@@ -190,6 +213,7 @@ public class CreateProjectReq {
         sb.append("    isCore: ").append(toIndentedString(isCore)).append("\n");
         sb.append("    isNewBucket: ").append(toIndentedString(isNewBucket)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
+        sb.append("    storageTenant: ").append(toIndentedString(storageTenant)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -26,6 +26,9 @@ import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequest;
+import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequestBody;
+import com.huaweicloud.sdk.das.v3.model.CheckCredentialResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportReq;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
@@ -122,6 +125,9 @@ import com.huaweicloud.sdk.das.v3.model.QuerySqlPlanBody;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequestBody;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.SaveCredentialRequest;
+import com.huaweicloud.sdk.das.v3.model.SaveCredentialRequestBody;
+import com.huaweicloud.sdk.das.v3.model.SaveCredentialResponse;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
@@ -132,6 +138,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
@@ -161,6 +169,9 @@ import com.huaweicloud.sdk.das.v3.model.TransactionSwitchReq;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequestBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsRequestBody;
+import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesResponse;
@@ -566,6 +577,34 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(TransactionSwitchReq.class),
             f -> f.withMarshaller(ChangeTransactionSwitchStatusRequest::getBody,
                 ChangeTransactionSwitchStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckCredentialRequest, CheckCredentialResponse> checkCredential =
+        genForCheckCredential();
+
+    private static HttpRequestDef<CheckCredentialRequest, CheckCredentialResponse> genForCheckCredential() {
+        // basic
+        HttpRequestDef.Builder<CheckCredentialRequest, CheckCredentialResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckCredentialRequest.class, CheckCredentialResponse.class)
+                .withName("CheckCredential")
+                .withUri("/v3/{project_id}/instances/{instance_id}/health-report/check-credential")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckCredentialRequest::getInstanceId, CheckCredentialRequest::setInstanceId));
+        builder.<CheckCredentialRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckCredentialRequestBody.class),
+            f -> f.withMarshaller(CheckCredentialRequest::getBody, CheckCredentialRequest::setBody));
 
         // response
 
@@ -2037,6 +2076,16 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRiskItemsRequest::getDatastoreType, ListRiskItemsRequest::setDatastoreType));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRiskItemsRequest::getPage, ListRiskItemsRequest::setPage));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRiskItemsRequest::getLimit, ListRiskItemsRequest::setLimit));
         builder.<ListRiskItemsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2432,6 +2481,34 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SaveCredentialRequest, SaveCredentialResponse> saveCredential =
+        genForSaveCredential();
+
+    private static HttpRequestDef<SaveCredentialRequest, SaveCredentialResponse> genForSaveCredential() {
+        // basic
+        HttpRequestDef.Builder<SaveCredentialRequest, SaveCredentialResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SaveCredentialRequest.class, SaveCredentialResponse.class)
+                .withName("SaveCredential")
+                .withUri("/v3/{project_id}/instances/{instance_id}/health-report/save-credential")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveCredentialRequest::getInstanceId, SaveCredentialRequest::setInstanceId));
+        builder.<SaveCredentialRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveCredentialRequestBody.class),
+            f -> f.withMarshaller(SaveCredentialRequest::getBody, SaveCredentialRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetThresholdForMetricRequest, SetThresholdForMetricResponse> setThresholdForMetric =
         genForSetThresholdForMetric();
 
@@ -2567,6 +2644,31 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ShowFullDeadLockSwitchRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowFullDeadLockSwitchRequest::getXLanguage,
                 ShowFullDeadLockSwitchRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHealthReportSettingsRequest, ShowHealthReportSettingsResponse> showHealthReportSettings =
+        genForShowHealthReportSettings();
+
+    private static HttpRequestDef<ShowHealthReportSettingsRequest, ShowHealthReportSettingsResponse> genForShowHealthReportSettings() {
+        // basic
+        HttpRequestDef.Builder<ShowHealthReportSettingsRequest, ShowHealthReportSettingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowHealthReportSettingsRequest.class, ShowHealthReportSettingsResponse.class)
+                .withName("ShowHealthReportSettings")
+                .withUri("/v3/{project_id}/instances/{instance_id}/health-report/settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHealthReportSettingsRequest::getInstanceId,
+                ShowHealthReportSettingsRequest::setInstanceId));
 
         // response
 
@@ -3014,6 +3116,39 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDbUserRequestBody.class),
             f -> f.withMarshaller(UpdateDbUserRequest::getBody, UpdateDbUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHealthReportSettingsRequest, UpdateHealthReportSettingsResponse> updateHealthReportSettings =
+        genForUpdateHealthReportSettings();
+
+    private static HttpRequestDef<UpdateHealthReportSettingsRequest, UpdateHealthReportSettingsResponse> genForUpdateHealthReportSettings() {
+        // basic
+        HttpRequestDef.Builder<UpdateHealthReportSettingsRequest, UpdateHealthReportSettingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateHealthReportSettingsRequest.class,
+                    UpdateHealthReportSettingsResponse.class)
+                .withName("UpdateHealthReportSettings")
+                .withUri("/v3/{project_id}/instances/{instance_id}/health-report/settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHealthReportSettingsRequest::getInstanceId,
+                UpdateHealthReportSettingsRequest::setInstanceId));
+        builder.<UpdateHealthReportSettingsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateHealthReportSettingsRequestBody.class),
+            f -> f.withMarshaller(UpdateHealthReportSettingsRequest::getBody,
+                UpdateHealthReportSettingsRequest::setBody));
 
         // response
 

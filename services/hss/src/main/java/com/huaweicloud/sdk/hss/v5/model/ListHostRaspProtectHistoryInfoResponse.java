@@ -17,29 +17,29 @@ public class ListHostRaspProtectHistoryInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
 
-    private Long totalNum;
+    private Integer totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_list")
 
     private List<HostRaspProtectHistoryResponseInfo> dataList = null;
 
-    public ListHostRaspProtectHistoryInfoResponse withTotalNum(Long totalNum) {
+    public ListHostRaspProtectHistoryInfoResponse withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
     }
 
     /**
-     * total number of dynamic WTPs
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
-     * maximum: 200000
+     * maximum: 2147483647
      * @return totalNum
      */
-    public Long getTotalNum() {
+    public Integer getTotalNum() {
         return totalNum;
     }
 
-    public void setTotalNum(Long totalNum) {
+    public void setTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
     }
 
@@ -66,7 +66,7 @@ public class ListHostRaspProtectHistoryInfoResponse extends SdkResponse {
     }
 
     /**
-     * data list
+     * **参数解释**: 动态网页防篡改防护事件列表 **取值范围**: 最小值0，最大值200 
      * @return dataList
      */
     public List<HostRaspProtectHistoryResponseInfo> getDataList() {

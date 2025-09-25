@@ -98,6 +98,11 @@ public class CustomerOrderV2 {
 
     private List<SubCustomerOrderV2> subOrderInfos = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_pay_info")
+
+    private AgentPayInfoV2 agentPayInfo;
+
     public CustomerOrderV2 withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -428,6 +433,32 @@ public class CustomerOrderV2 {
         this.subOrderInfos = subOrderInfos;
     }
 
+    public CustomerOrderV2 withAgentPayInfo(AgentPayInfoV2 agentPayInfo) {
+        this.agentPayInfo = agentPayInfo;
+        return this;
+    }
+
+    public CustomerOrderV2 withAgentPayInfo(Consumer<AgentPayInfoV2> agentPayInfoSetter) {
+        if (this.agentPayInfo == null) {
+            this.agentPayInfo = new AgentPayInfoV2();
+            agentPayInfoSetter.accept(this.agentPayInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get agentPayInfo
+     * @return agentPayInfo
+     */
+    public AgentPayInfoV2 getAgentPayInfo() {
+        return agentPayInfo;
+    }
+
+    public void setAgentPayInfo(AgentPayInfoV2 agentPayInfo) {
+        this.agentPayInfo = agentPayInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -448,7 +479,8 @@ public class CustomerOrderV2 {
             && Objects.equals(this.paymentTime, that.paymentTime) && Objects.equals(this.currency, that.currency)
             && Objects.equals(this.contractId, that.contractId) && Objects.equals(this.amountInfo, that.amountInfo)
             && Objects.equals(this.enterpriseProjects, that.enterpriseProjects)
-            && Objects.equals(this.subOrderInfos, that.subOrderInfos);
+            && Objects.equals(this.subOrderInfos, that.subOrderInfos)
+            && Objects.equals(this.agentPayInfo, that.agentPayInfo);
     }
 
     @Override
@@ -469,7 +501,8 @@ public class CustomerOrderV2 {
             contractId,
             amountInfo,
             enterpriseProjects,
-            subOrderInfos);
+            subOrderInfos,
+            agentPayInfo);
     }
 
     @Override
@@ -493,6 +526,7 @@ public class CustomerOrderV2 {
         sb.append("    amountInfo: ").append(toIndentedString(amountInfo)).append("\n");
         sb.append("    enterpriseProjects: ").append(toIndentedString(enterpriseProjects)).append("\n");
         sb.append("    subOrderInfos: ").append(toIndentedString(subOrderInfos)).append("\n");
+        sb.append("    agentPayInfo: ").append(toIndentedString(agentPayInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

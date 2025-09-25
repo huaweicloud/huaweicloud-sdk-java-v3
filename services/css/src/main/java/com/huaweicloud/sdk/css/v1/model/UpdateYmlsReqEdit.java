@@ -16,6 +16,16 @@ public class UpdateYmlsReqEdit {
 
     private UpdateYmlsReqEditModify modify;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete")
+
+    private UpdateYmlsReqEditModify delete;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reset")
+
+    private UpdateYmlsReqEditModify reset;
+
     public UpdateYmlsReqEdit withModify(UpdateYmlsReqEditModify modify) {
         this.modify = modify;
         return this;
@@ -42,6 +52,58 @@ public class UpdateYmlsReqEdit {
         this.modify = modify;
     }
 
+    public UpdateYmlsReqEdit withDelete(UpdateYmlsReqEditModify delete) {
+        this.delete = delete;
+        return this;
+    }
+
+    public UpdateYmlsReqEdit withDelete(Consumer<UpdateYmlsReqEditModify> deleteSetter) {
+        if (this.delete == null) {
+            this.delete = new UpdateYmlsReqEditModify();
+            deleteSetter.accept(this.delete);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get delete
+     * @return delete
+     */
+    public UpdateYmlsReqEditModify getDelete() {
+        return delete;
+    }
+
+    public void setDelete(UpdateYmlsReqEditModify delete) {
+        this.delete = delete;
+    }
+
+    public UpdateYmlsReqEdit withReset(UpdateYmlsReqEditModify reset) {
+        this.reset = reset;
+        return this;
+    }
+
+    public UpdateYmlsReqEdit withReset(Consumer<UpdateYmlsReqEditModify> resetSetter) {
+        if (this.reset == null) {
+            this.reset = new UpdateYmlsReqEditModify();
+            resetSetter.accept(this.reset);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reset
+     * @return reset
+     */
+    public UpdateYmlsReqEditModify getReset() {
+        return reset;
+    }
+
+    public void setReset(UpdateYmlsReqEditModify reset) {
+        this.reset = reset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -51,12 +113,13 @@ public class UpdateYmlsReqEdit {
             return false;
         }
         UpdateYmlsReqEdit that = (UpdateYmlsReqEdit) obj;
-        return Objects.equals(this.modify, that.modify);
+        return Objects.equals(this.modify, that.modify) && Objects.equals(this.delete, that.delete)
+            && Objects.equals(this.reset, that.reset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(modify);
+        return Objects.hash(modify, delete, reset);
     }
 
     @Override
@@ -64,6 +127,8 @@ public class UpdateYmlsReqEdit {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateYmlsReqEdit {\n");
         sb.append("    modify: ").append(toIndentedString(modify)).append("\n");
+        sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
+        sb.append("    reset: ").append(toIndentedString(reset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

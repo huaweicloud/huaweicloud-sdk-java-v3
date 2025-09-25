@@ -25,6 +25,11 @@ public class UpdateEsElbRequestBody {
 
     private String elbId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public UpdateEsElbRequestBody withEnable(Boolean enable) {
         this.enable = enable;
         return this;
@@ -76,6 +81,23 @@ public class UpdateEsElbRequestBody {
         this.elbId = elbId;
     }
 
+    public UpdateEsElbRequestBody withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 负载均衡器类型。当用于可观测集群时：不需要配置此参数。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class UpdateEsElbRequestBody {
         }
         UpdateEsElbRequestBody that = (UpdateEsElbRequestBody) obj;
         return Objects.equals(this.enable, that.enable) && Objects.equals(this.agency, that.agency)
-            && Objects.equals(this.elbId, that.elbId);
+            && Objects.equals(this.elbId, that.elbId) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enable, agency, elbId);
+        return Objects.hash(enable, agency, elbId, type);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class UpdateEsElbRequestBody {
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    elbId: ").append(toIndentedString(elbId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

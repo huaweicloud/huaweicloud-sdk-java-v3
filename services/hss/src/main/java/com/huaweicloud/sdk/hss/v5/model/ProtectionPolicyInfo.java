@@ -352,7 +352,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * **参数解释**: 是否开启AI勒索防护，包含如下1种, 默认为开启AI勒索防护。   - opened ：开启。   - closed ：关闭。  **取值范围**: 字符长度1-128
+     * **参数解释**: 是否开启AI勒索防护，包含如下1种, 默认为开启AI勒索防护。   - opened ：开启。   - closed ：关闭。 **取值范围**: 字符长度1-128
      * @return aiProtectionStatus
      */
     public String getAiProtectionStatus() {

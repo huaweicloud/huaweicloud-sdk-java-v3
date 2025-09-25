@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释：** BotM防护策略中的某一个防护等级，定义该等级的分数阈值与防护动作。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+ * **参数解释：** BotM防护策略中的某一个防护等级，包含分数门限和对应防护动作 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
 public class BotMDefenseLevel {
 
@@ -26,7 +26,7 @@ public class BotMDefenseLevel {
     }
 
     /**
-     * **参数解释：** 该防护等级对应的分数门限，达到该分数则触发对应防护动作。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 该防护等级对应的分数门限，触发当前防护等级的风险分数阈值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return threshold
      */
     public Integer getThreshold() {
@@ -43,7 +43,7 @@ public class BotMDefenseLevel {
     }
 
     /**
-     * **参数解释：** 该防护等级对应的防护动作ID，标识触发后执行的动作（如101表示验证码）。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 该防护等级对应的防护动作ID，如101表示拦截、102表示放行等 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return defenseAction
      */
     public Integer getDefenseAction() {

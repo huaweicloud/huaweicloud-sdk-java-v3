@@ -66,7 +66,7 @@ public class Artifact {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_no")
 
-    private Integer buildNo;
+    private String buildNo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "daily_build_number")
@@ -264,7 +264,7 @@ public class Artifact {
         this.jobId = jobId;
     }
 
-    public Artifact withBuildNo(Integer buildNo) {
+    public Artifact withBuildNo(String buildNo) {
         this.buildNo = buildNo;
         return this;
     }
@@ -273,11 +273,11 @@ public class Artifact {
      * **参数解释**： 构建任务编号。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
      * @return buildNo
      */
-    public Integer getBuildNo() {
+    public String getBuildNo() {
         return buildNo;
     }
 
-    public void setBuildNo(Integer buildNo) {
+    public void setBuildNo(String buildNo) {
         this.buildNo = buildNo;
     }
 

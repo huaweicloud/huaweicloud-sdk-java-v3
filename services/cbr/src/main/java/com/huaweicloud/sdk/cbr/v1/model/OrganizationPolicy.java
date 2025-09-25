@@ -141,6 +141,11 @@ public class OrganizationPolicy {
 
     private String domainName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_scope")
+
+    private String effectiveScope;
+
     public OrganizationPolicy withId(String id) {
         this.id = id;
         return this;
@@ -346,6 +351,23 @@ public class OrganizationPolicy {
         this.domainName = domainName;
     }
 
+    public OrganizationPolicy withEffectiveScope(String effectiveScope) {
+        this.effectiveScope = effectiveScope;
+        return this;
+    }
+
+    /**
+     * 组织策略生效范围
+     * @return effectiveScope
+     */
+    public String getEffectiveScope() {
+        return effectiveScope;
+    }
+
+    public void setEffectiveScope(String effectiveScope) {
+        this.effectiveScope = effectiveScope;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -362,7 +384,8 @@ public class OrganizationPolicy {
             && Objects.equals(this.policyEnabled, that.policyEnabled)
             && Objects.equals(this.policyOperationDefinition, that.policyOperationDefinition)
             && Objects.equals(this.policyTrigger, that.policyTrigger) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.domainName, that.domainName);
+            && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.effectiveScope, that.effectiveScope);
     }
 
     @Override
@@ -377,7 +400,8 @@ public class OrganizationPolicy {
             policyOperationDefinition,
             policyTrigger,
             status,
-            domainName);
+            domainName,
+            effectiveScope);
     }
 
     @Override
@@ -395,6 +419,7 @@ public class OrganizationPolicy {
         sb.append("    policyTrigger: ").append(toIndentedString(policyTrigger)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+        sb.append("    effectiveScope: ").append(toIndentedString(effectiveScope)).append("\n");
         sb.append("}");
         return sb.toString();
     }

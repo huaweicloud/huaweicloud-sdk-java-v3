@@ -50,7 +50,7 @@ public class CreateTaskRequestBodyClusterScanInfo {
     }
 
     /**
-     * 扫描项类型
+     * **参数解释**: 扫描项类型列表 **约束限制**: 不涉及 **取值范围**: - cluster_vul：集群漏洞 - risk_assessment：风险评估 - benchmark：安全合规  **默认取值**: 不涉及 
      * @return scanTypeList
      */
     public List<String> getScanTypeList() {

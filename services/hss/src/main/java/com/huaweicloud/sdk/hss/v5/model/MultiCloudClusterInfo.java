@@ -146,7 +146,7 @@ public class MultiCloudClusterInfo {
     }
 
     /**
-     * anp-agent的连接状态
+     * **参数解释** anp-agent的连接状态 **取值范围**   - not_connect：未连接。   - connect_success：连接成功。   - connect_fail：连接失败。   - connect_disruption：连接中断。 
      * @return status
      */
     public String getStatus() {

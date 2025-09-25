@@ -90,6 +90,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private String vpcepIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcepIpv6Address")
+
+    private String vpcepIpv6Address;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidthSize")
 
     private Integer bandwidthSize;
@@ -148,6 +153,31 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonProperty(value = "bandwidthResourceId")
 
     private String bandwidthResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6Endpoint")
+
+    private String ipv6Endpoint;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supportVpcep")
+
+    private Boolean supportVpcep;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cmkId")
+
+    private String cmkId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "orderId")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "currentSubnetIds")
+
+    private String currentSubnetIds;
 
     public ShowClusterDetailResponse withDatastore(ClusterDetailDatastore datastore) {
         this.datastore = datastore;
@@ -447,6 +477,23 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.vpcepIp = vpcepIp;
     }
 
+    public ShowClusterDetailResponse withVpcepIpv6Address(String vpcepIpv6Address) {
+        this.vpcepIpv6Address = vpcepIpv6Address;
+        return this;
+    }
+
+    /**
+     * 终端节点IPv6。
+     * @return vpcepIpv6Address
+     */
+    public String getVpcepIpv6Address() {
+        return vpcepIpv6Address;
+    }
+
+    public void setVpcepIpv6Address(String vpcepIpv6Address) {
+        this.vpcepIpv6Address = vpcepIpv6Address;
+    }
+
     public ShowClusterDetailResponse withBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
         return this;
@@ -692,6 +739,91 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.bandwidthResourceId = bandwidthResourceId;
     }
 
+    public ShowClusterDetailResponse withIpv6Endpoint(String ipv6Endpoint) {
+        this.ipv6Endpoint = ipv6Endpoint;
+        return this;
+    }
+
+    /**
+     * 集群内网访问IPv6地址和端口号。
+     * @return ipv6Endpoint
+     */
+    public String getIpv6Endpoint() {
+        return ipv6Endpoint;
+    }
+
+    public void setIpv6Endpoint(String ipv6Endpoint) {
+        this.ipv6Endpoint = ipv6Endpoint;
+    }
+
+    public ShowClusterDetailResponse withSupportVpcep(Boolean supportVpcep) {
+        this.supportVpcep = supportVpcep;
+        return this;
+    }
+
+    /**
+     * 当前集群是否支持开启终端节点服务。
+     * @return supportVpcep
+     */
+    public Boolean getSupportVpcep() {
+        return supportVpcep;
+    }
+
+    public void setSupportVpcep(Boolean supportVpcep) {
+        this.supportVpcep = supportVpcep;
+    }
+
+    public ShowClusterDetailResponse withCmkId(String cmkId) {
+        this.cmkId = cmkId;
+        return this;
+    }
+
+    /**
+     * 当前集群使用的磁盘加密密钥ID。
+     * @return cmkId
+     */
+    public String getCmkId() {
+        return cmkId;
+    }
+
+    public void setCmkId(String cmkId) {
+        this.cmkId = cmkId;
+    }
+
+    public ShowClusterDetailResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 包周期集群的订单号。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public ShowClusterDetailResponse withCurrentSubnetIds(String currentSubnetIds) {
+        this.currentSubnetIds = currentSubnetIds;
+        return this;
+    }
+
+    /**
+     * 集群当前所有节点用到的子网，如果存在多个（最多支持两个），使用英文逗号隔开。
+     * @return currentSubnetIds
+     */
+    public String getCurrentSubnetIds() {
+        return currentSubnetIds;
+    }
+
+    public void setCurrentSubnetIds(String currentSubnetIds) {
+        this.currentSubnetIds = currentSubnetIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -709,6 +841,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.endpoint, that.endpoint)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.vpcepIp, that.vpcepIp)
+            && Objects.equals(this.vpcepIpv6Address, that.vpcepIpv6Address)
             && Objects.equals(this.bandwidthSize, that.bandwidthSize)
             && Objects.equals(this.httpsEnable, that.httpsEnable)
             && Objects.equals(this.diskEncrypted, that.diskEncrypted)
@@ -718,7 +851,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.failedReason, that.failedReason)
             && Objects.equals(this.period, that.period)
-            && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId);
+            && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId)
+            && Objects.equals(this.ipv6Endpoint, that.ipv6Endpoint)
+            && Objects.equals(this.supportVpcep, that.supportVpcep) && Objects.equals(this.cmkId, that.cmkId)
+            && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.currentSubnetIds, that.currentSubnetIds);
     }
 
     @Override
@@ -738,6 +875,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
             subnetId,
             securityGroupId,
             vpcepIp,
+            vpcepIpv6Address,
             bandwidthSize,
             httpsEnable,
             diskEncrypted,
@@ -749,7 +887,12 @@ public class ShowClusterDetailResponse extends SdkResponse {
             tags,
             failedReason,
             period,
-            bandwidthResourceId);
+            bandwidthResourceId,
+            ipv6Endpoint,
+            supportVpcep,
+            cmkId,
+            orderId,
+            currentSubnetIds);
     }
 
     @Override
@@ -771,6 +914,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    vpcepIp: ").append(toIndentedString(vpcepIp)).append("\n");
+        sb.append("    vpcepIpv6Address: ").append(toIndentedString(vpcepIpv6Address)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    httpsEnable: ").append(toIndentedString(httpsEnable)).append("\n");
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
@@ -783,6 +927,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    bandwidthResourceId: ").append(toIndentedString(bandwidthResourceId)).append("\n");
+        sb.append("    ipv6Endpoint: ").append(toIndentedString(ipv6Endpoint)).append("\n");
+        sb.append("    supportVpcep: ").append(toIndentedString(supportVpcep)).append("\n");
+        sb.append("    cmkId: ").append(toIndentedString(cmkId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    currentSubnetIds: ").append(toIndentedString(currentSubnetIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

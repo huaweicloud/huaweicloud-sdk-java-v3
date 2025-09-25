@@ -88,7 +88,7 @@ public class ShowRemoteBackupHostInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 服务器是否开启远端备份 **取值范围**  - true : 已开启远端备份。 - false: 未开启远端备份。
+     * **参数解释** 服务器是否开启远端备份 **取值范围** - true : 已开启远端备份。 - false: 未开启远端备份。
      * @return remoteBackup
      */
     public Boolean getRemoteBackup() {

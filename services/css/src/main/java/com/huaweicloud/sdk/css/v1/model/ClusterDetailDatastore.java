@@ -20,6 +20,21 @@ public class ClusterDetailDatastore {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subVersion")
+
+    private String subVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isEosCluster")
+
+    private Boolean isEosCluster;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supportSecuritymode")
+
+    private Boolean supportSecuritymode;
+
     public ClusterDetailDatastore withType(String type) {
         this.type = type;
         return this;
@@ -54,6 +69,57 @@ public class ClusterDetailDatastore {
         this.version = version;
     }
 
+    public ClusterDetailDatastore withSubVersion(String subVersion) {
+        this.subVersion = subVersion;
+        return this;
+    }
+
+    /**
+     * 集群发布版本号。
+     * @return subVersion
+     */
+    public String getSubVersion() {
+        return subVersion;
+    }
+
+    public void setSubVersion(String subVersion) {
+        this.subVersion = subVersion;
+    }
+
+    public ClusterDetailDatastore withIsEosCluster(Boolean isEosCluster) {
+        this.isEosCluster = isEosCluster;
+        return this;
+    }
+
+    /**
+     * 表示集群发布版本是否EOS。
+     * @return isEosCluster
+     */
+    public Boolean getIsEosCluster() {
+        return isEosCluster;
+    }
+
+    public void setIsEosCluster(Boolean isEosCluster) {
+        this.isEosCluster = isEosCluster;
+    }
+
+    public ClusterDetailDatastore withSupportSecuritymode(Boolean supportSecuritymode) {
+        this.supportSecuritymode = supportSecuritymode;
+        return this;
+    }
+
+    /**
+     * 集群认证是否支持安全模式。
+     * @return supportSecuritymode
+     */
+    public Boolean getSupportSecuritymode() {
+        return supportSecuritymode;
+    }
+
+    public void setSupportSecuritymode(Boolean supportSecuritymode) {
+        this.supportSecuritymode = supportSecuritymode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +129,14 @@ public class ClusterDetailDatastore {
             return false;
         }
         ClusterDetailDatastore that = (ClusterDetailDatastore) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.subVersion, that.subVersion) && Objects.equals(this.isEosCluster, that.isEosCluster)
+            && Objects.equals(this.supportSecuritymode, that.supportSecuritymode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, version);
+        return Objects.hash(type, version, subVersion, isEosCluster, supportSecuritymode);
     }
 
     @Override
@@ -77,6 +145,9 @@ public class ClusterDetailDatastore {
         sb.append("class ClusterDetailDatastore {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    subVersion: ").append(toIndentedString(subVersion)).append("\n");
+        sb.append("    isEosCluster: ").append(toIndentedString(isEosCluster)).append("\n");
+        sb.append("    supportSecuritymode: ").append(toIndentedString(supportSecuritymode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

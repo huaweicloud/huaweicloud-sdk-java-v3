@@ -23,6 +23,11 @@ public class AclPolicyResult {
 
     private List<AllowIpRangesResult> allowIpRanges = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_vpc_endpoints")
+
+    private List<AllowVpcEndpointsResult> allowVpcEndpoints = null;
+
     public AclPolicyResult withAllowAddressNetmasks(List<AllowAddressNetmasksResult> allowAddressNetmasks) {
         this.allowAddressNetmasks = allowAddressNetmasks;
         return this;
@@ -90,6 +95,39 @@ public class AclPolicyResult {
         this.allowIpRanges = allowIpRanges;
     }
 
+    public AclPolicyResult withAllowVpcEndpoints(List<AllowVpcEndpointsResult> allowVpcEndpoints) {
+        this.allowVpcEndpoints = allowVpcEndpoints;
+        return this;
+    }
+
+    public AclPolicyResult addAllowVpcEndpointsItem(AllowVpcEndpointsResult allowVpcEndpointsItem) {
+        if (this.allowVpcEndpoints == null) {
+            this.allowVpcEndpoints = new ArrayList<>();
+        }
+        this.allowVpcEndpoints.add(allowVpcEndpointsItem);
+        return this;
+    }
+
+    public AclPolicyResult withAllowVpcEndpoints(Consumer<List<AllowVpcEndpointsResult>> allowVpcEndpointsSetter) {
+        if (this.allowVpcEndpoints == null) {
+            this.allowVpcEndpoints = new ArrayList<>();
+        }
+        allowVpcEndpointsSetter.accept(this.allowVpcEndpoints);
+        return this;
+    }
+
+    /**
+     * 允许访问的VPC端点。
+     * @return allowVpcEndpoints
+     */
+    public List<AllowVpcEndpointsResult> getAllowVpcEndpoints() {
+        return allowVpcEndpoints;
+    }
+
+    public void setAllowVpcEndpoints(List<AllowVpcEndpointsResult> allowVpcEndpoints) {
+        this.allowVpcEndpoints = allowVpcEndpoints;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -100,12 +138,13 @@ public class AclPolicyResult {
         }
         AclPolicyResult that = (AclPolicyResult) obj;
         return Objects.equals(this.allowAddressNetmasks, that.allowAddressNetmasks)
-            && Objects.equals(this.allowIpRanges, that.allowIpRanges);
+            && Objects.equals(this.allowIpRanges, that.allowIpRanges)
+            && Objects.equals(this.allowVpcEndpoints, that.allowVpcEndpoints);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(allowAddressNetmasks, allowIpRanges);
+        return Objects.hash(allowAddressNetmasks, allowIpRanges, allowVpcEndpoints);
     }
 
     @Override
@@ -114,6 +153,7 @@ public class AclPolicyResult {
         sb.append("class AclPolicyResult {\n");
         sb.append("    allowAddressNetmasks: ").append(toIndentedString(allowAddressNetmasks)).append("\n");
         sb.append("    allowIpRanges: ").append(toIndentedString(allowIpRanges)).append("\n");
+        sb.append("    allowVpcEndpoints: ").append(toIndentedString(allowVpcEndpoints)).append("\n");
         sb.append("}");
         return sb.toString();
     }

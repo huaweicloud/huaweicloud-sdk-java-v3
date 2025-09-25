@@ -49,7 +49,7 @@ public class UpdateDaemonsetRequestBody {
     private String invokedService;
 
     /**
-     * 付费模式，cce集成防护调用场景使用:   - on_demand:按需    - free_security_check:免费安全体检
+     * 付费模式，cce集成防护调用场景使用:   - on_demand:按需   - free_security_check:免费安全体检
      */
     public static final class ChargingModeEnum {
 
@@ -124,7 +124,7 @@ public class UpdateDaemonsetRequestBody {
     private ChargingModeEnum chargingMode;
 
     /**
-     * cce防护类型，cce集成防护调用场景使用:   - cluster_level:集群级别防护    - node_level:节点级别防护
+     * cce防护类型，cce集成防护调用场景使用:   - cluster_level:集群级别防护   - node_level:节点级别防护
      */
     public static final class CceProtectionTypeEnum {
 
@@ -320,7 +320,7 @@ public class UpdateDaemonsetRequestBody {
     }
 
     /**
-     * 调用服务，默认hss，cce集成防护调用场景使用:   - hss：hss服务    - cce：cce服务
+     * 调用服务，默认hss，cce集成防护调用场景使用:   - hss：hss服务   - cce：cce服务
      * @return invokedService
      */
     public String getInvokedService() {
@@ -337,7 +337,7 @@ public class UpdateDaemonsetRequestBody {
     }
 
     /**
-     * 付费模式，cce集成防护调用场景使用:   - on_demand:按需    - free_security_check:免费安全体检
+     * 付费模式，cce集成防护调用场景使用:   - on_demand:按需   - free_security_check:免费安全体检
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {
@@ -354,7 +354,7 @@ public class UpdateDaemonsetRequestBody {
     }
 
     /**
-     * cce防护类型，cce集成防护调用场景使用:   - cluster_level:集群级别防护    - node_level:节点级别防护
+     * cce防护类型，cce集成防护调用场景使用:   - cluster_level:集群级别防护   - node_level:节点级别防护
      * @return cceProtectionType
      */
     public CceProtectionTypeEnum getCceProtectionType() {

@@ -58,7 +58,7 @@ public class WeakPwdAccountInfoResponseInfo {
     }
 
     /**
-     * **参数解释**: 账号类型 **取值范围**: - system : 系统账号 - mysql  : mysql账号 - redis  : redis账号 
+     * **参数解释**: 账号类型 **取值范围**: - system : 系统账号 - mysql : mysql账号 - redis : redis账号 - tomcat : tomcat账号 - ftp : ftp账号 
      * @return serviceType
      */
     public String getServiceType() {

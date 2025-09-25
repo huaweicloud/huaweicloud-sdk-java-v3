@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 工单服务详情
+ * 服务单服务详情
  */
 public class OrderServiceDetails {
 

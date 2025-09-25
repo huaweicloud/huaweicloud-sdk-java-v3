@@ -19,6 +19,11 @@ public class ClusterList {
     private ClusterListDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snapshotPolicy")
+
+    private Object snapshotPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
     private List<ClusterListInstances> instances = null;
@@ -148,6 +153,16 @@ public class ClusterList {
 
     private String ipv6Endpoint;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cmkId")
+
+    private String cmkId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "currentSubnetIds")
+
+    private String currentSubnetIds;
+
     public ClusterList withDatastore(ClusterListDatastore datastore) {
         this.datastore = datastore;
         return this;
@@ -172,6 +187,23 @@ public class ClusterList {
 
     public void setDatastore(ClusterListDatastore datastore) {
         this.datastore = datastore;
+    }
+
+    public ClusterList withSnapshotPolicy(Object snapshotPolicy) {
+        this.snapshotPolicy = snapshotPolicy;
+        return this;
+    }
+
+    /**
+     * 集群自动快照策略相关信息。
+     * @return snapshotPolicy
+     */
+    public Object getSnapshotPolicy() {
+        return snapshotPolicy;
+    }
+
+    public void setSnapshotPolicy(Object snapshotPolicy) {
+        this.snapshotPolicy = snapshotPolicy;
     }
 
     public ClusterList withInstances(List<ClusterListInstances> instances) {
@@ -691,6 +723,40 @@ public class ClusterList {
         this.ipv6Endpoint = ipv6Endpoint;
     }
 
+    public ClusterList withCmkId(String cmkId) {
+        this.cmkId = cmkId;
+        return this;
+    }
+
+    /**
+     * 当前集群使用的磁盘加密密钥ID。
+     * @return cmkId
+     */
+    public String getCmkId() {
+        return cmkId;
+    }
+
+    public void setCmkId(String cmkId) {
+        this.cmkId = cmkId;
+    }
+
+    public ClusterList withCurrentSubnetIds(String currentSubnetIds) {
+        this.currentSubnetIds = currentSubnetIds;
+        return this;
+    }
+
+    /**
+     * 集群节点的当前子网。
+     * @return currentSubnetIds
+     */
+    public String getCurrentSubnetIds() {
+        return currentSubnetIds;
+    }
+
+    public void setCurrentSubnetIds(String currentSubnetIds) {
+        this.currentSubnetIds = currentSubnetIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -700,7 +766,9 @@ public class ClusterList {
             return false;
         }
         ClusterList that = (ClusterList) obj;
-        return Objects.equals(this.datastore, that.datastore) && Objects.equals(this.instances, that.instances)
+        return Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.snapshotPolicy, that.snapshotPolicy)
+            && Objects.equals(this.instances, that.instances)
             && Objects.equals(this.publicKibanaResp, that.publicKibanaResp)
             && Objects.equals(this.elbWhiteList, that.elbWhiteList) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.name, that.name) && Objects.equals(this.publicIp, that.publicIp)
@@ -718,12 +786,14 @@ public class ClusterList {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.failedReason, that.failedReason)
             && Objects.equals(this.period, that.period)
             && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId)
-            && Objects.equals(this.ipv6Endpoint, that.ipv6Endpoint);
+            && Objects.equals(this.ipv6Endpoint, that.ipv6Endpoint) && Objects.equals(this.cmkId, that.cmkId)
+            && Objects.equals(this.currentSubnetIds, that.currentSubnetIds);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(datastore,
+            snapshotPolicy,
             instances,
             publicKibanaResp,
             elbWhiteList,
@@ -749,7 +819,9 @@ public class ClusterList {
             failedReason,
             period,
             bandwidthResourceId,
-            ipv6Endpoint);
+            ipv6Endpoint,
+            cmkId,
+            currentSubnetIds);
     }
 
     @Override
@@ -757,6 +829,7 @@ public class ClusterList {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterList {\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    snapshotPolicy: ").append(toIndentedString(snapshotPolicy)).append("\n");
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("    publicKibanaResp: ").append(toIndentedString(publicKibanaResp)).append("\n");
         sb.append("    elbWhiteList: ").append(toIndentedString(elbWhiteList)).append("\n");
@@ -783,6 +856,8 @@ public class ClusterList {
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    bandwidthResourceId: ").append(toIndentedString(bandwidthResourceId)).append("\n");
         sb.append("    ipv6Endpoint: ").append(toIndentedString(ipv6Endpoint)).append("\n");
+        sb.append("    cmkId: ").append(toIndentedString(cmkId)).append("\n");
+        sb.append("    currentSubnetIds: ").append(toIndentedString(currentSubnetIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

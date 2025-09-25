@@ -78,6 +78,16 @@ public class GetUpgradeDetailInfo {
 
     private List<CurrentNodeDetail> currentNodeDetail = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "batchSize")
+
+    private Integer batchSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "currentBatchNodes")
+
+    private String currentBatchNodes;
+
     public GetUpgradeDetailInfo withId(String id) {
         this.id = id;
         return this;
@@ -324,6 +334,40 @@ public class GetUpgradeDetailInfo {
         this.currentNodeDetail = currentNodeDetail;
     }
 
+    public GetUpgradeDetailInfo withBatchSize(Integer batchSize) {
+        this.batchSize = batchSize;
+        return this;
+    }
+
+    /**
+     * 同时有多少个节点在迁移数据。
+     * @return batchSize
+     */
+    public Integer getBatchSize() {
+        return batchSize;
+    }
+
+    public void setBatchSize(Integer batchSize) {
+        this.batchSize = batchSize;
+    }
+
+    public GetUpgradeDetailInfo withCurrentBatchNodes(String currentBatchNodes) {
+        this.currentBatchNodes = currentBatchNodes;
+        return this;
+    }
+
+    /**
+     * 当前正在迁移数据的节点。
+     * @return currentBatchNodes
+     */
+    public String getCurrentBatchNodes() {
+        return currentBatchNodes;
+    }
+
+    public void setCurrentBatchNodes(String currentBatchNodes) {
+        this.currentBatchNodes = currentBatchNodes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -342,7 +386,9 @@ public class GetUpgradeDetailInfo {
             && Objects.equals(this.executeTimes, that.executeTimes)
             && Objects.equals(this.migrateParam, that.migrateParam)
             && Objects.equals(this.finalAzInfoMap, that.finalAzInfoMap)
-            && Objects.equals(this.currentNodeDetail, that.currentNodeDetail);
+            && Objects.equals(this.currentNodeDetail, that.currentNodeDetail)
+            && Objects.equals(this.batchSize, that.batchSize)
+            && Objects.equals(this.currentBatchNodes, that.currentBatchNodes);
     }
 
     @Override
@@ -359,7 +405,9 @@ public class GetUpgradeDetailInfo {
             executeTimes,
             migrateParam,
             finalAzInfoMap,
-            currentNodeDetail);
+            currentNodeDetail,
+            batchSize,
+            currentBatchNodes);
     }
 
     @Override
@@ -379,6 +427,8 @@ public class GetUpgradeDetailInfo {
         sb.append("    migrateParam: ").append(toIndentedString(migrateParam)).append("\n");
         sb.append("    finalAzInfoMap: ").append(toIndentedString(finalAzInfoMap)).append("\n");
         sb.append("    currentNodeDetail: ").append(toIndentedString(currentNodeDetail)).append("\n");
+        sb.append("    batchSize: ").append(toIndentedString(batchSize)).append("\n");
+        sb.append("    currentBatchNodes: ").append(toIndentedString(currentBatchNodes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

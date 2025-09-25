@@ -19,6 +19,11 @@ public class ShowLogBackupResponse extends SdkResponse {
 
     private List<LogList> logList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public ShowLogBackupResponse withLogList(List<LogList> logList) {
         this.logList = logList;
         return this;
@@ -52,6 +57,23 @@ public class ShowLogBackupResponse extends SdkResponse {
         this.logList = logList;
     }
 
+    public ShowLogBackupResponse withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 查询日志的类型。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ShowLogBackupResponse extends SdkResponse {
             return false;
         }
         ShowLogBackupResponse that = (ShowLogBackupResponse) obj;
-        return Objects.equals(this.logList, that.logList);
+        return Objects.equals(this.logList, that.logList) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logList);
+        return Objects.hash(logList, type);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ShowLogBackupResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowLogBackupResponse {\n");
         sb.append("    logList: ").append(toIndentedString(logList)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

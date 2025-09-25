@@ -23,6 +23,16 @@ public class CreateClusterLoadBalance {
 
     private List<String> vpcPermissions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "professionVpcep")
+
+    private Boolean professionVpcep;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dualstackEnable")
+
+    private Boolean dualstackEnable;
+
     public CreateClusterLoadBalance withEndpointWithDnsName(Boolean endpointWithDnsName) {
         this.endpointWithDnsName = endpointWithDnsName;
         return this;
@@ -73,6 +83,40 @@ public class CreateClusterLoadBalance {
         this.vpcPermissions = vpcPermissions;
     }
 
+    public CreateClusterLoadBalance withProfessionVpcep(Boolean professionVpcep) {
+        this.professionVpcep = professionVpcep;
+        return this;
+    }
+
+    /**
+     * 创建专业型终端节点。
+     * @return professionVpcep
+     */
+    public Boolean getProfessionVpcep() {
+        return professionVpcep;
+    }
+
+    public void setProfessionVpcep(Boolean professionVpcep) {
+        this.professionVpcep = professionVpcep;
+    }
+
+    public CreateClusterLoadBalance withDualstackEnable(Boolean dualstackEnable) {
+        this.dualstackEnable = dualstackEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启IPv4/IPv6双栈网络。
+     * @return dualstackEnable
+     */
+    public Boolean getDualstackEnable() {
+        return dualstackEnable;
+    }
+
+    public void setDualstackEnable(Boolean dualstackEnable) {
+        this.dualstackEnable = dualstackEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +127,14 @@ public class CreateClusterLoadBalance {
         }
         CreateClusterLoadBalance that = (CreateClusterLoadBalance) obj;
         return Objects.equals(this.endpointWithDnsName, that.endpointWithDnsName)
-            && Objects.equals(this.vpcPermissions, that.vpcPermissions);
+            && Objects.equals(this.vpcPermissions, that.vpcPermissions)
+            && Objects.equals(this.professionVpcep, that.professionVpcep)
+            && Objects.equals(this.dualstackEnable, that.dualstackEnable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpointWithDnsName, vpcPermissions);
+        return Objects.hash(endpointWithDnsName, vpcPermissions, professionVpcep, dualstackEnable);
     }
 
     @Override
@@ -97,6 +143,8 @@ public class CreateClusterLoadBalance {
         sb.append("class CreateClusterLoadBalance {\n");
         sb.append("    endpointWithDnsName: ").append(toIndentedString(endpointWithDnsName)).append("\n");
         sb.append("    vpcPermissions: ").append(toIndentedString(vpcPermissions)).append("\n");
+        sb.append("    professionVpcep: ").append(toIndentedString(professionVpcep)).append("\n");
+        sb.append("    dualstackEnable: ").append(toIndentedString(dualstackEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

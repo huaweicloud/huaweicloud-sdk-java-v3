@@ -25,6 +25,16 @@ public class ShowNotebookResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eihealth_project_id")
+
+    private String eihealthProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eihealth_project_name")
+
+    private String eihealthProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -111,6 +121,40 @@ public class ShowNotebookResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ShowNotebookResponse withEihealthProjectId(String eihealthProjectId) {
+        this.eihealthProjectId = eihealthProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 空间ID。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return eihealthProjectId
+     */
+    public String getEihealthProjectId() {
+        return eihealthProjectId;
+    }
+
+    public void setEihealthProjectId(String eihealthProjectId) {
+        this.eihealthProjectId = eihealthProjectId;
+    }
+
+    public ShowNotebookResponse withEihealthProjectName(String eihealthProjectName) {
+        this.eihealthProjectName = eihealthProjectName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 空间名称。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return eihealthProjectName
+     */
+    public String getEihealthProjectName() {
+        return eihealthProjectName;
+    }
+
+    public void setEihealthProjectName(String eihealthProjectName) {
+        this.eihealthProjectName = eihealthProjectName;
     }
 
     public ShowNotebookResponse withDescription(String description) {
@@ -360,6 +404,8 @@ public class ShowNotebookResponse extends SdkResponse {
         }
         ShowNotebookResponse that = (ShowNotebookResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.eihealthProjectName, that.eihealthProjectName)
             && Objects.equals(this.description, that.description) && Objects.equals(this.creator, that.creator)
             && Objects.equals(this.url, that.url) && Objects.equals(this.flavor, that.flavor)
             && Objects.equals(this.status, that.status) && Objects.equals(this.image, that.image)
@@ -372,6 +418,8 @@ public class ShowNotebookResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(id,
             name,
+            eihealthProjectId,
+            eihealthProjectName,
             description,
             creator,
             url,
@@ -391,6 +439,8 @@ public class ShowNotebookResponse extends SdkResponse {
         sb.append("class ShowNotebookResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    eihealthProjectId: ").append(toIndentedString(eihealthProjectId)).append("\n");
+        sb.append("    eihealthProjectName: ").append(toIndentedString(eihealthProjectName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");

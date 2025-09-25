@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 工单日志
+ * 服务单日志
  */
 public class OrderLog {
 

@@ -143,7 +143,7 @@ public class ListBlockedIpRequest {
     }
 
     /**
-     * 拦截状态，包含如下:   - intercepted : 已拦截   - canceled : 已解除拦截   - cancelling : 待解除拦截
+     * **参数解释**： 拦截状态 **约束限制**: 不涉及 **取值范围**: - intercepted：已拦截。 - canceled：已解除拦截。 - cancelling：待解除拦截。  **默认取值**: 不涉及 
      * @return interceptStatus
      */
     public String getInterceptStatus() {

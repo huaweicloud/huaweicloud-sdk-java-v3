@@ -54,6 +54,11 @@ public class TaskDefinitionDto {
     private List<TaskParameterDto> inputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "outputs")
+
+    private List<TaskParameterDto> outputs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_info")
 
     private AppInfoDto appInfo;
@@ -228,6 +233,39 @@ public class TaskDefinitionDto {
         this.inputs = inputs;
     }
 
+    public TaskDefinitionDto withOutputs(List<TaskParameterDto> outputs) {
+        this.outputs = outputs;
+        return this;
+    }
+
+    public TaskDefinitionDto addOutputsItem(TaskParameterDto outputsItem) {
+        if (this.outputs == null) {
+            this.outputs = new ArrayList<>();
+        }
+        this.outputs.add(outputsItem);
+        return this;
+    }
+
+    public TaskDefinitionDto withOutputs(Consumer<List<TaskParameterDto>> outputsSetter) {
+        if (this.outputs == null) {
+            this.outputs = new ArrayList<>();
+        }
+        outputsSetter.accept(this.outputs);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 子任务的输出参数信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return outputs
+     */
+    public List<TaskParameterDto> getOutputs() {
+        return outputs;
+    }
+
+    public void setOutputs(List<TaskParameterDto> outputs) {
+        this.outputs = outputs;
+    }
+
     public TaskDefinitionDto withAppInfo(AppInfoDto appInfo) {
         this.appInfo = appInfo;
         return this;
@@ -268,13 +306,21 @@ public class TaskDefinitionDto {
             && Objects.equals(this.wholeOutputDir, that.wholeOutputDir)
             && Objects.equals(this.ioAccType, that.ioAccType) && Objects.equals(this.resources, that.resources)
             && Objects.equals(this.location, that.location) && Objects.equals(this.inputs, that.inputs)
-            && Objects.equals(this.appInfo, that.appInfo);
+            && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.appInfo, that.appInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(taskName, displayName, outputDir, wholeOutputDir, ioAccType, resources, location, inputs, appInfo);
+        return Objects.hash(taskName,
+            displayName,
+            outputDir,
+            wholeOutputDir,
+            ioAccType,
+            resources,
+            location,
+            inputs,
+            outputs,
+            appInfo);
     }
 
     @Override
@@ -289,6 +335,7 @@ public class TaskDefinitionDto {
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
+        sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
         sb.append("    appInfo: ").append(toIndentedString(appInfo)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -208,7 +208,7 @@ public class BatchScanPrivateImageRequestInfo {
     }
 
     /**
-     * 镜像类型，包含如下:   - private_image : 私有镜像仓库   - shared_image : 共享镜像仓库
+     * 镜像类型，包含如下:   - private_image：SWR私有镜像仓库。   - shared_image：SWR共享镜像仓库。   - instance_image：SWR企业仓库。
      * @return imageType
      */
     public String getImageType() {

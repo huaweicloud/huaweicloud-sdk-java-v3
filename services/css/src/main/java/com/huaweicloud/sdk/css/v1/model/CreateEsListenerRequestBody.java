@@ -30,6 +30,11 @@ public class CreateEsListenerRequestBody {
 
     private String caCertId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public CreateEsListenerRequestBody withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
@@ -98,6 +103,23 @@ public class CreateEsListenerRequestBody {
         this.caCertId = caCertId;
     }
 
+    public CreateEsListenerRequestBody withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 类型：searchTool 表示对Elasticsearch/Opensearch进行监听器配，viewTool 表示对Kibana/Opensearch Dashboard进行监听器配置，默认为searchTool 。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class CreateEsListenerRequestBody {
         }
         CreateEsListenerRequestBody that = (CreateEsListenerRequestBody) obj;
         return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.protocolPort, that.protocolPort)
-            && Objects.equals(this.serverCertId, that.serverCertId) && Objects.equals(this.caCertId, that.caCertId);
+            && Objects.equals(this.serverCertId, that.serverCertId) && Objects.equals(this.caCertId, that.caCertId)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(protocol, protocolPort, serverCertId, caCertId);
+        return Objects.hash(protocol, protocolPort, serverCertId, caCertId, type);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class CreateEsListenerRequestBody {
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    serverCertId: ").append(toIndentedString(serverCertId)).append("\n");
         sb.append("    caCertId: ").append(toIndentedString(caCertId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

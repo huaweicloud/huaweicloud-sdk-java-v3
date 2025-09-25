@@ -40,6 +40,11 @@ public class LabelRsp {
 
     private String updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "level")
+
+    private Integer level;
+
     public LabelRsp withId(String id) {
         this.id = id;
         return this;
@@ -142,6 +147,23 @@ public class LabelRsp {
         this.updateTime = updateTime;
     }
 
+    public LabelRsp withLevel(Integer level) {
+        this.level = level;
+        return this;
+    }
+
+    /**
+     * **参数解释**:  标签级别，用于前端颜色展示。   **约束限制**:  不涉及   **取值范围**:  不涉及 **默认取值**:  不涉及 
+     * @return level
+     */
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +175,13 @@ public class LabelRsp {
         LabelRsp that = (LabelRsp) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.creator, that.creator)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.level, that.level);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, creator, createTime, updateTime);
+        return Objects.hash(id, name, description, creator, createTime, updateTime, level);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class LabelRsp {
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("}");
         return sb.toString();
     }

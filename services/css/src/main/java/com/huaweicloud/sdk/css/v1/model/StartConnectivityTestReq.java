@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class StartConnectivityTestReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "addressAndPorts")
+    @JsonProperty(value = "address_and_ports")
 
     private List<AddressAndPorts> addressAndPorts = null;
 

@@ -10,8 +10,6 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdatePermissionLevelReq
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.BatchUpdatePermissionLevelResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckCanCreateRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckCanCreateResponse;
-import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckDeployStatusRequest;
-import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckDeployStatusResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckIsDuplicateAppNameRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckIsDuplicateAppNameResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CheckWhetherHostGroupCanBeCreatedRequest;
@@ -112,8 +110,6 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateRequest
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskResponse;
-import com.huaweicloud.sdk.codeartsdeploy.v2.model.StopDeployTaskRequest;
-import com.huaweicloud.sdk.codeartsdeploy.v2.model.StopDeployTaskResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppDisableStatusRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppDisableStatusResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateAppGroupsRequest;
@@ -902,35 +898,6 @@ public class CodeArtsDeployClient {
     }
 
     /**
-     * 获取部署任务状态
-     *
-     * 获取部署任务状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CheckDeployStatusRequest 请求对象
-     * @return CheckDeployStatusResponse
-     */
-    public CheckDeployStatusResponse checkDeployStatus(CheckDeployStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeArtsDeployMeta.checkDeployStatus);
-    }
-
-    /**
-     * 获取部署任务状态
-     *
-     * 获取部署任务状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CheckDeployStatusRequest 请求对象
-     * @return SyncInvoker<CheckDeployStatusRequest, CheckDeployStatusResponse>
-     */
-    public SyncInvoker<CheckDeployStatusRequest, CheckDeployStatusResponse> checkDeployStatusInvoker(
-        CheckDeployStatusRequest request) {
-        return new SyncInvoker<>(request, CodeArtsDeployMeta.checkDeployStatus, hcClient);
-    }
-
-    /**
      * 应用下创建环境
      *
      * 应用下创建环境。
@@ -1218,35 +1185,6 @@ public class CodeArtsDeployClient {
     public SyncInvoker<UpdateEnvironmentPermissionRequest, UpdateEnvironmentPermissionResponse> updateEnvironmentPermissionInvoker(
         UpdateEnvironmentPermissionRequest request) {
         return new SyncInvoker<>(request, CodeArtsDeployMeta.updateEnvironmentPermission, hcClient);
-    }
-
-    /**
-     * 停止部署任务
-     *
-     * 停止部署任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopDeployTaskRequest 请求对象
-     * @return StopDeployTaskResponse
-     */
-    public StopDeployTaskResponse stopDeployTask(StopDeployTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeArtsDeployMeta.stopDeployTask);
-    }
-
-    /**
-     * 停止部署任务
-     *
-     * 停止部署任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopDeployTaskRequest 请求对象
-     * @return SyncInvoker<StopDeployTaskRequest, StopDeployTaskResponse>
-     */
-    public SyncInvoker<StopDeployTaskRequest, StopDeployTaskResponse> stopDeployTaskInvoker(
-        StopDeployTaskRequest request) {
-        return new SyncInvoker<>(request, CodeArtsDeployMeta.stopDeployTask, hcClient);
     }
 
     /**

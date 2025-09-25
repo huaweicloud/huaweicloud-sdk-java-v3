@@ -39,7 +39,7 @@ public class ListHandleAffectBaselineRequestBody {
     }
 
     /**
-     * **参数解释** 基线检查执行的操作 **约束限制** 不涉及 **取值范围**   - add_to_whitelist: 加白名单 - ignore          : 忽略 - unignore        : 取消忽略 - fix             : 修复 - verify          : 验证 **默认取值** 不涉及
+     * **参数解释** 基线检查执行的操作 **约束限制** 不涉及 **取值范围** - add_to_whitelist: 加白名单 - ignore          : 忽略 - unignore        : 取消忽略 - fix             : 修复 - verify          : 验证 **默认取值** 不涉及
      * @return action
      */
     public String getAction() {
@@ -56,7 +56,7 @@ public class ListHandleAffectBaselineRequestBody {
     }
 
     /**
-     * **参数解释** 当前检查项的状态 **约束限制** 不涉及 **取值范围**   - unhandled : 未处理 - fix-failed: 修复失败 - fixing    : 修复中 - verifying : 验证中 - ignored   : 忽略 - safe      : 安全 **默认取值** 不涉及
+     * **参数解释** 当前检查项的状态 **约束限制** 不涉及 **取值范围** - unhandled : 未处理 - fix-failed: 修复失败 - fixing    : 修复中 - verifying : 验证中 - ignored   : 忽略 - safe      : 安全 **默认取值** 不涉及
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -73,7 +73,7 @@ public class ListHandleAffectBaselineRequestBody {
     }
 
     /**
-     * **参数解释** 主机id，没有该字段则代表该检查项影响的部分主机 **约束限制** 不涉及 **取值范围**   字符长度1-256位 **默认取值** 不涉及
+     * **参数解释** 主机id，没有该字段则代表该检查项影响的部分主机 **约束限制** 不涉及 **取值范围** 字符长度1-256位 **默认取值** 不涉及
      * @return hostId
      */
     public String getHostId() {

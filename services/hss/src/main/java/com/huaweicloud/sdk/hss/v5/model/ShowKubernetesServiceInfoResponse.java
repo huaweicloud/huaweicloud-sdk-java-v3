@@ -201,7 +201,7 @@ public class ShowKubernetesServiceInfoResponse extends SdkResponse {
     }
 
     /**
-     * 服务类型（访问方式）
+     * **参数解释**: 服务类型（访问方式） **约束限制**: 不涉及 **取值范围**:   - ClusterIP：仅内部可访问服务   - NodePort：通过NodePort对外暴露服务   - LoadBalancer：通过LoadBalancer对外暴露服务  **默认取值**: 不涉及 
      * @return type
      */
     public String getType() {

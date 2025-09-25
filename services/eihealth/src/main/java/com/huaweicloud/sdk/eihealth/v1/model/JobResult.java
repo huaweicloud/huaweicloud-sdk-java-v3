@@ -28,6 +28,16 @@ public class JobResult {
 
     private List<Float> subTasksDuration = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "num_molecules")
+
+    private Integer numMolecules;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success_count")
+
+    private Integer successCount;
+
     public JobResult withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
@@ -95,6 +105,40 @@ public class JobResult {
         this.subTasksDuration = subTasksDuration;
     }
 
+    public JobResult withNumMolecules(Integer numMolecules) {
+        this.numMolecules = numMolecules;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 分子聚类任务中的分子总数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return numMolecules
+     */
+    public Integer getNumMolecules() {
+        return numMolecules;
+    }
+
+    public void setNumMolecules(Integer numMolecules) {
+        this.numMolecules = numMolecules;
+    }
+
+    public JobResult withSuccessCount(Integer successCount) {
+        this.successCount = successCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 聚类成功的分子数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return successCount
+     */
+    public Integer getSuccessCount() {
+        return successCount;
+    }
+
+    public void setSuccessCount(Integer successCount) {
+        this.successCount = successCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +149,14 @@ public class JobResult {
         }
         JobResult that = (JobResult) obj;
         return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.failedCount, that.failedCount)
-            && Objects.equals(this.subTasksDuration, that.subTasksDuration);
+            && Objects.equals(this.subTasksDuration, that.subTasksDuration)
+            && Objects.equals(this.numMolecules, that.numMolecules)
+            && Objects.equals(this.successCount, that.successCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount, failedCount, subTasksDuration);
+        return Objects.hash(totalCount, failedCount, subTasksDuration, numMolecules, successCount);
     }
 
     @Override
@@ -120,6 +166,8 @@ public class JobResult {
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    failedCount: ").append(toIndentedString(failedCount)).append("\n");
         sb.append("    subTasksDuration: ").append(toIndentedString(subTasksDuration)).append("\n");
+        sb.append("    numMolecules: ").append(toIndentedString(numMolecules)).append("\n");
+        sb.append("    successCount: ").append(toIndentedString(successCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

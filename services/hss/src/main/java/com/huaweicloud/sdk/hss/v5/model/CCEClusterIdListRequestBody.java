@@ -18,6 +18,11 @@ public class CCEClusterIdListRequestBody {
 
     private List<String> clusterIdList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_type")
+
+    private String detectType;
+
     public CCEClusterIdListRequestBody withClusterIdList(List<String> clusterIdList) {
         this.clusterIdList = clusterIdList;
         return this;
@@ -51,6 +56,23 @@ public class CCEClusterIdListRequestBody {
         this.clusterIdList = clusterIdList;
     }
 
+    public CCEClusterIdListRequestBody withDetectType(String detectType) {
+        this.detectType = detectType;
+        return this;
+    }
+
+    /**
+     * 查询类型，包含如下:     - image : 镜像风险     - baseline : 基线风险     - vul : 漏洞风险     - event : 入侵风险
+     * @return detectType
+     */
+    public String getDetectType() {
+        return detectType;
+    }
+
+    public void setDetectType(String detectType) {
+        this.detectType = detectType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +82,13 @@ public class CCEClusterIdListRequestBody {
             return false;
         }
         CCEClusterIdListRequestBody that = (CCEClusterIdListRequestBody) obj;
-        return Objects.equals(this.clusterIdList, that.clusterIdList);
+        return Objects.equals(this.clusterIdList, that.clusterIdList)
+            && Objects.equals(this.detectType, that.detectType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterIdList);
+        return Objects.hash(clusterIdList, detectType);
     }
 
     @Override
@@ -73,6 +96,7 @@ public class CCEClusterIdListRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CCEClusterIdListRequestBody {\n");
         sb.append("    clusterIdList: ").append(toIndentedString(clusterIdList)).append("\n");
+        sb.append("    detectType: ").append(toIndentedString(detectType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

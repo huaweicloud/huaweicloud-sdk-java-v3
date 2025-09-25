@@ -171,6 +171,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowSerialConsoleActionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowSerialConsoleActionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
@@ -195,6 +197,8 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateScheduledEventRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateScheduledEventResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateSerialConsoleOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateSerialConsoleOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceRequest;
@@ -2750,6 +2754,35 @@ public class EcsClient {
     }
 
     /**
+     * 获取串口登录地址
+     *
+     * 获取云服务器云主机串口登录地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSerialConsoleActionsRequest 请求对象
+     * @return ShowSerialConsoleActionsResponse
+     */
+    public ShowSerialConsoleActionsResponse showSerialConsoleActions(ShowSerialConsoleActionsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showSerialConsoleActions);
+    }
+
+    /**
+     * 获取串口登录地址
+     *
+     * 获取云服务器云主机串口登录地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSerialConsoleActionsRequest 请求对象
+     * @return SyncInvoker<ShowSerialConsoleActionsRequest, ShowSerialConsoleActionsResponse>
+     */
+    public SyncInvoker<ShowSerialConsoleActionsRequest, ShowSerialConsoleActionsResponse> showSerialConsoleActionsInvoker(
+        ShowSerialConsoleActionsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.showSerialConsoleActions, hcClient);
+    }
+
+    /**
      * 查询云服务器详情
      *
      * 查询弹性云服务器的详细信息。
@@ -3104,6 +3137,35 @@ public class EcsClient {
     public SyncInvoker<UpdateScheduledEventRequest, UpdateScheduledEventResponse> updateScheduledEventInvoker(
         UpdateScheduledEventRequest request) {
         return new SyncInvoker<>(request, EcsMeta.updateScheduledEvent, hcClient);
+    }
+
+    /**
+     * 设置云服务器云主机串口登录
+     *
+     * 设置云服务器云主机串口登录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSerialConsoleOptionsRequest 请求对象
+     * @return UpdateSerialConsoleOptionsResponse
+     */
+    public UpdateSerialConsoleOptionsResponse updateSerialConsoleOptions(UpdateSerialConsoleOptionsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.updateSerialConsoleOptions);
+    }
+
+    /**
+     * 设置云服务器云主机串口登录
+     *
+     * 设置云服务器云主机串口登录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSerialConsoleOptionsRequest 请求对象
+     * @return SyncInvoker<UpdateSerialConsoleOptionsRequest, UpdateSerialConsoleOptionsResponse>
+     */
+    public SyncInvoker<UpdateSerialConsoleOptionsRequest, UpdateSerialConsoleOptionsResponse> updateSerialConsoleOptionsInvoker(
+        UpdateSerialConsoleOptionsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.updateSerialConsoleOptions, hcClient);
     }
 
     /**

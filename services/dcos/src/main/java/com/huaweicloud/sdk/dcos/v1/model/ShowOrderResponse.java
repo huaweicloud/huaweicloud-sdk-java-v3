@@ -159,7 +159,7 @@ public class ShowOrderResponse extends SdkResponse {
     }
 
     /**
-     * 工单类型:IDC运维 设备运维 设备检查 客户陪同
+     * 服务单类型:IDC运维 设备运维 设备检查 客户陪同
      * @return type
      */
     public String getType() {
@@ -193,7 +193,7 @@ public class ShowOrderResponse extends SdkResponse {
     }
 
     /**
-     * 工单类型编码
+     * 服务单类型编码
      * @return modelCode
      */
     public String getModelCode() {
@@ -462,7 +462,7 @@ public class ShowOrderResponse extends SdkResponse {
     }
 
     /**
-     * 工单日志
+     * 服务单日志
      * @return logs
      */
     public List<OrderLog> getLogs() {

@@ -30,7 +30,7 @@ public class ShowGetConfDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "setting")
 
-    private Confsetting setting;
+    private Setting setting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateAt")
@@ -88,14 +88,14 @@ public class ShowGetConfDetailResponse extends SdkResponse {
         this.confContent = confContent;
     }
 
-    public ShowGetConfDetailResponse withSetting(Confsetting setting) {
+    public ShowGetConfDetailResponse withSetting(Setting setting) {
         this.setting = setting;
         return this;
     }
 
-    public ShowGetConfDetailResponse withSetting(Consumer<Confsetting> settingSetter) {
+    public ShowGetConfDetailResponse withSetting(Consumer<Setting> settingSetter) {
         if (this.setting == null) {
-            this.setting = new Confsetting();
+            this.setting = new Setting();
             settingSetter.accept(this.setting);
         }
 
@@ -106,11 +106,11 @@ public class ShowGetConfDetailResponse extends SdkResponse {
      * Get setting
      * @return setting
      */
-    public Confsetting getSetting() {
+    public Setting getSetting() {
         return setting;
     }
 
-    public void setSetting(Confsetting setting) {
+    public void setSetting(Setting setting) {
         this.setting = setting;
     }
 

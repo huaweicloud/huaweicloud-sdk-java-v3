@@ -210,7 +210,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * **参数解释**: 付费模式           **约束限制**: 不涉及 **取值范围**: 包含以下两种： - on_demand：按需。 - free：免费。  **默认取值**: 不涉及 
+     * **参数解释**: 付费模式 **取值范围**: 包含以下两种： - on_demand：按需。 - free：免费。 
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -246,7 +246,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * cce集群防护类型
+     * **参数解释**: cce集群防护类型 **取值范围**: - cluster_level：集群级别。 - node_level：节点级别。 
      * @return protectType
      */
     public String getProtectType() {
@@ -263,7 +263,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * **参数解释**: 防护状态           **约束限制**: 不涉及 **取值范围**: - protecting：防护中。 - part_protect：部分防护。 - creating：开启中。 - error_protect：防护异常。 - unprotect：未防护。 - wait_protect：待防护。  **默认取值**: 不涉及 
+     * **参数解释**: 防护状态 **取值范围**: - protecting：防护中。 - part_protect：部分防护。 - creating：开启中。 - error_protect：防护异常。 - unprotect：未防护。 - wait_protect：待防护。 
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -280,7 +280,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * 集群类型
+     * **参数解释**: 集群类型 **取值范围**: - existing：存量集群。 - adding：新增集群。 
      * @return clusterType
      */
     public String getClusterType() {

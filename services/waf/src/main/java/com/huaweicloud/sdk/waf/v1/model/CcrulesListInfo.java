@@ -19,6 +19,16 @@ import java.util.function.Consumer;
 public class CcrulesListInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policyname")
+
+    private String policyname;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -237,6 +247,40 @@ public class CcrulesListInfo {
     @JsonProperty(value = "timestamp")
 
     private Long timestamp;
+
+    public CcrulesListInfo withPolicyname(String policyname) {
+        this.policyname = policyname;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 策略名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return policyname
+     */
+    public String getPolicyname() {
+        return policyname;
+    }
+
+    public void setPolicyname(String policyname) {
+        this.policyname = policyname;
+    }
+
+    public CcrulesListInfo withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高。取值范围：0到65535。
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
 
     public CcrulesListInfo withName(String name) {
         this.name = name;
@@ -689,7 +733,8 @@ public class CcrulesListInfo {
             return false;
         }
         CcrulesListInfo that = (CcrulesListInfo) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+        return Objects.equals(this.policyname, that.policyname) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.url, that.url)
             && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.status, that.status) && Objects.equals(this.conditions, that.conditions)
@@ -706,7 +751,9 @@ public class CcrulesListInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name,
+        return Objects.hash(policyname,
+            priority,
+            name,
             id,
             policyid,
             url,
@@ -736,6 +783,8 @@ public class CcrulesListInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CcrulesListInfo {\n");
+        sb.append("    policyname: ").append(toIndentedString(policyname)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");

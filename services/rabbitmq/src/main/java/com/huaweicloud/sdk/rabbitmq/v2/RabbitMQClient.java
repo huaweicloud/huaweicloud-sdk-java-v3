@@ -37,8 +37,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksRequest;
@@ -344,34 +342,6 @@ public class RabbitMQClient {
      */
     public SyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserInvoker(DeleteUserRequest request) {
         return new SyncInvoker<>(request, RabbitMQMeta.deleteUser, hcClient);
-    }
-
-    /**
-     * 开启RabbitMQ实例域名访问能力
-     *
-     * 开启RabbitMQ实例域名访问功能后，客户端可以通过域名连接RabbitMQ实例。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request EnableDnsRequest 请求对象
-     * @return EnableDnsResponse
-     */
-    public EnableDnsResponse enableDns(EnableDnsRequest request) {
-        return hcClient.syncInvokeHttp(request, RabbitMQMeta.enableDns);
-    }
-
-    /**
-     * 开启RabbitMQ实例域名访问能力
-     *
-     * 开启RabbitMQ实例域名访问功能后，客户端可以通过域名连接RabbitMQ实例。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request EnableDnsRequest 请求对象
-     * @return SyncInvoker<EnableDnsRequest, EnableDnsResponse>
-     */
-    public SyncInvoker<EnableDnsRequest, EnableDnsResponse> enableDnsInvoker(EnableDnsRequest request) {
-        return new SyncInvoker<>(request, RabbitMQMeta.enableDns, hcClient);
     }
 
     /**

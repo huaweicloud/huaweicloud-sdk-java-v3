@@ -71,7 +71,7 @@ public class UpdateWebTamperRaspPathRequest {
     }
 
     /**
-     * 服务器id
+     * **参数解释**: 服务器ID，仅支持Linux服务器，要求服务器已开启网页防篡改防护，或已关闭防护但未删除网页防篡改策略。 **约束限制**: 需要使用 ListWtpProtectHost 接口查询网页防篡改主机防护状态列表信息，在 ListWtpProtectHost 接口的响应体中，os_type 等于 Linux 的 host_id 是符合查询条件的服务器ID **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {

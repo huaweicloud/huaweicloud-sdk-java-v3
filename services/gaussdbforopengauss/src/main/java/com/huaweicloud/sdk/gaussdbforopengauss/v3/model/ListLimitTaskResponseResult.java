@@ -124,7 +124,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 限流任务ID。
+     * **参数解释**: 限流任务ID。 **取值范围**: 不涉及。
      * @return taskId
      */
     public String getTaskId() {
@@ -141,7 +141,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 任务限流范围。
+     * **参数解释**: 任务限流范围。 **取值范围**: 目前支持SQL，SESSION两种级别范围。
      * @return taskScope
      */
     public String getTaskScope() {
@@ -158,7 +158,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 任务限流类型。
+     * **参数解释**: 任务限流类型。 **取值范围**: - 当“task_scope”为SQL时，可选SQL_ID、SQL_TYPE类型。 - 当“task_scope”为SESSION时，可选SESSION_ACTIVE_MAX_COUNT类型。
      * @return limitType
      */
     public String getLimitType() {
@@ -175,7 +175,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 任务限流类型值。
+     * **参数解释**: 任务限流类型值。 **取值范围**: - 当“limit_type”为SQL_ID类型时，该值为选中模板的sql_id。 - 当“limit_type”为SQL_TYPE类型时，值为SQL类型，为select，update，insert，delete，merge的一种。 - 当“limit_type”为SESSION_ACTIVE_MAX_COUNT类型时，该值为CPU_OR_MEMORY。
      * @return limitTypeValue
      */
     public String getLimitTypeValue() {
@@ -192,7 +192,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 限流任务名。
+     * **参数解释**: 限流任务名。 **取值范围**: 不涉及。
      * @return taskName
      */
     public String getTaskName() {
@@ -209,7 +209,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * CN节点数据库组,每个数据库字符串以逗号形式隔开。
+     * **参数解释**: 实例的数据库列表，每个数据库以英文逗号形式隔开。 **取值范围**: 不涉及。
      * @return databases
      */
     public String getDatabases() {
@@ -226,7 +226,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * SQL模板,仅当任务类型为SQL_ID时，返回该值。
+     * **参数解释**: SQL模板，仅当任务类型为SQL_ID时，返回该值。 **取值范围**: 不涉及。
      * @return sqlModel
      */
     public String getSqlModel() {
@@ -243,7 +243,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 关键词，仅当任务类型为SQL_TYPE时，返回该值。
+     * **参数解释**: 关键词，仅当任务类型为SQL_TYPE时，返回该值。 **取值范围**: 不涉及。
      * @return keyWords
      */
     public String getKeyWords() {
@@ -260,7 +260,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 限流任务状态，当前支持：CREATING，UPDATEING，DELETING，WAIT_EXCUTE，EXCUTING，TIME_OVER，DELETED，CREATE_FAILED，UPDATE_FAILED，DELETE_FAILED，EXCEPTION，NODE_SHUT_DOWN。
+     * **参数解释**: 限流任务状态。 **取值范围**: 当前支持：CREATING，UPDATING，DELETING，WAIT_EXECUTE，EXCUTING，TIME_OVER，DELETED，CREATE_FAILED，UPDATE_FAILED，DELETE_FAILED，EXCEPTION，NODE_SHUT_DOWN。
      * @return status
      */
     public String getStatus() {
@@ -277,7 +277,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * **参数解释**: 实例ID。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+     * **参数解释**: 实例ID。 **取值范围**: 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -294,7 +294,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 规则名。
+     * **参数解释**: 规则名。 **取值范围**: 不涉及。
      * @return ruleName
      */
     public String getRuleName() {
@@ -311,7 +311,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 并发数。
+     * **参数解释**: 并发数。 **取值范围**: [0, 2147483647]
      * @return parallelSize
      */
     public Integer getParallelSize() {
@@ -328,7 +328,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 限流任务开始时间,格式为yyyy-mm-ddThh:mm:ssZ，当前时间指UTC时间。
+     * **参数解释**: 限流任务开始时间。 **取值范围**: 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -345,7 +345,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 限流任务结束时间,格式为yyyy-mm-ddThh:mm:ssZ，当前时间指UTC时间。
+     * **参数解释**: 限流任务结束时间。 **取值范围**: 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -362,7 +362,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * cpu利用率，仅当任务类型为SESSION_ACTIVE_MAX_COUNT时，返回该值。
+     * **参数解释**: CPU利用率阈值，仅当任务类型为SESSION_ACTIVE_MAX_COUNT时，返回该值且只保留整数部分。 **取值范围**: [0, 100)
      * @return cpuUtilization
      */
     public Integer getCpuUtilization() {
@@ -379,7 +379,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 内存利用率，仅当任务类型为SESSION_ACTIVE_MAX_COUNT时，返回该值。
+     * **参数解释**: 内存利用率阈值，仅当任务类型为SESSION_ACTIVE_MAX_COUNT时，返回该值且只保留整数部分。 **取值范围**: [0, 100)
      * @return memoryUtilization
      */
     public Integer getMemoryUtilization() {
@@ -396,7 +396,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 创建时间为本地时间，格式为yyyy-mm-ddThh:mm:ssZ，当前时间指UTC时间。
+     * **参数解释**: 限流任务创建时间。 **取值范围**: 不涉及。
      * @return created
      */
     public String getCreated() {
@@ -413,7 +413,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 更新时间为本地时间，格式为yyyy-mm-ddThh:mm:ssZ，当前时间指UTC时间。
+     * **参数解释**: 限流任务更新时间。 **取值范围**: 不涉及。
      * @return updated
      */
     public String getUpdated() {
@@ -430,7 +430,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 创建者。
+     * **参数解释**: 创建者。 **取值范围**: 不涉及。
      * @return creator
      */
     public String getCreator() {
@@ -447,7 +447,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * 更新者。
+     * **参数解释**: 更新者。 **取值范围**: 不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -480,7 +480,7 @@ public class ListLimitTaskResponseResult {
     }
 
     /**
-     * CN节点信息列表。
+     * **参数解释**: CN节点信息列表。
      * @return nodeInfos
      */
     public List<ShowLimitTaskNodeOption> getNodeInfos() {

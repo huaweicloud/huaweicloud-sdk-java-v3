@@ -115,6 +115,11 @@ public class ListImageLocalRequest {
 
     private String appName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_container")
+
+    private Boolean hasContainer;
+
     public ListImageLocalRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -486,6 +491,23 @@ public class ListImageLocalRequest {
         this.appName = appName;
     }
 
+    public ListImageLocalRequest withHasContainer(Boolean hasContainer) {
+        this.hasContainer = hasContainer;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 是否存在容器 **约束限制**: 不涉及 **取值范围**: - true：是。 - false：否。  **默认取值**: 不涉及 
+     * @return hasContainer
+     */
+    public Boolean getHasContainer() {
+        return hasContainer;
+    }
+
+    public void setHasContainer(Boolean hasContainer) {
+        this.hasContainer = hasContainer;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -509,7 +531,8 @@ public class ListImageLocalRequest {
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.containerId, that.containerId)
             && Objects.equals(this.containerName, that.containerName) && Objects.equals(this.podId, that.podId)
-            && Objects.equals(this.podName, that.podName) && Objects.equals(this.appName, that.appName);
+            && Objects.equals(this.podName, that.podName) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.hasContainer, that.hasContainer);
     }
 
     @Override
@@ -534,7 +557,8 @@ public class ListImageLocalRequest {
             containerName,
             podId,
             podName,
-            appName);
+            appName,
+            hasContainer);
     }
 
     @Override
@@ -562,6 +586,7 @@ public class ListImageLocalRequest {
         sb.append("    podId: ").append(toIndentedString(podId)).append("\n");
         sb.append("    podName: ").append(toIndentedString(podName)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    hasContainer: ").append(toIndentedString(hasContainer)).append("\n");
         sb.append("}");
         return sb.toString();
     }

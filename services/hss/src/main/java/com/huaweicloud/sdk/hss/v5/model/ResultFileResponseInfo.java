@@ -104,7 +104,7 @@ public class ResultFileResponseInfo {
     }
 
     /**
-     * 文件属主
+     * 文件属性
      * @return fileOwner
      */
     public String getFileOwner() {

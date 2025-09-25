@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -19,7 +18,7 @@ public class DownloadObject {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private BigDecimal size;
+    private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "download_link")
@@ -48,7 +47,7 @@ public class DownloadObject {
         this.name = name;
     }
 
-    public DownloadObject withSize(BigDecimal size) {
+    public DownloadObject withSize(Integer size) {
         this.size = size;
         return this;
     }
@@ -57,11 +56,11 @@ public class DownloadObject {
      * 文件大小。
      * @return size
      */
-    public BigDecimal getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(BigDecimal size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 

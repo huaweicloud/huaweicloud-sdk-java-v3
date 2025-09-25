@@ -104,6 +104,11 @@ public class VaultGet {
     private Boolean locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
     private String updatedAt;
@@ -471,6 +476,23 @@ public class VaultGet {
         this.locked = locked;
     }
 
+    public VaultGet withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 存储库可用区信息，最大支持32字符。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     public VaultGet withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -524,8 +546,8 @@ public class VaultGet {
             && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
             && Objects.equals(this.threshold, that.threshold)
             && Objects.equals(this.sysLockSourceService, that.sysLockSourceService)
-            && Objects.equals(this.locked, that.locked) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.version, that.version);
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.version, that.version);
     }
 
     @Override
@@ -548,6 +570,7 @@ public class VaultGet {
             threshold,
             sysLockSourceService,
             locked,
+            availabilityZone,
             updatedAt,
             version);
     }
@@ -574,6 +597,7 @@ public class VaultGet {
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");

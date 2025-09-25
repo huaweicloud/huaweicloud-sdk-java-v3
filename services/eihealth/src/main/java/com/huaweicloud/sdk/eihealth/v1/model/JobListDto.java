@@ -24,6 +24,16 @@ public class JobListDto {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eihealth_project_id")
+
+    private String eihealthProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eihealth_project_name")
+
+    private String eihealthProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -57,6 +67,11 @@ public class JobListDto {
     @JsonProperty(value = "create_time")
 
     private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finish_time")
@@ -130,6 +145,40 @@ public class JobListDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public JobListDto withEihealthProjectId(String eihealthProjectId) {
+        this.eihealthProjectId = eihealthProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 作业所属空间ID。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return eihealthProjectId
+     */
+    public String getEihealthProjectId() {
+        return eihealthProjectId;
+    }
+
+    public void setEihealthProjectId(String eihealthProjectId) {
+        this.eihealthProjectId = eihealthProjectId;
+    }
+
+    public JobListDto withEihealthProjectName(String eihealthProjectName) {
+        this.eihealthProjectName = eihealthProjectName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 作业所属空间名称。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return eihealthProjectName
+     */
+    public String getEihealthProjectName() {
+        return eihealthProjectName;
+    }
+
+    public void setEihealthProjectName(String eihealthProjectName) {
+        this.eihealthProjectName = eihealthProjectName;
     }
 
     public JobListDto withDescription(String description) {
@@ -267,6 +316,23 @@ public class JobListDto {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public JobListDto withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 作业开始时间。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
     public JobListDto withFinishTime(String finishTime) {
@@ -440,10 +506,13 @@ public class JobListDto {
         }
         JobListDto that = (JobListDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.eihealthProjectName, that.eihealthProjectName)
             && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeout, that.timeout)
             && Objects.equals(this.outputDir, that.outputDir) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.finishTime, that.finishTime)
             && Objects.equals(this.failedMessage, that.failedMessage)
             && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.toolInfo, that.toolInfo) && Objects.equals(this.ioAccId, that.ioAccId)
@@ -455,6 +524,8 @@ public class JobListDto {
     public int hashCode() {
         return Objects.hash(id,
             name,
+            eihealthProjectId,
+            eihealthProjectName,
             description,
             labels,
             priority,
@@ -462,6 +533,7 @@ public class JobListDto {
             outputDir,
             status,
             createTime,
+            startTime,
             finishTime,
             failedMessage,
             failedReason,
@@ -478,6 +550,8 @@ public class JobListDto {
         sb.append("class JobListDto {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    eihealthProjectId: ").append(toIndentedString(eihealthProjectId)).append("\n");
+        sb.append("    eihealthProjectName: ").append(toIndentedString(eihealthProjectName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
@@ -485,6 +559,7 @@ public class JobListDto {
         sb.append("    outputDir: ").append(toIndentedString(outputDir)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    finishTime: ").append(toIndentedString(finishTime)).append("\n");
         sb.append("    failedMessage: ").append(toIndentedString(failedMessage)).append("\n");
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");

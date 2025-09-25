@@ -24,7 +24,7 @@ public class ExportHandledVulnerabilitiesRequestBody {
     private String vulName;
 
     /**
-     * 漏洞修复优先级,包含如下 - Critical 紧急  - High 高  - Medium 中  - Low 低
+     * 漏洞修复优先级,包含如下 - Critical 紧急 - High 高 - Medium 中 - Low 低
      */
     public static final class RepairPriorityEnum {
 
@@ -533,7 +533,7 @@ public class ExportHandledVulnerabilitiesRequestBody {
     }
 
     /**
-     * 漏洞修复优先级,包含如下 - Critical 紧急  - High 高  - Medium 中  - Low 低
+     * 漏洞修复优先级,包含如下 - Critical 紧急 - High 高 - Medium 中 - Low 低
      * @return repairPriority
      */
     public RepairPriorityEnum getRepairPriority() {

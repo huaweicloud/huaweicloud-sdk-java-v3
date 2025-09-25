@@ -17,6 +17,11 @@ public class ShowGetLogSettingResponse extends SdkResponse {
 
     private LogConfiguration logConfiguration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "realTimeLogCollectRecord")
+
+    private RealTimeLogCollect realTimeLogCollectRecord;
+
     public ShowGetLogSettingResponse withLogConfiguration(LogConfiguration logConfiguration) {
         this.logConfiguration = logConfiguration;
         return this;
@@ -43,6 +48,33 @@ public class ShowGetLogSettingResponse extends SdkResponse {
         this.logConfiguration = logConfiguration;
     }
 
+    public ShowGetLogSettingResponse withRealTimeLogCollectRecord(RealTimeLogCollect realTimeLogCollectRecord) {
+        this.realTimeLogCollectRecord = realTimeLogCollectRecord;
+        return this;
+    }
+
+    public ShowGetLogSettingResponse withRealTimeLogCollectRecord(
+        Consumer<RealTimeLogCollect> realTimeLogCollectRecordSetter) {
+        if (this.realTimeLogCollectRecord == null) {
+            this.realTimeLogCollectRecord = new RealTimeLogCollect();
+            realTimeLogCollectRecordSetter.accept(this.realTimeLogCollectRecord);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get realTimeLogCollectRecord
+     * @return realTimeLogCollectRecord
+     */
+    public RealTimeLogCollect getRealTimeLogCollectRecord() {
+        return realTimeLogCollectRecord;
+    }
+
+    public void setRealTimeLogCollectRecord(RealTimeLogCollect realTimeLogCollectRecord) {
+        this.realTimeLogCollectRecord = realTimeLogCollectRecord;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +84,13 @@ public class ShowGetLogSettingResponse extends SdkResponse {
             return false;
         }
         ShowGetLogSettingResponse that = (ShowGetLogSettingResponse) obj;
-        return Objects.equals(this.logConfiguration, that.logConfiguration);
+        return Objects.equals(this.logConfiguration, that.logConfiguration)
+            && Objects.equals(this.realTimeLogCollectRecord, that.realTimeLogCollectRecord);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logConfiguration);
+        return Objects.hash(logConfiguration, realTimeLogCollectRecord);
     }
 
     @Override
@@ -65,6 +98,7 @@ public class ShowGetLogSettingResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowGetLogSettingResponse {\n");
         sb.append("    logConfiguration: ").append(toIndentedString(logConfiguration)).append("\n");
+        sb.append("    realTimeLogCollectRecord: ").append(toIndentedString(realTimeLogCollectRecord)).append("\n");
         sb.append("}");
         return sb.toString();
     }

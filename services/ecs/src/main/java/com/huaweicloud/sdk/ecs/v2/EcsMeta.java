@@ -214,6 +214,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowResetPasswordFlagResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ShowSerialConsoleActionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ShowSerialConsoleActionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerAttachableNicNumResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerBlockDeviceRequest;
@@ -242,6 +244,9 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateRecycleBinResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateScheduledEventRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateScheduledEventResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateSerialConsoleOptionsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateSerialConsoleOptionsRequestBody;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateSerialConsoleOptionsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
@@ -2959,6 +2964,31 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSerialConsoleActionsRequest, ShowSerialConsoleActionsResponse> showSerialConsoleActions =
+        genForShowSerialConsoleActions();
+
+    private static HttpRequestDef<ShowSerialConsoleActionsRequest, ShowSerialConsoleActionsResponse> genForShowSerialConsoleActions() {
+        // basic
+        HttpRequestDef.Builder<ShowSerialConsoleActionsRequest, ShowSerialConsoleActionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ShowSerialConsoleActionsRequest.class, ShowSerialConsoleActionsResponse.class)
+                .withName("ShowSerialConsoleActions")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/actions/serial-console")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSerialConsoleActionsRequest::getServerId,
+                ShowSerialConsoleActionsRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowServerRequest, ShowServerResponse> showServer = genForShowServer();
 
     private static HttpRequestDef<ShowServerRequest, ShowServerResponse> genForShowServer() {
@@ -3260,6 +3290,39 @@ public class EcsMeta {
             String.class,
             f -> f.withMarshaller(UpdateScheduledEventResponse::getXRequestId,
                 UpdateScheduledEventResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSerialConsoleOptionsRequest, UpdateSerialConsoleOptionsResponse> updateSerialConsoleOptions =
+        genForUpdateSerialConsoleOptions();
+
+    private static HttpRequestDef<UpdateSerialConsoleOptionsRequest, UpdateSerialConsoleOptionsResponse> genForUpdateSerialConsoleOptions() {
+        // basic
+        HttpRequestDef.Builder<UpdateSerialConsoleOptionsRequest, UpdateSerialConsoleOptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSerialConsoleOptionsRequest.class,
+                    UpdateSerialConsoleOptionsResponse.class)
+                .withName("UpdateSerialConsoleOptions")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/serial-console-options")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSerialConsoleOptionsRequest::getServerId,
+                UpdateSerialConsoleOptionsRequest::setServerId));
+        builder.<UpdateSerialConsoleOptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSerialConsoleOptionsRequestBody.class),
+            f -> f.withMarshaller(UpdateSerialConsoleOptionsRequest::getBody,
+                UpdateSerialConsoleOptionsRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 

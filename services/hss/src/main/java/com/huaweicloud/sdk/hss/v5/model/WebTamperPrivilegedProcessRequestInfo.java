@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * WebTamperPrivilegedProcessRequestInfo
+ * 特权进程配置详情
  */
 public class WebTamperPrivilegedProcessRequestInfo {
 
@@ -47,7 +47,7 @@ public class WebTamperPrivilegedProcessRequestInfo {
     }
 
     /**
-     * 特权进程路径集合
+     * **参数解释**: 特权进程文件路径列表 **约束限制** : 不涉及 **取值范围**: 最少0条，最多10条 **默认取值** : 不涉及 
      * @return privilegedProcessPathList
      */
     public List<String> getPrivilegedProcessPathList() {
@@ -64,7 +64,7 @@ public class WebTamperPrivilegedProcessRequestInfo {
     }
 
     /**
-     * 特权进程子进程可信状态
+     * **参数解释**: 特权进程子进程可信状态 **约束限制** : 不涉及 **取值范围**: - True ：开启特权进程子进程可信。 - False ：关闭特权进程子进程可信。  **默认取值** : False 
      * @return privilegedChildStatus
      */
     public Boolean getPrivilegedChildStatus() {

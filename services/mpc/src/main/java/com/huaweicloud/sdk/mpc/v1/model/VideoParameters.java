@@ -152,6 +152,11 @@ public class VideoParameters {
     private Integer frameRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frame_rate_float")
+
+    private Float frameRateFloat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
 
     private Integer width;
@@ -395,6 +400,25 @@ public class VideoParameters {
         this.frameRate = frameRate;
     }
 
+    public VideoParameters withFrameRateFloat(Float frameRateFloat) {
+        this.frameRateFloat = frameRateFloat;
+        return this;
+    }
+
+    /**
+     * 帧率。  取值范围：0或[5,60]，0表示自适应。  单位：帧每秒。  > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return frameRateFloat
+     */
+    public Float getFrameRateFloat() {
+        return frameRateFloat;
+    }
+
+    public void setFrameRateFloat(Float frameRateFloat) {
+        this.frameRateFloat = frameRateFloat;
+    }
+
     public VideoParameters withWidth(Integer width) {
         this.width = width;
         return this;
@@ -485,8 +509,9 @@ public class VideoParameters {
             && Objects.equals(this.preset, that.preset)
             && Objects.equals(this.maxIframesInterval, that.maxIframesInterval)
             && Objects.equals(this.bframesCount, that.bframesCount) && Objects.equals(this.frameRate, that.frameRate)
-            && Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
-            && Objects.equals(this.blackCut, that.blackCut) && Objects.equals(this.streamName, that.streamName);
+            && Objects.equals(this.frameRateFloat, that.frameRateFloat) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.blackCut, that.blackCut)
+            && Objects.equals(this.streamName, that.streamName);
     }
 
     @Override
@@ -503,6 +528,7 @@ public class VideoParameters {
             maxIframesInterval,
             bframesCount,
             frameRate,
+            frameRateFloat,
             width,
             height,
             blackCut,
@@ -525,6 +551,7 @@ public class VideoParameters {
         sb.append("    maxIframesInterval: ").append(toIndentedString(maxIframesInterval)).append("\n");
         sb.append("    bframesCount: ").append(toIndentedString(bframesCount)).append("\n");
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
+        sb.append("    frameRateFloat: ").append(toIndentedString(frameRateFloat)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    blackCut: ").append(toIndentedString(blackCut)).append("\n");

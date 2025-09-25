@@ -61,7 +61,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 主机id **取值范围**   字符长度1-256位
+     * **参数解释** 主机id **取值范围** 字符长度1-256位
      * @return hostId
      */
     public String getHostId() {
@@ -78,7 +78,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 服务器名称 **取值范围**   字符长度1-64位
+     * **参数解释** 服务器名称 **取值范围** 字符长度1-64位
      * @return hostName
      */
     public String getHostName() {
@@ -95,7 +95,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 服务器公网ip **取值范围**   字符长度0-128位
+     * **参数解释** 服务器公网ip **取值范围** 字符长度0-128位
      * @return publicIp
      */
     public String getPublicIp() {
@@ -112,7 +112,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 服务器私网ip **取值范围**   字符长度0-2048位
+     * **参数解释** 服务器私网ip **取值范围** 字符长度0-2048位
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -129,7 +129,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 资产重要性，包含如下3种 **取值范围**   - important ：重要资产 - common    ：一般资产 - test      ：测试资产
+     * **参数解释** 资产重要性，包含如下3种 **取值范围** - important ：重要资产 - common    ：一般资产 - test      ：测试资产
      * @return assetValue
      */
     public String getAssetValue() {
@@ -146,7 +146,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 基线检查的基线名称 **取值范围**   字符长度0-255位
+     * **参数解释** 基线检查的基线名称 **取值范围** 字符长度0-255位
      * @return checkType
      */
     public String getCheckType() {
@@ -163,7 +163,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 标准类型，包含如下3种 **取值范围**   - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 - cis_standard : 通用安全标准
+     * **参数解释** 标准类型，包含如下3种 **取值范围** - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 - cis_standard : 通用安全标准
      * @return standard
      */
     public String getStandard() {
@@ -180,7 +180,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 基线检查中检查项的检查类型 **取值范围**  字符长度0-128位
+     * **参数解释** 基线检查中检查项的检查类型 **取值范围** 字符长度0-128位
      * @return tag
      */
     public String getTag() {
@@ -197,7 +197,7 @@ public class HandleAffectBaselineInfo {
     }
 
     /**
-     * **参数解释** 基线检查中检查项的名称 **取值范围**  字符长度0-2048位
+     * **参数解释** 基线检查中检查项的名称 **取值范围** 字符长度0-2048位
      * @return checkRuleName
      */
     public String getCheckRuleName() {

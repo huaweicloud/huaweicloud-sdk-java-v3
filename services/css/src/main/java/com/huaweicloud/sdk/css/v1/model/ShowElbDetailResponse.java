@@ -48,9 +48,14 @@ public class ShowElbDetailResponse extends SdkResponse {
     private EsLoadBalancerResource loadBalancer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "listener")
+
+    private Elbv3Listener listener;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "healthmonitors")
 
-    private EsHealthmonitorsResource healthmonitors;
+    private Member healthmonitors;
 
     public ShowElbDetailResponse withServerCertName(String serverCertName) {
         this.serverCertName = serverCertName;
@@ -180,14 +185,40 @@ public class ShowElbDetailResponse extends SdkResponse {
         this.loadBalancer = loadBalancer;
     }
 
-    public ShowElbDetailResponse withHealthmonitors(EsHealthmonitorsResource healthmonitors) {
+    public ShowElbDetailResponse withListener(Elbv3Listener listener) {
+        this.listener = listener;
+        return this;
+    }
+
+    public ShowElbDetailResponse withListener(Consumer<Elbv3Listener> listenerSetter) {
+        if (this.listener == null) {
+            this.listener = new Elbv3Listener();
+            listenerSetter.accept(this.listener);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get listener
+     * @return listener
+     */
+    public Elbv3Listener getListener() {
+        return listener;
+    }
+
+    public void setListener(Elbv3Listener listener) {
+        this.listener = listener;
+    }
+
+    public ShowElbDetailResponse withHealthmonitors(Member healthmonitors) {
         this.healthmonitors = healthmonitors;
         return this;
     }
 
-    public ShowElbDetailResponse withHealthmonitors(Consumer<EsHealthmonitorsResource> healthmonitorsSetter) {
+    public ShowElbDetailResponse withHealthmonitors(Consumer<Member> healthmonitorsSetter) {
         if (this.healthmonitors == null) {
-            this.healthmonitors = new EsHealthmonitorsResource();
+            this.healthmonitors = new Member();
             healthmonitorsSetter.accept(this.healthmonitors);
         }
 
@@ -198,11 +229,11 @@ public class ShowElbDetailResponse extends SdkResponse {
      * Get healthmonitors
      * @return healthmonitors
      */
-    public EsHealthmonitorsResource getHealthmonitors() {
+    public Member getHealthmonitors() {
         return healthmonitors;
     }
 
-    public void setHealthmonitors(EsHealthmonitorsResource healthmonitors) {
+    public void setHealthmonitors(Member healthmonitors) {
         this.healthmonitors = healthmonitors;
     }
 
@@ -219,7 +250,7 @@ public class ShowElbDetailResponse extends SdkResponse {
             && Objects.equals(this.serverCertId, that.serverCertId) && Objects.equals(this.cacertName, that.cacertName)
             && Objects.equals(this.cacertId, that.cacertId) && Objects.equals(this.elbEnable, that.elbEnable)
             && Objects.equals(this.authenticationType, that.authenticationType)
-            && Objects.equals(this.loadBalancer, that.loadBalancer)
+            && Objects.equals(this.loadBalancer, that.loadBalancer) && Objects.equals(this.listener, that.listener)
             && Objects.equals(this.healthmonitors, that.healthmonitors);
     }
 
@@ -232,6 +263,7 @@ public class ShowElbDetailResponse extends SdkResponse {
             elbEnable,
             authenticationType,
             loadBalancer,
+            listener,
             healthmonitors);
     }
 
@@ -246,6 +278,7 @@ public class ShowElbDetailResponse extends SdkResponse {
         sb.append("    elbEnable: ").append(toIndentedString(elbEnable)).append("\n");
         sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
         sb.append("    loadBalancer: ").append(toIndentedString(loadBalancer)).append("\n");
+        sb.append("    listener: ").append(toIndentedString(listener)).append("\n");
         sb.append("    healthmonitors: ").append(toIndentedString(healthmonitors)).append("\n");
         sb.append("}");
         return sb.toString();

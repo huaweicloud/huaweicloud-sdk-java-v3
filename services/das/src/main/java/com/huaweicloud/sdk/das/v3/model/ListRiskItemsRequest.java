@@ -95,6 +95,16 @@ public class ListRiskItemsRequest {
 
     private String datastoreType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page")
+
+    private Integer page;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListRiskItemsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -131,6 +141,40 @@ public class ListRiskItemsRequest {
         this.datastoreType = datastoreType;
     }
 
+    public ListRiskItemsRequest withPage(Integer page) {
+        this.page = page;
+        return this;
+    }
+
+    /**
+     * 页码，默认1
+     * @return page
+     */
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public ListRiskItemsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页记录数，默认20。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -140,12 +184,13 @@ public class ListRiskItemsRequest {
             return false;
         }
         ListRiskItemsRequest that = (ListRiskItemsRequest) obj;
-        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.datastoreType, that.datastoreType);
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, datastoreType);
+        return Objects.hash(xLanguage, datastoreType, page, limit);
     }
 
     @Override
@@ -154,6 +199,8 @@ public class ListRiskItemsRequest {
         sb.append("class ListRiskItemsRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

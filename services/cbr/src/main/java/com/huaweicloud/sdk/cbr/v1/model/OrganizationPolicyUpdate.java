@@ -41,6 +41,11 @@ public class OrganizationPolicyUpdate {
 
     private PolicyTriggerReq policyTrigger;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_scope")
+
+    private String effectiveScope;
+
     public OrganizationPolicyUpdate withName(String name) {
         this.name = name;
         return this;
@@ -162,6 +167,23 @@ public class OrganizationPolicyUpdate {
         this.policyTrigger = policyTrigger;
     }
 
+    public OrganizationPolicyUpdate withEffectiveScope(String effectiveScope) {
+        this.effectiveScope = effectiveScope;
+        return this;
+    }
+
+    /**
+     * 组织策略生效范围
+     * @return effectiveScope
+     */
+    public String getEffectiveScope() {
+        return effectiveScope;
+    }
+
+    public void setEffectiveScope(String effectiveScope) {
+        this.effectiveScope = effectiveScope;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -175,12 +197,19 @@ public class OrganizationPolicyUpdate {
             && Objects.equals(this.policyName, that.policyName)
             && Objects.equals(this.policyEnabled, that.policyEnabled)
             && Objects.equals(this.policyOperationDefinition, that.policyOperationDefinition)
-            && Objects.equals(this.policyTrigger, that.policyTrigger);
+            && Objects.equals(this.policyTrigger, that.policyTrigger)
+            && Objects.equals(this.effectiveScope, that.effectiveScope);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, policyName, policyEnabled, policyOperationDefinition, policyTrigger);
+        return Objects.hash(name,
+            description,
+            policyName,
+            policyEnabled,
+            policyOperationDefinition,
+            policyTrigger,
+            effectiveScope);
     }
 
     @Override
@@ -193,6 +222,7 @@ public class OrganizationPolicyUpdate {
         sb.append("    policyEnabled: ").append(toIndentedString(policyEnabled)).append("\n");
         sb.append("    policyOperationDefinition: ").append(toIndentedString(policyOperationDefinition)).append("\n");
         sb.append("    policyTrigger: ").append(toIndentedString(policyTrigger)).append("\n");
+        sb.append("    effectiveScope: ").append(toIndentedString(effectiveScope)).append("\n");
         sb.append("}");
         return sb.toString();
     }

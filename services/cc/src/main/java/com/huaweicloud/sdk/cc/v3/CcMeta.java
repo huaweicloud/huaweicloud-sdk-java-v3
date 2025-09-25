@@ -3962,6 +3962,12 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAreaBandwidthPackageSpecificationsRequest::getLimit,
+                ListAreaBandwidthPackageSpecificationsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

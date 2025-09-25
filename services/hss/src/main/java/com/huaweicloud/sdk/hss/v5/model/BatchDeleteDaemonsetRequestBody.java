@@ -62,7 +62,7 @@ public class BatchDeleteDaemonsetRequestBody {
     }
 
     /**
-     * 调用服务，标识cce免费体检报告，cce调用传参为cce:    - hss hss服务    - cce cce服务
+     * 调用服务，标识cce免费体检报告，cce调用传参为cce:   - hss hss服务   - cce cce服务
      * @return invokedService
      */
     public String getInvokedService() {

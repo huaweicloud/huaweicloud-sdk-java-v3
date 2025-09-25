@@ -19,11 +19,6 @@ public class WtpProtectDirResponseInfo {
     private List<WtpProtectHostDirResponseInfo> protectDirList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "exclue_file_type")
-
-    private String exclueFileType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exclude_file_type")
 
     private String excludeFileType;
@@ -67,23 +62,6 @@ public class WtpProtectDirResponseInfo {
         this.protectDirList = protectDirList;
     }
 
-    public WtpProtectDirResponseInfo withExclueFileType(String exclueFileType) {
-        this.exclueFileType = exclueFileType;
-        return this;
-    }
-
-    /**
-     * 排除文件类型
-     * @return exclueFileType
-     */
-    public String getExclueFileType() {
-        return exclueFileType;
-    }
-
-    public void setExclueFileType(String exclueFileType) {
-        this.exclueFileType = exclueFileType;
-    }
-
     public WtpProtectDirResponseInfo withExcludeFileType(String excludeFileType) {
         this.excludeFileType = excludeFileType;
         return this;
@@ -107,7 +85,7 @@ public class WtpProtectDirResponseInfo {
     }
 
     /**
-     * **参数解释**: 防护模式 **取值范围**: - recovery ：拦截模式。 - alarm ：告警模式。 
+     * **参数解释**: 防护模式。 **取值范围**: - recovery ：拦截模式。 - alarm ：告警模式，仅Linux服务器支持告警模式。 
      * @return protectMode
      */
     public String getProtectMode() {
@@ -128,14 +106,13 @@ public class WtpProtectDirResponseInfo {
         }
         WtpProtectDirResponseInfo that = (WtpProtectDirResponseInfo) obj;
         return Objects.equals(this.protectDirList, that.protectDirList)
-            && Objects.equals(this.exclueFileType, that.exclueFileType)
             && Objects.equals(this.excludeFileType, that.excludeFileType)
             && Objects.equals(this.protectMode, that.protectMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(protectDirList, exclueFileType, excludeFileType, protectMode);
+        return Objects.hash(protectDirList, excludeFileType, protectMode);
     }
 
     @Override
@@ -143,7 +120,6 @@ public class WtpProtectDirResponseInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class WtpProtectDirResponseInfo {\n");
         sb.append("    protectDirList: ").append(toIndentedString(protectDirList)).append("\n");
-        sb.append("    exclueFileType: ").append(toIndentedString(exclueFileType)).append("\n");
         sb.append("    excludeFileType: ").append(toIndentedString(excludeFileType)).append("\n");
         sb.append("    protectMode: ").append(toIndentedString(protectMode)).append("\n");
         sb.append("}");

@@ -49,7 +49,7 @@ public class ChangePasswordComplexityStatusRequest {
     }
 
     /**
-     * 动作类型   - ignore ：对口令复杂度检测未通过的主机执行忽略动作    - unignore ：对已忽略的口令复杂度检测未通过的主机执行取消忽略动作
+     * 动作类型   - ignore ：对口令复杂度检测未通过的主机执行忽略动作   - unignore ：对已忽略的口令复杂度检测未通过的主机执行取消忽略动作
      * @return action
      */
     public String getAction() {

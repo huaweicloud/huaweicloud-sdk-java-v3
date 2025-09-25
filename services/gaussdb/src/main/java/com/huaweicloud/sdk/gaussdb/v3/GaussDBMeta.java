@@ -443,6 +443,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogDetailRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogDetailResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsResponse;
@@ -454,6 +456,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksSlowlogSensitiveStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksSlowlogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarrocksParamsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarrocksParamsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowTableMetaInfoRequest;
@@ -563,6 +567,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceRespons
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessPolicy;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessPolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveStatusRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveSwitchRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveSwitchRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveSwitchResponse;
@@ -5131,6 +5138,39 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSlowLogDetailRequest, ShowSlowLogDetailResponse> showSlowLogDetail =
+        genForShowSlowLogDetail();
+
+    private static HttpRequestDef<ShowSlowLogDetailRequest, ShowSlowLogDetailResponse> genForShowSlowLogDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowSlowLogDetailRequest, ShowSlowLogDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowSlowLogDetailRequest.class, ShowSlowLogDetailResponse.class)
+                .withName("ShowSlowLogDetail")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/slow-logs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowLogDetailRequest::getInstanceId, ShowSlowLogDetailRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowLogDetailRequest::getXLanguage, ShowSlowLogDetailRequest::setXLanguage));
+        builder.<LtsLogSlowQueryRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LtsLogSlowQueryRequest.class),
+            f -> f.withMarshaller(ShowSlowLogDetailRequest::getBody, ShowSlowLogDetailRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSlowLogStatisticsRequest, ShowSlowLogStatisticsResponse> showSlowLogStatistics =
         genForShowSlowLogStatistics();
 
@@ -5261,6 +5301,39 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlFilterRuleRequest::getXLanguage, ShowSqlFilterRuleRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowStarRocksSlowlogSensitiveStatusRequest, ShowStarRocksSlowlogSensitiveStatusResponse> showStarRocksSlowlogSensitiveStatus =
+        genForShowStarRocksSlowlogSensitiveStatus();
+
+    private static HttpRequestDef<ShowStarRocksSlowlogSensitiveStatusRequest, ShowStarRocksSlowlogSensitiveStatusResponse> genForShowStarRocksSlowlogSensitiveStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowStarRocksSlowlogSensitiveStatusRequest, ShowStarRocksSlowlogSensitiveStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowStarRocksSlowlogSensitiveStatusRequest.class,
+                    ShowStarRocksSlowlogSensitiveStatusResponse.class)
+                .withName("ShowStarRocksSlowlogSensitiveStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/slowlog-sensitive")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStarRocksSlowlogSensitiveStatusRequest::getInstanceId,
+                ShowStarRocksSlowlogSensitiveStatusRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStarRocksSlowlogSensitiveStatusRequest::getXLanguage,
+                ShowStarRocksSlowlogSensitiveStatusRequest::setXLanguage));
 
         // response
 
@@ -6561,6 +6634,45 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerlessPolicy.class),
             f -> f.withMarshaller(UpdateServerlessPolicyRequest::getBody, UpdateServerlessPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSlowlogSensitiveStatusRequest, UpdateSlowlogSensitiveStatusResponse> updateSlowlogSensitiveStatus =
+        genForUpdateSlowlogSensitiveStatus();
+
+    private static HttpRequestDef<UpdateSlowlogSensitiveStatusRequest, UpdateSlowlogSensitiveStatusResponse> genForUpdateSlowlogSensitiveStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateSlowlogSensitiveStatusRequest, UpdateSlowlogSensitiveStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSlowlogSensitiveStatusRequest.class,
+                    UpdateSlowlogSensitiveStatusResponse.class)
+                .withName("UpdateSlowlogSensitiveStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/slowlog-sensitive")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSlowlogSensitiveStatusRequest::getInstanceId,
+                UpdateSlowlogSensitiveStatusRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSlowlogSensitiveStatusRequest::getXLanguage,
+                UpdateSlowlogSensitiveStatusRequest::setXLanguage));
+        builder.<UpdateSlowlogSensitiveStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSlowlogSensitiveStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateSlowlogSensitiveStatusRequest::getBody,
+                UpdateSlowlogSensitiveStatusRequest::setBody));
 
         // response
 

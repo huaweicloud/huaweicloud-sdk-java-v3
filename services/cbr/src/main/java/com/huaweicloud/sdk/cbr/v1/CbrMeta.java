@@ -76,6 +76,8 @@ import com.huaweicloud.sdk.cbr.v1.model.ListDomainProjectsRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListDomainProjectsResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListExternalVaultRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListExternalVaultResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ListFeaturesRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListOpLogsRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ListOpLogsResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ListOrganizationPoliciesRequest;
@@ -117,6 +119,8 @@ import com.huaweicloud.sdk.cbr.v1.model.ShowCheckpointRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowCheckpointResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ShowFeatureRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ShowFeatureResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowMemberDetailRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ShowMemberDetailResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ShowMembersDetailRequest;
@@ -1088,6 +1092,39 @@ public class CbrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFeaturesRequest, ListFeaturesResponse> listFeatures = genForListFeatures();
+
+    private static HttpRequestDef<ListFeaturesRequest, ListFeaturesResponse> genForListFeatures() {
+        // basic
+        HttpRequestDef.Builder<ListFeaturesRequest, ListFeaturesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFeaturesRequest.class, ListFeaturesResponse.class)
+                .withName("ListFeatures")
+                .withUri("/v3/{project_id}/cbr-features")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFeaturesRequest::getLimit, ListFeaturesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFeaturesRequest::getOffset, ListFeaturesRequest::setOffset));
+
+        // response
+        builder.<Map<String, Object>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(ListFeaturesResponse::getBody, ListFeaturesResponse::setBody)
+                .withInnerContainerType(Object.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOpLogsRequest, ListOpLogsResponse> listOpLogs = genForListOpLogs();
 
     private static HttpRequestDef<ListOpLogsRequest, ListOpLogsResponse> genForListOpLogs() {
@@ -1682,6 +1719,44 @@ public class CbrMeta {
             f -> f.withMarshaller(ShowDomainRequest::getSourceProjectId, ShowDomainRequest::setSourceProjectId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFeatureRequest, ShowFeatureResponse> showFeature = genForShowFeature();
+
+    private static HttpRequestDef<ShowFeatureRequest, ShowFeatureResponse> genForShowFeature() {
+        // basic
+        HttpRequestDef.Builder<ShowFeatureRequest, ShowFeatureResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFeatureRequest.class, ShowFeatureResponse.class)
+                .withName("ShowFeature")
+                .withUri("/v3/{project_id}/cbr-features/{feature_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("feature_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFeatureRequest::getFeatureKey, ShowFeatureRequest::setFeatureKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFeatureRequest::getLimit, ShowFeatureRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFeatureRequest::getOffset, ShowFeatureRequest::setOffset));
+
+        // response
+        builder.<Map<String, Object>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(ShowFeatureResponse::getBody, ShowFeatureResponse::setBody)
+                .withInnerContainerType(Object.class));
 
         return builder.build();
     }

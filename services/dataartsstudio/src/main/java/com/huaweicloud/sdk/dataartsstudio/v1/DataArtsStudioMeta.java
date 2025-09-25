@@ -66,11 +66,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermission
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteBaseDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteCategoryGroupDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeletePolicySetsDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteResourcePolicyDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteRuleGroupsBaseDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteRulesBaseDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecrecyLevelDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataCategoriesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataCategoriesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDynamicMaskingPoliciesRequest;
@@ -189,6 +192,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesRespons
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecrecyLevelDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataCategoryRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataCategoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationCombineRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationCombineRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleGroupRequest;
@@ -227,6 +232,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceParams;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CustomizedFieldsVOList;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataCategoryInsertDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataCategoryUpdateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationCombineRuleCheckDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationCombineRuleDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationGroupCreateDTO;
@@ -867,6 +874,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecrecyLevelDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataCategoriesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataCategoriesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationCombineRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationCombineRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleGroupRequest;
@@ -1449,6 +1458,39 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(PermissionSetPermissionCreateDTO.class),
             f -> f.withMarshaller(BatchCreateSecurityPermissionSetPermissionsRequest::getBody,
                 BatchCreateSecurityPermissionSetPermissionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSecurityDataCategoriesRequest, BatchDeleteSecurityDataCategoriesResponse> batchDeleteSecurityDataCategories =
+        genForBatchDeleteSecurityDataCategories();
+
+    private static HttpRequestDef<BatchDeleteSecurityDataCategoriesRequest, BatchDeleteSecurityDataCategoriesResponse> genForBatchDeleteSecurityDataCategories() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSecurityDataCategoriesRequest, BatchDeleteSecurityDataCategoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSecurityDataCategoriesRequest.class,
+                    BatchDeleteSecurityDataCategoriesResponse.class)
+                .withName("BatchDeleteSecurityDataCategories")
+                .withUri("/v1/{project_id}/security/data-category/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityDataCategoriesRequest::getWorkspace,
+                BatchDeleteSecurityDataCategoriesRequest::setWorkspace));
+        builder.<BatchDeleteCategoryGroupDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteCategoryGroupDTO.class),
+            f -> f.withMarshaller(BatchDeleteSecurityDataCategoriesRequest::getBody,
+                BatchDeleteSecurityDataCategoriesRequest::setBody));
 
         // response
 
@@ -3044,6 +3086,39 @@ public class DataArtsStudioMeta {
                 .withMarshaller(CreateSecurityAssignedQueueResponse::getBody,
                     CreateSecurityAssignedQueueResponse::setBody)
                 .withInnerContainerType(QueueSrcAssignEntity.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityDataCategoryRequest, CreateSecurityDataCategoryResponse> createSecurityDataCategory =
+        genForCreateSecurityDataCategory();
+
+    private static HttpRequestDef<CreateSecurityDataCategoryRequest, CreateSecurityDataCategoryResponse> genForCreateSecurityDataCategory() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityDataCategoryRequest, CreateSecurityDataCategoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityDataCategoryRequest.class,
+                    CreateSecurityDataCategoryResponse.class)
+                .withName("CreateSecurityDataCategory")
+                .withUri("/v1/{project_id}/security/data-category")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityDataCategoryRequest::getWorkspace,
+                CreateSecurityDataCategoryRequest::setWorkspace));
+        builder.<DataCategoryInsertDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataCategoryInsertDTO.class),
+            f -> f.withMarshaller(CreateSecurityDataCategoryRequest::getBody,
+                CreateSecurityDataCategoryRequest::setBody));
+
+        // response
 
         return builder.build();
     }
@@ -15656,6 +15731,45 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(QueueSrcAssignUpdateDTO.class),
             f -> f.withMarshaller(UpdateSecurityAssignedQueueRequest::getBody,
                 UpdateSecurityAssignedQueueRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityDataCategoriesRequest, UpdateSecurityDataCategoriesResponse> updateSecurityDataCategories =
+        genForUpdateSecurityDataCategories();
+
+    private static HttpRequestDef<UpdateSecurityDataCategoriesRequest, UpdateSecurityDataCategoriesResponse> genForUpdateSecurityDataCategories() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityDataCategoriesRequest, UpdateSecurityDataCategoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityDataCategoriesRequest.class,
+                    UpdateSecurityDataCategoriesResponse.class)
+                .withName("UpdateSecurityDataCategories")
+                .withUri("/v1/{project_id}/security/data-category/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDataCategoriesRequest::getId,
+                UpdateSecurityDataCategoriesRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDataCategoriesRequest::getWorkspace,
+                UpdateSecurityDataCategoriesRequest::setWorkspace));
+        builder.<DataCategoryUpdateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataCategoryUpdateDTO.class),
+            f -> f.withMarshaller(UpdateSecurityDataCategoriesRequest::getBody,
+                UpdateSecurityDataCategoriesRequest::setBody));
 
         // response
 

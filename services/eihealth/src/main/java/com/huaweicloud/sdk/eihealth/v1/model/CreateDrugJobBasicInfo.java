@@ -23,6 +23,11 @@ public class CreateDrugJobBasicInfo {
 
     private List<String> labels = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upstream_job_info")
+
+    private String upstreamJobInfo;
+
     public CreateDrugJobBasicInfo withName(String name) {
         this.name = name;
         return this;
@@ -73,6 +78,23 @@ public class CreateDrugJobBasicInfo {
         this.labels = labels;
     }
 
+    public CreateDrugJobBasicInfo withUpstreamJobInfo(String upstreamJobInfo) {
+        this.upstreamJobInfo = upstreamJobInfo;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 上游作业信息。 **约束限制**： 不涉及 **取值范围**： 长度为[1-10240]个字符。 **默认取值**： 不涉及 
+     * @return upstreamJobInfo
+     */
+    public String getUpstreamJobInfo() {
+        return upstreamJobInfo;
+    }
+
+    public void setUpstreamJobInfo(String upstreamJobInfo) {
+        this.upstreamJobInfo = upstreamJobInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +104,13 @@ public class CreateDrugJobBasicInfo {
             return false;
         }
         CreateDrugJobBasicInfo that = (CreateDrugJobBasicInfo) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.labels, that.labels);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.upstreamJobInfo, that.upstreamJobInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, labels);
+        return Objects.hash(name, labels, upstreamJobInfo);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class CreateDrugJobBasicInfo {
         sb.append("class CreateDrugJobBasicInfo {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    upstreamJobInfo: ").append(toIndentedString(upstreamJobInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

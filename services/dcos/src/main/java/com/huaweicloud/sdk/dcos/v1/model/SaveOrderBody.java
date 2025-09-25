@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 客户工单
+ * 客户服务单
  */
 public class SaveOrderBody {
 
@@ -84,7 +84,7 @@ public class SaveOrderBody {
     }
 
     /**
-     * 工单号，修改已保存的草稿时使用
+     * 服务单号，修改已保存的草稿时使用
      * @return number
      */
     public String getNumber() {
@@ -118,7 +118,7 @@ public class SaveOrderBody {
     }
 
     /**
-     * 工单类型编码
+     * 服务单类型编码
      * @return modelCode
      */
     public String getModelCode() {

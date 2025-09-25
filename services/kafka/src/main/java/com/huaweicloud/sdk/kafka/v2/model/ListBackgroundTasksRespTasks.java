@@ -56,7 +56,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * 任务ID。
+     * **参数解释**： 任务ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -73,7 +73,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * 任务名称。
+     * **参数解释**： 任务名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -90,7 +90,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * 用户名。
+     * **参数解释**： 用户名。 **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -107,7 +107,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * 用户ID。
+     * **参数解释**： 用户ID。 **取值范围**： 不涉及。
      * @return userId
      */
     public String getUserId() {
@@ -124,7 +124,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * 任务参数。
+     * **参数解释**： 任务参数。 **取值范围**： 不涉及。
      * @return params
      */
     public String getParams() {
@@ -141,7 +141,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * 任务状态。
+     * **参数解释**： 任务状态。 **取值范围**： - CREATED：后台任务状态为创建成功。 - SUCCESS：后台任务状态为成功。 - FAILED：后台任务状态为失败。 - DELETED：后台任务状态为已删除。 - EXECUTING：后台任务状态为执行中。 - CANCELLED：定时任务状态为取消。
      * @return status
      */
     public String getStatus() {
@@ -158,7 +158,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * 启动时间。
+     * **参数解释**： 启动时间。 **取值范围**： 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -175,7 +175,7 @@ public class ListBackgroundTasksRespTasks {
     }
 
     /**
-     * 结束时间。
+     * **参数解释**： 结束时间。 **取值范围**： 不涉及。
      * @return updatedAt
      */
     public String getUpdatedAt() {

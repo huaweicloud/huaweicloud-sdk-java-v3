@@ -31,7 +31,7 @@ public class ListHandleAffectBaselineRequestBodyCheckRuleList {
     }
 
     /**
-     * **参数解释** 基线检查的名称 **约束限制** 不涉及 **取值范围**   字符长度0-256位 **默认取值** 不涉及
+     * **参数解释** 基线检查的名称 **约束限制** 不涉及 **取值范围** 字符长度0-256位 **默认取值** 不涉及
      * @return checkName
      */
     public String getCheckName() {
@@ -48,7 +48,7 @@ public class ListHandleAffectBaselineRequestBodyCheckRuleList {
     }
 
     /**
-     * **参数解释** 检查项id **约束限制** 不涉及 **取值范围**   字符长度0-256位 **默认取值** 不涉及
+     * **参数解释** 检查项id **约束限制** 不涉及 **取值范围** 字符长度0-256位 **默认取值** 不涉及
      * @return checkRuleId
      */
     public String getCheckRuleId() {
@@ -65,7 +65,7 @@ public class ListHandleAffectBaselineRequestBodyCheckRuleList {
     }
 
     /**
-     * **参数解释** 基线检查标准类型 **约束限制** 不涉及 **取值范围**   - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 - cis_standard : 通用安全标准 **默认取值** 不涉及
+     * **参数解释** 基线检查标准类型 **约束限制** 不涉及 **取值范围** - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 - cis_standard : 通用安全标准 **默认取值** 不涉及
      * @return standard
      */
     public String getStandard() {

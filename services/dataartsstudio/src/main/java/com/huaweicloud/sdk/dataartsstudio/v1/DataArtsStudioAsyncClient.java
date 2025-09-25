@@ -37,6 +37,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermission
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetMembersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataCategoriesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataCategoriesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDynamicMaskingPoliciesRequest;
@@ -135,6 +137,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataCategoryRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataCategoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationCombineRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationCombineRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleGroupRequest;
@@ -733,6 +737,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataCategoriesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataCategoriesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationCombineRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationCombineRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleGroupRequest;
@@ -1239,6 +1245,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<BatchCreateSecurityPermissionSetPermissionsRequest, BatchCreateSecurityPermissionSetPermissionsResponse> batchCreateSecurityPermissionSetPermissionsAsyncInvoker(
         BatchCreateSecurityPermissionSetPermissionsRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.batchCreateSecurityPermissionSetPermissions, hcClient);
+    }
+
+    /**
+     * 删除数据分类
+     *
+     * 删除数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSecurityDataCategoriesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSecurityDataCategoriesResponse>
+     */
+    public CompletableFuture<BatchDeleteSecurityDataCategoriesResponse> batchDeleteSecurityDataCategoriesAsync(
+        BatchDeleteSecurityDataCategoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchDeleteSecurityDataCategories);
+    }
+
+    /**
+     * 删除数据分类
+     *
+     * 删除数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSecurityDataCategoriesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSecurityDataCategoriesRequest, BatchDeleteSecurityDataCategoriesResponse>
+     */
+    public AsyncInvoker<BatchDeleteSecurityDataCategoriesRequest, BatchDeleteSecurityDataCategoriesResponse> batchDeleteSecurityDataCategoriesAsyncInvoker(
+        BatchDeleteSecurityDataCategoriesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.batchDeleteSecurityDataCategories, hcClient);
     }
 
     /**
@@ -2655,6 +2691,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<CreateSecurityAssignedQueueRequest, CreateSecurityAssignedQueueResponse> createSecurityAssignedQueueAsyncInvoker(
         CreateSecurityAssignedQueueRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.createSecurityAssignedQueue, hcClient);
+    }
+
+    /**
+     * 创建数据分类
+     *
+     * 创建数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityDataCategoryRequest 请求对象
+     * @return CompletableFuture<CreateSecurityDataCategoryResponse>
+     */
+    public CompletableFuture<CreateSecurityDataCategoryResponse> createSecurityDataCategoryAsync(
+        CreateSecurityDataCategoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createSecurityDataCategory);
+    }
+
+    /**
+     * 创建数据分类
+     *
+     * 创建数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecurityDataCategoryRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityDataCategoryRequest, CreateSecurityDataCategoryResponse>
+     */
+    public AsyncInvoker<CreateSecurityDataCategoryRequest, CreateSecurityDataCategoryResponse> createSecurityDataCategoryAsyncInvoker(
+        CreateSecurityDataCategoryRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.createSecurityDataCategory, hcClient);
     }
 
     /**
@@ -11044,6 +11110,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<UpdateSecurityAssignedQueueRequest, UpdateSecurityAssignedQueueResponse> updateSecurityAssignedQueueAsyncInvoker(
         UpdateSecurityAssignedQueueRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.updateSecurityAssignedQueue, hcClient);
+    }
+
+    /**
+     * 修改数据分类
+     *
+     * 修改数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityDataCategoriesRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityDataCategoriesResponse>
+     */
+    public CompletableFuture<UpdateSecurityDataCategoriesResponse> updateSecurityDataCategoriesAsync(
+        UpdateSecurityDataCategoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateSecurityDataCategories);
+    }
+
+    /**
+     * 修改数据分类
+     *
+     * 修改数据分类。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecurityDataCategoriesRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityDataCategoriesRequest, UpdateSecurityDataCategoriesResponse>
+     */
+    public AsyncInvoker<UpdateSecurityDataCategoriesRequest, UpdateSecurityDataCategoriesResponse> updateSecurityDataCategoriesAsyncInvoker(
+        UpdateSecurityDataCategoriesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.updateSecurityDataCategories, hcClient);
     }
 
     /**

@@ -32,11 +32,6 @@ public class EnvironmentDetail {
     private String os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nick_name")
 
     private String nickName;
@@ -132,23 +127,6 @@ public class EnvironmentDetail {
 
     public void setOs(String os) {
         this.os = os;
-    }
-
-    public EnvironmentDetail withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 项目id
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
     }
 
     public EnvironmentDetail withNickName(String nickName) {
@@ -282,25 +260,16 @@ public class EnvironmentDetail {
         EnvironmentDetail that = (EnvironmentDetail) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.os, that.os)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.nickName, that.nickName)
-            && Objects.equals(this.deployType, that.deployType) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.createdTime, that.createdTime)
             && Objects.equals(this.instanceCount, that.instanceCount) && Objects.equals(this.createdBy, that.createdBy)
             && Objects.equals(this.permission, that.permission);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            name,
-            description,
-            os,
-            projectId,
-            nickName,
-            deployType,
-            createdTime,
-            instanceCount,
-            createdBy,
-            permission);
+        return Objects
+            .hash(id, name, description, os, nickName, deployType, createdTime, instanceCount, createdBy, permission);
     }
 
     @Override
@@ -311,7 +280,6 @@ public class EnvironmentDetail {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    os: ").append(toIndentedString(os)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

@@ -29,6 +29,11 @@ public class CreateAntiVirusPolicyRequestBody {
     private String scanPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_type")
+
+    private String scanType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scan_period_date")
 
     private Integer scanPeriodDate;
@@ -137,6 +142,23 @@ public class CreateAntiVirusPolicyRequestBody {
 
     public void setScanPeriod(String scanPeriod) {
         this.scanPeriod = scanPeriod;
+    }
+
+    public CreateAntiVirusPolicyRequestBody withScanType(String scanType) {
+        this.scanType = scanType;
+        return this;
+    }
+
+    /**
+     * 任务类型，包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描
+     * @return scanType
+     */
+    public String getScanType() {
+        return scanType;
+    }
+
+    public void setScanType(String scanType) {
+        this.scanType = scanType;
     }
 
     public CreateAntiVirusPolicyRequestBody withScanPeriodDate(Integer scanPeriodDate) {
@@ -395,7 +417,7 @@ public class CreateAntiVirusPolicyRequestBody {
         }
         CreateAntiVirusPolicyRequestBody that = (CreateAntiVirusPolicyRequestBody) obj;
         return Objects.equals(this.policyName, that.policyName) && Objects.equals(this.startType, that.startType)
-            && Objects.equals(this.scanPeriod, that.scanPeriod)
+            && Objects.equals(this.scanPeriod, that.scanPeriod) && Objects.equals(this.scanType, that.scanType)
             && Objects.equals(this.scanPeriodDate, that.scanPeriodDate) && Objects.equals(this.scanTime, that.scanTime)
             && Objects.equals(this.scanHour, that.scanHour) && Objects.equals(this.scanMinute, that.scanMinute)
             && Objects.equals(this.timezoneOffset, that.timezoneOffset)
@@ -410,6 +432,7 @@ public class CreateAntiVirusPolicyRequestBody {
         return Objects.hash(policyName,
             startType,
             scanPeriod,
+            scanType,
             scanPeriodDate,
             scanTime,
             scanHour,
@@ -431,6 +454,7 @@ public class CreateAntiVirusPolicyRequestBody {
         sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
         sb.append("    startType: ").append(toIndentedString(startType)).append("\n");
         sb.append("    scanPeriod: ").append(toIndentedString(scanPeriod)).append("\n");
+        sb.append("    scanType: ").append(toIndentedString(scanType)).append("\n");
         sb.append("    scanPeriodDate: ").append(toIndentedString(scanPeriodDate)).append("\n");
         sb.append("    scanTime: ").append(toIndentedString(scanTime)).append("\n");
         sb.append("    scanHour: ").append(toIndentedString(scanHour)).append("\n");

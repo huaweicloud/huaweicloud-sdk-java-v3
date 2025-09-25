@@ -68,7 +68,7 @@ public class OrganizationPolicyAssignmentRequest {
     }
 
     /**
-     * 组织合规规则名称。
+     * 组织合规规则名称
      * @return organizationPolicyAssignmentName
      */
     public String getOrganizationPolicyAssignmentName() {

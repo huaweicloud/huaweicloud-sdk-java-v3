@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,79 +13,56 @@ import java.util.function.Consumer;
 public class ListCertsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "defaultCerts")
+    @JsonProperty(value = "certsRecords")
 
-    private List<DefaultCertsResource> defaultCerts = null;
+    private CertsRecordsDatastore certsRecords;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "customCerts")
+    @JsonProperty(value = "totalSize")
 
-    private List<CustomCertsResource> customCerts = null;
+    private Integer totalSize;
 
-    public ListCertsResponse withDefaultCerts(List<DefaultCertsResource> defaultCerts) {
-        this.defaultCerts = defaultCerts;
+    public ListCertsResponse withCertsRecords(CertsRecordsDatastore certsRecords) {
+        this.certsRecords = certsRecords;
         return this;
     }
 
-    public ListCertsResponse addDefaultCertsItem(DefaultCertsResource defaultCertsItem) {
-        if (this.defaultCerts == null) {
-            this.defaultCerts = new ArrayList<>();
+    public ListCertsResponse withCertsRecords(Consumer<CertsRecordsDatastore> certsRecordsSetter) {
+        if (this.certsRecords == null) {
+            this.certsRecords = new CertsRecordsDatastore();
+            certsRecordsSetter.accept(this.certsRecords);
         }
-        this.defaultCerts.add(defaultCertsItem);
-        return this;
-    }
 
-    public ListCertsResponse withDefaultCerts(Consumer<List<DefaultCertsResource>> defaultCertsSetter) {
-        if (this.defaultCerts == null) {
-            this.defaultCerts = new ArrayList<>();
-        }
-        defaultCertsSetter.accept(this.defaultCerts);
         return this;
     }
 
     /**
-     * 默认证书列表。
-     * @return defaultCerts
+     * Get certsRecords
+     * @return certsRecords
      */
-    public List<DefaultCertsResource> getDefaultCerts() {
-        return defaultCerts;
+    public CertsRecordsDatastore getCertsRecords() {
+        return certsRecords;
     }
 
-    public void setDefaultCerts(List<DefaultCertsResource> defaultCerts) {
-        this.defaultCerts = defaultCerts;
+    public void setCertsRecords(CertsRecordsDatastore certsRecords) {
+        this.certsRecords = certsRecords;
     }
 
-    public ListCertsResponse withCustomCerts(List<CustomCertsResource> customCerts) {
-        this.customCerts = customCerts;
-        return this;
-    }
-
-    public ListCertsResponse addCustomCertsItem(CustomCertsResource customCertsItem) {
-        if (this.customCerts == null) {
-            this.customCerts = new ArrayList<>();
-        }
-        this.customCerts.add(customCertsItem);
-        return this;
-    }
-
-    public ListCertsResponse withCustomCerts(Consumer<List<CustomCertsResource>> customCertsSetter) {
-        if (this.customCerts == null) {
-            this.customCerts = new ArrayList<>();
-        }
-        customCertsSetter.accept(this.customCerts);
+    public ListCertsResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
         return this;
     }
 
     /**
-     * 自定义证书列表。
-     * @return customCerts
+     * 证书记录数量。
+     * @return totalSize
      */
-    public List<CustomCertsResource> getCustomCerts() {
-        return customCerts;
+    public Integer getTotalSize() {
+        return totalSize;
     }
 
-    public void setCustomCerts(List<CustomCertsResource> customCerts) {
-        this.customCerts = customCerts;
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
     }
 
     @Override
@@ -99,21 +74,20 @@ public class ListCertsResponse extends SdkResponse {
             return false;
         }
         ListCertsResponse that = (ListCertsResponse) obj;
-        return Objects.equals(this.defaultCerts, that.defaultCerts)
-            && Objects.equals(this.customCerts, that.customCerts);
+        return Objects.equals(this.certsRecords, that.certsRecords) && Objects.equals(this.totalSize, that.totalSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(defaultCerts, customCerts);
+        return Objects.hash(certsRecords, totalSize);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCertsResponse {\n");
-        sb.append("    defaultCerts: ").append(toIndentedString(defaultCerts)).append("\n");
-        sb.append("    customCerts: ").append(toIndentedString(customCerts)).append("\n");
+        sb.append("    certsRecords: ").append(toIndentedString(certsRecords)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

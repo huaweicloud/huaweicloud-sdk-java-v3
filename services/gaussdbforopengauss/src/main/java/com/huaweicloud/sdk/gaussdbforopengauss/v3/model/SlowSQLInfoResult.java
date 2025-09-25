@@ -38,7 +38,7 @@ public class SlowSQLInfoResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "calls")
 
-    private String calls;
+    private Integer calls;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_exec_time")
@@ -170,7 +170,7 @@ public class SlowSQLInfoResult {
         this.queryPlan = queryPlan;
     }
 
-    public SlowSQLInfoResult withCalls(String calls) {
+    public SlowSQLInfoResult withCalls(Integer calls) {
         this.calls = calls;
         return this;
     }
@@ -179,11 +179,11 @@ public class SlowSQLInfoResult {
      * **参数解释**: 执行次数（次）。 **取值范围**: 不涉及。
      * @return calls
      */
-    public String getCalls() {
+    public Integer getCalls() {
         return calls;
     }
 
-    public void setCalls(String calls) {
+    public void setCalls(Integer calls) {
         this.calls = calls;
     }
 

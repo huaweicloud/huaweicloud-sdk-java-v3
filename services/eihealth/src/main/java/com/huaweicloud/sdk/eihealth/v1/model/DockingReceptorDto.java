@@ -41,6 +41,16 @@ public class DockingReceptorDto {
 
     private Boolean addHydrogen;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "docking_type")
+
+    private String dockingType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reference_file")
+
+    private ReferenceLigandFile referenceFile;
+
     public DockingReceptorDto withReceptor(ReceptorDrugFile receptor) {
         this.receptor = receptor;
         return this;
@@ -161,6 +171,49 @@ public class DockingReceptorDto {
         this.addHydrogen = addHydrogen;
     }
 
+    public DockingReceptorDto withDockingType(String dockingType) {
+        this.dockingType = dockingType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 对接类型。 **约束限制**： 不支持 **取值范围**： - BLIND_DOCKING：全局对接 - POCKET_DOCKING：口袋对接 **默认取值**： POCKET_DOCKING 
+     * @return dockingType
+     */
+    public String getDockingType() {
+        return dockingType;
+    }
+
+    public void setDockingType(String dockingType) {
+        this.dockingType = dockingType;
+    }
+
+    public DockingReceptorDto withReferenceFile(ReferenceLigandFile referenceFile) {
+        this.referenceFile = referenceFile;
+        return this;
+    }
+
+    public DockingReceptorDto withReferenceFile(Consumer<ReferenceLigandFile> referenceFileSetter) {
+        if (this.referenceFile == null) {
+            this.referenceFile = new ReferenceLigandFile();
+            referenceFileSetter.accept(this.referenceFile);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get referenceFile
+     * @return referenceFile
+     */
+    public ReferenceLigandFile getReferenceFile() {
+        return referenceFile;
+    }
+
+    public void setReferenceFile(ReferenceLigandFile referenceFile) {
+        this.referenceFile = referenceFile;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -173,12 +226,14 @@ public class DockingReceptorDto {
         return Objects.equals(this.receptor, that.receptor) && Objects.equals(this.boundingBox, that.boundingBox)
             && Objects.equals(this.removeIon, that.removeIon) && Objects.equals(this.removeWater, that.removeWater)
             && Objects.equals(this.removeLigand, that.removeLigand)
-            && Objects.equals(this.addHydrogen, that.addHydrogen);
+            && Objects.equals(this.addHydrogen, that.addHydrogen) && Objects.equals(this.dockingType, that.dockingType)
+            && Objects.equals(this.referenceFile, that.referenceFile);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(receptor, boundingBox, removeIon, removeWater, removeLigand, addHydrogen);
+        return Objects
+            .hash(receptor, boundingBox, removeIon, removeWater, removeLigand, addHydrogen, dockingType, referenceFile);
     }
 
     @Override
@@ -191,6 +246,8 @@ public class DockingReceptorDto {
         sb.append("    removeWater: ").append(toIndentedString(removeWater)).append("\n");
         sb.append("    removeLigand: ").append(toIndentedString(removeLigand)).append("\n");
         sb.append("    addHydrogen: ").append(toIndentedString(addHydrogen)).append("\n");
+        sb.append("    dockingType: ").append(toIndentedString(dockingType)).append("\n");
+        sb.append("    referenceFile: ").append(toIndentedString(referenceFile)).append("\n");
         sb.append("}");
         return sb.toString();
     }

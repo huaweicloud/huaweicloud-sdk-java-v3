@@ -11,39 +11,19 @@ import java.util.Objects;
 public class ListHostProtectHistoryInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
-
-    private Long startTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
-
-    private Long endTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
@@ -65,22 +45,25 @@ public class ListHostProtectHistoryInfoRequest {
 
     private String fileOperation;
 
-    public ListHostProtectHistoryInfoRequest withRegion(String region) {
-        this.region = region;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
 
-    /**
-     * Region ID
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
+    private Long startTime;
 
-    public void setRegion(String region) {
-        this.region = region;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private Long endTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
 
     public ListHostProtectHistoryInfoRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -88,7 +71,7 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -99,13 +82,30 @@ public class ListHostProtectHistoryInfoRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListHostProtectHistoryInfoRequest withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 区域ID，用于查询目的区域内的资产。获取方式请参见[获取区域ID](hss_02_0026.xml)。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     public ListHostProtectHistoryInfoRequest withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
 
     /**
-     * Host Id，为空时查所有主机
+     * **参数解释**: 服务器ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -116,13 +116,81 @@ public class ListHostProtectHistoryInfoRequest {
         this.hostId = hostId;
     }
 
+    public ListHostProtectHistoryInfoRequest withHostName(String hostName) {
+        this.hostName = hostName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
+     * @return hostName
+     */
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
+    public ListHostProtectHistoryInfoRequest withHostIp(String hostIp) {
+        this.hostIp = hostIp;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器IP **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
+     * @return hostIp
+     */
+    public String getHostIp() {
+        return hostIp;
+    }
+
+    public void setHostIp(String hostIp) {
+        this.hostIp = hostIp;
+    }
+
+    public ListHostProtectHistoryInfoRequest withFilePath(String filePath) {
+        this.filePath = filePath;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 防护文件的文件路径 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
+     * @return filePath
+     */
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public ListHostProtectHistoryInfoRequest withFileOperation(String fileOperation) {
+        this.fileOperation = fileOperation;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 事件描述，即文件操作类型 **约束限制**: 不涉及 **取值范围**: - add: 新增文件。 - delete: 删除文件。 - modify: 修改文件内容。 - attribute: 修改文件属性。  **默认取值**: 不涉及 
+     * @return fileOperation
+     */
+    public String getFileOperation() {
+        return fileOperation;
+    }
+
+    public void setFileOperation(String fileOperation) {
+        this.fileOperation = fileOperation;
+    }
+
     public ListHostProtectHistoryInfoRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * 起始时间(ms)
+     * **参数解释**: 查询起始时间，单位毫秒，不可早于30天前，如早于30天前，则按照30天前计算。 **约束限制**: 不涉及 **取值范围**: 取值0-4070880000000 **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 4070880000000
      * @return startTime
@@ -141,7 +209,7 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     /**
-     * 终止时间(ms)
+     * **参数解释**: 查询终止时间，单位毫秒，不可早于start_time，且与start_time相差不可超过30天，否则按照start_time的1天后计算。 **约束限制**: 不涉及 **取值范围**: 取值0-4070880000000 **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 4070880000000
      * @return endTime
@@ -160,9 +228,9 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     /**
-     * limit
-     * minimum: 0
-     * maximum: 100
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * minimum: 10
+     * maximum: 200
      * @return limit
      */
     public Integer getLimit() {
@@ -179,9 +247,9 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
-     * maximum: 100
+     * maximum: 2000000
      * @return offset
      */
     public Integer getOffset() {
@@ -190,74 +258,6 @@ public class ListHostProtectHistoryInfoRequest {
 
     public void setOffset(Integer offset) {
         this.offset = offset;
-    }
-
-    public ListHostProtectHistoryInfoRequest withHostName(String hostName) {
-        this.hostName = hostName;
-        return this;
-    }
-
-    /**
-     * 服务器名称
-     * @return hostName
-     */
-    public String getHostName() {
-        return hostName;
-    }
-
-    public void setHostName(String hostName) {
-        this.hostName = hostName;
-    }
-
-    public ListHostProtectHistoryInfoRequest withHostIp(String hostIp) {
-        this.hostIp = hostIp;
-        return this;
-    }
-
-    /**
-     * 服务器ip
-     * @return hostIp
-     */
-    public String getHostIp() {
-        return hostIp;
-    }
-
-    public void setHostIp(String hostIp) {
-        this.hostIp = hostIp;
-    }
-
-    public ListHostProtectHistoryInfoRequest withFilePath(String filePath) {
-        this.filePath = filePath;
-        return this;
-    }
-
-    /**
-     * 防护文件
-     * @return filePath
-     */
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
-    public ListHostProtectHistoryInfoRequest withFileOperation(String fileOperation) {
-        this.fileOperation = fileOperation;
-        return this;
-    }
-
-    /**
-     * 文件操作类型   - add: 新增   - delete: 删除   - modify: 修改内容   - attribute: 修改属性
-     * @return fileOperation
-     */
-    public String getFileOperation() {
-        return fileOperation;
-    }
-
-    public void setFileOperation(String fileOperation) {
-        this.fileOperation = fileOperation;
     }
 
     @Override
@@ -269,45 +269,44 @@ public class ListHostProtectHistoryInfoRequest {
             return false;
         }
         ListHostProtectHistoryInfoRequest that = (ListHostProtectHistoryInfoRequest) obj;
-        return Objects.equals(this.region, that.region)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.filePath, that.filePath)
-            && Objects.equals(this.fileOperation, that.fileOperation);
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.fileOperation, that.fileOperation)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region,
-            enterpriseProjectId,
+        return Objects.hash(enterpriseProjectId,
+            region,
             hostId,
-            startTime,
-            endTime,
-            limit,
-            offset,
             hostName,
             hostIp,
             filePath,
-            fileOperation);
+            fileOperation,
+            startTime,
+            endTime,
+            limit,
+            offset);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHostProtectHistoryInfoRequest {\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
-        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    fileOperation: ").append(toIndentedString(fileOperation)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

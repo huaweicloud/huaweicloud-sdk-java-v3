@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.css.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 子网信息。
@@ -24,6 +27,11 @@ public class CreateClusterInstanceNicsBody {
     @JsonProperty(value = "securityGroupId")
 
     private String securityGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ips")
+
+    private List<String> ips = null;
 
     public CreateClusterInstanceNicsBody withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -76,6 +84,39 @@ public class CreateClusterInstanceNicsBody {
         this.securityGroupId = securityGroupId;
     }
 
+    public CreateClusterInstanceNicsBody withIps(List<String> ips) {
+        this.ips = ips;
+        return this;
+    }
+
+    public CreateClusterInstanceNicsBody addIpsItem(String ipsItem) {
+        if (this.ips == null) {
+            this.ips = new ArrayList<>();
+        }
+        this.ips.add(ipsItem);
+        return this;
+    }
+
+    public CreateClusterInstanceNicsBody withIps(Consumer<List<String>> ipsSetter) {
+        if (this.ips == null) {
+            this.ips = new ArrayList<>();
+        }
+        ipsSetter.accept(this.ips);
+        return this;
+    }
+
+    /**
+     * 节点IP信息，在指定IP创建集群时配置。
+     * @return ips
+     */
+    public List<String> getIps() {
+        return ips;
+    }
+
+    public void setIps(List<String> ips) {
+        this.ips = ips;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +127,12 @@ public class CreateClusterInstanceNicsBody {
         }
         CreateClusterInstanceNicsBody that = (CreateClusterInstanceNicsBody) obj;
         return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.netId, that.netId)
-            && Objects.equals(this.securityGroupId, that.securityGroupId);
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.ips, that.ips);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpcId, netId, securityGroupId);
+        return Objects.hash(vpcId, netId, securityGroupId, ips);
     }
 
     @Override
@@ -101,6 +142,7 @@ public class CreateClusterInstanceNicsBody {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    netId: ").append(toIndentedString(netId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    ips: ").append(toIndentedString(ips)).append("\n");
         sb.append("}");
         return sb.toString();
     }

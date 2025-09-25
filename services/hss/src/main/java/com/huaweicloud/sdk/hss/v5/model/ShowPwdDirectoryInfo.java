@@ -70,7 +70,7 @@ public class ShowPwdDirectoryInfo {
     }
 
     /**
-     * **参数解释** 该项是否被选中 **取值范围**  - true : 被选中 - false: 未被选中
+     * **参数解释** 该项是否被选中 **取值范围** - true : 被选中 - false: 未被选中
      * @return checked
      */
     public Boolean getChecked() {

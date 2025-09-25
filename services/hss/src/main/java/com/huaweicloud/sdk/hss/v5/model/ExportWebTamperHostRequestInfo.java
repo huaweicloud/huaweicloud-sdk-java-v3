@@ -89,14 +89,14 @@ public class ExportWebTamperHostRequestInfo {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "export_size")
-
-    private Integer exportSize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "export_headers")
 
     private List<List<String>> exportHeaders = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "export_size")
+
+    private Integer exportSize;
 
     public ExportWebTamperHostRequestInfo withHostId(String hostId) {
         this.hostId = hostId;
@@ -137,7 +137,7 @@ public class ExportWebTamperHostRequestInfo {
     }
 
     /**
-     * 主机ID数组
+     * **参数解释**: 服务器ID列表 **取值范围**: 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {
@@ -205,7 +205,7 @@ public class ExportWebTamperHostRequestInfo {
     }
 
     /**
-     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: Agent ID。（已废弃，请使用host_id） **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -273,7 +273,7 @@ public class ExportWebTamperHostRequestInfo {
     }
 
     /**
-     * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。
+     * 防护状态。（已废弃，请使用wtp_status）
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -290,7 +290,7 @@ public class ExportWebTamperHostRequestInfo {
     }
 
     /**
-     * Agent状态，包含如下6种。   - installed ：已安装。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。   - not_online ：不在线的（除了在线以外的所有状态，仅作为查询条件）。
+     * **参数解释**: Agent状态。 **约束限制**: 不涉及 **取值范围**: - not_installed：未安装。 - online：在线。 - offline：离线。  **默认取值**: 不涉及。 
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -324,7 +324,7 @@ public class ExportWebTamperHostRequestInfo {
     }
 
     /**
-     * 防护状态   - closed : 未防护   - opened : 防护中   - open_failed : 防护失败   - opening : 正在开启   - partial_protection : 部分防护
+     * **参数解释**: 网页防篡改防护状态 **取值范围**: - opening : 开启中。 - opened : 防护中。 - open_failed : 防护失败。 - partial_protection : 部分防护。 - protection_interruption : 防护中断。 
      * @return wtpStatus
      */
     public String getWtpStatus() {
@@ -341,7 +341,7 @@ public class ExportWebTamperHostRequestInfo {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * 偏移量。（已废弃，请使用export_size）
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -360,7 +360,7 @@ public class ExportWebTamperHostRequestInfo {
     }
 
     /**
-     * 每页显示个数
+     * 每页显示个数。（已废弃，请使用export_size）
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -371,25 +371,6 @@ public class ExportWebTamperHostRequestInfo {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
-    }
-
-    public ExportWebTamperHostRequestInfo withExportSize(Integer exportSize) {
-        this.exportSize = exportSize;
-        return this;
-    }
-
-    /**
-     * 导出数据条数
-     * minimum: 1
-     * maximum: 200000
-     * @return exportSize
-     */
-    public Integer getExportSize() {
-        return exportSize;
-    }
-
-    public void setExportSize(Integer exportSize) {
-        this.exportSize = exportSize;
     }
 
     public ExportWebTamperHostRequestInfo withExportHeaders(List<List<String>> exportHeaders) {
@@ -414,7 +395,7 @@ public class ExportWebTamperHostRequestInfo {
     }
 
     /**
-     * 导出表头集合
+     * **参数解释**: 导出数据表头信息详情 **约束限制**: 表头信息应为如下格式[[字段1,表头1显示名称],[字段2,表头2显示名称],[字段3,表头3显示名称]] **取值范围**: 可从如下取值中选取部分或全部组成表头信息 - host_name：服务器名称。 - host_id：服务器ID。 - public_ip：弹性公网IP地址。 - private_ip：私有IP地址。 - charging_mode：计费模式。 - agent_status：Agent状态。 - protect_status：防护状态。 - protect_dir_num：防护目录数。 - rasp_protect_status：动态防篡改状态。 - anti_tampering_times：静态防篡改攻击（近七天）。 - detect_tampering_times：动态防篡改攻击（近七天）。 - protect_dir：防护目录。 - exclude_child_dir：排除子目录。 - exclude_file_list：排除文件路径列表。 - local_backup_dir：本地备份路径。 - exclude_file_type：排除文件类型。 - dir_protect_status：防护目录状态。 - error：错误信息。  **默认取值**: 不涉及 
      * @return exportHeaders
      */
     public List<List<String>> getExportHeaders() {
@@ -423,6 +404,25 @@ public class ExportWebTamperHostRequestInfo {
 
     public void setExportHeaders(List<List<String>> exportHeaders) {
         this.exportHeaders = exportHeaders;
+    }
+
+    public ExportWebTamperHostRequestInfo withExportSize(Integer exportSize) {
+        this.exportSize = exportSize;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 导出数据条数上限 **约束限制**: 不涉及 **取值范围**: 最小值1，最大值200000 **默认取值**: 不涉及 
+     * minimum: 1
+     * maximum: 200000
+     * @return exportSize
+     */
+    public Integer getExportSize() {
+        return exportSize;
+    }
+
+    public void setExportSize(Integer exportSize) {
+        this.exportSize = exportSize;
     }
 
     @Override
@@ -442,8 +442,8 @@ public class ExportWebTamperHostRequestInfo {
             && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.raspProtectStatus, that.raspProtectStatus)
             && Objects.equals(this.wtpStatus, that.wtpStatus) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.exportSize, that.exportSize)
-            && Objects.equals(this.exportHeaders, that.exportHeaders);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.exportHeaders, that.exportHeaders)
+            && Objects.equals(this.exportSize, that.exportSize);
     }
 
     @Override
@@ -463,8 +463,8 @@ public class ExportWebTamperHostRequestInfo {
             wtpStatus,
             offset,
             limit,
-            exportSize,
-            exportHeaders);
+            exportHeaders,
+            exportSize);
     }
 
     @Override
@@ -486,8 +486,8 @@ public class ExportWebTamperHostRequestInfo {
         sb.append("    wtpStatus: ").append(toIndentedString(wtpStatus)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    exportSize: ").append(toIndentedString(exportSize)).append("\n");
         sb.append("    exportHeaders: ").append(toIndentedString(exportHeaders)).append("\n");
+        sb.append("    exportSize: ").append(toIndentedString(exportSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -23,6 +23,11 @@ public class ShrinkNodesReq {
 
     private List<String> shrinkNodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_name")
+
+    private String agencyName;
+
     public ShrinkNodesReq withMigrateData(String migrateData) {
         this.migrateData = migrateData;
         return this;
@@ -73,6 +78,23 @@ public class ShrinkNodesReq {
         this.shrinkNodes = shrinkNodes;
     }
 
+    public ShrinkNodesReq withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * 委托名称，委托给CSS服务，允许CSS调用您的其他云服务。
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +104,13 @@ public class ShrinkNodesReq {
             return false;
         }
         ShrinkNodesReq that = (ShrinkNodesReq) obj;
-        return Objects.equals(this.migrateData, that.migrateData) && Objects.equals(this.shrinkNodes, that.shrinkNodes);
+        return Objects.equals(this.migrateData, that.migrateData) && Objects.equals(this.shrinkNodes, that.shrinkNodes)
+            && Objects.equals(this.agencyName, that.agencyName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(migrateData, shrinkNodes);
+        return Objects.hash(migrateData, shrinkNodes, agencyName);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class ShrinkNodesReq {
         sb.append("class ShrinkNodesReq {\n");
         sb.append("    migrateData: ").append(toIndentedString(migrateData)).append("\n");
         sb.append("    shrinkNodes: ").append(toIndentedString(shrinkNodes)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -157,7 +157,7 @@ public class PolicyListDataList {
     }
 
     /**
-     * 操作系统类型，包含如下2种。   - Linux ：Linux。   - Windows ：Winodws.
+     * 操作系统类型，包含如下2种。   - Linux ：Linux。   - Windows ：Windows.
      * @return osType
      */
     public String getOsType() {

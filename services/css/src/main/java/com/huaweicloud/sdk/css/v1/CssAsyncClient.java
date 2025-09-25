@@ -478,9 +478,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * es监听器配置。
+     * 集群负载均衡监听器配置。
      *
-     * 该接口用于es监听器配置。
+     * 该接口用于集群负载均衡监听器配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -492,9 +492,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * es监听器配置。
+     * 集群负载均衡监听器配置。
      *
-     * 该接口用于es监听器配置。
+     * 该接口用于集群负载均衡监听器配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -772,9 +772,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * 打开或关闭es负载均衡器
+     * 为集群打开或关闭负载均衡器
      *
-     * 该接口打开或关闭es负载均衡器。
+     * 该接口为集群打开或关闭负载均衡器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -786,9 +786,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * 打开或关闭es负载均衡器
+     * 为集群打开或关闭负载均衡器
      *
-     * 该接口打开或关闭es负载均衡器。
+     * 该接口为集群打开或关闭负载均衡器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -972,7 +972,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 获取目标镜像ID
+     * 获取可升级的目标镜像ID
      *
      * 该接口用于获取当前集群的可升级目标镜像ID。
      * 
@@ -986,7 +986,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 获取目标镜像ID
+     * 获取可升级的目标镜像ID
      *
      * 该接口用于获取当前集群的可升级目标镜像ID。
      * 
@@ -1346,9 +1346,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * 获取该esELB的信息，以及页面需要展示健康检查状态
+     * 获取集群的负载均衡器信息
      *
-     * 该接口用于获取该esELB的信息，以及页面需要展示健康检查状态。
+     * 该接口用于获取集群的负载均衡器信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1360,9 +1360,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * 获取该esELB的信息，以及页面需要展示健康检查状态
+     * 获取集群的负载均衡器信息
      *
-     * 该接口用于获取该esELB的信息，以及页面需要展示健康检查状态。
+     * 该接口用于获取集群的负载均衡器信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1917,9 +1917,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * 更新es监听器
+     * 更新集群负载均衡监听器
      *
-     * 该接口用于更新es监听器。
+     * 该接口用于更新集群负载均衡监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1931,9 +1931,9 @@ public class CssAsyncClient {
     }
 
     /**
-     * 更新es监听器
+     * 更新集群负载均衡监听器
      *
-     * 该接口用于更新es监听器。
+     * 该接口用于更新集群负载均衡监听器。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2430,7 +2430,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 获取升级详情信息
+     * 获取集群升级或切换AZ的详情信息
      *
      * 由于升级过程时间较长，该接口可以展示当前升级（切换AZ）节点的各个阶段信息。
      * 
@@ -2444,7 +2444,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 获取升级详情信息
+     * 获取集群升级或切换AZ的详情信息
      *
      * 由于升级过程时间较长，该接口可以展示当前升级（切换AZ）节点的各个阶段信息。
      * 

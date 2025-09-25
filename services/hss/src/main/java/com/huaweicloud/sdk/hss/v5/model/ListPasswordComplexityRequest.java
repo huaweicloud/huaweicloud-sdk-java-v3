@@ -119,7 +119,7 @@ public class ListPasswordComplexityRequest {
     }
 
     /**
-     * **参数解释**: 结果类型 **约束限制**: 不涉及 **取值范围**: - unhandled : 未忽略的 - ignored   : 已忽略的 **默认取值**: unhandled 
+     * **参数解释**: 结果类型 **约束限制**: 不涉及 **取值范围**: - unhandled : 未处理 - ignored   : 已忽略  **默认取值**: unhandled 
      * @return resultType
      */
     public String getResultType() {

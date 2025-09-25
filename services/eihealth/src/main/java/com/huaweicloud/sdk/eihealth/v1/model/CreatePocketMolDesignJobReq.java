@@ -48,6 +48,11 @@ public class CreatePocketMolDesignJobReq {
 
     private OptimizationMode optimizationMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model_id")
+
+    private String baseModelId;
+
     public CreatePocketMolDesignJobReq withBasicInfo(CreateDrugJobBasicInfo basicInfo) {
         this.basicInfo = basicInfo;
         return this;
@@ -235,6 +240,23 @@ public class CreatePocketMolDesignJobReq {
         this.optimizationMode = optimizationMode;
     }
 
+    public CreatePocketMolDesignJobReq withBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 基模型ID。 **约束限制**： 当optimization_mode为generation时，可选择PanguDrug3D、Lingo3DMol，当为其他方式时，仅可选择可选择PanguDrug3D。 **取值范围**： - PanguDrug3D - Lingo3DMol **默认取值**： 不涉及 
+     * @return baseModelId
+     */
+    public String getBaseModelId() {
+        return baseModelId;
+    }
+
+    public void setBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -248,12 +270,14 @@ public class CreatePocketMolDesignJobReq {
             && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.numTrials, that.numTrials)
             && Objects.equals(this.modelIds, that.modelIds)
             && Objects.equals(this.molecularWeight, that.molecularWeight)
-            && Objects.equals(this.optimizationMode, that.optimizationMode);
+            && Objects.equals(this.optimizationMode, that.optimizationMode)
+            && Objects.equals(this.baseModelId, that.baseModelId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptor, ligands, numTrials, modelIds, molecularWeight, optimizationMode);
+        return Objects
+            .hash(basicInfo, receptor, ligands, numTrials, modelIds, molecularWeight, optimizationMode, baseModelId);
     }
 
     @Override
@@ -267,6 +291,7 @@ public class CreatePocketMolDesignJobReq {
         sb.append("    modelIds: ").append(toIndentedString(modelIds)).append("\n");
         sb.append("    molecularWeight: ").append(toIndentedString(molecularWeight)).append("\n");
         sb.append("    optimizationMode: ").append(toIndentedString(optimizationMode)).append("\n");
+        sb.append("    baseModelId: ").append(toIndentedString(baseModelId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

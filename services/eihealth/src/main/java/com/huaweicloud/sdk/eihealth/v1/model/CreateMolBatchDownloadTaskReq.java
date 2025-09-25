@@ -29,6 +29,11 @@ public class CreateMolBatchDownloadTaskReq {
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "format")
+
+    private String format;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "selected")
 
     private List<Integer> selected = null;
@@ -84,6 +89,23 @@ public class CreateMolBatchDownloadTaskReq {
         this.mode = mode;
     }
 
+    public CreateMolBatchDownloadTaskReq withFormat(String format) {
+        this.format = format;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 文件格式：pdb、sdf（仅下载小分子时支持此格式）。 **约束限制**： 不涉及 **取值范围**： - pdb：pdb文件格式。 - sdf：sdf文件格式，仅下载小分子时支持此格式。 **默认取值**： pdb 
+     * @return format
+     */
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
     public CreateMolBatchDownloadTaskReq withSelected(List<Integer> selected) {
         this.selected = selected;
         return this;
@@ -127,12 +149,13 @@ public class CreateMolBatchDownloadTaskReq {
         }
         CreateMolBatchDownloadTaskReq that = (CreateMolBatchDownloadTaskReq) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobResultUrl, that.jobResultUrl)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.selected, that.selected);
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.format, that.format)
+            && Objects.equals(this.selected, that.selected);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, jobResultUrl, mode, selected);
+        return Objects.hash(jobId, jobResultUrl, mode, format, selected);
     }
 
     @Override
@@ -142,6 +165,7 @@ public class CreateMolBatchDownloadTaskReq {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    jobResultUrl: ").append(toIndentedString(jobResultUrl)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    selected: ").append(toIndentedString(selected)).append("\n");
         sb.append("}");
         return sb.toString();

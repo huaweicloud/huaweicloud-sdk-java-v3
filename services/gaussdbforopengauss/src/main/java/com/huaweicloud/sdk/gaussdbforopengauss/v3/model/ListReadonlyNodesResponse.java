@@ -15,46 +15,46 @@ import java.util.function.Consumer;
 public class ListReadonlyNodesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instances")
+    @JsonProperty(value = "nodes")
 
-    private List<ListReadonlyNodesResult> instances = null;
+    private List<ListReadonlyNodesResult> nodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_readonly_node_num")
 
     private Integer maxReadonlyNodeNum;
 
-    public ListReadonlyNodesResponse withInstances(List<ListReadonlyNodesResult> instances) {
-        this.instances = instances;
+    public ListReadonlyNodesResponse withNodes(List<ListReadonlyNodesResult> nodes) {
+        this.nodes = nodes;
         return this;
     }
 
-    public ListReadonlyNodesResponse addInstancesItem(ListReadonlyNodesResult instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
+    public ListReadonlyNodesResponse addNodesItem(ListReadonlyNodesResult nodesItem) {
+        if (this.nodes == null) {
+            this.nodes = new ArrayList<>();
         }
-        this.instances.add(instancesItem);
+        this.nodes.add(nodesItem);
         return this;
     }
 
-    public ListReadonlyNodesResponse withInstances(Consumer<List<ListReadonlyNodesResult>> instancesSetter) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
+    public ListReadonlyNodesResponse withNodes(Consumer<List<ListReadonlyNodesResult>> nodesSetter) {
+        if (this.nodes == null) {
+            this.nodes = new ArrayList<>();
         }
-        instancesSetter.accept(this.instances);
+        nodesSetter.accept(this.nodes);
         return this;
     }
 
     /**
      * **参数解释**: 只读节点列表。 **约束限制**: 不涉及。
-     * @return instances
+     * @return nodes
      */
-    public List<ListReadonlyNodesResult> getInstances() {
-        return instances;
+    public List<ListReadonlyNodesResult> getNodes() {
+        return nodes;
     }
 
-    public void setInstances(List<ListReadonlyNodesResult> instances) {
-        this.instances = instances;
+    public void setNodes(List<ListReadonlyNodesResult> nodes) {
+        this.nodes = nodes;
     }
 
     public ListReadonlyNodesResponse withMaxReadonlyNodeNum(Integer maxReadonlyNodeNum) {
@@ -83,20 +83,20 @@ public class ListReadonlyNodesResponse extends SdkResponse {
             return false;
         }
         ListReadonlyNodesResponse that = (ListReadonlyNodesResponse) obj;
-        return Objects.equals(this.instances, that.instances)
+        return Objects.equals(this.nodes, that.nodes)
             && Objects.equals(this.maxReadonlyNodeNum, that.maxReadonlyNodeNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instances, maxReadonlyNodeNum);
+        return Objects.hash(nodes, maxReadonlyNodeNum);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListReadonlyNodesResponse {\n");
-        sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
+        sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    maxReadonlyNodeNum: ").append(toIndentedString(maxReadonlyNodeNum)).append("\n");
         sb.append("}");
         return sb.toString();

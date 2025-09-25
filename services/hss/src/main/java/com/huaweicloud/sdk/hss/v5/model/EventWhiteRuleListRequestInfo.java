@@ -55,7 +55,7 @@ public class EventWhiteRuleListRequestInfo {
     }
 
     /**
-     * 加白字段，包含如下: - \"file/process hash\" # 进程/文件hash - \"file_path\" # 文件路径 - \"process_path\" # 进程路径 - \"login_ip\" # 登录ip - \"reg_key\" #注册表key - \"process_cmdline\" # 进程命令行 - \"username\" # 用户名
+     * **参数解释**： 加白字段 **取值范围**: - file/process hash：进程/文件hash。 - file_path：文件路径。 - process_path：进程路径。 - login_ip：登录ip。 - reg_key：注册表key。 - process_cmdline：进程命令行。 - username：用户名。 
      * @return fieldKey
      */
     public String getFieldKey() {
@@ -89,7 +89,7 @@ public class EventWhiteRuleListRequestInfo {
     }
 
     /**
-     * 通配符，包含如下: - \"equal\" # 相等 - \"contain\" # 包含
+     * **参数解释**： 通配符 **取值范围**: - equal：相等。 - contain：包含。 
      * @return judgeType
      */
     public String getJudgeType() {

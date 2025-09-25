@@ -123,7 +123,7 @@ public class ListAppWhitelistPolicyRequest {
     }
 
     /**
-     * **参数解释**： 进程白名单策略类型 **约束限制**: 不涉及 **取值范围**: - allow：允许指定/授权进程运行 - block：阻止潜在恶意软件运行  **默认取值**: 不涉及 
+     * **参数解释**： 进程白名单策略类型 **约束限制**: 不涉及 **取值范围**: - block：日常运营模式  **默认取值**: 不涉及 
      * @return policyType
      */
     public String getPolicyType() {

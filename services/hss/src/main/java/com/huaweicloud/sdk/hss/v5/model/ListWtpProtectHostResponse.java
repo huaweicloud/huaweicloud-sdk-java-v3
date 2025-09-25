@@ -46,7 +46,7 @@ public class ListWtpProtectHostResponse extends SdkResponse {
     }
 
     /**
-     * data list
+     * **参数解释**: 网页防篡改防护列表信息 **取值范围**: 最小值0，最大值200 
      * @return dataList
      */
     public List<WtpProtectHostResponseInfo> getDataList() {
@@ -63,9 +63,9 @@ public class ListWtpProtectHostResponse extends SdkResponse {
     }
 
     /**
-     * total number of WTP protected servers
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
-     * maximum: 65535
+     * maximum: 2147483647
      * @return totalNum
      */
     public Integer getTotalNum() {

@@ -3,11 +3,13 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * WtpProtectHostResponseInfo
+ * 网页防篡改防护信息
  */
 public class WtpProtectHostResponseInfo {
 
@@ -32,9 +34,9 @@ public class WtpProtectHostResponseInfo {
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ipv6")
+    @JsonProperty(value = "group_id")
 
-    private String ipv6;
+    private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
@@ -62,6 +64,16 @@ public class WtpProtectHostResponseInfo {
     private String protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charging_mode")
+
+    private String chargingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rasp_protect_status")
 
     private String raspProtectStatus;
@@ -75,16 +87,6 @@ public class WtpProtectHostResponseInfo {
     @JsonProperty(value = "detect_tampering_times")
 
     private Long detectTamperingTimes;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "last_detect_time")
-
-    private Long lastDetectTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scheduled_shutdown_status")
-
-    private String scheduledShutdownStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_name")
@@ -112,9 +114,24 @@ public class WtpProtectHostResponseInfo {
     private Integer protectDirNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "remote_backbup_info")
+    @JsonProperty(value = "abnormal_dir_list")
 
-    private WtpRemoteBackupResponseInfo remoteBackbupInfo;
+    private List<String> abnormalDirList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "abnormal_reason")
+
+    private Integer abnormalReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_host_id")
+
+    private String backupHostId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interrupt_reason")
+
+    private String interruptReason;
 
     public WtpProtectHostResponseInfo withHostName(String hostName) {
         this.hostName = hostName;
@@ -122,7 +139,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -139,7 +156,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 主机ID
+     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -156,7 +173,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 弹性公网IP
+     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -173,7 +190,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 私有IP
+     * **参数解释**： 服务器私有IP **取值范围**： 字符长度1-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -184,21 +201,21 @@ public class WtpProtectHostResponseInfo {
         this.privateIp = privateIp;
     }
 
-    public WtpProtectHostResponseInfo withIpv6(String ipv6) {
-        this.ipv6 = ipv6;
+    public WtpProtectHostResponseInfo withGroupId(String groupId) {
+        this.groupId = groupId;
         return this;
     }
 
     /**
-     * 私有IPv6地址
-     * @return ipv6
+     * **参数解释**： 策略组ID **取值范围**： 字符长度36-64位
+     * @return groupId
      */
-    public String getIpv6() {
-        return ipv6;
+    public String getGroupId() {
+        return groupId;
     }
 
-    public void setIpv6(String ipv6) {
-        this.ipv6 = ipv6;
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public WtpProtectHostResponseInfo withGroupName(String groupName) {
@@ -207,7 +224,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 服务器组名称
+     * **参数解释**: 服务器组名称 **取值范围**: 字符长度0-256位 
      * @return groupName
      */
     public String getGroupName() {
@@ -241,7 +258,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 操作系统位数
+     * **参数解释**： 操作系统位数 **取值范围**： 字符长度1-64位 
      * @return osBit
      */
     public String getOsBit() {
@@ -258,7 +275,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 操作系统（linux，windows）
+     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux。 - Windows：Windows。 
      * @return osType
      */
     public String getOsType() {
@@ -275,7 +292,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 防护状态   - opening : 正在开启   - opened : 防护中   - open_failed : 防护失败   - partial_protection : 部分防护   - protection_interruption : 防护中断
+     * **参数解释**: 网页防篡改防护状态 **取值范围**: - opening : 开启中。 - opened : 防护中。 - closed : 未防护。 - open_failed : 防护失败。 - partial_protection : 部分防护。 - protection_interruption : 防护中断。 - protection_pause : 防护暂停。 
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -286,13 +303,47 @@ public class WtpProtectHostResponseInfo {
         this.protectStatus = protectStatus;
     }
 
+    public WtpProtectHostResponseInfo withChargingMode(String chargingMode) {
+        this.chargingMode = chargingMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 计费模式 **取值范围**： - packet_cycle ：包年/包月。 - on_demand ：按需计费。
+     * @return chargingMode
+     */
+    public String getChargingMode() {
+        return chargingMode;
+    }
+
+    public void setChargingMode(String chargingMode) {
+        this.chargingMode = chargingMode;
+    }
+
+    public WtpProtectHostResponseInfo withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 资源ID **取值范围**： 字符长度0-128位
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
     public WtpProtectHostResponseInfo withRaspProtectStatus(String raspProtectStatus) {
         this.raspProtectStatus = raspProtectStatus;
         return this;
     }
 
     /**
-     * 动态网页防篡改状态   - closed : 未开启   - opened : 防护中
+     * **参数解释**: 动态网页防篡改防护开启状态 **取值范围**: - opened ：已开启动态网页防篡改防护。 - closed ：未开启动态网页防篡改防护。 
      * @return raspProtectStatus
      */
     public String getRaspProtectStatus() {
@@ -309,7 +360,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 已防御篡改攻击次数
+     * **参数解释**: 近7天静态网页防篡改攻击次数 **取值范围**: 最小值0，最大值2000000000 
      * minimum: 0
      * maximum: 2000000000
      * @return antiTamperingTimes
@@ -328,7 +379,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 已发现篡改攻击
+     * **参数解释**: 近7天动态网页防篡改攻击次数 **取值范围**: 最小值0，最大值2000000000 
      * minimum: 0
      * maximum: 2000000000
      * @return detectTamperingTimes
@@ -341,49 +392,13 @@ public class WtpProtectHostResponseInfo {
         this.detectTamperingTimes = detectTamperingTimes;
     }
 
-    public WtpProtectHostResponseInfo withLastDetectTime(Long lastDetectTime) {
-        this.lastDetectTime = lastDetectTime;
-        return this;
-    }
-
-    /**
-     * 最近检测时间(ms)
-     * minimum: 0
-     * maximum: 4070880000000
-     * @return lastDetectTime
-     */
-    public Long getLastDetectTime() {
-        return lastDetectTime;
-    }
-
-    public void setLastDetectTime(Long lastDetectTime) {
-        this.lastDetectTime = lastDetectTime;
-    }
-
-    public WtpProtectHostResponseInfo withScheduledShutdownStatus(String scheduledShutdownStatus) {
-        this.scheduledShutdownStatus = scheduledShutdownStatus;
-        return this;
-    }
-
-    /**
-     * 定时关闭防护开关状态   - opened : 开启   - closed : 未开启
-     * @return scheduledShutdownStatus
-     */
-    public String getScheduledShutdownStatus() {
-        return scheduledShutdownStatus;
-    }
-
-    public void setScheduledShutdownStatus(String scheduledShutdownStatus) {
-        this.scheduledShutdownStatus = scheduledShutdownStatus;
-    }
-
     public WtpProtectHostResponseInfo withOsName(String osName) {
         this.osName = osName;
         return this;
     }
 
     /**
-     * 系统名称
+     * **参数解释**： 操作系统名称 **取值范围**： 字符长度0-128位 
      * @return osName
      */
     public String getOsName() {
@@ -400,7 +415,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 系统版本
+     * **参数解释**： 操作系统版本 **取值范围**： 字符长度0-256位 
      * @return osVersion
      */
     public String getOsVersion() {
@@ -417,7 +432,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 服务器状态，包含如下4种。   - ACTIVE ：运行中。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * **参数解释**: 服务器状态 **取值范围**: - ACTIVE ：运行中。 - SHUTOFF ：关机。 - BUILDING ：创建中。 - ERROR ：故障。
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -434,7 +449,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * Agent状态   - not_installed : agent未安装   - online : agent在线   - offline : agent不在线
+     * **参数解释**: Agent状态 **取值范围**: - not_installed：未安装。 - online：在线。 - offline：离线。 
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -451,7 +466,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 防护目录数
+     * **参数解释**: 防护目录数 **取值范围**: 最小值0，最大值50 
      * minimum: 0
      * maximum: 50
      * @return protectDirNum
@@ -464,31 +479,90 @@ public class WtpProtectHostResponseInfo {
         this.protectDirNum = protectDirNum;
     }
 
-    public WtpProtectHostResponseInfo withRemoteBackbupInfo(WtpRemoteBackupResponseInfo remoteBackbupInfo) {
-        this.remoteBackbupInfo = remoteBackbupInfo;
+    public WtpProtectHostResponseInfo withAbnormalDirList(List<String> abnormalDirList) {
+        this.abnormalDirList = abnormalDirList;
         return this;
     }
 
-    public WtpProtectHostResponseInfo withRemoteBackbupInfo(
-        Consumer<WtpRemoteBackupResponseInfo> remoteBackbupInfoSetter) {
-        if (this.remoteBackbupInfo == null) {
-            this.remoteBackbupInfo = new WtpRemoteBackupResponseInfo();
-            remoteBackbupInfoSetter.accept(this.remoteBackbupInfo);
+    public WtpProtectHostResponseInfo addAbnormalDirListItem(String abnormalDirListItem) {
+        if (this.abnormalDirList == null) {
+            this.abnormalDirList = new ArrayList<>();
         }
+        this.abnormalDirList.add(abnormalDirListItem);
+        return this;
+    }
 
+    public WtpProtectHostResponseInfo withAbnormalDirList(Consumer<List<String>> abnormalDirListSetter) {
+        if (this.abnormalDirList == null) {
+            this.abnormalDirList = new ArrayList<>();
+        }
+        abnormalDirListSetter.accept(this.abnormalDirList);
         return this;
     }
 
     /**
-     * Get remoteBackbupInfo
-     * @return remoteBackbupInfo
+     * **参数解释**: 防护状态是防护失败的防护目录列表，仅当存在防护状态是防护失败的防护目录时返回。 **取值范围**: 最少0条，最多50条 
+     * @return abnormalDirList
      */
-    public WtpRemoteBackupResponseInfo getRemoteBackbupInfo() {
-        return remoteBackbupInfo;
+    public List<String> getAbnormalDirList() {
+        return abnormalDirList;
     }
 
-    public void setRemoteBackbupInfo(WtpRemoteBackupResponseInfo remoteBackbupInfo) {
-        this.remoteBackbupInfo = remoteBackbupInfo;
+    public void setAbnormalDirList(List<String> abnormalDirList) {
+        this.abnormalDirList = abnormalDirList;
+    }
+
+    public WtpProtectHostResponseInfo withAbnormalReason(Integer abnormalReason) {
+        this.abnormalReason = abnormalReason;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 防护失败原因，仅当存在防护状态是防护失败的防护目录时返回。 **取值范围**: - 1 ：某一个防护目录的路径不存在。 - 2 ：多个防护目录的路径不存在。 - 7 ：某一个防护目录未防护。 - 8 ：多个防护目录未防护。 - 10 ：某一个防护目录是网络文件系统。 - 11 ：多个防护目录是网络文件系统。 
+     * minimum: 1
+     * maximum: 11
+     * @return abnormalReason
+     */
+    public Integer getAbnormalReason() {
+        return abnormalReason;
+    }
+
+    public void setAbnormalReason(Integer abnormalReason) {
+        this.abnormalReason = abnormalReason;
+    }
+
+    public WtpProtectHostResponseInfo withBackupHostId(String backupHostId) {
+        this.backupHostId = backupHostId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 远端备份服务器ID，仅当Linux服务器开启远端备份功能时返回。 **取值范围**： 字符长度0-64位 
+     * @return backupHostId
+     */
+    public String getBackupHostId() {
+        return backupHostId;
+    }
+
+    public void setBackupHostId(String backupHostId) {
+        this.backupHostId = backupHostId;
+    }
+
+    public WtpProtectHostResponseInfo withInterruptReason(String interruptReason) {
+        this.interruptReason = interruptReason;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 防护中断原因，仅当防护状态是防护中断时返回。 **取值范围**： 字符长度0-256位 
+     * @return interruptReason
+     */
+    public String getInterruptReason() {
+        return interruptReason;
+    }
+
+    public void setInterruptReason(String interruptReason) {
+        this.interruptReason = interruptReason;
     }
 
     @Override
@@ -502,18 +576,20 @@ public class WtpProtectHostResponseInfo {
         WtpProtectHostResponseInfo that = (WtpProtectHostResponseInfo) obj;
         return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostId, that.hostId)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
-            && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
             && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.osBit, that.osBit)
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.raspProtectStatus, that.raspProtectStatus)
             && Objects.equals(this.antiTamperingTimes, that.antiTamperingTimes)
             && Objects.equals(this.detectTamperingTimes, that.detectTamperingTimes)
-            && Objects.equals(this.lastDetectTime, that.lastDetectTime)
-            && Objects.equals(this.scheduledShutdownStatus, that.scheduledShutdownStatus)
             && Objects.equals(this.osName, that.osName) && Objects.equals(this.osVersion, that.osVersion)
             && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.protectDirNum, that.protectDirNum)
-            && Objects.equals(this.remoteBackbupInfo, that.remoteBackbupInfo);
+            && Objects.equals(this.abnormalDirList, that.abnormalDirList)
+            && Objects.equals(this.abnormalReason, that.abnormalReason)
+            && Objects.equals(this.backupHostId, that.backupHostId)
+            && Objects.equals(this.interruptReason, that.interruptReason);
     }
 
     @Override
@@ -522,23 +598,26 @@ public class WtpProtectHostResponseInfo {
             hostId,
             publicIp,
             privateIp,
-            ipv6,
+            groupId,
             groupName,
             assetValue,
             osBit,
             osType,
             protectStatus,
+            chargingMode,
+            resourceId,
             raspProtectStatus,
             antiTamperingTimes,
             detectTamperingTimes,
-            lastDetectTime,
-            scheduledShutdownStatus,
             osName,
             osVersion,
             hostStatus,
             agentStatus,
             protectDirNum,
-            remoteBackbupInfo);
+            abnormalDirList,
+            abnormalReason,
+            backupHostId,
+            interruptReason);
     }
 
     @Override
@@ -549,23 +628,26 @@ public class WtpProtectHostResponseInfo {
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
-        sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    raspProtectStatus: ").append(toIndentedString(raspProtectStatus)).append("\n");
         sb.append("    antiTamperingTimes: ").append(toIndentedString(antiTamperingTimes)).append("\n");
         sb.append("    detectTamperingTimes: ").append(toIndentedString(detectTamperingTimes)).append("\n");
-        sb.append("    lastDetectTime: ").append(toIndentedString(lastDetectTime)).append("\n");
-        sb.append("    scheduledShutdownStatus: ").append(toIndentedString(scheduledShutdownStatus)).append("\n");
         sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
         sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    protectDirNum: ").append(toIndentedString(protectDirNum)).append("\n");
-        sb.append("    remoteBackbupInfo: ").append(toIndentedString(remoteBackbupInfo)).append("\n");
+        sb.append("    abnormalDirList: ").append(toIndentedString(abnormalDirList)).append("\n");
+        sb.append("    abnormalReason: ").append(toIndentedString(abnormalReason)).append("\n");
+        sb.append("    backupHostId: ").append(toIndentedString(backupHostId)).append("\n");
+        sb.append("    interruptReason: ").append(toIndentedString(interruptReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -89,6 +89,8 @@ import com.huaweicloud.sdk.iam.v5.model.GetAsymmetricSignatureSwitchV5Request;
 import com.huaweicloud.sdk.iam.v5.model.GetAsymmetricSignatureSwitchV5Response;
 import com.huaweicloud.sdk.iam.v5.model.GetAuthorizationSchemaV5Request;
 import com.huaweicloud.sdk.iam.v5.model.GetAuthorizationSchemaV5Response;
+import com.huaweicloud.sdk.iam.v5.model.GetFeatureStatusV5Request;
+import com.huaweicloud.sdk.iam.v5.model.GetFeatureStatusV5Response;
 import com.huaweicloud.sdk.iam.v5.model.GetPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.GetPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.GetPolicyVersionV5Request;
@@ -201,6 +203,78 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response> getAsymmetricSignatureSwitchV5 =
+        genForGetAsymmetricSignatureSwitchV5();
+
+    private static HttpRequestDef<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response> genForGetAsymmetricSignatureSwitchV5() {
+        // basic
+        HttpRequestDef.Builder<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    GetAsymmetricSignatureSwitchV5Request.class,
+                    GetAsymmetricSignatureSwitchV5Response.class)
+                .withName("GetAsymmetricSignatureSwitchV5")
+                .withUri("/v5/asymmetric-signature-switch")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetFeatureStatusV5Request, GetFeatureStatusV5Response> getFeatureStatusV5 =
+        genForGetFeatureStatusV5();
+
+    private static HttpRequestDef<GetFeatureStatusV5Request, GetFeatureStatusV5Response> genForGetFeatureStatusV5() {
+        // basic
+        HttpRequestDef.Builder<GetFeatureStatusV5Request, GetFeatureStatusV5Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetFeatureStatusV5Request.class, GetFeatureStatusV5Response.class)
+                .withName("GetFeatureStatusV5")
+                .withUri("/v5/features/{feature_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<GetFeatureStatusV5Request.FeatureNameEnum>withRequestField("feature_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GetFeatureStatusV5Request.FeatureNameEnum.class),
+            f -> f.withMarshaller(GetFeatureStatusV5Request::getFeatureName,
+                GetFeatureStatusV5Request::setFeatureName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response> setAsymmetricSignatureSwitchV5 =
+        genForSetAsymmetricSignatureSwitchV5();
+
+    private static HttpRequestDef<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response> genForSetAsymmetricSignatureSwitchV5() {
+        // basic
+        HttpRequestDef.Builder<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    SetAsymmetricSignatureSwitchV5Request.class,
+                    SetAsymmetricSignatureSwitchV5Response.class)
+                .withName("SetAsymmetricSignatureSwitchV5")
+                .withUri("/v5/asymmetric-signature-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SetAsymmetricSignatureReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetAsymmetricSignatureReq.class),
+            f -> f.withMarshaller(SetAsymmetricSignatureSwitchV5Request::getBody,
+                SetAsymmetricSignatureSwitchV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAgencyV5Request, CreateAgencyV5Response> createAgencyV5 =
         genForCreateAgencyV5();
 
@@ -218,6 +292,33 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAgencyReqBody.class),
             f -> f.withMarshaller(CreateAgencyV5Request::getBody, CreateAgencyV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response> createServiceLinkedAgencyV5 =
+        genForCreateServiceLinkedAgencyV5();
+
+    private static HttpRequestDef<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response> genForCreateServiceLinkedAgencyV5() {
+        // basic
+        HttpRequestDef.Builder<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    CreateServiceLinkedAgencyV5Request.class,
+                    CreateServiceLinkedAgencyV5Response.class)
+                .withName("CreateServiceLinkedAgencyV5")
+                .withUri("/v5/service-linked-agencies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateServiceLinkedAgencyReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateServiceLinkedAgencyReqBody.class),
+            f -> f.withMarshaller(CreateServiceLinkedAgencyV5Request::getBody,
+                CreateServiceLinkedAgencyV5Request::setBody));
 
         // response
 
@@ -247,6 +348,33 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response> deleteServiceLinkedAgencyV5 =
+        genForDeleteServiceLinkedAgencyV5();
+
+    private static HttpRequestDef<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response> genForDeleteServiceLinkedAgencyV5() {
+        // basic
+        HttpRequestDef.Builder<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteServiceLinkedAgencyV5Request.class,
+                    DeleteServiceLinkedAgencyV5Response.class)
+                .withName("DeleteServiceLinkedAgencyV5")
+                .withUri("/v5/service-linked-agencies/{agency_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agency_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServiceLinkedAgencyV5Request::getAgencyId,
+                DeleteServiceLinkedAgencyV5Request::setAgencyId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<GetAgencyV5Request, GetAgencyV5Response> getAgencyV5 = genForGetAgencyV5();
 
     private static HttpRequestDef<GetAgencyV5Request, GetAgencyV5Response> genForGetAgencyV5() {
@@ -263,6 +391,33 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetAgencyV5Request::getAgencyId, GetAgencyV5Request::setAgencyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response> getServiceLinkedAgencyDeletionStatusV5 =
+        genForGetServiceLinkedAgencyDeletionStatusV5();
+
+    private static HttpRequestDef<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response> genForGetServiceLinkedAgencyDeletionStatusV5() {
+        // basic
+        HttpRequestDef.Builder<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    GetServiceLinkedAgencyDeletionStatusV5Request.class,
+                    GetServiceLinkedAgencyDeletionStatusV5Response.class)
+                .withName("GetServiceLinkedAgencyDeletionStatusV5")
+                .withUri("/v5/service-linked-agencies/deletion-task/{deletion_task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("deletion_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetServiceLinkedAgencyDeletionStatusV5Request::getDeletionTaskId,
+                GetServiceLinkedAgencyDeletionStatusV5Request::setDeletionTaskId));
 
         // response
 
@@ -358,54 +513,6 @@ public class IamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response> getAsymmetricSignatureSwitchV5 =
-        genForGetAsymmetricSignatureSwitchV5();
-
-    private static HttpRequestDef<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response> genForGetAsymmetricSignatureSwitchV5() {
-        // basic
-        HttpRequestDef.Builder<GetAsymmetricSignatureSwitchV5Request, GetAsymmetricSignatureSwitchV5Response> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    GetAsymmetricSignatureSwitchV5Request.class,
-                    GetAsymmetricSignatureSwitchV5Response.class)
-                .withName("GetAsymmetricSignatureSwitchV5")
-                .withUri("/v5/asymmetric-signature-switch")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response> setAsymmetricSignatureSwitchV5 =
-        genForSetAsymmetricSignatureSwitchV5();
-
-    private static HttpRequestDef<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response> genForSetAsymmetricSignatureSwitchV5() {
-        // basic
-        HttpRequestDef.Builder<SetAsymmetricSignatureSwitchV5Request, SetAsymmetricSignatureSwitchV5Response> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    SetAsymmetricSignatureSwitchV5Request.class,
-                    SetAsymmetricSignatureSwitchV5Response.class)
-                .withName("SetAsymmetricSignatureSwitchV5")
-                .withUri("/v5/asymmetric-signature-switch")
-                .withContentType("application/json");
-
-        // requests
-        builder.<SetAsymmetricSignatureReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SetAsymmetricSignatureReq.class),
-            f -> f.withMarshaller(SetAsymmetricSignatureSwitchV5Request::getBody,
-                SetAsymmetricSignatureSwitchV5Request::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<GetAuthorizationSchemaV5Request, GetAuthorizationSchemaV5Response> getAuthorizationSchemaV5 =
         genForGetAuthorizationSchemaV5();
 
@@ -458,6 +565,41 @@ public class IamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRegisteredServicesForAuthSchemaV5Request::getMarker,
                 ListRegisteredServicesForAuthSchemaV5Request::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response> listServicePrincipalsV5 =
+        genForListServicePrincipalsV5();
+
+    private static HttpRequestDef<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response> genForListServicePrincipalsV5() {
+        // basic
+        HttpRequestDef.Builder<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListServicePrincipalsV5Request.class, ListServicePrincipalsV5Response.class)
+            .withName("ListServicePrincipalsV5")
+            .withUri("/v5/service-principals")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServicePrincipalsV5Request::getLimit, ListServicePrincipalsV5Request::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServicePrincipalsV5Request::getMarker,
+                ListServicePrincipalsV5Request::setMarker));
+        builder.<ListServicePrincipalsV5Request.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListServicePrincipalsV5Request.XLanguageEnum.class),
+            f -> f.withMarshaller(ListServicePrincipalsV5Request::getXLanguage,
+                ListServicePrincipalsV5Request::setXLanguage));
 
         // response
 
@@ -807,6 +949,35 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response> createPolicyVersionV5 =
+        genForCreatePolicyVersionV5();
+
+    private static HttpRequestDef<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response> genForCreatePolicyVersionV5() {
+        // basic
+        HttpRequestDef.Builder<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePolicyVersionV5Request.class, CreatePolicyVersionV5Response.class)
+            .withName("CreatePolicyVersionV5")
+            .withUri("/v5/policies/{policy_id}/versions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePolicyVersionV5Request::getPolicyId,
+                CreatePolicyVersionV5Request::setPolicyId));
+        builder.<CreatePolicyVersionReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePolicyVersionReqBody.class),
+            f -> f.withMarshaller(CreatePolicyVersionV5Request::getBody, CreatePolicyVersionV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeletePolicyV5Request, DeletePolicyV5Response> deletePolicyV5 =
         genForDeletePolicyV5();
 
@@ -824,6 +995,36 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePolicyV5Request::getPolicyId, DeletePolicyV5Request::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response> deletePolicyVersionV5 =
+        genForDeletePolicyVersionV5();
+
+    private static HttpRequestDef<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response> genForDeletePolicyVersionV5() {
+        // basic
+        HttpRequestDef.Builder<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeletePolicyVersionV5Request.class, DeletePolicyVersionV5Response.class)
+            .withName("DeletePolicyVersionV5")
+            .withUri("/v5/policies/{policy_id}/versions/{version_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyVersionV5Request::getPolicyId,
+                DeletePolicyVersionV5Request::setPolicyId));
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyVersionV5Request::getVersionId,
+                DeletePolicyVersionV5Request::setVersionId));
 
         // response
 
@@ -851,6 +1052,34 @@ public class IamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(GetPolicyV5Request.XLanguageEnum.class),
             f -> f.withMarshaller(GetPolicyV5Request::getXLanguage, GetPolicyV5Request::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetPolicyVersionV5Request, GetPolicyVersionV5Response> getPolicyVersionV5 =
+        genForGetPolicyVersionV5();
+
+    private static HttpRequestDef<GetPolicyVersionV5Request, GetPolicyVersionV5Response> genForGetPolicyVersionV5() {
+        // basic
+        HttpRequestDef.Builder<GetPolicyVersionV5Request, GetPolicyVersionV5Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetPolicyVersionV5Request.class, GetPolicyVersionV5Response.class)
+                .withName("GetPolicyVersionV5")
+                .withUri("/v5/policies/{policy_id}/versions/{version_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetPolicyVersionV5Request::getPolicyId, GetPolicyVersionV5Request::setPolicyId));
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetPolicyVersionV5Request::getVersionId, GetPolicyVersionV5Request::setVersionId));
 
         // response
 
@@ -899,6 +1128,72 @@ public class IamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListPoliciesV5Request.XLanguageEnum.class),
             f -> f.withMarshaller(ListPoliciesV5Request::getXLanguage, ListPoliciesV5Request::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response> listPolicyVersionsV5 =
+        genForListPolicyVersionsV5();
+
+    private static HttpRequestDef<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response> genForListPolicyVersionsV5() {
+        // basic
+        HttpRequestDef.Builder<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPolicyVersionsV5Request.class, ListPolicyVersionsV5Response.class)
+            .withName("ListPolicyVersionsV5")
+            .withUri("/v5/policies/{policy_id}/versions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyVersionsV5Request::getPolicyId, ListPolicyVersionsV5Request::setPolicyId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyVersionsV5Request::getLimit, ListPolicyVersionsV5Request::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyVersionsV5Request::getMarker, ListPolicyVersionsV5Request::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> setDefaultPolicyVersionV5 =
+        genForSetDefaultPolicyVersionV5();
+
+    private static HttpRequestDef<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> genForSetDefaultPolicyVersionV5() {
+        // basic
+        HttpRequestDef.Builder<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SetDefaultPolicyVersionV5Request.class,
+                    SetDefaultPolicyVersionV5Response.class)
+                .withName("SetDefaultPolicyVersionV5")
+                .withUri("/v5/policies/{policy_id}/versions/{version_id}/set-default")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDefaultPolicyVersionV5Request::getPolicyId,
+                SetDefaultPolicyVersionV5Request::setPolicyId));
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDefaultPolicyVersionV5Request::getVersionId,
+                SetDefaultPolicyVersionV5Request::setVersionId));
 
         // response
 
@@ -1231,159 +1526,6 @@ public class IamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response> createPolicyVersionV5 =
-        genForCreatePolicyVersionV5();
-
-    private static HttpRequestDef<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response> genForCreatePolicyVersionV5() {
-        // basic
-        HttpRequestDef.Builder<CreatePolicyVersionV5Request, CreatePolicyVersionV5Response> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreatePolicyVersionV5Request.class, CreatePolicyVersionV5Response.class)
-            .withName("CreatePolicyVersionV5")
-            .withUri("/v5/policies/{policy_id}/versions")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePolicyVersionV5Request::getPolicyId,
-                CreatePolicyVersionV5Request::setPolicyId));
-        builder.<CreatePolicyVersionReqBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreatePolicyVersionReqBody.class),
-            f -> f.withMarshaller(CreatePolicyVersionV5Request::getBody, CreatePolicyVersionV5Request::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response> deletePolicyVersionV5 =
-        genForDeletePolicyVersionV5();
-
-    private static HttpRequestDef<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response> genForDeletePolicyVersionV5() {
-        // basic
-        HttpRequestDef.Builder<DeletePolicyVersionV5Request, DeletePolicyVersionV5Response> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeletePolicyVersionV5Request.class, DeletePolicyVersionV5Response.class)
-            .withName("DeletePolicyVersionV5")
-            .withUri("/v5/policies/{policy_id}/versions/{version_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyVersionV5Request::getPolicyId,
-                DeletePolicyVersionV5Request::setPolicyId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePolicyVersionV5Request::getVersionId,
-                DeletePolicyVersionV5Request::setVersionId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<GetPolicyVersionV5Request, GetPolicyVersionV5Response> getPolicyVersionV5 =
-        genForGetPolicyVersionV5();
-
-    private static HttpRequestDef<GetPolicyVersionV5Request, GetPolicyVersionV5Response> genForGetPolicyVersionV5() {
-        // basic
-        HttpRequestDef.Builder<GetPolicyVersionV5Request, GetPolicyVersionV5Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, GetPolicyVersionV5Request.class, GetPolicyVersionV5Response.class)
-                .withName("GetPolicyVersionV5")
-                .withUri("/v5/policies/{policy_id}/versions/{version_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetPolicyVersionV5Request::getPolicyId, GetPolicyVersionV5Request::setPolicyId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetPolicyVersionV5Request::getVersionId, GetPolicyVersionV5Request::setVersionId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response> listPolicyVersionsV5 =
-        genForListPolicyVersionsV5();
-
-    private static HttpRequestDef<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response> genForListPolicyVersionsV5() {
-        // basic
-        HttpRequestDef.Builder<ListPolicyVersionsV5Request, ListPolicyVersionsV5Response> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListPolicyVersionsV5Request.class, ListPolicyVersionsV5Response.class)
-            .withName("ListPolicyVersionsV5")
-            .withUri("/v5/policies/{policy_id}/versions")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyVersionsV5Request::getPolicyId, ListPolicyVersionsV5Request::setPolicyId));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPolicyVersionsV5Request::getLimit, ListPolicyVersionsV5Request::setLimit));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPolicyVersionsV5Request::getMarker, ListPolicyVersionsV5Request::setMarker));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> setDefaultPolicyVersionV5 =
-        genForSetDefaultPolicyVersionV5();
-
-    private static HttpRequestDef<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> genForSetDefaultPolicyVersionV5() {
-        // basic
-        HttpRequestDef.Builder<SetDefaultPolicyVersionV5Request, SetDefaultPolicyVersionV5Response> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    SetDefaultPolicyVersionV5Request.class,
-                    SetDefaultPolicyVersionV5Response.class)
-                .withName("SetDefaultPolicyVersionV5")
-                .withUri("/v5/policies/{policy_id}/versions/{version_id}/set-default")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("policy_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetDefaultPolicyVersionV5Request::getPolicyId,
-                SetDefaultPolicyVersionV5Request::setPolicyId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetDefaultPolicyVersionV5Request::getVersionId,
-                SetDefaultPolicyVersionV5Request::setVersionId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteResourceTagsV5Request, DeleteResourceTagsV5Response> deleteResourceTagsV5 =
         genForDeleteResourceTagsV5();
 
@@ -1599,122 +1741,6 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTokenPolicyReqBody.class),
             f -> f.withMarshaller(UpdateTokenPolicyV5Request::getBody, UpdateTokenPolicyV5Request::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response> createServiceLinkedAgencyV5 =
-        genForCreateServiceLinkedAgencyV5();
-
-    private static HttpRequestDef<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response> genForCreateServiceLinkedAgencyV5() {
-        // basic
-        HttpRequestDef.Builder<CreateServiceLinkedAgencyV5Request, CreateServiceLinkedAgencyV5Response> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    CreateServiceLinkedAgencyV5Request.class,
-                    CreateServiceLinkedAgencyV5Response.class)
-                .withName("CreateServiceLinkedAgencyV5")
-                .withUri("/v5/service-linked-agencies")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateServiceLinkedAgencyReqBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateServiceLinkedAgencyReqBody.class),
-            f -> f.withMarshaller(CreateServiceLinkedAgencyV5Request::getBody,
-                CreateServiceLinkedAgencyV5Request::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response> deleteServiceLinkedAgencyV5 =
-        genForDeleteServiceLinkedAgencyV5();
-
-    private static HttpRequestDef<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response> genForDeleteServiceLinkedAgencyV5() {
-        // basic
-        HttpRequestDef.Builder<DeleteServiceLinkedAgencyV5Request, DeleteServiceLinkedAgencyV5Response> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    DeleteServiceLinkedAgencyV5Request.class,
-                    DeleteServiceLinkedAgencyV5Response.class)
-                .withName("DeleteServiceLinkedAgencyV5")
-                .withUri("/v5/service-linked-agencies/{agency_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("agency_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteServiceLinkedAgencyV5Request::getAgencyId,
-                DeleteServiceLinkedAgencyV5Request::setAgencyId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response> getServiceLinkedAgencyDeletionStatusV5 =
-        genForGetServiceLinkedAgencyDeletionStatusV5();
-
-    private static HttpRequestDef<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response> genForGetServiceLinkedAgencyDeletionStatusV5() {
-        // basic
-        HttpRequestDef.Builder<GetServiceLinkedAgencyDeletionStatusV5Request, GetServiceLinkedAgencyDeletionStatusV5Response> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    GetServiceLinkedAgencyDeletionStatusV5Request.class,
-                    GetServiceLinkedAgencyDeletionStatusV5Response.class)
-                .withName("GetServiceLinkedAgencyDeletionStatusV5")
-                .withUri("/v5/service-linked-agencies/deletion-task/{deletion_task_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("deletion_task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetServiceLinkedAgencyDeletionStatusV5Request::getDeletionTaskId,
-                GetServiceLinkedAgencyDeletionStatusV5Request::setDeletionTaskId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response> listServicePrincipalsV5 =
-        genForListServicePrincipalsV5();
-
-    private static HttpRequestDef<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response> genForListServicePrincipalsV5() {
-        // basic
-        HttpRequestDef.Builder<ListServicePrincipalsV5Request, ListServicePrincipalsV5Response> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListServicePrincipalsV5Request.class, ListServicePrincipalsV5Response.class)
-            .withName("ListServicePrincipalsV5")
-            .withUri("/v5/service-principals")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListServicePrincipalsV5Request::getLimit, ListServicePrincipalsV5Request::setLimit));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListServicePrincipalsV5Request::getMarker,
-                ListServicePrincipalsV5Request::setMarker));
-        builder.<ListServicePrincipalsV5Request.XLanguageEnum>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListServicePrincipalsV5Request.XLanguageEnum.class),
-            f -> f.withMarshaller(ListServicePrincipalsV5Request::getXLanguage,
-                ListServicePrincipalsV5Request::setXLanguage));
 
         // response
 

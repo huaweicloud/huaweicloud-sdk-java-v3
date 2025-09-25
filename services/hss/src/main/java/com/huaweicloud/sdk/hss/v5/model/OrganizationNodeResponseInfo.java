@@ -114,7 +114,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * 节点类型，unit:组织单元、account:账号
+     * **参数解释**: 节点类型 **约束限制**: 不涉及 **取值范围**: - unit：组织单元 - account：账号  **默认取值**: 不涉及 
      * @return orgType
      */
     public String getOrgType() {

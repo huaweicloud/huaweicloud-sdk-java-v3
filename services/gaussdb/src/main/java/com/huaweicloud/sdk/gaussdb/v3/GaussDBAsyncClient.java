@@ -351,6 +351,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogDetailRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogDetailResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusRequest;
@@ -361,6 +363,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksDatabaseUserResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksSlowlogSensitiveStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarRocksSlowlogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarrocksParamsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarrocksParamsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowTableMetaInfoRequest;
@@ -441,6 +445,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessPolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveSwitchRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveSwitchResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlRequest;
@@ -4013,6 +4019,35 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 获取StarRocks实例内核慢日志信息
+     *
+     * 获取StarRocks实例内核慢日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogDetailRequest 请求对象
+     * @return CompletableFuture<ShowSlowLogDetailResponse>
+     */
+    public CompletableFuture<ShowSlowLogDetailResponse> showSlowLogDetailAsync(ShowSlowLogDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showSlowLogDetail);
+    }
+
+    /**
+     * 获取StarRocks实例内核慢日志信息
+     *
+     * 获取StarRocks实例内核慢日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogDetailRequest 请求对象
+     * @return AsyncInvoker<ShowSlowLogDetailRequest, ShowSlowLogDetailResponse>
+     */
+    public AsyncInvoker<ShowSlowLogDetailRequest, ShowSlowLogDetailResponse> showSlowLogDetailAsyncInvoker(
+        ShowSlowLogDetailRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.showSlowLogDetail, hcClient);
+    }
+
+    /**
      * 查询慢日志统计信息
      *
      * 查询慢日志统计信息
@@ -4129,6 +4164,36 @@ public class GaussDBAsyncClient {
     public AsyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRuleAsyncInvoker(
         ShowSqlFilterRuleRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.showSqlFilterRule, hcClient);
+    }
+
+    /**
+     * 查询StarRocks实例慢日志脱敏状态
+     *
+     * 查询StarRocks实例慢日志脱敏状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStarRocksSlowlogSensitiveStatusRequest 请求对象
+     * @return CompletableFuture<ShowStarRocksSlowlogSensitiveStatusResponse>
+     */
+    public CompletableFuture<ShowStarRocksSlowlogSensitiveStatusResponse> showStarRocksSlowlogSensitiveStatusAsync(
+        ShowStarRocksSlowlogSensitiveStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showStarRocksSlowlogSensitiveStatus);
+    }
+
+    /**
+     * 查询StarRocks实例慢日志脱敏状态
+     *
+     * 查询StarRocks实例慢日志脱敏状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStarRocksSlowlogSensitiveStatusRequest 请求对象
+     * @return AsyncInvoker<ShowStarRocksSlowlogSensitiveStatusRequest, ShowStarRocksSlowlogSensitiveStatusResponse>
+     */
+    public AsyncInvoker<ShowStarRocksSlowlogSensitiveStatusRequest, ShowStarRocksSlowlogSensitiveStatusResponse> showStarRocksSlowlogSensitiveStatusAsyncInvoker(
+        ShowStarRocksSlowlogSensitiveStatusRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.showStarRocksSlowlogSensitiveStatus, hcClient);
     }
 
     /**
@@ -5115,6 +5180,36 @@ public class GaussDBAsyncClient {
     public AsyncInvoker<UpdateServerlessPolicyRequest, UpdateServerlessPolicyResponse> updateServerlessPolicyAsyncInvoker(
         UpdateServerlessPolicyRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.updateServerlessPolicy, hcClient);
+    }
+
+    /**
+     * 开启或关闭StarRocks实例慢日志脱敏状态
+     *
+     * 开启或关闭StarRocks实例慢日志脱敏状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSlowlogSensitiveStatusRequest 请求对象
+     * @return CompletableFuture<UpdateSlowlogSensitiveStatusResponse>
+     */
+    public CompletableFuture<UpdateSlowlogSensitiveStatusResponse> updateSlowlogSensitiveStatusAsync(
+        UpdateSlowlogSensitiveStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateSlowlogSensitiveStatus);
+    }
+
+    /**
+     * 开启或关闭StarRocks实例慢日志脱敏状态
+     *
+     * 开启或关闭StarRocks实例慢日志脱敏状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSlowlogSensitiveStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateSlowlogSensitiveStatusRequest, UpdateSlowlogSensitiveStatusResponse>
+     */
+    public AsyncInvoker<UpdateSlowlogSensitiveStatusRequest, UpdateSlowlogSensitiveStatusResponse> updateSlowlogSensitiveStatusAsyncInvoker(
+        UpdateSlowlogSensitiveStatusRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.updateSlowlogSensitiveStatus, hcClient);
     }
 
     /**

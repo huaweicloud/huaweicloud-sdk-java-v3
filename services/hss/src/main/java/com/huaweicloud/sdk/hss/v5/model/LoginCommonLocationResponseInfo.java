@@ -51,7 +51,7 @@ public class LoginCommonLocationResponseInfo {
     }
 
     /**
-     * 这个常用登陆地的主机个数
+     * 这个常用登录地的主机个数
      * @return totalNum
      */
     public Integer getTotalNum() {

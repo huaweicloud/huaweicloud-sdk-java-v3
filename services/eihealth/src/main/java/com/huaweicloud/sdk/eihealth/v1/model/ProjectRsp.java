@@ -64,6 +64,11 @@ public class ProjectRsp {
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "top_time")
+
+    private String topTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_time")
 
     private String deleteTime;
@@ -72,6 +77,11 @@ public class ProjectRsp {
     @JsonProperty(value = "is_core")
 
     private Boolean isCore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_tenant")
+
+    private String storageTenant;
 
     public ProjectRsp withId(String id) {
         this.id = id;
@@ -259,13 +269,30 @@ public class ProjectRsp {
         this.updateTime = updateTime;
     }
 
+    public ProjectRsp withTopTime(String topTime) {
+        this.topTime = topTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 空间置顶时间。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return topTime
+     */
+    public String getTopTime() {
+        return topTime;
+    }
+
+    public void setTopTime(String topTime) {
+        this.topTime = topTime;
+    }
+
     public ProjectRsp withDeleteTime(String deleteTime) {
         this.deleteTime = deleteTime;
         return this;
     }
 
     /**
-     * 请求删除时间
+     * **参数解释**： 请求删除时间。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return deleteTime
      */
     public String getDeleteTime() {
@@ -282,7 +309,7 @@ public class ProjectRsp {
     }
 
     /**
-     * 核心项目标记
+     * **参数解释**： 核心空间标记。 **约束限制**： 不涉及 **取值范围**： true 或 false。 **默认取值**： 不涉及 
      * @return isCore
      */
     public Boolean getIsCore() {
@@ -291,6 +318,23 @@ public class ProjectRsp {
 
     public void setIsCore(Boolean isCore) {
         this.isCore = isCore;
+    }
+
+    public ProjectRsp withStorageTenant(String storageTenant) {
+        this.storageTenant = storageTenant;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 空间桶来源租户。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return storageTenant
+     */
+    public String getStorageTenant() {
+        return storageTenant;
+    }
+
+    public void setStorageTenant(String storageTenant) {
+        this.storageTenant = storageTenant;
     }
 
     @Override
@@ -307,13 +351,26 @@ public class ProjectRsp {
             && Objects.equals(this.size, that.size) && Objects.equals(this.status, that.status)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.isCore, that.isCore);
+            && Objects.equals(this.topTime, that.topTime) && Objects.equals(this.deleteTime, that.deleteTime)
+            && Objects.equals(this.isCore, that.isCore) && Objects.equals(this.storageTenant, that.storageTenant);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, creator, role, size, status, tags, description, createTime, updateTime, deleteTime, isCore);
+        return Objects.hash(id,
+            name,
+            creator,
+            role,
+            size,
+            status,
+            tags,
+            description,
+            createTime,
+            updateTime,
+            topTime,
+            deleteTime,
+            isCore,
+            storageTenant);
     }
 
     @Override
@@ -330,8 +387,10 @@ public class ProjectRsp {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    topTime: ").append(toIndentedString(topTime)).append("\n");
         sb.append("    deleteTime: ").append(toIndentedString(deleteTime)).append("\n");
         sb.append("    isCore: ").append(toIndentedString(isCore)).append("\n");
+        sb.append("    storageTenant: ").append(toIndentedString(storageTenant)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * WebTamperTimingOffConfigInfoRequestInfo
+ * 定时关闭防护功能配置详情
  */
 public class WebTamperTimingOffConfigInfoRequestInfo {
 
@@ -45,7 +45,7 @@ public class WebTamperTimingOffConfigInfoRequestInfo {
     }
 
     /**
-     * 关闭防护周期
+     * **参数解释**: 自动关闭防护周期列表 **约束限制**: 不涉及 **取值范围**: 最少1条，最多7条 **默认取值**: 不涉及 
      * @return weekOffList
      */
     public List<Integer> getWeekOffList() {
@@ -81,7 +81,7 @@ public class WebTamperTimingOffConfigInfoRequestInfo {
     }
 
     /**
-     * 时间段
+     * **参数解释**: 自动关闭防护时间段 **约束限制**: 不涉及 **取值范围**: 最少1条，最多5条 **默认取值**: 不涉及 
      * @return timingRangeList
      */
     public List<TimingRangeConfigRequestInfo> getTimingRangeList() {

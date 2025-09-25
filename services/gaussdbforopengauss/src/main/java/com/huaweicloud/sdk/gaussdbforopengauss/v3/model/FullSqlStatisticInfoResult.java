@@ -26,6 +26,51 @@ public class FullSqlStatisticInfoResult {
     private Long sqlCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_sql_time")
+
+    private Long totalSqlTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "avg_sql_time")
+
+    private Long avgSqlTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_db_time")
+
+    private Long totalDbTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_cpu_time")
+
+    private Long totalCpuTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "avg_parse_time")
+
+    private Long avgParseTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "avg_plan_time")
+
+    private Long avgPlanTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_data_io_time")
+
+    private Long totalDataIoTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "avg_n_returned_rows")
+
+    private Long avgNReturnedRows;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "avg_n_tuples_fetched")
+
+    private Long avgNTuplesFetched;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "avg_db_time")
 
     private Long avgDbTime;
@@ -53,12 +98,12 @@ public class FullSqlStatisticInfoResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time_stamp")
 
-    private String startTimeStamp;
+    private Long startTimeStamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time_stamp")
 
-    private String endTimeStamp;
+    private Long endTimeStamp;
 
     public FullSqlStatisticInfoResult withTemplate(String template) {
         this.template = template;
@@ -109,6 +154,159 @@ public class FullSqlStatisticInfoResult {
 
     public void setSqlCount(Long sqlCount) {
         this.sqlCount = sqlCount;
+    }
+
+    public FullSqlStatisticInfoResult withTotalSqlTime(Long totalSqlTime) {
+        this.totalSqlTime = totalSqlTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 总SQL耗时（微秒）。 **取值范围**: 不涉及。
+     * @return totalSqlTime
+     */
+    public Long getTotalSqlTime() {
+        return totalSqlTime;
+    }
+
+    public void setTotalSqlTime(Long totalSqlTime) {
+        this.totalSqlTime = totalSqlTime;
+    }
+
+    public FullSqlStatisticInfoResult withAvgSqlTime(Long avgSqlTime) {
+        this.avgSqlTime = avgSqlTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 平均SQL耗时（微秒）。 **取值范围**: 不涉及。
+     * @return avgSqlTime
+     */
+    public Long getAvgSqlTime() {
+        return avgSqlTime;
+    }
+
+    public void setAvgSqlTime(Long avgSqlTime) {
+        this.avgSqlTime = avgSqlTime;
+    }
+
+    public FullSqlStatisticInfoResult withTotalDbTime(Long totalDbTime) {
+        this.totalDbTime = totalDbTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 总有效DB耗时（微秒）。 **取值范围**: 不涉及。
+     * @return totalDbTime
+     */
+    public Long getTotalDbTime() {
+        return totalDbTime;
+    }
+
+    public void setTotalDbTime(Long totalDbTime) {
+        this.totalDbTime = totalDbTime;
+    }
+
+    public FullSqlStatisticInfoResult withTotalCpuTime(Long totalCpuTime) {
+        this.totalCpuTime = totalCpuTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 总CPU耗时（微秒）。 **取值范围**: 不涉及。
+     * @return totalCpuTime
+     */
+    public Long getTotalCpuTime() {
+        return totalCpuTime;
+    }
+
+    public void setTotalCpuTime(Long totalCpuTime) {
+        this.totalCpuTime = totalCpuTime;
+    }
+
+    public FullSqlStatisticInfoResult withAvgParseTime(Long avgParseTime) {
+        this.avgParseTime = avgParseTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 平均解释器时间（微秒）。 **取值范围**: 不涉及。
+     * @return avgParseTime
+     */
+    public Long getAvgParseTime() {
+        return avgParseTime;
+    }
+
+    public void setAvgParseTime(Long avgParseTime) {
+        this.avgParseTime = avgParseTime;
+    }
+
+    public FullSqlStatisticInfoResult withAvgPlanTime(Long avgPlanTime) {
+        this.avgPlanTime = avgPlanTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 平均执行计划时间（微秒）。 **取值范围**: 不涉及。
+     * @return avgPlanTime
+     */
+    public Long getAvgPlanTime() {
+        return avgPlanTime;
+    }
+
+    public void setAvgPlanTime(Long avgPlanTime) {
+        this.avgPlanTime = avgPlanTime;
+    }
+
+    public FullSqlStatisticInfoResult withTotalDataIoTime(Long totalDataIoTime) {
+        this.totalDataIoTime = totalDataIoTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 总IO耗时（微秒）。 **取值范围**: 不涉及。
+     * @return totalDataIoTime
+     */
+    public Long getTotalDataIoTime() {
+        return totalDataIoTime;
+    }
+
+    public void setTotalDataIoTime(Long totalDataIoTime) {
+        this.totalDataIoTime = totalDataIoTime;
+    }
+
+    public FullSqlStatisticInfoResult withAvgNReturnedRows(Long avgNReturnedRows) {
+        this.avgNReturnedRows = avgNReturnedRows;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 平均返回行数。 **取值范围**: 不涉及。
+     * @return avgNReturnedRows
+     */
+    public Long getAvgNReturnedRows() {
+        return avgNReturnedRows;
+    }
+
+    public void setAvgNReturnedRows(Long avgNReturnedRows) {
+        this.avgNReturnedRows = avgNReturnedRows;
+    }
+
+    public FullSqlStatisticInfoResult withAvgNTuplesFetched(Long avgNTuplesFetched) {
+        this.avgNTuplesFetched = avgNTuplesFetched;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 平均扫描行数。 **取值范围**: 不涉及。
+     * @return avgNTuplesFetched
+     */
+    public Long getAvgNTuplesFetched() {
+        return avgNTuplesFetched;
+    }
+
+    public void setAvgNTuplesFetched(Long avgNTuplesFetched) {
+        this.avgNTuplesFetched = avgNTuplesFetched;
     }
 
     public FullSqlStatisticInfoResult withAvgDbTime(Long avgDbTime) {
@@ -196,7 +394,7 @@ public class FullSqlStatisticInfoResult {
         this.avgNBlocksHit = avgNBlocksHit;
     }
 
-    public FullSqlStatisticInfoResult withStartTimeStamp(String startTimeStamp) {
+    public FullSqlStatisticInfoResult withStartTimeStamp(Long startTimeStamp) {
         this.startTimeStamp = startTimeStamp;
         return this;
     }
@@ -205,15 +403,15 @@ public class FullSqlStatisticInfoResult {
      * **参数解释**: 开始时间戳。 **取值范围**: 不涉及。
      * @return startTimeStamp
      */
-    public String getStartTimeStamp() {
+    public Long getStartTimeStamp() {
         return startTimeStamp;
     }
 
-    public void setStartTimeStamp(String startTimeStamp) {
+    public void setStartTimeStamp(Long startTimeStamp) {
         this.startTimeStamp = startTimeStamp;
     }
 
-    public FullSqlStatisticInfoResult withEndTimeStamp(String endTimeStamp) {
+    public FullSqlStatisticInfoResult withEndTimeStamp(Long endTimeStamp) {
         this.endTimeStamp = endTimeStamp;
         return this;
     }
@@ -222,11 +420,11 @@ public class FullSqlStatisticInfoResult {
      * **参数解释**: 结束时间戳。 **取值范围**: 不涉及。
      * @return endTimeStamp
      */
-    public String getEndTimeStamp() {
+    public Long getEndTimeStamp() {
         return endTimeStamp;
     }
 
-    public void setEndTimeStamp(String endTimeStamp) {
+    public void setEndTimeStamp(Long endTimeStamp) {
         this.endTimeStamp = endTimeStamp;
     }
 
@@ -240,8 +438,15 @@ public class FullSqlStatisticInfoResult {
         }
         FullSqlStatisticInfoResult that = (FullSqlStatisticInfoResult) obj;
         return Objects.equals(this.template, that.template) && Objects.equals(this.sqlId, that.sqlId)
-            && Objects.equals(this.sqlCount, that.sqlCount) && Objects.equals(this.avgDbTime, that.avgDbTime)
-            && Objects.equals(this.avgCpuTime, that.avgCpuTime)
+            && Objects.equals(this.sqlCount, that.sqlCount) && Objects.equals(this.totalSqlTime, that.totalSqlTime)
+            && Objects.equals(this.avgSqlTime, that.avgSqlTime) && Objects.equals(this.totalDbTime, that.totalDbTime)
+            && Objects.equals(this.totalCpuTime, that.totalCpuTime)
+            && Objects.equals(this.avgParseTime, that.avgParseTime)
+            && Objects.equals(this.avgPlanTime, that.avgPlanTime)
+            && Objects.equals(this.totalDataIoTime, that.totalDataIoTime)
+            && Objects.equals(this.avgNReturnedRows, that.avgNReturnedRows)
+            && Objects.equals(this.avgNTuplesFetched, that.avgNTuplesFetched)
+            && Objects.equals(this.avgDbTime, that.avgDbTime) && Objects.equals(this.avgCpuTime, that.avgCpuTime)
             && Objects.equals(this.avgDataIoTime, that.avgDataIoTime)
             && Objects.equals(this.avgExecutionTime, that.avgExecutionTime)
             && Objects.equals(this.avgNBlocksHit, that.avgNBlocksHit)
@@ -254,6 +459,15 @@ public class FullSqlStatisticInfoResult {
         return Objects.hash(template,
             sqlId,
             sqlCount,
+            totalSqlTime,
+            avgSqlTime,
+            totalDbTime,
+            totalCpuTime,
+            avgParseTime,
+            avgPlanTime,
+            totalDataIoTime,
+            avgNReturnedRows,
+            avgNTuplesFetched,
             avgDbTime,
             avgCpuTime,
             avgDataIoTime,
@@ -270,6 +484,15 @@ public class FullSqlStatisticInfoResult {
         sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("    sqlId: ").append(toIndentedString(sqlId)).append("\n");
         sb.append("    sqlCount: ").append(toIndentedString(sqlCount)).append("\n");
+        sb.append("    totalSqlTime: ").append(toIndentedString(totalSqlTime)).append("\n");
+        sb.append("    avgSqlTime: ").append(toIndentedString(avgSqlTime)).append("\n");
+        sb.append("    totalDbTime: ").append(toIndentedString(totalDbTime)).append("\n");
+        sb.append("    totalCpuTime: ").append(toIndentedString(totalCpuTime)).append("\n");
+        sb.append("    avgParseTime: ").append(toIndentedString(avgParseTime)).append("\n");
+        sb.append("    avgPlanTime: ").append(toIndentedString(avgPlanTime)).append("\n");
+        sb.append("    totalDataIoTime: ").append(toIndentedString(totalDataIoTime)).append("\n");
+        sb.append("    avgNReturnedRows: ").append(toIndentedString(avgNReturnedRows)).append("\n");
+        sb.append("    avgNTuplesFetched: ").append(toIndentedString(avgNTuplesFetched)).append("\n");
         sb.append("    avgDbTime: ").append(toIndentedString(avgDbTime)).append("\n");
         sb.append("    avgCpuTime: ").append(toIndentedString(avgCpuTime)).append("\n");
         sb.append("    avgDataIoTime: ").append(toIndentedString(avgDataIoTime)).append("\n");

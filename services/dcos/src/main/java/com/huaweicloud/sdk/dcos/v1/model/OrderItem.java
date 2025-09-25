@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 客户工单-列表值
+ * 客户服务单-列表值
  */
 public class OrderItem {
 
@@ -110,7 +110,7 @@ public class OrderItem {
     }
 
     /**
-     * 工单类型:IDC运维 设备运维 设备检查 客户陪同
+     * 服务单类型:IDC运维 设备运维 设备检查 客户陪同
      * @return type
      */
     public String getType() {
@@ -144,7 +144,7 @@ public class OrderItem {
     }
 
     /**
-     * 工单类型编码
+     * 服务单类型编码
      * @return modelCode
      */
     public String getModelCode() {

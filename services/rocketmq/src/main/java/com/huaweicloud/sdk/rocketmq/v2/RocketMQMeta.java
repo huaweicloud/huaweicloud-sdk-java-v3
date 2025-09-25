@@ -50,8 +50,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DiagnosisRep;
-import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageResponse;
@@ -100,8 +98,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageRep;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageResp;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsResponse;
@@ -617,28 +615,6 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteUserRequest::getUserName, DeleteUserRequest::setUserName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<EnableDnsRequest, EnableDnsResponse> enableDns = genForEnableDns();
-
-    private static HttpRequestDef<EnableDnsRequest, EnableDnsResponse> genForEnableDns() {
-        // basic
-        HttpRequestDef.Builder<EnableDnsRequest, EnableDnsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, EnableDnsRequest.class, EnableDnsResponse.class)
-                .withName("EnableDns")
-                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/dns")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableDnsRequest::getInstanceId, EnableDnsRequest::setInstanceId));
 
         // response
 
@@ -1412,10 +1388,10 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SendMessageRequest::getInstanceId, SendMessageRequest::setInstanceId));
-        builder.<SendMessageResp>withRequestField("body",
+        builder.<SendMessageRep>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SendMessageResp.class),
+            TypeCasts.uncheckedConversion(SendMessageRep.class),
             f -> f.withMarshaller(SendMessageRequest::getBody, SendMessageRequest::setBody));
 
         // response

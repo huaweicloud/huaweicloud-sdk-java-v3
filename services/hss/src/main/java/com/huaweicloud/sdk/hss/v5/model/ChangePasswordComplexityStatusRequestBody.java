@@ -62,7 +62,7 @@ public class ChangePasswordComplexityStatusRequestBody {
     }
 
     /**
-     * 主机id列表。operate_all=ture时不处理host_ids参数。
+     * 主机id列表。operate_all=true时不处理host_ids参数。
      * @return hostIds
      */
     public List<String> getHostIds() {

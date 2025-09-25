@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -23,7 +22,7 @@ public class ShowAlarmStatisticsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ring_percentage")
 
-    private BigDecimal ringPercentage;
+    private Double ringPercentage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_alarm_level_statistics")
@@ -52,7 +51,7 @@ public class ShowAlarmStatisticsResponse extends SdkResponse {
         this.totalAlarmCount = totalAlarmCount;
     }
 
-    public ShowAlarmStatisticsResponse withRingPercentage(BigDecimal ringPercentage) {
+    public ShowAlarmStatisticsResponse withRingPercentage(Double ringPercentage) {
         this.ringPercentage = ringPercentage;
         return this;
     }
@@ -61,11 +60,11 @@ public class ShowAlarmStatisticsResponse extends SdkResponse {
      * **参数解释**: 环比比率。 **取值范围**: 值为0表示环比没有变化，值为空表示上一周期没有告警。
      * @return ringPercentage
      */
-    public BigDecimal getRingPercentage() {
+    public Double getRingPercentage() {
         return ringPercentage;
     }
 
-    public void setRingPercentage(BigDecimal ringPercentage) {
+    public void setRingPercentage(Double ringPercentage) {
         this.ringPercentage = ringPercentage;
     }
 

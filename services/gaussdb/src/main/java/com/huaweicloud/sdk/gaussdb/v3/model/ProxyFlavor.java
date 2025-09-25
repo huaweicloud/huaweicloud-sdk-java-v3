@@ -131,7 +131,7 @@ public class ProxyFlavor {
     }
 
     /**
-     * **参数解释**：  是否支持ipv6。  **取值范围**： - true: 支持ipv6。 - false: 不支持ipv6。
+     * **参数解释**：  是否支持ipv6。  **取值范围**：  - true: 支持ipv6。 - false: 不支持ipv6。
      * @return supportedIpv6
      */
     public Boolean getSupportedIpv6() {

@@ -401,7 +401,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 服务器状态
+     * **参数解释**： 主机状态 **取值范围**: - ACTIVE：正在运行。 - SHUTOFF：关机。 - BUILDING：创建中。 - ERROR：故障。 
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -418,7 +418,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * Agent状态，包含如下6种。   - installed ：已安装。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。   - not_online ：不在线的（除了在线以外的所有状态，仅作为查询条件）。
+     * **参数解释**： Agent状态 **取值范围**: - installed：已安装。 - not_installed：未安装。 - online：在线。 - offline：离线。 - install_failed：安装失败。 - installing：安装中。 - not_online：不在线的（除了在线以外的所有状态，仅作为查询条件）。 
      * @return agentStatus
      */
     public String getAgentStatus() {

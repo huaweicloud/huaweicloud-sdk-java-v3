@@ -59,18 +59,13 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
 
     private List<String> privilegedProcessPathList = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "privileged_process_info")
-
-    private ListPrivilegedProcessResponseInfo privilegedProcessInfo;
-
     public ShowWebTamperHostPolicyResponse withProtectDirNum(Integer protectDirNum) {
         this.protectDirNum = protectDirNum;
         return this;
     }
 
     /**
-     * **参数解释**: 防护目录数 **取值范围**: 取值0-50 
+     * **参数解释**: 防护目录数 **取值范围**: 最小值0，最大值50 
      * minimum: 0
      * maximum: 50
      * @return protectDirNum
@@ -161,7 +156,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 动态网页防篡改开启状态 **取值范围**: - True ：开启动态网页防篡改防护。 - False ：未开启动态网页防篡改防护。 
+     * **参数解释**: 动态网页防篡改开启状态，仅Linux服务器支持设置动态网页防篡改。 **取值范围**: - True ：开启动态网页防篡改防护。 - False ：未开启动态网页防篡改防护。 
      * @return enableRaspProtect
      */
     public Boolean getEnableRaspProtect() {
@@ -178,7 +173,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 动态网页防篡改的Tomcat bin目录 **取值范围**: 字符长度0-512位 
+     * **参数解释**: 动态网页防篡改的Tomcat bin目录。 **取值范围**: 字符长度0-512位 
      * @return raspPath
      */
     public String getRaspPath() {
@@ -257,34 +252,6 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
         this.privilegedProcessPathList = privilegedProcessPathList;
     }
 
-    public ShowWebTamperHostPolicyResponse withPrivilegedProcessInfo(
-        ListPrivilegedProcessResponseInfo privilegedProcessInfo) {
-        this.privilegedProcessInfo = privilegedProcessInfo;
-        return this;
-    }
-
-    public ShowWebTamperHostPolicyResponse withPrivilegedProcessInfo(
-        Consumer<ListPrivilegedProcessResponseInfo> privilegedProcessInfoSetter) {
-        if (this.privilegedProcessInfo == null) {
-            this.privilegedProcessInfo = new ListPrivilegedProcessResponseInfo();
-            privilegedProcessInfoSetter.accept(this.privilegedProcessInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get privilegedProcessInfo
-     * @return privilegedProcessInfo
-     */
-    public ListPrivilegedProcessResponseInfo getPrivilegedProcessInfo() {
-        return privilegedProcessInfo;
-    }
-
-    public void setPrivilegedProcessInfo(ListPrivilegedProcessResponseInfo privilegedProcessInfo) {
-        this.privilegedProcessInfo = privilegedProcessInfo;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -302,8 +269,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
             && Objects.equals(this.raspPath, that.raspPath)
             && Objects.equals(this.enablePrivilegedProcess, that.enablePrivilegedProcess)
             && Objects.equals(this.privilegedChildStatus, that.privilegedChildStatus)
-            && Objects.equals(this.privilegedProcessPathList, that.privilegedProcessPathList)
-            && Objects.equals(this.privilegedProcessInfo, that.privilegedProcessInfo);
+            && Objects.equals(this.privilegedProcessPathList, that.privilegedProcessPathList);
     }
 
     @Override
@@ -316,8 +282,7 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
             raspPath,
             enablePrivilegedProcess,
             privilegedChildStatus,
-            privilegedProcessPathList,
-            privilegedProcessInfo);
+            privilegedProcessPathList);
     }
 
     @Override
@@ -333,7 +298,6 @@ public class ShowWebTamperHostPolicyResponse extends SdkResponse {
         sb.append("    enablePrivilegedProcess: ").append(toIndentedString(enablePrivilegedProcess)).append("\n");
         sb.append("    privilegedChildStatus: ").append(toIndentedString(privilegedChildStatus)).append("\n");
         sb.append("    privilegedProcessPathList: ").append(toIndentedString(privilegedProcessPathList)).append("\n");
-        sb.append("    privilegedProcessInfo: ").append(toIndentedString(privilegedProcessInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }
