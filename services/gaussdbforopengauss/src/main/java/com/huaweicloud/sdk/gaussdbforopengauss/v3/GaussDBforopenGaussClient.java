@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbRolePrivilegesReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbRolePrivilegesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
@@ -71,6 +73,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseSchemaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseSchemaResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDisasterRecordRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDisasterRecordResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteHbaConfsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteHbaConfsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceRequest;
@@ -145,6 +149,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemasReque
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVersionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeSummaryRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeSummaryResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabasesRequest;
@@ -217,6 +223,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParameterGroupTempla
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParameterGroupTemplatesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginInfoListRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginInfoListResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListProjectTagsRequest;
@@ -273,8 +281,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHotfixesRequest;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHotfixesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetDrConfigRequest;
@@ -606,6 +614,35 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<AttachEipRequest, AttachEipResponse> attachEipInvoker(AttachEipRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.attachEip, hcClient);
+    }
+
+    /**
+     * 授权备份文件下载
+     *
+     * 授权租户使用OBS Browser+方式下载备份文件，支持实例级、表级的全量备份及差量备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AuthorizeBackupDownloadRequest 请求对象
+     * @return AuthorizeBackupDownloadResponse
+     */
+    public AuthorizeBackupDownloadResponse authorizeBackupDownload(AuthorizeBackupDownloadRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.authorizeBackupDownload);
+    }
+
+    /**
+     * 授权备份文件下载
+     *
+     * 授权租户使用OBS Browser+方式下载备份文件，支持实例级、表级的全量备份及差量备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AuthorizeBackupDownloadRequest 请求对象
+     * @return SyncInvoker<AuthorizeBackupDownloadRequest, AuthorizeBackupDownloadResponse>
+     */
+    public SyncInvoker<AuthorizeBackupDownloadRequest, AuthorizeBackupDownloadResponse> authorizeBackupDownloadInvoker(
+        AuthorizeBackupDownloadRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.authorizeBackupDownload, hcClient);
     }
 
     /**
@@ -1273,6 +1310,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<DeleteDatabaseSchemaRequest, DeleteDatabaseSchemaResponse> deleteDatabaseSchemaInvoker(
         DeleteDatabaseSchemaRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.deleteDatabaseSchema, hcClient);
+    }
+
+    /**
+     * 删除容灾记录
+     *
+     * 删除容灾记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDisasterRecordRequest 请求对象
+     * @return DeleteDisasterRecordResponse
+     */
+    public DeleteDisasterRecordResponse deleteDisasterRecord(DeleteDisasterRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.deleteDisasterRecord);
+    }
+
+    /**
+     * 删除容灾记录
+     *
+     * 删除容灾记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDisasterRecordRequest 请求对象
+     * @return SyncInvoker<DeleteDisasterRecordRequest, DeleteDisasterRecordResponse>
+     */
+    public SyncInvoker<DeleteDisasterRecordRequest, DeleteDisasterRecordResponse> deleteDisasterRecordInvoker(
+        DeleteDisasterRecordRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.deleteDisasterRecord, hcClient);
     }
 
     /**
@@ -2267,6 +2333,35 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询数据库占用空间大小列表
+     *
+     * 查询限流任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseVolumeRequest 请求对象
+     * @return ListDatabaseVolumeResponse
+     */
+    public ListDatabaseVolumeResponse listDatabaseVolume(ListDatabaseVolumeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDatabaseVolume);
+    }
+
+    /**
+     * 查询数据库占用空间大小列表
+     *
+     * 查询限流任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseVolumeRequest 请求对象
+     * @return SyncInvoker<ListDatabaseVolumeRequest, ListDatabaseVolumeResponse>
+     */
+    public SyncInvoker<ListDatabaseVolumeRequest, ListDatabaseVolumeResponse> listDatabaseVolumeInvoker(
+        ListDatabaseVolumeRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDatabaseVolume, hcClient);
+    }
+
+    /**
      * 查询数据盘空间概况
      *
      * 查询数据盘空间概况。
@@ -3127,6 +3222,35 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询插件列表
+     *
+     * 查询插件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPluginInfoListRequest 请求对象
+     * @return ListPluginInfoListResponse
+     */
+    public ListPluginInfoListResponse listPluginInfoList(ListPluginInfoListRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listPluginInfoList);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPluginInfoListRequest 请求对象
+     * @return SyncInvoker<ListPluginInfoListRequest, ListPluginInfoListResponse>
+     */
+    public SyncInvoker<ListPluginInfoListRequest, ListPluginInfoListResponse> listPluginInfoListInvoker(
+        ListPluginInfoListRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listPluginInfoList, hcClient);
+    }
+
+    /**
      * 查询预定义标签
      *
      * 查询预预定义标签。
@@ -3765,32 +3889,32 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 修改热补丁属性
+     * 修改指定实例端口号
      *
-     * 修改热补丁属性。
+     * 修改指定实例端口号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ModifyHotfixesRequest 请求对象
-     * @return ModifyHotfixesResponse
+     * @param request ModifyInstancePortRequest 请求对象
+     * @return ModifyInstancePortResponse
      */
-    public ModifyHotfixesResponse modifyHotfixes(ModifyHotfixesRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.modifyHotfixes);
+    public ModifyInstancePortResponse modifyInstancePort(ModifyInstancePortRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.modifyInstancePort);
     }
 
     /**
-     * 修改热补丁属性
+     * 修改指定实例端口号
      *
-     * 修改热补丁属性。
+     * 修改指定实例端口号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ModifyHotfixesRequest 请求对象
-     * @return SyncInvoker<ModifyHotfixesRequest, ModifyHotfixesResponse>
+     * @param request ModifyInstancePortRequest 请求对象
+     * @return SyncInvoker<ModifyInstancePortRequest, ModifyInstancePortResponse>
      */
-    public SyncInvoker<ModifyHotfixesRequest, ModifyHotfixesResponse> modifyHotfixesInvoker(
-        ModifyHotfixesRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.modifyHotfixes, hcClient);
+    public SyncInvoker<ModifyInstancePortRequest, ModifyInstancePortResponse> modifyInstancePortInvoker(
+        ModifyInstancePortRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.modifyInstancePort, hcClient);
     }
 
     /**

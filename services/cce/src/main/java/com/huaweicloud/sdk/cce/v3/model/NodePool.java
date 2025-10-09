@@ -31,11 +31,6 @@ public class NodePool {
 
     private NodePoolSpec spec;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private NodePoolStatus status;
-
     public NodePool withKind(String kind) {
         this.kind = kind;
         return this;
@@ -122,32 +117,6 @@ public class NodePool {
         this.spec = spec;
     }
 
-    public NodePool withStatus(NodePoolStatus status) {
-        this.status = status;
-        return this;
-    }
-
-    public NodePool withStatus(Consumer<NodePoolStatus> statusSetter) {
-        if (this.status == null) {
-            this.status = new NodePoolStatus();
-            statusSetter.accept(this.status);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get status
-     * @return status
-     */
-    public NodePoolStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(NodePoolStatus status) {
-        this.status = status;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -158,13 +127,12 @@ public class NodePool {
         }
         NodePool that = (NodePool) obj;
         return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
-            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(kind, apiVersion, metadata, spec, status);
+        return Objects.hash(kind, apiVersion, metadata, spec);
     }
 
     @Override
@@ -175,7 +143,6 @@ public class NodePool {
         sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

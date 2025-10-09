@@ -145,6 +145,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabaseUserRoleRequest;
@@ -181,6 +183,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesRequest;
@@ -1631,6 +1635,36 @@ public class RdsClient {
     }
 
     /**
+     * 查询参数组应用历史
+     *
+     * 查询参数组应用历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigurationApplyHistoriesRequest 请求对象
+     * @return ListConfigurationApplyHistoriesResponse
+     */
+    public ListConfigurationApplyHistoriesResponse listConfigurationApplyHistories(
+        ListConfigurationApplyHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listConfigurationApplyHistories);
+    }
+
+    /**
+     * 查询参数组应用历史
+     *
+     * 查询参数组应用历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigurationApplyHistoriesRequest 请求对象
+     * @return SyncInvoker<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse>
+     */
+    public SyncInvoker<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistoriesInvoker(
+        ListConfigurationApplyHistoriesRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listConfigurationApplyHistories, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -2088,6 +2122,35 @@ public class RdsClient {
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
         return new SyncInvoker<>(request, RdsMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询应用参数模版的实例列表
+     *
+     * 查询应用参数模版的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesConfigurationsRequest 请求对象
+     * @return ListInstancesConfigurationsResponse
+     */
+    public ListInstancesConfigurationsResponse listInstancesConfigurations(ListInstancesConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listInstancesConfigurations);
+    }
+
+    /**
+     * 查询应用参数模版的实例列表
+     *
+     * 查询应用参数模版的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesConfigurationsRequest 请求对象
+     * @return SyncInvoker<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse>
+     */
+    public SyncInvoker<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> listInstancesConfigurationsInvoker(
+        ListInstancesConfigurationsRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listInstancesConfigurations, hcClient);
     }
 
     /**

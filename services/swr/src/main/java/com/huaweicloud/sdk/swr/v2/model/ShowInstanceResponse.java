@@ -277,6 +277,11 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String subnetCidr;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcep_service_id")
+
+    private String vpcepServiceId;
+
     public ShowInstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -668,6 +673,23 @@ public class ShowInstanceResponse extends SdkResponse {
         this.subnetCidr = subnetCidr;
     }
 
+    public ShowInstanceResponse withVpcepServiceId(String vpcepServiceId) {
+        this.vpcepServiceId = vpcepServiceId;
+        return this;
+    }
+
+    /**
+     * 实例对应的VPC终端节点服务ID
+     * @return vpcepServiceId
+     */
+    public String getVpcepServiceId() {
+        return vpcepServiceId;
+    }
+
+    public void setVpcepServiceId(String vpcepServiceId) {
+        this.vpcepServiceId = vpcepServiceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -689,7 +711,8 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.userDefObs, that.userDefObs) && Objects.equals(this.productId, that.productId)
             && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.vpcName, that.vpcName)
             && Objects.equals(this.vpcCidr, that.vpcCidr) && Objects.equals(this.subnetName, that.subnetName)
-            && Objects.equals(this.subnetCidr, that.subnetCidr);
+            && Objects.equals(this.subnetCidr, that.subnetCidr)
+            && Objects.equals(this.vpcepServiceId, that.vpcepServiceId);
     }
 
     @Override
@@ -716,7 +739,8 @@ public class ShowInstanceResponse extends SdkResponse {
             vpcName,
             vpcCidr,
             subnetName,
-            subnetCidr);
+            subnetCidr,
+            vpcepServiceId);
     }
 
     @Override
@@ -746,6 +770,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    vpcCidr: ").append(toIndentedString(vpcCidr)).append("\n");
         sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
         sb.append("    subnetCidr: ").append(toIndentedString(subnetCidr)).append("\n");
+        sb.append("    vpcepServiceId: ").append(toIndentedString(vpcepServiceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

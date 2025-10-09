@@ -48,6 +48,11 @@ public class ClusterMetadata {
 
     private String updateTimestamp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timezone")
+
+    private String timezone;
+
     public ClusterMetadata withName(String name) {
         this.name = name;
         return this;
@@ -121,7 +126,7 @@ public class ClusterMetadata {
     }
 
     /**
-     * 集群注解，由key/value组成：  ``` \"annotations\": {    \"key1\" : \"value1\",    \"key2\" : \"value2\" } ```  >    - Annotations不用于标识和选择对象。Annotations中的元数据可以是small或large，structured或unstructured，并且可以包括标签不允许使用的字符。 >    - 该字段不会被数据库保存，当前仅用于指定集群待安装插件。 >    - 可通过加入\"cluster.install.addons.external/install\":\"[{\"addonTemplateName\":\"icagent\"}]\"的键值对在创建集群时安装ICAgent。 
+     * **参数解释：** 集群注解，由key/value组成：  ``` \"annotations\": {    \"key1\" : \"value1\",    \"key2\" : \"value2\" } ``` **约束限制：** 该字段不会被数据库保存，当前仅用于指定集群待安装插件。 **取值范围：** 不涉及 **默认取值：** 不涉及  >    - Annotations不用于标识和选择对象。Annotations中的元数据可以是small或large，structured或unstructured，并且可以包括标签不允许使用的字符。 >    - 可通过加入\"cluster.install.addons.external/install\": \"[{\\\\\"addonTemplateName\\\\\":\\\\\"icagent\\\\\"}]\"的键值对在创建集群时安装ICAgent。 
      * @return annotations
      */
     public Map<String, String> getAnnotations() {
@@ -171,7 +176,7 @@ public class ClusterMetadata {
     }
 
     /**
-     * 集群创建时间
+     * **参数解释：** 集群创建时间。 **约束限制：** 创建集群时自动记录，不支持传入。 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return creationTimestamp
      */
     public String getCreationTimestamp() {
@@ -188,7 +193,7 @@ public class ClusterMetadata {
     }
 
     /**
-     * 集群更新时间
+     * **参数解释：** 集群更新时间。 **约束限制：** 更新集群时自动记录，不支持传入。 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return updateTimestamp
      */
     public String getUpdateTimestamp() {
@@ -197,6 +202,23 @@ public class ClusterMetadata {
 
     public void setUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
+    }
+
+    public ClusterMetadata withTimezone(String timezone) {
+        this.timezone = timezone;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 集群时区。[IANA Time Zone Database](https://www.iana.org/time-zones)中收录的时区名称, 例如：\"Asia/Shanghai\"。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
+     * @return timezone
+     */
+    public String getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
     }
 
     @Override
@@ -212,12 +234,13 @@ public class ClusterMetadata {
             && Objects.equals(this.alias, that.alias) && Objects.equals(this.annotations, that.annotations)
             && Objects.equals(this.labels, that.labels)
             && Objects.equals(this.creationTimestamp, that.creationTimestamp)
-            && Objects.equals(this.updateTimestamp, that.updateTimestamp);
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp)
+            && Objects.equals(this.timezone, that.timezone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, uid, alias, annotations, labels, creationTimestamp, updateTimestamp);
+        return Objects.hash(name, uid, alias, annotations, labels, creationTimestamp, updateTimestamp, timezone);
     }
 
     @Override
@@ -231,6 +254,7 @@ public class ClusterMetadata {
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
+        sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

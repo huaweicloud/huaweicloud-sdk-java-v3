@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVpnGatewayJobRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVpnGatewayJobResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnAccessPolicyRequest;
@@ -57,6 +59,8 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionsLogConfigRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionsLogConfigResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnGatewayJobRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnGatewayJobResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserRequest;
@@ -79,6 +83,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwConnectionsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwConnectionsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListP2cVpnGatewayJobsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListP2cVpnGatewayJobsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListResourcesByTagsRequest;
@@ -89,6 +95,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListVpnAccessPoliciesRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnAccessPoliciesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayJobsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayJobsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnServersByProjectRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnServersByProjectResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnServersByVgwRequest;
@@ -161,6 +169,10 @@ import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserPasswordRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserPasswordResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeP2cVpnGatewayRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeP2cVpnGatewayResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeVpnGatewayRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeVpnGatewayResponse;
 
 public class VpnClient {
 
@@ -661,6 +673,35 @@ public class VpnClient {
     }
 
     /**
+     * 删除指定任务的记录
+     *
+     * delete resource job
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteP2cVpnGatewayJobRequest 请求对象
+     * @return DeleteP2cVpnGatewayJobResponse
+     */
+    public DeleteP2cVpnGatewayJobResponse deleteP2cVpnGatewayJob(DeleteP2cVpnGatewayJobRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.deleteP2cVpnGatewayJob);
+    }
+
+    /**
+     * 删除指定任务的记录
+     *
+     * delete resource job
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteP2cVpnGatewayJobRequest 请求对象
+     * @return SyncInvoker<DeleteP2cVpnGatewayJobRequest, DeleteP2cVpnGatewayJobResponse>
+     */
+    public SyncInvoker<DeleteP2cVpnGatewayJobRequest, DeleteP2cVpnGatewayJobResponse> deleteP2cVpnGatewayJobInvoker(
+        DeleteP2cVpnGatewayJobRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.deleteP2cVpnGatewayJob, hcClient);
+    }
+
+    /**
      * 查询P2C VPN网关可用区
      *
      * 查询P2C VPN网关可用区
@@ -747,6 +788,35 @@ public class VpnClient {
     }
 
     /**
+     * 查询资源任务列表
+     *
+     * list resource jobs
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListP2cVpnGatewayJobsRequest 请求对象
+     * @return ListP2cVpnGatewayJobsResponse
+     */
+    public ListP2cVpnGatewayJobsResponse listP2cVpnGatewayJobs(ListP2cVpnGatewayJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.listP2cVpnGatewayJobs);
+    }
+
+    /**
+     * 查询资源任务列表
+     *
+     * list resource jobs
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListP2cVpnGatewayJobsRequest 请求对象
+     * @return SyncInvoker<ListP2cVpnGatewayJobsRequest, ListP2cVpnGatewayJobsResponse>
+     */
+    public SyncInvoker<ListP2cVpnGatewayJobsRequest, ListP2cVpnGatewayJobsResponse> listP2cVpnGatewayJobsInvoker(
+        ListP2cVpnGatewayJobsRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.listP2cVpnGatewayJobs, hcClient);
+    }
+
+    /**
      * 查询P2C VPN网关
      *
      * 根据P2C VPN网关ID，查询指定的VPN网关
@@ -800,6 +870,35 @@ public class VpnClient {
      */
     public SyncInvoker<UpdateP2cVgwRequest, UpdateP2cVgwResponse> updateP2cVgwInvoker(UpdateP2cVgwRequest request) {
         return new SyncInvoker<>(request, VpnMeta.updateP2cVgw, hcClient);
+    }
+
+    /**
+     * 升级VPN资源
+     *
+     * upgrade VPN resource
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeP2cVpnGatewayRequest 请求对象
+     * @return UpgradeP2cVpnGatewayResponse
+     */
+    public UpgradeP2cVpnGatewayResponse upgradeP2cVpnGateway(UpgradeP2cVpnGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.upgradeP2cVpnGateway);
+    }
+
+    /**
+     * 升级VPN资源
+     *
+     * upgrade VPN resource
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeP2cVpnGatewayRequest 请求对象
+     * @return SyncInvoker<UpgradeP2cVpnGatewayRequest, UpgradeP2cVpnGatewayResponse>
+     */
+    public SyncInvoker<UpgradeP2cVpnGatewayRequest, UpgradeP2cVpnGatewayResponse> upgradeP2cVpnGatewayInvoker(
+        UpgradeP2cVpnGatewayRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.upgradeP2cVpnGateway, hcClient);
     }
 
     /**
@@ -1499,6 +1598,35 @@ public class VpnClient {
     }
 
     /**
+     * 删除指定任务的记录
+     *
+     * delete resource job
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVpnGatewayJobRequest 请求对象
+     * @return DeleteVpnGatewayJobResponse
+     */
+    public DeleteVpnGatewayJobResponse deleteVpnGatewayJob(DeleteVpnGatewayJobRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.deleteVpnGatewayJob);
+    }
+
+    /**
+     * 删除指定任务的记录
+     *
+     * delete resource job
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVpnGatewayJobRequest 请求对象
+     * @return SyncInvoker<DeleteVpnGatewayJobRequest, DeleteVpnGatewayJobResponse>
+     */
+    public SyncInvoker<DeleteVpnGatewayJobRequest, DeleteVpnGatewayJobResponse> deleteVpnGatewayJobInvoker(
+        DeleteVpnGatewayJobRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.deleteVpnGatewayJob, hcClient);
+    }
+
+    /**
      * 查询VPN网关可用区
      *
      * 查询VPN网关可用区
@@ -1583,6 +1711,35 @@ public class VpnClient {
      */
     public SyncInvoker<ListVgwsRequest, ListVgwsResponse> listVgwsInvoker(ListVgwsRequest request) {
         return new SyncInvoker<>(request, VpnMeta.listVgws, hcClient);
+    }
+
+    /**
+     * 查询资源任务列表
+     *
+     * list resource jobs
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVpnGatewayJobsRequest 请求对象
+     * @return ListVpnGatewayJobsResponse
+     */
+    public ListVpnGatewayJobsResponse listVpnGatewayJobs(ListVpnGatewayJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.listVpnGatewayJobs);
+    }
+
+    /**
+     * 查询资源任务列表
+     *
+     * list resource jobs
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVpnGatewayJobsRequest 请求对象
+     * @return SyncInvoker<ListVpnGatewayJobsRequest, ListVpnGatewayJobsResponse>
+     */
+    public SyncInvoker<ListVpnGatewayJobsRequest, ListVpnGatewayJobsResponse> listVpnGatewayJobsInvoker(
+        ListVpnGatewayJobsRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.listVpnGatewayJobs, hcClient);
     }
 
     /**
@@ -1696,6 +1853,35 @@ public class VpnClient {
      */
     public SyncInvoker<UpdateVgwRequest, UpdateVgwResponse> updateVgwInvoker(UpdateVgwRequest request) {
         return new SyncInvoker<>(request, VpnMeta.updateVgw, hcClient);
+    }
+
+    /**
+     * 升级VPN资源
+     *
+     * upgrade VPN resource
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeVpnGatewayRequest 请求对象
+     * @return UpgradeVpnGatewayResponse
+     */
+    public UpgradeVpnGatewayResponse upgradeVpnGateway(UpgradeVpnGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.upgradeVpnGateway);
+    }
+
+    /**
+     * 升级VPN资源
+     *
+     * upgrade VPN resource
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeVpnGatewayRequest 请求对象
+     * @return SyncInvoker<UpgradeVpnGatewayRequest, UpgradeVpnGatewayResponse>
+     */
+    public SyncInvoker<UpgradeVpnGatewayRequest, UpgradeVpnGatewayResponse> upgradeVpnGatewayInvoker(
+        UpgradeVpnGatewayRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.upgradeVpnGateway, hcClient);
     }
 
     /**

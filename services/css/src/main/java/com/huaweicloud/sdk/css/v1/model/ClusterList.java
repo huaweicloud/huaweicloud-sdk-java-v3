@@ -21,7 +21,7 @@ public class ClusterList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshotPolicy")
 
-    private Object snapshotPolicy;
+    private SnapshotPolicyResp snapshotPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
@@ -163,6 +163,11 @@ public class ClusterList {
 
     private String currentSubnetIds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desc")
+
+    private String desc;
+
     public ClusterList withDatastore(ClusterListDatastore datastore) {
         this.datastore = datastore;
         return this;
@@ -189,20 +194,29 @@ public class ClusterList {
         this.datastore = datastore;
     }
 
-    public ClusterList withSnapshotPolicy(Object snapshotPolicy) {
+    public ClusterList withSnapshotPolicy(SnapshotPolicyResp snapshotPolicy) {
         this.snapshotPolicy = snapshotPolicy;
         return this;
     }
 
+    public ClusterList withSnapshotPolicy(Consumer<SnapshotPolicyResp> snapshotPolicySetter) {
+        if (this.snapshotPolicy == null) {
+            this.snapshotPolicy = new SnapshotPolicyResp();
+            snapshotPolicySetter.accept(this.snapshotPolicy);
+        }
+
+        return this;
+    }
+
     /**
-     * 集群自动快照策略相关信息。
+     * Get snapshotPolicy
      * @return snapshotPolicy
      */
-    public Object getSnapshotPolicy() {
+    public SnapshotPolicyResp getSnapshotPolicy() {
         return snapshotPolicy;
     }
 
-    public void setSnapshotPolicy(Object snapshotPolicy) {
+    public void setSnapshotPolicy(SnapshotPolicyResp snapshotPolicy) {
         this.snapshotPolicy = snapshotPolicy;
     }
 
@@ -757,6 +771,23 @@ public class ClusterList {
         this.currentSubnetIds = currentSubnetIds;
     }
 
+    public ClusterList withDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+
+    /**
+     * 集群描述。
+     * @return desc
+     */
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -787,7 +818,7 @@ public class ClusterList {
             && Objects.equals(this.period, that.period)
             && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId)
             && Objects.equals(this.ipv6Endpoint, that.ipv6Endpoint) && Objects.equals(this.cmkId, that.cmkId)
-            && Objects.equals(this.currentSubnetIds, that.currentSubnetIds);
+            && Objects.equals(this.currentSubnetIds, that.currentSubnetIds) && Objects.equals(this.desc, that.desc);
     }
 
     @Override
@@ -821,7 +852,8 @@ public class ClusterList {
             bandwidthResourceId,
             ipv6Endpoint,
             cmkId,
-            currentSubnetIds);
+            currentSubnetIds,
+            desc);
     }
 
     @Override
@@ -858,6 +890,7 @@ public class ClusterList {
         sb.append("    ipv6Endpoint: ").append(toIndentedString(ipv6Endpoint)).append("\n");
         sb.append("    cmkId: ").append(toIndentedString(cmkId)).append("\n");
         sb.append("    currentSubnetIds: ").append(toIndentedString(currentSubnetIds)).append("\n");
+        sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

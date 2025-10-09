@@ -43,7 +43,7 @@ public class ShowNodeResponse extends SdkResponse {
     }
 
     /**
-     * API类型，固定值“Node”，该值不可修改。  
+     * **参数解释**： API类型，固定值“Node”。 **取值范围**： 只能为固定值“Node”。 
      * @return kind
      */
     public String getKind() {
@@ -60,7 +60,7 @@ public class ShowNodeResponse extends SdkResponse {
     }
 
     /**
-     * API版本，固定值“v3”，该值不可修改。  
+     * **参数解释**： API版本，固定值“v3”。 **取值范围**： 只能为固定值“v3”。
      * @return apiVersion
      */
     public String getApiVersion() {

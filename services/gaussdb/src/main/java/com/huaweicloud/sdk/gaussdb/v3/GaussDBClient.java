@@ -259,6 +259,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlQuotasRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlQuotasResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetHtapQueryQueuesRuleRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetHtapQueryQueuesRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetSqlFilterRuleRequest;
@@ -319,6 +321,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapErrorLogDetailRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapErrorLogDetailResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapQueryQueuesRuleRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapQueryQueuesRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowInstanceDatabaseVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowInstanceDatabaseVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowInstanceDatabasesForHtapRequest;
@@ -351,6 +355,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowServerlessComputeAbilityPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowServerlessComputeAbilityPolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowServerlessScalingPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowServerlessScalingPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogDetailRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogDetailResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequest;
@@ -369,6 +377,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarrocksParamsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowStarrocksParamsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowTableMetaInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowTableMetaInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowTaskDetailsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowTaskDetailsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShrinkGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchAccessControlRequest;
@@ -423,6 +433,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlInstanceSecurityGrou
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlInstanceSecurityGroupResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlQuotasRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlQuotasResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateHtapQueryQueuesControlRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateHtapQueryQueuesControlResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorRequest;
@@ -443,8 +455,12 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyPrivateDnsNameRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyPrivateDnsNameResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessComputeAbilityPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessComputeAbilityPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessPolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessScalingPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateServerlessScalingPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveSwitchRequest;
@@ -3956,6 +3972,65 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询Serverless算力策略
+     *
+     * 查询Serverless算力策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerlessComputeAbilityPolicyRequest 请求对象
+     * @return ShowServerlessComputeAbilityPolicyResponse
+     */
+    public ShowServerlessComputeAbilityPolicyResponse showServerlessComputeAbilityPolicy(
+        ShowServerlessComputeAbilityPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showServerlessComputeAbilityPolicy);
+    }
+
+    /**
+     * 查询Serverless算力策略
+     *
+     * 查询Serverless算力策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerlessComputeAbilityPolicyRequest 请求对象
+     * @return SyncInvoker<ShowServerlessComputeAbilityPolicyRequest, ShowServerlessComputeAbilityPolicyResponse>
+     */
+    public SyncInvoker<ShowServerlessComputeAbilityPolicyRequest, ShowServerlessComputeAbilityPolicyResponse> showServerlessComputeAbilityPolicyInvoker(
+        ShowServerlessComputeAbilityPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showServerlessComputeAbilityPolicy, hcClient);
+    }
+
+    /**
+     * 查询Serverless自定义扩容策略
+     *
+     * 查询Serverless自定义扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerlessScalingPolicyRequest 请求对象
+     * @return ShowServerlessScalingPolicyResponse
+     */
+    public ShowServerlessScalingPolicyResponse showServerlessScalingPolicy(ShowServerlessScalingPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showServerlessScalingPolicy);
+    }
+
+    /**
+     * 查询Serverless自定义扩容策略
+     *
+     * 查询Serverless自定义扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerlessScalingPolicyRequest 请求对象
+     * @return SyncInvoker<ShowServerlessScalingPolicyRequest, ShowServerlessScalingPolicyResponse>
+     */
+    public SyncInvoker<ShowServerlessScalingPolicyRequest, ShowServerlessScalingPolicyResponse> showServerlessScalingPolicyInvoker(
+        ShowServerlessScalingPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showServerlessScalingPolicy, hcClient);
+    }
+
+    /**
      * 获取StarRocks实例内核慢日志信息
      *
      * 获取StarRocks实例内核慢日志信息。
@@ -4157,6 +4232,35 @@ public class GaussDBClient {
     public SyncInvoker<ShowTableMetaInfoRequest, ShowTableMetaInfoResponse> showTableMetaInfoInvoker(
         ShowTableMetaInfoRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showTableMetaInfo, hcClient);
+    }
+
+    /**
+     * 获取TaurusDB异步任务详情
+     *
+     * 获取TaurusDB异步任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskDetailsRequest 请求对象
+     * @return ShowTaskDetailsResponse
+     */
+    public ShowTaskDetailsResponse showTaskDetails(ShowTaskDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showTaskDetails);
+    }
+
+    /**
+     * 获取TaurusDB异步任务详情
+     *
+     * 获取TaurusDB异步任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskDetailsRequest 请求对象
+     * @return SyncInvoker<ShowTaskDetailsRequest, ShowTaskDetailsResponse>
+     */
+    public SyncInvoker<ShowTaskDetailsRequest, ShowTaskDetailsResponse> showTaskDetailsInvoker(
+        ShowTaskDetailsRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showTaskDetails, hcClient);
     }
 
     /**
@@ -5076,6 +5180,36 @@ public class GaussDBClient {
     }
 
     /**
+     * 设置Serverless算力策略
+     *
+     * 设置Serverless算力策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerlessComputeAbilityPolicyRequest 请求对象
+     * @return UpdateServerlessComputeAbilityPolicyResponse
+     */
+    public UpdateServerlessComputeAbilityPolicyResponse updateServerlessComputeAbilityPolicy(
+        UpdateServerlessComputeAbilityPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateServerlessComputeAbilityPolicy);
+    }
+
+    /**
+     * 设置Serverless算力策略
+     *
+     * 设置Serverless算力策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerlessComputeAbilityPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateServerlessComputeAbilityPolicyRequest, UpdateServerlessComputeAbilityPolicyResponse>
+     */
+    public SyncInvoker<UpdateServerlessComputeAbilityPolicyRequest, UpdateServerlessComputeAbilityPolicyResponse> updateServerlessComputeAbilityPolicyInvoker(
+        UpdateServerlessComputeAbilityPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateServerlessComputeAbilityPolicy, hcClient);
+    }
+
+    /**
      * 设置Serverless配置策略
      *
      * 设置Serverless配置策略。
@@ -5102,6 +5236,36 @@ public class GaussDBClient {
     public SyncInvoker<UpdateServerlessPolicyRequest, UpdateServerlessPolicyResponse> updateServerlessPolicyInvoker(
         UpdateServerlessPolicyRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.updateServerlessPolicy, hcClient);
+    }
+
+    /**
+     * 设置Serverless自定义扩容策略
+     *
+     * 设置Serverless自定义扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerlessScalingPolicyRequest 请求对象
+     * @return UpdateServerlessScalingPolicyResponse
+     */
+    public UpdateServerlessScalingPolicyResponse updateServerlessScalingPolicy(
+        UpdateServerlessScalingPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateServerlessScalingPolicy);
+    }
+
+    /**
+     * 设置Serverless自定义扩容策略
+     *
+     * 设置Serverless自定义扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerlessScalingPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateServerlessScalingPolicyRequest, UpdateServerlessScalingPolicyResponse>
+     */
+    public SyncInvoker<UpdateServerlessScalingPolicyRequest, UpdateServerlessScalingPolicyResponse> updateServerlessScalingPolicyInvoker(
+        UpdateServerlessScalingPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateServerlessScalingPolicy, hcClient);
     }
 
     /**
@@ -6692,6 +6856,35 @@ public class GaussDBClient {
     }
 
     /**
+     * 设置当前查询队列阈值
+     *
+     * 设置当前查询队列阈值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetHtapQueryQueuesRuleRequest 请求对象
+     * @return SetHtapQueryQueuesRuleResponse
+     */
+    public SetHtapQueryQueuesRuleResponse setHtapQueryQueuesRule(SetHtapQueryQueuesRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.setHtapQueryQueuesRule);
+    }
+
+    /**
+     * 设置当前查询队列阈值
+     *
+     * 设置当前查询队列阈值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetHtapQueryQueuesRuleRequest 请求对象
+     * @return SyncInvoker<SetHtapQueryQueuesRuleRequest, SetHtapQueryQueuesRuleResponse>
+     */
+    public SyncInvoker<SetHtapQueryQueuesRuleRequest, SetHtapQueryQueuesRuleResponse> setHtapQueryQueuesRuleInvoker(
+        SetHtapQueryQueuesRuleRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.setHtapQueryQueuesRule, hcClient);
+    }
+
+    /**
      * 查询数据库账户
      *
      * 查询数据库账户。
@@ -6864,6 +7057,35 @@ public class GaussDBClient {
     public SyncInvoker<ShowHtapLtsConfigRequest, ShowHtapLtsConfigResponse> showHtapLtsConfigInvoker(
         ShowHtapLtsConfigRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showHtapLtsConfig, hcClient);
+    }
+
+    /**
+     * 查询当前查询队列开关和阈值
+     *
+     * 查询当前查询队列开关和阈值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHtapQueryQueuesRuleRequest 请求对象
+     * @return ShowHtapQueryQueuesRuleResponse
+     */
+    public ShowHtapQueryQueuesRuleResponse showHtapQueryQueuesRule(ShowHtapQueryQueuesRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showHtapQueryQueuesRule);
+    }
+
+    /**
+     * 查询当前查询队列开关和阈值
+     *
+     * 查询当前查询队列开关和阈值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHtapQueryQueuesRuleRequest 请求对象
+     * @return SyncInvoker<ShowHtapQueryQueuesRuleRequest, ShowHtapQueryQueuesRuleResponse>
+     */
+    public SyncInvoker<ShowHtapQueryQueuesRuleRequest, ShowHtapQueryQueuesRuleResponse> showHtapQueryQueuesRuleInvoker(
+        ShowHtapQueryQueuesRuleRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showHtapQueryQueuesRule, hcClient);
     }
 
     /**
@@ -7159,6 +7381,36 @@ public class GaussDBClient {
     public SyncInvoker<UpdateClickHouseSlowLogSensitiveStatusRequest, UpdateClickHouseSlowLogSensitiveStatusResponse> updateClickHouseSlowLogSensitiveStatusInvoker(
         UpdateClickHouseSlowLogSensitiveStatusRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.updateClickHouseSlowLogSensitiveStatus, hcClient);
+    }
+
+    /**
+     * 开启或者关闭查询队列功能
+     *
+     * 开启或者关闭查询队列功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHtapQueryQueuesControlRequest 请求对象
+     * @return UpdateHtapQueryQueuesControlResponse
+     */
+    public UpdateHtapQueryQueuesControlResponse updateHtapQueryQueuesControl(
+        UpdateHtapQueryQueuesControlRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateHtapQueryQueuesControl);
+    }
+
+    /**
+     * 开启或者关闭查询队列功能
+     *
+     * 开启或者关闭查询队列功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHtapQueryQueuesControlRequest 请求对象
+     * @return SyncInvoker<UpdateHtapQueryQueuesControlRequest, UpdateHtapQueryQueuesControlResponse>
+     */
+    public SyncInvoker<UpdateHtapQueryQueuesControlRequest, UpdateHtapQueryQueuesControlResponse> updateHtapQueryQueuesControlInvoker(
+        UpdateHtapQueryQueuesControlRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateHtapQueryQueuesControl, hcClient);
     }
 
     /**

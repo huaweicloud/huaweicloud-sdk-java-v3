@@ -22,6 +22,11 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
     private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frequency")
+
+    private String frequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prefix")
 
     private String prefix;
@@ -47,9 +52,24 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
     private String enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "frequency")
+    @JsonProperty(value = "indices")
 
-    private String frequency;
+    private String indices;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snapshotCmkId")
+
+    private String snapshotCmkId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maxSnapshotBytesPerSeconds")
+
+    private String maxSnapshotBytesPerSeconds;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maxRestoreBytesPerSeconds")
+
+    private String maxRestoreBytesPerSeconds;
 
     public ShowAutoCreatePolicyResponse withKeepday(Integer keepday) {
         this.keepday = keepday;
@@ -83,6 +103,23 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
 
     public void setPeriod(String period) {
         this.period = period;
+    }
+
+    public ShowAutoCreatePolicyResponse withFrequency(String frequency) {
+        this.frequency = frequency;
+        return this;
+    }
+
+    /**
+     * 自动创建快照的执行频次。
+     * @return frequency
+     */
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
     }
 
     public ShowAutoCreatePolicyResponse withPrefix(String prefix) {
@@ -170,21 +207,72 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         this.enable = enable;
     }
 
-    public ShowAutoCreatePolicyResponse withFrequency(String frequency) {
-        this.frequency = frequency;
+    public ShowAutoCreatePolicyResponse withIndices(String indices) {
+        this.indices = indices;
         return this;
     }
 
     /**
-     * 自动创建快照的执行频次。
-     * @return frequency
+     * 需要备份的索引名。
+     * @return indices
      */
-    public String getFrequency() {
-        return frequency;
+    public String getIndices() {
+        return indices;
     }
 
-    public void setFrequency(String frequency) {
-        this.frequency = frequency;
+    public void setIndices(String indices) {
+        this.indices = indices;
+    }
+
+    public ShowAutoCreatePolicyResponse withSnapshotCmkId(String snapshotCmkId) {
+        this.snapshotCmkId = snapshotCmkId;
+        return this;
+    }
+
+    /**
+     * 快照ID。
+     * @return snapshotCmkId
+     */
+    public String getSnapshotCmkId() {
+        return snapshotCmkId;
+    }
+
+    public void setSnapshotCmkId(String snapshotCmkId) {
+        this.snapshotCmkId = snapshotCmkId;
+    }
+
+    public ShowAutoCreatePolicyResponse withMaxSnapshotBytesPerSeconds(String maxSnapshotBytesPerSeconds) {
+        this.maxSnapshotBytesPerSeconds = maxSnapshotBytesPerSeconds;
+        return this;
+    }
+
+    /**
+     * 配置每个节点的最大备份速率（每秒），即当备份的速率超过该值时会被限流，避免速率太大导致资源占用过高，影响系统稳定性。实际备份速率不一定能达到该值，会受OBS、磁盘等影响。
+     * @return maxSnapshotBytesPerSeconds
+     */
+    public String getMaxSnapshotBytesPerSeconds() {
+        return maxSnapshotBytesPerSeconds;
+    }
+
+    public void setMaxSnapshotBytesPerSeconds(String maxSnapshotBytesPerSeconds) {
+        this.maxSnapshotBytesPerSeconds = maxSnapshotBytesPerSeconds;
+    }
+
+    public ShowAutoCreatePolicyResponse withMaxRestoreBytesPerSeconds(String maxRestoreBytesPerSeconds) {
+        this.maxRestoreBytesPerSeconds = maxRestoreBytesPerSeconds;
+        return this;
+    }
+
+    /**
+     * 配置每个节点的最大恢复速率（每秒），即当恢复的速率超过该值时会被限流，避免速率太大导致资源占用过高，影响系统稳定性。实际恢复速率不一定能达到该值，会受OBS、磁盘等影响。
+     * @return maxRestoreBytesPerSeconds
+     */
+    public String getMaxRestoreBytesPerSeconds() {
+        return maxRestoreBytesPerSeconds;
+    }
+
+    public void setMaxRestoreBytesPerSeconds(String maxRestoreBytesPerSeconds) {
+        this.maxRestoreBytesPerSeconds = maxRestoreBytesPerSeconds;
     }
 
     @Override
@@ -197,14 +285,28 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         }
         ShowAutoCreatePolicyResponse that = (ShowAutoCreatePolicyResponse) obj;
         return Objects.equals(this.keepday, that.keepday) && Objects.equals(this.period, that.period)
-            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.bucket, that.bucket)
-            && Objects.equals(this.basePath, that.basePath) && Objects.equals(this.agency, that.agency)
-            && Objects.equals(this.enable, that.enable) && Objects.equals(this.frequency, that.frequency);
+            && Objects.equals(this.frequency, that.frequency) && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.bucket, that.bucket) && Objects.equals(this.basePath, that.basePath)
+            && Objects.equals(this.agency, that.agency) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.indices, that.indices) && Objects.equals(this.snapshotCmkId, that.snapshotCmkId)
+            && Objects.equals(this.maxSnapshotBytesPerSeconds, that.maxSnapshotBytesPerSeconds)
+            && Objects.equals(this.maxRestoreBytesPerSeconds, that.maxRestoreBytesPerSeconds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keepday, period, prefix, bucket, basePath, agency, enable, frequency);
+        return Objects.hash(keepday,
+            period,
+            frequency,
+            prefix,
+            bucket,
+            basePath,
+            agency,
+            enable,
+            indices,
+            snapshotCmkId,
+            maxSnapshotBytesPerSeconds,
+            maxRestoreBytesPerSeconds);
     }
 
     @Override
@@ -213,12 +315,16 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         sb.append("class ShowAutoCreatePolicyResponse {\n");
         sb.append("    keepday: ").append(toIndentedString(keepday)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
         sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-        sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+        sb.append("    indices: ").append(toIndentedString(indices)).append("\n");
+        sb.append("    snapshotCmkId: ").append(toIndentedString(snapshotCmkId)).append("\n");
+        sb.append("    maxSnapshotBytesPerSeconds: ").append(toIndentedString(maxSnapshotBytesPerSeconds)).append("\n");
+        sb.append("    maxRestoreBytesPerSeconds: ").append(toIndentedString(maxRestoreBytesPerSeconds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

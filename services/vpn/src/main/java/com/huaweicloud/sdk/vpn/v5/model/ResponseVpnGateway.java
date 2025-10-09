@@ -404,6 +404,87 @@ public class ResponseVpnGateway {
 
     private List<VpnResourceTag> tags = null;
 
+    /**
+     * 升级信息
+     */
+    public static final class UpgradeInfoEnum {
+
+        /**
+         * Enum READY for value: "ready"
+         */
+        public static final UpgradeInfoEnum READY = new UpgradeInfoEnum("ready");
+
+        /**
+         * Enum EXPIRING_SOON for value: "expiring soon"
+         */
+        public static final UpgradeInfoEnum EXPIRING_SOON = new UpgradeInfoEnum("expiring soon");
+
+        /**
+         * Enum UNREADY for value: "unready"
+         */
+        public static final UpgradeInfoEnum UNREADY = new UpgradeInfoEnum("unready");
+
+        private static final Map<String, UpgradeInfoEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, UpgradeInfoEnum> createStaticFields() {
+            Map<String, UpgradeInfoEnum> map = new HashMap<>();
+            map.put("ready", READY);
+            map.put("expiring soon", EXPIRING_SOON);
+            map.put("unready", UNREADY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        UpgradeInfoEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static UpgradeInfoEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UpgradeInfoEnum(value));
+        }
+
+        public static UpgradeInfoEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof UpgradeInfoEnum) {
+                return this.value.equals(((UpgradeInfoEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upgrade_info")
+
+    private UpgradeInfoEnum upgradeInfo;
+
     public ResponseVpnGateway withId(String id) {
         this.id = id;
         return this;
@@ -1124,6 +1205,23 @@ public class ResponseVpnGateway {
         this.tags = tags;
     }
 
+    public ResponseVpnGateway withUpgradeInfo(UpgradeInfoEnum upgradeInfo) {
+        this.upgradeInfo = upgradeInfo;
+        return this;
+    }
+
+    /**
+     * 升级信息
+     * @return upgradeInfo
+     */
+    public UpgradeInfoEnum getUpgradeInfo() {
+        return upgradeInfo;
+    }
+
+    public void setUpgradeInfo(UpgradeInfoEnum upgradeInfo) {
+        this.upgradeInfo = upgradeInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1156,7 +1254,8 @@ public class ResponseVpnGateway {
             && Objects.equals(this.appliedAt, that.appliedAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.policyTemplate, that.policyTemplate)
             && Objects.equals(this.supportedFlavors, that.supportedFlavors)
-            && Objects.equals(this.supportedFeatures, that.supportedFeatures) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.supportedFeatures, that.supportedFeatures) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.upgradeInfo, that.upgradeInfo);
     }
 
     @Override
@@ -1195,7 +1294,8 @@ public class ResponseVpnGateway {
             policyTemplate,
             supportedFlavors,
             supportedFeatures,
-            tags);
+            tags,
+            upgradeInfo);
     }
 
     @Override
@@ -1237,6 +1337,7 @@ public class ResponseVpnGateway {
         sb.append("    supportedFlavors: ").append(toIndentedString(supportedFlavors)).append("\n");
         sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    upgradeInfo: ").append(toIndentedString(upgradeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

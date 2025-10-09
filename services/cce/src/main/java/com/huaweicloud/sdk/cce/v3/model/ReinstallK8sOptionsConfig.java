@@ -30,16 +30,6 @@ public class ReinstallK8sOptionsConfig {
 
     private Integer maxPods;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nicMultiqueue")
-
-    private String nicMultiqueue;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nicThreshold")
-
-    private String nicThreshold;
-
     public ReinstallK8sOptionsConfig withLabels(Map<String, String> labels) {
         this.labels = labels;
         return this;
@@ -62,7 +52,7 @@ public class ReinstallK8sOptionsConfig {
     }
 
     /**
-     * 格式为key/value键值对。键值对个数不超过20条。 - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。  示例： ``` \"k8sTags\": {   \"key\": \"value\" } ``` 
+     * **参数解释**: 格式为key/value键值对。 - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。  示例： ``` \"k8sTags\": {   \"key\": \"value\" } ```  **约束限制**: 键值对个数不超过20条。
      * @return labels
      */
     public Map<String, String> getLabels() {
@@ -112,7 +102,9 @@ public class ReinstallK8sOptionsConfig {
     }
 
     /**
-     * 节点最大允许创建的实例数(Pod)，该数量包含系统默认实例，取值范围为16~256。 该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。 
+     * **参数解释**: 节点最大允许创建的实例数(Pod)，该数量包含系统默认实例，该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。 **约束限制**: 不涉及 **取值范围**: 取值范围为16~256  **默认取值**: 不涉及
+     * minimum: 16
+     * maximum: 256
      * @return maxPods
      */
     public Integer getMaxPods() {
@@ -121,40 +113,6 @@ public class ReinstallK8sOptionsConfig {
 
     public void setMaxPods(Integer maxPods) {
         this.maxPods = maxPods;
-    }
-
-    public ReinstallK8sOptionsConfig withNicMultiqueue(String nicMultiqueue) {
-        this.nicMultiqueue = nicMultiqueue;
-        return this;
-    }
-
-    /**
-     * - 弹性网卡队列数配置，默认配置示例如下： ``` \"[{\\\"queue\\\":4}]\" ``` 包含如下字段： - queue: 弹性网卡队列数。 - 仅在turbo集群的BMS节点时，该字段才可配置。 - 当前支持可配置队列数以及弹性网卡数：{\"1\":128, \"2\":92, \"4\":92, \"8\":32, \"16\":16,\"28\":9}, 既1弹性网卡队列可绑定128张弹性网卡，2队列弹性网卡可绑定92张，以此类推。 - 弹性网卡队列数越多，性能越强，但可绑定弹性网卡数越少，请根据您的需求进行配置（创建后不可修改）。 
-     * @return nicMultiqueue
-     */
-    public String getNicMultiqueue() {
-        return nicMultiqueue;
-    }
-
-    public void setNicMultiqueue(String nicMultiqueue) {
-        this.nicMultiqueue = nicMultiqueue;
-    }
-
-    public ReinstallK8sOptionsConfig withNicThreshold(String nicThreshold) {
-        this.nicThreshold = nicThreshold;
-        return this;
-    }
-
-    /**
-     * - 弹性网卡预绑定比例配置，默认配置示例如下： ``` \"0.3:0.6\" ```   - 第一位小数：预绑定低水位，弹性网卡预绑定的最低比例（最小预绑定弹性网卡数 = ⌊节点的总弹性网卡数 * 预绑定低水位⌋）   - 第二位小数：预绑定高水位，弹性网卡预绑定的最高比例（最大预绑定弹性网卡数 = ⌊节点的总弹性网卡数 * 预绑定高水位⌋）   - BMS节点上绑定的弹性网卡数：Pod正在使用的弹性网卡数 + 最小预绑定弹性网卡数 < BMS节点上绑定的弹性网卡数 < Pod正在使用的弹性网卡数 + 最大预绑定弹性网卡数   - BMS节点上当预绑定弹性网卡数 < 最小预绑定弹性网卡数时：会绑定弹性网卡，使得预绑定弹性网卡数 = 最小预绑定弹性网卡数   - BMS节点上当预绑定弹性网卡数 > 最大预绑定弹性网卡数时：会定时解绑弹性网卡（约2分钟一次），直到预绑定弹性网卡数 = 最大预绑定弹性网卡数   - 取值范围：[0.0, 1.0]; 一位小数; 低水位 <= 高水位 - 仅在turbo集群的BMS节点时，该字段才可配置。 - 弹性网卡预绑定能加快工作负载的创建，但会占用IP，请根据您的需求进行配置。 
-     * @return nicThreshold
-     */
-    public String getNicThreshold() {
-        return nicThreshold;
-    }
-
-    public void setNicThreshold(String nicThreshold) {
-        this.nicThreshold = nicThreshold;
     }
 
     @Override
@@ -167,13 +125,12 @@ public class ReinstallK8sOptionsConfig {
         }
         ReinstallK8sOptionsConfig that = (ReinstallK8sOptionsConfig) obj;
         return Objects.equals(this.labels, that.labels) && Objects.equals(this.taints, that.taints)
-            && Objects.equals(this.maxPods, that.maxPods) && Objects.equals(this.nicMultiqueue, that.nicMultiqueue)
-            && Objects.equals(this.nicThreshold, that.nicThreshold);
+            && Objects.equals(this.maxPods, that.maxPods);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(labels, taints, maxPods, nicMultiqueue, nicThreshold);
+        return Objects.hash(labels, taints, maxPods);
     }
 
     @Override
@@ -183,8 +140,6 @@ public class ReinstallK8sOptionsConfig {
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    taints: ").append(toIndentedString(taints)).append("\n");
         sb.append("    maxPods: ").append(toIndentedString(maxPods)).append("\n");
-        sb.append("    nicMultiqueue: ").append(toIndentedString(nicMultiqueue)).append("\n");
-        sb.append("    nicThreshold: ").append(toIndentedString(nicThreshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }

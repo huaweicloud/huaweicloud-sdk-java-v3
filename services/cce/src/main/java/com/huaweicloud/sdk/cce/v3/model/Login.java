@@ -21,6 +21,16 @@ public class Login {
 
     private UserPassword userPassword;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "removeUserPassword")
+
+    private Boolean removeUserPassword;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "removeSSHKey")
+
+    private Boolean removeSSHKey;
+
     public Login withSshKey(String sshKey) {
         this.sshKey = sshKey;
         return this;
@@ -64,6 +74,40 @@ public class Login {
         this.userPassword = userPassword;
     }
 
+    public Login withRemoveUserPassword(Boolean removeUserPassword) {
+        this.removeUserPassword = removeUserPassword;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 更新节点池时，移除当前节点池密码方式登录的配置 **约束限制**： 仅更新节点池场景支持该参数，设置为true时不允许设置userPassword **取值范围**： 不涉及 **默认取值**： false
+     * @return removeUserPassword
+     */
+    public Boolean getRemoveUserPassword() {
+        return removeUserPassword;
+    }
+
+    public void setRemoveUserPassword(Boolean removeUserPassword) {
+        this.removeUserPassword = removeUserPassword;
+    }
+
+    public Login withRemoveSSHKey(Boolean removeSSHKey) {
+        this.removeSSHKey = removeSSHKey;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 更新节点池时，移除当前节点池密钥对方式登录的配置 **约束限制**： 仅更新节点池场景支持该参数，设置为true时不允许设置sshKey **取值范围**： 不涉及 **默认取值**： false
+     * @return removeSSHKey
+     */
+    public Boolean getRemoveSSHKey() {
+        return removeSSHKey;
+    }
+
+    public void setRemoveSSHKey(Boolean removeSSHKey) {
+        this.removeSSHKey = removeSSHKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -73,12 +117,14 @@ public class Login {
             return false;
         }
         Login that = (Login) obj;
-        return Objects.equals(this.sshKey, that.sshKey) && Objects.equals(this.userPassword, that.userPassword);
+        return Objects.equals(this.sshKey, that.sshKey) && Objects.equals(this.userPassword, that.userPassword)
+            && Objects.equals(this.removeUserPassword, that.removeUserPassword)
+            && Objects.equals(this.removeSSHKey, that.removeSSHKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sshKey, userPassword);
+        return Objects.hash(sshKey, userPassword, removeUserPassword, removeSSHKey);
     }
 
     @Override
@@ -87,6 +133,8 @@ public class Login {
         sb.append("class Login {\n");
         sb.append("    sshKey: ").append(toIndentedString(sshKey)).append("\n");
         sb.append("    userPassword: ").append(toIndentedString(userPassword)).append("\n");
+        sb.append("    removeUserPassword: ").append(toIndentedString(removeUserPassword)).append("\n");
+        sb.append("    removeSSHKey: ").append(toIndentedString(removeSSHKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

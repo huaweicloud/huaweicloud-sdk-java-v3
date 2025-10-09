@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,31 +17,38 @@ public class ListElbCertsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificates")
 
-    private CertificatesResource certificates;
+    private List<CertificatesResource> certificates = null;
 
-    public ListElbCertsResponse withCertificates(CertificatesResource certificates) {
+    public ListElbCertsResponse withCertificates(List<CertificatesResource> certificates) {
         this.certificates = certificates;
         return this;
     }
 
-    public ListElbCertsResponse withCertificates(Consumer<CertificatesResource> certificatesSetter) {
+    public ListElbCertsResponse addCertificatesItem(CertificatesResource certificatesItem) {
         if (this.certificates == null) {
-            this.certificates = new CertificatesResource();
-            certificatesSetter.accept(this.certificates);
+            this.certificates = new ArrayList<>();
         }
+        this.certificates.add(certificatesItem);
+        return this;
+    }
 
+    public ListElbCertsResponse withCertificates(Consumer<List<CertificatesResource>> certificatesSetter) {
+        if (this.certificates == null) {
+            this.certificates = new ArrayList<>();
+        }
+        certificatesSetter.accept(this.certificates);
         return this;
     }
 
     /**
-     * Get certificates
+     * 证书列表信息。
      * @return certificates
      */
-    public CertificatesResource getCertificates() {
+    public List<CertificatesResource> getCertificates() {
         return certificates;
     }
 
-    public void setCertificates(CertificatesResource certificates) {
+    public void setCertificates(List<CertificatesResource> certificates) {
         this.certificates = certificates;
     }
 

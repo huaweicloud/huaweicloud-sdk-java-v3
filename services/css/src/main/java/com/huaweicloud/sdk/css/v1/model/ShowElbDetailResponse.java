@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -45,7 +47,7 @@ public class ShowElbDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "loadBalancer")
 
-    private EsLoadBalancerResource loadBalancer;
+    private LoadBalancer loadBalancer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "listener")
@@ -55,7 +57,7 @@ public class ShowElbDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "healthmonitors")
 
-    private Member healthmonitors;
+    private List<Member> healthmonitors = null;
 
     public ShowElbDetailResponse withServerCertName(String serverCertName) {
         this.serverCertName = serverCertName;
@@ -159,14 +161,14 @@ public class ShowElbDetailResponse extends SdkResponse {
         this.authenticationType = authenticationType;
     }
 
-    public ShowElbDetailResponse withLoadBalancer(EsLoadBalancerResource loadBalancer) {
+    public ShowElbDetailResponse withLoadBalancer(LoadBalancer loadBalancer) {
         this.loadBalancer = loadBalancer;
         return this;
     }
 
-    public ShowElbDetailResponse withLoadBalancer(Consumer<EsLoadBalancerResource> loadBalancerSetter) {
+    public ShowElbDetailResponse withLoadBalancer(Consumer<LoadBalancer> loadBalancerSetter) {
         if (this.loadBalancer == null) {
-            this.loadBalancer = new EsLoadBalancerResource();
+            this.loadBalancer = new LoadBalancer();
             loadBalancerSetter.accept(this.loadBalancer);
         }
 
@@ -177,11 +179,11 @@ public class ShowElbDetailResponse extends SdkResponse {
      * Get loadBalancer
      * @return loadBalancer
      */
-    public EsLoadBalancerResource getLoadBalancer() {
+    public LoadBalancer getLoadBalancer() {
         return loadBalancer;
     }
 
-    public void setLoadBalancer(EsLoadBalancerResource loadBalancer) {
+    public void setLoadBalancer(LoadBalancer loadBalancer) {
         this.loadBalancer = loadBalancer;
     }
 
@@ -211,29 +213,36 @@ public class ShowElbDetailResponse extends SdkResponse {
         this.listener = listener;
     }
 
-    public ShowElbDetailResponse withHealthmonitors(Member healthmonitors) {
+    public ShowElbDetailResponse withHealthmonitors(List<Member> healthmonitors) {
         this.healthmonitors = healthmonitors;
         return this;
     }
 
-    public ShowElbDetailResponse withHealthmonitors(Consumer<Member> healthmonitorsSetter) {
+    public ShowElbDetailResponse addHealthmonitorsItem(Member healthmonitorsItem) {
         if (this.healthmonitors == null) {
-            this.healthmonitors = new Member();
-            healthmonitorsSetter.accept(this.healthmonitors);
+            this.healthmonitors = new ArrayList<>();
         }
+        this.healthmonitors.add(healthmonitorsItem);
+        return this;
+    }
 
+    public ShowElbDetailResponse withHealthmonitors(Consumer<List<Member>> healthmonitorsSetter) {
+        if (this.healthmonitors == null) {
+            this.healthmonitors = new ArrayList<>();
+        }
+        healthmonitorsSetter.accept(this.healthmonitors);
         return this;
     }
 
     /**
-     * Get healthmonitors
+     * 健康检查结果集合。
      * @return healthmonitors
      */
-    public Member getHealthmonitors() {
+    public List<Member> getHealthmonitors() {
         return healthmonitors;
     }
 
-    public void setHealthmonitors(Member healthmonitors) {
+    public void setHealthmonitors(List<Member> healthmonitors) {
         this.healthmonitors = healthmonitors;
     }
 

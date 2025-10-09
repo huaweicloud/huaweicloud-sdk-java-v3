@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.vpn.v5.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -93,6 +98,87 @@ public class ShowResponseP2cVgw {
     @JsonProperty(value = "version")
 
     private String version;
+
+    /**
+     * 升级信息
+     */
+    public static final class UpgradeInfoEnum {
+
+        /**
+         * Enum READY for value: "ready"
+         */
+        public static final UpgradeInfoEnum READY = new UpgradeInfoEnum("ready");
+
+        /**
+         * Enum EXPIRING_SOON for value: "expiring soon"
+         */
+        public static final UpgradeInfoEnum EXPIRING_SOON = new UpgradeInfoEnum("expiring soon");
+
+        /**
+         * Enum UNREADY for value: "unready"
+         */
+        public static final UpgradeInfoEnum UNREADY = new UpgradeInfoEnum("unready");
+
+        private static final Map<String, UpgradeInfoEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, UpgradeInfoEnum> createStaticFields() {
+            Map<String, UpgradeInfoEnum> map = new HashMap<>();
+            map.put("ready", READY);
+            map.put("expiring soon", EXPIRING_SOON);
+            map.put("unready", UNREADY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        UpgradeInfoEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static UpgradeInfoEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UpgradeInfoEnum(value));
+        }
+
+        public static UpgradeInfoEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof UpgradeInfoEnum) {
+                return this.value.equals(((UpgradeInfoEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upgrade_info")
+
+    private UpgradeInfoEnum upgradeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
@@ -422,6 +508,23 @@ public class ShowResponseP2cVgw {
         this.version = version;
     }
 
+    public ShowResponseP2cVgw withUpgradeInfo(UpgradeInfoEnum upgradeInfo) {
+        this.upgradeInfo = upgradeInfo;
+        return this;
+    }
+
+    /**
+     * 升级信息
+     * @return upgradeInfo
+     */
+    public UpgradeInfoEnum getUpgradeInfo() {
+        return upgradeInfo;
+    }
+
+    public void setUpgradeInfo(UpgradeInfoEnum upgradeInfo) {
+        this.upgradeInfo = upgradeInfo;
+    }
+
     public ShowResponseP2cVgw withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -492,8 +595,8 @@ public class ShowResponseP2cVgw {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.frozenEffect, that.frozenEffect) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.appliedAt, that.appliedAt);
+            && Objects.equals(this.upgradeInfo, that.upgradeInfo) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.appliedAt, that.appliedAt);
     }
 
     @Override
@@ -514,6 +617,7 @@ public class ShowResponseP2cVgw {
             adminStateUp,
             frozenEffect,
             version,
+            upgradeInfo,
             createdAt,
             updatedAt,
             appliedAt);
@@ -539,6 +643,7 @@ public class ShowResponseP2cVgw {
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    frozenEffect: ").append(toIndentedString(frozenEffect)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    upgradeInfo: ").append(toIndentedString(upgradeInfo)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    appliedAt: ").append(toIndentedString(appliedAt)).append("\n");

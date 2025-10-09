@@ -112,6 +112,11 @@ public class NodePoolUpdateExtendParam {
 
     private SecurityReinforcementTypeEnum securityReinforcementType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alpha.cce/NodeImageID")
+
+    private String alphaCceNodeImageID;
+
     public NodePoolUpdateExtendParam withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -198,6 +203,23 @@ public class NodePoolUpdateExtendParam {
         this.securityReinforcementType = securityReinforcementType;
     }
 
+    public NodePoolUpdateExtendParam withAlphaCceNodeImageID(String alphaCceNodeImageID) {
+        this.alphaCceNodeImageID = alphaCceNodeImageID;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点自定义镜像ID，从IMS控制台获取，需要使用自定义镜像时用此参数。 **约束限制**： 不涉及 [> - 若指定了extendParam中的securityReinforcementType参数为cybersecurity，节点将开启安全等保加固功能，则节点的操作系统类型必须使用HCE2.0。](tag:hws)  **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return alphaCceNodeImageID
+     */
+    public String getAlphaCceNodeImageID() {
+        return alphaCceNodeImageID;
+    }
+
+    public void setAlphaCceNodeImageID(String alphaCceNodeImageID) {
+        this.alphaCceNodeImageID = alphaCceNodeImageID;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -211,12 +233,18 @@ public class NodePoolUpdateExtendParam {
             && Objects.equals(this.alphaCcePreInstall, that.alphaCcePreInstall)
             && Objects.equals(this.alphaCcePostInstall, that.alphaCcePostInstall)
             && Objects.equals(this.spotPrice, that.spotPrice)
-            && Objects.equals(this.securityReinforcementType, that.securityReinforcementType);
+            && Objects.equals(this.securityReinforcementType, that.securityReinforcementType)
+            && Objects.equals(this.alphaCceNodeImageID, that.alphaCceNodeImageID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(agencyName, alphaCcePreInstall, alphaCcePostInstall, spotPrice, securityReinforcementType);
+        return Objects.hash(agencyName,
+            alphaCcePreInstall,
+            alphaCcePostInstall,
+            spotPrice,
+            securityReinforcementType,
+            alphaCceNodeImageID);
     }
 
     @Override
@@ -228,6 +256,7 @@ public class NodePoolUpdateExtendParam {
         sb.append("    alphaCcePostInstall: ").append(toIndentedString(alphaCcePostInstall)).append("\n");
         sb.append("    spotPrice: ").append(toIndentedString(spotPrice)).append("\n");
         sb.append("    securityReinforcementType: ").append(toIndentedString(securityReinforcementType)).append("\n");
+        sb.append("    alphaCceNodeImageID: ").append(toIndentedString(alphaCceNodeImageID)).append("\n");
         sb.append("}");
         return sb.toString();
     }

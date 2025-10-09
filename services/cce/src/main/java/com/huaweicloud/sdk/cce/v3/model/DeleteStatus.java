@@ -41,7 +41,7 @@ public class DeleteStatus {
     }
 
     /**
-     * 集群删除时已经存在的集群资源记录总数
+     * **参数解释：** 节点删除时已经存在的集群资源记录总数。 **取值范围：** 不涉及
      * @return previousTotal
      */
     public Integer getPreviousTotal() {
@@ -58,7 +58,7 @@ public class DeleteStatus {
     }
 
     /**
-     * 基于当前集群资源记录信息，生成实际最新资源记录总数
+     * **参数解释：** 基于当前集群资源记录信息，生成实际最新资源记录总数。 **取值范围：** 不涉及
      * @return currentTotal
      */
     public Integer getCurrentTotal() {
@@ -75,7 +75,7 @@ public class DeleteStatus {
     }
 
     /**
-     * 集群删除时更新的资源记录总数
+     * **参数解释：** 节点删除时更新的待删除资源记录总数。 **取值范围：** 不涉及
      * @return updated
      */
     public Integer getUpdated() {
@@ -92,7 +92,7 @@ public class DeleteStatus {
     }
 
     /**
-     * 集群删除时更新的资源记录总数
+     * **参数解释：** 节点删除时新增的待删除资源记录总数。 **取值范围：** 不涉及
      * @return added
      */
     public Integer getAdded() {
@@ -109,7 +109,7 @@ public class DeleteStatus {
     }
 
     /**
-     * 集群删除时删除的资源记录总数
+     * **参数解释：** 节点删除时删除的资源记录总数。 **取值范围：** 不涉及
      * @return deleted
      */
     public Integer getDeleted() {

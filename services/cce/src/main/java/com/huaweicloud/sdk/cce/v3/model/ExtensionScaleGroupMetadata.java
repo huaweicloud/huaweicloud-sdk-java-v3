@@ -43,7 +43,7 @@ public class ExtensionScaleGroupMetadata {
     }
 
     /**
-     * 扩展伸缩组的名称，不能为 **default**，长度不能超过55个字符，只能包含数字和小写字母以及**-** 
+     * **参数解释**： 扩展伸缩组的名称。 **约束限制**： 不能为 **default**。 **取值范围**： 长度不能超过56个字符，只能包含数字和小写字母以及连字符（-），必须以小写字母开头以小写字母或者数字结尾。 **默认取值**： 不涉及
      * @return name
      */
     public String getName() {

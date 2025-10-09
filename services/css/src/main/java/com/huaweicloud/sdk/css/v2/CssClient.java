@@ -209,9 +209,9 @@ public class CssClient {
     }
 
     /**
-     * Delete Custom Template
+     * 删除自定义模板
      *
-     * This interface is used to delete custom templates.
+     * 此接口用于删除自定义模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -223,9 +223,9 @@ public class CssClient {
     }
 
     /**
-     * Delete Custom Template
+     * 删除自定义模板
      *
-     * This interface is used to delete custom templates.
+     * 此接口用于删除自定义模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

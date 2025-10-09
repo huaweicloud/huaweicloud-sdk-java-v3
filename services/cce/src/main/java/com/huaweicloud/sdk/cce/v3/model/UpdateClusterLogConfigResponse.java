@@ -30,7 +30,9 @@ public class UpdateClusterLogConfigResponse extends SdkResponse {
     }
 
     /**
-     * 存储时长
+     * **参数解释**： 日志存储时长，单位（天） **取值范围**： 0-30
+     * minimum: 0
+     * maximum: 30
      * @return ttlInDays
      */
     public Integer getTtlInDays() {
@@ -63,7 +65,7 @@ public class UpdateClusterLogConfigResponse extends SdkResponse {
     }
 
     /**
-     * 日志配置项
+     * **参数解释**： 日志配置项详细信息 **约束限制**: 不涉及
      * @return logConfigs
      */
     public List<ClusterLogConfigLogConfigs> getLogConfigs() {

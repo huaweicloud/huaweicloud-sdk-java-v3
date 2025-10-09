@@ -38,6 +38,11 @@ public class NodePoolMetadata {
 
     private String creationTimestamp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resourceVersion")
+
+    private Integer resourceVersion;
+
     public NodePoolMetadata withName(String name) {
         this.name = name;
         return this;
@@ -139,6 +144,23 @@ public class NodePoolMetadata {
         this.creationTimestamp = creationTimestamp;
     }
 
+    public NodePoolMetadata withResourceVersion(Integer resourceVersion) {
+        this.resourceVersion = resourceVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点池最后更新时间的时间戳。 **约束限制**： 创建节点池时自动记录，不支持传入。 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return resourceVersion
+     */
+    public Integer getResourceVersion() {
+        return resourceVersion;
+    }
+
+    public void setResourceVersion(Integer resourceVersion) {
+        this.resourceVersion = resourceVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -151,12 +173,13 @@ public class NodePoolMetadata {
         return Objects.equals(this.name, that.name) && Objects.equals(this.uid, that.uid)
             && Objects.equals(this.annotations, that.annotations)
             && Objects.equals(this.updateTimestamp, that.updateTimestamp)
-            && Objects.equals(this.creationTimestamp, that.creationTimestamp);
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp)
+            && Objects.equals(this.resourceVersion, that.resourceVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, uid, annotations, updateTimestamp, creationTimestamp);
+        return Objects.hash(name, uid, annotations, updateTimestamp, creationTimestamp, resourceVersion);
     }
 
     @Override
@@ -168,6 +191,7 @@ public class NodePoolMetadata {
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
         sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
+        sb.append("    resourceVersion: ").append(toIndentedString(resourceVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

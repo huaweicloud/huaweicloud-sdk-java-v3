@@ -25,6 +25,11 @@ public class DatastoreItem {
 
     private Boolean patchAvailable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whole_version")
+
+    private String wholeVersion;
+
     public DatastoreItem withType(String type) {
         this.type = type;
         return this;
@@ -76,6 +81,23 @@ public class DatastoreItem {
         this.patchAvailable = patchAvailable;
     }
 
+    public DatastoreItem withWholeVersion(String wholeVersion) {
+        this.wholeVersion = wholeVersion;
+        return this;
+    }
+
+    /**
+     * 数据库的完整版本号。
+     * @return wholeVersion
+     */
+    public String getWholeVersion() {
+        return wholeVersion;
+    }
+
+    public void setWholeVersion(String wholeVersion) {
+        this.wholeVersion = wholeVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,13 @@ public class DatastoreItem {
         }
         DatastoreItem that = (DatastoreItem) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.patchAvailable, that.patchAvailable);
+            && Objects.equals(this.patchAvailable, that.patchAvailable)
+            && Objects.equals(this.wholeVersion, that.wholeVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, version, patchAvailable);
+        return Objects.hash(type, version, patchAvailable, wholeVersion);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class DatastoreItem {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    patchAvailable: ").append(toIndentedString(patchAvailable)).append("\n");
+        sb.append("    wholeVersion: ").append(toIndentedString(wholeVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

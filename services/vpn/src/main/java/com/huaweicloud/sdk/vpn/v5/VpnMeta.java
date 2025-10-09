@@ -66,6 +66,8 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVpnGatewayJobRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVpnGatewayJobResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteResourcesTagsRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwResponse;
@@ -75,6 +77,8 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionsLogConfigRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionsLogConfigResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnGatewayJobRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnGatewayJobResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserRequest;
@@ -99,6 +103,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwConnectionsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwConnectionsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListP2cVpnGatewayJobsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListP2cVpnGatewayJobsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListResourcesByTagsRequest;
@@ -109,6 +115,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListVpnAccessPoliciesRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnAccessPoliciesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayJobsRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayJobsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnServersByProjectRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnServersByProjectResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnServersByVgwRequest;
@@ -197,6 +205,11 @@ import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserPasswordResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeP2cVpnGatewayRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeP2cVpnGatewayResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeRequestBody;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeVpnGatewayRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpgradeVpnGatewayResponse;
 
 import java.util.List;
 
@@ -701,6 +714,29 @@ public class VpnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteP2cVpnGatewayJobRequest, DeleteP2cVpnGatewayJobResponse> deleteP2cVpnGatewayJob =
+        genForDeleteP2cVpnGatewayJob();
+
+    private static HttpRequestDef<DeleteP2cVpnGatewayJobRequest, DeleteP2cVpnGatewayJobResponse> genForDeleteP2cVpnGatewayJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteP2cVpnGatewayJobRequest, DeleteP2cVpnGatewayJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteP2cVpnGatewayJobRequest.class, DeleteP2cVpnGatewayJobResponse.class)
+            .withName("DeleteP2cVpnGatewayJob")
+            .withUri("/v5/{project_id}/p2c-vpn-gateways/jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteP2cVpnGatewayJobRequest::getJobId, DeleteP2cVpnGatewayJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListP2cVgwAvailabilityZonesRequest, ListP2cVgwAvailabilityZonesResponse> listP2cVgwAvailabilityZones =
         genForListP2cVgwAvailabilityZones();
 
@@ -789,6 +825,30 @@ public class VpnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListP2cVpnGatewayJobsRequest, ListP2cVpnGatewayJobsResponse> listP2cVpnGatewayJobs =
+        genForListP2cVpnGatewayJobs();
+
+    private static HttpRequestDef<ListP2cVpnGatewayJobsRequest, ListP2cVpnGatewayJobsResponse> genForListP2cVpnGatewayJobs() {
+        // basic
+        HttpRequestDef.Builder<ListP2cVpnGatewayJobsRequest, ListP2cVpnGatewayJobsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListP2cVpnGatewayJobsRequest.class, ListP2cVpnGatewayJobsResponse.class)
+            .withName("ListP2cVpnGatewayJobs")
+            .withUri("/v5/{project_id}/p2c-vpn-gateways/jobs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListP2cVpnGatewayJobsRequest::getResourceId,
+                ListP2cVpnGatewayJobsRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowP2cVgwRequest, ShowP2cVgwResponse> showP2cVgw = genForShowP2cVgw();
 
     private static HttpRequestDef<ShowP2cVgwRequest, ShowP2cVgwResponse> genForShowP2cVgw() {
@@ -841,6 +901,34 @@ public class VpnMeta {
             String.class,
             f -> f.withMarshaller(UpdateP2cVgwResponse::getHeaderResponseToken,
                 UpdateP2cVgwResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeP2cVpnGatewayRequest, UpgradeP2cVpnGatewayResponse> upgradeP2cVpnGateway =
+        genForUpgradeP2cVpnGateway();
+
+    private static HttpRequestDef<UpgradeP2cVpnGatewayRequest, UpgradeP2cVpnGatewayResponse> genForUpgradeP2cVpnGateway() {
+        // basic
+        HttpRequestDef.Builder<UpgradeP2cVpnGatewayRequest, UpgradeP2cVpnGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpgradeP2cVpnGatewayRequest.class, UpgradeP2cVpnGatewayResponse.class)
+            .withName("UpgradeP2cVpnGateway")
+            .withUri("/v5/{project_id}/p2c-vpn-gateways/{p2c_vgw_id}/upgrade")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("p2c_vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeP2cVpnGatewayRequest::getP2cVgwId, UpgradeP2cVpnGatewayRequest::setP2cVgwId));
+        builder.<UpgradeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeRequestBody.class),
+            f -> f.withMarshaller(UpgradeP2cVpnGatewayRequest::getBody, UpgradeP2cVpnGatewayRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -1625,6 +1713,29 @@ public class VpnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteVpnGatewayJobRequest, DeleteVpnGatewayJobResponse> deleteVpnGatewayJob =
+        genForDeleteVpnGatewayJob();
+
+    private static HttpRequestDef<DeleteVpnGatewayJobRequest, DeleteVpnGatewayJobResponse> genForDeleteVpnGatewayJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpnGatewayJobRequest, DeleteVpnGatewayJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteVpnGatewayJobRequest.class, DeleteVpnGatewayJobResponse.class)
+            .withName("DeleteVpnGatewayJob")
+            .withUri("/v5/{project_id}/vpn-gateways/jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpnGatewayJobRequest::getJobId, DeleteVpnGatewayJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZones =
         genForListAvailabilityZones();
 
@@ -1685,6 +1796,29 @@ public class VpnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListVgwsRequest::getEnterpriseProjectId, ListVgwsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpnGatewayJobsRequest, ListVpnGatewayJobsResponse> listVpnGatewayJobs =
+        genForListVpnGatewayJobs();
+
+    private static HttpRequestDef<ListVpnGatewayJobsRequest, ListVpnGatewayJobsResponse> genForListVpnGatewayJobs() {
+        // basic
+        HttpRequestDef.Builder<ListVpnGatewayJobsRequest, ListVpnGatewayJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVpnGatewayJobsRequest.class, ListVpnGatewayJobsResponse.class)
+                .withName("ListVpnGatewayJobs")
+                .withUri("/v5/{project_id}/vpn-gateways/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpnGatewayJobsRequest::getResourceId, ListVpnGatewayJobsRequest::setResourceId));
 
         // response
 
@@ -1833,6 +1967,34 @@ public class VpnMeta {
             String.class,
             f -> f.withMarshaller(UpdateVgwResponse::getHeaderResponseToken,
                 UpdateVgwResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeVpnGatewayRequest, UpgradeVpnGatewayResponse> upgradeVpnGateway =
+        genForUpgradeVpnGateway();
+
+    private static HttpRequestDef<UpgradeVpnGatewayRequest, UpgradeVpnGatewayResponse> genForUpgradeVpnGateway() {
+        // basic
+        HttpRequestDef.Builder<UpgradeVpnGatewayRequest, UpgradeVpnGatewayResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeVpnGatewayRequest.class, UpgradeVpnGatewayResponse.class)
+                .withName("UpgradeVpnGateway")
+                .withUri("/v5/{project_id}/vpn-gateways/{vgw_id}/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeVpnGatewayRequest::getVgwId, UpgradeVpnGatewayRequest::setVgwId));
+        builder.<UpgradeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeRequestBody.class),
+            f -> f.withMarshaller(UpgradeVpnGatewayRequest::getBody, UpgradeVpnGatewayRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 

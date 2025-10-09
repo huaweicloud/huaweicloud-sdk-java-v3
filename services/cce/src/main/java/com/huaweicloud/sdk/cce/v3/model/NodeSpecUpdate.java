@@ -21,6 +21,11 @@ public class NodeSpecUpdate {
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az")
+
+    private String az;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os")
 
     private String os;
@@ -56,14 +61,14 @@ public class NodeSpecUpdate {
     private List<Taint> taints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "waitPostInstallFinish")
+
+    private Boolean waitPostInstallFinish;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "k8sTags")
 
     private Map<String, String> k8sTags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ecsGroupId")
-
-    private String ecsGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userTags")
@@ -106,7 +111,7 @@ public class NodeSpecUpdate {
     }
 
     /**
-     * **参数解释：** 节点的规格。  **约束限制**： 不涉及 **取值范围：** CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。 **默认取值：** 不涉及
+     * **参数解释：** 节点的规格。  **约束限制**： 节点的规格不允许修改。 > 仅在删除节点池的默认伸缩组场景，允许设置为空字符串。当且仅当 **az** 字段也设置为空字符串时，才能删除默认伸缩组。如果节点池没有扩容伸缩组，默认伸缩组无法删除。  **取值范围：** CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。 **默认取值：** 不涉及
      * @return flavor
      */
     public String getFlavor() {
@@ -115,6 +120,23 @@ public class NodeSpecUpdate {
 
     public void setFlavor(String flavor) {
         this.flavor = flavor;
+    }
+
+    public NodeSpecUpdate withAz(String az) {
+        this.az = az;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点所在的可用区，需要指定可用区（AZ）的名称。  **约束限制**： 节点的可用区不允许修改。 > 仅在删除节点池的默认伸缩组场景，允许设置为空字符串。当且仅当 **flavor** 字段也设置为空字符串时，才能删除默认伸缩组。如果节点池没有扩容伸缩组，默认伸缩组无法删除。  **取值范围**： [CCE支持的可用区请参考[地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws_hk) **默认取值**： 不涉及
+     * @return az
+     */
+    public String getAz() {
+        return az;
+    }
+
+    public void setAz(String az) {
+        this.az = az;
     }
 
     public NodeSpecUpdate withOs(String os) {
@@ -293,7 +315,7 @@ public class NodeSpecUpdate {
     }
 
     /**
-     * **参数解释**： 支持给创建出来的节点加Taints来设置反亲和性。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。  示例：  ``` \"taints\": [{   \"key\": \"status\",   \"value\": \"unavailable\",   \"effect\": \"NoSchedule\" }, {   \"key\": \"looks\",   \"value\": \"bad\",   \"effect\": \"NoSchedule\" }] ```  **约束限制**： - taints配置不超过20条。 - 参数未指定或者为空数组时将删除节点池的自定义Taints。 - 更新节点池时，此字段为非必填字段。
+     * **参数解释**： 支持给创建出来的节点加Taints来设置反亲和性。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。  示例：  ``` \"taints\": [{   \"key\": \"status\",   \"value\": \"unavailable\",   \"effect\": \"NoSchedule\" }, {   \"key\": \"looks\",   \"value\": \"bad\",   \"effect\": \"NoSchedule\" }] ```  **约束限制**： - taints配置不超过20条。 - 参数未指定时将不会更新节点池的自定义Taints。 - 参数为空数组时将删除节点池的自定义Taints。
      * @return taints
      */
     public List<Taint> getTaints() {
@@ -302,6 +324,23 @@ public class NodeSpecUpdate {
 
     public void setTaints(List<Taint> taints) {
         this.taints = taints;
+    }
+
+    public NodeSpecUpdate withWaitPostInstallFinish(Boolean waitPostInstallFinish) {
+        this.waitPostInstallFinish = waitPostInstallFinish;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该参数用于控制更新节点池时 **post-install脚本执行完成前允许节点调度** 行为。当该参数未设置或者为false时，在kubernetes节点就绪时，容器即可被调度到可用节点。当该参数为true时，在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **约束限制：** 不涉及  **取值范围：** - false：在kubernetes节点就绪时，容器即可被调度到可用节点。           - true：在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **默认取值：** false
+     * @return waitPostInstallFinish
+     */
+    public Boolean getWaitPostInstallFinish() {
+        return waitPostInstallFinish;
+    }
+
+    public void setWaitPostInstallFinish(Boolean waitPostInstallFinish) {
+        this.waitPostInstallFinish = waitPostInstallFinish;
     }
 
     public NodeSpecUpdate withK8sTags(Map<String, String> k8sTags) {
@@ -326,7 +365,7 @@ public class NodeSpecUpdate {
     }
 
     /**
-     * **参数解释**： 格式为key/value键值对。 - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： ``` \"k8sTags\": {   \"key\": \"value\" } ```  **约束限制**： - 键值对个数不超过20条。 - 参数未指定或者为空对象时将删除节点池的自定义K8s标签。 - 更新节点池时，此字段为非必填字段。
+     * **参数解释**： 格式为key/value键值对。 - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： ``` \"k8sTags\": {   \"key\": \"value\" } ```  **约束限制**： - 键值对个数不超过20条。 - 参数未指定时将不会更新节点池的自定义K8s标签。 - 参数为空对象时将删除节点池的自定义K8s标签。
      * @return k8sTags
      */
     public Map<String, String> getK8sTags() {
@@ -335,23 +374,6 @@ public class NodeSpecUpdate {
 
     public void setK8sTags(Map<String, String> k8sTags) {
         this.k8sTags = k8sTags;
-    }
-
-    public NodeSpecUpdate withEcsGroupId(String ecsGroupId) {
-        this.ecsGroupId = ecsGroupId;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 云服务器组ID，若指定，将节点创建在该云服务器组下。 **约束限制**： 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置。 **取值范围**： 不涉及 **默认取值**： 不涉及
-     * @return ecsGroupId
-     */
-    public String getEcsGroupId() {
-        return ecsGroupId;
-    }
-
-    public void setEcsGroupId(String ecsGroupId) {
-        this.ecsGroupId = ecsGroupId;
     }
 
     public NodeSpecUpdate withUserTags(List<UserTag> userTags) {
@@ -376,7 +398,7 @@ public class NodeSpecUpdate {
     }
 
     /**
-     * **参数解释**： 云服务器标签（资源标签）。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 - 参数未指定或者为空数组时将删除节点池的自定义云服务器标签。 - 更新节点池时，此字段为非必填字段。  **取值范围**： 不涉及 **默认取值**： 不涉及
+     * **参数解释**： 云服务器标签（资源标签）。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 - 参数未指定时将不会更新节点池的自定义云服务器标签。 - 参数为空数组时将删除节点池的自定义云服务器标签。
      * @return userTags
      */
     public List<UserTag> getUserTags() {
@@ -550,12 +572,14 @@ public class NodeSpecUpdate {
             return false;
         }
         NodeSpecUpdate that = (NodeSpecUpdate) obj;
-        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.os, that.os)
-            && Objects.equals(this.login, that.login) && Objects.equals(this.rootVolumeUpdate, that.rootVolumeUpdate)
+        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.az, that.az)
+            && Objects.equals(this.os, that.os) && Objects.equals(this.login, that.login)
+            && Objects.equals(this.rootVolumeUpdate, that.rootVolumeUpdate)
             && Objects.equals(this.dataVolumesUpdate, that.dataVolumesUpdate)
             && Objects.equals(this.storage, that.storage) && Objects.equals(this.runtime, that.runtime)
-            && Objects.equals(this.taints, that.taints) && Objects.equals(this.k8sTags, that.k8sTags)
-            && Objects.equals(this.ecsGroupId, that.ecsGroupId) && Objects.equals(this.userTags, that.userTags)
+            && Objects.equals(this.taints, that.taints)
+            && Objects.equals(this.waitPostInstallFinish, that.waitPostInstallFinish)
+            && Objects.equals(this.k8sTags, that.k8sTags) && Objects.equals(this.userTags, that.userTags)
             && Objects.equals(this.nodeNameTemplate, that.nodeNameTemplate)
             && Objects.equals(this.initializedConditions, that.initializedConditions)
             && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID)
@@ -566,6 +590,7 @@ public class NodeSpecUpdate {
     @Override
     public int hashCode() {
         return Objects.hash(flavor,
+            az,
             os,
             login,
             rootVolumeUpdate,
@@ -573,8 +598,8 @@ public class NodeSpecUpdate {
             storage,
             runtime,
             taints,
+            waitPostInstallFinish,
             k8sTags,
-            ecsGroupId,
             userTags,
             nodeNameTemplate,
             initializedConditions,
@@ -589,6 +614,7 @@ public class NodeSpecUpdate {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodeSpecUpdate {\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    az: ").append(toIndentedString(az)).append("\n");
         sb.append("    os: ").append(toIndentedString(os)).append("\n");
         sb.append("    login: ").append(toIndentedString(login)).append("\n");
         sb.append("    rootVolumeUpdate: ").append(toIndentedString(rootVolumeUpdate)).append("\n");
@@ -596,8 +622,8 @@ public class NodeSpecUpdate {
         sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    taints: ").append(toIndentedString(taints)).append("\n");
+        sb.append("    waitPostInstallFinish: ").append(toIndentedString(waitPostInstallFinish)).append("\n");
         sb.append("    k8sTags: ").append(toIndentedString(k8sTags)).append("\n");
-        sb.append("    ecsGroupId: ").append(toIndentedString(ecsGroupId)).append("\n");
         sb.append("    userTags: ").append(toIndentedString(userTags)).append("\n");
         sb.append("    nodeNameTemplate: ").append(toIndentedString(nodeNameTemplate)).append("\n");
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");

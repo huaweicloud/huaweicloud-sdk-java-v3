@@ -24,11 +24,6 @@ public class NodeMetadata {
     private String uid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "labels")
-
-    private Map<String, String> labels = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
 
     private Map<String, String> annotations = null;
@@ -46,7 +41,7 @@ public class NodeMetadata {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ownerReference")
 
-    private NodeOwnerReference ownerReference;
+    private NodeMetadataOwnerReference ownerReference;
 
     public NodeMetadata withName(String name) {
         this.name = name;
@@ -54,7 +49,7 @@ public class NodeMetadata {
     }
 
     /**
-     * 节点名称 > 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位，且不能以中划线(-)结尾。 > 若name未指定或指定为空字符串，则按照默认规则生成节点名称。默认规则为：“集群名称-随机字符串”，若集群名称过长，则只取前36个字符。 > 若节点数量(count)大于1时，则按照默认规则会在用户输入的节点名称末尾添加随机字符串。默认规则为：“用户输入名称-随机字符串”，若用户输入的节点名称长度范围超过50位时，系统截取前50位，并在末尾添加随机字符串。
+     * **参数解释**： 节点名称 **约束限制**： 若节点数量(count)大于1时，则按照默认规则会在用户输入的节点名称末尾添加随机字符串。默认规则为：“用户输入名称-随机字符串”，若用户输入的节点名称长度范围超过50位时，系统截取前50位，并在末尾添加随机字符串。 **取值范围**： 命名规则：以小写字母开头，由小写字母、数字、中划线(-)、点(.)组成，长度范围1-56位，且不能以中划线(-)结尾。 **默认取值**： 若name未指定或指定为空字符串，则按照默认规则生成节点名称。默认规则为：“集群名称-随机字符串”，若集群名称过长，则只取前36个字符。
      * @return name
      */
     public String getName() {
@@ -71,7 +66,7 @@ public class NodeMetadata {
     }
 
     /**
-     * 节点ID，资源唯一标识，创建成功后自动生成，填写无效
+     * **参数解释**： 节点ID，资源唯一标识。 **约束限制**： 创建成功后自动生成，填写无效 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return uid
      */
     public String getUid() {
@@ -80,39 +75,6 @@ public class NodeMetadata {
 
     public void setUid(String uid) {
         this.uid = uid;
-    }
-
-    public NodeMetadata withLabels(Map<String, String> labels) {
-        this.labels = labels;
-        return this;
-    }
-
-    public NodeMetadata putLabelsItem(String key, String labelsItem) {
-        if (this.labels == null) {
-            this.labels = new HashMap<>();
-        }
-        this.labels.put(key, labelsItem);
-        return this;
-    }
-
-    public NodeMetadata withLabels(Consumer<Map<String, String>> labelsSetter) {
-        if (this.labels == null) {
-            this.labels = new HashMap<>();
-        }
-        labelsSetter.accept(this.labels);
-        return this;
-    }
-
-    /**
-     * CCE自有节点标签，非Kubernetes原生labels。  标签可用于选择对象并查找满足某些条件的对象集合，格式为key/value键值对。  示例：  ``` \"labels\": {   \"key\" : \"value\" } ```
-     * @return labels
-     */
-    public Map<String, String> getLabels() {
-        return labels;
-    }
-
-    public void setLabels(Map<String, String> labels) {
-        this.labels = labels;
     }
 
     public NodeMetadata withAnnotations(Map<String, String> annotations) {
@@ -137,7 +99,7 @@ public class NodeMetadata {
     }
 
     /**
-     * CCE自有节点注解，非Kubernetes原生annotations，格式为key/value键值对。 示例： ``` \"annotations\": {   \"key1\" : \"value1\",   \"key2\" : \"value2\" } ``` > - Annotations不用于标识和选择对象。Annotations中的元数据可以是small或large，structured或unstructured，并且可以包括标签不允许使用的字符。 > - 仅用于查询，不支持请求时传入，填写无效。 
+     * **参数解释**： CCE自有节点注解，非Kubernetes原生annotations，格式为key/value键值对。 示例： ``` \"annotations\": {   \"key1\" : \"value1\",   \"key2\" : \"value2\" } ``` **约束限制**： 仅用于查询，不支持请求时传入，填写无效。 **取值范围**： Annotations不用于标识和选择对象。Annotations中的元数据可以是small或large，structured或unstructured，并且可以包括标签不允许使用的字符。 **默认取值**： 不涉及
      * @return annotations
      */
     public Map<String, String> getAnnotations() {
@@ -154,7 +116,7 @@ public class NodeMetadata {
     }
 
     /**
-     * 创建时间，创建成功后自动生成，填写无效
+     * **参数解释**： 节点创建时间。 **约束限制**： 创建成功后自动生成，填写无效。 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return creationTimestamp
      */
     public String getCreationTimestamp() {
@@ -171,7 +133,7 @@ public class NodeMetadata {
     }
 
     /**
-     * 更新时间，创建成功后自动生成，填写无效
+     * **参数解释**： 节点更新时间。 **约束限制**： 创建成功后自动生成，填写无效。 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return updateTimestamp
      */
     public String getUpdateTimestamp() {
@@ -182,14 +144,14 @@ public class NodeMetadata {
         this.updateTimestamp = updateTimestamp;
     }
 
-    public NodeMetadata withOwnerReference(NodeOwnerReference ownerReference) {
+    public NodeMetadata withOwnerReference(NodeMetadataOwnerReference ownerReference) {
         this.ownerReference = ownerReference;
         return this;
     }
 
-    public NodeMetadata withOwnerReference(Consumer<NodeOwnerReference> ownerReferenceSetter) {
+    public NodeMetadata withOwnerReference(Consumer<NodeMetadataOwnerReference> ownerReferenceSetter) {
         if (this.ownerReference == null) {
-            this.ownerReference = new NodeOwnerReference();
+            this.ownerReference = new NodeMetadataOwnerReference();
             ownerReferenceSetter.accept(this.ownerReference);
         }
 
@@ -200,11 +162,11 @@ public class NodeMetadata {
      * Get ownerReference
      * @return ownerReference
      */
-    public NodeOwnerReference getOwnerReference() {
+    public NodeMetadataOwnerReference getOwnerReference() {
         return ownerReference;
     }
 
-    public void setOwnerReference(NodeOwnerReference ownerReference) {
+    public void setOwnerReference(NodeMetadataOwnerReference ownerReference) {
         this.ownerReference = ownerReference;
     }
 
@@ -218,7 +180,7 @@ public class NodeMetadata {
         }
         NodeMetadata that = (NodeMetadata) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.uid, that.uid)
-            && Objects.equals(this.labels, that.labels) && Objects.equals(this.annotations, that.annotations)
+            && Objects.equals(this.annotations, that.annotations)
             && Objects.equals(this.creationTimestamp, that.creationTimestamp)
             && Objects.equals(this.updateTimestamp, that.updateTimestamp)
             && Objects.equals(this.ownerReference, that.ownerReference);
@@ -226,7 +188,7 @@ public class NodeMetadata {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, uid, labels, annotations, creationTimestamp, updateTimestamp, ownerReference);
+        return Objects.hash(name, uid, annotations, creationTimestamp, updateTimestamp, ownerReference);
     }
 
     @Override
@@ -235,7 +197,6 @@ public class NodeMetadata {
         sb.append("class NodeMetadata {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
-        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");

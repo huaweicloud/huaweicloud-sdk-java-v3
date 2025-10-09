@@ -22,7 +22,7 @@ public class ReinstallExtendParam {
     }
 
     /**
-     * 指定待切换目标操作系统所使用的用户镜像ID，已废弃。 指定此参数等价于指定ReinstallVolumeSpec中imageID，原取值将被覆盖。 
+     * **参数解释**: 指定待切换目标操作系统所使用的用户镜像ID，已废弃。 指定此参数等价于指定ReinstallVolumeSpec中imageID，原取值将被覆盖。 **约束限制**: 不涉及 **取值范围**: 不涉及 **默认取值**: 不涉及
      * @return alphaCceNodeImageID
      */
     public UUID getAlphaCceNodeImageID() {

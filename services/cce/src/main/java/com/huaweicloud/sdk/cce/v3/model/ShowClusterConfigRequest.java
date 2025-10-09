@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ShowClusterConfigRequest {
 
     /**
-     * 组件类型 , 合法取值为control，audit，system-addon。不填写则查询全部类型。 - control 控制面组件日志。 - audit 控制面审计日志。 - system-addon 系统插件日志。
+     * **参数解释**： 组件类型，不填写则查询全部类型。  **约束限制**： 合法取值为control，audit，system-addon  **取值范围**： - control: 控制面组件日志。 - audit: 控制面审计日志。 - system-addon: 系统插件日志。  **默认取值**： 无
      */
     public static final class TypeEnum {
 
@@ -107,7 +107,7 @@ public class ShowClusterConfigRequest {
     }
 
     /**
-     * 组件类型 , 合法取值为control，audit，system-addon。不填写则查询全部类型。 - control 控制面组件日志。 - audit 控制面审计日志。 - system-addon 系统插件日志。
+     * **参数解释**： 组件类型，不填写则查询全部类型。  **约束限制**： 合法取值为control，audit，system-addon  **取值范围**： - control: 控制面组件日志。 - audit: 控制面审计日志。 - system-addon: 系统插件日志。  **默认取值**： 无
      * @return type
      */
     public TypeEnum getType() {

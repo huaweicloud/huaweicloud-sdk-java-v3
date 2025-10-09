@@ -1,38 +1,11 @@
 package com.huaweicloud.sdk.css.v1.model;
 
-import com.huaweicloud.sdk.core.progress.ProgressListener;
-import com.huaweicloud.sdk.core.progress.ProgressRequest;
-
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DownloadCertRequest implements ProgressRequest {
-
-    private ProgressListener progressListener;
-
-    private long progressInterval;
-
-    @Override
-    public void setProgressListener(ProgressListener progressListener) {
-        this.progressListener = progressListener;
-    }
-
-    @Override
-    public ProgressListener getProgressListener() {
-        return progressListener;
-    }
-
-    @Override
-    public void setProgressInterval(long progressInterval) {
-        this.progressInterval = progressInterval;
-    }
-
-    @Override
-    public long getProgressInterval() {
-        return progressInterval;
-    }
+public class DownloadCertRequest {
 
     @Override
     public boolean equals(java.lang.Object obj) {

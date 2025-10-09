@@ -94,7 +94,7 @@ public class ClusterSpec {
     private CategoryEnum category;
 
     /**
-     * 集群Master节点架构：  - VirtualMachine：Master节点为x86架构服务器 [- ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs) 
+     * **参数解释：** 集群Master节点架构 **约束限制：** 不涉及 **取值范围：** - VirtualMachine：Master节点为x86架构服务器 - [ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs)  **默认取值：** VirtualMachine[，如若VirtualMachine资源不足，取值为ARM64](tag:hws,hws_hk,hcs) 
      */
     public static final class TypeEnum {
 
@@ -182,6 +182,11 @@ public class ClusterSpec {
     @JsonProperty(value = "platformVersion")
 
     private String platformVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "legacyVersion")
+
+    private String legacyVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -386,7 +391,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 集群Master节点架构：  - VirtualMachine：Master节点为x86架构服务器 [- ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs) 
+     * **参数解释：** 集群Master节点架构 **约束限制：** 不涉及 **取值范围：** - VirtualMachine：Master节点为x86架构服务器 - [ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs)  **默认取值：** VirtualMachine[，如若VirtualMachine资源不足，取值为ARM64](tag:hws,hws_hk,hcs) 
      * @return type
      */
     public TypeEnum getType() {
@@ -403,7 +408,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 集群规格，当集群为v1.15及以上版本时支持创建后变更，详情请参见[变更集群规格](ResizeCluster.xml)。请按实际业务需求进行选择： - cce.s1.small: 小规模单控制节点CCE集群（最大50节点） - cce.s1.medium: 中等规模单控制节点CCE集群（最大200节点） - cce.s2.small: 小规模多控制节点CCE集群（最大50节点） - cce.s2.medium: 中等规模多控制节点CCE集群（最大200节点） - cce.s2.large: 大规模多控制节点CCE集群（最大1000节点） - cce.s2.xlarge: 超大规模多控制节点CCE集群（最大2000节点）  >    关于规格参数中的字段说明如下： >    - s1：单控制节点的集群，控制节点数为1。单控制节点故障后，集群将不可用，但已运行工作负载不受影响。 >    - s2：多控制节点的集群，即高可用集群，控制节点数为3。当某个控制节点故障时，集群仍然可用。 >    [- dec：表示专属云的CCE集群规格。例如cce.dec.s1.small表示小规模单控制节点的专属云CCE集群（最大50节点）。](tag:hws,hws_hk) >    - small：表示集群支持管理的最大节点规模为50节点。 >    - medium：表示集群支持管理的最大节点规模为200节点。 >    - large：表示集群支持管理的最大节点规模为1000节点。 >    - xlarge：表示集群支持管理的最大节点规模为2000节点。 
+     * **参数解释：** 集群规格，当集群为v1.15及以上版本时支持创建后变更，详情请参见[变更集群规格](ResizeCluster.xml)。请按实际业务需求进行选择 **约束限制：** 不涉及 **取值范围：** - cce.s1.small: 小规模单控制节点CCE集群（最大50节点） - cce.s1.medium: 中等规模单控制节点CCE集群（最大200节点） - cce.s1.large: 大规模单控制节点CCE集群（最大1000节点） - cce.s2.small: 小规模三控制节点CCE集群（最大50节点） - cce.s2.medium: 中等规模三控制节点CCE集群（最大200节点） - cce.s2.large: 大规模三控制节点CCE集群（最大1000节点） - cce.s2.xlarge: 超大规模三控制节点CCE集群（最大2000节点） [- cce.s3.small: 小规模五控制节点CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.s3.medium: 中等规模五控制节点CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.s3.large: 大规模五控制节点CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.s3.xlarge: 超大规模五控制节点CCE集群（最大2000节点）](tag:hcs,hcs_sm)  [专属云特殊规格如下：](tag:hws,hws_hk,hcs,hcs_sm) [- cce.dec.s1.small: 小规模单控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s1.medium: 中等规模单控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s1.large: 大规模单控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s1.xlarge: 超大规模单控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s2.small: 小规模三控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s2.medium: 中等规模三控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s2.large: 大规模三控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s2.xlarge: 超大规模三控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s3.small: 小规模五控制节点的专属云CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.dec.s3.medium: 中等规模五控制节点的专属云CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.dec.s3.large: 大规模五控制节点的专属云CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.dec.s3.xlarge: 超大规模五控制节点的专属云CCE集群（最大2000节点）](tag:hcs,hcs_sm)  **默认取值：** 不涉及  >    关于规格参数中的字段说明如下： >    - s1：单控制节点的集群，控制节点数为1。单控制节点故障后，集群将不可用，但已运行工作负载不受影响。 >    - s2：三控制节点的集群，即高可用集群，控制节点数为3。当某个控制节点故障时，集群仍然可用。 [>   - s3：五控制节点的集群，即超高可用集群，控制节点数为5。当某2个控制节点故障时，集群仍然可用。](tag:hcs,hcs_sm) [>   - dec：表示专属云的CCE集群规格。例如cce.dec.s1.small表示小规模单控制节点的专属云CCE集群（最大50节点）。](tag:hws,hws_hk) >    - small：表示集群支持管理的最大节点规模为50节点。 >    - medium：表示集群支持管理的最大节点规模为200节点。 >    - large：表示集群支持管理的最大节点规模为1000节点。 >    - xlarge：表示集群支持管理的最大节点规模为2000节点。 
      * @return flavor
      */
     public String getFlavor() {
@@ -420,7 +425,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  >    - 若不配置，默认创建最新版本的集群。 >    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。 [>    - Turbo集群支持1.19及以上版本商用。](tag:hws,hws_hk,dt) [>    - Turbo集群支持1.23及以上版本商用。](tag:hcs,g42,sbc)
+     * **参数解释：** 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新商用版本。 [> 关于Kubernetes版本策略，请参见[Kubernetes版本策略](https://support.huaweicloud.com/bulletin-cce/cce_bulletin_0033.html)](tag:hws) [> 关于Kubernetes版本策略，请参见[Kubernetes版本策略](https://support.huaweicloud.com/intl/zh-cn/bulletin-cce/cce_bulletin_0033.html)](tag:hws_hk)  在CCE控制台支持创建三种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。 **约束限制：** 格式必须为：vX.Y[.Z[-rN]]，例如 v1.30，v1.30.0，v1.30.0-r0 都将创建1.30版本的集群 - X: 对应社区Kubernetes的主要版本 - Y: 对应社区Kubernetes的次要版本 - Z: 对应社区Kubernetes的补丁版本 [- N: 对应CCE补丁版本，关于CCE补丁版本详情，请参见[补丁版本发布记录](https://support.huaweicloud.com/bulletin-cce/cce_10_0405.html)](tag:hws) [- N: 对应CCE补丁版本，关于CCE补丁版本详情，请参见[补丁版本发布记录](https://support.huaweicloud.com/intl/zh-cn/bulletin-cce/cce_10_0405.html)](tag:hws_hk)  **取值范围：** 不涉及 **默认取值：** - 若不配置，默认创建最新版本的集群。 - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。  [>    - Turbo集群支持1.19及以上版本商用。](tag:hws,hws_hk,dt) [>    - Turbo集群支持1.23及以上版本商用。](tag:hcs,g42,sbc)
      * @return version
      */
     public String getVersion() {
@@ -448,13 +453,30 @@ public class ClusterSpec {
         this.platformVersion = platformVersion;
     }
 
+    public ClusterSpec withLegacyVersion(String legacyVersion) {
+        this.legacyVersion = legacyVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释：** CCE集群旧版本（已废弃），无实际功能，仅用于集群version与platformVersion组合展示，该版本号全局内唯一。如集群version为va.b, platformVersion为cce.X.Y，则legacyVersion值为va.b.X-rY。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
+     * @return legacyVersion
+     */
+    public String getLegacyVersion() {
+        return legacyVersion;
+    }
+
+    public void setLegacyVersion(String legacyVersion) {
+        this.legacyVersion = legacyVersion;
+    }
+
     public ClusterSpec withDescription(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * 集群描述，对于集群使用目的的描述，可根据实际情况自定义，默认为空。集群创建成功后可通过接口[更新指定的集群](cce_02_0240.xml)来做出修改，也可在CCE控制台中对应集群的“集群详情”下的“描述”处进行修改。仅支持utf-8编码。 
+     * **参数解释：** 集群描述，对于集群使用目的的描述，可根据实际情况自定义，默认为空。集群创建成功后可通过接口[更新指定的集群](cce_02_0240.xml)来做出修改，也可在CCE控制台中对应集群的“集群详情”下的“描述”处进行修改。 **约束限制：** 仅支持utf-8编码，长度必须小于等于200个字节 **取值范围：** 不涉及 **默认取值：** 不涉及 
      * @return description
      */
     public String getDescription() {
@@ -684,7 +706,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 控制节点的高级配置
+     * **参数解释：** 集群控制节点的高级配置，支持指定控制节点的可用区。 **约束限制：** 该参数未配置时将不返回。 
      * @return masters
      */
     public List<MasterSpec> getMasters() {
@@ -768,7 +790,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 可用区（仅查询返回字段）。  [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)](tag:hws)  [CCE支持的可用区请参考[地区和终端节点](https://developer.huaweicloud.com/intl/zh-cn/endpoint?CCE)](tag:hws_hk) 
+     * **参数解释：** 可用区（废弃中）。 [CCE支持的可用区请参考[地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws)  [CCE支持的可用区请参考[地区和终端节点](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws_hk) **约束限制：** 仅查询接口返回该字段。 
      * @return az
      */
     public String getAz() {
@@ -970,6 +992,7 @@ public class ClusterSpec {
         return Objects.equals(this.category, that.category) && Objects.equals(this.type, that.type)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.version, that.version)
             && Objects.equals(this.platformVersion, that.platformVersion)
+            && Objects.equals(this.legacyVersion, that.legacyVersion)
             && Objects.equals(this.description, that.description) && Objects.equals(this.customSan, that.customSan)
             && Objects.equals(this.ipv6enable, that.ipv6enable) && Objects.equals(this.hostNetwork, that.hostNetwork)
             && Objects.equals(this.containerNetwork, that.containerNetwork)
@@ -997,6 +1020,7 @@ public class ClusterSpec {
             flavor,
             version,
             platformVersion,
+            legacyVersion,
             description,
             customSan,
             ipv6enable,
@@ -1030,6 +1054,7 @@ public class ClusterSpec {
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    platformVersion: ").append(toIndentedString(platformVersion)).append("\n");
+        sb.append("    legacyVersion: ").append(toIndentedString(legacyVersion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    customSan: ").append(toIndentedString(customSan)).append("\n");
         sb.append("    ipv6enable: ").append(toIndentedString(ipv6enable)).append("\n");

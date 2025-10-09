@@ -52,11 +52,6 @@ public class ListSnapshotBackupsResp {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updated")
-
-    private String updated;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backupType")
 
     private String backupType;
@@ -67,19 +62,9 @@ public class ListSnapshotBackupsResp {
     private String backupMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backupExpectedStartTime")
+    @JsonProperty(value = "backupFrequency")
 
-    private String backupExpectedStartTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backupKeepDay")
-
-    private Integer backupKeepDay;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backupPeriod")
-
-    private String backupPeriod;
+    private String backupFrequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indices")
@@ -95,11 +80,6 @@ public class ListSnapshotBackupsResp {
     @JsonProperty(value = "failedShards")
 
     private Integer failedShards;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restoreStatus")
@@ -266,23 +246,6 @@ public class ListSnapshotBackupsResp {
         this.status = status;
     }
 
-    public ListSnapshotBackupsResp withUpdated(String updated) {
-        this.updated = updated;
-        return this;
-    }
-
-    /**
-     * 快照更新时间，格式为ISO8601：CCYY-MM-DDThh:mm:ss。
-     * @return updated
-     */
-    public String getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(String updated) {
-        this.updated = updated;
-    }
-
     public ListSnapshotBackupsResp withBackupType(String backupType) {
         this.backupType = backupType;
         return this;
@@ -317,55 +280,21 @@ public class ListSnapshotBackupsResp {
         this.backupMethod = backupMethod;
     }
 
-    public ListSnapshotBackupsResp withBackupExpectedStartTime(String backupExpectedStartTime) {
-        this.backupExpectedStartTime = backupExpectedStartTime;
+    public ListSnapshotBackupsResp withBackupFrequency(String backupFrequency) {
+        this.backupFrequency = backupFrequency;
         return this;
     }
 
     /**
-     * 快照开始执行时间。
-     * @return backupExpectedStartTime
+     * 集群快照频率。
+     * @return backupFrequency
      */
-    public String getBackupExpectedStartTime() {
-        return backupExpectedStartTime;
+    public String getBackupFrequency() {
+        return backupFrequency;
     }
 
-    public void setBackupExpectedStartTime(String backupExpectedStartTime) {
-        this.backupExpectedStartTime = backupExpectedStartTime;
-    }
-
-    public ListSnapshotBackupsResp withBackupKeepDay(Integer backupKeepDay) {
-        this.backupKeepDay = backupKeepDay;
-        return this;
-    }
-
-    /**
-     * 快照保留时间。
-     * @return backupKeepDay
-     */
-    public Integer getBackupKeepDay() {
-        return backupKeepDay;
-    }
-
-    public void setBackupKeepDay(Integer backupKeepDay) {
-        this.backupKeepDay = backupKeepDay;
-    }
-
-    public ListSnapshotBackupsResp withBackupPeriod(String backupPeriod) {
-        this.backupPeriod = backupPeriod;
-        return this;
-    }
-
-    /**
-     * 快照每天执行的时间点。
-     * @return backupPeriod
-     */
-    public String getBackupPeriod() {
-        return backupPeriod;
-    }
-
-    public void setBackupPeriod(String backupPeriod) {
-        this.backupPeriod = backupPeriod;
+    public void setBackupFrequency(String backupFrequency) {
+        this.backupFrequency = backupFrequency;
     }
 
     public ListSnapshotBackupsResp withIndices(String indices) {
@@ -417,23 +346,6 @@ public class ListSnapshotBackupsResp {
 
     public void setFailedShards(Integer failedShards) {
         this.failedShards = failedShards;
-    }
-
-    public ListSnapshotBackupsResp withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * 快照的版本。
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
     }
 
     public ListSnapshotBackupsResp withRestoreStatus(String restoreStatus) {
@@ -517,13 +429,10 @@ public class ListSnapshotBackupsResp {
             && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
             && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
             && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.updated, that.updated) && Objects.equals(this.backupType, that.backupType)
-            && Objects.equals(this.backupMethod, that.backupMethod)
-            && Objects.equals(this.backupExpectedStartTime, that.backupExpectedStartTime)
-            && Objects.equals(this.backupKeepDay, that.backupKeepDay)
-            && Objects.equals(this.backupPeriod, that.backupPeriod) && Objects.equals(this.indices, that.indices)
+            && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.backupMethod, that.backupMethod)
+            && Objects.equals(this.backupFrequency, that.backupFrequency) && Objects.equals(this.indices, that.indices)
             && Objects.equals(this.totalShards, that.totalShards)
-            && Objects.equals(this.failedShards, that.failedShards) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.failedShards, that.failedShards)
             && Objects.equals(this.restoreStatus, that.restoreStatus) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.bucketName, that.bucketName);
     }
@@ -538,16 +447,12 @@ public class ListSnapshotBackupsResp {
             clusterName,
             name,
             status,
-            updated,
             backupType,
             backupMethod,
-            backupExpectedStartTime,
-            backupKeepDay,
-            backupPeriod,
+            backupFrequency,
             indices,
             totalShards,
             failedShards,
-            version,
             restoreStatus,
             startTime,
             endTime,
@@ -566,16 +471,12 @@ public class ListSnapshotBackupsResp {
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
         sb.append("    backupMethod: ").append(toIndentedString(backupMethod)).append("\n");
-        sb.append("    backupExpectedStartTime: ").append(toIndentedString(backupExpectedStartTime)).append("\n");
-        sb.append("    backupKeepDay: ").append(toIndentedString(backupKeepDay)).append("\n");
-        sb.append("    backupPeriod: ").append(toIndentedString(backupPeriod)).append("\n");
+        sb.append("    backupFrequency: ").append(toIndentedString(backupFrequency)).append("\n");
         sb.append("    indices: ").append(toIndentedString(indices)).append("\n");
         sb.append("    totalShards: ").append(toIndentedString(totalShards)).append("\n");
         sb.append("    failedShards: ").append(toIndentedString(failedShards)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    restoreStatus: ").append(toIndentedString(restoreStatus)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

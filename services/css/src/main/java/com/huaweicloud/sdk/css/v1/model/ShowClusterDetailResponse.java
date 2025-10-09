@@ -179,6 +179,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
 
     private String currentSubnetIds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desc")
+
+    private String desc;
+
     public ShowClusterDetailResponse withDatastore(ClusterDetailDatastore datastore) {
         this.datastore = datastore;
         return this;
@@ -824,6 +829,23 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.currentSubnetIds = currentSubnetIds;
     }
 
+    public ShowClusterDetailResponse withDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+
+    /**
+     * 集群描述。
+     * @return desc
+     */
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -855,7 +877,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.ipv6Endpoint, that.ipv6Endpoint)
             && Objects.equals(this.supportVpcep, that.supportVpcep) && Objects.equals(this.cmkId, that.cmkId)
             && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.currentSubnetIds, that.currentSubnetIds);
+            && Objects.equals(this.currentSubnetIds, that.currentSubnetIds) && Objects.equals(this.desc, that.desc);
     }
 
     @Override
@@ -892,7 +914,8 @@ public class ShowClusterDetailResponse extends SdkResponse {
             supportVpcep,
             cmkId,
             orderId,
-            currentSubnetIds);
+            currentSubnetIds,
+            desc);
     }
 
     @Override
@@ -932,6 +955,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    cmkId: ").append(toIndentedString(cmkId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    currentSubnetIds: ").append(toIndentedString(currentSubnetIds)).append("\n");
+        sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

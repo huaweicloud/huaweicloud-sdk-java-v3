@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -31,7 +32,7 @@ public class ImageCacheDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private String createdAt;
+    private LocalDate createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "images")
@@ -185,7 +186,7 @@ public class ImageCacheDetail {
         this.id = id;
     }
 
-    public ImageCacheDetail withCreatedAt(String createdAt) {
+    public ImageCacheDetail withCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -194,11 +195,11 @@ public class ImageCacheDetail {
      * 镜像缓存创建时间戳。
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 

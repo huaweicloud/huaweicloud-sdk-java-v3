@@ -85,7 +85,7 @@ public class ListNodePoolsResponse extends SdkResponse {
     }
 
     /**
-     * /
+     * **参数解释**： 节点池的信息。
      * @return items
      */
     public List<NodePoolResp> getItems() {

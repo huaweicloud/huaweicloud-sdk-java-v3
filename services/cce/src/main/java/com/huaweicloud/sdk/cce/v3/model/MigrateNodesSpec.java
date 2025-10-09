@@ -34,6 +34,11 @@ public class MigrateNodesSpec {
     private Runtime runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serverConfig")
+
+    private MigrateServerConfig serverConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
     private List<NodeItem> nodes = null;
@@ -133,6 +138,32 @@ public class MigrateNodesSpec {
         this.runtime = runtime;
     }
 
+    public MigrateNodesSpec withServerConfig(MigrateServerConfig serverConfig) {
+        this.serverConfig = serverConfig;
+        return this;
+    }
+
+    public MigrateNodesSpec withServerConfig(Consumer<MigrateServerConfig> serverConfigSetter) {
+        if (this.serverConfig == null) {
+            this.serverConfig = new MigrateServerConfig();
+            serverConfigSetter.accept(this.serverConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get serverConfig
+     * @return serverConfig
+     */
+    public MigrateServerConfig getServerConfig() {
+        return serverConfig;
+    }
+
+    public void setServerConfig(MigrateServerConfig serverConfig) {
+        this.serverConfig = serverConfig;
+    }
+
     public MigrateNodesSpec withNodes(List<NodeItem> nodes) {
         this.nodes = nodes;
         return this;
@@ -177,12 +208,12 @@ public class MigrateNodesSpec {
         MigrateNodesSpec that = (MigrateNodesSpec) obj;
         return Objects.equals(this.os, that.os) && Objects.equals(this.extendParam, that.extendParam)
             && Objects.equals(this.login, that.login) && Objects.equals(this.runtime, that.runtime)
-            && Objects.equals(this.nodes, that.nodes);
+            && Objects.equals(this.serverConfig, that.serverConfig) && Objects.equals(this.nodes, that.nodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(os, extendParam, login, runtime, nodes);
+        return Objects.hash(os, extendParam, login, runtime, serverConfig, nodes);
     }
 
     @Override
@@ -193,6 +224,7 @@ public class MigrateNodesSpec {
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    login: ").append(toIndentedString(login)).append("\n");
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
+        sb.append("    serverConfig: ").append(toIndentedString(serverConfig)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("}");
         return sb.toString();

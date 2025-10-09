@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AllowDbRolePrivilegesRes
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ApplyConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BaseOpsKeyViewRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequestBody;
@@ -94,6 +96,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseSchemaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseSchemaRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseSchemaResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDisasterRecordRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDisasterRecordRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDisasterRecordResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteHbaConfRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteHbaConfsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteHbaConfsResponse;
@@ -186,6 +191,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemasReque
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVersionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeSummaryRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeSummaryResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabasesRequest;
@@ -261,6 +268,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParameterGroupTempla
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginInfoListRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginInfoListResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPredefinedTagsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListProjectTagsRequest;
@@ -328,9 +337,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHbaConfResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHotfixesRequest;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHotfixesRequestBody;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyHotfixesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.NodeExecutionInfoResult;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussInstanceActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussInstanceRequest;
@@ -724,6 +733,36 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BindEIPRequestBody.class),
             f -> f.withMarshaller(AttachEipRequest::getBody, AttachEipRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AuthorizeBackupDownloadRequest, AuthorizeBackupDownloadResponse> authorizeBackupDownload =
+        genForAuthorizeBackupDownload();
+
+    private static HttpRequestDef<AuthorizeBackupDownloadRequest, AuthorizeBackupDownloadResponse> genForAuthorizeBackupDownload() {
+        // basic
+        HttpRequestDef.Builder<AuthorizeBackupDownloadRequest, AuthorizeBackupDownloadResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AuthorizeBackupDownloadRequest.class, AuthorizeBackupDownloadResponse.class)
+            .withName("AuthorizeBackupDownload")
+            .withUri("/v3/{project_id}/backups/{backup_id}/download/authorization")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AuthorizeBackupDownloadRequest::getBackupId,
+                AuthorizeBackupDownloadRequest::setBackupId));
+        builder.<AuthorizeBackupDownloadRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AuthorizeBackupDownloadRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(AuthorizeBackupDownloadRequest::getXLanguage,
+                AuthorizeBackupDownloadRequest::setXLanguage));
 
         // response
 
@@ -1445,6 +1484,35 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteDatabaseSchemaRequestBody.class),
             f -> f.withMarshaller(DeleteDatabaseSchemaRequest::getBody, DeleteDatabaseSchemaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDisasterRecordRequest, DeleteDisasterRecordResponse> deleteDisasterRecord =
+        genForDeleteDisasterRecord();
+
+    private static HttpRequestDef<DeleteDisasterRecordRequest, DeleteDisasterRecordResponse> genForDeleteDisasterRecord() {
+        // basic
+        HttpRequestDef.Builder<DeleteDisasterRecordRequest, DeleteDisasterRecordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDisasterRecordRequest.class, DeleteDisasterRecordResponse.class)
+            .withName("DeleteDisasterRecord")
+            .withUri("/v3/{project_id}/instances/disaster/record/delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DeleteDisasterRecordRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteDisasterRecordRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteDisasterRecordRequest::getXLanguage,
+                DeleteDisasterRecordRequest::setXLanguage));
+        builder.<DeleteDisasterRecordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDisasterRecordRequestBody.class),
+            f -> f.withMarshaller(DeleteDisasterRecordRequest::getBody, DeleteDisasterRecordRequest::setBody));
 
         // response
 
@@ -2771,6 +2839,61 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDatabaseVolumeRequest, ListDatabaseVolumeResponse> listDatabaseVolume =
+        genForListDatabaseVolume();
+
+    private static HttpRequestDef<ListDatabaseVolumeRequest, ListDatabaseVolumeResponse> genForListDatabaseVolume() {
+        // basic
+        HttpRequestDef.Builder<ListDatabaseVolumeRequest, ListDatabaseVolumeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatabaseVolumeRequest.class, ListDatabaseVolumeResponse.class)
+                .withName("ListDatabaseVolume")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database-volume")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseVolumeRequest::getInstanceId, ListDatabaseVolumeRequest::setInstanceId));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseVolumeRequest::getDatabaseName,
+                ListDatabaseVolumeRequest::setDatabaseName));
+        builder.<String>withRequestField("table_space_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseVolumeRequest::getTableSpaceName,
+                ListDatabaseVolumeRequest::setTableSpaceName));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseVolumeRequest::getUserName, ListDatabaseVolumeRequest::setUserName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabaseVolumeRequest::getOffset, ListDatabaseVolumeRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabaseVolumeRequest::getLimit, ListDatabaseVolumeRequest::setLimit));
+        builder.<ListDatabaseVolumeRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDatabaseVolumeRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListDatabaseVolumeRequest::getXLanguage, ListDatabaseVolumeRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDatabaseVolumeSummaryRequest, ListDatabaseVolumeSummaryResponse> listDatabaseVolumeSummary =
         genForListDatabaseVolumeSummary();
 
@@ -4029,6 +4152,39 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPluginInfoListRequest, ListPluginInfoListResponse> listPluginInfoList =
+        genForListPluginInfoList();
+
+    private static HttpRequestDef<ListPluginInfoListRequest, ListPluginInfoListResponse> genForListPluginInfoList() {
+        // basic
+        HttpRequestDef.Builder<ListPluginInfoListRequest, ListPluginInfoListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPluginInfoListRequest.class, ListPluginInfoListResponse.class)
+                .withName("ListPluginInfoList")
+                .withUri("/v3/{project_id}/instances/{instance_id}/plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginInfoListRequest::getInstanceId, ListPluginInfoListRequest::setInstanceId));
+        builder.<String>withRequestField("plugin_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginInfoListRequest::getPluginName, ListPluginInfoListRequest::setPluginName));
+        builder.<ListPluginInfoListRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPluginInfoListRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListPluginInfoListRequest::getXLanguage, ListPluginInfoListRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPredefinedTagsRequest, ListPredefinedTagsResponse> listPredefinedTags =
         genForListPredefinedTags();
 
@@ -4886,28 +5042,33 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ModifyHotfixesRequest, ModifyHotfixesResponse> modifyHotfixes =
-        genForModifyHotfixes();
+    public static final HttpRequestDef<ModifyInstancePortRequest, ModifyInstancePortResponse> modifyInstancePort =
+        genForModifyInstancePort();
 
-    private static HttpRequestDef<ModifyHotfixesRequest, ModifyHotfixesResponse> genForModifyHotfixes() {
+    private static HttpRequestDef<ModifyInstancePortRequest, ModifyInstancePortResponse> genForModifyInstancePort() {
         // basic
-        HttpRequestDef.Builder<ModifyHotfixesRequest, ModifyHotfixesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyHotfixesRequest.class, ModifyHotfixesResponse.class)
-                .withName("ModifyHotfixes")
-                .withUri("/v3/{project_id}/hotfix-property")
+        HttpRequestDef.Builder<ModifyInstancePortRequest, ModifyInstancePortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyInstancePortRequest.class, ModifyInstancePortResponse.class)
+                .withName("ModifyInstancePort")
+                .withUri("/v3/{project_id}/instances/{instance_id}/port")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<ModifyHotfixesRequest.XLanguageEnum>withRequestField("X-Language",
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyInstancePortRequest::getInstanceId, ModifyInstancePortRequest::setInstanceId));
+        builder.<ModifyInstancePortRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ModifyHotfixesRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(ModifyHotfixesRequest::getXLanguage, ModifyHotfixesRequest::setXLanguage));
-        builder.<ModifyHotfixesRequestBody>withRequestField("body",
+            TypeCasts.uncheckedConversion(ModifyInstancePortRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifyInstancePortRequest::getXLanguage, ModifyInstancePortRequest::setXLanguage));
+        builder.<ModifyInstancePortRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ModifyHotfixesRequestBody.class),
-            f -> f.withMarshaller(ModifyHotfixesRequest::getBody, ModifyHotfixesRequest::setBody));
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyInstancePortRequestBody.class),
+            f -> f.withMarshaller(ModifyInstancePortRequest::getBody, ModifyInstancePortRequest::setBody));
 
         // response
 

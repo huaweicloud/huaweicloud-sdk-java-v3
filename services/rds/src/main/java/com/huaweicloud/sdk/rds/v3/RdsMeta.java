@@ -194,6 +194,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabaseUserRoleRequest;
@@ -230,6 +232,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesRequest;
@@ -1913,6 +1917,51 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistories =
+        genForListConfigurationApplyHistories();
+
+    private static HttpRequestDef<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> genForListConfigurationApplyHistories() {
+        // basic
+        HttpRequestDef.Builder<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConfigurationApplyHistoriesRequest.class,
+                    ListConfigurationApplyHistoriesResponse.class)
+                .withName("ListConfigurationApplyHistories")
+                .withUri("/v3/{project_id}/configurations/{config_id}/apply-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationApplyHistoriesRequest::getConfigId,
+                ListConfigurationApplyHistoriesRequest::setConfigId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationApplyHistoriesRequest::getOffset,
+                ListConfigurationApplyHistoriesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationApplyHistoriesRequest::getLimit,
+                ListConfigurationApplyHistoriesRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationApplyHistoriesRequest::getXLanguage,
+                ListConfigurationApplyHistoriesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations =
         genForListConfigurations();
 
@@ -2561,6 +2610,51 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstancesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getXLanguage, ListInstancesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> listInstancesConfigurations =
+        genForListInstancesConfigurations();
+
+    private static HttpRequestDef<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> genForListInstancesConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstancesConfigurationsRequest.class,
+                    ListInstancesConfigurationsResponse.class)
+                .withName("ListInstancesConfigurations")
+                .withUri("/v3/{project_id}/configurations/{config_id}/query-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesConfigurationsRequest::getConfigId,
+                ListInstancesConfigurationsRequest::setConfigId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesConfigurationsRequest::getOffset,
+                ListInstancesConfigurationsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesConfigurationsRequest::getLimit,
+                ListInstancesConfigurationsRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesConfigurationsRequest::getXLanguage,
+                ListInstancesConfigurationsRequest::setXLanguage));
 
         // response
 

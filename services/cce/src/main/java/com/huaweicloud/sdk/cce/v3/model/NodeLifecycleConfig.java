@@ -20,13 +20,18 @@ public class NodeLifecycleConfig {
 
     private String postInstall;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "waitPostInstallFinish")
+
+    private Boolean waitPostInstallFinish;
+
     public NodeLifecycleConfig withPreInstall(String preInstall) {
         this.preInstall = preInstall;
         return this;
     }
 
     /**
-     * 安装前执行脚本 > 输入的值需要经过Base64编码，方法为echo -n \"待编码内容\" | base64。 
+     * **参数解释**： 安装前执行脚本。安装前/后执行脚本统一计算字符，输入的值需要经过Base64编码，方法如下： ``` echo -n \"待编码内容\" | base64 ```  **约束限制**： 长度不能超过10240字节。 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return preInstall
      */
     public String getPreInstall() {
@@ -43,7 +48,7 @@ public class NodeLifecycleConfig {
     }
 
     /**
-     * 安装后执行脚本 > 输入的值需要经过Base64编码，方法为echo -n \"待编码内容\" | base64。 
+     * **参数解释**： 安装前执行脚本。安装前/后执行脚本统一计算字符，输入的值需要经过Base64编码，方法如下： ``` echo -n \"待编码内容\" | base64 ```  **约束限制**： 长度不能超过10240字节。 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return postInstall
      */
     public String getPostInstall() {
@@ -52,6 +57,23 @@ public class NodeLifecycleConfig {
 
     public void setPostInstall(String postInstall) {
         this.postInstall = postInstall;
+    }
+
+    public NodeLifecycleConfig withWaitPostInstallFinish(Boolean waitPostInstallFinish) {
+        this.waitPostInstallFinish = waitPostInstallFinish;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该参数用于控制重置/纳管/批量重置节点时， **post-install脚本执行完成前允许节点调度** 的行为。当操作的节点属于节点池时，以节点池相关配置为准。当该参数未设置或者为false时，在kubernetes节点就绪时，容器即可被调度到可用节点。当该参数为true时，在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **约束限制：** 不涉及  **取值范围：** - false：在kubernetes节点就绪时，容器即可被调度到可用节点。           - true：在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **默认取值：** false
+     * @return waitPostInstallFinish
+     */
+    public Boolean getWaitPostInstallFinish() {
+        return waitPostInstallFinish;
+    }
+
+    public void setWaitPostInstallFinish(Boolean waitPostInstallFinish) {
+        this.waitPostInstallFinish = waitPostInstallFinish;
     }
 
     @Override
@@ -63,12 +85,13 @@ public class NodeLifecycleConfig {
             return false;
         }
         NodeLifecycleConfig that = (NodeLifecycleConfig) obj;
-        return Objects.equals(this.preInstall, that.preInstall) && Objects.equals(this.postInstall, that.postInstall);
+        return Objects.equals(this.preInstall, that.preInstall) && Objects.equals(this.postInstall, that.postInstall)
+            && Objects.equals(this.waitPostInstallFinish, that.waitPostInstallFinish);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(preInstall, postInstall);
+        return Objects.hash(preInstall, postInstall, waitPostInstallFinish);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class NodeLifecycleConfig {
         sb.append("class NodeLifecycleConfig {\n");
         sb.append("    preInstall: ").append(toIndentedString(preInstall)).append("\n");
         sb.append("    postInstall: ").append(toIndentedString(postInstall)).append("\n");
+        sb.append("    waitPostInstallFinish: ").append(toIndentedString(waitPostInstallFinish)).append("\n");
         sb.append("}");
         return sb.toString();
     }

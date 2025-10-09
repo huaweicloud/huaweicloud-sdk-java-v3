@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.cce.v3;
 
+import com.huaweicloud.sdk.cce.v3.model.AccessPolicy;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeList;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeResponse;
@@ -32,6 +33,8 @@ import com.huaweicloud.sdk.cce.v3.model.ClusterLogConfig;
 import com.huaweicloud.sdk.cce.v3.model.ClusterNodeInformation;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAccessPolicyRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAccessPolicyResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotAddonInstanceRequest;
@@ -77,6 +80,8 @@ import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowResponse;
 import com.huaweicloud.sdk.cce.v3.model.DelayUpgradePlanRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAccessPolicyRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAccessPolicyResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotAddonInstanceRequest;
@@ -105,9 +110,28 @@ import com.huaweicloud.sdk.cce.v3.model.DownloadAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DownloadAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DownloadChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DownloadChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetAccessPolicyRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetAccessPolicyResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetAvailableZoneResponseBody;
+import com.huaweicloud.sdk.cce.v3.model.GetAvaliableZoneRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetAvaliableZoneResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterSupportConfigurationRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterSupportConfigurationResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetLabelsRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetLabelsResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.InstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
@@ -245,10 +269,10 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
-import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationRequest;
-import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowFeatureGatesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowFeatureGatesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationDetailsRequest;
@@ -282,6 +306,8 @@ import com.huaweicloud.sdk.cce.v3.model.SyncNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.UnlockNodeScaledownRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UnlockNodepoolNodeScaleDownRequest;
 import com.huaweicloud.sdk.cce.v3.model.UnlockNodepoolNodeScaleDownResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAccessPolicyRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAccessPolicyResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceRequest;
@@ -540,6 +566,29 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ContinueUpgradeClusterTaskRequest::getClusterId,
                 ContinueUpgradeClusterTaskRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAccessPolicyRequest, CreateAccessPolicyResponse> createAccessPolicy =
+        genForCreateAccessPolicy();
+
+    private static HttpRequestDef<CreateAccessPolicyRequest, CreateAccessPolicyResponse> genForCreateAccessPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateAccessPolicyRequest, CreateAccessPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAccessPolicyRequest.class, CreateAccessPolicyResponse.class)
+                .withName("CreateAccessPolicy")
+                .withUri("/api/v3/access-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AccessPolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AccessPolicy.class),
+            f -> f.withMarshaller(CreateAccessPolicyRequest::getBody, CreateAccessPolicyRequest::setBody));
 
         // response
 
@@ -898,6 +947,29 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAccessPolicyRequest, DeleteAccessPolicyResponse> deleteAccessPolicy =
+        genForDeleteAccessPolicy();
+
+    private static HttpRequestDef<DeleteAccessPolicyRequest, DeleteAccessPolicyResponse> genForDeleteAccessPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteAccessPolicyRequest, DeleteAccessPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessPolicyRequest.class, DeleteAccessPolicyResponse.class)
+                .withName("DeleteAccessPolicy")
+                .withUri("/api/v3/access-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAccessPolicyRequest::getPolicyId, DeleteAccessPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse> deleteAddonInstance =
         genForDeleteAddonInstance();
 
@@ -1177,6 +1249,11 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteReleaseRequest::getClusterId, DeleteReleaseRequest::setClusterId));
+        builder.<String>withRequestField("show_resources",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReleaseRequest::getShowResources, DeleteReleaseRequest::setShowResources));
 
         // response
         builder.<String>withResponseField("body",
@@ -1211,6 +1288,226 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetAccessPolicyRequest, GetAccessPolicyResponse> getAccessPolicy =
+        genForGetAccessPolicy();
+
+    private static HttpRequestDef<GetAccessPolicyRequest, GetAccessPolicyResponse> genForGetAccessPolicy() {
+        // basic
+        HttpRequestDef.Builder<GetAccessPolicyRequest, GetAccessPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetAccessPolicyRequest.class, GetAccessPolicyResponse.class)
+                .withName("GetAccessPolicy")
+                .withUri("/api/v3/access-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetAccessPolicyRequest::getPolicyId, GetAccessPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetAvaliableZoneRequest, GetAvaliableZoneResponse> getAvaliableZone =
+        genForGetAvaliableZone();
+
+    private static HttpRequestDef<GetAvaliableZoneRequest, GetAvaliableZoneResponse> genForGetAvaliableZone() {
+        // basic
+        HttpRequestDef.Builder<GetAvaliableZoneRequest, GetAvaliableZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetAvaliableZoneRequest.class, GetAvaliableZoneResponse.class)
+                .withName("GetAvaliableZone")
+                .withUri("/api/v2/availabilityZones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<GetAvaliableZoneRequest.LocaleEnum>withRequestField("locale",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(GetAvaliableZoneRequest.LocaleEnum.class),
+            f -> f.withMarshaller(GetAvaliableZoneRequest::getLocale, GetAvaliableZoneRequest::setLocale));
+
+        // response
+        builder.<List<GetAvailableZoneResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(GetAvaliableZoneResponse::getBody, GetAvaliableZoneResponse::setBody)
+                .withInnerContainerType(GetAvailableZoneResponseBody.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetClusterFlavorSpecsRequest, GetClusterFlavorSpecsResponse> getClusterFlavorSpecs =
+        genForGetClusterFlavorSpecs();
+
+    private static HttpRequestDef<GetClusterFlavorSpecsRequest, GetClusterFlavorSpecsResponse> genForGetClusterFlavorSpecs() {
+        // basic
+        HttpRequestDef.Builder<GetClusterFlavorSpecsRequest, GetClusterFlavorSpecsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, GetClusterFlavorSpecsRequest.class, GetClusterFlavorSpecsResponse.class)
+            .withName("GetClusterFlavorSpecs")
+            .withUri("/api/v2/flavor/specifications")
+            .withContentType("application/json");
+
+        // requests
+        builder.<GetClusterFlavorSpecsRequest.ClusterTypeEnum>withRequestField("clusterType",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GetClusterFlavorSpecsRequest.ClusterTypeEnum.class),
+            f -> f.withMarshaller(GetClusterFlavorSpecsRequest::getClusterType,
+                GetClusterFlavorSpecsRequest::setClusterType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetClusterQuotaRequest, GetClusterQuotaResponse> getClusterQuota =
+        genForGetClusterQuota();
+
+    private static HttpRequestDef<GetClusterQuotaRequest, GetClusterQuotaResponse> genForGetClusterQuota() {
+        // basic
+        HttpRequestDef.Builder<GetClusterQuotaRequest, GetClusterQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetClusterQuotaRequest.class, GetClusterQuotaResponse.class)
+                .withName("GetClusterQuota")
+                .withUri("/cce/v1/projects/{project_id}/quota")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse> getClusterSupportConfiguration =
+        genForGetClusterSupportConfiguration();
+
+    private static HttpRequestDef<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse> genForGetClusterSupportConfiguration() {
+        // basic
+        HttpRequestDef.Builder<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    GetClusterSupportConfigurationRequest.class,
+                    GetClusterSupportConfigurationResponse.class)
+                .withName("GetClusterSupportConfiguration")
+                .withUri("/api/v3/clusters/configuration/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("clusterType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetClusterSupportConfigurationRequest::getClusterType,
+                GetClusterSupportConfigurationRequest::setClusterType));
+        builder.<String>withRequestField("clusterVersion",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetClusterSupportConfigurationRequest::getClusterVersion,
+                GetClusterSupportConfigurationRequest::setClusterVersion));
+        builder.<String>withRequestField("clusterID",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetClusterSupportConfigurationRequest::getClusterID,
+                GetClusterSupportConfigurationRequest::setClusterID));
+        builder.<String>withRequestField("networkMode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetClusterSupportConfigurationRequest::getNetworkMode,
+                GetClusterSupportConfigurationRequest::setNetworkMode));
+
+        // response
+        builder.<Map<String, List<PackageOptions>>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f
+                .withMarshaller(GetClusterSupportConfigurationResponse::getBody,
+                    GetClusterSupportConfigurationResponse::setBody)
+                .withInnerContainerType(List.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetCustomizeTagsRequest, GetCustomizeTagsResponse> getCustomizeTags =
+        genForGetCustomizeTags();
+
+    private static HttpRequestDef<GetCustomizeTagsRequest, GetCustomizeTagsResponse> genForGetCustomizeTags() {
+        // basic
+        HttpRequestDef.Builder<GetCustomizeTagsRequest, GetCustomizeTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetCustomizeTagsRequest.class, GetCustomizeTagsResponse.class)
+                .withName("GetCustomizeTags")
+                .withUri("/cce/v1/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<GetCustomizeTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GetCustomizeTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(GetCustomizeTagsRequest::getResourceType, GetCustomizeTagsRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetLabelsRequest, GetLabelsResponse> getLabels = genForGetLabels();
+
+    private static HttpRequestDef<GetLabelsRequest, GetLabelsResponse> genForGetLabels() {
+        // basic
+        HttpRequestDef.Builder<GetLabelsRequest, GetLabelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetLabelsRequest.class, GetLabelsResponse.class)
+                .withName("GetLabels")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/labels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetLabelsRequest::getClusterId, GetLabelsRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetResourceTagsRequest, GetResourceTagsResponse> getResourceTags =
+        genForGetResourceTags();
+
+    private static HttpRequestDef<GetResourceTagsRequest, GetResourceTagsResponse> genForGetResourceTags() {
+        // basic
+        HttpRequestDef.Builder<GetResourceTagsRequest, GetResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetResourceTagsRequest.class, GetResourceTagsResponse.class)
+                .withName("GetResourceTags")
+                .withUri("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<GetResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GetResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(GetResourceTagsRequest::getResourceType, GetResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetResourceTagsRequest::getResourceId, GetResourceTagsRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<HibernateClusterRequest, HibernateClusterResponse> hibernateCluster =
         genForHibernateCluster();
 
@@ -1228,6 +1525,29 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(HibernateClusterRequest::getClusterId, HibernateClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAccessPolicyRequest, ListAccessPolicyResponse> listAccessPolicy =
+        genForListAccessPolicy();
+
+    private static HttpRequestDef<ListAccessPolicyRequest, ListAccessPolicyResponse> genForListAccessPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListAccessPolicyRequest, ListAccessPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAccessPolicyRequest.class, ListAccessPolicyResponse.class)
+                .withName("ListAccessPolicy")
+                .withUri("/api/v3/access-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessPolicyRequest::getClusterId, ListAccessPolicyRequest::setClusterId));
 
         // response
 
@@ -2067,59 +2387,6 @@ public class CceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> showClusterSupportConfiguration =
-        genForShowClusterSupportConfiguration();
-
-    private static HttpRequestDef<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> genForShowClusterSupportConfiguration() {
-        // basic
-        HttpRequestDef.Builder<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowClusterSupportConfigurationRequest.class,
-                    ShowClusterSupportConfigurationResponse.class)
-                .withName("ShowClusterSupportConfiguration")
-                .withUri("/api/v3/clusters/configuration/detail")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("cluster_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterId,
-                ShowClusterSupportConfigurationRequest::setClusterId));
-        builder.<String>withRequestField("cluster_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterType,
-                ShowClusterSupportConfigurationRequest::setClusterType));
-        builder.<String>withRequestField("cluster_version",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterVersion,
-                ShowClusterSupportConfigurationRequest::setClusterVersion));
-        builder.<String>withRequestField("network_mode",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getNetworkMode,
-                ShowClusterSupportConfigurationRequest::setNetworkMode));
-
-        // response
-        builder.<Map<String, List<PackageOptions>>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f
-                .withMarshaller(ShowClusterSupportConfigurationResponse::getBody,
-                    ShowClusterSupportConfigurationResponse::setBody)
-                .withInnerContainerType(List.class));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowClusterUpgradeInfoRequest, ShowClusterUpgradeInfoResponse> showClusterUpgradeInfo =
         genForShowClusterUpgradeInfo();
 
@@ -2138,6 +2405,24 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterUpgradeInfoRequest::getClusterId,
                 ShowClusterUpgradeInfoRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFeatureGatesRequest, ShowFeatureGatesResponse> showFeatureGates =
+        genForShowFeatureGates();
+
+    private static HttpRequestDef<ShowFeatureGatesRequest, ShowFeatureGatesResponse> genForShowFeatureGates() {
+        // basic
+        HttpRequestDef.Builder<ShowFeatureGatesRequest, ShowFeatureGatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFeatureGatesRequest.class, ShowFeatureGatesResponse.class)
+                .withName("ShowFeatureGates")
+                .withUri("/api/v3.1/feature-gates")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -2393,6 +2678,11 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowReleaseRequest::getClusterId, ShowReleaseRequest::setClusterId));
+        builder.<String>withRequestField("show_resources",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReleaseRequest::getShowResources, ShowReleaseRequest::setShowResources));
 
         // response
 
@@ -2574,6 +2864,34 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(UnlockNodeScaledownRequestBody.class),
             f -> f.withMarshaller(UnlockNodepoolNodeScaleDownRequest::getBody,
                 UnlockNodepoolNodeScaleDownRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAccessPolicyRequest, UpdateAccessPolicyResponse> updateAccessPolicy =
+        genForUpdateAccessPolicy();
+
+    private static HttpRequestDef<UpdateAccessPolicyRequest, UpdateAccessPolicyResponse> genForUpdateAccessPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateAccessPolicyRequest, UpdateAccessPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAccessPolicyRequest.class, UpdateAccessPolicyResponse.class)
+                .withName("UpdateAccessPolicy")
+                .withUri("/api/v3/access-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAccessPolicyRequest::getPolicyId, UpdateAccessPolicyRequest::setPolicyId));
+        builder.<AccessPolicy>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AccessPolicy.class),
+            f -> f.withMarshaller(UpdateAccessPolicyRequest::getBody, UpdateAccessPolicyRequest::setBody));
 
         // response
 
@@ -2884,6 +3202,11 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateReleaseRequest::getClusterId, UpdateReleaseRequest::setClusterId));
+        builder.<String>withRequestField("show_resources",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReleaseRequest::getShowResources, UpdateReleaseRequest::setShowResources));
         builder.<UpdateReleaseReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

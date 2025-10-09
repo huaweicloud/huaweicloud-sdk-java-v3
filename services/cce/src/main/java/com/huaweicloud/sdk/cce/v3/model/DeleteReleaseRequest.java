@@ -21,6 +21,11 @@ public class DeleteReleaseRequest {
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_resources")
+
+    private String showResources;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
     private String clusterId;
@@ -59,6 +64,23 @@ public class DeleteReleaseRequest {
         this.namespace = namespace;
     }
 
+    public DeleteReleaseRequest withShowResources(String showResources) {
+        this.showResources = showResources;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否展示模板实例的资源信息。 **约束限制：** 不涉及 **取值范围：** 指定为“true”时展示模板实例的资源信息，不指定该参数时默认不展示。 **默认取值：** 无
+     * @return showResources
+     */
+    public String getShowResources() {
+        return showResources;
+    }
+
+    public void setShowResources(String showResources) {
+        this.showResources = showResources;
+    }
+
     public DeleteReleaseRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -86,12 +108,12 @@ public class DeleteReleaseRequest {
         }
         DeleteReleaseRequest that = (DeleteReleaseRequest) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.clusterId, that.clusterId);
+            && Objects.equals(this.showResources, that.showResources) && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, namespace, clusterId);
+        return Objects.hash(name, namespace, showResources, clusterId);
     }
 
     @Override
@@ -100,6 +122,7 @@ public class DeleteReleaseRequest {
         sb.append("class DeleteReleaseRequest {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    showResources: ").append(toIndentedString(showResources)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -67,7 +67,7 @@ public class ScaleNodePoolSpec {
     }
 
     /**
-     * 扩缩容的节点池，只能填一个伸缩组，如果要伸缩默认伸缩组填default
+     * **参数解释**： 要扩缩容的节点池中的伸缩组名称[，通过[获取指定的节点池](cce_02_0355.xml)接口获取伸缩组名称](tag:hws) **约束限制**： 如果要伸缩默认伸缩组填\"default\" **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return scaleGroups
      */
     public List<String> getScaleGroups() {

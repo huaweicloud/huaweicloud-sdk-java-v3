@@ -34,7 +34,7 @@ public class AddNodeList {
     }
 
     /**
-     * API版本，固定值“v3”。
+     * **参数解释**： API版本，固定值“v3”。 **约束限制**： 不涉及 **取值范围**： 只能为固定值“v3”。 **默认取值**： 不涉及
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -51,7 +51,7 @@ public class AddNodeList {
     }
 
     /**
-     * API类型，固定值“List”。
+     * **参数解释**： API类型，，固定值“List”。 **约束限制**： 不涉及 **取值范围**： 只能为固定值“List”。 **默认取值**： 不涉及
      * @return kind
      */
     public String getKind() {
@@ -84,7 +84,7 @@ public class AddNodeList {
     }
 
     /**
-     * 纳管节点列表
+     * **参数解释**： 纳管节点列表。 **约束限制**： 当前最多支持同时纳管200个节点。
      * @return nodeList
      */
     public List<AddNode> getNodeList() {

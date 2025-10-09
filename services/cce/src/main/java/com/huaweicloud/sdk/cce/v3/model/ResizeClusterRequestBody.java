@@ -1,8 +1,15 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,6 +22,75 @@ public class ResizeClusterRequestBody {
     @JsonProperty(value = "flavorResize")
 
     private String flavorResize;
+
+    /**
+     * Gets or Sets skippedTasks
+     */
+    public static final class SkippedTasksEnum {
+
+        /**
+         * Enum INGRESSCHECKER for value: "IngressChecker"
+         */
+        public static final SkippedTasksEnum INGRESSCHECKER = new SkippedTasksEnum("IngressChecker");
+
+        private static final Map<String, SkippedTasksEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SkippedTasksEnum> createStaticFields() {
+            Map<String, SkippedTasksEnum> map = new HashMap<>();
+            map.put("IngressChecker", INGRESSCHECKER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SkippedTasksEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SkippedTasksEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SkippedTasksEnum(value));
+        }
+
+        public static SkippedTasksEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SkippedTasksEnum) {
+                return this.value.equals(((SkippedTasksEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "skippedTasks")
+
+    private List<SkippedTasksEnum> skippedTasks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
@@ -36,6 +112,39 @@ public class ResizeClusterRequestBody {
 
     public void setFlavorResize(String flavorResize) {
         this.flavorResize = flavorResize;
+    }
+
+    public ResizeClusterRequestBody withSkippedTasks(List<SkippedTasksEnum> skippedTasks) {
+        this.skippedTasks = skippedTasks;
+        return this;
+    }
+
+    public ResizeClusterRequestBody addSkippedTasksItem(SkippedTasksEnum skippedTasksItem) {
+        if (this.skippedTasks == null) {
+            this.skippedTasks = new ArrayList<>();
+        }
+        this.skippedTasks.add(skippedTasksItem);
+        return this;
+    }
+
+    public ResizeClusterRequestBody withSkippedTasks(Consumer<List<SkippedTasksEnum>> skippedTasksSetter) {
+        if (this.skippedTasks == null) {
+            this.skippedTasks = new ArrayList<>();
+        }
+        skippedTasksSetter.accept(this.skippedTasks);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 该参数用于控制集群规格变更时跳过部分任务。 **约束限制**： 无 **取值范围**： - IngressChecker: 集群规格变更时跳过Ingress与ELB配置一致性检查  > - 跳过Ingress与ELB配置一致性检查可能导致业务中断，请谨慎操作！ > - 集群不可用或者过载时，必须跳过Ingress与ELB配置一致性检查，否则会导致集群规格变更失败。[请确保变更集群规格前已按 [ELB Ingress与ELB配置不一致如何处理？](https://support.huaweicloud.com/cce_faq/cce_faq_00493.html) 指南解决一致性问题。](tag:hws)[请确保变更集群规格前已按 [ELB Ingress与ELB配置不一致如何处理？](https://support.huaweicloud.com/intl/zh-cn/cce_faq/cce_faq_00493.html) 指南解决一致性问题。](tag:hws_hk)  **默认取值**： 集群不可用时默认包含IngressChecker
+     * @return skippedTasks
+     */
+    public List<SkippedTasksEnum> getSkippedTasks() {
+        return skippedTasks;
+    }
+
+    public void setSkippedTasks(List<SkippedTasksEnum> skippedTasks) {
+        this.skippedTasks = skippedTasks;
     }
 
     public ResizeClusterRequestBody withExtendParam(ResizeClusterRequestBodyExtendParam extendParam) {
@@ -74,12 +183,13 @@ public class ResizeClusterRequestBody {
         }
         ResizeClusterRequestBody that = (ResizeClusterRequestBody) obj;
         return Objects.equals(this.flavorResize, that.flavorResize)
+            && Objects.equals(this.skippedTasks, that.skippedTasks)
             && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorResize, extendParam);
+        return Objects.hash(flavorResize, skippedTasks, extendParam);
     }
 
     @Override
@@ -87,6 +197,7 @@ public class ResizeClusterRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeClusterRequestBody {\n");
         sb.append("    flavorResize: ").append(toIndentedString(flavorResize)).append("\n");
+        sb.append("    skippedTasks: ").append(toIndentedString(skippedTasks)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -145,6 +145,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBusinessPartnersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListConfigurationApplyHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabaseUserRoleRequest;
@@ -181,6 +183,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesRequest;
@@ -1647,6 +1651,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询参数组应用历史
+     *
+     * 查询参数组应用历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigurationApplyHistoriesRequest 请求对象
+     * @return CompletableFuture<ListConfigurationApplyHistoriesResponse>
+     */
+    public CompletableFuture<ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistoriesAsync(
+        ListConfigurationApplyHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listConfigurationApplyHistories);
+    }
+
+    /**
+     * 查询参数组应用历史
+     *
+     * 查询参数组应用历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigurationApplyHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse>
+     */
+    public AsyncInvoker<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistoriesAsyncInvoker(
+        ListConfigurationApplyHistoriesRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listConfigurationApplyHistories, hcClient);
+    }
+
+    /**
      * 获取参数模板列表
      *
      * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -2109,6 +2143,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询应用参数模版的实例列表
+     *
+     * 查询应用参数模版的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesConfigurationsRequest 请求对象
+     * @return CompletableFuture<ListInstancesConfigurationsResponse>
+     */
+    public CompletableFuture<ListInstancesConfigurationsResponse> listInstancesConfigurationsAsync(
+        ListInstancesConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesConfigurations);
+    }
+
+    /**
+     * 查询应用参数模版的实例列表
+     *
+     * 查询应用参数模版的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse>
+     */
+    public AsyncInvoker<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> listInstancesConfigurationsAsyncInvoker(
+        ListInstancesConfigurationsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listInstancesConfigurations, hcClient);
     }
 
     /**

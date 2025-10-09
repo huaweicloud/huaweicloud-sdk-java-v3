@@ -15,6 +15,11 @@ public class CustomerUpgradeDatabaseVersionReqNew {
 
     private Boolean isDelayed;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "second_switch")
+
+    private Boolean secondSwitch;
+
     public CustomerUpgradeDatabaseVersionReqNew withIsDelayed(Boolean isDelayed) {
         this.isDelayed = isDelayed;
         return this;
@@ -32,6 +37,23 @@ public class CustomerUpgradeDatabaseVersionReqNew {
         this.isDelayed = isDelayed;
     }
 
+    public CustomerUpgradeDatabaseVersionReqNew withSecondSwitch(Boolean secondSwitch) {
+        this.secondSwitch = secondSwitch;
+        return this;
+    }
+
+    /**
+     * 设置仅对RDS for MySQL数据库实例（主备）生效。主备实例升级过程中，备机升级成功后，会触发主备倒换继续升级主机，主机升级完成后，若主备可用区不同则触发第二次倒换，保证可用区不变。若主备可用区相同，该选项无效。 取值范围： - true：默认该方式。表示升级过程中会进行二次倒换保证主备实例可用区不变。 - false：升级过程中不进行第二次主备倒换，适合对主备所在可用区不敏感，对业务连续性敏感的客户。
+     * @return secondSwitch
+     */
+    public Boolean getSecondSwitch() {
+        return secondSwitch;
+    }
+
+    public void setSecondSwitch(Boolean secondSwitch) {
+        this.secondSwitch = secondSwitch;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class CustomerUpgradeDatabaseVersionReqNew {
             return false;
         }
         CustomerUpgradeDatabaseVersionReqNew that = (CustomerUpgradeDatabaseVersionReqNew) obj;
-        return Objects.equals(this.isDelayed, that.isDelayed);
+        return Objects.equals(this.isDelayed, that.isDelayed) && Objects.equals(this.secondSwitch, that.secondSwitch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isDelayed);
+        return Objects.hash(isDelayed, secondSwitch);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class CustomerUpgradeDatabaseVersionReqNew {
         StringBuilder sb = new StringBuilder();
         sb.append("class CustomerUpgradeDatabaseVersionReqNew {\n");
         sb.append("    isDelayed: ").append(toIndentedString(isDelayed)).append("\n");
+        sb.append("    secondSwitch: ").append(toIndentedString(secondSwitch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

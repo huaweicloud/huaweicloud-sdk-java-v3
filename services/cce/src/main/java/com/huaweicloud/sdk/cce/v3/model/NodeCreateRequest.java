@@ -37,7 +37,7 @@ public class NodeCreateRequest {
     }
 
     /**
-     * API类型，固定值“Node”，该值不可修改。  
+     * **参数解释**： API类型，固定值“Node”。 **约束限制**： 不涉及 **取值范围**： 只能为固定值“Node”。 **默认取值**： 不涉及 
      * @return kind
      */
     public String getKind() {
@@ -54,7 +54,7 @@ public class NodeCreateRequest {
     }
 
     /**
-     * API版本，固定值“v3”，该值不可修改。  
+     * **参数解释**： API版本，固定值“v3”。 **约束限制**： 不涉及 **取值范围**： 只能为固定值“v3”。 **默认取值**： 不涉及
      * @return apiVersion
      */
     public String getApiVersion() {

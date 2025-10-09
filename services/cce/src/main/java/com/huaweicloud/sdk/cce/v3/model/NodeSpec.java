@@ -1,9 +1,12 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,15 +68,90 @@ public class NodeSpec {
 
     private Integer count;
 
+    /**
+     * **参数解释**： 节点的计费模式。 **约束限制**： 不涉及 **取值范围**： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk)  **默认取值**： 0 
+     */
+    public static final class BillingModeEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final BillingModeEnum NUMBER_0 = new BillingModeEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final BillingModeEnum NUMBER_1 = new BillingModeEnum(1);
+
+        private static final Map<Integer, BillingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, BillingModeEnum> createStaticFields() {
+            Map<Integer, BillingModeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        BillingModeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BillingModeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BillingModeEnum(value));
+        }
+
+        public static BillingModeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BillingModeEnum) {
+                return this.value.equals(((BillingModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billingMode")
 
-    private Integer billingMode;
+    private BillingModeEnum billingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taints")
 
     private List<Taint> taints = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "waitPostInstallFinish")
+
+    private Boolean waitPostInstallFinish;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "k8sTags")
@@ -125,6 +203,11 @@ public class NodeSpec {
 
     private String partition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodeNameTemplate")
+
+    private NodeSpecNodeNameTemplate nodeNameTemplate;
+
     public NodeSpec withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -165,7 +248,7 @@ public class NodeSpec {
     }
 
     /**
-     * [节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](https://support.huaweicloud.com/api-cce/node-os.html)。](tag:hws) [节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](https://support.huaweicloud.com/intl/zh-cn/api-cce/node-os.html)。](tag:hws_hk) > - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 > - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 > - 创建节点池时，该参数为必选。 > - 若创建节点时使用共享磁盘空间，即磁盘初始化配置管理参数使用storage，且StorageGroups中virtualSpaces的name字段指定为share，该参数为必选。 
+     * **参数解释**： 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 **约束限制**： - 若在创建节点时未指定该配置，CCE会根据集群版本自动选择支持的OS版本。 - 若当前集群版本不支持该OS类型，则会自动替换为当前集群版本支持的同系列OS类型。 - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，节点将使用私有镜像，则该参数为非必选参数。 [- 若在创建节点时指定了extendParam中的securityReinforcementType参数为cybersecurity，节点将开启安全等保加固功能，则节点的操作系统类型必须使用HCE2.0。当用户未配置私有镜像时，该参数必须为“Huawei Cloud EulerOS 2.0”；当用户配置了私有镜像且私有镜像操作系统类型为HCE2.0，则该参数为非必选参数。](tag:hws)  **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return os
      */
     public String getOs() {
@@ -345,7 +428,7 @@ public class NodeSpec {
     }
 
     /**
-     * 批量创建时节点的个数，必须为大于等于1，小于等于最大限额的正整数。作用于节点池时该项可以不填写。
+     * **参数解释**： 批量创建时节点的个数。 **约束限制**： - 作用于节点池时该项可以不填写。 - 创建、更新节点池场景返回中无该参数。 - 创建节点时该参数为必填参数  **取值范围**： 必须为大于等于1，小于等于最大限额的正整数。 **默认取值**： 不涉及
      * @return count
      */
     public Integer getCount() {
@@ -356,20 +439,20 @@ public class NodeSpec {
         this.count = count;
     }
 
-    public NodeSpec withBillingMode(Integer billingMode) {
+    public NodeSpec withBillingMode(BillingModeEnum billingMode) {
         this.billingMode = billingMode;
         return this;
     }
 
     /**
-     * 节点的计费模式： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk) 
+     * **参数解释**： 节点的计费模式。 **约束限制**： 不涉及 **取值范围**： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk)  **默认取值**： 0 
      * @return billingMode
      */
-    public Integer getBillingMode() {
+    public BillingModeEnum getBillingMode() {
         return billingMode;
     }
 
-    public void setBillingMode(Integer billingMode) {
+    public void setBillingMode(BillingModeEnum billingMode) {
         this.billingMode = billingMode;
     }
 
@@ -404,6 +487,23 @@ public class NodeSpec {
 
     public void setTaints(List<Taint> taints) {
         this.taints = taints;
+    }
+
+    public NodeSpec withWaitPostInstallFinish(Boolean waitPostInstallFinish) {
+        this.waitPostInstallFinish = waitPostInstallFinish;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 该参数用于控制创建节点时 **post-install脚本执行完成前允许节点调度** 行为。当该参数未设置或者为false时，在kubernetes节点就绪时，容器即可被调度到可用节点。当该参数为true时，在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **约束限制：** 不涉及  **取值范围：** - false：在kubernetes节点就绪时，容器即可被调度到可用节点。           - true：在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **默认取值：** false
+     * @return waitPostInstallFinish
+     */
+    public Boolean getWaitPostInstallFinish() {
+        return waitPostInstallFinish;
+    }
+
+    public void setWaitPostInstallFinish(Boolean waitPostInstallFinish) {
+        this.waitPostInstallFinish = waitPostInstallFinish;
     }
 
     public NodeSpec withK8sTags(Map<String, String> k8sTags) {
@@ -445,7 +545,7 @@ public class NodeSpec {
     }
 
     /**
-     * 云服务器组ID，若指定，将节点创建在该云服务器组下 > 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置
+     * **参数解释**： 云服务器组ID，若指定，将节点创建在该云服务器组下。 **约束限制**： 创建、更新节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置。 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return ecsGroupId
      */
     public String getEcsGroupId() {
@@ -462,7 +562,7 @@ public class NodeSpec {
     }
 
     /**
-     * 指定DeH主机的ID，将节点调度到自己的DeH上。 >创建节点池添加节点时不支持该参数。 
+     * **参数解释**： 指定DeH主机的ID，将节点调度到自己的DeH上。 **约束限制**： 创建节点池添加节点时不支持该参数。 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return dedicatedHostId
      */
     public String getDedicatedHostId() {
@@ -495,7 +595,7 @@ public class NodeSpec {
     }
 
     /**
-     * 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 > 标签键只能包含大写字母.小写字母、数字和特殊字符(-_)以及Unicode字符，长度不超过36个字符。 
+     * **参数解释**： 云服务器标签（资源标签）。字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。
      * @return userTags
      */
     public List<UserTag> getUserTags() {
@@ -651,6 +751,32 @@ public class NodeSpec {
         this.partition = partition;
     }
 
+    public NodeSpec withNodeNameTemplate(NodeSpecNodeNameTemplate nodeNameTemplate) {
+        this.nodeNameTemplate = nodeNameTemplate;
+        return this;
+    }
+
+    public NodeSpec withNodeNameTemplate(Consumer<NodeSpecNodeNameTemplate> nodeNameTemplateSetter) {
+        if (this.nodeNameTemplate == null) {
+            this.nodeNameTemplate = new NodeSpecNodeNameTemplate();
+            nodeNameTemplateSetter.accept(this.nodeNameTemplate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nodeNameTemplate
+     * @return nodeNameTemplate
+     */
+    public NodeSpecNodeNameTemplate getNodeNameTemplate() {
+        return nodeNameTemplate;
+    }
+
+    public void setNodeNameTemplate(NodeSpecNodeNameTemplate nodeNameTemplate) {
+        this.nodeNameTemplate = nodeNameTemplate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -666,6 +792,7 @@ public class NodeSpec {
             && Objects.equals(this.storage, that.storage) && Objects.equals(this.publicIP, that.publicIP)
             && Objects.equals(this.nodeNicSpec, that.nodeNicSpec) && Objects.equals(this.count, that.count)
             && Objects.equals(this.billingMode, that.billingMode) && Objects.equals(this.taints, that.taints)
+            && Objects.equals(this.waitPostInstallFinish, that.waitPostInstallFinish)
             && Objects.equals(this.k8sTags, that.k8sTags) && Objects.equals(this.ecsGroupId, that.ecsGroupId)
             && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
             && Objects.equals(this.userTags, that.userTags) && Objects.equals(this.runtime, that.runtime)
@@ -673,7 +800,8 @@ public class NodeSpec {
             && Objects.equals(this.extendParam, that.extendParam)
             && Objects.equals(this.hostnameConfig, that.hostnameConfig)
             && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID)
-            && Objects.equals(this.partition, that.partition);
+            && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.nodeNameTemplate, that.nodeNameTemplate);
     }
 
     @Override
@@ -690,6 +818,7 @@ public class NodeSpec {
             count,
             billingMode,
             taints,
+            waitPostInstallFinish,
             k8sTags,
             ecsGroupId,
             dedicatedHostId,
@@ -699,7 +828,8 @@ public class NodeSpec {
             extendParam,
             hostnameConfig,
             serverEnterpriseProjectID,
-            partition);
+            partition,
+            nodeNameTemplate);
     }
 
     @Override
@@ -718,6 +848,7 @@ public class NodeSpec {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    billingMode: ").append(toIndentedString(billingMode)).append("\n");
         sb.append("    taints: ").append(toIndentedString(taints)).append("\n");
+        sb.append("    waitPostInstallFinish: ").append(toIndentedString(waitPostInstallFinish)).append("\n");
         sb.append("    k8sTags: ").append(toIndentedString(k8sTags)).append("\n");
         sb.append("    ecsGroupId: ").append(toIndentedString(ecsGroupId)).append("\n");
         sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
@@ -728,6 +859,7 @@ public class NodeSpec {
         sb.append("    hostnameConfig: ").append(toIndentedString(hostnameConfig)).append("\n");
         sb.append("    serverEnterpriseProjectID: ").append(toIndentedString(serverEnterpriseProjectID)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
+        sb.append("    nodeNameTemplate: ").append(toIndentedString(nodeNameTemplate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

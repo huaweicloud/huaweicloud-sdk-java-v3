@@ -102,7 +102,7 @@ public class NodePoolSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeTemplate")
 
-    private NodeSpec nodeTemplate;
+    private NodeTemplate nodeTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initialNodeCount")
@@ -134,6 +134,21 @@ public class NodePoolSpec {
 
     private List<String> customSecurityGroups = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "taintPolicyOnExistingNodes")
+
+    private String taintPolicyOnExistingNodes;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labelPolicyOnExistingNodes")
+
+    private String labelPolicyOnExistingNodes;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "userTagsPolicyOnExistingNodes")
+
+    private String userTagsPolicyOnExistingNodes;
+
     public NodePoolSpec withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -151,14 +166,14 @@ public class NodePoolSpec {
         this.type = type;
     }
 
-    public NodePoolSpec withNodeTemplate(NodeSpec nodeTemplate) {
+    public NodePoolSpec withNodeTemplate(NodeTemplate nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
         return this;
     }
 
-    public NodePoolSpec withNodeTemplate(Consumer<NodeSpec> nodeTemplateSetter) {
+    public NodePoolSpec withNodeTemplate(Consumer<NodeTemplate> nodeTemplateSetter) {
         if (this.nodeTemplate == null) {
-            this.nodeTemplate = new NodeSpec();
+            this.nodeTemplate = new NodeTemplate();
             nodeTemplateSetter.accept(this.nodeTemplate);
         }
 
@@ -169,11 +184,11 @@ public class NodePoolSpec {
      * Get nodeTemplate
      * @return nodeTemplate
      */
-    public NodeSpec getNodeTemplate() {
+    public NodeTemplate getNodeTemplate() {
         return nodeTemplate;
     }
 
-    public void setNodeTemplate(NodeSpec nodeTemplate) {
+    public void setNodeTemplate(NodeTemplate nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
     }
 
@@ -345,6 +360,57 @@ public class NodePoolSpec {
         this.customSecurityGroups = customSecurityGroups;
     }
 
+    public NodePoolSpec withTaintPolicyOnExistingNodes(String taintPolicyOnExistingNodes) {
+        this.taintPolicyOnExistingNodes = taintPolicyOnExistingNodes;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 存量节点污点同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\"ignore\"后，节点池不再同步更新存量节点的污点。 - refresh：配置为\"refresh\"后，节点池将同步更新存量节点的污点。  **默认取值**： refresh
+     * @return taintPolicyOnExistingNodes
+     */
+    public String getTaintPolicyOnExistingNodes() {
+        return taintPolicyOnExistingNodes;
+    }
+
+    public void setTaintPolicyOnExistingNodes(String taintPolicyOnExistingNodes) {
+        this.taintPolicyOnExistingNodes = taintPolicyOnExistingNodes;
+    }
+
+    public NodePoolSpec withLabelPolicyOnExistingNodes(String labelPolicyOnExistingNodes) {
+        this.labelPolicyOnExistingNodes = labelPolicyOnExistingNodes;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 存量节点标签同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\"ignore\"后，节点池不再同步更新存量节点的标签。 - refresh：配置为\"refresh\"后，节点池将同步更新存量节点的标签。  **默认取值**： refresh
+     * @return labelPolicyOnExistingNodes
+     */
+    public String getLabelPolicyOnExistingNodes() {
+        return labelPolicyOnExistingNodes;
+    }
+
+    public void setLabelPolicyOnExistingNodes(String labelPolicyOnExistingNodes) {
+        this.labelPolicyOnExistingNodes = labelPolicyOnExistingNodes;
+    }
+
+    public NodePoolSpec withUserTagsPolicyOnExistingNodes(String userTagsPolicyOnExistingNodes) {
+        this.userTagsPolicyOnExistingNodes = userTagsPolicyOnExistingNodes;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 存量节点资源标签同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\"ignore\"后，节点池不再同步更新存量节点的资源标签。 - refresh：配置为\"refresh\"后，节点池将同步更新存量节点的资源标签。  **默认取值**： ignore
+     * @return userTagsPolicyOnExistingNodes
+     */
+    public String getUserTagsPolicyOnExistingNodes() {
+        return userTagsPolicyOnExistingNodes;
+    }
+
+    public void setUserTagsPolicyOnExistingNodes(String userTagsPolicyOnExistingNodes) {
+        this.userTagsPolicyOnExistingNodes = userTagsPolicyOnExistingNodes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -360,7 +426,10 @@ public class NodePoolSpec {
             && Objects.equals(this.nodeManagement, that.nodeManagement)
             && Objects.equals(this.podSecurityGroups, that.podSecurityGroups)
             && Objects.equals(this.extensionScaleGroups, that.extensionScaleGroups)
-            && Objects.equals(this.customSecurityGroups, that.customSecurityGroups);
+            && Objects.equals(this.customSecurityGroups, that.customSecurityGroups)
+            && Objects.equals(this.taintPolicyOnExistingNodes, that.taintPolicyOnExistingNodes)
+            && Objects.equals(this.labelPolicyOnExistingNodes, that.labelPolicyOnExistingNodes)
+            && Objects.equals(this.userTagsPolicyOnExistingNodes, that.userTagsPolicyOnExistingNodes);
     }
 
     @Override
@@ -372,7 +441,10 @@ public class NodePoolSpec {
             nodeManagement,
             podSecurityGroups,
             extensionScaleGroups,
-            customSecurityGroups);
+            customSecurityGroups,
+            taintPolicyOnExistingNodes,
+            labelPolicyOnExistingNodes,
+            userTagsPolicyOnExistingNodes);
     }
 
     @Override
@@ -387,6 +459,11 @@ public class NodePoolSpec {
         sb.append("    podSecurityGroups: ").append(toIndentedString(podSecurityGroups)).append("\n");
         sb.append("    extensionScaleGroups: ").append(toIndentedString(extensionScaleGroups)).append("\n");
         sb.append("    customSecurityGroups: ").append(toIndentedString(customSecurityGroups)).append("\n");
+        sb.append("    taintPolicyOnExistingNodes: ").append(toIndentedString(taintPolicyOnExistingNodes)).append("\n");
+        sb.append("    labelPolicyOnExistingNodes: ").append(toIndentedString(labelPolicyOnExistingNodes)).append("\n");
+        sb.append("    userTagsPolicyOnExistingNodes: ")
+            .append(toIndentedString(userTagsPolicyOnExistingNodes))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }
