@@ -295,8 +295,14 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskResponse
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionMemoryContextRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionMemoryContextResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionStatisticsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionStatisticsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionTopSqlStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionTopSqlStatisticsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionWaitEventStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionWaitEventStatisticsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlDetailsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlsRequest;
@@ -4169,10 +4175,20 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginInfoListRequest::getInstanceId, ListPluginInfoListRequest::setInstanceId));
-        builder.<String>withRequestField("plugin_name",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginInfoListRequest::getOffset, ListPluginInfoListRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginInfoListRequest::getLimit, ListPluginInfoListRequest::setLimit));
+        builder.<ListPluginInfoListRequest.PluginNameEnum>withRequestField("plugin_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPluginInfoListRequest.PluginNameEnum.class),
             f -> f.withMarshaller(ListPluginInfoListRequest::getPluginName, ListPluginInfoListRequest::setPluginName));
         builder.<ListPluginInfoListRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
@@ -4613,6 +4629,61 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSessionMemoryContextRequest, ListSessionMemoryContextResponse> listSessionMemoryContext =
+        genForListSessionMemoryContext();
+
+    private static HttpRequestDef<ListSessionMemoryContextRequest, ListSessionMemoryContextResponse> genForListSessionMemoryContext() {
+        // basic
+        HttpRequestDef.Builder<ListSessionMemoryContextRequest, ListSessionMemoryContextResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListSessionMemoryContextRequest.class, ListSessionMemoryContextResponse.class)
+                .withName("ListSessionMemoryContext")
+                .withUri("/v3/{project_id}/instances/{instance_id}/session/memory-context")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSessionMemoryContextRequest::getInstanceId,
+                ListSessionMemoryContextRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSessionMemoryContextRequest::getNodeId,
+                ListSessionMemoryContextRequest::setNodeId));
+        builder.<String>withRequestField("session_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSessionMemoryContextRequest::getSessionId,
+                ListSessionMemoryContextRequest::setSessionId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSessionMemoryContextRequest::getOffset,
+                ListSessionMemoryContextRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSessionMemoryContextRequest::getLimit,
+                ListSessionMemoryContextRequest::setLimit));
+        builder.<ListSessionMemoryContextRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSessionMemoryContextRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSessionMemoryContextRequest::getXLanguage,
+                ListSessionMemoryContextRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSessionStatisticsRequest, ListSessionStatisticsResponse> listSessionStatistics =
         genForListSessionStatistics();
 
@@ -4664,6 +4735,96 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(ListSessionStatisticsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListSessionStatisticsRequest::getXLanguage,
                 ListSessionStatisticsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSessionTopSqlStatisticsRequest, ListSessionTopSqlStatisticsResponse> listSessionTopSqlStatistics =
+        genForListSessionTopSqlStatistics();
+
+    private static HttpRequestDef<ListSessionTopSqlStatisticsRequest, ListSessionTopSqlStatisticsResponse> genForListSessionTopSqlStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListSessionTopSqlStatisticsRequest, ListSessionTopSqlStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSessionTopSqlStatisticsRequest.class,
+                    ListSessionTopSqlStatisticsResponse.class)
+                .withName("ListSessionTopSqlStatistics")
+                .withUri("/v3/{project_id}/instances/{instance_id}/session/statistic/top-sql")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSessionTopSqlStatisticsRequest::getInstanceId,
+                ListSessionTopSqlStatisticsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSessionTopSqlStatisticsRequest::getOffset,
+                ListSessionTopSqlStatisticsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSessionTopSqlStatisticsRequest::getLimit,
+                ListSessionTopSqlStatisticsRequest::setLimit));
+        builder.<ListSessionTopSqlStatisticsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSessionTopSqlStatisticsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSessionTopSqlStatisticsRequest::getXLanguage,
+                ListSessionTopSqlStatisticsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSessionWaitEventStatisticsRequest, ListSessionWaitEventStatisticsResponse> listSessionWaitEventStatistics =
+        genForListSessionWaitEventStatistics();
+
+    private static HttpRequestDef<ListSessionWaitEventStatisticsRequest, ListSessionWaitEventStatisticsResponse> genForListSessionWaitEventStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListSessionWaitEventStatisticsRequest, ListSessionWaitEventStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSessionWaitEventStatisticsRequest.class,
+                    ListSessionWaitEventStatisticsResponse.class)
+                .withName("ListSessionWaitEventStatistics")
+                .withUri("/v3/{project_id}/instances/{instance_id}/session/statistic/wait-event")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSessionWaitEventStatisticsRequest::getInstanceId,
+                ListSessionWaitEventStatisticsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSessionWaitEventStatisticsRequest::getOffset,
+                ListSessionWaitEventStatisticsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSessionWaitEventStatisticsRequest::getLimit,
+                ListSessionWaitEventStatisticsRequest::setLimit));
+        builder.<ListSessionWaitEventStatisticsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSessionWaitEventStatisticsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListSessionWaitEventStatisticsRequest::getXLanguage,
+                ListSessionWaitEventStatisticsRequest::setXLanguage));
 
         // response
 

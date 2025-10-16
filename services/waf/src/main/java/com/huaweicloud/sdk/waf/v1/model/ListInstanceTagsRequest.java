@@ -11,9 +11,31 @@ import java.util.Objects;
 public class ListInstanceTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resourceid")
+
+    private String resourceid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    public ListInstanceTagsRequest withResourceid(String resourceid) {
+        this.resourceid = resourceid;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 资源类型，目前支持waf和waf-instance **约束限制：** 不涉及 **取值范围：** 只能由英文字母、数字组成，且长度为32个字符。 **默认取值：** 不涉及
+     * @return resourceid
+     */
+    public String getResourceid() {
+        return resourceid;
+    }
+
+    public void setResourceid(String resourceid) {
+        this.resourceid = resourceid;
+    }
 
     public ListInstanceTagsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -41,18 +63,20 @@ public class ListInstanceTagsRequest {
             return false;
         }
         ListInstanceTagsRequest that = (ListInstanceTagsRequest) obj;
-        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+        return Objects.equals(this.resourceid, that.resourceid)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId);
+        return Objects.hash(resourceid, enterpriseProjectId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstanceTagsRequest {\n");
+        sb.append("    resourceid: ").append(toIndentedString(resourceid)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

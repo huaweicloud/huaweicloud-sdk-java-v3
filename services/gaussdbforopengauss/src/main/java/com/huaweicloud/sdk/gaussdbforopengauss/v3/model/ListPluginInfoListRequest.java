@@ -20,11 +20,6 @@ public class ListPluginInfoListRequest {
 
     private String instanceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "plugin_name")
-
-    private String pluginName;
-
     /**
      * **参数解释**: 用户Token。 通过调用IAM服务[获取用户token](https://support.huaweicloud.com/intl/zh-cn/api-iam/iam_30_0001.html)。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
      */
@@ -100,6 +95,85 @@ public class ListPluginInfoListRequest {
 
     private XLanguageEnum xLanguage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    /**
+     * **参数解释**: 插件包名称。 **约束限制**: 不涉及。 **取值范围**: - postgis  **默认取值**: 不涉及。 
+     */
+    public static final class PluginNameEnum {
+
+        /**
+         * Enum POSTGIS for value: "postgis"
+         */
+        public static final PluginNameEnum POSTGIS = new PluginNameEnum("postgis");
+
+        private static final Map<String, PluginNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PluginNameEnum> createStaticFields() {
+            Map<String, PluginNameEnum> map = new HashMap<>();
+            map.put("postgis", POSTGIS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PluginNameEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PluginNameEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginNameEnum(value));
+        }
+
+        public static PluginNameEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PluginNameEnum) {
+                return this.value.equals(((PluginNameEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugin_name")
+
+    private PluginNameEnum pluginName;
+
     public ListPluginInfoListRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -115,23 +189,6 @@ public class ListPluginInfoListRequest {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public ListPluginInfoListRequest withPluginName(String pluginName) {
-        this.pluginName = pluginName;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 查询插件名。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
-     * @return pluginName
-     */
-    public String getPluginName() {
-        return pluginName;
-    }
-
-    public void setPluginName(String pluginName) {
-        this.pluginName = pluginName;
     }
 
     public ListPluginInfoListRequest withXLanguage(XLanguageEnum xLanguage) {
@@ -153,6 +210,57 @@ public class ListPluginInfoListRequest {
         this.xLanguage = xLanguage;
     }
 
+    public ListPluginInfoListRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询。例如：该参数指定为1，limit指定为10，则只展示第2-11条数据。 **约束限制**: 不涉及。 **取值范围**: [0, 2^31-1] **默认取值**: 默认为0（偏移0条数据，表示从第一条数据开始查询）。 
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListPluginInfoListRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 查询记录数。例如该参数设定为10，则查询结果最多只显示10条记录。 **约束限制**: 不涉及。 **取值范围**: [1, 100] **默认取值**: 默认为100。 
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListPluginInfoListRequest withPluginName(PluginNameEnum pluginName) {
+        this.pluginName = pluginName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 插件包名称。 **约束限制**: 不涉及。 **取值范围**: - postgis  **默认取值**: 不涉及。 
+     * @return pluginName
+     */
+    public PluginNameEnum getPluginName() {
+        return pluginName;
+    }
+
+    public void setPluginName(PluginNameEnum pluginName) {
+        this.pluginName = pluginName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -162,13 +270,14 @@ public class ListPluginInfoListRequest {
             return false;
         }
         ListPluginInfoListRequest that = (ListPluginInfoListRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.pluginName, that.pluginName)
-            && Objects.equals(this.xLanguage, that.xLanguage);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pluginName, that.pluginName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, pluginName, xLanguage);
+        return Objects.hash(instanceId, xLanguage, offset, limit, pluginName);
     }
 
     @Override
@@ -176,8 +285,10 @@ public class ListPluginInfoListRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPluginInfoListRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    pluginName: ").append(toIndentedString(pluginName)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    pluginName: ").append(toIndentedString(pluginName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

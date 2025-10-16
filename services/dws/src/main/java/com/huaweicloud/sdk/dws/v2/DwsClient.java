@@ -291,6 +291,8 @@ import com.huaweicloud.sdk.dws.v2.model.ResizeClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ResizePreparationRequest;
+import com.huaweicloud.sdk.dws.v2.model.ResizePreparationResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestartLogicalClusterRequest;
@@ -335,6 +337,8 @@ import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowResizePreparationRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowResizePreparationResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowResourceStatisticsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowResourceStatisticsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadPlanRequest;
@@ -4670,6 +4674,35 @@ public class DwsClient {
     }
 
     /**
+     * 集群扩容前检查
+     *
+     * 下发扩容配置文件，完成扩容准备工作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizePreparationRequest 请求对象
+     * @return ResizePreparationResponse
+     */
+    public ResizePreparationResponse resizePreparation(ResizePreparationRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.resizePreparation);
+    }
+
+    /**
+     * 集群扩容前检查
+     *
+     * 下发扩容配置文件，完成扩容准备工作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizePreparationRequest 请求对象
+     * @return SyncInvoker<ResizePreparationRequest, ResizePreparationResponse>
+     */
+    public SyncInvoker<ResizePreparationRequest, ResizePreparationResponse> resizePreparationInvoker(
+        ResizePreparationRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.resizePreparation, hcClient);
+    }
+
+    /**
      * 重启集群
      *
      * 重启集群。
@@ -5322,6 +5355,35 @@ public class DwsClient {
     public SyncInvoker<ShowQueryDetailRequest, ShowQueryDetailResponse> showQueryDetailInvoker(
         ShowQueryDetailRequest request) {
         return new SyncInvoker<>(request, DwsMeta.showQueryDetail, hcClient);
+    }
+
+    /**
+     * 查询节点列表
+     *
+     * 获取扩容准备信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResizePreparationRequest 请求对象
+     * @return ShowResizePreparationResponse
+     */
+    public ShowResizePreparationResponse showResizePreparation(ShowResizePreparationRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showResizePreparation);
+    }
+
+    /**
+     * 查询节点列表
+     *
+     * 获取扩容准备信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResizePreparationRequest 请求对象
+     * @return SyncInvoker<ShowResizePreparationRequest, ShowResizePreparationResponse>
+     */
+    public SyncInvoker<ShowResizePreparationRequest, ShowResizePreparationResponse> showResizePreparationInvoker(
+        ShowResizePreparationRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.showResizePreparation, hcClient);
     }
 
     /**

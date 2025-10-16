@@ -131,7 +131,7 @@ public class ExpansionParameterResult {
     }
 
     /**
-     * **参数解释**: 参数描述。 **取值范围**: 不涉及。
+     * **参数解释**: 参数解释。 **取值范围**: 不涉及。
      * @return description
      */
     public String getDescription() {

@@ -119,8 +119,6 @@ import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaResponse;
-import com.huaweicloud.sdk.cce.v3.model.GetClusterSupportConfigurationRequest;
-import com.huaweicloud.sdk.cce.v3.model.GetClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetLabelsRequest;
@@ -269,6 +267,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowFeatureGatesRequest;
@@ -1382,59 +1382,6 @@ public class CceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse> getClusterSupportConfiguration =
-        genForGetClusterSupportConfiguration();
-
-    private static HttpRequestDef<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse> genForGetClusterSupportConfiguration() {
-        // basic
-        HttpRequestDef.Builder<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    GetClusterSupportConfigurationRequest.class,
-                    GetClusterSupportConfigurationResponse.class)
-                .withName("GetClusterSupportConfiguration")
-                .withUri("/api/v3/clusters/configuration/detail")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("clusterType",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetClusterSupportConfigurationRequest::getClusterType,
-                GetClusterSupportConfigurationRequest::setClusterType));
-        builder.<String>withRequestField("clusterVersion",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetClusterSupportConfigurationRequest::getClusterVersion,
-                GetClusterSupportConfigurationRequest::setClusterVersion));
-        builder.<String>withRequestField("clusterID",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetClusterSupportConfigurationRequest::getClusterID,
-                GetClusterSupportConfigurationRequest::setClusterID));
-        builder.<String>withRequestField("networkMode",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(GetClusterSupportConfigurationRequest::getNetworkMode,
-                GetClusterSupportConfigurationRequest::setNetworkMode));
-
-        // response
-        builder.<Map<String, List<PackageOptions>>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f
-                .withMarshaller(GetClusterSupportConfigurationResponse::getBody,
-                    GetClusterSupportConfigurationResponse::setBody)
-                .withInnerContainerType(List.class));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<GetCustomizeTagsRequest, GetCustomizeTagsResponse> getCustomizeTags =
         genForGetCustomizeTags();
 
@@ -2383,6 +2330,59 @@ public class CceMeta {
                 ShowClusterEndpointsRequest::setClusterId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> showClusterSupportConfiguration =
+        genForShowClusterSupportConfiguration();
+
+    private static HttpRequestDef<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> genForShowClusterSupportConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowClusterSupportConfigurationRequest.class,
+                    ShowClusterSupportConfigurationResponse.class)
+                .withName("ShowClusterSupportConfiguration")
+                .withUri("/api/v3/clusters/configuration/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("clusterType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterType,
+                ShowClusterSupportConfigurationRequest::setClusterType));
+        builder.<String>withRequestField("clusterVersion",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterVersion,
+                ShowClusterSupportConfigurationRequest::setClusterVersion));
+        builder.<String>withRequestField("clusterID",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterID,
+                ShowClusterSupportConfigurationRequest::setClusterID));
+        builder.<String>withRequestField("networkMode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getNetworkMode,
+                ShowClusterSupportConfigurationRequest::setNetworkMode));
+
+        // response
+        builder.<Map<String, List<PackageOptions>>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f
+                .withMarshaller(ShowClusterSupportConfigurationResponse::getBody,
+                    ShowClusterSupportConfigurationResponse::setBody)
+                .withInnerContainerType(List.class));
 
         return builder.build();
     }

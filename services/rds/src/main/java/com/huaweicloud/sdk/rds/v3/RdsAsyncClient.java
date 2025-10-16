@@ -77,6 +77,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationRequest;
@@ -105,6 +107,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeletePublicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeletePublicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteRdSforMySqlProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteRdSforMySqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlLimitRequest;
@@ -157,6 +161,10 @@ import com.huaweicloud.sdk.rds.v3.model.ListDatastoresRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDistributionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDistributionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDistributorInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDistributorInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDrInfosRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDrInfosResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDrRelationsRequest;
@@ -227,6 +235,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPublicationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPublicationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMysqlProxyFlavorsRequest;
@@ -267,6 +277,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyRequest;
@@ -283,6 +295,8 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
@@ -7364,6 +7378,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 创建订阅
+     *
+     * 创建订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubscriptionRequest 请求对象
+     * @return CompletableFuture<CreateSubscriptionResponse>
+     */
+    public CompletableFuture<CreateSubscriptionResponse> createSubscriptionAsync(CreateSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.createSubscription);
+    }
+
+    /**
+     * 创建订阅
+     *
+     * 创建订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubscriptionRequest 请求对象
+     * @return AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse>
+     */
+    public AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse> createSubscriptionAsyncInvoker(
+        CreateSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.createSubscription, hcClient);
+    }
+
+    /**
      * 删除MSDTC
      *
      * 删除MSDTC相关主机host地址
@@ -7391,6 +7434,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<DeleteMsdtcLocalHostRequest, DeleteMsdtcLocalHostResponse> deleteMsdtcLocalHostAsyncInvoker(
         DeleteMsdtcLocalHostRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.deleteMsdtcLocalHost, hcClient);
+    }
+
+    /**
+     * 删除发布
+     *
+     * 删除发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePublicationRequest 请求对象
+     * @return CompletableFuture<DeletePublicationResponse>
+     */
+    public CompletableFuture<DeletePublicationResponse> deletePublicationAsync(DeletePublicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deletePublication);
+    }
+
+    /**
+     * 删除发布
+     *
+     * 删除发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePublicationRequest 请求对象
+     * @return AsyncInvoker<DeletePublicationRequest, DeletePublicationResponse>
+     */
+    public AsyncInvoker<DeletePublicationRequest, DeletePublicationResponse> deletePublicationAsyncInvoker(
+        DeletePublicationRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.deletePublication, hcClient);
     }
 
     /**
@@ -7544,6 +7616,65 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询当前实例配置的分发服务器
+     *
+     * 查询当前实例配置的分发服务器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDistributionRequest 请求对象
+     * @return CompletableFuture<ListDistributionResponse>
+     */
+    public CompletableFuture<ListDistributionResponse> listDistributionAsync(ListDistributionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listDistribution);
+    }
+
+    /**
+     * 查询当前实例配置的分发服务器
+     *
+     * 查询当前实例配置的分发服务器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDistributionRequest 请求对象
+     * @return AsyncInvoker<ListDistributionRequest, ListDistributionResponse>
+     */
+    public AsyncInvoker<ListDistributionRequest, ListDistributionResponse> listDistributionAsyncInvoker(
+        ListDistributionRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listDistribution, hcClient);
+    }
+
+    /**
+     * 查询可配置为当前实例分发服务器的实例列表
+     *
+     * 查询可配置为当前实例分发服务器的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDistributorInstancesRequest 请求对象
+     * @return CompletableFuture<ListDistributorInstancesResponse>
+     */
+    public CompletableFuture<ListDistributorInstancesResponse> listDistributorInstancesAsync(
+        ListDistributorInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listDistributorInstances);
+    }
+
+    /**
+     * 查询可配置为当前实例分发服务器的实例列表
+     *
+     * 查询可配置为当前实例分发服务器的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDistributorInstancesRequest 请求对象
+     * @return AsyncInvoker<ListDistributorInstancesRequest, ListDistributorInstancesResponse>
+     */
+    public AsyncInvoker<ListDistributorInstancesRequest, ListDistributorInstancesResponse> listDistributorInstancesAsyncInvoker(
+        ListDistributorInstancesRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listDistributorInstances, hcClient);
+    }
+
+    /**
      * 查询云市场引擎商品列表
      *
      * 查询云市场引擎商品列表。
@@ -7600,6 +7731,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListMsdtcHostsRequest, ListMsdtcHostsResponse> listMsdtcHostsAsyncInvoker(
         ListMsdtcHostsRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listMsdtcHosts, hcClient);
+    }
+
+    /**
+     * 查询实例发布信息
+     *
+     * 查询实例发布信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPublicationsRequest 请求对象
+     * @return CompletableFuture<ListPublicationsResponse>
+     */
+    public CompletableFuture<ListPublicationsResponse> listPublicationsAsync(ListPublicationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listPublications);
+    }
+
+    /**
+     * 查询实例发布信息
+     *
+     * 查询实例发布信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPublicationsRequest 请求对象
+     * @return AsyncInvoker<ListPublicationsRequest, ListPublicationsResponse>
+     */
+    public AsyncInvoker<ListPublicationsRequest, ListPublicationsResponse> listPublicationsAsyncInvoker(
+        ListPublicationsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listPublications, hcClient);
     }
 
     /**
@@ -7663,6 +7823,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询可配置为当前实例订阅服务器的实例列表
+     *
+     * 查询可配置为当前实例订阅服务器的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriberInstancesRequest 请求对象
+     * @return CompletableFuture<ListSubscriberInstancesResponse>
+     */
+    public CompletableFuture<ListSubscriberInstancesResponse> listSubscriberInstancesAsync(
+        ListSubscriberInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSubscriberInstances);
+    }
+
+    /**
+     * 查询可配置为当前实例订阅服务器的实例列表
+     *
+     * 查询可配置为当前实例订阅服务器的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriberInstancesRequest 请求对象
+     * @return AsyncInvoker<ListSubscriberInstancesRequest, ListSubscriberInstancesResponse>
+     */
+    public AsyncInvoker<ListSubscriberInstancesRequest, ListSubscriberInstancesResponse> listSubscriberInstancesAsyncInvoker(
+        ListSubscriberInstancesRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listSubscriberInstances, hcClient);
+    }
+
+    /**
      * 修改实例字符集
      *
      * 修改实例字符集。
@@ -7689,6 +7879,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ModifyCollationRequest, ModifyCollationResponse> modifyCollationAsyncInvoker(
         ModifyCollationRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.modifyCollation, hcClient);
+    }
+
+    /**
+     * 修改发布
+     *
+     * 修改发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyPublicationRequest 请求对象
+     * @return CompletableFuture<ModifyPublicationResponse>
+     */
+    public CompletableFuture<ModifyPublicationResponse> modifyPublicationAsync(ModifyPublicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.modifyPublication);
+    }
+
+    /**
+     * 修改发布
+     *
+     * 修改发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyPublicationRequest 请求对象
+     * @return AsyncInvoker<ModifyPublicationRequest, ModifyPublicationResponse>
+     */
+    public AsyncInvoker<ModifyPublicationRequest, ModifyPublicationResponse> modifyPublicationAsyncInvoker(
+        ModifyPublicationRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.modifyPublication, hcClient);
     }
 
     /**

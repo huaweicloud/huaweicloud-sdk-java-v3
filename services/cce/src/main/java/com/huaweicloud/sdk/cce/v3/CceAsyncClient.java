@@ -100,8 +100,6 @@ import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaResponse;
-import com.huaweicloud.sdk.cce.v3.model.GetClusterSupportConfigurationRequest;
-import com.huaweicloud.sdk.cce.v3.model.GetClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetLabelsRequest;
@@ -232,6 +230,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowFeatureGatesRequest;
@@ -1366,36 +1366,6 @@ public class CceAsyncClient {
     }
 
     /**
-     * 获取集群支持的可配置参数列表
-     *
-     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetClusterSupportConfigurationRequest 请求对象
-     * @return CompletableFuture<GetClusterSupportConfigurationResponse>
-     */
-    public CompletableFuture<GetClusterSupportConfigurationResponse> getClusterSupportConfigurationAsync(
-        GetClusterSupportConfigurationRequest request) {
-        return hcClient.asyncInvokeHttp(request, CceMeta.getClusterSupportConfiguration);
-    }
-
-    /**
-     * 获取集群支持的可配置参数列表
-     *
-     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetClusterSupportConfigurationRequest 请求对象
-     * @return AsyncInvoker<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse>
-     */
-    public AsyncInvoker<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse> getClusterSupportConfigurationAsyncInvoker(
-        GetClusterSupportConfigurationRequest request) {
-        return new AsyncInvoker<>(request, CceMeta.getClusterSupportConfiguration, hcClient);
-    }
-
-    /**
      * 查询自定义标签
      *
      * 该API用于查询自定义标签
@@ -2481,6 +2451,36 @@ public class CceAsyncClient {
     public AsyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> showClusterEndpointsAsyncInvoker(
         ShowClusterEndpointsRequest request) {
         return new AsyncInvoker<>(request, CceMeta.showClusterEndpoints, hcClient);
+    }
+
+    /**
+     * 获取集群支持的可配置参数列表
+     *
+     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterSupportConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowClusterSupportConfigurationResponse>
+     */
+    public CompletableFuture<ShowClusterSupportConfigurationResponse> showClusterSupportConfigurationAsync(
+        ShowClusterSupportConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showClusterSupportConfiguration);
+    }
+
+    /**
+     * 获取集群支持的可配置参数列表
+     *
+     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterSupportConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse>
+     */
+    public AsyncInvoker<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> showClusterSupportConfigurationAsyncInvoker(
+        ShowClusterSupportConfigurationRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.showClusterSupportConfiguration, hcClient);
     }
 
     /**

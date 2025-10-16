@@ -100,8 +100,6 @@ import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaResponse;
-import com.huaweicloud.sdk.cce.v3.model.GetClusterSupportConfigurationRequest;
-import com.huaweicloud.sdk.cce.v3.model.GetClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetLabelsRequest;
@@ -232,6 +230,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowFeatureGatesRequest;
@@ -1351,36 +1351,6 @@ public class CceClient {
     }
 
     /**
-     * 获取集群支持的可配置参数列表
-     *
-     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetClusterSupportConfigurationRequest 请求对象
-     * @return GetClusterSupportConfigurationResponse
-     */
-    public GetClusterSupportConfigurationResponse getClusterSupportConfiguration(
-        GetClusterSupportConfigurationRequest request) {
-        return hcClient.syncInvokeHttp(request, CceMeta.getClusterSupportConfiguration);
-    }
-
-    /**
-     * 获取集群支持的可配置参数列表
-     *
-     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request GetClusterSupportConfigurationRequest 请求对象
-     * @return SyncInvoker<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse>
-     */
-    public SyncInvoker<GetClusterSupportConfigurationRequest, GetClusterSupportConfigurationResponse> getClusterSupportConfigurationInvoker(
-        GetClusterSupportConfigurationRequest request) {
-        return new SyncInvoker<>(request, CceMeta.getClusterSupportConfiguration, hcClient);
-    }
-
-    /**
      * 查询自定义标签
      *
      * 该API用于查询自定义标签
@@ -2452,6 +2422,36 @@ public class CceClient {
     public SyncInvoker<ShowClusterEndpointsRequest, ShowClusterEndpointsResponse> showClusterEndpointsInvoker(
         ShowClusterEndpointsRequest request) {
         return new SyncInvoker<>(request, CceMeta.showClusterEndpoints, hcClient);
+    }
+
+    /**
+     * 获取集群支持的可配置参数列表
+     *
+     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterSupportConfigurationRequest 请求对象
+     * @return ShowClusterSupportConfigurationResponse
+     */
+    public ShowClusterSupportConfigurationResponse showClusterSupportConfiguration(
+        ShowClusterSupportConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.showClusterSupportConfiguration);
+    }
+
+    /**
+     * 获取集群支持的可配置参数列表
+     *
+     * 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterSupportConfigurationRequest 请求对象
+     * @return SyncInvoker<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse>
+     */
+    public SyncInvoker<ShowClusterSupportConfigurationRequest, ShowClusterSupportConfigurationResponse> showClusterSupportConfigurationInvoker(
+        ShowClusterSupportConfigurationRequest request) {
+        return new SyncInvoker<>(request, CceMeta.showClusterSupportConfiguration, hcClient);
     }
 
     /**

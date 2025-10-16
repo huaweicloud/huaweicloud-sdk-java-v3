@@ -55,6 +55,8 @@ import com.huaweicloud.sdk.dds.v3.model.DeleteDatabaseUserRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteDatabaseUserResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteIpRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteIpResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigRequest;
@@ -1017,6 +1019,34 @@ public class DdsClient {
     public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
         DeleteInstanceRequest request) {
         return new SyncInvoker<>(request, DdsMeta.deleteInstance, hcClient);
+    }
+
+    /**
+     * 删除集群的Shard/Config IP
+     *
+     * 删除集群的Shard/Config IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpRequest 请求对象
+     * @return DeleteIpResponse
+     */
+    public DeleteIpResponse deleteIp(DeleteIpRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteIp);
+    }
+
+    /**
+     * 删除集群的Shard/Config IP
+     *
+     * 删除集群的Shard/Config IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpRequest 请求对象
+     * @return SyncInvoker<DeleteIpRequest, DeleteIpResponse>
+     */
+    public SyncInvoker<DeleteIpRequest, DeleteIpResponse> deleteIpInvoker(DeleteIpRequest request) {
+        return new SyncInvoker<>(request, DdsMeta.deleteIp, hcClient);
     }
 
     /**

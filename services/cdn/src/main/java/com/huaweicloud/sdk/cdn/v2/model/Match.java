@@ -21,7 +21,7 @@ public class Match {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "criteria")
 
-    private List<Criteria> criteria = null;
+    private List<CriteriaItem> criteria = null;
 
     public Match withLogic(String logic) {
         this.logic = logic;
@@ -40,12 +40,12 @@ public class Match {
         this.logic = logic;
     }
 
-    public Match withCriteria(List<Criteria> criteria) {
+    public Match withCriteria(List<CriteriaItem> criteria) {
         this.criteria = criteria;
         return this;
     }
 
-    public Match addCriteriaItem(Criteria criteriaItem) {
+    public Match addCriteriaItem(CriteriaItem criteriaItem) {
         if (this.criteria == null) {
             this.criteria = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class Match {
         return this;
     }
 
-    public Match withCriteria(Consumer<List<Criteria>> criteriaSetter) {
+    public Match withCriteria(Consumer<List<CriteriaItem>> criteriaSetter) {
         if (this.criteria == null) {
             this.criteria = new ArrayList<>();
         }
@@ -65,11 +65,11 @@ public class Match {
      * **参数解释：** 匹配条件列表 **约束限制：** 不涉及
      * @return criteria
      */
-    public List<Criteria> getCriteria() {
+    public List<CriteriaItem> getCriteria() {
         return criteria;
     }
 
-    public void setCriteria(List<Criteria> criteria) {
+    public void setCriteria(List<CriteriaItem> criteria) {
         this.criteria = criteria;
     }
 

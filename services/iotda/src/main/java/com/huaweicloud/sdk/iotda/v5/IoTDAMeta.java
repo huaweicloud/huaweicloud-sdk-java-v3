@@ -83,6 +83,9 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOtaModule;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOtaModuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackage;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
@@ -139,6 +142,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaModuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
@@ -205,6 +210,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListOtaModulesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListOtaModulesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
@@ -279,6 +286,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowOtaModuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
@@ -347,6 +356,9 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateFlowControlPolicy;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModule;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProduct;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
@@ -4010,6 +4022,171 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceMessageRequest::getInstanceId, ShowDeviceMessageRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOtaModuleRequest, CreateOtaModuleResponse> createOtaModule =
+        genForCreateOtaModule();
+
+    private static HttpRequestDef<CreateOtaModuleRequest, CreateOtaModuleResponse> genForCreateOtaModule() {
+        // basic
+        HttpRequestDef.Builder<CreateOtaModuleRequest, CreateOtaModuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOtaModuleRequest.class, CreateOtaModuleResponse.class)
+                .withName("CreateOtaModule")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/modules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOtaModuleRequest::getInstanceId, CreateOtaModuleRequest::setInstanceId));
+        builder.<CreateOtaModule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOtaModule.class),
+            f -> f.withMarshaller(CreateOtaModuleRequest::getBody, CreateOtaModuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOtaModuleRequest, DeleteOtaModuleResponse> deleteOtaModule =
+        genForDeleteOtaModule();
+
+    private static HttpRequestDef<DeleteOtaModuleRequest, DeleteOtaModuleResponse> genForDeleteOtaModule() {
+        // basic
+        HttpRequestDef.Builder<DeleteOtaModuleRequest, DeleteOtaModuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteOtaModuleRequest.class, DeleteOtaModuleResponse.class)
+                .withName("DeleteOtaModule")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOtaModuleRequest::getModuleId, DeleteOtaModuleRequest::setModuleId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOtaModuleRequest::getInstanceId, DeleteOtaModuleRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOtaModulesRequest, ListOtaModulesResponse> listOtaModules =
+        genForListOtaModules();
+
+    private static HttpRequestDef<ListOtaModulesRequest, ListOtaModulesResponse> genForListOtaModules() {
+        // basic
+        HttpRequestDef.Builder<ListOtaModulesRequest, ListOtaModulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOtaModulesRequest.class, ListOtaModulesResponse.class)
+                .withName("ListOtaModules")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/modules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaModulesRequest::getAppId, ListOtaModulesRequest::setAppId));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaModulesRequest::getProductId, ListOtaModulesRequest::setProductId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOtaModulesRequest::getLimit, ListOtaModulesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaModulesRequest::getMarker, ListOtaModulesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOtaModulesRequest::getOffset, ListOtaModulesRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOtaModulesRequest::getInstanceId, ListOtaModulesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOtaModuleRequest, ShowOtaModuleResponse> showOtaModule =
+        genForShowOtaModule();
+
+    private static HttpRequestDef<ShowOtaModuleRequest, ShowOtaModuleResponse> genForShowOtaModule() {
+        // basic
+        HttpRequestDef.Builder<ShowOtaModuleRequest, ShowOtaModuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOtaModuleRequest.class, ShowOtaModuleResponse.class)
+                .withName("ShowOtaModule")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOtaModuleRequest::getModuleId, ShowOtaModuleRequest::setModuleId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOtaModuleRequest::getInstanceId, ShowOtaModuleRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOtaModuleRequest, UpdateOtaModuleResponse> updateOtaModule =
+        genForUpdateOtaModule();
+
+    private static HttpRequestDef<UpdateOtaModuleRequest, UpdateOtaModuleResponse> genForUpdateOtaModule() {
+        // basic
+        HttpRequestDef.Builder<UpdateOtaModuleRequest, UpdateOtaModuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateOtaModuleRequest.class, UpdateOtaModuleResponse.class)
+                .withName("UpdateOtaModule")
+                .withUri("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOtaModuleRequest::getModuleId, UpdateOtaModuleRequest::setModuleId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOtaModuleRequest::getInstanceId, UpdateOtaModuleRequest::setInstanceId));
+        builder.<UpdateOtaModule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOtaModule.class),
+            f -> f.withMarshaller(UpdateOtaModuleRequest::getBody, UpdateOtaModuleRequest::setBody));
 
         // response
 

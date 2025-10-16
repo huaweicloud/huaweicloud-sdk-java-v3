@@ -192,7 +192,7 @@ public class ListHbaInfoHistoryRequest {
     }
 
     /**
-     * **参数描述** 偏移量。 **约束限制**: 不涉及。 **取值范围** 大于等于0。 **默认值** 0 
+     * **参数解释** 偏移量。 **约束限制**: 不涉及。 **取值范围** 大于等于0。 **默认值** 0 
      * @return offset
      */
     public Integer getOffset() {
@@ -209,7 +209,7 @@ public class ListHbaInfoHistoryRequest {
     }
 
     /**
-     * **参数描述** 每页显示的条目数量。 **约束限制**: 不涉及。 **取值范围** [1, 100] **默认值** 10 
+     * **参数解释** 每页显示的条目数量。 **约束限制**: 不涉及。 **取值范围** [1, 100] **默认值** 10 
      * @return limit
      */
     public Integer getLimit() {

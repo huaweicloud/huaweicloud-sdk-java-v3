@@ -29,6 +29,11 @@ public class CreateSqlLimitTaskRequestBody {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_model")
+
+    private String sqlModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_type")
 
     private String limitType;
@@ -122,6 +127,23 @@ public class CreateSqlLimitTaskRequestBody {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public CreateSqlLimitTaskRequestBody withSqlModel(String sqlModel) {
+        this.sqlModel = sqlModel;
+        return this;
+    }
+
+    /**
+     * **参数解释**: SQL模板。 **约束限制**: 如果“limit_type”为SQLID，必传。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+     * @return sqlModel
+     */
+    public String getSqlModel() {
+        return sqlModel;
+    }
+
+    public void setSqlModel(String sqlModel) {
+        this.sqlModel = sqlModel;
     }
 
     public CreateSqlLimitTaskRequestBody withLimitType(String limitType) {
@@ -303,7 +325,8 @@ public class CreateSqlLimitTaskRequestBody {
         }
         CreateSqlLimitTaskRequestBody that = (CreateSqlLimitTaskRequestBody) obj;
         return Objects.equals(this.taskScope, that.taskScope) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limitType, that.limitType)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.sqlModel, that.sqlModel)
+            && Objects.equals(this.limitType, that.limitType)
             && Objects.equals(this.limitTypeValue, that.limitTypeValue) && Objects.equals(this.keyWords, that.keyWords)
             && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.parallelSize, that.parallelSize)
             && Objects.equals(this.cpuUtilization, that.cpuUtilization)
@@ -316,6 +339,7 @@ public class CreateSqlLimitTaskRequestBody {
         return Objects.hash(taskScope,
             startTime,
             endTime,
+            sqlModel,
             limitType,
             limitTypeValue,
             keyWords,
@@ -334,6 +358,7 @@ public class CreateSqlLimitTaskRequestBody {
         sb.append("    taskScope: ").append(toIndentedString(taskScope)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    sqlModel: ").append(toIndentedString(sqlModel)).append("\n");
         sb.append("    limitType: ").append(toIndentedString(limitType)).append("\n");
         sb.append("    limitTypeValue: ").append(toIndentedString(limitTypeValue)).append("\n");
         sb.append("    keyWords: ").append(toIndentedString(keyWords)).append("\n");

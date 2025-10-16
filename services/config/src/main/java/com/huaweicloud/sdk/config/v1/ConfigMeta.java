@@ -120,6 +120,8 @@ import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesByDomainIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesByDomainIdResponse;
 import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesByResourceIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesByResourceIdResponse;
+import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesStatisticsRequest;
+import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesStatisticsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListProvidersRequest;
 import com.huaweicloud.sdk.config.v1.model.ListProvidersResponse;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsRequest;
@@ -2331,6 +2333,27 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPolicyStatesByResourceIdRequest::getMarker,
                 ListPolicyStatesByResourceIdRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPolicyStatesStatisticsRequest, ListPolicyStatesStatisticsResponse> listPolicyStatesStatistics =
+        genForListPolicyStatesStatistics();
+
+    private static HttpRequestDef<ListPolicyStatesStatisticsRequest, ListPolicyStatesStatisticsResponse> genForListPolicyStatesStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListPolicyStatesStatisticsRequest, ListPolicyStatesStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPolicyStatesStatisticsRequest.class,
+                    ListPolicyStatesStatisticsResponse.class)
+                .withName("ListPolicyStatesStatistics")
+                .withUri("/v1/resource-manager/domains/{domain_id}/policy-states/statistics")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

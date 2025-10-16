@@ -57,6 +57,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOtaModuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateProductRequest;
@@ -111,6 +113,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaModuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
@@ -171,6 +175,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListOtaModulesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListOtaModulesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
@@ -237,6 +243,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowOtaModuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
@@ -289,6 +297,8 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesRequest;
@@ -3596,6 +3606,151 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<ShowDeviceMessageRequest, ShowDeviceMessageResponse> showDeviceMessageAsyncInvoker(
         ShowDeviceMessageRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.showDeviceMessage, hcClient);
+    }
+
+    /**
+     * 创建OTA模块
+     *
+     * 用户可调用此接口创建产品的OTA模块,同一产品下最多自定义10个OTA模块。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOtaModuleRequest 请求对象
+     * @return CompletableFuture<CreateOtaModuleResponse>
+     */
+    public CompletableFuture<CreateOtaModuleResponse> createOtaModuleAsync(CreateOtaModuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createOtaModule);
+    }
+
+    /**
+     * 创建OTA模块
+     *
+     * 用户可调用此接口创建产品的OTA模块,同一产品下最多自定义10个OTA模块。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOtaModuleRequest 请求对象
+     * @return AsyncInvoker<CreateOtaModuleRequest, CreateOtaModuleResponse>
+     */
+    public AsyncInvoker<CreateOtaModuleRequest, CreateOtaModuleResponse> createOtaModuleAsyncInvoker(
+        CreateOtaModuleRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.createOtaModule, hcClient);
+    }
+
+    /**
+     * 删除OTA模块
+     *
+     * 用户可调用此接口删除产品对应的OTA模块
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOtaModuleRequest 请求对象
+     * @return CompletableFuture<DeleteOtaModuleResponse>
+     */
+    public CompletableFuture<DeleteOtaModuleResponse> deleteOtaModuleAsync(DeleteOtaModuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteOtaModule);
+    }
+
+    /**
+     * 删除OTA模块
+     *
+     * 用户可调用此接口删除产品对应的OTA模块
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOtaModuleRequest 请求对象
+     * @return AsyncInvoker<DeleteOtaModuleRequest, DeleteOtaModuleResponse>
+     */
+    public AsyncInvoker<DeleteOtaModuleRequest, DeleteOtaModuleResponse> deleteOtaModuleAsyncInvoker(
+        DeleteOtaModuleRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteOtaModule, hcClient);
+    }
+
+    /**
+     * 查询OTA模块列表
+     *
+     * 用户可调用此接口查询指定产品的OTA模块列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOtaModulesRequest 请求对象
+     * @return CompletableFuture<ListOtaModulesResponse>
+     */
+    public CompletableFuture<ListOtaModulesResponse> listOtaModulesAsync(ListOtaModulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listOtaModules);
+    }
+
+    /**
+     * 查询OTA模块列表
+     *
+     * 用户可调用此接口查询指定产品的OTA模块列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOtaModulesRequest 请求对象
+     * @return AsyncInvoker<ListOtaModulesRequest, ListOtaModulesResponse>
+     */
+    public AsyncInvoker<ListOtaModulesRequest, ListOtaModulesResponse> listOtaModulesAsyncInvoker(
+        ListOtaModulesRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listOtaModules, hcClient);
+    }
+
+    /**
+     * 查询OTA模块详情
+     *
+     * 用户可调用此接口查询OTA模块详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOtaModuleRequest 请求对象
+     * @return CompletableFuture<ShowOtaModuleResponse>
+     */
+    public CompletableFuture<ShowOtaModuleResponse> showOtaModuleAsync(ShowOtaModuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showOtaModule);
+    }
+
+    /**
+     * 查询OTA模块详情
+     *
+     * 用户可调用此接口查询OTA模块详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOtaModuleRequest 请求对象
+     * @return AsyncInvoker<ShowOtaModuleRequest, ShowOtaModuleResponse>
+     */
+    public AsyncInvoker<ShowOtaModuleRequest, ShowOtaModuleResponse> showOtaModuleAsyncInvoker(
+        ShowOtaModuleRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.showOtaModule, hcClient);
+    }
+
+    /**
+     * 修改OTA模块
+     *
+     * 用户可调用此接口修改对应的OTA模块的别名和描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOtaModuleRequest 请求对象
+     * @return CompletableFuture<UpdateOtaModuleResponse>
+     */
+    public CompletableFuture<UpdateOtaModuleResponse> updateOtaModuleAsync(UpdateOtaModuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateOtaModule);
+    }
+
+    /**
+     * 修改OTA模块
+     *
+     * 用户可调用此接口修改对应的OTA模块的别名和描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOtaModuleRequest 请求对象
+     * @return AsyncInvoker<UpdateOtaModuleRequest, UpdateOtaModuleResponse>
+     */
+    public AsyncInvoker<UpdateOtaModuleRequest, UpdateOtaModuleResponse> updateOtaModuleAsyncInvoker(
+        UpdateOtaModuleRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.updateOtaModule, hcClient);
     }
 
     /**

@@ -110,6 +110,11 @@ public class AddDeviceResponse extends SdkResponse {
     private List<TagV5DTO> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modules")
+
+    private List<ModuleDTO> modules = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extension_info")
 
     private Object extensionInfo;
@@ -462,6 +467,39 @@ public class AddDeviceResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public AddDeviceResponse withModules(List<ModuleDTO> modules) {
+        this.modules = modules;
+        return this;
+    }
+
+    public AddDeviceResponse addModulesItem(ModuleDTO modulesItem) {
+        if (this.modules == null) {
+            this.modules = new ArrayList<>();
+        }
+        this.modules.add(modulesItem);
+        return this;
+    }
+
+    public AddDeviceResponse withModules(Consumer<List<ModuleDTO>> modulesSetter) {
+        if (this.modules == null) {
+            this.modules = new ArrayList<>();
+        }
+        modulesSetter.accept(this.modules);
+        return this;
+    }
+
+    /**
+     * 设备的OTA模块列表。
+     * @return modules
+     */
+    public List<ModuleDTO> getModules() {
+        return modules;
+    }
+
+    public void setModules(List<ModuleDTO> modules) {
+        this.modules = modules;
+    }
+
     public AddDeviceResponse withExtensionInfo(Object extensionInfo) {
         this.extensionInfo = extensionInfo;
         return this;
@@ -499,7 +537,7 @@ public class AddDeviceResponse extends SdkResponse {
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.connectionStatusUpdateTime, that.connectionStatusUpdateTime)
             && Objects.equals(this.activeTime, that.activeTime) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.extensionInfo, that.extensionInfo);
+            && Objects.equals(this.modules, that.modules) && Objects.equals(this.extensionInfo, that.extensionInfo);
     }
 
     @Override
@@ -523,6 +561,7 @@ public class AddDeviceResponse extends SdkResponse {
             connectionStatusUpdateTime,
             activeTime,
             tags,
+            modules,
             extensionInfo);
     }
 
@@ -549,6 +588,7 @@ public class AddDeviceResponse extends SdkResponse {
         sb.append("    connectionStatusUpdateTime: ").append(toIndentedString(connectionStatusUpdateTime)).append("\n");
         sb.append("    activeTime: ").append(toIndentedString(activeTime)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    modules: ").append(toIndentedString(modules)).append("\n");
         sb.append("    extensionInfo: ").append(toIndentedString(extensionInfo)).append("\n");
         sb.append("}");
         return sb.toString();

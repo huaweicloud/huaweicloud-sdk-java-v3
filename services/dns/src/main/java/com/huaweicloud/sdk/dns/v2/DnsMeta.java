@@ -37,6 +37,11 @@ import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateAuthorizeTxtRecordRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateAuthorizeTxtRecordRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.CreateAuthorizeTxtRecordResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateAuthorizeTxtRecordVerificationRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateAuthorizeTxtRecordVerificationResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineResponse;
@@ -153,6 +158,8 @@ import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowAuthorizeTxtRecordRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowAuthorizeTxtRecordResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowDnssecConfigRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowDnssecConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowDomainQuotaRequest;
@@ -525,6 +532,57 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineRequestBody.class),
             f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody,
                 BatchUpdateRecordSetWithLineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAuthorizeTxtRecordRequest, CreateAuthorizeTxtRecordResponse> createAuthorizeTxtRecord =
+        genForCreateAuthorizeTxtRecord();
+
+    private static HttpRequestDef<CreateAuthorizeTxtRecordRequest, CreateAuthorizeTxtRecordResponse> genForCreateAuthorizeTxtRecord() {
+        // basic
+        HttpRequestDef.Builder<CreateAuthorizeTxtRecordRequest, CreateAuthorizeTxtRecordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateAuthorizeTxtRecordRequest.class, CreateAuthorizeTxtRecordResponse.class)
+                .withName("CreateAuthorizeTxtRecord")
+                .withUri("/v2/authorize-txtrecord")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateAuthorizeTxtRecordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAuthorizeTxtRecordRequestBody.class),
+            f -> f.withMarshaller(CreateAuthorizeTxtRecordRequest::getBody, CreateAuthorizeTxtRecordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAuthorizeTxtRecordVerificationRequest, CreateAuthorizeTxtRecordVerificationResponse> createAuthorizeTxtRecordVerification =
+        genForCreateAuthorizeTxtRecordVerification();
+
+    private static HttpRequestDef<CreateAuthorizeTxtRecordVerificationRequest, CreateAuthorizeTxtRecordVerificationResponse> genForCreateAuthorizeTxtRecordVerification() {
+        // basic
+        HttpRequestDef.Builder<CreateAuthorizeTxtRecordVerificationRequest, CreateAuthorizeTxtRecordVerificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAuthorizeTxtRecordVerificationRequest.class,
+                    CreateAuthorizeTxtRecordVerificationResponse.class)
+                .withName("CreateAuthorizeTxtRecordVerification")
+                .withUri("/v2/authorize-txtrecord/{id}/verify")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAuthorizeTxtRecordVerificationRequest::getId,
+                CreateAuthorizeTxtRecordVerificationRequest::setId));
 
         // response
 
@@ -1550,6 +1608,30 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiInfoRequest::getVersion, ShowApiInfoRequest::setVersion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAuthorizeTxtRecordRequest, ShowAuthorizeTxtRecordResponse> showAuthorizeTxtRecord =
+        genForShowAuthorizeTxtRecord();
+
+    private static HttpRequestDef<ShowAuthorizeTxtRecordRequest, ShowAuthorizeTxtRecordResponse> genForShowAuthorizeTxtRecord() {
+        // basic
+        HttpRequestDef.Builder<ShowAuthorizeTxtRecordRequest, ShowAuthorizeTxtRecordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAuthorizeTxtRecordRequest.class, ShowAuthorizeTxtRecordResponse.class)
+            .withName("ShowAuthorizeTxtRecord")
+            .withUri("/v2/authorize-txtrecord")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAuthorizeTxtRecordRequest::getZoneName,
+                ShowAuthorizeTxtRecordRequest::setZoneName));
 
         // response
 

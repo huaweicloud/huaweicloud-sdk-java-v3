@@ -78,6 +78,9 @@ import com.huaweicloud.sdk.dds.v3.model.DeleteDatabaseUserRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.DeleteDatabaseUserResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteIpRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteIpRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.DeleteIpResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListResponse;
@@ -1014,6 +1017,33 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteIpRequest, DeleteIpResponse> deleteIp = genForDeleteIp();
+
+    private static HttpRequestDef<DeleteIpRequest, DeleteIpResponse> genForDeleteIp() {
+        // basic
+        HttpRequestDef.Builder<DeleteIpRequest, DeleteIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteIpRequest.class, DeleteIpResponse.class)
+                .withName("DeleteIp")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpRequest::getInstanceId, DeleteIpRequest::setInstanceId));
+        builder.<DeleteIpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteIpRequestBody.class),
+            f -> f.withMarshaller(DeleteIpRequest::getBody, DeleteIpRequest::setBody));
 
         // response
 

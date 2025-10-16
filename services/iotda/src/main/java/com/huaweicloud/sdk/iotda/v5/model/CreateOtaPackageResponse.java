@@ -35,6 +35,16 @@ public class CreateOtaPackageResponse extends SdkResponse {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_name")
+
+    private String productName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "module_name")
+
+    private String moduleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -130,6 +140,40 @@ public class CreateOtaPackageResponse extends SdkResponse {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public CreateOtaPackageResponse withProductName(String productName) {
+        this.productName = productName;
+        return this;
+    }
+
+    /**
+     * 设备关联的产品名称
+     * @return productName
+     */
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public CreateOtaPackageResponse withModuleName(String moduleName) {
+        this.moduleName = moduleName;
+        return this;
+    }
+
+    /**
+     * **参数说明**：OTA模块名称，产品下唯一且不可修改。 **取值范围**：长度不超过64，号只允许字母、数字、下划线（_）、连接符（-）、英文点（.）的组合。
+     * @return moduleName
+     */
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
     }
 
     public CreateOtaPackageResponse withVersion(String version) {
@@ -270,6 +314,7 @@ public class CreateOtaPackageResponse extends SdkResponse {
         CreateOtaPackageResponse that = (CreateOtaPackageResponse) obj;
         return Objects.equals(this.packageId, that.packageId) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.productName, that.productName) && Objects.equals(this.moduleName, that.moduleName)
             && Objects.equals(this.version, that.version)
             && Objects.equals(this.supportSourceVersions, that.supportSourceVersions)
             && Objects.equals(this.description, that.description) && Objects.equals(this.customInfo, that.customInfo)
@@ -282,6 +327,8 @@ public class CreateOtaPackageResponse extends SdkResponse {
             appId,
             packageType,
             productId,
+            productName,
+            moduleName,
             version,
             supportSourceVersions,
             description,
@@ -298,6 +345,8 @@ public class CreateOtaPackageResponse extends SdkResponse {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+        sb.append("    moduleName: ").append(toIndentedString(moduleName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    supportSourceVersions: ").append(toIndentedString(supportSourceVersions)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

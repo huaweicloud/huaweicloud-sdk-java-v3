@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListSQLExcuteNodeRequestBody {
 
     /**
-     * **参数描述**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
+     * **参数解释**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
      */
     public static final class ActionEnum {
 
@@ -90,7 +90,7 @@ public class ListSQLExcuteNodeRequestBody {
     }
 
     /**
-     * **参数描述**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
+     * **参数解释**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
      * @return action
      */
     public ActionEnum getAction() {

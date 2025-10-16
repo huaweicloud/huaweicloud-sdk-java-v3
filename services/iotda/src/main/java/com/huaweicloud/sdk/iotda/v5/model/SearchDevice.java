@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.iotda.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 设备搜索结果结构体
@@ -84,6 +87,11 @@ public class SearchDevice {
     @JsonProperty(value = "tags")
 
     private Object tags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modules")
+
+    private List<ModuleSearchDTO> modules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "marker")
@@ -345,6 +353,39 @@ public class SearchDevice {
         this.tags = tags;
     }
 
+    public SearchDevice withModules(List<ModuleSearchDTO> modules) {
+        this.modules = modules;
+        return this;
+    }
+
+    public SearchDevice addModulesItem(ModuleSearchDTO modulesItem) {
+        if (this.modules == null) {
+            this.modules = new ArrayList<>();
+        }
+        this.modules.add(modulesItem);
+        return this;
+    }
+
+    public SearchDevice withModules(Consumer<List<ModuleSearchDTO>> modulesSetter) {
+        if (this.modules == null) {
+            this.modules = new ArrayList<>();
+        }
+        modulesSetter.accept(this.modules);
+        return this;
+    }
+
+    /**
+     * 设备的OTA模块列表。
+     * @return modules
+     */
+    public List<ModuleSearchDTO> getModules() {
+        return modules;
+    }
+
+    public void setModules(List<ModuleSearchDTO> modules) {
+        this.modules = modules;
+    }
+
     public SearchDevice withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -379,7 +420,8 @@ public class SearchDevice {
             && Objects.equals(this.deviceSdkVersion, that.deviceSdkVersion)
             && Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
             && Objects.equals(this.groups, that.groups) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.marker, that.marker);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.modules, that.modules)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
@@ -399,6 +441,7 @@ public class SearchDevice {
             groups,
             status,
             tags,
+            modules,
             marker);
     }
 
@@ -421,6 +464,7 @@ public class SearchDevice {
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    modules: ").append(toIndentedString(modules)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();

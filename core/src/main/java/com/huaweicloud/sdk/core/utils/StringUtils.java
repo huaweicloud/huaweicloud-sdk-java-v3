@@ -21,6 +21,8 @@
 
 package com.huaweicloud.sdk.core.utils;
 
+import java.util.Arrays;
+
 /**
  * The type String utils
  *
@@ -63,5 +65,29 @@ public final class StringUtils {
             }
         }
         return sb.toString();
+    }
+
+    public static String mask(String input, double maskRatio, char maskChar) {
+        if (isEmpty(input) || maskRatio <= 0) {
+            return input;
+        }
+
+        if (maskRatio >= 1) {
+            char[] chars = new char[input.length()];
+            Arrays.fill(chars, maskChar);
+            return new String(chars);
+        }
+        int maskLength = (int) (input.length() * maskRatio);
+        int start = Math.max(0, (input.length() - maskLength) / 2);
+        int end = Math.min(input.length(), start + maskLength);
+        char[] chars = input.toCharArray();
+        for (int i = start; i < end; i++) {
+            chars[i] = maskChar;
+        }
+        return new String(chars);
+    }
+
+    public static String mask(String input) {
+        return mask(input, 0.7, '*');
     }
 }

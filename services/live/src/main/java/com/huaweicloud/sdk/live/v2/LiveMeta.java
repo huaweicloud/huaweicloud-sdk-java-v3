@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.live.v2.model.ListSingleStreamFramerateRequest;
 import com.huaweicloud.sdk.live.v2.model.ListSingleStreamFramerateResponse;
 import com.huaweicloud.sdk.live.v2.model.ListSnapshotDataRequest;
 import com.huaweicloud.sdk.live.v2.model.ListSnapshotDataResponse;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumRequest;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumResponse;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataRequest;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataResponse;
 import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailRequest;
@@ -660,6 +662,63 @@ public class LiveMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListSnapshotDataResponse::getXRequestId, ListSnapshotDataResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTranscodeConcurrencyNumRequest, ListTranscodeConcurrencyNumResponse> listTranscodeConcurrencyNum =
+        genForListTranscodeConcurrencyNum();
+
+    private static HttpRequestDef<ListTranscodeConcurrencyNumRequest, ListTranscodeConcurrencyNumResponse> genForListTranscodeConcurrencyNum() {
+        // basic
+        HttpRequestDef.Builder<ListTranscodeConcurrencyNumRequest, ListTranscodeConcurrencyNumResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTranscodeConcurrencyNumRequest.class,
+                    ListTranscodeConcurrencyNumResponse.class)
+                .withName("ListTranscodeConcurrencyNum")
+                .withUri("/v2/{project_id}/stats/transcode/concurrency")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("publish_domains",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTranscodeConcurrencyNumRequest::getPublishDomains,
+                ListTranscodeConcurrencyNumRequest::setPublishDomains));
+        builder.<String>withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeConcurrencyNumRequest::getApp,
+                ListTranscodeConcurrencyNumRequest::setApp));
+        builder.<ListTranscodeConcurrencyNumRequest.IntervalEnum>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTranscodeConcurrencyNumRequest.IntervalEnum.class),
+            f -> f.withMarshaller(ListTranscodeConcurrencyNumRequest::getInterval,
+                ListTranscodeConcurrencyNumRequest::setInterval));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeConcurrencyNumRequest::getStartTime,
+                ListTranscodeConcurrencyNumRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeConcurrencyNumRequest::getEndTime,
+                ListTranscodeConcurrencyNumRequest::setEndTime));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTranscodeConcurrencyNumResponse::getXRequestId,
+                ListTranscodeConcurrencyNumResponse::setXRequestId));
         return builder.build();
     }
 

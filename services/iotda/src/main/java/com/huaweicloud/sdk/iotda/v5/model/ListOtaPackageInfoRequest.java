@@ -90,7 +90,7 @@ public class ListOtaPackageInfoRequest {
     }
 
     /**
-     * **参数说明**：升级包类型。 **取值范围**：软件包必须设置为：softwarePackage，固件包必须设置为：firmwarePackage。
+     * **参数说明**：升级包类型。 **取值范围**：软件包必须设置为：softwarePackage，固件包必须设置为：firmwarePackage, OTA模块升级包必须设置为：modulePackage。
      * @return packageType
      */
     public String getPackageType() {

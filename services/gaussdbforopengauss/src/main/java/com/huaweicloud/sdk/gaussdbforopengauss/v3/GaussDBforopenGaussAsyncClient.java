@@ -247,8 +247,14 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSchemaAndTableResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionMemoryContextRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionMemoryContextResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionStatisticsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionStatisticsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionTopSqlStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionTopSqlStatisticsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionWaitEventStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSessionWaitEventStatisticsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlDetailsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlDetailsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSlowSqlsRequest;
@@ -2360,7 +2366,7 @@ public class GaussDBforopenGaussAsyncClient {
     /**
      * 查询数据库占用空间大小列表
      *
-     * 查询限流任务详情
+     * 查询数据库占用空间大小列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2374,7 +2380,7 @@ public class GaussDBforopenGaussAsyncClient {
     /**
      * 查询数据库占用空间大小列表
      *
-     * 查询限流任务详情
+     * 查询数据库占用空间大小列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3623,6 +3629,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查询会话内存上下文列表
+     *
+     * 查询数据库实例节点的会话内存上下文列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSessionMemoryContextRequest 请求对象
+     * @return CompletableFuture<ListSessionMemoryContextResponse>
+     */
+    public CompletableFuture<ListSessionMemoryContextResponse> listSessionMemoryContextAsync(
+        ListSessionMemoryContextRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSessionMemoryContext);
+    }
+
+    /**
+     * 查询会话内存上下文列表
+     *
+     * 查询数据库实例节点的会话内存上下文列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSessionMemoryContextRequest 请求对象
+     * @return AsyncInvoker<ListSessionMemoryContextRequest, ListSessionMemoryContextResponse>
+     */
+    public AsyncInvoker<ListSessionMemoryContextRequest, ListSessionMemoryContextResponse> listSessionMemoryContextAsyncInvoker(
+        ListSessionMemoryContextRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSessionMemoryContext, hcClient);
+    }
+
+    /**
      * 查询实时会话统计
      *
      * 查询数据库实例节点的实时会话统计信息。
@@ -3650,6 +3686,66 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListSessionStatisticsRequest, ListSessionStatisticsResponse> listSessionStatisticsAsyncInvoker(
         ListSessionStatisticsRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSessionStatistics, hcClient);
+    }
+
+    /**
+     * 查询实时会话Top SQL统计
+     *
+     * 查询实时会话Top SQL统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSessionTopSqlStatisticsRequest 请求对象
+     * @return CompletableFuture<ListSessionTopSqlStatisticsResponse>
+     */
+    public CompletableFuture<ListSessionTopSqlStatisticsResponse> listSessionTopSqlStatisticsAsync(
+        ListSessionTopSqlStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSessionTopSqlStatistics);
+    }
+
+    /**
+     * 查询实时会话Top SQL统计
+     *
+     * 查询实时会话Top SQL统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSessionTopSqlStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListSessionTopSqlStatisticsRequest, ListSessionTopSqlStatisticsResponse>
+     */
+    public AsyncInvoker<ListSessionTopSqlStatisticsRequest, ListSessionTopSqlStatisticsResponse> listSessionTopSqlStatisticsAsyncInvoker(
+        ListSessionTopSqlStatisticsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSessionTopSqlStatistics, hcClient);
+    }
+
+    /**
+     * 查询实时会话Top等待事件统计
+     *
+     * 查询实时会话Top等待事件统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSessionWaitEventStatisticsRequest 请求对象
+     * @return CompletableFuture<ListSessionWaitEventStatisticsResponse>
+     */
+    public CompletableFuture<ListSessionWaitEventStatisticsResponse> listSessionWaitEventStatisticsAsync(
+        ListSessionWaitEventStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listSessionWaitEventStatistics);
+    }
+
+    /**
+     * 查询实时会话Top等待事件统计
+     *
+     * 查询实时会话Top等待事件统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSessionWaitEventStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListSessionWaitEventStatisticsRequest, ListSessionWaitEventStatisticsResponse>
+     */
+    public AsyncInvoker<ListSessionWaitEventStatisticsRequest, ListSessionWaitEventStatisticsResponse> listSessionWaitEventStatisticsAsyncInvoker(
+        ListSessionWaitEventStatisticsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listSessionWaitEventStatistics, hcClient);
     }
 
     /**

@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.live.v2.model.ListSingleStreamFramerateRequest;
 import com.huaweicloud.sdk.live.v2.model.ListSingleStreamFramerateResponse;
 import com.huaweicloud.sdk.live.v2.model.ListSnapshotDataRequest;
 import com.huaweicloud.sdk.live.v2.model.ListSnapshotDataResponse;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumRequest;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumResponse;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataRequest;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataResponse;
 import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailRequest;
@@ -419,6 +421,37 @@ public class LiveClient {
     public SyncInvoker<ListSnapshotDataRequest, ListSnapshotDataResponse> listSnapshotDataInvoker(
         ListSnapshotDataRequest request) {
         return new SyncInvoker<>(request, LiveMeta.listSnapshotData, hcClient);
+    }
+
+    /**
+     * 查询推流域名转码路数
+     *
+     * 查询推流域名下的转码路数，根据输入时间点和时间粒度，返回转码路数。
+     * 最大查询跨度1天，最大查询周期90天，数据延迟5分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTranscodeConcurrencyNumRequest 请求对象
+     * @return ListTranscodeConcurrencyNumResponse
+     */
+    public ListTranscodeConcurrencyNumResponse listTranscodeConcurrencyNum(ListTranscodeConcurrencyNumRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listTranscodeConcurrencyNum);
+    }
+
+    /**
+     * 查询推流域名转码路数
+     *
+     * 查询推流域名下的转码路数，根据输入时间点和时间粒度，返回转码路数。
+     * 最大查询跨度1天，最大查询周期90天，数据延迟5分钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTranscodeConcurrencyNumRequest 请求对象
+     * @return SyncInvoker<ListTranscodeConcurrencyNumRequest, ListTranscodeConcurrencyNumResponse>
+     */
+    public SyncInvoker<ListTranscodeConcurrencyNumRequest, ListTranscodeConcurrencyNumResponse> listTranscodeConcurrencyNumInvoker(
+        ListTranscodeConcurrencyNumRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.listTranscodeConcurrencyNum, hcClient);
     }
 
     /**

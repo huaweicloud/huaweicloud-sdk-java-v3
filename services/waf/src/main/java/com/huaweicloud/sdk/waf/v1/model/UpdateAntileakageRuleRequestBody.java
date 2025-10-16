@@ -106,7 +106,7 @@ public class UpdateAntileakageRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private CreateAntileakageRuleRequestBodyAction action;
+    private BatchCreateAntileakageRuleRequestBodyAction action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -180,14 +180,15 @@ public class UpdateAntileakageRuleRequestBody {
         this.contents = contents;
     }
 
-    public UpdateAntileakageRuleRequestBody withAction(CreateAntileakageRuleRequestBodyAction action) {
+    public UpdateAntileakageRuleRequestBody withAction(BatchCreateAntileakageRuleRequestBodyAction action) {
         this.action = action;
         return this;
     }
 
-    public UpdateAntileakageRuleRequestBody withAction(Consumer<CreateAntileakageRuleRequestBodyAction> actionSetter) {
+    public UpdateAntileakageRuleRequestBody withAction(
+        Consumer<BatchCreateAntileakageRuleRequestBodyAction> actionSetter) {
         if (this.action == null) {
-            this.action = new CreateAntileakageRuleRequestBodyAction();
+            this.action = new BatchCreateAntileakageRuleRequestBodyAction();
             actionSetter.accept(this.action);
         }
 
@@ -198,11 +199,11 @@ public class UpdateAntileakageRuleRequestBody {
      * Get action
      * @return action
      */
-    public CreateAntileakageRuleRequestBodyAction getAction() {
+    public BatchCreateAntileakageRuleRequestBodyAction getAction() {
         return action;
     }
 
-    public void setAction(CreateAntileakageRuleRequestBodyAction action) {
+    public void setAction(BatchCreateAntileakageRuleRequestBodyAction action) {
         this.action = action;
     }
 

@@ -171,6 +171,7 @@ import com.huaweicloud.sdk.dws.v2.model.ExecuteRedistributionClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExpandInstanceStorage;
 import com.huaweicloud.sdk.dws.v2.model.ExpandInstanceStorageRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExpandInstanceStorageResponse;
+import com.huaweicloud.sdk.dws.v2.model.ExpandPreparationRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.ExportDatabaseUsersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExportDatabaseUsersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExportUserAuthorityRequest;
@@ -343,6 +344,8 @@ import com.huaweicloud.sdk.dws.v2.model.ResizeClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ResizePreparationRequest;
+import com.huaweicloud.sdk.dws.v2.model.ResizePreparationResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterResponse;
@@ -391,6 +394,8 @@ import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowResizePreparationRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowResizePreparationResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowResourceStatisticsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowResourceStatisticsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadPlanRequest;
@@ -4995,6 +5000,34 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizePreparationRequest, ResizePreparationResponse> resizePreparation =
+        genForResizePreparation();
+
+    private static HttpRequestDef<ResizePreparationRequest, ResizePreparationResponse> genForResizePreparation() {
+        // basic
+        HttpRequestDef.Builder<ResizePreparationRequest, ResizePreparationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResizePreparationRequest.class, ResizePreparationResponse.class)
+                .withName("ResizePreparation")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/resize-with-existed-nodes/preparation")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizePreparationRequest::getClusterId, ResizePreparationRequest::setClusterId));
+        builder.<ExpandPreparationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandPreparationRequestBody.class),
+            f -> f.withMarshaller(ResizePreparationRequest::getBody, ResizePreparationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestartClusterRequest, RestartClusterResponse> restartCluster =
         genForRestartCluster();
 
@@ -5631,6 +5664,30 @@ public class DwsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowQueryDetailRequest::getCtime, ShowQueryDetailRequest::setCtime));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResizePreparationRequest, ShowResizePreparationResponse> showResizePreparation =
+        genForShowResizePreparation();
+
+    private static HttpRequestDef<ShowResizePreparationRequest, ShowResizePreparationResponse> genForShowResizePreparation() {
+        // basic
+        HttpRequestDef.Builder<ShowResizePreparationRequest, ShowResizePreparationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowResizePreparationRequest.class, ShowResizePreparationResponse.class)
+            .withName("ShowResizePreparation")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/resize-with-existed-nodes/preparation")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResizePreparationRequest::getClusterId,
+                ShowResizePreparationRequest::setClusterId));
 
         // response
 

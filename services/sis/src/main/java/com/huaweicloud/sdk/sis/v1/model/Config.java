@@ -497,6 +497,81 @@ public class Config {
 
     private NeedWordInfoEnum needWordInfo;
 
+    /**
+     * 表示是否开启普英方自动识别，取值为“yes”和“no”，默认为“no”。
+     */
+    public static final class AutoLanguageDetectEnum {
+
+        /**
+         * Enum YES for value: "yes"
+         */
+        public static final AutoLanguageDetectEnum YES = new AutoLanguageDetectEnum("yes");
+
+        /**
+         * Enum NO for value: "no"
+         */
+        public static final AutoLanguageDetectEnum NO = new AutoLanguageDetectEnum("no");
+
+        private static final Map<String, AutoLanguageDetectEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AutoLanguageDetectEnum> createStaticFields() {
+            Map<String, AutoLanguageDetectEnum> map = new HashMap<>();
+            map.put("yes", YES);
+            map.put("no", NO);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AutoLanguageDetectEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AutoLanguageDetectEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AutoLanguageDetectEnum(value));
+        }
+
+        public static AutoLanguageDetectEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AutoLanguageDetectEnum) {
+                return this.value.equals(((AutoLanguageDetectEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_language_detect")
+
+    private AutoLanguageDetectEnum autoLanguageDetect;
+
     public Config withAudioFormat(AudioFormatEnum audioFormat) {
         this.audioFormat = audioFormat;
         return this;
@@ -599,6 +674,23 @@ public class Config {
         this.needWordInfo = needWordInfo;
     }
 
+    public Config withAutoLanguageDetect(AutoLanguageDetectEnum autoLanguageDetect) {
+        this.autoLanguageDetect = autoLanguageDetect;
+        return this;
+    }
+
+    /**
+     * 表示是否开启普英方自动识别，取值为“yes”和“no”，默认为“no”。
+     * @return autoLanguageDetect
+     */
+    public AutoLanguageDetectEnum getAutoLanguageDetect() {
+        return autoLanguageDetect;
+    }
+
+    public void setAutoLanguageDetect(AutoLanguageDetectEnum autoLanguageDetect) {
+        this.autoLanguageDetect = autoLanguageDetect;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -610,12 +702,13 @@ public class Config {
         Config that = (Config) obj;
         return Objects.equals(this.audioFormat, that.audioFormat) && Objects.equals(this.property, that.property)
             && Objects.equals(this.addPunc, that.addPunc) && Objects.equals(this.vocabularyId, that.vocabularyId)
-            && Objects.equals(this.digitNorm, that.digitNorm) && Objects.equals(this.needWordInfo, that.needWordInfo);
+            && Objects.equals(this.digitNorm, that.digitNorm) && Objects.equals(this.needWordInfo, that.needWordInfo)
+            && Objects.equals(this.autoLanguageDetect, that.autoLanguageDetect);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(audioFormat, property, addPunc, vocabularyId, digitNorm, needWordInfo);
+        return Objects.hash(audioFormat, property, addPunc, vocabularyId, digitNorm, needWordInfo, autoLanguageDetect);
     }
 
     @Override
@@ -628,6 +721,7 @@ public class Config {
         sb.append("    vocabularyId: ").append(toIndentedString(vocabularyId)).append("\n");
         sb.append("    digitNorm: ").append(toIndentedString(digitNorm)).append("\n");
         sb.append("    needWordInfo: ").append(toIndentedString(needWordInfo)).append("\n");
+        sb.append("    autoLanguageDetect: ").append(toIndentedString(autoLanguageDetect)).append("\n");
         sb.append("}");
         return sb.toString();
     }

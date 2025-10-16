@@ -29,6 +29,11 @@ public class CreateOtaPackage {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "module_name")
+
+    private String moduleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -76,7 +81,7 @@ public class CreateOtaPackage {
     }
 
     /**
-     * **参数说明**：升级包类型。 **取值范围**：软件包必须设置为：softwarePackage，固件包必须设置为：firmwarePackage。
+     * **参数说明**：升级包类型。 **取值范围**：软件包必须设置为：softwarePackage，固件包必须设置为：firmwarePackage, 模块包必须设置为：modulePackage。
      * @return packageType
      */
     public String getPackageType() {
@@ -102,6 +107,23 @@ public class CreateOtaPackage {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public CreateOtaPackage withModuleName(String moduleName) {
+        this.moduleName = moduleName;
+        return this;
+    }
+
+    /**
+     * **参数说明**：OTA模块名称，产品下唯一且不可修改。当package_type为modulePackage时，支持该参数 **取值范围**：长度不超过64，只允许英文字母、数字、下划线（_）、连接符（-）、英文点（.）的组合。
+     * @return moduleName
+     */
+    public String getModuleName() {
+        return moduleName;
+    }
+
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
     }
 
     public CreateOtaPackage withVersion(String version) {
@@ -224,7 +246,8 @@ public class CreateOtaPackage {
         }
         CreateOtaPackage that = (CreateOtaPackage) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.packageType, that.packageType)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.version, that.version)
             && Objects.equals(this.supportSourceVersions, that.supportSourceVersions)
             && Objects.equals(this.description, that.description) && Objects.equals(this.customInfo, that.customInfo)
             && Objects.equals(this.fileLocation, that.fileLocation);
@@ -232,8 +255,15 @@ public class CreateOtaPackage {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(appId, packageType, productId, version, supportSourceVersions, description, customInfo, fileLocation);
+        return Objects.hash(appId,
+            packageType,
+            productId,
+            moduleName,
+            version,
+            supportSourceVersions,
+            description,
+            customInfo,
+            fileLocation);
     }
 
     @Override
@@ -243,6 +273,7 @@ public class CreateOtaPackage {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    moduleName: ").append(toIndentedString(moduleName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    supportSourceVersions: ").append(toIndentedString(supportSourceVersions)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

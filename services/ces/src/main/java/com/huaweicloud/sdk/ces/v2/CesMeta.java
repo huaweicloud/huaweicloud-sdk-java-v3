@@ -41,6 +41,7 @@ import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMasksResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmPoliciesEnabledStateRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmPoliciesEnabledStateResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsResponse;
@@ -522,10 +523,10 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchUpdateOneClickAlarmsEnabledStateRequest::getOneClickAlarmId,
                 BatchUpdateOneClickAlarmsEnabledStateRequest::setOneClickAlarmId));
-        builder.<BatchEnableAlarmsRequestBody>withRequestField("body",
+        builder.<BatchUpdateOneClickAlarmsEnabledStateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchEnableAlarmsRequestBody.class),
+            TypeCasts.uncheckedConversion(BatchUpdateOneClickAlarmsEnabledStateRequestBody.class),
             f -> f.withMarshaller(BatchUpdateOneClickAlarmsEnabledStateRequest::getBody,
                 BatchUpdateOneClickAlarmsEnabledStateRequest::setBody));
 

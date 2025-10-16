@@ -26,6 +26,11 @@ public class ObsLocation {
     private String objectKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sign_method")
+
+    private String signMethod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign")
 
     private String sign;
@@ -81,6 +86,23 @@ public class ObsLocation {
         this.objectKey = objectKey;
     }
 
+    public ObsLocation withSignMethod(String signMethod) {
+        this.signMethod = signMethod;
+        return this;
+    }
+
+    /**
+     * **参数说明**： **取值范围**：只支持SHA256,不携带默认为SHA256。
+     * @return signMethod
+     */
+    public String getSignMethod() {
+        return signMethod;
+    }
+
+    public void setSignMethod(String signMethod) {
+        this.signMethod = signMethod;
+    }
+
     public ObsLocation withSign(String sign) {
         this.sign = sign;
         return this;
@@ -108,12 +130,13 @@ public class ObsLocation {
         }
         ObsLocation that = (ObsLocation) obj;
         return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.bucketName, that.bucketName)
-            && Objects.equals(this.objectKey, that.objectKey) && Objects.equals(this.sign, that.sign);
+            && Objects.equals(this.objectKey, that.objectKey) && Objects.equals(this.signMethod, that.signMethod)
+            && Objects.equals(this.sign, that.sign);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionName, bucketName, objectKey, sign);
+        return Objects.hash(regionName, bucketName, objectKey, signMethod, sign);
     }
 
     @Override
@@ -123,6 +146,7 @@ public class ObsLocation {
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");
+        sb.append("    signMethod: ").append(toIndentedString(signMethod)).append("\n");
         sb.append("    sign: ").append(toIndentedString(sign)).append("\n");
         sb.append("}");
         return sb.toString();

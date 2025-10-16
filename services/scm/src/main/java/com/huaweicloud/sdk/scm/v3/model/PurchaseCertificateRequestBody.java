@@ -89,7 +89,7 @@ public class PurchaseCertificateRequestBody {
     }
 
     /**
-     * 证书品牌，取值如下： - GEOTRUST - GLOBALSIGN - SYMANTEC - CFCA - TRUSTASIA - VTRUS
+     * 证书品牌，取值如下： - GEOTRUST(购买RapidSSL请传该值) - GLOBALSIGN - SYMANTEC - CFCA - TRUSTASIA - VTRUS
      * @return certBrand
      */
     public String getCertBrand() {

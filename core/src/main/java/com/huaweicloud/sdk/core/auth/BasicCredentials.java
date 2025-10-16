@@ -134,7 +134,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                         "Please select one when initializing the credentials: " +
                         "new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);");
             }
-            logger.info("Success to get project id of region '{}': {}", regionId, projectId);
+            logger.info("Success to get project id of region '{}': {}", regionId, StringUtils.mask(projectId));
             AuthCache.putAuth(akWithName, projectId);
 
             setDerivedPredicate(derivedPredicate);

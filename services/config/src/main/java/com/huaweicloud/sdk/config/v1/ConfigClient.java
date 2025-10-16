@@ -108,6 +108,8 @@ import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesByDomainIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesByDomainIdResponse;
 import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesByResourceIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesByResourceIdResponse;
+import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesStatisticsRequest;
+import com.huaweicloud.sdk.config.v1.model.ListPolicyStatesStatisticsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListProvidersRequest;
 import com.huaweicloud.sdk.config.v1.model.ListProvidersResponse;
 import com.huaweicloud.sdk.config.v1.model.ListRegionsRequest;
@@ -1949,6 +1951,35 @@ public class ConfigClient {
     public SyncInvoker<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse> listPolicyStatesByResourceIdInvoker(
         ListPolicyStatesByResourceIdRequest request) {
         return new SyncInvoker<>(request, ConfigMeta.listPolicyStatesByResourceId, hcClient);
+    }
+
+    /**
+     * 查询当前账号合规统计趋势
+     *
+     * 查询当前账号合规统计趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyStatesStatisticsRequest 请求对象
+     * @return ListPolicyStatesStatisticsResponse
+     */
+    public ListPolicyStatesStatisticsResponse listPolicyStatesStatistics(ListPolicyStatesStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.listPolicyStatesStatistics);
+    }
+
+    /**
+     * 查询当前账号合规统计趋势
+     *
+     * 查询当前账号合规统计趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyStatesStatisticsRequest 请求对象
+     * @return SyncInvoker<ListPolicyStatesStatisticsRequest, ListPolicyStatesStatisticsResponse>
+     */
+    public SyncInvoker<ListPolicyStatesStatisticsRequest, ListPolicyStatesStatisticsResponse> listPolicyStatesStatisticsInvoker(
+        ListPolicyStatesStatisticsRequest request) {
+        return new SyncInvoker<>(request, ConfigMeta.listPolicyStatesStatistics, hcClient);
     }
 
     /**
