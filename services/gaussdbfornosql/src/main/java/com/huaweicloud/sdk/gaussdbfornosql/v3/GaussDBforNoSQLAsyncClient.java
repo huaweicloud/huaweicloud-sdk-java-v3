@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBackupsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBackupsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationDatastoresRequest;
@@ -175,6 +177,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisDataRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisDataResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsRequest;
@@ -1311,6 +1315,34 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse> listAvailableFlavorInfosAsyncInvoker(
         ListAvailableFlavorInfosRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listAvailableFlavorInfos, hcClient);
+    }
+
+    /**
+     * 查询备份列表（推荐）
+     *
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupsRequest 请求对象
+     * @return CompletableFuture<ListBackupsResponse>
+     */
+    public CompletableFuture<ListBackupsResponse> listBackupsAsync(ListBackupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listBackups);
+    }
+
+    /**
+     * 查询备份列表（推荐）
+     *
+     * 根据指定条件查询备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupsRequest 请求对象
+     * @return AsyncInvoker<ListBackupsRequest, ListBackupsResponse>
+     */
+    public AsyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsAsyncInvoker(ListBackupsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listBackups, hcClient);
     }
 
     /**
@@ -2811,6 +2843,35 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse> restoreExistingInstanceAsyncInvoker(
         RestoreExistingInstanceRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.restoreExistingInstance, hcClient);
+    }
+
+    /**
+     * 数据文件导入已有实例
+     *
+     * 数据导入已有实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRedisDataRequest 请求对象
+     * @return CompletableFuture<RestoreRedisDataResponse>
+     */
+    public CompletableFuture<RestoreRedisDataResponse> restoreRedisDataAsync(RestoreRedisDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.restoreRedisData);
+    }
+
+    /**
+     * 数据文件导入已有实例
+     *
+     * 数据导入已有实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRedisDataRequest 请求对象
+     * @return AsyncInvoker<RestoreRedisDataRequest, RestoreRedisDataResponse>
+     */
+    public AsyncInvoker<RestoreRedisDataRequest, RestoreRedisDataResponse> restoreRedisDataAsyncInvoker(
+        RestoreRedisDataRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.restoreRedisData, hcClient);
     }
 
     /**

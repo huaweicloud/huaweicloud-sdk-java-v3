@@ -89,16 +89,6 @@ public class CommitRuleDto {
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "skip_rule_check")
-
-    private Boolean skipRuleCheck;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "skip_rule_end_date")
-
-    private String skipRuleEndDate;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -112,6 +102,16 @@ public class CommitRuleDto {
     @JsonProperty(value = "created_at")
 
     private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "skip_rule_check")
+
+    private Boolean skipRuleCheck;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "skip_rule_end_date")
+
+    private String skipRuleEndDate;
 
     public CommitRuleDto withId(Integer id) {
         this.id = id;
@@ -392,40 +392,6 @@ public class CommitRuleDto {
         this.updatedAt = updatedAt;
     }
 
-    public CommitRuleDto withSkipRuleCheck(Boolean skipRuleCheck) {
-        this.skipRuleCheck = skipRuleCheck;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 是否跳过规则检测。 **约束限制：** 不涉及。 **取值范围：** - true，跳过规则检测。 - false，不跳过规则检测。
-     * @return skipRuleCheck
-     */
-    public Boolean getSkipRuleCheck() {
-        return skipRuleCheck;
-    }
-
-    public void setSkipRuleCheck(Boolean skipRuleCheck) {
-        this.skipRuleCheck = skipRuleCheck;
-    }
-
-    public CommitRuleDto withSkipRuleEndDate(String skipRuleEndDate) {
-        this.skipRuleEndDate = skipRuleEndDate;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 失效时间。
-     * @return skipRuleEndDate
-     */
-    public String getSkipRuleEndDate() {
-        return skipRuleEndDate;
-    }
-
-    public void setSkipRuleEndDate(String skipRuleEndDate) {
-        this.skipRuleEndDate = skipRuleEndDate;
-    }
-
     public CommitRuleDto withName(String name) {
         this.name = name;
         return this;
@@ -477,6 +443,40 @@ public class CommitRuleDto {
         this.createdAt = createdAt;
     }
 
+    public CommitRuleDto withSkipRuleCheck(Boolean skipRuleCheck) {
+        this.skipRuleCheck = skipRuleCheck;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 跳过规则检测。 **约束限制：** 仅CR仓库支持此参数。
+     * @return skipRuleCheck
+     */
+    public Boolean getSkipRuleCheck() {
+        return skipRuleCheck;
+    }
+
+    public void setSkipRuleCheck(Boolean skipRuleCheck) {
+        this.skipRuleCheck = skipRuleCheck;
+    }
+
+    public CommitRuleDto withSkipRuleEndDate(String skipRuleEndDate) {
+        this.skipRuleEndDate = skipRuleEndDate;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 跳过规则检测失效时间， 例如: 2025-8-19。 **约束限制：** 仅CR仓库支持此参数。
+     * @return skipRuleEndDate
+     */
+    public String getSkipRuleEndDate() {
+        return skipRuleEndDate;
+    }
+
+    public void setSkipRuleEndDate(String skipRuleEndDate) {
+        this.skipRuleEndDate = skipRuleEndDate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -499,9 +499,9 @@ public class CommitRuleDto {
             && Objects.equals(this.allowedModifyBinary, that.allowedModifyBinary)
             && Objects.equals(this.allowedBinaryFileNameRegex, that.allowedBinaryFileNameRegex)
             && Objects.equals(this.authorRegex, that.authorRegex) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.skipRuleCheck, that.skipRuleCheck)
-            && Objects.equals(this.skipRuleEndDate, that.skipRuleEndDate) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.branchName, that.branchName) && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.branchName, that.branchName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.skipRuleCheck, that.skipRuleCheck)
+            && Objects.equals(this.skipRuleEndDate, that.skipRuleEndDate);
     }
 
     @Override
@@ -521,11 +521,11 @@ public class CommitRuleDto {
             allowedBinaryFileNameRegex,
             authorRegex,
             updatedAt,
-            skipRuleCheck,
-            skipRuleEndDate,
             name,
             branchName,
-            createdAt);
+            createdAt,
+            skipRuleCheck,
+            skipRuleEndDate);
     }
 
     @Override
@@ -547,11 +547,11 @@ public class CommitRuleDto {
         sb.append("    allowedBinaryFileNameRegex: ").append(toIndentedString(allowedBinaryFileNameRegex)).append("\n");
         sb.append("    authorRegex: ").append(toIndentedString(authorRegex)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-        sb.append("    skipRuleCheck: ").append(toIndentedString(skipRuleCheck)).append("\n");
-        sb.append("    skipRuleEndDate: ").append(toIndentedString(skipRuleEndDate)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    branchName: ").append(toIndentedString(branchName)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    skipRuleCheck: ").append(toIndentedString(skipRuleCheck)).append("\n");
+        sb.append("    skipRuleEndDate: ").append(toIndentedString(skipRuleEndDate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

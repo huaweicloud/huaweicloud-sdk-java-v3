@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.codehub.v4.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -25,10 +30,86 @@ public class MergeRequestVoteReviewerDto {
 
     private String username;
 
+    /**
+     * **参数解释：** 用户状态。 **取值范围：** - active: 可用账户。 - blocked: 被锁定用户。 - error: 未查询到该用户。
+     */
+    public static final class StateEnum {
+
+        /**
+         * Enum ACTIVE for value: "active"
+         */
+        public static final StateEnum ACTIVE = new StateEnum("active");
+
+        /**
+         * Enum BLOCKED for value: "blocked"
+         */
+        public static final StateEnum BLOCKED = new StateEnum("blocked");
+
+        /**
+         * Enum ERROR for value: "error"
+         */
+        public static final StateEnum ERROR = new StateEnum("error");
+
+        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StateEnum> createStaticFields() {
+            Map<String, StateEnum> map = new HashMap<>();
+            map.put("active", ACTIVE);
+            map.put("blocked", BLOCKED);
+            map.put("error", ERROR);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
+        }
+
+        public static StateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StateEnum) {
+                return this.value.equals(((StateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    private String state;
+    private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_license_status")
@@ -133,20 +214,20 @@ public class MergeRequestVoteReviewerDto {
         this.username = username;
     }
 
-    public MergeRequestVoteReviewerDto withState(String state) {
+    public MergeRequestVoteReviewerDto withState(StateEnum state) {
         this.state = state;
         return this;
     }
 
     /**
-     * 用户状态
+     * **参数解释：** 用户状态。 **取值范围：** - active: 可用账户。 - blocked: 被锁定用户。 - error: 未查询到该用户。
      * @return state
      */
-    public String getState() {
+    public StateEnum getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(StateEnum state) {
         this.state = state;
     }
 

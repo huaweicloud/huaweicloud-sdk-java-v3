@@ -58,12 +58,12 @@ public class Memory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rank_count")
 
-    private String rankCount;
+    private Integer rankCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_width_bits")
 
-    private String dataWidthBits;
+    private Integer dataWidthBits;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "part_number")
@@ -73,7 +73,7 @@ public class Memory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_voltage_millivolt")
 
-    private String minVoltageMillivolt;
+    private Integer minVoltageMillivolt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bom_number")
@@ -248,7 +248,7 @@ public class Memory {
         this.state = state;
     }
 
-    public Memory withRankCount(String rankCount) {
+    public Memory withRankCount(Integer rankCount) {
         this.rankCount = rankCount;
         return this;
     }
@@ -257,15 +257,15 @@ public class Memory {
      * Rank数量
      * @return rankCount
      */
-    public String getRankCount() {
+    public Integer getRankCount() {
         return rankCount;
     }
 
-    public void setRankCount(String rankCount) {
+    public void setRankCount(Integer rankCount) {
         this.rankCount = rankCount;
     }
 
-    public Memory withDataWidthBits(String dataWidthBits) {
+    public Memory withDataWidthBits(Integer dataWidthBits) {
         this.dataWidthBits = dataWidthBits;
         return this;
     }
@@ -274,11 +274,11 @@ public class Memory {
      * 数据带宽
      * @return dataWidthBits
      */
-    public String getDataWidthBits() {
+    public Integer getDataWidthBits() {
         return dataWidthBits;
     }
 
-    public void setDataWidthBits(String dataWidthBits) {
+    public void setDataWidthBits(Integer dataWidthBits) {
         this.dataWidthBits = dataWidthBits;
     }
 
@@ -299,7 +299,7 @@ public class Memory {
         this.partNumber = partNumber;
     }
 
-    public Memory withMinVoltageMillivolt(String minVoltageMillivolt) {
+    public Memory withMinVoltageMillivolt(Integer minVoltageMillivolt) {
         this.minVoltageMillivolt = minVoltageMillivolt;
         return this;
     }
@@ -308,11 +308,11 @@ public class Memory {
      * 最小电压
      * @return minVoltageMillivolt
      */
-    public String getMinVoltageMillivolt() {
+    public Integer getMinVoltageMillivolt() {
         return minVoltageMillivolt;
     }
 
-    public void setMinVoltageMillivolt(String minVoltageMillivolt) {
+    public void setMinVoltageMillivolt(Integer minVoltageMillivolt) {
         this.minVoltageMillivolt = minVoltageMillivolt;
     }
 

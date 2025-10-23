@@ -50,6 +50,11 @@ public class GeneralTextRequestBody {
 
     private Integer pdfPageNumber;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_markdown_result")
+
+    private Boolean returnMarkdownResult;
+
     public GeneralTextRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -186,6 +191,23 @@ public class GeneralTextRequestBody {
         this.pdfPageNumber = pdfPageNumber;
     }
 
+    public GeneralTextRequestBody withReturnMarkdownResult(Boolean returnMarkdownResult) {
+        this.returnMarkdownResult = returnMarkdownResult;
+        return this;
+    }
+
+    /**
+     * 返回文字块拼接结果开关。可选值包括： - true：打开返回文字块拼接结果开关。 - false：关闭返回文字块拼接结果开关。 未传入该参数时默认为false，即默认关闭返回文字块拼接结果开关。 
+     * @return returnMarkdownResult
+     */
+    public Boolean getReturnMarkdownResult() {
+        return returnMarkdownResult;
+    }
+
+    public void setReturnMarkdownResult(Boolean returnMarkdownResult) {
+        this.returnMarkdownResult = returnMarkdownResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -200,7 +222,8 @@ public class GeneralTextRequestBody {
             && Objects.equals(this.quickMode, that.quickMode) && Objects.equals(this.characterMode, that.characterMode)
             && Objects.equals(this.language, that.language)
             && Objects.equals(this.singleOrientationMode, that.singleOrientationMode)
-            && Objects.equals(this.pdfPageNumber, that.pdfPageNumber);
+            && Objects.equals(this.pdfPageNumber, that.pdfPageNumber)
+            && Objects.equals(this.returnMarkdownResult, that.returnMarkdownResult);
     }
 
     @Override
@@ -212,7 +235,8 @@ public class GeneralTextRequestBody {
             characterMode,
             language,
             singleOrientationMode,
-            pdfPageNumber);
+            pdfPageNumber,
+            returnMarkdownResult);
     }
 
     @Override
@@ -227,6 +251,7 @@ public class GeneralTextRequestBody {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    singleOrientationMode: ").append(toIndentedString(singleOrientationMode)).append("\n");
         sb.append("    pdfPageNumber: ").append(toIndentedString(pdfPageNumber)).append("\n");
+        sb.append("    returnMarkdownResult: ").append(toIndentedString(returnMarkdownResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

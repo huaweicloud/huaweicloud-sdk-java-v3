@@ -29,7 +29,7 @@ public class LineDiscussionDto {
     private Integer line;
 
     /**
-     * **参数解释：** 所在的行的类型。 old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
+     * **参数解释：** 所在的行的类型。 **取值范围：** old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
      */
     public static final class TypeEnum {
 
@@ -44,9 +44,9 @@ public class LineDiscussionDto {
         public static final TypeEnum NEW = new TypeEnum("new");
 
         /**
-         * Enum UNCHANGD_L for value: "unchangd-l"
+         * Enum UNCHANGED_L for value: "unchanged-l"
          */
-        public static final TypeEnum UNCHANGD_L = new TypeEnum("unchangd-l");
+        public static final TypeEnum UNCHANGED_L = new TypeEnum("unchanged-l");
 
         /**
          * Enum UNCHANGED_R for value: "unchanged-r"
@@ -59,7 +59,7 @@ public class LineDiscussionDto {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("old", OLD);
             map.put("new", NEW);
-            map.put("unchangd-l", UNCHANGD_L);
+            map.put("unchanged-l", UNCHANGED_L);
             map.put("unchanged-r", UNCHANGED_R);
             return Collections.unmodifiableMap(map);
         }
@@ -171,7 +171,7 @@ public class LineDiscussionDto {
     }
 
     /**
-     * **参数解释：** 所在的行的类型。 old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
+     * **参数解释：** 所在的行的类型。 **取值范围：** old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
      * @return type
      */
     public TypeEnum getType() {

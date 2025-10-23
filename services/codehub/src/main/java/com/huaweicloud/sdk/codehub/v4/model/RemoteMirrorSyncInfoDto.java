@@ -25,13 +25,18 @@ public class RemoteMirrorSyncInfoDto {
 
     private String endpointUuid;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_fetch")
+
+    private Boolean forceFetch;
+
     public RemoteMirrorSyncInfoDto withUsername(String username) {
         this.username = username;
         return this;
     }
 
     /**
-     * **参数解释：** 用户名(需要base64加密)。
+     * **参数解释：** 用户名(需要base64加密)。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及
      * @return username
      */
     public String getUsername() {
@@ -48,7 +53,7 @@ public class RemoteMirrorSyncInfoDto {
     }
 
     /**
-     * **参数解释：** 密码(需要base64加密)。
+     * **参数解释：** 密码(需要base64加密)。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及
      * @return password
      */
     public String getPassword() {
@@ -65,7 +70,7 @@ public class RemoteMirrorSyncInfoDto {
     }
 
     /**
-     * **参数解释：** 拓展点uuid。
+     * **参数解释：** 拓展点uuid。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return endpointUuid
      */
     public String getEndpointUuid() {
@@ -74,6 +79,23 @@ public class RemoteMirrorSyncInfoDto {
 
     public void setEndpointUuid(String endpointUuid) {
         this.endpointUuid = endpointUuid;
+    }
+
+    public RemoteMirrorSyncInfoDto withForceFetch(Boolean forceFetch) {
+        this.forceFetch = forceFetch;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 允许强制同步。 **约束限制：** 不涉及。 **取值范围：** - true，强制同步。 - false，不强制同步。 **默认取值：** 不涉及。
+     * @return forceFetch
+     */
+    public Boolean getForceFetch() {
+        return forceFetch;
+    }
+
+    public void setForceFetch(Boolean forceFetch) {
+        this.forceFetch = forceFetch;
     }
 
     @Override
@@ -86,12 +108,12 @@ public class RemoteMirrorSyncInfoDto {
         }
         RemoteMirrorSyncInfoDto that = (RemoteMirrorSyncInfoDto) obj;
         return Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password)
-            && Objects.equals(this.endpointUuid, that.endpointUuid);
+            && Objects.equals(this.endpointUuid, that.endpointUuid) && Objects.equals(this.forceFetch, that.forceFetch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password, endpointUuid);
+        return Objects.hash(username, password, endpointUuid, forceFetch);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class RemoteMirrorSyncInfoDto {
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    endpointUuid: ").append(toIndentedString(endpointUuid)).append("\n");
+        sb.append("    forceFetch: ").append(toIndentedString(forceFetch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

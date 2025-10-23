@@ -91,7 +91,7 @@ public class GpgSubKeyDto {
     }
 
     /**
-     * **参数解释：** 子秘钥的id。 **取值范围：** 字符串长度不少于1，不超过1000。
+     * **参数解释：** 子密钥的id。 **取值范围：** 字符串长度不少于1，不超过1000。
      * @return keyid
      */
     public String getKeyid() {

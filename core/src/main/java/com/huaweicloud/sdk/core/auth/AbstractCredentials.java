@@ -38,7 +38,9 @@ import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
 /**
@@ -78,6 +80,8 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     public static final Function<HttpRequest, Boolean> DEFAULT_DERIVED_PREDICATE = httpRequest ->
             !httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", "")
                     .matches(Constants.DEFAULT_ENDPOINT_REG);
+
+    protected static final Map<String, String> cache = new ConcurrentHashMap<>();
 
     public abstract void processDerivedAuthParams(String derivedAuthServiceName, String regionId);
 
@@ -287,6 +291,16 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
             return true;
         }
         return expiredAt - TimeUtils.getTimeInMillis() < getExpirationThresholdMillis();
+    }
+
+    protected void checkRequiredIdpParams() {
+        if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
+            if (StringUtils.isEmpty(getIdpId())) {
+                throw new SdkException("idpId is required when using idpId&idTokenFile");
+            } else if (StringUtils.isEmpty(getIdTokenFile())) {
+                throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")

@@ -416,7 +416,7 @@ public class ListRepositoryReviewsRequest {
     }
 
     /**
-     * **参数解释：** 是否仅返回todo。 **取值范围：** - true，仅返回带有提交计数和diffs计数的结果。 - false，按照compare_view参数返回结果信息。
+     * **参数解释：** 是否仅返回带有提交计数和diffs计数的结果。 **取值范围：** - true，仅返回带有提交计数和diffs计数的结果。 - false，按照compare_view参数返回结果信息。
      * @return onlyCount
      */
     public Boolean getOnlyCount() {

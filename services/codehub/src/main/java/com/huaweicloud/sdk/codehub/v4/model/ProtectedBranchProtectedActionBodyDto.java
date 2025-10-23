@@ -113,6 +113,11 @@ public class ProtectedBranchProtectedActionBodyDto {
 
     private ActionEnum action;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "addition_switchers")
+
+    private List<ProtectedActionSwitcher> additionSwitchers = null;
+
     public ProtectedBranchProtectedActionBodyDto withEnable(Boolean enable) {
         this.enable = enable;
         return this;
@@ -246,6 +251,42 @@ public class ProtectedBranchProtectedActionBodyDto {
         this.action = action;
     }
 
+    public ProtectedBranchProtectedActionBodyDto withAdditionSwitchers(
+        List<ProtectedActionSwitcher> additionSwitchers) {
+        this.additionSwitchers = additionSwitchers;
+        return this;
+    }
+
+    public ProtectedBranchProtectedActionBodyDto addAdditionSwitchersItem(
+        ProtectedActionSwitcher additionSwitchersItem) {
+        if (this.additionSwitchers == null) {
+            this.additionSwitchers = new ArrayList<>();
+        }
+        this.additionSwitchers.add(additionSwitchersItem);
+        return this;
+    }
+
+    public ProtectedBranchProtectedActionBodyDto withAdditionSwitchers(
+        Consumer<List<ProtectedActionSwitcher>> additionSwitchersSetter) {
+        if (this.additionSwitchers == null) {
+            this.additionSwitchers = new ArrayList<>();
+        }
+        additionSwitchersSetter.accept(this.additionSwitchers);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 附加开关。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return additionSwitchers
+     */
+    public List<ProtectedActionSwitcher> getAdditionSwitchers() {
+        return additionSwitchers;
+    }
+
+    public void setAdditionSwitchers(List<ProtectedActionSwitcher> additionSwitchers) {
+        this.additionSwitchers = additionSwitchers;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -257,12 +298,13 @@ public class ProtectedBranchProtectedActionBodyDto {
         ProtectedBranchProtectedActionBodyDto that = (ProtectedBranchProtectedActionBodyDto) obj;
         return Objects.equals(this.enable, that.enable) && Objects.equals(this.userIds, that.userIds)
             && Objects.equals(this.userTeamIds, that.userTeamIds)
-            && Objects.equals(this.relatedRoleIds, that.relatedRoleIds) && Objects.equals(this.action, that.action);
+            && Objects.equals(this.relatedRoleIds, that.relatedRoleIds) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.additionSwitchers, that.additionSwitchers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enable, userIds, userTeamIds, relatedRoleIds, action);
+        return Objects.hash(enable, userIds, userTeamIds, relatedRoleIds, action, additionSwitchers);
     }
 
     @Override
@@ -274,6 +316,7 @@ public class ProtectedBranchProtectedActionBodyDto {
         sb.append("    userTeamIds: ").append(toIndentedString(userTeamIds)).append("\n");
         sb.append("    relatedRoleIds: ").append(toIndentedString(relatedRoleIds)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    additionSwitchers: ").append(toIndentedString(additionSwitchers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

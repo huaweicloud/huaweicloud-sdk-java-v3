@@ -22,7 +22,7 @@ public class AssociateRepositoryUserGroupResponse extends SdkResponse {
     }
 
     /**
-     * 关联结果
+     * **参数解释：** 关联结果。 **取值范围：** - success，关联成功。 - error,关联失败。
      * @return status
      */
     public String getStatus() {

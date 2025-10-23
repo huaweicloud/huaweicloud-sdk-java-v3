@@ -72,16 +72,6 @@ public class RepositoryBasicDto {
     private String httpUrlToRepo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "web_url")
-
-    private String webUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "readme_url")
-
-    private String readmeUrl;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -448,40 +438,6 @@ public class RepositoryBasicDto {
 
     public void setHttpUrlToRepo(String httpUrlToRepo) {
         this.httpUrlToRepo = httpUrlToRepo;
-    }
-
-    public RepositoryBasicDto withWebUrl(String webUrl) {
-        this.webUrl = webUrl;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 仓库页面链接。
-     * @return webUrl
-     */
-    public String getWebUrl() {
-        return webUrl;
-    }
-
-    public void setWebUrl(String webUrl) {
-        this.webUrl = webUrl;
-    }
-
-    public RepositoryBasicDto withReadmeUrl(String readmeUrl) {
-        this.readmeUrl = readmeUrl;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 仓库readme文件链接。
-     * @return readmeUrl
-     */
-    public String getReadmeUrl() {
-        return readmeUrl;
-    }
-
-    public void setReadmeUrl(String readmeUrl) {
-        this.readmeUrl = readmeUrl;
     }
 
     public RepositoryBasicDto withProjectId(String projectId) {
@@ -918,8 +874,7 @@ public class RepositoryBasicDto {
             && Objects.equals(this.path, that.path) && Objects.equals(this.pathWithNamespace, that.pathWithNamespace)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.archived, that.archived) && Objects.equals(this.sshUrlToRepo, that.sshUrlToRepo)
-            && Objects.equals(this.httpUrlToRepo, that.httpUrlToRepo) && Objects.equals(this.webUrl, that.webUrl)
-            && Objects.equals(this.readmeUrl, that.readmeUrl) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.httpUrlToRepo, that.httpUrlToRepo) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.developMode, that.developMode)
             && Objects.equals(this.moderationResult, that.moderationResult)
             && Objects.equals(this.defaultBranch, that.defaultBranch) && Objects.equals(this.avatarUrl, that.avatarUrl)
@@ -948,8 +903,6 @@ public class RepositoryBasicDto {
             archived,
             sshUrlToRepo,
             httpUrlToRepo,
-            webUrl,
-            readmeUrl,
             projectId,
             projectName,
             developMode,
@@ -989,8 +942,6 @@ public class RepositoryBasicDto {
         sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
         sb.append("    sshUrlToRepo: ").append(toIndentedString(sshUrlToRepo)).append("\n");
         sb.append("    httpUrlToRepo: ").append(toIndentedString(httpUrlToRepo)).append("\n");
-        sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
-        sb.append("    readmeUrl: ").append(toIndentedString(readmeUrl)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    developMode: ").append(toIndentedString(developMode)).append("\n");

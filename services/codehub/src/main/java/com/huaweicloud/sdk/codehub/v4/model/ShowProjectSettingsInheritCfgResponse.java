@@ -41,7 +41,7 @@ public class ShowProjectSettingsInheritCfgResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 项目继承设置列表
      * @return body
      */
     public List<ProjectSettingsInheritCfgDto> getBody() {

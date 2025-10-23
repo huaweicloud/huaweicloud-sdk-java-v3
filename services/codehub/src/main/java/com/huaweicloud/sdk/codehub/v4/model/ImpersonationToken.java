@@ -64,7 +64,7 @@ public class ImpersonationToken {
     }
 
     /**
-     * **参数解释：** 唯一标示id。
+     * **参数解释：** 唯一标识id。
      * minimum: 1
      * maximum: 2147483647
      * @return id

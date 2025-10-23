@@ -31,6 +31,11 @@ public class ShowBucketReq {
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json_auth_file")
 
     private String jsonAuthFile;
@@ -126,6 +131,23 @@ public class ShowBucketReq {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    public ShowBucketReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
     }
 
     public ShowBucketReq withJsonAuthFile(String jsonAuthFile) {
@@ -243,6 +265,7 @@ public class ShowBucketReq {
         ShowBucketReq that = (ShowBucketReq) obj;
         return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.filePath, that.filePath)
             && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.connectionString, that.connectionString)
             && Objects.equals(this.jsonAuthFile, that.jsonAuthFile) && Objects.equals(this.dataCenter, that.dataCenter)
             && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.behindFilename, that.behindFilename)
             && Objects.equals(this.appId, that.appId) && Objects.equals(this.bucketName, that.bucketName);
@@ -250,8 +273,17 @@ public class ShowBucketReq {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(cloudType, filePath, ak, sk, jsonAuthFile, dataCenter, pageSize, behindFilename, appId, bucketName);
+        return Objects.hash(cloudType,
+            filePath,
+            ak,
+            sk,
+            connectionString,
+            jsonAuthFile,
+            dataCenter,
+            pageSize,
+            behindFilename,
+            appId,
+            bucketName);
     }
 
     @Override
@@ -262,6 +294,7 @@ public class ShowBucketReq {
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    dataCenter: ").append(toIndentedString(dataCenter)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");

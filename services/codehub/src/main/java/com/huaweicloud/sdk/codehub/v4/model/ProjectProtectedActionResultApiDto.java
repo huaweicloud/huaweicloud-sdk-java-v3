@@ -38,6 +38,11 @@ public class ProjectProtectedActionResultApiDto {
 
     private List<RoleBasicDto> roles = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "addition_switchers")
+
+    private List<ForceActionEnableDto> additionSwitchers = null;
+
     public ProjectProtectedActionResultApiDto withAction(String action) {
         this.action = action;
         return this;
@@ -171,6 +176,40 @@ public class ProjectProtectedActionResultApiDto {
         this.roles = roles;
     }
 
+    public ProjectProtectedActionResultApiDto withAdditionSwitchers(List<ForceActionEnableDto> additionSwitchers) {
+        this.additionSwitchers = additionSwitchers;
+        return this;
+    }
+
+    public ProjectProtectedActionResultApiDto addAdditionSwitchersItem(ForceActionEnableDto additionSwitchersItem) {
+        if (this.additionSwitchers == null) {
+            this.additionSwitchers = new ArrayList<>();
+        }
+        this.additionSwitchers.add(additionSwitchersItem);
+        return this;
+    }
+
+    public ProjectProtectedActionResultApiDto withAdditionSwitchers(
+        Consumer<List<ForceActionEnableDto>> additionSwitchersSetter) {
+        if (this.additionSwitchers == null) {
+            this.additionSwitchers = new ArrayList<>();
+        }
+        additionSwitchersSetter.accept(this.additionSwitchers);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 操作选择列表。
+     * @return additionSwitchers
+     */
+    public List<ForceActionEnableDto> getAdditionSwitchers() {
+        return additionSwitchers;
+    }
+
+    public void setAdditionSwitchers(List<ForceActionEnableDto> additionSwitchers) {
+        this.additionSwitchers = additionSwitchers;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -182,12 +221,12 @@ public class ProjectProtectedActionResultApiDto {
         ProjectProtectedActionResultApiDto that = (ProjectProtectedActionResultApiDto) obj;
         return Objects.equals(this.action, that.action) && Objects.equals(this.enable, that.enable)
             && Objects.equals(this.users, that.users) && Objects.equals(this.userTeams, that.userTeams)
-            && Objects.equals(this.roles, that.roles);
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.additionSwitchers, that.additionSwitchers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, enable, users, userTeams, roles);
+        return Objects.hash(action, enable, users, userTeams, roles, additionSwitchers);
     }
 
     @Override
@@ -199,6 +238,7 @@ public class ProjectProtectedActionResultApiDto {
         sb.append("    users: ").append(toIndentedString(users)).append("\n");
         sb.append("    userTeams: ").append(toIndentedString(userTeams)).append("\n");
         sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
+        sb.append("    additionSwitchers: ").append(toIndentedString(additionSwitchers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

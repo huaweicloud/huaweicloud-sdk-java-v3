@@ -28,6 +28,11 @@ public class GeneralTextResult {
 
     private List<GeneralTextWordsBlockList> wordsBlockList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "markdown_result")
+
+    private String markdownResult;
+
     public GeneralTextResult withDirection(Float direction) {
         this.direction = direction;
         return this;
@@ -95,6 +100,23 @@ public class GeneralTextResult {
         this.wordsBlockList = wordsBlockList;
     }
 
+    public GeneralTextResult withMarkdownResult(String markdownResult) {
+        this.markdownResult = markdownResult;
+        return this;
+    }
+
+    /**
+     * 所有文字块拼接的识别结果，同一行的文字块使用“\\t”拼接，不同行的文字块使用“\\n”拼接。 当return_markdown_result为true时，返回该字段值，否则，不返回该字段。 
+     * @return markdownResult
+     */
+    public String getMarkdownResult() {
+        return markdownResult;
+    }
+
+    public void setMarkdownResult(String markdownResult) {
+        this.markdownResult = markdownResult;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +128,13 @@ public class GeneralTextResult {
         GeneralTextResult that = (GeneralTextResult) obj;
         return Objects.equals(this.direction, that.direction)
             && Objects.equals(this.wordsBlockCount, that.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, that.wordsBlockList);
+            && Objects.equals(this.wordsBlockList, that.wordsBlockList)
+            && Objects.equals(this.markdownResult, that.markdownResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(direction, wordsBlockCount, wordsBlockList);
+        return Objects.hash(direction, wordsBlockCount, wordsBlockList, markdownResult);
     }
 
     @Override
@@ -121,6 +144,7 @@ public class GeneralTextResult {
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    wordsBlockCount: ").append(toIndentedString(wordsBlockCount)).append("\n");
         sb.append("    wordsBlockList: ").append(toIndentedString(wordsBlockList)).append("\n");
+        sb.append("    markdownResult: ").append(toIndentedString(markdownResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

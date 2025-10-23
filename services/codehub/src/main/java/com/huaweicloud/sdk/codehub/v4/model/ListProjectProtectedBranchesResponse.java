@@ -19,11 +19,6 @@ public class ListProjectProtectedBranchesResponse extends SdkResponse {
 
     private List<ProjectProtectedBranchApiDto> body = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Total")
-
-    private String xTotal;
-
     public ListProjectProtectedBranchesResponse withBody(List<ProjectProtectedBranchApiDto> body) {
         this.body = body;
         return this;
@@ -57,25 +52,6 @@ public class ListProjectProtectedBranchesResponse extends SdkResponse {
         this.body = body;
     }
 
-    public ListProjectProtectedBranchesResponse withXTotal(String xTotal) {
-        this.xTotal = xTotal;
-        return this;
-    }
-
-    /**
-     * Get xTotal
-     * @return xTotal
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Total")
-    public String getXTotal() {
-        return xTotal;
-    }
-
-    public void setXTotal(String xTotal) {
-        this.xTotal = xTotal;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +61,12 @@ public class ListProjectProtectedBranchesResponse extends SdkResponse {
             return false;
         }
         ListProjectProtectedBranchesResponse that = (ListProjectProtectedBranchesResponse) obj;
-        return Objects.equals(this.body, that.body) && Objects.equals(this.xTotal, that.xTotal);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body, xTotal);
+        return Objects.hash(body);
     }
 
     @Override
@@ -98,7 +74,6 @@ public class ListProjectProtectedBranchesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProjectProtectedBranchesResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
-        sb.append("    xTotal: ").append(toIndentedString(xTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -75,23 +75,21 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
         return CompletableFuture.supplyAsync(() -> {
-            if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
-                if (StringUtils.isEmpty(getIdpId())) {
-                    throw new SdkException("idpId is required when using idpId&idTokenFile");
-                } else if (StringUtils.isEmpty(getIdTokenFile())) {
-                    throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
-                }
-            }
+            checkRequiredIdpParams();
 
             if (!StringUtils.isEmpty(domainId)) {
                 return this;
             }
 
-            // Confirm if current ak has been cached in AuthCache, key of authMap when searching domain info is ak
-            String akWithName = getAk();
-            String cachedDomainId = AuthCache.getAuth(akWithName);
-            if (!StringUtils.isEmpty(cachedDomainId)) {
-                domainId = cachedDomainId;
+            String cacheName = null;
+            if (!StringUtils.isEmpty(getAk())) {
+                cacheName = getAk();
+            } else if (!StringUtils.isEmpty(getIdpId())) {
+                cacheName = getIdpId();
+            }
+
+            if (cache.containsKey(cacheName)) {
+                domainId = cache.get(cacheName);
                 return this;
             }
 
@@ -113,8 +111,10 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
                 throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
             }
             domainId = response.getDomains().get(0).getId();
-            logger.info("Success to get domain id: " + StringUtils.mask(domainId));
-            AuthCache.putAuth(akWithName, domainId);
+            logger.info("Success to get domain id: {}", StringUtils.mask(domainId));
+            if (!StringUtils.isEmpty(cacheName)) {
+                cache.put(cacheName, domainId);
+            }
 
             setDerivedPredicate(derivedPredicate);
 

@@ -149,8 +149,6 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemasReque
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseSchemasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVersionsResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeRequest;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeSummaryRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseVolumeSummaryResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabasesRequest;
@@ -263,6 +261,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlExcuteNodesReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlExcuteNodesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlPlanActionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlTraceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSqlTraceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
@@ -347,6 +347,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowErrorLogSwitchStatus
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowErrorLogSwitchStatusResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowExpansionParametersRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowExpansionParametersResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowFullSqlRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowFullSqlResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowGlobalSlowSqlDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowGlobalSlowSqlDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceConfigurationRequest;
@@ -443,6 +445,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateExpansionParameter
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateExpansionParametersResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceAliasRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceAliasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameRequest;
@@ -2336,35 +2340,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListDatabaseVersionsRequest, ListDatabaseVersionsResponse> listDatabaseVersionsInvoker(
         ListDatabaseVersionsRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDatabaseVersions, hcClient);
-    }
-
-    /**
-     * 查询数据库占用空间大小列表
-     *
-     * 查询数据库占用空间大小列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDatabaseVolumeRequest 请求对象
-     * @return ListDatabaseVolumeResponse
-     */
-    public ListDatabaseVolumeResponse listDatabaseVolume(ListDatabaseVolumeRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDatabaseVolume);
-    }
-
-    /**
-     * 查询数据库占用空间大小列表
-     *
-     * 查询数据库占用空间大小列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDatabaseVolumeRequest 请求对象
-     * @return SyncInvoker<ListDatabaseVolumeRequest, ListDatabaseVolumeResponse>
-     */
-    public SyncInvoker<ListDatabaseVolumeRequest, ListDatabaseVolumeResponse> listDatabaseVolumeInvoker(
-        ListDatabaseVolumeRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDatabaseVolume, hcClient);
     }
 
     /**
@@ -5891,6 +5866,35 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 修改实例别名
+     *
+     * 创建或修改实例备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceAliasRequest 请求对象
+     * @return UpdateInstanceAliasResponse
+     */
+    public UpdateInstanceAliasResponse updateInstanceAlias(UpdateInstanceAliasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.updateInstanceAlias);
+    }
+
+    /**
+     * 修改实例别名
+     *
+     * 创建或修改实例备注。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceAliasRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceAliasRequest, UpdateInstanceAliasResponse>
+     */
+    public SyncInvoker<UpdateInstanceAliasRequest, UpdateInstanceAliasResponse> updateInstanceAliasInvoker(
+        UpdateInstanceAliasRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.updateInstanceAlias, hcClient);
+    }
+
+    /**
      * 修改指定实例的参数
      *
      * 修改指定实例的参数。
@@ -6827,6 +6831,35 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 查询SQL执行计划绑定情况
+     *
+     * 查询SQL执行计划绑定情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlPlanActionRequest 请求对象
+     * @return ListSqlPlanActionResponse
+     */
+    public ListSqlPlanActionResponse listSqlPlanAction(ListSqlPlanActionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listSqlPlanAction);
+    }
+
+    /**
+     * 查询SQL执行计划绑定情况
+     *
+     * 查询SQL执行计划绑定情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlPlanActionRequest 请求对象
+     * @return SyncInvoker<ListSqlPlanActionRequest, ListSqlPlanActionResponse>
+     */
+    public SyncInvoker<ListSqlPlanActionRequest, ListSqlPlanActionResponse> listSqlPlanActionInvoker(
+        ListSqlPlanActionRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listSqlPlanAction, hcClient);
+    }
+
+    /**
      * 查询GaussDB数据库实例SQL链路
      *
      * 查询GaussDB数据库实例SQL链路，包含实例上对应组件的链路列表，如dn_6001、dn_6002、cn_5001、cn_5002。
@@ -6852,6 +6885,34 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ListSqlTraceRequest, ListSqlTraceResponse> listSqlTraceInvoker(ListSqlTraceRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listSqlTrace, hcClient);
+    }
+
+    /**
+     * 查询单条SQL详情
+     *
+     * 查询单条SQL详情。对于分布式版实例，可查询对应SQL的完整执行记录，包含CN和DN上SQL语句执行历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFullSqlRequest 请求对象
+     * @return ShowFullSqlResponse
+     */
+    public ShowFullSqlResponse showFullSql(ShowFullSqlRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showFullSql);
+    }
+
+    /**
+     * 查询单条SQL详情
+     *
+     * 查询单条SQL详情。对于分布式版实例，可查询对应SQL的完整执行记录，包含CN和DN上SQL语句执行历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFullSqlRequest 请求对象
+     * @return SyncInvoker<ShowFullSqlRequest, ShowFullSqlResponse>
+     */
+    public SyncInvoker<ShowFullSqlRequest, ShowFullSqlResponse> showFullSqlInvoker(ShowFullSqlRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showFullSql, hcClient);
     }
 
     /**

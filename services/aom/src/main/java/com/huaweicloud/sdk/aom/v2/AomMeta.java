@@ -18,6 +18,9 @@ import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.AlarmRuleParam;
 import com.huaweicloud.sdk.aom.v2.model.AppRulesBody;
+import com.huaweicloud.sdk.aom.v2.model.BatchUpdateAlarmRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.BatchUpdateAlarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.BatchUpdateRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsResponse;
 import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceRequest;
@@ -311,6 +314,40 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(AppRulesBody.class),
             f -> f.withMarshaller(AddOrUpdateServiceDiscoveryRulesRequest::getBody,
                 AddOrUpdateServiceDiscoveryRulesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateAlarmRuleRequest, BatchUpdateAlarmRuleResponse> batchUpdateAlarmRule =
+        genForBatchUpdateAlarmRule();
+
+    private static HttpRequestDef<BatchUpdateAlarmRuleRequest, BatchUpdateAlarmRuleResponse> genForBatchUpdateAlarmRule() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateAlarmRuleRequest, BatchUpdateAlarmRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, BatchUpdateAlarmRuleRequest.class, BatchUpdateAlarmRuleResponse.class)
+            .withName("BatchUpdateAlarmRule")
+            .withUri("/v4/{project_id}/alarm-rules/batch-update")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateAlarmRuleRequest::getAction, BatchUpdateAlarmRuleRequest::setAction));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateAlarmRuleRequest::getEnterpriseProjectId,
+                BatchUpdateAlarmRuleRequest::setEnterpriseProjectId));
+        builder.<BatchUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateRequest.class),
+            f -> f.withMarshaller(BatchUpdateAlarmRuleRequest::getBody, BatchUpdateAlarmRuleRequest::setBody));
 
         // response
 

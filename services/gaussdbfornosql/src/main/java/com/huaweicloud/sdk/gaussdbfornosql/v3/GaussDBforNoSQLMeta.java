@@ -98,6 +98,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBackupsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListBackupsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsResponse;
@@ -225,6 +227,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisDataRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisDataRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisDataResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrResponse;
@@ -1283,6 +1288,68 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getLimit,
                 ListAvailableFlavorInfosRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForListBackups();
+
+    private static HttpRequestDef<ListBackupsRequest, ListBackupsResponse> genForListBackups() {
+        // basic
+        HttpRequestDef.Builder<ListBackupsRequest, ListBackupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackupsRequest.class, ListBackupsResponse.class)
+                .withName("ListBackups")
+                .withUri("/v4/{project_id}/backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getInstanceId, ListBackupsRequest::setInstanceId));
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getDatastoreType, ListBackupsRequest::setDatastoreType));
+        builder.<String>withRequestField("backup_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getBackupId, ListBackupsRequest::setBackupId));
+        builder.<String>withRequestField("backup_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getBackupType, ListBackupsRequest::setBackupType));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getType, ListBackupsRequest::setType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackupsRequest::getLimit, ListBackupsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackupsRequest::getOffset, ListBackupsRequest::setOffset));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getBeginTime, ListBackupsRequest::setBeginTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getEndTime, ListBackupsRequest::setEndTime));
 
         // response
 
@@ -3007,6 +3074,34 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestoreRequestBody.class),
             f -> f.withMarshaller(RestoreExistingInstanceRequest::getBody, RestoreExistingInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreRedisDataRequest, RestoreRedisDataResponse> restoreRedisData =
+        genForRestoreRedisData();
+
+    private static HttpRequestDef<RestoreRedisDataRequest, RestoreRedisDataResponse> genForRestoreRedisData() {
+        // basic
+        HttpRequestDef.Builder<RestoreRedisDataRequest, RestoreRedisDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreRedisDataRequest.class, RestoreRedisDataResponse.class)
+                .withName("RestoreRedisData")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/recovery")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreRedisDataRequest::getInstanceId, RestoreRedisDataRequest::setInstanceId));
+        builder.<RestoreRedisDataRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestoreRedisDataRequestBody.class),
+            f -> f.withMarshaller(RestoreRedisDataRequest::getBody, RestoreRedisDataRequest::setBody));
 
         // response
 

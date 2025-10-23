@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 流水线阶段带任务
+ * 流水线阶段的任务
  */
 public class PipelineStageJobDto {
 

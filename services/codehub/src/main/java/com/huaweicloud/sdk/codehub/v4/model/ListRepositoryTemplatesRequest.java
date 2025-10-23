@@ -106,7 +106,7 @@ public class ListRepositoryTemplatesRequest {
     private PipelineEnum pipeline;
 
     /**
-     * **参数解释：** 自动创建流水线。 **约束限制：** 不涉及 **取值范围：** - SYSTEM,USER，个人和官方模版。 - SYSTEM，官方模版。 - USER，个人模版。 **默认取值：** 不涉及
+     * **参数解释：** 自动创建流水线。 **约束限制：** 不涉及 **取值范围：** - SYSTEM,USER，个人和官方模板。 - SYSTEM，官方模板。 - USER，个人模板。 **默认取值：** 不涉及
      */
     public static final class TypeEnum {
 
@@ -359,7 +359,7 @@ public class ListRepositoryTemplatesRequest {
     }
 
     /**
-     * **参数解释：** 自动创建流水线。 **约束限制：** 不涉及 **取值范围：** - SYSTEM,USER，个人和官方模版。 - SYSTEM，官方模版。 - USER，个人模版。 **默认取值：** 不涉及
+     * **参数解释：** 自动创建流水线。 **约束限制：** 不涉及 **取值范围：** - SYSTEM,USER，个人和官方模板。 - SYSTEM，官方模板。 - USER，个人模板。 **默认取值：** 不涉及
      * @return type
      */
     public TypeEnum getType() {
@@ -444,7 +444,7 @@ public class ListRepositoryTemplatesRequest {
     }
 
     /**
-     * **参数解释：** 项目的32位uuid，项目唯一标识，通过[[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)](tag:hws)[[查询项目列表](https://support.huaweicloud.com/intl/en-us/api-projectman/ListProjectsV4.html)](tag:hws_hk)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 当该参数不为空时，仅返回当前项目下符合搜索条件的模版仓 **取值范围：** 字符串长度32。 **取值范围：** 不涉及
+     * **参数解释：** 项目的32位uuid，项目唯一标识，通过[[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)](tag:hws)[[查询项目列表](https://support.huaweicloud.com/intl/en-us/api-projectman/ListProjectsV4.html)](tag:hws_hk)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 当该参数不为空时，仅返回当前项目下符合搜索条件的模板仓 **取值范围：** 字符串长度32。 **取值范围：** 不涉及
      * @return projectId
      */
     public String getProjectId() {

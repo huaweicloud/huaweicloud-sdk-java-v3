@@ -22,80 +22,10 @@ public class CreateMergeRequestDiscussionResponseResponse extends SdkResponse {
 
     private Integer id;
 
-    /**
-     * **参数解释：** 类型(普通评论、需要解决的普通评论、需要解决的关联代码行的评论)。
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum DISCUSSIONNOTE for value: "DiscussionNote"
-         */
-        public static final TypeEnum DISCUSSIONNOTE = new TypeEnum("DiscussionNote");
-
-        /**
-         * Enum DIFFNOTE for value: "DiffNote"
-         */
-        public static final TypeEnum DIFFNOTE = new TypeEnum("DiffNote");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("DiscussionNote", DISCUSSIONNOTE);
-            map.put("DiffNote", DIFFNOTE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
@@ -133,7 +63,7 @@ public class CreateMergeRequestDiscussionResponseResponse extends SdkResponse {
     private Integer noteableId;
 
     /**
-     * **参数解释：** 意见类型。
+     * **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
      */
     public static final class NoteableTypeEnum {
 
@@ -525,20 +455,20 @@ public class CreateMergeRequestDiscussionResponseResponse extends SdkResponse {
         this.id = id;
     }
 
-    public CreateMergeRequestDiscussionResponseResponse withType(TypeEnum type) {
+    public CreateMergeRequestDiscussionResponseResponse withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数解释：** 类型(普通评论、需要解决的普通评论、需要解决的关联代码行的评论)。
+     * **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。
      * @return type
      */
-    public TypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -678,7 +608,7 @@ public class CreateMergeRequestDiscussionResponseResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 意见类型。
+     * **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
      * @return noteableType
      */
     public NoteableTypeEnum getNoteableType() {

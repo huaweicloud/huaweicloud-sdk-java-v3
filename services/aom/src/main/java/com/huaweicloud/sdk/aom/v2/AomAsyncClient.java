@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateMetricOrEventAlarmRuleRequest
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.BatchUpdateAlarmRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.BatchUpdateAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsResponse;
 import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceRequest;
@@ -322,6 +324,36 @@ public class AomAsyncClient {
     public AsyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRulesAsyncInvoker(
         AddOrUpdateServiceDiscoveryRulesRequest request) {
         return new AsyncInvoker<>(request, AomMeta.addOrUpdateServiceDiscoveryRules, hcClient);
+    }
+
+    /**
+     * 批量更新Prometheus监控告警规则
+     *
+     * 该接口用于批量启停Prometheus监控告警规则、批量修改Prometheus监控告警规则的告警行动规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateAlarmRuleRequest 请求对象
+     * @return CompletableFuture<BatchUpdateAlarmRuleResponse>
+     */
+    public CompletableFuture<BatchUpdateAlarmRuleResponse> batchUpdateAlarmRuleAsync(
+        BatchUpdateAlarmRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.batchUpdateAlarmRule);
+    }
+
+    /**
+     * 批量更新Prometheus监控告警规则
+     *
+     * 该接口用于批量启停Prometheus监控告警规则、批量修改Prometheus监控告警规则的告警行动规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateAlarmRuleRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateAlarmRuleRequest, BatchUpdateAlarmRuleResponse>
+     */
+    public AsyncInvoker<BatchUpdateAlarmRuleRequest, BatchUpdateAlarmRuleResponse> batchUpdateAlarmRuleAsyncInvoker(
+        BatchUpdateAlarmRuleRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.batchUpdateAlarmRule, hcClient);
     }
 
     /**

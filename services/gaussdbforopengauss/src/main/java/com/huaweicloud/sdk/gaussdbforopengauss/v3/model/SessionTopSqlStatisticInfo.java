@@ -25,6 +25,11 @@ public class SessionTopSqlStatisticInfo {
 
     private String query;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public SessionTopSqlStatisticInfo withNodeName(String nodeName) {
         this.nodeName = nodeName;
         return this;
@@ -76,6 +81,23 @@ public class SessionTopSqlStatisticInfo {
         this.query = query;
     }
 
+    public SessionTopSqlStatisticInfo withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * **参数解释**: SQL执行数量。 **取值范围**: 大于等于0。 
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class SessionTopSqlStatisticInfo {
         }
         SessionTopSqlStatisticInfo that = (SessionTopSqlStatisticInfo) obj;
         return Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.uniqueSqlId, that.uniqueSqlId)
-            && Objects.equals(this.query, that.query);
+            && Objects.equals(this.query, that.query) && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodeName, uniqueSqlId, query);
+        return Objects.hash(nodeName, uniqueSqlId, query, count);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class SessionTopSqlStatisticInfo {
         sb.append("    nodeName: ").append(toIndentedString(nodeName)).append("\n");
         sb.append("    uniqueSqlId: ").append(toIndentedString(uniqueSqlId)).append("\n");
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

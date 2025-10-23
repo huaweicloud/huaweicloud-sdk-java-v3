@@ -117,9 +117,9 @@ public class ShowGroupSettingsInheritCfgResponse extends SdkResponse {
     private Integer issueTemplates;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cr_comment_emplates")
+    @JsonProperty(value = "cr_comment_templates")
 
-    private Integer crCommentEmplates;
+    private Integer crCommentTemplates;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "merge_requests")
@@ -551,8 +551,8 @@ public class ShowGroupSettingsInheritCfgResponse extends SdkResponse {
         this.issueTemplates = issueTemplates;
     }
 
-    public ShowGroupSettingsInheritCfgResponse withCrCommentEmplates(Integer crCommentEmplates) {
-        this.crCommentEmplates = crCommentEmplates;
+    public ShowGroupSettingsInheritCfgResponse withCrCommentTemplates(Integer crCommentTemplates) {
+        this.crCommentTemplates = crCommentTemplates;
         return this;
     }
 
@@ -560,14 +560,14 @@ public class ShowGroupSettingsInheritCfgResponse extends SdkResponse {
      * **参数解释：** 排序id。
      * minimum: 1
      * maximum: 2147483647
-     * @return crCommentEmplates
+     * @return crCommentTemplates
      */
-    public Integer getCrCommentEmplates() {
-        return crCommentEmplates;
+    public Integer getCrCommentTemplates() {
+        return crCommentTemplates;
     }
 
-    public void setCrCommentEmplates(Integer crCommentEmplates) {
-        this.crCommentEmplates = crCommentEmplates;
+    public void setCrCommentTemplates(Integer crCommentTemplates) {
+        this.crCommentTemplates = crCommentTemplates;
     }
 
     public ShowGroupSettingsInheritCfgResponse withMergeRequests(Integer mergeRequests) {
@@ -633,7 +633,7 @@ public class ShowGroupSettingsInheritCfgResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 部署秘钥策略。
+     * **参数解释：** 部署密钥策略。
      * minimum: 1
      * maximum: 2147483647
      * @return deployKeys
@@ -722,7 +722,7 @@ public class ShowGroupSettingsInheritCfgResponse extends SdkResponse {
             && Objects.equals(this.streamEventSettings, that.streamEventSettings)
             && Objects.equals(this.pipelineSettings, that.pipelineSettings)
             && Objects.equals(this.issueTemplates, that.issueTemplates)
-            && Objects.equals(this.crCommentEmplates, that.crCommentEmplates)
+            && Objects.equals(this.crCommentTemplates, that.crCommentTemplates)
             && Objects.equals(this.mergeRequests, that.mergeRequests)
             && Objects.equals(this.mrBranchPolicies, that.mrBranchPolicies)
             && Objects.equals(this.repositorySettings, that.repositorySettings)
@@ -753,7 +753,7 @@ public class ShowGroupSettingsInheritCfgResponse extends SdkResponse {
             streamEventSettings,
             pipelineSettings,
             issueTemplates,
-            crCommentEmplates,
+            crCommentTemplates,
             mergeRequests,
             mrBranchPolicies,
             repositorySettings,
@@ -788,7 +788,7 @@ public class ShowGroupSettingsInheritCfgResponse extends SdkResponse {
         sb.append("    streamEventSettings: ").append(toIndentedString(streamEventSettings)).append("\n");
         sb.append("    pipelineSettings: ").append(toIndentedString(pipelineSettings)).append("\n");
         sb.append("    issueTemplates: ").append(toIndentedString(issueTemplates)).append("\n");
-        sb.append("    crCommentEmplates: ").append(toIndentedString(crCommentEmplates)).append("\n");
+        sb.append("    crCommentTemplates: ").append(toIndentedString(crCommentTemplates)).append("\n");
         sb.append("    mergeRequests: ").append(toIndentedString(mergeRequests)).append("\n");
         sb.append("    mrBranchPolicies: ").append(toIndentedString(mrBranchPolicies)).append("\n");
         sb.append("    repositorySettings: ").append(toIndentedString(repositorySettings)).append("\n");

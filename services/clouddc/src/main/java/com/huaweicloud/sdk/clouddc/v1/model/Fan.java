@@ -24,7 +24,7 @@ public class Fan {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reading")
 
-    private String reading;
+    private Integer reading;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reading_units")
@@ -39,7 +39,7 @@ public class Fan {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_ratio")
 
-    private String speedRatio;
+    private Integer speedRatio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -80,7 +80,7 @@ public class Fan {
         this.model = model;
     }
 
-    public Fan withReading(String reading) {
+    public Fan withReading(Integer reading) {
         this.reading = reading;
         return this;
     }
@@ -89,11 +89,11 @@ public class Fan {
      * 转速
      * @return reading
      */
-    public String getReading() {
+    public Integer getReading() {
         return reading;
     }
 
-    public void setReading(String reading) {
+    public void setReading(Integer reading) {
         this.reading = reading;
     }
 
@@ -131,7 +131,7 @@ public class Fan {
         this.partNumber = partNumber;
     }
 
-    public Fan withSpeedRatio(String speedRatio) {
+    public Fan withSpeedRatio(Integer speedRatio) {
         this.speedRatio = speedRatio;
         return this;
     }
@@ -140,11 +140,11 @@ public class Fan {
      * 速率比
      * @return speedRatio
      */
-    public String getSpeedRatio() {
+    public Integer getSpeedRatio() {
         return speedRatio;
     }
 
-    public void setSpeedRatio(String speedRatio) {
+    public void setSpeedRatio(Integer speedRatio) {
         this.speedRatio = speedRatio;
     }
 

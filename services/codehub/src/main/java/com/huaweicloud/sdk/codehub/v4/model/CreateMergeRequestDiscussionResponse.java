@@ -40,7 +40,7 @@ public class CreateMergeRequestDiscussionResponse extends SdkResponse {
     private Integer repositoryId;
 
     /**
-     * **参数解释：** 意见类型。
+     * **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
      */
     public static final class NoteableTypeEnum {
 
@@ -175,7 +175,7 @@ public class CreateMergeRequestDiscussionResponse extends SdkResponse {
     private String reviewModules;
 
     /**
-     * **参数解释：** 严重程度key。
+     * **参数解释：** 严重程度key。 **取值范围：** - suggestion: 建议。 - minor: 一般。 - major: 严重。 - fatal: 致命。
      */
     public static final class SeverityEnum {
 
@@ -267,7 +267,7 @@ public class CreateMergeRequestDiscussionResponse extends SdkResponse {
     private String severityCn;
 
     /**
-     * **参数解释：** 严重程度英文。
+     * **参数解释：** 严重程度英文。 **取值范围：** - Suggestion: 建议。 - Minor: 一般。 - major: 严重。 - fatal: 致命。
      */
     public static final class SeverityEnEnum {
 
@@ -475,7 +475,7 @@ public class CreateMergeRequestDiscussionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 意见类型。
+     * **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
      * @return noteableType
      */
     public NoteableTypeEnum getNoteableType() {
@@ -700,7 +700,7 @@ public class CreateMergeRequestDiscussionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 严重程度key。
+     * **参数解释：** 严重程度key。 **取值范围：** - suggestion: 建议。 - minor: 一般。 - major: 严重。 - fatal: 致命。
      * @return severity
      */
     public SeverityEnum getSeverity() {
@@ -717,7 +717,7 @@ public class CreateMergeRequestDiscussionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 严重程度中文。 **约束限制：** - 建议 - 一般 - 严重 - 致命
+     * **参数解释：** 严重程度中文。 **取值范围：** - 建议 - 一般 - 严重 - 致命
      * @return severityCn
      */
     public String getSeverityCn() {
@@ -734,7 +734,7 @@ public class CreateMergeRequestDiscussionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 严重程度英文。
+     * **参数解释：** 严重程度英文。 **取值范围：** - Suggestion: 建议。 - Minor: 一般。 - major: 严重。 - fatal: 致命。
      * @return severityEn
      */
     public SeverityEnEnum getSeverityEn() {

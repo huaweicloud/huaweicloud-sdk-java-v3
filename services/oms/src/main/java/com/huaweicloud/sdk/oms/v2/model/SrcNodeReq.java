@@ -34,6 +34,11 @@ public class SrcNodeReq {
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json_auth_file")
 
     private String jsonAuthFile;
@@ -129,6 +134,23 @@ public class SrcNodeReq {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    public SrcNodeReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
     }
 
     public SrcNodeReq withJsonAuthFile(String jsonAuthFile) {
@@ -269,6 +291,7 @@ public class SrcNodeReq {
         SrcNodeReq that = (SrcNodeReq) obj;
         return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.region, that.region)
             && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.connectionString, that.connectionString)
             && Objects.equals(this.jsonAuthFile, that.jsonAuthFile)
             && Objects.equals(this.securityToken, that.securityToken) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.bucket, that.bucket) && Objects.equals(this.objectKey, that.objectKey)
@@ -277,7 +300,17 @@ public class SrcNodeReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudType, region, ak, sk, jsonAuthFile, securityToken, appId, bucket, objectKey, listFile);
+        return Objects.hash(cloudType,
+            region,
+            ak,
+            sk,
+            connectionString,
+            jsonAuthFile,
+            securityToken,
+            appId,
+            bucket,
+            objectKey,
+            listFile);
     }
 
     @Override
@@ -288,6 +321,7 @@ public class SrcNodeReq {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    securityToken: ").append(toIndentedString(securityToken)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

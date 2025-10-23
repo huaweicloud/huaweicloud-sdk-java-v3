@@ -51,7 +51,7 @@ public class EncryptDatakeyRequestBody {
     private String pinType;
 
     /**
-     * 指定生成的密钥算法。有效值： SM2、RSA。
+     * 指定待加密数据密钥的类型，仅四级密评场景生效。有效值： SM2、RSA。
      */
     public static final class KeySpecEnum {
 
@@ -250,7 +250,7 @@ public class EncryptDatakeyRequestBody {
     }
 
     /**
-     * 指定生成的密钥算法。有效值： SM2、RSA。
+     * 指定待加密数据密钥的类型，仅四级密评场景生效。有效值： SM2、RSA。
      * @return keySpec
      */
     public KeySpecEnum getKeySpec() {

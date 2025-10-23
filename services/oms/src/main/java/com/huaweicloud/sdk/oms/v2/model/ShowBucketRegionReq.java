@@ -31,6 +31,11 @@ public class ShowBucketRegionReq {
     private String jsonAuthFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -108,6 +113,23 @@ public class ShowBucketRegionReq {
         this.jsonAuthFile = jsonAuthFile;
     }
 
+    public ShowBucketRegionReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+    }
+
     public ShowBucketRegionReq withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -153,12 +175,13 @@ public class ShowBucketRegionReq {
         ShowBucketRegionReq that = (ShowBucketRegionReq) obj;
         return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.ak, that.ak)
             && Objects.equals(this.sk, that.sk) && Objects.equals(this.jsonAuthFile, that.jsonAuthFile)
-            && Objects.equals(this.appId, that.appId) && Objects.equals(this.bucketName, that.bucketName);
+            && Objects.equals(this.connectionString, that.connectionString) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.bucketName, that.bucketName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudType, ak, sk, jsonAuthFile, appId, bucketName);
+        return Objects.hash(cloudType, ak, sk, jsonAuthFile, connectionString, appId, bucketName);
     }
 
     @Override
@@ -169,6 +192,7 @@ public class ShowBucketRegionReq {
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
         sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("}");

@@ -53,7 +53,7 @@ public class UpdateRepoWebHookSubscriptionDto {
     }
 
     /**
-     * **参数解释：** 秘钥。
+     * **参数解释：** 密钥。
      * @return token
      */
     public String getToken() {

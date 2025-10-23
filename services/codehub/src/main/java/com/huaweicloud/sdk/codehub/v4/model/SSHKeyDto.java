@@ -36,7 +36,7 @@ public class SSHKeyDto {
     }
 
     /**
-     * **参数解释：** 秘钥id。
+     * **参数解释：** 密钥id。
      * minimum: 1
      * maximum: 2147483647
      * @return id
@@ -55,7 +55,7 @@ public class SSHKeyDto {
     }
 
     /**
-     * **参数解释：** 秘钥名称。 **取值范围：** 字符串长度不少于1，不超过1000。
+     * **参数解释：** 密钥名称。 **取值范围：** 字符串长度不少于1，不超过1000。
      * @return title
      */
     public String getTitle() {

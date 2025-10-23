@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**： 桶分裂信息。 **取值范围**： 不涉及。
+ * **参数解释**： 桶分裂信息，仅在从集群外部扩容到已有的逻辑集群场景下才会返回。 **取值范围**： 不涉及。
  */
 public class BucketSplitInfo {
 

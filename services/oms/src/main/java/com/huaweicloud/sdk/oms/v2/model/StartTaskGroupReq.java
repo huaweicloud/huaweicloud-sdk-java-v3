@@ -21,6 +21,11 @@ public class StartTaskGroupReq {
     private String srcSk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json_auth_file")
 
     private String jsonAuthFile;
@@ -72,6 +77,23 @@ public class StartTaskGroupReq {
 
     public void setSrcSk(String srcSk) {
         this.srcSk = srcSk;
+    }
+
+    public StartTaskGroupReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
     }
 
     public StartTaskGroupReq withJsonAuthFile(String jsonAuthFile) {
@@ -152,6 +174,7 @@ public class StartTaskGroupReq {
         }
         StartTaskGroupReq that = (StartTaskGroupReq) obj;
         return Objects.equals(this.srcAk, that.srcAk) && Objects.equals(this.srcSk, that.srcSk)
+            && Objects.equals(this.connectionString, that.connectionString)
             && Objects.equals(this.jsonAuthFile, that.jsonAuthFile) && Objects.equals(this.dstAk, that.dstAk)
             && Objects.equals(this.dstSk, that.dstSk)
             && Objects.equals(this.sourceCdnAuthenticationKey, that.sourceCdnAuthenticationKey);
@@ -159,7 +182,7 @@ public class StartTaskGroupReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(srcAk, srcSk, jsonAuthFile, dstAk, dstSk, sourceCdnAuthenticationKey);
+        return Objects.hash(srcAk, srcSk, connectionString, jsonAuthFile, dstAk, dstSk, sourceCdnAuthenticationKey);
     }
 
     @Override
@@ -168,6 +191,7 @@ public class StartTaskGroupReq {
         sb.append("class StartTaskGroupReq {\n");
         sb.append("    srcAk: ").append(toIndentedString(srcAk)).append("\n");
         sb.append("    srcSk: ").append(toIndentedString(srcSk)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    dstAk: ").append(toIndentedString(dstAk)).append("\n");
         sb.append("    dstSk: ").append(toIndentedString(dstSk)).append("\n");

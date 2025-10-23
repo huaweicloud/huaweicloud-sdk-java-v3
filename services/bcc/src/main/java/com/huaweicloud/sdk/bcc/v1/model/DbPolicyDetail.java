@@ -1,0 +1,125 @@
+package com.huaweicloud.sdk.bcc.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * DbPolicyDetail
+ */
+public class DbPolicyDetail {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_policy")
+
+    private DbPolicyDetailBackupPolicy backupPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offsite_backup_policy")
+
+    private List<DbPolicyDetailOffsiteBackupPolicy> offsiteBackupPolicy = null;
+
+    public DbPolicyDetail withBackupPolicy(DbPolicyDetailBackupPolicy backupPolicy) {
+        this.backupPolicy = backupPolicy;
+        return this;
+    }
+
+    public DbPolicyDetail withBackupPolicy(Consumer<DbPolicyDetailBackupPolicy> backupPolicySetter) {
+        if (this.backupPolicy == null) {
+            this.backupPolicy = new DbPolicyDetailBackupPolicy();
+            backupPolicySetter.accept(this.backupPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get backupPolicy
+     * @return backupPolicy
+     */
+    public DbPolicyDetailBackupPolicy getBackupPolicy() {
+        return backupPolicy;
+    }
+
+    public void setBackupPolicy(DbPolicyDetailBackupPolicy backupPolicy) {
+        this.backupPolicy = backupPolicy;
+    }
+
+    public DbPolicyDetail withOffsiteBackupPolicy(List<DbPolicyDetailOffsiteBackupPolicy> offsiteBackupPolicy) {
+        this.offsiteBackupPolicy = offsiteBackupPolicy;
+        return this;
+    }
+
+    public DbPolicyDetail addOffsiteBackupPolicyItem(DbPolicyDetailOffsiteBackupPolicy offsiteBackupPolicyItem) {
+        if (this.offsiteBackupPolicy == null) {
+            this.offsiteBackupPolicy = new ArrayList<>();
+        }
+        this.offsiteBackupPolicy.add(offsiteBackupPolicyItem);
+        return this;
+    }
+
+    public DbPolicyDetail withOffsiteBackupPolicy(
+        Consumer<List<DbPolicyDetailOffsiteBackupPolicy>> offsiteBackupPolicySetter) {
+        if (this.offsiteBackupPolicy == null) {
+            this.offsiteBackupPolicy = new ArrayList<>();
+        }
+        offsiteBackupPolicySetter.accept(this.offsiteBackupPolicy);
+        return this;
+    }
+
+    /**
+     * 数据库复制策略
+     * @return offsiteBackupPolicy
+     */
+    public List<DbPolicyDetailOffsiteBackupPolicy> getOffsiteBackupPolicy() {
+        return offsiteBackupPolicy;
+    }
+
+    public void setOffsiteBackupPolicy(List<DbPolicyDetailOffsiteBackupPolicy> offsiteBackupPolicy) {
+        this.offsiteBackupPolicy = offsiteBackupPolicy;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        DbPolicyDetail that = (DbPolicyDetail) obj;
+        return Objects.equals(this.backupPolicy, that.backupPolicy)
+            && Objects.equals(this.offsiteBackupPolicy, that.offsiteBackupPolicy);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(backupPolicy, offsiteBackupPolicy);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DbPolicyDetail {\n");
+        sb.append("    backupPolicy: ").append(toIndentedString(backupPolicy)).append("\n");
+        sb.append("    offsiteBackupPolicy: ").append(toIndentedString(offsiteBackupPolicy)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

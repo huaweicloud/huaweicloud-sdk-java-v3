@@ -21,6 +21,11 @@ public class RetryTaskGroupReq {
     private String srcSk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json_auth_file")
 
     private String jsonAuthFile;
@@ -77,6 +82,23 @@ public class RetryTaskGroupReq {
 
     public void setSrcSk(String srcSk) {
         this.srcSk = srcSk;
+    }
+
+    public RetryTaskGroupReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
     }
 
     public RetryTaskGroupReq withJsonAuthFile(String jsonAuthFile) {
@@ -174,6 +196,7 @@ public class RetryTaskGroupReq {
         }
         RetryTaskGroupReq that = (RetryTaskGroupReq) obj;
         return Objects.equals(this.srcAk, that.srcAk) && Objects.equals(this.srcSk, that.srcSk)
+            && Objects.equals(this.connectionString, that.connectionString)
             && Objects.equals(this.jsonAuthFile, that.jsonAuthFile) && Objects.equals(this.dstAk, that.dstAk)
             && Objects.equals(this.dstSk, that.dstSk)
             && Objects.equals(this.sourceCdnAuthenticationKey, that.sourceCdnAuthenticationKey)
@@ -182,7 +205,14 @@ public class RetryTaskGroupReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(srcAk, srcSk, jsonAuthFile, dstAk, dstSk, sourceCdnAuthenticationKey, migrateFailedObject);
+        return Objects.hash(srcAk,
+            srcSk,
+            connectionString,
+            jsonAuthFile,
+            dstAk,
+            dstSk,
+            sourceCdnAuthenticationKey,
+            migrateFailedObject);
     }
 
     @Override
@@ -191,6 +221,7 @@ public class RetryTaskGroupReq {
         sb.append("class RetryTaskGroupReq {\n");
         sb.append("    srcAk: ").append(toIndentedString(srcAk)).append("\n");
         sb.append("    srcSk: ").append(toIndentedString(srcSk)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    dstAk: ").append(toIndentedString(dstAk)).append("\n");
         sb.append("    dstSk: ").append(toIndentedString(dstSk)).append("\n");

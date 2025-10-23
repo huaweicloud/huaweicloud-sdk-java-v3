@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ProjectSettingsInheritCfgDto {
 
     /**
-     * **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。
+     * **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 - webhook_settings，webhook设置。 - mr_branch_policies，合并分支策略设置。 - reviews，检视设置。 - deploy_keys，部署参数设置。 **默认取值：** 不涉及。
      */
     public static final class NameEnum {
 
@@ -55,6 +55,26 @@ public class ProjectSettingsInheritCfgDto {
          */
         public static final NameEnum WATERMARK = new NameEnum("watermark");
 
+        /**
+         * Enum WEBHOOK_SETTINGS for value: "webhook_settings"
+         */
+        public static final NameEnum WEBHOOK_SETTINGS = new NameEnum("webhook_settings");
+
+        /**
+         * Enum MR_BRANCH_POLICIES for value: "mr_branch_policies"
+         */
+        public static final NameEnum MR_BRANCH_POLICIES = new NameEnum("mr_branch_policies");
+
+        /**
+         * Enum REVIEWS for value: "reviews"
+         */
+        public static final NameEnum REVIEWS = new NameEnum("reviews");
+
+        /**
+         * Enum DEPLOY_KEYS for value: "deploy_keys"
+         */
+        public static final NameEnum DEPLOY_KEYS = new NameEnum("deploy_keys");
+
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NameEnum> createStaticFields() {
@@ -66,6 +86,10 @@ public class ProjectSettingsInheritCfgDto {
             map.put("merge_requests", MERGE_REQUESTS);
             map.put("e2e_settings", E2E_SETTINGS);
             map.put("watermark", WATERMARK);
+            map.put("webhook_settings", WEBHOOK_SETTINGS);
+            map.put("mr_branch_policies", MR_BRANCH_POLICIES);
+            map.put("reviews", REVIEWS);
+            map.put("deploy_keys", DEPLOY_KEYS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -201,7 +225,7 @@ public class ProjectSettingsInheritCfgDto {
     }
 
     /**
-     * **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。
+     * **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 - webhook_settings，webhook设置。 - mr_branch_policies，合并分支策略设置。 - reviews，检视设置。 - deploy_keys，部署参数设置。 **默认取值：** 不涉及。
      * @return name
      */
     public NameEnum getName() {

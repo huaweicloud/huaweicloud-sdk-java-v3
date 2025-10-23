@@ -44,6 +44,26 @@ public class IncidentTicketInfoResponseData {
     private Boolean isServiceInterrupt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private Long startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fault_recovery_time")
+
+    private Long faultRecoveryTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fault_delineation_time")
+
+    private Long faultDelineationTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incident_ownership")
+
+    private String incidentOwnership;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_type")
 
     private String incidentType;
@@ -256,6 +276,80 @@ public class IncidentTicketInfoResponseData {
 
     public void setIsServiceInterrupt(Boolean isServiceInterrupt) {
         this.isServiceInterrupt = isServiceInterrupt;
+    }
+
+    public IncidentTicketInfoResponseData withStartTime(Long startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * 故障发生时间戳
+     * minimum: 1
+     * maximum: 9999999999999
+     * @return startTime
+     */
+    public Long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
+    }
+
+    public IncidentTicketInfoResponseData withFaultRecoveryTime(Long faultRecoveryTime) {
+        this.faultRecoveryTime = faultRecoveryTime;
+        return this;
+    }
+
+    /**
+     * 故障恢复时间戳
+     * minimum: 1
+     * maximum: 9999999999999
+     * @return faultRecoveryTime
+     */
+    public Long getFaultRecoveryTime() {
+        return faultRecoveryTime;
+    }
+
+    public void setFaultRecoveryTime(Long faultRecoveryTime) {
+        this.faultRecoveryTime = faultRecoveryTime;
+    }
+
+    public IncidentTicketInfoResponseData withFaultDelineationTime(Long faultDelineationTime) {
+        this.faultDelineationTime = faultDelineationTime;
+        return this;
+    }
+
+    /**
+     * 定界完成时间时间戳
+     * minimum: 1
+     * maximum: 9999999999999
+     * @return faultDelineationTime
+     */
+    public Long getFaultDelineationTime() {
+        return faultDelineationTime;
+    }
+
+    public void setFaultDelineationTime(Long faultDelineationTime) {
+        this.faultDelineationTime = faultDelineationTime;
+    }
+
+    public IncidentTicketInfoResponseData withIncidentOwnership(String incidentOwnership) {
+        this.incidentOwnership = incidentOwnership;
+        return this;
+    }
+
+    /**
+     * 事件归属 参考：枚举 事件来源incident_ownership
+     * @return incidentOwnership
+     */
+    public String getIncidentOwnership() {
+        return incidentOwnership;
+    }
+
+    public void setIncidentOwnership(String incidentOwnership) {
+        this.incidentOwnership = incidentOwnership;
     }
 
     public IncidentTicketInfoResponseData withIncidentType(String incidentType) {
@@ -529,6 +623,10 @@ public class IncidentTicketInfoResponseData {
             && Objects.equals(this.currentCloudService, that.currentCloudService)
             && Objects.equals(this.incidentLevel, that.incidentLevel)
             && Objects.equals(this.isServiceInterrupt, that.isServiceInterrupt)
+            && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.faultRecoveryTime, that.faultRecoveryTime)
+            && Objects.equals(this.faultDelineationTime, that.faultDelineationTime)
+            && Objects.equals(this.incidentOwnership, that.incidentOwnership)
             && Objects.equals(this.incidentType, that.incidentType)
             && Objects.equals(this.incidentTitle, that.incidentTitle)
             && Objects.equals(this.incidentDescription, that.incidentDescription)
@@ -549,6 +647,10 @@ public class IncidentTicketInfoResponseData {
             currentCloudService,
             incidentLevel,
             isServiceInterrupt,
+            startTime,
+            faultRecoveryTime,
+            faultDelineationTime,
+            incidentOwnership,
             incidentType,
             incidentTitle,
             incidentDescription,
@@ -574,6 +676,10 @@ public class IncidentTicketInfoResponseData {
         sb.append("    currentCloudService: ").append(toIndentedString(currentCloudService)).append("\n");
         sb.append("    incidentLevel: ").append(toIndentedString(incidentLevel)).append("\n");
         sb.append("    isServiceInterrupt: ").append(toIndentedString(isServiceInterrupt)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    faultRecoveryTime: ").append(toIndentedString(faultRecoveryTime)).append("\n");
+        sb.append("    faultDelineationTime: ").append(toIndentedString(faultDelineationTime)).append("\n");
+        sb.append("    incidentOwnership: ").append(toIndentedString(incidentOwnership)).append("\n");
         sb.append("    incidentType: ").append(toIndentedString(incidentType)).append("\n");
         sb.append("    incidentTitle: ").append(toIndentedString(incidentTitle)).append("\n");
         sb.append("    incidentDescription: ").append(toIndentedString(incidentDescription)).append("\n");

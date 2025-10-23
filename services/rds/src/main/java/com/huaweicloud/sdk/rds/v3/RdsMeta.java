@@ -54,6 +54,9 @@ import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdResponse;
 import com.huaweicloud.sdk.rds.v3.model.ChangingTheDelayThresholdRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeResponse;
+import com.huaweicloud.sdk.rds.v3.model.CheckWeakPasswordRequest;
+import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdRequest;
+import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationCopyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForCreation;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForUpdate;
@@ -259,6 +262,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListJobInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListMajorVersionFeatureRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListMajorVersionFeatureResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListMarketplaceEngineProductsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListMarketplaceEngineProductsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsRequest;
@@ -333,6 +338,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListTopSqlsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListTopSqlsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
@@ -360,6 +367,8 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationsRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.MysqlReadOnlySwitch;
+import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeRequest;
+import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeResponse;
 import com.huaweicloud.sdk.rds.v3.model.OpenProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.OpsWindowRequest;
 import com.huaweicloud.sdk.rds.v3.model.PostgreSQLHistoryDatabaseRequest;
@@ -378,6 +387,7 @@ import com.huaweicloud.sdk.rds.v3.model.QueryDRInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.RdsUpgradePrecheckV3Req;
 import com.huaweicloud.sdk.rds.v3.model.RecyclePolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ReduceVolumeRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ReplaceNodeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetViewSqlStatisticsRequest;
@@ -504,6 +514,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowRestartPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowRestartPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowStorageUsedSpaceRequest;
@@ -1048,6 +1060,33 @@ public class RdsMeta {
             String.class,
             f -> f.withMarshaller(CheckInstanceForUpgradeResponse::getXRequestId,
                 CheckInstanceForUpgradeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckWeakpwdRequest, CheckWeakpwdResponse> checkWeakpwd = genForCheckWeakpwd();
+
+    private static HttpRequestDef<CheckWeakpwdRequest, CheckWeakpwdResponse> genForCheckWeakpwd() {
+        // basic
+        HttpRequestDef.Builder<CheckWeakpwdRequest, CheckWeakpwdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckWeakpwdRequest.class, CheckWeakpwdResponse.class)
+                .withName("CheckWeakpwd")
+                .withUri("/v3/{project_id}/weakpwd")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CheckWeakpwdRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CheckWeakpwdRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CheckWeakpwdRequest::getXLanguage, CheckWeakpwdRequest::setXLanguage));
+        builder.<CheckWeakPasswordRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckWeakPasswordRequest.class),
+            f -> f.withMarshaller(CheckWeakpwdRequest::getBody, CheckWeakpwdRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -2887,6 +2926,42 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMajorVersionFeatureRequest, ListMajorVersionFeatureResponse> listMajorVersionFeature =
+        genForListMajorVersionFeature();
+
+    private static HttpRequestDef<ListMajorVersionFeatureRequest, ListMajorVersionFeatureResponse> genForListMajorVersionFeature() {
+        // basic
+        HttpRequestDef.Builder<ListMajorVersionFeatureRequest, ListMajorVersionFeatureResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMajorVersionFeatureRequest.class, ListMajorVersionFeatureResponse.class)
+            .withName("ListMajorVersionFeature")
+            .withUri("/v3/{project_id}/major-version-feature")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMajorVersionFeatureRequest::getVersion,
+                ListMajorVersionFeatureRequest::setVersion));
+        builder.<Boolean>withRequestField("single",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListMajorVersionFeatureRequest::getSingle,
+                ListMajorVersionFeatureRequest::setSingle));
+        builder.<ListMajorVersionFeatureRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMajorVersionFeatureRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListMajorVersionFeatureRequest::getXLanguage,
+                ListMajorVersionFeatureRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse> listOffSiteBackups =
         genForListOffSiteBackups();
 
@@ -3914,6 +3989,53 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTopSqlsRequest, ListTopSqlsResponse> listTopSqls = genForListTopSqls();
+
+    private static HttpRequestDef<ListTopSqlsRequest, ListTopSqlsResponse> genForListTopSqls() {
+        // basic
+        HttpRequestDef.Builder<ListTopSqlsRequest, ListTopSqlsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopSqlsRequest.class, ListTopSqlsResponse.class)
+                .withName("ListTopSqls")
+                .withUri("/v3/{project_id}/instances/{instance_id}/top-sqls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopSqlsRequest::getInstanceId, ListTopSqlsRequest::setInstanceId));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopSqlsRequest::getSortKey, ListTopSqlsRequest::setSortKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopSqlsRequest::getLimit, ListTopSqlsRequest::setLimit));
+        builder.<String>withRequestField("statement",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopSqlsRequest::getStatement, ListTopSqlsRequest::setStatement));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopSqlsRequest::getSortDir, ListTopSqlsRequest::setSortDir));
+        builder.<ListTopSqlsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTopSqlsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListTopSqlsRequest::getXLanguage, ListTopSqlsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListUpdateBackupEnhancePolicyRequest, ListUpdateBackupEnhancePolicyResponse> listUpdateBackupEnhancePolicy =
         genForListUpdateBackupEnhancePolicy();
 
@@ -4171,6 +4293,39 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(ModifyMySqlProxyRouteModeRequest.class),
             f -> f.withMarshaller(ModifyRdSforMySqlProxyRouteModeRequest::getBody,
                 ModifyRdSforMySqlProxyRouteModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NotifyReplaceNodeRequest, NotifyReplaceNodeResponse> notifyReplaceNode =
+        genForNotifyReplaceNode();
+
+    private static HttpRequestDef<NotifyReplaceNodeRequest, NotifyReplaceNodeResponse> genForNotifyReplaceNode() {
+        // basic
+        HttpRequestDef.Builder<NotifyReplaceNodeRequest, NotifyReplaceNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NotifyReplaceNodeRequest.class, NotifyReplaceNodeResponse.class)
+                .withName("NotifyReplaceNode")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replace-node")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NotifyReplaceNodeRequest::getInstanceId, NotifyReplaceNodeRequest::setInstanceId));
+        builder.<NotifyReplaceNodeRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(NotifyReplaceNodeRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(NotifyReplaceNodeRequest::getXLanguage, NotifyReplaceNodeRequest::setXLanguage));
+        builder.<ReplaceNodeRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReplaceNodeRequest.class),
+            f -> f.withMarshaller(NotifyReplaceNodeRequest::getBody, NotifyReplaceNodeRequest::setBody));
 
         // response
 
@@ -5355,6 +5510,34 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowReplicationStatusRequest::getXLanguage,
                 ShowReplicationStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRestartPolicyRequest, ShowRestartPolicyResponse> showRestartPolicy =
+        genForShowRestartPolicy();
+
+    private static HttpRequestDef<ShowRestartPolicyRequest, ShowRestartPolicyResponse> genForShowRestartPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowRestartPolicyRequest, ShowRestartPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRestartPolicyRequest.class, ShowRestartPolicyResponse.class)
+                .withName("ShowRestartPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/restart-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestartPolicyRequest::getInstanceId, ShowRestartPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestartPolicyRequest::getXLanguage, ShowRestartPolicyRequest::setXLanguage));
 
         // response
 

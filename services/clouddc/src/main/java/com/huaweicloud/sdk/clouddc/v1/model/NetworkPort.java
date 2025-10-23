@@ -18,7 +18,7 @@ public class NetworkPort {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "physical_port_number")
 
-    private Integer physicalPortNumber;
+    private String physicalPortNumber;
 
     /**
      * 网络端口的物理连接状态
@@ -130,7 +130,7 @@ public class NetworkPort {
 
     private String autoNeg;
 
-    public NetworkPort withPhysicalPortNumber(Integer physicalPortNumber) {
+    public NetworkPort withPhysicalPortNumber(String physicalPortNumber) {
         this.physicalPortNumber = physicalPortNumber;
         return this;
     }
@@ -139,11 +139,11 @@ public class NetworkPort {
      * 网络端口的物理端口号
      * @return physicalPortNumber
      */
-    public Integer getPhysicalPortNumber() {
+    public String getPhysicalPortNumber() {
         return physicalPortNumber;
     }
 
-    public void setPhysicalPortNumber(Integer physicalPortNumber) {
+    public void setPhysicalPortNumber(String physicalPortNumber) {
         this.physicalPortNumber = physicalPortNumber;
     }
 

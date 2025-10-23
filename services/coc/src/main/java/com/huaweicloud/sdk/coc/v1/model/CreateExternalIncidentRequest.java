@@ -36,7 +36,7 @@ public class CreateExternalIncidentRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_service_interrupt")
 
-    private Boolean isServiceInterrupt;
+    private String isServiceInterrupt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_type")
@@ -204,7 +204,7 @@ public class CreateExternalIncidentRequest {
         this.incidentLevel = incidentLevel;
     }
 
-    public CreateExternalIncidentRequest withIsServiceInterrupt(Boolean isServiceInterrupt) {
+    public CreateExternalIncidentRequest withIsServiceInterrupt(String isServiceInterrupt) {
         this.isServiceInterrupt = isServiceInterrupt;
         return this;
     }
@@ -213,11 +213,11 @@ public class CreateExternalIncidentRequest {
      * 业务是否中断，取值：true/false
      * @return isServiceInterrupt
      */
-    public Boolean getIsServiceInterrupt() {
+    public String getIsServiceInterrupt() {
         return isServiceInterrupt;
     }
 
-    public void setIsServiceInterrupt(Boolean isServiceInterrupt) {
+    public void setIsServiceInterrupt(String isServiceInterrupt) {
         this.isServiceInterrupt = isServiceInterrupt;
     }
 

@@ -92,9 +92,7 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 仓库id
-     * minimum: 1
-     * maximum: 2147483647
+     * **参数解释：** 仓库id。
      * @return repositoryId
      */
     public Integer getRepositoryId() {

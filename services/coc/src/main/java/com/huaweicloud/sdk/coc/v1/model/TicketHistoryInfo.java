@@ -14,51 +14,6 @@ import java.util.function.Consumer;
 public class TicketHistoryInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "current_cloud_service_id")
-
-    private String currentCloudServiceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "level_id")
-
-    private String levelId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mtm_region")
-
-    private String mtmRegion;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mtm_type")
-
-    private String mtmType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "source_id")
-
-    private String sourceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "title")
-
-    private String title;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_change_event")
-
-    private Boolean isChangeEvent;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_service_interrupt")
-
-    private Boolean isServiceInterrupt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_id")
 
     private String actionId;
@@ -157,159 +112,6 @@ public class TicketHistoryInfo {
     @JsonProperty(value = "enum_data_list")
 
     private List<EnumDataInfo> enumDataList = null;
-
-    public TicketHistoryInfo withCurrentCloudServiceId(String currentCloudServiceId) {
-        this.currentCloudServiceId = currentCloudServiceId;
-        return this;
-    }
-
-    /**
-     * 扩展字段
-     * @return currentCloudServiceId
-     */
-    public String getCurrentCloudServiceId() {
-        return currentCloudServiceId;
-    }
-
-    public void setCurrentCloudServiceId(String currentCloudServiceId) {
-        this.currentCloudServiceId = currentCloudServiceId;
-    }
-
-    public TicketHistoryInfo withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 扩展字段
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public TicketHistoryInfo withLevelId(String levelId) {
-        this.levelId = levelId;
-        return this;
-    }
-
-    /**
-     * 扩展字段
-     * @return levelId
-     */
-    public String getLevelId() {
-        return levelId;
-    }
-
-    public void setLevelId(String levelId) {
-        this.levelId = levelId;
-    }
-
-    public TicketHistoryInfo withMtmRegion(String mtmRegion) {
-        this.mtmRegion = mtmRegion;
-        return this;
-    }
-
-    /**
-     * 扩展字段
-     * @return mtmRegion
-     */
-    public String getMtmRegion() {
-        return mtmRegion;
-    }
-
-    public void setMtmRegion(String mtmRegion) {
-        this.mtmRegion = mtmRegion;
-    }
-
-    public TicketHistoryInfo withMtmType(String mtmType) {
-        this.mtmType = mtmType;
-        return this;
-    }
-
-    /**
-     * 扩展字段
-     * @return mtmType
-     */
-    public String getMtmType() {
-        return mtmType;
-    }
-
-    public void setMtmType(String mtmType) {
-        this.mtmType = mtmType;
-    }
-
-    public TicketHistoryInfo withSourceId(String sourceId) {
-        this.sourceId = sourceId;
-        return this;
-    }
-
-    /**
-     * 扩展字段
-     * @return sourceId
-     */
-    public String getSourceId() {
-        return sourceId;
-    }
-
-    public void setSourceId(String sourceId) {
-        this.sourceId = sourceId;
-    }
-
-    public TicketHistoryInfo withTitle(String title) {
-        this.title = title;
-        return this;
-    }
-
-    /**
-     * 扩展字段
-     * @return title
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public TicketHistoryInfo withIsChangeEvent(Boolean isChangeEvent) {
-        this.isChangeEvent = isChangeEvent;
-        return this;
-    }
-
-    /**
-     * 是否变更事件
-     * @return isChangeEvent
-     */
-    public Boolean getIsChangeEvent() {
-        return isChangeEvent;
-    }
-
-    public void setIsChangeEvent(Boolean isChangeEvent) {
-        this.isChangeEvent = isChangeEvent;
-    }
-
-    public TicketHistoryInfo withIsServiceInterrupt(Boolean isServiceInterrupt) {
-        this.isServiceInterrupt = isServiceInterrupt;
-        return this;
-    }
-
-    /**
-     * 是否变更事件
-     * @return isServiceInterrupt
-     */
-    public Boolean getIsServiceInterrupt() {
-        return isServiceInterrupt;
-    }
-
-    public void setIsServiceInterrupt(Boolean isServiceInterrupt) {
-        this.isServiceInterrupt = isServiceInterrupt;
-    }
 
     public TicketHistoryInfo withActionId(String actionId) {
         this.actionId = actionId;
@@ -682,13 +484,7 @@ public class TicketHistoryInfo {
             return false;
         }
         TicketHistoryInfo that = (TicketHistoryInfo) obj;
-        return Objects.equals(this.currentCloudServiceId, that.currentCloudServiceId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.levelId, that.levelId)
-            && Objects.equals(this.mtmRegion, that.mtmRegion) && Objects.equals(this.mtmType, that.mtmType)
-            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.title, that.title)
-            && Objects.equals(this.isChangeEvent, that.isChangeEvent)
-            && Objects.equals(this.isServiceInterrupt, that.isServiceInterrupt)
-            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.action, that.action)
+        return Objects.equals(this.actionId, that.actionId) && Objects.equals(this.action, that.action)
             && Objects.equals(this.subAction, that.subAction) && Objects.equals(this.operator, that.operator)
             && Objects.equals(this.comment, that.comment) && Objects.equals(this.id, that.id)
             && Objects.equals(this.ticketId, that.ticketId) && Objects.equals(this.startTime, that.startTime)
@@ -704,16 +500,7 @@ public class TicketHistoryInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(currentCloudServiceId,
-            description,
-            levelId,
-            mtmRegion,
-            mtmType,
-            sourceId,
-            title,
-            isChangeEvent,
-            isServiceInterrupt,
-            actionId,
+        return Objects.hash(actionId,
             action,
             subAction,
             operator,
@@ -739,15 +526,6 @@ public class TicketHistoryInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TicketHistoryInfo {\n");
-        sb.append("    currentCloudServiceId: ").append(toIndentedString(currentCloudServiceId)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    levelId: ").append(toIndentedString(levelId)).append("\n");
-        sb.append("    mtmRegion: ").append(toIndentedString(mtmRegion)).append("\n");
-        sb.append("    mtmType: ").append(toIndentedString(mtmType)).append("\n");
-        sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
-        sb.append("    title: ").append(toIndentedString(title)).append("\n");
-        sb.append("    isChangeEvent: ").append(toIndentedString(isChangeEvent)).append("\n");
-        sb.append("    isServiceInterrupt: ").append(toIndentedString(isServiceInterrupt)).append("\n");
         sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    subAction: ").append(toIndentedString(subAction)).append("\n");

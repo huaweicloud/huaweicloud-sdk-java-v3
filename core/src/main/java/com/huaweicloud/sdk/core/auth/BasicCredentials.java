@@ -79,23 +79,21 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
         return CompletableFuture.supplyAsync(() -> {
-            if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
-                if (StringUtils.isEmpty(getIdpId())) {
-                    throw new SdkException("idpId is required when using idpId&idTokenFile");
-                } else if (StringUtils.isEmpty(getIdTokenFile())) {
-                    throw new SdkException("idTokenFile is required when using idpId&idTokenFile");
-                }
-            }
+            checkRequiredIdpParams();
 
             if (!StringUtils.isEmpty(projectId)) {
                 return this;
             }
 
-            // Confirm if current ak has been cached in AuthCache, key of authMap is ak+regionId
-            String akWithName = getAk() + regionId;
-            String cachedProjectId = AuthCache.getAuth(akWithName);
-            if (!StringUtils.isEmpty(cachedProjectId)) {
-                projectId = cachedProjectId;
+            String cacheName = null;
+            if (!StringUtils.isEmpty(getAk())) {
+                cacheName = getAk() + regionId;
+            } else if (!StringUtils.isEmpty(getIdpId())) {
+                cacheName = getIdpId() + regionId;
+            }
+
+            if (cache.containsKey(cacheName)) {
+                projectId = cache.get(cacheName);
                 return this;
             }
 
@@ -117,8 +115,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             List<Project> projects = response.getProjects();
             if (projects.size() == 1) {
                 projectId = projects.get(0).getId();
-            } else if (projects.size() < 1) {
-
+            } else if (projects.isEmpty()) {
                 throw new SdkException(String.format(Locale.US,
                         "Failed to get project id of region '%s' automatically, X-IAM-Trace-Id=%s."
                         , regionId, response.getTraceId()) +
@@ -127,7 +124,6 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                         " new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);");
             } else {
                 String projectIds = projects.stream().map(Project::getId).collect(Collectors.joining(","));
-
                 throw new SdkException(String.format(Locale.US,
                         "Multiple project ids found: [%s], X-IAM-Trace-Id=%s. ",
                         projectIds, response.getTraceId()) +
@@ -135,7 +131,9 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                         "new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);");
             }
             logger.info("Success to get project id of region '{}': {}", regionId, StringUtils.mask(projectId));
-            AuthCache.putAuth(akWithName, projectId);
+            if (!StringUtils.isEmpty(cacheName)) {
+                cache.put(cacheName, projectId);
+            }
 
             setDerivedPredicate(derivedPredicate);
 

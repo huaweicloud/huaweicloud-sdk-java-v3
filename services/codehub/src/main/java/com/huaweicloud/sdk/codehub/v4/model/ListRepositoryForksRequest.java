@@ -20,6 +20,16 @@ public class ListRepositoryForksRequest {
 
     private Integer repositoryId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     /**
      * **参数解释：**  排序字段。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - created_at，创建时间。 - updated_at，更新时间。 **默认取值：**  created_at。
      */
@@ -264,6 +274,44 @@ public class ListRepositoryForksRequest {
         this.repositoryId = repositoryId;
     }
 
+    public ListRepositoryForksRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 偏移量，从0开始。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListRepositoryForksRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 返回数量。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     public ListRepositoryForksRequest withOrderBy(OrderByEnum orderBy) {
         this.orderBy = orderBy;
         return this;
@@ -324,13 +372,14 @@ public class ListRepositoryForksRequest {
             return false;
         }
         ListRepositoryForksRequest that = (ListRepositoryForksRequest) obj;
-        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.orderBy, that.orderBy)
+        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.orderBy, that.orderBy)
             && Objects.equals(this.sort, that.sort) && Objects.equals(this.view, that.view);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repositoryId, orderBy, sort, view);
+        return Objects.hash(repositoryId, offset, limit, orderBy, sort, view);
     }
 
     @Override
@@ -338,6 +387,8 @@ public class ListRepositoryForksRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRepositoryForksRequest {\n");
         sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("    view: ").append(toIndentedString(view)).append("\n");

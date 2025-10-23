@@ -93,7 +93,7 @@ public class ShowBlobsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** bolb文件ID。 **约束限制：** 不涉及。
+     * **参数解释：** blob文件ID。 **约束限制：** 不涉及。
      * @return blobId
      */
     public String getBlobId() {

@@ -31,6 +31,11 @@ public class ListBucketsReq {
     private String jsonAuthFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -103,6 +108,23 @@ public class ListBucketsReq {
         this.jsonAuthFile = jsonAuthFile;
     }
 
+    public ListBucketsReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+    }
+
     public ListBucketsReq withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -131,12 +153,12 @@ public class ListBucketsReq {
         ListBucketsReq that = (ListBucketsReq) obj;
         return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.ak, that.ak)
             && Objects.equals(this.sk, that.sk) && Objects.equals(this.jsonAuthFile, that.jsonAuthFile)
-            && Objects.equals(this.appId, that.appId);
+            && Objects.equals(this.connectionString, that.connectionString) && Objects.equals(this.appId, that.appId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudType, ak, sk, jsonAuthFile, appId);
+        return Objects.hash(cloudType, ak, sk, jsonAuthFile, connectionString, appId);
     }
 
     @Override
@@ -147,6 +169,7 @@ public class ListBucketsReq {
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
         sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("}");
         return sb.toString();

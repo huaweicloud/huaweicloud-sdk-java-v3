@@ -31,6 +31,11 @@ public class CheckPrefixReq {
     private String jsonAuthFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -121,6 +126,23 @@ public class CheckPrefixReq {
 
     public void setJsonAuthFile(String jsonAuthFile) {
         this.jsonAuthFile = jsonAuthFile;
+    }
+
+    public CheckPrefixReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
     }
 
     public CheckPrefixReq withAppId(String appId) {
@@ -219,14 +241,24 @@ public class CheckPrefixReq {
         CheckPrefixReq that = (CheckPrefixReq) obj;
         return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.ak, that.ak)
             && Objects.equals(this.sk, that.sk) && Objects.equals(this.jsonAuthFile, that.jsonAuthFile)
-            && Objects.equals(this.appId, that.appId) && Objects.equals(this.bucketName, that.bucketName)
-            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.dataCenter, that.dataCenter)
+            && Objects.equals(this.connectionString, that.connectionString) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.dataCenter, that.dataCenter)
             && Objects.equals(this.securityToken, that.securityToken);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudType, ak, sk, jsonAuthFile, appId, bucketName, fileName, dataCenter, securityToken);
+        return Objects.hash(cloudType,
+            ak,
+            sk,
+            jsonAuthFile,
+            connectionString,
+            appId,
+            bucketName,
+            fileName,
+            dataCenter,
+            securityToken);
     }
 
     @Override
@@ -237,6 +269,7 @@ public class CheckPrefixReq {
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
         sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");

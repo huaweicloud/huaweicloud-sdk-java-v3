@@ -40,6 +40,11 @@ public class VehicleLicenseRequestBody {
 
     private Boolean recognizeElectronicLicense;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm")
+
+    private Boolean alarm;
+
     public VehicleLicenseRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -142,6 +147,23 @@ public class VehicleLicenseRequestBody {
         this.recognizeElectronicLicense = recognizeElectronicLicense;
     }
 
+    public VehicleLicenseRequestBody withAlarm(Boolean alarm) {
+        this.alarm = alarm;
+        return this;
+    }
+
+    /**
+     * 是否返回纸质行驶证图像的告警信息，可选值包括： - true：返回纸质行驶证图像的告警信息 - false：不返回纸质行驶证图像的告警信息 如果无该参数，系统默认不返回告警信息。如果输入参数不是Boolean类型，则会报非法参数错误。 
+     * @return alarm
+     */
+    public Boolean getAlarm() {
+        return alarm;
+    }
+
+    public void setAlarm(Boolean alarm) {
+        this.alarm = alarm;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,12 +177,14 @@ public class VehicleLicenseRequestBody {
             && Objects.equals(this.side, that.side)
             && Objects.equals(this.returnIssuingAuthority, that.returnIssuingAuthority)
             && Objects.equals(this.returnTextLocation, that.returnTextLocation)
-            && Objects.equals(this.recognizeElectronicLicense, that.recognizeElectronicLicense);
+            && Objects.equals(this.recognizeElectronicLicense, that.recognizeElectronicLicense)
+            && Objects.equals(this.alarm, that.alarm);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, side, returnIssuingAuthority, returnTextLocation, recognizeElectronicLicense);
+        return Objects
+            .hash(image, url, side, returnIssuingAuthority, returnTextLocation, recognizeElectronicLicense, alarm);
     }
 
     @Override
@@ -173,6 +197,7 @@ public class VehicleLicenseRequestBody {
         sb.append("    returnIssuingAuthority: ").append(toIndentedString(returnIssuingAuthority)).append("\n");
         sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
         sb.append("    recognizeElectronicLicense: ").append(toIndentedString(recognizeElectronicLicense)).append("\n");
+        sb.append("    alarm: ").append(toIndentedString(alarm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

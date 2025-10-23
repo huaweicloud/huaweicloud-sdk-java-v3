@@ -21,7 +21,7 @@ public class ListImpersonationTokensRequest {
     private Integer groupId;
 
     /**
-     * **参数解释：** 状态 all 所有 active 活跃 inactive 非活跃。
+     * **参数解释：** 状态 all 所有状态 active 活跃，未过期 inactive 非活跃，失效的。
      */
     public static final class StateEnum {
 
@@ -141,7 +141,7 @@ public class ListImpersonationTokensRequest {
     }
 
     /**
-     * **参数解释：** 状态 all 所有 active 活跃 inactive 非活跃。
+     * **参数解释：** 状态 all 所有状态 active 活跃，未过期 inactive 非活跃，失效的。
      * @return state
      */
     public StateEnum getState() {

@@ -124,7 +124,7 @@ public class RedisConf {
     }
 
     /**
-     * **参数解释**： 优先级策略。 **取值范围**： large：优先对大表进行重分布。 small：优先对小表进行重分布 default：默认顺序进行重分布。
+     * **参数解释**： 优先级策略。 **取值范围**： large：优先对大表进行重分布。 small：优先对小表进行重分布。 default：默认顺序进行重分布。
      * @return priorityPolicy
      */
     public String getPriorityPolicy() {

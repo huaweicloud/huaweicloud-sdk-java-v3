@@ -8,19 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围** - onboard：上架中，用户下单，完成LLD设计。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - offboarding：下架中。  &#x60;&#x60;&#x60;mermaid stateDiagram-v2    [*] --&gt; onboard : 完成LLD设计   onboard --&gt; ready : 完成网调、服务器初始化、软调及转维验收   ready --&gt; in_use : 发放裸机实例   ready --&gt; offboarding : 请求下架   ready --&gt; frozen : 欠费      in_use --&gt; ready : 删除裸机实例   in_use --&gt; frozen : 欠费    frozen --&gt; offboarding : 请求下架   in_use --&gt; offboarding : 请求下架   offboarding --&gt; [*] : 完成下架   state \&quot;in-use\&quot; as in_use &#x60;&#x60;&#x60;
+ * **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围** - onboard：上架中，用户下单，完成LLD设计。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - offboarding：下架中。  &#x60;&#x60;&#x60;mermaid stateDiagram-v2    [*] --&gt; onboard : 完成LLD设计   onboard --&gt; ready : 完成网调、服务器初始化、软调及转维验收   ready --&gt; in_use : 发放裸机实例   ready --&gt; offboarding : 请求下架   ready --&gt; frozen : 欠费      in_use --&gt; ready : 删除裸机实例   in_use --&gt; frozen : 欠费    frozen --&gt; offboarding : 请求下架   in_use --&gt; offboarding : 请求下架   offboarding --&gt; [*] : 完成下架   state \&quot;in-use\&quot; as in_use &#x60;&#x60;&#x60; **默认取值**： 不涉及
  */
 public class ManageState {
-
-    /**
-     * Enum DELIVERING for value: "delivering"
-     */
-    public static final ManageState DELIVERING = new ManageState("delivering");
-
-    /**
-     * Enum RECEIVED for value: "received"
-     */
-    public static final ManageState RECEIVED = new ManageState("received");
 
     /**
      * Enum ONBOARD for value: "onboard"
@@ -33,19 +23,29 @@ public class ManageState {
     public static final ManageState READY = new ManageState("ready");
 
     /**
+     * Enum IN_USE for value: "in-use"
+     */
+    public static final ManageState IN_USE = new ManageState("in-use");
+
+    /**
      * Enum FROZEN for value: "frozen"
      */
     public static final ManageState FROZEN = new ManageState("frozen");
+
+    /**
+     * Enum OFFBOARDING for value: "offboarding"
+     */
+    public static final ManageState OFFBOARDING = new ManageState("offboarding");
 
     private static final Map<String, ManageState> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, ManageState> createStaticFields() {
         Map<String, ManageState> map = new HashMap<>();
-        map.put("delivering", DELIVERING);
-        map.put("received", RECEIVED);
         map.put("onboard", ONBOARD);
         map.put("ready", READY);
+        map.put("in-use", IN_USE);
         map.put("frozen", FROZEN);
+        map.put("offboarding", OFFBOARDING);
         return Collections.unmodifiableMap(map);
     }
 

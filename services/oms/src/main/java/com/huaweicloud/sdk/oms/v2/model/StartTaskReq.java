@@ -21,6 +21,11 @@ public class StartTaskReq {
     private String srcSk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "json_auth_file")
 
     private String jsonAuthFile;
@@ -87,6 +92,23 @@ public class StartTaskReq {
 
     public void setSrcSk(String srcSk) {
         this.srcSk = srcSk;
+    }
+
+    public StartTaskReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
     }
 
     public StartTaskReq withJsonAuthFile(String jsonAuthFile) {
@@ -218,6 +240,7 @@ public class StartTaskReq {
         }
         StartTaskReq that = (StartTaskReq) obj;
         return Objects.equals(this.srcAk, that.srcAk) && Objects.equals(this.srcSk, that.srcSk)
+            && Objects.equals(this.connectionString, that.connectionString)
             && Objects.equals(this.jsonAuthFile, that.jsonAuthFile)
             && Objects.equals(this.srcSecurityToken, that.srcSecurityToken) && Objects.equals(this.dstAk, that.dstAk)
             && Objects.equals(this.dstSk, that.dstSk) && Objects.equals(this.dstSecurityToken, that.dstSecurityToken)
@@ -229,6 +252,7 @@ public class StartTaskReq {
     public int hashCode() {
         return Objects.hash(srcAk,
             srcSk,
+            connectionString,
             jsonAuthFile,
             srcSecurityToken,
             dstAk,
@@ -244,6 +268,7 @@ public class StartTaskReq {
         sb.append("class StartTaskReq {\n");
         sb.append("    srcAk: ").append(toIndentedString(srcAk)).append("\n");
         sb.append("    srcSk: ").append(toIndentedString(srcSk)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    jsonAuthFile: ").append(toIndentedString(jsonAuthFile)).append("\n");
         sb.append("    srcSecurityToken: ").append(toIndentedString(srcSecurityToken)).append("\n");
         sb.append("    dstAk: ").append(toIndentedString(dstAk)).append("\n");

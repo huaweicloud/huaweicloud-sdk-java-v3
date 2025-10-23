@@ -224,7 +224,7 @@ public class SubmoduleDto {
     }
 
     /**
-     * **参数解释：** 部署秘钥同步状态。 **取值范围：** - 0，不同步。 - 1，同步。
+     * **参数解释：** 部署密钥同步状态。 **取值范围：** - 0，不同步。 - 1，同步。
      * @return deployKeyStatus
      */
     public Integer getDeployKeyStatus() {

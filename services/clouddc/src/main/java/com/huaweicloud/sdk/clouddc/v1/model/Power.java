@@ -39,7 +39,7 @@ public class Power {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "power_capacity_watts")
 
-    private String powerCapacityWatts;
+    private Integer powerCapacityWatts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_input_voltage")
@@ -166,7 +166,7 @@ public class Power {
         this.powerSupplyType = powerSupplyType;
     }
 
-    public Power withPowerCapacityWatts(String powerCapacityWatts) {
+    public Power withPowerCapacityWatts(Integer powerCapacityWatts) {
         this.powerCapacityWatts = powerCapacityWatts;
         return this;
     }
@@ -175,11 +175,11 @@ public class Power {
      * 额定功率
      * @return powerCapacityWatts
      */
-    public String getPowerCapacityWatts() {
+    public Integer getPowerCapacityWatts() {
         return powerCapacityWatts;
     }
 
-    public void setPowerCapacityWatts(String powerCapacityWatts) {
+    public void setPowerCapacityWatts(Integer powerCapacityWatts) {
         this.powerCapacityWatts = powerCapacityWatts;
     }
 

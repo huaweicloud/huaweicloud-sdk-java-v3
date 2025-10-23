@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * DivergingCommitCounts
+ * 差异提交数量
  */
 public class DivergingCommitCounts {
 

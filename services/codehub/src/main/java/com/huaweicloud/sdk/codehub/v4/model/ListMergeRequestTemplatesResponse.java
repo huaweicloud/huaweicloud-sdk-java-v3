@@ -17,14 +17,14 @@ public class ListMergeRequestTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<MergeRequestTemplateDto> body = null;
+    private List<RepositoryMergeRequestTemplateDto> body = null;
 
-    public ListMergeRequestTemplatesResponse withBody(List<MergeRequestTemplateDto> body) {
+    public ListMergeRequestTemplatesResponse withBody(List<RepositoryMergeRequestTemplateDto> body) {
         this.body = body;
         return this;
     }
 
-    public ListMergeRequestTemplatesResponse addBodyItem(MergeRequestTemplateDto bodyItem) {
+    public ListMergeRequestTemplatesResponse addBodyItem(RepositoryMergeRequestTemplateDto bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListMergeRequestTemplatesResponse extends SdkResponse {
         return this;
     }
 
-    public ListMergeRequestTemplatesResponse withBody(Consumer<List<MergeRequestTemplateDto>> bodySetter) {
+    public ListMergeRequestTemplatesResponse withBody(Consumer<List<RepositoryMergeRequestTemplateDto>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ListMergeRequestTemplatesResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<MergeRequestTemplateDto> getBody() {
+    public List<RepositoryMergeRequestTemplateDto> getBody() {
         return body;
     }
 
-    public void setBody(List<MergeRequestTemplateDto> body) {
+    public void setBody(List<RepositoryMergeRequestTemplateDto> body) {
         this.body = body;
     }
 

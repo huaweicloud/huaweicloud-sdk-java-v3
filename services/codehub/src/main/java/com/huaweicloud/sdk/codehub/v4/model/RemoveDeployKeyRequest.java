@@ -45,7 +45,7 @@ public class RemoveDeployKeyRequest {
     }
 
     /**
-     * **参数解释：**  部署秘钥 ID。
+     * **参数解释：**  部署密钥 ID。
      * minimum: 1
      * maximum: 2147483647
      * @return keyId

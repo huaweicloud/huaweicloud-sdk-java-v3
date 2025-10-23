@@ -33,7 +33,7 @@ public class Processors {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_enabled_cores")
 
-    private String totalEnabledCores;
+    private Integer totalEnabledCores;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_threads")
@@ -43,7 +43,7 @@ public class Processors {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_enabled_threads")
 
-    private String totalEnabledThreads;
+    private Integer totalEnabledThreads;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "socket")
@@ -168,7 +168,7 @@ public class Processors {
         this.totalCores = totalCores;
     }
 
-    public Processors withTotalEnabledCores(String totalEnabledCores) {
+    public Processors withTotalEnabledCores(Integer totalEnabledCores) {
         this.totalEnabledCores = totalEnabledCores;
         return this;
     }
@@ -177,11 +177,11 @@ public class Processors {
      * 启用的核心数
      * @return totalEnabledCores
      */
-    public String getTotalEnabledCores() {
+    public Integer getTotalEnabledCores() {
         return totalEnabledCores;
     }
 
-    public void setTotalEnabledCores(String totalEnabledCores) {
+    public void setTotalEnabledCores(Integer totalEnabledCores) {
         this.totalEnabledCores = totalEnabledCores;
     }
 
@@ -202,7 +202,7 @@ public class Processors {
         this.totalThreads = totalThreads;
     }
 
-    public Processors withTotalEnabledThreads(String totalEnabledThreads) {
+    public Processors withTotalEnabledThreads(Integer totalEnabledThreads) {
         this.totalEnabledThreads = totalEnabledThreads;
         return this;
     }
@@ -211,11 +211,11 @@ public class Processors {
      * 启用的总线程
      * @return totalEnabledThreads
      */
-    public String getTotalEnabledThreads() {
+    public Integer getTotalEnabledThreads() {
         return totalEnabledThreads;
     }
 
-    public void setTotalEnabledThreads(String totalEnabledThreads) {
+    public void setTotalEnabledThreads(Integer totalEnabledThreads) {
         this.totalEnabledThreads = totalEnabledThreads;
     }
 

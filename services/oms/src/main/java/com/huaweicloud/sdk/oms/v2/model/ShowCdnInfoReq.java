@@ -22,6 +22,11 @@ public class ShowCdnInfoReq {
     private String sk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_string")
+
+    private String connectionString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_type")
 
     private String cloudType;
@@ -83,6 +88,23 @@ public class ShowCdnInfoReq {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    public ShowCdnInfoReq withConnectionString(String connectionString) {
+        this.connectionString = connectionString;
+        return this;
+    }
+
+    /**
+     * 连接字符串，用于微软云Blob鉴权
+     * @return connectionString
+     */
+    public String getConnectionString() {
+        return connectionString;
+    }
+
+    public void setConnectionString(String connectionString) {
+        this.connectionString = connectionString;
     }
 
     public ShowCdnInfoReq withCloudType(String cloudType) {
@@ -215,6 +237,7 @@ public class ShowCdnInfoReq {
         }
         ShowCdnInfoReq that = (ShowCdnInfoReq) obj;
         return Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.connectionString, that.connectionString)
             && Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.region, that.region)
             && Objects.equals(this.appId, that.appId) && Objects.equals(this.bucket, that.bucket)
             && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.sourceCdn, that.sourceCdn);
@@ -222,7 +245,7 @@ public class ShowCdnInfoReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ak, sk, cloudType, region, appId, bucket, prefix, sourceCdn);
+        return Objects.hash(ak, sk, connectionString, cloudType, region, appId, bucket, prefix, sourceCdn);
     }
 
     @Override
@@ -231,6 +254,7 @@ public class ShowCdnInfoReq {
         sb.append("class ShowCdnInfoReq {\n");
         sb.append("    ak: ").append(toIndentedString(ak)).append("\n");
         sb.append("    sk: ").append(toIndentedString(sk)).append("\n");
+        sb.append("    connectionString: ").append(toIndentedString(connectionString)).append("\n");
         sb.append("    cloudType: ").append(toIndentedString(cloudType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

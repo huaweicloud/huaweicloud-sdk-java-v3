@@ -21,7 +21,7 @@ public class CreateKeyRequestBody {
     private String keyAlias;
 
     /**
-     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2
+     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
      */
     public static final class KeySpecEnum {
 
@@ -61,6 +61,11 @@ public class CreateKeyRequestBody {
         public static final KeySpecEnum EC_P384 = new KeySpecEnum("EC_P384");
 
         /**
+         * Enum SECP256K1 for value: "SECP256K1"
+         */
+        public static final KeySpecEnum SECP256K1 = new KeySpecEnum("SECP256K1");
+
+        /**
          * Enum SM2 for value: "SM2"
          */
         public static final KeySpecEnum SM2 = new KeySpecEnum("SM2");
@@ -76,6 +81,7 @@ public class CreateKeyRequestBody {
             map.put("RSA_4096", RSA_4096);
             map.put("EC_P256", EC_P256);
             map.put("EC_P384", EC_P384);
+            map.put("SECP256K1", SECP256K1);
             map.put("SM2", SM2);
             return Collections.unmodifiableMap(map);
         }
@@ -329,7 +335,7 @@ public class CreateKeyRequestBody {
     }
 
     /**
-     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2
+     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
      * @return keySpec
      */
     public KeySpecEnum getKeySpec() {

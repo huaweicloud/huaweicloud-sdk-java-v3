@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * RestartConfiguration
@@ -24,6 +25,11 @@ public class RestartConfiguration {
     @JsonProperty(value = "delay")
 
     private Boolean delay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "restart_policy")
+
+    private RestartPolicy restartPolicy;
 
     public RestartConfiguration withRestartServer(Boolean restartServer) {
         this.restartServer = restartServer;
@@ -76,6 +82,32 @@ public class RestartConfiguration {
         this.delay = delay;
     }
 
+    public RestartConfiguration withRestartPolicy(RestartPolicy restartPolicy) {
+        this.restartPolicy = restartPolicy;
+        return this;
+    }
+
+    public RestartConfiguration withRestartPolicy(Consumer<RestartPolicy> restartPolicySetter) {
+        if (this.restartPolicy == null) {
+            this.restartPolicy = new RestartPolicy();
+            restartPolicySetter.accept(this.restartPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get restartPolicy
+     * @return restartPolicy
+     */
+    public RestartPolicy getRestartPolicy() {
+        return restartPolicy;
+    }
+
+    public void setRestartPolicy(RestartPolicy restartPolicy) {
+        this.restartPolicy = restartPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +118,12 @@ public class RestartConfiguration {
         }
         RestartConfiguration that = (RestartConfiguration) obj;
         return Objects.equals(this.restartServer, that.restartServer) && Objects.equals(this.forcible, that.forcible)
-            && Objects.equals(this.delay, that.delay);
+            && Objects.equals(this.delay, that.delay) && Objects.equals(this.restartPolicy, that.restartPolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(restartServer, forcible, delay);
+        return Objects.hash(restartServer, forcible, delay, restartPolicy);
     }
 
     @Override
@@ -101,6 +133,7 @@ public class RestartConfiguration {
         sb.append("    restartServer: ").append(toIndentedString(restartServer)).append("\n");
         sb.append("    forcible: ").append(toIndentedString(forcible)).append("\n");
         sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
+        sb.append("    restartPolicy: ").append(toIndentedString(restartPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

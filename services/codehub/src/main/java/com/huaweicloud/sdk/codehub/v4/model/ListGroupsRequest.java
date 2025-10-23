@@ -26,7 +26,7 @@ public class ListGroupsRequest {
     private Boolean allAvailable;
 
     /**
-     * **参数解释：** 排序字段，name 名称 path 路径 id 唯一标示 created_at 创建时间 updated_at 更新时间
+     * **参数解释：** 排序字段，name 名称 path 路径 id 唯一标识 created_at 创建时间 updated_at 更新时间
      */
     public static final class OrderByEnum {
 
@@ -253,7 +253,7 @@ public class ListGroupsRequest {
     }
 
     /**
-     * **参数解释：** 排序字段，name 名称 path 路径 id 唯一标示 created_at 创建时间 updated_at 更新时间
+     * **参数解释：** 排序字段，name 名称 path 路径 id 唯一标识 created_at 创建时间 updated_at 更新时间
      * @return orderBy
      */
     public OrderByEnum getOrderBy() {

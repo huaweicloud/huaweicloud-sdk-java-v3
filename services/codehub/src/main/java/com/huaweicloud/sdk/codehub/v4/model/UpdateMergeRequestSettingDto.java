@@ -874,7 +874,7 @@ public class UpdateMergeRequestSettingDto {
     }
 
     /**
-     * **参数解释：** 仅合并人和合并合并请求。
+     * **参数解释：** 仅合并人可合并合并请求。
      * @return onlyAssigneeCanMerge
      */
     public Boolean getOnlyAssigneeCanMerge() {

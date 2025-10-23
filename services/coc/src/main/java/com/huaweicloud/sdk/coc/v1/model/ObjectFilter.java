@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class ObjectFilter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
     private String operator;
@@ -27,6 +32,23 @@ public class ObjectFilter {
     @JsonProperty(value = "values")
 
     private List<String> values = null;
+
+    public ObjectFilter withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 条件名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public ObjectFilter withOperator(String operator) {
         this.operator = operator;
@@ -104,19 +126,20 @@ public class ObjectFilter {
             return false;
         }
         ObjectFilter that = (ObjectFilter) obj;
-        return Objects.equals(this.operator, that.operator) && Objects.equals(this.field, that.field)
-            && Objects.equals(this.values, that.values);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.field, that.field) && Objects.equals(this.values, that.values);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operator, field, values);
+        return Objects.hash(name, operator, field, values);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ObjectFilter {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
         sb.append("    field: ").append(toIndentedString(field)).append("\n");
         sb.append("    values: ").append(toIndentedString(values)).append("\n");

@@ -134,6 +134,11 @@ public class CreateCommitRevertResponse extends SdkResponse {
 
     private String revertBranchName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iid")
+
+    private Integer iid;
+
     public CreateCommitRevertResponse withId(String id) {
         this.id = id;
         return this;
@@ -560,6 +565,25 @@ public class CreateCommitRevertResponse extends SdkResponse {
         this.revertBranchName = revertBranchName;
     }
 
+    public CreateCommitRevertResponse withIid(Integer iid) {
+        this.iid = iid;
+        return this;
+    }
+
+    /**
+     * 变更请求 iid,仅变更请求返回
+     * minimum: 1
+     * maximum: 2147483647
+     * @return iid
+     */
+    public Integer getIid() {
+        return iid;
+    }
+
+    public void setIid(Integer iid) {
+        this.iid = iid;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -586,7 +610,7 @@ public class CreateCommitRevertResponse extends SdkResponse {
             && Objects.equals(this.committerAvatarUrl, that.committerAvatarUrl)
             && Objects.equals(this.state, that.state)
             && Objects.equals(this.cherryPickBranchName, that.cherryPickBranchName)
-            && Objects.equals(this.revertBranchName, that.revertBranchName);
+            && Objects.equals(this.revertBranchName, that.revertBranchName) && Objects.equals(this.iid, that.iid);
     }
 
     @Override
@@ -614,7 +638,8 @@ public class CreateCommitRevertResponse extends SdkResponse {
             committerAvatarUrl,
             state,
             cherryPickBranchName,
-            revertBranchName);
+            revertBranchName,
+            iid);
     }
 
     @Override
@@ -645,6 +670,7 @@ public class CreateCommitRevertResponse extends SdkResponse {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    cherryPickBranchName: ").append(toIndentedString(cherryPickBranchName)).append("\n");
         sb.append("    revertBranchName: ").append(toIndentedString(revertBranchName)).append("\n");
+        sb.append("    iid: ").append(toIndentedString(iid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

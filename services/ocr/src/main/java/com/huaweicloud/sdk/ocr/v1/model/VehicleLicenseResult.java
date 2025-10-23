@@ -156,7 +156,17 @@ public class VehicleLicenseResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "back")
 
-    private VehicleLicenseback back;
+    private VehicleLicenseBack back;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_result")
+
+    private VehicleLicenseAlarmResult alarmResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_confidence")
+
+    private VehicleLicenseAlarmConfidence alarmConfidence;
 
     public VehicleLicenseResult withType(String type) {
         this.type = type;
@@ -659,14 +669,14 @@ public class VehicleLicenseResult {
         this.front = front;
     }
 
-    public VehicleLicenseResult withBack(VehicleLicenseback back) {
+    public VehicleLicenseResult withBack(VehicleLicenseBack back) {
         this.back = back;
         return this;
     }
 
-    public VehicleLicenseResult withBack(Consumer<VehicleLicenseback> backSetter) {
+    public VehicleLicenseResult withBack(Consumer<VehicleLicenseBack> backSetter) {
         if (this.back == null) {
-            this.back = new VehicleLicenseback();
+            this.back = new VehicleLicenseBack();
             backSetter.accept(this.back);
         }
 
@@ -677,12 +687,64 @@ public class VehicleLicenseResult {
      * Get back
      * @return back
      */
-    public VehicleLicenseback getBack() {
+    public VehicleLicenseBack getBack() {
         return back;
     }
 
-    public void setBack(VehicleLicenseback back) {
+    public void setBack(VehicleLicenseBack back) {
         this.back = back;
+    }
+
+    public VehicleLicenseResult withAlarmResult(VehicleLicenseAlarmResult alarmResult) {
+        this.alarmResult = alarmResult;
+        return this;
+    }
+
+    public VehicleLicenseResult withAlarmResult(Consumer<VehicleLicenseAlarmResult> alarmResultSetter) {
+        if (this.alarmResult == null) {
+            this.alarmResult = new VehicleLicenseAlarmResult();
+            alarmResultSetter.accept(this.alarmResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get alarmResult
+     * @return alarmResult
+     */
+    public VehicleLicenseAlarmResult getAlarmResult() {
+        return alarmResult;
+    }
+
+    public void setAlarmResult(VehicleLicenseAlarmResult alarmResult) {
+        this.alarmResult = alarmResult;
+    }
+
+    public VehicleLicenseResult withAlarmConfidence(VehicleLicenseAlarmConfidence alarmConfidence) {
+        this.alarmConfidence = alarmConfidence;
+        return this;
+    }
+
+    public VehicleLicenseResult withAlarmConfidence(Consumer<VehicleLicenseAlarmConfidence> alarmConfidenceSetter) {
+        if (this.alarmConfidence == null) {
+            this.alarmConfidence = new VehicleLicenseAlarmConfidence();
+            alarmConfidenceSetter.accept(this.alarmConfidence);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get alarmConfidence
+     * @return alarmConfidence
+     */
+    public VehicleLicenseAlarmConfidence getAlarmConfidence() {
+        return alarmConfidence;
+    }
+
+    public void setAlarmConfidence(VehicleLicenseAlarmConfidence alarmConfidence) {
+        this.alarmConfidence = alarmConfidence;
     }
 
     @Override
@@ -710,7 +772,8 @@ public class VehicleLicenseResult {
             && Objects.equals(this.energyType, that.energyType) && Objects.equals(this.color, that.color)
             && Objects.equals(this.mandatoryScrappingDate, that.mandatoryScrappingDate)
             && Objects.equals(this.status, that.status) && Objects.equals(this.front, that.front)
-            && Objects.equals(this.back, that.back);
+            && Objects.equals(this.back, that.back) && Objects.equals(this.alarmResult, that.alarmResult)
+            && Objects.equals(this.alarmConfidence, that.alarmConfidence);
     }
 
     @Override
@@ -743,7 +806,9 @@ public class VehicleLicenseResult {
             mandatoryScrappingDate,
             status,
             front,
-            back);
+            back,
+            alarmResult,
+            alarmConfidence);
     }
 
     @Override
@@ -779,6 +844,8 @@ public class VehicleLicenseResult {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    front: ").append(toIndentedString(front)).append("\n");
         sb.append("    back: ").append(toIndentedString(back)).append("\n");
+        sb.append("    alarmResult: ").append(toIndentedString(alarmResult)).append("\n");
+        sb.append("    alarmConfidence: ").append(toIndentedString(alarmConfidence)).append("\n");
         sb.append("}");
         return sb.toString();
     }

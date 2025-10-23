@@ -16,19 +16,9 @@ import java.util.Objects;
 public class ListServersRequest {
 
     /**
-     * 服务器资产管理状态： - delivering：等待物料。 - received：到货，物料到货进场。 - onboard：上架，对物理服务器进行机柜机架、物理组网、BMC地址配置等，可通过BMC远程管理。 - ready：可用，完成网调、软调及转维验收。 - in-use：使用中，创建裸机实例。 - frozen：冻结，因欠费导致资源冻结。 - offboarding：下架中。
+     * **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围**： - onboard：上架中，用户下单，完成LLD设计。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - offboarding：下架中。  **默认取值**： 不涉及
      */
     public static final class ManageStateEnum {
-
-        /**
-         * Enum DELIVERING for value: "delivering"
-         */
-        public static final ManageStateEnum DELIVERING = new ManageStateEnum("delivering");
-
-        /**
-         * Enum RECEIVED for value: "received"
-         */
-        public static final ManageStateEnum RECEIVED = new ManageStateEnum("received");
 
         /**
          * Enum ONBOARD for value: "onboard"
@@ -39,6 +29,11 @@ public class ListServersRequest {
          * Enum READY for value: "ready"
          */
         public static final ManageStateEnum READY = new ManageStateEnum("ready");
+
+        /**
+         * Enum IN_USE for value: "in-use"
+         */
+        public static final ManageStateEnum IN_USE = new ManageStateEnum("in-use");
 
         /**
          * Enum FROZEN for value: "frozen"
@@ -54,10 +49,9 @@ public class ListServersRequest {
 
         private static Map<String, ManageStateEnum> createStaticFields() {
             Map<String, ManageStateEnum> map = new HashMap<>();
-            map.put("delivering", DELIVERING);
-            map.put("received", RECEIVED);
             map.put("onboard", ONBOARD);
             map.put("ready", READY);
+            map.put("in-use", IN_USE);
             map.put("frozen", FROZEN);
             map.put("offboarding", OFFBOARDING);
             return Collections.unmodifiableMap(map);
@@ -130,7 +124,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 服务器资产管理状态： - delivering：等待物料。 - received：到货，物料到货进场。 - onboard：上架，对物理服务器进行机柜机架、物理组网、BMC地址配置等，可通过BMC远程管理。 - ready：可用，完成网调、软调及转维验收。 - in-use：使用中，创建裸机实例。 - frozen：冻结，因欠费导致资源冻结。 - offboarding：下架中。
+     * **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围**： - onboard：上架中，用户下单，完成LLD设计。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - offboarding：下架中。  **默认取值**： 不涉及
      * @return manageState
      */
     public ManageStateEnum getManageState() {

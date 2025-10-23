@@ -15,6 +15,16 @@ public class ListProjectMergeRequestCanBeAssignedUsersRequest {
 
     private String projectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListProjectMergeRequestCanBeAssignedUsersRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -32,6 +42,44 @@ public class ListProjectMergeRequestCanBeAssignedUsersRequest {
         this.projectId = projectId;
     }
 
+    public ListProjectMergeRequestCanBeAssignedUsersRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 偏移量，从0开始。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListProjectMergeRequestCanBeAssignedUsersRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 返回数量。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +89,13 @@ public class ListProjectMergeRequestCanBeAssignedUsersRequest {
             return false;
         }
         ListProjectMergeRequestCanBeAssignedUsersRequest that = (ListProjectMergeRequestCanBeAssignedUsersRequest) obj;
-        return Objects.equals(this.projectId, that.projectId);
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId);
+        return Objects.hash(projectId, offset, limit);
     }
 
     @Override
@@ -54,6 +103,8 @@ public class ListProjectMergeRequestCanBeAssignedUsersRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProjectMergeRequestCanBeAssignedUsersRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

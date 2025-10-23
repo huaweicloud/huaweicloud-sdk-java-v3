@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 部署秘钥
+ * 部署密钥
  */
 public class DeployKeyValueDto {
 

@@ -1,9 +1,14 @@
 package com.huaweicloud.sdk.codehub.v4.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -11,25 +16,95 @@ import java.util.Objects;
  */
 public class DeleteTrustedIpAddressResponse extends SdkResponse {
 
+    /**
+     * **参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum SUCCESS for value: "success"
+         */
+        public static final StatusEnum SUCCESS = new StatusEnum("success");
+
+        /**
+         * Enum FAIL for value: "fail"
+         */
+        public static final StatusEnum FAIL = new StatusEnum("fail");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("success", SUCCESS);
+            map.put("fail", FAIL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
 
-    public DeleteTrustedIpAddressResponse withStatus(String status) {
+    public DeleteTrustedIpAddressResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * **参数解释：** 状态码。
+     * **参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
