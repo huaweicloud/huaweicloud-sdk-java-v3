@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListAutoIncrementUsageRequest;
+import com.huaweicloud.sdk.das.v3.model.ListAutoIncrementUsageResponse;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionsRequest;
@@ -107,6 +109,8 @@ import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
@@ -1079,6 +1083,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询自增配额
+     *
+     * 查询自增配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutoIncrementUsageRequest 请求对象
+     * @return CompletableFuture<ListAutoIncrementUsageResponse>
+     */
+    public CompletableFuture<ListAutoIncrementUsageResponse> listAutoIncrementUsageAsync(
+        ListAutoIncrementUsageRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listAutoIncrementUsage);
+    }
+
+    /**
+     * 查询自增配额
+     *
+     * 查询自增配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutoIncrementUsageRequest 请求对象
+     * @return AsyncInvoker<ListAutoIncrementUsageRequest, ListAutoIncrementUsageResponse>
+     */
+    public AsyncInvoker<ListAutoIncrementUsageRequest, ListAutoIncrementUsageResponse> listAutoIncrementUsageAsyncInvoker(
+        ListAutoIncrementUsageRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listAutoIncrementUsage, hcClient);
+    }
+
+    /**
      * 获取DAS云DBA实例列表
      *
      * 获取DAS云DBA实例列表。
@@ -1732,6 +1766,36 @@ public class DasAsyncClient {
     public AsyncInvoker<SetThresholdForMetricRequest, SetThresholdForMetricResponse> setThresholdForMetricAsyncInvoker(
         SetThresholdForMetricRequest request) {
         return new AsyncInvoker<>(request, DasMeta.setThresholdForMetric, hcClient);
+    }
+
+    /**
+     * 自动推荐SQL限流规则
+     *
+     * 根据条件（包括模板所代表的sql平均时长，条数，最大执行时长，前三者混合）自动推荐SQL限流规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDasRecommendSqlLimitRuleRequest 请求对象
+     * @return CompletableFuture<ShowDasRecommendSqlLimitRuleResponse>
+     */
+    public CompletableFuture<ShowDasRecommendSqlLimitRuleResponse> showDasRecommendSqlLimitRuleAsync(
+        ShowDasRecommendSqlLimitRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showDasRecommendSqlLimitRule);
+    }
+
+    /**
+     * 自动推荐SQL限流规则
+     *
+     * 根据条件（包括模板所代表的sql平均时长，条数，最大执行时长，前三者混合）自动推荐SQL限流规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDasRecommendSqlLimitRuleRequest 请求对象
+     * @return AsyncInvoker<ShowDasRecommendSqlLimitRuleRequest, ShowDasRecommendSqlLimitRuleResponse>
+     */
+    public AsyncInvoker<ShowDasRecommendSqlLimitRuleRequest, ShowDasRecommendSqlLimitRuleResponse> showDasRecommendSqlLimitRuleAsyncInvoker(
+        ShowDasRecommendSqlLimitRuleRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showDasRecommendSqlLimitRule, hcClient);
     }
 
     /**

@@ -102,7 +102,7 @@ public class ExportSecurityCheckReportRequest {
     }
 
     /**
-     * **参数解释** : \"配置检查（基线）的名称，例如SSH、CentOS 7、Windows\"。 **约束限制** : 不涉及 **取值范围** : - cn_standard: 等保合规标准 - hw_standard: 云安全实践标准 **默认取值** : 不涉及 
+     * **参数解释** : \"配置检查（基线）的名称，例如SSH、CentOS 7、Windows\"。 **约束限制** : 不涉及 **取值范围** : 字符长度1-256位 **默认取值** : 不涉及 
      * @return checkName
      */
     public String getCheckName() {
@@ -119,7 +119,7 @@ public class ExportSecurityCheckReportRequest {
     }
 
     /**
-     * **参数解释**: 标准类型。 **约束限制**: 不涉及 **取值范围**: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 **默认取值**: 不涉及 
+     * **参数解释**: 标准类型。 **约束限制**: 不涉及 **取值范围**: - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 - cis_standard : 通用安全标准  **默认取值**: 不涉及 
      * @return standard
      */
     public String getStandard() {
@@ -136,7 +136,7 @@ public class ExportSecurityCheckReportRequest {
     }
 
     /**
-     * **参数解释**: 检查结果。 **约束限制**: 不涉及 **取值范围**: - pass : 检查通过 - failed : 检查未通过 **默认取值**: 不涉及 
+     * **参数解释**: 检查结果。 **约束限制**: 不涉及 **取值范围**: - pass : 检查通过 - failed : 检查未通过  **默认取值**: 不涉及 
      * @return scanResult
      */
     public String getScanResult() {
@@ -153,7 +153,7 @@ public class ExportSecurityCheckReportRequest {
     }
 
     /**
-     * **参数解释**: 风险级别。 **约束限制**: 不涉及 **取值范围**: - Low : 低危 - Medium : 中危 - High : 高危 **默认取值**: 不涉及 
+     * **参数解释**: 风险级别。 **约束限制**: 不涉及 **取值范围**: - Low : 低危 - Medium : 中危 - High : 高危  **默认取值**: 不涉及 
      * @return severity
      */
     public String getSeverity() {

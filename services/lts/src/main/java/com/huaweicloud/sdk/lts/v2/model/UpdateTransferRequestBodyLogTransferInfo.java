@@ -175,7 +175,7 @@ public class UpdateTransferRequestBodyLogTransferInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_detail")
 
-    private TransferDetail logTransferDetail;
+    private LogTransferDetail logTransferDetail;
 
     public UpdateTransferRequestBodyLogTransferInfo withLogStorageFormat(LogStorageFormatEnum logStorageFormat) {
         this.logStorageFormat = logStorageFormat;
@@ -211,15 +211,15 @@ public class UpdateTransferRequestBodyLogTransferInfo {
         this.logTransferStatus = logTransferStatus;
     }
 
-    public UpdateTransferRequestBodyLogTransferInfo withLogTransferDetail(TransferDetail logTransferDetail) {
+    public UpdateTransferRequestBodyLogTransferInfo withLogTransferDetail(LogTransferDetail logTransferDetail) {
         this.logTransferDetail = logTransferDetail;
         return this;
     }
 
     public UpdateTransferRequestBodyLogTransferInfo withLogTransferDetail(
-        Consumer<TransferDetail> logTransferDetailSetter) {
+        Consumer<LogTransferDetail> logTransferDetailSetter) {
         if (this.logTransferDetail == null) {
-            this.logTransferDetail = new TransferDetail();
+            this.logTransferDetail = new LogTransferDetail();
             logTransferDetailSetter.accept(this.logTransferDetail);
         }
 
@@ -230,11 +230,11 @@ public class UpdateTransferRequestBodyLogTransferInfo {
      * Get logTransferDetail
      * @return logTransferDetail
      */
-    public TransferDetail getLogTransferDetail() {
+    public LogTransferDetail getLogTransferDetail() {
         return logTransferDetail;
     }
 
-    public void setLogTransferDetail(TransferDetail logTransferDetail) {
+    public void setLogTransferDetail(LogTransferDetail logTransferDetail) {
         this.logTransferDetail = logTransferDetail;
     }
 

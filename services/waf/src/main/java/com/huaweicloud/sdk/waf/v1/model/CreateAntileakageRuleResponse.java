@@ -45,9 +45,19 @@ public class CreateAntileakageRuleResponse extends SdkResponse {
     private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private LeakageListInfoAction action;
 
     public CreateAntileakageRuleResponse withId(String id) {
         this.id = id;
@@ -167,6 +177,23 @@ public class CreateAntileakageRuleResponse extends SdkResponse {
         this.timestamp = timestamp;
     }
 
+    public CreateAntileakageRuleResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public CreateAntileakageRuleResponse withStatus(Integer status) {
         this.status = status;
         return this;
@@ -184,6 +211,32 @@ public class CreateAntileakageRuleResponse extends SdkResponse {
         this.status = status;
     }
 
+    public CreateAntileakageRuleResponse withAction(LeakageListInfoAction action) {
+        this.action = action;
+        return this;
+    }
+
+    public CreateAntileakageRuleResponse withAction(Consumer<LeakageListInfoAction> actionSetter) {
+        if (this.action == null) {
+            this.action = new LeakageListInfoAction();
+            actionSetter.accept(this.action);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get action
+     * @return action
+     */
+    public LeakageListInfoAction getAction() {
+        return action;
+    }
+
+    public void setAction(LeakageListInfoAction action) {
+        this.action = action;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -196,12 +249,13 @@ public class CreateAntileakageRuleResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
             && Objects.equals(this.url, that.url) && Objects.equals(this.category, that.category)
             && Objects.equals(this.contents, that.contents) && Objects.equals(this.timestamp, that.timestamp)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, url, category, contents, timestamp, status);
+        return Objects.hash(id, policyid, url, category, contents, timestamp, description, status, action);
     }
 
     @Override
@@ -214,7 +268,9 @@ public class CreateAntileakageRuleResponse extends SdkResponse {
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();
     }

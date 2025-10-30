@@ -40,6 +40,11 @@ public class BackupReplicateReqBody {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cross_account_urn")
+
+    private String crossAccountUrn;
+
     public BackupReplicateReqBody withDescription(String description) {
         this.description = description;
         return this;
@@ -142,6 +147,23 @@ public class BackupReplicateReqBody {
         this.name = name;
     }
 
+    public BackupReplicateReqBody withCrossAccountUrn(String crossAccountUrn) {
+        this.crossAccountUrn = crossAccountUrn;
+        return this;
+    }
+
+    /**
+     * 跨账户复制所需的目标账户的跨账户复制存储库标识
+     * @return crossAccountUrn
+     */
+    public String getCrossAccountUrn() {
+        return crossAccountUrn;
+    }
+
+    public void setCrossAccountUrn(String crossAccountUrn) {
+        this.crossAccountUrn = crossAccountUrn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,13 +177,19 @@ public class BackupReplicateReqBody {
             && Objects.equals(this.destinationProjectId, that.destinationProjectId)
             && Objects.equals(this.destinationRegion, that.destinationRegion)
             && Objects.equals(this.destinationVaultId, that.destinationVaultId)
-            && Objects.equals(this.enableAcceleration, that.enableAcceleration) && Objects.equals(this.name, that.name);
+            && Objects.equals(this.enableAcceleration, that.enableAcceleration) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.crossAccountUrn, that.crossAccountUrn);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(description, destinationProjectId, destinationRegion, destinationVaultId, enableAcceleration, name);
+        return Objects.hash(description,
+            destinationProjectId,
+            destinationRegion,
+            destinationVaultId,
+            enableAcceleration,
+            name,
+            crossAccountUrn);
     }
 
     @Override
@@ -174,6 +202,7 @@ public class BackupReplicateReqBody {
         sb.append("    destinationVaultId: ").append(toIndentedString(destinationVaultId)).append("\n");
         sb.append("    enableAcceleration: ").append(toIndentedString(enableAcceleration)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    crossAccountUrn: ").append(toIndentedString(crossAccountUrn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

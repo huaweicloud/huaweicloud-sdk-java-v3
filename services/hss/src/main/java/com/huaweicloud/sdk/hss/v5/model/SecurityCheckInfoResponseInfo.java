@@ -21,6 +21,16 @@ public class SecurityCheckInfoResponseInfo {
     private String checkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "baseline_name")
+
+    private String baselineName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key")
+
+    private String key;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_type")
 
     private String checkType;
@@ -92,6 +102,40 @@ public class SecurityCheckInfoResponseInfo {
 
     public void setCheckName(String checkName) {
         this.checkName = checkName;
+    }
+
+    public SecurityCheckInfoResponseInfo withBaselineName(String baselineName) {
+        this.baselineName = baselineName;
+        return this;
+    }
+
+    /**
+     * **参数解释** 基线的名称，例如SSH 应用基线检查、CentOS 7 系统基线检查、Windows 系统基线检查 **取值范围**  字符长度0-256位
+     * @return baselineName
+     */
+    public String getBaselineName() {
+        return baselineName;
+    }
+
+    public void setBaselineName(String baselineName) {
+        this.baselineName = baselineName;
+    }
+
+    public SecurityCheckInfoResponseInfo withKey(String key) {
+        this.key = key;
+        return this;
+    }
+
+    /**
+     * **参数解释** 配置检查（基线）的唯一值，例如SSH、CentOS 7、Windows **取值范围**  字符长度0-256位
+     * @return key
+     */
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public SecurityCheckInfoResponseInfo withCheckType(String checkType) {
@@ -248,6 +292,7 @@ public class SecurityCheckInfoResponseInfo {
         }
         SecurityCheckInfoResponseInfo that = (SecurityCheckInfoResponseInfo) obj;
         return Objects.equals(this.severity, that.severity) && Objects.equals(this.checkName, that.checkName)
+            && Objects.equals(this.baselineName, that.baselineName) && Objects.equals(this.key, that.key)
             && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.standard, that.standard)
             && Objects.equals(this.executableFilePath, that.executableFilePath)
             && Objects.equals(this.checkRuleNum, that.checkRuleNum)
@@ -259,6 +304,8 @@ public class SecurityCheckInfoResponseInfo {
     public int hashCode() {
         return Objects.hash(severity,
             checkName,
+            baselineName,
+            key,
             checkType,
             standard,
             executableFilePath,
@@ -275,6 +322,8 @@ public class SecurityCheckInfoResponseInfo {
         sb.append("class SecurityCheckInfoResponseInfo {\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
+        sb.append("    baselineName: ").append(toIndentedString(baselineName)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    executableFilePath: ").append(toIndentedString(executableFilePath)).append("\n");

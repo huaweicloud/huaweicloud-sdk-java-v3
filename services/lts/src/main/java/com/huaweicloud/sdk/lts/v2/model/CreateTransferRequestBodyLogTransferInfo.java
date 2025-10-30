@@ -260,7 +260,7 @@ public class CreateTransferRequestBodyLogTransferInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_detail")
 
-    private TransferDetail logTransferDetail;
+    private LogTransferDetail logTransferDetail;
 
     public CreateTransferRequestBodyLogTransferInfo withLogTransferType(String logTransferType) {
         this.logTransferType = logTransferType;
@@ -358,15 +358,15 @@ public class CreateTransferRequestBodyLogTransferInfo {
         this.logAgencyTransfer = logAgencyTransfer;
     }
 
-    public CreateTransferRequestBodyLogTransferInfo withLogTransferDetail(TransferDetail logTransferDetail) {
+    public CreateTransferRequestBodyLogTransferInfo withLogTransferDetail(LogTransferDetail logTransferDetail) {
         this.logTransferDetail = logTransferDetail;
         return this;
     }
 
     public CreateTransferRequestBodyLogTransferInfo withLogTransferDetail(
-        Consumer<TransferDetail> logTransferDetailSetter) {
+        Consumer<LogTransferDetail> logTransferDetailSetter) {
         if (this.logTransferDetail == null) {
-            this.logTransferDetail = new TransferDetail();
+            this.logTransferDetail = new LogTransferDetail();
             logTransferDetailSetter.accept(this.logTransferDetail);
         }
 
@@ -377,11 +377,11 @@ public class CreateTransferRequestBodyLogTransferInfo {
      * Get logTransferDetail
      * @return logTransferDetail
      */
-    public TransferDetail getLogTransferDetail() {
+    public LogTransferDetail getLogTransferDetail() {
         return logTransferDetail;
     }
 
-    public void setLogTransferDetail(TransferDetail logTransferDetail) {
+    public void setLogTransferDetail(LogTransferDetail logTransferDetail) {
         this.logTransferDetail = logTransferDetail;
     }
 

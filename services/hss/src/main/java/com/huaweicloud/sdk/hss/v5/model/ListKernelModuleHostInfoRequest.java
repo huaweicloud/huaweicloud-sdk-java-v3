@@ -106,7 +106,7 @@ public class ListKernelModuleHostInfoRequest {
     }
 
     /**
-     * 内核模块名称
+     * **参数解释**: 内核模块名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256 **默认取值**: 不涉及 
      * @return name
      */
     public String getName() {
@@ -123,7 +123,7 @@ public class ListKernelModuleHostInfoRequest {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-64 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -140,7 +140,7 @@ public class ListKernelModuleHostInfoRequest {
     }
 
     /**
-     * 服务器IP
+     * **参数解释**: 服务器IP **约束限制**: 不涉及 **取值范围**: 字符长度0-64 **默认取值**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -157,7 +157,7 @@ public class ListKernelModuleHostInfoRequest {
     }
 
     /**
-     * 是否模糊匹配，默认false表示精确匹配
+     * **参数解释**: 是否模糊匹配，默认false表示精确匹配 **约束限制**: 不涉及 **取值范围**: - true：模糊匹配 - false：精确匹配  **默认取值**: false 
      * @return partMatch
      */
     public Boolean getPartMatch() {

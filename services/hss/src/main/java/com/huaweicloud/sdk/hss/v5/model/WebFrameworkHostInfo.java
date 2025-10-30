@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 服务器列表
+ * **参数解释** 服务器列表 
  */
 public class WebFrameworkHostInfo {
 
@@ -46,39 +46,14 @@ public class WebFrameworkHostInfo {
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_size")
-
-    private Integer fileSize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_time")
 
     private Long recordTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bind_ip_list")
-
-    private String bindIpList;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalogue")
 
     private String catalogue;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "connected_ip_list")
-
-    private String connectedIpList;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "connected_number")
-
-    private String connectedNumber;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "embedder_dir")
-
-    private String embedderDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_name")
@@ -106,11 +81,6 @@ public class WebFrameworkHostInfo {
     private Integer isEmbedded;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "listen_port_list")
-
-    private String listenPortList;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
 
     private String mode;
@@ -128,7 +98,17 @@ public class WebFrameworkHostInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uid")
 
-    private String uid;
+    private Integer uid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_id")
+
+    private String containerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_name")
+
+    private String containerName;
 
     public WebFrameworkHostInfo withAgentId(String agentId) {
         this.agentId = agentId;
@@ -136,7 +116,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * agent_id
+     * **参数解释** agent id **取值范围** 字符长度1-64 
      * @return agentId
      */
     public String getAgentId() {
@@ -153,7 +133,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 主机id
+     * **参数解释** 主机id **取值范围** 字符长度1-64 
      * @return hostId
      */
     public String getHostId() {
@@ -170,7 +150,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释** 服务器名称 **取值范围** 字符长度1-64 
      * @return hostName
      */
     public String getHostName() {
@@ -187,7 +167,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 服务器ip
+     * **参数解释** 服务器ip **取值范围** 字符长度1-64 
      * @return hostIp
      */
     public String getHostIp() {
@@ -204,7 +184,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 名称
+     * **参数解释**: web框架名称 **取值范围**: 字符长度1-256 
      * @return name
      */
     public String getName() {
@@ -221,7 +201,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 版本
+     * **参数解释**: web框架版本 **取值范围**: 字符长度1-512 
      * @return version
      */
     public String getVersion() {
@@ -238,7 +218,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 路径
+     * **参数解释**: web框架文件路径 **取值范围**: 字符长度1-512 
      * @return path
      */
     public String getPath() {
@@ -249,30 +229,13 @@ public class WebFrameworkHostInfo {
         this.path = path;
     }
 
-    public WebFrameworkHostInfo withFileSize(Integer fileSize) {
-        this.fileSize = fileSize;
-        return this;
-    }
-
-    /**
-     * 大小
-     * @return fileSize
-     */
-    public Integer getFileSize() {
-        return fileSize;
-    }
-
-    public void setFileSize(Integer fileSize) {
-        this.fileSize = fileSize;
-    }
-
     public WebFrameworkHostInfo withRecordTime(Long recordTime) {
         this.recordTime = recordTime;
         return this;
     }
 
     /**
-     * 扫描时间
+     * **参数解释**: web框架扫描时间 **取值范围**: 最小值0，最大值2^63-1 
      * @return recordTime
      */
     public Long getRecordTime() {
@@ -283,30 +246,13 @@ public class WebFrameworkHostInfo {
         this.recordTime = recordTime;
     }
 
-    public WebFrameworkHostInfo withBindIpList(String bindIpList) {
-        this.bindIpList = bindIpList;
-        return this;
-    }
-
-    /**
-     * 绑定的ip列表
-     * @return bindIpList
-     */
-    public String getBindIpList() {
-        return bindIpList;
-    }
-
-    public void setBindIpList(String bindIpList) {
-        this.bindIpList = bindIpList;
-    }
-
     public WebFrameworkHostInfo withCatalogue(String catalogue) {
         this.catalogue = catalogue;
         return this;
     }
 
     /**
-     * 软件的类型
+     * **参数解释**: 软件的类型 **取值范围**: 字符长度1-32 
      * @return catalogue
      */
     public String getCatalogue() {
@@ -317,64 +263,13 @@ public class WebFrameworkHostInfo {
         this.catalogue = catalogue;
     }
 
-    public WebFrameworkHostInfo withConnectedIpList(String connectedIpList) {
-        this.connectedIpList = connectedIpList;
-        return this;
-    }
-
-    /**
-     * 连接的ip列表
-     * @return connectedIpList
-     */
-    public String getConnectedIpList() {
-        return connectedIpList;
-    }
-
-    public void setConnectedIpList(String connectedIpList) {
-        this.connectedIpList = connectedIpList;
-    }
-
-    public WebFrameworkHostInfo withConnectedNumber(String connectedNumber) {
-        this.connectedNumber = connectedNumber;
-        return this;
-    }
-
-    /**
-     * 连接数
-     * @return connectedNumber
-     */
-    public String getConnectedNumber() {
-        return connectedNumber;
-    }
-
-    public void setConnectedNumber(String connectedNumber) {
-        this.connectedNumber = connectedNumber;
-    }
-
-    public WebFrameworkHostInfo withEmbedderDir(String embedderDir) {
-        this.embedderDir = embedderDir;
-        return this;
-    }
-
-    /**
-     * 压缩的目录
-     * @return embedderDir
-     */
-    public String getEmbedderDir() {
-        return embedderDir;
-    }
-
-    public void setEmbedderDir(String embedderDir) {
-        this.embedderDir = embedderDir;
-    }
-
     public WebFrameworkHostInfo withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
     /**
-     * 文件名称
+     * **参数解释**: web框架文件名称 **取值范围**: 字符长度1-256 
      * @return fileName
      */
     public String getFileName() {
@@ -391,7 +286,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 文件类型
+     * **参数解释**: web框架文件类型 **取值范围**: 字符长度1-32 
      * @return fileType
      */
     public String getFileType() {
@@ -408,7 +303,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 用户组id
+     * **参数解释**: web框架进程gid **取值范围**: 最小值0，最大值2147483647 
      * @return gid
      */
     public Integer getGid() {
@@ -425,7 +320,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 文件哈希值
+     * **参数解释**: web框架文件哈希 **取值范围**: 字符长度1-64 
      * @return hash
      */
     public String getHash() {
@@ -442,7 +337,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 是否是压缩的文件
+     * **参数解释**: 是否是压缩的文件 **取值范围**: - 0：不是压缩文件 - 1：是压缩文件 
      * @return isEmbedded
      */
     public Integer getIsEmbedded() {
@@ -453,30 +348,13 @@ public class WebFrameworkHostInfo {
         this.isEmbedded = isEmbedded;
     }
 
-    public WebFrameworkHostInfo withListenPortList(String listenPortList) {
-        this.listenPortList = listenPortList;
-        return this;
-    }
-
-    /**
-     * 监听的端口列表
-     * @return listenPortList
-     */
-    public String getListenPortList() {
-        return listenPortList;
-    }
-
-    public void setListenPortList(String listenPortList) {
-        this.listenPortList = listenPortList;
-    }
-
     public WebFrameworkHostInfo withMode(String mode) {
         this.mode = mode;
         return this;
     }
 
     /**
-     * 文件权限
+     * **参数解释**: web框架文件权限 **取值范围**: 字符长度1-32 
      * @return mode
      */
     public String getMode() {
@@ -493,7 +371,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 进程id
+     * **参数解释**: web框架进程pid **取值范围**: 最小值0，最大值2147483647 
      * @return pid
      */
     public Integer getPid() {
@@ -510,7 +388,7 @@ public class WebFrameworkHostInfo {
     }
 
     /**
-     * 进程路径
+     * **参数解释**: web框架进程路径 **取值范围**: 字符长度1-1024 
      * @return procPath
      */
     public String getProcPath() {
@@ -521,21 +399,55 @@ public class WebFrameworkHostInfo {
         this.procPath = procPath;
     }
 
-    public WebFrameworkHostInfo withUid(String uid) {
+    public WebFrameworkHostInfo withUid(Integer uid) {
         this.uid = uid;
         return this;
     }
 
     /**
-     * 用户id
+     * **参数解释**: web框架进程uid **取值范围**: 最小值0，最大值2147483647 
      * @return uid
      */
-    public String getUid() {
+    public Integer getUid() {
         return uid;
     }
 
-    public void setUid(String uid) {
+    public void setUid(Integer uid) {
         this.uid = uid;
+    }
+
+    public WebFrameworkHostInfo withContainerId(String containerId) {
+        this.containerId = containerId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 容器id **取值范围**: 字符长度1-128 
+     * @return containerId
+     */
+    public String getContainerId() {
+        return containerId;
+    }
+
+    public void setContainerId(String containerId) {
+        this.containerId = containerId;
+    }
+
+    public WebFrameworkHostInfo withContainerName(String containerName) {
+        this.containerName = containerName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 容器名称 **取值范围**: 字符长度1-256 
+     * @return containerName
+     */
+    public String getContainerName() {
+        return containerName;
+    }
+
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
     }
 
     @Override
@@ -550,17 +462,14 @@ public class WebFrameworkHostInfo {
         return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.hostId, that.hostId)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.path, that.path) && Objects.equals(this.fileSize, that.fileSize)
-            && Objects.equals(this.recordTime, that.recordTime) && Objects.equals(this.bindIpList, that.bindIpList)
-            && Objects.equals(this.catalogue, that.catalogue)
-            && Objects.equals(this.connectedIpList, that.connectedIpList)
-            && Objects.equals(this.connectedNumber, that.connectedNumber)
-            && Objects.equals(this.embedderDir, that.embedderDir) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.recordTime, that.recordTime)
+            && Objects.equals(this.catalogue, that.catalogue) && Objects.equals(this.fileName, that.fileName)
             && Objects.equals(this.fileType, that.fileType) && Objects.equals(this.gid, that.gid)
             && Objects.equals(this.hash, that.hash) && Objects.equals(this.isEmbedded, that.isEmbedded)
-            && Objects.equals(this.listenPortList, that.listenPortList) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.pid, that.pid) && Objects.equals(this.procPath, that.procPath)
-            && Objects.equals(this.uid, that.uid);
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.pid, that.pid)
+            && Objects.equals(this.procPath, that.procPath) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.containerId, that.containerId)
+            && Objects.equals(this.containerName, that.containerName);
     }
 
     @Override
@@ -572,23 +481,19 @@ public class WebFrameworkHostInfo {
             name,
             version,
             path,
-            fileSize,
             recordTime,
-            bindIpList,
             catalogue,
-            connectedIpList,
-            connectedNumber,
-            embedderDir,
             fileName,
             fileType,
             gid,
             hash,
             isEmbedded,
-            listenPortList,
             mode,
             pid,
             procPath,
-            uid);
+            uid,
+            containerId,
+            containerName);
     }
 
     @Override
@@ -602,23 +507,19 @@ public class WebFrameworkHostInfo {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
-        sb.append("    fileSize: ").append(toIndentedString(fileSize)).append("\n");
         sb.append("    recordTime: ").append(toIndentedString(recordTime)).append("\n");
-        sb.append("    bindIpList: ").append(toIndentedString(bindIpList)).append("\n");
         sb.append("    catalogue: ").append(toIndentedString(catalogue)).append("\n");
-        sb.append("    connectedIpList: ").append(toIndentedString(connectedIpList)).append("\n");
-        sb.append("    connectedNumber: ").append(toIndentedString(connectedNumber)).append("\n");
-        sb.append("    embedderDir: ").append(toIndentedString(embedderDir)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
         sb.append("    gid: ").append(toIndentedString(gid)).append("\n");
         sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
         sb.append("    isEmbedded: ").append(toIndentedString(isEmbedded)).append("\n");
-        sb.append("    listenPortList: ").append(toIndentedString(listenPortList)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    pid: ").append(toIndentedString(pid)).append("\n");
         sb.append("    procPath: ").append(toIndentedString(procPath)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
+        sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
+        sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

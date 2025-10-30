@@ -176,6 +176,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyEpsQuotasRequest;
@@ -269,6 +272,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoNodeExpansionPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoNodeExpansionPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPoliciesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPoliciesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyRequest;
@@ -2625,6 +2630,45 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyAutoNodeExpansionPolicyRequest, ModifyAutoNodeExpansionPolicyResponse> modifyAutoNodeExpansionPolicy =
+        genForModifyAutoNodeExpansionPolicy();
+
+    private static HttpRequestDef<ModifyAutoNodeExpansionPolicyRequest, ModifyAutoNodeExpansionPolicyResponse> genForModifyAutoNodeExpansionPolicy() {
+        // basic
+        HttpRequestDef.Builder<ModifyAutoNodeExpansionPolicyRequest, ModifyAutoNodeExpansionPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyAutoNodeExpansionPolicyRequest.class,
+                    ModifyAutoNodeExpansionPolicyResponse.class)
+                .withName("ModifyAutoNodeExpansionPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyAutoNodeExpansionPolicyRequest::getInstanceId,
+                ModifyAutoNodeExpansionPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyAutoNodeExpansionPolicyRequest::getXLanguage,
+                ModifyAutoNodeExpansionPolicyRequest::setXLanguage));
+        builder.<ModifyAutoNodeExpansionPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyAutoNodeExpansionPolicyRequestBody.class),
+            f -> f.withMarshaller(ModifyAutoNodeExpansionPolicyRequest::getBody,
+                ModifyAutoNodeExpansionPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyDbUserPrivilegeRequest, ModifyDbUserPrivilegeResponse> modifyDbUserPrivilege =
         genForModifyDbUserPrivilege();
 
@@ -3581,6 +3625,39 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAutoEnlargePolicyRequest::getInstanceId,
                 ShowAutoEnlargePolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoNodeExpansionPolicyRequest, ShowAutoNodeExpansionPolicyResponse> showAutoNodeExpansionPolicy =
+        genForShowAutoNodeExpansionPolicy();
+
+    private static HttpRequestDef<ShowAutoNodeExpansionPolicyRequest, ShowAutoNodeExpansionPolicyResponse> genForShowAutoNodeExpansionPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoNodeExpansionPolicyRequest, ShowAutoNodeExpansionPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutoNodeExpansionPolicyRequest.class,
+                    ShowAutoNodeExpansionPolicyResponse.class)
+                .withName("ShowAutoNodeExpansionPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoNodeExpansionPolicyRequest::getInstanceId,
+                ShowAutoNodeExpansionPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoNodeExpansionPolicyRequest::getXLanguage,
+                ShowAutoNodeExpansionPolicyRequest::setXLanguage));
 
         // response
 

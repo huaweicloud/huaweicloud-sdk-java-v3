@@ -17,6 +17,11 @@ public class ResizeClusterRequestBody {
     private ScaleOut scaleOut;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "logical_cluster_name")
+
+    private String logicalClusterName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_node_only")
 
     private Boolean createNodeOnly;
@@ -55,6 +60,23 @@ public class ResizeClusterRequestBody {
 
     public void setScaleOut(ScaleOut scaleOut) {
         this.scaleOut = scaleOut;
+    }
+
+    public ResizeClusterRequestBody withLogicalClusterName(String logicalClusterName) {
+        this.logicalClusterName = logicalClusterName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 逻辑集群名字，扩容到逻辑集群时，需要填写。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return logicalClusterName
+     */
+    public String getLogicalClusterName() {
+        return logicalClusterName;
+    }
+
+    public void setLogicalClusterName(String logicalClusterName) {
+        this.logicalClusterName = logicalClusterName;
     }
 
     public ResizeClusterRequestBody withCreateNodeOnly(Boolean createNodeOnly) {
@@ -117,14 +139,16 @@ public class ResizeClusterRequestBody {
             return false;
         }
         ResizeClusterRequestBody that = (ResizeClusterRequestBody) obj;
-        return Objects.equals(this.scaleOut, that.scaleOut) && Objects.equals(this.createNodeOnly, that.createNodeOnly)
+        return Objects.equals(this.scaleOut, that.scaleOut)
+            && Objects.equals(this.logicalClusterName, that.logicalClusterName)
+            && Objects.equals(this.createNodeOnly, that.createNodeOnly)
             && Objects.equals(this.waitingForKilling, that.waitingForKilling)
             && Objects.equals(this.autoRedistribute, that.autoRedistribute);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scaleOut, createNodeOnly, waitingForKilling, autoRedistribute);
+        return Objects.hash(scaleOut, logicalClusterName, createNodeOnly, waitingForKilling, autoRedistribute);
     }
 
     @Override
@@ -132,6 +156,7 @@ public class ResizeClusterRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeClusterRequestBody {\n");
         sb.append("    scaleOut: ").append(toIndentedString(scaleOut)).append("\n");
+        sb.append("    logicalClusterName: ").append(toIndentedString(logicalClusterName)).append("\n");
         sb.append("    createNodeOnly: ").append(toIndentedString(createNodeOnly)).append("\n");
         sb.append("    waitingForKilling: ").append(toIndentedString(waitingForKilling)).append("\n");
         sb.append("    autoRedistribute: ").append(toIndentedString(autoRedistribute)).append("\n");

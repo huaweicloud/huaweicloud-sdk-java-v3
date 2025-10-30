@@ -30,7 +30,7 @@ public class ListWebAppAndServicesResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释** 总数 **取值范围** 最小值0，最大值300000 
      * minimum: 0
      * maximum: 30000000
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListWebAppAndServicesResponse extends SdkResponse {
     }
 
     /**
-     * 具有该WebAppAndService资产的主机及该资产信息列表
+     * **参数解释** 具有该web应用、web服务、数据库资产的主机及该资产信息列表 **取值范围** 最小值0，最大值10000 
      * @return dataList
      */
     public List<WebAppAndServiceResponseInfo> getDataList() {

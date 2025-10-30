@@ -1,0 +1,234 @@
+package com.huaweicloud.sdk.drs.v3.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class QueryTuningParamsResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "full_sync")
+
+    private List<TuningParameter> fullSync = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incre_capture")
+
+    private List<TuningParameter> increCapture = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incre_apply")
+
+    private List<TuningParameter> increApply = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incre_relay")
+
+    private List<TuningParameter> increRelay = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modify_result")
+
+    private String modifyResult;
+
+    public QueryTuningParamsResponse withFullSync(List<TuningParameter> fullSync) {
+        this.fullSync = fullSync;
+        return this;
+    }
+
+    public QueryTuningParamsResponse addFullSyncItem(TuningParameter fullSyncItem) {
+        if (this.fullSync == null) {
+            this.fullSync = new ArrayList<>();
+        }
+        this.fullSync.add(fullSyncItem);
+        return this;
+    }
+
+    public QueryTuningParamsResponse withFullSync(Consumer<List<TuningParameter>> fullSyncSetter) {
+        if (this.fullSync == null) {
+            this.fullSync = new ArrayList<>();
+        }
+        fullSyncSetter.accept(this.fullSync);
+        return this;
+    }
+
+    /**
+     * 全量调优参数
+     * @return fullSync
+     */
+    public List<TuningParameter> getFullSync() {
+        return fullSync;
+    }
+
+    public void setFullSync(List<TuningParameter> fullSync) {
+        this.fullSync = fullSync;
+    }
+
+    public QueryTuningParamsResponse withIncreCapture(List<TuningParameter> increCapture) {
+        this.increCapture = increCapture;
+        return this;
+    }
+
+    public QueryTuningParamsResponse addIncreCaptureItem(TuningParameter increCaptureItem) {
+        if (this.increCapture == null) {
+            this.increCapture = new ArrayList<>();
+        }
+        this.increCapture.add(increCaptureItem);
+        return this;
+    }
+
+    public QueryTuningParamsResponse withIncreCapture(Consumer<List<TuningParameter>> increCaptureSetter) {
+        if (this.increCapture == null) {
+            this.increCapture = new ArrayList<>();
+        }
+        increCaptureSetter.accept(this.increCapture);
+        return this;
+    }
+
+    /**
+     * 增量抓取调优参数
+     * @return increCapture
+     */
+    public List<TuningParameter> getIncreCapture() {
+        return increCapture;
+    }
+
+    public void setIncreCapture(List<TuningParameter> increCapture) {
+        this.increCapture = increCapture;
+    }
+
+    public QueryTuningParamsResponse withIncreApply(List<TuningParameter> increApply) {
+        this.increApply = increApply;
+        return this;
+    }
+
+    public QueryTuningParamsResponse addIncreApplyItem(TuningParameter increApplyItem) {
+        if (this.increApply == null) {
+            this.increApply = new ArrayList<>();
+        }
+        this.increApply.add(increApplyItem);
+        return this;
+    }
+
+    public QueryTuningParamsResponse withIncreApply(Consumer<List<TuningParameter>> increApplySetter) {
+        if (this.increApply == null) {
+            this.increApply = new ArrayList<>();
+        }
+        increApplySetter.accept(this.increApply);
+        return this;
+    }
+
+    /**
+     * 增量回放调优参数
+     * @return increApply
+     */
+    public List<TuningParameter> getIncreApply() {
+        return increApply;
+    }
+
+    public void setIncreApply(List<TuningParameter> increApply) {
+        this.increApply = increApply;
+    }
+
+    public QueryTuningParamsResponse withIncreRelay(List<TuningParameter> increRelay) {
+        this.increRelay = increRelay;
+        return this;
+    }
+
+    public QueryTuningParamsResponse addIncreRelayItem(TuningParameter increRelayItem) {
+        if (this.increRelay == null) {
+            this.increRelay = new ArrayList<>();
+        }
+        this.increRelay.add(increRelayItem);
+        return this;
+    }
+
+    public QueryTuningParamsResponse withIncreRelay(Consumer<List<TuningParameter>> increRelaySetter) {
+        if (this.increRelay == null) {
+            this.increRelay = new ArrayList<>();
+        }
+        increRelaySetter.accept(this.increRelay);
+        return this;
+    }
+
+    /**
+     * 增量日志拉取调优参数
+     * @return increRelay
+     */
+    public List<TuningParameter> getIncreRelay() {
+        return increRelay;
+    }
+
+    public void setIncreRelay(List<TuningParameter> increRelay) {
+        this.increRelay = increRelay;
+    }
+
+    public QueryTuningParamsResponse withModifyResult(String modifyResult) {
+        this.modifyResult = modifyResult;
+        return this;
+    }
+
+    /**
+     * 参数修改是否成功，查询参数时不返回该字段。
+     * @return modifyResult
+     */
+    public String getModifyResult() {
+        return modifyResult;
+    }
+
+    public void setModifyResult(String modifyResult) {
+        this.modifyResult = modifyResult;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        QueryTuningParamsResponse that = (QueryTuningParamsResponse) obj;
+        return Objects.equals(this.fullSync, that.fullSync) && Objects.equals(this.increCapture, that.increCapture)
+            && Objects.equals(this.increApply, that.increApply) && Objects.equals(this.increRelay, that.increRelay)
+            && Objects.equals(this.modifyResult, that.modifyResult);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullSync, increCapture, increApply, increRelay, modifyResult);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class QueryTuningParamsResponse {\n");
+        sb.append("    fullSync: ").append(toIndentedString(fullSync)).append("\n");
+        sb.append("    increCapture: ").append(toIndentedString(increCapture)).append("\n");
+        sb.append("    increApply: ").append(toIndentedString(increApply)).append("\n");
+        sb.append("    increRelay: ").append(toIndentedString(increRelay)).append("\n");
+        sb.append("    modifyResult: ").append(toIndentedString(modifyResult)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

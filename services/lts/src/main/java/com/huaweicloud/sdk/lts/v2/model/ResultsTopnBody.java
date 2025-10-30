@@ -36,6 +36,11 @@ public class ResultsTopnBody {
     private String logGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_name_alias")
+
+    private String logGroupNameAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
 
     private String logStreamId;
@@ -44,6 +49,11 @@ public class ResultsTopnBody {
     @JsonProperty(value = "log_stream_name")
 
     private String logStreamName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_name_alias")
+
+    private String logStreamNameAlias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basic_transfer")
@@ -150,6 +160,23 @@ public class ResultsTopnBody {
         this.logGroupName = logGroupName;
     }
 
+    public ResultsTopnBody withLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 日志组名称别名。 **取值范围：** 不涉及。
+     * @return logGroupNameAlias
+     */
+    public String getLogGroupNameAlias() {
+        return logGroupNameAlias;
+    }
+
+    public void setLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+    }
+
     public ResultsTopnBody withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
         return this;
@@ -182,6 +209,23 @@ public class ResultsTopnBody {
 
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
+    }
+
+    public ResultsTopnBody withLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 日志流名称别名。 **取值范围：** 不涉及。
+     * @return logStreamNameAlias
+     */
+    public String getLogStreamNameAlias() {
+        return logStreamNameAlias;
+    }
+
+    public void setLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
     }
 
     public ResultsTopnBody withBasicTransfer(Double basicTransfer) {
@@ -264,8 +308,10 @@ public class ResultsTopnBody {
         return Objects.equals(this.indexTraffic, that.indexTraffic) && Objects.equals(this.storage, that.storage)
             && Objects.equals(this.writeTraffic, that.writeTraffic) && Objects.equals(this.logGroupId, that.logGroupId)
             && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logGroupNameAlias, that.logGroupNameAlias)
             && Objects.equals(this.logStreamId, that.logStreamId)
             && Objects.equals(this.logStreamName, that.logStreamName)
+            && Objects.equals(this.logStreamNameAlias, that.logStreamNameAlias)
             && Objects.equals(this.basicTransfer, that.basicTransfer)
             && Objects.equals(this.seniorTransfer, that.seniorTransfer)
             && Objects.equals(this.isAgencyTransfer, that.isAgencyTransfer)
@@ -279,8 +325,10 @@ public class ResultsTopnBody {
             writeTraffic,
             logGroupId,
             logGroupName,
+            logGroupNameAlias,
             logStreamId,
             logStreamName,
+            logStreamNameAlias,
             basicTransfer,
             seniorTransfer,
             isAgencyTransfer,
@@ -296,8 +344,10 @@ public class ResultsTopnBody {
         sb.append("    writeTraffic: ").append(toIndentedString(writeTraffic)).append("\n");
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
+        sb.append("    logGroupNameAlias: ").append(toIndentedString(logGroupNameAlias)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
+        sb.append("    logStreamNameAlias: ").append(toIndentedString(logStreamNameAlias)).append("\n");
         sb.append("    basicTransfer: ").append(toIndentedString(basicTransfer)).append("\n");
         sb.append("    seniorTransfer: ").append(toIndentedString(seniorTransfer)).append("\n");
         sb.append("    isAgencyTransfer: ").append(toIndentedString(isAgencyTransfer)).append("\n");

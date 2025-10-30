@@ -118,6 +118,16 @@ public class SubTemplate {
 
     private String topic;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sendType")
+
+    private String sendType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
     public SubTemplate withSubType(SubTypeEnum subType) {
         this.subType = subType;
         return this;
@@ -169,6 +179,40 @@ public class SubTemplate {
         this.topic = topic;
     }
 
+    public SubTemplate withSendType(String sendType) {
+        this.sendType = sendType;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  当消息模板类型为webhook时生效，决定该消息的渲染方式。 **取值范围：**  - HTML - JSON
+     * @return sendType
+     */
+    public String getSendType() {
+        return sendType;
+    }
+
+    public void setSendType(String sendType) {
+        this.sendType = sendType;
+    }
+
+    public SubTemplate withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  消息模板的适用版本。 **取值范围：**   v1：标识为LTS的消息模板。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -179,12 +223,13 @@ public class SubTemplate {
         }
         SubTemplate that = (SubTemplate) obj;
         return Objects.equals(this.subType, that.subType) && Objects.equals(this.content, that.content)
-            && Objects.equals(this.topic, that.topic);
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.sendType, that.sendType)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subType, content, topic);
+        return Objects.hash(subType, content, topic, sendType, version);
     }
 
     @Override
@@ -194,6 +239,8 @@ public class SubTemplate {
         sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
+        sb.append("    sendType: ").append(toIndentedString(sendType)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

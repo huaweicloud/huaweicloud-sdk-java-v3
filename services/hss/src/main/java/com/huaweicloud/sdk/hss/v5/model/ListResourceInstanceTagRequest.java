@@ -26,7 +26,7 @@ public class ListResourceInstanceTagRequest {
     }
 
     /**
-     * **参数解释**: 资源类别 **约束限制**: HSS服务该值为hss **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 由标签管理服务定义的资源类别，企业主机安全服务调用此接口时资源类别为hss **约束限制**: 不涉及 **取值范围**: - hss：hss **默认取值**: 不涉及 
      * @return resourceType
      */
     public String getResourceType() {

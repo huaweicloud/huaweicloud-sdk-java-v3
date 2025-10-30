@@ -17,8 +17,6 @@ import com.huaweicloud.sdk.servicestage.v2.model.ChangeResourceInEnvironmentRequ
 import com.huaweicloud.sdk.servicestage.v2.model.ChangeResourceInEnvironmentResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateApplicationRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateApplicationResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateCamInstanceRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateCamInstanceResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateComponentRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateComponentResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateEnvironmentRequest;
@@ -39,8 +37,6 @@ import com.huaweicloud.sdk.servicestage.v2.model.CreateProjectRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateProjectResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateTagResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateTemplateRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteApplicationConfigurationRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteApplicationConfigurationResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteApplicationRequest;
@@ -55,16 +51,10 @@ import com.huaweicloud.sdk.servicestage.v2.model.DeleteFileRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteFileResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteHookRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteHookResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.DeleteInstanceByIdRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.DeleteInstanceByIdResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteTagResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.DeleteTemplateRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.DeleteTemplateResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.DeployInstanceRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.DeployInstanceResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.ListAuthorizationsRequest;
@@ -121,8 +111,6 @@ import com.huaweicloud.sdk.servicestage.v2.model.UpdateFileRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.UpdateFileResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.UpdateInstanceActionRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.UpdateInstanceActionResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.UpdateTemplateRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.UpdateTemplateResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -349,31 +337,6 @@ public class ServiceStageAsyncClient {
     }
 
     /**
-     * 创建、更新实例
-     *
-     * 创建、更新实例
-     *
-     * @param request CreateCamInstanceRequest 请求对象
-     * @return CompletableFuture<CreateCamInstanceResponse>
-     */
-    public CompletableFuture<CreateCamInstanceResponse> createCamInstanceAsync(CreateCamInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.createCamInstance);
-    }
-
-    /**
-     * 创建、更新实例
-     *
-     * 创建、更新实例
-     *
-     * @param request CreateCamInstanceRequest 请求对象
-     * @return AsyncInvoker<CreateCamInstanceRequest, CreateCamInstanceResponse>
-     */
-    public AsyncInvoker<CreateCamInstanceRequest, CreateCamInstanceResponse> createCamInstanceAsyncInvoker(
-        CreateCamInstanceRequest request) {
-        return new AsyncInvoker<>(request, ServiceStageMeta.createCamInstance, hcClient);
-    }
-
-    /**
      * 应用中创建组件
      *
      * 应用组件是组成应用的某个业务特性实现，以代码或者软件包为载体，可独立部署运行。
@@ -466,31 +429,6 @@ public class ServiceStageAsyncClient {
     public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(
         CreateInstanceRequest request) {
         return new AsyncInvoker<>(request, ServiceStageMeta.createInstance, hcClient);
-    }
-
-    /**
-     * 创建模板
-     *
-     * 创建模板
-     *
-     * @param request CreateTemplateRequest 请求对象
-     * @return CompletableFuture<CreateTemplateResponse>
-     */
-    public CompletableFuture<CreateTemplateResponse> createTemplateAsync(CreateTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.createTemplate);
-    }
-
-    /**
-     * 创建模板
-     *
-     * 创建模板
-     *
-     * @param request CreateTemplateRequest 请求对象
-     * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
-     */
-    public AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateAsyncInvoker(
-        CreateTemplateRequest request) {
-        return new AsyncInvoker<>(request, ServiceStageMeta.createTemplate, hcClient);
     }
 
     /**
@@ -637,81 +575,6 @@ public class ServiceStageAsyncClient {
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
         return new AsyncInvoker<>(request, ServiceStageMeta.deleteInstance, hcClient);
-    }
-
-    /**
-     * 删除实例
-     *
-     * 删除实例
-     *
-     * @param request DeleteInstanceByIdRequest 请求对象
-     * @return CompletableFuture<DeleteInstanceByIdResponse>
-     */
-    public CompletableFuture<DeleteInstanceByIdResponse> deleteInstanceByIdAsync(DeleteInstanceByIdRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.deleteInstanceById);
-    }
-
-    /**
-     * 删除实例
-     *
-     * 删除实例
-     *
-     * @param request DeleteInstanceByIdRequest 请求对象
-     * @return AsyncInvoker<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse>
-     */
-    public AsyncInvoker<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse> deleteInstanceByIdAsyncInvoker(
-        DeleteInstanceByIdRequest request) {
-        return new AsyncInvoker<>(request, ServiceStageMeta.deleteInstanceById, hcClient);
-    }
-
-    /**
-     * 删除模板
-     *
-     * 删除模板
-     *
-     * @param request DeleteTemplateRequest 请求对象
-     * @return CompletableFuture<DeleteTemplateResponse>
-     */
-    public CompletableFuture<DeleteTemplateResponse> deleteTemplateAsync(DeleteTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.deleteTemplate);
-    }
-
-    /**
-     * 删除模板
-     *
-     * 删除模板
-     *
-     * @param request DeleteTemplateRequest 请求对象
-     * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
-     */
-    public AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateAsyncInvoker(
-        DeleteTemplateRequest request) {
-        return new AsyncInvoker<>(request, ServiceStageMeta.deleteTemplate, hcClient);
-    }
-
-    /**
-     * 部署实例
-     *
-     * 部署实例
-     *
-     * @param request DeployInstanceRequest 请求对象
-     * @return CompletableFuture<DeployInstanceResponse>
-     */
-    public CompletableFuture<DeployInstanceResponse> deployInstanceAsync(DeployInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.deployInstance);
-    }
-
-    /**
-     * 部署实例
-     *
-     * 部署实例
-     *
-     * @param request DeployInstanceRequest 请求对象
-     * @return AsyncInvoker<DeployInstanceRequest, DeployInstanceResponse>
-     */
-    public AsyncInvoker<DeployInstanceRequest, DeployInstanceResponse> deployInstanceAsyncInvoker(
-        DeployInstanceRequest request) {
-        return new AsyncInvoker<>(request, ServiceStageMeta.deployInstance, hcClient);
     }
 
     /**
@@ -1095,31 +958,6 @@ public class ServiceStageAsyncClient {
     public AsyncInvoker<UpdateInstanceActionRequest, UpdateInstanceActionResponse> updateInstanceActionAsyncInvoker(
         UpdateInstanceActionRequest request) {
         return new AsyncInvoker<>(request, ServiceStageMeta.updateInstanceAction, hcClient);
-    }
-
-    /**
-     * 更新模板
-     *
-     * 更新模板
-     *
-     * @param request UpdateTemplateRequest 请求对象
-     * @return CompletableFuture<UpdateTemplateResponse>
-     */
-    public CompletableFuture<UpdateTemplateResponse> updateTemplateAsync(UpdateTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.updateTemplate);
-    }
-
-    /**
-     * 更新模板
-     *
-     * 更新模板
-     *
-     * @param request UpdateTemplateRequest 请求对象
-     * @return AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse>
-     */
-    public AsyncInvoker<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplateAsyncInvoker(
-        UpdateTemplateRequest request) {
-        return new AsyncInvoker<>(request, ServiceStageMeta.updateTemplate, hcClient);
     }
 
     /**

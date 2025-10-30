@@ -287,6 +287,7 @@ import com.huaweicloud.sdk.dds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSslRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetRequest;
+import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyRequestBody;
@@ -3736,6 +3737,11 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SwitchoverReplicaSetRequest::getInstanceId,
                 SwitchoverReplicaSetRequest::setInstanceId));
+        builder.<SwitchoverReplicaSetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SwitchoverReplicaSetRequestBody.class),
+            f -> f.withMarshaller(SwitchoverReplicaSetRequest::getBody, SwitchoverReplicaSetRequest::setBody));
 
         // response
 

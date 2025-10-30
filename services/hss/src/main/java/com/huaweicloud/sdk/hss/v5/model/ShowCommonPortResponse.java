@@ -42,8 +42,8 @@ public class ShowCommonPortResponse extends SdkResponse {
     }
 
     /**
-     * 端口号
-     * minimum: 0
+     * **参数解释** 端口号 **取值范围** 最小值1，最大值65535 
+     * minimum: 1
      * maximum: 65535
      * @return port
      */
@@ -61,7 +61,7 @@ public class ShowCommonPortResponse extends SdkResponse {
     }
 
     /**
-     * 端口类型：目前包括TCP，UDP两种
+     * **参数解释** 端口类型 **取值范围** - TCP：TCP协议 - UDP：UDP协议 - TCP6：TCP6协议 - UDP6：UDP6协议 
      * @return type
      */
     public String getType() {
@@ -78,7 +78,7 @@ public class ShowCommonPortResponse extends SdkResponse {
     }
 
     /**
-     * 状态   - normal : 正常   - danger : 危险   - unknow : 未知
+     * **参数解释** 状态 **取值范围** - normal：正常 - danger：危险 - unknow：未知 
      * @return status
      */
     public String getStatus() {
@@ -95,7 +95,7 @@ public class ShowCommonPortResponse extends SdkResponse {
     }
 
     /**
-     * 中文描述
+     * **参数解释** 中文描述 **取值范围** 字符长度1-256 
      * @return description
      */
     public String getDescription() {
@@ -112,7 +112,7 @@ public class ShowCommonPortResponse extends SdkResponse {
     }
 
     /**
-     * 英文描述
+     * **参数解释** 英文描述 **取值范围** 字符长度1-256 
      * @return descriptionEn
      */
     public String getDescriptionEn() {

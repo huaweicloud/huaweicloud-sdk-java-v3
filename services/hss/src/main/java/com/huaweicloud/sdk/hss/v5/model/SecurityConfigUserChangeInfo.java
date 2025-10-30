@@ -73,7 +73,7 @@ public class SecurityConfigUserChangeInfo {
     }
 
     /**
-     * **参数解释**： 是否有登陆权限 **取值范围**： - true：有登录权限 - false：无登录权限 
+     * **参数解释**： 是否有登录权限 **取值范围**： - true：有登录权限 - false：无登录权限 
      * @return loginPermission
      */
     public Boolean getLoginPermission() {

@@ -16,11 +16,6 @@ import java.util.Objects;
 public class SqlRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_time_range_relative")
-
-    private Boolean isTimeRangeRelative;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_stream_id")
 
     private String logStreamId;
@@ -129,23 +124,6 @@ public class SqlRequest {
     @JsonProperty(value = "search_time_range_unit")
 
     private SearchTimeRangeUnitEnum searchTimeRangeUnit;
-
-    public SqlRequest withIsTimeRangeRelative(Boolean isTimeRangeRelative) {
-        this.isTimeRangeRelative = isTimeRangeRelative;
-        return this;
-    }
-
-    /**
-     * 是时间范围相对
-     * @return isTimeRangeRelative
-     */
-    public Boolean getIsTimeRangeRelative() {
-        return isTimeRangeRelative;
-    }
-
-    public void setIsTimeRangeRelative(Boolean isTimeRangeRelative) {
-        this.isTimeRangeRelative = isTimeRangeRelative;
-    }
 
     public SqlRequest withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
@@ -294,8 +272,7 @@ public class SqlRequest {
             return false;
         }
         SqlRequest that = (SqlRequest) obj;
-        return Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative)
-            && Objects.equals(this.logStreamId, that.logStreamId)
+        return Objects.equals(this.logStreamId, that.logStreamId)
             && Objects.equals(this.logStreamName, that.logStreamName)
             && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
             && Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlRequestTitle, that.sqlRequestTitle)
@@ -305,8 +282,7 @@ public class SqlRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(isTimeRangeRelative,
-            logStreamId,
+        return Objects.hash(logStreamId,
             logStreamName,
             logGroupId,
             logGroupName,
@@ -320,7 +296,6 @@ public class SqlRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SqlRequest {\n");
-        sb.append("    isTimeRangeRelative: ").append(toIndentedString(isTimeRangeRelative)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");

@@ -31,7 +31,7 @@ public class ImageFileInfo {
     }
 
     /**
-     * 文件名称
+     * **参数解释**: 文件名称 **取值范围**: 字符长度1-256 
      * @return fileName
      */
     public String getFileName() {
@@ -48,7 +48,7 @@ public class ImageFileInfo {
     }
 
     /**
-     * 文件路径
+     * **参数解释**: 文件路径 **取值范围**: 字符长度1-256 
      * @return filePath
      */
     public String getFilePath() {
@@ -65,7 +65,7 @@ public class ImageFileInfo {
     }
 
     /**
-     * 文件大小
+     * **参数解释**: 文件大小 **取值范围**: 最小值0，最大值65535 
      * minimum: 0
      * maximum: 65535
      * @return size

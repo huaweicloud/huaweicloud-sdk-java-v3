@@ -37,7 +37,7 @@ public class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ds_info")
 
-    private ClusterInfoResponseDsInfo dsInfo;
+    private DaemonsetYamlResponseInfoDsInfo dsInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "installed_status")
@@ -135,14 +135,14 @@ public class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
         this.clusterStatus = clusterStatus;
     }
 
-    public ShowAgentDaemonsetDetailInfoResponse withDsInfo(ClusterInfoResponseDsInfo dsInfo) {
+    public ShowAgentDaemonsetDetailInfoResponse withDsInfo(DaemonsetYamlResponseInfoDsInfo dsInfo) {
         this.dsInfo = dsInfo;
         return this;
     }
 
-    public ShowAgentDaemonsetDetailInfoResponse withDsInfo(Consumer<ClusterInfoResponseDsInfo> dsInfoSetter) {
+    public ShowAgentDaemonsetDetailInfoResponse withDsInfo(Consumer<DaemonsetYamlResponseInfoDsInfo> dsInfoSetter) {
         if (this.dsInfo == null) {
-            this.dsInfo = new ClusterInfoResponseDsInfo();
+            this.dsInfo = new DaemonsetYamlResponseInfoDsInfo();
             dsInfoSetter.accept(this.dsInfo);
         }
 
@@ -153,11 +153,11 @@ public class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
      * Get dsInfo
      * @return dsInfo
      */
-    public ClusterInfoResponseDsInfo getDsInfo() {
+    public DaemonsetYamlResponseInfoDsInfo getDsInfo() {
         return dsInfo;
     }
 
-    public void setDsInfo(ClusterInfoResponseDsInfo dsInfo) {
+    public void setDsInfo(DaemonsetYamlResponseInfoDsInfo dsInfo) {
         this.dsInfo = dsInfo;
     }
 

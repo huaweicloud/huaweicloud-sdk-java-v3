@@ -1,0 +1,341 @@
+package com.huaweicloud.sdk.hss.v5.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class ShowBackupInfoByBackupIdResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_type")
+
+    private String imageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_id")
+
+    private String vaultId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private Long createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_size")
+
+    private Integer resourceSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type")
+
+    private String resourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_name")
+
+    private String resourceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "children")
+
+    private List<BackupResp> children = null;
+
+    public ShowBackupInfoByBackupIdResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释** 备份ID **取值范围** 字符长度0-65535位 
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * **参数解释** 备份名称 **取值范围** 字符长度0-65535位 
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withImageType(String imageType) {
+        this.imageType = imageType;
+        return this;
+    }
+
+    /**
+     * **参数解释** 备份类型 **取值范围** 字符长度0-65535位 
+     * @return imageType
+     */
+    public String getImageType() {
+        return imageType;
+    }
+
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withVaultId(String vaultId) {
+        this.vaultId = vaultId;
+        return this;
+    }
+
+    /**
+     * **参数解释** 备份所在的存储库ID **取值范围** 字符长度0-65535位 
+     * @return vaultId
+     */
+    public String getVaultId() {
+        return vaultId;
+    }
+
+    public void setVaultId(String vaultId) {
+        this.vaultId = vaultId;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * **参数解释** 创建时间 **取值范围** 取值0-9223372036854775807 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return createdAt
+     */
+    public Long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * **参数解释** 备份状态 **取值范围** 字符长度0-65535位 
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withResourceSize(Integer resourceSize) {
+        this.resourceSize = resourceSize;
+        return this;
+    }
+
+    /**
+     * **参数解释** 创建时间 **取值范围** 取值0-2147483647 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return resourceSize
+     */
+    public Integer getResourceSize() {
+        return resourceSize;
+    }
+
+    public void setResourceSize(Integer resourceSize) {
+        this.resourceSize = resourceSize;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源ID 对应host主机ID **取值范围** 字符长度0-65535位 
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withResourceType(String resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源类型 **取值范围** 字符长度0-65535位 
+     * @return resourceType
+     */
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源名称 对应host主机名称 **取值范围** 字符长度0-65535位 
+     * @return resourceName
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withChildren(List<BackupResp> children) {
+        this.children = children;
+        return this;
+    }
+
+    public ShowBackupInfoByBackupIdResponse addChildrenItem(BackupResp childrenItem) {
+        if (this.children == null) {
+            this.children = new ArrayList<>();
+        }
+        this.children.add(childrenItem);
+        return this;
+    }
+
+    public ShowBackupInfoByBackupIdResponse withChildren(Consumer<List<BackupResp>> childrenSetter) {
+        if (this.children == null) {
+            this.children = new ArrayList<>();
+        }
+        childrenSetter.accept(this.children);
+        return this;
+    }
+
+    /**
+     * **参数解释** 子备份就是卷备份信息 **取值范围** 字符长度0-65535位 
+     * @return children
+     */
+    public List<BackupResp> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<BackupResp> children) {
+        this.children = children;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ShowBackupInfoByBackupIdResponse that = (ShowBackupInfoByBackupIdResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.vaultId, that.vaultId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.resourceSize, that.resourceSize) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.children, that.children);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id,
+            name,
+            imageType,
+            vaultId,
+            createdAt,
+            status,
+            resourceSize,
+            resourceId,
+            resourceType,
+            resourceName,
+            children);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShowBackupInfoByBackupIdResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
+        sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    resourceSize: ").append(toIndentedString(resourceSize)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    children: ").append(toIndentedString(children)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

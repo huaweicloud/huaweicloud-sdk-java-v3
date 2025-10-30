@@ -102,7 +102,7 @@ public class ClusterResponseInfo {
     }
 
     /**
-     * 防护状态 - unprotected - plugin error - protected with policy - deploy policy failed - protected without policy - uninstall failed - uninstall
+     * **参数解释**： 防护状态 **取值范围**: - unprotected：未保护。 - plugin error：插件错误。 - protected with policy：受策略保护。 - deploy policy failed：部署策略失败。 - protected without policy：无策略保护。 - uninstall failed：卸载失败。 - uninstall：卸载。 
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -138,7 +138,7 @@ public class ClusterResponseInfo {
     }
 
     /**
-     * 集群运行状态 - Available - Unavailable
+     * **参数解释**： 集群运行状态 **取值范围**: - Available：可用。 - Unavailable：不可用。 
      * @return clusterStatus
      */
     public String getClusterStatus() {

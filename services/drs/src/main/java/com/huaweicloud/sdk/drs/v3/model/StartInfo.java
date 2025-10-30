@@ -16,6 +16,11 @@ public class StartInfo {
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_only_init_task")
+
+    private Boolean isOnlyInitTask;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -35,6 +40,23 @@ public class StartInfo {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public StartInfo withIsOnlyInitTask(Boolean isOnlyInitTask) {
+        this.isOnlyInitTask = isOnlyInitTask;
+        return this;
+    }
+
+    /**
+     * 是否支持只初始化任务。
+     * @return isOnlyInitTask
+     */
+    public Boolean getIsOnlyInitTask() {
+        return isOnlyInitTask;
+    }
+
+    public void setIsOnlyInitTask(Boolean isOnlyInitTask) {
+        this.isOnlyInitTask = isOnlyInitTask;
     }
 
     public StartInfo withStartTime(String startTime) {
@@ -63,12 +85,13 @@ public class StartInfo {
             return false;
         }
         StartInfo that = (StartInfo) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.startTime, that.startTime);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.isOnlyInitTask, that.isOnlyInitTask)
+            && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, startTime);
+        return Objects.hash(jobId, isOnlyInitTask, startTime);
     }
 
     @Override
@@ -76,6 +99,7 @@ public class StartInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class StartInfo {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    isOnlyInitTask: ").append(toIndentedString(isOnlyInitTask)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("}");
         return sb.toString();

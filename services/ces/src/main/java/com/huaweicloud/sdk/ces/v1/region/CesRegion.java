@@ -86,6 +86,8 @@ public class CesRegion {
     public static final Region CN_SOUTHWEST_3 =
         new Region("cn-southwest-3", "https://ces.cn-southwest-3.myhuaweicloud.com");
 
+    public static final Region SA_PERU_1 = new Region("sa-peru-1", "https://ces.sa-peru-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CES");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -124,6 +126,7 @@ public class CesRegion {
         map.put("cn-north-12", CN_NORTH_12);
         map.put("cn-north-11", CN_NORTH_11);
         map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("sa-peru-1", SA_PERU_1);
         return Collections.unmodifiableMap(map);
     }
 

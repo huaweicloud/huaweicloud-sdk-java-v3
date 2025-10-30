@@ -144,11 +144,6 @@ public class TransferDetail {
     private String obsTransferPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs_eps_id")
-
-    private String obsEpsId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_bucket_name")
 
     private String obsBucketName;
@@ -197,26 +192,6 @@ public class TransferDetail {
     @JsonProperty(value = "tags")
 
     private List<String> tags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "lts_tags")
-
-    private List<String> ltsTags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "stream_tags")
-
-    private List<String> streamTags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "struct_fields")
-
-    private List<String> structFields = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "invalid_field_value")
-
-    private String invalidFieldValue;
 
     public TransferDetail withObsPeriod(ObsPeriodEnum obsPeriod) {
         this.obsPeriod = obsPeriod;
@@ -301,23 +276,6 @@ public class TransferDetail {
 
     public void setObsTransferPath(String obsTransferPath) {
         this.obsTransferPath = obsTransferPath;
-    }
-
-    public TransferDetail withObsEpsId(String obsEpsId) {
-        this.obsEpsId = obsEpsId;
-        return this;
-    }
-
-    /**
-     * OBS企业项目ID
-     * @return obsEpsId
-     */
-    public String getObsEpsId() {
-        return obsEpsId;
-    }
-
-    public void setObsEpsId(String obsEpsId) {
-        this.obsEpsId = obsEpsId;
     }
 
     public TransferDetail withObsBucketName(String obsBucketName) {
@@ -506,122 +464,6 @@ public class TransferDetail {
         this.tags = tags;
     }
 
-    public TransferDetail withLtsTags(List<String> ltsTags) {
-        this.ltsTags = ltsTags;
-        return this;
-    }
-
-    public TransferDetail addLtsTagsItem(String ltsTagsItem) {
-        if (this.ltsTags == null) {
-            this.ltsTags = new ArrayList<>();
-        }
-        this.ltsTags.add(ltsTagsItem);
-        return this;
-    }
-
-    public TransferDetail withLtsTags(Consumer<List<String>> ltsTagsSetter) {
-        if (this.ltsTags == null) {
-            this.ltsTags = new ArrayList<>();
-        }
-        ltsTagsSetter.accept(this.ltsTags);
-        return this;
-    }
-
-    /**
-     * dms转储JSON格式选填，可以转储tag字段
-     * @return ltsTags
-     */
-    public List<String> getLtsTags() {
-        return ltsTags;
-    }
-
-    public void setLtsTags(List<String> ltsTags) {
-        this.ltsTags = ltsTags;
-    }
-
-    public TransferDetail withStreamTags(List<String> streamTags) {
-        this.streamTags = streamTags;
-        return this;
-    }
-
-    public TransferDetail addStreamTagsItem(String streamTagsItem) {
-        if (this.streamTags == null) {
-            this.streamTags = new ArrayList<>();
-        }
-        this.streamTags.add(streamTagsItem);
-        return this;
-    }
-
-    public TransferDetail withStreamTags(Consumer<List<String>> streamTagsSetter) {
-        if (this.streamTags == null) {
-            this.streamTags = new ArrayList<>();
-        }
-        streamTagsSetter.accept(this.streamTags);
-        return this;
-    }
-
-    /**
-     * dms转储JSON格式选填，可以转储日志流标签字段
-     * @return streamTags
-     */
-    public List<String> getStreamTags() {
-        return streamTags;
-    }
-
-    public void setStreamTags(List<String> streamTags) {
-        this.streamTags = streamTags;
-    }
-
-    public TransferDetail withStructFields(List<String> structFields) {
-        this.structFields = structFields;
-        return this;
-    }
-
-    public TransferDetail addStructFieldsItem(String structFieldsItem) {
-        if (this.structFields == null) {
-            this.structFields = new ArrayList<>();
-        }
-        this.structFields.add(structFieldsItem);
-        return this;
-    }
-
-    public TransferDetail withStructFields(Consumer<List<String>> structFieldsSetter) {
-        if (this.structFields == null) {
-            this.structFields = new ArrayList<>();
-        }
-        structFieldsSetter.accept(this.structFields);
-        return this;
-    }
-
-    /**
-     * dms转储JSON格式选填，可以转储结构化字段
-     * @return structFields
-     */
-    public List<String> getStructFields() {
-        return structFields;
-    }
-
-    public void setStructFields(List<String> structFields) {
-        this.structFields = structFields;
-    }
-
-    public TransferDetail withInvalidFieldValue(String invalidFieldValue) {
-        this.invalidFieldValue = invalidFieldValue;
-        return this;
-    }
-
-    /**
-     * dms转储JSON格式选填，无效字段填充
-     * @return invalidFieldValue
-     */
-    public String getInvalidFieldValue() {
-        return invalidFieldValue;
-    }
-
-    public void setInvalidFieldValue(String invalidFieldValue) {
-        this.invalidFieldValue = invalidFieldValue;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -636,15 +478,12 @@ public class TransferDetail {
             && Objects.equals(this.obsPrefixName, that.obsPrefixName)
             && Objects.equals(this.obsPeriodUnit, that.obsPeriodUnit)
             && Objects.equals(this.obsTransferPath, that.obsTransferPath)
-            && Objects.equals(this.obsEpsId, that.obsEpsId) && Objects.equals(this.obsBucketName, that.obsBucketName)
+            && Objects.equals(this.obsBucketName, that.obsBucketName)
             && Objects.equals(this.obsEncryptedEnable, that.obsEncryptedEnable)
             && Objects.equals(this.obsDirPreFixName, that.obsDirPreFixName) && Objects.equals(this.disId, that.disId)
             && Objects.equals(this.disName, that.disName) && Objects.equals(this.kafkaId, that.kafkaId)
             && Objects.equals(this.kafkaTopic, that.kafkaTopic) && Objects.equals(this.obsTimeZone, that.obsTimeZone)
-            && Objects.equals(this.obsTimeZoneId, that.obsTimeZoneId) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.ltsTags, that.ltsTags) && Objects.equals(this.streamTags, that.streamTags)
-            && Objects.equals(this.structFields, that.structFields)
-            && Objects.equals(this.invalidFieldValue, that.invalidFieldValue);
+            && Objects.equals(this.obsTimeZoneId, that.obsTimeZoneId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -654,7 +493,6 @@ public class TransferDetail {
             obsPrefixName,
             obsPeriodUnit,
             obsTransferPath,
-            obsEpsId,
             obsBucketName,
             obsEncryptedEnable,
             obsDirPreFixName,
@@ -664,11 +502,7 @@ public class TransferDetail {
             kafkaTopic,
             obsTimeZone,
             obsTimeZoneId,
-            tags,
-            ltsTags,
-            streamTags,
-            structFields,
-            invalidFieldValue);
+            tags);
     }
 
     @Override
@@ -680,7 +514,6 @@ public class TransferDetail {
         sb.append("    obsPrefixName: ").append(toIndentedString(obsPrefixName)).append("\n");
         sb.append("    obsPeriodUnit: ").append(toIndentedString(obsPeriodUnit)).append("\n");
         sb.append("    obsTransferPath: ").append(toIndentedString(obsTransferPath)).append("\n");
-        sb.append("    obsEpsId: ").append(toIndentedString(obsEpsId)).append("\n");
         sb.append("    obsBucketName: ").append(toIndentedString(obsBucketName)).append("\n");
         sb.append("    obsEncryptedEnable: ").append(toIndentedString(obsEncryptedEnable)).append("\n");
         sb.append("    obsDirPreFixName: ").append(toIndentedString(obsDirPreFixName)).append("\n");
@@ -691,10 +524,6 @@ public class TransferDetail {
         sb.append("    obsTimeZone: ").append(toIndentedString(obsTimeZone)).append("\n");
         sb.append("    obsTimeZoneId: ").append(toIndentedString(obsTimeZoneId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    ltsTags: ").append(toIndentedString(ltsTags)).append("\n");
-        sb.append("    streamTags: ").append(toIndentedString(streamTags)).append("\n");
-        sb.append("    structFields: ").append(toIndentedString(structFields)).append("\n");
-        sb.append("    invalidFieldValue: ").append(toIndentedString(invalidFieldValue)).append("\n");
         sb.append("}");
         return sb.toString();
     }

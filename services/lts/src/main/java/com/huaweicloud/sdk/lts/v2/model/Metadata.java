@@ -60,6 +60,11 @@ public class Metadata {
 
     private String logStreamName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_subtype")
+
+    private String eventSubtype;
+
     public Metadata withEventType(String eventType) {
         this.eventType = eventType;
         return this;
@@ -230,6 +235,23 @@ public class Metadata {
         this.logStreamName = logStreamName;
     }
 
+    public Metadata withEventSubtype(String eventSubtype) {
+        this.eventSubtype = eventSubtype;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警类型。 **取值范围：** - sql： sql告警 - keywords：关键词告警
+     * @return eventSubtype
+     */
+    public String getEventSubtype() {
+        return eventSubtype;
+    }
+
+    public void setEventSubtype(String eventSubtype) {
+        this.eventSubtype = eventSubtype;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,7 +267,8 @@ public class Metadata {
             && Objects.equals(this.resourceProvider, that.resourceProvider)
             && Objects.equals(this.ltsAlarmType, that.ltsAlarmType)
             && Objects.equals(this.logGroupName, that.logGroupName)
-            && Objects.equals(this.logStreamName, that.logStreamName);
+            && Objects.equals(this.logStreamName, that.logStreamName)
+            && Objects.equals(this.eventSubtype, that.eventSubtype);
     }
 
     @Override
@@ -259,7 +282,8 @@ public class Metadata {
             resourceProvider,
             ltsAlarmType,
             logGroupName,
-            logStreamName);
+            logStreamName,
+            eventSubtype);
     }
 
     @Override
@@ -276,6 +300,7 @@ public class Metadata {
         sb.append("    ltsAlarmType: ").append(toIndentedString(ltsAlarmType)).append("\n");
         sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
+        sb.append("    eventSubtype: ").append(toIndentedString(eventSubtype)).append("\n");
         sb.append("}");
         return sb.toString();
     }

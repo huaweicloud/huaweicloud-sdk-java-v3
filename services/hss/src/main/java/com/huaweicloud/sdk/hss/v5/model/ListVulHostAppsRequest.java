@@ -16,6 +16,16 @@ public class ListVulHostAppsRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
@@ -55,6 +65,44 @@ public class ListVulHostAppsRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListVulHostAppsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * minimum: 10
+     * maximum: 200
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListVulHostAppsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
+     * minimum: 0
+     * maximum: 2000000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ListVulHostAppsRequest withHostId(String hostId) {
@@ -152,6 +200,7 @@ public class ListVulHostAppsRequest {
         }
         ListVulHostAppsRequest that = (ListVulHostAppsRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.vulId, that.vulId)
             && Objects.equals(this.handleStatus, that.handleStatus)
             && Objects.equals(this.containerId, that.containerId) && Objects.equals(this.isContainer, that.isContainer);
@@ -159,7 +208,7 @@ public class ListVulHostAppsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hostId, vulId, handleStatus, containerId, isContainer);
+        return Objects.hash(enterpriseProjectId, limit, offset, hostId, vulId, handleStatus, containerId, isContainer);
     }
 
     @Override
@@ -167,6 +216,8 @@ public class ListVulHostAppsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListVulHostAppsRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    vulId: ").append(toIndentedString(vulId)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");

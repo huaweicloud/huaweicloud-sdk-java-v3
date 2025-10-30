@@ -19,6 +19,11 @@ public class ListTemplateVersionsResponse extends SdkResponse {
 
     private List<TemplateVersion> versions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListTemplateVersionsResponse withVersions(List<TemplateVersion> versions) {
         this.versions = versions;
         return this;
@@ -52,6 +57,32 @@ public class ListTemplateVersionsResponse extends SdkResponse {
         this.versions = versions;
     }
 
+    public ListTemplateVersionsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListTemplateVersionsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ListTemplateVersionsResponse extends SdkResponse {
             return false;
         }
         ListTemplateVersionsResponse that = (ListTemplateVersionsResponse) obj;
-        return Objects.equals(this.versions, that.versions);
+        return Objects.equals(this.versions, that.versions) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(versions);
+        return Objects.hash(versions, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ListTemplateVersionsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTemplateVersionsResponse {\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

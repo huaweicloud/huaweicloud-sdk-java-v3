@@ -42,4 +42,12 @@ public class HostUnreachableException extends ConnectionException {
     public HostUnreachableException(Throwable cause) {
         super(cause);
     }
+
+    @Override
+    public String getMessage() {
+        if (getCause() != null && getCause().getMessage() != null) {
+            return super.getMessage() + ", caused by: " + getCause().getMessage();
+        }
+        return super.getMessage();
+    }
 }

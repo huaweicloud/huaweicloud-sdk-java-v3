@@ -93,6 +93,8 @@ import com.huaweicloud.sdk.aos.v1.model.GetStackTemplateRequest;
 import com.huaweicloud.sdk.aos.v1.model.GetStackTemplateResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateHookVersionsRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateHookVersionsResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateHooksRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateHooksResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateModuleVersionsRequest;
@@ -1013,6 +1015,65 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePrivateHookVersionRequest::getClientRequestId,
                 DeletePrivateHookVersionRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPrivateHookVersionsRequest, ListPrivateHookVersionsResponse> listPrivateHookVersions =
+        genForListPrivateHookVersions();
+
+    private static HttpRequestDef<ListPrivateHookVersionsRequest, ListPrivateHookVersionsResponse> genForListPrivateHookVersions() {
+        // basic
+        HttpRequestDef.Builder<ListPrivateHookVersionsRequest, ListPrivateHookVersionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPrivateHookVersionsRequest.class, ListPrivateHookVersionsResponse.class)
+            .withName("ListPrivateHookVersions")
+            .withUri("/v1/private-hooks/{hook_name}/versions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("hook_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateHookVersionsRequest::getHookName,
+                ListPrivateHookVersionsRequest::setHookName));
+        builder.<String>withRequestField("hook_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateHookVersionsRequest::getHookId,
+                ListPrivateHookVersionsRequest::setHookId));
+        builder.<List<ListPrivateHookVersionsRequest.SortKeyEnum>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateHookVersionsRequest::getSortKey,
+                ListPrivateHookVersionsRequest::setSortKey));
+        builder.<List<ListPrivateHookVersionsRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateHookVersionsRequest::getSortDir,
+                ListPrivateHookVersionsRequest::setSortDir));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateHookVersionsRequest::getMarker,
+                ListPrivateHookVersionsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivateHookVersionsRequest::getLimit, ListPrivateHookVersionsRequest::setLimit));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateHookVersionsRequest::getClientRequestId,
+                ListPrivateHookVersionsRequest::setClientRequestId));
 
         // response
 
@@ -3020,6 +3081,16 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplateVersionsRequest::getTemplateId,
                 ListTemplateVersionsRequest::setTemplateId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplateVersionsRequest::getMarker, ListTemplateVersionsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplateVersionsRequest::getLimit, ListTemplateVersionsRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3044,6 +3115,16 @@ public class AosMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getMarker, ListTemplatesRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getLimit, ListTemplatesRequest::setLimit));
         builder.<String>withRequestField("Client-Request-Id",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,

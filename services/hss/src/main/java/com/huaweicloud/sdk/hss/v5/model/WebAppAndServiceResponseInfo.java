@@ -96,14 +96,14 @@ public class WebAppAndServiceResponseInfo {
     private Long recordTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_name")
-
-    private String hostName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_name")
+
+    private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_ip")
@@ -116,7 +116,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * 资产指纹种类
+     * **参数解释**: web应用、web服务、数据库资产指纹种类 **取值范围**: 字符长度0-64 
      * @return catalogue
      */
     public String getCatalogue() {
@@ -133,7 +133,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * 资产指纹名字
+     * **参数解释**: 资产指纹名字 **取值范围**: 字符长度0-64 
      * @return name
      */
     public String getName() {
@@ -150,7 +150,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * 资产指纹-数据库-版本
+     * **参数解释**: 资产指纹版本 **取值范围**: 字符长度0-64 
      * @return version
      */
     public String getVersion() {
@@ -167,7 +167,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * agent_id
+     * **参数解释** agent id **取值范围** 字符长度1-64 
      * @return agentId
      */
     public String getAgentId() {
@@ -184,7 +184,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * 安装路径
+     * **参数解释** 安装路径 **取值范围** 字符长度0-256 
      * @return installPath
      */
     public String getInstallPath() {
@@ -201,7 +201,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * 配置文件路径
+     * **参数解释** 配置文件路径 **取值范围** 字符长度0-256 
      * @return configPath
      */
     public String getConfigPath() {
@@ -218,7 +218,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * uid
+     * **参数解释**: uid **取值范围**: 最小值0，最大值2147483647 
      * @return uid
      */
     public Integer getUid() {
@@ -235,7 +235,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * gid
+     * **参数解释**: gid **取值范围**: 最小值0，最大值2147483647 
      * @return gid
      */
     public Integer getGid() {
@@ -252,7 +252,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * mode
+     * **参数解释**: 资产指纹文件权限 **取值范围**: 字符长度1-32 
      * @return mode
      */
     public String getMode() {
@@ -269,7 +269,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * ctime
+     * **参数解释**: 资产指纹文件最近状态改变时间 **取值范围**: 最小值0，最大值2^63-1 
      * @return ctime
      */
     public Long getCtime() {
@@ -286,7 +286,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * mtime
+     * **参数解释**: 资产指纹文件最近修改时间 **取值范围**: 最小值0，最大值2^63-1 
      * @return mtime
      */
     public Long getMtime() {
@@ -303,7 +303,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * atime
+     * **参数解释**: 资产指纹文件最近访问时间 **取值范围**: 最小值0，最大值2^63-1 
      * @return atime
      */
     public Long getAtime() {
@@ -320,7 +320,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * pid
+     * **参数解释**: pid **取值范围**: 最小值0，最大值2147483647 
      * @return pid
      */
     public Integer getPid() {
@@ -337,7 +337,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * proc_path
+     * **参数解释**: 资产指纹进程路径 **取值范围**: 字符长度0-256 
      * @return procPath
      */
     public String getProcPath() {
@@ -354,7 +354,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * container_id
+     * **参数解释**: 容器id **取值范围**: 字符长度0-256 
      * @return containerId
      */
     public String getContainerId() {
@@ -371,7 +371,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * container_name
+     * **参数解释**: 容器名称 **取值范围**: 字符长度0-256 
      * @return containerName
      */
     public String getContainerName() {
@@ -388,7 +388,7 @@ public class WebAppAndServiceResponseInfo {
     }
 
     /**
-     * record_time
+     * **参数解释**: 资产指纹扫描时间 **取值范围**: 最小值0，最大值2^63-1 
      * @return recordTime
      */
     public Long getRecordTime() {
@@ -399,30 +399,13 @@ public class WebAppAndServiceResponseInfo {
         this.recordTime = recordTime;
     }
 
-    public WebAppAndServiceResponseInfo withHostName(String hostName) {
-        this.hostName = hostName;
-        return this;
-    }
-
-    /**
-     * host_name
-     * @return hostName
-     */
-    public String getHostName() {
-        return hostName;
-    }
-
-    public void setHostName(String hostName) {
-        this.hostName = hostName;
-    }
-
     public WebAppAndServiceResponseInfo withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
 
     /**
-     * host_id
+     * **参数解释** 主机id **取值范围** 字符长度1-64 
      * @return hostId
      */
     public String getHostId() {
@@ -433,13 +416,30 @@ public class WebAppAndServiceResponseInfo {
         this.hostId = hostId;
     }
 
+    public WebAppAndServiceResponseInfo withHostName(String hostName) {
+        this.hostName = hostName;
+        return this;
+    }
+
+    /**
+     * **参数解释** 服务器名称 **取值范围** 字符长度1-64 
+     * @return hostName
+     */
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
     public WebAppAndServiceResponseInfo withHostIp(String hostIp) {
         this.hostIp = hostIp;
         return this;
     }
 
     /**
-     * host_ip
+     * **参数解释** 服务器ip **取值范围** 字符长度1-64 
      * @return hostIp
      */
     public String getHostIp() {
@@ -468,8 +468,8 @@ public class WebAppAndServiceResponseInfo {
             && Objects.equals(this.pid, that.pid) && Objects.equals(this.procPath, that.procPath)
             && Objects.equals(this.containerId, that.containerId)
             && Objects.equals(this.containerName, that.containerName)
-            && Objects.equals(this.recordTime, that.recordTime) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostIp, that.hostIp);
+            && Objects.equals(this.recordTime, that.recordTime) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp);
     }
 
     @Override
@@ -491,8 +491,8 @@ public class WebAppAndServiceResponseInfo {
             containerId,
             containerName,
             recordTime,
-            hostName,
             hostId,
+            hostName,
             hostIp);
     }
 
@@ -517,8 +517,8 @@ public class WebAppAndServiceResponseInfo {
         sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
         sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("    recordTime: ").append(toIndentedString(recordTime)).append("\n");
-        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("}");
         return sb.toString();

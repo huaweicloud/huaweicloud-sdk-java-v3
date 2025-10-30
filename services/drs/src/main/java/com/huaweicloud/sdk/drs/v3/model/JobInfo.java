@@ -268,14 +268,14 @@ public class JobInfo {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
 
     /**
      * 引擎类型
@@ -761,23 +761,6 @@ public class JobInfo {
         this.status = status;
     }
 
-    public JobInfo withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 任务描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public JobInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -793,6 +776,23 @@ public class JobInfo {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public JobInfo withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 任务描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public JobInfo withEngineType(EngineTypeEnum engineType) {
@@ -919,7 +919,7 @@ public class JobInfo {
     }
 
     /**
-     * 子任务信息体
+     * 子任务信息体。
      * @return children
      */
     public List<ChildrenJobInfo> getChildren() {
@@ -936,7 +936,7 @@ public class JobInfo {
     }
 
     /**
-     * 是否新框架
+     * 是否新框架。
      * @return nodeNewFramework
      */
     public Boolean getNodeNewFramework() {
@@ -983,8 +983,8 @@ public class JobInfo {
         }
         JobInfo that = (JobInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.engineType, that.engineType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.engineType, that.engineType)
             && Objects.equals(this.netType, that.netType) && Objects.equals(this.billingTag, that.billingTag)
             && Objects.equals(this.jobDirection, that.jobDirection) && Objects.equals(this.dbUseType, that.dbUseType)
             && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.children, that.children)
@@ -997,8 +997,8 @@ public class JobInfo {
         return Objects.hash(id,
             name,
             status,
-            description,
             createTime,
+            description,
             engineType,
             netType,
             billingTag,
@@ -1017,8 +1017,8 @@ public class JobInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("    netType: ").append(toIndentedString(netType)).append("\n");
         sb.append("    billingTag: ").append(toIndentedString(billingTag)).append("\n");

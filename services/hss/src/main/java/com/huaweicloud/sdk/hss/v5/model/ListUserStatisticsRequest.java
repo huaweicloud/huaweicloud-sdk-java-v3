@@ -113,7 +113,7 @@ public class ListUserStatisticsRequest {
     }
 
     /**
-     * 类别，默认为host，包含如下： - host：主机 - container：容器
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
      * @return category
      */
     public String getCategory() {

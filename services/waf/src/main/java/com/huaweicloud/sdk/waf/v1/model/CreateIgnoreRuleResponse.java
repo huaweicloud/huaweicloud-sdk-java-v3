@@ -55,6 +55,16 @@ public class CreateIgnoreRuleResponse extends SdkResponse {
     private List<Condition> conditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "multiCondition")
+
+    private Boolean multiCondition;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "producer")
+
+    private Integer producer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advanced")
 
     private IgnoreAdvanced advanced;
@@ -216,6 +226,40 @@ public class CreateIgnoreRuleResponse extends SdkResponse {
         this.conditions = conditions;
     }
 
+    public CreateIgnoreRuleResponse withMultiCondition(Boolean multiCondition) {
+        this.multiCondition = multiCondition;
+        return this;
+    }
+
+    /**
+     * 附加条件
+     * @return multiCondition
+     */
+    public Boolean getMultiCondition() {
+        return multiCondition;
+    }
+
+    public void setMultiCondition(Boolean multiCondition) {
+        this.multiCondition = multiCondition;
+    }
+
+    public CreateIgnoreRuleResponse withProducer(Integer producer) {
+        this.producer = producer;
+        return this;
+    }
+
+    /**
+     * 引用表来源，1代表用户创建，其它值代表modulleX自动生成
+     * @return producer
+     */
+    public Integer getProducer() {
+        return producer;
+    }
+
+    public void setProducer(Integer producer) {
+        this.producer = producer;
+    }
+
     public CreateIgnoreRuleResponse withAdvanced(IgnoreAdvanced advanced) {
         this.advanced = advanced;
         return this;
@@ -288,12 +332,24 @@ public class CreateIgnoreRuleResponse extends SdkResponse {
             && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.description, that.description)
             && Objects.equals(this.status, that.status) && Objects.equals(this.rule, that.rule)
             && Objects.equals(this.mode, that.mode) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.multiCondition, that.multiCondition) && Objects.equals(this.producer, that.producer)
             && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.domain, that.domain);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, timestamp, description, status, rule, mode, conditions, advanced, domain);
+        return Objects.hash(id,
+            policyid,
+            timestamp,
+            description,
+            status,
+            rule,
+            mode,
+            conditions,
+            multiCondition,
+            producer,
+            advanced,
+            domain);
     }
 
     @Override
@@ -308,6 +364,8 @@ public class CreateIgnoreRuleResponse extends SdkResponse {
         sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    multiCondition: ").append(toIndentedString(multiCondition)).append("\n");
+        sb.append("    producer: ").append(toIndentedString(producer)).append("\n");
         sb.append("    advanced: ").append(toIndentedString(advanced)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");

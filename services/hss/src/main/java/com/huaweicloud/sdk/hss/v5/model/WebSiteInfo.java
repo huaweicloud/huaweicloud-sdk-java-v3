@@ -78,7 +78,7 @@ public class WebSiteInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cert_user")
 
-    private Integer certUser;
+    private String certUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cert_issue_time")
@@ -298,7 +298,7 @@ public class WebSiteInfo {
     }
 
     /**
-     * **参数解释**: web站点是否为https **取值范围**: -true：是。 -false：否。 
+     * **参数解释**: web站点是否为https **取值范围**: - true：是。 - false：否。 
      * @return isHttps
      */
     public Boolean getIsHttps() {
@@ -326,7 +326,7 @@ public class WebSiteInfo {
         this.certIssuer = certIssuer;
     }
 
-    public WebSiteInfo withCertUser(Integer certUser) {
+    public WebSiteInfo withCertUser(String certUser) {
         this.certUser = certUser;
         return this;
     }
@@ -335,11 +335,11 @@ public class WebSiteInfo {
      * **参数解释**: web站点SSL证书使用者 **取值范围**: 字符长度0-256 
      * @return certUser
      */
-    public Integer getCertUser() {
+    public String getCertUser() {
         return certUser;
     }
 
-    public void setCertUser(Integer certUser) {
+    public void setCertUser(String certUser) {
         this.certUser = certUser;
     }
 

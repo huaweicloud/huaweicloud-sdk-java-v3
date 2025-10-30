@@ -43,7 +43,7 @@ public class ListGlobalAssetScanTaskRequest {
     }
 
     /**
-     * **参数解释**: 事件类别 **约束限制**: 不涉及 **取值范围**: - host：主机安全事件 - container：容器安全事件  **默认取值**: 不涉及 
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
      * @return category
      */
     public String getCategory() {

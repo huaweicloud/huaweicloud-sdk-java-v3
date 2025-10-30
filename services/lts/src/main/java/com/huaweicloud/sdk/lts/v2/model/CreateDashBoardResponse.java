@@ -54,6 +54,16 @@ public class CreateDashBoardResponse extends SdkResponse {
 
     private Boolean useSystemTemplate;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "concise_mode_enable")
+
+    private Boolean conciseModeEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
     public CreateDashBoardResponse withCharts(List<String> charts) {
         this.charts = charts;
         return this;
@@ -222,6 +232,56 @@ public class CreateDashBoardResponse extends SdkResponse {
         this.useSystemTemplate = useSystemTemplate;
     }
 
+    public CreateDashBoardResponse withConciseModeEnable(Boolean conciseModeEnable) {
+        this.conciseModeEnable = conciseModeEnable;
+        return this;
+    }
+
+    /**
+     * 纯净模式开关
+     * @return conciseModeEnable
+     */
+    public Boolean getConciseModeEnable() {
+        return conciseModeEnable;
+    }
+
+    public void setConciseModeEnable(Boolean conciseModeEnable) {
+        this.conciseModeEnable = conciseModeEnable;
+    }
+
+    public CreateDashBoardResponse withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateDashBoardResponse addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateDashBoardResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 仪表盘标签
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -235,12 +295,22 @@ public class CreateDashBoardResponse extends SdkResponse {
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.id, that.id)
             && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.title, that.title)
-            && Objects.equals(this.useSystemTemplate, that.useSystemTemplate);
+            && Objects.equals(this.useSystemTemplate, that.useSystemTemplate)
+            && Objects.equals(this.conciseModeEnable, that.conciseModeEnable) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(charts, filters, groupName, id, lastUpdateTime, projectId, title, useSystemTemplate);
+        return Objects.hash(charts,
+            filters,
+            groupName,
+            id,
+            lastUpdateTime,
+            projectId,
+            title,
+            useSystemTemplate,
+            conciseModeEnable,
+            tags);
     }
 
     @Override
@@ -255,6 +325,8 @@ public class CreateDashBoardResponse extends SdkResponse {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    useSystemTemplate: ").append(toIndentedString(useSystemTemplate)).append("\n");
+        sb.append("    conciseModeEnable: ").append(toIndentedString(conciseModeEnable)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

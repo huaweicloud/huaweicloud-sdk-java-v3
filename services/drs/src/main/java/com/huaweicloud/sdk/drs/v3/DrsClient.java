@@ -91,6 +91,12 @@ import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersResponse;
+import com.huaweicloud.sdk.drs.v3.model.ModifyGroupAndStreamRequest;
+import com.huaweicloud.sdk.drs.v3.model.ModifyGroupAndStreamResponse;
+import com.huaweicloud.sdk.drs.v3.model.QueryTuningParamsRequest;
+import com.huaweicloud.sdk.drs.v3.model.QueryTuningParamsResponse;
+import com.huaweicloud.sdk.drs.v3.model.SelectGroupAndStreamRequest;
+import com.huaweicloud.sdk.drs.v3.model.SelectGroupAndStreamResponse;
 import com.huaweicloud.sdk.drs.v3.model.ShowJobListRequest;
 import com.huaweicloud.sdk.drs.v3.model.ShowJobListResponse;
 import com.huaweicloud.sdk.drs.v3.model.ShowMonitoringDataRequest;
@@ -1407,6 +1413,93 @@ public class DrsClient {
      */
     public SyncInvoker<ListUsersRequest, ListUsersResponse> listUsersInvoker(ListUsersRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listUsers, hcClient);
+    }
+
+    /**
+     * 更新LTS配置
+     *
+     * 更新任务的LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyGroupAndStreamRequest 请求对象
+     * @return ModifyGroupAndStreamResponse
+     */
+    public ModifyGroupAndStreamResponse modifyGroupAndStream(ModifyGroupAndStreamRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.modifyGroupAndStream);
+    }
+
+    /**
+     * 更新LTS配置
+     *
+     * 更新任务的LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyGroupAndStreamRequest 请求对象
+     * @return SyncInvoker<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse>
+     */
+    public SyncInvoker<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse> modifyGroupAndStreamInvoker(
+        ModifyGroupAndStreamRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.modifyGroupAndStream, hcClient);
+    }
+
+    /**
+     * 查询高级设置参数
+     *
+     * 查询高级设置参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryTuningParamsRequest 请求对象
+     * @return QueryTuningParamsResponse
+     */
+    public QueryTuningParamsResponse queryTuningParams(QueryTuningParamsRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.queryTuningParams);
+    }
+
+    /**
+     * 查询高级设置参数
+     *
+     * 查询高级设置参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryTuningParamsRequest 请求对象
+     * @return SyncInvoker<QueryTuningParamsRequest, QueryTuningParamsResponse>
+     */
+    public SyncInvoker<QueryTuningParamsRequest, QueryTuningParamsResponse> queryTuningParamsInvoker(
+        QueryTuningParamsRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.queryTuningParams, hcClient);
+    }
+
+    /**
+     * 查询LTS配置
+     *
+     * 查询任务的LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SelectGroupAndStreamRequest 请求对象
+     * @return SelectGroupAndStreamResponse
+     */
+    public SelectGroupAndStreamResponse selectGroupAndStream(SelectGroupAndStreamRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.selectGroupAndStream);
+    }
+
+    /**
+     * 查询LTS配置
+     *
+     * 查询任务的LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SelectGroupAndStreamRequest 请求对象
+     * @return SyncInvoker<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse>
+     */
+    public SyncInvoker<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse> selectGroupAndStreamInvoker(
+        SelectGroupAndStreamRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.selectGroupAndStream, hcClient);
     }
 
     /**

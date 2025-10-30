@@ -121,11 +121,18 @@ import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersResponse;
+import com.huaweicloud.sdk.drs.v3.model.LtsInfo;
+import com.huaweicloud.sdk.drs.v3.model.ModifyGroupAndStreamRequest;
+import com.huaweicloud.sdk.drs.v3.model.ModifyGroupAndStreamResponse;
 import com.huaweicloud.sdk.drs.v3.model.ModifyTargetParamsReq;
 import com.huaweicloud.sdk.drs.v3.model.ModifyTuningParamsReq;
 import com.huaweicloud.sdk.drs.v3.model.QueryAvailableNodeTypeReq;
 import com.huaweicloud.sdk.drs.v3.model.QueryCompareResultReq;
 import com.huaweicloud.sdk.drs.v3.model.QueryJobsReq;
+import com.huaweicloud.sdk.drs.v3.model.QueryTuningParamsRequest;
+import com.huaweicloud.sdk.drs.v3.model.QueryTuningParamsResponse;
+import com.huaweicloud.sdk.drs.v3.model.SelectGroupAndStreamRequest;
+import com.huaweicloud.sdk.drs.v3.model.SelectGroupAndStreamResponse;
 import com.huaweicloud.sdk.drs.v3.model.ShowJobListRequest;
 import com.huaweicloud.sdk.drs.v3.model.ShowJobListResponse;
 import com.huaweicloud.sdk.drs.v3.model.ShowMonitoringDataRequest;
@@ -1690,6 +1697,97 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListUsersRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListUsersRequest::getXLanguage, ListUsersRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse> modifyGroupAndStream =
+        genForModifyGroupAndStream();
+
+    private static HttpRequestDef<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse> genForModifyGroupAndStream() {
+        // basic
+        HttpRequestDef.Builder<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ModifyGroupAndStreamRequest.class, ModifyGroupAndStreamResponse.class)
+            .withName("ModifyGroupAndStream")
+            .withUri("/v3/{project_id}/jobs/{job_id}/lts-log-switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyGroupAndStreamRequest::getJobId, ModifyGroupAndStreamRequest::setJobId));
+        builder.<ModifyGroupAndStreamRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyGroupAndStreamRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifyGroupAndStreamRequest::getXLanguage,
+                ModifyGroupAndStreamRequest::setXLanguage));
+        builder.<LtsInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LtsInfo.class),
+            f -> f.withMarshaller(ModifyGroupAndStreamRequest::getBody, ModifyGroupAndStreamRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<QueryTuningParamsRequest, QueryTuningParamsResponse> queryTuningParams =
+        genForQueryTuningParams();
+
+    private static HttpRequestDef<QueryTuningParamsRequest, QueryTuningParamsResponse> genForQueryTuningParams() {
+        // basic
+        HttpRequestDef.Builder<QueryTuningParamsRequest, QueryTuningParamsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, QueryTuningParamsRequest.class, QueryTuningParamsResponse.class)
+                .withName("QueryTuningParams")
+                .withUri("/v3/{project_id}/job/{job_id}/tuning-params/query-params")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(QueryTuningParamsRequest::getJobId, QueryTuningParamsRequest::setJobId));
+        builder.<QueryTuningParamsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(QueryTuningParamsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(QueryTuningParamsRequest::getXLanguage, QueryTuningParamsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse> selectGroupAndStream =
+        genForSelectGroupAndStream();
+
+    private static HttpRequestDef<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse> genForSelectGroupAndStream() {
+        // basic
+        HttpRequestDef.Builder<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, SelectGroupAndStreamRequest.class, SelectGroupAndStreamResponse.class)
+            .withName("SelectGroupAndStream")
+            .withUri("/v3/{project_id}/jobs/{job_id}/lts-log-switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SelectGroupAndStreamRequest::getJobId, SelectGroupAndStreamRequest::setJobId));
+        builder.<SelectGroupAndStreamRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SelectGroupAndStreamRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SelectGroupAndStreamRequest::getXLanguage,
+                SelectGroupAndStreamRequest::setXLanguage));
 
         // response
 

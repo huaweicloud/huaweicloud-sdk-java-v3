@@ -606,7 +606,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * **参数解释**: Agent状态 **取值范围**: 字符长度1-128 
+     * **参数解释**: Agent状态 **取值范围**:   - installed：已安装。已安装状态包含以下四种情况：   - online：在线。表示Agent已经成功安装并且与HSS云端防护中心保持连接。   - offline：离线。表示虽然Agent已经安装，但当前与HSS云端防护中心的连接中断。   - install_failed：安装失败。表示在尝试安装过程中遇到错误或问题，导致安装未能完成。   - installing：安装中。表示当前正在进行Agent安装。   - not_installed ：未安装。表示服务器中尚未安装Agent。 
      * @return agentStatus
      */
     public String getAgentStatus() {

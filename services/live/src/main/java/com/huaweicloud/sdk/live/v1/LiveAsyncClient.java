@@ -35,6 +35,10 @@ import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainKeyChainRequest;
@@ -67,6 +71,10 @@ import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.ListCesDimsInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.ListCesDimsInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ListCesInstanceRequest;
@@ -103,6 +111,10 @@ import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.ListWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.ListWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.ListWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.ListWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesRequest;
@@ -151,6 +163,10 @@ import com.huaweicloud.sdk.live.v1.model.ShowRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDelayConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainHttpsCertRequest;
@@ -185,6 +201,10 @@ import com.huaweicloud.sdk.live.v1.model.UpdateStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateWatermarkTemplateResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -613,6 +633,65 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 创建水印规则
+     *
+     * 创建水印规则接口，必须先创建水印模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWatermarkRuleRequest 请求对象
+     * @return CompletableFuture<CreateWatermarkRuleResponse>
+     */
+    public CompletableFuture<CreateWatermarkRuleResponse> createWatermarkRuleAsync(CreateWatermarkRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createWatermarkRule);
+    }
+
+    /**
+     * 创建水印规则
+     *
+     * 创建水印规则接口，必须先创建水印模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWatermarkRuleRequest 请求对象
+     * @return AsyncInvoker<CreateWatermarkRuleRequest, CreateWatermarkRuleResponse>
+     */
+    public AsyncInvoker<CreateWatermarkRuleRequest, CreateWatermarkRuleResponse> createWatermarkRuleAsyncInvoker(
+        CreateWatermarkRuleRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.createWatermarkRule, hcClient);
+    }
+
+    /**
+     * 创建水印模板
+     *
+     * 创建水印模板接口，需要绑定水印规则才生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWatermarkTemplateRequest 请求对象
+     * @return CompletableFuture<CreateWatermarkTemplateResponse>
+     */
+    public CompletableFuture<CreateWatermarkTemplateResponse> createWatermarkTemplateAsync(
+        CreateWatermarkTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createWatermarkTemplate);
+    }
+
+    /**
+     * 创建水印模板
+     *
+     * 创建水印模板接口，需要绑定水印规则才生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWatermarkTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse>
+     */
+    public AsyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplateAsyncInvoker(
+        CreateWatermarkTemplateRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.createWatermarkTemplate, hcClient);
+    }
+
+    /**
      * 删除直播域名
      *
      * 删除域名。只有在域名停用（off）状态时才能删除。
@@ -993,6 +1072,65 @@ public class LiveAsyncClient {
     public AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> deleteTranscodingsTemplateAsyncInvoker(
         DeleteTranscodingsTemplateRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.deleteTranscodingsTemplate, hcClient);
+    }
+
+    /**
+     * 删除水印规则
+     *
+     * 删除水印规则接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWatermarkRuleRequest 请求对象
+     * @return CompletableFuture<DeleteWatermarkRuleResponse>
+     */
+    public CompletableFuture<DeleteWatermarkRuleResponse> deleteWatermarkRuleAsync(DeleteWatermarkRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteWatermarkRule);
+    }
+
+    /**
+     * 删除水印规则
+     *
+     * 删除水印规则接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWatermarkRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteWatermarkRuleRequest, DeleteWatermarkRuleResponse>
+     */
+    public AsyncInvoker<DeleteWatermarkRuleRequest, DeleteWatermarkRuleResponse> deleteWatermarkRuleAsyncInvoker(
+        DeleteWatermarkRuleRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.deleteWatermarkRule, hcClient);
+    }
+
+    /**
+     * 删除水印模板
+     *
+     * 删除水印模板接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWatermarkTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteWatermarkTemplateResponse>
+     */
+    public CompletableFuture<DeleteWatermarkTemplateResponse> deleteWatermarkTemplateAsync(
+        DeleteWatermarkTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteWatermarkTemplate);
+    }
+
+    /**
+     * 删除水印模板
+     *
+     * 删除水印模板接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWatermarkTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse>
+     */
+    public AsyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> deleteWatermarkTemplateAsyncInvoker(
+        DeleteWatermarkTemplateRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.deleteWatermarkTemplate, hcClient);
     }
 
     /**
@@ -1408,6 +1546,65 @@ public class LiveAsyncClient {
     public AsyncInvoker<ListStreamForbiddenRequest, ListStreamForbiddenResponse> listStreamForbiddenAsyncInvoker(
         ListStreamForbiddenRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.listStreamForbidden, hcClient);
+    }
+
+    /**
+     * 查询水印规则列表
+     *
+     * 查询水印规则列表接口，通过指定条件，查询满足条件的水印规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWatermarkRuleRequest 请求对象
+     * @return CompletableFuture<ListWatermarkRuleResponse>
+     */
+    public CompletableFuture<ListWatermarkRuleResponse> listWatermarkRuleAsync(ListWatermarkRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listWatermarkRule);
+    }
+
+    /**
+     * 查询水印规则列表
+     *
+     * 查询水印规则列表接口，通过指定条件，查询满足条件的水印规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWatermarkRuleRequest 请求对象
+     * @return AsyncInvoker<ListWatermarkRuleRequest, ListWatermarkRuleResponse>
+     */
+    public AsyncInvoker<ListWatermarkRuleRequest, ListWatermarkRuleResponse> listWatermarkRuleAsyncInvoker(
+        ListWatermarkRuleRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listWatermarkRule, hcClient);
+    }
+
+    /**
+     * 查询水印模板列表
+     *
+     * 查询水印模板列表接口，通过指定条件，查询满足条件的水印模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWatermarkTemplateRequest 请求对象
+     * @return CompletableFuture<ListWatermarkTemplateResponse>
+     */
+    public CompletableFuture<ListWatermarkTemplateResponse> listWatermarkTemplateAsync(
+        ListWatermarkTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listWatermarkTemplate);
+    }
+
+    /**
+     * 查询水印模板列表
+     *
+     * 查询水印模板列表接口，通过指定条件，查询满足条件的水印模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWatermarkTemplateRequest 请求对象
+     * @return AsyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse>
+     */
+    public AsyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> listWatermarkTemplateAsyncInvoker(
+        ListWatermarkTemplateRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listWatermarkTemplate, hcClient);
     }
 
     /**
@@ -1847,6 +2044,65 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询水印规则配置
+     *
+     * 查询水印模板规则接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWatermarkRuleRequest 请求对象
+     * @return CompletableFuture<ShowWatermarkRuleResponse>
+     */
+    public CompletableFuture<ShowWatermarkRuleResponse> showWatermarkRuleAsync(ShowWatermarkRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.showWatermarkRule);
+    }
+
+    /**
+     * 查询水印规则配置
+     *
+     * 查询水印模板规则接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWatermarkRuleRequest 请求对象
+     * @return AsyncInvoker<ShowWatermarkRuleRequest, ShowWatermarkRuleResponse>
+     */
+    public AsyncInvoker<ShowWatermarkRuleRequest, ShowWatermarkRuleResponse> showWatermarkRuleAsyncInvoker(
+        ShowWatermarkRuleRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.showWatermarkRule, hcClient);
+    }
+
+    /**
+     * 查询水印模板配置
+     *
+     * 查询水印模板详情接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWatermarkTemplateRequest 请求对象
+     * @return CompletableFuture<ShowWatermarkTemplateResponse>
+     */
+    public CompletableFuture<ShowWatermarkTemplateResponse> showWatermarkTemplateAsync(
+        ShowWatermarkTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.showWatermarkTemplate);
+    }
+
+    /**
+     * 查询水印模板配置
+     *
+     * 查询水印模板详情接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWatermarkTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowWatermarkTemplateRequest, ShowWatermarkTemplateResponse>
+     */
+    public AsyncInvoker<ShowWatermarkTemplateRequest, ShowWatermarkTemplateResponse> showWatermarkTemplateAsyncInvoker(
+        ShowWatermarkTemplateRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.showWatermarkTemplate, hcClient);
+    }
+
+    /**
      * 修改播放域名延时配置
      *
      * 修改播放域名延时配置。
@@ -2265,6 +2521,65 @@ public class LiveAsyncClient {
     public AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> updateTranscodingsTemplateAsyncInvoker(
         UpdateTranscodingsTemplateRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.updateTranscodingsTemplate, hcClient);
+    }
+
+    /**
+     * 修改水印规则
+     *
+     * 修改水印规则接口，修改后实时生效，只能修改Location
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWatermarkRuleRequest 请求对象
+     * @return CompletableFuture<UpdateWatermarkRuleResponse>
+     */
+    public CompletableFuture<UpdateWatermarkRuleResponse> updateWatermarkRuleAsync(UpdateWatermarkRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateWatermarkRule);
+    }
+
+    /**
+     * 修改水印规则
+     *
+     * 修改水印规则接口，修改后实时生效，只能修改Location
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWatermarkRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateWatermarkRuleRequest, UpdateWatermarkRuleResponse>
+     */
+    public AsyncInvoker<UpdateWatermarkRuleRequest, UpdateWatermarkRuleResponse> updateWatermarkRuleAsyncInvoker(
+        UpdateWatermarkRuleRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.updateWatermarkRule, hcClient);
+    }
+
+    /**
+     * 修改水印模板
+     *
+     * 修改水印模板接口，修改后实时生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWatermarkTemplateRequest 请求对象
+     * @return CompletableFuture<UpdateWatermarkTemplateResponse>
+     */
+    public CompletableFuture<UpdateWatermarkTemplateResponse> updateWatermarkTemplateAsync(
+        UpdateWatermarkTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateWatermarkTemplate);
+    }
+
+    /**
+     * 修改水印模板
+     *
+     * 修改水印模板接口，修改后实时生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWatermarkTemplateRequest 请求对象
+     * @return AsyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse>
+     */
+    public AsyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> updateWatermarkTemplateAsyncInvoker(
+        UpdateWatermarkTemplateRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.updateWatermarkTemplate, hcClient);
     }
 
     /**

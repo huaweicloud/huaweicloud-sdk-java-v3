@@ -26,14 +26,14 @@ public class ListWebAppAndServicesRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
     private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalogue")
@@ -125,30 +125,13 @@ public class ListWebAppAndServicesRequest {
         this.limit = limit;
     }
 
-    public ListWebAppAndServicesRequest withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * WebAppAndService资产的名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public ListWebAppAndServicesRequest withCategory(String category) {
         this.category = category;
         return this;
     }
 
     /**
-     * 返回的资产类别 - 0: 主机 - 1: 容器
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
      * @return category
      */
     public String getCategory() {
@@ -159,13 +142,30 @@ public class ListWebAppAndServicesRequest {
         this.category = category;
     }
 
+    public ListWebAppAndServicesRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * **参数解释**: web应用，web服务或数据库名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-256 **默认取值**: 不涉及 
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ListWebAppAndServicesRequest withCatalogue(String catalogue) {
         this.catalogue = catalogue;
         return this;
     }
 
     /**
-     * 资产类型 - web-app：web应用 - web-service：web服务 - database：数据库
+     * **参数解释**: 资产类型 **约束限制**: 不涉及 **取值范围**: - web-app：web应用 - web-service：web服务 - database：数据库  **默认取值**: 不涉及 
      * @return catalogue
      */
     public String getCatalogue() {
@@ -182,7 +182,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * 服务器名称(可选)，可让用户根据主机名字搜索
+     * **参数解释**: 服务器名称(可选)，可让用户根据主机名字搜索 **约束限制**: 不涉及 **取值范围**: 字符长度0-256 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -199,7 +199,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * 服务器id(可选)，可让用户根据主机id搜索
+     * **参数解释**: 服务器id(可选)，可让用户根据主机id搜索 **约束限制**: 不涉及 **取值范围**: 字符长度0-64 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -216,7 +216,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * 服务器ip(可选)，可让用户根据主机ip搜索
+     * **参数解释**: 服务器ip(可选)，可让用户根据主机ip搜索 **约束限制**: 不涉及 **取值范围**: 字符长度0-256 **默认取值**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -233,7 +233,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * WebAppAndService资产版本，可让用户根据版本搜索
+     * **参数解释**: web应用，web服务或数据库版本，可让用户根据版本搜索 **约束限制**: 不涉及 **取值范围**: 字符长度0-256 **默认取值**: 不涉及 
      * @return version
      */
     public String getVersion() {
@@ -250,7 +250,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * WebAppAndService资产安装目录，可让用户根据安装目录搜索
+     * **参数解释**: web应用，web服务或数据库安装目录，可让用户根据安装目录搜索 **约束限制**: 不涉及 **取值范围**: 字符长度0-256 **默认取值**: 不涉及 
      * @return installDir
      */
     public String getInstallDir() {
@@ -267,7 +267,7 @@ public class ListWebAppAndServicesRequest {
     }
 
     /**
-     * 是否模糊匹配，默认false表示精确匹配
+     * **参数解释**: 是否模糊匹配，默认false表示精确匹配 **约束限制**: 不涉及 **取值范围**: - true：模糊匹配 - false：精确匹配  **默认取值**: false 
      * @return partMatch
      */
     public Boolean getPartMatch() {
@@ -289,7 +289,7 @@ public class ListWebAppAndServicesRequest {
         ListWebAppAndServicesRequest that = (ListWebAppAndServicesRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.name, that.name)
             && Objects.equals(this.catalogue, that.catalogue) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.version, that.version) && Objects.equals(this.installDir, that.installDir)
@@ -301,8 +301,8 @@ public class ListWebAppAndServicesRequest {
         return Objects.hash(enterpriseProjectId,
             offset,
             limit,
-            name,
             category,
+            name,
             catalogue,
             hostName,
             hostId,
@@ -319,8 +319,8 @@ public class ListWebAppAndServicesRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    catalogue: ").append(toIndentedString(catalogue)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");

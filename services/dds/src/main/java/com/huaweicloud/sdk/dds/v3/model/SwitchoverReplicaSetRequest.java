@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,6 +15,11 @@ public class SwitchoverReplicaSetRequest {
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private SwitchoverReplicaSetRequestBody body;
 
     public SwitchoverReplicaSetRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -32,6 +38,32 @@ public class SwitchoverReplicaSetRequest {
         this.instanceId = instanceId;
     }
 
+    public SwitchoverReplicaSetRequest withBody(SwitchoverReplicaSetRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public SwitchoverReplicaSetRequest withBody(Consumer<SwitchoverReplicaSetRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new SwitchoverReplicaSetRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public SwitchoverReplicaSetRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(SwitchoverReplicaSetRequestBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +73,12 @@ public class SwitchoverReplicaSetRequest {
             return false;
         }
         SwitchoverReplicaSetRequest that = (SwitchoverReplicaSetRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId);
+        return Objects.hash(instanceId, body);
     }
 
     @Override
@@ -54,6 +86,7 @@ public class SwitchoverReplicaSetRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class SwitchoverReplicaSetRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

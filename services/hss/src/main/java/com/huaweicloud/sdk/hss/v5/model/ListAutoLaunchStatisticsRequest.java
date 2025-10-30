@@ -35,6 +35,11 @@ public class ListAutoLaunchStatisticsRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private String category;
+
     public ListAutoLaunchStatisticsRequest withName(String name) {
         this.name = name;
         return this;
@@ -124,6 +129,23 @@ public class ListAutoLaunchStatisticsRequest {
         this.offset = offset;
     }
 
+    public ListAutoLaunchStatisticsRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +157,13 @@ public class ListAutoLaunchStatisticsRequest {
         ListAutoLaunchStatisticsRequest that = (ListAutoLaunchStatisticsRequest) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.category, that.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, enterpriseProjectId, limit, offset);
+        return Objects.hash(name, type, enterpriseProjectId, limit, offset, category);
     }
 
     @Override
@@ -152,6 +175,7 @@ public class ListAutoLaunchStatisticsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("}");
         return sb.toString();
     }

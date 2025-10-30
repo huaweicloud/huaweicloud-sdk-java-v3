@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Web站点统计信息列表
+ * **参数解释** Web站点统计信息列表 
  */
 public class WebSiteStatisticsResponseInfo {
 
@@ -26,7 +26,7 @@ public class WebSiteStatisticsResponseInfo {
     }
 
     /**
-     * Web站点域名
+     * **参数解释**: Web站点域名 **取值范围**: 字符长度0-256 
      * @return domain
      */
     public String getDomain() {
@@ -43,7 +43,7 @@ public class WebSiteStatisticsResponseInfo {
     }
 
     /**
-     * Web站点统计信息总数
+     * **参数解释** Web站点统计信息总数 **取值范围** 最小值0，最大值300000 
      * minimum: 0
      * maximum: 300000
      * @return num

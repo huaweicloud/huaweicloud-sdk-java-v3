@@ -111,7 +111,7 @@ public class ListWebSiteHostInfoRequest {
     }
 
     /**
-     * 返回的资产类别 - 0: 主机 - 1: 容器
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
      * @return category
      */
     public String getCategory() {
@@ -128,7 +128,7 @@ public class ListWebSiteHostInfoRequest {
     }
 
     /**
-     * 域名
+     * **参数解释**: 域名 **约束限制**: 不涉及 **取值范围**: 字符长度1-256 **默认取值**: 不涉及 
      * @return domain
      */
     public String getDomain() {
@@ -145,7 +145,7 @@ public class ListWebSiteHostInfoRequest {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-64 **默认取值**: 不涉及 
      * @return hostName
      */
     public String getHostName() {
@@ -162,7 +162,7 @@ public class ListWebSiteHostInfoRequest {
     }
 
     /**
-     * 服务器IP
+     * **参数解释**: 服务器IP **约束限制**: 不涉及 **取值范围**: 字符长度0-64 **默认取值**: 不涉及 
      * @return hostIp
      */
     public String getHostIp() {
@@ -179,7 +179,7 @@ public class ListWebSiteHostInfoRequest {
     }
 
     /**
-     * 是否模糊匹配，默认false表示精确匹配
+     * **参数解释**: 是否模糊匹配，默认false表示精确匹配 **约束限制**: 不涉及 **取值范围**: - true：模糊匹配 - false：精确匹配  **默认取值**: false 
      * @return partMatch
      */
     public Boolean getPartMatch() {

@@ -81,7 +81,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 镜像id
+     * **参数解释**： 镜像id **取值范围**： 字符长度0-128位 
      * @return imageId
      */
     public String getImageId() {
@@ -98,7 +98,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 镜像名称
+     * **参数解释**： 镜像名称 **取值范围**： 字符长度0-128位 
      * @return imageName
      */
     public String getImageName() {
@@ -115,7 +115,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 处置用户名称
+     * **参数解释**： 处置用户名称 **取值范围**： 字符长度0-256位 
      * @return userName
      */
     public String getUserName() {
@@ -151,7 +151,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 操作类型，包含如下：   -ignore : 忽略   -not_ignore : 取消忽略   -add_to_whitelist ：加入白名单
+     * **参数解释**： 操作类型 **取值范围**： - ignore：忽略 - not_ignore：取消忽略 - add_to_whitelist：加入白名单 
      * @return handleType
      */
     public String getHandleType() {
@@ -168,7 +168,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 漏洞当前状态，包含如下：   -vul_status_unfix : 未处理   -vul_status_ignored : 已忽略
+     * **参数解释**： 漏洞当前状态 **取值范围**： - vul_status_unfix：未处理 - vul_status_ignored：已忽略 
      * @return status
      */
     public String getStatus() {
@@ -185,7 +185,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 软件名称
+     * **参数解释**： 软件名称 **取值范围**： 字符长度0-256位 
      * @return appName
      */
     public String getAppName() {
@@ -202,7 +202,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 软件版本
+     * **参数解释**： 软件版本 **取值范围**： 字符长度0-256位 
      * @return appVersion
      */
     public String getAppVersion() {
@@ -219,7 +219,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 软件路径
+     * **参数解释**： 软件路径 **取值范围**： 字符长度0-256位 
      * @return appPath
      */
     public String getAppPath() {
@@ -236,7 +236,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 备注
+     * **参数解释**： 备注 **取值范围**： 字符长度0-256位 
      * @return remark
      */
     public String getRemark() {
@@ -253,7 +253,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 镜像标识
+     * **参数解释**： 镜像标识 **取值范围**： 字符长度0-256位 
      * @return imageDigest
      */
     public String getImageDigest() {
@@ -270,7 +270,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * 镜像版本
+     * **参数解释**： 镜像版本 **取值范围**： 字符长度0-256位 
      * @return imageVersion
      */
     public String getImageVersion() {
@@ -287,7 +287,7 @@ public class GeneralImageVulOperationsResponseInfo {
     }
 
     /**
-     * Agent ID
+     * **参数解释**： Agent ID **取值范围**： 字符长度0-512位 
      * @return agentId
      */
     public String getAgentId() {

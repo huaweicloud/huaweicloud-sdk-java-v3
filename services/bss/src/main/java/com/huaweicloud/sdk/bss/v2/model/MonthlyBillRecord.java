@@ -161,6 +161,11 @@ public class MonthlyBillRecord {
 
     private String regionName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_name")
+
+    private String accountName;
+
     public MonthlyBillRecord withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
@@ -671,6 +676,23 @@ public class MonthlyBillRecord {
         this.regionName = regionName;
     }
 
+    public MonthlyBillRecord withAccountName(String accountName) {
+        this.accountName = accountName;
+        return this;
+    }
+
+    /**
+     * |参数名称：消费的客户登录名称。| |参数约束及描述：范围限制：0-128，如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户登录名称。 如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户登录名称。如果是企业主自己的消费记录，则为企业主的客户登录名称；如果是某个企业子客户的消费记录，则此处为企业子的客户登录名称。|
+     * @return accountName
+     */
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -702,7 +724,7 @@ public class MonthlyBillRecord {
             && Objects.equals(this.storedValueCardAmount, that.storedValueCardAmount)
             && Objects.equals(this.bonusAmount, that.bonusAmount) && Objects.equals(this.debtAmount, that.debtAmount)
             && Objects.equals(this.writeoffAmount, that.writeoffAmount)
-            && Objects.equals(this.regionName, that.regionName);
+            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.accountName, that.accountName);
     }
 
     @Override
@@ -736,7 +758,8 @@ public class MonthlyBillRecord {
             bonusAmount,
             debtAmount,
             writeoffAmount,
-            regionName);
+            regionName,
+            accountName);
     }
 
     @Override
@@ -773,6 +796,7 @@ public class MonthlyBillRecord {
         sb.append("    debtAmount: ").append(toIndentedString(debtAmount)).append("\n");
         sb.append("    writeoffAmount: ").append(toIndentedString(writeoffAmount)).append("\n");
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
+        sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

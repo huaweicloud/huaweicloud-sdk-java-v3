@@ -145,6 +145,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyEpsQuotasRequest;
@@ -209,6 +211,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoNodeExpansionPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoNodeExpansionPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPoliciesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPoliciesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyRequest;
@@ -2338,6 +2342,36 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 设置节点自动扩容策略
+     *
+     * 设置节点自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyAutoNodeExpansionPolicyRequest 请求对象
+     * @return ModifyAutoNodeExpansionPolicyResponse
+     */
+    public ModifyAutoNodeExpansionPolicyResponse modifyAutoNodeExpansionPolicy(
+        ModifyAutoNodeExpansionPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.modifyAutoNodeExpansionPolicy);
+    }
+
+    /**
+     * 设置节点自动扩容策略
+     *
+     * 设置节点自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyAutoNodeExpansionPolicyRequest 请求对象
+     * @return SyncInvoker<ModifyAutoNodeExpansionPolicyRequest, ModifyAutoNodeExpansionPolicyResponse>
+     */
+    public SyncInvoker<ModifyAutoNodeExpansionPolicyRequest, ModifyAutoNodeExpansionPolicyResponse> modifyAutoNodeExpansionPolicyInvoker(
+        ModifyAutoNodeExpansionPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.modifyAutoNodeExpansionPolicy, hcClient);
+    }
+
+    /**
      * 修改Redis数据库帐号权限
      *
      * 修改Redis数据库帐号权限。
@@ -3240,6 +3274,35 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyInvoker(
         ShowAutoEnlargePolicyRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showAutoEnlargePolicy, hcClient);
+    }
+
+    /**
+     * 查询节点自动扩容策略
+     *
+     * 查询节点自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoNodeExpansionPolicyRequest 请求对象
+     * @return ShowAutoNodeExpansionPolicyResponse
+     */
+    public ShowAutoNodeExpansionPolicyResponse showAutoNodeExpansionPolicy(ShowAutoNodeExpansionPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showAutoNodeExpansionPolicy);
+    }
+
+    /**
+     * 查询节点自动扩容策略
+     *
+     * 查询节点自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoNodeExpansionPolicyRequest 请求对象
+     * @return SyncInvoker<ShowAutoNodeExpansionPolicyRequest, ShowAutoNodeExpansionPolicyResponse>
+     */
+    public SyncInvoker<ShowAutoNodeExpansionPolicyRequest, ShowAutoNodeExpansionPolicyResponse> showAutoNodeExpansionPolicyInvoker(
+        ShowAutoNodeExpansionPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showAutoNodeExpansionPolicy, hcClient);
     }
 
     /**

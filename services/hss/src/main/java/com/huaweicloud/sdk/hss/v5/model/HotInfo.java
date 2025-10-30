@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * HotInfo
+ * 热点咨询
  */
 public class HotInfo {
 

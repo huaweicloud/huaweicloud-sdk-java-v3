@@ -40,6 +40,11 @@ public class CheckpointReplicateParam {
 
     private String vaultId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cross_account_urn")
+
+    private String crossAccountUrn;
+
     public CheckpointReplicateParam withAutoTrigger(Boolean autoTrigger) {
         this.autoTrigger = autoTrigger;
         return this;
@@ -142,6 +147,23 @@ public class CheckpointReplicateParam {
         this.vaultId = vaultId;
     }
 
+    public CheckpointReplicateParam withCrossAccountUrn(String crossAccountUrn) {
+        this.crossAccountUrn = crossAccountUrn;
+        return this;
+    }
+
+    /**
+     * 跨账户复制所需的目标账户的跨账户复制存储库标识
+     * @return crossAccountUrn
+     */
+    public String getCrossAccountUrn() {
+        return crossAccountUrn;
+    }
+
+    public void setCrossAccountUrn(String crossAccountUrn) {
+        this.crossAccountUrn = crossAccountUrn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -156,7 +178,7 @@ public class CheckpointReplicateParam {
             && Objects.equals(this.destinationRegion, that.destinationRegion)
             && Objects.equals(this.destinationVaultId, that.destinationVaultId)
             && Objects.equals(this.enableAcceleration, that.enableAcceleration)
-            && Objects.equals(this.vaultId, that.vaultId);
+            && Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.crossAccountUrn, that.crossAccountUrn);
     }
 
     @Override
@@ -166,7 +188,8 @@ public class CheckpointReplicateParam {
             destinationRegion,
             destinationVaultId,
             enableAcceleration,
-            vaultId);
+            vaultId,
+            crossAccountUrn);
     }
 
     @Override
@@ -179,6 +202,7 @@ public class CheckpointReplicateParam {
         sb.append("    destinationVaultId: ").append(toIndentedString(destinationVaultId)).append("\n");
         sb.append("    enableAcceleration: ").append(toIndentedString(enableAcceleration)).append("\n");
         sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
+        sb.append("    crossAccountUrn: ").append(toIndentedString(crossAccountUrn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

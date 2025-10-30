@@ -23,12 +23,14 @@ package com.huaweicloud.sdk.core;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.exception.ConnectionException;
 import com.huaweicloud.sdk.core.exception.DefaultExceptionHandler;
 import com.huaweicloud.sdk.core.exception.ExceptionHandler;
 import com.huaweicloud.sdk.core.exception.HostUnreachableException;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServerResponseException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
+import com.huaweicloud.sdk.core.exception.SslHandShakeException;
 import com.huaweicloud.sdk.core.exchange.ApiReference;
 import com.huaweicloud.sdk.core.exchange.SdkExchange;
 import com.huaweicloud.sdk.core.exchange.SdkExchangeCache;
@@ -58,6 +60,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -199,6 +202,7 @@ public class HcClient implements CustomizationConfigure {
         try {
             HttpRequest httpRequest;
             HttpResponse httpResponse;
+            List<ConnectionException> exceptions = new ArrayList<>();
             while (true) {
                 try {
                     httpRequest = buildRequest(request, reqDef, extraHeaders);
@@ -211,12 +215,19 @@ public class HcClient implements CustomizationConfigure {
 
                     httpResponse = httpClient.syncInvokeHttp(httpRequest);
                     break;
-                } catch (HostUnreachableException unreachableException) {
+                } catch (HostUnreachableException | SslHandShakeException exception) {
                     if (endpointIndex.intValue() < endpoints.size() - 1) {
                         endpointIndex.incrementAndGet();
+                        exceptions.add(exception);
                     } else {
                         endpointIndex.set(0);
-                        throw unreachableException;
+
+                        if (exceptions.isEmpty()) {
+                            throw exception;
+                        }
+                        ConnectionException connectionException = new ConnectionException(exception);
+                        exceptions.forEach(connectionException::addSuppressed);
+                        throw connectionException;
                     }
                 }
             }

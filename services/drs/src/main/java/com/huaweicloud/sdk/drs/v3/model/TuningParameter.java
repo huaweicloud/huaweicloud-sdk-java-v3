@@ -25,13 +25,18 @@ public class TuningParameter {
 
     private String availability;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "range")
+
+    private String range;
+
     public TuningParameter withParamName(String paramName) {
         this.paramName = paramName;
         return this;
     }
 
     /**
-     * 参数名称
+     * 参数名称。
      * @return paramName
      */
     public String getParamName() {
@@ -48,7 +53,7 @@ public class TuningParameter {
     }
 
     /**
-     * 参数取值
+     * 参数取值。
      * @return paramValue
      */
     public String getParamValue() {
@@ -65,7 +70,7 @@ public class TuningParameter {
     }
 
     /**
-     * 是否可用
+     * 是否可用。
      * @return availability
      */
     public String getAvailability() {
@@ -74,6 +79,23 @@ public class TuningParameter {
 
     public void setAvailability(String availability) {
         this.availability = availability;
+    }
+
+    public TuningParameter withRange(String range) {
+        this.range = range;
+        return this;
+    }
+
+    /**
+     * 参数取值范围。
+     * @return range
+     */
+    public String getRange() {
+        return range;
+    }
+
+    public void setRange(String range) {
+        this.range = range;
     }
 
     @Override
@@ -86,12 +108,12 @@ public class TuningParameter {
         }
         TuningParameter that = (TuningParameter) obj;
         return Objects.equals(this.paramName, that.paramName) && Objects.equals(this.paramValue, that.paramValue)
-            && Objects.equals(this.availability, that.availability);
+            && Objects.equals(this.availability, that.availability) && Objects.equals(this.range, that.range);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(paramName, paramValue, availability);
+        return Objects.hash(paramName, paramValue, availability, range);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class TuningParameter {
         sb.append("    paramName: ").append(toIndentedString(paramName)).append("\n");
         sb.append("    paramValue: ").append(toIndentedString(paramValue)).append("\n");
         sb.append("    availability: ").append(toIndentedString(availability)).append("\n");
+        sb.append("    range: ").append(toIndentedString(range)).append("\n");
         sb.append("}");
         return sb.toString();
     }

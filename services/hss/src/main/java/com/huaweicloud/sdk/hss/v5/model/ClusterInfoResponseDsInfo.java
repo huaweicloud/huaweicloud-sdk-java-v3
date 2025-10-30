@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ds状态
+ * daemonset状态
  */
 public class ClusterInfoResponseDsInfo {
 
@@ -31,7 +31,7 @@ public class ClusterInfoResponseDsInfo {
     }
 
     /**
-     * 目标数量
+     * **参数解释** 目标数量 **取值范围** 取值0-65535
      * minimum: 0
      * maximum: 65535
      * @return desiredNum
@@ -50,7 +50,7 @@ public class ClusterInfoResponseDsInfo {
     }
 
     /**
-     * 当前数量
+     * **参数解释** 当前数量 **取值范围** 取值0-65535
      * minimum: 0
      * maximum: 65535
      * @return currentNum
@@ -69,7 +69,7 @@ public class ClusterInfoResponseDsInfo {
     }
 
     /**
-     * 就绪数量
+     * **参数解释** 就绪数量 **取值范围** 取值0-65535
      * minimum: 0
      * maximum: 65535
      * @return readyNum

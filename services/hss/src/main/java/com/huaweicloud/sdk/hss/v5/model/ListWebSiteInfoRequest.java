@@ -21,14 +21,14 @@ public class ListWebSiteInfoRequest {
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain")
-
-    private String domain;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
     private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
 
     public ListWebSiteInfoRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -64,6 +64,23 @@ public class ListWebSiteInfoRequest {
         this.hostId = hostId;
     }
 
+    public ListWebSiteInfoRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public ListWebSiteInfoRequest withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -81,23 +98,6 @@ public class ListWebSiteInfoRequest {
         this.domain = domain;
     }
 
-    public ListWebSiteInfoRequest withCategory(String category) {
-        this.category = category;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: - host : 主机 - container : 容器  **默认取值**: 不涉及 
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,13 +108,13 @@ public class ListWebSiteInfoRequest {
         }
         ListWebSiteInfoRequest that = (ListWebSiteInfoRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.domain, that.domain)
-            && Objects.equals(this.category, that.category);
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hostId, domain, category);
+        return Objects.hash(enterpriseProjectId, hostId, category, domain);
     }
 
     @Override
@@ -123,8 +123,8 @@ public class ListWebSiteInfoRequest {
         sb.append("class ListWebSiteInfoRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
-        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

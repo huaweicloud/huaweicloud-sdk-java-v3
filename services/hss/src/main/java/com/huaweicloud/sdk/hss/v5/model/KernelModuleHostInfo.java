@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 内核模块服务器列表
+ * **参数解释** 内核模块服务器列表 
  */
 public class KernelModuleHostInfo {
 
@@ -42,7 +42,7 @@ public class KernelModuleHostInfo {
     }
 
     /**
-     * agent_id
+     * **参数解释** agent id **取值范围** 字符长度1-64 
      * @return agentId
      */
     public String getAgentId() {
@@ -59,7 +59,7 @@ public class KernelModuleHostInfo {
     }
 
     /**
-     * 主机id
+     * **参数解释** 主机id **取值范围** 字符长度1-64 
      * @return hostId
      */
     public String getHostId() {
@@ -76,7 +76,7 @@ public class KernelModuleHostInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释** 服务器名称 **取值范围** 字符长度1-64 
      * @return hostName
      */
     public String getHostName() {
@@ -93,7 +93,7 @@ public class KernelModuleHostInfo {
     }
 
     /**
-     * 服务器ip
+     * **参数解释** 服务器ip **取值范围** 字符长度1-64 
      * @return hostIp
      */
     public String getHostIp() {

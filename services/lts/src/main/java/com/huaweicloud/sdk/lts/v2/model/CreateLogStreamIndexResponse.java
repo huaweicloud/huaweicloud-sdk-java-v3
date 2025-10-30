@@ -26,11 +26,6 @@ public class CreateLogStreamIndexResponse extends SdkResponse {
 
     private String result;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isQueryComplete")
-
-    private Boolean isQueryComplete;
-
     public CreateLogStreamIndexResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -82,23 +77,6 @@ public class CreateLogStreamIndexResponse extends SdkResponse {
         this.result = result;
     }
 
-    public CreateLogStreamIndexResponse withIsQueryComplete(Boolean isQueryComplete) {
-        this.isQueryComplete = isQueryComplete;
-        return this;
-    }
-
-    /**
-     * 是否查询完成
-     * @return isQueryComplete
-     */
-    public Boolean getIsQueryComplete() {
-        return isQueryComplete;
-    }
-
-    public void setIsQueryComplete(Boolean isQueryComplete) {
-        this.isQueryComplete = isQueryComplete;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +87,12 @@ public class CreateLogStreamIndexResponse extends SdkResponse {
         }
         CreateLogStreamIndexResponse that = (CreateLogStreamIndexResponse) obj;
         return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMessage, that.errorMessage)
-            && Objects.equals(this.result, that.result) && Objects.equals(this.isQueryComplete, that.isQueryComplete);
+            && Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMessage, result, isQueryComplete);
+        return Objects.hash(errorCode, errorMessage, result);
     }
 
     @Override
@@ -124,7 +102,6 @@ public class CreateLogStreamIndexResponse extends SdkResponse {
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
-        sb.append("    isQueryComplete: ").append(toIndentedString(isQueryComplete)).append("\n");
         sb.append("}");
         return sb.toString();
     }

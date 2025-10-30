@@ -24,7 +24,7 @@ public class BatchDeleteTagsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchDeleteTagsRequestBody body;
+    private BatchDeleteTagsRequestInfo body;
 
     public BatchDeleteTagsRequest withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -32,7 +32,7 @@ public class BatchDeleteTagsRequest {
     }
 
     /**
-     * **参数解释**: 资源类别 **约束限制**: HSS服务该值为hss **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 由标签管理服务定义的资源类别，企业主机安全服务调用此接口时资源类别为hss **约束限制**: 不涉及 **取值范围**: - hss：hss **默认取值**: 不涉及 
      * @return resourceType
      */
     public String getResourceType() {
@@ -49,7 +49,7 @@ public class BatchDeleteTagsRequest {
     }
 
     /**
-     * **参数解释**: 资源ID **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
+     * **参数解释**: 资源ID **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return resourceId
      */
     public String getResourceId() {
@@ -60,14 +60,14 @@ public class BatchDeleteTagsRequest {
         this.resourceId = resourceId;
     }
 
-    public BatchDeleteTagsRequest withBody(BatchDeleteTagsRequestBody body) {
+    public BatchDeleteTagsRequest withBody(BatchDeleteTagsRequestInfo body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteTagsRequest withBody(Consumer<BatchDeleteTagsRequestBody> bodySetter) {
+    public BatchDeleteTagsRequest withBody(Consumer<BatchDeleteTagsRequestInfo> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchDeleteTagsRequestBody();
+            this.body = new BatchDeleteTagsRequestInfo();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class BatchDeleteTagsRequest {
      * Get body
      * @return body
      */
-    public BatchDeleteTagsRequestBody getBody() {
+    public BatchDeleteTagsRequestInfo getBody() {
         return body;
     }
 
-    public void setBody(BatchDeleteTagsRequestBody body) {
+    public void setBody(BatchDeleteTagsRequestInfo body) {
         this.body = body;
     }
 

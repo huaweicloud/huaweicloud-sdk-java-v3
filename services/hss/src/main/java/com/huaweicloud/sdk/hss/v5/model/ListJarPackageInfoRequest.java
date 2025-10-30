@@ -21,14 +21,14 @@ public class ListJarPackageInfoRequest {
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_name")
-
-    private String fileName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
     private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_name")
+
+    private String fileName;
 
     public ListJarPackageInfoRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -64,6 +64,23 @@ public class ListJarPackageInfoRequest {
         this.hostId = hostId;
     }
 
+    public ListJarPackageInfoRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public ListJarPackageInfoRequest withFileName(String fileName) {
         this.fileName = fileName;
         return this;
@@ -81,23 +98,6 @@ public class ListJarPackageInfoRequest {
         this.fileName = fileName;
     }
 
-    public ListJarPackageInfoRequest withCategory(String category) {
-        this.category = category;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 类别 **约束限制**: 不涉及 **取值范围**: - host : 主机 - container : 容器  **默认取值**: 不涉及 
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,13 +108,13 @@ public class ListJarPackageInfoRequest {
         }
         ListJarPackageInfoRequest that = (ListJarPackageInfoRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.fileName, that.fileName)
-            && Objects.equals(this.category, that.category);
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.fileName, that.fileName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hostId, fileName, category);
+        return Objects.hash(enterpriseProjectId, hostId, category, fileName);
     }
 
     @Override
@@ -123,8 +123,8 @@ public class ListJarPackageInfoRequest {
         sb.append("class ListJarPackageInfoRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
-        sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

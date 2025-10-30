@@ -42,7 +42,7 @@ public class ShowLatestExportTaskByTypeResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID
+     * **参数解释**： 任务ID **取值范围**： 字符长度1-64位
      * @return taskId
      */
     public String getTaskId() {
@@ -59,7 +59,7 @@ public class ShowLatestExportTaskByTypeResponse extends SdkResponse {
     }
 
     /**
-     * 任务名称
+     * **参数解释**： 任务名称 **取值范围**： 字符长度1-128位
      * @return taskName
      */
     public String getTaskName() {
@@ -76,7 +76,7 @@ public class ShowLatestExportTaskByTypeResponse extends SdkResponse {
     }
 
     /**
-     * 导出任务状态，success:成功，failure:失败，running:运行中
+     * **参数解释**： 导出任务状态 **取值范围**： - success：成功 - failure：失败 - running：运行中
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -93,7 +93,7 @@ public class ShowLatestExportTaskByTypeResponse extends SdkResponse {
     }
 
     /**
-     * 文件ID
+     * **参数解释**： 文件ID **取值范围**： 字符长度1-64位
      * @return fileId
      */
     public String getFileId() {
@@ -110,7 +110,7 @@ public class ShowLatestExportTaskByTypeResponse extends SdkResponse {
     }
 
     /**
-     * 文件名
+     * **参数解释**： 文件名 **取值范围**： 字符长度1-255位
      * @return fileName
      */
     public String getFileName() {

@@ -123,6 +123,16 @@ public class GetHostGroupInfo {
 
     private Long updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_access_type")
+
+    private String agentAccessType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private List<String> labels = null;
+
     public GetHostGroupInfo withHostGroupId(String hostGroupId) {
         this.hostGroupId = hostGroupId;
         return this;
@@ -278,6 +288,56 @@ public class GetHostGroupInfo {
         this.updateTime = updateTime;
     }
 
+    public GetHostGroupInfo withAgentAccessType(String agentAccessType) {
+        this.agentAccessType = agentAccessType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 主机组类型。分别为IP、LABEL类型。 **取值范围：** - IP。 - LABEL。
+     * @return agentAccessType
+     */
+    public String getAgentAccessType() {
+        return agentAccessType;
+    }
+
+    public void setAgentAccessType(String agentAccessType) {
+        this.agentAccessType = agentAccessType;
+    }
+
+    public GetHostGroupInfo withLabels(List<String> labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    public GetHostGroupInfo addLabelsItem(String labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public GetHostGroupInfo withLabels(Consumer<List<String>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 主机组自定义标识。
+     * @return labels
+     */
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -291,13 +351,21 @@ public class GetHostGroupInfo {
             && Objects.equals(this.hostGroupName, that.hostGroupName)
             && Objects.equals(this.hostGroupType, that.hostGroupType)
             && Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.hostGroupTag, that.hostGroupTag)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.agentAccessType, that.agentAccessType) && Objects.equals(this.labels, that.labels);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(hostGroupId, hostGroupName, hostGroupType, hostIdList, hostGroupTag, createTime, updateTime);
+        return Objects.hash(hostGroupId,
+            hostGroupName,
+            hostGroupType,
+            hostIdList,
+            hostGroupTag,
+            createTime,
+            updateTime,
+            agentAccessType,
+            labels);
     }
 
     @Override
@@ -311,6 +379,8 @@ public class GetHostGroupInfo {
         sb.append("    hostGroupTag: ").append(toIndentedString(hostGroupTag)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    agentAccessType: ").append(toIndentedString(agentAccessType)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -110,6 +110,86 @@ public class RealTimeSessionResult {
 
     private String sqlNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_port")
+
+    private String clientPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query_id")
+
+    private String queryId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transaction_time_cost")
+
+    private String transactionTimeCost;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trace_id")
+
+    private String traceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_session_id")
+
+    private String globalSessionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "top_transaction_id")
+
+    private String topTransactionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current_transaction_id")
+
+    private String currentTransactionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "xlog_quantity_pretty")
+
+    private String xlogQuantityPretty;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wait_status")
+
+    private String waitStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lwt_id")
+
+    private String lwtId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "thread_name")
+
+    private String threadName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lock_mode")
+
+    private String lockMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parent_session_id")
+
+    private String parentSessionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "smp_id")
+
+    private String smpId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lock_tag")
+
+    private String lockTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "component_name")
+
+    private String componentName;
+
     public RealTimeSessionResult withSessionId(String sessionId) {
         this.sessionId = sessionId;
         return this;
@@ -450,6 +530,278 @@ public class RealTimeSessionResult {
         this.sqlNum = sqlNum;
     }
 
+    public RealTimeSessionResult withClientPort(String clientPort) {
+        this.clientPort = clientPort;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 客户端用于与后台通讯的TCP端口号，如果使用Unix套接字，则为-1。 **取值范围**： 不涉及。
+     * @return clientPort
+     */
+    public String getClientPort() {
+        return clientPort;
+    }
+
+    public void setClientPort(String clientPort) {
+        this.clientPort = clientPort;
+    }
+
+    public RealTimeSessionResult withQueryId(String queryId) {
+        this.queryId = queryId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 会话执行的sql数。 **取值范围**： 不涉及。
+     * @return queryId
+     */
+    public String getQueryId() {
+        return queryId;
+    }
+
+    public void setQueryId(String queryId) {
+        this.queryId = queryId;
+    }
+
+    public RealTimeSessionResult withTransactionTimeCost(String transactionTimeCost) {
+        this.transactionTimeCost = transactionTimeCost;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前用户上一次执行的事务持续时间。 **取值范围**： 不涉及。
+     * @return transactionTimeCost
+     */
+    public String getTransactionTimeCost() {
+        return transactionTimeCost;
+    }
+
+    public void setTransactionTimeCost(String transactionTimeCost) {
+        this.transactionTimeCost = transactionTimeCost;
+    }
+
+    public RealTimeSessionResult withTraceId(String traceId) {
+        this.traceId = traceId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 驱动传入的trace id，用于标识应用的一次请求。 **取值范围**： 不涉及。
+     * @return traceId
+     */
+    public String getTraceId() {
+        return traceId;
+    }
+
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
+
+    public RealTimeSessionResult withGlobalSessionId(String globalSessionId) {
+        this.globalSessionId = globalSessionId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前用户上次执行的全局会话ID。 **取值范围**： 不涉及。
+     * @return globalSessionId
+     */
+    public String getGlobalSessionId() {
+        return globalSessionId;
+    }
+
+    public void setGlobalSessionId(String globalSessionId) {
+        this.globalSessionId = globalSessionId;
+    }
+
+    public RealTimeSessionResult withTopTransactionId(String topTransactionId) {
+        this.topTransactionId = topTransactionId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前用户上次执行的顶层事务ID。 **取值范围**： 不涉及。
+     * @return topTransactionId
+     */
+    public String getTopTransactionId() {
+        return topTransactionId;
+    }
+
+    public void setTopTransactionId(String topTransactionId) {
+        this.topTransactionId = topTransactionId;
+    }
+
+    public RealTimeSessionResult withCurrentTransactionId(String currentTransactionId) {
+        this.currentTransactionId = currentTransactionId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前用户上次执行的事务ID。 **取值范围**： 不涉及。
+     * @return currentTransactionId
+     */
+    public String getCurrentTransactionId() {
+        return currentTransactionId;
+    }
+
+    public void setCurrentTransactionId(String currentTransactionId) {
+        this.currentTransactionId = currentTransactionId;
+    }
+
+    public RealTimeSessionResult withXlogQuantityPretty(String xlogQuantityPretty) {
+        this.xlogQuantityPretty = xlogQuantityPretty;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前用户上次执行的事务使用的XLOG量，易读格式。 **取值范围**： 不涉及。
+     * @return xlogQuantityPretty
+     */
+    public String getXlogQuantityPretty() {
+        return xlogQuantityPretty;
+    }
+
+    public void setXlogQuantityPretty(String xlogQuantityPretty) {
+        this.xlogQuantityPretty = xlogQuantityPretty;
+    }
+
+    public RealTimeSessionResult withWaitStatus(String waitStatus) {
+        this.waitStatus = waitStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例线程等待状态。 **取值范围**： 不涉及。
+     * @return waitStatus
+     */
+    public String getWaitStatus() {
+        return waitStatus;
+    }
+
+    public void setWaitStatus(String waitStatus) {
+        this.waitStatus = waitStatus;
+    }
+
+    public RealTimeSessionResult withLwtId(String lwtId) {
+        this.lwtId = lwtId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例线程的轻量级线程号。 **取值范围**： 不涉及。
+     * @return lwtId
+     */
+    public String getLwtId() {
+        return lwtId;
+    }
+
+    public void setLwtId(String lwtId) {
+        this.lwtId = lwtId;
+    }
+
+    public RealTimeSessionResult withThreadName(String threadName) {
+        this.threadName = threadName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例线程名。 **取值范围**： 不涉及。
+     * @return threadName
+     */
+    public String getThreadName() {
+        return threadName;
+    }
+
+    public void setThreadName(String threadName) {
+        this.threadName = threadName;
+    }
+
+    public RealTimeSessionResult withLockMode(String lockMode) {
+        this.lockMode = lockMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例等锁模式。 **取值范围**： 不涉及。
+     * @return lockMode
+     */
+    public String getLockMode() {
+        return lockMode;
+    }
+
+    public void setLockMode(String lockMode) {
+        this.lockMode = lockMode;
+    }
+
+    public RealTimeSessionResult withParentSessionId(String parentSessionId) {
+        this.parentSessionId = parentSessionId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例父会话ID。 **取值范围**： 不涉及。
+     * @return parentSessionId
+     */
+    public String getParentSessionId() {
+        return parentSessionId;
+    }
+
+    public void setParentSessionId(String parentSessionId) {
+        this.parentSessionId = parentSessionId;
+    }
+
+    public RealTimeSessionResult withSmpId(String smpId) {
+        this.smpId = smpId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例并行线程的ID。 **取值范围**： 不涉及。
+     * @return smpId
+     */
+    public String getSmpId() {
+        return smpId;
+    }
+
+    public void setSmpId(String smpId) {
+        this.smpId = smpId;
+    }
+
+    public RealTimeSessionResult withLockTag(String lockTag) {
+        this.lockTag = lockTag;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例线程正等待获取的锁的信息。 **取值范围**： 不涉及。
+     * @return lockTag
+     */
+    public String getLockTag() {
+        return lockTag;
+    }
+
+    public void setLockTag(String lockTag) {
+        this.lockTag = lockTag;
+    }
+
+    public RealTimeSessionResult withComponentName(String componentName) {
+        this.componentName = componentName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 组件名称。 **取值范围**： 不涉及。
+     * @return componentName
+     */
+    public String getComponentName() {
+        return componentName;
+    }
+
+    public void setComponentName(String componentName) {
+        this.componentName = componentName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -470,7 +822,17 @@ public class RealTimeSessionResult {
             && Objects.equals(this.queryStart, that.queryStart)
             && Objects.equals(this.applicationName, that.applicationName)
             && Objects.equals(this.execTime, that.execTime) && Objects.equals(this.transNum, that.transNum)
-            && Objects.equals(this.rollbackNum, that.rollbackNum) && Objects.equals(this.sqlNum, that.sqlNum);
+            && Objects.equals(this.rollbackNum, that.rollbackNum) && Objects.equals(this.sqlNum, that.sqlNum)
+            && Objects.equals(this.clientPort, that.clientPort) && Objects.equals(this.queryId, that.queryId)
+            && Objects.equals(this.transactionTimeCost, that.transactionTimeCost)
+            && Objects.equals(this.traceId, that.traceId) && Objects.equals(this.globalSessionId, that.globalSessionId)
+            && Objects.equals(this.topTransactionId, that.topTransactionId)
+            && Objects.equals(this.currentTransactionId, that.currentTransactionId)
+            && Objects.equals(this.xlogQuantityPretty, that.xlogQuantityPretty)
+            && Objects.equals(this.waitStatus, that.waitStatus) && Objects.equals(this.lwtId, that.lwtId)
+            && Objects.equals(this.threadName, that.threadName) && Objects.equals(this.lockMode, that.lockMode)
+            && Objects.equals(this.parentSessionId, that.parentSessionId) && Objects.equals(this.smpId, that.smpId)
+            && Objects.equals(this.lockTag, that.lockTag) && Objects.equals(this.componentName, that.componentName);
     }
 
     @Override
@@ -494,7 +856,23 @@ public class RealTimeSessionResult {
             execTime,
             transNum,
             rollbackNum,
-            sqlNum);
+            sqlNum,
+            clientPort,
+            queryId,
+            transactionTimeCost,
+            traceId,
+            globalSessionId,
+            topTransactionId,
+            currentTransactionId,
+            xlogQuantityPretty,
+            waitStatus,
+            lwtId,
+            threadName,
+            lockMode,
+            parentSessionId,
+            smpId,
+            lockTag,
+            componentName);
     }
 
     @Override
@@ -521,6 +899,22 @@ public class RealTimeSessionResult {
         sb.append("    transNum: ").append(toIndentedString(transNum)).append("\n");
         sb.append("    rollbackNum: ").append(toIndentedString(rollbackNum)).append("\n");
         sb.append("    sqlNum: ").append(toIndentedString(sqlNum)).append("\n");
+        sb.append("    clientPort: ").append(toIndentedString(clientPort)).append("\n");
+        sb.append("    queryId: ").append(toIndentedString(queryId)).append("\n");
+        sb.append("    transactionTimeCost: ").append(toIndentedString(transactionTimeCost)).append("\n");
+        sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
+        sb.append("    globalSessionId: ").append(toIndentedString(globalSessionId)).append("\n");
+        sb.append("    topTransactionId: ").append(toIndentedString(topTransactionId)).append("\n");
+        sb.append("    currentTransactionId: ").append(toIndentedString(currentTransactionId)).append("\n");
+        sb.append("    xlogQuantityPretty: ").append(toIndentedString(xlogQuantityPretty)).append("\n");
+        sb.append("    waitStatus: ").append(toIndentedString(waitStatus)).append("\n");
+        sb.append("    lwtId: ").append(toIndentedString(lwtId)).append("\n");
+        sb.append("    threadName: ").append(toIndentedString(threadName)).append("\n");
+        sb.append("    lockMode: ").append(toIndentedString(lockMode)).append("\n");
+        sb.append("    parentSessionId: ").append(toIndentedString(parentSessionId)).append("\n");
+        sb.append("    smpId: ").append(toIndentedString(smpId)).append("\n");
+        sb.append("    lockTag: ").append(toIndentedString(lockTag)).append("\n");
+        sb.append("    componentName: ").append(toIndentedString(componentName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

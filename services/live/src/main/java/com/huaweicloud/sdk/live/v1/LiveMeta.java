@@ -43,6 +43,10 @@ import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainReq;
 import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainKeyChainRequest;
@@ -75,6 +79,10 @@ import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DomainHttpsCertInfo;
 import com.huaweicloud.sdk.live.v1.model.DomainIpv6SwitchReq;
 import com.huaweicloud.sdk.live.v1.model.DomainMapping;
@@ -118,6 +126,10 @@ import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.ListWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.ListWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.ListWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.ListWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainCreateReq;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
@@ -154,6 +166,7 @@ import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInputReq;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelRecordSettings;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelState;
 import com.huaweicloud.sdk.live.v1.model.ModifyPullSourcesConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyWatermarkRule;
 import com.huaweicloud.sdk.live.v1.model.ObsAuthorityConfigV2;
 import com.huaweicloud.sdk.live.v1.model.RecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.RecordControlInfo;
@@ -188,6 +201,10 @@ import com.huaweicloud.sdk.live.v1.model.ShowRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRefererChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.StreamForbiddenOnceSetting;
 import com.huaweicloud.sdk.live.v1.model.StreamForbiddenSetting;
 import com.huaweicloud.sdk.live.v1.model.StreamTranscodingTemplate;
@@ -227,6 +244,12 @@ import com.huaweicloud.sdk.live.v1.model.UpdateStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateWatermarkRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateWatermarkRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateWatermarkTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateWatermarkTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.WatermarkRule;
+import com.huaweicloud.sdk.live.v1.model.WatermarkTemplate;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -587,6 +610,64 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateWatermarkRuleRequest, CreateWatermarkRuleResponse> createWatermarkRule =
+        genForCreateWatermarkRule();
+
+    private static HttpRequestDef<CreateWatermarkRuleRequest, CreateWatermarkRuleResponse> genForCreateWatermarkRule() {
+        // basic
+        HttpRequestDef.Builder<CreateWatermarkRuleRequest, CreateWatermarkRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateWatermarkRuleRequest.class, CreateWatermarkRuleResponse.class)
+                .withName("CreateWatermarkRule")
+                .withUri("/v1/{project_id}/watermark/rules")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<WatermarkRule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WatermarkRule.class),
+            f -> f.withMarshaller(CreateWatermarkRuleRequest::getBody, CreateWatermarkRuleRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateWatermarkRuleResponse::getXRequestId,
+                CreateWatermarkRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplate =
+        genForCreateWatermarkTemplate();
+
+    private static HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> genForCreateWatermarkTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateWatermarkTemplateRequest.class, CreateWatermarkTemplateResponse.class)
+            .withName("CreateWatermarkTemplate")
+            .withUri("/v1/{project_id}/watermark/templates")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<WatermarkTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WatermarkTemplate.class),
+            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getBody, CreateWatermarkTemplateRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateWatermarkTemplateResponse::getXRequestId,
+                CreateWatermarkTemplateResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genForDeleteDomain();
 
     private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genForDeleteDomain() {
@@ -932,6 +1013,64 @@ public class LiveMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWatermarkRuleRequest, DeleteWatermarkRuleResponse> deleteWatermarkRule =
+        genForDeleteWatermarkRule();
+
+    private static HttpRequestDef<DeleteWatermarkRuleRequest, DeleteWatermarkRuleResponse> genForDeleteWatermarkRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteWatermarkRuleRequest, DeleteWatermarkRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteWatermarkRuleRequest.class, DeleteWatermarkRuleResponse.class)
+            .withName("DeleteWatermarkRule")
+            .withUri("/v1/{project_id}/watermark/rules/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWatermarkRuleRequest::getId, DeleteWatermarkRuleRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteWatermarkRuleResponse::getXRequestId,
+                DeleteWatermarkRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> deleteWatermarkTemplate =
+        genForDeleteWatermarkTemplate();
+
+    private static HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> genForDeleteWatermarkTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteWatermarkTemplateRequest.class, DeleteWatermarkTemplateResponse.class)
+            .withName("DeleteWatermarkTemplate")
+            .withUri("/v1/{project_id}/watermark/templates/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getId, DeleteWatermarkTemplateRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteWatermarkTemplateResponse::getXRequestId,
+                DeleteWatermarkTemplateResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1475,6 +1614,108 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListWatermarkRuleRequest, ListWatermarkRuleResponse> listWatermarkRule =
+        genForListWatermarkRule();
+
+    private static HttpRequestDef<ListWatermarkRuleRequest, ListWatermarkRuleResponse> genForListWatermarkRule() {
+        // basic
+        HttpRequestDef.Builder<ListWatermarkRuleRequest, ListWatermarkRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWatermarkRuleRequest.class, ListWatermarkRuleResponse.class)
+                .withName("ListWatermarkRule")
+                .withUri("/v1/{project_id}/watermark/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWatermarkRuleRequest::getTemplateId, ListWatermarkRuleRequest::setTemplateId));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWatermarkRuleRequest::getDomain, ListWatermarkRuleRequest::setDomain));
+        builder.<String>withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWatermarkRuleRequest::getApp, ListWatermarkRuleRequest::setApp));
+        builder.<String>withRequestField("channel_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWatermarkRuleRequest::getChannelId, ListWatermarkRuleRequest::setChannelId));
+        builder.<String>withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWatermarkRuleRequest::getStream, ListWatermarkRuleRequest::setStream));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWatermarkRuleRequest::getOffset, ListWatermarkRuleRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWatermarkRuleRequest::getLimit, ListWatermarkRuleRequest::setLimit));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListWatermarkRuleResponse::getXRequestId, ListWatermarkRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> listWatermarkTemplate =
+        genForListWatermarkTemplate();
+
+    private static HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> genForListWatermarkTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListWatermarkTemplateRequest.class, ListWatermarkTemplateResponse.class)
+            .withName("ListWatermarkTemplate")
+            .withUri("/v1/{project_id}/watermark/templates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getName, ListWatermarkTemplateRequest::setName));
+        builder.<ListWatermarkTemplateRequest.SceneEnum>withRequestField("scene",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWatermarkTemplateRequest.SceneEnum.class),
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getScene, ListWatermarkTemplateRequest::setScene));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getOffset, ListWatermarkTemplateRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getLimit, ListWatermarkTemplateRequest::setLimit));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListWatermarkTemplateResponse::getXRequestId,
+                ListWatermarkTemplateResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyFlowOutputRequest, ModifyFlowOutputResponse> modifyFlowOutput =
         genForModifyFlowOutput();
 
@@ -1884,6 +2125,63 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowWatermarkRuleRequest, ShowWatermarkRuleResponse> showWatermarkRule =
+        genForShowWatermarkRule();
+
+    private static HttpRequestDef<ShowWatermarkRuleRequest, ShowWatermarkRuleResponse> genForShowWatermarkRule() {
+        // basic
+        HttpRequestDef.Builder<ShowWatermarkRuleRequest, ShowWatermarkRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWatermarkRuleRequest.class, ShowWatermarkRuleResponse.class)
+                .withName("ShowWatermarkRule")
+                .withUri("/v1/{project_id}/watermark/rules/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWatermarkRuleRequest::getId, ShowWatermarkRuleRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowWatermarkRuleResponse::getXRequestId, ShowWatermarkRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWatermarkTemplateRequest, ShowWatermarkTemplateResponse> showWatermarkTemplate =
+        genForShowWatermarkTemplate();
+
+    private static HttpRequestDef<ShowWatermarkTemplateRequest, ShowWatermarkTemplateResponse> genForShowWatermarkTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowWatermarkTemplateRequest, ShowWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWatermarkTemplateRequest.class, ShowWatermarkTemplateResponse.class)
+            .withName("ShowWatermarkTemplate")
+            .withUri("/v1/{project_id}/watermark/templates/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWatermarkTemplateRequest::getId, ShowWatermarkTemplateRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowWatermarkTemplateResponse::getXRequestId,
+                ShowWatermarkTemplateResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDelayConfigRequest, UpdateDelayConfigResponse> updateDelayConfig =
         genForUpdateDelayConfig();
 
@@ -2247,6 +2545,74 @@ public class LiveMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWatermarkRuleRequest, UpdateWatermarkRuleResponse> updateWatermarkRule =
+        genForUpdateWatermarkRule();
+
+    private static HttpRequestDef<UpdateWatermarkRuleRequest, UpdateWatermarkRuleResponse> genForUpdateWatermarkRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateWatermarkRuleRequest, UpdateWatermarkRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateWatermarkRuleRequest.class, UpdateWatermarkRuleResponse.class)
+                .withName("UpdateWatermarkRule")
+                .withUri("/v1/{project_id}/watermark/rules/{id}")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWatermarkRuleRequest::getId, UpdateWatermarkRuleRequest::setId));
+        builder.<ModifyWatermarkRule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyWatermarkRule.class),
+            f -> f.withMarshaller(UpdateWatermarkRuleRequest::getBody, UpdateWatermarkRuleRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateWatermarkRuleResponse::getXRequestId,
+                UpdateWatermarkRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> updateWatermarkTemplate =
+        genForUpdateWatermarkTemplate();
+
+    private static HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> genForUpdateWatermarkTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateWatermarkTemplateRequest.class, UpdateWatermarkTemplateResponse.class)
+            .withName("UpdateWatermarkTemplate")
+            .withUri("/v1/{project_id}/watermark/templates/{id}")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getId, UpdateWatermarkTemplateRequest::setId));
+        builder.<WatermarkTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WatermarkTemplate.class),
+            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getBody, UpdateWatermarkTemplateRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateWatermarkTemplateResponse::getXRequestId,
+                UpdateWatermarkTemplateResponse::setXRequestId));
         return builder.build();
     }
 

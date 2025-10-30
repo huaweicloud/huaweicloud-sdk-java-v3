@@ -26,7 +26,7 @@ public class GeneralImageVulsResponseInfoCveList {
     }
 
     /**
-     * CVE ID
+     * **参数解释**： CVE ID **取值范围**： 字符长度1-32位 
      * @return cveId
      */
     public String getCveId() {
@@ -43,7 +43,7 @@ public class GeneralImageVulsResponseInfoCveList {
     }
 
     /**
-     * CVSS分值
+     * **参数解释**： CVSS分值 **取值范围**： 字符长度1-10 
      * minimum: 0
      * maximum: 1E+1
      * @return cvss

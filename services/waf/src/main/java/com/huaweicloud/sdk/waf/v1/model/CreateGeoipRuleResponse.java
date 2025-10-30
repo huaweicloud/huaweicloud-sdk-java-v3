@@ -42,6 +42,16 @@ public class CreateGeoipRuleResponse extends SdkResponse {
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_type")
+
+    private String ipType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
     private Long timestamp;
@@ -148,6 +158,40 @@ public class CreateGeoipRuleResponse extends SdkResponse {
         this.status = status;
     }
 
+    public CreateGeoipRuleResponse withIpType(String ipType) {
+        this.ipType = ipType;
+        return this;
+    }
+
+    /**
+     * ip范围。若您的网站使用独享模式，请确认独享引擎是否全部升级到最新版本，避免造成异常。202412之后的版本支持配置IP范围
+     * @return ipType
+     */
+    public String getIpType() {
+        return ipType;
+    }
+
+    public void setIpType(String ipType) {
+        this.ipType = ipType;
+    }
+
+    public CreateGeoipRuleResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 规则描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public CreateGeoipRuleResponse withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
@@ -177,12 +221,13 @@ public class CreateGeoipRuleResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.geoip, that.geoip)
             && Objects.equals(this.white, that.white) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.ipType, that.ipType) && Objects.equals(this.description, that.description)
             && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, policyid, geoip, white, status, timestamp);
+        return Objects.hash(id, name, policyid, geoip, white, status, ipType, description, timestamp);
     }
 
     @Override
@@ -195,6 +240,8 @@ public class CreateGeoipRuleResponse extends SdkResponse {
         sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();

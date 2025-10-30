@@ -111,6 +111,11 @@ public class BillSumRecordInfoV2 {
 
     private String customerId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_name")
+
+    private String accountName;
+
     public BillSumRecordInfoV2 withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
@@ -451,6 +456,23 @@ public class BillSumRecordInfoV2 {
         this.customerId = customerId;
     }
 
+    public BillSumRecordInfoV2 withAccountName(String accountName) {
+        this.accountName = accountName;
+        return this;
+    }
+
+    /**
+     * |参数名称：消费的客户登录名称。| |参数约束及描述：范围限制：0-128，如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户登录名称。 如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户登录名称。如果是企业主自己的消费记录，则为企业主的客户登录名称；如果是某个企业子客户的消费记录，则此处为企业子的客户登录名称。|
+     * @return accountName
+     */
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -477,7 +499,7 @@ public class BillSumRecordInfoV2 {
             && Objects.equals(this.writeoffAmount, that.writeoffAmount)
             && Objects.equals(this.cashAmount, that.cashAmount) && Objects.equals(this.creditAmount, that.creditAmount)
             && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.billType, that.billType)
-            && Objects.equals(this.customerId, that.customerId);
+            && Objects.equals(this.customerId, that.customerId) && Objects.equals(this.accountName, that.accountName);
     }
 
     @Override
@@ -501,7 +523,8 @@ public class BillSumRecordInfoV2 {
             creditAmount,
             measureId,
             billType,
-            customerId);
+            customerId,
+            accountName);
     }
 
     @Override
@@ -528,6 +551,7 @@ public class BillSumRecordInfoV2 {
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

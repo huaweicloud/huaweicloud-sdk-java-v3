@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * **参数解释**: 主机IP **取值范围**: 字符长度1-128位 
+ * **参数解释**: 服务器IP **取值范围**: 字符长度1-128位 
  */
 public class HostIp {
 

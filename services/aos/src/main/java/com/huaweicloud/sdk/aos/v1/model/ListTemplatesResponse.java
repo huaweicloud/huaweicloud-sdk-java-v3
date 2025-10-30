@@ -19,6 +19,11 @@ public class ListTemplatesResponse extends SdkResponse {
 
     private List<Template> templates = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListTemplatesResponse withTemplates(List<Template> templates) {
         this.templates = templates;
         return this;
@@ -52,6 +57,32 @@ public class ListTemplatesResponse extends SdkResponse {
         this.templates = templates;
     }
 
+    public ListTemplatesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListTemplatesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ListTemplatesResponse extends SdkResponse {
             return false;
         }
         ListTemplatesResponse that = (ListTemplatesResponse) obj;
-        return Objects.equals(this.templates, that.templates);
+        return Objects.equals(this.templates, that.templates) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templates);
+        return Objects.hash(templates, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ListTemplatesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTemplatesResponse {\n");
         sb.append("    templates: ").append(toIndentedString(templates)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

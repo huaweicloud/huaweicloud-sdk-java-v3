@@ -23,11 +23,6 @@ public class BatchUpgradeDatabasesRequestBody {
 
     private String delay;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_skip_validate")
-
-    private Boolean isSkipValidate;
-
     public BatchUpgradeDatabasesRequestBody withDatabasesInstanceInfos(
         List<UpgradeDatabasesSingleInstance> databasesInstanceInfos) {
         this.databasesInstanceInfos = databasesInstanceInfos;
@@ -81,23 +76,6 @@ public class BatchUpgradeDatabasesRequestBody {
         this.delay = delay;
     }
 
-    public BatchUpgradeDatabasesRequestBody withIsSkipValidate(Boolean isSkipValidate) {
-        this.isSkipValidate = isSkipValidate;
-        return this;
-    }
-
-    /**
-     * 是否跳过校验。
-     * @return isSkipValidate
-     */
-    public Boolean getIsSkipValidate() {
-        return isSkipValidate;
-    }
-
-    public void setIsSkipValidate(Boolean isSkipValidate) {
-        this.isSkipValidate = isSkipValidate;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +86,12 @@ public class BatchUpgradeDatabasesRequestBody {
         }
         BatchUpgradeDatabasesRequestBody that = (BatchUpgradeDatabasesRequestBody) obj;
         return Objects.equals(this.databasesInstanceInfos, that.databasesInstanceInfos)
-            && Objects.equals(this.delay, that.delay) && Objects.equals(this.isSkipValidate, that.isSkipValidate);
+            && Objects.equals(this.delay, that.delay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(databasesInstanceInfos, delay, isSkipValidate);
+        return Objects.hash(databasesInstanceInfos, delay);
     }
 
     @Override
@@ -122,7 +100,6 @@ public class BatchUpgradeDatabasesRequestBody {
         sb.append("class BatchUpgradeDatabasesRequestBody {\n");
         sb.append("    databasesInstanceInfos: ").append(toIndentedString(databasesInstanceInfos)).append("\n");
         sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
-        sb.append("    isSkipValidate: ").append(toIndentedString(isSkipValidate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

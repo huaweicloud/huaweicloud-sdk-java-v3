@@ -91,6 +91,12 @@ import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListObejectLevelCompareOverviewResponse;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersRequest;
 import com.huaweicloud.sdk.drs.v3.model.ListUsersResponse;
+import com.huaweicloud.sdk.drs.v3.model.ModifyGroupAndStreamRequest;
+import com.huaweicloud.sdk.drs.v3.model.ModifyGroupAndStreamResponse;
+import com.huaweicloud.sdk.drs.v3.model.QueryTuningParamsRequest;
+import com.huaweicloud.sdk.drs.v3.model.QueryTuningParamsResponse;
+import com.huaweicloud.sdk.drs.v3.model.SelectGroupAndStreamRequest;
+import com.huaweicloud.sdk.drs.v3.model.SelectGroupAndStreamResponse;
 import com.huaweicloud.sdk.drs.v3.model.ShowJobListRequest;
 import com.huaweicloud.sdk.drs.v3.model.ShowJobListResponse;
 import com.huaweicloud.sdk.drs.v3.model.ShowMonitoringDataRequest;
@@ -1423,6 +1429,95 @@ public class DrsAsyncClient {
      */
     public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listUsers, hcClient);
+    }
+
+    /**
+     * 更新LTS配置
+     *
+     * 更新任务的LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyGroupAndStreamRequest 请求对象
+     * @return CompletableFuture<ModifyGroupAndStreamResponse>
+     */
+    public CompletableFuture<ModifyGroupAndStreamResponse> modifyGroupAndStreamAsync(
+        ModifyGroupAndStreamRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.modifyGroupAndStream);
+    }
+
+    /**
+     * 更新LTS配置
+     *
+     * 更新任务的LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyGroupAndStreamRequest 请求对象
+     * @return AsyncInvoker<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse>
+     */
+    public AsyncInvoker<ModifyGroupAndStreamRequest, ModifyGroupAndStreamResponse> modifyGroupAndStreamAsyncInvoker(
+        ModifyGroupAndStreamRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.modifyGroupAndStream, hcClient);
+    }
+
+    /**
+     * 查询高级设置参数
+     *
+     * 查询高级设置参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryTuningParamsRequest 请求对象
+     * @return CompletableFuture<QueryTuningParamsResponse>
+     */
+    public CompletableFuture<QueryTuningParamsResponse> queryTuningParamsAsync(QueryTuningParamsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.queryTuningParams);
+    }
+
+    /**
+     * 查询高级设置参数
+     *
+     * 查询高级设置参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryTuningParamsRequest 请求对象
+     * @return AsyncInvoker<QueryTuningParamsRequest, QueryTuningParamsResponse>
+     */
+    public AsyncInvoker<QueryTuningParamsRequest, QueryTuningParamsResponse> queryTuningParamsAsyncInvoker(
+        QueryTuningParamsRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.queryTuningParams, hcClient);
+    }
+
+    /**
+     * 查询LTS配置
+     *
+     * 查询任务的LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SelectGroupAndStreamRequest 请求对象
+     * @return CompletableFuture<SelectGroupAndStreamResponse>
+     */
+    public CompletableFuture<SelectGroupAndStreamResponse> selectGroupAndStreamAsync(
+        SelectGroupAndStreamRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.selectGroupAndStream);
+    }
+
+    /**
+     * 查询LTS配置
+     *
+     * 查询任务的LTS配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SelectGroupAndStreamRequest 请求对象
+     * @return AsyncInvoker<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse>
+     */
+    public AsyncInvoker<SelectGroupAndStreamRequest, SelectGroupAndStreamResponse> selectGroupAndStreamAsyncInvoker(
+        SelectGroupAndStreamRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.selectGroupAndStream, hcClient);
     }
 
     /**

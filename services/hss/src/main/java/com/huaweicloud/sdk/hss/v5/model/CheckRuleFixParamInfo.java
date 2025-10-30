@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 配置检测检查项参数信息
+ * **参数解释** 配置检测检查项参数信息
  */
 public class CheckRuleFixParamInfo {
 
@@ -41,7 +41,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * **参数解释**: 检查项参数ID **取值范围**: 不涉及 
+     * **参数解释** 检查项参数ID **取值范围** 取值0-10
      * minimum: 0
      * maximum: 10
      * @return ruleParamId
@@ -60,7 +60,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * **参数解释**: 检查项参数描述 **取值范围**: 不涉及 
+     * **参数解释** 检查项参数描述 **取值范围** 字符长度0-256位
      * @return ruleDesc
      */
     public String getRuleDesc() {
@@ -77,7 +77,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * **参数解释**: 检查项参数默认值 **取值范围**: 不涉及 
+     * **参数解释** 检查项参数默认值 **取值范围** 取值0-2147483647
      * minimum: 0
      * maximum: 2147483647
      * @return defaultValue
@@ -96,7 +96,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * **参数解释**: 检查项参数可取最小值 **取值范围**: 不涉及 
+     * **参数解释** 检查项参数可取最小值 **取值范围** 取值0-2147483647
      * minimum: 0
      * maximum: 2147483647
      * @return rangeMin
@@ -115,7 +115,7 @@ public class CheckRuleFixParamInfo {
     }
 
     /**
-     * **参数解释**: 检查项参数可取最大值 **取值范围**: 不涉及 
+     * **参数解释** 检查项参数可取最大值 **取值范围** 取值0-2147483647
      * minimum: 0
      * maximum: 2147483647
      * @return rangeMax

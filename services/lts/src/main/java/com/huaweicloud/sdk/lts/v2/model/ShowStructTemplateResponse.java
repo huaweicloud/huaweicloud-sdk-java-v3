@@ -74,6 +74,21 @@ public class ShowStructTemplateResponse extends SdkResponse {
 
     private String regex;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_time_info")
+
+    private CustomTimeInfo customTimeInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "uploadOriginalLog")
+
+    private Boolean uploadOriginalLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "uploadParseFailedLog")
+
+    private Boolean uploadParseFailedLog;
+
     public ShowStructTemplateResponse withDemoFields(List<StructFieldInfoReturn> demoFields) {
         this.demoFields = demoFields;
         return this;
@@ -328,6 +343,66 @@ public class ShowStructTemplateResponse extends SdkResponse {
         this.regex = regex;
     }
 
+    public ShowStructTemplateResponse withCustomTimeInfo(CustomTimeInfo customTimeInfo) {
+        this.customTimeInfo = customTimeInfo;
+        return this;
+    }
+
+    public ShowStructTemplateResponse withCustomTimeInfo(Consumer<CustomTimeInfo> customTimeInfoSetter) {
+        if (this.customTimeInfo == null) {
+            this.customTimeInfo = new CustomTimeInfo();
+            customTimeInfoSetter.accept(this.customTimeInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customTimeInfo
+     * @return customTimeInfo
+     */
+    public CustomTimeInfo getCustomTimeInfo() {
+        return customTimeInfo;
+    }
+
+    public void setCustomTimeInfo(CustomTimeInfo customTimeInfo) {
+        this.customTimeInfo = customTimeInfo;
+    }
+
+    public ShowStructTemplateResponse withUploadOriginalLog(Boolean uploadOriginalLog) {
+        this.uploadOriginalLog = uploadOriginalLog;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否上传原始日志。 **取值范围：** - true - fasle
+     * @return uploadOriginalLog
+     */
+    public Boolean getUploadOriginalLog() {
+        return uploadOriginalLog;
+    }
+
+    public void setUploadOriginalLog(Boolean uploadOriginalLog) {
+        this.uploadOriginalLog = uploadOriginalLog;
+    }
+
+    public ShowStructTemplateResponse withUploadParseFailedLog(Boolean uploadParseFailedLog) {
+        this.uploadParseFailedLog = uploadParseFailedLog;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否将解析失败的原始上传到指定系统字段日志。 **取值范围：** - true - fasle
+     * @return uploadParseFailedLog
+     */
+    public Boolean getUploadParseFailedLog() {
+        return uploadParseFailedLog;
+    }
+
+    public void setUploadParseFailedLog(Boolean uploadParseFailedLog) {
+        this.uploadParseFailedLog = uploadParseFailedLog;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -342,7 +417,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
             && Objects.equals(this.id, that.id) && Objects.equals(this.logGroupId, that.logGroupId)
             && Objects.equals(this.rule, that.rule) && Objects.equals(this.clusterInfo, that.clusterInfo)
             && Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.regex, that.regex);
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.regex, that.regex)
+            && Objects.equals(this.customTimeInfo, that.customTimeInfo)
+            && Objects.equals(this.uploadOriginalLog, that.uploadOriginalLog)
+            && Objects.equals(this.uploadParseFailedLog, that.uploadParseFailedLog);
     }
 
     @Override
@@ -358,7 +436,10 @@ public class ShowStructTemplateResponse extends SdkResponse {
             logStreamId,
             projectId,
             templateName,
-            regex);
+            regex,
+            customTimeInfo,
+            uploadOriginalLog,
+            uploadParseFailedLog);
     }
 
     @Override
@@ -377,6 +458,9 @@ public class ShowStructTemplateResponse extends SdkResponse {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    regex: ").append(toIndentedString(regex)).append("\n");
+        sb.append("    customTimeInfo: ").append(toIndentedString(customTimeInfo)).append("\n");
+        sb.append("    uploadOriginalLog: ").append(toIndentedString(uploadOriginalLog)).append("\n");
+        sb.append("    uploadParseFailedLog: ").append(toIndentedString(uploadParseFailedLog)).append("\n");
         sb.append("}");
         return sb.toString();
     }

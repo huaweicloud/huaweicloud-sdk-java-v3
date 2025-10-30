@@ -78,7 +78,7 @@ public class UpdateStackRequestBody {
     }
 
     /**
-     * 删除保护的标识位，如果不传默认为false，即默认不开启资源栈删除保护（删除保护开启后资源栈不允许被删除）  *在UpdateStack API中，如果该参数未在RequestBody中给予，则不会对资源栈的删除保护属性进行更新*
+     * 删除保护的标识位，如果不传默认为false，即默认不开启资源栈删除保护（删除保护开启后资源栈不允许被删除）  在UpdateStack API中，如果该参数未在RequestBody中给予，则不会对资源栈的删除保护属性进行更新
      * @return enableDeletionProtection
      */
     public Boolean getEnableDeletionProtection() {
@@ -95,7 +95,7 @@ public class UpdateStackRequestBody {
     }
 
     /**
-     * 自动回滚的标识位，如果不传默认为false，即默认不开启资源栈自动回滚（自动回滚开启后，如果部署失败，则会自动回滚，并返回上一个稳定状态）  *在UpdateStack API中，如果该参数未在RequestBody中给予，则不会对资源栈的自动回滚属性进行更新* *该属性与使用模板导入资源功能互斥，如果资源栈的自动回滚设置为true，则不允许部署包含导入资源的模板*
+     * 自动回滚的标识位，如果不传默认为false，即默认不开启资源栈自动回滚（自动回滚开启后，如果部署失败，则会自动回滚，并返回上一个稳定状态）  在UpdateStack API中，如果该参数未在RequestBody中给予，则不会对资源栈的自动回滚属性进行更新 该属性与使用模板导入资源功能互斥，如果资源栈的自动回滚设置为true，则不允许部署包含导入资源的模板
      * @return enableAutoRollback
      */
     public Boolean getEnableAutoRollback() {

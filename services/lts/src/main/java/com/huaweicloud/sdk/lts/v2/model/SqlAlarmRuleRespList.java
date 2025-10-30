@@ -146,11 +146,6 @@ public class SqlAlarmRuleRespList {
     private SqlAlarmLevelEnum sqlAlarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sql_alarm_send")
-
-    private Boolean sqlAlarmSend;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
     private String domainId;
@@ -381,6 +376,11 @@ public class SqlAlarmRuleRespList {
 
     private String alarmActionRuleName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsResBody> tags = null;
+
     public SqlAlarmRuleRespList withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
         return this;
@@ -575,23 +575,6 @@ public class SqlAlarmRuleRespList {
         this.sqlAlarmLevel = sqlAlarmLevel;
     }
 
-    public SqlAlarmRuleRespList withSqlAlarmSend(Boolean sqlAlarmSend) {
-        this.sqlAlarmSend = sqlAlarmSend;
-        return this;
-    }
-
-    /**
-     * 是否发送
-     * @return sqlAlarmSend
-     */
-    public Boolean getSqlAlarmSend() {
-        return sqlAlarmSend;
-    }
-
-    public void setSqlAlarmSend(Boolean sqlAlarmSend) {
-        this.sqlAlarmSend = sqlAlarmSend;
-    }
-
     public SqlAlarmRuleRespList withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -783,6 +766,39 @@ public class SqlAlarmRuleRespList {
         this.alarmActionRuleName = alarmActionRuleName;
     }
 
+    public SqlAlarmRuleRespList withTags(List<TagsResBody> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public SqlAlarmRuleRespList addTagsItem(TagsResBody tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public SqlAlarmRuleRespList withTags(Consumer<List<TagsResBody>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警标签信息。
+     * @return tags
+     */
+    public List<TagsResBody> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagsResBody> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -798,15 +814,16 @@ public class SqlAlarmRuleRespList {
             && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
             && Objects.equals(this.topics, that.topics) && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel)
-            && Objects.equals(this.sqlAlarmSend, that.sqlAlarmSend) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.status, that.status)
             && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
             && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
             && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
             && Objects.equals(this.recoveryPolicy, that.recoveryPolicy)
             && Objects.equals(this.notificationFrequency, that.notificationFrequency)
-            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName);
+            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -820,7 +837,6 @@ public class SqlAlarmRuleRespList {
             conditionExpression,
             topics,
             sqlAlarmLevel,
-            sqlAlarmSend,
             domainId,
             createTime,
             updateTime,
@@ -831,7 +847,8 @@ public class SqlAlarmRuleRespList {
             whetherRecoveryPolicy,
             recoveryPolicy,
             notificationFrequency,
-            alarmActionRuleName);
+            alarmActionRuleName,
+            tags);
     }
 
     @Override
@@ -847,7 +864,6 @@ public class SqlAlarmRuleRespList {
         sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("    sqlAlarmLevel: ").append(toIndentedString(sqlAlarmLevel)).append("\n");
-        sb.append("    sqlAlarmSend: ").append(toIndentedString(sqlAlarmSend)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
@@ -859,6 +875,7 @@ public class SqlAlarmRuleRespList {
         sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
         sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
         sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -187,7 +187,7 @@ public class ListGeneralImageVulOperationsRequest {
     }
 
     /**
-     * 镜像名称
+     * **参数解释**: 镜像名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 不涉及 
      * @return imageName
      */
     public String getImageName() {
@@ -221,7 +221,7 @@ public class ListGeneralImageVulOperationsRequest {
     }
 
     /**
-     * **参数解释**: 处理用户名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
+     * **参数解释**: 处理用户名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 不涉及 
      * @return userName
      */
     public String getUserName() {
@@ -255,7 +255,7 @@ public class ListGeneralImageVulOperationsRequest {
     }
 
     /**
-     * **参数解释**: 应用名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
+     * **参数解释**: 应用名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 不涉及 
      * @return appName
      */
     public String getAppName() {
@@ -272,7 +272,7 @@ public class ListGeneralImageVulOperationsRequest {
     }
 
     /**
-     * **参数解释**: 应用版本 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
+     * **参数解释**: 应用版本 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 不涉及 
      * @return appVersion
      */
     public String getAppVersion() {
@@ -289,7 +289,7 @@ public class ListGeneralImageVulOperationsRequest {
     }
 
     /**
-     * **参数解释**: 备注 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
+     * **参数解释**: 备注 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 不涉及 
      * @return remark
      */
     public String getRemark() {

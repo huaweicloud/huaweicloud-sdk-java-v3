@@ -100,7 +100,7 @@ public class CloseProtectionInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 关闭防护类型  **约束限制**: 不涉及 **取值范围**: - close_anti : 关闭勒索防护；暂不支持关闭备份防护，若需要解绑存储库，请前往cbr服务进行操作。 **默认取值**: 不涉及
+     * **参数解释**: 关闭防护类型 **约束限制**: 不涉及 **取值范围**: - close_anti : 关闭勒索防护；暂不支持关闭备份防护，若需要解绑存储库，请前往cbr服务进行操作。 **默认取值**: 不涉及
      * @return closeProtectionType
      */
     public String getCloseProtectionType() {

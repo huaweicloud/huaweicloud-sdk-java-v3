@@ -255,7 +255,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         String idToken;
         try {
             byte[] bytes = Files.readAllBytes(Paths.get(idTokenFile));
-            idToken = new String(bytes, StandardCharsets.UTF_8);
+            idToken = new String(bytes, StandardCharsets.UTF_8).trim();
         } catch (IOException e) {
             throw new SdkException(e);
         }

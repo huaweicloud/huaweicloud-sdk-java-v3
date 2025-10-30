@@ -26,6 +26,11 @@ public class ListWebSiteStatisticsRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
     private String domain;
@@ -85,13 +90,30 @@ public class ListWebSiteStatisticsRequest {
         this.limit = limit;
     }
 
+    public ListWebSiteStatisticsRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public ListWebSiteStatisticsRequest withDomain(String domain) {
         this.domain = domain;
         return this;
     }
 
     /**
-     * 域名
+     * **参数解释**: 域名 **约束限制**: 不涉及 **取值范围**: 字符长度0-256 **默认取值**: 不涉及 
      * @return domain
      */
     public String getDomain() {
@@ -113,12 +135,12 @@ public class ListWebSiteStatisticsRequest {
         ListWebSiteStatisticsRequest that = (ListWebSiteStatisticsRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.domain, that.domain);
+            && Objects.equals(this.category, that.category) && Objects.equals(this.domain, that.domain);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, offset, limit, domain);
+        return Objects.hash(enterpriseProjectId, offset, limit, category, domain);
     }
 
     @Override
@@ -128,6 +150,7 @@ public class ListWebSiteStatisticsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();

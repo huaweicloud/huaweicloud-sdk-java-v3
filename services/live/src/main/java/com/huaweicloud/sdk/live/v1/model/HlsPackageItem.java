@@ -63,6 +63,46 @@ public class HlsPackageItem {
 
     private List<String> adMarker = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_access")
+
+    private Boolean enableAccess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_all_ip_access")
+
+    private Boolean allowAllIpAccess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_whitelist")
+
+    private String ipWhitelist;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cdn_identifier_header")
+
+    private HttpHeader cdnIdentifierHeader;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_domain_master")
+
+    private String originDomainMaster;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_domain_slave")
+
+    private String originDomainSlave;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_name")
+
+    private String manifestName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slave_url")
+
+    private String slaveUrl;
+
     public HlsPackageItem withUrl(String url) {
         this.url = url;
         return this;
@@ -287,6 +327,151 @@ public class HlsPackageItem {
         this.adMarker = adMarker;
     }
 
+    public HlsPackageItem withEnableAccess(Boolean enableAccess) {
+        this.enableAccess = enableAccess;
+        return this;
+    }
+
+    /**
+     * 当频道mode是ONLY_OS类型时，允许本输出可以直接从源站拉流，默认：false true：允许output访问 false：禁止output访问
+     * @return enableAccess
+     */
+    public Boolean getEnableAccess() {
+        return enableAccess;
+    }
+
+    public void setEnableAccess(Boolean enableAccess) {
+        this.enableAccess = enableAccess;
+    }
+
+    public HlsPackageItem withAllowAllIpAccess(Boolean allowAllIpAccess) {
+        this.allowAllIpAccess = allowAllIpAccess;
+        return this;
+    }
+
+    /**
+     * 是否放通所有的IP访问，默认：false true：允许所有的IP地址访问，ip_whitelist配置不生效 false：不允许所有的IP地址访问，ip_whitelist生效，仅在ip_whitelist配置的ip地址才能访问
+     * @return allowAllIpAccess
+     */
+    public Boolean getAllowAllIpAccess() {
+        return allowAllIpAccess;
+    }
+
+    public void setAllowAllIpAccess(Boolean allowAllIpAccess) {
+        this.allowAllIpAccess = allowAllIpAccess;
+    }
+
+    public HlsPackageItem withIpWhitelist(String ipWhitelist) {
+        this.ipWhitelist = ipWhitelist;
+        return this;
+    }
+
+    /**
+     * 当频道类型mode是ONLY_OS类型时，允许直接从源站拉流的IP白名单
+     * @return ipWhitelist
+     */
+    public String getIpWhitelist() {
+        return ipWhitelist;
+    }
+
+    public void setIpWhitelist(String ipWhitelist) {
+        this.ipWhitelist = ipWhitelist;
+    }
+
+    public HlsPackageItem withCdnIdentifierHeader(HttpHeader cdnIdentifierHeader) {
+        this.cdnIdentifierHeader = cdnIdentifierHeader;
+        return this;
+    }
+
+    public HlsPackageItem withCdnIdentifierHeader(Consumer<HttpHeader> cdnIdentifierHeaderSetter) {
+        if (this.cdnIdentifierHeader == null) {
+            this.cdnIdentifierHeader = new HttpHeader();
+            cdnIdentifierHeaderSetter.accept(this.cdnIdentifierHeader);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cdnIdentifierHeader
+     * @return cdnIdentifierHeader
+     */
+    public HttpHeader getCdnIdentifierHeader() {
+        return cdnIdentifierHeader;
+    }
+
+    public void setCdnIdentifierHeader(HttpHeader cdnIdentifierHeader) {
+        this.cdnIdentifierHeader = cdnIdentifierHeader;
+    }
+
+    public HlsPackageItem withOriginDomainMaster(String originDomainMaster) {
+        this.originDomainMaster = originDomainMaster;
+        return this;
+    }
+
+    /**
+     * 源站分发域名-主region 跟CreateOttChannelInfoReq.region一致 满足正则：^(\\[a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.){2,}[a-zA-Z]{2,16}$ 最大长度255
+     * @return originDomainMaster
+     */
+    public String getOriginDomainMaster() {
+        return originDomainMaster;
+    }
+
+    public void setOriginDomainMaster(String originDomainMaster) {
+        this.originDomainMaster = originDomainMaster;
+    }
+
+    public HlsPackageItem withOriginDomainSlave(String originDomainSlave) {
+        this.originDomainSlave = originDomainSlave;
+        return this;
+    }
+
+    /**
+     * 源站分发域名-备region 满足正则：^(\\[a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.){2,}[a-zA-Z]{2,16}$ 最大长度255
+     * @return originDomainSlave
+     */
+    public String getOriginDomainSlave() {
+        return originDomainSlave;
+    }
+
+    public void setOriginDomainSlave(String originDomainSlave) {
+        this.originDomainSlave = originDomainSlave;
+    }
+
+    public HlsPackageItem withManifestName(String manifestName) {
+        this.manifestName = manifestName;
+        return this;
+    }
+
+    /**
+     * output的索引文件名字 默认：index 长度：0-128 字符集：大小写字母、数字、\"-\"、\".\"、\"_\"，不能有/路径
+     * @return manifestName
+     */
+    public String getManifestName() {
+        return manifestName;
+    }
+
+    public void setManifestName(String manifestName) {
+        this.manifestName = manifestName;
+    }
+
+    public HlsPackageItem withSlaveUrl(String slaveUrl) {
+        this.slaveUrl = slaveUrl;
+        return this;
+    }
+
+    /**
+     * 客户自定义的拉流地址，包括方法、域名、路径
+     * @return slaveUrl
+     */
+    public String getSlaveUrl() {
+        return slaveUrl;
+    }
+
+    public void setSlaveUrl(String slaveUrl) {
+        this.slaveUrl = slaveUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -302,7 +487,13 @@ public class HlsPackageItem {
             && Objects.equals(this.playlistWindowSeconds, that.playlistWindowSeconds)
             && Objects.equals(this.encryption, that.encryption) && Objects.equals(this.ads, that.ads)
             && Objects.equals(this.extArgs, that.extArgs) && Objects.equals(this.requestArgs, that.requestArgs)
-            && Objects.equals(this.adMarker, that.adMarker);
+            && Objects.equals(this.adMarker, that.adMarker) && Objects.equals(this.enableAccess, that.enableAccess)
+            && Objects.equals(this.allowAllIpAccess, that.allowAllIpAccess)
+            && Objects.equals(this.ipWhitelist, that.ipWhitelist)
+            && Objects.equals(this.cdnIdentifierHeader, that.cdnIdentifierHeader)
+            && Objects.equals(this.originDomainMaster, that.originDomainMaster)
+            && Objects.equals(this.originDomainSlave, that.originDomainSlave)
+            && Objects.equals(this.manifestName, that.manifestName) && Objects.equals(this.slaveUrl, that.slaveUrl);
     }
 
     @Override
@@ -316,7 +507,15 @@ public class HlsPackageItem {
             ads,
             extArgs,
             requestArgs,
-            adMarker);
+            adMarker,
+            enableAccess,
+            allowAllIpAccess,
+            ipWhitelist,
+            cdnIdentifierHeader,
+            originDomainMaster,
+            originDomainSlave,
+            manifestName,
+            slaveUrl);
     }
 
     @Override
@@ -333,6 +532,14 @@ public class HlsPackageItem {
         sb.append("    extArgs: ").append(toIndentedString(extArgs)).append("\n");
         sb.append("    requestArgs: ").append(toIndentedString(requestArgs)).append("\n");
         sb.append("    adMarker: ").append(toIndentedString(adMarker)).append("\n");
+        sb.append("    enableAccess: ").append(toIndentedString(enableAccess)).append("\n");
+        sb.append("    allowAllIpAccess: ").append(toIndentedString(allowAllIpAccess)).append("\n");
+        sb.append("    ipWhitelist: ").append(toIndentedString(ipWhitelist)).append("\n");
+        sb.append("    cdnIdentifierHeader: ").append(toIndentedString(cdnIdentifierHeader)).append("\n");
+        sb.append("    originDomainMaster: ").append(toIndentedString(originDomainMaster)).append("\n");
+        sb.append("    originDomainSlave: ").append(toIndentedString(originDomainSlave)).append("\n");
+        sb.append("    manifestName: ").append(toIndentedString(manifestName)).append("\n");
+        sb.append("    slaveUrl: ").append(toIndentedString(slaveUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -53,6 +53,11 @@ public class LeakageListInfo {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private LeakageListInfoAction action;
+
     public LeakageListInfo withId(String id) {
         this.id = id;
         return this;
@@ -205,6 +210,32 @@ public class LeakageListInfo {
         this.description = description;
     }
 
+    public LeakageListInfo withAction(LeakageListInfoAction action) {
+        this.action = action;
+        return this;
+    }
+
+    public LeakageListInfo withAction(Consumer<LeakageListInfoAction> actionSetter) {
+        if (this.action == null) {
+            this.action = new LeakageListInfoAction();
+            actionSetter.accept(this.action);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get action
+     * @return action
+     */
+    public LeakageListInfoAction getAction() {
+        return action;
+    }
+
+    public void setAction(LeakageListInfoAction action) {
+        this.action = action;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -217,12 +248,13 @@ public class LeakageListInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
             && Objects.equals(this.url, that.url) && Objects.equals(this.category, that.category)
             && Objects.equals(this.contents, that.contents) && Objects.equals(this.timestamp, that.timestamp)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, url, category, contents, timestamp, status, description);
+        return Objects.hash(id, policyid, url, category, contents, timestamp, status, description, action);
     }
 
     @Override
@@ -237,6 +269,7 @@ public class LeakageListInfo {
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();
     }

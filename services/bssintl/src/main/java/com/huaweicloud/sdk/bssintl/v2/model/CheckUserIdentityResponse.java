@@ -26,13 +26,18 @@ public class CheckUserIdentityResponse extends SdkResponse {
 
     private String checkResult;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mobile_remain_available_num")
+
+    private Integer mobileRemainAvailableNum;
+
     public CheckUserIdentityResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
     /**
-     * 状态码。具体请参考状态码。只有失败才会返回这个参数。
+     * 状态码。具体请参考状态码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -49,7 +54,7 @@ public class CheckUserIdentityResponse extends SdkResponse {
     }
 
     /**
-     * 错误描述信息。只有失败才会返回这个参数。
+     * 错误描述信息。
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -66,7 +71,7 @@ public class CheckUserIdentityResponse extends SdkResponse {
     }
 
     /**
-     * available：该登录名称/手机号/邮箱有效。used_by_user：该登录名称/手机号/邮箱已被占用。
+     * 是否可以继续注册。该参数非必填，且只允许字符串,available: 该登录名称/手机号/邮箱可以继续注册,used_by_user: 该登录名称/手机号/邮箱不可以继续注册
      * @return checkResult
      */
     public String getCheckResult() {
@@ -75,6 +80,23 @@ public class CheckUserIdentityResponse extends SdkResponse {
 
     public void setCheckResult(String checkResult) {
         this.checkResult = checkResult;
+    }
+
+    public CheckUserIdentityResponse withMobileRemainAvailableNum(Integer mobileRemainAvailableNum) {
+        this.mobileRemainAvailableNum = mobileRemainAvailableNum;
+        return this;
+    }
+
+    /**
+     * 手机号剩余可注册客户数量。该参数非必填，只有search_type=mobile时，该字段才返回值。表示可以继续使用该手机号注册客户的数量。
+     * @return mobileRemainAvailableNum
+     */
+    public Integer getMobileRemainAvailableNum() {
+        return mobileRemainAvailableNum;
+    }
+
+    public void setMobileRemainAvailableNum(Integer mobileRemainAvailableNum) {
+        this.mobileRemainAvailableNum = mobileRemainAvailableNum;
     }
 
     @Override
@@ -87,12 +109,13 @@ public class CheckUserIdentityResponse extends SdkResponse {
         }
         CheckUserIdentityResponse that = (CheckUserIdentityResponse) obj;
         return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
-            && Objects.equals(this.checkResult, that.checkResult);
+            && Objects.equals(this.checkResult, that.checkResult)
+            && Objects.equals(this.mobileRemainAvailableNum, that.mobileRemainAvailableNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg, checkResult);
+        return Objects.hash(errorCode, errorMsg, checkResult, mobileRemainAvailableNum);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class CheckUserIdentityResponse extends SdkResponse {
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("    checkResult: ").append(toIndentedString(checkResult)).append("\n");
+        sb.append("    mobileRemainAvailableNum: ").append(toIndentedString(mobileRemainAvailableNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -156,100 +156,15 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
 
     private Long updateTime;
 
-    /**
-     * 邮件附加信息语言
-     */
-    public static final class LanguageEnum {
-
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
-        public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
-
-        /**
-         * Enum EN_US for value: "en-us"
-         */
-        public static final LanguageEnum EN_US = new LanguageEnum("en-us");
-
-        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, LanguageEnum> createStaticFields() {
-            Map<String, LanguageEnum> map = new HashMap<>();
-            map.put("zh-cn", ZH_CN);
-            map.put("en-us", EN_US);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        LanguageEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LanguageEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
-        }
-
-        public static LanguageEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof LanguageEnum) {
-                return this.value.equals(((LanguageEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "language")
-
-    private LanguageEnum language;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "topics")
-
-    private List<Topics> topics = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
 
     private String conditionExpression;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "indexId")
-
-    private String indexId;
 
     /**
      * 通知频率,单位(分钟)
@@ -366,6 +281,31 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
     @JsonProperty(value = "alarm_action_rule_name")
 
     private String alarmActionRuleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recovery_policy")
+
+    private Integer recoveryPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsResBody> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_count")
+
+    private Integer triggerConditionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_frequency")
+
+    private Integer triggerConditionFrequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_recovery_policy")
+
+    private Boolean whetherRecoveryPolicy;
 
     public UpdateKeywordsAlarmRuleResponse withKeywordsAlarmRuleId(String keywordsAlarmRuleId) {
         this.keywordsAlarmRuleId = keywordsAlarmRuleId;
@@ -584,23 +524,6 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    public UpdateKeywordsAlarmRuleResponse withLanguage(LanguageEnum language) {
-        this.language = language;
-        return this;
-    }
-
-    /**
-     * 邮件附加信息语言
-     * @return language
-     */
-    public LanguageEnum getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(LanguageEnum language) {
-        this.language = language;
-    }
-
     public UpdateKeywordsAlarmRuleResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -618,39 +541,6 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    public UpdateKeywordsAlarmRuleResponse withTopics(List<Topics> topics) {
-        this.topics = topics;
-        return this;
-    }
-
-    public UpdateKeywordsAlarmRuleResponse addTopicsItem(Topics topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
-        this.topics.add(topicsItem);
-        return this;
-    }
-
-    public UpdateKeywordsAlarmRuleResponse withTopics(Consumer<List<Topics>> topicsSetter) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
-        topicsSetter.accept(this.topics);
-        return this;
-    }
-
-    /**
-     * 通知主题
-     * @return topics
-     */
-    public List<Topics> getTopics() {
-        return topics;
-    }
-
-    public void setTopics(List<Topics> topics) {
-        this.topics = topics;
-    }
-
     public UpdateKeywordsAlarmRuleResponse withConditionExpression(String conditionExpression) {
         this.conditionExpression = conditionExpression;
         return this;
@@ -666,23 +556,6 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
 
     public void setConditionExpression(String conditionExpression) {
         this.conditionExpression = conditionExpression;
-    }
-
-    public UpdateKeywordsAlarmRuleResponse withIndexId(String indexId) {
-        this.indexId = indexId;
-        return this;
-    }
-
-    /**
-     * 索引id
-     * @return indexId
-     */
-    public String getIndexId() {
-        return indexId;
-    }
-
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
     }
 
     public UpdateKeywordsAlarmRuleResponse withNotificationFrequency(NotificationFrequencyEnum notificationFrequency) {
@@ -719,6 +592,107 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         this.alarmActionRuleName = alarmActionRuleName;
     }
 
+    public UpdateKeywordsAlarmRuleResponse withRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警恢复策略周期次数。 配置的最近统计周期次数内，如果不满足触发条件且开启恢复时通知开关，则会发送恢复告警通知。 **取值范围：** - 最小值为1 - 最大值为10
+     * @return recoveryPolicy
+     */
+    public Integer getRecoveryPolicy() {
+        return recoveryPolicy;
+    }
+
+    public void setRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+    }
+
+    public UpdateKeywordsAlarmRuleResponse withTags(List<TagsResBody> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public UpdateKeywordsAlarmRuleResponse addTagsItem(TagsResBody tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public UpdateKeywordsAlarmRuleResponse withTags(Consumer<List<TagsResBody>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。
+     * @return tags
+     */
+    public List<TagsResBody> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagsResBody> tags) {
+        this.tags = tags;
+    }
+
+    public UpdateKeywordsAlarmRuleResponse withTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警触发条件：满足条件次数。满足条件次数是指设置的关键词。 在统计周期次数内且满足条件次数时，可触发关键词告警。 **取值范围：** 不涉及。
+     * @return triggerConditionCount
+     */
+    public Integer getTriggerConditionCount() {
+        return triggerConditionCount;
+    }
+
+    public void setTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+    }
+
+    public UpdateKeywordsAlarmRuleResponse withTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警触发条件：统计周期次数。统计周期次数指高级设置的统计周期。 当在统计周期次数内且满足条件次数时，可触发关键词告警。 **取值范围：** - 最小值为1 - 最大值为10
+     * @return triggerConditionFrequency
+     */
+    public Integer getTriggerConditionFrequency() {
+        return triggerConditionFrequency;
+    }
+
+    public void setTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+    }
+
+    public UpdateKeywordsAlarmRuleResponse withWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否配置告警恢复策略。满足该策略时，会发送告警恢复通知。 **取值范围：** true：配置告警恢复策略。 false：不配置告警恢复策略。
+     * @return whetherRecoveryPolicy
+     */
+    public Boolean getWhetherRecoveryPolicy() {
+        return whetherRecoveryPolicy;
+    }
+
+    public void setWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -737,12 +711,14 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
             && Objects.equals(this.keywordsAlarmLevel, that.keywordsAlarmLevel)
             && Objects.equals(this.keywordsAlarmSend, that.keywordsAlarmSend)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.topics, that.topics)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
-            && Objects.equals(this.indexId, that.indexId)
             && Objects.equals(this.notificationFrequency, that.notificationFrequency)
-            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName);
+            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName)
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy);
     }
 
     @Override
@@ -758,13 +734,15 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
             domainId,
             createTime,
             updateTime,
-            language,
             projectId,
-            topics,
             conditionExpression,
-            indexId,
             notificationFrequency,
-            alarmActionRuleName);
+            alarmActionRuleName,
+            recoveryPolicy,
+            tags,
+            triggerConditionCount,
+            triggerConditionFrequency,
+            whetherRecoveryPolicy);
     }
 
     @Override
@@ -784,13 +762,15 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
-        sb.append("    indexId: ").append(toIndentedString(indexId)).append("\n");
         sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
         sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
+        sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    triggerConditionCount: ").append(toIndentedString(triggerConditionCount)).append("\n");
+        sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
+        sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

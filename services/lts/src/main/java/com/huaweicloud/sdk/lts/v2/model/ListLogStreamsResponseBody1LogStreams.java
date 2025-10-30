@@ -73,6 +73,11 @@ public class ListLogStreamsResponseBody1LogStreams {
 
     private String logGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_favorite")
+
+    private Boolean isFavorite;
+
     public ListLogStreamsResponseBody1LogStreams withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
         return this;
@@ -297,6 +302,23 @@ public class ListLogStreamsResponseBody1LogStreams {
         this.logGroupId = logGroupId;
     }
 
+    public ListLogStreamsResponseBody1LogStreams withIsFavorite(Boolean isFavorite) {
+        this.isFavorite = isFavorite;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否收藏日志流。 **取值范围：** - true：收藏日志流。 - false：不收藏日志流。
+     * @return isFavorite
+     */
+    public Boolean getIsFavorite() {
+        return isFavorite;
+    }
+
+    public void setIsFavorite(Boolean isFavorite) {
+        this.isFavorite = isFavorite;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -316,7 +338,7 @@ public class ListLogStreamsResponseBody1LogStreams {
             && Objects.equals(this.authWebTracking, that.authWebTracking)
             && Objects.equals(this.ttlInDays, that.ttlInDays)
             && Objects.equals(this.hotStorageDays, that.hotStorageDays)
-            && Objects.equals(this.logGroupId, that.logGroupId);
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.isFavorite, that.isFavorite);
     }
 
     @Override
@@ -332,7 +354,8 @@ public class ListLogStreamsResponseBody1LogStreams {
             authWebTracking,
             ttlInDays,
             hotStorageDays,
-            logGroupId);
+            logGroupId,
+            isFavorite);
     }
 
     @Override
@@ -351,6 +374,7 @@ public class ListLogStreamsResponseBody1LogStreams {
         sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
         sb.append("    hotStorageDays: ").append(toIndentedString(hotStorageDays)).append("\n");
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
+        sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
         sb.append("}");
         return sb.toString();
     }

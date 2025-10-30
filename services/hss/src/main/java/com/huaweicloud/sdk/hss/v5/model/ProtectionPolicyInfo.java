@@ -196,7 +196,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * **参数解释**: 防护文件类型，例如：docx，txt，avi **取值范围**: 字符长度1-128 
+     * **参数解释**: 需要防护的文件类型 **取值范围**: txt、csv、rtf、doc、docx、xls、xlsx、ppt、pptx、pdf、xml、json、sql、mdf、dbf、ldf、db、myd、wdb、si、cfs、cfe、fnm、fdx、fdt、tvx、tvf、tvd、tim、nvd、nvm、dvd、dvm、jpeg、bmp、gif、png、tiff、eps、mp3、mp4、avi、mpg、wmv、RMVB、mov、3pg、swf、flv、rar、gz、tgz、zip、7z、cpp、c、java、asp、php、python、html、js、vdi、vmdk、vdx、ovf、qcow2、vmem、vswp、img、bak、back、cer、crt、pem、key、csr 
      * @return protectionType
      */
     public String getProtectionType() {
@@ -352,7 +352,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * **参数解释**: 是否开启AI勒索防护，包含如下1种, 默认为开启AI勒索防护。   - opened ：开启。   - closed ：关闭。 **取值范围**: 字符长度1-128
+     * **参数解释**: 是否开启AI勒索防护 **取值范围**:   - opened ：开启。   - closed ：关闭。
      * @return aiProtectionStatus
      */
     public String getAiProtectionStatus() {

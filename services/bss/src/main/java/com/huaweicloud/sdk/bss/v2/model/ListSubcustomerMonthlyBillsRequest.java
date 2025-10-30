@@ -107,7 +107,7 @@ public class ListSubcustomerMonthlyBillsRequest {
     }
 
     /**
-     * 计费模式。1：包年/包月3：按需
+     * 计费模式。1：包年/包月；3：按需；11：节省计划|
      * @return chargeMode
      */
     public String getChargeMode() {

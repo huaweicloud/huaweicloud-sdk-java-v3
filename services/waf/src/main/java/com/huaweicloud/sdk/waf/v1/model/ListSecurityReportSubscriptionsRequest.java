@@ -131,7 +131,7 @@ public class ListSecurityReportSubscriptionsRequest {
     }
 
     /**
-     * **参数解释：** 分页查询的单页返回数量，控制每次请求返回的记录条数。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 1000
+     * **参数解释：** 分页查询的单页返回数量，控制每次请求返回的记录条数。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 10
      * @return limit
      */
     public Integer getLimit() {

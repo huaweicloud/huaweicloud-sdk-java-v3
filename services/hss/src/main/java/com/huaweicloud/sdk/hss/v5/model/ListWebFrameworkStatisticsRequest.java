@@ -26,14 +26,14 @@ public class ListWebFrameworkStatisticsRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_name")
-
-    private String fileName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
     private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_name")
+
+    private String fileName;
 
     public ListWebFrameworkStatisticsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -90,30 +90,13 @@ public class ListWebFrameworkStatisticsRequest {
         this.limit = limit;
     }
 
-    public ListWebFrameworkStatisticsRequest withFileName(String fileName) {
-        this.fileName = fileName;
-        return this;
-    }
-
-    /**
-     * 框架文件名称
-     * @return fileName
-     */
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
     public ListWebFrameworkStatisticsRequest withCategory(String category) {
         this.category = category;
         return this;
     }
 
     /**
-     * 返回的资产类别 - 0: 主机 - 1: 容器
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
      * @return category
      */
     public String getCategory() {
@@ -122,6 +105,23 @@ public class ListWebFrameworkStatisticsRequest {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public ListWebFrameworkStatisticsRequest withFileName(String fileName) {
+        this.fileName = fileName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 框架文件名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-256 **默认取值**: 不涉及 
+     * @return fileName
+     */
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     @Override
@@ -135,12 +135,12 @@ public class ListWebFrameworkStatisticsRequest {
         ListWebFrameworkStatisticsRequest that = (ListWebFrameworkStatisticsRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.category, that.category);
+            && Objects.equals(this.category, that.category) && Objects.equals(this.fileName, that.fileName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, offset, limit, fileName, category);
+        return Objects.hash(enterpriseProjectId, offset, limit, category, fileName);
     }
 
     @Override
@@ -150,8 +150,8 @@ public class ListWebFrameworkStatisticsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

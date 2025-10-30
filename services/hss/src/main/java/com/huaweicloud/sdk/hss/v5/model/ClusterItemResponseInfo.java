@@ -144,7 +144,7 @@ public class ClusterItemResponseInfo {
     }
 
     /**
-     * 集群防护状态 | - \"0\" unprotected - \"1\" plugin error - \"2\" protected with policy - \"3\" deploy policy failed - \"4\" protected without policy - \"5\" uninstall failed - \"6\" uninstall - \"7\" installing
+     * **参数解释**： 集群防护状态 **取值范围**: - unprotected：未受保护。 - plugin error：插件错误。 - protected with policy：受策略保护。 - deploy policy failed：部署策略失败。 - protected without policy：无策略保护。 - uninstall failed：卸载失败。 - uninstall：卸载。 - installing：正在安装。 
      * @return protectStatus
      */
     public String getProtectStatus() {

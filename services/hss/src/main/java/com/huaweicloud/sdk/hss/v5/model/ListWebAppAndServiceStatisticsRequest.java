@@ -26,14 +26,14 @@ public class ListWebAppAndServiceStatisticsRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
     private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalogue")
@@ -95,30 +95,13 @@ public class ListWebAppAndServiceStatisticsRequest {
         this.limit = limit;
     }
 
-    public ListWebAppAndServiceStatisticsRequest withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * WebAppAndService资产名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public ListWebAppAndServiceStatisticsRequest withCategory(String category) {
         this.category = category;
         return this;
     }
 
     /**
-     * 返回的资产类别 - 0: 主机 - 1: 容器
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
      * @return category
      */
     public String getCategory() {
@@ -129,13 +112,30 @@ public class ListWebAppAndServiceStatisticsRequest {
         this.category = category;
     }
 
+    public ListWebAppAndServiceStatisticsRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * **参数解释**: web应用，web服务或数据库名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-64 **默认取值**: 不涉及 
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ListWebAppAndServiceStatisticsRequest withCatalogue(String catalogue) {
         this.catalogue = catalogue;
         return this;
     }
 
     /**
-     * 资产类型 - web-app       web应用 - web-service   web服务 - database      数据库
+     * **参数解释**: 资产类型 **约束限制**: 不涉及 **取值范围**: - web-app：web应用 - web-service：web服务 - database：数据库  **默认取值**: 不涉及 
      * @return catalogue
      */
     public String getCatalogue() {
@@ -157,13 +157,13 @@ public class ListWebAppAndServiceStatisticsRequest {
         ListWebAppAndServiceStatisticsRequest that = (ListWebAppAndServiceStatisticsRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.name, that.name)
             && Objects.equals(this.catalogue, that.catalogue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, offset, limit, name, category, catalogue);
+        return Objects.hash(enterpriseProjectId, offset, limit, category, name, catalogue);
     }
 
     @Override
@@ -173,8 +173,8 @@ public class ListWebAppAndServiceStatisticsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    catalogue: ").append(toIndentedString(catalogue)).append("\n");
         sb.append("}");
         return sb.toString();

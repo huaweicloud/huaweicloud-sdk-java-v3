@@ -131,6 +131,8 @@ import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleRequest;
 import com.huaweicloud.sdk.rds.v3.model.ExecutePrivilegeDatabaseUserRoleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleRequest;
 import com.huaweicloud.sdk.rds.v3.model.ExecuteRevokeDatabaseUserRoleResponse;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionRequest;
@@ -197,8 +199,6 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesRequest;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
@@ -269,6 +269,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSmallVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSmallVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlStatisticsRequest;
@@ -3026,6 +3028,35 @@ public class RdsClient {
     public SyncInvoker<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse> listSlowlogStatisticsInvoker(
         ListSlowlogStatisticsRequest request) {
         return new SyncInvoker<>(request, RdsMeta.listSlowlogStatistics, hcClient);
+    }
+
+    /**
+     * 查询小版本号
+     *
+     * 查询小版本号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmallVersionRequest 请求对象
+     * @return ListSmallVersionResponse
+     */
+    public ListSmallVersionResponse listSmallVersion(ListSmallVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSmallVersion);
+    }
+
+    /**
+     * 查询小版本号
+     *
+     * 查询小版本号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmallVersionRequest 请求对象
+     * @return SyncInvoker<ListSmallVersionRequest, ListSmallVersionResponse>
+     */
+    public SyncInvoker<ListSmallVersionRequest, ListSmallVersionResponse> listSmallVersionInvoker(
+        ListSmallVersionRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listSmallVersion, hcClient);
     }
 
     /**
@@ -7201,11 +7232,11 @@ public class RdsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListInstancesNoIndexTablesRequest 请求对象
-     * @return ListInstancesNoIndexTablesResponse
+     * @param request GetInstancesNoIndexTablesRequest 请求对象
+     * @return GetInstancesNoIndexTablesResponse
      */
-    public ListInstancesNoIndexTablesResponse listInstancesNoIndexTables(ListInstancesNoIndexTablesRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.listInstancesNoIndexTables);
+    public GetInstancesNoIndexTablesResponse getInstancesNoIndexTables(GetInstancesNoIndexTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.getInstancesNoIndexTables);
     }
 
     /**
@@ -7215,12 +7246,12 @@ public class RdsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListInstancesNoIndexTablesRequest 请求对象
-     * @return SyncInvoker<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse>
+     * @param request GetInstancesNoIndexTablesRequest 请求对象
+     * @return SyncInvoker<GetInstancesNoIndexTablesRequest, GetInstancesNoIndexTablesResponse>
      */
-    public SyncInvoker<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse> listInstancesNoIndexTablesInvoker(
-        ListInstancesNoIndexTablesRequest request) {
-        return new SyncInvoker<>(request, RdsMeta.listInstancesNoIndexTables, hcClient);
+    public SyncInvoker<GetInstancesNoIndexTablesRequest, GetInstancesNoIndexTablesResponse> getInstancesNoIndexTablesInvoker(
+        GetInstancesNoIndexTablesRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.getInstancesNoIndexTables, hcClient);
     }
 
     /**

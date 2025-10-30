@@ -79,6 +79,9 @@ import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListAutoIncrementUsageRequest;
+import com.huaweicloud.sdk.das.v3.model.ListAutoIncrementUsageRequestBody;
+import com.huaweicloud.sdk.das.v3.model.ListAutoIncrementUsageResponse;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionsRequest;
@@ -132,6 +135,8 @@ import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
@@ -148,6 +153,7 @@ import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowRecommendSqlLimitRuleRequestBody;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExplainRequest;
@@ -1527,6 +1533,41 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAutoIncrementUsageRequest, ListAutoIncrementUsageResponse> listAutoIncrementUsage =
+        genForListAutoIncrementUsage();
+
+    private static HttpRequestDef<ListAutoIncrementUsageRequest, ListAutoIncrementUsageResponse> genForListAutoIncrementUsage() {
+        // basic
+        HttpRequestDef.Builder<ListAutoIncrementUsageRequest, ListAutoIncrementUsageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListAutoIncrementUsageRequest.class, ListAutoIncrementUsageResponse.class)
+            .withName("ListAutoIncrementUsage")
+            .withUri("/v3/{project_id}/instances/{instance_id}/list-auto-increment-usage")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoIncrementUsageRequest::getInstanceId,
+                ListAutoIncrementUsageRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoIncrementUsageRequest::getXLanguage,
+                ListAutoIncrementUsageRequest::setXLanguage));
+        builder.<ListAutoIncrementUsageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAutoIncrementUsageRequestBody.class),
+            f -> f.withMarshaller(ListAutoIncrementUsageRequest::getBody, ListAutoIncrementUsageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCloudDbaInstancesRequest, ListCloudDbaInstancesResponse> listCloudDbaInstances =
         genForListCloudDbaInstances();
 
@@ -2532,6 +2573,45 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiSetMetricCodeThresholdReq.class),
             f -> f.withMarshaller(SetThresholdForMetricRequest::getBody, SetThresholdForMetricRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDasRecommendSqlLimitRuleRequest, ShowDasRecommendSqlLimitRuleResponse> showDasRecommendSqlLimitRule =
+        genForShowDasRecommendSqlLimitRule();
+
+    private static HttpRequestDef<ShowDasRecommendSqlLimitRuleRequest, ShowDasRecommendSqlLimitRuleResponse> genForShowDasRecommendSqlLimitRule() {
+        // basic
+        HttpRequestDef.Builder<ShowDasRecommendSqlLimitRuleRequest, ShowDasRecommendSqlLimitRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowDasRecommendSqlLimitRuleRequest.class,
+                    ShowDasRecommendSqlLimitRuleResponse.class)
+                .withName("ShowDasRecommendSqlLimitRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/das-recommend-sql-limit-rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDasRecommendSqlLimitRuleRequest::getInstanceId,
+                ShowDasRecommendSqlLimitRuleRequest::setInstanceId));
+        builder.<ShowDasRecommendSqlLimitRuleRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowDasRecommendSqlLimitRuleRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowDasRecommendSqlLimitRuleRequest::getXLanguage,
+                ShowDasRecommendSqlLimitRuleRequest::setXLanguage));
+        builder.<ShowRecommendSqlLimitRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowRecommendSqlLimitRuleRequestBody.class),
+            f -> f.withMarshaller(ShowDasRecommendSqlLimitRuleRequest::getBody,
+                ShowDasRecommendSqlLimitRuleRequest::setBody));
 
         // response
 

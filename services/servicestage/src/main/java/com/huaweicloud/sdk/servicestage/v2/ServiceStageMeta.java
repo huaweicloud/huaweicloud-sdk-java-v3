@@ -26,8 +26,6 @@ import com.huaweicloud.sdk.servicestage.v2.model.ComponentCreate;
 import com.huaweicloud.sdk.servicestage.v2.model.ComponentModify;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateApplicationRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateApplicationResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateCamInstanceRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateCamInstanceResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateComponentRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateComponentResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateEnvironmentRequest;
@@ -48,9 +46,6 @@ import com.huaweicloud.sdk.servicestage.v2.model.CreateProjectRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateProjectResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.CreateTagResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateTemplate;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateTemplateRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteApplicationConfigurationRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteApplicationConfigurationResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteApplicationRequest;
@@ -65,16 +60,10 @@ import com.huaweicloud.sdk.servicestage.v2.model.DeleteFileRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteFileResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteHookRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteHookResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.DeleteInstanceByIdRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.DeleteInstanceByIdResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.DeleteTagResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.DeleteTemplateRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.DeleteTemplateResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.DeployInstanceRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.DeployInstanceResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.EnvironmentCreate;
 import com.huaweicloud.sdk.servicestage.v2.model.EnvironmentModify;
 import com.huaweicloud.sdk.servicestage.v2.model.EnvironmentResourceModify;
@@ -83,8 +72,6 @@ import com.huaweicloud.sdk.servicestage.v2.model.FileUpdate;
 import com.huaweicloud.sdk.servicestage.v2.model.HookCreate;
 import com.huaweicloud.sdk.servicestage.v2.model.InstanceAction;
 import com.huaweicloud.sdk.servicestage.v2.model.InstanceCreate;
-import com.huaweicloud.sdk.servicestage.v2.model.InstanceCreation;
-import com.huaweicloud.sdk.servicestage.v2.model.InstanceDeployment;
 import com.huaweicloud.sdk.servicestage.v2.model.InstanceModify;
 import com.huaweicloud.sdk.servicestage.v2.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.ListApplicationsResponse;
@@ -145,9 +132,6 @@ import com.huaweicloud.sdk.servicestage.v2.model.UpdateFileRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.UpdateFileResponse;
 import com.huaweicloud.sdk.servicestage.v2.model.UpdateInstanceActionRequest;
 import com.huaweicloud.sdk.servicestage.v2.model.UpdateInstanceActionResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.UpdateTemplateRequest;
-import com.huaweicloud.sdk.servicestage.v2.model.UpdateTemplateResponse;
-import com.huaweicloud.sdk.servicestage.v2.model.UpdateTemplates;
 
 @SuppressWarnings("unchecked")
 public class ServiceStageMeta {
@@ -371,29 +355,6 @@ public class ServiceStageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateCamInstanceRequest, CreateCamInstanceResponse> createCamInstance =
-        genForCreateCamInstance();
-
-    private static HttpRequestDef<CreateCamInstanceRequest, CreateCamInstanceResponse> genForCreateCamInstance() {
-        // basic
-        HttpRequestDef.Builder<CreateCamInstanceRequest, CreateCamInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateCamInstanceRequest.class, CreateCamInstanceResponse.class)
-                .withName("CreateCamInstance")
-                .withUri("/v1/{project_id}/instances")
-                .withContentType("application/json");
-
-        // requests
-        builder.<InstanceCreation>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(InstanceCreation.class),
-            f -> f.withMarshaller(CreateCamInstanceRequest::getBody, CreateCamInstanceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent =
         genForCreateComponent();
 
@@ -472,29 +433,6 @@ public class ServiceStageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(InstanceCreate.class),
             f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
-        genForCreateTemplate();
-
-    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForCreateTemplate() {
-        // basic
-        HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
-                .withName("CreateTemplate")
-                .withUri("/v1/{project_id}/templates")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateTemplate>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateTemplate.class),
-            f -> f.withMarshaller(CreateTemplateRequest::getBody, CreateTemplateRequest::setBody));
 
         // response
 
@@ -648,75 +586,6 @@ public class ServiceStageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getForce, DeleteInstanceRequest::setForce));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse> deleteInstanceById =
-        genForDeleteInstanceById();
-
-    private static HttpRequestDef<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse> genForDeleteInstanceById() {
-        // basic
-        HttpRequestDef.Builder<DeleteInstanceByIdRequest, DeleteInstanceByIdResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceByIdRequest.class, DeleteInstanceByIdResponse.class)
-                .withName("DeleteInstanceById")
-                .withUri("/v1/{project_id}/instances/{instance_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInstanceByIdRequest::getInstanceId, DeleteInstanceByIdRequest::setInstanceId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
-        genForDeleteTemplate();
-
-    private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genForDeleteTemplate() {
-        // basic
-        HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
-                .withName("DeleteTemplate")
-                .withUri("/v1/{project_id}/templates/{template_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("template_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTemplateRequest::getTemplateId, DeleteTemplateRequest::setTemplateId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeployInstanceRequest, DeployInstanceResponse> deployInstance =
-        genForDeployInstance();
-
-    private static HttpRequestDef<DeployInstanceRequest, DeployInstanceResponse> genForDeployInstance() {
-        // basic
-        HttpRequestDef.Builder<DeployInstanceRequest, DeployInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DeployInstanceRequest.class, DeployInstanceResponse.class)
-                .withName("DeployInstance")
-                .withUri("/v1/{project_id}/instance/deployments")
-                .withContentType("application/json");
-
-        // requests
-        builder.<InstanceDeployment>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(InstanceDeployment.class),
-            f -> f.withMarshaller(DeployInstanceRequest::getBody, DeployInstanceRequest::setBody));
 
         // response
 
@@ -1219,34 +1088,6 @@ public class ServiceStageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(InstanceAction.class),
             f -> f.withMarshaller(UpdateInstanceActionRequest::getBody, UpdateInstanceActionRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplate =
-        genForUpdateTemplate();
-
-    private static HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> genForUpdateTemplate() {
-        // basic
-        HttpRequestDef.Builder<UpdateTemplateRequest, UpdateTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateTemplateRequest.class, UpdateTemplateResponse.class)
-                .withName("UpdateTemplate")
-                .withUri("/v1/{project_id}/templates/{template_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("template_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateTemplateRequest::getTemplateId, UpdateTemplateRequest::setTemplateId));
-        builder.<UpdateTemplates>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(UpdateTemplates.class),
-            f -> f.withMarshaller(UpdateTemplateRequest::getBody, UpdateTemplateRequest::setBody));
 
         // response
 

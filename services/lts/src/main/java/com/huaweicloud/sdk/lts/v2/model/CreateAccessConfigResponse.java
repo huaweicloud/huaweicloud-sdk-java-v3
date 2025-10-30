@@ -175,6 +175,21 @@ public class CreateAccessConfigResponse extends SdkResponse {
     private List<Processor> processors = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_split_size")
+
+    private Integer logSplitSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recursive_depth")
+
+    private Integer recursiveDepth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_config_type_source")
+
+    private String accessConfigTypeSource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "application_id")
 
     private String applicationId;
@@ -556,6 +571,57 @@ public class CreateAccessConfigResponse extends SdkResponse {
         this.processors = processors;
     }
 
+    public CreateAccessConfigResponse withLogSplitSize(Integer logSplitSize) {
+        this.logSplitSize = logSplitSize;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 拆分日志大小。 **取值范围：** 不涉及。
+     * @return logSplitSize
+     */
+    public Integer getLogSplitSize() {
+        return logSplitSize;
+    }
+
+    public void setLogSplitSize(Integer logSplitSize) {
+        this.logSplitSize = logSplitSize;
+    }
+
+    public CreateAccessConfigResponse withRecursiveDepth(Integer recursiveDepth) {
+        this.recursiveDepth = recursiveDepth;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 采集路径递归最大深度。 **取值范围：** 不涉及。
+     * @return recursiveDepth
+     */
+    public Integer getRecursiveDepth() {
+        return recursiveDepth;
+    }
+
+    public void setRecursiveDepth(Integer recursiveDepth) {
+        this.recursiveDepth = recursiveDepth;
+    }
+
+    public CreateAccessConfigResponse withAccessConfigTypeSource(String accessConfigTypeSource) {
+        this.accessConfigTypeSource = accessConfigTypeSource;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 日志接入自建软件来源。 **取值范围：** - ECS - CCE - BMS - K8S - ServiceStageHost - ServiceStage
+     * @return accessConfigTypeSource
+     */
+    public String getAccessConfigTypeSource() {
+        return accessConfigTypeSource;
+    }
+
+    public void setAccessConfigTypeSource(String accessConfigTypeSource) {
+        this.accessConfigTypeSource = accessConfigTypeSource;
+    }
+
     public CreateAccessConfigResponse withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
@@ -645,6 +711,9 @@ public class CreateAccessConfigResponse extends SdkResponse {
             && Objects.equals(this.incrementalCollect, that.incrementalCollect)
             && Objects.equals(this.processorType, that.processorType) && Objects.equals(this.demoLog, that.demoLog)
             && Objects.equals(this.demoFields, that.demoFields) && Objects.equals(this.processors, that.processors)
+            && Objects.equals(this.logSplitSize, that.logSplitSize)
+            && Objects.equals(this.recursiveDepth, that.recursiveDepth)
+            && Objects.equals(this.accessConfigTypeSource, that.accessConfigTypeSource)
             && Objects.equals(this.applicationId, that.applicationId)
             && Objects.equals(this.environmentId, that.environmentId)
             && Objects.equals(this.componentId, that.componentId);
@@ -669,6 +738,9 @@ public class CreateAccessConfigResponse extends SdkResponse {
             demoLog,
             demoFields,
             processors,
+            logSplitSize,
+            recursiveDepth,
+            accessConfigTypeSource,
             applicationId,
             environmentId,
             componentId);
@@ -695,6 +767,9 @@ public class CreateAccessConfigResponse extends SdkResponse {
         sb.append("    demoLog: ").append(toIndentedString(demoLog)).append("\n");
         sb.append("    demoFields: ").append(toIndentedString(demoFields)).append("\n");
         sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+        sb.append("    logSplitSize: ").append(toIndentedString(logSplitSize)).append("\n");
+        sb.append("    recursiveDepth: ").append(toIndentedString(recursiveDepth)).append("\n");
+        sb.append("    accessConfigTypeSource: ").append(toIndentedString(accessConfigTypeSource)).append("\n");
         sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
         sb.append("    environmentId: ").append(toIndentedString(environmentId)).append("\n");
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");

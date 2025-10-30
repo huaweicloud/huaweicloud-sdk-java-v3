@@ -301,6 +301,11 @@ public class ResFeeRecordV2 {
 
     private String relativeOrderId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_name")
+
+    private String accountName;
+
     public ResFeeRecordV2 withBillDate(String billDate) {
         this.billDate = billDate;
         return this;
@@ -1287,6 +1292,23 @@ public class ResFeeRecordV2 {
         this.relativeOrderId = relativeOrderId;
     }
 
+    public ResFeeRecordV2 withAccountName(String accountName) {
+        this.accountName = accountName;
+        return this;
+    }
+
+    /**
+     * |参数名称：消费的客户登录名称。| |参数约束及描述：范围限制：0-128，如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户登录名称。 如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户登录名称。如果是企业主自己的消费记录，则为企业主的客户登录名称；如果是某个企业子客户的消费记录，则此处为企业子的客户登录名称。|
+     * @return accountName
+     */
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1339,7 +1361,8 @@ public class ResFeeRecordV2 {
             && Objects.equals(this.subResourceId, that.subResourceId)
             && Objects.equals(this.subResourceName, that.subResourceName)
             && Objects.equals(this.consumeTime, that.consumeTime)
-            && Objects.equals(this.relativeOrderId, that.relativeOrderId);
+            && Objects.equals(this.relativeOrderId, that.relativeOrderId)
+            && Objects.equals(this.accountName, that.accountName);
     }
 
     @Override
@@ -1401,7 +1424,8 @@ public class ResFeeRecordV2 {
             subResourceId,
             subResourceName,
             consumeTime,
-            relativeOrderId);
+            relativeOrderId,
+            accountName);
     }
 
     @Override
@@ -1466,6 +1490,7 @@ public class ResFeeRecordV2 {
         sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
         sb.append("    consumeTime: ").append(toIndentedString(consumeTime)).append("\n");
         sb.append("    relativeOrderId: ").append(toIndentedString(relativeOrderId)).append("\n");
+        sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

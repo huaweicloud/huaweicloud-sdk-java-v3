@@ -26,7 +26,7 @@ public class InstancePrepareProgressRspData {
     }
 
     /**
-     * 实例准备状态。0：正常，1：排队中，2：还原中，3：备份中，4：重置中，5：重启中，6：正常离线，-1：处理失败
+     * 实例准备状态。0：正常，1：排队中，2：还原中和离线，-1：处理失败，3：备份中
      * @return status
      */
     public Integer getStatus() {

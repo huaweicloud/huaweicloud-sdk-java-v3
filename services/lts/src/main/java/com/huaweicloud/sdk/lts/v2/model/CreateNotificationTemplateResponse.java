@@ -1,16 +1,11 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -39,85 +34,15 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
 
     private String source;
 
-    /**
-     * 语言，必填，目前可填zh-cn和en-us
-     */
-    public static final class LocaleEnum {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "templates")
 
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
-        public static final LocaleEnum ZH_CN = new LocaleEnum("zh-cn");
-
-        /**
-         * Enum EN_US for value: "en-us"
-         */
-        public static final LocaleEnum EN_US = new LocaleEnum("en-us");
-
-        private static final Map<String, LocaleEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, LocaleEnum> createStaticFields() {
-            Map<String, LocaleEnum> map = new HashMap<>();
-            map.put("zh-cn", ZH_CN);
-            map.put("en-us", EN_US);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        LocaleEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LocaleEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LocaleEnum(value));
-        }
-
-        public static LocaleEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof LocaleEnum) {
-                return this.value.equals(((LocaleEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private List<SubTemplateResBody> templates = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "locale")
 
-    private LocaleEnum locale;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "templates")
-
-    private List<SubTemplate> templates = null;
+    private String locale;
 
     public CreateNotificationTemplateResponse withName(String name) {
         this.name = name;
@@ -125,7 +50,7 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 通知规则名称，必填，只含有汉字、数字、字母、下划线、中划线，不能以下划线等特殊符号开头和结尾，长度为 1 - 100，创建后不可修改
+     * **参数解释：**  消息模板名称。 **取值范围：**  不涉及。
      * @return name
      */
     public String getName() {
@@ -158,7 +83,7 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 保留字段，非必填，只支持sms（短信），dingding（钉钉），wechat（企业微信），email（邮件）和webhook（网络钩子）
+     * **参数解释：**  消息通知方式。 **取值范围：**  - sms - dingding - wechat - webhook - email - voice - feishu - welink
      * @return type
      */
     public List<String> getType() {
@@ -175,7 +100,7 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 模板描述，必填，只含有汉字、数字、字母、下划线不能以下划线开头和结尾，长度为0--1024
+     * **参数解释：**  消息模板描述。 **取值范围：**  不涉及。
      * @return desc
      */
     public String getDesc() {
@@ -192,7 +117,7 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 模板来源，目前必填为LTS，否则会筛选不出来
+     * **参数解释：**  消息模板来源。 **取值范围：**  不涉及。
      * @return source
      */
     public String getSource() {
@@ -203,29 +128,12 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
         this.source = source;
     }
 
-    public CreateNotificationTemplateResponse withLocale(LocaleEnum locale) {
-        this.locale = locale;
-        return this;
-    }
-
-    /**
-     * 语言，必填，目前可填zh-cn和en-us
-     * @return locale
-     */
-    public LocaleEnum getLocale() {
-        return locale;
-    }
-
-    public void setLocale(LocaleEnum locale) {
-        this.locale = locale;
-    }
-
-    public CreateNotificationTemplateResponse withTemplates(List<SubTemplate> templates) {
+    public CreateNotificationTemplateResponse withTemplates(List<SubTemplateResBody> templates) {
         this.templates = templates;
         return this;
     }
 
-    public CreateNotificationTemplateResponse addTemplatesItem(SubTemplate templatesItem) {
+    public CreateNotificationTemplateResponse addTemplatesItem(SubTemplateResBody templatesItem) {
         if (this.templates == null) {
             this.templates = new ArrayList<>();
         }
@@ -233,7 +141,7 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
         return this;
     }
 
-    public CreateNotificationTemplateResponse withTemplates(Consumer<List<SubTemplate>> templatesSetter) {
+    public CreateNotificationTemplateResponse withTemplates(Consumer<List<SubTemplateResBody>> templatesSetter) {
         if (this.templates == null) {
             this.templates = new ArrayList<>();
         }
@@ -242,15 +150,32 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 模板正文，为一个数组
+     * **参数解释：**  不同通知渠道下消息模板的详细信息。
      * @return templates
      */
-    public List<SubTemplate> getTemplates() {
+    public List<SubTemplateResBody> getTemplates() {
         return templates;
     }
 
-    public void setTemplates(List<SubTemplate> templates) {
+    public void setTemplates(List<SubTemplateResBody> templates) {
         this.templates = templates;
+    }
+
+    public CreateNotificationTemplateResponse withLocale(String locale) {
+        this.locale = locale;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  消息头语言，系统在发送消息时会默认添加消息头，中文如：“尊敬的用户...”；英文如：“Dear User...”。 **取值范围：**  - zh-cn - en-us
+     * @return locale
+     */
+    public String getLocale() {
+        return locale;
+    }
+
+    public void setLocale(String locale) {
+        this.locale = locale;
     }
 
     @Override
@@ -264,12 +189,12 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
         CreateNotificationTemplateResponse that = (CreateNotificationTemplateResponse) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.desc, that.desc) && Objects.equals(this.source, that.source)
-            && Objects.equals(this.locale, that.locale) && Objects.equals(this.templates, that.templates);
+            && Objects.equals(this.templates, that.templates) && Objects.equals(this.locale, that.locale);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, desc, source, locale, templates);
+        return Objects.hash(name, type, desc, source, templates, locale);
     }
 
     @Override
@@ -280,8 +205,8 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
-        sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
         sb.append("    templates: ").append(toIndentedString(templates)).append("\n");
+        sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
         sb.append("}");
         return sb.toString();
     }

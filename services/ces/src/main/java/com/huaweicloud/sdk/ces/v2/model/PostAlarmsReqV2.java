@@ -46,7 +46,7 @@ public class PostAlarmsReqV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    private List<Policy> policies = null;
+    private List<AlarmRulePolicy> policies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -284,12 +284,12 @@ public class PostAlarmsReqV2 {
         this.resources = resources;
     }
 
-    public PostAlarmsReqV2 withPolicies(List<Policy> policies) {
+    public PostAlarmsReqV2 withPolicies(List<AlarmRulePolicy> policies) {
         this.policies = policies;
         return this;
     }
 
-    public PostAlarmsReqV2 addPoliciesItem(Policy policiesItem) {
+    public PostAlarmsReqV2 addPoliciesItem(AlarmRulePolicy policiesItem) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -297,7 +297,7 @@ public class PostAlarmsReqV2 {
         return this;
     }
 
-    public PostAlarmsReqV2 withPolicies(Consumer<List<Policy>> policiesSetter) {
+    public PostAlarmsReqV2 withPolicies(Consumer<List<AlarmRulePolicy>> policiesSetter) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -309,11 +309,11 @@ public class PostAlarmsReqV2 {
      * **参数解释**： 告警策略。 **约束限制**： 当alarm_template_id字段为空时必填，不为空时不填。最多包含50个策略。 
      * @return policies
      */
-    public List<Policy> getPolicies() {
+    public List<AlarmRulePolicy> getPolicies() {
         return policies;
     }
 
-    public void setPolicies(List<Policy> policies) {
+    public void setPolicies(List<AlarmRulePolicy> policies) {
         this.policies = policies;
     }
 

@@ -180,6 +180,8 @@ import com.huaweicloud.sdk.rds.v3.model.FailoverRequest;
 import com.huaweicloud.sdk.rds.v3.model.FailoverStrategyRequest;
 import com.huaweicloud.sdk.rds.v3.model.FollowerMigrateRequest;
 import com.huaweicloud.sdk.rds.v3.model.GenerateAuditlogDownloadLinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.GrantRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRestartRequsetBody;
@@ -249,8 +251,6 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesRequest;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
@@ -322,6 +322,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSmallVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSmallVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlStatisticsRequest;
@@ -3816,6 +3818,44 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(ListSlowlogStatisticsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListSlowlogStatisticsRequest::getXLanguage,
                 ListSlowlogStatisticsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSmallVersionRequest, ListSmallVersionResponse> listSmallVersion =
+        genForListSmallVersion();
+
+    private static HttpRequestDef<ListSmallVersionRequest, ListSmallVersionResponse> genForListSmallVersion() {
+        // basic
+        HttpRequestDef.Builder<ListSmallVersionRequest, ListSmallVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSmallVersionRequest.class, ListSmallVersionResponse.class)
+                .withName("ListSmallVersion")
+                .withUri("/v3/{project_id}/datastores/{database_name}/small-version")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmallVersionRequest::getDatabaseName, ListSmallVersionRequest::setDatabaseName));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmallVersionRequest::getVersion, ListSmallVersionRequest::setVersion));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmallVersionRequest::getOffset, ListSmallVersionRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmallVersionRequest::getLimit, ListSmallVersionRequest::setLimit));
 
         // response
 
@@ -8688,17 +8728,17 @@ public class RdsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse> listInstancesNoIndexTables =
-        genForListInstancesNoIndexTables();
+    public static final HttpRequestDef<GetInstancesNoIndexTablesRequest, GetInstancesNoIndexTablesResponse> getInstancesNoIndexTables =
+        genForGetInstancesNoIndexTables();
 
-    private static HttpRequestDef<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse> genForListInstancesNoIndexTables() {
+    private static HttpRequestDef<GetInstancesNoIndexTablesRequest, GetInstancesNoIndexTablesResponse> genForGetInstancesNoIndexTables() {
         // basic
-        HttpRequestDef.Builder<ListInstancesNoIndexTablesRequest, ListInstancesNoIndexTablesResponse> builder =
+        HttpRequestDef.Builder<GetInstancesNoIndexTablesRequest, GetInstancesNoIndexTablesResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.GET,
-                    ListInstancesNoIndexTablesRequest.class,
-                    ListInstancesNoIndexTablesResponse.class)
-                .withName("ListInstancesNoIndexTables")
+                    GetInstancesNoIndexTablesRequest.class,
+                    GetInstancesNoIndexTablesResponse.class)
+                .withName("GetInstancesNoIndexTables")
                 .withUri("/v3/{project_id}/instances/{instance_id}/no-index-tables")
                 .withContentType("application/json");
 
@@ -8707,20 +8747,20 @@ public class RdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesNoIndexTablesRequest::getInstanceId,
-                ListInstancesNoIndexTablesRequest::setInstanceId));
+            f -> f.withMarshaller(GetInstancesNoIndexTablesRequest::getInstanceId,
+                GetInstancesNoIndexTablesRequest::setInstanceId));
         builder.<Boolean>withRequestField("newest",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListInstancesNoIndexTablesRequest::getNewest,
-                ListInstancesNoIndexTablesRequest::setNewest));
+            f -> f.withMarshaller(GetInstancesNoIndexTablesRequest::getNewest,
+                GetInstancesNoIndexTablesRequest::setNewest));
         builder.<String>withRequestField("table_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesNoIndexTablesRequest::getTableType,
-                ListInstancesNoIndexTablesRequest::setTableType));
+            f -> f.withMarshaller(GetInstancesNoIndexTablesRequest::getTableType,
+                GetInstancesNoIndexTablesRequest::setTableType));
 
         // response
 

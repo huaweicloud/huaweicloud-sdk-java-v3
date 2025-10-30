@@ -65,6 +65,11 @@ public class PolicyoODCreate {
 
     private Integer fullBackupInterval;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cross_account_urn")
+
+    private String crossAccountUrn;
+
     public PolicyoODCreate withDayBackups(Integer dayBackups) {
         this.dayBackups = dayBackups;
         return this;
@@ -264,6 +269,23 @@ public class PolicyoODCreate {
         this.fullBackupInterval = fullBackupInterval;
     }
 
+    public PolicyoODCreate withCrossAccountUrn(String crossAccountUrn) {
+        this.crossAccountUrn = crossAccountUrn;
+        return this;
+    }
+
+    /**
+     * 跨账户复制策略所关联的跨账户复制存储库标识
+     * @return crossAccountUrn
+     */
+    public String getCrossAccountUrn() {
+        return crossAccountUrn;
+    }
+
+    public void setCrossAccountUrn(String crossAccountUrn) {
+        this.crossAccountUrn = crossAccountUrn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -281,7 +303,8 @@ public class PolicyoODCreate {
             && Objects.equals(this.retentionDurationDays, that.retentionDurationDays)
             && Objects.equals(this.timezone, that.timezone) && Objects.equals(this.weekBackups, that.weekBackups)
             && Objects.equals(this.yearBackups, that.yearBackups)
-            && Objects.equals(this.fullBackupInterval, that.fullBackupInterval);
+            && Objects.equals(this.fullBackupInterval, that.fullBackupInterval)
+            && Objects.equals(this.crossAccountUrn, that.crossAccountUrn);
     }
 
     @Override
@@ -296,7 +319,8 @@ public class PolicyoODCreate {
             timezone,
             weekBackups,
             yearBackups,
-            fullBackupInterval);
+            fullBackupInterval,
+            crossAccountUrn);
     }
 
     @Override
@@ -314,6 +338,7 @@ public class PolicyoODCreate {
         sb.append("    weekBackups: ").append(toIndentedString(weekBackups)).append("\n");
         sb.append("    yearBackups: ").append(toIndentedString(yearBackups)).append("\n");
         sb.append("    fullBackupInterval: ").append(toIndentedString(fullBackupInterval)).append("\n");
+        sb.append("    crossAccountUrn: ").append(toIndentedString(crossAccountUrn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

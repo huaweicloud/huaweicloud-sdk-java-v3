@@ -26,7 +26,7 @@ public class ChangePolicyGroupRequestInfo {
     }
 
     /**
-     * **参数解释**: 需要修改的的策略组的策略组ID **约束限制**: 需要使用 ListPolicyGroup 接口查询策略组ID，在 ListPolicyGroup 接口的响应体中返回的 group_id 是可以被修改的策略组ID **取值范围**: 字符长度36-64 **默认取值**: 不涉及
+     * **参数解释**: 需要修改的策略组ID **约束限制**: 需要使用 ListPolicyGroup 接口查询策略组ID，在 ListPolicyGroup 接口的响应体中返回的 group_id 是可以被修改的策略组ID **取值范围**: 字符长度36-64 **默认取值**: 不涉及
      * @return groupId
      */
     public String getGroupId() {

@@ -89,7 +89,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 漏洞名称
+     * **参数解释**： 漏洞名称 **取值范围**： 字符长度0-128位 
      * @return vulName
      */
     public String getVulName() {
@@ -106,7 +106,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 漏洞ID
+     * **参数解释**： 漏洞ID **取值范围**： 字符长度0-128位 
      * @return vulId
      */
     public String getVulId() {
@@ -123,7 +123,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 漏洞类型，包含如下：   -linux_vul : linux漏洞   -app_vul : 应用漏洞
+     * **参数解释**： 漏洞类型 **约束限制**: 不涉及 **取值范围**： - linux_vul：linux漏洞 - app_vul：应用漏洞 **默认取值**: 不涉及 
      * @return type
      */
     public String getType() {
@@ -140,7 +140,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 镜像类型，包含如下：   -local : 本地镜像   -registry : 仓库镜像   -cicd : CI/CD镜像   -cluster : 集群镜像
+     * **参数解释**： 镜像类型 **约束限制**: 不涉及 **取值范围**： - local：本地镜像 - registry：仓库镜像 - cicd：CI/CD镜像 - cluster：集群镜像 **默认取值**: 不涉及 
      * @return imageType
      */
     public String getImageType() {
@@ -173,7 +173,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 漏洞标签列表
+     * **参数解释**： 漏洞标签列表 **取值范围**： 最小值0，最大值10 
      * @return labelList
      */
     public List<String> getLabelList() {
@@ -190,7 +190,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 漏洞的风险程度，取值如下：  -Critical : 严重  -High : 高危  -Medium : 中危  -Low : 低危
+     * **参数解释**： 漏洞的风险程度 **约束限制**: 不涉及 **取值范围**： - Critical：严重 - High：高危 - Medium：中危 - Low：低危 **默认取值**: 不涉及 
      * @return severityLevel
      */
     public String getSeverityLevel() {
@@ -207,7 +207,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 受影响镜像总数
+     * **参数解释**： 受影响镜像总数 **取值范围**： 字符长度0-2147483547位 
      * minimum: 0
      * maximum: 2147483547
      * @return imageNum
@@ -242,7 +242,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * CVE列表
+     * **参数解释**： CVE列表 **取值范围**： 最小值0，最大值10000 
      * @return cveList
      */
     public List<GeneralImageVulsResponseInfoCveList> getCveList() {
@@ -259,7 +259,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 镜像最大CVSS分值
+     * **参数解释**： 镜像最大CVSS分值 **取值范围**： 字符长度0-10位 
      * minimum: 0
      * maximum: 1E+1
      * @return maxCvssScore
@@ -278,7 +278,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 最近扫描时间，时间单位：毫秒（ms）
+     * **参数解释**： 最近扫描时间，时间单位：毫秒（ms） **取值范围**： 字符长度0-4070880000000位 
      * minimum: 0
      * maximum: 4070880000000
      * @return scanTime
@@ -297,7 +297,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 漏洞描述
+     * **参数解释**： 漏洞描述 **取值范围**： 字符长度0-128位 
      * @return description
      */
     public String getDescription() {
@@ -314,7 +314,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 漏洞修复参考链接
+     * **参数解释**： 漏洞修复参考链接 **取值范围**： 字符长度0-128位 
      * @return url
      */
     public String getUrl() {
@@ -331,7 +331,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 修复建议
+     * **参数解释**： 修复建议 **取值范围**： 字符长度0-128位 
      * @return solutionDetail
      */
     public String getSolutionDetail() {
@@ -348,7 +348,7 @@ public class GeneralImageVulsResponseInfo {
     }
 
     /**
-     * 受影响集群总数
+     * **参数解释**： 受影响集群总数 **取值范围**： 字符长度0-2147483547位 
      * minimum: 0
      * maximum: 2147483547
      * @return clusterNum

@@ -48,7 +48,7 @@ public class ShowLatestExportTaskByTypeRequest {
     }
 
     /**
-     * 导出任务类型
+     * **参数解释**: 导出任务类型 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return exportTaskType
      */
     public String getExportTaskType() {
@@ -65,7 +65,7 @@ public class ShowLatestExportTaskByTypeRequest {
     }
 
     /**
-     * 导出任务ID
+     * **参数解释**: 导出任务ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return taskId
      */
     public String getTaskId() {

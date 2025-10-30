@@ -91,7 +91,7 @@ public class ListKernelModuleStatisticsRequest {
     }
 
     /**
-     * 内核模块名称
+     * **参数解释**: 内核模块名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256 **默认取值**: 不涉及 
      * @return name
      */
     public String getName() {

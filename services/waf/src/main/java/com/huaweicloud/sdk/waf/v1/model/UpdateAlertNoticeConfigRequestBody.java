@@ -103,7 +103,7 @@ public class UpdateAlertNoticeConfigRequestBody {
     }
 
     /**
-     * 主题URN，通过消息通知服务获取
+     * 主题URN，通过消息通知服务获取，查询可使用的主题，通过 云日志服务的“查询SMN主题”接口，返回体中的\"topic_urn\"字段
      * @return topicUrn
      */
     public String getTopicUrn() {

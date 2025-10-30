@@ -30,7 +30,7 @@ public class ListImageFilesResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 总数 **取值范围**: 字符长度1-65535 
      * minimum: 0
      * maximum: 65535
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListImageFilesResponse extends SdkResponse {
     }
 
     /**
-     * 列表
+     * **参数解释**: 列表 **取值范围**: 最小值0，最大值10000 
      * @return dataList
      */
     public List<ImageFileInfo> getDataList() {

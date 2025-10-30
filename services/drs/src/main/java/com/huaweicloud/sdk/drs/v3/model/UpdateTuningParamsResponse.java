@@ -177,7 +177,7 @@ public class UpdateTuningParamsResponse extends SdkResponse {
     }
 
     /**
-     * 参数修改是否成功
+     * 参数修改是否成功，查询参数时不返回该字段。
      * @return modifyResult
      */
     public String getModifyResult() {

@@ -25,6 +25,16 @@ public class ListTemplateVersionsRequest {
 
     private String templateId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListTemplateVersionsRequest withClientRequestId(String clientRequestId) {
         this.clientRequestId = clientRequestId;
         return this;
@@ -76,6 +86,42 @@ public class ListTemplateVersionsRequest {
         this.templateId = templateId;
     }
 
+    public ListTemplateVersionsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页标记。当一页无法返回所有结果，上一次的请求将返回next_marker以指引还有更多页数，用户可以将next_marker中的值放到此处以查询下一页的信息。此marker只能用于与上一请求指定的相同参数的请求。不指定时默认从第一页开始查询。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListTemplateVersionsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的最多结果数量
+     * minimum: 10
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +132,13 @@ public class ListTemplateVersionsRequest {
         }
         ListTemplateVersionsRequest that = (ListTemplateVersionsRequest) obj;
         return Objects.equals(this.clientRequestId, that.clientRequestId)
-            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.templateId, that.templateId);
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientRequestId, templateName, templateId);
+        return Objects.hash(clientRequestId, templateName, templateId, marker, limit);
     }
 
     @Override
@@ -101,6 +148,8 @@ public class ListTemplateVersionsRequest {
         sb.append("    clientRequestId: ").append(toIndentedString(clientRequestId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

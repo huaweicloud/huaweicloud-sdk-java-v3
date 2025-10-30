@@ -41,7 +41,9 @@ import com.huaweicloud.sdk.koophone.v1.model.InstanceCreateReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceDeleteRequest;
 import com.huaweicloud.sdk.koophone.v1.model.InstancePrepareProgressReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceResetReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceSessionReleaseReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceStatusReq;
+import com.huaweicloud.sdk.koophone.v1.model.InstanceStreamingStopReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceSyncCommandsReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceUnassignReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceVideoSettingReq;
@@ -53,6 +55,10 @@ import com.huaweicloud.sdk.koophone.v1.model.SetVideoRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ShowProgressRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ShowProgressResponse;
+import com.huaweicloud.sdk.koophone.v1.model.StopInstancesSessionRequest;
+import com.huaweicloud.sdk.koophone.v1.model.StopInstancesSessionResponse;
+import com.huaweicloud.sdk.koophone.v1.model.StopInstancesStreamingRequest;
+import com.huaweicloud.sdk.koophone.v1.model.StopInstancesStreamingResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceResponse;
 
@@ -476,6 +482,64 @@ public class KooPhoneMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstancePrepareProgressReq.class),
             f -> f.withMarshaller(ShowProgressRequest::getBody, ShowProgressRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopInstancesSessionRequest, StopInstancesSessionResponse> stopInstancesSession =
+        genForStopInstancesSession();
+
+    private static HttpRequestDef<StopInstancesSessionRequest, StopInstancesSessionResponse> genForStopInstancesSession() {
+        // basic
+        HttpRequestDef.Builder<StopInstancesSessionRequest, StopInstancesSessionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StopInstancesSessionRequest.class, StopInstancesSessionResponse.class)
+            .withName("StopInstancesSession")
+            .withUri("/v1/instances/session/release")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopInstancesSessionRequest::getXRequestId,
+                StopInstancesSessionRequest::setXRequestId));
+        builder.<InstanceSessionReleaseReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceSessionReleaseReq.class),
+            f -> f.withMarshaller(StopInstancesSessionRequest::getBody, StopInstancesSessionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopInstancesStreamingRequest, StopInstancesStreamingResponse> stopInstancesStreaming =
+        genForStopInstancesStreaming();
+
+    private static HttpRequestDef<StopInstancesStreamingRequest, StopInstancesStreamingResponse> genForStopInstancesStreaming() {
+        // basic
+        HttpRequestDef.Builder<StopInstancesStreamingRequest, StopInstancesStreamingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StopInstancesStreamingRequest.class, StopInstancesStreamingResponse.class)
+            .withName("StopInstancesStreaming")
+            .withUri("/v1/instances/streaming/stop")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopInstancesStreamingRequest::getXRequestId,
+                StopInstancesStreamingRequest::setXRequestId));
+        builder.<InstanceStreamingStopReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceStreamingStopReq.class),
+            f -> f.withMarshaller(StopInstancesStreamingRequest::getBody, StopInstancesStreamingRequest::setBody));
 
         // response
 

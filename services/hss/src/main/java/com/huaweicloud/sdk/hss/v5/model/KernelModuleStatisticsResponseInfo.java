@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 内核模块统计信息列表
+ * **参数解释** 内核模块统计信息列表 
  */
 public class KernelModuleStatisticsResponseInfo {
 
@@ -26,7 +26,7 @@ public class KernelModuleStatisticsResponseInfo {
     }
 
     /**
-     * 内核模块名称
+     * **参数解释**: 内核模块名称 **取值范围**: 字符长度0-256 
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class KernelModuleStatisticsResponseInfo {
     }
 
     /**
-     * 内核模块统计信息总数
+     * **参数解释** 内核模块统计信息总数 **取值范围** 最小值0，最大值300000 
      * minimum: 0
      * maximum: 300000
      * @return num

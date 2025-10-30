@@ -18,6 +18,9 @@ public class CocRegion {
 
     public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3", "https://coc-intl.myhuaweicloud.com");
 
+    public static final Region EU_WEST_101 =
+        new Region("eu-west-101", "https://coc-eu-west-101-open-api.myhuaweicloud.eu");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("COC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -26,6 +29,7 @@ public class CocRegion {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

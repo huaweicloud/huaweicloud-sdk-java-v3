@@ -37,6 +37,10 @@ import com.huaweicloud.sdk.koophone.v1.model.SetVideoRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SetVideoResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ShowProgressRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ShowProgressResponse;
+import com.huaweicloud.sdk.koophone.v1.model.StopInstancesSessionRequest;
+import com.huaweicloud.sdk.koophone.v1.model.StopInstancesSessionResponse;
+import com.huaweicloud.sdk.koophone.v1.model.StopInstancesStreamingRequest;
+import com.huaweicloud.sdk.koophone.v1.model.StopInstancesStreamingResponse;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceRequest;
 import com.huaweicloud.sdk.koophone.v1.model.SyncInvokeInstanceResponse;
 
@@ -610,6 +614,66 @@ public class KooPhoneAsyncClient {
     public AsyncInvoker<ShowProgressRequest, ShowProgressResponse> showProgressAsyncInvoker(
         ShowProgressRequest request) {
         return new AsyncInvoker<>(request, KooPhoneMeta.showProgress, hcClient);
+    }
+
+    /**
+     * 实例释放会话
+     *
+     * 串流停止后会话还会存续一段时间，此接口可提供释放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInstancesSessionRequest 请求对象
+     * @return CompletableFuture<StopInstancesSessionResponse>
+     */
+    public CompletableFuture<StopInstancesSessionResponse> stopInstancesSessionAsync(
+        StopInstancesSessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.stopInstancesSession);
+    }
+
+    /**
+     * 实例释放会话
+     *
+     * 串流停止后会话还会存续一段时间，此接口可提供释放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInstancesSessionRequest 请求对象
+     * @return AsyncInvoker<StopInstancesSessionRequest, StopInstancesSessionResponse>
+     */
+    public AsyncInvoker<StopInstancesSessionRequest, StopInstancesSessionResponse> stopInstancesSessionAsyncInvoker(
+        StopInstancesSessionRequest request) {
+        return new AsyncInvoker<>(request, KooPhoneMeta.stopInstancesSession, hcClient);
+    }
+
+    /**
+     * 实例停止串流
+     *
+     * 停止实例串流，若不在串流中的实例则无效果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInstancesStreamingRequest 请求对象
+     * @return CompletableFuture<StopInstancesStreamingResponse>
+     */
+    public CompletableFuture<StopInstancesStreamingResponse> stopInstancesStreamingAsync(
+        StopInstancesStreamingRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooPhoneMeta.stopInstancesStreaming);
+    }
+
+    /**
+     * 实例停止串流
+     *
+     * 停止实例串流，若不在串流中的实例则无效果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInstancesStreamingRequest 请求对象
+     * @return AsyncInvoker<StopInstancesStreamingRequest, StopInstancesStreamingResponse>
+     */
+    public AsyncInvoker<StopInstancesStreamingRequest, StopInstancesStreamingResponse> stopInstancesStreamingAsyncInvoker(
+        StopInstancesStreamingRequest request) {
+        return new AsyncInvoker<>(request, KooPhoneMeta.stopInstancesStreaming, hcClient);
     }
 
     /**

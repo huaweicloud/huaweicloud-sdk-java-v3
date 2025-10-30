@@ -29,7 +29,7 @@ public class ModifyLoginCommonLocationRequestBody {
     }
 
     /**
-     * 国家城市的编码
+     * **参数解释**： 国家城市的编码 **取值范围**： 字符长度1-32位 
      * @return areaCode
      */
     public Integer getAreaCode() {
@@ -62,7 +62,7 @@ public class ModifyLoginCommonLocationRequestBody {
     }
 
     /**
-     * 服务器列表
+     * **参数解释**: 服务器列表 **取值范围**: 最小值0，最大值100 
      * @return hostIdList
      */
     public List<String> getHostIdList() {

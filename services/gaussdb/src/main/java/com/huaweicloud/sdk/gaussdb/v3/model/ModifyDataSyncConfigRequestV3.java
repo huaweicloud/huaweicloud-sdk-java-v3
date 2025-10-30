@@ -53,6 +53,21 @@ public class ModifyDataSyncConfigRequestV3 {
 
     private String targetDatabaseName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_instance_level_sync")
+
+    private String isInstanceLevelSync;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_repl_scope")
+
+    private String databaseReplScope;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_reg_exp")
+
+    private String isSupportRegExp;
+
     public ModifyDataSyncConfigRequestV3 withSourceInstanceId(String sourceInstanceId) {
         this.sourceInstanceId = sourceInstanceId;
         return this;
@@ -230,6 +245,57 @@ public class ModifyDataSyncConfigRequestV3 {
         this.targetDatabaseName = targetDatabaseName;
     }
 
+    public ModifyDataSyncConfigRequestV3 withIsInstanceLevelSync(String isInstanceLevelSync) {
+        this.isInstanceLevelSync = isInstanceLevelSync;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  是否支持实例级同步。  **约束限制**：  不涉及。  **取值范围**：  - true：是。 - false：否。  **默认取值**：  false。
+     * @return isInstanceLevelSync
+     */
+    public String getIsInstanceLevelSync() {
+        return isInstanceLevelSync;
+    }
+
+    public void setIsInstanceLevelSync(String isInstanceLevelSync) {
+        this.isInstanceLevelSync = isInstanceLevelSync;
+    }
+
+    public ModifyDataSyncConfigRequestV3 withDatabaseReplScope(String databaseReplScope) {
+        this.databaseReplScope = databaseReplScope;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  库同步范围。  **约束限制**：  不涉及。  **取值范围**：  - all：同步全部库。 - part：同步部分库。  **默认取值**：  part。
+     * @return databaseReplScope
+     */
+    public String getDatabaseReplScope() {
+        return databaseReplScope;
+    }
+
+    public void setDatabaseReplScope(String databaseReplScope) {
+        this.databaseReplScope = databaseReplScope;
+    }
+
+    public ModifyDataSyncConfigRequestV3 withIsSupportRegExp(String isSupportRegExp) {
+        this.isSupportRegExp = isSupportRegExp;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  是否支持通配符。  **约束限制**：  不涉及。  **取值范围**：  - true：支持通配符。 - false：不支持通配符。  **默认取值**：  false。
+     * @return isSupportRegExp
+     */
+    public String getIsSupportRegExp() {
+        return isSupportRegExp;
+    }
+
+    public void setIsSupportRegExp(String isSupportRegExp) {
+        this.isSupportRegExp = isSupportRegExp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,7 +311,10 @@ public class ModifyDataSyncConfigRequestV3 {
             && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.dbConfigs, that.dbConfigs)
             && Objects.equals(this.tablesConfigs, that.tablesConfigs)
             && Objects.equals(this.tableReplConfig, that.tableReplConfig)
-            && Objects.equals(this.targetDatabaseName, that.targetDatabaseName);
+            && Objects.equals(this.targetDatabaseName, that.targetDatabaseName)
+            && Objects.equals(this.isInstanceLevelSync, that.isInstanceLevelSync)
+            && Objects.equals(this.databaseReplScope, that.databaseReplScope)
+            && Objects.equals(this.isSupportRegExp, that.isSupportRegExp);
     }
 
     @Override
@@ -257,7 +326,10 @@ public class ModifyDataSyncConfigRequestV3 {
             dbConfigs,
             tablesConfigs,
             tableReplConfig,
-            targetDatabaseName);
+            targetDatabaseName,
+            isInstanceLevelSync,
+            databaseReplScope,
+            isSupportRegExp);
     }
 
     @Override
@@ -272,6 +344,9 @@ public class ModifyDataSyncConfigRequestV3 {
         sb.append("    tablesConfigs: ").append(toIndentedString(tablesConfigs)).append("\n");
         sb.append("    tableReplConfig: ").append(toIndentedString(tableReplConfig)).append("\n");
         sb.append("    targetDatabaseName: ").append(toIndentedString(targetDatabaseName)).append("\n");
+        sb.append("    isInstanceLevelSync: ").append(toIndentedString(isInstanceLevelSync)).append("\n");
+        sb.append("    databaseReplScope: ").append(toIndentedString(databaseReplScope)).append("\n");
+        sb.append("    isSupportRegExp: ").append(toIndentedString(isSupportRegExp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

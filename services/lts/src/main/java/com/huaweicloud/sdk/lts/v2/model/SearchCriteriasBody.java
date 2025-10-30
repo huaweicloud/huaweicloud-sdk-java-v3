@@ -28,6 +28,11 @@ public class SearchCriteriasBody {
 
     private String logStreamName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search_type")
+
+    private String searchType;
+
     public SearchCriteriasBody withCriterias(List<GetQuerySearchCriteriasBody> criterias) {
         this.criterias = criterias;
         return this;
@@ -95,6 +100,23 @@ public class SearchCriteriasBody {
         this.logStreamName = logStreamName;
     }
 
+    public SearchCriteriasBody withSearchType(String searchType) {
+        this.searchType = searchType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 快速查询类型。 **取值范围：** - ORIGINALLOG：原始日志 - VISUALIZATION：可视化日志
+     * @return searchType
+     */
+    public String getSearchType() {
+        return searchType;
+    }
+
+    public void setSearchType(String searchType) {
+        this.searchType = searchType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +127,13 @@ public class SearchCriteriasBody {
         }
         SearchCriteriasBody that = (SearchCriteriasBody) obj;
         return Objects.equals(this.criterias, that.criterias) && Objects.equals(this.logStreamId, that.logStreamId)
-            && Objects.equals(this.logStreamName, that.logStreamName);
+            && Objects.equals(this.logStreamName, that.logStreamName)
+            && Objects.equals(this.searchType, that.searchType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(criterias, logStreamId, logStreamName);
+        return Objects.hash(criterias, logStreamId, logStreamName, searchType);
     }
 
     @Override
@@ -120,6 +143,7 @@ public class SearchCriteriasBody {
         sb.append("    criterias: ").append(toIndentedString(criterias)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
+        sb.append("    searchType: ").append(toIndentedString(searchType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

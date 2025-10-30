@@ -720,7 +720,7 @@ public class ChildrenJobInfo {
     }
 
     /**
-     * 计费字段
+     * 是否计费字段。
      * @return billingTag
      */
     public Boolean getBillingTag() {
