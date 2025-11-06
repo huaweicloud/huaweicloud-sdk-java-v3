@@ -77,6 +77,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Request;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Response;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateIntelligentKillSessionRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateIntelligentKillSessionResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupResponse;
@@ -185,6 +187,7 @@ import com.huaweicloud.sdk.rds.v3.model.GetInstancesNoIndexTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.GrantRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.InstanceRestartRequsetBody;
+import com.huaweicloud.sdk.rds.v3.model.IntelligentKillSessionReq;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListApiVersionRequest;
@@ -197,6 +200,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupsRequest;
@@ -500,6 +505,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyRequest
 import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
@@ -1812,6 +1819,36 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getXLanguage, ListAuditlogsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutoScalingPolicyRequest, ListAutoScalingPolicyResponse> listAutoScalingPolicy =
+        genForListAutoScalingPolicy();
+
+    private static HttpRequestDef<ListAutoScalingPolicyRequest, ListAutoScalingPolicyResponse> genForListAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListAutoScalingPolicyRequest, ListAutoScalingPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAutoScalingPolicyRequest.class, ListAutoScalingPolicyResponse.class)
+            .withName("ListAutoScalingPolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoScalingPolicyRequest::getInstanceId,
+                ListAutoScalingPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutoScalingPolicyRequest::getXLanguage,
+                ListAutoScalingPolicyRequest::setXLanguage));
 
         // response
 
@@ -8728,6 +8765,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateIntelligentKillSessionRequest, CreateIntelligentKillSessionResponse> createIntelligentKillSession =
+        genForCreateIntelligentKillSession();
+
+    private static HttpRequestDef<CreateIntelligentKillSessionRequest, CreateIntelligentKillSessionResponse> genForCreateIntelligentKillSession() {
+        // basic
+        HttpRequestDef.Builder<CreateIntelligentKillSessionRequest, CreateIntelligentKillSessionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    CreateIntelligentKillSessionRequest.class,
+                    CreateIntelligentKillSessionResponse.class)
+                .withName("CreateIntelligentKillSession")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIntelligentKillSessionRequest::getInstanceId,
+                CreateIntelligentKillSessionRequest::setInstanceId));
+        builder.<IntelligentKillSessionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(IntelligentKillSessionReq.class),
+            f -> f.withMarshaller(CreateIntelligentKillSessionRequest::getBody,
+                CreateIntelligentKillSessionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<GetInstancesNoIndexTablesRequest, GetInstancesNoIndexTablesResponse> getInstancesNoIndexTables =
         genForGetInstancesNoIndexTables();
 
@@ -8761,6 +8831,57 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetInstancesNoIndexTablesRequest::getTableType,
                 GetInstancesNoIndexTablesRequest::setTableType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIntelligentKillSessionHistoryRequest, ShowIntelligentKillSessionHistoryResponse> showIntelligentKillSessionHistory =
+        genForShowIntelligentKillSessionHistory();
+
+    private static HttpRequestDef<ShowIntelligentKillSessionHistoryRequest, ShowIntelligentKillSessionHistoryResponse> genForShowIntelligentKillSessionHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowIntelligentKillSessionHistoryRequest, ShowIntelligentKillSessionHistoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowIntelligentKillSessionHistoryRequest.class,
+                    ShowIntelligentKillSessionHistoryResponse.class)
+                .withName("ShowIntelligentKillSessionHistory")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionHistoryRequest::getInstanceId,
+                ShowIntelligentKillSessionHistoryRequest::setInstanceId));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionHistoryRequest::getStartTime,
+                ShowIntelligentKillSessionHistoryRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionHistoryRequest::getEndTime,
+                ShowIntelligentKillSessionHistoryRequest::setEndTime));
+        builder.<Integer>withRequestField("page_num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionHistoryRequest::getPageNum,
+                ShowIntelligentKillSessionHistoryRequest::setPageNum));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionHistoryRequest::getPageSize,
+                ShowIntelligentKillSessionHistoryRequest::setPageSize));
 
         // response
 

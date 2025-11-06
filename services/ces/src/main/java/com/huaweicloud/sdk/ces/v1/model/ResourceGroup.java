@@ -26,7 +26,7 @@ public class ResourceGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusSchema status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
@@ -39,7 +39,7 @@ public class ResourceGroup {
     }
 
     /**
-     * 资源类型。即命名空间，如弹性云服务器的资源命名空间为：SYS.ECS；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * **参数解释** 资源类型。即命名空间，如弹性云服务器的资源命名空间为：SYS.ECS；各服务的命名空间可查看：“[服务命名空间](ces_03_0059.xml)”。 **约束限制** 不涉及 **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。 **默认取值** 不涉及 
      * @return namespace
      */
     public String getNamespace() {
@@ -72,7 +72,7 @@ public class ResourceGroup {
     }
 
     /**
-     * 一个或者多个资源维度。
+     * **参数解释** 资源的维度信息 **约束限制** 不超过4个维度 
      * @return dimensions
      */
     public List<MetricsDimension> getDimensions() {
@@ -83,20 +83,20 @@ public class ResourceGroup {
         this.dimensions = dimensions;
     }
 
-    public ResourceGroup withStatus(String status) {
+    public ResourceGroup withStatus(StatusSchema status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 资源分组中该资源的当前状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未设置告警规则。
+     * Get status
      * @return status
      */
-    public String getStatus() {
+    public StatusSchema getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusSchema status) {
         this.status = status;
     }
 
@@ -107,6 +107,8 @@ public class ResourceGroup {
 
     /**
      * 事件类型，默认为0。
+     * minimum: 0
+     * maximum: 1
      * @return eventType
      */
     public Integer getEventType() {

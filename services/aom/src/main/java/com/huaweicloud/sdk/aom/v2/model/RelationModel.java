@@ -29,7 +29,7 @@ public class RelationModel {
     private List<String> value = null;
 
     /**
-     * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
+     * 该条件与其他条件的组合方式。  - AND：必须满足所有条件。 -  OR：可以满足其中一个条件。 -  NOT：必须不满足所有条件。
      */
     public static final class RelationEnum {
 
@@ -115,7 +115,7 @@ public class RelationModel {
     }
 
     /**
-     * 指定查询字段的key，对应metadata里面的key 。
+     * 指定查询字段的key，对应metadata里面的key 。当metadata_relation参数不为空时 key参数必填。
      * @return key
      */
     public String getKey() {
@@ -165,7 +165,7 @@ public class RelationModel {
     }
 
     /**
-     * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
+     * 该条件与其他条件的组合方式。  - AND：必须满足所有条件。 -  OR：可以满足其中一个条件。 -  NOT：必须不满足所有条件。
      * @return relation
      */
     public RelationEnum getRelation() {

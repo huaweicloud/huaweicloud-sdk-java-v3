@@ -20,10 +20,80 @@ public class EventInfo {
 
     private String eventName;
 
+    /**
+     * 枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件
+     */
+    public static final class EventTypeEnum {
+
+        /**
+         * Enum EVENT_SYS for value: "EVENT.SYS"
+         */
+        public static final EventTypeEnum EVENT_SYS = new EventTypeEnum("EVENT.SYS");
+
+        /**
+         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
+         */
+        public static final EventTypeEnum EVENT_CUSTOM = new EventTypeEnum("EVENT.CUSTOM");
+
+        private static final Map<String, EventTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EventTypeEnum> createStaticFields() {
+            Map<String, EventTypeEnum> map = new HashMap<>();
+            map.put("EVENT.SYS", EVENT_SYS);
+            map.put("EVENT.CUSTOM", EVENT_CUSTOM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EventTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EventTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventTypeEnum(value));
+        }
+
+        public static EventTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EventTypeEnum) {
+                return this.value.equals(((EventTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
-    private String eventType;
+    private EventTypeEnum eventType;
 
     /**
      * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
@@ -138,20 +208,20 @@ public class EventInfo {
         this.eventName = eventName;
     }
 
-    public EventInfo withEventType(String eventType) {
+    public EventInfo withEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
         return this;
     }
 
     /**
-     * 事件类型。
+     * 枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件
      * @return eventType
      */
-    public String getEventType() {
+    public EventTypeEnum getEventType() {
         return eventType;
     }
 
-    public void setEventType(String eventType) {
+    public void setEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
     }
 
@@ -179,6 +249,8 @@ public class EventInfo {
 
     /**
      * 选择查询的时间范围内，此事件发生的数量。
+     * minimum: 0
+     * maximum: 999999
      * @return eventCount
      */
     public Integer getEventCount() {
@@ -196,6 +268,8 @@ public class EventInfo {
 
     /**
      * 此事件最近一次发生的时间。
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return latestOccurTime
      */
     public Long getLatestOccurTime() {
@@ -212,7 +286,7 @@ public class EventInfo {
     }
 
     /**
-     * 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
+     * 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](ces_03_0059.xml)”；如果是自定义事件，则为用户自定义上报定义。
      * @return latestEventSource
      */
     public String getLatestEventSource() {

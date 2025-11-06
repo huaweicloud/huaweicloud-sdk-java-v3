@@ -36,6 +36,11 @@ public class Confs {
 
     private String updateAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desc")
+
+    private String desc;
+
     public Confs withName(String name) {
         this.name = name;
         return this;
@@ -130,6 +135,23 @@ public class Confs {
         this.updateAt = updateAt;
     }
 
+    public Confs withDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 配置文件描述。 **取值范围**： 长度不超过128个字符。
+     * @return desc
+     */
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -141,12 +163,12 @@ public class Confs {
         Confs that = (Confs) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.confContent, that.confContent) && Objects.equals(this.setting, that.setting)
-            && Objects.equals(this.updateAt, that.updateAt);
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.desc, that.desc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, status, confContent, setting, updateAt);
+        return Objects.hash(name, status, confContent, setting, updateAt, desc);
     }
 
     @Override
@@ -158,6 +180,7 @@ public class Confs {
         sb.append("    confContent: ").append(toIndentedString(confContent)).append("\n");
         sb.append("    setting: ").append(toIndentedString(setting)).append("\n");
         sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
+        sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

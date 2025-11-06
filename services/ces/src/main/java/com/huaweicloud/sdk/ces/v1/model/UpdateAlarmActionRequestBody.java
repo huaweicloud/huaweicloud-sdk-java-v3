@@ -1,0 +1,72 @@
+package com.huaweicloud.sdk.ces.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 
+ */
+public class UpdateAlarmActionRequestBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_enabled")
+
+    private Boolean alarmEnabled;
+
+    public UpdateAlarmActionRequestBody withAlarmEnabled(Boolean alarmEnabled) {
+        this.alarmEnabled = alarmEnabled;
+        return this;
+    }
+
+    /**
+     * 告警是否启用。true：启动。false：停止
+     * @return alarmEnabled
+     */
+    public Boolean getAlarmEnabled() {
+        return alarmEnabled;
+    }
+
+    public void setAlarmEnabled(Boolean alarmEnabled) {
+        this.alarmEnabled = alarmEnabled;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        UpdateAlarmActionRequestBody that = (UpdateAlarmActionRequestBody) obj;
+        return Objects.equals(this.alarmEnabled, that.alarmEnabled);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(alarmEnabled);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdateAlarmActionRequestBody {\n");
+        sb.append("    alarmEnabled: ").append(toIndentedString(alarmEnabled)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

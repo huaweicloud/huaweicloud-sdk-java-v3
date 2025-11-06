@@ -620,7 +620,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 大屏展示视图数量, 可以取得值必须与console页面可选值保持一致
+     * 大屏展示视图数量, 可以取的值必须与console页面可选值保持一致
      * minimum: 0
      * maximum: 65535
      * @return fullScreenWidgetNum

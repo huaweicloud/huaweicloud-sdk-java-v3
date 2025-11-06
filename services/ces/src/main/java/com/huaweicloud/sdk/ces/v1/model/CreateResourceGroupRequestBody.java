@@ -23,13 +23,33 @@ public class CreateResourceGroupRequestBody {
 
     private List<CreateResourceGroup> resources = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_ids")
+
+    private List<String> relationIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceGroupTagRelation> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateResourceGroupRequestBody withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
     /**
-     * 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
+     * **参数解释** 资源分组的名称 **约束限制** 不涉及 **取值范围** 只能为字母、数字、汉字、-或_，长度为[1,128]个字符 **默认取值** 不涉及 
      * @return groupName
      */
     public String getGroupName() {
@@ -62,7 +82,7 @@ public class CreateResourceGroupRequestBody {
     }
 
     /**
-     * 创建的资源分组选择一个或者多个资源。
+     * **参数解释** 手动创建时的资源详情。 **约束限制** 不超过1000个资源。 
      * @return resources
      */
     public List<CreateResourceGroup> getResources() {
@@ -71,6 +91,106 @@ public class CreateResourceGroupRequestBody {
 
     public void setResources(List<CreateResourceGroup> resources) {
         this.resources = resources;
+    }
+
+    public CreateResourceGroupRequestBody withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源分组添加资源方式 **约束限制** 不涉及 **取值范围** 取值只能为EPS（同步企业项目），TAG（标签动态匹配），不传为手动添加。 **默认取值** 不涉及 
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public CreateResourceGroupRequestBody withRelationIds(List<String> relationIds) {
+        this.relationIds = relationIds;
+        return this;
+    }
+
+    public CreateResourceGroupRequestBody addRelationIdsItem(String relationIdsItem) {
+        if (this.relationIds == null) {
+            this.relationIds = new ArrayList<>();
+        }
+        this.relationIds.add(relationIdsItem);
+        return this;
+    }
+
+    public CreateResourceGroupRequestBody withRelationIds(Consumer<List<String>> relationIdsSetter) {
+        if (this.relationIds == null) {
+            this.relationIds = new ArrayList<>();
+        }
+        relationIdsSetter.accept(this.relationIds);
+        return this;
+    }
+
+    /**
+     * **参数解释** 该资源分组内包含的资源来源的企业项目ID。 **约束限制** type为EPS时必传，不超过50个企业项目ID。 
+     * @return relationIds
+     */
+    public List<String> getRelationIds() {
+        return relationIds;
+    }
+
+    public void setRelationIds(List<String> relationIds) {
+        this.relationIds = relationIds;
+    }
+
+    public CreateResourceGroupRequestBody withTags(List<ResourceGroupTagRelation> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateResourceGroupRequestBody addTagsItem(ResourceGroupTagRelation tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateResourceGroupRequestBody withTags(Consumer<List<ResourceGroupTagRelation>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释** 标签动态匹配时的关联标签。 **约束限制** type为TAG时必传，不超过50个标签。 
+     * @return tags
+     */
+    public List<ResourceGroupTagRelation> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceGroupTagRelation> tags) {
+        this.tags = tags;
+    }
+
+    public CreateResourceGroupRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源分组归属企业项目ID **约束限制** 不涉及 **取值范围** 由数字、字母和-组成，或者为0（默认企业项目ID）。 **默认取值** 不涉及 
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     @Override
@@ -82,12 +202,15 @@ public class CreateResourceGroupRequestBody {
             return false;
         }
         CreateResourceGroupRequestBody that = (CreateResourceGroupRequestBody) obj;
-        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.resources, that.resources);
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.relationIds, that.relationIds)
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupName, resources);
+        return Objects.hash(groupName, resources, type, relationIds, tags, enterpriseProjectId);
     }
 
     @Override
@@ -96,6 +219,10 @@ public class CreateResourceGroupRequestBody {
         sb.append("class CreateResourceGroupRequestBody {\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    relationIds: ").append(toIndentedString(relationIds)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -33,6 +33,11 @@ public class LTSIndexConfigInfo {
 
     private String logStreamId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fastAnalysisSampleCount")
+
+    private Long fastAnalysisSampleCount;
+
     public LTSIndexConfigInfo withFullTextIndex(LTSFullTextIndexInfo fullTextIndex) {
         this.fullTextIndex = fullTextIndex;
         return this;
@@ -126,6 +131,23 @@ public class LTSIndexConfigInfo {
         this.logStreamId = logStreamId;
     }
 
+    public LTSIndexConfigInfo withFastAnalysisSampleCount(Long fastAnalysisSampleCount) {
+        this.fastAnalysisSampleCount = fastAnalysisSampleCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 快速分析采样日志条数。 **约束限制：** 不涉及。 **取值范围：** 最小值：100000 最大值：10000000 **默认取值：** 100000
+     * @return fastAnalysisSampleCount
+     */
+    public Long getFastAnalysisSampleCount() {
+        return fastAnalysisSampleCount;
+    }
+
+    public void setFastAnalysisSampleCount(Long fastAnalysisSampleCount) {
+        this.fastAnalysisSampleCount = fastAnalysisSampleCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +159,13 @@ public class LTSIndexConfigInfo {
         LTSIndexConfigInfo that = (LTSIndexConfigInfo) obj;
         return Objects.equals(this.fullTextIndex, that.fullTextIndex) && Objects.equals(this.fields, that.fields)
             && Objects.equals(this.sqlAnalysisEnable, that.sqlAnalysisEnable)
-            && Objects.equals(this.logStreamId, that.logStreamId);
+            && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.fastAnalysisSampleCount, that.fastAnalysisSampleCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fullTextIndex, fields, sqlAnalysisEnable, logStreamId);
+        return Objects.hash(fullTextIndex, fields, sqlAnalysisEnable, logStreamId, fastAnalysisSampleCount);
     }
 
     @Override
@@ -153,6 +176,7 @@ public class LTSIndexConfigInfo {
         sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
         sb.append("    sqlAnalysisEnable: ").append(toIndentedString(sqlAnalysisEnable)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
+        sb.append("    fastAnalysisSampleCount: ").append(toIndentedString(fastAnalysisSampleCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

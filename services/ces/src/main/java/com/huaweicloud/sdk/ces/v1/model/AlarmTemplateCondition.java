@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -23,12 +28,112 @@ public class AlarmTemplateCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
 
-    private String filter;
+    private Filter filter;
+
+    /**
+     * **参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)” **约束限制**： 不涉及。 **取值范围**： 枚举值。 - 0代表立即触发，仅限事件场景使用。 - 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算。 - 300代表指标按5分钟聚合周期为一个数据点参与告警计算。 - 1200代表指标按20分钟聚合周期为一个数据点参与告警计算。 - 3600代表指标按1小时聚合周期为一个数据点参与告警计算。 - 14400代表指标按4小时聚合周期为一个数据点参与告警计算。 - 86400代表指标按1天聚合周期为一个数据点参与告警计算。 **默认取值**：  不涉及。 
+     */
+    public static final class PeriodEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final PeriodEnum NUMBER_0 = new PeriodEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final PeriodEnum NUMBER_1 = new PeriodEnum(1);
+
+        /**
+         * Enum NUMBER_300 for value: 300
+         */
+        public static final PeriodEnum NUMBER_300 = new PeriodEnum(300);
+
+        /**
+         * Enum NUMBER_1200 for value: 1200
+         */
+        public static final PeriodEnum NUMBER_1200 = new PeriodEnum(1200);
+
+        /**
+         * Enum NUMBER_3600 for value: 3600
+         */
+        public static final PeriodEnum NUMBER_3600 = new PeriodEnum(3600);
+
+        /**
+         * Enum NUMBER_14400 for value: 14400
+         */
+        public static final PeriodEnum NUMBER_14400 = new PeriodEnum(14400);
+
+        /**
+         * Enum NUMBER_86400 for value: 86400
+         */
+        public static final PeriodEnum NUMBER_86400 = new PeriodEnum(86400);
+
+        private static final Map<Integer, PeriodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PeriodEnum> createStaticFields() {
+            Map<Integer, PeriodEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(300, NUMBER_300);
+            map.put(1200, NUMBER_1200);
+            map.put(3600, NUMBER_3600);
+            map.put(14400, NUMBER_14400);
+            map.put(86400, NUMBER_86400);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        PeriodEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PeriodEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
+        }
+
+        public static PeriodEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PeriodEnum) {
+                return this.value.equals(((PeriodEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
-    private Integer period;
+    private PeriodEnum period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -40,10 +145,128 @@ public class AlarmTemplateCondition {
 
     private Double value;
 
+    /**
+     * **参数解释**： 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题。 **约束限制**： 不涉及。 **取值范围**： 枚举值，只能为0、300、600、900、1800、3600、10800、21600、43200、86400。 - 0：对于指标类告警，0代表告警一次。对于事件类告警，在立即触发场景中，0代表不抑制；在累计触发场景，0代表只告警一次。 - 300代表满足告警触发条件后每5分钟告警一次。 - 600代表满足告警触发条件后每10分钟告警一次。 - 900代表满足告警触发条件后每15分钟告警一次。 - 1800代表满足告警触发条件后每30分钟告警一次。 - 3600代表满足告警触发条件后每60分钟告警一次。 - 10800代表满足告警触发条件后每3小时告警一次。 - 21600代表满足告警触发条件后每6小时告警一次。 - 43200代表满足告警触发条件后每12小时告警一次。 - 86000代表满足告警触发条件后每一天告警一次。 **默认取值**： 不涉及。 
+     */
+    public static final class SuppressDurationEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final SuppressDurationEnum NUMBER_0 = new SuppressDurationEnum(0);
+
+        /**
+         * Enum NUMBER_300 for value: 300
+         */
+        public static final SuppressDurationEnum NUMBER_300 = new SuppressDurationEnum(300);
+
+        /**
+         * Enum NUMBER_600 for value: 600
+         */
+        public static final SuppressDurationEnum NUMBER_600 = new SuppressDurationEnum(600);
+
+        /**
+         * Enum NUMBER_900 for value: 900
+         */
+        public static final SuppressDurationEnum NUMBER_900 = new SuppressDurationEnum(900);
+
+        /**
+         * Enum NUMBER_1800 for value: 1800
+         */
+        public static final SuppressDurationEnum NUMBER_1800 = new SuppressDurationEnum(1800);
+
+        /**
+         * Enum NUMBER_3600 for value: 3600
+         */
+        public static final SuppressDurationEnum NUMBER_3600 = new SuppressDurationEnum(3600);
+
+        /**
+         * Enum NUMBER_10800 for value: 10800
+         */
+        public static final SuppressDurationEnum NUMBER_10800 = new SuppressDurationEnum(10800);
+
+        /**
+         * Enum NUMBER_21600 for value: 21600
+         */
+        public static final SuppressDurationEnum NUMBER_21600 = new SuppressDurationEnum(21600);
+
+        /**
+         * Enum NUMBER_43200 for value: 43200
+         */
+        public static final SuppressDurationEnum NUMBER_43200 = new SuppressDurationEnum(43200);
+
+        /**
+         * Enum NUMBER_86400 for value: 86400
+         */
+        public static final SuppressDurationEnum NUMBER_86400 = new SuppressDurationEnum(86400);
+
+        private static final Map<Integer, SuppressDurationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, SuppressDurationEnum> createStaticFields() {
+            Map<Integer, SuppressDurationEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(300, NUMBER_300);
+            map.put(600, NUMBER_600);
+            map.put(900, NUMBER_900);
+            map.put(1800, NUMBER_1800);
+            map.put(3600, NUMBER_3600);
+            map.put(10800, NUMBER_10800);
+            map.put(21600, NUMBER_21600);
+            map.put(43200, NUMBER_43200);
+            map.put(86400, NUMBER_86400);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        SuppressDurationEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SuppressDurationEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuppressDurationEnum(value));
+        }
+
+        public static SuppressDurationEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SuppressDurationEnum) {
+                return this.value.equals(((SuppressDurationEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suppress_duration")
 
-    private Integer suppressDuration;
+    private SuppressDurationEnum suppressDuration;
 
     public AlarmTemplateCondition withComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
@@ -51,7 +274,7 @@ public class AlarmTemplateCondition {
     }
 
     /**
-     * 告警阈值的比较条件，可以是>、=、<、>=、<=。
+     * **参数解释**： 告警阈值的比较条件。 **约束限制**： 不涉及。 **取值范围**： 只能是>、=、<、>=、<=、!=。 **默认取值**： 不涉及。 
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -68,9 +291,9 @@ public class AlarmTemplateCondition {
     }
 
     /**
-     * 触发告警的连续发生次数，取值范围[1, 5]。
+     * **参数解释**： 触发告警的连续发生次数。 **约束限制**： 不涉及。 **取值范围**： 取值范围[1, 5]。告警类型为事件告警时，取值范围为[1, 100]。 **默认取值**： 不涉及。 
      * minimum: 1
-     * maximum: 5
+     * maximum: 100
      * @return count
      */
     public Integer getCount() {
@@ -81,37 +304,37 @@ public class AlarmTemplateCondition {
         this.count = count;
     }
 
-    public AlarmTemplateCondition withFilter(String filter) {
+    public AlarmTemplateCondition withFilter(Filter filter) {
         this.filter = filter;
         return this;
     }
 
     /**
-     * 数据聚合的方式，支持max、min、average、sum、variance，分别表示最大值、最小值、平均值、求和值、方差值。
+     * Get filter
      * @return filter
      */
-    public String getFilter() {
+    public Filter getFilter() {
         return filter;
     }
 
-    public void setFilter(String filter) {
+    public void setFilter(Filter filter) {
         this.filter = filter;
     }
 
-    public AlarmTemplateCondition withPeriod(Integer period) {
+    public AlarmTemplateCondition withPeriod(PeriodEnum period) {
         this.period = period;
         return this;
     }
 
     /**
-     * 告警条件判断周期，单位为秒，支持的值为1，300，1200，3600，14400，86400。说明：当period设置为1时，表示以原始的指标数据判断告警。当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为0。
+     * **参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)” **约束限制**： 不涉及。 **取值范围**： 枚举值。 - 0代表立即触发，仅限事件场景使用。 - 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算。 - 300代表指标按5分钟聚合周期为一个数据点参与告警计算。 - 1200代表指标按20分钟聚合周期为一个数据点参与告警计算。 - 3600代表指标按1小时聚合周期为一个数据点参与告警计算。 - 14400代表指标按4小时聚合周期为一个数据点参与告警计算。 - 86400代表指标按1天聚合周期为一个数据点参与告警计算。 **默认取值**：  不涉及。 
      * @return period
      */
-    public Integer getPeriod() {
+    public PeriodEnum getPeriod() {
         return period;
     }
 
-    public void setPeriod(Integer period) {
+    public void setPeriod(PeriodEnum period) {
         this.period = period;
     }
 
@@ -121,7 +344,7 @@ public class AlarmTemplateCondition {
     }
 
     /**
-     * 数据的单位，最大长度为32位。
+     * **参数解释**： 数据的单位。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,32]个字符。 **默认取值**： 不涉及。 
      * @return unit
      */
     public String getUnit() {
@@ -138,7 +361,9 @@ public class AlarmTemplateCondition {
     }
 
     /**
-     * 告警阈值，取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。
+     * **参数解释**： 告警阈值。具体阈值取值请参见附录中各服务监控指标中取值范围，如[支持监控的服务列表](ces_03_0059.xml)中ECS的CPU使用率cpu_util取值范围可配置80。 **约束限制**： 单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。 **取值范围**： 最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108。           **默认取值**： 不涉及。 
+     * minimum: -1.7976931348623156E+108
+     * maximum: 1.7976931348623156E+108
      * @return value
      */
     public Double getValue() {
@@ -149,20 +374,20 @@ public class AlarmTemplateCondition {
         this.value = value;
     }
 
-    public AlarmTemplateCondition withSuppressDuration(Integer suppressDuration) {
+    public AlarmTemplateCondition withSuppressDuration(SuppressDurationEnum suppressDuration) {
         this.suppressDuration = suppressDuration;
         return this;
     }
 
     /**
-     * 发送告警的周期，值可为0, 300, 600, 900, 1800, 3600, 10800, 21600, 43200, 86400；0表示只告警一次，300表示每5分钟告警一次，600表示每10分钟告警一次，900表示每15分钟告警一次，1800表示每30分钟告警一次，3600表示每1小时告警一次，10800表示每3小时告警一次，21600表示每6小时告警一次，43200表示每12小时告警一次，86400表示每1天告警一次。
+     * **参数解释**： 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题。 **约束限制**： 不涉及。 **取值范围**： 枚举值，只能为0、300、600、900、1800、3600、10800、21600、43200、86400。 - 0：对于指标类告警，0代表告警一次。对于事件类告警，在立即触发场景中，0代表不抑制；在累计触发场景，0代表只告警一次。 - 300代表满足告警触发条件后每5分钟告警一次。 - 600代表满足告警触发条件后每10分钟告警一次。 - 900代表满足告警触发条件后每15分钟告警一次。 - 1800代表满足告警触发条件后每30分钟告警一次。 - 3600代表满足告警触发条件后每60分钟告警一次。 - 10800代表满足告警触发条件后每3小时告警一次。 - 21600代表满足告警触发条件后每6小时告警一次。 - 43200代表满足告警触发条件后每12小时告警一次。 - 86000代表满足告警触发条件后每一天告警一次。 **默认取值**： 不涉及。 
      * @return suppressDuration
      */
-    public Integer getSuppressDuration() {
+    public SuppressDurationEnum getSuppressDuration() {
         return suppressDuration;
     }
 
-    public void setSuppressDuration(Integer suppressDuration) {
+    public void setSuppressDuration(SuppressDurationEnum suppressDuration) {
         this.suppressDuration = suppressDuration;
     }
 

@@ -17,6 +17,12 @@ import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmApplicationTypesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmApplicationTypesResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmAsyncJobRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmAsyncJobResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmTmsResourceInstancesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmTmsResourceInstancesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleRequest;
@@ -115,8 +121,12 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteWhiteBlackIpRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAntiTamperPolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAntiTamperPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAnticrawlerRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAnticrawlerRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListAntileakagePolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListAntileakagePolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAntileakageRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAntileakageRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListAntitamperRuleRequest;
@@ -125,30 +135,44 @@ import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListAttackActionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListBandwidthTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCcPolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCcPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCcRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCompositeHostsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCompositeHostsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListCustomPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListCustomRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListEventLogRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListEventLogResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListEventRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListEventResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListGeoIpPolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListGeoIpPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListGeoipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListGeoipRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListHostRouteRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListHostRouteResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListIgnorePolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListIgnorePolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListInstanceTagsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListIpReputationPolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListIpReputationPolicyRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListIpReputationRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListIpReputationRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListNoticeConfigsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListNoticeConfigsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsClassificationRequest;
@@ -157,14 +181,22 @@ import com.huaweicloud.sdk.waf.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPremiumHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListPrivacyPolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListPrivacyPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPrivacyRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListProtectableResourcesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListProtectableResourcesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPunishmentRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPunishmentRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListQpsTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
@@ -181,6 +213,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipPolicyRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipPolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.MigrateCompositeHostsRequest;
@@ -232,6 +266,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportContentRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportContentResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSourceIpRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowSourceIpResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSubscriptionInfoRequest;
@@ -411,6 +447,82 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangePrepaidCloudWafRequestBody.class),
             f -> f.withMarshaller(ChangePrepaidCloudWafRequest::getBody, ChangePrepaidCloudWafRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmApplicationTypesRequest, ConfirmApplicationTypesResponse> confirmApplicationTypes =
+        genForConfirmApplicationTypes();
+
+    private static HttpRequestDef<ConfirmApplicationTypesRequest, ConfirmApplicationTypesResponse> genForConfirmApplicationTypes() {
+        // basic
+        HttpRequestDef.Builder<ConfirmApplicationTypesRequest, ConfirmApplicationTypesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ConfirmApplicationTypesRequest.class, ConfirmApplicationTypesResponse.class)
+            .withName("ConfirmApplicationTypes")
+            .withUri("/v1/{project_id}/waf/rules/application-types")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ConfirmApplicationTypesRequest::getOffset,
+                ConfirmApplicationTypesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ConfirmApplicationTypesRequest::getLimit, ConfirmApplicationTypesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmAsyncJobRequest, ConfirmAsyncJobResponse> confirmAsyncJob =
+        genForConfirmAsyncJob();
+
+    private static HttpRequestDef<ConfirmAsyncJobRequest, ConfirmAsyncJobResponse> genForConfirmAsyncJob() {
+        // basic
+        HttpRequestDef.Builder<ConfirmAsyncJobRequest, ConfirmAsyncJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ConfirmAsyncJobRequest.class, ConfirmAsyncJobResponse.class)
+                .withName("ConfirmAsyncJob")
+                .withUri("/v1/{project_id}/waf/async-job/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmAsyncJobRequest::getJobId, ConfirmAsyncJobRequest::setJobId));
+        builder.<String>withRequestField("enterpriseProjectId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmAsyncJobRequest::getEnterpriseProjectId,
+                ConfirmAsyncJobRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmThreatMapRequest, ConfirmThreatMapResponse> confirmThreatMap =
+        genForConfirmThreatMap();
+
+    private static HttpRequestDef<ConfirmThreatMapRequest, ConfirmThreatMapResponse> genForConfirmThreatMap() {
+        // basic
+        HttpRequestDef.Builder<ConfirmThreatMapRequest, ConfirmThreatMapResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ConfirmThreatMapRequest.class, ConfirmThreatMapResponse.class)
+                .withName("ConfirmThreatMap")
+                .withUri("/v1/{project_id}/waf/tag/threat/map")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1667,6 +1779,51 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAntiTamperPolicyRulesRequest, ListAntiTamperPolicyRulesResponse> listAntiTamperPolicyRules =
+        genForListAntiTamperPolicyRules();
+
+    private static HttpRequestDef<ListAntiTamperPolicyRulesRequest, ListAntiTamperPolicyRulesResponse> genForListAntiTamperPolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListAntiTamperPolicyRulesRequest, ListAntiTamperPolicyRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAntiTamperPolicyRulesRequest.class,
+                    ListAntiTamperPolicyRulesResponse.class)
+                .withName("ListAntiTamperPolicyRules")
+                .withUri("/v1/{project_id}/waf/rule/antitamper")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAntiTamperPolicyRulesRequest::getPolicyids,
+                ListAntiTamperPolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAntiTamperPolicyRulesRequest::getEnterpriseProjectId,
+                ListAntiTamperPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAntiTamperPolicyRulesRequest::getPage,
+                ListAntiTamperPolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAntiTamperPolicyRulesRequest::getPagesize,
+                ListAntiTamperPolicyRulesRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRules =
         genForListAnticrawlerRules();
 
@@ -1705,6 +1862,51 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAnticrawlerRulesRequest::getType, ListAnticrawlerRulesRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAntileakagePolicyRulesRequest, ListAntileakagePolicyRulesResponse> listAntileakagePolicyRules =
+        genForListAntileakagePolicyRules();
+
+    private static HttpRequestDef<ListAntileakagePolicyRulesRequest, ListAntileakagePolicyRulesResponse> genForListAntileakagePolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListAntileakagePolicyRulesRequest, ListAntileakagePolicyRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAntileakagePolicyRulesRequest.class,
+                    ListAntileakagePolicyRulesResponse.class)
+                .withName("ListAntileakagePolicyRules")
+                .withUri("/v1/{project_id}/waf/rule/antileakage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAntileakagePolicyRulesRequest::getPolicyids,
+                ListAntileakagePolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAntileakagePolicyRulesRequest::getEnterpriseProjectId,
+                ListAntileakagePolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAntileakagePolicyRulesRequest::getPage,
+                ListAntileakagePolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAntileakagePolicyRulesRequest::getPagesize,
+                ListAntileakagePolicyRulesRequest::setPagesize));
 
         // response
 
@@ -1885,6 +2087,45 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> listCcPolicyRules =
+        genForListCcPolicyRules();
+
+    private static HttpRequestDef<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> genForListCcPolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListCcPolicyRulesRequest, ListCcPolicyRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCcPolicyRulesRequest.class, ListCcPolicyRulesResponse.class)
+                .withName("ListCcPolicyRules")
+                .withUri("/v1/{project_id}/waf/rule/cc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPolicyids, ListCcPolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCcPolicyRulesRequest::getEnterpriseProjectId,
+                ListCcPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPage, ListCcPolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcPolicyRulesRequest::getPagesize, ListCcPolicyRulesRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCcRulesRequest, ListCcRulesResponse> listCcRules = genForListCcRules();
 
     private static HttpRequestDef<ListCcRulesRequest, ListCcRulesResponse> genForListCcRules() {
@@ -2037,6 +2278,47 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCustomPolicyRulesRequest, ListCustomPolicyRulesResponse> listCustomPolicyRules =
+        genForListCustomPolicyRules();
+
+    private static HttpRequestDef<ListCustomPolicyRulesRequest, ListCustomPolicyRulesResponse> genForListCustomPolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListCustomPolicyRulesRequest, ListCustomPolicyRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListCustomPolicyRulesRequest.class, ListCustomPolicyRulesResponse.class)
+            .withName("ListCustomPolicyRules")
+            .withUri("/v1/{project_id}/waf/rule/custom")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomPolicyRulesRequest::getPolicyids,
+                ListCustomPolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomPolicyRulesRequest::getEnterpriseProjectId,
+                ListCustomPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomPolicyRulesRequest::getPage, ListCustomPolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomPolicyRulesRequest::getPagesize,
+                ListCustomPolicyRulesRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCustomRulesRequest, ListCustomRulesResponse> listCustomRules =
         genForListCustomRules();
 
@@ -2170,6 +2452,46 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListGeoIpPolicyRulesRequest, ListGeoIpPolicyRulesResponse> listGeoIpPolicyRules =
+        genForListGeoIpPolicyRules();
+
+    private static HttpRequestDef<ListGeoIpPolicyRulesRequest, ListGeoIpPolicyRulesResponse> genForListGeoIpPolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListGeoIpPolicyRulesRequest, ListGeoIpPolicyRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListGeoIpPolicyRulesRequest.class, ListGeoIpPolicyRulesResponse.class)
+            .withName("ListGeoIpPolicyRules")
+            .withUri("/v1/{project_id}/waf/rule/geoip")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGeoIpPolicyRulesRequest::getPolicyids,
+                ListGeoIpPolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGeoIpPolicyRulesRequest::getEnterpriseProjectId,
+                ListGeoIpPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGeoIpPolicyRulesRequest::getPage, ListGeoIpPolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGeoIpPolicyRulesRequest::getPagesize, ListGeoIpPolicyRulesRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListGeoipRuleRequest, ListGeoipRuleResponse> listGeoipRule =
         genForListGeoipRule();
 
@@ -2280,6 +2602,47 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListIgnorePolicyRulesRequest, ListIgnorePolicyRulesResponse> listIgnorePolicyRules =
+        genForListIgnorePolicyRules();
+
+    private static HttpRequestDef<ListIgnorePolicyRulesRequest, ListIgnorePolicyRulesResponse> genForListIgnorePolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListIgnorePolicyRulesRequest, ListIgnorePolicyRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListIgnorePolicyRulesRequest.class, ListIgnorePolicyRulesResponse.class)
+            .withName("ListIgnorePolicyRules")
+            .withUri("/v1/{project_id}/waf/rule/ignore")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIgnorePolicyRulesRequest::getPolicyids,
+                ListIgnorePolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIgnorePolicyRulesRequest::getEnterpriseProjectId,
+                ListIgnorePolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIgnorePolicyRulesRequest::getPage, ListIgnorePolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIgnorePolicyRulesRequest::getPagesize,
+                ListIgnorePolicyRulesRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListIgnoreRuleRequest, ListIgnoreRuleResponse> listIgnoreRule =
         genForListIgnoreRule();
 
@@ -2357,6 +2720,35 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
+        genForListInstanceTags();
+
+    private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForListInstanceTags() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
+                .withName("ListInstanceTags")
+                .withUri("/v1/{project_id}/waf/{resourceid}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resourceid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTagsRequest::getResourceid, ListInstanceTagsRequest::setResourceid));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTagsRequest::getEnterpriseProjectId,
+                ListInstanceTagsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListIpGroupRequest, ListIpGroupResponse> listIpGroup = genForListIpGroup();
 
     private static HttpRequestDef<ListIpGroupRequest, ListIpGroupResponse> genForListIpGroup() {
@@ -2394,6 +2786,91 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListIpGroupRequest::getIp, ListIpGroupRequest::setIp));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIpReputationPolicyRulesRequest, ListIpReputationPolicyRulesResponse> listIpReputationPolicyRules =
+        genForListIpReputationPolicyRules();
+
+    private static HttpRequestDef<ListIpReputationPolicyRulesRequest, ListIpReputationPolicyRulesResponse> genForListIpReputationPolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListIpReputationPolicyRulesRequest, ListIpReputationPolicyRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListIpReputationPolicyRulesRequest.class,
+                    ListIpReputationPolicyRulesResponse.class)
+                .withName("ListIpReputationPolicyRules")
+                .withUri("/v1/{project_id}/waf/rule/ip-reputation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpReputationPolicyRulesRequest::getPolicyids,
+                ListIpReputationPolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpReputationPolicyRulesRequest::getEnterpriseProjectId,
+                ListIpReputationPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpReputationPolicyRulesRequest::getPage,
+                ListIpReputationPolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpReputationPolicyRulesRequest::getPagesize,
+                ListIpReputationPolicyRulesRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIpReputationRulesRequest, ListIpReputationRulesResponse> listIpReputationRules =
+        genForListIpReputationRules();
+
+    private static HttpRequestDef<ListIpReputationRulesRequest, ListIpReputationRulesResponse> genForListIpReputationRules() {
+        // basic
+        HttpRequestDef.Builder<ListIpReputationRulesRequest, ListIpReputationRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListIpReputationRulesRequest.class, ListIpReputationRulesResponse.class)
+            .withName("ListIpReputationRules")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ip-reputation")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getPolicyId,
+                ListIpReputationRulesRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getEnterpriseProjectId,
+                ListIpReputationRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getOffset, ListIpReputationRulesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getLimit, ListIpReputationRulesRequest::setLimit));
 
         // response
 
@@ -2574,6 +3051,47 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPrivacyPolicyRulesRequest, ListPrivacyPolicyRulesResponse> listPrivacyPolicyRules =
+        genForListPrivacyPolicyRules();
+
+    private static HttpRequestDef<ListPrivacyPolicyRulesRequest, ListPrivacyPolicyRulesResponse> genForListPrivacyPolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListPrivacyPolicyRulesRequest, ListPrivacyPolicyRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPrivacyPolicyRulesRequest.class, ListPrivacyPolicyRulesResponse.class)
+            .withName("ListPrivacyPolicyRules")
+            .withUri("/v1/{project_id}/waf/rule/privacy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivacyPolicyRulesRequest::getPolicyids,
+                ListPrivacyPolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivacyPolicyRulesRequest::getEnterpriseProjectId,
+                ListPrivacyPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivacyPolicyRulesRequest::getPage, ListPrivacyPolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivacyPolicyRulesRequest::getPagesize,
+                ListPrivacyPolicyRulesRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPrivacyRuleRequest, ListPrivacyRuleResponse> listPrivacyRule =
         genForListPrivacyRule();
 
@@ -2607,6 +3125,43 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPrivacyRuleRequest::getPagesize, ListPrivacyRuleRequest::setPagesize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProtectableResourcesRequest, ListProtectableResourcesResponse> listProtectableResources =
+        genForListProtectableResources();
+
+    private static HttpRequestDef<ListProtectableResourcesRequest, ListProtectableResourcesResponse> genForListProtectableResources() {
+        // basic
+        HttpRequestDef.Builder<ListProtectableResourcesRequest, ListProtectableResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListProtectableResourcesRequest.class, ListProtectableResourcesResponse.class)
+                .withName("ListProtectableResources")
+                .withUri("/v1/{project_id}/premium-waf/host/protectable-resources/{resource_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtectableResourcesRequest::getResourceType,
+                ListProtectableResourcesRequest::setResourceType));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtectableResourcesRequest::getVpcId,
+                ListProtectableResourcesRequest::setVpcId));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProtectableResourcesRequest::getRegion,
+                ListProtectableResourcesRequest::setRegion));
 
         // response
 
@@ -2758,6 +3313,116 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListRequestTimelineResponse::getBody, ListRequestTimelineResponse::setBody)
                 .withInnerContainerType(StatisticsTimelineItem.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimeline =
+        genForListResponseCodeTimeline();
+
+    private static HttpRequestDef<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> genForListResponseCodeTimeline() {
+        // basic
+        HttpRequestDef.Builder<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListResponseCodeTimelineRequest.class, ListResponseCodeTimelineResponse.class)
+                .withName("ListResponseCodeTimeline")
+                .withUri("/v1/{project_id}/waf/overviews/response-code/timeline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getEnterpriseProjectId,
+                ListResponseCodeTimelineRequest::setEnterpriseProjectId));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getFrom, ListResponseCodeTimelineRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getTo, ListResponseCodeTimelineRequest::setTo));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getHosts,
+                ListResponseCodeTimelineRequest::setHosts));
+        builder.<List<String>>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getInstances,
+                ListResponseCodeTimelineRequest::setInstances));
+        builder.<ListResponseCodeTimelineRequest.ResponseSourceEnum>withRequestField("response_source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListResponseCodeTimelineRequest.ResponseSourceEnum.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getResponseSource,
+                ListResponseCodeTimelineRequest::setResponseSource));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineRequest::getGroupBy,
+                ListResponseCodeTimelineRequest::setGroupBy));
+
+        // response
+        builder.<List<StatisticsTimelineItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListResponseCodeTimelineResponse::getBody, ListResponseCodeTimelineResponse::setBody)
+                .withInnerContainerType(StatisticsTimelineItem.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse> listSecurityReportSendingRecords =
+        genForListSecurityReportSendingRecords();
+
+    private static HttpRequestDef<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse> genForListSecurityReportSendingRecords() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityReportSendingRecordsRequest.class,
+                    ListSecurityReportSendingRecordsResponse.class)
+                .withName("ListSecurityReportSendingRecords")
+                .withUri("/v1/{project_id}/waf/security-report/sending-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportSendingRecordsRequest::getReportName,
+                ListSecurityReportSendingRecordsRequest::setReportName));
+        builder.<String>withRequestField("report_category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportSendingRecordsRequest::getReportCategory,
+                ListSecurityReportSendingRecordsRequest::setReportCategory));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityReportSendingRecordsRequest::getLimit,
+                ListSecurityReportSendingRecordsRequest::setLimit));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityReportSendingRecordsRequest::getOffset,
+                ListSecurityReportSendingRecordsRequest::setOffset));
+
+        // response
 
         return builder.build();
     }
@@ -3188,6 +3853,51 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(ListWebBasicProtectionRulesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListWebBasicProtectionRulesRequest::getXLanguage,
                 ListWebBasicProtectionRulesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWhiteblackipPolicyRulesRequest, ListWhiteblackipPolicyRulesResponse> listWhiteblackipPolicyRules =
+        genForListWhiteblackipPolicyRules();
+
+    private static HttpRequestDef<ListWhiteblackipPolicyRulesRequest, ListWhiteblackipPolicyRulesResponse> genForListWhiteblackipPolicyRules() {
+        // basic
+        HttpRequestDef.Builder<ListWhiteblackipPolicyRulesRequest, ListWhiteblackipPolicyRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListWhiteblackipPolicyRulesRequest.class,
+                    ListWhiteblackipPolicyRulesResponse.class)
+                .withName("ListWhiteblackipPolicyRules")
+                .withUri("/v1/{project_id}/waf/rule/whiteblackip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWhiteblackipPolicyRulesRequest::getPolicyids,
+                ListWhiteblackipPolicyRulesRequest::setPolicyids));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWhiteblackipPolicyRulesRequest::getEnterpriseProjectId,
+                ListWhiteblackipPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWhiteblackipPolicyRulesRequest::getPage,
+                ListWhiteblackipPolicyRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWhiteblackipPolicyRulesRequest::getPagesize,
+                ListWhiteblackipPolicyRulesRequest::setPagesize));
 
         // response
 
@@ -3924,6 +4634,39 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPunishmentRuleRequest::getEnterpriseProjectId,
                 ShowPunishmentRuleRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityReportContentRequest, ShowSecurityReportContentResponse> showSecurityReportContent =
+        genForShowSecurityReportContent();
+
+    private static HttpRequestDef<ShowSecurityReportContentRequest, ShowSecurityReportContentResponse> genForShowSecurityReportContent() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityReportContentRequest, ShowSecurityReportContentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityReportContentRequest.class,
+                    ShowSecurityReportContentResponse.class)
+                .withName("ShowSecurityReportContent")
+                .withUri("/v1/{project_id}/waf/security-reports/{report_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityReportContentRequest::getReportId,
+                ShowSecurityReportContentRequest::setReportId));
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityReportContentRequest::getSubscriptionId,
+                ShowSecurityReportContentRequest::setSubscriptionId));
 
         // response
 

@@ -140,6 +140,11 @@ public class LTSFieldsInfo {
 
     private List<LTSSubFieldsInfo> ltsSubFieldsInfoList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fieldAnalysisAlias")
+
+    private String fieldAnalysisAlias;
+
     public LTSFieldsInfo withFieldType(FieldTypeEnum fieldType) {
         this.fieldType = fieldType;
         return this;
@@ -308,6 +313,23 @@ public class LTSFieldsInfo {
         this.ltsSubFieldsInfoList = ltsSubFieldsInfoList;
     }
 
+    public LTSFieldsInfo withFieldAnalysisAlias(String fieldAnalysisAlias) {
+        this.fieldAnalysisAlias = fieldAnalysisAlias;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 别名，设置别名后，只支持使用别名进行SQL搜索分析，不支持使用别名进行关键字搜索。 **约束限制：**  不涉及。 **取值范围：** 长度不能大于256。 **默认取值：** 不涉及。
+     * @return fieldAnalysisAlias
+     */
+    public String getFieldAnalysisAlias() {
+        return fieldAnalysisAlias;
+    }
+
+    public void setFieldAnalysisAlias(String fieldAnalysisAlias) {
+        this.fieldAnalysisAlias = fieldAnalysisAlias;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -322,7 +344,8 @@ public class LTSFieldsInfo {
             && Objects.equals(this.includeChinese, that.includeChinese)
             && Objects.equals(this.tokenizer, that.tokenizer) && Objects.equals(this.quickAnalysis, that.quickAnalysis)
             && Objects.equals(this.ascii, that.ascii)
-            && Objects.equals(this.ltsSubFieldsInfoList, that.ltsSubFieldsInfoList);
+            && Objects.equals(this.ltsSubFieldsInfoList, that.ltsSubFieldsInfoList)
+            && Objects.equals(this.fieldAnalysisAlias, that.fieldAnalysisAlias);
     }
 
     @Override
@@ -334,7 +357,8 @@ public class LTSFieldsInfo {
             tokenizer,
             quickAnalysis,
             ascii,
-            ltsSubFieldsInfoList);
+            ltsSubFieldsInfoList,
+            fieldAnalysisAlias);
     }
 
     @Override
@@ -349,6 +373,7 @@ public class LTSFieldsInfo {
         sb.append("    quickAnalysis: ").append(toIndentedString(quickAnalysis)).append("\n");
         sb.append("    ascii: ").append(toIndentedString(ascii)).append("\n");
         sb.append("    ltsSubFieldsInfoList: ").append(toIndentedString(ltsSubFieldsInfoList)).append("\n");
+        sb.append("    fieldAnalysisAlias: ").append(toIndentedString(fieldAnalysisAlias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

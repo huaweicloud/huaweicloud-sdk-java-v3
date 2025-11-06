@@ -46,7 +46,7 @@ public class ResourceGroupInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusSchema status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -81,7 +81,7 @@ public class ResourceGroupInfo {
     }
 
     /**
-     * 资源分组添加资源方式，EPS：同步企业项目，TAG：标签动态匹配，空值：手动添加；
+     * 资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual/空值（手动添加）
      * @return type
      */
     public String getType() {
@@ -149,6 +149,8 @@ public class ResourceGroupInfo {
 
     /**
      * 资源分组的创建时间，UNIX时间戳，单位毫秒；如：1603819753000。
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return createTime
      */
     public Long getCreateTime() {
@@ -185,20 +187,20 @@ public class ResourceGroupInfo {
         this.instanceStatistics = instanceStatistics;
     }
 
-    public ResourceGroupInfo withStatus(String status) {
+    public ResourceGroupInfo withStatus(StatusSchema status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 资源分组的当前状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未设置告警规则。
+     * Get status
      * @return status
      */
-    public String getStatus() {
+    public StatusSchema getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusSchema status) {
         this.status = status;
     }
 

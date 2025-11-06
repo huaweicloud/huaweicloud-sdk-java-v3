@@ -362,7 +362,7 @@ public interface HttpRequest {
 
         private Impl buildUrl() {
             try {
-                if (!StringUtils.isEmpty(queryParamsString)) {
+                if (StringUtils.isNotEmpty(queryParamsString)) {
                     this.url = new URL(endpoint + pathParamsString + "?" + queryParamsString);
                 } else {
                     this.url = new URL(endpoint + pathParamsString);

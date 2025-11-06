@@ -5,13 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 结构化配置参数体
@@ -113,21 +110,6 @@ public class StructConfig {
 
     private TemplateTypeEnum templateType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "demo_fields")
-
-    private List<FieldModel> demoFields = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tag_fields")
-
-    private List<FieldModel> tagFields = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "quick_analysis")
-
-    private Boolean quickAnalysis;
-
     public StructConfig withLogGroupId(String logGroupId) {
         this.logGroupId = logGroupId;
         return this;
@@ -213,89 +195,6 @@ public class StructConfig {
         this.templateType = templateType;
     }
 
-    public StructConfig withDemoFields(List<FieldModel> demoFields) {
-        this.demoFields = demoFields;
-        return this;
-    }
-
-    public StructConfig addDemoFieldsItem(FieldModel demoFieldsItem) {
-        if (this.demoFields == null) {
-            this.demoFields = new ArrayList<>();
-        }
-        this.demoFields.add(demoFieldsItem);
-        return this;
-    }
-
-    public StructConfig withDemoFields(Consumer<List<FieldModel>> demoFieldsSetter) {
-        if (this.demoFields == null) {
-            this.demoFields = new ArrayList<>();
-        }
-        demoFieldsSetter.accept(this.demoFields);
-        return this;
-    }
-
-    /**
-     * 示例字段数组，只需要填写与模板中is_analysis状态不同的字段
-     * @return demoFields
-     */
-    public List<FieldModel> getDemoFields() {
-        return demoFields;
-    }
-
-    public void setDemoFields(List<FieldModel> demoFields) {
-        this.demoFields = demoFields;
-    }
-
-    public StructConfig withTagFields(List<FieldModel> tagFields) {
-        this.tagFields = tagFields;
-        return this;
-    }
-
-    public StructConfig addTagFieldsItem(FieldModel tagFieldsItem) {
-        if (this.tagFields == null) {
-            this.tagFields = new ArrayList<>();
-        }
-        this.tagFields.add(tagFieldsItem);
-        return this;
-    }
-
-    public StructConfig withTagFields(Consumer<List<FieldModel>> tagFieldsSetter) {
-        if (this.tagFields == null) {
-            this.tagFields = new ArrayList<>();
-        }
-        tagFieldsSetter.accept(this.tagFields);
-        return this;
-    }
-
-    /**
-     * Tag字段数组，只需要填写与模板中is_analysis状态不同的字段
-     * @return tagFields
-     */
-    public List<FieldModel> getTagFields() {
-        return tagFields;
-    }
-
-    public void setTagFields(List<FieldModel> tagFields) {
-        this.tagFields = tagFields;
-    }
-
-    public StructConfig withQuickAnalysis(Boolean quickAnalysis) {
-        this.quickAnalysis = quickAnalysis;
-        return this;
-    }
-
-    /**
-     * 是否开启demo_fields和tag_fields快速分析,为true时，所有的demo_fields和tag_fields全部字段均打开快速分析;不填或者为false，以模板中的demo_fields和tag_fields中的is_analysis决定是否开启快速分析。
-     * @return quickAnalysis
-     */
-    public Boolean getQuickAnalysis() {
-        return quickAnalysis;
-    }
-
-    public void setQuickAnalysis(Boolean quickAnalysis) {
-        this.quickAnalysis = quickAnalysis;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -307,20 +206,12 @@ public class StructConfig {
         StructConfig that = (StructConfig) obj;
         return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId)
             && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
-            && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.demoFields, that.demoFields)
-            && Objects.equals(this.tagFields, that.tagFields) && Objects.equals(this.quickAnalysis, that.quickAnalysis);
+            && Objects.equals(this.templateType, that.templateType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logGroupId,
-            logStreamId,
-            templateId,
-            templateName,
-            templateType,
-            demoFields,
-            tagFields,
-            quickAnalysis);
+        return Objects.hash(logGroupId, logStreamId, templateId, templateName, templateType);
     }
 
     @Override
@@ -332,9 +223,6 @@ public class StructConfig {
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
-        sb.append("    demoFields: ").append(toIndentedString(demoFields)).append("\n");
-        sb.append("    tagFields: ").append(toIndentedString(tagFields)).append("\n");
-        sb.append("    quickAnalysis: ").append(toIndentedString(quickAnalysis)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -49,7 +49,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     private String effectiveTimezone;
 
     /**
-     * NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+     * **参数解释**： 通知方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION、NOTIFICATION_POLICY - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值**： 不涉及。 
      */
     public static final class NotificationMannerEnum {
 
@@ -177,7 +177,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
      * @return alarmNotifications
      */
     public List<Notification> getAlarmNotifications() {
@@ -211,7 +211,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
      * @return okNotifications
      */
     public List<Notification> getOkNotifications() {
@@ -280,7 +280,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+     * **参数解释**： 通知方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION、NOTIFICATION_POLICY - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值**： 不涉及。 
      * @return notificationManner
      */
     public NotificationMannerEnum getNotificationManner() {
@@ -314,7 +314,7 @@ public class UpdateOneClickAlarmNotificationsRequestBody {
     }
 
     /**
-     * 关联的通知策略ID列表
+     * **参数解释**： 关联的通知策略ID列表。 **约束限制**： 包含的通知策略ID最多为20个，最少为0个。 
      * @return notificationPolicyIds
      */
     public List<String> getNotificationPolicyIds() {

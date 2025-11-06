@@ -74,9 +74,9 @@ public class EnvCredentialProvider implements ICredentialProvider {
         String idpId = System.getenv(IDP_ID_ENV_NAME);
         String idTokenFile = System.getenv(ID_TOKEN_FILE_ENV_NAME);
 
-        if (!StringUtils.isEmpty(idpId) && !StringUtils.isEmpty(idTokenFile)) {
+        if (StringUtils.isNotEmpty(idpId) && StringUtils.isNotEmpty(idTokenFile)) {
             credentials.withIdpId(idpId).withIdTokenFile(idTokenFile);
-        } else if (!StringUtils.isEmpty(ak) && !StringUtils.isEmpty(sk)) {
+        } else if (StringUtils.isNotEmpty(ak) && StringUtils.isNotEmpty(sk)) {
             credentials.withAk(ak).withSk(sk).withSecurityToken(securityToken);
         } else {
             throw new SdkException("ak&sk or idpId&idTokenFile does not exist in environmental variables");

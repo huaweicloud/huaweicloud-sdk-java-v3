@@ -32,6 +32,8 @@ public class InstanceStatistics {
 
     /**
      * 该资源分组中当前处在告警状态的资源个数。
+     * minimum: 0
+     * maximum: 2147483647
      * @return unhealth
      */
     public Integer getUnhealth() {
@@ -49,6 +51,8 @@ public class InstanceStatistics {
 
     /**
      * 该资源分组中资源的总个数。
+     * minimum: 0
+     * maximum: 2147483647
      * @return total
      */
     public Integer getTotal() {
@@ -66,6 +70,8 @@ public class InstanceStatistics {
 
     /**
      * 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。
+     * minimum: 0
+     * maximum: 2147483647
      * @return typeStatistics
      */
     public Integer getTypeStatistics() {

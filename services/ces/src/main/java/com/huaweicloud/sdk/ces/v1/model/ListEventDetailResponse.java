@@ -25,7 +25,7 @@ public class ListEventDetailResponse extends SdkResponse {
     private String eventName;
 
     /**
-     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     * **参数解释**： 事件类型。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS: 系统事件。 - EVENT.CUSTOM: 自定义事件。 
      */
     public static final class EventTypeEnum {
 
@@ -100,7 +100,7 @@ public class ListEventDetailResponse extends SdkResponse {
     private EventTypeEnum eventType;
 
     /**
-     * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+     * **参数解释**： 事件子类。 **取值范围**： 枚举类型。 当事件类型为系统事件时，参数值为SUB_EVENT.OPS或SUB_EVENT.PLAN。 当事件类型为自定义事件时，参数值为SUB_EVENT.CUSTOM。 - SUB_EVENT.OPS：运维事件。 - SUB_EVENT.PLAN：计划事件。 - SUB_EVENT.CUSTOM：自定义事件。 
      */
     public static final class SubEventTypeEnum {
 
@@ -193,7 +193,7 @@ public class ListEventDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_info")
 
-    private List<EventInfoDetail> eventInfo = null;
+    private List<EventInfoDetailResp> eventInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
@@ -206,7 +206,7 @@ public class ListEventDetailResponse extends SdkResponse {
     }
 
     /**
-     * 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
+     * **参数解释**： 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。 **取值范围**： 不涉及。 
      * @return eventName
      */
     public String getEventName() {
@@ -223,7 +223,7 @@ public class ListEventDetailResponse extends SdkResponse {
     }
 
     /**
-     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     * **参数解释**： 事件类型。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS: 系统事件。 - EVENT.CUSTOM: 自定义事件。 
      * @return eventType
      */
     public EventTypeEnum getEventType() {
@@ -240,7 +240,7 @@ public class ListEventDetailResponse extends SdkResponse {
     }
 
     /**
-     * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+     * **参数解释**： 事件子类。 **取值范围**： 枚举类型。 当事件类型为系统事件时，参数值为SUB_EVENT.OPS或SUB_EVENT.PLAN。 当事件类型为自定义事件时，参数值为SUB_EVENT.CUSTOM。 - SUB_EVENT.OPS：运维事件。 - SUB_EVENT.PLAN：计划事件。 - SUB_EVENT.CUSTOM：自定义事件。 
      * @return subEventType
      */
     public SubEventTypeEnum getSubEventType() {
@@ -273,7 +273,7 @@ public class ListEventDetailResponse extends SdkResponse {
     }
 
     /**
-     * 上报事件时用户的名称，也可能为projectID。
+     * **参数解释**： 上报事件时用户的名称，也可能为projectID。 **取值范围**： 不涉及。 
      * @return eventUsers
      */
     public List<String> getEventUsers() {
@@ -306,7 +306,7 @@ public class ListEventDetailResponse extends SdkResponse {
     }
 
     /**
-     * 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
+     * **参数解释**： 事件来源。 如果是系统事件则值为各服务的命名空间，可查看支持监控的服务列表。如果是自定义事件，则为用户自定义上报定义。 **取值范围**： 不涉及。 
      * @return eventSources
      */
     public List<String> getEventSources() {
@@ -317,12 +317,12 @@ public class ListEventDetailResponse extends SdkResponse {
         this.eventSources = eventSources;
     }
 
-    public ListEventDetailResponse withEventInfo(List<EventInfoDetail> eventInfo) {
+    public ListEventDetailResponse withEventInfo(List<EventInfoDetailResp> eventInfo) {
         this.eventInfo = eventInfo;
         return this;
     }
 
-    public ListEventDetailResponse addEventInfoItem(EventInfoDetail eventInfoItem) {
+    public ListEventDetailResponse addEventInfoItem(EventInfoDetailResp eventInfoItem) {
         if (this.eventInfo == null) {
             this.eventInfo = new ArrayList<>();
         }
@@ -330,7 +330,7 @@ public class ListEventDetailResponse extends SdkResponse {
         return this;
     }
 
-    public ListEventDetailResponse withEventInfo(Consumer<List<EventInfoDetail>> eventInfoSetter) {
+    public ListEventDetailResponse withEventInfo(Consumer<List<EventInfoDetailResp>> eventInfoSetter) {
         if (this.eventInfo == null) {
             this.eventInfo = new ArrayList<>();
         }
@@ -339,14 +339,14 @@ public class ListEventDetailResponse extends SdkResponse {
     }
 
     /**
-     * 一条或者多条事件详细信息。
+     * **参数解释**： 一条或者多条事件详细信息。 
      * @return eventInfo
      */
-    public List<EventInfoDetail> getEventInfo() {
+    public List<EventInfoDetailResp> getEventInfo() {
         return eventInfo;
     }
 
-    public void setEventInfo(List<EventInfoDetail> eventInfo) {
+    public void setEventInfo(List<EventInfoDetailResp> eventInfo) {
         this.eventInfo = eventInfo;
     }
 

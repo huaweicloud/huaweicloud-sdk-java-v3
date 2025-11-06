@@ -10,9 +10,11 @@ import com.huaweicloud.sdk.ces.v1.model.CreateAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v1.model.CreateAlarmTemplateRequestBody;
 import com.huaweicloud.sdk.ces.v1.model.CreateAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v1.model.CreateEventsRequest;
+import com.huaweicloud.sdk.ces.v1.model.CreateEventsRequestBody;
 import com.huaweicloud.sdk.ces.v1.model.CreateEventsResponse;
 import com.huaweicloud.sdk.ces.v1.model.CreateEventsResponseBody;
 import com.huaweicloud.sdk.ces.v1.model.CreateMetricDataRequest;
+import com.huaweicloud.sdk.ces.v1.model.CreateMetricDataRequestBody;
 import com.huaweicloud.sdk.ces.v1.model.CreateMetricDataResponse;
 import com.huaweicloud.sdk.ces.v1.model.CreateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v1.model.CreateResourceGroupRequestBody;
@@ -23,7 +25,6 @@ import com.huaweicloud.sdk.ces.v1.model.DeleteAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v1.model.DeleteAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v1.model.DeleteResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v1.model.DeleteResourceGroupResponse;
-import com.huaweicloud.sdk.ces.v1.model.EventItem;
 import com.huaweicloud.sdk.ces.v1.model.ListAlarmHistoriesRequest;
 import com.huaweicloud.sdk.ces.v1.model.ListAlarmHistoriesResponse;
 import com.huaweicloud.sdk.ces.v1.model.ListAlarmTemplatesRequest;
@@ -38,8 +39,6 @@ import com.huaweicloud.sdk.ces.v1.model.ListMetricsRequest;
 import com.huaweicloud.sdk.ces.v1.model.ListMetricsResponse;
 import com.huaweicloud.sdk.ces.v1.model.ListResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v1.model.ListResourceGroupResponse;
-import com.huaweicloud.sdk.ces.v1.model.MetricDataItem;
-import com.huaweicloud.sdk.ces.v1.model.ModifyAlarmActionReq;
 import com.huaweicloud.sdk.ces.v1.model.ShowAlarmRequest;
 import com.huaweicloud.sdk.ces.v1.model.ShowAlarmResponse;
 import com.huaweicloud.sdk.ces.v1.model.ShowEventDataRequest;
@@ -51,6 +50,7 @@ import com.huaweicloud.sdk.ces.v1.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.ces.v1.model.ShowResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v1.model.ShowResourceGroupResponse;
 import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmActionRequest;
+import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmActionRequestBody;
 import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmActionResponse;
 import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmRequest;
 import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmRequestBody;
@@ -151,12 +151,12 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<List<EventItem>>withRequestField("body",
+        builder.<List<CreateEventsRequestBody>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateEventsRequest::getBody, CreateEventsRequest::setBody)
-                .withInnerContainerType(EventItem.class));
+                .withInnerContainerType(CreateEventsRequestBody.class));
 
         // response
         builder.<List<CreateEventsResponseBody>>withResponseField("body",
@@ -181,12 +181,12 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<List<MetricDataItem>>withRequestField("body",
+        builder.<List<CreateMetricDataRequestBody>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateMetricDataRequest::getBody, CreateMetricDataRequest::setBody)
-                .withInnerContainerType(MetricDataItem.class));
+                .withInnerContainerType(CreateMetricDataRequestBody.class));
 
         // response
 
@@ -312,16 +312,16 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmName, ListAlarmHistoriesRequest::setAlarmName));
-        builder.<String>withRequestField("alarm_status",
+        builder.<ListAlarmHistoriesRequest.AlarmStatusEnum>withRequestField("alarm_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListAlarmHistoriesRequest.AlarmStatusEnum.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmStatus,
                 ListAlarmHistoriesRequest::setAlarmStatus));
-        builder.<String>withRequestField("alarm_level",
+        builder.<ListAlarmHistoriesRequest.AlarmLevelEnum>withRequestField("alarm_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListAlarmHistoriesRequest.AlarmLevelEnum.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmLevel, ListAlarmHistoriesRequest::setAlarmLevel));
         builder.<String>withRequestField("namespace",
             LocationType.Query,
@@ -409,6 +409,11 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmsRequest::getStart, ListAlarmsRequest::setStart));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -419,11 +424,12 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmsRequest::getOrder, ListAlarmsRequest::setOrder));
-        builder.<String>withRequestField("start",
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlarmsRequest::getStart, ListAlarmsRequest::setStart));
+            f -> f.withMarshaller(ListAlarmsRequest::getEnterpriseProjectId,
+                ListAlarmsRequest::setEnterpriseProjectId));
 
         // response
 
@@ -462,20 +468,20 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventSource, ListEventDetailRequest::setEventSource));
-        builder.<String>withRequestField("event_level",
+        builder.<ListEventDetailRequest.EventLevelEnum>withRequestField("event_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListEventDetailRequest.EventLevelEnum.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventLevel, ListEventDetailRequest::setEventLevel));
         builder.<String>withRequestField("event_user",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventUser, ListEventDetailRequest::setEventUser));
-        builder.<String>withRequestField("event_state",
+        builder.<ListEventDetailRequest.EventStateEnum>withRequestField("event_state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListEventDetailRequest.EventStateEnum.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventState, ListEventDetailRequest::setEventState));
         builder.<Long>withRequestField("from",
             LocationType.Query,
@@ -487,10 +493,10 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventDetailRequest::getTo, ListEventDetailRequest::setTo));
-        builder.<Integer>withRequestField("start",
+        builder.<Long>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventDetailRequest::getStart, ListEventDetailRequest::setStart));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -539,10 +545,10 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventsRequest::getTo, ListEventsRequest::setTo));
-        builder.<Integer>withRequestField("start",
+        builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventsRequest::getStart, ListEventsRequest::setStart));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -634,10 +640,10 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceGroupRequest::getGroupId, ListResourceGroupRequest::setGroupId));
-        builder.<String>withRequestField("status",
+        builder.<ListResourceGroupRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListResourceGroupRequest.StatusEnum.class),
             f -> f.withMarshaller(ListResourceGroupRequest::getStatus, ListResourceGroupRequest::setStatus));
         builder.<Integer>withRequestField("start",
             LocationType.Query,
@@ -782,10 +788,10 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowMetricDataRequest.FilterEnum.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getFilter, ShowMetricDataRequest::setFilter));
-        builder.<Integer>withRequestField("period",
+        builder.<ShowMetricDataRequest.PeriodEnum>withRequestField("period",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(ShowMetricDataRequest.PeriodEnum.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getPeriod, ShowMetricDataRequest::setPeriod));
         builder.<Long>withRequestField("from",
             LocationType.Query,
@@ -837,10 +843,10 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceGroupRequest::getGroupId, ShowResourceGroupRequest::setGroupId));
-        builder.<String>withRequestField("status",
+        builder.<ShowResourceGroupRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowResourceGroupRequest.StatusEnum.class),
             f -> f.withMarshaller(ShowResourceGroupRequest::getStatus, ShowResourceGroupRequest::setStatus));
         builder.<String>withRequestField("namespace",
             LocationType.Query,
@@ -912,10 +918,10 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAlarmActionRequest::getAlarmId, UpdateAlarmActionRequest::setAlarmId));
-        builder.<ModifyAlarmActionReq>withRequestField("body",
+        builder.<UpdateAlarmActionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ModifyAlarmActionReq.class),
+            TypeCasts.uncheckedConversion(UpdateAlarmActionRequestBody.class),
             f -> f.withMarshaller(UpdateAlarmActionRequest::getBody, UpdateAlarmActionRequest::setBody));
 
         // response

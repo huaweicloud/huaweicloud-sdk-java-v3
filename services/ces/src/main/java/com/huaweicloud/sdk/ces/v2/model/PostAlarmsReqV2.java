@@ -356,7 +356,7 @@ public class PostAlarmsReqV2 {
     }
 
     /**
-     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
      * @return alarmNotifications
      */
     public List<Notification> getAlarmNotifications() {
@@ -389,7 +389,7 @@ public class PostAlarmsReqV2 {
     }
 
     /**
-     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
      * @return okNotifications
      */
     public List<Notification> getOkNotifications() {

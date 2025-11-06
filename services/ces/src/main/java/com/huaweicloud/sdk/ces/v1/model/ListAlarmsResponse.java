@@ -17,19 +17,19 @@ public class ListAlarmsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_alarms")
 
-    private List<MetricAlarms> metricAlarms = null;
+    private List<MetricAlarmsResp> metricAlarms = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
 
-    private MetaData metaData;
+    private MetaDataResp metaData;
 
-    public ListAlarmsResponse withMetricAlarms(List<MetricAlarms> metricAlarms) {
+    public ListAlarmsResponse withMetricAlarms(List<MetricAlarmsResp> metricAlarms) {
         this.metricAlarms = metricAlarms;
         return this;
     }
 
-    public ListAlarmsResponse addMetricAlarmsItem(MetricAlarms metricAlarmsItem) {
+    public ListAlarmsResponse addMetricAlarmsItem(MetricAlarmsResp metricAlarmsItem) {
         if (this.metricAlarms == null) {
             this.metricAlarms = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListAlarmsResponse extends SdkResponse {
         return this;
     }
 
-    public ListAlarmsResponse withMetricAlarms(Consumer<List<MetricAlarms>> metricAlarmsSetter) {
+    public ListAlarmsResponse withMetricAlarms(Consumer<List<MetricAlarmsResp>> metricAlarmsSetter) {
         if (this.metricAlarms == null) {
             this.metricAlarms = new ArrayList<>();
         }
@@ -46,25 +46,25 @@ public class ListAlarmsResponse extends SdkResponse {
     }
 
     /**
-     * 告警对象列表。
+     * **参数解释**： 查询的告警对象列表。 
      * @return metricAlarms
      */
-    public List<MetricAlarms> getMetricAlarms() {
+    public List<MetricAlarmsResp> getMetricAlarms() {
         return metricAlarms;
     }
 
-    public void setMetricAlarms(List<MetricAlarms> metricAlarms) {
+    public void setMetricAlarms(List<MetricAlarmsResp> metricAlarms) {
         this.metricAlarms = metricAlarms;
     }
 
-    public ListAlarmsResponse withMetaData(MetaData metaData) {
+    public ListAlarmsResponse withMetaData(MetaDataResp metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public ListAlarmsResponse withMetaData(Consumer<MetaData> metaDataSetter) {
+    public ListAlarmsResponse withMetaData(Consumer<MetaDataResp> metaDataSetter) {
         if (this.metaData == null) {
-            this.metaData = new MetaData();
+            this.metaData = new MetaDataResp();
             metaDataSetter.accept(this.metaData);
         }
 
@@ -75,11 +75,11 @@ public class ListAlarmsResponse extends SdkResponse {
      * Get metaData
      * @return metaData
      */
-    public MetaData getMetaData() {
+    public MetaDataResp getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(MetaData metaData) {
+    public void setMetaData(MetaDataResp metaData) {
         this.metaData = metaData;
     }
 

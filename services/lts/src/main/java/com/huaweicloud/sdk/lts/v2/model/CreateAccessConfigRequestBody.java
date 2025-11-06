@@ -183,6 +183,11 @@ public class CreateAccessConfigRequestBody {
 
     private String accessConfigTypeSource;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recursive_depth")
+
+    private Integer recursiveDepth;
+
     public CreateAccessConfigRequestBody withAccessConfigName(String accessConfigName) {
         this.accessConfigName = accessConfigName;
         return this;
@@ -599,6 +604,23 @@ public class CreateAccessConfigRequestBody {
         this.accessConfigTypeSource = accessConfigTypeSource;
     }
 
+    public CreateAccessConfigRequestBody withRecursiveDepth(Integer recursiveDepth) {
+        this.recursiveDepth = recursiveDepth;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 采集路径递归最大深度。 **取值范围：** 不涉及。
+     * @return recursiveDepth
+     */
+    public Integer getRecursiveDepth() {
+        return recursiveDepth;
+    }
+
+    public void setRecursiveDepth(Integer recursiveDepth) {
+        this.recursiveDepth = recursiveDepth;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -622,7 +644,8 @@ public class CreateAccessConfigRequestBody {
             && Objects.equals(this.applicationId, that.applicationId)
             && Objects.equals(this.environmentId, that.environmentId)
             && Objects.equals(this.componentId, that.componentId)
-            && Objects.equals(this.accessConfigTypeSource, that.accessConfigTypeSource);
+            && Objects.equals(this.accessConfigTypeSource, that.accessConfigTypeSource)
+            && Objects.equals(this.recursiveDepth, that.recursiveDepth);
     }
 
     @Override
@@ -645,7 +668,8 @@ public class CreateAccessConfigRequestBody {
             applicationId,
             environmentId,
             componentId,
-            accessConfigTypeSource);
+            accessConfigTypeSource,
+            recursiveDepth);
     }
 
     @Override
@@ -671,6 +695,7 @@ public class CreateAccessConfigRequestBody {
         sb.append("    environmentId: ").append(toIndentedString(environmentId)).append("\n");
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("    accessConfigTypeSource: ").append(toIndentedString(accessConfigTypeSource)).append("\n");
+        sb.append("    recursiveDepth: ").append(toIndentedString(recursiveDepth)).append("\n");
         sb.append("}");
         return sb.toString();
     }

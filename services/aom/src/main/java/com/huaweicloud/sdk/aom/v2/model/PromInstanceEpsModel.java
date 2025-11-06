@@ -26,116 +26,10 @@ public class PromInstanceEpsModel {
 
     private String promId;
 
-    /**
-     * Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
-     */
-    public static final class PromTypeEnum {
-
-        /**
-         * Enum DEFAULT for value: "default"
-         */
-        public static final PromTypeEnum DEFAULT = new PromTypeEnum("default");
-
-        /**
-         * Enum ECS for value: "ECS"
-         */
-        public static final PromTypeEnum ECS = new PromTypeEnum("ECS");
-
-        /**
-         * Enum VPC for value: "VPC"
-         */
-        public static final PromTypeEnum VPC = new PromTypeEnum("VPC");
-
-        /**
-         * Enum CCE for value: "CCE"
-         */
-        public static final PromTypeEnum CCE = new PromTypeEnum("CCE");
-
-        /**
-         * Enum REMOTE_WRITE for value: "REMOTE_WRITE"
-         */
-        public static final PromTypeEnum REMOTE_WRITE = new PromTypeEnum("REMOTE_WRITE");
-
-        /**
-         * Enum KUBERNETES for value: "KUBERNETES"
-         */
-        public static final PromTypeEnum KUBERNETES = new PromTypeEnum("KUBERNETES");
-
-        /**
-         * Enum CLOUD_SERVICE for value: "CLOUD_SERVICE"
-         */
-        public static final PromTypeEnum CLOUD_SERVICE = new PromTypeEnum("CLOUD_SERVICE");
-
-        /**
-         * Enum ACROSS_ACCOUNT for value: "ACROSS_ACCOUNT"
-         */
-        public static final PromTypeEnum ACROSS_ACCOUNT = new PromTypeEnum("ACROSS_ACCOUNT");
-
-        private static final Map<String, PromTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PromTypeEnum> createStaticFields() {
-            Map<String, PromTypeEnum> map = new HashMap<>();
-            map.put("default", DEFAULT);
-            map.put("ECS", ECS);
-            map.put("VPC", VPC);
-            map.put("CCE", CCE);
-            map.put("REMOTE_WRITE", REMOTE_WRITE);
-            map.put("KUBERNETES", KUBERNETES);
-            map.put("CLOUD_SERVICE", CLOUD_SERVICE);
-            map.put("ACROSS_ACCOUNT", ACROSS_ACCOUNT);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PromTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PromTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PromTypeEnum(value));
-        }
-
-        public static PromTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PromTypeEnum) {
-                return this.value.equals(((PromTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prom_type")
 
-    private PromTypeEnum promType;
+    private String promType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prom_version")
@@ -263,6 +157,21 @@ public class PromInstanceEpsModel {
 
     private String cceSpecConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prom_limits")
+
+    private PromLimits promLimits;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limits_update_time")
+
+    private Long limitsUpdateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "application")
+
+    private ApplicationModel application;
+
     public PromInstanceEpsModel withPromName(String promName) {
         this.promName = promName;
         return this;
@@ -297,20 +206,20 @@ public class PromInstanceEpsModel {
         this.promId = promId;
     }
 
-    public PromInstanceEpsModel withPromType(PromTypeEnum promType) {
+    public PromInstanceEpsModel withPromType(String promType) {
         this.promType = promType;
         return this;
     }
 
     /**
-     * Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
+     * Prometheus实例类型。  - default：默认普罗实例 - ECS：Prometheus for ECS - CCE：Prometheus for CCE - REMOTE_WRITE：Prometheus 通用实例 - CLOUD_SERVICE：Prometheus for 云服务 - ACROSS_ACCOUNT：Prometheus for 多账号聚合实例 （暂不支持ACROSS_ACCOUNT类型）
      * @return promType
      */
-    public PromTypeEnum getPromType() {
+    public String getPromType() {
         return promType;
     }
 
-    public void setPromType(PromTypeEnum promType) {
+    public void setPromType(String promType) {
         this.promType = promType;
     }
 
@@ -493,6 +402,75 @@ public class PromInstanceEpsModel {
         this.cceSpecConfig = cceSpecConfig;
     }
 
+    public PromInstanceEpsModel withPromLimits(PromLimits promLimits) {
+        this.promLimits = promLimits;
+        return this;
+    }
+
+    public PromInstanceEpsModel withPromLimits(Consumer<PromLimits> promLimitsSetter) {
+        if (this.promLimits == null) {
+            this.promLimits = new PromLimits();
+            promLimitsSetter.accept(this.promLimits);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get promLimits
+     * @return promLimits
+     */
+    public PromLimits getPromLimits() {
+        return promLimits;
+    }
+
+    public void setPromLimits(PromLimits promLimits) {
+        this.promLimits = promLimits;
+    }
+
+    public PromInstanceEpsModel withLimitsUpdateTime(Long limitsUpdateTime) {
+        this.limitsUpdateTime = limitsUpdateTime;
+        return this;
+    }
+
+    /**
+     * 指标存储周期修改时间。
+     * @return limitsUpdateTime
+     */
+    public Long getLimitsUpdateTime() {
+        return limitsUpdateTime;
+    }
+
+    public void setLimitsUpdateTime(Long limitsUpdateTime) {
+        this.limitsUpdateTime = limitsUpdateTime;
+    }
+
+    public PromInstanceEpsModel withApplication(ApplicationModel application) {
+        this.application = application;
+        return this;
+    }
+
+    public PromInstanceEpsModel withApplication(Consumer<ApplicationModel> applicationSetter) {
+        if (this.application == null) {
+            this.application = new ApplicationModel();
+            applicationSetter.accept(this.application);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get application
+     * @return application
+     */
+    public ApplicationModel getApplication() {
+        return application;
+    }
+
+    public void setApplication(ApplicationModel application) {
+        this.application = application;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -511,7 +489,10 @@ public class PromInstanceEpsModel {
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.isDeletedTag, that.isDeletedTag)
             && Objects.equals(this.deletedTime, that.deletedTime)
             && Objects.equals(this.promSpecConfig, that.promSpecConfig)
-            && Objects.equals(this.cceSpecConfig, that.cceSpecConfig);
+            && Objects.equals(this.cceSpecConfig, that.cceSpecConfig)
+            && Objects.equals(this.promLimits, that.promLimits)
+            && Objects.equals(this.limitsUpdateTime, that.limitsUpdateTime)
+            && Objects.equals(this.application, that.application);
     }
 
     @Override
@@ -528,7 +509,10 @@ public class PromInstanceEpsModel {
             isDeletedTag,
             deletedTime,
             promSpecConfig,
-            cceSpecConfig);
+            cceSpecConfig,
+            promLimits,
+            limitsUpdateTime,
+            application);
     }
 
     @Override
@@ -548,6 +532,9 @@ public class PromInstanceEpsModel {
         sb.append("    deletedTime: ").append(toIndentedString(deletedTime)).append("\n");
         sb.append("    promSpecConfig: ").append(toIndentedString(promSpecConfig)).append("\n");
         sb.append("    cceSpecConfig: ").append(toIndentedString(cceSpecConfig)).append("\n");
+        sb.append("    promLimits: ").append(toIndentedString(promLimits)).append("\n");
+        sb.append("    limitsUpdateTime: ").append(toIndentedString(limitsUpdateTime)).append("\n");
+        sb.append("    application: ").append(toIndentedString(application)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,7 +19,7 @@ public class UpdateAlarmActionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ModifyAlarmActionReq body;
+    private UpdateAlarmActionRequestBody body;
 
     public UpdateAlarmActionRequest withAlarmId(String alarmId) {
         this.alarmId = alarmId;
@@ -27,7 +27,7 @@ public class UpdateAlarmActionRequest {
     }
 
     /**
-     * 告警规则的ID。
+     * **参数解释**： 告警规则ID， **约束限制**： 不涉及。 **取值范围**： 以al开头，后跟22位由字母或数字组成的字符串。长度为24个字符。 **默认取值**： 不涉及。 
      * @return alarmId
      */
     public String getAlarmId() {
@@ -38,14 +38,14 @@ public class UpdateAlarmActionRequest {
         this.alarmId = alarmId;
     }
 
-    public UpdateAlarmActionRequest withBody(ModifyAlarmActionReq body) {
+    public UpdateAlarmActionRequest withBody(UpdateAlarmActionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateAlarmActionRequest withBody(Consumer<ModifyAlarmActionReq> bodySetter) {
+    public UpdateAlarmActionRequest withBody(Consumer<UpdateAlarmActionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ModifyAlarmActionReq();
+            this.body = new UpdateAlarmActionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateAlarmActionRequest {
      * Get body
      * @return body
      */
-    public ModifyAlarmActionReq getBody() {
+    public UpdateAlarmActionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ModifyAlarmActionReq body) {
+    public void setBody(UpdateAlarmActionRequestBody body) {
         this.body = body;
     }
 

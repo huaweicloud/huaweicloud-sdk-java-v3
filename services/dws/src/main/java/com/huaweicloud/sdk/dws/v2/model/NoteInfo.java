@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**： 重分布提示信息。 **取值范围**： 不涉及。
+ * **参数解释**： 扩容前提示信息。 **取值范围** 不涉及。
  */
 public class NoteInfo {
 

@@ -136,19 +136,9 @@ public class CreateSqlAlarmRuleRequestBody {
     private SqlAlarmLevelEnum sqlAlarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sql_alarm_send")
-
-    private Boolean sqlAlarmSend;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
     private String domainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "notification_save_rule")
-
-    private SqlNotificationSaveRule notificationSaveRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_condition_count")
@@ -285,6 +275,11 @@ public class CreateSqlAlarmRuleRequestBody {
     @JsonProperty(value = "alarm_action_rule_name")
 
     private String alarmActionRuleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsRequestBody> tags = null;
 
     public CreateSqlAlarmRuleRequestBody withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
@@ -430,23 +425,6 @@ public class CreateSqlAlarmRuleRequestBody {
         this.sqlAlarmLevel = sqlAlarmLevel;
     }
 
-    public CreateSqlAlarmRuleRequestBody withSqlAlarmSend(Boolean sqlAlarmSend) {
-        this.sqlAlarmSend = sqlAlarmSend;
-        return this;
-    }
-
-    /**
-     * 是否发送
-     * @return sqlAlarmSend
-     */
-    public Boolean getSqlAlarmSend() {
-        return sqlAlarmSend;
-    }
-
-    public void setSqlAlarmSend(Boolean sqlAlarmSend) {
-        this.sqlAlarmSend = sqlAlarmSend;
-    }
-
     public CreateSqlAlarmRuleRequestBody withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -462,33 +440,6 @@ public class CreateSqlAlarmRuleRequestBody {
 
     public void setDomainId(String domainId) {
         this.domainId = domainId;
-    }
-
-    public CreateSqlAlarmRuleRequestBody withNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
-        this.notificationSaveRule = notificationSaveRule;
-        return this;
-    }
-
-    public CreateSqlAlarmRuleRequestBody withNotificationSaveRule(
-        Consumer<SqlNotificationSaveRule> notificationSaveRuleSetter) {
-        if (this.notificationSaveRule == null) {
-            this.notificationSaveRule = new SqlNotificationSaveRule();
-            notificationSaveRuleSetter.accept(this.notificationSaveRule);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get notificationSaveRule
-     * @return notificationSaveRule
-     */
-    public SqlNotificationSaveRule getNotificationSaveRule() {
-        return notificationSaveRule;
-    }
-
-    public void setNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
-        this.notificationSaveRule = notificationSaveRule;
     }
 
     public CreateSqlAlarmRuleRequestBody withTriggerConditionCount(Integer triggerConditionCount) {
@@ -593,6 +544,39 @@ public class CreateSqlAlarmRuleRequestBody {
         this.alarmActionRuleName = alarmActionRuleName;
     }
 
+    public CreateSqlAlarmRuleRequestBody withTags(List<TagsRequestBody> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateSqlAlarmRuleRequestBody addTagsItem(TagsRequestBody tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateSqlAlarmRuleRequestBody withTags(Consumer<List<TagsRequestBody>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。 **约束限制：** 不涉及。
+     * @return tags
+     */
+    public List<TagsRequestBody> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagsRequestBody> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -607,15 +591,14 @@ public class CreateSqlAlarmRuleRequestBody {
             && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
             && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
-            && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel)
-            && Objects.equals(this.sqlAlarmSend, that.sqlAlarmSend) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.notificationSaveRule, that.notificationSaveRule)
+            && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
             && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
             && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
             && Objects.equals(this.recoveryPolicy, that.recoveryPolicy)
             && Objects.equals(this.notificationFrequency, that.notificationFrequency)
-            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName);
+            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -627,15 +610,14 @@ public class CreateSqlAlarmRuleRequestBody {
             frequency,
             conditionExpression,
             sqlAlarmLevel,
-            sqlAlarmSend,
             domainId,
-            notificationSaveRule,
             triggerConditionCount,
             triggerConditionFrequency,
             whetherRecoveryPolicy,
             recoveryPolicy,
             notificationFrequency,
-            alarmActionRuleName);
+            alarmActionRuleName,
+            tags);
     }
 
     @Override
@@ -649,15 +631,14 @@ public class CreateSqlAlarmRuleRequestBody {
         sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
         sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
         sb.append("    sqlAlarmLevel: ").append(toIndentedString(sqlAlarmLevel)).append("\n");
-        sb.append("    sqlAlarmSend: ").append(toIndentedString(sqlAlarmSend)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    notificationSaveRule: ").append(toIndentedString(notificationSaveRule)).append("\n");
         sb.append("    triggerConditionCount: ").append(toIndentedString(triggerConditionCount)).append("\n");
         sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
         sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
         sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
         sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
         sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

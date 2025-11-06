@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,10 +17,26 @@ public class DeletePromInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private String body;
+    private Map<String, Boolean> body = null;
 
-    public DeletePromInstanceResponse withBody(String body) {
+    public DeletePromInstanceResponse withBody(Map<String, Boolean> body) {
         this.body = body;
+        return this;
+    }
+
+    public DeletePromInstanceResponse putBodyItem(String key, Boolean bodyItem) {
+        if (this.body == null) {
+            this.body = new HashMap<>();
+        }
+        this.body.put(key, bodyItem);
+        return this;
+    }
+
+    public DeletePromInstanceResponse withBody(Consumer<Map<String, Boolean>> bodySetter) {
+        if (this.body == null) {
+            this.body = new HashMap<>();
+        }
+        bodySetter.accept(this.body);
         return this;
     }
 
@@ -25,11 +44,11 @@ public class DeletePromInstanceResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public String getBody() {
+    public Map<String, Boolean> getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(Map<String, Boolean> body) {
         this.body = body;
     }
 

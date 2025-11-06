@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateDisasterRecovery
@@ -44,6 +45,41 @@ public class CreateDisasterRecovery {
     @JsonProperty(value = "standby_obs_bucket")
 
     private String standbyObsBucket;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "discovery_recovery_id")
+
+    private String discoveryRecoveryId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary_cluster_region")
+
+    private String primaryClusterRegion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "standby_cluster_region")
+
+    private String standbyClusterRegion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary_cluster_project_id")
+
+    private String primaryClusterProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "standby_cluster_project_id")
+
+    private String standbyClusterProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_role")
+
+    private String clusterRole;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary_cluster_info")
+
+    private CreateDrClusterDto primaryClusterInfo;
 
     public CreateDisasterRecovery withName(String name) {
         this.name = name;
@@ -164,6 +200,134 @@ public class CreateDisasterRecovery {
         this.standbyObsBucket = standbyObsBucket;
     }
 
+    public CreateDisasterRecovery withDiscoveryRecoveryId(String discoveryRecoveryId) {
+        this.discoveryRecoveryId = discoveryRecoveryId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 容灾ID。 **取值范围**： 不涉及。
+     * @return discoveryRecoveryId
+     */
+    public String getDiscoveryRecoveryId() {
+        return discoveryRecoveryId;
+    }
+
+    public void setDiscoveryRecoveryId(String discoveryRecoveryId) {
+        this.discoveryRecoveryId = discoveryRecoveryId;
+    }
+
+    public CreateDisasterRecovery withPrimaryClusterRegion(String primaryClusterRegion) {
+        this.primaryClusterRegion = primaryClusterRegion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 容灾主Region。 **取值范围**： 不涉及。
+     * @return primaryClusterRegion
+     */
+    public String getPrimaryClusterRegion() {
+        return primaryClusterRegion;
+    }
+
+    public void setPrimaryClusterRegion(String primaryClusterRegion) {
+        this.primaryClusterRegion = primaryClusterRegion;
+    }
+
+    public CreateDisasterRecovery withStandbyClusterRegion(String standbyClusterRegion) {
+        this.standbyClusterRegion = standbyClusterRegion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 容灾备Region。 **取值范围**： 不涉及。
+     * @return standbyClusterRegion
+     */
+    public String getStandbyClusterRegion() {
+        return standbyClusterRegion;
+    }
+
+    public void setStandbyClusterRegion(String standbyClusterRegion) {
+        this.standbyClusterRegion = standbyClusterRegion;
+    }
+
+    public CreateDisasterRecovery withPrimaryClusterProjectId(String primaryClusterProjectId) {
+        this.primaryClusterProjectId = primaryClusterProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 容灾主集群项目ID。 **取值范围**： 不涉及。
+     * @return primaryClusterProjectId
+     */
+    public String getPrimaryClusterProjectId() {
+        return primaryClusterProjectId;
+    }
+
+    public void setPrimaryClusterProjectId(String primaryClusterProjectId) {
+        this.primaryClusterProjectId = primaryClusterProjectId;
+    }
+
+    public CreateDisasterRecovery withStandbyClusterProjectId(String standbyClusterProjectId) {
+        this.standbyClusterProjectId = standbyClusterProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 容灾备集群项目ID。 **取值范围**： 不涉及。
+     * @return standbyClusterProjectId
+     */
+    public String getStandbyClusterProjectId() {
+        return standbyClusterProjectId;
+    }
+
+    public void setStandbyClusterProjectId(String standbyClusterProjectId) {
+        this.standbyClusterProjectId = standbyClusterProjectId;
+    }
+
+    public CreateDisasterRecovery withClusterRole(String clusterRole) {
+        this.clusterRole = clusterRole;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群角色。 **取值范围**： 不涉及。
+     * @return clusterRole
+     */
+    public String getClusterRole() {
+        return clusterRole;
+    }
+
+    public void setClusterRole(String clusterRole) {
+        this.clusterRole = clusterRole;
+    }
+
+    public CreateDisasterRecovery withPrimaryClusterInfo(CreateDrClusterDto primaryClusterInfo) {
+        this.primaryClusterInfo = primaryClusterInfo;
+        return this;
+    }
+
+    public CreateDisasterRecovery withPrimaryClusterInfo(Consumer<CreateDrClusterDto> primaryClusterInfoSetter) {
+        if (this.primaryClusterInfo == null) {
+            this.primaryClusterInfo = new CreateDrClusterDto();
+            primaryClusterInfoSetter.accept(this.primaryClusterInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get primaryClusterInfo
+     * @return primaryClusterInfo
+     */
+    public CreateDrClusterDto getPrimaryClusterInfo() {
+        return primaryClusterInfo;
+    }
+
+    public void setPrimaryClusterInfo(CreateDrClusterDto primaryClusterInfo) {
+        this.primaryClusterInfo = primaryClusterInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,13 +342,32 @@ public class CreateDisasterRecovery {
             && Objects.equals(this.standbyClusterId, that.standbyClusterId)
             && Objects.equals(this.drSyncPeriod, that.drSyncPeriod)
             && Objects.equals(this.primaryObsBucket, that.primaryObsBucket)
-            && Objects.equals(this.standbyObsBucket, that.standbyObsBucket);
+            && Objects.equals(this.standbyObsBucket, that.standbyObsBucket)
+            && Objects.equals(this.discoveryRecoveryId, that.discoveryRecoveryId)
+            && Objects.equals(this.primaryClusterRegion, that.primaryClusterRegion)
+            && Objects.equals(this.standbyClusterRegion, that.standbyClusterRegion)
+            && Objects.equals(this.primaryClusterProjectId, that.primaryClusterProjectId)
+            && Objects.equals(this.standbyClusterProjectId, that.standbyClusterProjectId)
+            && Objects.equals(this.clusterRole, that.clusterRole)
+            && Objects.equals(this.primaryClusterInfo, that.primaryClusterInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, drType, primaryClusterId, standbyClusterId, drSyncPeriod, primaryObsBucket, standbyObsBucket);
+        return Objects.hash(name,
+            drType,
+            primaryClusterId,
+            standbyClusterId,
+            drSyncPeriod,
+            primaryObsBucket,
+            standbyObsBucket,
+            discoveryRecoveryId,
+            primaryClusterRegion,
+            standbyClusterRegion,
+            primaryClusterProjectId,
+            standbyClusterProjectId,
+            clusterRole,
+            primaryClusterInfo);
     }
 
     @Override
@@ -198,6 +381,13 @@ public class CreateDisasterRecovery {
         sb.append("    drSyncPeriod: ").append(toIndentedString(drSyncPeriod)).append("\n");
         sb.append("    primaryObsBucket: ").append(toIndentedString(primaryObsBucket)).append("\n");
         sb.append("    standbyObsBucket: ").append(toIndentedString(standbyObsBucket)).append("\n");
+        sb.append("    discoveryRecoveryId: ").append(toIndentedString(discoveryRecoveryId)).append("\n");
+        sb.append("    primaryClusterRegion: ").append(toIndentedString(primaryClusterRegion)).append("\n");
+        sb.append("    standbyClusterRegion: ").append(toIndentedString(standbyClusterRegion)).append("\n");
+        sb.append("    primaryClusterProjectId: ").append(toIndentedString(primaryClusterProjectId)).append("\n");
+        sb.append("    standbyClusterProjectId: ").append(toIndentedString(standbyClusterProjectId)).append("\n");
+        sb.append("    clusterRole: ").append(toIndentedString(clusterRole)).append("\n");
+        sb.append("    primaryClusterInfo: ").append(toIndentedString(primaryClusterInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

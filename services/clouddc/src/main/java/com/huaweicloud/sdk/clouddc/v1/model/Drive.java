@@ -58,7 +58,7 @@ public class Drive {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity_bytes")
 
-    private Integer capacityBytes;
+    private Long capacityBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capable_speed_gbs")
@@ -258,7 +258,7 @@ public class Drive {
         this.sasAddress = sasAddress;
     }
 
-    public Drive withCapacityBytes(Integer capacityBytes) {
+    public Drive withCapacityBytes(Long capacityBytes) {
         this.capacityBytes = capacityBytes;
         return this;
     }
@@ -267,11 +267,11 @@ public class Drive {
      * 容量（单位：byte）
      * @return capacityBytes
      */
-    public Integer getCapacityBytes() {
+    public Long getCapacityBytes() {
         return capacityBytes;
     }
 
-    public void setCapacityBytes(Integer capacityBytes) {
+    public void setCapacityBytes(Long capacityBytes) {
         this.capacityBytes = capacityBytes;
     }
 

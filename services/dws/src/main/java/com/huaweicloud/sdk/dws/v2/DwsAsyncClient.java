@@ -4738,7 +4738,7 @@ public class DwsAsyncClient {
     }
 
     /**
-     * 集群扩容前检查
+     * 集群扩容前准备
      *
      * 下发扩容配置文件，完成扩容准备工作。
      * 
@@ -4752,7 +4752,7 @@ public class DwsAsyncClient {
     }
 
     /**
-     * 集群扩容前检查
+     * 集群扩容前准备
      *
      * 下发扩容配置文件，完成扩容准备工作。
      * 
@@ -5434,7 +5434,7 @@ public class DwsAsyncClient {
     }
 
     /**
-     * 查询节点列表
+     * 获取扩容准备信息
      *
      * 获取扩容准备信息。
      * 
@@ -5449,7 +5449,7 @@ public class DwsAsyncClient {
     }
 
     /**
-     * 查询节点列表
+     * 获取扩容准备信息
      *
      * 获取扩容准备信息。
      * 

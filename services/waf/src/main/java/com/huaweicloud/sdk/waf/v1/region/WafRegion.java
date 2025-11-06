@@ -80,6 +80,17 @@ public class WafRegion {
 
     public static final Region AF_NORTH_1 = new Region("af-north-1", "https://waf.af-north-1.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://waf.cn-south-4.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://waf.cn-north-12.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://waf.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://waf.cn-east-4.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://waf.cn-north-11.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("WAF");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -115,6 +126,11 @@ public class WafRegion {
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
         map.put("af-north-1", AF_NORTH_1);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("cn-north-11", CN_NORTH_11);
         return Collections.unmodifiableMap(map);
     }
 

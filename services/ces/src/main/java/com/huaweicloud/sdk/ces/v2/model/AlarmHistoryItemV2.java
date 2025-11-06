@@ -737,7 +737,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 计算出该条告警记录的资源监控数据上报时间和监控数值。
+     * **参数解释**： 计算出该条告警记录的资源监控数据上报时间和监控数值。 
      * @return dataPoints
      */
     public List<DataPointInfo> getDataPoints() {

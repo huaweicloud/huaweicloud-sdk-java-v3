@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -69,6 +70,16 @@ public class VehicleLicenseFront {
     @JsonProperty(value = "text_location")
 
     private Object textLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_result")
+
+    private VehicleLicenseAlarmResult alarmResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_confidence")
+
+    private VehicleLicenseAlarmConfidence alarmConfidence;
 
     public VehicleLicenseFront withNumber(String number) {
         this.number = number;
@@ -274,6 +285,58 @@ public class VehicleLicenseFront {
         this.textLocation = textLocation;
     }
 
+    public VehicleLicenseFront withAlarmResult(VehicleLicenseAlarmResult alarmResult) {
+        this.alarmResult = alarmResult;
+        return this;
+    }
+
+    public VehicleLicenseFront withAlarmResult(Consumer<VehicleLicenseAlarmResult> alarmResultSetter) {
+        if (this.alarmResult == null) {
+            this.alarmResult = new VehicleLicenseAlarmResult();
+            alarmResultSetter.accept(this.alarmResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get alarmResult
+     * @return alarmResult
+     */
+    public VehicleLicenseAlarmResult getAlarmResult() {
+        return alarmResult;
+    }
+
+    public void setAlarmResult(VehicleLicenseAlarmResult alarmResult) {
+        this.alarmResult = alarmResult;
+    }
+
+    public VehicleLicenseFront withAlarmConfidence(VehicleLicenseAlarmConfidence alarmConfidence) {
+        this.alarmConfidence = alarmConfidence;
+        return this;
+    }
+
+    public VehicleLicenseFront withAlarmConfidence(Consumer<VehicleLicenseAlarmConfidence> alarmConfidenceSetter) {
+        if (this.alarmConfidence == null) {
+            this.alarmConfidence = new VehicleLicenseAlarmConfidence();
+            alarmConfidenceSetter.accept(this.alarmConfidence);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get alarmConfidence
+     * @return alarmConfidence
+     */
+    public VehicleLicenseAlarmConfidence getAlarmConfidence() {
+        return alarmConfidence;
+    }
+
+    public void setAlarmConfidence(VehicleLicenseAlarmConfidence alarmConfidence) {
+        this.alarmConfidence = alarmConfidence;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -289,7 +352,9 @@ public class VehicleLicenseFront {
             && Objects.equals(this.vin, that.vin) && Objects.equals(this.engineNo, that.engineNo)
             && Objects.equals(this.registerDate, that.registerDate) && Objects.equals(this.issueDate, that.issueDate)
             && Objects.equals(this.issuingAuthority, that.issuingAuthority)
-            && Objects.equals(this.textLocation, that.textLocation);
+            && Objects.equals(this.textLocation, that.textLocation)
+            && Objects.equals(this.alarmResult, that.alarmResult)
+            && Objects.equals(this.alarmConfidence, that.alarmConfidence);
     }
 
     @Override
@@ -305,7 +370,9 @@ public class VehicleLicenseFront {
             registerDate,
             issueDate,
             issuingAuthority,
-            textLocation);
+            textLocation,
+            alarmResult,
+            alarmConfidence);
     }
 
     @Override
@@ -324,6 +391,8 @@ public class VehicleLicenseFront {
         sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
         sb.append("    issuingAuthority: ").append(toIndentedString(issuingAuthority)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
+        sb.append("    alarmResult: ").append(toIndentedString(alarmResult)).append("\n");
+        sb.append("    alarmConfidence: ").append(toIndentedString(alarmConfidence)).append("\n");
         sb.append("}");
         return sb.toString();
     }

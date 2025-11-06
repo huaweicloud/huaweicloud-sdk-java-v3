@@ -127,17 +127,17 @@ public class UpdateAlarmRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_actions")
 
-    private List<AlarmActions> alarmActions = null;
+    private List<List<Notification>> alarmActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insufficientdata_actions")
 
-    private List<AlarmActions> insufficientdataActions = null;
+    private List<List<Notification>> insufficientdataActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_actions")
 
-    private List<AlarmActions> okActions = null;
+    private List<List<Notification>> okActions = null;
 
     public UpdateAlarmRequestBody withAlarmName(String alarmName) {
         this.alarmName = alarmName;
@@ -223,6 +223,8 @@ public class UpdateAlarmRequestBody {
 
     /**
      * 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
+     * minimum: 1
+     * maximum: 4
      * @return alarmLevel
      */
     public Integer getAlarmLevel() {
@@ -250,12 +252,12 @@ public class UpdateAlarmRequestBody {
         this.alarmType = alarmType;
     }
 
-    public UpdateAlarmRequestBody withAlarmActions(List<AlarmActions> alarmActions) {
+    public UpdateAlarmRequestBody withAlarmActions(List<List<Notification>> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
     }
 
-    public UpdateAlarmRequestBody addAlarmActionsItem(AlarmActions alarmActionsItem) {
+    public UpdateAlarmRequestBody addAlarmActionsItem(List<Notification> alarmActionsItem) {
         if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
@@ -263,7 +265,7 @@ public class UpdateAlarmRequestBody {
         return this;
     }
 
-    public UpdateAlarmRequestBody withAlarmActions(Consumer<List<AlarmActions>> alarmActionsSetter) {
+    public UpdateAlarmRequestBody withAlarmActions(Consumer<List<List<Notification>>> alarmActionsSetter) {
         if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
@@ -275,20 +277,20 @@ public class UpdateAlarmRequestBody {
      * 告警触发的动作。 结构样例如下： { \"type\": \"notification\",\"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。 autoscaling：弹性伸缩。
      * @return alarmActions
      */
-    public List<AlarmActions> getAlarmActions() {
+    public List<List<Notification>> getAlarmActions() {
         return alarmActions;
     }
 
-    public void setAlarmActions(List<AlarmActions> alarmActions) {
+    public void setAlarmActions(List<List<Notification>> alarmActions) {
         this.alarmActions = alarmActions;
     }
 
-    public UpdateAlarmRequestBody withInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
+    public UpdateAlarmRequestBody withInsufficientdataActions(List<List<Notification>> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
         return this;
     }
 
-    public UpdateAlarmRequestBody addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
+    public UpdateAlarmRequestBody addInsufficientdataActionsItem(List<Notification> insufficientdataActionsItem) {
         if (this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
@@ -297,7 +299,7 @@ public class UpdateAlarmRequestBody {
     }
 
     public UpdateAlarmRequestBody withInsufficientdataActions(
-        Consumer<List<AlarmActions>> insufficientdataActionsSetter) {
+        Consumer<List<List<Notification>>> insufficientdataActionsSetter) {
         if (this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
@@ -309,20 +311,20 @@ public class UpdateAlarmRequestBody {
      * 数据不足触发的动作（该参数已废弃，建议无需配置）。
      * @return insufficientdataActions
      */
-    public List<AlarmActions> getInsufficientdataActions() {
+    public List<List<Notification>> getInsufficientdataActions() {
         return insufficientdataActions;
     }
 
-    public void setInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
+    public void setInsufficientdataActions(List<List<Notification>> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
     }
 
-    public UpdateAlarmRequestBody withOkActions(List<AlarmActions> okActions) {
+    public UpdateAlarmRequestBody withOkActions(List<List<Notification>> okActions) {
         this.okActions = okActions;
         return this;
     }
 
-    public UpdateAlarmRequestBody addOkActionsItem(AlarmActions okActionsItem) {
+    public UpdateAlarmRequestBody addOkActionsItem(List<Notification> okActionsItem) {
         if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
@@ -330,7 +332,7 @@ public class UpdateAlarmRequestBody {
         return this;
     }
 
-    public UpdateAlarmRequestBody withOkActions(Consumer<List<AlarmActions>> okActionsSetter) {
+    public UpdateAlarmRequestBody withOkActions(Consumer<List<List<Notification>>> okActionsSetter) {
         if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
@@ -342,11 +344,11 @@ public class UpdateAlarmRequestBody {
      * 告警恢复触发的动作
      * @return okActions
      */
-    public List<AlarmActions> getOkActions() {
+    public List<List<Notification>> getOkActions() {
         return okActions;
     }
 
-    public void setOkActions(List<AlarmActions> okActions) {
+    public void setOkActions(List<List<Notification>> okActions) {
         this.okActions = okActions;
     }
 

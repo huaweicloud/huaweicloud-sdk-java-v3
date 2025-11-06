@@ -86,7 +86,7 @@ public class IamHelper {
 
     public static String getEndpoint(String regionId) {
         String env = System.getenv(Constants.IAM_ENDPOINT_ENV_NAME);
-        if (!StringUtils.isEmpty(env)) {
+        if (StringUtils.isNotEmpty(env)) {
             return env;
         }
 

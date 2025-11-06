@@ -49,6 +49,11 @@ public class ShowServerHardwareAttributesResponse extends SdkResponse {
 
     private List<StorageController> storageControllers = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metrics")
+
+    private List<HardwareMetric> metrics = null;
+
     public ShowServerHardwareAttributesResponse withSummary(HardwareSummary summary) {
         this.summary = summary;
         return this;
@@ -275,6 +280,39 @@ public class ShowServerHardwareAttributesResponse extends SdkResponse {
         this.storageControllers = storageControllers;
     }
 
+    public ShowServerHardwareAttributesResponse withMetrics(List<HardwareMetric> metrics) {
+        this.metrics = metrics;
+        return this;
+    }
+
+    public ShowServerHardwareAttributesResponse addMetricsItem(HardwareMetric metricsItem) {
+        if (this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
+        this.metrics.add(metricsItem);
+        return this;
+    }
+
+    public ShowServerHardwareAttributesResponse withMetrics(Consumer<List<HardwareMetric>> metricsSetter) {
+        if (this.metrics == null) {
+            this.metrics = new ArrayList<>();
+        }
+        metricsSetter.accept(this.metrics);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 监控指标信息 **约束限制**： 不涉及 
+     * @return metrics
+     */
+    public List<HardwareMetric> getMetrics() {
+        return metrics;
+    }
+
+    public void setMetrics(List<HardwareMetric> metrics) {
+        this.metrics = metrics;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -288,12 +326,13 @@ public class ShowServerHardwareAttributesResponse extends SdkResponse {
             && Objects.equals(this.processors, that.processors)
             && Objects.equals(this.networkAdapters, that.networkAdapters) && Objects.equals(this.fans, that.fans)
             && Objects.equals(this.powers, that.powers)
-            && Objects.equals(this.storageControllers, that.storageControllers);
+            && Objects.equals(this.storageControllers, that.storageControllers)
+            && Objects.equals(this.metrics, that.metrics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(summary, memorys, processors, networkAdapters, fans, powers, storageControllers);
+        return Objects.hash(summary, memorys, processors, networkAdapters, fans, powers, storageControllers, metrics);
     }
 
     @Override
@@ -307,6 +346,7 @@ public class ShowServerHardwareAttributesResponse extends SdkResponse {
         sb.append("    fans: ").append(toIndentedString(fans)).append("\n");
         sb.append("    powers: ").append(toIndentedString(powers)).append("\n");
         sb.append("    storageControllers: ").append(toIndentedString(storageControllers)).append("\n");
+        sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
         sb.append("}");
         return sb.toString();
     }

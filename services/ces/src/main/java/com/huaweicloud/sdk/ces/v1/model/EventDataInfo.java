@@ -49,6 +49,8 @@ public class EventDataInfo {
 
     /**
      * 事件上报时间。
+     * minimum: 1111111111111
+     * maximum: 9999999999999
      * @return timestamp
      */
     public Long getTimestamp() {

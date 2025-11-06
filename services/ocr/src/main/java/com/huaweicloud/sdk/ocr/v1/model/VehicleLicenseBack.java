@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
@@ -74,6 +75,16 @@ public class VehicleLicenseBack {
     @JsonProperty(value = "text_location")
 
     private Object textLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_result")
+
+    private VehicleLicenseAlarmResult alarmResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_confidence")
+
+    private VehicleLicenseAlarmConfidence alarmConfidence;
 
     public VehicleLicenseBack withNumber(String number) {
         this.number = number;
@@ -296,6 +307,58 @@ public class VehicleLicenseBack {
         this.textLocation = textLocation;
     }
 
+    public VehicleLicenseBack withAlarmResult(VehicleLicenseAlarmResult alarmResult) {
+        this.alarmResult = alarmResult;
+        return this;
+    }
+
+    public VehicleLicenseBack withAlarmResult(Consumer<VehicleLicenseAlarmResult> alarmResultSetter) {
+        if (this.alarmResult == null) {
+            this.alarmResult = new VehicleLicenseAlarmResult();
+            alarmResultSetter.accept(this.alarmResult);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get alarmResult
+     * @return alarmResult
+     */
+    public VehicleLicenseAlarmResult getAlarmResult() {
+        return alarmResult;
+    }
+
+    public void setAlarmResult(VehicleLicenseAlarmResult alarmResult) {
+        this.alarmResult = alarmResult;
+    }
+
+    public VehicleLicenseBack withAlarmConfidence(VehicleLicenseAlarmConfidence alarmConfidence) {
+        this.alarmConfidence = alarmConfidence;
+        return this;
+    }
+
+    public VehicleLicenseBack withAlarmConfidence(Consumer<VehicleLicenseAlarmConfidence> alarmConfidenceSetter) {
+        if (this.alarmConfidence == null) {
+            this.alarmConfidence = new VehicleLicenseAlarmConfidence();
+            alarmConfidenceSetter.accept(this.alarmConfidence);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get alarmConfidence
+     * @return alarmConfidence
+     */
+    public VehicleLicenseAlarmConfidence getAlarmConfidence() {
+        return alarmConfidence;
+    }
+
+    public void setAlarmConfidence(VehicleLicenseAlarmConfidence alarmConfidence) {
+        this.alarmConfidence = alarmConfidence;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -312,7 +375,9 @@ public class VehicleLicenseBack {
             && Objects.equals(this.tractionMass, that.tractionMass) && Objects.equals(this.remarks, that.remarks)
             && Objects.equals(this.inspectionRecord, that.inspectionRecord)
             && Objects.equals(this.codeNumber, that.codeNumber) && Objects.equals(this.energyType, that.energyType)
-            && Objects.equals(this.textLocation, that.textLocation);
+            && Objects.equals(this.textLocation, that.textLocation)
+            && Objects.equals(this.alarmResult, that.alarmResult)
+            && Objects.equals(this.alarmConfidence, that.alarmConfidence);
     }
 
     @Override
@@ -329,7 +394,9 @@ public class VehicleLicenseBack {
             inspectionRecord,
             codeNumber,
             energyType,
-            textLocation);
+            textLocation,
+            alarmResult,
+            alarmConfidence);
     }
 
     @Override
@@ -349,6 +416,8 @@ public class VehicleLicenseBack {
         sb.append("    codeNumber: ").append(toIndentedString(codeNumber)).append("\n");
         sb.append("    energyType: ").append(toIndentedString(energyType)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
+        sb.append("    alarmResult: ").append(toIndentedString(alarmResult)).append("\n");
+        sb.append("    alarmConfidence: ").append(toIndentedString(alarmConfidence)).append("\n");
         sb.append("}");
         return sb.toString();
     }

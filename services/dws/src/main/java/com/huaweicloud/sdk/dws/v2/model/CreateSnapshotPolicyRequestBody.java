@@ -43,6 +43,11 @@ public class CreateSnapshotPolicyRequestBody {
 
     private List<String> serverIps = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_backup")
+
+    private Boolean autoBackup;
+
     public CreateSnapshotPolicyRequestBody withKeepDay(Integer keepDay) {
         this.keepDay = keepDay;
         return this;
@@ -178,6 +183,23 @@ public class CreateSnapshotPolicyRequestBody {
         this.serverIps = serverIps;
     }
 
+    public CreateSnapshotPolicyRequestBody withAutoBackup(Boolean autoBackup) {
+        this.autoBackup = autoBackup;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否自动备份。 **取值范围**： 不涉及。
+     * @return autoBackup
+     */
+    public Boolean getAutoBackup() {
+        return autoBackup;
+    }
+
+    public void setAutoBackup(Boolean autoBackup) {
+        this.autoBackup = autoBackup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -190,12 +212,13 @@ public class CreateSnapshotPolicyRequestBody {
         return Objects.equals(this.keepDay, that.keepDay)
             && Objects.equals(this.backupStrategies, that.backupStrategies)
             && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.serverPort, that.serverPort)
-            && Objects.equals(this.backupParam, that.backupParam) && Objects.equals(this.serverIps, that.serverIps);
+            && Objects.equals(this.backupParam, that.backupParam) && Objects.equals(this.serverIps, that.serverIps)
+            && Objects.equals(this.autoBackup, that.autoBackup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keepDay, backupStrategies, deviceName, serverPort, backupParam, serverIps);
+        return Objects.hash(keepDay, backupStrategies, deviceName, serverPort, backupParam, serverIps, autoBackup);
     }
 
     @Override
@@ -208,6 +231,7 @@ public class CreateSnapshotPolicyRequestBody {
         sb.append("    serverPort: ").append(toIndentedString(serverPort)).append("\n");
         sb.append("    backupParam: ").append(toIndentedString(backupParam)).append("\n");
         sb.append("    serverIps: ").append(toIndentedString(serverIps)).append("\n");
+        sb.append("    autoBackup: ").append(toIndentedString(autoBackup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

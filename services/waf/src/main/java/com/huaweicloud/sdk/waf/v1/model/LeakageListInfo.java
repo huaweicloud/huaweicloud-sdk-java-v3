@@ -24,6 +24,11 @@ public class LeakageListInfo {
     private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policyname")
+
+    private String policyname;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
     private String url;
@@ -90,6 +95,23 @@ public class LeakageListInfo {
 
     public void setPolicyid(String policyid) {
         this.policyid = policyid;
+    }
+
+    public LeakageListInfo withPolicyname(String policyname) {
+        this.policyname = policyname;
+        return this;
+    }
+
+    /**
+     * 策略名称
+     * @return policyname
+     */
+    public String getPolicyname() {
+        return policyname;
+    }
+
+    public void setPolicyname(String policyname) {
+        this.policyname = policyname;
     }
 
     public LeakageListInfo withUrl(String url) {
@@ -246,15 +268,15 @@ public class LeakageListInfo {
         }
         LeakageListInfo that = (LeakageListInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
-            && Objects.equals(this.url, that.url) && Objects.equals(this.category, that.category)
-            && Objects.equals(this.contents, that.contents) && Objects.equals(this.timestamp, that.timestamp)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.action, that.action);
+            && Objects.equals(this.policyname, that.policyname) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.contents, that.contents)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.action, that.action);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, url, category, contents, timestamp, status, description, action);
+        return Objects.hash(id, policyid, policyname, url, category, contents, timestamp, status, description, action);
     }
 
     @Override
@@ -263,6 +285,7 @@ public class LeakageListInfo {
         sb.append("class LeakageListInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
+        sb.append("    policyname: ").append(toIndentedString(policyname)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    contents: ").append(toIndentedString(contents)).append("\n");

@@ -21,7 +21,7 @@ public class RecoveryCondition {
     }
 
     /**
-     * 告警恢复周期的个数。
+     * 告警恢复周期的个数。取值范围为1~3 (如果recovery_timeframe 参数不为空，该参数必填）
      * @return recoveryTimeframe
      */
     public Integer getRecoveryTimeframe() {

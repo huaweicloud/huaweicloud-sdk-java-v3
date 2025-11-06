@@ -17,14 +17,14 @@ public class ShowAlarmResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_alarms")
 
-    private List<MetricAlarms> metricAlarms = null;
+    private List<MetricAlarmsResp> metricAlarms = null;
 
-    public ShowAlarmResponse withMetricAlarms(List<MetricAlarms> metricAlarms) {
+    public ShowAlarmResponse withMetricAlarms(List<MetricAlarmsResp> metricAlarms) {
         this.metricAlarms = metricAlarms;
         return this;
     }
 
-    public ShowAlarmResponse addMetricAlarmsItem(MetricAlarms metricAlarmsItem) {
+    public ShowAlarmResponse addMetricAlarmsItem(MetricAlarmsResp metricAlarmsItem) {
         if (this.metricAlarms == null) {
             this.metricAlarms = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ShowAlarmResponse extends SdkResponse {
         return this;
     }
 
-    public ShowAlarmResponse withMetricAlarms(Consumer<List<MetricAlarms>> metricAlarmsSetter) {
+    public ShowAlarmResponse withMetricAlarms(Consumer<List<MetricAlarmsResp>> metricAlarmsSetter) {
         if (this.metricAlarms == null) {
             this.metricAlarms = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ShowAlarmResponse extends SdkResponse {
     }
 
     /**
-     * 告警对象列表。
+     * **参数解释**： 告警对象列表。 
      * @return metricAlarms
      */
-    public List<MetricAlarms> getMetricAlarms() {
+    public List<MetricAlarmsResp> getMetricAlarms() {
         return metricAlarms;
     }
 
-    public void setMetricAlarms(List<MetricAlarms> metricAlarms) {
+    public void setMetricAlarms(List<MetricAlarmsResp> metricAlarms) {
         this.metricAlarms = metricAlarms;
     }
 

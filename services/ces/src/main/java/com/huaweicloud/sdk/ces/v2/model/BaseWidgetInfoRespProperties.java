@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释** 额外信息 **取值范围** 不涉及 
+ * **参数解释** 额外信息 
  */
 public class BaseWidgetInfoRespProperties {
 

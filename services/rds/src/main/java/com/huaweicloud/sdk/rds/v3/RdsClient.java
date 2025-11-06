@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Request;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Response;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateIntelligentKillSessionRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateIntelligentKillSessionResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseRequest;
@@ -145,6 +147,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupTransfersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListBackupsRequest;
@@ -403,6 +407,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyRequest
 import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
@@ -1600,6 +1606,35 @@ public class RdsClient {
      */
     public SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse> listAuditlogsInvoker(ListAuditlogsRequest request) {
         return new SyncInvoker<>(request, RdsMeta.listAuditlogs, hcClient);
+    }
+
+    /**
+     * 查询自动变配策略
+     *
+     * 查询自动变配策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutoScalingPolicyRequest 请求对象
+     * @return ListAutoScalingPolicyResponse
+     */
+    public ListAutoScalingPolicyResponse listAutoScalingPolicy(ListAutoScalingPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listAutoScalingPolicy);
+    }
+
+    /**
+     * 查询自动变配策略
+     *
+     * 查询自动变配策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutoScalingPolicyRequest 请求对象
+     * @return SyncInvoker<ListAutoScalingPolicyRequest, ListAutoScalingPolicyResponse>
+     */
+    public SyncInvoker<ListAutoScalingPolicyRequest, ListAutoScalingPolicyResponse> listAutoScalingPolicyInvoker(
+        ListAutoScalingPolicyRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listAutoScalingPolicy, hcClient);
     }
 
     /**
@@ -7226,6 +7261,36 @@ public class RdsClient {
     }
 
     /**
+     * 一键kill会话
+     *
+     * 一键kill会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIntelligentKillSessionRequest 请求对象
+     * @return CreateIntelligentKillSessionResponse
+     */
+    public CreateIntelligentKillSessionResponse createIntelligentKillSession(
+        CreateIntelligentKillSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createIntelligentKillSession);
+    }
+
+    /**
+     * 一键kill会话
+     *
+     * 一键kill会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIntelligentKillSessionRequest 请求对象
+     * @return SyncInvoker<CreateIntelligentKillSessionRequest, CreateIntelligentKillSessionResponse>
+     */
+    public SyncInvoker<CreateIntelligentKillSessionRequest, CreateIntelligentKillSessionResponse> createIntelligentKillSessionInvoker(
+        CreateIntelligentKillSessionRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.createIntelligentKillSession, hcClient);
+    }
+
+    /**
      * 查询无索引表诊断数据
      *
      * 查询无索引表诊断数据
@@ -7252,6 +7317,36 @@ public class RdsClient {
     public SyncInvoker<GetInstancesNoIndexTablesRequest, GetInstancesNoIndexTablesResponse> getInstancesNoIndexTablesInvoker(
         GetInstancesNoIndexTablesRequest request) {
         return new SyncInvoker<>(request, RdsMeta.getInstancesNoIndexTables, hcClient);
+    }
+
+    /**
+     * 查询一键kill会话历史
+     *
+     * 查询一键kill会话历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIntelligentKillSessionHistoryRequest 请求对象
+     * @return ShowIntelligentKillSessionHistoryResponse
+     */
+    public ShowIntelligentKillSessionHistoryResponse showIntelligentKillSessionHistory(
+        ShowIntelligentKillSessionHistoryRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showIntelligentKillSessionHistory);
+    }
+
+    /**
+     * 查询一键kill会话历史
+     *
+     * 查询一键kill会话历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIntelligentKillSessionHistoryRequest 请求对象
+     * @return SyncInvoker<ShowIntelligentKillSessionHistoryRequest, ShowIntelligentKillSessionHistoryResponse>
+     */
+    public SyncInvoker<ShowIntelligentKillSessionHistoryRequest, ShowIntelligentKillSessionHistoryResponse> showIntelligentKillSessionHistoryInvoker(
+        ShowIntelligentKillSessionHistoryRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showIntelligentKillSessionHistory, hcClient);
     }
 
     /**

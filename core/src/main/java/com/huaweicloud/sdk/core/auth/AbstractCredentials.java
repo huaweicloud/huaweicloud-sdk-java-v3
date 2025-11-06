@@ -224,7 +224,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     protected String getUsedIamEndpoint() {
-        if (!StringUtils.isEmpty(iamEndpoint)) {
+        if (StringUtils.isNotEmpty(iamEndpoint)) {
             return iamEndpoint;
         }
 
@@ -236,7 +236,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     protected String getUsedIamEndpoint(String regionId) {
-        if (!StringUtils.isEmpty(iamEndpoint)) {
+        if (StringUtils.isNotEmpty(iamEndpoint)) {
             return iamEndpoint;
         }
 
@@ -294,7 +294,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     protected void checkRequiredIdpParams() {
-        if (!StringUtils.isEmpty(getIdpId()) || !StringUtils.isEmpty(getIdTokenFile())) {
+        if (StringUtils.isNotEmpty(getIdpId()) || StringUtils.isNotEmpty(getIdTokenFile())) {
             if (StringUtils.isEmpty(getIdpId())) {
                 throw new SdkException("idpId is required when using idpId&idTokenFile");
             } else if (StringUtils.isEmpty(getIdTokenFile())) {

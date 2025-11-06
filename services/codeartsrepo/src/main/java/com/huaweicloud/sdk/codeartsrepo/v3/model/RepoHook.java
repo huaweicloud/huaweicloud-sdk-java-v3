@@ -1,0 +1,370 @@
+package com.huaweicloud.sdk.codeartsrepo.v3.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.OffsetDateTime;
+import java.util.Objects;
+
+/**
+ * RepoHook
+ */
+public class RepoHook {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build_events")
+
+    private Boolean buildEvents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_ssl_verification")
+
+    private Boolean enableSslVerification;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "issues_events")
+
+    private Boolean issuesEvents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "merge_requests_events")
+
+    private Boolean mergeRequestsEvents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "note_events")
+
+    private Boolean noteEvents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_events")
+
+    private Boolean pipelineEvents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private Integer projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "push_events")
+
+    private Boolean pushEvents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repository_update_events")
+
+    private Boolean repositoryUpdateEvents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_push_events")
+
+    private Boolean tagPushEvents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wiki_page_events")
+
+    private Boolean wikiPageEvents;
+
+    public RepoHook withBuildEvents(Boolean buildEvents) {
+        this.buildEvents = buildEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发build_events事件
+     * @return buildEvents
+     */
+    public Boolean getBuildEvents() {
+        return buildEvents;
+    }
+
+    public void setBuildEvents(Boolean buildEvents) {
+        this.buildEvents = buildEvents;
+    }
+
+    public RepoHook withCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 仓库统计创建的时间
+     * @return createdAt
+     */
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public RepoHook withEnableSslVerification(Boolean enableSslVerification) {
+        this.enableSslVerification = enableSslVerification;
+        return this;
+    }
+
+    /**
+     * 是否使用ssl验证
+     * @return enableSslVerification
+     */
+    public Boolean getEnableSslVerification() {
+        return enableSslVerification;
+    }
+
+    public void setEnableSslVerification(Boolean enableSslVerification) {
+        this.enableSslVerification = enableSslVerification;
+    }
+
+    public RepoHook withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * hook id
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public RepoHook withIssuesEvents(Boolean issuesEvents) {
+        this.issuesEvents = issuesEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发issues_events事件
+     * @return issuesEvents
+     */
+    public Boolean getIssuesEvents() {
+        return issuesEvents;
+    }
+
+    public void setIssuesEvents(Boolean issuesEvents) {
+        this.issuesEvents = issuesEvents;
+    }
+
+    public RepoHook withMergeRequestsEvents(Boolean mergeRequestsEvents) {
+        this.mergeRequestsEvents = mergeRequestsEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发merge_requests_events事件
+     * @return mergeRequestsEvents
+     */
+    public Boolean getMergeRequestsEvents() {
+        return mergeRequestsEvents;
+    }
+
+    public void setMergeRequestsEvents(Boolean mergeRequestsEvents) {
+        this.mergeRequestsEvents = mergeRequestsEvents;
+    }
+
+    public RepoHook withNoteEvents(Boolean noteEvents) {
+        this.noteEvents = noteEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发note_events事件
+     * @return noteEvents
+     */
+    public Boolean getNoteEvents() {
+        return noteEvents;
+    }
+
+    public void setNoteEvents(Boolean noteEvents) {
+        this.noteEvents = noteEvents;
+    }
+
+    public RepoHook withPipelineEvents(Boolean pipelineEvents) {
+        this.pipelineEvents = pipelineEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发pipeline_events事件
+     * @return pipelineEvents
+     */
+    public Boolean getPipelineEvents() {
+        return pipelineEvents;
+    }
+
+    public void setPipelineEvents(Boolean pipelineEvents) {
+        this.pipelineEvents = pipelineEvents;
+    }
+
+    public RepoHook withProjectId(Integer projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 仓库id
+     * @return projectId
+     */
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
+
+    public RepoHook withPushEvents(Boolean pushEvents) {
+        this.pushEvents = pushEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发push_events事件
+     * @return pushEvents
+     */
+    public Boolean getPushEvents() {
+        return pushEvents;
+    }
+
+    public void setPushEvents(Boolean pushEvents) {
+        this.pushEvents = pushEvents;
+    }
+
+    public RepoHook withRepositoryUpdateEvents(Boolean repositoryUpdateEvents) {
+        this.repositoryUpdateEvents = repositoryUpdateEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发repository_update_events事件
+     * @return repositoryUpdateEvents
+     */
+    public Boolean getRepositoryUpdateEvents() {
+        return repositoryUpdateEvents;
+    }
+
+    public void setRepositoryUpdateEvents(Boolean repositoryUpdateEvents) {
+        this.repositoryUpdateEvents = repositoryUpdateEvents;
+    }
+
+    public RepoHook withTagPushEvents(Boolean tagPushEvents) {
+        this.tagPushEvents = tagPushEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发tag_push_events事件
+     * @return tagPushEvents
+     */
+    public Boolean getTagPushEvents() {
+        return tagPushEvents;
+    }
+
+    public void setTagPushEvents(Boolean tagPushEvents) {
+        this.tagPushEvents = tagPushEvents;
+    }
+
+    public RepoHook withWikiPageEvents(Boolean wikiPageEvents) {
+        this.wikiPageEvents = wikiPageEvents;
+        return this;
+    }
+
+    /**
+     * 是否触发wiki_page_events事件
+     * @return wikiPageEvents
+     */
+    public Boolean getWikiPageEvents() {
+        return wikiPageEvents;
+    }
+
+    public void setWikiPageEvents(Boolean wikiPageEvents) {
+        this.wikiPageEvents = wikiPageEvents;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        RepoHook that = (RepoHook) obj;
+        return Objects.equals(this.buildEvents, that.buildEvents) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.enableSslVerification, that.enableSslVerification)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.issuesEvents, that.issuesEvents)
+            && Objects.equals(this.mergeRequestsEvents, that.mergeRequestsEvents)
+            && Objects.equals(this.noteEvents, that.noteEvents)
+            && Objects.equals(this.pipelineEvents, that.pipelineEvents)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.pushEvents, that.pushEvents)
+            && Objects.equals(this.repositoryUpdateEvents, that.repositoryUpdateEvents)
+            && Objects.equals(this.tagPushEvents, that.tagPushEvents)
+            && Objects.equals(this.wikiPageEvents, that.wikiPageEvents);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(buildEvents,
+            createdAt,
+            enableSslVerification,
+            id,
+            issuesEvents,
+            mergeRequestsEvents,
+            noteEvents,
+            pipelineEvents,
+            projectId,
+            pushEvents,
+            repositoryUpdateEvents,
+            tagPushEvents,
+            wikiPageEvents);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class RepoHook {\n");
+        sb.append("    buildEvents: ").append(toIndentedString(buildEvents)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    enableSslVerification: ").append(toIndentedString(enableSslVerification)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    issuesEvents: ").append(toIndentedString(issuesEvents)).append("\n");
+        sb.append("    mergeRequestsEvents: ").append(toIndentedString(mergeRequestsEvents)).append("\n");
+        sb.append("    noteEvents: ").append(toIndentedString(noteEvents)).append("\n");
+        sb.append("    pipelineEvents: ").append(toIndentedString(pipelineEvents)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    pushEvents: ").append(toIndentedString(pushEvents)).append("\n");
+        sb.append("    repositoryUpdateEvents: ").append(toIndentedString(repositoryUpdateEvents)).append("\n");
+        sb.append("    tagPushEvents: ").append(toIndentedString(tagPushEvents)).append("\n");
+        sb.append("    wikiPageEvents: ").append(toIndentedString(wikiPageEvents)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

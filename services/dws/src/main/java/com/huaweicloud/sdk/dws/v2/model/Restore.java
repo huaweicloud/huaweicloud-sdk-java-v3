@@ -56,6 +56,11 @@ public class Restore {
 
     private Boolean ipv6Enable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "number_of_cn")
+
+    private Integer numberOfCn;
+
     public Restore withName(String name) {
         this.name = name;
         return this;
@@ -220,6 +225,23 @@ public class Restore {
         this.ipv6Enable = ipv6Enable;
     }
 
+    public Restore withNumberOfCn(Integer numberOfCn) {
+        this.numberOfCn = numberOfCn;
+        return this;
+    }
+
+    /**
+     * **参数解释**： CN部署量。取值范围为3~集群节点数，最大值为20，默认值为3。 **取值范围**： 不涉及。
+     * @return numberOfCn
+     */
+    public Integer getNumberOfCn() {
+        return numberOfCn;
+    }
+
+    public void setNumberOfCn(Integer numberOfCn) {
+        this.numberOfCn = numberOfCn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -234,7 +256,7 @@ public class Restore {
             && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.port, that.port)
             && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.ipv6Enable, that.ipv6Enable);
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable) && Objects.equals(this.numberOfCn, that.numberOfCn);
     }
 
     @Override
@@ -247,7 +269,8 @@ public class Restore {
             port,
             publicIp,
             enterpriseProjectId,
-            ipv6Enable);
+            ipv6Enable,
+            numberOfCn);
     }
 
     @Override
@@ -263,6 +286,7 @@ public class Restore {
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    numberOfCn: ").append(toIndentedString(numberOfCn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

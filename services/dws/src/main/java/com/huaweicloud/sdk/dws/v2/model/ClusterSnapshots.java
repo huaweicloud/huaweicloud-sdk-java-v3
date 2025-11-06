@@ -32,6 +32,11 @@ public class ClusterSnapshots {
     private String started;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "finished")
+
+    private String finished;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
     private Double size;
@@ -151,6 +156,11 @@ public class ClusterSnapshots {
 
     private String clusterStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_task_status")
+
+    private String clusterTaskStatus;
+
     public ClusterSnapshots withId(String id) {
         this.id = id;
         return this;
@@ -217,6 +227,23 @@ public class ClusterSnapshots {
 
     public void setStarted(String started) {
         this.started = started;
+    }
+
+    public ClusterSnapshots withFinished(String finished) {
+        this.finished = finished;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 快照创建的结束时间，格式为：ISO8601: YYYY-MM-DDThh:mm:ssZ。 **取值范围**： 不涉及。
+     * @return finished
+     */
+    public String getFinished() {
+        return finished;
+    }
+
+    public void setFinished(String finished) {
+        this.finished = finished;
     }
 
     public ClusterSnapshots withSize(Double size) {
@@ -646,6 +673,23 @@ public class ClusterSnapshots {
         this.clusterStatus = clusterStatus;
     }
 
+    public ClusterSnapshots withClusterTaskStatus(String clusterTaskStatus) {
+        this.clusterTaskStatus = clusterTaskStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群任务状态。 **取值范围**： 不涉及。
+     * @return clusterTaskStatus
+     */
+    public String getClusterTaskStatus() {
+        return clusterTaskStatus;
+    }
+
+    public void setClusterTaskStatus(String clusterTaskStatus) {
+        this.clusterTaskStatus = clusterTaskStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -657,10 +701,10 @@ public class ClusterSnapshots {
         ClusterSnapshots that = (ClusterSnapshots) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.started, that.started)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.datastore, that.datastore)
-            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.updated, that.updated)
-            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.finished, that.finished) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.type, that.type)
             && Objects.equals(this.bakExpectedStartTime, that.bakExpectedStartTime)
             && Objects.equals(this.bakKeepDay, that.bakKeepDay) && Objects.equals(this.bakPeriod, that.bakPeriod)
             && Objects.equals(this.dbUser, that.dbUser) && Objects.equals(this.progress, that.progress)
@@ -675,7 +719,8 @@ public class ClusterSnapshots {
             && Objects.equals(this.backupLevel, that.backupLevel)
             && Objects.equals(this.fineGrainedBackupDetail, that.fineGrainedBackupDetail)
             && Objects.equals(this.guestAgentVersion, that.guestAgentVersion)
-            && Objects.equals(this.clusterStatus, that.clusterStatus);
+            && Objects.equals(this.clusterStatus, that.clusterStatus)
+            && Objects.equals(this.clusterTaskStatus, that.clusterTaskStatus);
     }
 
     @Override
@@ -684,6 +729,7 @@ public class ClusterSnapshots {
             name,
             description,
             started,
+            finished,
             size,
             status,
             clusterId,
@@ -707,7 +753,8 @@ public class ClusterSnapshots {
             backupLevel,
             fineGrainedBackupDetail,
             guestAgentVersion,
-            clusterStatus);
+            clusterStatus,
+            clusterTaskStatus);
     }
 
     @Override
@@ -718,6 +765,7 @@ public class ClusterSnapshots {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    started: ").append(toIndentedString(started)).append("\n");
+        sb.append("    finished: ").append(toIndentedString(finished)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
@@ -742,6 +790,7 @@ public class ClusterSnapshots {
         sb.append("    fineGrainedBackupDetail: ").append(toIndentedString(fineGrainedBackupDetail)).append("\n");
         sb.append("    guestAgentVersion: ").append(toIndentedString(guestAgentVersion)).append("\n");
         sb.append("    clusterStatus: ").append(toIndentedString(clusterStatus)).append("\n");
+        sb.append("    clusterTaskStatus: ").append(toIndentedString(clusterTaskStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

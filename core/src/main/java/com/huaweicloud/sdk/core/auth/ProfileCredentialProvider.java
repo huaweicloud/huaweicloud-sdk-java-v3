@@ -136,15 +136,15 @@ public class ProfileCredentialProvider implements ICredentialProvider {
             throw new SdkException(String.format("unsupported credential type '%s'", credentialType));
         }
 
-        if (!StringUtils.isEmpty(idpId) && !StringUtils.isEmpty(idTokenFile)) {
+        if (StringUtils.isNotEmpty(idpId) && StringUtils.isNotEmpty(idTokenFile)) {
             credentials.withIdpId(idpId).withIdTokenFile(idTokenFile);
-        } else if (!StringUtils.isEmpty(ak) && !StringUtils.isEmpty(sk)) {
+        } else if (StringUtils.isNotEmpty(ak) && StringUtils.isNotEmpty(sk)) {
             credentials.withAk(ak).withSk(sk).withSecurityToken(securityToken);
         } else {
             throw new SdkException(String.format("%s&%s or %s&%s does not exist in credentials file '%s'",
                     AK_NAME, SK_NAME, IDP_ID_NAME, ID_TOKEN_FILE_NAME, filePath));
         }
-        if (!StringUtils.isEmpty(iamEndpoint)) {
+        if (StringUtils.isNotEmpty(iamEndpoint)) {
             credentials.withIamEndpoint(iamEndpoint);
         }
         return credentials;
@@ -152,7 +152,7 @@ public class ProfileCredentialProvider implements ICredentialProvider {
 
     private static String getCredentialsFilePath() {
         String credentialsFile = System.getenv(CREDENTIALS_FILE_ENV_NAME);
-        if (!StringUtils.isEmpty(credentialsFile)) {
+        if (StringUtils.isNotEmpty(credentialsFile)) {
             return credentialsFile;
         }
 

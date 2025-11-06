@@ -11,6 +11,7 @@ import com.huaweicloud.sdk.aom.v2.model.AddMetricDataRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddMetricDataResponse;
 import com.huaweicloud.sdk.aom.v2.model.AddMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddMuteRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.AddNotificationTemplate;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateAlarmRuleV4RequestBody;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateMetricOrEventAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateMetricOrEventAlarmRuleResponse;
@@ -23,18 +24,28 @@ import com.huaweicloud.sdk.aom.v2.model.BatchUpdateAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.BatchUpdateRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsResponse;
+import com.huaweicloud.sdk.aom.v2.model.CreateNotificationTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.CreateNotificationTemplateResponse;
 import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceRequest;
 import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceResponse;
 import com.huaweicloud.sdk.aom.v2.model.CreateRecordingRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.CreateRecordingRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.DashBoardsFolder;
 import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleTemplateRequestBody;
+import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleTemplateResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleV4RequestBody;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesBody;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteDashboardRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteDashboardResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteDashboardsFolderRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteDashboardsFolderResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMetricOrEventAlarmRuleRequest;
@@ -42,6 +53,9 @@ import com.huaweicloud.sdk.aom.v2.model.DeleteMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRuleName;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteNotificationRequestBody;
+import com.huaweicloud.sdk.aom.v2.model.DeleteNotificationTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteNotificationTemplateResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteserviceDiscoveryRulesRequest;
@@ -58,6 +72,12 @@ import com.huaweicloud.sdk.aom.v2.model.ListAgentsRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListAgentsResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleTemplateResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListDashBoardsRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListDashBoardsResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListDashboardsFolderRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListDashboardsFolderResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListEvent2alarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListEvent2alarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListEventsRequest;
@@ -82,6 +102,10 @@ import com.huaweicloud.sdk.aom.v2.model.ListMetricOrEventAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListNotificationTemplateByNameRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListNotificationTemplateByNameResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListNotificationTemplatesRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListNotificationTemplatesResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListPermissionsRequest;
@@ -101,6 +125,7 @@ import com.huaweicloud.sdk.aom.v2.model.ListServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.MetricAPIQueryItemParam;
 import com.huaweicloud.sdk.aom.v2.model.MetricDataItem;
 import com.huaweicloud.sdk.aom.v2.model.MuteRule;
+import com.huaweicloud.sdk.aom.v2.model.NotificationTemplate;
 import com.huaweicloud.sdk.aom.v2.model.PromInstanceRequestModel;
 import com.huaweicloud.sdk.aom.v2.model.PushEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.PushEventsResponse;
@@ -113,6 +138,8 @@ import com.huaweicloud.sdk.aom.v2.model.ShowActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ShowActionRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ShowAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ShowAlarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.ShowDashBoardRequest;
+import com.huaweicloud.sdk.aom.v2.model.ShowDashBoardResponse;
 import com.huaweicloud.sdk.aom.v2.model.ShowMetricsDataRequest;
 import com.huaweicloud.sdk.aom.v2.model.ShowMetricsDataResponse;
 import com.huaweicloud.sdk.aom.v2.model.UpdateActionRuleRequest;
@@ -124,6 +151,12 @@ import com.huaweicloud.sdk.aom.v2.model.UpdateEventRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.UpdateEventRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.UpdateMuteRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.UpdateMuteRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.UpdateNotificationTemplate;
+import com.huaweicloud.sdk.aom.v2.model.UpdateNotificationTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.UpdateNotificationTemplateResponse;
+import com.huaweicloud.sdk.aom.v2.model.UpdatePromInstanceRequest;
+import com.huaweicloud.sdk.aom.v2.model.UpdatePromInstanceRequestModle;
+import com.huaweicloud.sdk.aom.v2.model.UpdatePromInstanceResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -131,6 +164,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class AomMeta {
@@ -381,6 +415,39 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> createNotificationTemplate =
+        genForCreateNotificationTemplate();
+
+    private static HttpRequestDef<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> genForCreateNotificationTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateNotificationTemplateRequest.class,
+                    CreateNotificationTemplateResponse.class)
+                .withName("CreateNotificationTemplate")
+                .withUri("/v2/{project_id}/events/notification/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNotificationTemplateRequest::getEnterpriseProjectId,
+                CreateNotificationTemplateRequest::setEnterpriseProjectId));
+        builder.<AddNotificationTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddNotificationTemplate.class),
+            f -> f.withMarshaller(CreateNotificationTemplateRequest::getBody,
+                CreateNotificationTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRule =
         genForDeleteActionRule();
 
@@ -433,6 +500,35 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAlarmRuleTemplateRequest, DeleteAlarmRuleTemplateResponse> deleteAlarmRuleTemplate =
+        genForDeleteAlarmRuleTemplate();
+
+    private static HttpRequestDef<DeleteAlarmRuleTemplateRequest, DeleteAlarmRuleTemplateResponse> genForDeleteAlarmRuleTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteAlarmRuleTemplateRequest, DeleteAlarmRuleTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAlarmRuleTemplateRequest.class, DeleteAlarmRuleTemplateResponse.class)
+            .withName("DeleteAlarmRuleTemplate")
+            .withUri("/v4/{project_id}/alarm-rules-template")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAlarmRuleTemplateRequest::getEnterpriseProjectId,
+                DeleteAlarmRuleTemplateRequest::setEnterpriseProjectId));
+        builder.<DeleteAlarmRuleTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteAlarmRuleTemplateRequestBody.class),
+            f -> f.withMarshaller(DeleteAlarmRuleTemplateRequest::getBody, DeleteAlarmRuleTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> deleteAlarmRules =
         genForDeleteAlarmRules();
 
@@ -457,6 +553,71 @@ public class AomMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteAlarmRulesResponse::getBody, DeleteAlarmRulesResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDashboardRequest, DeleteDashboardResponse> deleteDashboard =
+        genForDeleteDashboard();
+
+    private static HttpRequestDef<DeleteDashboardRequest, DeleteDashboardResponse> genForDeleteDashboard() {
+        // basic
+        HttpRequestDef.Builder<DeleteDashboardRequest, DeleteDashboardResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDashboardRequest.class, DeleteDashboardResponse.class)
+                .withName("DeleteDashboard")
+                .withUri("/v2/{project_id}/aom/dashboards/{dashboard_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dashboard_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDashboardRequest::getDashboardId, DeleteDashboardRequest::setDashboardId));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDashboardRequest::getEnterpriseProjectId,
+                DeleteDashboardRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDashboardsFolderRequest, DeleteDashboardsFolderResponse> deleteDashboardsFolder =
+        genForDeleteDashboardsFolder();
+
+    private static HttpRequestDef<DeleteDashboardsFolderRequest, DeleteDashboardsFolderResponse> genForDeleteDashboardsFolder() {
+        // basic
+        HttpRequestDef.Builder<DeleteDashboardsFolderRequest, DeleteDashboardsFolderResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDashboardsFolderRequest.class, DeleteDashboardsFolderResponse.class)
+            .withName("DeleteDashboardsFolder")
+            .withUri("/v2/{project_id}/aom/dashboards-folder/{folder_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("folder_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDashboardsFolderRequest::getFolderId,
+                DeleteDashboardsFolderRequest::setFolderId));
+        builder.<Boolean>withRequestField("delete_all",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDashboardsFolderRequest::getDeleteAll,
+                DeleteDashboardsFolderRequest::setDeleteAll));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDashboardsFolderRequest::getEnterpriseProjectId,
+                DeleteDashboardsFolderRequest::setEnterpriseProjectId));
+
+        // response
 
         return builder.build();
     }
@@ -530,6 +691,39 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(DeleteMuteRulesRequest::getBody, DeleteMuteRulesRequest::setBody)
                 .withInnerContainerType(DeleteMuteRuleName.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> deleteNotificationTemplate =
+        genForDeleteNotificationTemplate();
+
+    private static HttpRequestDef<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> genForDeleteNotificationTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteNotificationTemplateRequest.class,
+                    DeleteNotificationTemplateResponse.class)
+                .withName("DeleteNotificationTemplate")
+                .withUri("/v2/{project_id}/events/notification/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotificationTemplateRequest::getEnterpriseProjectId,
+                DeleteNotificationTemplateRequest::setEnterpriseProjectId));
+        builder.<DeleteNotificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteNotificationRequestBody.class),
+            f -> f.withMarshaller(DeleteNotificationTemplateRequest::getBody,
+                DeleteNotificationTemplateRequest::setBody));
 
         // response
 
@@ -637,6 +831,99 @@ public class AomMeta {
             f -> f.withMarshaller(ListAlarmRuleRequest::getLimit, ListAlarmRuleRequest::setLimit));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmRuleTemplateRequest, ListAlarmRuleTemplateResponse> listAlarmRuleTemplate =
+        genForListAlarmRuleTemplate();
+
+    private static HttpRequestDef<ListAlarmRuleTemplateRequest, ListAlarmRuleTemplateResponse> genForListAlarmRuleTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmRuleTemplateRequest, ListAlarmRuleTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAlarmRuleTemplateRequest.class, ListAlarmRuleTemplateResponse.class)
+            .withName("ListAlarmRuleTemplate")
+            .withUri("/v4/{project_id}/alarm-rules-template")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmRuleTemplateRequest::getId, ListAlarmRuleTemplateRequest::setId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmRuleTemplateRequest::getType, ListAlarmRuleTemplateRequest::setType));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmRuleTemplateRequest::getEnterpriseProjectId,
+                ListAlarmRuleTemplateRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDashBoardsRequest, ListDashBoardsResponse> listDashBoards =
+        genForListDashBoards();
+
+    private static HttpRequestDef<ListDashBoardsRequest, ListDashBoardsResponse> genForListDashBoards() {
+        // basic
+        HttpRequestDef.Builder<ListDashBoardsRequest, ListDashBoardsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDashBoardsRequest.class, ListDashBoardsResponse.class)
+                .withName("ListDashBoards")
+                .withUri("/v2/{project_id}/aom/dashboards")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dashboard_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDashBoardsRequest::getDashboardType, ListDashBoardsRequest::setDashboardType));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDashBoardsRequest::getEnterpriseProjectId,
+                ListDashBoardsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDashboardsFolderRequest, ListDashboardsFolderResponse> listDashboardsFolder =
+        genForListDashboardsFolder();
+
+    private static HttpRequestDef<ListDashboardsFolderRequest, ListDashboardsFolderResponse> genForListDashboardsFolder() {
+        // basic
+        HttpRequestDef.Builder<ListDashboardsFolderRequest, ListDashboardsFolderResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDashboardsFolderRequest.class, ListDashboardsFolderResponse.class)
+            .withName("ListDashboardsFolder")
+            .withUri("/v2/{project_id}/aom/dashboards-folder")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDashboardsFolderRequest::getEnterpriseProjectId,
+                ListDashboardsFolderRequest::setEnterpriseProjectId));
+
+        // response
+        builder.<List<DashBoardsFolder>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDashboardsFolderResponse::getBody, ListDashboardsFolderResponse::setBody)
+                .withInnerContainerType(DashBoardsFolder.class));
 
         return builder.build();
     }
@@ -889,6 +1176,73 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListNotificationTemplateByNameRequest, ListNotificationTemplateByNameResponse> listNotificationTemplateByName =
+        genForListNotificationTemplateByName();
+
+    private static HttpRequestDef<ListNotificationTemplateByNameRequest, ListNotificationTemplateByNameResponse> genForListNotificationTemplateByName() {
+        // basic
+        HttpRequestDef.Builder<ListNotificationTemplateByNameRequest, ListNotificationTemplateByNameResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListNotificationTemplateByNameRequest.class,
+                    ListNotificationTemplateByNameResponse.class)
+                .withName("ListNotificationTemplateByName")
+                .withUri("/v2/{project_id}/events/notification/template/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationTemplateByNameRequest::getName,
+                ListNotificationTemplateByNameRequest::setName));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationTemplateByNameRequest::getEnterpriseProjectId,
+                ListNotificationTemplateByNameRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> listNotificationTemplates =
+        genForListNotificationTemplates();
+
+    private static HttpRequestDef<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> genForListNotificationTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListNotificationTemplatesRequest.class,
+                    ListNotificationTemplatesResponse.class)
+                .withName("ListNotificationTemplates")
+                .withUri("/v2/{project_id}/events/notification/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationTemplatesRequest::getEnterpriseProjectId,
+                ListNotificationTemplatesRequest::setEnterpriseProjectId));
+
+        // response
+        builder.<List<NotificationTemplate>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListNotificationTemplatesResponse::getBody, ListNotificationTemplatesResponse::setBody)
+                .withInnerContainerType(NotificationTemplate.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistories =
         genForListNotifiedHistories();
 
@@ -1099,6 +1453,40 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDashBoardRequest, ShowDashBoardResponse> showDashBoard =
+        genForShowDashBoard();
+
+    private static HttpRequestDef<ShowDashBoardRequest, ShowDashBoardResponse> genForShowDashBoard() {
+        // basic
+        HttpRequestDef.Builder<ShowDashBoardRequest, ShowDashBoardResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDashBoardRequest.class, ShowDashBoardResponse.class)
+                .withName("ShowDashBoard")
+                .withUri("/v2/{project_id}/aom/dashboards/{dashboard_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dashboard_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDashBoardRequest::getDashboardId, ShowDashBoardRequest::setDashboardId));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDashBoardRequest::getVersion, ShowDashBoardRequest::setVersion));
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDashBoardRequest::getEnterpriseProjectId,
+                ShowDashBoardRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMetricsDataRequest, ShowMetricsDataResponse> showMetricsData =
         genForShowMetricsData();
 
@@ -1224,6 +1612,39 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> updateNotificationTemplate =
+        genForUpdateNotificationTemplate();
+
+    private static HttpRequestDef<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> genForUpdateNotificationTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateNotificationTemplateRequest.class,
+                    UpdateNotificationTemplateResponse.class)
+                .withName("UpdateNotificationTemplate")
+                .withUri("/v2/{project_id}/events/notification/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNotificationTemplateRequest::getEnterpriseProjectId,
+                UpdateNotificationTemplateRequest::setEnterpriseProjectId));
+        builder.<UpdateNotificationTemplate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNotificationTemplate.class),
+            f -> f.withMarshaller(UpdateNotificationTemplateRequest::getBody,
+                UpdateNotificationTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePromInstanceRequest, CreatePromInstanceResponse> createPromInstance =
         genForCreatePromInstance();
 
@@ -1311,11 +1732,12 @@ public class AomMeta {
                 DeletePromInstanceRequest::setEnterpriseProjectId));
 
         // response
-        builder.<String>withResponseField("body",
+        builder.<Map<String, Boolean>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeletePromInstanceResponse::getBody, DeletePromInstanceResponse::setBody));
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(DeletePromInstanceResponse::getBody, DeletePromInstanceResponse::setBody)
+                .withInnerContainerType(Boolean.class));
 
         return builder.build();
     }
@@ -1609,6 +2031,35 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRangeQueryAomPromPostRequest::getStep,
                 ListRangeQueryAomPromPostRequest::setStep));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePromInstanceRequest, UpdatePromInstanceResponse> updatePromInstance =
+        genForUpdatePromInstance();
+
+    private static HttpRequestDef<UpdatePromInstanceRequest, UpdatePromInstanceResponse> genForUpdatePromInstance() {
+        // basic
+        HttpRequestDef.Builder<UpdatePromInstanceRequest, UpdatePromInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePromInstanceRequest.class, UpdatePromInstanceResponse.class)
+                .withName("UpdatePromInstance")
+                .withUri("/v1/{project_id}/aom/prometheus")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePromInstanceRequest::getEnterpriseProjectId,
+                UpdatePromInstanceRequest::setEnterpriseProjectId));
+        builder.<UpdatePromInstanceRequestModle>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePromInstanceRequestModle.class),
+            f -> f.withMarshaller(UpdatePromInstanceRequest::getBody, UpdatePromInstanceRequest::setBody));
 
         // response
 

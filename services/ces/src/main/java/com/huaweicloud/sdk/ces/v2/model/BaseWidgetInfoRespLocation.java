@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释** 监控视图图表坐标              **取值范围** 不涉及 
+ * **参数解释** 监控视图图表坐标 
  */
 public class BaseWidgetInfoRespLocation {
 

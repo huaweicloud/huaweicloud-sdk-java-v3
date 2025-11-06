@@ -50,7 +50,7 @@ public final class HttpUtils {
     }
 
     public static boolean isTextBasedContentType(String contentType) {
-        if (!StringUtils.isEmpty(contentType)) {
+        if (StringUtils.isNotEmpty(contentType)) {
             for (String textBasedContentType : TEXT_BASED_CONTENT_TYPES) {
                 if (contentType.startsWith(textBasedContentType)) {
                     return true;
@@ -61,7 +61,7 @@ public final class HttpUtils {
     }
 
     public static boolean isOctetStreamContentType(String contentType) {
-        if (!StringUtils.isEmpty(contentType)) {
+        if (StringUtils.isNotEmpty(contentType)) {
             for (String octetStreamContentType : OCTET_STREAM_CONTENT_TYPES) {
                 if (contentType.startsWith(octetStreamContentType)) {
                     return true;
@@ -72,7 +72,7 @@ public final class HttpUtils {
     }
 
     public static boolean isFileStreamContentType(String contentType) {
-        if (!StringUtils.isEmpty(contentType)) {
+        if (StringUtils.isNotEmpty(contentType)) {
             for (String fileStreamContentType : FILE_STREAM_CONTENT_TYPES) {
                 if (contentType.startsWith(fileStreamContentType)) {
                     return true;

@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.css.v1.model.CloseKibanaPublicReq;
 import com.huaweicloud.sdk.css.v1.model.ClusterChangeMainSubnet;
+import com.huaweicloud.sdk.css.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.css.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateAiOpsRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateAiOpsRequestBody;
 import com.huaweicloud.sdk.css.v1.model.CreateAiOpsResponse;
@@ -50,6 +52,8 @@ import com.huaweicloud.sdk.css.v1.model.CreateSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateSnapshotResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteAiOpsRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteAiOpsResponse;
+import com.huaweicloud.sdk.css.v1.model.DeleteCertsRequest;
+import com.huaweicloud.sdk.css.v1.model.DeleteCertsResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteClusterRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteClustersTagsRequest;
@@ -97,6 +101,8 @@ import com.huaweicloud.sdk.css.v1.model.ListLogsJobRequest;
 import com.huaweicloud.sdk.css.v1.model.ListLogsJobResponse;
 import com.huaweicloud.sdk.css.v1.model.ListPipelinesRequest;
 import com.huaweicloud.sdk.css.v1.model.ListPipelinesResponse;
+import com.huaweicloud.sdk.css.v1.model.ListRoutesRequest;
+import com.huaweicloud.sdk.css.v1.model.ListRoutesResponse;
 import com.huaweicloud.sdk.css.v1.model.ListSmnTopicsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListSmnTopicsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListSnapshotsRequest;
@@ -109,9 +115,12 @@ import com.huaweicloud.sdk.css.v1.model.ListYmlsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListYmlsResponse;
 import com.huaweicloud.sdk.css.v1.model.LoadCustomThesaurusReq;
 import com.huaweicloud.sdk.css.v1.model.PeriodReq;
+import com.huaweicloud.sdk.css.v1.model.RebootClusterRequest;
+import com.huaweicloud.sdk.css.v1.model.RebootClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.ResetPasswordReq;
 import com.huaweicloud.sdk.css.v1.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.css.v1.model.ResetPasswordResponse;
+import com.huaweicloud.sdk.css.v1.model.ResourceTenant;
 import com.huaweicloud.sdk.css.v1.model.RestartClusterRequest;
 import com.huaweicloud.sdk.css.v1.model.RestartClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.RestoreSnapshotReq;
@@ -123,12 +132,20 @@ import com.huaweicloud.sdk.css.v1.model.RoleExtendReq;
 import com.huaweicloud.sdk.css.v1.model.SetRDSBackupCnfReq;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowCertsDetailRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowCertsDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterDetailRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterTagRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterTagResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowClusterVolumeUsageRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowClusterVolumeUsageResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowDataStoreFlavorDetailRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowDataStoreFlavorDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowElbDetailRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowElbDetailResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowFlavorDetailRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowFlavorDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowGetConfDetailRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowGetConfDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowGetLogSettingRequest;
@@ -137,6 +154,8 @@ import com.huaweicloud.sdk.css.v1.model.ShowIkThesaurusRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowIkThesaurusResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowLogBackupRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowLogBackupResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowResizeFlavorsRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowResizeFlavorsResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowVpcepConnectionRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowVpcepConnectionResponse;
 import com.huaweicloud.sdk.css.v1.model.ShrinkClusterReq;
@@ -146,6 +165,9 @@ import com.huaweicloud.sdk.css.v1.model.StartAutoSettingResponse;
 import com.huaweicloud.sdk.css.v1.model.StartConnectivityTestReq;
 import com.huaweicloud.sdk.css.v1.model.StartConnectivityTestRequest;
 import com.huaweicloud.sdk.css.v1.model.StartConnectivityTestResponse;
+import com.huaweicloud.sdk.css.v1.model.StartHotPipelineRequest;
+import com.huaweicloud.sdk.css.v1.model.StartHotPipelineRequestBody;
+import com.huaweicloud.sdk.css.v1.model.StartHotPipelineResponse;
 import com.huaweicloud.sdk.css.v1.model.StartKibanaPublicReq;
 import com.huaweicloud.sdk.css.v1.model.StartKibanaPublicRequest;
 import com.huaweicloud.sdk.css.v1.model.StartKibanaPublicResponse;
@@ -227,6 +249,9 @@ import com.huaweicloud.sdk.css.v1.model.UpdatePublicKibanaBandwidthReq;
 import com.huaweicloud.sdk.css.v1.model.UpdatePublicKibanaWhitelistReq;
 import com.huaweicloud.sdk.css.v1.model.UpdatePublicKibanaWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdatePublicKibanaWhitelistResponse;
+import com.huaweicloud.sdk.css.v1.model.UpdateRouteRequest;
+import com.huaweicloud.sdk.css.v1.model.UpdateRouteRequestBody;
+import com.huaweicloud.sdk.css.v1.model.UpdateRouteResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateShrinkClusterRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateShrinkClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateShrinkNodesRequest;
@@ -250,6 +275,9 @@ import com.huaweicloud.sdk.css.v1.model.UpgradeCoreResponse;
 import com.huaweicloud.sdk.css.v1.model.UpgradeDetailRequest;
 import com.huaweicloud.sdk.css.v1.model.UpgradeDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.UpgradingTheKernelBody;
+import com.huaweicloud.sdk.css.v1.model.UploadCertsRequest;
+import com.huaweicloud.sdk.css.v1.model.UploadCertsRequestBody;
+import com.huaweicloud.sdk.css.v1.model.UploadCertsResponse;
 
 @SuppressWarnings("unchecked")
 public class CssMeta {
@@ -369,6 +397,28 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeSecurityGroupReq.class),
             f -> f.withMarshaller(ChangeSecurityGroupRequest::getBody, ChangeSecurityGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForCreateAgency();
+
+    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForCreateAgency() {
+        // basic
+        HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
+                .withName("CreateAgency")
+                .withUri("/v1.0/{project_id}/agency/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResourceTenant>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResourceTenant.class),
+            f -> f.withMarshaller(CreateAgencyRequest::getBody, CreateAgencyRequest::setBody));
 
         // response
 
@@ -1023,6 +1073,28 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRoutesRequest, ListRoutesResponse> listRoutes = genForListRoutes();
+
+    private static HttpRequestDef<ListRoutesRequest, ListRoutesResponse> genForListRoutes() {
+        // basic
+        HttpRequestDef.Builder<ListRoutesRequest, ListRoutesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRoutesRequest.class, ListRoutesResponse.class)
+                .withName("ListRoutes")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/route")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRoutesRequest::getClusterId, ListRoutesRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSmnTopicsRequest, ListSmnTopicsResponse> listSmnTopics =
         genForListSmnTopics();
 
@@ -1315,6 +1387,68 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowClusterVolumeUsageRequest, ShowClusterVolumeUsageResponse> showClusterVolumeUsage =
+        genForShowClusterVolumeUsage();
+
+    private static HttpRequestDef<ShowClusterVolumeUsageRequest, ShowClusterVolumeUsageResponse> genForShowClusterVolumeUsage() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterVolumeUsageRequest, ShowClusterVolumeUsageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowClusterVolumeUsageRequest.class, ShowClusterVolumeUsageResponse.class)
+            .withName("ShowClusterVolumeUsage")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/volume")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterVolumeUsageRequest::getClusterId,
+                ShowClusterVolumeUsageRequest::setClusterId));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ShowClusterVolumeUsageResponse::getBody, ShowClusterVolumeUsageResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDataStoreFlavorDetailRequest, ShowDataStoreFlavorDetailResponse> showDataStoreFlavorDetail =
+        genForShowDataStoreFlavorDetail();
+
+    private static HttpRequestDef<ShowDataStoreFlavorDetailRequest, ShowDataStoreFlavorDetailResponse> genForShowDataStoreFlavorDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowDataStoreFlavorDetailRequest, ShowDataStoreFlavorDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDataStoreFlavorDetailRequest.class,
+                    ShowDataStoreFlavorDetailResponse.class)
+                .withName("ShowDataStoreFlavorDetail")
+                .withUri("/v1.0/{project_id}/datastore/{datastore_id}/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataStoreFlavorDetailRequest::getDatastoreId,
+                ShowDataStoreFlavorDetailRequest::setDatastoreId));
+        builder.<String>withRequestField("datastore_version_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataStoreFlavorDetailRequest::getDatastoreVersionId,
+                ShowDataStoreFlavorDetailRequest::setDatastoreVersionId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowElbDetailRequest, ShowElbDetailResponse> showElbDetail =
         genForShowElbDetail();
 
@@ -1332,6 +1466,29 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowElbDetailRequest::getClusterId, ShowElbDetailRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlavorDetailRequest, ShowFlavorDetailResponse> showFlavorDetail =
+        genForShowFlavorDetail();
+
+    private static HttpRequestDef<ShowFlavorDetailRequest, ShowFlavorDetailResponse> genForShowFlavorDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowFlavorDetailRequest, ShowFlavorDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlavorDetailRequest.class, ShowFlavorDetailResponse.class)
+                .withName("ShowFlavorDetail")
+                .withUri("/v1.0/{project_id}/flavors/{flavor_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlavorDetailRequest::getFlavorId, ShowFlavorDetailRequest::setFlavorId));
 
         // response
 
@@ -1406,6 +1563,29 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GetLogBackupReq.class),
             f -> f.withMarshaller(ShowLogBackupRequest::getBody, ShowLogBackupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResizeFlavorsRequest, ShowResizeFlavorsResponse> showResizeFlavors =
+        genForShowResizeFlavors();
+
+    private static HttpRequestDef<ShowResizeFlavorsRequest, ShowResizeFlavorsResponse> genForShowResizeFlavors() {
+        // basic
+        HttpRequestDef.Builder<ShowResizeFlavorsRequest, ShowResizeFlavorsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResizeFlavorsRequest.class, ShowResizeFlavorsResponse.class)
+                .withName("ShowResizeFlavors")
+                .withUri("/v1.0/{project_id}/resize-flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("clusterId",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResizeFlavorsRequest::getClusterId, ShowResizeFlavorsRequest::setClusterId));
 
         // response
 
@@ -2118,6 +2298,33 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateRouteRequest, UpdateRouteResponse> updateRoute = genForUpdateRoute();
+
+    private static HttpRequestDef<UpdateRouteRequest, UpdateRouteResponse> genForUpdateRoute() {
+        // basic
+        HttpRequestDef.Builder<UpdateRouteRequest, UpdateRouteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateRouteRequest.class, UpdateRouteResponse.class)
+                .withName("UpdateRoute")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/route")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRouteRequest::getClusterId, UpdateRouteRequest::setClusterId));
+        builder.<UpdateRouteRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRouteRequestBody.class),
+            f -> f.withMarshaller(UpdateRouteRequest::getBody, UpdateRouteRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateShrinkClusterRequest, UpdateShrinkClusterResponse> updateShrinkCluster =
         genForUpdateShrinkCluster();
 
@@ -2584,6 +2791,33 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteCertsRequest, DeleteCertsResponse> deleteCerts = genForDeleteCerts();
+
+    private static HttpRequestDef<DeleteCertsRequest, DeleteCertsResponse> genForDeleteCerts() {
+        // basic
+        HttpRequestDef.Builder<DeleteCertsRequest, DeleteCertsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertsRequest.class, DeleteCertsResponse.class)
+                .withName("DeleteCerts")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/certs/{cert_id}/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertsRequest::getClusterId, DeleteCertsRequest::setClusterId));
+        builder.<String>withRequestField("cert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertsRequest::getCertId, DeleteCertsRequest::setCertId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteConfRequest, DeleteConfResponse> deleteConf = genForDeleteConf();
 
     private static HttpRequestDef<DeleteConfRequest, DeleteConfResponse> genForDeleteConf() {
@@ -2818,6 +3052,57 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RebootClusterRequest, RebootClusterResponse> rebootCluster =
+        genForRebootCluster();
+
+    private static HttpRequestDef<RebootClusterRequest, RebootClusterResponse> genForRebootCluster() {
+        // basic
+        HttpRequestDef.Builder<RebootClusterRequest, RebootClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RebootClusterRequest.class, RebootClusterResponse.class)
+                .withName("RebootCluster")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/reboot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebootClusterRequest::getClusterId, RebootClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCertsDetailRequest, ShowCertsDetailResponse> showCertsDetail =
+        genForShowCertsDetail();
+
+    private static HttpRequestDef<ShowCertsDetailRequest, ShowCertsDetailResponse> genForShowCertsDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowCertsDetailRequest, ShowCertsDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCertsDetailRequest.class, ShowCertsDetailResponse.class)
+                .withName("ShowCertsDetail")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/certs/{cert_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertsDetailRequest::getClusterId, ShowCertsDetailRequest::setClusterId));
+        builder.<String>withRequestField("cert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertsDetailRequest::getCertId, ShowCertsDetailRequest::setCertId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowGetConfDetailRequest, ShowGetConfDetailResponse> showGetConfDetail =
         genForShowGetConfDetail();
 
@@ -2869,6 +3154,34 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartConnectivityTestReq.class),
             f -> f.withMarshaller(StartConnectivityTestRequest::getBody, StartConnectivityTestRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartHotPipelineRequest, StartHotPipelineResponse> startHotPipeline =
+        genForStartHotPipeline();
+
+    private static HttpRequestDef<StartHotPipelineRequest, StartHotPipelineResponse> genForStartHotPipeline() {
+        // basic
+        HttpRequestDef.Builder<StartHotPipelineRequest, StartHotPipelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartHotPipelineRequest.class, StartHotPipelineResponse.class)
+                .withName("StartHotPipeline")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/lgsconf/hot-start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartHotPipelineRequest::getClusterId, StartHotPipelineRequest::setClusterId));
+        builder.<StartHotPipelineRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartHotPipelineRequestBody.class),
+            f -> f.withMarshaller(StartHotPipelineRequest::getBody, StartHotPipelineRequest::setBody));
 
         // response
 
@@ -2974,6 +3287,33 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCnfReq.class),
             f -> f.withMarshaller(UpdateCnfRequest::getBody, UpdateCnfRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadCertsRequest, UploadCertsResponse> uploadCerts = genForUploadCerts();
+
+    private static HttpRequestDef<UploadCertsRequest, UploadCertsResponse> genForUploadCerts() {
+        // basic
+        HttpRequestDef.Builder<UploadCertsRequest, UploadCertsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadCertsRequest.class, UploadCertsResponse.class)
+                .withName("UploadCerts")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/certs/upload")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadCertsRequest::getClusterId, UploadCertsRequest::setClusterId));
+        builder.<UploadCertsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadCertsRequestBody.class),
+            f -> f.withMarshaller(UploadCertsRequest::getBody, UploadCertsRequest::setBody));
 
         // response
 

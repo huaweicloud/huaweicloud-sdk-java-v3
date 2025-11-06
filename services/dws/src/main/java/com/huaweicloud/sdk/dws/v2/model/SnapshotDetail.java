@@ -67,6 +67,11 @@ public class SnapshotDetail {
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated")
+
+    private String updated;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bak_expected_start_time")
 
     private String bakExpectedStartTime;
@@ -150,6 +155,21 @@ public class SnapshotDetail {
     @JsonProperty(value = "cluster_status")
 
     private String clusterStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_task_status")
+
+    private String clusterTaskStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_fine_grained_cross_version_restore")
+
+    private Boolean supportFineGrainedCrossVersionRestore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_fine_grained_asymmetric_restore")
+
+    private Boolean supportFineGrainedAsymmetricRestore;
 
     public SnapshotDetail withId(String id) {
         this.id = id;
@@ -345,6 +365,23 @@ public class SnapshotDetail {
 
     public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
+    }
+
+    public SnapshotDetail withUpdated(String updated) {
+        this.updated = updated;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 快照更新时间。 **取值范围**： 不涉及。
+     * @return updated
+     */
+    public String getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(String updated) {
+        this.updated = updated;
     }
 
     public SnapshotDetail withBakExpectedStartTime(String bakExpectedStartTime) {
@@ -574,7 +611,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * **参数解释**： 备份级别。 **取值范围**： 不涉及。
+     * **参数解释**： 备份级别。 **取值范围**： cluster：集群级快照； schema：schema级快照； table：表级快照；
      * @return backupLevel
      */
     public String getBackupLevel() {
@@ -646,6 +683,57 @@ public class SnapshotDetail {
         this.clusterStatus = clusterStatus;
     }
 
+    public SnapshotDetail withClusterTaskStatus(String clusterTaskStatus) {
+        this.clusterTaskStatus = clusterTaskStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群任务状态。 **取值范围**： 不涉及。
+     * @return clusterTaskStatus
+     */
+    public String getClusterTaskStatus() {
+        return clusterTaskStatus;
+    }
+
+    public void setClusterTaskStatus(String clusterTaskStatus) {
+        this.clusterTaskStatus = clusterTaskStatus;
+    }
+
+    public SnapshotDetail withSupportFineGrainedCrossVersionRestore(Boolean supportFineGrainedCrossVersionRestore) {
+        this.supportFineGrainedCrossVersionRestore = supportFineGrainedCrossVersionRestore;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否支持细粒度跨版本恢复。 **取值范围**： 不涉及。
+     * @return supportFineGrainedCrossVersionRestore
+     */
+    public Boolean getSupportFineGrainedCrossVersionRestore() {
+        return supportFineGrainedCrossVersionRestore;
+    }
+
+    public void setSupportFineGrainedCrossVersionRestore(Boolean supportFineGrainedCrossVersionRestore) {
+        this.supportFineGrainedCrossVersionRestore = supportFineGrainedCrossVersionRestore;
+    }
+
+    public SnapshotDetail withSupportFineGrainedAsymmetricRestore(Boolean supportFineGrainedAsymmetricRestore) {
+        this.supportFineGrainedAsymmetricRestore = supportFineGrainedAsymmetricRestore;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否支持细粒度异构恢复。 **取值范围**： 不涉及。
+     * @return supportFineGrainedAsymmetricRestore
+     */
+    public Boolean getSupportFineGrainedAsymmetricRestore() {
+        return supportFineGrainedAsymmetricRestore;
+    }
+
+    public void setSupportFineGrainedAsymmetricRestore(Boolean supportFineGrainedAsymmetricRestore) {
+        this.supportFineGrainedAsymmetricRestore = supportFineGrainedAsymmetricRestore;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -660,7 +748,7 @@ public class SnapshotDetail {
             && Objects.equals(this.finished, that.finished) && Objects.equals(this.size, that.size)
             && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
             && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.datastore, that.datastore)
-            && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.bakExpectedStartTime, that.bakExpectedStartTime)
             && Objects.equals(this.bakKeepDay, that.bakKeepDay) && Objects.equals(this.bakPeriod, that.bakPeriod)
             && Objects.equals(this.dbUser, that.dbUser) && Objects.equals(this.progress, that.progress)
@@ -675,7 +763,10 @@ public class SnapshotDetail {
             && Objects.equals(this.backupLevel, that.backupLevel)
             && Objects.equals(this.fineGrainedBackupDetail, that.fineGrainedBackupDetail)
             && Objects.equals(this.guestAgentVersion, that.guestAgentVersion)
-            && Objects.equals(this.clusterStatus, that.clusterStatus);
+            && Objects.equals(this.clusterStatus, that.clusterStatus)
+            && Objects.equals(this.clusterTaskStatus, that.clusterTaskStatus)
+            && Objects.equals(this.supportFineGrainedCrossVersionRestore, that.supportFineGrainedCrossVersionRestore)
+            && Objects.equals(this.supportFineGrainedAsymmetricRestore, that.supportFineGrainedAsymmetricRestore);
     }
 
     @Override
@@ -691,6 +782,7 @@ public class SnapshotDetail {
             clusterId,
             datastore,
             clusterName,
+            updated,
             bakExpectedStartTime,
             bakKeepDay,
             bakPeriod,
@@ -707,7 +799,10 @@ public class SnapshotDetail {
             backupLevel,
             fineGrainedBackupDetail,
             guestAgentVersion,
-            clusterStatus);
+            clusterStatus,
+            clusterTaskStatus,
+            supportFineGrainedCrossVersionRestore,
+            supportFineGrainedAsymmetricRestore);
     }
 
     @Override
@@ -725,6 +820,7 @@ public class SnapshotDetail {
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
+        sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    bakExpectedStartTime: ").append(toIndentedString(bakExpectedStartTime)).append("\n");
         sb.append("    bakKeepDay: ").append(toIndentedString(bakKeepDay)).append("\n");
         sb.append("    bakPeriod: ").append(toIndentedString(bakPeriod)).append("\n");
@@ -742,6 +838,13 @@ public class SnapshotDetail {
         sb.append("    fineGrainedBackupDetail: ").append(toIndentedString(fineGrainedBackupDetail)).append("\n");
         sb.append("    guestAgentVersion: ").append(toIndentedString(guestAgentVersion)).append("\n");
         sb.append("    clusterStatus: ").append(toIndentedString(clusterStatus)).append("\n");
+        sb.append("    clusterTaskStatus: ").append(toIndentedString(clusterTaskStatus)).append("\n");
+        sb.append("    supportFineGrainedCrossVersionRestore: ")
+            .append(toIndentedString(supportFineGrainedCrossVersionRestore))
+            .append("\n");
+        sb.append("    supportFineGrainedAsymmetricRestore: ")
+            .append(toIndentedString(supportFineGrainedAsymmetricRestore))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

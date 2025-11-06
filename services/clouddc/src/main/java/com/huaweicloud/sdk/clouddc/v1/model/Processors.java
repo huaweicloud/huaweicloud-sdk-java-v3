@@ -91,6 +91,11 @@ public class Processors {
     private String serialNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "part_number")
+
+    private String partNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health")
 
     private String health;
@@ -372,6 +377,23 @@ public class Processors {
         this.serialNumber = serialNumber;
     }
 
+    public Processors withPartNumber(String partNumber) {
+        this.partNumber = partNumber;
+        return this;
+    }
+
+    /**
+     * 指定CPU资源的部件号
+     * @return partNumber
+     */
+    public String getPartNumber() {
+        return partNumber;
+    }
+
+    public void setPartNumber(String partNumber) {
+        this.partNumber = partNumber;
+    }
+
     public Processors withHealth(String health) {
         this.health = health;
         return this;
@@ -425,8 +447,8 @@ public class Processors {
             && Objects.equals(this.l2CacheKib, that.l2CacheKib) && Objects.equals(this.l3CacheKib, that.l3CacheKib)
             && Objects.equals(this.frequencyMhz, that.frequencyMhz)
             && Objects.equals(this.otherParameters, that.otherParameters)
-            && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.health, that.health)
-            && Objects.equals(this.state, that.state);
+            && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.partNumber, that.partNumber)
+            && Objects.equals(this.health, that.health) && Objects.equals(this.state, that.state);
     }
 
     @Override
@@ -447,6 +469,7 @@ public class Processors {
             frequencyMhz,
             otherParameters,
             serialNumber,
+            partNumber,
             health,
             state);
     }
@@ -471,6 +494,7 @@ public class Processors {
         sb.append("    frequencyMhz: ").append(toIndentedString(frequencyMhz)).append("\n");
         sb.append("    otherParameters: ").append(toIndentedString(otherParameters)).append("\n");
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
+        sb.append("    partNumber: ").append(toIndentedString(partNumber)).append("\n");
         sb.append("    health: ").append(toIndentedString(health)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("}");

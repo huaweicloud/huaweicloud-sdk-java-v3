@@ -142,7 +142,7 @@ public class ProfileRegionCache {
         if (Objects.isNull(endpoints)) {
             endpoints = new ArrayList<>();
         }
-        if (!StringUtils.isEmpty(endpoint)) {
+        if (StringUtils.isNotEmpty(endpoint)) {
             endpoints.add(endpoint);
         }
         return endpoints;
@@ -161,7 +161,7 @@ public class ProfileRegionCache {
 
     private static String getRegionsFilePath() {
         String regionsFile = System.getenv(REGIONS_FILE_ENV);
-        if (!StringUtils.isEmpty(regionsFile)) {
+        if (StringUtils.isNotEmpty(regionsFile)) {
             return regionsFile;
         }
 

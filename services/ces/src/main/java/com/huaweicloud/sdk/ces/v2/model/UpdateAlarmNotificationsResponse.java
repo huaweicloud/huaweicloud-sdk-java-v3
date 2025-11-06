@@ -79,7 +79,7 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **取值范围**： 包含的通知信息的数量最多为10个。 
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 
      * @return alarmNotifications
      */
     public List<NotificationResp> getAlarmNotifications() {
@@ -113,7 +113,7 @@ public class UpdateAlarmNotificationsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **取值范围**： 包含的通知信息的数量最多为10个。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 
      * @return okNotifications
      */
     public List<NotificationResp> getOkNotifications() {

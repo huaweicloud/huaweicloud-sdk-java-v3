@@ -1618,6 +1618,12 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getDisasterRecoveryId,
                 DeleteDisasterRecoveryRequest::setDisasterRecoveryId));
+        builder.<Integer>withRequestField("need_send_request",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteDisasterRecoveryRequest::getNeedSendRequest,
+                DeleteDisasterRecoveryRequest::setNeedSendRequest));
 
         // response
 
@@ -3271,6 +3277,23 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("primary_cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDisasterRecoverRequest::getPrimaryClusterId,
+                ListDisasterRecoverRequest::setPrimaryClusterId));
+        builder.<String>withRequestField("standby_cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDisasterRecoverRequest::getStandbyClusterId,
+                ListDisasterRecoverRequest::setStandbyClusterId));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDisasterRecoverRequest::getId, ListDisasterRecoverRequest::setId));
 
         // response
 

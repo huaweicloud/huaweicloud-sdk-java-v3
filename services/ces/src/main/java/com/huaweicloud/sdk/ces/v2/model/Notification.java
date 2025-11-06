@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class Notification {
 
     /**
-     * **参数解释**： 通知类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - notification：SMN通知。 - contact：云账号联系人。 - contactGroup：通知组。 - autoscaling：AS通知，只在AS中使用。 - groupwatch：已废弃，不推荐使用。 - ecsRecovery：已废弃，不推荐使用。 - iecAction：已废弃，不推荐使用。 **默认取值**： 不涉及。 
+     * **参数解释**： 通知类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - notification：通知组或主题订阅。 - contact：云账号联系人。 - contactGroup：（已废弃）通知组。 - autoscaling：AS通知，只在AS中使用。 - groupwatch：已废弃，不推荐使用。 - ecsRecovery：已废弃，不推荐使用。 - iecAction：已废弃，不推荐使用。 **默认取值**： 不涉及。 
      */
     public static final class TypeEnum {
 
@@ -134,7 +134,7 @@ public class Notification {
     }
 
     /**
-     * **参数解释**： 通知类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - notification：SMN通知。 - contact：云账号联系人。 - contactGroup：通知组。 - autoscaling：AS通知，只在AS中使用。 - groupwatch：已废弃，不推荐使用。 - ecsRecovery：已废弃，不推荐使用。 - iecAction：已废弃，不推荐使用。 **默认取值**： 不涉及。 
+     * **参数解释**： 通知类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - notification：通知组或主题订阅。 - contact：云账号联系人。 - contactGroup：（已废弃）通知组。 - autoscaling：AS通知，只在AS中使用。 - groupwatch：已废弃，不推荐使用。 - ecsRecovery：已废弃，不推荐使用。 - iecAction：已废弃，不推荐使用。 **默认取值**： 不涉及。 
      * @return type
      */
     public TypeEnum getType() {

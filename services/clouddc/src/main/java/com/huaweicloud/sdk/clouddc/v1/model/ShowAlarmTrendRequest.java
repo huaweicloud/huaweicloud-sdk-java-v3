@@ -43,7 +43,7 @@ public class ShowAlarmTrendRequest {
     }
 
     /**
-     * 查询结束时间戳，单位秒，
+     * 查询结束时间戳，单位秒，from 必须小于 to
      * @return to
      */
     public String getTo() {

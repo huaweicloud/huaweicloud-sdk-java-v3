@@ -376,7 +376,7 @@ public class HcClient implements CustomizationConfigure {
         // user-agent
         StringBuilder usString = new StringBuilder(Constants.USER_AGENT_VALUE);
         String customUa = headers.getOrDefault(Constants.USER_AGENT, this.httpConfig.getUserAgent());
-        if (!StringUtils.isEmpty(customUa)) {
+        if (StringUtils.isNotEmpty(customUa)) {
             usString.append(DefaultUserAgent.SEMICOLON).append(customUa);
         }
 
@@ -395,7 +395,7 @@ public class HcClient implements CustomizationConfigure {
                     .append(reqValue)
                     .append(".")
                     .append(url.getAuthority());
-            if (!StringUtils.isEmpty(url.getPath())) {
+            if (StringUtils.isNotEmpty(url.getPath())) {
                 endpointBuilder.append("/").append(url.getPath());
             }
             httpRequestBuilder.withEndpoint(endpointBuilder.toString());

@@ -26,7 +26,7 @@ public class CreateEventsResponseBody {
     }
 
     /**
-     * 事件ID。
+     * **参数解释**： 事件ID。 **取值范围**： 不涉及。 
      * @return eventId
      */
     public String getEventId() {
@@ -43,7 +43,7 @@ public class CreateEventsResponseBody {
     }
 
     /**
-     * 事件名称。  必须以字母开头，只能包含0-9/a-z/A-Z/_，长度最短为1，最大为64。
+     * **参数解释**： 事件名称。 **取值范围**： 不涉及。 
      * @return eventName
      */
     public String getEventName() {

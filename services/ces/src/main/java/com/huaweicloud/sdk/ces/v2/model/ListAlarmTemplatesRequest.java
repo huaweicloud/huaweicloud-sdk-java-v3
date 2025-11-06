@@ -250,7 +250,7 @@ public class ListAlarmTemplatesRequest {
     }
 
     /**
-     * 支持按照产品名称粒度进行查询告警模板，产品名称一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"
+     * （已废弃）支持按照产品名称粒度进行查询告警模板，产品名称一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"
      * @return productName
      */
     public String getProductName() {

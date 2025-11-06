@@ -131,7 +131,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。
      * @return dim0
      */
     public String getDim0() {
@@ -148,7 +148,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。
      * @return dim1
      */
     public String getDim1() {
@@ -165,7 +165,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。
      * @return dim2
      */
     public String getDim2() {
@@ -201,7 +201,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。
      * @return metricName
      */
     public String getMetricName() {
@@ -218,7 +218,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务的命名空间可查看：“[服务命名空间](ces_03_0059.xml)”。
      * @return namespace
      */
     public String getNamespace() {

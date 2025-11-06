@@ -224,7 +224,7 @@ public class EventAlarmSpec {
     }
 
     /**
-     * 是否绑定告警规则模版（废弃）。
+     * 是否绑定告警模板（废弃）。
      * @return alarmRuleTemplateBindEnable
      */
     public Boolean getAlarmRuleTemplateBindEnable() {
@@ -241,7 +241,7 @@ public class EventAlarmSpec {
     }
 
     /**
-     * 告警规则模版id（废弃）。
+     * 告警模板id（废弃）。
      * @return alarmRuleTemplateId
      */
     public String getAlarmRuleTemplateId() {

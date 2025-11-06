@@ -131,7 +131,7 @@ public class ServiceResponseException extends SdkException {
         sb.append("    errorCode: ").append(toIndentedString(getErrorCode())).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(getErrorMsg())).append("\n");
         sb.append("    requestId: ").append(toIndentedString(getRequestId())).append("\n");
-        if (!StringUtils.isEmpty(getEncodedAuthorizationMessage())) {
+        if (StringUtils.isNotEmpty(getEncodedAuthorizationMessage())) {
             sb.append("    encodedAuthorizationMessage: ").append(toIndentedString(getEncodedAuthorizationMessage())).append("\n");
         }
         if (Objects.nonNull(getDetails())) {

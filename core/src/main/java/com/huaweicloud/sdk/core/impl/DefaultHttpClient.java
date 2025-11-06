@@ -142,12 +142,12 @@ public class DefaultHttpClient implements HttpClient {
 
         clientBuilder.protocols(Collections.singletonList(Protocol.HTTP_1_1));
         // set proxy
-        if (!StringUtils.isEmpty(httpConfig.getProxyHost())) {
+        if (StringUtils.isNotEmpty(httpConfig.getProxyHost())) {
             Proxy proxy = new Proxy(Proxy.Type.HTTP,
                     new InetSocketAddress(httpConfig.getProxyHost(), httpConfig.getProxyPort()));
             clientBuilder.proxy(proxy);
         }
-        if (!StringUtils.isEmpty(httpConfig.getProxyUsername())) {
+        if (StringUtils.isNotEmpty(httpConfig.getProxyUsername())) {
             Authenticator proxyAuthenticator = (route, response) -> {
                 if (!OKHTTP_PREEMPTIVE.equals(response.header(PROXY_AUTHENTICATE))
                         && response.code() == PROXY_AUTHENTICATION_REQUIRED) {

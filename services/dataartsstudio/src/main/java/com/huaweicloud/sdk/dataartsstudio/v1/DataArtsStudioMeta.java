@@ -466,6 +466,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmRulesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmRulesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
@@ -7747,6 +7749,63 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getWorkspace,
                 ListFactoryAlarmInfoRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryAlarmRulesRequest, ListFactoryAlarmRulesResponse> listFactoryAlarmRules =
+        genForListFactoryAlarmRules();
+
+    private static HttpRequestDef<ListFactoryAlarmRulesRequest, ListFactoryAlarmRulesResponse> genForListFactoryAlarmRules() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryAlarmRulesRequest, ListFactoryAlarmRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListFactoryAlarmRulesRequest.class, ListFactoryAlarmRulesResponse.class)
+            .withName("ListFactoryAlarmRules")
+            .withUri("/v2/{project_id}/factory/alarm/rules")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryAlarmRulesRequest::getName, ListFactoryAlarmRulesRequest::setName));
+        builder.<Integer>withRequestField("remind_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryAlarmRulesRequest::getRemindType,
+                ListFactoryAlarmRulesRequest::setRemindType));
+        builder.<String>withRequestField("ding_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryAlarmRulesRequest::getDingName,
+                ListFactoryAlarmRulesRequest::setDingName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryAlarmRulesRequest::getOffset, ListFactoryAlarmRulesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryAlarmRulesRequest::getLimit, ListFactoryAlarmRulesRequest::setLimit));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryAlarmRulesRequest::getWorkspace,
+                ListFactoryAlarmRulesRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryAlarmRulesRequest::getXProjectId,
+                ListFactoryAlarmRulesRequest::setXProjectId));
 
         // response
 

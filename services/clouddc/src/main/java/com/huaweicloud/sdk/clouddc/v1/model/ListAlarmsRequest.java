@@ -379,7 +379,7 @@ public class ListAlarmsRequest {
     }
 
     /**
-     * 产生告警开始时间
+     * 产生告警开始时间，from 必须小于 to。
      * @return from
      */
     public String getFrom() {
@@ -396,7 +396,7 @@ public class ListAlarmsRequest {
     }
 
     /**
-     * 产生告警结束时间
+     * 产生告警结束时间，from 必须小于 to。
      * @return to
      */
     public String getTo() {

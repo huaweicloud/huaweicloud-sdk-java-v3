@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class CountEventsRequest {
 
     /**
-     * 查询类型。type=active_alert代表查询活动告警，type=history_alert代表查询历史告警。不传或者传其他值则返回指定查询条件的所有信息。
+     * 查询类型： - active_alert：代表查询活动告警 - history_alert代表查询历史告警。  不传或者传其他值，则返回指定查询条件的所有信息。
      */
     public static final class TypeEnum {
 
@@ -102,7 +102,7 @@ public class CountEventsRequest {
     }
 
     /**
-     * 查询类型。type=active_alert代表查询活动告警，type=history_alert代表查询历史告警。不传或者传其他值则返回指定查询条件的所有信息。
+     * 查询类型： - active_alert：代表查询活动告警 - history_alert代表查询历史告警。  不传或者传其他值，则返回指定查询条件的所有信息。
      * @return type
      */
     public TypeEnum getType() {

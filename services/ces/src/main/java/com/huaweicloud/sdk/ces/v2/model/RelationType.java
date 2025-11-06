@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**： 屏蔽告警通知或者屏蔽告警计算的实现方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值，只能为ALARM_RULE、RESOURCE、RESOURCE_POLICY_NOTIFICATION、RESOURCE_POLICY_ALARM，长度为[1,32]个字符。 - ALARM_RULE：通过告警规则屏蔽告警通知。 - RESOURCE：通过资源屏蔽告警通知。 - RESOURCE_POLICY_NOTIFICATION：通过告警策略和告警资源屏蔽告警通知。 - RESOURCE_POLICY_ALARM：通过告警策略和告警资源屏蔽计算告警。           **默认取值**： 不涉及。 
+ * **参数解释**： 屏蔽告警通知的实现方式。 **约束限制**： 不涉及。 **取值范围**： - ALARM_RULE：通过告警规则屏蔽告警通知(不支持通过该接口修改，请通过接口“[批量设置告警通知屏蔽规则](BatchUpdateNotificationMasks.xml)”设置)。 - RESOURCE：通过资源屏蔽告警通知。 - RESOURCE_POLICY_NOTIFICATION：通过告警策略屏蔽告警通知。 - EVENT.SYS: 通过事件来蔽告警通知。 - RESOURCE_POLICY_ALARM：（已废弃）通过屏蔽告警计算来屏蔽告警通知。 **默认取值**： 不涉及。 
  */
 public class RelationType {
 
@@ -32,6 +32,11 @@ public class RelationType {
      */
     public static final RelationType RESOURCE_POLICY_ALARM = new RelationType("RESOURCE_POLICY_ALARM");
 
+    /**
+     * Enum EVENT_SYS for value: "EVENT.SYS"
+     */
+    public static final RelationType EVENT_SYS = new RelationType("EVENT.SYS");
+
     private static final Map<String, RelationType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, RelationType> createStaticFields() {
@@ -40,6 +45,7 @@ public class RelationType {
         map.put("RESOURCE", RESOURCE);
         map.put("RESOURCE_POLICY_NOTIFICATION", RESOURCE_POLICY_NOTIFICATION);
         map.put("RESOURCE_POLICY_ALARM", RESOURCE_POLICY_ALARM);
+        map.put("EVENT.SYS", EVENT_SYS);
         return Collections.unmodifiableMap(map);
     }
 

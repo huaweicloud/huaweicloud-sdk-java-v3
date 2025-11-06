@@ -373,6 +373,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmRulesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmRulesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
@@ -5857,6 +5859,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> listFactoryAlarmInfoInvoker(
         ListFactoryAlarmInfoRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryAlarmInfo, hcClient);
+    }
+
+    /**
+     * 查询通知规则列表
+     *
+     * 查询通知规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryAlarmRulesRequest 请求对象
+     * @return ListFactoryAlarmRulesResponse
+     */
+    public ListFactoryAlarmRulesResponse listFactoryAlarmRules(ListFactoryAlarmRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listFactoryAlarmRules);
+    }
+
+    /**
+     * 查询通知规则列表
+     *
+     * 查询通知规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryAlarmRulesRequest 请求对象
+     * @return SyncInvoker<ListFactoryAlarmRulesRequest, ListFactoryAlarmRulesResponse>
+     */
+    public SyncInvoker<ListFactoryAlarmRulesRequest, ListFactoryAlarmRulesResponse> listFactoryAlarmRulesInvoker(
+        ListFactoryAlarmRulesRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryAlarmRules, hcClient);
     }
 
     /**

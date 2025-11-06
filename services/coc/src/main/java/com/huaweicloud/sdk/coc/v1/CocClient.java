@@ -80,12 +80,12 @@ import com.huaweicloud.sdk.coc.v1.model.GetScriptJobStatisticsRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptJobStatisticsResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptResponse;
-import com.huaweicloud.sdk.coc.v1.model.HandleAlarmRequest;
-import com.huaweicloud.sdk.coc.v1.model.HandleAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAssessTaskRequest;
@@ -328,11 +328,11 @@ public class CocClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request HandleAlarmRequest 请求对象
-     * @return HandleAlarmResponse
+     * @param request HandlerAlarmRequest 请求对象
+     * @return HandlerAlarmResponse
      */
-    public HandleAlarmResponse handleAlarm(HandleAlarmRequest request) {
-        return hcClient.syncInvokeHttp(request, CocMeta.handleAlarm);
+    public HandlerAlarmResponse handlerAlarm(HandlerAlarmRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.handlerAlarm);
     }
 
     /**
@@ -342,11 +342,11 @@ public class CocClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request HandleAlarmRequest 请求对象
-     * @return SyncInvoker<HandleAlarmRequest, HandleAlarmResponse>
+     * @param request HandlerAlarmRequest 请求对象
+     * @return SyncInvoker<HandlerAlarmRequest, HandlerAlarmResponse>
      */
-    public SyncInvoker<HandleAlarmRequest, HandleAlarmResponse> handleAlarmInvoker(HandleAlarmRequest request) {
-        return new SyncInvoker<>(request, CocMeta.handleAlarm, hcClient);
+    public SyncInvoker<HandlerAlarmRequest, HandlerAlarmResponse> handlerAlarmInvoker(HandlerAlarmRequest request) {
+        return new SyncInvoker<>(request, CocMeta.handlerAlarm, hcClient);
     }
 
     /**

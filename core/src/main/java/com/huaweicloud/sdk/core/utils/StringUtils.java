@@ -47,6 +47,16 @@ public final class StringUtils {
     }
 
     /**
+     * Check if a char sequence is not empty
+     *
+     * @param cs CharSequence
+     * @return true of false
+     */
+    public static boolean isNotEmpty(CharSequence cs) {
+        return !isEmpty(cs);
+    }
+
+    /**
      * Convert camel string to underscore
      *
      * @param camelString camel string

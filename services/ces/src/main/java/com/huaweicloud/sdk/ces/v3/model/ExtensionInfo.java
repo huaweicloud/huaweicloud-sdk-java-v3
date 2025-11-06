@@ -124,7 +124,7 @@ public class ExtensionInfo {
     }
 
     /**
-     * **参数解释**: 插件名称 **取值范围**: 数组长度为[1,64] 
+     * **参数解释**: 插件名称 **取值范围**: 长度为[1,64]个字符 
      * @return name
      */
     public String getName() {
@@ -158,7 +158,7 @@ public class ExtensionInfo {
     }
 
     /**
-     * **参数解释**: 插件版本 **取值范围**: 数组长度为[1,32] 
+     * **参数解释**: 插件版本 **取值范围**: 长度为[1,32]个字符 
      * @return version
      */
     public String getVersion() {

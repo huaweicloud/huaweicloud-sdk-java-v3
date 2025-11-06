@@ -17,6 +17,11 @@ public class RestoreClusterResponse extends SdkResponse {
 
     private Cluster cluster;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
     public RestoreClusterResponse withCluster(Cluster cluster) {
         this.cluster = cluster;
         return this;
@@ -43,6 +48,23 @@ public class RestoreClusterResponse extends SdkResponse {
         this.cluster = cluster;
     }
 
+    public RestoreClusterResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 异步任务ID。 **取值范围**： 不涉及。
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +74,12 @@ public class RestoreClusterResponse extends SdkResponse {
             return false;
         }
         RestoreClusterResponse that = (RestoreClusterResponse) obj;
-        return Objects.equals(this.cluster, that.cluster);
+        return Objects.equals(this.cluster, that.cluster) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cluster);
+        return Objects.hash(cluster, jobId);
     }
 
     @Override
@@ -65,6 +87,7 @@ public class RestoreClusterResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class RestoreClusterResponse {\n");
         sb.append("    cluster: ").append(toIndentedString(cluster)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

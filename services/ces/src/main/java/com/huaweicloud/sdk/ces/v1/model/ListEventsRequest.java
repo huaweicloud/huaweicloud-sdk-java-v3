@@ -189,7 +189,7 @@ public class ListEventsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
-    private Integer start;
+    private String start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -254,6 +254,8 @@ public class ListEventsRequest {
 
     /**
      * 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
+     * minimum: 1111111111111
+     * maximum: 9999999999999
      * @return from
      */
     public Long getFrom() {
@@ -271,6 +273,8 @@ public class ListEventsRequest {
 
     /**
      * 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
+     * minimum: 1111111111111
+     * maximum: 9999999999999
      * @return to
      */
     public Long getTo() {
@@ -281,20 +285,20 @@ public class ListEventsRequest {
         this.to = to;
     }
 
-    public ListEventsRequest withStart(Integer start) {
+    public ListEventsRequest withStart(String start) {
         this.start = start;
         return this;
     }
 
     /**
-     * 分页起始值，类型为integer，默认值为0。
+     * 分页起始值，默认值为0。
      * @return start
      */
-    public Integer getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(Integer start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
@@ -304,7 +308,9 @@ public class ListEventsRequest {
     }
 
     /**
-     * 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
+     * 单次查询的条数限制，取值范围[0,100]，默认值为100，用于限制结果数据条数。
+     * minimum: 0
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

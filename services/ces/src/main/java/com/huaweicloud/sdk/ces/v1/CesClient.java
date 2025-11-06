@@ -97,9 +97,9 @@ public class CesClient {
     }
 
     /**
-     * 创建告警规则
+     * 创建告警规则（V1）
      *
-     * 创建一条告警规则。
+     * 创建一条告警规则。创建告警规则V1接口只支持配置单资源单策略规则，建议使用“[创建告警规则（推荐）](CreateAlarmRules.xml)”与前端功能配套使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -111,9 +111,9 @@ public class CesClient {
     }
 
     /**
-     * 创建告警规则
+     * 创建告警规则（V1）
      *
-     * 创建一条告警规则。
+     * 创建一条告警规则。创建告警规则V1接口只支持配置单资源单策略规则，建议使用“[创建告警规则（推荐）](CreateAlarmRules.xml)”与前端功能配套使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -384,9 +384,9 @@ public class CesClient {
     }
 
     /**
-     * 查询告警规则列表
+     * 查询告警规则列表（V1）
      *
-     * 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。
+     * 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。告警规则V1接口只支持配置单资源单策略规则，建议使用“[查询告警规则列表（推荐）](CreateAlarmRules.xml)”与前端功能配套使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -398,9 +398,9 @@ public class CesClient {
     }
 
     /**
-     * 查询告警规则列表
+     * 查询告警规则列表（V1）
      *
-     * 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。
+     * 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。告警规则V1接口只支持配置单资源单策略规则，建议使用“[查询告警规则列表（推荐）](CreateAlarmRules.xml)”与前端功能配套使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -528,7 +528,7 @@ public class CesClient {
     /**
      * 查询单条告警规则信息
      *
-     * 根据告警ID查询告警规则信息。
+     * 根据告警ID查询告警规则信息。告警规则V1接口只支持配置单资源单策略规则，建议使用“[查询告警规则列表（推荐）](ListAlarmRules.xml)”、“[查询告警规则资源列表](ListAlarmRuleResources.xml)”与前端功能配套使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -542,7 +542,7 @@ public class CesClient {
     /**
      * 查询单条告警规则信息
      *
-     * 根据告警ID查询告警规则信息。
+     * 根据告警ID查询告警规则信息。告警规则V1接口只支持配置单资源单策略规则，建议使用“[查询告警规则列表（推荐）](ListAlarmRules.xml)”、“[查询告警规则资源列表](ListAlarmRuleResources.xml)”与前端功能配套使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -641,7 +641,7 @@ public class CesClient {
     /**
      * 查询资源分组下的资源
      *
-     * 根据资源分组ID查询资源分组下的资源。
+     * 根据资源分组ID查询资源分组下的资源。此接口已过时，建议使用v2接口 “[查询资源分组下指定服务类别特定维度的资源列表](ListResourceGroupsServicesResources.xml)”
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -655,7 +655,7 @@ public class CesClient {
     /**
      * 查询资源分组下的资源
      *
-     * 根据资源分组ID查询资源分组下的资源。
+     * 根据资源分组ID查询资源分组下的资源。此接口已过时，建议使用v2接口 “[查询资源分组下指定服务类别特定维度的资源列表](ListResourceGroupsServicesResources.xml)”
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -17,19 +17,19 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_histories")
 
-    private List<AlarmHistoryInfo> alarmHistories = null;
+    private List<AlarmHistoryInfoResp> alarmHistories = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
 
-    private MetaDataForAlarmHistory metaData;
+    private MetaDataForAlarmHistoryResp metaData;
 
-    public ListAlarmHistoriesResponse withAlarmHistories(List<AlarmHistoryInfo> alarmHistories) {
+    public ListAlarmHistoriesResponse withAlarmHistories(List<AlarmHistoryInfoResp> alarmHistories) {
         this.alarmHistories = alarmHistories;
         return this;
     }
 
-    public ListAlarmHistoriesResponse addAlarmHistoriesItem(AlarmHistoryInfo alarmHistoriesItem) {
+    public ListAlarmHistoriesResponse addAlarmHistoriesItem(AlarmHistoryInfoResp alarmHistoriesItem) {
         if (this.alarmHistories == null) {
             this.alarmHistories = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAlarmHistoriesResponse withAlarmHistories(Consumer<List<AlarmHistoryInfo>> alarmHistoriesSetter) {
+    public ListAlarmHistoriesResponse withAlarmHistories(Consumer<List<AlarmHistoryInfoResp>> alarmHistoriesSetter) {
         if (this.alarmHistories == null) {
             this.alarmHistories = new ArrayList<>();
         }
@@ -46,25 +46,25 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * 一条或者多条告警历史详细信息
+     * **参数解释**： 一条或者多条告警历史详细信息 
      * @return alarmHistories
      */
-    public List<AlarmHistoryInfo> getAlarmHistories() {
+    public List<AlarmHistoryInfoResp> getAlarmHistories() {
         return alarmHistories;
     }
 
-    public void setAlarmHistories(List<AlarmHistoryInfo> alarmHistories) {
+    public void setAlarmHistories(List<AlarmHistoryInfoResp> alarmHistories) {
         this.alarmHistories = alarmHistories;
     }
 
-    public ListAlarmHistoriesResponse withMetaData(MetaDataForAlarmHistory metaData) {
+    public ListAlarmHistoriesResponse withMetaData(MetaDataForAlarmHistoryResp metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public ListAlarmHistoriesResponse withMetaData(Consumer<MetaDataForAlarmHistory> metaDataSetter) {
+    public ListAlarmHistoriesResponse withMetaData(Consumer<MetaDataForAlarmHistoryResp> metaDataSetter) {
         if (this.metaData == null) {
-            this.metaData = new MetaDataForAlarmHistory();
+            this.metaData = new MetaDataForAlarmHistoryResp();
             metaDataSetter.accept(this.metaData);
         }
 
@@ -75,11 +75,11 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
      * Get metaData
      * @return metaData
      */
-    public MetaDataForAlarmHistory getMetaData() {
+    public MetaDataForAlarmHistoryResp getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(MetaDataForAlarmHistory metaData) {
+    public void setMetaData(MetaDataForAlarmHistoryResp metaData) {
         this.metaData = metaData;
     }
 

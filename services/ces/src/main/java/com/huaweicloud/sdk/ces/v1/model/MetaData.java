@@ -31,7 +31,9 @@ public class MetaData {
     }
 
     /**
-     * 当前返回结果条数。
+     * **参数解释**： 当前返回结果条数。    **约束限制**： 不涉及。  **取值范围**： 在[0,2147483647]区间内 **默认取值**： 不涉及。 
+     * minimum: 0
+     * maximum: 2147483647
      * @return count
      */
     public Integer getCount() {
@@ -48,7 +50,9 @@ public class MetaData {
     }
 
     /**
-     * 总条数。
+     * **参数解释**： 总条数。    **约束限制**： 不涉及。  **取值范围**： 在[0,2147483647]区间内 **默认取值**： 不涉及。 
+     * minimum: 0
+     * maximum: 2147483647
      * @return total
      */
     public Integer getTotal() {
@@ -65,7 +69,7 @@ public class MetaData {
     }
 
     /**
-     * 下一个开始的标记，用于分页。
+     * **参数解释**： 下一个开始的标记，用于分页。    **约束限制**： 不涉及。  **取值范围**： 长度为[1,9999]个数字 **默认取值**： 不涉及。 
      * @return marker
      */
     public String getMarker() {

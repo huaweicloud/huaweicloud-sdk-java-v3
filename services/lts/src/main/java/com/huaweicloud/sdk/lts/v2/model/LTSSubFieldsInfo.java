@@ -5,13 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * json子字段信息
@@ -105,29 +102,14 @@ public class LTSSubFieldsInfo {
     private String fieldName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "caseSensitive")
-
-    private Boolean caseSensitive;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "includeChinese")
-
-    private Boolean includeChinese;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tokenizer")
-
-    private String tokenizer;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quickAnalysis")
 
     private Boolean quickAnalysis;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ascii")
+    @JsonProperty(value = "fieldAnalysisAlias")
 
-    private List<String> ascii = null;
+    private String fieldAnalysisAlias;
 
     public LTSSubFieldsInfo withFieldType(FieldTypeEnum fieldType) {
         this.fieldType = fieldType;
@@ -163,57 +145,6 @@ public class LTSSubFieldsInfo {
         this.fieldName = fieldName;
     }
 
-    public LTSSubFieldsInfo withCaseSensitive(Boolean caseSensitive) {
-        this.caseSensitive = caseSensitive;
-        return this;
-    }
-
-    /**
-     * 是否大小写敏感
-     * @return caseSensitive
-     */
-    public Boolean getCaseSensitive() {
-        return caseSensitive;
-    }
-
-    public void setCaseSensitive(Boolean caseSensitive) {
-        this.caseSensitive = caseSensitive;
-    }
-
-    public LTSSubFieldsInfo withIncludeChinese(Boolean includeChinese) {
-        this.includeChinese = includeChinese;
-        return this;
-    }
-
-    /**
-     * 是否包含中文
-     * @return includeChinese
-     */
-    public Boolean getIncludeChinese() {
-        return includeChinese;
-    }
-
-    public void setIncludeChinese(Boolean includeChinese) {
-        this.includeChinese = includeChinese;
-    }
-
-    public LTSSubFieldsInfo withTokenizer(String tokenizer) {
-        this.tokenizer = tokenizer;
-        return this;
-    }
-
-    /**
-     * 分词符
-     * @return tokenizer
-     */
-    public String getTokenizer() {
-        return tokenizer;
-    }
-
-    public void setTokenizer(String tokenizer) {
-        this.tokenizer = tokenizer;
-    }
-
     public LTSSubFieldsInfo withQuickAnalysis(Boolean quickAnalysis) {
         this.quickAnalysis = quickAnalysis;
         return this;
@@ -231,37 +162,21 @@ public class LTSSubFieldsInfo {
         this.quickAnalysis = quickAnalysis;
     }
 
-    public LTSSubFieldsInfo withAscii(List<String> ascii) {
-        this.ascii = ascii;
-        return this;
-    }
-
-    public LTSSubFieldsInfo addAsciiItem(String asciiItem) {
-        if (this.ascii == null) {
-            this.ascii = new ArrayList<>();
-        }
-        this.ascii.add(asciiItem);
-        return this;
-    }
-
-    public LTSSubFieldsInfo withAscii(Consumer<List<String>> asciiSetter) {
-        if (this.ascii == null) {
-            this.ascii = new ArrayList<>();
-        }
-        asciiSetter.accept(this.ascii);
+    public LTSSubFieldsInfo withFieldAnalysisAlias(String fieldAnalysisAlias) {
+        this.fieldAnalysisAlias = fieldAnalysisAlias;
         return this;
     }
 
     /**
-     * 特殊分词符
-     * @return ascii
+     * **参数解释：** 别名，设置别名后，只支持使用别名进行SQL搜索分析，不支持使用别名进行关键字搜索。 **约束限制：** 不涉及。 **取值范围：** 长度不能大于256。 **默认取值：** 不涉及。
+     * @return fieldAnalysisAlias
      */
-    public List<String> getAscii() {
-        return ascii;
+    public String getFieldAnalysisAlias() {
+        return fieldAnalysisAlias;
     }
 
-    public void setAscii(List<String> ascii) {
-        this.ascii = ascii;
+    public void setFieldAnalysisAlias(String fieldAnalysisAlias) {
+        this.fieldAnalysisAlias = fieldAnalysisAlias;
     }
 
     @Override
@@ -274,15 +189,13 @@ public class LTSSubFieldsInfo {
         }
         LTSSubFieldsInfo that = (LTSSubFieldsInfo) obj;
         return Objects.equals(this.fieldType, that.fieldType) && Objects.equals(this.fieldName, that.fieldName)
-            && Objects.equals(this.caseSensitive, that.caseSensitive)
-            && Objects.equals(this.includeChinese, that.includeChinese)
-            && Objects.equals(this.tokenizer, that.tokenizer) && Objects.equals(this.quickAnalysis, that.quickAnalysis)
-            && Objects.equals(this.ascii, that.ascii);
+            && Objects.equals(this.quickAnalysis, that.quickAnalysis)
+            && Objects.equals(this.fieldAnalysisAlias, that.fieldAnalysisAlias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fieldType, fieldName, caseSensitive, includeChinese, tokenizer, quickAnalysis, ascii);
+        return Objects.hash(fieldType, fieldName, quickAnalysis, fieldAnalysisAlias);
     }
 
     @Override
@@ -291,11 +204,8 @@ public class LTSSubFieldsInfo {
         sb.append("class LTSSubFieldsInfo {\n");
         sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
         sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
-        sb.append("    caseSensitive: ").append(toIndentedString(caseSensitive)).append("\n");
-        sb.append("    includeChinese: ").append(toIndentedString(includeChinese)).append("\n");
-        sb.append("    tokenizer: ").append(toIndentedString(tokenizer)).append("\n");
         sb.append("    quickAnalysis: ").append(toIndentedString(quickAnalysis)).append("\n");
-        sb.append("    ascii: ").append(toIndentedString(ascii)).append("\n");
+        sb.append("    fieldAnalysisAlias: ").append(toIndentedString(fieldAnalysisAlias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

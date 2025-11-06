@@ -171,7 +171,7 @@ public class AgentStatusInfo {
     }
 
     /**
-     * **参数解释**: 插件信息列表 **取值范围**: 数组长度为[1,10] 
+     * **参数解释**: 插件信息列表 
      * @return extensions
      */
     public List<ExtensionInfo> getExtensions() {

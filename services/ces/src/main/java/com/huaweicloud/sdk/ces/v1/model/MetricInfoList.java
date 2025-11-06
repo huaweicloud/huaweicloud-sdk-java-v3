@@ -72,7 +72,7 @@ public class MetricInfoList {
     }
 
     /**
-     * 指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，长度最短为1，最大为64；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，长度最短为1，最大为96；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。
      * @return metricName
      */
     public String getMetricName() {
@@ -89,7 +89,7 @@ public class MetricInfoList {
     }
 
     /**
-     * 指标命名空间，例如弹性云服务器命名空间SYS.ECS；格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32。说明： 当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为空；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 指标命名空间，例如弹性云服务器命名空间SYS.ECS；格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32。说明： 当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为空；各服务的命名空间可查看：“[服务命名空间](ces_03_0059.xml)”。
      * @return namespace
      */
     public String getNamespace() {

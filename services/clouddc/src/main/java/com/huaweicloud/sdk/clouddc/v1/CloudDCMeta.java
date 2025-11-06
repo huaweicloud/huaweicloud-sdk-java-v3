@@ -508,12 +508,12 @@ public class CloudDCMeta {
             f -> f.withMarshaller(ListEventsRequest::getResourceId, ListEventsRequest::setResourceId));
         builder.<String>withRequestField("from",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventsRequest::getFrom, ListEventsRequest::setFrom));
         builder.<String>withRequestField("to",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventsRequest::getTo, ListEventsRequest::setTo));
 

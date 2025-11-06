@@ -41,7 +41,7 @@ public class CreateEventsResponse extends SdkResponse {
     }
 
     /**
-     * 响应参数。
+     * 事件响应体
      * @return body
      */
     public List<CreateEventsResponseBody> getBody() {

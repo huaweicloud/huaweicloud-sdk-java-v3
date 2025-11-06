@@ -33,6 +33,11 @@ public class CreateCnfReq {
 
     private List<String> sensitiveWords = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desc")
+
+    private String desc;
+
     public CreateCnfReq withName(String name) {
         this.name = name;
         return this;
@@ -126,6 +131,23 @@ public class CreateCnfReq {
         this.sensitiveWords = sensitiveWords;
     }
 
+    public CreateCnfReq withDesc(String desc) {
+        this.desc = desc;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 配置文件描述。 **约束限制**： 不涉及 **取值范围**： 不超过128个字符。 **默认取值**： 不涉及
+     * @return desc
+     */
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -136,12 +158,13 @@ public class CreateCnfReq {
         }
         CreateCnfReq that = (CreateCnfReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.confContent, that.confContent)
-            && Objects.equals(this.setting, that.setting) && Objects.equals(this.sensitiveWords, that.sensitiveWords);
+            && Objects.equals(this.setting, that.setting) && Objects.equals(this.sensitiveWords, that.sensitiveWords)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, confContent, setting, sensitiveWords);
+        return Objects.hash(name, confContent, setting, sensitiveWords, desc);
     }
 
     @Override
@@ -152,6 +175,7 @@ public class CreateCnfReq {
         sb.append("    confContent: ").append(toIndentedString(confContent)).append("\n");
         sb.append("    setting: ").append(toIndentedString(setting)).append("\n");
         sb.append("    sensitiveWords: ").append(toIndentedString(sensitiveWords)).append("\n");
+        sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * PromInstanceRequestModel
@@ -20,110 +18,10 @@ public class PromInstanceRequestModel {
 
     private String promName;
 
-    /**
-     * Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
-     */
-    public static final class PromTypeEnum {
-
-        /**
-         * Enum ECS for value: "ECS"
-         */
-        public static final PromTypeEnum ECS = new PromTypeEnum("ECS");
-
-        /**
-         * Enum VPC for value: "VPC"
-         */
-        public static final PromTypeEnum VPC = new PromTypeEnum("VPC");
-
-        /**
-         * Enum CCE for value: "CCE"
-         */
-        public static final PromTypeEnum CCE = new PromTypeEnum("CCE");
-
-        /**
-         * Enum REMOTE_WRITE for value: "REMOTE_WRITE"
-         */
-        public static final PromTypeEnum REMOTE_WRITE = new PromTypeEnum("REMOTE_WRITE");
-
-        /**
-         * Enum KUBERNETES for value: "KUBERNETES"
-         */
-        public static final PromTypeEnum KUBERNETES = new PromTypeEnum("KUBERNETES");
-
-        /**
-         * Enum CLOUD_SERVICE for value: "CLOUD_SERVICE"
-         */
-        public static final PromTypeEnum CLOUD_SERVICE = new PromTypeEnum("CLOUD_SERVICE");
-
-        /**
-         * Enum ACROSS_ACCOUNT for value: "ACROSS_ACCOUNT"
-         */
-        public static final PromTypeEnum ACROSS_ACCOUNT = new PromTypeEnum("ACROSS_ACCOUNT");
-
-        private static final Map<String, PromTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PromTypeEnum> createStaticFields() {
-            Map<String, PromTypeEnum> map = new HashMap<>();
-            map.put("ECS", ECS);
-            map.put("VPC", VPC);
-            map.put("CCE", CCE);
-            map.put("REMOTE_WRITE", REMOTE_WRITE);
-            map.put("KUBERNETES", KUBERNETES);
-            map.put("CLOUD_SERVICE", CLOUD_SERVICE);
-            map.put("ACROSS_ACCOUNT", ACROSS_ACCOUNT);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PromTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PromTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PromTypeEnum(value));
-        }
-
-        public static PromTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PromTypeEnum) {
-                return this.value.equals(((PromTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prom_type")
 
-    private PromTypeEnum promType;
+    private String promType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prom_version")
@@ -139,6 +37,11 @@ public class PromInstanceRequestModel {
     @JsonProperty(value = "project_id")
 
     private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aggr_prometheus_info")
+
+    private List<AggrPrometheusInfo> aggrPrometheusInfo = null;
 
     public PromInstanceRequestModel withPromName(String promName) {
         this.promName = promName;
@@ -157,20 +60,20 @@ public class PromInstanceRequestModel {
         this.promName = promName;
     }
 
-    public PromInstanceRequestModel withPromType(PromTypeEnum promType) {
+    public PromInstanceRequestModel withPromType(String promType) {
         this.promType = promType;
         return this;
     }
 
     /**
-     * Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
+     * Prometheus实例类型。 - ECS：Prometheus for ECS - CCE：Prometheus for CCE - REMOTE_WRITE：Prometheus 通用实例 - CLOUD_SERVICE：Prometheus for 云服务 - ACROSS_ACCOUNT：Prometheus for 多账号聚合实例 [（暂不支持ACROSS_ACCOUNT类型）](tag:hws_eu,g42,sbc,OCB,ctc,cmcc,srg,hk_sbc,ctc,DT)
      * @return promType
      */
-    public PromTypeEnum getPromType() {
+    public String getPromType() {
         return promType;
     }
 
-    public void setPromType(PromTypeEnum promType) {
+    public void setPromType(String promType) {
         this.promType = promType;
     }
 
@@ -225,6 +128,40 @@ public class PromInstanceRequestModel {
         this.projectId = projectId;
     }
 
+    public PromInstanceRequestModel withAggrPrometheusInfo(List<AggrPrometheusInfo> aggrPrometheusInfo) {
+        this.aggrPrometheusInfo = aggrPrometheusInfo;
+        return this;
+    }
+
+    public PromInstanceRequestModel addAggrPrometheusInfoItem(AggrPrometheusInfo aggrPrometheusInfoItem) {
+        if (this.aggrPrometheusInfo == null) {
+            this.aggrPrometheusInfo = new ArrayList<>();
+        }
+        this.aggrPrometheusInfo.add(aggrPrometheusInfoItem);
+        return this;
+    }
+
+    public PromInstanceRequestModel withAggrPrometheusInfo(
+        Consumer<List<AggrPrometheusInfo>> aggrPrometheusInfoSetter) {
+        if (this.aggrPrometheusInfo == null) {
+            this.aggrPrometheusInfo = new ArrayList<>();
+        }
+        aggrPrometheusInfoSetter.accept(this.aggrPrometheusInfo);
+        return this;
+    }
+
+    /**
+     * 被聚合的账号和普罗实例列表。
+     * @return aggrPrometheusInfo
+     */
+    public List<AggrPrometheusInfo> getAggrPrometheusInfo() {
+        return aggrPrometheusInfo;
+    }
+
+    public void setAggrPrometheusInfo(List<AggrPrometheusInfo> aggrPrometheusInfo) {
+        this.aggrPrometheusInfo = aggrPrometheusInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -237,12 +174,13 @@ public class PromInstanceRequestModel {
         return Objects.equals(this.promName, that.promName) && Objects.equals(this.promType, that.promType)
             && Objects.equals(this.promVersion, that.promVersion)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.projectId, that.projectId);
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.aggrPrometheusInfo, that.aggrPrometheusInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(promName, promType, promVersion, enterpriseProjectId, projectId);
+        return Objects.hash(promName, promType, promVersion, enterpriseProjectId, projectId, aggrPrometheusInfo);
     }
 
     @Override
@@ -254,6 +192,7 @@ public class PromInstanceRequestModel {
         sb.append("    promVersion: ").append(toIndentedString(promVersion)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    aggrPrometheusInfo: ").append(toIndentedString(aggrPrometheusInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

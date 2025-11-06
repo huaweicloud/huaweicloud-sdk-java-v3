@@ -105,7 +105,7 @@ public final class DefaultUserAgent implements UserAgent {
         String language = JavaProperty.USER_LANGUAGE.value();
         String country = JavaProperty.USER_COUNTRY.value();
         String value = null;
-        if (!StringUtils.isEmpty(language) && !StringUtils.isEmpty(country)) {
+        if (StringUtils.isNotEmpty(language) && StringUtils.isNotEmpty(country)) {
             value = language + UNDERLINE + country;
         }
         return value;
@@ -115,7 +115,7 @@ public final class DefaultUserAgent implements UserAgent {
         Path filePath = getAppFilePath();
         if (filePath != null) {
             String hisAppId = readAppId(filePath);
-            if (!StringUtils.isEmpty(hisAppId) && UUID_PATTERN.matcher(hisAppId).matches()) {
+            if (StringUtils.isNotEmpty(hisAppId) && UUID_PATTERN.matcher(hisAppId).matches()) {
                 return hisAppId;
             }
             String newAppId = UUID.randomUUID().toString();

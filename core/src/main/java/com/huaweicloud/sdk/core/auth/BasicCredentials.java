@@ -70,7 +70,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     public Map<String, Object> getPathParams() {
         Map<String, Object> pathParam = new LinkedHashMap<>();
-        if (!StringUtils.isEmpty(projectId)) {
+        if (StringUtils.isNotEmpty(projectId)) {
             pathParam.put(Constants.PROJECT_ID, projectId);
         }
         return pathParam;
@@ -81,14 +81,14 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         return CompletableFuture.supplyAsync(() -> {
             checkRequiredIdpParams();
 
-            if (!StringUtils.isEmpty(projectId)) {
+            if (StringUtils.isNotEmpty(projectId)) {
                 return this;
             }
 
             String cacheName = null;
-            if (!StringUtils.isEmpty(getAk())) {
+            if (StringUtils.isNotEmpty(getAk())) {
                 cacheName = getAk() + regionId;
-            } else if (!StringUtils.isEmpty(getIdpId())) {
+            } else if (StringUtils.isNotEmpty(getIdpId())) {
                 cacheName = getIdpId() + regionId;
             }
 
@@ -131,7 +131,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                         "new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);");
             }
             logger.info("Success to get project id of region '{}': {}", regionId, StringUtils.mask(projectId));
-            if (!StringUtils.isEmpty(cacheName)) {
+            if (StringUtils.isNotEmpty(cacheName)) {
                 cache.put(cacheName, projectId);
             }
 
@@ -156,11 +156,11 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             updateSecurityTokenFromMetadata();
         }
 
-        if (!StringUtils.isEmpty(getProjectId())) {
+        if (StringUtils.isNotEmpty(getProjectId())) {
             builder.addHeader(Constants.X_PROJECT_ID, projectId);
         }
 
-        if (!StringUtils.isEmpty(getSecurityToken())) {
+        if (StringUtils.isNotEmpty(getSecurityToken())) {
             builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
         }
 

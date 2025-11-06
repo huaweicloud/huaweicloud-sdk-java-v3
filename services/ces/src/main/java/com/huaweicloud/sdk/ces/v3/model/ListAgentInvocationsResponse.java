@@ -46,7 +46,7 @@ public class ListAgentInvocationsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 任务列表 **取值范围**: 返回数组长度为[0,100] 
+     * **参数解释**: 任务列表 
      * @return invocations
      */
     public List<InvocationInfo> getInvocations() {

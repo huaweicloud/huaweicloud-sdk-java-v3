@@ -21,7 +21,7 @@ public class ListEventDetailRequest {
     private String eventName;
 
     /**
-     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     * **参数解释**： 事件类型。 **约束限制**： 不涉及。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS：系统事件。 - EVENT.CUSTOM：自定义事件。 **默认取值**： 不涉及。
      */
     public static final class EventTypeEnum {
 
@@ -96,7 +96,7 @@ public class ListEventDetailRequest {
     private EventTypeEnum eventType;
 
     /**
-     * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+     * **参数解释**： 事件子类。 **约束限制**： 不涉及。 **取值范围**： 枚举类型 - SUB_EVENT.OPS: 运维事件 - SUB_EVENT.PLAN: 计划事件 - SUB_EVENT.CUSTOM: 自定义事件 **默认取值**： 不涉及。
      */
     public static final class SubEventTypeEnum {
 
@@ -181,20 +181,178 @@ public class ListEventDetailRequest {
 
     private String eventSource;
 
+    /**
+     * **参数解释**： 事件的级别。 **约束限制**： 不涉及。 **取值范围**： 值为Critical、Major、Minor、Info。 - Critical: 紧急 - Major: 重要 - Minor: 次要 - Info: 提示 **默认取值**： 不涉及。
+     */
+    public static final class EventLevelEnum {
+
+        /**
+         * Enum CRITICAL for value: "Critical"
+         */
+        public static final EventLevelEnum CRITICAL = new EventLevelEnum("Critical");
+
+        /**
+         * Enum MAJOR for value: "Major"
+         */
+        public static final EventLevelEnum MAJOR = new EventLevelEnum("Major");
+
+        /**
+         * Enum INFO for value: "Info"
+         */
+        public static final EventLevelEnum INFO = new EventLevelEnum("Info");
+
+        /**
+         * Enum MINOR for value: "Minor"
+         */
+        public static final EventLevelEnum MINOR = new EventLevelEnum("Minor");
+
+        private static final Map<String, EventLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EventLevelEnum> createStaticFields() {
+            Map<String, EventLevelEnum> map = new HashMap<>();
+            map.put("Critical", CRITICAL);
+            map.put("Major", MAJOR);
+            map.put("Info", INFO);
+            map.put("Minor", MINOR);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EventLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EventLevelEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventLevelEnum(value));
+        }
+
+        public static EventLevelEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EventLevelEnum) {
+                return this.value.equals(((EventLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_level")
 
-    private String eventLevel;
+    private EventLevelEnum eventLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_user")
 
     private String eventUser;
 
+    /**
+     * **参数解释**： 事件的状态。 **约束限制**： 不涉及。 **取值范围**： 值为normal、warning、incident。 - normal: 正常 - warning: 警告 - incident: 故障 **默认取值**： 不涉及。
+     */
+    public static final class EventStateEnum {
+
+        /**
+         * Enum NORMAL for value: "normal"
+         */
+        public static final EventStateEnum NORMAL = new EventStateEnum("normal");
+
+        /**
+         * Enum WARNING for value: "warning"
+         */
+        public static final EventStateEnum WARNING = new EventStateEnum("warning");
+
+        /**
+         * Enum INCIDENT for value: "incident"
+         */
+        public static final EventStateEnum INCIDENT = new EventStateEnum("incident");
+
+        private static final Map<String, EventStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EventStateEnum> createStaticFields() {
+            Map<String, EventStateEnum> map = new HashMap<>();
+            map.put("normal", NORMAL);
+            map.put("warning", WARNING);
+            map.put("incident", INCIDENT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EventStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EventStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventStateEnum(value));
+        }
+
+        public static EventStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EventStateEnum) {
+                return this.value.equals(((EventStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_state")
 
-    private String eventState;
+    private EventStateEnum eventState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
@@ -209,7 +367,7 @@ public class ListEventDetailRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
 
-    private Integer start;
+    private Long start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -222,7 +380,7 @@ public class ListEventDetailRequest {
     }
 
     /**
-     * 事件名称。
+     * **参数解释**： 事件名称，值为系统产生的事件名称或用户自定义上报的事件名称。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。
      * @return eventName
      */
     public String getEventName() {
@@ -239,7 +397,7 @@ public class ListEventDetailRequest {
     }
 
     /**
-     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     * **参数解释**： 事件类型。 **约束限制**： 不涉及。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS：系统事件。 - EVENT.CUSTOM：自定义事件。 **默认取值**： 不涉及。
      * @return eventType
      */
     public EventTypeEnum getEventType() {
@@ -256,7 +414,7 @@ public class ListEventDetailRequest {
     }
 
     /**
-     * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+     * **参数解释**： 事件子类。 **约束限制**： 不涉及。 **取值范围**： 枚举类型 - SUB_EVENT.OPS: 运维事件 - SUB_EVENT.PLAN: 计划事件 - SUB_EVENT.CUSTOM: 自定义事件 **默认取值**： 不涉及。
      * @return subEventType
      */
     public SubEventTypeEnum getSubEventType() {
@@ -273,7 +431,7 @@ public class ListEventDetailRequest {
     }
 
     /**
-     * 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
+     * **参数解释**： 事件来源，取值为各云服务的命名空间。云服务的命名空间请参考“[支持监控的服务列表](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,32]个字符。 正则匹配：以字母开头，中间有一个点，包含字母、数字、下划线的字符串。 **默认取值**： 不涉及。
      * @return eventSource
      */
     public String getEventSource() {
@@ -284,20 +442,20 @@ public class ListEventDetailRequest {
         this.eventSource = eventSource;
     }
 
-    public ListEventDetailRequest withEventLevel(String eventLevel) {
+    public ListEventDetailRequest withEventLevel(EventLevelEnum eventLevel) {
         this.eventLevel = eventLevel;
         return this;
     }
 
     /**
-     * 事件的级别，值为Critical，Major，Minor，Info；Critical为紧急，Major为重要，Minor为次要，Info为提示。
+     * **参数解释**： 事件的级别。 **约束限制**： 不涉及。 **取值范围**： 值为Critical、Major、Minor、Info。 - Critical: 紧急 - Major: 重要 - Minor: 次要 - Info: 提示 **默认取值**： 不涉及。
      * @return eventLevel
      */
-    public String getEventLevel() {
+    public EventLevelEnum getEventLevel() {
         return eventLevel;
     }
 
-    public void setEventLevel(String eventLevel) {
+    public void setEventLevel(EventLevelEnum eventLevel) {
         this.eventLevel = eventLevel;
     }
 
@@ -307,7 +465,7 @@ public class ListEventDetailRequest {
     }
 
     /**
-     * 上报事件监控数据时用户的名称，也可为projectID。
+     * **参数解释**： 上报事件监控数据时用户的名称，也可为projectID。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。 正则匹配：由零个或多个字母、数字、下划线、横线、斜杠、空格、@ 符号或点号组成的字符串。 **默认取值**： 不涉及。
      * @return eventUser
      */
     public String getEventUser() {
@@ -318,20 +476,20 @@ public class ListEventDetailRequest {
         this.eventUser = eventUser;
     }
 
-    public ListEventDetailRequest withEventState(String eventState) {
+    public ListEventDetailRequest withEventState(EventStateEnum eventState) {
         this.eventState = eventState;
         return this;
     }
 
     /**
-     * 事件的状态，值为normal，warning，incident；normal为正常，warning为警告，incident为故障。
+     * **参数解释**： 事件的状态。 **约束限制**： 不涉及。 **取值范围**： 值为normal、warning、incident。 - normal: 正常 - warning: 警告 - incident: 故障 **默认取值**： 不涉及。
      * @return eventState
      */
-    public String getEventState() {
+    public EventStateEnum getEventState() {
         return eventState;
     }
 
-    public void setEventState(String eventState) {
+    public void setEventState(EventStateEnum eventState) {
         this.eventState = eventState;
     }
 
@@ -341,7 +499,9 @@ public class ListEventDetailRequest {
     }
 
     /**
-     * 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
+     * **参数解释**： 查询数据起始时间，UNIX时间戳，单位毫秒。例如：1605952700911。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * minimum: 1111111111111
+     * maximum: 9999999999999
      * @return from
      */
     public Long getFrom() {
@@ -358,7 +518,9 @@ public class ListEventDetailRequest {
     }
 
     /**
-     * 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
+     * **参数解释**： 查询数据截止时间，UNIX时间戳，单位毫秒。 **约束限制**： 其中from必须小于to。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * minimum: 1111111111111
+     * maximum: 9999999999999
      * @return to
      */
     public Long getTo() {
@@ -369,20 +531,22 @@ public class ListEventDetailRequest {
         this.to = to;
     }
 
-    public ListEventDetailRequest withStart(Integer start) {
+    public ListEventDetailRequest withStart(Long start) {
         this.start = start;
         return this;
     }
 
     /**
-     * 分页起始值，类型为integer，默认值为0。
+     * **参数解释**： 分页起始值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
+     * minimum: 0
+     * maximum: 9999999999999
      * @return start
      */
-    public Integer getStart() {
+    public Long getStart() {
         return start;
     }
 
-    public void setStart(Integer start) {
+    public void setStart(Long start) {
         this.start = start;
     }
 
@@ -392,7 +556,9 @@ public class ListEventDetailRequest {
     }
 
     /**
-     * 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
+     * **参数解释**： 单次查询的条数限制，用于限制结果数据条数。 **约束限制**： 不涉及。 **取值范围**： 大小为[1,100]的整数 **默认取值**： 100
+     * minimum: 1
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

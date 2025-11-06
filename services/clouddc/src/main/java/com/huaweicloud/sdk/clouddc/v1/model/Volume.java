@@ -26,7 +26,7 @@ public class Volume {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity_bytes")
 
-    private Integer capacityBytes;
+    private Long capacityBytes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "optimum_io_size_bytes")
@@ -76,7 +76,7 @@ public class Volume {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Status status;
+    private VolumeStatus status;
 
     public Volume withName(String name) {
         this.name = name;
@@ -112,7 +112,7 @@ public class Volume {
         this.volumeRaidLevel = volumeRaidLevel;
     }
 
-    public Volume withCapacityBytes(Integer capacityBytes) {
+    public Volume withCapacityBytes(Long capacityBytes) {
         this.capacityBytes = capacityBytes;
         return this;
     }
@@ -121,11 +121,11 @@ public class Volume {
      * 容量（单位：byte）
      * @return capacityBytes
      */
-    public Integer getCapacityBytes() {
+    public Long getCapacityBytes() {
         return capacityBytes;
     }
 
-    public void setCapacityBytes(Integer capacityBytes) {
+    public void setCapacityBytes(Long capacityBytes) {
         this.capacityBytes = capacityBytes;
     }
 
@@ -298,14 +298,14 @@ public class Volume {
         this.drives = drives;
     }
 
-    public Volume withStatus(Status status) {
+    public Volume withStatus(VolumeStatus status) {
         this.status = status;
         return this;
     }
 
-    public Volume withStatus(Consumer<Status> statusSetter) {
+    public Volume withStatus(Consumer<VolumeStatus> statusSetter) {
         if (this.status == null) {
-            this.status = new Status();
+            this.status = new VolumeStatus();
             statusSetter.accept(this.status);
         }
 
@@ -316,11 +316,11 @@ public class Volume {
      * Get status
      * @return status
      */
-    public Status getStatus() {
+    public VolumeStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(VolumeStatus status) {
         this.status = status;
     }
 

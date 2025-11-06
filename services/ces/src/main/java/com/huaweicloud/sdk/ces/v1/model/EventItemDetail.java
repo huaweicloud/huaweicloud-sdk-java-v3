@@ -39,7 +39,7 @@ public class EventItemDetail {
     private String resourceName;
 
     /**
-     * 事件状态。  枚举类型：normal\\warning\\incident
+     * **参数解释**： 事件状态。 **约束限制**： 不涉及。 **取值范围**： 枚举类型。 - normal：正常发生 - warning：异常 - incident：严重 **默认取值**： 不涉及。 
      */
     public static final class EventStateEnum {
 
@@ -120,7 +120,7 @@ public class EventItemDetail {
     private EventStateEnum eventState;
 
     /**
-     * 事件级别。  枚举类型：Critical, Major, Minor, Info
+     * **参数解释**： 事件级别。 **约束限制**： 不涉及。 **取值范围**： 枚举类型：Critical, Major, Minor, Info。 - Critical: 紧急 - Major: 重要 - Minor: 次要 - Info: 提示 **默认取值**： 不涉及。 
      */
     public static final class EventLevelEnum {
 
@@ -211,13 +211,83 @@ public class EventItemDetail {
 
     private String eventUser;
 
+    /**
+     * **参数解释**： 事件类型。 **约束限制**： EVENT.SYS为系统事件，用户自己不能上报系统事件，只能传EVENT.CUSTOM。 **取值范围**： 枚举类型，EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS：系统事件 - EVENT.CUSTOM：自定义事件 **默认取值**： 不涉及。 
+     */
+    public static final class EventTypeEnum {
+
+        /**
+         * Enum EVENT_SYS for value: "EVENT.SYS"
+         */
+        public static final EventTypeEnum EVENT_SYS = new EventTypeEnum("EVENT.SYS");
+
+        /**
+         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
+         */
+        public static final EventTypeEnum EVENT_CUSTOM = new EventTypeEnum("EVENT.CUSTOM");
+
+        private static final Map<String, EventTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EventTypeEnum> createStaticFields() {
+            Map<String, EventTypeEnum> map = new HashMap<>();
+            map.put("EVENT.SYS", EVENT_SYS);
+            map.put("EVENT.CUSTOM", EVENT_CUSTOM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EventTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EventTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventTypeEnum(value));
+        }
+
+        public static EventTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EventTypeEnum) {
+                return this.value.equals(((EventTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
-    private String eventType;
+    private EventTypeEnum eventType;
 
     /**
-     * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+     * **参数解释**： 事件子类。 **约束限制**： 不涉及。 **取值范围**： 枚举类型 - SUB_EVENT.OPS: 运维事件 - SUB_EVENT.PLAN: 计划事件 - SUB_EVENT.CUSTOM: 自定义事件 **默认取值**： 不涉及。 
      */
     public static final class SubEventTypeEnum {
 
@@ -308,7 +378,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 事件内容，最大长度4096。
+     * **参数解释**： 事件内容 **约束限制**： 不涉及。 **取值范围**： 长度为[0,4096]个字符。 **默认取值**： 不涉及。 
      * @return content
      */
     public String getContent() {
@@ -325,7 +395,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 所属分组。  资源分组对应的ID，必须传存在的分组ID。
+     * **参数解释**： 所属分组。 资源分组对应的ID，必须是已存在的分组ID。 分组ID查询方法： 1.登录管理控制台。 2.单击“云监控服务”。 3.单击页面左侧的“资源分组”。 在名称/ID列获取具体资源分组ID。 **约束限制**： 不涉及。 **取值范围**： 长度只能为24个字符。 **默认取值**： 不涉及。 
      * @return groupId
      */
     public String getGroupId() {
@@ -342,7 +412,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 资源ID，支持字母、数字_ -：，最大长度128。
+     * **参数解释**： 资源ID。 资源ID的查询方法： 1.登录管理控制台。 2.单击“计算 > 弹性云服务器”。 在资源概览页可获取具体资源ID。 **约束限制**： 不涉及。 **取值范围**： 支持字母、数字支持字母、数字、下划线（_）、中划线（-）和冒号（:），最大长度128个字符。例如，6a69bf28-ee62-49f3-9785-845dacd799ec。 **默认取值**： 不涉及。 
      * @return resourceId
      */
     public String getResourceId() {
@@ -359,7 +429,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 资源名称，支持字母 中文 数字_ -. ，最大长度128。
+     * **参数解释**： 资源名称。 **约束限制**： 不涉及。 **取值范围**： 支持字母 中文 数字_ -. ，最大长度128个字符。 **默认取值**： 不涉及。 
      * @return resourceName
      */
     public String getResourceName() {
@@ -376,7 +446,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 事件状态。  枚举类型：normal\\warning\\incident
+     * **参数解释**： 事件状态。 **约束限制**： 不涉及。 **取值范围**： 枚举类型。 - normal：正常发生 - warning：异常 - incident：严重 **默认取值**： 不涉及。 
      * @return eventState
      */
     public EventStateEnum getEventState() {
@@ -393,7 +463,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 事件级别。  枚举类型：Critical, Major, Minor, Info
+     * **参数解释**： 事件级别。 **约束限制**： 不涉及。 **取值范围**： 枚举类型：Critical, Major, Minor, Info。 - Critical: 紧急 - Major: 重要 - Minor: 次要 - Info: 提示 **默认取值**： 不涉及。 
      * @return eventLevel
      */
     public EventLevelEnum getEventLevel() {
@@ -410,7 +480,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 事件用户。  支持字母 数字_ -/空格 ，最大长度64。
+     * **参数解释**： 事件用户。 **约束限制**： 不涉及。 **取值范围**： 支持字母 数字_ -/空格 ，长度为[0,64]个字符。 **默认取值**： 不涉及。 
      * @return eventUser
      */
     public String getEventUser() {
@@ -421,20 +491,20 @@ public class EventItemDetail {
         this.eventUser = eventUser;
     }
 
-    public EventItemDetail withEventType(String eventType) {
+    public EventItemDetail withEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
         return this;
     }
 
     /**
-     * 事件类型。 枚举类型，EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，用户自已不能上报，只能传EVENT.CUSTOM。
+     * **参数解释**： 事件类型。 **约束限制**： EVENT.SYS为系统事件，用户自己不能上报系统事件，只能传EVENT.CUSTOM。 **取值范围**： 枚举类型，EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS：系统事件 - EVENT.CUSTOM：自定义事件 **默认取值**： 不涉及。 
      * @return eventType
      */
-    public String getEventType() {
+    public EventTypeEnum getEventType() {
         return eventType;
     }
 
-    public void setEventType(String eventType) {
+    public void setEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
     }
 
@@ -444,7 +514,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+     * **参数解释**： 事件子类。 **约束限制**： 不涉及。 **取值范围**： 枚举类型 - SUB_EVENT.OPS: 运维事件 - SUB_EVENT.PLAN: 计划事件 - SUB_EVENT.CUSTOM: 自定义事件 **默认取值**： 不涉及。 
      * @return subEventType
      */
     public SubEventTypeEnum getSubEventType() {
@@ -477,7 +547,7 @@ public class EventItemDetail {
     }
 
     /**
-     * 一个或者多个资源维度。
+     * **参数解释**： 事件的维度，根据维度描述资源信息。 用于指定资源、资源分组的事件告警场景中，支持按维度配置告警规则。 **约束限制**： 目前最大支持4个维度。 
      * @return dimensions
      */
     public List<MetricsDimension> getDimensions() {

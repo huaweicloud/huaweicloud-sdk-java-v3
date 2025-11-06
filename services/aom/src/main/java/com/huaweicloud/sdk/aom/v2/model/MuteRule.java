@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 静默规则
+ * 静默规则。
  */
 public class MuteRule {
 
@@ -59,7 +59,7 @@ public class MuteRule {
     }
 
     /**
-     * 创建时间
+     * 创建时间。
      * minimum: 0
      * maximum: 9999999999999
      * @return createTime
@@ -78,7 +78,7 @@ public class MuteRule {
     }
 
     /**
-     * 规则描述
+     * 规则描述。
      * @return desc
      */
     public String getDesc() {
@@ -171,7 +171,7 @@ public class MuteRule {
     }
 
     /**
-     * 时区
+     * 时区。
      * @return timezone
      */
     public String getTimezone() {
@@ -188,7 +188,7 @@ public class MuteRule {
     }
 
     /**
-     * 修改时间
+     * 修改时间。
      * minimum: 0
      * maximum: 9999999999999
      * @return updateTime
@@ -207,7 +207,7 @@ public class MuteRule {
     }
 
     /**
-     * 用户ID
+     * 用户ID。
      * @return userId
      */
     public String getUserId() {

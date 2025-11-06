@@ -373,6 +373,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmRulesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmRulesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
@@ -5924,6 +5926,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> listFactoryAlarmInfoAsyncInvoker(
         ListFactoryAlarmInfoRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.listFactoryAlarmInfo, hcClient);
+    }
+
+    /**
+     * 查询通知规则列表
+     *
+     * 查询通知规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryAlarmRulesRequest 请求对象
+     * @return CompletableFuture<ListFactoryAlarmRulesResponse>
+     */
+    public CompletableFuture<ListFactoryAlarmRulesResponse> listFactoryAlarmRulesAsync(
+        ListFactoryAlarmRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listFactoryAlarmRules);
+    }
+
+    /**
+     * 查询通知规则列表
+     *
+     * 查询通知规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryAlarmRulesRequest 请求对象
+     * @return AsyncInvoker<ListFactoryAlarmRulesRequest, ListFactoryAlarmRulesResponse>
+     */
+    public AsyncInvoker<ListFactoryAlarmRulesRequest, ListFactoryAlarmRulesResponse> listFactoryAlarmRulesAsyncInvoker(
+        ListFactoryAlarmRulesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listFactoryAlarmRules, hcClient);
     }
 
     /**

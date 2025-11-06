@@ -16,14 +16,14 @@ public class CreateMetricDataRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<MetricDataItem> body = null;
+    private List<CreateMetricDataRequestBody> body = null;
 
-    public CreateMetricDataRequest withBody(List<MetricDataItem> body) {
+    public CreateMetricDataRequest withBody(List<CreateMetricDataRequestBody> body) {
         this.body = body;
         return this;
     }
 
-    public CreateMetricDataRequest addBodyItem(MetricDataItem bodyItem) {
+    public CreateMetricDataRequest addBodyItem(CreateMetricDataRequestBody bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class CreateMetricDataRequest {
         return this;
     }
 
-    public CreateMetricDataRequest withBody(Consumer<List<MetricDataItem>> bodySetter) {
+    public CreateMetricDataRequest withBody(Consumer<List<CreateMetricDataRequestBody>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class CreateMetricDataRequest {
      * 添加一条或多条自定义指标监控数据，请求参数。
      * @return body
      */
-    public List<MetricDataItem> getBody() {
+    public List<CreateMetricDataRequestBody> getBody() {
         return body;
     }
 
-    public void setBody(List<MetricDataItem> body) {
+    public void setBody(List<CreateMetricDataRequestBody> body) {
         this.body = body;
     }
 

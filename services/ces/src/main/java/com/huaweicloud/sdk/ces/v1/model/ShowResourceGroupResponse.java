@@ -32,7 +32,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusSchema status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -55,7 +55,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组的名称，如：Resource-Group-ECS-01。
+     * **参数解释** 资源分组的名称 **约束限制** 不涉及 **取值范围** 只能为字母、数字、汉字、-或_，长度为[1,128]个字符 **默认取值** 不涉及 
      * @return groupName
      */
     public String getGroupName() {
@@ -72,7 +72,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组的ID，如：rg1603786526428bWbVmk4rP。
+     * **参数解释**： 资源分组ID     **约束限制**： 不涉及。  **取值范围**： 以rg开头，后跟22位由字母或数字组成的字符串。长度为[2,24]个字符。       **默认取值**： 不涉及。 
      * @return groupId
      */
     public String getGroupId() {
@@ -105,7 +105,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 一组或者多个资源信息。
+     * **参数解释** 创建的资源分组选择一个或者多个资源。 **约束限制** 不超过1000个资源。 
      * @return resources
      */
     public List<ResourceGroup> getResources() {
@@ -116,20 +116,20 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.resources = resources;
     }
 
-    public ShowResourceGroupResponse withStatus(String status) {
+    public ShowResourceGroupResponse withStatus(StatusSchema status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 资源分组的当前状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未设置告警规则。
+     * Get status
      * @return status
      */
-    public String getStatus() {
+    public StatusSchema getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusSchema status) {
         this.status = status;
     }
 
@@ -139,7 +139,9 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组的创建时间，UNIX时间戳，单位毫秒；如：1603819753000。
+     * **参数解释**： 资源分组的创建时间，UNIX时间戳，单位毫秒；如：1603819753000。     **约束限制**： 不涉及。  **取值范围**： 在[1,9223372036854775807]区间内 **默认取值**： 不涉及。 
+     * minimum: 1
+     * maximum: 9223372036854775807
      * @return createTime
      */
     public Long getCreateTime() {
@@ -182,7 +184,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 创建资源分组时关联的企业项目，默认值为0，表示企业项目为default。
+     * **参数解释**： 创建资源分组时关联的企业项目，默认值为0，表示企业项目为default。     **约束限制**： 不涉及。  **取值范围**： 由数字、字母和-组成，或者为0（默认企业项目ID）。 **默认取值**： 不涉及。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

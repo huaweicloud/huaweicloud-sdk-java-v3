@@ -178,7 +178,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     private String notificationEndTime;
 
     /**
-     * **参数解释**： 此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。一键告警原子能力是否开启告警通知以外层notification_manner参数为准，内层字段废弃。 **约束限制**： 不涉及。 **取值范围**： 枚举值：NOTIFICATION_POLICY、NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION。长度为[1,64]个字符。           **默认取值**： 不涉及。 
+     * **参数解释**： 此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。一键告警是否开启告警通知，以外层notification_manner参数为准，内层字段废弃。 **约束限制**： 不涉及。 **取值范围**： 枚举值：NOTIFICATION_POLICY、NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION。长度为[1,64]个字符。           **默认取值**： 不涉及。 
      */
     public static final class NotificationMannerEnum {
 
@@ -477,7 +477,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
      * @return alarmNotifications
      */
     public List<Notification> getAlarmNotifications() {
@@ -511,7 +511,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
      * @return okNotifications
      */
     public List<Notification> getOkNotifications() {
@@ -563,7 +563,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * **参数解释**： 此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。一键告警原子能力是否开启告警通知以外层notification_manner参数为准，内层字段废弃。 **约束限制**： 不涉及。 **取值范围**： 枚举值：NOTIFICATION_POLICY、NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION。长度为[1,64]个字符。           **默认取值**： 不涉及。 
+     * **参数解释**： 此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。一键告警是否开启告警通知，以外层notification_manner参数为准，内层字段废弃。 **约束限制**： 不涉及。 **取值范围**： 枚举值：NOTIFICATION_POLICY、NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION。长度为[1,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationManner
      */
     public NotificationMannerEnum getNotificationManner() {
@@ -599,7 +599,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * **参数解释**： 此字段已废弃。关联的通知策略ID列表。一键告警原子能力是否开启告警通知以外层notification_policy_ids参数为准，内层字段废弃。 **约束限制**： 不涉及。 **取值范围**： ^([a-z]|[A-Z]|[0-9]|-){2,64}$。长度为[2,64]个字符。           **默认取值**： 不涉及。 
+     * **参数解释**： 此字段已废弃。关联的通知策略ID列表。一键告警是否开启告警通知，以外层notification_policy_ids参数为准，内层字段废弃。 **约束限制**： 不涉及。 **取值范围**： ^([a-z]|[A-Z]|[0-9]|-){2,64}$。长度为[2,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationPolicyIds
      */
     public List<String> getNotificationPolicyIds() {

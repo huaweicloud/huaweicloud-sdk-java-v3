@@ -16,14 +16,14 @@ public class CreateEventsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<EventItem> body = null;
+    private List<CreateEventsRequestBody> body = null;
 
-    public CreateEventsRequest withBody(List<EventItem> body) {
+    public CreateEventsRequest withBody(List<CreateEventsRequestBody> body) {
         this.body = body;
         return this;
     }
 
-    public CreateEventsRequest addBodyItem(EventItem bodyItem) {
+    public CreateEventsRequest addBodyItem(CreateEventsRequestBody bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class CreateEventsRequest {
         return this;
     }
 
-    public CreateEventsRequest withBody(Consumer<List<EventItem>> bodySetter) {
+    public CreateEventsRequest withBody(Consumer<List<CreateEventsRequestBody>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class CreateEventsRequest {
      * 上报自定义事件。请求参数。
      * @return body
      */
-    public List<EventItem> getBody() {
+    public List<CreateEventsRequestBody> getBody() {
         return body;
     }
 
-    public void setBody(List<EventItem> body) {
+    public void setBody(List<CreateEventsRequestBody> body) {
         this.body = body;
     }
 

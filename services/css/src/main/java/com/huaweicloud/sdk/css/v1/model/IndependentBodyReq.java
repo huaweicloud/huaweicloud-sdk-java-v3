@@ -25,6 +25,11 @@ public class IndependentBodyReq {
 
     private String volumeType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_size")
+
+    private Integer volumeSize;
+
     public IndependentBodyReq withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -76,6 +81,23 @@ public class IndependentBodyReq {
         this.volumeType = volumeType;
     }
 
+    public IndependentBodyReq withVolumeSize(Integer volumeSize) {
+        this.volumeSize = volumeSize;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点存储大小。 **约束限制**： - flavor_ref参数是本地盘规格时，不能设置此参数。 - 必须为大于0且为4和10的公倍数，单位：GB。 **取值范围**： 磁盘规格大小可以通过过[获取实例规格列表](ListFlavors.xml)中diskrange属性获得。 **默认取值**： flavor_ref参数不是本地盘规格时： - 新增独立冷数据节点：默认100G与节点规格支持的最小磁盘容量取较大者。 - 新增独立master或client节点：默认大小为40G，且不可更改。  >新增独立冷数据节点，推荐大于100G。
+     * @return volumeSize
+     */
+    public Integer getVolumeSize() {
+        return volumeSize;
+    }
+
+    public void setVolumeSize(Integer volumeSize) {
+        this.volumeSize = volumeSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class IndependentBodyReq {
         }
         IndependentBodyReq that = (IndependentBodyReq) obj;
         return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.nodeSize, that.nodeSize)
-            && Objects.equals(this.volumeType, that.volumeType);
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.volumeSize, that.volumeSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, nodeSize, volumeType);
+        return Objects.hash(flavorRef, nodeSize, volumeType, volumeSize);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class IndependentBodyReq {
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    nodeSize: ").append(toIndentedString(nodeSize)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    volumeSize: ").append(toIndentedString(volumeSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

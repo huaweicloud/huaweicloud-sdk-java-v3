@@ -45,7 +45,7 @@ public class UpdateNotificationMasksRequestBody {
     private List<ProductMetric> productMetrics = null;
 
     /**
-     * dimension: 子维度,product: 云产品
+     * **参数解释** 资源类型。 **约束限制**： **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
      */
     public static final class ResourceLevelEnum {
 
@@ -248,7 +248,7 @@ public class UpdateNotificationMasksRequestBody {
     }
 
     /**
-     * 关联指标名称，relation_type为RESOURCE可选填，不填视为对资源所有指标进行告警屏蔽
+     * **参数解释** 关联指标名称列表。 **约束限制**： relation_type为RESOURCE可选填，不填视为对资源所有指标进行告警屏蔽。包含的指标名称最多为50个，最少为0个。 
      * @return metricNames
      */
     public List<String> getMetricNames() {
@@ -281,7 +281,7 @@ public class UpdateNotificationMasksRequestBody {
     }
 
     /**
-     * 按云产品维度屏蔽时的指标信息
+     * **参数解释** 按云产品维度屏蔽时的指标信息。 **约束限制**：| 包含的指标信息最多为50个，最少为0个。 
      * @return productMetrics
      */
     public List<ProductMetric> getProductMetrics() {
@@ -298,7 +298,7 @@ public class UpdateNotificationMasksRequestBody {
     }
 
     /**
-     * dimension: 子维度,product: 云产品
+     * **参数解释** 资源类型。 **约束限制**： **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
      * @return resourceLevel
      */
     public ResourceLevelEnum getResourceLevel() {
@@ -315,7 +315,7 @@ public class UpdateNotificationMasksRequestBody {
     }
 
     /**
-     * 资源为云产品时云产品名称
+     * **参数解释** 资源为云产品时的云产品名称。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符。 **默认取值**： 不涉及。 
      * @return productName
      */
     public String getProductName() {

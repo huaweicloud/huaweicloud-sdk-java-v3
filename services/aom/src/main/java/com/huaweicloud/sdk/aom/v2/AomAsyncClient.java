@@ -18,6 +18,8 @@ import com.huaweicloud.sdk.aom.v2.model.BatchUpdateAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.BatchUpdateAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsResponse;
+import com.huaweicloud.sdk.aom.v2.model.CreateNotificationTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.CreateNotificationTemplateResponse;
 import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceRequest;
 import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceResponse;
 import com.huaweicloud.sdk.aom.v2.model.CreateRecordingRuleRequest;
@@ -26,14 +28,22 @@ import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleTemplateResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteDashboardRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteDashboardResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteDashboardsFolderRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteDashboardsFolderResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMetricOrEventAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeleteNotificationTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeleteNotificationTemplateResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteserviceDiscoveryRulesRequest;
@@ -46,6 +56,12 @@ import com.huaweicloud.sdk.aom.v2.model.ListAgentsRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListAgentsResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleTemplateResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListDashBoardsRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListDashBoardsResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListDashboardsFolderRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListDashboardsFolderResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListEvent2alarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListEvent2alarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListEventsRequest;
@@ -70,6 +86,10 @@ import com.huaweicloud.sdk.aom.v2.model.ListMetricOrEventAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMetricOrEventAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListNotificationTemplateByNameRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListNotificationTemplateByNameResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListNotificationTemplatesRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListNotificationTemplatesResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListPermissionsRequest;
@@ -92,6 +112,8 @@ import com.huaweicloud.sdk.aom.v2.model.ShowActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ShowActionRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ShowAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ShowAlarmRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.ShowDashBoardRequest;
+import com.huaweicloud.sdk.aom.v2.model.ShowDashBoardResponse;
 import com.huaweicloud.sdk.aom.v2.model.ShowMetricsDataRequest;
 import com.huaweicloud.sdk.aom.v2.model.ShowMetricsDataResponse;
 import com.huaweicloud.sdk.aom.v2.model.UpdateActionRuleRequest;
@@ -102,6 +124,10 @@ import com.huaweicloud.sdk.aom.v2.model.UpdateEventRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.UpdateEventRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.UpdateMuteRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.UpdateMuteRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.UpdateNotificationTemplateRequest;
+import com.huaweicloud.sdk.aom.v2.model.UpdateNotificationTemplateResponse;
+import com.huaweicloud.sdk.aom.v2.model.UpdatePromInstanceRequest;
+import com.huaweicloud.sdk.aom.v2.model.UpdatePromInstanceResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -269,7 +295,7 @@ public class AomAsyncClient {
     /**
      * 添加或修改指标类或事件类告警规则
      *
-     * 添加或修改AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+     * 添加或修改AOM2.0指标类或事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -284,7 +310,7 @@ public class AomAsyncClient {
     /**
      * 添加或修改指标类或事件类告警规则
      *
-     * 添加或修改AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+     * 添加或修改AOM2.0指标类或事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -385,6 +411,36 @@ public class AomAsyncClient {
     }
 
     /**
+     * 新增消息通知模板
+     *
+     * 该接口用于新增消息通知模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNotificationTemplateRequest 请求对象
+     * @return CompletableFuture<CreateNotificationTemplateResponse>
+     */
+    public CompletableFuture<CreateNotificationTemplateResponse> createNotificationTemplateAsync(
+        CreateNotificationTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.createNotificationTemplate);
+    }
+
+    /**
+     * 新增消息通知模板
+     *
+     * 该接口用于新增消息通知模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNotificationTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse>
+     */
+    public AsyncInvoker<CreateNotificationTemplateRequest, CreateNotificationTemplateResponse> createNotificationTemplateAsyncInvoker(
+        CreateNotificationTemplateRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.createNotificationTemplate, hcClient);
+    }
+
+    /**
      * 删除告警行动规则
      *
      * 删除告警行动规则。
@@ -443,6 +499,36 @@ public class AomAsyncClient {
     }
 
     /**
+     * 删除告警模板
+     *
+     * 该接口用于删除告警模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAlarmRuleTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteAlarmRuleTemplateResponse>
+     */
+    public CompletableFuture<DeleteAlarmRuleTemplateResponse> deleteAlarmRuleTemplateAsync(
+        DeleteAlarmRuleTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deleteAlarmRuleTemplate);
+    }
+
+    /**
+     * 删除告警模板
+     *
+     * 该接口用于删除告警模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAlarmRuleTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteAlarmRuleTemplateRequest, DeleteAlarmRuleTemplateResponse>
+     */
+    public AsyncInvoker<DeleteAlarmRuleTemplateRequest, DeleteAlarmRuleTemplateResponse> deleteAlarmRuleTemplateAsyncInvoker(
+        DeleteAlarmRuleTemplateRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.deleteAlarmRuleTemplate, hcClient);
+    }
+
+    /**
      * 批量删除阈值规则
      *
      * 该接口用于批量删除阈值规则
@@ -469,6 +555,65 @@ public class AomAsyncClient {
     public AsyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> deleteAlarmRulesAsyncInvoker(
         DeleteAlarmRulesRequest request) {
         return new AsyncInvoker<>(request, AomMeta.deleteAlarmRules, hcClient);
+    }
+
+    /**
+     * 删除仪表盘
+     *
+     * 该接口用于删除仪表盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDashboardRequest 请求对象
+     * @return CompletableFuture<DeleteDashboardResponse>
+     */
+    public CompletableFuture<DeleteDashboardResponse> deleteDashboardAsync(DeleteDashboardRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deleteDashboard);
+    }
+
+    /**
+     * 删除仪表盘
+     *
+     * 该接口用于删除仪表盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDashboardRequest 请求对象
+     * @return AsyncInvoker<DeleteDashboardRequest, DeleteDashboardResponse>
+     */
+    public AsyncInvoker<DeleteDashboardRequest, DeleteDashboardResponse> deleteDashboardAsyncInvoker(
+        DeleteDashboardRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.deleteDashboard, hcClient);
+    }
+
+    /**
+     * 删除仪表盘分组
+     *
+     * 该接口用于删除仪表盘分组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDashboardsFolderRequest 请求对象
+     * @return CompletableFuture<DeleteDashboardsFolderResponse>
+     */
+    public CompletableFuture<DeleteDashboardsFolderResponse> deleteDashboardsFolderAsync(
+        DeleteDashboardsFolderRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deleteDashboardsFolder);
+    }
+
+    /**
+     * 删除仪表盘分组
+     *
+     * 该接口用于删除仪表盘分组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDashboardsFolderRequest 请求对象
+     * @return AsyncInvoker<DeleteDashboardsFolderRequest, DeleteDashboardsFolderResponse>
+     */
+    public AsyncInvoker<DeleteDashboardsFolderRequest, DeleteDashboardsFolderResponse> deleteDashboardsFolderAsyncInvoker(
+        DeleteDashboardsFolderRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.deleteDashboardsFolder, hcClient);
     }
 
     /**
@@ -504,7 +649,7 @@ public class AomAsyncClient {
     /**
      * 删除指标类或事件类告警规则
      *
-     * 删除AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+     * 删除AOM2.0指标类或事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -519,7 +664,7 @@ public class AomAsyncClient {
     /**
      * 删除指标类或事件类告警规则
      *
-     * 删除AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+     * 删除AOM2.0指标类或事件类告警规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -558,6 +703,36 @@ public class AomAsyncClient {
     public AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRulesAsyncInvoker(
         DeleteMuteRulesRequest request) {
         return new AsyncInvoker<>(request, AomMeta.deleteMuteRules, hcClient);
+    }
+
+    /**
+     * 删除消息通知模板
+     *
+     * 该接口用于删除消息通知模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNotificationTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteNotificationTemplateResponse>
+     */
+    public CompletableFuture<DeleteNotificationTemplateResponse> deleteNotificationTemplateAsync(
+        DeleteNotificationTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deleteNotificationTemplate);
+    }
+
+    /**
+     * 删除消息通知模板
+     *
+     * 该接口用于删除消息通知模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNotificationTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse>
+     */
+    public AsyncInvoker<DeleteNotificationTemplateRequest, DeleteNotificationTemplateResponse> deleteNotificationTemplateAsyncInvoker(
+        DeleteNotificationTemplateRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.deleteNotificationTemplate, hcClient);
     }
 
     /**
@@ -674,6 +849,95 @@ public class AomAsyncClient {
     public AsyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse> listAlarmRuleAsyncInvoker(
         ListAlarmRuleRequest request) {
         return new AsyncInvoker<>(request, AomMeta.listAlarmRule, hcClient);
+    }
+
+    /**
+     * 查询告警模板列表
+     *
+     * 该接口用于查询告警模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmRuleTemplateRequest 请求对象
+     * @return CompletableFuture<ListAlarmRuleTemplateResponse>
+     */
+    public CompletableFuture<ListAlarmRuleTemplateResponse> listAlarmRuleTemplateAsync(
+        ListAlarmRuleTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listAlarmRuleTemplate);
+    }
+
+    /**
+     * 查询告警模板列表
+     *
+     * 该接口用于查询告警模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmRuleTemplateRequest 请求对象
+     * @return AsyncInvoker<ListAlarmRuleTemplateRequest, ListAlarmRuleTemplateResponse>
+     */
+    public AsyncInvoker<ListAlarmRuleTemplateRequest, ListAlarmRuleTemplateResponse> listAlarmRuleTemplateAsyncInvoker(
+        ListAlarmRuleTemplateRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.listAlarmRuleTemplate, hcClient);
+    }
+
+    /**
+     * 查询仪表盘列表
+     *
+     * 该接口用于查询仪表盘列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDashBoardsRequest 请求对象
+     * @return CompletableFuture<ListDashBoardsResponse>
+     */
+    public CompletableFuture<ListDashBoardsResponse> listDashBoardsAsync(ListDashBoardsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listDashBoards);
+    }
+
+    /**
+     * 查询仪表盘列表
+     *
+     * 该接口用于查询仪表盘列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDashBoardsRequest 请求对象
+     * @return AsyncInvoker<ListDashBoardsRequest, ListDashBoardsResponse>
+     */
+    public AsyncInvoker<ListDashBoardsRequest, ListDashBoardsResponse> listDashBoardsAsyncInvoker(
+        ListDashBoardsRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.listDashBoards, hcClient);
+    }
+
+    /**
+     * 查询仪表盘分组列表
+     *
+     * 该接口用于查询仪表盘分组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDashboardsFolderRequest 请求对象
+     * @return CompletableFuture<ListDashboardsFolderResponse>
+     */
+    public CompletableFuture<ListDashboardsFolderResponse> listDashboardsFolderAsync(
+        ListDashboardsFolderRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listDashboardsFolder);
+    }
+
+    /**
+     * 查询仪表盘分组列表
+     *
+     * 该接口用于查询仪表盘分组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDashboardsFolderRequest 请求对象
+     * @return AsyncInvoker<ListDashboardsFolderRequest, ListDashboardsFolderResponse>
+     */
+    public AsyncInvoker<ListDashboardsFolderRequest, ListDashboardsFolderResponse> listDashboardsFolderAsyncInvoker(
+        ListDashboardsFolderRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.listDashboardsFolder, hcClient);
     }
 
     /**
@@ -794,7 +1058,7 @@ public class AomAsyncClient {
     /**
      * 查询指标类或者事件类告警规则列表
      *
-     * 查询AOM2.0指标类或者事件类告警规则列表。(注：接口目前开放的region为：华东-上海一)
+     * 查询AOM2.0指标类或者事件类告警规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -809,7 +1073,7 @@ public class AomAsyncClient {
     /**
      * 查询指标类或者事件类告警规则列表
      *
-     * 查询AOM2.0指标类或者事件类告警规则列表。(注：接口目前开放的region为：华东-上海一)
+     * 查询AOM2.0指标类或者事件类告警规则列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -848,6 +1112,66 @@ public class AomAsyncClient {
     public AsyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse> listMuteRuleAsyncInvoker(
         ListMuteRuleRequest request) {
         return new AsyncInvoker<>(request, AomMeta.listMuteRule, hcClient);
+    }
+
+    /**
+     * 根据消息通知模板名称查询消息通知模板
+     *
+     * 该接口用于根据消息通知模板名称查询消息通知模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNotificationTemplateByNameRequest 请求对象
+     * @return CompletableFuture<ListNotificationTemplateByNameResponse>
+     */
+    public CompletableFuture<ListNotificationTemplateByNameResponse> listNotificationTemplateByNameAsync(
+        ListNotificationTemplateByNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listNotificationTemplateByName);
+    }
+
+    /**
+     * 根据消息通知模板名称查询消息通知模板
+     *
+     * 该接口用于根据消息通知模板名称查询消息通知模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNotificationTemplateByNameRequest 请求对象
+     * @return AsyncInvoker<ListNotificationTemplateByNameRequest, ListNotificationTemplateByNameResponse>
+     */
+    public AsyncInvoker<ListNotificationTemplateByNameRequest, ListNotificationTemplateByNameResponse> listNotificationTemplateByNameAsyncInvoker(
+        ListNotificationTemplateByNameRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.listNotificationTemplateByName, hcClient);
+    }
+
+    /**
+     * 查询消息通知模板列表
+     *
+     * 该接口用于查询消息通知模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNotificationTemplatesRequest 请求对象
+     * @return CompletableFuture<ListNotificationTemplatesResponse>
+     */
+    public CompletableFuture<ListNotificationTemplatesResponse> listNotificationTemplatesAsync(
+        ListNotificationTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listNotificationTemplates);
+    }
+
+    /**
+     * 查询消息通知模板列表
+     *
+     * 该接口用于查询消息通知模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNotificationTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse>
+     */
+    public AsyncInvoker<ListNotificationTemplatesRequest, ListNotificationTemplatesResponse> listNotificationTemplatesAsyncInvoker(
+        ListNotificationTemplatesRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.listNotificationTemplates, hcClient);
     }
 
     /**
@@ -996,9 +1320,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 上报事件告警信息
+     * 上报事件或告警信息
      *
-     * 该接口用于上报对应用户的事件、告警。
+     * 该接口用于上报事件或告警至AOM，同时支持清除告警信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1010,9 +1334,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 上报事件告警信息
+     * 上报事件或告警信息
      *
-     * 该接口用于上报对应用户的事件、告警。
+     * 该接口用于上报事件或告警至AOM，同时支持清除告警信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1079,6 +1403,35 @@ public class AomAsyncClient {
     public AsyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse> showAlarmRuleAsyncInvoker(
         ShowAlarmRuleRequest request) {
         return new AsyncInvoker<>(request, AomMeta.showAlarmRule, hcClient);
+    }
+
+    /**
+     * 查询仪表盘详情
+     *
+     * 该接口用于查询仪表盘详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDashBoardRequest 请求对象
+     * @return CompletableFuture<ShowDashBoardResponse>
+     */
+    public CompletableFuture<ShowDashBoardResponse> showDashBoardAsync(ShowDashBoardRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.showDashBoard);
+    }
+
+    /**
+     * 查询仪表盘详情
+     *
+     * 该接口用于查询仪表盘详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDashBoardRequest 请求对象
+     * @return AsyncInvoker<ShowDashBoardRequest, ShowDashBoardResponse>
+     */
+    public AsyncInvoker<ShowDashBoardRequest, ShowDashBoardResponse> showDashBoardAsyncInvoker(
+        ShowDashBoardRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.showDashBoard, hcClient);
     }
 
     /**
@@ -1224,6 +1577,36 @@ public class AomAsyncClient {
     public AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRuleAsyncInvoker(
         UpdateMuteRuleRequest request) {
         return new AsyncInvoker<>(request, AomMeta.updateMuteRule, hcClient);
+    }
+
+    /**
+     * 修改消息通知模板
+     *
+     * 该接口用于修改消息通知模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNotificationTemplateRequest 请求对象
+     * @return CompletableFuture<UpdateNotificationTemplateResponse>
+     */
+    public CompletableFuture<UpdateNotificationTemplateResponse> updateNotificationTemplateAsync(
+        UpdateNotificationTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.updateNotificationTemplate);
+    }
+
+    /**
+     * 修改消息通知模板
+     *
+     * 该接口用于修改消息通知模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNotificationTemplateRequest 请求对象
+     * @return AsyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse>
+     */
+    public AsyncInvoker<UpdateNotificationTemplateRequest, UpdateNotificationTemplateResponse> updateNotificationTemplateAsyncInvoker(
+        UpdateNotificationTemplateRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.updateNotificationTemplate, hcClient);
     }
 
     /**
@@ -1609,6 +1992,35 @@ public class AomAsyncClient {
     public AsyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPostAsyncInvoker(
         ListRangeQueryAomPromPostRequest request) {
         return new AsyncInvoker<>(request, AomMeta.listRangeQueryAomPromPost, hcClient);
+    }
+
+    /**
+     * 修改Prometheus实例
+     *
+     * 该接口用于修改Prometheus实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePromInstanceRequest 请求对象
+     * @return CompletableFuture<UpdatePromInstanceResponse>
+     */
+    public CompletableFuture<UpdatePromInstanceResponse> updatePromInstanceAsync(UpdatePromInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.updatePromInstance);
+    }
+
+    /**
+     * 修改Prometheus实例
+     *
+     * 该接口用于修改Prometheus实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePromInstanceRequest 请求对象
+     * @return AsyncInvoker<UpdatePromInstanceRequest, UpdatePromInstanceResponse>
+     */
+    public AsyncInvoker<UpdatePromInstanceRequest, UpdatePromInstanceResponse> updatePromInstanceAsyncInvoker(
+        UpdatePromInstanceRequest request) {
+        return new AsyncInvoker<>(request, AomMeta.updatePromInstance, hcClient);
     }
 
 }

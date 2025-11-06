@@ -15,16 +15,16 @@ public class ShowQuotasResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotas")
 
-    private Quotas quotas;
+    private QuotasResp quotas;
 
-    public ShowQuotasResponse withQuotas(Quotas quotas) {
+    public ShowQuotasResponse withQuotas(QuotasResp quotas) {
         this.quotas = quotas;
         return this;
     }
 
-    public ShowQuotasResponse withQuotas(Consumer<Quotas> quotasSetter) {
+    public ShowQuotasResponse withQuotas(Consumer<QuotasResp> quotasSetter) {
         if (this.quotas == null) {
-            this.quotas = new Quotas();
+            this.quotas = new QuotasResp();
             quotasSetter.accept(this.quotas);
         }
 
@@ -35,11 +35,11 @@ public class ShowQuotasResponse extends SdkResponse {
      * Get quotas
      * @return quotas
      */
-    public Quotas getQuotas() {
+    public QuotasResp getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(Quotas quotas) {
+    public void setQuotas(QuotasResp quotas) {
         this.quotas = quotas;
     }
 

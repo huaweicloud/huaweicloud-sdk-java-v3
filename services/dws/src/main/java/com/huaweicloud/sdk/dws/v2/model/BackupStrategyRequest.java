@@ -35,6 +35,36 @@ public class BackupStrategyRequest {
 
     private String backupLevel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "next_fire_time")
+
+    private String nextFireTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private String updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_zone_offset")
+
+    private Integer timeZoneOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_database")
+
+    private String backupDatabase;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_schema_list")
+
+    private String backupSchemaList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_table_list")
+
+    private String backupTableList;
+
     public BackupStrategyRequest withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -109,7 +139,7 @@ public class BackupStrategyRequest {
     }
 
     /**
-     * **参数解释**： 备份级别。 **取值范围**： cluster：集群级。
+     * **参数解释**： 备份级别。 **取值范围**： cluster：集群级。 schema：模式级。 table：表级。
      * @return backupLevel
      */
     public String getBackupLevel() {
@@ -118,6 +148,108 @@ public class BackupStrategyRequest {
 
     public void setBackupLevel(String backupLevel) {
         this.backupLevel = backupLevel;
+    }
+
+    public BackupStrategyRequest withNextFireTime(String nextFireTime) {
+        this.nextFireTime = nextFireTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 下一次触发时间。 **取值范围**： 不涉及。
+     * @return nextFireTime
+     */
+    public String getNextFireTime() {
+        return nextFireTime;
+    }
+
+    public void setNextFireTime(String nextFireTime) {
+        this.nextFireTime = nextFireTime;
+    }
+
+    public BackupStrategyRequest withUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 更新时间。 **取值范围**： 不涉及。
+     * @return updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public BackupStrategyRequest withTimeZoneOffset(Integer timeZoneOffset) {
+        this.timeZoneOffset = timeZoneOffset;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 时区偏移量。 **取值范围**： 不涉及。
+     * @return timeZoneOffset
+     */
+    public Integer getTimeZoneOffset() {
+        return timeZoneOffset;
+    }
+
+    public void setTimeZoneOffset(Integer timeZoneOffset) {
+        this.timeZoneOffset = timeZoneOffset;
+    }
+
+    public BackupStrategyRequest withBackupDatabase(String backupDatabase) {
+        this.backupDatabase = backupDatabase;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 备份的数据库。 **取值范围**： 不涉及。
+     * @return backupDatabase
+     */
+    public String getBackupDatabase() {
+        return backupDatabase;
+    }
+
+    public void setBackupDatabase(String backupDatabase) {
+        this.backupDatabase = backupDatabase;
+    }
+
+    public BackupStrategyRequest withBackupSchemaList(String backupSchemaList) {
+        this.backupSchemaList = backupSchemaList;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 备份的数据库模式列表。 **取值范围**： 不涉及。
+     * @return backupSchemaList
+     */
+    public String getBackupSchemaList() {
+        return backupSchemaList;
+    }
+
+    public void setBackupSchemaList(String backupSchemaList) {
+        this.backupSchemaList = backupSchemaList;
+    }
+
+    public BackupStrategyRequest withBackupTableList(String backupTableList) {
+        this.backupTableList = backupTableList;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 备份的数据库表列表。 **取值范围**： 不涉及。
+     * @return backupTableList
+     */
+    public String getBackupTableList() {
+        return backupTableList;
+    }
+
+    public void setBackupTableList(String backupTableList) {
+        this.backupTableList = backupTableList;
     }
 
     @Override
@@ -131,12 +263,27 @@ public class BackupStrategyRequest {
         BackupStrategyRequest that = (BackupStrategyRequest) obj;
         return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.policyName, that.policyName)
             && Objects.equals(this.backupStrategy, that.backupStrategy)
-            && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.backupLevel, that.backupLevel);
+            && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.backupLevel, that.backupLevel)
+            && Objects.equals(this.nextFireTime, that.nextFireTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.timeZoneOffset, that.timeZoneOffset)
+            && Objects.equals(this.backupDatabase, that.backupDatabase)
+            && Objects.equals(this.backupSchemaList, that.backupSchemaList)
+            && Objects.equals(this.backupTableList, that.backupTableList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, policyName, backupStrategy, backupType, backupLevel);
+        return Objects.hash(policyId,
+            policyName,
+            backupStrategy,
+            backupType,
+            backupLevel,
+            nextFireTime,
+            updateTime,
+            timeZoneOffset,
+            backupDatabase,
+            backupSchemaList,
+            backupTableList);
     }
 
     @Override
@@ -148,6 +295,12 @@ public class BackupStrategyRequest {
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
         sb.append("    backupLevel: ").append(toIndentedString(backupLevel)).append("\n");
+        sb.append("    nextFireTime: ").append(toIndentedString(nextFireTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    timeZoneOffset: ").append(toIndentedString(timeZoneOffset)).append("\n");
+        sb.append("    backupDatabase: ").append(toIndentedString(backupDatabase)).append("\n");
+        sb.append("    backupSchemaList: ").append(toIndentedString(backupSchemaList)).append("\n");
+        sb.append("    backupTableList: ").append(toIndentedString(backupTableList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

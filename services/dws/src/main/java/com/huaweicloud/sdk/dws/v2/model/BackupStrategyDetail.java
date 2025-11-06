@@ -50,6 +50,21 @@ public class BackupStrategyDetail {
 
     private Integer timeZoneOffset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_database")
+
+    private String backupDatabase;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_schema_list")
+
+    private String backupSchemaList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_table_list")
+
+    private String backupTableList;
+
     public BackupStrategyDetail withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -186,6 +201,57 @@ public class BackupStrategyDetail {
         this.timeZoneOffset = timeZoneOffset;
     }
 
+    public BackupStrategyDetail withBackupDatabase(String backupDatabase) {
+        this.backupDatabase = backupDatabase;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 备份的数据库。 **取值范围**： 不涉及。
+     * @return backupDatabase
+     */
+    public String getBackupDatabase() {
+        return backupDatabase;
+    }
+
+    public void setBackupDatabase(String backupDatabase) {
+        this.backupDatabase = backupDatabase;
+    }
+
+    public BackupStrategyDetail withBackupSchemaList(String backupSchemaList) {
+        this.backupSchemaList = backupSchemaList;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 备份的数据库模式列表。 **取值范围**： 不涉及。
+     * @return backupSchemaList
+     */
+    public String getBackupSchemaList() {
+        return backupSchemaList;
+    }
+
+    public void setBackupSchemaList(String backupSchemaList) {
+        this.backupSchemaList = backupSchemaList;
+    }
+
+    public BackupStrategyDetail withBackupTableList(String backupTableList) {
+        this.backupTableList = backupTableList;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 备份的数据库表列表。 **取值范围**： 不涉及。
+     * @return backupTableList
+     */
+    public String getBackupTableList() {
+        return backupTableList;
+    }
+
+    public void setBackupTableList(String backupTableList) {
+        this.backupTableList = backupTableList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -199,7 +265,10 @@ public class BackupStrategyDetail {
             && Objects.equals(this.backupStrategy, that.backupStrategy)
             && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.backupLevel, that.backupLevel)
             && Objects.equals(this.nextFireTime, that.nextFireTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.timeZoneOffset, that.timeZoneOffset);
+            && Objects.equals(this.timeZoneOffset, that.timeZoneOffset)
+            && Objects.equals(this.backupDatabase, that.backupDatabase)
+            && Objects.equals(this.backupSchemaList, that.backupSchemaList)
+            && Objects.equals(this.backupTableList, that.backupTableList);
     }
 
     @Override
@@ -211,7 +280,10 @@ public class BackupStrategyDetail {
             backupLevel,
             nextFireTime,
             updateTime,
-            timeZoneOffset);
+            timeZoneOffset,
+            backupDatabase,
+            backupSchemaList,
+            backupTableList);
     }
 
     @Override
@@ -226,6 +298,9 @@ public class BackupStrategyDetail {
         sb.append("    nextFireTime: ").append(toIndentedString(nextFireTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    timeZoneOffset: ").append(toIndentedString(timeZoneOffset)).append("\n");
+        sb.append("    backupDatabase: ").append(toIndentedString(backupDatabase)).append("\n");
+        sb.append("    backupSchemaList: ").append(toIndentedString(backupSchemaList)).append("\n");
+        sb.append("    backupTableList: ").append(toIndentedString(backupTableList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

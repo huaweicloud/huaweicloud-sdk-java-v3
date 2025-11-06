@@ -1,20 +1,15 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 
+ * CreateAlarmRequestBody
  */
 public class CreateAlarmRequestBody {
 
@@ -31,7 +26,7 @@ public class CreateAlarmRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
-    private MetricForAlarm metric;
+    private CreateAlarmMetric metric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
@@ -53,106 +48,40 @@ public class CreateAlarmRequestBody {
 
     private Integer alarmLevel;
 
-    /**
-     * 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
-     */
-    public static final class AlarmTypeEnum {
-
-        /**
-         * Enum EVENT_SYS for value: "EVENT.SYS"
-         */
-        public static final AlarmTypeEnum EVENT_SYS = new AlarmTypeEnum("EVENT.SYS");
-
-        /**
-         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
-         */
-        public static final AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
-
-        /**
-         * Enum RESOURCE_GROUP for value: "RESOURCE_GROUP"
-         */
-        public static final AlarmTypeEnum RESOURCE_GROUP = new AlarmTypeEnum("RESOURCE_GROUP");
-
-        private static final Map<String, AlarmTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AlarmTypeEnum> createStaticFields() {
-            Map<String, AlarmTypeEnum> map = new HashMap<>();
-            map.put("EVENT.SYS", EVENT_SYS);
-            map.put("EVENT.CUSTOM", EVENT_CUSTOM);
-            map.put("RESOURCE_GROUP", RESOURCE_GROUP);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AlarmTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AlarmTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlarmTypeEnum(value));
-        }
-
-        public static AlarmTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AlarmTypeEnum) {
-                return this.value.equals(((AlarmTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_type")
 
-    private AlarmTypeEnum alarmType;
+    private String alarmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_actions")
 
-    private List<AlarmActions> alarmActions = null;
+    private List<Notification> alarmActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "insufficientdata_actions")
 
-    private List<AlarmActions> insufficientdataActions = null;
+    private List<Notification> insufficientdataActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok_actions")
 
-    private List<AlarmActions> okActions = null;
+    private List<Notification> okActions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_action_begin_time")
+
+    private String alarmActionBeginTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_action_end_time")
+
+    private String alarmActionEndTime;
 
     public CreateAlarmRequestBody withAlarmName(String alarmName) {
         this.alarmName = alarmName;
@@ -160,7 +89,7 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 告警名称，只能包含0-9/a-z/A-Z/_/-或汉字。
+     * **参数解释**： 告警名称。 **约束限制**： 不涉及。 **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度1-128。 **默认取值**： 不涉及。 
      * @return alarmName
      */
     public String getAlarmName() {
@@ -177,7 +106,7 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 告警描述，长度0-256。
+     * **参数解释**： 告警描述。 **约束限制**： 不涉及。 **取值范围**： 长度[0,256]个字符。 **默认取值**： 不涉及。 
      * @return alarmDescription
      */
     public String getAlarmDescription() {
@@ -188,14 +117,14 @@ public class CreateAlarmRequestBody {
         this.alarmDescription = alarmDescription;
     }
 
-    public CreateAlarmRequestBody withMetric(MetricForAlarm metric) {
+    public CreateAlarmRequestBody withMetric(CreateAlarmMetric metric) {
         this.metric = metric;
         return this;
     }
 
-    public CreateAlarmRequestBody withMetric(Consumer<MetricForAlarm> metricSetter) {
+    public CreateAlarmRequestBody withMetric(Consumer<CreateAlarmMetric> metricSetter) {
         if (this.metric == null) {
-            this.metric = new MetricForAlarm();
+            this.metric = new CreateAlarmMetric();
             metricSetter.accept(this.metric);
         }
 
@@ -206,11 +135,11 @@ public class CreateAlarmRequestBody {
      * Get metric
      * @return metric
      */
-    public MetricForAlarm getMetric() {
+    public CreateAlarmMetric getMetric() {
         return metric;
     }
 
-    public void setMetric(MetricForAlarm metric) {
+    public void setMetric(CreateAlarmMetric metric) {
         this.metric = metric;
     }
 
@@ -246,7 +175,7 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 是否启用该条告警，默认为true。
+     * **参数解释**： 是否启用该条告警。 **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true：开启告警。 - false：不开启告警。 **默认取值**： true 
      * @return alarmEnabled
      */
     public Boolean getAlarmEnabled() {
@@ -263,7 +192,7 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 是否启用该条告警触发的动作，默认为true。注：若alarm_action_enabled为true，对应的alarm_actions、ok_actions至少有一个不能为空。若alarm_actions、ok_actions同时存在时，notificationList值保持一致。
+     * **参数解释**： 该条告警触发时，是否启用告警通知。 **约束限制**： 若alarm_action_enabled为true，对应的alarm_actions、ok_actions至少有一个不能为空。若alarm_actions、ok_actions同时存在时，alarm_actions和ok_actions中的notification_list值保持一致。 **取值范围**： 布尔值。 - true：开启告警通知。 - false：不开启告警通知。 **默认取值**： true 
      * @return alarmActionEnabled
      */
     public Boolean getAlarmActionEnabled() {
@@ -280,7 +209,9 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
+     * **参数解释**： 告警级别。 **约束限制**： 不涉及。 **取值范围**： 只能为1、2、3、4。分别对应紧急、重要、次要、提示。 **默认取值**： 2 
+     * minimum: 1
+     * maximum: 4
      * @return alarmLevel
      */
     public Integer getAlarmLevel() {
@@ -291,29 +222,29 @@ public class CreateAlarmRequestBody {
         this.alarmLevel = alarmLevel;
     }
 
-    public CreateAlarmRequestBody withAlarmType(AlarmTypeEnum alarmType) {
+    public CreateAlarmRequestBody withAlarmType(String alarmType) {
         this.alarmType = alarmType;
         return this;
     }
 
     /**
-     * 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
+     * **参数解释**： 告警类型。 **约束限制**： 针对事件类型的告警时，告警类型为EVENT.SYS（系统事件）或EVENT.CUSTOM（自定义事件）。 针对资源分组的告警时，告警类型为RESOURCE_GROUP。 针对指定资源的告警时，告警类型为MULTI_INSTANCE。 **取值范围**： - EVENT.SYS：针对系统事件的告警规则。 - EVENT.CUSTOM：针对自定义事件的告警规则。 - RESOURCE_GROUP：针对资源分组的告警规则。 - MULTI_INSTANCE： 针对多实例的告警规则。 **默认取值**： 不涉及。 
      * @return alarmType
      */
-    public AlarmTypeEnum getAlarmType() {
+    public String getAlarmType() {
         return alarmType;
     }
 
-    public void setAlarmType(AlarmTypeEnum alarmType) {
+    public void setAlarmType(String alarmType) {
         this.alarmType = alarmType;
     }
 
-    public CreateAlarmRequestBody withAlarmActions(List<AlarmActions> alarmActions) {
+    public CreateAlarmRequestBody withAlarmActions(List<Notification> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
     }
 
-    public CreateAlarmRequestBody addAlarmActionsItem(AlarmActions alarmActionsItem) {
+    public CreateAlarmRequestBody addAlarmActionsItem(Notification alarmActionsItem) {
         if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
@@ -321,7 +252,7 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    public CreateAlarmRequestBody withAlarmActions(Consumer<List<AlarmActions>> alarmActionsSetter) {
+    public CreateAlarmRequestBody withAlarmActions(Consumer<List<Notification>> alarmActionsSetter) {
         if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
@@ -330,23 +261,23 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 告警触发的动作。 结构样例如下： { \"type\": \"notification\",\"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。 autoscaling：弹性伸缩。
+     * **参数解释**： 告警触发时，通知组/主题订阅的信息。 **约束限制**： 最多包含20个动作。 
      * @return alarmActions
      */
-    public List<AlarmActions> getAlarmActions() {
+    public List<Notification> getAlarmActions() {
         return alarmActions;
     }
 
-    public void setAlarmActions(List<AlarmActions> alarmActions) {
+    public void setAlarmActions(List<Notification> alarmActions) {
         this.alarmActions = alarmActions;
     }
 
-    public CreateAlarmRequestBody withInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
+    public CreateAlarmRequestBody withInsufficientdataActions(List<Notification> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
         return this;
     }
 
-    public CreateAlarmRequestBody addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
+    public CreateAlarmRequestBody addInsufficientdataActionsItem(Notification insufficientdataActionsItem) {
         if (this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
@@ -355,7 +286,7 @@ public class CreateAlarmRequestBody {
     }
 
     public CreateAlarmRequestBody withInsufficientdataActions(
-        Consumer<List<AlarmActions>> insufficientdataActionsSetter) {
+        Consumer<List<Notification>> insufficientdataActionsSetter) {
         if (this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
@@ -364,23 +295,23 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 数据不足触发的动作（该参数已废弃，建议无需配置）。
+     * **参数解释**： 告警触发时，通知组/主题订阅的信息。 **约束限制**： 最多包含20个动作。 
      * @return insufficientdataActions
      */
-    public List<AlarmActions> getInsufficientdataActions() {
+    public List<Notification> getInsufficientdataActions() {
         return insufficientdataActions;
     }
 
-    public void setInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
+    public void setInsufficientdataActions(List<Notification> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
     }
 
-    public CreateAlarmRequestBody withOkActions(List<AlarmActions> okActions) {
+    public CreateAlarmRequestBody withOkActions(List<Notification> okActions) {
         this.okActions = okActions;
         return this;
     }
 
-    public CreateAlarmRequestBody addOkActionsItem(AlarmActions okActionsItem) {
+    public CreateAlarmRequestBody addOkActionsItem(Notification okActionsItem) {
         if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
@@ -388,7 +319,7 @@ public class CreateAlarmRequestBody {
         return this;
     }
 
-    public CreateAlarmRequestBody withOkActions(Consumer<List<AlarmActions>> okActionsSetter) {
+    public CreateAlarmRequestBody withOkActions(Consumer<List<Notification>> okActionsSetter) {
         if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
@@ -397,14 +328,14 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 告警恢复触发的动作
+     * **参数解释**： 告警触发时，通知组/主题订阅的信息。 **约束限制**： 最多包含20个动作。 
      * @return okActions
      */
-    public List<AlarmActions> getOkActions() {
+    public List<Notification> getOkActions() {
         return okActions;
     }
 
-    public void setOkActions(List<AlarmActions> okActions) {
+    public void setOkActions(List<Notification> okActions) {
         this.okActions = okActions;
     }
 
@@ -414,7 +345,7 @@ public class CreateAlarmRequestBody {
     }
 
     /**
-     * 企业项目ID。默认值为0，表示默认的企业项目default。说明：此参数在“华东-上海一”区域上线。
+     * **参数解释**： 企业项目ID。如何查询企业项目ID，请参考“[9.5-获取企业项目ID](ces_03_0061.xml)”。 **约束限制**： 不涉及。 **取值范围**： 长度为0或者32个字符。 **默认取值**： 0，表示默认的企业项目default。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -423,6 +354,40 @@ public class CreateAlarmRequestBody {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreateAlarmRequestBody withAlarmActionBeginTime(String alarmActionBeginTime) {
+        this.alarmActionBeginTime = alarmActionBeginTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 告警通知开启时间。 **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * @return alarmActionBeginTime
+     */
+    public String getAlarmActionBeginTime() {
+        return alarmActionBeginTime;
+    }
+
+    public void setAlarmActionBeginTime(String alarmActionBeginTime) {
+        this.alarmActionBeginTime = alarmActionBeginTime;
+    }
+
+    public CreateAlarmRequestBody withAlarmActionEndTime(String alarmActionEndTime) {
+        this.alarmActionEndTime = alarmActionEndTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 告警通知关闭时间。 **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * @return alarmActionEndTime
+     */
+    public String getAlarmActionEndTime() {
+        return alarmActionEndTime;
+    }
+
+    public void setAlarmActionEndTime(String alarmActionEndTime) {
+        this.alarmActionEndTime = alarmActionEndTime;
     }
 
     @Override
@@ -442,7 +407,9 @@ public class CreateAlarmRequestBody {
             && Objects.equals(this.alarmActions, that.alarmActions)
             && Objects.equals(this.insufficientdataActions, that.insufficientdataActions)
             && Objects.equals(this.okActions, that.okActions)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.alarmActionBeginTime, that.alarmActionBeginTime)
+            && Objects.equals(this.alarmActionEndTime, that.alarmActionEndTime);
     }
 
     @Override
@@ -458,7 +425,9 @@ public class CreateAlarmRequestBody {
             alarmActions,
             insufficientdataActions,
             okActions,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            alarmActionBeginTime,
+            alarmActionEndTime);
     }
 
     @Override
@@ -477,6 +446,8 @@ public class CreateAlarmRequestBody {
         sb.append("    insufficientdataActions: ").append(toIndentedString(insufficientdataActions)).append("\n");
         sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    alarmActionBeginTime: ").append(toIndentedString(alarmActionBeginTime)).append("\n");
+        sb.append("    alarmActionEndTime: ").append(toIndentedString(alarmActionEndTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

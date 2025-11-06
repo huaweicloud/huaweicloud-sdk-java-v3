@@ -66,7 +66,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     Map<String, Object> getPathParams() {
         Map<String, Object> pathParam = new LinkedHashMap<>();
-        if (!StringUtils.isEmpty(domainId)) {
+        if (StringUtils.isNotEmpty(domainId)) {
             pathParam.put(Constants.DOMAIN_ID, domainId);
         }
         return pathParam;
@@ -77,14 +77,14 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
         return CompletableFuture.supplyAsync(() -> {
             checkRequiredIdpParams();
 
-            if (!StringUtils.isEmpty(domainId)) {
+            if (StringUtils.isNotEmpty(domainId)) {
                 return this;
             }
 
             String cacheName = null;
-            if (!StringUtils.isEmpty(getAk())) {
+            if (StringUtils.isNotEmpty(getAk())) {
                 cacheName = getAk();
-            } else if (!StringUtils.isEmpty(getIdpId())) {
+            } else if (StringUtils.isNotEmpty(getIdpId())) {
                 cacheName = getIdpId();
             }
 
@@ -112,7 +112,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
             }
             domainId = response.getDomains().get(0).getId();
             logger.info("Success to get domain id: {}", StringUtils.mask(domainId));
-            if (!StringUtils.isEmpty(cacheName)) {
+            if (StringUtils.isNotEmpty(cacheName)) {
                 cache.put(cacheName, domainId);
             }
 
@@ -137,11 +137,11 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
             updateSecurityTokenFromMetadata();
         }
 
-        if (!StringUtils.isEmpty(getDomainId())) {
+        if (StringUtils.isNotEmpty(getDomainId())) {
             builder.addHeader(Constants.X_DOMAIN_ID, getDomainId());
         }
 
-        if (!StringUtils.isEmpty(getSecurityToken())) {
+        if (StringUtils.isNotEmpty(getSecurityToken())) {
             builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
         }
 

@@ -30,6 +30,11 @@ public class HardwareSummary {
 
     private String mainBoardManufacturer;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "main_board_serial_number")
+
+    private String mainBoardSerialNumber;
+
     public HardwareSummary withSn(String sn) {
         this.sn = sn;
         return this;
@@ -98,6 +103,23 @@ public class HardwareSummary {
         this.mainBoardManufacturer = mainBoardManufacturer;
     }
 
+    public HardwareSummary withMainBoardSerialNumber(String mainBoardSerialNumber) {
+        this.mainBoardSerialNumber = mainBoardSerialNumber;
+        return this;
+    }
+
+    /**
+     * 主板序列号
+     * @return mainBoardSerialNumber
+     */
+    public String getMainBoardSerialNumber() {
+        return mainBoardSerialNumber;
+    }
+
+    public void setMainBoardSerialNumber(String mainBoardSerialNumber) {
+        this.mainBoardSerialNumber = mainBoardSerialNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +131,13 @@ public class HardwareSummary {
         HardwareSummary that = (HardwareSummary) obj;
         return Objects.equals(this.sn, that.sn) && Objects.equals(this.manufacturer, that.manufacturer)
             && Objects.equals(this.model, that.model)
-            && Objects.equals(this.mainBoardManufacturer, that.mainBoardManufacturer);
+            && Objects.equals(this.mainBoardManufacturer, that.mainBoardManufacturer)
+            && Objects.equals(this.mainBoardSerialNumber, that.mainBoardSerialNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sn, manufacturer, model, mainBoardManufacturer);
+        return Objects.hash(sn, manufacturer, model, mainBoardManufacturer, mainBoardSerialNumber);
     }
 
     @Override
@@ -125,6 +148,7 @@ public class HardwareSummary {
         sb.append("    manufacturer: ").append(toIndentedString(manufacturer)).append("\n");
         sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("    mainBoardManufacturer: ").append(toIndentedString(mainBoardManufacturer)).append("\n");
+        sb.append("    mainBoardSerialNumber: ").append(toIndentedString(mainBoardSerialNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -20,10 +25,86 @@ public class ListResourceGroupRequest {
 
     private String groupId;
 
+    /**
+     * 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未配置告警规则
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum HEALTH for value: "health"
+         */
+        public static final StatusEnum HEALTH = new StatusEnum("health");
+
+        /**
+         * Enum UNHEALTH for value: "unhealth"
+         */
+        public static final StatusEnum UNHEALTH = new StatusEnum("unhealth");
+
+        /**
+         * Enum NO_ALARM_RULE for value: "no_alarm_rule"
+         */
+        public static final StatusEnum NO_ALARM_RULE = new StatusEnum("no_alarm_rule");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("health", HEALTH);
+            map.put("unhealth", UNHEALTH);
+            map.put("no_alarm_rule", NO_ALARM_RULE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
@@ -69,20 +150,20 @@ public class ListResourceGroupRequest {
         this.groupId = groupId;
     }
 
-    public ListResourceGroupRequest withStatus(String status) {
+    public ListResourceGroupRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，
+     * 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未配置告警规则
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -93,6 +174,8 @@ public class ListResourceGroupRequest {
 
     /**
      * 分页起始值，类型为integer，默认值为0。
+     * minimum: 0
+     * maximum: 9999999
      * @return start
      */
     public Integer getStart() {
@@ -110,6 +193,8 @@ public class ListResourceGroupRequest {
 
     /**
      * 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
+     * minimum: 1
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

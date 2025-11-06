@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**： 多层级告警阈值。    **取值范围**： 创建或修改告警规则以下2种场景只支持设置一个阈值：   1.告警类型为&#x60;指标告警&#x60;且告警策略为&#x60;所有策略都满足才告警&#x60;的场景。   2.告警类型为&#x60;事件告警&#x60;的场景。 
+ * **参数解释**： 多层级告警阈值。 
  */
 public class HierarchicalValueResp {
 

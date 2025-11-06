@@ -189,7 +189,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 告警规则id。     **取值范围**： 以al开头，后跟22个数字或字母。 
+     * **参数解释**： 告警规则id。如 al123232232341232132 **取值范围**： 以al开头，后跟22个数字或字母。长度为24个字符。 
      * @return alarmId
      */
     public String getAlarmId() {
@@ -390,7 +390,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 **取值范围**： 包含的通知信息的数量最多为10个。 
+     * **参数解释**： 触发告警时，通知组/主题订阅的信息。 
      * @return alarmNotifications
      */
     public List<NotificationResp> getAlarmNotifications() {
@@ -423,7 +423,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **取值范围**： 包含的通知信息的数量最多为10个。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。 
      * @return okNotifications
      */
     public List<NotificationResp> getOkNotifications() {
