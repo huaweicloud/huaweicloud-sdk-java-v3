@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchModifySubscriptionRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchModifySubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesRequest;
@@ -43,6 +45,10 @@ import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeResponse;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorRequest;
+import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorResponse;
+import com.huaweicloud.sdk.rds.v3.model.CollectSubscriptionMonitorRequest;
+import com.huaweicloud.sdk.rds.v3.model.CollectSubscriptionMonitorResponse;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CopyDatabaseRequest;
@@ -93,6 +99,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDistributionRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDistributionResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
@@ -123,6 +131,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogRequest;
 import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
@@ -167,6 +177,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDbAgentJobsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDbAgentJobsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDistributionRequest;
@@ -243,6 +255,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPublications4SubscriptionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPublications4SubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPublicationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPublicationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyRequest;
@@ -253,6 +267,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListReadOnlyReplayDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListReadOnlyReplayDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListReplicationProfilesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListReplicationProfilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListScheduleTasksRequest;
@@ -289,6 +305,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSubscriptionsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSubscriptionsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTopSqlsRequest;
@@ -527,6 +545,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -7571,6 +7591,96 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 批量修改订阅
+     *
+     * 批量修改订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchModifySubscriptionRequest 请求对象
+     * @return CompletableFuture<BatchModifySubscriptionResponse>
+     */
+    public CompletableFuture<BatchModifySubscriptionResponse> batchModifySubscriptionAsync(
+        BatchModifySubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.batchModifySubscription);
+    }
+
+    /**
+     * 批量修改订阅
+     *
+     * 批量修改订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchModifySubscriptionRequest 请求对象
+     * @return AsyncInvoker<BatchModifySubscriptionRequest, BatchModifySubscriptionResponse>
+     */
+    public AsyncInvoker<BatchModifySubscriptionRequest, BatchModifySubscriptionResponse> batchModifySubscriptionAsyncInvoker(
+        BatchModifySubscriptionRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.batchModifySubscription, hcClient);
+    }
+
+    /**
+     * 查询发布监控信息
+     *
+     * 查询发布监控信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectPublicationMonitorRequest 请求对象
+     * @return CompletableFuture<CollectPublicationMonitorResponse>
+     */
+    public CompletableFuture<CollectPublicationMonitorResponse> collectPublicationMonitorAsync(
+        CollectPublicationMonitorRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.collectPublicationMonitor);
+    }
+
+    /**
+     * 查询发布监控信息
+     *
+     * 查询发布监控信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectPublicationMonitorRequest 请求对象
+     * @return AsyncInvoker<CollectPublicationMonitorRequest, CollectPublicationMonitorResponse>
+     */
+    public AsyncInvoker<CollectPublicationMonitorRequest, CollectPublicationMonitorResponse> collectPublicationMonitorAsyncInvoker(
+        CollectPublicationMonitorRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.collectPublicationMonitor, hcClient);
+    }
+
+    /**
+     * 查询订阅监控信息
+     *
+     * 查询订阅监控信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectSubscriptionMonitorRequest 请求对象
+     * @return CompletableFuture<CollectSubscriptionMonitorResponse>
+     */
+    public CompletableFuture<CollectSubscriptionMonitorResponse> collectSubscriptionMonitorAsync(
+        CollectSubscriptionMonitorRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.collectSubscriptionMonitor);
+    }
+
+    /**
+     * 查询订阅监控信息
+     *
+     * 查询订阅监控信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectSubscriptionMonitorRequest 请求对象
+     * @return AsyncInvoker<CollectSubscriptionMonitorRequest, CollectSubscriptionMonitorResponse>
+     */
+    public AsyncInvoker<CollectSubscriptionMonitorRequest, CollectSubscriptionMonitorResponse> collectSubscriptionMonitorAsyncInvoker(
+        CollectSubscriptionMonitorRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.collectSubscriptionMonitor, hcClient);
+    }
+
+    /**
      * 复制数据库
      *
      * 复制数据库
@@ -7686,6 +7796,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<CreateSubscriptionRequest, CreateSubscriptionResponse> createSubscriptionAsyncInvoker(
         CreateSubscriptionRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.createSubscription, hcClient);
+    }
+
+    /**
+     * 删除当前实例的分发服务器
+     *
+     * 删除当前实例的分发服务器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDistributionRequest 请求对象
+     * @return CompletableFuture<DeleteDistributionResponse>
+     */
+    public CompletableFuture<DeleteDistributionResponse> deleteDistributionAsync(DeleteDistributionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteDistribution);
+    }
+
+    /**
+     * 删除当前实例的分发服务器
+     *
+     * 删除当前实例的分发服务器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDistributionRequest 请求对象
+     * @return AsyncInvoker<DeleteDistributionRequest, DeleteDistributionResponse>
+     */
+    public AsyncInvoker<DeleteDistributionRequest, DeleteDistributionResponse> deleteDistributionAsyncInvoker(
+        DeleteDistributionRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.deleteDistribution, hcClient);
     }
 
     /**
@@ -7838,6 +7977,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 删除订阅
+     *
+     * 删除订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionRequest 请求对象
+     * @return CompletableFuture<DeleteSubscriptionResponse>
+     */
+    public CompletableFuture<DeleteSubscriptionResponse> deleteSubscriptionAsync(DeleteSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteSubscription);
+    }
+
+    /**
+     * 删除订阅
+     *
+     * 删除订阅
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionRequest 请求对象
+     * @return AsyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse>
+     */
+    public AsyncInvoker<DeleteSubscriptionRequest, DeleteSubscriptionResponse> deleteSubscriptionAsyncInvoker(
+        DeleteSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.deleteSubscription, hcClient);
+    }
+
+    /**
      * 查询指定数据库的已授权用户
      *
      * 查询指定数据库的已授权用户。
@@ -7895,6 +8063,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListBusinessPartnersRequest, ListBusinessPartnersResponse> listBusinessPartnersAsyncInvoker(
         ListBusinessPartnersRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listBusinessPartners, hcClient);
+    }
+
+    /**
+     * 查询数据库代理作业列表
+     *
+     * 查询数据库代理作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbAgentJobsRequest 请求对象
+     * @return CompletableFuture<ListDbAgentJobsResponse>
+     */
+    public CompletableFuture<ListDbAgentJobsResponse> listDbAgentJobsAsync(ListDbAgentJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listDbAgentJobs);
+    }
+
+    /**
+     * 查询数据库代理作业列表
+     *
+     * 查询数据库代理作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbAgentJobsRequest 请求对象
+     * @return AsyncInvoker<ListDbAgentJobsRequest, ListDbAgentJobsResponse>
+     */
+    public AsyncInvoker<ListDbAgentJobsRequest, ListDbAgentJobsResponse> listDbAgentJobsAsyncInvoker(
+        ListDbAgentJobsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listDbAgentJobs, hcClient);
     }
 
     /**
@@ -8045,6 +8242,66 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询实例可选的发布
+     *
+     * 查询实例可选的RDS for SQL Server实例的发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPublications4SubscriptionRequest 请求对象
+     * @return CompletableFuture<ListPublications4SubscriptionResponse>
+     */
+    public CompletableFuture<ListPublications4SubscriptionResponse> listPublications4SubscriptionAsync(
+        ListPublications4SubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listPublications4Subscription);
+    }
+
+    /**
+     * 查询实例可选的发布
+     *
+     * 查询实例可选的RDS for SQL Server实例的发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPublications4SubscriptionRequest 请求对象
+     * @return AsyncInvoker<ListPublications4SubscriptionRequest, ListPublications4SubscriptionResponse>
+     */
+    public AsyncInvoker<ListPublications4SubscriptionRequest, ListPublications4SubscriptionResponse> listPublications4SubscriptionAsyncInvoker(
+        ListPublications4SubscriptionRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listPublications4Subscription, hcClient);
+    }
+
+    /**
+     * 查询发布订阅配置文件列表
+     *
+     * 查询发布订阅配置文件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReplicationProfilesRequest 请求对象
+     * @return CompletableFuture<ListReplicationProfilesResponse>
+     */
+    public CompletableFuture<ListReplicationProfilesResponse> listReplicationProfilesAsync(
+        ListReplicationProfilesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listReplicationProfiles);
+    }
+
+    /**
+     * 查询发布订阅配置文件列表
+     *
+     * 查询发布订阅配置文件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReplicationProfilesRequest 请求对象
+     * @return AsyncInvoker<ListReplicationProfilesRequest, ListReplicationProfilesResponse>
+     */
+    public AsyncInvoker<ListReplicationProfilesRequest, ListReplicationProfilesResponse> listReplicationProfilesAsyncInvoker(
+        ListReplicationProfilesRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listReplicationProfiles, hcClient);
+    }
+
+    /**
      * 查询数据库列表
      *
      * 查询数据库列表。
@@ -8132,6 +8389,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListSubscriberInstancesRequest, ListSubscriberInstancesResponse> listSubscriberInstancesAsyncInvoker(
         ListSubscriberInstancesRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listSubscriberInstances, hcClient);
+    }
+
+    /**
+     * 查询实例订阅信息
+     *
+     * 查询实例订阅信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriptionsRequest 请求对象
+     * @return CompletableFuture<ListSubscriptionsResponse>
+     */
+    public CompletableFuture<ListSubscriptionsResponse> listSubscriptionsAsync(ListSubscriptionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSubscriptions);
+    }
+
+    /**
+     * 查询实例订阅信息
+     *
+     * 查询实例订阅信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriptionsRequest 请求对象
+     * @return AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse>
+     */
+    public AsyncInvoker<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptionsAsyncInvoker(
+        ListSubscriptionsRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listSubscriptions, hcClient);
     }
 
     /**
@@ -8280,6 +8566,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<SetInstancesNewDbShrinkRequest, SetInstancesNewDbShrinkResponse> setInstancesNewDbShrinkAsyncInvoker(
         SetInstancesNewDbShrinkRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.setInstancesNewDbShrink, hcClient);
+    }
+
+    /**
+     * 登录测试
+     *
+     * RDS for SQL Server实例间或与远程SQL Server数据库的连通性测试
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateInstanceConnectionRequest 请求对象
+     * @return CompletableFuture<ValidateInstanceConnectionResponse>
+     */
+    public CompletableFuture<ValidateInstanceConnectionResponse> validateInstanceConnectionAsync(
+        ValidateInstanceConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.validateInstanceConnection);
+    }
+
+    /**
+     * 登录测试
+     *
+     * RDS for SQL Server实例间或与远程SQL Server数据库的连通性测试
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateInstanceConnectionRequest 请求对象
+     * @return AsyncInvoker<ValidateInstanceConnectionRequest, ValidateInstanceConnectionResponse>
+     */
+    public AsyncInvoker<ValidateInstanceConnectionRequest, ValidateInstanceConnectionResponse> validateInstanceConnectionAsyncInvoker(
+        ValidateInstanceConnectionRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.validateInstanceConnection, hcClient);
     }
 
 }

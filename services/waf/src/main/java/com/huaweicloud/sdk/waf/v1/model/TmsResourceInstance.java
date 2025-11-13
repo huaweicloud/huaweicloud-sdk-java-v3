@@ -44,7 +44,7 @@ public class TmsResourceInstance {
     }
 
     /**
-     * Get resourceId
+     * 资源id
      * @return resourceId
      */
     public String getResourceId() {
@@ -61,7 +61,7 @@ public class TmsResourceInstance {
     }
 
     /**
-     * Get resourceName
+     * 资源名称
      * @return resourceName
      */
     public String getResourceName() {
@@ -78,7 +78,7 @@ public class TmsResourceInstance {
     }
 
     /**
-     * Get resourceDetail
+     * 资源细节
      * @return resourceDetail
      */
     public Object getResourceDetail() {
@@ -111,7 +111,7 @@ public class TmsResourceInstance {
     }
 
     /**
-     * Get tags
+     * 系统标签键值对
      * @return tags
      */
     public List<TmsResourceTag> getTags() {
@@ -144,7 +144,7 @@ public class TmsResourceInstance {
     }
 
     /**
-     * Get sysTags
+     * 系统标签键值对
      * @return sysTags
      */
     public List<TmsResourceTag> getSysTags() {

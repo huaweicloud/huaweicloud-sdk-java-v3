@@ -62,6 +62,8 @@ import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsResponse;
+import com.huaweicloud.sdk.aad.v1.model.ShowLtsConfigRequest;
+import com.huaweicloud.sdk.aad.v1.model.ShowLtsConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowUnblockRecordRequest;
@@ -72,6 +74,8 @@ import com.huaweicloud.sdk.aad.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdateDomainResponse;
 import com.huaweicloud.sdk.aad.v1.model.UpdateInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdateInstanceIpRuleResponse;
+import com.huaweicloud.sdk.aad.v1.model.UpdateLtsConfigRequest;
+import com.huaweicloud.sdk.aad.v1.model.UpdateLtsConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageIpResponse;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageNameRequest;
@@ -1035,6 +1039,35 @@ public class AadAsyncClient {
     }
 
     /**
+     * 查询日志配置
+     *
+     * 查询日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLtsConfigRequest 请求对象
+     * @return CompletableFuture<ShowLtsConfigResponse>
+     */
+    public CompletableFuture<ShowLtsConfigResponse> showLtsConfigAsync(ShowLtsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.showLtsConfig);
+    }
+
+    /**
+     * 查询日志配置
+     *
+     * 查询日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLtsConfigRequest 请求对象
+     * @return AsyncInvoker<ShowLtsConfigRequest, ShowLtsConfigResponse>
+     */
+    public AsyncInvoker<ShowLtsConfigRequest, ShowLtsConfigResponse> showLtsConfigAsyncInvoker(
+        ShowLtsConfigRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.showLtsConfig, hcClient);
+    }
+
+    /**
      * 查询策略详情
      *
      * 查询策略详情
@@ -1148,6 +1181,35 @@ public class AadAsyncClient {
     public AsyncInvoker<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse> updateInstanceIpRuleAsyncInvoker(
         UpdateInstanceIpRuleRequest request) {
         return new AsyncInvoker<>(request, AadMeta.updateInstanceIpRule, hcClient);
+    }
+
+    /**
+     * 设置日志配置
+     *
+     * 设置日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLtsConfigRequest 请求对象
+     * @return CompletableFuture<UpdateLtsConfigResponse>
+     */
+    public CompletableFuture<UpdateLtsConfigResponse> updateLtsConfigAsync(UpdateLtsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.updateLtsConfig);
+    }
+
+    /**
+     * 设置日志配置
+     *
+     * 设置日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLtsConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateLtsConfigRequest, UpdateLtsConfigResponse>
+     */
+    public AsyncInvoker<UpdateLtsConfigRequest, UpdateLtsConfigResponse> updateLtsConfigAsyncInvoker(
+        UpdateLtsConfigRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.updateLtsConfig, hcClient);
     }
 
     /**

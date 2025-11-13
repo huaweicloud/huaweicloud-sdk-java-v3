@@ -22,6 +22,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CheckRecallKnowledgeLibraryRespon
 import com.huaweicloud.sdk.metastudio.v1.model.CheckVoiceAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CheckVoiceAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitJobReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CommitShortJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CommitShortJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
@@ -54,6 +56,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoRespo
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAudioRecordConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAudioRecordConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAudioRecordConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
@@ -94,6 +99,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractiveChatReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractiveChatRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractiveChatResponse;
@@ -154,6 +162,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRoleReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRoleRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRoleResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateShortJobReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateShortJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateShortJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomResponse;
@@ -171,6 +182,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingBasicJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingJobReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingMiddleJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingMiddleJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingThirdPartyJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingThirdPartyJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionResponse;
@@ -196,6 +209,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAudioRecordConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAudioRecordConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
@@ -214,6 +229,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteInstructionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeLibraryRequest;
@@ -305,12 +322,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInsertCommandsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInsertCommandsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionLibraryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsSummaryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentRequest;
@@ -423,12 +444,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAudioRecordConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAudioRecordConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDocumentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDocumentInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowEncryptFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowEncryptFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsRequest;
@@ -439,6 +464,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionLibraryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowInteractionRuleGroupRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressRequest;
@@ -451,8 +478,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformAccessTypeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformAccessTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLiveWarningInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLiveWarningInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLlmConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLlmConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowMcpServerRequest;
@@ -485,6 +516,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRoleRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRoleResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowShortJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowShortJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatRoomRequest;
@@ -495,6 +528,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSummaryUsageDataRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSummaryUsageDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantDurationCfgRequest;
@@ -507,6 +542,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowUsageDataRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowUsageDataResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowUserReviewAttachmentUploadingAddressRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowUserReviewAttachmentUploadingAddressResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
@@ -515,6 +554,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowVocabularySwitchConfigsReques
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVocabularySwitchConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingQuotasRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingQuotasResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchRequest;
@@ -545,6 +586,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateAudioRecordConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateAudioRecordConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateAudioRecordConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionResponse;
@@ -581,6 +625,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentResponse;
@@ -630,6 +676,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveUserConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveUserConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveUserConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
@@ -1054,6 +1103,208 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAudioRecordConfigRequest, CreateAudioRecordConfigResponse> createAudioRecordConfig =
+        genForCreateAudioRecordConfig();
+
+    private static HttpRequestDef<CreateAudioRecordConfigRequest, CreateAudioRecordConfigResponse> genForCreateAudioRecordConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateAudioRecordConfigRequest, CreateAudioRecordConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAudioRecordConfigRequest.class, CreateAudioRecordConfigResponse.class)
+            .withName("CreateAudioRecordConfig")
+            .withUri("/v1/{project_id}/digital-human-chat/audio-record-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAudioRecordConfigRequest::getAuthorization,
+                CreateAudioRecordConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAudioRecordConfigRequest::getXSdkDate,
+                CreateAudioRecordConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAudioRecordConfigRequest::getXProjectId,
+                CreateAudioRecordConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAudioRecordConfigRequest::getXAppUserId,
+                CreateAudioRecordConfigRequest::setXAppUserId));
+        builder.<CreateAudioRecordConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAudioRecordConfigReq.class),
+            f -> f.withMarshaller(CreateAudioRecordConfigRequest::getBody, CreateAudioRecordConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAudioRecordConfigResponse::getXRequestId,
+                CreateAudioRecordConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAudioRecordConfigRequest, DeleteAudioRecordConfigResponse> deleteAudioRecordConfig =
+        genForDeleteAudioRecordConfig();
+
+    private static HttpRequestDef<DeleteAudioRecordConfigRequest, DeleteAudioRecordConfigResponse> genForDeleteAudioRecordConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteAudioRecordConfigRequest, DeleteAudioRecordConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAudioRecordConfigRequest.class, DeleteAudioRecordConfigResponse.class)
+            .withName("DeleteAudioRecordConfig")
+            .withUri("/v1/{project_id}/digital-human-chat/audio-record-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAudioRecordConfigRequest::getAuthorization,
+                DeleteAudioRecordConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAudioRecordConfigRequest::getXSdkDate,
+                DeleteAudioRecordConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAudioRecordConfigRequest::getXProjectId,
+                DeleteAudioRecordConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAudioRecordConfigRequest::getXAppUserId,
+                DeleteAudioRecordConfigRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAudioRecordConfigResponse::getXRequestId,
+                DeleteAudioRecordConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAudioRecordConfigRequest, ShowAudioRecordConfigResponse> showAudioRecordConfig =
+        genForShowAudioRecordConfig();
+
+    private static HttpRequestDef<ShowAudioRecordConfigRequest, ShowAudioRecordConfigResponse> genForShowAudioRecordConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowAudioRecordConfigRequest, ShowAudioRecordConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAudioRecordConfigRequest.class, ShowAudioRecordConfigResponse.class)
+            .withName("ShowAudioRecordConfig")
+            .withUri("/v1/{project_id}/digital-human-chat/audio-record-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAudioRecordConfigRequest::getAuthorization,
+                ShowAudioRecordConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAudioRecordConfigRequest::getXSdkDate,
+                ShowAudioRecordConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAudioRecordConfigRequest::getXProjectId,
+                ShowAudioRecordConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAudioRecordConfigRequest::getXAppUserId,
+                ShowAudioRecordConfigRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAudioRecordConfigResponse::getXRequestId,
+                ShowAudioRecordConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAudioRecordConfigRequest, UpdateAudioRecordConfigResponse> updateAudioRecordConfig =
+        genForUpdateAudioRecordConfig();
+
+    private static HttpRequestDef<UpdateAudioRecordConfigRequest, UpdateAudioRecordConfigResponse> genForUpdateAudioRecordConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateAudioRecordConfigRequest, UpdateAudioRecordConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAudioRecordConfigRequest.class, UpdateAudioRecordConfigResponse.class)
+            .withName("UpdateAudioRecordConfig")
+            .withUri("/v1/{project_id}/digital-human-chat/audio-record-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAudioRecordConfigRequest::getAuthorization,
+                UpdateAudioRecordConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAudioRecordConfigRequest::getXSdkDate,
+                UpdateAudioRecordConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAudioRecordConfigRequest::getXProjectId,
+                UpdateAudioRecordConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAudioRecordConfigRequest::getXAppUserId,
+                UpdateAudioRecordConfigRequest::setXAppUserId));
+        builder.<UpdateAudioRecordConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAudioRecordConfigReq.class),
+            f -> f.withMarshaller(UpdateAudioRecordConfigRequest::getBody, UpdateAudioRecordConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAudioRecordConfigResponse::getXRequestId,
+                UpdateAudioRecordConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> deleteTask = genForDeleteTask();
 
     private static HttpRequestDef<DeleteTaskRequest, DeleteTaskResponse> genForDeleteTask() {
@@ -1346,6 +1597,158 @@ public class MetaStudioMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSummaryUsageDataRequest, ShowSummaryUsageDataResponse> showSummaryUsageData =
+        genForShowSummaryUsageData();
+
+    private static HttpRequestDef<ShowSummaryUsageDataRequest, ShowSummaryUsageDataResponse> genForShowSummaryUsageData() {
+        // basic
+        HttpRequestDef.Builder<ShowSummaryUsageDataRequest, ShowSummaryUsageDataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSummaryUsageDataRequest.class, ShowSummaryUsageDataResponse.class)
+            .withName("ShowSummaryUsageData")
+            .withUri("/v1/{project_id}/data-analysis-summary")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSummaryUsageDataRequest::getUserId, ShowSummaryUsageDataRequest::setUserId));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSummaryUsageDataRequest::getResourceType,
+                ShowSummaryUsageDataRequest::setResourceType));
+        builder.<String>withRequestField("business_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSummaryUsageDataRequest::getBusinessType,
+                ShowSummaryUsageDataRequest::setBusinessType));
+        builder.<ShowSummaryUsageDataRequest.UnitEnum>withRequestField("unit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSummaryUsageDataRequest.UnitEnum.class),
+            f -> f.withMarshaller(ShowSummaryUsageDataRequest::getUnit, ShowSummaryUsageDataRequest::setUnit));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSummaryUsageDataRequest::getAuthorization,
+                ShowSummaryUsageDataRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSummaryUsageDataRequest::getXSdkDate, ShowSummaryUsageDataRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSummaryUsageDataRequest::getXProjectId,
+                ShowSummaryUsageDataRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSummaryUsageDataRequest::getXAppUserId,
+                ShowSummaryUsageDataRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSummaryUsageDataResponse::getXRequestId,
+                ShowSummaryUsageDataResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUsageDataRequest, ShowUsageDataResponse> showUsageData =
+        genForShowUsageData();
+
+    private static HttpRequestDef<ShowUsageDataRequest, ShowUsageDataResponse> genForShowUsageData() {
+        // basic
+        HttpRequestDef.Builder<ShowUsageDataRequest, ShowUsageDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUsageDataRequest.class, ShowUsageDataResponse.class)
+                .withName("ShowUsageData")
+                .withUri("/v1/{project_id}/data-analysis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getLimit, ShowUsageDataRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getOffset, ShowUsageDataRequest::setOffset));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getStartTime, ShowUsageDataRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getEndTime, ShowUsageDataRequest::setEndTime));
+        builder.<String>withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getUserId, ShowUsageDataRequest::setUserId));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getResourceType, ShowUsageDataRequest::setResourceType));
+        builder.<String>withRequestField("business_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getBusinessType, ShowUsageDataRequest::setBusinessType));
+        builder.<ShowUsageDataRequest.UnitEnum>withRequestField("unit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowUsageDataRequest.UnitEnum.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getUnit, ShowUsageDataRequest::setUnit));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getAuthorization, ShowUsageDataRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getXSdkDate, ShowUsageDataRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getXProjectId, ShowUsageDataRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUsageDataRequest::getXAppUserId, ShowUsageDataRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowUsageDataResponse::getXRequestId, ShowUsageDataResponse::setXRequestId));
         return builder.build();
     }
 
@@ -5339,6 +5742,64 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateInteractionRuleRequest, CreateInteractionRuleResponse> createInteractionRule =
+        genForCreateInteractionRule();
+
+    private static HttpRequestDef<CreateInteractionRuleRequest, CreateInteractionRuleResponse> genForCreateInteractionRule() {
+        // basic
+        HttpRequestDef.Builder<CreateInteractionRuleRequest, CreateInteractionRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateInteractionRuleRequest.class, CreateInteractionRuleResponse.class)
+            .withName("CreateInteractionRule")
+            .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleRequest::getGroupId, CreateInteractionRuleRequest::setGroupId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleRequest::getAuthorization,
+                CreateInteractionRuleRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleRequest::getXSdkDate,
+                CreateInteractionRuleRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleRequest::getXProjectId,
+                CreateInteractionRuleRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleRequest::getXAppUserId,
+                CreateInteractionRuleRequest::setXAppUserId));
+        builder.<CreateInteractionRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInteractionRuleReq.class),
+            f -> f.withMarshaller(CreateInteractionRuleRequest::getBody, CreateInteractionRuleRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateInteractionRuleResponse::getXRequestId,
+                CreateInteractionRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroup =
         genForCreateInteractionRuleGroup();
 
@@ -5393,6 +5854,64 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(CreateInteractionRuleGroupResponse::getXRequestId,
                 CreateInteractionRuleGroupResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInteractionRuleRequest, DeleteInteractionRuleResponse> deleteInteractionRule =
+        genForDeleteInteractionRule();
+
+    private static HttpRequestDef<DeleteInteractionRuleRequest, DeleteInteractionRuleResponse> genForDeleteInteractionRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteInteractionRuleRequest, DeleteInteractionRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteInteractionRuleRequest.class, DeleteInteractionRuleResponse.class)
+            .withName("DeleteInteractionRule")
+            .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleRequest::getGroupId, DeleteInteractionRuleRequest::setGroupId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleRequest::getRuleId, DeleteInteractionRuleRequest::setRuleId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleRequest::getAuthorization,
+                DeleteInteractionRuleRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleRequest::getXSdkDate,
+                DeleteInteractionRuleRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleRequest::getXProjectId,
+                DeleteInteractionRuleRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleRequest::getXAppUserId,
+                DeleteInteractionRuleRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteInteractionRuleResponse::getXRequestId,
+                DeleteInteractionRuleResponse::setXRequestId));
         return builder.build();
     }
 
@@ -5534,6 +6053,205 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInteractionRuleGroupsSummaryRequest, ListInteractionRuleGroupsSummaryResponse> listInteractionRuleGroupsSummary =
+        genForListInteractionRuleGroupsSummary();
+
+    private static HttpRequestDef<ListInteractionRuleGroupsSummaryRequest, ListInteractionRuleGroupsSummaryResponse> genForListInteractionRuleGroupsSummary() {
+        // basic
+        HttpRequestDef.Builder<ListInteractionRuleGroupsSummaryRequest, ListInteractionRuleGroupsSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInteractionRuleGroupsSummaryRequest.class,
+                    ListInteractionRuleGroupsSummaryResponse.class)
+                .withName("ListInteractionRuleGroupsSummary")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups-summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getOffset,
+                ListInteractionRuleGroupsSummaryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getLimit,
+                ListInteractionRuleGroupsSummaryRequest::setLimit));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getCreateSince,
+                ListInteractionRuleGroupsSummaryRequest::setCreateSince));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getCreateUntil,
+                ListInteractionRuleGroupsSummaryRequest::setCreateUntil));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getGroupName,
+                ListInteractionRuleGroupsSummaryRequest::setGroupName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getAuthorization,
+                ListInteractionRuleGroupsSummaryRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getXSdkDate,
+                ListInteractionRuleGroupsSummaryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getXProjectId,
+                ListInteractionRuleGroupsSummaryRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryRequest::getXAppUserId,
+                ListInteractionRuleGroupsSummaryRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInteractionRuleGroupsSummaryResponse::getXRequestId,
+                ListInteractionRuleGroupsSummaryResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInteractionRuleGroupRequest, ShowInteractionRuleGroupResponse> showInteractionRuleGroup =
+        genForShowInteractionRuleGroup();
+
+    private static HttpRequestDef<ShowInteractionRuleGroupRequest, ShowInteractionRuleGroupResponse> genForShowInteractionRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowInteractionRuleGroupRequest, ShowInteractionRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowInteractionRuleGroupRequest.class, ShowInteractionRuleGroupResponse.class)
+                .withName("ShowInteractionRuleGroup")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInteractionRuleGroupRequest::getGroupId,
+                ShowInteractionRuleGroupRequest::setGroupId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInteractionRuleGroupRequest::getAuthorization,
+                ShowInteractionRuleGroupRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInteractionRuleGroupRequest::getXSdkDate,
+                ShowInteractionRuleGroupRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInteractionRuleGroupRequest::getXProjectId,
+                ShowInteractionRuleGroupRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInteractionRuleGroupRequest::getXAppUserId,
+                ShowInteractionRuleGroupRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInteractionRuleGroupResponse::getXRequestId,
+                ShowInteractionRuleGroupResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInteractionRuleRequest, UpdateInteractionRuleResponse> updateInteractionRule =
+        genForUpdateInteractionRule();
+
+    private static HttpRequestDef<UpdateInteractionRuleRequest, UpdateInteractionRuleResponse> genForUpdateInteractionRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateInteractionRuleRequest, UpdateInteractionRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateInteractionRuleRequest.class, UpdateInteractionRuleResponse.class)
+            .withName("UpdateInteractionRule")
+            .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleRequest::getGroupId, UpdateInteractionRuleRequest::setGroupId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleRequest::getRuleId, UpdateInteractionRuleRequest::setRuleId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleRequest::getAuthorization,
+                UpdateInteractionRuleRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleRequest::getXSdkDate,
+                UpdateInteractionRuleRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleRequest::getXProjectId,
+                UpdateInteractionRuleRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleRequest::getXAppUserId,
+                UpdateInteractionRuleRequest::setXAppUserId));
+        builder.<CreateInteractionRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInteractionRuleReq.class),
+            f -> f.withMarshaller(UpdateInteractionRuleRequest::getBody, UpdateInteractionRuleRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateInteractionRuleResponse::getXRequestId,
+                UpdateInteractionRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> updateInteractionRuleGroup =
         genForUpdateInteractionRuleGroup();
 
@@ -5647,6 +6365,39 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(CreateInteractiveChatResponse::getXRequestId,
                 CreateInteractiveChatResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEncryptFileRequest, ShowEncryptFileResponse> showEncryptFile =
+        genForShowEncryptFile();
+
+    private static HttpRequestDef<ShowEncryptFileRequest, ShowEncryptFileResponse> genForShowEncryptFile() {
+        // basic
+        HttpRequestDef.Builder<ShowEncryptFileRequest, ShowEncryptFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEncryptFileRequest.class, ShowEncryptFileResponse.class)
+                .withName("ShowEncryptFile")
+                .withUri("/v1/voice-training-manage/common/encrypt-file-download")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEncryptFileRequest::getTenantId, ShowEncryptFileRequest::setTenantId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEncryptFileRequest::getJobId, ShowEncryptFileRequest::setJobId));
+        builder.<String>withRequestField("once_token",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEncryptFileRequest::getOnceToken, ShowEncryptFileRequest::setOnceToken));
+
+        // response
+
         return builder.build();
     }
 
@@ -7330,6 +8081,63 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowLivePlatformResponse::getXRequestId, ShowLivePlatformResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLivePlatformAccessTypeRequest, ShowLivePlatformAccessTypeResponse> showLivePlatformAccessType =
+        genForShowLivePlatformAccessType();
+
+    private static HttpRequestDef<ShowLivePlatformAccessTypeRequest, ShowLivePlatformAccessTypeResponse> genForShowLivePlatformAccessType() {
+        // basic
+        HttpRequestDef.Builder<ShowLivePlatformAccessTypeRequest, ShowLivePlatformAccessTypeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowLivePlatformAccessTypeRequest.class,
+                    ShowLivePlatformAccessTypeResponse.class)
+                .withName("ShowLivePlatformAccessType")
+                .withUri("/v1/{project_id}/live-platforms/access-types")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("used",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowLivePlatformAccessTypeRequest::getUsed,
+                ShowLivePlatformAccessTypeRequest::setUsed));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLivePlatformAccessTypeRequest::getAuthorization,
+                ShowLivePlatformAccessTypeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLivePlatformAccessTypeRequest::getXSdkDate,
+                ShowLivePlatformAccessTypeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLivePlatformAccessTypeRequest::getXProjectId,
+                ShowLivePlatformAccessTypeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLivePlatformAccessTypeRequest::getXAppUserId,
+                ShowLivePlatformAccessTypeRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowLivePlatformAccessTypeResponse::getXRequestId,
+                ShowLivePlatformAccessTypeResponse::setXRequestId));
         return builder.build();
     }
 
@@ -9796,6 +10604,47 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVoiceTrainingQuotasRequest, ShowVoiceTrainingQuotasResponse> showVoiceTrainingQuotas =
+        genForShowVoiceTrainingQuotas();
+
+    private static HttpRequestDef<ShowVoiceTrainingQuotasRequest, ShowVoiceTrainingQuotasResponse> genForShowVoiceTrainingQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowVoiceTrainingQuotasRequest, ShowVoiceTrainingQuotasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVoiceTrainingQuotasRequest.class, ShowVoiceTrainingQuotasResponse.class)
+            .withName("ShowVoiceTrainingQuotas")
+            .withUri("/v1/{project_id}/voice-training-manage/quotas")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVoiceTrainingQuotasRequest::getOffset,
+                ShowVoiceTrainingQuotasRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVoiceTrainingQuotasRequest::getLimit, ShowVoiceTrainingQuotasRequest::setLimit));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVoiceTrainingQuotasRequest::getAuthorization,
+                ShowVoiceTrainingQuotasRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVoiceTrainingQuotasRequest::getXSdkDate,
+                ShowVoiceTrainingQuotasRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRobotRequest, CreateRobotResponse> createRobot = genForCreateRobot();
 
     private static HttpRequestDef<CreateRobotRequest, CreateRobotResponse> genForCreateRobot() {
@@ -10636,6 +11485,57 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateSmartLiveUserConfigRequest, UpdateSmartLiveUserConfigResponse> updateSmartLiveUserConfig =
+        genForUpdateSmartLiveUserConfig();
+
+    private static HttpRequestDef<UpdateSmartLiveUserConfigRequest, UpdateSmartLiveUserConfigResponse> genForUpdateSmartLiveUserConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateSmartLiveUserConfigRequest, UpdateSmartLiveUserConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSmartLiveUserConfigRequest.class,
+                    UpdateSmartLiveUserConfigResponse.class)
+                .withName("UpdateSmartLiveUserConfig")
+                .withUri("/v1/{project_id}/smart-live-configs/user-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSmartLiveUserConfigRequest::getAuthorization,
+                UpdateSmartLiveUserConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSmartLiveUserConfigRequest::getXSdkDate,
+                UpdateSmartLiveUserConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSmartLiveUserConfigRequest::getXProjectId,
+                UpdateSmartLiveUserConfigRequest::setXProjectId));
+        builder.<UpdateSmartLiveUserConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSmartLiveUserConfigReq.class),
+            f -> f.withMarshaller(UpdateSmartLiveUserConfigRequest::getBody,
+                UpdateSmartLiveUserConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSmartLiveUserConfigResponse::getXRequestId,
+                UpdateSmartLiveUserConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchConfirmLiveCommandsRequest, BatchConfirmLiveCommandsResponse> batchConfirmLiveCommands =
         genForBatchConfirmLiveCommands();
 
@@ -10763,6 +11663,71 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(ExecuteSmartLiveCommandResponse::getXRequestId,
                 ExecuteSmartLiveCommandResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInsertCommandsRequest, ListInsertCommandsResponse> listInsertCommands =
+        genForListInsertCommands();
+
+    private static HttpRequestDef<ListInsertCommandsRequest, ListInsertCommandsResponse> genForListInsertCommands() {
+        // basic
+        HttpRequestDef.Builder<ListInsertCommandsRequest, ListInsertCommandsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInsertCommandsRequest.class, ListInsertCommandsResponse.class)
+                .withName("ListInsertCommands")
+                .withUri("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/command/insert-commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("room_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInsertCommandsRequest::getRoomId, ListInsertCommandsRequest::setRoomId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInsertCommandsRequest::getJobId, ListInsertCommandsRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInsertCommandsRequest::getOffset, ListInsertCommandsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInsertCommandsRequest::getLimit, ListInsertCommandsRequest::setLimit));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInsertCommandsRequest::getAuthorization,
+                ListInsertCommandsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInsertCommandsRequest::getXSdkDate, ListInsertCommandsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInsertCommandsRequest::getXProjectId, ListInsertCommandsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInsertCommandsRequest::getXAppUserId, ListInsertCommandsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInsertCommandsResponse::getXRequestId,
+                ListInsertCommandsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -11577,6 +12542,58 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowLiveWarningInfoRequest, ShowLiveWarningInfoResponse> showLiveWarningInfo =
+        genForShowLiveWarningInfo();
+
+    private static HttpRequestDef<ShowLiveWarningInfoRequest, ShowLiveWarningInfoResponse> genForShowLiveWarningInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowLiveWarningInfoRequest, ShowLiveWarningInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLiveWarningInfoRequest.class, ShowLiveWarningInfoResponse.class)
+                .withName("ShowLiveWarningInfo")
+                .withUri("/v1/{project_id}/smart-live-rooms/{room_id}/live-warning-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("room_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLiveWarningInfoRequest::getRoomId, ShowLiveWarningInfoRequest::setRoomId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLiveWarningInfoRequest::getAuthorization,
+                ShowLiveWarningInfoRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLiveWarningInfoRequest::getXSdkDate, ShowLiveWarningInfoRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLiveWarningInfoRequest::getXProjectId,
+                ShowLiveWarningInfoRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLiveWarningInfoRequest::getXAppUserId,
+                ShowLiveWarningInfoRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowLiveWarningInfoResponse::getXRequestId,
+                ShowLiveWarningInfoResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSmartLiveRoomRequest, ShowSmartLiveRoomResponse> showSmartLiveRoom =
         genForShowSmartLiveRoom();
 
@@ -12157,6 +13174,49 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CommitShortJobRequest, CommitShortJobResponse> commitShortJob =
+        genForCommitShortJob();
+
+    private static HttpRequestDef<CommitShortJobRequest, CommitShortJobResponse> genForCommitShortJob() {
+        // basic
+        HttpRequestDef.Builder<CommitShortJobRequest, CommitShortJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CommitShortJobRequest.class, CommitShortJobResponse.class)
+                .withName("CommitShortJob")
+                .withUri("/v1/{project_id}/voice-training-manage/user/short-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitShortJobRequest::getJobId, CommitShortJobRequest::setJobId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitShortJobRequest::getAuthorization, CommitShortJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitShortJobRequest::getXSdkDate, CommitShortJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitShortJobRequest::getXProjectId, CommitShortJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CommitShortJobRequest::getXAppUserId, CommitShortJobRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CommitVoiceTrainingJobRequest, CommitVoiceTrainingJobResponse> commitVoiceTrainingJob =
         genForCommitVoiceTrainingJob();
 
@@ -12231,6 +13291,49 @@ public class MetaStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ConfirmTrainingSegmentRequest::getIndex, ConfirmTrainingSegmentRequest::setIndex));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateShortJobRequest, CreateShortJobResponse> createShortJob =
+        genForCreateShortJob();
+
+    private static HttpRequestDef<CreateShortJobRequest, CreateShortJobResponse> genForCreateShortJob() {
+        // basic
+        HttpRequestDef.Builder<CreateShortJobRequest, CreateShortJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateShortJobRequest.class, CreateShortJobResponse.class)
+                .withName("CreateShortJob")
+                .withUri("/v1/{project_id}/voice-training-manage/user/short-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateShortJobRequest::getAuthorization, CreateShortJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateShortJobRequest::getXSdkDate, CreateShortJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateShortJobRequest::getXProjectId, CreateShortJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateShortJobRequest::getXAppUserId, CreateShortJobRequest::setXAppUserId));
+        builder.<CreateShortJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateShortJobReq.class),
+            f -> f.withMarshaller(CreateShortJobRequest::getBody, CreateShortJobRequest::setBody));
 
         // response
 
@@ -12355,6 +13458,39 @@ public class MetaStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTrainingJobReq.class),
             f -> f.withMarshaller(CreateTrainingMiddleJobRequest::getBody, CreateTrainingMiddleJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrainingThirdPartyJobRequest, CreateTrainingThirdPartyJobResponse> createTrainingThirdPartyJob =
+        genForCreateTrainingThirdPartyJob();
+
+    private static HttpRequestDef<CreateTrainingThirdPartyJobRequest, CreateTrainingThirdPartyJobResponse> genForCreateTrainingThirdPartyJob() {
+        // basic
+        HttpRequestDef.Builder<CreateTrainingThirdPartyJobRequest, CreateTrainingThirdPartyJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateTrainingThirdPartyJobRequest.class,
+                    CreateTrainingThirdPartyJobResponse.class)
+                .withName("CreateTrainingThirdPartyJob")
+                .withUri("/v1/{project_id}/voice-training-manage/user/third-party-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainingThirdPartyJobRequest::getXAppUserId,
+                CreateTrainingThirdPartyJobRequest::setXAppUserId));
+        builder.<CreateTrainingJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTrainingJobReq.class),
+            f -> f.withMarshaller(CreateTrainingThirdPartyJobRequest::getBody,
+                CreateTrainingThirdPartyJobRequest::setBody));
 
         // response
 
@@ -12621,6 +13757,48 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowShortJobRequest, ShowShortJobResponse> showShortJob = genForShowShortJob();
+
+    private static HttpRequestDef<ShowShortJobRequest, ShowShortJobResponse> genForShowShortJob() {
+        // basic
+        HttpRequestDef.Builder<ShowShortJobRequest, ShowShortJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowShortJobRequest.class, ShowShortJobResponse.class)
+                .withName("ShowShortJob")
+                .withUri("/v1/{project_id}/voice-training-manage/user/short-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowShortJobRequest::getJobId, ShowShortJobRequest::setJobId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowShortJobRequest::getAuthorization, ShowShortJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowShortJobRequest::getXSdkDate, ShowShortJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowShortJobRequest::getXProjectId, ShowShortJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowShortJobRequest::getXAppUserId, ShowShortJobRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTenantDurationCfgRequest, ShowTenantDurationCfgResponse> showTenantDurationCfg =
         genForShowTenantDurationCfg();
 
@@ -12656,6 +13834,46 @@ public class MetaStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTrainingSegmentInfoRequest::getJobId, ShowTrainingSegmentInfoRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUserReviewAttachmentUploadingAddressRequest, ShowUserReviewAttachmentUploadingAddressResponse> showUserReviewAttachmentUploadingAddress =
+        genForShowUserReviewAttachmentUploadingAddress();
+
+    private static HttpRequestDef<ShowUserReviewAttachmentUploadingAddressRequest, ShowUserReviewAttachmentUploadingAddressResponse> genForShowUserReviewAttachmentUploadingAddress() {
+        // basic
+        HttpRequestDef.Builder<ShowUserReviewAttachmentUploadingAddressRequest, ShowUserReviewAttachmentUploadingAddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowUserReviewAttachmentUploadingAddressRequest.class,
+                    ShowUserReviewAttachmentUploadingAddressResponse.class)
+                .withName("ShowUserReviewAttachmentUploadingAddress")
+                .withUri(
+                    "/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/review-attachment-uploading-address-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUserReviewAttachmentUploadingAddressRequest::getJobId,
+                ShowUserReviewAttachmentUploadingAddressRequest::setJobId));
+        builder.<Integer>withRequestField("start_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUserReviewAttachmentUploadingAddressRequest::getStartNumber,
+                ShowUserReviewAttachmentUploadingAddressRequest::setStartNumber));
+        builder.<Integer>withRequestField("end_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUserReviewAttachmentUploadingAddressRequest::getEndNumber,
+                ShowUserReviewAttachmentUploadingAddressRequest::setEndNumber));
 
         // response
 

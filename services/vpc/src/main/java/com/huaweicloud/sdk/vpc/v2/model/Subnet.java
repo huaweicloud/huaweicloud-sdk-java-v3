@@ -210,6 +210,16 @@ public class Subnet {
 
     private OffsetDateTime updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_network_address_usage_metrics")
+
+    private Boolean enableNetworkAddressUsageMetrics;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_ip_address_count")
+
+    private Integer availableIpAddressCount;
+
     public Subnet withId(String id) {
         this.id = id;
         return this;
@@ -633,6 +643,40 @@ public class Subnet {
         this.updatedAt = updatedAt;
     }
 
+    public Subnet withEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否开启当前子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+     * @return enableNetworkAddressUsageMetrics
+     */
+    public Boolean getEnableNetworkAddressUsageMetrics() {
+        return enableNetworkAddressUsageMetrics;
+    }
+
+    public void setEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+    }
+
+    public Subnet withAvailableIpAddressCount(Integer availableIpAddressCount) {
+        this.availableIpAddressCount = availableIpAddressCount;
+        return this;
+    }
+
+    /**
+     * 功能说明：子网内剩余可用的IPv4地址数量。
+     * @return availableIpAddressCount
+     */
+    public Integer getAvailableIpAddressCount() {
+        return availableIpAddressCount;
+    }
+
+    public void setAvailableIpAddressCount(Integer availableIpAddressCount) {
+        this.availableIpAddressCount = availableIpAddressCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -654,7 +698,9 @@ public class Subnet {
             && Objects.equals(this.neutronSubnetIdV6, that.neutronSubnetIdV6)
             && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts) && Objects.equals(this.scope, that.scope)
             && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enableNetworkAddressUsageMetrics, that.enableNetworkAddressUsageMetrics)
+            && Objects.equals(this.availableIpAddressCount, that.availableIpAddressCount);
     }
 
     @Override
@@ -681,7 +727,9 @@ public class Subnet {
             scope,
             tenantId,
             createdAt,
-            updatedAt);
+            updatedAt,
+            enableNetworkAddressUsageMetrics,
+            availableIpAddressCount);
     }
 
     @Override
@@ -711,6 +759,10 @@ public class Subnet {
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    enableNetworkAddressUsageMetrics: ")
+            .append(toIndentedString(enableNetworkAddressUsageMetrics))
+            .append("\n");
+        sb.append("    availableIpAddressCount: ").append(toIndentedString(availableIpAddressCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

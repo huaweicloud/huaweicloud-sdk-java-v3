@@ -32,7 +32,7 @@ public class Port {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "binding:vif_details")
 
-    private Object bindingVifDetails;
+    private BindingVifDetails bindingVifDetails;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "binding:vif_type")
@@ -187,7 +187,7 @@ public class Port {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<String> tags = null;
+    private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowed_address_pairs")
@@ -245,20 +245,29 @@ public class Port {
         this.bindingProfile = bindingProfile;
     }
 
-    public Port withBindingVifDetails(Object bindingVifDetails) {
+    public Port withBindingVifDetails(BindingVifDetails bindingVifDetails) {
         this.bindingVifDetails = bindingVifDetails;
         return this;
     }
 
+    public Port withBindingVifDetails(Consumer<BindingVifDetails> bindingVifDetailsSetter) {
+        if (this.bindingVifDetails == null) {
+            this.bindingVifDetails = new BindingVifDetails();
+            bindingVifDetailsSetter.accept(this.bindingVifDetails);
+        }
+
+        return this;
+    }
+
     /**
-     * 1、功能描述：vif的详细信息， \"ovs_hybrid_plug\": 是否为ovs/bridge混合模式 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * Get bindingVifDetails
      * @return bindingVifDetails
      */
-    public Object getBindingVifDetails() {
+    public BindingVifDetails getBindingVifDetails() {
         return bindingVifDetails;
     }
 
-    public void setBindingVifDetails(Object bindingVifDetails) {
+    public void setBindingVifDetails(BindingVifDetails bindingVifDetails) {
         this.bindingVifDetails = bindingVifDetails;
     }
 
@@ -820,12 +829,12 @@ public class Port {
         this.instanceInfo = instanceInfo;
     }
 
-    public Port withTags(List<String> tags) {
+    public Port withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public Port addTagsItem(String tagsItem) {
+    public Port addTagsItem(ResourceTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -833,7 +842,7 @@ public class Port {
         return this;
     }
 
-    public Port withTags(Consumer<List<String>> tagsSetter) {
+    public Port withTags(Consumer<List<ResourceTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -842,14 +851,14 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口标签 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * 参数解释： 端口的标签信息，包括标签键和标签值，可用来分类和标识资源。 取值范围： 不涉及。
      * @return tags
      */
-    public List<String> getTags() {
+    public List<ResourceTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
     }
 

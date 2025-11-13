@@ -26,6 +26,8 @@ import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteBackupRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchModifySubscriptionRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchModifySubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesRequest;
@@ -57,6 +59,10 @@ import com.huaweicloud.sdk.rds.v3.model.CheckInstanceForUpgradeResponse;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakPasswordRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.CheckWeakpwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorRequest;
+import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorResponse;
+import com.huaweicloud.sdk.rds.v3.model.CollectSubscriptionMonitorRequest;
+import com.huaweicloud.sdk.rds.v3.model.CollectSubscriptionMonitorResponse;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationCopyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForCreation;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForUpdate;
@@ -129,6 +135,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDisasterRecoveryResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDistributionRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDistributionResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
@@ -163,6 +171,9 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogRequest;
 import com.huaweicloud.sdk.rds.v3.model.DownloadErrorlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
@@ -220,6 +231,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDbAgentJobsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDbAgentJobsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDistributionRequest;
@@ -297,6 +310,9 @@ import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPublications4SubscriptionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPublications4SubscriptionRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ListPublications4SubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPublicationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPublicationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyRequest;
@@ -307,6 +323,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListReadOnlyReplayDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListReadOnlyReplayDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListReplicationProfilesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListReplicationProfilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListScheduleTasksRequest;
@@ -343,6 +361,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSubscriberInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSubscriptionsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSubscriptionsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListTasksResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListTopSqlsRequest;
@@ -373,6 +393,7 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationsRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifySubscriptionsRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.MysqlReadOnlySwitch;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeRequest;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeResponse;
@@ -653,6 +674,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradePgMajorVersion;
 import com.huaweicloud.sdk.rds.v3.model.UserForCreation;
+import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionResponse;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -9012,6 +9036,119 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchModifySubscriptionRequest, BatchModifySubscriptionResponse> batchModifySubscription =
+        genForBatchModifySubscription();
+
+    private static HttpRequestDef<BatchModifySubscriptionRequest, BatchModifySubscriptionResponse> genForBatchModifySubscription() {
+        // basic
+        HttpRequestDef.Builder<BatchModifySubscriptionRequest, BatchModifySubscriptionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, BatchModifySubscriptionRequest.class, BatchModifySubscriptionResponse.class)
+            .withName("BatchModifySubscription")
+            .withUri("/v3/{project_id}/instances/{instance_id}/replication/subscriptions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchModifySubscriptionRequest::getInstanceId,
+                BatchModifySubscriptionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchModifySubscriptionRequest::getXLanguage,
+                BatchModifySubscriptionRequest::setXLanguage));
+        builder.<ModifySubscriptionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifySubscriptionsRequestBody.class),
+            f -> f.withMarshaller(BatchModifySubscriptionRequest::getBody, BatchModifySubscriptionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectPublicationMonitorRequest, CollectPublicationMonitorResponse> collectPublicationMonitor =
+        genForCollectPublicationMonitor();
+
+    private static HttpRequestDef<CollectPublicationMonitorRequest, CollectPublicationMonitorResponse> genForCollectPublicationMonitor() {
+        // basic
+        HttpRequestDef.Builder<CollectPublicationMonitorRequest, CollectPublicationMonitorResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CollectPublicationMonitorRequest.class,
+                    CollectPublicationMonitorResponse.class)
+                .withName("CollectPublicationMonitor")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replication/publications/{publication_id}/monitor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectPublicationMonitorRequest::getInstanceId,
+                CollectPublicationMonitorRequest::setInstanceId));
+        builder.<String>withRequestField("publication_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectPublicationMonitorRequest::getPublicationId,
+                CollectPublicationMonitorRequest::setPublicationId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectPublicationMonitorRequest::getXLanguage,
+                CollectPublicationMonitorRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectSubscriptionMonitorRequest, CollectSubscriptionMonitorResponse> collectSubscriptionMonitor =
+        genForCollectSubscriptionMonitor();
+
+    private static HttpRequestDef<CollectSubscriptionMonitorRequest, CollectSubscriptionMonitorResponse> genForCollectSubscriptionMonitor() {
+        // basic
+        HttpRequestDef.Builder<CollectSubscriptionMonitorRequest, CollectSubscriptionMonitorResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CollectSubscriptionMonitorRequest.class,
+                    CollectSubscriptionMonitorResponse.class)
+                .withName("CollectSubscriptionMonitor")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replication/subscriptions/{subscription_id}/monitor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectSubscriptionMonitorRequest::getInstanceId,
+                CollectSubscriptionMonitorRequest::setInstanceId));
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectSubscriptionMonitorRequest::getSubscriptionId,
+                CollectSubscriptionMonitorRequest::setSubscriptionId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectSubscriptionMonitorRequest::getXLanguage,
+                CollectSubscriptionMonitorRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CopyDatabaseRequest, CopyDatabaseResponse> copyDatabase = genForCopyDatabase();
 
     private static HttpRequestDef<CopyDatabaseRequest, CopyDatabaseResponse> genForCopyDatabase() {
@@ -9136,6 +9273,34 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSubscriptionRequestBody.class),
             f -> f.withMarshaller(CreateSubscriptionRequest::getBody, CreateSubscriptionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDistributionRequest, DeleteDistributionResponse> deleteDistribution =
+        genForDeleteDistribution();
+
+    private static HttpRequestDef<DeleteDistributionRequest, DeleteDistributionResponse> genForDeleteDistribution() {
+        // basic
+        HttpRequestDef.Builder<DeleteDistributionRequest, DeleteDistributionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDistributionRequest.class, DeleteDistributionResponse.class)
+                .withName("DeleteDistribution")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replication/distribution")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDistributionRequest::getInstanceId, DeleteDistributionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDistributionRequest::getXLanguage, DeleteDistributionRequest::setXLanguage));
 
         // response
 
@@ -9326,6 +9491,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSubscriptionRequest, DeleteSubscriptionResponse> deleteSubscription =
+        genForDeleteSubscription();
+
+    private static HttpRequestDef<DeleteSubscriptionRequest, DeleteSubscriptionResponse> genForDeleteSubscription() {
+        // basic
+        HttpRequestDef.Builder<DeleteSubscriptionRequest, DeleteSubscriptionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubscriptionRequest.class, DeleteSubscriptionResponse.class)
+                .withName("DeleteSubscription")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replication/subscriptions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubscriptionRequest::getInstanceId, DeleteSubscriptionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubscriptionRequest::getXLanguage, DeleteSubscriptionRequest::setXLanguage));
+        builder.<DeleteSubscriptionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteSubscriptionRequestBody.class),
+            f -> f.withMarshaller(DeleteSubscriptionRequest::getBody, DeleteSubscriptionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAuthorizedSqlserverDbUsersRequest, ListAuthorizedSqlserverDbUsersResponse> listAuthorizedSqlserverDbUsers =
         genForListAuthorizedSqlserverDbUsers();
 
@@ -9405,6 +9603,49 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBusinessPartnersRequest::getXLanguage,
                 ListBusinessPartnersRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDbAgentJobsRequest, ListDbAgentJobsResponse> listDbAgentJobs =
+        genForListDbAgentJobs();
+
+    private static HttpRequestDef<ListDbAgentJobsRequest, ListDbAgentJobsResponse> genForListDbAgentJobs() {
+        // basic
+        HttpRequestDef.Builder<ListDbAgentJobsRequest, ListDbAgentJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDbAgentJobsRequest.class, ListDbAgentJobsResponse.class)
+                .withName("ListDbAgentJobs")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbAgentJobsRequest::getInstanceId, ListDbAgentJobsRequest::setInstanceId));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbAgentJobsRequest::getJobType, ListDbAgentJobsRequest::setJobType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDbAgentJobsRequest::getOffset, ListDbAgentJobsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDbAgentJobsRequest::getLimit, ListDbAgentJobsRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbAgentJobsRequest::getXLanguage, ListDbAgentJobsRequest::setXLanguage));
 
         // response
 
@@ -9622,6 +9863,92 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPublications4SubscriptionRequest, ListPublications4SubscriptionResponse> listPublications4Subscription =
+        genForListPublications4Subscription();
+
+    private static HttpRequestDef<ListPublications4SubscriptionRequest, ListPublications4SubscriptionResponse> genForListPublications4Subscription() {
+        // basic
+        HttpRequestDef.Builder<ListPublications4SubscriptionRequest, ListPublications4SubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListPublications4SubscriptionRequest.class,
+                    ListPublications4SubscriptionResponse.class)
+                .withName("ListPublications4Subscription")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replication/publication-candidates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublications4SubscriptionRequest::getInstanceId,
+                ListPublications4SubscriptionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublications4SubscriptionRequest::getXLanguage,
+                ListPublications4SubscriptionRequest::setXLanguage));
+        builder.<ListPublications4SubscriptionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListPublications4SubscriptionRequestBody.class),
+            f -> f.withMarshaller(ListPublications4SubscriptionRequest::getBody,
+                ListPublications4SubscriptionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListReplicationProfilesRequest, ListReplicationProfilesResponse> listReplicationProfiles =
+        genForListReplicationProfiles();
+
+    private static HttpRequestDef<ListReplicationProfilesRequest, ListReplicationProfilesResponse> genForListReplicationProfiles() {
+        // basic
+        HttpRequestDef.Builder<ListReplicationProfilesRequest, ListReplicationProfilesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListReplicationProfilesRequest.class, ListReplicationProfilesResponse.class)
+            .withName("ListReplicationProfiles")
+            .withUri("/v3/{project_id}/instances/{instance_id}/replication/profiles")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationProfilesRequest::getInstanceId,
+                ListReplicationProfilesRequest::setInstanceId));
+        builder.<String>withRequestField("agent_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationProfilesRequest::getAgentType,
+                ListReplicationProfilesRequest::setAgentType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReplicationProfilesRequest::getOffset,
+                ListReplicationProfilesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReplicationProfilesRequest::getLimit, ListReplicationProfilesRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationProfilesRequest::getXLanguage,
+                ListReplicationProfilesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSqlserverDatabasesRequest, ListSqlserverDatabasesResponse> listSqlserverDatabases =
         genForListSqlserverDatabases();
 
@@ -9760,6 +10087,67 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubscriberInstancesRequest::getXLanguage,
                 ListSubscriberInstancesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptions =
+        genForListSubscriptions();
+
+    private static HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> genForListSubscriptions() {
+        // basic
+        HttpRequestDef.Builder<ListSubscriptionsRequest, ListSubscriptionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSubscriptionsRequest.class, ListSubscriptionsResponse.class)
+                .withName("ListSubscriptions")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replication/subscriptions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getInstanceId, ListSubscriptionsRequest::setInstanceId));
+        builder.<String>withRequestField("publication_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getPublicationId,
+                ListSubscriptionsRequest::setPublicationId));
+        builder.<Boolean>withRequestField("is_cloud",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getIsCloud, ListSubscriptionsRequest::setIsCloud));
+        builder.<String>withRequestField("publication_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getPublicationName,
+                ListSubscriptionsRequest::setPublicationName));
+        builder.<String>withRequestField("subscription_db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getSubscriptionDbName,
+                ListSubscriptionsRequest::setSubscriptionDbName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getOffset, ListSubscriptionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getLimit, ListSubscriptionsRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionsRequest::getXLanguage, ListSubscriptionsRequest::setXLanguage));
 
         // response
 
@@ -9929,6 +10317,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDBShrinkRequestBody.class),
             f -> f.withMarshaller(SetInstancesNewDbShrinkRequest::getBody, SetInstancesNewDbShrinkRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateInstanceConnectionRequest, ValidateInstanceConnectionResponse> validateInstanceConnection =
+        genForValidateInstanceConnection();
+
+    private static HttpRequestDef<ValidateInstanceConnectionRequest, ValidateInstanceConnectionResponse> genForValidateInstanceConnection() {
+        // basic
+        HttpRequestDef.Builder<ValidateInstanceConnectionRequest, ValidateInstanceConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ValidateInstanceConnectionRequest.class,
+                    ValidateInstanceConnectionResponse.class)
+                .withName("ValidateInstanceConnection")
+                .withUri("/v3/{project_id}/instances/{instance_id}/replication/login-test")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateInstanceConnectionRequest::getInstanceId,
+                ValidateInstanceConnectionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateInstanceConnectionRequest::getXLanguage,
+                ValidateInstanceConnectionRequest::setXLanguage));
+        builder.<ValidateInstanceConnectionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ValidateInstanceConnectionRequestBody.class),
+            f -> f.withMarshaller(ValidateInstanceConnectionRequest::getBody,
+                ValidateInstanceConnectionRequest::setBody));
 
         // response
 

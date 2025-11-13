@@ -139,7 +139,7 @@ public class ListLivePlatformsRequest {
     }
 
     /**
-     * 平台对接类型。
+     * 平台对接类型。| * MEITUAN_OFFICIAL：对接美团直播平台官方接口 * MSS_STANDARD：对接MetaStudio定义的标准接口
      * @return accessType
      */
     public String getAccessType() {

@@ -5,14 +5,26 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.dns.v2.model.AssociateEndpointIpaddressRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateEndpointIpaddressResponse;
+import com.huaweicloud.sdk.dns.v2.model.AssociateResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.AssociateResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.AssociateResolverRuleRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateResolverRuleRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateCombinedPublicRecordsetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateCombinedPublicRecordsetsTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicRecordsetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicRecordsetsTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicZonesTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicZonesTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateRecordSetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateRecordSetsTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeletePtrRecordsRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeletePtrRecordsResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeletePublicRecordsetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeletePublicRecordsetsTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetsRequest;
@@ -23,6 +35,10 @@ import com.huaweicloud.sdk.dns.v2.model.BatchSetRecordSetsStatusRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchSetRecordSetsStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchTransferPublicZonesTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchTransferPublicZonesTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchUpdatePublicRecordsetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchUpdatePublicRecordsetsTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateAuthorizeTxtRecordRequest;
@@ -49,10 +65,18 @@ import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithBatchLinesRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithBatchLinesResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateResolverRuleRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateResolverRuleResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalVerificationRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalVerificationResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateTagResponse;
+import com.huaweicloud.sdk.dns.v2.model.DeleteBatchCreateRecordSetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.DeleteBatchCreateRecordSetsTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteCustomLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteEndpointRequest;
@@ -69,6 +93,8 @@ import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsResponse;
+import com.huaweicloud.sdk.dns.v2.model.DeleteResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.DeleteResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteResolverRuleRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteResolverRuleResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteTagRequest;
@@ -77,6 +103,8 @@ import com.huaweicloud.sdk.dns.v2.model.DisableDnssecConfigRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisableDnssecConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateEndpointIpaddressRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateEndpointIpaddressResponse;
+import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverRuleRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverRuleRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateRouterRequest;
@@ -85,6 +113,8 @@ import com.huaweicloud.sdk.dns.v2.model.EnableDnssecConfigRequest;
 import com.huaweicloud.sdk.dns.v2.model.EnableDnssecConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListBatchOperationTasksRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListBatchOperationTasksResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListCustomLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListEndpointIpaddressesRequest;
@@ -113,8 +143,12 @@ import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListResolverQueryLogConfigsRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListResolverQueryLogConfigsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListResolverRulesRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListResolverRulesResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListSystemLinesRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListSystemLinesResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListTagResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListTagsRequest;
@@ -129,10 +163,18 @@ import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowAuthorizeTxtRecordRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowAuthorizeTxtRecordResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowBatchCreateRecordSetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowBatchCreateRecordSetsTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowBatchOperationTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowBatchOperationTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowDnssecConfigRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowDnssecConfigResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowDomainDetectionRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowDomainDetectionResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowDomainQuotaRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowDomainQuotaResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowEmailRecordSetRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowEmailRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowEndpointRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowEndpointResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowLineGroupRequest;
@@ -155,10 +197,20 @@ import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowResolverRuleRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowResolverRuleResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowRetrievalRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowRetrievalResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowRetrievalVerificationRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowRetrievalVerificationResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowWebsiteRecordSetRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowWebsiteRecordSetResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowZoneNameServerRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowZoneNameServerResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdateEndpointRequest;
@@ -227,6 +279,36 @@ public class DnsClient {
     }
 
     /**
+     * 解析器访问日志关联VPC
+     *
+     * 解析器访问日志关联VPC。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateResolverQueryLogConfigRequest 请求对象
+     * @return AssociateResolverQueryLogConfigResponse
+     */
+    public AssociateResolverQueryLogConfigResponse associateResolverQueryLogConfig(
+        AssociateResolverQueryLogConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.associateResolverQueryLogConfig);
+    }
+
+    /**
+     * 解析器访问日志关联VPC
+     *
+     * 解析器访问日志关联VPC。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateResolverQueryLogConfigRequest 请求对象
+     * @return SyncInvoker<AssociateResolverQueryLogConfigRequest, AssociateResolverQueryLogConfigResponse>
+     */
+    public SyncInvoker<AssociateResolverQueryLogConfigRequest, AssociateResolverQueryLogConfigResponse> associateResolverQueryLogConfigInvoker(
+        AssociateResolverQueryLogConfigRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.associateResolverQueryLogConfig, hcClient);
+    }
+
+    /**
      * 解析器转发规则关联VPC
      *
      * 解析器转发规则关联VPC。
@@ -282,6 +364,113 @@ public class DnsClient {
     public SyncInvoker<AssociateRouterRequest, AssociateRouterResponse> associateRouterInvoker(
         AssociateRouterRequest request) {
         return new SyncInvoker<>(request, DnsMeta.associateRouter, hcClient);
+    }
+
+    /**
+     * 批量创建公网记录集
+     *
+     * 提交批量创建公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateCombinedPublicRecordsetsTaskRequest 请求对象
+     * @return BatchCreateCombinedPublicRecordsetsTaskResponse
+     */
+    public BatchCreateCombinedPublicRecordsetsTaskResponse batchCreateCombinedPublicRecordsetsTask(
+        BatchCreateCombinedPublicRecordsetsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchCreateCombinedPublicRecordsetsTask);
+    }
+
+    /**
+     * 批量创建公网记录集
+     *
+     * 提交批量创建公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateCombinedPublicRecordsetsTaskRequest 请求对象
+     * @return SyncInvoker<BatchCreateCombinedPublicRecordsetsTaskRequest, BatchCreateCombinedPublicRecordsetsTaskResponse>
+     */
+    public SyncInvoker<BatchCreateCombinedPublicRecordsetsTaskRequest, BatchCreateCombinedPublicRecordsetsTaskResponse> batchCreateCombinedPublicRecordsetsTaskInvoker(
+        BatchCreateCombinedPublicRecordsetsTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchCreateCombinedPublicRecordsetsTask, hcClient);
+    }
+
+    /**
+     * 批量创建公网记录集
+     *
+     * 提交批量创建公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePublicRecordsetsTaskRequest 请求对象
+     * @return BatchCreatePublicRecordsetsTaskResponse
+     */
+    public BatchCreatePublicRecordsetsTaskResponse batchCreatePublicRecordsetsTask(
+        BatchCreatePublicRecordsetsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchCreatePublicRecordsetsTask);
+    }
+
+    /**
+     * 批量创建公网记录集
+     *
+     * 提交批量创建公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePublicRecordsetsTaskRequest 请求对象
+     * @return SyncInvoker<BatchCreatePublicRecordsetsTaskRequest, BatchCreatePublicRecordsetsTaskResponse>
+     */
+    public SyncInvoker<BatchCreatePublicRecordsetsTaskRequest, BatchCreatePublicRecordsetsTaskResponse> batchCreatePublicRecordsetsTaskInvoker(
+        BatchCreatePublicRecordsetsTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchCreatePublicRecordsetsTask, hcClient);
+    }
+
+    /**
+     * 批量创建公网域名
+     *
+     * 提交批量创建公网域名任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePublicZonesTaskRequest 请求对象
+     * @return BatchCreatePublicZonesTaskResponse
+     */
+    public BatchCreatePublicZonesTaskResponse batchCreatePublicZonesTask(BatchCreatePublicZonesTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchCreatePublicZonesTask);
+    }
+
+    /**
+     * 批量创建公网域名
+     *
+     * 提交批量创建公网域名任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePublicZonesTaskRequest 请求对象
+     * @return SyncInvoker<BatchCreatePublicZonesTaskRequest, BatchCreatePublicZonesTaskResponse>
+     */
+    public SyncInvoker<BatchCreatePublicZonesTaskRequest, BatchCreatePublicZonesTaskResponse> batchCreatePublicZonesTaskInvoker(
+        BatchCreatePublicZonesTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchCreatePublicZonesTask, hcClient);
     }
 
     /**
@@ -343,37 +532,39 @@ public class DnsClient {
     }
 
     /**
-     * 批量删除域名下的记录集
+     * 批量删除公网记录集
      *
-     * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
-     * 响应结果中只包含本次实际删除的资源。
-     * 支持公网域名和内网域名。
+     * 提交批量删除公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request BatchDeleteRecordSetWithLineRequest 请求对象
-     * @return BatchDeleteRecordSetWithLineResponse
+     * @param request BatchDeletePublicRecordsetsTaskRequest 请求对象
+     * @return BatchDeletePublicRecordsetsTaskResponse
      */
-    public BatchDeleteRecordSetWithLineResponse batchDeleteRecordSetWithLine(
-        BatchDeleteRecordSetWithLineRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.batchDeleteRecordSetWithLine);
+    public BatchDeletePublicRecordsetsTaskResponse batchDeletePublicRecordsetsTask(
+        BatchDeletePublicRecordsetsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchDeletePublicRecordsetsTask);
     }
 
     /**
-     * 批量删除域名下的记录集
+     * 批量删除公网记录集
      *
-     * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
-     * 响应结果中只包含本次实际删除的资源。
-     * 支持公网域名和内网域名。
+     * 提交批量删除公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request BatchDeleteRecordSetWithLineRequest 请求对象
-     * @return SyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse>
+     * @param request BatchDeletePublicRecordsetsTaskRequest 请求对象
+     * @return SyncInvoker<BatchDeletePublicRecordsetsTaskRequest, BatchDeletePublicRecordsetsTaskResponse>
      */
-    public SyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLineInvoker(
-        BatchDeleteRecordSetWithLineRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.batchDeleteRecordSetWithLine, hcClient);
+    public SyncInvoker<BatchDeletePublicRecordsetsTaskRequest, BatchDeletePublicRecordsetsTaskResponse> batchDeletePublicRecordsetsTaskInvoker(
+        BatchDeletePublicRecordsetsTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchDeletePublicRecordsetsTask, hcClient);
     }
 
     /**
@@ -509,35 +700,75 @@ public class DnsClient {
     }
 
     /**
-     * 批量修改记录集
+     * 批量转移公网域名
      *
-     * 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
-     * 仅公网域名支持。
+     * 提交批量转移公网域名任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request BatchUpdateRecordSetWithLineRequest 请求对象
-     * @return BatchUpdateRecordSetWithLineResponse
+     * @param request BatchTransferPublicZonesTaskRequest 请求对象
+     * @return BatchTransferPublicZonesTaskResponse
      */
-    public BatchUpdateRecordSetWithLineResponse batchUpdateRecordSetWithLine(
-        BatchUpdateRecordSetWithLineRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.batchUpdateRecordSetWithLine);
+    public BatchTransferPublicZonesTaskResponse batchTransferPublicZonesTask(
+        BatchTransferPublicZonesTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchTransferPublicZonesTask);
     }
 
     /**
-     * 批量修改记录集
+     * 批量转移公网域名
      *
-     * 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
-     * 仅公网域名支持。
+     * 提交批量转移公网域名任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request BatchUpdateRecordSetWithLineRequest 请求对象
-     * @return SyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse>
+     * @param request BatchTransferPublicZonesTaskRequest 请求对象
+     * @return SyncInvoker<BatchTransferPublicZonesTaskRequest, BatchTransferPublicZonesTaskResponse>
      */
-    public SyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLineInvoker(
-        BatchUpdateRecordSetWithLineRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.batchUpdateRecordSetWithLine, hcClient);
+    public SyncInvoker<BatchTransferPublicZonesTaskRequest, BatchTransferPublicZonesTaskResponse> batchTransferPublicZonesTaskInvoker(
+        BatchTransferPublicZonesTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchTransferPublicZonesTask, hcClient);
+    }
+
+    /**
+     * 批量修改公网记录集
+     *
+     * 提交批量修改公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdatePublicRecordsetsTaskRequest 请求对象
+     * @return BatchUpdatePublicRecordsetsTaskResponse
+     */
+    public BatchUpdatePublicRecordsetsTaskResponse batchUpdatePublicRecordsetsTask(
+        BatchUpdatePublicRecordsetsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchUpdatePublicRecordsetsTask);
+    }
+
+    /**
+     * 批量修改公网记录集
+     *
+     * 提交批量修改公网记录集任务，返回任务ID。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdatePublicRecordsetsTaskRequest 请求对象
+     * @return SyncInvoker<BatchUpdatePublicRecordsetsTaskRequest, BatchUpdatePublicRecordsetsTaskResponse>
+     */
+    public SyncInvoker<BatchUpdatePublicRecordsetsTaskRequest, BatchUpdatePublicRecordsetsTaskResponse> batchUpdatePublicRecordsetsTaskInvoker(
+        BatchUpdatePublicRecordsetsTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchUpdatePublicRecordsetsTask, hcClient);
     }
 
     /**
@@ -767,33 +998,33 @@ public class DnsClient {
     }
 
     /**
-     * 批量线路创建记录集
+     * 创建解析器访问日志
      *
-     * 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+     * 创建解析器访问日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateRecordSetWithBatchLinesRequest 请求对象
-     * @return CreateRecordSetWithBatchLinesResponse
+     * @param request CreateResolverQueryLogConfigRequest 请求对象
+     * @return CreateResolverQueryLogConfigResponse
      */
-    public CreateRecordSetWithBatchLinesResponse createRecordSetWithBatchLines(
-        CreateRecordSetWithBatchLinesRequest request) {
-        return hcClient.syncInvokeHttp(request, DnsMeta.createRecordSetWithBatchLines);
+    public CreateResolverQueryLogConfigResponse createResolverQueryLogConfig(
+        CreateResolverQueryLogConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createResolverQueryLogConfig);
     }
 
     /**
-     * 批量线路创建记录集
+     * 创建解析器访问日志
      *
-     * 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+     * 创建解析器访问日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateRecordSetWithBatchLinesRequest 请求对象
-     * @return SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse>
+     * @param request CreateResolverQueryLogConfigRequest 请求对象
+     * @return SyncInvoker<CreateResolverQueryLogConfigRequest, CreateResolverQueryLogConfigResponse>
      */
-    public SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLinesInvoker(
-        CreateRecordSetWithBatchLinesRequest request) {
-        return new SyncInvoker<>(request, DnsMeta.createRecordSetWithBatchLines, hcClient);
+    public SyncInvoker<CreateResolverQueryLogConfigRequest, CreateResolverQueryLogConfigResponse> createResolverQueryLogConfigInvoker(
+        CreateResolverQueryLogConfigRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.createResolverQueryLogConfig, hcClient);
     }
 
     /**
@@ -823,6 +1054,76 @@ public class DnsClient {
     public SyncInvoker<CreateResolverRuleRequest, CreateResolverRuleResponse> createResolverRuleInvoker(
         CreateResolverRuleRequest request) {
         return new SyncInvoker<>(request, DnsMeta.createResolverRule, hcClient);
+    }
+
+    /**
+     * 创建公网域名找回
+     *
+     * 创建公网域名找回请求。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRetrievalRequest 请求对象
+     * @return CreateRetrievalResponse
+     */
+    public CreateRetrievalResponse createRetrieval(CreateRetrievalRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createRetrieval);
+    }
+
+    /**
+     * 创建公网域名找回
+     *
+     * 创建公网域名找回请求。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRetrievalRequest 请求对象
+     * @return SyncInvoker<CreateRetrievalRequest, CreateRetrievalResponse>
+     */
+    public SyncInvoker<CreateRetrievalRequest, CreateRetrievalResponse> createRetrievalInvoker(
+        CreateRetrievalRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.createRetrieval, hcClient);
+    }
+
+    /**
+     * 验证公网域名找回
+     *
+     * 验证公网域名找回。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRetrievalVerificationRequest 请求对象
+     * @return CreateRetrievalVerificationResponse
+     */
+    public CreateRetrievalVerificationResponse createRetrievalVerification(CreateRetrievalVerificationRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createRetrievalVerification);
+    }
+
+    /**
+     * 验证公网域名找回
+     *
+     * 验证公网域名找回。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRetrievalVerificationRequest 请求对象
+     * @return SyncInvoker<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse>
+     */
+    public SyncInvoker<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> createRetrievalVerificationInvoker(
+        CreateRetrievalVerificationRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.createRetrievalVerification, hcClient);
     }
 
     /**
@@ -1005,6 +1306,36 @@ public class DnsClient {
     }
 
     /**
+     * 删除解析器访问日志
+     *
+     * 删除解析器访问日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteResolverQueryLogConfigRequest 请求对象
+     * @return DeleteResolverQueryLogConfigResponse
+     */
+    public DeleteResolverQueryLogConfigResponse deleteResolverQueryLogConfig(
+        DeleteResolverQueryLogConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.deleteResolverQueryLogConfig);
+    }
+
+    /**
+     * 删除解析器访问日志
+     *
+     * 删除解析器访问日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteResolverQueryLogConfigRequest 请求对象
+     * @return SyncInvoker<DeleteResolverQueryLogConfigRequest, DeleteResolverQueryLogConfigResponse>
+     */
+    public SyncInvoker<DeleteResolverQueryLogConfigRequest, DeleteResolverQueryLogConfigResponse> deleteResolverQueryLogConfigInvoker(
+        DeleteResolverQueryLogConfigRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.deleteResolverQueryLogConfig, hcClient);
+    }
+
+    /**
      * 删除解析器转发规则
      *
      * 删除解析器转发规则。
@@ -1089,6 +1420,36 @@ public class DnsClient {
     public SyncInvoker<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse> disassociateEndpointIpaddressInvoker(
         DisassociateEndpointIpaddressRequest request) {
         return new SyncInvoker<>(request, DnsMeta.disassociateEndpointIpaddress, hcClient);
+    }
+
+    /**
+     * 解析器访问日志解关联VPC
+     *
+     * 解析器访问日志解关联VPC。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateResolverQueryLogConfigRequest 请求对象
+     * @return DisassociateResolverQueryLogConfigResponse
+     */
+    public DisassociateResolverQueryLogConfigResponse disassociateResolverQueryLogConfig(
+        DisassociateResolverQueryLogConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.disassociateResolverQueryLogConfig);
+    }
+
+    /**
+     * 解析器访问日志解关联VPC
+     *
+     * 解析器访问日志解关联VPC。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateResolverQueryLogConfigRequest 请求对象
+     * @return SyncInvoker<DisassociateResolverQueryLogConfigRequest, DisassociateResolverQueryLogConfigResponse>
+     */
+    public SyncInvoker<DisassociateResolverQueryLogConfigRequest, DisassociateResolverQueryLogConfigResponse> disassociateResolverQueryLogConfigInvoker(
+        DisassociateResolverQueryLogConfigRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.disassociateResolverQueryLogConfig, hcClient);
     }
 
     /**
@@ -1177,6 +1538,41 @@ public class DnsClient {
     public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(
         ListApiVersionsRequest request) {
         return new SyncInvoker<>(request, DnsMeta.listApiVersions, hcClient);
+    }
+
+    /**
+     * 查询批量操作任务列表
+     *
+     * 查询批量操作任务列表。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBatchOperationTasksRequest 请求对象
+     * @return ListBatchOperationTasksResponse
+     */
+    public ListBatchOperationTasksResponse listBatchOperationTasks(ListBatchOperationTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listBatchOperationTasks);
+    }
+
+    /**
+     * 查询批量操作任务列表
+     *
+     * 查询批量操作任务列表。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBatchOperationTasksRequest 请求对象
+     * @return SyncInvoker<ListBatchOperationTasksRequest, ListBatchOperationTasksResponse>
+     */
+    public SyncInvoker<ListBatchOperationTasksRequest, ListBatchOperationTasksResponse> listBatchOperationTasksInvoker(
+        ListBatchOperationTasksRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listBatchOperationTasks, hcClient);
     }
 
     /**
@@ -1417,6 +1813,35 @@ public class DnsClient {
     }
 
     /**
+     * 查询解析器访问日志列表
+     *
+     * 查询解析器访问日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResolverQueryLogConfigsRequest 请求对象
+     * @return ListResolverQueryLogConfigsResponse
+     */
+    public ListResolverQueryLogConfigsResponse listResolverQueryLogConfigs(ListResolverQueryLogConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listResolverQueryLogConfigs);
+    }
+
+    /**
+     * 查询解析器访问日志列表
+     *
+     * 查询解析器访问日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResolverQueryLogConfigsRequest 请求对象
+     * @return SyncInvoker<ListResolverQueryLogConfigsRequest, ListResolverQueryLogConfigsResponse>
+     */
+    public SyncInvoker<ListResolverQueryLogConfigsRequest, ListResolverQueryLogConfigsResponse> listResolverQueryLogConfigsInvoker(
+        ListResolverQueryLogConfigsRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listResolverQueryLogConfigs, hcClient);
+    }
+
+    /**
      * 查询解析器转发规则列表
      *
      * 查询解析器转发规则列表。
@@ -1594,6 +2019,76 @@ public class DnsClient {
     }
 
     /**
+     * 查询批量操作任务
+     *
+     * 查询批量操作任务，分页返回失败条目。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBatchOperationTaskRequest 请求对象
+     * @return ShowBatchOperationTaskResponse
+     */
+    public ShowBatchOperationTaskResponse showBatchOperationTask(ShowBatchOperationTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showBatchOperationTask);
+    }
+
+    /**
+     * 查询批量操作任务
+     *
+     * 查询批量操作任务，分页返回失败条目。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBatchOperationTaskRequest 请求对象
+     * @return SyncInvoker<ShowBatchOperationTaskRequest, ShowBatchOperationTaskResponse>
+     */
+    public SyncInvoker<ShowBatchOperationTaskRequest, ShowBatchOperationTaskResponse> showBatchOperationTaskInvoker(
+        ShowBatchOperationTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showBatchOperationTask, hcClient);
+    }
+
+    /**
+     * 查询公网域名的域名诊断
+     *
+     * 查询公网域名的域名诊断。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainDetectionRequest 请求对象
+     * @return ShowDomainDetectionResponse
+     */
+    public ShowDomainDetectionResponse showDomainDetection(ShowDomainDetectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showDomainDetection);
+    }
+
+    /**
+     * 查询公网域名的域名诊断
+     *
+     * 查询公网域名的域名诊断。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainDetectionRequest 请求对象
+     * @return SyncInvoker<ShowDomainDetectionRequest, ShowDomainDetectionResponse>
+     */
+    public SyncInvoker<ShowDomainDetectionRequest, ShowDomainDetectionResponse> showDomainDetectionInvoker(
+        ShowDomainDetectionRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showDomainDetection, hcClient);
+    }
+
+    /**
      * 查询租户配额
      *
      * 查询租户在DNS服务下的资源配额，包括公网域名配额、内网域名配额、记录集配额、反向解析配额、自定义线路配额、线路分组配额、入站终端节点配额、出站终端节点配额、转发规则配额等。
@@ -1620,6 +2115,41 @@ public class DnsClient {
     public SyncInvoker<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuotaInvoker(
         ShowDomainQuotaRequest request) {
         return new SyncInvoker<>(request, DnsMeta.showDomainQuota, hcClient);
+    }
+
+    /**
+     * 查询公网域名的邮箱域名
+     *
+     * 查询公网域名的邮箱域名。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEmailRecordSetRequest 请求对象
+     * @return ShowEmailRecordSetResponse
+     */
+    public ShowEmailRecordSetResponse showEmailRecordSet(ShowEmailRecordSetRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showEmailRecordSet);
+    }
+
+    /**
+     * 查询公网域名的邮箱域名
+     *
+     * 查询公网域名的邮箱域名。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEmailRecordSetRequest 请求对象
+     * @return SyncInvoker<ShowEmailRecordSetRequest, ShowEmailRecordSetResponse>
+     */
+    public SyncInvoker<ShowEmailRecordSetRequest, ShowEmailRecordSetResponse> showEmailRecordSetInvoker(
+        ShowEmailRecordSetRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showEmailRecordSet, hcClient);
     }
 
     /**
@@ -1807,6 +2337,35 @@ public class DnsClient {
     }
 
     /**
+     * 查询解析器访问日志
+     *
+     * 查询解析器访问日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResolverQueryLogConfigRequest 请求对象
+     * @return ShowResolverQueryLogConfigResponse
+     */
+    public ShowResolverQueryLogConfigResponse showResolverQueryLogConfig(ShowResolverQueryLogConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showResolverQueryLogConfig);
+    }
+
+    /**
+     * 查询解析器访问日志
+     *
+     * 查询解析器访问日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResolverQueryLogConfigRequest 请求对象
+     * @return SyncInvoker<ShowResolverQueryLogConfigRequest, ShowResolverQueryLogConfigResponse>
+     */
+    public SyncInvoker<ShowResolverQueryLogConfigRequest, ShowResolverQueryLogConfigResponse> showResolverQueryLogConfigInvoker(
+        ShowResolverQueryLogConfigRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showResolverQueryLogConfig, hcClient);
+    }
+
+    /**
      * 查询解析器转发规则
      *
      * 查询解析器转发规则。
@@ -1862,6 +2421,145 @@ public class DnsClient {
     public SyncInvoker<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTagInvoker(
         ShowResourceTagRequest request) {
         return new SyncInvoker<>(request, DnsMeta.showResourceTag, hcClient);
+    }
+
+    /**
+     * 查询公网域名找回
+     *
+     * 查询公网域名找回请求。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRetrievalRequest 请求对象
+     * @return ShowRetrievalResponse
+     */
+    public ShowRetrievalResponse showRetrieval(ShowRetrievalRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showRetrieval);
+    }
+
+    /**
+     * 查询公网域名找回
+     *
+     * 查询公网域名找回请求。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRetrievalRequest 请求对象
+     * @return SyncInvoker<ShowRetrievalRequest, ShowRetrievalResponse>
+     */
+    public SyncInvoker<ShowRetrievalRequest, ShowRetrievalResponse> showRetrievalInvoker(ShowRetrievalRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showRetrieval, hcClient);
+    }
+
+    /**
+     * 查询公网域名找回结果
+     *
+     * 查询公网域名找回结果。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRetrievalVerificationRequest 请求对象
+     * @return ShowRetrievalVerificationResponse
+     */
+    public ShowRetrievalVerificationResponse showRetrievalVerification(ShowRetrievalVerificationRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showRetrievalVerification);
+    }
+
+    /**
+     * 查询公网域名找回结果
+     *
+     * 查询公网域名找回结果。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRetrievalVerificationRequest 请求对象
+     * @return SyncInvoker<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse>
+     */
+    public SyncInvoker<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse> showRetrievalVerificationInvoker(
+        ShowRetrievalVerificationRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showRetrievalVerification, hcClient);
+    }
+
+    /**
+     * 查询公网域名的网站域名
+     *
+     * 查询公网域名的网站域名。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWebsiteRecordSetRequest 请求对象
+     * @return ShowWebsiteRecordSetResponse
+     */
+    public ShowWebsiteRecordSetResponse showWebsiteRecordSet(ShowWebsiteRecordSetRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showWebsiteRecordSet);
+    }
+
+    /**
+     * 查询公网域名的网站域名
+     *
+     * 查询公网域名的网站域名。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWebsiteRecordSetRequest 请求对象
+     * @return SyncInvoker<ShowWebsiteRecordSetRequest, ShowWebsiteRecordSetResponse>
+     */
+    public SyncInvoker<ShowWebsiteRecordSetRequest, ShowWebsiteRecordSetResponse> showWebsiteRecordSetInvoker(
+        ShowWebsiteRecordSetRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showWebsiteRecordSet, hcClient);
+    }
+
+    /**
+     * 查询公网域名的DNS服务器地址
+     *
+     * 查询域名当前DNS服务器地址及华为云提供的DNS服务器地址。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowZoneNameServerRequest 请求对象
+     * @return ShowZoneNameServerResponse
+     */
+    public ShowZoneNameServerResponse showZoneNameServer(ShowZoneNameServerRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showZoneNameServer);
+    }
+
+    /**
+     * 查询公网域名的DNS服务器地址
+     *
+     * 查询域名当前DNS服务器地址及华为云提供的DNS服务器地址。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowZoneNameServerRequest 请求对象
+     * @return SyncInvoker<ShowZoneNameServerRequest, ShowZoneNameServerResponse>
+     */
+    public SyncInvoker<ShowZoneNameServerRequest, ShowZoneNameServerResponse> showZoneNameServerInvoker(
+        ShowZoneNameServerRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showZoneNameServer, hcClient);
     }
 
     /**
@@ -2113,6 +2811,9 @@ public class DnsClient {
      *
      * 关闭公网域名的DNSSEC。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request DisableDnssecConfigRequest 请求对象
@@ -2126,6 +2827,9 @@ public class DnsClient {
      * 关闭DNSSEC
      *
      * 关闭公网域名的DNSSEC。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2142,6 +2846,9 @@ public class DnsClient {
      *
      * 开启公网域名的DNSSEC。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request EnableDnssecConfigRequest 请求对象
@@ -2155,6 +2862,9 @@ public class DnsClient {
      * 开启DNSSEC
      *
      * 开启公网域名的DNSSEC。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2171,6 +2881,9 @@ public class DnsClient {
      *
      * 查询公网域名的DNSSEC。
      * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request ShowDnssecConfigRequest 请求对象
@@ -2184,6 +2897,9 @@ public class DnsClient {
      * 查询DNSSEC
      *
      * 查询公网域名的DNSSEC。
+     * 
+     * **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+     * **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2314,7 +3030,7 @@ public class DnsClient {
     /**
      * 查询租户记录集列表
      *
-     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2328,7 +3044,7 @@ public class DnsClient {
     /**
      * 查询租户记录集列表
      *
-     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2514,6 +3230,101 @@ public class DnsClient {
     }
 
     /**
+     * 批量创建记录集
+     *
+     * 提交批量创建记录集任务，返回任务ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateRecordSetsTaskRequest 请求对象
+     * @return BatchCreateRecordSetsTaskResponse
+     */
+    public BatchCreateRecordSetsTaskResponse batchCreateRecordSetsTask(BatchCreateRecordSetsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchCreateRecordSetsTask);
+    }
+
+    /**
+     * 批量创建记录集
+     *
+     * 提交批量创建记录集任务，返回任务ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateRecordSetsTaskRequest 请求对象
+     * @return SyncInvoker<BatchCreateRecordSetsTaskRequest, BatchCreateRecordSetsTaskResponse>
+     */
+    public SyncInvoker<BatchCreateRecordSetsTaskRequest, BatchCreateRecordSetsTaskResponse> batchCreateRecordSetsTaskInvoker(
+        BatchCreateRecordSetsTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchCreateRecordSetsTask, hcClient);
+    }
+
+    /**
+     * 批量删除域名下的记录集
+     *
+     * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
+     * 响应结果中只包含本次实际删除的资源。
+     * 支持公网域名和内网域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteRecordSetWithLineRequest 请求对象
+     * @return BatchDeleteRecordSetWithLineResponse
+     */
+    public BatchDeleteRecordSetWithLineResponse batchDeleteRecordSetWithLine(
+        BatchDeleteRecordSetWithLineRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchDeleteRecordSetWithLine);
+    }
+
+    /**
+     * 批量删除域名下的记录集
+     *
+     * 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
+     * 响应结果中只包含本次实际删除的资源。
+     * 支持公网域名和内网域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteRecordSetWithLineRequest 请求对象
+     * @return SyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse>
+     */
+    public SyncInvoker<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLineInvoker(
+        BatchDeleteRecordSetWithLineRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchDeleteRecordSetWithLine, hcClient);
+    }
+
+    /**
+     * 批量修改记录集
+     *
+     * 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
+     * 仅公网域名支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateRecordSetWithLineRequest 请求对象
+     * @return BatchUpdateRecordSetWithLineResponse
+     */
+    public BatchUpdateRecordSetWithLineResponse batchUpdateRecordSetWithLine(
+        BatchUpdateRecordSetWithLineRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.batchUpdateRecordSetWithLine);
+    }
+
+    /**
+     * 批量修改记录集
+     *
+     * 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
+     * 仅公网域名支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateRecordSetWithLineRequest 请求对象
+     * @return SyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse>
+     */
+    public SyncInvoker<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLineInvoker(
+        BatchUpdateRecordSetWithLineRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.batchUpdateRecordSetWithLine, hcClient);
+    }
+
+    /**
      * 创建弹性公网IP的反向解析记录
      *
      * 创建弹性公网IP的反向解析记录。
@@ -2539,6 +3350,36 @@ public class DnsClient {
      */
     public SyncInvoker<CreatePtrRequest, CreatePtrResponse> createPtrInvoker(CreatePtrRequest request) {
         return new SyncInvoker<>(request, DnsMeta.createPtr, hcClient);
+    }
+
+    /**
+     * 批量线路创建记录集
+     *
+     * 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRecordSetWithBatchLinesRequest 请求对象
+     * @return CreateRecordSetWithBatchLinesResponse
+     */
+    public CreateRecordSetWithBatchLinesResponse createRecordSetWithBatchLines(
+        CreateRecordSetWithBatchLinesRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.createRecordSetWithBatchLines);
+    }
+
+    /**
+     * 批量线路创建记录集
+     *
+     * 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRecordSetWithBatchLinesRequest 请求对象
+     * @return SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse>
+     */
+    public SyncInvoker<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLinesInvoker(
+        CreateRecordSetWithBatchLinesRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.createRecordSetWithBatchLines, hcClient);
     }
 
     /**
@@ -2568,6 +3409,36 @@ public class DnsClient {
     public SyncInvoker<CreateRecordSetWithLineRequest, CreateRecordSetWithLineResponse> createRecordSetWithLineInvoker(
         CreateRecordSetWithLineRequest request) {
         return new SyncInvoker<>(request, DnsMeta.createRecordSetWithLine, hcClient);
+    }
+
+    /**
+     * 删除批量创建记录集任务
+     *
+     * 删除批量创建记录集任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBatchCreateRecordSetsTaskRequest 请求对象
+     * @return DeleteBatchCreateRecordSetsTaskResponse
+     */
+    public DeleteBatchCreateRecordSetsTaskResponse deleteBatchCreateRecordSetsTask(
+        DeleteBatchCreateRecordSetsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.deleteBatchCreateRecordSetsTask);
+    }
+
+    /**
+     * 删除批量创建记录集任务
+     *
+     * 删除批量创建记录集任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBatchCreateRecordSetsTaskRequest 请求对象
+     * @return SyncInvoker<DeleteBatchCreateRecordSetsTaskRequest, DeleteBatchCreateRecordSetsTaskResponse>
+     */
+    public SyncInvoker<DeleteBatchCreateRecordSetsTaskRequest, DeleteBatchCreateRecordSetsTaskResponse> deleteBatchCreateRecordSetsTaskInvoker(
+        DeleteBatchCreateRecordSetsTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.deleteBatchCreateRecordSetsTask, hcClient);
     }
 
     /**
@@ -2687,7 +3558,7 @@ public class DnsClient {
     /**
      * 查询租户记录集列表
      *
-     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2701,7 +3572,7 @@ public class DnsClient {
     /**
      * 查询租户记录集列表
      *
-     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2714,9 +3585,38 @@ public class DnsClient {
     }
 
     /**
+     * 查询系统线路
+     *
+     * 查询系统预置解析线路。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSystemLinesRequest 请求对象
+     * @return ListSystemLinesResponse
+     */
+    public ListSystemLinesResponse listSystemLines(ListSystemLinesRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.listSystemLines);
+    }
+
+    /**
+     * 查询系统线路
+     *
+     * 查询系统预置解析线路。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSystemLinesRequest 请求对象
+     * @return SyncInvoker<ListSystemLinesRequest, ListSystemLinesResponse>
+     */
+    public SyncInvoker<ListSystemLinesRequest, ListSystemLinesResponse> listSystemLinesInvoker(
+        ListSystemLinesRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.listSystemLines, hcClient);
+    }
+
+    /**
      * 设置记录集状态
      *
-     * 当您的内网域名创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
+     * 当您的记录集创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2730,7 +3630,7 @@ public class DnsClient {
     /**
      * 设置记录集状态
      *
-     * 当您的内网域名创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
+     * 当您的记录集创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2740,6 +3640,36 @@ public class DnsClient {
     public SyncInvoker<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> setRecordSetsStatusInvoker(
         SetRecordSetsStatusRequest request) {
         return new SyncInvoker<>(request, DnsMeta.setRecordSetsStatus, hcClient);
+    }
+
+    /**
+     * 查询批量创建记录集任务
+     *
+     * 查询批量创建记录集任务，分页返回失败条目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBatchCreateRecordSetsTaskRequest 请求对象
+     * @return ShowBatchCreateRecordSetsTaskResponse
+     */
+    public ShowBatchCreateRecordSetsTaskResponse showBatchCreateRecordSetsTask(
+        ShowBatchCreateRecordSetsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DnsMeta.showBatchCreateRecordSetsTask);
+    }
+
+    /**
+     * 查询批量创建记录集任务
+     *
+     * 查询批量创建记录集任务，分页返回失败条目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBatchCreateRecordSetsTaskRequest 请求对象
+     * @return SyncInvoker<ShowBatchCreateRecordSetsTaskRequest, ShowBatchCreateRecordSetsTaskResponse>
+     */
+    public SyncInvoker<ShowBatchCreateRecordSetsTaskRequest, ShowBatchCreateRecordSetsTaskResponse> showBatchCreateRecordSetsTaskInvoker(
+        ShowBatchCreateRecordSetsTaskRequest request) {
+        return new SyncInvoker<>(request, DnsMeta.showBatchCreateRecordSetsTask, hcClient);
     }
 
     /**
@@ -2773,7 +3703,7 @@ public class DnsClient {
     /**
      * 查询域名下的记录集列表
      *
-     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2787,7 +3717,7 @@ public class DnsClient {
     /**
      * 查询域名下的记录集列表
      *
-     * 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+     * 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -24,7 +24,7 @@ public class ExportJobRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ExportJobsReq body;
+    private ExportJobReq body;
 
     public ExportJobRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -60,14 +60,14 @@ public class ExportJobRequest {
         this.jobName = jobName;
     }
 
-    public ExportJobRequest withBody(ExportJobsReq body) {
+    public ExportJobRequest withBody(ExportJobReq body) {
         this.body = body;
         return this;
     }
 
-    public ExportJobRequest withBody(Consumer<ExportJobsReq> bodySetter) {
+    public ExportJobRequest withBody(Consumer<ExportJobReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ExportJobsReq();
+            this.body = new ExportJobReq();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class ExportJobRequest {
      * Get body
      * @return body
      */
-    public ExportJobsReq getBody() {
+    public ExportJobReq getBody() {
         return body;
     }
 
-    public void setBody(ExportJobsReq body) {
+    public void setBody(ExportJobReq body) {
         this.body = body;
     }
 

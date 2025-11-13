@@ -5118,6 +5118,18 @@ public class CodeArtsRepoMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMergeRequestEvaluationsRequest::getMergeRequestIid,
                 ListMergeRequestEvaluationsRequest::setMergeRequestIid));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestEvaluationsRequest::getOffset,
+                ListMergeRequestEvaluationsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestEvaluationsRequest::getLimit,
+                ListMergeRequestEvaluationsRequest::setLimit));
 
         // response
 
@@ -5430,6 +5442,18 @@ public class CodeArtsRepoMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMergeRequestVersionsRequest::getMergeRequestIid,
                 ListMergeRequestVersionsRequest::setMergeRequestIid));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestVersionsRequest::getOffset,
+                ListMergeRequestVersionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestVersionsRequest::getLimit,
+                ListMergeRequestVersionsRequest::setLimit));
 
         // response
 

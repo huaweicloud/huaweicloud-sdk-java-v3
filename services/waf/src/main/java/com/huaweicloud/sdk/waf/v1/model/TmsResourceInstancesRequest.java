@@ -136,7 +136,7 @@ public class TmsResourceInstancesRequest {
     }
 
     /**
-     * Get tags
+     * 标签
      * @return tags
      */
     public List<TmsResourceInstancesTag> getTags() {
@@ -169,7 +169,7 @@ public class TmsResourceInstancesRequest {
     }
 
     /**
-     * Get sysTags
+     * 系统标签
      * @return sysTags
      */
     public List<TmsResourceInstancesTag> getSysTags() {
@@ -202,7 +202,7 @@ public class TmsResourceInstancesRequest {
     }
 
     /**
-     * Get matches
+     * tms资源标签
      * @return matches
      */
     public List<TmsResourceTag> getMatches() {
@@ -252,7 +252,7 @@ public class TmsResourceInstancesRequest {
     }
 
     /**
-     * Get tagsAny
+     * 任意标签的资源筛选标识
      * @return tagsAny
      */
     public List<TmsResourceInstancesTag> getTagsAny() {
@@ -285,7 +285,7 @@ public class TmsResourceInstancesRequest {
     }
 
     /**
-     * Get notTagsAny
+     * 不标识于标签
      * @return notTagsAny
      */
     public List<TmsResourceInstancesTag> getNotTagsAny() {
@@ -318,7 +318,7 @@ public class TmsResourceInstancesRequest {
     }
 
     /**
-     * Get notTags
+     * 不标识于标签
      * @return notTags
      */
     public List<TmsResourceInstancesTag> getNotTags() {

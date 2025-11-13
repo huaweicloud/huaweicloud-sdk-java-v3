@@ -355,6 +355,11 @@ public class CreateSmartChatRoomReq {
     private Integer exitMuteThreshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_semantic_action")
+
+    private Boolean enableSemanticAction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chat_resource_config")
 
     private List<ChatResourceConfig> chatResourceConfig = null;
@@ -748,6 +753,23 @@ public class CreateSmartChatRoomReq {
         this.exitMuteThreshold = exitMuteThreshold;
     }
 
+    public CreateSmartChatRoomReq withEnableSemanticAction(Boolean enableSemanticAction) {
+        this.enableSemanticAction = enableSemanticAction;
+        return this;
+    }
+
+    /**
+     * 是否优先级加载模型资产
+     * @return enableSemanticAction
+     */
+    public Boolean getEnableSemanticAction() {
+        return enableSemanticAction;
+    }
+
+    public void setEnableSemanticAction(Boolean enableSemanticAction) {
+        this.enableSemanticAction = enableSemanticAction;
+    }
+
     public CreateSmartChatRoomReq withChatResourceConfig(List<ChatResourceConfig> chatResourceConfig) {
         this.chatResourceConfig = chatResourceConfig;
         return this;
@@ -806,6 +828,7 @@ public class CreateSmartChatRoomReq {
             && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig)
             && Objects.equals(this.chatVideoType, that.chatVideoType)
             && Objects.equals(this.exitMuteThreshold, that.exitMuteThreshold)
+            && Objects.equals(this.enableSemanticAction, that.enableSemanticAction)
             && Objects.equals(this.chatResourceConfig, that.chatResourceConfig);
     }
 
@@ -829,6 +852,7 @@ public class CreateSmartChatRoomReq {
             chatSubtitleConfig,
             chatVideoType,
             exitMuteThreshold,
+            enableSemanticAction,
             chatResourceConfig);
     }
 
@@ -854,6 +878,7 @@ public class CreateSmartChatRoomReq {
         sb.append("    chatSubtitleConfig: ").append(toIndentedString(chatSubtitleConfig)).append("\n");
         sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
         sb.append("    exitMuteThreshold: ").append(toIndentedString(exitMuteThreshold)).append("\n");
+        sb.append("    enableSemanticAction: ").append(toIndentedString(enableSemanticAction)).append("\n");
         sb.append("    chatResourceConfig: ").append(toIndentedString(chatResourceConfig)).append("\n");
         sb.append("}");
         return sb.toString();

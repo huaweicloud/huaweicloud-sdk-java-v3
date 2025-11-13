@@ -17,10 +17,20 @@ import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafResponse;
+import com.huaweicloud.sdk.waf.v1.model.CheckAgencyRequest;
+import com.huaweicloud.sdk.waf.v1.model.CheckAgencyResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmApplicationTypesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmApplicationTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmAsyncJobRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmAsyncJobResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmIpReputationRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyAntileakageMapRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyAntileakageMapResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyIpReputationMapRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmPolicyIpReputationMapResponse;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmProtectionTypesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ConfirmProtectionTypesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmThreatMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmTmsResourceInstancesRequest;
@@ -64,6 +74,9 @@ import com.huaweicloud.sdk.waf.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpGroupRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyResponse;
@@ -195,6 +208,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListRequestTimelineResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListResponseCodeTimelineResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportHistoryPeriodsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportHistoryPeriodsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsRequest;
@@ -268,12 +283,16 @@ import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPunishmentRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportContentRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportContentResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportSubscriptionRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowSecurityReportSubscriptionResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSourceIpRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowSourceIpResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowSubscriptionInfoRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowSubscriptionInfoResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowValueListResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowWebProtectionRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowWebProtectionRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowWhiteBlackIpRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.StatisticsTimelineItem;
@@ -453,6 +472,23 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckAgencyRequest, CheckAgencyResponse> checkAgency = genForCheckAgency();
+
+    private static HttpRequestDef<CheckAgencyRequest, CheckAgencyResponse> genForCheckAgency() {
+        // basic
+        HttpRequestDef.Builder<CheckAgencyRequest, CheckAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckAgencyRequest.class, CheckAgencyResponse.class)
+                .withName("CheckAgency")
+                .withUri("/v1/{project_id}/premium-waf/agency")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ConfirmApplicationTypesRequest, ConfirmApplicationTypesResponse> confirmApplicationTypes =
         genForConfirmApplicationTypes();
 
@@ -505,6 +541,124 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmAsyncJobRequest::getEnterpriseProjectId,
                 ConfirmAsyncJobRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmIpReputationRuleRequest, ConfirmIpReputationRuleResponse> confirmIpReputationRule =
+        genForConfirmIpReputationRule();
+
+    private static HttpRequestDef<ConfirmIpReputationRuleRequest, ConfirmIpReputationRuleResponse> genForConfirmIpReputationRule() {
+        // basic
+        HttpRequestDef.Builder<ConfirmIpReputationRuleRequest, ConfirmIpReputationRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ConfirmIpReputationRuleRequest.class, ConfirmIpReputationRuleResponse.class)
+            .withName("ConfirmIpReputationRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ip-reputation/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmIpReputationRuleRequest::getPolicyId,
+                ConfirmIpReputationRuleRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmIpReputationRuleRequest::getRuleId,
+                ConfirmIpReputationRuleRequest::setRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmPolicyAntileakageMapRequest, ConfirmPolicyAntileakageMapResponse> confirmPolicyAntileakageMap =
+        genForConfirmPolicyAntileakageMap();
+
+    private static HttpRequestDef<ConfirmPolicyAntileakageMapRequest, ConfirmPolicyAntileakageMapResponse> genForConfirmPolicyAntileakageMap() {
+        // basic
+        HttpRequestDef.Builder<ConfirmPolicyAntileakageMapRequest, ConfirmPolicyAntileakageMapResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ConfirmPolicyAntileakageMapRequest.class,
+                    ConfirmPolicyAntileakageMapResponse.class)
+                .withName("ConfirmPolicyAntileakageMap")
+                .withUri("/v1/{project_id}/waf/tag/antileakage/map")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("lang",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmPolicyAntileakageMapRequest::getLang,
+                ConfirmPolicyAntileakageMapRequest::setLang));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmPolicyIpReputationMapRequest, ConfirmPolicyIpReputationMapResponse> confirmPolicyIpReputationMap =
+        genForConfirmPolicyIpReputationMap();
+
+    private static HttpRequestDef<ConfirmPolicyIpReputationMapRequest, ConfirmPolicyIpReputationMapResponse> genForConfirmPolicyIpReputationMap() {
+        // basic
+        HttpRequestDef.Builder<ConfirmPolicyIpReputationMapRequest, ConfirmPolicyIpReputationMapResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ConfirmPolicyIpReputationMapRequest.class,
+                    ConfirmPolicyIpReputationMapResponse.class)
+                .withName("ConfirmPolicyIpReputationMap")
+                .withUri("/v1/{project_id}/waf/tag/ip-reputation/map")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("lang",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmPolicyIpReputationMapRequest::getLang,
+                ConfirmPolicyIpReputationMapRequest::setLang));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmPolicyIpReputationMapRequest::getType,
+                ConfirmPolicyIpReputationMapRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmProtectionTypesRequest, ConfirmProtectionTypesResponse> confirmProtectionTypes =
+        genForConfirmProtectionTypes();
+
+    private static HttpRequestDef<ConfirmProtectionTypesRequest, ConfirmProtectionTypesResponse> genForConfirmProtectionTypes() {
+        // basic
+        HttpRequestDef.Builder<ConfirmProtectionTypesRequest, ConfirmProtectionTypesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ConfirmProtectionTypesRequest.class, ConfirmProtectionTypesResponse.class)
+            .withName("ConfirmProtectionTypes")
+            .withUri("/v1/{project_id}/waf/rules/protection-types")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ConfirmProtectionTypesRequest::getOffset, ConfirmProtectionTypesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ConfirmProtectionTypesRequest::getLimit, ConfirmProtectionTypesRequest::setLimit));
 
         // response
 
@@ -973,6 +1127,41 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateIpGroupRequestBody.class),
             f -> f.withMarshaller(CreateIpGroupRequest::getBody, CreateIpGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateIpReputationRuleRequest, CreateIpReputationRuleResponse> createIpReputationRule =
+        genForCreateIpReputationRule();
+
+    private static HttpRequestDef<CreateIpReputationRuleRequest, CreateIpReputationRuleResponse> genForCreateIpReputationRule() {
+        // basic
+        HttpRequestDef.Builder<CreateIpReputationRuleRequest, CreateIpReputationRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateIpReputationRuleRequest.class, CreateIpReputationRuleResponse.class)
+            .withName("CreateIpReputationRule")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ip-reputation")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIpReputationRuleRequest::getPolicyId,
+                CreateIpReputationRuleRequest::setPolicyId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateIpReputationRuleRequest::getEnterpriseProjectId,
+                CreateIpReputationRuleRequest::setEnterpriseProjectId));
+        builder.<CreateIpReputationRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateIpReputationRuleRequestBody.class),
+            f -> f.withMarshaller(CreateIpReputationRuleRequest::getBody, CreateIpReputationRuleRequest::setBody));
 
         // response
 
@@ -3382,6 +3571,45 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityReportHistoryPeriodsRequest, ListSecurityReportHistoryPeriodsResponse> listSecurityReportHistoryPeriods =
+        genForListSecurityReportHistoryPeriods();
+
+    private static HttpRequestDef<ListSecurityReportHistoryPeriodsRequest, ListSecurityReportHistoryPeriodsResponse> genForListSecurityReportHistoryPeriods() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityReportHistoryPeriodsRequest, ListSecurityReportHistoryPeriodsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityReportHistoryPeriodsRequest.class,
+                    ListSecurityReportHistoryPeriodsResponse.class)
+                .withName("ListSecurityReportHistoryPeriods")
+                .withUri("/v1/{project_id}/waf/security-report/history-periods")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityReportHistoryPeriodsRequest::getSubscriptionId,
+                ListSecurityReportHistoryPeriodsRequest::setSubscriptionId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityReportHistoryPeriodsRequest::getLimit,
+                ListSecurityReportHistoryPeriodsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityReportHistoryPeriodsRequest::getOffset,
+                ListSecurityReportHistoryPeriodsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityReportSendingRecordsRequest, ListSecurityReportSendingRecordsResponse> listSecurityReportSendingRecords =
         genForListSecurityReportSendingRecords();
 
@@ -4673,6 +4901,33 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecurityReportSubscriptionRequest, ShowSecurityReportSubscriptionResponse> showSecurityReportSubscription =
+        genForShowSecurityReportSubscription();
+
+    private static HttpRequestDef<ShowSecurityReportSubscriptionRequest, ShowSecurityReportSubscriptionResponse> genForShowSecurityReportSubscription() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityReportSubscriptionRequest, ShowSecurityReportSubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityReportSubscriptionRequest.class,
+                    ShowSecurityReportSubscriptionResponse.class)
+                .withName("ShowSecurityReportSubscription")
+                .withUri("/v1/{project_id}/waf/security-report/subscriptions/{subscription_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityReportSubscriptionRequest::getSubscriptionId,
+                ShowSecurityReportSubscriptionRequest::setSubscriptionId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSourceIpRequest, ShowSourceIpResponse> showSourceIp = genForShowSourceIp();
 
     private static HttpRequestDef<ShowSourceIpRequest, ShowSourceIpResponse> genForShowSourceIp() {
@@ -5760,6 +6015,35 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWhiteBlackIpRuleRequestBody.class),
             f -> f.withMarshaller(UpdateWhiteblackipRuleRequest::getBody, UpdateWhiteblackipRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWebProtectionRuleRequest, ShowWebProtectionRuleResponse> showWebProtectionRule =
+        genForShowWebProtectionRule();
+
+    private static HttpRequestDef<ShowWebProtectionRuleRequest, ShowWebProtectionRuleResponse> genForShowWebProtectionRule() {
+        // basic
+        HttpRequestDef.Builder<ShowWebProtectionRuleRequest, ShowWebProtectionRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWebProtectionRuleRequest.class, ShowWebProtectionRuleResponse.class)
+            .withName("ShowWebProtectionRule")
+            .withUri("/v1/{project_id}/waf/web-protection-rules/{rule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWebProtectionRuleRequest::getRuleId, ShowWebProtectionRuleRequest::setRuleId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWebProtectionRuleRequest::getXLanguage,
+                ShowWebProtectionRuleRequest::setXLanguage));
 
         // response
 

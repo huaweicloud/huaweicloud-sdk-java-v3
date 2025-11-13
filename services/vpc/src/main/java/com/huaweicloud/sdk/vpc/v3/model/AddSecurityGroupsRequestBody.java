@@ -16,6 +16,11 @@ public class AddSecurityGroupsRequestBody {
 
     private InsertSecurityGroupOption port;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dry_run")
+
+    private Boolean dryRun;
+
     public AddSecurityGroupsRequestBody withPort(InsertSecurityGroupOption port) {
         this.port = port;
         return this;
@@ -42,6 +47,23 @@ public class AddSecurityGroupsRequestBody {
         this.port = port;
     }
 
+    public AddSecurityGroupsRequestBody withDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否只预检此次请求 取值范围： -true：发送检查请求，不会执行端口插入安全组。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回响应码202。 -false（默认值）：发送正常请求，并直接执行端口插入安全组。
+     * @return dryRun
+     */
+    public Boolean getDryRun() {
+        return dryRun;
+    }
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -51,12 +73,12 @@ public class AddSecurityGroupsRequestBody {
             return false;
         }
         AddSecurityGroupsRequestBody that = (AddSecurityGroupsRequestBody) obj;
-        return Objects.equals(this.port, that.port);
+        return Objects.equals(this.port, that.port) && Objects.equals(this.dryRun, that.dryRun);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(port);
+        return Objects.hash(port, dryRun);
     }
 
     @Override
@@ -64,6 +86,7 @@ public class AddSecurityGroupsRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddSecurityGroupsRequestBody {\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
         sb.append("}");
         return sb.toString();
     }

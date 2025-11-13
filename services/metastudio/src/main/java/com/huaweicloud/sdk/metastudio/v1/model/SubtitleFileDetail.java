@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SubtitleFileDetail
@@ -116,6 +117,11 @@ public class SubtitleFileDetail {
 
     private String generateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorResponse errorInfo;
+
     public SubtitleFileDetail withSequenceNo(Integer sequenceNo) {
         this.sequenceNo = sequenceNo;
         return this;
@@ -203,6 +209,32 @@ public class SubtitleFileDetail {
         this.generateTime = generateTime;
     }
 
+    public SubtitleFileDetail withErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public SubtitleFileDetail withErrorInfo(Consumer<ErrorResponse> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorResponse();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorResponse getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -216,13 +248,17 @@ public class SubtitleFileDetail {
             && Objects.equals(this.subtitleFileState, that.subtitleFileState)
             && Objects.equals(this.subtitleFileDownloadUrl, that.subtitleFileDownloadUrl)
             && Objects.equals(this.subtitleFileUploadUrl, that.subtitleFileUploadUrl)
-            && Objects.equals(this.generateTime, that.generateTime);
+            && Objects.equals(this.generateTime, that.generateTime) && Objects.equals(this.errorInfo, that.errorInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(sequenceNo, subtitleFileState, subtitleFileDownloadUrl, subtitleFileUploadUrl, generateTime);
+        return Objects.hash(sequenceNo,
+            subtitleFileState,
+            subtitleFileDownloadUrl,
+            subtitleFileUploadUrl,
+            generateTime,
+            errorInfo);
     }
 
     @Override
@@ -234,6 +270,7 @@ public class SubtitleFileDetail {
         sb.append("    subtitleFileDownloadUrl: ").append(toIndentedString(subtitleFileDownloadUrl)).append("\n");
         sb.append("    subtitleFileUploadUrl: ").append(toIndentedString(subtitleFileUploadUrl)).append("\n");
         sb.append("    generateTime: ").append(toIndentedString(generateTime)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

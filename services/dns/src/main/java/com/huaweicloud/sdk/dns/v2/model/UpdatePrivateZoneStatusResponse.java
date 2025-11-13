@@ -163,7 +163,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 域名类型。 **取值范围：** public：公网域名。
+     * **参数解释：** 域名类型。 **取值范围：** private：内网域名。
      * @return zoneType
      */
     public String getZoneType() {
@@ -214,7 +214,7 @@ public class UpdatePrivateZoneStatusResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 公网域名状态。 **取值范围：** - ACTIVE：正常 - DISABLE：暂停
+     * **参数解释：** 内网域名状态。 **取值范围：** - ACTIVE：正常 - DISABLE：暂停
      * @return status
      */
     public String getStatus() {

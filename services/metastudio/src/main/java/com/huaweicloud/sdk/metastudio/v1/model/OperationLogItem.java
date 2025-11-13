@@ -73,7 +73,7 @@ public class OperationLogItem {
     }
 
     /**
-     * 操作者,USER(用户),ADMIN(管理员),SYSTEM(用户)
+     * 操作者,USER(用户),ADMIN(管理员),SYSTEM(系统用户)
      * @return operator
      */
     public String getOperator() {

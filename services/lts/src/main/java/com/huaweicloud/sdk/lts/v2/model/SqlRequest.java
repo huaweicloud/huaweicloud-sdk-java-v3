@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SqlRequest
@@ -39,11 +40,6 @@ public class SqlRequest {
     @JsonProperty(value = "sql")
 
     private String sql;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sql_request_title")
-
-    private String sqlRequestTitle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "search_time_range")
@@ -124,6 +120,16 @@ public class SqlRequest {
     @JsonProperty(value = "search_time_range_unit")
 
     private SearchTimeRangeUnitEnum searchTimeRangeUnit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_date")
+
+    private CustomDate customDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_time_range_relative")
+
+    private Boolean isTimeRangeRelative;
 
     public SqlRequest withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
@@ -210,23 +216,6 @@ public class SqlRequest {
         this.sql = sql;
     }
 
-    public SqlRequest withSqlRequestTitle(String sqlRequestTitle) {
-        this.sqlRequestTitle = sqlRequestTitle;
-        return this;
-    }
-
-    /**
-     * 图表名称
-     * @return sqlRequestTitle
-     */
-    public String getSqlRequestTitle() {
-        return sqlRequestTitle;
-    }
-
-    public void setSqlRequestTitle(String sqlRequestTitle) {
-        this.sqlRequestTitle = sqlRequestTitle;
-    }
-
     public SqlRequest withSearchTimeRange(Integer searchTimeRange) {
         this.searchTimeRange = searchTimeRange;
         return this;
@@ -263,6 +252,49 @@ public class SqlRequest {
         this.searchTimeRangeUnit = searchTimeRangeUnit;
     }
 
+    public SqlRequest withCustomDate(CustomDate customDate) {
+        this.customDate = customDate;
+        return this;
+    }
+
+    public SqlRequest withCustomDate(Consumer<CustomDate> customDateSetter) {
+        if (this.customDate == null) {
+            this.customDate = new CustomDate();
+            customDateSetter.accept(this.customDate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customDate
+     * @return customDate
+     */
+    public CustomDate getCustomDate() {
+        return customDate;
+    }
+
+    public void setCustomDate(CustomDate customDate) {
+        this.customDate = customDate;
+    }
+
+    public SqlRequest withIsTimeRangeRelative(Boolean isTimeRangeRelative) {
+        this.isTimeRangeRelative = isTimeRangeRelative;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警查询日志的时间区间为相对时间还是整点时间。（暂不开放，后续aom上线该功能后一起开放） **约束限制：** 不涉及。 **取值范围：** - true: 相对时间。 - false: 整点时间。 **默认取值：** true
+     * @return isTimeRangeRelative
+     */
+    public Boolean getIsTimeRangeRelative() {
+        return isTimeRangeRelative;
+    }
+
+    public void setIsTimeRangeRelative(Boolean isTimeRangeRelative) {
+        this.isTimeRangeRelative = isTimeRangeRelative;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -275,9 +307,10 @@ public class SqlRequest {
         return Objects.equals(this.logStreamId, that.logStreamId)
             && Objects.equals(this.logStreamName, that.logStreamName)
             && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
-            && Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlRequestTitle, that.sqlRequestTitle)
-            && Objects.equals(this.searchTimeRange, that.searchTimeRange)
-            && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit);
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.searchTimeRange, that.searchTimeRange)
+            && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit)
+            && Objects.equals(this.customDate, that.customDate)
+            && Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative);
     }
 
     @Override
@@ -287,9 +320,10 @@ public class SqlRequest {
             logGroupId,
             logGroupName,
             sql,
-            sqlRequestTitle,
             searchTimeRange,
-            searchTimeRangeUnit);
+            searchTimeRangeUnit,
+            customDate,
+            isTimeRangeRelative);
     }
 
     @Override
@@ -301,9 +335,10 @@ public class SqlRequest {
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
         sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
-        sb.append("    sqlRequestTitle: ").append(toIndentedString(sqlRequestTitle)).append("\n");
         sb.append("    searchTimeRange: ").append(toIndentedString(searchTimeRange)).append("\n");
         sb.append("    searchTimeRangeUnit: ").append(toIndentedString(searchTimeRangeUnit)).append("\n");
+        sb.append("    customDate: ").append(toIndentedString(customDate)).append("\n");
+        sb.append("    isTimeRangeRelative: ").append(toIndentedString(isTimeRangeRelative)).append("\n");
         sb.append("}");
         return sb.toString();
     }

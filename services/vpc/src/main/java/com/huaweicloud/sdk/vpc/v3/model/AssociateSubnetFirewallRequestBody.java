@@ -18,6 +18,11 @@ public class AssociateSubnetFirewallRequestBody {
 
     private List<FirewallAssociation> subnets = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dry_run")
+
+    private Boolean dryRun;
+
     public AssociateSubnetFirewallRequestBody withSubnets(List<FirewallAssociation> subnets) {
         this.subnets = subnets;
         return this;
@@ -51,6 +56,23 @@ public class AssociateSubnetFirewallRequestBody {
         this.subnets = subnets;
     }
 
+    public AssociateSubnetFirewallRequestBody withDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否只预检此次请求 取值范围： -true：发送检查请求，不会执行网络ACL绑定子网。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回响应码202。 -false（默认值）：发送正常请求，并直接执行网络ACL绑定子网。
+     * @return dryRun
+     */
+    public Boolean getDryRun() {
+        return dryRun;
+    }
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +82,12 @@ public class AssociateSubnetFirewallRequestBody {
             return false;
         }
         AssociateSubnetFirewallRequestBody that = (AssociateSubnetFirewallRequestBody) obj;
-        return Objects.equals(this.subnets, that.subnets);
+        return Objects.equals(this.subnets, that.subnets) && Objects.equals(this.dryRun, that.dryRun);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnets);
+        return Objects.hash(subnets, dryRun);
     }
 
     @Override
@@ -73,6 +95,7 @@ public class AssociateSubnetFirewallRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class AssociateSubnetFirewallRequestBody {\n");
         sb.append("    subnets: ").append(toIndentedString(subnets)).append("\n");
+        sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
         sb.append("}");
         return sb.toString();
     }

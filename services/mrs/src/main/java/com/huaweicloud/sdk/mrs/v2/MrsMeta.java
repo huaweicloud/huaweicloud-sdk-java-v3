@@ -43,6 +43,12 @@ import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListNodesRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListNodesResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSecurityRuleStatusRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSecurityRuleStatusResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncRequirementsRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncRequirementsResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncStatusRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncStatusResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ModifyDefaultTagsRequestBody;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowCommand;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
@@ -687,6 +693,30 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityRuleStatusRequest, ListSecurityRuleStatusResponse> listSecurityRuleStatus =
+        genForListSecurityRuleStatus();
+
+    private static HttpRequestDef<ListSecurityRuleStatusRequest, ListSecurityRuleStatusResponse> genForListSecurityRuleStatus() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityRuleStatusRequest, ListSecurityRuleStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSecurityRuleStatusRequest.class, ListSecurityRuleStatusResponse.class)
+            .withName("ListSecurityRuleStatus")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/security-rule/status")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityRuleStatusRequest::getClusterId,
+                ListSecurityRuleStatusRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShrinkClusterRequest, ShrinkClusterResponse> shrinkCluster =
         genForShrinkCluster();
 
@@ -910,6 +940,53 @@ public class MrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CancelSyncRequest.class),
             f -> f.withMarshaller(CancelSyncIamUserRequest::getBody, CancelSyncIamUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSyncRequirementsRequest, ListSyncRequirementsResponse> listSyncRequirements =
+        genForListSyncRequirements();
+
+    private static HttpRequestDef<ListSyncRequirementsRequest, ListSyncRequirementsResponse> genForListSyncRequirements() {
+        // basic
+        HttpRequestDef.Builder<ListSyncRequirementsRequest, ListSyncRequirementsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSyncRequirementsRequest.class, ListSyncRequirementsResponse.class)
+            .withName("ListSyncRequirements")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/iam-sync/is-synchronous")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSyncRequirementsRequest::getClusterId,
+                ListSyncRequirementsRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSyncStatusRequest, ListSyncStatusResponse> listSyncStatus =
+        genForListSyncStatus();
+
+    private static HttpRequestDef<ListSyncStatusRequest, ListSyncStatusResponse> genForListSyncStatus() {
+        // basic
+        HttpRequestDef.Builder<ListSyncStatusRequest, ListSyncStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSyncStatusRequest.class, ListSyncStatusResponse.class)
+                .withName("ListSyncStatus")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/iam-sync")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSyncStatusRequest::getClusterId, ListSyncStatusRequest::setClusterId));
 
         // response
 

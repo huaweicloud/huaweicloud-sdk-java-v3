@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ProxyFlavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
     private String specCode;
@@ -39,6 +44,23 @@ public class ProxyFlavor {
     @JsonProperty(value = "supported_ipv6")
 
     private Boolean supportedIpv6;
+
+    public ProxyFlavor withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  规格ID。  **取值范围**：  不涉及。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public ProxyFlavor withSpecCode(String specCode) {
         this.specCode = specCode;
@@ -151,20 +173,22 @@ public class ProxyFlavor {
             return false;
         }
         ProxyFlavor that = (ProxyFlavor) obj;
-        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.vcpus, that.vcpus)
-            && Objects.equals(this.ram, that.ram) && Objects.equals(this.dbType, that.dbType)
-            && Objects.equals(this.azStatus, that.azStatus) && Objects.equals(this.supportedIpv6, that.supportedIpv6);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.dbType, that.dbType) && Objects.equals(this.azStatus, that.azStatus)
+            && Objects.equals(this.supportedIpv6, that.supportedIpv6);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specCode, vcpus, ram, dbType, azStatus, supportedIpv6);
+        return Objects.hash(id, specCode, vcpus, ram, dbType, azStatus, supportedIpv6);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ProxyFlavor {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");

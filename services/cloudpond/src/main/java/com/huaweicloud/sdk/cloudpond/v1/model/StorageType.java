@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 存储类型。 - SAS：高IO - SSD：超高IO - SAS_SD：高IO(软件定义型专用) - SSD_SD：超高IO(软件定义型专用) - SAS_ARM：高IO（鲲鹏） - SSD_ARM：超高IO（鲲鹏） [- VS_SMALL_CAP：视图存储-小容量型](tag:cmcc) [- VS_MEDIUM_CAP：视图存储-中容量型](tag:cmcc) [- VS_LARGE_CAP：视图存储-大容量型](tag:cmcc)
+ * 存储类型。 - SAS：高IO - SSD：超高IO - SAS_SD：高IO(软件定义型专用) - SSD_SD：超高IO(软件定义型专用) - SAS_ARM：高IO（鲲鹏） - SSD_ARM：超高IO（鲲鹏） [- VS_SMALL_CAP：视图存储-小容量型](tag:cmcc) [- VS_MEDIUM_CAP：视图存储-中容量型](tag:cmcc) [- VS_LARGE_CAP：视图存储-大容量型](tag:cmcc) [- VS_SMALL_CAP：边缘对象存储-小容量型](tag:hws) [- VS_MEDIUM_CAP：边缘对象存储-中容量型](tag:hws) [- VS_LARGE_CAP：边缘对象存储-大容量型](tag:hws) [- CBR_STANDARD_SMALL_CAP:云备份(基础版)-小容量型](tag:hws) [- CBR_STANDARD_MEDIUM_CAP:云备份(基础版)-中容量型](tag:hws) [- CBR_STANDARD_LARGE_CAP:云备份(基础版)-大容量型](tag:hws) [- CBR_PROFESSIONAL_SMALL_CAP:云备份(专业版)-小容量型](tag:hws) [- CBR_PROFESSIONAL_MEDIUM_CAP:云备份(专业版)-中容量型](tag:hws) [- CBR_PROFESSIONAL_LARGE_CAP:云备份(专业版)-大容量型](tag:hws)
  */
 public class StorageType {
 
@@ -57,6 +57,36 @@ public class StorageType {
      */
     public static final StorageType VS_LARGE_CAP = new StorageType("VS_LARGE_CAP");
 
+    /**
+     * Enum CBR_STANDARD_SMALL_CAP for value: "CBR_STANDARD_SMALL_CAP"
+     */
+    public static final StorageType CBR_STANDARD_SMALL_CAP = new StorageType("CBR_STANDARD_SMALL_CAP");
+
+    /**
+     * Enum CBR_STANDARD_MEDIUM_CAP for value: "CBR_STANDARD_MEDIUM_CAP"
+     */
+    public static final StorageType CBR_STANDARD_MEDIUM_CAP = new StorageType("CBR_STANDARD_MEDIUM_CAP");
+
+    /**
+     * Enum CBR_STANDARD_LARGE_CAP for value: "CBR_STANDARD_LARGE_CAP"
+     */
+    public static final StorageType CBR_STANDARD_LARGE_CAP = new StorageType("CBR_STANDARD_LARGE_CAP");
+
+    /**
+     * Enum CBR_PROFESSIONAL_SMALL_CAP for value: "CBR_PROFESSIONAL_SMALL_CAP"
+     */
+    public static final StorageType CBR_PROFESSIONAL_SMALL_CAP = new StorageType("CBR_PROFESSIONAL_SMALL_CAP");
+
+    /**
+     * Enum CBR_PROFESSIONAL_MEDIUM_CAP for value: "CBR_PROFESSIONAL_MEDIUM_CAP"
+     */
+    public static final StorageType CBR_PROFESSIONAL_MEDIUM_CAP = new StorageType("CBR_PROFESSIONAL_MEDIUM_CAP");
+
+    /**
+     * Enum CBR_PROFESSIONAL_LARGE_CAP for value: "CBR_PROFESSIONAL_LARGE_CAP"
+     */
+    public static final StorageType CBR_PROFESSIONAL_LARGE_CAP = new StorageType("CBR_PROFESSIONAL_LARGE_CAP");
+
     private static final Map<String, StorageType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, StorageType> createStaticFields() {
@@ -70,6 +100,12 @@ public class StorageType {
         map.put("VS_SMALL_CAP", VS_SMALL_CAP);
         map.put("VS_MEDIUM_CAP", VS_MEDIUM_CAP);
         map.put("VS_LARGE_CAP", VS_LARGE_CAP);
+        map.put("CBR_STANDARD_SMALL_CAP", CBR_STANDARD_SMALL_CAP);
+        map.put("CBR_STANDARD_MEDIUM_CAP", CBR_STANDARD_MEDIUM_CAP);
+        map.put("CBR_STANDARD_LARGE_CAP", CBR_STANDARD_LARGE_CAP);
+        map.put("CBR_PROFESSIONAL_SMALL_CAP", CBR_PROFESSIONAL_SMALL_CAP);
+        map.put("CBR_PROFESSIONAL_MEDIUM_CAP", CBR_PROFESSIONAL_MEDIUM_CAP);
+        map.put("CBR_PROFESSIONAL_LARGE_CAP", CBR_PROFESSIONAL_LARGE_CAP);
         return Collections.unmodifiableMap(map);
     }
 

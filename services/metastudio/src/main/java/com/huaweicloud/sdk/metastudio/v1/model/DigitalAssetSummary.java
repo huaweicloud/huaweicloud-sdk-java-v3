@@ -278,6 +278,11 @@ public class DigitalAssetSummary {
     private AssetTypeEnum assetType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_reason_code")
+
+    private String blockReasonCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_url")
 
     private String coverUrl;
@@ -355,6 +360,23 @@ public class DigitalAssetSummary {
         this.assetType = assetType;
     }
 
+    public DigitalAssetSummary withBlockReasonCode(String blockReasonCode) {
+        this.blockReasonCode = blockReasonCode;
+        return this;
+    }
+
+    /**
+     * 冻结原因编号。
+     * @return blockReasonCode
+     */
+    public String getBlockReasonCode() {
+        return blockReasonCode;
+    }
+
+    public void setBlockReasonCode(String blockReasonCode) {
+        this.blockReasonCode = blockReasonCode;
+    }
+
     public DigitalAssetSummary withCoverUrl(String coverUrl) {
         this.coverUrl = coverUrl;
         return this;
@@ -400,12 +422,13 @@ public class DigitalAssetSummary {
         DigitalAssetSummary that = (DigitalAssetSummary) obj;
         return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetName, that.assetName)
             && Objects.equals(this.assetState, that.assetState) && Objects.equals(this.assetType, that.assetType)
+            && Objects.equals(this.blockReasonCode, that.blockReasonCode)
             && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.thumbnailUrl, that.thumbnailUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, assetName, assetState, assetType, coverUrl, thumbnailUrl);
+        return Objects.hash(assetId, assetName, assetState, assetType, blockReasonCode, coverUrl, thumbnailUrl);
     }
 
     @Override
@@ -416,6 +439,7 @@ public class DigitalAssetSummary {
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
+        sb.append("    blockReasonCode: ").append(toIndentedString(blockReasonCode)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
         sb.append("    thumbnailUrl: ").append(toIndentedString(thumbnailUrl)).append("\n");
         sb.append("}");

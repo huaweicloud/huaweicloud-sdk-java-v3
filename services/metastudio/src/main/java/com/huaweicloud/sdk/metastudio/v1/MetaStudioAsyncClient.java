@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CheckRecallKnowledgeLibraryReques
 import com.huaweicloud.sdk.metastudio.v1.model.CheckRecallKnowledgeLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CheckVoiceAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CheckVoiceAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CommitShortJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CommitShortJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
@@ -41,6 +43,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoReque
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAudioRecordConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAudioRecordConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogReportConfigRequest;
@@ -69,6 +73,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateIntentAndQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractiveChatRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractiveChatResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateKnowledgeIntentRequest;
@@ -111,6 +117,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRoleRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateRoleResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateShortJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateShortJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomRequest;
@@ -123,6 +131,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingBasicJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingBasicJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingMiddleJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingMiddleJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingThirdPartyJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingThirdPartyJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
@@ -145,6 +155,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAudioRecordConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAudioRecordConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
@@ -163,6 +175,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteInstructionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeIntentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeLibraryRequest;
@@ -245,12 +259,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInsertCommandsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInsertCommandsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionLibraryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsSummaryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentRequest;
@@ -351,12 +369,16 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAudioRecordConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAudioRecordConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDocumentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDocumentInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowEncryptFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowEncryptFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotWordsRequest;
@@ -367,6 +389,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionLibraryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionLibraryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowInstructionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowInteractionRuleGroupRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobAuditResultResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowJobUploadingAddressRequest;
@@ -379,8 +403,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformAccessTypeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformAccessTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLivePlatformResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLiveWarningInfoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowLiveWarningInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLlmConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowLlmConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowMcpServerRequest;
@@ -413,6 +441,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRoleRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRoleResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowShortJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowShortJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatRoomRequest;
@@ -423,6 +453,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSummaryUsageDataRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSummaryUsageDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantDurationCfgRequest;
@@ -435,6 +467,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowUsageDataRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowUsageDataResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowUserReviewAttachmentUploadingAddressRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowUserReviewAttachmentUploadingAddressResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
@@ -443,6 +479,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowVocabularySwitchConfigsReques
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVocabularySwitchConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingQuotasRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVoiceTrainingQuotasResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchRequest;
@@ -467,6 +505,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateAudioRecordConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateAudioRecordConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDialogReportConfigRequest;
@@ -493,6 +533,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInstructionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeIntentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeLibraryRequest;
@@ -527,6 +569,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveUserConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveUserConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
@@ -816,6 +860,126 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 创建语音录制配置
+     *
+     * 该接口用于创建语音录制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAudioRecordConfigRequest 请求对象
+     * @return CompletableFuture<CreateAudioRecordConfigResponse>
+     */
+    public CompletableFuture<CreateAudioRecordConfigResponse> createAudioRecordConfigAsync(
+        CreateAudioRecordConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createAudioRecordConfig);
+    }
+
+    /**
+     * 创建语音录制配置
+     *
+     * 该接口用于创建语音录制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAudioRecordConfigRequest 请求对象
+     * @return AsyncInvoker<CreateAudioRecordConfigRequest, CreateAudioRecordConfigResponse>
+     */
+    public AsyncInvoker<CreateAudioRecordConfigRequest, CreateAudioRecordConfigResponse> createAudioRecordConfigAsyncInvoker(
+        CreateAudioRecordConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createAudioRecordConfig, hcClient);
+    }
+
+    /**
+     * 删除语音录制配置
+     *
+     * 该接口用于删除语音录制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAudioRecordConfigRequest 请求对象
+     * @return CompletableFuture<DeleteAudioRecordConfigResponse>
+     */
+    public CompletableFuture<DeleteAudioRecordConfigResponse> deleteAudioRecordConfigAsync(
+        DeleteAudioRecordConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteAudioRecordConfig);
+    }
+
+    /**
+     * 删除语音录制配置
+     *
+     * 该接口用于删除语音录制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAudioRecordConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteAudioRecordConfigRequest, DeleteAudioRecordConfigResponse>
+     */
+    public AsyncInvoker<DeleteAudioRecordConfigRequest, DeleteAudioRecordConfigResponse> deleteAudioRecordConfigAsyncInvoker(
+        DeleteAudioRecordConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deleteAudioRecordConfig, hcClient);
+    }
+
+    /**
+     * 查询语音录制配置
+     *
+     * 该接口用于查询语音录制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAudioRecordConfigRequest 请求对象
+     * @return CompletableFuture<ShowAudioRecordConfigResponse>
+     */
+    public CompletableFuture<ShowAudioRecordConfigResponse> showAudioRecordConfigAsync(
+        ShowAudioRecordConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showAudioRecordConfig);
+    }
+
+    /**
+     * 查询语音录制配置
+     *
+     * 该接口用于查询语音录制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAudioRecordConfigRequest 请求对象
+     * @return AsyncInvoker<ShowAudioRecordConfigRequest, ShowAudioRecordConfigResponse>
+     */
+    public AsyncInvoker<ShowAudioRecordConfigRequest, ShowAudioRecordConfigResponse> showAudioRecordConfigAsyncInvoker(
+        ShowAudioRecordConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showAudioRecordConfig, hcClient);
+    }
+
+    /**
+     * 修改语音录制配置
+     *
+     * 该接口用于修改语音录制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAudioRecordConfigRequest 请求对象
+     * @return CompletableFuture<UpdateAudioRecordConfigResponse>
+     */
+    public CompletableFuture<UpdateAudioRecordConfigResponse> updateAudioRecordConfigAsync(
+        UpdateAudioRecordConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateAudioRecordConfig);
+    }
+
+    /**
+     * 修改语音录制配置
+     *
+     * 该接口用于修改语音录制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAudioRecordConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateAudioRecordConfigRequest, UpdateAudioRecordConfigResponse>
+     */
+    public AsyncInvoker<UpdateAudioRecordConfigRequest, UpdateAudioRecordConfigResponse> updateAudioRecordConfigAsyncInvoker(
+        UpdateAudioRecordConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updateAudioRecordConfig, hcClient);
+    }
+
+    /**
      * 删除导入导出任务
      *
      * 删除导入导出任务
@@ -1013,6 +1177,65 @@ public class MetaStudioAsyncClient {
      */
     public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showTask, hcClient);
+    }
+
+    /**
+     * 查询用户数据概览
+     *
+     * 获取周期内用户的资源使用情况概览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSummaryUsageDataRequest 请求对象
+     * @return CompletableFuture<ShowSummaryUsageDataResponse>
+     */
+    public CompletableFuture<ShowSummaryUsageDataResponse> showSummaryUsageDataAsync(
+        ShowSummaryUsageDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showSummaryUsageData);
+    }
+
+    /**
+     * 查询用户数据概览
+     *
+     * 获取周期内用户的资源使用情况概览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSummaryUsageDataRequest 请求对象
+     * @return AsyncInvoker<ShowSummaryUsageDataRequest, ShowSummaryUsageDataResponse>
+     */
+    public AsyncInvoker<ShowSummaryUsageDataRequest, ShowSummaryUsageDataResponse> showSummaryUsageDataAsyncInvoker(
+        ShowSummaryUsageDataRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showSummaryUsageData, hcClient);
+    }
+
+    /**
+     * 查询用户数据详情
+     *
+     * 获取周期内用户的资源使用情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUsageDataRequest 请求对象
+     * @return CompletableFuture<ShowUsageDataResponse>
+     */
+    public CompletableFuture<ShowUsageDataResponse> showUsageDataAsync(ShowUsageDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showUsageData);
+    }
+
+    /**
+     * 查询用户数据详情
+     *
+     * 获取周期内用户的资源使用情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUsageDataRequest 请求对象
+     * @return AsyncInvoker<ShowUsageDataRequest, ShowUsageDataResponse>
+     */
+    public AsyncInvoker<ShowUsageDataRequest, ShowUsageDataResponse> showUsageDataAsyncInvoker(
+        ShowUsageDataRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showUsageData, hcClient);
     }
 
     /**
@@ -3081,6 +3304,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 互动规则库增加规则
+     *
+     * 该接口用于互动规则库增加规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInteractionRuleRequest 请求对象
+     * @return CompletableFuture<CreateInteractionRuleResponse>
+     */
+    public CompletableFuture<CreateInteractionRuleResponse> createInteractionRuleAsync(
+        CreateInteractionRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createInteractionRule);
+    }
+
+    /**
+     * 互动规则库增加规则
+     *
+     * 该接口用于互动规则库增加规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInteractionRuleRequest 请求对象
+     * @return AsyncInvoker<CreateInteractionRuleRequest, CreateInteractionRuleResponse>
+     */
+    public AsyncInvoker<CreateInteractionRuleRequest, CreateInteractionRuleResponse> createInteractionRuleAsyncInvoker(
+        CreateInteractionRuleRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createInteractionRule, hcClient);
+    }
+
+    /**
      * 创建智能直播间互动规则库
      *
      * 该接口用于创建智能直播间互动规则库。
@@ -3108,6 +3361,36 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroupAsyncInvoker(
         CreateInteractionRuleGroupRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.createInteractionRuleGroup, hcClient);
+    }
+
+    /**
+     * 互动规则库删除某条规则
+     *
+     * 该接口用于互动规则库修改删除规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInteractionRuleRequest 请求对象
+     * @return CompletableFuture<DeleteInteractionRuleResponse>
+     */
+    public CompletableFuture<DeleteInteractionRuleResponse> deleteInteractionRuleAsync(
+        DeleteInteractionRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteInteractionRule);
+    }
+
+    /**
+     * 互动规则库删除某条规则
+     *
+     * 该接口用于互动规则库修改删除规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInteractionRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteInteractionRuleRequest, DeleteInteractionRuleResponse>
+     */
+    public AsyncInvoker<DeleteInteractionRuleRequest, DeleteInteractionRuleResponse> deleteInteractionRuleAsyncInvoker(
+        DeleteInteractionRuleRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deleteInteractionRule, hcClient);
     }
 
     /**
@@ -3171,6 +3454,96 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 查询智能直播间互动规则库概要列表
+     *
+     * 该接口用于智能直播间互动规则库概要列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInteractionRuleGroupsSummaryRequest 请求对象
+     * @return CompletableFuture<ListInteractionRuleGroupsSummaryResponse>
+     */
+    public CompletableFuture<ListInteractionRuleGroupsSummaryResponse> listInteractionRuleGroupsSummaryAsync(
+        ListInteractionRuleGroupsSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listInteractionRuleGroupsSummary);
+    }
+
+    /**
+     * 查询智能直播间互动规则库概要列表
+     *
+     * 该接口用于智能直播间互动规则库概要列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInteractionRuleGroupsSummaryRequest 请求对象
+     * @return AsyncInvoker<ListInteractionRuleGroupsSummaryRequest, ListInteractionRuleGroupsSummaryResponse>
+     */
+    public AsyncInvoker<ListInteractionRuleGroupsSummaryRequest, ListInteractionRuleGroupsSummaryResponse> listInteractionRuleGroupsSummaryAsyncInvoker(
+        ListInteractionRuleGroupsSummaryRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listInteractionRuleGroupsSummary, hcClient);
+    }
+
+    /**
+     * 查询智能直播间互动规则库详情
+     *
+     * 该接口用于查询智能直播间互动规则库详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInteractionRuleGroupRequest 请求对象
+     * @return CompletableFuture<ShowInteractionRuleGroupResponse>
+     */
+    public CompletableFuture<ShowInteractionRuleGroupResponse> showInteractionRuleGroupAsync(
+        ShowInteractionRuleGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showInteractionRuleGroup);
+    }
+
+    /**
+     * 查询智能直播间互动规则库详情
+     *
+     * 该接口用于查询智能直播间互动规则库详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInteractionRuleGroupRequest 请求对象
+     * @return AsyncInvoker<ShowInteractionRuleGroupRequest, ShowInteractionRuleGroupResponse>
+     */
+    public AsyncInvoker<ShowInteractionRuleGroupRequest, ShowInteractionRuleGroupResponse> showInteractionRuleGroupAsyncInvoker(
+        ShowInteractionRuleGroupRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showInteractionRuleGroup, hcClient);
+    }
+
+    /**
+     * 互动规则库修改某条规则
+     *
+     * 该接口用于互动规则库修改某条规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInteractionRuleRequest 请求对象
+     * @return CompletableFuture<UpdateInteractionRuleResponse>
+     */
+    public CompletableFuture<UpdateInteractionRuleResponse> updateInteractionRuleAsync(
+        UpdateInteractionRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateInteractionRule);
+    }
+
+    /**
+     * 互动规则库修改某条规则
+     *
+     * 该接口用于互动规则库修改某条规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInteractionRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateInteractionRuleRequest, UpdateInteractionRuleResponse>
+     */
+    public AsyncInvoker<UpdateInteractionRuleRequest, UpdateInteractionRuleResponse> updateInteractionRuleAsyncInvoker(
+        UpdateInteractionRuleRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updateInteractionRule, hcClient);
+    }
+
+    /**
      * 更新智能直播间互动规则库
      *
      * 该接口用于更新智能直播间互动规则库。
@@ -3228,6 +3601,35 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<CreateInteractiveChatRequest, CreateInteractiveChatResponse> createInteractiveChatAsyncInvoker(
         CreateInteractiveChatRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.createInteractiveChat, hcClient);
+    }
+
+    /**
+     * 下载加密文件
+     *
+     * 下载加密文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEncryptFileRequest 请求对象
+     * @return CompletableFuture<ShowEncryptFileResponse>
+     */
+    public CompletableFuture<ShowEncryptFileResponse> showEncryptFileAsync(ShowEncryptFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showEncryptFile);
+    }
+
+    /**
+     * 下载加密文件
+     *
+     * 下载加密文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEncryptFileRequest 请求对象
+     * @return AsyncInvoker<ShowEncryptFileRequest, ShowEncryptFileResponse>
+     */
+    public AsyncInvoker<ShowEncryptFileRequest, ShowEncryptFileResponse> showEncryptFileAsyncInvoker(
+        ShowEncryptFileRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showEncryptFile, hcClient);
     }
 
     /**
@@ -4120,6 +4522,36 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ShowLivePlatformRequest, ShowLivePlatformResponse> showLivePlatformAsyncInvoker(
         ShowLivePlatformRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showLivePlatform, hcClient);
+    }
+
+    /**
+     * 查询直播平台对接方式
+     *
+     * 该接口用于直播平台对接方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLivePlatformAccessTypeRequest 请求对象
+     * @return CompletableFuture<ShowLivePlatformAccessTypeResponse>
+     */
+    public CompletableFuture<ShowLivePlatformAccessTypeResponse> showLivePlatformAccessTypeAsync(
+        ShowLivePlatformAccessTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showLivePlatformAccessType);
+    }
+
+    /**
+     * 查询直播平台对接方式
+     *
+     * 该接口用于直播平台对接方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLivePlatformAccessTypeRequest 请求对象
+     * @return AsyncInvoker<ShowLivePlatformAccessTypeRequest, ShowLivePlatformAccessTypeResponse>
+     */
+    public AsyncInvoker<ShowLivePlatformAccessTypeRequest, ShowLivePlatformAccessTypeResponse> showLivePlatformAccessTypeAsyncInvoker(
+        ShowLivePlatformAccessTypeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showLivePlatformAccessType, hcClient);
     }
 
     /**
@@ -5444,6 +5876,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 查询声音训练资源
+     *
+     * 查询声音训练资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVoiceTrainingQuotasRequest 请求对象
+     * @return CompletableFuture<ShowVoiceTrainingQuotasResponse>
+     */
+    public CompletableFuture<ShowVoiceTrainingQuotasResponse> showVoiceTrainingQuotasAsync(
+        ShowVoiceTrainingQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showVoiceTrainingQuotas);
+    }
+
+    /**
+     * 查询声音训练资源
+     *
+     * 查询声音训练资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVoiceTrainingQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowVoiceTrainingQuotasRequest, ShowVoiceTrainingQuotasResponse>
+     */
+    public AsyncInvoker<ShowVoiceTrainingQuotasRequest, ShowVoiceTrainingQuotasResponse> showVoiceTrainingQuotasAsyncInvoker(
+        ShowVoiceTrainingQuotasRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showVoiceTrainingQuotas, hcClient);
+    }
+
+    /**
      * 创建应用
      *
      * 该接口用于创建应用。
@@ -5898,6 +6360,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 租户设置直播租户级配置
+     *
+     * 该接口用于租户设置直播租户级配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSmartLiveUserConfigRequest 请求对象
+     * @return CompletableFuture<UpdateSmartLiveUserConfigResponse>
+     */
+    public CompletableFuture<UpdateSmartLiveUserConfigResponse> updateSmartLiveUserConfigAsync(
+        UpdateSmartLiveUserConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateSmartLiveUserConfig);
+    }
+
+    /**
+     * 租户设置直播租户级配置
+     *
+     * 该接口用于租户设置直播租户级配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSmartLiveUserConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateSmartLiveUserConfigRequest, UpdateSmartLiveUserConfigResponse>
+     */
+    public AsyncInvoker<UpdateSmartLiveUserConfigRequest, UpdateSmartLiveUserConfigResponse> updateSmartLiveUserConfigAsyncInvoker(
+        UpdateSmartLiveUserConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updateSmartLiveUserConfig, hcClient);
+    }
+
+    /**
      * 批量确认命令
      *
      * 该接口用于批量确认命令列表
@@ -5955,6 +6447,35 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ExecuteSmartLiveCommandRequest, ExecuteSmartLiveCommandResponse> executeSmartLiveCommandAsyncInvoker(
         ExecuteSmartLiveCommandRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.executeSmartLiveCommand, hcClient);
+    }
+
+    /**
+     * 查询数字人直播插入命令列表
+     *
+     * 该接口用于查询数字人直播插入命令列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInsertCommandsRequest 请求对象
+     * @return CompletableFuture<ListInsertCommandsResponse>
+     */
+    public CompletableFuture<ListInsertCommandsResponse> listInsertCommandsAsync(ListInsertCommandsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listInsertCommands);
+    }
+
+    /**
+     * 查询数字人直播插入命令列表
+     *
+     * 该接口用于查询数字人直播插入命令列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInsertCommandsRequest 请求对象
+     * @return AsyncInvoker<ListInsertCommandsRequest, ListInsertCommandsResponse>
+     */
+    public AsyncInvoker<ListInsertCommandsRequest, ListInsertCommandsResponse> listInsertCommandsAsyncInvoker(
+        ListInsertCommandsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listInsertCommands, hcClient);
     }
 
     /**
@@ -6308,6 +6829,35 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 查询直播建配置风险信息
+     *
+     * 该接口用查询直播建配置风险信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLiveWarningInfoRequest 请求对象
+     * @return CompletableFuture<ShowLiveWarningInfoResponse>
+     */
+    public CompletableFuture<ShowLiveWarningInfoResponse> showLiveWarningInfoAsync(ShowLiveWarningInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showLiveWarningInfo);
+    }
+
+    /**
+     * 查询直播建配置风险信息
+     *
+     * 该接口用查询直播建配置风险信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLiveWarningInfoRequest 请求对象
+     * @return AsyncInvoker<ShowLiveWarningInfoRequest, ShowLiveWarningInfoResponse>
+     */
+    public AsyncInvoker<ShowLiveWarningInfoRequest, ShowLiveWarningInfoResponse> showLiveWarningInfoAsyncInvoker(
+        ShowLiveWarningInfoRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showLiveWarningInfo, hcClient);
+    }
+
+    /**
      * 查询智能直播间剧本详情
      *
      * 该接口用于查询智能直播间剧本详情。
@@ -6607,6 +7157,35 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 提交短任务
+     *
+     * 提交短任务，执行改接口后，任务会正式开始执行。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CommitShortJobRequest 请求对象
+     * @return CompletableFuture<CommitShortJobResponse>
+     */
+    public CompletableFuture<CommitShortJobResponse> commitShortJobAsync(CommitShortJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.commitShortJob);
+    }
+
+    /**
+     * 提交短任务
+     *
+     * 提交短任务，执行改接口后，任务会正式开始执行。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CommitShortJobRequest 请求对象
+     * @return AsyncInvoker<CommitShortJobRequest, CommitShortJobResponse>
+     */
+    public AsyncInvoker<CommitShortJobRequest, CommitShortJobResponse> commitShortJobAsyncInvoker(
+        CommitShortJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.commitShortJob, hcClient);
+    }
+
+    /**
      * 提交语音训练任务
      *
      * 提交训练任务,执行该接口后,任务会进入审核状态,审核完成后会等待训练。
@@ -6664,6 +7243,37 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ConfirmTrainingSegmentRequest, ConfirmTrainingSegmentResponse> confirmTrainingSegmentAsyncInvoker(
         ConfirmTrainingSegmentRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.confirmTrainingSegment, hcClient);
+    }
+
+    /**
+     * 创建短任务
+     *
+     * 用户创建短任务（音频质量检测等），该接口会返回一个obs上传地址，用于上传语音文件。
+     * 文件上传后，调用“提交短任务”接口，启动短任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateShortJobRequest 请求对象
+     * @return CompletableFuture<CreateShortJobResponse>
+     */
+    public CompletableFuture<CreateShortJobResponse> createShortJobAsync(CreateShortJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createShortJob);
+    }
+
+    /**
+     * 创建短任务
+     *
+     * 用户创建短任务（音频质量检测等），该接口会返回一个obs上传地址，用于上传语音文件。
+     * 文件上传后，调用“提交短任务”接口，启动短任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateShortJobRequest 请求对象
+     * @return AsyncInvoker<CreateShortJobRequest, CreateShortJobResponse>
+     */
+    public AsyncInvoker<CreateShortJobRequest, CreateShortJobResponse> createShortJobAsyncInvoker(
+        CreateShortJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createShortJob, hcClient);
     }
 
     /**
@@ -6786,6 +7396,44 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<CreateTrainingMiddleJobRequest, CreateTrainingMiddleJobResponse> createTrainingMiddleJobAsyncInvoker(
         CreateTrainingMiddleJobRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.createTrainingMiddleJob, hcClient);
+    }
+
+    /**
+     * 创建第三方平台语音训练任务
+     *
+     * 用户创建第三方平台语音训练任务,该接口会返回一个obs上传地址，用于上传语音文件。
+     * 仅支持zip包方式上传语音文件：
+     * * 语音文件打包成zip上传：上传的训练数据为一个zip格式压缩文件,其中包含一段wav格式的长音频文件。
+     * 
+     * &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTrainingThirdPartyJobRequest 请求对象
+     * @return CompletableFuture<CreateTrainingThirdPartyJobResponse>
+     */
+    public CompletableFuture<CreateTrainingThirdPartyJobResponse> createTrainingThirdPartyJobAsync(
+        CreateTrainingThirdPartyJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createTrainingThirdPartyJob);
+    }
+
+    /**
+     * 创建第三方平台语音训练任务
+     *
+     * 用户创建第三方平台语音训练任务,该接口会返回一个obs上传地址，用于上传语音文件。
+     * 仅支持zip包方式上传语音文件：
+     * * 语音文件打包成zip上传：上传的训练数据为一个zip格式压缩文件,其中包含一段wav格式的长音频文件。
+     * 
+     * &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTrainingThirdPartyJobRequest 请求对象
+     * @return AsyncInvoker<CreateTrainingThirdPartyJobRequest, CreateTrainingThirdPartyJobResponse>
+     */
+    public AsyncInvoker<CreateTrainingThirdPartyJobRequest, CreateTrainingThirdPartyJobResponse> createTrainingThirdPartyJobAsyncInvoker(
+        CreateTrainingThirdPartyJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createTrainingThirdPartyJob, hcClient);
     }
 
     /**
@@ -6968,6 +7616,35 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 查询短任务详情
+     *
+     * 查询短任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowShortJobRequest 请求对象
+     * @return CompletableFuture<ShowShortJobResponse>
+     */
+    public CompletableFuture<ShowShortJobResponse> showShortJobAsync(ShowShortJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showShortJob);
+    }
+
+    /**
+     * 查询短任务详情
+     *
+     * 查询短任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowShortJobRequest 请求对象
+     * @return AsyncInvoker<ShowShortJobRequest, ShowShortJobResponse>
+     */
+    public AsyncInvoker<ShowShortJobRequest, ShowShortJobResponse> showShortJobAsyncInvoker(
+        ShowShortJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showShortJob, hcClient);
+    }
+
+    /**
      * 查询用户配置的个性化音频时长
      *
      * 查询用户配置的个性化音频时长
@@ -7025,6 +7702,36 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ShowTrainingSegmentInfoRequest, ShowTrainingSegmentInfoResponse> showTrainingSegmentInfoAsyncInvoker(
         ShowTrainingSegmentInfoRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showTrainingSegmentInfo, hcClient);
+    }
+
+    /**
+     * 用户获取附件上传url
+     *
+     * 用户获取附件上传url
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserReviewAttachmentUploadingAddressRequest 请求对象
+     * @return CompletableFuture<ShowUserReviewAttachmentUploadingAddressResponse>
+     */
+    public CompletableFuture<ShowUserReviewAttachmentUploadingAddressResponse> showUserReviewAttachmentUploadingAddressAsync(
+        ShowUserReviewAttachmentUploadingAddressRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showUserReviewAttachmentUploadingAddress);
+    }
+
+    /**
+     * 用户获取附件上传url
+     *
+     * 用户获取附件上传url
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserReviewAttachmentUploadingAddressRequest 请求对象
+     * @return AsyncInvoker<ShowUserReviewAttachmentUploadingAddressRequest, ShowUserReviewAttachmentUploadingAddressResponse>
+     */
+    public AsyncInvoker<ShowUserReviewAttachmentUploadingAddressRequest, ShowUserReviewAttachmentUploadingAddressResponse> showUserReviewAttachmentUploadingAddressAsyncInvoker(
+        ShowUserReviewAttachmentUploadingAddressRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showUserReviewAttachmentUploadingAddress, hcClient);
     }
 
     /**
@@ -8089,6 +8796,7 @@ public class MetaStudioAsyncClient {
      * 复制视频制作剧本
      *
      * 该接口用于复制视频制作剧本。
+     * &gt; - 复制的剧本不包含预览字幕信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8103,6 +8811,7 @@ public class MetaStudioAsyncClient {
      * 复制视频制作剧本
      *
      * 该接口用于复制视频制作剧本。
+     * &gt; - 复制的剧本不包含预览字幕信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

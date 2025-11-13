@@ -236,6 +236,16 @@ public class ListDiagnosisTasksRequest {
 
     private Integer pageSize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListDiagnosisTasksRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -397,6 +407,44 @@ public class ListDiagnosisTasksRequest {
         this.pageSize = pageSize;
     }
 
+    public ListDiagnosisTasksRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 分页查询页索引
+     * minimum: 1
+     * maximum: 10000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListDiagnosisTasksRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 分页查询页大小
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -410,12 +458,14 @@ public class ListDiagnosisTasksRequest {
             && Objects.equals(this.status, that.status) && Objects.equals(this.region, that.region)
             && Objects.equals(this.creator, that.creator) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.pageIndex, that.pageIndex)
-            && Objects.equals(this.pageSize, that.pageSize);
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, type, status, region, creator, startTime, endTime, pageIndex, pageSize);
+        return Objects
+            .hash(taskId, type, status, region, creator, startTime, endTime, pageIndex, pageSize, offset, limit);
     }
 
     @Override
@@ -431,6 +481,8 @@ public class ListDiagnosisTasksRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    pageIndex: ").append(toIndentedString(pageIndex)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

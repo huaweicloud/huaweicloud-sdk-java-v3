@@ -30,7 +30,7 @@ public class ListAntileakageRulesResponse extends SdkResponse {
     }
 
     /**
-     * 防泄漏规则数量
+     * 防泄露规则数量
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListAntileakageRulesResponse extends SdkResponse {
     }
 
     /**
-     * 防泄漏规则列表
+     * 防泄露规则列表
      * @return items
      */
     public List<LeakageListInfo> getItems() {

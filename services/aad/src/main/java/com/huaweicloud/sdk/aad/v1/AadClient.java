@@ -62,6 +62,8 @@ import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsResponse;
+import com.huaweicloud.sdk.aad.v1.model.ShowLtsConfigRequest;
+import com.huaweicloud.sdk.aad.v1.model.ShowLtsConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowUnblockRecordRequest;
@@ -72,6 +74,8 @@ import com.huaweicloud.sdk.aad.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdateDomainResponse;
 import com.huaweicloud.sdk.aad.v1.model.UpdateInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdateInstanceIpRuleResponse;
+import com.huaweicloud.sdk.aad.v1.model.UpdateLtsConfigRequest;
+import com.huaweicloud.sdk.aad.v1.model.UpdateLtsConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageIpResponse;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageNameRequest;
@@ -1021,6 +1025,34 @@ public class AadClient {
     }
 
     /**
+     * 查询日志配置
+     *
+     * 查询日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLtsConfigRequest 请求对象
+     * @return ShowLtsConfigResponse
+     */
+    public ShowLtsConfigResponse showLtsConfig(ShowLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, AadMeta.showLtsConfig);
+    }
+
+    /**
+     * 查询日志配置
+     *
+     * 查询日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLtsConfigRequest 请求对象
+     * @return SyncInvoker<ShowLtsConfigRequest, ShowLtsConfigResponse>
+     */
+    public SyncInvoker<ShowLtsConfigRequest, ShowLtsConfigResponse> showLtsConfigInvoker(ShowLtsConfigRequest request) {
+        return new SyncInvoker<>(request, AadMeta.showLtsConfig, hcClient);
+    }
+
+    /**
      * 查询策略详情
      *
      * 查询策略详情
@@ -1132,6 +1164,35 @@ public class AadClient {
     public SyncInvoker<UpdateInstanceIpRuleRequest, UpdateInstanceIpRuleResponse> updateInstanceIpRuleInvoker(
         UpdateInstanceIpRuleRequest request) {
         return new SyncInvoker<>(request, AadMeta.updateInstanceIpRule, hcClient);
+    }
+
+    /**
+     * 设置日志配置
+     *
+     * 设置日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLtsConfigRequest 请求对象
+     * @return UpdateLtsConfigResponse
+     */
+    public UpdateLtsConfigResponse updateLtsConfig(UpdateLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, AadMeta.updateLtsConfig);
+    }
+
+    /**
+     * 设置日志配置
+     *
+     * 设置日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLtsConfigRequest 请求对象
+     * @return SyncInvoker<UpdateLtsConfigRequest, UpdateLtsConfigResponse>
+     */
+    public SyncInvoker<UpdateLtsConfigRequest, UpdateLtsConfigResponse> updateLtsConfigInvoker(
+        UpdateLtsConfigRequest request) {
+        return new SyncInvoker<>(request, AadMeta.updateLtsConfig, hcClient);
     }
 
     /**

@@ -30,7 +30,7 @@ public class ListEventLogResponse extends SdkResponse {
     }
 
     /**
-     * Get total
+     * 防护事件下载文件总数
      * @return total
      */
     public Long getTotal() {
@@ -63,7 +63,7 @@ public class ListEventLogResponse extends SdkResponse {
     }
 
     /**
-     * Get items
+     * 防护事件下载文件列表
      * @return items
      */
     public List<EventDump> getItems() {

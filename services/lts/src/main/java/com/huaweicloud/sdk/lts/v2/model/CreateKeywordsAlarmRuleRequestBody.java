@@ -271,6 +271,11 @@ public class CreateKeywordsAlarmRuleRequestBody {
 
     private List<TagsRequestBody> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateKeywordsAlarmRuleRequestBody withKeywordsAlarmRuleName(String keywordsAlarmRuleName) {
         this.keywordsAlarmRuleName = keywordsAlarmRuleName;
         return this;
@@ -535,6 +540,23 @@ public class CreateKeywordsAlarmRuleRequestBody {
         this.tags = tags;
     }
 
+    public CreateKeywordsAlarmRuleRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 企业项目id信息。 **约束限制：** 不涉及。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -556,7 +578,8 @@ public class CreateKeywordsAlarmRuleRequestBody {
             && Objects.equals(this.recoveryPolicy, that.recoveryPolicy)
             && Objects.equals(this.notificationFrequency, that.notificationFrequency)
             && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -573,7 +596,8 @@ public class CreateKeywordsAlarmRuleRequestBody {
             recoveryPolicy,
             notificationFrequency,
             alarmActionRuleName,
-            tags);
+            tags,
+            enterpriseProjectId);
     }
 
     @Override
@@ -595,6 +619,7 @@ public class CreateKeywordsAlarmRuleRequestBody {
         sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
         sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

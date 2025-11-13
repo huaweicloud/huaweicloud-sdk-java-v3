@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.ccm.v1.model.CountCaResourceInstancesRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CountCaResourceInstancesResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CountCertResourceInstancesRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CountCertResourceInstancesResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCaTagRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCaTagResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertTagRequest;
@@ -87,6 +89,8 @@ import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateAuthorityResponse;
 import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateRequest;
 import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateRequestBody;
 import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityObsAgencyRequest;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityObsAgencyResponse;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityQuotaRequest;
@@ -97,6 +101,11 @@ import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateQuotaRequest;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateQuotaResponse;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateRequest;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowConsoleConfigRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowConsoleConfigResponse;
+import com.huaweicloud.sdk.ccm.v1.model.UpdateOcspSwitchRequest;
+import com.huaweicloud.sdk.ccm.v1.model.UpdateOcspSwitchRequestBody;
+import com.huaweicloud.sdk.ccm.v1.model.UpdateOcspSwitchResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -265,6 +274,23 @@ public class CcmMeta {
             TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
             f -> f.withMarshaller(CountCertResourceInstancesRequest::getBody,
                 CountCertResourceInstancesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForCreateAgency();
+
+    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForCreateAgency() {
+        // basic
+        HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
+                .withName("CreateAgency")
+                .withUri("/v1/private-certificate-authorities/agencies")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -788,6 +814,23 @@ public class CcmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForShowAgency();
+
+    private static HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> genForShowAgency() {
+        // basic
+        HttpRequestDef.Builder<ShowAgencyRequest, ShowAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAgencyRequest.class, ShowAgencyResponse.class)
+                .withName("ShowAgency")
+                .withUri("/v1/private-certificate-authorities/agency")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
         genForShowCertificate();
 
@@ -842,6 +885,24 @@ public class CcmMeta {
             .withName("ShowCertificateQuota")
             .withUri("/v1/private-certificates/quotas")
             .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConsoleConfigRequest, ShowConsoleConfigResponse> showConsoleConfig =
+        genForShowConsoleConfig();
+
+    private static HttpRequestDef<ShowConsoleConfigRequest, ShowConsoleConfigResponse> genForShowConsoleConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowConsoleConfigRequest, ShowConsoleConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConsoleConfigRequest.class, ShowConsoleConfigResponse.class)
+                .withName("ShowConsoleConfig")
+                .withUri("/v1/pca/config/console")
+                .withContentType("application/json");
 
         // requests
 
@@ -1242,6 +1303,34 @@ public class CcmMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOcspSwitchRequest, UpdateOcspSwitchResponse> updateOcspSwitch =
+        genForUpdateOcspSwitch();
+
+    private static HttpRequestDef<UpdateOcspSwitchRequest, UpdateOcspSwitchResponse> genForUpdateOcspSwitch() {
+        // basic
+        HttpRequestDef.Builder<UpdateOcspSwitchRequest, UpdateOcspSwitchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateOcspSwitchRequest.class, UpdateOcspSwitchResponse.class)
+                .withName("UpdateOcspSwitch")
+                .withUri("/v1/private-certificate-authorities/{ca_id}/ocsp/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ca_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOcspSwitchRequest::getCaId, UpdateOcspSwitchRequest::setCaId));
+        builder.<UpdateOcspSwitchRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOcspSwitchRequestBody.class),
+            f -> f.withMarshaller(UpdateOcspSwitchRequest::getBody, UpdateOcspSwitchRequest::setBody));
 
         // response
 

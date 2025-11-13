@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * KeywordsRequest
@@ -206,6 +207,16 @@ public class KeywordsRequest {
 
     private SearchTimeRangeUnitEnum searchTimeRangeUnit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_date")
+
+    private CustomDate customDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_time_range_relative")
+
+    private Boolean isTimeRangeRelative;
+
     public KeywordsRequest withLogStreamId(String logStreamId) {
         this.logStreamId = logStreamId;
         return this;
@@ -363,6 +374,49 @@ public class KeywordsRequest {
         this.searchTimeRangeUnit = searchTimeRangeUnit;
     }
 
+    public KeywordsRequest withCustomDate(CustomDate customDate) {
+        this.customDate = customDate;
+        return this;
+    }
+
+    public KeywordsRequest withCustomDate(Consumer<CustomDate> customDateSetter) {
+        if (this.customDate == null) {
+            this.customDate = new CustomDate();
+            customDateSetter.accept(this.customDate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customDate
+     * @return customDate
+     */
+    public CustomDate getCustomDate() {
+        return customDate;
+    }
+
+    public void setCustomDate(CustomDate customDate) {
+        this.customDate = customDate;
+    }
+
+    public KeywordsRequest withIsTimeRangeRelative(Boolean isTimeRangeRelative) {
+        this.isTimeRangeRelative = isTimeRangeRelative;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否是相对时间。（暂不开放，后续aom上线该功能后一起开放） **约束限制：** 不涉及。 **取值范围：** - true - false **默认取值：** true
+     * @return isTimeRangeRelative
+     */
+    public Boolean getIsTimeRangeRelative() {
+        return isTimeRangeRelative;
+    }
+
+    public void setIsTimeRangeRelative(Boolean isTimeRangeRelative) {
+        this.isTimeRangeRelative = isTimeRangeRelative;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -377,7 +431,9 @@ public class KeywordsRequest {
             && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
             && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.condition, that.condition)
             && Objects.equals(this.number, that.number) && Objects.equals(this.searchTimeRange, that.searchTimeRange)
-            && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit);
+            && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit)
+            && Objects.equals(this.customDate, that.customDate)
+            && Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative);
     }
 
     @Override
@@ -390,7 +446,9 @@ public class KeywordsRequest {
             condition,
             number,
             searchTimeRange,
-            searchTimeRangeUnit);
+            searchTimeRangeUnit,
+            customDate,
+            isTimeRangeRelative);
     }
 
     @Override
@@ -406,6 +464,8 @@ public class KeywordsRequest {
         sb.append("    number: ").append(toIndentedString(number)).append("\n");
         sb.append("    searchTimeRange: ").append(toIndentedString(searchTimeRange)).append("\n");
         sb.append("    searchTimeRangeUnit: ").append(toIndentedString(searchTimeRangeUnit)).append("\n");
+        sb.append("    customDate: ").append(toIndentedString(customDate)).append("\n");
+        sb.append("    isTimeRangeRelative: ").append(toIndentedString(isTimeRangeRelative)).append("\n");
         sb.append("}");
         return sb.toString();
     }

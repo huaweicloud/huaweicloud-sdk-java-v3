@@ -117,6 +117,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadImportExcelTemplateRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadImportExcelTemplateResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeRequest;
@@ -483,6 +485,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UploadImportExcelTemplateRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UploadImportExcelTemplateResponse;
 
 public class GaussDBClient {
 
@@ -6064,6 +6068,35 @@ public class GaussDBClient {
     }
 
     /**
+     * HTAP数据同步模板下载
+     *
+     * HTAP数据同步模板下载。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadImportExcelTemplateRequest 请求对象
+     * @return DownloadImportExcelTemplateResponse
+     */
+    public DownloadImportExcelTemplateResponse downloadImportExcelTemplate(DownloadImportExcelTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.downloadImportExcelTemplate);
+    }
+
+    /**
+     * HTAP数据同步模板下载
+     *
+     * HTAP数据同步模板下载。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadImportExcelTemplateRequest 请求对象
+     * @return SyncInvoker<DownloadImportExcelTemplateRequest, DownloadImportExcelTemplateResponse>
+     */
+    public SyncInvoker<DownloadImportExcelTemplateRequest, DownloadImportExcelTemplateResponse> downloadImportExcelTemplateInvoker(
+        DownloadImportExcelTemplateRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.downloadImportExcelTemplate, hcClient);
+    }
+
+    /**
      * 查询数据库列表
      *
      * 查询数据库列表。
@@ -7529,6 +7562,35 @@ public class GaussDBClient {
     public SyncInvoker<UpgradeSrKernelVersionRequest, UpgradeSrKernelVersionResponse> upgradeSrKernelVersionInvoker(
         UpgradeSrKernelVersionRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.upgradeSrKernelVersion, hcClient);
+    }
+
+    /**
+     * HTAP库表导入校验
+     *
+     * 创建数据同步时支持Excel导入并进行校验。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadImportExcelTemplateRequest 请求对象
+     * @return UploadImportExcelTemplateResponse
+     */
+    public UploadImportExcelTemplateResponse uploadImportExcelTemplate(UploadImportExcelTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.uploadImportExcelTemplate);
+    }
+
+    /**
+     * HTAP库表导入校验
+     *
+     * 创建数据同步时支持Excel导入并进行校验。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadImportExcelTemplateRequest 请求对象
+     * @return SyncInvoker<UploadImportExcelTemplateRequest, UploadImportExcelTemplateResponse>
+     */
+    public SyncInvoker<UploadImportExcelTemplateRequest, UploadImportExcelTemplateResponse> uploadImportExcelTemplateInvoker(
+        UploadImportExcelTemplateRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.uploadImportExcelTemplate, hcClient);
     }
 
 }

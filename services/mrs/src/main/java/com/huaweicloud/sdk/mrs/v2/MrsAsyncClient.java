@@ -31,6 +31,12 @@ import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListNodesRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListNodesResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSecurityRuleStatusRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSecurityRuleStatusResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncRequirementsRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncRequirementsResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncStatusRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncStatusResponse;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowAgencyMappingRequest;
@@ -642,6 +648,36 @@ public class MrsAsyncClient {
     }
 
     /**
+     * 获取当前集群通信安全授权状态
+     *
+     * 获取当前集群通信安全授权状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityRuleStatusRequest 请求对象
+     * @return CompletableFuture<ListSecurityRuleStatusResponse>
+     */
+    public CompletableFuture<ListSecurityRuleStatusResponse> listSecurityRuleStatusAsync(
+        ListSecurityRuleStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.listSecurityRuleStatus);
+    }
+
+    /**
+     * 获取当前集群通信安全授权状态
+     *
+     * 获取当前集群通信安全授权状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityRuleStatusRequest 请求对象
+     * @return AsyncInvoker<ListSecurityRuleStatusRequest, ListSecurityRuleStatusResponse>
+     */
+    public AsyncInvoker<ListSecurityRuleStatusRequest, ListSecurityRuleStatusResponse> listSecurityRuleStatusAsyncInvoker(
+        ListSecurityRuleStatusRequest request) {
+        return new AsyncInvoker<>(request, MrsMeta.listSecurityRuleStatus, hcClient);
+    }
+
+    /**
      * 缩容集群
      *
      * 对MRS集群进行缩容。
@@ -842,6 +878,65 @@ public class MrsAsyncClient {
     public AsyncInvoker<CancelSyncIamUserRequest, CancelSyncIamUserResponse> cancelSyncIamUserAsyncInvoker(
         CancelSyncIamUserRequest request) {
         return new AsyncInvoker<>(request, MrsMeta.cancelSyncIamUser, hcClient);
+    }
+
+    /**
+     * 查询指定集群的IAM同步情况
+     *
+     * 查询指定集群的IAM同步情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncRequirementsRequest 请求对象
+     * @return CompletableFuture<ListSyncRequirementsResponse>
+     */
+    public CompletableFuture<ListSyncRequirementsResponse> listSyncRequirementsAsync(
+        ListSyncRequirementsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.listSyncRequirements);
+    }
+
+    /**
+     * 查询指定集群的IAM同步情况
+     *
+     * 查询指定集群的IAM同步情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncRequirementsRequest 请求对象
+     * @return AsyncInvoker<ListSyncRequirementsRequest, ListSyncRequirementsResponse>
+     */
+    public AsyncInvoker<ListSyncRequirementsRequest, ListSyncRequirementsResponse> listSyncRequirementsAsyncInvoker(
+        ListSyncRequirementsRequest request) {
+        return new AsyncInvoker<>(request, MrsMeta.listSyncRequirements, hcClient);
+    }
+
+    /**
+     * 查询当前集群是否在IAM同步进行中
+     *
+     * 查询当前集群是否在IAM同步进行中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncStatusRequest 请求对象
+     * @return CompletableFuture<ListSyncStatusResponse>
+     */
+    public CompletableFuture<ListSyncStatusResponse> listSyncStatusAsync(ListSyncStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.listSyncStatus);
+    }
+
+    /**
+     * 查询当前集群是否在IAM同步进行中
+     *
+     * 查询当前集群是否在IAM同步进行中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncStatusRequest 请求对象
+     * @return AsyncInvoker<ListSyncStatusRequest, ListSyncStatusResponse>
+     */
+    public AsyncInvoker<ListSyncStatusRequest, ListSyncStatusResponse> listSyncStatusAsyncInvoker(
+        ListSyncStatusRequest request) {
+        return new AsyncInvoker<>(request, MrsMeta.listSyncStatus, hcClient);
     }
 
     /**

@@ -33,6 +33,11 @@ public class UpdateVpcOption {
 
     private List<Route> routes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_network_address_usage_metrics")
+
+    private Boolean enableNetworkAddressUsageMetrics;
+
     public UpdateVpcOption withName(String name) {
         this.name = name;
         return this;
@@ -117,6 +122,23 @@ public class UpdateVpcOption {
         this.routes = routes;
     }
 
+    public UpdateVpcOption withEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否开启VPC内所有子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+     * @return enableNetworkAddressUsageMetrics
+     */
+    public Boolean getEnableNetworkAddressUsageMetrics() {
+        return enableNetworkAddressUsageMetrics;
+    }
+
+    public void setEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +149,13 @@ public class UpdateVpcOption {
         }
         UpdateVpcOption that = (UpdateVpcOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.routes, that.routes);
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.routes, that.routes)
+            && Objects.equals(this.enableNetworkAddressUsageMetrics, that.enableNetworkAddressUsageMetrics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, cidr, routes);
+        return Objects.hash(name, description, cidr, routes, enableNetworkAddressUsageMetrics);
     }
 
     @Override
@@ -143,6 +166,9 @@ public class UpdateVpcOption {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
         sb.append("    routes: ").append(toIndentedString(routes)).append("\n");
+        sb.append("    enableNetworkAddressUsageMetrics: ")
+            .append(toIndentedString(enableNetworkAddressUsageMetrics))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

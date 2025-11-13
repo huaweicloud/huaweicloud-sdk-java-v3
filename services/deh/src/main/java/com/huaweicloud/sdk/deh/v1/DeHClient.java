@@ -9,6 +9,10 @@ import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostRequest;
 import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.DeleteDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.DeleteDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostAllTypesRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostAllTypesResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesRequest;
@@ -136,6 +140,64 @@ public class DeHClient {
     public SyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse> createDedicatedHostInvoker(
         CreateDedicatedHostRequest request) {
         return new SyncInvoker<>(request, DeHMeta.createDedicatedHost, hcClient);
+    }
+
+    /**
+     * 释放专属主机
+     *
+     * 释放专属主机。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDedicatedHostRequest 请求对象
+     * @return DeleteDedicatedHostResponse
+     */
+    public DeleteDedicatedHostResponse deleteDedicatedHost(DeleteDedicatedHostRequest request) {
+        return hcClient.syncInvokeHttp(request, DeHMeta.deleteDedicatedHost);
+    }
+
+    /**
+     * 释放专属主机
+     *
+     * 释放专属主机。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDedicatedHostRequest 请求对象
+     * @return SyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse>
+     */
+    public SyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> deleteDedicatedHostInvoker(
+        DeleteDedicatedHostRequest request) {
+        return new SyncInvoker<>(request, DeHMeta.deleteDedicatedHost, hcClient);
+    }
+
+    /**
+     * 查询专属主机类型列表
+     *
+     * 查询专属主机类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDedicatedHostAllTypesRequest 请求对象
+     * @return ListDedicatedHostAllTypesResponse
+     */
+    public ListDedicatedHostAllTypesResponse listDedicatedHostAllTypes(ListDedicatedHostAllTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, DeHMeta.listDedicatedHostAllTypes);
+    }
+
+    /**
+     * 查询专属主机类型列表
+     *
+     * 查询专属主机类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDedicatedHostAllTypesRequest 请求对象
+     * @return SyncInvoker<ListDedicatedHostAllTypesRequest, ListDedicatedHostAllTypesResponse>
+     */
+    public SyncInvoker<ListDedicatedHostAllTypesRequest, ListDedicatedHostAllTypesResponse> listDedicatedHostAllTypesInvoker(
+        ListDedicatedHostAllTypesRequest request) {
+        return new SyncInvoker<>(request, DeHMeta.listDedicatedHostAllTypes, hcClient);
     }
 
     /**

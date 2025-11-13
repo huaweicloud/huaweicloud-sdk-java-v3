@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建独享模式域名的请求体
+ * 创建独享模式域名的请求体或者创建云模式ELB接入域名请求体
  */
 public class CreatePremiumHostRequestBody {
 
@@ -192,7 +192,7 @@ public class CreatePremiumHostRequestBody {
     }
 
     /**
-     * 防护域名的源站服务器配置信息
+     * 防护域名的源站服务器配置信息，创建独享模式域名时必填
      * @return server
      */
     public List<PremiumWafServer> getServer() {
@@ -268,7 +268,7 @@ public class CreatePremiumHostRequestBody {
     }
 
     /**
-     * 添加云模式elb接入域名时，请输入elb-shared，否则不输入
+     * 添加云模式elb接入域名时，必填，请输入elb-shared，否则不输入
      * @return mode
      */
     public String getMode() {
@@ -285,7 +285,7 @@ public class CreatePremiumHostRequestBody {
     }
 
     /**
-     * 负载均衡器（ELB）id,可以在ELB侧查询其id，添加云模式elb接入域名时，此为必须输入的值
+     * 添加云模式elb接入域名时，必填，负载均衡器（ELB）id,可以在ELB侧查询其id
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {

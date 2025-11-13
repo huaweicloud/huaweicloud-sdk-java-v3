@@ -38,6 +38,11 @@ public class CreateFirewallOption {
 
     private Boolean adminStateUp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public CreateFirewallOption withName(String name) {
         this.name = name;
         return this;
@@ -139,6 +144,23 @@ public class CreateFirewallOption {
         this.adminStateUp = adminStateUp;
     }
 
+    public CreateFirewallOption withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 参数解释：   网络ACL支持关联的子网类型。 约束限制：   不涉及。 取值范围：   normal：表示网络ACL支持关联普通子网。   clouddcn：表示网络ACL支持关联CloudDCN子网。 默认取值：   normal
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -150,12 +172,13 @@ public class CreateFirewallOption {
         CreateFirewallOption that = (CreateFirewallOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.adminStateUp, that.adminStateUp);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, enterpriseProjectId, tags, adminStateUp);
+        return Objects.hash(name, description, enterpriseProjectId, tags, adminStateUp, type);
     }
 
     @Override
@@ -167,6 +190,7 @@ public class CreateFirewallOption {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

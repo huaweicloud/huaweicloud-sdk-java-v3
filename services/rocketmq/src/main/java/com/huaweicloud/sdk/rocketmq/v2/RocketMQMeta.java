@@ -98,7 +98,7 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageRep;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsRequest;
@@ -1388,10 +1388,10 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SendMessageRequest::getInstanceId, SendMessageRequest::setInstanceId));
-        builder.<SendMessageRep>withRequestField("body",
+        builder.<SendMessageReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SendMessageRep.class),
+            TypeCasts.uncheckedConversion(SendMessageReq.class),
             f -> f.withMarshaller(SendMessageRequest::getBody, SendMessageRequest::setBody));
 
         // response

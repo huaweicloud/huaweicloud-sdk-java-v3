@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.CheckCredentialResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateHistoryTransactionExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.das.v3.model.CreateTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesRequest;
@@ -71,6 +75,8 @@ import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionRequest;
@@ -99,6 +105,10 @@ import com.huaweicloud.sdk.das.v3.model.ListTopSlowLogRequest;
 import com.huaweicloud.sdk.das.v3.model.ListTopSlowLogResponse;
 import com.huaweicloud.sdk.das.v3.model.ListTransactionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListTransactionsResponse;
+import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountRequest;
+import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountResponse;
+import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountRequest;
+import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
@@ -119,6 +129,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
@@ -585,6 +597,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 创建导出历史事务任务
+     *
+     * DAS收集历史事务开关打开后，支持创建一次性导出指定时间范围内的历史事务数据任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHistoryTransactionExportTaskRequest 请求对象
+     * @return CompletableFuture<CreateHistoryTransactionExportTaskResponse>
+     */
+    public CompletableFuture<CreateHistoryTransactionExportTaskResponse> createHistoryTransactionExportTaskAsync(
+        CreateHistoryTransactionExportTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.createHistoryTransactionExportTask);
+    }
+
+    /**
+     * 创建导出历史事务任务
+     *
+     * DAS收集历史事务开关打开后，支持创建一次性导出指定时间范围内的历史事务数据任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHistoryTransactionExportTaskRequest 请求对象
+     * @return AsyncInvoker<CreateHistoryTransactionExportTaskRequest, CreateHistoryTransactionExportTaskResponse>
+     */
+    public AsyncInvoker<CreateHistoryTransactionExportTaskRequest, CreateHistoryTransactionExportTaskResponse> createHistoryTransactionExportTaskAsyncInvoker(
+        CreateHistoryTransactionExportTaskRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.createHistoryTransactionExportTask, hcClient);
+    }
+
+    /**
      * 创建快照
      *
      * 创建快照
@@ -752,6 +794,36 @@ public class DasAsyncClient {
     public AsyncInvoker<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUserAsyncInvoker(
         DeleteDbUserRequest request) {
         return new AsyncInvoker<>(request, DasMeta.deleteDbUser, hcClient);
+    }
+
+    /**
+     * 删除导出历史事务任务
+     *
+     * DAS收集历史事务开关打开后，删除历史事务导出任务记录对应的OBS文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHistoryTransactionExportTaskRequest 请求对象
+     * @return CompletableFuture<DeleteHistoryTransactionExportTaskResponse>
+     */
+    public CompletableFuture<DeleteHistoryTransactionExportTaskResponse> deleteHistoryTransactionExportTaskAsync(
+        DeleteHistoryTransactionExportTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.deleteHistoryTransactionExportTask);
+    }
+
+    /**
+     * 删除导出历史事务任务
+     *
+     * DAS收集历史事务开关打开后，删除历史事务导出任务记录对应的OBS文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHistoryTransactionExportTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteHistoryTransactionExportTaskRequest, DeleteHistoryTransactionExportTaskResponse>
+     */
+    public AsyncInvoker<DeleteHistoryTransactionExportTaskRequest, DeleteHistoryTransactionExportTaskResponse> deleteHistoryTransactionExportTaskAsyncInvoker(
+        DeleteHistoryTransactionExportTaskRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.deleteHistoryTransactionExportTask, hcClient);
     }
 
     /**
@@ -1232,6 +1304,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询历史事务导出任务列表
+     *
+     * DAS收集历史事务开关打开后，查询历史事务导出任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryTransactionExportTaskRequest 请求对象
+     * @return CompletableFuture<ListHistoryTransactionExportTaskResponse>
+     */
+    public CompletableFuture<ListHistoryTransactionExportTaskResponse> listHistoryTransactionExportTaskAsync(
+        ListHistoryTransactionExportTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listHistoryTransactionExportTask);
+    }
+
+    /**
+     * 查询历史事务导出任务列表
+     *
+     * DAS收集历史事务开关打开后，查询历史事务导出任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryTransactionExportTaskRequest 请求对象
+     * @return AsyncInvoker<ListHistoryTransactionExportTaskRequest, ListHistoryTransactionExportTaskResponse>
+     */
+    public AsyncInvoker<ListHistoryTransactionExportTaskRequest, ListHistoryTransactionExportTaskResponse> listHistoryTransactionExportTaskAsyncInvoker(
+        ListHistoryTransactionExportTaskRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listHistoryTransactionExportTask, hcClient);
+    }
+
+    /**
      * 查询InnoDB锁等待列表
      *
      * 查询InnoDB锁等待列表。
@@ -1650,6 +1752,65 @@ public class DasAsyncClient {
     }
 
     /**
+     * 内置账号登录
+     *
+     * 内置账号登录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LoginBuiltInAccountRequest 请求对象
+     * @return CompletableFuture<LoginBuiltInAccountResponse>
+     */
+    public CompletableFuture<LoginBuiltInAccountResponse> loginBuiltInAccountAsync(LoginBuiltInAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.loginBuiltInAccount);
+    }
+
+    /**
+     * 内置账号登录
+     *
+     * 内置账号登录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LoginBuiltInAccountRequest 请求对象
+     * @return AsyncInvoker<LoginBuiltInAccountRequest, LoginBuiltInAccountResponse>
+     */
+    public AsyncInvoker<LoginBuiltInAccountRequest, LoginBuiltInAccountResponse> loginBuiltInAccountAsyncInvoker(
+        LoginBuiltInAccountRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.loginBuiltInAccount, hcClient);
+    }
+
+    /**
+     * 内置账号登出
+     *
+     * 内置账号登出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LogoffBuiltInAccountRequest 请求对象
+     * @return CompletableFuture<LogoffBuiltInAccountResponse>
+     */
+    public CompletableFuture<LogoffBuiltInAccountResponse> logoffBuiltInAccountAsync(
+        LogoffBuiltInAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.logoffBuiltInAccount);
+    }
+
+    /**
+     * 内置账号登出
+     *
+     * 内置账号登出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LogoffBuiltInAccountRequest 请求对象
+     * @return AsyncInvoker<LogoffBuiltInAccountRequest, LogoffBuiltInAccountResponse>
+     */
+    public AsyncInvoker<LogoffBuiltInAccountRequest, LogoffBuiltInAccountResponse> logoffBuiltInAccountAsyncInvoker(
+        LogoffBuiltInAccountRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.logoffBuiltInAccount, hcClient);
+    }
+
+    /**
      * 根据原始SQL生成SQL限流关键字
      *
      * 根据原始SQL生成SQL限流关键字，目前支持MySQL、MariaDB、GaussDB(for MySQL)三种引擎。
@@ -1916,6 +2077,36 @@ public class DasAsyncClient {
     public AsyncInvoker<ShowHealthReportSettingsRequest, ShowHealthReportSettingsResponse> showHealthReportSettingsAsyncInvoker(
         ShowHealthReportSettingsRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showHealthReportSettings, hcClient);
+    }
+
+    /**
+     * 查询历史事务导出任务详情
+     *
+     * DAS收集历史事务开关打开后，查询历史事务导出任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHistoryTransactionExportTaskInfoRequest 请求对象
+     * @return CompletableFuture<ShowHistoryTransactionExportTaskInfoResponse>
+     */
+    public CompletableFuture<ShowHistoryTransactionExportTaskInfoResponse> showHistoryTransactionExportTaskInfoAsync(
+        ShowHistoryTransactionExportTaskInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showHistoryTransactionExportTaskInfo);
+    }
+
+    /**
+     * 查询历史事务导出任务详情
+     *
+     * DAS收集历史事务开关打开后，查询历史事务导出任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHistoryTransactionExportTaskInfoRequest 请求对象
+     * @return AsyncInvoker<ShowHistoryTransactionExportTaskInfoRequest, ShowHistoryTransactionExportTaskInfoResponse>
+     */
+    public AsyncInvoker<ShowHistoryTransactionExportTaskInfoRequest, ShowHistoryTransactionExportTaskInfoResponse> showHistoryTransactionExportTaskInfoAsyncInvoker(
+        ShowHistoryTransactionExportTaskInfoRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showHistoryTransactionExportTaskInfo, hcClient);
     }
 
     /**

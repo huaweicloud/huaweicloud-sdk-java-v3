@@ -11,12 +11,16 @@ import com.huaweicloud.sdk.ecs.v2.model.AssociateServerVirtualIpRequest;
 import com.huaweicloud.sdk.ecs.v2.model.AssociateServerVirtualIpResponse;
 import com.huaweicloud.sdk.ecs.v2.model.AttachServerVolumeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.AttachServerVolumeResponse;
+import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerGroupMemberRequest;
+import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerGroupMemberResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerNicsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerNicsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchAttachSharableVolumesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchAttachSharableVolumesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchCreateServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchCreateServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerGroupMemberRequest;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerGroupMemberResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerTagsRequest;
@@ -355,6 +359,36 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 云服务器组批量添加成员
+     *
+     * 将云服务器加入云服务器组。添加成功后，该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddServerGroupMemberRequest 请求对象
+     * @return CompletableFuture<BatchAddServerGroupMemberResponse>
+     */
+    public CompletableFuture<BatchAddServerGroupMemberResponse> batchAddServerGroupMemberAsync(
+        BatchAddServerGroupMemberRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.batchAddServerGroupMember);
+    }
+
+    /**
+     * 云服务器组批量添加成员
+     *
+     * 将云服务器加入云服务器组。添加成功后，该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddServerGroupMemberRequest 请求对象
+     * @return AsyncInvoker<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse>
+     */
+    public AsyncInvoker<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse> batchAddServerGroupMemberAsyncInvoker(
+        BatchAddServerGroupMemberRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.batchAddServerGroupMember, hcClient);
+    }
+
+    /**
      * 批量添加云服务器网卡
      *
      * 给云服务器添加一张或多张网卡。
@@ -445,6 +479,36 @@ public class EcsAsyncClient {
     public AsyncInvoker<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> batchCreateServerTagsAsyncInvoker(
         BatchCreateServerTagsRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.batchCreateServerTags, hcClient);
+    }
+
+    /**
+     * 云服务器组批量删除成员
+     *
+     * 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteServerGroupMemberRequest 请求对象
+     * @return CompletableFuture<BatchDeleteServerGroupMemberResponse>
+     */
+    public CompletableFuture<BatchDeleteServerGroupMemberResponse> batchDeleteServerGroupMemberAsync(
+        BatchDeleteServerGroupMemberRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.batchDeleteServerGroupMember);
+    }
+
+    /**
+     * 云服务器组批量删除成员
+     *
+     * 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteServerGroupMemberRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse>
+     */
+    public AsyncInvoker<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse> batchDeleteServerGroupMemberAsyncInvoker(
+        BatchDeleteServerGroupMemberRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.batchDeleteServerGroupMember, hcClient);
     }
 
     /**

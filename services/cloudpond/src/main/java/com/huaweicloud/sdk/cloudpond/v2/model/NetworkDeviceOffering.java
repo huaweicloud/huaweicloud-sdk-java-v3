@@ -54,7 +54,7 @@ public class NetworkDeviceOffering {
     }
 
     /**
-     * 销售策略ID
+     * 网络设备商品ID
      * @return id
      */
     public String getId() {

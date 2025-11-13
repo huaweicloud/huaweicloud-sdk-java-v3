@@ -221,7 +221,7 @@ public class ListVoiceTrainingJobRequest {
     }
 
     /**
-     * 任务状态，默认所有状态。 可多个状态查询，使用英文逗号分隔。 如state=FAILED,WAITING
+     * 任务状态，默认所有状态。 可多个状态查询，使用英文逗号分隔。 如state=FAILED,WAITING 任务状态包括：       * CREATING: 创建中       * SYSTEM_AUDITING: 系统审核中       * AUDITING: 人工审核中       * WAITING_SPLIT: 等待切割       * SPLITTING: 切割中       * SPLIT_FAILED: 切割失败       * ANNOTATING: 标注中       * WAITING: 等待训练       * PROCESSING: 任务训练中       * RESULT_REVIEW: 审核结果       * AUDIT_FAILED: 审核失败,等待用户重传数据       * UPLOADING: 上传中       * FAILED: 失败       * SUCCEED: 成功
      * @return state
      */
     public String getState() {

@@ -29,9 +29,13 @@ import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CheckCredentialResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateExportTaskReq;
+import com.huaweicloud.sdk.das.v3.model.CreateExportTaskResp;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportReq;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateHistoryTransactionExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionReq;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionResponse;
@@ -52,6 +56,8 @@ import com.huaweicloud.sdk.das.v3.model.CreateTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessReqBody;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
@@ -92,6 +98,8 @@ import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionRequest;
@@ -121,6 +129,12 @@ import com.huaweicloud.sdk.das.v3.model.ListTopSlowLogRequest;
 import com.huaweicloud.sdk.das.v3.model.ListTopSlowLogResponse;
 import com.huaweicloud.sdk.das.v3.model.ListTransactionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListTransactionsResponse;
+import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountRequest;
+import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountRequestBody;
+import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountResponse;
+import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountRequest;
+import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountRequestBody;
+import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesReq;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
@@ -145,6 +159,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
@@ -652,6 +668,45 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateHistoryTransactionExportTaskRequest, CreateHistoryTransactionExportTaskResponse> createHistoryTransactionExportTask =
+        genForCreateHistoryTransactionExportTask();
+
+    private static HttpRequestDef<CreateHistoryTransactionExportTaskRequest, CreateHistoryTransactionExportTaskResponse> genForCreateHistoryTransactionExportTask() {
+        // basic
+        HttpRequestDef.Builder<CreateHistoryTransactionExportTaskRequest, CreateHistoryTransactionExportTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateHistoryTransactionExportTaskRequest.class,
+                    CreateHistoryTransactionExportTaskResponse.class)
+                .withName("CreateHistoryTransactionExportTask")
+                .withUri("/v3/{project_id}/transaction/{instance_id}/create-export-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHistoryTransactionExportTaskRequest::getInstanceId,
+                CreateHistoryTransactionExportTaskRequest::setInstanceId));
+        builder.<CreateHistoryTransactionExportTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateHistoryTransactionExportTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateHistoryTransactionExportTaskRequest::getXLanguage,
+                CreateHistoryTransactionExportTaskRequest::setXLanguage));
+        builder.<CreateExportTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateExportTaskReq.class),
+            f -> f.withMarshaller(CreateHistoryTransactionExportTaskRequest::getBody,
+                CreateHistoryTransactionExportTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSnapshotsRequest, CreateSnapshotsResponse> createSnapshots =
         genForCreateSnapshots();
 
@@ -812,6 +867,45 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteDbUserRequest.XLanguageEnum.class),
             f -> f.withMarshaller(DeleteDbUserRequest::getXLanguage, DeleteDbUserRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHistoryTransactionExportTaskRequest, DeleteHistoryTransactionExportTaskResponse> deleteHistoryTransactionExportTask =
+        genForDeleteHistoryTransactionExportTask();
+
+    private static HttpRequestDef<DeleteHistoryTransactionExportTaskRequest, DeleteHistoryTransactionExportTaskResponse> genForDeleteHistoryTransactionExportTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteHistoryTransactionExportTaskRequest, DeleteHistoryTransactionExportTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DeleteHistoryTransactionExportTaskRequest.class,
+                    DeleteHistoryTransactionExportTaskResponse.class)
+                .withName("DeleteHistoryTransactionExportTask")
+                .withUri("/v3/{project_id}/transaction/{instance_id}/delete-export-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHistoryTransactionExportTaskRequest::getInstanceId,
+                DeleteHistoryTransactionExportTaskRequest::setInstanceId));
+        builder.<DeleteHistoryTransactionExportTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteHistoryTransactionExportTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteHistoryTransactionExportTaskRequest::getXLanguage,
+                DeleteHistoryTransactionExportTaskRequest::setXLanguage));
+        builder.<CreateExportTaskResp>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateExportTaskResp.class),
+            f -> f.withMarshaller(DeleteHistoryTransactionExportTaskRequest::getBody,
+                DeleteHistoryTransactionExportTaskRequest::setBody));
 
         // response
 
@@ -1815,6 +1909,51 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListHistoryTransactionExportTaskRequest, ListHistoryTransactionExportTaskResponse> listHistoryTransactionExportTask =
+        genForListHistoryTransactionExportTask();
+
+    private static HttpRequestDef<ListHistoryTransactionExportTaskRequest, ListHistoryTransactionExportTaskResponse> genForListHistoryTransactionExportTask() {
+        // basic
+        HttpRequestDef.Builder<ListHistoryTransactionExportTaskRequest, ListHistoryTransactionExportTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListHistoryTransactionExportTaskRequest.class,
+                    ListHistoryTransactionExportTaskResponse.class)
+                .withName("ListHistoryTransactionExportTask")
+                .withUri("/v3/{project_id}/transaction/{instance_id}/get-export-task-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryTransactionExportTaskRequest::getInstanceId,
+                ListHistoryTransactionExportTaskRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryTransactionExportTaskRequest::getOffset,
+                ListHistoryTransactionExportTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryTransactionExportTaskRequest::getLimit,
+                ListHistoryTransactionExportTaskRequest::setLimit));
+        builder.<ListHistoryTransactionExportTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListHistoryTransactionExportTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListHistoryTransactionExportTaskRequest::getXLanguage,
+                ListHistoryTransactionExportTaskRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInnodbLocksRequest, ListInnodbLocksResponse> listInnodbLocks =
         genForListInnodbLocks();
 
@@ -2456,6 +2595,75 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<LoginBuiltInAccountRequest, LoginBuiltInAccountResponse> loginBuiltInAccount =
+        genForLoginBuiltInAccount();
+
+    private static HttpRequestDef<LoginBuiltInAccountRequest, LoginBuiltInAccountResponse> genForLoginBuiltInAccount() {
+        // basic
+        HttpRequestDef.Builder<LoginBuiltInAccountRequest, LoginBuiltInAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, LoginBuiltInAccountRequest.class, LoginBuiltInAccountResponse.class)
+                .withName("LoginBuiltInAccount")
+                .withUri("/v3/{project_id}/instances/{instance_id}/login-built-in-account")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(LoginBuiltInAccountRequest::getInstanceId,
+                LoginBuiltInAccountRequest::setInstanceId));
+        builder.<LoginBuiltInAccountRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(LoginBuiltInAccountRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(LoginBuiltInAccountRequest::getXLanguage, LoginBuiltInAccountRequest::setXLanguage));
+        builder.<LoginBuiltInAccountRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LoginBuiltInAccountRequestBody.class),
+            f -> f.withMarshaller(LoginBuiltInAccountRequest::getBody, LoginBuiltInAccountRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<LogoffBuiltInAccountRequest, LogoffBuiltInAccountResponse> logoffBuiltInAccount =
+        genForLogoffBuiltInAccount();
+
+    private static HttpRequestDef<LogoffBuiltInAccountRequest, LogoffBuiltInAccountResponse> genForLogoffBuiltInAccount() {
+        // basic
+        HttpRequestDef.Builder<LogoffBuiltInAccountRequest, LogoffBuiltInAccountResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, LogoffBuiltInAccountRequest.class, LogoffBuiltInAccountResponse.class)
+            .withName("LogoffBuiltInAccount")
+            .withUri("/v3/{project_id}/instances/{instance_id}/logoff-built-in-account")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(LogoffBuiltInAccountRequest::getInstanceId,
+                LogoffBuiltInAccountRequest::setInstanceId));
+        builder.<LogoffBuiltInAccountRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(LogoffBuiltInAccountRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(LogoffBuiltInAccountRequest::getXLanguage,
+                LogoffBuiltInAccountRequest::setXLanguage));
+        builder.<LogoffBuiltInAccountRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LogoffBuiltInAccountRequestBody.class),
+            f -> f.withMarshaller(LogoffBuiltInAccountRequest::getBody, LogoffBuiltInAccountRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ParseSqlLimitRulesRequest, ParseSqlLimitRulesResponse> parseSqlLimitRules =
         genForParseSqlLimitRules();
 
@@ -2749,6 +2957,45 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowHealthReportSettingsRequest::getInstanceId,
                 ShowHealthReportSettingsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHistoryTransactionExportTaskInfoRequest, ShowHistoryTransactionExportTaskInfoResponse> showHistoryTransactionExportTaskInfo =
+        genForShowHistoryTransactionExportTaskInfo();
+
+    private static HttpRequestDef<ShowHistoryTransactionExportTaskInfoRequest, ShowHistoryTransactionExportTaskInfoResponse> genForShowHistoryTransactionExportTaskInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowHistoryTransactionExportTaskInfoRequest, ShowHistoryTransactionExportTaskInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowHistoryTransactionExportTaskInfoRequest.class,
+                    ShowHistoryTransactionExportTaskInfoResponse.class)
+                .withName("ShowHistoryTransactionExportTaskInfo")
+                .withUri("/v3/{project_id}/transaction/{instance_id}/get-export-task-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTransactionExportTaskInfoRequest::getInstanceId,
+                ShowHistoryTransactionExportTaskInfoRequest::setInstanceId));
+        builder.<Long>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowHistoryTransactionExportTaskInfoRequest::getTaskId,
+                ShowHistoryTransactionExportTaskInfoRequest::setTaskId));
+        builder.<ShowHistoryTransactionExportTaskInfoRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowHistoryTransactionExportTaskInfoRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowHistoryTransactionExportTaskInfoRequest::getXLanguage,
+                ShowHistoryTransactionExportTaskInfoRequest::setXLanguage));
 
         // response
 

@@ -30,7 +30,7 @@ public class ListSecurityReportSubscriptionsResponse extends SdkResponse {
     }
 
     /**
-     * Get total
+     * 安全报告订阅数
      * @return total
      */
     public Integer getTotal() {
@@ -64,7 +64,7 @@ public class ListSecurityReportSubscriptionsResponse extends SdkResponse {
     }
 
     /**
-     * Get items
+     * 安全报告订阅列表
      * @return items
      */
     public List<SecurityReportSubscriptionSummaryResponse> getItems() {

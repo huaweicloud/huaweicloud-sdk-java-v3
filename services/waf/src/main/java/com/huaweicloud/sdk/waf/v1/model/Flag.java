@@ -241,7 +241,7 @@ public class Flag {
     private CnameEnum cname;
 
     /**
-     * 域名是否开启ipv6   - true：支持   - false：不支持
+     * 域名是否开启ipv6   - true：开启   - false：不开启
      */
     public static final class IsDualAzEnum {
 
@@ -316,7 +316,7 @@ public class Flag {
     private IsDualAzEnum isDualAz;
 
     /**
-     * 域名是否开启ipv6   - true：支持   - false：不支持
+     * 域名是否开启ipv6   - true：开启   - false：不开启
      */
     public static final class Ipv6Enum {
 
@@ -447,7 +447,7 @@ public class Flag {
     }
 
     /**
-     * 域名是否开启ipv6   - true：支持   - false：不支持
+     * 域名是否开启ipv6   - true：开启   - false：不开启
      * @return isDualAz
      */
     public IsDualAzEnum getIsDualAz() {
@@ -464,7 +464,7 @@ public class Flag {
     }
 
     /**
-     * 域名是否开启ipv6   - true：支持   - false：不支持
+     * 域名是否开启ipv6   - true：开启   - false：不开启
      * @return ipv6
      */
     public Ipv6Enum getIpv6() {

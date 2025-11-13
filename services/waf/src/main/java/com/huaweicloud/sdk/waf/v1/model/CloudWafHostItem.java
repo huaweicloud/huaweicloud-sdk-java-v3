@@ -346,7 +346,7 @@ public class CloudWafHostItem {
     }
 
     /**
-     * 是否使用独享ip   - true：使用独享ip   - false：不实用独享ip
+     * 是否使用独享ip   - true：使用独享ip   - false：不适用独享ip
      * @return exclusiveIp
      */
     public Boolean getExclusiveIp() {

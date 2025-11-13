@@ -11,6 +11,10 @@ import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostRequest;
 import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.DeleteDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.DeleteDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostAllTypesRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostAllTypesResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesRequest;
@@ -120,6 +124,51 @@ public class DeHMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqAllocateDeh.class),
             f -> f.withMarshaller(CreateDedicatedHostRequest::getBody, CreateDedicatedHostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> deleteDedicatedHost =
+        genForDeleteDedicatedHost();
+
+    private static HttpRequestDef<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> genForDeleteDedicatedHost() {
+        // basic
+        HttpRequestDef.Builder<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDedicatedHostRequest.class, DeleteDedicatedHostResponse.class)
+            .withName("DeleteDedicatedHost")
+            .withUri("/v1.0/{project_id}/dedicated-hosts/{dedicated_host_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dedicated_host_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDedicatedHostRequest::getDedicatedHostId,
+                DeleteDedicatedHostRequest::setDedicatedHostId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDedicatedHostAllTypesRequest, ListDedicatedHostAllTypesResponse> listDedicatedHostAllTypes =
+        genForListDedicatedHostAllTypes();
+
+    private static HttpRequestDef<ListDedicatedHostAllTypesRequest, ListDedicatedHostAllTypesResponse> genForListDedicatedHostAllTypes() {
+        // basic
+        HttpRequestDef.Builder<ListDedicatedHostAllTypesRequest, ListDedicatedHostAllTypesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDedicatedHostAllTypesRequest.class,
+                    ListDedicatedHostAllTypesResponse.class)
+                .withName("ListDedicatedHostAllTypes")
+                .withUri("/v1.0/{project_id}/dedicated-host-types")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

@@ -20,6 +20,16 @@ public class ListMergeRequestVersionsRequest {
 
     private Integer mergeRequestIid;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListMergeRequestVersionsRequest withRepositoryId(Integer repositoryId) {
         this.repositoryId = repositoryId;
         return this;
@@ -58,6 +68,44 @@ public class ListMergeRequestVersionsRequest {
         this.mergeRequestIid = mergeRequestIid;
     }
 
+    public ListMergeRequestVersionsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 偏移量，从0开始。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListMergeRequestVersionsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 返回数量。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -68,12 +116,13 @@ public class ListMergeRequestVersionsRequest {
         }
         ListMergeRequestVersionsRequest that = (ListMergeRequestVersionsRequest) obj;
         return Objects.equals(this.repositoryId, that.repositoryId)
-            && Objects.equals(this.mergeRequestIid, that.mergeRequestIid);
+            && Objects.equals(this.mergeRequestIid, that.mergeRequestIid) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repositoryId, mergeRequestIid);
+        return Objects.hash(repositoryId, mergeRequestIid, offset, limit);
     }
 
     @Override
@@ -82,6 +131,8 @@ public class ListMergeRequestVersionsRequest {
         sb.append("class ListMergeRequestVersionsRequest {\n");
         sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
         sb.append("    mergeRequestIid: ").append(toIndentedString(mergeRequestIid)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

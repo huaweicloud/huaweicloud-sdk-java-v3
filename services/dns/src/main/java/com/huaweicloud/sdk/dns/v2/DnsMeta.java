@@ -8,16 +8,34 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dns.v2.model.AssociateEndpointIpaddressRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateEndpointIpaddressResponse;
 import com.huaweicloud.sdk.dns.v2.model.AssociateOrDisassociateRouterWithRuleRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.AssociateResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.AssociateResolverQueryLogConfigRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.AssociateResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.AssociateResolverRuleRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateResolverRuleRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateCombinedPublicRecordsetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateCombinedPublicRecordsetsTaskRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateCombinedPublicRecordsetsTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicRecordsetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicRecordsetsTaskRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicRecordsetsTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicZonesTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicZonesTaskRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreatePublicZonesTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateRecordSetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateRecordSetsTaskRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchCreateRecordSetsTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeletePtrRecordsRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeletePtrRecordsRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeletePtrRecordsResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeletePublicRecordsetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeletePublicRecordsetsTaskRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeletePublicRecordsetsTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineResponse;
@@ -34,6 +52,12 @@ import com.huaweicloud.sdk.dns.v2.model.BatchSetRecordSetsStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchTransferPublicZonesTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchTransferPublicZonesTaskRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchTransferPublicZonesTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchUpdatePublicRecordsetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchUpdatePublicRecordsetsTaskRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchUpdatePublicRecordsetsTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineResponse;
@@ -72,12 +96,22 @@ import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithBatchLinesResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateResolverQueryLogConfigRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.CreateResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateResolverRuleRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateResolverRuleRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.CreateResolverRuleResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalVerificationRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateRetrievalVerificationResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateTagReq;
 import com.huaweicloud.sdk.dns.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateTagResponse;
+import com.huaweicloud.sdk.dns.v2.model.DeleteBatchCreateRecordSetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.DeleteBatchCreateRecordSetsTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteCustomLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteEndpointRequest;
@@ -94,6 +128,8 @@ import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsResponse;
+import com.huaweicloud.sdk.dns.v2.model.DeleteResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.DeleteResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteResolverRuleRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteResolverRuleResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteTagRequest;
@@ -102,6 +138,8 @@ import com.huaweicloud.sdk.dns.v2.model.DisableDnssecConfigRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisableDnssecConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateEndpointIpaddressRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateEndpointIpaddressResponse;
+import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverRuleRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverRuleRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateRouterRequest;
@@ -112,6 +150,8 @@ import com.huaweicloud.sdk.dns.v2.model.EnableDnssecConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.Ipaddresses;
 import com.huaweicloud.sdk.dns.v2.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListBatchOperationTasksRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListBatchOperationTasksResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListCustomLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListEndpointIpaddressesRequest;
@@ -140,8 +180,12 @@ import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListResolverQueryLogConfigsRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListResolverQueryLogConfigsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListResolverRulesRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListResolverRulesResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListSystemLinesRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListSystemLinesResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListTagReq;
 import com.huaweicloud.sdk.dns.v2.model.ListTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListTagResponse;
@@ -160,10 +204,18 @@ import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowAuthorizeTxtRecordRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowAuthorizeTxtRecordResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowBatchCreateRecordSetsTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowBatchCreateRecordSetsTaskResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowBatchOperationTaskRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowBatchOperationTaskResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowDnssecConfigRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowDnssecConfigResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowDomainDetectionRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowDomainDetectionResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowDomainQuotaRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowDomainQuotaResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowEmailRecordSetRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowEmailRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowEndpointRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowEndpointResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowLineGroupRequest;
@@ -186,10 +238,20 @@ import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowResolverQueryLogConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowResolverQueryLogConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowResolverRuleRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowResolverRuleResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowRetrievalRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowRetrievalResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowRetrievalVerificationRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowRetrievalVerificationResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowWebsiteRecordSetRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowWebsiteRecordSetResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowZoneNameServerRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowZoneNameServerResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineResponse;
@@ -262,6 +324,39 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateResolverQueryLogConfigRequest, AssociateResolverQueryLogConfigResponse> associateResolverQueryLogConfig =
+        genForAssociateResolverQueryLogConfig();
+
+    private static HttpRequestDef<AssociateResolverQueryLogConfigRequest, AssociateResolverQueryLogConfigResponse> genForAssociateResolverQueryLogConfig() {
+        // basic
+        HttpRequestDef.Builder<AssociateResolverQueryLogConfigRequest, AssociateResolverQueryLogConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateResolverQueryLogConfigRequest.class,
+                    AssociateResolverQueryLogConfigResponse.class)
+                .withName("AssociateResolverQueryLogConfig")
+                .withUri("/v2/resolver/queryloggingconfig/{id}/associatevpc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateResolverQueryLogConfigRequest::getId,
+                AssociateResolverQueryLogConfigRequest::setId));
+        builder.<AssociateResolverQueryLogConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateResolverQueryLogConfigRequestBody.class),
+            f -> f.withMarshaller(AssociateResolverQueryLogConfigRequest::getBody,
+                AssociateResolverQueryLogConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AssociateResolverRuleRouterRequest, AssociateResolverRuleRouterResponse> associateResolverRuleRouter =
         genForAssociateResolverRuleRouter();
 
@@ -317,6 +412,87 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AssociateRouterRequestBody.class),
             f -> f.withMarshaller(AssociateRouterRequest::getBody, AssociateRouterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateCombinedPublicRecordsetsTaskRequest, BatchCreateCombinedPublicRecordsetsTaskResponse> batchCreateCombinedPublicRecordsetsTask =
+        genForBatchCreateCombinedPublicRecordsetsTask();
+
+    private static HttpRequestDef<BatchCreateCombinedPublicRecordsetsTaskRequest, BatchCreateCombinedPublicRecordsetsTaskResponse> genForBatchCreateCombinedPublicRecordsetsTask() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateCombinedPublicRecordsetsTaskRequest, BatchCreateCombinedPublicRecordsetsTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateCombinedPublicRecordsetsTaskRequest.class,
+                    BatchCreateCombinedPublicRecordsetsTaskResponse.class)
+                .withName("BatchCreateCombinedPublicRecordsetsTask")
+                .withUri("/v2.1/operation-task/batch-create-combined-recordset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreateCombinedPublicRecordsetsTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateCombinedPublicRecordsetsTaskRequestBody.class),
+            f -> f.withMarshaller(BatchCreateCombinedPublicRecordsetsTaskRequest::getBody,
+                BatchCreateCombinedPublicRecordsetsTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreatePublicRecordsetsTaskRequest, BatchCreatePublicRecordsetsTaskResponse> batchCreatePublicRecordsetsTask =
+        genForBatchCreatePublicRecordsetsTask();
+
+    private static HttpRequestDef<BatchCreatePublicRecordsetsTaskRequest, BatchCreatePublicRecordsetsTaskResponse> genForBatchCreatePublicRecordsetsTask() {
+        // basic
+        HttpRequestDef.Builder<BatchCreatePublicRecordsetsTaskRequest, BatchCreatePublicRecordsetsTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreatePublicRecordsetsTaskRequest.class,
+                    BatchCreatePublicRecordsetsTaskResponse.class)
+                .withName("BatchCreatePublicRecordsetsTask")
+                .withUri("/v2.1/operation-task/batch-create-recordset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreatePublicRecordsetsTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreatePublicRecordsetsTaskRequestBody.class),
+            f -> f.withMarshaller(BatchCreatePublicRecordsetsTaskRequest::getBody,
+                BatchCreatePublicRecordsetsTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreatePublicZonesTaskRequest, BatchCreatePublicZonesTaskResponse> batchCreatePublicZonesTask =
+        genForBatchCreatePublicZonesTask();
+
+    private static HttpRequestDef<BatchCreatePublicZonesTaskRequest, BatchCreatePublicZonesTaskResponse> genForBatchCreatePublicZonesTask() {
+        // basic
+        HttpRequestDef.Builder<BatchCreatePublicZonesTaskRequest, BatchCreatePublicZonesTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreatePublicZonesTaskRequest.class,
+                    BatchCreatePublicZonesTaskResponse.class)
+                .withName("BatchCreatePublicZonesTask")
+                .withUri("/v2.1/operation-task/batch-create-zone")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreatePublicZonesTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreatePublicZonesTaskRequestBody.class),
+            f -> f.withMarshaller(BatchCreatePublicZonesTaskRequest::getBody,
+                BatchCreatePublicZonesTaskRequest::setBody));
 
         // response
 
@@ -379,33 +555,27 @@ public class DnsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLine =
-        genForBatchDeleteRecordSetWithLine();
+    public static final HttpRequestDef<BatchDeletePublicRecordsetsTaskRequest, BatchDeletePublicRecordsetsTaskResponse> batchDeletePublicRecordsetsTask =
+        genForBatchDeletePublicRecordsetsTask();
 
-    private static HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> genForBatchDeleteRecordSetWithLine() {
+    private static HttpRequestDef<BatchDeletePublicRecordsetsTaskRequest, BatchDeletePublicRecordsetsTaskResponse> genForBatchDeletePublicRecordsetsTask() {
         // basic
-        HttpRequestDef.Builder<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> builder =
+        HttpRequestDef.Builder<BatchDeletePublicRecordsetsTaskRequest, BatchDeletePublicRecordsetsTaskResponse> builder =
             HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    BatchDeleteRecordSetWithLineRequest.class,
-                    BatchDeleteRecordSetWithLineResponse.class)
-                .withName("BatchDeleteRecordSetWithLine")
-                .withUri("/v2.1/zones/{zone_id}/recordsets")
+                .builder(HttpMethod.POST,
+                    BatchDeletePublicRecordsetsTaskRequest.class,
+                    BatchDeletePublicRecordsetsTaskResponse.class)
+                .withName("BatchDeletePublicRecordsetsTask")
+                .withUri("/v2.1/operation-task/batch-delete-recordset")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getZoneId,
-                BatchDeleteRecordSetWithLineRequest::setZoneId));
-        builder.<BatchDeleteRecordSetWithLineRequestBody>withRequestField("body",
+        builder.<BatchDeletePublicRecordsetsTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteRecordSetWithLineRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getBody,
-                BatchDeleteRecordSetWithLineRequest::setBody));
+            TypeCasts.uncheckedConversion(BatchDeletePublicRecordsetsTaskRequestBody.class),
+            f -> f.withMarshaller(BatchDeletePublicRecordsetsTaskRequest::getBody,
+                BatchDeletePublicRecordsetsTaskRequest::setBody));
 
         // response
 
@@ -505,33 +675,54 @@ public class DnsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLine =
-        genForBatchUpdateRecordSetWithLine();
+    public static final HttpRequestDef<BatchTransferPublicZonesTaskRequest, BatchTransferPublicZonesTaskResponse> batchTransferPublicZonesTask =
+        genForBatchTransferPublicZonesTask();
 
-    private static HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> genForBatchUpdateRecordSetWithLine() {
+    private static HttpRequestDef<BatchTransferPublicZonesTaskRequest, BatchTransferPublicZonesTaskResponse> genForBatchTransferPublicZonesTask() {
         // basic
-        HttpRequestDef.Builder<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> builder =
+        HttpRequestDef.Builder<BatchTransferPublicZonesTaskRequest, BatchTransferPublicZonesTaskResponse> builder =
             HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    BatchUpdateRecordSetWithLineRequest.class,
-                    BatchUpdateRecordSetWithLineResponse.class)
-                .withName("BatchUpdateRecordSetWithLine")
-                .withUri("/v2.1/zones/{zone_id}/recordsets")
+                .builder(HttpMethod.POST,
+                    BatchTransferPublicZonesTaskRequest.class,
+                    BatchTransferPublicZonesTaskResponse.class)
+                .withName("BatchTransferPublicZonesTask")
+                .withUri("/v2.1/operation-task/batch-transfer")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getZoneId,
-                BatchUpdateRecordSetWithLineRequest::setZoneId));
-        builder.<BatchUpdateRecordSetWithLineRequestBody>withRequestField("body",
+        builder.<BatchTransferPublicZonesTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineRequestBody.class),
-            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody,
-                BatchUpdateRecordSetWithLineRequest::setBody));
+            TypeCasts.uncheckedConversion(BatchTransferPublicZonesTaskRequestBody.class),
+            f -> f.withMarshaller(BatchTransferPublicZonesTaskRequest::getBody,
+                BatchTransferPublicZonesTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdatePublicRecordsetsTaskRequest, BatchUpdatePublicRecordsetsTaskResponse> batchUpdatePublicRecordsetsTask =
+        genForBatchUpdatePublicRecordsetsTask();
+
+    private static HttpRequestDef<BatchUpdatePublicRecordsetsTaskRequest, BatchUpdatePublicRecordsetsTaskResponse> genForBatchUpdatePublicRecordsetsTask() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdatePublicRecordsetsTaskRequest, BatchUpdatePublicRecordsetsTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchUpdatePublicRecordsetsTaskRequest.class,
+                    BatchUpdatePublicRecordsetsTaskResponse.class)
+                .withName("BatchUpdatePublicRecordsetsTask")
+                .withUri("/v2.1/operation-task/batch-update-recordset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpdatePublicRecordsetsTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdatePublicRecordsetsTaskRequestBody.class),
+            f -> f.withMarshaller(BatchUpdatePublicRecordsetsTaskRequest::getBody,
+                BatchUpdatePublicRecordsetsTaskRequest::setBody));
 
         // response
 
@@ -704,33 +895,27 @@ public class DnsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLines =
-        genForCreateRecordSetWithBatchLines();
+    public static final HttpRequestDef<CreateResolverQueryLogConfigRequest, CreateResolverQueryLogConfigResponse> createResolverQueryLogConfig =
+        genForCreateResolverQueryLogConfig();
 
-    private static HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> genForCreateRecordSetWithBatchLines() {
+    private static HttpRequestDef<CreateResolverQueryLogConfigRequest, CreateResolverQueryLogConfigResponse> genForCreateResolverQueryLogConfig() {
         // basic
-        HttpRequestDef.Builder<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> builder =
+        HttpRequestDef.Builder<CreateResolverQueryLogConfigRequest, CreateResolverQueryLogConfigResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.POST,
-                    CreateRecordSetWithBatchLinesRequest.class,
-                    CreateRecordSetWithBatchLinesResponse.class)
-                .withName("CreateRecordSetWithBatchLines")
-                .withUri("/v2.1/zones/{zone_id}/recordsets/batch/lines")
+                    CreateResolverQueryLogConfigRequest.class,
+                    CreateResolverQueryLogConfigResponse.class)
+                .withName("CreateResolverQueryLogConfig")
+                .withUri("/v2/resolver/queryloggingconfig")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getZoneId,
-                CreateRecordSetWithBatchLinesRequest::setZoneId));
-        builder.<CreateRSetBatchLinesReq>withRequestField("body",
+        builder.<CreateResolverQueryLogConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateRSetBatchLinesReq.class),
-            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getBody,
-                CreateRecordSetWithBatchLinesRequest::setBody));
+            TypeCasts.uncheckedConversion(CreateResolverQueryLogConfigRequestBody.class),
+            f -> f.withMarshaller(CreateResolverQueryLogConfigRequest::getBody,
+                CreateResolverQueryLogConfigRequest::setBody));
 
         // response
 
@@ -754,6 +939,56 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateResolverRuleRequestBody.class),
             f -> f.withMarshaller(CreateResolverRuleRequest::getBody, CreateResolverRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRetrievalRequest, CreateRetrievalResponse> createRetrieval =
+        genForCreateRetrieval();
+
+    private static HttpRequestDef<CreateRetrievalRequest, CreateRetrievalResponse> genForCreateRetrieval() {
+        // basic
+        HttpRequestDef.Builder<CreateRetrievalRequest, CreateRetrievalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRetrievalRequest.class, CreateRetrievalResponse.class)
+                .withName("CreateRetrieval")
+                .withUri("/v2/retrieval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateRetrievalRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRetrievalRequestBody.class),
+            f -> f.withMarshaller(CreateRetrievalRequest::getBody, CreateRetrievalRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> createRetrievalVerification =
+        genForCreateRetrievalVerification();
+
+    private static HttpRequestDef<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> genForCreateRetrievalVerification() {
+        // basic
+        HttpRequestDef.Builder<CreateRetrievalVerificationRequest, CreateRetrievalVerificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateRetrievalVerificationRequest.class,
+                    CreateRetrievalVerificationResponse.class)
+                .withName("CreateRetrievalVerification")
+                .withUri("/v2/retrieval/verification/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRetrievalVerificationRequest::getId,
+                CreateRetrievalVerificationRequest::setId));
 
         // response
 
@@ -907,6 +1142,33 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteResolverQueryLogConfigRequest, DeleteResolverQueryLogConfigResponse> deleteResolverQueryLogConfig =
+        genForDeleteResolverQueryLogConfig();
+
+    private static HttpRequestDef<DeleteResolverQueryLogConfigRequest, DeleteResolverQueryLogConfigResponse> genForDeleteResolverQueryLogConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteResolverQueryLogConfigRequest, DeleteResolverQueryLogConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteResolverQueryLogConfigRequest.class,
+                    DeleteResolverQueryLogConfigResponse.class)
+                .withName("DeleteResolverQueryLogConfig")
+                .withUri("/v2/resolver/queryloggingconfig/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteResolverQueryLogConfigRequest::getId,
+                DeleteResolverQueryLogConfigRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteResolverRuleRequest, DeleteResolverRuleResponse> deleteResolverRule =
         genForDeleteResolverRule();
 
@@ -996,6 +1258,39 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DisassociateResolverQueryLogConfigRequest, DisassociateResolverQueryLogConfigResponse> disassociateResolverQueryLogConfig =
+        genForDisassociateResolverQueryLogConfig();
+
+    private static HttpRequestDef<DisassociateResolverQueryLogConfigRequest, DisassociateResolverQueryLogConfigResponse> genForDisassociateResolverQueryLogConfig() {
+        // basic
+        HttpRequestDef.Builder<DisassociateResolverQueryLogConfigRequest, DisassociateResolverQueryLogConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisassociateResolverQueryLogConfigRequest.class,
+                    DisassociateResolverQueryLogConfigResponse.class)
+                .withName("DisassociateResolverQueryLogConfig")
+                .withUri("/v2/resolver/queryloggingconfig/{id}/disassociatevpc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateResolverQueryLogConfigRequest::getId,
+                DisassociateResolverQueryLogConfigRequest::setId));
+        builder.<AssociateResolverQueryLogConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateResolverQueryLogConfigRequestBody.class),
+            f -> f.withMarshaller(DisassociateResolverQueryLogConfigRequest::getBody,
+                DisassociateResolverQueryLogConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DisassociateResolverRuleRouterRequest, DisassociateResolverRuleRouterResponse> disassociateResolverRuleRouter =
         genForDisassociateResolverRuleRouter();
 
@@ -1069,6 +1364,35 @@ public class DnsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBatchOperationTasksRequest, ListBatchOperationTasksResponse> listBatchOperationTasks =
+        genForListBatchOperationTasks();
+
+    private static HttpRequestDef<ListBatchOperationTasksRequest, ListBatchOperationTasksResponse> genForListBatchOperationTasks() {
+        // basic
+        HttpRequestDef.Builder<ListBatchOperationTasksRequest, ListBatchOperationTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListBatchOperationTasksRequest.class, ListBatchOperationTasksResponse.class)
+            .withName("ListBatchOperationTasks")
+            .withUri("/v2.1/batch-operation-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchOperationTasksRequest::getLimit, ListBatchOperationTasksRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBatchOperationTasksRequest::getOffset,
+                ListBatchOperationTasksRequest::setOffset));
 
         // response
 
@@ -1457,6 +1781,45 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListResolverQueryLogConfigsRequest, ListResolverQueryLogConfigsResponse> listResolverQueryLogConfigs =
+        genForListResolverQueryLogConfigs();
+
+    private static HttpRequestDef<ListResolverQueryLogConfigsRequest, ListResolverQueryLogConfigsResponse> genForListResolverQueryLogConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListResolverQueryLogConfigsRequest, ListResolverQueryLogConfigsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListResolverQueryLogConfigsRequest.class,
+                    ListResolverQueryLogConfigsResponse.class)
+                .withName("ListResolverQueryLogConfigs")
+                .withUri("/v2/resolver/queryloggingconfig")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResolverQueryLogConfigsRequest::getLimit,
+                ListResolverQueryLogConfigsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResolverQueryLogConfigsRequest::getMarker,
+                ListResolverQueryLogConfigsRequest::setMarker));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResolverQueryLogConfigsRequest::getVpcId,
+                ListResolverQueryLogConfigsRequest::setVpcId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListResolverRulesRequest, ListResolverRulesResponse> listResolverRules =
         genForListResolverRules();
 
@@ -1638,6 +2001,75 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBatchOperationTaskRequest, ShowBatchOperationTaskResponse> showBatchOperationTask =
+        genForShowBatchOperationTask();
+
+    private static HttpRequestDef<ShowBatchOperationTaskRequest, ShowBatchOperationTaskResponse> genForShowBatchOperationTask() {
+        // basic
+        HttpRequestDef.Builder<ShowBatchOperationTaskRequest, ShowBatchOperationTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowBatchOperationTaskRequest.class, ShowBatchOperationTaskResponse.class)
+            .withName("ShowBatchOperationTask")
+            .withUri("/v2.1/batch-operation-tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBatchOperationTaskRequest::getTaskId, ShowBatchOperationTaskRequest::setTaskId));
+        builder.<Integer>withRequestField("error_item_limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBatchOperationTaskRequest::getErrorItemLimit,
+                ShowBatchOperationTaskRequest::setErrorItemLimit));
+        builder.<Integer>withRequestField("error_item_offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBatchOperationTaskRequest::getErrorItemOffset,
+                ShowBatchOperationTaskRequest::setErrorItemOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainDetectionRequest, ShowDomainDetectionResponse> showDomainDetection =
+        genForShowDomainDetection();
+
+    private static HttpRequestDef<ShowDomainDetectionRequest, ShowDomainDetectionResponse> genForShowDomainDetection() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainDetectionRequest, ShowDomainDetectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainDetectionRequest.class, ShowDomainDetectionResponse.class)
+                .withName("ShowDomainDetection")
+                .withUri("/v2.1/zones/{zone_id}/detection")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainDetectionRequest::getZoneId, ShowDomainDetectionRequest::setZoneId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainDetectionRequest::getType, ShowDomainDetectionRequest::setType));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainDetectionRequest::getDomainName,
+                ShowDomainDetectionRequest::setDomainName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuota =
         genForShowDomainQuota();
 
@@ -1655,6 +2087,39 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, ShowDomainQuotaRequest::setDomainId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEmailRecordSetRequest, ShowEmailRecordSetResponse> showEmailRecordSet =
+        genForShowEmailRecordSet();
+
+    private static HttpRequestDef<ShowEmailRecordSetRequest, ShowEmailRecordSetResponse> genForShowEmailRecordSet() {
+        // basic
+        HttpRequestDef.Builder<ShowEmailRecordSetRequest, ShowEmailRecordSetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEmailRecordSetRequest.class, ShowEmailRecordSetResponse.class)
+                .withName("ShowEmailRecordSet")
+                .withUri("/v2.1/zones/{zone_id}/email-recordsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEmailRecordSetRequest::getZoneId, ShowEmailRecordSetRequest::setZoneId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowEmailRecordSetRequest::getLimit, ShowEmailRecordSetRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowEmailRecordSetRequest::getOffset, ShowEmailRecordSetRequest::setOffset));
 
         // response
 
@@ -1804,6 +2269,32 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowResolverQueryLogConfigRequest, ShowResolverQueryLogConfigResponse> showResolverQueryLogConfig =
+        genForShowResolverQueryLogConfig();
+
+    private static HttpRequestDef<ShowResolverQueryLogConfigRequest, ShowResolverQueryLogConfigResponse> genForShowResolverQueryLogConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowResolverQueryLogConfigRequest, ShowResolverQueryLogConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowResolverQueryLogConfigRequest.class,
+                    ShowResolverQueryLogConfigResponse.class)
+                .withName("ShowResolverQueryLogConfig")
+                .withUri("/v2/resolver/queryloggingconfig/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResolverQueryLogConfigRequest::getId, ShowResolverQueryLogConfigRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowResolverRuleRequest, ShowResolverRuleResponse> showResolverRule =
         genForShowResolverRule();
 
@@ -1850,6 +2341,111 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, ShowResourceTagRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRetrievalRequest, ShowRetrievalResponse> showRetrieval =
+        genForShowRetrieval();
+
+    private static HttpRequestDef<ShowRetrievalRequest, ShowRetrievalResponse> genForShowRetrieval() {
+        // basic
+        HttpRequestDef.Builder<ShowRetrievalRequest, ShowRetrievalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRetrievalRequest.class, ShowRetrievalResponse.class)
+                .withName("ShowRetrieval")
+                .withUri("/v2/retrieval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRetrievalRequest::getName, ShowRetrievalRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse> showRetrievalVerification =
+        genForShowRetrievalVerification();
+
+    private static HttpRequestDef<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse> genForShowRetrievalVerification() {
+        // basic
+        HttpRequestDef.Builder<ShowRetrievalVerificationRequest, ShowRetrievalVerificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRetrievalVerificationRequest.class,
+                    ShowRetrievalVerificationResponse.class)
+                .withName("ShowRetrievalVerification")
+                .withUri("/v2/retrieval/verification/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRetrievalVerificationRequest::getId, ShowRetrievalVerificationRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWebsiteRecordSetRequest, ShowWebsiteRecordSetResponse> showWebsiteRecordSet =
+        genForShowWebsiteRecordSet();
+
+    private static HttpRequestDef<ShowWebsiteRecordSetRequest, ShowWebsiteRecordSetResponse> genForShowWebsiteRecordSet() {
+        // basic
+        HttpRequestDef.Builder<ShowWebsiteRecordSetRequest, ShowWebsiteRecordSetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWebsiteRecordSetRequest.class, ShowWebsiteRecordSetResponse.class)
+            .withName("ShowWebsiteRecordSet")
+            .withUri("/v2.1/zones/{zone_id}/website-recordsets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWebsiteRecordSetRequest::getZoneId, ShowWebsiteRecordSetRequest::setZoneId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowWebsiteRecordSetRequest::getLimit, ShowWebsiteRecordSetRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowWebsiteRecordSetRequest::getOffset, ShowWebsiteRecordSetRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowZoneNameServerRequest, ShowZoneNameServerResponse> showZoneNameServer =
+        genForShowZoneNameServer();
+
+    private static HttpRequestDef<ShowZoneNameServerRequest, ShowZoneNameServerResponse> genForShowZoneNameServer() {
+        // basic
+        HttpRequestDef.Builder<ShowZoneNameServerRequest, ShowZoneNameServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowZoneNameServerRequest.class, ShowZoneNameServerResponse.class)
+                .withName("ShowZoneNameServer")
+                .withUri("/v2/public-zones/dns-servers/{domain_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowZoneNameServerRequest::getDomainName, ShowZoneNameServerRequest::setDomainName));
 
         // response
 
@@ -2607,6 +3203,105 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateRecordSetsTaskRequest, BatchCreateRecordSetsTaskResponse> batchCreateRecordSetsTask =
+        genForBatchCreateRecordSetsTask();
+
+    private static HttpRequestDef<BatchCreateRecordSetsTaskRequest, BatchCreateRecordSetsTaskResponse> genForBatchCreateRecordSetsTask() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateRecordSetsTaskRequest, BatchCreateRecordSetsTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateRecordSetsTaskRequest.class,
+                    BatchCreateRecordSetsTaskResponse.class)
+                .withName("BatchCreateRecordSetsTask")
+                .withUri("/v2.1/zones/{zone_id}/recordsets/batch-create-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateRecordSetsTaskRequest::getZoneId,
+                BatchCreateRecordSetsTaskRequest::setZoneId));
+        builder.<BatchCreateRecordSetsTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateRecordSetsTaskRequestBody.class),
+            f -> f.withMarshaller(BatchCreateRecordSetsTaskRequest::getBody,
+                BatchCreateRecordSetsTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLine =
+        genForBatchDeleteRecordSetWithLine();
+
+    private static HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> genForBatchDeleteRecordSetWithLine() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteRecordSetWithLineRequest.class,
+                    BatchDeleteRecordSetWithLineResponse.class)
+                .withName("BatchDeleteRecordSetWithLine")
+                .withUri("/v2.1/zones/{zone_id}/recordsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getZoneId,
+                BatchDeleteRecordSetWithLineRequest::setZoneId));
+        builder.<BatchDeleteRecordSetWithLineRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRecordSetWithLineRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getBody,
+                BatchDeleteRecordSetWithLineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLine =
+        genForBatchUpdateRecordSetWithLine();
+
+    private static HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> genForBatchUpdateRecordSetWithLine() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateRecordSetWithLineRequest.class,
+                    BatchUpdateRecordSetWithLineResponse.class)
+                .withName("BatchUpdateRecordSetWithLine")
+                .withUri("/v2.1/zones/{zone_id}/recordsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getZoneId,
+                BatchUpdateRecordSetWithLineRequest::setZoneId));
+        builder.<BatchUpdateRecordSetWithLineRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody,
+                BatchUpdateRecordSetWithLineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePtrRequest, CreatePtrResponse> createPtr = genForCreatePtr();
 
     private static HttpRequestDef<CreatePtrRequest, CreatePtrResponse> genForCreatePtr() {
@@ -2623,6 +3318,39 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePtrRequestBody.class),
             f -> f.withMarshaller(CreatePtrRequest::getBody, CreatePtrRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> createRecordSetWithBatchLines =
+        genForCreateRecordSetWithBatchLines();
+
+    private static HttpRequestDef<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> genForCreateRecordSetWithBatchLines() {
+        // basic
+        HttpRequestDef.Builder<CreateRecordSetWithBatchLinesRequest, CreateRecordSetWithBatchLinesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateRecordSetWithBatchLinesRequest.class,
+                    CreateRecordSetWithBatchLinesResponse.class)
+                .withName("CreateRecordSetWithBatchLines")
+                .withUri("/v2.1/zones/{zone_id}/recordsets/batch/lines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getZoneId,
+                CreateRecordSetWithBatchLinesRequest::setZoneId));
+        builder.<CreateRSetBatchLinesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRSetBatchLinesReq.class),
+            f -> f.withMarshaller(CreateRecordSetWithBatchLinesRequest::getBody,
+                CreateRecordSetWithBatchLinesRequest::setBody));
 
         // response
 
@@ -2652,6 +3380,33 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRecordSetWithLineRequestBody.class),
             f -> f.withMarshaller(CreateRecordSetWithLineRequest::getBody, CreateRecordSetWithLineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBatchCreateRecordSetsTaskRequest, DeleteBatchCreateRecordSetsTaskResponse> deleteBatchCreateRecordSetsTask =
+        genForDeleteBatchCreateRecordSetsTask();
+
+    private static HttpRequestDef<DeleteBatchCreateRecordSetsTaskRequest, DeleteBatchCreateRecordSetsTaskResponse> genForDeleteBatchCreateRecordSetsTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteBatchCreateRecordSetsTaskRequest, DeleteBatchCreateRecordSetsTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteBatchCreateRecordSetsTaskRequest.class,
+                    DeleteBatchCreateRecordSetsTaskResponse.class)
+                .withName("DeleteBatchCreateRecordSetsTask")
+                .withUri("/v2.1/zones/{zone_id}/recordsets/batch-create-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBatchCreateRecordSetsTaskRequest::getZoneId,
+                DeleteBatchCreateRecordSetsTaskRequest::setZoneId));
 
         // response
 
@@ -2897,6 +3652,39 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSystemLinesRequest, ListSystemLinesResponse> listSystemLines =
+        genForListSystemLines();
+
+    private static HttpRequestDef<ListSystemLinesRequest, ListSystemLinesResponse> genForListSystemLines() {
+        // basic
+        HttpRequestDef.Builder<ListSystemLinesRequest, ListSystemLinesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSystemLinesRequest.class, ListSystemLinesResponse.class)
+                .withName("ListSystemLines")
+                .withUri("/v2.1/system-lines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("locale",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSystemLinesRequest::getLocale, ListSystemLinesRequest::setLocale));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSystemLinesRequest::getLimit, ListSystemLinesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSystemLinesRequest::getOffset, ListSystemLinesRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> setRecordSetsStatus =
         genForSetRecordSetsStatus();
 
@@ -2920,6 +3708,45 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SetRecordSetsStatusRequestBody.class),
             f -> f.withMarshaller(SetRecordSetsStatusRequest::getBody, SetRecordSetsStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBatchCreateRecordSetsTaskRequest, ShowBatchCreateRecordSetsTaskResponse> showBatchCreateRecordSetsTask =
+        genForShowBatchCreateRecordSetsTask();
+
+    private static HttpRequestDef<ShowBatchCreateRecordSetsTaskRequest, ShowBatchCreateRecordSetsTaskResponse> genForShowBatchCreateRecordSetsTask() {
+        // basic
+        HttpRequestDef.Builder<ShowBatchCreateRecordSetsTaskRequest, ShowBatchCreateRecordSetsTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBatchCreateRecordSetsTaskRequest.class,
+                    ShowBatchCreateRecordSetsTaskResponse.class)
+                .withName("ShowBatchCreateRecordSetsTask")
+                .withUri("/v2.1/zones/{zone_id}/recordsets/batch-create-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBatchCreateRecordSetsTaskRequest::getZoneId,
+                ShowBatchCreateRecordSetsTaskRequest::setZoneId));
+        builder.<Integer>withRequestField("error_item_limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBatchCreateRecordSetsTaskRequest::getErrorItemLimit,
+                ShowBatchCreateRecordSetsTaskRequest::setErrorItemLimit));
+        builder.<Integer>withRequestField("error_item_offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBatchCreateRecordSetsTaskRequest::getErrorItemOffset,
+                ShowBatchCreateRecordSetsTaskRequest::setErrorItemOffset));
 
         // response
 

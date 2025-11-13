@@ -25,6 +25,7 @@ import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobListRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobListResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ExportJobReq;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ExportJobsReq;
@@ -345,10 +346,10 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportJobRequest::getWorkspace, ExportJobRequest::setWorkspace));
-        builder.<ExportJobsReq>withRequestField("body",
+        builder.<ExportJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ExportJobsReq.class),
+            TypeCasts.uncheckedConversion(ExportJobReq.class),
             f -> f.withMarshaller(ExportJobRequest::getBody, ExportJobRequest::setBody));
 
         // response

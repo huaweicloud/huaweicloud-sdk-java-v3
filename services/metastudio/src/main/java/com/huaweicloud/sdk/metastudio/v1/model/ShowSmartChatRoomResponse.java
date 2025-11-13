@@ -356,6 +356,11 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     private Integer exitMuteThreshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_semantic_action")
+
+    private Boolean enableSemanticAction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_id")
 
     private String roomId;
@@ -779,6 +784,23 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
         this.exitMuteThreshold = exitMuteThreshold;
     }
 
+    public ShowSmartChatRoomResponse withEnableSemanticAction(Boolean enableSemanticAction) {
+        this.enableSemanticAction = enableSemanticAction;
+        return this;
+    }
+
+    /**
+     * 是否优先级加载模型资产
+     * @return enableSemanticAction
+     */
+    public Boolean getEnableSemanticAction() {
+        return enableSemanticAction;
+    }
+
+    public void setEnableSemanticAction(Boolean enableSemanticAction) {
+        this.enableSemanticAction = enableSemanticAction;
+    }
+
     public ShowSmartChatRoomResponse withRoomId(String roomId) {
         this.roomId = roomId;
         return this;
@@ -942,6 +964,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
             && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig)
             && Objects.equals(this.chatVideoType, that.chatVideoType)
             && Objects.equals(this.exitMuteThreshold, that.exitMuteThreshold)
+            && Objects.equals(this.enableSemanticAction, that.enableSemanticAction)
             && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.coverUrl, that.coverUrl)
             && Objects.equals(this.isPoolMode, that.isPoolMode)
@@ -969,6 +992,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
             chatSubtitleConfig,
             chatVideoType,
             exitMuteThreshold,
+            enableSemanticAction,
             roomId,
             createTime,
             updateTime,
@@ -1000,6 +1024,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
         sb.append("    chatSubtitleConfig: ").append(toIndentedString(chatSubtitleConfig)).append("\n");
         sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
         sb.append("    exitMuteThreshold: ").append(toIndentedString(exitMuteThreshold)).append("\n");
+        sb.append("    enableSemanticAction: ").append(toIndentedString(enableSemanticAction)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

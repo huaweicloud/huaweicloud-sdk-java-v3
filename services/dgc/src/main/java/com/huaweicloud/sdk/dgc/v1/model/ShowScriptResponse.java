@@ -210,6 +210,11 @@ public class ShowScriptResponse extends SdkResponse {
 
     private String owner;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Integer version;
+
     /**
      * 在开启审批开关后，需要填写该字段。表示创建脚本的目标状态，有三种状态：SAVED、SUBMITTED和PRODUCTION，分别表示脚本创建后是保存态，提交态，生产态: - 保存态表示脚本仅保存，无法调度运行，需要提交并审核通过后才能运行。 - 提交态表示脚本保存后会自动提交，需要审核通过才能运行。 - 生产态表示脚本跳过审批环节，创建后可以直接运行。注意：只有工作空间的管理员用户才能创建生产态的脚本。
      */
@@ -499,6 +504,23 @@ public class ShowScriptResponse extends SdkResponse {
         this.owner = owner;
     }
 
+    public ShowScriptResponse withVersion(Integer version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 脚本最新提交版本
+     * @return version
+     */
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     public ShowScriptResponse withTargetStatus(TargetStatusEnum targetStatus) {
         this.targetStatus = targetStatus;
         return this;
@@ -564,7 +586,8 @@ public class ShowScriptResponse extends SdkResponse {
             && Objects.equals(this.database, that.database) && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this._configuration, that._configuration)
             && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.targetStatus, that.targetStatus) && Objects.equals(this.approvers, that.approvers);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.targetStatus, that.targetStatus)
+            && Objects.equals(this.approvers, that.approvers);
     }
 
     @Override
@@ -580,6 +603,7 @@ public class ShowScriptResponse extends SdkResponse {
             _configuration,
             description,
             owner,
+            version,
             targetStatus,
             approvers);
     }
@@ -599,6 +623,7 @@ public class ShowScriptResponse extends SdkResponse {
         sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    targetStatus: ").append(toIndentedString(targetStatus)).append("\n");
         sb.append("    approvers: ").append(toIndentedString(approvers)).append("\n");
         sb.append("}");

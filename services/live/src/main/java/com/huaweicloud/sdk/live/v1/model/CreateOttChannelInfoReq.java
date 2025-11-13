@@ -113,6 +113,86 @@ public class CreateOttChannelInfoReq {
 
     private StateEnum state;
 
+    /**
+     * 频道模式 ADD_CDN：一站式服务，源站和CDN绑在一起（默认） ONLY_OS：独立源站服务，CDN和源站解耦
+     */
+    public static final class ModeEnum {
+
+        /**
+         * Enum ADD_CDN for value: "ADD_CDN"
+         */
+        public static final ModeEnum ADD_CDN = new ModeEnum("ADD_CDN");
+
+        /**
+         * Enum ONLY_OS for value: "ONLY_OS"
+         */
+        public static final ModeEnum ONLY_OS = new ModeEnum("ONLY_OS");
+
+        private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ModeEnum> createStaticFields() {
+            Map<String, ModeEnum> map = new HashMap<>();
+            map.put("ADD_CDN", ADD_CDN);
+            map.put("ONLY_OS", ONLY_OS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
+        }
+
+        public static ModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ModeEnum) {
+                return this.value.equals(((ModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private ModeEnum mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "input")
 
@@ -221,6 +301,40 @@ public class CreateOttChannelInfoReq {
 
     public void setState(StateEnum state) {
         this.state = state;
+    }
+
+    public CreateOttChannelInfoReq withMode(ModeEnum mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 频道模式 ADD_CDN：一站式服务，源站和CDN绑在一起（默认） ONLY_OS：独立源站服务，CDN和源站解耦
+     * @return mode
+     */
+    public ModeEnum getMode() {
+        return mode;
+    }
+
+    public void setMode(ModeEnum mode) {
+        this.mode = mode;
+    }
+
+    public CreateOttChannelInfoReq withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * 当mode是ONLY_OS时，该字段生效，表示频道所在Region
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public CreateOttChannelInfoReq withInput(InputStreamInfo input) {
@@ -383,7 +497,8 @@ public class CreateOttChannelInfoReq {
         CreateOttChannelInfoReq that = (CreateOttChannelInfoReq) obj;
         return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.input, that.input)
             && Objects.equals(this.encoderSettings, that.encoderSettings)
             && Objects.equals(this.recordSettings, that.recordSettings)
             && Objects.equals(this.endpoints, that.endpoints)
@@ -397,6 +512,8 @@ public class CreateOttChannelInfoReq {
             id,
             name,
             state,
+            mode,
+            region,
             input,
             encoderSettings,
             recordSettings,
@@ -413,6 +530,8 @@ public class CreateOttChannelInfoReq {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    encoderSettings: ").append(toIndentedString(encoderSettings)).append("\n");
         sb.append("    recordSettings: ").append(toIndentedString(recordSettings)).append("\n");

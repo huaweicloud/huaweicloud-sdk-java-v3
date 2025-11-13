@@ -41,7 +41,7 @@ public class SqlAlarmRuleRespList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_requests")
 
-    private List<SqlRequest> sqlRequests = null;
+    private List<SqlRequestResponse> sqlRequests = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
@@ -449,12 +449,12 @@ public class SqlAlarmRuleRespList {
         this.sqlAlarmRuleDescription = sqlAlarmRuleDescription;
     }
 
-    public SqlAlarmRuleRespList withSqlRequests(List<SqlRequest> sqlRequests) {
+    public SqlAlarmRuleRespList withSqlRequests(List<SqlRequestResponse> sqlRequests) {
         this.sqlRequests = sqlRequests;
         return this;
     }
 
-    public SqlAlarmRuleRespList addSqlRequestsItem(SqlRequest sqlRequestsItem) {
+    public SqlAlarmRuleRespList addSqlRequestsItem(SqlRequestResponse sqlRequestsItem) {
         if (this.sqlRequests == null) {
             this.sqlRequests = new ArrayList<>();
         }
@@ -462,7 +462,7 @@ public class SqlAlarmRuleRespList {
         return this;
     }
 
-    public SqlAlarmRuleRespList withSqlRequests(Consumer<List<SqlRequest>> sqlRequestsSetter) {
+    public SqlAlarmRuleRespList withSqlRequests(Consumer<List<SqlRequestResponse>> sqlRequestsSetter) {
         if (this.sqlRequests == null) {
             this.sqlRequests = new ArrayList<>();
         }
@@ -474,11 +474,11 @@ public class SqlAlarmRuleRespList {
      * SQL详细信息
      * @return sqlRequests
      */
-    public List<SqlRequest> getSqlRequests() {
+    public List<SqlRequestResponse> getSqlRequests() {
         return sqlRequests;
     }
 
-    public void setSqlRequests(List<SqlRequest> sqlRequests) {
+    public void setSqlRequests(List<SqlRequestResponse> sqlRequests) {
         this.sqlRequests = sqlRequests;
     }
 

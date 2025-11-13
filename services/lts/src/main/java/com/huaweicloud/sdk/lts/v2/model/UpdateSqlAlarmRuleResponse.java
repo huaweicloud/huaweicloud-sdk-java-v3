@@ -35,11 +35,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     private Boolean isCssSql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "indexId")
-
-    private String indexId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
 
     private String projectId;
@@ -57,7 +52,7 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_requests")
 
-    private List<SqlRequest> sqlRequests = null;
+    private List<SqlRequestResponse> sqlRequests = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
@@ -165,101 +160,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     @JsonProperty(value = "domain_id")
 
     private String domainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private Long createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
-
-    private Long updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "topics")
-
-    private List<Topics> topics = null;
-
-    /**
-     * 邮件附加信息语言
-     */
-    public static final class LanguageEnum {
-
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
-        public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
-
-        /**
-         * Enum EN_US for value: "en-us"
-         */
-        public static final LanguageEnum EN_US = new LanguageEnum("en-us");
-
-        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, LanguageEnum> createStaticFields() {
-            Map<String, LanguageEnum> map = new HashMap<>();
-            map.put("zh-cn", ZH_CN);
-            map.put("en-us", EN_US);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        LanguageEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LanguageEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
-        }
-
-        public static LanguageEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof LanguageEnum) {
-                return this.value.equals(((LanguageEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "language")
-
-    private LanguageEnum language;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
 
     /**
      * 通知频率,单位(分钟)
@@ -377,6 +277,31 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
 
     private String alarmActionRuleName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_count")
+
+    private Integer triggerConditionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_condition_frequency")
+
+    private Integer triggerConditionFrequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_recovery_policy")
+
+    private Boolean whetherRecoveryPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recovery_policy")
+
+    private Integer recoveryPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsResBody> tags = null;
+
     public UpdateSqlAlarmRuleResponse withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
         return this;
@@ -426,23 +351,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
 
     public void setIsCssSql(Boolean isCssSql) {
         this.isCssSql = isCssSql;
-    }
-
-    public UpdateSqlAlarmRuleResponse withIndexId(String indexId) {
-        this.indexId = indexId;
-        return this;
-    }
-
-    /**
-     * 索引id
-     * @return indexId
-     */
-    public String getIndexId() {
-        return indexId;
-    }
-
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
     }
 
     public UpdateSqlAlarmRuleResponse withProjectId(String projectId) {
@@ -496,12 +404,12 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.sqlAlarmRuleDescription = sqlAlarmRuleDescription;
     }
 
-    public UpdateSqlAlarmRuleResponse withSqlRequests(List<SqlRequest> sqlRequests) {
+    public UpdateSqlAlarmRuleResponse withSqlRequests(List<SqlRequestResponse> sqlRequests) {
         this.sqlRequests = sqlRequests;
         return this;
     }
 
-    public UpdateSqlAlarmRuleResponse addSqlRequestsItem(SqlRequest sqlRequestsItem) {
+    public UpdateSqlAlarmRuleResponse addSqlRequestsItem(SqlRequestResponse sqlRequestsItem) {
         if (this.sqlRequests == null) {
             this.sqlRequests = new ArrayList<>();
         }
@@ -509,7 +417,7 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         return this;
     }
 
-    public UpdateSqlAlarmRuleResponse withSqlRequests(Consumer<List<SqlRequest>> sqlRequestsSetter) {
+    public UpdateSqlAlarmRuleResponse withSqlRequests(Consumer<List<SqlRequestResponse>> sqlRequestsSetter) {
         if (this.sqlRequests == null) {
             this.sqlRequests = new ArrayList<>();
         }
@@ -521,11 +429,11 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
      * SQL详细信息
      * @return sqlRequests
      */
-    public List<SqlRequest> getSqlRequests() {
+    public List<SqlRequestResponse> getSqlRequests() {
         return sqlRequests;
     }
 
-    public void setSqlRequests(List<SqlRequest> sqlRequests) {
+    public void setSqlRequests(List<SqlRequestResponse> sqlRequests) {
         this.sqlRequests = sqlRequests;
     }
 
@@ -623,111 +531,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
-    public UpdateSqlAlarmRuleResponse withCreateTime(Long createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    /**
-     * 创建时间（毫秒时间戳）
-     * minimum: 13
-     * maximum: 13
-     * @return createTime
-     */
-    public Long getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
-    public UpdateSqlAlarmRuleResponse withUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    /**
-     * 更新时间（毫秒时间戳）
-     * minimum: 13
-     * maximum: 13
-     * @return updateTime
-     */
-    public Long getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public UpdateSqlAlarmRuleResponse withTopics(List<Topics> topics) {
-        this.topics = topics;
-        return this;
-    }
-
-    public UpdateSqlAlarmRuleResponse addTopicsItem(Topics topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
-        this.topics.add(topicsItem);
-        return this;
-    }
-
-    public UpdateSqlAlarmRuleResponse withTopics(Consumer<List<Topics>> topicsSetter) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
-        topicsSetter.accept(this.topics);
-        return this;
-    }
-
-    /**
-     * 主题
-     * @return topics
-     */
-    public List<Topics> getTopics() {
-        return topics;
-    }
-
-    public void setTopics(List<Topics> topics) {
-        this.topics = topics;
-    }
-
-    public UpdateSqlAlarmRuleResponse withLanguage(LanguageEnum language) {
-        this.language = language;
-        return this;
-    }
-
-    /**
-     * 邮件附加信息语言
-     * @return language
-     */
-    public LanguageEnum getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(LanguageEnum language) {
-        this.language = language;
-    }
-
-    public UpdateSqlAlarmRuleResponse withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 规则ID。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public UpdateSqlAlarmRuleResponse withNotificationFrequency(NotificationFrequencyEnum notificationFrequency) {
         this.notificationFrequency = notificationFrequency;
         return this;
@@ -762,6 +565,107 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.alarmActionRuleName = alarmActionRuleName;
     }
 
+    public UpdateSqlAlarmRuleResponse withTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警触发条件：满足条件次数。满足条件次数是指设置的SQL语句。 **取值范围：** 不涉及。
+     * @return triggerConditionCount
+     */
+    public Integer getTriggerConditionCount() {
+        return triggerConditionCount;
+    }
+
+    public void setTriggerConditionCount(Integer triggerConditionCount) {
+        this.triggerConditionCount = triggerConditionCount;
+    }
+
+    public UpdateSqlAlarmRuleResponse withTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 触发条件：触发周期。 **取值范围：** 不涉及。
+     * @return triggerConditionFrequency
+     */
+    public Integer getTriggerConditionFrequency() {
+        return triggerConditionFrequency;
+    }
+
+    public void setTriggerConditionFrequency(Integer triggerConditionFrequency) {
+        this.triggerConditionFrequency = triggerConditionFrequency;
+    }
+
+    public UpdateSqlAlarmRuleResponse withWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否打开恢复通知。 **取值范围：** - true：配置告警恢复策略。 - false：不配置告警恢复策略。
+     * @return whetherRecoveryPolicy
+     */
+    public Boolean getWhetherRecoveryPolicy() {
+        return whetherRecoveryPolicy;
+    }
+
+    public void setWhetherRecoveryPolicy(Boolean whetherRecoveryPolicy) {
+        this.whetherRecoveryPolicy = whetherRecoveryPolicy;
+    }
+
+    public UpdateSqlAlarmRuleResponse withRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 恢复策略周期。 **取值范围：** 不涉及。
+     * @return recoveryPolicy
+     */
+    public Integer getRecoveryPolicy() {
+        return recoveryPolicy;
+    }
+
+    public void setRecoveryPolicy(Integer recoveryPolicy) {
+        this.recoveryPolicy = recoveryPolicy;
+    }
+
+    public UpdateSqlAlarmRuleResponse withTags(List<TagsResBody> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public UpdateSqlAlarmRuleResponse addTagsItem(TagsResBody tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public UpdateSqlAlarmRuleResponse withTags(Consumer<List<TagsResBody>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。
+     * @return tags
+     */
+    public List<TagsResBody> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagsResBody> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -773,18 +677,19 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         UpdateSqlAlarmRuleResponse that = (UpdateSqlAlarmRuleResponse) obj;
         return Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
             && Objects.equals(this.alarmRuleAlias, that.alarmRuleAlias) && Objects.equals(this.isCssSql, that.isCssSql)
-            && Objects.equals(this.indexId, that.indexId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
             && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
             && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
             && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel)
             && Objects.equals(this.sqlAlarmSend, that.sqlAlarmSend) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.topics, that.topics) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.id, that.id)
             && Objects.equals(this.notificationFrequency, that.notificationFrequency)
-            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName);
+            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName)
+            && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -792,7 +697,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         return Objects.hash(sqlAlarmRuleName,
             alarmRuleAlias,
             isCssSql,
-            indexId,
             projectId,
             sqlAlarmRuleId,
             sqlAlarmRuleDescription,
@@ -802,13 +706,13 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
             sqlAlarmLevel,
             sqlAlarmSend,
             domainId,
-            createTime,
-            updateTime,
-            topics,
-            language,
-            id,
             notificationFrequency,
-            alarmActionRuleName);
+            alarmActionRuleName,
+            triggerConditionCount,
+            triggerConditionFrequency,
+            whetherRecoveryPolicy,
+            recoveryPolicy,
+            tags);
     }
 
     @Override
@@ -818,7 +722,6 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         sb.append("    sqlAlarmRuleName: ").append(toIndentedString(sqlAlarmRuleName)).append("\n");
         sb.append("    alarmRuleAlias: ").append(toIndentedString(alarmRuleAlias)).append("\n");
         sb.append("    isCssSql: ").append(toIndentedString(isCssSql)).append("\n");
-        sb.append("    indexId: ").append(toIndentedString(indexId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    sqlAlarmRuleId: ").append(toIndentedString(sqlAlarmRuleId)).append("\n");
         sb.append("    sqlAlarmRuleDescription: ").append(toIndentedString(sqlAlarmRuleDescription)).append("\n");
@@ -828,13 +731,13 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         sb.append("    sqlAlarmLevel: ").append(toIndentedString(sqlAlarmLevel)).append("\n");
         sb.append("    sqlAlarmSend: ").append(toIndentedString(sqlAlarmSend)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
-        sb.append("    language: ").append(toIndentedString(language)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
         sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
+        sb.append("    triggerConditionCount: ").append(toIndentedString(triggerConditionCount)).append("\n");
+        sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
+        sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
+        sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

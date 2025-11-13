@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 存储池状态。 - CREATING：创建中 - AVAILABLE：可用 - EXPANDING：扩容中 - PENDING_PAYMENT：待支付
+ * 存储池状态。 - CREATING：创建中 - AVAILABLE：可用 - EXPANDING：扩容中 - PENDING_PAYMENT：待支付 - FROZEN：已冻结
  */
 public class StoragePoolStatus {
 
@@ -32,6 +32,11 @@ public class StoragePoolStatus {
      */
     public static final StoragePoolStatus PENDING_PAYMENT = new StoragePoolStatus("PENDING_PAYMENT");
 
+    /**
+     * Enum FROZEN for value: "FROZEN"
+     */
+    public static final StoragePoolStatus FROZEN = new StoragePoolStatus("FROZEN");
+
     private static final Map<String, StoragePoolStatus> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, StoragePoolStatus> createStaticFields() {
@@ -40,6 +45,7 @@ public class StoragePoolStatus {
         map.put("AVAILABLE", AVAILABLE);
         map.put("EXPANDING", EXPANDING);
         map.put("PENDING_PAYMENT", PENDING_PAYMENT);
+        map.put("FROZEN", FROZEN);
         return Collections.unmodifiableMap(map);
     }
 

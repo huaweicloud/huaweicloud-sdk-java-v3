@@ -629,7 +629,7 @@ public class ResourceItemInfo {
     /**
      * 资源状态 0:正常 1:冻结
      * minimum: 0
-     * maximum: 10
+     * maximum: 1
      * @return status
      */
     public Integer getStatus() {

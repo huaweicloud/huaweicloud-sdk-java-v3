@@ -53,6 +53,11 @@ public class UpdateSubnetOption {
 
     private List<ExtraDhcpOption> extraDhcpOpts = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_network_address_usage_metrics")
+
+    private Boolean enableNetworkAddressUsageMetrics;
+
     public UpdateSubnetOption withName(String name) {
         this.name = name;
         return this;
@@ -221,6 +226,23 @@ public class UpdateSubnetOption {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 
+    public UpdateSubnetOption withEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否开启当前子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+     * @return enableNetworkAddressUsageMetrics
+     */
+    public Boolean getEnableNetworkAddressUsageMetrics() {
+        return enableNetworkAddressUsageMetrics;
+    }
+
+    public void setEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -233,13 +255,21 @@ public class UpdateSubnetOption {
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.ipv6Enable, that.ipv6Enable) && Objects.equals(this.dhcpEnable, that.dhcpEnable)
             && Objects.equals(this.primaryDns, that.primaryDns) && Objects.equals(this.secondaryDns, that.secondaryDns)
-            && Objects.equals(this.dnsList, that.dnsList) && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts);
+            && Objects.equals(this.dnsList, that.dnsList) && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts)
+            && Objects.equals(this.enableNetworkAddressUsageMetrics, that.enableNetworkAddressUsageMetrics);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, description, ipv6Enable, dhcpEnable, primaryDns, secondaryDns, dnsList, extraDhcpOpts);
+        return Objects.hash(name,
+            description,
+            ipv6Enable,
+            dhcpEnable,
+            primaryDns,
+            secondaryDns,
+            dnsList,
+            extraDhcpOpts,
+            enableNetworkAddressUsageMetrics);
     }
 
     @Override
@@ -254,6 +284,9 @@ public class UpdateSubnetOption {
         sb.append("    secondaryDns: ").append(toIndentedString(secondaryDns)).append("\n");
         sb.append("    dnsList: ").append(toIndentedString(dnsList)).append("\n");
         sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
+        sb.append("    enableNetworkAddressUsageMetrics: ")
+            .append(toIndentedString(enableNetworkAddressUsageMetrics))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

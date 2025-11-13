@@ -78,6 +78,11 @@ public class CreateSubnetOption {
 
     private List<String> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_network_address_usage_metrics")
+
+    private Boolean enableNetworkAddressUsageMetrics;
+
     public CreateSubnetOption withName(String name) {
         this.name = name;
         return this;
@@ -347,6 +352,23 @@ public class CreateSubnetOption {
         this.tags = tags;
     }
 
+    public CreateSubnetOption withEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否开启当前子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+     * @return enableNetworkAddressUsageMetrics
+     */
+    public Boolean getEnableNetworkAddressUsageMetrics() {
+        return enableNetworkAddressUsageMetrics;
+    }
+
+    public void setEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -362,7 +384,8 @@ public class CreateSubnetOption {
             && Objects.equals(this.dhcpEnable, that.dhcpEnable) && Objects.equals(this.primaryDns, that.primaryDns)
             && Objects.equals(this.secondaryDns, that.secondaryDns) && Objects.equals(this.dnsList, that.dnsList)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enableNetworkAddressUsageMetrics, that.enableNetworkAddressUsageMetrics);
     }
 
     @Override
@@ -379,7 +402,8 @@ public class CreateSubnetOption {
             dnsList,
             availabilityZone,
             extraDhcpOpts,
-            tags);
+            tags,
+            enableNetworkAddressUsageMetrics);
     }
 
     @Override
@@ -399,6 +423,9 @@ public class CreateSubnetOption {
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    enableNetworkAddressUsageMetrics: ")
+            .append(toIndentedString(enableNetworkAddressUsageMetrics))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,6 +31,12 @@ import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListNodesRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListNodesResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSecurityRuleStatusRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSecurityRuleStatusResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncRequirementsRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncRequirementsResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncStatusRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListSyncStatusResponse;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowAgencyMappingRequest;
@@ -632,6 +638,35 @@ public class MrsClient {
     }
 
     /**
+     * 获取当前集群通信安全授权状态
+     *
+     * 获取当前集群通信安全授权状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityRuleStatusRequest 请求对象
+     * @return ListSecurityRuleStatusResponse
+     */
+    public ListSecurityRuleStatusResponse listSecurityRuleStatus(ListSecurityRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.listSecurityRuleStatus);
+    }
+
+    /**
+     * 获取当前集群通信安全授权状态
+     *
+     * 获取当前集群通信安全授权状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityRuleStatusRequest 请求对象
+     * @return SyncInvoker<ListSecurityRuleStatusRequest, ListSecurityRuleStatusResponse>
+     */
+    public SyncInvoker<ListSecurityRuleStatusRequest, ListSecurityRuleStatusResponse> listSecurityRuleStatusInvoker(
+        ListSecurityRuleStatusRequest request) {
+        return new SyncInvoker<>(request, MrsMeta.listSecurityRuleStatus, hcClient);
+    }
+
+    /**
      * 缩容集群
      *
      * 对MRS集群进行缩容。
@@ -831,6 +866,64 @@ public class MrsClient {
     public SyncInvoker<CancelSyncIamUserRequest, CancelSyncIamUserResponse> cancelSyncIamUserInvoker(
         CancelSyncIamUserRequest request) {
         return new SyncInvoker<>(request, MrsMeta.cancelSyncIamUser, hcClient);
+    }
+
+    /**
+     * 查询指定集群的IAM同步情况
+     *
+     * 查询指定集群的IAM同步情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncRequirementsRequest 请求对象
+     * @return ListSyncRequirementsResponse
+     */
+    public ListSyncRequirementsResponse listSyncRequirements(ListSyncRequirementsRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.listSyncRequirements);
+    }
+
+    /**
+     * 查询指定集群的IAM同步情况
+     *
+     * 查询指定集群的IAM同步情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncRequirementsRequest 请求对象
+     * @return SyncInvoker<ListSyncRequirementsRequest, ListSyncRequirementsResponse>
+     */
+    public SyncInvoker<ListSyncRequirementsRequest, ListSyncRequirementsResponse> listSyncRequirementsInvoker(
+        ListSyncRequirementsRequest request) {
+        return new SyncInvoker<>(request, MrsMeta.listSyncRequirements, hcClient);
+    }
+
+    /**
+     * 查询当前集群是否在IAM同步进行中
+     *
+     * 查询当前集群是否在IAM同步进行中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncStatusRequest 请求对象
+     * @return ListSyncStatusResponse
+     */
+    public ListSyncStatusResponse listSyncStatus(ListSyncStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.listSyncStatus);
+    }
+
+    /**
+     * 查询当前集群是否在IAM同步进行中
+     *
+     * 查询当前集群是否在IAM同步进行中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncStatusRequest 请求对象
+     * @return SyncInvoker<ListSyncStatusRequest, ListSyncStatusResponse>
+     */
+    public SyncInvoker<ListSyncStatusRequest, ListSyncStatusResponse> listSyncStatusInvoker(
+        ListSyncStatusRequest request) {
+        return new SyncInvoker<>(request, MrsMeta.listSyncStatus, hcClient);
     }
 
     /**

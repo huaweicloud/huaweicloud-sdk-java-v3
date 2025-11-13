@@ -233,9 +233,9 @@ public class ListCasesRequest {
     }
 
     /**
-     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
+     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 5：暂停 12：无效 17： 待反馈
      * minimum: 0
-     * maximum: 20
+     * maximum: 30
      * @return status
      */
     public Integer getStatus() {

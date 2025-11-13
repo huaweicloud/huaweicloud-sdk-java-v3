@@ -21,6 +21,11 @@ public class SubTaskInfo {
     private String percent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remaining_time")
 
     private String remainingTime;
@@ -59,6 +64,23 @@ public class SubTaskInfo {
         this.percent = percent;
     }
 
+    public SubTaskInfo withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  子任务状态。  **取值范围**：  - Pending：表示待执行。 - Running：表示运行中。 - Completed：表示已完成。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public SubTaskInfo withRemainingTime(String remainingTime) {
         this.remainingTime = remainingTime;
         return this;
@@ -86,12 +108,12 @@ public class SubTaskInfo {
         }
         SubTaskInfo that = (SubTaskInfo) obj;
         return Objects.equals(this.subTaskName, that.subTaskName) && Objects.equals(this.percent, that.percent)
-            && Objects.equals(this.remainingTime, that.remainingTime);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.remainingTime, that.remainingTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subTaskName, percent, remainingTime);
+        return Objects.hash(subTaskName, percent, status, remainingTime);
     }
 
     @Override
@@ -100,6 +122,7 @@ public class SubTaskInfo {
         sb.append("class SubTaskInfo {\n");
         sb.append("    subTaskName: ").append(toIndentedString(subTaskName)).append("\n");
         sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    remainingTime: ").append(toIndentedString(remainingTime)).append("\n");
         sb.append("}");
         return sb.toString();

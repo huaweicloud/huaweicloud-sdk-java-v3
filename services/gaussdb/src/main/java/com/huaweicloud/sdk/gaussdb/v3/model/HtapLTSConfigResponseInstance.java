@@ -21,6 +21,11 @@ public class HtapLTSConfigResponseInstance {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_name")
 
     private String engineName;
@@ -77,6 +82,23 @@ public class HtapLTSConfigResponseInstance {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public HtapLTSConfigResponseInstance withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  HTAP标准版实例模式。  **取值范围**：  - Cluster：集群模式。 - Single：单机模式。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
     }
 
     public HtapLTSConfigResponseInstance withEngineName(String engineName) {
@@ -174,7 +196,7 @@ public class HtapLTSConfigResponseInstance {
         }
         HtapLTSConfigResponseInstance that = (HtapLTSConfigResponseInstance) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.engineName, that.engineName)
             && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.status, that.status)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName);
@@ -182,7 +204,8 @@ public class HtapLTSConfigResponseInstance {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, engineName, engineVersion, status, enterpriseProjectId, enterpriseProjectName);
+        return Objects
+            .hash(id, name, mode, engineName, engineVersion, status, enterpriseProjectId, enterpriseProjectName);
     }
 
     @Override
@@ -191,6 +214,7 @@ public class HtapLTSConfigResponseInstance {
         sb.append("class HtapLTSConfigResponseInstance {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    engineName: ").append(toIndentedString(engineName)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

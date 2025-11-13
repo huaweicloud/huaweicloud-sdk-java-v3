@@ -75,6 +75,8 @@ import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsResponse;
+import com.huaweicloud.sdk.aad.v1.model.ShowLtsConfigRequest;
+import com.huaweicloud.sdk.aad.v1.model.ShowLtsConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowUnblockRecordRequest;
@@ -86,6 +88,9 @@ import com.huaweicloud.sdk.aad.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdateDomainResponse;
 import com.huaweicloud.sdk.aad.v1.model.UpdateInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdateInstanceIpRuleResponse;
+import com.huaweicloud.sdk.aad.v1.model.UpdateLtsConfigRequest;
+import com.huaweicloud.sdk.aad.v1.model.UpdateLtsConfigRequestBody;
+import com.huaweicloud.sdk.aad.v1.model.UpdateLtsConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageIpRequestBody;
 import com.huaweicloud.sdk.aad.v1.model.UpdatePackageIpResponse;
@@ -972,6 +977,30 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowLtsConfigRequest, ShowLtsConfigResponse> showLtsConfig =
+        genForShowLtsConfig();
+
+    private static HttpRequestDef<ShowLtsConfigRequest, ShowLtsConfigResponse> genForShowLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowLtsConfigRequest, ShowLtsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLtsConfigRequest.class, ShowLtsConfigResponse.class)
+                .withName("ShowLtsConfig")
+                .withUri("/v1/cnad/config/lts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLtsConfigRequest::getEnterpriseProjectId,
+                ShowLtsConfigRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> showPolicy = genForShowPolicy();
 
     private static HttpRequestDef<ShowPolicyRequest, ShowPolicyResponse> genForShowPolicy() {
@@ -1077,6 +1106,35 @@ public class AadMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TransferRuleBody.class),
             f -> f.withMarshaller(UpdateInstanceIpRuleRequest::getBody, UpdateInstanceIpRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLtsConfigRequest, UpdateLtsConfigResponse> updateLtsConfig =
+        genForUpdateLtsConfig();
+
+    private static HttpRequestDef<UpdateLtsConfigRequest, UpdateLtsConfigResponse> genForUpdateLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateLtsConfigRequest, UpdateLtsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLtsConfigRequest.class, UpdateLtsConfigResponse.class)
+                .withName("UpdateLtsConfig")
+                .withUri("/v1/cnad/config/lts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLtsConfigRequest::getEnterpriseProjectId,
+                UpdateLtsConfigRequest::setEnterpriseProjectId));
+        builder.<UpdateLtsConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLtsConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateLtsConfigRequest::getBody, UpdateLtsConfigRequest::setBody));
 
         // response
 

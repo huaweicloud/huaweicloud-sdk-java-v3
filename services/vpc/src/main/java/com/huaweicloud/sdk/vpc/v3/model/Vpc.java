@@ -74,6 +74,16 @@ public class Vpc {
 
     private List<Tag> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_service_endpoint_states")
+
+    private String blockServiceEndpointStates;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_network_address_usage_metrics")
+
+    private Boolean enableNetworkAddressUsageMetrics;
+
     public Vpc withId(String id) {
         this.id = id;
         return this;
@@ -326,6 +336,40 @@ public class Vpc {
         this.tags = tags;
     }
 
+    public Vpc withBlockServiceEndpointStates(String blockServiceEndpointStates) {
+        this.blockServiceEndpointStates = blockServiceEndpointStates;
+        return this;
+    }
+
+    /**
+     * 功能说明：默认情况下，VPC中的资源可以通过内网访问服务终结点。开启该项后，VPC将无法通过内网访问服务终结点，请谨慎操作。 无法访问以下云服务：容器镜像服务SWR、云日志服务LTS、企业主机安全HSS、应用运维管理AOM、应用性能管理APM、对象存储服务OBS、API网关APIG。 取值范围： off：代表禁用。 on：代表开启。
+     * @return blockServiceEndpointStates
+     */
+    public String getBlockServiceEndpointStates() {
+        return blockServiceEndpointStates;
+    }
+
+    public void setBlockServiceEndpointStates(String blockServiceEndpointStates) {
+        this.blockServiceEndpointStates = blockServiceEndpointStates;
+    }
+
+    public Vpc withEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否开启VPC内所有子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+     * @return enableNetworkAddressUsageMetrics
+     */
+    public Boolean getEnableNetworkAddressUsageMetrics() {
+        return enableNetworkAddressUsageMetrics;
+    }
+
+    public void setEnableNetworkAddressUsageMetrics(Boolean enableNetworkAddressUsageMetrics) {
+        this.enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetrics;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -341,7 +385,9 @@ public class Vpc {
             && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.cloudResources, that.cloudResources) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.cloudResources, that.cloudResources) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.blockServiceEndpointStates, that.blockServiceEndpointStates)
+            && Objects.equals(this.enableNetworkAddressUsageMetrics, that.enableNetworkAddressUsageMetrics);
     }
 
     @Override
@@ -357,7 +403,9 @@ public class Vpc {
             createdAt,
             updatedAt,
             cloudResources,
-            tags);
+            tags,
+            blockServiceEndpointStates,
+            enableNetworkAddressUsageMetrics);
     }
 
     @Override
@@ -376,6 +424,10 @@ public class Vpc {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    cloudResources: ").append(toIndentedString(cloudResources)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    blockServiceEndpointStates: ").append(toIndentedString(blockServiceEndpointStates)).append("\n");
+        sb.append("    enableNetworkAddressUsageMetrics: ")
+            .append(toIndentedString(enableNetworkAddressUsageMetrics))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

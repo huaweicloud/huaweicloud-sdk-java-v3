@@ -16,6 +16,9 @@ import com.huaweicloud.sdk.ecs.v2.model.AssociateServerVirtualIpResponse;
 import com.huaweicloud.sdk.ecs.v2.model.AttachServerVolumeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.AttachServerVolumeRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.AttachServerVolumeResponse;
+import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerGroupMemberReq;
+import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerGroupMemberRequest;
+import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerGroupMemberResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerNicsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerNicsRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerNicsResponse;
@@ -25,6 +28,9 @@ import com.huaweicloud.sdk.ecs.v2.model.BatchAttachSharableVolumesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchCreateServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchCreateServerTagsRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.BatchCreateServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerGroupMemberReq;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerGroupMemberRequest;
+import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerGroupMemberResponse;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicsRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicsResponse;
@@ -390,6 +396,39 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse> batchAddServerGroupMember =
+        genForBatchAddServerGroupMember();
+
+    private static HttpRequestDef<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse> genForBatchAddServerGroupMember() {
+        // basic
+        HttpRequestDef.Builder<BatchAddServerGroupMemberRequest, BatchAddServerGroupMemberResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchAddServerGroupMemberRequest.class,
+                    BatchAddServerGroupMemberResponse.class)
+                .withName("BatchAddServerGroupMember")
+                .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/add_members")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAddServerGroupMemberRequest::getServerGroupId,
+                BatchAddServerGroupMemberRequest::setServerGroupId));
+        builder.<BatchAddServerGroupMemberReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAddServerGroupMemberReq.class),
+            f -> f.withMarshaller(BatchAddServerGroupMemberRequest::getBody,
+                BatchAddServerGroupMemberRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchAddServerNicsRequest, BatchAddServerNicsResponse> batchAddServerNics =
         genForBatchAddServerNics();
 
@@ -474,6 +513,39 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateServerTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateServerTagsRequest::getBody, BatchCreateServerTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse> batchDeleteServerGroupMember =
+        genForBatchDeleteServerGroupMember();
+
+    private static HttpRequestDef<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse> genForBatchDeleteServerGroupMember() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteServerGroupMemberRequest, BatchDeleteServerGroupMemberResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteServerGroupMemberRequest.class,
+                    BatchDeleteServerGroupMemberResponse.class)
+                .withName("BatchDeleteServerGroupMember")
+                .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/remove_members")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteServerGroupMemberRequest::getServerGroupId,
+                BatchDeleteServerGroupMemberRequest::setServerGroupId));
+        builder.<BatchDeleteServerGroupMemberReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteServerGroupMemberReq.class),
+            f -> f.withMarshaller(BatchDeleteServerGroupMemberRequest::getBody,
+                BatchDeleteServerGroupMemberRequest::setBody));
 
         // response
 

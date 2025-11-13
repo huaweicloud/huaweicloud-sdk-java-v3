@@ -972,14 +972,24 @@ public class CocMeta {
             f -> f.withMarshaller(ListDiagnosisTasksRequest::getEndTime, ListDiagnosisTasksRequest::setEndTime));
         builder.<Integer>withRequestField("page_index",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDiagnosisTasksRequest::getPageIndex, ListDiagnosisTasksRequest::setPageIndex));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDiagnosisTasksRequest::getPageSize, ListDiagnosisTasksRequest::setPageSize));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getOffset, ListDiagnosisTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getLimit, ListDiagnosisTasksRequest::setLimit));
 
         // response
 

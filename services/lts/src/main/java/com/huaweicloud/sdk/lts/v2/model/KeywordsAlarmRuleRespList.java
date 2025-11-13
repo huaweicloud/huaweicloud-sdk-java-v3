@@ -46,7 +46,7 @@ public class KeywordsAlarmRuleRespList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_requests")
 
-    private List<KeywordsRequest> keywordsRequests = null;
+    private List<KeywordsRequestResponse> keywordsRequests = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
@@ -141,11 +141,6 @@ public class KeywordsAlarmRuleRespList {
     private KeywordsAlarmLevelEnum keywordsAlarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "keywords_alarm_send")
-
-    private Boolean keywordsAlarmSend;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
 
     private String domainId;
@@ -159,16 +154,6 @@ public class KeywordsAlarmRuleRespList {
     @JsonProperty(value = "update_time")
 
     private Long updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "topics")
-
-    private List<Topics> topics = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "template_name")
-
-    private String templateName;
 
     /**
      * 告警状态
@@ -381,6 +366,11 @@ public class KeywordsAlarmRuleRespList {
 
     private String alarmActionRuleName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsResBody> tags = null;
+
     public KeywordsAlarmRuleRespList withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -466,12 +456,12 @@ public class KeywordsAlarmRuleRespList {
         this.conditionExpression = conditionExpression;
     }
 
-    public KeywordsAlarmRuleRespList withKeywordsRequests(List<KeywordsRequest> keywordsRequests) {
+    public KeywordsAlarmRuleRespList withKeywordsRequests(List<KeywordsRequestResponse> keywordsRequests) {
         this.keywordsRequests = keywordsRequests;
         return this;
     }
 
-    public KeywordsAlarmRuleRespList addKeywordsRequestsItem(KeywordsRequest keywordsRequestsItem) {
+    public KeywordsAlarmRuleRespList addKeywordsRequestsItem(KeywordsRequestResponse keywordsRequestsItem) {
         if (this.keywordsRequests == null) {
             this.keywordsRequests = new ArrayList<>();
         }
@@ -479,7 +469,8 @@ public class KeywordsAlarmRuleRespList {
         return this;
     }
 
-    public KeywordsAlarmRuleRespList withKeywordsRequests(Consumer<List<KeywordsRequest>> keywordsRequestsSetter) {
+    public KeywordsAlarmRuleRespList withKeywordsRequests(
+        Consumer<List<KeywordsRequestResponse>> keywordsRequestsSetter) {
         if (this.keywordsRequests == null) {
             this.keywordsRequests = new ArrayList<>();
         }
@@ -491,11 +482,11 @@ public class KeywordsAlarmRuleRespList {
      * 关键词详细信息
      * @return keywordsRequests
      */
-    public List<KeywordsRequest> getKeywordsRequests() {
+    public List<KeywordsRequestResponse> getKeywordsRequests() {
         return keywordsRequests;
     }
 
-    public void setKeywordsRequests(List<KeywordsRequest> keywordsRequests) {
+    public void setKeywordsRequests(List<KeywordsRequestResponse> keywordsRequests) {
         this.keywordsRequests = keywordsRequests;
     }
 
@@ -540,23 +531,6 @@ public class KeywordsAlarmRuleRespList {
 
     public void setKeywordsAlarmLevel(KeywordsAlarmLevelEnum keywordsAlarmLevel) {
         this.keywordsAlarmLevel = keywordsAlarmLevel;
-    }
-
-    public KeywordsAlarmRuleRespList withKeywordsAlarmSend(Boolean keywordsAlarmSend) {
-        this.keywordsAlarmSend = keywordsAlarmSend;
-        return this;
-    }
-
-    /**
-     * 是否发送
-     * @return keywordsAlarmSend
-     */
-    public Boolean getKeywordsAlarmSend() {
-        return keywordsAlarmSend;
-    }
-
-    public void setKeywordsAlarmSend(Boolean keywordsAlarmSend) {
-        this.keywordsAlarmSend = keywordsAlarmSend;
     }
 
     public KeywordsAlarmRuleRespList withDomainId(String domainId) {
@@ -612,56 +586,6 @@ public class KeywordsAlarmRuleRespList {
 
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public KeywordsAlarmRuleRespList withTopics(List<Topics> topics) {
-        this.topics = topics;
-        return this;
-    }
-
-    public KeywordsAlarmRuleRespList addTopicsItem(Topics topicsItem) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
-        this.topics.add(topicsItem);
-        return this;
-    }
-
-    public KeywordsAlarmRuleRespList withTopics(Consumer<List<Topics>> topicsSetter) {
-        if (this.topics == null) {
-            this.topics = new ArrayList<>();
-        }
-        topicsSetter.accept(this.topics);
-        return this;
-    }
-
-    /**
-     * 通知主题
-     * @return topics
-     */
-    public List<Topics> getTopics() {
-        return topics;
-    }
-
-    public void setTopics(List<Topics> topics) {
-        this.topics = topics;
-    }
-
-    public KeywordsAlarmRuleRespList withTemplateName(String templateName) {
-        this.templateName = templateName;
-        return this;
-    }
-
-    /**
-     * 消息模板名称
-     * @return templateName
-     */
-    public String getTemplateName() {
-        return templateName;
-    }
-
-    public void setTemplateName(String templateName) {
-        this.templateName = templateName;
     }
 
     public KeywordsAlarmRuleRespList withStatus(StatusEnum status) {
@@ -783,6 +707,39 @@ public class KeywordsAlarmRuleRespList {
         this.alarmActionRuleName = alarmActionRuleName;
     }
 
+    public KeywordsAlarmRuleRespList withTags(List<TagsResBody> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public KeywordsAlarmRuleRespList addTagsItem(TagsResBody tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public KeywordsAlarmRuleRespList withTags(Consumer<List<TagsResBody>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。
+     * @return tags
+     */
+    public List<TagsResBody> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagsResBody> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -800,16 +757,15 @@ public class KeywordsAlarmRuleRespList {
             && Objects.equals(this.keywordsRequests, that.keywordsRequests)
             && Objects.equals(this.frequency, that.frequency)
             && Objects.equals(this.keywordsAlarmLevel, that.keywordsAlarmLevel)
-            && Objects.equals(this.keywordsAlarmSend, that.keywordsAlarmSend)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.topics, that.topics)
-            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.status, that.status)
             && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
             && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
             && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
             && Objects.equals(this.recoveryPolicy, that.recoveryPolicy)
             && Objects.equals(this.notificationFrequency, that.notificationFrequency)
-            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName);
+            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -822,19 +778,17 @@ public class KeywordsAlarmRuleRespList {
             keywordsRequests,
             frequency,
             keywordsAlarmLevel,
-            keywordsAlarmSend,
             domainId,
             createTime,
             updateTime,
-            topics,
-            templateName,
             status,
             triggerConditionCount,
             triggerConditionFrequency,
             whetherRecoveryPolicy,
             recoveryPolicy,
             notificationFrequency,
-            alarmActionRuleName);
+            alarmActionRuleName,
+            tags);
     }
 
     @Override
@@ -851,12 +805,9 @@ public class KeywordsAlarmRuleRespList {
         sb.append("    keywordsRequests: ").append(toIndentedString(keywordsRequests)).append("\n");
         sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
         sb.append("    keywordsAlarmLevel: ").append(toIndentedString(keywordsAlarmLevel)).append("\n");
-        sb.append("    keywordsAlarmSend: ").append(toIndentedString(keywordsAlarmSend)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
-        sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    triggerConditionCount: ").append(toIndentedString(triggerConditionCount)).append("\n");
         sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
@@ -864,6 +815,7 @@ public class KeywordsAlarmRuleRespList {
         sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
         sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
         sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,6 +9,10 @@ import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostRequest;
 import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.DeleteDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.DeleteDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostAllTypesRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostAllTypesResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesRequest;
@@ -138,6 +142,65 @@ public class DeHAsyncClient {
     public AsyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse> createDedicatedHostAsyncInvoker(
         CreateDedicatedHostRequest request) {
         return new AsyncInvoker<>(request, DeHMeta.createDedicatedHost, hcClient);
+    }
+
+    /**
+     * 释放专属主机
+     *
+     * 释放专属主机。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDedicatedHostRequest 请求对象
+     * @return CompletableFuture<DeleteDedicatedHostResponse>
+     */
+    public CompletableFuture<DeleteDedicatedHostResponse> deleteDedicatedHostAsync(DeleteDedicatedHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, DeHMeta.deleteDedicatedHost);
+    }
+
+    /**
+     * 释放专属主机
+     *
+     * 释放专属主机。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDedicatedHostRequest 请求对象
+     * @return AsyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse>
+     */
+    public AsyncInvoker<DeleteDedicatedHostRequest, DeleteDedicatedHostResponse> deleteDedicatedHostAsyncInvoker(
+        DeleteDedicatedHostRequest request) {
+        return new AsyncInvoker<>(request, DeHMeta.deleteDedicatedHost, hcClient);
+    }
+
+    /**
+     * 查询专属主机类型列表
+     *
+     * 查询专属主机类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDedicatedHostAllTypesRequest 请求对象
+     * @return CompletableFuture<ListDedicatedHostAllTypesResponse>
+     */
+    public CompletableFuture<ListDedicatedHostAllTypesResponse> listDedicatedHostAllTypesAsync(
+        ListDedicatedHostAllTypesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DeHMeta.listDedicatedHostAllTypes);
+    }
+
+    /**
+     * 查询专属主机类型列表
+     *
+     * 查询专属主机类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDedicatedHostAllTypesRequest 请求对象
+     * @return AsyncInvoker<ListDedicatedHostAllTypesRequest, ListDedicatedHostAllTypesResponse>
+     */
+    public AsyncInvoker<ListDedicatedHostAllTypesRequest, ListDedicatedHostAllTypesResponse> listDedicatedHostAllTypesAsyncInvoker(
+        ListDedicatedHostAllTypesRequest request) {
+        return new AsyncInvoker<>(request, DeHMeta.listDedicatedHostAllTypes, hcClient);
     }
 
     /**

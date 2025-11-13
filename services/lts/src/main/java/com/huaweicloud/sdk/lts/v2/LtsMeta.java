@@ -230,6 +230,7 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamParams;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateNotificationTemplateRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateNotificationTemplateRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.UpdateNotificationTemplateResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateSqlAlarmRuleRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateSqlAlarmRuleRequestBody;
@@ -2148,10 +2149,10 @@ public class LtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateNotificationTemplateRequest::getDomainId,
                 UpdateNotificationTemplateRequest::setDomainId));
-        builder.<CreateNotificationTemplateRequestBody>withRequestField("body",
+        builder.<UpdateNotificationTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateNotificationTemplateRequestBody.class),
+            TypeCasts.uncheckedConversion(UpdateNotificationTemplateRequestBody.class),
             f -> f.withMarshaller(UpdateNotificationTemplateRequest::getBody,
                 UpdateNotificationTemplateRequest::setBody));
 

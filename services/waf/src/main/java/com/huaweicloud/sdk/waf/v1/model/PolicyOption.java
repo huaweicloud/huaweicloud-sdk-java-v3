@@ -310,7 +310,7 @@ public class PolicyOption {
     }
 
     /**
-     * 误报屏蔽是否开启
+     * 全局白名单是否开启
      * @return ignore
      */
     public Boolean getIgnore() {

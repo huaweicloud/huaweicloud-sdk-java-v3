@@ -66,7 +66,7 @@ public class ListAuthorizationsRequest {
     }
 
     /**
-     * 子用户名称
+     * 子账号名称
      * @return subCustomerName
      */
     public String getSubCustomerName() {
@@ -101,7 +101,7 @@ public class ListAuthorizationsRequest {
 
     /**
      * 授权状态
-     * minimum: 0
+     * minimum: -1
      * maximum: 10
      * @return status
      */

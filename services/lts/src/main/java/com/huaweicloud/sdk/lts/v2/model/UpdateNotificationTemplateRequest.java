@@ -19,7 +19,7 @@ public class UpdateNotificationTemplateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateNotificationTemplateRequestBody body;
+    private UpdateNotificationTemplateRequestBody body;
 
     public UpdateNotificationTemplateRequest withDomainId(String domainId) {
         this.domainId = domainId;
@@ -38,14 +38,14 @@ public class UpdateNotificationTemplateRequest {
         this.domainId = domainId;
     }
 
-    public UpdateNotificationTemplateRequest withBody(CreateNotificationTemplateRequestBody body) {
+    public UpdateNotificationTemplateRequest withBody(UpdateNotificationTemplateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateNotificationTemplateRequest withBody(Consumer<CreateNotificationTemplateRequestBody> bodySetter) {
+    public UpdateNotificationTemplateRequest withBody(Consumer<UpdateNotificationTemplateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateNotificationTemplateRequestBody();
+            this.body = new UpdateNotificationTemplateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateNotificationTemplateRequest {
      * Get body
      * @return body
      */
-    public CreateNotificationTemplateRequestBody getBody() {
+    public UpdateNotificationTemplateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateNotificationTemplateRequestBody body) {
+    public void setBody(UpdateNotificationTemplateRequestBody body) {
         this.body = body;
     }
 

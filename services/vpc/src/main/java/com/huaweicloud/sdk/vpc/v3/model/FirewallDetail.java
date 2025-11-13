@@ -78,6 +78,11 @@ public class FirewallDetail {
 
     private List<FirewallRuleDetail> egressRules = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public FirewallDetail withId(String id) {
         this.id = id;
         return this;
@@ -363,6 +368,23 @@ public class FirewallDetail {
         this.egressRules = egressRules;
     }
 
+    public FirewallDetail withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 参数解释： 网络ACL支持绑定的子网类型。 取值范围： normal：默认值，表示网络ACL支持绑定普通子网。 CloudDCN：表示网络ACL支持绑定CloudDCN子网。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -379,7 +401,7 @@ public class FirewallDetail {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.associations, that.associations)
             && Objects.equals(this.ingressRules, that.ingressRules)
-            && Objects.equals(this.egressRules, that.egressRules);
+            && Objects.equals(this.egressRules, that.egressRules) && Objects.equals(this.type, that.type);
     }
 
     @Override
@@ -396,7 +418,8 @@ public class FirewallDetail {
             tags,
             associations,
             ingressRules,
-            egressRules);
+            egressRules,
+            type);
     }
 
     @Override
@@ -416,6 +439,7 @@ public class FirewallDetail {
         sb.append("    associations: ").append(toIndentedString(associations)).append("\n");
         sb.append("    ingressRules: ").append(toIndentedString(ingressRules)).append("\n");
         sb.append("    egressRules: ").append(toIndentedString(egressRules)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

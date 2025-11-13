@@ -81,7 +81,7 @@ public class EventDump {
     }
 
     /**
-     * Get source
+     * 文件来源
      * @return source
      */
     public String getSource() {
@@ -98,7 +98,7 @@ public class EventDump {
     }
 
     /**
-     * Get state
+     * 文件状态
      * @return state
      */
     public String getState() {
@@ -115,7 +115,7 @@ public class EventDump {
     }
 
     /**
-     * Get description
+     * 事件描述
      * @return description
      */
     public String getDescription() {
@@ -132,7 +132,7 @@ public class EventDump {
     }
 
     /**
-     * Get id
+     * 文件id
      * @return id
      */
     public String getId() {
@@ -149,7 +149,7 @@ public class EventDump {
     }
 
     /**
-     * Get filename
+     * 文件名
      * @return filename
      */
     public String getFilename() {
@@ -166,7 +166,7 @@ public class EventDump {
     }
 
     /**
-     * Get obsname
+     * 文件obs名
      * @return obsname
      */
     public String getObsname() {
@@ -183,7 +183,7 @@ public class EventDump {
     }
 
     /**
-     * Get tenantid
+     * 租户id
      * @return tenantid
      */
     public String getTenantid() {
@@ -200,7 +200,7 @@ public class EventDump {
     }
 
     /**
-     * Get start
+     * 统计开始时间
      * @return start
      */
     public Long getStart() {
@@ -217,7 +217,7 @@ public class EventDump {
     }
 
     /**
-     * Get end
+     * 统计截止时间
      * @return end
      */
     public Long getEnd() {
@@ -234,7 +234,7 @@ public class EventDump {
     }
 
     /**
-     * Get total
+     * 总计事件数
      * @return total
      */
     public Long getTotal() {
@@ -251,7 +251,7 @@ public class EventDump {
     }
 
     /**
-     * Get url
+     * 链接
      * @return url
      */
     public String getUrl() {
@@ -268,7 +268,7 @@ public class EventDump {
     }
 
     /**
-     * Get urltimestamp
+     * 更新url时间戳
      * @return urltimestamp
      */
     public Long getUrltimestamp() {
@@ -285,7 +285,7 @@ public class EventDump {
     }
 
     /**
-     * Get timestamp
+     * 文件生成时间戳
      * @return timestamp
      */
     public Long getTimestamp() {

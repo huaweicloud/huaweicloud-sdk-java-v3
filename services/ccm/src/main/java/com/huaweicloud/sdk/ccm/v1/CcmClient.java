@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.ccm.v1.model.CountCaResourceInstancesRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CountCaResourceInstancesResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CountCertResourceInstancesRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CountCertResourceInstancesResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCaTagRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCaTagResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertTagRequest;
@@ -74,6 +76,8 @@ import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateAuthorityRequest;
 import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateAuthorityResponse;
 import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateRequest;
 import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityObsAgencyRequest;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityObsAgencyResponse;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityQuotaRequest;
@@ -84,6 +88,10 @@ import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateQuotaRequest;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateQuotaResponse;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateRequest;
 import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowConsoleConfigRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowConsoleConfigResponse;
+import com.huaweicloud.sdk.ccm.v1.model.UpdateOcspSwitchRequest;
+import com.huaweicloud.sdk.ccm.v1.model.UpdateOcspSwitchResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -273,6 +281,36 @@ public class CcmClient {
     public SyncInvoker<CountCertResourceInstancesRequest, CountCertResourceInstancesResponse> countCertResourceInstancesInvoker(
         CountCertResourceInstancesRequest request) {
         return new SyncInvoker<>(request, CcmMeta.countCertResourceInstances, hcClient);
+    }
+
+    /**
+     * 创建服务委托
+     *
+     * 用户授权PCA创建服务委托，用于访问OBS桶，更新吊销列表。
+     * &gt; 用户所使用账号token需要具备安全管理员（secu_admin）权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return CreateAgencyResponse
+     */
+    public CreateAgencyResponse createAgency(CreateAgencyRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.createAgency);
+    }
+
+    /**
+     * 创建服务委托
+     *
+     * 用户授权PCA创建服务委托，用于访问OBS桶，更新吊销列表。
+     * &gt; 用户所使用账号token需要具备安全管理员（secu_admin）权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return SyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
+     */
+    public SyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyInvoker(CreateAgencyRequest request) {
+        return new SyncInvoker<>(request, CcmMeta.createAgency, hcClient);
     }
 
     /**
@@ -1052,6 +1090,36 @@ public class CcmClient {
     }
 
     /**
+     * 查看是否有服务委托
+     *
+     * 查看是否有服务委托。
+     * &gt; 用户所使用账号token需要具备安全管理员（secu_admin）权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return ShowAgencyResponse
+     */
+    public ShowAgencyResponse showAgency(ShowAgencyRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.showAgency);
+    }
+
+    /**
+     * 查看是否有服务委托
+     *
+     * 查看是否有服务委托。
+     * &gt; 用户所使用账号token需要具备安全管理员（secu_admin）权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
+     */
+    public SyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyInvoker(ShowAgencyRequest request) {
+        return new SyncInvoker<>(request, CcmMeta.showAgency, hcClient);
+    }
+
+    /**
      * 查询证书详情
      *
      * 查询证书详情。
@@ -1139,6 +1207,35 @@ public class CcmClient {
     public SyncInvoker<ShowCertificateQuotaRequest, ShowCertificateQuotaResponse> showCertificateQuotaInvoker(
         ShowCertificateQuotaRequest request) {
         return new SyncInvoker<>(request, CcmMeta.showCertificateQuota, hcClient);
+    }
+
+    /**
+     * 查询局点支持特性
+     *
+     * 查询局点支持特性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConsoleConfigRequest 请求对象
+     * @return ShowConsoleConfigResponse
+     */
+    public ShowConsoleConfigResponse showConsoleConfig(ShowConsoleConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.showConsoleConfig);
+    }
+
+    /**
+     * 查询局点支持特性
+     *
+     * 查询局点支持特性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConsoleConfigRequest 请求对象
+     * @return SyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse>
+     */
+    public SyncInvoker<ShowConsoleConfigRequest, ShowConsoleConfigResponse> showConsoleConfigInvoker(
+        ShowConsoleConfigRequest request) {
+        return new SyncInvoker<>(request, CcmMeta.showConsoleConfig, hcClient);
     }
 
     /**
@@ -1553,6 +1650,35 @@ public class CcmClient {
     public SyncInvoker<ShowCertificateAuthorityQuotaRequest, ShowCertificateAuthorityQuotaResponse> showCertificateAuthorityQuotaInvoker(
         ShowCertificateAuthorityQuotaRequest request) {
         return new SyncInvoker<>(request, CcmMeta.showCertificateAuthorityQuota, hcClient);
+    }
+
+    /**
+     * 更新OCSP开关
+     *
+     * 启用或禁用当前CA的OCSP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOcspSwitchRequest 请求对象
+     * @return UpdateOcspSwitchResponse
+     */
+    public UpdateOcspSwitchResponse updateOcspSwitch(UpdateOcspSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, CcmMeta.updateOcspSwitch);
+    }
+
+    /**
+     * 更新OCSP开关
+     *
+     * 启用或禁用当前CA的OCSP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOcspSwitchRequest 请求对象
+     * @return SyncInvoker<UpdateOcspSwitchRequest, UpdateOcspSwitchResponse>
+     */
+    public SyncInvoker<UpdateOcspSwitchRequest, UpdateOcspSwitchResponse> updateOcspSwitchInvoker(
+        UpdateOcspSwitchRequest request) {
+        return new SyncInvoker<>(request, CcmMeta.updateOcspSwitch, hcClient);
     }
 
 }

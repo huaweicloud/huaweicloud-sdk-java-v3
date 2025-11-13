@@ -30,7 +30,7 @@ public class ConfirmTmsResourceInstancesResponse extends SdkResponse {
     }
 
     /**
-     * Get totalCount
+     * 资源总数
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -63,7 +63,7 @@ public class ConfirmTmsResourceInstancesResponse extends SdkResponse {
     }
 
     /**
-     * Get resources
+     * 资源列表
      * @return resources
      */
     public List<TmsResourceInstance> getResources() {

@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * SendMessageRep
+ * SendMessageReq
  */
-public class SendMessageRep {
+public class SendMessageReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
@@ -28,7 +28,7 @@ public class SendMessageRep {
 
     private List<SendMessageProperties> propertyList = null;
 
-    public SendMessageRep withTopic(String topic) {
+    public SendMessageReq withTopic(String topic) {
         this.topic = topic;
         return this;
     }
@@ -45,7 +45,7 @@ public class SendMessageRep {
         this.topic = topic;
     }
 
-    public SendMessageRep withBody(String body) {
+    public SendMessageReq withBody(String body) {
         this.body = body;
         return this;
     }
@@ -62,12 +62,12 @@ public class SendMessageRep {
         this.body = body;
     }
 
-    public SendMessageRep withPropertyList(List<SendMessageProperties> propertyList) {
+    public SendMessageReq withPropertyList(List<SendMessageProperties> propertyList) {
         this.propertyList = propertyList;
         return this;
     }
 
-    public SendMessageRep addPropertyListItem(SendMessageProperties propertyListItem) {
+    public SendMessageReq addPropertyListItem(SendMessageProperties propertyListItem) {
         if (this.propertyList == null) {
             this.propertyList = new ArrayList<>();
         }
@@ -75,7 +75,7 @@ public class SendMessageRep {
         return this;
     }
 
-    public SendMessageRep withPropertyList(Consumer<List<SendMessageProperties>> propertyListSetter) {
+    public SendMessageReq withPropertyList(Consumer<List<SendMessageProperties>> propertyListSetter) {
         if (this.propertyList == null) {
             this.propertyList = new ArrayList<>();
         }
@@ -103,7 +103,7 @@ public class SendMessageRep {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendMessageRep that = (SendMessageRep) obj;
+        SendMessageReq that = (SendMessageReq) obj;
         return Objects.equals(this.topic, that.topic) && Objects.equals(this.body, that.body)
             && Objects.equals(this.propertyList, that.propertyList);
     }
@@ -116,7 +116,7 @@ public class SendMessageRep {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SendMessageRep {\n");
+        sb.append("class SendMessageReq {\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("    propertyList: ").append(toIndentedString(propertyList)).append("\n");

@@ -74,8 +74,6 @@ public class ListHistorySessionsRequest {
 
     /**
      * 授权详情id
-     * minimum: 0
-     * maximum: 9223372036854775807
      * @return authorizationDetailId
      */
     public Long getAuthorizationDetailId() {

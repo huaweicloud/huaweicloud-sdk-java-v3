@@ -160,6 +160,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesRequestBo
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadImportExcelTemplateRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadImportExcelTemplateResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.EnlargeProxyRequest;
@@ -613,6 +615,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionRequestV3;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UploadImportExcelTemplateRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UploadImportExcelTemplateRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.UploadImportExcelTemplateResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UserSyncReq;
 
 @SuppressWarnings("unchecked")
@@ -7846,6 +7851,45 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadImportExcelTemplateRequest, DownloadImportExcelTemplateResponse> downloadImportExcelTemplate =
+        genForDownloadImportExcelTemplate();
+
+    private static HttpRequestDef<DownloadImportExcelTemplateRequest, DownloadImportExcelTemplateResponse> genForDownloadImportExcelTemplate() {
+        // basic
+        HttpRequestDef.Builder<DownloadImportExcelTemplateRequest, DownloadImportExcelTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    DownloadImportExcelTemplateRequest.class,
+                    DownloadImportExcelTemplateResponse.class)
+                .withName("DownloadImportExcelTemplate")
+                .withUri("/v3/{project_id}/instances/{instance_id}/htap/template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadImportExcelTemplateRequest::getInstanceId,
+                DownloadImportExcelTemplateRequest::setInstanceId));
+        builder.<String>withRequestField("template_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadImportExcelTemplateRequest::getTemplateType,
+                DownloadImportExcelTemplateRequest::setTemplateType));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadImportExcelTemplateRequest::getXLanguage,
+                DownloadImportExcelTemplateRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClickHouseDataBaseRequest, ListClickHouseDataBaseResponse> listClickHouseDataBase =
         genForListClickHouseDataBase();
 
@@ -9776,6 +9820,45 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeSrKernelVersionRequestV3.class),
             f -> f.withMarshaller(UpgradeSrKernelVersionRequest::getBody, UpgradeSrKernelVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadImportExcelTemplateRequest, UploadImportExcelTemplateResponse> uploadImportExcelTemplate =
+        genForUploadImportExcelTemplate();
+
+    private static HttpRequestDef<UploadImportExcelTemplateRequest, UploadImportExcelTemplateResponse> genForUploadImportExcelTemplate() {
+        // basic
+        HttpRequestDef.Builder<UploadImportExcelTemplateRequest, UploadImportExcelTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UploadImportExcelTemplateRequest.class,
+                    UploadImportExcelTemplateResponse.class)
+                .withName("UploadImportExcelTemplate")
+                .withUri("/v3/{project_id}/instances/{instance_id}/htap/template")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadImportExcelTemplateRequest::getInstanceId,
+                UploadImportExcelTemplateRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadImportExcelTemplateRequest::getXLanguage,
+                UploadImportExcelTemplateRequest::setXLanguage));
+        builder.<UploadImportExcelTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadImportExcelTemplateRequestBody.class),
+            f -> f.withMarshaller(UploadImportExcelTemplateRequest::getBody,
+                UploadImportExcelTemplateRequest::setBody));
 
         // response
 

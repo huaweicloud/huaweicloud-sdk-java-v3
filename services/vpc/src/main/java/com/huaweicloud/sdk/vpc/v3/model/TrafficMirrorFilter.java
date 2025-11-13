@@ -54,6 +54,11 @@ public class TrafficMirrorFilter {
 
     private OffsetDateTime updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public TrafficMirrorFilter withId(String id) {
         this.id = id;
         return this;
@@ -222,6 +227,23 @@ public class TrafficMirrorFilter {
         this.updatedAt = updatedAt;
     }
 
+    public TrafficMirrorFilter withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 参数解释： 流量镜像筛选条件的镜像源类型。 取值范围： eni：弹性网卡
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -235,12 +257,12 @@ public class TrafficMirrorFilter {
             && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
             && Objects.equals(this.ingressRules, that.ingressRules)
             && Objects.equals(this.egressRules, that.egressRules) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, projectId, description, name, ingressRules, egressRules, createdAt, updatedAt);
+        return Objects.hash(id, projectId, description, name, ingressRules, egressRules, createdAt, updatedAt, type);
     }
 
     @Override
@@ -255,6 +277,7 @@ public class TrafficMirrorFilter {
         sb.append("    egressRules: ").append(toIndentedString(egressRules)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

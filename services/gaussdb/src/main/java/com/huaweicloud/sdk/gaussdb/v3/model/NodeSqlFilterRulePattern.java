@@ -20,6 +20,11 @@ public class NodeSqlFilterRulePattern {
 
     private Integer maxConcurrency;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_at")
+
+    private Long expireAt;
+
     public NodeSqlFilterRulePattern withPattern(String pattern) {
         this.pattern = pattern;
         return this;
@@ -54,6 +59,23 @@ public class NodeSqlFilterRulePattern {
         this.maxConcurrency = maxConcurrency;
     }
 
+    public NodeSqlFilterRulePattern withExpireAt(Long expireAt) {
+        this.expireAt = expireAt;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  SQL限流失效时间，标准秒级时间戳，永久生效SQL限流规则该字段为null。  **约束限制**：  不涉及。  **取值范围**：  0 - 9223372036854775807。  **默认取值**：  不涉及。
+     * @return expireAt
+     */
+    public Long getExpireAt() {
+        return expireAt;
+    }
+
+    public void setExpireAt(Long expireAt) {
+        this.expireAt = expireAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class NodeSqlFilterRulePattern {
             return false;
         }
         NodeSqlFilterRulePattern that = (NodeSqlFilterRulePattern) obj;
-        return Objects.equals(this.pattern, that.pattern) && Objects.equals(this.maxConcurrency, that.maxConcurrency);
+        return Objects.equals(this.pattern, that.pattern) && Objects.equals(this.maxConcurrency, that.maxConcurrency)
+            && Objects.equals(this.expireAt, that.expireAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pattern, maxConcurrency);
+        return Objects.hash(pattern, maxConcurrency, expireAt);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class NodeSqlFilterRulePattern {
         sb.append("class NodeSqlFilterRulePattern {\n");
         sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
         sb.append("    maxConcurrency: ").append(toIndentedString(maxConcurrency)).append("\n");
+        sb.append("    expireAt: ").append(toIndentedString(expireAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }
