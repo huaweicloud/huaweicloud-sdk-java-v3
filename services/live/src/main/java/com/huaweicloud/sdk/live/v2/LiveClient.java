@@ -33,6 +33,8 @@ import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumRequest;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumResponse;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataRequest;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataResponse;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeTaskDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeTaskDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailRequest;
 import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListUsersOfStreamRequest;
@@ -481,6 +483,37 @@ public class LiveClient {
     public SyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse> listTranscodeDataInvoker(
         ListTranscodeDataRequest request) {
         return new SyncInvoker<>(request, LiveMeta.listTranscodeData, hcClient);
+    }
+
+    /**
+     * 查询转码明细
+     *
+     * 查询流粒度转码明细，包含流名、模版、格式、时长。
+     * 最大查询跨度1天，最大查询周期14天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTranscodeTaskDetailRequest 请求对象
+     * @return ListTranscodeTaskDetailResponse
+     */
+    public ListTranscodeTaskDetailResponse listTranscodeTaskDetail(ListTranscodeTaskDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listTranscodeTaskDetail);
+    }
+
+    /**
+     * 查询转码明细
+     *
+     * 查询流粒度转码明细，包含流名、模版、格式、时长。
+     * 最大查询跨度1天，最大查询周期14天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTranscodeTaskDetailRequest 请求对象
+     * @return SyncInvoker<ListTranscodeTaskDetailRequest, ListTranscodeTaskDetailResponse>
+     */
+    public SyncInvoker<ListTranscodeTaskDetailRequest, ListTranscodeTaskDetailResponse> listTranscodeTaskDetailInvoker(
+        ListTranscodeTaskDetailRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.listTranscodeTaskDetail, hcClient);
     }
 
     /**

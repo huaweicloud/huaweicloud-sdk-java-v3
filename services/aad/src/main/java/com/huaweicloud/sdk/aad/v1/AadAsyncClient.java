@@ -12,8 +12,8 @@ import com.huaweicloud.sdk.aad.v1.model.BatchCreateInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.BatchCreateInstanceIpRuleResponse;
 import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleResponse;
-import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainRequest;
-import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainResponse;
+import com.huaweicloud.sdk.aad.v1.model.CreateDomainRequest;
+import com.huaweicloud.sdk.aad.v1.model.CreateDomainResponse;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeleteAlarmConfigRequest;
@@ -434,11 +434,11 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateAadDomainRequest 请求对象
-     * @return CompletableFuture<CreateAadDomainResponse>
+     * @param request CreateDomainRequest 请求对象
+     * @return CompletableFuture<CreateDomainResponse>
      */
-    public CompletableFuture<CreateAadDomainResponse> createAadDomainAsync(CreateAadDomainRequest request) {
-        return hcClient.asyncInvokeHttp(request, AadMeta.createAadDomain);
+    public CompletableFuture<CreateDomainResponse> createDomainAsync(CreateDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.createDomain);
     }
 
     /**
@@ -448,12 +448,12 @@ public class AadAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateAadDomainRequest 请求对象
-     * @return AsyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse>
+     * @param request CreateDomainRequest 请求对象
+     * @return AsyncInvoker<CreateDomainRequest, CreateDomainResponse>
      */
-    public AsyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomainAsyncInvoker(
-        CreateAadDomainRequest request) {
-        return new AsyncInvoker<>(request, AadMeta.createAadDomain, hcClient);
+    public AsyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainAsyncInvoker(
+        CreateDomainRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.createDomain, hcClient);
     }
 
     /**

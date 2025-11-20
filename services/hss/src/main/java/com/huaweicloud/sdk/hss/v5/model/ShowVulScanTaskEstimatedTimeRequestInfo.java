@@ -50,7 +50,7 @@ public class ShowVulScanTaskEstimatedTimeRequestInfo {
     }
 
     /**
-     * **参数解释**: 漏洞手动检测类型 **约束限制**: 不涉及 **取值范围**: - linux_vul：linux漏洞 - windows_vul：windows漏洞 - web_cms - app_vul - urgent_vul  **默认取值**: 不涉及 
+     * **参数解释**: 漏洞手动检测类型 **约束限制**: 不涉及 **取值范围**: - linux_vul：linux漏洞 - windows_vul：windows漏洞 - web_cms：Web-CMS漏洞 - app_vul：应用漏洞 - urgent_vul：紧急漏洞  **默认取值**: 不涉及 
      * @return manualScanType
      */
     public List<String> getManualScanType() {

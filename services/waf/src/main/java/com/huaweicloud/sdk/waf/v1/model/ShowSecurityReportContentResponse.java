@@ -170,7 +170,7 @@ public class ShowSecurityReportContentResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 订阅类型，接收安全报告的订阅方式（如slient表示静默订阅）。 **约束限制：** 不涉及 **取值范围：** - smn_topic : 消息主题 - slient ： 静默 - message_center ： 消息中心  **默认取值：** 不涉及
+     * **参数解释：** 订阅类型，接收安全报告的订阅方式（如slient表示静默订阅）。 **约束限制：** 不涉及 **取值范围：** - smn_topic : 消息主题 - silent ： 静默 - message_center ： 消息中心  **默认取值：** 不涉及
      * @return subscriptionType
      */
     public String getSubscriptionType() {

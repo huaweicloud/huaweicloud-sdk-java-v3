@@ -41,6 +41,11 @@ public class ListHostVulsRequest {
     private String vulName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vul_id")
+
+    private String vulId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_status")
 
     private String handleStatus;
@@ -54,6 +59,26 @@ public class ListHostVulsRequest {
     @JsonProperty(value = "repair_priority")
 
     private String repairPriority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity_level")
+
+    private String severityLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_affect_business")
+
+    private Boolean isAffectBusiness;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "label_list")
+
+    private String labelList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "excluded_label_list")
+
+    private String excludedLabelList;
 
     public ListHostVulsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -133,7 +158,7 @@ public class ListHostVulsRequest {
     }
 
     /**
-     * **参数解释**: 查询的漏洞类型 **约束限制**: 不涉及 **取值范围**: - linux_vul   : linux漏洞 - windows_vul : windows漏洞 - web_cms     : Web-CMS漏洞 - app_vul     : 应用漏洞 - urgent_vul  : 应急漏洞  **默认取值**: linux_vul : linux漏洞 
+     * **参数解释**: 查询的漏洞类型 **约束限制**: 不涉及 **取值范围**: - linux_vul：linux漏洞 - windows_vul：windows漏洞 - web_cms：Web-CMS漏洞 - app_vul：应用漏洞 - urgent_vul：应急漏洞  **默认取值**: linux_vul：linux漏洞 
      * @return type
      */
     public String getType() {
@@ -161,13 +186,30 @@ public class ListHostVulsRequest {
         this.vulName = vulName;
     }
 
+    public ListHostVulsRequest withVulId(String vulId) {
+        this.vulId = vulId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 漏洞ID **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 不涉及 
+     * @return vulId
+     */
+    public String getVulId() {
+        return vulId;
+    }
+
+    public void setVulId(String vulId) {
+        this.vulId = vulId;
+    }
+
     public ListHostVulsRequest withHandleStatus(String handleStatus) {
         this.handleStatus = handleStatus;
         return this;
     }
 
     /**
-     * **参数解释**: 漏洞当前的处置状态 **约束限制**: 不涉及 **取值范围**: - unhandled ：未处理 - handled : 已处理  **默认取值**: 不涉及 
+     * **参数解释**: 漏洞当前的处置状态 **约束限制**: 不涉及 **取值范围**: - unhandled：未处理 - handled：已处理  **默认取值**: 不涉及 
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -184,7 +226,7 @@ public class ListHostVulsRequest {
     }
 
     /**
-     * **参数解释**: 漏洞当前的漏洞状态 **约束限制**: 不涉及 **取值范围**: - vul_status_unfix            : 未处理 - vul_status_ignored          : 已忽略 - vul_status_verified         : 验证中 - vul_status_fixing           : 修复中 - vul_status_fixed            : 修复成功 - vul_status_reboot           : 修复成功待重启 - vul_status_failed           : 修复失败 - vul_status_fix_after_reboot : 请重启主机再次修复  **默认取值**: 不涉及 
+     * **参数解释**: 漏洞当前的漏洞状态 **约束限制**: 不涉及 **取值范围**: - vul_status_unfix：未处理 - vul_status_ignored：已忽略 - vul_status_verified：验证中 - vul_status_fixing：修复中 - vul_status_fixed：修复成功 - vul_status_reboot：修复成功待重启 - vul_status_failed：修复失败 - vul_status_fix_after_reboot：请重启主机再次修复  **默认取值**: 不涉及 
      * @return status
      */
     public String getStatus() {
@@ -201,7 +243,7 @@ public class ListHostVulsRequest {
     }
 
     /**
-     * **参数解释**: 漏洞修复优先级 **约束限制**: 不涉及 **取值范围**: - Critical : 紧急 - High     : 高 - Medium   : 中 - Low      : 低  **默认取值**: 不涉及 
+     * **参数解释**: 漏洞修复优先级 **约束限制**: 不涉及 **取值范围**: - Critical：紧急 - High：高 - Medium：中 - Low：低  **默认取值**: 不涉及 
      * @return repairPriority
      */
     public String getRepairPriority() {
@@ -210,6 +252,74 @@ public class ListHostVulsRequest {
 
     public void setRepairPriority(String repairPriority) {
         this.repairPriority = repairPriority;
+    }
+
+    public ListHostVulsRequest withSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 危险程度（风险等级） **约束限制**: 不涉及 **取值范围**: - Critical：漏洞cvss评分大于等于9；对应控制台页面的高危 - High：漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium：漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low：漏洞cvss评分小于4；对应控制台页面的低危  可用逗号连接作为多选 **默认取值**: 不涉及 
+     * @return severityLevel
+     */
+    public String getSeverityLevel() {
+        return severityLevel;
+    }
+
+    public void setSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
+    }
+
+    public ListHostVulsRequest withIsAffectBusiness(Boolean isAffectBusiness) {
+        this.isAffectBusiness = isAffectBusiness;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 是否影响业务 **约束限制**: 不涉及 **取值范围**: - true：影响业务 - false：不影响业务  **默认取值**: 不涉及 
+     * @return isAffectBusiness
+     */
+    public Boolean getIsAffectBusiness() {
+        return isAffectBusiness;
+    }
+
+    public void setIsAffectBusiness(Boolean isAffectBusiness) {
+        this.isAffectBusiness = isAffectBusiness;
+    }
+
+    public ListHostVulsRequest withLabelList(String labelList) {
+        this.labelList = labelList;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 漏洞标签（多个标签之间用逗号连接） **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
+     * @return labelList
+     */
+    public String getLabelList() {
+        return labelList;
+    }
+
+    public void setLabelList(String labelList) {
+        this.labelList = labelList;
+    }
+
+    public ListHostVulsRequest withExcludedLabelList(String excludedLabelList) {
+        this.excludedLabelList = excludedLabelList;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 反选漏洞标签（多个标签之间用逗号连接） **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
+     * @return excludedLabelList
+     */
+    public String getExcludedLabelList() {
+        return excludedLabelList;
+    }
+
+    public void setExcludedLabelList(String excludedLabelList) {
+        this.excludedLabelList = excludedLabelList;
     }
 
     @Override
@@ -224,14 +334,31 @@ public class ListHostVulsRequest {
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.vulName, that.vulName) && Objects.equals(this.handleStatus, that.handleStatus)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.repairPriority, that.repairPriority);
+            && Objects.equals(this.vulName, that.vulName) && Objects.equals(this.vulId, that.vulId)
+            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.repairPriority, that.repairPriority)
+            && Objects.equals(this.severityLevel, that.severityLevel)
+            && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
+            && Objects.equals(this.labelList, that.labelList)
+            && Objects.equals(this.excludedLabelList, that.excludedLabelList);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(enterpriseProjectId, limit, offset, hostId, type, vulName, handleStatus, status, repairPriority);
+        return Objects.hash(enterpriseProjectId,
+            limit,
+            offset,
+            hostId,
+            type,
+            vulName,
+            vulId,
+            handleStatus,
+            status,
+            repairPriority,
+            severityLevel,
+            isAffectBusiness,
+            labelList,
+            excludedLabelList);
     }
 
     @Override
@@ -244,9 +371,14 @@ public class ListHostVulsRequest {
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    vulName: ").append(toIndentedString(vulName)).append("\n");
+        sb.append("    vulId: ").append(toIndentedString(vulId)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
+        sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
+        sb.append("    isAffectBusiness: ").append(toIndentedString(isAffectBusiness)).append("\n");
+        sb.append("    labelList: ").append(toIndentedString(labelList)).append("\n");
+        sb.append("    excludedLabelList: ").append(toIndentedString(excludedLabelList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

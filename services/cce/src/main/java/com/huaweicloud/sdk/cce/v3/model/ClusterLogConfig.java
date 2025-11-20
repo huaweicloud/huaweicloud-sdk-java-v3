@@ -29,7 +29,7 @@ public class ClusterLogConfig {
     }
 
     /**
-     * **参数解释**： 日志存储时长，单位（天） **取值范围**： 0-30
+     * **参数解释**：  存储时长，单位：天。  **约束限制**：  不涉及  **取值范围**： 0-30  **默认取值**： 不涉及
      * minimum: 0
      * maximum: 30
      * @return ttlInDays

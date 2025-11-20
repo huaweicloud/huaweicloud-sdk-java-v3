@@ -29,7 +29,7 @@ public class NodeLabelInfoResponse {
     }
 
     /**
-     * **参数解释**: 节点标签名称。 **约束限制**: 不涉及 **取值范围**: 字符长度0-512位 **默认取值**: 不涉及 
+     * **参数解释**: 节点标签名称。 **取值范围**: 字符长度1-512位 
      * @return label
      */
     public String getLabel() {
@@ -62,7 +62,7 @@ public class NodeLabelInfoResponse {
     }
 
     /**
-     * **参数解释**: 节点名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 不涉及 
+     * **参数解释**: 节点名称 **取值范围**: 字符长度0-256位 
      * @return children
      */
     public List<String> getChildren() {

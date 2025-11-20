@@ -19,7 +19,7 @@ public class CreateKubernetesClusterCertRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CertDuration body;
+    private ClusterCertDuration body;
 
     public CreateKubernetesClusterCertRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +38,14 @@ public class CreateKubernetesClusterCertRequest {
         this.clusterId = clusterId;
     }
 
-    public CreateKubernetesClusterCertRequest withBody(CertDuration body) {
+    public CreateKubernetesClusterCertRequest withBody(ClusterCertDuration body) {
         this.body = body;
         return this;
     }
 
-    public CreateKubernetesClusterCertRequest withBody(Consumer<CertDuration> bodySetter) {
+    public CreateKubernetesClusterCertRequest withBody(Consumer<ClusterCertDuration> bodySetter) {
         if (this.body == null) {
-            this.body = new CertDuration();
+            this.body = new ClusterCertDuration();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateKubernetesClusterCertRequest {
      * Get body
      * @return body
      */
-    public CertDuration getBody() {
+    public ClusterCertDuration getBody() {
         return body;
     }
 
-    public void setBody(CertDuration body) {
+    public void setBody(ClusterCertDuration body) {
         this.body = body;
     }
 

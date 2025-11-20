@@ -25,6 +25,16 @@ public class GetDetailfNodesInfo {
 
     private String ip;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_id")
+
+    private String nodeId;
+
     public GetDetailfNodesInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -76,6 +86,40 @@ public class GetDetailfNodesInfo {
         this.ip = ip;
     }
 
+    public GetDetailfNodesInfo withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 节点所在组ID。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public GetDetailfNodesInfo withNodeId(String nodeId) {
+        this.nodeId = nodeId;
+        return this;
+    }
+
+    /**
+     * 节点ID。
+     * @return nodeId
+     */
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +130,13 @@ public class GetDetailfNodesInfo {
         }
         GetDetailfNodesInfo that = (GetDetailfNodesInfo) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.port, that.port)
-            && Objects.equals(this.ip, that.ip);
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.nodeId, that.nodeId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, port, ip);
+        return Objects.hash(status, port, ip, groupId, nodeId);
     }
 
     @Override
@@ -101,6 +146,8 @@ public class GetDetailfNodesInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

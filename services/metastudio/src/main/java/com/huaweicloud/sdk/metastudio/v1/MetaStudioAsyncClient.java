@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.BatchDeletePacifyWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchDeletePacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.BindUserAssetResourceRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.BindUserAssetResourceResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoRequest;
@@ -57,8 +59,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDocumentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDocumentResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateHotQuestionRequest;
@@ -135,12 +135,14 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingThirdPartyJobReques
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingThirdPartyJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsOnceCodeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsOnceCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateUserQuotasRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateUserQuotasResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
@@ -209,16 +211,22 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTaskRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTenantUserConfigurationRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTenantUserConfigurationResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteUserQuotasRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteUserQuotasResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteWelcomeSpeechResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Download2dModelTraningEncryptFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Download2dModelTraningEncryptFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DownloadDocumentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DownloadDocumentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DownloadResultFileRequest;
@@ -229,6 +237,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUs
 import com.huaweicloud.sdk.metastudio.v1.model.Execute2dModelTrainingCommandByUserResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ExecuteTransferAssetActionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ExecuteTransferAssetActionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillRequest;
@@ -253,8 +263,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListDocumentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDocumentInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDocumentSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDocumentSegmentResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsRequest;
@@ -319,14 +327,14 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTenantResourcesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTenantResourcesResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTransferAssetJobsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTransferAssetJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListUserQuotasRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListUserQuotasResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
@@ -353,6 +361,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTenantNoticeConfigurationRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTenantNoticeConfigurationResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTenantUserConfigurationRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SetTenantUserConfigurationResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetTtscGroupAssetsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetTtscGroupAssetsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
@@ -451,16 +463,28 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveUserConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveUserConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSummaryUsageDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSummaryUsageDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTaskResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantAssginRecordRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantAssginRecordResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantDurationCfgRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantDurationCfgResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantNoticeConfigurationRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantNoticeConfigurationResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantServiceConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantServiceConfigsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantUserConfigurationRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTenantUserConfigurationResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTransferAssetJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTransferAssetJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsJobRequest;
@@ -501,6 +525,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.TransferAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.TransferAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
@@ -571,8 +597,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveUserConfigRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveUserConfigResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateTenantServiceConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateTenantServiceConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateTtscVocabularyGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateUserQuotasRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateUserQuotasResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechRequest;
@@ -1629,6 +1659,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 转移资产任务控制
+     *
+     * 转移资产任务控制
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteTransferAssetActionRequest 请求对象
+     * @return CompletableFuture<ExecuteTransferAssetActionResponse>
+     */
+    public CompletableFuture<ExecuteTransferAssetActionResponse> executeTransferAssetActionAsync(
+        ExecuteTransferAssetActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.executeTransferAssetAction);
+    }
+
+    /**
+     * 转移资产任务控制
+     *
+     * 转移资产任务控制
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteTransferAssetActionRequest 请求对象
+     * @return AsyncInvoker<ExecuteTransferAssetActionRequest, ExecuteTransferAssetActionResponse>
+     */
+    public AsyncInvoker<ExecuteTransferAssetActionRequest, ExecuteTransferAssetActionResponse> executeTransferAssetActionAsyncInvoker(
+        ExecuteTransferAssetActionRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.executeTransferAssetAction, hcClient);
+    }
+
+    /**
      * 查询资产概要
      *
      * 该接口用于查询媒体资产库中指定的多个资产的概要信息。
@@ -1683,6 +1743,36 @@ public class MetaStudioAsyncClient {
      */
     public AsyncInvoker<ListAssetsRequest, ListAssetsResponse> listAssetsAsyncInvoker(ListAssetsRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.listAssets, hcClient);
+    }
+
+    /**
+     * 资产转移任务列表
+     *
+     * 资产转移任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransferAssetJobsRequest 请求对象
+     * @return CompletableFuture<ListTransferAssetJobsResponse>
+     */
+    public CompletableFuture<ListTransferAssetJobsResponse> listTransferAssetJobsAsync(
+        ListTransferAssetJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listTransferAssetJobs);
+    }
+
+    /**
+     * 资产转移任务列表
+     *
+     * 资产转移任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransferAssetJobsRequest 请求对象
+     * @return AsyncInvoker<ListTransferAssetJobsRequest, ListTransferAssetJobsResponse>
+     */
+    public AsyncInvoker<ListTransferAssetJobsRequest, ListTransferAssetJobsResponse> listTransferAssetJobsAsyncInvoker(
+        ListTransferAssetJobsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listTransferAssetJobs, hcClient);
     }
 
     /**
@@ -1770,6 +1860,65 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ShowAssetReplicationInfoRequest, ShowAssetReplicationInfoResponse> showAssetReplicationInfoAsyncInvoker(
         ShowAssetReplicationInfoRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showAssetReplicationInfo, hcClient);
+    }
+
+    /**
+     * 查询转移资产任务详情
+     *
+     * 查询转移资产任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransferAssetJobRequest 请求对象
+     * @return CompletableFuture<ShowTransferAssetJobResponse>
+     */
+    public CompletableFuture<ShowTransferAssetJobResponse> showTransferAssetJobAsync(
+        ShowTransferAssetJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTransferAssetJob);
+    }
+
+    /**
+     * 查询转移资产任务详情
+     *
+     * 查询转移资产任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransferAssetJobRequest 请求对象
+     * @return AsyncInvoker<ShowTransferAssetJobRequest, ShowTransferAssetJobResponse>
+     */
+    public AsyncInvoker<ShowTransferAssetJobRequest, ShowTransferAssetJobResponse> showTransferAssetJobAsyncInvoker(
+        ShowTransferAssetJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showTransferAssetJob, hcClient);
+    }
+
+    /**
+     * 转移资产给其他用户
+     *
+     * 转移资产给其他用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferAssetRequest 请求对象
+     * @return CompletableFuture<TransferAssetResponse>
+     */
+    public CompletableFuture<TransferAssetResponse> transferAssetAsync(TransferAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.transferAsset);
+    }
+
+    /**
+     * 转移资产给其他用户
+     *
+     * 转移资产给其他用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferAssetRequest 请求对象
+     * @return AsyncInvoker<TransferAssetRequest, TransferAssetResponse>
+     */
+    public AsyncInvoker<TransferAssetRequest, TransferAssetResponse> transferAssetAsyncInvoker(
+        TransferAssetRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.transferAsset, hcClient);
     }
 
     /**
@@ -3601,35 +3750,6 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<CreateInteractiveChatRequest, CreateInteractiveChatResponse> createInteractiveChatAsyncInvoker(
         CreateInteractiveChatRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.createInteractiveChat, hcClient);
-    }
-
-    /**
-     * 下载加密文件
-     *
-     * 下载加密文件
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowEncryptFileRequest 请求对象
-     * @return CompletableFuture<ShowEncryptFileResponse>
-     */
-    public CompletableFuture<ShowEncryptFileResponse> showEncryptFileAsync(ShowEncryptFileRequest request) {
-        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showEncryptFile);
-    }
-
-    /**
-     * 下载加密文件
-     *
-     * 下载加密文件
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowEncryptFileRequest 请求对象
-     * @return AsyncInvoker<ShowEncryptFileRequest, ShowEncryptFileResponse>
-     */
-    public AsyncInvoker<ShowEncryptFileRequest, ShowEncryptFileResponse> showEncryptFileAsyncInvoker(
-        ShowEncryptFileRequest request) {
-        return new AsyncInvoker<>(request, MetaStudioMeta.showEncryptFile, hcClient);
     }
 
     /**
@@ -6360,6 +6480,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 租户查询直播租户级配置
+     *
+     * 该接口用于租户设置直播租户级配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSmartLiveUserConfigRequest 请求对象
+     * @return CompletableFuture<ShowSmartLiveUserConfigResponse>
+     */
+    public CompletableFuture<ShowSmartLiveUserConfigResponse> showSmartLiveUserConfigAsync(
+        ShowSmartLiveUserConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showSmartLiveUserConfig);
+    }
+
+    /**
+     * 租户查询直播租户级配置
+     *
+     * 该接口用于租户设置直播租户级配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSmartLiveUserConfigRequest 请求对象
+     * @return AsyncInvoker<ShowSmartLiveUserConfigRequest, ShowSmartLiveUserConfigResponse>
+     */
+    public AsyncInvoker<ShowSmartLiveUserConfigRequest, ShowSmartLiveUserConfigResponse> showSmartLiveUserConfigAsyncInvoker(
+        ShowSmartLiveUserConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showSmartLiveUserConfig, hcClient);
+    }
+
+    /**
      * 租户设置直播租户级配置
      *
      * 该接口用于租户设置直播租户级配置。
@@ -7002,6 +7152,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 资源绑定接口
+     *
+     * 资源绑定接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindUserAssetResourceRequest 请求对象
+     * @return CompletableFuture<BindUserAssetResourceResponse>
+     */
+    public CompletableFuture<BindUserAssetResourceResponse> bindUserAssetResourceAsync(
+        BindUserAssetResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.bindUserAssetResource);
+    }
+
+    /**
+     * 资源绑定接口
+     *
+     * 资源绑定接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindUserAssetResourceRequest 请求对象
+     * @return AsyncInvoker<BindUserAssetResourceRequest, BindUserAssetResourceResponse>
+     */
+    public AsyncInvoker<BindUserAssetResourceRequest, BindUserAssetResourceResponse> bindUserAssetResourceAsyncInvoker(
+        BindUserAssetResourceRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.bindUserAssetResource, hcClient);
+    }
+
+    /**
      * 统计时间段内过期的资源数量
      *
      * 统计指定时间段内即将过期的包周期与一次性资源数量。
@@ -7029,6 +7209,94 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<CountTenantResourcesRequest, CountTenantResourcesResponse> countTenantResourcesAsyncInvoker(
         CountTenantResourcesRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.countTenantResources, hcClient);
+    }
+
+    /**
+     * 创建子账户配额
+     *
+     * 创建子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可创建。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUserQuotasRequest 请求对象
+     * @return CompletableFuture<CreateUserQuotasResponse>
+     */
+    public CompletableFuture<CreateUserQuotasResponse> createUserQuotasAsync(CreateUserQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createUserQuotas);
+    }
+
+    /**
+     * 创建子账户配额
+     *
+     * 创建子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可创建。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUserQuotasRequest 请求对象
+     * @return AsyncInvoker<CreateUserQuotasRequest, CreateUserQuotasResponse>
+     */
+    public AsyncInvoker<CreateUserQuotasRequest, CreateUserQuotasResponse> createUserQuotasAsyncInvoker(
+        CreateUserQuotasRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createUserQuotas, hcClient);
+    }
+
+    /**
+     * 删除租户个性化配置
+     *
+     * 删除租户个性化配置。由租户下用户操作设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTenantUserConfigurationRequest 请求对象
+     * @return CompletableFuture<DeleteTenantUserConfigurationResponse>
+     */
+    public CompletableFuture<DeleteTenantUserConfigurationResponse> deleteTenantUserConfigurationAsync(
+        DeleteTenantUserConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteTenantUserConfiguration);
+    }
+
+    /**
+     * 删除租户个性化配置
+     *
+     * 删除租户个性化配置。由租户下用户操作设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTenantUserConfigurationRequest 请求对象
+     * @return AsyncInvoker<DeleteTenantUserConfigurationRequest, DeleteTenantUserConfigurationResponse>
+     */
+    public AsyncInvoker<DeleteTenantUserConfigurationRequest, DeleteTenantUserConfigurationResponse> deleteTenantUserConfigurationAsyncInvoker(
+        DeleteTenantUserConfigurationRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deleteTenantUserConfiguration, hcClient);
+    }
+
+    /**
+     * 删除子账户配额
+     *
+     * 删除子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteUserQuotasRequest 请求对象
+     * @return CompletableFuture<DeleteUserQuotasResponse>
+     */
+    public CompletableFuture<DeleteUserQuotasResponse> deleteUserQuotasAsync(DeleteUserQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteUserQuotas);
+    }
+
+    /**
+     * 删除子账户配额
+     *
+     * 删除子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteUserQuotasRequest 请求对象
+     * @return AsyncInvoker<DeleteUserQuotasRequest, DeleteUserQuotasResponse>
+     */
+    public AsyncInvoker<DeleteUserQuotasRequest, DeleteUserQuotasResponse> deleteUserQuotasAsyncInvoker(
+        DeleteUserQuotasRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deleteUserQuotas, hcClient);
     }
 
     /**
@@ -7065,6 +7333,95 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 查询子账户配额
+     *
+     * 查询子账户（IAM用户）配额。只有根账户可查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserQuotasRequest 请求对象
+     * @return CompletableFuture<ListUserQuotasResponse>
+     */
+    public CompletableFuture<ListUserQuotasResponse> listUserQuotasAsync(ListUserQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listUserQuotas);
+    }
+
+    /**
+     * 查询子账户配额
+     *
+     * 查询子账户（IAM用户）配额。只有根账户可查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserQuotasRequest 请求对象
+     * @return AsyncInvoker<ListUserQuotasRequest, ListUserQuotasResponse>
+     */
+    public AsyncInvoker<ListUserQuotasRequest, ListUserQuotasResponse> listUserQuotasAsyncInvoker(
+        ListUserQuotasRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listUserQuotas, hcClient);
+    }
+
+    /**
+     * 设置租户个性化通知配置
+     *
+     * 设置租户个性化通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTenantNoticeConfigurationRequest 请求对象
+     * @return CompletableFuture<SetTenantNoticeConfigurationResponse>
+     */
+    public CompletableFuture<SetTenantNoticeConfigurationResponse> setTenantNoticeConfigurationAsync(
+        SetTenantNoticeConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.setTenantNoticeConfiguration);
+    }
+
+    /**
+     * 设置租户个性化通知配置
+     *
+     * 设置租户个性化通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTenantNoticeConfigurationRequest 请求对象
+     * @return AsyncInvoker<SetTenantNoticeConfigurationRequest, SetTenantNoticeConfigurationResponse>
+     */
+    public AsyncInvoker<SetTenantNoticeConfigurationRequest, SetTenantNoticeConfigurationResponse> setTenantNoticeConfigurationAsyncInvoker(
+        SetTenantNoticeConfigurationRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.setTenantNoticeConfiguration, hcClient);
+    }
+
+    /**
+     * 设置租户个性化配置
+     *
+     * 设置租户个性化配置。由租户下用户操作设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTenantUserConfigurationRequest 请求对象
+     * @return CompletableFuture<SetTenantUserConfigurationResponse>
+     */
+    public CompletableFuture<SetTenantUserConfigurationResponse> setTenantUserConfigurationAsync(
+        SetTenantUserConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.setTenantUserConfiguration);
+    }
+
+    /**
+     * 设置租户个性化配置
+     *
+     * 设置租户个性化配置。由租户下用户操作设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetTenantUserConfigurationRequest 请求对象
+     * @return AsyncInvoker<SetTenantUserConfigurationRequest, SetTenantUserConfigurationResponse>
+     */
+    public AsyncInvoker<SetTenantUserConfigurationRequest, SetTenantUserConfigurationResponse> setTenantUserConfigurationAsyncInvoker(
+        SetTenantUserConfigurationRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.setTenantUserConfiguration, hcClient);
+    }
+
+    /**
      * 查看租户资源用量信息
      *
      * 查询租户一次性和包周期（包年/包月）资源用量信息。
@@ -7095,6 +7452,126 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ShowResourceUsageRequest, ShowResourceUsageResponse> showResourceUsageAsyncInvoker(
         ShowResourceUsageRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showResourceUsage, hcClient);
+    }
+
+    /**
+     * 查询租户下分配的资源详情
+     *
+     * 该接口用于普通租户查询租户下的资源详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantAssginRecordRequest 请求对象
+     * @return CompletableFuture<ShowTenantAssginRecordResponse>
+     */
+    public CompletableFuture<ShowTenantAssginRecordResponse> showTenantAssginRecordAsync(
+        ShowTenantAssginRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTenantAssginRecord);
+    }
+
+    /**
+     * 查询租户下分配的资源详情
+     *
+     * 该接口用于普通租户查询租户下的资源详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantAssginRecordRequest 请求对象
+     * @return AsyncInvoker<ShowTenantAssginRecordRequest, ShowTenantAssginRecordResponse>
+     */
+    public AsyncInvoker<ShowTenantAssginRecordRequest, ShowTenantAssginRecordResponse> showTenantAssginRecordAsyncInvoker(
+        ShowTenantAssginRecordRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showTenantAssginRecord, hcClient);
+    }
+
+    /**
+     * 查询租户个性化通知配置
+     *
+     * 查询租户个性化通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantNoticeConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowTenantNoticeConfigurationResponse>
+     */
+    public CompletableFuture<ShowTenantNoticeConfigurationResponse> showTenantNoticeConfigurationAsync(
+        ShowTenantNoticeConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTenantNoticeConfiguration);
+    }
+
+    /**
+     * 查询租户个性化通知配置
+     *
+     * 查询租户个性化通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantNoticeConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowTenantNoticeConfigurationRequest, ShowTenantNoticeConfigurationResponse>
+     */
+    public AsyncInvoker<ShowTenantNoticeConfigurationRequest, ShowTenantNoticeConfigurationResponse> showTenantNoticeConfigurationAsyncInvoker(
+        ShowTenantNoticeConfigurationRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showTenantNoticeConfiguration, hcClient);
+    }
+
+    /**
+     * 查看租户服务业务配置
+     *
+     * 查看租户服务业务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantServiceConfigsRequest 请求对象
+     * @return CompletableFuture<ShowTenantServiceConfigsResponse>
+     */
+    public CompletableFuture<ShowTenantServiceConfigsResponse> showTenantServiceConfigsAsync(
+        ShowTenantServiceConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTenantServiceConfigs);
+    }
+
+    /**
+     * 查看租户服务业务配置
+     *
+     * 查看租户服务业务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantServiceConfigsRequest 请求对象
+     * @return AsyncInvoker<ShowTenantServiceConfigsRequest, ShowTenantServiceConfigsResponse>
+     */
+    public AsyncInvoker<ShowTenantServiceConfigsRequest, ShowTenantServiceConfigsResponse> showTenantServiceConfigsAsyncInvoker(
+        ShowTenantServiceConfigsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showTenantServiceConfigs, hcClient);
+    }
+
+    /**
+     * 查询租户个性化配置
+     *
+     * 查询租户个性化配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantUserConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowTenantUserConfigurationResponse>
+     */
+    public CompletableFuture<ShowTenantUserConfigurationResponse> showTenantUserConfigurationAsync(
+        ShowTenantUserConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTenantUserConfiguration);
+    }
+
+    /**
+     * 查询租户个性化配置
+     *
+     * 查询租户个性化配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantUserConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowTenantUserConfigurationRequest, ShowTenantUserConfigurationResponse>
+     */
+    public AsyncInvoker<ShowTenantUserConfigurationRequest, ShowTenantUserConfigurationResponse> showTenantUserConfigurationAsyncInvoker(
+        ShowTenantUserConfigurationRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showTenantUserConfiguration, hcClient);
     }
 
     /**
@@ -7154,6 +7631,65 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<SignSpecialAgreementRequest, SignSpecialAgreementResponse> signSpecialAgreementAsyncInvoker(
         SignSpecialAgreementRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.signSpecialAgreement, hcClient);
+    }
+
+    /**
+     * 设置租户服务配置
+     *
+     * 设置租户服务业务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantServiceConfigsRequest 请求对象
+     * @return CompletableFuture<UpdateTenantServiceConfigsResponse>
+     */
+    public CompletableFuture<UpdateTenantServiceConfigsResponse> updateTenantServiceConfigsAsync(
+        UpdateTenantServiceConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateTenantServiceConfigs);
+    }
+
+    /**
+     * 设置租户服务配置
+     *
+     * 设置租户服务业务配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantServiceConfigsRequest 请求对象
+     * @return AsyncInvoker<UpdateTenantServiceConfigsRequest, UpdateTenantServiceConfigsResponse>
+     */
+    public AsyncInvoker<UpdateTenantServiceConfigsRequest, UpdateTenantServiceConfigsResponse> updateTenantServiceConfigsAsyncInvoker(
+        UpdateTenantServiceConfigsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updateTenantServiceConfigs, hcClient);
+    }
+
+    /**
+     * 设置子账户配额
+     *
+     * 设置子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUserQuotasRequest 请求对象
+     * @return CompletableFuture<UpdateUserQuotasResponse>
+     */
+    public CompletableFuture<UpdateUserQuotasResponse> updateUserQuotasAsync(UpdateUserQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateUserQuotas);
+    }
+
+    /**
+     * 设置子账户配额
+     *
+     * 设置子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUserQuotasRequest 请求对象
+     * @return AsyncInvoker<UpdateUserQuotasRequest, UpdateUserQuotasResponse>
+     */
+    public AsyncInvoker<UpdateUserQuotasRequest, UpdateUserQuotasResponse> updateUserQuotasAsyncInvoker(
+        UpdateUserQuotasRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updateUserQuotas, hcClient);
     }
 
     /**
@@ -7557,6 +8093,35 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 下载加密文件
+     *
+     * 下载加密文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEncryptFileRequest 请求对象
+     * @return CompletableFuture<ShowEncryptFileResponse>
+     */
+    public CompletableFuture<ShowEncryptFileResponse> showEncryptFileAsync(ShowEncryptFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showEncryptFile);
+    }
+
+    /**
+     * 下载加密文件
+     *
+     * 下载加密文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEncryptFileRequest 请求对象
+     * @return AsyncInvoker<ShowEncryptFileRequest, ShowEncryptFileResponse>
+     */
+    public AsyncInvoker<ShowEncryptFileRequest, ShowEncryptFileResponse> showEncryptFileAsyncInvoker(
+        ShowEncryptFileRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showEncryptFile, hcClient);
+    }
+
+    /**
      * 获取语音训练任务审核结果
      *
      * 获取语音训练任务审核结果。
@@ -7827,6 +8392,36 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 下载加密文件
+     *
+     * 下载加密文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request Download2dModelTraningEncryptFileRequest 请求对象
+     * @return CompletableFuture<Download2dModelTraningEncryptFileResponse>
+     */
+    public CompletableFuture<Download2dModelTraningEncryptFileResponse> download2dModelTraningEncryptFileAsync(
+        Download2dModelTraningEncryptFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.download2dModelTraningEncryptFile);
+    }
+
+    /**
+     * 下载加密文件
+     *
+     * 下载加密文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request Download2dModelTraningEncryptFileRequest 请求对象
+     * @return AsyncInvoker<Download2dModelTraningEncryptFileRequest, Download2dModelTraningEncryptFileResponse>
+     */
+    public AsyncInvoker<Download2dModelTraningEncryptFileRequest, Download2dModelTraningEncryptFileResponse> download2dModelTraningEncryptFileAsyncInvoker(
+        Download2dModelTraningEncryptFileRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.download2dModelTraningEncryptFile, hcClient);
+    }
+
+    /**
      * 租户执行分身数字人模型训练任务命令
      *
      * 该接口用于租户执行分身数字人模型训练任务命令，如提交训练审核等。
@@ -7946,152 +8541,6 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<Update2dModelTrainingJobRequest, Update2dModelTrainingJobResponse> update2dModelTrainingJobAsyncInvoker(
         Update2dModelTrainingJobRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.update2dModelTrainingJob, hcClient);
-    }
-
-    /**
-     * 创建语音驱动表情动画任务
-     *
-     * 该接口用于创建驱动数字人表情的任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateFacialAnimationsRequest 请求对象
-     * @return CompletableFuture<CreateFacialAnimationsResponse>
-     */
-    public CompletableFuture<CreateFacialAnimationsResponse> createFacialAnimationsAsync(
-        CreateFacialAnimationsRequest request) {
-        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createFacialAnimations);
-    }
-
-    /**
-     * 创建语音驱动表情动画任务
-     *
-     * 该接口用于创建驱动数字人表情的任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateFacialAnimationsRequest 请求对象
-     * @return AsyncInvoker<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse>
-     */
-    public AsyncInvoker<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse> createFacialAnimationsAsyncInvoker(
-        CreateFacialAnimationsRequest request) {
-        return new AsyncInvoker<>(request, MetaStudioMeta.createFacialAnimations, hcClient);
-    }
-
-    /**
-     * 创建语音驱动任务
-     *
-     * 该接口用于创建驱动数字人表情、动作及语音的任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateTtsaRequest 请求对象
-     * @return CompletableFuture<CreateTtsaResponse>
-     */
-    public CompletableFuture<CreateTtsaResponse> createTtsaAsync(CreateTtsaRequest request) {
-        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createTtsa);
-    }
-
-    /**
-     * 创建语音驱动任务
-     *
-     * 该接口用于创建驱动数字人表情、动作及语音的任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateTtsaRequest 请求对象
-     * @return AsyncInvoker<CreateTtsaRequest, CreateTtsaResponse>
-     */
-    public AsyncInvoker<CreateTtsaRequest, CreateTtsaResponse> createTtsaAsyncInvoker(CreateTtsaRequest request) {
-        return new AsyncInvoker<>(request, MetaStudioMeta.createTtsa, hcClient);
-    }
-
-    /**
-     * 获取语音驱动表情数据
-     *
-     * 该接口用于获取生成的数字人表情驱动数据
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFacialAnimationsDataRequest 请求对象
-     * @return CompletableFuture<ListFacialAnimationsDataResponse>
-     */
-    public CompletableFuture<ListFacialAnimationsDataResponse> listFacialAnimationsDataAsync(
-        ListFacialAnimationsDataRequest request) {
-        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listFacialAnimationsData);
-    }
-
-    /**
-     * 获取语音驱动表情数据
-     *
-     * 该接口用于获取生成的数字人表情驱动数据
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFacialAnimationsDataRequest 请求对象
-     * @return AsyncInvoker<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse>
-     */
-    public AsyncInvoker<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse> listFacialAnimationsDataAsyncInvoker(
-        ListFacialAnimationsDataRequest request) {
-        return new AsyncInvoker<>(request, MetaStudioMeta.listFacialAnimationsData, hcClient);
-    }
-
-    /**
-     * 获取语音驱动数据
-     *
-     * 该接口用于获取生成的数字人驱动数据，包括语音、表情、动作等。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListTtsaDataRequest 请求对象
-     * @return CompletableFuture<ListTtsaDataResponse>
-     */
-    public CompletableFuture<ListTtsaDataResponse> listTtsaDataAsync(ListTtsaDataRequest request) {
-        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listTtsaData);
-    }
-
-    /**
-     * 获取语音驱动数据
-     *
-     * 该接口用于获取生成的数字人驱动数据，包括语音、表情、动作等。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListTtsaDataRequest 请求对象
-     * @return AsyncInvoker<ListTtsaDataRequest, ListTtsaDataResponse>
-     */
-    public AsyncInvoker<ListTtsaDataRequest, ListTtsaDataResponse> listTtsaDataAsyncInvoker(
-        ListTtsaDataRequest request) {
-        return new AsyncInvoker<>(request, MetaStudioMeta.listTtsaData, hcClient);
-    }
-
-    /**
-     * 获取语音驱动任务列表
-     *
-     * 该接口用于查询驱动数字人表情、动作及语音的任务列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListTtsaJobsRequest 请求对象
-     * @return CompletableFuture<ListTtsaJobsResponse>
-     */
-    public CompletableFuture<ListTtsaJobsResponse> listTtsaJobsAsync(ListTtsaJobsRequest request) {
-        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listTtsaJobs);
-    }
-
-    /**
-     * 获取语音驱动任务列表
-     *
-     * 该接口用于查询驱动数字人表情、动作及语音的任务列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListTtsaJobsRequest 请求对象
-     * @return AsyncInvoker<ListTtsaJobsRequest, ListTtsaJobsResponse>
-     */
-    public AsyncInvoker<ListTtsaJobsRequest, ListTtsaJobsResponse> listTtsaJobsAsyncInvoker(
-        ListTtsaJobsRequest request) {
-        return new AsyncInvoker<>(request, MetaStudioMeta.listTtsaJobs, hcClient);
     }
 
     /**
@@ -8311,6 +8760,35 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> showTtsAuditionFileAsyncInvoker(
         ShowTtsAuditionFileRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showTtsAuditionFile, hcClient);
+    }
+
+    /**
+     * 外部接口-获取TTS一次性token
+     *
+     * 该接口用于获取TTS租户级一次性token。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTtsOnceCodeRequest 请求对象
+     * @return CompletableFuture<CreateTtsOnceCodeResponse>
+     */
+    public CompletableFuture<CreateTtsOnceCodeResponse> createTtsOnceCodeAsync(CreateTtsOnceCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createTtsOnceCode);
+    }
+
+    /**
+     * 外部接口-获取TTS一次性token
+     *
+     * 该接口用于获取TTS租户级一次性token。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTtsOnceCodeRequest 请求对象
+     * @return AsyncInvoker<CreateTtsOnceCodeRequest, CreateTtsOnceCodeResponse>
+     */
+    public AsyncInvoker<CreateTtsOnceCodeRequest, CreateTtsOnceCodeResponse> createTtsOnceCodeAsyncInvoker(
+        CreateTtsOnceCodeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createTtsOnceCode, hcClient);
     }
 
     /**

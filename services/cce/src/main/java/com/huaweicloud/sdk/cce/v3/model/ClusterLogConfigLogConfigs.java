@@ -26,7 +26,7 @@ public class ClusterLogConfigLogConfigs {
     private Boolean enable;
 
     /**
-     * **参数解释**： 组件类型 , 合法取值为control，audit，system-addon。 **约束限制**： - 仅查询集群日志配置信息接口响应中返回该参数 - 作为**配置集群日志**接口更新参数时不支持配置  **取值范围**： - control: 控制面组件日志。 - audit: 控制面审计日志。 - system-addon: 系统插件日志。 **默认取值**： 不涉及
+     * **参数解释**： 组件类型 , 合法取值为control，audit，system-addon。 **约束限制**： - 仅组件类型为系统插件类型时返回该参数 - 作为**配置集群日志**接口更新参数时，如果要采集系统插件日志则必须声明为**system-addon**  **取值范围**： - control: 控制面组件日志。 - audit: 控制面审计日志。 - system-addon: 系统插件日志。  **默认取值**： 不涉及
      */
     public static final class TypeEnum {
 
@@ -129,7 +129,7 @@ public class ClusterLogConfigLogConfigs {
     }
 
     /**
-     * **参数解释**： 是否采集 **取值范围**： - true：开启日志采集 - false：关闭日志采集
+     * **参数解释**： 是否采集 **约束限制**： 不涉及 **取值范围**： - true：开启日志采集 - false：关闭采集日志  **默认取值**： 不涉及 
      * @return enable
      */
     public Boolean getEnable() {
@@ -146,7 +146,7 @@ public class ClusterLogConfigLogConfigs {
     }
 
     /**
-     * **参数解释**： 组件类型 , 合法取值为control，audit，system-addon。 **约束限制**： - 仅查询集群日志配置信息接口响应中返回该参数 - 作为**配置集群日志**接口更新参数时不支持配置  **取值范围**： - control: 控制面组件日志。 - audit: 控制面审计日志。 - system-addon: 系统插件日志。 **默认取值**： 不涉及
+     * **参数解释**： 组件类型 , 合法取值为control，audit，system-addon。 **约束限制**： - 仅组件类型为系统插件类型时返回该参数 - 作为**配置集群日志**接口更新参数时，如果要采集系统插件日志则必须声明为**system-addon**  **取值范围**： - control: 控制面组件日志。 - audit: 控制面审计日志。 - system-addon: 系统插件日志。  **默认取值**： 不涉及
      * @return type
      */
     public TypeEnum getType() {

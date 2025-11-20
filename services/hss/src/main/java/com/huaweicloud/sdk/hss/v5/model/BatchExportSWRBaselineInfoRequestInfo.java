@@ -508,7 +508,7 @@ public class BatchExportSWRBaselineInfoRequestInfo {
     }
 
     /**
-     * **参数解释**: 镜像风险程度，在镜像扫描完成后展示，包含如下: **约束限制**: 不涉及 **取值范围**: - Security : 安全。 - Low : 低危。 - Medium : 中危。 - High : 高危。  **默认取值**: 不涉及 
+     * **参数解释**: 镜像风险程度，在镜像扫描完成后展示 **约束限制**: 不涉及 **取值范围**: - Security : 安全。 - Low : 低危。 - Medium : 中危。 - High : 高危。  **默认取值**: 不涉及 
      * @return severityLevel
      */
     public String getSeverityLevel() {

@@ -31,7 +31,7 @@ public class JobMetadata {
     }
 
     /**
-     * 任务的ID。
+     * **参数解释**： 任务的ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return uid
      */
     public String getUid() {
@@ -48,7 +48,7 @@ public class JobMetadata {
     }
 
     /**
-     * 任务的创建时间。
+     * **参数解释**： 任务的创建时间 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return creationTimestamp
      */
     public String getCreationTimestamp() {
@@ -65,7 +65,7 @@ public class JobMetadata {
     }
 
     /**
-     * 任务的更新时间。
+     * **参数解释**： 任务的更新时间 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return updateTimestamp
      */
     public String getUpdateTimestamp() {

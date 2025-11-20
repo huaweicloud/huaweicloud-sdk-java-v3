@@ -27,7 +27,7 @@ public class ValidatePolicyRequest {
     private String marker;
 
     /**
-     * 返回消息的语言，默认值为'zh-cn'，表示中文。
+     * 返回消息的语言，默认值为'zh-cn'。 - zh-cn：中文 - en-us：英文 
      */
     public static final class XLanguageEnum {
 
@@ -148,7 +148,7 @@ public class ValidatePolicyRequest {
     }
 
     /**
-     * 返回消息的语言，默认值为'zh-cn'，表示中文。
+     * 返回消息的语言，默认值为'zh-cn'。 - zh-cn：中文 - en-us：英文 
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

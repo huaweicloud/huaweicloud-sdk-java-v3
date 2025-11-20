@@ -50,6 +50,11 @@ public class ImageScanRequestInfo {
 
     private String namespace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_type")
+
+    private String pipelineType;
+
     public ImageScanRequestInfo withScanType(String scanType) {
         this.scanType = scanType;
         return this;
@@ -186,6 +191,23 @@ public class ImageScanRequestInfo {
         this.namespace = namespace;
     }
 
+    public ImageScanRequestInfo withPipelineType(String pipelineType) {
+        this.pipelineType = pipelineType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 流水线类型 **约束限制**: 不涉及 **取值范围**: - jenkins：Jenkins流水线。 - codearts：CodeArts流水线。  **默认取值**: 不涉及 
+     * @return pipelineType
+     */
+    public String getPipelineType() {
+        return pipelineType;
+    }
+
+    public void setPipelineType(String pipelineType) {
+        this.pipelineType = pipelineType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -199,7 +221,8 @@ public class ImageScanRequestInfo {
             && Objects.equals(this.imageVersion, that.imageVersion) && Objects.equals(this.isBlocking, that.isBlocking)
             && Objects.equals(this.repositoryAddress, that.repositoryAddress)
             && Objects.equals(this.loginUserName, that.loginUserName)
-            && Objects.equals(this.loginPassword, that.loginPassword) && Objects.equals(this.namespace, that.namespace);
+            && Objects.equals(this.loginPassword, that.loginPassword) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.pipelineType, that.pipelineType);
     }
 
     @Override
@@ -211,7 +234,8 @@ public class ImageScanRequestInfo {
             repositoryAddress,
             loginUserName,
             loginPassword,
-            namespace);
+            namespace,
+            pipelineType);
     }
 
     @Override
@@ -226,6 +250,7 @@ public class ImageScanRequestInfo {
         sb.append("    loginUserName: ").append(toIndentedString(loginUserName)).append("\n");
         sb.append("    loginPassword: ").append(toIndentedString(loginPassword)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    pipelineType: ").append(toIndentedString(pipelineType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

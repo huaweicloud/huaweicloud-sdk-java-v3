@@ -299,7 +299,7 @@ public class SecurityCheckRuleHostResponseInfo {
     }
 
     /**
-     * **参数解释** 主机类型 **取值范围** - cce
+     * **参数解释** 主机类型，当主机为cce类型时，返回cce **取值范围** - cce
      * @return hostType
      */
     public String getHostType() {

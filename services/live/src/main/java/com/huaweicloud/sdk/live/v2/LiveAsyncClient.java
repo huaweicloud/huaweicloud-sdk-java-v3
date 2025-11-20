@@ -33,6 +33,8 @@ import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumRequest;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumResponse;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataRequest;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataResponse;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeTaskDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeTaskDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailRequest;
 import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListUsersOfStreamRequest;
@@ -488,6 +490,38 @@ public class LiveAsyncClient {
     public AsyncInvoker<ListTranscodeDataRequest, ListTranscodeDataResponse> listTranscodeDataAsyncInvoker(
         ListTranscodeDataRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.listTranscodeData, hcClient);
+    }
+
+    /**
+     * 查询转码明细
+     *
+     * 查询流粒度转码明细，包含流名、模版、格式、时长。
+     * 最大查询跨度1天，最大查询周期14天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTranscodeTaskDetailRequest 请求对象
+     * @return CompletableFuture<ListTranscodeTaskDetailResponse>
+     */
+    public CompletableFuture<ListTranscodeTaskDetailResponse> listTranscodeTaskDetailAsync(
+        ListTranscodeTaskDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listTranscodeTaskDetail);
+    }
+
+    /**
+     * 查询转码明细
+     *
+     * 查询流粒度转码明细，包含流名、模版、格式、时长。
+     * 最大查询跨度1天，最大查询周期14天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTranscodeTaskDetailRequest 请求对象
+     * @return AsyncInvoker<ListTranscodeTaskDetailRequest, ListTranscodeTaskDetailResponse>
+     */
+    public AsyncInvoker<ListTranscodeTaskDetailRequest, ListTranscodeTaskDetailResponse> listTranscodeTaskDetailAsyncInvoker(
+        ListTranscodeTaskDetailRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listTranscodeTaskDetail, hcClient);
     }
 
     /**

@@ -26,7 +26,7 @@ public class ListAnalyzersRequest {
     private String marker;
 
     /**
-     * 分析器的类型。
+     * 分析器的类型。 - account：账号级外部访问分析器 - organization：组织级外部访问分析器 - account_unused_access：账号级未使用访问分析器 - organization_unused_access：组织级未使用访问分析器 - account_privilege_escalation：账号级提权访问分析器 - account_iam_best_practice：账号级IAM最佳实践分析器 
      */
     public static final class TypeEnum {
 
@@ -50,6 +50,16 @@ public class ListAnalyzersRequest {
          */
         public static final TypeEnum ORGANIZATION_UNUSED_ACCESS = new TypeEnum("organization_unused_access");
 
+        /**
+         * Enum ACCOUNT_PRIVILEGE_ESCALATION for value: "account_privilege_escalation"
+         */
+        public static final TypeEnum ACCOUNT_PRIVILEGE_ESCALATION = new TypeEnum("account_privilege_escalation");
+
+        /**
+         * Enum ACCOUNT_IAM_BEST_PRACTICE for value: "account_iam_best_practice"
+         */
+        public static final TypeEnum ACCOUNT_IAM_BEST_PRACTICE = new TypeEnum("account_iam_best_practice");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -58,6 +68,8 @@ public class ListAnalyzersRequest {
             map.put("organization", ORGANIZATION);
             map.put("account_unused_access", ACCOUNT_UNUSED_ACCESS);
             map.put("organization_unused_access", ORGANIZATION_UNUSED_ACCESS);
+            map.put("account_privilege_escalation", ACCOUNT_PRIVILEGE_ESCALATION);
+            map.put("account_iam_best_practice", ACCOUNT_IAM_BEST_PRACTICE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -154,7 +166,7 @@ public class ListAnalyzersRequest {
     }
 
     /**
-     * 分析器的类型。
+     * 分析器的类型。 - account：账号级外部访问分析器 - organization：组织级外部访问分析器 - account_unused_access：账号级未使用访问分析器 - organization_unused_access：组织级未使用访问分析器 - account_privilege_escalation：账号级提权访问分析器 - account_iam_best_practice：账号级IAM最佳实践分析器 
      * @return type
      */
     public TypeEnum getType() {

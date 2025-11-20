@@ -6,11 +6,24 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ddm.v1.model.AdminUserInfoReq;
+import com.huaweicloud.sdk.ddm.v1.model.CancelMigrationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CancelMigrationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CheckPreliminaryResultsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CheckPreliminaryResultsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateConfigurationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmConfigurationsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmConfigurationsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseRequestBody;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseResponse;
@@ -24,6 +37,10 @@ import com.huaweicloud.sdk.ddm.v1.model.CreateUsersReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DatabaseVersionRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteBackupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteBackupResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteConfigurationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseRequest;
@@ -34,6 +51,8 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DownloadSchemaMetadataRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DownloadSchemaMetadataResponse;
 import com.huaweicloud.sdk.ddm.v1.model.EnlargeRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesResponse;
@@ -47,8 +66,14 @@ import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.KillProcessesOpenRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsForMigrateRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsForMigrateResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListBackupsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListBackupsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
@@ -77,9 +102,19 @@ import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersResponse;
+import com.huaweicloud.sdk.ddm.v1.model.LoadSchemaMetadataReq;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateLogicDbOpenReq;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateLogicDbRequest;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateLogicDbResponse;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateResultsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateResultsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateRouteSwitchReqVO;
+import com.huaweicloud.sdk.ddm.v1.model.ModifyConfigurationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ModifyConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyInstanceNameReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyInstanceSecurityGroupReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyReadAndWriteStrategyReq;
+import com.huaweicloud.sdk.ddm.v1.model.ParaGroupUpdate;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ReduceRequest;
@@ -94,14 +129,34 @@ import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceReq;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.Restore2ExistRequest;
+import com.huaweicloud.sdk.ddm.v1.model.Restore2ExistResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RestoreInst2ExistReq;
+import com.huaweicloud.sdk.ddm.v1.model.RestoreMetaData2ExistReq;
+import com.huaweicloud.sdk.ddm.v1.model.RestoreMetadataRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RestoreMetadataResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RetryMigrationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RetryMigrationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RollbackMigrationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RollbackMigrationResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleDdmsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleDdmsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleRdsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleRdsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleTimeRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleTimeResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowBackupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowBackupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowConfigurationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceDatabaseRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceRequest;
@@ -114,10 +169,14 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowRelatedDnsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowRelatedDnsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteRequest;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteResponse;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslOpenRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslResponse;
@@ -138,6 +197,8 @@ import com.huaweicloud.sdk.ddm.v1.model.UpdateReadAndWriteStrategyResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserReq;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UploadSchemaMetadataRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UploadSchemaMetadataResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ValidateWeakPasswordRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ValidateWeakPasswordResponse;
 import com.huaweicloud.sdk.ddm.v1.model.WeakPasswordReq;
@@ -168,6 +229,52 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DatabaseVersionRequest.class),
             f -> f.withMarshaller(ChangeDatabaseVersionRequest::getBody, ChangeDatabaseVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDdmConfigurationsRequest, CreateDdmConfigurationsResponse> createDdmConfigurations =
+        genForCreateDdmConfigurations();
+
+    private static HttpRequestDef<CreateDdmConfigurationsRequest, CreateDdmConfigurationsResponse> genForCreateDdmConfigurations() {
+        // basic
+        HttpRequestDef.Builder<CreateDdmConfigurationsRequest, CreateDdmConfigurationsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDdmConfigurationsRequest.class, CreateDdmConfigurationsResponse.class)
+            .withName("CreateDdmConfigurations")
+            .withUri("/v3/{project_id}/configurations")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateConfigurationRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateConfigurationRequest.class),
+            f -> f.withMarshaller(CreateDdmConfigurationsRequest::getBody, CreateDdmConfigurationsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfiguration =
+        genForDeleteConfiguration();
+
+    private static HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> genForDeleteConfiguration() {
+        // basic
+        HttpRequestDef.Builder<DeleteConfigurationRequest, DeleteConfigurationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteConfigurationRequest.class, DeleteConfigurationResponse.class)
+            .withName("DeleteConfiguration")
+            .withUri("/v3/{project_id}/configurations/{config_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, DeleteConfigurationRequest::setConfigId));
 
         // response
 
@@ -223,6 +330,35 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDdmConfigurationsRequest::getLimit, ListDdmConfigurationsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyConfigurationRequest, ModifyConfigurationResponse> modifyConfiguration =
+        genForModifyConfiguration();
+
+    private static HttpRequestDef<ModifyConfigurationRequest, ModifyConfigurationResponse> genForModifyConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ModifyConfigurationRequest, ModifyConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyConfigurationRequest.class, ModifyConfigurationResponse.class)
+                .withName("ModifyConfiguration")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyConfigurationRequest::getInstanceId,
+                ModifyConfigurationRequest::setInstanceId));
+        builder.<ParaGroupUpdate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ParaGroupUpdate.class),
+            f -> f.withMarshaller(ModifyConfigurationRequest::getBody, ModifyConfigurationRequest::setBody));
 
         // response
 
@@ -310,6 +446,180 @@ public class DdmMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelMigrationRequest, CancelMigrationResponse> cancelMigration =
+        genForCancelMigration();
+
+    private static HttpRequestDef<CancelMigrationRequest, CancelMigrationResponse> genForCancelMigration() {
+        // basic
+        HttpRequestDef.Builder<CancelMigrationRequest, CancelMigrationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CancelMigrationRequest.class, CancelMigrationResponse.class)
+                .withName("CancelMigration")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/cancel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelMigrationRequest::getInstanceId, CancelMigrationRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelMigrationRequest::getDbName, CancelMigrationRequest::setDbName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelMigrationRequest::getJobId, CancelMigrationRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeStrategyRequest, ChangeStrategyResponse> changeStrategy =
+        genForChangeStrategy();
+
+    private static HttpRequestDef<ChangeStrategyRequest, ChangeStrategyResponse> genForChangeStrategy() {
+        // basic
+        HttpRequestDef.Builder<ChangeStrategyRequest, ChangeStrategyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ChangeStrategyRequest.class, ChangeStrategyResponse.class)
+            .withName("ChangeStrategy")
+            .withUri(
+                "/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/route-switch-strategy")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeStrategyRequest::getInstanceId, ChangeStrategyRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeStrategyRequest::getDbName, ChangeStrategyRequest::setDbName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeStrategyRequest::getJobId, ChangeStrategyRequest::setJobId));
+        builder.<MigrateRouteSwitchReqVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(MigrateRouteSwitchReqVO.class),
+            f -> f.withMarshaller(ChangeStrategyRequest::getBody, ChangeStrategyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckMigrateLogicDbRequest, CheckMigrateLogicDbResponse> checkMigrateLogicDb =
+        genForCheckMigrateLogicDb();
+
+    private static HttpRequestDef<CheckMigrateLogicDbRequest, CheckMigrateLogicDbResponse> genForCheckMigrateLogicDb() {
+        // basic
+        HttpRequestDef.Builder<CheckMigrateLogicDbRequest, CheckMigrateLogicDbResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckMigrateLogicDbRequest.class, CheckMigrateLogicDbResponse.class)
+                .withName("CheckMigrateLogicDb")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/precheck")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckMigrateLogicDbRequest::getInstanceId,
+                CheckMigrateLogicDbRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckMigrateLogicDbRequest::getDbName, CheckMigrateLogicDbRequest::setDbName));
+        builder.<MigrateLogicDbOpenReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MigrateLogicDbOpenReq.class),
+            f -> f.withMarshaller(CheckMigrateLogicDbRequest::getBody, CheckMigrateLogicDbRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckPreliminaryResultsRequest, CheckPreliminaryResultsResponse> checkPreliminaryResults =
+        genForCheckPreliminaryResults();
+
+    private static HttpRequestDef<CheckPreliminaryResultsRequest, CheckPreliminaryResultsResponse> genForCheckPreliminaryResults() {
+        // basic
+        HttpRequestDef.Builder<CheckPreliminaryResultsRequest, CheckPreliminaryResultsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CheckPreliminaryResultsRequest.class, CheckPreliminaryResultsResponse.class)
+            .withName("CheckPreliminaryResults")
+            .withUri("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/precheck/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckPreliminaryResultsRequest::getInstanceId,
+                CheckPreliminaryResultsRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckPreliminaryResultsRequest::getDbName,
+                CheckPreliminaryResultsRequest::setDbName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckPreliminaryResultsRequest::getJobId, CheckPreliminaryResultsRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CleanMigrationRequest, CleanMigrationResponse> cleanMigration =
+        genForCleanMigration();
+
+    private static HttpRequestDef<CleanMigrationRequest, CleanMigrationResponse> genForCleanMigration() {
+        // basic
+        HttpRequestDef.Builder<CleanMigrationRequest, CleanMigrationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CleanMigrationRequest.class, CleanMigrationResponse.class)
+                .withName("CleanMigration")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/clean")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CleanMigrationRequest::getInstanceId, CleanMigrationRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CleanMigrationRequest::getDbName, CleanMigrationRequest::setDbName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CleanMigrationRequest::getJobId, CleanMigrationRequest::setJobId));
 
         // response
 
@@ -443,6 +753,28 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateUsersReq.class),
             f -> f.withMarshaller(CreateUsersRequest::getBody, CreateUsersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> deleteBackup = genForDeleteBackup();
+
+    private static HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> genForDeleteBackup() {
+        // basic
+        HttpRequestDef.Builder<DeleteBackupRequest, DeleteBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackupRequest.class, DeleteBackupResponse.class)
+                .withName("DeleteBackup")
+                .withUri("/v3/{project_id}/backups/{backup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackupRequest::getBackupId, DeleteBackupRequest::setBackupId));
 
         // response
 
@@ -611,6 +943,30 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadSchemaMetadataRequest, DownloadSchemaMetadataResponse> downloadSchemaMetadata =
+        genForDownloadSchemaMetadata();
+
+    private static HttpRequestDef<DownloadSchemaMetadataRequest, DownloadSchemaMetadataResponse> genForDownloadSchemaMetadata() {
+        // basic
+        HttpRequestDef.Builder<DownloadSchemaMetadataRequest, DownloadSchemaMetadataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadSchemaMetadataRequest.class, DownloadSchemaMetadataResponse.class)
+            .withName("DownloadSchemaMetadata")
+            .withUri("/v3/{project_id}/instances/{instance_id}/schema-metadata")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadSchemaMetadataRequest::getInstanceId,
+                DownloadSchemaMetadataRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExecuteKillLogicalProcessesRequest, ExecuteKillLogicalProcessesResponse> executeKillLogicalProcesses =
         genForExecuteKillLogicalProcesses();
 
@@ -735,6 +1091,62 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAvailableRdsRequest, ListAvailableRdsResponse> listAvailableRds =
+        genForListAvailableRds();
+
+    private static HttpRequestDef<ListAvailableRdsRequest, ListAvailableRdsResponse> genForListAvailableRds() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableRdsRequest, ListAvailableRdsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAvailableRdsRequest.class, ListAvailableRdsResponse.class)
+                .withName("ListAvailableRds")
+                .withUri("/v3/{project_id}/instances/{instance_id}/available-data-nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableRdsRequest::getInstanceId, ListAvailableRdsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAvailableRdsForMigrateRequest, ListAvailableRdsForMigrateResponse> listAvailableRdsForMigrate =
+        genForListAvailableRdsForMigrate();
+
+    private static HttpRequestDef<ListAvailableRdsForMigrateRequest, ListAvailableRdsForMigrateResponse> genForListAvailableRdsForMigrate() {
+        // basic
+        HttpRequestDef.Builder<ListAvailableRdsForMigrateRequest, ListAvailableRdsForMigrateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAvailableRdsForMigrateRequest.class,
+                    ListAvailableRdsForMigrateResponse.class)
+                .withName("ListAvailableRdsForMigrate")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/available-data-nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableRdsForMigrateRequest::getInstanceId,
+                ListAvailableRdsForMigrateRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailableRdsForMigrateRequest::getDbName,
+                ListAvailableRdsForMigrateRequest::setDbName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAvailableRdsListRequest, ListAvailableRdsListResponse> listAvailableRdsList =
         genForListAvailableRdsList();
 
@@ -763,6 +1175,23 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAvailableRdsListRequest::getLimit, ListAvailableRdsListRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForListBackups();
+
+    private static HttpRequestDef<ListBackupsRequest, ListBackupsResponse> genForListBackups() {
+        // basic
+        HttpRequestDef.Builder<ListBackupsRequest, ListBackupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackupsRequest.class, ListBackupsResponse.class)
+                .withName("ListBackups")
+                .withUri("/v3/{project_id}/backups")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1183,6 +1612,72 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<MigrateLogicDbRequest, MigrateLogicDbResponse> migrateLogicDb =
+        genForMigrateLogicDb();
+
+    private static HttpRequestDef<MigrateLogicDbRequest, MigrateLogicDbResponse> genForMigrateLogicDb() {
+        // basic
+        HttpRequestDef.Builder<MigrateLogicDbRequest, MigrateLogicDbResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, MigrateLogicDbRequest.class, MigrateLogicDbResponse.class)
+                .withName("MigrateLogicDb")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateLogicDbRequest::getInstanceId, MigrateLogicDbRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateLogicDbRequest::getDbName, MigrateLogicDbRequest::setDbName));
+        builder.<MigrateLogicDbOpenReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MigrateLogicDbOpenReq.class),
+            f -> f.withMarshaller(MigrateLogicDbRequest::getBody, MigrateLogicDbRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<MigrateResultsRequest, MigrateResultsResponse> migrateResults =
+        genForMigrateResults();
+
+    private static HttpRequestDef<MigrateResultsRequest, MigrateResultsResponse> genForMigrateResults() {
+        // basic
+        HttpRequestDef.Builder<MigrateResultsRequest, MigrateResultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, MigrateResultsRequest.class, MigrateResultsResponse.class)
+                .withName("MigrateResults")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateResultsRequest::getInstanceId, MigrateResultsRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateResultsRequest::getDbName, MigrateResultsRequest::setDbName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateResultsRequest::getJobId, MigrateResultsRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RebuildConfigRequest, RebuildConfigResponse> rebuildConfig =
         genForRebuildConfig();
 
@@ -1327,6 +1822,242 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<Restore2ExistRequest, Restore2ExistResponse> restore2Exist =
+        genForRestore2Exist();
+
+    private static HttpRequestDef<Restore2ExistRequest, Restore2ExistResponse> genForRestore2Exist() {
+        // basic
+        HttpRequestDef.Builder<Restore2ExistRequest, Restore2ExistResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, Restore2ExistRequest.class, Restore2ExistResponse.class)
+                .withName("Restore2Exist")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/recovery")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(Restore2ExistRequest::getInstanceId, Restore2ExistRequest::setInstanceId));
+        builder.<RestoreInst2ExistReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestoreInst2ExistReq.class),
+            f -> f.withMarshaller(Restore2ExistRequest::getBody, Restore2ExistRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreMetadataRequest, RestoreMetadataResponse> restoreMetadata =
+        genForRestoreMetadata();
+
+    private static HttpRequestDef<RestoreMetadataRequest, RestoreMetadataResponse> genForRestoreMetadata() {
+        // basic
+        HttpRequestDef.Builder<RestoreMetadataRequest, RestoreMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreMetadataRequest.class, RestoreMetadataResponse.class)
+                .withName("RestoreMetadata")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/metadata-recovery")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreMetadataRequest::getInstanceId, RestoreMetadataRequest::setInstanceId));
+        builder.<RestoreMetaData2ExistReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestoreMetaData2ExistReq.class),
+            f -> f.withMarshaller(RestoreMetadataRequest::getBody, RestoreMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryMigrationRequest, RetryMigrationResponse> retryMigration =
+        genForRetryMigration();
+
+    private static HttpRequestDef<RetryMigrationRequest, RetryMigrationResponse> genForRetryMigration() {
+        // basic
+        HttpRequestDef.Builder<RetryMigrationRequest, RetryMigrationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RetryMigrationRequest.class, RetryMigrationResponse.class)
+                .withName("RetryMigration")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryMigrationRequest::getInstanceId, RetryMigrationRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryMigrationRequest::getDbName, RetryMigrationRequest::setDbName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryMigrationRequest::getJobId, RetryMigrationRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RollbackMigrationRequest, RollbackMigrationResponse> rollbackMigration =
+        genForRollbackMigration();
+
+    private static HttpRequestDef<RollbackMigrationRequest, RollbackMigrationResponse> genForRollbackMigration() {
+        // basic
+        HttpRequestDef.Builder<RollbackMigrationRequest, RollbackMigrationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RollbackMigrationRequest.class, RollbackMigrationResponse.class)
+                .withName("RollbackMigration")
+                .withUri(
+                    "/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/rollback")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollbackMigrationRequest::getInstanceId, RollbackMigrationRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollbackMigrationRequest::getDbName, RollbackMigrationRequest::setDbName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollbackMigrationRequest::getJobId, RollbackMigrationRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAvalibleDdmsRequest, ShowAvalibleDdmsResponse> showAvalibleDdms =
+        genForShowAvalibleDdms();
+
+    private static HttpRequestDef<ShowAvalibleDdmsRequest, ShowAvalibleDdmsResponse> genForShowAvalibleDdms() {
+        // basic
+        HttpRequestDef.Builder<ShowAvalibleDdmsRequest, ShowAvalibleDdmsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAvalibleDdmsRequest.class, ShowAvalibleDdmsResponse.class)
+                .withName("ShowAvalibleDdms")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/restorable-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvalibleDdmsRequest::getInstanceId, ShowAvalibleDdmsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAvalibleRdsRequest, ShowAvalibleRdsResponse> showAvalibleRds =
+        genForShowAvalibleRds();
+
+    private static HttpRequestDef<ShowAvalibleRdsRequest, ShowAvalibleRdsResponse> genForShowAvalibleRds() {
+        // basic
+        HttpRequestDef.Builder<ShowAvalibleRdsRequest, ShowAvalibleRdsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAvalibleRdsRequest.class, ShowAvalibleRdsResponse.class)
+                .withName("ShowAvalibleRds")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/restorable-data-node")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvalibleRdsRequest::getInstanceId, ShowAvalibleRdsRequest::setInstanceId));
+        builder.<String>withRequestField("target_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvalibleRdsRequest::getTargetInstanceId,
+                ShowAvalibleRdsRequest::setTargetInstanceId));
+        builder.<String>withRequestField("source_dn_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvalibleRdsRequest::getSourceDnInstanceId,
+                ShowAvalibleRdsRequest::setSourceDnInstanceId));
+        builder.<String>withRequestField("restore_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvalibleRdsRequest::getRestoreTime, ShowAvalibleRdsRequest::setRestoreTime));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAvalibleTimeRequest, ShowAvalibleTimeResponse> showAvalibleTime =
+        genForShowAvalibleTime();
+
+    private static HttpRequestDef<ShowAvalibleTimeRequest, ShowAvalibleTimeResponse> genForShowAvalibleTime() {
+        // basic
+        HttpRequestDef.Builder<ShowAvalibleTimeRequest, ShowAvalibleTimeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAvalibleTimeRequest.class, ShowAvalibleTimeResponse.class)
+                .withName("ShowAvalibleTime")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/restorable-time-interval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvalibleTimeRequest::getInstanceId, ShowAvalibleTimeRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupRequest, ShowBackupResponse> showBackup = genForShowBackup();
+
+    private static HttpRequestDef<ShowBackupRequest, ShowBackupResponse> genForShowBackup() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupRequest, ShowBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackupRequest.class, ShowBackupResponse.class)
+                .withName("ShowBackup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/{backup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupRequest::getInstanceId, ShowBackupRequest::setInstanceId));
+        builder.<String>withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupRequest::getBackupId, ShowBackupRequest::setBackupId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> showDatabase = genForShowDatabase();
 
     private static HttpRequestDef<ShowDatabaseRequest, ShowDatabaseResponse> genForShowDatabase() {
@@ -1393,6 +2124,36 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceDatabaseRequest, ShowInstanceDatabaseResponse> showInstanceDatabase =
+        genForShowInstanceDatabase();
+
+    private static HttpRequestDef<ShowInstanceDatabaseRequest, ShowInstanceDatabaseResponse> genForShowInstanceDatabase() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceDatabaseRequest, ShowInstanceDatabaseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInstanceDatabaseRequest.class, ShowInstanceDatabaseResponse.class)
+            .withName("ShowInstanceDatabase")
+            .withUri("/v3/{project_id}/instances/{instance_id}/databases/{database_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceDatabaseRequest::getInstanceId,
+                ShowInstanceDatabaseRequest::setInstanceId));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceDatabaseRequest::getDatabaseName,
+                ShowInstanceDatabaseRequest::setDatabaseName));
 
         // response
 
@@ -1587,6 +2348,34 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRelatedDnsRequest, ShowRelatedDnsResponse> showRelatedDns =
+        genForShowRelatedDns();
+
+    private static HttpRequestDef<ShowRelatedDnsRequest, ShowRelatedDnsResponse> genForShowRelatedDns() {
+        // basic
+        HttpRequestDef.Builder<ShowRelatedDnsRequest, ShowRelatedDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRelatedDnsRequest.class, ShowRelatedDnsResponse.class)
+                .withName("ShowRelatedDns")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/related-dn")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRelatedDnsRequest::getInstanceId, ShowRelatedDnsRequest::setInstanceId));
+        builder.<String>withRequestField("restore_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRelatedDnsRequest::getRestoreTime, ShowRelatedDnsRequest::setRestoreTime));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodes =
         genForShrinkInstanceNodes();
 
@@ -1610,6 +2399,39 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReduceRequest.class),
             f -> f.withMarshaller(ShrinkInstanceNodesRequest::getBody, ShrinkInstanceNodesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchRouteRequest, SwitchRouteResponse> switchRoute = genForSwitchRoute();
+
+    private static HttpRequestDef<SwitchRouteRequest, SwitchRouteResponse> genForSwitchRoute() {
+        // basic
+        HttpRequestDef.Builder<SwitchRouteRequest, SwitchRouteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SwitchRouteRequest.class, SwitchRouteResponse.class)
+                .withName("SwitchRoute")
+                .withUri(
+                    "/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/route-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchRouteRequest::getInstanceId, SwitchRouteRequest::setInstanceId));
+        builder.<String>withRequestField("db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchRouteRequest::getDbName, SwitchRouteRequest::setDbName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchRouteRequest::getJobId, SwitchRouteRequest::setJobId));
 
         // response
 
@@ -1858,6 +2680,35 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateUserReq.class),
             f -> f.withMarshaller(UpdateUserRequest::getBody, UpdateUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadSchemaMetadataRequest, UploadSchemaMetadataResponse> uploadSchemaMetadata =
+        genForUploadSchemaMetadata();
+
+    private static HttpRequestDef<UploadSchemaMetadataRequest, UploadSchemaMetadataResponse> genForUploadSchemaMetadata() {
+        // basic
+        HttpRequestDef.Builder<UploadSchemaMetadataRequest, UploadSchemaMetadataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UploadSchemaMetadataRequest.class, UploadSchemaMetadataResponse.class)
+            .withName("UploadSchemaMetadata")
+            .withUri("/v3/{project_id}/instances/{instance_id}/schema-metadata")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadSchemaMetadataRequest::getInstanceId,
+                UploadSchemaMetadataRequest::setInstanceId));
+        builder.<LoadSchemaMetadataReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LoadSchemaMetadataReq.class),
+            f -> f.withMarshaller(UploadSchemaMetadataRequest::getBody, UploadSchemaMetadataRequest::setBody));
 
         // response
 

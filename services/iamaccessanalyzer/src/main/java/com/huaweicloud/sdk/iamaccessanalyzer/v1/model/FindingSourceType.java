@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 访问分析结果的来源。
+ * 访问分析结果的来源。 - bucket_acl：桶ACL - bucket_policy：桶策略 
  */
 public class FindingSourceType {
 

@@ -145,6 +145,11 @@ public class CreateVpnConnectionRequestBodyContent {
     private Boolean enableHub;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_health_check")
+
+    private Boolean enableHealthCheck;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "psk")
 
     private String psk;
@@ -440,6 +445,23 @@ public class CreateVpnConnectionRequestBodyContent {
         this.enableHub = enableHub;
     }
 
+    public CreateVpnConnectionRequestBodyContent withEnableHealthCheck(Boolean enableHealthCheck) {
+        this.enableHealthCheck = enableHealthCheck;
+        return this;
+    }
+
+    /**
+     * 开启健康检查
+     * @return enableHealthCheck
+     */
+    public Boolean getEnableHealthCheck() {
+        return enableHealthCheck;
+    }
+
+    public void setEnableHealthCheck(Boolean enableHealthCheck) {
+        this.enableHealthCheck = enableHealthCheck;
+    }
+
     public CreateVpnConnectionRequestBodyContent withPsk(String psk) {
         this.psk = psk;
         return this;
@@ -673,10 +695,10 @@ public class CreateVpnConnectionRequestBodyContent {
             && Objects.equals(this.tunnelLocalAddress, that.tunnelLocalAddress)
             && Objects.equals(this.tunnelPeerAddress, that.tunnelPeerAddress)
             && Objects.equals(this.enableNqa, that.enableNqa) && Objects.equals(this.enableHub, that.enableHub)
-            && Objects.equals(this.psk, that.psk) && Objects.equals(this.policyRules, that.policyRules)
-            && Objects.equals(this.ikepolicy, that.ikepolicy) && Objects.equals(this.ipsecpolicy, that.ipsecpolicy)
-            && Objects.equals(this.haRole, that.haRole) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.peerSubnetsV6, that.peerSubnetsV6)
+            && Objects.equals(this.enableHealthCheck, that.enableHealthCheck) && Objects.equals(this.psk, that.psk)
+            && Objects.equals(this.policyRules, that.policyRules) && Objects.equals(this.ikepolicy, that.ikepolicy)
+            && Objects.equals(this.ipsecpolicy, that.ipsecpolicy) && Objects.equals(this.haRole, that.haRole)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.peerSubnetsV6, that.peerSubnetsV6)
             && Objects.equals(this.policyRulesV6, that.policyRulesV6);
     }
 
@@ -692,6 +714,7 @@ public class CreateVpnConnectionRequestBodyContent {
             tunnelPeerAddress,
             enableNqa,
             enableHub,
+            enableHealthCheck,
             psk,
             policyRules,
             ikepolicy,
@@ -716,6 +739,7 @@ public class CreateVpnConnectionRequestBodyContent {
         sb.append("    tunnelPeerAddress: ").append(toIndentedString(tunnelPeerAddress)).append("\n");
         sb.append("    enableNqa: ").append(toIndentedString(enableNqa)).append("\n");
         sb.append("    enableHub: ").append(toIndentedString(enableHub)).append("\n");
+        sb.append("    enableHealthCheck: ").append(toIndentedString(enableHealthCheck)).append("\n");
         sb.append("    psk: ").append(toIndentedString(psk)).append("\n");
         sb.append("    policyRules: ").append(toIndentedString(policyRules)).append("\n");
         sb.append("    ikepolicy: ").append(toIndentedString(ikepolicy)).append("\n");

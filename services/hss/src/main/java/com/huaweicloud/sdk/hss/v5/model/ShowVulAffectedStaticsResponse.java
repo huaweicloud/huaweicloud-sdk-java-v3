@@ -47,12 +47,12 @@ public class ShowVulAffectedStaticsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_tips")
 
-    private String extendTips;
+    private List<String> extendTips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extend_text_tips")
 
-    private String extendTextTips;
+    private List<String> extendTextTips = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled_operate_types")
@@ -203,37 +203,69 @@ public class ShowVulAffectedStaticsResponse extends SdkResponse {
         this.totalVulNum = totalVulNum;
     }
 
-    public ShowVulAffectedStaticsResponse withExtendTips(String extendTips) {
+    public ShowVulAffectedStaticsResponse withExtendTips(List<String> extendTips) {
         this.extendTips = extendTips;
         return this;
     }
 
+    public ShowVulAffectedStaticsResponse addExtendTipsItem(String extendTipsItem) {
+        if (this.extendTips == null) {
+            this.extendTips = new ArrayList<>();
+        }
+        this.extendTips.add(extendTipsItem);
+        return this;
+    }
+
+    public ShowVulAffectedStaticsResponse withExtendTips(Consumer<List<String>> extendTipsSetter) {
+        if (this.extendTips == null) {
+            this.extendTips = new ArrayList<>();
+        }
+        extendTipsSetter.accept(this.extendTips);
+        return this;
+    }
+
     /**
-     * **参数解释**: 漏洞修复提示 **取值范围**: - cce_kernel_vul_tips：cce内核修复提示信息 - ubuntu_pro_tips：ubuntu pro的修复提示 
+     * Get extendTips
      * @return extendTips
      */
-    public String getExtendTips() {
+    public List<String> getExtendTips() {
         return extendTips;
     }
 
-    public void setExtendTips(String extendTips) {
+    public void setExtendTips(List<String> extendTips) {
         this.extendTips = extendTips;
     }
 
-    public ShowVulAffectedStaticsResponse withExtendTextTips(String extendTextTips) {
+    public ShowVulAffectedStaticsResponse withExtendTextTips(List<String> extendTextTips) {
         this.extendTextTips = extendTextTips;
         return this;
     }
 
+    public ShowVulAffectedStaticsResponse addExtendTextTipsItem(String extendTextTipsItem) {
+        if (this.extendTextTips == null) {
+            this.extendTextTips = new ArrayList<>();
+        }
+        this.extendTextTips.add(extendTextTipsItem);
+        return this;
+    }
+
+    public ShowVulAffectedStaticsResponse withExtendTextTips(Consumer<List<String>> extendTextTipsSetter) {
+        if (this.extendTextTips == null) {
+            this.extendTextTips = new ArrayList<>();
+        }
+        extendTextTipsSetter.accept(this.extendTextTips);
+        return this;
+    }
+
     /**
-     * **参数解释**: 漏洞修复提示文本 **取值范围**: 字符长度0-4096位 
+     * Get extendTextTips
      * @return extendTextTips
      */
-    public String getExtendTextTips() {
+    public List<String> getExtendTextTips() {
         return extendTextTips;
     }
 
-    public void setExtendTextTips(String extendTextTips) {
+    public void setExtendTextTips(List<String> extendTextTips) {
         this.extendTextTips = extendTextTips;
     }
 

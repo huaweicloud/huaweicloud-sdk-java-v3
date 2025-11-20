@@ -20,6 +20,16 @@ public class ListInstanceIpRuleRequest {
 
     private String ip;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListInstanceIpRuleRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -54,6 +64,43 @@ public class ListInstanceIpRuleRequest {
         this.ip = ip;
     }
 
+    public ListInstanceIpRuleRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 限制条数
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListInstanceIpRuleRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量
+     * minimum: 0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +110,13 @@ public class ListInstanceIpRuleRequest {
             return false;
         }
         ListInstanceIpRuleRequest that = (ListInstanceIpRuleRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ip, that.ip);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, ip);
+        return Objects.hash(instanceId, ip, limit, offset);
     }
 
     @Override
@@ -77,6 +125,8 @@ public class ListInstanceIpRuleRequest {
         sb.append("class ListInstanceIpRuleRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

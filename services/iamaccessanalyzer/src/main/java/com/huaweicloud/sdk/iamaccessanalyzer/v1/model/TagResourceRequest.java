@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class TagResourceRequest {
 
     /**
-     * 资源类型。
+     * 资源类型。 - analyzers：分析器 
      */
     public static final class ResourceTypeEnum {
 
@@ -101,7 +101,7 @@ public class TagResourceRequest {
     }
 
     /**
-     * 资源类型。
+     * 资源类型。 - analyzers：分析器 
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

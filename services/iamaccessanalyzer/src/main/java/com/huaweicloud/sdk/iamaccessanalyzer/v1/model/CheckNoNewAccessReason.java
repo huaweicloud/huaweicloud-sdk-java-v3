@@ -66,6 +66,7 @@ public class CheckNoNewAccessReason {
 
     /**
      * 新增权限statement的index，从0开始。
+     * minimum: 0
      * @return statementIndex
      */
     public Integer getStatementIndex() {

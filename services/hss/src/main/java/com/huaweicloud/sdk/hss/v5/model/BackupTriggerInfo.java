@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**: 备份:策略时间调度规则 **取值范围**: 不涉及 
+ * **参数解释**: 备份策略时间调度规则 **取值范围**: 不涉及 
  */
 public class BackupTriggerInfo {
 

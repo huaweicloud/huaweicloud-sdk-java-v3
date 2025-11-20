@@ -45,13 +45,28 @@ public class ResourceResponse {
 
     private Integer resourceSize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timestamp")
+
+    private Long timestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relativeType")
+
+    private Integer relativeType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
     public ResourceResponse withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
     /**
-     * 资源id
+     * **参数解释：** 资源id **取值范围：** 不涉及
      * @return resourceId
      */
     public String getResourceId() {
@@ -68,7 +83,7 @@ public class ResourceResponse {
     }
 
     /**
-     * 云服务产品对应的云服务类型
+     * **参数解释：** 云服务产品对应的云服务类型 **取值范围：** 不涉及
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -85,7 +100,7 @@ public class ResourceResponse {
     }
 
     /**
-     * 云服务产品的资源类型   - hws.resource.type.waf：云模式包周期WAF   - hws.resource.type.waf.domain：云模式包周期WAF域名扩展包   - hws.resource.type.waf.bandwidth：云模式包周期WAF带宽扩展包   - hws.resource.type.waf.rule：云模式包周期WAF规则扩展包   - hws.resource.type.waf.instance：独享实例WAF   - hws.resource.type.waf.payperuserequest : Web应用防火墙按需请求   - hws.resource.type.waf.payperusedomain：Web应用防火墙按需域名   - hws.resource.type.waf.payperuserule: Web应用防火墙按需规则
+     * **参数解释：** 云服务产品的资源类型 **取值范围：**  - hws.resource.type.waf：云模式包周期WAF  - hws.resource.type.waf.domain：云模式包周期WAF域名扩展包  - hws.resource.type.waf.bandwidth：云模式包周期WAF带宽扩展包  - hws.resource.type.waf.rule：云模式包周期WAF规则扩展包  - hws.resource.type.waf.payperuserequest：Web应用防火墙按需请求   - hws.resource.type.waf.payperusedomain：Web应用防火墙按需域名  - hws.resource.type.waf.payperuserule：Web应用防火墙按需规则
      * @return resourceType
      */
     public String getResourceType() {
@@ -102,7 +117,7 @@ public class ResourceResponse {
     }
 
     /**
-     * 云服务产品的资源规格
+     * **参数解释：** 云服务产品的资源规格 **取值范围：** 不涉及
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -119,7 +134,7 @@ public class ResourceResponse {
     }
 
     /**
-     * 资源状态   - 0：解冻/正常   - 1：冻结   - 2：删除
+     * **参数解释：** 资源状态 **取值范围：**  - 0：解冻/正常   - 1：冻结   - 2：删除
      * @return status
      */
     public Integer getStatus() {
@@ -136,7 +151,7 @@ public class ResourceResponse {
     }
 
     /**
-     * 资源到期时间
+     * **参数解释：** 资源到期时间 **取值范围：** 不涉及
      * @return expireTime
      */
     public String getExpireTime() {
@@ -153,7 +168,7 @@ public class ResourceResponse {
     }
 
     /**
-     * 资源数量
+     * **参数解释：** 资源数量 **取值范围：** 不涉及
      * @return resourceSize
      */
     public Integer getResourceSize() {
@@ -162,6 +177,57 @@ public class ResourceResponse {
 
     public void setResourceSize(Integer resourceSize) {
         this.resourceSize = resourceSize;
+    }
+
+    public ResourceResponse withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 资源创建时间 **取值范围：** 不涉及
+     * @return timestamp
+     */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public ResourceResponse withRelativeType(Integer relativeType) {
+        this.relativeType = relativeType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 当资源项为附属资源(域名扩展包/带宽扩展包/规则扩展包/高阶功能扩展包),描述附属资源与主资源的关系 **取值范围：**  - 0：附属资源与主资源为挂载关系  - 1：附属资源与主资源为绑定关系  - 2：从属关系
+     * @return relativeType
+     */
+    public Integer getRelativeType() {
+        return relativeType;
+    }
+
+    public void setRelativeType(Integer relativeType) {
+        this.relativeType = relativeType;
+    }
+
+    public ResourceResponse withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 华为云区域ID,资源所属的区域id **取值范围：** 不涉及
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     @Override
@@ -177,13 +243,23 @@ public class ResourceResponse {
             && Objects.equals(this.cloudServiceType, that.cloudServiceType)
             && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.resourceSize, that.resourceSize);
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.resourceSize, that.resourceSize)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.relativeType, that.relativeType)
+            && Objects.equals(this.region, that.region);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(resourceId, cloudServiceType, resourceType, resourceSpecCode, status, expireTime, resourceSize);
+        return Objects.hash(resourceId,
+            cloudServiceType,
+            resourceType,
+            resourceSpecCode,
+            status,
+            expireTime,
+            resourceSize,
+            timestamp,
+            relativeType,
+            region);
     }
 
     @Override
@@ -197,6 +273,9 @@ public class ResourceResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    resourceSize: ").append(toIndentedString(resourceSize)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    relativeType: ").append(toIndentedString(relativeType)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("}");
         return sb.toString();
     }

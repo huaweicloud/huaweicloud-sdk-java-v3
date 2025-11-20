@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 状态信息
+ * **参数解释**： 状态信息 **约束限制**： 不涉及 
  */
 public class MasterEIPResponseStatus {
 
@@ -26,7 +26,7 @@ public class MasterEIPResponseStatus {
     }
 
     /**
-     * 集群访问的PrivateIP(HA集群返回VIP)
+     * **参数解释**： 集群访问的PrivateIP(HA集群返回VIP) **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return privateEndpoint
      */
     public String getPrivateEndpoint() {
@@ -43,7 +43,7 @@ public class MasterEIPResponseStatus {
     }
 
     /**
-     * 集群访问的PublicIP
+     * **参数解释**： 集群访问的PublicIP **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return publicEndpoint
      */
     public String getPublicEndpoint() {

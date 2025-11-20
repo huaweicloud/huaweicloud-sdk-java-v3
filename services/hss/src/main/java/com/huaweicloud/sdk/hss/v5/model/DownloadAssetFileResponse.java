@@ -22,7 +22,7 @@ public class DownloadAssetFileResponse extends SdkResponse {
     }
 
     /**
-     * 导出任务ID
+     * **参数解释**： 导出任务ID **取值范围**： 字符长度0-128位 
      * @return taskId
      */
     public String getTaskId() {

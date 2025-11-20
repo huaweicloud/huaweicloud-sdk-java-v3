@@ -179,7 +179,7 @@ public class ShowBackupInfoByBackupIdResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 创建时间 **取值范围** 取值0-2147483647 
+     * **参数解释** 资源大小 **取值范围** 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return resourceSize

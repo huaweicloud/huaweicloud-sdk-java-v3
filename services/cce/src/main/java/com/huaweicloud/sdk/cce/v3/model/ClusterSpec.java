@@ -93,6 +93,11 @@ public class ClusterSpec {
 
     private CategoryEnum category;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agencyName")
+
+    private String agencyName;
+
     /**
      * **参数解释：** 集群Master节点架构 **约束限制：** 不涉及 **取值范围：** - VirtualMachine：Master节点为x86架构服务器 - [ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs)  **默认取值：** VirtualMachine[，如若VirtualMachine资源不足，取值为ARM64](tag:hws,hws_hk,hcs) 
      */
@@ -383,6 +388,23 @@ public class ClusterSpec {
 
     public void setCategory(CategoryEnum category) {
         this.category = category;
+    }
+
+    public ClusterSpec withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 指定集群使用的委托。该委托用于生成集群中组件使用的临时访问凭证，在集群中自动创建其他相关云服务的资源时会使用该委托权限。当不传或为空时，集群将自动选择使用CCE的系统委托cce_admin_trust或cce_cluster_agency。  [ > 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0556.html)](tag:hws) [ > 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0556.html)](tag:hws_hk)  **约束限制：** 仅1.27及以上版本集群支持该参数  **取值范围：** 不涉及 **默认取值：** 空 
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
     }
 
     public ClusterSpec withType(TypeEnum type) {
@@ -989,9 +1011,9 @@ public class ClusterSpec {
             return false;
         }
         ClusterSpec that = (ClusterSpec) obj;
-        return Objects.equals(this.category, that.category) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.platformVersion, that.platformVersion)
+        return Objects.equals(this.category, that.category) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.platformVersion, that.platformVersion)
             && Objects.equals(this.legacyVersion, that.legacyVersion)
             && Objects.equals(this.description, that.description) && Objects.equals(this.customSan, that.customSan)
             && Objects.equals(this.ipv6enable, that.ipv6enable) && Objects.equals(this.hostNetwork, that.hostNetwork)
@@ -1016,6 +1038,7 @@ public class ClusterSpec {
     @Override
     public int hashCode() {
         return Objects.hash(category,
+            agencyName,
             type,
             flavor,
             version,
@@ -1050,6 +1073,7 @@ public class ClusterSpec {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterSpec {\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");

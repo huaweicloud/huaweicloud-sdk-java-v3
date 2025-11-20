@@ -84,7 +84,7 @@ public class DeleteWafWhiteIpRuleV2RequestBody {
     }
 
     /**
-     * 防护区域
+     * 防护区域,0-大陆,1-海外
      * @return overseasType
      */
     public Integer getOverseasType() {

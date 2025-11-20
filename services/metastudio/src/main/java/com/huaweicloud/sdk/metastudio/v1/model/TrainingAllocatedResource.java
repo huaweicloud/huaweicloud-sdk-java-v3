@@ -21,7 +21,7 @@ public class TrainingAllocatedResource {
     private String resourceId;
 
     /**
-     * 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 > * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。
+     * 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 > * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。 * ON_DEMAND: 按需
      */
     public static final class ChargeModeEnum {
 
@@ -35,12 +35,18 @@ public class TrainingAllocatedResource {
          */
         public static final ChargeModeEnum ONE_TIME = new ChargeModeEnum("ONE_TIME");
 
+        /**
+         * Enum ON_DEMAND for value: "ON_DEMAND"
+         */
+        public static final ChargeModeEnum ON_DEMAND = new ChargeModeEnum("ON_DEMAND");
+
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ChargeModeEnum> createStaticFields() {
             Map<String, ChargeModeEnum> map = new HashMap<>();
             map.put("PERIODIC", PERIODIC);
             map.put("ONE_TIME", ONE_TIME);
+            map.put("ON_DEMAND", ON_DEMAND);
             return Collections.unmodifiableMap(map);
         }
 
@@ -123,7 +129,7 @@ public class TrainingAllocatedResource {
     }
 
     /**
-     * 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 > * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。
+     * 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 > * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。 * ON_DEMAND: 按需
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {

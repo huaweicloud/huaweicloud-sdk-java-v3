@@ -316,6 +316,21 @@ public class AutopilotClusterSpec {
     private AutopilotClusterExtendParam extendParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableMasterVolumeEncryption")
+
+    private Boolean enableMasterVolumeEncryption;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableDistMgt")
+
+    private Boolean enableDistMgt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deletionProtection")
+
+    private Boolean deletionProtection;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurationsOverride")
 
     private List<AutopilotPackageConfiguration> configurationsOverride = null;
@@ -763,6 +778,57 @@ public class AutopilotClusterSpec {
         this.extendParam = extendParam;
     }
 
+    public AutopilotClusterSpec withEnableMasterVolumeEncryption(Boolean enableMasterVolumeEncryption) {
+        this.enableMasterVolumeEncryption = enableMasterVolumeEncryption;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 集群控制节点系统盘、数据盘加密。默认使用AES_256加密算法。CCE、Turbo集群1.25及以上版本开始支持。 **约束限制：** 集群创建后不支持修改。开启后存在一定的磁盘读写性能损耗。 **取值范围：** - true: 开启控制节点磁盘加密 - false: 关闭控制节点磁盘加密  **默认取值：** 默认false 
+     * @return enableMasterVolumeEncryption
+     */
+    public Boolean getEnableMasterVolumeEncryption() {
+        return enableMasterVolumeEncryption;
+    }
+
+    public void setEnableMasterVolumeEncryption(Boolean enableMasterVolumeEncryption) {
+        this.enableMasterVolumeEncryption = enableMasterVolumeEncryption;
+    }
+
+    public AutopilotClusterSpec withEnableDistMgt(Boolean enableDistMgt) {
+        this.enableDistMgt = enableDistMgt;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 集群开启对分布式云支持。 **约束限制：** 目前只有Turbo集群支持。 **取值范围：** - true: 开启对分布式云支持 - false: 关闭对分布式云支持  **默认取值：** 默认false 
+     * @return enableDistMgt
+     */
+    public Boolean getEnableDistMgt() {
+        return enableDistMgt;
+    }
+
+    public void setEnableDistMgt(Boolean enableDistMgt) {
+        this.enableDistMgt = enableDistMgt;
+    }
+
+    public AutopilotClusterSpec withDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 集群删除保护，如果开启后用户将无法删除该集群。 **约束限制：** 不涉及。 **取值范围：** - true: 开启集群删除保护 - false: 关闭集群删除保护  **默认取值：** 默认false 
+     * @return deletionProtection
+     */
+    public Boolean getDeletionProtection() {
+        return deletionProtection;
+    }
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
     public AutopilotClusterSpec withConfigurationsOverride(List<AutopilotPackageConfiguration> configurationsOverride) {
         this.configurationsOverride = configurationsOverride;
         return this;
@@ -823,6 +889,9 @@ public class AutopilotClusterSpec {
             && Objects.equals(this.clusterTags, that.clusterTags)
             && Objects.equals(this.kubeProxyMode, that.kubeProxyMode) && Objects.equals(this.az, that.az)
             && Objects.equals(this.extendParam, that.extendParam)
+            && Objects.equals(this.enableMasterVolumeEncryption, that.enableMasterVolumeEncryption)
+            && Objects.equals(this.enableDistMgt, that.enableDistMgt)
+            && Objects.equals(this.deletionProtection, that.deletionProtection)
             && Objects.equals(this.configurationsOverride, that.configurationsOverride);
     }
 
@@ -849,6 +918,9 @@ public class AutopilotClusterSpec {
             kubeProxyMode,
             az,
             extendParam,
+            enableMasterVolumeEncryption,
+            enableDistMgt,
+            deletionProtection,
             configurationsOverride);
     }
 
@@ -877,6 +949,11 @@ public class AutopilotClusterSpec {
         sb.append("    kubeProxyMode: ").append(toIndentedString(kubeProxyMode)).append("\n");
         sb.append("    az: ").append(toIndentedString(az)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
+        sb.append("    enableMasterVolumeEncryption: ")
+            .append(toIndentedString(enableMasterVolumeEncryption))
+            .append("\n");
+        sb.append("    enableDistMgt: ").append(toIndentedString(enableDistMgt)).append("\n");
+        sb.append("    deletionProtection: ").append(toIndentedString(deletionProtection)).append("\n");
         sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
         sb.append("}");
         return sb.toString();

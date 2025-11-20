@@ -26,7 +26,7 @@ public class User {
     }
 
     /**
-     * 客户端证书。 
+     * **参数解释**： 客户端证书。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return clientCertificateData
      */
     public String getClientCertificateData() {
@@ -43,7 +43,7 @@ public class User {
     }
 
     /**
-     * 包含来自TLS客户端密钥文件的PEM编码数据。 
+     * **参数解释**： 包含来自TLS客户端密钥文件的PEM编码数据。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return clientKeyData
      */
     public String getClientKeyData() {

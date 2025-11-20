@@ -51,6 +51,16 @@ public class ListCheckRuleHostRequest {
     private String resultType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_name")
+
+    private String hostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_type")
 
     private String hostType;
@@ -61,19 +71,9 @@ public class ListCheckRuleHostRequest {
     private Boolean checkCce;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
-
-    private String clusterId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_group_id")
 
     private String policyGroupId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_name")
-
-    private String hostName;
 
     public ListCheckRuleHostRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -215,40 +215,6 @@ public class ListCheckRuleHostRequest {
         this.resultType = resultType;
     }
 
-    public ListCheckRuleHostRequest withHostType(String hostType) {
-        this.hostType = hostType;
-        return this;
-    }
-
-    /**
-     * **参数解释** 检测结果类型 **约束限制** 不涉及 **取值范围** 不涉及 **默认取值** 不涉及
-     * @return hostType
-     */
-    public String getHostType() {
-        return hostType;
-    }
-
-    public void setHostType(String hostType) {
-        this.hostType = hostType;
-    }
-
-    public ListCheckRuleHostRequest withCheckCce(Boolean checkCce) {
-        this.checkCce = checkCce;
-        return this;
-    }
-
-    /**
-     * **参数解释** 是否校验cce **约束限制** 不涉及 **取值范围** - true  : 校验cce - false : 不校验cce  **默认取值** false
-     * @return checkCce
-     */
-    public Boolean getCheckCce() {
-        return checkCce;
-    }
-
-    public void setCheckCce(Boolean checkCce) {
-        this.checkCce = checkCce;
-    }
-
     public ListCheckRuleHostRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -264,23 +230,6 @@ public class ListCheckRuleHostRequest {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
-    }
-
-    public ListCheckRuleHostRequest withPolicyGroupId(String policyGroupId) {
-        this.policyGroupId = policyGroupId;
-        return this;
-    }
-
-    /**
-     * **参数解释** 策略组ID，不赋值时，查此检查项租户所有主机，host_id存在时，此值无效 **约束限制** 不涉及 **取值范围** 字符长度0-128位 **默认取值** 不涉及
-     * @return policyGroupId
-     */
-    public String getPolicyGroupId() {
-        return policyGroupId;
-    }
-
-    public void setPolicyGroupId(String policyGroupId) {
-        this.policyGroupId = policyGroupId;
     }
 
     public ListCheckRuleHostRequest withHostName(String hostName) {
@@ -300,6 +249,57 @@ public class ListCheckRuleHostRequest {
         this.hostName = hostName;
     }
 
+    public ListCheckRuleHostRequest withHostType(String hostType) {
+        this.hostType = hostType;
+        return this;
+    }
+
+    /**
+     * **参数解释** 主机类型，已废弃 **约束限制** 不涉及 **取值范围** - cce **默认取值** 不涉及
+     * @return hostType
+     */
+    public String getHostType() {
+        return hostType;
+    }
+
+    public void setHostType(String hostType) {
+        this.hostType = hostType;
+    }
+
+    public ListCheckRuleHostRequest withCheckCce(Boolean checkCce) {
+        this.checkCce = checkCce;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 是否只筛选cce主机，已废弃 **约束限制**: 不涉及 **取值范围**: -true：是。 -false：否。 **默认取值**: false 
+     * @return checkCce
+     */
+    public Boolean getCheckCce() {
+        return checkCce;
+    }
+
+    public void setCheckCce(Boolean checkCce) {
+        this.checkCce = checkCce;
+    }
+
+    public ListCheckRuleHostRequest withPolicyGroupId(String policyGroupId) {
+        this.policyGroupId = policyGroupId;
+        return this;
+    }
+
+    /**
+     * **参数解释** 策略组ID，已废弃 **约束限制** 不涉及 **取值范围** 字符长度0-128位 **默认取值** 不涉及
+     * @return policyGroupId
+     */
+    public String getPolicyGroupId() {
+        return policyGroupId;
+    }
+
+    public void setPolicyGroupId(String policyGroupId) {
+        this.policyGroupId = policyGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -313,9 +313,9 @@ public class ListCheckRuleHostRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.checkRuleId, that.checkRuleId) && Objects.equals(this.checkName, that.checkName)
             && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.standard, that.standard)
-            && Objects.equals(this.resultType, that.resultType) && Objects.equals(this.hostType, that.hostType)
-            && Objects.equals(this.checkCce, that.checkCce) && Objects.equals(this.clusterId, that.clusterId)
-            && Objects.equals(this.policyGroupId, that.policyGroupId) && Objects.equals(this.hostName, that.hostName);
+            && Objects.equals(this.resultType, that.resultType) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostType, that.hostType)
+            && Objects.equals(this.checkCce, that.checkCce) && Objects.equals(this.policyGroupId, that.policyGroupId);
     }
 
     @Override
@@ -328,11 +328,11 @@ public class ListCheckRuleHostRequest {
             checkType,
             standard,
             resultType,
+            clusterId,
+            hostName,
             hostType,
             checkCce,
-            clusterId,
-            policyGroupId,
-            hostName);
+            policyGroupId);
     }
 
     @Override
@@ -347,11 +347,11 @@ public class ListCheckRuleHostRequest {
         sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostType: ").append(toIndentedString(hostType)).append("\n");
         sb.append("    checkCce: ").append(toIndentedString(checkCce)).append("\n");
-        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    policyGroupId: ").append(toIndentedString(policyGroupId)).append("\n");
-        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 访问预览的状态。
+ * 访问预览的状态。 - creating：创建中 - completed：创建成功 - failed：创建失败 
  */
 public class AccessPreviewStatus {
 

@@ -19,8 +19,8 @@ import com.huaweicloud.sdk.aad.v1.model.BlackWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.BlackWhiteIpRequestBody;
 import com.huaweicloud.sdk.aad.v1.model.CadDomainSwitchRequest;
 import com.huaweicloud.sdk.aad.v1.model.CertificateBody;
-import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainRequest;
-import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainResponse;
+import com.huaweicloud.sdk.aad.v1.model.CreateDomainRequest;
+import com.huaweicloud.sdk.aad.v1.model.CreateDomainResponse;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequestBody;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyResponse;
@@ -438,14 +438,13 @@ public class AadMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomain =
-        genForCreateAadDomain();
+    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForCreateDomain();
 
-    private static HttpRequestDef<CreateAadDomainRequest, CreateAadDomainResponse> genForCreateAadDomain() {
+    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForCreateDomain() {
         // basic
-        HttpRequestDef.Builder<CreateAadDomainRequest, CreateAadDomainResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAadDomainRequest.class, CreateAadDomainResponse.class)
-                .withName("CreateAadDomain")
+        HttpRequestDef.Builder<CreateDomainRequest, CreateDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDomainRequest.class, CreateDomainResponse.class)
+                .withName("CreateDomain")
                 .withUri("/v1/{project_id}/aad/external/domains")
                 .withContentType("application/json");
 
@@ -454,7 +453,7 @@ public class AadMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HostBody.class),
-            f -> f.withMarshaller(CreateAadDomainRequest::getBody, CreateAadDomainRequest::setBody));
+            f -> f.withMarshaller(CreateDomainRequest::getBody, CreateDomainRequest::setBody));
 
         // response
 
@@ -653,6 +652,16 @@ public class AadMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainRequest::getLimit, ListDomainRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainRequest::getOffset, ListDomainRequest::setOffset));
 
         // response
 
@@ -721,6 +730,16 @@ public class AadMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstanceIpRuleRequest::getIp, ListInstanceIpRuleRequest::setIp));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceIpRuleRequest::getLimit, ListInstanceIpRuleRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceIpRuleRequest::getOffset, ListInstanceIpRuleRequest::setOffset));
 
         // response
 

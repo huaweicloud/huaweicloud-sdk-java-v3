@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 要附加到资源策略的资源类型。
+ * 要附加到资源策略的资源类型。 - iam:agency： IAM委托 
  */
 public class ValidatePolicyResourceType {
 

@@ -104,11 +104,6 @@ public class HostVulInfo {
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_version")
-
-    private String appVersion;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_path")
 
     private String appPath;
@@ -132,6 +127,21 @@ public class HostVulInfo {
     @JsonProperty(value = "repair_priority")
 
     private String repairPriority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "software_version")
+
+    private String softwareVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_name")
+
+    private String backupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_reason")
+
+    private String failedReason;
 
     public HostVulInfo withVulName(String vulName) {
         this.vulName = vulName;
@@ -206,7 +216,7 @@ public class HostVulInfo {
     }
 
     /**
-     * **参数解释**: 修复紧急度 **取值范围**: - immediate_repair  : 尽快修复 - delay_repair      : 延后修复 - not_needed_repair : 暂可不修复 
+     * **参数解释**: 修复紧急度 **取值范围**: - Critical：漏洞cvss评分大于等于9；对应控制台页面的高危 - High：漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium：漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low：漏洞cvss评分小于4；对应控制台页面的低危 
      * @return repairNecessity
      */
     public String getRepairNecessity() {
@@ -242,7 +252,7 @@ public class HostVulInfo {
     }
 
     /**
-     * **参数解释**: 漏洞类型 **取值范围**: - linux_vul   : linux漏洞 - windows_vul : windows漏洞 - web_cms     : Web-CMS漏洞 - app_vul     : 应用漏洞 - urgent_vul  : 应急漏洞 
+     * **参数解释**: 漏洞类型 **取值范围**: - linux_vul：linux漏洞 - windows_vul：windows漏洞 - web_cms：Web-CMS漏洞 - app_vul：应用漏洞 - urgent_vul：应急漏洞 
      * @return type
      */
     public String getType() {
@@ -326,7 +336,7 @@ public class HostVulInfo {
     }
 
     /**
-     * **参数解释**: URL链接 **取值范围**: 字符范围0-2083位 
+     * **参数解释**: URL链接 **取值范围**: 字符范围0-2048位 
      * @return url
      */
     public String getUrl() {
@@ -377,7 +387,7 @@ public class HostVulInfo {
     }
 
     /**
-     * **参数解释**: 漏洞状态 **取值范围**: - vul_status_unfix            : 未处理 - vul_status_ignored          : 已忽略 - vul_status_verified         : 验证中 - vul_status_fixing           : 修复中 - vul_status_fixed            : 修复成功 - vul_status_reboot           : 修复成功待重启 - vul_status_failed           : 修复失败 - vul_status_fix_after_reboot : 请重启主机再次修复 
+     * **参数解释**: 漏洞状态 **取值范围**: - vul_status_unfix：未处理 - vul_status_ignored：已忽略 - vul_status_verified：验证中 - vul_status_fixing：修复中 - vul_status_fixed：修复成功 - vul_status_reboot：修复成功待重启 - vul_status_failed：修复失败 - vul_status_fix_after_reboot：请重启主机再次修复 
      * @return status
      */
     public String getStatus() {
@@ -482,7 +492,7 @@ public class HostVulInfo {
     }
 
     /**
-     * **参数解释**: 软件名称 **取值范围**: 字符长度0-256位 
+     * **参数解释**: 软件名称（应用漏洞、应急漏洞） **取值范围**: 字符长度0-256位 
      * @return appName
      */
     public String getAppName() {
@@ -493,30 +503,13 @@ public class HostVulInfo {
         this.appName = appName;
     }
 
-    public HostVulInfo withAppVersion(String appVersion) {
-        this.appVersion = appVersion;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 软件版本 **取值范围**: 字符长度0-256位 
-     * @return appVersion
-     */
-    public String getAppVersion() {
-        return appVersion;
-    }
-
-    public void setAppVersion(String appVersion) {
-        this.appVersion = appVersion;
-    }
-
     public HostVulInfo withAppPath(String appPath) {
         this.appPath = appPath;
         return this;
     }
 
     /**
-     * **参数解释**: 软件路径 **取值范围**: 字符长度0-512位 
+     * **参数解释**: 应用漏洞软件路径 **取值范围**: 字符长度0-512位 
      * @return appPath
      */
     public String getAppPath() {
@@ -612,6 +605,57 @@ public class HostVulInfo {
         this.repairPriority = repairPriority;
     }
 
+    public HostVulInfo withSoftwareVersion(String softwareVersion) {
+        this.softwareVersion = softwareVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**: linux当前及修复软件信息 **取值范围**: 字符长度1-2048位 
+     * @return softwareVersion
+     */
+    public String getSoftwareVersion() {
+        return softwareVersion;
+    }
+
+    public void setSoftwareVersion(String softwareVersion) {
+        this.softwareVersion = softwareVersion;
+    }
+
+    public HostVulInfo withBackupName(String backupName) {
+        this.backupName = backupName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 备份名称 **取值范围**: 字符长度1-2048位 
+     * @return backupName
+     */
+    public String getBackupName() {
+        return backupName;
+    }
+
+    public void setBackupName(String backupName) {
+        this.backupName = backupName;
+    }
+
+    public HostVulInfo withFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 修复失败原因 **取值范围**: 字符长度1-65535位 
+     * @return failedReason
+     */
+    public String getFailedReason() {
+        return failedReason;
+    }
+
+    public void setFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -632,10 +676,12 @@ public class HostVulInfo {
             && Objects.equals(this.cveList, that.cveList)
             && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
             && Objects.equals(this.firstScanTime, that.firstScanTime) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.appPath, that.appPath)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.supportRestore, that.supportRestore)
+            && Objects.equals(this.appPath, that.appPath) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.supportRestore, that.supportRestore)
             && Objects.equals(this.disabledOperateTypes, that.disabledOperateTypes)
-            && Objects.equals(this.repairPriority, that.repairPriority);
+            && Objects.equals(this.repairPriority, that.repairPriority)
+            && Objects.equals(this.softwareVersion, that.softwareVersion)
+            && Objects.equals(this.backupName, that.backupName) && Objects.equals(this.failedReason, that.failedReason);
     }
 
     @Override
@@ -658,12 +704,14 @@ public class HostVulInfo {
             isAffectBusiness,
             firstScanTime,
             appName,
-            appVersion,
             appPath,
             version,
             supportRestore,
             disabledOperateTypes,
-            repairPriority);
+            repairPriority,
+            softwareVersion,
+            backupName,
+            failedReason);
     }
 
     @Override
@@ -688,12 +736,14 @@ public class HostVulInfo {
         sb.append("    isAffectBusiness: ").append(toIndentedString(isAffectBusiness)).append("\n");
         sb.append("    firstScanTime: ").append(toIndentedString(firstScanTime)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
-        sb.append("    appVersion: ").append(toIndentedString(appVersion)).append("\n");
         sb.append("    appPath: ").append(toIndentedString(appPath)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    supportRestore: ").append(toIndentedString(supportRestore)).append("\n");
         sb.append("    disabledOperateTypes: ").append(toIndentedString(disabledOperateTypes)).append("\n");
         sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
+        sb.append("    softwareVersion: ").append(toIndentedString(softwareVersion)).append("\n");
+        sb.append("    backupName: ").append(toIndentedString(backupName)).append("\n");
+        sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

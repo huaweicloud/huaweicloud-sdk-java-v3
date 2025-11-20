@@ -29,7 +29,7 @@ public class TrainingJobBasicInfo {
     private String name;
 
     /**
-     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
+     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步   * WAIT_GENERATE_ACTION_MARK 等待动作标定   * ACTION_MARKING: 动作标定生成 - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务   * WAIT_TEST_VIDEO_CHECK: 等待进行测试视频推理任务  * TEST_VIDEO_CHECK_PROCESSING：测试视频推理质量检测中  * TEST_VIDEO_CHECK_SUCCESS：测试视频推理质量检测通过  * TEST_VIDEO_CHECK_FAILED：测试视频推理质量检测未通过  * VIDEO_ANALYZE_PROCESSING：视频检测中  * VIDEO_ANALYZE_SUCCESS：视频检测通过  * VIDEO_ANALYZE_FAILED：视频检测未通过  * ACTION_MARKING：动作标定中  * ACTION_MARK_SUCCESS：动作标定成功  * ACTION_MARK_FAILED：动作标定失败  * ACTION_MARK_UPLOADED：动作标定文件上传成功  * MANUL_STOP_ACTION_MARK：中止动作标定
      */
     public static final class StateEnum {
 
@@ -282,6 +282,71 @@ public class TrainingJobBasicInfo {
          */
         public static final StateEnum BEAUTYFACE_ROCESSING = new StateEnum("BEAUTYFACE_ROCESSING");
 
+        /**
+         * Enum WAIT_TEST_VIDEO_CHECK for value: "WAIT_TEST_VIDEO_CHECK"
+         */
+        public static final StateEnum WAIT_TEST_VIDEO_CHECK = new StateEnum("WAIT_TEST_VIDEO_CHECK");
+
+        /**
+         * Enum TEST_VIDEO_CHECK_PROCESSING for value: "TEST_VIDEO_CHECK_PROCESSING"
+         */
+        public static final StateEnum TEST_VIDEO_CHECK_PROCESSING = new StateEnum("TEST_VIDEO_CHECK_PROCESSING");
+
+        /**
+         * Enum TEST_VIDEO_CHECK_SUCCESS for value: "TEST_VIDEO_CHECK_SUCCESS"
+         */
+        public static final StateEnum TEST_VIDEO_CHECK_SUCCESS = new StateEnum("TEST_VIDEO_CHECK_SUCCESS");
+
+        /**
+         * Enum TEST_VIDEO_CHECK_FAILED for value: "TEST_VIDEO_CHECK_FAILED"
+         */
+        public static final StateEnum TEST_VIDEO_CHECK_FAILED = new StateEnum("TEST_VIDEO_CHECK_FAILED");
+
+        /**
+         * Enum VIDEO_ANALYZE_PROCESSING for value: "VIDEO_ANALYZE_PROCESSING"
+         */
+        public static final StateEnum VIDEO_ANALYZE_PROCESSING = new StateEnum("VIDEO_ANALYZE_PROCESSING");
+
+        /**
+         * Enum VIDEO_ANALYZE_SUCCESS for value: "VIDEO_ANALYZE_SUCCESS"
+         */
+        public static final StateEnum VIDEO_ANALYZE_SUCCESS = new StateEnum("VIDEO_ANALYZE_SUCCESS");
+
+        /**
+         * Enum VIDEO_ANALYZE_FAILED for value: "VIDEO_ANALYZE_FAILED"
+         */
+        public static final StateEnum VIDEO_ANALYZE_FAILED = new StateEnum("VIDEO_ANALYZE_FAILED");
+
+        /**
+         * Enum ACTION_MARKING for value: "ACTION_MARKING"
+         */
+        public static final StateEnum ACTION_MARKING = new StateEnum("ACTION_MARKING");
+
+        /**
+         * Enum ACTION_MARK_SUCCESS for value: "ACTION_MARK_SUCCESS"
+         */
+        public static final StateEnum ACTION_MARK_SUCCESS = new StateEnum("ACTION_MARK_SUCCESS");
+
+        /**
+         * Enum ACTION_MARK_FAILED for value: "ACTION_MARK_FAILED"
+         */
+        public static final StateEnum ACTION_MARK_FAILED = new StateEnum("ACTION_MARK_FAILED");
+
+        /**
+         * Enum ACTION_MARK_UPLOADED for value: "ACTION_MARK_UPLOADED"
+         */
+        public static final StateEnum ACTION_MARK_UPLOADED = new StateEnum("ACTION_MARK_UPLOADED");
+
+        /**
+         * Enum WAIT_GENERATE_ACTION_MARK for value: "WAIT_GENERATE_ACTION_MARK"
+         */
+        public static final StateEnum WAIT_GENERATE_ACTION_MARK = new StateEnum("WAIT_GENERATE_ACTION_MARK");
+
+        /**
+         * Enum MANUL_STOP_ACTION_MARK for value: "MANUL_STOP_ACTION_MARK"
+         */
+        public static final StateEnum MANUL_STOP_ACTION_MARK = new StateEnum("MANUL_STOP_ACTION_MARK");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -334,6 +399,19 @@ public class TrainingJobBasicInfo {
             map.put("BEAUTYFACE_FAILED", BEAUTYFACE_FAILED);
             map.put("WAIT_BEAUTY_VIDEO_FILE_UPLOAD", WAIT_BEAUTY_VIDEO_FILE_UPLOAD);
             map.put("BEAUTYFACE_ROCESSING", BEAUTYFACE_ROCESSING);
+            map.put("WAIT_TEST_VIDEO_CHECK", WAIT_TEST_VIDEO_CHECK);
+            map.put("TEST_VIDEO_CHECK_PROCESSING", TEST_VIDEO_CHECK_PROCESSING);
+            map.put("TEST_VIDEO_CHECK_SUCCESS", TEST_VIDEO_CHECK_SUCCESS);
+            map.put("TEST_VIDEO_CHECK_FAILED", TEST_VIDEO_CHECK_FAILED);
+            map.put("VIDEO_ANALYZE_PROCESSING", VIDEO_ANALYZE_PROCESSING);
+            map.put("VIDEO_ANALYZE_SUCCESS", VIDEO_ANALYZE_SUCCESS);
+            map.put("VIDEO_ANALYZE_FAILED", VIDEO_ANALYZE_FAILED);
+            map.put("ACTION_MARKING", ACTION_MARKING);
+            map.put("ACTION_MARK_SUCCESS", ACTION_MARK_SUCCESS);
+            map.put("ACTION_MARK_FAILED", ACTION_MARK_FAILED);
+            map.put("ACTION_MARK_UPLOADED", ACTION_MARK_UPLOADED);
+            map.put("WAIT_GENERATE_ACTION_MARK", WAIT_GENERATE_ACTION_MARK);
+            map.put("MANUL_STOP_ACTION_MARK", MANUL_STOP_ACTION_MARK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -429,7 +507,7 @@ public class TrainingJobBasicInfo {
     private List<String> tags = null;
 
     /**
-     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 > * V3和V2版本已废弃不用
+     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus用的训练模型 > * V3和V2版本已废弃不用
      */
     public static final class ModelVersionEnum {
 
@@ -448,6 +526,11 @@ public class TrainingJobBasicInfo {
          */
         public static final ModelVersionEnum V3_2 = new ModelVersionEnum("V3.2");
 
+        /**
+         * Enum V3_3 for value: "V3.3"
+         */
+        public static final ModelVersionEnum V3_3 = new ModelVersionEnum("V3.3");
+
         private static final Map<String, ModelVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModelVersionEnum> createStaticFields() {
@@ -455,6 +538,7 @@ public class TrainingJobBasicInfo {
             map.put("V2", V2);
             map.put("V3", V3);
             map.put("V3.2", V3_2);
+            map.put("V3.3", V3_3);
             return Collections.unmodifiableMap(map);
         }
 
@@ -600,9 +684,34 @@ public class TrainingJobBasicInfo {
     private Boolean isFlexus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_live_copy")
+
+    private Boolean isLiveCopy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_fast_flexus")
+
+    private Boolean isFastFlexus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_only_human_model")
 
     private Boolean isOnlyHumanModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "optional_training_location")
+
+    private List<String> optionalTrainingLocation = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_background_replacement")
+
+    private Boolean isBackgroundReplacement;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ondemand_resource")
+
+    private Boolean isOndemandResource;
 
     public TrainingJobBasicInfo withJobId(String jobId) {
         this.jobId = jobId;
@@ -644,7 +753,7 @@ public class TrainingJobBasicInfo {
     }
 
     /**
-     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
+     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步   * WAIT_GENERATE_ACTION_MARK 等待动作标定   * ACTION_MARKING: 动作标定生成 - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务   * WAIT_TEST_VIDEO_CHECK: 等待进行测试视频推理任务  * TEST_VIDEO_CHECK_PROCESSING：测试视频推理质量检测中  * TEST_VIDEO_CHECK_SUCCESS：测试视频推理质量检测通过  * TEST_VIDEO_CHECK_FAILED：测试视频推理质量检测未通过  * VIDEO_ANALYZE_PROCESSING：视频检测中  * VIDEO_ANALYZE_SUCCESS：视频检测通过  * VIDEO_ANALYZE_FAILED：视频检测未通过  * ACTION_MARKING：动作标定中  * ACTION_MARK_SUCCESS：动作标定成功  * ACTION_MARK_FAILED：动作标定失败  * ACTION_MARK_UPLOADED：动作标定文件上传成功  * MANUL_STOP_ACTION_MARK：中止动作标定
      * @return state
      */
     public StateEnum getState() {
@@ -813,7 +922,7 @@ public class TrainingJobBasicInfo {
     }
 
     /**
-     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 > * V3和V2版本已废弃不用
+     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus用的训练模型 > * V3和V2版本已废弃不用
      * @return modelVersion
      */
     public ModelVersionEnum getModelVersion() {
@@ -892,6 +1001,40 @@ public class TrainingJobBasicInfo {
         this.isFlexus = isFlexus;
     }
 
+    public TrainingJobBasicInfo withIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
+        return this;
+    }
+
+    /**
+     * 是否是直播间复刻任务
+     * @return isLiveCopy
+     */
+    public Boolean getIsLiveCopy() {
+        return isLiveCopy;
+    }
+
+    public void setIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
+    }
+
+    public TrainingJobBasicInfo withIsFastFlexus(Boolean isFastFlexus) {
+        this.isFastFlexus = isFastFlexus;
+        return this;
+    }
+
+    /**
+     * 是否极速版flexus
+     * @return isFastFlexus
+     */
+    public Boolean getIsFastFlexus() {
+        return isFastFlexus;
+    }
+
+    public void setIsFastFlexus(Boolean isFastFlexus) {
+        this.isFastFlexus = isFastFlexus;
+    }
+
     public TrainingJobBasicInfo withIsOnlyHumanModel(Boolean isOnlyHumanModel) {
         this.isOnlyHumanModel = isOnlyHumanModel;
         return this;
@@ -907,6 +1050,73 @@ public class TrainingJobBasicInfo {
 
     public void setIsOnlyHumanModel(Boolean isOnlyHumanModel) {
         this.isOnlyHumanModel = isOnlyHumanModel;
+    }
+
+    public TrainingJobBasicInfo withOptionalTrainingLocation(List<String> optionalTrainingLocation) {
+        this.optionalTrainingLocation = optionalTrainingLocation;
+        return this;
+    }
+
+    public TrainingJobBasicInfo addOptionalTrainingLocationItem(String optionalTrainingLocationItem) {
+        if (this.optionalTrainingLocation == null) {
+            this.optionalTrainingLocation = new ArrayList<>();
+        }
+        this.optionalTrainingLocation.add(optionalTrainingLocationItem);
+        return this;
+    }
+
+    public TrainingJobBasicInfo withOptionalTrainingLocation(Consumer<List<String>> optionalTrainingLocationSetter) {
+        if (this.optionalTrainingLocation == null) {
+            this.optionalTrainingLocation = new ArrayList<>();
+        }
+        optionalTrainingLocationSetter.accept(this.optionalTrainingLocation);
+        return this;
+    }
+
+    /**
+     * 可选训练region
+     * @return optionalTrainingLocation
+     */
+    public List<String> getOptionalTrainingLocation() {
+        return optionalTrainingLocation;
+    }
+
+    public void setOptionalTrainingLocation(List<String> optionalTrainingLocation) {
+        this.optionalTrainingLocation = optionalTrainingLocation;
+    }
+
+    public TrainingJobBasicInfo withIsBackgroundReplacement(Boolean isBackgroundReplacement) {
+        this.isBackgroundReplacement = isBackgroundReplacement;
+        return this;
+    }
+
+    /**
+     * 分身数字人是否需要背景替换。需要背景替换的分身数字人训练视频需要绿幕拍摄。
+     * @return isBackgroundReplacement
+     */
+    public Boolean getIsBackgroundReplacement() {
+        return isBackgroundReplacement;
+    }
+
+    public void setIsBackgroundReplacement(Boolean isBackgroundReplacement) {
+        this.isBackgroundReplacement = isBackgroundReplacement;
+    }
+
+    public TrainingJobBasicInfo withIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+        return this;
+    }
+
+    /**
+     * 是否按需任务
+     * @return isOndemandResource
+     */
+    public Boolean getIsOndemandResource() {
+        return isOndemandResource;
+    }
+
+    public void setIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
     }
 
     @Override
@@ -929,7 +1139,11 @@ public class TrainingJobBasicInfo {
             && Objects.equals(this.mattingType, that.mattingType)
             && Objects.equals(this.modelResolution, that.modelResolution)
             && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.isFlexus, that.isFlexus)
-            && Objects.equals(this.isOnlyHumanModel, that.isOnlyHumanModel);
+            && Objects.equals(this.isLiveCopy, that.isLiveCopy) && Objects.equals(this.isFastFlexus, that.isFastFlexus)
+            && Objects.equals(this.isOnlyHumanModel, that.isOnlyHumanModel)
+            && Objects.equals(this.optionalTrainingLocation, that.optionalTrainingLocation)
+            && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
+            && Objects.equals(this.isOndemandResource, that.isOndemandResource);
     }
 
     @Override
@@ -950,7 +1164,12 @@ public class TrainingJobBasicInfo {
             modelResolution,
             appUserId,
             isFlexus,
-            isOnlyHumanModel);
+            isLiveCopy,
+            isFastFlexus,
+            isOnlyHumanModel,
+            optionalTrainingLocation,
+            isBackgroundReplacement,
+            isOndemandResource);
     }
 
     @Override
@@ -973,7 +1192,12 @@ public class TrainingJobBasicInfo {
         sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
         sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
+        sb.append("    isLiveCopy: ").append(toIndentedString(isLiveCopy)).append("\n");
+        sb.append("    isFastFlexus: ").append(toIndentedString(isFastFlexus)).append("\n");
         sb.append("    isOnlyHumanModel: ").append(toIndentedString(isOnlyHumanModel)).append("\n");
+        sb.append("    optionalTrainingLocation: ").append(toIndentedString(optionalTrainingLocation)).append("\n");
+        sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
+        sb.append("    isOndemandResource: ").append(toIndentedString(isOndemandResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

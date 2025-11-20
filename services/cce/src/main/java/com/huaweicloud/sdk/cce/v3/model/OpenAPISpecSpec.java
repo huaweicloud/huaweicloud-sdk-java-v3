@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群访问的地址
+ * **参数解释**： 集群访问的地址 **约束限制**： 不涉及 
  */
 public class OpenAPISpecSpec {
 
@@ -53,7 +53,7 @@ public class OpenAPISpecSpec {
     }
 
     /**
-     * 是否动态创建
+     * **参数解释**： 是否动态创建 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return isDynamic
      */
     public Boolean getIsDynamic() {

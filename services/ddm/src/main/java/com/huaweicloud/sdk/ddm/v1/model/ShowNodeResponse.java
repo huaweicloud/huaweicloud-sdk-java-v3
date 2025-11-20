@@ -61,6 +61,16 @@ public class ShowNodeResponse extends SdkResponse {
 
     private String systemvolumeId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
     public ShowNodeResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -231,6 +241,40 @@ public class ShowNodeResponse extends SdkResponse {
         this.systemvolumeId = systemvolumeId;
     }
 
+    public ShowNodeResponse withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 节点所在组ID。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public ShowNodeResponse withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,7 +289,8 @@ public class ShowNodeResponse extends SdkResponse {
             && Objects.equals(this.floatingIp, that.floatingIp) && Objects.equals(this.serverId, that.serverId)
             && Objects.equals(this.subnetName, that.subnetName) && Objects.equals(this.datavolumeId, that.datavolumeId)
             && Objects.equals(this.resSubnetIp, that.resSubnetIp)
-            && Objects.equals(this.systemvolumeId, that.systemvolumeId);
+            && Objects.equals(this.systemvolumeId, that.systemvolumeId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
@@ -259,7 +304,9 @@ public class ShowNodeResponse extends SdkResponse {
             subnetName,
             datavolumeId,
             resSubnetIp,
-            systemvolumeId);
+            systemvolumeId,
+            groupId,
+            subnetId);
     }
 
     @Override
@@ -276,6 +323,8 @@ public class ShowNodeResponse extends SdkResponse {
         sb.append("    datavolumeId: ").append(toIndentedString(datavolumeId)).append("\n");
         sb.append("    resSubnetIp: ").append(toIndentedString(resSubnetIp)).append("\n");
         sb.append("    systemvolumeId: ").append(toIndentedString(systemvolumeId)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

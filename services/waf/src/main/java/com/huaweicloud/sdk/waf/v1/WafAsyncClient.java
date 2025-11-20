@@ -5,6 +5,26 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ApplyCertificateToHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateAntiTamperRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateAntiTamperRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateAntileakageRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateAntileakageRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateCcRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateCcRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateCustomRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateCustomRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateGeoIpRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateGeoIpRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateIgnoreRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateIgnoreRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateIpReputationRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreatePrivacyRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreatePrivacyRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateWhiteblackipRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchCreateWhiteblackipRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchDeleteAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchDeletePoliciesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ChangePrepaidCloudWafRequest;
@@ -29,6 +49,10 @@ import com.huaweicloud.sdk.waf.v1.model.ConfirmTmsResourceInstancesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmTmsResourceInstancesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ConfirmUserBundleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateAlertNoticeConfigRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateAntiTamperRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateAnticrawlerRuleRequest;
@@ -65,10 +89,14 @@ import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePunishmentRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreateQuickAccessDomainRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreateQuickAccessDomainResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAgencyRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAgencyResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAnticrawlerRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAnticrawlerRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleRequest;
@@ -295,6 +323,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateInstanceRouteRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateInstanceRouteResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIpGroupRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIpGroupResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIpReputationRuleRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateLtsInfoConfigRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateLtsInfoConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePolicyProtectHostRequest;
@@ -309,6 +339,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostProtectStatusRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostProtectStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumInstanceRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdatePremiumInstanceResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePrivacyRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePrivacyRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdatePunishmentRuleRequest;
@@ -361,6 +393,305 @@ public class WafAsyncClient {
     public AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse> applyCertificateToHostAsyncInvoker(
         ApplyCertificateToHostRequest request) {
         return new AsyncInvoker<>(request, WafMeta.applyCertificateToHost, hcClient);
+    }
+
+    /**
+     * 选中多个策略批量添加网页防篡改规则
+     *
+     * 选中多个策略为这些策略批量添加网页防篡改规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateAntiTamperRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreateAntiTamperRuleResponse>
+     */
+    public CompletableFuture<BatchCreateAntiTamperRuleResponse> batchCreateAntiTamperRuleAsync(
+        BatchCreateAntiTamperRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreateAntiTamperRule);
+    }
+
+    /**
+     * 选中多个策略批量添加网页防篡改规则
+     *
+     * 选中多个策略为这些策略批量添加网页防篡改规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateAntiTamperRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreateAntiTamperRuleRequest, BatchCreateAntiTamperRuleResponse>
+     */
+    public AsyncInvoker<BatchCreateAntiTamperRuleRequest, BatchCreateAntiTamperRuleResponse> batchCreateAntiTamperRuleAsyncInvoker(
+        BatchCreateAntiTamperRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreateAntiTamperRule, hcClient);
+    }
+
+    /**
+     * 选中多个策略批量添加防敏感信息泄漏规则
+     *
+     * 选中多个策略为这些策略批量添加防敏感信息泄漏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateAntileakageRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreateAntileakageRuleResponse>
+     */
+    public CompletableFuture<BatchCreateAntileakageRuleResponse> batchCreateAntileakageRuleAsync(
+        BatchCreateAntileakageRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreateAntileakageRule);
+    }
+
+    /**
+     * 选中多个策略批量添加防敏感信息泄漏规则
+     *
+     * 选中多个策略为这些策略批量添加防敏感信息泄漏规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateAntileakageRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreateAntileakageRuleRequest, BatchCreateAntileakageRuleResponse>
+     */
+    public AsyncInvoker<BatchCreateAntileakageRuleRequest, BatchCreateAntileakageRuleResponse> batchCreateAntileakageRuleAsyncInvoker(
+        BatchCreateAntileakageRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreateAntileakageRule, hcClient);
+    }
+
+    /**
+     * 选中多个策略为批量添加cc规则
+     *
+     * 选中多个策略为这些策略批量添加cc规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateCcRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreateCcRuleResponse>
+     */
+    public CompletableFuture<BatchCreateCcRuleResponse> batchCreateCcRuleAsync(BatchCreateCcRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreateCcRule);
+    }
+
+    /**
+     * 选中多个策略为批量添加cc规则
+     *
+     * 选中多个策略为这些策略批量添加cc规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateCcRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse>
+     */
+    public AsyncInvoker<BatchCreateCcRuleRequest, BatchCreateCcRuleResponse> batchCreateCcRuleAsyncInvoker(
+        BatchCreateCcRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreateCcRule, hcClient);
+    }
+
+    /**
+     * 选中多个策略批量添加精准防护规则
+     *
+     * 选中多个策略为这些策略批量添加精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateCustomRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreateCustomRuleResponse>
+     */
+    public CompletableFuture<BatchCreateCustomRuleResponse> batchCreateCustomRuleAsync(
+        BatchCreateCustomRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreateCustomRule);
+    }
+
+    /**
+     * 选中多个策略批量添加精准防护规则
+     *
+     * 选中多个策略为这些策略批量添加精准防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateCustomRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreateCustomRuleRequest, BatchCreateCustomRuleResponse>
+     */
+    public AsyncInvoker<BatchCreateCustomRuleRequest, BatchCreateCustomRuleResponse> batchCreateCustomRuleAsyncInvoker(
+        BatchCreateCustomRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreateCustomRule, hcClient);
+    }
+
+    /**
+     * 选中多个策略批量添加地理位置访问控制规则
+     *
+     * 选中多个策略为这些策略批量添加地理位置访问控制规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateGeoIpRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreateGeoIpRuleResponse>
+     */
+    public CompletableFuture<BatchCreateGeoIpRuleResponse> batchCreateGeoIpRuleAsync(
+        BatchCreateGeoIpRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreateGeoIpRule);
+    }
+
+    /**
+     * 选中多个策略批量添加地理位置访问控制规则
+     *
+     * 选中多个策略为这些策略批量添加地理位置访问控制规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateGeoIpRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreateGeoIpRuleRequest, BatchCreateGeoIpRuleResponse>
+     */
+    public AsyncInvoker<BatchCreateGeoIpRuleRequest, BatchCreateGeoIpRuleResponse> batchCreateGeoIpRuleAsyncInvoker(
+        BatchCreateGeoIpRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreateGeoIpRule, hcClient);
+    }
+
+    /**
+     * 选中多个策略批量添加全局白名单规则
+     *
+     * 选中多个策略为这些策略批量添加全局白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateIgnoreRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreateIgnoreRuleResponse>
+     */
+    public CompletableFuture<BatchCreateIgnoreRuleResponse> batchCreateIgnoreRuleAsync(
+        BatchCreateIgnoreRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreateIgnoreRule);
+    }
+
+    /**
+     * 选中多个策略批量添加全局白名单规则
+     *
+     * 选中多个策略为这些策略批量添加全局白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateIgnoreRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreateIgnoreRuleRequest, BatchCreateIgnoreRuleResponse>
+     */
+    public AsyncInvoker<BatchCreateIgnoreRuleRequest, BatchCreateIgnoreRuleResponse> batchCreateIgnoreRuleAsyncInvoker(
+        BatchCreateIgnoreRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreateIgnoreRule, hcClient);
+    }
+
+    /**
+     * 为多个策略批量添加威胁情报访问控制规则
+     *
+     * 选中多个策略为这些策略批量添加威胁情报访问控制规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateIpReputationRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreateIpReputationRuleResponse>
+     */
+    public CompletableFuture<BatchCreateIpReputationRuleResponse> batchCreateIpReputationRuleAsync(
+        BatchCreateIpReputationRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreateIpReputationRule);
+    }
+
+    /**
+     * 为多个策略批量添加威胁情报访问控制规则
+     *
+     * 选中多个策略为这些策略批量添加威胁情报访问控制规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateIpReputationRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreateIpReputationRuleRequest, BatchCreateIpReputationRuleResponse>
+     */
+    public AsyncInvoker<BatchCreateIpReputationRuleRequest, BatchCreateIpReputationRuleResponse> batchCreateIpReputationRuleAsyncInvoker(
+        BatchCreateIpReputationRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreateIpReputationRule, hcClient);
+    }
+
+    /**
+     * 选中多个策略批量添加隐私屏蔽防护防护规则
+     *
+     * 选中多个策略为这些策略批量添加隐私屏蔽防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePrivacyRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreatePrivacyRuleResponse>
+     */
+    public CompletableFuture<BatchCreatePrivacyRuleResponse> batchCreatePrivacyRuleAsync(
+        BatchCreatePrivacyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreatePrivacyRule);
+    }
+
+    /**
+     * 选中多个策略批量添加隐私屏蔽防护防护规则
+     *
+     * 选中多个策略为这些策略批量添加隐私屏蔽防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePrivacyRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreatePrivacyRuleRequest, BatchCreatePrivacyRuleResponse>
+     */
+    public AsyncInvoker<BatchCreatePrivacyRuleRequest, BatchCreatePrivacyRuleResponse> batchCreatePrivacyRuleAsyncInvoker(
+        BatchCreatePrivacyRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreatePrivacyRule, hcClient);
+    }
+
+    /**
+     * 选中多个策略批量添加黑白名单防护规则
+     *
+     * 选中多个策略为这些策略批量添加黑白名单防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateWhiteblackipRuleRequest 请求对象
+     * @return CompletableFuture<BatchCreateWhiteblackipRuleResponse>
+     */
+    public CompletableFuture<BatchCreateWhiteblackipRuleResponse> batchCreateWhiteblackipRuleAsync(
+        BatchCreateWhiteblackipRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchCreateWhiteblackipRule);
+    }
+
+    /**
+     * 选中多个策略批量添加黑白名单防护规则
+     *
+     * 选中多个策略为这些策略批量添加黑白名单防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateWhiteblackipRuleRequest 请求对象
+     * @return AsyncInvoker<BatchCreateWhiteblackipRuleRequest, BatchCreateWhiteblackipRuleResponse>
+     */
+    public AsyncInvoker<BatchCreateWhiteblackipRuleRequest, BatchCreateWhiteblackipRuleResponse> batchCreateWhiteblackipRuleAsyncInvoker(
+        BatchCreateWhiteblackipRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchCreateWhiteblackipRule, hcClient);
+    }
+
+    /**
+     * 批量删除告警通知
+     *
+     * 批量删除告警通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAlertNoticeConfigRequest 请求对象
+     * @return CompletableFuture<BatchDeleteAlertNoticeConfigResponse>
+     */
+    public CompletableFuture<BatchDeleteAlertNoticeConfigResponse> batchDeleteAlertNoticeConfigAsync(
+        BatchDeleteAlertNoticeConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.batchDeleteAlertNoticeConfig);
+    }
+
+    /**
+     * 批量删除告警通知
+     *
+     * 批量删除告警通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAlertNoticeConfigRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteAlertNoticeConfigRequest, BatchDeleteAlertNoticeConfigResponse>
+     */
+    public AsyncInvoker<BatchDeleteAlertNoticeConfigRequest, BatchDeleteAlertNoticeConfigResponse> batchDeleteAlertNoticeConfigAsyncInvoker(
+        BatchDeleteAlertNoticeConfigRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.batchDeleteAlertNoticeConfig, hcClient);
     }
 
     /**
@@ -721,6 +1052,65 @@ public class WafAsyncClient {
     public AsyncInvoker<ConfirmUserBundleRequest, ConfirmUserBundleResponse> confirmUserBundleAsyncInvoker(
         ConfirmUserBundleRequest request) {
         return new AsyncInvoker<>(request, WafMeta.confirmUserBundle, hcClient);
+    }
+
+    /**
+     * 创建代理
+     *
+     * 创建独享引擎的代理
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return CompletableFuture<CreateAgencyResponse>
+     */
+    public CompletableFuture<CreateAgencyResponse> createAgencyAsync(CreateAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createAgency);
+    }
+
+    /**
+     * 创建代理
+     *
+     * 创建独享引擎的代理
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
+     */
+    public AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyAsyncInvoker(
+        CreateAgencyRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createAgency, hcClient);
+    }
+
+    /**
+     * 创建告警通知
+     *
+     * 创建告警通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAlertNoticeConfigRequest 请求对象
+     * @return CompletableFuture<CreateAlertNoticeConfigResponse>
+     */
+    public CompletableFuture<CreateAlertNoticeConfigResponse> createAlertNoticeConfigAsync(
+        CreateAlertNoticeConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createAlertNoticeConfig);
+    }
+
+    /**
+     * 创建告警通知
+     *
+     * 创建告警通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAlertNoticeConfigRequest 请求对象
+     * @return AsyncInvoker<CreateAlertNoticeConfigRequest, CreateAlertNoticeConfigResponse>
+     */
+    public AsyncInvoker<CreateAlertNoticeConfigRequest, CreateAlertNoticeConfigResponse> createAlertNoticeConfigAsyncInvoker(
+        CreateAlertNoticeConfigRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createAlertNoticeConfig, hcClient);
     }
 
     /**
@@ -1308,6 +1698,35 @@ public class WafAsyncClient {
     public AsyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse> createWhiteblackipRuleAsyncInvoker(
         CreateWhiteblackipRuleRequest request) {
         return new AsyncInvoker<>(request, WafMeta.createWhiteblackipRule, hcClient);
+    }
+
+    /**
+     * 删除代理
+     *
+     * 删除独享引擎的代理
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAgencyRequest 请求对象
+     * @return CompletableFuture<DeleteAgencyResponse>
+     */
+    public CompletableFuture<DeleteAgencyResponse> deleteAgencyAsync(DeleteAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteAgency);
+    }
+
+    /**
+     * 删除代理
+     *
+     * 删除独享引擎的代理
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAgencyRequest 请求对象
+     * @return AsyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse>
+     */
+    public AsyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgencyAsyncInvoker(
+        DeleteAgencyRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.deleteAgency, hcClient);
     }
 
     /**
@@ -4585,6 +5004,36 @@ public class WafAsyncClient {
     }
 
     /**
+     * 更新机房IP情报防护规则
+     *
+     * 更新IP情报防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpReputationRuleRequest 请求对象
+     * @return CompletableFuture<UpdateIpReputationRuleResponse>
+     */
+    public CompletableFuture<UpdateIpReputationRuleResponse> updateIpReputationRuleAsync(
+        UpdateIpReputationRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateIpReputationRule);
+    }
+
+    /**
+     * 更新机房IP情报防护规则
+     *
+     * 更新IP情报防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpReputationRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateIpReputationRuleRequest, UpdateIpReputationRuleResponse>
+     */
+    public AsyncInvoker<UpdateIpReputationRuleRequest, UpdateIpReputationRuleResponse> updateIpReputationRuleAsyncInvoker(
+        UpdateIpReputationRuleRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.updateIpReputationRule, hcClient);
+    }
+
+    /**
      * 配置全量日志lts
      *
      * 配置全量日志lts，该接口可用来开启与关闭waf全量日志以及配置日志组和日志流。日志组id和日志流id可前往云日志服务获取。配置的日志流id要属于所配置的日志组。
@@ -4792,6 +5241,36 @@ public class WafAsyncClient {
     }
 
     /**
+     * 操作WAF独享引擎
+     *
+     * 操作WAF独享引擎
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePremiumInstanceRequest 请求对象
+     * @return CompletableFuture<UpdatePremiumInstanceResponse>
+     */
+    public CompletableFuture<UpdatePremiumInstanceResponse> updatePremiumInstanceAsync(
+        UpdatePremiumInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updatePremiumInstance);
+    }
+
+    /**
+     * 操作WAF独享引擎
+     *
+     * 操作WAF独享引擎
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePremiumInstanceRequest 请求对象
+     * @return AsyncInvoker<UpdatePremiumInstanceRequest, UpdatePremiumInstanceResponse>
+     */
+    public AsyncInvoker<UpdatePremiumInstanceRequest, UpdatePremiumInstanceResponse> updatePremiumInstanceAsyncInvoker(
+        UpdatePremiumInstanceRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.updatePremiumInstance, hcClient);
+    }
+
+    /**
      * 更新隐私屏蔽防护规则
      *
      * 更新隐私屏蔽防护规则
@@ -4907,6 +5386,36 @@ public class WafAsyncClient {
     public AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse> updateWhiteblackipRuleAsyncInvoker(
         UpdateWhiteblackipRuleRequest request) {
         return new AsyncInvoker<>(request, WafMeta.updateWhiteblackipRule, hcClient);
+    }
+
+    /**
+     * 域名快速接入WAF
+     *
+     * 快速接入，直接去修改用户的DNS记录，使域名快速接入WAF
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateQuickAccessDomainRequest 请求对象
+     * @return CompletableFuture<CreateQuickAccessDomainResponse>
+     */
+    public CompletableFuture<CreateQuickAccessDomainResponse> createQuickAccessDomainAsync(
+        CreateQuickAccessDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createQuickAccessDomain);
+    }
+
+    /**
+     * 域名快速接入WAF
+     *
+     * 快速接入，直接去修改用户的DNS记录，使域名快速接入WAF
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateQuickAccessDomainRequest 请求对象
+     * @return AsyncInvoker<CreateQuickAccessDomainRequest, CreateQuickAccessDomainResponse>
+     */
+    public AsyncInvoker<CreateQuickAccessDomainRequest, CreateQuickAccessDomainResponse> createQuickAccessDomainAsyncInvoker(
+        CreateQuickAccessDomainRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createQuickAccessDomain, hcClient);
     }
 
     /**

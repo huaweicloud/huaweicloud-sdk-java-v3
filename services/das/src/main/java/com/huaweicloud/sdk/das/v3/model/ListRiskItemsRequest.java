@@ -105,6 +105,11 @@ public class ListRiskItemsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListRiskItemsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -147,7 +152,7 @@ public class ListRiskItemsRequest {
     }
 
     /**
-     * 页码，默认1
+     * 页码，默认1；待废弃，不建议使用，page和offset同时存在使用offset
      * @return page
      */
     public Integer getPage() {
@@ -175,6 +180,23 @@ public class ListRiskItemsRequest {
         this.limit = limit;
     }
 
+    public ListRiskItemsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 开始查询的偏移量，默认0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -185,12 +207,13 @@ public class ListRiskItemsRequest {
         }
         ListRiskItemsRequest that = (ListRiskItemsRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.datastoreType, that.datastoreType)
-            && Objects.equals(this.page, that.page) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.page, that.page) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, datastoreType, page, limit);
+        return Objects.hash(xLanguage, datastoreType, page, limit, offset);
     }
 
     @Override
@@ -201,6 +224,7 @@ public class ListRiskItemsRequest {
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

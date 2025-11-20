@@ -120,6 +120,11 @@ public class ListCicdImagesRequest {
 
     private Boolean risky;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_type")
+
+    private String pipelineType;
+
     public ListCicdImagesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -508,6 +513,23 @@ public class ListCicdImagesRequest {
         this.risky = risky;
     }
 
+    public ListCicdImagesRequest withPipelineType(String pipelineType) {
+        this.pipelineType = pipelineType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 流水线类型 **约束限制**: 不涉及 **取值范围**: - jenkins：Jenkins流水线。 - codearts：CodeArts流水线。  **默认取值**: 不涉及 
+     * @return pipelineType
+     */
+    public String getPipelineType() {
+        return pipelineType;
+    }
+
+    public void setPipelineType(String pipelineType) {
+        this.pipelineType = pipelineType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -530,7 +552,8 @@ public class ListCicdImagesRequest {
             && Objects.equals(this.endLatestScanTime, that.endLatestScanTime)
             && Objects.equals(this.hasMaliciousFile, that.hasMaliciousFile)
             && Objects.equals(this.hasUnsafeSetting, that.hasUnsafeSetting) && Objects.equals(this.hasVul, that.hasVul)
-            && Objects.equals(this.severityLevel, that.severityLevel) && Objects.equals(this.risky, that.risky);
+            && Objects.equals(this.severityLevel, that.severityLevel) && Objects.equals(this.risky, that.risky)
+            && Objects.equals(this.pipelineType, that.pipelineType);
     }
 
     @Override
@@ -556,7 +579,8 @@ public class ListCicdImagesRequest {
             hasUnsafeSetting,
             hasVul,
             severityLevel,
-            risky);
+            risky,
+            pipelineType);
     }
 
     @Override
@@ -585,6 +609,7 @@ public class ListCicdImagesRequest {
         sb.append("    hasVul: ").append(toIndentedString(hasVul)).append("\n");
         sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
         sb.append("    risky: ").append(toIndentedString(risky)).append("\n");
+        sb.append("    pipelineType: ").append(toIndentedString(pipelineType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

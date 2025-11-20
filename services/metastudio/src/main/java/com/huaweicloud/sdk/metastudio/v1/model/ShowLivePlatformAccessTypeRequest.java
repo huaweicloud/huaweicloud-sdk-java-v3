@@ -31,6 +31,16 @@ public class ShowLivePlatformAccessTypeRequest {
     private String xAppUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
 
     private Boolean used;
@@ -109,6 +119,44 @@ public class ShowLivePlatformAccessTypeRequest {
         this.xAppUserId = xAppUserId;
     }
 
+    public ShowLivePlatformAccessTypeRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量，表示从此偏移量开始查询。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ShowLivePlatformAccessTypeRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页显示的条目数量。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     public ShowLivePlatformAccessTypeRequest withUsed(Boolean used) {
         this.used = used;
         return this;
@@ -137,12 +185,13 @@ public class ShowLivePlatformAccessTypeRequest {
         ShowLivePlatformAccessTypeRequest that = (ShowLivePlatformAccessTypeRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.used, that.used);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, used);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, offset, limit, used);
     }
 
     @Override
@@ -153,6 +202,8 @@ public class ShowLivePlatformAccessTypeRequest {
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    used: ").append(toIndentedString(used)).append("\n");
         sb.append("}");
         return sb.toString();

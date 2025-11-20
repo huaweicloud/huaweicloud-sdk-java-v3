@@ -3,10 +3,22 @@ package com.huaweicloud.sdk.ddm.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.ddm.v1.model.CancelMigrationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CancelMigrationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CheckPreliminaryResultsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CheckPreliminaryResultsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmConfigurationsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmConfigurationsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequest;
@@ -15,6 +27,10 @@ import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteBackupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteBackupResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteConfigurationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseRequest;
@@ -25,6 +41,8 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DownloadSchemaMetadataRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DownloadSchemaMetadataResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesRequest;
@@ -35,8 +53,14 @@ import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsForMigrateRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsForMigrateResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListBackupsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListBackupsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
@@ -65,6 +89,12 @@ import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersResponse;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateLogicDbRequest;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateLogicDbResponse;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateResultsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.MigrateResultsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ModifyConfigurationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ModifyConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorRequest;
@@ -75,14 +105,32 @@ import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.Restore2ExistRequest;
+import com.huaweicloud.sdk.ddm.v1.model.Restore2ExistResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RestoreMetadataRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RestoreMetadataResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RetryMigrationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RetryMigrationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RollbackMigrationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RollbackMigrationResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleDdmsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleDdmsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleRdsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleRdsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleTimeRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleTimeResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowBackupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowBackupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowConfigurationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceDatabaseRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceRequest;
@@ -95,10 +143,14 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowRelatedDnsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowRelatedDnsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteRequest;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteResponse;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
@@ -115,6 +167,8 @@ import com.huaweicloud.sdk.ddm.v1.model.UpdateReadAndWriteStrategyRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateReadAndWriteStrategyResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UploadSchemaMetadataRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UploadSchemaMetadataResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ValidateWeakPasswordRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ValidateWeakPasswordResponse;
 
@@ -158,6 +212,64 @@ public class DdmClient {
     public SyncInvoker<ChangeDatabaseVersionRequest, ChangeDatabaseVersionResponse> changeDatabaseVersionInvoker(
         ChangeDatabaseVersionRequest request) {
         return new SyncInvoker<>(request, DdmMeta.changeDatabaseVersion, hcClient);
+    }
+
+    /**
+     * 创建参数组
+     *
+     * 创建参数组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDdmConfigurationsRequest 请求对象
+     * @return CreateDdmConfigurationsResponse
+     */
+    public CreateDdmConfigurationsResponse createDdmConfigurations(CreateDdmConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.createDdmConfigurations);
+    }
+
+    /**
+     * 创建参数组
+     *
+     * 创建参数组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDdmConfigurationsRequest 请求对象
+     * @return SyncInvoker<CreateDdmConfigurationsRequest, CreateDdmConfigurationsResponse>
+     */
+    public SyncInvoker<CreateDdmConfigurationsRequest, CreateDdmConfigurationsResponse> createDdmConfigurationsInvoker(
+        CreateDdmConfigurationsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.createDdmConfigurations, hcClient);
+    }
+
+    /**
+     * 删除参数组
+     *
+     * 删除参数组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConfigurationRequest 请求对象
+     * @return DeleteConfigurationResponse
+     */
+    public DeleteConfigurationResponse deleteConfiguration(DeleteConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.deleteConfiguration);
+    }
+
+    /**
+     * 删除参数组
+     *
+     * 删除参数组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConfigurationRequest 请求对象
+     * @return SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>
+     */
+    public SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationInvoker(
+        DeleteConfigurationRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.deleteConfiguration, hcClient);
     }
 
     /**
@@ -217,6 +329,35 @@ public class DdmClient {
     public SyncInvoker<ListDdmConfigurationsRequest, ListDdmConfigurationsResponse> listDdmConfigurationsInvoker(
         ListDdmConfigurationsRequest request) {
         return new SyncInvoker<>(request, DdmMeta.listDdmConfigurations, hcClient);
+    }
+
+    /**
+     * 修改实例参数
+     *
+     * 修改实例参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyConfigurationRequest 请求对象
+     * @return ModifyConfigurationResponse
+     */
+    public ModifyConfigurationResponse modifyConfiguration(ModifyConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.modifyConfiguration);
+    }
+
+    /**
+     * 修改实例参数
+     *
+     * 修改实例参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyConfigurationRequest 请求对象
+     * @return SyncInvoker<ModifyConfigurationRequest, ModifyConfigurationResponse>
+     */
+    public SyncInvoker<ModifyConfigurationRequest, ModifyConfigurationResponse> modifyConfigurationInvoker(
+        ModifyConfigurationRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.modifyConfiguration, hcClient);
     }
 
     /**
@@ -332,6 +473,151 @@ public class DdmClient {
     public SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionInvoker(
         ListApiVersionRequest request) {
         return new SyncInvoker<>(request, DdmMeta.listApiVersion, hcClient);
+    }
+
+    /**
+     * 取消分片变更
+     *
+     * 取消分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelMigrationRequest 请求对象
+     * @return CancelMigrationResponse
+     */
+    public CancelMigrationResponse cancelMigration(CancelMigrationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.cancelMigration);
+    }
+
+    /**
+     * 取消分片变更
+     *
+     * 取消分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelMigrationRequest 请求对象
+     * @return SyncInvoker<CancelMigrationRequest, CancelMigrationResponse>
+     */
+    public SyncInvoker<CancelMigrationRequest, CancelMigrationResponse> cancelMigrationInvoker(
+        CancelMigrationRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.cancelMigration, hcClient);
+    }
+
+    /**
+     * 修改切换路由策略
+     *
+     * 修改切换路由策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeStrategyRequest 请求对象
+     * @return ChangeStrategyResponse
+     */
+    public ChangeStrategyResponse changeStrategy(ChangeStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.changeStrategy);
+    }
+
+    /**
+     * 修改切换路由策略
+     *
+     * 修改切换路由策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeStrategyRequest 请求对象
+     * @return SyncInvoker<ChangeStrategyRequest, ChangeStrategyResponse>
+     */
+    public SyncInvoker<ChangeStrategyRequest, ChangeStrategyResponse> changeStrategyInvoker(
+        ChangeStrategyRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.changeStrategy, hcClient);
+    }
+
+    /**
+     * 分片变更预校验
+     *
+     * 分片变更预校验
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckMigrateLogicDbRequest 请求对象
+     * @return CheckMigrateLogicDbResponse
+     */
+    public CheckMigrateLogicDbResponse checkMigrateLogicDb(CheckMigrateLogicDbRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.checkMigrateLogicDb);
+    }
+
+    /**
+     * 分片变更预校验
+     *
+     * 分片变更预校验
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckMigrateLogicDbRequest 请求对象
+     * @return SyncInvoker<CheckMigrateLogicDbRequest, CheckMigrateLogicDbResponse>
+     */
+    public SyncInvoker<CheckMigrateLogicDbRequest, CheckMigrateLogicDbResponse> checkMigrateLogicDbInvoker(
+        CheckMigrateLogicDbRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.checkMigrateLogicDb, hcClient);
+    }
+
+    /**
+     * 查询分片变更预校验异步结果
+     *
+     * 查询分片变更预校验异步结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckPreliminaryResultsRequest 请求对象
+     * @return CheckPreliminaryResultsResponse
+     */
+    public CheckPreliminaryResultsResponse checkPreliminaryResults(CheckPreliminaryResultsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.checkPreliminaryResults);
+    }
+
+    /**
+     * 查询分片变更预校验异步结果
+     *
+     * 查询分片变更预校验异步结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckPreliminaryResultsRequest 请求对象
+     * @return SyncInvoker<CheckPreliminaryResultsRequest, CheckPreliminaryResultsResponse>
+     */
+    public SyncInvoker<CheckPreliminaryResultsRequest, CheckPreliminaryResultsResponse> checkPreliminaryResultsInvoker(
+        CheckPreliminaryResultsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.checkPreliminaryResults, hcClient);
+    }
+
+    /**
+     * 清理分片变更
+     *
+     * 清理分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CleanMigrationRequest 请求对象
+     * @return CleanMigrationResponse
+     */
+    public CleanMigrationResponse cleanMigration(CleanMigrationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.cleanMigration);
+    }
+
+    /**
+     * 清理分片变更
+     *
+     * 清理分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CleanMigrationRequest 请求对象
+     * @return SyncInvoker<CleanMigrationRequest, CleanMigrationResponse>
+     */
+    public SyncInvoker<CleanMigrationRequest, CleanMigrationResponse> cleanMigrationInvoker(
+        CleanMigrationRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.cleanMigration, hcClient);
     }
 
     /**
@@ -482,6 +768,34 @@ public class DdmClient {
     }
 
     /**
+     * 删除备份
+     *
+     * 删除备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBackupRequest 请求对象
+     * @return DeleteBackupResponse
+     */
+    public DeleteBackupResponse deleteBackup(DeleteBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.deleteBackup);
+    }
+
+    /**
+     * 删除备份
+     *
+     * 删除备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBackupRequest 请求对象
+     * @return SyncInvoker<DeleteBackupRequest, DeleteBackupResponse>
+     */
+    public SyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupInvoker(DeleteBackupRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.deleteBackup, hcClient);
+    }
+
+    /**
      * 删除DDM逻辑库
      *
      * 删除指定的逻辑库，释放该逻辑库的所有资源。
@@ -626,6 +940,35 @@ public class DdmClient {
     }
 
     /**
+     * 导出逻辑库元数据
+     *
+     * 导出所有逻辑库物理分片在数据节点上的分布关系
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadSchemaMetadataRequest 请求对象
+     * @return DownloadSchemaMetadataResponse
+     */
+    public DownloadSchemaMetadataResponse downloadSchemaMetadata(DownloadSchemaMetadataRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.downloadSchemaMetadata);
+    }
+
+    /**
+     * 导出逻辑库元数据
+     *
+     * 导出所有逻辑库物理分片在数据节点上的分布关系
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadSchemaMetadataRequest 请求对象
+     * @return SyncInvoker<DownloadSchemaMetadataRequest, DownloadSchemaMetadataResponse>
+     */
+    public SyncInvoker<DownloadSchemaMetadataRequest, DownloadSchemaMetadataResponse> downloadSchemaMetadataInvoker(
+        DownloadSchemaMetadataRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.downloadSchemaMetadata, hcClient);
+    }
+
+    /**
      * kill逻辑会话
      *
      * kill逻辑会话
@@ -743,6 +1086,64 @@ public class DdmClient {
     }
 
     /**
+     * 查询创建逻辑库可选取的数据节点实例列表
+     *
+     * 查询创建逻辑库可选取的数据节点实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableRdsRequest 请求对象
+     * @return ListAvailableRdsResponse
+     */
+    public ListAvailableRdsResponse listAvailableRds(ListAvailableRdsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.listAvailableRds);
+    }
+
+    /**
+     * 查询创建逻辑库可选取的数据节点实例列表
+     *
+     * 查询创建逻辑库可选取的数据节点实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableRdsRequest 请求对象
+     * @return SyncInvoker<ListAvailableRdsRequest, ListAvailableRdsResponse>
+     */
+    public SyncInvoker<ListAvailableRdsRequest, ListAvailableRdsResponse> listAvailableRdsInvoker(
+        ListAvailableRdsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.listAvailableRds, hcClient);
+    }
+
+    /**
+     * 查询分片变更可选取的数据节点实例列表
+     *
+     * 查询分片变更可选取的数据节点实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableRdsForMigrateRequest 请求对象
+     * @return ListAvailableRdsForMigrateResponse
+     */
+    public ListAvailableRdsForMigrateResponse listAvailableRdsForMigrate(ListAvailableRdsForMigrateRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.listAvailableRdsForMigrate);
+    }
+
+    /**
+     * 查询分片变更可选取的数据节点实例列表
+     *
+     * 查询分片变更可选取的数据节点实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAvailableRdsForMigrateRequest 请求对象
+     * @return SyncInvoker<ListAvailableRdsForMigrateRequest, ListAvailableRdsForMigrateResponse>
+     */
+    public SyncInvoker<ListAvailableRdsForMigrateRequest, ListAvailableRdsForMigrateResponse> listAvailableRdsForMigrateInvoker(
+        ListAvailableRdsForMigrateRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.listAvailableRdsForMigrate, hcClient);
+    }
+
+    /**
      * 查询创建逻辑库可选取的数据库实例列表
      *
      * 查询创建逻辑库可选取的数据库实例列表。
@@ -769,6 +1170,34 @@ public class DdmClient {
     public SyncInvoker<ListAvailableRdsListRequest, ListAvailableRdsListResponse> listAvailableRdsListInvoker(
         ListAvailableRdsListRequest request) {
         return new SyncInvoker<>(request, DdmMeta.listAvailableRdsList, hcClient);
+    }
+
+    /**
+     * 获取备份列表
+     *
+     * 获取备份列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupsRequest 请求对象
+     * @return ListBackupsResponse
+     */
+    public ListBackupsResponse listBackups(ListBackupsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.listBackups);
+    }
+
+    /**
+     * 获取备份列表
+     *
+     * 获取备份列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupsRequest 请求对象
+     * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
+     */
+    public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.listBackups, hcClient);
     }
 
     /**
@@ -1111,6 +1540,64 @@ public class DdmClient {
     }
 
     /**
+     * 分片变更
+     *
+     * 分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request MigrateLogicDbRequest 请求对象
+     * @return MigrateLogicDbResponse
+     */
+    public MigrateLogicDbResponse migrateLogicDb(MigrateLogicDbRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.migrateLogicDb);
+    }
+
+    /**
+     * 分片变更
+     *
+     * 分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request MigrateLogicDbRequest 请求对象
+     * @return SyncInvoker<MigrateLogicDbRequest, MigrateLogicDbResponse>
+     */
+    public SyncInvoker<MigrateLogicDbRequest, MigrateLogicDbResponse> migrateLogicDbInvoker(
+        MigrateLogicDbRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.migrateLogicDb, hcClient);
+    }
+
+    /**
+     * 查询分片变更任务详情
+     *
+     * 查询分片变更任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request MigrateResultsRequest 请求对象
+     * @return MigrateResultsResponse
+     */
+    public MigrateResultsResponse migrateResults(MigrateResultsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.migrateResults);
+    }
+
+    /**
+     * 查询分片变更任务详情
+     *
+     * 查询分片变更任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request MigrateResultsRequest 请求对象
+     * @return SyncInvoker<MigrateResultsRequest, MigrateResultsResponse>
+     */
+    public SyncInvoker<MigrateResultsRequest, MigrateResultsResponse> migrateResultsInvoker(
+        MigrateResultsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.migrateResults, hcClient);
+    }
+
+    /**
      * DDM表数据重载
      *
      * DDM实例跨region容灾场景下，针对目标DDM实例实现表数据reload，使数据同步。
@@ -1254,6 +1741,236 @@ public class DdmClient {
     }
 
     /**
+     * 恢复到新实例
+     *
+     * 恢复到新实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request Restore2ExistRequest 请求对象
+     * @return Restore2ExistResponse
+     */
+    public Restore2ExistResponse restore2Exist(Restore2ExistRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.restore2Exist);
+    }
+
+    /**
+     * 恢复到新实例
+     *
+     * 恢复到新实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request Restore2ExistRequest 请求对象
+     * @return SyncInvoker<Restore2ExistRequest, Restore2ExistResponse>
+     */
+    public SyncInvoker<Restore2ExistRequest, Restore2ExistResponse> restore2ExistInvoker(Restore2ExistRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.restore2Exist, hcClient);
+    }
+
+    /**
+     * 元数据恢复
+     *
+     * 元数据恢复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreMetadataRequest 请求对象
+     * @return RestoreMetadataResponse
+     */
+    public RestoreMetadataResponse restoreMetadata(RestoreMetadataRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.restoreMetadata);
+    }
+
+    /**
+     * 元数据恢复
+     *
+     * 元数据恢复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreMetadataRequest 请求对象
+     * @return SyncInvoker<RestoreMetadataRequest, RestoreMetadataResponse>
+     */
+    public SyncInvoker<RestoreMetadataRequest, RestoreMetadataResponse> restoreMetadataInvoker(
+        RestoreMetadataRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.restoreMetadata, hcClient);
+    }
+
+    /**
+     * 重试分片变更
+     *
+     * 重试分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryMigrationRequest 请求对象
+     * @return RetryMigrationResponse
+     */
+    public RetryMigrationResponse retryMigration(RetryMigrationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.retryMigration);
+    }
+
+    /**
+     * 重试分片变更
+     *
+     * 重试分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryMigrationRequest 请求对象
+     * @return SyncInvoker<RetryMigrationRequest, RetryMigrationResponse>
+     */
+    public SyncInvoker<RetryMigrationRequest, RetryMigrationResponse> retryMigrationInvoker(
+        RetryMigrationRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.retryMigration, hcClient);
+    }
+
+    /**
+     * 回滚分片变更
+     *
+     * 回滚分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RollbackMigrationRequest 请求对象
+     * @return RollbackMigrationResponse
+     */
+    public RollbackMigrationResponse rollbackMigration(RollbackMigrationRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.rollbackMigration);
+    }
+
+    /**
+     * 回滚分片变更
+     *
+     * 回滚分片变更
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RollbackMigrationRequest 请求对象
+     * @return SyncInvoker<RollbackMigrationRequest, RollbackMigrationResponse>
+     */
+    public SyncInvoker<RollbackMigrationRequest, RollbackMigrationResponse> rollbackMigrationInvoker(
+        RollbackMigrationRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.rollbackMigration, hcClient);
+    }
+
+    /**
+     * 查询可用于恢复的实例列表
+     *
+     * 查询可用于恢复的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvalibleDdmsRequest 请求对象
+     * @return ShowAvalibleDdmsResponse
+     */
+    public ShowAvalibleDdmsResponse showAvalibleDdms(ShowAvalibleDdmsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showAvalibleDdms);
+    }
+
+    /**
+     * 查询可用于恢复的实例列表
+     *
+     * 查询可用于恢复的实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvalibleDdmsRequest 请求对象
+     * @return SyncInvoker<ShowAvalibleDdmsRequest, ShowAvalibleDdmsResponse>
+     */
+    public SyncInvoker<ShowAvalibleDdmsRequest, ShowAvalibleDdmsResponse> showAvalibleDdmsInvoker(
+        ShowAvalibleDdmsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showAvalibleDdms, hcClient);
+    }
+
+    /**
+     * 查询可用于时间点恢复的数据节点列表
+     *
+     * 查询可用于时间点恢复的数据节点列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvalibleRdsRequest 请求对象
+     * @return ShowAvalibleRdsResponse
+     */
+    public ShowAvalibleRdsResponse showAvalibleRds(ShowAvalibleRdsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showAvalibleRds);
+    }
+
+    /**
+     * 查询可用于时间点恢复的数据节点列表
+     *
+     * 查询可用于时间点恢复的数据节点列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvalibleRdsRequest 请求对象
+     * @return SyncInvoker<ShowAvalibleRdsRequest, ShowAvalibleRdsResponse>
+     */
+    public SyncInvoker<ShowAvalibleRdsRequest, ShowAvalibleRdsResponse> showAvalibleRdsInvoker(
+        ShowAvalibleRdsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showAvalibleRds, hcClient);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询可恢复时间段
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvalibleTimeRequest 请求对象
+     * @return ShowAvalibleTimeResponse
+     */
+    public ShowAvalibleTimeResponse showAvalibleTime(ShowAvalibleTimeRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showAvalibleTime);
+    }
+
+    /**
+     * 查询可恢复时间段
+     *
+     * 查询可恢复时间段
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvalibleTimeRequest 请求对象
+     * @return SyncInvoker<ShowAvalibleTimeRequest, ShowAvalibleTimeResponse>
+     */
+    public SyncInvoker<ShowAvalibleTimeRequest, ShowAvalibleTimeResponse> showAvalibleTimeInvoker(
+        ShowAvalibleTimeRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showAvalibleTime, hcClient);
+    }
+
+    /**
+     * 查询备份详情
+     *
+     * 查询备份详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupRequest 请求对象
+     * @return ShowBackupResponse
+     */
+    public ShowBackupResponse showBackup(ShowBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showBackup);
+    }
+
+    /**
+     * 查询备份详情
+     *
+     * 查询备份详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupRequest 请求对象
+     * @return SyncInvoker<ShowBackupRequest, ShowBackupResponse>
+     */
+    public SyncInvoker<ShowBackupRequest, ShowBackupResponse> showBackupInvoker(ShowBackupRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showBackup, hcClient);
+    }
+
+    /**
      * 查询DDM逻辑库详细信息
      *
      * 查询指定逻辑库的详细信息。
@@ -1336,6 +2053,35 @@ public class DdmClient {
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
         return new SyncInvoker<>(request, DdmMeta.showInstance, hcClient);
+    }
+
+    /**
+     * 查询逻辑库详情
+     *
+     * 查询逻辑库详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceDatabaseRequest 请求对象
+     * @return ShowInstanceDatabaseResponse
+     */
+    public ShowInstanceDatabaseResponse showInstanceDatabase(ShowInstanceDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showInstanceDatabase);
+    }
+
+    /**
+     * 查询逻辑库详情
+     *
+     * 查询逻辑库详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceDatabaseRequest 请求对象
+     * @return SyncInvoker<ShowInstanceDatabaseRequest, ShowInstanceDatabaseResponse>
+     */
+    public SyncInvoker<ShowInstanceDatabaseRequest, ShowInstanceDatabaseResponse> showInstanceDatabaseInvoker(
+        ShowInstanceDatabaseRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showInstanceDatabase, hcClient);
     }
 
     /**
@@ -1483,6 +2229,35 @@ public class DdmClient {
     }
 
     /**
+     * 查询实例在恢复时间点关联的数据节点
+     *
+     * 查询实例在恢复时间点关联的数据节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRelatedDnsRequest 请求对象
+     * @return ShowRelatedDnsResponse
+     */
+    public ShowRelatedDnsResponse showRelatedDns(ShowRelatedDnsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showRelatedDns);
+    }
+
+    /**
+     * 查询实例在恢复时间点关联的数据节点
+     *
+     * 查询实例在恢复时间点关联的数据节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRelatedDnsRequest 请求对象
+     * @return SyncInvoker<ShowRelatedDnsRequest, ShowRelatedDnsResponse>
+     */
+    public SyncInvoker<ShowRelatedDnsRequest, ShowRelatedDnsResponse> showRelatedDnsInvoker(
+        ShowRelatedDnsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showRelatedDns, hcClient);
+    }
+
+    /**
      * DDM实例节点缩容
      *
      * 对指定的DDM实例的节点个数进行缩容。
@@ -1509,6 +2284,34 @@ public class DdmClient {
     public SyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodesInvoker(
         ShrinkInstanceNodesRequest request) {
         return new SyncInvoker<>(request, DdmMeta.shrinkInstanceNodes, hcClient);
+    }
+
+    /**
+     * 切换路由
+     *
+     * 切换路由
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchRouteRequest 请求对象
+     * @return SwitchRouteResponse
+     */
+    public SwitchRouteResponse switchRoute(SwitchRouteRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.switchRoute);
+    }
+
+    /**
+     * 切换路由
+     *
+     * 切换路由
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchRouteRequest 请求对象
+     * @return SyncInvoker<SwitchRouteRequest, SwitchRouteResponse>
+     */
+    public SyncInvoker<SwitchRouteRequest, SwitchRouteResponse> switchRouteInvoker(SwitchRouteRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.switchRoute, hcClient);
     }
 
     /**
@@ -1739,6 +2542,35 @@ public class DdmClient {
      */
     public SyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserInvoker(UpdateUserRequest request) {
         return new SyncInvoker<>(request, DdmMeta.updateUser, hcClient);
+    }
+
+    /**
+     * 导入逻辑库元数据
+     *
+     * 导入所有逻辑库物理分片分布关系，以此创建相同物理分片分布关系的逻辑库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadSchemaMetadataRequest 请求对象
+     * @return UploadSchemaMetadataResponse
+     */
+    public UploadSchemaMetadataResponse uploadSchemaMetadata(UploadSchemaMetadataRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.uploadSchemaMetadata);
+    }
+
+    /**
+     * 导入逻辑库元数据
+     *
+     * 导入所有逻辑库物理分片分布关系，以此创建相同物理分片分布关系的逻辑库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadSchemaMetadataRequest 请求对象
+     * @return SyncInvoker<UploadSchemaMetadataRequest, UploadSchemaMetadataResponse>
+     */
+    public SyncInvoker<UploadSchemaMetadataRequest, UploadSchemaMetadataResponse> uploadSchemaMetadataInvoker(
+        UploadSchemaMetadataRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.uploadSchemaMetadata, hcClient);
     }
 
     /**

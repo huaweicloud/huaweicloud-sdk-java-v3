@@ -44,13 +44,18 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time")
+
+    private VulScanPolicyResponseInfoTime time;
+
     public ShowVulScanPolicyResponse withScanPeriod(String scanPeriod) {
         this.scanPeriod = scanPeriod;
         return this;
     }
 
     /**
-     * 扫描周期 - one_day : 每天 - three_day : 每三天 - one_week : 每周
+     * **参数解释**: 扫描周期 **取值范围**: - one_day：每天 - three_day：每三天 - one_week：每周 - one_month：每月 
      * @return scanPeriod
      */
     public String getScanPeriod() {
@@ -83,7 +88,7 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 扫描的漏洞类型列表
+     * **参数解释**: \"扫描的漏洞类型列表\" **取值范围**: 最小值0，最大值5 
      * @return scanVulTypes
      */
     public List<String> getScanVulTypes() {
@@ -100,7 +105,7 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 扫描主机的范围，包含如下：   -all_host : 扫描全部主机   -specific_host : 扫描指定主机
+     * **参数解释**: 扫描主机的范围 **取值范围**: - all_host：扫描全部主机 - specific_host：扫描指定主机 
      * @return scanRangeType
      */
     public String getScanRangeType() {
@@ -133,7 +138,7 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 主机ID列表；当scan_range_type的值为specific_host时表示扫描的主机列表
+     * **参数解释**: 主机ID列表；当scan_range_type的值为specific_host时表示扫描的主机列表 **取值范围**: 最小值0，最大值20000 
      * @return hostIds
      */
     public List<String> getHostIds() {
@@ -150,7 +155,7 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 可进行漏洞扫描的主机总数
+     * **参数解释**: 可进行漏洞扫描的主机总数 **取值范围**: 最小值0，最大值20000 
      * minimum: 0
      * maximum: 20000
      * @return totalHostNum
@@ -169,7 +174,7 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 扫描策略状态，包含如下：   -open : 开启   -close : 关闭
+     * **参数解释**: 扫描策略状态 **取值范围**: - open : 开启 - close : 关闭 
      * @return status
      */
     public String getStatus() {
@@ -178,6 +183,32 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public ShowVulScanPolicyResponse withTime(VulScanPolicyResponseInfoTime time) {
+        this.time = time;
+        return this;
+    }
+
+    public ShowVulScanPolicyResponse withTime(Consumer<VulScanPolicyResponseInfoTime> timeSetter) {
+        if (this.time == null) {
+            this.time = new VulScanPolicyResponseInfoTime();
+            timeSetter.accept(this.time);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get time
+     * @return time
+     */
+    public VulScanPolicyResponseInfoTime getTime() {
+        return time;
+    }
+
+    public void setTime(VulScanPolicyResponseInfoTime time) {
+        this.time = time;
     }
 
     @Override
@@ -191,12 +222,13 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
         ShowVulScanPolicyResponse that = (ShowVulScanPolicyResponse) obj;
         return Objects.equals(this.scanPeriod, that.scanPeriod) && Objects.equals(this.scanVulTypes, that.scanVulTypes)
             && Objects.equals(this.scanRangeType, that.scanRangeType) && Objects.equals(this.hostIds, that.hostIds)
-            && Objects.equals(this.totalHostNum, that.totalHostNum) && Objects.equals(this.status, that.status);
+            && Objects.equals(this.totalHostNum, that.totalHostNum) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.time, that.time);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scanPeriod, scanVulTypes, scanRangeType, hostIds, totalHostNum, status);
+        return Objects.hash(scanPeriod, scanVulTypes, scanRangeType, hostIds, totalHostNum, status, time);
     }
 
     @Override
@@ -209,6 +241,7 @@ public class ShowVulScanPolicyResponse extends SdkResponse {
         sb.append("    hostIds: ").append(toIndentedString(hostIds)).append("\n");
         sb.append("    totalHostNum: ").append(toIndentedString(totalHostNum)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("}");
         return sb.toString();
     }

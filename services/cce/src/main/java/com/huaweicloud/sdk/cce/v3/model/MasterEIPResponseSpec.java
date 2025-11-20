@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class MasterEIPResponseSpec {
 
     /**
-     * 绑定动作
+     * **参数解释**： 绑定动作 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      */
     public static final class ActionEnum {
 
@@ -101,7 +101,7 @@ public class MasterEIPResponseSpec {
     }
 
     /**
-     * 绑定动作
+     * **参数解释**： 绑定动作 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return action
      */
     public ActionEnum getAction() {
@@ -144,7 +144,7 @@ public class MasterEIPResponseSpec {
     }
 
     /**
-     * 弹性公网IP
+     * **参数解释**： 弹性公网IP **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return elasticIp
      */
     public String getElasticIp() {

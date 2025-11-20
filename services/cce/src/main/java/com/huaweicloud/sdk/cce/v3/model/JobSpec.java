@@ -51,7 +51,7 @@ public class JobSpec {
     }
 
     /**
-     * 任务的类型，例：“CreateCluster”- 创建集群。
+     * **参数解释**： 任务的类型。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return type
      */
     public String getType() {
@@ -68,7 +68,7 @@ public class JobSpec {
     }
 
     /**
-     * 任务所在的集群的ID。
+     * **参数解释**： 任务所在的集群的ID。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return clusterUID
      */
     public String getClusterUID() {
@@ -85,7 +85,7 @@ public class JobSpec {
     }
 
     /**
-     * 任务操作的资源ID。
+     * **参数解释**： 任务操作的资源ID。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return resourceID
      */
     public String getResourceID() {
@@ -102,7 +102,7 @@ public class JobSpec {
     }
 
     /**
-     * 任务操作的资源名称。
+     * **参数解释**： 任务操作的资源名称。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return resourceName
      */
     public String getResourceName() {
@@ -135,7 +135,7 @@ public class JobSpec {
     }
 
     /**
-     * 扩展参数。
+     * **参数解释**： 扩展参数 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return extendParam
      */
     public Map<String, String> getExtendParam() {
@@ -168,7 +168,7 @@ public class JobSpec {
     }
 
     /**
-     * 子任务的列表。  - 包含了所有子任务的详细信息 - 在创建集群、节点等场景下，通常会由多个子任务共同组成创建任务，在子任务都完成后，任务才会完成 
+     * **参数解释**： 子任务的列表。 - 包含了所有子任务的详细信息 - 在创建集群、节点等场景下，通常会由多个子任务共同组成创建任务，在子任务都完成后，任务才会完成  **约束限制**： 不涉及 
      * @return subJobs
      */
     public List<Job> getSubJobs() {

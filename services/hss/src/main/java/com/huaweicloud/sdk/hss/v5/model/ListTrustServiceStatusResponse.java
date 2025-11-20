@@ -27,7 +27,7 @@ public class ListTrustServiceStatusResponse extends SdkResponse {
     }
 
     /**
-     * xxx
+     * **参数解释**: 可信服务状态 **取值范围**: - true：是。 - false：否。 
      * @return trustedServicesEnabled
      */
     public Boolean getTrustedServicesEnabled() {

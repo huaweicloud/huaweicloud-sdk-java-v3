@@ -90,7 +90,7 @@ public class FindingSummary {
     private List<FindingSourceType> sources = null;
 
     /**
-     * 访问分析结果当前状态。
+     * 访问分析结果当前状态。 - active：活跃 - archived：已归档 - resolved：已解决 
      */
     public static final class StatusEnum {
 
@@ -476,7 +476,7 @@ public class FindingSummary {
     }
 
     /**
-     * 访问分析结果当前状态。
+     * 访问分析结果当前状态。 - active：活跃 - archived：已归档 - resolved：已解决 
      * @return status
      */
     public StatusEnum getStatus() {

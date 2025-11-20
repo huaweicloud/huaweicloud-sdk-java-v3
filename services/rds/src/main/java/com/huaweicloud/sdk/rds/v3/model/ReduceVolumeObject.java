@@ -16,6 +16,11 @@ public class ReduceVolumeObject {
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_delay")
+
+    private Boolean isDelay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "iops")
 
     private Integer iops;
@@ -40,6 +45,23 @@ public class ReduceVolumeObject {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    public ReduceVolumeObject withIsDelay(Boolean isDelay) {
+        this.isDelay = isDelay;
+        return this;
+    }
+
+    /**
+     * 是否定时变更。 - true，为定时在运维时间窗做变更。 - false，为立即变更，默认该方式。
+     * @return isDelay
+     */
+    public Boolean getIsDelay() {
+        return isDelay;
+    }
+
+    public void setIsDelay(Boolean isDelay) {
+        this.isDelay = isDelay;
     }
 
     public ReduceVolumeObject withIops(Integer iops) {
@@ -85,13 +107,13 @@ public class ReduceVolumeObject {
             return false;
         }
         ReduceVolumeObject that = (ReduceVolumeObject) obj;
-        return Objects.equals(this.size, that.size) && Objects.equals(this.iops, that.iops)
-            && Objects.equals(this.throughput, that.throughput);
+        return Objects.equals(this.size, that.size) && Objects.equals(this.isDelay, that.isDelay)
+            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, iops, throughput);
+        return Objects.hash(size, isDelay, iops, throughput);
     }
 
     @Override
@@ -99,6 +121,7 @@ public class ReduceVolumeObject {
         StringBuilder sb = new StringBuilder();
         sb.append("class ReduceVolumeObject {\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    isDelay: ").append(toIndentedString(isDelay)).append("\n");
         sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
         sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("}");

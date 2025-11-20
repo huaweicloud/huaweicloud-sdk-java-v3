@@ -49,7 +49,7 @@ public class MigrateNodesSpec {
     }
 
     /**
-     * 操作系统类型，须精确到版本号。 当指定“alpha.cce/NodeImageID”参数时，“os”参数必须和用户自定义镜像的操作系统一致。 
+     * **参数解释**： 操作系统类型，须精确到版本号。例：Huawei Cloud EulerOS 2.0。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 **约束限制**： 当指定“alpha.cce/NodeImageID”参数时，“os”参数必须和用户自定义镜像的操作系统一致。 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return os
      */
     public String getOs() {
@@ -186,7 +186,7 @@ public class MigrateNodesSpec {
     }
 
     /**
-     * 待操作节点列表
+     * **参数解释**： 待操作节点列表，当前最多支持同时迁移200个节点。 **约束限制**： 不涉及 
      * @return nodes
      */
     public List<NodeItem> getNodes() {

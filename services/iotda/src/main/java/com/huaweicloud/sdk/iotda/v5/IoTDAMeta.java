@@ -79,6 +79,9 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationDTO;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
@@ -106,6 +109,9 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateSecurityProfileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateSecurityProfileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateServerCertificateDTO;
+import com.huaweicloud.sdk.iotda.v5.model.CreateServerCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateServerCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateSyncHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateSyncHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationRequest;
@@ -138,6 +144,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceShadowRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceShadowResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDomainConfigurationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDomainConfigurationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusRequest;
@@ -164,6 +172,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteSecurityProfileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteSecurityProfileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteServerCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteServerCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeviceBroadcastRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeviceMessageRequest;
@@ -206,6 +216,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDomainConfigurationsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDomainConfigurationsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusRequest;
@@ -234,6 +246,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListRulesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListSecurityProfilesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListSecurityProfilesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListServerCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListServerCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.QueryResourceByTagsDTO;
 import com.huaweicloud.sdk.iotda.v5.model.QueueInfo;
 import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecret;
@@ -284,6 +298,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDomainConfigurationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDomainConfigurationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaModuleRequest;
@@ -308,6 +324,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowSecurityProfileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowSecurityProfileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowServerCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowServerCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequestBody;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyResponse;
@@ -355,6 +373,9 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDomainConfigurationDTO;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDomainConfigurationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDomainConfigurationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateFlowControlPolicy;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModule;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModuleRequest;
@@ -3396,6 +3417,184 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDomainConfigurationRequest, CreateDomainConfigurationResponse> createDomainConfiguration =
+        genForCreateDomainConfiguration();
+
+    private static HttpRequestDef<CreateDomainConfigurationRequest, CreateDomainConfigurationResponse> genForCreateDomainConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CreateDomainConfigurationRequest, CreateDomainConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDomainConfigurationRequest.class,
+                    CreateDomainConfigurationResponse.class)
+                .withName("CreateDomainConfiguration")
+                .withUri("/{project_id}/domain-configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDomainConfigurationRequest::getInstanceId,
+                CreateDomainConfigurationRequest::setInstanceId));
+        builder.<CreateDomainConfigurationDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDomainConfigurationDTO.class),
+            f -> f.withMarshaller(CreateDomainConfigurationRequest::getBody,
+                CreateDomainConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDomainConfigurationRequest, DeleteDomainConfigurationResponse> deleteDomainConfiguration =
+        genForDeleteDomainConfiguration();
+
+    private static HttpRequestDef<DeleteDomainConfigurationRequest, DeleteDomainConfigurationResponse> genForDeleteDomainConfiguration() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainConfigurationRequest, DeleteDomainConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDomainConfigurationRequest.class,
+                    DeleteDomainConfigurationResponse.class)
+                .withName("DeleteDomainConfiguration")
+                .withUri("/{project_id}/domain-configurations/{configuration_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("configuration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainConfigurationRequest::getConfigurationId,
+                DeleteDomainConfigurationRequest::setConfigurationId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainConfigurationRequest::getInstanceId,
+                DeleteDomainConfigurationRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDomainConfigurationsRequest, ListDomainConfigurationsResponse> listDomainConfigurations =
+        genForListDomainConfigurations();
+
+    private static HttpRequestDef<ListDomainConfigurationsRequest, ListDomainConfigurationsResponse> genForListDomainConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListDomainConfigurationsRequest, ListDomainConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListDomainConfigurationsRequest.class, ListDomainConfigurationsResponse.class)
+                .withName("ListDomainConfigurations")
+                .withUri("/{project_id}/domain-configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainConfigurationsRequest::getLimit,
+                ListDomainConfigurationsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainConfigurationsRequest::getMarker,
+                ListDomainConfigurationsRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainConfigurationsRequest::getOffset,
+                ListDomainConfigurationsRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainConfigurationsRequest::getInstanceId,
+                ListDomainConfigurationsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainConfigurationRequest, ShowDomainConfigurationResponse> showDomainConfiguration =
+        genForShowDomainConfiguration();
+
+    private static HttpRequestDef<ShowDomainConfigurationRequest, ShowDomainConfigurationResponse> genForShowDomainConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainConfigurationRequest, ShowDomainConfigurationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainConfigurationRequest.class, ShowDomainConfigurationResponse.class)
+            .withName("ShowDomainConfiguration")
+            .withUri("/{project_id}/domain-configurations/{configuration_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("configuration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainConfigurationRequest::getConfigurationId,
+                ShowDomainConfigurationRequest::setConfigurationId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainConfigurationRequest::getInstanceId,
+                ShowDomainConfigurationRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainConfigurationRequest, UpdateDomainConfigurationResponse> updateDomainConfiguration =
+        genForUpdateDomainConfiguration();
+
+    private static HttpRequestDef<UpdateDomainConfigurationRequest, UpdateDomainConfigurationResponse> genForUpdateDomainConfiguration() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainConfigurationRequest, UpdateDomainConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDomainConfigurationRequest.class,
+                    UpdateDomainConfigurationResponse.class)
+                .withName("UpdateDomainConfiguration")
+                .withUri("/{project_id}/domain-configurations/{configuration_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("configuration_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainConfigurationRequest::getConfigurationId,
+                UpdateDomainConfigurationRequest::setConfigurationId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainConfigurationRequest::getInstanceId,
+                UpdateDomainConfigurationRequest::setInstanceId));
+        builder.<UpdateDomainConfigurationDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDomainConfigurationDTO.class),
+            f -> f.withMarshaller(UpdateDomainConfigurationRequest::getBody,
+                UpdateDomainConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRoutingFlowControlPolicyRequest, CreateRoutingFlowControlPolicyResponse> createRoutingFlowControlPolicy =
         genForCreateRoutingFlowControlPolicy();
 
@@ -5794,6 +5993,134 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecurityProfileDTO.class),
             f -> f.withMarshaller(UpdateSecurityProfileRequest::getBody, UpdateSecurityProfileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateServerCertificateRequest, CreateServerCertificateResponse> createServerCertificate =
+        genForCreateServerCertificate();
+
+    private static HttpRequestDef<CreateServerCertificateRequest, CreateServerCertificateResponse> genForCreateServerCertificate() {
+        // basic
+        HttpRequestDef.Builder<CreateServerCertificateRequest, CreateServerCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateServerCertificateRequest.class, CreateServerCertificateResponse.class)
+            .withName("CreateServerCertificate")
+            .withUri("/{project_id}/server-certificates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateServerCertificateRequest::getInstanceId,
+                CreateServerCertificateRequest::setInstanceId));
+        builder.<CreateServerCertificateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateServerCertificateDTO.class),
+            f -> f.withMarshaller(CreateServerCertificateRequest::getBody, CreateServerCertificateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteServerCertificateRequest, DeleteServerCertificateResponse> deleteServerCertificate =
+        genForDeleteServerCertificate();
+
+    private static HttpRequestDef<DeleteServerCertificateRequest, DeleteServerCertificateResponse> genForDeleteServerCertificate() {
+        // basic
+        HttpRequestDef.Builder<DeleteServerCertificateRequest, DeleteServerCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteServerCertificateRequest.class, DeleteServerCertificateResponse.class)
+            .withName("DeleteServerCertificate")
+            .withUri("/{project_id}/server-certificates/{server_certificate_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServerCertificateRequest::getServerCertificateId,
+                DeleteServerCertificateRequest::setServerCertificateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServerCertificateRequest::getInstanceId,
+                DeleteServerCertificateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServerCertificateRequest, ListServerCertificateResponse> listServerCertificate =
+        genForListServerCertificate();
+
+    private static HttpRequestDef<ListServerCertificateRequest, ListServerCertificateResponse> genForListServerCertificate() {
+        // basic
+        HttpRequestDef.Builder<ListServerCertificateRequest, ListServerCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListServerCertificateRequest.class, ListServerCertificateResponse.class)
+            .withName("ListServerCertificate")
+            .withUri("/{project_id}/server-certificates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServerCertificateRequest::getLimit, ListServerCertificateRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServerCertificateRequest::getMarker, ListServerCertificateRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServerCertificateRequest::getOffset, ListServerCertificateRequest::setOffset));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServerCertificateRequest::getInstanceId,
+                ListServerCertificateRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerCertificateRequest, ShowServerCertificateResponse> showServerCertificate =
+        genForShowServerCertificate();
+
+    private static HttpRequestDef<ShowServerCertificateRequest, ShowServerCertificateResponse> genForShowServerCertificate() {
+        // basic
+        HttpRequestDef.Builder<ShowServerCertificateRequest, ShowServerCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowServerCertificateRequest.class, ShowServerCertificateResponse.class)
+            .withName("ShowServerCertificate")
+            .withUri("/{project_id}/server-certificates/{server_certificate_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerCertificateRequest::getServerCertificateId,
+                ShowServerCertificateRequest::setServerCertificateId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerCertificateRequest::getInstanceId,
+                ShowServerCertificateRequest::setInstanceId));
 
         // response
 

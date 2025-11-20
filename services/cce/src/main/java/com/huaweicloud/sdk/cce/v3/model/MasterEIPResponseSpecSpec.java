@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 待绑定的弹性IP配置属性
+ * **参数解释**： 待绑定的弹性IP配置属性 **约束限制**： 不涉及 
  */
 public class MasterEIPResponseSpecSpec {
 
@@ -32,7 +32,7 @@ public class MasterEIPResponseSpecSpec {
     }
 
     /**
-     * 弹性网卡ID
+     * **参数解释**： 弹性网卡ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return id
      */
     public String getId() {
@@ -75,7 +75,7 @@ public class MasterEIPResponseSpecSpec {
     }
 
     /**
-     * 是否动态创建
+     * **参数解释**： 是否动态创建 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return isDynamic
      */
     public Boolean getIsDynamic() {

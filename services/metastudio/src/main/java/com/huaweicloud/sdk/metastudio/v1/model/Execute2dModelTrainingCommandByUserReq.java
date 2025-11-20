@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class Execute2dModelTrainingCommandByUserReq {
 
     /**
-     * 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 > * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。
+     * 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 * CONFIRM_AUTHORIZATION_LETTER：确认授权书已上传 > * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。 * DELETE_JOB_VIDEO：删除任务相关视频
      */
     public static final class CommandEnum {
 
@@ -78,6 +78,16 @@ public class Execute2dModelTrainingCommandByUserReq {
         public static final CommandEnum CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED =
             new CommandEnum("CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED");
 
+        /**
+         * Enum CONFIRM_AUTHORIZATION_LETTER for value: "CONFIRM_AUTHORIZATION_LETTER"
+         */
+        public static final CommandEnum CONFIRM_AUTHORIZATION_LETTER = new CommandEnum("CONFIRM_AUTHORIZATION_LETTER");
+
+        /**
+         * Enum DELETE_JOB_VIDEO for value: "DELETE_JOB_VIDEO"
+         */
+        public static final CommandEnum DELETE_JOB_VIDEO = new CommandEnum("DELETE_JOB_VIDEO");
+
         private static final Map<String, CommandEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CommandEnum> createStaticFields() {
@@ -93,6 +103,8 @@ public class Execute2dModelTrainingCommandByUserReq {
             map.put("CONFIRM_MULTIPART_UPLOADED", CONFIRM_MULTIPART_UPLOADED);
             map.put("GET_ACTION_VIDEO_MULTIPART_UPLOADED", GET_ACTION_VIDEO_MULTIPART_UPLOADED);
             map.put("CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED", CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED);
+            map.put("CONFIRM_AUTHORIZATION_LETTER", CONFIRM_AUTHORIZATION_LETTER);
+            map.put("DELETE_JOB_VIDEO", DELETE_JOB_VIDEO);
             return Collections.unmodifiableMap(map);
         }
 
@@ -240,13 +252,18 @@ public class Execute2dModelTrainingCommandByUserReq {
 
     private CommentData commentData;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_reason")
+
+    private String operationReason;
+
     public Execute2dModelTrainingCommandByUserReq withCommand(CommandEnum command) {
         this.command = command;
         return this;
     }
 
     /**
-     * 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 > * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。
+     * 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 * CONFIRM_AUTHORIZATION_LETTER：确认授权书已上传 > * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。 * DELETE_JOB_VIDEO：删除任务相关视频
      * @return command
      */
     public CommandEnum getCommand() {
@@ -300,6 +317,23 @@ public class Execute2dModelTrainingCommandByUserReq {
         this.commentData = commentData;
     }
 
+    public Execute2dModelTrainingCommandByUserReq withOperationReason(String operationReason) {
+        this.operationReason = operationReason;
+        return this;
+    }
+
+    /**
+     * 操作原因
+     * @return operationReason
+     */
+    public String getOperationReason() {
+        return operationReason;
+    }
+
+    public void setOperationReason(String operationReason) {
+        this.operationReason = operationReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -310,12 +344,13 @@ public class Execute2dModelTrainingCommandByUserReq {
         }
         Execute2dModelTrainingCommandByUserReq that = (Execute2dModelTrainingCommandByUserReq) obj;
         return Objects.equals(this.command, that.command) && Objects.equals(this.commandMessage, that.commandMessage)
-            && Objects.equals(this.commentData, that.commentData);
+            && Objects.equals(this.commentData, that.commentData)
+            && Objects.equals(this.operationReason, that.operationReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(command, commandMessage, commentData);
+        return Objects.hash(command, commandMessage, commentData, operationReason);
     }
 
     @Override
@@ -325,6 +360,7 @@ public class Execute2dModelTrainingCommandByUserReq {
         sb.append("    command: ").append(toIndentedString(command)).append("\n");
         sb.append("    commandMessage: ").append(toIndentedString(commandMessage)).append("\n");
         sb.append("    commentData: ").append(toIndentedString(commentData)).append("\n");
+        sb.append("    operationReason: ").append(toIndentedString(operationReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

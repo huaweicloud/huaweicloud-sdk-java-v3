@@ -221,7 +221,7 @@ public class ImageSensitiveInfo {
     }
 
     /**
-     * **参数解释**: 操作 **取值范围**: - ignore ：忽略。 - do_not_ignore ：取消忽略。 
+     * **参数解释**: 操作类型 **取值范围**: - ignore ：忽略。 - do_not_ignore ：取消忽略。 
      * @return operateAccept
      */
     public String getOperateAccept() {

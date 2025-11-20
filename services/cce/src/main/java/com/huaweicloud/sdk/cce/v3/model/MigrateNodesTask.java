@@ -37,7 +37,7 @@ public class MigrateNodesTask {
     }
 
     /**
-     * API版本，固定值“v3”。
+     * **参数解释**： API版本 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： v3 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -54,7 +54,7 @@ public class MigrateNodesTask {
     }
 
     /**
-     * API类型，固定值“MigrateNodesTask”。
+     * **参数解释**： API类型 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： MigrateNodesTask 
      * @return kind
      */
     public String getKind() {

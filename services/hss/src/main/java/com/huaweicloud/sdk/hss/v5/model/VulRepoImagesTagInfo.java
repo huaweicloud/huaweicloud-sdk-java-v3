@@ -70,7 +70,7 @@ public class VulRepoImagesTagInfo {
     }
 
     /**
-     * **参数解释**: \"版本大小\" **取值范围**: 最小值0，最大值2147483547 
+     * **参数解释**: 版本大小 **取值范围**: 最小值0，最大值2147483547 
      * minimum: 0
      * maximum: 2147483547
      * @return size

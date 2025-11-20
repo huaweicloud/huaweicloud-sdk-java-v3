@@ -28,6 +28,7 @@ import com.huaweicloud.sdk.cce.v3.model.CertDuration;
 import com.huaweicloud.sdk.cce.v3.model.CertRevokeConfigRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.ChartResp;
 import com.huaweicloud.sdk.cce.v3.model.Cluster;
+import com.huaweicloud.sdk.cce.v3.model.ClusterCertDuration;
 import com.huaweicloud.sdk.cce.v3.model.ClusterInformation;
 import com.huaweicloud.sdk.cce.v3.model.ClusterLogConfig;
 import com.huaweicloud.sdk.cce.v3.model.ClusterNodeInformation;
@@ -132,6 +133,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAddonPrecheckTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAddonPrecheckTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotAddonInstancesRequest;
@@ -168,6 +171,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradePathsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradePathsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListHyperNodesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListHyperNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
@@ -728,10 +733,10 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateKubernetesClusterCertRequest::getClusterId,
                 CreateKubernetesClusterCertRequest::setClusterId));
-        builder.<CertDuration>withRequestField("body",
+        builder.<ClusterCertDuration>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CertDuration.class),
+            TypeCasts.uncheckedConversion(ClusterCertDuration.class),
             f -> f.withMarshaller(CreateKubernetesClusterCertRequest::getBody,
                 CreateKubernetesClusterCertRequest::setBody));
 
@@ -1524,6 +1529,46 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAddonPrecheckTasksRequest, ListAddonPrecheckTasksResponse> listAddonPrecheckTasks =
+        genForListAddonPrecheckTasks();
+
+    private static HttpRequestDef<ListAddonPrecheckTasksRequest, ListAddonPrecheckTasksResponse> genForListAddonPrecheckTasks() {
+        // basic
+        HttpRequestDef.Builder<ListAddonPrecheckTasksRequest, ListAddonPrecheckTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAddonPrecheckTasksRequest.class, ListAddonPrecheckTasksResponse.class)
+            .withName("ListAddonPrecheckTasks")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/addons/precheck/tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddonPrecheckTasksRequest::getClusterId,
+                ListAddonPrecheckTasksRequest::setClusterId));
+        builder.<ListAddonPrecheckTasksRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAddonPrecheckTasksRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListAddonPrecheckTasksRequest::getType, ListAddonPrecheckTasksRequest::setType));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddonPrecheckTasksRequest::getTaskId, ListAddonPrecheckTasksRequest::setTaskId));
+        builder.<String>withRequestField("addon_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddonPrecheckTasksRequest::getAddonInstanceId,
+                ListAddonPrecheckTasksRequest::setAddonInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAddonTemplatesRequest, ListAddonTemplatesResponse> listAddonTemplates =
         genForListAddonTemplates();
 
@@ -1668,6 +1713,39 @@ public class CceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClustersRequest::getVersion, ListClustersRequest::setVersion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHyperNodesRequest, ListHyperNodesResponse> listHyperNodes =
+        genForListHyperNodes();
+
+    private static HttpRequestDef<ListHyperNodesRequest, ListHyperNodesResponse> genForListHyperNodes() {
+        // basic
+        HttpRequestDef.Builder<ListHyperNodesRequest, ListHyperNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHyperNodesRequest.class, ListHyperNodesResponse.class)
+                .withName("ListHyperNodes")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/hypernodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHyperNodesRequest::getClusterId, ListHyperNodesRequest::setClusterId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHyperNodesRequest::getLimit, ListHyperNodesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHyperNodesRequest::getOffset, ListHyperNodesRequest::setOffset));
 
         // response
 

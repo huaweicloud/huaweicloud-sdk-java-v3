@@ -158,6 +158,11 @@ public class InstanceRequest {
 
     private Boolean isAutoUpgrade;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_enlarge_strategy")
+
+    private AutoEnlargeStrategyForConsoleApi autoEnlargeStrategy;
+
     public InstanceRequest withName(String name) {
         this.name = name;
         return this;
@@ -739,6 +744,33 @@ public class InstanceRequest {
         this.isAutoUpgrade = isAutoUpgrade;
     }
 
+    public InstanceRequest withAutoEnlargeStrategy(AutoEnlargeStrategyForConsoleApi autoEnlargeStrategy) {
+        this.autoEnlargeStrategy = autoEnlargeStrategy;
+        return this;
+    }
+
+    public InstanceRequest withAutoEnlargeStrategy(
+        Consumer<AutoEnlargeStrategyForConsoleApi> autoEnlargeStrategySetter) {
+        if (this.autoEnlargeStrategy == null) {
+            this.autoEnlargeStrategy = new AutoEnlargeStrategyForConsoleApi();
+            autoEnlargeStrategySetter.accept(this.autoEnlargeStrategy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get autoEnlargeStrategy
+     * @return autoEnlargeStrategy
+     */
+    public AutoEnlargeStrategyForConsoleApi getAutoEnlargeStrategy() {
+        return autoEnlargeStrategy;
+    }
+
+    public void setAutoEnlargeStrategy(AutoEnlargeStrategyForConsoleApi autoEnlargeStrategy) {
+        this.autoEnlargeStrategy = autoEnlargeStrategy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -764,7 +796,8 @@ public class InstanceRequest {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.unchangeableParam, that.unchangeableParam)
             && Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.count, that.count)
             && Objects.equals(this.serverlessInfo, that.serverlessInfo)
-            && Objects.equals(this.isAutoUpgrade, that.isAutoUpgrade);
+            && Objects.equals(this.isAutoUpgrade, that.isAutoUpgrade)
+            && Objects.equals(this.autoEnlargeStrategy, that.autoEnlargeStrategy);
     }
 
     @Override
@@ -797,7 +830,8 @@ public class InstanceRequest {
             dryRun,
             count,
             serverlessInfo,
-            isAutoUpgrade);
+            isAutoUpgrade,
+            autoEnlargeStrategy);
     }
 
     @Override
@@ -833,6 +867,7 @@ public class InstanceRequest {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    serverlessInfo: ").append(toIndentedString(serverlessInfo)).append("\n");
         sb.append("    isAutoUpgrade: ").append(toIndentedString(isAutoUpgrade)).append("\n");
+        sb.append("    autoEnlargeStrategy: ").append(toIndentedString(autoEnlargeStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

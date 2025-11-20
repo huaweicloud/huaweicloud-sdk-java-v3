@@ -25,7 +25,7 @@ public class ShowClusterEndpointsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private MasterEIPResponseStatus status;
+    private OpenAPIResponseStatus status;
 
     public ShowClusterEndpointsResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
@@ -79,14 +79,14 @@ public class ShowClusterEndpointsResponse extends SdkResponse {
         this.spec = spec;
     }
 
-    public ShowClusterEndpointsResponse withStatus(MasterEIPResponseStatus status) {
+    public ShowClusterEndpointsResponse withStatus(OpenAPIResponseStatus status) {
         this.status = status;
         return this;
     }
 
-    public ShowClusterEndpointsResponse withStatus(Consumer<MasterEIPResponseStatus> statusSetter) {
+    public ShowClusterEndpointsResponse withStatus(Consumer<OpenAPIResponseStatus> statusSetter) {
         if (this.status == null) {
-            this.status = new MasterEIPResponseStatus();
+            this.status = new OpenAPIResponseStatus();
             statusSetter.accept(this.status);
         }
 
@@ -97,11 +97,11 @@ public class ShowClusterEndpointsResponse extends SdkResponse {
      * Get status
      * @return status
      */
-    public MasterEIPResponseStatus getStatus() {
+    public OpenAPIResponseStatus getStatus() {
         return status;
     }
 
-    public void setStatus(MasterEIPResponseStatus status) {
+    public void setStatus(OpenAPIResponseStatus status) {
         this.status = status;
     }
 

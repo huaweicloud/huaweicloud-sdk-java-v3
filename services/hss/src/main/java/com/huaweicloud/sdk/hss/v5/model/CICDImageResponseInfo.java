@@ -110,6 +110,11 @@ public class CICDImageResponseInfo {
 
     private String severityLevel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_type")
+
+    private String pipelineType;
+
     public CICDImageResponseInfo withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -462,6 +467,23 @@ public class CICDImageResponseInfo {
         this.severityLevel = severityLevel;
     }
 
+    public CICDImageResponseInfo withPipelineType(String pipelineType) {
+        this.pipelineType = pipelineType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 流水线类型 **取值范围**: - jenkins：Jenkins流水线。 - codearts：CodeArts流水线。 minLength: 1 maxLength: 32 x-example: \"jenkins\" 
+     * @return pipelineType
+     */
+    public String getPipelineType() {
+        return pipelineType;
+    }
+
+    public void setPipelineType(String pipelineType) {
+        this.pipelineType = pipelineType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -486,7 +508,8 @@ public class CICDImageResponseInfo {
             && Objects.equals(this.latestScanTime, that.latestScanTime) && Objects.equals(this.vulNum, that.vulNum)
             && Objects.equals(this.unsafeSettingNum, that.unsafeSettingNum)
             && Objects.equals(this.maliciousFileNum, that.maliciousFileNum)
-            && Objects.equals(this.severityLevel, that.severityLevel);
+            && Objects.equals(this.severityLevel, that.severityLevel)
+            && Objects.equals(this.pipelineType, that.pipelineType);
     }
 
     @Override
@@ -510,7 +533,8 @@ public class CICDImageResponseInfo {
             vulNum,
             unsafeSettingNum,
             maliciousFileNum,
-            severityLevel);
+            severityLevel,
+            pipelineType);
     }
 
     @Override
@@ -537,6 +561,7 @@ public class CICDImageResponseInfo {
         sb.append("    unsafeSettingNum: ").append(toIndentedString(unsafeSettingNum)).append("\n");
         sb.append("    maliciousFileNum: ").append(toIndentedString(maliciousFileNum)).append("\n");
         sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
+        sb.append("    pipelineType: ").append(toIndentedString(pipelineType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

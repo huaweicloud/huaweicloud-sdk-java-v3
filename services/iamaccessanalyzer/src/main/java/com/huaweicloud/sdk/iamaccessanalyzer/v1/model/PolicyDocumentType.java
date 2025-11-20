@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 校验策略类型。枚举值：identity_policy（身份策略），agency_trust_policy（委托信任策略），bucket_policy（桶策略）
+ * 要校验的策略类型。 - identity_policy：身份策略 - agency_trust_policy：委托信任策略 - bucket_policy：桶策略 
  */
 public class PolicyDocumentType {
 

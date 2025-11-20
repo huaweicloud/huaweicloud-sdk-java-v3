@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 /**
- * 自定义节点池纳管节点参数。
+ * **参数解释**： 自定义节点池纳管节点参数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
  */
 public class AddNodesToNodePool {
 
@@ -22,7 +22,7 @@ public class AddNodesToNodePool {
     }
 
     /**
-     * 服务器ID，获取方式请参见ECS/BMS相关资料。
+     * **参数解释**： 服务器ID，从ECS/BMS控制台获取。 > 获取方式：在控制台的“服务列表”中，单击“计算 > 弹性云服务器 ECS/裸金属服务器 BMS”，单击服务器的名称，在服务器详情页的“基本信息”页签下找到“ID”字段复制即可。  **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return serverID
      */
     public UUID getServerID() {

@@ -151,7 +151,7 @@ public class SecurityCheckPolicyDetailInfoResponseInfo {
     }
 
     /**
-     * **参数解释** 检查项的风险程度，包含如下: **取值范围** - Low    : 低危 - Medium : 中危 - High   : 高危
+     * **参数解释** 检查项的风险程度 **取值范围** - Low    : 低危 - Medium : 中危 - High   : 高危
      * @return severity
      */
     public String getSeverity() {
@@ -168,7 +168,7 @@ public class SecurityCheckPolicyDetailInfoResponseInfo {
     }
 
     /**
-     * **参数解释** 检查项的等级 **取值范围** 字符长度0-32位
+     * **参数解释** 配置检查（基线）检查项的版本信息 **取值范围** 字符长度0-32位
      * @return level
      */
     public String getLevel() {

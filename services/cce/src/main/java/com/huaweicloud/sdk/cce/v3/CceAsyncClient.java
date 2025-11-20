@@ -112,6 +112,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAddonPrecheckTasksRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAddonPrecheckTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotAddonInstancesRequest;
@@ -148,6 +150,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradePathsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListClusterUpgradePathsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListHyperNodesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListHyperNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
@@ -1539,6 +1543,36 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取插件检查任务结果列表
+     *
+     * 获取集群下插件检查任务结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddonPrecheckTasksRequest 请求对象
+     * @return CompletableFuture<ListAddonPrecheckTasksResponse>
+     */
+    public CompletableFuture<ListAddonPrecheckTasksResponse> listAddonPrecheckTasksAsync(
+        ListAddonPrecheckTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listAddonPrecheckTasks);
+    }
+
+    /**
+     * 获取插件检查任务结果列表
+     *
+     * 获取集群下插件检查任务结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddonPrecheckTasksRequest 请求对象
+     * @return AsyncInvoker<ListAddonPrecheckTasksRequest, ListAddonPrecheckTasksResponse>
+     */
+    public AsyncInvoker<ListAddonPrecheckTasksRequest, ListAddonPrecheckTasksResponse> listAddonPrecheckTasksAsyncInvoker(
+        ListAddonPrecheckTasksRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.listAddonPrecheckTasks, hcClient);
+    }
+
+    /**
      * 查询AddonTemplates列表
      *
      * 插件模板查询接口，查询插件信息。
@@ -1712,6 +1746,35 @@ public class CceAsyncClient {
     public AsyncInvoker<ListClustersRequest, ListClustersResponse> listClustersAsyncInvoker(
         ListClustersRequest request) {
         return new AsyncInvoker<>(request, CceMeta.listClusters, hcClient);
+    }
+
+    /**
+     * 查询集群中超节点列表
+     *
+     * 该API用于获取指定集群下所有超节点的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperNodesRequest 请求对象
+     * @return CompletableFuture<ListHyperNodesResponse>
+     */
+    public CompletableFuture<ListHyperNodesResponse> listHyperNodesAsync(ListHyperNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listHyperNodes);
+    }
+
+    /**
+     * 查询集群中超节点列表
+     *
+     * 该API用于获取指定集群下所有超节点的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHyperNodesRequest 请求对象
+     * @return AsyncInvoker<ListHyperNodesRequest, ListHyperNodesResponse>
+     */
+    public AsyncInvoker<ListHyperNodesRequest, ListHyperNodesResponse> listHyperNodesAsyncInvoker(
+        ListHyperNodesRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.listHyperNodes, hcClient);
     }
 
     /**
@@ -3212,8 +3275,8 @@ public class CceAsyncClient {
      * 
      * 
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
-     * 
-     * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
+     * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，taints，login，userTags与节点池的扩缩容配置相关字段。
+     * &gt; - 若此次更新节点池未设置initialNodeCount的相关值，节点池期望节点个数将默认更新为初始值0，如果此时节点池节点个数大于0将导致节点池缩容。若用户期望不填该参数，请在此次更新设置spec下的ignoreInitialNodeCount为true，用于忽略spec.initialNodeCount参数。特殊场景说明：若节点池当前节点数等于0时，可忽略initialNodeCount和ignoreInitialNodeCount参数配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3231,8 +3294,8 @@ public class CceAsyncClient {
      * 
      * 
      * &gt; - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
-     * 
-     * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，taints，login，userTags与节点池的扩缩容配置相关字段。若此次更新未设置相关值，默认更新为初始值。
+     * &gt; - 当前仅支持更新节点池名称，spec下的initialNodeCount，k8sTags，taints，login，userTags与节点池的扩缩容配置相关字段。
+     * &gt; - 若此次更新节点池未设置initialNodeCount的相关值，节点池期望节点个数将默认更新为初始值0，如果此时节点池节点个数大于0将导致节点池缩容。若用户期望不填该参数，请在此次更新设置spec下的ignoreInitialNodeCount为true，用于忽略spec.initialNodeCount参数。特殊场景说明：若节点池当前节点数等于0时，可忽略initialNodeCount和ignoreInitialNodeCount参数配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

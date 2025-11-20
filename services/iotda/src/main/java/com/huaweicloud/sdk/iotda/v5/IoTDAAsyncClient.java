@@ -53,6 +53,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
@@ -77,6 +79,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateSecurityProfileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateSecurityProfileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateServerCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateServerCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateSyncHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateSyncHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationRequest;
@@ -109,6 +113,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceShadowRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceShadowResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDomainConfigurationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDomainConfigurationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusRequest;
@@ -135,6 +141,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteSecurityProfileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteSecurityProfileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteServerCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteServerCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListAsyncCommandsRequest;
@@ -171,6 +179,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDomainConfigurationsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDomainConfigurationsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusRequest;
@@ -199,6 +209,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListRulesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListRulesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListSecurityProfilesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListSecurityProfilesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListServerCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListServerCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecretRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ResetBridgeSecretResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretRequest;
@@ -241,6 +253,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDomainConfigurationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDomainConfigurationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaModuleRequest;
@@ -265,6 +279,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowSecurityProfileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowSecurityProfileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowServerCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowServerCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowTargetsInDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.StopBatchTaskRequest;
@@ -297,6 +313,8 @@ import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDomainConfigurationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDomainConfigurationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateOtaModuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
@@ -3073,6 +3091,156 @@ public class IoTDAAsyncClient {
     }
 
     /**
+     * 添加域配置
+     *
+     * 应用服务器可调用此接口在物联网平台上添加域配置，域配置配额上限为：1个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDomainConfigurationRequest 请求对象
+     * @return CompletableFuture<CreateDomainConfigurationResponse>
+     */
+    public CompletableFuture<CreateDomainConfigurationResponse> createDomainConfigurationAsync(
+        CreateDomainConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createDomainConfiguration);
+    }
+
+    /**
+     * 添加域配置
+     *
+     * 应用服务器可调用此接口在物联网平台上添加域配置，域配置配额上限为：1个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDomainConfigurationRequest 请求对象
+     * @return AsyncInvoker<CreateDomainConfigurationRequest, CreateDomainConfigurationResponse>
+     */
+    public AsyncInvoker<CreateDomainConfigurationRequest, CreateDomainConfigurationResponse> createDomainConfigurationAsyncInvoker(
+        CreateDomainConfigurationRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.createDomainConfiguration, hcClient);
+    }
+
+    /**
+     * 删除域配置
+     *
+     * 应用服务器可调用此接口在物联网平台删除域配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainConfigurationRequest 请求对象
+     * @return CompletableFuture<DeleteDomainConfigurationResponse>
+     */
+    public CompletableFuture<DeleteDomainConfigurationResponse> deleteDomainConfigurationAsync(
+        DeleteDomainConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteDomainConfiguration);
+    }
+
+    /**
+     * 删除域配置
+     *
+     * 应用服务器可调用此接口在物联网平台删除域配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainConfigurationRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainConfigurationRequest, DeleteDomainConfigurationResponse>
+     */
+    public AsyncInvoker<DeleteDomainConfigurationRequest, DeleteDomainConfigurationResponse> deleteDomainConfigurationAsyncInvoker(
+        DeleteDomainConfigurationRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteDomainConfiguration, hcClient);
+    }
+
+    /**
+     * 获取域配置列表
+     *
+     * 应用服务器可调用此接口在物联网平台获取域配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainConfigurationsRequest 请求对象
+     * @return CompletableFuture<ListDomainConfigurationsResponse>
+     */
+    public CompletableFuture<ListDomainConfigurationsResponse> listDomainConfigurationsAsync(
+        ListDomainConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listDomainConfigurations);
+    }
+
+    /**
+     * 获取域配置列表
+     *
+     * 应用服务器可调用此接口在物联网平台获取域配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ListDomainConfigurationsRequest, ListDomainConfigurationsResponse>
+     */
+    public AsyncInvoker<ListDomainConfigurationsRequest, ListDomainConfigurationsResponse> listDomainConfigurationsAsyncInvoker(
+        ListDomainConfigurationsRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listDomainConfigurations, hcClient);
+    }
+
+    /**
+     * 查询域配置
+     *
+     * 应用服务器可调用此接口在物联网平台查询域配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowDomainConfigurationResponse>
+     */
+    public CompletableFuture<ShowDomainConfigurationResponse> showDomainConfigurationAsync(
+        ShowDomainConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showDomainConfiguration);
+    }
+
+    /**
+     * 查询域配置
+     *
+     * 应用服务器可调用此接口在物联网平台查询域配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowDomainConfigurationRequest, ShowDomainConfigurationResponse>
+     */
+    public AsyncInvoker<ShowDomainConfigurationRequest, ShowDomainConfigurationResponse> showDomainConfigurationAsyncInvoker(
+        ShowDomainConfigurationRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.showDomainConfiguration, hcClient);
+    }
+
+    /**
+     * 更新域配置
+     *
+     * 应用服务器可调用此接口在物联网平台上更新域配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainConfigurationRequest 请求对象
+     * @return CompletableFuture<UpdateDomainConfigurationResponse>
+     */
+    public CompletableFuture<UpdateDomainConfigurationResponse> updateDomainConfigurationAsync(
+        UpdateDomainConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateDomainConfiguration);
+    }
+
+    /**
+     * 更新域配置
+     *
+     * 应用服务器可调用此接口在物联网平台上更新域配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainConfigurationRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainConfigurationRequest, UpdateDomainConfigurationResponse>
+     */
+    public AsyncInvoker<UpdateDomainConfigurationRequest, UpdateDomainConfigurationResponse> updateDomainConfigurationAsyncInvoker(
+        UpdateDomainConfigurationRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.updateDomainConfiguration, hcClient);
+    }
+
+    /**
      * 新建数据流转流控策略
      *
      * 应用服务器可调用此接口在物联网平台创建数据流转流控策略。
@@ -5126,6 +5294,126 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<UpdateSecurityProfileRequest, UpdateSecurityProfileResponse> updateSecurityProfileAsyncInvoker(
         UpdateSecurityProfileRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.updateSecurityProfile, hcClient);
+    }
+
+    /**
+     * 添加服务器证书
+     *
+     * 应用服务器可调用此接口在物联网平台上添加服务器证书，服务器证书配额限制为：2个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateServerCertificateRequest 请求对象
+     * @return CompletableFuture<CreateServerCertificateResponse>
+     */
+    public CompletableFuture<CreateServerCertificateResponse> createServerCertificateAsync(
+        CreateServerCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createServerCertificate);
+    }
+
+    /**
+     * 添加服务器证书
+     *
+     * 应用服务器可调用此接口在物联网平台上添加服务器证书，服务器证书配额限制为：2个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateServerCertificateRequest 请求对象
+     * @return AsyncInvoker<CreateServerCertificateRequest, CreateServerCertificateResponse>
+     */
+    public AsyncInvoker<CreateServerCertificateRequest, CreateServerCertificateResponse> createServerCertificateAsyncInvoker(
+        CreateServerCertificateRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.createServerCertificate, hcClient);
+    }
+
+    /**
+     * 删除服务端证书
+     *
+     * 应用服务器可调用此接口在物联网平台删除服务器证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServerCertificateRequest 请求对象
+     * @return CompletableFuture<DeleteServerCertificateResponse>
+     */
+    public CompletableFuture<DeleteServerCertificateResponse> deleteServerCertificateAsync(
+        DeleteServerCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteServerCertificate);
+    }
+
+    /**
+     * 删除服务端证书
+     *
+     * 应用服务器可调用此接口在物联网平台删除服务器证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServerCertificateRequest 请求对象
+     * @return AsyncInvoker<DeleteServerCertificateRequest, DeleteServerCertificateResponse>
+     */
+    public AsyncInvoker<DeleteServerCertificateRequest, DeleteServerCertificateResponse> deleteServerCertificateAsyncInvoker(
+        DeleteServerCertificateRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteServerCertificate, hcClient);
+    }
+
+    /**
+     * 获取服务器证书列表
+     *
+     * 应用服务器可调用此接口在物联网平台上获取服务器证书列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServerCertificateRequest 请求对象
+     * @return CompletableFuture<ListServerCertificateResponse>
+     */
+    public CompletableFuture<ListServerCertificateResponse> listServerCertificateAsync(
+        ListServerCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listServerCertificate);
+    }
+
+    /**
+     * 获取服务器证书列表
+     *
+     * 应用服务器可调用此接口在物联网平台上获取服务器证书列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServerCertificateRequest 请求对象
+     * @return AsyncInvoker<ListServerCertificateRequest, ListServerCertificateResponse>
+     */
+    public AsyncInvoker<ListServerCertificateRequest, ListServerCertificateResponse> listServerCertificateAsyncInvoker(
+        ListServerCertificateRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listServerCertificate, hcClient);
+    }
+
+    /**
+     * 查询服务器证书
+     *
+     * 应用服务器可调用此接口在物联网平台查询服务器证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerCertificateRequest 请求对象
+     * @return CompletableFuture<ShowServerCertificateResponse>
+     */
+    public CompletableFuture<ShowServerCertificateResponse> showServerCertificateAsync(
+        ShowServerCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showServerCertificate);
+    }
+
+    /**
+     * 查询服务器证书
+     *
+     * 应用服务器可调用此接口在物联网平台查询服务器证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowServerCertificateRequest 请求对象
+     * @return AsyncInvoker<ShowServerCertificateRequest, ShowServerCertificateResponse>
+     */
+    public AsyncInvoker<ShowServerCertificateRequest, ShowServerCertificateResponse> showServerCertificateAsyncInvoker(
+        ShowServerCertificateRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.showServerCertificate, hcClient);
     }
 
     /**

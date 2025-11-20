@@ -44,7 +44,7 @@ public class SecurityCheckTaskCondition {
     }
 
     /**
-     * 定时任务，包含如下:   - fixed_weekday : 固定工作日
+     * **参数解释**： 定时任务类型 **取值范围**： - fixed_weekday : 固定工作日 
      * @return type
      */
     public String getType() {
@@ -94,7 +94,7 @@ public class SecurityCheckTaskCondition {
     }
 
     /**
-     * 在此参数表示的小时触发定时任务
+     * **参数解释**： 在此参数表示的小时触发定时任务 **取值范围**： 最小值0，最大值23 
      * minimum: 0
      * maximum: 23
      * @return hour
@@ -113,7 +113,7 @@ public class SecurityCheckTaskCondition {
     }
 
     /**
-     * 在此参数表示的分钟触发定时任务
+     * **参数解释**： 在此参数表示的分钟触发定时任务 **取值范围**： 最小值0，最大值59 
      * minimum: 0
      * maximum: 59
      * @return minute
@@ -132,9 +132,9 @@ public class SecurityCheckTaskCondition {
     }
 
     /**
-     * 随机偏移时间
+     * **参数解释**： 随机偏移时间 **取值范围**： 最小值0，最大值7200 
      * minimum: 0
-     * maximum: 3600
+     * maximum: 7200
      * @return randomOffset
      */
     public Integer getRandomOffset() {

@@ -30,6 +30,11 @@ public class NodeList {
 
     private String ip;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public NodeList withPort(String port) {
         this.port = port;
         return this;
@@ -98,6 +103,23 @@ public class NodeList {
         this.ip = ip;
     }
 
+    public NodeList withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 节点所在组ID。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class NodeList {
         }
         NodeList that = (NodeList) obj;
         return Objects.equals(this.port, that.port) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.ip, that.ip);
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(port, status, nodeId, ip);
+        return Objects.hash(port, status, nodeId, ip, groupId);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class NodeList {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

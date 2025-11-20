@@ -60,7 +60,7 @@ public class CreateAutopilotKubernetesClusterCertResponse extends SdkResponse {
     }
 
     /**
-     * API类型，固定值“Config”，该值不可修改。 
+     * **参数解释**： API类型 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： Config 
      * @return kind
      */
     public String getKind() {
@@ -77,7 +77,7 @@ public class CreateAutopilotKubernetesClusterCertResponse extends SdkResponse {
     }
 
     /**
-     * API版本，固定值“v1”。
+     * **参数解释**： API版本 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： v1 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -94,7 +94,7 @@ public class CreateAutopilotKubernetesClusterCertResponse extends SdkResponse {
     }
 
     /**
-     * 当前未使用该字段，当前默认为空。
+     * **参数解释**： 当前未使用该字段 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 默认为空 
      * @return preferences
      */
     public Object getPreferences() {
@@ -127,7 +127,7 @@ public class CreateAutopilotKubernetesClusterCertResponse extends SdkResponse {
     }
 
     /**
-     * 集群列表。
+     * **参数解释**： 集群列表。 **约束限制**： 不涉及 
      * @return clusters
      */
     public List<Clusters> getClusters() {
@@ -160,7 +160,7 @@ public class CreateAutopilotKubernetesClusterCertResponse extends SdkResponse {
     }
 
     /**
-     * 存放了指定用户的一些证书信息和ClientKey信息。
+     * **参数解释**： 存放了指定用户的一些证书信息和ClientKey信息。 **约束限制**： 不涉及 
      * @return users
      */
     public List<Users> getUsers() {
@@ -193,7 +193,7 @@ public class CreateAutopilotKubernetesClusterCertResponse extends SdkResponse {
     }
 
     /**
-     * 上下文列表。
+     * **参数解释**： 上下文列表。 **约束限制**： 不涉及 
      * @return contexts
      */
     public List<Contexts> getContexts() {
@@ -210,7 +210,7 @@ public class CreateAutopilotKubernetesClusterCertResponse extends SdkResponse {
     }
 
     /**
-     * 当前上下文，若存在publicIp（虚拟机弹性IP）时为 external; 若不存在publicIp为 internal。
+     * **参数解释**： 当前上下文 **约束限制**： 不涉及 **取值范围**： - external：公网访问  - internal：私网访问  **默认取值**： - 若存在publicIp（虚拟机弹性IP）时为 external。 - 若不存在publicIp为 internal。 
      * @return currentContext
      */
     public String getCurrentContext() {

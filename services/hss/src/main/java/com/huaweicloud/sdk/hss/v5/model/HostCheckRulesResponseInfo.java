@@ -260,7 +260,7 @@ public class HostCheckRulesResponseInfo {
     }
 
     /**
-     * **参数解释** 差异化展示提示信息 **取值范围** 字符长度0-512位
+     * **参数解释** 忽略或加白的描述 **取值范围** 字符长度0-512位
      * @return description
      */
     public String getDescription() {

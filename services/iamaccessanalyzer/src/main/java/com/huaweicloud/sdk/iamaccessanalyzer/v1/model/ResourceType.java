@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 资源的类型。
+ * 资源的类型。 - iam:agency：IAM委托 - iam:user：IAM用户 - kms:cmk：DEW共享密钥 - obs:bucket：OBS桶 - swr:repo：SWR镜像仓库 - cbr:backup：CBR备份 - ims:image：IMS镜像 
  */
 public class ResourceType {
 
@@ -32,6 +32,21 @@ public class ResourceType {
      */
     public static final ResourceType OBS_BUCKET = new ResourceType("obs:bucket");
 
+    /**
+     * Enum SWR_REPO for value: "swr:repo"
+     */
+    public static final ResourceType SWR_REPO = new ResourceType("swr:repo");
+
+    /**
+     * Enum CBR_BACKUP for value: "cbr:backup"
+     */
+    public static final ResourceType CBR_BACKUP = new ResourceType("cbr:backup");
+
+    /**
+     * Enum IMS_IMAGE for value: "ims:image"
+     */
+    public static final ResourceType IMS_IMAGE = new ResourceType("ims:image");
+
     private static final Map<String, ResourceType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, ResourceType> createStaticFields() {
@@ -40,6 +55,9 @@ public class ResourceType {
         map.put("iam:user", IAM_USER);
         map.put("kms:cmk", KMS_CMK);
         map.put("obs:bucket", OBS_BUCKET);
+        map.put("swr:repo", SWR_REPO);
+        map.put("cbr:backup", CBR_BACKUP);
+        map.put("ims:image", IMS_IMAGE);
         return Collections.unmodifiableMap(map);
     }
 

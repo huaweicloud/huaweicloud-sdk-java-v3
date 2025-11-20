@@ -29,7 +29,7 @@ public class UpdateFindingsReqBody {
     private String resourceUrn;
 
     /**
-     * 要更新的访问分析结果状态。
+     * 要更新的访问分析结果状态。 - active：活跃 - archived：已存档 
      */
     public static final class StatusEnum {
 
@@ -159,7 +159,7 @@ public class UpdateFindingsReqBody {
     }
 
     /**
-     * 要更新的访问分析结果状态。
+     * 要更新的访问分析结果状态。 - active：活跃 - archived：已存档 
      * @return status
      */
     public StatusEnum getStatus() {

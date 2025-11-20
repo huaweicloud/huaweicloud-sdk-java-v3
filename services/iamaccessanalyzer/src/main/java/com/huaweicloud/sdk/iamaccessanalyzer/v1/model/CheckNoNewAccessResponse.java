@@ -25,7 +25,7 @@ public class CheckNoNewAccessResponse extends SdkResponse {
     private String message;
 
     /**
-     * 检查新访问权限的结果。
+     * 检查新访问权限的结果。 - pass：无新增访问权限 - fail：有新增访问权限 
      */
     public static final class CheckResultEnum {
 
@@ -127,7 +127,7 @@ public class CheckNoNewAccessResponse extends SdkResponse {
     }
 
     /**
-     * 检查新访问权限的结果。
+     * 检查新访问权限的结果。 - pass：无新增访问权限 - fail：有新增访问权限 
      * @return checkResult
      */
     public CheckResultEnum getCheckResult() {

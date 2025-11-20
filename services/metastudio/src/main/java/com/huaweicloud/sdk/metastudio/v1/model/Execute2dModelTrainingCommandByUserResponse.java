@@ -110,6 +110,11 @@ public class Execute2dModelTrainingCommandByUserResponse extends SdkResponse {
     private String excuteFailedMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorResponse errorInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -216,6 +221,32 @@ public class Execute2dModelTrainingCommandByUserResponse extends SdkResponse {
         this.excuteFailedMsg = excuteFailedMsg;
     }
 
+    public Execute2dModelTrainingCommandByUserResponse withErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public Execute2dModelTrainingCommandByUserResponse withErrorInfo(Consumer<ErrorResponse> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorResponse();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorResponse getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
+    }
+
     public Execute2dModelTrainingCommandByUserResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -248,12 +279,12 @@ public class Execute2dModelTrainingCommandByUserResponse extends SdkResponse {
             && Objects.equals(this.attachmentUploadUrl, that.attachmentUploadUrl)
             && Objects.equals(this.multipartData, that.multipartData)
             && Objects.equals(this.excuteFailedMsg, that.excuteFailedMsg)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(commondResult, attachmentUploadUrl, multipartData, excuteFailedMsg, xRequestId);
+        return Objects.hash(commondResult, attachmentUploadUrl, multipartData, excuteFailedMsg, errorInfo, xRequestId);
     }
 
     @Override
@@ -264,6 +295,7 @@ public class Execute2dModelTrainingCommandByUserResponse extends SdkResponse {
         sb.append("    attachmentUploadUrl: ").append(toIndentedString(attachmentUploadUrl)).append("\n");
         sb.append("    multipartData: ").append(toIndentedString(multipartData)).append("\n");
         sb.append("    excuteFailedMsg: ").append(toIndentedString(excuteFailedMsg)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

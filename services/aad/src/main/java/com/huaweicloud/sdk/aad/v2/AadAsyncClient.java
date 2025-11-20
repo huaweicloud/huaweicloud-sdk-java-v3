@@ -10,14 +10,20 @@ import com.huaweicloud.sdk.aad.v2.model.DeleteWafWhiteIpRuleRequest;
 import com.huaweicloud.sdk.aad.v2.model.DeleteWafWhiteIpRuleResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventResponse;
+import com.huaweicloud.sdk.aad.v2.model.ListDDoSBlackHoleEventRequest;
+import com.huaweicloud.sdk.aad.v2.model.ListDDoSBlackHoleEventResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSConnectionNumberRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSConnectionNumberResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSFlowRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSFlowResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListFrequencyControlRuleRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListFrequencyControlRuleResponse;
+import com.huaweicloud.sdk.aad.v2.model.ListGlobalConfigRequest;
+import com.huaweicloud.sdk.aad.v2.model.ListGlobalConfigResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListInstanceDomainsRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListInstanceDomainsResponse;
+import com.huaweicloud.sdk.aad.v2.model.ListSourceIpRequest;
+import com.huaweicloud.sdk.aad.v2.model.ListSourceIpResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListWafAttackEventRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListWafAttackEventResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListWafBandwidthRequest;
@@ -32,14 +38,28 @@ import com.huaweicloud.sdk.aad.v2.model.ListWafWhiteIpRuleRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListWafWhiteIpRuleResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListWhiteBlackIpRuleResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowAlarmConfigRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowAlarmConfigResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowDDoSPeakRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowDDoSPeakResponse;
 import com.huaweicloud.sdk.aad.v2.model.ShowDomainCertificateRequest;
 import com.huaweicloud.sdk.aad.v2.model.ShowDomainCertificateResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowDomainDetailRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowDomainDetailResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowDomainNameConfigRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowDomainNameConfigResponse;
 import com.huaweicloud.sdk.aad.v2.model.ShowFlowBlockRequest;
 import com.huaweicloud.sdk.aad.v2.model.ShowFlowBlockResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowInstanceByInstanceIdRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowInstanceByInstanceIdResponse;
 import com.huaweicloud.sdk.aad.v2.model.ShowWafPolicyRequest;
 import com.huaweicloud.sdk.aad.v2.model.ShowWafPolicyResponse;
 import com.huaweicloud.sdk.aad.v2.model.ShowWafQpsRequest;
 import com.huaweicloud.sdk.aad.v2.model.ShowWafQpsResponse;
+import com.huaweicloud.sdk.aad.v2.model.UpdateDomainConfigRequest;
+import com.huaweicloud.sdk.aad.v2.model.UpdateDomainConfigResponse;
+import com.huaweicloud.sdk.aad.v2.model.UpdateForwardRuleRequest;
+import com.huaweicloud.sdk.aad.v2.model.UpdateForwardRuleResponse;
 import com.huaweicloud.sdk.aad.v2.model.UpgradeInstanceSpecRequest;
 import com.huaweicloud.sdk.aad.v2.model.UpgradeInstanceSpecResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -208,6 +228,36 @@ public class AadAsyncClient {
     }
 
     /**
+     * 黑洞事件列表
+     *
+     * 黑洞事件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDDoSBlackHoleEventRequest 请求对象
+     * @return CompletableFuture<ListDDoSBlackHoleEventResponse>
+     */
+    public CompletableFuture<ListDDoSBlackHoleEventResponse> listDDoSBlackHoleEventAsync(
+        ListDDoSBlackHoleEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.listDDoSBlackHoleEvent);
+    }
+
+    /**
+     * 黑洞事件列表
+     *
+     * 黑洞事件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDDoSBlackHoleEventRequest 请求对象
+     * @return AsyncInvoker<ListDDoSBlackHoleEventRequest, ListDDoSBlackHoleEventResponse>
+     */
+    public AsyncInvoker<ListDDoSBlackHoleEventRequest, ListDDoSBlackHoleEventResponse> listDDoSBlackHoleEventAsyncInvoker(
+        ListDDoSBlackHoleEventRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.listDDoSBlackHoleEvent, hcClient);
+    }
+
+    /**
      * 查询新建连接数和并发连接数
      *
      * 查询新建连接数和并发连接数
@@ -297,6 +347,35 @@ public class AadAsyncClient {
     }
 
     /**
+     * 查询控制台WAF全局配置
+     *
+     * 查询控制台WAF全局配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConfigRequest 请求对象
+     * @return CompletableFuture<ListGlobalConfigResponse>
+     */
+    public CompletableFuture<ListGlobalConfigResponse> listGlobalConfigAsync(ListGlobalConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.listGlobalConfig);
+    }
+
+    /**
+     * 查询控制台WAF全局配置
+     *
+     * 查询控制台WAF全局配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalConfigRequest 请求对象
+     * @return AsyncInvoker<ListGlobalConfigRequest, ListGlobalConfigResponse>
+     */
+    public AsyncInvoker<ListGlobalConfigRequest, ListGlobalConfigResponse> listGlobalConfigAsyncInvoker(
+        ListGlobalConfigRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.listGlobalConfig, hcClient);
+    }
+
+    /**
      * 查询实例关联的域名信息
      *
      * 查询实例关联的域名信息
@@ -323,6 +402,35 @@ public class AadAsyncClient {
     public AsyncInvoker<ListInstanceDomainsRequest, ListInstanceDomainsResponse> listInstanceDomainsAsyncInvoker(
         ListInstanceDomainsRequest request) {
         return new AsyncInvoker<>(request, AadMeta.listInstanceDomains, hcClient);
+    }
+
+    /**
+     * 查询回源ip列表
+     *
+     * 查询回源ip列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSourceIpRequest 请求对象
+     * @return CompletableFuture<ListSourceIpResponse>
+     */
+    public CompletableFuture<ListSourceIpResponse> listSourceIpAsync(ListSourceIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.listSourceIp);
+    }
+
+    /**
+     * 查询回源ip列表
+     *
+     * 查询回源ip列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSourceIpRequest 请求对象
+     * @return AsyncInvoker<ListSourceIpRequest, ListSourceIpResponse>
+     */
+    public AsyncInvoker<ListSourceIpRequest, ListSourceIpResponse> listSourceIpAsyncInvoker(
+        ListSourceIpRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.listSourceIp, hcClient);
     }
 
     /**
@@ -529,6 +637,64 @@ public class AadAsyncClient {
     }
 
     /**
+     * 查询告警设置
+     *
+     * 查询告警设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmConfigRequest 请求对象
+     * @return CompletableFuture<ShowAlarmConfigResponse>
+     */
+    public CompletableFuture<ShowAlarmConfigResponse> showAlarmConfigAsync(ShowAlarmConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.showAlarmConfig);
+    }
+
+    /**
+     * 查询告警设置
+     *
+     * 查询告警设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmConfigRequest 请求对象
+     * @return AsyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse>
+     */
+    public AsyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse> showAlarmConfigAsyncInvoker(
+        ShowAlarmConfigRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.showAlarmConfig, hcClient);
+    }
+
+    /**
+     * 查询高防入流量峰值、攻击流量峰值、DDoS攻击次数
+     *
+     * 查询高防入流量峰值、攻击流量峰值、DDoS攻击次数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDDoSPeakRequest 请求对象
+     * @return CompletableFuture<ShowDDoSPeakResponse>
+     */
+    public CompletableFuture<ShowDDoSPeakResponse> showDDoSPeakAsync(ShowDDoSPeakRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.showDDoSPeak);
+    }
+
+    /**
+     * 查询高防入流量峰值、攻击流量峰值、DDoS攻击次数
+     *
+     * 查询高防入流量峰值、攻击流量峰值、DDoS攻击次数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDDoSPeakRequest 请求对象
+     * @return AsyncInvoker<ShowDDoSPeakRequest, ShowDDoSPeakResponse>
+     */
+    public AsyncInvoker<ShowDDoSPeakRequest, ShowDDoSPeakResponse> showDDoSPeakAsyncInvoker(
+        ShowDDoSPeakRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.showDDoSPeak, hcClient);
+    }
+
+    /**
      * 查询域名关联的证书信息
      *
      * 查询域名关联的证书信息
@@ -559,6 +725,65 @@ public class AadAsyncClient {
     }
 
     /**
+     * 查询域名详情
+     *
+     * 查询域名详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainDetailRequest 请求对象
+     * @return CompletableFuture<ShowDomainDetailResponse>
+     */
+    public CompletableFuture<ShowDomainDetailResponse> showDomainDetailAsync(ShowDomainDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.showDomainDetail);
+    }
+
+    /**
+     * 查询域名详情
+     *
+     * 查询域名详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainDetailRequest 请求对象
+     * @return AsyncInvoker<ShowDomainDetailRequest, ShowDomainDetailResponse>
+     */
+    public AsyncInvoker<ShowDomainDetailRequest, ShowDomainDetailResponse> showDomainDetailAsyncInvoker(
+        ShowDomainDetailRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.showDomainDetail, hcClient);
+    }
+
+    /**
+     * 查看域名配置
+     *
+     * 查看域名配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainNameConfigRequest 请求对象
+     * @return CompletableFuture<ShowDomainNameConfigResponse>
+     */
+    public CompletableFuture<ShowDomainNameConfigResponse> showDomainNameConfigAsync(
+        ShowDomainNameConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.showDomainNameConfig);
+    }
+
+    /**
+     * 查看域名配置
+     *
+     * 查看域名配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainNameConfigRequest 请求对象
+     * @return AsyncInvoker<ShowDomainNameConfigRequest, ShowDomainNameConfigResponse>
+     */
+    public AsyncInvoker<ShowDomainNameConfigRequest, ShowDomainNameConfigResponse> showDomainNameConfigAsyncInvoker(
+        ShowDomainNameConfigRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.showDomainNameConfig, hcClient);
+    }
+
+    /**
      * 查询流量封禁信息
      *
      * 查询流量封禁信息
@@ -585,6 +810,36 @@ public class AadAsyncClient {
     public AsyncInvoker<ShowFlowBlockRequest, ShowFlowBlockResponse> showFlowBlockAsyncInvoker(
         ShowFlowBlockRequest request) {
         return new AsyncInvoker<>(request, AadMeta.showFlowBlock, hcClient);
+    }
+
+    /**
+     * 查询实例详情
+     *
+     * 查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceByInstanceIdRequest 请求对象
+     * @return CompletableFuture<ShowInstanceByInstanceIdResponse>
+     */
+    public CompletableFuture<ShowInstanceByInstanceIdResponse> showInstanceByInstanceIdAsync(
+        ShowInstanceByInstanceIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.showInstanceByInstanceId);
+    }
+
+    /**
+     * 查询实例详情
+     *
+     * 查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceByInstanceIdRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceByInstanceIdRequest, ShowInstanceByInstanceIdResponse>
+     */
+    public AsyncInvoker<ShowInstanceByInstanceIdRequest, ShowInstanceByInstanceIdResponse> showInstanceByInstanceIdAsyncInvoker(
+        ShowInstanceByInstanceIdRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.showInstanceByInstanceId, hcClient);
     }
 
     /**
@@ -642,6 +897,64 @@ public class AadAsyncClient {
      */
     public AsyncInvoker<ShowWafQpsRequest, ShowWafQpsResponse> showWafQpsAsyncInvoker(ShowWafQpsRequest request) {
         return new AsyncInvoker<>(request, AadMeta.showWafQps, hcClient);
+    }
+
+    /**
+     * 修改域名配置
+     *
+     * 修改域名配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainConfigRequest 请求对象
+     * @return CompletableFuture<UpdateDomainConfigResponse>
+     */
+    public CompletableFuture<UpdateDomainConfigResponse> updateDomainConfigAsync(UpdateDomainConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.updateDomainConfig);
+    }
+
+    /**
+     * 修改域名配置
+     *
+     * 修改域名配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainConfigRequest, UpdateDomainConfigResponse>
+     */
+    public AsyncInvoker<UpdateDomainConfigRequest, UpdateDomainConfigResponse> updateDomainConfigAsyncInvoker(
+        UpdateDomainConfigRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.updateDomainConfig, hcClient);
+    }
+
+    /**
+     * 修改转发规则中的源站IP
+     *
+     * 修改转发规则中的源站IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateForwardRuleRequest 请求对象
+     * @return CompletableFuture<UpdateForwardRuleResponse>
+     */
+    public CompletableFuture<UpdateForwardRuleResponse> updateForwardRuleAsync(UpdateForwardRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.updateForwardRule);
+    }
+
+    /**
+     * 修改转发规则中的源站IP
+     *
+     * 修改转发规则中的源站IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateForwardRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateForwardRuleRequest, UpdateForwardRuleResponse>
+     */
+    public AsyncInvoker<UpdateForwardRuleRequest, UpdateForwardRuleResponse> updateForwardRuleAsyncInvoker(
+        UpdateForwardRuleRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.updateForwardRule, hcClient);
     }
 
     /**

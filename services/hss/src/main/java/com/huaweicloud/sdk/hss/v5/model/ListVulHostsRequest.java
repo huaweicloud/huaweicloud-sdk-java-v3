@@ -80,6 +80,36 @@ public class ListVulHostsRequest {
 
     private String repairPriority;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_name")
+
+    private String clusterName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_container")
+
+    private Boolean isContainer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_name")
+
+    private String containerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_scan_time")
+
+    private Long minScanTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_scan_time")
+
+    private Long maxScanTime;
+
     public ListVulHostsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -277,7 +307,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * **参数解释**: 危险程度 **约束限制**: 不涉及 **取值范围**: - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危 - High     : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium   : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low      : 漏洞cvss评分小于4；对应控制台页面的低危  可用逗号连接作为多选 **默认取值**: 不涉及 
+     * **参数解释**: 危险程度（风险等级） **约束限制**: 不涉及 **取值范围**: - Critical：漏洞cvss评分大于等于9；对应控制台页面的高危 - High：漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium：漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low：漏洞cvss评分小于4；对应控制台页面的低危  可用逗号连接作为多选 **默认取值**: 不涉及 
      * @return severityLevel
      */
     public String getSeverityLevel() {
@@ -294,7 +324,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * **参数解释**: 是否影响业务 **约束限制**: 不涉及 **取值范围**: - true  : 影响业务 - false : 不影响业务  **默认取值**: 不涉及 
+     * **参数解释**: 是否影响业务 **约束限制**: 不涉及 **取值范围**: - true：影响业务 - false：不影响业务  **默认取值**: 不涉及 
      * @return isAffectBusiness
      */
     public Boolean getIsAffectBusiness() {
@@ -311,7 +341,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * **参数解释**: 修复优先级 **约束限制**: 不涉及 **取值范围**: - Critical : 紧急 - High     : 高危 - Medium   : 中危 - Low      : 低危  可用逗号连接作为多选 **默认取值**:   不涉及 
+     * **参数解释**: 修复优先级 **约束限制**: 不涉及 **取值范围**: - Critical：紧急 - High：高危 - Medium：中危 - Low：低危  可用逗号连接作为多选 **默认取值**:   不涉及 
      * @return repairPriority
      */
     public String getRepairPriority() {
@@ -320,6 +350,112 @@ public class ListVulHostsRequest {
 
     public void setRepairPriority(String repairPriority) {
         this.repairPriority = repairPriority;
+    }
+
+    public ListVulHostsRequest withClusterName(String clusterName) {
+        this.clusterName = clusterName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 集群名称。 **约束限制**: 不涉及 **取值范围**: 字符长度1-64。 **默认取值**: 不涉及 
+     * @return clusterName
+     */
+    public String getClusterName() {
+        return clusterName;
+    }
+
+    public void setClusterName(String clusterName) {
+        this.clusterName = clusterName;
+    }
+
+    public ListVulHostsRequest withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * **参数解释**:  集群id **约束限制**: 不涉及 **取值范围**: 长度范围1-64位 **默认取值**: 不涉及 
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public ListVulHostsRequest withIsContainer(Boolean isContainer) {
+        this.isContainer = isContainer;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 是否是容器场景 **约束限制**: 不涉及 **取值范围**: - true：是容器场景 - false：不是容器场景  **默认取值**: false 
+     * @return isContainer
+     */
+    public Boolean getIsContainer() {
+        return isContainer;
+    }
+
+    public void setIsContainer(Boolean isContainer) {
+        this.isContainer = isContainer;
+    }
+
+    public ListVulHostsRequest withContainerName(String containerName) {
+        this.containerName = containerName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 容器名称（容器场景生效） **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
+     * @return containerName
+     */
+    public String getContainerName() {
+        return containerName;
+    }
+
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
+    }
+
+    public ListVulHostsRequest withMinScanTime(Long minScanTime) {
+        this.minScanTime = minScanTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 扫描任务开始时间的最小值（容器场景生效） **约束限制**: 不涉及 **取值范围**： 最小值0，最大值2^63-1 **默认取值**: 不涉及 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return minScanTime
+     */
+    public Long getMinScanTime() {
+        return minScanTime;
+    }
+
+    public void setMinScanTime(Long minScanTime) {
+        this.minScanTime = minScanTime;
+    }
+
+    public ListVulHostsRequest withMaxScanTime(Long maxScanTime) {
+        this.maxScanTime = maxScanTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 扫描任务开始时间的最大值（容器场景生效） **约束限制**: 不涉及 **取值范围**： 最小值0，最大值2^63-1 **默认取值**: 不涉及 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return maxScanTime
+     */
+    public Long getMaxScanTime() {
+        return maxScanTime;
+    }
+
+    public void setMaxScanTime(Long maxScanTime) {
+        this.maxScanTime = maxScanTime;
     }
 
     @Override
@@ -339,7 +475,11 @@ public class ListVulHostsRequest {
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.handleStatus, that.handleStatus)
             && Objects.equals(this.severityLevel, that.severityLevel)
             && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
-            && Objects.equals(this.repairPriority, that.repairPriority);
+            && Objects.equals(this.repairPriority, that.repairPriority)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.isContainer, that.isContainer)
+            && Objects.equals(this.containerName, that.containerName)
+            && Objects.equals(this.minScanTime, that.minScanTime) && Objects.equals(this.maxScanTime, that.maxScanTime);
     }
 
     @Override
@@ -357,7 +497,13 @@ public class ListVulHostsRequest {
             handleStatus,
             severityLevel,
             isAffectBusiness,
-            repairPriority);
+            repairPriority,
+            clusterName,
+            clusterId,
+            isContainer,
+            containerName,
+            minScanTime,
+            maxScanTime);
     }
 
     @Override
@@ -378,6 +524,12 @@ public class ListVulHostsRequest {
         sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
         sb.append("    isAffectBusiness: ").append(toIndentedString(isAffectBusiness)).append("\n");
         sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
+        sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    isContainer: ").append(toIndentedString(isContainer)).append("\n");
+        sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
+        sb.append("    minScanTime: ").append(toIndentedString(minScanTime)).append("\n");
+        sb.append("    maxScanTime: ").append(toIndentedString(maxScanTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

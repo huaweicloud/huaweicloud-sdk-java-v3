@@ -205,7 +205,7 @@ public class ShowBaselineOverviewResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 基线检查项通过率\"。 **取值范围**: 取值0-2147483647 
+     * **参数解释**: 基线检查项通过率。 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return checkRulePassRate

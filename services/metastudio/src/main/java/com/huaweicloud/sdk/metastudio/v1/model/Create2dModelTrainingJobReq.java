@@ -142,7 +142,7 @@ public class Create2dModelTrainingJobReq {
     private List<String> tags = null;
 
     /**
-     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 > * V3和V2版本已废弃不用
+     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus训练用的模型 > * V3和V2版本已废弃不用
      */
     public static final class ModelVersionEnum {
 
@@ -161,6 +161,11 @@ public class Create2dModelTrainingJobReq {
          */
         public static final ModelVersionEnum V3_2 = new ModelVersionEnum("V3.2");
 
+        /**
+         * Enum V3_3 for value: "V3.3"
+         */
+        public static final ModelVersionEnum V3_3 = new ModelVersionEnum("V3.3");
+
         private static final Map<String, ModelVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModelVersionEnum> createStaticFields() {
@@ -168,6 +173,7 @@ public class Create2dModelTrainingJobReq {
             map.put("V2", V2);
             map.put("V3", V3);
             map.put("V3.2", V3_2);
+            map.put("V3.3", V3_3);
             return Collections.unmodifiableMap(map);
         }
 
@@ -223,9 +229,24 @@ public class Create2dModelTrainingJobReq {
     private ModelVersionEnum modelVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ondemand_resource")
+
+    private Boolean isOndemandResource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_flexus")
 
     private Boolean isFlexus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_fast_flexus")
+
+    private Boolean isFastFlexus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_live_copy")
+
+    private Boolean isLiveCopy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_only_human_model")
@@ -340,7 +361,7 @@ public class Create2dModelTrainingJobReq {
     }
 
     /**
-     * 分身数字人训练任务创建者的手机号。
+     * 分身数字人训练任务创建者的手机号
      * @return contact
      */
     public String getContact() {
@@ -479,7 +500,7 @@ public class Create2dModelTrainingJobReq {
     }
 
     /**
-     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 > * V3和V2版本已废弃不用
+     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus训练用的模型 > * V3和V2版本已废弃不用
      * @return modelVersion
      */
     public ModelVersionEnum getModelVersion() {
@@ -488,6 +509,23 @@ public class Create2dModelTrainingJobReq {
 
     public void setModelVersion(ModelVersionEnum modelVersion) {
         this.modelVersion = modelVersion;
+    }
+
+    public Create2dModelTrainingJobReq withIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+        return this;
+    }
+
+    /**
+     * 分身数字人训练任务类型 true 按需任务 false 普通任务
+     * @return isOndemandResource
+     */
+    public Boolean getIsOndemandResource() {
+        return isOndemandResource;
+    }
+
+    public void setIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
     }
 
     public Create2dModelTrainingJobReq withIsFlexus(Boolean isFlexus) {
@@ -505,6 +543,40 @@ public class Create2dModelTrainingJobReq {
 
     public void setIsFlexus(Boolean isFlexus) {
         this.isFlexus = isFlexus;
+    }
+
+    public Create2dModelTrainingJobReq withIsFastFlexus(Boolean isFastFlexus) {
+        this.isFastFlexus = isFastFlexus;
+        return this;
+    }
+
+    /**
+     * 是否极速版flexus
+     * @return isFastFlexus
+     */
+    public Boolean getIsFastFlexus() {
+        return isFastFlexus;
+    }
+
+    public void setIsFastFlexus(Boolean isFastFlexus) {
+        this.isFastFlexus = isFastFlexus;
+    }
+
+    public Create2dModelTrainingJobReq withIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
+        return this;
+    }
+
+    /**
+     * 是否是直播间复刻任务
+     * @return isLiveCopy
+     */
+    public Boolean getIsLiveCopy() {
+        return isLiveCopy;
+    }
+
+    public void setIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
     }
 
     public Create2dModelTrainingJobReq withIsOnlyHumanModel(Boolean isOnlyHumanModel) {
@@ -616,7 +688,10 @@ public class Create2dModelTrainingJobReq {
             && Objects.equals(this.actionVideoMultipartCount, that.actionVideoMultipartCount)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.modelVersion, that.modelVersion) && Objects.equals(this.isFlexus, that.isFlexus)
+            && Objects.equals(this.modelVersion, that.modelVersion)
+            && Objects.equals(this.isOndemandResource, that.isOndemandResource)
+            && Objects.equals(this.isFlexus, that.isFlexus) && Objects.equals(this.isFastFlexus, that.isFastFlexus)
+            && Objects.equals(this.isLiveCopy, that.isLiveCopy)
             && Objects.equals(this.isOnlyHumanModel, that.isOnlyHumanModel)
             && Objects.equals(this.audioSourceType, that.audioSourceType)
             && Objects.equals(this.voiceProperties, that.voiceProperties)
@@ -634,7 +709,10 @@ public class Create2dModelTrainingJobReq {
             batchName,
             tags,
             modelVersion,
+            isOndemandResource,
             isFlexus,
+            isFastFlexus,
+            isLiveCopy,
             isOnlyHumanModel,
             audioSourceType,
             voiceProperties,
@@ -654,7 +732,10 @@ public class Create2dModelTrainingJobReq {
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
+        sb.append("    isOndemandResource: ").append(toIndentedString(isOndemandResource)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
+        sb.append("    isFastFlexus: ").append(toIndentedString(isFastFlexus)).append("\n");
+        sb.append("    isLiveCopy: ").append(toIndentedString(isLiveCopy)).append("\n");
         sb.append("    isOnlyHumanModel: ").append(toIndentedString(isOnlyHumanModel)).append("\n");
         sb.append("    audioSourceType: ").append(toIndentedString(audioSourceType)).append("\n");
         sb.append("    voiceProperties: ").append(toIndentedString(voiceProperties)).append("\n");

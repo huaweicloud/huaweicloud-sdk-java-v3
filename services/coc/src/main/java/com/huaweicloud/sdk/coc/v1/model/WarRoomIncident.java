@@ -21,9 +21,19 @@ public class WarRoomIncident {
     private String incidentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_id")
+
+    private String alarmId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_change_event")
 
     private Boolean isChangeEvent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_id")
+
+    private Long sourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failure_level")
@@ -69,6 +79,23 @@ public class WarRoomIncident {
         this.incidentId = incidentId;
     }
 
+    public WarRoomIncident withAlarmId(String alarmId) {
+        this.alarmId = alarmId;
+        return this;
+    }
+
+    /**
+     * 告警id
+     * @return alarmId
+     */
+    public String getAlarmId() {
+        return alarmId;
+    }
+
+    public void setAlarmId(String alarmId) {
+        this.alarmId = alarmId;
+    }
+
     public WarRoomIncident withIsChangeEvent(Boolean isChangeEvent) {
         this.isChangeEvent = isChangeEvent;
         return this;
@@ -84,6 +111,25 @@ public class WarRoomIncident {
 
     public void setIsChangeEvent(Boolean isChangeEvent) {
         this.isChangeEvent = isChangeEvent;
+    }
+
+    public WarRoomIncident withSourceId(Long sourceId) {
+        this.sourceId = sourceId;
+        return this;
+    }
+
+    /**
+     * 源id
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return sourceId
+     */
+    public Long getSourceId() {
+        return sourceId;
+    }
+
+    public void setSourceId(Long sourceId) {
+        this.sourceId = sourceId;
     }
 
     public WarRoomIncident withFailureLevel(String failureLevel) {
@@ -130,14 +176,14 @@ public class WarRoomIncident {
         }
         WarRoomIncident that = (WarRoomIncident) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.incidentId, that.incidentId)
-            && Objects.equals(this.isChangeEvent, that.isChangeEvent)
-            && Objects.equals(this.failureLevel, that.failureLevel)
+            && Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.isChangeEvent, that.isChangeEvent)
+            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.failureLevel, that.failureLevel)
             && Objects.equals(this.incidentUrl, that.incidentUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, incidentId, isChangeEvent, failureLevel, incidentUrl);
+        return Objects.hash(id, incidentId, alarmId, isChangeEvent, sourceId, failureLevel, incidentUrl);
     }
 
     @Override
@@ -146,7 +192,9 @@ public class WarRoomIncident {
         sb.append("class WarRoomIncident {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    incidentId: ").append(toIndentedString(incidentId)).append("\n");
+        sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
         sb.append("    isChangeEvent: ").append(toIndentedString(isChangeEvent)).append("\n");
+        sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
         sb.append("    failureLevel: ").append(toIndentedString(failureLevel)).append("\n");
         sb.append("    incidentUrl: ").append(toIndentedString(incidentUrl)).append("\n");
         sb.append("}");

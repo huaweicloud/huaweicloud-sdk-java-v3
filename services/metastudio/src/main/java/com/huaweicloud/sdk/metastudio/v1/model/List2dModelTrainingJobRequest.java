@@ -41,6 +41,11 @@ public class List2dModelTrainingJobRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
+
+    private String state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
     private String sortKey;
@@ -61,14 +66,19 @@ public class List2dModelTrainingJobRequest {
     private String createSince;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "state")
-
-    private String state;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_project_id")
 
     private String queryProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_since")
+
+    private String updateSince;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_until")
+
+    private String updateUntil;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batch_name")
@@ -99,6 +109,21 @@ public class List2dModelTrainingJobRequest {
     @JsonProperty(value = "is_flexus")
 
     private Boolean isFlexus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_live_copy")
+
+    private Boolean isLiveCopy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "train_location")
+
+    private String trainLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ondemand_resource")
+
+    private Boolean isOndemandResource;
 
     public List2dModelTrainingJobRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -212,6 +237,23 @@ public class List2dModelTrainingJobRequest {
         this.limit = limit;
     }
 
+    public List2dModelTrainingJobRequest withState(String state) {
+        this.state = state;
+        return this;
+    }
+
+    /**
+     * 任务状态，默认所有状态。  可多个状态查询，使用英文逗号分隔。  如state=CREATING,PUBLISHED
+     * @return state
+     */
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public List2dModelTrainingJobRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
         return this;
@@ -280,23 +322,6 @@ public class List2dModelTrainingJobRequest {
         this.createSince = createSince;
     }
 
-    public List2dModelTrainingJobRequest withState(String state) {
-        this.state = state;
-        return this;
-    }
-
-    /**
-     * 任务状态，默认所有状态。  可多个状态查询，使用英文逗号分隔。  如state=CREATING,PUBLISHED
-     * @return state
-     */
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public List2dModelTrainingJobRequest withQueryProjectId(String queryProjectId) {
         this.queryProjectId = queryProjectId;
         return this;
@@ -312,6 +337,40 @@ public class List2dModelTrainingJobRequest {
 
     public void setQueryProjectId(String queryProjectId) {
         this.queryProjectId = queryProjectId;
+    }
+
+    public List2dModelTrainingJobRequest withUpdateSince(String updateSince) {
+        this.updateSince = updateSince;
+        return this;
+    }
+
+    /**
+     * 过滤更新时间>=输入时间的记录。
+     * @return updateSince
+     */
+    public String getUpdateSince() {
+        return updateSince;
+    }
+
+    public void setUpdateSince(String updateSince) {
+        this.updateSince = updateSince;
+    }
+
+    public List2dModelTrainingJobRequest withUpdateUntil(String updateUntil) {
+        this.updateUntil = updateUntil;
+        return this;
+    }
+
+    /**
+     * 过滤更新时间>=输入时间的记录。
+     * @return updateUntil
+     */
+    public String getUpdateUntil() {
+        return updateUntil;
+    }
+
+    public void setUpdateUntil(String updateUntil) {
+        this.updateUntil = updateUntil;
     }
 
     public List2dModelTrainingJobRequest withBatchName(String batchName) {
@@ -416,6 +475,57 @@ public class List2dModelTrainingJobRequest {
         this.isFlexus = isFlexus;
     }
 
+    public List2dModelTrainingJobRequest withIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
+        return this;
+    }
+
+    /**
+     * 是否是直播间复刻任务
+     * @return isLiveCopy
+     */
+    public Boolean getIsLiveCopy() {
+        return isLiveCopy;
+    }
+
+    public void setIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
+    }
+
+    public List2dModelTrainingJobRequest withTrainLocation(String trainLocation) {
+        this.trainLocation = trainLocation;
+        return this;
+    }
+
+    /**
+     * 训练region
+     * @return trainLocation
+     */
+    public String getTrainLocation() {
+        return trainLocation;
+    }
+
+    public void setTrainLocation(String trainLocation) {
+        this.trainLocation = trainLocation;
+    }
+
+    public List2dModelTrainingJobRequest withIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+        return this;
+    }
+
+    /**
+     * 是否测试版
+     * @return isOndemandResource
+     */
+    public Boolean getIsOndemandResource() {
+        return isOndemandResource;
+    }
+
+    public void setIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -428,13 +538,17 @@ public class List2dModelTrainingJobRequest {
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.createUntil, that.createUntil) && Objects.equals(this.createSince, that.createSince)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.queryProjectId, that.queryProjectId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.createUntil, that.createUntil)
+            && Objects.equals(this.createSince, that.createSince)
+            && Objects.equals(this.queryProjectId, that.queryProjectId)
+            && Objects.equals(this.updateSince, that.updateSince) && Objects.equals(this.updateUntil, that.updateUntil)
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tag, that.tag)
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.modelResolution, that.modelResolution)
-            && Objects.equals(this.isFlexus, that.isFlexus);
+            && Objects.equals(this.isFlexus, that.isFlexus) && Objects.equals(this.isLiveCopy, that.isLiveCopy)
+            && Objects.equals(this.trainLocation, that.trainLocation)
+            && Objects.equals(this.isOndemandResource, that.isOndemandResource);
     }
 
     @Override
@@ -445,18 +559,23 @@ public class List2dModelTrainingJobRequest {
             xAppUserId,
             offset,
             limit,
+            state,
             sortKey,
             sortDir,
             createUntil,
             createSince,
-            state,
             queryProjectId,
+            updateSince,
+            updateUntil,
             batchName,
             tag,
             jobId,
             name,
             modelResolution,
-            isFlexus);
+            isFlexus,
+            isLiveCopy,
+            trainLocation,
+            isOndemandResource);
     }
 
     @Override
@@ -469,18 +588,23 @@ public class List2dModelTrainingJobRequest {
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    createUntil: ").append(toIndentedString(createUntil)).append("\n");
         sb.append("    createSince: ").append(toIndentedString(createSince)).append("\n");
-        sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    queryProjectId: ").append(toIndentedString(queryProjectId)).append("\n");
+        sb.append("    updateSince: ").append(toIndentedString(updateSince)).append("\n");
+        sb.append("    updateUntil: ").append(toIndentedString(updateUntil)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
+        sb.append("    isLiveCopy: ").append(toIndentedString(isLiveCopy)).append("\n");
+        sb.append("    trainLocation: ").append(toIndentedString(trainLocation)).append("\n");
+        sb.append("    isOndemandResource: ").append(toIndentedString(isOndemandResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -30,7 +30,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private String name;
 
     /**
-     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
+     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步   * WAIT_GENERATE_ACTION_MARK 等待动作标定   * ACTION_MARKING: 动作标定生成 - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务   * WAIT_TEST_VIDEO_CHECK: 等待进行测试视频推理任务  * TEST_VIDEO_CHECK_PROCESSING：测试视频推理质量检测中  * TEST_VIDEO_CHECK_SUCCESS：测试视频推理质量检测通过  * TEST_VIDEO_CHECK_FAILED：测试视频推理质量检测未通过  * VIDEO_ANALYZE_PROCESSING：视频检测中  * VIDEO_ANALYZE_SUCCESS：视频检测通过  * VIDEO_ANALYZE_FAILED：视频检测未通过  * ACTION_MARKING：动作标定中  * ACTION_MARK_SUCCESS：动作标定成功  * ACTION_MARK_FAILED：动作标定失败  * ACTION_MARK_UPLOADED：动作标定文件上传成功  * MANUL_STOP_ACTION_MARK：中止动作标定
      */
     public static final class StateEnum {
 
@@ -283,6 +283,71 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
          */
         public static final StateEnum BEAUTYFACE_ROCESSING = new StateEnum("BEAUTYFACE_ROCESSING");
 
+        /**
+         * Enum WAIT_TEST_VIDEO_CHECK for value: "WAIT_TEST_VIDEO_CHECK"
+         */
+        public static final StateEnum WAIT_TEST_VIDEO_CHECK = new StateEnum("WAIT_TEST_VIDEO_CHECK");
+
+        /**
+         * Enum TEST_VIDEO_CHECK_PROCESSING for value: "TEST_VIDEO_CHECK_PROCESSING"
+         */
+        public static final StateEnum TEST_VIDEO_CHECK_PROCESSING = new StateEnum("TEST_VIDEO_CHECK_PROCESSING");
+
+        /**
+         * Enum TEST_VIDEO_CHECK_SUCCESS for value: "TEST_VIDEO_CHECK_SUCCESS"
+         */
+        public static final StateEnum TEST_VIDEO_CHECK_SUCCESS = new StateEnum("TEST_VIDEO_CHECK_SUCCESS");
+
+        /**
+         * Enum TEST_VIDEO_CHECK_FAILED for value: "TEST_VIDEO_CHECK_FAILED"
+         */
+        public static final StateEnum TEST_VIDEO_CHECK_FAILED = new StateEnum("TEST_VIDEO_CHECK_FAILED");
+
+        /**
+         * Enum VIDEO_ANALYZE_PROCESSING for value: "VIDEO_ANALYZE_PROCESSING"
+         */
+        public static final StateEnum VIDEO_ANALYZE_PROCESSING = new StateEnum("VIDEO_ANALYZE_PROCESSING");
+
+        /**
+         * Enum VIDEO_ANALYZE_SUCCESS for value: "VIDEO_ANALYZE_SUCCESS"
+         */
+        public static final StateEnum VIDEO_ANALYZE_SUCCESS = new StateEnum("VIDEO_ANALYZE_SUCCESS");
+
+        /**
+         * Enum VIDEO_ANALYZE_FAILED for value: "VIDEO_ANALYZE_FAILED"
+         */
+        public static final StateEnum VIDEO_ANALYZE_FAILED = new StateEnum("VIDEO_ANALYZE_FAILED");
+
+        /**
+         * Enum ACTION_MARKING for value: "ACTION_MARKING"
+         */
+        public static final StateEnum ACTION_MARKING = new StateEnum("ACTION_MARKING");
+
+        /**
+         * Enum ACTION_MARK_SUCCESS for value: "ACTION_MARK_SUCCESS"
+         */
+        public static final StateEnum ACTION_MARK_SUCCESS = new StateEnum("ACTION_MARK_SUCCESS");
+
+        /**
+         * Enum ACTION_MARK_FAILED for value: "ACTION_MARK_FAILED"
+         */
+        public static final StateEnum ACTION_MARK_FAILED = new StateEnum("ACTION_MARK_FAILED");
+
+        /**
+         * Enum ACTION_MARK_UPLOADED for value: "ACTION_MARK_UPLOADED"
+         */
+        public static final StateEnum ACTION_MARK_UPLOADED = new StateEnum("ACTION_MARK_UPLOADED");
+
+        /**
+         * Enum WAIT_GENERATE_ACTION_MARK for value: "WAIT_GENERATE_ACTION_MARK"
+         */
+        public static final StateEnum WAIT_GENERATE_ACTION_MARK = new StateEnum("WAIT_GENERATE_ACTION_MARK");
+
+        /**
+         * Enum MANUL_STOP_ACTION_MARK for value: "MANUL_STOP_ACTION_MARK"
+         */
+        public static final StateEnum MANUL_STOP_ACTION_MARK = new StateEnum("MANUL_STOP_ACTION_MARK");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -335,6 +400,19 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             map.put("BEAUTYFACE_FAILED", BEAUTYFACE_FAILED);
             map.put("WAIT_BEAUTY_VIDEO_FILE_UPLOAD", WAIT_BEAUTY_VIDEO_FILE_UPLOAD);
             map.put("BEAUTYFACE_ROCESSING", BEAUTYFACE_ROCESSING);
+            map.put("WAIT_TEST_VIDEO_CHECK", WAIT_TEST_VIDEO_CHECK);
+            map.put("TEST_VIDEO_CHECK_PROCESSING", TEST_VIDEO_CHECK_PROCESSING);
+            map.put("TEST_VIDEO_CHECK_SUCCESS", TEST_VIDEO_CHECK_SUCCESS);
+            map.put("TEST_VIDEO_CHECK_FAILED", TEST_VIDEO_CHECK_FAILED);
+            map.put("VIDEO_ANALYZE_PROCESSING", VIDEO_ANALYZE_PROCESSING);
+            map.put("VIDEO_ANALYZE_SUCCESS", VIDEO_ANALYZE_SUCCESS);
+            map.put("VIDEO_ANALYZE_FAILED", VIDEO_ANALYZE_FAILED);
+            map.put("ACTION_MARKING", ACTION_MARKING);
+            map.put("ACTION_MARK_SUCCESS", ACTION_MARK_SUCCESS);
+            map.put("ACTION_MARK_FAILED", ACTION_MARK_FAILED);
+            map.put("ACTION_MARK_UPLOADED", ACTION_MARK_UPLOADED);
+            map.put("WAIT_GENERATE_ACTION_MARK", WAIT_GENERATE_ACTION_MARK);
+            map.put("MANUL_STOP_ACTION_MARK", MANUL_STOP_ACTION_MARK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -430,7 +508,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private List<String> tags = null;
 
     /**
-     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 > * V3和V2版本已废弃不用
+     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus用的训练模型 > * V3和V2版本已废弃不用
      */
     public static final class ModelVersionEnum {
 
@@ -449,6 +527,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
          */
         public static final ModelVersionEnum V3_2 = new ModelVersionEnum("V3.2");
 
+        /**
+         * Enum V3_3 for value: "V3.3"
+         */
+        public static final ModelVersionEnum V3_3 = new ModelVersionEnum("V3.3");
+
         private static final Map<String, ModelVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ModelVersionEnum> createStaticFields() {
@@ -456,6 +539,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             map.put("V2", V2);
             map.put("V3", V3);
             map.put("V3.2", V3_2);
+            map.put("V3.3", V3_3);
             return Collections.unmodifiableMap(map);
         }
 
@@ -601,9 +685,34 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private Boolean isFlexus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_live_copy")
+
+    private Boolean isLiveCopy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_fast_flexus")
+
+    private Boolean isFastFlexus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_only_human_model")
 
     private Boolean isOnlyHumanModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "optional_training_location")
+
+    private List<String> optionalTrainingLocation = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_background_replacement")
+
+    private Boolean isBackgroundReplacement;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_ondemand_resource")
+
+    private Boolean isOndemandResource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "training_video_download_url")
@@ -631,6 +740,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private String preBeautyImageDownloadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_action_json_data_download_url")
+
+    private String externalActionJsonDataDownloadUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_video_download_url")
 
     private String actionVideoDownloadUrl;
@@ -644,6 +758,16 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     @JsonProperty(value = "audio_file_download_url")
 
     private String audioFileDownloadUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_mark_file_download_url")
+
+    private String actionMarkFileDownloadUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_mark_file_upload_url")
+
+    private String actionMarkFileUploadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operation_logs")
@@ -686,6 +810,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private String markableVideoDownloadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "markable_action_video_download_url")
+
+    private String markableActionVideoDownloadUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traning_video_mark_info")
 
     private TrainingVideoMarkInfo traningVideoMarkInfo;
@@ -694,6 +823,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     @JsonProperty(value = "inference_data_process_video_mark_info")
 
     private InferenceVideoMarkInfo inferenceDataProcessVideoMarkInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "voice_properties")
+
+    private VoiceProperties voiceProperties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inference_data_process_action_mark_info")
@@ -709,11 +843,6 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     @JsonProperty(value = "inference_data_process_eye_correction_mark_info")
 
     private InferenceEyeCorrectionMarkInfo inferenceDataProcessEyeCorrectionMarkInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_background_replacement")
-
-    private Boolean isBackgroundReplacement;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "worker_type")
@@ -815,6 +944,187 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
 
     private TrainingAllocatedResource allocatedResource;
 
+    /**
+     * 训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败
+     */
+    public static final class TrainVideoRotationStateEnum {
+
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
+        public static final TrainVideoRotationStateEnum WAITING = new TrainVideoRotationStateEnum("WAITING");
+
+        /**
+         * Enum PROCESSING for value: "PROCESSING"
+         */
+        public static final TrainVideoRotationStateEnum PROCESSING = new TrainVideoRotationStateEnum("PROCESSING");
+
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
+        public static final TrainVideoRotationStateEnum SUCCESS = new TrainVideoRotationStateEnum("SUCCESS");
+
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
+        public static final TrainVideoRotationStateEnum FAILED = new TrainVideoRotationStateEnum("FAILED");
+
+        private static final Map<String, TrainVideoRotationStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TrainVideoRotationStateEnum> createStaticFields() {
+            Map<String, TrainVideoRotationStateEnum> map = new HashMap<>();
+            map.put("WAITING", WAITING);
+            map.put("PROCESSING", PROCESSING);
+            map.put("SUCCESS", SUCCESS);
+            map.put("FAILED", FAILED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TrainVideoRotationStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TrainVideoRotationStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new TrainVideoRotationStateEnum(value));
+        }
+
+        public static TrainVideoRotationStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TrainVideoRotationStateEnum) {
+                return this.value.equals(((TrainVideoRotationStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "train_video_rotation_state")
+
+    private TrainVideoRotationStateEnum trainVideoRotationState;
+
+    /**
+     * 训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败
+     */
+    public static final class ActionVideoRotationStateEnum {
+
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
+        public static final ActionVideoRotationStateEnum WAITING = new ActionVideoRotationStateEnum("WAITING");
+
+        /**
+         * Enum PROCESSING for value: "PROCESSING"
+         */
+        public static final ActionVideoRotationStateEnum PROCESSING = new ActionVideoRotationStateEnum("PROCESSING");
+
+        /**
+         * Enum SUCCESS for value: "SUCCESS"
+         */
+        public static final ActionVideoRotationStateEnum SUCCESS = new ActionVideoRotationStateEnum("SUCCESS");
+
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
+        public static final ActionVideoRotationStateEnum FAILED = new ActionVideoRotationStateEnum("FAILED");
+
+        private static final Map<String, ActionVideoRotationStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionVideoRotationStateEnum> createStaticFields() {
+            Map<String, ActionVideoRotationStateEnum> map = new HashMap<>();
+            map.put("WAITING", WAITING);
+            map.put("PROCESSING", PROCESSING);
+            map.put("SUCCESS", SUCCESS);
+            map.put("FAILED", FAILED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ActionVideoRotationStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionVideoRotationStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new ActionVideoRotationStateEnum(value));
+        }
+
+        public static ActionVideoRotationStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ActionVideoRotationStateEnum) {
+                return this.value.equals(((ActionVideoRotationStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_video_rotation_state")
+
+    private ActionVideoRotationStateEnum actionVideoRotationState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_training_job_info")
+
+    private List<SubTrainingJobInfoDto> subTrainingJobInfo = null;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
@@ -860,7 +1170,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
+     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步   * WAIT_GENERATE_ACTION_MARK 等待动作标定   * ACTION_MARKING: 动作标定生成 - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务   * WAIT_TEST_VIDEO_CHECK: 等待进行测试视频推理任务  * TEST_VIDEO_CHECK_PROCESSING：测试视频推理质量检测中  * TEST_VIDEO_CHECK_SUCCESS：测试视频推理质量检测通过  * TEST_VIDEO_CHECK_FAILED：测试视频推理质量检测未通过  * VIDEO_ANALYZE_PROCESSING：视频检测中  * VIDEO_ANALYZE_SUCCESS：视频检测通过  * VIDEO_ANALYZE_FAILED：视频检测未通过  * ACTION_MARKING：动作标定中  * ACTION_MARK_SUCCESS：动作标定成功  * ACTION_MARK_FAILED：动作标定失败  * ACTION_MARK_UPLOADED：动作标定文件上传成功  * MANUL_STOP_ACTION_MARK：中止动作标定
      * @return state
      */
     public StateEnum getState() {
@@ -1029,7 +1339,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     }
 
     /**
-     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 > * V3和V2版本已废弃不用
+     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus用的训练模型 > * V3和V2版本已废弃不用
      * @return modelVersion
      */
     public ModelVersionEnum getModelVersion() {
@@ -1108,6 +1418,40 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.isFlexus = isFlexus;
     }
 
+    public Show2dModelTrainingJobResponse withIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
+        return this;
+    }
+
+    /**
+     * 是否是直播间复刻任务
+     * @return isLiveCopy
+     */
+    public Boolean getIsLiveCopy() {
+        return isLiveCopy;
+    }
+
+    public void setIsLiveCopy(Boolean isLiveCopy) {
+        this.isLiveCopy = isLiveCopy;
+    }
+
+    public Show2dModelTrainingJobResponse withIsFastFlexus(Boolean isFastFlexus) {
+        this.isFastFlexus = isFastFlexus;
+        return this;
+    }
+
+    /**
+     * 是否极速版flexus
+     * @return isFastFlexus
+     */
+    public Boolean getIsFastFlexus() {
+        return isFastFlexus;
+    }
+
+    public void setIsFastFlexus(Boolean isFastFlexus) {
+        this.isFastFlexus = isFastFlexus;
+    }
+
     public Show2dModelTrainingJobResponse withIsOnlyHumanModel(Boolean isOnlyHumanModel) {
         this.isOnlyHumanModel = isOnlyHumanModel;
         return this;
@@ -1123,6 +1467,74 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
 
     public void setIsOnlyHumanModel(Boolean isOnlyHumanModel) {
         this.isOnlyHumanModel = isOnlyHumanModel;
+    }
+
+    public Show2dModelTrainingJobResponse withOptionalTrainingLocation(List<String> optionalTrainingLocation) {
+        this.optionalTrainingLocation = optionalTrainingLocation;
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse addOptionalTrainingLocationItem(String optionalTrainingLocationItem) {
+        if (this.optionalTrainingLocation == null) {
+            this.optionalTrainingLocation = new ArrayList<>();
+        }
+        this.optionalTrainingLocation.add(optionalTrainingLocationItem);
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse withOptionalTrainingLocation(
+        Consumer<List<String>> optionalTrainingLocationSetter) {
+        if (this.optionalTrainingLocation == null) {
+            this.optionalTrainingLocation = new ArrayList<>();
+        }
+        optionalTrainingLocationSetter.accept(this.optionalTrainingLocation);
+        return this;
+    }
+
+    /**
+     * 可选训练region
+     * @return optionalTrainingLocation
+     */
+    public List<String> getOptionalTrainingLocation() {
+        return optionalTrainingLocation;
+    }
+
+    public void setOptionalTrainingLocation(List<String> optionalTrainingLocation) {
+        this.optionalTrainingLocation = optionalTrainingLocation;
+    }
+
+    public Show2dModelTrainingJobResponse withIsBackgroundReplacement(Boolean isBackgroundReplacement) {
+        this.isBackgroundReplacement = isBackgroundReplacement;
+        return this;
+    }
+
+    /**
+     * 分身数字人是否需要背景替换。需要背景替换的分身数字人训练视频需要绿幕拍摄。
+     * @return isBackgroundReplacement
+     */
+    public Boolean getIsBackgroundReplacement() {
+        return isBackgroundReplacement;
+    }
+
+    public void setIsBackgroundReplacement(Boolean isBackgroundReplacement) {
+        this.isBackgroundReplacement = isBackgroundReplacement;
+    }
+
+    public Show2dModelTrainingJobResponse withIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
+        return this;
+    }
+
+    /**
+     * 是否按需任务
+     * @return isOndemandResource
+     */
+    public Boolean getIsOndemandResource() {
+        return isOndemandResource;
+    }
+
+    public void setIsOndemandResource(Boolean isOndemandResource) {
+        this.isOndemandResource = isOndemandResource;
     }
 
     public Show2dModelTrainingJobResponse withTrainingVideoDownloadUrl(String trainingVideoDownloadUrl) {
@@ -1210,6 +1622,24 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.preBeautyImageDownloadUrl = preBeautyImageDownloadUrl;
     }
 
+    public Show2dModelTrainingJobResponse withExternalActionJsonDataDownloadUrl(
+        String externalActionJsonDataDownloadUrl) {
+        this.externalActionJsonDataDownloadUrl = externalActionJsonDataDownloadUrl;
+        return this;
+    }
+
+    /**
+     * 授权书下载URL。24小时内有效。
+     * @return externalActionJsonDataDownloadUrl
+     */
+    public String getExternalActionJsonDataDownloadUrl() {
+        return externalActionJsonDataDownloadUrl;
+    }
+
+    public void setExternalActionJsonDataDownloadUrl(String externalActionJsonDataDownloadUrl) {
+        this.externalActionJsonDataDownloadUrl = externalActionJsonDataDownloadUrl;
+    }
+
     public Show2dModelTrainingJobResponse withActionVideoDownloadUrl(String actionVideoDownloadUrl) {
         this.actionVideoDownloadUrl = actionVideoDownloadUrl;
         return this;
@@ -1259,6 +1689,40 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
 
     public void setAudioFileDownloadUrl(String audioFileDownloadUrl) {
         this.audioFileDownloadUrl = audioFileDownloadUrl;
+    }
+
+    public Show2dModelTrainingJobResponse withActionMarkFileDownloadUrl(String actionMarkFileDownloadUrl) {
+        this.actionMarkFileDownloadUrl = actionMarkFileDownloadUrl;
+        return this;
+    }
+
+    /**
+     * 动作标定文件下载url。
+     * @return actionMarkFileDownloadUrl
+     */
+    public String getActionMarkFileDownloadUrl() {
+        return actionMarkFileDownloadUrl;
+    }
+
+    public void setActionMarkFileDownloadUrl(String actionMarkFileDownloadUrl) {
+        this.actionMarkFileDownloadUrl = actionMarkFileDownloadUrl;
+    }
+
+    public Show2dModelTrainingJobResponse withActionMarkFileUploadUrl(String actionMarkFileUploadUrl) {
+        this.actionMarkFileUploadUrl = actionMarkFileUploadUrl;
+        return this;
+    }
+
+    /**
+     * 动作标定文件上传url。
+     * @return actionMarkFileUploadUrl
+     */
+    public String getActionMarkFileUploadUrl() {
+        return actionMarkFileUploadUrl;
+    }
+
+    public void setActionMarkFileUploadUrl(String actionMarkFileUploadUrl) {
+        this.actionMarkFileUploadUrl = actionMarkFileUploadUrl;
     }
 
     public Show2dModelTrainingJobResponse withOperationLogs(List<OperationLogInfo> operationLogs) {
@@ -1464,6 +1928,23 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.markableVideoDownloadUrl = markableVideoDownloadUrl;
     }
 
+    public Show2dModelTrainingJobResponse withMarkableActionVideoDownloadUrl(String markableActionVideoDownloadUrl) {
+        this.markableActionVideoDownloadUrl = markableActionVideoDownloadUrl;
+        return this;
+    }
+
+    /**
+     * 动作标注视频url下载链接。24小时内有效。
+     * @return markableActionVideoDownloadUrl
+     */
+    public String getMarkableActionVideoDownloadUrl() {
+        return markableActionVideoDownloadUrl;
+    }
+
+    public void setMarkableActionVideoDownloadUrl(String markableActionVideoDownloadUrl) {
+        this.markableActionVideoDownloadUrl = markableActionVideoDownloadUrl;
+    }
+
     public Show2dModelTrainingJobResponse withTraningVideoMarkInfo(TrainingVideoMarkInfo traningVideoMarkInfo) {
         this.traningVideoMarkInfo = traningVideoMarkInfo;
         return this;
@@ -1517,6 +1998,32 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
 
     public void setInferenceDataProcessVideoMarkInfo(InferenceVideoMarkInfo inferenceDataProcessVideoMarkInfo) {
         this.inferenceDataProcessVideoMarkInfo = inferenceDataProcessVideoMarkInfo;
+    }
+
+    public Show2dModelTrainingJobResponse withVoiceProperties(VoiceProperties voiceProperties) {
+        this.voiceProperties = voiceProperties;
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse withVoiceProperties(Consumer<VoiceProperties> voicePropertiesSetter) {
+        if (this.voiceProperties == null) {
+            this.voiceProperties = new VoiceProperties();
+            voicePropertiesSetter.accept(this.voiceProperties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get voiceProperties
+     * @return voiceProperties
+     */
+    public VoiceProperties getVoiceProperties() {
+        return voiceProperties;
+    }
+
+    public void setVoiceProperties(VoiceProperties voiceProperties) {
+        this.voiceProperties = voiceProperties;
     }
 
     public Show2dModelTrainingJobResponse withInferenceDataProcessActionMarkInfo(
@@ -1603,23 +2110,6 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     public void setInferenceDataProcessEyeCorrectionMarkInfo(
         InferenceEyeCorrectionMarkInfo inferenceDataProcessEyeCorrectionMarkInfo) {
         this.inferenceDataProcessEyeCorrectionMarkInfo = inferenceDataProcessEyeCorrectionMarkInfo;
-    }
-
-    public Show2dModelTrainingJobResponse withIsBackgroundReplacement(Boolean isBackgroundReplacement) {
-        this.isBackgroundReplacement = isBackgroundReplacement;
-        return this;
-    }
-
-    /**
-     * 分身数字人是否需要背景替换。需要背景替换的分身数字人训练视频需要绿幕拍摄。
-     * @return isBackgroundReplacement
-     */
-    public Boolean getIsBackgroundReplacement() {
-        return isBackgroundReplacement;
-    }
-
-    public void setIsBackgroundReplacement(Boolean isBackgroundReplacement) {
-        this.isBackgroundReplacement = isBackgroundReplacement;
     }
 
     public Show2dModelTrainingJobResponse withWorkerType(List<String> workerType) {
@@ -1769,6 +2259,76 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.allocatedResource = allocatedResource;
     }
 
+    public Show2dModelTrainingJobResponse withTrainVideoRotationState(
+        TrainVideoRotationStateEnum trainVideoRotationState) {
+        this.trainVideoRotationState = trainVideoRotationState;
+        return this;
+    }
+
+    /**
+     * 训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败
+     * @return trainVideoRotationState
+     */
+    public TrainVideoRotationStateEnum getTrainVideoRotationState() {
+        return trainVideoRotationState;
+    }
+
+    public void setTrainVideoRotationState(TrainVideoRotationStateEnum trainVideoRotationState) {
+        this.trainVideoRotationState = trainVideoRotationState;
+    }
+
+    public Show2dModelTrainingJobResponse withActionVideoRotationState(
+        ActionVideoRotationStateEnum actionVideoRotationState) {
+        this.actionVideoRotationState = actionVideoRotationState;
+        return this;
+    }
+
+    /**
+     * 训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败
+     * @return actionVideoRotationState
+     */
+    public ActionVideoRotationStateEnum getActionVideoRotationState() {
+        return actionVideoRotationState;
+    }
+
+    public void setActionVideoRotationState(ActionVideoRotationStateEnum actionVideoRotationState) {
+        this.actionVideoRotationState = actionVideoRotationState;
+    }
+
+    public Show2dModelTrainingJobResponse withSubTrainingJobInfo(List<SubTrainingJobInfoDto> subTrainingJobInfo) {
+        this.subTrainingJobInfo = subTrainingJobInfo;
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse addSubTrainingJobInfoItem(SubTrainingJobInfoDto subTrainingJobInfoItem) {
+        if (this.subTrainingJobInfo == null) {
+            this.subTrainingJobInfo = new ArrayList<>();
+        }
+        this.subTrainingJobInfo.add(subTrainingJobInfoItem);
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse withSubTrainingJobInfo(
+        Consumer<List<SubTrainingJobInfoDto>> subTrainingJobInfoSetter) {
+        if (this.subTrainingJobInfo == null) {
+            this.subTrainingJobInfo = new ArrayList<>();
+        }
+        subTrainingJobInfoSetter.accept(this.subTrainingJobInfo);
+        return this;
+    }
+
+    /**
+     * 子任务信息
+     * @return subTrainingJobInfo
+     */
+    public List<SubTrainingJobInfoDto> getSubTrainingJobInfo() {
+        return subTrainingJobInfo;
+    }
+
+    public void setSubTrainingJobInfo(List<SubTrainingJobInfoDto> subTrainingJobInfo) {
+        this.subTrainingJobInfo = subTrainingJobInfo;
+    }
+
     public Show2dModelTrainingJobResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -1808,15 +2368,22 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.mattingType, that.mattingType)
             && Objects.equals(this.modelResolution, that.modelResolution)
             && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.isFlexus, that.isFlexus)
+            && Objects.equals(this.isLiveCopy, that.isLiveCopy) && Objects.equals(this.isFastFlexus, that.isFastFlexus)
             && Objects.equals(this.isOnlyHumanModel, that.isOnlyHumanModel)
+            && Objects.equals(this.optionalTrainingLocation, that.optionalTrainingLocation)
+            && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
+            && Objects.equals(this.isOndemandResource, that.isOndemandResource)
             && Objects.equals(this.trainingVideoDownloadUrl, that.trainingVideoDownloadUrl)
             && Objects.equals(this.idCardImage1DownloadUrl, that.idCardImage1DownloadUrl)
             && Objects.equals(this.idCardImage2DownloadUrl, that.idCardImage2DownloadUrl)
             && Objects.equals(this.grantFileDownloadUrl, that.grantFileDownloadUrl)
             && Objects.equals(this.preBeautyImageDownloadUrl, that.preBeautyImageDownloadUrl)
+            && Objects.equals(this.externalActionJsonDataDownloadUrl, that.externalActionJsonDataDownloadUrl)
             && Objects.equals(this.actionVideoDownloadUrl, that.actionVideoDownloadUrl)
             && Objects.equals(this.postBeautyImageDownloadUrl, that.postBeautyImageDownloadUrl)
             && Objects.equals(this.audioFileDownloadUrl, that.audioFileDownloadUrl)
+            && Objects.equals(this.actionMarkFileDownloadUrl, that.actionMarkFileDownloadUrl)
+            && Objects.equals(this.actionMarkFileUploadUrl, that.actionMarkFileUploadUrl)
             && Objects.equals(this.operationLogs, that.operationLogs)
             && Objects.equals(this.verifyVideoMattingInfo, that.verifyVideoMattingInfo)
             && Objects.equals(this.commentLogs, that.commentLogs) && Objects.equals(this.samples, that.samples)
@@ -1824,19 +2391,23 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.maskFileDownloadUrl, that.maskFileDownloadUrl)
             && Objects.equals(this.verifyVideoDownloadUrl, that.verifyVideoDownloadUrl)
             && Objects.equals(this.markableVideoDownloadUrl, that.markableVideoDownloadUrl)
+            && Objects.equals(this.markableActionVideoDownloadUrl, that.markableActionVideoDownloadUrl)
             && Objects.equals(this.traningVideoMarkInfo, that.traningVideoMarkInfo)
             && Objects.equals(this.inferenceDataProcessVideoMarkInfo, that.inferenceDataProcessVideoMarkInfo)
+            && Objects.equals(this.voiceProperties, that.voiceProperties)
             && Objects.equals(this.inferenceDataProcessActionMarkInfo, that.inferenceDataProcessActionMarkInfo)
             && Objects.equals(this.inferenceDataProcessChatActionMarkInfo, that.inferenceDataProcessChatActionMarkInfo)
             && Objects.equals(this.inferenceDataProcessEyeCorrectionMarkInfo,
                 that.inferenceDataProcessEyeCorrectionMarkInfo)
-            && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
             && Objects.equals(this.workerType, that.workerType)
             && Objects.equals(this.voiceTrainJobId, that.voiceTrainJobId)
             && Objects.equals(this.flexusRetryCount, that.flexusRetryCount)
             && Objects.equals(this.audioSourceType, that.audioSourceType)
             && Objects.equals(this.supportedService, that.supportedService)
             && Objects.equals(this.allocatedResource, that.allocatedResource)
+            && Objects.equals(this.trainVideoRotationState, that.trainVideoRotationState)
+            && Objects.equals(this.actionVideoRotationState, that.actionVideoRotationState)
+            && Objects.equals(this.subTrainingJobInfo, that.subTrainingJobInfo)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -1858,15 +2429,23 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             modelResolution,
             appUserId,
             isFlexus,
+            isLiveCopy,
+            isFastFlexus,
             isOnlyHumanModel,
+            optionalTrainingLocation,
+            isBackgroundReplacement,
+            isOndemandResource,
             trainingVideoDownloadUrl,
             idCardImage1DownloadUrl,
             idCardImage2DownloadUrl,
             grantFileDownloadUrl,
             preBeautyImageDownloadUrl,
+            externalActionJsonDataDownloadUrl,
             actionVideoDownloadUrl,
             postBeautyImageDownloadUrl,
             audioFileDownloadUrl,
+            actionMarkFileDownloadUrl,
+            actionMarkFileUploadUrl,
             operationLogs,
             verifyVideoMattingInfo,
             commentLogs,
@@ -1875,18 +2454,22 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             maskFileDownloadUrl,
             verifyVideoDownloadUrl,
             markableVideoDownloadUrl,
+            markableActionVideoDownloadUrl,
             traningVideoMarkInfo,
             inferenceDataProcessVideoMarkInfo,
+            voiceProperties,
             inferenceDataProcessActionMarkInfo,
             inferenceDataProcessChatActionMarkInfo,
             inferenceDataProcessEyeCorrectionMarkInfo,
-            isBackgroundReplacement,
             workerType,
             voiceTrainJobId,
             flexusRetryCount,
             audioSourceType,
             supportedService,
             allocatedResource,
+            trainVideoRotationState,
+            actionVideoRotationState,
+            subTrainingJobInfo,
             xRequestId);
     }
 
@@ -1910,15 +2493,25 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
         sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
+        sb.append("    isLiveCopy: ").append(toIndentedString(isLiveCopy)).append("\n");
+        sb.append("    isFastFlexus: ").append(toIndentedString(isFastFlexus)).append("\n");
         sb.append("    isOnlyHumanModel: ").append(toIndentedString(isOnlyHumanModel)).append("\n");
+        sb.append("    optionalTrainingLocation: ").append(toIndentedString(optionalTrainingLocation)).append("\n");
+        sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
+        sb.append("    isOndemandResource: ").append(toIndentedString(isOndemandResource)).append("\n");
         sb.append("    trainingVideoDownloadUrl: ").append(toIndentedString(trainingVideoDownloadUrl)).append("\n");
         sb.append("    idCardImage1DownloadUrl: ").append(toIndentedString(idCardImage1DownloadUrl)).append("\n");
         sb.append("    idCardImage2DownloadUrl: ").append(toIndentedString(idCardImage2DownloadUrl)).append("\n");
         sb.append("    grantFileDownloadUrl: ").append(toIndentedString(grantFileDownloadUrl)).append("\n");
         sb.append("    preBeautyImageDownloadUrl: ").append(toIndentedString(preBeautyImageDownloadUrl)).append("\n");
+        sb.append("    externalActionJsonDataDownloadUrl: ")
+            .append(toIndentedString(externalActionJsonDataDownloadUrl))
+            .append("\n");
         sb.append("    actionVideoDownloadUrl: ").append(toIndentedString(actionVideoDownloadUrl)).append("\n");
         sb.append("    postBeautyImageDownloadUrl: ").append(toIndentedString(postBeautyImageDownloadUrl)).append("\n");
         sb.append("    audioFileDownloadUrl: ").append(toIndentedString(audioFileDownloadUrl)).append("\n");
+        sb.append("    actionMarkFileDownloadUrl: ").append(toIndentedString(actionMarkFileDownloadUrl)).append("\n");
+        sb.append("    actionMarkFileUploadUrl: ").append(toIndentedString(actionMarkFileUploadUrl)).append("\n");
         sb.append("    operationLogs: ").append(toIndentedString(operationLogs)).append("\n");
         sb.append("    verifyVideoMattingInfo: ").append(toIndentedString(verifyVideoMattingInfo)).append("\n");
         sb.append("    commentLogs: ").append(toIndentedString(commentLogs)).append("\n");
@@ -1927,10 +2520,14 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         sb.append("    maskFileDownloadUrl: ").append(toIndentedString(maskFileDownloadUrl)).append("\n");
         sb.append("    verifyVideoDownloadUrl: ").append(toIndentedString(verifyVideoDownloadUrl)).append("\n");
         sb.append("    markableVideoDownloadUrl: ").append(toIndentedString(markableVideoDownloadUrl)).append("\n");
+        sb.append("    markableActionVideoDownloadUrl: ")
+            .append(toIndentedString(markableActionVideoDownloadUrl))
+            .append("\n");
         sb.append("    traningVideoMarkInfo: ").append(toIndentedString(traningVideoMarkInfo)).append("\n");
         sb.append("    inferenceDataProcessVideoMarkInfo: ")
             .append(toIndentedString(inferenceDataProcessVideoMarkInfo))
             .append("\n");
+        sb.append("    voiceProperties: ").append(toIndentedString(voiceProperties)).append("\n");
         sb.append("    inferenceDataProcessActionMarkInfo: ")
             .append(toIndentedString(inferenceDataProcessActionMarkInfo))
             .append("\n");
@@ -1940,13 +2537,15 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         sb.append("    inferenceDataProcessEyeCorrectionMarkInfo: ")
             .append(toIndentedString(inferenceDataProcessEyeCorrectionMarkInfo))
             .append("\n");
-        sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
         sb.append("    workerType: ").append(toIndentedString(workerType)).append("\n");
         sb.append("    voiceTrainJobId: ").append(toIndentedString(voiceTrainJobId)).append("\n");
         sb.append("    flexusRetryCount: ").append(toIndentedString(flexusRetryCount)).append("\n");
         sb.append("    audioSourceType: ").append(toIndentedString(audioSourceType)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
         sb.append("    allocatedResource: ").append(toIndentedString(allocatedResource)).append("\n");
+        sb.append("    trainVideoRotationState: ").append(toIndentedString(trainVideoRotationState)).append("\n");
+        sb.append("    actionVideoRotationState: ").append(toIndentedString(actionVideoRotationState)).append("\n");
+        sb.append("    subTrainingJobInfo: ").append(toIndentedString(subTrainingJobInfo)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

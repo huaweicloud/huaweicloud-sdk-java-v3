@@ -73,6 +73,11 @@ public class CreateWarRoomRequestBody {
 
     private String notificationType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "notification_modes")
+
+    private List<NotificationMode> notificationModes = null;
+
     public CreateWarRoomRequestBody withWarRoomName(String warRoomName) {
         this.warRoomName = warRoomName;
         return this;
@@ -373,6 +378,39 @@ public class CreateWarRoomRequestBody {
         this.notificationType = notificationType;
     }
 
+    public CreateWarRoomRequestBody withNotificationModes(List<NotificationMode> notificationModes) {
+        this.notificationModes = notificationModes;
+        return this;
+    }
+
+    public CreateWarRoomRequestBody addNotificationModesItem(NotificationMode notificationModesItem) {
+        if (this.notificationModes == null) {
+            this.notificationModes = new ArrayList<>();
+        }
+        this.notificationModes.add(notificationModesItem);
+        return this;
+    }
+
+    public CreateWarRoomRequestBody withNotificationModes(Consumer<List<NotificationMode>> notificationModesSetter) {
+        if (this.notificationModes == null) {
+            this.notificationModes = new ArrayList<>();
+        }
+        notificationModesSetter.accept(this.notificationModes);
+        return this;
+    }
+
+    /**
+     * 发送通知的方式，支持多个通知方式。
+     * @return notificationModes
+     */
+    public List<NotificationMode> getNotificationModes() {
+        return notificationModes;
+    }
+
+    public void setNotificationModes(List<NotificationMode> notificationModes) {
+        this.notificationModes = notificationModes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -392,7 +430,8 @@ public class CreateWarRoomRequestBody {
             && Objects.equals(this.applicationNames, that.applicationNames)
             && Objects.equals(this.regionNames, that.regionNames)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.notificationType, that.notificationType);
+            && Objects.equals(this.notificationType, that.notificationType)
+            && Objects.equals(this.notificationModes, that.notificationModes);
     }
 
     @Override
@@ -408,7 +447,8 @@ public class CreateWarRoomRequestBody {
             applicationNames,
             regionNames,
             enterpriseProjectId,
-            notificationType);
+            notificationType,
+            notificationModes);
     }
 
     @Override
@@ -427,6 +467,7 @@ public class CreateWarRoomRequestBody {
         sb.append("    regionNames: ").append(toIndentedString(regionNames)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    notificationType: ").append(toIndentedString(notificationType)).append("\n");
+        sb.append("    notificationModes: ").append(toIndentedString(notificationModes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

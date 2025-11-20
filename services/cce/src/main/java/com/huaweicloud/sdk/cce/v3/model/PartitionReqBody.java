@@ -29,7 +29,7 @@ public class PartitionReqBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
 
-    private PartitionSpec spec;
+    private PartitionReqBodySpec spec;
 
     public PartitionReqBody withKind(String kind) {
         this.kind = kind;
@@ -37,7 +37,7 @@ public class PartitionReqBody {
     }
 
     /**
-     * 资源类型
+     * **参数解释**： API类型 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： Partition 
      * @return kind
      */
     public String getKind() {
@@ -54,7 +54,7 @@ public class PartitionReqBody {
     }
 
     /**
-     * API版本
+     * **参数解释**： API版本 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： v3 
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -91,14 +91,14 @@ public class PartitionReqBody {
         this.metadata = metadata;
     }
 
-    public PartitionReqBody withSpec(PartitionSpec spec) {
+    public PartitionReqBody withSpec(PartitionReqBodySpec spec) {
         this.spec = spec;
         return this;
     }
 
-    public PartitionReqBody withSpec(Consumer<PartitionSpec> specSetter) {
+    public PartitionReqBody withSpec(Consumer<PartitionReqBodySpec> specSetter) {
         if (this.spec == null) {
-            this.spec = new PartitionSpec();
+            this.spec = new PartitionReqBodySpec();
             specSetter.accept(this.spec);
         }
 
@@ -109,11 +109,11 @@ public class PartitionReqBody {
      * Get spec
      * @return spec
      */
-    public PartitionSpec getSpec() {
+    public PartitionReqBodySpec getSpec() {
         return spec;
     }
 
-    public void setSpec(PartitionSpec spec) {
+    public void setSpec(PartitionReqBodySpec spec) {
         this.spec = spec;
     }
 

@@ -45,6 +45,11 @@ public class AnalyzerSummary {
     private OffsetDateTime lastResourceAnalyzedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_all_analyzed_at")
+
+    private OffsetDateTime lastAllAnalyzedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -55,7 +60,7 @@ public class AnalyzerSummary {
     private String organizationId;
 
     /**
-     * 分析器的状态。
+     * 分析器的状态。 - active：激活 - creating：创建中 - disabled：禁用 - failed：创建失败 
      */
     public static final class StatusEnum {
 
@@ -255,6 +260,23 @@ public class AnalyzerSummary {
         this.lastResourceAnalyzedAt = lastResourceAnalyzedAt;
     }
 
+    public AnalyzerSummary withLastAllAnalyzedAt(OffsetDateTime lastAllAnalyzedAt) {
+        this.lastAllAnalyzedAt = lastAllAnalyzedAt;
+        return this;
+    }
+
+    /**
+     * 最近一次分析全量资源的时间。
+     * @return lastAllAnalyzedAt
+     */
+    public OffsetDateTime getLastAllAnalyzedAt() {
+        return lastAllAnalyzedAt;
+    }
+
+    public void setLastAllAnalyzedAt(OffsetDateTime lastAllAnalyzedAt) {
+        this.lastAllAnalyzedAt = lastAllAnalyzedAt;
+    }
+
     public AnalyzerSummary withName(String name) {
         this.name = name;
         return this;
@@ -295,7 +317,7 @@ public class AnalyzerSummary {
     }
 
     /**
-     * 分析器的状态。
+     * 分析器的状态。 - active：激活 - creating：创建中 - disabled：禁用 - failed：创建失败 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -412,10 +434,10 @@ public class AnalyzerSummary {
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.id, that.id)
             && Objects.equals(this.lastAnalyzedResource, that.lastAnalyzedResource)
             && Objects.equals(this.lastResourceAnalyzedAt, that.lastResourceAnalyzedAt)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.organizationId, that.organizationId)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.statusReason, that.statusReason)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.urn, that.urn);
+            && Objects.equals(this.lastAllAnalyzedAt, that.lastAllAnalyzedAt) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.organizationId, that.organizationId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusReason, that.statusReason) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.urn, that.urn);
     }
 
     @Override
@@ -425,6 +447,7 @@ public class AnalyzerSummary {
             id,
             lastAnalyzedResource,
             lastResourceAnalyzedAt,
+            lastAllAnalyzedAt,
             name,
             organizationId,
             status,
@@ -443,6 +466,7 @@ public class AnalyzerSummary {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    lastAnalyzedResource: ").append(toIndentedString(lastAnalyzedResource)).append("\n");
         sb.append("    lastResourceAnalyzedAt: ").append(toIndentedString(lastResourceAnalyzedAt)).append("\n");
+        sb.append("    lastAllAnalyzedAt: ").append(toIndentedString(lastAllAnalyzedAt)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

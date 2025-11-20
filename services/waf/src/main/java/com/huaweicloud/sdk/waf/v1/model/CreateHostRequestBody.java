@@ -278,7 +278,7 @@ public class CreateHostRequestBody {
     }
 
     /**
-     * 是否使用独享ip   - true：使用独享ip   - false：不适用独享ip
+     * 是否使用独享ip   - true：使用独享ip   - false：不使用独享ip
      * @return exclusiveIp
      */
     public Boolean getExclusiveIp() {
@@ -295,7 +295,7 @@ public class CreateHostRequestBody {
     }
 
     /**
-     * 套餐付费模式，默认值为prePaid。prePaid：包周期款模式；postPaid：按需模式。
+     * 套餐付费模式，默认值为prePaid。prePaid：包周期模式；postPaid：按需模式。
      * @return paidType
      */
     public String getPaidType() {

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 要校验的策略类型。
+ * 要校验的策略类型。 - identity_policy：身份策略 - resource_policy：资源策略 - service_control_policy：服务控制策略 - resource_control_policy：资源控制策略 - network_control_policy：网络控制策略 
  */
 public class PolicyType {
 
@@ -27,6 +27,16 @@ public class PolicyType {
      */
     public static final PolicyType SERVICE_CONTROL_POLICY = new PolicyType("service_control_policy");
 
+    /**
+     * Enum RESOURCE_CONTROL_POLICY for value: "resource_control_policy"
+     */
+    public static final PolicyType RESOURCE_CONTROL_POLICY = new PolicyType("resource_control_policy");
+
+    /**
+     * Enum NETWORK_CONTROL_POLICY for value: "network_control_policy"
+     */
+    public static final PolicyType NETWORK_CONTROL_POLICY = new PolicyType("network_control_policy");
+
     private static final Map<String, PolicyType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, PolicyType> createStaticFields() {
@@ -34,6 +44,8 @@ public class PolicyType {
         map.put("identity_policy", IDENTITY_POLICY);
         map.put("resource_policy", RESOURCE_POLICY);
         map.put("service_control_policy", SERVICE_CONTROL_POLICY);
+        map.put("resource_control_policy", RESOURCE_CONTROL_POLICY);
+        map.put("network_control_policy", NETWORK_CONTROL_POLICY);
         return Collections.unmodifiableMap(map);
     }
 

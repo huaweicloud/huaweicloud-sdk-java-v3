@@ -25,7 +25,7 @@ public class PreviewFinding {
     private List<String> action = null;
 
     /**
-     * 结果状态的变化。
+     * 结果状态的变化。 - unchanged：没有变化 - new：新增 - changed：有变化 
      */
     public static final class ChangeTypeEnum {
 
@@ -121,7 +121,7 @@ public class PreviewFinding {
     private String existingFindingId;
 
     /**
-     * 访问分析结果当前状态。
+     * 访问分析结果当前状态。 - active：活跃 - archived：已解决 - resolved：已存档 
      */
     public static final class ExistingFindingStatusEnum {
 
@@ -237,7 +237,7 @@ public class PreviewFinding {
     private List<FindingSourceType> sources = null;
 
     /**
-     * 变化后的状态。
+     * 变化后的状态。 - active：活跃 - archived：已解决 - resolved：已存档 
      */
     public static final class StatusEnum {
 
@@ -356,7 +356,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 结果状态的变化。
+     * 结果状态的变化。 - unchanged：没有变化 - new：新增 - changed：有变化 
      * @return changeType
      */
     public ChangeTypeEnum getChangeType() {
@@ -440,7 +440,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 访问分析结果当前状态。
+     * 访问分析结果当前状态。 - active：活跃 - archived：已解决 - resolved：已存档 
      * @return existingFindingStatus
      */
     public ExistingFindingStatusEnum getExistingFindingStatus() {
@@ -601,7 +601,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 变化后的状态。
+     * 变化后的状态。 - active：活跃 - archived：已解决 - resolved：已存档 
      * @return status
      */
     public StatusEnum getStatus() {

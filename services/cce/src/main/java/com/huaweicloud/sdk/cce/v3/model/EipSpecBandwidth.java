@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 带宽信息
+ * **参数解释**： 带宽信息 **约束限制**： 不涉及 
  */
 public class EipSpecBandwidth {
 
@@ -21,7 +21,7 @@ public class EipSpecBandwidth {
     private Integer size;
 
     /**
-     * 带宽类型
+     * **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      */
     public static final class SharetypeEnum {
 
@@ -101,7 +101,7 @@ public class EipSpecBandwidth {
     }
 
     /**
-     * 带宽大小
+     * **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return size
      */
     public Integer getSize() {
@@ -118,7 +118,7 @@ public class EipSpecBandwidth {
     }
 
     /**
-     * 带宽类型
+     * **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return sharetype
      */
     public SharetypeEnum getSharetype() {

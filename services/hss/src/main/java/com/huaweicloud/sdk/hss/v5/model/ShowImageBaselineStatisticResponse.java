@@ -32,7 +32,7 @@ public class ShowImageBaselineStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 弱口令检测 **取值范围**: 最小值0，2147483647 
+     * **参数解释**: 弱口令检测 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return imageWeakPwd
@@ -51,7 +51,7 @@ public class ShowImageBaselineStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 口令复杂度策略检测 **取值范围**: 最小值0，2147483647 
+     * **参数解释**: 口令复杂度策略检测 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return pwdPolicy
@@ -70,7 +70,7 @@ public class ShowImageBaselineStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 服务器配置检测 **取值范围**: 最小值0，2147483647 
+     * **参数解释**: 服务器配置检测 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return securityCheck

@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumRequest;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeConcurrencyNumResponse;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataRequest;
 import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataResponse;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeTaskDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeTaskDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailRequest;
 import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListUsersOfStreamRequest;
@@ -763,6 +765,54 @@ public class LiveMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListTranscodeDataResponse::getXRequestId, ListTranscodeDataResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTranscodeTaskDetailRequest, ListTranscodeTaskDetailResponse> listTranscodeTaskDetail =
+        genForListTranscodeTaskDetail();
+
+    private static HttpRequestDef<ListTranscodeTaskDetailRequest, ListTranscodeTaskDetailResponse> genForListTranscodeTaskDetail() {
+        // basic
+        HttpRequestDef.Builder<ListTranscodeTaskDetailRequest, ListTranscodeTaskDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTranscodeTaskDetailRequest.class, ListTranscodeTaskDetailResponse.class)
+            .withName("ListTranscodeTaskDetail")
+            .withUri("/v2/{project_id}/stats/transcode/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTaskDetailRequest::getDomain,
+                ListTranscodeTaskDetailRequest::setDomain));
+        builder.<List<String>>withRequestField("stream_name_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTranscodeTaskDetailRequest::getStreamNameList,
+                ListTranscodeTaskDetailRequest::setStreamNameList));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTaskDetailRequest::getStartTime,
+                ListTranscodeTaskDetailRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTranscodeTaskDetailRequest::getEndTime,
+                ListTranscodeTaskDetailRequest::setEndTime));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTranscodeTaskDetailResponse::getXRequestId,
+                ListTranscodeTaskDetailResponse::setXRequestId));
         return builder.build();
     }
 

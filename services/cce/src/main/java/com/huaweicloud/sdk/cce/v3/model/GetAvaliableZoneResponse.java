@@ -41,7 +41,7 @@ public class GetAvaliableZoneResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 可用区列表信息
+     * **参数解释**: 可用区列表信息 **约束限制**： 不涉及
      * @return body
      */
     public List<GetAvailableZoneResponseBody> getBody() {

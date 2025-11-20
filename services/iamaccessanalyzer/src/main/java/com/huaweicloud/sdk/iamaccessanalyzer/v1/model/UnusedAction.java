@@ -15,13 +15,18 @@ public class UnusedAction {
 
     private String action;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_accessed")
+
+    private Object lastAccessed;
+
     public UnusedAction withAction(String action) {
         this.action = action;
         return this;
     }
 
     /**
-     * Action 名称。
+     * 授权项名称。
      * @return action
      */
     public String getAction() {
@@ -30,6 +35,23 @@ public class UnusedAction {
 
     public void setAction(String action) {
         this.action = action;
+    }
+
+    public UnusedAction withLastAccessed(Object lastAccessed) {
+        this.lastAccessed = lastAccessed;
+        return this;
+    }
+
+    /**
+     * 用户使用授权项的最后访问时间。
+     * @return lastAccessed
+     */
+    public Object getLastAccessed() {
+        return lastAccessed;
+    }
+
+    public void setLastAccessed(Object lastAccessed) {
+        this.lastAccessed = lastAccessed;
     }
 
     @Override
@@ -41,12 +63,12 @@ public class UnusedAction {
             return false;
         }
         UnusedAction that = (UnusedAction) obj;
-        return Objects.equals(this.action, that.action);
+        return Objects.equals(this.action, that.action) && Objects.equals(this.lastAccessed, that.lastAccessed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action);
+        return Objects.hash(action, lastAccessed);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class UnusedAction {
         StringBuilder sb = new StringBuilder();
         sb.append("class UnusedAction {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    lastAccessed: ").append(toIndentedString(lastAccessed)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,7 +25,7 @@ public class ShowAutopilotClusterEndpointsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private MasterEIPResponseStatus status;
+    private OpenAPIResponseStatus status;
 
     public ShowAutopilotClusterEndpointsResponse withMetadata(Metadata metadata) {
         this.metadata = metadata;
@@ -79,14 +79,14 @@ public class ShowAutopilotClusterEndpointsResponse extends SdkResponse {
         this.spec = spec;
     }
 
-    public ShowAutopilotClusterEndpointsResponse withStatus(MasterEIPResponseStatus status) {
+    public ShowAutopilotClusterEndpointsResponse withStatus(OpenAPIResponseStatus status) {
         this.status = status;
         return this;
     }
 
-    public ShowAutopilotClusterEndpointsResponse withStatus(Consumer<MasterEIPResponseStatus> statusSetter) {
+    public ShowAutopilotClusterEndpointsResponse withStatus(Consumer<OpenAPIResponseStatus> statusSetter) {
         if (this.status == null) {
-            this.status = new MasterEIPResponseStatus();
+            this.status = new OpenAPIResponseStatus();
             statusSetter.accept(this.status);
         }
 
@@ -97,11 +97,11 @@ public class ShowAutopilotClusterEndpointsResponse extends SdkResponse {
      * Get status
      * @return status
      */
-    public MasterEIPResponseStatus getStatus() {
+    public OpenAPIResponseStatus getStatus() {
         return status;
     }
 
-    public void setStatus(MasterEIPResponseStatus status) {
+    public void setStatus(OpenAPIResponseStatus status) {
         this.status = status;
     }
 

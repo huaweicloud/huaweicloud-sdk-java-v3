@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class ClusterInformationSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agencyName")
+
+    private String agencyName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -43,13 +48,30 @@ public class ClusterInformationSpec {
 
     private Boolean deletionProtection;
 
+    public ClusterInformationSpec withAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 指定集群使用的委托。该委托用于生成集群中组件使用的临时访问凭证，在集群中自动创建其他相关云服务的资源时会使用该委托权限。当不传或为空时，集群将自动选择使用CCE的系统委托cce_admin_trust或cce_cluster_agency。  [ > 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0556.html)](tag:hws) [ > 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0556.html)](tag:hws_hk)  **约束限制：** 仅1.27及以上版本集群支持该参数  **取值范围：** 不涉及 **默认取值：** 空 
+     * @return agencyName
+     */
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
     public ClusterInformationSpec withDescription(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * 集群的描述信息。  1. 字符取值范围[0,200]。不包含~$%^&*<>[]{}()'\"#\\等特殊字符。 2. 仅运行和扩容状态（Available、ScalingUp、ScalingDown）的集群允许修改。
+     * **参数解释：** 集群的描述信息。 **约束限制：** 仅运行和扩容状态（Available、ScalingUp、ScalingDown）的集群允许修改。 **取值范围：** 字符取值范围[0,200]。不包含~$%^&*<>[]{}()'\"#\\等特殊字符。 **默认取值：** 无
      * @return description
      */
     public String getDescription() {
@@ -177,7 +199,7 @@ public class ClusterInformationSpec {
     }
 
     /**
-     * 集群删除保护，默认为false关闭，如果开启后用户将无法删除该集群。
+     * **参数解释：** 集群删除保护，如果开启后用户将无法删除该集群。 **约束限制：** 不涉及 **取值范围：** - true: 开启集群删除保护 - false: 关闭集群删除保护  **默认取值：** 默认false
      * @return deletionProtection
      */
     public Boolean getDeletionProtection() {
@@ -197,7 +219,8 @@ public class ClusterInformationSpec {
             return false;
         }
         ClusterInformationSpec that = (ClusterInformationSpec) obj;
-        return Objects.equals(this.description, that.description) && Objects.equals(this.customSan, that.customSan)
+        return Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.customSan, that.customSan)
             && Objects.equals(this.containerNetwork, that.containerNetwork)
             && Objects.equals(this.eniNetwork, that.eniNetwork) && Objects.equals(this.hostNetwork, that.hostNetwork)
             && Objects.equals(this.deletionProtection, that.deletionProtection);
@@ -205,13 +228,15 @@ public class ClusterInformationSpec {
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, customSan, containerNetwork, eniNetwork, hostNetwork, deletionProtection);
+        return Objects
+            .hash(agencyName, description, customSan, containerNetwork, eniNetwork, hostNetwork, deletionProtection);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterInformationSpec {\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    customSan: ").append(toIndentedString(customSan)).append("\n");
         sb.append("    containerNetwork: ").append(toIndentedString(containerNetwork)).append("\n");

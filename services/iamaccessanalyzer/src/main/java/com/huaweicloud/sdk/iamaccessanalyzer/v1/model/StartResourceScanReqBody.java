@@ -30,6 +30,11 @@ public class StartResourceScanReqBody {
 
     private String resourceUrn;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "finding_type")
+
+    private FindingType findingType;
+
     public StartResourceScanReqBody withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -98,6 +103,23 @@ public class StartResourceScanReqBody {
         this.resourceUrn = resourceUrn;
     }
 
+    public StartResourceScanReqBody withFindingType(FindingType findingType) {
+        this.findingType = findingType;
+        return this;
+    }
+
+    /**
+     * Get findingType
+     * @return findingType
+     */
+    public FindingType getFindingType() {
+        return findingType;
+    }
+
+    public void setFindingType(FindingType findingType) {
+        this.findingType = findingType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +132,12 @@ public class StartResourceScanReqBody {
         return Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.resourceOwnerAccount, that.resourceOwnerAccount)
             && Objects.equals(this.resourceProjectId, that.resourceProjectId)
-            && Objects.equals(this.resourceUrn, that.resourceUrn);
+            && Objects.equals(this.resourceUrn, that.resourceUrn) && Objects.equals(this.findingType, that.findingType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourceOwnerAccount, resourceProjectId, resourceUrn);
+        return Objects.hash(resourceId, resourceOwnerAccount, resourceProjectId, resourceUrn, findingType);
     }
 
     @Override
@@ -126,6 +148,7 @@ public class StartResourceScanReqBody {
         sb.append("    resourceOwnerAccount: ").append(toIndentedString(resourceOwnerAccount)).append("\n");
         sb.append("    resourceProjectId: ").append(toIndentedString(resourceProjectId)).append("\n");
         sb.append("    resourceUrn: ").append(toIndentedString(resourceUrn)).append("\n");
+        sb.append("    findingType: ").append(toIndentedString(findingType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

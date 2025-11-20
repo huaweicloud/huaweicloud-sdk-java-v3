@@ -165,7 +165,7 @@ public class ShowDefaultSecurityCheckPolicyDetailsRequest {
     }
 
     /**
-     * **参数解释** 标准类型，包含如下: **约束限制** 不涉及 **取值范围** - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 - cis_standard: 通用安全标准  **默认取值** 不涉及
+     * **参数解释** 标准类型 **约束限制** 不涉及 **取值范围** - cn_standard : 等保合规标准 - hw_standard : 云安全实践标准 - cis_standard: 通用安全标准  **默认取值** 不涉及
      * @return standard
      */
     public String getStandard() {
@@ -233,7 +233,7 @@ public class ShowDefaultSecurityCheckPolicyDetailsRequest {
     }
 
     /**
-     * **参数解释** 配置检查（基线）检查项的等级 **约束限制** 不涉及 **取值范围** 字符长度0-32位 **默认取值** 不涉及
+     * **参数解释** 配置检查（基线）检查项的版本信息 **约束限制** 不涉及 **取值范围** 字符长度0-32位 **默认取值** 不涉及
      * @return level
      */
     public String getLevel() {

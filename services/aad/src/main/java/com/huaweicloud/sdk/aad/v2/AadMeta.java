@@ -15,14 +15,20 @@ import com.huaweicloud.sdk.aad.v2.model.DeleteWafWhiteIpRuleV2RequestBody;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventRequestBody;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventResponse;
+import com.huaweicloud.sdk.aad.v2.model.ListDDoSBlackHoleEventRequest;
+import com.huaweicloud.sdk.aad.v2.model.ListDDoSBlackHoleEventResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSConnectionNumberRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSConnectionNumberResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSFlowRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSFlowResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListFrequencyControlRuleRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListFrequencyControlRuleResponse;
+import com.huaweicloud.sdk.aad.v2.model.ListGlobalConfigRequest;
+import com.huaweicloud.sdk.aad.v2.model.ListGlobalConfigResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListInstanceDomainsRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListInstanceDomainsResponse;
+import com.huaweicloud.sdk.aad.v2.model.ListSourceIpRequest;
+import com.huaweicloud.sdk.aad.v2.model.ListSourceIpResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListWafAttackEventRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListWafAttackEventResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListWafBandwidthRequest;
@@ -37,14 +43,30 @@ import com.huaweicloud.sdk.aad.v2.model.ListWafWhiteIpRuleRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListWafWhiteIpRuleResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListWhiteBlackIpRuleRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListWhiteBlackIpRuleResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowAlarmConfigRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowAlarmConfigResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowDDoSPeakRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowDDoSPeakResponse;
 import com.huaweicloud.sdk.aad.v2.model.ShowDomainCertificateRequest;
 import com.huaweicloud.sdk.aad.v2.model.ShowDomainCertificateResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowDomainDetailRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowDomainDetailResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowDomainNameConfigRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowDomainNameConfigResponse;
 import com.huaweicloud.sdk.aad.v2.model.ShowFlowBlockRequest;
 import com.huaweicloud.sdk.aad.v2.model.ShowFlowBlockResponse;
+import com.huaweicloud.sdk.aad.v2.model.ShowInstanceByInstanceIdRequest;
+import com.huaweicloud.sdk.aad.v2.model.ShowInstanceByInstanceIdResponse;
 import com.huaweicloud.sdk.aad.v2.model.ShowWafPolicyRequest;
 import com.huaweicloud.sdk.aad.v2.model.ShowWafPolicyResponse;
 import com.huaweicloud.sdk.aad.v2.model.ShowWafQpsRequest;
 import com.huaweicloud.sdk.aad.v2.model.ShowWafQpsResponse;
+import com.huaweicloud.sdk.aad.v2.model.UpdateDomainConfigRequest;
+import com.huaweicloud.sdk.aad.v2.model.UpdateDomainConfigRequestBody;
+import com.huaweicloud.sdk.aad.v2.model.UpdateDomainConfigResponse;
+import com.huaweicloud.sdk.aad.v2.model.UpdateForwardRuleRequest;
+import com.huaweicloud.sdk.aad.v2.model.UpdateForwardRuleRequestBody;
+import com.huaweicloud.sdk.aad.v2.model.UpdateForwardRuleResponse;
 import com.huaweicloud.sdk.aad.v2.model.UpgradeInstanceSpecRequest;
 import com.huaweicloud.sdk.aad.v2.model.UpgradeInstanceSpecResponse;
 import com.huaweicloud.sdk.aad.v2.model.UpgradeInstanceSpecV2RequestBody;
@@ -186,6 +208,41 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDDoSBlackHoleEventRequest, ListDDoSBlackHoleEventResponse> listDDoSBlackHoleEvent =
+        genForListDDoSBlackHoleEvent();
+
+    private static HttpRequestDef<ListDDoSBlackHoleEventRequest, ListDDoSBlackHoleEventResponse> genForListDDoSBlackHoleEvent() {
+        // basic
+        HttpRequestDef.Builder<ListDDoSBlackHoleEventRequest, ListDDoSBlackHoleEventResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDDoSBlackHoleEventRequest.class, ListDDoSBlackHoleEventResponse.class)
+            .withName("ListDDoSBlackHoleEvent")
+            .withUri("/v2/aad/instances/ddos-info/attack/blackhole-event")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDDoSBlackHoleEventRequest::getStartTime,
+                ListDDoSBlackHoleEventRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDDoSBlackHoleEventRequest::getEndTime,
+                ListDDoSBlackHoleEventRequest::setEndTime));
+        builder.<String>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDDoSBlackHoleEventRequest::getIp, ListDDoSBlackHoleEventRequest::setIp));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDDoSConnectionNumberRequest, ListDDoSConnectionNumberResponse> listDDoSConnectionNumber =
         genForListDDoSConnectionNumber();
 
@@ -222,6 +279,18 @@ public class AadMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDDoSConnectionNumberRequest::getIp, ListDDoSConnectionNumberRequest::setIp));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDDoSConnectionNumberRequest::getLimit,
+                ListDDoSConnectionNumberRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDDoSConnectionNumberRequest::getOffset,
+                ListDDoSConnectionNumberRequest::setOffset));
 
         // response
 
@@ -295,6 +364,24 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListGlobalConfigRequest, ListGlobalConfigResponse> listGlobalConfig =
+        genForListGlobalConfig();
+
+    private static HttpRequestDef<ListGlobalConfigRequest, ListGlobalConfigResponse> genForListGlobalConfig() {
+        // basic
+        HttpRequestDef.Builder<ListGlobalConfigRequest, ListGlobalConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGlobalConfigRequest.class, ListGlobalConfigResponse.class)
+                .withName("ListGlobalConfig")
+                .withUri("/v2/aad/domains/global-config")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceDomainsRequest, ListInstanceDomainsResponse> listInstanceDomains =
         genForListInstanceDomains();
 
@@ -313,6 +400,33 @@ public class AadMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstanceDomainsRequest::getInstanceId,
                 ListInstanceDomainsRequest::setInstanceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceDomainsRequest::getLimit, ListInstanceDomainsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceDomainsRequest::getOffset, ListInstanceDomainsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSourceIpRequest, ListSourceIpResponse> listSourceIp = genForListSourceIp();
+
+    private static HttpRequestDef<ListSourceIpRequest, ListSourceIpResponse> genForListSourceIp() {
+        // basic
+        HttpRequestDef.Builder<ListSourceIpRequest, ListSourceIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSourceIpRequest.class, ListSourceIpResponse.class)
+                .withName("ListSourceIp")
+                .withUri("/v2/aad/source-ip")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -524,6 +638,16 @@ public class AadMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListWafQpsRequest::getOverseasType, ListWafQpsRequest::setOverseasType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWafQpsRequest::getLimit, ListWafQpsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWafQpsRequest::getOffset, ListWafQpsRequest::setOffset));
 
         // response
 
@@ -588,6 +712,61 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAlarmConfigRequest, ShowAlarmConfigResponse> showAlarmConfig =
+        genForShowAlarmConfig();
+
+    private static HttpRequestDef<ShowAlarmConfigRequest, ShowAlarmConfigResponse> genForShowAlarmConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowAlarmConfigRequest, ShowAlarmConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAlarmConfigRequest.class, ShowAlarmConfigResponse.class)
+                .withName("ShowAlarmConfig")
+                .withUri("/v2/aad/alarm")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDDoSPeakRequest, ShowDDoSPeakResponse> showDDoSPeak = genForShowDDoSPeak();
+
+    private static HttpRequestDef<ShowDDoSPeakRequest, ShowDDoSPeakResponse> genForShowDDoSPeak() {
+        // basic
+        HttpRequestDef.Builder<ShowDDoSPeakRequest, ShowDDoSPeakResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDDoSPeakRequest.class, ShowDDoSPeakResponse.class)
+                .withName("ShowDDoSPeak")
+                .withUri("/v2/aad/instances/{instance_id}/ddos-info/flow/peak")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDDoSPeakRequest::getInstanceId, ShowDDoSPeakRequest::setInstanceId));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDDoSPeakRequest::getStartTime, ShowDDoSPeakRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDDoSPeakRequest::getEndTime, ShowDDoSPeakRequest::setEndTime));
+        builder.<String>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDDoSPeakRequest::getIp, ShowDDoSPeakRequest::setIp));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDomainCertificateRequest, ShowDomainCertificateResponse> showDomainCertificate =
         genForShowDomainCertificate();
 
@@ -612,6 +791,57 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainDetailRequest, ShowDomainDetailResponse> showDomainDetail =
+        genForShowDomainDetail();
+
+    private static HttpRequestDef<ShowDomainDetailRequest, ShowDomainDetailResponse> genForShowDomainDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainDetailRequest, ShowDomainDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainDetailRequest.class, ShowDomainDetailResponse.class)
+                .withName("ShowDomainDetail")
+                .withUri("/v2/aad/domains/{domain_id}/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainDetailRequest::getDomainId, ShowDomainDetailRequest::setDomainId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainNameConfigRequest, ShowDomainNameConfigResponse> showDomainNameConfig =
+        genForShowDomainNameConfig();
+
+    private static HttpRequestDef<ShowDomainNameConfigRequest, ShowDomainNameConfigResponse> genForShowDomainNameConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainNameConfigRequest, ShowDomainNameConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainNameConfigRequest.class, ShowDomainNameConfigResponse.class)
+            .withName("ShowDomainNameConfig")
+            .withUri("/v2/aad/domains/{domain_id}/config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainNameConfigRequest::getDomainId, ShowDomainNameConfigRequest::setDomainId));
+        builder.<ShowDomainNameConfigRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowDomainNameConfigRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowDomainNameConfigRequest::getType, ShowDomainNameConfigRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowFlowBlockRequest, ShowFlowBlockResponse> showFlowBlock =
         genForShowFlowBlock();
 
@@ -629,6 +859,31 @@ public class AadMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFlowBlockRequest::getInstanceId, ShowFlowBlockRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceByInstanceIdRequest, ShowInstanceByInstanceIdResponse> showInstanceByInstanceId =
+        genForShowInstanceByInstanceId();
+
+    private static HttpRequestDef<ShowInstanceByInstanceIdRequest, ShowInstanceByInstanceIdResponse> genForShowInstanceByInstanceId() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceByInstanceIdRequest, ShowInstanceByInstanceIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowInstanceByInstanceIdRequest.class, ShowInstanceByInstanceIdResponse.class)
+                .withName("ShowInstanceByInstanceId")
+                .withUri("/v2/aad/instances/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceByInstanceIdRequest::getInstanceId,
+                ShowInstanceByInstanceIdRequest::setInstanceId));
 
         // response
 
@@ -699,6 +954,72 @@ public class AadMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowWafQpsRequest::getOverseasType, ShowWafQpsRequest::setOverseasType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainConfigRequest, UpdateDomainConfigResponse> updateDomainConfig =
+        genForUpdateDomainConfig();
+
+    private static HttpRequestDef<UpdateDomainConfigRequest, UpdateDomainConfigResponse> genForUpdateDomainConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainConfigRequest, UpdateDomainConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainConfigRequest.class, UpdateDomainConfigResponse.class)
+                .withName("UpdateDomainConfig")
+                .withUri("/v2/aad/domains/{domain_id}/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDomainConfigRequest::getDomainId, UpdateDomainConfigRequest::setDomainId));
+        builder.<UpdateDomainConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDomainConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateDomainConfigRequest::getBody, UpdateDomainConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateForwardRuleRequest, UpdateForwardRuleResponse> updateForwardRule =
+        genForUpdateForwardRule();
+
+    private static HttpRequestDef<UpdateForwardRuleRequest, UpdateForwardRuleResponse> genForUpdateForwardRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateForwardRuleRequest, UpdateForwardRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateForwardRuleRequest.class, UpdateForwardRuleResponse.class)
+                .withName("UpdateForwardRule")
+                .withUri("/v2/aad/forward-rules/{instance_id}/{ip}/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateForwardRuleRequest::getInstanceId, UpdateForwardRuleRequest::setInstanceId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateForwardRuleRequest::getRuleId, UpdateForwardRuleRequest::setRuleId));
+        builder.<String>withRequestField("ip",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateForwardRuleRequest::getIp, UpdateForwardRuleRequest::setIp));
+        builder.<UpdateForwardRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateForwardRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateForwardRuleRequest::getBody, UpdateForwardRuleRequest::setBody));
 
         // response
 

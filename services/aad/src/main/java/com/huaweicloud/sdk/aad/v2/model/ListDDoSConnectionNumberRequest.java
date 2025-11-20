@@ -30,6 +30,16 @@ public class ListDDoSConnectionNumberRequest {
 
     private String ip;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListDDoSConnectionNumberRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -98,6 +108,43 @@ public class ListDDoSConnectionNumberRequest {
         this.ip = ip;
     }
 
+    public ListDDoSConnectionNumberRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 限制条数
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListDDoSConnectionNumberRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量
+     * minimum: 0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +155,13 @@ public class ListDDoSConnectionNumberRequest {
         }
         ListDDoSConnectionNumberRequest that = (ListDDoSConnectionNumberRequest) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ip, that.ip);
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, instanceId, ip);
+        return Objects.hash(startTime, endTime, instanceId, ip, limit, offset);
     }
 
     @Override
@@ -124,6 +172,8 @@ public class ListDDoSConnectionNumberRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

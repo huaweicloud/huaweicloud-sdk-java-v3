@@ -21,12 +21,12 @@ public class ListLogContextRequestBody {
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backwardsSize")
+    @JsonProperty(value = "backwards_size")
 
     private Integer backwardsSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "forwardsSize")
+    @JsonProperty(value = "forwards_size")
 
     private Integer forwardsSize;
 

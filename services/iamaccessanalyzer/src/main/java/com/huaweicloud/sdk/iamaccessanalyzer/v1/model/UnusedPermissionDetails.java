@@ -3,13 +3,14 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 未使用的权限详情。
+ * 未使用权限分析详细结果。
  */
 public class UnusedPermissionDetails {
 
@@ -17,6 +18,11 @@ public class UnusedPermissionDetails {
     @JsonProperty(value = "service")
 
     private String service;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_accessed")
+
+    private OffsetDateTime lastAccessed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
@@ -38,6 +44,23 @@ public class UnusedPermissionDetails {
 
     public void setService(String service) {
         this.service = service;
+    }
+
+    public UnusedPermissionDetails withLastAccessed(OffsetDateTime lastAccessed) {
+        this.lastAccessed = lastAccessed;
+        return this;
+    }
+
+    /**
+     * 用户使用云服务的最后访问时间。
+     * @return lastAccessed
+     */
+    public OffsetDateTime getLastAccessed() {
+        return lastAccessed;
+    }
+
+    public void setLastAccessed(OffsetDateTime lastAccessed) {
+        this.lastAccessed = lastAccessed;
     }
 
     public UnusedPermissionDetails withActions(List<UnusedAction> actions) {
@@ -82,12 +105,13 @@ public class UnusedPermissionDetails {
             return false;
         }
         UnusedPermissionDetails that = (UnusedPermissionDetails) obj;
-        return Objects.equals(this.service, that.service) && Objects.equals(this.actions, that.actions);
+        return Objects.equals(this.service, that.service) && Objects.equals(this.lastAccessed, that.lastAccessed)
+            && Objects.equals(this.actions, that.actions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(service, actions);
+        return Objects.hash(service, lastAccessed, actions);
     }
 
     @Override
@@ -95,6 +119,7 @@ public class UnusedPermissionDetails {
         StringBuilder sb = new StringBuilder();
         sb.append("class UnusedPermissionDetails {\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
+        sb.append("    lastAccessed: ").append(toIndentedString(lastAccessed)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("}");
         return sb.toString();

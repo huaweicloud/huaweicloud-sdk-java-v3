@@ -316,7 +316,7 @@ public class NodePoolSpec {
     }
 
     /**
-     * 节点池扩展伸缩组配置列表，详情参见ExtensionScaleGroup类型定义
+     * **参数解释**： 节点池扩展伸缩组配置列表，详情参见ExtensionScaleGroup类型定义。 **约束限制**： 更新节点池时如果未指定则保持原伸缩组配置，如果指定伸缩组（包括空数组），则基于请求体刷新所有伸缩组配置。
      * @return extensionScaleGroups
      */
     public List<ExtensionScaleGroup> getExtensionScaleGroups() {

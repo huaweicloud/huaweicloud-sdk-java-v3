@@ -12,8 +12,8 @@ import com.huaweicloud.sdk.aad.v1.model.BatchCreateInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.BatchCreateInstanceIpRuleResponse;
 import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleResponse;
-import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainRequest;
-import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainResponse;
+import com.huaweicloud.sdk.aad.v1.model.CreateDomainRequest;
+import com.huaweicloud.sdk.aad.v1.model.CreateDomainResponse;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeleteAlarmConfigRequest;
@@ -428,11 +428,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateAadDomainRequest 请求对象
-     * @return CreateAadDomainResponse
+     * @param request CreateDomainRequest 请求对象
+     * @return CreateDomainResponse
      */
-    public CreateAadDomainResponse createAadDomain(CreateAadDomainRequest request) {
-        return hcClient.syncInvokeHttp(request, AadMeta.createAadDomain);
+    public CreateDomainResponse createDomain(CreateDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, AadMeta.createDomain);
     }
 
     /**
@@ -442,12 +442,11 @@ public class AadClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateAadDomainRequest 请求对象
-     * @return SyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse>
+     * @param request CreateDomainRequest 请求对象
+     * @return SyncInvoker<CreateDomainRequest, CreateDomainResponse>
      */
-    public SyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomainInvoker(
-        CreateAadDomainRequest request) {
-        return new SyncInvoker<>(request, AadMeta.createAadDomain, hcClient);
+    public SyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainInvoker(CreateDomainRequest request) {
+        return new SyncInvoker<>(request, AadMeta.createDomain, hcClient);
     }
 
     /**

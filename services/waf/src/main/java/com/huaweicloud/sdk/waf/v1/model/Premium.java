@@ -36,7 +36,7 @@ public class Premium {
     }
 
     /**
-     * 是否开通独享模式
+     * **参数解释：** 是否开通独享模式 **取值范围：** 不涉及
      * @return purchased
      */
     public Boolean getPurchased() {
@@ -53,7 +53,7 @@ public class Premium {
     }
 
     /**
-     * 独享实例数量，包括elb
+     * **参数解释：** 独享实例数量，包括elb **取值范围：** 不涉及
      * @return total
      */
     public Integer getTotal() {
@@ -70,7 +70,7 @@ public class Premium {
     }
 
     /**
-     * elb实例数量
+     * **参数解释：** elb实例数量 **取值范围：** 不涉及
      * @return elb
      */
     public Integer getElb() {
@@ -87,7 +87,7 @@ public class Premium {
     }
 
     /**
-     * 独享WAF实例数量
+     * **参数解释：** 独享WAF实例数量 **取值范围：** 不涉及
      * @return dedicated
      */
     public Integer getDedicated() {

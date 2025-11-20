@@ -38,13 +38,18 @@ public class ChangeVulScanPolicyRequestInfo {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time")
+
+    private ChangeVulScanPolicyRequestInfoTime time;
+
     public ChangeVulScanPolicyRequestInfo withScanPeriod(String scanPeriod) {
         this.scanPeriod = scanPeriod;
         return this;
     }
 
     /**
-     * 扫描周期 - one_day : 每天 - three_day : 每三天 - one_week : 每周
+     * **参数解释**: 扫描周期 **约束限制**: 不涉及 **取值范围**: - one_day：每天 - three_day：每三天 - one_week：每周 - one_month：每月 **默认取值**: 不涉及 
      * @return scanPeriod
      */
     public String getScanPeriod() {
@@ -61,7 +66,7 @@ public class ChangeVulScanPolicyRequestInfo {
     }
 
     /**
-     * 扫描主机的范围，包含如下：   -all_host : 扫描全部主机   -specific_host : 扫描指定主机
+     * **参数解释**: 扫描主机的范围 **约束限制**: 不涉及 **取值范围**: - all_host：扫描全部主机 - specific_host：扫描指定主机 **默认取值**: 不涉及 
      * @return scanRangeType
      */
     public String getScanRangeType() {
@@ -94,7 +99,7 @@ public class ChangeVulScanPolicyRequestInfo {
     }
 
     /**
-     * 主机ID列表；当scan_range_type的值为specific_host时必填
+     * **参数解释**: 主机ID列表； **约束限制**: 当scan_range_type的值为specific_host时 表示扫描的主机列表 必填 **取值范围**: 最小值0，最大值20000 **默认取值**: 不涉及 
      * @return hostIds
      */
     public List<String> getHostIds() {
@@ -127,7 +132,7 @@ public class ChangeVulScanPolicyRequestInfo {
     }
 
     /**
-     * 扫描的漏洞类型列表
+     * **参数解释**: \"扫描的漏洞类型列表\" **约束限制**: 不涉及 **取值范围**: 最小值0，最大值5 **默认取值**: 不涉及 
      * @return scanVulTypes
      */
     public List<String> getScanVulTypes() {
@@ -144,7 +149,7 @@ public class ChangeVulScanPolicyRequestInfo {
     }
 
     /**
-     * 扫描策略状态，包含如下：   -open : 开启   -close : 关闭
+     * **参数解释**: 扫描策略状态 **约束限制**: 不涉及 **取值范围**: - open : 开启 - close : 关闭  **默认取值** : 不涉及 
      * @return status
      */
     public String getStatus() {
@@ -153,6 +158,32 @@ public class ChangeVulScanPolicyRequestInfo {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public ChangeVulScanPolicyRequestInfo withTime(ChangeVulScanPolicyRequestInfoTime time) {
+        this.time = time;
+        return this;
+    }
+
+    public ChangeVulScanPolicyRequestInfo withTime(Consumer<ChangeVulScanPolicyRequestInfoTime> timeSetter) {
+        if (this.time == null) {
+            this.time = new ChangeVulScanPolicyRequestInfoTime();
+            timeSetter.accept(this.time);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get time
+     * @return time
+     */
+    public ChangeVulScanPolicyRequestInfoTime getTime() {
+        return time;
+    }
+
+    public void setTime(ChangeVulScanPolicyRequestInfoTime time) {
+        this.time = time;
     }
 
     @Override
@@ -166,12 +197,13 @@ public class ChangeVulScanPolicyRequestInfo {
         ChangeVulScanPolicyRequestInfo that = (ChangeVulScanPolicyRequestInfo) obj;
         return Objects.equals(this.scanPeriod, that.scanPeriod)
             && Objects.equals(this.scanRangeType, that.scanRangeType) && Objects.equals(this.hostIds, that.hostIds)
-            && Objects.equals(this.scanVulTypes, that.scanVulTypes) && Objects.equals(this.status, that.status);
+            && Objects.equals(this.scanVulTypes, that.scanVulTypes) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.time, that.time);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scanPeriod, scanRangeType, hostIds, scanVulTypes, status);
+        return Objects.hash(scanPeriod, scanRangeType, hostIds, scanVulTypes, status, time);
     }
 
     @Override
@@ -183,6 +215,7 @@ public class ChangeVulScanPolicyRequestInfo {
         sb.append("    hostIds: ").append(toIndentedString(hostIds)).append("\n");
         sb.append("    scanVulTypes: ").append(toIndentedString(scanVulTypes)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("}");
         return sb.toString();
     }

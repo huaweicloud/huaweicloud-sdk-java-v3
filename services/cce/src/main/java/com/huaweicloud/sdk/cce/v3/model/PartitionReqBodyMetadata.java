@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 分区的元数据信息
+ * **参数解释**： 分区的元数据信息 **约束限制**： 不涉及 
  */
 public class PartitionReqBodyMetadata {
 
@@ -21,7 +21,7 @@ public class PartitionReqBodyMetadata {
     }
 
     /**
-     * 分区名称
+     * **参数解释**： 分区名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
      * @return name
      */
     public String getName() {

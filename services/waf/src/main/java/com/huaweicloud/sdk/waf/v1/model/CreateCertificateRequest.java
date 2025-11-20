@@ -17,6 +17,11 @@ public class CreateCertificateRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verify_cert_key")
+
+    private Boolean verifyCertKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreateCertificateRequestBody body;
@@ -36,6 +41,23 @@ public class CreateCertificateRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreateCertificateRequest withVerifyCertKey(Boolean verifyCertKey) {
+        this.verifyCertKey = verifyCertKey;
+        return this;
+    }
+
+    /**
+     * 是否验证证书和私钥，true为验证，false为不验证
+     * @return verifyCertKey
+     */
+    public Boolean getVerifyCertKey() {
+        return verifyCertKey;
+    }
+
+    public void setVerifyCertKey(Boolean verifyCertKey) {
+        this.verifyCertKey = verifyCertKey;
     }
 
     public CreateCertificateRequest withBody(CreateCertificateRequestBody body) {
@@ -74,12 +96,12 @@ public class CreateCertificateRequest {
         }
         CreateCertificateRequest that = (CreateCertificateRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.verifyCertKey, that.verifyCertKey) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, body);
+        return Objects.hash(enterpriseProjectId, verifyCertKey, body);
     }
 
     @Override
@@ -87,6 +109,7 @@ public class CreateCertificateRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCertificateRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    verifyCertKey: ").append(toIndentedString(verifyCertKey)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

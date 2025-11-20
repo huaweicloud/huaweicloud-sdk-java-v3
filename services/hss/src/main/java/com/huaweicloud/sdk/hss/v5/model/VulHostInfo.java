@@ -19,6 +19,16 @@ public class VulHostInfo {
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_id")
+
+    private String agentId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_necessity")
+
+    private String repairNecessity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity_level")
 
     private String severityLevel;
@@ -32,16 +42,6 @@ public class VulHostInfo {
     @JsonProperty(value = "host_ip")
 
     private String hostIp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "agent_id")
-
-    private String agentId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cve_num")
@@ -59,9 +59,19 @@ public class VulHostInfo {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remark")
+
+    private String remark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repair_cmd")
 
     private String repairCmd;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_path")
@@ -69,34 +79,9 @@ public class VulHostInfo {
     private String appPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_name")
+    @JsonProperty(value = "is_affect_business")
 
-    private String regionName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_ip")
-
-    private String publicIp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "private_ip")
-
-    private String privateIp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_id")
-
-    private String groupId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_name")
-
-    private String groupName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "os_type")
-
-    private String osType;
+    private Boolean isAffectBusiness;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_value")
@@ -104,9 +89,44 @@ public class VulHostInfo {
     private String assetValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_affect_business")
+    @JsonProperty(value = "private_ip")
 
-    private Boolean isAffectBusiness;
+    private String privateIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_type")
+
+    private String osType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_name")
+
+    private String osName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_version")
+
+    private String osVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_kernel")
+
+    private String osKernel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_status")
+
+    private String hostStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_scan_time")
@@ -119,9 +139,24 @@ public class VulHostInfo {
     private Long scanTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_reason")
+
+    private String failedReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_restore")
 
     private Boolean supportRestore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_name")
+
+    private String backupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_status")
+
+    private String agentStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled_operate_types")
@@ -139,7 +174,7 @@ public class VulHostInfo {
     }
 
     /**
-     * 受漏洞影响的服务器id
+     * **参数解释**: 受漏洞影响的服务器id **取值范围**: 字符范围1-128位 
      * @return hostId
      */
     public String getHostId() {
@@ -150,13 +185,47 @@ public class VulHostInfo {
         this.hostId = hostId;
     }
 
+    public VulHostInfo withAgentId(String agentId) {
+        this.agentId = agentId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 主机对应的agent id **取值范围**: 字符范围1-128位 
+     * @return agentId
+     */
+    public String getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(String agentId) {
+        this.agentId = agentId;
+    }
+
+    public VulHostInfo withRepairNecessity(String repairNecessity) {
+        this.repairNecessity = repairNecessity;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 修复紧急度 **取值范围**: - Critical：漏洞cvss评分大于等于9；对应控制台页面的高危 - High：漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium：漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low：漏洞cvss评分小于4；对应控制台页面的低危 
+     * @return repairNecessity
+     */
+    public String getRepairNecessity() {
+        return repairNecessity;
+    }
+
+    public void setRepairNecessity(String repairNecessity) {
+        this.repairNecessity = repairNecessity;
+    }
+
     public VulHostInfo withSeverityLevel(String severityLevel) {
         this.severityLevel = severityLevel;
         return this;
     }
 
     /**
-     * **参数解释**: 危险程度 **取值范围**: - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危 - High     : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium   : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low      : 漏洞cvss评分小于4；对应控制台页面的低危 
+     * **参数解释**: 危险程度 **取值范围**: - Critical：漏洞cvss评分大于等于9；对应控制台页面的高危 - High：漏洞cvss评分大于等于7，小于9；对应控制台页面的中危 - Medium：漏洞cvss评分大于等于4，小于7；对应控制台页面的中危 - Low：漏洞cvss评分小于4；对应控制台页面的低危 
      * @return severityLevel
      */
     public String getSeverityLevel() {
@@ -199,40 +268,6 @@ public class VulHostInfo {
 
     public void setHostIp(String hostIp) {
         this.hostIp = hostIp;
-    }
-
-    public VulHostInfo withAgentId(String agentId) {
-        this.agentId = agentId;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 主机对应的agent id **取值范围**: 字符范围1-128位 
-     * @return agentId
-     */
-    public String getAgentId() {
-        return agentId;
-    }
-
-    public void setAgentId(String agentId) {
-        this.agentId = agentId;
-    }
-
-    public VulHostInfo withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 主机绑定的配额版本 **取值范围**: 字符范围1-128位 
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
     }
 
     public VulHostInfo withCveNum(Integer cveNum) {
@@ -293,7 +328,7 @@ public class VulHostInfo {
     }
 
     /**
-     * **参数解释**: 漏洞状态 **取值范围**: - vul_status_unfix            : 未处理 - vul_status_ignored          : 已忽略 - vul_status_verified         : 验证中 - vul_status_fixing           : 修复中 - vul_status_fixed            : 修复成功 - vul_status_reboot           : 修复成功待重启 - vul_status_failed           : 修复失败 - vul_status_fix_after_reboot : 请重启主机再次修复 
+     * **参数解释**: 漏洞状态 **取值范围**: - vul_status_unfix：未处理 - vul_status_ignored：已忽略 - vul_status_verified：验证中 - vul_status_fixing：修复中 - vul_status_fixed：修复成功 - vul_status_reboot：修复成功待重启 - vul_status_failed：修复失败 - vul_status_fix_after_reboot：请重启主机再次修复 
      * @return status
      */
     public String getStatus() {
@@ -302,6 +337,23 @@ public class VulHostInfo {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public VulHostInfo withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 处置备注 **取值范围**: 字符长度1-65535位 
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public VulHostInfo withRepairCmd(String repairCmd) {
@@ -321,6 +373,23 @@ public class VulHostInfo {
         this.repairCmd = repairCmd;
     }
 
+    public VulHostInfo withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 主机绑定的配额版本 **取值范围**: 字符范围1-128位 
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     public VulHostInfo withAppPath(String appPath) {
         this.appPath = appPath;
         return this;
@@ -338,106 +407,21 @@ public class VulHostInfo {
         this.appPath = appPath;
     }
 
-    public VulHostInfo withRegionName(String regionName) {
-        this.regionName = regionName;
+    public VulHostInfo withIsAffectBusiness(Boolean isAffectBusiness) {
+        this.isAffectBusiness = isAffectBusiness;
         return this;
     }
 
     /**
-     * **参数解释**: 地域 **取值范围**: 字符范围0-128位 
-     * @return regionName
+     * **参数解释**: 是否影响业务 **取值范围**: - true  : 影响业务 - false : 不影响业务 
+     * @return isAffectBusiness
      */
-    public String getRegionName() {
-        return regionName;
+    public Boolean getIsAffectBusiness() {
+        return isAffectBusiness;
     }
 
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
-    }
-
-    public VulHostInfo withPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 服务器公网ip **取值范围**: 字符范围0-128位 
-     * @return publicIp
-     */
-    public String getPublicIp() {
-        return publicIp;
-    }
-
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-    }
-
-    public VulHostInfo withPrivateIp(String privateIp) {
-        this.privateIp = privateIp;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 服务器私网ip **取值范围**: 字符范围0-128位 
-     * @return privateIp
-     */
-    public String getPrivateIp() {
-        return privateIp;
-    }
-
-    public void setPrivateIp(String privateIp) {
-        this.privateIp = privateIp;
-    }
-
-    public VulHostInfo withGroupId(String groupId) {
-        this.groupId = groupId;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 服务器组id **取值范围**: 字符范围0-128位 
-     * @return groupId
-     */
-    public String getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
-    }
-
-    public VulHostInfo withGroupName(String groupName) {
-        this.groupName = groupName;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 服务器组名称 **取值范围**: 字符范围0-256位 
-     * @return groupName
-     */
-    public String getGroupName() {
-        return groupName;
-    }
-
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
-    }
-
-    public VulHostInfo withOsType(String osType) {
-        this.osType = osType;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 操作系统 **取值范围**: - Linux ：linux系统 - Windows：windows系统 
-     * @return osType
-     */
-    public String getOsType() {
-        return osType;
-    }
-
-    public void setOsType(String osType) {
-        this.osType = osType;
+    public void setIsAffectBusiness(Boolean isAffectBusiness) {
+        this.isAffectBusiness = isAffectBusiness;
     }
 
     public VulHostInfo withAssetValue(String assetValue) {
@@ -457,21 +441,140 @@ public class VulHostInfo {
         this.assetValue = assetValue;
     }
 
-    public VulHostInfo withIsAffectBusiness(Boolean isAffectBusiness) {
-        this.isAffectBusiness = isAffectBusiness;
+    public VulHostInfo withPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
         return this;
     }
 
     /**
-     * **参数解释**: 是否影响业务 **取值范围**: - true  : 影响业务 - false : 不影响业务 
-     * @return isAffectBusiness
+     * **参数解释**: 服务器私网ip **取值范围**: 字符范围0-128位 
+     * @return privateIp
      */
-    public Boolean getIsAffectBusiness() {
-        return isAffectBusiness;
+    public String getPrivateIp() {
+        return privateIp;
     }
 
-    public void setIsAffectBusiness(Boolean isAffectBusiness) {
-        this.isAffectBusiness = isAffectBusiness;
+    public void setPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+    }
+
+    public VulHostInfo withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器组名称 **取值范围**: 字符范围0-256位 
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public VulHostInfo withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器组id **取值范围**: 字符范围0-128位 
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public VulHostInfo withOsType(String osType) {
+        this.osType = osType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 操作系统类型 **取值范围**: - Linux ：linux系统 - Windows：windows系统 
+     * @return osType
+     */
+    public String getOsType() {
+        return osType;
+    }
+
+    public void setOsType(String osType) {
+        this.osType = osType;
+    }
+
+    public VulHostInfo withOsName(String osName) {
+        this.osName = osName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 操作系统名称 **取值范围**: 字符长度1-256位 
+     * @return osName
+     */
+    public String getOsName() {
+        return osName;
+    }
+
+    public void setOsName(String osName) {
+        this.osName = osName;
+    }
+
+    public VulHostInfo withOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 操作系统版本 **取值范围**: 字符长度1-255位 
+     * @return osVersion
+     */
+    public String getOsVersion() {
+        return osVersion;
+    }
+
+    public void setOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+    }
+
+    public VulHostInfo withOsKernel(String osKernel) {
+        this.osKernel = osKernel;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 操作系统内核 **取值范围**: 字符长度1-64位 
+     * @return osKernel
+     */
+    public String getOsKernel() {
+        return osKernel;
+    }
+
+    public void setOsKernel(String osKernel) {
+        this.osKernel = osKernel;
+    }
+
+    public VulHostInfo withHostStatus(String hostStatus) {
+        this.hostStatus = hostStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 主机状态 **取值范围**: - ACTIVE：正在运行。 - SHUTOFF：关机。 - BUILDING：创建中。 - ERROR：故障。 **默认取值**: 不涉及 
+     * @return hostStatus
+     */
+    public String getHostStatus() {
+        return hostStatus;
+    }
+
+    public void setHostStatus(String hostStatus) {
+        this.hostStatus = hostStatus;
     }
 
     public VulHostInfo withFirstScanTime(Long firstScanTime) {
@@ -512,6 +615,23 @@ public class VulHostInfo {
         this.scanTime = scanTime;
     }
 
+    public VulHostInfo withFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 修复失败原因 **取值范围**: 字符长度1-65535位 
+     * @return failedReason
+     */
+    public String getFailedReason() {
+        return failedReason;
+    }
+
+    public void setFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+    }
+
     public VulHostInfo withSupportRestore(Boolean supportRestore) {
         this.supportRestore = supportRestore;
         return this;
@@ -527,6 +647,40 @@ public class VulHostInfo {
 
     public void setSupportRestore(Boolean supportRestore) {
         this.supportRestore = supportRestore;
+    }
+
+    public VulHostInfo withBackupName(String backupName) {
+        this.backupName = backupName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 备份名称 **取值范围**: 字符长度1-2048位 
+     * @return backupName
+     */
+    public String getBackupName() {
+        return backupName;
+    }
+
+    public void setBackupName(String backupName) {
+        this.backupName = backupName;
+    }
+
+    public VulHostInfo withAgentStatus(String agentStatus) {
+        this.agentStatus = agentStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**: Agent状态 **取值范围**: - installed：已安装。 - not_installed：未安装。 - online：在线。 - offline：离线。 - install_failed：安装失败。 - installing：安装中。
+     * @return agentStatus
+     */
+    public String getAgentStatus() {
+        return agentStatus;
+    }
+
+    public void setAgentStatus(String agentStatus) {
+        this.agentStatus = agentStatus;
     }
 
     public VulHostInfo withDisabledOperateTypes(List<HostVulInfoDisabledOperateTypes> disabledOperateTypes) {
@@ -589,18 +743,23 @@ public class VulHostInfo {
             return false;
         }
         VulHostInfo that = (VulHostInfo) obj;
-        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.severityLevel, that.severityLevel)
-            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
-            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.cveNum, that.cveNum) && Objects.equals(this.cveIdList, that.cveIdList)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.repairCmd, that.repairCmd)
-            && Objects.equals(this.appPath, that.appPath) && Objects.equals(this.regionName, that.regionName)
-            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
-            && Objects.equals(this.osType, that.osType) && Objects.equals(this.assetValue, that.assetValue)
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.agentId, that.agentId)
+            && Objects.equals(this.repairNecessity, that.repairNecessity)
+            && Objects.equals(this.severityLevel, that.severityLevel) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.cveNum, that.cveNum)
+            && Objects.equals(this.cveIdList, that.cveIdList) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.repairCmd, that.repairCmd)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.appPath, that.appPath)
             && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
+            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osName, that.osName)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.osKernel, that.osKernel)
+            && Objects.equals(this.hostStatus, that.hostStatus)
             && Objects.equals(this.firstScanTime, that.firstScanTime) && Objects.equals(this.scanTime, that.scanTime)
+            && Objects.equals(this.failedReason, that.failedReason)
             && Objects.equals(this.supportRestore, that.supportRestore)
+            && Objects.equals(this.backupName, that.backupName) && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.disabledOperateTypes, that.disabledOperateTypes)
             && Objects.equals(this.repairPriority, that.repairPriority);
     }
@@ -608,27 +767,34 @@ public class VulHostInfo {
     @Override
     public int hashCode() {
         return Objects.hash(hostId,
+            agentId,
+            repairNecessity,
             severityLevel,
             hostName,
             hostIp,
-            agentId,
-            version,
             cveNum,
             cveIdList,
             status,
+            remark,
             repairCmd,
+            version,
             appPath,
-            regionName,
-            publicIp,
-            privateIp,
-            groupId,
-            groupName,
-            osType,
-            assetValue,
             isAffectBusiness,
+            assetValue,
+            privateIp,
+            groupName,
+            groupId,
+            osType,
+            osName,
+            osVersion,
+            osKernel,
+            hostStatus,
             firstScanTime,
             scanTime,
+            failedReason,
             supportRestore,
+            backupName,
+            agentStatus,
             disabledOperateTypes,
             repairPriority);
     }
@@ -638,27 +804,34 @@ public class VulHostInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class VulHostInfo {\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+        sb.append("    repairNecessity: ").append(toIndentedString(repairNecessity)).append("\n");
         sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
-        sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    cveNum: ").append(toIndentedString(cveNum)).append("\n");
         sb.append("    cveIdList: ").append(toIndentedString(cveIdList)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    repairCmd: ").append(toIndentedString(repairCmd)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    appPath: ").append(toIndentedString(appPath)).append("\n");
-        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
-        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
-        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
-        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
-        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-        sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    isAffectBusiness: ").append(toIndentedString(isAffectBusiness)).append("\n");
+        sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    osKernel: ").append(toIndentedString(osKernel)).append("\n");
+        sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
         sb.append("    firstScanTime: ").append(toIndentedString(firstScanTime)).append("\n");
         sb.append("    scanTime: ").append(toIndentedString(scanTime)).append("\n");
+        sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    supportRestore: ").append(toIndentedString(supportRestore)).append("\n");
+        sb.append("    backupName: ").append(toIndentedString(backupName)).append("\n");
+        sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    disabledOperateTypes: ").append(toIndentedString(disabledOperateTypes)).append("\n");
         sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
         sb.append("}");

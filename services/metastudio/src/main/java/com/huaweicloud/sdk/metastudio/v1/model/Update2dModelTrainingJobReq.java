@@ -142,9 +142,19 @@ public class Update2dModelTrainingJobReq {
     private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_fast_flexus")
+
+    private Boolean isFastFlexus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "samples_basic_info")
 
     private List<ActionBasicSampleInfo> samplesBasicInfo = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "voice_properties")
+
+    private VoiceProperties voiceProperties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supported_service")
@@ -382,6 +392,23 @@ public class Update2dModelTrainingJobReq {
         this.tags = tags;
     }
 
+    public Update2dModelTrainingJobReq withIsFastFlexus(Boolean isFastFlexus) {
+        this.isFastFlexus = isFastFlexus;
+        return this;
+    }
+
+    /**
+     * 是否极速版flexus
+     * @return isFastFlexus
+     */
+    public Boolean getIsFastFlexus() {
+        return isFastFlexus;
+    }
+
+    public void setIsFastFlexus(Boolean isFastFlexus) {
+        this.isFastFlexus = isFastFlexus;
+    }
+
     public Update2dModelTrainingJobReq withSamplesBasicInfo(List<ActionBasicSampleInfo> samplesBasicInfo) {
         this.samplesBasicInfo = samplesBasicInfo;
         return this;
@@ -414,6 +441,32 @@ public class Update2dModelTrainingJobReq {
 
     public void setSamplesBasicInfo(List<ActionBasicSampleInfo> samplesBasicInfo) {
         this.samplesBasicInfo = samplesBasicInfo;
+    }
+
+    public Update2dModelTrainingJobReq withVoiceProperties(VoiceProperties voiceProperties) {
+        this.voiceProperties = voiceProperties;
+        return this;
+    }
+
+    public Update2dModelTrainingJobReq withVoiceProperties(Consumer<VoiceProperties> voicePropertiesSetter) {
+        if (this.voiceProperties == null) {
+            this.voiceProperties = new VoiceProperties();
+            voicePropertiesSetter.accept(this.voiceProperties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get voiceProperties
+     * @return voiceProperties
+     */
+    public VoiceProperties getVoiceProperties() {
+        return voiceProperties;
+    }
+
+    public void setVoiceProperties(VoiceProperties voiceProperties) {
+        this.voiceProperties = voiceProperties;
     }
 
     public Update2dModelTrainingJobReq withSupportedService(List<SupportedServiceEnum> supportedService) {
@@ -482,7 +535,9 @@ public class Update2dModelTrainingJobReq {
             && Objects.equals(this.actionVideoMultipartCount, that.actionVideoMultipartCount)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.isFastFlexus, that.isFastFlexus)
             && Objects.equals(this.samplesBasicInfo, that.samplesBasicInfo)
+            && Objects.equals(this.voiceProperties, that.voiceProperties)
             && Objects.equals(this.supportedService, that.supportedService)
             && Objects.equals(this.audioSourceType, that.audioSourceType);
     }
@@ -497,7 +552,9 @@ public class Update2dModelTrainingJobReq {
             isBackgroundReplacement,
             batchName,
             tags,
+            isFastFlexus,
             samplesBasicInfo,
+            voiceProperties,
             supportedService,
             audioSourceType);
     }
@@ -514,7 +571,9 @@ public class Update2dModelTrainingJobReq {
         sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    isFastFlexus: ").append(toIndentedString(isFastFlexus)).append("\n");
         sb.append("    samplesBasicInfo: ").append(toIndentedString(samplesBasicInfo)).append("\n");
+        sb.append("    voiceProperties: ").append(toIndentedString(voiceProperties)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
         sb.append("    audioSourceType: ").append(toIndentedString(audioSourceType)).append("\n");
         sb.append("}");

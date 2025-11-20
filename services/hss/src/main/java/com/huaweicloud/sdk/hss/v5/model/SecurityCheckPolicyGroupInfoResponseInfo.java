@@ -273,7 +273,7 @@ public class SecurityCheckPolicyGroupInfoResponseInfo {
     }
 
     /**
-     * **参数解释** 应用的主机的agentID列表 
+     * **参数解释** 应用的主机的agentID列表 **取值范围** 字符串大小范围20-64 
      * @return agentIdList
      */
     public List<String> getAgentIdList() {
@@ -317,7 +317,7 @@ public class SecurityCheckPolicyGroupInfoResponseInfo {
     }
 
     /**
-     * **参数解释** 检测周期 
+     * **参数解释** 检测周期 **取值范围** 字符串大小范围1-128 
      * @return detectionPeriod
      */
     public String getDetectionPeriod() {

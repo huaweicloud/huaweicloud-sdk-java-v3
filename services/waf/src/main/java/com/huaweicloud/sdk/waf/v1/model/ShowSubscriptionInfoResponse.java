@@ -40,7 +40,7 @@ public class ShowSubscriptionInfoResponse extends SdkResponse {
     }
 
     /**
-     * 云模式版本   - -2：已冻结   - -1：未订购   - 2：标准版   - 3：专业版   - 4：企业版   - 7:入门版   - 22：按需版本
+     * **参数解释：** 云模式版本 **取值范围：**  - -2：已冻结   - -1：未订购   - 2：标准版   - 3：专业版   - 4：企业版   - 7: 入门版   - 22：按需版本
      * @return type
      */
     public Integer getType() {
@@ -90,7 +90,7 @@ public class ShowSubscriptionInfoResponse extends SdkResponse {
     }
 
     /**
-     * 是否为新用户
+     * **参数解释：** 是否为新用户 **取值范围：** 不涉及
      * @return isNewUser
      */
     public Boolean getIsNewUser() {
