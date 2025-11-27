@@ -518,7 +518,7 @@ public class ElbClient {
     /**
      * 创建证书
      *
-     * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书管理服务(CCM)的证书，或者使用自有证书。
+     * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书与管理服务(CCM)的证书，或者使用自有证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -532,7 +532,7 @@ public class ElbClient {
     /**
      * 创建证书
      *
-     * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书管理服务(CCM)的证书，或者使用自有证书。
+     * 创建用于弹性负载均衡器HTTPS/TLS/QUIC协议监听器的证书。支持关联云证书与管理服务(CCM)的证书，或者使用自有证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -928,7 +928,7 @@ public class ElbClient {
     /**
      * 删除证书
      *
-     * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
+     * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书与管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -942,7 +942,7 @@ public class ElbClient {
     /**
      * 删除证书
      *
-     * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
+     * 删除ELB证书。若是删除source&#x3D;scm的证书，关联的云证书与管理服务（CCM）中的证书不会被删除。若想删除已关联到监听器的证书，则需要先解除监听器和证书的绑定关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -58,13 +58,18 @@ public class ListTransitIpsRequest {
 
     private List<String> virsubnetId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transit_subnet_id")
+
+    private List<String> transitSubnetId = null;
+
     public ListTransitIpsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+     * 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
      * minimum: 1
      * maximum: 2000
      * @return limit
@@ -309,6 +314,39 @@ public class ListTransitIpsRequest {
         this.virsubnetId = virsubnetId;
     }
 
+    public ListTransitIpsRequest withTransitSubnetId(List<String> transitSubnetId) {
+        this.transitSubnetId = transitSubnetId;
+        return this;
+    }
+
+    public ListTransitIpsRequest addTransitSubnetIdItem(String transitSubnetIdItem) {
+        if (this.transitSubnetId == null) {
+            this.transitSubnetId = new ArrayList<>();
+        }
+        this.transitSubnetId.add(transitSubnetIdItem);
+        return this;
+    }
+
+    public ListTransitIpsRequest withTransitSubnetId(Consumer<List<String>> transitSubnetIdSetter) {
+        if (this.transitSubnetId == null) {
+            this.transitSubnetId = new ArrayList<>();
+        }
+        transitSubnetIdSetter.accept(this.transitSubnetId);
+        return this;
+    }
+
+    /**
+     * 中转子网的ID。
+     * @return transitSubnetId
+     */
+    public List<String> getTransitSubnetId() {
+        return transitSubnetId;
+    }
+
+    public void setTransitSubnetId(List<String> transitSubnetId) {
+        this.transitSubnetId = transitSubnetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -323,7 +361,8 @@ public class ListTransitIpsRequest {
             && Objects.equals(this.networkInterfaceId, that.networkInterfaceId)
             && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.gatewayId, that.gatewayId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.virsubnetId, that.virsubnetId);
+            && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.transitSubnetId, that.transitSubnetId);
     }
 
     @Override
@@ -336,7 +375,8 @@ public class ListTransitIpsRequest {
             ipAddress,
             gatewayId,
             enterpriseProjectId,
-            virsubnetId);
+            virsubnetId,
+            transitSubnetId);
     }
 
     @Override
@@ -352,6 +392,7 @@ public class ListTransitIpsRequest {
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    virsubnetId: ").append(toIndentedString(virsubnetId)).append("\n");
+        sb.append("    transitSubnetId: ").append(toIndentedString(transitSubnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

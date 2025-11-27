@@ -57,7 +57,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 模板ID
+     * **参数解释**: 模板ID **取值范围**: 字符长度0-128 
      * @return id
      */
     public String getId() {
@@ -74,7 +74,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 模板名称
+     * **参数解释**: 模板名称 **取值范围**: 字符长度1-255 
      * @return templateName
      */
     public String getTemplateName() {
@@ -91,7 +91,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 模板类型
+     * **参数解释**: 模板类型 **取值范围**: 字符长度1-16 
      * @return templateType
      */
     public String getTemplateType() {
@@ -108,7 +108,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 描述
+     * **参数解释**: 描述 **取值范围**: 字符长度0-2048 
      * @return description
      */
     public String getDescription() {
@@ -125,7 +125,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 策略模板应用资源类型，多个资源类型通过分号份隔连接
+     * **参数解释**: 策略模板应用资源类型，多个资源类型通过分号份隔连接 **取值范围**: 字符长度1-255 
      * @return targetKind
      */
     public String getTargetKind() {
@@ -142,7 +142,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 标签
+     * **参数解释**: 标签 **取值范围**: 字符长度0-2048 
      * @return tag
      */
     public String getTag() {
@@ -159,7 +159,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 推荐级别
+     * **参数解释**: 推荐级别 **取值范围**: 字符长度1-5 
      * @return level
      */
     public String getLevel() {
@@ -176,7 +176,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 策略模板内容
+     * **参数解释**: 策略模板内容 **取值范围**: 字符长度1-65535 
      * @return constraintTemplate
      */
     public String getConstraintTemplate() {

@@ -478,6 +478,11 @@ public class LoadBalancer {
 
     private String logTopicId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_qos_limit")
+
+    private CustomQosLimit customQosLimit;
+
     public LoadBalancer withId(String id) {
         this.id = id;
         return this;
@@ -989,7 +994,7 @@ public class LoadBalancer {
     }
 
     /**
-     * **参数解释**：负载均衡器4层规格ID。 若当前负载均衡器是弹性规格实例，则该字段表示4层上限规格。  **取值范围**：不涉及  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hk_vdf,fcs)
+     * **参数解释**：负载均衡器4层规格ID。 若当前负载均衡器是弹性规格实例，则该字段表示4层上限规格。  **取值范围**：不涉及  [HCSO场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hk_vdf,fcs)
      * @return l4FlavorId
      */
     public String getL4FlavorId() {
@@ -1023,7 +1028,7 @@ public class LoadBalancer {
     }
 
     /**
-     * **参数解释**：负载均衡器7层规格ID。 若当前负载均衡器是弹性规格实例，则该字段表示7层上限规格。  **取值范围**：不涉及  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hk_vdf,srg,fcs)
+     * **参数解释**：负载均衡器7层规格ID。 若当前负载均衡器是弹性规格实例，则该字段表示7层上限规格。  **取值范围**：不涉及  [HCSO场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hk_vdf,srg,fcs)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -1224,7 +1229,7 @@ public class LoadBalancer {
     }
 
     /**
-     * **参数解释**：负载均衡器的冻结场景。 若负载均衡器有多个冻结场景，用逗号分隔。  **取值范围**： - POLICE：公安冻结场景。 - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - AREAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,hcso_dt,ocb,hws_ocb)
+     * **参数解释**：负载均衡器的冻结场景。 若负载均衡器有多个冻结场景，用逗号分隔。  **取值范围**： [- POLICE：公安冻结场景。](tag:hws) - ILLEGAL：违规冻结场景。 - VERIFY：客户未实名认证冻结场景。 - PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 - AREAR：欠费冻结场景。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,dt,hcso_dt,ocb,hws_ocb)
      * @return frozenScene
      */
     public String getFrozenScene() {
@@ -1482,6 +1487,32 @@ public class LoadBalancer {
         this.logTopicId = logTopicId;
     }
 
+    public LoadBalancer withCustomQosLimit(CustomQosLimit customQosLimit) {
+        this.customQosLimit = customQosLimit;
+        return this;
+    }
+
+    public LoadBalancer withCustomQosLimit(Consumer<CustomQosLimit> customQosLimitSetter) {
+        if (this.customQosLimit == null) {
+            this.customQosLimit = new CustomQosLimit();
+            customQosLimitSetter.accept(this.customQosLimit);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customQosLimit
+     * @return customQosLimit
+     */
+    public CustomQosLimit getCustomQosLimit() {
+        return customQosLimit;
+    }
+
+    public void setCustomQosLimit(CustomQosLimit customQosLimit) {
+        this.customQosLimit = customQosLimit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1528,7 +1559,8 @@ public class LoadBalancer {
             && Objects.equals(this.wafFailureAction, that.wafFailureAction)
             && Objects.equals(this.protectionStatus, that.protectionStatus)
             && Objects.equals(this.protectionReason, that.protectionReason)
-            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logTopicId, that.logTopicId);
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logTopicId, that.logTopicId)
+            && Objects.equals(this.customQosLimit, that.customQosLimit);
     }
 
     @Override
@@ -1582,7 +1614,8 @@ public class LoadBalancer {
             protectionStatus,
             protectionReason,
             logGroupId,
-            logTopicId);
+            logTopicId,
+            customQosLimit);
     }
 
     @Override
@@ -1639,6 +1672,7 @@ public class LoadBalancer {
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logTopicId: ").append(toIndentedString(logTopicId)).append("\n");
+        sb.append("    customQosLimit: ").append(toIndentedString(customQosLimit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

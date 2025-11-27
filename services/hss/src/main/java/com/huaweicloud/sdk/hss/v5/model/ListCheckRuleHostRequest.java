@@ -136,7 +136,7 @@ public class ListCheckRuleHostRequest {
     }
 
     /**
-     * **参数解释** 具体基线检查项id **约束限制** 不涉及 **取值范围** - 值可以通过这个接口的返回数据获得：/v5/{project_id}/baseline/risk-config/{check_name}/check-rules **默认取值** 不涉及
+     * **参数解释** 具体基线检查项id **约束限制** 不涉及 **取值范围** - 值可以通过这个接口的返回数据获得：/v5/{project_id}/baseline/risk-config/{check_name}/check-rules  **默认取值** 不涉及
      * @return checkRuleId
      */
     public String getCheckRuleId() {
@@ -255,7 +255,7 @@ public class ListCheckRuleHostRequest {
     }
 
     /**
-     * **参数解释** 主机类型，已废弃 **约束限制** 不涉及 **取值范围** - cce **默认取值** 不涉及
+     * **参数解释** 主机类型，已废弃 **约束限制** 不涉及 **取值范围** - cce  **默认取值** 不涉及
      * @return hostType
      */
     public String getHostType() {
@@ -272,7 +272,7 @@ public class ListCheckRuleHostRequest {
     }
 
     /**
-     * **参数解释**: 是否只筛选cce主机，已废弃 **约束限制**: 不涉及 **取值范围**: -true：是。 -false：否。 **默认取值**: false 
+     * **参数解释**: 是否只筛选cce主机，已废弃 **约束限制**: 不涉及 **取值范围**: -true：是。 -false：否。  **默认取值**: false 
      * @return checkCce
      */
     public Boolean getCheckCce() {

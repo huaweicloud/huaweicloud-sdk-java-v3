@@ -37,6 +37,11 @@ public class PrivateDnat {
     private String transitIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transit_ip_address")
+
+    private String transitIpAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gateway_id")
 
     private String gatewayId;
@@ -162,6 +167,87 @@ public class PrivateDnat {
 
     private OffsetDateTime updatedAt;
 
+    /**
+     * 私网NAT的DNAT规则状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
+        public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
+
+        /**
+         * Enum FROZEN for value: "FROZEN"
+         */
+        public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
+
+        /**
+         * Enum INACTIVE for value: "INACTIVE"
+         */
+        public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("FROZEN", FROZEN);
+            map.put("INACTIVE", INACTIVE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private StatusEnum status;
+
     public PrivateDnat withId(String id) {
         this.id = id;
         return this;
@@ -230,6 +316,23 @@ public class PrivateDnat {
         this.transitIpId = transitIpId;
     }
 
+    public PrivateDnat withTransitIpAddress(String transitIpAddress) {
+        this.transitIpAddress = transitIpAddress;
+        return this;
+    }
+
+    /**
+     * 中转IP的地址。
+     * @return transitIpAddress
+     */
+    public String getTransitIpAddress() {
+        return transitIpAddress;
+    }
+
+    public void setTransitIpAddress(String transitIpAddress) {
+        this.transitIpAddress = transitIpAddress;
+    }
+
     public PrivateDnat withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
         return this;
@@ -253,7 +356,7 @@ public class PrivateDnat {
     }
 
     /**
-     * 网络接口ID，支持计算、ELB、VIP等实例的端口。
+     * 网络接口ID，支持计算、ELBV2、ELBV3、VIP等实例的端口。
      * @return networkInterfaceId
      */
     public String getNetworkInterfaceId() {
@@ -270,7 +373,7 @@ public class PrivateDnat {
     }
 
     /**
-     * DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELB的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
+     * DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELBv2的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
      * @return type
      */
     public String getType() {
@@ -304,7 +407,7 @@ public class PrivateDnat {
     }
 
     /**
-     * 后端实例的私网IP地址。
+     * 后端资源（计算实例、ELBV2、ELBV3、VIP等）的私网IP地址。
      * @return privateIpAddress
      */
     public String getPrivateIpAddress() {
@@ -321,7 +424,7 @@ public class PrivateDnat {
     }
 
     /**
-     * 后端实例的端口号。
+     * 后端实例的端口号（计算实例、ELBV2、ELBV3、VIP等)。
      * @return internalServicePort
      */
     public String getInternalServicePort() {
@@ -400,6 +503,23 @@ public class PrivateDnat {
         this.updatedAt = updatedAt;
     }
 
+    public PrivateDnat withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 私网NAT的DNAT规则状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -411,6 +531,7 @@ public class PrivateDnat {
         PrivateDnat that = (PrivateDnat) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.transitIpId, that.transitIpId)
+            && Objects.equals(this.transitIpAddress, that.transitIpAddress)
             && Objects.equals(this.gatewayId, that.gatewayId)
             && Objects.equals(this.networkInterfaceId, that.networkInterfaceId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.protocol, that.protocol)
@@ -418,7 +539,8 @@ public class PrivateDnat {
             && Objects.equals(this.internalServicePort, that.internalServicePort)
             && Objects.equals(this.transitServicePort, that.transitServicePort)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override
@@ -427,6 +549,7 @@ public class PrivateDnat {
             projectId,
             description,
             transitIpId,
+            transitIpAddress,
             gatewayId,
             networkInterfaceId,
             type,
@@ -436,7 +559,8 @@ public class PrivateDnat {
             transitServicePort,
             enterpriseProjectId,
             createdAt,
-            updatedAt);
+            updatedAt,
+            status);
     }
 
     @Override
@@ -447,6 +571,7 @@ public class PrivateDnat {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    transitIpId: ").append(toIndentedString(transitIpId)).append("\n");
+        sb.append("    transitIpAddress: ").append(toIndentedString(transitIpAddress)).append("\n");
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    networkInterfaceId: ").append(toIndentedString(networkInterfaceId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -457,6 +582,7 @@ public class PrivateDnat {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

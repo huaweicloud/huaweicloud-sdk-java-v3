@@ -81,6 +81,18 @@ public class SwrRegion {
 
     public static final Region AF_NORTH_1 = new Region("af-north-1", "https://swr-api.af-north-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://swr-api.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://swr-api.cn-south-4.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://swr-api.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://swr-api.cn-north-12.myhuaweicloud.com");
+
+    public static final Region SA_PERU_1 = new Region("sa-peru-1", "https://swr-api.sa-peru-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SWR");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -117,6 +129,11 @@ public class SwrRegion {
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
         map.put("cn-east-5", CN_EAST_5);
         map.put("af-north-1", AF_NORTH_1);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("sa-peru-1", SA_PERU_1);
         return Collections.unmodifiableMap(map);
     }
 

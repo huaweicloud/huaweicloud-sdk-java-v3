@@ -26,7 +26,7 @@ public class UpdatePrivateNatOption {
     private String description;
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型
+     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
      */
     public static final class SpecEnum {
 
@@ -50,6 +50,11 @@ public class UpdatePrivateNatOption {
          */
         public static final SpecEnum EXTRA_LARGE = new SpecEnum("Extra-large");
 
+        /**
+         * Enum EXTRA_XLARGE for value: "Extra-xlarge"
+         */
+        public static final SpecEnum EXTRA_XLARGE = new SpecEnum("Extra-xlarge");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -58,6 +63,7 @@ public class UpdatePrivateNatOption {
             map.put("Medium", MEDIUM);
             map.put("Large", LARGE);
             map.put("Extra-large", EXTRA_LARGE);
+            map.put("Extra-xlarge", EXTRA_XLARGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -152,7 +158,7 @@ public class UpdatePrivateNatOption {
     }
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型
+     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
      * @return spec
      */
     public SpecEnum getSpec() {

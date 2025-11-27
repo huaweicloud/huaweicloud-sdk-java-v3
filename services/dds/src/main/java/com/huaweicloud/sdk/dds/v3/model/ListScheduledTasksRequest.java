@@ -51,7 +51,7 @@ public class ListScheduledTasksRequest {
     }
 
     /**
-     * 任务名称，默认为空。对应取值如下：  \"RESIZE_FLAVOR\"：变更实例的CPU和内存规格
+     * 任务名称，默认为空。对应取值如下： \"RESIZE_FLAVOR\"：变更实例的CPU和内存规格
      * @return jobName
      */
     public String getJobName() {
@@ -68,7 +68,7 @@ public class ListScheduledTasksRequest {
     }
 
     /**
-     * 任务执行状态，默认为空。 取值：  值为\"Pending\"，表示任务未执行。  值为\"Running\"，表示任务正在执行。  值为\"Completed\"，表示任务执行成功。  值为\"Failed\"，表示任务执行失败。  值为\"Canceled\"，表示任务取消执行。
+     * 任务执行状态，默认为空。 取值： - 值为\"Pending\"，表示任务未执行。 - 值为\"Running\"，表示任务正在执行。 - 值为\"Completed\"，表示任务执行成功。 - 值为\"Failed\"，表示任务执行失败。 - 值为\"Canceled\"，表示任务取消执行。
      * @return jobStatus
      */
     public String getJobStatus() {

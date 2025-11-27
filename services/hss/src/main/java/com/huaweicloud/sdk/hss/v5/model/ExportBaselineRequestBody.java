@@ -68,6 +68,31 @@ public class ExportBaselineRequestBody {
 
     private List<List<String>> exportHeaders = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private String tag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_type")
+
+    private String checkType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statistics_scan_result")
+
+    private String statisticsScanResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_rule_name")
+
+    private String checkRuleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
     public ExportBaselineRequestBody withCategory(String category) {
         this.category = category;
         return this;
@@ -277,6 +302,91 @@ public class ExportBaselineRequestBody {
         this.exportHeaders = exportHeaders;
     }
 
+    public ExportBaselineRequestBody withTag(String tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    /**
+     * **参数解释** 基线检查项的类型 **约束限制** 不涉及 **取值范围** 字符长度0-256位 **默认取值** 不涉及
+     * @return tag
+     */
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public ExportBaselineRequestBody withCheckType(String checkType) {
+        this.checkType = checkType;
+        return this;
+    }
+
+    /**
+     * **参数解释** 配置检查（基线）的名称，例如SSH、CentOS 7、Windows **约束限制** 不涉及 **取值范围** 字符长度0-256位 **默认取值** 不涉及
+     * @return checkType
+     */
+    public String getCheckType() {
+        return checkType;
+    }
+
+    public void setCheckType(String checkType) {
+        this.checkType = checkType;
+    }
+
+    public ExportBaselineRequestBody withStatisticsScanResult(String statisticsScanResult) {
+        this.statisticsScanResult = statisticsScanResult;
+        return this;
+    }
+
+    /**
+     * **参数解释** 统计结果类型，包含如下： **约束限制** 不涉及 **取值范围** - pass      : 已通过，表示查看主机全部通过的检查项 - failed    : 未通过，表示查看主机全部未通过 & 全部未处理的检查项 - processed : 已处理，表示查看主机存在未通过 & 未通过主机已全部处理(忽略、加白)的检查项  **默认取值** 不涉及
+     * @return statisticsScanResult
+     */
+    public String getStatisticsScanResult() {
+        return statisticsScanResult;
+    }
+
+    public void setStatisticsScanResult(String statisticsScanResult) {
+        this.statisticsScanResult = statisticsScanResult;
+    }
+
+    public ExportBaselineRequestBody withCheckRuleName(String checkRuleName) {
+        this.checkRuleName = checkRuleName;
+        return this;
+    }
+
+    /**
+     * **参数解释** 检查项（检查规则）名称，支持模糊匹配 **约束限制** 不涉及 **取值范围** 字符长度0-2048位 **默认取值** 不涉及
+     * @return checkRuleName
+     */
+    public String getCheckRuleName() {
+        return checkRuleName;
+    }
+
+    public void setCheckRuleName(String checkRuleName) {
+        this.checkRuleName = checkRuleName;
+    }
+
+    public ExportBaselineRequestBody withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * **参数解释** 集群ID **约束限制** 不涉及 **取值范围** 字符长度0-64位 **默认取值** 不涉及
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -291,7 +401,10 @@ public class ExportBaselineRequestBody {
             && Objects.equals(this.standard, that.standard) && Objects.equals(this.scanResult, that.scanResult)
             && Objects.equals(this.severity, that.severity) && Objects.equals(this.hostId, that.hostId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.exportHeaders, that.exportHeaders);
+            && Objects.equals(this.exportHeaders, that.exportHeaders) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.checkType, that.checkType)
+            && Objects.equals(this.statisticsScanResult, that.statisticsScanResult)
+            && Objects.equals(this.checkRuleName, that.checkRuleName) && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override
@@ -306,7 +419,12 @@ public class ExportBaselineRequestBody {
             hostId,
             limit,
             offset,
-            exportHeaders);
+            exportHeaders,
+            tag,
+            checkType,
+            statisticsScanResult,
+            checkRuleName,
+            clusterId);
     }
 
     @Override
@@ -324,6 +442,11 @@ public class ExportBaselineRequestBody {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    exportHeaders: ").append(toIndentedString(exportHeaders)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
+        sb.append("    statisticsScanResult: ").append(toIndentedString(statisticsScanResult)).append("\n");
+        sb.append("    checkRuleName: ").append(toIndentedString(checkRuleName)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

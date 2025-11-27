@@ -306,6 +306,11 @@ public class ResFeeRecordV2 {
 
     private String accountName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_num")
+
+    private BigDecimal periodNum;
+
     public ResFeeRecordV2 withBillDate(String billDate) {
         this.billDate = billDate;
         return this;
@@ -1309,6 +1314,23 @@ public class ResFeeRecordV2 {
         this.accountName = accountName;
     }
 
+    public ResFeeRecordV2 withPeriodNum(BigDecimal periodNum) {
+        this.periodNum = periodNum;
+        return this;
+    }
+
+    /**
+     * |参数名称：周期数量| |参数的约束及描述：该参数非必填|
+     * @return periodNum
+     */
+    public BigDecimal getPeriodNum() {
+        return periodNum;
+    }
+
+    public void setPeriodNum(BigDecimal periodNum) {
+        this.periodNum = periodNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1362,7 +1384,7 @@ public class ResFeeRecordV2 {
             && Objects.equals(this.subResourceName, that.subResourceName)
             && Objects.equals(this.consumeTime, that.consumeTime)
             && Objects.equals(this.relativeOrderId, that.relativeOrderId)
-            && Objects.equals(this.accountName, that.accountName);
+            && Objects.equals(this.accountName, that.accountName) && Objects.equals(this.periodNum, that.periodNum);
     }
 
     @Override
@@ -1425,7 +1447,8 @@ public class ResFeeRecordV2 {
             subResourceName,
             consumeTime,
             relativeOrderId,
-            accountName);
+            accountName,
+            periodNum);
     }
 
     @Override
@@ -1491,6 +1514,7 @@ public class ResFeeRecordV2 {
         sb.append("    consumeTime: ").append(toIndentedString(consumeTime)).append("\n");
         sb.append("    relativeOrderId: ").append(toIndentedString(relativeOrderId)).append("\n");
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
+        sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

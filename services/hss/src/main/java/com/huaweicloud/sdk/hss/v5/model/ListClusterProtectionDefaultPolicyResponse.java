@@ -65,7 +65,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值10000 
      * minimum: 0
      * maximum: 10000
      * @return totalNum
@@ -84,7 +84,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 用户Token。
+     * **参数解释**: 用户Token **取值范围**: 字符长度1-32768位 
      * @return xAuthToken
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,7 +103,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID
+     * **参数解释**: 项目ID **取值范围**: 字符长度1-32768位 
      * @return projectId
      */
     public String getProjectId() {
@@ -120,7 +120,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 企业ID
+     * **参数解释**: 主机所属的企业项目ID **取值范围**: 字符长度1-256位 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -137,7 +137,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * Region
+     * **参数解释**: Region ID **取值范围**: 字符长度1-32768位 
      * @return region
      */
     public String getRegion() {
@@ -154,7 +154,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * general策略数
+     * **参数解释**: 通用策略数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return generalPolicyNum
@@ -173,7 +173,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * malicious_image策略数
+     * **参数解释**: 恶意镜像策略数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return maliciousImagePolicyNum
@@ -192,7 +192,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * security_policy策略数
+     * **参数解释**: 安全镜像策略数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return securityPolicyNum
@@ -228,7 +228,7 @@ public class ListClusterProtectionDefaultPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 集群防护策略列表
+     * **参数解释**: 集群防护策略列表 **取值范围**: 取值0-10000个ClusterPolicyResponseInfo对象 
      * @return dataList
      */
     public List<ClusterPolicyResponseInfo> getDataList() {

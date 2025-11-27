@@ -1,0 +1,72 @@
+package com.huaweicloud.sdk.evs.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class ShowVolumeInRecycleRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume_id")
+
+    private String volumeId;
+
+    public ShowVolumeInRecycleRequest withVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+        return this;
+    }
+
+    /**
+     * **参数解释** 云硬盘ID。 可通过[查询所有云硬盘详情](evs_04_2006.xml)获取云硬盘ID。 **约束限制** 不涉及。 **取值范围** 不涉及。 **默认取值** 不涉及。
+     * @return volumeId
+     */
+    public String getVolumeId() {
+        return volumeId;
+    }
+
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ShowVolumeInRecycleRequest that = (ShowVolumeInRecycleRequest) obj;
+        return Objects.equals(this.volumeId, that.volumeId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(volumeId);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShowVolumeInRecycleRequest {\n");
+        sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,176 +13,78 @@ import java.util.function.Consumer;
 public class GetDocumentAtomicInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "atomic_unique_key")
+    @JsonProperty(value = "error_code")
 
-    private String atomicUniqueKey;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "atomic_name_zh")
-
-    private String atomicNameZh;
+    private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "atomic_name_en")
+    @JsonProperty(value = "error_msg")
 
-    private String atomicNameEn;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    private List<String> tags = null;
+    private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "inputs")
+    @JsonProperty(value = "data")
 
-    private List<AtomicInputModel> inputs = null;
+    private Object data;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "outputs")
-
-    private AtomicOutputModel outputs;
-
-    public GetDocumentAtomicInfoResponse withAtomicUniqueKey(String atomicUniqueKey) {
-        this.atomicUniqueKey = atomicUniqueKey;
+    public GetDocumentAtomicInfoResponse withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
         return this;
     }
 
     /**
-     * 原子能力唯一标识：只允许字母+下划线，字母开头
-     * @return atomicUniqueKey
+     * 错误码
+     * @return errorCode
      */
-    public String getAtomicUniqueKey() {
-        return atomicUniqueKey;
+    public String getErrorCode() {
+        return errorCode;
     }
 
-    public void setAtomicUniqueKey(String atomicUniqueKey) {
-        this.atomicUniqueKey = atomicUniqueKey;
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
-    public GetDocumentAtomicInfoResponse withAtomicNameZh(String atomicNameZh) {
-        this.atomicNameZh = atomicNameZh;
+    public GetDocumentAtomicInfoResponse withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
         return this;
     }
 
     /**
-     * 中文名
-     * @return atomicNameZh
+     * 错误信息
+     * @return errorMsg
      */
-    public String getAtomicNameZh() {
-        return atomicNameZh;
+    public String getErrorMsg() {
+        return errorMsg;
     }
 
-    public void setAtomicNameZh(String atomicNameZh) {
-        this.atomicNameZh = atomicNameZh;
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
     }
 
-    public GetDocumentAtomicInfoResponse withAtomicNameEn(String atomicNameEn) {
-        this.atomicNameEn = atomicNameEn;
+    public GetDocumentAtomicInfoResponse withData(Object data) {
+        this.data = data;
         return this;
     }
 
-    /**
-     * 英文名
-     * @return atomicNameEn
-     */
-    public String getAtomicNameEn() {
-        return atomicNameEn;
-    }
-
-    public void setAtomicNameEn(String atomicNameEn) {
-        this.atomicNameEn = atomicNameEn;
-    }
-
-    public GetDocumentAtomicInfoResponse withTags(List<String> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public GetDocumentAtomicInfoResponse addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public GetDocumentAtomicInfoResponse withTags(Consumer<List<String>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * 标签信息
-     * @return tags
-     */
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
-    }
-
-    public GetDocumentAtomicInfoResponse withInputs(List<AtomicInputModel> inputs) {
-        this.inputs = inputs;
-        return this;
-    }
-
-    public GetDocumentAtomicInfoResponse addInputsItem(AtomicInputModel inputsItem) {
-        if (this.inputs == null) {
-            this.inputs = new ArrayList<>();
-        }
-        this.inputs.add(inputsItem);
-        return this;
-    }
-
-    public GetDocumentAtomicInfoResponse withInputs(Consumer<List<AtomicInputModel>> inputsSetter) {
-        if (this.inputs == null) {
-            this.inputs = new ArrayList<>();
-        }
-        inputsSetter.accept(this.inputs);
-        return this;
-    }
-
-    /**
-     * 原子能力入参
-     * @return inputs
-     */
-    public List<AtomicInputModel> getInputs() {
-        return inputs;
-    }
-
-    public void setInputs(List<AtomicInputModel> inputs) {
-        this.inputs = inputs;
-    }
-
-    public GetDocumentAtomicInfoResponse withOutputs(AtomicOutputModel outputs) {
-        this.outputs = outputs;
-        return this;
-    }
-
-    public GetDocumentAtomicInfoResponse withOutputs(Consumer<AtomicOutputModel> outputsSetter) {
-        if (this.outputs == null) {
-            this.outputs = new AtomicOutputModel();
-            outputsSetter.accept(this.outputs);
+    public GetDocumentAtomicInfoResponse withData(Consumer<Object> dataSetter) {
+        if (this.data == null) {
+            this.data = new Object();
+            dataSetter.accept(this.data);
         }
 
         return this;
     }
 
     /**
-     * Get outputs
-     * @return outputs
+     * 返回数据。
+     * @return data
      */
-    public AtomicOutputModel getOutputs() {
-        return outputs;
+    public Object getData() {
+        return data;
     }
 
-    public void setOutputs(AtomicOutputModel outputs) {
-        this.outputs = outputs;
+    public void setData(Object data) {
+        this.data = data;
     }
 
     @Override
@@ -196,27 +96,22 @@ public class GetDocumentAtomicInfoResponse extends SdkResponse {
             return false;
         }
         GetDocumentAtomicInfoResponse that = (GetDocumentAtomicInfoResponse) obj;
-        return Objects.equals(this.atomicUniqueKey, that.atomicUniqueKey)
-            && Objects.equals(this.atomicNameZh, that.atomicNameZh)
-            && Objects.equals(this.atomicNameEn, that.atomicNameEn) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.inputs, that.inputs) && Objects.equals(this.outputs, that.outputs);
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(atomicUniqueKey, atomicNameZh, atomicNameEn, tags, inputs, outputs);
+        return Objects.hash(errorCode, errorMsg, data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GetDocumentAtomicInfoResponse {\n");
-        sb.append("    atomicUniqueKey: ").append(toIndentedString(atomicUniqueKey)).append("\n");
-        sb.append("    atomicNameZh: ").append(toIndentedString(atomicNameZh)).append("\n");
-        sb.append("    atomicNameEn: ").append(toIndentedString(atomicNameEn)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
-        sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

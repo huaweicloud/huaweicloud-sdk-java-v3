@@ -47,6 +47,8 @@ import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListAllPopsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListAllPopsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListByoipPoolsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListByoipPoolsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointsRequest;
@@ -256,6 +258,35 @@ public class GaClient {
     public SyncInvoker<UpdateAcceleratorRequest, UpdateAcceleratorResponse> updateAcceleratorInvoker(
         UpdateAcceleratorRequest request) {
         return new SyncInvoker<>(request, GaMeta.updateAccelerator, hcClient);
+    }
+
+    /**
+     * 查询自带IP地址池列表
+     *
+     * 查询自带IP地址池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListByoipPoolsRequest 请求对象
+     * @return ListByoipPoolsResponse
+     */
+    public ListByoipPoolsResponse listByoipPools(ListByoipPoolsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaMeta.listByoipPools);
+    }
+
+    /**
+     * 查询自带IP地址池列表
+     *
+     * 查询自带IP地址池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListByoipPoolsRequest 请求对象
+     * @return SyncInvoker<ListByoipPoolsRequest, ListByoipPoolsResponse>
+     */
+    public SyncInvoker<ListByoipPoolsRequest, ListByoipPoolsResponse> listByoipPoolsInvoker(
+        ListByoipPoolsRequest request) {
+        return new SyncInvoker<>(request, GaMeta.listByoipPools, hcClient);
     }
 
     /**

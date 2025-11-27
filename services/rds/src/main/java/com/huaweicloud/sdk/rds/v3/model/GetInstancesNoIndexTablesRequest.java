@@ -25,6 +25,16 @@ public class GetInstancesNoIndexTablesRequest {
 
     private String tableType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private String offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
     public GetInstancesNoIndexTablesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -76,6 +86,40 @@ public class GetInstancesNoIndexTablesRequest {
         this.tableType = tableType;
     }
 
+    public GetInstancesNoIndexTablesRequest withOffset(String offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 索引位置，偏移量。
+     * @return offset
+     */
+    public String getOffset() {
+        return offset;
+    }
+
+    public void setOffset(String offset) {
+        this.offset = offset;
+    }
+
+    public GetInstancesNoIndexTablesRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 查询记录数。
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +130,13 @@ public class GetInstancesNoIndexTablesRequest {
         }
         GetInstancesNoIndexTablesRequest that = (GetInstancesNoIndexTablesRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.newest, that.newest)
-            && Objects.equals(this.tableType, that.tableType);
+            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, newest, tableType);
+        return Objects.hash(instanceId, newest, tableType, offset, limit);
     }
 
     @Override
@@ -101,6 +146,8 @@ public class GetInstancesNoIndexTablesRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    newest: ").append(toIndentedString(newest)).append("\n");
         sb.append("    tableType: ").append(toIndentedString(tableType)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 云日志的资源类型。
+ * 云日志的资源类型。 取值范围： LISTENER：监听器
  */
 public class LogtankResourceType {
 

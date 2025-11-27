@@ -65,6 +65,11 @@ public class ListAllRiskConfigCheckRulesRequest {
 
     private String policyGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statistics_flag")
+
+    private String statisticsFlag;
+
     public ListAllRiskConfigCheckRulesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -256,6 +261,23 @@ public class ListAllRiskConfigCheckRulesRequest {
         this.policyGroupId = policyGroupId;
     }
 
+    public ListAllRiskConfigCheckRulesRequest withStatisticsFlag(String statisticsFlag) {
+        this.statisticsFlag = statisticsFlag;
+        return this;
+    }
+
+    /**
+     * **参数解释** 是否从统计维度展示数据 **约束限制** 不涉及 **取值范围** - false : 不从统计维度展示 - true  : 从统计维度展示  **默认取值** false
+     * @return statisticsFlag
+     */
+    public String getStatisticsFlag() {
+        return statisticsFlag;
+    }
+
+    public void setStatisticsFlag(String statisticsFlag) {
+        this.statisticsFlag = statisticsFlag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -271,7 +293,8 @@ public class ListAllRiskConfigCheckRulesRequest {
             && Objects.equals(this.statisticsScanResult, that.statisticsScanResult)
             && Objects.equals(this.checkRuleName, that.checkRuleName) && Objects.equals(this.severity, that.severity)
             && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.policyGroupId, that.policyGroupId);
+            && Objects.equals(this.policyGroupId, that.policyGroupId)
+            && Objects.equals(this.statisticsFlag, that.statisticsFlag);
     }
 
     @Override
@@ -286,7 +309,8 @@ public class ListAllRiskConfigCheckRulesRequest {
             severity,
             clusterId,
             tag,
-            policyGroupId);
+            policyGroupId,
+            statisticsFlag);
     }
 
     @Override
@@ -304,6 +328,7 @@ public class ListAllRiskConfigCheckRulesRequest {
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    policyGroupId: ").append(toIndentedString(policyGroupId)).append("\n");
+        sb.append("    statisticsFlag: ").append(toIndentedString(statisticsFlag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

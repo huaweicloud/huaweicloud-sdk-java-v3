@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**：负载均衡相关各类资源的配额信息。仅返回资源的总配额，不包括剩余可用配额。
+ * Quota
  */
 public class Quota {
 

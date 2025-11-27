@@ -58,6 +58,11 @@ public class QueryResourcesReq {
 
     private String serviceTypeCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customer_id")
+
+    private String customerId;
+
     public QueryResourcesReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
@@ -249,6 +254,23 @@ public class QueryResourcesReq {
         this.serviceTypeCode = serviceTypeCode;
     }
 
+    public QueryResourcesReq withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    /**
+     * 客户账号ID，非必填，范围限制:0-64，伙伴查询子客户包年/包月资源列表时必须携带该字段。除此之外，此参数不做处理。
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -263,7 +285,8 @@ public class QueryResourcesReq {
             && Objects.equals(this.statusList, that.statusList) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.expireTimeBegin, that.expireTimeBegin)
             && Objects.equals(this.expireTimeEnd, that.expireTimeEnd)
-            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode);
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.customerId, that.customerId);
     }
 
     @Override
@@ -276,7 +299,8 @@ public class QueryResourcesReq {
             limit,
             expireTimeBegin,
             expireTimeEnd,
-            serviceTypeCode);
+            serviceTypeCode,
+            customerId);
     }
 
     @Override
@@ -292,6 +316,7 @@ public class QueryResourcesReq {
         sb.append("    expireTimeBegin: ").append(toIndentedString(expireTimeBegin)).append("\n");
         sb.append("    expireTimeEnd: ").append(toIndentedString(expireTimeEnd)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -431,6 +431,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationReque
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLogCollectionStatusRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLogCollectionStatusResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
@@ -5832,6 +5834,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<SwitchKmsTdeRequest, SwitchKmsTdeResponse> switchKmsTdeAsyncInvoker(
         SwitchKmsTdeRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.switchKmsTde, hcClient);
+    }
+
+    /**
+     * 修改错误日志采集开关状态
+     *
+     * 打开或者关闭数据库错误日志采集的开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLogCollectionStatusRequest 请求对象
+     * @return CompletableFuture<SwitchLogCollectionStatusResponse>
+     */
+    public CompletableFuture<SwitchLogCollectionStatusResponse> switchLogCollectionStatusAsync(
+        SwitchLogCollectionStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.switchLogCollectionStatus);
+    }
+
+    /**
+     * 修改错误日志采集开关状态
+     *
+     * 打开或者关闭数据库错误日志采集的开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLogCollectionStatusRequest 请求对象
+     * @return AsyncInvoker<SwitchLogCollectionStatusRequest, SwitchLogCollectionStatusResponse>
+     */
+    public AsyncInvoker<SwitchLogCollectionStatusRequest, SwitchLogCollectionStatusResponse> switchLogCollectionStatusAsyncInvoker(
+        SwitchLogCollectionStatusRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.switchLogCollectionStatus, hcClient);
     }
 
     /**

@@ -267,7 +267,7 @@ public class ListProtectionServersRequest {
     }
 
     /**
-     * 操作系统类型，包含如下2种。  - linux ：linux类型应用防护。  - windows ：windows类型应用防护。
+     * 操作系统类型，包含如下2种。 - Linux - Windows
      * @return osType
      */
     public String getOsType() {

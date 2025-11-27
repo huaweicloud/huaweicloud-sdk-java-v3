@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ShowBackupDownloadLinkRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-
-    private String xLanguage;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
@@ -24,25 +19,6 @@ public class ShowBackupDownloadLinkRequest {
     @JsonProperty(value = "backup_id")
 
     private String backupId;
-
-    public ShowBackupDownloadLinkRequest withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-        return this;
-    }
-
-    /**
-     * 语言。
-     * @return xLanguage
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
-        return xLanguage;
-    }
-
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
-    }
 
     public ShowBackupDownloadLinkRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -87,20 +63,18 @@ public class ShowBackupDownloadLinkRequest {
             return false;
         }
         ShowBackupDownloadLinkRequest that = (ShowBackupDownloadLinkRequest) obj;
-        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.backupId, that.backupId);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.backupId, that.backupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, backupId);
+        return Objects.hash(instanceId, backupId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowBackupDownloadLinkRequest {\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("}");

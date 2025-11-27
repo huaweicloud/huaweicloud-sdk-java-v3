@@ -35,7 +35,7 @@ public class ChangeClusterEventsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值10000 
      * minimum: 0
      * maximum: 10000
      * @return totalNum
@@ -54,7 +54,7 @@ public class ChangeClusterEventsResponse extends SdkResponse {
     }
 
     /**
-     * 最近更新时间
+     * **参数解释**: 最近更新时间 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return lastUpdateTime
@@ -89,7 +89,7 @@ public class ChangeClusterEventsResponse extends SdkResponse {
     }
 
     /**
-     * 集群安全事件列表
+     * **参数解释**: 集群安全事件列表 **取值范围**: 取值0-10000个ClusterEventResponseInfo对象 
      * @return dataList
      */
     public List<ClusterEventResponseInfo> getDataList() {

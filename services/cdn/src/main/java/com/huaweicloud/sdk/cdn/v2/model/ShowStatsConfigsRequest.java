@@ -15,6 +15,16 @@ public class ShowStatsConfigsRequest {
 
     private Integer configType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ShowStatsConfigsRequest withConfigType(Integer configType) {
         this.configType = configType;
         return this;
@@ -32,6 +42,40 @@ public class ShowStatsConfigsRequest {
         this.configType = configType;
     }
 
+    public ShowStatsConfigsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 分页查询每页的数量 **约束限制：** 不涉及 **取值范围：** 1-1000 **默认取值：** 10
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ShowStatsConfigsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 查询偏移量，表示跳过多少个数据开始查询 **约束限制：** 不涉及 **取值范围：** 0-65535 **默认取值：** 0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +85,13 @@ public class ShowStatsConfigsRequest {
             return false;
         }
         ShowStatsConfigsRequest that = (ShowStatsConfigsRequest) obj;
-        return Objects.equals(this.configType, that.configType);
+        return Objects.equals(this.configType, that.configType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configType);
+        return Objects.hash(configType, limit, offset);
     }
 
     @Override
@@ -54,6 +99,8 @@ public class ShowStatsConfigsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowStatsConfigsRequest {\n");
         sb.append("    configType: ").append(toIndentedString(configType)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 资源类型，取值： - ga-accelerators：加速实例 - ga-listeners：监听器
+ * 资源类型，取值范围： - ga-accelerators：加速实例 - ga-listeners：监听器
  */
 public class ResourceType {
 

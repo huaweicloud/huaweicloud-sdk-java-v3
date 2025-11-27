@@ -76,6 +76,11 @@ public class SecurityCheckRuleHostResponseInfo {
     private Integer enableFix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_verify")
+
+    private Boolean enableVerify;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_click")
 
     private Boolean enableClick;
@@ -329,6 +334,23 @@ public class SecurityCheckRuleHostResponseInfo {
         this.enableFix = enableFix;
     }
 
+    public SecurityCheckRuleHostResponseInfo withEnableVerify(Boolean enableVerify) {
+        this.enableVerify = enableVerify;
+        return this;
+    }
+
+    /**
+     * **参数解释** 该检查项是否可验证，要求为Linux且agent版本>=3.2.24 **取值范围**  - true  : 可验证 - false : 不可验证
+     * @return enableVerify
+     */
+    public Boolean getEnableVerify() {
+        return enableVerify;
+    }
+
+    public void setEnableVerify(Boolean enableVerify) {
+        this.enableVerify = enableVerify;
+    }
+
     public SecurityCheckRuleHostResponseInfo withEnableClick(Boolean enableClick) {
         this.enableClick = enableClick;
         return this;
@@ -403,7 +425,7 @@ public class SecurityCheckRuleHostResponseInfo {
     }
 
     /**
-     * **参数解释** 集群ID **取值范围** 字符长度0-64位
+     * **参数解释** 集群ID **取值范围**  字符长度0-64位
      * @return clusterId
      */
     public String getClusterId() {
@@ -430,7 +452,8 @@ public class SecurityCheckRuleHostResponseInfo {
             && Objects.equals(this.failedNum, that.failedNum) && Objects.equals(this.passedNum, that.passedNum)
             && Objects.equals(this.diffDescription, that.diffDescription)
             && Objects.equals(this.description, that.description) && Objects.equals(this.hostType, that.hostType)
-            && Objects.equals(this.enableFix, that.enableFix) && Objects.equals(this.enableClick, that.enableClick)
+            && Objects.equals(this.enableFix, that.enableFix) && Objects.equals(this.enableVerify, that.enableVerify)
+            && Objects.equals(this.enableClick, that.enableClick)
             && Objects.equals(this.cancelIgnoreEnableClick, that.cancelIgnoreEnableClick)
             && Objects.equals(this.resultType, that.resultType)
             && Objects.equals(this.fixFailedReason, that.fixFailedReason)
@@ -452,6 +475,7 @@ public class SecurityCheckRuleHostResponseInfo {
             description,
             hostType,
             enableFix,
+            enableVerify,
             enableClick,
             cancelIgnoreEnableClick,
             resultType,
@@ -476,6 +500,7 @@ public class SecurityCheckRuleHostResponseInfo {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    hostType: ").append(toIndentedString(hostType)).append("\n");
         sb.append("    enableFix: ").append(toIndentedString(enableFix)).append("\n");
+        sb.append("    enableVerify: ").append(toIndentedString(enableVerify)).append("\n");
         sb.append("    enableClick: ").append(toIndentedString(enableClick)).append("\n");
         sb.append("    cancelIgnoreEnableClick: ").append(toIndentedString(cancelIgnoreEnableClick)).append("\n");
         sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");

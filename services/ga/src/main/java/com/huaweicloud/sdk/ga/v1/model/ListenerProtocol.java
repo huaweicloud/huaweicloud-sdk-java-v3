@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 监听的网络传输协议类型。
+ * 监听的网络传输协议类型。 取值范围：TCP、UDP
  */
 public class ListenerProtocol {
 

@@ -145,6 +145,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSslCertDownloadAddressesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSslCertDownloadAddressesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeRequest;
@@ -2374,6 +2376,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsAsyncInvoker(
         ListSlowLogsRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listSlowLogs, hcClient);
+    }
+
+    /**
+     * 获取SSL证书下载地址
+     *
+     * 获取SSL证书下载地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSslCertDownloadAddressesRequest 请求对象
+     * @return CompletableFuture<ListSslCertDownloadAddressesResponse>
+     */
+    public CompletableFuture<ListSslCertDownloadAddressesResponse> listSslCertDownloadAddressesAsync(
+        ListSslCertDownloadAddressesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listSslCertDownloadAddresses);
+    }
+
+    /**
+     * 获取SSL证书下载地址
+     *
+     * 获取SSL证书下载地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSslCertDownloadAddressesRequest 请求对象
+     * @return AsyncInvoker<ListSslCertDownloadAddressesRequest, ListSslCertDownloadAddressesResponse>
+     */
+    public AsyncInvoker<ListSslCertDownloadAddressesRequest, ListSslCertDownloadAddressesResponse> listSslCertDownloadAddressesAsyncInvoker(
+        ListSslCertDownloadAddressesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listSslCertDownloadAddresses, hcClient);
     }
 
     /**

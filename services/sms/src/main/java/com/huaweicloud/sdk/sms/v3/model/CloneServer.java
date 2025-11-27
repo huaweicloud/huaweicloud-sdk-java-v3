@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -25,10 +30,104 @@ public class CloneServer {
 
     private String cloneError;
 
+    /**
+     * 克隆状态 NOT_READY: 未准备好 READY: 就绪 PREPARING: 准备创建中 CREATING: 创建中 ERROR: 克隆错误 FINISHED: 克隆结束
+     */
+    public static final class CloneStateEnum {
+
+        /**
+         * Enum NOT_READY for value: "NOT_READY"
+         */
+        public static final CloneStateEnum NOT_READY = new CloneStateEnum("NOT_READY");
+
+        /**
+         * Enum READY for value: "READY"
+         */
+        public static final CloneStateEnum READY = new CloneStateEnum("READY");
+
+        /**
+         * Enum PREPARING for value: "PREPARING"
+         */
+        public static final CloneStateEnum PREPARING = new CloneStateEnum("PREPARING");
+
+        /**
+         * Enum CREATING for value: "CREATING"
+         */
+        public static final CloneStateEnum CREATING = new CloneStateEnum("CREATING");
+
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
+        public static final CloneStateEnum ERROR = new CloneStateEnum("ERROR");
+
+        /**
+         * Enum FINISHED for value: "FINISHED"
+         */
+        public static final CloneStateEnum FINISHED = new CloneStateEnum("FINISHED");
+
+        private static final Map<String, CloneStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CloneStateEnum> createStaticFields() {
+            Map<String, CloneStateEnum> map = new HashMap<>();
+            map.put("NOT_READY", NOT_READY);
+            map.put("READY", READY);
+            map.put("PREPARING", PREPARING);
+            map.put("CREATING", CREATING);
+            map.put("ERROR", ERROR);
+            map.put("FINISHED", FINISHED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CloneStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CloneStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CloneStateEnum(value));
+        }
+
+        public static CloneStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CloneStateEnum) {
+                return this.value.equals(((CloneStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clone_state")
 
-    private String cloneState;
+    private CloneStateEnum cloneState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
@@ -86,20 +185,20 @@ public class CloneServer {
         this.cloneError = cloneError;
     }
 
-    public CloneServer withCloneState(String cloneState) {
+    public CloneServer withCloneState(CloneStateEnum cloneState) {
         this.cloneState = cloneState;
         return this;
     }
 
     /**
-     * 克隆状态
+     * 克隆状态 NOT_READY: 未准备好 READY: 就绪 PREPARING: 准备创建中 CREATING: 创建中 ERROR: 克隆错误 FINISHED: 克隆结束
      * @return cloneState
      */
-    public String getCloneState() {
+    public CloneStateEnum getCloneState() {
         return cloneState;
     }
 
-    public void setCloneState(String cloneState) {
+    public void setCloneState(CloneStateEnum cloneState) {
         this.cloneState = cloneState;
     }
 

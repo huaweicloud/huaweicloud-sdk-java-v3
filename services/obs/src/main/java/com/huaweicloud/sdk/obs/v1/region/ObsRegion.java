@@ -59,6 +59,31 @@ public class ObsRegion {
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://obs.eu-west-101.myhuaweicloud.eu");
 
+    public static final Region SA_PERU_1 = new Region("sa-peru-1", "https://obs.sa-peru-1.myhuaweicloud.com");
+
+    public static final Region RU_NORTHWEST_2 =
+        new Region("ru-northwest-2", "https://obs.ru-northwest-2.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://obs.cn-north-12.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://obs.ap-southeast-5.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://obs.me-east-1.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://obs.cn-north-11.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://obs.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://obs.af-north-1.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://obs.cn-east-5.myhuaweicloud.com");
+
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://obs.cn-east-4.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://obs.cn-north-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("OBS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -85,6 +110,17 @@ public class ObsRegion {
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("tr-west-1", TR_WEST_1);
         map.put("eu-west-101", EU_WEST_101);
+        map.put("sa-peru-1", SA_PERU_1);
+        map.put("ru-northwest-2", RU_NORTHWEST_2);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("af-north-1", AF_NORTH_1);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("cn-north-2", CN_NORTH_2);
         return Collections.unmodifiableMap(map);
     }
 

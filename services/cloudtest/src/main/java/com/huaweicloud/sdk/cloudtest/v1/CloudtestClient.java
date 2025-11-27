@@ -24,6 +24,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorRe
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateTestCasesInDiffVersionRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateTestCasesInDiffVersionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CheckPermissionRequest;
@@ -618,6 +620,36 @@ public class CloudtestClient {
     public SyncInvoker<BatchRemoveTestCasesFromIteratorRequest, BatchRemoveTestCasesFromIteratorResponse> batchRemoveTestCasesFromIteratorInvoker(
         BatchRemoveTestCasesFromIteratorRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.batchRemoveTestCasesFromIterator, hcClient);
+    }
+
+    /**
+     * 在不同分支或者迭代下批量修改用例
+     *
+     * 在不同分支或者迭代下批量修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateTestCasesInDiffVersionRequest 请求对象
+     * @return BatchUpdateTestCasesInDiffVersionResponse
+     */
+    public BatchUpdateTestCasesInDiffVersionResponse batchUpdateTestCasesInDiffVersion(
+        BatchUpdateTestCasesInDiffVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.batchUpdateTestCasesInDiffVersion);
+    }
+
+    /**
+     * 在不同分支或者迭代下批量修改用例
+     *
+     * 在不同分支或者迭代下批量修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateTestCasesInDiffVersionRequest 请求对象
+     * @return SyncInvoker<BatchUpdateTestCasesInDiffVersionRequest, BatchUpdateTestCasesInDiffVersionResponse>
+     */
+    public SyncInvoker<BatchUpdateTestCasesInDiffVersionRequest, BatchUpdateTestCasesInDiffVersionResponse> batchUpdateTestCasesInDiffVersionInvoker(
+        BatchUpdateTestCasesInDiffVersionRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.batchUpdateTestCasesInDiffVersion, hcClient);
     }
 
     /**

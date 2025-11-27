@@ -54,11 +54,6 @@ public class ListPrivateDnatsRequest {
     private List<String> transitIpId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "external_ip_address")
-
-    private List<String> externalIpAddress = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_interface_id")
 
     private List<String> networkInterfaceId = null;
@@ -73,13 +68,33 @@ public class ListPrivateDnatsRequest {
 
     private List<String> privateIpAddress = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol")
+
+    private List<String> protocol = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "internal_service_port")
+
+    private List<String> internalServicePort = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transit_service_port")
+
+    private List<String> transitServicePort = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transit_ip_address")
+
+    private List<String> transitIpAddress = null;
+
     public ListPrivateDnatsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+     * 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
      * minimum: 1
      * maximum: 2000
      * @return limit
@@ -291,39 +306,6 @@ public class ListPrivateDnatsRequest {
         this.transitIpId = transitIpId;
     }
 
-    public ListPrivateDnatsRequest withExternalIpAddress(List<String> externalIpAddress) {
-        this.externalIpAddress = externalIpAddress;
-        return this;
-    }
-
-    public ListPrivateDnatsRequest addExternalIpAddressItem(String externalIpAddressItem) {
-        if (this.externalIpAddress == null) {
-            this.externalIpAddress = new ArrayList<>();
-        }
-        this.externalIpAddress.add(externalIpAddressItem);
-        return this;
-    }
-
-    public ListPrivateDnatsRequest withExternalIpAddress(Consumer<List<String>> externalIpAddressSetter) {
-        if (this.externalIpAddress == null) {
-            this.externalIpAddress = new ArrayList<>();
-        }
-        externalIpAddressSetter.accept(this.externalIpAddress);
-        return this;
-    }
-
-    /**
-     * 中转IP的地址。
-     * @return externalIpAddress
-     */
-    public List<String> getExternalIpAddress() {
-        return externalIpAddress;
-    }
-
-    public void setExternalIpAddress(List<String> externalIpAddress) {
-        this.externalIpAddress = externalIpAddress;
-    }
-
     public ListPrivateDnatsRequest withNetworkInterfaceId(List<String> networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
         return this;
@@ -346,7 +328,7 @@ public class ListPrivateDnatsRequest {
     }
 
     /**
-     * 网络接口ID，支持计算、ELB、VIP等实例的网络接口。
+     * 计算实例、ELBV2、ELBV3、VIP等资源的端口ID。
      * @return networkInterfaceId
      */
     public List<String> getNetworkInterfaceId() {
@@ -379,7 +361,7 @@ public class ListPrivateDnatsRequest {
     }
 
     /**
-     * DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELB的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
+     * DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELBv2的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
      * @return type
      */
     public List<String> getType() {
@@ -412,7 +394,7 @@ public class ListPrivateDnatsRequest {
     }
 
     /**
-     * 后端实例的IP私网地址。
+     * 后端资源（计算实例、ELBV2、ELBV3、VIP等）的私网IP地址。
      * @return privateIpAddress
      */
     public List<String> getPrivateIpAddress() {
@@ -421,6 +403,138 @@ public class ListPrivateDnatsRequest {
 
     public void setPrivateIpAddress(List<String> privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
+    }
+
+    public ListPrivateDnatsRequest withProtocol(List<String> protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    public ListPrivateDnatsRequest addProtocolItem(String protocolItem) {
+        if (this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
+        this.protocol.add(protocolItem);
+        return this;
+    }
+
+    public ListPrivateDnatsRequest withProtocol(Consumer<List<String>> protocolSetter) {
+        if (this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
+        protocolSetter.accept(this.protocol);
+        return this;
+    }
+
+    /**
+     * DNAT规则协议类型， 目前支持TCP/tcp/Tcp/tCp/tcP/TCp/tCP/TcP、 UDP/udp/Udp/uDp/udP/UDp/uDP/UdP、 ANY/any/Any/aNy/anY/ANy/aNY/AnY。 分别对应协议号6、17、0。
+     * @return protocol
+     */
+    public List<String> getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(List<String> protocol) {
+        this.protocol = protocol;
+    }
+
+    public ListPrivateDnatsRequest withInternalServicePort(List<String> internalServicePort) {
+        this.internalServicePort = internalServicePort;
+        return this;
+    }
+
+    public ListPrivateDnatsRequest addInternalServicePortItem(String internalServicePortItem) {
+        if (this.internalServicePort == null) {
+            this.internalServicePort = new ArrayList<>();
+        }
+        this.internalServicePort.add(internalServicePortItem);
+        return this;
+    }
+
+    public ListPrivateDnatsRequest withInternalServicePort(Consumer<List<String>> internalServicePortSetter) {
+        if (this.internalServicePort == null) {
+            this.internalServicePort = new ArrayList<>();
+        }
+        internalServicePortSetter.accept(this.internalServicePort);
+        return this;
+    }
+
+    /**
+     * 后端实例的端口号（计算实例、ELBV2、ELBV3、VIP等)。
+     * @return internalServicePort
+     */
+    public List<String> getInternalServicePort() {
+        return internalServicePort;
+    }
+
+    public void setInternalServicePort(List<String> internalServicePort) {
+        this.internalServicePort = internalServicePort;
+    }
+
+    public ListPrivateDnatsRequest withTransitServicePort(List<String> transitServicePort) {
+        this.transitServicePort = transitServicePort;
+        return this;
+    }
+
+    public ListPrivateDnatsRequest addTransitServicePortItem(String transitServicePortItem) {
+        if (this.transitServicePort == null) {
+            this.transitServicePort = new ArrayList<>();
+        }
+        this.transitServicePort.add(transitServicePortItem);
+        return this;
+    }
+
+    public ListPrivateDnatsRequest withTransitServicePort(Consumer<List<String>> transitServicePortSetter) {
+        if (this.transitServicePort == null) {
+            this.transitServicePort = new ArrayList<>();
+        }
+        transitServicePortSetter.accept(this.transitServicePort);
+        return this;
+    }
+
+    /**
+     * 中转IP的端口号。
+     * @return transitServicePort
+     */
+    public List<String> getTransitServicePort() {
+        return transitServicePort;
+    }
+
+    public void setTransitServicePort(List<String> transitServicePort) {
+        this.transitServicePort = transitServicePort;
+    }
+
+    public ListPrivateDnatsRequest withTransitIpAddress(List<String> transitIpAddress) {
+        this.transitIpAddress = transitIpAddress;
+        return this;
+    }
+
+    public ListPrivateDnatsRequest addTransitIpAddressItem(String transitIpAddressItem) {
+        if (this.transitIpAddress == null) {
+            this.transitIpAddress = new ArrayList<>();
+        }
+        this.transitIpAddress.add(transitIpAddressItem);
+        return this;
+    }
+
+    public ListPrivateDnatsRequest withTransitIpAddress(Consumer<List<String>> transitIpAddressSetter) {
+        if (this.transitIpAddress == null) {
+            this.transitIpAddress = new ArrayList<>();
+        }
+        transitIpAddressSetter.accept(this.transitIpAddress);
+        return this;
+    }
+
+    /**
+     * 中转IP的地址。
+     * @return transitIpAddress
+     */
+    public List<String> getTransitIpAddress() {
+        return transitIpAddress;
+    }
+
+    public void setTransitIpAddress(List<String> transitIpAddress) {
+        this.transitIpAddress = transitIpAddress;
     }
 
     @Override
@@ -437,9 +551,12 @@ public class ListPrivateDnatsRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.gatewayId, that.gatewayId)
             && Objects.equals(this.transitIpId, that.transitIpId)
-            && Objects.equals(this.externalIpAddress, that.externalIpAddress)
             && Objects.equals(this.networkInterfaceId, that.networkInterfaceId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.privateIpAddress, that.privateIpAddress);
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.internalServicePort, that.internalServicePort)
+            && Objects.equals(this.transitServicePort, that.transitServicePort)
+            && Objects.equals(this.transitIpAddress, that.transitIpAddress);
     }
 
     @Override
@@ -452,10 +569,13 @@ public class ListPrivateDnatsRequest {
             description,
             gatewayId,
             transitIpId,
-            externalIpAddress,
             networkInterfaceId,
             type,
-            privateIpAddress);
+            privateIpAddress,
+            protocol,
+            internalServicePort,
+            transitServicePort,
+            transitIpAddress);
     }
 
     @Override
@@ -470,10 +590,13 @@ public class ListPrivateDnatsRequest {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    transitIpId: ").append(toIndentedString(transitIpId)).append("\n");
-        sb.append("    externalIpAddress: ").append(toIndentedString(externalIpAddress)).append("\n");
         sb.append("    networkInterfaceId: ").append(toIndentedString(networkInterfaceId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    privateIpAddress: ").append(toIndentedString(privateIpAddress)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    internalServicePort: ").append(toIndentedString(internalServicePort)).append("\n");
+        sb.append("    transitServicePort: ").append(toIndentedString(transitServicePort)).append("\n");
+        sb.append("    transitIpAddress: ").append(toIndentedString(transitIpAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

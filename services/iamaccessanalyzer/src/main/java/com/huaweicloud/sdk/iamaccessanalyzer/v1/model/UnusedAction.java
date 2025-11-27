@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.iamaccessanalyzer.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ public class UnusedAction {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_accessed")
 
-    private Object lastAccessed;
+    private OffsetDateTime lastAccessed;
 
     public UnusedAction withAction(String action) {
         this.action = action;
@@ -37,7 +38,7 @@ public class UnusedAction {
         this.action = action;
     }
 
-    public UnusedAction withLastAccessed(Object lastAccessed) {
+    public UnusedAction withLastAccessed(OffsetDateTime lastAccessed) {
         this.lastAccessed = lastAccessed;
         return this;
     }
@@ -46,11 +47,11 @@ public class UnusedAction {
      * 用户使用授权项的最后访问时间。
      * @return lastAccessed
      */
-    public Object getLastAccessed() {
+    public OffsetDateTime getLastAccessed() {
         return lastAccessed;
     }
 
-    public void setLastAccessed(Object lastAccessed) {
+    public void setLastAccessed(OffsetDateTime lastAccessed) {
         this.lastAccessed = lastAccessed;
     }
 

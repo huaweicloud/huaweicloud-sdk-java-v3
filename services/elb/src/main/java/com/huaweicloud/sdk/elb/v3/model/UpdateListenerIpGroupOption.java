@@ -106,7 +106,7 @@ public class UpdateListenerIpGroupOption {
     }
 
     /**
-     * **参数解释**：监听器关联的访问控制组的id。创建时必选，更新时非必选。  **约束限制**：指定的ipgroup必须已存在，不能指定为null，否则与enable_ipgroup冲突。  **取值范围**：不涉及  **默认取值**：不涉及
+     * **参数解释**：监听器关联的访问控制组的id。关联多个IP地址组时ID使用逗号分隔。  **约束限制**：指定的ipgroup必须已存在，不能指定为null，否则与enable_ipgroup冲突。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return ipgroupId
      */
     public String getIpgroupId() {

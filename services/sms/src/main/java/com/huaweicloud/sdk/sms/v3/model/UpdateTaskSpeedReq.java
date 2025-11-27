@@ -364,7 +364,7 @@ public class UpdateTaskSpeedReq {
     }
 
     /**
-     * 实施迁移速率，单位Mb/s
+     * 实施迁移速率，单位Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return migrateSpeed
@@ -497,7 +497,7 @@ public class UpdateTaskSpeedReq {
     }
 
     /**
-     * 主机的磁盘I/O值，单位是MB/s
+     * 主机的磁盘I/O值，单位是Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return totalDiskIo
@@ -516,7 +516,7 @@ public class UpdateTaskSpeedReq {
     }
 
     /**
-     * Agent的磁盘I/O值，单位是MB/s
+     * Agent的磁盘I/O值，单位是Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return agentDiskIo

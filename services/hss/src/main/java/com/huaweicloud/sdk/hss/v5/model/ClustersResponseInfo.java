@@ -179,7 +179,7 @@ public class ClustersResponseInfo {
     }
 
     /**
-     * 防护状态：true、false
+     * **参数解释**: 防护状态 **取值范围**: - true: 防护中 - false: 未防护 
      * @return protectionStatus
      */
     public Boolean getProtectionStatus() {

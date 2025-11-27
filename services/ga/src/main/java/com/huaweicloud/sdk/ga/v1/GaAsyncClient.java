@@ -47,6 +47,8 @@ import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListAllPopsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListAllPopsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListByoipPoolsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListByoipPoolsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointsRequest;
@@ -258,6 +260,35 @@ public class GaAsyncClient {
     public AsyncInvoker<UpdateAcceleratorRequest, UpdateAcceleratorResponse> updateAcceleratorAsyncInvoker(
         UpdateAcceleratorRequest request) {
         return new AsyncInvoker<>(request, GaMeta.updateAccelerator, hcClient);
+    }
+
+    /**
+     * 查询自带IP地址池列表
+     *
+     * 查询自带IP地址池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListByoipPoolsRequest 请求对象
+     * @return CompletableFuture<ListByoipPoolsResponse>
+     */
+    public CompletableFuture<ListByoipPoolsResponse> listByoipPoolsAsync(ListByoipPoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.listByoipPools);
+    }
+
+    /**
+     * 查询自带IP地址池列表
+     *
+     * 查询自带IP地址池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListByoipPoolsRequest 请求对象
+     * @return AsyncInvoker<ListByoipPoolsRequest, ListByoipPoolsResponse>
+     */
+    public AsyncInvoker<ListByoipPoolsRequest, ListByoipPoolsResponse> listByoipPoolsAsyncInvoker(
+        ListByoipPoolsRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.listByoipPools, hcClient);
     }
 
     /**

@@ -41,7 +41,7 @@ public class Resources {
     }
 
     /**
-     * 集群id
+     * **参数解释**： 集群id **取值范围**： 不涉及 
      * @return clusterId
      */
     public String getClusterId() {
@@ -58,7 +58,7 @@ public class Resources {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称 **取值范围**： 不涉及 
      * @return clusterName
      */
     public String getClusterName() {
@@ -75,7 +75,7 @@ public class Resources {
     }
 
     /**
-     * 镜像
+     * **参数解释**： 镜像 **取值范围**： 不涉及 
      * @return images
      */
     public String getImages() {
@@ -92,7 +92,7 @@ public class Resources {
     }
 
     /**
-     * 标签
+     * **参数解释**： 标签 **取值范围**： 不涉及 
      * @return labels
      */
     public String getLabels() {
@@ -109,7 +109,7 @@ public class Resources {
     }
 
     /**
-     * 命名空间
+     * **参数解释**： 命名空间 **取值范围**： 不涉及 
      * @return namespace
      */
     public String getNamespace() {

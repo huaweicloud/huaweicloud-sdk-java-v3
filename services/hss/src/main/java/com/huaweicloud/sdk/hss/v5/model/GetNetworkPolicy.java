@@ -142,7 +142,7 @@ public class GetNetworkPolicy {
     }
 
     /**
-     * 下发策略到cce成功与否
+     * **参数解释**: 下发策略到cce成功与否 **取值范围**: - true: 成功 - false: 失败 
      * @return deployStatus
      */
     public Boolean getDeployStatus() {

@@ -112,6 +112,87 @@ public class PublicScriptListModel {
 
     private TypeEnum type;
 
+    /**
+     * 脚本状态
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum PENDING_APPROVE for value: "PENDING_APPROVE"
+         */
+        public static final StatusEnum PENDING_APPROVE = new StatusEnum("PENDING_APPROVE");
+
+        /**
+         * Enum APPROVED for value: "APPROVED"
+         */
+        public static final StatusEnum APPROVED = new StatusEnum("APPROVED");
+
+        /**
+         * Enum REJECTED for value: "REJECTED"
+         */
+        public static final StatusEnum REJECTED = new StatusEnum("REJECTED");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("PENDING_APPROVE", PENDING_APPROVE);
+            map.put("APPROVED", APPROVED);
+            map.put("REJECTED", REJECTED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private StatusEnum status;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gmt_created")
 
@@ -197,6 +278,23 @@ public class PublicScriptListModel {
         this.type = type;
     }
 
+    public PublicScriptListModel withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 脚本状态
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
     public PublicScriptListModel withGmtCreated(Long gmtCreated) {
         this.gmtCreated = gmtCreated;
         return this;
@@ -270,13 +368,13 @@ public class PublicScriptListModel {
         PublicScriptListModel that = (PublicScriptListModel) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.scriptUuid, that.scriptUuid)
             && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.gmtCreated, that.gmtCreated) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.properties, that.properties);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.gmtCreated, that.gmtCreated)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.properties, that.properties);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, scriptUuid, name, type, gmtCreated, description, properties);
+        return Objects.hash(id, scriptUuid, name, type, status, gmtCreated, description, properties);
     }
 
     @Override
@@ -287,6 +385,7 @@ public class PublicScriptListModel {
         sb.append("    scriptUuid: ").append(toIndentedString(scriptUuid)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    gmtCreated: ").append(toIndentedString(gmtCreated)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");

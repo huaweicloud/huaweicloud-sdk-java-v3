@@ -40,7 +40,7 @@ public class PrivateNat {
     private String description;
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型
+     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
      */
     public static final class SpecEnum {
 
@@ -64,6 +64,11 @@ public class PrivateNat {
          */
         public static final SpecEnum EXTRA_LARGE = new SpecEnum("Extra-large");
 
+        /**
+         * Enum EXTRA_XLARGE for value: "Extra-xlarge"
+         */
+        public static final SpecEnum EXTRA_XLARGE = new SpecEnum("Extra-xlarge");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -72,6 +77,7 @@ public class PrivateNat {
             map.put("Medium", MEDIUM);
             map.put("Large", LARGE);
             map.put("Extra-large", EXTRA_LARGE);
+            map.put("Extra-xlarge", EXTRA_XLARGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -127,7 +133,7 @@ public class PrivateNat {
     private SpecEnum spec;
 
     /**
-     * 私网NAT网关实例的状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结
+     * 私网NAT网关实例的状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
      */
     public static final class StatusEnum {
 
@@ -141,12 +147,18 @@ public class PrivateNat {
          */
         public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
 
+        /**
+         * Enum INACTIVE for value: "INACTIVE"
+         */
+        public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("ACTIVE", ACTIVE);
             map.put("FROZEN", FROZEN);
+            map.put("INACTIVE", INACTIVE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -219,12 +231,22 @@ public class PrivateNat {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<PrivateTag> tags = null;
+    private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_max")
+
+    private Integer ruleMax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transit_ip_pool_size_max")
+
+    private Integer transitIpPoolSizeMax;
 
     public PrivateNat withId(String id) {
         this.id = id;
@@ -300,7 +322,7 @@ public class PrivateNat {
     }
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型
+     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
      * @return spec
      */
     public SpecEnum getSpec() {
@@ -317,7 +339,7 @@ public class PrivateNat {
     }
 
     /**
-     * 私网NAT网关实例的状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结
+     * 私网NAT网关实例的状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -395,12 +417,12 @@ public class PrivateNat {
         this.downlinkVpcs = downlinkVpcs;
     }
 
-    public PrivateNat withTags(List<PrivateTag> tags) {
+    public PrivateNat withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public PrivateNat addTagsItem(PrivateTag tagsItem) {
+    public PrivateNat addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -408,7 +430,7 @@ public class PrivateNat {
         return this;
     }
 
-    public PrivateNat withTags(Consumer<List<PrivateTag>> tagsSetter) {
+    public PrivateNat withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -420,11 +442,11 @@ public class PrivateNat {
      * 标签列表。
      * @return tags
      */
-    public List<PrivateTag> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<PrivateTag> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 
@@ -445,6 +467,44 @@ public class PrivateNat {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public PrivateNat withRuleMax(Integer ruleMax) {
+        this.ruleMax = ruleMax;
+        return this;
+    }
+
+    /**
+     * 最大规则数。
+     * minimum: 0
+     * maximum: 65535
+     * @return ruleMax
+     */
+    public Integer getRuleMax() {
+        return ruleMax;
+    }
+
+    public void setRuleMax(Integer ruleMax) {
+        this.ruleMax = ruleMax;
+    }
+
+    public PrivateNat withTransitIpPoolSizeMax(Integer transitIpPoolSizeMax) {
+        this.transitIpPoolSizeMax = transitIpPoolSizeMax;
+        return this;
+    }
+
+    /**
+     * 中转ip池大小
+     * minimum: 1
+     * maximum: 100
+     * @return transitIpPoolSizeMax
+     */
+    public Integer getTransitIpPoolSizeMax() {
+        return transitIpPoolSizeMax;
+    }
+
+    public void setTransitIpPoolSizeMax(Integer transitIpPoolSizeMax) {
+        this.transitIpPoolSizeMax = transitIpPoolSizeMax;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -459,7 +519,9 @@ public class PrivateNat {
             && Objects.equals(this.spec, that.spec) && Objects.equals(this.status, that.status)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.downlinkVpcs, that.downlinkVpcs) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.ruleMax, that.ruleMax)
+            && Objects.equals(this.transitIpPoolSizeMax, that.transitIpPoolSizeMax);
     }
 
     @Override
@@ -474,7 +536,9 @@ public class PrivateNat {
             updatedAt,
             downlinkVpcs,
             tags,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            ruleMax,
+            transitIpPoolSizeMax);
     }
 
     @Override
@@ -492,6 +556,8 @@ public class PrivateNat {
         sb.append("    downlinkVpcs: ").append(toIndentedString(downlinkVpcs)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    ruleMax: ").append(toIndentedString(ruleMax)).append("\n");
+        sb.append("    transitIpPoolSizeMax: ").append(toIndentedString(transitIpPoolSizeMax)).append("\n");
         sb.append("}");
         return sb.toString();
     }

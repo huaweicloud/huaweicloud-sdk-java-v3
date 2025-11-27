@@ -315,10 +315,140 @@ public class ShowTaskResponse extends SdkResponse {
 
     private TaskTargetServer targetServer;
 
+    /**
+     * 迁移任务状态 READY: 准备就绪 RUNNING: 迁移中 SYNCING: 同步中 MIGRATE_SUCCESS: 迁移成功 SYNC_SUCCESS: 同步成功 MIGRATE_FAIL: 失败 SYNC_FAIL: 同步失败 ABORTING: 中止中 ABORT: 中止 SKIPPING: 跳过中 DELETING: 删除中 RESETING: 回滚中
+     */
+    public static final class StateEnum {
+
+        /**
+         * Enum READY for value: "READY"
+         */
+        public static final StateEnum READY = new StateEnum("READY");
+
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
+        public static final StateEnum RUNNING = new StateEnum("RUNNING");
+
+        /**
+         * Enum SYNCING for value: "SYNCING"
+         */
+        public static final StateEnum SYNCING = new StateEnum("SYNCING");
+
+        /**
+         * Enum MIGRATE_SUCCESS for value: "MIGRATE_SUCCESS"
+         */
+        public static final StateEnum MIGRATE_SUCCESS = new StateEnum("MIGRATE_SUCCESS");
+
+        /**
+         * Enum SYNC_SUCCESS for value: "SYNC_SUCCESS"
+         */
+        public static final StateEnum SYNC_SUCCESS = new StateEnum("SYNC_SUCCESS");
+
+        /**
+         * Enum MIGRATE_FAIL for value: "MIGRATE_FAIL"
+         */
+        public static final StateEnum MIGRATE_FAIL = new StateEnum("MIGRATE_FAIL");
+
+        /**
+         * Enum SYNC_FAIL for value: "SYNC_FAIL"
+         */
+        public static final StateEnum SYNC_FAIL = new StateEnum("SYNC_FAIL");
+
+        /**
+         * Enum ABORTING for value: "ABORTING"
+         */
+        public static final StateEnum ABORTING = new StateEnum("ABORTING");
+
+        /**
+         * Enum ABORT for value: "ABORT"
+         */
+        public static final StateEnum ABORT = new StateEnum("ABORT");
+
+        /**
+         * Enum SKIPPING for value: "SKIPPING"
+         */
+        public static final StateEnum SKIPPING = new StateEnum("SKIPPING");
+
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
+        public static final StateEnum DELETING = new StateEnum("DELETING");
+
+        /**
+         * Enum RESETING for value: "RESETING"
+         */
+        public static final StateEnum RESETING = new StateEnum("RESETING");
+
+        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StateEnum> createStaticFields() {
+            Map<String, StateEnum> map = new HashMap<>();
+            map.put("READY", READY);
+            map.put("RUNNING", RUNNING);
+            map.put("SYNCING", SYNCING);
+            map.put("MIGRATE_SUCCESS", MIGRATE_SUCCESS);
+            map.put("SYNC_SUCCESS", SYNC_SUCCESS);
+            map.put("MIGRATE_FAIL", MIGRATE_FAIL);
+            map.put("SYNC_FAIL", SYNC_FAIL);
+            map.put("ABORTING", ABORTING);
+            map.put("ABORT", ABORT);
+            map.put("SKIPPING", SKIPPING);
+            map.put("DELETING", DELETING);
+            map.put("RESETING", RESETING);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
+        }
+
+        public static StateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StateEnum) {
+                return this.value.equals(((StateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    private String state;
+    private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "estimate_complete_time")
@@ -729,20 +859,20 @@ public class ShowTaskResponse extends SdkResponse {
         this.targetServer = targetServer;
     }
 
-    public ShowTaskResponse withState(String state) {
+    public ShowTaskResponse withState(StateEnum state) {
         this.state = state;
         return this;
     }
 
     /**
-     * 任务状态
+     * 迁移任务状态 READY: 准备就绪 RUNNING: 迁移中 SYNCING: 同步中 MIGRATE_SUCCESS: 迁移成功 SYNC_SUCCESS: 同步成功 MIGRATE_FAIL: 失败 SYNC_FAIL: 同步失败 ABORTING: 中止中 ABORT: 中止 SKIPPING: 跳过中 DELETING: 删除中 RESETING: 回滚中
      * @return state
      */
-    public String getState() {
+    public StateEnum getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(StateEnum state) {
         this.state = state;
     }
 
@@ -845,7 +975,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     /**
-     * 迁移速率，单位：MB/S
+     * 迁移速率，单位：Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return migrateSpeed
@@ -1133,7 +1263,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     /**
-     * 主机的磁盘I/O值，单位是MB/s
+     * 主机的磁盘I/O值，单位是Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return totalDiskIo
@@ -1152,7 +1282,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     /**
-     * Agent的磁盘I/O值，单位是MB/s
+     * Agent的磁盘I/O值，单位是Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return agentDiskIo

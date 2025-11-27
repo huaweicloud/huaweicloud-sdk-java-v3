@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -55,6 +60,86 @@ public class AvailableZoneV2 {
     @JsonProperty(value = "az_tags")
 
     private AvailableTag azTags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az_category")
+
+    private Integer azCategory;
+
+    /**
+     * 当前可用区的销售策略，包括： - charge: 计费 - notCharge: 非计费
+     */
+    public static final class ChargePolicyEnum {
+
+        /**
+         * Enum CHARGE for value: "charge"
+         */
+        public static final ChargePolicyEnum CHARGE = new ChargePolicyEnum("charge");
+
+        /**
+         * Enum NOTCHARGE for value: "notCharge"
+         */
+        public static final ChargePolicyEnum NOTCHARGE = new ChargePolicyEnum("notCharge");
+
+        private static final Map<String, ChargePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargePolicyEnum> createStaticFields() {
+            Map<String, ChargePolicyEnum> map = new HashMap<>();
+            map.put("charge", CHARGE);
+            map.put("notCharge", NOTCHARGE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ChargePolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ChargePolicyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargePolicyEnum(value));
+        }
+
+        public static ChargePolicyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ChargePolicyEnum) {
+                return this.value.equals(((ChargePolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_policy")
+
+    private ChargePolicyEnum chargePolicy;
 
     public AvailableZoneV2 withId(String id) {
         this.id = id;
@@ -218,6 +303,40 @@ public class AvailableZoneV2 {
         this.azTags = azTags;
     }
 
+    public AvailableZoneV2 withAzCategory(Integer azCategory) {
+        this.azCategory = azCategory;
+        return this;
+    }
+
+    /**
+     * 当前可用区的类型，包括： - 0: 大云主可用区 - 21: 本地可用区 - 41: 边缘可用区
+     * @return azCategory
+     */
+    public Integer getAzCategory() {
+        return azCategory;
+    }
+
+    public void setAzCategory(Integer azCategory) {
+        this.azCategory = azCategory;
+    }
+
+    public AvailableZoneV2 withChargePolicy(ChargePolicyEnum chargePolicy) {
+        this.chargePolicy = chargePolicy;
+        return this;
+    }
+
+    /**
+     * 当前可用区的销售策略，包括： - charge: 计费 - notCharge: 非计费
+     * @return chargePolicy
+     */
+    public ChargePolicyEnum getChargePolicy() {
+        return chargePolicy;
+    }
+
+    public void setChargePolicy(ChargePolicyEnum chargePolicy) {
+        this.chargePolicy = chargePolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -231,12 +350,14 @@ public class AvailableZoneV2 {
             && Objects.equals(this.azName, that.azName) && Objects.equals(this.azId, that.azId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.azGroupId, that.azGroupId) && Objects.equals(this.azType, that.azType)
-            && Objects.equals(this.azTags, that.azTags);
+            && Objects.equals(this.azTags, that.azTags) && Objects.equals(this.azCategory, that.azCategory)
+            && Objects.equals(this.chargePolicy, that.chargePolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, azCode, azName, azId, status, regionId, azGroupId, azType, azTags);
+        return Objects
+            .hash(id, azCode, azName, azId, status, regionId, azGroupId, azType, azTags, azCategory, chargePolicy);
     }
 
     @Override
@@ -252,6 +373,8 @@ public class AvailableZoneV2 {
         sb.append("    azGroupId: ").append(toIndentedString(azGroupId)).append("\n");
         sb.append("    azType: ").append(toIndentedString(azType)).append("\n");
         sb.append("    azTags: ").append(toIndentedString(azTags)).append("\n");
+        sb.append("    azCategory: ").append(toIndentedString(azCategory)).append("\n");
+        sb.append("    chargePolicy: ").append(toIndentedString(chargePolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -178,10 +178,140 @@ public class TasksResponseBody {
 
     private OsTypeEnum osType;
 
+    /**
+     * 迁移任务状态 READY: 准备就绪 RUNNING: 迁移中 SYNCING: 同步中 MIGRATE_SUCCESS: 迁移成功 SYNC_SUCCESS: 同步成功 MIGRATE_FAIL: 失败 SYNC_FAIL: 同步失败 ABORTING: 中止中 ABORT: 中止 SKIPPING: 跳过中 DELETING: 删除中 RESETING: 回滚中
+     */
+    public static final class StateEnum {
+
+        /**
+         * Enum READY for value: "READY"
+         */
+        public static final StateEnum READY = new StateEnum("READY");
+
+        /**
+         * Enum RUNNING for value: "RUNNING"
+         */
+        public static final StateEnum RUNNING = new StateEnum("RUNNING");
+
+        /**
+         * Enum SYNCING for value: "SYNCING"
+         */
+        public static final StateEnum SYNCING = new StateEnum("SYNCING");
+
+        /**
+         * Enum MIGRATE_SUCCESS for value: "MIGRATE_SUCCESS"
+         */
+        public static final StateEnum MIGRATE_SUCCESS = new StateEnum("MIGRATE_SUCCESS");
+
+        /**
+         * Enum SYNC_SUCCESS for value: "SYNC_SUCCESS"
+         */
+        public static final StateEnum SYNC_SUCCESS = new StateEnum("SYNC_SUCCESS");
+
+        /**
+         * Enum MIGRATE_FAIL for value: "MIGRATE_FAIL"
+         */
+        public static final StateEnum MIGRATE_FAIL = new StateEnum("MIGRATE_FAIL");
+
+        /**
+         * Enum SYNC_FAIL for value: "SYNC_FAIL"
+         */
+        public static final StateEnum SYNC_FAIL = new StateEnum("SYNC_FAIL");
+
+        /**
+         * Enum ABORTING for value: "ABORTING"
+         */
+        public static final StateEnum ABORTING = new StateEnum("ABORTING");
+
+        /**
+         * Enum ABORT for value: "ABORT"
+         */
+        public static final StateEnum ABORT = new StateEnum("ABORT");
+
+        /**
+         * Enum SKIPPING for value: "SKIPPING"
+         */
+        public static final StateEnum SKIPPING = new StateEnum("SKIPPING");
+
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
+        public static final StateEnum DELETING = new StateEnum("DELETING");
+
+        /**
+         * Enum RESETING for value: "RESETING"
+         */
+        public static final StateEnum RESETING = new StateEnum("RESETING");
+
+        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StateEnum> createStaticFields() {
+            Map<String, StateEnum> map = new HashMap<>();
+            map.put("READY", READY);
+            map.put("RUNNING", RUNNING);
+            map.put("SYNCING", SYNCING);
+            map.put("MIGRATE_SUCCESS", MIGRATE_SUCCESS);
+            map.put("SYNC_SUCCESS", SYNC_SUCCESS);
+            map.put("MIGRATE_FAIL", MIGRATE_FAIL);
+            map.put("SYNC_FAIL", SYNC_FAIL);
+            map.put("ABORTING", ABORTING);
+            map.put("ABORT", ABORT);
+            map.put("SKIPPING", SKIPPING);
+            map.put("DELETING", DELETING);
+            map.put("RESETING", RESETING);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
+        }
+
+        public static StateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StateEnum) {
+                return this.value.equals(((StateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    private String state;
+    private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "estimate_complete_time")
@@ -330,7 +460,7 @@ public class TasksResponseBody {
     private TargetServerAssociatedWithTask targetServer;
 
     /**
-     * 日志收集状态 INIT TELL_AGENT_TO_COLLECT WAIT_AGENT_COLLECT_ACK AGENT_COLLECT_FAIL AGENT_COLLECT_SUCCESS WAIT_SERVER_COLLECT SERVER_COLLECT_FAIL SERVER_COLLECT_SUCCESS TELL_AGENT_RESET_ACL WAIT_AGENT_RESET_ACL_ACK
+     * 日志收集状态 INIT:就绪 UPLOADING:上传中 UPLOAD_FAIL:上传失败 UPLOADED:已上传
      */
     public static final class LogCollectStatusEnum {
 
@@ -340,70 +470,28 @@ public class TasksResponseBody {
         public static final LogCollectStatusEnum INIT = new LogCollectStatusEnum("INIT");
 
         /**
-         * Enum TELL_AGENT_TO_COLLECT for value: "TELL_AGENT_TO_COLLECT"
+         * Enum UPLOADING for value: "UPLOADING"
          */
-        public static final LogCollectStatusEnum TELL_AGENT_TO_COLLECT =
-            new LogCollectStatusEnum("TELL_AGENT_TO_COLLECT");
+        public static final LogCollectStatusEnum UPLOADING = new LogCollectStatusEnum("UPLOADING");
 
         /**
-         * Enum WAIT_AGENT_COLLECT_ACK for value: "WAIT_AGENT_COLLECT_ACK"
+         * Enum UPLOAD_FAIL for value: "UPLOAD_FAIL"
          */
-        public static final LogCollectStatusEnum WAIT_AGENT_COLLECT_ACK =
-            new LogCollectStatusEnum("WAIT_AGENT_COLLECT_ACK");
+        public static final LogCollectStatusEnum UPLOAD_FAIL = new LogCollectStatusEnum("UPLOAD_FAIL");
 
         /**
-         * Enum AGENT_COLLECT_FAIL for value: "AGENT_COLLECT_FAIL"
+         * Enum UPLOADED for value: "UPLOADED"
          */
-        public static final LogCollectStatusEnum AGENT_COLLECT_FAIL = new LogCollectStatusEnum("AGENT_COLLECT_FAIL");
-
-        /**
-         * Enum AGENT_COLLECT_SUCCESS for value: "AGENT_COLLECT_SUCCESS"
-         */
-        public static final LogCollectStatusEnum AGENT_COLLECT_SUCCESS =
-            new LogCollectStatusEnum("AGENT_COLLECT_SUCCESS");
-
-        /**
-         * Enum WAIT_SERVER_COLLECT for value: "WAIT_SERVER_COLLECT"
-         */
-        public static final LogCollectStatusEnum WAIT_SERVER_COLLECT = new LogCollectStatusEnum("WAIT_SERVER_COLLECT");
-
-        /**
-         * Enum SERVER_COLLECT_FAIL for value: "SERVER_COLLECT_FAIL"
-         */
-        public static final LogCollectStatusEnum SERVER_COLLECT_FAIL = new LogCollectStatusEnum("SERVER_COLLECT_FAIL");
-
-        /**
-         * Enum SERVER_COLLECT_SUCCESS for value: "SERVER_COLLECT_SUCCESS"
-         */
-        public static final LogCollectStatusEnum SERVER_COLLECT_SUCCESS =
-            new LogCollectStatusEnum("SERVER_COLLECT_SUCCESS");
-
-        /**
-         * Enum TELL_AGENT_RESET_ACL for value: "TELL_AGENT_RESET_ACL"
-         */
-        public static final LogCollectStatusEnum TELL_AGENT_RESET_ACL =
-            new LogCollectStatusEnum("TELL_AGENT_RESET_ACL");
-
-        /**
-         * Enum WAIT_AGENT_RESET_ACL_ACK for value: "WAIT_AGENT_RESET_ACL_ACK"
-         */
-        public static final LogCollectStatusEnum WAIT_AGENT_RESET_ACL_ACK =
-            new LogCollectStatusEnum("WAIT_AGENT_RESET_ACL_ACK");
+        public static final LogCollectStatusEnum UPLOADED = new LogCollectStatusEnum("UPLOADED");
 
         private static final Map<String, LogCollectStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LogCollectStatusEnum> createStaticFields() {
             Map<String, LogCollectStatusEnum> map = new HashMap<>();
             map.put("INIT", INIT);
-            map.put("TELL_AGENT_TO_COLLECT", TELL_AGENT_TO_COLLECT);
-            map.put("WAIT_AGENT_COLLECT_ACK", WAIT_AGENT_COLLECT_ACK);
-            map.put("AGENT_COLLECT_FAIL", AGENT_COLLECT_FAIL);
-            map.put("AGENT_COLLECT_SUCCESS", AGENT_COLLECT_SUCCESS);
-            map.put("WAIT_SERVER_COLLECT", WAIT_SERVER_COLLECT);
-            map.put("SERVER_COLLECT_FAIL", SERVER_COLLECT_FAIL);
-            map.put("SERVER_COLLECT_SUCCESS", SERVER_COLLECT_SUCCESS);
-            map.put("TELL_AGENT_RESET_ACL", TELL_AGENT_RESET_ACL);
-            map.put("WAIT_AGENT_RESET_ACL_ACK", WAIT_AGENT_RESET_ACL_ACK);
+            map.put("UPLOADING", UPLOADING);
+            map.put("UPLOAD_FAIL", UPLOAD_FAIL);
+            map.put("UPLOADED", UPLOADED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -586,20 +674,20 @@ public class TasksResponseBody {
         this.osType = osType;
     }
 
-    public TasksResponseBody withState(String state) {
+    public TasksResponseBody withState(StateEnum state) {
         this.state = state;
         return this;
     }
 
     /**
-     * 任务状态
+     * 迁移任务状态 READY: 准备就绪 RUNNING: 迁移中 SYNCING: 同步中 MIGRATE_SUCCESS: 迁移成功 SYNC_SUCCESS: 同步成功 MIGRATE_FAIL: 失败 SYNC_FAIL: 同步失败 ABORTING: 中止中 ABORT: 中止 SKIPPING: 跳过中 DELETING: 删除中 RESETING: 回滚中
      * @return state
      */
-    public String getState() {
+    public StateEnum getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(StateEnum state) {
         this.state = state;
     }
 
@@ -685,7 +773,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 迁移速率，单位：MB/S
+     * 迁移速率，单位：Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return migrateSpeed
@@ -895,7 +983,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 日志收集状态 INIT TELL_AGENT_TO_COLLECT WAIT_AGENT_COLLECT_ACK AGENT_COLLECT_FAIL AGENT_COLLECT_SUCCESS WAIT_SERVER_COLLECT SERVER_COLLECT_FAIL SERVER_COLLECT_SUCCESS TELL_AGENT_RESET_ACL WAIT_AGENT_RESET_ACL_ACK
+     * 日志收集状态 INIT:就绪 UPLOADING:上传中 UPLOAD_FAIL:上传失败 UPLOADED:已上传
      * @return logCollectStatus
      */
     public LogCollectStatusEnum getLogCollectStatus() {
@@ -1090,7 +1178,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * 主机的磁盘I/O值，单位是MB/s
+     * 主机的磁盘I/O值，单位是Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return totalDiskIo
@@ -1109,7 +1197,7 @@ public class TasksResponseBody {
     }
 
     /**
-     * Agent的磁盘I/O值，单位是MB/s
+     * Agent的磁盘I/O值，单位是Mbit/s
      * minimum: 0
      * maximum: 1E+4
      * @return agentDiskIo

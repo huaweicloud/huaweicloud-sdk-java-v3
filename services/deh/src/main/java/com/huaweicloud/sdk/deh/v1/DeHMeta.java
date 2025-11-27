@@ -211,6 +211,16 @@ public class DeHMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDedicatedHostTypesRequest::getAvailabilityZone,
                 ListDedicatedHostTypesRequest::setAvailabilityZone));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDedicatedHostTypesRequest::getLimit, ListDedicatedHostTypesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDedicatedHostTypesRequest::getMarker, ListDedicatedHostTypesRequest::setMarker));
 
         // response
 

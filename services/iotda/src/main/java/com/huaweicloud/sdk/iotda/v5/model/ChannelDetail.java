@@ -66,6 +66,11 @@ public class ChannelDetail {
 
     private DmsRocketMQForwarding dmsRocketmqForwarding;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mqtt_device_forwarding")
+
+    private MqttDeviceForwarding mqttDeviceForwarding;
+
     public ChannelDetail withHttpForwarding(HttpForwarding httpForwarding) {
         this.httpForwarding = httpForwarding;
         return this;
@@ -352,6 +357,32 @@ public class ChannelDetail {
         this.dmsRocketmqForwarding = dmsRocketmqForwarding;
     }
 
+    public ChannelDetail withMqttDeviceForwarding(MqttDeviceForwarding mqttDeviceForwarding) {
+        this.mqttDeviceForwarding = mqttDeviceForwarding;
+        return this;
+    }
+
+    public ChannelDetail withMqttDeviceForwarding(Consumer<MqttDeviceForwarding> mqttDeviceForwardingSetter) {
+        if (this.mqttDeviceForwarding == null) {
+            this.mqttDeviceForwarding = new MqttDeviceForwarding();
+            mqttDeviceForwardingSetter.accept(this.mqttDeviceForwarding);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get mqttDeviceForwarding
+     * @return mqttDeviceForwarding
+     */
+    public MqttDeviceForwarding getMqttDeviceForwarding() {
+        return mqttDeviceForwarding;
+    }
+
+    public void setMqttDeviceForwarding(MqttDeviceForwarding mqttDeviceForwarding) {
+        this.mqttDeviceForwarding = mqttDeviceForwarding;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -371,7 +402,8 @@ public class ChannelDetail {
             && Objects.equals(this.influxdbForwarding, that.influxdbForwarding)
             && Objects.equals(this.functiongraphForwarding, that.functiongraphForwarding)
             && Objects.equals(this.mrsKafkaForwarding, that.mrsKafkaForwarding)
-            && Objects.equals(this.dmsRocketmqForwarding, that.dmsRocketmqForwarding);
+            && Objects.equals(this.dmsRocketmqForwarding, that.dmsRocketmqForwarding)
+            && Objects.equals(this.mqttDeviceForwarding, that.mqttDeviceForwarding);
     }
 
     @Override
@@ -386,7 +418,8 @@ public class ChannelDetail {
             influxdbForwarding,
             functiongraphForwarding,
             mrsKafkaForwarding,
-            dmsRocketmqForwarding);
+            dmsRocketmqForwarding,
+            mqttDeviceForwarding);
     }
 
     @Override
@@ -404,6 +437,7 @@ public class ChannelDetail {
         sb.append("    functiongraphForwarding: ").append(toIndentedString(functiongraphForwarding)).append("\n");
         sb.append("    mrsKafkaForwarding: ").append(toIndentedString(mrsKafkaForwarding)).append("\n");
         sb.append("    dmsRocketmqForwarding: ").append(toIndentedString(dmsRocketmqForwarding)).append("\n");
+        sb.append("    mqttDeviceForwarding: ").append(toIndentedString(mqttDeviceForwarding)).append("\n");
         sb.append("}");
         return sb.toString();
     }

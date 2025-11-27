@@ -21,11 +21,6 @@ public class VolumeMetadata {
     private String systemEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "full_clone")
-
-    private String fullClone;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hw:passthrough")
 
     private String hwPassthrough;
@@ -73,23 +68,6 @@ public class VolumeMetadata {
         this.systemEncrypted = systemEncrypted;
     }
 
-    public VolumeMetadata withFullClone(String fullClone) {
-        this.fullClone = fullClone;
-        return this;
-    }
-
-    /**
-     * 从快照创建云硬盘时的创建方式。 * 0表示使用链接克隆方式。 * 1表示使用全量克隆方式。
-     * @return fullClone
-     */
-    public String getFullClone() {
-        return fullClone;
-    }
-
-    public void setFullClone(String fullClone) {
-        this.fullClone = fullClone;
-    }
-
     public VolumeMetadata withHwPassthrough(String hwPassthrough) {
         this.hwPassthrough = hwPassthrough;
         return this;
@@ -135,13 +113,12 @@ public class VolumeMetadata {
         VolumeMetadata that = (VolumeMetadata) obj;
         return Objects.equals(this.systemCmkid, that.systemCmkid)
             && Objects.equals(this.systemEncrypted, that.systemEncrypted)
-            && Objects.equals(this.fullClone, that.fullClone) && Objects.equals(this.hwPassthrough, that.hwPassthrough)
-            && Objects.equals(this.orderID, that.orderID);
+            && Objects.equals(this.hwPassthrough, that.hwPassthrough) && Objects.equals(this.orderID, that.orderID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(systemCmkid, systemEncrypted, fullClone, hwPassthrough, orderID);
+        return Objects.hash(systemCmkid, systemEncrypted, hwPassthrough, orderID);
     }
 
     @Override
@@ -150,7 +127,6 @@ public class VolumeMetadata {
         sb.append("class VolumeMetadata {\n");
         sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
         sb.append("    systemEncrypted: ").append(toIndentedString(systemEncrypted)).append("\n");
-        sb.append("    fullClone: ").append(toIndentedString(fullClone)).append("\n");
         sb.append("    hwPassthrough: ").append(toIndentedString(hwPassthrough)).append("\n");
         sb.append("    orderID: ").append(toIndentedString(orderID)).append("\n");
         sb.append("}");

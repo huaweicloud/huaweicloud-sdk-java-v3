@@ -16,74 +16,54 @@ import java.util.Objects;
 public class PutCopyStateReq {
 
     /**
-     * 源端服务器状态 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 SKIPPING：跳过中 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成 CLEARING: 清理快照资源中 CLEARED：清理快照资源完成 CLEARFAILED：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      */
     public static final class CopystateEnum {
 
         /**
-         * Enum UNAVAILABLE for value: "UNAVAILABLE"
+         * Enum UNAVAILABLE for value: "unavailable"
          */
-        public static final CopystateEnum UNAVAILABLE = new CopystateEnum("UNAVAILABLE");
+        public static final CopystateEnum UNAVAILABLE = new CopystateEnum("unavailable");
 
         /**
-         * Enum WAITING for value: "WAITING"
+         * Enum WAITING for value: "waiting"
          */
-        public static final CopystateEnum WAITING = new CopystateEnum("WAITING");
+        public static final CopystateEnum WAITING = new CopystateEnum("waiting");
 
         /**
-         * Enum INIT for value: "INIT"
+         * Enum INITIALIZE for value: "initialize"
          */
-        public static final CopystateEnum INIT = new CopystateEnum("INIT");
+        public static final CopystateEnum INITIALIZE = new CopystateEnum("initialize");
 
         /**
-         * Enum REPLICATE for value: "REPLICATE"
+         * Enum REPLICATE for value: "replicate"
          */
-        public static final CopystateEnum REPLICATE = new CopystateEnum("REPLICATE");
+        public static final CopystateEnum REPLICATE = new CopystateEnum("replicate");
 
         /**
-         * Enum SYNCING for value: "SYNCING"
+         * Enum SYNCING for value: "syncing"
          */
-        public static final CopystateEnum SYNCING = new CopystateEnum("SYNCING");
+        public static final CopystateEnum SYNCING = new CopystateEnum("syncing");
 
         /**
-         * Enum STOPPING for value: "STOPPING"
+         * Enum STOPPING for value: "stopping"
          */
-        public static final CopystateEnum STOPPING = new CopystateEnum("STOPPING");
+        public static final CopystateEnum STOPPING = new CopystateEnum("stopping");
 
         /**
-         * Enum STOPPED for value: "STOPPED"
+         * Enum STOPPED for value: "stopped"
          */
-        public static final CopystateEnum STOPPED = new CopystateEnum("STOPPED");
+        public static final CopystateEnum STOPPED = new CopystateEnum("stopped");
 
         /**
-         * Enum SKIPPING for value: "SKIPPING"
+         * Enum SKIPPING for value: "skipping"
          */
-        public static final CopystateEnum SKIPPING = new CopystateEnum("SKIPPING");
+        public static final CopystateEnum SKIPPING = new CopystateEnum("skipping");
 
         /**
-         * Enum DELETING for value: "DELETING"
+         * Enum DELETING for value: "deleting"
          */
-        public static final CopystateEnum DELETING = new CopystateEnum("DELETING");
-
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
-        public static final CopystateEnum ERROR = new CopystateEnum("ERROR");
-
-        /**
-         * Enum CLONING for value: "CLONING"
-         */
-        public static final CopystateEnum CLONING = new CopystateEnum("CLONING");
-
-        /**
-         * Enum CUTOVERING for value: "CUTOVERING"
-         */
-        public static final CopystateEnum CUTOVERING = new CopystateEnum("CUTOVERING");
-
-        /**
-         * Enum FINISHED for value: "FINISHED"
-         */
-        public static final CopystateEnum FINISHED = new CopystateEnum("FINISHED");
+        public static final CopystateEnum DELETING = new CopystateEnum("deleting");
 
         /**
          * Enum CLEARING for value: "clearing"
@@ -106,11 +86,6 @@ public class PutCopyStateReq {
         public static final CopystateEnum PREMIGREADY = new CopystateEnum("premigready");
 
         /**
-         * Enum PREMIGING for value: "premiging"
-         */
-        public static final CopystateEnum PREMIGING = new CopystateEnum("premiging");
-
-        /**
          * Enum PREMIGED for value: "premiged"
          */
         public static final CopystateEnum PREMIGED = new CopystateEnum("premiged");
@@ -120,30 +95,49 @@ public class PutCopyStateReq {
          */
         public static final CopystateEnum PREMIGFAILED = new CopystateEnum("premigfailed");
 
+        /**
+         * Enum CLONING for value: "cloning"
+         */
+        public static final CopystateEnum CLONING = new CopystateEnum("cloning");
+
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
+        public static final CopystateEnum CUTOVERING = new CopystateEnum("cutovering");
+
+        /**
+         * Enum FINISHED for value: "finished"
+         */
+        public static final CopystateEnum FINISHED = new CopystateEnum("finished");
+
+        /**
+         * Enum ERROR for value: "error"
+         */
+        public static final CopystateEnum ERROR = new CopystateEnum("error");
+
         private static final Map<String, CopystateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CopystateEnum> createStaticFields() {
             Map<String, CopystateEnum> map = new HashMap<>();
-            map.put("UNAVAILABLE", UNAVAILABLE);
-            map.put("WAITING", WAITING);
-            map.put("INIT", INIT);
-            map.put("REPLICATE", REPLICATE);
-            map.put("SYNCING", SYNCING);
-            map.put("STOPPING", STOPPING);
-            map.put("STOPPED", STOPPED);
-            map.put("SKIPPING", SKIPPING);
-            map.put("DELETING", DELETING);
-            map.put("ERROR", ERROR);
-            map.put("CLONING", CLONING);
-            map.put("CUTOVERING", CUTOVERING);
-            map.put("FINISHED", FINISHED);
+            map.put("unavailable", UNAVAILABLE);
+            map.put("waiting", WAITING);
+            map.put("initialize", INITIALIZE);
+            map.put("replicate", REPLICATE);
+            map.put("syncing", SYNCING);
+            map.put("stopping", STOPPING);
+            map.put("stopped", STOPPED);
+            map.put("skipping", SKIPPING);
+            map.put("deleting", DELETING);
             map.put("clearing", CLEARING);
             map.put("cleared", CLEARED);
             map.put("clearfailed", CLEARFAILED);
             map.put("premigready", PREMIGREADY);
-            map.put("premiging", PREMIGING);
             map.put("premiged", PREMIGED);
             map.put("premigfailed", PREMIGFAILED);
+            map.put("cloning", CLONING);
+            map.put("cutovering", CUTOVERING);
+            map.put("finished", FINISHED);
+            map.put("error", ERROR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -303,7 +297,7 @@ public class PutCopyStateReq {
     }
 
     /**
-     * 源端服务器状态 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 SKIPPING：跳过中 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成 CLEARING: 清理快照资源中 CLEARED：清理快照资源完成 CLEARFAILED：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      * @return copystate
      */
     public CopystateEnum getCopystate() {

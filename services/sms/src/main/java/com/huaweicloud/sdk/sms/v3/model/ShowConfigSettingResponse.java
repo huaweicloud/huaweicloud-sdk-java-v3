@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -19,10 +24,86 @@ public class ShowConfigSettingResponse extends SdkResponse {
 
     private String taskId;
 
+    /**
+     * 迁移类型 WINDOWS_MIGRATE_BLOCK: windows块级迁移 LINUX_MIGRATE_FILE: linux文件级迁移 LINUX_MIGRATE_BLOCK: linux块级迁移
+     */
+    public static final class MigrateTypeEnum {
+
+        /**
+         * Enum WINDOWS_MIGRATE_BLOCK for value: "WINDOWS_MIGRATE_BLOCK"
+         */
+        public static final MigrateTypeEnum WINDOWS_MIGRATE_BLOCK = new MigrateTypeEnum("WINDOWS_MIGRATE_BLOCK");
+
+        /**
+         * Enum LINUX_MIGRATE_FILE for value: "LINUX_MIGRATE_FILE"
+         */
+        public static final MigrateTypeEnum LINUX_MIGRATE_FILE = new MigrateTypeEnum("LINUX_MIGRATE_FILE");
+
+        /**
+         * Enum LINUX_MIGRATE_BLOCK for value: "LINUX_MIGRATE_BLOCK"
+         */
+        public static final MigrateTypeEnum LINUX_MIGRATE_BLOCK = new MigrateTypeEnum("LINUX_MIGRATE_BLOCK");
+
+        private static final Map<String, MigrateTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MigrateTypeEnum> createStaticFields() {
+            Map<String, MigrateTypeEnum> map = new HashMap<>();
+            map.put("WINDOWS_MIGRATE_BLOCK", WINDOWS_MIGRATE_BLOCK);
+            map.put("LINUX_MIGRATE_FILE", LINUX_MIGRATE_FILE);
+            map.put("LINUX_MIGRATE_BLOCK", LINUX_MIGRATE_BLOCK);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MigrateTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MigrateTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrateTypeEnum(value));
+        }
+
+        public static MigrateTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof MigrateTypeEnum) {
+                return this.value.equals(((MigrateTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migrate_type")
 
-    private String migrateType;
+    private MigrateTypeEnum migrateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurations")
@@ -46,20 +127,20 @@ public class ShowConfigSettingResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
-    public ShowConfigSettingResponse withMigrateType(String migrateType) {
+    public ShowConfigSettingResponse withMigrateType(MigrateTypeEnum migrateType) {
         this.migrateType = migrateType;
         return this;
     }
 
     /**
-     * 迁移类型
+     * 迁移类型 WINDOWS_MIGRATE_BLOCK: windows块级迁移 LINUX_MIGRATE_FILE: linux文件级迁移 LINUX_MIGRATE_BLOCK: linux块级迁移
      * @return migrateType
      */
-    public String getMigrateType() {
+    public MigrateTypeEnum getMigrateType() {
         return migrateType;
     }
 
-    public void setMigrateType(String migrateType) {
+    public void setMigrateType(MigrateTypeEnum migrateType) {
         this.migrateType = migrateType;
     }
 

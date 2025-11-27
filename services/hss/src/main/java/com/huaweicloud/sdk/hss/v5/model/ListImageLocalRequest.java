@@ -232,7 +232,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 镜像类型，包含如下:  - other_image : 非SWR镜像  - swr_image : SWR镜像
+     * **参数解释** : 镜像类型 **约束限制** : 不涉及 **取值范围** : 包含如下两种:  - other_image : 非SWR镜像  - swr_image : SWR镜像 **默认取值** : 不涉及 
      * @return localImageType
      */
     public String getLocalImageType() {

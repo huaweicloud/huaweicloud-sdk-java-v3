@@ -32,6 +32,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorRe
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateTestCasesInDiffVersionRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateTestCasesInDiffVersionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BranchVersionInfo;
@@ -723,6 +725,35 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(CaseRemoveInfo.class),
             f -> f.withMarshaller(BatchRemoveTestCasesFromIteratorRequest::getBody,
                 BatchRemoveTestCasesFromIteratorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateTestCasesInDiffVersionRequest, BatchUpdateTestCasesInDiffVersionResponse> batchUpdateTestCasesInDiffVersion =
+        genForBatchUpdateTestCasesInDiffVersion();
+
+    private static HttpRequestDef<BatchUpdateTestCasesInDiffVersionRequest, BatchUpdateTestCasesInDiffVersionResponse> genForBatchUpdateTestCasesInDiffVersion() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateTestCasesInDiffVersionRequest, BatchUpdateTestCasesInDiffVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateTestCasesInDiffVersionRequest.class,
+                    BatchUpdateTestCasesInDiffVersionResponse.class)
+                .withName("BatchUpdateTestCasesInDiffVersion")
+                .withUri("/v4/batch/update/testcases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<TestCaseInfo>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(BatchUpdateTestCasesInDiffVersionRequest::getBody,
+                    BatchUpdateTestCasesInDiffVersionRequest::setBody)
+                .withInnerContainerType(TestCaseInfo.class));
 
         // response
 

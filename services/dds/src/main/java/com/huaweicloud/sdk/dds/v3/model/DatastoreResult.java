@@ -26,7 +26,7 @@ public class DatastoreResult {
     }
 
     /**
-     * node_type参数模板节点类型。取值范围： - mongos，表示集群mongos节点类型。 - shard，表示集群shard节点类型。 - config，表示集群config节点类型。 - replica，表示副本集类型。 - single，表示单节点类型。
+     * node_type参数模板节点类型。取值范围： - mongos，表示集群mongos节点类型。 - shard，表示集群shard节点类型。 - config，表示集群config节点类型。 - replica，表示副本集类型。 - single，表示单节点类型。 - readonly，表示副本集只读节点类型。 - shard_readonly，表示集群只读节点类型。
      * @return nodeType
      */
     public String getNodeType() {

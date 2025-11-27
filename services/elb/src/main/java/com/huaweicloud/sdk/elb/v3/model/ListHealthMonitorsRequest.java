@@ -471,7 +471,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * **参数解释**：期望响应状态码。 支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。  **约束限制**： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  **取值范围**：不涉及  **默认取值**：不涉及
+     * **参数解释**：期望响应状态码。 支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。  **约束限制**：不涉及  **取值范围**： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  **默认取值**：不涉及
      * @return expectedCodes
      */
     public List<String> getExpectedCodes() {

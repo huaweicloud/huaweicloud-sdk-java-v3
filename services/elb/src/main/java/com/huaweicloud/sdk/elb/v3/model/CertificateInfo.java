@@ -437,7 +437,7 @@ public class CertificateInfo {
     }
 
     /**
-     * **参数解释**：云证书管理服务（CCM）中的证书ID。  **取值范围**：不涉及
+     * **参数解释**：云证书与管理服务（CCM）中的证书ID。  **取值范围**：不涉及
      * @return scmCertificateId
      */
     public String getScmCertificateId() {
@@ -521,7 +521,7 @@ public class CertificateInfo {
     }
 
     /**
-     * **参数解释**：标记当前证书来源。  **取值范围**： - scm：表示关联云证书管理服务（CCM）中的证书。 - 空值：表示自有证书。
+     * **参数解释**：标记当前证书来源。  **取值范围**： - scm：表示关联云证书与管理服务（CCM）中的证书。 - 空值：表示自有证书。
      * @return source
      */
     public String getSource() {

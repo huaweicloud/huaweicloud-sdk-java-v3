@@ -16,7 +16,7 @@ import java.util.Objects;
 public class AccelerateIp {
 
     /**
-     * IP地址类型。
+     * IP地址类型。 取值范围：IPV4、IPV6
      */
     public static final class IpTypeEnum {
 
@@ -25,11 +25,17 @@ public class AccelerateIp {
          */
         public static final IpTypeEnum IPV4 = new IpTypeEnum("IPV4");
 
+        /**
+         * Enum IPV6 for value: "IPV6"
+         */
+        public static final IpTypeEnum IPV6 = new IpTypeEnum("IPV6");
+
         private static final Map<String, IpTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, IpTypeEnum> createStaticFields() {
             Map<String, IpTypeEnum> map = new HashMap<>();
             map.put("IPV4", IPV4);
+            map.put("IPV6", IPV6);
             return Collections.unmodifiableMap(map);
         }
 
@@ -100,7 +106,7 @@ public class AccelerateIp {
     }
 
     /**
-     * IP地址类型。
+     * IP地址类型。 取值范围：IPV4、IPV6
      * @return ipType
      */
     public IpTypeEnum getIpType() {

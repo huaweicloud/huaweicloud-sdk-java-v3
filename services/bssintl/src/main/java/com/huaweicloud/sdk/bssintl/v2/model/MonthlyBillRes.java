@@ -264,6 +264,11 @@ public class MonthlyBillRes {
 
     private String accountName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_num")
+
+    private BigDecimal periodNum;
+
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -1139,6 +1144,23 @@ public class MonthlyBillRes {
         this.accountName = accountName;
     }
 
+    public MonthlyBillRes withPeriodNum(BigDecimal periodNum) {
+        this.periodNum = periodNum;
+        return this;
+    }
+
+    /**
+     * |参数名称：周期数量| |参数的约束及描述：该参数非必填|
+     * @return periodNum
+     */
+    public BigDecimal getPeriodNum() {
+        return periodNum;
+    }
+
+    public void setPeriodNum(BigDecimal periodNum) {
+        this.periodNum = periodNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1186,7 +1208,7 @@ public class MonthlyBillRes {
             && Objects.equals(this.effectiveTime, that.effectiveTime)
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.consumeTime, that.consumeTime)
             && Objects.equals(this.beId, that.beId) && Objects.equals(this.extendParams, that.extendParams)
-            && Objects.equals(this.accountName, that.accountName);
+            && Objects.equals(this.accountName, that.accountName) && Objects.equals(this.periodNum, that.periodNum);
     }
 
     @Override
@@ -1240,7 +1262,8 @@ public class MonthlyBillRes {
             consumeTime,
             beId,
             extendParams,
-            accountName);
+            accountName,
+            periodNum);
     }
 
     @Override
@@ -1297,6 +1320,7 @@ public class MonthlyBillRes {
         sb.append("    beId: ").append(toIndentedString(beId)).append("\n");
         sb.append("    extendParams: ").append(toIndentedString(extendParams)).append("\n");
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
+        sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

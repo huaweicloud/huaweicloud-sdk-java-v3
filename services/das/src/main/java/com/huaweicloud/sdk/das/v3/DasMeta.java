@@ -5,10 +5,25 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.das.v3.model.AddEmailTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.AddEmailTemplateRequestBody;
+import com.huaweicloud.sdk.das.v3.model.AddEmailTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskBody;
 import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.AddInstanceGroupRequest;
+import com.huaweicloud.sdk.das.v3.model.AddInstanceGroupRequestBody;
+import com.huaweicloud.sdk.das.v3.model.AddInstanceGroupResponse;
+import com.huaweicloud.sdk.das.v3.model.AddInstanceToGroupRequest;
+import com.huaweicloud.sdk.das.v3.model.AddInstanceToGroupRequestBody;
+import com.huaweicloud.sdk.das.v3.model.AddInstanceToGroupResponse;
 import com.huaweicloud.sdk.das.v3.model.ApiSetMetricCodeThresholdReq;
+import com.huaweicloud.sdk.das.v3.model.BatchSendEmailRequest;
+import com.huaweicloud.sdk.das.v3.model.BatchSendEmailRequestBody;
+import com.huaweicloud.sdk.das.v3.model.BatchSendEmailResponse;
+import com.huaweicloud.sdk.das.v3.model.BatchSubscribeReportRequest;
+import com.huaweicloud.sdk.das.v3.model.BatchSubscribeReportRequestBody;
+import com.huaweicloud.sdk.das.v3.model.BatchSubscribeReportResponse;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
@@ -26,6 +41,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.CheckCredentialForBatchInspectionRequest;
+import com.huaweicloud.sdk.das.v3.model.CheckCredentialForBatchInspectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.CheckCredentialRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CheckCredentialResponse;
@@ -56,8 +73,14 @@ import com.huaweicloud.sdk.das.v3.model.CreateTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteEmailTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteEmailTemplateRequestBody;
+import com.huaweicloud.sdk.das.v3.model.DeleteEmailTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteHistoryTransactionExportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteInstanceGroupRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteInstanceGroupRequestBody;
+import com.huaweicloud.sdk.das.v3.model.DeleteInstanceGroupResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessReqBody;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
@@ -94,6 +117,10 @@ import com.huaweicloud.sdk.das.v3.model.ListConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.das.v3.model.ListEmailRecordRequest;
+import com.huaweicloud.sdk.das.v3.model.ListEmailRecordResponse;
+import com.huaweicloud.sdk.das.v3.model.ListEmailTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.ListEmailTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
@@ -102,8 +129,12 @@ import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHistoryTransactionExportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInspectionReportRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInspectionReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceGroupRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceGroupResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetric;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetricResponse;
@@ -142,6 +173,8 @@ import com.huaweicloud.sdk.das.v3.model.QuerySqlPlanBody;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequestBody;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.SaveCredentialForBatchInspectionRequest;
+import com.huaweicloud.sdk.das.v3.model.SaveCredentialForBatchInspectionResponse;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialRequestBody;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialResponse;
@@ -149,6 +182,8 @@ import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowCredentialRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowCredentialResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
@@ -191,9 +226,15 @@ import com.huaweicloud.sdk.das.v3.model.TransactionSwitchReq;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequestBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateEmailTemplateRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateEmailTemplateRequestBody;
+import com.huaweicloud.sdk.das.v3.model.UpdateEmailTemplateResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateHealthReportSettingsResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateInstanceGroupRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateInstanceGroupRequestBody;
+import com.huaweicloud.sdk.das.v3.model.UpdateInstanceGroupResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesResponse;
@@ -397,6 +438,29 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddEmailTemplateRequest, AddEmailTemplateResponse> addEmailTemplate =
+        genForAddEmailTemplate();
+
+    private static HttpRequestDef<AddEmailTemplateRequest, AddEmailTemplateResponse> genForAddEmailTemplate() {
+        // basic
+        HttpRequestDef.Builder<AddEmailTemplateRequest, AddEmailTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddEmailTemplateRequest.class, AddEmailTemplateResponse.class)
+                .withName("AddEmailTemplate")
+                .withUri("/v3/{project_id}/batch-inspection/email-template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddEmailTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddEmailTemplateRequestBody.class),
+            f -> f.withMarshaller(AddEmailTemplateRequest::getBody, AddEmailTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddFullSqlTaskRequest, AddFullSqlTaskResponse> addFullSqlTask =
         genForAddFullSqlTask();
 
@@ -424,6 +488,98 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddFullSqlTaskBody.class),
             f -> f.withMarshaller(AddFullSqlTaskRequest::getBody, AddFullSqlTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddInstanceGroupRequest, AddInstanceGroupResponse> addInstanceGroup =
+        genForAddInstanceGroup();
+
+    private static HttpRequestDef<AddInstanceGroupRequest, AddInstanceGroupResponse> genForAddInstanceGroup() {
+        // basic
+        HttpRequestDef.Builder<AddInstanceGroupRequest, AddInstanceGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddInstanceGroupRequest.class, AddInstanceGroupResponse.class)
+                .withName("AddInstanceGroup")
+                .withUri("/v3/{project_id}/batch-inspection/instance-group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddInstanceGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddInstanceGroupRequestBody.class),
+            f -> f.withMarshaller(AddInstanceGroupRequest::getBody, AddInstanceGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddInstanceToGroupRequest, AddInstanceToGroupResponse> addInstanceToGroup =
+        genForAddInstanceToGroup();
+
+    private static HttpRequestDef<AddInstanceToGroupRequest, AddInstanceToGroupResponse> genForAddInstanceToGroup() {
+        // basic
+        HttpRequestDef.Builder<AddInstanceToGroupRequest, AddInstanceToGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddInstanceToGroupRequest.class, AddInstanceToGroupResponse.class)
+                .withName("AddInstanceToGroup")
+                .withUri("/v3/{project_id}/batch-inspection/add-instance-to-group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddInstanceToGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddInstanceToGroupRequestBody.class),
+            f -> f.withMarshaller(AddInstanceToGroupRequest::getBody, AddInstanceToGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSendEmailRequest, BatchSendEmailResponse> batchSendEmail =
+        genForBatchSendEmail();
+
+    private static HttpRequestDef<BatchSendEmailRequest, BatchSendEmailResponse> genForBatchSendEmail() {
+        // basic
+        HttpRequestDef.Builder<BatchSendEmailRequest, BatchSendEmailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchSendEmailRequest.class, BatchSendEmailResponse.class)
+                .withName("BatchSendEmail")
+                .withUri("/v3/{project_id}/batch-inspection/batch-send-email")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchSendEmailRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSendEmailRequestBody.class),
+            f -> f.withMarshaller(BatchSendEmailRequest::getBody, BatchSendEmailRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSubscribeReportRequest, BatchSubscribeReportResponse> batchSubscribeReport =
+        genForBatchSubscribeReport();
+
+    private static HttpRequestDef<BatchSubscribeReportRequest, BatchSubscribeReportResponse> genForBatchSubscribeReport() {
+        // basic
+        HttpRequestDef.Builder<BatchSubscribeReportRequest, BatchSubscribeReportResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchSubscribeReportRequest.class, BatchSubscribeReportResponse.class)
+            .withName("BatchSubscribeReport")
+            .withUri("/v3/{project_id}/batch-inspection/batch-subscribe")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchSubscribeReportRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSubscribeReportRequestBody.class),
+            f -> f.withMarshaller(BatchSubscribeReportRequest::getBody, BatchSubscribeReportRequest::setBody));
 
         // response
 
@@ -627,6 +783,33 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckCredentialRequestBody.class),
             f -> f.withMarshaller(CheckCredentialRequest::getBody, CheckCredentialRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckCredentialForBatchInspectionRequest, CheckCredentialForBatchInspectionResponse> checkCredentialForBatchInspection =
+        genForCheckCredentialForBatchInspection();
+
+    private static HttpRequestDef<CheckCredentialForBatchInspectionRequest, CheckCredentialForBatchInspectionResponse> genForCheckCredentialForBatchInspection() {
+        // basic
+        HttpRequestDef.Builder<CheckCredentialForBatchInspectionRequest, CheckCredentialForBatchInspectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckCredentialForBatchInspectionRequest.class,
+                    CheckCredentialForBatchInspectionResponse.class)
+                .withName("CheckCredentialForBatchInspection")
+                .withUri("/v3/{project_id}/batch-inspection/check-credential")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CheckCredentialRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckCredentialRequestBody.class),
+            f -> f.withMarshaller(CheckCredentialForBatchInspectionRequest::getBody,
+                CheckCredentialForBatchInspectionRequest::setBody));
 
         // response
 
@@ -873,6 +1056,29 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteEmailTemplateRequest, DeleteEmailTemplateResponse> deleteEmailTemplate =
+        genForDeleteEmailTemplate();
+
+    private static HttpRequestDef<DeleteEmailTemplateRequest, DeleteEmailTemplateResponse> genForDeleteEmailTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteEmailTemplateRequest, DeleteEmailTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteEmailTemplateRequest.class, DeleteEmailTemplateResponse.class)
+            .withName("DeleteEmailTemplate")
+            .withUri("/v3/{project_id}/batch-inspection/email-template")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteEmailTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteEmailTemplateRequestBody.class),
+            f -> f.withMarshaller(DeleteEmailTemplateRequest::getBody, DeleteEmailTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteHistoryTransactionExportTaskRequest, DeleteHistoryTransactionExportTaskResponse> deleteHistoryTransactionExportTask =
         genForDeleteHistoryTransactionExportTask();
 
@@ -906,6 +1112,29 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(CreateExportTaskResp.class),
             f -> f.withMarshaller(DeleteHistoryTransactionExportTaskRequest::getBody,
                 DeleteHistoryTransactionExportTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInstanceGroupRequest, DeleteInstanceGroupResponse> deleteInstanceGroup =
+        genForDeleteInstanceGroup();
+
+    private static HttpRequestDef<DeleteInstanceGroupRequest, DeleteInstanceGroupResponse> genForDeleteInstanceGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstanceGroupRequest, DeleteInstanceGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteInstanceGroupRequest.class, DeleteInstanceGroupResponse.class)
+            .withName("DeleteInstanceGroup")
+            .withUri("/v3/{project_id}/batch-inspection/instance-group")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteInstanceGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteInstanceGroupRequestBody.class),
+            f -> f.withMarshaller(DeleteInstanceGroupRequest::getBody, DeleteInstanceGroupRequest::setBody));
 
         // response
 
@@ -1749,6 +1978,88 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEmailRecordRequest, ListEmailRecordResponse> listEmailRecord =
+        genForListEmailRecord();
+
+    private static HttpRequestDef<ListEmailRecordRequest, ListEmailRecordResponse> genForListEmailRecord() {
+        // basic
+        HttpRequestDef.Builder<ListEmailRecordRequest, ListEmailRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEmailRecordRequest.class, ListEmailRecordResponse.class)
+                .withName("ListEmailRecord")
+                .withUri("/v3/{project_id}/batch-inspection/email-record")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEmailRecordRequest::getDatastoreType, ListEmailRecordRequest::setDatastoreType));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEmailRecordRequest::getStartAt, ListEmailRecordRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEmailRecordRequest::getEndAt, ListEmailRecordRequest::setEndAt));
+        builder.<Integer>withRequestField("send_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEmailRecordRequest::getSendStatus, ListEmailRecordRequest::setSendStatus));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEmailRecordRequest::getOffset, ListEmailRecordRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEmailRecordRequest::getLimit, ListEmailRecordRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEmailTemplateRequest, ListEmailTemplateResponse> listEmailTemplate =
+        genForListEmailTemplate();
+
+    private static HttpRequestDef<ListEmailTemplateRequest, ListEmailTemplateResponse> genForListEmailTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListEmailTemplateRequest, ListEmailTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEmailTemplateRequest.class, ListEmailTemplateResponse.class)
+                .withName("ListEmailTemplate")
+                .withUri("/v3/{project_id}/batch-inspection/email-template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEmailTemplateRequest::getDatastoreType,
+                ListEmailTemplateRequest::setDatastoreType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEmailTemplateRequest::getOffset, ListEmailTemplateRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEmailTemplateRequest::getLimit, ListEmailTemplateRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFullSqlTasksRequest, ListFullSqlTasksResponse> listFullSqlTasks =
         genForListFullSqlTasks();
 
@@ -1987,6 +2298,67 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInspectionReportRequest, ListInspectionReportResponse> listInspectionReport =
+        genForListInspectionReport();
+
+    private static HttpRequestDef<ListInspectionReportRequest, ListInspectionReportResponse> genForListInspectionReport() {
+        // basic
+        HttpRequestDef.Builder<ListInspectionReportRequest, ListInspectionReportResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInspectionReportRequest.class, ListInspectionReportResponse.class)
+            .withName("ListInspectionReport")
+            .withUri("/v3/{project_id}/batch-inspection/health-report-list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInspectionReportRequest::getStartAt, ListInspectionReportRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInspectionReportRequest::getEndAt, ListInspectionReportRequest::setEndAt));
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInspectionReportRequest::getDatastoreType,
+                ListInspectionReportRequest::setDatastoreType));
+        builder.<String>withRequestField("health_rank",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInspectionReportRequest::getHealthRank,
+                ListInspectionReportRequest::setHealthRank));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInspectionReportRequest::getSortField,
+                ListInspectionReportRequest::setSortField));
+        builder.<Boolean>withRequestField("asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListInspectionReportRequest::getAsc, ListInspectionReportRequest::setAsc));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInspectionReportRequest::getOffset, ListInspectionReportRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInspectionReportRequest::getLimit, ListInspectionReportRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceDistributionRequest, ListInstanceDistributionResponse> listInstanceDistribution =
         genForListInstanceDistribution();
 
@@ -2012,6 +2384,45 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ListInstanceDistributionRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListInstanceDistributionRequest::getXLanguage,
                 ListInstanceDistributionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceGroupRequest, ListInstanceGroupResponse> listInstanceGroup =
+        genForListInstanceGroup();
+
+    private static HttpRequestDef<ListInstanceGroupRequest, ListInstanceGroupResponse> genForListInstanceGroup() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceGroupRequest, ListInstanceGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceGroupRequest.class, ListInstanceGroupResponse.class)
+                .withName("ListInstanceGroup")
+                .withUri("/v3/{project_id}/batch-inspection/instance-group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceGroupRequest::getDatastoreType,
+                ListInstanceGroupRequest::setDatastoreType));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceGroupRequest::getGroupName, ListInstanceGroupRequest::setGroupName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceGroupRequest::getOffset, ListInstanceGroupRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceGroupRequest::getLimit, ListInstanceGroupRequest::setLimit));
 
         // response
 
@@ -2763,6 +3174,33 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SaveCredentialForBatchInspectionRequest, SaveCredentialForBatchInspectionResponse> saveCredentialForBatchInspection =
+        genForSaveCredentialForBatchInspection();
+
+    private static HttpRequestDef<SaveCredentialForBatchInspectionRequest, SaveCredentialForBatchInspectionResponse> genForSaveCredentialForBatchInspection() {
+        // basic
+        HttpRequestDef.Builder<SaveCredentialForBatchInspectionRequest, SaveCredentialForBatchInspectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SaveCredentialForBatchInspectionRequest.class,
+                    SaveCredentialForBatchInspectionResponse.class)
+                .withName("SaveCredentialForBatchInspection")
+                .withUri("/v3/{project_id}/batch-inspection/save-credential")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SaveCredentialRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveCredentialRequestBody.class),
+            f -> f.withMarshaller(SaveCredentialForBatchInspectionRequest::getBody,
+                SaveCredentialForBatchInspectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetThresholdForMetricRequest, SetThresholdForMetricResponse> setThresholdForMetric =
         genForSetThresholdForMetric();
 
@@ -2786,6 +3224,24 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiSetMetricCodeThresholdReq.class),
             f -> f.withMarshaller(SetThresholdForMetricRequest::getBody, SetThresholdForMetricRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> showCredential =
+        genForShowCredential();
+
+    private static HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> genForShowCredential() {
+        // basic
+        HttpRequestDef.Builder<ShowCredentialRequest, ShowCredentialResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCredentialRequest.class, ShowCredentialResponse.class)
+                .withName("ShowCredential")
+                .withUri("/v3/{project_id}/batch-inspection/get-credential")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -3454,6 +3910,29 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateEmailTemplateRequest, UpdateEmailTemplateResponse> updateEmailTemplate =
+        genForUpdateEmailTemplate();
+
+    private static HttpRequestDef<UpdateEmailTemplateRequest, UpdateEmailTemplateResponse> genForUpdateEmailTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateEmailTemplateRequest, UpdateEmailTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEmailTemplateRequest.class, UpdateEmailTemplateResponse.class)
+                .withName("UpdateEmailTemplate")
+                .withUri("/v3/{project_id}/batch-inspection/email-template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateEmailTemplateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateEmailTemplateRequestBody.class),
+            f -> f.withMarshaller(UpdateEmailTemplateRequest::getBody, UpdateEmailTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateHealthReportSettingsRequest, UpdateHealthReportSettingsResponse> updateHealthReportSettings =
         genForUpdateHealthReportSettings();
 
@@ -3481,6 +3960,29 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(UpdateHealthReportSettingsRequestBody.class),
             f -> f.withMarshaller(UpdateHealthReportSettingsRequest::getBody,
                 UpdateHealthReportSettingsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceGroupRequest, UpdateInstanceGroupResponse> updateInstanceGroup =
+        genForUpdateInstanceGroup();
+
+    private static HttpRequestDef<UpdateInstanceGroupRequest, UpdateInstanceGroupResponse> genForUpdateInstanceGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceGroupRequest, UpdateInstanceGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceGroupRequest.class, UpdateInstanceGroupResponse.class)
+                .withName("UpdateInstanceGroup")
+                .withUri("/v3/{project_id}/batch-inspection/instance-group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateInstanceGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstanceGroupRequestBody.class),
+            f -> f.withMarshaller(UpdateInstanceGroupRequest::getBody, UpdateInstanceGroupRequest::setBody));
 
         // response
 

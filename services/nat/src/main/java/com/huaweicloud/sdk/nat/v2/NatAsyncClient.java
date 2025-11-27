@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeletePrivateNatTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeletePrivateNatTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitIpTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitIpTagsResponse;
+import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitSubnetTagsRequest;
+import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitSubnetTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateNatGatewayDnatRulesRequest;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateNatGatewayDnatRulesResponse;
 import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewayDnatRuleRequest;
@@ -31,6 +33,10 @@ import com.huaweicloud.sdk.nat.v2.model.CreateTransitIpRequest;
 import com.huaweicloud.sdk.nat.v2.model.CreateTransitIpResponse;
 import com.huaweicloud.sdk.nat.v2.model.CreateTransitIpTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.CreateTransitIpTagResponse;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetResponse;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayDnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayDnatRuleResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayRequest;
@@ -51,12 +57,18 @@ import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpTagResponse;
+import com.huaweicloud.sdk.nat.v2.model.DeleteTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.DeleteTransitSubnetResponse;
+import com.huaweicloud.sdk.nat.v2.model.DeleteTransitSubnetTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.DeleteTransitSubnetTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayByTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayByTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayDnatRulesRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayDnatRulesResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySnatRulesRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySnatRulesResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySpecsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySpecsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaysRequest;
@@ -71,12 +83,20 @@ import com.huaweicloud.sdk.nat.v2.model.ListPrivateNatsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListPrivateNatsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListPrivateSnatsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListPrivateSnatsResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListSpecsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListSpecsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpsByTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpsByTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpsResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetTagsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetTagsResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetsByTagsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetsByTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayDnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayDnatRuleResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayRequest;
@@ -97,6 +117,10 @@ import com.huaweicloud.sdk.nat.v2.model.ShowTransitIpRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowTransitIpResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowTransitIpTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowTransitIpTagsResponse;
+import com.huaweicloud.sdk.nat.v2.model.ShowTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.ShowTransitSubnetResponse;
+import com.huaweicloud.sdk.nat.v2.model.ShowTransitSubnetTagsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ShowTransitSubnetTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayDnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayDnatRuleResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayRequest;
@@ -109,6 +133,8 @@ import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateNatRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateNatResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateSnatRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateSnatResponse;
+import com.huaweicloud.sdk.nat.v2.model.UpdateTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.UpdateTransitSubnetResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -123,6 +149,349 @@ public class NatAsyncClient {
     public static ClientBuilder<NatAsyncClient> newBuilder() {
         ClientBuilder<NatAsyncClient> clientBuilder = new ClientBuilder<>(NatAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 批量添加删除中转子网标签
+     *
+     * - 为指定中转子网实例批量添加或删除标签
+     * - 标签管理服务需要使用该接口批量管理中转子网实例的标签。
+     * - 一个中转子网上最多有20个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateDeleteTransitSubnetTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateDeleteTransitSubnetTagsResponse>
+     */
+    public CompletableFuture<BatchCreateDeleteTransitSubnetTagsResponse> batchCreateDeleteTransitSubnetTagsAsync(
+        BatchCreateDeleteTransitSubnetTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.batchCreateDeleteTransitSubnetTags);
+    }
+
+    /**
+     * 批量添加删除中转子网标签
+     *
+     * - 为指定中转子网实例批量添加或删除标签
+     * - 标签管理服务需要使用该接口批量管理中转子网实例的标签。
+     * - 一个中转子网上最多有20个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateDeleteTransitSubnetTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateDeleteTransitSubnetTagsRequest, BatchCreateDeleteTransitSubnetTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateDeleteTransitSubnetTagsRequest, BatchCreateDeleteTransitSubnetTagsResponse> batchCreateDeleteTransitSubnetTagsAsyncInvoker(
+        BatchCreateDeleteTransitSubnetTagsRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.batchCreateDeleteTransitSubnetTags, hcClient);
+    }
+
+    /**
+     * 创建中转子网
+     *
+     * 创建中转子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTransitSubnetRequest 请求对象
+     * @return CompletableFuture<CreateTransitSubnetResponse>
+     */
+    public CompletableFuture<CreateTransitSubnetResponse> createTransitSubnetAsync(CreateTransitSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.createTransitSubnet);
+    }
+
+    /**
+     * 创建中转子网
+     *
+     * 创建中转子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTransitSubnetRequest 请求对象
+     * @return AsyncInvoker<CreateTransitSubnetRequest, CreateTransitSubnetResponse>
+     */
+    public AsyncInvoker<CreateTransitSubnetRequest, CreateTransitSubnetResponse> createTransitSubnetAsyncInvoker(
+        CreateTransitSubnetRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.createTransitSubnet, hcClient);
+    }
+
+    /**
+     * 添加中转子网标签
+     *
+     * - 为指定中转子网添加标签
+     * - 一个中转子网上最多有20个标签。
+     * - 此接口为幂等接口：
+     * - 创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTransitSubnetTagRequest 请求对象
+     * @return CompletableFuture<CreateTransitSubnetTagResponse>
+     */
+    public CompletableFuture<CreateTransitSubnetTagResponse> createTransitSubnetTagAsync(
+        CreateTransitSubnetTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.createTransitSubnetTag);
+    }
+
+    /**
+     * 添加中转子网标签
+     *
+     * - 为指定中转子网添加标签
+     * - 一个中转子网上最多有20个标签。
+     * - 此接口为幂等接口：
+     * - 创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTransitSubnetTagRequest 请求对象
+     * @return AsyncInvoker<CreateTransitSubnetTagRequest, CreateTransitSubnetTagResponse>
+     */
+    public AsyncInvoker<CreateTransitSubnetTagRequest, CreateTransitSubnetTagResponse> createTransitSubnetTagAsyncInvoker(
+        CreateTransitSubnetTagRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.createTransitSubnetTag, hcClient);
+    }
+
+    /**
+     * 删除中转子网
+     *
+     * 删除中转子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTransitSubnetRequest 请求对象
+     * @return CompletableFuture<DeleteTransitSubnetResponse>
+     */
+    public CompletableFuture<DeleteTransitSubnetResponse> deleteTransitSubnetAsync(DeleteTransitSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.deleteTransitSubnet);
+    }
+
+    /**
+     * 删除中转子网
+     *
+     * 删除中转子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTransitSubnetRequest 请求对象
+     * @return AsyncInvoker<DeleteTransitSubnetRequest, DeleteTransitSubnetResponse>
+     */
+    public AsyncInvoker<DeleteTransitSubnetRequest, DeleteTransitSubnetResponse> deleteTransitSubnetAsyncInvoker(
+        DeleteTransitSubnetRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.deleteTransitSubnet, hcClient);
+    }
+
+    /**
+     * 删除中转子网标签
+     *
+     * - 幂等接口：
+     * - 删除时，不对标签字符集做校验，调用接口前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，key不能为空或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTransitSubnetTagRequest 请求对象
+     * @return CompletableFuture<DeleteTransitSubnetTagResponse>
+     */
+    public CompletableFuture<DeleteTransitSubnetTagResponse> deleteTransitSubnetTagAsync(
+        DeleteTransitSubnetTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.deleteTransitSubnetTag);
+    }
+
+    /**
+     * 删除中转子网标签
+     *
+     * - 幂等接口：
+     * - 删除时，不对标签字符集做校验，调用接口前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，key不能为空或者空字符串。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTransitSubnetTagRequest 请求对象
+     * @return AsyncInvoker<DeleteTransitSubnetTagRequest, DeleteTransitSubnetTagResponse>
+     */
+    public AsyncInvoker<DeleteTransitSubnetTagRequest, DeleteTransitSubnetTagResponse> deleteTransitSubnetTagAsyncInvoker(
+        DeleteTransitSubnetTagRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.deleteTransitSubnetTag, hcClient);
+    }
+
+    /**
+     * 查询中转子网列表
+     *
+     * 查询中转子网列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransitSubnetRequest 请求对象
+     * @return CompletableFuture<ListTransitSubnetResponse>
+     */
+    public CompletableFuture<ListTransitSubnetResponse> listTransitSubnetAsync(ListTransitSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.listTransitSubnet);
+    }
+
+    /**
+     * 查询中转子网列表
+     *
+     * 查询中转子网列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransitSubnetRequest 请求对象
+     * @return AsyncInvoker<ListTransitSubnetRequest, ListTransitSubnetResponse>
+     */
+    public AsyncInvoker<ListTransitSubnetRequest, ListTransitSubnetResponse> listTransitSubnetAsyncInvoker(
+        ListTransitSubnetRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.listTransitSubnet, hcClient);
+    }
+
+    /**
+     * 查询中转子网项目标签
+     *
+     * - 查询租户在指定Project的所有中转子网标签集合。
+     * - 标签管理服务需要能够列出当前租户全部已使用的中转子网标签集合，为打中转子网标签和过滤中转子网实例时提供标签联想功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransitSubnetTagsRequest 请求对象
+     * @return CompletableFuture<ListTransitSubnetTagsResponse>
+     */
+    public CompletableFuture<ListTransitSubnetTagsResponse> listTransitSubnetTagsAsync(
+        ListTransitSubnetTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.listTransitSubnetTags);
+    }
+
+    /**
+     * 查询中转子网项目标签
+     *
+     * - 查询租户在指定Project的所有中转子网标签集合。
+     * - 标签管理服务需要能够列出当前租户全部已使用的中转子网标签集合，为打中转子网标签和过滤中转子网实例时提供标签联想功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransitSubnetTagsRequest 请求对象
+     * @return AsyncInvoker<ListTransitSubnetTagsRequest, ListTransitSubnetTagsResponse>
+     */
+    public AsyncInvoker<ListTransitSubnetTagsRequest, ListTransitSubnetTagsResponse> listTransitSubnetTagsAsyncInvoker(
+        ListTransitSubnetTagsRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.listTransitSubnetTags, hcClient);
+    }
+
+    /**
+     * 查询中转子网实例
+     *
+     * - 使用标签过滤中转子网实例。
+     * - 标签管理服务需要提供按标签过滤中转子网服务实例并汇总显示在列表中，需要中转子网服务提供查询能力。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransitSubnetsByTagsRequest 请求对象
+     * @return CompletableFuture<ListTransitSubnetsByTagsResponse>
+     */
+    public CompletableFuture<ListTransitSubnetsByTagsResponse> listTransitSubnetsByTagsAsync(
+        ListTransitSubnetsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.listTransitSubnetsByTags);
+    }
+
+    /**
+     * 查询中转子网实例
+     *
+     * - 使用标签过滤中转子网实例。
+     * - 标签管理服务需要提供按标签过滤中转子网服务实例并汇总显示在列表中，需要中转子网服务提供查询能力。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTransitSubnetsByTagsRequest 请求对象
+     * @return AsyncInvoker<ListTransitSubnetsByTagsRequest, ListTransitSubnetsByTagsResponse>
+     */
+    public AsyncInvoker<ListTransitSubnetsByTagsRequest, ListTransitSubnetsByTagsResponse> listTransitSubnetsByTagsAsyncInvoker(
+        ListTransitSubnetsByTagsRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.listTransitSubnetsByTags, hcClient);
+    }
+
+    /**
+     * 查询指定的中转子网详情
+     *
+     * 查询指定的中转子网详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransitSubnetRequest 请求对象
+     * @return CompletableFuture<ShowTransitSubnetResponse>
+     */
+    public CompletableFuture<ShowTransitSubnetResponse> showTransitSubnetAsync(ShowTransitSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.showTransitSubnet);
+    }
+
+    /**
+     * 查询指定的中转子网详情
+     *
+     * 查询指定的中转子网详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransitSubnetRequest 请求对象
+     * @return AsyncInvoker<ShowTransitSubnetRequest, ShowTransitSubnetResponse>
+     */
+    public AsyncInvoker<ShowTransitSubnetRequest, ShowTransitSubnetResponse> showTransitSubnetAsyncInvoker(
+        ShowTransitSubnetRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.showTransitSubnet, hcClient);
+    }
+
+    /**
+     * 查询中转子网标签
+     *
+     * - 查询指定中转子网实例的标签信息。
+     * - 标签管理服务需要使用该接口查询指定中转子网实例的全部标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransitSubnetTagsRequest 请求对象
+     * @return CompletableFuture<ShowTransitSubnetTagsResponse>
+     */
+    public CompletableFuture<ShowTransitSubnetTagsResponse> showTransitSubnetTagsAsync(
+        ShowTransitSubnetTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.showTransitSubnetTags);
+    }
+
+    /**
+     * 查询中转子网标签
+     *
+     * - 查询指定中转子网实例的标签信息。
+     * - 标签管理服务需要使用该接口查询指定中转子网实例的全部标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTransitSubnetTagsRequest 请求对象
+     * @return AsyncInvoker<ShowTransitSubnetTagsRequest, ShowTransitSubnetTagsResponse>
+     */
+    public AsyncInvoker<ShowTransitSubnetTagsRequest, ShowTransitSubnetTagsResponse> showTransitSubnetTagsAsyncInvoker(
+        ShowTransitSubnetTagsRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.showTransitSubnetTags, hcClient);
+    }
+
+    /**
+     * 更新中转子网
+     *
+     * 更新指定的中转子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTransitSubnetRequest 请求对象
+     * @return CompletableFuture<UpdateTransitSubnetResponse>
+     */
+    public CompletableFuture<UpdateTransitSubnetResponse> updateTransitSubnetAsync(UpdateTransitSubnetRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.updateTransitSubnet);
+    }
+
+    /**
+     * 更新中转子网
+     *
+     * 更新指定的中转子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTransitSubnetRequest 请求对象
+     * @return AsyncInvoker<UpdateTransitSubnetRequest, UpdateTransitSubnetResponse>
+     */
+    public AsyncInvoker<UpdateTransitSubnetRequest, UpdateTransitSubnetResponse> updateTransitSubnetAsyncInvoker(
+        UpdateTransitSubnetRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.updateTransitSubnet, hcClient);
     }
 
     /**
@@ -982,6 +1351,35 @@ public class NatAsyncClient {
     }
 
     /**
+     * 支持创建的NAT网关规格列表
+     *
+     * 支持创建的NAT网关规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNatGatewaySpecsRequest 请求对象
+     * @return CompletableFuture<ListNatGatewaySpecsResponse>
+     */
+    public CompletableFuture<ListNatGatewaySpecsResponse> listNatGatewaySpecsAsync(ListNatGatewaySpecsRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.listNatGatewaySpecs);
+    }
+
+    /**
+     * 支持创建的NAT网关规格列表
+     *
+     * 支持创建的NAT网关规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNatGatewaySpecsRequest 请求对象
+     * @return AsyncInvoker<ListNatGatewaySpecsRequest, ListNatGatewaySpecsResponse>
+     */
+    public AsyncInvoker<ListNatGatewaySpecsRequest, ListNatGatewaySpecsResponse> listNatGatewaySpecsAsyncInvoker(
+        ListNatGatewaySpecsRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.listNatGatewaySpecs, hcClient);
+    }
+
+    /**
      * 查询公网NAT网关项目标签
      *
      * - 查询租户在指定项目和公网NAT网关实例类型的所有标签集合。
@@ -1131,6 +1529,34 @@ public class NatAsyncClient {
     public AsyncInvoker<ListPrivateNatsByTagsRequest, ListPrivateNatsByTagsResponse> listPrivateNatsByTagsAsyncInvoker(
         ListPrivateNatsByTagsRequest request) {
         return new AsyncInvoker<>(request, NatMeta.listPrivateNatsByTags, hcClient);
+    }
+
+    /**
+     * 查询项目支持的网关规格列表
+     *
+     * 查询项目支持的网关规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSpecsRequest 请求对象
+     * @return CompletableFuture<ListSpecsResponse>
+     */
+    public CompletableFuture<ListSpecsResponse> listSpecsAsync(ListSpecsRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.listSpecs);
+    }
+
+    /**
+     * 查询项目支持的网关规格列表
+     *
+     * 查询项目支持的网关规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSpecsRequest 请求对象
+     * @return AsyncInvoker<ListSpecsRequest, ListSpecsResponse>
+     */
+    public AsyncInvoker<ListSpecsRequest, ListSpecsResponse> listSpecsAsyncInvoker(ListSpecsRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.listSpecs, hcClient);
     }
 
     /**

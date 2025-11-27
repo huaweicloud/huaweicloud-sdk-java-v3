@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -21,10 +26,80 @@ public class TaskByServerSource {
 
     private String name;
 
+    /**
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         */
+        public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
+
+        /**
+         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         */
+        public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("MIGRATE_BLOCK", MIGRATE_BLOCK);
+            map.put("MIGRATE_FILE", MIGRATE_FILE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
@@ -76,10 +151,92 @@ public class TaskByServerSource {
 
     private TargetServerById targetServer;
 
+    /**
+     * 日志收集状态 INIT:就绪 UPLOADING:上传中 UPLOAD_FAIL:上传失败 UPLOADED:已上传
+     */
+    public static final class LogCollectStatusEnum {
+
+        /**
+         * Enum INIT for value: "INIT"
+         */
+        public static final LogCollectStatusEnum INIT = new LogCollectStatusEnum("INIT");
+
+        /**
+         * Enum UPLOADING for value: "UPLOADING"
+         */
+        public static final LogCollectStatusEnum UPLOADING = new LogCollectStatusEnum("UPLOADING");
+
+        /**
+         * Enum UPLOAD_FAIL for value: "UPLOAD_FAIL"
+         */
+        public static final LogCollectStatusEnum UPLOAD_FAIL = new LogCollectStatusEnum("UPLOAD_FAIL");
+
+        /**
+         * Enum UPLOADED for value: "UPLOADED"
+         */
+        public static final LogCollectStatusEnum UPLOADED = new LogCollectStatusEnum("UPLOADED");
+
+        private static final Map<String, LogCollectStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LogCollectStatusEnum> createStaticFields() {
+            Map<String, LogCollectStatusEnum> map = new HashMap<>();
+            map.put("INIT", INIT);
+            map.put("UPLOADING", UPLOADING);
+            map.put("UPLOAD_FAIL", UPLOAD_FAIL);
+            map.put("UPLOADED", UPLOADED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LogCollectStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LogCollectStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogCollectStatusEnum(value));
+        }
+
+        public static LogCollectStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LogCollectStatusEnum) {
+                return this.value.equals(((LogCollectStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_collect_status")
 
-    private String logCollectStatus;
+    private LogCollectStatusEnum logCollectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exist_server")
@@ -135,20 +292,20 @@ public class TaskByServerSource {
         this.name = name;
     }
 
-    public TaskByServerSource withType(String type) {
+    public TaskByServerSource withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 任务类型
+     * 迁移项目类型 MIGRATE_BLOCK:块级迁移 MIGRATE_FILE:文件级迁移
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -337,20 +494,20 @@ public class TaskByServerSource {
         this.targetServer = targetServer;
     }
 
-    public TaskByServerSource withLogCollectStatus(String logCollectStatus) {
+    public TaskByServerSource withLogCollectStatus(LogCollectStatusEnum logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
         return this;
     }
 
     /**
-     * 日志收集状态
+     * 日志收集状态 INIT:就绪 UPLOADING:上传中 UPLOAD_FAIL:上传失败 UPLOADED:已上传
      * @return logCollectStatus
      */
-    public String getLogCollectStatus() {
+    public LogCollectStatusEnum getLogCollectStatus() {
         return logCollectStatus;
     }
 
-    public void setLogCollectStatus(String logCollectStatus) {
+    public void setLogCollectStatus(LogCollectStatusEnum logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
     }
 

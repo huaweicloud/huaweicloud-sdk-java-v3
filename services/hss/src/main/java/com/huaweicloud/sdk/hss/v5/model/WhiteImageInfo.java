@@ -31,7 +31,7 @@ public class WhiteImageInfo {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID **取值范围**： 不涉及 
      * @return clusterId
      */
     public String getClusterId() {
@@ -48,7 +48,7 @@ public class WhiteImageInfo {
     }
 
     /**
-     * 镜像名称
+     * **参数解释**： 镜像名称 **取值范围**： 不涉及 
      * @return imageName
      */
     public String getImageName() {
@@ -65,7 +65,7 @@ public class WhiteImageInfo {
     }
 
     /**
-     * 镜像版本
+     * **参数解释**： 镜像版本 **取值范围**： 不涉及 
      * @return imageVersion
      */
     public String getImageVersion() {

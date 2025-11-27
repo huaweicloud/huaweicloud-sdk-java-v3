@@ -29,7 +29,7 @@ public class CreatePrivateNatOption {
     private String description;
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型
+     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
      */
     public static final class SpecEnum {
 
@@ -53,6 +53,11 @@ public class CreatePrivateNatOption {
          */
         public static final SpecEnum EXTRA_LARGE = new SpecEnum("Extra-large");
 
+        /**
+         * Enum EXTRA_XLARGE for value: "Extra-xlarge"
+         */
+        public static final SpecEnum EXTRA_XLARGE = new SpecEnum("Extra-xlarge");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -61,6 +66,7 @@ public class CreatePrivateNatOption {
             map.put("Medium", MEDIUM);
             map.put("Large", LARGE);
             map.put("Extra-large", EXTRA_LARGE);
+            map.put("Extra-xlarge", EXTRA_XLARGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -123,7 +129,7 @@ public class CreatePrivateNatOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<PrivateTag> tags = null;
+    private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -170,7 +176,7 @@ public class CreatePrivateNatOption {
     }
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型
+     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
      * @return spec
      */
     public SpecEnum getSpec() {
@@ -214,12 +220,12 @@ public class CreatePrivateNatOption {
         this.downlinkVpcs = downlinkVpcs;
     }
 
-    public CreatePrivateNatOption withTags(List<PrivateTag> tags) {
+    public CreatePrivateNatOption withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreatePrivateNatOption addTagsItem(PrivateTag tagsItem) {
+    public CreatePrivateNatOption addTagsItem(Tag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -227,7 +233,7 @@ public class CreatePrivateNatOption {
         return this;
     }
 
-    public CreatePrivateNatOption withTags(Consumer<List<PrivateTag>> tagsSetter) {
+    public CreatePrivateNatOption withTags(Consumer<List<Tag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -239,11 +245,11 @@ public class CreatePrivateNatOption {
      * 标签列表
      * @return tags
      */
-    public List<PrivateTag> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<PrivateTag> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

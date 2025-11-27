@@ -109,7 +109,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 集群id
+     * **参数解释**： 集群ID **取值范围**： 不涉及 
      * @return clusterId
      */
     public String getClusterId() {
@@ -126,7 +126,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称 **取值范围**： 不涉及 
      * @return clusterName
      */
     public String getClusterName() {
@@ -143,7 +143,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 策略内容
+     * **参数解释**： 策略内容 **取值范围**： 不涉及 
      * @return content
      */
     public Object getContent() {
@@ -160,7 +160,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * deploy内容
+     * **参数解释**： 部署内容 **取值范围**： 不涉及 
      * @return deployContent
      */
     public String getDeployContent() {
@@ -177,7 +177,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 参数
+     * **参数解释**： 参数 **取值范围**： 不涉及 
      * @return parameters
      */
     public String getParameters() {
@@ -194,7 +194,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 策略名称
+     * **参数解释**： 策略名称 **取值范围**： 不涉及 
      * @return policyName
      */
     public String getPolicyName() {
@@ -211,7 +211,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 策略ID
+     * **参数解释**： 策略ID **取值范围**： 不涉及 
      * @return policyId
      */
     public String getPolicyId() {
@@ -244,7 +244,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 资源
+     * **参数解释**： 资源 **取值范围**： 不涉及 
      * @return resources
      */
     public List<Resources> getResources() {
@@ -261,7 +261,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 模板ID
+     * **参数解释**： 模板ID **取值范围**： 不涉及 
      * @return templateId
      */
     public String getTemplateId() {
@@ -278,7 +278,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 模板名称
+     * **参数解释**： 模板名称 **取值范围**： 不涉及 
      * @return templateName
      */
     public String getTemplateName() {
@@ -295,7 +295,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 模板类型
+     * **参数解释**： 模板类型 **取值范围**： 不涉及 
      * @return templateType
      */
     public String getTemplateType() {
@@ -312,7 +312,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 策略描述
+     * **参数解释**： 策略描述 **取值范围**： 不涉及 
      * @return description
      */
     public String getDescription() {
@@ -329,7 +329,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 更新时间
+     * **参数解释**： 更新时间 **取值范围**： 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return updateTime
@@ -348,7 +348,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 创建时间
+     * **参数解释**： 创建时间 **取值范围**： 不涉及 
      * minimum: 0
      * maximum: 2147483647
      * @return createTime
@@ -367,7 +367,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 防护镜像数量
+     * **参数解释**： 防护镜像数量 **取值范围**： 不涉及 
      * minimum: 0
      * maximum: 10000
      * @return imageNum
@@ -386,7 +386,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 防护标签数量
+     * **参数解释**： 防护标签数量 **取值范围**： 不涉及 
      * minimum: 0
      * maximum: 10000
      * @return labelsNum
@@ -405,7 +405,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态 **取值范围**： 不涉及 
      * @return status
      */
     public String getStatus() {
@@ -438,7 +438,7 @@ public class ClusterPolicyResponseInfo {
     }
 
     /**
-     * 白名单镜像
+     * **参数解释**： 白名单镜像 **取值范围**： 不涉及 
      * @return whiteImages
      */
     public List<WhiteImageInfo> getWhiteImages() {

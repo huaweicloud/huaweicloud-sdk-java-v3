@@ -522,6 +522,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRespo
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLogCollectionStatusRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLogCollectionStatusResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaResponse;
@@ -6098,10 +6100,10 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowErrorLogSwitchStatusRequest::getInstanceId,
                 ShowErrorLogSwitchStatusRequest::setInstanceId));
-        builder.<String>withRequestField("X-Language",
+        builder.<ShowErrorLogSwitchStatusRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowErrorLogSwitchStatusRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowErrorLogSwitchStatusRequest::getXLanguage,
                 ShowErrorLogSwitchStatusRequest::setXLanguage));
 
@@ -7206,6 +7208,51 @@ public class GaussDBforopenGaussMeta {
             f -> f.withMarshaller(SwitchKmsTdeRequest::getBody, SwitchKmsTdeRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchLogCollectionStatusRequest, SwitchLogCollectionStatusResponse> switchLogCollectionStatus =
+        genForSwitchLogCollectionStatus();
+
+    private static HttpRequestDef<SwitchLogCollectionStatusRequest, SwitchLogCollectionStatusResponse> genForSwitchLogCollectionStatus() {
+        // basic
+        HttpRequestDef.Builder<SwitchLogCollectionStatusRequest, SwitchLogCollectionStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SwitchLogCollectionStatusRequest.class,
+                    SwitchLogCollectionStatusResponse.class)
+                .withName("SwitchLogCollectionStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/error-log/switch/{status}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchLogCollectionStatusRequest::getInstanceId,
+                SwitchLogCollectionStatusRequest::setInstanceId));
+        builder.<String>withRequestField("status",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchLogCollectionStatusRequest::getStatus,
+                SwitchLogCollectionStatusRequest::setStatus));
+        builder.<SwitchLogCollectionStatusRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SwitchLogCollectionStatusRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SwitchLogCollectionStatusRequest::getXLanguage,
+                SwitchLogCollectionStatusRequest::setXLanguage));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SwitchLogCollectionStatusResponse::getBody,
+                SwitchLogCollectionStatusResponse::setBody));
 
         return builder.build();
     }

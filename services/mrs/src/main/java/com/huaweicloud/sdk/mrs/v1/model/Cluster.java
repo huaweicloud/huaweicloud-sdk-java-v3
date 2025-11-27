@@ -353,6 +353,11 @@ public class Cluster {
 
     private String eipv6Address;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "azCategory")
+
+    private Integer azCategory;
+
     public Cluster withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -1573,6 +1578,23 @@ public class Cluster {
         this.eipv6Address = eipv6Address;
     }
 
+    public Cluster withAzCategory(Integer azCategory) {
+        this.azCategory = azCategory;
+        return this;
+    }
+
+    /**
+     * 表示当前可用区的类型。 - 0：大云主可用区 - 21：本地可用区 - 41：边缘可用区
+     * @return azCategory
+     */
+    public Integer getAzCategory() {
+        return azCategory;
+    }
+
+    public void setAzCategory(Integer azCategory) {
+        this.azCategory = azCategory;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1632,7 +1654,8 @@ public class Cluster {
             && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.scale, that.scale)
             && Objects.equals(this.nodeGroups, that.nodeGroups)
             && Objects.equals(this.taskNodeGroups, that.taskNodeGroups) && Objects.equals(this.eipId, that.eipId)
-            && Objects.equals(this.eipAddress, that.eipAddress) && Objects.equals(this.eipv6Address, that.eipv6Address);
+            && Objects.equals(this.eipAddress, that.eipAddress) && Objects.equals(this.eipv6Address, that.eipv6Address)
+            && Objects.equals(this.azCategory, that.azCategory);
     }
 
     @Override
@@ -1704,7 +1727,8 @@ public class Cluster {
             taskNodeGroups,
             eipId,
             eipAddress,
-            eipv6Address);
+            eipv6Address,
+            azCategory);
     }
 
     @Override
@@ -1779,6 +1803,7 @@ public class Cluster {
         sb.append("    eipId: ").append(toIndentedString(eipId)).append("\n");
         sb.append("    eipAddress: ").append(toIndentedString(eipAddress)).append("\n");
         sb.append("    eipv6Address: ").append(toIndentedString(eipv6Address)).append("\n");
+        sb.append("    azCategory: ").append(toIndentedString(azCategory)).append("\n");
         sb.append("}");
         return sb.toString();
     }

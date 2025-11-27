@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class ListExecutionResponseData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_id")
 
     private String executionId;
@@ -97,6 +102,23 @@ public class ListExecutionResponseData {
     @JsonProperty(value = "targets")
 
     private List<Target> targets = null;
+
+    public ListExecutionResponseData withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * id
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public ListExecutionResponseData withExecutionId(String executionId) {
         this.executionId = executionId;
@@ -460,7 +482,7 @@ public class ListExecutionResponseData {
             return false;
         }
         ListExecutionResponseData that = (ListExecutionResponseData) obj;
-        return Objects.equals(this.executionId, that.executionId)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.executionId, that.executionId)
             && Objects.equals(this.documentName, that.documentName) && Objects.equals(this.documentId, that.documentId)
             && Objects.equals(this.documentVersionId, that.documentVersionId)
             && Objects.equals(this.documentVersion, that.documentVersion)
@@ -475,7 +497,8 @@ public class ListExecutionResponseData {
 
     @Override
     public int hashCode() {
-        return Objects.hash(executionId,
+        return Objects.hash(id,
+            executionId,
             documentName,
             documentId,
             documentVersionId,
@@ -498,6 +521,7 @@ public class ListExecutionResponseData {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListExecutionResponseData {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    executionId: ").append(toIndentedString(executionId)).append("\n");
         sb.append("    documentName: ").append(toIndentedString(documentName)).append("\n");
         sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");

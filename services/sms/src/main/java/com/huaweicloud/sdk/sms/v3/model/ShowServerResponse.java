@@ -65,7 +65,7 @@ public class ShowServerResponse extends SdkResponse {
     private Boolean oemSystem;
 
     /**
-     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      */
     public static final class StateEnum {
 
@@ -115,26 +115,6 @@ public class ShowServerResponse extends SdkResponse {
         public static final StateEnum DELETING = new StateEnum("deleting");
 
         /**
-         * Enum ERROR for value: "error"
-         */
-        public static final StateEnum ERROR = new StateEnum("error");
-
-        /**
-         * Enum CLONING for value: "cloning"
-         */
-        public static final StateEnum CLONING = new StateEnum("cloning");
-
-        /**
-         * Enum TESTING for value: "testing"
-         */
-        public static final StateEnum TESTING = new StateEnum("testing");
-
-        /**
-         * Enum FINISHED for value: "finished"
-         */
-        public static final StateEnum FINISHED = new StateEnum("finished");
-
-        /**
          * Enum CLEARING for value: "clearing"
          */
         public static final StateEnum CLEARING = new StateEnum("clearing");
@@ -155,11 +135,6 @@ public class ShowServerResponse extends SdkResponse {
         public static final StateEnum PREMIGREADY = new StateEnum("premigready");
 
         /**
-         * Enum PREMIGING for value: "premiging"
-         */
-        public static final StateEnum PREMIGING = new StateEnum("premiging");
-
-        /**
          * Enum PREMIGED for value: "premiged"
          */
         public static final StateEnum PREMIGED = new StateEnum("premiged");
@@ -168,6 +143,26 @@ public class ShowServerResponse extends SdkResponse {
          * Enum PREMIGFAILED for value: "premigfailed"
          */
         public static final StateEnum PREMIGFAILED = new StateEnum("premigfailed");
+
+        /**
+         * Enum CLONING for value: "cloning"
+         */
+        public static final StateEnum CLONING = new StateEnum("cloning");
+
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
+        public static final StateEnum CUTOVERING = new StateEnum("cutovering");
+
+        /**
+         * Enum FINISHED for value: "finished"
+         */
+        public static final StateEnum FINISHED = new StateEnum("finished");
+
+        /**
+         * Enum ERROR for value: "error"
+         */
+        public static final StateEnum ERROR = new StateEnum("error");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -182,17 +177,16 @@ public class ShowServerResponse extends SdkResponse {
             map.put("stopped", STOPPED);
             map.put("skipping", SKIPPING);
             map.put("deleting", DELETING);
-            map.put("error", ERROR);
-            map.put("cloning", CLONING);
-            map.put("testing", TESTING);
-            map.put("finished", FINISHED);
             map.put("clearing", CLEARING);
             map.put("cleared", CLEARED);
             map.put("clearfailed", CLEARFAILED);
             map.put("premigready", PREMIGREADY);
-            map.put("premiging", PREMIGING);
             map.put("premiged", PREMIGED);
             map.put("premigfailed", PREMIGFAILED);
+            map.put("cloning", CLONING);
+            map.put("cutovering", CUTOVERING);
+            map.put("finished", FINISHED);
+            map.put("error", ERROR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -667,7 +661,7 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     /**
-     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      * @return state
      */
     public StateEnum getState() {

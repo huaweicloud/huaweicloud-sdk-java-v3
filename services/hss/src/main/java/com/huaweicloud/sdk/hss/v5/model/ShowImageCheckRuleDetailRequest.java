@@ -212,7 +212,7 @@ public class ShowImageCheckRuleDetailRequest {
     }
 
     /**
-     * 基线类型
+     * **参数解释** : 配置检查（基线）的类型,Linux系统支持的基线一般check_type和check_name相同,例如SSH、CentOS 7。 Windows系统支持的基线一般check_type和check_name不相同，例如check_name为Windows的配置检查（基线），它的check_type包含Windows Server 2019 R2、Windows Server 2016 R2等。 **约束限制** : 不涉及 **取值范围** : check_type的值可以通过这个接口的返回数据获得：/v5/{project_id}/baseline/risk-configs **默认取值** : 不涉及 
      * @return checkType
      */
     public String getCheckType() {

@@ -22,6 +22,7 @@ import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceProxy;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddExportTask;
 import com.huaweicloud.sdk.iotda.v5.model.AddFlowControlPolicy;
 import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsResponse;
@@ -82,6 +83,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationDTO;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateExportTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateExportTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
@@ -146,6 +149,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDomainConfigurationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDomainConfigurationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteExportTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteExportTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusRequest;
@@ -218,6 +223,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDomainConfigurationsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDomainConfigurationsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListExportTasksRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListExportTasksResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusRequest;
@@ -276,6 +283,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthenticationTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerRequest;
@@ -300,6 +309,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDomainConfigurationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDomainConfigurationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowExportTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowExportTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaModuleRequest;
@@ -1833,6 +1844,45 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getInstanceId, ListCertificatesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
+        genForShowCertificate();
+
+    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForShowCertificate() {
+        // basic
+        HttpRequestDef.Builder<ShowCertificateRequest, ShowCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCertificateRequest.class, ShowCertificateResponse.class)
+                .withName("ShowCertificate")
+                .withUri("/v5/iot/{project_id}/certificates/{certificate_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, ShowCertificateRequest::setCertificateId));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateRequest::getSpAuthToken, ShowCertificateRequest::setSpAuthToken));
+        builder.<String>withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateRequest::getStageAuthToken,
+                ShowCertificateRequest::setStageAuthToken));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateRequest::getInstanceId, ShowCertificateRequest::setInstanceId));
 
         // response
 
@@ -3428,7 +3478,7 @@ public class IoTDAMeta {
                     CreateDomainConfigurationRequest.class,
                     CreateDomainConfigurationResponse.class)
                 .withName("CreateDomainConfiguration")
-                .withUri("/{project_id}/domain-configurations")
+                .withUri("/v5/iot/{project_id}/domain-configurations")
                 .withContentType("application/json");
 
         // requests
@@ -3461,7 +3511,7 @@ public class IoTDAMeta {
                     DeleteDomainConfigurationRequest.class,
                     DeleteDomainConfigurationResponse.class)
                 .withName("DeleteDomainConfiguration")
-                .withUri("/{project_id}/domain-configurations/{configuration_id}")
+                .withUri("/v5/iot/{project_id}/domain-configurations/{configuration_id}")
                 .withContentType("application/json");
 
         // requests
@@ -3492,7 +3542,7 @@ public class IoTDAMeta {
             HttpRequestDef
                 .builder(HttpMethod.GET, ListDomainConfigurationsRequest.class, ListDomainConfigurationsResponse.class)
                 .withName("ListDomainConfigurations")
-                .withUri("/{project_id}/domain-configurations")
+                .withUri("/v5/iot/{project_id}/domain-configurations")
                 .withContentType("application/json");
 
         // requests
@@ -3534,7 +3584,7 @@ public class IoTDAMeta {
         HttpRequestDef.Builder<ShowDomainConfigurationRequest, ShowDomainConfigurationResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowDomainConfigurationRequest.class, ShowDomainConfigurationResponse.class)
             .withName("ShowDomainConfiguration")
-            .withUri("/{project_id}/domain-configurations/{configuration_id}")
+            .withUri("/v5/iot/{project_id}/domain-configurations/{configuration_id}")
             .withContentType("application/json");
 
         // requests
@@ -3567,7 +3617,7 @@ public class IoTDAMeta {
                     UpdateDomainConfigurationRequest.class,
                     UpdateDomainConfigurationResponse.class)
                 .withName("UpdateDomainConfiguration")
-                .withUri("/{project_id}/domain-configurations/{configuration_id}")
+                .withUri("/v5/iot/{project_id}/domain-configurations/{configuration_id}")
                 .withContentType("application/json");
 
         // requests
@@ -3591,6 +3641,154 @@ public class IoTDAMeta {
                 UpdateDomainConfigurationRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateExportTaskRequest, CreateExportTaskResponse> createExportTask =
+        genForCreateExportTask();
+
+    private static HttpRequestDef<CreateExportTaskRequest, CreateExportTaskResponse> genForCreateExportTask() {
+        // basic
+        HttpRequestDef.Builder<CreateExportTaskRequest, CreateExportTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateExportTaskRequest.class, CreateExportTaskResponse.class)
+                .withName("CreateExportTask")
+                .withUri("/v5/iot/{project_id}/export-tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateExportTaskRequest::getInstanceId, CreateExportTaskRequest::setInstanceId));
+        builder.<AddExportTask>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddExportTask.class),
+            f -> f.withMarshaller(CreateExportTaskRequest::getBody, CreateExportTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteExportTaskRequest, DeleteExportTaskResponse> deleteExportTask =
+        genForDeleteExportTask();
+
+    private static HttpRequestDef<DeleteExportTaskRequest, DeleteExportTaskResponse> genForDeleteExportTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteExportTaskRequest, DeleteExportTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteExportTaskRequest.class, DeleteExportTaskResponse.class)
+                .withName("DeleteExportTask")
+                .withUri("/v5/iot/{project_id}/export-tasks/{export_task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("export_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteExportTaskRequest::getExportTaskId, DeleteExportTaskRequest::setExportTaskId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteExportTaskRequest::getInstanceId, DeleteExportTaskRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListExportTasksRequest, ListExportTasksResponse> listExportTasks =
+        genForListExportTasks();
+
+    private static HttpRequestDef<ListExportTasksRequest, ListExportTasksResponse> genForListExportTasks() {
+        // basic
+        HttpRequestDef.Builder<ListExportTasksRequest, ListExportTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListExportTasksRequest.class, ListExportTasksResponse.class)
+                .withName("ListExportTasks")
+                .withUri("/v5/iot/{project_id}/export-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getLimit, ListExportTasksRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getMarker, ListExportTasksRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getOffset, ListExportTasksRequest::setOffset));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getResourceType, ListExportTasksRequest::setResourceType));
+        builder.<String>withRequestField("resource_condition",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getResourceCondition,
+                ListExportTasksRequest::setResourceCondition));
+        builder.<String>withRequestField("app_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getAppType, ListExportTasksRequest::setAppType));
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getAppId, ListExportTasksRequest::setAppId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getInstanceId, ListExportTasksRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExportTaskRequest, ShowExportTaskResponse> showExportTask =
+        genForShowExportTask();
+
+    private static HttpRequestDef<ShowExportTaskRequest, ShowExportTaskResponse> genForShowExportTask() {
+        // basic
+        HttpRequestDef.Builder<ShowExportTaskRequest, ShowExportTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowExportTaskRequest.class, ShowExportTaskResponse.class)
+                .withName("ShowExportTask")
+                .withUri("/v5/iot/{project_id}/export-tasks/{export_task_id}/file")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("export_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExportTaskRequest::getExportTaskId, ShowExportTaskRequest::setExportTaskId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExportTaskRequest::getInstanceId, ShowExportTaskRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowExportTaskResponse::getBody, ShowExportTaskResponse::setBody));
 
         return builder.build();
     }
@@ -6007,7 +6205,7 @@ public class IoTDAMeta {
         HttpRequestDef.Builder<CreateServerCertificateRequest, CreateServerCertificateResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateServerCertificateRequest.class, CreateServerCertificateResponse.class)
             .withName("CreateServerCertificate")
-            .withUri("/{project_id}/server-certificates")
+            .withUri("/v5/iot/{project_id}/server-certificates")
             .withContentType("application/json");
 
         // requests
@@ -6036,7 +6234,7 @@ public class IoTDAMeta {
         HttpRequestDef.Builder<DeleteServerCertificateRequest, DeleteServerCertificateResponse> builder = HttpRequestDef
             .builder(HttpMethod.DELETE, DeleteServerCertificateRequest.class, DeleteServerCertificateResponse.class)
             .withName("DeleteServerCertificate")
-            .withUri("/{project_id}/server-certificates/{server_certificate_id}")
+            .withUri("/v5/iot/{project_id}/server-certificates/{server_certificate_id}")
             .withContentType("application/json");
 
         // requests
@@ -6066,7 +6264,7 @@ public class IoTDAMeta {
         HttpRequestDef.Builder<ListServerCertificateRequest, ListServerCertificateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListServerCertificateRequest.class, ListServerCertificateResponse.class)
             .withName("ListServerCertificate")
-            .withUri("/{project_id}/server-certificates")
+            .withUri("/v5/iot/{project_id}/server-certificates")
             .withContentType("application/json");
 
         // requests
@@ -6105,7 +6303,7 @@ public class IoTDAMeta {
         HttpRequestDef.Builder<ShowServerCertificateRequest, ShowServerCertificateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowServerCertificateRequest.class, ShowServerCertificateResponse.class)
             .withName("ShowServerCertificate")
-            .withUri("/{project_id}/server-certificates/{server_certificate_id}")
+            .withUri("/v5/iot/{project_id}/server-certificates/{server_certificate_id}")
             .withContentType("application/json");
 
         // requests

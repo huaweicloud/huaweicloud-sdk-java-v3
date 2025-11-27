@@ -69,6 +69,11 @@ public class CheckRuleRiskInfoResponseInfo {
     private Boolean enableClick;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "not_enable_click_description")
+
+    private String notEnableClickDescription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_params")
 
     private List<CheckRuleFixParamInfo> ruleParams = null;
@@ -264,6 +269,23 @@ public class CheckRuleRiskInfoResponseInfo {
         this.enableClick = enableClick;
     }
 
+    public CheckRuleRiskInfoResponseInfo withNotEnableClickDescription(String notEnableClickDescription) {
+        this.notEnableClickDescription = notEnableClickDescription;
+        return this;
+    }
+
+    /**
+     * **参数解释** 不可点击的原因 **取值范围**  字符长度0-512位
+     * @return notEnableClickDescription
+     */
+    public String getNotEnableClickDescription() {
+        return notEnableClickDescription;
+    }
+
+    public void setNotEnableClickDescription(String notEnableClickDescription) {
+        this.notEnableClickDescription = notEnableClickDescription;
+    }
+
     public CheckRuleRiskInfoResponseInfo withRuleParams(List<CheckRuleFixParamInfo> ruleParams) {
         this.ruleParams = ruleParams;
         return this;
@@ -312,6 +334,7 @@ public class CheckRuleRiskInfoResponseInfo {
             && Objects.equals(this.checkRuleId, that.checkRuleId) && Objects.equals(this.hostNum, that.hostNum)
             && Objects.equals(this.scanResult, that.scanResult) && Objects.equals(this.status, that.status)
             && Objects.equals(this.enableFix, that.enableFix) && Objects.equals(this.enableClick, that.enableClick)
+            && Objects.equals(this.notEnableClickDescription, that.notEnableClickDescription)
             && Objects.equals(this.ruleParams, that.ruleParams);
     }
 
@@ -328,6 +351,7 @@ public class CheckRuleRiskInfoResponseInfo {
             status,
             enableFix,
             enableClick,
+            notEnableClickDescription,
             ruleParams);
     }
 
@@ -346,6 +370,7 @@ public class CheckRuleRiskInfoResponseInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enableFix: ").append(toIndentedString(enableFix)).append("\n");
         sb.append("    enableClick: ").append(toIndentedString(enableClick)).append("\n");
+        sb.append("    notEnableClickDescription: ").append(toIndentedString(notEnableClickDescription)).append("\n");
         sb.append("    ruleParams: ").append(toIndentedString(ruleParams)).append("\n");
         sb.append("}");
         return sb.toString();

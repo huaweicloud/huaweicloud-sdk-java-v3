@@ -19,6 +19,11 @@ public class ShowInstanceConfigurationModifyHistoryResponse extends SdkResponse 
 
     private List<ConfigurationModifyHistoryInfo> histories = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
     public ShowInstanceConfigurationModifyHistoryResponse withHistories(
         List<ConfigurationModifyHistoryInfo> histories) {
         this.histories = histories;
@@ -55,6 +60,23 @@ public class ShowInstanceConfigurationModifyHistoryResponse extends SdkResponse 
         this.histories = histories;
     }
 
+    public ShowInstanceConfigurationModifyHistoryResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,12 @@ public class ShowInstanceConfigurationModifyHistoryResponse extends SdkResponse 
             return false;
         }
         ShowInstanceConfigurationModifyHistoryResponse that = (ShowInstanceConfigurationModifyHistoryResponse) obj;
-        return Objects.equals(this.histories, that.histories);
+        return Objects.equals(this.histories, that.histories) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(histories);
+        return Objects.hash(histories, totalCount);
     }
 
     @Override
@@ -77,6 +99,7 @@ public class ShowInstanceConfigurationModifyHistoryResponse extends SdkResponse 
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceConfigurationModifyHistoryResponse {\n");
         sb.append("    histories: ").append(toIndentedString(histories)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

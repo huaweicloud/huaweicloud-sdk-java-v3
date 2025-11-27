@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.nat.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -63,6 +68,87 @@ public class PrivateSnat {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    /**
+     * 私网NAT的SNAT规则状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
+        public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
+
+        /**
+         * Enum FROZEN for value: "FROZEN"
+         */
+        public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
+
+        /**
+         * Enum INACTIVE for value: "INACTIVE"
+         */
+        public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("FROZEN", FROZEN);
+            map.put("INACTIVE", INACTIVE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private StatusEnum status;
 
     public PrivateSnat withId(String id) {
         this.id = id;
@@ -250,6 +336,23 @@ public class PrivateSnat {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public PrivateSnat withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 私网NAT的SNAT规则状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -264,7 +367,8 @@ public class PrivateSnat {
             && Objects.equals(this.virsubnetId, that.virsubnetId) && Objects.equals(this.description, that.description)
             && Objects.equals(this.transitIpAssociations, that.transitIpAssociations)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override
@@ -278,7 +382,8 @@ public class PrivateSnat {
             transitIpAssociations,
             createdAt,
             updatedAt,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            status);
     }
 
     @Override
@@ -295,6 +400,7 @@ public class PrivateSnat {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

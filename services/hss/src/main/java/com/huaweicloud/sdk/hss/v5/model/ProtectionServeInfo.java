@@ -208,7 +208,7 @@ public class ProtectionServeInfo {
     }
 
     /**
-     * 操作系统类型
+     * **参数解释**: 策略支持的操作系统 **约束限制**: 不涉及 **取值范围**: 包含如下：   - Windows : Windows系统   - Linux : Linux系统 **默认取值**: 不涉及
      * @return osType
      */
     public String getOsType() {
@@ -225,7 +225,7 @@ public class ProtectionServeInfo {
     }
 
     /**
-     * 应用防护状态 |- 应用防护状态，包含如下6种。 - 0 ：防护开启中。 - 2 ：防护成功。 - 4 ：防护失败（安装失败）。 - 6 ：未防护。 - 8 ：部分防护。 - 9 ：防护失败。
+     * **参数解释**: 应用防护状态 **约束限制**: 不涉及 **取值范围**: 包含如下7种。 - app_install_processing：防护开启中。 - app_protected：防护成功。 - app_install_failed：防护失败（安装失败）。 - app_not_configure：未防护。 - app_partially_protected：部分防护。 - app_all_failed：防护失败。 - app_uninstall_processing：卸载中。 **默认取值**: 不涉及 
      * @return raspStatus
      */
     public String getRaspStatus() {
@@ -293,7 +293,7 @@ public class ProtectionServeInfo {
     }
 
     /**
-     * Agent状态
+     * **参数解释**: Agent状态 **约束限制**: 不涉及 **取值范围**: 包含如下6种。 - installed ：已安装。 - not_installed ：未安装。 - online ：在线。 - offline ：离线。 - install_failed ：安装失败。 - installing ：安装中。 **默认取值**: 不涉及 
      * @return agentStatus
      */
     public String getAgentStatus() {

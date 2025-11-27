@@ -106,10 +106,80 @@ public class PostTask {
 
     private Boolean autoStart;
 
+    /**
+     * 操作系统类型 WINDOWS:Windows系统类型 LINUX:Linux系统类型
+     */
+    public static final class OsTypeEnum {
+
+        /**
+         * Enum WINDOWS for value: "WINDOWS"
+         */
+        public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
+
+        /**
+         * Enum LINUX for value: "LINUX"
+         */
+        public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
+
+        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsTypeEnum> createStaticFields() {
+            Map<String, OsTypeEnum> map = new HashMap<>();
+            map.put("WINDOWS", WINDOWS);
+            map.put("LINUX", LINUX);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OsTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OsTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
+        }
+
+        public static OsTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OsTypeEnum) {
+                return this.value.equals(((OsTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
-    private String osType;
+    private OsTypeEnum osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_server")
@@ -269,20 +339,20 @@ public class PostTask {
         this.autoStart = autoStart;
     }
 
-    public PostTask withOsType(String osType) {
+    public PostTask withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
 
     /**
-     * 操作系统类型
+     * 操作系统类型 WINDOWS:Windows系统类型 LINUX:Linux系统类型
      * @return osType
      */
-    public String getOsType() {
+    public OsTypeEnum getOsType() {
         return osType;
     }
 
-    public void setOsType(String osType) {
+    public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
 

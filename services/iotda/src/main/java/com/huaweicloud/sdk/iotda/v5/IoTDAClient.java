@@ -55,6 +55,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDeviceProxyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateDomainConfigurationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateExportTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateExportTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
@@ -115,6 +117,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDomainConfigurationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDomainConfigurationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteExportTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteExportTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteHarmonySoftBusRequest;
@@ -181,6 +185,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDomainConfigurationsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDomainConfigurationsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListExportTasksRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListExportTasksResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListHarmonySoftBusRequest;
@@ -231,6 +237,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthenticationTemplateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthenticationTemplateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceAuthorizerRequest;
@@ -255,6 +263,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDomainConfigurationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDomainConfigurationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowExportTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowExportTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowHarmonySoftBusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaModuleRequest;
@@ -1478,6 +1488,35 @@ public class IoTDAClient {
     public SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesInvoker(
         ListCertificatesRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.listCertificates, hcClient);
+    }
+
+    /**
+     * 查询CA证书
+     *
+     * 应用服务器可调用此接口在物联网平台查询CA证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCertificateRequest 请求对象
+     * @return ShowCertificateResponse
+     */
+    public ShowCertificateResponse showCertificate(ShowCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showCertificate);
+    }
+
+    /**
+     * 查询CA证书
+     *
+     * 应用服务器可调用此接口在物联网平台查询CA证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCertificateRequest 请求对象
+     * @return SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
+     */
+    public SyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateInvoker(
+        ShowCertificateRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showCertificate, hcClient);
     }
 
     /**
@@ -3203,6 +3242,122 @@ public class IoTDAClient {
     public SyncInvoker<UpdateDomainConfigurationRequest, UpdateDomainConfigurationResponse> updateDomainConfigurationInvoker(
         UpdateDomainConfigurationRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.updateDomainConfiguration, hcClient);
+    }
+
+    /**
+     * 创建导出任务
+     *
+     * 应用服务器可调用此接口创建资源导出任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateExportTaskRequest 请求对象
+     * @return CreateExportTaskResponse
+     */
+    public CreateExportTaskResponse createExportTask(CreateExportTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createExportTask);
+    }
+
+    /**
+     * 创建导出任务
+     *
+     * 应用服务器可调用此接口创建资源导出任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateExportTaskRequest 请求对象
+     * @return SyncInvoker<CreateExportTaskRequest, CreateExportTaskResponse>
+     */
+    public SyncInvoker<CreateExportTaskRequest, CreateExportTaskResponse> createExportTaskInvoker(
+        CreateExportTaskRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.createExportTask, hcClient);
+    }
+
+    /**
+     * 删除导出任务
+     *
+     * 应用服务器可调用此接口删除在平台创建的导出任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteExportTaskRequest 请求对象
+     * @return DeleteExportTaskResponse
+     */
+    public DeleteExportTaskResponse deleteExportTask(DeleteExportTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteExportTask);
+    }
+
+    /**
+     * 删除导出任务
+     *
+     * 应用服务器可调用此接口删除在平台创建的导出任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteExportTaskRequest 请求对象
+     * @return SyncInvoker<DeleteExportTaskRequest, DeleteExportTaskResponse>
+     */
+    public SyncInvoker<DeleteExportTaskRequest, DeleteExportTaskResponse> deleteExportTaskInvoker(
+        DeleteExportTaskRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.deleteExportTask, hcClient);
+    }
+
+    /**
+     * 查询导出任务列表
+     *
+     * 应用服务器可调用此接口查询已创建的导出任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExportTasksRequest 请求对象
+     * @return ListExportTasksResponse
+     */
+    public ListExportTasksResponse listExportTasks(ListExportTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listExportTasks);
+    }
+
+    /**
+     * 查询导出任务列表
+     *
+     * 应用服务器可调用此接口查询已创建的导出任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExportTasksRequest 请求对象
+     * @return SyncInvoker<ListExportTasksRequest, ListExportTasksResponse>
+     */
+    public SyncInvoker<ListExportTasksRequest, ListExportTasksResponse> listExportTasksInvoker(
+        ListExportTasksRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.listExportTasks, hcClient);
+    }
+
+    /**
+     * 下载导出文件
+     *
+     * 应用服务器可调用此接口下载已经完成的导出任务生成的文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowExportTaskRequest 请求对象
+     * @return ShowExportTaskResponse
+     */
+    public ShowExportTaskResponse showExportTask(ShowExportTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showExportTask);
+    }
+
+    /**
+     * 下载导出文件
+     *
+     * 应用服务器可调用此接口下载已经完成的导出任务生成的文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowExportTaskRequest 请求对象
+     * @return SyncInvoker<ShowExportTaskRequest, ShowExportTaskResponse>
+     */
+    public SyncInvoker<ShowExportTaskRequest, ShowExportTaskResponse> showExportTaskInvoker(
+        ShowExportTaskRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.showExportTask, hcClient);
     }
 
     /**

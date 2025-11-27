@@ -58,6 +58,8 @@ import com.huaweicloud.sdk.bss.v2.model.ListCustomerBillsFeeRecordsRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListCustomerBillsFeeRecordsResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListCustomerBillsMonthlyBreakDownRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListCustomerBillsMonthlyBreakDownResponse;
+import com.huaweicloud.sdk.bss.v2.model.ListCustomerCouponChangeRecordsRequest;
+import com.huaweicloud.sdk.bss.v2.model.ListCustomerCouponChangeRecordsResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListCustomerOnDemandResourcesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListCustomerOnDemandResourcesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListCustomerOrdersRequest;
@@ -1088,6 +1090,81 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getXLanguage,
                 ListCustomerBillsMonthlyBreakDownRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomerCouponChangeRecordsRequest, ListCustomerCouponChangeRecordsResponse> listCustomerCouponChangeRecords =
+        genForListCustomerCouponChangeRecords();
+
+    private static HttpRequestDef<ListCustomerCouponChangeRecordsRequest, ListCustomerCouponChangeRecordsResponse> genForListCustomerCouponChangeRecords() {
+        // basic
+        HttpRequestDef.Builder<ListCustomerCouponChangeRecordsRequest, ListCustomerCouponChangeRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCustomerCouponChangeRecordsRequest.class,
+                    ListCustomerCouponChangeRecordsResponse.class)
+                .withName("ListCustomerCouponChangeRecords")
+                .withUri("/v2/promotions/benefits/account-change-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("balance_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getBalanceType,
+                ListCustomerCouponChangeRecordsRequest::setBalanceType));
+        builder.<String>withRequestField("revenue_expense_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getRevenueExpenseType,
+                ListCustomerCouponChangeRecordsRequest::setRevenueExpenseType));
+        builder.<String>withRequestField("trade_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getTradeType,
+                ListCustomerCouponChangeRecordsRequest::setTradeType));
+        builder.<String>withRequestField("trade_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getTradeId,
+                ListCustomerCouponChangeRecordsRequest::setTradeId));
+        builder.<String>withRequestField("trade_time_begin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getTradeTimeBegin,
+                ListCustomerCouponChangeRecordsRequest::setTradeTimeBegin));
+        builder.<String>withRequestField("trade_time_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getTradeTimeEnd,
+                ListCustomerCouponChangeRecordsRequest::setTradeTimeEnd));
+        builder.<String>withRequestField("coupon_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getCouponId,
+                ListCustomerCouponChangeRecordsRequest::setCouponId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getOffset,
+                ListCustomerCouponChangeRecordsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomerCouponChangeRecordsRequest::getLimit,
+                ListCustomerCouponChangeRecordsRequest::setLimit));
 
         // response
 
@@ -3519,6 +3596,18 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getOrderId,
                 ShowRefundOrderDetailsRequest::setOrderId));
+        builder.<String>withRequestField("customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getCustomerId,
+                ShowRefundOrderDetailsRequest::setCustomerId));
+        builder.<String>withRequestField("indirect_partner_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getIndirectPartnerId,
+                ShowRefundOrderDetailsRequest::setIndirectPartnerId));
 
         // response
 

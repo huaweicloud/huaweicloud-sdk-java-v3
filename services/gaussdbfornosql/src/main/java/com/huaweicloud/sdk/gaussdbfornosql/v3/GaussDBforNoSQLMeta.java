@@ -176,6 +176,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSslCertDownloadAddressesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSslCertDownloadAddressesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyAutoNodeExpansionPolicyResponse;
@@ -2624,6 +2626,33 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getLimit, ListSlowLogsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSslCertDownloadAddressesRequest, ListSslCertDownloadAddressesResponse> listSslCertDownloadAddresses =
+        genForListSslCertDownloadAddresses();
+
+    private static HttpRequestDef<ListSslCertDownloadAddressesRequest, ListSslCertDownloadAddressesResponse> genForListSslCertDownloadAddresses() {
+        // basic
+        HttpRequestDef.Builder<ListSslCertDownloadAddressesRequest, ListSslCertDownloadAddressesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSslCertDownloadAddressesRequest.class,
+                    ListSslCertDownloadAddressesResponse.class)
+                .withName("ListSslCertDownloadAddresses")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSslCertDownloadAddressesRequest::getInstanceId,
+                ListSslCertDownloadAddressesRequest::setInstanceId));
 
         // response
 

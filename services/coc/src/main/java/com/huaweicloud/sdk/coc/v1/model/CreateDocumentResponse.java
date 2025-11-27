@@ -12,30 +12,30 @@ import java.util.Objects;
 public class CreateDocumentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "data")
 
-    private String body;
+    private String data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
 
     private String xRequestId;
 
-    public CreateDocumentResponse withBody(String body) {
-        this.body = body;
+    public CreateDocumentResponse withData(String data) {
+        this.data = data;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * **参数解释：** 创建作业，系统返回的作业id。 **取值范围：** 不涉及。
+     * @return data
      */
-    public String getBody() {
-        return body;
+    public String getData() {
+        return data;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setData(String data) {
+        this.data = data;
     }
 
     public CreateDocumentResponse withXRequestId(String xRequestId) {
@@ -66,19 +66,19 @@ public class CreateDocumentResponse extends SdkResponse {
             return false;
         }
         CreateDocumentResponse that = (CreateDocumentResponse) obj;
-        return Objects.equals(this.body, that.body) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body, xRequestId);
+        return Objects.hash(data, xRequestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDocumentResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

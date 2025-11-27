@@ -172,7 +172,7 @@ public class ListAntiVirusPaidHostsRequest {
     }
 
     /**
-     * 服务器公网IP
+     * **参数解释**: 服务器弹性IP地址。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 无 
      * @return publicIp
      */
     public String getPublicIp() {

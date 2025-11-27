@@ -40,6 +40,8 @@ import com.huaweicloud.sdk.evs.v2.model.CreateVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.CreateVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeInRecycleRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsRequest;
@@ -51,8 +53,11 @@ import com.huaweicloud.sdk.evs.v2.model.ListVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumesInRecycleRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumesInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesResponse;
+import com.huaweicloud.sdk.evs.v2.model.ModifyRecycleBinPolicyRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSRequest;
 import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSResponse;
@@ -62,15 +67,21 @@ import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.RetypeVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.RetypeVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.RetypeVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.RevertVolumeInRecycleRequest;
+import com.huaweicloud.sdk.evs.v2.model.RevertVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowRecyclePolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVersionRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVersionResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowVolumeInRecycleRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsRequest;
@@ -79,6 +90,8 @@ import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribeVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribeVolumeResponseBody;
+import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotResponse;
@@ -480,6 +493,30 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteVolumeInRecycleRequest, DeleteVolumeInRecycleResponse> deleteVolumeInRecycle =
+        genForDeleteVolumeInRecycle();
+
+    private static HttpRequestDef<DeleteVolumeInRecycleRequest, DeleteVolumeInRecycleResponse> genForDeleteVolumeInRecycle() {
+        // basic
+        HttpRequestDef.Builder<DeleteVolumeInRecycleRequest, DeleteVolumeInRecycleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteVolumeInRecycleRequest.class, DeleteVolumeInRecycleResponse.class)
+            .withName("DeleteVolumeInRecycle")
+            .withUri("/v3/{project_id}/recycle-bin-volumes/{volume_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVolumeInRecycleRequest::getVolumeId,
+                DeleteVolumeInRecycleRequest::setVolumeId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshots =
         genForListSnapshots();
 
@@ -713,6 +750,56 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListVolumesInRecycleRequest, ListVolumesInRecycleResponse> listVolumesInRecycle =
+        genForListVolumesInRecycle();
+
+    private static HttpRequestDef<ListVolumesInRecycleRequest, ListVolumesInRecycleResponse> genForListVolumesInRecycle() {
+        // basic
+        HttpRequestDef.Builder<ListVolumesInRecycleRequest, ListVolumesInRecycleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListVolumesInRecycleRequest.class, ListVolumesInRecycleResponse.class)
+            .withName("ListVolumesInRecycle")
+            .withUri("/v3/{project_id}/recycle-bin-volumes/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVolumesInRecycleRequest::getName, ListVolumesInRecycleRequest::setName));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVolumesInRecycleRequest::getStatus, ListVolumesInRecycleRequest::setStatus));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVolumesInRecycleRequest::getLimit, ListVolumesInRecycleRequest::setLimit));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVolumesInRecycleRequest::getAvailabilityZone,
+                ListVolumesInRecycleRequest::setAvailabilityZone));
+        builder.<String>withRequestField("service_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVolumesInRecycleRequest::getServiceType,
+                ListVolumesInRecycleRequest::setServiceType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVolumesInRecycleRequest::getOffset, ListVolumesInRecycleRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> modifyVolumeQoS =
         genForModifyVolumeQoS();
 
@@ -795,6 +882,30 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RevertVolumeInRecycleRequest, RevertVolumeInRecycleResponse> revertVolumeInRecycle =
+        genForRevertVolumeInRecycle();
+
+    private static HttpRequestDef<RevertVolumeInRecycleRequest, RevertVolumeInRecycleResponse> genForRevertVolumeInRecycle() {
+        // basic
+        HttpRequestDef.Builder<RevertVolumeInRecycleRequest, RevertVolumeInRecycleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RevertVolumeInRecycleRequest.class, RevertVolumeInRecycleResponse.class)
+            .withName("RevertVolumeInRecycle")
+            .withUri("/v3/{project_id}/recycle-bin-volumes/{volume_id}/revert")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevertVolumeInRecycleRequest::getVolumeId,
+                RevertVolumeInRecycleRequest::setVolumeId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RollbackSnapshotRequest, RollbackSnapshotResponse> rollbackSnapshot =
         genForRollbackSnapshot();
 
@@ -845,6 +956,24 @@ public class EvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicy =
+        genForShowRecyclePolicy();
+
+    private static HttpRequestDef<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> genForShowRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecyclePolicyRequest.class, ShowRecyclePolicyResponse.class)
+                .withName("ShowRecyclePolicy")
+                .withUri("/v3/{project_id}/recycle-bin-volumes/policy")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSnapshotRequest, ShowSnapshotResponse> showSnapshot = genForShowSnapshot();
 
     private static HttpRequestDef<ShowSnapshotRequest, ShowSnapshotResponse> genForShowSnapshot() {
@@ -883,6 +1012,29 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVolumeRequest::getVolumeId, ShowVolumeRequest::setVolumeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVolumeInRecycleRequest, ShowVolumeInRecycleResponse> showVolumeInRecycle =
+        genForShowVolumeInRecycle();
+
+    private static HttpRequestDef<ShowVolumeInRecycleRequest, ShowVolumeInRecycleResponse> genForShowVolumeInRecycle() {
+        // basic
+        HttpRequestDef.Builder<ShowVolumeInRecycleRequest, ShowVolumeInRecycleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVolumeInRecycleRequest.class, ShowVolumeInRecycleResponse.class)
+                .withName("ShowVolumeInRecycle")
+                .withUri("/v3/{project_id}/recycle-bin-volumes/{volume_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVolumeInRecycleRequest::getVolumeId, ShowVolumeInRecycleRequest::setVolumeId));
 
         // response
 
@@ -942,6 +1094,29 @@ public class EvsMeta {
             f -> f
                 .withMarshaller(UnsubscribePostpaidVolumeResponse::getBody, UnsubscribePostpaidVolumeResponse::setBody)
                 .withInnerContainerType(UnsubscribeVolumeResponseBody.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecyclePolicyRequest, UpdateRecyclePolicyResponse> updateRecyclePolicy =
+        genForUpdateRecyclePolicy();
+
+    private static HttpRequestDef<UpdateRecyclePolicyRequest, UpdateRecyclePolicyResponse> genForUpdateRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecyclePolicyRequest, UpdateRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRecyclePolicyRequest.class, UpdateRecyclePolicyResponse.class)
+                .withName("UpdateRecyclePolicy")
+                .withUri("/v3/{project_id}/recycle-bin-volumes/policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ModifyRecycleBinPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyRecycleBinPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateRecyclePolicyRequest::getBody, UpdateRecyclePolicyRequest::setBody));
+
+        // response
 
         return builder.build();
     }

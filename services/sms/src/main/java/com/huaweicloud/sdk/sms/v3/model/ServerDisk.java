@@ -365,7 +365,7 @@ public class ServerDisk {
     }
 
     /**
-     * inode数量
+     * inode大小
      * minimum: 0
      * maximum: 2147483647
      * @return inodeSize

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +38,7 @@ public class NatGatewayResponseBody {
     private String description;
 
     /**
-     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
      */
     public static final class SpecEnum {
 
@@ -61,6 +62,11 @@ public class NatGatewayResponseBody {
          */
         public static final SpecEnum _4 = new SpecEnum("4");
 
+        /**
+         * Enum _5 for value: "5"
+         */
+        public static final SpecEnum _5 = new SpecEnum("5");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -69,6 +75,7 @@ public class NatGatewayResponseBody {
             map.put("2", _2);
             map.put("3", _3);
             map.put("4", _4);
+            map.put("5", _5);
             return Collections.unmodifiableMap(map);
         }
 
@@ -124,7 +131,7 @@ public class NatGatewayResponseBody {
     private SpecEnum spec;
 
     /**
-     * 公网NAT网关实例的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"INACTIVE\"：不可用
+     * 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
      */
     public static final class StatusEnum {
 
@@ -224,7 +231,7 @@ public class NatGatewayResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private String createdAt;
+    private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "router_id")
@@ -265,6 +272,16 @@ public class NatGatewayResponseBody {
     @JsonProperty(value = "snat_rule_public_ip_limit")
 
     private Integer snatRulePublicIpLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pps_max")
+
+    private Integer ppsMax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bps_max")
+
+    private Integer bpsMax;
 
     public NatGatewayResponseBody withId(String id) {
         this.id = id;
@@ -340,7 +357,7 @@ public class NatGatewayResponseBody {
     }
 
     /**
-     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
      * @return spec
      */
     public SpecEnum getSpec() {
@@ -357,7 +374,7 @@ public class NatGatewayResponseBody {
     }
 
     /**
-     * 公网NAT网关实例的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"INACTIVE\"：不可用
+     * 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -385,20 +402,20 @@ public class NatGatewayResponseBody {
         this.adminStateUp = adminStateUp;
     }
 
-    public NatGatewayResponseBody withCreatedAt(String createdAt) {
+    public NatGatewayResponseBody withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * 公网NAT网关实例的创建时间，格式是yyyy-mm-dd hh:mm:ss.SSSSSS。
+     * 公网NAT网关实例的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -551,6 +568,44 @@ public class NatGatewayResponseBody {
         this.snatRulePublicIpLimit = snatRulePublicIpLimit;
     }
 
+    public NatGatewayResponseBody withPpsMax(Integer ppsMax) {
+        this.ppsMax = ppsMax;
+        return this;
+    }
+
+    /**
+     * 网关每秒能够接收或发送的数据包数量，代表网络设备的流量处理能力。
+     * minimum: 0
+     * maximum: 100000000
+     * @return ppsMax
+     */
+    public Integer getPpsMax() {
+        return ppsMax;
+    }
+
+    public void setPpsMax(Integer ppsMax) {
+        this.ppsMax = ppsMax;
+    }
+
+    public NatGatewayResponseBody withBpsMax(Integer bpsMax) {
+        this.bpsMax = bpsMax;
+        return this;
+    }
+
+    /**
+     * 网关每秒能够接收或发送的带宽大小，代表网络设备的流量处理能力。单位M
+     * minimum: 0
+     * maximum: 102400
+     * @return bpsMax
+     */
+    public Integer getBpsMax() {
+        return bpsMax;
+    }
+
+    public void setBpsMax(Integer bpsMax) {
+        this.bpsMax = bpsMax;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -571,7 +626,8 @@ public class NatGatewayResponseBody {
             && Objects.equals(this.ngportIpAddress, that.ngportIpAddress)
             && Objects.equals(this.billingInfo, that.billingInfo)
             && Objects.equals(this.dnatRulesLimit, that.dnatRulesLimit)
-            && Objects.equals(this.snatRulePublicIpLimit, that.snatRulePublicIpLimit);
+            && Objects.equals(this.snatRulePublicIpLimit, that.snatRulePublicIpLimit)
+            && Objects.equals(this.ppsMax, that.ppsMax) && Objects.equals(this.bpsMax, that.bpsMax);
     }
 
     @Override
@@ -591,7 +647,9 @@ public class NatGatewayResponseBody {
             ngportIpAddress,
             billingInfo,
             dnatRulesLimit,
-            snatRulePublicIpLimit);
+            snatRulePublicIpLimit,
+            ppsMax,
+            bpsMax);
     }
 
     @Override
@@ -614,6 +672,8 @@ public class NatGatewayResponseBody {
         sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    dnatRulesLimit: ").append(toIndentedString(dnatRulesLimit)).append("\n");
         sb.append("    snatRulePublicIpLimit: ").append(toIndentedString(snatRulePublicIpLimit)).append("\n");
+        sb.append("    ppsMax: ").append(toIndentedString(ppsMax)).append("\n");
+        sb.append("    bpsMax: ").append(toIndentedString(bpsMax)).append("\n");
         sb.append("}");
         return sb.toString();
     }

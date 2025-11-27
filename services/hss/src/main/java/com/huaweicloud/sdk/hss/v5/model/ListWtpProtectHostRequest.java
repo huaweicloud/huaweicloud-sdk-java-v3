@@ -159,7 +159,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 服务器公网IP
+     * **参数解释**: 服务器弹性IP地址。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 无 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -193,7 +193,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 服务器组名称
+     * **参数解释**: 服务器组名称。 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 无 
      * @return groupName
      */
     public String getGroupName() {
@@ -210,7 +210,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 操作系统类型，包含如下2种。   - Linux：Linux。   - Windows：Windows。
+     * **参数解释**: 操作系统类型。 **约束限制**: 不涉及 **取值范围**: - Linux：Linux操作系统。 - Windows：Windows操作系统。  **默认取值**: 无 
      * @return osType
      */
     public String getOsType() {
@@ -227,7 +227,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 资产重要性，包含如下3种   - important ：重要资产   - common ：一般资产   - test ：测试资产
+     * **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产。 - common：一般资产。 - test：测试资产。  **默认取值**： 无 
      * @return assetValue
      */
     public String getAssetValue() {
@@ -282,7 +282,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * **参数解释**: 网页防篡改防护开启状态 **约束限制**: 不涉及 **取值范围**: - opened ：已开启网页防篡改防护。  **默认取值**: 不涉及 
+     * **参数解释**: 网页防篡改防护开启状态。 **约束限制**: 不涉及 **取值范围**: - opened ：已开启网页防篡改防护。  **默认取值**: 无 
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -299,7 +299,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * **参数解释**: 网页防篡改详细防护状态 **约束限制**: 不涉及 **取值范围**: - opened : 防护中。 - opening : 开启中。 - open_failed : 防护失败。 - partial_protection : 部分防护。 - protection_interruption : 防护中断。  **默认取值**: 不涉及 
+     * **参数解释**: 网页防篡改详细防护状态。 **约束限制**: 不涉及 **取值范围**: - opened : 防护中。 - opening : 开启中。 - open_failed : 防护失败。 - partial_protection : 部分防护。 - protection_interruption : 防护中断。  **默认取值**: 无 
      * @return wtpStatus
      */
     public String getWtpStatus() {
@@ -316,7 +316,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * **参数解释**: Agent状态 **约束限制**: 不涉及 **取值范围**: - not_installed : agent未安装。 - online : agent在线。 - offline : agent不在线。  **默认取值**: 不涉及 
+     * **参数解释**: Agent状态。 **约束限制**: 不涉及 **取值范围**: - not_installed : agent未安装。 - online : agent在线。 - offline : agent不在线。  **默认取值**: 无 
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -333,7 +333,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * **参数解释**: 动态网页防篡改防护开启状态 **约束限制**: 不涉及 **取值范围**: - opened ：已开启动态网页防篡改防护。 - closed ：未开启动态网页防篡改防护。  **默认取值**: 不涉及 
+     * **参数解释**: 动态网页防篡改防护开启状态。 **约束限制**: 不涉及 **取值范围**: - opened ：已开启动态网页防篡改防护。 - closed ：未开启动态网页防篡改防护。  **默认取值**: 无 
      * @return raspStatus
      */
     public String getRaspStatus() {

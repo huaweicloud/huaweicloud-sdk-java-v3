@@ -119,11 +119,6 @@ public class PostSourceServerBody {
     private String osVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "virtualization_type")
-
-    private String virtualizationType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "linux_block_check")
 
     private String linuxBlockCheck;
@@ -458,7 +453,7 @@ public class PostSourceServerBody {
     private MigrationCycleEnum migrationCycle;
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      */
     public static final class StateEnum {
 
@@ -508,26 +503,6 @@ public class PostSourceServerBody {
         public static final StateEnum DELETING = new StateEnum("deleting");
 
         /**
-         * Enum ERROR for value: "error"
-         */
-        public static final StateEnum ERROR = new StateEnum("error");
-
-        /**
-         * Enum CLONING for value: "cloning"
-         */
-        public static final StateEnum CLONING = new StateEnum("cloning");
-
-        /**
-         * Enum CUTOVERING for value: "cutovering"
-         */
-        public static final StateEnum CUTOVERING = new StateEnum("cutovering");
-
-        /**
-         * Enum FINISHED for value: "finished"
-         */
-        public static final StateEnum FINISHED = new StateEnum("finished");
-
-        /**
          * Enum CLEARING for value: "clearing"
          */
         public static final StateEnum CLEARING = new StateEnum("clearing");
@@ -548,11 +523,6 @@ public class PostSourceServerBody {
         public static final StateEnum PREMIGREADY = new StateEnum("premigready");
 
         /**
-         * Enum PREMIGING for value: "premiging"
-         */
-        public static final StateEnum PREMIGING = new StateEnum("premiging");
-
-        /**
          * Enum PREMIGED for value: "premiged"
          */
         public static final StateEnum PREMIGED = new StateEnum("premiged");
@@ -561,6 +531,26 @@ public class PostSourceServerBody {
          * Enum PREMIGFAILED for value: "premigfailed"
          */
         public static final StateEnum PREMIGFAILED = new StateEnum("premigfailed");
+
+        /**
+         * Enum CLONING for value: "cloning"
+         */
+        public static final StateEnum CLONING = new StateEnum("cloning");
+
+        /**
+         * Enum CUTOVERING for value: "cutovering"
+         */
+        public static final StateEnum CUTOVERING = new StateEnum("cutovering");
+
+        /**
+         * Enum FINISHED for value: "finished"
+         */
+        public static final StateEnum FINISHED = new StateEnum("finished");
+
+        /**
+         * Enum ERROR for value: "error"
+         */
+        public static final StateEnum ERROR = new StateEnum("error");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -575,17 +565,16 @@ public class PostSourceServerBody {
             map.put("stopped", STOPPED);
             map.put("skipping", SKIPPING);
             map.put("deleting", DELETING);
-            map.put("error", ERROR);
-            map.put("cloning", CLONING);
-            map.put("cutovering", CUTOVERING);
-            map.put("finished", FINISHED);
             map.put("clearing", CLEARING);
             map.put("cleared", CLEARED);
             map.put("clearfailed", CLEARFAILED);
             map.put("premigready", PREMIGREADY);
-            map.put("premiging", PREMIGING);
             map.put("premiged", PREMIGED);
             map.put("premigfailed", PREMIGFAILED);
+            map.put("cloning", CLONING);
+            map.put("cutovering", CUTOVERING);
+            map.put("finished", FINISHED);
+            map.put("error", ERROR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -953,23 +942,6 @@ public class PostSourceServerBody {
 
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
-    }
-
-    public PostSourceServerBody withVirtualizationType(String virtualizationType) {
-        this.virtualizationType = virtualizationType;
-        return this;
-    }
-
-    /**
-     * 操作系统虚拟化方式
-     * @return virtualizationType
-     */
-    public String getVirtualizationType() {
-        return virtualizationType;
-    }
-
-    public void setVirtualizationType(String virtualizationType) {
-        this.virtualizationType = virtualizationType;
     }
 
     public PostSourceServerBody withLinuxBlockCheck(String linuxBlockCheck) {
@@ -1386,7 +1358,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready: 迁移演练已就绪 premiging: 迁移演练中 premiged: 迁移演练已完成 premigfailed: 迁移演练失败
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      * @return state
      */
     public StateEnum getState() {
@@ -1496,7 +1468,6 @@ public class PostSourceServerBody {
         return Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
             && Objects.equals(this.name, that.name) && Objects.equals(this.hostname, that.hostname)
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
-            && Objects.equals(this.virtualizationType, that.virtualizationType)
             && Objects.equals(this.linuxBlockCheck, that.linuxBlockCheck)
             && Objects.equals(this.firmware, that.firmware) && Objects.equals(this.cpuQuantity, that.cpuQuantity)
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.disks, that.disks)
@@ -1524,7 +1495,6 @@ public class PostSourceServerBody {
             hostname,
             osType,
             osVersion,
-            virtualizationType,
             linuxBlockCheck,
             firmware,
             cpuQuantity,
@@ -1563,7 +1533,6 @@ public class PostSourceServerBody {
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
-        sb.append("    virtualizationType: ").append(toIndentedString(virtualizationType)).append("\n");
         sb.append("    linuxBlockCheck: ").append(toIndentedString(linuxBlockCheck)).append("\n");
         sb.append("    firmware: ").append(toIndentedString(firmware)).append("\n");
         sb.append("    cpuQuantity: ").append(toIndentedString(cpuQuantity)).append("\n");

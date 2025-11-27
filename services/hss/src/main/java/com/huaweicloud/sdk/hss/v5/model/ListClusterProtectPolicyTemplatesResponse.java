@@ -30,7 +30,7 @@ public class ListClusterProtectPolicyTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 策略模板总数
+     * **参数解释**: 策略模板总数 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListClusterProtectPolicyTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 策略模板列表
+     * **参数解释**: 策略模板列表 **取值范围**: 取值0-2147483647个PolicyTemplateInfo对象 
      * @return dataList
      */
     public List<PolicyTemplateInfo> getDataList() {

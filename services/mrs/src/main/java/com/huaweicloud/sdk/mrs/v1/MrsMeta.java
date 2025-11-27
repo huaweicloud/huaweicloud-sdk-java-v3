@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.mrs.v1.model.DeleteJobExecutionRequest;
 import com.huaweicloud.sdk.mrs.v1.model.DeleteJobExecutionResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListAllTagsRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListAllTagsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListAsyncTaskStatusRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListAsyncTaskStatusResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListClusterTagsRequest;
@@ -308,6 +310,29 @@ public class MrsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAsyncTaskStatusRequest, ListAsyncTaskStatusResponse> listAsyncTaskStatus =
+        genForListAsyncTaskStatus();
+
+    private static HttpRequestDef<ListAsyncTaskStatusRequest, ListAsyncTaskStatusResponse> genForListAsyncTaskStatus() {
+        // basic
+        HttpRequestDef.Builder<ListAsyncTaskStatusRequest, ListAsyncTaskStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAsyncTaskStatusRequest.class, ListAsyncTaskStatusResponse.class)
+                .withName("ListAsyncTaskStatus")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/async_task_status/update_ecs_agency")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncTaskStatusRequest::getClusterId, ListAsyncTaskStatusRequest::setClusterId));
 
         // response
 

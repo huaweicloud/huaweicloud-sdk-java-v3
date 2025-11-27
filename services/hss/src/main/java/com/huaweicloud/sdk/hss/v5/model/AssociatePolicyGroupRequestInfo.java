@@ -56,7 +56,7 @@ public class AssociatePolicyGroupRequestInfo {
     }
 
     /**
-     * **参数解释**: 是否要对全量主机/pod实例/工作负载/集群部署策略，如果为true的话，会自动筛选符合策略组支持版本和操作系统版本的全量主机/pod实例/工作负载/集群部署策略，不需填写host_id_list，如果为false的话，需要填写host_id_list **约束限制**: 不涉及 **取值范围**: - true: 自动筛选符合策略组支持版本和操作系统版本的全量主机/pod实例/工作负载/集群部署策略，不需填写host_id_list。 - false: 非全量部署，仅对指定的主机/pod实例/工作负载/集群部署策略，需要填写host_id_list。  **默认取值**: 不涉及 
+     * **参数解释**: 是否要对全量主机/pod实例/工作负载/集群部署策略。 **约束限制**: 不涉及 **取值范围**: - true: 自动筛选符合策略组支持版本和操作系统版本的全量主机/pod实例/工作负载/集群部署策略，不需填写host_id_list。 - false: 非全量部署，仅对指定的主机/pod实例/工作负载/集群部署策略，需要填写host_id_list。  **默认取值**: 不涉及 
      * @return operateAll
      */
     public Boolean getOperateAll() {

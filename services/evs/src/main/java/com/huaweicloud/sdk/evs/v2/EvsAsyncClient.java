@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.evs.v2.model.CreateVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.CreateVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeInRecycleRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsRequest;
@@ -41,6 +43,8 @@ import com.huaweicloud.sdk.evs.v2.model.ListVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumesInRecycleRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumesInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesResponse;
 import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSRequest;
@@ -49,20 +53,28 @@ import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.RetypeVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.RetypeVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.RevertVolumeInRecycleRequest;
+import com.huaweicloud.sdk.evs.v2.model.RevertVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowRecyclePolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVersionRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVersionResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowVolumeInRecycleRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowVolumeInRecycleResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateRecyclePolicyResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequest;
@@ -554,6 +566,36 @@ public class EvsAsyncClient {
     }
 
     /**
+     * 删除回收站中单个云硬盘
+     *
+     * 删除回收站中单个云硬盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVolumeInRecycleRequest 请求对象
+     * @return CompletableFuture<DeleteVolumeInRecycleResponse>
+     */
+    public CompletableFuture<DeleteVolumeInRecycleResponse> deleteVolumeInRecycleAsync(
+        DeleteVolumeInRecycleRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.deleteVolumeInRecycle);
+    }
+
+    /**
+     * 删除回收站中单个云硬盘
+     *
+     * 删除回收站中单个云硬盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVolumeInRecycleRequest 请求对象
+     * @return AsyncInvoker<DeleteVolumeInRecycleRequest, DeleteVolumeInRecycleResponse>
+     */
+    public AsyncInvoker<DeleteVolumeInRecycleRequest, DeleteVolumeInRecycleResponse> deleteVolumeInRecycleAsyncInvoker(
+        DeleteVolumeInRecycleRequest request) {
+        return new AsyncInvoker<>(request, EvsMeta.deleteVolumeInRecycle, hcClient);
+    }
+
+    /**
      * 查询云硬盘快照详情列表
      *
      * 查询云硬盘快照详细列表信息。
@@ -669,6 +711,36 @@ public class EvsAsyncClient {
     }
 
     /**
+     * 查询回收站中所有云硬盘详情
+     *
+     * 查询回收站中所有云硬盘的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVolumesInRecycleRequest 请求对象
+     * @return CompletableFuture<ListVolumesInRecycleResponse>
+     */
+    public CompletableFuture<ListVolumesInRecycleResponse> listVolumesInRecycleAsync(
+        ListVolumesInRecycleRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.listVolumesInRecycle);
+    }
+
+    /**
+     * 查询回收站中所有云硬盘详情
+     *
+     * 查询回收站中所有云硬盘的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVolumesInRecycleRequest 请求对象
+     * @return AsyncInvoker<ListVolumesInRecycleRequest, ListVolumesInRecycleResponse>
+     */
+    public AsyncInvoker<ListVolumesInRecycleRequest, ListVolumesInRecycleResponse> listVolumesInRecycleAsyncInvoker(
+        ListVolumesInRecycleRequest request) {
+        return new AsyncInvoker<>(request, EvsMeta.listVolumesInRecycle, hcClient);
+    }
+
+    /**
      * 修改云硬盘QoS
      *
      * 调整云硬盘的iops或者吞吐量。
@@ -776,6 +848,36 @@ public class EvsAsyncClient {
     }
 
     /**
+     * 还原回收站中单个云硬盘
+     *
+     * 还原回收站中单个云硬盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RevertVolumeInRecycleRequest 请求对象
+     * @return CompletableFuture<RevertVolumeInRecycleResponse>
+     */
+    public CompletableFuture<RevertVolumeInRecycleResponse> revertVolumeInRecycleAsync(
+        RevertVolumeInRecycleRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.revertVolumeInRecycle);
+    }
+
+    /**
+     * 还原回收站中单个云硬盘
+     *
+     * 还原回收站中单个云硬盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RevertVolumeInRecycleRequest 请求对象
+     * @return AsyncInvoker<RevertVolumeInRecycleRequest, RevertVolumeInRecycleResponse>
+     */
+    public AsyncInvoker<RevertVolumeInRecycleRequest, RevertVolumeInRecycleResponse> revertVolumeInRecycleAsyncInvoker(
+        RevertVolumeInRecycleRequest request) {
+        return new AsyncInvoker<>(request, EvsMeta.revertVolumeInRecycle, hcClient);
+    }
+
+    /**
      * 回滚快照到云硬盘
      *
      * 将快照数据回滚到云硬盘。支持企业项目授权功能。
@@ -835,6 +937,35 @@ public class EvsAsyncClient {
     }
 
     /**
+     * 查询回收站策略
+     *
+     * 查询回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<ShowRecyclePolicyResponse>
+     */
+    public CompletableFuture<ShowRecyclePolicyResponse> showRecyclePolicyAsync(ShowRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.showRecyclePolicy);
+    }
+
+    /**
+     * 查询回收站策略
+     *
+     * 查询回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>
+     */
+    public AsyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyAsyncInvoker(
+        ShowRecyclePolicyRequest request) {
+        return new AsyncInvoker<>(request, EvsMeta.showRecyclePolicy, hcClient);
+    }
+
+    /**
      * 查询单个云硬盘快照详情
      *
      * 查询单个云硬盘快照信息。支持企业项目授权功能。
@@ -889,6 +1020,35 @@ public class EvsAsyncClient {
      */
     public AsyncInvoker<ShowVolumeRequest, ShowVolumeResponse> showVolumeAsyncInvoker(ShowVolumeRequest request) {
         return new AsyncInvoker<>(request, EvsMeta.showVolume, hcClient);
+    }
+
+    /**
+     * 查询回收站中单个云硬盘详情
+     *
+     * 查询回收站中单个云硬盘的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVolumeInRecycleRequest 请求对象
+     * @return CompletableFuture<ShowVolumeInRecycleResponse>
+     */
+    public CompletableFuture<ShowVolumeInRecycleResponse> showVolumeInRecycleAsync(ShowVolumeInRecycleRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.showVolumeInRecycle);
+    }
+
+    /**
+     * 查询回收站中单个云硬盘详情
+     *
+     * 查询回收站中单个云硬盘的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVolumeInRecycleRequest 请求对象
+     * @return AsyncInvoker<ShowVolumeInRecycleRequest, ShowVolumeInRecycleResponse>
+     */
+    public AsyncInvoker<ShowVolumeInRecycleRequest, ShowVolumeInRecycleResponse> showVolumeInRecycleAsyncInvoker(
+        ShowVolumeInRecycleRequest request) {
+        return new AsyncInvoker<>(request, EvsMeta.showVolumeInRecycle, hcClient);
     }
 
     /**
@@ -952,6 +1112,35 @@ public class EvsAsyncClient {
     public AsyncInvoker<UnsubscribePostpaidVolumeRequest, UnsubscribePostpaidVolumeResponse> unsubscribePostpaidVolumeAsyncInvoker(
         UnsubscribePostpaidVolumeRequest request) {
         return new AsyncInvoker<>(request, EvsMeta.unsubscribePostpaidVolume, hcClient);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<UpdateRecyclePolicyResponse>
+     */
+    public CompletableFuture<UpdateRecyclePolicyResponse> updateRecyclePolicyAsync(UpdateRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.updateRecyclePolicy);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateRecyclePolicyRequest, UpdateRecyclePolicyResponse>
+     */
+    public AsyncInvoker<UpdateRecyclePolicyRequest, UpdateRecyclePolicyResponse> updateRecyclePolicyAsyncInvoker(
+        UpdateRecyclePolicyRequest request) {
+        return new AsyncInvoker<>(request, EvsMeta.updateRecyclePolicy, hcClient);
     }
 
     /**

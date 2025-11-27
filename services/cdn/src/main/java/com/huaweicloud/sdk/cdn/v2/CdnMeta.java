@@ -11,11 +11,17 @@ import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusResponse;
 import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRulesRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateAccessControlTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateAccessControlTaskResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainByDuplicateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainByDuplicateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainTemplateRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainTemplateResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateExportTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateExportTaskResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
@@ -49,25 +55,42 @@ import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DuplicateDomainRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.EnableDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.EnableDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ExportStatsOpenRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ExportStatsOpenResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ExportTaskVo;
+import com.huaweicloud.sdk.cdn.v2.model.ExportVo;
 import com.huaweicloud.sdk.cdn.v2.model.FullUpdateRulesRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListAccessControlTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListAccessControlTaskResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListBanUrlRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListBanUrlResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopIpsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopIpsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopOriginUrlRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopOriginUrlResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopPathRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopPathResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopUasRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopUasResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainClientStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainClientStatsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListDomainConfigsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListDomainConfigsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListExportTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListExportTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListSpecialConfigurationRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListSpecialConfigurationResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListSubscriptionTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListSubscriptionTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoRequest;
@@ -89,6 +112,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainCountryStatRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainCountryStatResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainDetailByNameRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainDetailByNameResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainFullConfigRequest;
@@ -109,6 +134,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowLogsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowQuotaRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowQuotaResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowSpecialUserRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowSpecialUserResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowStatsConfigsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowStatsConfigsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTagsRequest;
@@ -143,6 +170,7 @@ import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsRequstBody;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateShareCacheGroupsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateSubscriptionTaskRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateSubscriptionTaskResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UrlAccessControlTaskRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequest;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.VerifyDomainOwnerResponse;
@@ -268,6 +296,35 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAccessControlTaskRequest, CreateAccessControlTaskResponse> createAccessControlTask =
+        genForCreateAccessControlTask();
+
+    private static HttpRequestDef<CreateAccessControlTaskRequest, CreateAccessControlTaskResponse> genForCreateAccessControlTask() {
+        // basic
+        HttpRequestDef.Builder<CreateAccessControlTaskRequest, CreateAccessControlTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAccessControlTaskRequest.class, CreateAccessControlTaskResponse.class)
+            .withName("CreateAccessControlTask")
+            .withUri("/v1.0/cdn/content/access-control-urls/{action}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("action",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAccessControlTaskRequest::getAction,
+                CreateAccessControlTaskRequest::setAction));
+        builder.<UrlAccessControlTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UrlAccessControlTaskRequestBody.class),
+            f -> f.withMarshaller(CreateAccessControlTaskRequest::getBody, CreateAccessControlTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForCreateDomain();
 
     private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForCreateDomain() {
@@ -295,6 +352,29 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDomainByDuplicateRequest, CreateDomainByDuplicateResponse> createDomainByDuplicate =
+        genForCreateDomainByDuplicate();
+
+    private static HttpRequestDef<CreateDomainByDuplicateRequest, CreateDomainByDuplicateResponse> genForCreateDomainByDuplicate() {
+        // basic
+        HttpRequestDef.Builder<CreateDomainByDuplicateRequest, CreateDomainByDuplicateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDomainByDuplicateRequest.class, CreateDomainByDuplicateResponse.class)
+            .withName("CreateDomainByDuplicate")
+            .withUri("/v1.0/cdn/configuration/domains/duplicate")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DuplicateDomainRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DuplicateDomainRequestBody.class),
+            f -> f.withMarshaller(CreateDomainByDuplicateRequest::getBody, CreateDomainByDuplicateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDomainTemplateRequest, CreateDomainTemplateResponse> createDomainTemplate =
         genForCreateDomainTemplate();
 
@@ -312,6 +392,29 @@ public class CdnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTemplateRequestBody.class),
             f -> f.withMarshaller(CreateDomainTemplateRequest::getBody, CreateDomainTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateExportTaskRequest, CreateExportTaskResponse> createExportTask =
+        genForCreateExportTask();
+
+    private static HttpRequestDef<CreateExportTaskRequest, CreateExportTaskResponse> genForCreateExportTask() {
+        // basic
+        HttpRequestDef.Builder<CreateExportTaskRequest, CreateExportTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateExportTaskRequest.class, CreateExportTaskResponse.class)
+                .withName("CreateExportTask")
+                .withUri("/v1/cdn/statistics/export-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ExportTaskVo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportTaskVo.class),
+            f -> f.withMarshaller(CreateExportTaskRequest::getBody, CreateExportTaskRequest::setBody));
 
         // response
 
@@ -833,6 +936,121 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportStatsOpenRequest, ExportStatsOpenResponse> exportStatsOpen =
+        genForExportStatsOpen();
+
+    private static HttpRequestDef<ExportStatsOpenRequest, ExportStatsOpenResponse> genForExportStatsOpen() {
+        // basic
+        HttpRequestDef.Builder<ExportStatsOpenRequest, ExportStatsOpenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportStatsOpenRequest.class, ExportStatsOpenResponse.class)
+                .withName("ExportStatsOpen")
+                .withUri("/v1.0/cdn/statistics/stats/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportStatsOpenRequest::getEnterpriseProjectId,
+                ExportStatsOpenRequest::setEnterpriseProjectId));
+        builder.<ExportVo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportVo.class),
+            f -> f.withMarshaller(ExportStatsOpenRequest::getBody, ExportStatsOpenRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAccessControlTaskRequest, ListAccessControlTaskResponse> listAccessControlTask =
+        genForListAccessControlTask();
+
+    private static HttpRequestDef<ListAccessControlTaskRequest, ListAccessControlTaskResponse> genForListAccessControlTask() {
+        // basic
+        HttpRequestDef.Builder<ListAccessControlTaskRequest, ListAccessControlTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAccessControlTaskRequest.class, ListAccessControlTaskResponse.class)
+            .withName("ListAccessControlTask")
+            .withUri("/v1.0/cdn/content/access-control-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAccessControlTaskRequest::getStartTime,
+                ListAccessControlTaskRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAccessControlTaskRequest::getEndTime, ListAccessControlTaskRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAccessControlTaskRequest::getOffset, ListAccessControlTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAccessControlTaskRequest::getLimit, ListAccessControlTaskRequest::setLimit));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessControlTaskRequest::getStatus, ListAccessControlTaskRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBanUrlRequest, ListBanUrlResponse> listBanUrl = genForListBanUrl();
+
+    private static HttpRequestDef<ListBanUrlRequest, ListBanUrlResponse> genForListBanUrl() {
+        // basic
+        HttpRequestDef.Builder<ListBanUrlRequest, ListBanUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBanUrlRequest.class, ListBanUrlResponse.class)
+                .withName("ListBanUrl")
+                .withUri("/v1.0/cdn/content/ban-urls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBanUrlRequest::getStartTime, ListBanUrlRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBanUrlRequest::getEndTime, ListBanUrlRequest::setEndTime));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBanUrlRequest::getPageSize, ListBanUrlRequest::setPageSize));
+        builder.<Integer>withRequestField("page_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBanUrlRequest::getPageNumber, ListBanUrlRequest::setPageNumber));
+        builder.<String>withRequestField("url",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBanUrlRequest::getUrl, ListBanUrlRequest::setUrl));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCdnDomainTopIpsRequest, ListCdnDomainTopIpsResponse> listCdnDomainTopIps =
         genForListCdnDomainTopIps();
 
@@ -952,6 +1170,58 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListCdnDomainTopOriginUrlRequest::getIncludeRatio,
                 ListCdnDomainTopOriginUrlRequest::setIncludeRatio));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCdnDomainTopPathRequest, ListCdnDomainTopPathResponse> listCdnDomainTopPath =
+        genForListCdnDomainTopPath();
+
+    private static HttpRequestDef<ListCdnDomainTopPathRequest, ListCdnDomainTopPathResponse> genForListCdnDomainTopPath() {
+        // basic
+        HttpRequestDef.Builder<ListCdnDomainTopPathRequest, ListCdnDomainTopPathResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListCdnDomainTopPathRequest.class, ListCdnDomainTopPathResponse.class)
+            .withName("ListCdnDomainTopPath")
+            .withUri("/v1.0/cdn/statistics/top-path")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCdnDomainTopPathRequest::getStartTime,
+                ListCdnDomainTopPathRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCdnDomainTopPathRequest::getEndTime, ListCdnDomainTopPathRequest::setEndTime));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnDomainTopPathRequest::getDomainName,
+                ListCdnDomainTopPathRequest::setDomainName));
+        builder.<String>withRequestField("stat_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnDomainTopPathRequest::getStatType, ListCdnDomainTopPathRequest::setStatType));
+        builder.<String>withRequestField("service_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnDomainTopPathRequest::getServiceArea,
+                ListCdnDomainTopPathRequest::setServiceArea));
+        builder.<String>withRequestField("user_domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnDomainTopPathRequest::getUserDomainId,
+                ListCdnDomainTopPathRequest::setUserDomainId));
 
         // response
 
@@ -1133,6 +1403,40 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDomainConfigsRequest, ListDomainConfigsResponse> listDomainConfigs =
+        genForListDomainConfigs();
+
+    private static HttpRequestDef<ListDomainConfigsRequest, ListDomainConfigsResponse> genForListDomainConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListDomainConfigsRequest, ListDomainConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDomainConfigsRequest.class, ListDomainConfigsResponse.class)
+                .withName("ListDomainConfigs")
+                .withUri("/v1.0/cdn/configuration/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainConfigsRequest::getDomainNames, ListDomainConfigsRequest::setDomainNames));
+        builder.<String>withRequestField("item",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainConfigsRequest::getItem, ListDomainConfigsRequest::setItem));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainConfigsRequest::getEnterpriseProjectId,
+                ListDomainConfigsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDomainsRequest, ListDomainsResponse> listDomains = genForListDomains();
 
     private static HttpRequestDef<ListDomainsRequest, ListDomainsResponse> genForListDomains() {
@@ -1201,6 +1505,44 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListExportTasksRequest, ListExportTasksResponse> listExportTasks =
+        genForListExportTasks();
+
+    private static HttpRequestDef<ListExportTasksRequest, ListExportTasksResponse> genForListExportTasks() {
+        // basic
+        HttpRequestDef.Builder<ListExportTasksRequest, ListExportTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListExportTasksRequest.class, ListExportTasksResponse.class)
+                .withName("ListExportTasks")
+                .withUri("/v1/cdn/statistics/export-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getLimit, ListExportTasksRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getOffset, ListExportTasksRequest::setOffset));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getTaskId, ListExportTasksRequest::setTaskId));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExportTasksRequest::getTaskName, ListExportTasksRequest::setTaskName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRuleDetailsRequest, ListRuleDetailsResponse> listRuleDetails =
         genForListRuleDetails();
 
@@ -1246,6 +1588,43 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListShareCacheGroupsRequest::getOffset, ListShareCacheGroupsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSpecialConfigurationRequest, ListSpecialConfigurationResponse> listSpecialConfiguration =
+        genForListSpecialConfiguration();
+
+    private static HttpRequestDef<ListSpecialConfigurationRequest, ListSpecialConfigurationResponse> genForListSpecialConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ListSpecialConfigurationRequest, ListSpecialConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListSpecialConfigurationRequest.class, ListSpecialConfigurationResponse.class)
+                .withName("ListSpecialConfiguration")
+                .withUri("/v1.0/cdn/configuration/special-configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSpecialConfigurationRequest::getDomainName,
+                ListSpecialConfigurationRequest::setDomainName));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSpecialConfigurationRequest::getPageSize,
+                ListSpecialConfigurationRequest::setPageSize));
+        builder.<Integer>withRequestField("page_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSpecialConfigurationRequest::getPageNumber,
+                ListSpecialConfigurationRequest::setPageNumber));
 
         // response
 
@@ -1538,6 +1917,68 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowChargeModesRequest::getServiceArea, ShowChargeModesRequest::setServiceArea));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainCountryStatRequest, ShowDomainCountryStatResponse> showDomainCountryStat =
+        genForShowDomainCountryStat();
+
+    private static HttpRequestDef<ShowDomainCountryStatRequest, ShowDomainCountryStatResponse> genForShowDomainCountryStat() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainCountryStatRequest, ShowDomainCountryStatResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainCountryStatRequest.class, ShowDomainCountryStatResponse.class)
+            .withName("ShowDomainCountryStat")
+            .withUri("/v1.0/cdn/statistics/domain-country-stats")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainCountryStatRequest::getAction, ShowDomainCountryStatRequest::setAction));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowDomainCountryStatRequest::getStartTime,
+                ShowDomainCountryStatRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowDomainCountryStatRequest::getEndTime, ShowDomainCountryStatRequest::setEndTime));
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainCountryStatRequest::getDomainName,
+                ShowDomainCountryStatRequest::setDomainName));
+        builder.<String>withRequestField("stat_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainCountryStatRequest::getStatType,
+                ShowDomainCountryStatRequest::setStatType));
+        builder.<String>withRequestField("country",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainCountryStatRequest::getCountry, ShowDomainCountryStatRequest::setCountry));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainCountryStatRequest::getGroupBy, ShowDomainCountryStatRequest::setGroupBy));
+        builder.<String>withRequestField("user_domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainCountryStatRequest::getUserDomainId,
+                ShowDomainCountryStatRequest::setUserDomainId));
 
         // response
 
@@ -2047,6 +2488,24 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSpecialUserRequest, ShowSpecialUserResponse> showSpecialUser =
+        genForShowSpecialUser();
+
+    private static HttpRequestDef<ShowSpecialUserRequest, ShowSpecialUserResponse> genForShowSpecialUser() {
+        // basic
+        HttpRequestDef.Builder<ShowSpecialUserRequest, ShowSpecialUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSpecialUserRequest.class, ShowSpecialUserResponse.class)
+                .withName("ShowSpecialUser")
+                .withUri("/v1.0/cdn/statistics/special-user")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowStatsConfigsRequest, ShowStatsConfigsResponse> showStatsConfigs =
         genForShowStatsConfigs();
 
@@ -2064,6 +2523,16 @@ public class CdnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowStatsConfigsRequest::getConfigType, ShowStatsConfigsRequest::setConfigType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStatsConfigsRequest::getLimit, ShowStatsConfigsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStatsConfigsRequest::getOffset, ShowStatsConfigsRequest::setOffset));
 
         // response
 

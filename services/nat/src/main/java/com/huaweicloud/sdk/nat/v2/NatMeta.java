@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeletePrivateNatTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeletePrivateNatTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitIpTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitIpTagsResponse;
+import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitSubnetTagsRequest;
+import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitSubnetTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateNatGatewayDnatRulesRequest;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateNatGatewayDnatRulesRequestBody;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateNatGatewayDnatRulesResponse;
@@ -45,6 +47,11 @@ import com.huaweicloud.sdk.nat.v2.model.CreateTransitIpRequestBody;
 import com.huaweicloud.sdk.nat.v2.model.CreateTransitIpResponse;
 import com.huaweicloud.sdk.nat.v2.model.CreateTransitIpTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.CreateTransitIpTagResponse;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetRequestBody;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetResponse;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.CreateTransitSubnetTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayDnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayDnatRuleResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayRequest;
@@ -65,12 +72,18 @@ import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpTagResponse;
+import com.huaweicloud.sdk.nat.v2.model.DeleteTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.DeleteTransitSubnetResponse;
+import com.huaweicloud.sdk.nat.v2.model.DeleteTransitSubnetTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.DeleteTransitSubnetTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayByTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayByTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayDnatRulesRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayDnatRulesResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySnatRulesRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySnatRulesResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySpecsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySpecsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaysRequest;
@@ -86,6 +99,8 @@ import com.huaweicloud.sdk.nat.v2.model.ListPrivateNatsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListPrivateNatsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListPrivateSnatsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListPrivateSnatsResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListSpecsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListSpecsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListTagResourceInstancesRequestBody;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpTagsResponse;
@@ -93,6 +108,12 @@ import com.huaweicloud.sdk.nat.v2.model.ListTransitIpsByTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpsByTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListTransitIpsResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetTagsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetTagsResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetsByTagsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListTransitSubnetsByTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayDnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayDnatRuleResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayRequest;
@@ -113,6 +134,10 @@ import com.huaweicloud.sdk.nat.v2.model.ShowTransitIpRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowTransitIpResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowTransitIpTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowTransitIpTagsResponse;
+import com.huaweicloud.sdk.nat.v2.model.ShowTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.ShowTransitSubnetResponse;
+import com.huaweicloud.sdk.nat.v2.model.ShowTransitSubnetTagsRequest;
+import com.huaweicloud.sdk.nat.v2.model.ShowTransitSubnetTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayDnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayDnatRuleRequestBody;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayDnatRuleResponse;
@@ -131,11 +156,341 @@ import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateNatResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateSnatOptionBody;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateSnatRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateSnatResponse;
+import com.huaweicloud.sdk.nat.v2.model.UpdateTransitSubnetRequest;
+import com.huaweicloud.sdk.nat.v2.model.UpdateTransitSubnetRequestBody;
+import com.huaweicloud.sdk.nat.v2.model.UpdateTransitSubnetResponse;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class NatMeta {
+
+    public static final HttpRequestDef<BatchCreateDeleteTransitSubnetTagsRequest, BatchCreateDeleteTransitSubnetTagsResponse> batchCreateDeleteTransitSubnetTags =
+        genForBatchCreateDeleteTransitSubnetTags();
+
+    private static HttpRequestDef<BatchCreateDeleteTransitSubnetTagsRequest, BatchCreateDeleteTransitSubnetTagsResponse> genForBatchCreateDeleteTransitSubnetTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateDeleteTransitSubnetTagsRequest, BatchCreateDeleteTransitSubnetTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateDeleteTransitSubnetTagsRequest.class,
+                    BatchCreateDeleteTransitSubnetTagsResponse.class)
+                .withName("BatchCreateDeleteTransitSubnetTags")
+                .withUri("/v3/{project_id}/transit-subnets/{resource_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateDeleteTransitSubnetTagsRequest::getResourceId,
+                BatchCreateDeleteTransitSubnetTagsRequest::setResourceId));
+        builder.<BatchOperateResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateDeleteTransitSubnetTagsRequest::getBody,
+                BatchCreateDeleteTransitSubnetTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTransitSubnetRequest, CreateTransitSubnetResponse> createTransitSubnet =
+        genForCreateTransitSubnet();
+
+    private static HttpRequestDef<CreateTransitSubnetRequest, CreateTransitSubnetResponse> genForCreateTransitSubnet() {
+        // basic
+        HttpRequestDef.Builder<CreateTransitSubnetRequest, CreateTransitSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTransitSubnetRequest.class, CreateTransitSubnetResponse.class)
+                .withName("CreateTransitSubnet")
+                .withUri("/v3/{project_id}/private-nat/transit-subnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTransitSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTransitSubnetRequestBody.class),
+            f -> f.withMarshaller(CreateTransitSubnetRequest::getBody, CreateTransitSubnetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTransitSubnetTagRequest, CreateTransitSubnetTagResponse> createTransitSubnetTag =
+        genForCreateTransitSubnetTag();
+
+    private static HttpRequestDef<CreateTransitSubnetTagRequest, CreateTransitSubnetTagResponse> genForCreateTransitSubnetTag() {
+        // basic
+        HttpRequestDef.Builder<CreateTransitSubnetTagRequest, CreateTransitSubnetTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateTransitSubnetTagRequest.class, CreateTransitSubnetTagResponse.class)
+            .withName("CreateTransitSubnetTag")
+            .withUri("/v3/{project_id}/transit-subnets/{resource_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTransitSubnetTagRequest::getResourceId,
+                CreateTransitSubnetTagRequest::setResourceId));
+        builder.<CreateResourceTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateResourceTagRequestBody.class),
+            f -> f.withMarshaller(CreateTransitSubnetTagRequest::getBody, CreateTransitSubnetTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTransitSubnetRequest, DeleteTransitSubnetResponse> deleteTransitSubnet =
+        genForDeleteTransitSubnet();
+
+    private static HttpRequestDef<DeleteTransitSubnetRequest, DeleteTransitSubnetResponse> genForDeleteTransitSubnet() {
+        // basic
+        HttpRequestDef.Builder<DeleteTransitSubnetRequest, DeleteTransitSubnetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteTransitSubnetRequest.class, DeleteTransitSubnetResponse.class)
+            .withName("DeleteTransitSubnet")
+            .withUri("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("transit_subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTransitSubnetRequest::getTransitSubnetId,
+                DeleteTransitSubnetRequest::setTransitSubnetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTransitSubnetTagRequest, DeleteTransitSubnetTagResponse> deleteTransitSubnetTag =
+        genForDeleteTransitSubnetTag();
+
+    private static HttpRequestDef<DeleteTransitSubnetTagRequest, DeleteTransitSubnetTagResponse> genForDeleteTransitSubnetTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteTransitSubnetTagRequest, DeleteTransitSubnetTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteTransitSubnetTagRequest.class, DeleteTransitSubnetTagResponse.class)
+            .withName("DeleteTransitSubnetTag")
+            .withUri("/v3/{project_id}/transit-subnets/{resource_id}/tags/{key}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTransitSubnetTagRequest::getKey, DeleteTransitSubnetTagRequest::setKey));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTransitSubnetTagRequest::getResourceId,
+                DeleteTransitSubnetTagRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTransitSubnetRequest, ListTransitSubnetResponse> listTransitSubnet =
+        genForListTransitSubnet();
+
+    private static HttpRequestDef<ListTransitSubnetRequest, ListTransitSubnetResponse> genForListTransitSubnet() {
+        // basic
+        HttpRequestDef.Builder<ListTransitSubnetRequest, ListTransitSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTransitSubnetRequest.class, ListTransitSubnetResponse.class)
+                .withName("ListTransitSubnet")
+                .withUri("/v3/{project_id}/private-nat/transit-subnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getId, ListTransitSubnetRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getName, ListTransitSubnetRequest::setName));
+        builder.<List<String>>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getDescription, ListTransitSubnetRequest::setDescription));
+        builder.<List<String>>withRequestField("virsubnet_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getVirsubnetProjectId,
+                ListTransitSubnetRequest::setVirsubnetProjectId));
+        builder.<List<String>>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getVpcId, ListTransitSubnetRequest::setVpcId));
+        builder.<List<String>>withRequestField("virsubnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getVirsubnetId, ListTransitSubnetRequest::setVirsubnetId));
+        builder.<List<String>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getStatus, ListTransitSubnetRequest::setStatus));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getLimit, ListTransitSubnetRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getMarker, ListTransitSubnetRequest::setMarker));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTransitSubnetRequest::getPageReverse, ListTransitSubnetRequest::setPageReverse));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTransitSubnetTagsRequest, ListTransitSubnetTagsResponse> listTransitSubnetTags =
+        genForListTransitSubnetTags();
+
+    private static HttpRequestDef<ListTransitSubnetTagsRequest, ListTransitSubnetTagsResponse> genForListTransitSubnetTags() {
+        // basic
+        HttpRequestDef.Builder<ListTransitSubnetTagsRequest, ListTransitSubnetTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTransitSubnetTagsRequest.class, ListTransitSubnetTagsResponse.class)
+            .withName("ListTransitSubnetTags")
+            .withUri("/v3/{project_id}/transit-subnets/tags")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTransitSubnetsByTagsRequest, ListTransitSubnetsByTagsResponse> listTransitSubnetsByTags =
+        genForListTransitSubnetsByTags();
+
+    private static HttpRequestDef<ListTransitSubnetsByTagsRequest, ListTransitSubnetsByTagsResponse> genForListTransitSubnetsByTags() {
+        // basic
+        HttpRequestDef.Builder<ListTransitSubnetsByTagsRequest, ListTransitSubnetsByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ListTransitSubnetsByTagsRequest.class, ListTransitSubnetsByTagsResponse.class)
+                .withName("ListTransitSubnetsByTags")
+                .withUri("/v3/{project_id}/transit-subnets/resource_instances/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListTagResourceInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTagResourceInstancesRequestBody.class),
+            f -> f.withMarshaller(ListTransitSubnetsByTagsRequest::getBody, ListTransitSubnetsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTransitSubnetRequest, ShowTransitSubnetResponse> showTransitSubnet =
+        genForShowTransitSubnet();
+
+    private static HttpRequestDef<ShowTransitSubnetRequest, ShowTransitSubnetResponse> genForShowTransitSubnet() {
+        // basic
+        HttpRequestDef.Builder<ShowTransitSubnetRequest, ShowTransitSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTransitSubnetRequest.class, ShowTransitSubnetResponse.class)
+                .withName("ShowTransitSubnet")
+                .withUri("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("transit_subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTransitSubnetRequest::getTransitSubnetId,
+                ShowTransitSubnetRequest::setTransitSubnetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTransitSubnetTagsRequest, ShowTransitSubnetTagsResponse> showTransitSubnetTags =
+        genForShowTransitSubnetTags();
+
+    private static HttpRequestDef<ShowTransitSubnetTagsRequest, ShowTransitSubnetTagsResponse> genForShowTransitSubnetTags() {
+        // basic
+        HttpRequestDef.Builder<ShowTransitSubnetTagsRequest, ShowTransitSubnetTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTransitSubnetTagsRequest.class, ShowTransitSubnetTagsResponse.class)
+            .withName("ShowTransitSubnetTags")
+            .withUri("/v3/{project_id}/transit-subnets/{resource_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTransitSubnetTagsRequest::getResourceId,
+                ShowTransitSubnetTagsRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTransitSubnetRequest, UpdateTransitSubnetResponse> updateTransitSubnet =
+        genForUpdateTransitSubnet();
+
+    private static HttpRequestDef<UpdateTransitSubnetRequest, UpdateTransitSubnetResponse> genForUpdateTransitSubnet() {
+        // basic
+        HttpRequestDef.Builder<UpdateTransitSubnetRequest, UpdateTransitSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTransitSubnetRequest.class, UpdateTransitSubnetResponse.class)
+                .withName("UpdateTransitSubnet")
+                .withUri("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("transit_subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTransitSubnetRequest::getTransitSubnetId,
+                UpdateTransitSubnetRequest::setTransitSubnetId));
+        builder.<UpdateTransitSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTransitSubnetRequestBody.class),
+            f -> f.withMarshaller(UpdateTransitSubnetRequest::getBody, UpdateTransitSubnetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> batchCreateNatGatewayDnatRules =
         genForBatchCreateNatGatewayDnatRules();
@@ -297,6 +652,12 @@ public class NatMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getFloatingIpAddress,
                 ListNatGatewayDnatRulesRequest::setFloatingIpAddress));
+        builder.<String>withRequestField("global_eip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getGlobalEipAddress,
+                ListNatGatewayDnatRulesRequest::setGlobalEipAddress));
         builder.<List<ListNatGatewayDnatRulesRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -309,6 +670,12 @@ public class NatMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getFloatingIpId,
                 ListNatGatewayDnatRulesRequest::setFloatingIpId));
+        builder.<String>withRequestField("global_eip_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getGlobalEipId,
+                ListNatGatewayDnatRulesRequest::setGlobalEipId));
         builder.<Integer>withRequestField("internal_service_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -331,10 +698,10 @@ public class NatMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getDescription,
                 ListNatGatewayDnatRulesRequest::setDescription));
-        builder.<String>withRequestField("created_at",
+        builder.<OffsetDateTime>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
             f -> f.withMarshaller(ListNatGatewayDnatRulesRequest::getCreatedAt,
                 ListNatGatewayDnatRulesRequest::setCreatedAt));
         builder.<List<String>>withRequestField("nat_gateway_id",
@@ -426,12 +793,6 @@ public class NatMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPrivateDnatsRequest::getTransitIpId, ListPrivateDnatsRequest::setTransitIpId));
-        builder.<List<String>>withRequestField("external_ip_address",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getExternalIpAddress,
-                ListPrivateDnatsRequest::setExternalIpAddress));
         builder.<List<String>>withRequestField("network_interface_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -449,6 +810,29 @@ public class NatMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPrivateDnatsRequest::getPrivateIpAddress,
                 ListPrivateDnatsRequest::setPrivateIpAddress));
+        builder.<List<String>>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getProtocol, ListPrivateDnatsRequest::setProtocol));
+        builder.<List<String>>withRequestField("internal_service_port",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getInternalServicePort,
+                ListPrivateDnatsRequest::setInternalServicePort));
+        builder.<List<String>>withRequestField("transit_service_port",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getTransitServicePort,
+                ListPrivateDnatsRequest::setTransitServicePort));
+        builder.<List<String>>withRequestField("transit_ip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateDnatsRequest::getTransitIpAddress,
+                ListPrivateDnatsRequest::setTransitIpAddress));
 
         // response
 
@@ -1025,6 +1409,24 @@ public class NatMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListNatGatewaySpecsRequest, ListNatGatewaySpecsResponse> listNatGatewaySpecs =
+        genForListNatGatewaySpecs();
+
+    private static HttpRequestDef<ListNatGatewaySpecsRequest, ListNatGatewaySpecsResponse> genForListNatGatewaySpecs() {
+        // basic
+        HttpRequestDef.Builder<ListNatGatewaySpecsRequest, ListNatGatewaySpecsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNatGatewaySpecsRequest.class, ListNatGatewaySpecsResponse.class)
+                .withName("ListNatGatewaySpecs")
+                .withUri("/v2/{project_id}/nat_gateway_specs")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNatGatewayTagRequest, ListNatGatewayTagResponse> listNatGatewayTag =
         genForListNatGatewayTag();
 
@@ -1055,6 +1457,11 @@ public class NatMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNatGatewaysRequest::getTenantId, ListNatGatewaysRequest::setTenantId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1071,10 +1478,10 @@ public class NatMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewaysRequest::getDescription, ListNatGatewaysRequest::setDescription));
-        builder.<String>withRequestField("created_at",
+        builder.<OffsetDateTime>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
             f -> f.withMarshaller(ListNatGatewaysRequest::getCreatedAt, ListNatGatewaysRequest::setCreatedAt));
         builder.<String>withRequestField("name",
             LocationType.Query,
@@ -1117,6 +1524,16 @@ public class NatMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewaysRequest::getMarker, ListNatGatewaysRequest::setMarker));
+        builder.<ListNatGatewaysRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNatGatewaysRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(ListNatGatewaysRequest::getSortKey, ListNatGatewaysRequest::setSortKey));
+        builder.<ListNatGatewaysRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNatGatewaysRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListNatGatewaysRequest::getSortDir, ListNatGatewaysRequest::setSortDir));
 
         // response
 
@@ -1232,6 +1649,23 @@ public class NatMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTagResourceInstancesRequestBody.class),
             f -> f.withMarshaller(ListPrivateNatsByTagsRequest::getBody, ListPrivateNatsByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSpecsRequest, ListSpecsResponse> listSpecs = genForListSpecs();
+
+    private static HttpRequestDef<ListSpecsRequest, ListSpecsResponse> genForListSpecs() {
+        // basic
+        HttpRequestDef.Builder<ListSpecsRequest, ListSpecsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSpecsRequest.class, ListSpecsResponse.class)
+                .withName("ListSpecs")
+                .withUri("/v3/{project_id}/private-nat/specs")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1492,6 +1926,12 @@ public class NatMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTransitIpsRequest::getVirsubnetId, ListTransitIpsRequest::setVirsubnetId));
+        builder.<List<String>>withRequestField("transit_subnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTransitIpsRequest::getTransitSubnetId,
+                ListTransitIpsRequest::setTransitSubnetId));
 
         // response
 
@@ -1652,18 +2092,30 @@ public class NatMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getLimit, ListNatGatewaySnatRulesRequest::setLimit));
-        builder.<List<String>>withRequestField("floating_ip_address",
+        builder.<String>withRequestField("floating_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getFloatingIpAddress,
                 ListNatGatewaySnatRulesRequest::setFloatingIpAddress));
-        builder.<List<String>>withRequestField("floating_ip_id",
+        builder.<String>withRequestField("global_eip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getGlobalEipAddress,
+                ListNatGatewaySnatRulesRequest::setGlobalEipAddress));
+        builder.<String>withRequestField("floating_ip_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getFloatingIpId,
                 ListNatGatewaySnatRulesRequest::setFloatingIpId));
+        builder.<String>withRequestField("global_eip_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getGlobalEipId,
+                ListNatGatewaySnatRulesRequest::setGlobalEipId));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1675,10 +2127,10 @@ public class NatMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getDescription,
                 ListNatGatewaySnatRulesRequest::setDescription));
-        builder.<String>withRequestField("created_at",
+        builder.<OffsetDateTime>withRequestField("created_at",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
             f -> f.withMarshaller(ListNatGatewaySnatRulesRequest::getCreatedAt,
                 ListNatGatewaySnatRulesRequest::setCreatedAt));
         builder.<List<String>>withRequestField("nat_gateway_id",

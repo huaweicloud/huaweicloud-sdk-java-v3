@@ -74,6 +74,11 @@ public class HostCheckRulesResponseInfo {
     private Boolean enableClick;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_verify")
+
+    private Boolean enableVerify;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cancel_ignore_enable_click")
 
     private Boolean cancelIgnoreEnableClick;
@@ -307,6 +312,23 @@ public class HostCheckRulesResponseInfo {
         this.enableClick = enableClick;
     }
 
+    public HostCheckRulesResponseInfo withEnableVerify(Boolean enableVerify) {
+        this.enableVerify = enableVerify;
+        return this;
+    }
+
+    /**
+     * **参数解释** 该检查项是否可验证，要求为Linux且agent版本>=3.2.24 **取值范围**  - true  : 可验证 - false : 不可验证
+     * @return enableVerify
+     */
+    public Boolean getEnableVerify() {
+        return enableVerify;
+    }
+
+    public void setEnableVerify(Boolean enableVerify) {
+        this.enableVerify = enableVerify;
+    }
+
     public HostCheckRulesResponseInfo withCancelIgnoreEnableClick(Boolean cancelIgnoreEnableClick) {
         this.cancelIgnoreEnableClick = cancelIgnoreEnableClick;
         return this;
@@ -358,6 +380,7 @@ public class HostCheckRulesResponseInfo {
             && Objects.equals(this.diffDescription, that.diffDescription)
             && Objects.equals(this.description, that.description) && Objects.equals(this.enableFix, that.enableFix)
             && Objects.equals(this.enableClick, that.enableClick)
+            && Objects.equals(this.enableVerify, that.enableVerify)
             && Objects.equals(this.cancelIgnoreEnableClick, that.cancelIgnoreEnableClick)
             && Objects.equals(this.fixFailedReason, that.fixFailedReason);
     }
@@ -376,6 +399,7 @@ public class HostCheckRulesResponseInfo {
             description,
             enableFix,
             enableClick,
+            enableVerify,
             cancelIgnoreEnableClick,
             fixFailedReason);
     }
@@ -396,6 +420,7 @@ public class HostCheckRulesResponseInfo {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enableFix: ").append(toIndentedString(enableFix)).append("\n");
         sb.append("    enableClick: ").append(toIndentedString(enableClick)).append("\n");
+        sb.append("    enableVerify: ").append(toIndentedString(enableVerify)).append("\n");
         sb.append("    cancelIgnoreEnableClick: ").append(toIndentedString(cancelIgnoreEnableClick)).append("\n");
         sb.append("    fixFailedReason: ").append(toIndentedString(fixFailedReason)).append("\n");
         sb.append("}");

@@ -12,25 +12,25 @@ import java.util.Objects;
 public class UpdateResourceTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "data")
 
-    private String body;
+    private String data;
 
-    public UpdateResourceTagsResponse withBody(String body) {
-        this.body = body;
+    public UpdateResourceTagsResponse withData(String data) {
+        this.data = data;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 更新脚本指定的资源标签，系统返回的脚本ID。
+     * @return data
      */
-    public String getBody() {
-        return body;
+    public String getData() {
+        return data;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setData(String data) {
+        this.data = data;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class UpdateResourceTagsResponse extends SdkResponse {
             return false;
         }
         UpdateResourceTagsResponse that = (UpdateResourceTagsResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateResourceTagsResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

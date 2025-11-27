@@ -238,7 +238,7 @@ public class PostMigProjectBody {
     /**
      * 限制迁移速率，单位：Mbps
      * minimum: 0
-     * maximum: 10000
+     * maximum: 1000
      * @return speedLimit
      */
     public Integer getSpeedLimit() {

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Match {
 
     /**
-     * 匹配的KEY。
+     * 匹配资源实例的属性类型。 取值范围： resource_name：通过资源名称匹配
      */
     public static final class KeyEnum {
 
@@ -95,7 +95,7 @@ public class Match {
     }
 
     /**
-     * 匹配的KEY。
+     * 匹配资源实例的属性类型。 取值范围： resource_name：通过资源名称匹配
      * @return key
      */
     public KeyEnum getKey() {
@@ -112,7 +112,7 @@ public class Match {
     }
 
     /**
-     * 匹配的VALUE。
+     * 匹配资源实例的属性值。
      * @return value
      */
     public String getValue() {

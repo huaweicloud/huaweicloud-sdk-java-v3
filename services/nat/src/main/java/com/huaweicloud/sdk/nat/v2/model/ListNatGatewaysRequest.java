@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +18,11 @@ import java.util.function.Consumer;
  * Request Object
  */
 public class ListNatGatewaysRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenant_id")
+
+    private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -36,7 +42,7 @@ public class ListNatGatewaysRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private String createdAt;
+    private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -161,6 +167,11 @@ public class ListNatGatewaysRequest {
          */
         public static final SpecEnum _4 = new SpecEnum("4");
 
+        /**
+         * Enum _5 for value: "5"
+         */
+        public static final SpecEnum _5 = new SpecEnum("5");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -169,6 +180,7 @@ public class ListNatGatewaysRequest {
             map.put("2", _2);
             map.put("3", _3);
             map.put("4", _4);
+            map.put("5", _5);
             return Collections.unmodifiableMap(map);
         }
 
@@ -248,6 +260,185 @@ public class ListNatGatewaysRequest {
 
     private String marker;
 
+    /**
+     * 排序使用的key
+     */
+    public static final class SortKeyEnum {
+
+        /**
+         * Enum ID for value: "id"
+         */
+        public static final SortKeyEnum ID = new SortKeyEnum("id");
+
+        /**
+         * Enum NAME for value: "name"
+         */
+        public static final SortKeyEnum NAME = new SortKeyEnum("name");
+
+        /**
+         * Enum STATUS for value: "status"
+         */
+        public static final SortKeyEnum STATUS = new SortKeyEnum("status");
+
+        /**
+         * Enum CREATED_AT for value: "created_at"
+         */
+        public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
+
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("id", ID);
+            map.put("name", NAME);
+            map.put("status", STATUS);
+            map.put("created_at", CREATED_AT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortKeyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortKeyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
+        }
+
+        public static SortKeyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortKeyEnum) {
+                return this.value.equals(((SortKeyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private SortKeyEnum sortKey;
+
+    /**
+     * 返回结果按照升序或降序排列，默认降序desc，升序为asc
+     */
+    public static final class SortDirEnum {
+
+        /**
+         * Enum DESC for value: "desc"
+         */
+        public static final SortDirEnum DESC = new SortDirEnum("desc");
+
+        /**
+         * Enum ASC for value: "asc"
+         */
+        public static final SortDirEnum ASC = new SortDirEnum("asc");
+
+        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortDirEnum> createStaticFields() {
+            Map<String, SortDirEnum> map = new HashMap<>();
+            map.put("desc", DESC);
+            map.put("asc", ASC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortDirEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortDirEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
+        }
+
+        public static SortDirEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortDirEnum) {
+                return this.value.equals(((SortDirEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private SortDirEnum sortDir;
+
+    public ListNatGatewaysRequest withTenantId(String tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+
+    /**
+     * 项目的ID。
+     * @return tenantId
+     */
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
     public ListNatGatewaysRequest withId(String id) {
         this.id = id;
         return this;
@@ -299,20 +490,20 @@ public class ListNatGatewaysRequest {
         this.description = description;
     }
 
-    public ListNatGatewaysRequest withCreatedAt(String createdAt) {
+    public ListNatGatewaysRequest withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * 公网NAT网关实例的创建时间，格式是yyyy-mm-dd hh:mm:ss.SSSSSS。
+     * 公网NAT网关实例的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -355,7 +546,7 @@ public class ListNatGatewaysRequest {
     }
 
     /**
-     * 公网NAT网关实例的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"INACTIVE\"：不可用
+     * 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -388,7 +579,7 @@ public class ListNatGatewaysRequest {
     }
 
     /**
-     * 公网NAT网关实例的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000 \"4\"：超大型，SNAT最大连接数1000000 
+     * 公网NAT网关实例的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000 \"4\"：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
      * @return spec
      */
     public List<SpecEnum> getSpec() {
@@ -456,7 +647,7 @@ public class ListNatGatewaysRequest {
     }
 
     /**
-     * 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+     * 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
      * minimum: 1
      * maximum: 2000
      * @return limit
@@ -486,6 +677,40 @@ public class ListNatGatewaysRequest {
         this.marker = marker;
     }
 
+    public ListNatGatewaysRequest withSortKey(SortKeyEnum sortKey) {
+        this.sortKey = sortKey;
+        return this;
+    }
+
+    /**
+     * 排序使用的key
+     * @return sortKey
+     */
+    public SortKeyEnum getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(SortKeyEnum sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public ListNatGatewaysRequest withSortDir(SortDirEnum sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * 返回结果按照升序或降序排列，默认降序desc，升序为asc
+     * @return sortDir
+     */
+    public SortDirEnum getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(SortDirEnum sortDir) {
+        this.sortDir = sortDir;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -495,18 +720,21 @@ public class ListNatGatewaysRequest {
             return false;
         }
         ListNatGatewaysRequest that = (ListNatGatewaysRequest) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.spec, that.spec) && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.internalNetworkId, that.internalNetworkId)
             && Objects.equals(this.routerId, that.routerId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.marker, that.marker);
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
+        return Objects.hash(tenantId,
+            id,
             enterpriseProjectId,
             description,
             createdAt,
@@ -517,13 +745,16 @@ public class ListNatGatewaysRequest {
             internalNetworkId,
             routerId,
             limit,
-            marker);
+            marker,
+            sortKey,
+            sortDir);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNatGatewaysRequest {\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -536,6 +767,8 @@ public class ListNatGatewaysRequest {
         sb.append("    routerId: ").append(toIndentedString(routerId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -20,6 +20,11 @@ public class DownlinkVpc {
 
     private String virsubnetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ngport_ip_address")
+
+    private String ngportIpAddress;
+
     public DownlinkVpc withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -54,6 +59,23 @@ public class DownlinkVpc {
         this.virsubnetId = virsubnetId;
     }
 
+    public DownlinkVpc withNgportIpAddress(String ngportIpAddress) {
+        this.ngportIpAddress = ngportIpAddress;
+        return this;
+    }
+
+    /**
+     * 私网NAT网关的ngport_ip_addrss。
+     * @return ngportIpAddress
+     */
+    public String getNgportIpAddress() {
+        return ngportIpAddress;
+    }
+
+    public void setNgportIpAddress(String ngportIpAddress) {
+        this.ngportIpAddress = ngportIpAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class DownlinkVpc {
             return false;
         }
         DownlinkVpc that = (DownlinkVpc) obj;
-        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.virsubnetId, that.virsubnetId);
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.ngportIpAddress, that.ngportIpAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpcId, virsubnetId);
+        return Objects.hash(vpcId, virsubnetId, ngportIpAddress);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class DownlinkVpc {
         sb.append("class DownlinkVpc {\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    virsubnetId: ").append(toIndentedString(virsubnetId)).append("\n");
+        sb.append("    ngportIpAddress: ").append(toIndentedString(ngportIpAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

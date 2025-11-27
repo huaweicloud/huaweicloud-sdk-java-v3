@@ -52,7 +52,7 @@ public class ShowRaspPolicyDetailResponse extends SdkResponse {
     }
 
     /**
-     * 操作系统类型
+     * **参数解释** 操作系统类型 **取值范围** 包含以下两种: - Linux : linux系统 - Windows: windows系统
      * @return osType
      */
     public String getOsType() {

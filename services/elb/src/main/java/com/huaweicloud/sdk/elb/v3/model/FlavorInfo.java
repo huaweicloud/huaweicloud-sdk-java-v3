@@ -21,6 +21,16 @@ public class FlavorInfo {
     private Integer cps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tls_connection")
+
+    private Integer tlsConnection;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tls_cps")
+
+    private Integer tlsCps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "qps")
 
     private Integer qps;
@@ -72,6 +82,40 @@ public class FlavorInfo {
 
     public void setCps(Integer cps) {
         this.cps = cps;
+    }
+
+    public FlavorInfo withTlsConnection(Integer tlsConnection) {
+        this.tlsConnection = tlsConnection;
+        return this;
+    }
+
+    /**
+     * **参数解释**：tls最大并发连接数。单位：个。  **取值范围**：不涉及
+     * @return tlsConnection
+     */
+    public Integer getTlsConnection() {
+        return tlsConnection;
+    }
+
+    public void setTlsConnection(Integer tlsConnection) {
+        this.tlsConnection = tlsConnection;
+    }
+
+    public FlavorInfo withTlsCps(Integer tlsCps) {
+        this.tlsCps = tlsCps;
+        return this;
+    }
+
+    /**
+     * **参数解释**：tls每秒新建连接数。单位：个。  **取值范围**：不涉及
+     * @return tlsCps
+     */
+    public Integer getTlsCps() {
+        return tlsCps;
+    }
+
+    public void setTlsCps(Integer tlsCps) {
+        this.tlsCps = tlsCps;
     }
 
     public FlavorInfo withQps(Integer qps) {
@@ -152,13 +196,14 @@ public class FlavorInfo {
         }
         FlavorInfo that = (FlavorInfo) obj;
         return Objects.equals(this.connection, that.connection) && Objects.equals(this.cps, that.cps)
+            && Objects.equals(this.tlsConnection, that.tlsConnection) && Objects.equals(this.tlsCps, that.tlsCps)
             && Objects.equals(this.qps, that.qps) && Objects.equals(this.bandwidth, that.bandwidth)
             && Objects.equals(this.lcu, that.lcu) && Objects.equals(this.httpsCps, that.httpsCps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(connection, cps, qps, bandwidth, lcu, httpsCps);
+        return Objects.hash(connection, cps, tlsConnection, tlsCps, qps, bandwidth, lcu, httpsCps);
     }
 
     @Override
@@ -167,6 +212,8 @@ public class FlavorInfo {
         sb.append("class FlavorInfo {\n");
         sb.append("    connection: ").append(toIndentedString(connection)).append("\n");
         sb.append("    cps: ").append(toIndentedString(cps)).append("\n");
+        sb.append("    tlsConnection: ").append(toIndentedString(tlsConnection)).append("\n");
+        sb.append("    tlsCps: ").append(toIndentedString(tlsCps)).append("\n");
         sb.append("    qps: ").append(toIndentedString(qps)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    lcu: ").append(toIndentedString(lcu)).append("\n");

@@ -106,7 +106,7 @@ public class CreateListenerIpGroupOption {
     }
 
     /**
-     * **参数解释**：监听器关联的访问控制组的id。  **约束限制**： - 当关联的ipgroup中的ip_list为[]，且类型为白名单时，表示禁止所有ip的访问。 - 当关联的ipgroup中的ip_list为[]，且类型为黑名单时，表示允许所有ip的访问。  **取值范围**：不涉及  **默认取值**：不涉及
+     * **参数解释**：监听器关联的访问控制组的ID。关联多个IP地址组时ID使用逗号分隔。  **约束限制**： - 当关联的ipgroup中的ip_list为[]，且类型为白名单时，表示禁止所有ip的访问。 - 当关联的ipgroup中的ip_list为[]，且类型为黑名单时，表示允许所有ip的访问。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return ipgroupId
      */
     public String getIpgroupId() {

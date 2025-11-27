@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**：实例复制等异步任务查询的响应体定义。
+ * **参数解释**：实例复制等异步任务信息。
  */
 public class MainJob {
 

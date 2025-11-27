@@ -10,10 +10,24 @@ import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ClearAlarmRequest;
 import com.huaweicloud.sdk.coc.v1.model.ClearAlarmResponse;
+import com.huaweicloud.sdk.coc.v1.model.CountGroupRmsResourceRelationsRequest;
+import com.huaweicloud.sdk.coc.v1.model.CountGroupRmsResourceRelationsResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiCloudResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiCloudResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CountOtherResourceRequest;
+import com.huaweicloud.sdk.coc.v1.model.CountOtherResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.CountResourcesOfResourceViewRequest;
+import com.huaweicloud.sdk.coc.v1.model.CountResourcesOfResourceViewResponse;
+import com.huaweicloud.sdk.coc.v1.model.CountResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.CountResourcesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateApplicationComponentsRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateApplicationComponentsResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateApplicationGroupRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateApplicationGroupResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateApplicationRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateApplicationResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateAssessTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateAttachmentRequest;
@@ -28,28 +42,48 @@ import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalCocAttachmentResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateGroupRmsResourceRelationRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateGroupRmsResourceRelationResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreatePasswordChangePlanRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreatePasswordChangePlanResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateResourceTagsRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateResourceTagsResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateResourceViewsRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateResourceViewsResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateTicketRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateTicketResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateVendorAccountRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateVendorAccountResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteApplicationComponentRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteApplicationComponentResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteApplicationGroupRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteApplicationGroupResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteApplicationRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteApplicationResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteDocumentResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteGroupRmsResourceRelationRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteGroupRmsResourceRelationResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteResourceViewsRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteResourceViewsResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteTicketInfoRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteTicketInfoResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteVendorAccountRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteVendorAccountResponse;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DownloadAttachmentRequest;
@@ -86,12 +120,24 @@ import com.huaweicloud.sdk.coc.v1.model.HandleIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandlerAlarmResponse;
+import com.huaweicloud.sdk.coc.v1.model.ImportOtherResourceRequest;
+import com.huaweicloud.sdk.coc.v1.model.ImportOtherResourceResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationComponentsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationComponentsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationGroupsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationGroupsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationViewRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationViewResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAssessTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAssessTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListCapacityOrderRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListCapacityOrderResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListCapacityViewRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListCapacityViewResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDiagnosisTasksRequest;
@@ -100,12 +146,20 @@ import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListEnterpriseProjectCollectRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListEnterpriseProjectCollectResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionInstancesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionInstancesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionStepsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionStepsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListExecutionsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListGroupAliResourceRelationsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListGroupAliResourceRelationsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListGroupOtherResourceRelationsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListGroupOtherResourceRelationsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListGroupRmsResourceRelationsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListGroupRmsResourceRelationsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListIncidentSimpleTicketsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListIncidentSimpleTicketsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListIncidentsHistoriesRequest;
@@ -118,6 +172,12 @@ import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListResourceTagsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListResourceTagsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListResourceViewsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListResourceViewsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListResourcesOfResourceViewRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListResourcesOfResourceViewResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryRequest;
@@ -138,6 +198,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListTicketsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListTicketsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListVendorAccountRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListVendorAccountResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
@@ -168,26 +230,46 @@ import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowTicketInfoResponse;
+import com.huaweicloud.sdk.coc.v1.model.SyncGroupResourceRequest;
+import com.huaweicloud.sdk.coc.v1.model.SyncGroupResourceResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncMultiCloudResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncMultiCloudResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.SyncResourceAgentRequest;
+import com.huaweicloud.sdk.coc.v1.model.SyncResourceAgentResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.SyncResourcesOfResourceViewRequest;
+import com.huaweicloud.sdk.coc.v1.model.SyncResourcesOfResourceViewResponse;
 import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.TransferAlarmToIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateAccountPasswordRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateAccountPasswordResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateApplicationComponentRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateApplicationComponentResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateApplicationGroupRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateApplicationGroupResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateApplicationRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateApplicationResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateChangeRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateChangeResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateEnterpriseProjectCollectRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateEnterpriseProjectCollectResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateGroupRmsResourceRelationRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateGroupRmsResourceRelationResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateResourceViewsRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateResourceViewsResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateTicketRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateTicketResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateVendorAccountRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateVendorAccountResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -444,6 +526,93 @@ public class CocAsyncClient {
     }
 
     /**
+     * 创建应用
+     *
+     * 创建应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateApplicationRequest 请求对象
+     * @return CompletableFuture<CreateApplicationResponse>
+     */
+    public CompletableFuture<CreateApplicationResponse> createApplicationAsync(CreateApplicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createApplication);
+    }
+
+    /**
+     * 创建应用
+     *
+     * 创建应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateApplicationRequest 请求对象
+     * @return AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
+     */
+    public AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse> createApplicationAsyncInvoker(
+        CreateApplicationRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createApplication, hcClient);
+    }
+
+    /**
+     * 删除应用
+     *
+     * 删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteApplicationRequest 请求对象
+     * @return CompletableFuture<DeleteApplicationResponse>
+     */
+    public CompletableFuture<DeleteApplicationResponse> deleteApplicationAsync(DeleteApplicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.deleteApplication);
+    }
+
+    /**
+     * 删除应用
+     *
+     * 删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteApplicationRequest 请求对象
+     * @return AsyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
+     */
+    public AsyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplicationAsyncInvoker(
+        DeleteApplicationRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.deleteApplication, hcClient);
+    }
+
+    /**
+     * 修改应用
+     *
+     * 修改应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateApplicationRequest 请求对象
+     * @return CompletableFuture<UpdateApplicationResponse>
+     */
+    public CompletableFuture<UpdateApplicationResponse> updateApplicationAsync(UpdateApplicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateApplication);
+    }
+
+    /**
+     * 修改应用
+     *
+     * 修改应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateApplicationRequest 请求对象
+     * @return AsyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse>
+     */
+    public AsyncInvoker<UpdateApplicationRequest, UpdateApplicationResponse> updateApplicationAsyncInvoker(
+        UpdateApplicationRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateApplication, hcClient);
+    }
+
+    /**
      * 批量创建应用，分组，组件
      *
      * 批量创建应用，分组，组件。
@@ -471,6 +640,35 @@ public class CocAsyncClient {
     public AsyncInvoker<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> batchCreateApplicationViewAsyncInvoker(
         BatchCreateApplicationViewRequest request) {
         return new AsyncInvoker<>(request, CocMeta.batchCreateApplicationView, hcClient);
+    }
+
+    /**
+     * 查询应用、组件、分组名称列表
+     *
+     * 查询应用、组件、分组名称列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicationViewRequest 请求对象
+     * @return CompletableFuture<ListApplicationViewResponse>
+     */
+    public CompletableFuture<ListApplicationViewResponse> listApplicationViewAsync(ListApplicationViewRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listApplicationView);
+    }
+
+    /**
+     * 查询应用、组件、分组名称列表
+     *
+     * 查询应用、组件、分组名称列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicationViewRequest 请求对象
+     * @return AsyncInvoker<ListApplicationViewRequest, ListApplicationViewResponse>
+     */
+    public AsyncInvoker<ListApplicationViewRequest, ListApplicationViewResponse> listApplicationViewAsyncInvoker(
+        ListApplicationViewRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listApplicationView, hcClient);
     }
 
     /**
@@ -738,6 +936,126 @@ public class CocAsyncClient {
     }
 
     /**
+     * 创建组件
+     *
+     * 创建组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateApplicationComponentsRequest 请求对象
+     * @return CompletableFuture<CreateApplicationComponentsResponse>
+     */
+    public CompletableFuture<CreateApplicationComponentsResponse> createApplicationComponentsAsync(
+        CreateApplicationComponentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createApplicationComponents);
+    }
+
+    /**
+     * 创建组件
+     *
+     * 创建组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateApplicationComponentsRequest 请求对象
+     * @return AsyncInvoker<CreateApplicationComponentsRequest, CreateApplicationComponentsResponse>
+     */
+    public AsyncInvoker<CreateApplicationComponentsRequest, CreateApplicationComponentsResponse> createApplicationComponentsAsyncInvoker(
+        CreateApplicationComponentsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createApplicationComponents, hcClient);
+    }
+
+    /**
+     * 删除组件
+     *
+     * 删除组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteApplicationComponentRequest 请求对象
+     * @return CompletableFuture<DeleteApplicationComponentResponse>
+     */
+    public CompletableFuture<DeleteApplicationComponentResponse> deleteApplicationComponentAsync(
+        DeleteApplicationComponentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.deleteApplicationComponent);
+    }
+
+    /**
+     * 删除组件
+     *
+     * 删除组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteApplicationComponentRequest 请求对象
+     * @return AsyncInvoker<DeleteApplicationComponentRequest, DeleteApplicationComponentResponse>
+     */
+    public AsyncInvoker<DeleteApplicationComponentRequest, DeleteApplicationComponentResponse> deleteApplicationComponentAsyncInvoker(
+        DeleteApplicationComponentRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.deleteApplicationComponent, hcClient);
+    }
+
+    /**
+     * 查询组件
+     *
+     * 查询组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicationComponentsRequest 请求对象
+     * @return CompletableFuture<ListApplicationComponentsResponse>
+     */
+    public CompletableFuture<ListApplicationComponentsResponse> listApplicationComponentsAsync(
+        ListApplicationComponentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listApplicationComponents);
+    }
+
+    /**
+     * 查询组件
+     *
+     * 查询组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicationComponentsRequest 请求对象
+     * @return AsyncInvoker<ListApplicationComponentsRequest, ListApplicationComponentsResponse>
+     */
+    public AsyncInvoker<ListApplicationComponentsRequest, ListApplicationComponentsResponse> listApplicationComponentsAsyncInvoker(
+        ListApplicationComponentsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listApplicationComponents, hcClient);
+    }
+
+    /**
+     * 修改组件
+     *
+     * 修改组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateApplicationComponentRequest 请求对象
+     * @return CompletableFuture<UpdateApplicationComponentResponse>
+     */
+    public CompletableFuture<UpdateApplicationComponentResponse> updateApplicationComponentAsync(
+        UpdateApplicationComponentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateApplicationComponent);
+    }
+
+    /**
+     * 修改组件
+     *
+     * 修改组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateApplicationComponentRequest 请求对象
+     * @return AsyncInvoker<UpdateApplicationComponentRequest, UpdateApplicationComponentResponse>
+     */
+    public AsyncInvoker<UpdateApplicationComponentRequest, UpdateApplicationComponentResponse> updateApplicationComponentAsyncInvoker(
+        UpdateApplicationComponentRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateApplicationComponent, hcClient);
+    }
+
+    /**
      * 支持用户自主接入告警数据
      *
      * 支持租户将自开发的监控系统按照标准化集成至COC，集成后告警会按照标准格式上报至COC告警中心
@@ -765,6 +1083,64 @@ public class CocAsyncClient {
     public AsyncInvoker<CreateReportCustomEventRequest, CreateReportCustomEventResponse> createReportCustomEventAsyncInvoker(
         CreateReportCustomEventRequest request) {
         return new AsyncInvoker<>(request, CocMeta.createReportCustomEvent, hcClient);
+    }
+
+    /**
+     * 查询线下IDC资源数量
+     *
+     * 查询IDC离线资源的数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountOtherResourceRequest 请求对象
+     * @return CompletableFuture<CountOtherResourceResponse>
+     */
+    public CompletableFuture<CountOtherResourceResponse> countOtherResourceAsync(CountOtherResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.countOtherResource);
+    }
+
+    /**
+     * 查询线下IDC资源数量
+     *
+     * 查询IDC离线资源的数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountOtherResourceRequest 请求对象
+     * @return AsyncInvoker<CountOtherResourceRequest, CountOtherResourceResponse>
+     */
+    public AsyncInvoker<CountOtherResourceRequest, CountOtherResourceResponse> countOtherResourceAsyncInvoker(
+        CountOtherResourceRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.countOtherResource, hcClient);
+    }
+
+    /**
+     * 导入IDC离线资源
+     *
+     * 管理线下设备提供IDC离线资源纳管功能-导入IDC离线资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportOtherResourceRequest 请求对象
+     * @return CompletableFuture<ImportOtherResourceResponse>
+     */
+    public CompletableFuture<ImportOtherResourceResponse> importOtherResourceAsync(ImportOtherResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.importOtherResource);
+    }
+
+    /**
+     * 导入IDC离线资源
+     *
+     * 管理线下设备提供IDC离线资源纳管功能-导入IDC离线资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportOtherResourceRequest 请求对象
+     * @return AsyncInvoker<ImportOtherResourceRequest, ImportOtherResourceResponse>
+     */
+    public AsyncInvoker<ImportOtherResourceRequest, ImportOtherResourceResponse> importOtherResourceAsyncInvoker(
+        ImportOtherResourceRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.importOtherResource, hcClient);
     }
 
     /**
@@ -1201,6 +1577,66 @@ public class CocAsyncClient {
     public AsyncInvoker<UpdateDocumentRequest, UpdateDocumentResponse> updateDocumentAsyncInvoker(
         UpdateDocumentRequest request) {
         return new AsyncInvoker<>(request, CocMeta.updateDocument, hcClient);
+    }
+
+    /**
+     * 查询企业项目收藏
+     *
+     * 查询企业项目收藏。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEnterpriseProjectCollectRequest 请求对象
+     * @return CompletableFuture<ListEnterpriseProjectCollectResponse>
+     */
+    public CompletableFuture<ListEnterpriseProjectCollectResponse> listEnterpriseProjectCollectAsync(
+        ListEnterpriseProjectCollectRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listEnterpriseProjectCollect);
+    }
+
+    /**
+     * 查询企业项目收藏
+     *
+     * 查询企业项目收藏。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEnterpriseProjectCollectRequest 请求对象
+     * @return AsyncInvoker<ListEnterpriseProjectCollectRequest, ListEnterpriseProjectCollectResponse>
+     */
+    public AsyncInvoker<ListEnterpriseProjectCollectRequest, ListEnterpriseProjectCollectResponse> listEnterpriseProjectCollectAsyncInvoker(
+        ListEnterpriseProjectCollectRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listEnterpriseProjectCollect, hcClient);
+    }
+
+    /**
+     * 更新企业项目收藏
+     *
+     * 更新企业项目收藏。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEnterpriseProjectCollectRequest 请求对象
+     * @return CompletableFuture<UpdateEnterpriseProjectCollectResponse>
+     */
+    public CompletableFuture<UpdateEnterpriseProjectCollectResponse> updateEnterpriseProjectCollectAsync(
+        UpdateEnterpriseProjectCollectRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateEnterpriseProjectCollect);
+    }
+
+    /**
+     * 更新企业项目收藏
+     *
+     * 更新企业项目收藏。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEnterpriseProjectCollectRequest 请求对象
+     * @return AsyncInvoker<UpdateEnterpriseProjectCollectRequest, UpdateEnterpriseProjectCollectResponse>
+     */
+    public AsyncInvoker<UpdateEnterpriseProjectCollectRequest, UpdateEnterpriseProjectCollectResponse> updateEnterpriseProjectCollectAsyncInvoker(
+        UpdateEnterpriseProjectCollectRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateEnterpriseProjectCollect, hcClient);
     }
 
     /**
@@ -1906,6 +2342,423 @@ public class CocAsyncClient {
     }
 
     /**
+     * 创建分组
+     *
+     * 创建分组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateApplicationGroupRequest 请求对象
+     * @return CompletableFuture<CreateApplicationGroupResponse>
+     */
+    public CompletableFuture<CreateApplicationGroupResponse> createApplicationGroupAsync(
+        CreateApplicationGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createApplicationGroup);
+    }
+
+    /**
+     * 创建分组
+     *
+     * 创建分组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateApplicationGroupRequest 请求对象
+     * @return AsyncInvoker<CreateApplicationGroupRequest, CreateApplicationGroupResponse>
+     */
+    public AsyncInvoker<CreateApplicationGroupRequest, CreateApplicationGroupResponse> createApplicationGroupAsyncInvoker(
+        CreateApplicationGroupRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createApplicationGroup, hcClient);
+    }
+
+    /**
+     * 删除分组
+     *
+     * 删除分组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteApplicationGroupRequest 请求对象
+     * @return CompletableFuture<DeleteApplicationGroupResponse>
+     */
+    public CompletableFuture<DeleteApplicationGroupResponse> deleteApplicationGroupAsync(
+        DeleteApplicationGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.deleteApplicationGroup);
+    }
+
+    /**
+     * 删除分组
+     *
+     * 删除分组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteApplicationGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteApplicationGroupRequest, DeleteApplicationGroupResponse>
+     */
+    public AsyncInvoker<DeleteApplicationGroupRequest, DeleteApplicationGroupResponse> deleteApplicationGroupAsyncInvoker(
+        DeleteApplicationGroupRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.deleteApplicationGroup, hcClient);
+    }
+
+    /**
+     * 查询分组
+     *
+     * 查询应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicationGroupsRequest 请求对象
+     * @return CompletableFuture<ListApplicationGroupsResponse>
+     */
+    public CompletableFuture<ListApplicationGroupsResponse> listApplicationGroupsAsync(
+        ListApplicationGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listApplicationGroups);
+    }
+
+    /**
+     * 查询分组
+     *
+     * 查询应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicationGroupsRequest 请求对象
+     * @return AsyncInvoker<ListApplicationGroupsRequest, ListApplicationGroupsResponse>
+     */
+    public AsyncInvoker<ListApplicationGroupsRequest, ListApplicationGroupsResponse> listApplicationGroupsAsyncInvoker(
+        ListApplicationGroupsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listApplicationGroups, hcClient);
+    }
+
+    /**
+     * 分组智能同步资源
+     *
+     * 分组智能同步资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncGroupResourceRequest 请求对象
+     * @return CompletableFuture<SyncGroupResourceResponse>
+     */
+    public CompletableFuture<SyncGroupResourceResponse> syncGroupResourceAsync(SyncGroupResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.syncGroupResource);
+    }
+
+    /**
+     * 分组智能同步资源
+     *
+     * 分组智能同步资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncGroupResourceRequest 请求对象
+     * @return AsyncInvoker<SyncGroupResourceRequest, SyncGroupResourceResponse>
+     */
+    public AsyncInvoker<SyncGroupResourceRequest, SyncGroupResourceResponse> syncGroupResourceAsyncInvoker(
+        SyncGroupResourceRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.syncGroupResource, hcClient);
+    }
+
+    /**
+     * 修改分组
+     *
+     * 修改分组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateApplicationGroupRequest 请求对象
+     * @return CompletableFuture<UpdateApplicationGroupResponse>
+     */
+    public CompletableFuture<UpdateApplicationGroupResponse> updateApplicationGroupAsync(
+        UpdateApplicationGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateApplicationGroup);
+    }
+
+    /**
+     * 修改分组
+     *
+     * 修改分组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateApplicationGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateApplicationGroupRequest, UpdateApplicationGroupResponse>
+     */
+    public AsyncInvoker<UpdateApplicationGroupRequest, UpdateApplicationGroupResponse> updateApplicationGroupAsyncInvoker(
+        UpdateApplicationGroupRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateApplicationGroup, hcClient);
+    }
+
+    /**
+     * 查询分组关联的阿里云资源
+     *
+     * 查询分组关联的阿里云资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupAliResourceRelationsRequest 请求对象
+     * @return CompletableFuture<ListGroupAliResourceRelationsResponse>
+     */
+    public CompletableFuture<ListGroupAliResourceRelationsResponse> listGroupAliResourceRelationsAsync(
+        ListGroupAliResourceRelationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listGroupAliResourceRelations);
+    }
+
+    /**
+     * 查询分组关联的阿里云资源
+     *
+     * 查询分组关联的阿里云资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupAliResourceRelationsRequest 请求对象
+     * @return AsyncInvoker<ListGroupAliResourceRelationsRequest, ListGroupAliResourceRelationsResponse>
+     */
+    public AsyncInvoker<ListGroupAliResourceRelationsRequest, ListGroupAliResourceRelationsResponse> listGroupAliResourceRelationsAsyncInvoker(
+        ListGroupAliResourceRelationsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listGroupAliResourceRelations, hcClient);
+    }
+
+    /**
+     * 查询分组关联的离线资源
+     *
+     * 查询分组关联的离线资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupOtherResourceRelationsRequest 请求对象
+     * @return CompletableFuture<ListGroupOtherResourceRelationsResponse>
+     */
+    public CompletableFuture<ListGroupOtherResourceRelationsResponse> listGroupOtherResourceRelationsAsync(
+        ListGroupOtherResourceRelationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listGroupOtherResourceRelations);
+    }
+
+    /**
+     * 查询分组关联的离线资源
+     *
+     * 查询分组关联的离线资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupOtherResourceRelationsRequest 请求对象
+     * @return AsyncInvoker<ListGroupOtherResourceRelationsRequest, ListGroupOtherResourceRelationsResponse>
+     */
+    public AsyncInvoker<ListGroupOtherResourceRelationsRequest, ListGroupOtherResourceRelationsResponse> listGroupOtherResourceRelationsAsyncInvoker(
+        ListGroupOtherResourceRelationsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listGroupOtherResourceRelations, hcClient);
+    }
+
+    /**
+     * 查询分组关联的资源总数
+     *
+     * 分组管理多个资源后，可查询分组关联的资源总数， 应用id和分组id不能共存，且必填其中一个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountGroupRmsResourceRelationsRequest 请求对象
+     * @return CompletableFuture<CountGroupRmsResourceRelationsResponse>
+     */
+    public CompletableFuture<CountGroupRmsResourceRelationsResponse> countGroupRmsResourceRelationsAsync(
+        CountGroupRmsResourceRelationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.countGroupRmsResourceRelations);
+    }
+
+    /**
+     * 查询分组关联的资源总数
+     *
+     * 分组管理多个资源后，可查询分组关联的资源总数， 应用id和分组id不能共存，且必填其中一个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountGroupRmsResourceRelationsRequest 请求对象
+     * @return AsyncInvoker<CountGroupRmsResourceRelationsRequest, CountGroupRmsResourceRelationsResponse>
+     */
+    public AsyncInvoker<CountGroupRmsResourceRelationsRequest, CountGroupRmsResourceRelationsResponse> countGroupRmsResourceRelationsAsyncInvoker(
+        CountGroupRmsResourceRelationsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.countGroupRmsResourceRelations, hcClient);
+    }
+
+    /**
+     * 创建分组资源关联
+     *
+     * 创建分组资源关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGroupRmsResourceRelationRequest 请求对象
+     * @return CompletableFuture<CreateGroupRmsResourceRelationResponse>
+     */
+    public CompletableFuture<CreateGroupRmsResourceRelationResponse> createGroupRmsResourceRelationAsync(
+        CreateGroupRmsResourceRelationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createGroupRmsResourceRelation);
+    }
+
+    /**
+     * 创建分组资源关联
+     *
+     * 创建分组资源关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGroupRmsResourceRelationRequest 请求对象
+     * @return AsyncInvoker<CreateGroupRmsResourceRelationRequest, CreateGroupRmsResourceRelationResponse>
+     */
+    public AsyncInvoker<CreateGroupRmsResourceRelationRequest, CreateGroupRmsResourceRelationResponse> createGroupRmsResourceRelationAsyncInvoker(
+        CreateGroupRmsResourceRelationRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createGroupRmsResourceRelation, hcClient);
+    }
+
+    /**
+     * 解绑分组资源关联
+     *
+     * 解绑分组资源关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGroupRmsResourceRelationRequest 请求对象
+     * @return CompletableFuture<DeleteGroupRmsResourceRelationResponse>
+     */
+    public CompletableFuture<DeleteGroupRmsResourceRelationResponse> deleteGroupRmsResourceRelationAsync(
+        DeleteGroupRmsResourceRelationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.deleteGroupRmsResourceRelation);
+    }
+
+    /**
+     * 解绑分组资源关联
+     *
+     * 解绑分组资源关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGroupRmsResourceRelationRequest 请求对象
+     * @return AsyncInvoker<DeleteGroupRmsResourceRelationRequest, DeleteGroupRmsResourceRelationResponse>
+     */
+    public AsyncInvoker<DeleteGroupRmsResourceRelationRequest, DeleteGroupRmsResourceRelationResponse> deleteGroupRmsResourceRelationAsyncInvoker(
+        DeleteGroupRmsResourceRelationRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.deleteGroupRmsResourceRelation, hcClient);
+    }
+
+    /**
+     * 查询应用、组件、分组容量数据的排名
+     *
+     * 查询应用、组件、分组容量数据的排名，其中应用、组件和分组ID，有且仅有1个有值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCapacityOrderRequest 请求对象
+     * @return CompletableFuture<ListCapacityOrderResponse>
+     */
+    public CompletableFuture<ListCapacityOrderResponse> listCapacityOrderAsync(ListCapacityOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listCapacityOrder);
+    }
+
+    /**
+     * 查询应用、组件、分组容量数据的排名
+     *
+     * 查询应用、组件、分组容量数据的排名，其中应用、组件和分组ID，有且仅有1个有值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCapacityOrderRequest 请求对象
+     * @return AsyncInvoker<ListCapacityOrderRequest, ListCapacityOrderResponse>
+     */
+    public AsyncInvoker<ListCapacityOrderRequest, ListCapacityOrderResponse> listCapacityOrderAsyncInvoker(
+        ListCapacityOrderRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listCapacityOrder, hcClient);
+    }
+
+    /**
+     * 查询应用的容量数据
+     *
+     * 云运维中心支持查看应用、子应用、组件或分组下已关联的资源容量详情，按照资源类型展示资源核心数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCapacityViewRequest 请求对象
+     * @return CompletableFuture<ListCapacityViewResponse>
+     */
+    public CompletableFuture<ListCapacityViewResponse> listCapacityViewAsync(ListCapacityViewRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listCapacityView);
+    }
+
+    /**
+     * 查询应用的容量数据
+     *
+     * 云运维中心支持查看应用、子应用、组件或分组下已关联的资源容量详情，按照资源类型展示资源核心数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCapacityViewRequest 请求对象
+     * @return AsyncInvoker<ListCapacityViewRequest, ListCapacityViewResponse>
+     */
+    public AsyncInvoker<ListCapacityViewRequest, ListCapacityViewResponse> listCapacityViewAsyncInvoker(
+        ListCapacityViewRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listCapacityView, hcClient);
+    }
+
+    /**
+     * 查询分组关联的华为云资源
+     *
+     * 查询分组关联的华为云资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupRmsResourceRelationsRequest 请求对象
+     * @return CompletableFuture<ListGroupRmsResourceRelationsResponse>
+     */
+    public CompletableFuture<ListGroupRmsResourceRelationsResponse> listGroupRmsResourceRelationsAsync(
+        ListGroupRmsResourceRelationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listGroupRmsResourceRelations);
+    }
+
+    /**
+     * 查询分组关联的华为云资源
+     *
+     * 查询分组关联的华为云资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupRmsResourceRelationsRequest 请求对象
+     * @return AsyncInvoker<ListGroupRmsResourceRelationsRequest, ListGroupRmsResourceRelationsResponse>
+     */
+    public AsyncInvoker<ListGroupRmsResourceRelationsRequest, ListGroupRmsResourceRelationsResponse> listGroupRmsResourceRelationsAsyncInvoker(
+        ListGroupRmsResourceRelationsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listGroupRmsResourceRelations, hcClient);
+    }
+
+    /**
+     * 转移资源
+     *
+     * 转移资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGroupRmsResourceRelationRequest 请求对象
+     * @return CompletableFuture<UpdateGroupRmsResourceRelationResponse>
+     */
+    public CompletableFuture<UpdateGroupRmsResourceRelationResponse> updateGroupRmsResourceRelationAsync(
+        UpdateGroupRmsResourceRelationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateGroupRmsResourceRelation);
+    }
+
+    /**
+     * 转移资源
+     *
+     * 转移资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGroupRmsResourceRelationRequest 请求对象
+     * @return AsyncInvoker<UpdateGroupRmsResourceRelationRequest, UpdateGroupRmsResourceRelationResponse>
+     */
+    public AsyncInvoker<UpdateGroupRmsResourceRelationRequest, UpdateGroupRmsResourceRelationResponse> updateGroupRmsResourceRelationAsyncInvoker(
+        UpdateGroupRmsResourceRelationRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateGroupRmsResourceRelation, hcClient);
+    }
+
+    /**
      * 查询COC可授权单列表
      *
      * 查询COC可授权单列表（变更单号、事件单号、warroom和告警）
@@ -2025,6 +2878,35 @@ public class CocAsyncClient {
     }
 
     /**
+     * 查询用户资源总数
+     *
+     * 查询用户资源总数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesRequest 请求对象
+     * @return CompletableFuture<CountResourcesResponse>
+     */
+    public CompletableFuture<CountResourcesResponse> countResourcesAsync(CountResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.countResources);
+    }
+
+    /**
+     * 查询用户资源总数
+     *
+     * 查询用户资源总数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesRequest 请求对象
+     * @return AsyncInvoker<CountResourcesRequest, CountResourcesResponse>
+     */
+    public AsyncInvoker<CountResourcesRequest, CountResourcesResponse> countResourcesAsyncInvoker(
+        CountResourcesRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.countResources, hcClient);
+    }
+
+    /**
      * 查询用户所有资源
      *
      * 查询租户所有资源：
@@ -2089,6 +2971,35 @@ public class CocAsyncClient {
     }
 
     /**
+     * 同步华为云资源Agent信息
+     *
+     * 同步华为云资源Agent信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncResourceAgentRequest 请求对象
+     * @return CompletableFuture<SyncResourceAgentResponse>
+     */
+    public CompletableFuture<SyncResourceAgentResponse> syncResourceAgentAsync(SyncResourceAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.syncResourceAgent);
+    }
+
+    /**
+     * 同步华为云资源Agent信息
+     *
+     * 同步华为云资源Agent信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncResourceAgentRequest 请求对象
+     * @return AsyncInvoker<SyncResourceAgentRequest, SyncResourceAgentResponse>
+     */
+    public AsyncInvoker<SyncResourceAgentRequest, SyncResourceAgentResponse> syncResourceAgentAsyncInvoker(
+        SyncResourceAgentRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.syncResourceAgent, hcClient);
+    }
+
+    /**
      * 查询资源标签列表
      *
      * 查询资源标签列表
@@ -2145,6 +3056,270 @@ public class CocAsyncClient {
     public AsyncInvoker<UpdateResourceTagsRequest, UpdateResourceTagsResponse> updateResourceTagsAsyncInvoker(
         UpdateResourceTagsRequest request) {
         return new AsyncInvoker<>(request, CocMeta.updateResourceTags, hcClient);
+    }
+
+    /**
+     * 添加资源标签
+     *
+     * 添加资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateResourceTagsRequest 请求对象
+     * @return CompletableFuture<CreateResourceTagsResponse>
+     */
+    public CompletableFuture<CreateResourceTagsResponse> createResourceTagsAsync(CreateResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createResourceTags);
+    }
+
+    /**
+     * 添加资源标签
+     *
+     * 添加资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateResourceTagsRequest 请求对象
+     * @return AsyncInvoker<CreateResourceTagsRequest, CreateResourceTagsResponse>
+     */
+    public AsyncInvoker<CreateResourceTagsRequest, CreateResourceTagsResponse> createResourceTagsAsyncInvoker(
+        CreateResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createResourceTags, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceTagsRequest 请求对象
+     * @return CompletableFuture<ListResourceTagsResponse>
+     */
+    public CompletableFuture<ListResourceTagsResponse> listResourceTagsAsync(ListResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listResourceTags);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 查询资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
+     */
+    public AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsAsyncInvoker(
+        ListResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listResourceTags, hcClient);
+    }
+
+    /**
+     * 查询CMDB跨账号资源视图聚合的资源总数
+     *
+     * 查询CMDB跨账号资源视图聚合的资源总数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesOfResourceViewRequest 请求对象
+     * @return CompletableFuture<CountResourcesOfResourceViewResponse>
+     */
+    public CompletableFuture<CountResourcesOfResourceViewResponse> countResourcesOfResourceViewAsync(
+        CountResourcesOfResourceViewRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.countResourcesOfResourceView);
+    }
+
+    /**
+     * 查询CMDB跨账号资源视图聚合的资源总数
+     *
+     * 查询CMDB跨账号资源视图聚合的资源总数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourcesOfResourceViewRequest 请求对象
+     * @return AsyncInvoker<CountResourcesOfResourceViewRequest, CountResourcesOfResourceViewResponse>
+     */
+    public AsyncInvoker<CountResourcesOfResourceViewRequest, CountResourcesOfResourceViewResponse> countResourcesOfResourceViewAsyncInvoker(
+        CountResourcesOfResourceViewRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.countResourcesOfResourceView, hcClient);
+    }
+
+    /**
+     * 创建CMDB跨账号资源视图
+     *
+     * 创建CMDB跨账号资源视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateResourceViewsRequest 请求对象
+     * @return CompletableFuture<CreateResourceViewsResponse>
+     */
+    public CompletableFuture<CreateResourceViewsResponse> createResourceViewsAsync(CreateResourceViewsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createResourceViews);
+    }
+
+    /**
+     * 创建CMDB跨账号资源视图
+     *
+     * 创建CMDB跨账号资源视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateResourceViewsRequest 请求对象
+     * @return AsyncInvoker<CreateResourceViewsRequest, CreateResourceViewsResponse>
+     */
+    public AsyncInvoker<CreateResourceViewsRequest, CreateResourceViewsResponse> createResourceViewsAsyncInvoker(
+        CreateResourceViewsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createResourceViews, hcClient);
+    }
+
+    /**
+     * 删除CMDB的跨账号资源管理视图
+     *
+     * 删除CMDB的跨账号资源管理视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteResourceViewsRequest 请求对象
+     * @return CompletableFuture<DeleteResourceViewsResponse>
+     */
+    public CompletableFuture<DeleteResourceViewsResponse> deleteResourceViewsAsync(DeleteResourceViewsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.deleteResourceViews);
+    }
+
+    /**
+     * 删除CMDB的跨账号资源管理视图
+     *
+     * 删除CMDB的跨账号资源管理视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteResourceViewsRequest 请求对象
+     * @return AsyncInvoker<DeleteResourceViewsRequest, DeleteResourceViewsResponse>
+     */
+    public AsyncInvoker<DeleteResourceViewsRequest, DeleteResourceViewsResponse> deleteResourceViewsAsyncInvoker(
+        DeleteResourceViewsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.deleteResourceViews, hcClient);
+    }
+
+    /**
+     * 查询CMDB跨账号资源视图
+     *
+     * 查询CMDB跨账号资源视图。视图是一组筛选器，用户可以自由配置筛选范围，用于在跨账号场景下访问华为云中的资源信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceViewsRequest 请求对象
+     * @return CompletableFuture<ListResourceViewsResponse>
+     */
+    public CompletableFuture<ListResourceViewsResponse> listResourceViewsAsync(ListResourceViewsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listResourceViews);
+    }
+
+    /**
+     * 查询CMDB跨账号资源视图
+     *
+     * 查询CMDB跨账号资源视图。视图是一组筛选器，用户可以自由配置筛选范围，用于在跨账号场景下访问华为云中的资源信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceViewsRequest 请求对象
+     * @return AsyncInvoker<ListResourceViewsRequest, ListResourceViewsResponse>
+     */
+    public AsyncInvoker<ListResourceViewsRequest, ListResourceViewsResponse> listResourceViewsAsyncInvoker(
+        ListResourceViewsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listResourceViews, hcClient);
+    }
+
+    /**
+     * 查询CMDB跨账号资源视图聚合的资源
+     *
+     * 查询CMDB跨账号资源视图聚合的资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesOfResourceViewRequest 请求对象
+     * @return CompletableFuture<ListResourcesOfResourceViewResponse>
+     */
+    public CompletableFuture<ListResourcesOfResourceViewResponse> listResourcesOfResourceViewAsync(
+        ListResourcesOfResourceViewRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listResourcesOfResourceView);
+    }
+
+    /**
+     * 查询CMDB跨账号资源视图聚合的资源
+     *
+     * 查询CMDB跨账号资源视图聚合的资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourcesOfResourceViewRequest 请求对象
+     * @return AsyncInvoker<ListResourcesOfResourceViewRequest, ListResourcesOfResourceViewResponse>
+     */
+    public AsyncInvoker<ListResourcesOfResourceViewRequest, ListResourcesOfResourceViewResponse> listResourcesOfResourceViewAsyncInvoker(
+        ListResourcesOfResourceViewRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listResourcesOfResourceView, hcClient);
+    }
+
+    /**
+     * 同步CMDB跨账号资源视图
+     *
+     * 同步CMDB跨账号资源视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncResourcesOfResourceViewRequest 请求对象
+     * @return CompletableFuture<SyncResourcesOfResourceViewResponse>
+     */
+    public CompletableFuture<SyncResourcesOfResourceViewResponse> syncResourcesOfResourceViewAsync(
+        SyncResourcesOfResourceViewRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.syncResourcesOfResourceView);
+    }
+
+    /**
+     * 同步CMDB跨账号资源视图
+     *
+     * 同步CMDB跨账号资源视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncResourcesOfResourceViewRequest 请求对象
+     * @return AsyncInvoker<SyncResourcesOfResourceViewRequest, SyncResourcesOfResourceViewResponse>
+     */
+    public AsyncInvoker<SyncResourcesOfResourceViewRequest, SyncResourcesOfResourceViewResponse> syncResourcesOfResourceViewAsyncInvoker(
+        SyncResourcesOfResourceViewRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.syncResourcesOfResourceView, hcClient);
+    }
+
+    /**
+     * 更新CMDB跨账号资源视图
+     *
+     * 更新CMDB跨账号资源视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateResourceViewsRequest 请求对象
+     * @return CompletableFuture<UpdateResourceViewsResponse>
+     */
+    public CompletableFuture<UpdateResourceViewsResponse> updateResourceViewsAsync(UpdateResourceViewsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateResourceViews);
+    }
+
+    /**
+     * 更新CMDB跨账号资源视图
+     *
+     * 更新CMDB跨账号资源视图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateResourceViewsRequest 请求对象
+     * @return AsyncInvoker<UpdateResourceViewsRequest, UpdateResourceViewsResponse>
+     */
+    public AsyncInvoker<UpdateResourceViewsRequest, UpdateResourceViewsResponse> updateResourceViewsAsyncInvoker(
+        UpdateResourceViewsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateResourceViews, hcClient);
     }
 
     /**
@@ -3007,6 +4182,122 @@ public class CocAsyncClient {
     public AsyncInvoker<ListPublicScriptsRequest, ListPublicScriptsResponse> listPublicScriptsAsyncInvoker(
         ListPublicScriptsRequest request) {
         return new AsyncInvoker<>(request, CocMeta.listPublicScripts, hcClient);
+    }
+
+    /**
+     * 创建云厂商账号
+     *
+     * 创建云厂商（阿里云、AWS、Azure和HCS等）账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVendorAccountRequest 请求对象
+     * @return CompletableFuture<CreateVendorAccountResponse>
+     */
+    public CompletableFuture<CreateVendorAccountResponse> createVendorAccountAsync(CreateVendorAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createVendorAccount);
+    }
+
+    /**
+     * 创建云厂商账号
+     *
+     * 创建云厂商（阿里云、AWS、Azure和HCS等）账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVendorAccountRequest 请求对象
+     * @return AsyncInvoker<CreateVendorAccountRequest, CreateVendorAccountResponse>
+     */
+    public AsyncInvoker<CreateVendorAccountRequest, CreateVendorAccountResponse> createVendorAccountAsyncInvoker(
+        CreateVendorAccountRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createVendorAccount, hcClient);
+    }
+
+    /**
+     * 删除云厂商账号
+     *
+     * 增加云广商账号，不需要后，可删除云厂商账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVendorAccountRequest 请求对象
+     * @return CompletableFuture<DeleteVendorAccountResponse>
+     */
+    public CompletableFuture<DeleteVendorAccountResponse> deleteVendorAccountAsync(DeleteVendorAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.deleteVendorAccount);
+    }
+
+    /**
+     * 删除云厂商账号
+     *
+     * 增加云广商账号，不需要后，可删除云厂商账号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVendorAccountRequest 请求对象
+     * @return AsyncInvoker<DeleteVendorAccountRequest, DeleteVendorAccountResponse>
+     */
+    public AsyncInvoker<DeleteVendorAccountRequest, DeleteVendorAccountResponse> deleteVendorAccountAsyncInvoker(
+        DeleteVendorAccountRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.deleteVendorAccount, hcClient);
+    }
+
+    /**
+     * 查询云厂商账号
+     *
+     * 查询所有云厂商（阿里云、AWS、Azure和HCS等）账号信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVendorAccountRequest 请求对象
+     * @return CompletableFuture<ListVendorAccountResponse>
+     */
+    public CompletableFuture<ListVendorAccountResponse> listVendorAccountAsync(ListVendorAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listVendorAccount);
+    }
+
+    /**
+     * 查询云厂商账号
+     *
+     * 查询所有云厂商（阿里云、AWS、Azure和HCS等）账号信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVendorAccountRequest 请求对象
+     * @return AsyncInvoker<ListVendorAccountRequest, ListVendorAccountResponse>
+     */
+    public AsyncInvoker<ListVendorAccountRequest, ListVendorAccountResponse> listVendorAccountAsyncInvoker(
+        ListVendorAccountRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listVendorAccount, hcClient);
+    }
+
+    /**
+     * 修改云厂商账号
+     *
+     * 修改所有云厂商（阿里云、AWS、Azure和HCS等）账号信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVendorAccountRequest 请求对象
+     * @return CompletableFuture<UpdateVendorAccountResponse>
+     */
+    public CompletableFuture<UpdateVendorAccountResponse> updateVendorAccountAsync(UpdateVendorAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateVendorAccount);
+    }
+
+    /**
+     * 修改云厂商账号
+     *
+     * 修改所有云厂商（阿里云、AWS、Azure和HCS等）账号信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVendorAccountRequest 请求对象
+     * @return AsyncInvoker<UpdateVendorAccountRequest, UpdateVendorAccountResponse>
+     */
+    public AsyncInvoker<UpdateVendorAccountRequest, UpdateVendorAccountResponse> updateVendorAccountAsyncInvoker(
+        UpdateVendorAccountRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateVendorAccount, hcClient);
     }
 
     /**

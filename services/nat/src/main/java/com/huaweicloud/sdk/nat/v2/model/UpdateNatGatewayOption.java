@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新公网NAT网关实例的请求体。
+ * UpdateNatGatewayOption
  */
 public class UpdateNatGatewayOption {
 
@@ -27,7 +27,7 @@ public class UpdateNatGatewayOption {
     private String description;
 
     /**
-     * 公网NAT网关的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000 \"4\"：超大型，SNAT最大连接数1000000 
+     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
      */
     public static final class SpecEnum {
 
@@ -51,6 +51,11 @@ public class UpdateNatGatewayOption {
          */
         public static final SpecEnum _4 = new SpecEnum("4");
 
+        /**
+         * Enum _5 for value: "5"
+         */
+        public static final SpecEnum _5 = new SpecEnum("5");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -59,6 +64,7 @@ public class UpdateNatGatewayOption {
             map.put("2", _2);
             map.put("3", _3);
             map.put("4", _4);
+            map.put("5", _5);
             return Collections.unmodifiableMap(map);
         }
 
@@ -118,6 +124,11 @@ public class UpdateNatGatewayOption {
 
     private SessionConfiguration sessionConf;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prepaid_options")
+
+    private UpdateNatGatewayOptionPrepaidOptions prepaidOptions;
+
     public UpdateNatGatewayOption withName(String name) {
         this.name = name;
         return this;
@@ -158,7 +169,7 @@ public class UpdateNatGatewayOption {
     }
 
     /**
-     * 公网NAT网关的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000 \"4\"：超大型，SNAT最大连接数1000000 
+     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
      * @return spec
      */
     public SpecEnum getSpec() {
@@ -195,6 +206,33 @@ public class UpdateNatGatewayOption {
         this.sessionConf = sessionConf;
     }
 
+    public UpdateNatGatewayOption withPrepaidOptions(UpdateNatGatewayOptionPrepaidOptions prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+        return this;
+    }
+
+    public UpdateNatGatewayOption withPrepaidOptions(
+        Consumer<UpdateNatGatewayOptionPrepaidOptions> prepaidOptionsSetter) {
+        if (this.prepaidOptions == null) {
+            this.prepaidOptions = new UpdateNatGatewayOptionPrepaidOptions();
+            prepaidOptionsSetter.accept(this.prepaidOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get prepaidOptions
+     * @return prepaidOptions
+     */
+    public UpdateNatGatewayOptionPrepaidOptions getPrepaidOptions() {
+        return prepaidOptions;
+    }
+
+    public void setPrepaidOptions(UpdateNatGatewayOptionPrepaidOptions prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -205,12 +243,13 @@ public class UpdateNatGatewayOption {
         }
         UpdateNatGatewayOption that = (UpdateNatGatewayOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.spec, that.spec) && Objects.equals(this.sessionConf, that.sessionConf);
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.sessionConf, that.sessionConf)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, spec, sessionConf);
+        return Objects.hash(name, description, spec, sessionConf, prepaidOptions);
     }
 
     @Override
@@ -221,6 +260,7 @@ public class UpdateNatGatewayOption {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    sessionConf: ").append(toIndentedString(sessionConf)).append("\n");
+        sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -32,12 +34,22 @@ public class CreateNatGatewayOption {
     private String internalNetworkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ngport_ip_address")
+
+    private String ngportIpAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
+
     /**
-     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
      */
     public static final class SpecEnum {
 
@@ -61,6 +73,11 @@ public class CreateNatGatewayOption {
          */
         public static final SpecEnum _4 = new SpecEnum("4");
 
+        /**
+         * Enum _5 for value: "5"
+         */
+        public static final SpecEnum _5 = new SpecEnum("5");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -69,6 +86,7 @@ public class CreateNatGatewayOption {
             map.put("2", _2);
             map.put("3", _3);
             map.put("4", _4);
+            map.put("5", _5);
             return Collections.unmodifiableMap(map);
         }
 
@@ -134,9 +152,9 @@ public class CreateNatGatewayOption {
     private SessionConfiguration sessionConf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ngport_ip_address")
+    @JsonProperty(value = "prepaid_options")
 
-    private String ngportIpAddress;
+    private PrepaidOptions prepaidOptions;
 
     public CreateNatGatewayOption withName(String name) {
         this.name = name;
@@ -189,6 +207,23 @@ public class CreateNatGatewayOption {
         this.internalNetworkId = internalNetworkId;
     }
 
+    public CreateNatGatewayOption withNgportIpAddress(String ngportIpAddress) {
+        this.ngportIpAddress = ngportIpAddress;
+        return this;
+    }
+
+    /**
+     * 公网NAT网关ng口占用的ip。
+     * @return ngportIpAddress
+     */
+    public String getNgportIpAddress() {
+        return ngportIpAddress;
+    }
+
+    public void setNgportIpAddress(String ngportIpAddress) {
+        this.ngportIpAddress = ngportIpAddress;
+    }
+
     public CreateNatGatewayOption withDescription(String description) {
         this.description = description;
         return this;
@@ -206,13 +241,46 @@ public class CreateNatGatewayOption {
         this.description = description;
     }
 
+    public CreateNatGatewayOption withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateNatGatewayOption addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateNatGatewayOption withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表, 用以标识资源类型
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     public CreateNatGatewayOption withSpec(SpecEnum spec) {
         this.spec = spec;
         return this;
     }
 
     /**
-     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
      * @return spec
      */
     public SpecEnum getSpec() {
@@ -266,21 +334,30 @@ public class CreateNatGatewayOption {
         this.sessionConf = sessionConf;
     }
 
-    public CreateNatGatewayOption withNgportIpAddress(String ngportIpAddress) {
-        this.ngportIpAddress = ngportIpAddress;
+    public CreateNatGatewayOption withPrepaidOptions(PrepaidOptions prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
+        return this;
+    }
+
+    public CreateNatGatewayOption withPrepaidOptions(Consumer<PrepaidOptions> prepaidOptionsSetter) {
+        if (this.prepaidOptions == null) {
+            this.prepaidOptions = new PrepaidOptions();
+            prepaidOptionsSetter.accept(this.prepaidOptions);
+        }
+
         return this;
     }
 
     /**
-     * 公网NAT网关私有IP地址，由VPC中子网分配。
-     * @return ngportIpAddress
+     * Get prepaidOptions
+     * @return prepaidOptions
      */
-    public String getNgportIpAddress() {
-        return ngportIpAddress;
+    public PrepaidOptions getPrepaidOptions() {
+        return prepaidOptions;
     }
 
-    public void setNgportIpAddress(String ngportIpAddress) {
-        this.ngportIpAddress = ngportIpAddress;
+    public void setPrepaidOptions(PrepaidOptions prepaidOptions) {
+        this.prepaidOptions = prepaidOptions;
     }
 
     @Override
@@ -294,10 +371,12 @@ public class CreateNatGatewayOption {
         CreateNatGatewayOption that = (CreateNatGatewayOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.routerId, that.routerId)
             && Objects.equals(this.internalNetworkId, that.internalNetworkId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.ngportIpAddress, that.ngportIpAddress)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.spec, that.spec)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.sessionConf, that.sessionConf)
-            && Objects.equals(this.ngportIpAddress, that.ngportIpAddress);
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
     }
 
     @Override
@@ -305,11 +384,13 @@ public class CreateNatGatewayOption {
         return Objects.hash(name,
             routerId,
             internalNetworkId,
+            ngportIpAddress,
             description,
+            tags,
             spec,
             enterpriseProjectId,
             sessionConf,
-            ngportIpAddress);
+            prepaidOptions);
     }
 
     @Override
@@ -319,11 +400,13 @@ public class CreateNatGatewayOption {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    routerId: ").append(toIndentedString(routerId)).append("\n");
         sb.append("    internalNetworkId: ").append(toIndentedString(internalNetworkId)).append("\n");
+        sb.append("    ngportIpAddress: ").append(toIndentedString(ngportIpAddress)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sessionConf: ").append(toIndentedString(sessionConf)).append("\n");
-        sb.append("    ngportIpAddress: ").append(toIndentedString(ngportIpAddress)).append("\n");
+        sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

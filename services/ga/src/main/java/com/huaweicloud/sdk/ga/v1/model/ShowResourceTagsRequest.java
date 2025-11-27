@@ -26,7 +26,7 @@ public class ShowResourceTagsRequest {
     }
 
     /**
-     * 资源类型。
+     * 资源类型，取值范围： - ga-accelerators：加速实例 - ga-listeners：监听器
      * @return resourceType
      */
     public ResourceType getResourceType() {

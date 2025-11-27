@@ -77,7 +77,7 @@ public class BatchListResourceResponseData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private Object tags;
+    private List<TagResponse> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id")
@@ -409,8 +409,24 @@ public class BatchListResourceResponseData {
         this.epName = epName;
     }
 
-    public BatchListResourceResponseData withTags(Object tags) {
+    public BatchListResourceResponseData withTags(List<TagResponse> tags) {
         this.tags = tags;
+        return this;
+    }
+
+    public BatchListResourceResponseData addTagsItem(TagResponse tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public BatchListResourceResponseData withTags(Consumer<List<TagResponse>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
         return this;
     }
 
@@ -418,11 +434,11 @@ public class BatchListResourceResponseData {
      * **参数解释：** 资源标签。 **取值范围：** 不涉及。
      * @return tags
      */
-    public Object getTags() {
+    public List<TagResponse> getTags() {
         return tags;
     }
 
-    public void setTags(Object tags) {
+    public void setTags(List<TagResponse> tags) {
         this.tags = tags;
     }
 

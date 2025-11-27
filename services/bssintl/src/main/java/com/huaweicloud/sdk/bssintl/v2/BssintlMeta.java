@@ -1797,6 +1797,18 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getOrderId,
                 ShowRefundOrderDetailsRequest::setOrderId));
+        builder.<String>withRequestField("customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getCustomerId,
+                ShowRefundOrderDetailsRequest::setCustomerId));
+        builder.<String>withRequestField("indirect_partner_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getIndirectPartnerId,
+                ShowRefundOrderDetailsRequest::setIndirectPartnerId));
 
         // response
 

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 健康检查的协议。
+ * 监听的网络传输协议类型。 取值范围：TCP、UDP
  */
 public class HealthCheckProtocol {
 
@@ -17,11 +17,17 @@ public class HealthCheckProtocol {
      */
     public static final HealthCheckProtocol TCP = new HealthCheckProtocol("TCP");
 
+    /**
+     * Enum UDP for value: "UDP"
+     */
+    public static final HealthCheckProtocol UDP = new HealthCheckProtocol("UDP");
+
     private static final Map<String, HealthCheckProtocol> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, HealthCheckProtocol> createStaticFields() {
         Map<String, HealthCheckProtocol> map = new HashMap<>();
         map.put("TCP", TCP);
+        map.put("UDP", UDP);
         return Collections.unmodifiableMap(map);
     }
 

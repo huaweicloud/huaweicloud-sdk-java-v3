@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.mrs.v1.model.DeleteJobExecutionRequest;
 import com.huaweicloud.sdk.mrs.v1.model.DeleteJobExecutionResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListAllTagsRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListAllTagsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListAsyncTaskStatusRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListAsyncTaskStatusResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListClusterTagsRequest;
@@ -412,6 +414,35 @@ public class MrsClient {
      */
     public SyncInvoker<ListAllTagsRequest, ListAllTagsResponse> listAllTagsInvoker(ListAllTagsRequest request) {
         return new SyncInvoker<>(request, MrsMeta.listAllTags, hcClient);
+    }
+
+    /**
+     * 查询指定集群切换委托任务状态
+     *
+     * 查询指定集群切换委托任务状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAsyncTaskStatusRequest 请求对象
+     * @return ListAsyncTaskStatusResponse
+     */
+    public ListAsyncTaskStatusResponse listAsyncTaskStatus(ListAsyncTaskStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.listAsyncTaskStatus);
+    }
+
+    /**
+     * 查询指定集群切换委托任务状态
+     *
+     * 查询指定集群切换委托任务状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAsyncTaskStatusRequest 请求对象
+     * @return SyncInvoker<ListAsyncTaskStatusRequest, ListAsyncTaskStatusResponse>
+     */
+    public SyncInvoker<ListAsyncTaskStatusRequest, ListAsyncTaskStatusResponse> listAsyncTaskStatusInvoker(
+        ListAsyncTaskStatusRequest request) {
+        return new SyncInvoker<>(request, MrsMeta.listAsyncTaskStatus, hcClient);
     }
 
     /**

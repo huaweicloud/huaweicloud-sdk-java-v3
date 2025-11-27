@@ -73,6 +73,11 @@ public class ListPrivateNatsRequest {
          */
         public static final SpecEnum EXTRA_LARGE = new SpecEnum("Extra-large");
 
+        /**
+         * Enum EXTRA_XLARGE for value: "Extra-xlarge"
+         */
+        public static final SpecEnum EXTRA_XLARGE = new SpecEnum("Extra-xlarge");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -81,6 +86,7 @@ public class ListPrivateNatsRequest {
             map.put("Medium", MEDIUM);
             map.put("Large", LARGE);
             map.put("Extra-large", EXTRA_LARGE);
+            map.put("Extra-xlarge", EXTRA_XLARGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -150,12 +156,18 @@ public class ListPrivateNatsRequest {
          */
         public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
 
+        /**
+         * Enum INACTIVE for value: "INACTIVE"
+         */
+        public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("ACTIVE", ACTIVE);
             map.put("FROZEN", FROZEN);
+            map.put("INACTIVE", INACTIVE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -231,7 +243,7 @@ public class ListPrivateNatsRequest {
     }
 
     /**
-     * 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+     * 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
      * minimum: 1
      * maximum: 2000
      * @return limit
@@ -399,7 +411,7 @@ public class ListPrivateNatsRequest {
     }
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型
+     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
      * @return spec
      */
     public List<SpecEnum> getSpec() {
@@ -432,7 +444,7 @@ public class ListPrivateNatsRequest {
     }
 
     /**
-     * 私网NAT网关实例的状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结
+     * 私网NAT网关实例的状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
      * @return status
      */
     public List<StatusEnum> getStatus() {

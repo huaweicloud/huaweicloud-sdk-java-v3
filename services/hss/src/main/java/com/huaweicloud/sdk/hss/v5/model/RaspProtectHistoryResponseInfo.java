@@ -23,7 +23,7 @@ public class RaspProtectHistoryResponseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_time")
 
-    private Object alarmTime;
+    private Long alarmTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_name")
@@ -149,20 +149,22 @@ public class RaspProtectHistoryResponseInfo {
         this.privateIp = privateIp;
     }
 
-    public RaspProtectHistoryResponseInfo withAlarmTime(Object alarmTime) {
+    public RaspProtectHistoryResponseInfo withAlarmTime(Long alarmTime) {
         this.alarmTime = alarmTime;
         return this;
     }
 
     /**
      * 告警时间(ms)
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return alarmTime
      */
-    public Object getAlarmTime() {
+    public Long getAlarmTime() {
         return alarmTime;
     }
 
-    public void setAlarmTime(Object alarmTime) {
+    public void setAlarmTime(Long alarmTime) {
         this.alarmTime = alarmTime;
     }
 

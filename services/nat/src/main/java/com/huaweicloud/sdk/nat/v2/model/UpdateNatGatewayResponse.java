@@ -17,6 +17,11 @@ public class UpdateNatGatewayResponse extends SdkResponse {
 
     private NatGatewayResponseBody natGateway;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public UpdateNatGatewayResponse withNatGateway(NatGatewayResponseBody natGateway) {
         this.natGateway = natGateway;
         return this;
@@ -43,6 +48,23 @@ public class UpdateNatGatewayResponse extends SdkResponse {
         this.natGateway = natGateway;
     }
 
+    public UpdateNatGatewayResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单ID。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +74,12 @@ public class UpdateNatGatewayResponse extends SdkResponse {
             return false;
         }
         UpdateNatGatewayResponse that = (UpdateNatGatewayResponse) obj;
-        return Objects.equals(this.natGateway, that.natGateway);
+        return Objects.equals(this.natGateway, that.natGateway) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(natGateway);
+        return Objects.hash(natGateway, orderId);
     }
 
     @Override
@@ -65,6 +87,7 @@ public class UpdateNatGatewayResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateNatGatewayResponse {\n");
         sb.append("    natGateway: ").append(toIndentedString(natGateway)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

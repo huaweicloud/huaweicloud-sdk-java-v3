@@ -8,10 +8,16 @@ import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchDeleteTagsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchUpdateRuleStatusResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateAccessControlTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateAccessControlTaskResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainByDuplicateRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateDomainByDuplicateResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainTemplateRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreateDomainTemplateResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateExportTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateExportTaskResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
@@ -42,22 +48,36 @@ import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.EnableDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.EnableDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ExportStatsOpenRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ExportStatsOpenResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListAccessControlTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListAccessControlTaskResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListBanUrlRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListBanUrlResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopIpsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopIpsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopOriginUrlRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopOriginUrlResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopPathRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopPathResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopUasRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopUasResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainClientStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainClientStatsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListDomainConfigsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListDomainConfigsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListExportTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListExportTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListRuleDetailsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListShareCacheGroupsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListSpecialConfigurationRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListSpecialConfigurationResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListSubscriptionTasksRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListSubscriptionTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoRequest;
@@ -74,6 +94,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowCertificatesHttpsInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainCountryStatRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainCountryStatResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainDetailByNameRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainDetailByNameResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainFullConfigRequest;
@@ -94,6 +116,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowLogsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowLogsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowQuotaRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowQuotaResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowSpecialUserRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowSpecialUserResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowStatsConfigsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowStatsConfigsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTagsRequest;
@@ -263,6 +287,38 @@ public class CdnAsyncClient {
     }
 
     /**
+     * 创建封禁/解禁URL任务
+     *
+     * 创建封禁/解禁URL任务，如需使用本接口，请提交工单申请。
+     * - 单租户调用频率：10次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAccessControlTaskRequest 请求对象
+     * @return CompletableFuture<CreateAccessControlTaskResponse>
+     */
+    public CompletableFuture<CreateAccessControlTaskResponse> createAccessControlTaskAsync(
+        CreateAccessControlTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.createAccessControlTask);
+    }
+
+    /**
+     * 创建封禁/解禁URL任务
+     *
+     * 创建封禁/解禁URL任务，如需使用本接口，请提交工单申请。
+     * - 单租户调用频率：10次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAccessControlTaskRequest 请求对象
+     * @return AsyncInvoker<CreateAccessControlTaskRequest, CreateAccessControlTaskResponse>
+     */
+    public AsyncInvoker<CreateAccessControlTaskRequest, CreateAccessControlTaskResponse> createAccessControlTaskAsyncInvoker(
+        CreateAccessControlTaskRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.createAccessControlTask, hcClient);
+    }
+
+    /**
      * 创建加速域名
      *
      * 创建加速域名。
@@ -289,6 +345,42 @@ public class CdnAsyncClient {
     public AsyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainAsyncInvoker(
         CreateDomainRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.createDomain, hcClient);
+    }
+
+    /**
+     * 复制配置到新添加域名
+     *
+     * 将存量加速域名的配置复制给新添加的域名。
+     * - 已开通CDN服务。
+     * - 如果加速域名的服务范围包含中国大陆，加速域名需要已完成备案。
+     * - 单租户调用频率：20次/min。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDomainByDuplicateRequest 请求对象
+     * @return CompletableFuture<CreateDomainByDuplicateResponse>
+     */
+    public CompletableFuture<CreateDomainByDuplicateResponse> createDomainByDuplicateAsync(
+        CreateDomainByDuplicateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.createDomainByDuplicate);
+    }
+
+    /**
+     * 复制配置到新添加域名
+     *
+     * 将存量加速域名的配置复制给新添加的域名。
+     * - 已开通CDN服务。
+     * - 如果加速域名的服务范围包含中国大陆，加速域名需要已完成备案。
+     * - 单租户调用频率：20次/min。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDomainByDuplicateRequest 请求对象
+     * @return AsyncInvoker<CreateDomainByDuplicateRequest, CreateDomainByDuplicateResponse>
+     */
+    public AsyncInvoker<CreateDomainByDuplicateRequest, CreateDomainByDuplicateResponse> createDomainByDuplicateAsyncInvoker(
+        CreateDomainByDuplicateRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.createDomainByDuplicate, hcClient);
     }
 
     /**
@@ -319,6 +411,35 @@ public class CdnAsyncClient {
     public AsyncInvoker<CreateDomainTemplateRequest, CreateDomainTemplateResponse> createDomainTemplateAsyncInvoker(
         CreateDomainTemplateRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.createDomainTemplate, hcClient);
+    }
+
+    /**
+     * 创建统计数据异步导出任务
+     *
+     * 创建统计数据异步导出任务，目前支持话单数据导出、top url导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateExportTaskRequest 请求对象
+     * @return CompletableFuture<CreateExportTaskResponse>
+     */
+    public CompletableFuture<CreateExportTaskResponse> createExportTaskAsync(CreateExportTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.createExportTask);
+    }
+
+    /**
+     * 创建统计数据异步导出任务
+     *
+     * 创建统计数据异步导出任务，目前支持话单数据导出、top url导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateExportTaskRequest 请求对象
+     * @return AsyncInvoker<CreateExportTaskRequest, CreateExportTaskResponse>
+     */
+    public AsyncInvoker<CreateExportTaskRequest, CreateExportTaskResponse> createExportTaskAsyncInvoker(
+        CreateExportTaskRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.createExportTask, hcClient);
     }
 
     /**
@@ -820,6 +941,97 @@ public class CdnAsyncClient {
     }
 
     /**
+     * CDN数据导出
+     *
+     * CDN数据导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportStatsOpenRequest 请求对象
+     * @return CompletableFuture<ExportStatsOpenResponse>
+     */
+    public CompletableFuture<ExportStatsOpenResponse> exportStatsOpenAsync(ExportStatsOpenRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.exportStatsOpen);
+    }
+
+    /**
+     * CDN数据导出
+     *
+     * CDN数据导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportStatsOpenRequest 请求对象
+     * @return AsyncInvoker<ExportStatsOpenRequest, ExportStatsOpenResponse>
+     */
+    public AsyncInvoker<ExportStatsOpenRequest, ExportStatsOpenResponse> exportStatsOpenAsyncInvoker(
+        ExportStatsOpenRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.exportStatsOpen, hcClient);
+    }
+
+    /**
+     * 查询封禁/解禁URL任务
+     *
+     * 查询封禁/解禁URL任务，如需使用本接口，请提交工单申请。
+     * - 单租户调用频率：30次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccessControlTaskRequest 请求对象
+     * @return CompletableFuture<ListAccessControlTaskResponse>
+     */
+    public CompletableFuture<ListAccessControlTaskResponse> listAccessControlTaskAsync(
+        ListAccessControlTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.listAccessControlTask);
+    }
+
+    /**
+     * 查询封禁/解禁URL任务
+     *
+     * 查询封禁/解禁URL任务，如需使用本接口，请提交工单申请。
+     * - 单租户调用频率：30次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccessControlTaskRequest 请求对象
+     * @return AsyncInvoker<ListAccessControlTaskRequest, ListAccessControlTaskResponse>
+     */
+    public AsyncInvoker<ListAccessControlTaskRequest, ListAccessControlTaskResponse> listAccessControlTaskAsyncInvoker(
+        ListAccessControlTaskRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.listAccessControlTask, hcClient);
+    }
+
+    /**
+     * 查询已封禁的URL
+     *
+     * 查询已封禁的URL，如需使用本接口，请提交工单申请。
+     * - 单租户调用频率：30次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBanUrlRequest 请求对象
+     * @return CompletableFuture<ListBanUrlResponse>
+     */
+    public CompletableFuture<ListBanUrlResponse> listBanUrlAsync(ListBanUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.listBanUrl);
+    }
+
+    /**
+     * 查询已封禁的URL
+     *
+     * 查询已封禁的URL，如需使用本接口，请提交工单申请。
+     * - 单租户调用频率：30次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBanUrlRequest 请求对象
+     * @return AsyncInvoker<ListBanUrlRequest, ListBanUrlResponse>
+     */
+    public AsyncInvoker<ListBanUrlRequest, ListBanUrlResponse> listBanUrlAsyncInvoker(ListBanUrlRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.listBanUrl, hcClient);
+    }
+
+    /**
      * 查询域名top ip统计分析数据
      *
      * - 查询域名top ip统计分析数据
@@ -876,6 +1088,36 @@ public class CdnAsyncClient {
     public AsyncInvoker<ListCdnDomainTopOriginUrlRequest, ListCdnDomainTopOriginUrlResponse> listCdnDomainTopOriginUrlAsyncInvoker(
         ListCdnDomainTopOriginUrlRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.listCdnDomainTopOriginUrl, hcClient);
+    }
+
+    /**
+     * 查询 TOP Path明细
+     *
+     * 查询 TOP Path明细
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopPathRequest 请求对象
+     * @return CompletableFuture<ListCdnDomainTopPathResponse>
+     */
+    public CompletableFuture<ListCdnDomainTopPathResponse> listCdnDomainTopPathAsync(
+        ListCdnDomainTopPathRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.listCdnDomainTopPath);
+    }
+
+    /**
+     * 查询 TOP Path明细
+     *
+     * 查询 TOP Path明细
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnDomainTopPathRequest 请求对象
+     * @return AsyncInvoker<ListCdnDomainTopPathRequest, ListCdnDomainTopPathResponse>
+     */
+    public AsyncInvoker<ListCdnDomainTopPathRequest, ListCdnDomainTopPathResponse> listCdnDomainTopPathAsyncInvoker(
+        ListCdnDomainTopPathRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.listCdnDomainTopPath, hcClient);
     }
 
     /**
@@ -990,6 +1232,37 @@ public class CdnAsyncClient {
     }
 
     /**
+     * 查询加速域名基础信息
+     *
+     * 查询加速域名的基础信息，包含cname状态、加速域名是否支持复制配置。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainConfigsRequest 请求对象
+     * @return CompletableFuture<ListDomainConfigsResponse>
+     */
+    public CompletableFuture<ListDomainConfigsResponse> listDomainConfigsAsync(ListDomainConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.listDomainConfigs);
+    }
+
+    /**
+     * 查询加速域名基础信息
+     *
+     * 查询加速域名的基础信息，包含cname状态、加速域名是否支持复制配置。
+     * - 单租户调用频率：5次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainConfigsRequest 请求对象
+     * @return AsyncInvoker<ListDomainConfigsRequest, ListDomainConfigsResponse>
+     */
+    public AsyncInvoker<ListDomainConfigsRequest, ListDomainConfigsResponse> listDomainConfigsAsyncInvoker(
+        ListDomainConfigsRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.listDomainConfigs, hcClient);
+    }
+
+    /**
      * 查询加速域名
      *
      * 查询加速域名。
@@ -1015,6 +1288,35 @@ public class CdnAsyncClient {
      */
     public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.listDomains, hcClient);
+    }
+
+    /**
+     * 分页查询统计数据异步导出
+     *
+     * 分页查询统计数据异步导出任务，按修改时间降序排列，当任务状态为success时，返回参数中会包含download_link
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExportTasksRequest 请求对象
+     * @return CompletableFuture<ListExportTasksResponse>
+     */
+    public CompletableFuture<ListExportTasksResponse> listExportTasksAsync(ListExportTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.listExportTasks);
+    }
+
+    /**
+     * 分页查询统计数据异步导出
+     *
+     * 分页查询统计数据异步导出任务，按修改时间降序排列，当任务状态为success时，返回参数中会包含download_link
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExportTasksRequest 请求对象
+     * @return AsyncInvoker<ListExportTasksRequest, ListExportTasksResponse>
+     */
+    public AsyncInvoker<ListExportTasksRequest, ListExportTasksResponse> listExportTasksAsyncInvoker(
+        ListExportTasksRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.listExportTasks, hcClient);
     }
 
     /**
@@ -1076,6 +1378,38 @@ public class CdnAsyncClient {
     public AsyncInvoker<ListShareCacheGroupsRequest, ListShareCacheGroupsResponse> listShareCacheGroupsAsyncInvoker(
         ListShareCacheGroupsRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.listShareCacheGroups, hcClient);
+    }
+
+    /**
+     * 查询加速域名的特殊配置
+     *
+     * 查询加速域名的特殊配置，当前支持查询备忘录信息。
+     * - 单租户调用频率：15次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSpecialConfigurationRequest 请求对象
+     * @return CompletableFuture<ListSpecialConfigurationResponse>
+     */
+    public CompletableFuture<ListSpecialConfigurationResponse> listSpecialConfigurationAsync(
+        ListSpecialConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.listSpecialConfiguration);
+    }
+
+    /**
+     * 查询加速域名的特殊配置
+     *
+     * 查询加速域名的特殊配置，当前支持查询备忘录信息。
+     * - 单租户调用频率：15次/s。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSpecialConfigurationRequest 请求对象
+     * @return AsyncInvoker<ListSpecialConfigurationRequest, ListSpecialConfigurationResponse>
+     */
+    public AsyncInvoker<ListSpecialConfigurationRequest, ListSpecialConfigurationResponse> listSpecialConfigurationAsyncInvoker(
+        ListSpecialConfigurationRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.listSpecialConfiguration, hcClient);
     }
 
     /**
@@ -1369,6 +1703,36 @@ public class CdnAsyncClient {
     public AsyncInvoker<ShowChargeModesRequest, ShowChargeModesResponse> showChargeModesAsyncInvoker(
         ShowChargeModesRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showChargeModes, hcClient);
+    }
+
+    /**
+     * CDN查询域名的国家统计数据
+     *
+     * CDN查询域名的国家统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainCountryStatRequest 请求对象
+     * @return CompletableFuture<ShowDomainCountryStatResponse>
+     */
+    public CompletableFuture<ShowDomainCountryStatResponse> showDomainCountryStatAsync(
+        ShowDomainCountryStatRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainCountryStat);
+    }
+
+    /**
+     * CDN查询域名的国家统计数据
+     *
+     * CDN查询域名的国家统计数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainCountryStatRequest 请求对象
+     * @return AsyncInvoker<ShowDomainCountryStatRequest, ShowDomainCountryStatResponse>
+     */
+    public AsyncInvoker<ShowDomainCountryStatRequest, ShowDomainCountryStatResponse> showDomainCountryStatAsyncInvoker(
+        ShowDomainCountryStatRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.showDomainCountryStat, hcClient);
     }
 
     /**
@@ -1708,6 +2072,35 @@ public class CdnAsyncClient {
      */
     public AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaAsyncInvoker(ShowQuotaRequest request) {
         return new AsyncInvoker<>(request, CdnMeta.showQuota, hcClient);
+    }
+
+    /**
+     * 查询CDN特殊用户接口
+     *
+     * 查询CDN特殊用户接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSpecialUserRequest 请求对象
+     * @return CompletableFuture<ShowSpecialUserResponse>
+     */
+    public CompletableFuture<ShowSpecialUserResponse> showSpecialUserAsync(ShowSpecialUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showSpecialUser);
+    }
+
+    /**
+     * 查询CDN特殊用户接口
+     *
+     * 查询CDN特殊用户接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSpecialUserRequest 请求对象
+     * @return AsyncInvoker<ShowSpecialUserRequest, ShowSpecialUserResponse>
+     */
+    public AsyncInvoker<ShowSpecialUserRequest, ShowSpecialUserResponse> showSpecialUserAsyncInvoker(
+        ShowSpecialUserRequest request) {
+        return new AsyncInvoker<>(request, CdnMeta.showSpecialUser, hcClient);
     }
 
     /**

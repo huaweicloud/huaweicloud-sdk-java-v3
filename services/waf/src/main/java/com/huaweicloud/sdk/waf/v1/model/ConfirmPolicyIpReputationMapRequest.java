@@ -43,7 +43,7 @@ public class ConfirmPolicyIpReputationMapRequest {
     }
 
     /**
-     * **参数解释：** 语言 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 防护选项的详细信息的类型，当前仅支持“idc”。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return type
      */
     public String getType() {

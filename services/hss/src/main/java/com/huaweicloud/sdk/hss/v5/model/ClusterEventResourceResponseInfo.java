@@ -56,7 +56,7 @@ public class ClusterEventResourceResponseInfo {
     }
 
     /**
-     * 执行动作
+     * **参数解释**: 执行动作 **取值范围**: 字符长度1-256位 
      * @return enforcementAction
      */
     public String getEnforcementAction() {
@@ -73,7 +73,7 @@ public class ClusterEventResourceResponseInfo {
     }
 
     /**
-     * Group
+     * **参数解释**: 组 **取值范围**: 字符长度1-256位 
      * @return group
      */
     public String getGroup() {
@@ -90,7 +90,7 @@ public class ClusterEventResourceResponseInfo {
     }
 
     /**
-     * 信息
+     * **参数解释**: 信息 **取值范围**: 字符长度1-256位 
      * @return message
      */
     public String getMessage() {
@@ -107,7 +107,7 @@ public class ClusterEventResourceResponseInfo {
     }
 
     /**
-     * 名称
+     * **参数解释**: 名称 **取值范围**: 字符长度1-256位 
      * @return name
      */
     public String getName() {
@@ -124,7 +124,7 @@ public class ClusterEventResourceResponseInfo {
     }
 
     /**
-     * 命名空间
+     * **参数解释**: 命名空间 **取值范围**: 字符长度0-256位 
      * @return namespace
      */
     public String getNamespace() {
@@ -141,7 +141,7 @@ public class ClusterEventResourceResponseInfo {
     }
 
     /**
-     * 版本
+     * **参数解释**: 版本 **取值范围**: 字符长度0-128位 
      * @return version
      */
     public String getVersion() {
@@ -158,7 +158,7 @@ public class ClusterEventResourceResponseInfo {
     }
 
     /**
-     * 资源类型
+     * **参数解释**: 资源类型 **取值范围**: 字符长度1-64位 
      * @return kind
      */
     public String getKind() {
@@ -175,7 +175,7 @@ public class ClusterEventResourceResponseInfo {
     }
 
     /**
-     * 资源名称
+     * **参数解释**: 资源名称 **取值范围**: 字符长度1-256位 
      * @return resourceName
      */
     public String getResourceName() {

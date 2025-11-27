@@ -37,7 +37,7 @@ public class ShowClusterAssetStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 集群数量
+     * **参数解释**: 集群数量 **取值范围**: 最小值0，最大值65535 
      * minimum: 0
      * maximum: 65535
      * @return clusterNum
@@ -56,7 +56,7 @@ public class ShowClusterAssetStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 工作负载数量
+     * **参数解释**: 工作负载数量 **取值范围**: 最小值0，最大值65535 
      * minimum: 0
      * maximum: 65535
      * @return workLoadNum
@@ -75,7 +75,7 @@ public class ShowClusterAssetStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 服务数量
+     * **参数解释**: 服务数量 **取值范围**: 最小值0，最大值65535 
      * minimum: 0
      * maximum: 65535
      * @return serviceNum
@@ -94,7 +94,7 @@ public class ShowClusterAssetStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * pod数量
+     * **参数解释**: pod数量 **取值范围**: 最小值0，最大值65535 
      * minimum: 0
      * maximum: 65535
      * @return podNum

@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.cce.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -19,7 +18,7 @@ public class ClusterCertDuration {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_at")
 
-    private LocalDate expireAt;
+    private String expireAt;
 
     public ClusterCertDuration withDuration(Integer duration) {
         this.duration = duration;
@@ -40,7 +39,7 @@ public class ClusterCertDuration {
         this.duration = duration;
     }
 
-    public ClusterCertDuration withExpireAt(LocalDate expireAt) {
+    public ClusterCertDuration withExpireAt(String expireAt) {
         this.expireAt = expireAt;
         return this;
     }
@@ -49,11 +48,11 @@ public class ClusterCertDuration {
      * **参数解释：** 集群证书到期时间。 **约束限制：** duration和expire_at参数至少需要指定一个，若同时指定则以expire_at参数为准。 **取值范围：** 证书到期时间须在当前时间后15分钟至5年之间，参数格式为：2025-01-01 16:00:00 +0000 UTC。 **默认取值：** 不涉及
      * @return expireAt
      */
-    public LocalDate getExpireAt() {
+    public String getExpireAt() {
         return expireAt;
     }
 
-    public void setExpireAt(LocalDate expireAt) {
+    public void setExpireAt(String expireAt) {
         this.expireAt = expireAt;
     }
 

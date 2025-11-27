@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,63 +13,34 @@ import java.util.function.Consumer;
 public class ListScriptResourceTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
+    @JsonProperty(value = "data")
 
-    private List<ScriptTag> tags = null;
+    private ListTagsResponse data;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
-
-    private Long total;
-
-    public ListScriptResourceTagsResponse withTags(List<ScriptTag> tags) {
-        this.tags = tags;
+    public ListScriptResourceTagsResponse withData(ListTagsResponse data) {
+        this.data = data;
         return this;
     }
 
-    public ListScriptResourceTagsResponse addTagsItem(ScriptTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
+    public ListScriptResourceTagsResponse withData(Consumer<ListTagsResponse> dataSetter) {
+        if (this.data == null) {
+            this.data = new ListTagsResponse();
+            dataSetter.accept(this.data);
         }
-        this.tags.add(tagsItem);
-        return this;
-    }
 
-    public ListScriptResourceTagsResponse withTags(Consumer<List<ScriptTag>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
         return this;
     }
 
     /**
-     * Get tags
-     * @return tags
+     * Get data
+     * @return data
      */
-    public List<ScriptTag> getTags() {
-        return tags;
+    public ListTagsResponse getData() {
+        return data;
     }
 
-    public void setTags(List<ScriptTag> tags) {
-        this.tags = tags;
-    }
-
-    public ListScriptResourceTagsResponse withTotal(Long total) {
-        this.total = total;
-        return this;
-    }
-
-    /**
-     * 总条数。
-     * @return total
-     */
-    public Long getTotal() {
-        return total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
+    public void setData(ListTagsResponse data) {
+        this.data = data;
     }
 
     @Override
@@ -83,20 +52,19 @@ public class ListScriptResourceTagsResponse extends SdkResponse {
             return false;
         }
         ListScriptResourceTagsResponse that = (ListScriptResourceTagsResponse) obj;
-        return Objects.equals(this.tags, that.tags) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags, total);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScriptResourceTagsResponse {\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -97,7 +97,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 阻断动作
+     * **参数解释**: 阻断动作 **取值范围**: 字符长度1-32位 
      * @return action
      */
     public String getAction() {
@@ -114,7 +114,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 集群名称
+     * **参数解释**: 集群名称 **取值范围**: 字符长度1-64位 
      * @return clusterName
      */
     public String getClusterName() {
@@ -131,7 +131,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 集群Id
+     * **参数解释**: 集群Id **取值范围**: 字符长度1-256位 
      * @return clusterId
      */
     public String getClusterId() {
@@ -148,7 +148,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 事件名称
+     * **参数解释**: 事件名称 **取值范围**: 字符长度1-128位 
      * @return eventName
      */
     public String getEventName() {
@@ -165,7 +165,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 事件唯一标识
+     * **参数解释**: 事件唯一标识 **取值范围**: 字符长度1-128位 
      * @return eventClassId
      */
     public String getEventClassId() {
@@ -182,7 +182,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 事件id
+     * **参数解释**: 事件id **取值范围**: 字符长度1-128位 
      * @return eventId
      */
     public String getEventId() {
@@ -199,7 +199,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 事件类型
+     * **参数解释**: 事件类型 **取值范围**: 最小值1000，最大值30000 
      * minimum: 1000
      * maximum: 30000
      * @return eventType
@@ -218,7 +218,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 事件内容
+     * **参数解释**: 事件内容 **取值范围**: 字符长度1-128位 
      * @return eventContent
      */
     public String getEventContent() {
@@ -235,7 +235,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 处理状态，包含如下:   - unhandled：未处理   - handled：已处理
+     * **参数解释**: 处理状态 **取值范围**: - unhandled：未处理。 - handled：已处理。 
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -252,7 +252,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 创建时间
+     * **参数解释**: 创建时间 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return createTime
@@ -271,7 +271,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 更新时间
+     * **参数解释**: 更新时间 **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return updateTime
@@ -290,7 +290,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 项目ID
+     * **参数解释**: 项目ID **取值范围**: 字符长度1-128位 
      * @return projectId
      */
     public String getProjectId() {
@@ -307,7 +307,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 企业ID
+     * **参数解释**: 企业ID **取值范围**: 字符长度1-256位 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -324,7 +324,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 策略名称
+     * **参数解释**: 策略名称 **取值范围**: 字符长度1-128位 
      * @return policyName
      */
     public String getPolicyName() {
@@ -341,7 +341,7 @@ public class ClusterEventResponseInfo {
     }
 
     /**
-     * 策略ID
+     * **参数解释**: 策略ID **取值范围**: 字符长度1-128位 
      * @return policyId
      */
     public String getPolicyId() {

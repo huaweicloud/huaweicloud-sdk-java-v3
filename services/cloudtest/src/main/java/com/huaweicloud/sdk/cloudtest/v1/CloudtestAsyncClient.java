@@ -24,6 +24,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorRe
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateTestCasesInDiffVersionRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateTestCasesInDiffVersionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CheckPermissionRequest;
@@ -624,6 +626,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<BatchRemoveTestCasesFromIteratorRequest, BatchRemoveTestCasesFromIteratorResponse> batchRemoveTestCasesFromIteratorAsyncInvoker(
         BatchRemoveTestCasesFromIteratorRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.batchRemoveTestCasesFromIterator, hcClient);
+    }
+
+    /**
+     * 在不同分支或者迭代下批量修改用例
+     *
+     * 在不同分支或者迭代下批量修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateTestCasesInDiffVersionRequest 请求对象
+     * @return CompletableFuture<BatchUpdateTestCasesInDiffVersionResponse>
+     */
+    public CompletableFuture<BatchUpdateTestCasesInDiffVersionResponse> batchUpdateTestCasesInDiffVersionAsync(
+        BatchUpdateTestCasesInDiffVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchUpdateTestCasesInDiffVersion);
+    }
+
+    /**
+     * 在不同分支或者迭代下批量修改用例
+     *
+     * 在不同分支或者迭代下批量修改用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateTestCasesInDiffVersionRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateTestCasesInDiffVersionRequest, BatchUpdateTestCasesInDiffVersionResponse>
+     */
+    public AsyncInvoker<BatchUpdateTestCasesInDiffVersionRequest, BatchUpdateTestCasesInDiffVersionResponse> batchUpdateTestCasesInDiffVersionAsyncInvoker(
+        BatchUpdateTestCasesInDiffVersionRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.batchUpdateTestCasesInDiffVersion, hcClient);
     }
 
     /**

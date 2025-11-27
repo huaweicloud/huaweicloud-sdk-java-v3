@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListAllPopsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListAllPopsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListByoipPoolsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListByoipPoolsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListEndpointsRequest;
@@ -276,6 +278,34 @@ public class GaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAcceleratorRequestBody.class),
             f -> f.withMarshaller(UpdateAcceleratorRequest::getBody, UpdateAcceleratorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListByoipPoolsRequest, ListByoipPoolsResponse> listByoipPools =
+        genForListByoipPools();
+
+    private static HttpRequestDef<ListByoipPoolsRequest, ListByoipPoolsResponse> genForListByoipPools() {
+        // basic
+        HttpRequestDef.Builder<ListByoipPoolsRequest, ListByoipPoolsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListByoipPoolsRequest.class, ListByoipPoolsResponse.class)
+                .withName("ListByoipPools")
+                .withUri("/v1/byoip-pools")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListByoipPoolsRequest::getLimit, ListByoipPoolsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListByoipPoolsRequest::getMarker, ListByoipPoolsRequest::setMarker));
 
         // response
 

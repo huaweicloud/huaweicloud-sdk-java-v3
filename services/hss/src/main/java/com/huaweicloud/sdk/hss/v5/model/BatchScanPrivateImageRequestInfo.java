@@ -89,7 +89,7 @@ public class BatchScanPrivateImageRequestInfo {
     }
 
     /**
-     * 仓库类型，现阶段接入了swr镜像仓库，包含如下:   - SWR : SWR镜像仓库
+     * 仓库类型。（该字段已废弃）
      * @return repoType
      */
     public String getRepoType() {

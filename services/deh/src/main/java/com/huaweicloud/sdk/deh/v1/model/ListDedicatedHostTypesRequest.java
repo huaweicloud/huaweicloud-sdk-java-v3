@@ -15,6 +15,16 @@ public class ListDedicatedHostTypesRequest {
 
     private String availabilityZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListDedicatedHostTypesRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -32,6 +42,40 @@ public class ListDedicatedHostTypesRequest {
         this.availabilityZone = availabilityZone;
     }
 
+    public ListDedicatedHostTypesRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 查询返回云服务器列表当前页面的数量。
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
+    public ListDedicatedHostTypesRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 以单页最后一条专属主机的host_type作为分页标记
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +85,13 @@ public class ListDedicatedHostTypesRequest {
             return false;
         }
         ListDedicatedHostTypesRequest that = (ListDedicatedHostTypesRequest) obj;
-        return Objects.equals(this.availabilityZone, that.availabilityZone);
+        return Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZone);
+        return Objects.hash(availabilityZone, limit, marker);
     }
 
     @Override
@@ -54,6 +99,8 @@ public class ListDedicatedHostTypesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDedicatedHostTypesRequest {\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

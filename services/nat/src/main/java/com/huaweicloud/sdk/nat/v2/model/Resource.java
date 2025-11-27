@@ -29,9 +29,9 @@ public class Resource {
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_tag")
+    @JsonProperty(value = "tags")
 
-    private List<ResourceTag> resourceTag = null;
+    private List<ResourceTag> tags = null;
 
     public Resource withResourceDetail(Object resourceDetail) {
         this.resourceDetail = resourceDetail;
@@ -84,37 +84,37 @@ public class Resource {
         this.resourceName = resourceName;
     }
 
-    public Resource withResourceTag(List<ResourceTag> resourceTag) {
-        this.resourceTag = resourceTag;
+    public Resource withTags(List<ResourceTag> tags) {
+        this.tags = tags;
         return this;
     }
 
-    public Resource addResourceTagItem(ResourceTag resourceTagItem) {
-        if (this.resourceTag == null) {
-            this.resourceTag = new ArrayList<>();
+    public Resource addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
         }
-        this.resourceTag.add(resourceTagItem);
+        this.tags.add(tagsItem);
         return this;
     }
 
-    public Resource withResourceTag(Consumer<List<ResourceTag>> resourceTagSetter) {
-        if (this.resourceTag == null) {
-            this.resourceTag = new ArrayList<>();
+    public Resource withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
         }
-        resourceTagSetter.accept(this.resourceTag);
+        tagsSetter.accept(this.tags);
         return this;
     }
 
     /**
      * 标签列表，没有标签默认为空数组。
-     * @return resourceTag
+     * @return tags
      */
-    public List<ResourceTag> getResourceTag() {
-        return resourceTag;
+    public List<ResourceTag> getTags() {
+        return tags;
     }
 
-    public void setResourceTag(List<ResourceTag> resourceTag) {
-        this.resourceTag = resourceTag;
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
     }
 
     @Override
@@ -128,12 +128,12 @@ public class Resource {
         Resource that = (Resource) obj;
         return Objects.equals(this.resourceDetail, that.resourceDetail)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
-            && Objects.equals(this.resourceTag, that.resourceTag);
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceDetail, resourceId, resourceName, resourceTag);
+        return Objects.hash(resourceDetail, resourceId, resourceName, tags);
     }
 
     @Override
@@ -143,7 +143,7 @@ public class Resource {
         sb.append("    resourceDetail: ").append(toIndentedString(resourceDetail)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
-        sb.append("    resourceTag: ").append(toIndentedString(resourceTag)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

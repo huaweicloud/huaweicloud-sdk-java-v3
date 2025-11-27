@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -36,12 +37,22 @@ public class ListNatGatewaySnatRulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_address")
 
-    private List<String> floatingIpAddress = null;
+    private String floatingIpAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_address")
+
+    private String globalEipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "floating_ip_id")
 
-    private List<String> floatingIpId = null;
+    private String floatingIpId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_id")
+
+    private String globalEipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -56,7 +67,7 @@ public class ListNatGatewaySnatRulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
-    private String createdAt;
+    private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nat_gateway_id")
@@ -74,7 +85,7 @@ public class ListNatGatewaySnatRulesRequest {
     private Integer sourceType;
 
     /**
-     * SNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
+     * SNAT规则的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 EIP_FREEZED: EIP冻结 INACTIVE: 不可用
      */
     public static final class StatusEnum {
 
@@ -217,7 +228,7 @@ public class ListNatGatewaySnatRulesRequest {
     }
 
     /**
-     * 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+     * 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
      * minimum: 1
      * maximum: 2000
      * @return limit
@@ -230,70 +241,72 @@ public class ListNatGatewaySnatRulesRequest {
         this.limit = limit;
     }
 
-    public ListNatGatewaySnatRulesRequest withFloatingIpAddress(List<String> floatingIpAddress) {
+    public ListNatGatewaySnatRulesRequest withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
     }
 
-    public ListNatGatewaySnatRulesRequest addFloatingIpAddressItem(String floatingIpAddressItem) {
-        if (this.floatingIpAddress == null) {
-            this.floatingIpAddress = new ArrayList<>();
-        }
-        this.floatingIpAddress.add(floatingIpAddressItem);
-        return this;
-    }
-
-    public ListNatGatewaySnatRulesRequest withFloatingIpAddress(Consumer<List<String>> floatingIpAddressSetter) {
-        if (this.floatingIpAddress == null) {
-            this.floatingIpAddress = new ArrayList<>();
-        }
-        floatingIpAddressSetter.accept(this.floatingIpAddress);
-        return this;
-    }
-
     /**
-     * 功能说明：弹性公网IP。
+     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
      * @return floatingIpAddress
      */
-    public List<String> getFloatingIpAddress() {
+    public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
 
-    public void setFloatingIpAddress(List<String> floatingIpAddress) {
+    public void setFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
     }
 
-    public ListNatGatewaySnatRulesRequest withFloatingIpId(List<String> floatingIpId) {
-        this.floatingIpId = floatingIpId;
-        return this;
-    }
-
-    public ListNatGatewaySnatRulesRequest addFloatingIpIdItem(String floatingIpIdItem) {
-        if (this.floatingIpId == null) {
-            this.floatingIpId = new ArrayList<>();
-        }
-        this.floatingIpId.add(floatingIpIdItem);
-        return this;
-    }
-
-    public ListNatGatewaySnatRulesRequest withFloatingIpId(Consumer<List<String>> floatingIpIdSetter) {
-        if (this.floatingIpId == null) {
-            this.floatingIpId = new ArrayList<>();
-        }
-        floatingIpIdSetter.accept(this.floatingIpId);
+    public ListNatGatewaySnatRulesRequest withGlobalEipAddress(String globalEipAddress) {
+        this.globalEipAddress = globalEipAddress;
         return this;
     }
 
     /**
-     * 功能说明：弹性公网IP的id。
+     * 功能说明：全域弹性公网IP，多个全域弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
+     * @return globalEipAddress
+     */
+    public String getGlobalEipAddress() {
+        return globalEipAddress;
+    }
+
+    public void setGlobalEipAddress(String globalEipAddress) {
+        this.globalEipAddress = globalEipAddress;
+    }
+
+    public ListNatGatewaySnatRulesRequest withFloatingIpId(String floatingIpId) {
+        this.floatingIpId = floatingIpId;
+        return this;
+    }
+
+    /**
+     * 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。
      * @return floatingIpId
      */
-    public List<String> getFloatingIpId() {
+    public String getFloatingIpId() {
         return floatingIpId;
     }
 
-    public void setFloatingIpId(List<String> floatingIpId) {
+    public void setFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
+    }
+
+    public ListNatGatewaySnatRulesRequest withGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+        return this;
+    }
+
+    /**
+     * 功能说明：全域弹性公网IP的id，多个全域弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。
+     * @return globalEipId
+     */
+    public String getGlobalEipId() {
+        return globalEipId;
+    }
+
+    public void setGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
     }
 
     public ListNatGatewaySnatRulesRequest withId(String id) {
@@ -330,7 +343,7 @@ public class ListNatGatewaySnatRulesRequest {
         this.description = description;
     }
 
-    public ListNatGatewaySnatRulesRequest withCreatedAt(String createdAt) {
+    public ListNatGatewaySnatRulesRequest withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -339,11 +352,11 @@ public class ListNatGatewaySnatRulesRequest {
      * SNAT规则的创建时间，格式是yyyy-mm-dd hh:mm:ss.SSSSSS。
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -422,7 +435,7 @@ public class ListNatGatewaySnatRulesRequest {
     }
 
     /**
-     * SNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
+     * SNAT规则的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 EIP_FREEZED: EIP冻结 INACTIVE: 不可用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -461,7 +474,9 @@ public class ListNatGatewaySnatRulesRequest {
         ListNatGatewaySnatRulesRequest that = (ListNatGatewaySnatRulesRequest) obj;
         return Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.cidr, that.cidr)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.floatingIpAddress, that.floatingIpAddress)
-            && Objects.equals(this.floatingIpId, that.floatingIpId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.globalEipAddress, that.globalEipAddress)
+            && Objects.equals(this.floatingIpId, that.floatingIpId)
+            && Objects.equals(this.globalEipId, that.globalEipId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.natGatewayId, that.natGatewayId) && Objects.equals(this.networkId, that.networkId)
             && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.status, that.status)
@@ -474,7 +489,9 @@ public class ListNatGatewaySnatRulesRequest {
             cidr,
             limit,
             floatingIpAddress,
+            globalEipAddress,
             floatingIpId,
+            globalEipId,
             id,
             description,
             createdAt,
@@ -493,7 +510,9 @@ public class ListNatGatewaySnatRulesRequest {
         sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    floatingIpAddress: ").append(toIndentedString(floatingIpAddress)).append("\n");
+        sb.append("    globalEipAddress: ").append(toIndentedString(globalEipAddress)).append("\n");
         sb.append("    floatingIpId: ").append(toIndentedString(floatingIpId)).append("\n");
+        sb.append("    globalEipId: ").append(toIndentedString(globalEipId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

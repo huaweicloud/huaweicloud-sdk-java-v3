@@ -19,7 +19,7 @@ public class ExecuteDocumentRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ExecuteDocumentRequsetBody body;
+    private ExecuteDocumentRequestBody body;
 
     public ExecuteDocumentRequest withDocumentId(String documentId) {
         this.documentId = documentId;
@@ -38,14 +38,14 @@ public class ExecuteDocumentRequest {
         this.documentId = documentId;
     }
 
-    public ExecuteDocumentRequest withBody(ExecuteDocumentRequsetBody body) {
+    public ExecuteDocumentRequest withBody(ExecuteDocumentRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ExecuteDocumentRequest withBody(Consumer<ExecuteDocumentRequsetBody> bodySetter) {
+    public ExecuteDocumentRequest withBody(Consumer<ExecuteDocumentRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ExecuteDocumentRequsetBody();
+            this.body = new ExecuteDocumentRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class ExecuteDocumentRequest {
      * Get body
      * @return body
      */
-    public ExecuteDocumentRequsetBody getBody() {
+    public ExecuteDocumentRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ExecuteDocumentRequsetBody body) {
+    public void setBody(ExecuteDocumentRequestBody body) {
         this.body = body;
     }
 

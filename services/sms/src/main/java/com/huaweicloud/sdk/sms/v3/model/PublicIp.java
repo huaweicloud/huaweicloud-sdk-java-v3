@@ -31,7 +31,7 @@ public class PublicIp {
     }
 
     /**
-     * 弹性公网IP类型，默认为5_bgp
+     * 弹性公网IP类型，默认为5_bgp。 详细类型请参考EIP服务API文档中“查询弹性公网IP详情”部分，查看响应参数的中type字段描述
      * @return type
      */
     public String getType() {
@@ -67,7 +67,7 @@ public class PublicIp {
     }
 
     /**
-     * 带宽共享类型
+     * 带宽共享类型（长文本信息，非枚举数据，来源于EIP服务） 详细类型请参考EIP服务API文档中“查询弹性公网IP详情”部分，查看响应参数的中bandwidth_share_type字段描述
      * @return bandwidthShareType
      */
     public String getBandwidthShareType() {

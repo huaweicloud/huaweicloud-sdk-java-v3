@@ -86,6 +86,8 @@ public class ListTransitIpsByTagsResponse extends SdkResponse {
 
     /**
      * 总记录数。
+     * minimum: 0
+     * maximum: 1000000
      * @return totalCount
      */
     public Integer getTotalCount() {

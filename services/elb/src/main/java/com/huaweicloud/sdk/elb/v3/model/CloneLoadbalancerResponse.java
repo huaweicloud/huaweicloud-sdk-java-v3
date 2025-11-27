@@ -54,7 +54,7 @@ public class CloneLoadbalancerResponse extends SdkResponse {
     }
 
     /**
-     * Get loadbalancerList
+     * **参数解释**：新实例信息。
      * @return loadbalancerList
      */
     public List<CloneLoadbalancerResponseBodyLoadbalancerList> getLoadbalancerList() {

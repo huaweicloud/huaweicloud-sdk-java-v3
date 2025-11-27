@@ -223,6 +223,16 @@ public class EswMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConnectionsRequest::getName, ListConnectionsRequest::setName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getLimit, ListConnectionsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getMarker, ListConnectionsRequest::setMarker));
 
         // response
 
@@ -274,6 +284,18 @@ public class EswMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConnectionsAllInstancesRequest::getVirsubnetId,
                 ListConnectionsAllInstancesRequest::setVirsubnetId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsAllInstancesRequest::getLimit,
+                ListConnectionsAllInstancesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsAllInstancesRequest::getMarker,
+                ListConnectionsAllInstancesRequest::setMarker));
 
         // response
 
@@ -324,6 +346,16 @@ public class EswMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getDescription, ListInstancesRequest::setDescription));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getMarker, ListInstancesRequest::setMarker));
 
         // response
 
@@ -364,6 +396,16 @@ public class EswMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceJobsRequest::getResourceId, ListResourceJobsRequest::setResourceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceJobsRequest::getLimit, ListResourceJobsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceJobsRequest::getMarker, ListResourceJobsRequest::setMarker));
 
         // response
 

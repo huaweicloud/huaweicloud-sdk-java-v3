@@ -246,6 +246,11 @@ public class SubCustomerMonthlyBillDetail {
 
     private String subResourceName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_num")
+
+    private BigDecimal periodNum;
+
     public SubCustomerMonthlyBillDetail withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
@@ -1045,6 +1050,23 @@ public class SubCustomerMonthlyBillDetail {
         this.subResourceName = subResourceName;
     }
 
+    public SubCustomerMonthlyBillDetail withPeriodNum(BigDecimal periodNum) {
+        this.periodNum = periodNum;
+        return this;
+    }
+
+    /**
+     * 周期数量，该参数非必填
+     * @return periodNum
+     */
+    public BigDecimal getPeriodNum() {
+        return periodNum;
+    }
+
+    public void setPeriodNum(BigDecimal periodNum) {
+        this.periodNum = periodNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1091,7 +1113,8 @@ public class SubCustomerMonthlyBillDetail {
             && Objects.equals(this.subResourceTypeCode, that.subResourceTypeCode)
             && Objects.equals(this.subResourceTypeName, that.subResourceTypeName)
             && Objects.equals(this.subResourceId, that.subResourceId)
-            && Objects.equals(this.subResourceName, that.subResourceName);
+            && Objects.equals(this.subResourceName, that.subResourceName)
+            && Objects.equals(this.periodNum, that.periodNum);
     }
 
     @Override
@@ -1142,7 +1165,8 @@ public class SubCustomerMonthlyBillDetail {
             subResourceTypeCode,
             subResourceTypeName,
             subResourceId,
-            subResourceName);
+            subResourceName,
+            periodNum);
     }
 
     @Override
@@ -1196,6 +1220,7 @@ public class SubCustomerMonthlyBillDetail {
         sb.append("    subResourceTypeName: ").append(toIndentedString(subResourceTypeName)).append("\n");
         sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
         sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
+        sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }
